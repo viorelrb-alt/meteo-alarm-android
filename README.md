@@ -38,7 +38,11 @@ Kindle: Open-Meteo (DWD ICON) forecast, MeteoAlarm warnings for the county, poll
   phone. The crosshair button next to the town button locates now; picking a town from the list
   turns automatic location off until the crosshair is tapped again.
 - Updates: ☰ › Check for updates looks at the latest GitHub Release of this repository, downloads
-  the APK and opens the installer; it also checks once a day at start.
+  the APK and opens the installer; it also checks once a week at start. The result shows in a
+  small window that slides up from the bottom ("Actualizează" / "Renunță"). Play Protect may warn
+  because the app installs its own updates from outside Google Play; the app explains this.
+- First start: a one-time message about the app (test version, no data collected, why location
+  and sensors are used, updates); the same text is in ☰ › Despre.
 - Weather every 15 minutes while open (hourly at night), cached for offline start.
 
 ## Build

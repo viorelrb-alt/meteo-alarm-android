@@ -39,7 +39,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.14";
+	static final String VERSION = "Meteo Alarm Android v0.15";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -51,7 +51,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private long lastTry, lastLocate;
 	private Locator locator;
 	private Updater updater;
-	private static final long UPDATE_CHECK_MS = 24 * 3600000L;
+	private BottomSheet sheet;
+	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
 
 	private final Runnable tick = new Runnable() {
@@ -94,22 +95,58 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (c != null) cities.add(c);
 		}
 		locator = new Locator(this);
-		updater = new Updater(this, new Updater.Ui() {
-			public AlertDialog.Builder dialog() {
-				return MainActivity.this.dialog();
-			}
-
-			public void show(AlertDialog.Builder b) {
-				MainActivity.this.show(b);
-			}
-
-			public boolean en() {
-				return s.T.en;
-			}
-		});
+		sheet = new BottomSheet(this);
+		updater = new Updater(this, sheet);
 		applySettings();
 		loadCache();
-		setContentView(view);
+		android.widget.FrameLayout root = new android.widget.FrameLayout(this);
+		root.addView(view);
+		root.addView(sheet);
+		setContentView(root);
+	}
+
+	@Override
+	public void onBackPressed() {
+		if (sheet.isOpen()) sheet.hide();
+		else super.onBackPressed();
+	}
+
+	/** About the app: shown once at the first start (before the location question) and from ☰ › Despre. */
+	private String aboutText() {
+		return s.T.en
+				? "This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.\n\n"
+						+ "No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent "
+						+ "to Open-Meteo (weather, pollen); the warnings come from MeteoAlarm (ANM).\n\n"
+						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
+						+ "coordinates go to the phone's geocoder or to OpenStreetMap. Towns found are kept only on the phone. "
+						+ "Without location access, you choose the town from the list.\n\n"
+						+ "Sensors: the app reads the battery state; future versions will also use the light sensor (brightness, "
+						+ "dark theme at night) and the compass (wind direction). Nothing leaves the phone.\n\n"
+						+ "Updates: once a week the app checks GitHub for a new version and asks before downloading it; "
+						+ "you can also check from ☰ › Check for updates.\n\n"
+						+ Updater.protectNote(true)
+				: "Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.\n\n"
+						+ "Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele "
+						+ "localității către Open-Meteo (vremea, polenul); avertizările vin de la MeteoAlarm (ANM).\n\n"
+						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
+						+ "localității, coordonatele merg la geocoderul telefonului sau la OpenStreetMap. Localitățile găsite "
+						+ "rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
+						+ "Senzori: aplicația citește starea bateriei; versiunile următoare vor folosi și senzorul de lumină "
+						+ "(luminozitate, tema întunecată noaptea) și busola (direcția vântului). Nimic nu pleacă de pe telefon.\n\n"
+						+ "Actualizări: o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte "
+						+ "s-o descarce; poți verifica oricând din ☰ › Verifică actualizări.\n\n"
+						+ Updater.protectNote(false);
+	}
+
+	private void welcome() {
+		AlertDialog.Builder b = dialog().setTitle(VERSION).setMessage(aboutText()).setCancelable(false)
+				.setPositiveButton(s.T.en ? "I understand" : "Am înțeles", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface d, int w) {
+						prefs.edit().putBoolean("welcomed", true).apply();
+						if (autoLoc() && !Locator.allowed(MainActivity.this)) askLocation();
+					}
+				});
+		show(b);
 	}
 
 	private long interval() {
@@ -133,6 +170,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		else getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		if (sheet != null) sheet.setDark(s.dark);
+		if (updater != null) updater.en = s.T.en;
 	}
 
 	@Override
@@ -149,8 +188,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		handler.removeCallbacks(tick);
 		handler.post(tick);
+		if (!prefs.getBoolean("welcomed", false)) {
+			if (!asked) {
+				asked = true;
+				welcome();
+			}
+			return;
+		}
 		if (autoLoc() && !Locator.allowed(this) && !asked) askLocation();
-		// Look for a newer version once a day (a dialog only when there is one).
+		// Look for a newer version once a week (the bottom window opens only when there is one).
 		long now = System.currentTimeMillis();
 		if (now - prefs.getLong("updateChecked", 0) >= UPDATE_CHECK_MS) {
 			prefs.edit().putLong("updateChecked", now).apply();
@@ -452,9 +498,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	private void about() {
-		String msg = s.T.en
-				? "Test version for phones, ported from Meteo Alarm Kindle v2.061. The dark theme uses the Claude app colours.\n\nWeather: Open-Meteo (DWD ICON). Warnings: MeteoAlarm (ANM). Font: Liberation Sans."
-				: "Versiune de test pentru telefon, portată din Meteo Alarm Kindle v2.061. Tema întunecată folosește culorile aplicației Claude.\n\nVremea: Open-Meteo (DWD ICON). Avertizări: MeteoAlarm (ANM). Font: Liberation Sans.";
+		String msg = aboutText() + "\n\n" + (s.T.en ? "The dark theme uses the Claude app colours. Font: Liberation Sans."
+				: "Tema întunecată folosește culorile aplicației Claude. Font: Liberation Sans.");
 		msg += "\n\n" + (s.T.en ? "Installed version: v" : "Versiunea instalată: v") + updater.installed()
 				+ "\n" + (s.T.en ? "Updates: " : "Actualizări: ") + "github.com/" + ro.meteoalarm.android.core.Release.REPO + "/releases";
 		show(dialog().setTitle(VERSION).setMessage(msg).setPositiveButton("OK", null));

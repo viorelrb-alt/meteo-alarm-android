@@ -1,8 +1,6 @@
 package ro.meteoalarm.android;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 
@@ -16,27 +14,34 @@ import ro.meteoalarm.android.core.Release;
 import ro.meteoalarm.android.core.Weather;
 
 /**
- * In-app updates: the newest GitHub Release of the app is compared with the installed version;
- * a newer APK is downloaded to the app's cache and handed to the system installer, which asks
- * the user to confirm (and, the first time, to allow installs from this app).
+ * In-app updates: the newest GitHub Release of the app is compared with the installed version and
+ * shown in the bottom window. "Actualizează" downloads the APK to the app's cache and hands it to
+ * the system installer, which asks the user to confirm (and, the first time, to allow installs
+ * from this app). Play Protect may warn about it; protectNote() explains why.
  */
 final class Updater {
-	interface Ui {
-		AlertDialog.Builder dialog();
-
-		void show(AlertDialog.Builder b);
-
-		boolean en();
-	}
-
 	private final Activity a;
-	private final Ui ui;
+	private final BottomSheet sheet;
 	private final Handler handler = new Handler();
 	private boolean busy;
+	boolean en;
 
-	Updater(Activity a, Ui ui) {
+	/** Why Play Protect may warn when the app (or one of its updates) is installed. */
+	static String protectNote(boolean en) {
+		return en
+				? "About the Play Protect warning: Google may say the app \"may be harmful\". It does so because the app "
+						+ "does not come from Google Play, its developer is not registered with Google, and it can install its "
+						+ "own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. To go on, "
+						+ "tap \"More details\" › \"Install anyway\"."
+				: "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare”. O face pentru că "
+						+ "aplicația nu vine din Google Play, dezvoltatorul nu e înregistrat la Google și aplicația își poate "
+						+ "instala singură actualizările (de pe github.com/viorelrb-alt/meteo-alarm-android). Aplicația nu face "
+						+ "nimic altceva. Ca să continui, apasă „Mai multe detalii” › „Instalează oricum”.";
+	}
+
+	Updater(Activity a, BottomSheet sheet) {
 		this.a = a;
-		this.ui = ui;
+		this.sheet = sheet;
 	}
 
 	String installed() {
@@ -47,11 +52,16 @@ final class Updater {
 		}
 	}
 
-	/** MANUAL: also say when there is nothing new or the check failed. */
+	private String close() {
+		return en ? "Cancel" : "Renunță";
+	}
+
+	/** MANUAL (from the menu): the window opens at once and also says when there is nothing new. */
 	void check(final boolean manual) {
 		if (busy) return;
 		busy = true;
-		if (manual) toast(ui.en() ? "Checking for updates…" : "Caut actualizări…");
+		if (manual) sheet.show(en ? "Updates" : "Actualizări", en ? "Checking GitHub for a new version…" : "Caut pe GitHub o versiune nouă…",
+				null, null, close());
 		new Thread(new Runnable() {
 			public void run() {
 				Release r = null;
@@ -74,33 +84,31 @@ final class Updater {
 	}
 
 	private void checked(final Release r, String err, boolean manual) {
-		boolean en = ui.en();
 		String cur = installed();
+		String t = en ? "Updates" : "Actualizări";
 		if (r == null) {
 			if (!manual) return;
-			if (err != null && err.contains("404")) toast(en ? "No version published yet." : "Încă nu e publicată nicio versiune.");
-			else toast(en ? "Could not check for updates (internet?)." : "Nu am putut verifica actualizările (internet?).");
+			if (err != null && err.contains("404")) sheet.show(t, en ? "No version published yet." : "Încă nu e publicată nicio versiune.", null, null, en ? "Close" : "Închide");
+			else sheet.show(t, en ? "Could not check for updates. Is the internet on?" : "Nu am putut verifica actualizările. Ai internet?", null, null, en ? "Close" : "Închide");
 			return;
 		}
 		if (!r.newerThan(cur)) {
-			if (manual) toast((en ? "You have the latest version: v" : "Ai ultima versiune: v") + cur);
+			if (manual) sheet.show(t, (en ? "You have the latest version, v" : "Ai ultima versiune, v") + cur + ".", null, null, en ? "Close" : "Închide");
 			return;
 		}
-		String msg = (en ? "Installed: v" : "Instalată: v") + cur + "\n" + (en ? "New: v" : "Nouă: v") + r.version;
+		String msg = (en ? "Installed: v" : "Instalată: v") + cur + "    " + (en ? "New: v" : "Nouă: v") + r.version;
 		if (r.notes.length() > 0) msg += "\n\n" + r.notes;
-		ui.show(ui.dialog().setTitle(en ? "New version available" : "Versiune nouă disponibilă").setMessage(msg)
-				.setPositiveButton(en ? "Download and install" : "Descarcă și instalează", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface d, int w) {
-						download(r);
-					}
-				}).setNegativeButton(en ? "Later" : "Mai târziu", null));
+		msg += "\n\n" + protectNote(en);
+		sheet.show(en ? "New version: v" + r.version : "Versiune nouă: v" + r.version, msg, en ? "Update" : "Actualizează", new Runnable() {
+			public void run() {
+				download(r);
+			}
+		}, close());
 	}
 
 	private void download(final Release r) {
-		final boolean en = ui.en();
-		final AlertDialog progress = ui.dialog().setTitle("Meteo Alarm v" + r.version)
-				.setMessage(en ? "Downloading…" : "Se descarcă…").setCancelable(false).create();
-		progress.show();
+		final String t = "v" + r.version;
+		sheet.show(t, en ? "Downloading…" : "Se descarcă…", null, null, en ? "Hide" : "Ascunde");
 		new Thread(new Runnable() {
 			public void run() {
 				final File f = ApkProvider.file(a);
@@ -127,7 +135,7 @@ final class Updater {
 							last = pct;
 							handler.post(new Runnable() {
 								public void run() {
-									progress.setMessage((en ? "Downloading… " : "Se descarcă… ") + (pct >= 0 ? pct + "%" : ""));
+									sheet.setMessage((en ? "Downloading… " : "Se descarcă… ") + (pct >= 0 ? pct + "%" : ""));
 								}
 							});
 						}
@@ -143,28 +151,24 @@ final class Updater {
 				final String ee = err;
 				handler.post(new Runnable() {
 					public void run() {
-						progress.dismiss();
-						if (ee != null) toast(en ? "The download failed." : "Descărcarea a eșuat.");
-						else install();
+						if (ee != null) sheet.show(t, en ? "The download failed. Is the internet on?" : "Descărcarea a eșuat. Ai internet?", null, null, en ? "Close" : "Închide");
+						else install(t);
 					}
 				});
 			}
 		}).start();
 	}
 
-	/** Opens the system installer on the downloaded APK. */
-	private void install() {
+	/** Opens the system installer on the downloaded APK; the window closes, the installer takes over. */
+	private void install(String t) {
 		Intent i = new Intent(Intent.ACTION_VIEW);
 		i.setDataAndType(ApkProvider.uri(), "application/vnd.android.package-archive");
 		i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
 		try {
 			a.startActivity(i);
+			sheet.hide();
 		} catch (Exception e) {
-			toast(ui.en() ? "The installer could not be opened." : "Instalarea nu a putut fi pornită.");
+			sheet.show(t, en ? "The installer could not be opened." : "Instalarea nu a putut fi pornită.", null, null, en ? "Close" : "Închide");
 		}
-	}
-
-	private void toast(String m) {
-		android.widget.Toast.makeText(a, m, android.widget.Toast.LENGTH_LONG).show();
 	}
 }
