@@ -1,0 +1,320 @@
+# Orașe pentru selectorul de pe ecran. Format: județ|localitate|latitudine|longitudine
+# Liniile cu județul "*" sunt favoritele (apar primele, la o singură atingere).
+# Poți adăuga orice localitate: copiază o linie și schimbă numele și coordonatele.
+*|Călărași|44.2058|27.3306
+*|Movila Miresii|45.2217|27.6253
+Alba|Alba Iulia|46.0678|23.5786
+Alba|Aiud|46.3106|23.7198
+Alba|Blaj|46.1750|23.9161
+Alba|Sebeș|45.9589|23.5683
+Alba|Câmpeni|46.3622|23.0481
+Alba|Cugir|45.8447|23.3642
+Alba|Ocna Mureș|46.3881|23.8611
+Alba|Teiuș|46.2000|23.6833
+Alba|Zlatna|46.1583|23.2200
+Alba|Abrud|46.2742|23.0633
+Alba|Baia de Arieș|46.3794|23.2806
+Arad|Arad|46.1866|21.3123
+Arad|Chișineu-Criș|46.5228|21.5158
+Arad|Curtici|46.3425|21.3061
+Arad|Ineu|46.4356|21.8389
+Arad|Lipova|46.0894|21.6961
+Arad|Nădlac|46.1667|20.7500
+Arad|Pâncota|46.3236|21.6861
+Arad|Pecica|46.1700|21.0667
+Arad|Sântana|46.3500|21.5000
+Arad|Sebiș|46.3728|22.1289
+Argeș|Pitești|44.8565|24.8692
+Argeș|Câmpulung|45.2683|25.0442
+Argeș|Curtea de Argeș|45.1389|24.6750
+Argeș|Mioveni|44.9542|24.9367
+Argeș|Costești|44.6711|24.8806
+Argeș|Ștefănești|44.8722|24.9278
+Argeș|Topoloveni|44.8067|25.0833
+Bacău|Bacău|46.5670|26.9146
+Bacău|Onești|46.2575|26.7667
+Bacău|Moinești|46.4678|26.4950
+Bacău|Comănești|46.4258|26.4367
+Bacău|Buhuși|46.7167|26.7000
+Bacău|Dărmănești|46.3681|26.4889
+Bacău|Slănic-Moldova|46.2067|26.4383
+Bacău|Târgu Ocna|46.2808|26.6083
+Bihor|Oradea|47.0503|21.9332
+Bihor|Beiuș|46.6667|22.3500
+Bihor|Marghita|47.3481|22.3325
+Bihor|Salonta|46.8028|21.6583
+Bihor|Aleșd|47.0578|22.3939
+Bihor|Nucet|46.4833|22.5500
+Bihor|Săcueni|47.3528|22.0917
+Bihor|Ștei|46.5408|22.4736
+Bihor|Valea lui Mihai|47.5214|22.1319
+Bihor|Vașcău|46.4789|22.4789
+Bistrița-Năsăud|Bistrița|47.1333|24.5000
+Bistrița-Năsăud|Beclean|47.1833|24.1833
+Bistrița-Năsăud|Năsăud|47.2833|24.4000
+Bistrița-Năsăud|Sângeorz-Băi|47.3711|24.6819
+Botoșani|Botoșani|47.7417|26.6667
+Botoșani|Dorohoi|47.9572|26.4011
+Botoșani|Bucecea|47.7667|26.4333
+Botoșani|Flămânzi|47.5619|26.8722
+Botoșani|Săveni|47.9536|26.8589
+Botoșani|Ștefănești|47.7889|27.2000
+Botoșani|Darabani|48.1889|26.5861
+Brașov|Brașov|45.6579|25.6012
+Brașov|Codlea|45.6942|25.4467
+Brașov|Făgăraș|45.8417|24.9731
+Brașov|Săcele|45.6167|25.6833
+Brașov|Ghimbav|45.6631|25.5083
+Brașov|Râșnov|45.5925|25.4611
+Brașov|Rupea|46.0381|25.2217
+Brașov|Victoria|45.6467|24.7083
+Brașov|Zărnești|45.5667|25.3333
+Brașov|Predeal|45.5053|25.5786
+Brăila|Brăila|45.2692|27.9575
+Brăila|Făurei|45.0833|27.2667
+Brăila|Ianca|45.1333|27.4833
+Brăila|Însurăței|44.9167|27.6000
+Brăila|Movila Miresii|45.2217|27.6253
+București|București|44.4323|26.1063
+Buzău|Buzău|45.1500|26.8167
+Buzău|Râmnicu Sărat|45.3806|27.0583
+Buzău|Nehoiu|45.4167|26.3000
+Buzău|Pătarlagele|45.3189|26.3592
+Buzău|Pogoanele|44.9167|27.0000
+Caraș-Severin|Reșița|45.3008|21.8892
+Caraș-Severin|Caransebeș|45.4208|22.2178
+Caraș-Severin|Anina|45.0931|21.8542
+Caraș-Severin|Băile Herculane|44.8789|22.4131
+Caraș-Severin|Bocșa|45.3725|21.7103
+Caraș-Severin|Moldova Nouă|44.7333|21.6667
+Caraș-Severin|Oravița|45.0389|21.6861
+Caraș-Severin|Oțelu Roșu|45.5319|22.3683
+Călărași|Călărași|44.2058|27.3306
+Călărași|Oltenița|44.0861|26.6361
+Călărași|Budești|44.2300|26.4500
+Călărași|Fundulea|44.4500|26.5167
+Călărași|Lehliu Gară|44.4389|26.8533
+Cluj|Cluj-Napoca|46.7712|23.6236
+Cluj|Câmpia Turzii|46.5458|23.8828
+Cluj|Dej|47.1433|23.8733
+Cluj|Gherla|47.0272|23.9100
+Cluj|Turda|46.5667|23.7833
+Cluj|Huedin|46.8639|23.0039
+Constanța|Constanța|44.1792|28.6497
+Constanța|Mangalia|43.8167|28.5833
+Constanța|Medgidia|44.2500|28.2667
+Constanța|Cernavodă|44.3333|28.0333
+Constanța|Eforie|44.0617|28.6339
+Constanța|Hârșova|44.6833|27.9500
+Constanța|Murfatlar|44.1739|28.4081
+Constanța|Năvodari|44.3217|28.6108
+Constanța|Ovidiu|44.2619|28.5619
+Constanța|Techirghiol|44.0569|28.5961
+Constanța|Negru Vodă|43.8153|28.2128
+Covasna|Sfântu Gheorghe|45.8667|25.7833
+Covasna|Târgu Secuiesc|46.0000|26.1333
+Covasna|Covasna|45.8500|26.1833
+Covasna|Baraolt|46.0744|25.6000
+Covasna|Întorsura Buzăului|45.6728|26.0353
+Dâmbovița|Târgoviște|44.9250|25.4572
+Dâmbovița|Moreni|44.9814|25.6444
+Dâmbovița|Fieni|45.1239|25.4183
+Dâmbovița|Găești|44.7258|25.3183
+Dâmbovița|Pucioasa|45.0747|25.4344
+Dâmbovița|Răcari|44.6333|25.7333
+Dâmbovița|Titu|44.6592|25.5742
+Dolj|Craiova|44.3302|23.7949
+Dolj|Băilești|44.0306|23.3517
+Dolj|Calafat|43.9911|22.9328
+Dolj|Bechet|43.7889|23.9558
+Dolj|Dăbuleni|43.8000|24.0917
+Dolj|Filiași|44.5539|23.5208
+Dolj|Segarcea|44.0931|23.7225
+Galați|Galați|45.4353|28.0080
+Galați|Tecuci|45.8458|27.4294
+Galați|Berești|46.0967|27.8867
+Galați|Târgu Bujor|45.8697|27.9150
+Giurgiu|Giurgiu|43.9036|25.9694
+Giurgiu|Bolintin-Vale|44.4456|25.7578
+Giurgiu|Mihăilești|44.3167|25.9083
+Gorj|Târgu Jiu|45.0333|23.2833
+Gorj|Motru|44.8028|22.9736
+Gorj|Bumbești-Jiu|45.1783|23.3861
+Gorj|Novaci|45.1783|23.6708
+Gorj|Rovinari|44.9119|23.1611
+Gorj|Tismana|45.0503|22.9514
+Gorj|Târgu Cărbunești|44.9583|23.5117
+Gorj|Turceni|44.6789|23.3728
+Harghita|Miercurea Ciuc|46.3606|25.8014
+Harghita|Gheorgheni|46.7228|25.6000
+Harghita|Odorheiu Secuiesc|46.3056|25.2936
+Harghita|Toplița|46.9239|25.3564
+Harghita|Băile Tușnad|46.1467|25.8589
+Harghita|Bălan|46.6500|25.8089
+Harghita|Cristuru Secuiesc|46.2917|25.0353
+Harghita|Borsec|46.9725|25.5714
+Hunedoara|Deva|45.8775|22.9086
+Hunedoara|Brad|46.1283|22.7889
+Hunedoara|Hunedoara|45.7500|22.9000
+Hunedoara|Orăștie|45.8375|23.1958
+Hunedoara|Petroșani|45.4167|23.3667
+Hunedoara|Lupeni|45.3600|23.2400
+Hunedoara|Vulcan|45.3800|23.2872
+Hunedoara|Aninoasa|45.3789|23.3308
+Hunedoara|Călan|45.7333|22.9833
+Hunedoara|Hațeg|45.6094|22.9508
+Hunedoara|Petrila|45.4500|23.4167
+Hunedoara|Simeria|45.8500|23.0167
+Hunedoara|Uricani|45.3375|23.1514
+Ialomița|Slobozia|44.5639|27.3661
+Ialomița|Fetești|44.4153|27.8242
+Ialomița|Urziceni|44.7181|26.6453
+Ialomița|Amara|44.6200|27.3200
+Ialomița|Căzănești|44.6067|27.0233
+Ialomița|Fierbinți-Târg|44.6853|26.3533
+Ialomița|Țăndărei|44.6417|27.6583
+Iași|Iași|47.1585|27.6014
+Iași|Pașcani|47.2514|26.7231
+Iași|Târgu Frumos|47.2083|27.0139
+Iași|Hârlău|47.4278|26.9039
+Iași|Podu Iloaiei|47.2100|27.2681
+Ilfov|Buftea|44.5714|25.9525
+Ilfov|Bragadiru|44.3761|25.9822
+Ilfov|Chitila|44.5167|25.9833
+Ilfov|Măgurele|44.3483|26.0308
+Ilfov|Otopeni|44.5517|26.0692
+Ilfov|Pantelimon|44.4561|26.2008
+Ilfov|Popești-Leordeni|44.3789|26.1469
+Ilfov|Voluntari|44.4928|26.1667
+Maramureș|Baia Mare|47.6597|23.5819
+Maramureș|Sighetu Marmației|47.9286|23.8867
+Maramureș|Baia Sprie|47.6606|23.6881
+Maramureș|Borșa|47.6558|24.6631
+Maramureș|Cavnic|47.6600|23.8600
+Maramureș|Dragomirești|47.6681|24.2908
+Maramureș|Săliștea de Sus|47.6500|24.3500
+Maramureș|Seini|47.7478|23.2847
+Maramureș|Șomcuta Mare|47.5000|23.4667
+Maramureș|Tăuții-Măgherăuș|47.6667|23.4750
+Maramureș|Târgu Lăpuș|47.4528|23.8617
+Maramureș|Ulmeni|47.4658|23.3006
+Maramureș|Vișeu de Sus|47.7128|24.4264
+Mehedinți|Drobeta-Turnu Severin|44.6311|22.6569
+Mehedinți|Orșova|44.7253|22.3964
+Mehedinți|Baia de Aramă|45.0000|22.8092
+Mehedinți|Strehaia|44.6242|23.1953
+Mehedinți|Vânju Mare|44.4319|22.8758
+Mureș|Târgu Mureș|46.5456|24.5625
+Mureș|Reghin|46.7778|24.7000
+Mureș|Sighișoara|46.2169|24.7922
+Mureș|Târnăveni|46.3319|24.2831
+Mureș|Iernut|46.4528|24.2381
+Mureș|Luduș|46.4789|24.0958
+Mureș|Miercurea Nirajului|46.5333|24.8000
+Mureș|Sângeorgiu de Pădure|46.4311|24.8417
+Mureș|Sărmașu|46.7514|24.1681
+Mureș|Sovata|46.5958|25.0747
+Mureș|Ungheni|46.4858|24.4608
+Neamț|Piatra Neamț|46.9275|26.3708
+Neamț|Roman|46.9283|26.9283
+Neamț|Bicaz|46.9111|26.0911
+Neamț|Târgu Neamț|47.2028|26.3583
+Neamț|Roznov|46.8400|26.5200
+Olt|Slatina|44.4300|24.3633
+Olt|Caracal|44.1133|24.3486
+Olt|Balș|44.3533|24.0983
+Olt|Corabia|43.7700|24.5000
+Olt|Drăgănești-Olt|44.1706|24.5261
+Olt|Piatra-Olt|44.3606|24.2942
+Olt|Scornicești|44.5714|24.5500
+Olt|Potcoava|44.4828|24.6225
+Prahova|Ploiești|44.9406|26.0225
+Prahova|Câmpina|45.1278|25.7333
+Prahova|Azuga|45.4450|25.5564
+Prahova|Băicoi|45.0450|25.8644
+Prahova|Boldești-Scăeni|45.0289|26.0319
+Prahova|Breaza|45.1872|25.6631
+Prahova|Bușteni|45.4150|25.5367
+Prahova|Comarnic|45.2500|25.6333
+Prahova|Mizil|45.0000|26.4333
+Prahova|Plopeni|45.0489|25.9686
+Prahova|Sinaia|45.3500|25.5511
+Prahova|Slănic|45.2333|25.9333
+Prahova|Urlați|44.9917|26.2306
+Prahova|Vălenii de Munte|45.1856|26.0392
+Satu Mare|Satu Mare|47.7900|22.8900
+Satu Mare|Carei|47.6833|22.4667
+Satu Mare|Ardud|47.6528|22.8878
+Satu Mare|Livada|47.8617|23.1311
+Satu Mare|Negrești-Oaș|47.8683|23.4242
+Satu Mare|Tășnad|47.4789|22.5856
+Sălaj|Zalău|47.1833|23.0500
+Sălaj|Cehu Silvaniei|47.4100|23.1800
+Sălaj|Jibou|47.2583|23.2583
+Sălaj|Șimleu Silvaniei|47.2333|22.8000
+Sibiu|Sibiu|45.7983|24.1256
+Sibiu|Mediaș|46.1628|24.3517
+Sibiu|Agnita|45.9750|24.6194
+Sibiu|Avrig|45.7289|24.3778
+Sibiu|Cisnădie|45.7139|24.1528
+Sibiu|Copșa Mică|46.1139|24.2253
+Sibiu|Dumbrăveni|46.2250|24.5772
+Sibiu|Miercurea Sibiului|45.8889|23.7889
+Sibiu|Ocna Sibiului|45.8750|24.0667
+Sibiu|Săliște|45.7953|23.8842
+Sibiu|Tălmaciu|45.6694|24.2611
+Suceava|Suceava|47.6514|26.2553
+Suceava|Fălticeni|47.4619|26.2997
+Suceava|Rădăuți|47.8433|25.9189
+Suceava|Câmpulung Moldovenesc|47.5303|25.5519
+Suceava|Vatra Dornei|47.3469|25.3589
+Suceava|Broșteni|47.2358|25.6983
+Suceava|Cajvana|47.7042|25.9686
+Suceava|Dolhasca|47.4300|26.6114
+Suceava|Frasin|47.5181|25.7869
+Suceava|Gura Humorului|47.5542|25.8889
+Suceava|Liteni|47.5217|26.5333
+Suceava|Milișăuți|47.7864|26.0403
+Suceava|Salcea|47.6467|26.3719
+Suceava|Siret|47.9500|26.0667
+Suceava|Solca|47.7028|25.8347
+Teleorman|Alexandria|43.9686|25.3333
+Teleorman|Roșiorii de Vede|44.1119|24.9950
+Teleorman|Turnu Măgurele|43.7469|24.8722
+Teleorman|Zimnicea|43.6558|25.3644
+Teleorman|Videle|44.2800|25.5300
+Timiș|Timișoara|45.7537|21.2257
+Timiș|Lugoj|45.6856|21.9028
+Timiș|Buziaș|45.6508|21.6022
+Timiș|Ciacova|45.5108|21.1292
+Timiș|Deta|45.3981|21.2239
+Timiș|Gătaia|45.4286|21.4319
+Timiș|Jimbolia|45.7925|20.7208
+Timiș|Recaș|45.8000|21.5167
+Timiș|Sânnicolau Mare|46.0722|20.6272
+Timiș|Făget|45.8500|22.1833
+Tulcea|Tulcea|45.1786|28.8006
+Tulcea|Babadag|44.8931|28.7131
+Tulcea|Isaccea|45.2689|28.4589
+Tulcea|Măcin|45.2472|28.1236
+Tulcea|Sulina|45.1583|29.6528
+Vaslui|Vaslui|46.6383|27.7292
+Vaslui|Bârlad|46.2289|27.6719
+Vaslui|Huși|46.6742|28.0617
+Vaslui|Murgeni|46.2086|28.0164
+Vaslui|Negrești|46.8375|27.4681
+Vâlcea|Râmnicu Vâlcea|45.0997|24.3692
+Vâlcea|Drăgășani|44.6617|24.2617
+Vâlcea|Băile Govora|45.0778|24.1806
+Vâlcea|Băile Olănești|45.2056|24.2389
+Vâlcea|Bălcești|44.6167|23.9333
+Vâlcea|Berbești|44.9878|23.8681
+Vâlcea|Brezoi|45.3500|24.2500
+Vâlcea|Călimănești|45.2389|24.3417
+Vâlcea|Horezu|45.1481|24.0139
+Vâlcea|Ocnele Mari|45.0833|24.3167
+Vrancea|Focșani|45.6961|27.1839
+Vrancea|Adjud|46.1000|27.1833
+Vrancea|Mărășești|45.8803|27.2300
+Vrancea|Odobești|45.7597|27.0653
+Vrancea|Panciu|45.9083|27.0861

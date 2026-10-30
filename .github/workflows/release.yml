@@ -1,0 +1,27 @@
+# Publishes dist/MeteoAlarmAndroid-v<version>.apk as the GitHub Release v<version> (the version is
+# android:versionName in AndroidManifest.xml), with dist/notes-v<version>.md as its text. The app's
+# "Check for updates" reads the latest Release. An existing Release is left as it is.
+name: Release
+on:
+  push:
+    branches: [main]
+    paths: ['dist/**', 'AndroidManifest.xml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the APK of the manifest's version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VER=$(sed -n 's/.*android:versionName="\([^"]*\)".*/\1/p' AndroidManifest.xml)
+          APK=dist/MeteoAlarmAndroid-v$VER.apk
+          if [ ! -f "$APK" ]; then echo "No $APK: nothing to publish."; exit 0; fi
+          if gh release view "v$VER" >/dev/null 2>&1; then echo "v$VER is already published."; exit 0; fi
+          NOTES=dist/notes-v$VER.md
+          [ -f "$NOTES" ] || NOTES=/dev/null
+          gh release create "v$VER" "$APK" --title "Meteo Alarm Android v$VER" --notes-file "$NOTES"
