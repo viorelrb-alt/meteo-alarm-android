@@ -1,3 +1,9 @@
+v0.31 · 31 octombrie 2026
+- Meniul ☰ arată jos „⌄ mai multe ⌄” cât timp mai sunt opțiuni de derulat; dispare la capătul listei. O apăsare pe el derulează până jos.
+- Temă nouă: ☰ › Temă › „După lumina din cameră (senzor)”. Aplicația trece pe tema întunecată când se face întuneric în cameră și înapoi când se aprinde lumina (după câteva secunde, ca să nu clipească).
+- Luminozitate ca pe Kindle: glisează sus-jos pe marginea din stânga a ecranului (puțin mai înăuntru, ca să nu pornească gestul Înapoi). Apare o bară cu procentul; luminozitatea rămâne salvată.
+- ☰ › „Luminozitatea telefonului” renunță la luminozitatea aleasă și revine la cea a telefonului (apare doar după ce ai folosit bara).
+
 v0.30 · 31 octombrie 2026
 - Aspect nou pentru tabletă (de la 600 dp pe latura mică, și telefoanele pliabile deschise): ecranul e împărțit în două. În modul peisaj, vremea de acum e în stânga și casetele în dreapta; în modul portret, vremea de acum e sus și casetele jos.
 - Pe tabletă, casetele sunt cu 20% mai mari, cele 5 zile apar una lângă alta, iar avertizările apar în 3 casete egale, cu scris mai mare.

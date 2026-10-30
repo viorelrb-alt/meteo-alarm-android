@@ -1,3 +1,9 @@
+v0.31 · 31 October 2026
+- The ☰ menu shows "⌄ more ⌄" at the bottom while there are more options to scroll to; it disappears at the end of the list. Tapping it scrolls down.
+- New theme: ☰ › Theme › "By the room's light (sensor)". The app turns dark when the room goes dark and back when the light comes on (after a few seconds, so it does not flicker).
+- Brightness like on the Kindle: slide up or down along the left edge of the screen (a little in from it, clear of the Back gesture). A bar shows the level; the brightness is kept.
+- ☰ › "Phone's brightness" drops the chosen brightness and goes back to the phone's (shown only after using the bar).
+
 v0.30 · 31 October 2026
 - New tablet layout (600 dp or more on the short side, open foldables too): the screen is split in two. Landscape: the weather now on the left, the boxes on the right; portrait: the weather now on top, the boxes below.
 - On tablets the boxes are 20% larger, the 5 days sit side by side and the warnings show in 3 equal boxes with larger text.

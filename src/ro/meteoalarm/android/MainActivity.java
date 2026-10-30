@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.30";
+	static final String VERSION = "Meteo Alarm Android v0.31";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -122,8 +126,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
 						+ "coordinates go to the phone's geocoder or to OpenStreetMap. Towns found are kept only on the phone. "
 						+ "Without location access, you choose the town from the list.\n\n"
-						+ "Sensors: the app reads the battery state; future versions will also use the light sensor (brightness, "
-						+ "dark theme at night) and the compass (wind direction). Nothing leaves the phone.\n\n"
+						+ "Sensors: the app reads the battery state and, with ☰ › Theme › Light sensor, the room's light (dark "
+						+ "theme in the dark); a future version will use the compass (wind direction). Nothing leaves the phone.\n\n"
 						+ "Updates: once a week the app checks GitHub for a new version and asks before downloading it; "
 						+ "you can also check from ☰ › Check for updates.\n\n"
 						+ Updater.protectNote(true)
@@ -133,8 +137,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
 						+ "localității, coordonatele merg la geocoderul telefonului sau la OpenStreetMap. Localitățile găsite "
 						+ "rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
-						+ "Senzori: aplicația citește starea bateriei; versiunile următoare vor folosi și senzorul de lumină "
-						+ "(luminozitate, tema întunecată noaptea) și busola (direcția vântului). Nimic nu pleacă de pe telefon.\n\n"
+						+ "Senzori: aplicația citește starea bateriei și, cu ☰ › Temă › După lumina din cameră, senzorul de lumină "
+						+ "(tema întunecată pe întuneric); o versiune viitoare va folosi busola (direcția vântului). Nimic nu pleacă "
+						+ "de pe telefon.\n\n"
 						+ "Actualizări: o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte "
 						+ "s-o descarce; poți verifica oricând din ☰ › Verifică actualizări.\n\n"
 						+ Updater.protectNote(false);
@@ -163,10 +168,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (c == null) c = cities.find("Călărași");
 		if (c == null) c = new Cities.City("Călărași", "Călărași", 44.2058, 27.3306);
 		s.city = c;
-		// Theme: "light" (Kindle), "dark" (Claude colours) or "auto" (follows the phone's dark mode).
+		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
+		// "sensor" (dark when the room is dark, from the light sensor).
 		String theme = prefs.getString("theme", "auto");
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
-		s.dark = theme.equals("dark") || (theme.equals("auto") && night);
+		s.dark = theme.equals("dark") || (theme.equals("auto") && night) || (theme.equals("sensor") && roomDark);
+		listenLight(theme.equals("sensor") && resumed);
+		applyBrightness();
 		s.autoLoc = autoLoc();
 		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
@@ -183,9 +191,96 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.invalidate();
 	}
 
+	// --- Light sensor and brightness ------------------------------------------------------
+
+	/** Below DARK_LUX the room counts as dark, above LIGHT_LUX as lit (in between: no change). */
+	private static final float DARK_LUX = 8, LIGHT_LUX = 25;
+	/** The room has to stay dark (or lit) this long before the theme follows. */
+	private static final long LIGHT_HOLD_MS = 4000;
+	private SensorManager sensors;
+	private boolean resumed, roomDark, lightOn, lightFirst;
+	private long lightSince;
+
+	private final SensorEventListener light = new SensorEventListener() {
+		public void onSensorChanged(SensorEvent e) {
+			float lux = e.values[0];
+			boolean want = lux < DARK_LUX ? true : lux > LIGHT_LUX ? false : roomDark;
+			long now = System.currentTimeMillis();
+			// The first reading counts at once (the room is as it is when the app opens).
+			if (lightFirst) {
+				lightFirst = false;
+				lightSince = 0;
+				if (want != roomDark) {
+					roomDark = want;
+					applySettings();
+					view.invalidate();
+				}
+				return;
+			}
+			if (want == roomDark) {
+				lightSince = 0;
+				return;
+			}
+			if (lightSince == 0) lightSince = now;
+			if (now - lightSince < LIGHT_HOLD_MS) return;
+			lightSince = 0;
+			roomDark = want;
+			applySettings();
+			view.invalidate();
+		}
+
+		public void onAccuracyChanged(Sensor sn, int acc) {
+		}
+	};
+
+	/** Listens to the light sensor while ON (theme "sensor" and the app in front). */
+	private void listenLight(boolean on) {
+		if (sensors == null) sensors = (SensorManager) getSystemService(SENSOR_SERVICE);
+		Sensor sn = sensors == null ? null : sensors.getDefaultSensor(Sensor.TYPE_LIGHT);
+		if (sn == null || on == lightOn) return;
+		lightOn = on;
+		lightSince = 0;
+		lightFirst = true;
+		if (on) sensors.registerListener(light, sn, SensorManager.SENSOR_DELAY_NORMAL);
+		else sensors.unregisterListener(light);
+	}
+
+	private boolean hasLight() {
+		if (sensors == null) sensors = (SensorManager) getSystemService(SENSOR_SERVICE);
+		return sensors != null && sensors.getDefaultSensor(Sensor.TYPE_LIGHT) != null;
+	}
+
+	/** The app's own brightness (0.01–1) set with the left-edge slider, or the phone's (-1). */
+	private void applyBrightness() {
+		WindowManager.LayoutParams lp = getWindow().getAttributes();
+		lp.screenBrightness = prefs.getFloat("bright", -1);
+		getWindow().setAttributes(lp);
+	}
+
+	/** The slider's current level: the app's own, or the phone's setting when there is none. */
+	public float brightness() {
+		float b = prefs.getFloat("bright", -1);
+		if (b >= 0) return b;
+		try {
+			return Math.max(0.01f, Math.min(1, android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS) / 255f));
+		} catch (Exception e) {
+			return 0.5f;
+		}
+	}
+
+	public void setBrightness(float b, boolean save) {
+		b = Math.max(0.01f, Math.min(1, b));
+		WindowManager.LayoutParams lp = getWindow().getAttributes();
+		lp.screenBrightness = b;
+		getWindow().setAttributes(lp);
+		if (save) prefs.edit().putFloat("bright", b).apply();
+	}
+
 	@Override
 	protected void onResume() {
 		super.onResume();
+		resumed = true;
+		listenLight("sensor".equals(prefs.getString("theme", "auto")));
 		hideBars();
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		handler.removeCallbacks(tick);
@@ -327,6 +422,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		resumed = false;
+		listenLight(false);
 		handler.removeCallbacks(tick);
 		try {
 			unregisterReceiver(battery);
@@ -490,16 +587,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	public void onMenu() {
 		final boolean en = s.T.en;
-		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
-		String[] items = en
-				? new String[] { "Choose town", s.unitF ? "Show °C" : "Show °F", s.clk12 ? "24-hour clock" : "12-hour clock",
-						"Limba română", keepOn ? "Let the screen sleep" : "Keep the screen on", "Theme…",
-						auto ? "Turn location off" : "Turn location on", "Check for updates", "About" }
-				: new String[] { "Alege localitatea", s.unitF ? "Afișează °C" : "Afișează °F",
-						s.clk12 ? "Ceas 24 de ore" : "Ceas 12 ore (AM/PM)", "Limba engleză", keepOn ? "Lasă ecranul să se stingă" : "Ține ecranul aprins",
-						"Temă…", auto ? "Oprire localizare" : "Pornire localizare",
-						"Verifică actualizări", "Despre" };
-		// The menu shows five items (to the screen setting); the rest scroll up, the window keeps its size.
+		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc(), own = prefs.getFloat("bright", -1) >= 0;
+		// Item ids in menu order; "brightAuto" only while the left-edge slider has set a brightness.
+		final List<String> ids = new ArrayList<String>();
+		List<String> items = new ArrayList<String>();
+		ids.add("city"); items.add(en ? "Choose town" : "Alege localitatea");
+		ids.add("unit"); items.add(s.unitF ? (en ? "Show °C" : "Afișează °C") : (en ? "Show °F" : "Afișează °F"));
+		ids.add("clock"); items.add(s.clk12 ? (en ? "24-hour clock" : "Ceas 24 de ore") : (en ? "12-hour clock" : "Ceas 12 ore (AM/PM)"));
+		ids.add("lang"); items.add(en ? "Limba română" : "Limba engleză");
+		ids.add("keepOn"); items.add(keepOn ? (en ? "Let the screen sleep" : "Lasă ecranul să se stingă") : (en ? "Keep the screen on" : "Ține ecranul aprins"));
+		ids.add("theme"); items.add(en ? "Theme…" : "Temă…");
+		if (own) { ids.add("brightAuto"); items.add(en ? "Phone's brightness" : "Luminozitatea telefonului"); }
+		ids.add("loc"); items.add(auto ? (en ? "Turn location off" : "Oprire localizare") : (en ? "Turn location on" : "Pornire localizare"));
+		ids.add("update"); items.add(en ? "Check for updates" : "Verifică actualizări");
+		ids.add("about"); items.add(en ? "About" : "Despre");
+		// The menu shows five items; the rest scroll up, the window keeps its size. "⌄ more" under
+		// the list says there is more, until the last item is in view.
 		final android.widget.ListView lv = new android.widget.ListView(this);
 		AlertDialog.Builder b = dialog().setTitle("☰");
 		android.widget.ArrayAdapter<String> ad = new android.widget.ArrayAdapter<String>(b.getContext(),
@@ -508,9 +611,34 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		lv.setDivider(null);
 		View row = ad.getView(0, null, lv);
 		row.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-		lv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, row.getMeasuredHeight() * 5));
-		android.widget.FrameLayout box = new android.widget.FrameLayout(this);
-		box.addView(lv, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, row.getMeasuredHeight() * 5));
+		int rh = row.getMeasuredHeight();
+		android.widget.LinearLayout box = new android.widget.LinearLayout(this);
+		box.setOrientation(android.widget.LinearLayout.VERTICAL);
+		box.addView(lv, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, rh * 5));
+		final android.widget.TextView more = new android.widget.TextView(b.getContext());
+		more.setText(en ? "⌄  more  ⌄" : "⌄  mai multe  ⌄");
+		more.setGravity(android.view.Gravity.CENTER);
+		more.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
+		more.setTextColor(s.dark ? 0xFFA6A39A : 0xFF555555);
+		int pad = Math.round(6 * getResources().getDisplayMetrics().density);
+		more.setPadding(0, pad, 0, pad);
+		more.setVisibility(items.size() > 5 ? View.VISIBLE : View.INVISIBLE);
+		box.addView(more, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		lv.setOnScrollListener(new android.widget.AbsListView.OnScrollListener() {
+			public void onScrollStateChanged(android.widget.AbsListView v, int st) {
+			}
+
+			public void onScroll(android.widget.AbsListView v, int first, int vis, int total) {
+				View last = v.getChildAt(v.getChildCount() - 1);
+				boolean end = first + vis >= total && last != null && last.getBottom() <= v.getHeight();
+				more.setVisibility(end ? View.INVISIBLE : View.VISIBLE);
+			}
+		});
+		more.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				lv.smoothScrollToPosition(ids.size() - 1);
+			}
+		});
 		b.setView(box);
 		final AlertDialog menu = b.create();
 		menu.setOnDismissListener(new DialogInterface.OnDismissListener() {
@@ -522,20 +650,20 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			public void onItemClick(android.widget.AdapterView<?> p, View v, int k, long id) {
 				menu.dismiss();
 				SharedPreferences.Editor e = prefs.edit();
-				switch (k) {
-				case 0: onCity(); return;
-				case 1: e.putBoolean("unitF", !s.unitF); break;
-				case 2: e.putBoolean("clk12", !s.clk12); break;
-				case 3: e.putString("lang", en ? "ro" : "en"); break;
-				case 4: e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true)); break;
-				case 5: pickTheme(); return;
-				case 6:
+				String it = ids.get(k);
+				if (it.equals("city")) { onCity(); return; }
+				else if (it.equals("unit")) e.putBoolean("unitF", !s.unitF);
+				else if (it.equals("clock")) e.putBoolean("clk12", !s.clk12);
+				else if (it.equals("lang")) e.putString("lang", en ? "ro" : "en");
+				else if (it.equals("keepOn")) e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true));
+				else if (it.equals("theme")) { pickTheme(); return; }
+				else if (it.equals("brightAuto")) e.remove("bright");
+				else if (it.equals("loc")) {
 					if (autoLoc()) setAutoLoc(false);
 					else onLocate();
 					return;
-				case 7: updater.check(true); return;
-				default: about(); return;
-				}
+				} else if (it.equals("update")) { updater.check(true); return; }
+				else { about(); return; }
 				e.apply();
 				applySettings();
 				view.invalidate();
@@ -545,9 +673,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	private void pickTheme() {
-		final String[] keys = { "light", "dark", "auto" };
-		String[] items = s.T.en ? new String[] { "Light (Kindle, black and white)", "Dark (Claude colours)", "Automatic (as the phone)" }
-				: new String[] { "Luminoasă (Kindle, alb-negru)", "Întunecată (culorile Claude)", "Automată (ca telefonul)" };
+		final String[] keys = hasLight() ? new String[] { "light", "dark", "auto", "sensor" } : new String[] { "light", "dark", "auto" };
+		String[] all = s.T.en
+				? new String[] { "Light (Kindle, black and white)", "Dark (Claude colours)", "Automatic (as the phone)", "By the room's light (sensor)" }
+				: new String[] { "Luminoasă (Kindle, alb-negru)", "Întunecată (culorile Claude)", "Automată (ca telefonul)", "După lumina din cameră (senzor)" };
+		String[] items = java.util.Arrays.copyOf(all, keys.length);
 		int cur = java.util.Arrays.asList(keys).indexOf(prefs.getString("theme", "auto"));
 		show(dialog().setTitle(s.T.en ? "Theme" : "Temă").setSingleChoiceItems(items, cur, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
