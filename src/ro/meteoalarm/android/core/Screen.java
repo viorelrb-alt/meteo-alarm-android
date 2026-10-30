@@ -42,6 +42,9 @@ public final class Screen {
 	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
 	public final float[] warnArea = { 0, 0, 0, 0 };
 	public int warnStart, warnBoxes;
+	/** Where the hour boxes are (for the swipe) and the page shown; set by draw. */
+	public final float[] hourArea = { 0, 0, 0, 0 };
+	public int hourPage, hourPages;
 
 	/** Canvas width: 758 in portrait, wider in landscape. */
 	private float cw = W;
@@ -208,42 +211,56 @@ public final class Screen {
 
 	/** Precipitation chart when rain or snow is due within 12 hours, else the next hours as tiles. */
 	private void drawNextHours(float x, float y, float wd, float h) {
+		hourArea[2] = 0;
 		if (rainText().length() > 0 || w.tileHours.size() < 2) drawPrecipBox(x, y, wd, h, 46);
-		else drawHourTiles(x, y, wd, h, 46);
+		else drawHourBoxes(x, y, wd, h);
 	}
 
 	/**
-	 * The next hours in two rows of tiles, as many columns as fit (at least 125 units each): the
-	 * hour on top, the temperature on the left and the weather icon on the right.
+	 * The next hours, one box per hour like the day boxes: the hour on top, the icon, the
+	 * temperature and the sky. As many boxes as fit (at least 140 units wide each); the next ones
+	 * are reached by swiping, with one dot per page under the boxes.
 	 */
-	private void drawHourTiles(float pl, float pt, float pw, float ph, float phd) {
-		box(pl, pt, pw, ph, phd);
-		head(pt, phd, pl + pw / 2, pw - 40, T.hoursUp, 0);
-		float ix = pl + 14, iw = pw - 28, top = pt + phd + 6, bot = pt + ph - 8;
-		int cols = Math.max(1, (int) (iw / 125)), rows = 2;
+	private void drawHourBoxes(float x0, float y, float wd, float h) {
 		int avail = w.tileHours.size() - 1;
-		if (avail < cols * rows) rows = avail > cols ? 2 : 1;
-		float tw = iw / cols, th = (bot - top) / rows, ic = Math.min(th - 40, tw * 0.46f);
-		// One temperature size for all tiles: the largest at which every one fits.
-		float p = Math.min(48, th * 0.5f);
-		for (int k = 1; k <= Math.min(avail, rows * cols); k++)
-			if (!Double.isNaN(w.tileTemp[k])) p = fit(true, p, tw - ic - 22, t(w.tileTemp[k]) + "°");
-		for (int r = 0; r < rows; r++) {
-			if (r > 0) g.rect(ix + 6, top + r * th - 1, iw - 12, 2, c.line);
-			for (int col = 0; col < cols; col++) {
-				int k = 1 + r * cols + col;
-				if (k > avail) break;
-				float tx = ix + col * tw, ty = top + r * th;
-				if (col > 0) g.rect(tx - 1, ty + 10, 2, th - 20, c.line);
-				String hr = Texts.clock(w.tileHours.get(k), clk12);
-				ctext(false, fit(false, 23, tw - 12, hr), ty + 6, tx + tw / 2, hr, c.dim);
-				float cy = ty + 32 + (th - 32) / 2;
-				drawIcon(Weather.iconOf(w.tileCode[k], w.tileDay[k]), tx + tw - ic - 8, cy - ic / 2, ic);
-				if (Double.isNaN(w.tileTemp[k])) continue;
-				String tt = t(w.tileTemp[k]) + "°";
-				ltext(true, p, cy - p * 0.5f, tx + 10, tt, c.ink);
-			}
+		float gap = 16, dotsH = 26, bh = h - dotsH;
+		int per = Math.max(1, Math.min(avail, (int) ((wd + gap) / (140 + gap))));
+		hourPages = (avail + per - 1) / per;
+		hourPage = Math.max(0, Math.min(hourPage, hourPages - 1));
+		hourArea[0] = x0; hourArea[1] = y; hourArea[2] = wd; hourArea[3] = bh;
+		float bw = (wd - gap * (per - 1)) / per, hd = 44;
+		// One size for all temperatures and all descriptions on the page.
+		float tp = 44, dp = 24;
+		for (int i = 0; i < per; i++) {
+			int k = 1 + hourPage * per + i;
+			if (k > avail) break;
+			if (!Double.isNaN(w.tileTemp[k])) tp = fit(true, tp, bw - 16, t(w.tileTemp[k]) + "°");
+			dp = fit(false, dp, bw - 12, T.describe(w.tileCode[k], w.tileDay[k])[1]);
 		}
+		for (int i = 0; i < per; i++) {
+			int k = 1 + hourPage * per + i;
+			float x = x0 + i * (bw + gap), cx = x + bw / 2;
+			box(x, y, bw, bh, hd);
+			if (k > avail) continue;
+			String hr = Texts.clock(w.tileHours.get(k), clk12);
+			head(y, hd, cx, bw - 12, hr, 0);
+			String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
+			// Icon, temperature and sky as one block, centred under the hour.
+			float room = bh - hd - tp - dp - 34, ic = Math.min(Math.min(96, bw * 0.6f), room);
+			float top = y + hd + (bh - hd - (ic + 4 + tp + 6 + dp)) / 2;
+			drawIcon(Weather.iconOf(w.tileCode[k], w.tileDay[k]), cx - ic / 2, top, ic);
+			float ty = top + ic + 4;
+			if (!Double.isNaN(w.tileTemp[k])) ctext(true, tp, ty, cx, t(w.tileTemp[k]) + "°", c.ink);
+			ctext(false, dp, ty + tp + 6, cx, d[1], c.dim);
+		}
+		dots(x0 + wd / 2, y + bh + 10, hourPages, hourPage);
+	}
+
+	/** N dots centred on CX, the current one in ink (nothing for a single page). */
+	private void dots(float cx, float y, int n, int cur) {
+		if (n <= 1) return;
+		float dx = cx - (n * 22 - 10) / 2f;
+		for (int k = 0; k < n; k++) g.roundRect(dx + k * 22, y, 12, 12, 6, k == cur ? c.ink : c.dim);
 	}
 
 	// --- Helpers ---------------------------------------------------------------------
@@ -469,10 +486,7 @@ public final class Screen {
 		}
 		if (n <= vis) return y + h;
 		// One dot per position of the boxes; the current one in ink.
-		int pos = n - vis + 1;
-		float dx = x0 + wd / 2 - (pos * 22 - 10) / 2f;
-		for (int k = 0; k < pos; k++)
-			g.roundRect(dx + k * 22, y + h + 10, 12, 12, 6, k == warnStart ? c.ink : c.dim);
+		dots(x0 + wd / 2, y + h + 10, n - vis + 1, warnStart);
 		return y + h + 26;
 	}
 

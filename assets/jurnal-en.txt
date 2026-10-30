@@ -1,3 +1,8 @@
+v0.23 · 31 October 2026
+- The next hours show in separate boxes, one per hour, like the days: hour, icon, temperature and sky.
+- 4 hours show (6 in landscape); swipe left-right on the boxes for the next ones, the dots show the page.
+- Pull the screen down to refresh the weather (the refresh button stays).
+
 v0.22 · 31 October 2026
 - New round icon with the same drawing.
 - The Play Protect explanation says exactly what to tap: "More details", then "Install without scanning".

@@ -1,3 +1,8 @@
+v0.23 · 31 octombrie 2026
+- Vremea pe următoarele ore apare în casete separate, câte una pe oră, ca zilele: ora, iconul, temperatura și cerul.
+- Se văd 4 ore (6 în modul peisaj); următoarele apar glisând stânga-dreapta pe casete, iar punctele arată pagina.
+- Trage ecranul în jos ca să actualizezi vremea (butonul de actualizare rămâne).
+
 v0.22 · 31 octombrie 2026
 - Icon nou, rotund, cu desenul de dinainte.
 - Explicația pentru Play Protect spune exact ce să apeși: „Mai multe”, apoi „Instalează fără verificare”.
