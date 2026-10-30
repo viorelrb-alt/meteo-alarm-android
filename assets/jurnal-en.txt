@@ -1,0 +1,40 @@
+v0.19 · 31 October 2026
+- New menu item "What's new": the log of all versions.
+- After an update, the app shows once what changed.
+- "Refresh now" becomes "Refresh weather".
+
+v0.18 · 30 October 2026
+- Bottom windows (welcome, About, updates): the buttons are at the top, under the title, and the text scrolls under them.
+- The first-start message closes only with "I understand".
+
+v0.17 · 30 October 2026
+- Menu: clearer language and location items ("Turn location off" / "Turn location on").
+
+v0.16 · 30 October 2026
+- Weather warnings in separate boxes, one per code, with the title bar in the code's colour.
+- The red code has a warning sign in its box; the third box is reached by swiping.
+- The town name moved next to the menu button.
+
+v0.15 · 30 October 2026
+- First-start message: test version, no data collected, why location and sensors are needed.
+- Updates show in a small window at the bottom, with "Update" and "Cancel".
+- Automatic update check once a week.
+- Explanation of the Play Protect warning.
+
+v0.14 · 30 October 2026
+- In-app updates from GitHub (☰ › Check for updates).
+
+v0.13 · 29 October 2026
+- When it is dry: the weather for the next hours, in tiles.
+- Automatic location at start and every hour; towns found are added to the list.
+- Locate button.
+- Fixed the icon overlapping "°C" in landscape.
+
+v0.12 · 29 October 2026
+- Landscape: the screen rotates with the phone.
+
+v0.11 · 29 October 2026
+- Dark theme in the Claude app colours (☰ › Theme).
+
+v0.1 · 29 October 2026
+- First Android version, made from Meteo Alarm Kindle: weather, 12-hour rain chart, 5 days, sun, UV, pollen and ANM warnings.

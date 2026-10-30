@@ -1,0 +1,41 @@
+v0.19 · 31 octombrie 2026
+- Meniu nou „Ce e nou”: jurnalul tuturor versiunilor.
+- După o actualizare, aplicația arată o dată ce s-a schimbat.
+- „Actualizează acum” devine „Actualizează vremea”.
+
+v0.18 · 30 octombrie 2026
+- Ferestrele de jos (bun venit, Despre, actualizări): butoanele sunt sus, sub titlu, iar textul se derulează sub ele.
+- Mesajul de la prima pornire se închide doar cu „Am înțeles”.
+
+v0.17 · 30 octombrie 2026
+- Meniu: „English” devine „Limba engleză”.
+- Meniu: „Oprire localizare” / „Pornire localizare”.
+
+v0.16 · 30 octombrie 2026
+- Avertizările meteo în casete separate, câte una pentru fiecare cod, cu bara de titlu în culoarea codului.
+- Codul roșu are semnul de atenție în casetă; a treia casetă se vede glisând stânga-dreapta.
+- Numele localității a urcat lângă butonul de meniu.
+
+v0.15 · 30 octombrie 2026
+- Mesaj la prima pornire: versiune de test, nu colectăm date, de ce cerem locația și senzorii.
+- Actualizările apar într-o fereastră mică, de jos, cu „Actualizează” și „Renunță”.
+- Verificarea automată a actualizărilor: o dată pe săptămână.
+- Explicație pentru avertizarea Play Protect.
+
+v0.14 · 30 octombrie 2026
+- Actualizări din aplicație, de pe GitHub (☰ › Verifică actualizări).
+
+v0.13 · 29 octombrie 2026
+- Când nu plouă: vremea pe următoarele ore, în casete.
+- Localizare automată la pornire și din oră în oră; localitățile găsite se adaugă în listă.
+- Buton de localizare exactă.
+- Corectată suprapunerea iconiței peste „°C” în modul peisaj.
+
+v0.12 · 29 octombrie 2026
+- Modul peisaj: ecranul se rotește cu telefonul.
+
+v0.11 · 29 octombrie 2026
+- Tema întunecată, în culorile aplicației Claude (☰ › Temă).
+
+v0.1 · 29 octombrie 2026
+- Prima versiune Android, făcută din Meteo Alarm Kindle: vremea, ploaia pe 12 ore, 5 zile, soare, UV, polen și avertizările ANM.

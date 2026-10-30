@@ -39,7 +39,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.18";
+	static final String VERSION = "Meteo Alarm Android v0.19";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -143,7 +143,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		sheet.show(VERSION, aboutText(), s.T.en ? "I understand" : "Am înțeles", new Runnable() {
 			public void run() {
 				sheet.hide();
-				prefs.edit().putBoolean("welcomed", true).apply();
+				prefs.edit().putBoolean("welcomed", true).putString("seenVersion", updater.installed()).apply();
 				if (autoLoc() && !Locator.allowed(MainActivity.this)) askLocation();
 			}
 		}, null);
@@ -196,6 +196,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			return;
 		}
 		if (autoLoc() && !Locator.allowed(this) && !asked) askLocation();
+		// Just updated: what is new in this version, once (instead of the update check this time).
+		String cur = updater.installed();
+		if (!cur.equals(prefs.getString("seenVersion", ""))) {
+			prefs.edit().putString("seenVersion", cur).apply();
+			news(true);
+			return;
+		}
 		// Look for a newer version once a week (the bottom window opens only when there is one).
 		long now = System.currentTimeMillis();
 		if (now - prefs.getLong("updateChecked", 0) >= UPDATE_CHECK_MS) {
@@ -450,13 +457,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final boolean en = s.T.en;
 		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
 		String[] items = en
-				? new String[] { "Refresh now", "Choose town", s.unitF ? "Show °C" : "Show °F", s.clk12 ? "24-hour clock" : "12-hour clock",
+				? new String[] { "Refresh weather", "Choose town", s.unitF ? "Show °C" : "Show °F", s.clk12 ? "24-hour clock" : "12-hour clock",
 						"Limba română", keepOn ? "Let the screen sleep" : "Keep the screen on", "Theme…",
-						auto ? "Turn location off" : "Turn location on", "Check for updates", "About" }
-				: new String[] { "Actualizează acum", "Alege localitatea", s.unitF ? "Afișează °C" : "Afișează °F",
+						auto ? "Turn location off" : "Turn location on", "Check for updates", "What's new", "About" }
+				: new String[] { "Actualizează vremea", "Alege localitatea", s.unitF ? "Afișează °C" : "Afișează °F",
 						s.clk12 ? "Ceas 24 de ore" : "Ceas 12 ore (AM/PM)", "Limba engleză", keepOn ? "Lasă ecranul să se stingă" : "Ține ecranul aprins",
 						"Temă…", auto ? "Oprire localizare" : "Pornire localizare",
-						"Verifică actualizări", "Despre" };
+						"Verifică actualizări", "Ce e nou", "Despre" };
 		show(dialog().setTitle("☰").setItems(items, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
 				SharedPreferences.Editor e = prefs.edit();
@@ -473,6 +480,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					else onLocate();
 					return;
 				case 8: updater.check(true); return;
+				case 9: news(false); return;
 				default: about(); return;
 				}
 				e.apply();
@@ -495,6 +503,29 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				view.invalidate();
 			}
 		}));
+	}
+
+	/** The change log from assets, newest first; LATEST: only the newest version. */
+	private void news(boolean latest) {
+		String log;
+		try {
+			java.io.InputStream in = getAssets().open(s.T.en ? "jurnal-en.txt" : "jurnal-ro.txt");
+			java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+			byte[] buf = new byte[8192];
+			int n;
+			while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
+			in.close();
+			log = new String(out.toByteArray(), "UTF-8").trim();
+		} catch (Exception e) {
+			return;
+		}
+		String title = s.T.en ? "What's new" : "Ce e nou";
+		if (latest) {
+			int cut = log.indexOf("\n\n");
+			if (cut > 0) log = log.substring(0, cut);
+			title += " · v" + updater.installed();
+		}
+		sheet.show(title, log, null, null, s.T.en ? "Close" : "Închide");
 	}
 
 	private void about() {
