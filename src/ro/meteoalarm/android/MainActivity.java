@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.34";
+	static final String VERSION = "Meteo Alarm Android v0.35";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -176,6 +176,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		listenLight(theme.equals("sensor") && resumed);
 		applyBrightness();
 		s.autoLoc = autoLoc();
+		s.sensorTheme = theme.equals("sensor");
 		barColours();
 		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
@@ -195,39 +196,41 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	// --- Light sensor and brightness ------------------------------------------------------
 
 	/** Below DARK_LUX the room counts as dark, above LIGHT_LUX as lit (in between: no change). */
-	private static final float DARK_LUX = 8, LIGHT_LUX = 25;
+	private static final float DARK_LUX = 10, LIGHT_LUX = 30;
 	/** The room has to stay dark (or lit) this long before the theme follows. */
-	private static final long LIGHT_HOLD_MS = 4000;
+	private static final long LIGHT_HOLD_MS = 1500;
 	private SensorManager sensors;
-	private boolean resumed, roomDark, lightOn, lightFirst;
-	private long lightSince;
+	private boolean resumed, roomDark, lightOn, lightFirst, lightWant;
+
+	/**
+	 * Applies the room's state once it has held for LIGHT_HOLD_MS. A timer, not the next reading:
+	 * the sensor reports only changes, so a room that goes dark and stays dark sends one reading.
+	 */
+	private final Runnable lightApply = new Runnable() {
+		public void run() {
+			if (lightWant == roomDark) return;
+			roomDark = lightWant;
+			applySettings();
+			view.invalidate();
+		}
+	};
 
 	private final SensorEventListener light = new SensorEventListener() {
 		public void onSensorChanged(SensorEvent e) {
 			float lux = e.values[0];
-			boolean want = lux < DARK_LUX ? true : lux > LIGHT_LUX ? false : roomDark;
-			long now = System.currentTimeMillis();
+			// Light: the light theme; dark: the dark theme.
+			boolean want = lux < DARK_LUX ? true : lux > LIGHT_LUX ? false : lightWant;
 			// The first reading counts at once (the room is as it is when the app opens).
 			if (lightFirst) {
 				lightFirst = false;
-				lightSince = 0;
-				if (want != roomDark) {
-					roomDark = want;
-					applySettings();
-					view.invalidate();
-				}
+				lightWant = want;
+				lightApply.run();
 				return;
 			}
-			if (want == roomDark) {
-				lightSince = 0;
-				return;
-			}
-			if (lightSince == 0) lightSince = now;
-			if (now - lightSince < LIGHT_HOLD_MS) return;
-			lightSince = 0;
-			roomDark = want;
-			applySettings();
-			view.invalidate();
+			if (want == lightWant) return;
+			lightWant = want;
+			handler.removeCallbacks(lightApply);
+			if (want != roomDark) handler.postDelayed(lightApply, LIGHT_HOLD_MS);
 		}
 
 		public void onAccuracyChanged(Sensor sn, int acc) {
@@ -240,8 +243,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Sensor sn = sensors == null ? null : sensors.getDefaultSensor(Sensor.TYPE_LIGHT);
 		if (sn == null || on == lightOn) return;
 		lightOn = on;
-		lightSince = 0;
 		lightFirst = true;
+		lightWant = roomDark;
+		handler.removeCallbacks(lightApply);
 		if (on) sensors.registerListener(light, sn, SensorManager.SENSOR_DELAY_NORMAL);
 		else sensors.unregisterListener(light);
 	}
@@ -302,6 +306,20 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		lp.screenBrightness = b;
 		getWindow().setAttributes(lp);
 		if (save) prefs.edit().putFloat("bright", b).apply();
+	}
+
+	/** The button next to the sun: the theme by the room's light, on or off (then as the phone). */
+	public void toggleSensor() {
+		if (!hasLight()) {
+			toast(s.T.en ? "This phone has no light sensor." : "Telefonul nu are senzor de lumină.");
+			return;
+		}
+		boolean on = !"sensor".equals(prefs.getString("theme", "auto"));
+		prefs.edit().putString("theme", on ? "sensor" : "auto").apply();
+		applySettings();
+		view.invalidate();
+		toast(on ? (s.T.en ? "Theme by the room's light: on" : "Tema după lumina din cameră: pornită")
+				: (s.T.en ? "Theme by the room's light: off (as the phone)" : "Tema după lumina din cameră: oprită (ca telefonul)"));
 	}
 
 	/** The moon button over the brightness bar: dark or light theme, chosen by hand. */

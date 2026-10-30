@@ -69,6 +69,8 @@ public final class Screen {
 	 * edge), with the dark / light theme button over it, and its level (0–1, the system's curve).
 	 */
 	public boolean brightBar;
+	/** The theme follows the room's light (the button next to the sun is filled). */
+	public boolean sensorTheme;
 	public float brightLevel = 0.5f;
 	/**
 	 * The bar's colours, from the phone's theme (Android 12+: its palette, so a pink theme gives a
@@ -80,7 +82,7 @@ public final class Screen {
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
-			btnLocate = { 124, 0, 64, 64 }, btnBright = { 208, 0, 64, 64 },
+			btnLocate = { 124, 0, 64, 64 }, btnBright = { 208, 0, 64, 64 }, btnSensor = { 292, 0, 64, 64 },
 			cityArea = { 40, 104, 380, 56 };
 	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
 	public final float[] warnArea = { 0, 0, 0, 0 };
@@ -252,8 +254,8 @@ public final class Screen {
 			if (pollenPlant.length() > 0) sb.append(" (").append(T.plant(pollenPlant)).append(')');
 		}
 		String sun = sb.toString();
-		float sp = fit(false, 27, cw - 520 - 260, sun);
-		ctext(false, sp, fb + 26 + (27 - sp) / 2, (520 + cw - 260) / 2, sun, c.ink);
+		float sp = fit(false, 27, cw - 600 - 260, sun);
+		ctext(false, sp, fb + 26 + (27 - sp) / 2, (600 + cw - 260) / 2, sun, c.ink);
 	}
 
 	/**
@@ -832,6 +834,18 @@ public final class Screen {
 
 	// --- Brightness ------------------------------------------------------------------------
 
+	/** A ring of radius R at CX CY with its right half filled. */
+	private void halfMoon(float cx, float cy, float r, int color) {
+		g.arc(cx, cy, r, 0, 360, 3, color);
+		float[] xy = new float[2 * 19];
+		for (int k = 0; k <= 18; k++) {
+			double a = -Math.PI / 2 + k * Math.PI / 18;
+			xy[2 * k] = cx + (float) Math.cos(a) * r;
+			xy[2 * k + 1] = cy + (float) Math.sin(a) * r;
+		}
+		g.poly(xy, color);
+	}
+
 	/** A sun R units across at CX CY: a disc and eight rays. */
 	private void sun(float cx, float cy, float r, int color) {
 		float d = r * 0.42f;
@@ -903,6 +917,11 @@ public final class Screen {
 		button(btnBright);
 		if (brightBar) g.roundRect(btnBright[0] + 2, fb + 2, 60, 60, 8, c.ink);
 		sun(240, fb + 32, 22, brightBar ? c.page : c.ink);
+		// Theme by the room's light: a circle half light, half dark; filled while it is on.
+		btnSensor[1] = fb;
+		button(btnSensor);
+		if (sensorTheme) g.roundRect(btnSensor[0] + 2, fb + 2, 60, 60, 8, c.ink);
+		halfMoon(324, fb + 32, 17, sensorTheme ? c.page : c.ink);
 		float batLeft = cw - 40;
 		float gy = fb + 22;
 		if (batt >= 0) {
@@ -934,9 +953,9 @@ public final class Screen {
 			}
 		}
 		if (upd.length() > 0) {
-			float maxw = (cw > W && !tablet ? 520 : batLeft) - 291 - 14;
+			float maxw = (cw > W && !tablet ? 600 : batLeft) - 375 - 14;
 			float up = fit(bold, 27, maxw, upd);
-			ltext(bold, up, fb + 26, 291, upd, bold ? c.ink : c.dim);
+			ltext(bold, up, fb + 26, 375, upd, bold ? c.ink : c.dim);
 		}
 	}
 }

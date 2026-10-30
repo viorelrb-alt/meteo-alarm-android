@@ -28,6 +28,9 @@ final class WeatherView extends View {
 
 		/** Switches between the dark and the light theme. */
 		void toggleTheme();
+
+		/** The theme by the room's light, on or off. */
+		void toggleSensor();
 	}
 
 	// The phone's brightness curve (Android's BrightnessUtils, HLG): slider position 0–1 to the
@@ -234,6 +237,7 @@ final class WeatherView extends View {
 		else if (in(screen.btnRefresh, x, y)) taps.onRefresh();
 		else if (in(screen.btnLocate, x, y)) taps.onLocate();
 		else if (in(screen.btnBright, x, y)) showBar(3000);
+		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
 		else if (in(screen.btnCity, x, y) || in(screen.cityArea, x, y)) taps.onCity();
 		return true;
 	}

@@ -1,3 +1,7 @@
+v0.35 · 31 October 2026
+- Fixed the theme by the room's light: light gives the light theme, dark gives the dark theme, and it switches both ways. It follows after 1.5 seconds (it was 4).
+- New button next to the sun, a half-filled circle: filled while the theme follows the room's light. A tap turns it on or off (off: the theme follows the phone).
+
 v0.34 · 31 October 2026
 - The brightness bar takes its colours from the phone's theme (Android 12+): a pink phone theme gives a pink bar. It looks the same in the light and the dark theme, like the phone's bar.
 - The moon button has a thick ring: in the light theme it is white with a black moon and ring; in the dark theme the other way round.
