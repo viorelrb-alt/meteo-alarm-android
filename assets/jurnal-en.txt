@@ -1,3 +1,9 @@
+v0.33 · 31 October 2026
+- The brightness panel at the bottom is gone. The sun button now shows the vertical bar on the left; unused, it goes away after 3 seconds.
+- The vertical bar is closer to the left edge, without a frame, and the track under the level is half see-through.
+- Over the bar there is a round moon button, as on Samsung: it switches between the dark and the light theme.
+- After use, the bar stays 4 seconds or until you touch another part of the screen.
+
 v0.32 · 31 October 2026
 - The ☰ menu shows "⌃ more ⌃" at the top too, when the list is scrolled; tapping it goes back to the start.
 - "Theme…" now shows without scrolling; "Limba română" moved down to the scrolling part. "Phone's brightness" left the menu.

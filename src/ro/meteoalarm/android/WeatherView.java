@@ -26,8 +26,8 @@ final class WeatherView extends View {
 		/** Sets the app's brightness (below 0: the phone's again); SAVE when the finger lifts. */
 		void setBrightness(float b, boolean save);
 
-		/** The app has its own brightness. */
-		boolean ownBrightness();
+		/** Switches between the dark and the light theme. */
+		void toggleTheme();
 	}
 
 	// The phone's brightness curve (Android's BrightnessUtils, HLG): slider position 0–1 to the
@@ -53,11 +53,27 @@ final class WeatherView extends View {
 	private float pull;
 	private boolean pulling;
 	/**
-	 * Left-edge brightness slider, as on the Kindle: a finger moving up or down in a strip a little in
-	 * from the left edge (clear of the back gesture) brightens or dims; a bar shows the level.
+	 * Brightness bar, as on the Kindle: a finger moving up or down in a strip a little in from the
+	 * left edge (clear of the back gesture), or on the bar the sun button shows, brightens or dims.
+	 * The bar goes away 3 s after the sun button if unused, 4 s after the finger lifts, or at a
+	 * touch elsewhere.
 	 */
-	private boolean edge, sliding, panelDrag, panelDown;
+	private boolean edge, sliding, barDown, barDrag, moonDown;
 	private float pos0;
+	private final Runnable hideBar = new Runnable() {
+		public void run() {
+			screen.brightBar = false;
+			invalidate();
+		}
+	};
+
+	private void showBar(long ms) {
+		if (!screen.brightBar) screen.brightLevel = toPos(taps.brightness());
+		screen.brightBar = true;
+		removeCallbacks(hideBar);
+		if (ms > 0) postDelayed(hideBar, ms);
+		invalidate();
+	}
 	private final Paint pp = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private final float dp;
 
@@ -116,17 +132,9 @@ final class WeatherView extends View {
 		return x >= b[0] - 12 && x <= b[0] + b[2] + 12 && y >= b[1] - 12 && y <= b[1] + b[3] + 12;
 	}
 
-	private static boolean inside(float[] b, float x, float y) {
-		return x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
-	}
-
-	/** The panel's slider under the finger at X (canvas units): live brightness. */
-	private void panelSet(float x) {
-		float[] t = screen.panelTrack;
-		// The round end holds the sun: the level runs from its middle to the far end's middle.
-		float p = (x - t[0] - t[3] / 2) / (t[2] - t[3]);
-		screen.brightLevel = Math.max(0, Math.min(1, p));
-		screen.brightOwn = true;
+	/** The bar under the finger, DY pixels from where it went down. */
+	private void slide(float dy) {
+		screen.brightLevel = Math.max(0, Math.min(1, pos0 - dy / (screen.barArea[3] * scale)));
 		taps.setBrightness(toLevel(screen.brightLevel), false);
 		invalidate();
 	}
@@ -139,36 +147,31 @@ final class WeatherView extends View {
 			downY = e.getY();
 			pulling = false;
 			pull = 0;
-			edge = !screen.brightPanel && downX >= 12 * dp && downX <= 60 * dp;
+			edge = !screen.brightBar && downX >= 12 * dp && downX <= 60 * dp;
 			sliding = false;
-			panelDrag = false;
-			// The brightness panel: drag on its slider; a tap elsewhere closes it.
-			if (screen.brightPanel) {
+			barDown = screen.brightBar;
+			barDrag = false;
+			moonDown = false;
+			// The bar is shown: drag on it, tap the moon, or a touch elsewhere hides it.
+			if (barDown) {
 				float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
-				panelDown = true;
-				if (in(screen.panelTrack, ux, uy)) {
-					panelDrag = true;
-					panelSet(ux);
-				}
+				removeCallbacks(hideBar);
+				if (in(screen.barArea, ux, uy)) {
+					barDrag = true;
+					pos0 = screen.brightLevel;
+				} else if (in(screen.btnMoon, ux, uy)) moonDown = true;
+				else hideBar.run();
 				return true;
 			}
-			panelDown = false;
 		}
-		if (panelDown) {
-			float ux = (e.getX() - ox) / scale, uy = (e.getY() - oy) / scale;
-			if (act == MotionEvent.ACTION_MOVE && panelDrag) panelSet(ux);
+		if (barDown) {
+			if (act == MotionEvent.ACTION_MOVE && barDrag) slide(e.getY() - downY);
 			if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
-				panelDown = false;
-				float sx = (downX - ox) / scale, sy = (downY - oy) / scale;
-				if (panelDrag) taps.setBrightness(toLevel(screen.brightLevel), true);
-				else if (in(screen.panelPhone, sx, sy) && in(screen.panelPhone, ux, uy)) {
-					taps.setBrightness(-1, true);
-					screen.brightOwn = false;
-					screen.brightLevel = toPos(taps.brightness());
-				} else if (!inside(screen.panelArea, sx, sy) && !in(screen.btnBright, sx, sy)) screen.brightPanel = false;
-				else if (in(screen.btnBright, sx, sy)) screen.brightPanel = false;
-				panelDrag = false;
-				invalidate();
+				barDown = false;
+				float ux = (e.getX() - ox) / scale, uy = (e.getY() - oy) / scale;
+				if (barDrag) taps.setBrightness(toLevel(screen.brightLevel), true);
+				if (moonDown && in(screen.btnMoon, ux, uy)) taps.toggleTheme();
+				if (barDrag || moonDown) showBar(4000);
 			}
 			return true;
 		}
@@ -176,15 +179,12 @@ final class WeatherView extends View {
 		if (act == MotionEvent.ACTION_MOVE) {
 			if (edge && !pulling && !sliding && Math.abs(dy) > 16 * dp && Math.abs(dy) > 2 * Math.abs(dx)) {
 				sliding = true;
-				pos0 = toPos(taps.brightness());
-				screen.brightBar = true;
+				showBar(0);
+				pos0 = screen.brightLevel;
 			}
 			if (sliding) {
-				// The whole bar's length (42% of the screen) runs from the dimmest to the brightest.
-				screen.brightLevel = Math.max(0, Math.min(1, pos0 - dy / (getHeight() * 0.42f)));
-				screen.brightOwn = true;
-				taps.setBrightness(toLevel(screen.brightLevel), false);
-				invalidate();
+				// The whole bar's length runs from the dimmest to the brightest.
+				if (screen.barArea[3] > 0) slide(dy);
 				return true;
 			}
 			// Pulling down (more down than sideways) shows the refresh button; releasing it far enough refreshes.
@@ -196,9 +196,11 @@ final class WeatherView extends View {
 			return true;
 		}
 		if (act == MotionEvent.ACTION_CANCEL) {
-			if (sliding) taps.setBrightness(toLevel(screen.brightLevel), true);
+			if (sliding) {
+				taps.setBrightness(toLevel(screen.brightLevel), true);
+				showBar(4000);
+			}
 			sliding = false;
-			screen.brightBar = false;
 			pulling = false;
 			pull = 0;
 			invalidate();
@@ -207,9 +209,8 @@ final class WeatherView extends View {
 		if (act != MotionEvent.ACTION_UP) return true;
 		if (sliding) {
 			sliding = false;
-			screen.brightBar = false;
 			taps.setBrightness(toLevel(screen.brightLevel), true);
-			invalidate();
+			showBar(4000);
 			return true;
 		}
 		if (pulling) {
@@ -232,12 +233,7 @@ final class WeatherView extends View {
 		if (in(screen.btnMenu, x, y)) taps.onMenu();
 		else if (in(screen.btnRefresh, x, y)) taps.onRefresh();
 		else if (in(screen.btnLocate, x, y)) taps.onLocate();
-		else if (in(screen.btnBright, x, y)) {
-			screen.brightOwn = taps.ownBrightness();
-			screen.brightLevel = toPos(taps.brightness());
-			screen.brightPanel = true;
-			invalidate();
-		}
+		else if (in(screen.btnBright, x, y)) showBar(3000);
 		else if (in(screen.btnCity, x, y) || in(screen.cityArea, x, y)) taps.onCity();
 		return true;
 	}

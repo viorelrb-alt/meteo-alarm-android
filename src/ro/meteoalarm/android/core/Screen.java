@@ -65,14 +65,13 @@ public final class Screen {
 	/** Tablet layout (see fit). */
 	public boolean tablet;
 	/**
-	 * Brightness: the panel opened by the sun button (Kindle-like), the bar shown while sliding on
-	 * the left edge, the level on the slider (0–1, the system's curve) and whether the app has its
-	 * own brightness (otherwise the phone's).
+	 * Brightness: the vertical bar near the left edge (shown by the sun button or by sliding on the
+	 * edge), with the dark / light theme button over it, and its level (0–1, the system's curve).
 	 */
-	public boolean brightPanel, brightBar, brightOwn;
+	public boolean brightBar;
 	public float brightLevel = 0.5f;
-	/** The panel, its slider and its "as the phone" button (x, y, w, h); set by draw. */
-	public final float[] panelArea = { 0, 0, 0, 0 }, panelTrack = { 0, 0, 0, 0 }, panelPhone = { 0, 0, 0, 0 };
+	/** The bar and the theme button (x, y, w, h); set by draw. */
+	public final float[] barArea = { 0, 0, 0, 0 }, btnMoon = { 0, 0, 0, 0 };
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
@@ -132,15 +131,9 @@ public final class Screen {
 		if (tablet) drawTablet(ch);
 		else if (cw > ch) drawLandscape(ch);
 		else drawPortrait(ch);
-		panelArea[2] = 0;
-		if (brightPanel) drawBrightPanel(ch - 76);
-		if (brightBar) {
-			// Like the phone's bar: a frame around the track, so it stands out from the weather under it.
-			float bh = ch * 0.42f, by = (ch - bh) / 2;
-			g.roundRect(84, by - 16, 116, bh + 32, 58, c.line);
-			g.roundRect(86, by - 14, 112, bh + 28, 56, dark ? 0xFF30302E : Gfx.WHITE);
-			pill(100, by, 84, bh, true, brightLevel);
-		}
+		barArea[2] = 0;
+		btnMoon[2] = 0;
+		if (brightBar) drawBrightBar(ch);
 	}
 
 	private void drawPortrait(float ch) {
@@ -852,7 +845,7 @@ public final class Screen {
 	 * (VERTICAL) or the left, never less than a round end, with a sun in that end.
 	 */
 	private void pill(float x, float y, float w, float h, boolean vertical, float level) {
-		int track = dark ? 0xFF4A4944 : Gfx.GRAYD, fill = dark ? 0xFFE8E6DF : Gfx.BLACK, mark = dark ? 0xFF262624 : Gfx.WHITE;
+		int track = dark ? 0x804A4944 : 0x80AAAAAA, fill = dark ? 0xFFE8E6DF : Gfx.BLACK, mark = dark ? 0xFF262624 : Gfx.WHITE;
 		float t = vertical ? w : h, len = vertical ? h : w, f = t + Math.max(0, Math.min(1, level)) * (len - t);
 		g.roundRect(x, y, w, h, t / 2, track);
 		if (vertical) {
@@ -864,22 +857,22 @@ public final class Screen {
 		}
 	}
 
-	/** The panel of the sun button, above the status row: the slider and "as the phone". */
-	private void drawBrightPanel(float fb) {
-		float pw = Math.min(cw - 80, 700), ph = 260, px = (cw - pw) / 2, py = fb - 16 - ph;
-		panelArea[0] = px; panelArea[1] = py; panelArea[2] = pw; panelArea[3] = ph;
-		box(px, py, pw, ph, 46);
-		head(py, 46, px + pw / 2, pw - 40, T.en ? "BRIGHTNESS" : "LUMINOZITATE", 0);
-		float tx = px + 30, tw = pw - 60, ty = py + 70;
-		panelTrack[0] = tx; panelTrack[1] = ty; panelTrack[2] = tw; panelTrack[3] = 76;
-		pill(tx, ty, tw, 76, false, brightLevel);
-		String lab = T.en ? "As the phone" : "Ca telefonul";
-		float bw = Math.max(260, g.width(true, 30, lab) + 60), bx = px + (pw - bw) / 2, by = ty + 76 + 26;
-		panelPhone[0] = bx; panelPhone[1] = by; panelPhone[2] = bw; panelPhone[3] = 64;
-		// Filled while the phone's brightness is used.
-		g.roundRect(bx, by, bw, 64, 32, c.ink);
-		if (brightOwn) g.roundRect(bx + 2, by + 2, bw - 4, 60, 30, c.card);
-		ctext(true, 30, by + 15, bx + bw / 2, lab, brightOwn ? c.ink : c.card);
+	/**
+	 * The brightness bar near the left edge, like the phone's (the track half see-through), and
+	 * over it a round button with a moon that switches between the dark and the light theme.
+	 */
+	private void drawBrightBar(float ch) {
+		float x = 50, bw = 84, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
+		int fill = dark ? 0xFFE8E6DF : Gfx.BLACK, mark = dark ? 0xFF262624 : Gfx.WHITE;
+		btnMoon[0] = x; btnMoon[1] = top; btnMoon[2] = bw; btnMoon[3] = bw;
+		float r = bw / 2, cx = x + r, cy = top + r, m = r * 0.48f;
+		g.roundRect(x, top, bw, bw, r, fill);
+		// Crescent: a disc with another one, in the button's colour, over its upper right.
+		g.roundRect(cx - m, cy - m, 2 * m, 2 * m, m, mark);
+		float o = m * 0.55f, m2 = m * 0.85f;
+		g.roundRect(cx - m2 + o, cy - m2 - o * 0.6f, 2 * m2, 2 * m2, m2, fill);
+		barArea[0] = x; barArea[1] = by; barArea[2] = bw; barArea[3] = bh;
+		pill(x, by, bw, bh, true, brightLevel);
 	}
 
 	// --- Status line -----------------------------------------------------------------------
@@ -898,11 +891,11 @@ public final class Screen {
 		g.rect(lx - 1.5f, ly + 14, 3, 8, lc);
 		g.rect(lx - 22, ly - 1.5f, 8, 3, lc);
 		g.rect(lx + 14, ly - 1.5f, 8, 3, lc);
-		// Brightness: a sun; filled while its panel is open.
+		// Brightness: a sun; filled while the bar is shown.
 		btnBright[1] = fb;
 		button(btnBright);
-		if (brightPanel) g.roundRect(btnBright[0] + 2, fb + 2, 60, 60, 8, c.ink);
-		sun(240, fb + 32, 22, brightPanel ? c.page : c.ink);
+		if (brightBar) g.roundRect(btnBright[0] + 2, fb + 2, 60, 60, 8, c.ink);
+		sun(240, fb + 32, 22, brightBar ? c.page : c.ink);
 		float batLeft = cw - 40;
 		float gy = fb + 22;
 		if (batt >= 0) {

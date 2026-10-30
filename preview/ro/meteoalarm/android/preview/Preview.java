@@ -23,7 +23,7 @@ import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Warnings;
 import ro.meteoalarm.android.core.Weather;
 
-/** Desktop preview: draws the phone screen with Java2D to a PNG (java Preview ASSETS OUT.png [W H] [en] [F] [warn] [tab] [panel] [bar] [own]). */
+/** Desktop preview: draws the phone screen with Java2D to a PNG (java Preview ASSETS OUT.png [W H] [en] [F] [warn] [tab] [bar]). */
 public final class Preview {
 	static final class J2d implements Gfx {
 		final Graphics2D g;
@@ -145,9 +145,7 @@ public final class Preview {
 		s.fetched = now;
 		s.now = Calendar.getInstance();
 		s.tablet = opts.contains(" tab");
-		s.brightPanel = opts.contains(" panel");
 		s.brightBar = opts.contains(" bar");
-		s.brightOwn = opts.contains(" own");
 		s.brightLevel = 0.45f;
 		float[] f = Screen.fit(pw, ph, s.tablet);
 		float scale = f[0], cw = f[1], ch = f[2], ox = f[3], oy = f[4];

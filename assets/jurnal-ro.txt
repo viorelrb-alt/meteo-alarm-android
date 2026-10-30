@@ -1,3 +1,9 @@
+v0.33 · 31 octombrie 2026
+- Panoul de luminozitate de jos a dispărut. Butonul soare arată acum bara verticală din stânga; dacă n-o folosești, dispare după 3 secunde.
+- Bara verticală e mai aproape de marginea stângă, fără chenar, iar partea de sub nivel e pe jumătate transparentă.
+- Deasupra barei e un buton rotund cu lună, ca la Samsung: comută între tema întunecată și cea luminoasă.
+- După ce o folosești, bara mai stă 4 secunde pe ecran sau până atingi altă zonă a ecranului.
+
 v0.32 · 31 octombrie 2026
 - Meniul ☰ arată „⌃ mai multe ⌃” și sus, când lista e derulată; o apăsare pe el urcă la început.
 - „Temă…” se vede acum direct în meniu; „Limba engleză” a coborât în partea care se derulează. „Luminozitatea telefonului” a ieșit din meniu.

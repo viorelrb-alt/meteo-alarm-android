@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.32";
+	static final String VERSION = "Meteo Alarm Android v0.33";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -281,8 +281,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (save) prefs.edit().putFloat("bright", b).apply();
 	}
 
-	public boolean ownBrightness() {
-		return prefs.getFloat("bright", -1) >= 0;
+	/** The moon button over the brightness bar: dark or light theme, chosen by hand. */
+	public void toggleTheme() {
+		prefs.edit().putString("theme", s.dark ? "light" : "dark").apply();
+		applySettings();
+		view.invalidate();
 	}
 
 	@Override
