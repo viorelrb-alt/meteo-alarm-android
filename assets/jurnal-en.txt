@@ -1,3 +1,8 @@
+v0.21 · 31 October 2026
+- The ☰ menu is half as tall: the items up to the language show, the rest scroll; the menu keeps its size.
+- The locate button opens a small window saying the exact position is being looked for; it closes by itself.
+- The locate button is gray while location is off; a tap turns it on directly.
+
 v0.20 · 31 October 2026
 - "What's new" moved into the About window: the left button switches the text to the change log (and back), in the same window, at the same size.
 

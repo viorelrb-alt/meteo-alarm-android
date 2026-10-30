@@ -32,6 +32,8 @@ public final class Screen {
 	public boolean dark;
 	/** Looking for the phone's position (the locate button is drawn in the accent colour). */
 	public boolean locating;
+	/** Automatic location on; off: the locate button is gray. */
+	public boolean autoLoc = true;
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
@@ -638,7 +640,7 @@ public final class Screen {
 		// Locate: a crosshair.
 		btnLocate[1] = fb;
 		button(btnLocate);
-		int lc = locating ? c.accent : c.ink;
+		int lc = locating ? c.accent : autoLoc ? c.ink : c.dim;
 		float lx = 156, ly = fb + 32;
 		g.arc(lx, ly, 13, 0, 360, 3, lc);
 		g.arc(lx, ly, 2.5f, 0, 360, 5, lc);

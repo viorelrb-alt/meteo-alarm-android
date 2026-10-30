@@ -13,6 +13,7 @@ import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -39,7 +40,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.20";
+	static final String VERSION = "Meteo Alarm Android v0.21";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -166,6 +167,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String theme = prefs.getString("theme", "auto");
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		s.dark = theme.equals("dark") || (theme.equals("auto") && night);
+		s.autoLoc = autoLoc();
 		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -217,6 +219,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return prefs.getBoolean("autoLoc", true);
 	}
 
+	/** Automatic location on or off; the locate button is gray while it is off. */
+	private void setAutoLoc(boolean on) {
+		prefs.edit().putBoolean("autoLoc", on).apply();
+		s.autoLoc = on;
+		view.invalidate();
+	}
+
 	private void askLocation() {
 		asked = true;
 		requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, 1);
@@ -227,7 +236,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (Locator.allowed(this)) {
 			locate(true);
 		} else {
-			prefs.edit().putBoolean("autoLoc", false).apply();
+			setAutoLoc(false);
 			toast(s.T.en ? "Without location access, choose the town from the list." : "Fără acces la locație, alege localitatea din listă.");
 		}
 	}
@@ -238,9 +247,32 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Locate button: automatic location on, and look now. */
 	public void onLocate() {
-		prefs.edit().putBoolean("autoLoc", true).apply();
+		setAutoLoc(true);
 		if (!Locator.allowed(this)) askLocation();
 		else locate(true);
+	}
+
+	private AlertDialog locDlg;
+
+	/** The small window that says the exact position is being looked for; it closes by itself. */
+	private void locatingDialog() {
+		closeLocatingDialog();
+		boolean en = s.T.en;
+		locDlg = dialog().setTitle(en ? "Exact location" : "Localizare exactă")
+				.setMessage(en ? "Looking for the phone's exact position and the town… This takes a few seconds."
+						: "Caut poziția exactă a telefonului și localitatea… Durează câteva secunde.")
+				.setPositiveButton("OK", null).create();
+		locDlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			public void onDismiss(DialogInterface di) {
+				hideBars();
+			}
+		});
+		locDlg.show();
+	}
+
+	private void closeLocatingDialog() {
+		if (locDlg != null && locDlg.isShowing()) locDlg.dismiss();
+		locDlg = null;
 	}
 
 	/**
@@ -251,9 +283,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		lastLocate = System.currentTimeMillis();
 		s.locating = true;
 		view.invalidate();
+		if (say) locatingDialog();
 		locator.locate(new Locator.Result() {
 			public void found(double lat, double lon, String town, String rawCounty) {
 				s.locating = false;
+				closeLocatingDialog();
 				String county = cities.county(rawCounty);
 				if (county.length() == 0) county = town;
 				Cities.City listed = cities.find(county, town);
@@ -275,6 +309,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 			public void failed(String why) {
 				s.locating = false;
+				closeLocatingDialog();
 				view.invalidate();
 				if (!say) return;
 				if (why.equals("off")) toast(s.T.en ? "Location is off on the phone." : "Localizarea e oprită pe telefon.");
@@ -464,8 +499,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						s.clk12 ? "Ceas 24 de ore" : "Ceas 12 ore (AM/PM)", "Limba engleză", keepOn ? "Lasă ecranul să se stingă" : "Ține ecranul aprins",
 						"Temă…", auto ? "Oprire localizare" : "Pornire localizare",
 						"Verifică actualizări", "Despre" };
-		show(dialog().setTitle("☰").setItems(items, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface d, int k) {
+		// The menu shows five items (to the language); the rest scroll up, the window keeps its size.
+		final android.widget.ListView lv = new android.widget.ListView(this);
+		AlertDialog.Builder b = dialog().setTitle("☰");
+		android.widget.ArrayAdapter<String> ad = new android.widget.ArrayAdapter<String>(b.getContext(),
+				android.R.layout.select_dialog_item, items);
+		lv.setAdapter(ad);
+		lv.setDivider(null);
+		View row = ad.getView(0, null, lv);
+		row.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+		lv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, row.getMeasuredHeight() * 5));
+		android.widget.FrameLayout box = new android.widget.FrameLayout(this);
+		box.addView(lv, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, row.getMeasuredHeight() * 5));
+		b.setView(box);
+		final AlertDialog menu = b.create();
+		menu.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			public void onDismiss(DialogInterface di) {
+				hideBars();
+			}
+		});
+		lv.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+			public void onItemClick(android.widget.AdapterView<?> p, View v, int k, long id) {
+				menu.dismiss();
 				SharedPreferences.Editor e = prefs.edit();
 				switch (k) {
 				case 0: fetch(); return;
@@ -476,7 +531,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				case 5: e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true)); break;
 				case 6: pickTheme(); return;
 				case 7:
-					if (autoLoc()) prefs.edit().putBoolean("autoLoc", false).apply();
+					if (autoLoc()) setAutoLoc(false);
 					else onLocate();
 					return;
 				case 8: updater.check(true); return;
@@ -486,7 +541,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				applySettings();
 				view.invalidate();
 			}
-		}));
+		});
+		menu.show();
 	}
 
 	private void pickTheme() {
@@ -595,7 +651,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** A town picked from the list: automatic location goes off until the locate button. */
 	private void choose(Cities.City c) {
-		prefs.edit().putBoolean("autoLoc", false).apply();
+		setAutoLoc(false);
 		setCity(c, true);
 		fetch();
 	}
