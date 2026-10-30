@@ -1,3 +1,6 @@
+v0.20 · 31 October 2026
+- "What's new" moved into the About window: the left button switches the text to the change log (and back), in the same window, at the same size.
+
 v0.19 · 31 October 2026
 - New menu item "What's new": the log of all versions.
 - After an update, the app shows once what changed.

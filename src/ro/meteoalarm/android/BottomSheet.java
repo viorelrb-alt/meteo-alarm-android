@@ -23,10 +23,10 @@ final class BottomSheet extends FrameLayout {
 	private final LinearLayout sheet;
 	private final TextView title, text;
 	private final ScrollView scroll;
-	private final Button primary, secondary;
+	private final Button primary, secondary, left;
 	private final float dp;
 	private boolean open, dark, cancelable = true;
-	private Runnable onPrimary;
+	private Runnable onPrimary, onLeft;
 	private float downY;
 
 	BottomSheet(Context c) {
@@ -60,6 +60,11 @@ final class BottomSheet extends FrameLayout {
 		sheet.addView(title);
 		LinearLayout row = new LinearLayout(c);
 		row.setGravity(Gravity.END);
+		left = button(c);
+		left.setVisibility(GONE);
+		row.addView(left);
+		// Free room between the left button and the ones on the right.
+		row.addView(new View(c), new LinearLayout.LayoutParams(0, 1, 1));
 		secondary = button(c);
 		primary = button(c);
 		row.addView(secondary);
@@ -77,6 +82,11 @@ final class BottomSheet extends FrameLayout {
 		scroll = new ScrollView(c) {
 			@Override
 			protected void onMeasure(int wSpec, int hSpec) {
+				int fixed = getLayoutParams().height;
+				if (fixed > 0) {
+					super.onMeasure(wSpec, MeasureSpec.makeMeasureSpec(fixed, MeasureSpec.EXACTLY));
+					return;
+				}
 				int max = (int) (getResources().getDisplayMetrics().heightPixels * 0.62f);
 				super.onMeasure(wSpec, MeasureSpec.makeMeasureSpec(max, MeasureSpec.AT_MOST));
 			}
@@ -91,6 +101,11 @@ final class BottomSheet extends FrameLayout {
 		primary.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (onPrimary != null) onPrimary.run();
+			}
+		});
+		left.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (onLeft != null) onLeft.run();
 			}
 		});
 		// Swiping down on the top part (handle, title, buttons' row) closes; the text scrolls.
@@ -137,6 +152,8 @@ final class BottomSheet extends FrameLayout {
 		primary.setTextColor(dark ? 0xFF262624 : 0xFFFFFFFF);
 		secondary.setBackground(shape(bg, line, 10 * dp, dp, false));
 		secondary.setTextColor(ink);
+		left.setBackground(shape(bg, line, 10 * dp, dp, false));
+		left.setTextColor(ink);
 	}
 
 	boolean isOpen() {
@@ -155,6 +172,10 @@ final class BottomSheet extends FrameLayout {
 		title.setText(t);
 		text.setText(msg);
 		scroll.scrollTo(0, 0);
+		scroll.getLayoutParams().height = LayoutParams.WRAP_CONTENT;
+		scroll.requestLayout();
+		left.setVisibility(GONE);
+		onLeft = null;
 		cancelable = closeLabel != null;
 		secondary.setVisibility(closeLabel == null ? GONE : VISIBLE);
 		if (closeLabel != null) secondary.setText(closeLabel);
@@ -176,6 +197,23 @@ final class BottomSheet extends FrameLayout {
 
 	void setMessage(String msg) {
 		text.setText(msg);
+	}
+
+	/** A button on the left of the row (after show, which removes it). */
+	void setLeft(String label, Runnable action) {
+		left.setText(label);
+		left.setVisibility(VISIBLE);
+		onLeft = action;
+	}
+
+	/** Other text and title in the same window: its size stays, the new text scrolls from the top. */
+	void replace(String t, String msg) {
+		int h = scroll.getHeight();
+		if (h > 0) scroll.getLayoutParams().height = h;
+		title.setText(t);
+		text.setText(msg);
+		scroll.scrollTo(0, 0);
+		scroll.requestLayout();
 	}
 
 	/** Closes, sliding down. */
