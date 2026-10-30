@@ -1,3 +1,6 @@
+v0.25 · 31 October 2026
+- "Refresh weather" left the ☰ menu (pull the screen down or use the top-right button). "Let the screen sleep / Keep the screen on" now shows without scrolling.
+
 v0.24 · 31 October 2026
 - When rain is due within 12 hours, swipe the rain chart left to see the next hours in boxes.
 

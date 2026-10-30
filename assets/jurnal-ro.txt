@@ -1,3 +1,6 @@
+v0.25 · 31 octombrie 2026
+- „Actualizează vremea” a ieșit din meniul ☰ (vremea se actualizează trăgând ecranul în jos sau cu butonul din dreapta sus). Acum se vede direct și „Lasă ecranul să se stingă / Ține ecranul aprins”.
+
 v0.24 · 31 octombrie 2026
 - Când plouă în următoarele 12 ore, caseta cu graficul de ploaie se glisează spre stânga și arată vremea pe următoarele ore, în casete.
 

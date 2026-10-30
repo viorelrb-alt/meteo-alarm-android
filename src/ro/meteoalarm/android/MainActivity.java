@@ -40,7 +40,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.24";
+	static final String VERSION = "Meteo Alarm Android v0.25";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -492,14 +492,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final boolean en = s.T.en;
 		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
 		String[] items = en
-				? new String[] { "Refresh weather", "Choose town", s.unitF ? "Show °C" : "Show °F", s.clk12 ? "24-hour clock" : "12-hour clock",
+				? new String[] { "Choose town", s.unitF ? "Show °C" : "Show °F", s.clk12 ? "24-hour clock" : "12-hour clock",
 						"Limba română", keepOn ? "Let the screen sleep" : "Keep the screen on", "Theme…",
 						auto ? "Turn location off" : "Turn location on", "Check for updates", "About" }
-				: new String[] { "Actualizează vremea", "Alege localitatea", s.unitF ? "Afișează °C" : "Afișează °F",
+				: new String[] { "Alege localitatea", s.unitF ? "Afișează °C" : "Afișează °F",
 						s.clk12 ? "Ceas 24 de ore" : "Ceas 12 ore (AM/PM)", "Limba engleză", keepOn ? "Lasă ecranul să se stingă" : "Ține ecranul aprins",
 						"Temă…", auto ? "Oprire localizare" : "Pornire localizare",
 						"Verifică actualizări", "Despre" };
-		// The menu shows five items (to the language); the rest scroll up, the window keeps its size.
+		// The menu shows five items (to the screen setting); the rest scroll up, the window keeps its size.
 		final android.widget.ListView lv = new android.widget.ListView(this);
 		AlertDialog.Builder b = dialog().setTitle("☰");
 		android.widget.ArrayAdapter<String> ad = new android.widget.ArrayAdapter<String>(b.getContext(),
@@ -523,18 +523,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				menu.dismiss();
 				SharedPreferences.Editor e = prefs.edit();
 				switch (k) {
-				case 0: fetch(); return;
-				case 1: onCity(); return;
-				case 2: e.putBoolean("unitF", !s.unitF); break;
-				case 3: e.putBoolean("clk12", !s.clk12); break;
-				case 4: e.putString("lang", en ? "ro" : "en"); break;
-				case 5: e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true)); break;
-				case 6: pickTheme(); return;
-				case 7:
+				case 0: onCity(); return;
+				case 1: e.putBoolean("unitF", !s.unitF); break;
+				case 2: e.putBoolean("clk12", !s.clk12); break;
+				case 3: e.putString("lang", en ? "ro" : "en"); break;
+				case 4: e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true)); break;
+				case 5: pickTheme(); return;
+				case 6:
 					if (autoLoc()) setAutoLoc(false);
 					else onLocate();
 					return;
-				case 8: updater.check(true); return;
+				case 7: updater.check(true); return;
 				default: about(); return;
 				}
 				e.apply();
