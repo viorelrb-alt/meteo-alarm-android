@@ -212,8 +212,29 @@ public final class Screen {
 	/** Precipitation chart when rain or snow is due within 12 hours, else the next hours as tiles. */
 	private void drawNextHours(float x, float y, float wd, float h) {
 		hourArea[2] = 0;
-		if (rainText().length() > 0 || w.tileHours.size() < 2) drawPrecipBox(x, y, wd, h, 46);
-		else drawHourBoxes(x, y, wd, h);
+		if (w.tileHours.size() < 2) drawPrecipBox(x, y, wd, h, 46);
+		else if (rainText().length() == 0) drawHourBoxes(x, y, wd, h, 0);
+		else {
+			// Rain due: the chart first; swiping left shows the hour boxes after it.
+			int pages = 1 + hourPagesFor(wd);
+			hourPage = Math.max(0, Math.min(hourPage, pages - 1));
+			if (hourPage > 0) drawHourBoxes(x, y, wd, h, 1);
+			else {
+				hourPages = pages;
+				hourArea[0] = x; hourArea[1] = y; hourArea[2] = wd; hourArea[3] = h - 26;
+				drawPrecipBox(x, y, wd, h - 26, 46);
+				dots(x + wd / 2, y + h - 16, pages, 0);
+			}
+		}
+	}
+
+	private int perPage(float wd) {
+		return Math.max(1, Math.min(w.tileHours.size() - 1, (int) ((wd + 16) / (140 + 16))));
+	}
+
+	private int hourPagesFor(float wd) {
+		int per = perPage(wd);
+		return (w.tileHours.size() - 1 + per - 1) / per;
 	}
 
 	/**
@@ -221,24 +242,25 @@ public final class Screen {
 	 * temperature and the sky. As many boxes as fit (at least 140 units wide each); the next ones
 	 * are reached by swiping, with one dot per page under the boxes.
 	 */
-	private void drawHourBoxes(float x0, float y, float wd, float h) {
+	private void drawHourBoxes(float x0, float y, float wd, float h, int before) {
 		int avail = w.tileHours.size() - 1;
 		float gap = 16, dotsH = 26, bh = h - dotsH;
-		int per = Math.max(1, Math.min(avail, (int) ((wd + gap) / (140 + gap))));
-		hourPages = (avail + per - 1) / per;
+		int per = perPage(wd);
+		hourPages = before + hourPagesFor(wd);
 		hourPage = Math.max(0, Math.min(hourPage, hourPages - 1));
+		int pg = hourPage - before;
 		hourArea[0] = x0; hourArea[1] = y; hourArea[2] = wd; hourArea[3] = bh;
 		float bw = (wd - gap * (per - 1)) / per, hd = 44;
 		// One size for all temperatures and all descriptions on the page.
 		float tp = 44, dp = 24;
 		for (int i = 0; i < per; i++) {
-			int k = 1 + hourPage * per + i;
+			int k = 1 + pg * per + i;
 			if (k > avail) break;
 			if (!Double.isNaN(w.tileTemp[k])) tp = fit(true, tp, bw - 16, t(w.tileTemp[k]) + "°");
 			dp = fit(false, dp, bw - 12, T.describe(w.tileCode[k], w.tileDay[k])[1]);
 		}
 		for (int i = 0; i < per; i++) {
-			int k = 1 + hourPage * per + i;
+			int k = 1 + pg * per + i;
 			float x = x0 + i * (bw + gap), cx = x + bw / 2;
 			box(x, y, bw, bh, hd);
 			if (k > avail) continue;

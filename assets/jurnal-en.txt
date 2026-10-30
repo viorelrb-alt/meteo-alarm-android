@@ -1,3 +1,6 @@
+v0.24 · 31 October 2026
+- When rain is due within 12 hours, swipe the rain chart left to see the next hours in boxes.
+
 v0.23 · 31 October 2026
 - The next hours show in separate boxes, one per hour, like the days: hour, icon, temperature and sky.
 - 4 hours show (6 in landscape); swipe left-right on the boxes for the next ones, the dots show the page.

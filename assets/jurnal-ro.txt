@@ -1,3 +1,6 @@
+v0.24 · 31 octombrie 2026
+- Când plouă în următoarele 12 ore, caseta cu graficul de ploaie se glisează spre stânga și arată vremea pe următoarele ore, în casete.
+
 v0.23 · 31 octombrie 2026
 - Vremea pe următoarele ore apare în casete separate, câte una pe oră, ca zilele: ora, iconul, temperatura și cerul.
 - Se văd 4 ore (6 în modul peisaj); următoarele apar glisând stânga-dreapta pe casete, iar punctele arată pagina.

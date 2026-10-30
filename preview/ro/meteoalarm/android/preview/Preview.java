@@ -134,6 +134,7 @@ public final class Preview {
 				s.warns.add(w);
 			}
 		}
+		if (opts.contains(" page1")) s.hourPage = 1;
 		if (opts.contains(" snow")) {
 			s.w.temp = -12.4;
 			s.w.code = 73;
