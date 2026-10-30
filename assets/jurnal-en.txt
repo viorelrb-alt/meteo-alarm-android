@@ -1,3 +1,8 @@
+v0.30 · 31 October 2026
+- New tablet layout (600 dp or more on the short side, open foldables too): the screen is split in two. Landscape: the weather now on the left, the boxes on the right; portrait: the weather now on top, the boxes below.
+- On tablets the boxes are 20% larger, the 5 days sit side by side and the warnings show in 3 equal boxes with larger text.
+- Nothing changes on phones.
+
 v0.25 · 31 October 2026
 - "Refresh weather" left the ☰ menu (pull the screen down or use the top-right button). "Let the screen sleep / Keep the screen on" now shows without scrolling.
 

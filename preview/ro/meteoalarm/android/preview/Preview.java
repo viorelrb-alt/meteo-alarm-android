@@ -23,7 +23,7 @@ import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Warnings;
 import ro.meteoalarm.android.core.Weather;
 
-/** Desktop preview: draws the phone screen with Java2D to a PNG (java Preview ASSETS OUT.png [W H] [en] [F] [warn]). */
+/** Desktop preview: draws the phone screen with Java2D to a PNG (java Preview ASSETS OUT.png [W H] [en] [F] [warn] [tab]). */
 public final class Preview {
 	static final class J2d implements Gfx {
 		final Graphics2D g;
@@ -144,20 +144,9 @@ public final class Preview {
 		s.batt = 78;
 		s.fetched = now;
 		s.now = Calendar.getInstance();
-		float scale, cw, ch, ox, oy = 0;
-		if (pw > ph) {
-			scale = Math.min(ph / Screen.LH, pw / Screen.BASE_LW);
-			cw = pw / scale;
-			ch = Screen.LH;
-			ox = 0;
-			oy = (ph - ch * scale) / 2;
-		} else {
-			scale = pw / Screen.W;
-			ch = ph / scale;
-			if (ch < Screen.BASE_H) { scale = ph / Screen.BASE_H; ch = Screen.BASE_H; }
-			cw = Screen.W;
-			ox = (pw - cw * scale) / 2;
-		}
+		s.tablet = opts.contains(" tab");
+		float[] f = Screen.fit(pw, ph, s.tablet);
+		float scale = f[0], cw = f[1], ch = f[2], ox = f[3], oy = f[4];
 		BufferedImage img = new BufferedImage(pw, ph, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = img.createGraphics();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);

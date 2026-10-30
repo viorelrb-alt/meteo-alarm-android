@@ -10,10 +10,38 @@ import java.util.List;
  * precipitation chart, tomorrow and the day after, three more days, sun / UV / pollen and the
  * status line. Landscape: the canvas is 758 units high and at least BASE_LW wide, in three
  * columns: the current weather (it takes the extra width), precipitation over sun / UV / pollen,
- * and the five days.
+ * and the five days. Tablets (at least 600 dp on the short side): the screen split in two, the
+ * weather now in one half and the boxes, drawn 20% larger, in the other; the short side is TAB
+ * units.
  */
 public final class Screen {
-	public static final float W = 758, BASE_H = 1538, LH = 758, BASE_LW = 1560;
+	public static final float W = 758, BASE_H = 1538, LH = 758, BASE_LW = 1560, TAB = 1091;
+
+	/**
+	 * How a screen PW x PH pixels shows the canvas: { scale, canvas width, canvas height, x offset,
+	 * y offset }. Phones: portrait 758 units wide (the extra height goes to the weather now),
+	 * landscape 758 high; tablets fill the screen with TAB units on the short side.
+	 */
+	public static float[] fit(float pw, float ph, boolean tablet) {
+		float scale, cw, ch;
+		if (tablet) {
+			scale = Math.min(pw, ph) / TAB;
+			return new float[] { scale, pw / scale, ph / scale, 0, 0 };
+		}
+		if (pw > ph) {
+			scale = Math.min(ph / LH, pw / BASE_LW);
+			cw = pw / scale;
+			ch = LH;
+			return new float[] { scale, cw, ch, 0, (ph - ch * scale) / 2 };
+		}
+		scale = pw / W;
+		ch = ph / scale;
+		if (ch < BASE_H) {
+			scale = ph / BASE_H;
+			ch = BASE_H;
+		}
+		return new float[] { scale, W, ch, (pw - W * scale) / 2, 0 };
+	}
 
 	// Inputs.
 	public Weather w;
@@ -34,6 +62,8 @@ public final class Screen {
 	public boolean locating;
 	/** Automatic location on; off: the locate button is gray. */
 	public boolean autoLoc = true;
+	/** Tablet layout (see fit). */
+	public boolean tablet;
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
@@ -90,7 +120,8 @@ public final class Screen {
 		g.poly(new float[] { rx + 36, 33, rx + 51, 46, rx + 35, 52 }, c.ink);
 		drawClock();
 		rtext(false, 26, 71, cw - 117, T.date(now), c.ink);
-		if (cw > ch) drawLandscape(ch);
+		if (tablet) drawTablet(ch);
+		else if (cw > ch) drawLandscape(ch);
 		else drawPortrait(ch);
 	}
 
@@ -115,7 +146,7 @@ public final class Screen {
 
 		float nowBot = 498 + Math.max(0, ch - BASE_H);
 		float fy = nowBot - 4;
-		float top = drawWarnBoxes(40, 116, 678);
+		float top = drawWarnBoxes(40, 116, 678, 2, 1);
 		String[] d = T.describe(w.code, w.isDay);
 		drawNowSide(d[0], 40, top > 0 ? top - 50 : 104, 718, fy + 4);
 
@@ -160,7 +191,7 @@ public final class Screen {
 			return;
 		}
 		warnArea[2] = 0;
-		float wb = drawWarnBoxes(40, 116, leftR - 40);
+		float wb = drawWarnBoxes(40, 116, leftR - 40, 2, 1);
 		float nowTop = wb > 0 ? wb + 14 : 116;
 		float fy = 568;
 		String[] d = T.describe(w.code, w.isDay);
@@ -207,6 +238,119 @@ public final class Screen {
 		String sun = sb.toString();
 		float sp = fit(false, 27, cw - 520 - 260, sun);
 		ctext(false, sp, fb + 26 + (27 - sp) / 2, (520 + cw - 260) / 2, sun, c.ink);
+	}
+
+	/**
+	 * Tablet: the screen split in two. Landscape: the weather now in the left half, the boxes in
+	 * the right one; portrait: the weather now on top (42%), the boxes under it. The weather now
+	 * keeps room for three code warnings, shown or not; the boxes (next hours, five days, sun / UV /
+	 * pollen) are drawn 20% larger.
+	 */
+	private void drawTablet(float ch) {
+		boolean land = cw > ch;
+		float fb = ch - 76;
+		btnCity[1] = fb;
+		btnLocate[1] = fb;
+		g.rect(40, 102, cw - 80, 2, c.line);
+		warnArea[2] = 0;
+		hourArea[2] = 0;
+		String label = city != null ? city.label() : "";
+		float lp = fit(true, 40, cw / 2 - 160, label);
+		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
+		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
+		if (w == null) {
+			String msg = error.length() > 0 ? error : T.loading;
+			ctext(true, fit(true, 48, cw - 200, msg), ch / 3, cw / 2, msg, c.ink);
+			footer(fb);
+			return;
+		}
+		float nl = 40, nr = land ? cw / 2 - 20 : cw - 40, nt = 116, nb = land ? fb - 20 : ch * 0.42f;
+		float wf = 1.25f, wb = drawWarnBoxes(nl, nt, nr - nl, 3, wf);
+		float top = Math.max(wb, nt + 130 * wf) + 16;
+		float lineY = nb - 76;
+		String[] d = T.describe(w.code, w.isDay);
+		float mid = nl + (nr - nl) * 0.55f, cy = (top + lineY) / 2, hw = nr - mid;
+		icLeft = mid + 2; icRight = nr; icPct = 100;
+		drawIconC(d[0], mid + hw / 2, cy, 520, (lineY - top) / 2 - 10, hw - 20);
+		icLeft = 0; icRight = W;
+		tempSize(420, mid - nl - 30);
+		drawTempAt(mid - 12 - tW, cy + tp * 32 / 100);
+		rtext(true, fit(true, 44, (nr - nl) / 2, d[1]), lineY, nr - 6, d[1], c.ink);
+		if (!Double.isNaN(w.wind)) {
+			String wind = unitF ? T.wind + " " + Math.round(w.wind * 0.621371) + " mph" : T.wind + " " + Math.round(w.wind) + " km/h";
+			rtext(false, 32, lineY + 46, nr - 6, upper(wind), c.ink);
+		}
+		if (!Double.isNaN(w.feels)) ltext(false, 32, lineY + 7, nl, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
+		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
+			ltext(false, 32, lineY + 46, nl, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+
+		// The boxes, in units 1.2 times larger.
+		Gfx g0 = g;
+		float bs = 1.2f;
+		g = new Scaled(g0, bs);
+		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 116 : nb + 24) / bs;
+		float avail = (fb - 14) / bs - by, ih = 190, hh = Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
+		drawNextHours(bx, by, bw, hh);
+		for (int k = 0; k < 4; k++) hourArea[k] *= bs;
+		float dy = by + hh + 14, dw = (bw - 4 * 12) / 5;
+		for (int k = 0; k < 5; k++) {
+			float x = bx + k * (dw + 12), cx = x + dw / 2;
+			box(x, dy, dw, dh, 44);
+			if (k >= w.dayDates.size()) continue;
+			head(dy, 44, cx, dw - 16, k == 0 ? T.day1 : k == 1 ? T.day2 : T.weekdayUp(w.dayDates.get(k), true), 0);
+			String[] dd = T.describe(w.dayCodes.get(k), true);
+			String hl = t(w.dayHi.get(k)) + "° / " + t(w.dayLo.get(k)) + "°";
+			float p = fit(true, 40, dw - 16, hl), ic = Math.max(40, Math.min(Math.min(120, dw - 24), dh - 44 - p - 84));
+			float iy = dy + 44 + Math.max(6, (dh - 44 - ic - 6 - p - 62) / 2), ty = iy + ic + 6;
+			drawIcon(dd[0], cx - ic / 2, iy, ic);
+			ctext(true, p, ty, cx, hl, c.ink);
+			ctext(false, fit(false, 23, dw - 12, dd[1]), ty + p + 6, cx, dd[1], c.ink);
+			ctext(false, 21, ty + p + 36, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
+		}
+		drawSunBox(bx, dy + dh + 14, bw, ih);
+		g = g0;
+		footer(fb);
+	}
+
+	/** Draws through G with every length multiplied by S. */
+	private static final class Scaled implements Gfx {
+		final Gfx g;
+		final float s;
+
+		Scaled(Gfx g, float s) {
+			this.g = g;
+			this.s = s;
+		}
+
+		public void rect(float x, float y, float w, float h, int c) {
+			g.rect(x * s, y * s, w * s, h * s, c);
+		}
+
+		public void roundRect(float x, float y, float w, float h, float r, int c) {
+			g.roundRect(x * s, y * s, w * s, h * s, r * s, c);
+		}
+
+		public void text(boolean b, float px, float top, float left, String t, int c) {
+			g.text(b, px * s, top * s, left * s, t, c);
+		}
+
+		public float width(boolean b, float px, String t) {
+			return g.width(b, px * s, t) / s;
+		}
+
+		public void icon(String a, float x, float y, float w, float h, int c) {
+			g.icon(a, x * s, y * s, w * s, h * s, c);
+		}
+
+		public void arc(float cx, float cy, float r, float st, float sw, float k, int c) {
+			g.arc(cx * s, cy * s, r * s, st, sw, k * s, c);
+		}
+
+		public void poly(float[] xy, int c) {
+			float[] q = new float[xy.length];
+			for (int k = 0; k < xy.length; k++) q[k] = xy[k] * s;
+			g.poly(q, c);
+		}
 	}
 
 	/** Precipitation chart when rain or snow is due within 12 hours, else the next hours as tiles. */
@@ -467,16 +611,18 @@ public final class Screen {
 
 	/**
 	 * One box per warning code across WD: the code in a coloured title bar, the types and the
-	 * period under it, a warning triangle in the red one. Two fit; a third is reached by swiping,
-	 * with dots under the boxes. Returns the bottom of what was drawn, 0 without warnings.
+	 * period under it, a warning triangle in the red one. COLS fit (a phone: two, the third is
+	 * reached by swiping, with dots under the boxes; a tablet: three equal boxes), F times larger.
+	 * Returns the bottom of what was drawn, 0 without warnings.
 	 */
-	private float drawWarnBoxes(float x0, float y, float wd) {
+	private float drawWarnBoxes(float x0, float y, float wd, int cols, float f) {
 		List<WarnGroup> gs = warnGroups();
-		int n = gs.size(), vis = Math.min(2, n);
+		int n = gs.size(), vis = Math.min(cols, n);
 		warnBoxes = n;
 		if (n == 0) return 0;
 		warnStart = Math.max(0, Math.min(warnStart, n - vis));
-		float gap = 16, bw = (wd - gap * (vis - 1)) / vis, h = 130, hb = 44, r = 14;
+		int across = cols > 2 ? cols : vis;
+		float gap = 16, bw = (wd - gap * (across - 1)) / across, h = 130 * f, hb = 44 * f, r = 14;
 		warnArea[0] = x0; warnArea[1] = y; warnArea[2] = wd; warnArea[3] = h;
 		int border = c.ink, body = dark ? 0xFF000000 : c.page;
 		for (int i = 0; i < vis; i++) {
@@ -490,21 +636,21 @@ public final class Screen {
 			g.rect(x + 2, y + hb, bw - 4, 2, border);
 			String name = T.warn[gr.level - 1];
 			String title = T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
-			float hp = fit(true, 30, bw - 24, title), ty = y + 2 + (hb - 2) / 2 - hp * 485 / 1000;
+			float hp = fit(true, 30 * f, bw - 24, title), ty = y + 2 + (hb - 2) / 2 - hp * 485 / 1000;
 			int tc = dark ? 0xFFFFFFFF : 0xFF000000;
 			float tx = x + bw / 2 - g.width(true, hp, title) / 2;
 			g.text(true, hp, ty, tx, title, tc);
 			g.text(true, hp, ty, tx + 1, title, tc);
 			float lx = x + 18;
 			if (gr.level >= 3) {
-				g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46) / 2, 50, 46, dark ? c.warnR : c.ink);
-				lx = x + 78;
+				g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46 * f) / 2, 50 * f, 46 * f, dark ? c.warnR : c.ink);
+				lx = x + 28 + 50 * f;
 			}
 			float room = x + bw - 12 - lx;
 			String txt = T.warnType(gr.types);
 			String per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
-			ltext(true, fit(true, 30, room, txt), y + hb + 12, lx, txt, c.ink);
-			ltext(false, fit(false, 26, room, per), y + hb + 50, lx, per, c.dim);
+			ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, lx, txt, c.ink);
+			ltext(false, fit(false, 26 * f, room, per), y + hb + 50 * f, lx, per, c.dim);
 		}
 		if (n <= vis) return y + h;
 		// One dot per position of the boxes; the current one in ink.
@@ -715,7 +861,7 @@ public final class Screen {
 			}
 		}
 		if (upd.length() > 0) {
-			float maxw = (cw > W ? 520 : batLeft) - 207 - 14;
+			float maxw = (cw > W && !tablet ? 520 : batLeft) - 207 - 14;
 			float up = fit(bold, 27, maxw, upd);
 			ltext(bold, up, fb + 26, 207, upd, bold ? c.ink : c.dim);
 		}

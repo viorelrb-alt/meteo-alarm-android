@@ -9,7 +9,7 @@ import android.view.View;
 
 import ro.meteoalarm.android.core.Screen;
 
-/** Draws the Screen scaled to the phone: full width, the extra height going to the current weather. */
+/** Draws the Screen scaled to the phone (full width, the extra height going to the current weather) or the tablet. */
 final class WeatherView extends View {
 	interface Taps {
 		void onMenu();
@@ -43,25 +43,13 @@ final class WeatherView extends View {
 	protected void onDraw(Canvas c) {
 		int w = getWidth(), h = getHeight();
 		if (w == 0 || h == 0) return;
-		float cw, ch;
-		if (w > h) {
-			// Landscape: 758 units high, at least BASE_LW wide; the extra width goes to the weather column.
-			scale = Math.min(h / Screen.LH, w / Screen.BASE_LW);
-			cw = w / scale;
-			ch = Screen.LH;
-			ox = 0;
-			oy = (h - ch * scale) / 2;
-		} else {
-			scale = w / Screen.W;
-			ch = h / scale;
-			if (ch < Screen.BASE_H) {
-				scale = h / Screen.BASE_H;
-				ch = Screen.BASE_H;
-			}
-			cw = Screen.W;
-			ox = (w - cw * scale) / 2;
-			oy = 0;
-		}
+		// A tablet: at least 600 dp on the short side (a foldable when open, too).
+		screen.tablet = Math.min(w, h) / dp >= 600;
+		float[] f = Screen.fit(w, h, screen.tablet);
+		scale = f[0];
+		float cw = f[1], ch = f[2];
+		ox = f[3];
+		oy = f[4];
 		c.drawColor(screen.dark ? 0xFF262624 : 0xFFFFFFFF);
 		c.save();
 		c.translate(ox, oy);
