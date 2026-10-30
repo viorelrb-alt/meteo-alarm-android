@@ -1,3 +1,9 @@
+v0.32 · 31 October 2026
+- The ☰ menu shows "⌃ more ⌃" at the top too, when the list is scrolled; tapping it goes back to the start.
+- "Theme…" now shows without scrolling; "Limba română" moved down to the scrolling part. "Phone's brightness" left the menu.
+- New sun button next to the locate button: opens a Kindle-like brightness panel with the slider and an "As the phone" button. Tapping outside the panel closes it.
+- The left-edge bar and the panel's slider look like the phone's brightness bar and follow the same light curve as the system (finer in dim light).
+
 v0.31 · 31 October 2026
 - The ☰ menu shows "⌄ more ⌄" at the bottom while there are more options to scroll to; it disappears at the end of the list. Tapping it scrolls down.
 - New theme: ☰ › Theme › "By the room's light (sensor)". The app turns dark when the room goes dark and back when the light comes on (after a few seconds, so it does not flicker).

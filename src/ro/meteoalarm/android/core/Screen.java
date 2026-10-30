@@ -64,10 +64,19 @@ public final class Screen {
 	public boolean autoLoc = true;
 	/** Tablet layout (see fit). */
 	public boolean tablet;
+	/**
+	 * Brightness: the panel opened by the sun button (Kindle-like), the bar shown while sliding on
+	 * the left edge, the level on the slider (0–1, the system's curve) and whether the app has its
+	 * own brightness (otherwise the phone's).
+	 */
+	public boolean brightPanel, brightBar, brightOwn;
+	public float brightLevel = 0.5f;
+	/** The panel, its slider and its "as the phone" button (x, y, w, h); set by draw. */
+	public final float[] panelArea = { 0, 0, 0, 0 }, panelTrack = { 0, 0, 0, 0 }, panelPhone = { 0, 0, 0, 0 };
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
-			btnLocate = { 124, 0, 64, 64 },
+			btnLocate = { 124, 0, 64, 64 }, btnBright = { 208, 0, 64, 64 },
 			cityArea = { 40, 104, 380, 56 };
 	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
 	public final float[] warnArea = { 0, 0, 0, 0 };
@@ -123,6 +132,15 @@ public final class Screen {
 		if (tablet) drawTablet(ch);
 		else if (cw > ch) drawLandscape(ch);
 		else drawPortrait(ch);
+		panelArea[2] = 0;
+		if (brightPanel) drawBrightPanel(ch - 76);
+		if (brightBar) {
+			// Like the phone's bar: a frame around the track, so it stands out from the weather under it.
+			float bh = ch * 0.42f, by = (ch - bh) / 2;
+			g.roundRect(84, by - 16, 116, bh + 32, 58, c.line);
+			g.roundRect(86, by - 14, 112, bh + 28, 56, dark ? 0xFF30302E : Gfx.WHITE);
+			pill(100, by, 84, bh, true, brightLevel);
+		}
 	}
 
 	private void drawPortrait(float ch) {
@@ -814,6 +832,56 @@ public final class Screen {
 		scale(c3 - 60, top + 162, 4, Math.max(0, pollenLvl), 27);
 	}
 
+	// --- Brightness ------------------------------------------------------------------------
+
+	/** A sun R units across at CX CY: a disc and eight rays. */
+	private void sun(float cx, float cy, float r, int color) {
+		float d = r * 0.42f;
+		g.roundRect(cx - d, cy - d, 2 * d, 2 * d, d, color);
+		float r0 = r * 0.62f, r1 = r, hw = Math.max(1.5f, r * 0.08f);
+		for (int k = 0; k < 8; k++) {
+			double a = k * Math.PI / 4;
+			float ca = (float) Math.cos(a), sa = (float) Math.sin(a), nx = -sa * hw, ny = ca * hw;
+			g.poly(new float[] { cx + ca * r0 + nx, cy + sa * r0 + ny, cx + ca * r1 + nx, cy + sa * r1 + ny, cx + ca * r1 - nx,
+					cy + sa * r1 - ny, cx + ca * r0 - nx, cy + sa * r0 - ny }, color);
+		}
+	}
+
+	/**
+	 * A slider like the phone's brightness bar: a rounded track, the level filled from the bottom
+	 * (VERTICAL) or the left, never less than a round end, with a sun in that end.
+	 */
+	private void pill(float x, float y, float w, float h, boolean vertical, float level) {
+		int track = dark ? 0xFF4A4944 : Gfx.GRAYD, fill = dark ? 0xFFE8E6DF : Gfx.BLACK, mark = dark ? 0xFF262624 : Gfx.WHITE;
+		float t = vertical ? w : h, len = vertical ? h : w, f = t + Math.max(0, Math.min(1, level)) * (len - t);
+		g.roundRect(x, y, w, h, t / 2, track);
+		if (vertical) {
+			g.roundRect(x, y + h - f, w, f, t / 2, fill);
+			sun(x + w / 2, y + h - t / 2, t * 0.3f, mark);
+		} else {
+			g.roundRect(x, y, f, h, t / 2, fill);
+			sun(x + t / 2, y + h / 2, t * 0.3f, mark);
+		}
+	}
+
+	/** The panel of the sun button, above the status row: the slider and "as the phone". */
+	private void drawBrightPanel(float fb) {
+		float pw = Math.min(cw - 80, 700), ph = 260, px = (cw - pw) / 2, py = fb - 16 - ph;
+		panelArea[0] = px; panelArea[1] = py; panelArea[2] = pw; panelArea[3] = ph;
+		box(px, py, pw, ph, 46);
+		head(py, 46, px + pw / 2, pw - 40, T.en ? "BRIGHTNESS" : "LUMINOZITATE", 0);
+		float tx = px + 30, tw = pw - 60, ty = py + 70;
+		panelTrack[0] = tx; panelTrack[1] = ty; panelTrack[2] = tw; panelTrack[3] = 76;
+		pill(tx, ty, tw, 76, false, brightLevel);
+		String lab = T.en ? "As the phone" : "Ca telefonul";
+		float bw = Math.max(260, g.width(true, 30, lab) + 60), bx = px + (pw - bw) / 2, by = ty + 76 + 26;
+		panelPhone[0] = bx; panelPhone[1] = by; panelPhone[2] = bw; panelPhone[3] = 64;
+		// Filled while the phone's brightness is used.
+		g.roundRect(bx, by, bw, 64, 32, c.ink);
+		if (brightOwn) g.roundRect(bx + 2, by + 2, bw - 4, 60, 30, c.card);
+		ctext(true, 30, by + 15, bx + bw / 2, lab, brightOwn ? c.ink : c.card);
+	}
+
 	// --- Status line -----------------------------------------------------------------------
 
 	private void footer(float fb) {
@@ -830,6 +898,11 @@ public final class Screen {
 		g.rect(lx - 1.5f, ly + 14, 3, 8, lc);
 		g.rect(lx - 22, ly - 1.5f, 8, 3, lc);
 		g.rect(lx + 14, ly - 1.5f, 8, 3, lc);
+		// Brightness: a sun; filled while its panel is open.
+		btnBright[1] = fb;
+		button(btnBright);
+		if (brightPanel) g.roundRect(btnBright[0] + 2, fb + 2, 60, 60, 8, c.ink);
+		sun(240, fb + 32, 22, brightPanel ? c.page : c.ink);
 		float batLeft = cw - 40;
 		float gy = fb + 22;
 		if (batt >= 0) {
@@ -861,9 +934,9 @@ public final class Screen {
 			}
 		}
 		if (upd.length() > 0) {
-			float maxw = (cw > W && !tablet ? 520 : batLeft) - 207 - 14;
+			float maxw = (cw > W && !tablet ? 520 : batLeft) - 291 - 14;
 			float up = fit(bold, 27, maxw, upd);
-			ltext(bold, up, fb + 26, 207, upd, bold ? c.ink : c.dim);
+			ltext(bold, up, fb + 26, 291, upd, bold ? c.ink : c.dim);
 		}
 	}
 }

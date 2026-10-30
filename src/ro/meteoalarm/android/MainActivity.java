@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.31";
+	static final String VERSION = "Meteo Alarm Android v0.32";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -250,7 +250,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return sensors != null && sensors.getDefaultSensor(Sensor.TYPE_LIGHT) != null;
 	}
 
-	/** The app's own brightness (0.01–1) set with the left-edge slider, or the phone's (-1). */
+	/** The app's own brightness (0.004–1) set with the slider, or the phone's (-1). */
 	private void applyBrightness() {
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		lp.screenBrightness = prefs.getFloat("bright", -1);
@@ -262,18 +262,27 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		float b = prefs.getFloat("bright", -1);
 		if (b >= 0) return b;
 		try {
-			return Math.max(0.01f, Math.min(1, android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS) / 255f));
+			return Math.max(0.004f, Math.min(1, android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.SCREEN_BRIGHTNESS) / 255f));
 		} catch (Exception e) {
 			return 0.5f;
 		}
 	}
 
 	public void setBrightness(float b, boolean save) {
-		b = Math.max(0.01f, Math.min(1, b));
+		if (b < 0) {
+			prefs.edit().remove("bright").apply();
+			applyBrightness();
+			return;
+		}
+		b = Math.max(0.004f, Math.min(1, b));
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		lp.screenBrightness = b;
 		getWindow().setAttributes(lp);
 		if (save) prefs.edit().putFloat("bright", b).apply();
+	}
+
+	public boolean ownBrightness() {
+		return prefs.getFloat("bright", -1) >= 0;
 	}
 
 	@Override
@@ -587,17 +596,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	public void onMenu() {
 		final boolean en = s.T.en;
-		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc(), own = prefs.getFloat("bright", -1) >= 0;
-		// Item ids in menu order; "brightAuto" only while the left-edge slider has set a brightness.
+		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
+		// Item ids in menu order.
 		final List<String> ids = new ArrayList<String>();
 		List<String> items = new ArrayList<String>();
 		ids.add("city"); items.add(en ? "Choose town" : "Alege localitatea");
 		ids.add("unit"); items.add(s.unitF ? (en ? "Show °C" : "Afișează °C") : (en ? "Show °F" : "Afișează °F"));
 		ids.add("clock"); items.add(s.clk12 ? (en ? "24-hour clock" : "Ceas 24 de ore") : (en ? "12-hour clock" : "Ceas 12 ore (AM/PM)"));
-		ids.add("lang"); items.add(en ? "Limba română" : "Limba engleză");
-		ids.add("keepOn"); items.add(keepOn ? (en ? "Let the screen sleep" : "Lasă ecranul să se stingă") : (en ? "Keep the screen on" : "Ține ecranul aprins"));
 		ids.add("theme"); items.add(en ? "Theme…" : "Temă…");
-		if (own) { ids.add("brightAuto"); items.add(en ? "Phone's brightness" : "Luminozitatea telefonului"); }
+		ids.add("keepOn"); items.add(keepOn ? (en ? "Let the screen sleep" : "Lasă ecranul să se stingă") : (en ? "Keep the screen on" : "Ține ecranul aprins"));
+		ids.add("lang"); items.add(en ? "Limba română" : "Limba engleză");
 		ids.add("loc"); items.add(auto ? (en ? "Turn location off" : "Oprire localizare") : (en ? "Turn location on" : "Pornire localizare"));
 		ids.add("update"); items.add(en ? "Check for updates" : "Verifică actualizări");
 		ids.add("about"); items.add(en ? "About" : "Despre");
@@ -614,24 +622,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		int rh = row.getMeasuredHeight();
 		android.widget.LinearLayout box = new android.widget.LinearLayout(this);
 		box.setOrientation(android.widget.LinearLayout.VERTICAL);
-		box.addView(lv, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, rh * 5));
-		final android.widget.TextView more = new android.widget.TextView(b.getContext());
-		more.setText(en ? "⌄  more  ⌄" : "⌄  mai multe  ⌄");
-		more.setGravity(android.view.Gravity.CENTER);
-		more.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
-		more.setTextColor(s.dark ? 0xFFA6A39A : 0xFF555555);
-		int pad = Math.round(6 * getResources().getDisplayMetrics().density);
-		more.setPadding(0, pad, 0, pad);
+		final android.widget.TextView less = hint(b.getContext(), en ? "⌃  more  ⌃" : "⌃  mai multe  ⌃");
+		final android.widget.TextView more = hint(b.getContext(), en ? "⌄  more  ⌄" : "⌄  mai multe  ⌄");
+		less.setVisibility(View.INVISIBLE);
 		more.setVisibility(items.size() > 5 ? View.VISIBLE : View.INVISIBLE);
+		box.addView(less, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		box.addView(lv, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, rh * 5));
 		box.addView(more, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		lv.setOnScrollListener(new android.widget.AbsListView.OnScrollListener() {
 			public void onScrollStateChanged(android.widget.AbsListView v, int st) {
 			}
 
 			public void onScroll(android.widget.AbsListView v, int first, int vis, int total) {
-				View last = v.getChildAt(v.getChildCount() - 1);
+				View top = v.getChildAt(0), last = v.getChildAt(v.getChildCount() - 1);
+				boolean start = first == 0 && (top == null || top.getTop() >= 0);
 				boolean end = first + vis >= total && last != null && last.getBottom() <= v.getHeight();
+				less.setVisibility(start ? View.INVISIBLE : View.VISIBLE);
 				more.setVisibility(end ? View.INVISIBLE : View.VISIBLE);
+			}
+		});
+		less.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				lv.smoothScrollToPosition(0);
 			}
 		});
 		more.setOnClickListener(new View.OnClickListener() {
@@ -657,7 +669,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else if (it.equals("lang")) e.putString("lang", en ? "ro" : "en");
 				else if (it.equals("keepOn")) e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true));
 				else if (it.equals("theme")) { pickTheme(); return; }
-				else if (it.equals("brightAuto")) e.remove("bright");
 				else if (it.equals("loc")) {
 					if (autoLoc()) setAutoLoc(false);
 					else onLocate();
@@ -670,6 +681,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		menu.show();
+	}
+
+	/** "⌃ more ⌃" / "⌄ more ⌄" over and under the menu list: there are more items that way. */
+	private android.widget.TextView hint(Context ctx, String text) {
+		android.widget.TextView t = new android.widget.TextView(ctx);
+		t.setText(text);
+		t.setGravity(android.view.Gravity.CENTER);
+		t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
+		t.setTextColor(s.dark ? 0xFFA6A39A : 0xFF555555);
+		int pad = Math.round(6 * getResources().getDisplayMetrics().density);
+		t.setPadding(0, pad, 0, pad);
+		return t;
 	}
 
 	private void pickTheme() {
