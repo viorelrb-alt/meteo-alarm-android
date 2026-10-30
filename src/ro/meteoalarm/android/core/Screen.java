@@ -37,6 +37,9 @@ public final class Screen {
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
 			btnLocate = { 124, 0, 64, 64 },
 			cityArea = { 40, 104, 380, 56 };
+	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
+	public final float[] warnArea = { 0, 0, 0, 0 };
+	public int warnStart, warnBoxes;
 
 	/** Canvas width: 758 in portrait, wider in landscape. */
 	private float cw = W;
@@ -87,12 +90,17 @@ public final class Screen {
 	}
 
 	private void drawPortrait(float ch) {
-		cityArea[0] = 40; cityArea[1] = 104; cityArea[2] = 380; cityArea[3] = 56;
 		float fb = ch - 76;
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
+		g.rect(40, 102, 678, 2, c.line);
+		warnArea[2] = 0;
+		// The town next to the menu button, above the line.
+		String label = city != null ? city.label() : "";
+		float lp = fit(true, 40, 300, label);
+		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
+		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
 		if (w == null) {
-			g.rect(40, 102, 678, 2, c.line);
 			String msg = error.length() > 0 ? error : T.loading;
 			float p = fit(true, 40, 640, msg);
 			ctext(true, p, 300, W / 2, msg, c.ink);
@@ -100,25 +108,11 @@ public final class Screen {
 			return;
 		}
 
-		String label = city.label();
-		ltext(true, fit(true, 36, 340, label), 116, 40, label, c.ink);
-
 		float nowBot = 498 + Math.max(0, ch - BASE_H);
 		float fy = nowBot - 4;
-		int shown = drawWarnings();
-		g.rect(40, 102, hdrEnd - 40, 2, c.line);
-
+		float top = drawWarnBoxes(40, 116, 678);
 		String[] d = T.describe(w.code, w.isDay);
-		if (shown == 0) {
-			drawNowSide(d[0], 40, 104, 718, fy + 4);
-		} else {
-			float base = nowBot - 21;
-			drawTemp(40, base, 252, 405);
-			float cy = base - tp * 32 / 100;
-			icLeft = tempEnd + 2; icRight = 748; icTop = warnBot + 4; icFit = true; icBot = fy - 6;
-			drawIconC(d[0], (tempEnd + 718) / 2, cy, 260, cy - warnBot - 10, 718 - tempEnd - 16);
-			icTop = 0; icFit = false;
-		}
+		drawNowSide(d[0], 40, top > 0 ? top - 50 : 104, 718, fy + 4);
 
 		// Description and wind on the right, "feels like" and high / low on the left.
 		rtext(true, fit(true, 39, 330, d[1]), fy, 712, d[1], c.ink);
@@ -160,7 +154,9 @@ public final class Screen {
 			footer(fb);
 			return;
 		}
-		float nowTop = 104 + 12 + drawWarningsRow(40, 116, leftR - 40);
+		warnArea[2] = 0;
+		float wb = drawWarnBoxes(40, 116, leftR - 40);
+		float nowTop = wb > 0 ? wb + 14 : 116;
 		float fy = 568;
 		String[] d = T.describe(w.code, w.isDay);
 		drawNowSide(d[0], 40, nowTop - 60, leftR, fy + 4);
@@ -248,36 +244,6 @@ public final class Screen {
 		}
 	}
 
-	/**
-	 * Landscape warnings: up to two side by side at the top of the weather column, each a code
-	 * pill with the type and the period under it. Returns the height used (0 without warnings).
-	 */
-	private float drawWarningsRow(float x0, float y, float wd) {
-		if (warns == null) return 0;
-		long nowMs = now.getTimeInMillis();
-		float colW = (wd - 20) / 2, x = x0;
-		int shown = 0;
-		for (Warnings.Warn wr : warns) {
-			if (wr.until <= nowMs || shown >= 2) continue;
-			String name = T.warn[Math.min(3, Math.max(1, wr.level)) - 1];
-			String lab = T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
-			String txt = T.warnType(wr.type);
-			String per = T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12);
-			float lp = fit(true, 39, colW - 70, lab);
-			float bw = g.width(true, lp, lab) + 14;
-			int fill = wr.level >= 3 ? c.warnR : wr.level == 2 ? c.warnO : c.warnY;
-			g.roundRect(x, y, bw, 42, 12, c.line);
-			g.roundRect(x + 2, y + 2, bw - 4, 38, 10, fill);
-			ltext(true, lp, y + (42 - lp) / 2, x + 7, lab, c.pillInk);
-			if (wr.level >= 3) g.icon("ui/atentie.png", x + bw + 10, y, 46, 42, dark ? c.warnR : c.ink);
-			ltext(false, fit(false, 31, colW, txt), y + 50, x + 3, txt, c.ink);
-			ltext(false, fit(false, 30, colW, per), y + 79, x + 3, per, c.dim);
-			x += colW + 20;
-			shown++;
-		}
-		return shown > 0 ? 116 : 0;
-	}
-
 	// --- Helpers ---------------------------------------------------------------------
 
 	private String t(double c) {
@@ -349,8 +315,7 @@ public final class Screen {
 
 	// --- Current weather ---------------------------------------------------------------
 
-	private float icLeft = 0, icRight = 758, icTop = 0, icBot = 0, icPct = 100;
-	private boolean icFit;
+	private float icLeft = 0, icRight = 758, icTop = 0, icPct = 100;
 
 	private void drawIcon(String icon, float x, float y, float s) {
 		g.icon("icons/" + icon + ".png", x, y, s, s, c.ink);
@@ -372,7 +337,6 @@ public final class Screen {
 		if (s * dh / 200 > halfH * 2) s = halfH * 2 * 200 / dh;
 		if (s * dw / 200 > maxw) s = maxw * 200 / dw;
 		s = s * icPct / 100;
-		if (icFit && cy - s * (y0 + y1) / 400 < icTop && icTop + s * y1 / 200 > icBot) s = (icBot - icTop) * 200 / y1;
 		float x = cx - s * (x0 + x1) / 400;
 		// Keep the drawing itself (not its file's square) between IC_LEFT and IC_RIGHT.
 		if (x + s * x0 / 200 < icLeft) x = icLeft - s * x0 / 200;
@@ -383,7 +347,7 @@ public final class Screen {
 	}
 
 	// Measured temperature: size, minus, digits, unit.
-	private float tp, tMw, tWn, tGap, tWu, tU, tW, tempEnd;
+	private float tp, tMw, tWn, tGap, tWu, tU, tW;
 	private boolean tNeg;
 	private String tN;
 
@@ -404,11 +368,6 @@ public final class Screen {
 		}
 	}
 
-	private void drawTemp(float left, float base, float px, float maxw) {
-		tempSize(px, maxw);
-		drawTempAt(left, base);
-	}
-
 	/** Minus bar, digits, a small "°" level with their top and the unit on their baseline. */
 	private void drawTempAt(float left, float base) {
 		float dh = tp * 64 / 100, x = left;
@@ -421,7 +380,6 @@ public final class Screen {
 		x += tWn + tGap;
 		g.text(true, tU, base - dh - tU * 17 / 100, x, "°", c.ink);
 		g.text(true, tU, base - tU * 81 / 100, x, unitF ? "F" : "C", c.ink);
-		tempEnd = x + tWu;
 	}
 
 	/** No warnings: the temperature right-aligned on the middle, the icon centred in the right half. */
@@ -437,42 +395,83 @@ public final class Screen {
 
 	// --- Warnings ------------------------------------------------------------------------
 
-	private float hdrEnd = 718, warnBot = 102;
+	/** The warnings of one code (level) merged: the types and the whole period. */
+	private static final class WarnGroup {
+		int level;
+		String types = "";
+		long from = Long.MAX_VALUE, until;
+	}
 
-	/** Up to two warnings right-aligned under the clock; returns how many were drawn. */
-	private int drawWarnings() {
-		hdrEnd = 718;
-		warnBot = 102;
-		if (warns == null) return 0;
-		float wy = 102;
-		int shown = 0;
+	/** The active warnings, one group per code, red first. */
+	private List<WarnGroup> warnGroups() {
+		List<WarnGroup> gs = new java.util.ArrayList<WarnGroup>();
+		if (warns == null) return gs;
 		long nowMs = now.getTimeInMillis();
-		for (Warnings.Warn wr : warns) {
-			if (wr.until <= nowMs || shown >= 2) continue;
-			String name = T.warn[Math.min(3, Math.max(1, wr.level)) - 1];
-			String lab = T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
-			String txt = T.warnType(wr.type);
-			String per = T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12);
-			float lp = fit(true, 39, 330, lab);
-			float bw = g.width(true, lp, lab) + 14;
-			float txp = fit(false, 31, 330, txt);
-			int fill = wr.level >= 3 ? c.warnR : wr.level == 2 ? c.warnO : c.warnY;
-			float sx = 718 - bw;
-			if (wr.level >= 3) {
-				sx -= 56;
-				g.icon("ui/atentie.png", sx, wy, 46, 42, dark ? c.warnR : c.ink);
+		for (int lv = 3; lv >= 1; lv--) {
+			WarnGroup gr = new WarnGroup();
+			gr.level = lv;
+			for (Warnings.Warn wr : warns) {
+				if (wr.until <= nowMs || Math.min(3, Math.max(1, wr.level)) != lv) continue;
+				if (!(", " + gr.types + ",").contains(", " + wr.type + ",")) gr.types += (gr.types.length() > 0 ? ", " : "") + wr.type;
+				gr.from = Math.min(gr.from, wr.from);
+				gr.until = Math.max(gr.until, wr.until);
 			}
-			if (shown == 0) hdrEnd = sx - 6;
-			g.roundRect(718 - bw, wy, bw, 42, 12, c.line);
-			g.roundRect(718 - bw + 2, wy + 2, bw - 4, 38, 10, fill);
-			ltext(true, lp, wy + (42 - lp) / 2, 718 - bw + 7, lab, c.pillInk);
-			rtext(false, txp, wy + 50, 716, txt, c.ink);
-			rtext(false, 30, wy + 79, 712, per, c.dim);
-			wy += 116;
-			warnBot = wy - 6;
-			shown++;
+			if (gr.types.length() > 0) gs.add(gr);
 		}
-		return shown;
+		return gs;
+	}
+
+	// Title bars: light pastels with black text, or dark shades with white text (yellow, orange, red).
+	private static final int[] BAR_LIGHT = { 0xFFEDF9A5, 0xFFFFC285, 0xFFFF8585 }, BAR_DARK = { 0xFF8C7A12, 0xFFA8561E, 0xFF9E2B2B };
+
+	/**
+	 * One box per warning code across WD: the code in a coloured title bar, the types and the
+	 * period under it, a warning triangle in the red one. Two fit; a third is reached by swiping,
+	 * with dots under the boxes. Returns the bottom of what was drawn, 0 without warnings.
+	 */
+	private float drawWarnBoxes(float x0, float y, float wd) {
+		List<WarnGroup> gs = warnGroups();
+		int n = gs.size(), vis = Math.min(2, n);
+		warnBoxes = n;
+		if (n == 0) return 0;
+		warnStart = Math.max(0, Math.min(warnStart, n - vis));
+		float gap = 16, bw = (wd - gap * (vis - 1)) / vis, h = 130, hb = 44, r = 14;
+		warnArea[0] = x0; warnArea[1] = y; warnArea[2] = wd; warnArea[3] = h;
+		int border = c.ink, body = dark ? 0xFF000000 : c.page;
+		for (int i = 0; i < vis; i++) {
+			WarnGroup gr = gs.get(warnStart + i);
+			float x = x0 + i * (bw + gap);
+			int bar = (dark ? BAR_DARK : BAR_LIGHT)[gr.level - 1];
+			g.roundRect(x, y, bw, h, r, border);
+			g.roundRect(x + 2, y + 2, bw - 4, h - 4, r - 2, body);
+			g.roundRect(x + 2, y + 2, bw - 4, hb, r - 2, bar);
+			g.rect(x + 2, y + r, bw - 4, hb - r + 2, bar);
+			g.rect(x + 2, y + hb, bw - 4, 2, border);
+			String name = T.warn[gr.level - 1];
+			String title = T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
+			float hp = fit(true, 30, bw - 24, title), ty = y + 2 + (hb - 2) / 2 - hp * 485 / 1000;
+			int tc = dark ? 0xFFFFFFFF : 0xFF000000;
+			float tx = x + bw / 2 - g.width(true, hp, title) / 2;
+			g.text(true, hp, ty, tx, title, tc);
+			g.text(true, hp, ty, tx + 1, title, tc);
+			float lx = x + 18;
+			if (gr.level >= 3) {
+				g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46) / 2, 50, 46, dark ? c.warnR : c.ink);
+				lx = x + 78;
+			}
+			float room = x + bw - 12 - lx;
+			String txt = T.warnType(gr.types);
+			String per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
+			ltext(true, fit(true, 30, room, txt), y + hb + 12, lx, txt, c.ink);
+			ltext(false, fit(false, 26, room, per), y + hb + 50, lx, per, c.dim);
+		}
+		if (n <= vis) return y + h;
+		// One dot per position of the boxes; the current one in ink.
+		int pos = n - vis + 1;
+		float dx = x0 + wd / 2 - (pos * 22 - 10) / 2f;
+		for (int k = 0; k < pos; k++)
+			g.roundRect(dx + k * 22, y + h + 10, 12, 12, 6, k == warnStart ? c.ink : c.dim);
+		return y + h + 26;
 	}
 
 	// --- Precipitation -------------------------------------------------------------------

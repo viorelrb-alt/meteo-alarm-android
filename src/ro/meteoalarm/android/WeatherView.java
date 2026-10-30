@@ -22,7 +22,7 @@ final class WeatherView extends View {
 	final Screen screen = new Screen();
 	private final AndroidGfx gfx;
 	private Taps taps;
-	private float scale = 1, ox, oy;
+	private float scale = 1, ox, oy, downX, downY;
 
 	WeatherView(Context ctx, Taps taps) {
 		super(ctx);
@@ -69,8 +69,19 @@ final class WeatherView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
+		if (e.getAction() == MotionEvent.ACTION_DOWN) {
+			downX = e.getX();
+			downY = e.getY();
+		}
 		if (e.getAction() != MotionEvent.ACTION_UP) return true;
 		float x = (e.getX() - ox) / scale, y = (e.getY() - oy) / scale;
+		// A sideways swipe on the warning boxes shows the next or the previous one.
+		float dx = e.getX() - downX, dy = e.getY() - downY;
+		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy) && screen.warnArea[2] > 0 && in(screen.warnArea, (downX - ox) / scale, (downY - oy) / scale)) {
+			screen.warnStart += dx < 0 ? 1 : -1;
+			invalidate();
+			return true;
+		}
 		if (in(screen.btnMenu, x, y)) taps.onMenu();
 		else if (in(screen.btnRefresh, x, y)) taps.onRefresh();
 		else if (in(screen.btnLocate, x, y)) taps.onLocate();

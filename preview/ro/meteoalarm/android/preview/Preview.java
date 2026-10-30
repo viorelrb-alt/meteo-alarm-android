@@ -124,12 +124,13 @@ public final class Preview {
 		s.warns = Warnings.parse(fetch(Warnings.FEED, null), s.city.county, now);
 		if (opts.contains(" warn")) {
 			s.warns = new ArrayList<Warnings.Warn>();
-			for (int k = 0; k < 2; k++) {
+			int n = opts.contains(" warn3") ? 4 : 2;
+			for (int k = 0; k < n; k++) {
 				Warnings.Warn w = new Warnings.Warn();
-				w.level = k == 0 ? 3 : 1;
-				w.type = k == 0 ? "wind" : "rain";
+				w.level = k == 0 ? 3 : k == 3 ? 1 : k;
+				w.type = k == 0 ? "wind" : k == 1 ? "rain" : k == 2 ? "high-temperature" : "thunderstorm";
 				w.from = now - 3600000;
-				w.until = now + 20 * 3600000;
+				w.until = now + (20 + k) * 3600000L;
 				s.warns.add(w);
 			}
 		}
