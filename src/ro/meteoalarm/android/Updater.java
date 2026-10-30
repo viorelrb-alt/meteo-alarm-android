@@ -31,12 +31,14 @@ final class Updater {
 		return en
 				? "About the Play Protect warning: Google may say the app \"may be harmful\". It does so because the app "
 						+ "does not come from Google Play, its developer is not registered with Google, and it can install its "
-						+ "own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. To go on, "
-						+ "tap \"More details\" › \"Install anyway\"."
+						+ "own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play "
+						+ "Protect window appears, tap \"More details\" (if shown), then \"Install without scanning\" "
+						+ "(or \"Install anyway\")."
 				: "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare”. O face pentru că "
 						+ "aplicația nu vine din Google Play, dezvoltatorul nu e înregistrat la Google și aplicația își poate "
 						+ "instala singură actualizările (de pe github.com/viorelrb-alt/meteo-alarm-android). Aplicația nu face "
-						+ "nimic altceva. Ca să continui, apasă „Mai multe detalii” › „Instalează oricum”.";
+						+ "nimic altceva. Când apare fereastra Play Protect, apasă „Mai multe” (dacă apare), apoi "
+						+ "„Instalează fără verificare” (sau „Instalează oricum”).";
 	}
 
 	Updater(Activity a, BottomSheet sheet) {

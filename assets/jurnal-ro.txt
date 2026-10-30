@@ -1,3 +1,7 @@
+v0.22 · 31 octombrie 2026
+- Icon nou, rotund, cu desenul de dinainte.
+- Explicația pentru Play Protect spune exact ce să apeși: „Mai multe”, apoi „Instalează fără verificare”.
+
 v0.21 · 31 octombrie 2026
 - Meniul ☰ are jumătate din înălțimea de dinainte: se văd opțiunile până la „Limba engleză”, restul se derulează; meniul nu își schimbă mărimea.
 - Butonul de localizare deschide o fereastră care spune că se caută poziția exactă; se închide singură când localizarea e gata.

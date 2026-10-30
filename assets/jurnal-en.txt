@@ -1,3 +1,7 @@
+v0.22 · 31 October 2026
+- New round icon with the same drawing.
+- The Play Protect explanation says exactly what to tap: "More details", then "Install without scanning".
+
 v0.21 · 31 October 2026
 - The ☰ menu is half as tall: the items up to the language show, the rest scroll; the menu keeps its size.
 - The locate button opens a small window saying the exact position is being looked for; it closes by itself.
