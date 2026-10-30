@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.33";
+	static final String VERSION = "Meteo Alarm Android v0.34";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -176,6 +176,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		listenLight(theme.equals("sensor") && resumed);
 		applyBrightness();
 		s.autoLoc = autoLoc();
+		barColours();
 		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -248,6 +249,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private boolean hasLight() {
 		if (sensors == null) sensors = (SensorManager) getSystemService(SENSOR_SERVICE);
 		return sensors != null && sensors.getDefaultSensor(Sensor.TYPE_LIGHT) != null;
+	}
+
+	/**
+	 * The brightness bar in the phone's colours: on Android 12+ the theme's palette (light accent
+	 * for the level, neutral gray for the track, dark neutral for the sun), as the phone's own bar.
+	 */
+	private void barColours() {
+		if (android.os.Build.VERSION.SDK_INT < 31) return;
+		int f = sysColour("system_accent1_100"), t = sysColour("system_neutral2_500"), i = sysColour("system_neutral1_900");
+		if (f != 0) s.barFill = f;
+		if (t != 0) s.barTrack = t;
+		if (i != 0) s.barIcon = i;
+	}
+
+	private int sysColour(String name) {
+		int id = getResources().getIdentifier(name, "color", "android");
+		if (id == 0) return 0;
+		try {
+			return getResources().getColor(id, getTheme());
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/** The app's own brightness (0.004–1) set with the slider, or the phone's (-1). */

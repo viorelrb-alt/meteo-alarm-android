@@ -1,3 +1,7 @@
+v0.34 · 31 octombrie 2026
+- Bara de luminozitate ia culorile din tema telefonului (de la Android 12): dacă telefonul are interfața roz, bara e și ea în nuanțe de roz. Arată la fel în tema luminoasă și în cea întunecată, ca bara telefonului.
+- Butonul cu lună are bordură groasă: în tema luminoasă e alb, cu luna și bordura negre; în tema întunecată e invers.
+
 v0.33 · 31 octombrie 2026
 - Panoul de luminozitate de jos a dispărut. Butonul soare arată acum bara verticală din stânga; dacă n-o folosești, dispare după 3 secunde.
 - Bara verticală e mai aproape de marginea stângă, fără chenar, iar partea de sub nivel e pe jumătate transparentă.

@@ -1,3 +1,7 @@
+v0.34 · 31 October 2026
+- The brightness bar takes its colours from the phone's theme (Android 12+): a pink phone theme gives a pink bar. It looks the same in the light and the dark theme, like the phone's bar.
+- The moon button has a thick ring: in the light theme it is white with a black moon and ring; in the dark theme the other way round.
+
 v0.33 · 31 October 2026
 - The brightness panel at the bottom is gone. The sun button now shows the vertical bar on the left; unused, it goes away after 3 seconds.
 - The vertical bar is closer to the left edge, without a frame, and the track under the level is half see-through.

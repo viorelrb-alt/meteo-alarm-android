@@ -70,6 +70,11 @@ public final class Screen {
 	 */
 	public boolean brightBar;
 	public float brightLevel = 0.5f;
+	/**
+	 * The bar's colours, from the phone's theme (Android 12+: its palette, so a pink theme gives a
+	 * pink bar); otherwise the phone's usual light gray. The track is drawn half see-through.
+	 */
+	public int barFill = 0xFFE3E3E3, barTrack = 0xFF8A8686, barIcon = 0xFF1C1B1F;
 	/** The bar and the theme button (x, y, w, h); set by draw. */
 	public final float[] barArea = { 0, 0, 0, 0 }, btnMoon = { 0, 0, 0, 0 };
 
@@ -845,7 +850,7 @@ public final class Screen {
 	 * (VERTICAL) or the left, never less than a round end, with a sun in that end.
 	 */
 	private void pill(float x, float y, float w, float h, boolean vertical, float level) {
-		int track = dark ? 0x804A4944 : 0x80AAAAAA, fill = dark ? 0xFFE8E6DF : Gfx.BLACK, mark = dark ? 0xFF262624 : Gfx.WHITE;
+		int track = (barTrack & 0xFFFFFF) | 0x80000000, fill = barFill, mark = barIcon;
 		float t = vertical ? w : h, len = vertical ? h : w, f = t + Math.max(0, Math.min(1, level)) * (len - t);
 		g.roundRect(x, y, w, h, t / 2, track);
 		if (vertical) {
@@ -863,14 +868,16 @@ public final class Screen {
 	 */
 	private void drawBrightBar(float ch) {
 		float x = 50, bw = 84, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
-		int fill = dark ? 0xFFE8E6DF : Gfx.BLACK, mark = dark ? 0xFF262624 : Gfx.WHITE;
+		// Light theme: white button, black moon and a thick black ring; dark theme: the other way round.
+		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
 		btnMoon[0] = x; btnMoon[1] = top; btnMoon[2] = bw; btnMoon[3] = bw;
-		float r = bw / 2, cx = x + r, cy = top + r, m = r * 0.48f;
-		g.roundRect(x, top, bw, bw, r, fill);
+		float r = bw / 2, cx = x + r, cy = top + r, ring = 7, m = r * 0.46f;
+		g.roundRect(x, top, bw, bw, r, ink);
+		g.roundRect(x + ring, top + ring, bw - 2 * ring, bw - 2 * ring, r - ring, bg);
 		// Crescent: a disc with another one, in the button's colour, over its upper right.
-		g.roundRect(cx - m, cy - m, 2 * m, 2 * m, m, mark);
-		float o = m * 0.55f, m2 = m * 0.85f;
-		g.roundRect(cx - m2 + o, cy - m2 - o * 0.6f, 2 * m2, 2 * m2, m2, fill);
+		g.roundRect(cx - m, cy - m, 2 * m, 2 * m, m, ink);
+		float m2 = m * 0.8f;
+		g.roundRect(cx + m * 0.42f - m2, cy - m * 0.42f - m2, 2 * m2, 2 * m2, m2, bg);
 		barArea[0] = x; barArea[1] = by; barArea[2] = bw; barArea[3] = bh;
 		pill(x, by, bw, bh, true, brightLevel);
 	}
