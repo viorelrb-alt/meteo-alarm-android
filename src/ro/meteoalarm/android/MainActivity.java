@@ -39,7 +39,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.17";
+	static final String VERSION = "Meteo Alarm Android v0.18";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -107,8 +107,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	@Override
 	public void onBackPressed() {
-		if (sheet.isOpen()) sheet.hide();
-		else super.onBackPressed();
+		if (sheet.isOpen()) {
+			if (sheet.isCancelable()) sheet.hide();
+		} else super.onBackPressed();
 	}
 
 	/** About the app: shown once at the first start (before the location question) and from ☰ › Despre. */
@@ -139,14 +140,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	private void welcome() {
-		AlertDialog.Builder b = dialog().setTitle(VERSION).setMessage(aboutText()).setCancelable(false)
-				.setPositiveButton(s.T.en ? "I understand" : "Am înțeles", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface d, int w) {
-						prefs.edit().putBoolean("welcomed", true).apply();
-						if (autoLoc() && !Locator.allowed(MainActivity.this)) askLocation();
-					}
-				});
-		show(b);
+		sheet.show(VERSION, aboutText(), s.T.en ? "I understand" : "Am înțeles", new Runnable() {
+			public void run() {
+				sheet.hide();
+				prefs.edit().putBoolean("welcomed", true).apply();
+				if (autoLoc() && !Locator.allowed(MainActivity.this)) askLocation();
+			}
+		}, null);
 	}
 
 	private long interval() {
@@ -502,7 +502,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Tema întunecată folosește culorile aplicației Claude. Font: Liberation Sans.");
 		msg += "\n\n" + (s.T.en ? "Installed version: v" : "Versiunea instalată: v") + updater.installed()
 				+ "\n" + (s.T.en ? "Updates: " : "Actualizări: ") + "github.com/" + ro.meteoalarm.android.core.Release.REPO + "/releases";
-		show(dialog().setTitle(VERSION).setMessage(msg).setPositiveButton("OK", null));
+		sheet.show(VERSION, msg, null, null, s.T.en ? "Close" : "Închide");
 	}
 
 	/** Favourites (the last three towns) and the county list. */

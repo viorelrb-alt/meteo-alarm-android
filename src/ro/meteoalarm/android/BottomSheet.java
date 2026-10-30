@@ -9,19 +9,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**
  * A small window at the bottom of the screen, over the weather: it slides up to open and down to
- * close (with "Renunță", a tap above it, or a downward swipe on it). Used for the updates.
+ * close (with "Renunță", a tap above it, or a downward swipe on its top). The buttons sit under
+ * the title and the text scrolls under them, so they stay in reach however long the text is.
+ * Used for the updates, the first-start message and About.
  */
 final class BottomSheet extends FrameLayout {
 	private final View scrim;
 	private final LinearLayout sheet;
 	private final TextView title, text;
+	private final ScrollView scroll;
 	private final Button primary, secondary;
 	private final float dp;
-	private boolean open, dark;
+	private boolean open, dark, cancelable = true;
 	private Runnable onPrimary;
 	private float downY;
 
@@ -33,7 +37,7 @@ final class BottomSheet extends FrameLayout {
 		scrim.setBackgroundColor(0x66000000);
 		scrim.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				hide();
+				if (cancelable) hide();
 			}
 		});
 		addView(scrim, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
@@ -54,13 +58,6 @@ final class BottomSheet extends FrameLayout {
 		title.setTextSize(20);
 		title.setTypeface(Typeface.DEFAULT_BOLD);
 		sheet.addView(title);
-		text = new TextView(c);
-		text.setTextSize(16);
-		text.setLineSpacing(0, 1.15f);
-		LinearLayout.LayoutParams tp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		tp.topMargin = (int) (8 * dp);
-		tp.bottomMargin = (int) (16 * dp);
-		sheet.addView(text, tp);
 		LinearLayout row = new LinearLayout(c);
 		row.setGravity(Gravity.END);
 		secondary = button(c);
@@ -69,7 +66,23 @@ final class BottomSheet extends FrameLayout {
 		LinearLayout.LayoutParams pp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		pp.leftMargin = (int) (12 * dp);
 		row.addView(primary, pp);
-		sheet.addView(row);
+		LinearLayout.LayoutParams rp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		rp.topMargin = (int) (12 * dp);
+		rp.bottomMargin = (int) (12 * dp);
+		sheet.addView(row, rp);
+		text = new TextView(c);
+		text.setTextSize(16);
+		text.setLineSpacing(0, 1.15f);
+		// The text scrolls; at most about two thirds of the screen high.
+		scroll = new ScrollView(c) {
+			@Override
+			protected void onMeasure(int wSpec, int hSpec) {
+				int max = (int) (getResources().getDisplayMetrics().heightPixels * 0.62f);
+				super.onMeasure(wSpec, MeasureSpec.makeMeasureSpec(max, MeasureSpec.AT_MOST));
+			}
+		};
+		scroll.addView(text);
+		sheet.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		secondary.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				hide();
@@ -80,6 +93,7 @@ final class BottomSheet extends FrameLayout {
 				if (onPrimary != null) onPrimary.run();
 			}
 		});
+		// Swiping down on the top part (handle, title, buttons' row) closes; the text scrolls.
 		sheet.setOnTouchListener(new OnTouchListener() {
 			public boolean onTouch(View v, MotionEvent e) {
 				return swipe(e);
@@ -118,6 +132,7 @@ final class BottomSheet extends FrameLayout {
 		sheet.findViewWithTag("handle").setBackground(shape(dark ? 0xFF6B6A65 : 0xFFAAAAAA, 0, 2 * dp, dp, false));
 		title.setTextColor(ink);
 		text.setTextColor(dark ? 0xFFC2C0B6 : 0xFF333333);
+		scroll.setBackgroundColor(0);
 		primary.setBackground(shape(accent, 0, 10 * dp, dp, false));
 		primary.setTextColor(dark ? 0xFF262624 : 0xFFFFFFFF);
 		secondary.setBackground(shape(bg, line, 10 * dp, dp, false));
@@ -128,11 +143,21 @@ final class BottomSheet extends FrameLayout {
 		return open;
 	}
 
-	/** Opens (sliding up) or updates the window. PRIMARY null: only the close button. */
+	boolean isCancelable() {
+		return cancelable;
+	}
+
+	/**
+	 * Opens (sliding up) or updates the window. PRIMARY null: only the close button. CLOSE null:
+	 * only the primary button, and the window closes only through it (no tap above, swipe or Back).
+	 */
 	void show(String t, String msg, String primaryLabel, Runnable action, String closeLabel) {
 		title.setText(t);
 		text.setText(msg);
-		secondary.setText(closeLabel);
+		scroll.scrollTo(0, 0);
+		cancelable = closeLabel != null;
+		secondary.setVisibility(closeLabel == null ? GONE : VISIBLE);
+		if (closeLabel != null) secondary.setText(closeLabel);
 		onPrimary = action;
 		primary.setVisibility(primaryLabel == null ? GONE : VISIBLE);
 		if (primaryLabel != null) primary.setText(primaryLabel);
@@ -170,7 +195,7 @@ final class BottomSheet extends FrameLayout {
 		switch (e.getActionMasked()) {
 		case MotionEvent.ACTION_DOWN:
 			downY = e.getRawY();
-			return true;
+			return cancelable;
 		case MotionEvent.ACTION_MOVE:
 			sheet.setTranslationY(Math.max(0, e.getRawY() - downY));
 			return true;
