@@ -39,7 +39,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.16";
+	static final String VERSION = "Meteo Alarm Android v0.17";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -452,10 +452,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String[] items = en
 				? new String[] { "Refresh now", "Choose town", s.unitF ? "Show °C" : "Show °F", s.clk12 ? "24-hour clock" : "12-hour clock",
 						"Limba română", keepOn ? "Let the screen sleep" : "Keep the screen on", "Theme…",
-						auto ? "Automatic location: on (turn off)" : "Automatic location: off (turn on)", "Check for updates", "About" }
+						auto ? "Turn location off" : "Turn location on", "Check for updates", "About" }
 				: new String[] { "Actualizează acum", "Alege localitatea", s.unitF ? "Afișează °C" : "Afișează °F",
-						s.clk12 ? "Ceas 24 de ore" : "Ceas 12 ore (AM/PM)", "English", keepOn ? "Lasă ecranul să se stingă" : "Ține ecranul aprins",
-						"Temă…", auto ? "Localizare automată: pornită (oprește)" : "Localizare automată: oprită (pornește)",
+						s.clk12 ? "Ceas 24 de ore" : "Ceas 12 ore (AM/PM)", "Limba engleză", keepOn ? "Lasă ecranul să se stingă" : "Ține ecranul aprins",
+						"Temă…", auto ? "Oprire localizare" : "Pornire localizare",
 						"Verifică actualizări", "Despre" };
 		show(dialog().setTitle("☰").setItems(items, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
