@@ -1,3 +1,10 @@
+v1.41 · 31 October 2026
+- Portrait: both lines are the same distance from the boxes above and under them.
+- A tap on the town's name starts the GPS location (it no longer opens the list).
+- Landscape: the rain chart takes the whole width of its part; the hour boxes follow it when dragged.
+- The neighbourhood is only shown after the town: it no longer joins the list or the favourites; the location only updates the town's coordinates. Old entries like "Călărași, Mircea Vodă" become "Călărași" again.
+- The neighbourhood is shown only when the source confirms you are inside it (no longer the nearest one). The source is chosen in ☰ "Neighbourhood: phone / OpenStreetMap" (phone by default); after every tap on the location a notice shows the neighbourhood and its source.
+
 v1.40 · 31 October 2026
 - Neighbourhood: all the phone geocoder's results are read (the area often comes as a separate result, e.g. "Zona 10 Nivele"). After a tap on the location button, a notice shows the neighbourhood found and where it came from (phone or OpenStreetMap).
 - Portrait: a line between the rain chart and the five days.

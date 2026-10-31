@@ -322,7 +322,7 @@ final class WeatherView extends View {
 		}
 		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
 		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
-		else if (in(screen.cityArea, x, y)) taps.onCity(screen.cityArea);
+		else if (in(screen.cityArea, x, y)) taps.onLocate();
 		return true;
 	}
 }

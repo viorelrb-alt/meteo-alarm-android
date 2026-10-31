@@ -52,6 +52,17 @@ public final class Screen {
 	public int aqi = -1;
 	public String pollenPlant = "";
 	public Cities.City city;
+	/** The neighbourhood or sector the location found, shown after the town (never kept as a town). */
+	public String district = "";
+
+	/** "Călărași, CL", or with the neighbourhood "Călărași, Zona 10 Nivele, CL". */
+	public String place() {
+		if (city == null) return "";
+		String l = city.label();
+		if (district == null || district.length() == 0) return l;
+		int k = l.lastIndexOf(", ");
+		return k > 0 ? l.substring(0, k) + ", " + district + l.substring(k) : l + ", " + district;
+	}
 	public Texts T = new Texts(false);
 	public boolean unitF, clk12;
 	public Calendar now = Calendar.getInstance();
@@ -160,7 +171,7 @@ public final class Screen {
 		g.rect(40, 102, 678, 2, c.line);
 		warnArea[2] = 0;
 		// The town next to the menu button, above the line.
-		String label = city != null ? city.label() : "";
+		String label = place();
 		float lp = fit(true, 40, 340, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
 		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
@@ -186,11 +197,12 @@ public final class Screen {
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
 
 		float y0 = fy + 80;
-		drawNextHours(40, y0, 678, 276, false);
-		g.rect(40, y0 + 282, 678, 2, c.line);
-		drawDayCard(40, y0 + 290, 0, T.day1);
-		drawDayCard(387, y0 + 290, 1, T.day2);
-		drawDayCols(2, y0 + 502);
+		// Both lines sit 15 units from the boxes above and under them.
+		drawNextHours(40, y0, 678, 264, false);
+		g.rect(40, y0 + 279, 678, 2, c.line);
+		drawDayCard(40, y0 + 296, 0, T.day1);
+		drawDayCard(387, y0 + 296, 1, T.day2);
+		drawDayCols(2, y0 + 508);
 		// A line over the row of info boxes.
 		g.rect(40, y0 + 673, 678, 2, c.line);
 		drawInfoStrip(40, y0 + 690, 678, 184);
@@ -211,7 +223,7 @@ public final class Screen {
 		float mx = z1 + 11, mw = z2 - 11 - mx, rx = z2 + 11, rw = cw - 40 - rx;
 		updHead = true;
 		g.rect(40, 102, cw - 80, 2, c.line);
-		String label = city != null ? city.label() : "";
+		String label = place();
 		float lp = fit(true, 40, cw - 124 - 380, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
 		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
@@ -238,7 +250,10 @@ public final class Screen {
 
 		float bt = 124, bb = fb - 14, hh = 250;
 		peekW = 15;
+		// The rain chart takes the whole width here; the hour boxes follow it when dragged.
+		chartFull = true;
 		drawNextHours(mx, bt, mw, hh, false);
+		chartFull = false;
 		drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
 		peekW = 30;
 		drawInfoGrid(rx, bt, rw, bb - bt);
@@ -289,7 +304,7 @@ public final class Screen {
 		g.rect(40, 102, cw - 80, 2, c.line);
 		warnArea[2] = 0;
 		for (Strip st : strips()) st.area[2] = 0;
-		String label = city != null ? city.label() : "";
+		String label = place();
 		float lp = fit(true, 40, cw / 2 - 160, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
 		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
@@ -411,7 +426,7 @@ public final class Screen {
 		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
 		float bw = avail <= per && !chart ? (wd - gap * (avail - 1)) / avail : (wd - peek - gap * per) / per;
 		// The chart leaves room for the edge of the first hour box, so it is clear the row goes on.
-		float cwd = wd - peek - gap, x0 = chart ? cwd + gap : 0, step = bw + gap;
+		float cwd = chartFull ? wd : wd - peek - gap, x0 = chart ? cwd + gap : 0, step = bw + gap;
 		float[] starts = new float[avail + (chart ? 1 : 0)];
 		int n = 0;
 		if (chart) starts[n++] = x0;
@@ -1189,7 +1204,7 @@ public final class Screen {
 		ctext(false, fit(false, 36, cw - 120, T.date(now)), y, cw / 2, T.date(now), ink);
 		if (w != null) {
 			String[] d = T.describe(w.code, w.isDay);
-			String line = t(w.temp) + "°  " + d[1] + (city != null ? "  ·  " + city.label() : "");
+			String line = t(w.temp) + "°  " + d[1] + (city != null ? "  ·  " + place() : "");
 			float lp = fit(false, 32, cw - 220, line), lw = g.width(false, lp, line), ic = lp * 1.6f;
 			float lx = cw / 2 - (lw + ic + 14) / 2;
 			g.icon("icons/" + d[0] + ".png", lx, y + 64 - ic * 0.25f, ic, ic, ink);
@@ -1442,6 +1457,7 @@ public final class Screen {
 
 	/** How much of the next box shows at the end of a row (units). */
 	private float peekW = 30;
+	private boolean chartFull;
 
 	/** Landscape (phone): "updated" goes in the header next to the clock. */
 	private boolean updHead;

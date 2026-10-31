@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.40";
+	static final String VERSION = "Meteo Alarm Android v1.41";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -108,11 +108,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			countries = new Countries("");
 		}
 		// Towns found by the location, kept on the phone.
+		cleanNeighbourhoods();
 		for (String k : prefs.getString("myCities", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
 			if (c != null) cities.put(c);
 		}
 		locator = new Locator(this);
+		locator.osm = osm();
 		sheet = new BottomSheet(this);
 		updater = new Updater(this, sheet);
 		applySettings();
@@ -202,6 +204,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (c == null) c = cities.find("Călărași");
 		if (c == null) c = new Cities.City("Călărași", "Călărași", 44.2058, 27.3306);
 		s.city = c;
+		s.district = c.key().equals(prefs.getString("districtOf", "")) ? prefs.getString("district", "") : "";
 		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
 		// "sensor" (dark when the room is dark, from the light sensor).
 		String theme = prefs.getString("theme", "auto");
@@ -598,7 +601,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				boolean home = country.equals("ro");
 				String county = home ? cities.county(rawCounty) : rawCounty.trim();
 				if (county.length() == 0) county = town;
-				String name = district != null ? town + ", " + district : town;
+				// The neighbourhood is only shown, never kept: the town keeps its name in the list.
+				String name = town;
 				Cities.City found = new Cities.City(country, county, name, 0, 0, match);
 				Cities.City listed = cities.find(found);
 				if (listed != null) name = listed.name;
@@ -607,25 +611,26 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				// EDGE_M metres (a more exact name, as a sector of the same town, is taken at once).
 				Cities.City cur = s.city;
 				boolean same = found.same(cur);
-				// Inside the same town the neighbourhood follows the geocoder at once; the boundary
-				// margin is for moving between towns.
-				boolean finer = cur != null && cur.country.equals(country)
-						&& Warnings.fold(cur.name.replaceFirst(",.*$", "")).equals(Warnings.fold(town));
-				Area area = cur == null || same || finer ? null : loadArea(cur);
+				Area area = cur == null || same ? null : loadArea(cur);
 				boolean keep = area != null && area.holds(lat, lon, EDGE_M);
 				Cities.City here = keep ? new Cities.City(cur.country, cur.county, cur.name, la, lo, cur.match)
 						: new Cities.City(country, county, name, la, lo, match);
 				boolean added = cities.find(here) == null;
 				learn(here);
 				if (added && say) toast((s.T.en ? "Added to the list: " : "Adăugată în listă: ") + here.label());
-				if (!keep) fetchArea(here, town, district, lat, lon);
+				if (!keep) fetchArea(here, town, null, lat, lon);
 				boolean moved = cur == null || !here.same(cur) || distKm(cur.lat, cur.lon, la, lo) > 1;
 				if (moved) setCity(here, false);
-				else view.invalidate();
+				// The neighbourhood only while the phone is in the town the source named.
+				setDistrict(keep ? "" : district);
+				view.invalidate();
 				if (moved || say) fetch();
-				// After a tap: where the neighbourhood came from, to check it.
-				if (say && district != null && locator.source.length() > 0)
-					note(district + " · " + (s.T.en && locator.source.equals("telefon") ? "phone" : locator.source), 2500);
+				// After every tap: the neighbourhood found (or none) and where it came from.
+				if (say) {
+					String src = locator.osm ? "OpenStreetMap" : s.T.en ? "phone" : "telefon";
+					String d = keep || district == null ? (s.T.en ? "No neighbourhood confirmed" : "Cartier neconfirmat") : district;
+					note(d + " · " + src, 2500);
+				}
 			}
 
 			public void failed(String why) {
@@ -637,6 +642,43 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else toast(s.T.en ? "The town could not be found (internet?)." : "Localitatea nu a putut fi găsită (internet?).");
 			}
 		});
+	}
+
+	/** Shows D (null or empty: none) after the town, and keeps it for the next start. */
+	private void setDistrict(String d) {
+		s.district = d == null ? "" : d;
+		prefs.edit().putString("district", s.district).putString("districtOf", s.city != null ? s.city.key() : "").apply();
+	}
+
+	/**
+	 * Up to v1.40 a neighbourhood was kept as a town ("Călărași, Mircea Vodă"): such entries become
+	 * their town again, in the learned towns, the favourites and the town shown.
+	 */
+	private void cleanNeighbourhoods() {
+		SharedPreferences.Editor e = prefs.edit();
+		for (String key : new String[] { "myCities", "favs" }) {
+			StringBuilder b = new StringBuilder();
+			List<Cities.City> kept = new ArrayList<Cities.City>();
+			for (String k : prefs.getString(key, "").split("\n")) {
+				Cities.City c = baseTown(Cities.City.fromKey(k));
+				if (c == null) continue;
+				boolean dup = false;
+				for (Cities.City o : kept) dup |= o.same(c);
+				if (dup) continue;
+				kept.add(c);
+				b.append(b.length() > 0 ? "\n" : "").append(c.key());
+			}
+			e.putString(key, b.toString());
+		}
+		Cities.City cur = Cities.City.fromKey(prefs.getString("city", ""));
+		Cities.City base = baseTown(cur);
+		if (cur != null && base != null && !base.name.equals(cur.name)) e.putString("city", base.key()).putString("district", "").putString("districtOf", "");
+		e.apply();
+	}
+
+	private static Cities.City baseTown(Cities.City c) {
+		if (c == null || c.abroad() || c.name.indexOf(", ") < 0) return c;
+		return new Cities.City(c.country, c.county, c.name.substring(0, c.name.indexOf(", ")), c.lat, c.lon, c.match);
 	}
 
 	/** Margin (metres) past a town's boundary before the town shown changes. */
@@ -936,6 +978,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** Opens the bubble that is open now again (after the phone turns). */
 	private Runnable reopen;
 
+	/** Where the neighbourhood comes from: OpenStreetMap, or the phone's geocoder (the default). */
+	private boolean osm() {
+		return prefs.getString("areaSrc", "phone").equals("osm");
+	}
+
 	public void onMenu() {
 		reopen = new Runnable() {
 			public void run() {
@@ -957,6 +1004,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("lang"); rows.add(row(en ? "Romanian language" : "Limba engleză", en ? "lang-ro" : "lang-en"));
 		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (en ? "Night clock OFF" : "Ceas noapte OFF")
 				: (en ? "Night clock ON" : "Ceas noapte ON"), "night"));
+		ids.add("src"); rows.add(row(osm() ? (en ? "Neighbourhood: OpenStreetMap" : "Cartier: OpenStreetMap") : (en ? "Neighbourhood: phone" : "Cartier: telefon"), "locate"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
@@ -987,6 +1035,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						note(en ? "Location off" : "Localizare oprită");
 					} else onLocate();
 					return;
+				} else if (it.equals("src")) {
+					boolean o = !osm();
+					e.putString("areaSrc", o ? "osm" : "phone");
+					locator.osm = o;
+					ms = 2500;
+					msg = o ? (en ? "Neighbourhood from OpenStreetMap; tap the location to look again" : "Cartierul din OpenStreetMap; apasă localizarea ca să caute din nou")
+							: (en ? "Neighbourhood from the phone; tap the location to look again" : "Cartierul din telefon; apasă localizarea ca să caute din nou");
 				} else if (it.equals("update")) { updater.check(true); return; }
 				else if (it.equals("help")) { help(); return; }
 				else if (it.equals("night")) {
@@ -1039,8 +1094,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
 				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
-		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were (in a city, with the sector, e.g. Bucharest, Sector 3), and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. Gray: automatic location is off."
-				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact (în oraș, cu sectorul, de ex. București, Sector 3), iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. Gri: localizarea automată e oprită.");
+		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour (a tap on the town's name does the same). The towns found are kept on the phone with where you were; the neighbourhood or sector is only shown after the town, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. Gray: automatic location is off."
+				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră (atingerea numelui localității face la fel). Localitățile găsite rămân în telefon, cu locul exact; cartierul sau sectorul doar se afișează după localitate, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. Gri: localizarea automată e oprită.");
 		help.entry(mini("bright"), en ? "Brightness" : "Luminozitate", en ? "Shows the brightness bar on the left: slide on it up or down. It goes away by itself."
 				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
 		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
@@ -1072,6 +1127,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
 				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
 		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
+		help.entry(mini("locate"), en ? "Neighbourhood: phone / OpenStreetMap" : "Cartier: telefon / OpenStreetMap", en ? "Where the neighbourhood shown after the town comes from. It is shown only when that source says you are inside it."
+				: "De unde vine cartierul afișat după localitate. Apare doar când sursa confirmă că ești în interiorul lui.");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
 				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
@@ -1222,6 +1279,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void choose(Cities.City c) {
 		setAutoLoc(false);
 		setCity(c, true);
+		setDistrict("");
 		fetch();
 	}
 

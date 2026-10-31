@@ -49,8 +49,8 @@ final class Locator {
 	private final Context ctx;
 	private final Handler handler = new Handler(Looper.getMainLooper());
 	private boolean busy;
-	/** Where the last neighbourhood came from: "telefon", "OpenStreetMap" or empty. */
-	volatile String source = "";
+	/** The neighbourhood from OpenStreetMap (true) or from the phone's geocoder (false). */
+	volatile boolean osm;
 
 	Locator(Context ctx) {
 		this.ctx = ctx.getApplicationContext();
@@ -122,7 +122,6 @@ final class Locator {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
 				String town = null, county = null, district = null, country = null, match = "";
-				boolean exact = false;
 				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
 					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=16&addressdetails=1&accept-language="
@@ -132,22 +131,20 @@ final class Locator {
 						String city = (String) ad.get("city");
 						town = first(city, (String) ad.get("town"), (String) ad.get("village"), (String) ad.get("municipality"));
 						county = first((String) ad.get("county"), (String) ad.get("state"));
-						// The smallest named area first (a neighbourhood rather than a big suburb); a Bucharest
-						// sector stays the sector.
+						// A Bucharest sector from OpenStreetMap (it holds the point); a neighbourhood comes below.
 						String cd = (String) ad.get("city_district");
-						district = cd != null && cd.startsWith("Sector") ? cd
-								: first((String) ad.get("neighbourhood"), (String) ad.get("quarter"), (String) ad.get("suburb"), cd, (String) ad.get("borough"));
+						district = cd != null && cd.startsWith("Sector") ? cd : null;
 						if (district != null && town != null && district.equalsIgnoreCase(town)) district = null;
 						country = (String) ad.get("country_code");
 					}
 				} catch (Exception e) {
 					town = null;
 				}
-				// The phone's geocoder (Google's data on most phones) knows the neighbourhoods better than
-				// OpenStreetMap ("Zona 10 Nivele", not the nearest big suburb): its name wins, except for a
-				// Bucharest sector; it also gives the town when OpenStreetMap could not be reached.
+				boolean sector = district != null;
+				// The phone's geocoder (Google's data on most phones): asked for the town when OpenStreetMap
+				// could not be reached, and for the neighbourhood when the phone is the chosen source.
 				try {
-					if (Geocoder.isPresent()) {
+					if (Geocoder.isPresent() && (town == null || (!osm && !sector))) {
 						@SuppressWarnings("deprecation")
 						List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 10);
 						if (as != null && !as.isEmpty()) {
@@ -156,36 +153,33 @@ final class Locator {
 								town = first(a.getLocality(), a.getSubAdminArea(), a.getFeatureName());
 								county = a.getAdminArea();
 								country = a.getCountryCode();
-								district = null;
 							}
 							// The neighbourhood: a result's sub-locality, or a result that is an area (no street)
-							// named other than the town, county or country, e.g. "Zona 10 Nivele".
+							// named other than the town, county or country, e.g. "Zona 10 Nivele". Both are areas
+							// the point lies in, not the nearest one.
 							String sub = null;
-							for (Address x : as) if (sub == null) sub = first(x.getSubLocality());
-							if (sub == null) for (Address x : as) {
-								String f = first(x.getFeatureName());
-								if (f == null || x.getThoroughfare() != null || x.getSubThoroughfare() != null || f.matches("[0-9]+[A-Za-z]?([/-][0-9A-Za-z]+)?") || f.equals(x.getPostalCode())) continue;
-								if (f.equalsIgnoreCase(x.getLocality()) || f.equalsIgnoreCase(x.getAdminArea()) || f.equalsIgnoreCase(x.getSubAdminArea())
-										|| f.equalsIgnoreCase(x.getCountryName()) || (town != null && f.equalsIgnoreCase(town))) continue;
-								if (x.getLocality() == null && x.getSubAdminArea() == null && x.getAdminArea() == null) continue;
-								sub = f;
-								break;
+							if (!osm && !sector) {
+								for (Address x : as) if (sub == null) sub = first(x.getSubLocality());
+								if (sub == null) for (Address x : as) {
+									String f = first(x.getFeatureName());
+									if (f == null || x.getThoroughfare() != null || x.getSubThoroughfare() != null || f.matches("[0-9]+[A-Za-z]?([/-][0-9A-Za-z]+)?") || f.equals(x.getPostalCode())) continue;
+									if (f.equalsIgnoreCase(x.getLocality()) || f.equalsIgnoreCase(x.getAdminArea()) || f.equalsIgnoreCase(x.getSubAdminArea())
+											|| f.equalsIgnoreCase(x.getCountryName()) || (town != null && f.equalsIgnoreCase(town))) continue;
+									if (x.getLocality() == null && x.getSubAdminArea() == null && x.getAdminArea() == null) continue;
+									sub = f;
+									break;
+								}
 							}
-							boolean sector = district != null && district.startsWith("Sector");
-							if (sub != null && town != null && !sub.equalsIgnoreCase(town) && !sector) {
-								district = sub;
-								exact = true;
-							}
+							if (sub != null && town != null && !sub.equalsIgnoreCase(town)) district = sub;
 						}
 					}
 				} catch (Exception e) {
 					// keep what OpenStreetMap gave
 				}
-				// Without the geocoder's name: the nearest neighbourhood OpenStreetMap marks around the
-				// phone (Nominatim's answer is often the nearest big suburb instead).
-				if (!exact && town != null && (district == null || !district.startsWith("Sector"))) {
-					String near = nearestArea(lat, lon);
-					if (near != null && !near.equalsIgnoreCase(town)) district = near;
+				// OpenStreetMap as the source: only a named area that contains the phone.
+				if (osm && !sector && town != null) {
+					String in = containingArea(lat, lon);
+					if (in != null && !in.equalsIgnoreCase(town)) district = in;
 				}
 				if (country == null) country = "ro";
 				country = country.toLowerCase();
@@ -205,7 +199,6 @@ final class Locator {
 						match = "";
 					}
 				}
-				source = exact ? "telefon" : district == null ? "" : "OpenStreetMap";
 				final String t = town, c = county, d = district, cc = country, mt = match;
 				handler.post(new Runnable() {
 					public void run() {
@@ -246,30 +239,30 @@ final class Locator {
 	}
 
 	/**
-	 * The name of the closest neighbourhood or quarter (a suburb counts as half again as far)
-	 * within 1.5 km, from OpenStreetMap's Overpass service; null when none or unreachable.
+	 * The name of the smallest named area OpenStreetMap draws around the point (a neighbourhood,
+	 * then a quarter, a named housing area, a suburb), from the Overpass service; null when the
+	 * point is in none of them or the service cannot be reached.
 	 */
-	static String nearestArea(double lat, double lon) {
+	static String containingArea(double lat, double lon) {
 		try {
-			String q = "[out:json][timeout:10];(node[place~\"^(neighbourhood|quarter|suburb)$\"][name](around:1500," + lat + "," + lon
-					+ ");way[place~\"^(neighbourhood|quarter|suburb)$\"][name](around:1500," + lat + "," + lon
-					+ ");relation[place~\"^(neighbourhood|quarter|suburb)$\"][name](around:1500," + lat + "," + lon + "););out center tags;";
+			String q = "[out:json][timeout:10];is_in(" + lat + "," + lon + ")->.a;(area.a[place~\"^(neighbourhood|quarter|suburb|city_block)$\"][name];"
+					+ "area.a[landuse=residential][name];);out tags;";
 			Object res = Json.parse(Weather.get("https://overpass-api.de/api/interpreter?data=" + URLEncoder.encode(q, "UTF-8")));
 			List<Object> els = res instanceof Map ? Json.arr(castMap(res), "elements") : null;
 			if (els == null) return null;
+			String[] order = { "city_block", "neighbourhood", "quarter", "residential", "suburb" };
 			String best = null;
-			double bestD = Double.MAX_VALUE;
+			int bestR = order.length;
 			for (Object o : els) {
 				if (!(o instanceof Map)) continue;
-				Map<String, Object> m = castMap(o), tags = Json.obj(m, "tags"), ctr = Json.obj(m, "center");
-				double la = Json.num(ctr != null ? ctr : m, "lat"), lo = Json.num(ctr != null ? ctr : m, "lon");
-				if (tags == null || Double.isNaN(la) || Double.isNaN(lo)) continue;
+				Map<String, Object> tags = Json.obj(castMap(o), "tags");
+				if (tags == null) continue;
 				Object nm = tags.get("name:ro") instanceof String ? tags.get("name:ro") : tags.get("name");
 				if (!(nm instanceof String)) continue;
-				double dy = (la - lat) * 111.2, dx = (lo - lon) * 111.2 * Math.cos(Math.toRadians(lat));
-				double d = Math.sqrt(dx * dx + dy * dy) * ("suburb".equals(tags.get("place")) ? 1.5 : 1);
-				if (d < bestD) {
-					bestD = d;
+				Object kind = tags.get("place") instanceof String ? tags.get("place") : tags.get("landuse");
+				int r = java.util.Arrays.asList(order).indexOf(kind);
+				if (r >= 0 && r < bestR) {
+					bestR = r;
 					best = ((String) nm).trim();
 				}
 			}
