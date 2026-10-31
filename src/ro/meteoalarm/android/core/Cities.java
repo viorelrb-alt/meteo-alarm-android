@@ -67,6 +67,21 @@ public final class Cities {
 		return null;
 	}
 
+	/**
+	 * A town learned by the location: replaces the listed one of the same name (its coordinates
+	 * become where the phone was found) or is added to its county.
+	 */
+	public void put(City c) {
+		List<City> l = byCounty.get(c.county);
+		if (l == null) byCounty.put(c.county, l = new ArrayList<City>());
+		String f = Warnings.fold(c.name);
+		for (int k = 0; k < l.size(); k++) if (Warnings.fold(l.get(k).name).equals(f)) {
+			l.set(k, c);
+			return;
+		}
+		l.add(c);
+	}
+
 	/** Adds a town to its county (a new county goes at the end), unless it is listed already. */
 	public void add(City c) {
 		if (find(c.county, c.name) != null) return;

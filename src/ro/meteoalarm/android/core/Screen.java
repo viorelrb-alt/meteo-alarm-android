@@ -150,7 +150,7 @@ public final class Screen {
 		warnArea[2] = 0;
 		// The town next to the menu button, above the line.
 		String label = city != null ? city.label() : "";
-		float lp = fit(true, 40, 300, label);
+		float lp = fit(true, 40, 340, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
 		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
 		if (w == null) {
@@ -849,9 +849,9 @@ public final class Screen {
 		g.arc(cx, cy, r, 0, 360, 2, c.ink);
 		// North: a small triangle on the ring.
 		double na = Math.toRadians(-turn - 90);
-		float nx = cx + (float) Math.cos(na) * r, ny = cy + (float) Math.sin(na) * r;
-		float tx = (float) Math.cos(na + Math.PI / 2) * r * 0.28f, ty = (float) Math.sin(na + Math.PI / 2) * r * 0.28f;
-		g.poly(new float[] { nx + (float) Math.cos(na) * r * 0.4f, ny + (float) Math.sin(na) * r * 0.4f, nx + tx, ny + ty, nx - tx, ny - ty },
+		float nx = cx + (float) Math.cos(na) * r * 0.8f, ny = cy + (float) Math.sin(na) * r * 0.8f;
+		float tx = (float) Math.cos(na + Math.PI / 2) * r * 0.3f, ty = (float) Math.sin(na + Math.PI / 2) * r * 0.3f;
+		g.poly(new float[] { nx + (float) Math.cos(na) * r * 0.42f, ny + (float) Math.sin(na) * r * 0.42f, nx + tx, ny + ty, nx - tx, ny - ty },
 				Float.isNaN(heading) ? c.dim : c.accent);
 		// The wind blows toward windDir + 180.
 		double a = Math.toRadians(w.windDir + 180 - turn - 90), ca = Math.cos(a), sa = Math.sin(a);

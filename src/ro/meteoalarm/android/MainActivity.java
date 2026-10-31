@@ -33,6 +33,7 @@ import java.util.TimeZone;
 
 import android.Manifest;
 
+import ro.meteoalarm.android.core.Area;
 import ro.meteoalarm.android.core.Cities;
 import ro.meteoalarm.android.core.Screen;
 import ro.meteoalarm.android.core.Texts;
@@ -44,7 +45,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.40";
+	static final String VERSION = "Meteo Alarm Android v0.50";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -101,7 +102,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Towns found by the location, kept on the phone.
 		for (String k : prefs.getString("myCities", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
-			if (c != null) cities.add(c);
+			if (c != null) cities.put(c);
 		}
 		locator = new Locator(this);
 		sheet = new BottomSheet(this);
@@ -147,7 +148,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent "
 						+ "to Open-Meteo (weather, pollen); the warnings come from MeteoAlarm (ANM).\n\n"
 						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
-						+ "coordinates go to the phone's geocoder or to OpenStreetMap. Towns found are kept only on the phone. "
+						+ "coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, "
+						+ "with where you were, are kept only on the phone. "
 						+ "Without location access, you choose the town from the list.\n\n"
 						+ "Sensors: the app reads the battery state (night clock while charging), the phone's light sensor "
 						+ "with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. "
@@ -159,8 +161,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele "
 						+ "localității către Open-Meteo (vremea, polenul); avertizările vin de la MeteoAlarm (ANM).\n\n"
 						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
-						+ "localității, coordonatele merg la geocoderul telefonului sau la OpenStreetMap. Localitățile găsite "
-						+ "rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
+						+ "localității, coordonatele merg la OpenStreetMap (sau la geocoderul telefonului), de unde vin și granițele "
+						+ "localității. Localitățile găsite, cu locul exact, rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
 						+ "Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al "
 						+ "telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după "
 						+ "telefon. Nimic nu pleacă de pe telefon.\n\n"
@@ -216,6 +218,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		super.onConfigurationChanged(cfg);
 		applySettings();
 		view.invalidate();
+		// A bubble open while the phone turns is opened again for the new screen.
+		if (bubble.isOpen() && reopen != null) {
+			final Runnable r = reopen;
+			bubble.hide();
+			view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+				public void onLayoutChange(View v, int l, int t, int ri, int b, int ol, int ot, int or, int ob) {
+					view.removeOnLayoutChangeListener(this);
+					handler.postDelayed(r, 150); // after the first drawing has placed the buttons
+				}
+			});
+		}
 	}
 
 	// --- Compass ---------------------------------------------------------------------------
@@ -572,22 +585,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.invalidate();
 		if (say) note(s.T.en ? "Looking for the exact position…" : "Caut poziția exactă…");
 		locator.locate(new Locator.Result() {
-			public void found(double lat, double lon, String town, String rawCounty) {
+			public void found(double lat, double lon, String town, String rawCounty, String district) {
 				s.locating = false;
 				String county = cities.county(rawCounty);
 				if (county.length() == 0) county = town;
-				Cities.City listed = cities.find(county, town);
+				String name = district != null ? town + ", " + district : town;
+				Cities.City listed = cities.find(county, name);
+				if (listed != null) name = listed.name;
 				double la = Math.round(lat * 10000) / 10000.0, lo = Math.round(lon * 10000) / 10000.0;
-				if (listed == null) {
-					Cities.City add = new Cities.City(county, town, la, lo);
-					cities.add(add);
-					String mine = prefs.getString("myCities", "");
-					prefs.edit().putString("myCities", mine.length() == 0 ? add.key() : mine + "\n" + add.key()).apply();
-					if (say) toast((s.T.en ? "Added to the list: " : "Adăugată în listă: ") + add.label());
-				}
-				Cities.City here = new Cities.City(county, listed != null ? listed.name : town, la, lo);
-				boolean moved = s.city == null || !s.city.name.equals(here.name) || !s.city.county.equals(here.county)
-						|| distKm(s.city.lat, s.city.lon, la, lo) > 1;
+				// The town shown changes only when the phone is out of its boundary by more than
+				// EDGE_M metres (a more exact name, as a sector of the same town, is taken at once).
+				Cities.City cur = s.city;
+				boolean same = cur != null && cur.county.equals(county) && Warnings.fold(cur.name).equals(Warnings.fold(name));
+				boolean finer = cur != null && Warnings.fold(name).startsWith(Warnings.fold(cur.name) + ",");
+				Area area = cur == null || same || finer ? null : loadArea(cur);
+				boolean keep = area != null && area.holds(lat, lon, EDGE_M);
+				Cities.City here = keep ? new Cities.City(cur.county, cur.name, la, lo) : new Cities.City(county, name, la, lo);
+				boolean added = cities.find(here.county, here.name) == null;
+				learn(here);
+				if (added && say) toast((s.T.en ? "Added to the list: " : "Adăugată în listă: ") + here.label());
+				if (!keep) fetchArea(here, town, district, lat, lon);
+				boolean moved = cur == null || !cur.name.equals(here.name) || !cur.county.equals(here.county)
+						|| distKm(cur.lat, cur.lon, la, lo) > 1;
 				if (moved) setCity(here, false);
 				else view.invalidate();
 				if (moved || say) fetch();
@@ -602,6 +621,70 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else toast(s.T.en ? "The town could not be found (internet?)." : "Localitatea nu a putut fi găsită (internet?).");
 			}
 		});
+	}
+
+	/** Margin (metres) past a town's boundary before the town shown changes. */
+	private static final double EDGE_M = 150;
+
+	/**
+	 * Keeps a town found by the location, with where the phone was: it replaces the listed town's
+	 * coordinates (choosing it from the list then gives the weather there) or joins the list.
+	 */
+	private void learn(Cities.City c) {
+		cities.put(c);
+		StringBuilder b = new StringBuilder(c.key());
+		for (String k : prefs.getString("myCities", "").split("\n")) {
+			Cities.City m = Cities.City.fromKey(k);
+			if (m == null || (m.county.equals(c.county) && Warnings.fold(m.name).equals(Warnings.fold(c.name)))) continue;
+			b.append('\n').append(k);
+		}
+		prefs.edit().putString("myCities", b.toString()).apply();
+	}
+
+	private java.io.File areaFile(Cities.City c) {
+		java.io.File dir = new java.io.File(getFilesDir(), "areas");
+		dir.mkdirs();
+		return new java.io.File(dir, Warnings.fold(c.county + "_" + c.name).replaceAll("[^a-z0-9]+", "_") + ".txt");
+	}
+
+	/** The boundary kept for C, or null (none fetched yet, or OpenStreetMap has none). */
+	private Area loadArea(Cities.City c) {
+		java.io.File f = areaFile(c);
+		if (!f.exists()) return null;
+		try {
+			java.io.FileInputStream in = new java.io.FileInputStream(f);
+			String t = readAll(in);
+			return Area.load(t);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	/**
+	 * Fetches C's boundary once (TOWN and DISTRICT as OpenStreetMap names them) and keeps it; a town
+	 * without one is marked so it is asked again only after a week.
+	 */
+	private void fetchArea(final Cities.City c, String town, String district, final double lat, final double lon) {
+		final java.io.File f = areaFile(c);
+		if (f.exists() && (f.length() > 2 || System.currentTimeMillis() - f.lastModified() < 7 * 86400000L)) return;
+		final String t = town != null ? town : c.name, d = town != null ? district : null, co = c.county;
+		new Thread(new Runnable() {
+			public void run() {
+				try {
+					Thread.sleep(1100); // OpenStreetMap asks for at most one request a second
+				} catch (InterruptedException e) {
+					return;
+				}
+				Area a = Locator.boundary(t, d, co, lat, lon);
+				try {
+					java.io.FileOutputStream out = new java.io.FileOutputStream(f);
+					out.write((a != null ? a.save() : "-").getBytes("UTF-8"));
+					out.close();
+				} catch (Exception e) {
+					// kept only as a convenience
+				}
+			}
+		}).start();
 	}
 
 	private static double distKm(double la1, double lo1, double la2, double lo2) {
@@ -672,6 +755,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			String f = readCache("forecast.json");
 			if (f != null) s.w = Weather.parse(f);
 			s.fetched = prefs.getLong("fetched", 0);
+			// Saved by an older version without the wind direction: fetch again right away.
+			if (s.w != null && Double.isNaN(s.w.windDir)) s.fetched = 0;
 			String p = readCache("pollen.json");
 			if (p != null) {
 				Object[] r = Weather.parsePollen(p);
@@ -791,10 +876,20 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	private int bubbleWidth(float frac, int minDp) {
 		float d = getResources().getDisplayMetrics().density;
-		return (int) Math.max(minDp * d, view.getWidth() * frac);
+		// From the screen's short side, so the bubble keeps its portrait shape in landscape.
+		int shortSide = Math.min(view.getWidth(), view.getHeight());
+		return (int) Math.max(minDp * d, shortSide * frac);
 	}
 
+	/** Opens the bubble that is open now again (after the phone turns). */
+	private Runnable reopen;
+
 	public void onMenu() {
+		reopen = new Runnable() {
+			public void run() {
+				onMenu();
+			}
+		};
 		final boolean en = s.T.en;
 		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
 		// Item ids in menu order, each with its icon; the ones that are also a button on the screen
@@ -864,6 +959,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Light, Dark, and Automatic (the phone's light sensor, when it has one). */
 	private void pickTheme() {
+		reopen = new Runnable() {
+			public void run() {
+				pickTheme();
+			}
+		};
 		final boolean en = s.T.en;
 		final String[] keys = hasLight() ? new String[] { "light", "dark", "sensor" } : new String[] { "light", "dark" };
 		String[] names = en ? new String[] { "Light", "Dark", "Automatic" } : new String[] { "Luminos", "Întunecat", "Automat" };
@@ -887,8 +987,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
 				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
-		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. Gray: automatic location is off."
-				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Gri: localizarea automată e oprită.");
+		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were (in a city, with the sector, e.g. Bucharest, Sector 3), and the town shown changes only once you are out of its boundary. Gray: automatic location is off."
+				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact (în oraș, cu sectorul, de ex. București, Sector 3), iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Gri: localizarea automată e oprită.");
 		help.entry(mini("bright"), en ? "Brightness" : "Luminozitate", en ? "Shows the brightness bar on the left: slide on it up or down. It goes away by itself."
 				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
 		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
@@ -977,6 +1077,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * screen high; the rows scroll.
 	 */
 	public void onCity(final float[] b) {
+		reopen = new Runnable() {
+			public void run() {
+				onCity(b);
+			}
+		};
 		final List<Cities.City> favs = new ArrayList<Cities.City>();
 		for (String k : prefs.getString("favs", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
@@ -1002,7 +1107,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 	}
 
-	private void pickTown(final float[] b, String county) {
+	private void pickTown(final float[] b, final String county) {
+		reopen = new Runnable() {
+			public void run() {
+				pickTown(b, county);
+			}
+		};
 		final List<Cities.City> l = cities.byCounty.get(county);
 		final boolean en = s.T.en;
 		List<Bubble.Row> rows = Bubble.rows();

@@ -112,6 +112,7 @@ public final class Preview {
 		Cities cities = new Cities(new String(Files.readAllBytes(new File(assets, "cities.txt").toPath()), "UTF-8"));
 		Screen s = new Screen();
 		s.city = cities.find(opts.contains("brasov") ? "Brașov" : "Călărași");
+		if (opts.contains("sector")) s.city = new Cities.City("București", "București, Sector 3", s.city.lat, s.city.lon);
 		s.T = new Texts(opts.contains(" en"));
 		s.unitF = opts.contains(" F");
 		s.clk12 = opts.contains(" 12h");

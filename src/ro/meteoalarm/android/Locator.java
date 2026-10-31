@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import ro.meteoalarm.android.core.Area;
 import ro.meteoalarm.android.core.Json;
 import ro.meteoalarm.android.core.Weather;
 
@@ -27,7 +28,8 @@ import ro.meteoalarm.android.core.Weather;
  */
 final class Locator {
 	interface Result {
-		void found(double lat, double lon, String town, String county);
+		/** DISTRICT: the sector or neighbourhood of a city (null for a town or village). */
+		void found(double lat, double lon, String town, String county, String district);
 
 		/** WHY: "off" (location switched off), "nofix" or "noplace". */
 		void failed(String why);
@@ -113,44 +115,75 @@ final class Locator {
 		new Thread(new Runnable() {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
-				String town = null, county = null;
+				String town = null, county = null, district = null;
+				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
-					if (Geocoder.isPresent()) {
-						@SuppressWarnings("deprecation")
-						List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 1);
-						if (as != null && !as.isEmpty()) {
-							Address a = as.get(0);
-							town = first(a.getLocality(), a.getSubAdminArea(), a.getFeatureName());
-							county = a.getAdminArea();
-						}
+					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&addressdetails=1&accept-language="
+							+ URLEncoder.encode("ro", "UTF-8") + "&lat=" + lat + "&lon=" + lon;
+					Map<String, Object> ad = Json.obj(Json.parse(Weather.get(u)), "address");
+					if (ad != null) {
+						String city = (String) ad.get("city");
+						town = first(city, (String) ad.get("town"), (String) ad.get("village"), (String) ad.get("municipality"));
+						county = first((String) ad.get("county"), (String) ad.get("state"));
+						if (city != null) district = first((String) ad.get("city_district"), (String) ad.get("suburb"), (String) ad.get("borough"));
+						if (district != null && town != null && district.equalsIgnoreCase(town)) district = null;
 					}
 				} catch (Exception e) {
 					town = null;
 				}
 				if (town == null) {
 					try {
-						String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&accept-language="
-								+ URLEncoder.encode("ro", "UTF-8") + "&lat=" + lat + "&lon=" + lon;
-						Map<String, Object> ad = Json.obj(Json.parse(Weather.get(u)), "address");
-						if (ad != null) {
-							town = first((String) ad.get("city"), (String) ad.get("town"), (String) ad.get("village"),
-									(String) ad.get("municipality"));
-							county = first((String) ad.get("county"), (String) ad.get("state"));
+						if (Geocoder.isPresent()) {
+							@SuppressWarnings("deprecation")
+							List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 1);
+							if (as != null && !as.isEmpty()) {
+								Address a = as.get(0);
+								town = first(a.getLocality(), a.getSubAdminArea(), a.getFeatureName());
+								county = a.getAdminArea();
+								if (a.getLocality() != null) district = first(a.getSubLocality());
+							}
 						}
 					} catch (Exception e) {
 						town = null;
 					}
 				}
-				final String t = town, c = county;
+				final String t = town, c = county, d = district;
 				handler.post(new Runnable() {
 					public void run() {
 						busy = false;
 						if (t == null) r.failed("noplace");
-						else r.found(lat, lon, t, c == null ? "" : c);
+						else r.found(lat, lon, t, c == null ? "" : c, d);
 					}
 				});
 			}
 		}).start();
+	}
+
+	/**
+	 * The boundary of TOWN (and DISTRICT in it) in COUNTY from OpenStreetMap, checked to hold
+	 * LAT LON; null when OpenStreetMap has no boundary for it. Blocking: call it off the main thread.
+	 */
+	static Area boundary(String town, String district, String county, double lat, double lon) {
+		try {
+			String q = (district != null ? district + ", " : "") + town + (county.length() > 0 && !county.equals(town) ? ", " + county : "");
+			String u = "https://nominatim.openstreetmap.org/search?format=jsonv2&polygon_geojson=1&polygon_threshold=0.0003&limit=5"
+					+ "&accept-language=ro&q=" + URLEncoder.encode(q, "UTF-8");
+			Object res = Json.parse(Weather.get(u));
+			if (!(res instanceof List)) return null;
+			for (Object o : (List<?>) res) {
+				if (!(o instanceof Map)) continue;
+				@SuppressWarnings("unchecked")
+				Map<String, Object> m = (Map<String, Object>) o;
+				Object at = m.get("addresstype");
+				if ("county".equals(at) || "state".equals(at) || "country".equals(at) || "region".equals(at)) continue;
+				Area a = Area.fromGeoJson(Json.obj(m, "geojson"));
+				// The right place holds the phone (a wrong match from the search is dropped).
+				if (a != null && a.holds(lat, lon, 2000)) return a;
+			}
+		} catch (Exception e) {
+			// no boundary: the town then changes as soon as the name does
+		}
+		return null;
 	}
 
 	private static String first(String... v) {

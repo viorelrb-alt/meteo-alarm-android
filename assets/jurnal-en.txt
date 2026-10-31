@@ -1,3 +1,10 @@
+v0.50 · 31 October 2026
+- The ☰ menu and the other bubbles keep their portrait shape in landscape; turning the phone with the menu open redraws the bubble correctly.
+- The wind arrow shows right after an update: weather saved by an older version, without the wind direction, is fetched again.
+- Towns found by the location are kept on the phone with exactly where you were; choosing one from the list gives the weather there.
+- In cities the name comes from OpenStreetMap with the sector or neighbourhood, e.g. "București, Sector 3".
+- The town shown changes only once you are out of its boundary (with a 150 m margin), so it does not flip back and forth at the edge.
+
 v0.40 · 31 October 2026
 - In the English menu the language option is now called "Romanian language".
 - Help: the left edge is explained correctly: swiping up and down near the edge shows the light bar, and sliding on it sets the brightness.

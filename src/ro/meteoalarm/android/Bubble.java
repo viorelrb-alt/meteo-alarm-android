@@ -206,7 +206,11 @@ final class Bubble extends FrameLayout {
 		title.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		more.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		int pad = (int) (6 * dp), titleH = title.getVisibility() == VISIBLE ? title.getMeasuredHeight() : 0;
-		int maxH = sh / 2, rowsH = list.getMeasuredHeight();
+		// The same shape in both orientations: at most half the portrait height, and never past the
+		// screen's edge (in landscape the room under the button).
+		boolean below = (anchor[1] + anchor[3]) / 2 < sh / 2f;
+		int room = below ? sh - (int) anchor[3] - margin - (int) (2 * dp) : (int) anchor[1] - margin - (int) (2 * dp);
+		int maxH = Math.min(Math.max(sw, sh) / 2, room - tip), rowsH = list.getMeasuredHeight();
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
 		int scrollH = scrolls ? maxH - titleH - 2 * pad - 2 * more.getMeasuredHeight() : rowsH;
 		less.setVisibility(scrolls ? INVISIBLE : GONE);
@@ -215,7 +219,6 @@ final class Bubble extends FrameLayout {
 		scroll.scrollTo(0, 0);
 		int cardH = titleH + scrollH + 2 * pad + (scrolls ? 2 * more.getMeasuredHeight() : 0) + tip;
 		// Under the button in the upper half of the screen, over it in the lower half.
-		boolean below = (anchor[1] + anchor[3]) / 2 < sh / 2f;
 		int x = (int) Math.max(margin, Math.min(anchor[0], sw - margin - width));
 		int y = below ? (int) anchor[3] + (int) (2 * dp) : (int) anchor[1] - (int) (2 * dp) - cardH;
 		y = Math.max(margin, Math.min(y, sh - margin - cardH));

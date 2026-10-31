@@ -1,3 +1,10 @@
+v0.50 · 31 octombrie 2026
+- Meniul ☰ și celelalte bule păstrează forma din portret și în peisaj; dacă rotești telefonul cu meniul deschis, bula se redesenează corect.
+- Săgeata vântului apare imediat după actualizare: vremea salvată de o versiune mai veche, fără direcția vântului, se reîncarcă singură.
+- Localitățile găsite prin localizare rămân în telefon cu locul exact unde ai fost; alegând-o din listă, primești vremea de acolo.
+- În orașe, numele vine din OpenStreetMap cu sectorul sau cartierul, de exemplu „București, Sector 3”.
+- Localitatea afișată se schimbă abia când ieși din granițele ei (cu o marjă de 150 m), ca să nu sară înainte și înapoi la margine.
+
 v0.40 · 31 octombrie 2026
 - În meniul în engleză, opțiunea de limbă se numește acum „Romanian language”.
 - Ajutor: marginea din stânga e explicată corect: glisând sus-jos lângă margine apare bara de lumină, iar glisând pe ea reglezi luminozitatea.
