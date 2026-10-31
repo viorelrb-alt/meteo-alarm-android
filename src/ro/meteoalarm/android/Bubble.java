@@ -171,7 +171,7 @@ final class Bubble extends FrameLayout {
 				list.addView(sep, lp);
 			}
 			first = false;
-			TextView t = text(c, r.kind == Row.HEADER ? 14 : 17, r.kind == Row.HEADER || r.checked);
+			TextView t = text(c, r.kind == Row.HEADER ? 13 : 15, r.kind == Row.HEADER || r.checked);
 			t.setText(r.kind == Row.HEADER ? r.text.toUpperCase() : (r.checked ? "✓  " : "") + r.text);
 			t.setTextColor(r.kind == Row.HEADER ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 			t.setGravity(Gravity.CENTER_VERTICAL);
@@ -179,15 +179,15 @@ final class Bubble extends FrameLayout {
 			if (r.kind == Row.HEADER) t.setPadding(ph, (int) (10 * dp), ph, (int) (4 * dp));
 			else {
 				t.setPadding(ph, 0, ph, 0);
-				t.setMinHeight((int) (48 * dp));
+				t.setMinHeight((int) (46 * dp));
 				t.setBackgroundResource(android.R.drawable.list_selector_background);
 			}
 			if (r.icon != null) {
 				BitmapDrawable d = new BitmapDrawable(getResources(), r.icon);
-				int s = (int) (30 * dp);
+				int s = (int) (26 * dp);
 				d.setBounds(0, 0, s, s);
 				t.setCompoundDrawables(d, null, null, null);
-				t.setCompoundDrawablePadding((int) (12 * dp));
+				t.setCompoundDrawablePadding((int) (14 * dp));
 			}
 			if (r.kind == Row.ITEM) t.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {

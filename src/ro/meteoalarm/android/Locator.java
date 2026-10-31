@@ -120,6 +120,7 @@ final class Locator {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
 				String town = null, county = null, district = null, country = null, match = "";
+				boolean exact = false;
 				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
 					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=16&addressdetails=1&accept-language="
@@ -157,11 +158,20 @@ final class Locator {
 							}
 							String sub = first(a.getSubLocality());
 							boolean sector = district != null && district.startsWith("Sector");
-							if (sub != null && town != null && !sub.equalsIgnoreCase(town) && !sector) district = sub;
+							if (sub != null && town != null && !sub.equalsIgnoreCase(town) && !sector) {
+								district = sub;
+								exact = true;
+							}
 						}
 					}
 				} catch (Exception e) {
 					// keep what OpenStreetMap gave
+				}
+				// Without the geocoder's name: the nearest neighbourhood OpenStreetMap marks around the
+				// phone (Nominatim's answer is often the nearest big suburb instead).
+				if (!exact && town != null && (district == null || !district.startsWith("Sector"))) {
+					String near = nearestArea(lat, lon);
+					if (near != null && !near.equalsIgnoreCase(town)) district = near;
 				}
 				if (country == null) country = "ro";
 				country = country.toLowerCase();
@@ -218,6 +228,45 @@ final class Locator {
 			// no boundary: the town then changes as soon as the name does
 		}
 		return null;
+	}
+
+	/**
+	 * The name of the closest neighbourhood or quarter (a suburb counts as half again as far)
+	 * within 1.5 km, from OpenStreetMap's Overpass service; null when none or unreachable.
+	 */
+	static String nearestArea(double lat, double lon) {
+		try {
+			String q = "[out:json][timeout:10];(node[place~\"^(neighbourhood|quarter|suburb)$\"][name](around:1500," + lat + "," + lon
+					+ ");way[place~\"^(neighbourhood|quarter|suburb)$\"][name](around:1500," + lat + "," + lon
+					+ ");relation[place~\"^(neighbourhood|quarter|suburb)$\"][name](around:1500," + lat + "," + lon + "););out center tags;";
+			Object res = Json.parse(Weather.get("https://overpass-api.de/api/interpreter?data=" + URLEncoder.encode(q, "UTF-8")));
+			List<Object> els = res instanceof Map ? Json.arr(castMap(res), "elements") : null;
+			if (els == null) return null;
+			String best = null;
+			double bestD = Double.MAX_VALUE;
+			for (Object o : els) {
+				if (!(o instanceof Map)) continue;
+				Map<String, Object> m = castMap(o), tags = Json.obj(m, "tags"), ctr = Json.obj(m, "center");
+				double la = Json.num(ctr != null ? ctr : m, "lat"), lo = Json.num(ctr != null ? ctr : m, "lon");
+				if (tags == null || Double.isNaN(la) || Double.isNaN(lo)) continue;
+				Object nm = tags.get("name:ro") instanceof String ? tags.get("name:ro") : tags.get("name");
+				if (!(nm instanceof String)) continue;
+				double dy = (la - lat) * 111.2, dx = (lo - lon) * 111.2 * Math.cos(Math.toRadians(lat));
+				double d = Math.sqrt(dx * dx + dy * dy) * ("suburb".equals(tags.get("place")) ? 1.5 : 1);
+				if (d < bestD) {
+					bestD = d;
+					best = ((String) nm).trim();
+				}
+			}
+			return best;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	private static Map<String, Object> castMap(Object o) {
+		return (Map<String, Object>) o;
 	}
 
 	private static String first(String... v) {

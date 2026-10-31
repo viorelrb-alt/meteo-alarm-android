@@ -1,3 +1,10 @@
+v1.30 · 31 octombrie 2026
+- Reparat: caseta de ploaie poate fi adusă înapoi glisând spre dreapta (înainte animația o împingea afară), în portret și în peisaj. Caseta e puțin mai îngustă, ca să se vadă marginea primei casete cu ore.
+- Peisaj: zona vremii de acum e mai mare, zona din mijloc mai îngustă; linii verticale între toate cele 3 zone; fără linie sub ore; „actualizat” stă sus, lângă ceas.
+- Portret: cele 5 zile urcă puțin, iar o linie desparte rândul de casete de jos.
+- Meniul ☰ are textul mai mic și e mai îngust.
+- Cartierul: dacă geocoderul telefonului nu-l știe, se ia cel mai apropiat cartier marcat în OpenStreetMap (nu cea mai apropiată zonă mare).
+
 v1.20 · 31 octombrie 2026
 - Graficul de ploaie și casetele cu ore de sub temperatură urmează degetul lin, ca rândul de jos; punctele au fost înlocuite de o linie.
 - Peisaj în 3 zone: vremea de acum în stânga, apoi o linie; la mijloc graficul de ploaie, orele și cele 5 zile, care se glisează stânga-dreapta; în dreapta casetele Soare/Lună, UV, Polen, Umiditate, ICA, Presiune, Vizibilitate și Busolă, câte 4 (2 sus, 2 jos), glisate sus-jos.

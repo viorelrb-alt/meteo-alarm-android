@@ -17,13 +17,14 @@ public final class Strip {
 	/** Snap positions from box starts: 0, then each START, clamped to the end (MAX). */
 	void set(float[] starts, float max) {
 		this.max = Math.max(0, max);
-		float[] s = new float[starts.length + 1];
-		int n = 0;
+		float[] s = new float[starts.length + 2];
+		s[0] = 0;
+		int n = 1;
 		for (float v : starts) {
 			float c = Math.min(v, this.max);
-			if (n == 0 || c > s[n - 1] + 0.5f) s[n++] = c;
+			if (c > s[n - 1] + 0.5f) s[n++] = c;
 		}
-		if (n == 0 || s[n - 1] < this.max - 0.5f) s[n++] = this.max;
+		if (s[n - 1] < this.max - 0.5f) s[n++] = this.max;
 		snaps = new float[n];
 		System.arraycopy(s, 0, snaps, 0, n);
 		scroll = Math.max(0, Math.min(scroll, this.max));

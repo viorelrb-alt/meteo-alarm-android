@@ -133,6 +133,7 @@ public final class Screen {
 		g = gfx;
 		c = dark ? Palette.DARK : Palette.LIGHT;
 		this.cw = cw;
+		updHead = false;
 		if (nightClock) {
 			drawNightClock(ch);
 			return;
@@ -185,10 +186,12 @@ public final class Screen {
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
 
 		float y0 = fy + 80;
-		drawNextHours(40, y0, 678, 300);
-		drawDayCard(40, y0 + 314, 0, T.day1);
-		drawDayCard(387, y0 + 314, 1, T.day2);
-		drawDayCols(2, y0 + 526);
+		drawNextHours(40, y0, 678, 276, false);
+		drawDayCard(40, y0 + 290, 0, T.day1);
+		drawDayCard(387, y0 + 290, 1, T.day2);
+		drawDayCols(2, y0 + 502);
+		// A line over the row of info boxes.
+		g.rect(40, y0 + 673, 678, 2, c.line);
 		drawInfoStrip(40, y0 + 690, 678, 184);
 		footer(fb);
 	}
@@ -203,8 +206,9 @@ public final class Screen {
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
 		for (Strip st : strips()) st.area[2] = 0;
-		float z1 = Math.round(cw * 0.36f), z2 = Math.round(cw * 0.73f), leftR = z1 - 22;
-		float mx = z1 + 22, mw = z2 - 10 - mx, rx = z2 + 10, rw = cw - 40 - rx;
+		float z1 = Math.round(cw * 0.49f), z2 = Math.round(cw * 0.75f), leftR = z1 - 22;
+		float mx = z1 + 22, mw = z2 - 22 - mx, rx = z2 + 22, rw = cw - 40 - rx;
+		updHead = true;
 		g.rect(40, 102, cw - 80, 2, c.line);
 		String label = city != null ? city.label() : "";
 		float lp = fit(true, 40, cw - 124 - 380, label);
@@ -227,21 +231,24 @@ public final class Screen {
 		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
-		// The line between the weather now and the boxes, like the one under the clock.
+		// Lines between the three parts, like the one under the clock.
 		g.rect(z1 - 1, 124, 2, fb - 14 - 124, c.line);
+		g.rect(z2 - 1, 124, 2, fb - 14 - 124, c.line);
 
-		float bt = 124, bb = fb - 14, hh = 258;
-		drawNextHours(mx, bt, mw, hh);
-		drawDaysRow(mx, bt + hh + 4, mw, bb - (bt + hh + 4));
-		drawInfoGrid(rx, 146, rw, bb - 146);
+		float bt = 124, bb = fb - 14, hh = 250;
+		drawNextHours(mx, bt, mw, hh, false);
+		drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
+		drawInfoGrid(rx, bt, rw, bb - bt);
 		footer(fb);
 	}
 
-	/** Landscape: the five days as a row moved sideways (three shown, the next one peeking in). */
+	/** Landscape: the five days as a row moved sideways (as many as fit, the next one peeking in). */
 	private void drawDaysRow(float x, float top, float wd, float h) {
 		int n = Math.min(5, w.dayDates.size());
 		if (n == 0) return;
-		float gap = 14, peek = 30, dw = (wd - peek - 2 * gap) / 3, step = dw + gap;
+		float gap = 14, peek = 30;
+		int per = Math.max(2, Math.min(3, (int) ((wd - peek + gap) / (160 + gap))));
+		float dw = (wd - peek - per * gap) / per, step = dw + gap;
 		float[] starts = new float[n];
 		for (int k = 0; k < n; k++) starts[k] = k * step;
 		days.set(starts, n * step - gap - wd);
@@ -312,7 +319,7 @@ public final class Screen {
 		g = new Scaled(g0, bs);
 		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 146 : nb + 24) / bs;
 		float avail = (fb - 14) / bs - by, ih = 190, hh = Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
-		drawNextHours(bx, by, bw, hh);
+		drawNextHours(bx, by, bw, hh, true);
 		for (int k = 0; k < 4; k++) hours.area[k] *= bs;
 		float dy = by + hh + 14, dw = (bw - 4 * 12) / 5;
 		for (int k = 0; k < 5; k++) {
@@ -389,7 +396,7 @@ public final class Screen {
 	 * is due within 12 hours, then one box per hour (the next one peeks in at the right); a line
 	 * under the row.
 	 */
-	private void drawNextHours(float x, float y, float wd, float h) {
+	private void drawNextHours(float x, float y, float wd, float h, boolean line) {
 		hours.area[2] = 0;
 		int avail = w.tileHours.size() - 1;
 		if (avail < 1) {
@@ -397,10 +404,11 @@ public final class Screen {
 			return;
 		}
 		boolean chart = rainText().length() > 0;
-		float gap = 16, peek = 30, bh = h - 26;
+		float gap = 16, peek = 30, bh = line ? h - 26 : h;
 		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
 		float bw = avail <= per && !chart ? (wd - gap * (avail - 1)) / avail : (wd - peek - gap * per) / per;
-		float x0 = chart ? wd + gap : 0, step = bw + gap;
+		// The chart leaves room for the edge of the first hour box, so it is clear the row goes on.
+		float cwd = wd - peek - gap, x0 = chart ? cwd + gap : 0, step = bw + gap;
 		float[] starts = new float[avail + (chart ? 1 : 0)];
 		int n = 0;
 		if (chart) starts[n++] = x0;
@@ -414,14 +422,14 @@ public final class Screen {
 		}
 		float sc = hours.scroll;
 		g.clip(x - 2, y - 2, wd + 4, bh + 4);
-		if (chart && sc < wd) drawPrecipBox(x - sc, y, wd, bh, 46);
+		if (chart && sc < cwd + 4) drawPrecipBox(x - sc, y, cwd, bh, 46);
 		for (int k = 1; k <= avail; k++) {
 			float bx = x + x0 + (k - 1) * step - sc;
 			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
 			drawHourBox(k, bx, y, bw, bh, tp, dp);
 		}
 		g.unclip();
-		g.rect(x, y + bh + 12, wd, 2, c.line);
+		if (line) g.rect(x, y + bh + 12, wd, 2, c.line);
 	}
 
 	/** One hour: the hour on top, the icon, the temperature and the sky. */
@@ -694,7 +702,10 @@ public final class Screen {
 	private void drawPrecipBox(float pl, float pt, float pw, float ph, float phd) {
 		boolean snow = w.snowMaj || ((w.wetNow() || w.precip > 0) && Weather.snowCode(w.code));
 		box(pl, pt, pw, ph, phd);
-		head(pt, phd, pl + pw / 2, pw - 40, (snow ? T.snowUp : T.rainUp) + " · " + T.next12, 0);
+		String ttl = (snow ? T.snowUp : T.rainUp) + " · " + T.next12;
+		// In a narrow box a short title, so it stays readable.
+		if (fit(true, (phd - 4) * 76 / 100, pw - 41, ttl) < 26) ttl = (snow ? T.snowUp : T.rainUp) + " · 12 " + (T.en ? "H" : "ORE");
+		head(pt, phd, pl + pw / 2, pw - 40, ttl, 0);
 		String rt = rainText(), mx = T.max + " " + w.rainMaxP + "%";
 		float room = pw - 42 - g.width(false, 29, mx) - 16;
 		if (rt.length() > 0) ltext(true, fit(true, 36, room, rt), pt + 63, pl + 22, rt, c.ink);
@@ -1417,6 +1428,15 @@ public final class Screen {
 				bold = true;
 			}
 		}
-		if (upd.length() > 0) rtext(bold, fit(bold, 25, 400, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
+		if (upd.length() == 0) return;
+		if (updHead) {
+			// Landscape: in the header, left of the clock.
+			int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
+			String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) + " PM" : String.format("%02d:%02d", h, m);
+			rtext(bold, fit(bold, 25, 360, upd), 30, cw - 40 - g.width(true, 50, hm) - 28, upd, bold ? c.ink : c.dim);
+		} else rtext(bold, fit(bold, 25, 400, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
 	}
+
+	/** Landscape (phone): "updated" goes in the header next to the clock. */
+	private boolean updHead;
 }

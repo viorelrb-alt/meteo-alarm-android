@@ -1,3 +1,10 @@
+v1.30 · 31 October 2026
+- Fixed: the rain box can be brought back by sliding right (the animation used to push it out again), in portrait and landscape. The box is a little narrower so the edge of the first hour box shows.
+- Landscape: the weather-now part is bigger, the middle narrower; vertical lines between all 3 parts; no line under the hours; "updated" sits at the top next to the clock.
+- Portrait: the five days move up a little and a line sets off the bottom row of boxes.
+- The ☰ menu has smaller text and is narrower.
+- Neighbourhood: when the phone's geocoder does not know it, the nearest neighbourhood marked in OpenStreetMap is used (not the nearest big suburb).
+
 v1.20 · 31 October 2026
 - The rain chart and the hour boxes under the temperature follow the finger smoothly, like the bottom row; the dots became a line.
 - Landscape in 3 parts: the weather now on the left, then a line; in the middle the rain chart, the hours and the five days, slid sideways; on the right the Sun/Moon, UV, Pollen, Humidity, Air quality, Pressure, Visibility and Compass boxes, 4 at a time (2 up, 2 down), slid up and down.

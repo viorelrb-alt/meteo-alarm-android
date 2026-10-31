@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.20";
+	static final String VERSION = "Meteo Alarm Android v1.30";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -958,7 +958,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
 		ids.add("about"); rows.add(row(en ? "About" : "Despre", "about"));
-		bubble.show(view.px(s.btnMenu), bubbleWidth(0.66f, 290), null, rows, en, new Bubble.Pick() {
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.58f, 250), null, rows, en, new Bubble.Pick() {
 			public void picked(int k) {
 				SharedPreferences.Editor e = prefs.edit();
 				String it = ids.get(k);
@@ -1020,7 +1020,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String cur = prefs.getString("theme", "auto");
 		List<Bubble.Row> rows = Bubble.rows();
 		for (int k = 0; k < keys.length; k++) rows.add(new Bubble.Row(names[k], mini(icons[k]), Bubble.Row.ITEM, keys[k].equals(cur)));
-		bubble.show(view.px(s.btnMenu), bubbleWidth(0.6f, 260), en ? "Theme" : "Temă", rows, en, new Bubble.Pick() {
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.52f, 230), en ? "Theme" : "Temă", rows, en, new Bubble.Pick() {
 			public void picked(int k) {
 				prefs.edit().putString("theme", keys[k]).apply();
 				applySettings();
