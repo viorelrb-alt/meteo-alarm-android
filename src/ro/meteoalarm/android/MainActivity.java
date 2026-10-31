@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.36";
+	static final String VERSION = "Meteo Alarm Android v0.37";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -58,6 +58,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Updater updater;
 	private BottomSheet sheet;
 	private Bubble bubble;
+	private HelpPanel help;
 	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
 
@@ -117,12 +118,21 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		root.addView(bubble, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		help = new HelpPanel(this, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
+				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+		help.setOnClose(new Runnable() {
+			public void run() {
+				hideBars();
+			}
+		});
+		root.addView(help, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		setContentView(root);
 	}
 
 	@Override
 	public void onBackPressed() {
 		if (bubble.isOpen()) bubble.hide();
+		else if (help.isOpen()) help.hide();
 		else if (sheet.isOpen()) {
 			if (sheet.isCancelable()) sheet.hide();
 		} else super.onBackPressed();
@@ -327,11 +337,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			return;
 		}
 		boolean on = !"sensor".equals(prefs.getString("theme", "auto"));
-		prefs.edit().putString("theme", on ? "sensor" : "auto").apply();
+		// Off: the theme stays as it is now, chosen by hand.
+		prefs.edit().putString("theme", on ? "sensor" : s.dark ? "dark" : "light").apply();
 		applySettings();
 		view.invalidate();
 		note(on ? (s.T.en ? "Theme by the room's light: on" : "Tema după lumina din cameră: pornită")
-				: (s.T.en ? "Theme by the room's light: off (as the phone)" : "Tema după lumina din cameră: oprită (ca telefonul)"));
+				: (s.T.en ? "Theme by the room's light: off" : "Tema după lumina din cameră: oprită"));
 	}
 
 	/** The moon button over the brightness bar: dark or light theme, chosen by hand. */
@@ -415,10 +426,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** A short notice over the status row after a button; it goes away after 1.5 seconds. */
 	private void note(String msg) {
+		note(msg, 1500);
+	}
+
+	private void note(String msg, long ms) {
 		s.note = msg;
 		view.invalidate();
 		handler.removeCallbacks(clearNote);
-		handler.postDelayed(clearNote, 1500);
+		handler.postDelayed(clearNote, ms);
 	}
 
 	public void onBright() {
@@ -646,15 +661,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		fetch();
 	}
 
-	/** A status-row button drawn small, for the ☰ menu rows that have one on the screen. */
+	/** A menu / help icon (Screen.menuIcon) as a bitmap. */
 	private android.graphics.Bitmap mini(String which) {
-		int px = Math.round(30 * getResources().getDisplayMetrics().density);
+		int px = Math.round(40 * getResources().getDisplayMetrics().density);
 		android.graphics.Bitmap b = android.graphics.Bitmap.createBitmap(px, px, android.graphics.Bitmap.Config.ARGB_8888);
 		android.graphics.Canvas c = new android.graphics.Canvas(b);
 		c.scale(px / 64f, px / 64f);
 		AndroidGfx g = new AndroidGfx(getAssets());
 		g.c = c;
-		s.miniButton(g, which);
+		s.menuIcon(g, which);
 		return b;
 	}
 
@@ -666,25 +681,29 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	public void onMenu() {
 		final boolean en = s.T.en;
 		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
-		// Item ids in menu order; the ones with a button on the screen show it before the text.
+		// Item ids in menu order, each with its icon; the ones that are also a button on the screen
+		// show that button. On / Off name what a tap does.
 		final List<String> ids = new ArrayList<String>();
 		List<Bubble.Row> rows = Bubble.rows();
-		ids.add("city"); rows.add(new Bubble.Row(en ? "Choose town" : "Alege localitatea", mini("city"), Bubble.Row.ITEM, false));
-		ids.add("unit"); rows.add(Bubble.Row.item(s.unitF ? (en ? "Show °C" : "Afișează °C") : (en ? "Show °F" : "Afișează °F")));
-		ids.add("clock"); rows.add(Bubble.Row.item(s.clk12 ? (en ? "24-hour clock" : "Ceas 24 de ore") : (en ? "12-hour clock" : "Ceas 12 ore (AM/PM)")));
-		ids.add("theme"); rows.add(new Bubble.Row(en ? "Theme…" : "Temă…", mini("sensor"), Bubble.Row.ITEM, false));
-		ids.add("keepOn"); rows.add(Bubble.Row.item(keepOn ? (en ? "Let the screen sleep" : "Lasă ecranul să se stingă") : (en ? "Keep the screen on" : "Ține ecranul aprins")));
-		ids.add("lang"); rows.add(Bubble.Row.item(en ? "Limba română" : "Limba engleză"));
-		ids.add("loc"); rows.add(new Bubble.Row(auto ? (en ? "Turn location off" : "Oprire localizare") : (en ? "Turn location on" : "Pornire localizare"),
-				mini("locate"), Bubble.Row.ITEM, false));
-		ids.add("update"); rows.add(Bubble.Row.item(en ? "Check for updates" : "Verifică actualizări"));
-		ids.add("about"); rows.add(Bubble.Row.item(en ? "About" : "Despre"));
-		bubble.show(view.px(s.btnMenu), bubbleWidth(0.62f, 280), null, rows, en, new Bubble.Pick() {
+		ids.add("refresh"); rows.add(row(en ? "Refresh" : "Reîmprospătare", "refresh"));
+		ids.add("city"); rows.add(row(en ? "Town" : "Localitate", "city"));
+		ids.add("unit"); rows.add(row(en ? "Temperature °C/°F" : "Temperatura °C/°F", "unit"));
+		ids.add("clock"); rows.add(row(en ? "Clock 12/24" : "Ceas 12/24", "clock"));
+		ids.add("theme"); rows.add(row(en ? "Theme" : "Temă", "moon"));
+		ids.add("keepOn"); rows.add(row(keepOn ? (en ? "Screen on OFF" : "Ecran aprins OFF") : (en ? "Screen on ON" : "Ecran aprins ON"), "keepOn"));
+		ids.add("lang"); rows.add(row(en ? "Limba română" : "Limba engleză", en ? "lang-ro" : "lang-en"));
+		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
+		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
+		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
+		ids.add("about"); rows.add(row(en ? "About" : "Despre", "about"));
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.66f, 290), null, rows, en, new Bubble.Pick() {
 			public void picked(int k) {
 				SharedPreferences.Editor e = prefs.edit();
 				String it = ids.get(k);
 				String msg = null;
-				if (it.equals("city")) { onCity(s.btnMenu); return; }
+				long ms = 1500;
+				if (it.equals("refresh")) { onRefresh(); return; }
+				else if (it.equals("city")) { onCity(s.btnMenu); return; }
 				else if (it.equals("unit")) { e.putBoolean("unitF", !s.unitF); msg = s.unitF ? "°C" : "°F"; }
 				else if (it.equals("clock")) {
 					e.putBoolean("clk12", !s.clk12);
@@ -693,7 +712,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else if (it.equals("keepOn")) {
 					boolean on = !prefs.getBoolean("keepOn", true);
 					e.putBoolean("keepOn", on);
-					msg = on ? (en ? "The screen stays on" : "Ecranul rămâne aprins") : (en ? "The screen may sleep" : "Ecranul se poate stinge");
+					ms = 2000;
+					msg = on ? (en ? "The screen stays on while the app is open" : "Ecranul rămâne aprins cât timp aplicația e deschisă")
+							: (en ? "The screen goes off after the phone's timeout" : "Ecranul se stinge după timpul setat în telefon");
 				} else if (it.equals("theme")) { pickTheme(); return; }
 				else if (it.equals("loc")) {
 					if (autoLoc()) {
@@ -702,31 +723,76 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					} else onLocate();
 					return;
 				} else if (it.equals("update")) { updater.check(true); return; }
+				else if (it.equals("help")) { help(); return; }
 				else { about(); return; }
 				e.apply();
 				applySettings();
 				view.invalidate();
-				if (msg != null) note(msg);
+				if (msg != null) note(msg, ms);
 			}
 		});
 	}
 
+	private Bubble.Row row(String text, String icon) {
+		return new Bubble.Row(text, mini(icon), Bubble.Row.ITEM, false);
+	}
+
+	/** Light, Dark, and Automatic (by the room's light, when the phone has the sensor). */
 	private void pickTheme() {
-		final String[] keys = hasLight() ? new String[] { "light", "dark", "auto", "sensor" } : new String[] { "light", "dark", "auto" };
-		String[] all = s.T.en
-				? new String[] { "Light (Kindle, black and white)", "Dark (Claude colours)", "Automatic (as the phone)", "By the room's light (sensor)" }
-				: new String[] { "Luminoasă (Kindle, alb-negru)", "Întunecată (culorile Claude)", "Automată (ca telefonul)", "După lumina din cameră (senzor)" };
+		final boolean en = s.T.en;
+		final String[] keys = hasLight() ? new String[] { "light", "dark", "sensor" } : new String[] { "light", "dark" };
+		String[] names = en ? new String[] { "Light", "Dark", "Automatic" } : new String[] { "Luminos", "Întunecat", "Automat" };
+		String[] icons = { "light", "dark", "sensor" };
 		String cur = prefs.getString("theme", "auto");
 		List<Bubble.Row> rows = Bubble.rows();
-		for (int k = 0; k < keys.length; k++)
-			rows.add(new Bubble.Row(all[k], k == 3 ? mini("sensor") : null, Bubble.Row.ITEM, keys[k].equals(cur)));
-		bubble.show(view.px(s.btnMenu), bubbleWidth(0.8f, 300), s.T.en ? "Theme" : "Temă", rows, s.T.en, new Bubble.Pick() {
+		for (int k = 0; k < keys.length; k++) rows.add(new Bubble.Row(names[k], mini(icons[k]), Bubble.Row.ITEM, keys[k].equals(cur)));
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.6f, 260), en ? "Theme" : "Temă", rows, en, new Bubble.Pick() {
 			public void picked(int k) {
 				prefs.edit().putString("theme", keys[k]).apply();
 				applySettings();
 				view.invalidate();
 			}
 		});
+	}
+
+	/** ☰ › Ajutor: every button, gesture and menu option with its icon and what it does. */
+	private void help() {
+		boolean en = s.T.en;
+		help.begin(en ? "Help" : "Ajutor", en ? "Close" : "Închide", s.dark);
+		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
+		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
+				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
+		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. Gray: automatic location is off."
+				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Gri: localizarea automată e oprită.");
+		help.entry(mini("bright"), en ? "Brightness" : "Luminozitate", en ? "Shows the brightness bar on the left: slide on it up or down. It goes away by itself."
+				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
+		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
+				: "Deasupra barei de luminozitate: comută între tema luminoasă și cea întunecată.");
+		help.entry(mini("sensor"), en ? "Theme by the room's light" : "Temă după lumina din cameră", en ? "Light theme when the room is lit, dark theme in the dark (light sensor). Filled while it is on."
+				: "Tema luminoasă când e lumină în cameră, cea întunecată pe întuneric (senzorul de lumină). E plin cât timp e pornită.");
+		help.section(en ? "Gestures" : "Gesturi");
+		help.entry(mini("pull"), en ? "Pull down" : "Trage în jos", en ? "Pull the screen down and let go: the weather is refreshed." : "Trage ecranul în jos și dă drumul: vremea se reîmprospătează.");
+		help.entry(mini("edge"), en ? "Left edge" : "Marginea din stânga", en ? "Slide up or down along the left edge (a little in from it): brightness, as on the Kindle."
+				: "Glisează sus-jos de-a lungul marginii din stânga (puțin mai înăuntru): luminozitatea, ca pe Kindle.");
+		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "On the warnings, the rain chart and the hour boxes: the next or the previous ones. The dots show where you are."
+				: "Pe avertizări, pe graficul de ploaie și pe casetele cu ore: următoarele sau cele dinainte. Punctele arată unde ești.");
+		help.section(en ? "The ☰ menu" : "Meniul ☰");
+		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather and the warnings now." : "Descarcă acum vremea și avertizările.");
+		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");
+		help.entry(mini("unit"), en ? "Temperature °C/°F" : "Temperatura °C/°F", en ? "Switches between Celsius and Fahrenheit." : "Comută între grade Celsius și Fahrenheit.");
+		help.entry(mini("clock"), en ? "Clock 12/24" : "Ceas 12/24", en ? "Switches the clock between 24 hours and 12 hours (AM/PM)." : "Comută ceasul între 24 de ore și 12 ore (AM/PM).");
+		help.entry(mini("moon"), en ? "Theme" : "Temă", en ? "Light, Dark, or Automatic (by the room's light)." : "Luminos, Întunecat sau Automat (după lumina din cameră).");
+		help.entry(mini("keepOn"), en ? "Screen on ON / OFF" : "Ecran aprins ON / OFF", en ? "ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout."
+				: "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon.");
+		help.entry(mini(en ? "lang-ro" : "lang-en"), en ? "Language" : "Limba", en ? "Romanian or English." : "Română sau engleză.");
+		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
+				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
+		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
+				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
+		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
+		help.entry(mini("about"), en ? "About" : "Despre", en ? "About the app, the data it uses, and what's new in each version."
+				: "Despre aplicație, datele pe care le folosește și ce e nou în fiecare versiune.");
+		help.show();
 	}
 
 	/** After an update: what is new in the installed version. */

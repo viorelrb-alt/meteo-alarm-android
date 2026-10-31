@@ -1,3 +1,11 @@
+v0.37 · 31 October 2026
+- The refresh button at the top right moved into the ☰ menu as "Refresh"; the clock now takes the corner. Pulling the screen down still refreshes.
+- Every option in the ☰ menu has an icon before it; the ones that are also a button on the screen show that button.
+- New menu texts: "Town", "Temperature °C/°F", "Clock 12/24", "Screen on ON/OFF", "Location On/Off".
+- Theme: the moon icon from the brightness bar; inside, Light, Dark and Automatic (by the room's light), each with its icon.
+- "Screen on" shows a 2-second notice that says what will happen.
+- New "Help" option before "About": a full-screen page with "Close" on top that explains every button, gesture and menu option, with their icons.
+
 v0.36 · 31 October 2026
 - "updated 10:20" moved to the top right, under the line.
 - Every button (and pulling the screen down) shows a short notice over the bottom buttons that goes away after 1.5 seconds. The "Exact location" window became such a notice.

@@ -248,7 +248,6 @@ final class WeatherView extends View {
 			return true;
 		}
 		if (in(screen.btnMenu, x, y)) taps.onMenu();
-		else if (in(screen.btnRefresh, x, y)) taps.onRefresh();
 		else if (in(screen.btnLocate, x, y)) taps.onLocate();
 		else if (in(screen.btnBright, x, y)) {
 			showBar(3000);

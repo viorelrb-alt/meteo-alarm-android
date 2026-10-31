@@ -81,7 +81,7 @@ public final class Screen {
 	public final float[] barArea = { 0, 0, 0, 0 }, btnMoon = { 0, 0, 0, 0 };
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
-	public final float[] btnMenu = { 40, 24, 64, 64 }, btnRefresh = { 654, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
+	public final float[] btnMenu = { 40, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
 			btnLocate = { 124, 0, 64, 64 }, btnBright = { 208, 0, 64, 64 }, btnSensor = { 292, 0, 64, 64 },
 			cityArea = { 40, 104, 380, 56 };
 	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
@@ -127,14 +127,9 @@ public final class Screen {
 		g.rect(0, 0, cw, ch, c.page);
 		button(btnMenu);
 		for (int k = 0; k < 3; k++) g.rect(57, 41 + k * 13, 30, 4, c.ink);
-		float rx = cw - 104;
-		btnRefresh[0] = rx;
-		button(btnRefresh);
-		g.arc(rx + 32, 56, 15, -50, 290, 4, c.ink);
-		// Arrowhead at the arc's start (upper right), pointing along the circle.
-		g.poly(new float[] { rx + 36, 33, rx + 51, 46, rx + 35, 52 }, c.ink);
+		// Refreshing is in the ☰ menu and by pulling the screen down: the clock takes the corner.
 		drawClock();
-		rtext(false, 26, 71, cw - 117, T.date(now), c.ink);
+		rtext(false, 26, 71, cw - 40, T.date(now), c.ink);
 		if (tablet) drawTablet(ch);
 		else if (cw > ch) drawLandscape(ch);
 		else drawPortrait(ch);
@@ -504,7 +499,7 @@ public final class Screen {
 
 	private void drawClock() {
 		int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
-		float right = cw - 123;
+		float right = cw - 40;
 		if (clk12) {
 			String pm = h < 12 ? "AM" : "PM";
 			int h12 = h % 12 == 0 ? 12 : h % 12;
@@ -882,16 +877,8 @@ public final class Screen {
 	 */
 	private void drawBrightBar(float ch) {
 		float x = 50, bw = 84, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
-		// Light theme: white button, black moon and a thick black ring; dark theme: the other way round.
-		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
 		btnMoon[0] = x; btnMoon[1] = top; btnMoon[2] = bw; btnMoon[3] = bw;
-		float r = bw / 2, cx = x + r, cy = top + r, ring = 7, m = r * 0.46f;
-		g.roundRect(x, top, bw, bw, r, ink);
-		g.roundRect(x + ring, top + ring, bw - 2 * ring, bw - 2 * ring, r - ring, bg);
-		// Crescent: a disc with another one, in the button's colour, over its upper right.
-		g.roundRect(cx - m, cy - m, 2 * m, 2 * m, m, ink);
-		float m2 = m * 0.8f;
-		g.roundRect(cx + m * 0.42f - m2, cy - m * 0.42f - m2, 2 * m2, 2 * m2, m2, bg);
+		moonButton(x, top, bw);
 		barArea[0] = x; barArea[1] = by; barArea[2] = bw; barArea[3] = bh;
 		pill(x, by, bw, bh, true, brightLevel);
 	}
@@ -951,13 +938,87 @@ public final class Screen {
 		else halfMoon(cx, cy, 17, ink);
 	}
 
-	/** One status-row button (64 x 64 units) on GFX, for the ☰ menu rows. */
-	public void miniButton(Gfx gfx, String which) {
+	/** The moon button (BW across at X, TOP): a thick ring, the crescent; inverted in the dark theme. */
+	private void moonButton(float x, float top, float bw) {
+		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
+		float r = bw / 2, ring = bw / 12;
+		g.roundRect(x, top, bw, bw, r, ink);
+		g.roundRect(x + ring, top + ring, bw - 2 * ring, bw - 2 * ring, r - ring, bg);
+		crescent(x + r, top + r, r * 0.46f, ink, bg);
+	}
+
+	/** A crescent of radius M at CX CY: a disc with another one, in BG, over its upper right. */
+	private void crescent(float cx, float cy, float m, int ink, int bg) {
+		g.roundRect(cx - m, cy - m, 2 * m, 2 * m, m, ink);
+		float m2 = m * 0.8f;
+		g.roundRect(cx + m * 0.42f - m2, cy - m * 0.42f - m2, 2 * m2, 2 * m2, m2, bg);
+	}
+
+	/**
+	 * An icon for the ☰ menu and the help, in a 64 x 64 unit box on GFX. The ones that are also a
+	 * button on the screen (city, locate, bright, sensor, moon) are drawn as that button; the
+	 * others as a plain line icon (refresh, unit, clock, light, dark, keepOn, lang-ro, lang-en,
+	 * update, help, about, edge, pull, swipe).
+	 */
+	public void menuIcon(Gfx gfx, String which) {
 		g = gfx;
 		c = dark ? Palette.DARK : Palette.LIGHT;
+		int k = c.ink;
 		float[] b = { 0, 0, 64, 64 };
-		boolean on = which.equals("sensor") && sensorTheme;
-		footButton(which, b, on);
+		if (which.equals("city") || which.equals("locate") || which.equals("bright") || which.equals("sensor"))
+			footButton(which, b, which.equals("sensor") && sensorTheme);
+		else if (which.equals("moon")) moonButton(2, 2, 60);
+		else if (which.equals("refresh")) {
+			g.arc(32, 32, 17, -50, 290, 4, k);
+			g.poly(new float[] { 36, 7, 53, 21, 35, 28 }, k);
+		} else if (which.equals("unit")) {
+			// A thermometer.
+			g.roundRect(25, 6, 14, 38, 7, k);
+			g.roundRect(28, 9, 8, 32, 4, c.page);
+			g.roundRect(21, 38, 22, 22, 11, k);
+			g.rect(30, 22, 4, 20, k);
+		} else if (which.equals("clock")) {
+			g.arc(32, 32, 22, 0, 360, 4, k);
+			g.rect(30, 15, 4, 19, k);
+			g.rect(30, 30, 14, 4, k);
+		} else if (which.equals("light")) sun(32, 32, 26, k);
+		else if (which.equals("dark")) crescent(32, 32, 20, k, c.page);
+		else if (which.equals("keepOn")) {
+			// A phone with rays: the screen stays lit.
+			g.roundRect(20, 6, 24, 44, 5, k);
+			g.roundRect(23, 10, 18, 34, 3, c.page);
+			g.rect(10, 22, 6, 3, k);
+			g.rect(48, 22, 6, 3, k);
+			g.rect(29, 54, 6, 6, k);
+			g.rect(10, 32, 6, 3, k);
+			g.rect(48, 32, 6, 3, k);
+		} else if (which.startsWith("lang")) {
+			String t = which.endsWith("ro") ? "RO" : "EN";
+			g.roundRect(6, 12, 52, 40, 8, k);
+			g.roundRect(9, 15, 46, 34, 6, c.page);
+			ctext(true, 24, 18, 32, t, k);
+		} else if (which.equals("update")) {
+			g.rect(30, 6, 4, 30, k);
+			g.poly(new float[] { 18, 30, 46, 30, 32, 46 }, k);
+			g.rect(10, 52, 44, 4, k);
+		} else if (which.equals("help") || which.equals("about")) {
+			g.arc(32, 32, 24, 0, 360, 4, k);
+			ctext(true, 34, 13, 32, which.equals("help") ? "?" : "i", k);
+		} else if (which.equals("edge")) {
+			// The left edge with an up-down arrow.
+			g.rect(8, 4, 4, 56, k);
+			g.rect(30, 16, 4, 32, k);
+			g.poly(new float[] { 22, 18, 42, 18, 32, 6 }, k);
+			g.poly(new float[] { 22, 46, 42, 46, 32, 58 }, k);
+		} else if (which.equals("pull")) {
+			g.rect(8, 6, 48, 4, k);
+			g.rect(30, 14, 4, 30, k);
+			g.poly(new float[] { 20, 40, 44, 40, 32, 56 }, k);
+		} else if (which.equals("swipe")) {
+			g.rect(14, 30, 36, 4, k);
+			g.poly(new float[] { 18, 22, 18, 42, 6, 32 }, k);
+			g.poly(new float[] { 46, 22, 46, 42, 58, 32 }, k);
+		}
 	}
 
 	/** A short notice over the status row after a button (MainActivity clears it after 1.5 s). */
