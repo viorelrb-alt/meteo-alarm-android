@@ -146,7 +146,7 @@ public final class Preview {
 				s.warns.add(w);
 			}
 		}
-		if (opts.contains(" page1")) s.hourPage = 1;
+		if (opts.contains(" page1")) s.hours.scroll = 700;
 		if (opts.contains(" snow")) {
 			s.w.temp = -12.4;
 			s.w.code = 73;
@@ -165,9 +165,9 @@ public final class Preview {
 		if (opts.contains(" info")) {
 			s.w.humidity = 87; s.w.pressure = 1021.7; s.w.pressTrend = -1.6; s.w.visibility = 8400; s.aqi = 27; s.w.precip = 0.4;
 		}
-		if (opts.contains(" scroll1")) s.infoScroll = 231;
-		if (opts.contains(" scroll2")) s.infoScroll = 693;
-		if (opts.contains(" scroll3")) s.infoScroll = 5000;
+		if (opts.contains(" scroll1")) s.info.scroll = 231;
+		if (opts.contains(" scroll2")) s.info.scroll = 693;
+		if (opts.contains(" scroll3")) { s.info.scroll = 5000; s.grid.scroll = 5000; s.days.scroll = 5000; };
 		if (opts.contains(" evening")) s.now.set(Calendar.HOUR_OF_DAY, 22);
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";
 		s.brightLevel = 0.45f;

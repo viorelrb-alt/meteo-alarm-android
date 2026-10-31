@@ -9,6 +9,7 @@ import android.view.VelocityTracker;
 import android.view.View;
 
 import ro.meteoalarm.android.core.Screen;
+import ro.meteoalarm.android.core.Strip;
 
 /** Draws the Screen scaled to the phone (full width, the extra height going to the current weather) or the tablet. */
 final class WeatherView extends View {
@@ -160,25 +161,22 @@ final class WeatherView extends View {
 		invalidate();
 	}
 
-	private boolean infoDown, infoDrag;
+	/** The row under the finger (moved by it), and where it was when the finger went down. */
+	private Strip drag;
+	private boolean dragging;
 	private float scroll0;
 	private VelocityTracker vt;
 	private android.animation.ValueAnimator settle;
 
-	/** Slides the info row to the nearest box (the next one in the direction of a fling, V units/s). */
-	private void settleInfo(float v) {
-		float step = screen.infoStep, max = screen.infoMax, from = screen.infoScroll;
-		if (step <= 0) return;
-		float pos = from / step;
-		int k = Math.abs(v) > 300 ? (int) (v > 0 ? Math.floor(pos) + 1 : Math.ceil(pos) - 1) : Math.round(pos);
-		float to = Math.max(0, Math.min(max, k * step));
-		if (k * step > max - step / 2 && v > 0) to = max;
+	/** Slides ST to the box nearest to where it is (the next one in a fling, V units/s). */
+	private void settle(final Strip st, float v) {
+		float from = st.scroll, to = st.target(from, v);
 		settle = android.animation.ValueAnimator.ofFloat(from, to);
 		settle.setDuration((long) Math.min(320, 120 + Math.abs(to - from) * 0.8f));
 		settle.setInterpolator(new android.view.animation.DecelerateInterpolator(1.6f));
 		settle.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
 			public void onAnimationUpdate(android.animation.ValueAnimator a) {
-				screen.infoScroll = (Float) a.getAnimatedValue();
+				st.scroll = (Float) a.getAnimatedValue();
 				invalidate();
 			}
 		});
@@ -228,33 +226,38 @@ final class WeatherView extends View {
 			return true;
 		}
 		float dx = e.getX() - downX, dy = e.getY() - downY;
-		// The info row follows the finger sideways and settles on a box when let go.
+		// The rows of boxes follow the finger (sideways, the info grid up and down) and settle on a box.
 		if (act == MotionEvent.ACTION_DOWN) {
-			infoDrag = false;
-			infoDown = screen.infoArea[2] > 0 && in(screen.infoArea, (downX - ox) / scale, (downY - oy) / scale);
-			if (infoDown) {
+			dragging = false;
+			drag = null;
+			float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
+			for (Strip st : screen.strips()) if (st.area[2] > 0 && st.max > 0 && in(st.area, ux, uy)) drag = st;
+			if (drag != null) {
 				if (settle != null) settle.cancel();
-				scroll0 = screen.infoScroll;
+				scroll0 = drag.scroll;
 				if (vt == null) vt = VelocityTracker.obtain();
 				vt.clear();
 			}
 		}
-		if (infoDown && vt != null) vt.addMovement(e);
-		if (infoDown && act == MotionEvent.ACTION_MOVE && !infoDrag && !pulling && !sliding && Math.abs(dx) > 10 * dp && Math.abs(dx) > Math.abs(dy))
-			infoDrag = true;
-		if (infoDrag) {
+		if (drag != null && vt != null) vt.addMovement(e);
+		if (drag != null && act == MotionEvent.ACTION_MOVE && !dragging && !pulling && !sliding) {
+			float along = drag.vertical ? dy : dx, across = drag.vertical ? dx : dy;
+			if (Math.abs(along) > 10 * dp && Math.abs(along) > Math.abs(across)) dragging = true;
+		}
+		if (dragging) {
+			float along = drag.vertical ? dy : dx;
 			if (act == MotionEvent.ACTION_MOVE) {
-				float s = scroll0 - dx / scale;
+				float s = scroll0 - along / scale;
 				// A little give past the ends.
 				if (s < 0) s *= 0.3f;
-				else if (s > screen.infoMax) s = screen.infoMax + (s - screen.infoMax) * 0.3f;
-				screen.infoScroll = s;
+				else if (s > drag.max) s = drag.max + (s - drag.max) * 0.3f;
+				drag.scroll = s;
 				invalidate();
 			} else if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
-				infoDrag = false;
-				infoDown = false;
+				dragging = false;
 				vt.computeCurrentVelocity(1000);
-				settleInfo(-vt.getXVelocity() / scale);
+				settle(drag, -(drag.vertical ? vt.getYVelocity() : vt.getXVelocity()) / scale);
+				drag = null;
 			}
 			return true;
 		}
@@ -308,7 +311,6 @@ final class WeatherView extends View {
 		float sx = (downX - ox) / scale, sy = (downY - oy) / scale;
 		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) {
 			if (screen.warnArea[2] > 0 && in(screen.warnArea, sx, sy)) screen.warnStart += dx < 0 ? 1 : -1;
-			else if (screen.hourArea[2] > 0 && in(screen.hourArea, sx, sy)) screen.hourPage += dx < 0 ? 1 : -1;
 			invalidate();
 			return true;
 		}

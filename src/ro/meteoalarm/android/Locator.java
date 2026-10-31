@@ -140,22 +140,28 @@ final class Locator {
 				} catch (Exception e) {
 					town = null;
 				}
-				if (town == null) {
-					try {
-						if (Geocoder.isPresent()) {
-							@SuppressWarnings("deprecation")
-							List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 1);
-							if (as != null && !as.isEmpty()) {
-								Address a = as.get(0);
+				// The phone's geocoder (Google's data on most phones) knows the neighbourhoods better than
+				// OpenStreetMap ("Zona 10 Nivele", not the nearest big suburb): its name wins, except for a
+				// Bucharest sector; it also gives the town when OpenStreetMap could not be reached.
+				try {
+					if (Geocoder.isPresent()) {
+						@SuppressWarnings("deprecation")
+						List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 1);
+						if (as != null && !as.isEmpty()) {
+							Address a = as.get(0);
+							if (town == null) {
 								town = first(a.getLocality(), a.getSubAdminArea(), a.getFeatureName());
 								county = a.getAdminArea();
-								if (a.getLocality() != null) district = first(a.getSubLocality());
 								country = a.getCountryCode();
+								district = null;
 							}
+							String sub = first(a.getSubLocality());
+							boolean sector = district != null && district.startsWith("Sector");
+							if (sub != null && town != null && !sub.equalsIgnoreCase(town) && !sector) district = sub;
 						}
-					} catch (Exception e) {
-						town = null;
 					}
+				} catch (Exception e) {
+					// keep what OpenStreetMap gave
 				}
 				if (country == null) country = "ro";
 				country = country.toLowerCase();

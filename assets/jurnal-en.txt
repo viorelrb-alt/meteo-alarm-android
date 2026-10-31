@@ -1,3 +1,9 @@
+v1.20 · 31 October 2026
+- The rain chart and the hour boxes under the temperature follow the finger smoothly, like the bottom row; the dots became a line.
+- Landscape in 3 parts: the weather now on the left, then a line; in the middle the rain chart, the hours and the five days, slid sideways; on the right the Sun/Moon, UV, Pollen, Humidity, Air quality, Pressure, Visibility and Compass boxes, 4 at a time (2 up, 2 down), slid up and down.
+- The neighbourhood now comes from the phone's geocoder (Google's data), more precise than OpenStreetMap; within the same town it changes at once.
+- Pressure, visibility and humidity are fetched right after the update when the saved weather lacks them.
+
 v1.10 · 31 October 2026
 - At the bottom, Sun, UV index and Pollen are now separate boxes in a row that slides smoothly sideways: boxes leave on one side and come in on the other, and the next one peeks in at the right.
 - After sunset the Sun box becomes the Moon box: moonrise and moonset, with the phase.

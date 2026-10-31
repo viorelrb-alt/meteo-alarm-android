@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.10";
+	static final String VERSION = "Meteo Alarm Android v1.20";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -607,7 +607,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				// EDGE_M metres (a more exact name, as a sector of the same town, is taken at once).
 				Cities.City cur = s.city;
 				boolean same = found.same(cur);
-				boolean finer = cur != null && cur.country.equals(country) && Warnings.fold(name).startsWith(Warnings.fold(cur.name) + ",");
+				// Inside the same town the neighbourhood follows the geocoder at once; the boundary
+				// margin is for moving between towns.
+				boolean finer = cur != null && cur.country.equals(country)
+						&& Warnings.fold(cur.name.replaceFirst(",.*$", "")).equals(Warnings.fold(town));
 				Area area = cur == null || same || finer ? null : loadArea(cur);
 				boolean keep = area != null && area.holds(lat, lon, EDGE_M);
 				Cities.City here = keep ? new Cities.City(cur.country, cur.county, cur.name, la, lo, cur.match)
@@ -769,6 +772,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.fetched = prefs.getLong("fetched", 0);
 			// Saved by an older version without the wind direction: fetch again right away.
 			if (s.w != null && Double.isNaN(s.w.windDir)) s.fetched = 0;
+			// Saved before the pressure / visibility boxes: fetch again right away.
+			if (s.w != null && Double.isNaN(s.w.pressure)) s.fetched = 0;
 			String p = readCache("pollen.json");
 			if (p != null) {
 				Object[] r = Weather.parsePollen(p);
@@ -1047,11 +1052,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Lângă vânt: săgeata arată încotro bate vântul, rotită după cum ții telefonul (busola); semnul portocaliu e nordul.");
 		help.entry(mini("night"), en ? "Night clock" : "Ceasul de noapte", en ? "While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute."
 				: "Când telefonul se încarcă noaptea (de la apus la răsărit) și nu-l atingi un minut: un ceas mare și estompat. O atingere revine pentru un minut.");
-		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "On the warnings, the rain chart and the hour boxes: the next or the previous ones. The dots show where you are."
-				: "Pe avertizări, pe graficul de ploaie și pe casetele cu ore: următoarele sau cele dinainte. Punctele arată unde ești.");
+		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "On the warnings: the next or the previous ones. The rain chart and the hour boxes (and the five days in landscape) follow the finger."
+				: "Pe avertizări: următoarele sau cele dinainte. Graficul de ploaie și casetele cu ore (și cele 5 zile, în peisaj) urmează degetul.");
 		help.entry(mini("swipe"), en ? "The row of boxes at the bottom" : "Rândul de casete de jos", en
-				? "Slide it sideways: Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass."
-				: "Glisează-l stânga-dreapta: Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
+				? "Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass."
+				: "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
 		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather and the warnings now." : "Descarcă acum vremea și avertizările.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");

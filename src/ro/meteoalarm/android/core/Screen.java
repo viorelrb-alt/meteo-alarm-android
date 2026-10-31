@@ -91,8 +91,12 @@ public final class Screen {
 	public final float[] warnArea = { 0, 0, 0, 0 };
 	public int warnStart, warnBoxes;
 	/** Where the hour boxes are (for the swipe) and the page shown; set by draw. */
-	public final float[] hourArea = { 0, 0, 0, 0 };
-	public int hourPage, hourPages;
+	/** The rows moved by the finger: next hours, five days (landscape), info boxes, info grid (landscape). */
+	public final Strip hours = new Strip(false), days = new Strip(false), info = new Strip(false), grid = new Strip(true);
+
+	public Strip[] strips() {
+		return new Strip[] { hours, days, info, grid };
+	}
 
 	/** Canvas width: 758 in portrait, wider in landscape. */
 	private float cw = W;
@@ -149,6 +153,7 @@ public final class Screen {
 
 	private void drawPortrait(float ch) {
 		float fb = ch - 76;
+		for (Strip st : strips()) st.area[2] = 0;
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
 		g.rect(40, 102, 678, 2, c.line);
@@ -189,15 +194,17 @@ public final class Screen {
 	}
 
 	/**
-	 * Landscape: the current weather on the left (it takes the extra width); on the right the next
-	 * hours (or the precipitation chart) across the top and the five days under it; sun, UV and
-	 * pollen as one line in the status row.
+	 * Landscape in three parts: the weather now on the left; a line; in the middle the next hours
+	 * (or the precipitation chart) on top and the five days under them, both moved sideways by the
+	 * finger; on the right the info boxes two by two, moved up and down.
 	 */
 	private void drawLandscape(float ch) {
 		float fb = ch - 76;
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
-		float rbw = 946, rbx = cw - 40 - rbw, leftR = rbx - 24;
+		for (Strip st : strips()) st.area[2] = 0;
+		float z1 = Math.round(cw * 0.36f), z2 = Math.round(cw * 0.73f), leftR = z1 - 22;
+		float mx = z1 + 22, mw = z2 - 10 - mx, rx = z2 + 10, rw = cw - 40 - rx;
 		g.rect(40, 102, cw - 80, 2, c.line);
 		String label = city != null ? city.label() : "";
 		float lp = fit(true, 40, cw - 124 - 380, label);
@@ -220,40 +227,42 @@ public final class Screen {
 		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+		// The line between the weather now and the boxes, like the one under the clock.
+		g.rect(z1 - 1, 124, 2, fb - 14 - 124, c.line);
 
-		drawNextHours(rbx, 146, rbw, 232);
-		float dw = (rbw - 4 * 12) / 5;
-		for (int k = 0; k < 5; k++) {
-			float x = rbx + k * (dw + 12), cx = x + dw / 2, top = 390;
-			box(x, top, dw, 270, 44);
-			if (k >= w.dayDates.size()) continue;
+		float bt = 124, bb = fb - 14, hh = 258;
+		drawNextHours(mx, bt, mw, hh);
+		drawDaysRow(mx, bt + hh + 4, mw, bb - (bt + hh + 4));
+		drawInfoGrid(rx, 146, rw, bb - 146);
+		footer(fb);
+	}
+
+	/** Landscape: the five days as a row moved sideways (three shown, the next one peeking in). */
+	private void drawDaysRow(float x, float top, float wd, float h) {
+		int n = Math.min(5, w.dayDates.size());
+		if (n == 0) return;
+		float gap = 14, peek = 30, dw = (wd - peek - 2 * gap) / 3, step = dw + gap;
+		float[] starts = new float[n];
+		for (int k = 0; k < n; k++) starts[k] = k * step;
+		days.set(starts, n * step - gap - wd);
+		days.area[0] = x; days.area[1] = top; days.area[2] = wd; days.area[3] = h;
+		g.clip(x - 2, top - 2, wd + 4, h + 4);
+		for (int k = 0; k < n; k++) {
+			float bx = x + k * step - days.scroll, cx = bx + dw / 2;
+			if (bx + dw < x - 4 || bx > x + wd + 4) continue;
+			box(bx, top, dw, h, 44);
 			String title = k == 0 ? T.day1 : k == 1 ? T.day2 : T.weekdayUp(w.dayDates.get(k), true);
 			head(top, 44, cx, dw - 20, title, 0);
 			String[] dd = T.describe(w.dayCodes.get(k), true);
-			drawIcon(dd[0], cx - 45, top + 52, 90);
 			String hl = t(w.dayHi.get(k)) + "° / " + t(w.dayLo.get(k)) + "°";
-			float p = fit(true, 38, dw - 16, hl);
-			ctext(true, p, top + 150 + (38 - p) * 6 / 10, cx, hl, c.ink);
-			ctext(false, fit(false, 25, dw - 14, dd[1]), top + 198, cx, dd[1], c.ink);
-			ctext(false, 22, top + 232, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
+			float p = fit(true, 38, dw - 16, hl), ic = Math.min(90, h - 44 - p - 96);
+			float iy = top + 44 + Math.max(6, (h - 44 - ic - p - 86) / 2), ty = iy + ic + 4;
+			drawIcon(dd[0], cx - ic / 2, iy, ic);
+			ctext(true, p, ty, cx, hl, c.ink);
+			ctext(false, fit(false, 25, dw - 14, dd[1]), ty + p + 6, cx, dd[1], c.ink);
+			ctext(false, 22, ty + p + 40, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
 		}
-		footer(fb);
-		// Sun, UV and pollen in the middle of the status row.
-		StringBuilder sb = new StringBuilder();
-		sb.append(T.sunrise).append(' ').append(Texts.clock(w.sunrise, clk12)).append("   ")
-				.append(T.sunset).append(' ').append(Texts.clock(w.sunset, clk12));
-		if (w.uv >= 0) {
-			int l = w.uv <= 2 ? 1 : w.uv <= 5 ? 2 : w.uv <= 7 ? 3 : w.uv <= 10 ? 4 : 5;
-			sb.append("   UV ").append(w.uv).append(" (").append(T.uvLv[l - 1].toLowerCase()).append(')');
-		}
-		if (pollenLvl > 0) {
-			sb.append("   ").append(T.pollen.charAt(0)).append(T.pollen.substring(1).toLowerCase()).append(": ")
-					.append(T.polLv[pollenLvl - 1].toLowerCase());
-			if (pollenPlant.length() > 0) sb.append(" (").append(T.plant(pollenPlant)).append(')');
-		}
-		String sun = sb.toString();
-		float sp = fit(false, 27, cw - 400 - 260, sun);
-		ctext(false, sp, fb + 26 + (27 - sp) / 2, (400 + cw - 260) / 2, sun, c.ink);
+		g.unclip();
 	}
 
 	/**
@@ -269,7 +278,7 @@ public final class Screen {
 		btnLocate[1] = fb;
 		g.rect(40, 102, cw - 80, 2, c.line);
 		warnArea[2] = 0;
-		hourArea[2] = 0;
+		for (Strip st : strips()) st.area[2] = 0;
 		String label = city != null ? city.label() : "";
 		float lp = fit(true, 40, cw / 2 - 160, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
@@ -304,7 +313,7 @@ public final class Screen {
 		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 146 : nb + 24) / bs;
 		float avail = (fb - 14) / bs - by, ih = 190, hh = Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
 		drawNextHours(bx, by, bw, hh);
-		for (int k = 0; k < 4; k++) hourArea[k] *= bs;
+		for (int k = 0; k < 4; k++) hours.area[k] *= bs;
 		float dy = by + hh + 14, dw = (bw - 4 * 12) / 5;
 		for (int k = 0; k < 5; k++) {
 			float x = bx + k * (dw + 12), cx = x + dw / 2;
@@ -320,9 +329,8 @@ public final class Screen {
 			ctext(false, fit(false, 23, dw - 12, dd[1]), ty + p + 6, cx, dd[1], c.ink);
 			ctext(false, 21, ty + p + 36, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
 		}
-		infoArea[2] = 0;
 		drawInfoStrip(bx, dy + dh + 14, bw, ih);
-		for (int k = 0; k < 4; k++) infoArea[k] *= bs;
+		for (int k = 0; k < 4; k++) info.area[k] *= bs;
 		g = g0;
 		footer(fb);
 	}
@@ -376,73 +384,58 @@ public final class Screen {
 		}
 	}
 
-	/** Precipitation chart when rain or snow is due within 12 hours, else the next hours as tiles. */
-	private void drawNextHours(float x, float y, float wd, float h) {
-		hourArea[2] = 0;
-		if (w.tileHours.size() < 2) drawPrecipBox(x, y, wd, h, 46);
-		else if (rainText().length() == 0) drawHourBoxes(x, y, wd, h, 0);
-		else {
-			// Rain due: the chart first; swiping left shows the hour boxes after it.
-			int pages = 1 + hourPagesFor(wd);
-			hourPage = Math.max(0, Math.min(hourPage, pages - 1));
-			if (hourPage > 0) drawHourBoxes(x, y, wd, h, 1);
-			else {
-				hourPages = pages;
-				hourArea[0] = x; hourArea[1] = y; hourArea[2] = wd; hourArea[3] = h - 26;
-				drawPrecipBox(x, y, wd, h - 26, 46);
-				dots(x + wd / 2, y + h - 16, pages, 0);
-			}
-		}
-	}
-
-	private int perPage(float wd) {
-		return Math.max(1, Math.min(w.tileHours.size() - 1, (int) ((wd + 16) / (140 + 16))));
-	}
-
-	private int hourPagesFor(float wd) {
-		int per = perPage(wd);
-		return (w.tileHours.size() - 1 + per - 1) / per;
-	}
-
 	/**
-	 * The next hours, one box per hour like the day boxes: the hour on top, the icon, the
-	 * temperature and the sky. As many boxes as fit (at least 140 units wide each); the next ones
-	 * are reached by swiping, with one dot per page under the boxes.
+	 * The next hours as a row moved by the finger: first the precipitation chart when rain or snow
+	 * is due within 12 hours, then one box per hour (the next one peeks in at the right); a line
+	 * under the row.
 	 */
-	private void drawHourBoxes(float x0, float y, float wd, float h, int before) {
+	private void drawNextHours(float x, float y, float wd, float h) {
+		hours.area[2] = 0;
 		int avail = w.tileHours.size() - 1;
-		float gap = 16, dotsH = 26, bh = h - dotsH;
-		int per = perPage(wd);
-		hourPages = before + hourPagesFor(wd);
-		hourPage = Math.max(0, Math.min(hourPage, hourPages - 1));
-		int pg = hourPage - before;
-		hourArea[0] = x0; hourArea[1] = y; hourArea[2] = wd; hourArea[3] = bh;
-		float bw = (wd - gap * (per - 1)) / per, hd = 44;
-		// One size for all temperatures and all descriptions on the page.
+		if (avail < 1) {
+			drawPrecipBox(x, y, wd, h, 46);
+			return;
+		}
+		boolean chart = rainText().length() > 0;
+		float gap = 16, peek = 30, bh = h - 26;
+		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
+		float bw = avail <= per && !chart ? (wd - gap * (avail - 1)) / avail : (wd - peek - gap * per) / per;
+		float x0 = chart ? wd + gap : 0, step = bw + gap;
+		float[] starts = new float[avail + (chart ? 1 : 0)];
+		int n = 0;
+		if (chart) starts[n++] = x0;
+		for (int i = 1; i < avail; i++) starts[n++] = x0 + i * step;
+		hours.set(java.util.Arrays.copyOf(starts, n), x0 + avail * step - gap - wd);
+		hours.area[0] = x; hours.area[1] = y; hours.area[2] = wd; hours.area[3] = bh;
 		float tp = 44, dp = 24;
-		for (int i = 0; i < per; i++) {
-			int k = 1 + pg * per + i;
-			if (k > avail) break;
+		for (int k = 1; k <= avail; k++) {
 			if (!Double.isNaN(w.tileTemp[k])) tp = fit(true, tp, bw - 16, t(w.tileTemp[k]) + "°");
 			dp = fit(false, dp, bw - 12, T.describe(w.tileCode[k], w.tileDay[k])[1]);
 		}
-		for (int i = 0; i < per; i++) {
-			int k = 1 + pg * per + i;
-			float x = x0 + i * (bw + gap), cx = x + bw / 2;
-			box(x, y, bw, bh, hd);
-			if (k > avail) continue;
-			String hr = Texts.clock(w.tileHours.get(k), clk12);
-			head(y, hd, cx, bw - 12, hr, 0);
-			String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
-			// Icon, temperature and sky as one block, centred under the hour.
-			float room = bh - hd - tp - dp - 34, ic = Math.min(Math.min(96, bw * 0.6f), room);
-			float top = y + hd + (bh - hd - (ic + 4 + tp + 6 + dp)) / 2;
-			drawIcon(Weather.iconOf(w.tileCode[k], w.tileDay[k]), cx - ic / 2, top, ic);
-			float ty = top + ic + 4;
-			if (!Double.isNaN(w.tileTemp[k])) ctext(true, tp, ty, cx, t(w.tileTemp[k]) + "°", c.ink);
-			ctext(false, dp, ty + tp + 6, cx, d[1], c.dim);
+		float sc = hours.scroll;
+		g.clip(x - 2, y - 2, wd + 4, bh + 4);
+		if (chart && sc < wd) drawPrecipBox(x - sc, y, wd, bh, 46);
+		for (int k = 1; k <= avail; k++) {
+			float bx = x + x0 + (k - 1) * step - sc;
+			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
+			drawHourBox(k, bx, y, bw, bh, tp, dp);
 		}
-		dots(x0 + wd / 2, y + bh + 10, hourPages, hourPage);
+		g.unclip();
+		g.rect(x, y + bh + 12, wd, 2, c.line);
+	}
+
+	/** One hour: the hour on top, the icon, the temperature and the sky. */
+	private void drawHourBox(int k, float x, float y, float bw, float bh, float tp, float dp) {
+		float hd = 44, cx = x + bw / 2;
+		box(x, y, bw, bh, hd);
+		head(y, hd, cx, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
+		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
+		float room = bh - hd - tp - dp - 34, ic = Math.min(Math.min(96, bw * 0.6f), room);
+		float top = y + hd + (bh - hd - (ic + 4 + tp + 6 + dp)) / 2;
+		drawIcon(Weather.iconOf(w.tileCode[k], w.tileDay[k]), cx - ic / 2, top, ic);
+		float ty = top + ic + 4;
+		if (!Double.isNaN(w.tileTemp[k])) ctext(true, tp, ty, cx, t(w.tileTemp[k]) + "°", c.ink);
+		ctext(false, dp, ty + tp + 6, cx, d[1], c.dim);
 	}
 
 	/** N dots centred on CX, the current one in ink (nothing for a single page). */
@@ -805,10 +798,6 @@ public final class Screen {
 
 	// --- Info boxes (sun or moon, UV, pollen, ...) -------------------------------------------
 
-	/** The info row: how far it is scrolled (units), one box's step, the farthest scroll, where it is. */
-	public float infoScroll, infoStep, infoMax;
-	public final float[] infoArea = { 0, 0, 0, 0 };
-
 	/** The boxes of the info row, in order: the moon after sunset, humidity only while it rains. */
 	private List<String> infoBoxes() {
 		List<String> l = new ArrayList<String>();
@@ -846,17 +835,43 @@ public final class Screen {
 		int per = Math.max(3, Math.min(ids.size() - 1, (int) ((wd - peek) / (200 + gap))));
 		// The next box shows its edge at the right, so it is clear the row goes on.
 		float bw = (wd - peek - gap * per) / per;
-		infoStep = bw + gap;
-		infoMax = Math.max(0, ids.size() * infoStep - gap - wd);
-		infoScroll = Math.max(0, Math.min(infoScroll, infoMax));
-		infoArea[0] = x; infoArea[1] = top; infoArea[2] = wd; infoArea[3] = h;
+		float step = bw + gap;
+		float[] starts = new float[ids.size()];
+		for (int i = 0; i < ids.size(); i++) starts[i] = i * step;
+		info.set(starts, ids.size() * step - gap - wd);
+		info.area[0] = x; info.area[1] = top; info.area[2] = wd; info.area[3] = h;
 		float tp = 31;
 		for (String id : ids) tp = fit(true, tp, bw - 16, infoTitle(id));
 		g.clip(x - 2, top - 2, wd + 4, h + 4);
 		for (int i = 0; i < ids.size(); i++) {
-			float bx = x + i * infoStep - infoScroll;
+			float bx = x + i * step - info.scroll;
 			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
 			drawInfoBox(ids.get(i), bx, top, bw, h, tp);
+		}
+		g.unclip();
+	}
+
+	/**
+	 * Landscape: the info boxes two by two (no wind box: the wind is next to the weather now),
+	 * moved up and down by the finger; the next row peeks in at the bottom.
+	 */
+	private void drawInfoGrid(float x, float top, float wd, float h) {
+		List<String> ids = infoBoxes();
+		ids.remove("wind");
+		float gap = 14, peek = 26, bw = (wd - gap) / 2;
+		int rows = (ids.size() + 1) / 2;
+		float bh = rows <= 2 ? (h - gap) / 2 : (h - peek - 2 * gap) / 2, step = bh + gap;
+		float[] starts = new float[rows];
+		for (int r = 0; r < rows; r++) starts[r] = r * step;
+		grid.set(starts, rows * step - gap - h);
+		grid.area[0] = x; grid.area[1] = top; grid.area[2] = wd; grid.area[3] = h;
+		float tp = 31;
+		for (String id : ids) tp = fit(true, tp, bw - 16, infoTitle(id));
+		g.clip(x - 2, top - 2, wd + 4, h + 4);
+		for (int i = 0; i < ids.size(); i++) {
+			float by = top + (i / 2) * step - grid.scroll;
+			if (by + bh < top - 4 || by > top + h + 4) continue;
+			drawInfoBox(ids.get(i), x + (i % 2) * (bw + gap), by, bw, bh, tp);
 		}
 		g.unclip();
 	}
@@ -886,6 +901,9 @@ public final class Screen {
 		boolean en = T.en;
 		box(x, top, bw, h, hd);
 		head(top, hd, cx, bw - 16, infoTitle(id).equals("LUNA") ? "LUNĂ" : infoTitle(id), tp);
+		float top0 = top;
+		// The content is laid out for a box 184 high: in a taller one it sits in the middle.
+		top += Math.max(0, (h - 184) / 2);
 		if (id.equals("sun")) {
 			ctext(false, 20, top + 54, cx, T.sunrise, c.ink);
 			ctext(true, 29, top + 78, cx, Texts.clock(w.sunrise, clk12), c.ink);
@@ -899,7 +917,7 @@ public final class Screen {
 			ctext(true, 29, top + 78, tx, rs[0] > 0 ? Texts.clock(hm(rs[0]), clk12) : "–", c.ink);
 			ctext(false, 20, top + 121, tx, en ? "Moonset" : "Apune", c.ink);
 			ctext(true, 29, top + 145, tx, rs[1] > 0 ? Texts.clock(hm(rs[1]), clk12) : "–", c.ink);
-			float mx = x + bw - 34, my = top + hd + body * 0.42f;
+			float mx = x + bw - 34, my = top + hd + 138 * 0.42f;
 			moonPhase(mx, my, 17, Moon.lit(ms), Moon.waxing(ms));
 			ctext(false, 19, my + 24, mx, Math.round(Moon.lit(ms) * 100) + "%", c.dim);
 		} else if (id.equals("uv")) {
@@ -933,9 +951,9 @@ public final class Screen {
 			bigValue(cx, top, aqi >= 0 ? Integer.toString(aqi) : "–", l > 0 ? lv[l - 1] : T.noData2, bw);
 			scale(cx - 60, top + 162, 6, l, 16.67f);
 		} else if (id.equals("press")) {
-			drawPressure(cx, top + hd, bw, body);
+			drawPressure(cx, top0 + hd, bw, body);
 		} else if (id.equals("wind")) {
-			drawWindRose(cx, top + hd, bw, body);
+			drawWindRose(cx, top0 + hd, bw, body);
 		} else if (id.equals("vis")) {
 			double v = w.visibility;
 			String val = Double.isNaN(v) ? "–" : v >= 10000 ? Math.round(v / 1000) + " km" : v >= 1000 ? String.format("%.1f km", v / 1000).replace('.', en ? '.' : ',') : Math.round(v / 10) * 10 + " m";
@@ -944,7 +962,7 @@ public final class Screen {
 			bigValue(cx, top, val, l > 0 ? lv[l - 1] : T.noData2, bw);
 			scale(cx - 60, top + 162, 4, l, 27);
 		} else {
-			drawCompassBox(cx, top + hd, bw, body);
+			drawCompassBox(cx, top0 + hd, bw, body);
 		}
 	}
 
