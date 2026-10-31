@@ -25,4 +25,9 @@ public interface Gfx {
 	void arc(float cx, float cy, float r, float startDeg, float sweepDeg, float stroke, int color);
 
 	void poly(float[] xy, int color);
+
+	/** From now on draw only inside X Y W H, until unclip. */
+	void clip(float x, float y, float w, float h);
+
+	void unclip();
 }

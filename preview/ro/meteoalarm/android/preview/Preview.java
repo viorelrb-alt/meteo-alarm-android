@@ -84,6 +84,17 @@ public final class Preview {
 			g.draw(new Arc2D.Float(cx - r, cy - r, 2 * r, 2 * r, -st, -sw, Arc2D.OPEN));
 		}
 
+		private java.awt.Shape oldClip;
+
+		public void clip(float x, float y, float w, float h) {
+			oldClip = g.getClip();
+			g.clip(new java.awt.geom.Rectangle2D.Float(x, y, w, h));
+		}
+
+		public void unclip() {
+			g.setClip(oldClip);
+		}
+
 		public void poly(float[] xy, int c) {
 			Path2D.Float p = new Path2D.Float();
 			p.moveTo(xy[0], xy[1]);
@@ -151,6 +162,13 @@ public final class Preview {
 		s.nightClock = opts.contains(" night");
 		if (opts.contains(" charging")) s.charging = true;
 		if (opts.contains(" head")) s.heading = 60;
+		if (opts.contains(" info")) {
+			s.w.humidity = 87; s.w.pressure = 1021.7; s.w.pressTrend = -1.6; s.w.visibility = 8400; s.aqi = 27; s.w.precip = 0.4;
+		}
+		if (opts.contains(" scroll1")) s.infoScroll = 231;
+		if (opts.contains(" scroll2")) s.infoScroll = 693;
+		if (opts.contains(" scroll3")) s.infoScroll = 5000;
+		if (opts.contains(" evening")) s.now.set(Calendar.HOUR_OF_DAY, 22);
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";
 		s.brightLevel = 0.45f;
 		float[] f = Screen.fit(pw, ph, s.tablet);

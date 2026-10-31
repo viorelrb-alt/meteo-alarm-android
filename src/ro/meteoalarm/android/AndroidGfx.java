@@ -112,4 +112,13 @@ final class AndroidGfx implements Gfx {
 		fill.setColor(color);
 		c.drawPath(p, fill);
 	}
+
+	public void clip(float x, float y, float w, float h) {
+		c.save();
+		c.clipRect(x, y, x + w, y + h);
+	}
+
+	public void unclip() {
+		c.restore();
+	}
 }

@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.00";
+	static final String VERSION = "Meteo Alarm Android v1.10";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -765,7 +765,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			String f = readCache("forecast.json");
 			if (f != null) s.w = Weather.parse(f);
 			String u = readCache("uv.json");
-			if (s.w != null && s.w.uv < 0 && u != null) s.w.uv = Weather.parseUv(u);
+			if (s.w != null && u != null) Weather.addExtra(s.w, u);
 			s.fetched = prefs.getLong("fetched", 0);
 			// Saved by an older version without the wind direction: fetch again right away.
 			if (s.w != null && Double.isNaN(s.w.windDir)) s.fetched = 0;
@@ -774,6 +774,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				Object[] r = Weather.parsePollen(p);
 				s.pollenLvl = (Integer) r[0];
 				s.pollenPlant = (String) r[1];
+				s.aqi = Weather.parseAqi(p);
 			}
 			String x = readCache("warn.xml");
 			if (x != null) s.warns = Warnings.parse(x, s.city.warnNames(), System.currentTimeMillis());
@@ -854,8 +855,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		long now = System.currentTimeMillis();
 		if (f != null) {
 			s.w = Weather.parse(f);
-			if (uvText != null && s.w.uv < 0) {
-				s.w.uv = Weather.parseUv(uvText);
+			if (uvText != null) {
+				Weather.addExtra(s.w, uvText);
 				writeCache("uv.json", uvText);
 			}
 			s.fetched = now;
@@ -870,6 +871,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				Object[] r = Weather.parsePollen(p);
 				s.pollenLvl = (Integer) r[0];
 				s.pollenPlant = (String) r[1];
+				s.aqi = Weather.parseAqi(p);
 				writeCache("pollen.json", p);
 			} catch (Exception e) {
 				// keep the last pollen
@@ -1047,6 +1049,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Când telefonul se încarcă noaptea (de la apus la răsărit) și nu-l atingi un minut: un ceas mare și estompat. O atingere revine pentru un minut.");
 		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "On the warnings, the rain chart and the hour boxes: the next or the previous ones. The dots show where you are."
 				: "Pe avertizări, pe graficul de ploaie și pe casetele cu ore: următoarele sau cele dinainte. Punctele arată unde ești.");
+		help.entry(mini("swipe"), en ? "The row of boxes at the bottom" : "Rândul de casete de jos", en
+				? "Slide it sideways: Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass."
+				: "Glisează-l stânga-dreapta: Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
 		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather and the warnings now." : "Descarcă acum vremea și avertizările.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");

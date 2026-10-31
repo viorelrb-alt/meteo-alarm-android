@@ -122,14 +122,14 @@ final class Locator {
 				String town = null, county = null, district = null, country = null, match = "";
 				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
-					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&addressdetails=1&accept-language="
+					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=16&addressdetails=1&accept-language="
 							+ URLEncoder.encode("ro", "UTF-8") + "&lat=" + lat + "&lon=" + lon;
 					Map<String, Object> ad = Json.obj(Json.parse(Weather.get(u)), "address");
 					if (ad != null) {
 						String city = (String) ad.get("city");
 						town = first(city, (String) ad.get("town"), (String) ad.get("village"), (String) ad.get("municipality"));
 						county = first((String) ad.get("county"), (String) ad.get("state"));
-						if (city != null) district = first((String) ad.get("city_district"), (String) ad.get("suburb"), (String) ad.get("borough"));
+						district = first((String) ad.get("city_district"), (String) ad.get("suburb"), (String) ad.get("borough"), (String) ad.get("quarter"), (String) ad.get("neighbourhood"));
 						if (district != null && town != null && district.equalsIgnoreCase(town)) district = null;
 						country = (String) ad.get("country_code");
 					}

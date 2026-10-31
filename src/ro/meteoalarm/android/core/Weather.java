@@ -27,6 +27,10 @@ public final class Weather {
 	public double tmax = Double.NaN, tmin = Double.NaN;
 	public String sunrise = "", sunset = "";
 	public int uv = -1;
+	/** From the second request (Open-Meteo's own model mix): relative humidity %, sea-level pressure
+	 * hPa and its change over the last 3 hours, visibility in metres; the European air quality index. */
+	public int humidity = -1, aqi = -1;
+	public double pressure = Double.NaN, pressTrend = Double.NaN, visibility = Double.NaN;
 
 	// Hourly chart.
 	public final List<String> hours = new ArrayList<String>();
@@ -59,10 +63,14 @@ public final class Weather {
 				+ "&timezone=" + URLEncoder.encode(tzId, "UTF-8") + "&models=" + MODEL;
 	}
 
-	/** Today's UV index from Open-Meteo's own model mix (the ICON model has no UV). */
+	/**
+	 * What the ICON model lacks, from Open-Meteo's own model mix: today's UV index, the humidity,
+	 * the pressure (and the last 3 hours of it, for the trend) and the visibility.
+	 */
 	public static String uvUrl(double lat, double lon, String tzId) throws Exception {
 		return "https://api.open-meteo.com/v1/forecast?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
-				+ "&daily=uv_index_max&forecast_days=1&timezone=" + URLEncoder.encode(tzId, "UTF-8");
+				+ "&daily=uv_index_max&current=relative_humidity_2m,pressure_msl,visibility&hourly=pressure_msl"
+				+ "&past_hours=3&forecast_hours=1&forecast_days=1&timezone=" + URLEncoder.encode(tzId, "UTF-8");
 	}
 
 	/** The UV index of a uvUrl answer, -1 without one. */
@@ -75,9 +83,42 @@ public final class Weather {
 		}
 	}
 
+	/** Puts a uvUrl answer into W: UV (when W has none), humidity, pressure and its trend, visibility. */
+	public static void addExtra(Weather w, String text) {
+		try {
+			Object root = Json.parse(text);
+			if (w.uv < 0) {
+				double uv = Json.num(Json.arr(Json.obj(root, "daily"), "uv_index_max"), 0);
+				if (!Double.isNaN(uv)) w.uv = (int) Math.round(uv);
+			}
+			Map<String, Object> cur = Json.obj(root, "current");
+			double h = Json.num(cur, "relative_humidity_2m");
+			if (!Double.isNaN(h)) w.humidity = (int) Math.round(h);
+			w.pressure = Json.num(cur, "pressure_msl");
+			w.visibility = Json.num(cur, "visibility");
+			List<Object> ps = Json.arr(Json.obj(root, "hourly"), "pressure_msl");
+			if (ps != null && !ps.isEmpty() && !Double.isNaN(w.pressure)) {
+				double first = Json.num(ps, 0);
+				if (!Double.isNaN(first)) w.pressTrend = w.pressure - first;
+			}
+		} catch (Exception e) {
+			// the extra boxes then show a dash
+		}
+	}
+
+	/** The European air quality index of an air-quality answer, -1 without one. */
+	public static int parseAqi(String text) {
+		try {
+			double a = Json.num(Json.obj(Json.parse(text), "current"), "european_aqi");
+			return Double.isNaN(a) ? -1 : (int) Math.round(a);
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+
 	public static String pollenUrl(double lat, double lon) {
 		return "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
-				+ "&current=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen";
+				+ "&current=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen,european_aqi";
 	}
 
 	static String fmt(double v) { return String.format(Locale.US, "%.4f", v); }

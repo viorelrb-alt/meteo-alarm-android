@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 
 import ro.meteoalarm.android.core.Screen;
@@ -159,6 +160,31 @@ final class WeatherView extends View {
 		invalidate();
 	}
 
+	private boolean infoDown, infoDrag;
+	private float scroll0;
+	private VelocityTracker vt;
+	private android.animation.ValueAnimator settle;
+
+	/** Slides the info row to the nearest box (the next one in the direction of a fling, V units/s). */
+	private void settleInfo(float v) {
+		float step = screen.infoStep, max = screen.infoMax, from = screen.infoScroll;
+		if (step <= 0) return;
+		float pos = from / step;
+		int k = Math.abs(v) > 300 ? (int) (v > 0 ? Math.floor(pos) + 1 : Math.ceil(pos) - 1) : Math.round(pos);
+		float to = Math.max(0, Math.min(max, k * step));
+		if (k * step > max - step / 2 && v > 0) to = max;
+		settle = android.animation.ValueAnimator.ofFloat(from, to);
+		settle.setDuration((long) Math.min(320, 120 + Math.abs(to - from) * 0.8f));
+		settle.setInterpolator(new android.view.animation.DecelerateInterpolator(1.6f));
+		settle.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+			public void onAnimationUpdate(android.animation.ValueAnimator a) {
+				screen.infoScroll = (Float) a.getAnimatedValue();
+				invalidate();
+			}
+		});
+		settle.start();
+	}
+
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
 		int act = e.getActionMasked();
@@ -202,6 +228,36 @@ final class WeatherView extends View {
 			return true;
 		}
 		float dx = e.getX() - downX, dy = e.getY() - downY;
+		// The info row follows the finger sideways and settles on a box when let go.
+		if (act == MotionEvent.ACTION_DOWN) {
+			infoDrag = false;
+			infoDown = screen.infoArea[2] > 0 && in(screen.infoArea, (downX - ox) / scale, (downY - oy) / scale);
+			if (infoDown) {
+				if (settle != null) settle.cancel();
+				scroll0 = screen.infoScroll;
+				if (vt == null) vt = VelocityTracker.obtain();
+				vt.clear();
+			}
+		}
+		if (infoDown && vt != null) vt.addMovement(e);
+		if (infoDown && act == MotionEvent.ACTION_MOVE && !infoDrag && !pulling && !sliding && Math.abs(dx) > 10 * dp && Math.abs(dx) > Math.abs(dy))
+			infoDrag = true;
+		if (infoDrag) {
+			if (act == MotionEvent.ACTION_MOVE) {
+				float s = scroll0 - dx / scale;
+				// A little give past the ends.
+				if (s < 0) s *= 0.3f;
+				else if (s > screen.infoMax) s = screen.infoMax + (s - screen.infoMax) * 0.3f;
+				screen.infoScroll = s;
+				invalidate();
+			} else if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
+				infoDrag = false;
+				infoDown = false;
+				vt.computeCurrentVelocity(1000);
+				settleInfo(-vt.getXVelocity() / scale);
+			}
+			return true;
+		}
 		if (act == MotionEvent.ACTION_MOVE) {
 			if (edge && !pulling && !sliding && Math.abs(dy) > 16 * dp && Math.abs(dy) > 2 * Math.abs(dx)) {
 				sliding = true;

@@ -1,5 +1,6 @@
 package ro.meteoalarm.android.core;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -47,6 +48,8 @@ public final class Screen {
 	public Weather w;
 	public List<Warnings.Warn> warns;
 	public int pollenLvl = -1;
+	/** European air quality index, -1 when unknown. */
+	public int aqi = -1;
 	public String pollenPlant = "";
 	public Cities.City city;
 	public Texts T = new Texts(false);
@@ -110,9 +113,9 @@ public final class Screen {
 		// orange and red codes are the darker gray.
 		static final Palette LIGHT = new Palette(Gfx.WHITE, Gfx.BLACK, Gfx.GRAY5, Gfx.BLACK, Gfx.BLACK, Gfx.WHITE, Gfx.WHITE,
 				Gfx.GRAYA, Gfx.GRAY5, Gfx.BLACK, Gfx.BLACK, Gfx.GRAYD, Gfx.GRAYA, Gfx.GRAYA, Gfx.BLACK, Gfx.WHITE);
-		// Claude dark: warm charcoal page, boxes black inside with an ivory outline and an ivory title
-		// band with dark titles (Viorel's mockups); terracotta accent; the codes in muted real colours.
-		static final Palette DARK = new Palette(0xFF262624, 0xFFFAF9F5, 0xFFA6A39A, 0xFFFAF9F5, 0xFFFAF9F5, 0xFF000000,
+		// Claude dark: warm charcoal page, boxes black inside with a cream outline and a cream title
+		// band (light cream, Viorel 2026-10-31) with dark titles (Viorel's mockups); terracotta accent; the codes in muted real colours.
+		static final Palette DARK = new Palette(0xFF262624, 0xFFFAF9F5, 0xFFA6A39A, 0xFFEFE6D2, 0xFFEFE6D2, 0xFF000000,
 				0xFF30302E, 0xFF4F4E4A, 0xFFC2C0B6, 0xFFD97757, 0xFFD97757, 0xFFE3B341, 0xFFD97757, 0xFFD14D4D, 0xFF262624, 0xFF262624);
 	}
 
@@ -181,7 +184,7 @@ public final class Screen {
 		drawDayCard(40, y0 + 314, 0, T.day1);
 		drawDayCard(387, y0 + 314, 1, T.day2);
 		drawDayCols(2, y0 + 526);
-		drawSunBox(40, y0 + 690, 678, 184);
+		drawInfoStrip(40, y0 + 690, 678, 184);
 		footer(fb);
 	}
 
@@ -317,7 +320,9 @@ public final class Screen {
 			ctext(false, fit(false, 23, dw - 12, dd[1]), ty + p + 6, cx, dd[1], c.ink);
 			ctext(false, 21, ty + p + 36, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
 		}
-		drawSunBox(bx, dy + dh + 14, bw, ih);
+		infoArea[2] = 0;
+		drawInfoStrip(bx, dy + dh + 14, bw, ih);
+		for (int k = 0; k < 4; k++) infoArea[k] *= bs;
 		g = g0;
 		footer(fb);
 	}
@@ -360,6 +365,14 @@ public final class Screen {
 			float[] q = new float[xy.length];
 			for (int k = 0; k < xy.length; k++) q[k] = xy[k] * s;
 			g.poly(q, c);
+		}
+
+		public void clip(float x, float y, float w, float h) {
+			g.clip(x * s, y * s, w * s, h * s);
+		}
+
+		public void unclip() {
+			g.unclip();
 		}
 	}
 
@@ -788,6 +801,266 @@ public final class Screen {
 			g.rect(sx, y, bw, 10, c.ink);
 			if (k >= filled) g.rect(sx + 2, y + 2, bw - 4, 6, c.card);
 		}
+	}
+
+	// --- Info boxes (sun or moon, UV, pollen, ...) -------------------------------------------
+
+	/** The info row: how far it is scrolled (units), one box's step, the farthest scroll, where it is. */
+	public float infoScroll, infoStep, infoMax;
+	public final float[] infoArea = { 0, 0, 0, 0 };
+
+	/** The boxes of the info row, in order: the moon after sunset, humidity only while it rains. */
+	private List<String> infoBoxes() {
+		List<String> l = new ArrayList<String>();
+		l.add(night() ? "moon" : "sun");
+		l.add("uv");
+		l.add("pollen");
+		if (w.precip > 0 || w.code >= 51) l.add("hum");
+		l.add("aqi");
+		l.add("press");
+		l.add("wind");
+		l.add("vis");
+		l.add("compass");
+		return l;
+	}
+
+	/** After sunset or before sunrise (today's times). */
+	private boolean night() {
+		try {
+			int m = now.get(Calendar.HOUR_OF_DAY) * 60 + now.get(Calendar.MINUTE);
+			int rise = Integer.parseInt(w.sunrise.substring(0, 2)) * 60 + Integer.parseInt(w.sunrise.substring(3, 5));
+			int set = Integer.parseInt(w.sunset.substring(0, 2)) * 60 + Integer.parseInt(w.sunset.substring(3, 5));
+			return m >= set || m < rise;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	/**
+	 * The info boxes in a row WD wide, as many as fit (at least 3); the others come in by sliding
+	 * the row sideways, box by box (the next one peeks in at the right).
+	 */
+	private void drawInfoStrip(float x, float top, float wd, float h) {
+		List<String> ids = infoBoxes();
+		float gap = 16, peek = 30;
+		int per = Math.max(3, Math.min(ids.size() - 1, (int) ((wd - peek) / (200 + gap))));
+		// The next box shows its edge at the right, so it is clear the row goes on.
+		float bw = (wd - peek - gap * per) / per;
+		infoStep = bw + gap;
+		infoMax = Math.max(0, ids.size() * infoStep - gap - wd);
+		infoScroll = Math.max(0, Math.min(infoScroll, infoMax));
+		infoArea[0] = x; infoArea[1] = top; infoArea[2] = wd; infoArea[3] = h;
+		float tp = 31;
+		for (String id : ids) tp = fit(true, tp, bw - 16, infoTitle(id));
+		g.clip(x - 2, top - 2, wd + 4, h + 4);
+		for (int i = 0; i < ids.size(); i++) {
+			float bx = x + i * infoStep - infoScroll;
+			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
+			drawInfoBox(ids.get(i), bx, top, bw, h, tp);
+		}
+		g.unclip();
+	}
+
+	private String infoTitle(String id) {
+		boolean en = T.en;
+		if (id.equals("sun")) return T.sun;
+		if (id.equals("moon")) return en ? "MOON" : "LUNA";
+		if (id.equals("uv")) return T.uvT;
+		if (id.equals("pollen")) return T.pollen;
+		if (id.equals("hum")) return en ? "HUMIDITY" : "UMIDITATE";
+		if (id.equals("aqi")) return en ? "AIR QUALITY" : "ICA";
+		if (id.equals("press")) return en ? "PRESSURE" : "PRESIUNE";
+		if (id.equals("wind")) return en ? "WIND" : "VÂNT";
+		if (id.equals("vis")) return en ? "VISIBILITY" : "VIZIBILITATE";
+		return en ? "COMPASS" : "BUSOLĂ";
+	}
+
+	private static String hm(long ms) {
+		Calendar k = Calendar.getInstance();
+		k.setTimeInMillis(ms);
+		return String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE));
+	}
+
+	private void drawInfoBox(String id, float x, float top, float bw, float h, float tp) {
+		float cx = x + bw / 2, hd = 46, body = h - hd;
+		boolean en = T.en;
+		box(x, top, bw, h, hd);
+		head(top, hd, cx, bw - 16, infoTitle(id).equals("LUNA") ? "LUNĂ" : infoTitle(id), tp);
+		if (id.equals("sun")) {
+			ctext(false, 20, top + 54, cx, T.sunrise, c.ink);
+			ctext(true, 29, top + 78, cx, Texts.clock(w.sunrise, clk12), c.ink);
+			ctext(false, 20, top + 121, cx, T.sunset, c.ink);
+			ctext(true, 29, top + 145, cx, Texts.clock(w.sunset, clk12), c.ink);
+		} else if (id.equals("moon")) {
+			long ms = now.getTimeInMillis();
+			long[] rs = city != null ? Moon.riseSet(ms, city.lat, city.lon) : new long[2];
+			float tx = x + (bw - 52) / 2 + 4;
+			ctext(false, 20, top + 54, tx, en ? "Moonrise" : "Răsare", c.ink);
+			ctext(true, 29, top + 78, tx, rs[0] > 0 ? Texts.clock(hm(rs[0]), clk12) : "–", c.ink);
+			ctext(false, 20, top + 121, tx, en ? "Moonset" : "Apune", c.ink);
+			ctext(true, 29, top + 145, tx, rs[1] > 0 ? Texts.clock(hm(rs[1]), clk12) : "–", c.ink);
+			float mx = x + bw - 34, my = top + hd + body * 0.42f;
+			moonPhase(mx, my, 17, Moon.lit(ms), Moon.waxing(ms));
+			ctext(false, 19, my + 24, mx, Math.round(Moon.lit(ms) * 100) + "%", c.dim);
+		} else if (id.equals("uv")) {
+			int uv = w.uv;
+			if (uv >= 0) {
+				int l = uv <= 2 ? 1 : uv <= 5 ? 2 : uv <= 7 ? 3 : uv <= 10 ? 4 : 5;
+				ctext(true, 74, top + 50, cx, Integer.toString(uv), c.ink);
+				ctext(false, fit(false, 22, bw - 12, T.uvLv[l - 1]), top + 128, cx, T.uvLv[l - 1], c.ink);
+				scale(cx - 60, top + 162, 5, l, 21);
+			} else {
+				ctext(true, 74, top + 50, cx, "–", c.ink);
+				scale(cx - 60, top + 162, 5, 0, 21);
+			}
+		} else if (id.equals("pollen")) {
+			if (pollenLvl > 0) {
+				ctext(true, fit(true, 29, bw - 12, T.polLv[pollenLvl - 1]), top + 62, cx, T.polLv[pollenLvl - 1], c.ink);
+				String pl = pollenPlant.length() > 0 ? T.plant(pollenPlant) : T.noPollen;
+				ctext(false, fit(false, 22, bw - 12, pl), top + 103, cx, pl, c.ink);
+			} else {
+				ctext(true, 29, top + 62, cx, "–", c.ink);
+				ctext(false, 22, top + 103, cx, T.noData2, c.ink);
+			}
+			scale(cx - 60, top + 162, 4, Math.max(0, pollenLvl), 27);
+		} else if (id.equals("hum")) {
+			bigValue(cx, top, w.humidity >= 0 ? w.humidity + "%" : "–", en ? "relative humidity" : "umiditate relativă", bw);
+			scale(cx - 60, top + 162, 5, w.humidity < 0 ? 0 : Math.max(1, (w.humidity + 19) / 20), 21);
+		} else if (id.equals("aqi")) {
+			String[] lv = en ? new String[] { "Good", "Fair", "Moderate", "Poor", "Very poor", "Extremely poor" }
+					: new String[] { "Bună", "Acceptabilă", "Moderată", "Proastă", "Foarte proastă", "Extrem de proastă" };
+			int l = aqi < 0 ? 0 : aqi <= 20 ? 1 : aqi <= 40 ? 2 : aqi <= 60 ? 3 : aqi <= 80 ? 4 : aqi <= 100 ? 5 : 6;
+			bigValue(cx, top, aqi >= 0 ? Integer.toString(aqi) : "–", l > 0 ? lv[l - 1] : T.noData2, bw);
+			scale(cx - 60, top + 162, 6, l, 16.67f);
+		} else if (id.equals("press")) {
+			drawPressure(cx, top + hd, bw, body);
+		} else if (id.equals("wind")) {
+			drawWindRose(cx, top + hd, bw, body);
+		} else if (id.equals("vis")) {
+			double v = w.visibility;
+			String val = Double.isNaN(v) ? "–" : v >= 10000 ? Math.round(v / 1000) + " km" : v >= 1000 ? String.format("%.1f km", v / 1000).replace('.', en ? '.' : ',') : Math.round(v / 10) * 10 + " m";
+			int l = Double.isNaN(v) ? 0 : v >= 10000 ? 4 : v >= 4000 ? 3 : v >= 1000 ? 2 : 1;
+			String[] lv = en ? new String[] { "Poor (fog)", "Moderate", "Good", "Very good" } : new String[] { "Slabă (ceață)", "Moderată", "Bună", "Foarte bună" };
+			bigValue(cx, top, val, l > 0 ? lv[l - 1] : T.noData2, bw);
+			scale(cx - 60, top + 162, 4, l, 27);
+		} else {
+			drawCompassBox(cx, top + hd, bw, body);
+		}
+	}
+
+	/** A big value under the title and a short text under it. */
+	private void bigValue(float cx, float top, String val, String sub, float bw) {
+		float p = fit(true, 58, bw - 20, val);
+		ctext(true, p, top + 58 + (58 - p) / 2, cx, val, c.ink);
+		ctext(false, fit(false, 22, bw - 12, sub), top + 128, cx, sub, c.ink);
+	}
+
+	/** The Moon at CX CY, radius R: the lit part filled (on the right while it grows). */
+	private void moonPhase(float cx, float cy, float r, double lit, boolean waxing) {
+		g.arc(cx, cy, r, 0, 360, 2, c.ink);
+		int n = 24;
+		float sgn = waxing ? 1 : -1;
+		float[] p = new float[(2 * n + 2) * 2];
+		int k = 0;
+		for (int i = 0; i <= n; i++) {
+			double a = Math.PI * (-0.5 + (double) i / n);
+			p[k++] = cx + sgn * r * (float) Math.cos(a);
+			p[k++] = cy + r * (float) Math.sin(a);
+		}
+		for (int i = n; i >= 0; i--) {
+			double a = Math.PI * (-0.5 + (double) i / n);
+			p[k++] = cx + sgn * r * (float) (Math.cos(a) * (1 - 2 * lit));
+			p[k++] = cy + r * (float) Math.sin(a);
+		}
+		g.poly(p, c.ink);
+	}
+
+	/** A thin line from (x1, y1) to (x2, y2). */
+	private void line(float x1, float y1, float x2, float y2, float wdt, int col) {
+		float dx = x2 - x1, dy = y2 - y1, l = (float) Math.sqrt(dx * dx + dy * dy);
+		if (l == 0) return;
+		float nx = -dy / l * wdt / 2, ny = dx / l * wdt / 2;
+		g.poly(new float[] { x1 + nx, y1 + ny, x2 + nx, y2 + ny, x2 - nx, y2 - ny, x1 - nx, y1 - ny }, col);
+	}
+
+	/** Pressure as an arc from 960 to 1060 hPa (gap at the bottom), the value and the trend inside. */
+	private void drawPressure(float cx, float top, float bw, float body) {
+		boolean en = T.en;
+		float r = Math.min(bw * 0.36f, body * 0.40f), cy = top + body * 0.50f;
+		int track = dark ? 0xFF4F4E4A : Gfx.GRAYD;
+		g.arc(cx, cy, r, 135, 270, 9, track);
+		for (int i = 0; i <= 20; i++) {
+			double a = Math.toRadians(135 + 270.0 * i / 20);
+			float l = i % 5 == 0 ? 9 : 5;
+			line(cx + (float) Math.cos(a) * (r - 8), cy + (float) Math.sin(a) * (r - 8), cx + (float) Math.cos(a) * (r - 8 - l),
+					cy + (float) Math.sin(a) * (r - 8 - l), i % 5 == 0 ? 2 : 1, c.dim);
+		}
+		double p = w.pressure;
+		if (Double.isNaN(p)) {
+			ctext(true, 34, cy - 20, cx, "–", c.ink);
+			return;
+		}
+		float f = (float) Math.max(0, Math.min(1, (p - 960) / 100));
+		g.arc(cx, cy, r, 135, Math.max(2, 270 * f), 9, c.ink);
+		String val = Long.toString(Math.round(p));
+		ctext(true, fit(true, 34, r * 1.5f, val), cy - 26, cx, val, c.ink);
+		ctext(false, 18, cy + 10, cx, "hPa", c.ink);
+		double t = w.pressTrend;
+		String tr = Double.isNaN(t) ? "" : Math.abs(t) < 1 ? (en ? "steady" : "stabilă") : t <= -3 ? (en ? "↓ falling fast" : "↓ scade rapid")
+				: t < 0 ? (en ? "↓ falling" : "↓ scade") : t >= 3 ? (en ? "↑ rising fast" : "↑ crește rapid") : (en ? "↑ rising" : "↑ crește");
+		if (tr.length() > 0) ctext(false, fit(false, 18, bw - 16, tr), top + body - 28, cx, tr, c.dim);
+	}
+
+	/** A compass ring with the cardinal letters, turned by ROT degrees (north at the top for 0). */
+	private void rose(float cx, float cy, float r, float rot, boolean accentN) {
+		g.arc(cx, cy, r, 0, 360, 2, c.ink);
+		for (int i = 0; i < 16; i++) {
+			if (i % 4 == 0) continue;
+			double a = Math.toRadians(i * 22.5 - rot - 90);
+			line(cx + (float) Math.cos(a) * r, cy + (float) Math.sin(a) * r, cx + (float) Math.cos(a) * (r - (i % 2 == 0 ? 7 : 4)),
+					cy + (float) Math.sin(a) * (r - (i % 2 == 0 ? 7 : 4)), 1.5f, c.dim);
+		}
+		String[] L = T.en ? new String[] { "N", "E", "S", "W" } : new String[] { "N", "E", "S", "V" };
+		for (int i = 0; i < 4; i++) {
+			double a = Math.toRadians(i * 90 - rot - 90);
+			float lx = cx + (float) Math.cos(a) * (r - 13), ly = cy + (float) Math.sin(a) * (r - 13);
+			ctext(true, 16, ly - 9, lx, L[i], i == 0 && accentN ? c.accent : c.ink);
+		}
+	}
+
+	/** Wind: the ring (north up), a pointer on the ring where the wind comes from, the speed inside. */
+	private void drawWindRose(float cx, float top, float bw, float body) {
+		float r = Math.min(bw * 0.38f, body * 0.44f), cy = top + body * 0.5f;
+		rose(cx, cy, r, 0, true);
+		if (Double.isNaN(w.wind)) {
+			ctext(true, 30, cy - 18, cx, "–", c.ink);
+			return;
+		}
+		String sp = unitF ? Long.toString(Math.round(w.wind * 0.621371)) : Long.toString(Math.round(w.wind));
+		ctext(true, 30, cy - 26, cx, sp, c.ink);
+		ctext(false, 16, cy + 6, cx, unitF ? "mph" : "km/h", c.ink);
+		if (!Double.isNaN(w.windDir)) {
+			double a = Math.toRadians(w.windDir - 90);
+			float ca = (float) Math.cos(a), sa = (float) Math.sin(a), tipR = r - 4, baseR = r + 9, hw = 8;
+			g.poly(new float[] { cx + ca * tipR, cy + sa * tipR, cx + ca * baseR - sa * hw, cy + sa * baseR + ca * hw,
+					cx + ca * baseR + sa * hw, cy + sa * baseR - ca * hw }, c.ink);
+		}
+	}
+
+	/** Compass: the ring turns with the phone; the mark on top is where the phone points. */
+	private void drawCompassBox(float cx, float top, float bw, float body) {
+		boolean en = T.en, has = !Float.isNaN(heading);
+		float r = Math.min(bw * 0.38f, body * 0.42f), cy = top + body * 0.53f;
+		rose(cx, cy, r, has ? heading : 0, has);
+		g.poly(new float[] { cx, cy - r + 6, cx - 7, cy - r - 8, cx + 7, cy - r - 8 }, has ? c.accent : c.dim);
+		if (!has) {
+			ctext(false, fit(false, 17, r * 1.1f, en ? "no compass" : "fără busolă"), cy - 10, cx, en ? "no compass" : "fără busolă", c.dim);
+			return;
+		}
+		int deg = Math.round(((heading % 360) + 360) % 360) % 360;
+		String dir = (en ? DIR_EN : DIR_RO)[(int) Math.round(deg / 45.0) % 8];
+		ctext(true, 26, cy - 24, cx, dir, c.ink);
+		ctext(false, 18, cy + 4, cx, deg + "°", c.ink);
 	}
 
 	private void drawSunBox(float x, float top, float w3, float h) {

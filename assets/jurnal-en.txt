@@ -1,3 +1,10 @@
+v1.10 · 31 October 2026
+- At the bottom, Sun, UV index and Pollen are now separate boxes in a row that slides smoothly sideways: boxes leave on one side and come in on the other, and the next one peeks in at the right.
+- After sunset the Sun box becomes the Moon box: moonrise and moonset, with the phase.
+- New boxes in the row: Humidity (only while it rains), Air quality, Pressure (an arc, with the trend), Wind (a ring with the cardinal points and the direction), Visibility and Compass.
+- In the dark theme the title bands are light cream instead of white.
+- The neighbourhood is looked for in small towns too and under more OpenStreetMap names.
+
 v1.00 · 31 October 2026
 - Other countries: the app knows which country you are in and keeps the towns found there. In the town list, under the counties, "Other countries" has starting towns in the about 38 MeteoAlarm countries.
 - Coded warnings come from MeteoAlarm in other countries too; each country's source is kept on the phone.

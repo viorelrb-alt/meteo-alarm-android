@@ -1,3 +1,10 @@
+v1.10 · 31 octombrie 2026
+- Jos, Soare, Indice UV și Polen sunt acum casete separate, într-un rând care se glisează lin stânga-dreapta: casetele ies dintr-o parte și intră din cealaltă, iar următoarea se vede puțin la dreapta.
+- După apus, caseta Soare devine caseta Lună: când răsare și când apune luna, cu faza ei.
+- Casete noi în rând: Umiditate (doar când plouă), ICA (calitatea aerului), Presiune (arc, cu tendința), Vânt (cerc cu punctele cardinale și direcția), Vizibilitate și Busolă.
+- În tema întunecată, benzile de titlu sunt crem deschis în loc de alb.
+- Cartierul e căutat și în orașele mici și sub mai multe denumiri din OpenStreetMap.
+
 v1.00 · 31 octombrie 2026
 - Alte țări: aplicația recunoaște țara în care ești și ține minte localitățile găsite acolo. În lista de localități, sub județe, e „Alte țări”, cu orașe de pornire în cele circa 38 de țări MeteoAlarm.
 - Avertizările cu coduri vin de la MeteoAlarm și în alte țări; sursa fiecărei țări rămâne ținută minte în telefon.
