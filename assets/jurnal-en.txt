@@ -1,3 +1,6 @@
+v1.51 · 31 October 2026
+- Widget: the weather icon is 30% larger, the temperature smaller and the texts (sunset/sunrise, town) smaller, so they fit whole in the widget.
+
 v1.50 · 31 October 2026
 - New home-screen widget in the style of Samsung's: a small weather icon, a big temperature, the next sunset or sunrise and the town, right on the wallpaper. Add it by holding the home screen › Widgets › Meteo Alarm. It refreshes by itself every 30 minutes and whenever the app downloads the weather; a tap opens the app.
 - Help has a new section about the widget.

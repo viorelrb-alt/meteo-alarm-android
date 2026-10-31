@@ -92,14 +92,14 @@ public final class Widget extends AppWidgetProvider {
 		if (w != null) {
 			long t = Math.round(unitF ? w.temp * 9 / 5 + 32 : w.temp);
 			v.setTextViewText(R.id.widget_temp, t + "°");
-			Bitmap ic = icon(ctx, "icons/" + T.describe(w.code, w.isDay)[0] + ".png", Math.round(44 * d));
+			Bitmap ic = icon(ctx, "icons/" + T.describe(w.code, w.isDay)[0] + ".png", Math.round(58 * d));
 			if (ic != null) v.setImageViewBitmap(R.id.widget_icon, ic);
 			v.setTextViewText(R.id.widget_sun, sunLine(w, en));
 		} else {
 			v.setTextViewText(R.id.widget_temp, "--°");
 			v.setTextViewText(R.id.widget_sun, en ? "Open the app" : "Deschide aplicația");
 		}
-		Bitmap pin = icon(ctx, "icons/btn-city.png", Math.round(16 * d));
+		Bitmap pin = icon(ctx, "icons/btn-city.png", Math.round(13 * d));
 		if (pin != null) v.setImageViewBitmap(R.id.widget_pin, pin);
 		v.setTextViewText(R.id.widget_town, c != null ? c.name : "");
 		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
