@@ -20,17 +20,13 @@ public final class Warnings {
 		public long from, until; // epoch ms
 	}
 
-	/** Lower case without Romanian diacritics, so "Călărași" matches "Calarasi". */
+	/** Lower case without diacritics, so "Călărași" matches "Calarasi" (and "Kärnten" "Karnten"). */
 	public static String fold(String s) {
-		StringBuilder b = new StringBuilder(s.length());
-		for (char c : s.toLowerCase().toCharArray()) {
-			switch (c) {
-			case 'ă': case 'â': b.append('a'); break;
-			case 'î': b.append('i'); break;
-			case 'ș': case 'ş': b.append('s'); break;
-			case 'ț': case 'ţ': b.append('t'); break;
-			default: b.append(c);
-			}
+		String n = java.text.Normalizer.normalize(s.toLowerCase(), java.text.Normalizer.Form.NFD);
+		StringBuilder b = new StringBuilder(n.length());
+		for (int k = 0; k < n.length(); k++) {
+			char c = n.charAt(k);
+			if (Character.getType(c) != Character.NON_SPACING_MARK) b.append(c);
 		}
 		return b.toString();
 	}
@@ -56,13 +52,22 @@ public final class Warnings {
 	}
 
 	public static List<Warn> parse(String xml, String area, long now) {
-		String key = fold(area);
+		return parse(xml, new String[] { area }, now);
+	}
+
+	/** The warnings whose area names one of NAMES (a county, a region, a town). */
+	public static List<Warn> parse(String xml, String[] names, long now) {
+		List<String> keys = new ArrayList<String>();
+		for (String n : names) if (n != null && n.trim().length() >= 3) keys.add(fold(n.trim()));
 		String text = fold(xml.replace('\n', ' ').replace('\r', ' '));
 		List<Warn> list = new ArrayList<Warn>();
 		String[] entries = text.split("<entry");
 		for (int k = 1; k < entries.length; k++) {
 			String e = entries[k];
-			if (!tag(e, "cap:areadesc").contains(key)) continue;
+			String ad = tag(e, "cap:areadesc");
+			boolean hit = false;
+			for (String key : keys) if (ad.contains(key)) hit = true;
+			if (!hit) continue;
 			String t = tag(e, "title");
 			int lv = t.startsWith("yellow") ? 1 : t.startsWith("orange") ? 2 : t.startsWith("red") ? 3 : 0;
 			if (lv == 0) continue;

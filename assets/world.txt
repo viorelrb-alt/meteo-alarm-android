@@ -1,0 +1,77 @@
+# Orașe de pornire în alte țări; restul se adaugă singure la localizare.
+# Format: cod țară|regiune|localitate|latitudine|longitudine|nume locale pentru avertizări (separate de /)
+at|Viena|Viena|48.2082|16.3738|Wien
+at|Stiria|Graz|47.0707|15.4395|Steiermark/Graz
+at|Austria Superioară|Linz|48.3069|14.2858|Oberösterreich/Linz
+be|Bruxelles|Bruxelles|50.8503|4.3517|Brussel/Bruxelles/Brussels
+be|Anvers|Anvers|51.2194|4.4025|Antwerpen
+ba|Sarajevo|Sarajevo|43.8563|18.4131|Sarajevo
+bg|Sofia|Sofia|42.6977|23.3219|Sofia/София
+bg|Plovdiv|Plovdiv|42.1354|24.7453|Plovdiv/Пловдив
+bg|Varna|Varna|43.2141|27.9147|Varna/Варна
+bg|Ruse|Ruse|43.8356|25.9657|Ruse/Русе
+hr|Zagreb|Zagreb|45.8150|15.9819|Zagreb
+hr|Split-Dalmația|Split|43.5081|16.4402|Split
+cy|Nicosia|Nicosia|35.1856|33.3823|Nicosia/Lefkosia
+cz|Praga|Praga|50.0755|14.4378|Praha/Prague
+cz|Moravia de Sud|Brno|49.1951|16.6068|Jihomoravský/Brno
+dk|Capitala|Copenhaga|55.6761|12.5683|København/Copenhagen/Hovedstaden
+ee|Harju|Tallinn|59.4370|24.7536|Harju/Tallinn
+fi|Uusimaa|Helsinki|60.1699|24.9384|Uusimaa/Helsinki
+fr|Île-de-France|Paris|48.8566|2.3522|Paris
+fr|Rhône|Lyon|45.7640|4.8357|Rhône/Lyon
+fr|Bouches-du-Rhône|Marsilia|43.2965|5.3698|Bouches-du-Rhône/Marseille
+de|Berlin|Berlin|52.5200|13.4050|Berlin
+de|Bavaria|München|48.1351|11.5820|München/Munich/Bayern
+de|Hamburg|Hamburg|53.5511|9.9937|Hamburg
+de|Renania de Nord-Westfalia|Köln|50.9375|6.9603|Köln/Cologne
+de|Hessa|Frankfurt pe Main|50.1109|8.6821|Frankfurt
+gr|Attica|Atena|37.9838|23.7275|Athens/Attica/Αθήνα
+gr|Macedonia Centrală|Salonic|40.6401|22.9444|Thessaloniki/Θεσσαλονίκη
+hu|Budapesta|Budapesta|47.4979|19.0402|Budapest
+hu|Hajdú-Bihar|Debrețin|47.5316|21.6273|Hajdú-Bihar/Debrecen
+hu|Csongrád-Csanád|Seghedin|46.2530|20.1414|Csongrád/Szeged
+is|Capitala|Reykjavík|64.1466|-21.9426|Reykjavík/Höfuðborgarsvæðið
+ie|Dublin|Dublin|53.3498|-6.2603|Dublin
+il|Tel Aviv|Tel Aviv|32.0853|34.7818|Tel Aviv
+it|Lazio|Roma|41.9028|12.4964|Lazio/Roma/Rome
+it|Lombardia|Milano|45.4642|9.1900|Lombardia/Milano
+it|Campania|Napoli|40.8518|14.2681|Campania/Napoli
+it|Veneto|Veneția|45.4408|12.3155|Veneto/Venezia
+lv|Riga|Riga|56.9496|24.1052|Rīga/Riga
+lt|Vilnius|Vilnius|54.6872|25.2797|Vilnius
+lu|Luxemburg|Luxemburg|49.6116|6.1319|Luxembourg
+mt|Malta|La Valletta|35.8989|14.5146|Malta/Valletta
+md|Chișinău|Chișinău|47.0105|28.8638|Chișinău/Chisinau
+md|Bălți|Bălți|47.7615|27.9290|Bălți/Balti
+md|Cahul|Cahul|45.9075|28.1944|Cahul
+me|Podgorica|Podgorica|42.4304|19.2594|Podgorica
+nl|Olanda de Nord|Amsterdam|52.3676|4.9041|Noord-Holland/Amsterdam
+nl|Olanda de Sud|Rotterdam|51.9244|4.4777|Zuid-Holland/Rotterdam
+mk|Skopje|Skopje|41.9981|21.4254|Skopje
+no|Oslo|Oslo|59.9139|10.7522|Oslo
+no|Vestland|Bergen|60.3913|5.3221|Vestland/Bergen
+pl|Mazovia|Varșovia|52.2297|21.0122|Mazowieckie/Warszawa
+pl|Polonia Mică|Cracovia|50.0647|19.9450|Małopolskie/Kraków
+pt|Lisabona|Lisabona|38.7223|-9.1393|Lisboa
+pt|Porto|Porto|41.1579|-8.6291|Porto
+rs|Belgrad|Belgrad|44.7866|20.4489|Beograd/Belgrade
+rs|Voivodina|Novi Sad|45.2671|19.8335|Vojvodina/Novi Sad
+sk|Bratislava|Bratislava|48.1486|17.1077|Bratislavský/Bratislava
+sk|Košice|Košice|48.7164|21.2611|Košický/Košice
+si|Ljubljana|Ljubljana|46.0569|14.5058|Ljubljana
+es|Madrid|Madrid|40.4168|-3.7038|Madrid
+es|Barcelona|Barcelona|41.3874|2.1686|Barcelona/Cataluña/Catalunya
+es|Valencia|Valencia|39.4699|-0.3763|Valencia/València
+es|Sevilla|Sevilla|37.3891|-5.9845|Sevilla
+se|Stockholm|Stockholm|59.3293|18.0686|Stockholm
+se|Västra Götaland|Göteborg|57.7089|11.9746|Västra Götaland/Göteborg
+ch|Zürich|Zürich|47.3769|8.5417|Zürich
+ch|Geneva|Geneva|46.2044|6.1432|Genève/Geneva
+ch|Berna|Berna|46.9480|7.4474|Bern
+ua|Kiev|Kiev|50.4501|30.5234|Kyiv/Київ
+ua|Odesa|Odesa|46.4825|30.7233|Odesa/Одеса
+ua|Cernăuți|Cernăuți|48.2921|25.9358|Chernivtsi/Чернівці
+gb|Londra|Londra|51.5074|-0.1278|London
+gb|Manchester|Manchester|53.4808|-2.2426|Manchester
+gb|Scoția|Edinburgh|55.9533|-3.1883|Edinburgh/Scotland

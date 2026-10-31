@@ -35,6 +35,7 @@ import android.Manifest;
 
 import ro.meteoalarm.android.core.Area;
 import ro.meteoalarm.android.core.Cities;
+import ro.meteoalarm.android.core.Countries;
 import ro.meteoalarm.android.core.Screen;
 import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Warnings;
@@ -45,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.50";
+	static final String VERSION = "Meteo Alarm Android v1.00";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -59,6 +60,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Updater updater;
 	private BottomSheet sheet;
 	private Bubble bubble;
+	private Countries countries;
 	private HelpPanel help;
 	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
@@ -98,6 +100,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			cities = new Cities(readAll(getAssets().open("cities.txt")));
 		} catch (Exception e) {
 			cities = new Cities("");
+		}
+		try {
+			cities.addWorld(readAll(getAssets().open("world.txt")));
+			countries = new Countries(readAll(getAssets().open("countries.txt")));
+		} catch (Exception e) {
+			countries = new Countries("");
 		}
 		// Towns found by the location, kept on the phone.
 		for (String k : prefs.getString("myCities", "").split("\n")) {
@@ -585,28 +593,30 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.invalidate();
 		if (say) note(s.T.en ? "Looking for the exact position…" : "Caut poziția exactă…");
 		locator.locate(new Locator.Result() {
-			public void found(double lat, double lon, String town, String rawCounty, String district) {
+			public void found(double lat, double lon, String town, String rawCounty, String district, String country, String match) {
 				s.locating = false;
-				String county = cities.county(rawCounty);
+				boolean home = country.equals("ro");
+				String county = home ? cities.county(rawCounty) : rawCounty.trim();
 				if (county.length() == 0) county = town;
 				String name = district != null ? town + ", " + district : town;
-				Cities.City listed = cities.find(county, name);
+				Cities.City found = new Cities.City(country, county, name, 0, 0, match);
+				Cities.City listed = cities.find(found);
 				if (listed != null) name = listed.name;
 				double la = Math.round(lat * 10000) / 10000.0, lo = Math.round(lon * 10000) / 10000.0;
 				// The town shown changes only when the phone is out of its boundary by more than
 				// EDGE_M metres (a more exact name, as a sector of the same town, is taken at once).
 				Cities.City cur = s.city;
-				boolean same = cur != null && cur.county.equals(county) && Warnings.fold(cur.name).equals(Warnings.fold(name));
-				boolean finer = cur != null && Warnings.fold(name).startsWith(Warnings.fold(cur.name) + ",");
+				boolean same = found.same(cur);
+				boolean finer = cur != null && cur.country.equals(country) && Warnings.fold(name).startsWith(Warnings.fold(cur.name) + ",");
 				Area area = cur == null || same || finer ? null : loadArea(cur);
 				boolean keep = area != null && area.holds(lat, lon, EDGE_M);
-				Cities.City here = keep ? new Cities.City(cur.county, cur.name, la, lo) : new Cities.City(county, name, la, lo);
-				boolean added = cities.find(here.county, here.name) == null;
+				Cities.City here = keep ? new Cities.City(cur.country, cur.county, cur.name, la, lo, cur.match)
+						: new Cities.City(country, county, name, la, lo, match);
+				boolean added = cities.find(here) == null;
 				learn(here);
 				if (added && say) toast((s.T.en ? "Added to the list: " : "Adăugată în listă: ") + here.label());
 				if (!keep) fetchArea(here, town, district, lat, lon);
-				boolean moved = cur == null || !cur.name.equals(here.name) || !cur.county.equals(here.county)
-						|| distKm(cur.lat, cur.lon, la, lo) > 1;
+				boolean moved = cur == null || !here.same(cur) || distKm(cur.lat, cur.lon, la, lo) > 1;
 				if (moved) setCity(here, false);
 				else view.invalidate();
 				if (moved || say) fetch();
@@ -635,7 +645,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		StringBuilder b = new StringBuilder(c.key());
 		for (String k : prefs.getString("myCities", "").split("\n")) {
 			Cities.City m = Cities.City.fromKey(k);
-			if (m == null || (m.county.equals(c.county) && Warnings.fold(m.name).equals(Warnings.fold(c.name)))) continue;
+			if (m == null || m.same(c)) continue;
 			b.append('\n').append(k);
 		}
 		prefs.edit().putString("myCities", b.toString()).apply();
@@ -644,7 +654,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private java.io.File areaFile(Cities.City c) {
 		java.io.File dir = new java.io.File(getFilesDir(), "areas");
 		dir.mkdirs();
-		return new java.io.File(dir, Warnings.fold(c.county + "_" + c.name).replaceAll("[^a-z0-9]+", "_") + ".txt");
+		return new java.io.File(dir, Warnings.fold(c.country + "_" + c.county + "_" + c.name).replaceAll("[^a-z0-9]+", "_") + ".txt");
 	}
 
 	/** The boundary kept for C, or null (none fetched yet, or OpenStreetMap has none). */
@@ -754,6 +764,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		try {
 			String f = readCache("forecast.json");
 			if (f != null) s.w = Weather.parse(f);
+			String u = readCache("uv.json");
+			if (s.w != null && s.w.uv < 0 && u != null) s.w.uv = Weather.parseUv(u);
 			s.fetched = prefs.getLong("fetched", 0);
 			// Saved by an older version without the wind direction: fetch again right away.
 			if (s.w != null && Double.isNaN(s.w.windDir)) s.fetched = 0;
@@ -764,7 +776,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				s.pollenPlant = (String) r[1];
 			}
 			String x = readCache("warn.xml");
-			if (x != null) s.warns = Warnings.parse(x, s.city.county, System.currentTimeMillis());
+			if (x != null) s.warns = Warnings.parse(x, s.city.warnNames(), System.currentTimeMillis());
 		} catch (Exception e) {
 			s.w = null;
 		}
@@ -786,27 +798,53 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				} catch (Exception e) {
 					f = null;
 				}
+				String uvText = null;
+				try {
+					if (f != null) uvText = Weather.get(Weather.uvUrl(c.lat, c.lon, TimeZone.getDefault().getID()));
+				} catch (Exception e) {
+					uvText = null;
+				}
+				final String uu = uvText;
 				try {
 					p = Weather.get(Weather.pollenUrl(c.lat, c.lon));
 				} catch (Exception e) {
 					p = null;
 				}
-				try {
-					x = Weather.get(Warnings.FEED);
-				} catch (Exception e) {
-					x = null;
-				}
+				x = warningsFeed(c.country);
 				final String ff = f, pp = p, xx = x;
 				handler.post(new Runnable() {
 					public void run() {
-						done(c, ff, pp, xx);
+						done(c, ff, pp, xx, uu);
 					}
 				});
 			}
 		}).start();
 	}
 
-	private void done(Cities.City c, String f, String p, String x) {
+	/**
+	 * The country's MeteoAlarm warnings (off the main thread): the feed that worked last time first,
+	 * then the others listed for the country; the one that answers is kept on the phone.
+	 */
+	private String warningsFeed(String cc) {
+		List<String> urls = countries.feeds(cc);
+		String known = prefs.getString("feed_" + cc, null);
+		if (known != null) {
+			urls.remove(known);
+			urls.add(0, known);
+		}
+		for (String u : urls) {
+			try {
+				String x = Weather.get(u);
+				if (!u.equals(known)) prefs.edit().putString("feed_" + cc, u).apply();
+				return x;
+			} catch (Exception e) {
+				// try the next one
+			}
+		}
+		return null;
+	}
+
+	private void done(Cities.City c, String f, String p, String x, String uvText) {
 		fetching = false;
 		s.busy = false;
 		if (c != s.city) { // the town changed meanwhile
@@ -816,6 +854,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		long now = System.currentTimeMillis();
 		if (f != null) {
 			s.w = Weather.parse(f);
+			if (uvText != null && s.w.uv < 0) {
+				s.w.uv = Weather.parseUv(uvText);
+				writeCache("uv.json", uvText);
+			}
 			s.fetched = now;
 			s.offline = false;
 			writeCache("forecast.json", f);
@@ -834,7 +876,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		}
 		if (x != null) {
-			s.warns = Warnings.parse(x, c.county, now);
+			s.warns = Warnings.parse(x, c.warnNames(), now);
 			writeCache("warn.xml", x);
 		}
 		view.invalidate();
@@ -903,8 +945,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("theme"); rows.add(row(en ? "Theme" : "Temă", "moon"));
 		ids.add("keepOn"); rows.add(row(keepOn ? (en ? "Screen on OFF" : "Ecran aprins OFF") : (en ? "Screen on ON" : "Ecran aprins ON"), "keepOn"));
 		ids.add("lang"); rows.add(row(en ? "Romanian language" : "Limba engleză", en ? "lang-ro" : "lang-en"));
-		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (en ? "Night clock OFF" : "Ceas de noapte OFF")
-				: (en ? "Night clock ON" : "Ceas de noapte ON"), "night"));
+		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (en ? "Night clock OFF" : "Ceas noapte OFF")
+				: (en ? "Night clock ON" : "Ceas noapte ON"), "night"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
@@ -987,8 +1029,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
 				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
-		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were (in a city, with the sector, e.g. Bucharest, Sector 3), and the town shown changes only once you are out of its boundary. Gray: automatic location is off."
-				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact (în oraș, cu sectorul, de ex. București, Sector 3), iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Gri: localizarea automată e oprită.");
+		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were (in a city, with the sector, e.g. Bucharest, Sector 3), and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. Gray: automatic location is off."
+				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact (în oraș, cu sectorul, de ex. București, Sector 3), iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. Gri: localizarea automată e oprită.");
 		help.entry(mini("bright"), en ? "Brightness" : "Luminozitate", en ? "Shows the brightness bar on the left: slide on it up or down. It goes away by itself."
 				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
 		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
@@ -1016,7 +1058,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini(en ? "lang-ro" : "lang-en"), en ? "Language" : "Limba", en ? "Romanian or English." : "Română sau engleză.");
 		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
 				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
-		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas de noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
+		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
 				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
@@ -1099,10 +1141,47 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		rows.add(new Bubble.Row(en ? "Choose the county" : "Alegeți județul", null, Bubble.Row.HEADER, false));
 		first = rows.size();
 		for (String co : counties) rows.add(Bubble.Row.item(co));
+		// Other countries, by name: the starting towns and the ones found by the location.
+		final List<String> ccs = new ArrayList<String>(cities.abroad.keySet());
+		java.util.Collections.sort(ccs, new java.util.Comparator<String>() {
+			public int compare(String a, String c) {
+				return Warnings.fold(countries.name(a, en)).compareTo(Warnings.fold(countries.name(c, en)));
+			}
+		});
+		rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+		rows.add(new Bubble.Row(en ? "Other countries" : "Alte țări", null, Bubble.Row.HEADER, false));
+		final int firstC = rows.size();
+		for (String cc : ccs) rows.add(Bubble.Row.item(countries.name(cc, en)));
 		bubble.show(view.px(b), bubbleWidth(0.9f, 300), null, rows, en, new Bubble.Pick() {
 			public void picked(int k) {
-				if (k >= first) pickTown(b, counties[k - first]);
+				if (k >= firstC) pickAbroad(b, ccs.get(k - firstC));
+				else if (k >= first && k < first + counties.length) pickTown(b, counties[k - first]);
 				else if (k >= 1 && k <= favs.size()) choose(favs.get(k - 1));
+			}
+		});
+	}
+
+	/** The towns of another country (CC): the starting ones and the ones found by the location. */
+	private void pickAbroad(final float[] b, final String cc) {
+		reopen = new Runnable() {
+			public void run() {
+				pickAbroad(b, cc);
+			}
+		};
+		final List<Cities.City> l = new ArrayList<Cities.City>(cities.abroad.get(cc));
+		java.util.Collections.sort(l, new java.util.Comparator<Cities.City>() {
+			public int compare(Cities.City a, Cities.City c) {
+				return Warnings.fold(a.name).compareTo(Warnings.fold(c.name));
+			}
+		});
+		final boolean en = s.T.en;
+		List<Bubble.Row> rows = Bubble.rows();
+		rows.add(Bubble.Row.item(en ? "‹  Back" : "‹  Înapoi"));
+		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
+		bubble.show(view.px(b), bubbleWidth(0.9f, 300), countries.name(cc, en), rows, en, new Bubble.Pick() {
+			public void picked(int k) {
+				if (k == 0) onCity(b);
+				else choose(l.get(k - 1));
 			}
 		});
 	}
@@ -1139,12 +1218,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		int n = 1;
 		for (String k : prefs.getString("favs", "").split("\n")) {
 			Cities.City f = Cities.City.fromKey(k);
-			if (n >= 3 || f == null || (f.name.equals(c.name) && f.county.equals(c.county))) continue;
+			if (n >= 3 || f == null || f.same(c)) continue;
 			favs.append('\n').append(k);
 			n++;
 		}
 		prefs.edit().putString("city", c.key()).putString("favs", favs.toString()).apply();
-		boolean same = s.city != null && s.city.name.equals(c.name) && s.city.county.equals(c.county);
+		boolean same = c.same(s.city);
 		s.city = c;
 		if (clear || !same) {
 			s.w = null;

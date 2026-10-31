@@ -198,10 +198,27 @@ final class Bubble extends FrameLayout {
 			list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		}
 		// Size: the rows' height, at most half the screen (the hints count too when they show).
-		int sw = getWidth() > 0 ? getWidth() : getResources().getDisplayMetrics().widthPixels;
-		int sh = getHeight() > 0 ? getHeight() : getResources().getDisplayMetrics().heightPixels;
+		// The screen as it is now: the parent's size (the bubble itself, hidden, keeps the size it had
+		// before the phone turned).
+		View pv = (View) getParent();
+		int sw = pv != null && pv.getWidth() > 0 ? pv.getWidth() : getResources().getDisplayMetrics().widthPixels;
+		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() : getResources().getDisplayMetrics().heightPixels;
 		int margin = (int) (12 * dp), tip = (int) (10 * dp);
 		width = Math.min(width, sw - 2 * margin);
+		// Every choice on one line: a text too long gets a smaller font.
+		for (int k = 0; k < list.getChildCount(); k++) {
+			View v = list.getChildAt(k);
+			if (!(v instanceof TextView)) continue;
+			TextView t = (TextView) v;
+			t.setSingleLine(true);
+			android.graphics.drawable.Drawable ic = t.getCompoundDrawables()[0];
+			float room = width - t.getPaddingLeft() - t.getPaddingRight() - (ic != null ? ic.getBounds().width() + t.getCompoundDrawablePadding() : 0) - 2 * dp;
+			float sp = t.getTextSize() / getResources().getDisplayMetrics().scaledDensity;
+			while (sp > 11 && t.getPaint().measureText(t.getText().toString()) > room) {
+				sp -= 0.5f;
+				t.setTextSize(sp);
+			}
+		}
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		title.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		more.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));

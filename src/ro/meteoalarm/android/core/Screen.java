@@ -99,19 +99,21 @@ public final class Screen {
 
 	/** The colours of a theme, by role. */
 	static final class Palette {
-		final int page, ink, dim, line, band, card, btn, dry, snow, rain, accent, warnY, warnO, warnR, pillInk;
+		final int page, ink, dim, line, band, card, btn, dry, snow, rain, accent, warnY, warnO, warnR, pillInk, bandInk;
 
 		Palette(int... v) {
 			page = v[0]; ink = v[1]; dim = v[2]; line = v[3]; band = v[4]; card = v[5]; btn = v[6]; dry = v[7];
-			snow = v[8]; rain = v[9]; accent = v[10]; warnY = v[11]; warnO = v[12]; warnR = v[13]; pillInk = v[14];
+			snow = v[8]; rain = v[9]; accent = v[10]; warnY = v[11]; warnO = v[12]; warnR = v[13]; pillInk = v[14]; bandInk = v[15];
 		}
 
-		// Kindle: black on white with three grays; orange and red codes are the darker gray.
-		static final Palette LIGHT = new Palette(Gfx.WHITE, Gfx.BLACK, Gfx.GRAY5, Gfx.BLACK, Gfx.GRAYD, Gfx.WHITE, Gfx.WHITE,
-				Gfx.GRAYA, Gfx.GRAY5, Gfx.BLACK, Gfx.BLACK, Gfx.GRAYD, Gfx.GRAYA, Gfx.GRAYA, Gfx.BLACK);
-		// Claude dark: warm charcoal, ivory text, terracotta accent; the codes in muted real colours.
-		static final Palette DARK = new Palette(0xFF262624, 0xFFFAF9F5, 0xFFA6A39A, 0xFF4A4944, 0xFF3A3935, 0xFF30302E,
-				0xFF30302E, 0xFF4F4E4A, 0xFFC2C0B6, 0xFFD97757, 0xFFD97757, 0xFFE3B341, 0xFFD97757, 0xFFD14D4D, 0xFF262624);
+		// Kindle: black on white with grays; box titles white on a black band (the mockups);
+		// orange and red codes are the darker gray.
+		static final Palette LIGHT = new Palette(Gfx.WHITE, Gfx.BLACK, Gfx.GRAY5, Gfx.BLACK, Gfx.BLACK, Gfx.WHITE, Gfx.WHITE,
+				Gfx.GRAYA, Gfx.GRAY5, Gfx.BLACK, Gfx.BLACK, Gfx.GRAYD, Gfx.GRAYA, Gfx.GRAYA, Gfx.BLACK, Gfx.WHITE);
+		// Claude dark: warm charcoal page, boxes black inside with an ivory outline and an ivory title
+		// band with dark titles (Viorel's mockups); terracotta accent; the codes in muted real colours.
+		static final Palette DARK = new Palette(0xFF262624, 0xFFFAF9F5, 0xFFA6A39A, 0xFFFAF9F5, 0xFFFAF9F5, 0xFF000000,
+				0xFF30302E, 0xFF4F4E4A, 0xFFC2C0B6, 0xFFD97757, 0xFFD97757, 0xFFE3B341, 0xFFD97757, 0xFFD14D4D, 0xFF262624, 0xFF262624);
 	}
 
 	// Middle of the weather icon's drawing inside its 200 x 200 file (icons/centru.txt).
@@ -474,15 +476,15 @@ public final class Screen {
 		return px;
 	}
 
-	/** Box title in a gray header band: capitals at about 3/4 of the band, drawn twice 1 unit apart. */
+	/** Box title in the header band (white on black; dark on ivory in the dark theme): capitals at about 3/4 of the band, drawn twice 1 unit apart. */
 	private void head(float top, float h, float cx, float maxw, String s, float px) {
 		float p = fit(true, px > 0 ? px : (h - 4) * 76 / 100, maxw - 1, s);
 		float x = cx - g.width(true, p, s) / 2, y = top + h / 2 - p * 485 / 1000;
-		g.text(true, p, y, x, s, c.ink);
-		g.text(true, p, y, x + 1, s, c.ink);
+		g.text(true, p, y, x, s, c.bandInk);
+		g.text(true, p, y, x + 1, s, c.bandInk);
 	}
 
-	/** Frame with rounded corners, a 2-unit outline and a gray header band HD high. */
+	/** Frame with rounded corners, a 2-unit outline and a header band HD high. */
 	private void box(float x, float y, float w, float h, float hd) {
 		float r = 14;
 		g.roundRect(x, y, w, h, r, c.line);

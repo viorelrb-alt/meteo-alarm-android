@@ -59,6 +59,22 @@ public final class Weather {
 				+ "&timezone=" + URLEncoder.encode(tzId, "UTF-8") + "&models=" + MODEL;
 	}
 
+	/** Today's UV index from Open-Meteo's own model mix (the ICON model has no UV). */
+	public static String uvUrl(double lat, double lon, String tzId) throws Exception {
+		return "https://api.open-meteo.com/v1/forecast?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
+				+ "&daily=uv_index_max&forecast_days=1&timezone=" + URLEncoder.encode(tzId, "UTF-8");
+	}
+
+	/** The UV index of a uvUrl answer, -1 without one. */
+	public static int parseUv(String text) {
+		try {
+			double uv = Json.num(Json.arr(Json.obj(Json.parse(text), "daily"), "uv_index_max"), 0);
+			return Double.isNaN(uv) ? -1 : (int) Math.round(uv);
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+
 	public static String pollenUrl(double lat, double lon) {
 		return "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
 				+ "&current=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen";

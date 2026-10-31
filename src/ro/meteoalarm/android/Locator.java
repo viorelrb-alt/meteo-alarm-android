@@ -29,7 +29,11 @@ import ro.meteoalarm.android.core.Weather;
 final class Locator {
 	interface Result {
 		/** DISTRICT: the sector or neighbourhood of a city (null for a town or village). */
-		void found(double lat, double lon, String town, String county, String district);
+		/**
+		 * COUNTRY: lower-case code ("ro", "bg"); MATCH: abroad, the local names of the region and
+		 * town for the warnings, separated by "/".
+		 */
+		void found(double lat, double lon, String town, String county, String district, String country, String match);
 
 		/** WHY: "off" (location switched off), "nofix" or "noplace". */
 		void failed(String why);
@@ -115,7 +119,7 @@ final class Locator {
 		new Thread(new Runnable() {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
-				String town = null, county = null, district = null;
+				String town = null, county = null, district = null, country = null, match = "";
 				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
 					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&addressdetails=1&accept-language="
@@ -127,6 +131,7 @@ final class Locator {
 						county = first((String) ad.get("county"), (String) ad.get("state"));
 						if (city != null) district = first((String) ad.get("city_district"), (String) ad.get("suburb"), (String) ad.get("borough"));
 						if (district != null && town != null && district.equalsIgnoreCase(town)) district = null;
+						country = (String) ad.get("country_code");
 					}
 				} catch (Exception e) {
 					town = null;
@@ -141,18 +146,37 @@ final class Locator {
 								town = first(a.getLocality(), a.getSubAdminArea(), a.getFeatureName());
 								county = a.getAdminArea();
 								if (a.getLocality() != null) district = first(a.getSubLocality());
+								country = a.getCountryCode();
 							}
 						}
 					} catch (Exception e) {
 						town = null;
 					}
 				}
-				final String t = town, c = county, d = district;
+				if (country == null) country = "ro";
+				country = country.toLowerCase();
+				// Abroad, the warnings name the areas in the local language: ask again without a language.
+				if (town != null && !country.equals("ro")) {
+					try {
+						Thread.sleep(1100); // OpenStreetMap asks for at most one request a second
+						String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=10&addressdetails=1&lat=" + lat + "&lon=" + lon;
+						Map<String, Object> ad = Json.obj(Json.parse(Weather.get(u)), "address");
+						StringBuilder b = new StringBuilder();
+						if (ad != null) for (String k : new String[] { "state", "state_district", "county", "city", "town", "municipality", "village" }) {
+							Object v = ad.get(k);
+							if (v instanceof String && ((String) v).trim().length() > 0) b.append(b.length() > 0 ? "/" : "").append(((String) v).trim());
+						}
+						match = b.toString();
+					} catch (Exception e) {
+						match = "";
+					}
+				}
+				final String t = town, c = county, d = district, cc = country, mt = match;
 				handler.post(new Runnable() {
 					public void run() {
 						busy = false;
 						if (t == null) r.failed("noplace");
-						else r.found(lat, lon, t, c == null ? "" : c, d);
+						else r.found(lat, lon, t, c == null ? "" : c, d, cc, mt);
 					}
 				});
 			}

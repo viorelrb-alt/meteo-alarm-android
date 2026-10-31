@@ -1,0 +1,40 @@
+# Țările MeteoAlarm. Format: cod|nume în română|nume în engleză|fluxuri MeteoAlarm (încercate în ordine)
+# Fluxul: https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-<nume>; cel care merge rămâne ținut minte în telefon.
+at|Austria|Austria|austria
+be|Belgia|Belgium|belgium
+ba|Bosnia și Herțegovina|Bosnia and Herzegovina|bosnia-herzegovina,bosnia-and-herzegovina
+bg|Bulgaria|Bulgaria|bulgaria
+hr|Croația|Croatia|croatia
+cy|Cipru|Cyprus|cyprus
+cz|Cehia|Czechia|czechia,czech-republic
+dk|Danemarca|Denmark|denmark
+ee|Estonia|Estonia|estonia
+fi|Finlanda|Finland|finland
+fr|Franța|France|france
+de|Germania|Germany|germany
+gr|Grecia|Greece|greece
+hu|Ungaria|Hungary|hungary
+is|Islanda|Iceland|iceland
+ie|Irlanda|Ireland|ireland
+il|Israel|Israel|israel
+it|Italia|Italy|italy
+lv|Letonia|Latvia|latvia
+lt|Lituania|Lithuania|lithuania
+lu|Luxemburg|Luxembourg|luxembourg
+mt|Malta|Malta|malta
+md|Republica Moldova|Moldova|moldova,republic-of-moldova
+me|Muntenegru|Montenegro|montenegro
+nl|Țările de Jos|Netherlands|netherlands
+mk|Macedonia de Nord|North Macedonia|republic-of-north-macedonia,north-macedonia
+no|Norvegia|Norway|norway
+pl|Polonia|Poland|poland
+pt|Portugalia|Portugal|portugal
+ro|România|Romania|romania
+rs|Serbia|Serbia|serbia
+sk|Slovacia|Slovakia|slovakia
+si|Slovenia|Slovenia|slovenia
+es|Spania|Spain|spain
+se|Suedia|Sweden|sweden
+ch|Elveția|Switzerland|switzerland
+ua|Ucraina|Ukraine|ukraine
+gb|Regatul Unit|United Kingdom|united-kingdom,uk

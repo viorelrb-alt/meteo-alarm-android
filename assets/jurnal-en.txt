@@ -1,3 +1,10 @@
+v1.00 · 31 October 2026
+- Other countries: the app knows which country you are in and keeps the towns found there. In the town list, under the counties, "Other countries" has starting towns in the about 38 MeteoAlarm countries.
+- Coded warnings come from MeteoAlarm in other countries too; each country's source is kept on the phone.
+- Box titles look as in the mockups: white text on a black band; in the dark theme, dark text on an ivory band, with black boxes and an ivory outline.
+- The UV index shows again (the ICON model has no UV, so it is fetched separately from Open-Meteo).
+- The ☰ menu stays on the screen after turning the phone, and every option fits on one line (smaller text when needed); "Night clock ON/OFF".
+
 v0.50 · 31 October 2026
 - The ☰ menu and the other bubbles keep their portrait shape in landscape; turning the phone with the menu open redraws the bubble correctly.
 - The wind arrow shows right after an update: weather saved by an older version, without the wind direction, is fetched again.
