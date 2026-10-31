@@ -26,6 +26,8 @@ public final class Weather {
 	public boolean isDay = true;
 	public double tmax = Double.NaN, tmin = Double.NaN;
 	public String sunrise = "", sunset = "";
+	/** Tomorrow's sunrise (for the widget after sunset). */
+	public String sunrise2 = "";
 	public int uv = -1;
 	/** From the second request (Open-Meteo's own model mix): relative humidity %, sea-level pressure
 	 * hPa and its change over the last 3 hours, visibility in metres; the European air quality index. */
@@ -187,6 +189,7 @@ public final class Weather {
 		w.tmin = Json.num(dMin, 0);
 		w.sunrise = hhmm(Json.str(Json.arr(daily, "sunrise"), 0));
 		w.sunset = hhmm(Json.str(Json.arr(daily, "sunset"), 0));
+		w.sunrise2 = hhmm(Json.str(Json.arr(daily, "sunrise"), 1));
 		double uv = Json.num(Json.arr(daily, "uv_index_max"), 0);
 		w.uv = Double.isNaN(uv) ? -1 : (int) Math.round(uv);
 		for (int k = 1; k < dTime.size(); k++) {

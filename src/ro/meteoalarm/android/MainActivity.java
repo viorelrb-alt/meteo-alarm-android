@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.43";
+	static final String VERSION = "Meteo Alarm Android v1.50";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -785,6 +785,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		// Settings changed in the app (town, °C/°F, language) show on the home-screen widget too.
+		Widget.show(this);
 		resumed = false;
 		listenLight(false);
 		listenCompass(false);
@@ -944,7 +946,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.fetched = now;
 			s.offline = false;
 			writeCache("forecast.json", f);
-			prefs.edit().putLong("fetched", now).putString("cacheCity", c.key()).apply();
+			prefs.edit().putLong("fetched", now).putString("cacheCity", c.key()).commit();
+			Widget.show(this);
 		} else if (s.w == null) {
 			s.error = s.T.en ? "No internet connection" : "Fără conexiune la internet";
 		}
@@ -1147,6 +1150,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("swipe"), en ? "The row of boxes at the bottom" : "Rândul de casete de jos", en
 				? "Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass."
 				: "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
+		help.section(en ? "Home-screen widget" : "Widget pe ecranul de pornire");
+		help.entry(mini("refresh"), en ? "Meteo Alarm widget" : "Widgetul Meteo Alarm", en
+				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm. It shows the weather icon, the temperature, the next sunset or sunrise and the town, on the wallpaper. It follows the town, °C/°F and language of the app and refreshes by itself every 30 minutes; a tap opens the app."
+				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm. Arată iconul vremii, temperatura, următorul apus sau răsărit și localitatea, direct pe imaginea de fundal. Urmează localitatea, °C/°F și limba din aplicație și se reîmprospătează singur la 30 de minute; o atingere deschide aplicația.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
 		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather and the warnings now." : "Descarcă acum vremea și avertizările.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");
