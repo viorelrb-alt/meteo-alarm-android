@@ -57,7 +57,10 @@ final class Locator {
 	}
 
 	void locate(final Result r) {
-		if (busy) return;
+		if (busy) {
+			r.failed("busy");
+			return;
+		}
 		final LocationManager lm = (LocationManager) ctx.getSystemService(Context.LOCATION_SERVICE);
 		List<String> providers = lm.getProviders(true);
 		providers.remove(LocationManager.PASSIVE_PROVIDER);

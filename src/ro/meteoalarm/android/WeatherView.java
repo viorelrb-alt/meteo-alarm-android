@@ -29,6 +29,9 @@ final class WeatherView extends View {
 
 		void onLocate();
 
+		/** A tap on the town's name. */
+		void onTownName();
+
 		/** Brightness 0.01–1 now (the app's own or the phone's). */
 		float brightness();
 
@@ -322,7 +325,7 @@ final class WeatherView extends View {
 		}
 		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
 		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
-		else if (in(screen.cityArea, x, y)) taps.onLocate();
+		else if (in(screen.cityArea, x, y)) taps.onTownName();
 		return true;
 	}
 }

@@ -1,3 +1,9 @@
+v1.42 · 31 October 2026
+- Menus: all choices in the same font (that of "Check for updates"), and the menu widens so every text fits.
+- A tap on the town's name looks once with the GPS, without turning automatic location on or off. The notice shows under the line under the town.
+- Fixed: the location no longer gets stuck when tapped again while it is looking.
+- Help updated with the new functions.
+
 v1.41 · 31 October 2026
 - Portrait: both lines are the same distance from the boxes above and under them.
 - A tap on the town's name starts the GPS location (it no longer opens the list).

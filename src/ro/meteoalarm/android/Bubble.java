@@ -204,21 +204,25 @@ final class Bubble extends FrameLayout {
 		int sw = pv != null && pv.getWidth() > 0 ? pv.getWidth() : getResources().getDisplayMetrics().widthPixels;
 		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() : getResources().getDisplayMetrics().heightPixels;
 		int margin = (int) (12 * dp), tip = (int) (10 * dp);
-		width = Math.min(width, sw - 2 * margin);
-		// Every choice on one line: a text too long gets a smaller font.
-		for (int k = 0; k < list.getChildCount(); k++) {
-			View v = list.getChildAt(k);
-			if (!(v instanceof TextView)) continue;
-			TextView t = (TextView) v;
-			t.setSingleLine(true);
-			android.graphics.drawable.Drawable ic = t.getCompoundDrawables()[0];
-			float room = width - t.getPaddingLeft() - t.getPaddingRight() - (ic != null ? ic.getBounds().width() + t.getCompoundDrawablePadding() : 0) - 2 * dp;
-			float sp = t.getTextSize() / getResources().getDisplayMetrics().scaledDensity;
-			while (sp > 11 && t.getPaint().measureText(t.getText().toString()) > room) {
-				sp -= 0.5f;
-				t.setTextSize(sp);
+		// Every row on one line, all choices in the same font: the bubble grows to hold the longest
+		// one; only when even the screen is too narrow do all of them get the same smaller font.
+		float need = 0, sp = 15;
+		for (int pass = 0; pass < 40; pass++) {
+			need = 0;
+			for (int k = 0; k < list.getChildCount(); k++) {
+				View v = list.getChildAt(k);
+				if (!(v instanceof TextView)) continue;
+				TextView t = (TextView) v;
+				t.setSingleLine(true);
+				if (t.isClickable()) t.setTextSize(sp);
+				android.graphics.drawable.Drawable ic = t.getCompoundDrawables()[0];
+				need = Math.max(need, t.getPaint().measureText(t.getText().toString()) + t.getPaddingLeft() + t.getPaddingRight()
+						+ (ic != null ? ic.getBounds().width() + t.getCompoundDrawablePadding() : 0) + 4 * dp);
 			}
+			if (need <= sw - 2 * margin || sp <= 11) break;
+			sp -= 0.5f;
 		}
+		width = Math.min(Math.max(width, (int) Math.ceil(need)), sw - 2 * margin);
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		title.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		more.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));

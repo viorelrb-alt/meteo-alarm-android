@@ -1421,13 +1421,19 @@ public final class Screen {
 
 	/** A short notice over the status row after a button (MainActivity clears it after 1.5 s). */
 	public String note = "";
+	/** The notice under the line under the town (after a tap on the town's name). */
+	public boolean noteTop;
 
 	private void drawNote(float fb) {
 		if (note.length() == 0) return;
 		float p = fit(true, 30, cw - 160, note), w = g.width(true, p, note) + 56, h = 66, x = (cw - w) / 2, y = fb - h - 18;
+		if (noteTop) {
+			x = 40;
+			y = 116;
+		}
 		g.roundRect(x, y, w, h, 33, c.ink);
 		g.roundRect(x + 2, y + 2, w - 4, h - 4, 31, c.page);
-		ctext(true, p, y + (h - p * 1.12f) / 2, cw / 2, note, c.ink);
+		ctext(true, p, y + (h - p * 1.12f) / 2, x + w / 2, note, c.ink);
 	}
 
 	/** "updated 12:34" under the line, at the right. */
