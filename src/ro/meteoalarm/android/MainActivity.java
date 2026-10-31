@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.37";
+	static final String VERSION = "Meteo Alarm Android v0.40";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -70,6 +70,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (System.currentTimeMillis() - Math.max(s.fetched, lastTry) >= iv) fetch();
 			// The exact position at start and then every hour, while automatic location is on.
 			if (autoLoc() && Locator.allowed(MainActivity.this) && System.currentTimeMillis() - lastLocate >= LOCATE_MS) locate(false);
+			checkNight();
 			view.invalidate();
 			// Next tick at the start of the next minute, for the clock.
 			handler.postDelayed(this, 60000 - System.currentTimeMillis() % 60000 + 50);
@@ -81,6 +82,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			int lvl = i.getIntExtra(BatteryManager.EXTRA_LEVEL, -1), sc = i.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
 			s.batt = lvl < 0 ? -1 : lvl * 100 / Math.max(1, sc);
 			s.charging = i.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
+			checkNight();
 			view.invalidate();
 		}
 	};
@@ -147,8 +149,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
 						+ "coordinates go to the phone's geocoder or to OpenStreetMap. Towns found are kept only on the phone. "
 						+ "Without location access, you choose the town from the list.\n\n"
-						+ "Sensors: the app reads the battery state and, with ☰ › Theme › Light sensor, the room's light (dark "
-						+ "theme in the dark); a future version will use the compass (wind direction). Nothing leaves the phone.\n\n"
+						+ "Sensors: the app reads the battery state (night clock while charging), the phone's light sensor "
+						+ "with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. "
+						+ "Nothing leaves the phone.\n\n"
 						+ "Updates: once a week the app checks GitHub for a new version and asks before downloading it; "
 						+ "you can also check from ☰ › Check for updates.\n\n"
 						+ Updater.protectNote(true)
@@ -158,9 +161,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
 						+ "localității, coordonatele merg la geocoderul telefonului sau la OpenStreetMap. Localitățile găsite "
 						+ "rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
-						+ "Senzori: aplicația citește starea bateriei și, cu ☰ › Temă › După lumina din cameră, senzorul de lumină "
-						+ "(tema întunecată pe întuneric); o versiune viitoare va folosi busola (direcția vântului). Nimic nu pleacă "
-						+ "de pe telefon.\n\n"
+						+ "Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al "
+						+ "telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după "
+						+ "telefon. Nimic nu pleacă de pe telefon.\n\n"
 						+ "Actualizări: o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte "
 						+ "s-o descarce; poți verifica oricând din ☰ › Verifică actualizări.\n\n"
 						+ Updater.protectNote(false);
@@ -202,7 +205,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		else getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		else if (!s.nightClock) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		if (sheet != null) sheet.setDark(s.dark);
 		if (bubble != null) bubble.setDark(s.dark);
 		if (updater != null) updater.en = s.T.en;
@@ -212,6 +215,114 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	public void onConfigurationChanged(Configuration cfg) {
 		super.onConfigurationChanged(cfg);
 		applySettings();
+		view.invalidate();
+	}
+
+	// --- Compass ---------------------------------------------------------------------------
+
+	private boolean compassOn;
+	private float headSmooth = Float.NaN;
+	private final float[] rot = new float[9];
+
+	/**
+	 * The phone's heading for the wind arrow: the way the top of the screen points when the phone
+	 * lies flat, or the way its back faces when it stands (as a clock on a stand).
+	 */
+	private final SensorEventListener compass = new SensorEventListener() {
+		public void onSensorChanged(SensorEvent e) {
+			SensorManager.getRotationMatrixFromVector(rot, e.values);
+			// Device vectors in the world (x east, y north, z up): R * v.
+			int r = getWindowManager().getDefaultDisplay().getRotation();
+			float ux = r == 1 ? 1 : r == 3 ? -1 : 0, uy = r == 0 ? 1 : r == 2 ? -1 : 0;
+			float vx, vy;
+			if (Math.abs(rot[8]) > 0.7f) {
+				vx = rot[0] * ux + rot[1] * uy;
+				vy = rot[3] * ux + rot[4] * uy;
+			} else {
+				vx = -rot[2];
+				vy = -rot[5];
+			}
+			float hd = (float) Math.toDegrees(Math.atan2(vx, vy));
+			if (Float.isNaN(headSmooth)) headSmooth = hd;
+			else {
+				float d = ((hd - headSmooth + 540) % 360) - 180;
+				headSmooth = (headSmooth + d * 0.2f + 360) % 360;
+			}
+			float old = s.heading;
+			if (Float.isNaN(old) || Math.abs(((headSmooth - old + 540) % 360) - 180) > 2) {
+				s.heading = headSmooth;
+				if (!s.nightClock) view.invalidate();
+			}
+		}
+
+		public void onAccuracyChanged(Sensor sn, int acc) {
+		}
+	};
+
+	private void listenCompass(boolean on) {
+		if (sensors == null) sensors = (SensorManager) getSystemService(SENSOR_SERVICE);
+		Sensor sn = sensors == null ? null : sensors.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
+		if (sn == null || on == compassOn) return;
+		compassOn = on;
+		if (on) sensors.registerListener(compass, sn, SensorManager.SENSOR_DELAY_UI);
+		else sensors.unregisterListener(compass);
+	}
+
+	// --- Night clock -------------------------------------------------------------------------
+
+	private long lastTouch, nightPausedUntil;
+
+	/** A touch on the screen: leaves the night clock for a minute, and restarts the idle minute. */
+	public void onTouched() {
+		lastTouch = System.currentTimeMillis();
+		if (s.nightClock) {
+			nightPausedUntil = lastTouch + 60000;
+			setNight(false);
+		}
+	}
+
+	/** Night: between sunset and sunrise (from the forecast; 21:00–07:00 without it). */
+	private boolean isNight() {
+		Calendar c = Calendar.getInstance();
+		int now = c.get(Calendar.HOUR_OF_DAY) * 60 + c.get(Calendar.MINUTE);
+		int rise = 7 * 60, set = 21 * 60;
+		try {
+			if (s.w != null && s.w.sunrise.length() >= 5 && s.w.sunset.length() >= 5) {
+				rise = Integer.parseInt(s.w.sunrise.substring(0, 2)) * 60 + Integer.parseInt(s.w.sunrise.substring(3, 5));
+				set = Integer.parseInt(s.w.sunset.substring(0, 2)) * 60 + Integer.parseInt(s.w.sunset.substring(3, 5));
+			}
+		} catch (Exception e) {
+			// keep the defaults
+		}
+		return now >= set || now < rise;
+	}
+
+	/** The night clock comes when charging at night after a minute without touches. */
+	private void checkNight() {
+		long t = System.currentTimeMillis();
+		boolean want = prefs.getBoolean("nightClock", true) && s.charging && isNight() && t >= nightPausedUntil
+				&& t - lastTouch >= 60000 && !bubble.isOpen() && !sheet.isOpen() && !help.isOpen();
+		if (want != s.nightClock) setNight(want);
+		// While charging, look again in a minute even between clock ticks.
+		handler.removeCallbacks(nightCheck);
+		if (s.charging && !s.nightClock) handler.postDelayed(nightCheck, 61000 - Math.min(60000, t - lastTouch));
+	}
+
+	private final Runnable nightCheck = new Runnable() {
+		public void run() {
+			checkNight();
+		}
+	};
+
+	/** Night clock on: the screen dim and kept on; off: the brightness and the screen setting as before. */
+	private void setNight(boolean on) {
+		s.nightClock = on;
+		WindowManager.LayoutParams lp = getWindow().getAttributes();
+		if (on) {
+			lp.screenBrightness = Math.min(0.03f, prefs.getFloat("bright", 1));
+			getWindow().setAttributes(lp);
+			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		} else applySettings();
 		view.invalidate();
 	}
 
@@ -301,6 +412,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The app's own brightness (0.004–1) set with the slider, or the phone's (-1). */
 	private void applyBrightness() {
+		// The night clock keeps its dim screen until it ends.
+		if (s.nightClock) return;
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		lp.screenBrightness = prefs.getFloat("bright", -1);
 		getWindow().setAttributes(lp);
@@ -330,7 +443,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (save) prefs.edit().putFloat("bright", b).apply();
 	}
 
-	/** The button next to the sun: the theme by the room's light, on or off (then as the phone). */
+	/** The button next to the sun: the automatic theme (phone sensor), on or off. */
 	public void toggleSensor() {
 		if (!hasLight()) {
 			toast(s.T.en ? "This phone has no light sensor." : "Telefonul nu are senzor de lumină.");
@@ -341,8 +454,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		prefs.edit().putString("theme", on ? "sensor" : s.dark ? "dark" : "light").apply();
 		applySettings();
 		view.invalidate();
-		note(on ? (s.T.en ? "Theme by the room's light: on" : "Tema după lumina din cameră: pornită")
-				: (s.T.en ? "Theme by the room's light: off" : "Tema după lumina din cameră: oprită"));
+		note(on ? (s.T.en ? "Automatic theme (phone sensor): on" : "Temă automată (senzor telefon): pornită")
+				: (s.T.en ? "Automatic theme (phone sensor): off" : "Temă automată (senzor telefon): oprită"));
 	}
 
 	/** The moon button over the brightness bar: dark or light theme, chosen by hand. */
@@ -358,6 +471,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		super.onResume();
 		resumed = true;
 		listenLight("sensor".equals(prefs.getString("theme", "auto")));
+		listenCompass(true);
+		lastTouch = System.currentTimeMillis();
 		hideBars();
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		handler.removeCallbacks(tick);
@@ -499,6 +614,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		super.onPause();
 		resumed = false;
 		listenLight(false);
+		listenCompass(false);
 		handler.removeCallbacks(tick);
 		try {
 			unregisterReceiver(battery);
@@ -691,7 +807,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("clock"); rows.add(row(en ? "Clock 12/24" : "Ceas 12/24", "clock"));
 		ids.add("theme"); rows.add(row(en ? "Theme" : "Temă", "moon"));
 		ids.add("keepOn"); rows.add(row(keepOn ? (en ? "Screen on OFF" : "Ecran aprins OFF") : (en ? "Screen on ON" : "Ecran aprins ON"), "keepOn"));
-		ids.add("lang"); rows.add(row(en ? "Limba română" : "Limba engleză", en ? "lang-ro" : "lang-en"));
+		ids.add("lang"); rows.add(row(en ? "Romanian language" : "Limba engleză", en ? "lang-ro" : "lang-en"));
+		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (en ? "Night clock OFF" : "Ceas de noapte OFF")
+				: (en ? "Night clock ON" : "Ceas de noapte ON"), "night"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
@@ -724,6 +842,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					return;
 				} else if (it.equals("update")) { updater.check(true); return; }
 				else if (it.equals("help")) { help(); return; }
+				else if (it.equals("night")) {
+					boolean on = !prefs.getBoolean("nightClock", true);
+					e.putBoolean("nightClock", on);
+					ms = 2000;
+					msg = on ? (en ? "While charging at night, the screen shows a big dim clock" : "La încărcare, noaptea, ecranul arată un ceas mare și estompat")
+							: (en ? "Night clock off" : "Ceasul de noapte e oprit");
+				}
 				else { about(); return; }
 				e.apply();
 				applySettings();
@@ -737,7 +862,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return new Bubble.Row(text, mini(icon), Bubble.Row.ITEM, false);
 	}
 
-	/** Light, Dark, and Automatic (by the room's light, when the phone has the sensor). */
+	/** Light, Dark, and Automatic (the phone's light sensor, when it has one). */
 	private void pickTheme() {
 		final boolean en = s.T.en;
 		final String[] keys = hasLight() ? new String[] { "light", "dark", "sensor" } : new String[] { "light", "dark" };
@@ -768,12 +893,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
 		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
 				: "Deasupra barei de luminozitate: comută între tema luminoasă și cea întunecată.");
-		help.entry(mini("sensor"), en ? "Theme by the room's light" : "Temă după lumina din cameră", en ? "Light theme when the room is lit, dark theme in the dark (light sensor). Filled while it is on."
-				: "Tema luminoasă când e lumină în cameră, cea întunecată pe întuneric (senzorul de lumină). E plin cât timp e pornită.");
+		help.entry(mini("sensor"), en ? "Automatic theme (phone sensor)" : "Temă automată (senzor telefon)", en ? "Light theme when there is light, dark theme in the dark. Filled while it is on."
+				: "Tema luminoasă când e lumină, cea întunecată pe întuneric. E plin cât timp e pornită.");
 		help.section(en ? "Gestures" : "Gesturi");
 		help.entry(mini("pull"), en ? "Pull down" : "Trage în jos", en ? "Pull the screen down and let go: the weather is refreshed." : "Trage ecranul în jos și dă drumul: vremea se reîmprospătează.");
-		help.entry(mini("edge"), en ? "Left edge" : "Marginea din stânga", en ? "Slide up or down along the left edge (a little in from it): brightness, as on the Kindle."
-				: "Glisează sus-jos de-a lungul marginii din stânga (puțin mai înăuntru): luminozitatea, ca pe Kindle.");
+		help.entry(mini("edge"), en ? "Left edge" : "Marginea din stânga", en ? "Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness."
+				: "Glisează sus-jos lângă marginea din stânga (puțin mai înăuntru): apare bara de lumină, iar glisând pe ea reglezi luminozitatea.");
+		help.entry(mini("compass"), en ? "Wind arrow" : "Săgeata vântului", en ? "Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north."
+				: "Lângă vânt: săgeata arată încotro bate vântul, rotită după cum ții telefonul (busola); semnul portocaliu e nordul.");
+		help.entry(mini("night"), en ? "Night clock" : "Ceasul de noapte", en ? "While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute."
+				: "Când telefonul se încarcă noaptea (de la apus la răsărit) și nu-l atingi un minut: un ceas mare și estompat. O atingere revine pentru un minut.");
 		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "On the warnings, the rain chart and the hour boxes: the next or the previous ones. The dots show where you are."
 				: "Pe avertizări, pe graficul de ploaie și pe casetele cu ore: următoarele sau cele dinainte. Punctele arată unde ești.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
@@ -781,12 +910,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");
 		help.entry(mini("unit"), en ? "Temperature °C/°F" : "Temperatura °C/°F", en ? "Switches between Celsius and Fahrenheit." : "Comută între grade Celsius și Fahrenheit.");
 		help.entry(mini("clock"), en ? "Clock 12/24" : "Ceas 12/24", en ? "Switches the clock between 24 hours and 12 hours (AM/PM)." : "Comută ceasul între 24 de ore și 12 ore (AM/PM).");
-		help.entry(mini("moon"), en ? "Theme" : "Temă", en ? "Light, Dark, or Automatic (by the room's light)." : "Luminos, Întunecat sau Automat (după lumina din cameră).");
+		help.entry(mini("moon"), en ? "Theme" : "Temă", en ? "Light, Dark, or Automatic (phone sensor)." : "Luminos, Întunecat sau Automat (senzor telefon).");
 		help.entry(mini("keepOn"), en ? "Screen on ON / OFF" : "Ecran aprins ON / OFF", en ? "ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout."
 				: "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon.");
 		help.entry(mini(en ? "lang-ro" : "lang-en"), en ? "Language" : "Limba", en ? "Romanian or English." : "Română sau engleză.");
 		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
 				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
+		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas de noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
 				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");

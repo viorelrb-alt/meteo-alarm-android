@@ -22,6 +22,9 @@ final class WeatherView extends View {
 		/** The sun button showed the brightness bar. */
 		void onBright();
 
+		/** Any touch (it also leaves the night clock). */
+		void onTouched();
+
 		void onLocate();
 
 		/** Brightness 0.01–1 now (the app's own or the phone's). */
@@ -33,7 +36,7 @@ final class WeatherView extends View {
 		/** Switches between the dark and the light theme. */
 		void toggleTheme();
 
-		/** The theme by the room's light, on or off. */
+		/** The automatic theme (phone sensor), on or off. */
 		void toggleSensor();
 	}
 
@@ -159,6 +162,12 @@ final class WeatherView extends View {
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
 		int act = e.getActionMasked();
+		// The night clock: a touch only brings the weather back.
+		if (screen.nightClock) {
+			if (act == MotionEvent.ACTION_DOWN) taps.onTouched();
+			return true;
+		}
+		if (act == MotionEvent.ACTION_DOWN) taps.onTouched();
 		if (act == MotionEvent.ACTION_DOWN) {
 			downX = e.getX();
 			downY = e.getY();

@@ -69,7 +69,7 @@ public final class Screen {
 	 * edge), with the dark / light theme button over it, and its level (0–1, the system's curve).
 	 */
 	public boolean brightBar;
-	/** The theme follows the room's light (the button next to the sun is filled). */
+	/** The theme follows the phone's light sensor (the button next to the sun is filled). */
 	public boolean sensorTheme;
 	public float brightLevel = 0.5f;
 	/**
@@ -124,6 +124,10 @@ public final class Screen {
 		g = gfx;
 		c = dark ? Palette.DARK : Palette.LIGHT;
 		this.cw = cw;
+		if (nightClock) {
+			drawNightClock(ch);
+			return;
+		}
 		g.rect(0, 0, cw, ch, c.page);
 		button(btnMenu);
 		for (int k = 0; k < 3; k++) g.rect(57, 41 + k * 13, 30, 4, c.ink);
@@ -165,10 +169,7 @@ public final class Screen {
 
 		// Description and wind on the right, "feels like" and high / low on the left.
 		rtext(true, fit(true, 39, 330, d[1]), fy, 712, d[1], c.ink);
-		if (!Double.isNaN(w.wind)) {
-			String wind = unitF ? T.wind + " " + Math.round(w.wind * 0.621371) + " mph" : T.wind + " " + Math.round(w.wind) + " km/h";
-			rtext(false, 30, fy + 40, 712, upper(wind), c.ink);
-		}
+		windLine(30, fy + 40, 712);
 		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
@@ -210,10 +211,7 @@ public final class Screen {
 		String[] d = T.describe(w.code, w.isDay);
 		drawNowSide(d[0], 40, nowTop - 60, leftR, fy + 4);
 		rtext(true, fit(true, 39, (leftR - 40) / 2, d[1]), fy, leftR - 6, d[1], c.ink);
-		if (!Double.isNaN(w.wind)) {
-			String wind = unitF ? T.wind + " " + Math.round(w.wind * 0.621371) + " mph" : T.wind + " " + Math.round(w.wind) + " km/h";
-			rtext(false, 30, fy + 40, leftR - 6, upper(wind), c.ink);
-		}
+		windLine(30, fy + 40, leftR - 6);
 		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
@@ -289,10 +287,7 @@ public final class Screen {
 		tempSize(420, mid - nl - 30);
 		drawTempAt(mid - 12 - tW, cy + tp * 32 / 100);
 		rtext(true, fit(true, 44, (nr - nl) / 2, d[1]), lineY, nr - 6, d[1], c.ink);
-		if (!Double.isNaN(w.wind)) {
-			String wind = unitF ? T.wind + " " + Math.round(w.wind * 0.621371) + " mph" : T.wind + " " + Math.round(w.wind) + " km/h";
-			rtext(false, 32, lineY + 46, nr - 6, upper(wind), c.ink);
-		}
+		windLine(32, lineY + 46, nr - 6);
 		if (!Double.isNaN(w.feels)) ltext(false, 32, lineY + 7, nl, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 32, lineY + 46, nl, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
@@ -827,6 +822,77 @@ public final class Screen {
 		scale(c3 - 60, top + 162, 4, Math.max(0, pollenLvl), 27);
 	}
 
+	// --- Wind and compass --------------------------------------------------------------------
+
+	/**
+	 * The phone's heading (degrees from north, the way the top of the screen points when the phone
+	 * lies flat, or the way its back faces when it stands), from the compass; NaN without one.
+	 */
+	public float heading = Float.NaN;
+
+	private static final String[] DIR_RO = { "N", "NE", "E", "SE", "S", "SV", "V", "NV" }, DIR_EN = { "N", "NE", "E", "SE", "S", "SW", "W", "NW" };
+
+	/**
+	 * "WIND NE 9 KM/H" right-aligned at RIGHT, and before it a small compass: a ring with the north
+	 * mark and an arrow the way the wind blows, both turned with the phone (north up without a compass).
+	 */
+	private void windLine(float px, float top, float right) {
+		if (Double.isNaN(w.wind)) return;
+		String speed = unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h";
+		boolean dir = !Double.isNaN(w.windDir);
+		String from = dir ? (T.en ? DIR_EN : DIR_RO)[(int) Math.round(((w.windDir % 360) + 360) % 360 / 45) % 8] + " " : "";
+		String txt = upper(T.wind + " " + from + speed);
+		float x = rtext(false, px, top, right, txt, c.ink);
+		if (!dir || Math.round(w.wind) == 0) return;
+		float r = px * 0.62f, cx = x - r - 12, cy = top + px * 0.52f;
+		float turn = Float.isNaN(heading) ? 0 : heading;
+		g.arc(cx, cy, r, 0, 360, 2, c.ink);
+		// North: a small triangle on the ring.
+		double na = Math.toRadians(-turn - 90);
+		float nx = cx + (float) Math.cos(na) * r, ny = cy + (float) Math.sin(na) * r;
+		float tx = (float) Math.cos(na + Math.PI / 2) * r * 0.28f, ty = (float) Math.sin(na + Math.PI / 2) * r * 0.28f;
+		g.poly(new float[] { nx + (float) Math.cos(na) * r * 0.4f, ny + (float) Math.sin(na) * r * 0.4f, nx + tx, ny + ty, nx - tx, ny - ty },
+				Float.isNaN(heading) ? c.dim : c.accent);
+		// The wind blows toward windDir + 180.
+		double a = Math.toRadians(w.windDir + 180 - turn - 90), ca = Math.cos(a), sa = Math.sin(a);
+		float L = r * 0.78f, hw = r * 0.42f;
+		float hx = cx + (float) ca * L, hy = cy + (float) sa * L, bx = cx - (float) ca * L * 0.55f, by = cy - (float) sa * L * 0.55f;
+		float nxp = (float) -sa, nyp = (float) ca;
+		g.poly(new float[] { hx, hy, bx + nxp * hw, by + nyp * hw, cx - (float) ca * L * 0.2f, cy - (float) sa * L * 0.2f, bx - nxp * hw, by - nyp * hw }, c.ink);
+	}
+
+	// --- Night clock ----------------------------------------------------------------------------
+
+	/** Night clock (charging at night): the screen dark, a big dim clock, the weather in one line. */
+	public boolean nightClock;
+
+	private void drawNightClock(float ch) {
+		int bg = 0xFF000000, ink = 0xFF8C8A84, dimInk = 0xFF5E5C58;
+		g.rect(0, 0, cw, ch, bg);
+		int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
+		String hm;
+		if (clk12) hm = (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m);
+		else hm = String.format("%02d:%02d", h, m);
+		boolean land = cw > ch;
+		float px = fit(true, land ? ch * 0.55f : cw * 0.42f, cw - 120, hm);
+		float cy = ch * (land ? 0.42f : 0.40f);
+		ctext(true, px, cy - px * 0.56f, cw / 2, hm, ink);
+		if (clk12) ctext(true, px * 0.2f, cy - px * 0.56f + px * 1.02f, cw / 2, h < 12 ? "AM" : "PM", dimInk);
+		float y = cy + px * 0.62f + (clk12 ? px * 0.22f : 0);
+		ctext(false, fit(false, 36, cw - 120, T.date(now)), y, cw / 2, T.date(now), ink);
+		if (w != null) {
+			String[] d = T.describe(w.code, w.isDay);
+			String line = t(w.temp) + "°  " + d[1] + (city != null ? "  ·  " + city.label() : "");
+			float lp = fit(false, 32, cw - 220, line), lw = g.width(false, lp, line), ic = lp * 1.6f;
+			float lx = cw / 2 - (lw + ic + 14) / 2;
+			g.icon("icons/" + d[0] + ".png", lx, y + 64 - ic * 0.25f, ic, ic, ink);
+			ltext(false, lp, y + 64, lx + ic + 14, line, ink);
+		}
+		String bat = (batt >= 0 ? batt + "%  " : "") + T.charging;
+		ctext(false, 26, ch - 70, cw / 2, bat, dimInk);
+		ctext(false, 22, ch - 36, cw / 2, T.en ? "Tap to leave the night clock" : "Atinge ecranul ca să ieși din ceasul de noapte", dimInk);
+	}
+
 	// --- Brightness ------------------------------------------------------------------------
 
 	/** A ring of radius R at CX CY with its right half filled. */
@@ -1001,6 +1067,16 @@ public final class Screen {
 			g.rect(30, 6, 4, 30, k);
 			g.poly(new float[] { 18, 30, 46, 30, 32, 46 }, k);
 			g.rect(10, 52, 44, 4, k);
+		} else if (which.equals("night")) {
+			// A clock with a crescent: the night clock.
+			g.arc(28, 36, 20, 0, 360, 4, k);
+			g.rect(26, 22, 4, 15, k);
+			g.rect(26, 34, 11, 4, k);
+			crescent(50, 14, 11, k, c.page);
+		} else if (which.equals("compass")) {
+			g.arc(32, 32, 24, 0, 360, 3, k);
+			g.poly(new float[] { 32, 10, 40, 34, 32, 30, 24, 34 }, c.accent);
+			g.poly(new float[] { 32, 54, 24, 30, 32, 34, 40, 30 }, k);
 		} else if (which.equals("help") || which.equals("about")) {
 			g.arc(32, 32, 24, 0, 360, 4, k);
 			ctext(true, 34, 13, 32, which.equals("help") ? "?" : "i", k);

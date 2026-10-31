@@ -147,6 +147,9 @@ public final class Preview {
 		s.tablet = opts.contains(" tab");
 		s.brightBar = opts.contains(" bar");
 		s.sensorTheme = opts.contains(" sensor");
+		s.nightClock = opts.contains(" night");
+		if (opts.contains(" charging")) s.charging = true;
+		if (opts.contains(" head")) s.heading = 60;
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";
 		s.brightLevel = 0.45f;
 		float[] f = Screen.fit(pw, ph, s.tablet);

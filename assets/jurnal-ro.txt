@@ -1,3 +1,10 @@
+v0.40 · 31 octombrie 2026
+- În meniul în engleză, opțiunea de limbă se numește acum „Romanian language”.
+- Ajutor: marginea din stânga e explicată corect: glisând sus-jos lângă margine apare bara de lumină, iar glisând pe ea reglezi luminozitatea.
+- Tema automată se numește „Automat (senzor telefon)”.
+- Busolă: lângă vânt e un mic cerc cu săgeata vântului, care se rotește după cum ții telefonul; semnul portocaliu arată nordul.
+- Ceas de noapte: când telefonul se încarcă noaptea și nu atingi ecranul un minut, apare un ceas mare, slab luminat, pe negru, cu temperatura și bateria. O atingere îl închide pentru un minut. Se pornește sau se oprește din meniul ☰, „Ceas de noapte ON/OFF”.
+
 v0.37 · 31 octombrie 2026
 - Butonul de reîmprospătare din dreapta sus s-a mutat în meniul ☰, ca „Reîmprospătare”; ceasul ocupă acum colțul. Tragerea ecranului în jos rămâne.
 - Fiecare opțiune din meniul ☰ are un icon înainte; cele care au și buton pe ecran arată chiar butonul.

@@ -21,7 +21,7 @@ public final class Weather {
 	public static final int LOW_OVERCAST = 35;
 	public static final String MODEL = "icon_seamless";
 
-	public double temp, feels = Double.NaN, wind = Double.NaN, precip;
+	public double temp, feels = Double.NaN, wind = Double.NaN, windDir = Double.NaN, precip;
 	public int code;
 	public boolean isDay = true;
 	public double tmax = Double.NaN, tmin = Double.NaN;
@@ -51,7 +51,7 @@ public final class Weather {
 	public static String forecastUrl(double lat, double lon, String tzId) throws Exception {
 		return "https://api.open-meteo.com/v1/forecast?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
 				+ "&current=temperature_2m,weather_code,precipitation,is_day,cloud_cover,cloud_cover_low,"
-				+ "cloud_cover_mid,cloud_cover_high,apparent_temperature,wind_speed_10m"
+				+ "cloud_cover_mid,cloud_cover_high,apparent_temperature,wind_speed_10m,wind_direction_10m"
 				+ "&hourly=precipitation_probability,precipitation,weather_code,snowfall,temperature_2m,is_day"
 				+ "&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max,"
 				+ "sunrise,sunset,uv_index_max"
@@ -96,6 +96,7 @@ public final class Weather {
 		w.isDay = Json.num(cur, "is_day") != 0;
 		w.feels = Json.num(cur, "apparent_temperature");
 		w.wind = Json.num(cur, "wind_speed_10m");
+		w.windDir = Json.num(cur, "wind_direction_10m");
 		double cloud = Json.num(cur, "cloud_cover"), low = Json.num(cur, "cloud_cover_low"), mid = Json.num(cur, "cloud_cover_mid");
 
 		// The model says "overcast" too often: for sky codes 1-3 use the low + mid cloud cover

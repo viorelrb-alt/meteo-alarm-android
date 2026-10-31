@@ -1,3 +1,10 @@
+v0.40 · 31 October 2026
+- In the English menu the language option is now called "Romanian language".
+- Help: the left edge is explained correctly: swiping up and down near the edge shows the light bar, and sliding on it sets the brightness.
+- The automatic theme is called "Automatic (phone sensor)".
+- Compass: next to the wind there is a small ring with the wind arrow, which turns as you hold the phone; the orange mark shows north.
+- Night clock: when the phone charges at night and you don't touch the screen for a minute, a large dim clock appears on black, with the temperature and battery. A tap closes it for a minute. Turn it on or off from the ☰ menu, "Night clock ON/OFF".
+
 v0.37 · 31 October 2026
 - The refresh button at the top right moved into the ☰ menu as "Refresh"; the clock now takes the corner. Pulling the screen down still refreshes.
 - Every option in the ☰ menu has an icon before it; the ones that are also a button on the screen show that button.
