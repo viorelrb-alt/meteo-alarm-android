@@ -1,3 +1,10 @@
+v0.36 · 31 October 2026
+- "updated 10:20" moved to the top right, under the line.
+- Every button (and pulling the screen down) shows a short notice over the bottom buttons that goes away after 1.5 seconds. The "Exact location" window became such a notice.
+- Menus are bubbles, as on the Kindle: they open next to the button that opened them (☰ under the ☰ button, towns next to the town button), with a tip toward it; a tap outside closes them.
+- Towns: "Favourites" with the last 3 towns, a line, then "Choose the county" with the counties; a county opens its towns. Bubbles are at most half the screen high and scroll.
+- In the ☰ menu, the options that also have a button on the screen show that button's icon before the text.
+
 v0.35 · 31 October 2026
 - Fixed the theme by the room's light: light gives the light theme, dark gives the dark theme, and it switches both ways. It follows after 1.5 seconds (it was 4).
 - New button next to the sun, a half-filled circle: filled while the theme follows the room's light. A tap turns it on or off (off: the theme follows the phone).

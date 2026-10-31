@@ -16,7 +16,11 @@ final class WeatherView extends View {
 
 		void onRefresh();
 
-		void onCity();
+		/** The town picker, opened from the button at B (canvas units). */
+		void onCity(float[] b);
+
+		/** The sun button showed the brightness bar. */
+		void onBright();
 
 		void onLocate();
 
@@ -131,6 +135,16 @@ final class WeatherView extends View {
 		return 110 * dp;
 	}
 
+	/** A button at B (canvas units: x, y, w, h) on the screen, in pixels: left, top, right, bottom. */
+	float[] px(float[] b) {
+		return new float[] { ox + b[0] * scale, oy + b[1] * scale, ox + (b[0] + b[2]) * scale, oy + (b[1] + b[3]) * scale };
+	}
+
+	/** Canvas units to pixels. */
+	float scale() {
+		return scale;
+	}
+
 	private static boolean in(float[] b, float x, float y) {
 		return x >= b[0] - 12 && x <= b[0] + b[2] + 12 && y >= b[1] - 12 && y <= b[1] + b[3] + 12;
 	}
@@ -236,9 +250,13 @@ final class WeatherView extends View {
 		if (in(screen.btnMenu, x, y)) taps.onMenu();
 		else if (in(screen.btnRefresh, x, y)) taps.onRefresh();
 		else if (in(screen.btnLocate, x, y)) taps.onLocate();
-		else if (in(screen.btnBright, x, y)) showBar(3000);
+		else if (in(screen.btnBright, x, y)) {
+			showBar(3000);
+			taps.onBright();
+		}
 		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
-		else if (in(screen.btnCity, x, y) || in(screen.cityArea, x, y)) taps.onCity();
+		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
+		else if (in(screen.cityArea, x, y)) taps.onCity(screen.cityArea);
 		return true;
 	}
 }

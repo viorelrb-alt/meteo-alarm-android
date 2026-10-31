@@ -147,6 +147,7 @@ public final class Preview {
 		s.tablet = opts.contains(" tab");
 		s.brightBar = opts.contains(" bar");
 		s.sensorTheme = opts.contains(" sensor");
+		if (opts.contains(" note")) s.note = "Actualizez vremea…";
 		s.brightLevel = 0.45f;
 		float[] f = Screen.fit(pw, ph, s.tablet);
 		float scale = f[0], cw = f[1], ch = f[2], ox = f[3], oy = f[4];

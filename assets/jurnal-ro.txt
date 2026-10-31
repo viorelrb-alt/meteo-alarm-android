@@ -1,3 +1,10 @@
+v0.36 · 31 octombrie 2026
+- „actualizat 10:20” s-a mutat sus, în dreapta, sub linie.
+- La fiecare buton (și la tragerea ecranului în jos) apare o notificare scurtă deasupra butoanelor de jos, care dispare după 1,5 secunde. Fereastra „Localizare exactă” a fost înlocuită de o astfel de notificare.
+- Meniurile sunt bule, ca pe Kindle: se deschid lângă butonul care le-a deschis (meniul ☰ sub butonul ☰, localitățile lângă butonul de localitate), cu un vârf spre buton; o atingere în afara bulei o închide.
+- Localități: „Favorite” cu ultimele 3 localități, o linie, apoi „Alegeți județul” cu lista județelor; județul deschide localitățile lui. Bulele au cel mult jumătate din înălțimea ecranului și se derulează.
+- În meniul ☰, opțiunile care au și buton pe ecran arată iconul butonului înaintea textului.
+
 v0.35 · 31 octombrie 2026
 - Reparată tema după lumina din cameră: cu lumină pornește tema luminoasă, pe întuneric tema întunecată, și comută în ambele sensuri. Trecerea se face după 1,5 secunde (înainte, 4).
 - Buton nou lângă soare, un cerc pe jumătate plin: e plin cât timp tema după lumina din cameră e pornită. O apăsare o pornește sau o oprește (oprită: tema urmează telefonul).

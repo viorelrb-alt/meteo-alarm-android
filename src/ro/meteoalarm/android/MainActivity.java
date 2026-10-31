@@ -44,7 +44,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v0.35";
+	static final String VERSION = "Meteo Alarm Android v0.36";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -57,6 +57,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Locator locator;
 	private Updater updater;
 	private BottomSheet sheet;
+	private Bubble bubble;
 	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
 
@@ -107,12 +108,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		android.widget.FrameLayout root = new android.widget.FrameLayout(this);
 		root.addView(view);
 		root.addView(sheet);
+		bubble = new Bubble(this, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
+				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+		bubble.setDark(s.dark);
+		bubble.setOnClose(new Runnable() {
+			public void run() {
+				hideBars();
+			}
+		});
+		root.addView(bubble, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		setContentView(root);
 	}
 
 	@Override
 	public void onBackPressed() {
-		if (sheet.isOpen()) {
+		if (bubble.isOpen()) bubble.hide();
+		else if (sheet.isOpen()) {
 			if (sheet.isCancelable()) sheet.hide();
 		} else super.onBackPressed();
 	}
@@ -183,6 +194,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		else getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		if (sheet != null) sheet.setDark(s.dark);
+		if (bubble != null) bubble.setDark(s.dark);
 		if (updater != null) updater.en = s.T.en;
 	}
 
@@ -318,7 +330,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		prefs.edit().putString("theme", on ? "sensor" : "auto").apply();
 		applySettings();
 		view.invalidate();
-		toast(on ? (s.T.en ? "Theme by the room's light: on" : "Tema după lumina din cameră: pornită")
+		note(on ? (s.T.en ? "Theme by the room's light: on" : "Tema după lumina din cameră: pornită")
 				: (s.T.en ? "Theme by the room's light: off (as the phone)" : "Tema după lumina din cameră: oprită (ca telefonul)"));
 	}
 
@@ -326,6 +338,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	public void toggleTheme() {
 		prefs.edit().putString("theme", s.dark ? "light" : "dark").apply();
 		applySettings();
+		note(s.dark ? (s.T.en ? "Dark theme" : "Tema întunecată") : (s.T.en ? "Light theme" : "Tema luminoasă"));
 		view.invalidate();
 	}
 
@@ -393,34 +406,30 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
 	}
 
+	private final Runnable clearNote = new Runnable() {
+		public void run() {
+			s.note = "";
+			view.invalidate();
+		}
+	};
+
+	/** A short notice over the status row after a button; it goes away after 1.5 seconds. */
+	private void note(String msg) {
+		s.note = msg;
+		view.invalidate();
+		handler.removeCallbacks(clearNote);
+		handler.postDelayed(clearNote, 1500);
+	}
+
+	public void onBright() {
+		note(s.T.en ? "Brightness: slide on the bar" : "Luminozitate: glisează pe bară");
+	}
+
 	/** Locate button: automatic location on, and look now. */
 	public void onLocate() {
 		setAutoLoc(true);
 		if (!Locator.allowed(this)) askLocation();
 		else locate(true);
-	}
-
-	private AlertDialog locDlg;
-
-	/** The small window that says the exact position is being looked for; it closes by itself. */
-	private void locatingDialog() {
-		closeLocatingDialog();
-		boolean en = s.T.en;
-		locDlg = dialog().setTitle(en ? "Exact location" : "Localizare exactă")
-				.setMessage(en ? "Looking for the phone's exact position and the town… This takes a few seconds."
-						: "Caut poziția exactă a telefonului și localitatea… Durează câteva secunde.")
-				.setPositiveButton("OK", null).create();
-		locDlg.setOnDismissListener(new DialogInterface.OnDismissListener() {
-			public void onDismiss(DialogInterface di) {
-				hideBars();
-			}
-		});
-		locDlg.show();
-	}
-
-	private void closeLocatingDialog() {
-		if (locDlg != null && locDlg.isShowing()) locDlg.dismiss();
-		locDlg = null;
 	}
 
 	/**
@@ -431,11 +440,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		lastLocate = System.currentTimeMillis();
 		s.locating = true;
 		view.invalidate();
-		if (say) locatingDialog();
+		if (say) note(s.T.en ? "Looking for the exact position…" : "Caut poziția exactă…");
 		locator.locate(new Locator.Result() {
 			public void found(double lat, double lon, String town, String rawCounty) {
 				s.locating = false;
-				closeLocatingDialog();
 				String county = cities.county(rawCounty);
 				if (county.length() == 0) county = town;
 				Cities.City listed = cities.find(county, town);
@@ -457,7 +465,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 			public void failed(String why) {
 				s.locating = false;
-				closeLocatingDialog();
 				view.invalidate();
 				if (!say) return;
 				if (why.equals("off")) toast(s.T.en ? "Location is off on the phone." : "Localizarea e oprită pe telefon.");
@@ -635,108 +642,73 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	public void onRefresh() {
+		note(s.T.en ? "Updating the weather…" : "Actualizez vremea…");
 		fetch();
+	}
+
+	/** A status-row button drawn small, for the ☰ menu rows that have one on the screen. */
+	private android.graphics.Bitmap mini(String which) {
+		int px = Math.round(30 * getResources().getDisplayMetrics().density);
+		android.graphics.Bitmap b = android.graphics.Bitmap.createBitmap(px, px, android.graphics.Bitmap.Config.ARGB_8888);
+		android.graphics.Canvas c = new android.graphics.Canvas(b);
+		c.scale(px / 64f, px / 64f);
+		AndroidGfx g = new AndroidGfx(getAssets());
+		g.c = c;
+		s.miniButton(g, which);
+		return b;
+	}
+
+	private int bubbleWidth(float frac, int minDp) {
+		float d = getResources().getDisplayMetrics().density;
+		return (int) Math.max(minDp * d, view.getWidth() * frac);
 	}
 
 	public void onMenu() {
 		final boolean en = s.T.en;
 		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
-		// Item ids in menu order.
+		// Item ids in menu order; the ones with a button on the screen show it before the text.
 		final List<String> ids = new ArrayList<String>();
-		List<String> items = new ArrayList<String>();
-		ids.add("city"); items.add(en ? "Choose town" : "Alege localitatea");
-		ids.add("unit"); items.add(s.unitF ? (en ? "Show °C" : "Afișează °C") : (en ? "Show °F" : "Afișează °F"));
-		ids.add("clock"); items.add(s.clk12 ? (en ? "24-hour clock" : "Ceas 24 de ore") : (en ? "12-hour clock" : "Ceas 12 ore (AM/PM)"));
-		ids.add("theme"); items.add(en ? "Theme…" : "Temă…");
-		ids.add("keepOn"); items.add(keepOn ? (en ? "Let the screen sleep" : "Lasă ecranul să se stingă") : (en ? "Keep the screen on" : "Ține ecranul aprins"));
-		ids.add("lang"); items.add(en ? "Limba română" : "Limba engleză");
-		ids.add("loc"); items.add(auto ? (en ? "Turn location off" : "Oprire localizare") : (en ? "Turn location on" : "Pornire localizare"));
-		ids.add("update"); items.add(en ? "Check for updates" : "Verifică actualizări");
-		ids.add("about"); items.add(en ? "About" : "Despre");
-		// The menu shows five items; the rest scroll up, the window keeps its size. "⌄ more" under
-		// the list says there is more, until the last item is in view.
-		final android.widget.ListView lv = new android.widget.ListView(this);
-		AlertDialog.Builder b = dialog().setTitle("☰");
-		android.widget.ArrayAdapter<String> ad = new android.widget.ArrayAdapter<String>(b.getContext(),
-				android.R.layout.select_dialog_item, items);
-		lv.setAdapter(ad);
-		lv.setDivider(null);
-		View row = ad.getView(0, null, lv);
-		row.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
-		int rh = row.getMeasuredHeight();
-		android.widget.LinearLayout box = new android.widget.LinearLayout(this);
-		box.setOrientation(android.widget.LinearLayout.VERTICAL);
-		final android.widget.TextView less = hint(b.getContext(), en ? "⌃  more  ⌃" : "⌃  mai multe  ⌃");
-		final android.widget.TextView more = hint(b.getContext(), en ? "⌄  more  ⌄" : "⌄  mai multe  ⌄");
-		less.setVisibility(View.INVISIBLE);
-		more.setVisibility(items.size() > 5 ? View.VISIBLE : View.INVISIBLE);
-		box.addView(less, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		box.addView(lv, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, rh * 5));
-		box.addView(more, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		lv.setOnScrollListener(new android.widget.AbsListView.OnScrollListener() {
-			public void onScrollStateChanged(android.widget.AbsListView v, int st) {
-			}
-
-			public void onScroll(android.widget.AbsListView v, int first, int vis, int total) {
-				View top = v.getChildAt(0), last = v.getChildAt(v.getChildCount() - 1);
-				boolean start = first == 0 && (top == null || top.getTop() >= 0);
-				boolean end = first + vis >= total && last != null && last.getBottom() <= v.getHeight();
-				less.setVisibility(start ? View.INVISIBLE : View.VISIBLE);
-				more.setVisibility(end ? View.INVISIBLE : View.VISIBLE);
-			}
-		});
-		less.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				lv.smoothScrollToPosition(0);
-			}
-		});
-		more.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				lv.smoothScrollToPosition(ids.size() - 1);
-			}
-		});
-		b.setView(box);
-		final AlertDialog menu = b.create();
-		menu.setOnDismissListener(new DialogInterface.OnDismissListener() {
-			public void onDismiss(DialogInterface di) {
-				hideBars();
-			}
-		});
-		lv.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
-			public void onItemClick(android.widget.AdapterView<?> p, View v, int k, long id) {
-				menu.dismiss();
+		List<Bubble.Row> rows = Bubble.rows();
+		ids.add("city"); rows.add(new Bubble.Row(en ? "Choose town" : "Alege localitatea", mini("city"), Bubble.Row.ITEM, false));
+		ids.add("unit"); rows.add(Bubble.Row.item(s.unitF ? (en ? "Show °C" : "Afișează °C") : (en ? "Show °F" : "Afișează °F")));
+		ids.add("clock"); rows.add(Bubble.Row.item(s.clk12 ? (en ? "24-hour clock" : "Ceas 24 de ore") : (en ? "12-hour clock" : "Ceas 12 ore (AM/PM)")));
+		ids.add("theme"); rows.add(new Bubble.Row(en ? "Theme…" : "Temă…", mini("sensor"), Bubble.Row.ITEM, false));
+		ids.add("keepOn"); rows.add(Bubble.Row.item(keepOn ? (en ? "Let the screen sleep" : "Lasă ecranul să se stingă") : (en ? "Keep the screen on" : "Ține ecranul aprins")));
+		ids.add("lang"); rows.add(Bubble.Row.item(en ? "Limba română" : "Limba engleză"));
+		ids.add("loc"); rows.add(new Bubble.Row(auto ? (en ? "Turn location off" : "Oprire localizare") : (en ? "Turn location on" : "Pornire localizare"),
+				mini("locate"), Bubble.Row.ITEM, false));
+		ids.add("update"); rows.add(Bubble.Row.item(en ? "Check for updates" : "Verifică actualizări"));
+		ids.add("about"); rows.add(Bubble.Row.item(en ? "About" : "Despre"));
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.62f, 280), null, rows, en, new Bubble.Pick() {
+			public void picked(int k) {
 				SharedPreferences.Editor e = prefs.edit();
 				String it = ids.get(k);
-				if (it.equals("city")) { onCity(); return; }
-				else if (it.equals("unit")) e.putBoolean("unitF", !s.unitF);
-				else if (it.equals("clock")) e.putBoolean("clk12", !s.clk12);
-				else if (it.equals("lang")) e.putString("lang", en ? "ro" : "en");
-				else if (it.equals("keepOn")) e.putBoolean("keepOn", !prefs.getBoolean("keepOn", true));
-				else if (it.equals("theme")) { pickTheme(); return; }
+				String msg = null;
+				if (it.equals("city")) { onCity(s.btnMenu); return; }
+				else if (it.equals("unit")) { e.putBoolean("unitF", !s.unitF); msg = s.unitF ? "°C" : "°F"; }
+				else if (it.equals("clock")) {
+					e.putBoolean("clk12", !s.clk12);
+					msg = s.clk12 ? (en ? "24-hour clock" : "Ceas 24 de ore") : (en ? "12-hour clock" : "Ceas 12 ore");
+				} else if (it.equals("lang")) { e.putString("lang", en ? "ro" : "en"); msg = en ? "Română" : "English"; }
+				else if (it.equals("keepOn")) {
+					boolean on = !prefs.getBoolean("keepOn", true);
+					e.putBoolean("keepOn", on);
+					msg = on ? (en ? "The screen stays on" : "Ecranul rămâne aprins") : (en ? "The screen may sleep" : "Ecranul se poate stinge");
+				} else if (it.equals("theme")) { pickTheme(); return; }
 				else if (it.equals("loc")) {
-					if (autoLoc()) setAutoLoc(false);
-					else onLocate();
+					if (autoLoc()) {
+						setAutoLoc(false);
+						note(en ? "Location off" : "Localizare oprită");
+					} else onLocate();
 					return;
 				} else if (it.equals("update")) { updater.check(true); return; }
 				else { about(); return; }
 				e.apply();
 				applySettings();
 				view.invalidate();
+				if (msg != null) note(msg);
 			}
 		});
-		menu.show();
-	}
-
-	/** "⌃ more ⌃" / "⌄ more ⌄" over and under the menu list: there are more items that way. */
-	private android.widget.TextView hint(Context ctx, String text) {
-		android.widget.TextView t = new android.widget.TextView(ctx);
-		t.setText(text);
-		t.setGravity(android.view.Gravity.CENTER);
-		t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 15);
-		t.setTextColor(s.dark ? 0xFFA6A39A : 0xFF555555);
-		int pad = Math.round(6 * getResources().getDisplayMetrics().density);
-		t.setPadding(0, pad, 0, pad);
-		return t;
 	}
 
 	private void pickTheme() {
@@ -744,16 +716,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String[] all = s.T.en
 				? new String[] { "Light (Kindle, black and white)", "Dark (Claude colours)", "Automatic (as the phone)", "By the room's light (sensor)" }
 				: new String[] { "Luminoasă (Kindle, alb-negru)", "Întunecată (culorile Claude)", "Automată (ca telefonul)", "După lumina din cameră (senzor)" };
-		String[] items = java.util.Arrays.copyOf(all, keys.length);
-		int cur = java.util.Arrays.asList(keys).indexOf(prefs.getString("theme", "auto"));
-		show(dialog().setTitle(s.T.en ? "Theme" : "Temă").setSingleChoiceItems(items, cur, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface d, int k) {
+		String cur = prefs.getString("theme", "auto");
+		List<Bubble.Row> rows = Bubble.rows();
+		for (int k = 0; k < keys.length; k++)
+			rows.add(new Bubble.Row(all[k], k == 3 ? mini("sensor") : null, Bubble.Row.ITEM, keys[k].equals(cur)));
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.8f, 300), s.T.en ? "Theme" : "Temă", rows, s.T.en, new Bubble.Pick() {
+			public void picked(int k) {
 				prefs.edit().putString("theme", keys[k]).apply();
-				d.dismiss();
 				applySettings();
 				view.invalidate();
 			}
-		}));
+		});
 	}
 
 	/** After an update: what is new in the installed version. */
@@ -802,47 +775,49 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 	}
 
-	/** Favourites (the last three towns) and the county list. */
-	public void onCity() {
+	/**
+	 * The town picker as a bubble next to the button at B: "Favourites" with the last three towns,
+	 * a line, then "Choose the county" and the counties; a county opens its towns. At most half the
+	 * screen high; the rows scroll.
+	 */
+	public void onCity(final float[] b) {
 		final List<Cities.City> favs = new ArrayList<Cities.City>();
 		for (String k : prefs.getString("favs", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
 			if (c != null) favs.add(c);
 		}
 		final boolean en = s.T.en;
-		if (favs.isEmpty()) {
-			pickCounty();
-			return;
-		}
-		String[] items = new String[favs.size() + 1];
-		for (int k = 0; k < favs.size(); k++) items[k] = favs.get(k).label();
-		items[favs.size()] = en ? "Choose county…" : "Alege județul…";
-		show(dialog().setTitle(en ? "Town" : "Localitatea").setItems(items, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface d, int k) {
-				if (k < favs.size()) choose(favs.get(k));
-				else pickCounty();
-			}
-		}));
-	}
-
-	private void pickCounty() {
 		final String[] counties = cities.byCounty.keySet().toArray(new String[0]);
-		show(dialog().setTitle(s.T.en ? "Choose county" : "Alege județul").setItems(counties, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface d, int k) {
-				pickTown(counties[k]);
+		List<Bubble.Row> rows = Bubble.rows();
+		final int first;
+		if (!favs.isEmpty()) {
+			rows.add(new Bubble.Row(en ? "Favourites" : "Favorite", null, Bubble.Row.HEADER, false));
+			for (Cities.City c : favs) rows.add(Bubble.Row.item(c.label()));
+			rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+		}
+		rows.add(new Bubble.Row(en ? "Choose the county" : "Alegeți județul", null, Bubble.Row.HEADER, false));
+		first = rows.size();
+		for (String co : counties) rows.add(Bubble.Row.item(co));
+		bubble.show(view.px(b), bubbleWidth(0.9f, 300), null, rows, en, new Bubble.Pick() {
+			public void picked(int k) {
+				if (k >= first) pickTown(b, counties[k - first]);
+				else if (k >= 1 && k <= favs.size()) choose(favs.get(k - 1));
 			}
-		}));
+		});
 	}
 
-	private void pickTown(String county) {
+	private void pickTown(final float[] b, String county) {
 		final List<Cities.City> l = cities.byCounty.get(county);
-		String[] items = new String[l.size()];
-		for (int k = 0; k < l.size(); k++) items[k] = l.get(k).name;
-		show(dialog().setTitle(county).setItems(items, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface d, int k) {
-				choose(l.get(k));
+		final boolean en = s.T.en;
+		List<Bubble.Row> rows = Bubble.rows();
+		rows.add(Bubble.Row.item(en ? "‹  Back to the counties" : "‹  Înapoi la județe"));
+		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
+		bubble.show(view.px(b), bubbleWidth(0.9f, 300), county, rows, en, new Bubble.Pick() {
+			public void picked(int k) {
+				if (k == 0) onCity(b);
+				else choose(l.get(k - 1));
 			}
-		}));
+		});
 	}
 
 	/** A town picked from the list: automatic location goes off until the locate button. */

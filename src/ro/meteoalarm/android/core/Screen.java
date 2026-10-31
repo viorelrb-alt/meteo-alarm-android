@@ -164,7 +164,7 @@ public final class Screen {
 
 		float nowBot = 498 + Math.max(0, ch - BASE_H);
 		float fy = nowBot - 4;
-		float top = drawWarnBoxes(40, 116, 678, 2, 1);
+		float top = drawWarnBoxes(40, 146, 678, 2, 1);
 		String[] d = T.describe(w.code, w.isDay);
 		drawNowSide(d[0], 40, top > 0 ? top - 50 : 104, 718, fy + 4);
 
@@ -223,7 +223,7 @@ public final class Screen {
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
 
-		drawNextHours(rbx, 116, rbw, 260);
+		drawNextHours(rbx, 146, rbw, 232);
 		float dw = (rbw - 4 * 12) / 5;
 		for (int k = 0; k < 5; k++) {
 			float x = rbx + k * (dw + 12), cx = x + dw / 2, top = 390;
@@ -254,8 +254,8 @@ public final class Screen {
 			if (pollenPlant.length() > 0) sb.append(" (").append(T.plant(pollenPlant)).append(')');
 		}
 		String sun = sb.toString();
-		float sp = fit(false, 27, cw - 600 - 260, sun);
-		ctext(false, sp, fb + 26 + (27 - sp) / 2, (600 + cw - 260) / 2, sun, c.ink);
+		float sp = fit(false, 27, cw - 400 - 260, sun);
+		ctext(false, sp, fb + 26 + (27 - sp) / 2, (400 + cw - 260) / 2, sun, c.ink);
 	}
 
 	/**
@@ -282,7 +282,7 @@ public final class Screen {
 			footer(fb);
 			return;
 		}
-		float nl = 40, nr = land ? cw / 2 - 20 : cw - 40, nt = 116, nb = land ? fb - 20 : ch * 0.42f;
+		float nl = 40, nr = land ? cw / 2 - 20 : cw - 40, nt = land ? 116 : 146, nb = land ? fb - 20 : ch * 0.42f;
 		float wf = 1.25f, wb = drawWarnBoxes(nl, nt, nr - nl, 3, wf);
 		float top = Math.max(wb, nt + 130 * wf) + 16;
 		float lineY = nb - 76;
@@ -306,7 +306,7 @@ public final class Screen {
 		Gfx g0 = g;
 		float bs = 1.2f;
 		g = new Scaled(g0, bs);
-		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 116 : nb + 24) / bs;
+		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 146 : nb + 24) / bs;
 		float avail = (fb - 14) / bs - by, ih = 190, hh = Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
 		drawNextHours(bx, by, bw, hh);
 		for (int k = 0; k < 4; k++) hourArea[k] *= bs;
@@ -899,29 +899,13 @@ public final class Screen {
 	// --- Status line -----------------------------------------------------------------------
 
 	private void footer(float fb) {
-		button(btnCity);
-		g.icon("icons/btn-city.png", 56, fb + 16, 32, 32, c.ink);
-		// Locate: a crosshair.
 		btnLocate[1] = fb;
-		button(btnLocate);
-		int lc = locating ? c.accent : autoLoc ? c.ink : c.dim;
-		float lx = 156, ly = fb + 32;
-		g.arc(lx, ly, 13, 0, 360, 3, lc);
-		g.arc(lx, ly, 2.5f, 0, 360, 5, lc);
-		g.rect(lx - 1.5f, ly - 22, 3, 8, lc);
-		g.rect(lx - 1.5f, ly + 14, 3, 8, lc);
-		g.rect(lx - 22, ly - 1.5f, 8, 3, lc);
-		g.rect(lx + 14, ly - 1.5f, 8, 3, lc);
-		// Brightness: a sun; filled while the bar is shown.
 		btnBright[1] = fb;
-		button(btnBright);
-		if (brightBar) g.roundRect(btnBright[0] + 2, fb + 2, 60, 60, 8, c.ink);
-		sun(240, fb + 32, 22, brightBar ? c.page : c.ink);
-		// Theme by the room's light: a circle half light, half dark; filled while it is on.
 		btnSensor[1] = fb;
-		button(btnSensor);
-		if (sensorTheme) g.roundRect(btnSensor[0] + 2, fb + 2, 60, 60, 8, c.ink);
-		halfMoon(324, fb + 32, 17, sensorTheme ? c.page : c.ink);
+		footButton("city", btnCity, false);
+		footButton("locate", btnLocate, false);
+		footButton("bright", btnBright, brightBar);
+		footButton("sensor", btnSensor, sensorTheme);
 		float batLeft = cw - 40;
 		float gy = fb + 22;
 		if (batt >= 0) {
@@ -938,6 +922,57 @@ public final class Screen {
 				batLeft = rtext(true, mp, gy - 4 + (26 - mp) * 81 / 100, batLeft - 10, T.charging, c.ink);
 			}
 		}
+		drawUpdated();
+		drawNote(fb);
+	}
+
+	/**
+	 * A status-row button at B: its frame and its icon (WHICH: city, locate, bright, sensor),
+	 * filled in ink when ON (the sun while its bar shows, the sensor theme while it is on).
+	 */
+	private void footButton(String which, float[] b, boolean on) {
+		button(b);
+		if (on) g.roundRect(b[0] + 2, b[1] + 2, b[2] - 4, b[3] - 4, 8, c.ink);
+		buttonIcon(which, b[0] + 32, b[1] + 32, on ? c.page : c.ink);
+	}
+
+	private void buttonIcon(String which, float cx, float cy, int ink) {
+		if (which.equals("city")) g.icon("icons/btn-city.png", cx - 16, cy - 16, 32, 32, ink);
+		else if (which.equals("locate")) {
+			// A crosshair; accent while looking, gray while automatic location is off.
+			int lc = locating ? c.accent : autoLoc ? ink : c.dim;
+			g.arc(cx, cy, 13, 0, 360, 3, lc);
+			g.arc(cx, cy, 2.5f, 0, 360, 5, lc);
+			g.rect(cx - 1.5f, cy - 22, 3, 8, lc);
+			g.rect(cx - 1.5f, cy + 14, 3, 8, lc);
+			g.rect(cx - 22, cy - 1.5f, 8, 3, lc);
+			g.rect(cx + 14, cy - 1.5f, 8, 3, lc);
+		} else if (which.equals("bright")) sun(cx, cy, 22, ink);
+		else halfMoon(cx, cy, 17, ink);
+	}
+
+	/** One status-row button (64 x 64 units) on GFX, for the ☰ menu rows. */
+	public void miniButton(Gfx gfx, String which) {
+		g = gfx;
+		c = dark ? Palette.DARK : Palette.LIGHT;
+		float[] b = { 0, 0, 64, 64 };
+		boolean on = which.equals("sensor") && sensorTheme;
+		footButton(which, b, on);
+	}
+
+	/** A short notice over the status row after a button (MainActivity clears it after 1.5 s). */
+	public String note = "";
+
+	private void drawNote(float fb) {
+		if (note.length() == 0) return;
+		float p = fit(true, 30, cw - 160, note), w = g.width(true, p, note) + 56, h = 66, x = (cw - w) / 2, y = fb - h - 18;
+		g.roundRect(x, y, w, h, 33, c.ink);
+		g.roundRect(x + 2, y + 2, w - 4, h - 4, 31, c.page);
+		ctext(true, p, y + (h - p * 1.12f) / 2, cw / 2, note, c.ink);
+	}
+
+	/** "updated 12:34" under the line, at the right. */
+	private void drawUpdated() {
 		String upd = "";
 		boolean bold = false;
 		if (busy) {
@@ -952,10 +987,6 @@ public final class Screen {
 				bold = true;
 			}
 		}
-		if (upd.length() > 0) {
-			float maxw = (cw > W && !tablet ? 600 : batLeft) - 375 - 14;
-			float up = fit(bold, 27, maxw, upd);
-			ltext(bold, up, fb + 26, 375, upd, bold ? c.ink : c.dim);
-		}
+		if (upd.length() > 0) rtext(bold, fit(bold, 25, 400, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
 	}
 }
