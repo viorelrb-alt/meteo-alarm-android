@@ -129,7 +129,11 @@ final class Locator {
 						String city = (String) ad.get("city");
 						town = first(city, (String) ad.get("town"), (String) ad.get("village"), (String) ad.get("municipality"));
 						county = first((String) ad.get("county"), (String) ad.get("state"));
-						district = first((String) ad.get("city_district"), (String) ad.get("suburb"), (String) ad.get("borough"), (String) ad.get("quarter"), (String) ad.get("neighbourhood"));
+						// The smallest named area first (a neighbourhood rather than a big suburb); a Bucharest
+						// sector stays the sector.
+						String cd = (String) ad.get("city_district");
+						district = cd != null && cd.startsWith("Sector") ? cd
+								: first((String) ad.get("neighbourhood"), (String) ad.get("quarter"), (String) ad.get("suburb"), cd, (String) ad.get("borough"));
 						if (district != null && town != null && district.equalsIgnoreCase(town)) district = null;
 						country = (String) ad.get("country_code");
 					}
