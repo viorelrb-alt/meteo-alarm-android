@@ -49,6 +49,8 @@ final class Locator {
 	private final Context ctx;
 	private final Handler handler = new Handler(Looper.getMainLooper());
 	private boolean busy;
+	/** Where the last neighbourhood came from: "telefon", "OpenStreetMap" or empty. */
+	volatile String source = "";
 
 	Locator(Context ctx) {
 		this.ctx = ctx.getApplicationContext();
@@ -147,7 +149,7 @@ final class Locator {
 				try {
 					if (Geocoder.isPresent()) {
 						@SuppressWarnings("deprecation")
-						List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 1);
+						List<Address> as = new Geocoder(ctx, new Locale("ro", "RO")).getFromLocation(lat, lon, 10);
 						if (as != null && !as.isEmpty()) {
 							Address a = as.get(0);
 							if (town == null) {
@@ -156,7 +158,19 @@ final class Locator {
 								country = a.getCountryCode();
 								district = null;
 							}
-							String sub = first(a.getSubLocality());
+							// The neighbourhood: a result's sub-locality, or a result that is an area (no street)
+							// named other than the town, county or country, e.g. "Zona 10 Nivele".
+							String sub = null;
+							for (Address x : as) if (sub == null) sub = first(x.getSubLocality());
+							if (sub == null) for (Address x : as) {
+								String f = first(x.getFeatureName());
+								if (f == null || x.getThoroughfare() != null || x.getSubThoroughfare() != null || f.matches("[0-9]+[A-Za-z]?([/-][0-9A-Za-z]+)?") || f.equals(x.getPostalCode())) continue;
+								if (f.equalsIgnoreCase(x.getLocality()) || f.equalsIgnoreCase(x.getAdminArea()) || f.equalsIgnoreCase(x.getSubAdminArea())
+										|| f.equalsIgnoreCase(x.getCountryName()) || (town != null && f.equalsIgnoreCase(town))) continue;
+								if (x.getLocality() == null && x.getSubAdminArea() == null && x.getAdminArea() == null) continue;
+								sub = f;
+								break;
+							}
 							boolean sector = district != null && district.startsWith("Sector");
 							if (sub != null && town != null && !sub.equalsIgnoreCase(town) && !sector) {
 								district = sub;
@@ -191,6 +205,7 @@ final class Locator {
 						match = "";
 					}
 				}
+				source = exact ? "telefon" : district == null ? "" : "OpenStreetMap";
 				final String t = town, c = county, d = district, cc = country, mt = match;
 				handler.post(new Runnable() {
 					public void run() {

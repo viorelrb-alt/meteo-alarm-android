@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.30";
+	static final String VERSION = "Meteo Alarm Android v1.40";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -623,6 +623,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (moved) setCity(here, false);
 				else view.invalidate();
 				if (moved || say) fetch();
+				// After a tap: where the neighbourhood came from, to check it.
+				if (say && district != null && locator.source.length() > 0)
+					note(district + " · " + (s.T.en && locator.source.equals("telefon") ? "phone" : locator.source), 2500);
 			}
 
 			public void failed(String why) {

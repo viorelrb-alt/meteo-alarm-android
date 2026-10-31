@@ -187,6 +187,7 @@ public final class Screen {
 
 		float y0 = fy + 80;
 		drawNextHours(40, y0, 678, 276, false);
+		g.rect(40, y0 + 282, 678, 2, c.line);
 		drawDayCard(40, y0 + 290, 0, T.day1);
 		drawDayCard(387, y0 + 290, 1, T.day2);
 		drawDayCols(2, y0 + 502);
@@ -206,8 +207,8 @@ public final class Screen {
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
 		for (Strip st : strips()) st.area[2] = 0;
-		float z1 = Math.round(cw * 0.49f), z2 = Math.round(cw * 0.75f), leftR = z1 - 22;
-		float mx = z1 + 22, mw = z2 - 22 - mx, rx = z2 + 22, rw = cw - 40 - rx;
+		float z1 = Math.round(cw * 0.45f), z2 = Math.round(cw * 0.75f), leftR = z1 - 11;
+		float mx = z1 + 11, mw = z2 - 11 - mx, rx = z2 + 11, rw = cw - 40 - rx;
 		updHead = true;
 		g.rect(40, 102, cw - 80, 2, c.line);
 		String label = city != null ? city.label() : "";
@@ -236,8 +237,10 @@ public final class Screen {
 		g.rect(z2 - 1, 124, 2, fb - 14 - 124, c.line);
 
 		float bt = 124, bb = fb - 14, hh = 250;
+		peekW = 15;
 		drawNextHours(mx, bt, mw, hh, false);
 		drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
+		peekW = 30;
 		drawInfoGrid(rx, bt, rw, bb - bt);
 		footer(fb);
 	}
@@ -246,8 +249,8 @@ public final class Screen {
 	private void drawDaysRow(float x, float top, float wd, float h) {
 		int n = Math.min(5, w.dayDates.size());
 		if (n == 0) return;
-		float gap = 14, peek = 30;
-		int per = Math.max(2, Math.min(3, (int) ((wd - peek + gap) / (160 + gap))));
+		float gap = 14, peek = peekW;
+		int per = Math.max(2, Math.min(3, (int) ((wd - peek + gap) / (180 + gap))));
 		float dw = (wd - peek - per * gap) / per, step = dw + gap;
 		float[] starts = new float[n];
 		for (int k = 0; k < n; k++) starts[k] = k * step;
@@ -404,7 +407,7 @@ public final class Screen {
 			return;
 		}
 		boolean chart = rainText().length() > 0;
-		float gap = 16, peek = 30, bh = line ? h - 26 : h;
+		float gap = 16, peek = peekW, bh = line ? h - 26 : h;
 		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
 		float bw = avail <= per && !chart ? (wd - gap * (avail - 1)) / avail : (wd - peek - gap * per) / per;
 		// The chart leaves room for the edge of the first hour box, so it is clear the row goes on.
@@ -1436,6 +1439,9 @@ public final class Screen {
 			rtext(bold, fit(bold, 25, 360, upd), 30, cw - 40 - g.width(true, 50, hm) - 28, upd, bold ? c.ink : c.dim);
 		} else rtext(bold, fit(bold, 25, 400, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
 	}
+
+	/** How much of the next box shows at the end of a row (units). */
+	private float peekW = 30;
 
 	/** Landscape (phone): "updated" goes in the header next to the clock. */
 	private boolean updHead;

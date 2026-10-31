@@ -1,3 +1,8 @@
+v1.40 · 31 October 2026
+- Neighbourhood: all the phone geocoder's results are read (the area often comes as a separate result, e.g. "Zona 10 Nivele"). After a tap on the location button, a notice shows the neighbourhood found and where it came from (phone or OpenStreetMap).
+- Portrait: a line between the rain chart and the five days.
+- Landscape: the line between parts 1 and 2 moved left, the space between lines and boxes is halved, the rain box is wider, the next box peeks half as much, and the five-day boxes are wider.
+
 v1.30 · 31 October 2026
 - Fixed: the rain box can be brought back by sliding right (the animation used to push it out again), in portrait and landscape. The box is a little narrower so the edge of the first hour box shows.
 - Landscape: the weather-now part is bigger, the middle narrower; vertical lines between all 3 parts; no line under the hours; "updated" sits at the top next to the clock.
