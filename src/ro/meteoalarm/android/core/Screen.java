@@ -1278,7 +1278,7 @@ public final class Screen {
 		btnBright[1] = fb;
 		btnSensor[1] = fb;
 		footButton("city", btnCity, false);
-		footButton("locate", btnLocate, false);
+		footButton("locate", btnLocate, autoLoc);
 		footButton("bright", btnBright, brightBar);
 		footButton("sensor", btnSensor, sensorTheme);
 		float batLeft = cw - 40;
@@ -1315,7 +1315,8 @@ public final class Screen {
 		if (which.equals("city")) g.icon("icons/btn-city.png", cx - 16, cy - 16, 32, 32, ink);
 		else if (which.equals("locate")) {
 			// A crosshair; accent while looking, gray while automatic location is off.
-			int lc = locating ? c.accent : autoLoc ? ink : c.dim;
+			// Filled while automatic location is on (the button draws the fill); accent while looking.
+			int lc = locating ? c.accent : ink;
 			g.arc(cx, cy, 13, 0, 360, 3, lc);
 			g.arc(cx, cy, 2.5f, 0, 360, 5, lc);
 			g.rect(cx - 1.5f, cy - 22, 3, 8, lc);
@@ -1395,6 +1396,16 @@ public final class Screen {
 			g.rect(26, 22, 4, 15, k);
 			g.rect(26, 34, 11, 4, k);
 			crescent(50, 14, 11, k, c.page);
+		} else if (which.equals("area")) {
+			// Two houses: the neighbourhood.
+			g.poly(new float[] { 4, 34, 22, 16, 40, 34 }, k);
+			g.rect(9, 33, 26, 23, k);
+			g.rect(13, 37, 18, 15, c.page);
+			g.rect(19, 42, 6, 10, k);
+			g.poly(new float[] { 30, 26, 45, 12, 60, 26 }, k);
+			g.rect(37, 25, 19, 31, k);
+			g.rect(41, 29, 11, 23, c.page);
+			g.rect(44, 44, 5, 8, k);
 		} else if (which.equals("compass")) {
 			g.arc(32, 32, 24, 0, 360, 3, k);
 			g.poly(new float[] { 32, 10, 40, 34, 32, 30, 24, 34 }, c.accent);

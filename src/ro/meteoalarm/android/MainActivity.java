@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.42";
+	static final String VERSION = "Meteo Alarm Android v1.43";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -596,12 +596,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		locate(true);
 	}
 
-	/** Locate button: automatic location on, and look now. */
+	/**
+	 * Locate button (and ☰ Localizare On / Off): a switch. Off -> automatic location on (the button
+	 * filled) and a look now; on -> off (the button empty).
+	 */
 	public void onLocate() {
 		noteTop = false;
+		boolean en = s.T.en;
+		if (autoLoc()) {
+			setAutoLoc(false);
+			note(en ? "Automatic location OFF" : "Localizare automată OPRITĂ", 2000);
+			return;
+		}
 		setAutoLoc(true);
+		note(en ? "Automatic location ON" : "Localizare automată PORNITĂ", 2000);
 		if (!Locator.allowed(this)) askLocation();
-		else locate(true);
+		else locate(false);
 	}
 
 	/**
@@ -1026,7 +1036,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("lang"); rows.add(row(en ? "Romanian language" : "Limba engleză", en ? "lang-ro" : "lang-en"));
 		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (en ? "Night clock OFF" : "Ceas noapte OFF")
 				: (en ? "Night clock ON" : "Ceas noapte ON"), "night"));
-		ids.add("src"); rows.add(row(osm() ? (en ? "Neighbourhood: OpenStreetMap" : "Cartier: OpenStreetMap") : (en ? "Neighbourhood: phone" : "Cartier: telefon"), "locate"));
+		ids.add("src"); rows.add(row(osm() ? (en ? "Neighbourhood: OpenStreetMap" : "Cartier: OpenStreetMap") : (en ? "Neighbourhood: phone" : "Cartier: telefon"), "area"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
@@ -1052,10 +1062,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 							: (en ? "The screen goes off after the phone's timeout" : "Ecranul se stinge după timpul setat în telefon");
 				} else if (it.equals("theme")) { pickTheme(); return; }
 				else if (it.equals("loc")) {
-					if (autoLoc()) {
-						setAutoLoc(false);
-						note(en ? "Location off" : "Localizare oprită");
-					} else onLocate();
+					onLocate();
 					return;
 				} else if (it.equals("src")) {
 					boolean o = !osm();
@@ -1116,8 +1123,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
 				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
-		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were; the neighbourhood or sector is only shown after the town, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. Gray: automatic location is off."
-				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact; cartierul sau sectorul doar se afișează după localitate, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. Gri: localizarea automată e oprită.");
+		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were; the neighbourhood or sector is only shown after the town, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty)."
+				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact; cartierul sau sectorul doar se afișează după localitate, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol).");
 		help.entry(mini("bright"), en ? "Brightness" : "Luminozitate", en ? "Shows the brightness bar on the left: slide on it up or down. It goes away by itself."
 				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
 		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
@@ -1149,10 +1156,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("keepOn"), en ? "Screen on ON / OFF" : "Ecran aprins ON / OFF", en ? "ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout."
 				: "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon.");
 		help.entry(mini(en ? "lang-ro" : "lang-en"), en ? "Language" : "Limba", en ? "Romanian or English." : "Română sau engleză.");
-		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location off, or on and looks now (the location button only turns it on)."
-				: "Oprește localizarea automată, sau o pornește și caută acum (butonul de localizare doar o pornește).");
+		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
+				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
 		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
-		help.entry(mini("locate"), en ? "Neighbourhood: phone / OpenStreetMap" : "Cartier: telefon / OpenStreetMap", en ? "Where the neighbourhood shown after the town comes from. It is shown only when that source says you are inside it."
+		help.entry(mini("area"), en ? "Neighbourhood: phone / OpenStreetMap" : "Cartier: telefon / OpenStreetMap", en ? "Where the neighbourhood shown after the town comes from. It is shown only when that source says you are inside it."
 				: "De unde vine cartierul afișat după localitate. Apare doar când sursa confirmă că ești în interiorul lui.");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
 				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");

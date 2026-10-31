@@ -1,3 +1,8 @@
+v1.43 · 31 October 2026
+- The location button is now a switch: one tap turns automatic location on (the button filled, it looks for the position), another turns it off (the button empty). ☰ "Location On / Off" does the same. A notice says each time whether it is ON or OFF.
+- "Neighbourhood: phone / OpenStreetMap" has its own icon (two houses), in the menu and in Help.
+- Help updated.
+
 v1.42 · 31 October 2026
 - Menus: all choices in the same font (that of "Check for updates"), and the menu widens so every text fits.
 - A tap on the town's name looks once with the GPS, without turning automatic location on or off. The notice shows under the line under the town.
