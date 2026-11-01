@@ -1,3 +1,9 @@
+v1.60 · 1 November 2026
+- Portrait screen, after Viorel's mockup: the weather icon on top and the temperature under it, larger, centred across and up-down.
+- Five-day forecast: tomorrow and the next 4 days in boxes of one size, two on the screen; drag the row for the others.
+- The chart is now "Precipitation · next 12 hours", takes the whole row and shows only when rain or snow is expected; otherwise the row starts with the hours.
+- Help updated.
+
 v1.51 · 31 October 2026
 - Widget: the weather icon is 30% larger, the temperature smaller and the texts (sunset/sunrise, town) smaller, so they fit whole in the widget.
 

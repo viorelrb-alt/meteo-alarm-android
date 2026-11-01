@@ -183,11 +183,12 @@ public final class Screen {
 			return;
 		}
 
-		float nowBot = 498 + Math.max(0, ch - BASE_H);
+		// The five days are one row of boxes now (no small columns): their room goes to the weather now.
+		float nowBot = 663 + Math.max(0, ch - BASE_H);
 		float fy = nowBot - 4;
 		float top = drawWarnBoxes(40, 146, 678, 2, 1);
 		String[] d = T.describe(w.code, w.isDay);
-		drawNowSide(d[0], 40, top > 0 ? top - 50 : 104, 718, fy + 4);
+		drawNowStack(d[0], 40, top > 0 ? top - 50 : 104, 718, fy + 4);
 
 		// Description and wind on the right, "feels like" and high / low on the left.
 		rtext(true, fit(true, 39, 330, d[1]), fy, 712, d[1], c.ink);
@@ -198,14 +199,15 @@ public final class Screen {
 
 		float y0 = fy + 80;
 		// Both lines sit 15 units from the boxes above and under them.
+		// The precipitation box takes the whole row; the hour boxes after it still show the next one's edge.
+		chartFull = true;
 		drawNextHours(40, y0, 678, 264, false);
+		chartFull = false;
 		g.rect(40, y0 + 279, 678, 2, c.line);
-		drawDayCard(40, y0 + 296, 0, T.day1);
-		drawDayCard(387, y0 + 296, 1, T.day2);
-		drawDayCols(2, y0 + 508);
+		drawDayStrip(40, y0 + 296, 678);
 		// A line over the row of info boxes.
-		g.rect(40, y0 + 673, 678, 2, c.line);
-		drawInfoStrip(40, y0 + 690, 678, 184);
+		g.rect(40, y0 + 509, 678, 2, c.line);
+		drawInfoStrip(40, y0 + 526, 678, 184);
 		footer(fb);
 	}
 
@@ -574,7 +576,9 @@ public final class Screen {
 	}
 
 	// Measured temperature: size, minus, digits, unit.
-	private float tp, tMw, tWn, tGap, tWu, tU, tW;
+	private float tp, tMw, tWn, tGap, tWu, tU, tW, tD;
+	/** Size of the unit letter and of the "°" in hundredths of the digits' size (smaller when stacked). */
+	private int uPct = 43, dPct = 43;
 	private boolean tNeg;
 	private String tN;
 
@@ -584,7 +588,8 @@ public final class Screen {
 		if (tNeg) tN = tN.substring(1);
 		tp = px;
 		while (true) {
-			tU = tp * 43 / 100;
+			tU = tp * uPct / 100;
+			tD = tp * dPct / 100;
 			tWn = g.width(true, tp, tN);
 			tWu = g.width(true, tU, unitF ? "F" : "C");
 			tGap = tp / 25;
@@ -605,8 +610,38 @@ public final class Screen {
 		}
 		g.text(true, tp, base - tp * 81 / 100, x, tN, c.ink);
 		x += tWn + tGap;
-		g.text(true, tU, base - dh - tU * 17 / 100, x, "°", c.ink);
+		g.text(true, tD, base - dh - tD * 17 / 100, x, "°", c.ink);
 		g.text(true, tU, base - tU * 81 / 100, x, unitF ? "F" : "C", c.ink);
+	}
+
+	/**
+	 * Portrait: the icon on top and the temperature under it, both centred across, the two
+	 * together centred between TOP and BOT; smaller when they do not fit.
+	 */
+	private void drawNowStack(String icon, float l, float top, float r, float bot) {
+		float y0 = 0, y1 = 200;
+		for (String c : CENTRE) {
+			String[] p = c.split(" ");
+			if (p[0].equals(icon)) { y0 = Float.parseFloat(p[2]); y1 = Float.parseFloat(p[4]); }
+		}
+		uPct = 34;
+		dPct = 27;
+		float s = 400, px = 348, room = bot - top - 40, cx = (l + r) / 2;
+		while (true) {
+			tempSize(px, r - l - 40);
+			float tot = s * (y1 - y0) / 200 + tp * 15 / 100 + tp * 64 / 100;
+			if (tot <= room || s < 120) break;
+			s = s * 94 / 100;
+			px = px * 94 / 100;
+		}
+		float ih = s * (y1 - y0) / 200, gap = tp * 15 / 100, dh = tp * 64 / 100, tot = ih + gap + dh;
+		float bt = top + 20 + (room - tot) / 2;
+		icLeft = l; icRight = r; icPct = 100; icTop = top;
+		drawIconC(icon, cx, bt + ih / 2, s, ih / 2 + 1, r - l);
+		icTop = 0;
+		drawTempAt(cx - tW / 2, bt + ih + gap + dh);
+		uPct = 43;
+		dPct = 43;
 	}
 
 	/** No warnings: the temperature right-aligned on the middle, the icon centred in the right half. */
@@ -720,9 +755,9 @@ public final class Screen {
 	private void drawPrecipBox(float pl, float pt, float pw, float ph, float phd) {
 		boolean snow = w.snowMaj || ((w.wetNow() || w.precip > 0) && Weather.snowCode(w.code));
 		box(pl, pt, pw, ph, phd);
-		String ttl = (snow ? T.snowUp : T.rainUp) + " · " + T.next12;
+		String ttl = T.precipUp + " · " + T.next12;
 		// In a narrow box a short title, so it stays readable.
-		if (fit(true, (phd - 4) * 76 / 100, pw - 41, ttl) < 26) ttl = (snow ? T.snowUp : T.rainUp) + " · 12 " + (T.en ? "H" : "ORE");
+		if (fit(true, (phd - 4) * 76 / 100, pw - 41, ttl) < 26) ttl = T.precipUp + " · 12 " + (T.en ? "H" : "ORE");
 		head(pt, phd, pl + pw / 2, pw - 40, ttl, 0);
 		String rt = rainText(), mx = T.max + " " + w.rainMaxP + "%";
 		float room = pw - 42 - g.width(false, 29, mx) - 16;
@@ -797,6 +832,28 @@ public final class Screen {
 		ltext(true, hp, top + 51 + (93 - hp) * 81 / 100, gx + 84, hi, c.ink);
 		ltext(false, lp, top + 90 + (47 - lp) * 81 / 100, gx + 84 + wh + 4, lo, c.dim);
 		ctext(false, fit(false, 30, 310, d[1]), top + 160, left + 165, d[1], c.ink);
+	}
+
+	/**
+	 * Portrait: tomorrow and the next four days as boxes of one size, two at a time with no edge
+	 * of the next one; the others come in by dragging the row sideways.
+	 */
+	private void drawDayStrip(float x, float top, float wd) {
+		int n = Math.min(5, w.dayDates.size());
+		days.area[2] = 0;
+		if (n == 0) return;
+		float gap = 16, dw = (wd - gap) / 2, step = dw + gap, h = 198;
+		float[] starts = new float[n];
+		for (int k = 0; k < n; k++) starts[k] = k * step;
+		days.set(starts, n * step - gap - wd);
+		days.area[0] = x; days.area[1] = top; days.area[2] = wd; days.area[3] = h;
+		g.clip(x - 2, top - 2, wd + 4, h + 4);
+		for (int k = 0; k < n; k++) {
+			float bx = x + k * step - days.scroll;
+			if (bx + dw < x - 4 || bx > x + wd + 4) continue;
+			drawDayCard(bx, top, k, k == 0 ? T.day1 : k == 1 ? T.day2 : T.weekdayUp(w.dayDates.get(k), true));
+		}
+		g.unclip();
 	}
 
 	/** Three more days: weekday and date, icon, high / low, chance of rain. */

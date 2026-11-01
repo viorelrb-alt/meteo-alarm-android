@@ -6,7 +6,7 @@ import java.util.Calendar;
 public final class Texts {
 	public final boolean en;
 	public String until, now, rain, rainFrom, max, snow, snowFrom, rainW, snowW, updated, noData, loading, updating;
-	public String feels, wind, hi, lo, charging, warnCode, day1, day2, next12, nowMark, rainUp, snowUp;
+	public String feels, wind, hi, lo, charging, warnCode, day1, day2, next12, nowMark, rainUp, snowUp, precipUp;
 	public String hoursUp, legSnow, legRain, legDry, pop, sun, uvT, pollen, sunrise, sunset, noPollen, noData2, noPrecip;
 	public String[] warn, uvLv, polLv;
 
@@ -17,7 +17,7 @@ public final class Texts {
 			rainW = "Raining"; snowW = "Snowing"; updated = "updated"; noData = "no data since"; loading = "Loading weather…";
 			updating = "updating…"; feels = "Feels like"; wind = "Wind"; hi = "High"; lo = "Low"; charging = "Charging";
 			warn = new String[] { "YELLOW", "ORANGE", "RED" }; warnCode = "WARNING"; day1 = "TOMORROW"; day2 = "DAY AFTER";
-			next12 = "NEXT 12 HOURS"; hoursUp = "WEATHER · NEXT HOURS"; nowMark = "now"; rainUp = "RAIN"; snowUp = "SNOW"; legSnow = "snow"; legRain = "rain";
+			next12 = "NEXT 12 HOURS"; hoursUp = "WEATHER · NEXT HOURS"; nowMark = "now"; rainUp = "RAIN"; snowUp = "SNOW"; precipUp = "PRECIPITATION"; legSnow = "snow"; legRain = "rain";
 			legDry = "no precipitation"; pop = "rain"; sun = "SUN"; uvT = "UV INDEX"; pollen = "POLLEN"; sunrise = "Sunrise";
 			sunset = "Sunset"; uvLv = new String[] { "Low", "Moderate", "High", "Very high", "Extreme" };
 			polLv = new String[] { "Low", "Moderate", "High", "Very high" }; noPollen = "no pollen"; noData2 = "no data";
@@ -27,7 +27,7 @@ public final class Texts {
 			snowFrom = "Ninsoare de la"; rainW = "Plouă"; snowW = "Ninge"; updated = "actualizat"; noData = "fără date din";
 			loading = "Se descarcă vremea…"; updating = "se actualizează…"; feels = "Resimțit"; wind = "Vânt"; hi = "Max";
 			lo = "Min"; charging = "Se încarcă"; warn = new String[] { "GALBEN", "PORTOCALIU", "ROȘU" }; warnCode = "COD";
-			day1 = "MÂINE"; day2 = "POIMÂINE"; next12 = "URMĂTOARELE 12 ORE"; hoursUp = "VREMEA · URMĂTOARELE ORE"; nowMark = "acum"; rainUp = "PLOAIE";
+			day1 = "MÂINE"; day2 = "POIMÂINE"; next12 = "URMĂTOARELE 12 ORE"; hoursUp = "VREMEA · URMĂTOARELE ORE"; nowMark = "acum"; rainUp = "PLOAIE"; precipUp = "PRECIPITAȚII";
 			snowUp = "NINSOARE"; legSnow = "ninsoare"; legRain = "ploaie"; legDry = "fără precipitații"; pop = "ploaie";
 			sun = "SOARE"; uvT = "INDICE UV"; pollen = "POLEN"; sunrise = "Răsărit"; sunset = "Apus";
 			uvLv = new String[] { "Scăzut", "Moderat", "Ridicat", "Foarte ridicat", "Extrem" };
