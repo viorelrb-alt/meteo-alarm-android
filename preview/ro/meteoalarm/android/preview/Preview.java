@@ -168,6 +168,7 @@ public final class Preview {
 		if (opts.contains(" scroll1")) s.info.scroll = 231;
 		if (opts.contains(" scroll2")) s.info.scroll = 693;
 		if (opts.contains(" scroll3")) { s.info.scroll = 5000; s.grid.scroll = 5000; s.days.scroll = 5000; };
+		if (opts.contains(" cloudy")) { s.w.code = 3; s.w.isDay = true; }
 		if (opts.contains(" days2")) s.days.scroll = 5000;
 		if (opts.contains(" evening")) s.now.set(Calendar.HOUR_OF_DAY, 22);
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";

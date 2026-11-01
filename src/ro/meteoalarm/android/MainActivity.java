@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.60";
+	static final String VERSION = "Meteo Alarm Android v1.70";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
@@ -1152,8 +1152,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
 		help.section(en ? "Home-screen widget" : "Widget pe ecranul de pornire");
 		help.entry(mini("refresh"), en ? "Meteo Alarm widget" : "Widgetul Meteo Alarm", en
-				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm. It shows the weather icon, the temperature, the next sunset or sunrise and the town, on the wallpaper. It follows the town, °C/°F and language of the app and refreshes by itself every 30 minutes; a tap opens the app."
-				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm. Arată iconul vremii, temperatura, următorul apus sau răsărit și localitatea, direct pe imaginea de fundal. Urmează localitatea, °C/°F și limba din aplicație și se reîmprospătează singur la 30 de minute; o atingere deschide aplicația.");
+				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm. It shows the weather icon, the temperature, the town and the next sunset or sunrise, on the wallpaper. Hold it and drag its edges to resize it: square (2x2), a low strip (4x1, also with the sky) or wide (4x2, also with high / low and the next 5 hours). With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. It follows the town, °C/°F and language of the app and refreshes by itself every 30 minutes; a tap opens the app."
+				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm. Arată iconul vremii, temperatura, localitatea și următorul apus sau răsărit, direct pe imaginea de fundal. Ține-l apăsat și trage de margini ca să-l redimensionezi: pătrat (2x2), bandă joasă (4x1, cu descrierea cerului) sau lat (4x2, cu Max / Min și următoarele 5 ore). Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. Urmează localitatea, °C/°F și limba din aplicație și se reîmprospătează singur la 30 de minute; o atingere deschide aplicația.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
 		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather and the warnings now." : "Descarcă acum vremea și avertizările.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");

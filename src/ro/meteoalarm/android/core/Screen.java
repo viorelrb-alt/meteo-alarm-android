@@ -188,7 +188,7 @@ public final class Screen {
 		float fy = nowBot - 4;
 		float top = drawWarnBoxes(40, 146, 678, 2, 1);
 		String[] d = T.describe(w.code, w.isDay);
-		drawNowStack(d[0], 40, top > 0 ? top - 50 : 104, 718, fy + 4);
+		drawNowStack(d[0], 40, top > 0 ? top + 10 : 104, 718, fy + 4);
 
 		// Description and wind on the right, "feels like" and high / low on the left.
 		rtext(true, fit(true, 39, 330, d[1]), fy, 712, d[1], c.ink);
@@ -636,7 +636,8 @@ public final class Screen {
 		}
 		float ih = s * (y1 - y0) / 200, gap = tp * 15 / 100, dh = tp * 64 / 100, tot = ih + gap + dh;
 		float bt = top + 20 + (room - tot) / 2;
-		icLeft = l; icRight = r; icPct = 100; icTop = top;
+		// The drawing itself starts at BT; no clamp on the file's top (its drawing may sit low in it).
+		icLeft = l; icRight = r; icPct = 100; icTop = -100000;
 		drawIconC(icon, cx, bt + ih / 2, s, ih / 2 + 1, r - l);
 		icTop = 0;
 		drawTempAt(cx - tW / 2, bt + ih + gap + dh);

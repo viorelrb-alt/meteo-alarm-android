@@ -1,3 +1,9 @@
+v1.70 · 1 November 2026
+- New widget, after Viorel's mockups, that changes with its size (hold it and drag its edges): square 2x2 (big icon on top, town and sunset at the right, big temperature below), strip 4x1 (icon and temperature at the left; town, sky and sunset at the right) and wide 4x2 (also high / low and the next 5 hours).
+- Warnings show in the widget too: a "WARNING!" row with three pills coloured by the codes; gone when there are none.
+- Fixed: in portrait, with a warning, the icon no longer covers the temperature; both get smaller to fit.
+- Help updated.
+
 v1.60 · 1 November 2026
 - Portrait screen, after Viorel's mockup: the weather icon on top and the temperature under it, larger, centred across and up-down.
 - Five-day forecast: tomorrow and the next 4 days in boxes of one size, two on the screen; drag the row for the others.
