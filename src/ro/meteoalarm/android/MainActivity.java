@@ -203,6 +203,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Cities.City c = Cities.City.fromKey(prefs.getString("city", ""));
 		if (c == null) c = cities.find("Călărași");
 		if (c == null) c = new Cities.City("Călărași", "Călărași", 44.2058, 27.3306);
+		// Keep the town shown even when it was never picked, so the widget finds it too.
+		if (prefs.getString("city", "").length() == 0) prefs.edit().putString("city", c.key()).apply();
 		s.city = c;
 		s.district = c.key().equals(prefs.getString("districtOf", "")) ? prefs.getString("district", "") : "";
 		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
@@ -216,6 +218,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.sensorTheme = theme.equals("sensor");
 		barColours();
 		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
+		hideBars();
 		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		else if (!s.nightClock) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -804,11 +807,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (focus) hideBars();
 	}
 
-	/** Full screen like the Kindle: status and navigation bars hidden until a swipe from the edge. */
+	/**
+	 * The status bar hidden like on the Kindle; the phone's navigation (the three buttons or the
+	 * gesture line) stays visible and the screen is fitted above it, in the page's colour.
+	 */
 	private void hideBars() {
-		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN
-				| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-				| View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+		if (view == null) return;
+		// 0x10 = SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR (Android 8+): dark buttons on the light page.
+		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | (s.dark ? 0 : 0x10));
+		getWindow().setNavigationBarColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
 	}
 
 	// --- Data --------------------------------------------------------------------------

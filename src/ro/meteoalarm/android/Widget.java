@@ -41,7 +41,8 @@ public final class Widget extends AppWidgetProvider {
 		show(ctx);
 		final SharedPreferences prefs = ctx.getSharedPreferences("settings", Context.MODE_PRIVATE);
 		if (System.currentTimeMillis() - newest(prefs) < FRESH_MS) return;
-		final Cities.City c = Cities.City.fromKey(prefs.getString("city", ""));
+		Cities.City pc = Cities.City.fromKey(prefs.getString("city", "")), cached = Cities.City.fromKey(prefs.getString("cacheCity", ""));
+		final Cities.City c = pc != null ? pc : cached;
 		if (c == null) return;
 		final PendingResult done = goAsync();
 		new Thread(new Runnable() {
@@ -66,6 +67,8 @@ public final class Widget extends AppWidgetProvider {
 	/** When the newest weather on the phone (the app's or the widget's own) was fetched. */
 	private static long newest(SharedPreferences p) {
 		String city = p.getString("city", "");
+		Cities.City c = Cities.City.fromKey(city), cached = Cities.City.fromKey(p.getString("cacheCity", ""));
+		if (cached != null && (c == null || cached.same(c))) city = cached.key();
 		long a = city.equals(p.getString("cacheCity", "")) ? p.getLong("fetched", 0) : 0;
 		long b = city.equals(p.getString("widgetCity", "")) ? p.getLong("widgetFetched", 0) : 0;
 		return Math.max(a, b);
@@ -102,6 +105,10 @@ public final class Widget extends AppWidgetProvider {
 		d.clk12 = p.getBoolean("clk12", false);
 		d.T = new Texts(d.en);
 		d.c = Cities.City.fromKey(p.getString("city", ""));
+		// The town the app last downloaded the weather for, when it is the same place (or no town
+		// was ever picked: the app then shows its default town, which is not saved).
+		Cities.City cached = Cities.City.fromKey(p.getString("cacheCity", ""));
+		if (cached != null && (d.c == null || cached.same(d.c))) d.c = cached;
 		String city = d.c != null ? d.c.key() : "";
 		boolean own = city.equals(p.getString("widgetCity", ""))
 				&& (!city.equals(p.getString("cacheCity", "")) || p.getLong("widgetFetched", 0) > p.getLong("fetched", 0));
