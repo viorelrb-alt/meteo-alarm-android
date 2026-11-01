@@ -1,3 +1,7 @@
+v1.71 · 1 November 2026
+- Fixed: the widget showed "--°" and "Open the app" on phones where no town was ever picked; it now uses the town the app downloaded the weather for.
+- The Android buttons at the bottom (the three buttons or the gesture line) stay visible, in the app's colour, and the screen fits above them. Only the top bar stays hidden.
+
 v1.70 · 1 November 2026
 - New widget, after Viorel's mockups, that changes with its size (hold it and drag its edges): square 2x2 (big icon on top, town and sunset at the right, big temperature below), strip 4x1 (icon and temperature at the left; town, sky and sunset at the right) and wide 4x2 (also high / low and the next 5 hours).
 - Warnings show in the widget too: a "WARNING!" row with three pills coloured by the codes; gone when there are none.

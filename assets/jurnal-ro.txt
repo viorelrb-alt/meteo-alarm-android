@@ -1,3 +1,7 @@
+v1.71 · 1 noiembrie 2026
+- Reparat: widget-ul arăta „--°” și „Deschide aplicația” pe telefoanele unde nu s-a ales niciodată o localitate; acum folosește localitatea pentru care aplicația a descărcat vremea.
+- Butoanele Android de jos (cele 3 butoane sau linia de gesturi) rămân vizibile, în culoarea aplicației, iar ecranul se potrivește deasupra lor. Doar bara de sus rămâne ascunsă.
+
 v1.70 · 1 noiembrie 2026
 - Widget nou, după machetele lui Viorel, care își schimbă aspectul după mărime (ține-l apăsat și trage de margini): pătrat 2x2 (icon mare sus, localitatea și apusul în dreapta, temperatura mare jos), bandă 4x1 (icon și temperatură în stânga; localitate, cer și apus în dreapta) și lat 4x2 (în plus Max / Min și următoarele 5 ore).
 - Avertizările apar și în widget: rândul „AVERTIZARE!” cu trei pastile colorate după coduri; dispare când nu sunt avertizări.

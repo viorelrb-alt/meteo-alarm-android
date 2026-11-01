@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.70";
+	static final String VERSION = "Meteo Alarm Android v1.71";
 	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
 
 	private WeatherView view;
