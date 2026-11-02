@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.80";
+	static final String VERSION = "Meteo Alarm Android v1.90";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -85,8 +85,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private final BroadcastReceiver battery = new BroadcastReceiver() {
 		public void onReceive(Context ctx, Intent i) {
 			int lvl = i.getIntExtra(BatteryManager.EXTRA_LEVEL, -1), sc = i.getIntExtra(BatteryManager.EXTRA_SCALE, 100);
+			int was = s.batt;
+			boolean wasCh = s.charging;
 			s.batt = lvl < 0 ? -1 : lvl * 100 / Math.max(1, sc);
 			s.charging = i.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
+			if (wasCh != s.charging || was / 5 != s.batt / 5)
+				Log.i(MainActivity.this, "BATERIE", s.batt + "%" + (s.charging ? ", se încarcă" : ""));
 			checkNight();
 			view.invalidate();
 		}
@@ -95,6 +99,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onCreate(Bundle b) {
 		super.onCreate(b);
+		Log.i(this, "APP", "pornită " + VERSION + " · " + Log.device() + " · Android " + android.os.Build.VERSION.RELEASE);
 		prefs = getSharedPreferences("settings", MODE_PRIVATE);
 		view = new WeatherView(this, this);
 		s = view.screen;
@@ -295,6 +300,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Sensor sn = sensors == null ? null : sensors.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
 		if (sn == null || on == compassOn) return;
 		compassOn = on;
+		Log.i(this, "SENZOR", "busola " + (on ? "pornită" : "oprită"));
 		if (on) sensors.registerListener(compass, sn, SensorManager.SENSOR_DELAY_UI);
 		else sensors.unregisterListener(compass);
 	}
@@ -348,6 +354,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** Night clock on: the screen dim and kept on; off: the brightness and the screen setting as before. */
 	private void setNight(boolean on) {
 		s.nightClock = on;
+		Log.i(this, "NOAPTE", "ceasul de noapte " + (on ? "pornit" : "oprit"));
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		if (on) {
 			lp.screenBrightness = Math.min(0.03f, prefs.getFloat("bright", 1));
@@ -365,6 +372,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private static final long LIGHT_HOLD_MS = 1500;
 	private SensorManager sensors;
 	private boolean resumed, roomDark, lightOn, lightFirst, lightWant;
+	private float lastLux;
 
 	/**
 	 * Applies the room's state once it has held for LIGHT_HOLD_MS. A timer, not the next reading:
@@ -374,6 +382,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		public void run() {
 			if (lightWant == roomDark) return;
 			roomDark = lightWant;
+			Log.i(MainActivity.this, "SENZOR", "lumina: camera " + (roomDark ? "întunecată -> tema întunecată" : "luminată -> tema luminoasă") + " (" + Math.round(lastLux) + " lux)");
 			applySettings();
 			view.invalidate();
 		}
@@ -382,6 +391,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private final SensorEventListener light = new SensorEventListener() {
 		public void onSensorChanged(SensorEvent e) {
 			float lux = e.values[0];
+			lastLux = lux;
 			// Light: the light theme; dark: the dark theme.
 			boolean want = lux < DARK_LUX ? true : lux > LIGHT_LUX ? false : lightWant;
 			// The first reading counts at once (the room is as it is when the app opens).
@@ -407,6 +417,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Sensor sn = sensors == null ? null : sensors.getDefaultSensor(Sensor.TYPE_LIGHT);
 		if (sn == null || on == lightOn) return;
 		lightOn = on;
+		Log.i(this, "SENZOR", "senzorul de lumină " + (on ? "pornit" : "oprit"));
 		lightFirst = true;
 		lightWant = roomDark;
 		handler.removeCallbacks(lightApply);
@@ -471,7 +482,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		WindowManager.LayoutParams lp = getWindow().getAttributes();
 		lp.screenBrightness = b;
 		getWindow().setAttributes(lp);
-		if (save) prefs.edit().putFloat("bright", b).apply();
+		if (save) {
+			prefs.edit().putFloat("bright", b).apply();
+			Log.i(this, "GEST", "luminozitate " + Math.round(b * 100) + "%");
+		}
 	}
 
 	/** The button next to the sun: the automatic theme (phone sensor), on or off. */
@@ -481,6 +495,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			return;
 		}
 		boolean on = !"sensor".equals(prefs.getString("theme", "auto"));
+		Log.i(this, "BUTON", "temă automată (senzor) " + (on ? "pornită" : "oprită"));
 		// Off: the theme stays as it is now, chosen by hand.
 		prefs.edit().putString("theme", on ? "sensor" : s.dark ? "dark" : "light").apply();
 		applySettings();
@@ -491,6 +506,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The moon button over the brightness bar: dark or light theme, chosen by hand. */
 	public void toggleTheme() {
+		Log.i(this, "BUTON", "temă " + (s.dark ? "luminoasă" : "întunecată"));
 		prefs.edit().putString("theme", s.dark ? "light" : "dark").apply();
 		applySettings();
 		note(s.dark ? (s.T.en ? "Dark theme" : "Tema întunecată") : (s.T.en ? "Light theme" : "Tema luminoasă"));
@@ -500,6 +516,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		Log.i(this, "APP", "pe ecran");
 		resumed = true;
 		onScreen = true;
 		listenLight("sensor".equals(prefs.getString("theme", "auto")));
@@ -585,6 +602,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	public void onBright() {
+		Log.i(this, "BUTON", "luminozitate (soare)");
 		note(s.T.en ? "Brightness: slide on the bar" : "Luminozitate: glisează pe bară");
 	}
 
@@ -593,6 +611,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** A tap on box K of the warnings row: its details in a bubble, in larger letters (the row waits 20 s). */
 	public void onAlert(final int k, final float[] b) {
+		Log.i(this, "GEST", "atingere casetă avertizare " + (k + 1) + " din " + s.alertCount());
 		reopen = new Runnable() {
 			public void run() {
 				if (k < s.alertCount()) onAlert(k, s.alertRect(k));
@@ -617,6 +636,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * stays as it is.
 	 */
 	public void onTownName() {
+		Log.i(this, "GEST", "atingere nume localitate (o căutare GPS)");
 		if (!Locator.allowed(this)) {
 			askLocation();
 			return;
@@ -630,6 +650,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * filled) and a look now; on -> off (the button empty).
 	 */
 	public void onLocate() {
+		Log.i(this, "BUTON", "localizare");
 		noteTop = false;
 		boolean en = s.T.en;
 		if (autoLoc()) {
@@ -657,6 +678,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		locator.locate(new Locator.Result() {
 			public void found(double lat, double lon, String town, String rawCounty, String district, String country, String match) {
 				s.locating = false;
+				Log.i(MainActivity.this, "LOC", "poziție găsită: " + town + ", " + rawCounty + ", " + country + " (" + Math.round(lat * 1000) / 1000.0 + ", " + Math.round(lon * 1000) / 1000.0 + ")");
 				boolean home = country.equals("ro");
 				String county = home ? cities.county(rawCounty) : rawCounty.trim();
 				if (county.length() == 0) county = town;
@@ -687,6 +709,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 			public void failed(String why) {
 				s.locating = false;
+				if (why.equals("busy")) Log.i(MainActivity.this, "LOC", "căutare deja în curs");
+				else Log.e(MainActivity.this, "LOC", "poziția nu a fost găsită: " + why);
 				noteTop = false;
 				view.invalidate();
 				if (!say || why.equals("busy")) return;
@@ -806,6 +830,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		Log.i(this, "APP", "în fundal");
 		onScreen = false;
 		// The weather keeps coming in the background (every 15 / 30 / 60 minutes, paused at night with the screen off).
 		Refresher.schedule(this);
@@ -894,6 +919,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.failReason = prefs.getString(s.T.en ? "failReasonEn" : "failReason", "");
 		} catch (Exception e) {
 			s.w = null;
+			Log.e(this, "DATE", "vremea salvată nu a putut fi citită", e);
 		}
 	}
 
@@ -901,6 +927,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (fetching) return;
 		fetching = true;
 		lastTry = System.currentTimeMillis();
+		Log.i(this, "DATE", "descarc vremea pentru " + s.city.label());
 		s.busy = true;
 		view.invalidate();
 		final Cities.City c = s.city;
@@ -972,6 +999,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	public void onRefresh() {
+		Log.i(this, "GEST", "reîmprospătare cerută");
 		note(s.T.en ? "Updating the weather…" : "Actualizez vremea…");
 		fetch();
 	}
@@ -1000,6 +1028,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 
 	public void onMenu() {
+		Log.i(this, "BUTON", "meniu ☰");
 		reopen = new Runnable() {
 			public void run() {
 				onMenu();
@@ -1022,6 +1051,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: (en ? "Night clock ON" : "Ceas noapte ON"), "night"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
 		ids.add("widget"); rows.add(row(en ? "Widgets" : "Widget-uri", "widget"));
+		ids.add("log"); rows.add(row(en ? "Log" : "Jurnal", "log"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
 		ids.add("about"); rows.add(row(en ? "About" : "Despre", "about"));
@@ -1029,6 +1059,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			public void picked(int k) {
 				SharedPreferences.Editor e = prefs.edit();
 				String it = ids.get(k);
+				Log.i(MainActivity.this, "MENIU", it);
 				String msg = null;
 				long ms = 1500;
 				if (it.equals("refresh")) { onRefresh(); return; }
@@ -1050,6 +1081,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					return;
 				} else if (it.equals("update")) { updater.check(true); return; }
 				else if (it.equals("widget")) { startActivity(new Intent(MainActivity.this, WidgetConfig.class)); return; }
+				else if (it.equals("log")) { startActivity(new Intent(MainActivity.this, LogActivity.class)); return; }
 				else if (it.equals("help")) { help(); return; }
 				else if (it.equals("night")) {
 					boolean on = !prefs.getBoolean("nightClock", true);
@@ -1133,8 +1165,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
 		help.section(en ? "Home-screen widgets" : "Widget-uri pe ecranul de pornire");
 		help.entry(mini("widget"), en ? "Meteo Alarm widgets" : "Widget-urile Meteo Alarm", en
-				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: there are four, each with its own preview: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky), 4x2 (wide, also with high / low and the next 5 hours) and \"any size\", which picks one of the three by its width. When you put one on the screen, the widget settings open (see ☰ › Widgets). With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. They follow the town, °C/°F and language of the app; a tap opens the app."
-				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: sunt patru, fiecare cu imaginea lui: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului), 4x2 (lat, și cu Max / Min și următoarele 5 ore) și „orice mărime”, care alege una dintre cele trei după lățime. Când pui unul pe ecran se deschid setările widget-urilor (vezi ☰ › Widget-uri). Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. Urmează localitatea, °C/°F și limba din aplicație; o atingere deschide aplicația.");
+				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and \"any size\", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours). Hold it and drag its edges: it always takes the layout that fits its new shape best and fills the frame (4x2 made one row high becomes 4x1, a square one becomes 2x2; a larger frame shows it larger). With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app."
+				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: 2x2, 4x1, 4x2 și „orice mărime”, fiecare cu imaginea lui; se pune direct pe ecran, fără fereastră de setări. Sunt trei modele: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului) și 4x2 (lat, și cu Max / Min și următoarele 5 ore). Ține-l apăsat și trage de margini: ia mereu modelul care se potrivește cel mai bine cu noua formă și umple rama (4x2 strâns la un rând devine 4x1, unul pătrat devine 2x2; o ramă mai mare îl arată mai mare). Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. O atingere deschide aplicația.");
+		help.entry(mini("widget"), en ? "Widget settings" : "Setările widget-ului", en
+				? "Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save."
+				: "Ține apăsat pe widget › Setări (Android 12 și mai nou) sau ☰ › Widget-uri. Fiecare widget are setările lui: previzualizare; localitatea (ca în aplicație sau alta, cu Schimbare); Fundal pornit / oprit și cât de transparent; Culori: după vreme (cer albastru, albastru de noapte, gri pentru nori, ploaie, zăpadă, furtună, ceață), potrivite cu setările telefonului sau închise; Culoare font: automat (negru pe fundal deschis), alb sau negru. Anulare sau Salvare.");
 		help.entry(mini("refresh"), en ? "Refreshing by itself" : "Reîmprospătare automată", en
 				? "The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line \"! no data since …\" under the clock say why (no internet, the server did not answer, secure connection error, server error…)."
 				: "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă. Când descărcarea eșuează, o notificare și rândul „! fără date din …” de sub ceas spun de ce (fără internet, serverul nu a răspuns, eroare conexiune securizată, eroare server…).");
@@ -1150,8 +1185,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
 				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
 		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
-		help.entry(mini("widget"), en ? "Widgets" : "Widget-uri", en ? "The widget settings: the background's transparency, for all the widgets, with a preview (from fully see-through, on the wallpaper, to solid)."
-				: "Setările widget-urilor: transparența fundalului, pentru toate widget-urile, cu previzualizare (de la complet transparent, direct pe imaginea de fundal, până la opac).");
+		help.entry(mini("widget"), en ? "Widgets" : "Widget-uri", en ? "The settings of a widget on the home screen (with several, choose which first)."
+				: "Setările unui widget de pe ecranul de pornire (când sunt mai multe, alegi întâi care).");
+		help.entry(mini("log"), en ? "Log" : "Jurnal", en ? "Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone."
+				: "Tot ce a făcut aplicația, cu ora: senzorii, atingerile și gesturile, localizarea, descărcările de date (și de ce a eșuat una), reîmprospătările din fundal și widget-urile (mărimea dată de telefon, modelul arătat). Păstrează 5 zile, câte un fișier pe zi; erorile din zilele mai vechi rămân încă 10 zile în rubrica Erori. Sus: telefonul (model, Android, One UI) și versiunea aplicației. Îl citești aici, îl Trimiți (WhatsApp, Drive, e-mail…) sau îl Salvezi pe telefon.");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
 				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
@@ -1212,6 +1249,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * screen high; the rows scroll.
 	 */
 	public void onCity(final float[] b) {
+		Log.i(this, "BUTON", "localitate");
 		reopen = new Runnable() {
 			public void run() {
 				onCity(b);
@@ -1308,6 +1346,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The shown town, kept in the settings and first among the favourites (the last three). */
 	private void setCity(Cities.City c, boolean clear) {
+		Log.i(this, "LOC", "localitatea: " + c.label() + " (" + c.lat + ", " + c.lon + ")");
 		StringBuilder favs = new StringBuilder(c.key());
 		int n = 1;
 		for (String k : prefs.getString("favs", "").split("\n")) {

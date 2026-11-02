@@ -29,13 +29,23 @@ public final class Refresher extends BroadcastReceiver {
 	@Override
 	public void onReceive(final Context ctx, Intent intent) {
 		final Context app = ctx.getApplicationContext();
+		final String act = intent == null || intent.getAction() == null ? "widget" : intent.getAction();
+		// After an update of the app: the widgets already on the screen were set up long ago (the
+		// settings screen must not take them for new ones).
+		if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(act)) {
+			SharedPreferences.Editor e = Fetcher.prefs(app).edit();
+			for (int id : Widget.all(app).keySet()) e.putBoolean("w" + id + "_seen", true);
+			e.apply();
+			Log.i(app, "APP", "aplicația a fost actualizată la " + MainActivity.VERSION);
+		}
+		if (Intent.ACTION_BOOT_COMPLETED.equals(act)) Log.i(app, "APP", "telefonul a pornit");
 		final PendingResult done = goAsync();
 		new Thread(new Runnable() {
 			public void run() {
 				try {
-					refresh(app);
+					refresh(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
 				} catch (Exception e) {
-					// try again at the next alarm
+					Log.e(app, "FUNDAL", "reîmprospătare", e);
 				} finally {
 					schedule(app);
 					done.finish();
@@ -81,20 +91,50 @@ public final class Refresher extends BroadcastReceiver {
 	}
 
 	/** Downloads everything for the town shown, if it is due and the app is not open. */
-	private static void refresh(Context ctx) {
-		if (MainActivity.onScreen) return;
-		long every = every(state(ctx));
-		if (every == 0) return;
+	private static void refresh(Context ctx, String why) {
+		boolean[] st = state(ctx);
+		long every = every(st);
+		String state = (st[0] ? "ecran aprins" : "ecran stins") + (st[1] ? ", baterie sub 25%" : "") + (st[2] ? ", noapte" : ", zi");
+		if (MainActivity.onScreen) {
+			Log.i(ctx, "FUNDAL", why + " · " + state + " · aplicația e deschisă, se ocupă ea");
+			return;
+		}
+		if (every == 0) {
+			Log.i(ctx, "FUNDAL", why + " · " + state + " · pauză până se aprinde ecranul");
+			return;
+		}
 		SharedPreferences p = Fetcher.prefs(ctx);
 		Cities.City c = Cities.City.fromKey(p.getString("city", ""));
 		if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
-		if (c == null) return;
-		long age = c.key().equals(p.getString("cacheCity", "")) ? System.currentTimeMillis() - p.getLong("fetched", 0) : Long.MAX_VALUE;
-		// A minute early is on time (the alarms are not exact).
-		if (age < every - 60000L) return;
-		Fetcher.Result r = Fetcher.download(ctx, c);
-		Fetcher.save(ctx, c, r);
+		if (c != null) {
+			long age = c.key().equals(p.getString("cacheCity", "")) ? System.currentTimeMillis() - p.getLong("fetched", 0) : Long.MAX_VALUE;
+			// A minute early is on time (the alarms are not exact).
+			if (age < every - 60000L) Log.i(ctx, "FUNDAL", why + " · " + state + " · vremea are " + age / 60000 + " min, următoarea la " + every / 60000 + " min");
+			else {
+				Log.i(ctx, "FUNDAL", why + " · " + state + " · descarc pentru " + c.name);
+				Fetcher.Result r = Fetcher.download(ctx, c);
+				Fetcher.save(ctx, c, r);
+			}
+		}
+		// The widgets' own towns.
+		for (Cities.City o : Widget.ownTowns(ctx)) if (c == null || !o.same(c)) fetchTown(ctx, o, false);
 		Widget.show(ctx);
+	}
+
+	/** The forecast of a widget's own town, when older than 30 minutes (or NOW). */
+	static void fetchTown(Context ctx, Cities.City c, boolean now) {
+		SharedPreferences p = Fetcher.prefs(ctx);
+		String f = Widget.townFile(c);
+		if (!now && System.currentTimeMillis() - p.getLong(f, 0) < SCREEN_OFF_MS - 60000L) return;
+		try {
+			String json = Weather.get(Weather.forecastUrl(c.lat, c.lon, java.util.TimeZone.getDefault().getID()));
+			Weather.parse(json);
+			Fetcher.write(ctx, f, json);
+			p.edit().putLong(f, System.currentTimeMillis()).apply();
+			Log.i(ctx, "DATE", "widget: prognoza pentru " + c.name + " OK");
+		} catch (Exception e) {
+			Log.e(ctx, "DATE", "widget: prognoza pentru " + c.name + " a eșuat: " + Fetcher.reason(e, false));
+		}
 	}
 
 	/**
@@ -117,7 +157,7 @@ public final class Refresher extends BroadcastReceiver {
 				am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, Math.min(due, at + every), pi);
 			}
 		} catch (Exception e) {
-			// no alarms: the app and the widget still refresh by themselves
+			Log.e(ctx, "FUNDAL", "alarma nu a putut fi pusă", e);
 		}
 	}
 }

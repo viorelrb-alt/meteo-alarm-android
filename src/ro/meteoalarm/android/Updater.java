@@ -88,6 +88,8 @@ final class Updater {
 	private void checked(final Release r, String err, boolean manual) {
 		String cur = installed();
 		String t = en ? "Updates" : "Actualizări";
+		if (r == null) Log.e(a, "UPDATE", "verificarea actualizărilor a eșuat: " + err);
+		else Log.i(a, "UPDATE", "pe GitHub: v" + r.version + ", instalată v" + cur + (manual ? " (cerut)" : ""));
 		if (r == null) {
 			if (!manual) return;
 			if (err != null && err.contains("404")) sheet.show(t, en ? "No version published yet." : "Încă nu e publicată nicio versiune.", null, null, en ? "Close" : "Închide");

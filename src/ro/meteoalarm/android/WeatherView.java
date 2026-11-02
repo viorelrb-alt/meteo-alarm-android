@@ -79,6 +79,12 @@ final class WeatherView extends View {
 		}
 	};
 
+	private boolean slideLogged;
+
+	private String stripName(Strip st) {
+		return st == screen.hours ? "orele" : st == screen.days ? "cele 5 zile" : st == screen.info ? "casetele de jos" : st == screen.grid ? "grila de info" : st == screen.alerts ? "avertizări" : "rând";
+	}
+
 	/** Stops the row moving by itself for 20 s (a tap on a box, a finger on the row). */
 	void pauseRoll() {
 		rollPausedUntil = System.currentTimeMillis() + ROLL_PAUSE_MS;
@@ -255,6 +261,7 @@ final class WeatherView extends View {
 			pull = 0;
 			edge = !screen.brightBar && downX >= 12 * dp && downX <= 60 * dp;
 			sliding = false;
+			slideLogged = false;
 			barDown = screen.brightBar;
 			barDrag = false;
 			moonDown = false;
@@ -312,6 +319,7 @@ final class WeatherView extends View {
 				invalidate();
 			} else if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
 				dragging = false;
+				Log.i(getContext(), "GEST", "glisare pe " + stripName(drag));
 				vt.computeCurrentVelocity(1000);
 				settle(drag, -(drag.vertical ? vt.getYVelocity() : vt.getXVelocity()) / scale);
 				drag = null;
@@ -325,6 +333,10 @@ final class WeatherView extends View {
 				pos0 = screen.brightLevel;
 			}
 			if (sliding) {
+				if (!slideLogged) {
+					slideLogged = true;
+					Log.i(getContext(), "GEST", "marginea stângă: bara de luminozitate");
+				}
 				// The whole bar's length runs from the dimmest to the brightest.
 				if (screen.barArea[3] > 0) slide(dy);
 				return true;
@@ -360,6 +372,7 @@ final class WeatherView extends View {
 			pulling = false;
 			pull = 0;
 			invalidate();
+			Log.i(getContext(), "GEST", "tras în jos" + (go ? ": reîmprospătare" : ", eliberat prea devreme"));
 			if (go) taps.onRefresh();
 			return true;
 		}

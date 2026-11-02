@@ -1,3 +1,11 @@
+v1.90 · 2 November 2026
+- New log (☰ › Log): everything the app does, with the time (sensors, taps and gestures, location, downloads and why one failed, background refreshes, widgets). It keeps 5 days; the errors of older days stay 10 more days. At the top: the phone (model, Android, One UI). Read it, share it (WhatsApp, Drive, e-mail…) or save it on the phone.
+- The widgets scale proportionally: they always take the layout that fits the frame best (2x2, 4x1 or 4x2) and fill it, with no empty bands left or right. Dragging the edges moves from one layout to another; a larger frame shows the widget larger.
+- Settings for each widget, like the Samsung weather widget: preview, town (with Change), background on / off and how see-through, colours and text colour, Cancel / Save. Hold the widget › Settings (Android 12+) or ☰ › Widgets.
+- The background colours can follow the weather: blue sky by day, dark blue at night, gray for clouds, blue-gray for rain, light for snow, dark for storms.
+- Putting a widget on the screen no longer opens the settings window.
+- Help updated.
+
 v1.80 · 2 November 2026
 - The warnings are now one row. When there are more than fit, the row moves on by itself every 2 seconds and starts again from the first. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters.
 - New Earthquake box, first in the row: earthquakes of magnitude 3 or more in the last 24 hours in your country (from EMSC), with the magnitude, the time and how it was likely felt in your town. A tap shows all the details.

@@ -69,26 +69,33 @@ final class Fetcher {
 		try {
 			r.forecast = Weather.get(Weather.forecastUrl(c.lat, c.lon, tz));
 			Weather.parse(r.forecast);
+			Log.i(ctx, "DATE", "prognoza " + c.name + " OK " + r.forecast.length() / 1024 + " KB");
 		} catch (Exception e) {
 			r.forecast = null;
 			r.error = e;
+			Log.e(ctx, "DATE", "prognoza " + c.name + " a eșuat: " + reason(e, false), e);
 		}
 		try {
 			if (r.forecast != null) r.uv = Weather.get(Weather.uvUrl(c.lat, c.lon, tz));
 		} catch (Exception e) {
 			r.uv = null;
+			Log.e(ctx, "DATE", "UV a eșuat: " + reason(e, false));
 		}
 		try {
 			r.pollen = Weather.get(Weather.pollenUrl(c.lat, c.lon));
 		} catch (Exception e) {
 			r.pollen = null;
+			Log.e(ctx, "DATE", "polen / aer a eșuat: " + reason(e, false));
 		}
 		r.warn = warningsFeed(ctx, c.country);
+		if (r.warn == null) Log.e(ctx, "DATE", "avertizările MeteoAlarm (" + c.country + ") nu au venit");
+		else Log.i(ctx, "DATE", "avertizări MeteoAlarm OK " + r.warn.length() / 1024 + " KB");
 		try {
 			r.quake = Weather.get(Quakes.url(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
-			Quakes.parse(r.quake, "", c.lat, c.lon, System.currentTimeMillis());
+			Log.i(ctx, "DATE", "cutremure EMSC OK: " + Quakes.parse(r.quake, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis()).size() + " în țară în 24 h");
 		} catch (Exception e) {
 			r.quake = null;
+			Log.e(ctx, "DATE", "cutremure EMSC a eșuat: " + reason(e, false));
 		}
 		return r;
 	}

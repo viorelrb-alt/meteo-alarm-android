@@ -1679,6 +1679,11 @@ public final class Screen {
 				float nx = -dy / len * 2.2f, ny = dx / len * 2.2f;
 				g.poly(new float[] { xs[i] + nx, ys[i] + ny, xs[i + 1] + nx, ys[i + 1] + ny, xs[i + 1] - nx, ys[i + 1] - ny, xs[i] - nx, ys[i] - ny }, k);
 			}
+		} else if (which.equals("log")) {
+			// A page with lines.
+			g.roundRect(10, 4, 44, 56, 6, k);
+			g.roundRect(14, 8, 36, 48, 4, c.page);
+			for (int i = 0; i < 4; i++) g.rect(19, 16 + i * 10, i == 3 ? 16 : 26, 4, k);
 		} else if (which.equals("roll")) {
 			// Two boxes side by side with an arrow under them.
 			g.roundRect(4, 10, 26, 22, 4, k);

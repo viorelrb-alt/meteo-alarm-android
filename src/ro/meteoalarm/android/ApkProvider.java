@@ -11,7 +11,10 @@ import android.provider.OpenableColumns;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-/** Hands the downloaded update to the system installer (read only, with a granted permission). */
+/**
+ * Hands the downloaded update to the system installer, and the exported diary (Log) to the app the
+ * user shares it with (read only, with a granted permission).
+ */
 public final class ApkProvider extends ContentProvider {
 	static final String AUTHORITY = "ro.meteoalarm.android.update";
 	static final String NAME = "MeteoAlarmAndroid-update.apk";
@@ -26,6 +29,18 @@ public final class ApkProvider extends ContentProvider {
 		return Uri.parse("content://" + AUTHORITY + "/" + NAME);
 	}
 
+	/** The exported diary NAME (in the cache), shared as content://…/log/NAME. */
+	static Uri logUri(String name) {
+		return Uri.parse("content://" + AUTHORITY + "/log/" + name);
+	}
+
+	private File target(Uri uri) {
+		java.util.List<String> seg = uri.getPathSegments();
+		if (seg.size() == 2 && seg.get(0).equals("log") && seg.get(1).matches("[A-Za-z0-9._-]+\\.txt"))
+			return new File(new File(getContext().getCacheDir(), "log"), seg.get(1));
+		return file(getContext());
+	}
+
 	@Override
 	public boolean onCreate() {
 		return true;
@@ -33,18 +48,19 @@ public final class ApkProvider extends ContentProvider {
 
 	@Override
 	public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
-		return ParcelFileDescriptor.open(file(getContext()), ParcelFileDescriptor.MODE_READ_ONLY);
+		return ParcelFileDescriptor.open(target(uri), ParcelFileDescriptor.MODE_READ_ONLY);
 	}
 
 	@Override
 	public String getType(Uri uri) {
-		return "application/vnd.android.package-archive";
+		return target(uri).getName().endsWith(".txt") ? "text/plain" : "application/vnd.android.package-archive";
 	}
 
 	@Override
 	public Cursor query(Uri uri, String[] projection, String sel, String[] args, String sort) {
 		MatrixCursor c = new MatrixCursor(new String[] { OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE });
-		c.addRow(new Object[] { NAME, file(getContext()).length() });
+		File f = target(uri);
+		c.addRow(new Object[] { f.getName(), f.length() });
 		return c;
 	}
 

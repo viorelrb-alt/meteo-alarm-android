@@ -7,6 +7,10 @@
 set -e
 cd "$(dirname "$0")"
 SDK=${ANDROID_JAR:-/usr/lib/android-sdk/platforms/android-23/android.jar}
+# The resources are compiled against a newer platform (API 33) for the widget attributes of Android
+# 12+ (widgetFeatures reconfigurable / configuration_optional, targetCell*, maxResize*); the Java code
+# still against API 23. RES_JAR=path/to/android-33.jar (any API 33 android.jar of the SDK).
+RES_JAR=${RES_JAR:-$SDK}
 VER=$(sed -n 's/.*android:versionName="\([^"]*\)".*/\1/p' AndroidManifest.xml)
 OUT=build
 rm -rf "$OUT" && mkdir -p "$OUT/gen" "$OUT/classes"
@@ -18,12 +22,12 @@ if [ "$1" = preview ]; then
 	exit 0
 fi
 
-aapt package -f -M AndroidManifest.xml -S res -I "$SDK" -J "$OUT/gen" -m
+aapt package -f -M AndroidManifest.xml -S res -I "$RES_JAR" -J "$OUT/gen" -m
 javac -nowarn -encoding UTF-8 -source 8 -target 8 -bootclasspath "$SDK" -d "$OUT/classes" \
 	$(find src "$OUT/gen" -name '*.java')
 dalvik-exchange --dex --output="$OUT/classes.dex" "$OUT/classes"
 # resources.arsc stays uncompressed (required from targetSdk 30).
-aapt package -f -0 arsc -M AndroidManifest.xml -S res -A assets -I "$SDK" -F "$OUT/app.unsigned.apk"
+aapt package -f -0 arsc -M AndroidManifest.xml -S res -A assets -I "$RES_JAR" -F "$OUT/app.unsigned.apk"
 (cd "$OUT" && aapt add -f app.unsigned.apk classes.dex >/dev/null)
 zipalign -f -p 4 "$OUT/app.unsigned.apk" "$OUT/app.aligned.apk"
 # The signing key is not in the repository. Every version must be signed with the same key, or it
