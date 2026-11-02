@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Meteo Alarm widget 2x2. It starts at 2x2 cells; resized, it takes the layout closest to its frame's
-     shape (2x2, 4x1 or 4x2) and fills the frame. Settings: hold it › Settings (Android 12+), or ☰ › Widgets;
+     shape (2x2, 4x1 or 4x2; 2x1 when too small) and fills the frame. Height capped at about 2 rows (Android 12+). Settings: hold it › Settings (Android 12+), or ☰ › Widgets;
      not when it is put on the screen (configuration_optional, Android 13+). -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:minWidth="110dp"
     android:minHeight="110dp"
     android:targetCellWidth="2"
     android:targetCellHeight="2"
-    android:minResizeWidth="120dp"
-    android:minResizeHeight="60dp"
+    android:minResizeWidth="150dp"
+    android:minResizeHeight="80dp"
+    android:maxResizeHeight="280dp"
     android:updatePeriodMillis="1800000"
     android:initialLayout="@layout/widget"
     android:previewImage="@drawable/wprev_2x2"

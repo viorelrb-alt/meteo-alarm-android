@@ -107,9 +107,8 @@ public final class WidgetConfig extends Activity {
 		String[] names = new String[ids.size()];
 		for (int k = 0; k < ids.size(); k++) {
 			int[] f = Widget.frame(this, AppWidgetManager.getInstance(this), ids.get(k), new StringBuilder());
-			String[] model = { "2x2", "4x1", "4x2" };
 			Widget.Data d = Widget.data(this, Widget.Set.of(this, ids.get(k)).town);
-			names[k] = "Widget " + model[Widget.kind(f[0], f[1])] + " · " + (d.c != null ? d.c.name : "");
+			names[k] = "Widget " + Widget.NAMES[Widget.kind(f[0], f[1])] + " · " + (d.c != null ? d.c.name : "");
 		}
 		new AlertDialog.Builder(this, theme()).setTitle(en ? "Which widget?" : "Care widget?")
 				.setItems(names, new DialogInterface.OnClickListener() {

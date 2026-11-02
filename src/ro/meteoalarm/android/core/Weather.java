@@ -55,6 +55,11 @@ public final class Weather {
 	public final List<Integer> dayPop = new ArrayList<Integer>();
 
 	public static String forecastUrl(double lat, double lon, String tzId) throws Exception {
+		return forecastUrl(lat, lon, tzId, MODEL);
+	}
+
+	/** The forecast URL with MODEL (null or "" = Open-Meteo's own best mix of models). */
+	public static String forecastUrl(double lat, double lon, String tzId, String model) throws Exception {
 		return "https://api.open-meteo.com/v1/forecast?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
 				+ "&current=temperature_2m,weather_code,precipitation,is_day,cloud_cover,cloud_cover_low,"
 				+ "cloud_cover_mid,cloud_cover_high,apparent_temperature,wind_speed_10m,wind_direction_10m"
@@ -62,7 +67,7 @@ public final class Weather {
 				+ "&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max,"
 				+ "sunrise,sunset,uv_index_max"
 				+ "&forecast_days=6&forecast_hours=" + TILE_HOURS
-				+ "&timezone=" + URLEncoder.encode(tzId, "UTF-8") + "&models=" + MODEL;
+				+ "&timezone=" + URLEncoder.encode(tzId, "UTF-8") + (model == null || model.length() == 0 ? "" : "&models=" + model);
 	}
 
 	/**
@@ -131,7 +136,8 @@ public final class Weather {
 		c.setReadTimeout(30000);
 		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid/0.50 (github.com/viorelrb-alt/meteo-alarm-android)");
 		try {
-			if (c.getResponseCode() / 100 != 2) throw new Exception("HTTP " + c.getResponseCode());
+			int code = c.getResponseCode();
+			if (code / 100 != 2) throw new Exception("HTTP " + code + errorText(c));
 			InputStream in = c.getInputStream();
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			byte[] buf = new byte[16384];
@@ -142,6 +148,28 @@ public final class Weather {
 		} finally {
 			c.disconnect();
 		}
+	}
+
+	/** The start of the server's error answer (Open-Meteo says why in JSON "reason"), for the log. */
+	private static String errorText(HttpURLConnection c) {
+		try {
+			InputStream in = c.getErrorStream();
+			if (in == null) return "";
+			byte[] buf = new byte[400];
+			int n = in.read(buf);
+			in.close();
+			if (n <= 0) return "";
+			String t = new String(buf, 0, n, "UTF-8").replaceAll("\\s+", " ").trim();
+			return t.length() == 0 ? "" : " (" + (t.length() > 160 ? t.substring(0, 160) + "…" : t) + ")";
+		} catch (Exception e) {
+			return "";
+		}
+	}
+
+	/** True for answers worth asking again (server busy or down): HTTP 5xx and 429. */
+	public static boolean busy(Exception e) {
+		String m = e.getMessage() == null ? "" : e.getMessage();
+		return m.startsWith("HTTP 5") || m.startsWith("HTTP 429");
 	}
 
 	public static Weather parse(String text) {

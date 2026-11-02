@@ -40,7 +40,10 @@ final class Fetcher {
 		if (t instanceof javax.net.ssl.SSLException || t instanceof java.security.cert.CertificateException)
 			return (en ? "secure connection error: " : "eroare conexiune securizată: ") + t.getClass().getSimpleName();
 		if (t instanceof SecurityException) return en ? "internet not allowed for the app" : "internetul nu e permis aplicației";
-		if (m.startsWith("HTTP ")) return (en ? "server error " : "eroare server ") + m;
+		if (m.startsWith("HTTP ")) {
+			int sp = m.indexOf(' ', 5);
+			return (en ? "server error " : "eroare server ") + (sp > 0 ? m.substring(0, sp) : m);
+		}
 		if (t instanceof java.io.IOException) return (en ? "network error: " : "eroare rețea: ") + t.getClass().getSimpleName() + (m.length() > 0 && m.length() < 40 ? " " + m : "");
 		return (en ? "data error: " : "eroare date: ") + t.getClass().getSimpleName();
 	}
@@ -67,8 +70,7 @@ final class Fetcher {
 		Result r = new Result();
 		String tz = TimeZone.getDefault().getID();
 		try {
-			r.forecast = Weather.get(Weather.forecastUrl(c.lat, c.lon, tz));
-			Weather.parse(r.forecast);
+			r.forecast = forecast(ctx, c, tz);
 			Log.i(ctx, "DATE", "prognoza " + c.name + " OK " + r.forecast.length() / 1024 + " KB");
 		} catch (Exception e) {
 			r.forecast = null;
@@ -98,6 +100,30 @@ final class Fetcher {
 			Log.e(ctx, "DATE", "cutremure EMSC a eșuat: " + reason(e, false));
 		}
 		return r;
+	}
+
+	/**
+	 * The forecast for C (checked). When Open-Meteo answers "busy" (HTTP 503 and the like) for the
+	 * ICON model, as on 2026-11-02 on two phones, the same forecast is asked without a model
+	 * (Open-Meteo's own best mix), then once more 3 seconds later. Throws the first error if all fail.
+	 */
+	static String forecast(Context ctx, Cities.City c, String tz) throws Exception {
+		String[] models = { Weather.MODEL, "", "" };
+		Exception first = null;
+		for (int i = 0; i < models.length; i++) {
+			try {
+				if (i == 2 && Weather.busy(first)) Thread.sleep(3000);
+				String json = Weather.get(Weather.forecastUrl(c.lat, c.lon, tz, models[i]));
+				Weather.parse(json);
+				if (i > 0) Log.i(ctx, "DATE", "prognoza " + c.name + " venită la încercarea " + (i + 1) + " (fără modelul " + Weather.MODEL + ")");
+				return json;
+			} catch (Exception e) {
+				if (first == null) first = e;
+				Log.w(ctx, "DATE", "prognoza " + c.name + " încercarea " + (i + 1) + (models[i].length() > 0 ? " (" + models[i] + ")" : " (model implicit)") + ": " + e.getMessage());
+				if (e instanceof java.io.IOException) break; // no network: asking again will not help
+			}
+		}
+		throw first;
 	}
 
 	/**

@@ -1,3 +1,10 @@
+v1.91 · 2 November 2026
+- Fixed: when the Open-Meteo forecast server answers "busy" (HTTP 503, as on 2 November on the A54 and A70), the app asks for the forecast again at once without the ICON model (Open-Meteo's own mix of models), then once more 3 seconds later. The log notes each try and the server's answer.
+- Widgets: the layout is chosen by the frame's shape (wide and low = 4x1, wide = 4x2, square = 2x2), so a 3x2 or 4x2 frame no longer stays a zoomed 2x2. A layout is never shrunk below 80%; frames too small (for example 3x1) get a new small 2x1 layout with the icon and temperature. On Android 12+ the widget can no longer be made taller than about 2 rows.
+- Pulling down again and again no longer starts several downloads: while it downloads, or within 10 seconds of the last download, a notice says the weather was just updated (or just tried).
+- Log: the labels are aligned (e.g. "SENZOR busola"), warnings (W) are shown, and when and why the app closes is noted, to find the double start seen on the A54.
+- Help updated.
+
 v1.90 · 2 November 2026
 - New log (☰ › Log): everything the app does, with the time (sensors, taps and gestures, location, downloads and why one failed, background refreshes, widgets). It keeps 5 days; the errors of older days stay 10 more days. At the top: the phone (model, Android, One UI). Read it, share it (WhatsApp, Drive, e-mail…) or save it on the phone.
 - The widgets scale proportionally: they always take the layout that fits the frame best (2x2, 4x1 or 4x2) and fill it, with no empty bands left or right. Dragging the edges moves from one layout to another; a larger frame shows the widget larger.

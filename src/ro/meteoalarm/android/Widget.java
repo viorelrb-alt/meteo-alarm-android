@@ -273,30 +273,47 @@ public class Widget extends AppWidgetProvider {
 		return new int[] { w, h };
 	}
 
-	/** The layouts' shapes (dp of Viorel's mockups): 2x2 = 192 x 192, 4x1 = 384 x 96, 4x2 = 384 x 192. */
-	static final float[] RW = { 192, 384, 384 }, RH = { 192, 96, 192 };
+	/**
+	 * The layouts' shapes (dp of Viorel's mockups): 2x2 = 192 x 192, 4x1 = 384 x 96, 4x2 = 384 x 192,
+	 * and the small one, 2x1 = 192 x 96 (icon and temperature only, for frames too small for the others).
+	 */
+	static final float[] RW = { 192, 384, 384, 192 }, RH = { 192, 96, 192, 96 };
+	/** Below this zoom the texts get too small: such a layout is not used (logs of 2026-11-02: 68% was too small). */
+	static final float MIN_ZOOM = 0.8f;
 
 	/**
-	 * The layout for a frame W x H dp: 0 = 2x2, 1 = 4x1, 2 = 4x2. The one that shows largest and
-	 * covers most of the frame (its zoom times the square root of the part of the frame it covers):
-	 * a layout of the frame's shape, or, when two are close, the one whose texts stay larger.
+	 * The layout for a frame W x H dp: 0 = 2x2, 1 = 4x1, 2 = 4x2, 3 = 2x1. The one whose shape is
+	 * closest to the frame's (width / height: 2x2 = 1, 4x2 = 2, 4x1 = 4), among those that are not
+	 * shrunk below MIN_ZOOM; the small 2x1 only when none of the others fits. Logs of 2026-11-02:
+	 * 357x244 and 365x252 are 4x2 shapes (not 2x2 zoomed); 261x108 was 4x1 at 68%, now 2x1.
 	 */
 	static int kind(float w, float h) {
 		h = Math.max(1f, h);
-		int best = 0;
-		double top = -1;
+		w = Math.max(1f, w);
+		int best = -1;
+		double near = Double.MAX_VALUE;
 		for (int k = 0; k < 3; k++) {
-			double s = Math.min(w / RW[k], h / RH[k]), fill = RW[k] * RH[k] * s * s / (w * h);
-			double score = s * Math.sqrt(fill);
-			if (score > top + 1e-6) {
-				top = score;
+			if (zoom(k, w, h) < MIN_ZOOM) continue;
+			double d = Math.abs(Math.log((w / h) / (RW[k] / RH[k])));
+			// On a tie (equal shape), the larger layout (more to see): 4x2 before 2x2 before 4x1.
+			if (d < near - 1e-3) {
+				near = d;
 				best = k;
 			}
 		}
+		if (best >= 0) return best;
+		if (zoom(3, w, h) >= MIN_ZOOM) return 3;
+		// Smaller still (should not happen: minResizeWidth / Height): the one shown largest.
+		best = 0;
+		for (int k = 1; k < 4; k++) if (zoom(k, w, h) > zoom(best, w, h)) best = k;
 		return best;
 	}
 
-	private static final String[] NAMES = { "2x2", "4x1", "4x2" };
+	static float zoom(int k, float w, float h) {
+		return Math.min(w / RW[k], h / RH[k]);
+	}
+
+	static final String[] NAMES = { "2x2", "4x1", "4x2", "2x1" };
 
 	/** One widget, drawn as a picture of its frame. */
 	private static void draw(Context ctx, AppWidgetManager mgr, int id, Data d, Set st) {
@@ -420,6 +437,12 @@ public class Widget extends AppWidgetProvider {
 			pen.temp(temp, 184.5f, 160.5f, 87.7f, 49.5f, 132.6f, 95, true);
 			pen.at(0, 1);
 			pen.warnings(d.levels, 12.9f, 177.7f, 75.4f + pen.ex, 171.4f, d.en);
+		} else if (kind == 3) {
+			// The small one: the left part of the 4x1, the temperature pushed to the right edge.
+			pen.at(0, 0.5f);
+			pen.icon(icon, 8f, 12f, 72f);
+			pen.at(1, 0.5f);
+			pen.temp(temp, 184f, 75.2f, 77.4f, 59.3f, 63.1f, 100, true);
 		} else if (kind == 1) {
 			pen.at(0, 0.5f);
 			pen.icon(icon, 12.9f, 17.3f, 72f);

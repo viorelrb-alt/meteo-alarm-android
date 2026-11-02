@@ -19,7 +19,7 @@ import java.util.Locale;
 /**
  * The app's diary on the phone (Viorel 2026-11-02): everything it does, one file a day for 5 days
  * (files/log/2026-11-02.txt); each day the oldest goes, and its errors move to files/log/erori.txt,
- * kept 10 days. A line: "14:20:03.512 I DATE  forecast OK 41 KB" (I = information, E = error).
+ * kept 10 days. A line: "14:20:03.512 I DATE  forecast OK 41 KB" (I = information, W = warning, E = error).
  * Exported as one text file named after the phone, to read on the phone or share.
  */
 final class Log {
@@ -35,6 +35,11 @@ final class Log {
 
 	static void i(Context ctx, String cat, String msg) {
 		write(ctx, 'I', cat, msg);
+	}
+
+	/** A warning: something went wrong but the app got around it (W). */
+	static void w(Context ctx, String cat, String msg) {
+		write(ctx, 'W', cat, msg);
 	}
 
 	static void e(Context ctx, String cat, String msg) {
@@ -64,7 +69,8 @@ final class Log {
 			StringBuilder b = new StringBuilder(64 + msg.length());
 			b.append(TIME.format(now)).append(' ').append(lvl).append(' ');
 			b.append(cat);
-			for (int k = cat.length(); k < 6; k++) b.append(' ');
+			for (int k = cat.length(); k < 7; k++) b.append(' ');
+			b.append(' ');
 			b.append(msg.replace('\n', ' ')).append('\n');
 			append(new File(dir(app), day + ".txt"), b.toString());
 		} catch (Throwable t) {

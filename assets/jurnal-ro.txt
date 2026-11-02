@@ -1,3 +1,10 @@
+v1.91 · 2 noiembrie 2026
+- Reparat: când serverul de prognoză Open-Meteo răspunde „ocupat” (HTTP 503, ca pe 2 noiembrie pe A54 și A70), aplicația cere imediat prognoza din nou fără modelul ICON (combinația de modele a Open-Meteo), apoi încă o dată după 3 secunde. Jurnalul notează fiecare încercare și răspunsul serverului.
+- Widget-uri: modelul se alege după forma ramei (lat și jos = 4x1, lat = 4x2, pătrat = 2x2), deci o ramă de 3x2 sau 4x2 nu mai rămâne 2x2 mărit. Un model nu se mai micșorează sub 80%; pentru ramele prea mici (de exemplu 3x1) e un model mic nou, 2x1, cu iconul și temperatura. Pe Android 12+ widget-ul nu se mai poate face mai înalt de circa 2 rânduri.
+- Trasul în jos de mai multe ori la rând nu mai pornește mai multe descărcări: cât timp se descarcă sau în 10 secunde de la ultima descărcare, o notificare îți spune că vremea tocmai a fost actualizată (sau că tocmai s-a încercat).
+- Jurnal: etichetele sunt aliniate (de exemplu „SENZOR busola”), apar avertismentele (W) și se notează când și de ce se închide aplicația, ca să vedem pornirea dublă de pe A54.
+- Ajutorul e actualizat.
+
 v1.90 · 2 noiembrie 2026
 - Jurnal nou (☰ › Jurnal): tot ce face aplicația, cu ora (senzori, atingeri și gesturi, localizare, descărcări și de ce a eșuat una, reîmprospătări din fundal, widget-uri). Păstrează 5 zile; erorile din zilele mai vechi rămân încă 10 zile. Sus scrie telefonul (model, Android, One UI). Îl poți citi, trimite (WhatsApp, Drive, e-mail…) sau salva pe telefon.
 - Widget-urile se scalează proporțional: iau mereu modelul care se potrivește cel mai bine cu rama (2x2, 4x1 sau 4x2) și o umplu, fără zone goale în stânga sau în dreapta. Trăgând de margini treci de la un model la altul; o ramă mai mare arată widget-ul mai mare.
