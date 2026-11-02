@@ -116,7 +116,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (c != null) cities.put(c);
 		}
 		locator = new Locator(this);
-		locator.osm = osm();
+		// The town from the phone's geocoder (the neighbourhood option is gone).
+		locator.osm = false;
 		sheet = new BottomSheet(this);
 		updater = new Updater(this, sheet);
 		applySettings();
@@ -208,7 +209,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Keep the town shown even when it was never picked, so the widget finds it too.
 		if (prefs.getString("city", "").length() == 0) prefs.edit().putString("city", c.key()).apply();
 		s.city = c;
-		s.district = c.key().equals(prefs.getString("districtOf", "")) ? prefs.getString("district", "") : "";
+		// No neighbourhood after the town any more (Viorel 2026-11-02).
+		s.district = "";
 		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
 		// "sensor" (dark when the room is dark, from the light sensor).
 		String theme = prefs.getString("theme", "auto");
@@ -678,16 +680,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (!keep) fetchArea(here, town, null, lat, lon);
 				boolean moved = cur == null || !here.same(cur) || distKm(cur.lat, cur.lon, la, lo) > 1;
 				if (moved) setCity(here, false);
-				// The neighbourhood only while the phone is in the town the source named.
-				setDistrict(keep ? "" : district);
 				view.invalidate();
 				if (moved || say) fetch();
-				// After every tap: the neighbourhood found (or none) and where it came from.
-				if (say) {
-					String src = locator.osm ? "OpenStreetMap" : s.T.en ? "phone" : "telefon";
-					String d = keep || district == null ? (s.T.en ? "No neighbourhood confirmed" : "Cartier neconfirmat") : district;
-					note(d + " · " + src, 2500);
-				}
 				noteTop = false;
 			}
 
@@ -705,7 +699,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Shows D (null or empty: none) after the town, and keeps it for the next start. */
 	private void setDistrict(String d) {
-		s.district = d == null ? "" : d;
+		s.district = "";
 		prefs.edit().putString("district", s.district).putString("districtOf", s.city != null ? s.city.key() : "").apply();
 	}
 
@@ -999,10 +993,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** Opens the bubble that is open now again (after the phone turns). */
 	private Runnable reopen;
 
-	/** Where the neighbourhood comes from: OpenStreetMap, or the phone's geocoder (the default). */
-	private boolean osm() {
-		return prefs.getString("areaSrc", "phone").equals("osm");
-	}
 
 	public void onMenu() {
 		reopen = new Runnable() {
@@ -1025,7 +1015,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("lang"); rows.add(row(en ? "Romanian language" : "Limba engleză", en ? "lang-ro" : "lang-en"));
 		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (en ? "Night clock OFF" : "Ceas noapte OFF")
 				: (en ? "Night clock ON" : "Ceas noapte ON"), "night"));
-		ids.add("src"); rows.add(row(osm() ? (en ? "Neighbourhood: OpenStreetMap" : "Cartier: OpenStreetMap") : (en ? "Neighbourhood: phone" : "Cartier: telefon"), "area"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
 		ids.add("widget"); rows.add(row(en ? "Widgets" : "Widget-uri", "widget"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
@@ -1054,13 +1043,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else if (it.equals("loc")) {
 					onLocate();
 					return;
-				} else if (it.equals("src")) {
-					boolean o = !osm();
-					e.putString("areaSrc", o ? "osm" : "phone");
-					locator.osm = o;
-					ms = 2500;
-					msg = o ? (en ? "Neighbourhood from OpenStreetMap; tap the location to look again" : "Cartierul din OpenStreetMap; apasă localizarea ca să caute din nou")
-							: (en ? "Neighbourhood from the phone; tap the location to look again" : "Cartierul din telefon; apasă localizarea ca să caute din nou");
 				} else if (it.equals("update")) { updater.check(true); return; }
 				else if (it.equals("widget")) { startActivity(new Intent(MainActivity.this, WidgetConfig.class)); return; }
 				else if (it.equals("help")) { help(); return; }
@@ -1114,8 +1096,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
 				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
-		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were; the neighbourhood or sector is only shown after the town, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty)."
-				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact; cartierul sau sectorul doar se afișează după localitate, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol).");
+		help.entry(mini("locate"), en ? "Location" : "Localizare", en ? "Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty)."
+				: "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol).");
 		help.entry(mini("bright"), en ? "Brightness" : "Luminozitate", en ? "Shows the brightness bar on the left: slide on it up or down. It goes away by itself."
 				: "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură.");
 		help.entry(mini("moon"), en ? "Light / dark theme" : "Temă luminoasă / întunecată", en ? "Over the brightness bar: switches between the light and the dark theme."
@@ -1124,8 +1106,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Tema luminoasă când e lumină, cea întunecată pe întuneric. E plin cât timp e pornită.");
 		help.section(en ? "Gestures" : "Gesturi");
 		help.entry(mini("locate"), en ? "Tap on the town's name" : "Atingerea numelui localității", en
-				? "Looks once with the GPS, for a better forecast where you are; automatic location stays as it is. The notice shows under the line under the town: the neighbourhood found (or \"No neighbourhood confirmed\") and its source."
-				: "Caută o dată poziția cu GPS-ul, pentru o prognoză mai bună exact unde ești; localizarea automată rămâne cum era. Notificarea apare sub linia de sub localitate: cartierul găsit (sau „Cartier neconfirmat”) și sursa lui.");
+				? "Looks once with the GPS, for a better forecast where you are; automatic location stays as it is."
+				: "Caută o dată poziția cu GPS-ul, pentru o prognoză mai bună exact unde ești; localizarea automată rămâne cum era.");
 		help.entry(mini("pull"), en ? "Pull down" : "Trage în jos", en ? "Pull the screen down and let go: the weather is refreshed." : "Trage ecranul în jos și dă drumul: vremea se reîmprospătează.");
 		help.entry(mini("edge"), en ? "Left edge" : "Marginea din stânga", en ? "Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness."
 				: "Glisează sus-jos lângă marginea din stânga (puțin mai înăuntru): apare bara de lumină, iar glisând pe ea reglezi luminozitatea.");
@@ -1163,8 +1145,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("locate"), en ? "Location On / Off" : "Localizare On / Off", en ? "Turns automatic location on or off (the same as the location button)."
 				: "Pornește sau oprește localizarea automată (la fel ca butonul de localizare).");
 		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
-		help.entry(mini("area"), en ? "Neighbourhood: phone / OpenStreetMap" : "Cartier: telefon / OpenStreetMap", en ? "Where the neighbourhood shown after the town comes from. It is shown only when that source says you are inside it."
-				: "De unde vine cartierul afișat după localitate. Apare doar când sursa confirmă că ești în interiorul lui.");
 		help.entry(mini("widget"), en ? "Widgets" : "Widget-uri", en ? "The widget settings: the background's transparency, for all the widgets, with a preview (from fully see-through, on the wallpaper, to solid)."
 				: "Setările widget-urilor: transparența fundalului, pentru toate widget-urile, cu previzualizare (de la complet transparent, direct pe imaginea de fundal, până la opac).");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."

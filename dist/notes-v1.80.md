@@ -5,4 +5,5 @@
 - Widget-uri: în lista de widget-uri sunt acum separat 2x2, 4x1 și 4x2, fiecare cu imaginea lui, plus „orice mărime”. Ai și o setare nouă pentru transparența fundalului (☰ › Widget-uri, se deschide și când pui un widget pe ecran).
 - Reparat: pe Samsung A70 (Android 11) widget-ul alegea varianta greșită. Acum alege după lățime.
 - Reîmprospătare automată, și cu aplicația închisă: la 15 minute cu ecranul aprins, la 30 de minute cu ecranul stins, pauză între apus și răsărit cu ecranul stins și la o oră când bateria e sub 25%.
+- Opțiunea „Cartier” a fost scoasă: după localitate nu mai apare cartierul, iar din ☰ a dispărut „Cartier: telefon / OpenStreetMap”. Atingerea numelui localității caută în continuare o dată poziția cu GPS-ul.
 - Ajutorul e actualizat.
