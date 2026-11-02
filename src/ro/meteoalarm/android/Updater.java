@@ -62,15 +62,24 @@ final class Updater {
 		return a.getSharedPreferences("settings", Activity.MODE_PRIVATE);
 	}
 
-	/** The user agreed to updates from GitHub (asked once; "Not now" is asked again only from the menu). */
+	/**
+	 * The user agreed to updates from GitHub, in ☰ › Check for updates. "ghConsent2" (v1.93): the
+	 * consents given in v1.92, where the question came up by itself, do not count.
+	 */
 	boolean agreed() {
-		return prefs().getBoolean("ghConsent", false);
+		return prefs().getBoolean("ghConsent2", false);
+	}
+
+	/** The line at the top of What's new, About and Help (Viorel 2026-11-02). */
+	static String howTo(boolean en) {
+		return en ? "To get updates: open ☰ › Check for updates and, when asked, give your consent."
+				: "Pentru actualizări: intră în ☰ › Verifică actualizări și, când ești întrebat, dă-ți acordul.";
 	}
 
 	/**
 	 * Viorel 2026-11-02: before any update, a notice that the updates come from GitHub (not from
-	 * Google Play) and the user's consent. Without it nothing is checked or downloaded; asked again
-	 * when the user checks from the menu. THEN runs after "I agree".
+	 * Google Play) and the user's consent, only from ☰ › Check for updates: once when given, every
+	 * time while refused. Without it nothing is checked or downloaded. THEN runs after "I agree".
 	 */
 	private void askConsent(final Runnable then) {
 		String msg = en
@@ -89,20 +98,26 @@ final class Updater {
 		Log.i(a, "UPDATE", "informare actualizare din GitHub afișată");
 		sheet.show(en ? "Updates from GitHub" : "Actualizări din GitHub", msg, en ? "I agree" : "Sunt de acord", new Runnable() {
 			public void run() {
-				prefs().edit().putBoolean("ghConsent", true).putBoolean("ghAsked", true).apply();
+				prefs().edit().putBoolean("ghConsent2", true).apply();
 				Log.i(a, "UPDATE", "utilizatorul a acceptat actualizarea din GitHub");
 				then.run();
 			}
-		}, en ? "Not now" : "Nu acum");
-		// "Not now" (or closing): no updates; the weekly check does not ask again, the menu does.
-		prefs().edit().putBoolean("ghAsked", true).apply();
+		}, en ? "Not now" : "Nu acum", new Runnable() {
+			public void run() {
+				Log.i(a, "UPDATE", "utilizatorul a refuzat actualizarea din GitHub");
+				sheet.show(en ? "Updates from GitHub" : "Actualizări din GitHub", en
+						? "Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates."
+						: "Fără acordul tău, aplicația nu se va actualiza. Te poți răzgândi oricând din ☰ › Verifică actualizări.",
+						null, null, en ? "Close" : "Închide");
+			}
+		});
 	}
 
 	/** MANUAL (from the menu): the window opens at once and also says when there is nothing new. */
 	void check(final boolean manual) {
 		if (busy) return;
 		if (!agreed()) {
-			if (!manual && prefs().getBoolean("ghAsked", false)) {
+			if (!manual) {
 				Log.i(a, "UPDATE", "fără acord pentru actualizarea din GitHub, nu verific");
 				return;
 			}

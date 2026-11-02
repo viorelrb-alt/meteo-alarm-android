@@ -26,7 +26,7 @@ final class BottomSheet extends FrameLayout {
 	private final Button primary, secondary, left;
 	private final float dp;
 	private boolean open, dark, cancelable = true;
-	private Runnable onPrimary, onLeft;
+	private Runnable onPrimary, onLeft, onClose;
 	private float downY;
 
 	BottomSheet(Context c) {
@@ -37,7 +37,7 @@ final class BottomSheet extends FrameLayout {
 		scrim.setBackgroundColor(0x66000000);
 		scrim.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				if (cancelable) hide();
+				if (cancelable) cancel();
 			}
 		});
 		addView(scrim, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
@@ -95,7 +95,7 @@ final class BottomSheet extends FrameLayout {
 		sheet.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		secondary.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				hide();
+				cancel();
 			}
 		});
 		primary.setOnClickListener(new OnClickListener() {
@@ -169,6 +169,15 @@ final class BottomSheet extends FrameLayout {
 	 * only the primary button, and the window closes only through it (no tap above, swipe or Back).
 	 */
 	void show(String t, String msg, String primaryLabel, Runnable action, String closeLabel) {
+		show(t, msg, primaryLabel, action, closeLabel, null);
+	}
+
+	/**
+	 * As above; CLOSED runs when the window is closed without the primary button (the close
+	 * button, a tap above, a swipe or Back), instead of closing it: it usually shows another text.
+	 */
+	void show(String t, String msg, String primaryLabel, Runnable action, String closeLabel, Runnable closed) {
+		onClose = closed;
 		title.setText(t);
 		text.setText(msg);
 		scroll.scrollTo(0, 0);
@@ -216,8 +225,19 @@ final class BottomSheet extends FrameLayout {
 		scroll.requestLayout();
 	}
 
+	/** Closed by the user (not through the primary button): CLOSED if set, else it slides down. */
+	void cancel() {
+		Runnable r = onClose;
+		onClose = null;
+		if (r != null) {
+			sheet.animate().translationY(0).setDuration(120).start();
+			r.run();
+		} else hide();
+	}
+
 	/** Closes, sliding down. */
 	void hide() {
+		onClose = null;
 		if (!open) return;
 		open = false;
 		scrim.animate().alpha(0).setDuration(200).start();
@@ -239,7 +259,7 @@ final class BottomSheet extends FrameLayout {
 			return true;
 		case MotionEvent.ACTION_UP:
 		case MotionEvent.ACTION_CANCEL:
-			if (sheet.getTranslationY() > sheet.getHeight() / 4f) hide();
+			if (sheet.getTranslationY() > sheet.getHeight() / 4f) cancel();
 			else sheet.animate().translationY(0).setDuration(150).start();
 			return true;
 		}

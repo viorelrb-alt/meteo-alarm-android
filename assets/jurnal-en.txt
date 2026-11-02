@@ -1,3 +1,9 @@
+v1.93 · 2 November 2026
+- Updates with your consent, only from the menu: to get updates, open ☰ › Check for updates and, when asked, give your consent. The question no longer comes up by itself (not at start, not when you tap the widget). If you agree it is never asked again and the app updates as before (also by itself, once a week). If you say no, a notice says the app will not update, and the question comes back every time you choose Check for updates.
+- Without consent the app does not look for updates at all, not even by itself. Consents given in v1.92 (when the question came up by itself) no longer count and will be asked again from the menu.
+- The update instructions are at the top of What's new, of the first-start window and of Help.
+- Fixed: the What's new window is no longer lost when the app goes to the background right after an update.
+
 v1.92 · 2 November 2026
 - Spare forecast: when Open-Meteo is overloaded (HTTP 503 "The service is overloaded", as for a whole hour on 2 November) or does not answer, the weather comes from MET Norway (api.met.no, the Norwegian weather institute): temperature, sky, precipitation, wind, humidity, pressure, UV, high / low and the next hours; the app works out sunrise and sunset. Under the clock it says "· MET Norway". After an "overloaded", the app goes straight to MET Norway for 20 minutes.
 - Fixed: the widget can again be shrunk to one row (4x2 → 4x1). In v1.91 the minimum height no longer fitted one row on Samsung.

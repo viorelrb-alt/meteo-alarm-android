@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.92";
+	static final String VERSION = "Meteo Alarm Android v1.93";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -159,14 +159,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (bubble.isOpen()) bubble.hide();
 		else if (help.isOpen()) help.hide();
 		else if (sheet.isOpen()) {
-			if (sheet.isCancelable()) sheet.hide();
+			if (sheet.isCancelable()) sheet.cancel();
 		} else super.onBackPressed();
 	}
 
 	/** About the app: shown once at the first start (before the location question) and from ☰ › Despre. */
 	private String aboutText() {
 		return s.T.en
-				? "This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.\n\n"
+				? Updater.howTo(true) + "\n\nThis is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.\n\n"
 						+ "No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent "
 						+ "to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm (ANM), the earthquakes from EMSC (seismicportal.eu).\n\n"
 						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
@@ -176,10 +176,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Sensors: the app reads the battery state (night clock while charging), the phone's light sensor "
 						+ "with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. "
 						+ "Nothing leaves the phone.\n\n"
-						+ "Updates: once a week the app checks GitHub for a new version and asks before downloading it; "
-						+ "you can also check from ☰ › Check for updates.\n\n"
+						+ "Updates: " + Updater.howTo(true) + " After that, once a week the app checks GitHub for a new version "
+						+ "and asks before downloading it.\n\n"
 						+ Updater.protectNote(true)
-				: "Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.\n\n"
+				: Updater.howTo(false) + "\n\nAceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.\n\n"
 						+ "Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele "
 						+ "localității către Open-Meteo (vremea, polenul) și, când Open-Meteo e supraîncărcat, către MET Norway (vremea); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).\n\n"
 						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
@@ -188,8 +188,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ "Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al "
 						+ "telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după "
 						+ "telefon. Nimic nu pleacă de pe telefon.\n\n"
-						+ "Actualizări: o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte "
-						+ "s-o descarce; poți verifica oricând din ☰ › Verifică actualizări.\n\n"
+						+ "Actualizări: " + Updater.howTo(false) + " După aceea, o dată pe săptămână aplicația caută pe GitHub o "
+						+ "versiune nouă și te întreabă înainte s-o descarce.\n\n"
 						+ Updater.protectNote(false);
 	}
 
@@ -541,18 +541,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Just updated: what is new in this version, once (instead of the update check this time).
 		String cur = updater.installed();
 		if (!cur.equals(prefs.getString("seenVersion", ""))) {
-			prefs.edit().putString("seenVersion", cur).apply();
 			news();
-			return;
-		}
-		// Updates come from GitHub only with the user's consent: asked once, at the next start.
-		if (!updater.agreed() && !prefs.getBoolean("ghAsked", false)) {
-			updater.check(false);
 			return;
 		}
 		// Look for a newer version once a week (the bottom window opens only when there is one).
 		long now = System.currentTimeMillis();
-		if (now - prefs.getLong("updateChecked", 0) >= UPDATE_CHECK_MS) {
+		// Only with the user's consent, given in ☰ › Check for updates (Viorel 2026-11-02).
+		if (updater.agreed() && now - prefs.getLong("updateChecked", 0) >= UPDATE_CHECK_MS) {
 			prefs.edit().putLong("updateChecked", now).apply();
 			updater.check(false);
 		}
@@ -1162,6 +1157,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void help() {
 		boolean en = s.T.en;
 		help.begin(en ? "Help" : "Ajutor", en ? "Close" : "Închide", s.dark);
+		help.section(en ? "Updates" : "Actualizări");
+		help.entry(mini("update"), en ? "How to update" : "Cum actualizezi", Updater.howTo(en) + (en
+				? " The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing."
+				: " Acordul se cere doar acolo: o singură dată dacă ești de acord (de atunci aplicația verifică singură și o dată pe săptămână), de fiecare dată cât timp refuzi. Fără acord aplicația nu caută niciodată actualizări și nu descarcă nimic."));
 		help.section(en ? "Buttons on the screen" : "Butoane pe ecran");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town."
 				: "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea.");
@@ -1221,8 +1220,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Setările unui widget de pe ecranul de pornire (când sunt mai multe, alegi întâi care).");
 		help.entry(mini("log"), en ? "Log" : "Jurnal", en ? "Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone."
 				: "Tot ce a făcut aplicația, cu ora: senzorii, atingerile și gesturile, localizarea, descărcările de date (și de ce a eșuat una), reîmprospătările din fundal și widget-urile (mărimea dată de telefon, modelul arătat). Păstrează 5 zile, câte un fișier pe zi; erorile din zilele mai vechi rămân încă 10 zile în rubrica Erori. Sus: telefonul (model, Android, One UI) și versiunea aplicației. Îl citești aici, îl Trimiți (WhatsApp, Drive, e-mail…) sau îl Salvezi pe telefon.");
-		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself. The updates come from GitHub (not Google Play), so the first time the app explains this and asks for your consent: with \"I agree\" it looks for updates; with \"Not now\" it does not look and downloads nothing until you choose Check for updates again and agree. Even then, nothing is installed until you tap Update and confirm in the phone's installer."
-				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână. Actualizările vin de pe GitHub (nu din Google Play), așa că prima dată aplicația explică asta și îți cere acordul: cu „Sunt de acord” caută actualizări; cu „Nu acum” nu caută și nu descarcă nimic, până când alegi din nou Verifică actualizări și îți dai acordul. Chiar și atunci nu se instalează nimic până nu apeși Actualizează și confirmi în programul de instalare al telefonului.");
+		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with \"Not now\" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer."
+				: "Caută o versiune nouă pe GitHub. Prima dată (și de fiecare dată până ești de acord) explică faptul că actualizările vin de pe GitHub, nu din Google Play, și îți cere acordul; cu „Nu acum” o notificare îți spune că aplicația nu se va actualiza. Nu se instalează nimic până nu apeși Actualizează și confirmi în programul de instalare al telefonului.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
 		help.entry(mini("about"), en ? "About" : "Despre", en ? "About the app, the data it uses, and what's new in each version."
 				: "Despre aplicație, datele pe care le folosește și ce e nou în fiecare versiune.");
@@ -1235,7 +1234,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (log.length() == 0) return;
 		int cut = log.indexOf("\n\n");
 		if (cut > 0) log = log.substring(0, cut);
-		sheet.show((s.T.en ? "What's new" : "Ce e nou") + " · v" + updater.installed(), log, null, null, s.T.en ? "Close" : "Închide");
+		// Marked as seen only once it is really on the screen (on the A54 the app went to the
+		// background right after the update and the window was never seen).
+		if (!resumed) return;
+		prefs.edit().putString("seenVersion", updater.installed()).apply();
+		Log.i(this, "APP", "fereastra Ce e nou afișată");
+		sheet.show((s.T.en ? "What's new" : "Ce e nou") + " · v" + updater.installed(), Updater.howTo(s.T.en) + "\n\n" + log, null, null, s.T.en ? "Close" : "Închide");
 	}
 
 	/** The change log from assets, newest first. */

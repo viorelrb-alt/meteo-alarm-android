@@ -1,3 +1,9 @@
+v1.93 · 2 noiembrie 2026
+- Actualizări cu acordul tău, doar din meniu: pentru actualizări intri în ☰ › Verifică actualizări și, când ești întrebat, îți dai acordul. Întrebarea nu mai apare singură (nici la pornire, nici la atingerea widget-ului). Dacă ești de acord, nu mai e pusă niciodată și aplicația se actualizează ca până acum (și singură, o dată pe săptămână). Dacă refuzi, o notificare îți spune că aplicația nu se va actualiza, iar întrebarea revine de fiecare dată când alegi Verifică actualizări.
+- Fără acord aplicația nu caută actualizări deloc, nici automat. Acordurile date în v1.92 (când întrebarea apărea singură) nu mai contează și vor fi cerute din nou din meniu.
+- Instrucțiunea despre actualizări e sus în fereastra Ce e nou, în fereastra de la prima pornire și în Ajutor.
+- Reparat: fereastra Ce e nou nu se mai pierde când aplicația trece în fundal imediat după actualizare.
+
 v1.92 · 2 noiembrie 2026
 - Prognoză de rezervă: când Open-Meteo e supraîncărcat (HTTP 503 „The service is overloaded”, ca pe 2 noiembrie o oră întreagă) sau nu răspunde, vremea vine de la MET Norway (api.met.no, institutul meteo norvegian): temperatura, cerul, precipitațiile, vântul, umiditatea, presiunea, UV, max / min și orele următoare; răsăritul și apusul le calculează aplicația. Sub ceas scrie „· MET Norway”. După un „supraîncărcat”, aplicația merge direct la MET Norway 20 de minute.
 - Reparat: widget-ul se poate strânge iar la un rând (4x2 → 4x1). În v1.91, limita minimă de înălțime nu mai încăpea într-un rând pe Samsung.
