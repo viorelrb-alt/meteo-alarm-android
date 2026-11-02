@@ -15,6 +15,8 @@ Kindle: Open-Meteo (DWD ICON) forecast, MeteoAlarm warnings for the county, poll
 
 *PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
 
+**Project evolution:** [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf), a diagram of what each version added, from v0.1 to v1.71.
+
 ## What it does
 
 - Portrait and landscape: it turns with the phone (unless auto-rotate is off). Landscape has
