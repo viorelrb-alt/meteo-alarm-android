@@ -13,6 +13,7 @@ import java.util.TimeZone;
 
 import ro.meteoalarm.android.core.Cities;
 import ro.meteoalarm.android.core.Countries;
+import ro.meteoalarm.android.core.MetNo;
 import ro.meteoalarm.android.core.Quakes;
 import ro.meteoalarm.android.core.Weather;
 
@@ -24,6 +25,8 @@ import ro.meteoalarm.android.core.Weather;
 final class Fetcher {
 	static final class Result {
 		String forecast, uv, pollen, warn, quake;
+		/** Where the forecast came from: "Open-Meteo" or MetNo.NAME. */
+		String source = "";
 		/** Why the forecast did not come (null when it came). */
 		Exception error;
 	}
@@ -70,15 +73,19 @@ final class Fetcher {
 		Result r = new Result();
 		String tz = TimeZone.getDefault().getID();
 		try {
-			r.forecast = forecast(ctx, c, tz);
-			Log.i(ctx, "DATE", "prognoza " + c.name + " OK " + r.forecast.length() / 1024 + " KB");
+			String[] f = forecast(ctx, c, tz);
+			r.forecast = f[0];
+			r.uv = f[1];
+			r.source = f[2];
+			Log.i(ctx, "DATE", "prognoza " + c.name + " OK " + r.forecast.length() / 1024 + " KB · " + r.source);
 		} catch (Exception e) {
 			r.forecast = null;
 			r.error = e;
 			Log.e(ctx, "DATE", "prognoza " + c.name + " a eșuat: " + reason(e, false), e);
 		}
 		try {
-			if (r.forecast != null) r.uv = Weather.get(Weather.uvUrl(c.lat, c.lon, tz));
+			// The extra boxes (UV, humidity, pressure, visibility): from Open-Meteo, unless MET Norway gave them.
+			if (r.forecast != null && r.uv == null) r.uv = Weather.get(Weather.uvUrl(c.lat, c.lon, tz));
 		} catch (Exception e) {
 			r.uv = null;
 			Log.e(ctx, "DATE", "UV a eșuat: " + reason(e, false));
@@ -102,26 +109,48 @@ final class Fetcher {
 		return r;
 	}
 
+	/** After Open-Meteo said "overloaded", MET Norway is asked first for this long. */
+	static final long OPEN_METEO_REST_MS = 20 * 60000L;
+
 	/**
-	 * The forecast for C (checked). When Open-Meteo answers "busy" (HTTP 503 and the like) for the
-	 * ICON model, as on 2026-11-02 on two phones, the same forecast is asked without a model
-	 * (Open-Meteo's own best mix), then once more 3 seconds later. Throws the first error if all fail.
+	 * The forecast for C (checked): { forecast, extra or null, source }. Open-Meteo with the ICON
+	 * model first, then without a model; when Open-Meteo is busy (HTTP 503 "The service is
+	 * overloaded", as for an hour on 2026-11-02 on every phone) or does not answer, MET Norway
+	 * (MetNo), turned into the same shape. After a "busy", Open-Meteo rests 20 minutes and MET
+	 * Norway is asked straight away. Throws the first error when all fail.
 	 */
-	static String forecast(Context ctx, Cities.City c, String tz) throws Exception {
-		String[] models = { Weather.MODEL, "", "" };
+	static String[] forecast(Context ctx, Cities.City c, String tz) throws Exception {
+		SharedPreferences p = prefs(ctx);
+		long now = System.currentTimeMillis();
+		boolean rest = now < p.getLong("omBusyUntil", 0);
 		Exception first = null;
-		for (int i = 0; i < models.length; i++) {
-			try {
-				if (i == 2 && Weather.busy(first)) Thread.sleep(3000);
-				String json = Weather.get(Weather.forecastUrl(c.lat, c.lon, tz, models[i]));
-				Weather.parse(json);
-				if (i > 0) Log.i(ctx, "DATE", "prognoza " + c.name + " venită la încercarea " + (i + 1) + " (fără modelul " + Weather.MODEL + ")");
-				return json;
-			} catch (Exception e) {
-				if (first == null) first = e;
-				Log.w(ctx, "DATE", "prognoza " + c.name + " încercarea " + (i + 1) + (models[i].length() > 0 ? " (" + models[i] + ")" : " (model implicit)") + ": " + e.getMessage());
-				if (e instanceof java.io.IOException) break; // no network: asking again will not help
+		if (rest) Log.i(ctx, "DATE", "Open-Meteo a fost supraîncărcat, iau prognoza de la " + MetNo.NAME);
+		else {
+			String[] models = { Weather.MODEL, "" };
+			for (int i = 0; i < models.length; i++) {
+				try {
+					String json = Weather.get(Weather.forecastUrl(c.lat, c.lon, tz, models[i]));
+					Weather.parse(json);
+					if (i > 0) Log.i(ctx, "DATE", "prognoza " + c.name + " venită fără modelul " + Weather.MODEL);
+					return new String[] { json, null, "Open-Meteo" };
+				} catch (Exception e) {
+					if (first == null) first = e;
+					Log.w(ctx, "DATE", "Open-Meteo " + (models[i].length() > 0 ? "(" + models[i] + ")" : "(model implicit)") + ": " + e.getMessage());
+					// No internet: asking anyone else will not help.
+					if (e instanceof java.net.UnknownHostException) throw e;
+					if (e instanceof java.io.IOException) break;
+				}
 			}
+			if (first != null && Weather.busy(first)) p.edit().putLong("omBusyUntil", now + OPEN_METEO_REST_MS).apply();
+		}
+		try {
+			String[] m = MetNo.toOpenMeteo(Weather.get(MetNo.url(c.lat, c.lon)), c.lat, c.lon, TimeZone.getTimeZone(tz), System.currentTimeMillis());
+			Weather.parse(m[0]);
+			Log.i(ctx, "DATE", "prognoza " + c.name + " de la " + MetNo.NAME + " (rezervă)");
+			return new String[] { m[0], m[1], MetNo.NAME };
+		} catch (Exception e) {
+			Log.w(ctx, "DATE", MetNo.NAME + ": " + e.getClass().getSimpleName() + " " + e.getMessage());
+			if (first == null) first = e;
 		}
 		throw first;
 	}
@@ -156,7 +185,7 @@ final class Fetcher {
 		if (r.forecast != null) {
 			if (r.uv != null) write(ctx, "uv.json", r.uv);
 			write(ctx, "forecast.json", r.forecast);
-			prefs(ctx).edit().putLong("fetched", now).putString("cacheCity", c.key()).putString("failReason", "").commit();
+			prefs(ctx).edit().putLong("fetched", now).putString("cacheCity", c.key()).putString("failReason", "").putString("source", r.source).commit();
 		} else {
 			prefs(ctx).edit().putString("failReason", reason(r.error, false)).putString("failReasonEn", reason(r.error, true)).apply();
 		}

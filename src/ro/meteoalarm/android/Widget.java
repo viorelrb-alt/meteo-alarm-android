@@ -280,31 +280,24 @@ public class Widget extends AppWidgetProvider {
 	static final float[] RW = { 192, 384, 384, 192 }, RH = { 192, 96, 192, 96 };
 	/** Below this zoom the texts get too small: such a layout is not used (logs of 2026-11-02: 68% was too small). */
 	static final float MIN_ZOOM = 0.8f;
+	/** How much taller than the layout (part of its height) the widget may spread; more is left empty. */
+	static final float MAX_SPREAD = 0.25f;
 
 	/**
-	 * The layout for a frame W x H dp: 0 = 2x2, 1 = 4x1, 2 = 4x2, 3 = 2x1. The one whose shape is
-	 * closest to the frame's (width / height: 2x2 = 1, 4x2 = 2, 4x1 = 4), among those that are not
-	 * shrunk below MIN_ZOOM; the small 2x1 only when none of the others fits. Logs of 2026-11-02:
-	 * 357x244 and 365x252 are 4x2 shapes (not 2x2 zoomed); 261x108 was 4x1 at 68%, now 2x1.
+	 * The layout for a frame W x H dp: 0 = 2x2, 1 = 4x1, 2 = 4x2, 3 = 2x1. By the width first
+	 * (Viorel 2026-11-02, logs of v1.91: a 4x3 frame became a zoomed 2x2): wide enough for a 4-wide
+	 * layout (at MIN_ZOOM) = 4x2 when tall enough, else 4x1; narrower = 2x2, or 2x1 when low.
+	 * A frame taller than the layout needs keeps the layout (render() centres it).
 	 */
 	static int kind(float w, float h) {
 		h = Math.max(1f, h);
 		w = Math.max(1f, w);
-		int best = -1;
-		double near = Double.MAX_VALUE;
-		for (int k = 0; k < 3; k++) {
-			if (zoom(k, w, h) < MIN_ZOOM) continue;
-			double d = Math.abs(Math.log((w / h) / (RW[k] / RH[k])));
-			// On a tie (equal shape), the larger layout (more to see): 4x2 before 2x2 before 4x1.
-			if (d < near - 1e-3) {
-				near = d;
-				best = k;
-			}
-		}
-		if (best >= 0) return best;
-		if (zoom(3, w, h) >= MIN_ZOOM) return 3;
-		// Smaller still (should not happen: minResizeWidth / Height): the one shown largest.
-		best = 0;
+		boolean wide = w >= RW[2] * MIN_ZOOM;
+		int tall = wide ? 2 : 0, low = wide ? 1 : 3;
+		if (zoom(tall, w, h) >= MIN_ZOOM) return tall;
+		if (zoom(low, w, h) >= MIN_ZOOM) return low;
+		// Smaller still: the one shown largest.
+		int best = 0;
 		for (int k = 1; k < 4; k++) if (zoom(k, w, h) > zoom(best, w, h)) best = k;
 		return best;
 	}
@@ -415,13 +408,18 @@ public class Widget extends AppWidgetProvider {
 			int[] b = background(ctx, st, w);
 			int a = st.alpha * 255 / 100;
 			Paint bg = new Paint(Paint.ANTI_ALIAS_FLAG);
-			bg.setShader(new LinearGradient(0, 0, 0, H, (a << 24) | (b[0] & 0xFFFFFF), (a << 24) | (b[1] & 0xFFFFFF), Shader.TileMode.CLAMP));
-			float r = Math.min(24 * dens, Math.min(W, H) / 4f);
-			cv.drawRoundRect(new RectF(0, 0, W, H), r, r, bg);
+			float k0 = s * dens, ey0 = H / k0 - rh, t0 = (ey0 - Math.min(ey0, rh * MAX_SPREAD)) / 2 * k0;
+			bg.setShader(new LinearGradient(0, t0, 0, H - t0, (a << 24) | (b[0] & 0xFFFFFF), (a << 24) | (b[1] & 0xFFFFFF), Shader.TileMode.CLAMP));
+			float r = Math.min(24 * dens, Math.min(W, H - 2 * t0) / 4f);
+			cv.drawRoundRect(new RectF(0, t0, W, H - t0), r, r, bg);
 		}
 		float k = s * dens;
+		// Taller than the layout needs (a 4x3 frame for the 4x2): a little of the extra height
+		// spreads the layout, the rest stays empty above and below, the widget centred.
+		float ey = H / k - rh, keep = Math.min(ey, rh * MAX_SPREAD), top = (ey - keep) / 2 * k;
+		cv.translate(0, top);
 		cv.scale(k, k);
-		Pen pen = new Pen(ctx, cv, blackText(ctx, st, w), W / k - rw, H / k - rh);
+		Pen pen = new Pen(ctx, cv, blackText(ctx, st, w), W / k - rw, keep);
 		String temp = w == null ? "--" : Long.toString(Math.round(d.unitF ? w.temp * 9 / 5 + 32 : w.temp));
 		String icon = w == null ? null : d.T.describe(w.code, w.isDay)[0];
 		String town = d.c != null ? d.c.name : "";

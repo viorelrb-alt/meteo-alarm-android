@@ -74,6 +74,8 @@ public final class Screen {
 	public String error = "";
 	/** Why the last download failed ("no internet", "certificate error", "HTTP 503"...), empty after one that worked. */
 	public String failReason = "";
+	/** Where the forecast came from when not Open-Meteo (MET Norway), shown after "updated". */
+	public String source = "";
 	/** Dark theme with the Claude app's colours; otherwise black and white like the Kindle. */
 	public boolean dark;
 	/** Looking for the phone's position (the locate button is drawn in the accent colour). */
@@ -1720,7 +1722,7 @@ public final class Screen {
 			Calendar cal = Calendar.getInstance();
 			cal.setTimeInMillis(fetched);
 			String when = Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12);
-			upd = T.updated + " " + when;
+			upd = T.updated + " " + when + (source.length() > 0 && !source.equals("Open-Meteo") ? " · " + source : "");
 			if (offline) {
 				upd = "! " + T.noData + " " + when + (failReason.length() > 0 ? " · " + failReason : "");
 				bold = true;

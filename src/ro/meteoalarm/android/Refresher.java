@@ -127,7 +127,7 @@ public final class Refresher extends BroadcastReceiver {
 		String f = Widget.townFile(c);
 		if (!now && System.currentTimeMillis() - p.getLong(f, 0) < SCREEN_OFF_MS - 60000L) return;
 		try {
-			String json = Fetcher.forecast(ctx, c, java.util.TimeZone.getDefault().getID());
+			String json = Fetcher.forecast(ctx, c, java.util.TimeZone.getDefault().getID())[0];
 			Fetcher.write(ctx, f, json);
 			p.edit().putLong(f, System.currentTimeMillis()).apply();
 			Log.i(ctx, "DATE", "widget: prognoza pentru " + c.name + " OK");

@@ -46,7 +46,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.91";
+	static final String VERSION = "Meteo Alarm Android v1.92";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -168,7 +168,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return s.T.en
 				? "This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.\n\n"
 						+ "No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent "
-						+ "to Open-Meteo (weather, pollen); the warnings come from MeteoAlarm (ANM), the earthquakes from EMSC (seismicportal.eu).\n\n"
+						+ "to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm (ANM), the earthquakes from EMSC (seismicportal.eu).\n\n"
 						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
 						+ "coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, "
 						+ "with where you were, are kept only on the phone. "
@@ -181,7 +181,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ Updater.protectNote(true)
 				: "Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.\n\n"
 						+ "Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele "
-						+ "localității către Open-Meteo (vremea, polenul); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).\n\n"
+						+ "localității către Open-Meteo (vremea, polenul) și, când Open-Meteo e supraîncărcat, către MET Norway (vremea); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).\n\n"
 						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
 						+ "localității, coordonatele merg la OpenStreetMap (sau la geocoderul telefonului), de unde vin și granițele "
 						+ "localității. Localitățile găsite, cu locul exact, rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
@@ -543,6 +543,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (!cur.equals(prefs.getString("seenVersion", ""))) {
 			prefs.edit().putString("seenVersion", cur).apply();
 			news();
+			return;
+		}
+		// Updates come from GitHub only with the user's consent: asked once, at the next start.
+		if (!updater.agreed() && !prefs.getBoolean("ghAsked", false)) {
+			updater.check(false);
 			return;
 		}
 		// Look for a newer version once a week (the bottom window opens only when there is one).
@@ -927,6 +932,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (x != null) s.warns = Warnings.parse(x, s.city.warnNames(), System.currentTimeMillis());
 			s.quakes = Fetcher.quakes(this, s.city);
 			s.failReason = prefs.getString(s.T.en ? "failReasonEn" : "failReason", "");
+			s.source = prefs.getString("source", "");
 		} catch (Exception e) {
 			s.w = null;
 			Log.e(this, "DATE", "vremea salvată nu a putut fi citită", e);
@@ -970,6 +976,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.fetched = now;
 			s.offline = false;
 			s.failReason = "";
+			s.source = r.source;
 			Widget.show(this);
 		} else {
 			// Why it did not come: under the line ("no data since …") and in a notice now.
@@ -1190,14 +1197,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
 		help.section(en ? "Home-screen widgets" : "Widget-uri pe ecranul de pornire");
 		help.entry(mini("widget"), en ? "Meteo Alarm widgets" : "Widget-urile Meteo Alarm", en
-				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and \"any size\", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: it takes the layout whose shape is closest to the frame (wide and low = 4x1, wide = 4x2, square = 2x2) and fills the frame; a larger frame shows it larger, but a layout is never shrunk so much that the texts get too small. On Android 12 and newer the widget cannot be made taller than about 2 rows, so no screen space is wasted. With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app."
-				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: 2x2, 4x1, 4x2 și „orice mărime”, fiecare cu imaginea lui; se pune direct pe ecran, fără fereastră de setări. Sunt trei modele: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului) și 4x2 (lat, și cu Max / Min și următoarele 5 ore), plus unul mic, 2x1 (icon și temperatură), pentru rame prea mici pentru celelalte. Ține-l apăsat și trage de margini: ia modelul cu forma cea mai apropiată de ramă (lat și jos = 4x1, lat = 4x2, pătrat = 2x2) și umple rama; o ramă mai mare îl arată mai mare, dar un model nu se micșorează niciodată atât încât textele să devină prea mici. Pe Android 12 și mai nou widget-ul nu se poate face mai înalt de circa 2 rânduri, ca să nu ocupe inutil ecranul. Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. O atingere deschide aplicația.");
+				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and \"any size\", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app."
+				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: 2x2, 4x1, 4x2 și „orice mărime”, fiecare cu imaginea lui; se pune direct pe ecran, fără fereastră de setări. Sunt trei modele: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului) și 4x2 (lat, și cu Max / Min și următoarele 5 ore), plus unul mic, 2x1 (icon și temperatură), pentru rame prea mici pentru celelalte. Ține-l apăsat și trage de margini: lat (cam 4 coloane) și un rând = 4x1, lat și mai înalt = 4x2 (rămâne 4x2 oricât de înalt îl faci), îngust = 2x2, îngust și un rând = 2x1. Umple lățimea ramei; când rama e mai înaltă decât are nevoie modelul, widget-ul își păstrează mărimea, centrat, cu fundal doar sub el (restul rămâne transparent). Un model nu se micșorează niciodată atât încât textele să devină prea mici. Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. O atingere deschide aplicația.");
 		help.entry(mini("widget"), en ? "Widget settings" : "Setările widget-ului", en
 				? "Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save."
 				: "Ține apăsat pe widget › Setări (Android 12 și mai nou) sau ☰ › Widget-uri. Fiecare widget are setările lui: previzualizare; localitatea (ca în aplicație sau alta, cu Schimbare); Fundal pornit / oprit și cât de transparent; Culori: după vreme (cer albastru, albastru de noapte, gri pentru nori, ploaie, zăpadă, furtună, ceață), potrivite cu setările telefonului sau închise; Culoare font: automat (negru pe fundal deschis), alb sau negru. Anulare sau Salvare.");
 		help.entry(mini("refresh"), en ? "Refreshing by itself" : "Reîmprospătare automată", en
-				? "The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line \"! no data since …\" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When the forecast server is busy (HTTP 503), the app asks again at once without the ICON model (Open-Meteo's own mix of models), then once more 3 seconds later."
-				: "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă. Când descărcarea eșuează, o notificare și rândul „! fără date din …” de sub ceas spun de ce (fără internet, serverul nu a răspuns, eroare conexiune securizată, eroare server…). Când serverul de prognoză e ocupat (HTTP 503), aplicația cere imediat din nou fără modelul ICON (combinația de modele a Open-Meteo), apoi încă o dată după 3 secunde.");
+				? "The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line \"! no data since …\" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 \"overloaded\") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says \"· MET Norway\"; after a \"busy\" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen."
+				: "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă. Când descărcarea eșuează, o notificare și rândul „! fără date din …” de sub ceas spun de ce (fără internet, serverul nu a răspuns, eroare conexiune securizată, eroare server…). Când Open-Meteo e supraîncărcat (HTTP 503) sau nu răspunde, prognoza vine de la MET Norway (api.met.no, institutul meteo norvegian), iar rândul de sub ceas scrie „· MET Norway”; după un „supraîncărcat”, aplicația merge direct la MET Norway 20 de minute. Până vin date noi, pe ecran rămâne ultima vreme salvată.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
 		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather, the warnings and the earthquakes now." : "Descarcă acum vremea, avertizările și cutremurele.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");
@@ -1214,8 +1221,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Setările unui widget de pe ecranul de pornire (când sunt mai multe, alegi întâi care).");
 		help.entry(mini("log"), en ? "Log" : "Jurnal", en ? "Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone."
 				: "Tot ce a făcut aplicația, cu ora: senzorii, atingerile și gesturile, localizarea, descărcările de date (și de ce a eșuat una), reîmprospătările din fundal și widget-urile (mărimea dată de telefon, modelul arătat). Păstrează 5 zile, câte un fișier pe zi; erorile din zilele mai vechi rămân încă 10 zile în rubrica Erori. Sus: telefonul (model, Android, One UI) și versiunea aplicației. Îl citești aici, îl Trimiți (WhatsApp, Drive, e-mail…) sau îl Salvezi pe telefon.");
-		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
-				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
+		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself. The updates come from GitHub (not Google Play), so the first time the app explains this and asks for your consent: with \"I agree\" it looks for updates; with \"Not now\" it does not look and downloads nothing until you choose Check for updates again and agree. Even then, nothing is installed until you tap Update and confirm in the phone's installer."
+				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână. Actualizările vin de pe GitHub (nu din Google Play), așa că prima dată aplicația explică asta și îți cere acordul: cu „Sunt de acord” caută actualizări; cu „Nu acum” nu caută și nu descarcă nimic, până când alegi din nou Verifică actualizări și îți dai acordul. Chiar și atunci nu se instalează nimic până nu apeși Actualizează și confirmi în programul de instalare al telefonului.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
 		help.entry(mini("about"), en ? "About" : "Despre", en ? "About the app, the data it uses, and what's new in each version."
 				: "Despre aplicație, datele pe care le folosește și ce e nou în fiecare versiune.");

@@ -41,6 +41,12 @@ public final class Json {
 		return v instanceof Double ? (Double) v : Double.NaN;
 	}
 
+	/** String at KEY, or null. */
+	public static String str1(Map<String, Object> o, String key) {
+		Object v = o == null ? null : o.get(key);
+		return v instanceof String ? (String) v : null;
+	}
+
 	public static String str(List<Object> a, int k) {
 		Object v = k < a.size() ? a.get(k) : null;
 		return v instanceof String ? (String) v : null;

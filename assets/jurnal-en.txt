@@ -1,3 +1,10 @@
+v1.92 · 2 November 2026
+- Spare forecast: when Open-Meteo is overloaded (HTTP 503 "The service is overloaded", as for a whole hour on 2 November) or does not answer, the weather comes from MET Norway (api.met.no, the Norwegian weather institute): temperature, sky, precipitation, wind, humidity, pressure, UV, high / low and the next hours; the app works out sunrise and sunset. Under the clock it says "· MET Norway". After an "overloaded", the app goes straight to MET Norway for 20 minutes.
+- Fixed: the widget can again be shrunk to one row (4x2 → 4x1). In v1.91 the minimum height no longer fitted one row on Samsung.
+- Widgets: the layout is chosen by the width. Wide = 4x2 (it stays 4x2 however tall you drag it, e.g. 4x3), wide at one row = 4x1, narrow = 2x2, narrow at one row = 2x1. When the frame is taller than needed, the widget keeps its size, centred, with the background only behind it.
+- Updates: the first time, the app explains that new versions come from GitHub (not Google Play) and asks for your consent. With "Not now" it does not look or download anything until you choose ☰ › Check for updates again and agree.
+- Help updated.
+
 v1.91 · 2 November 2026
 - Fixed: when the Open-Meteo forecast server answers "busy" (HTTP 503, as on 2 November on the A54 and A70), the app asks for the forecast again at once without the ICON model (Open-Meteo's own mix of models), then once more 3 seconds later. The log notes each try and the server's answer.
 - Widgets: the layout is chosen by the frame's shape (wide and low = 4x1, wide = 4x2, square = 2x2), so a 3x2 or 4x2 frame no longer stays a zoomed 2x2. A layout is never shrunk below 80%; frames too small (for example 3x1) get a new small 2x1 layout with the icon and temperature. On Android 12+ the widget can no longer be made taller than about 2 rows.

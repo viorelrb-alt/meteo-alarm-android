@@ -134,7 +134,7 @@ public final class Weather {
 		HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
 		c.setConnectTimeout(20000);
 		c.setReadTimeout(30000);
-		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid/0.50 (github.com/viorelrb-alt/meteo-alarm-android)");
+		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid/1.92 github.com/viorelrb-alt/meteo-alarm-android");
 		try {
 			int code = c.getResponseCode();
 			if (code / 100 != 2) throw new Exception("HTTP " + code + errorText(c));

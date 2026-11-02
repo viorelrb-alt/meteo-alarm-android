@@ -1,3 +1,10 @@
+v1.92 · 2 noiembrie 2026
+- Prognoză de rezervă: când Open-Meteo e supraîncărcat (HTTP 503 „The service is overloaded”, ca pe 2 noiembrie o oră întreagă) sau nu răspunde, vremea vine de la MET Norway (api.met.no, institutul meteo norvegian): temperatura, cerul, precipitațiile, vântul, umiditatea, presiunea, UV, max / min și orele următoare; răsăritul și apusul le calculează aplicația. Sub ceas scrie „· MET Norway”. După un „supraîncărcat”, aplicația merge direct la MET Norway 20 de minute.
+- Reparat: widget-ul se poate strânge iar la un rând (4x2 → 4x1). În v1.91, limita minimă de înălțime nu mai încăpea într-un rând pe Samsung.
+- Widget-uri: modelul se alege după lățime. Lat = 4x2 (rămâne 4x2 oricât de înalt îl tragi, de exemplu 4x3), lat la un rând = 4x1, îngust = 2x2, îngust la un rând = 2x1. Dacă rama e mai înaltă decât trebuie, widget-ul își păstrează mărimea, centrat, cu fundal doar sub el.
+- Actualizări: prima dată aplicația explică faptul că versiunile noi vin de pe GitHub (nu din Google Play) și îți cere acordul. Cu „Nu acum” nu caută și nu descarcă nimic, până când alegi din nou ☰ › Verifică actualizări și ești de acord.
+- Ajutorul e actualizat.
+
 v1.91 · 2 noiembrie 2026
 - Reparat: când serverul de prognoză Open-Meteo răspunde „ocupat” (HTTP 503, ca pe 2 noiembrie pe A54 și A70), aplicația cere imediat prognoza din nou fără modelul ICON (combinația de modele a Open-Meteo), apoi încă o dată după 3 secunde. Jurnalul notează fiecare încercare și răspunsul serverului.
 - Widget-uri: modelul se alege după forma ramei (lat și jos = 4x1, lat = 4x2, pătrat = 2x2), deci o ramă de 3x2 sau 4x2 nu mai rămâne 2x2 mărit. Un model nu se mai micșorează sub 80%; pentru ramele prea mici (de exemplu 3x1) e un model mic nou, 2x1, cu iconul și temperatura. Pe Android 12+ widget-ul nu se mai poate face mai înalt de circa 2 rânduri.

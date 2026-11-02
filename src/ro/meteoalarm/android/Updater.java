@@ -58,9 +58,61 @@ final class Updater {
 		return en ? "Cancel" : "Renunță";
 	}
 
+	private android.content.SharedPreferences prefs() {
+		return a.getSharedPreferences("settings", Activity.MODE_PRIVATE);
+	}
+
+	/** The user agreed to updates from GitHub (asked once; "Not now" is asked again only from the menu). */
+	boolean agreed() {
+		return prefs().getBoolean("ghConsent", false);
+	}
+
+	/**
+	 * Viorel 2026-11-02: before any update, a notice that the updates come from GitHub (not from
+	 * Google Play) and the user's consent. Without it nothing is checked or downloaded; asked again
+	 * when the user checks from the menu. THEN runs after "I agree".
+	 */
+	private void askConsent(final Runnable then) {
+		String msg = en
+				? "Meteo Alarm does not come from Google Play. Its new versions are published on GitHub "
+						+ "(github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks "
+						+ "about once a week (or when you choose Check for updates), shows what is new, and only when you "
+						+ "tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\n"
+						+ "Do you allow the app to update this way? Without your consent the app does not look for updates "
+						+ "and does not download anything; you can agree later from ☰ › Check for updates."
+				: "Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub "
+						+ "(github.com/viorelrb-alt/meteo-alarm-android), iar aplicația se actualizează de acolo: verifică "
+						+ "cam o dată pe săptămână (sau când alegi Verifică actualizări), arată ce e nou și abia când apeși "
+						+ "Actualizează descarcă versiunea nouă și deschide programul de instalare al telefonului, unde confirmi din nou.\n\n"
+						+ "Ești de acord ca aplicația să se actualizeze așa? Fără acordul tău aplicația nu caută actualizări "
+						+ "și nu descarcă nimic; îți poți da acordul mai târziu din ☰ › Verifică actualizări.";
+		Log.i(a, "UPDATE", "informare actualizare din GitHub afișată");
+		sheet.show(en ? "Updates from GitHub" : "Actualizări din GitHub", msg, en ? "I agree" : "Sunt de acord", new Runnable() {
+			public void run() {
+				prefs().edit().putBoolean("ghConsent", true).putBoolean("ghAsked", true).apply();
+				Log.i(a, "UPDATE", "utilizatorul a acceptat actualizarea din GitHub");
+				then.run();
+			}
+		}, en ? "Not now" : "Nu acum");
+		// "Not now" (or closing): no updates; the weekly check does not ask again, the menu does.
+		prefs().edit().putBoolean("ghAsked", true).apply();
+	}
+
 	/** MANUAL (from the menu): the window opens at once and also says when there is nothing new. */
 	void check(final boolean manual) {
 		if (busy) return;
+		if (!agreed()) {
+			if (!manual && prefs().getBoolean("ghAsked", false)) {
+				Log.i(a, "UPDATE", "fără acord pentru actualizarea din GitHub, nu verific");
+				return;
+			}
+			askConsent(new Runnable() {
+				public void run() {
+					check(true);
+				}
+			});
+			return;
+		}
 		busy = true;
 		if (manual) sheet.show(en ? "Updates" : "Actualizări", en ? "Checking GitHub for a new version…" : "Caut pe GitHub o versiune nouă…",
 				null, null, close());
