@@ -33,7 +33,7 @@ final class Bubble extends FrameLayout {
 		final Bitmap icon;
 		final int kind;
 		final boolean checked;
-		static final int ITEM = 0, HEADER = 1, LINE = 2;
+		static final int ITEM = 0, HEADER = 1, LINE = 2, TEXT = 3;
 
 		Row(String text, Bitmap icon, int kind, boolean checked) {
 			this.text = text;
@@ -163,6 +163,18 @@ final class Bubble extends FrameLayout {
 				first = true;
 				continue;
 			}
+			if (r.kind == Row.TEXT) {
+				// Information in larger letters, on as many lines as it needs (the warning details).
+				TextView t = text(c, 18, false);
+				t.setTag("text");
+				t.setText(r.text);
+				t.setTextColor(ink);
+				t.setLineSpacing(2 * dp, 1);
+				t.setPadding((int) (16 * dp), (int) (5 * dp), (int) (16 * dp), (int) (5 * dp));
+				list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+				first = true;
+				continue;
+			}
 			if (!first && r.kind == Row.ITEM) {
 				View sep = new View(c);
 				sep.setBackgroundColor(line());
@@ -211,7 +223,7 @@ final class Bubble extends FrameLayout {
 			need = 0;
 			for (int k = 0; k < list.getChildCount(); k++) {
 				View v = list.getChildAt(k);
-				if (!(v instanceof TextView)) continue;
+				if (!(v instanceof TextView) || "text".equals(v.getTag())) continue;
 				TextView t = (TextView) v;
 				t.setSingleLine(true);
 				if (t.isClickable()) t.setTextSize(sp);

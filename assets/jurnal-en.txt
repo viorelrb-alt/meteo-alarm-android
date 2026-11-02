@@ -1,3 +1,11 @@
+v1.80 · 2 November 2026
+- The warnings are now one row. When there are more than fit, the row moves on by itself every 2 seconds and starts again from the first. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters.
+- New Earthquake box, first in the row: earthquakes of magnitude 3 or more in the last 24 hours in your country (from EMSC), with the magnitude, the time and how it was likely felt in your town. A tap shows all the details.
+- Widgets: the widget list now has 2x2, 4x1 and 4x2 as separate entries, each with its own preview, plus "any size". A new setting sets the background's transparency (☰ › Widgets; it also opens when you put a widget on the screen).
+- Fixed: on the Samsung A70 (Android 11) the widget picked the wrong layout. It now picks by width.
+- Refreshing by itself, also with the app closed: every 15 minutes with the screen on, every 30 minutes with the screen off, paused from sunset to sunrise with the screen off, and every hour below 25% battery.
+- Help updated.
+
 v1.71 · 1 November 2026
 - Fixed: the widget showed "--°" and "Open the app" on phones where no town was ever picked; it now uses the town the app downloaded the weather for.
 - The Android buttons at the bottom (the three buttons or the gesture line) stay visible, in the app's colour, and the screen fits above them. Only the top bar stays hidden.

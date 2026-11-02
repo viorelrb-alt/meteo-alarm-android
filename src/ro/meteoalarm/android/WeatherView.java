@@ -43,6 +43,59 @@ final class WeatherView extends View {
 
 		/** The automatic theme (phone sensor), on or off. */
 		void toggleSensor();
+
+		/** A tap on box K of the warnings row, at B (canvas units: x, y, w, h). */
+		void onAlert(int k, float[] b);
+	}
+
+	/**
+	 * The warnings row moves on by itself (Viorel 2026-11-02): every 2 s it slides smoothly to the
+	 * next box and from the last back to the first, while it has more boxes than fit; it waits
+	 * while a finger is on the screen and for 20 s after a tap on a box.
+	 */
+	private static final long ROLL_MS = 2000, ROLL_PAUSE_MS = 20000;
+	private long rollPausedUntil;
+	private android.animation.ValueAnimator roll;
+	private final Runnable rollNext = new Runnable() {
+		public void run() {
+			postDelayed(this, ROLL_MS);
+			final Strip st = screen.alerts;
+			if (st.area[2] <= 0 || st.max <= 0 || (dragging && drag == st) || screen.nightClock) return;
+			if (System.currentTimeMillis() < rollPausedUntil || !isShown()) return;
+			int k = 0;
+			while (k < st.snaps.length && st.snaps[k] <= st.scroll + 0.5f) k++;
+			float to = k >= st.snaps.length ? 0 : st.snaps[k];
+			if (roll != null) roll.cancel();
+			roll = android.animation.ValueAnimator.ofFloat(st.scroll, to);
+			roll.setDuration(to == 0 ? 900 : 650);
+			roll.setInterpolator(new android.view.animation.AccelerateDecelerateInterpolator());
+			roll.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+				public void onAnimationUpdate(android.animation.ValueAnimator a) {
+					st.scroll = (Float) a.getAnimatedValue();
+					invalidate();
+				}
+			});
+			roll.start();
+		}
+	};
+
+	/** Stops the row moving by itself for 20 s (a tap on a box, a finger on the row). */
+	void pauseRoll() {
+		rollPausedUntil = System.currentTimeMillis() + ROLL_PAUSE_MS;
+		if (roll != null) roll.cancel();
+	}
+
+	@Override
+	protected void onAttachedToWindow() {
+		super.onAttachedToWindow();
+		removeCallbacks(rollNext);
+		postDelayed(rollNext, ROLL_MS);
+	}
+
+	@Override
+	protected void onDetachedFromWindow() {
+		removeCallbacks(rollNext);
+		super.onDetachedFromWindow();
 	}
 
 	// The phone's brightness curve (Android's BrightnessUtils, HLG): slider position 0–1 to the
@@ -235,6 +288,7 @@ final class WeatherView extends View {
 			drag = null;
 			float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
 			for (Strip st : screen.strips()) if (st.area[2] > 0 && st.max > 0 && in(st.area, ux, uy)) drag = st;
+			if (drag == screen.alerts) pauseRoll();
 			if (drag != null) {
 				if (settle != null) settle.cancel();
 				scroll0 = drag.scroll;
@@ -310,11 +364,12 @@ final class WeatherView extends View {
 			return true;
 		}
 		float x = (e.getX() - ox) / scale, y = (e.getY() - oy) / scale;
-		// A sideways swipe on the warning boxes or the hour boxes shows the next or the previous ones.
-		float sx = (downX - ox) / scale, sy = (downY - oy) / scale;
-		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) {
-			if (screen.warnArea[2] > 0 && in(screen.warnArea, sx, sy)) screen.warnStart += dx < 0 ? 1 : -1;
-			invalidate();
+		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) return true;
+		// A tap on a warning (or earthquake) box: its details, and the row waits 20 s.
+		int ak = screen.alertAt(x, y);
+		if (ak >= 0) {
+			pauseRoll();
+			taps.onAlert(ak, screen.alertRect(ak));
 			return true;
 		}
 		if (in(screen.btnMenu, x, y)) taps.onMenu();

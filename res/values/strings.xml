@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Meteo Alarm</string>
+    <string name="w_2x2">Meteo Alarm 2x2</string>
+    <string name="w_4x1">Meteo Alarm 4x1</string>
+    <string name="w_4x2">Meteo Alarm 4x2</string>
+    <string name="w_any">Meteo Alarm (orice mărime)</string>
+    <string name="w_settings">Widget-uri Meteo Alarm</string>
 </resources>

@@ -21,6 +21,7 @@ import ro.meteoalarm.android.core.Gfx;
 import ro.meteoalarm.android.core.Screen;
 import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Warnings;
+import ro.meteoalarm.android.core.Quakes;
 import ro.meteoalarm.android.core.Weather;
 
 /** Desktop preview: draws the phone screen with Java2D to a PNG (java Preview ASSETS OUT.png [W H] [en] [F] [warn] [tab] [bar]). */
@@ -146,6 +147,16 @@ public final class Preview {
 				s.warns.add(w);
 			}
 		}
+		if (opts.contains(" quake")) {
+			String t1 = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S'Z'") {{ setTimeZone(java.util.TimeZone.getTimeZone("UTC")); }}.format(new java.util.Date(now - 2 * 3600000L));
+			String t2 = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S'Z'") {{ setTimeZone(java.util.TimeZone.getTimeZone("UTC")); }}.format(new java.util.Date(now - 9 * 3600000L));
+			String js = "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"properties\":{\"lat\":45.68,\"lon\":26.58,\"depth\":128.0,\"mag\":4.6,\"magtype\":\"ml\",\"time\":\"" + t1 + "\",\"flynn_region\":\"ROMANIA\",\"unid\":\"a\"}},"
+					+ "{\"type\":\"Feature\",\"properties\":{\"lat\":45.6,\"lon\":26.5,\"depth\":95.0,\"mag\":3.1,\"magtype\":\"ml\",\"time\":\"" + t2 + "\",\"flynn_region\":\"ROMANIA\",\"unid\":\"b\"}},"
+					+ "{\"type\":\"Feature\",\"properties\":{\"lat\":42.6,\"lon\":25.5,\"depth\":10.0,\"mag\":3.5,\"magtype\":\"ml\",\"time\":\"" + t2 + "\",\"flynn_region\":\"BULGARIA\",\"unid\":\"c\"}}]}";
+			s.quakes = Quakes.parse(js, "Romania", s.city.lat, s.city.lon, now);
+			for (String[] r : s.alertInfo(0)) System.out.println(r[0] + ": " + r[1]);
+		}
+		if (opts.contains(" alert1")) s.alerts.scroll = 5000;
 		if (opts.contains(" page1")) s.hours.scroll = 700;
 		if (opts.contains(" snow")) {
 			s.w.temp = -12.4;

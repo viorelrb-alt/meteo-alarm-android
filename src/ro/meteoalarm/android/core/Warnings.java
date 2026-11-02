@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 /**
  * MeteoAlarm warnings (ANM, Romania) for one county, as on the Kindle: warnings active now or
- * starting within 24 h; same level and type merged; the two highest kept.
+ * starting within 24 h; same level and type merged; the highest first.
  */
 public final class Warnings {
 	public static final String FEED = "https://feeds.meteoalarm.org/feeds/meteoalarm-legacy-atom-romania";
@@ -90,14 +90,13 @@ public final class Warnings {
 				same.until = Math.max(same.until, ex);
 			}
 		}
-		// Higher level first, then the earlier start; at most two.
+		// Higher level first, then the earlier start (all of them: the boxes are one row that scrolls).
 		java.util.Collections.sort(list, new java.util.Comparator<Warn>() {
 			public int compare(Warn a, Warn b) {
 				if (a.level != b.level) return b.level - a.level;
 				return a.from < b.from ? -1 : a.from > b.from ? 1 : 0;
 			}
 		});
-		while (list.size() > 2) list.remove(2);
 		return list;
 	}
 }

@@ -31,73 +31,75 @@ import ro.meteoalarm.android.core.Weather;
 /**
  * Home-screen widget, in the style of the phone's weather widget: on the wallpaper, a small weather
  * icon, a big temperature, the next sunset (or sunrise) and the town. It shows the weather the app
- * saved; when that is older than 30 minutes it fetches the forecast itself. A tap opens the app.
+ * saved (brought in the background by Refresher). Four entries in the phone's widget list: 2x2,
+ * 4x1, 4x2, and one that picks its layout by its size. A tap opens the app.
  */
-public final class Widget extends AppWidgetProvider {
-	private static final long FRESH_MS = 30 * 60000L;
-
-	@Override
-	public void onUpdate(final Context ctx, AppWidgetManager mgr, int[] ids) {
-		show(ctx);
-		final SharedPreferences prefs = ctx.getSharedPreferences("settings", Context.MODE_PRIVATE);
-		if (System.currentTimeMillis() - newest(prefs) < FRESH_MS) return;
-		Cities.City pc = Cities.City.fromKey(prefs.getString("city", "")), cached = Cities.City.fromKey(prefs.getString("cacheCity", ""));
-		final Cities.City c = pc != null ? pc : cached;
-		if (c == null) return;
-		final PendingResult done = goAsync();
-		new Thread(new Runnable() {
-			public void run() {
-				try {
-					String f = Weather.get(Weather.forecastUrl(c.lat, c.lon, TimeZone.getDefault().getID()));
-					Weather.parse(f);
-					FileOutputStream out = new FileOutputStream(new File(ctx.getFilesDir(), "widget.json"));
-					out.write(f.getBytes("UTF-8"));
-					out.close();
-					prefs.edit().putLong("widgetFetched", System.currentTimeMillis()).putString("widgetCity", c.key()).apply();
-					show(ctx);
-				} catch (Exception e) {
-					// keep what is shown
-				} finally {
-					done.finish();
-				}
-			}
-		}).start();
+public class Widget extends AppWidgetProvider {
+	/** The widget list's entries with one layout each (Viorel 2026-11-02), like the phone's own weather widgets. */
+	public static final class W2x2 extends Widget {
+		@Override
+		int fixed() {
+			return 0;
+		}
 	}
 
-	/** When the newest weather on the phone (the app's or the widget's own) was fetched. */
-	private static long newest(SharedPreferences p) {
-		String city = p.getString("city", "");
-		Cities.City c = Cities.City.fromKey(city), cached = Cities.City.fromKey(p.getString("cacheCity", ""));
-		if (cached != null && (c == null || cached.same(c))) city = cached.key();
-		long a = city.equals(p.getString("cacheCity", "")) ? p.getLong("fetched", 0) : 0;
-		long b = city.equals(p.getString("widgetCity", "")) ? p.getLong("widgetFetched", 0) : 0;
-		return Math.max(a, b);
+	public static final class W4x1 extends Widget {
+		@Override
+		int fixed() {
+			return 1;
+		}
+	}
+
+	public static final class W4x2 extends Widget {
+		@Override
+		int fixed() {
+			return 2;
+		}
+	}
+
+	/** This entry's layout: 0 = 2x2, 1 = 4x1, 2 = 4x2; -1 = chosen by the widget's size (the first widget). */
+	int fixed() {
+		return -1;
+	}
+
+	private static final Class<?>[] KINDS = { Widget.class, W2x2.class, W4x1.class, W4x2.class };
+
+	@Override
+	public void onUpdate(Context ctx, AppWidgetManager mgr, int[] ids) {
+		show(ctx);
+		// The weather comes with the refresh in the background, if it is due.
+		ctx.sendBroadcast(new Intent(ctx, Refresher.class));
 	}
 
 	/** Draws every widget again from the weather on the phone (the app calls it after a fetch). */
 	static void show(Context ctx) {
 		AppWidgetManager mgr = AppWidgetManager.getInstance(ctx);
-		int[] ids = mgr.getAppWidgetIds(new ComponentName(ctx, Widget.class));
-		if (ids == null || ids.length == 0) return;
-		Data dt = data(ctx);
-		for (int id : ids) draw(ctx, mgr, id, dt);
+		Data dt = null;
+		for (int k = 0; k < KINDS.length; k++) {
+			int[] ids = mgr.getAppWidgetIds(new ComponentName(ctx, KINDS[k]));
+			if (ids == null || ids.length == 0) continue;
+			if (dt == null) dt = data(ctx);
+			for (int id : ids) draw(ctx, mgr, id, dt, k - 1);
+		}
 	}
 
 	@Override
 	public void onAppWidgetOptionsChanged(Context ctx, AppWidgetManager mgr, int id, android.os.Bundle opts) {
-		draw(ctx, mgr, id, data(ctx));
+		draw(ctx, mgr, id, data(ctx), fixed());
 	}
 
 	/** What the widget shows, read once for all widgets. */
-	private static final class Data {
+	static final class Data {
 		Weather w;
 		Texts T;
 		boolean en, unitF, clk12;
 		Cities.City c;
 		int[] levels = new int[0];
+		/** How much the background shows, 0 (none, on the wallpaper) to 100 (solid). */
+		int alpha;
 	}
 
-	private static Data data(Context ctx) {
+	static Data data(Context ctx) {
 		Data d = new Data();
 		SharedPreferences p = ctx.getSharedPreferences("settings", Context.MODE_PRIVATE);
 		d.en = "en".equals(p.getString("lang", "ro"));
@@ -110,10 +112,9 @@ public final class Widget extends AppWidgetProvider {
 		Cities.City cached = Cities.City.fromKey(p.getString("cacheCity", ""));
 		if (cached != null && (d.c == null || cached.same(d.c))) d.c = cached;
 		String city = d.c != null ? d.c.key() : "";
-		boolean own = city.equals(p.getString("widgetCity", ""))
-				&& (!city.equals(p.getString("cacheCity", "")) || p.getLong("widgetFetched", 0) > p.getLong("fetched", 0));
+		d.alpha = Math.max(0, Math.min(100, p.getInt("widgetBg", 0)));
 		try {
-			if (own || city.equals(p.getString("cacheCity", ""))) d.w = Weather.parse(read(new File(ctx.getFilesDir(), own ? "widget.json" : "forecast.json")));
+			if (city.equals(p.getString("cacheCity", ""))) d.w = Weather.parse(read(new File(ctx.getFilesDir(), "forecast.json")));
 		} catch (Exception e) {
 			d.w = null;
 		}
@@ -152,19 +153,29 @@ public final class Widget extends AppWidgetProvider {
 	}
 
 	/** One widget, drawn as a picture of its size: 2x2 (square), 4x1 (low and wide) or 4x2 (wide). */
-	private static void draw(Context ctx, AppWidgetManager mgr, int id, Data d) {
+	private static void draw(Context ctx, AppWidgetManager mgr, int id, Data d, int fixed) {
 		float dens = ctx.getResources().getDisplayMetrics().density;
 		android.os.Bundle o = mgr.getAppWidgetOptions(id);
 		boolean land = ctx.getResources().getConfiguration().orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 		int wdp = o == null ? 0 : o.getInt(land ? AppWidgetManager.OPTION_APPWIDGET_MAX_WIDTH : AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH);
 		int hdp = o == null ? 0 : o.getInt(land ? AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT : AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT);
+		int minH = o == null ? 0 : Math.min(o.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT), o.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT));
 		if (wdp <= 0) wdp = 180;
 		if (hdp <= 0) hdp = 180;
+		int kind = fixed >= 0 ? fixed : kind(wdp, minH > 0 ? minH : hdp);
+		// A fixed layout keeps its own shape inside whatever frame the launcher gives it.
+		if (fixed >= 0) {
+			float rw = kind == 0 ? 192 : 384, rh = kind == 1 ? 96 : 192, f = Math.min(wdp / rw, hdp / rh);
+			if (f > 0) {
+				wdp = Math.max(40, Math.round(rw * f));
+				hdp = Math.max(20, Math.round(rh * f));
+			}
+		}
 		try {
-			send(ctx, mgr, id, d, render(ctx, d, wdp, hdp, dens));
-		} catch (Exception e) {
+			send(ctx, mgr, id, d, render(ctx, d, wdp, hdp, dens, kind));
+		} catch (Throwable e) {
 			// Too large a picture for the home screen: half the sharpness, still the same widget.
-			send(ctx, mgr, id, d, render(ctx, d, wdp, hdp, dens / 2));
+			send(ctx, mgr, id, d, render(ctx, d, wdp, hdp, dens / 2, kind));
 		}
 	}
 
@@ -178,21 +189,31 @@ public final class Widget extends AppWidgetProvider {
 		mgr.updateAppWidget(id, v);
 	}
 
-	/** The layout for a widget WDP x HDP: 4x1 when low, 4x2 when wide, else 2x2. */
+	/**
+	 * The layout for the first widget (any size), WDP wide and at least HDP high: by the width, as
+	 * the columns (Samsung A70, Android 11: a 4x3 widget is nearly square, and the heights it
+	 * reports are not the frame's): the whole width of the screen is 4x1 when one row high, else
+	 * 4x2; less is 2x2.
+	 */
 	static int kind(int wdp, int hdp) {
-		if (hdp < 125 && wdp > hdp * 1.6f) return 1;
-		if (wdp > hdp * 1.5f) return 2;
+		if (wdp >= 230) return hdp < 100 ? 1 : 2;
 		return 0;
 	}
 
 	/** Draws the widget WDP x HDP dp at DENS px per dp; the layouts are Viorel's mockups (192x192, 384x96, 384x192 dp). */
-	static Bitmap render(Context ctx, Data d, int wdp, int hdp, float dens) {
-		int kind = kind(wdp, hdp);
+	static Bitmap render(Context ctx, Data d, int wdp, int hdp, float dens, int kind) {
 		float rw = kind == 0 ? 192 : 384, rh = kind == 1 ? 96 : 192;
 		float s = Math.min(wdp / rw, hdp / rh);
 		int W = Math.max(1, Math.round(wdp * dens)), H = Math.max(1, Math.round(hdp * dens));
 		Bitmap out = Bitmap.createBitmap(W, H, Bitmap.Config.ARGB_8888);
 		Canvas cv = new Canvas(out);
+		// The background, as see-through as set in Widgets (none by default: on the wallpaper).
+		if (d.alpha > 0) {
+			Paint bg = new Paint(Paint.ANTI_ALIAS_FLAG);
+			bg.setColor(((d.alpha * 255 / 100) << 24) | 0x1C1C1E);
+			float r = Math.min(22 * dens, Math.min(W, H) / 4f);
+			cv.drawRoundRect(new RectF(0, 0, W, H), r, r, bg);
+		}
 		float k = s * dens;
 		cv.translate((W - rw * k) / 2, (H - rh * k) / 2);
 		cv.scale(k, k);

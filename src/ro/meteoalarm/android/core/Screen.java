@@ -47,6 +47,8 @@ public final class Screen {
 	// Inputs.
 	public Weather w;
 	public List<Warnings.Warn> warns;
+	/** The earthquakes of the last 24 h in the country (EMSC), newest first. */
+	public List<Quakes.Quake> quakes;
 	public int pollenLvl = -1;
 	/** European air quality index, -1 when unknown. */
 	public int aqi = -1;
@@ -103,10 +105,11 @@ public final class Screen {
 	public int warnStart, warnBoxes;
 	/** Where the hour boxes are (for the swipe) and the page shown; set by draw. */
 	/** The rows moved by the finger: next hours, five days (landscape), info boxes, info grid (landscape). */
-	public final Strip hours = new Strip(false), days = new Strip(false), info = new Strip(false), grid = new Strip(true);
+	public final Strip hours = new Strip(false), days = new Strip(false), info = new Strip(false), grid = new Strip(true),
+			alerts = new Strip(false);
 
 	public Strip[] strips() {
-		return new Strip[] { hours, days, info, grid };
+		return new Strip[] { hours, days, info, grid, alerts };
 	}
 
 	/** Canvas width: 758 in portrait, wider in landscape. */
@@ -170,6 +173,7 @@ public final class Screen {
 		btnLocate[1] = fb;
 		g.rect(40, 102, 678, 2, c.line);
 		warnArea[2] = 0;
+		alerts.area[2] = 0;
 		// The town next to the menu button, above the line.
 		String label = place();
 		float lp = fit(true, 40, 340, label);
@@ -236,6 +240,7 @@ public final class Screen {
 			return;
 		}
 		warnArea[2] = 0;
+		alerts.area[2] = 0;
 		float wb = drawWarnBoxes(40, 116, leftR - 40, 2, 1);
 		float nowTop = wb > 0 ? wb + 14 : 116;
 		float fy = 568;
@@ -305,6 +310,7 @@ public final class Screen {
 		btnLocate[1] = fb;
 		g.rect(40, 102, cw - 80, 2, c.line);
 		warnArea[2] = 0;
+		alerts.area[2] = 0;
 		for (Strip st : strips()) st.area[2] = 0;
 		String label = place();
 		float lp = fit(true, 40, cw / 2 - 160, label);
@@ -684,56 +690,227 @@ public final class Screen {
 		return gs;
 	}
 
+	/** The earthquake shown first in the row, or null (the strongest of the last 24 h in the country). */
+	private Quakes.Quake quake() {
+		Quakes.Quake q = Quakes.main(quakes);
+		return q != null && now.getTimeInMillis() - q.time <= Quakes.WINDOW_MS ? q : null;
+	}
+
+	/** How many boxes the row of warnings has (the earthquake counts). */
+	public int alertCount() {
+		return warnGroups().size() + (quake() != null ? 1 : 0);
+	}
+
+	/** The box of the row at X Y (canvas units), -1 when none. */
+	public int alertAt(float x, float y) {
+		if (alerts.area[2] <= 0 || y < alerts.area[1] || y > alerts.area[1] + alerts.area[3]) return -1;
+		if (x < alerts.area[0] || x > alerts.area[0] + alerts.area[2]) return -1;
+		float rel = x - alerts.area[0] + alerts.scroll;
+		int k = (int) Math.floor(rel / alertStep);
+		return k >= 0 && k < alertCount() ? k : -1;
+	}
+
+	/** Where box K of the row is on the canvas (x, y, w, h). */
+	public float[] alertRect(int k) {
+		return new float[] { alerts.area[0] + k * alertStep - alerts.scroll, alerts.area[1], alertStep - 16, alerts.area[3] };
+	}
+
+	private float alertStep = 1;
+
 	// Title bars: light pastels with black text, or dark shades with white text (yellow, orange, red).
 	private static final int[] BAR_LIGHT = { 0xFFEDF9A5, 0xFFFFC285, 0xFFFF8585 }, BAR_DARK = { 0xFF8C7A12, 0xFFA8561E, 0xFF9E2B2B };
+	private static final int QUAKE_LIGHT = 0xFFD9D9D9, QUAKE_DARK = 0xFF5A5954;
 
 	/**
-	 * One box per warning code across WD: the code in a coloured title bar, the types and the
-	 * period under it, a warning triangle in the red one. COLS fit (a phone: two, the third is
-	 * reached by swiping, with dots under the boxes; a tablet: three equal boxes), F times larger.
-	 * Returns the bottom of what was drawn, 0 without warnings.
+	 * The warnings as ONE row of boxes across WD (Viorel 2026-11-02): the earthquake first (when
+	 * there is one), then one box per warning code, red first. COLS fit (a phone: two, a tablet:
+	 * three); with more, the row moves on by itself every 2 s (WeatherView) and follows the finger.
+	 * F times larger. Returns the bottom of what was drawn, 0 without boxes.
 	 */
 	private float drawWarnBoxes(float x0, float y, float wd, int cols, float f) {
 		List<WarnGroup> gs = warnGroups();
-		int n = gs.size(), vis = Math.min(cols, n);
+		Quakes.Quake q = quake();
+		int n = gs.size() + (q != null ? 1 : 0), vis = Math.min(cols, n);
 		warnBoxes = n;
+		alerts.area[2] = 0;
 		if (n == 0) return 0;
-		warnStart = Math.max(0, Math.min(warnStart, n - vis));
 		int across = cols > 2 ? cols : vis;
-		float gap = 16, bw = (wd - gap * (across - 1)) / across, h = 130 * f, hb = 44 * f, r = 14;
+		float gap = 16, bw = (wd - gap * (across - 1)) / across, h = 130 * f, step = bw + gap;
+		alertStep = step;
+		float[] starts = new float[n];
+		for (int k = 0; k < n; k++) starts[k] = k * step;
+		alerts.set(starts, n * step - gap - wd);
+		alerts.area[0] = x0; alerts.area[1] = y; alerts.area[2] = wd; alerts.area[3] = h;
 		warnArea[0] = x0; warnArea[1] = y; warnArea[2] = wd; warnArea[3] = h;
-		int border = c.ink, body = dark ? 0xFF000000 : c.page;
-		for (int i = 0; i < vis; i++) {
-			WarnGroup gr = gs.get(warnStart + i);
-			float x = x0 + i * (bw + gap);
-			int bar = (dark ? BAR_DARK : BAR_LIGHT)[gr.level - 1];
-			g.roundRect(x, y, bw, h, r, border);
-			g.roundRect(x + 2, y + 2, bw - 4, h - 4, r - 2, body);
-			g.roundRect(x + 2, y + 2, bw - 4, hb, r - 2, bar);
-			g.rect(x + 2, y + r, bw - 4, hb - r + 2, bar);
-			g.rect(x + 2, y + hb, bw - 4, 2, border);
-			String name = T.warn[gr.level - 1];
-			String title = T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
-			float hp = fit(true, 30 * f, bw - 24, title), ty = y + 2 + (hb - 2) / 2 - hp * 485 / 1000;
-			int tc = dark ? 0xFFFFFFFF : 0xFF000000;
-			float tx = x + bw / 2 - g.width(true, hp, title) / 2;
-			g.text(true, hp, ty, tx, title, tc);
-			g.text(true, hp, ty, tx + 1, title, tc);
-			float lx = x + 18;
-			if (gr.level >= 3) {
-				g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46 * f) / 2, 50 * f, 46 * f, dark ? c.warnR : c.ink);
-				lx = x + 28 + 50 * f;
-			}
-			float room = x + bw - 12 - lx;
-			String txt = T.warnType(gr.types);
-			String per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
-			ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, lx, txt, c.ink);
-			ltext(false, fit(false, 26 * f, room, per), y + hb + 50 * f, lx, per, c.dim);
+		g.clip(x0 - 2, y - 2, wd + 4, h + 4);
+		for (int i = 0; i < n; i++) {
+			float x = x0 + i * step - alerts.scroll;
+			if (x + bw < x0 - 4 || x > x0 + wd + 4) continue;
+			if (q != null && i == 0) drawQuakeBox(q, x, y, bw, h, f);
+			else drawWarnBox(gs.get(i - (q != null ? 1 : 0)), x, y, bw, h, f);
 		}
-		if (n <= vis) return y + h;
-		// One dot per position of the boxes; the current one in ink.
-		dots(x0 + wd / 2, y + h + 10, n - vis + 1, warnStart);
-		return y + h + 26;
+		g.unclip();
+		return y + h;
+	}
+
+	/** The frame of a box with its title bar in BAR and TITLE in it; returns the bar's height. */
+	private float alertFrame(float x, float y, float bw, float h, float f, int bar, String title) {
+		float hb = 44 * f, r = 14;
+		int border = c.ink, body = dark ? 0xFF000000 : c.page;
+		g.roundRect(x, y, bw, h, r, border);
+		g.roundRect(x + 2, y + 2, bw - 4, h - 4, r - 2, body);
+		g.roundRect(x + 2, y + 2, bw - 4, hb, r - 2, bar);
+		g.rect(x + 2, y + r, bw - 4, hb - r + 2, bar);
+		g.rect(x + 2, y + hb, bw - 4, 2, border);
+		float hp = fit(true, 30 * f, bw - 24, title), ty = y + 2 + (hb - 2) / 2 - hp * 485 / 1000;
+		int tc = dark ? 0xFFFFFFFF : 0xFF000000;
+		float tx = x + bw / 2 - g.width(true, hp, title) / 2;
+		g.text(true, hp, ty, tx, title, tc);
+		g.text(true, hp, ty, tx + 1, title, tc);
+		return hb;
+	}
+
+	private void drawWarnBox(WarnGroup gr, float x, float y, float bw, float h, float f) {
+		String name = T.warn[gr.level - 1];
+		float hb = alertFrame(x, y, bw, h, f, (dark ? BAR_DARK : BAR_LIGHT)[gr.level - 1], T.en ? name + " " + T.warnCode : T.warnCode + " " + name);
+		float lx = x + 18;
+		if (gr.level >= 3) {
+			g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46 * f) / 2, 50 * f, 46 * f, dark ? c.warnR : c.ink);
+			lx = x + 28 + 50 * f;
+		}
+		float room = x + bw - 12 - lx;
+		String txt = T.warnType(gr.types);
+		String per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
+		ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, lx, txt, c.ink);
+		ltext(false, fit(false, 26 * f, room, per), y + hb + 50 * f, lx, per, c.dim);
+	}
+
+	/** "4,2" (Romanian) or "4.2". */
+	private String dec(double v) {
+		String s = String.format(java.util.Locale.US, "%.1f", v);
+		return T.en ? s : s.replace('.', ',');
+	}
+
+	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
+		float hb = alertFrame(x, y, bw, h, f, dark ? QUAKE_DARK : QUAKE_LIGHT, T.en ? "EARTHQUAKE" : "CUTREMUR");
+		float lx = x + 18, room = bw - 30;
+		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);
+		String l2 = q.felt >= 2 ? (T.en ? "Felt here: " : "Resimțit aici: ") + roman(q.felt) + (T.en ? " (estimate)" : " (estimat)")
+				: (T.en ? "depth " : "adânc. ") + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km";
+		ltext(true, fit(true, 30 * f, room, l1), y + hb + 12 * f, lx, l1, c.ink);
+		ltext(false, fit(false, 26 * f, room, l2), y + hb + 50 * f, lx, l2, c.dim);
+	}
+
+	private static final String[] ROMAN = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII" };
+
+	static String roman(double i) {
+		int k = (int) Math.round(Math.max(1, Math.min(12, i)));
+		return ROMAN[k - 1];
+	}
+
+	/** EMS-98 in a few words, for intensity I. */
+	private String feltWords(double i) {
+		int k = (int) Math.round(Math.max(1, Math.min(12, i)));
+		String[] ro = { "nu se simte", "abia simțit, doar de câțiva oameni aflați în repaus", "slab, simțit de puțini oameni, în interior",
+				"simțit de mulți oameni în interior; geamurile și ușile vibrează", "puternic, simțit de aproape toți; obiectele se mișcă, unii se sperie",
+				"ușoare avarii (fisuri în tencuială); mulți ies afară", "avarii la clădiri; greu de stat în picioare", "avarii grave",
+				"distrugeri", "distrugeri mari", "distrugeri foarte mari", "distrugere totală" };
+		String[] en = { "not felt", "scarcely felt, only by a few people at rest", "weak, felt by a few people indoors",
+				"felt by many indoors; windows and doors rattle", "strong, felt by nearly everyone; objects move, some are frightened",
+				"slight damage (cracks in plaster); many run outdoors", "damage to buildings; hard to stand", "heavy damage",
+				"destruction", "great destruction", "very great destruction", "complete destruction" };
+		return (T.en ? en : ro)[k - 1];
+	}
+
+	private String dateTime(long ms) {
+		Calendar k = Calendar.getInstance();
+		k.setTimeInMillis(ms);
+		String hm = Texts.clock(String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE)), clk12);
+		return T.weekdayTime(ms, clk12).replace(" " + hm, "") + " " + String.format("%02d.%02d.%d", k.get(Calendar.DAY_OF_MONTH),
+				k.get(Calendar.MONTH) + 1, k.get(Calendar.YEAR)) + ", " + hm + ":" + String.format("%02d", k.get(Calendar.SECOND));
+	}
+
+	private static String titleCase(String s) {
+		StringBuilder b = new StringBuilder();
+		boolean up = true;
+		for (char ch : s.toLowerCase().toCharArray()) {
+			b.append(up ? Character.toUpperCase(ch) : ch);
+			up = !Character.isLetter(ch);
+		}
+		return b.toString();
+	}
+
+	/**
+	 * What the bubble of box K says: [0] = { "title", text }, then { "h", section } and { "t", text }
+	 * lines (the app shows them in larger letters).
+	 */
+	public List<String[]> alertInfo(int k) {
+		List<String[]> out = new ArrayList<String[]>();
+		Quakes.Quake q = quake();
+		boolean en = T.en;
+		String town = city != null ? city.name : "";
+		if (q != null && k == 0) {
+			out.add(new String[] { "title", (en ? "Earthquake M" : "Cutremur M") + dec(q.mag) });
+			out.add(new String[] { "t", (en ? "Magnitude: " : "Magnitudine: ") + dec(q.mag) + (q.magType.length() > 0 ? " (" + q.magType.toUpperCase() + ")" : "") });
+			out.add(new String[] { "t", (en ? "Time: " : "Ora: ") + dateTime(q.time) });
+			out.add(new String[] { "t", (en ? "Region: " : "Zona: ") + titleCase(q.region) });
+			out.add(new String[] { "t", (en ? "Depth: " : "Adâncime: ") + Math.round(q.depth) + " km" });
+			out.add(new String[] { "t", (en ? "Epicentre: " : "Epicentru: ") + dec(Math.abs(q.lat)) + "° " + (q.lat >= 0 ? "N" : "S") + ", "
+					+ dec(Math.abs(q.lon)) + "° " + (q.lon >= 0 ? "E" : en ? "W" : "V") + (en ? ", " : ", la ") + Math.round(q.dist) + " km"
+					+ (en ? " from " : " de ") + town });
+			out.add(new String[] { "h", en ? "In " + town : "La " + town });
+			if (q.felt >= 2) out.add(new String[] { "t", (en ? "Probably felt, intensity " : "Probabil resimțit, intensitate ") + roman(q.felt) + ": " + feltWords(q.felt) + "." });
+			else out.add(new String[] { "t", en ? "Probably not felt here." : "Probabil nu s-a simțit aici." });
+			out.add(new String[] { "t", en ? "Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town."
+					: "Estimare după magnitudine și distanța până la focar (scara EMS-98); EMSC nu publică mărturiile pentru fiecare localitate." });
+			if (quakes != null && quakes.size() > 1) {
+				out.add(new String[] { "h", en ? "All in the last 24 h" : "Toate în ultimele 24 h" });
+				for (Quakes.Quake o : quakes)
+					out.add(new String[] { "t", "M" + dec(o.mag) + " · " + T.weekdayTime(o.time, clk12) + " · " + (en ? "depth " : "adânc. ") + Math.round(o.depth) + " km" });
+			}
+			out.add(new String[] { "t", en ? "Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h." : "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h." });
+			return out;
+		}
+		List<WarnGroup> gs = warnGroups();
+		int gi = k - (q != null ? 1 : 0);
+		if (gi < 0 || gi >= gs.size()) return out;
+		WarnGroup gr = gs.get(gi);
+		String name = T.warn[gr.level - 1];
+		out.add(new String[] { "title", en ? titleCase(name) + " warning" : "Cod " + name.toLowerCase() });
+		String[] what = en ? new String[] { "Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.",
+				"Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.",
+				"Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions." }
+				: new String[] { "Fenomene meteorologice potențial periculoase (obișnuite pentru sezon, dar local mai intense). Fiți atenți dacă sunteți afară.",
+						"Fenomene meteorologice periculoase, de intensitate mare. Fiți foarte vigilenți, urmăriți prognoza și sfaturile autorităților.",
+						"Fenomene meteorologice foarte periculoase, de intensitate foarte mare. Luați măsuri de protecție și urmați instrucțiunile autorităților." };
+		out.add(new String[] { "t", what[gr.level - 1] });
+		long nowMs = now.getTimeInMillis();
+		for (Warnings.Warn wr : warns) {
+			if (wr.until <= nowMs || Math.min(3, Math.max(1, wr.level)) != gr.level) continue;
+			out.add(new String[] { "h", T.warnType(wr.type) });
+			String st = wr.from <= nowMs ? (en ? "In force now, until " : "În vigoare acum, până ") + T.weekdayTime(wr.until, clk12)
+					: (en ? "From " : "De ") + T.weekdayTime(wr.from, clk12) + (en ? " until " : " până ") + T.weekdayTime(wr.until, clk12);
+			out.add(new String[] { "t", st });
+			String tip = advice(wr.type);
+			if (tip.length() > 0) out.add(new String[] { "t", tip });
+		}
+		out.add(new String[] { "t", en ? "Source: MeteoAlarm (the national weather service), for " + (city != null ? city.label() : "")
+				: "Sursa: MeteoAlarm (ANM), pentru " + (city != null ? city.label() : "") });
+		return out;
+	}
+
+	/** A short piece of advice for a warning type. */
+	private String advice(String type) {
+		boolean en = T.en;
+		if (type.equals("wind")) return en ? "Stay away from trees, poles and scaffolding; secure loose objects." : "Feriți-vă de copaci, stâlpi și schele; fixați obiectele care pot fi luate de vânt.";
+		if (type.startsWith("thunderstorm")) return en ? "Lightning, downpours, hail and gusts are possible; take shelter indoors." : "Sunt posibile descărcări electrice, averse, grindină și intensificări ale vântului; adăpostiți-vă în clădiri.";
+		if (type.startsWith("rain") || type.startsWith("flood")) return en ? "Avoid flooded roads and river banks." : "Evitați drumurile inundate și malurile râurilor.";
+		if (type.startsWith("snow")) return en ? "Slippery roads; drive only if you must, with winter equipment." : "Drumuri alunecoase; circulați doar dacă e necesar, cu echipament de iarnă.";
+		if (type.equals("fog")) return en ? "Low visibility; drive slowly with the fog lights on." : "Vizibilitate redusă; circulați încet, cu luminile de ceață aprinse.";
+		if (type.startsWith("high-temperature")) return en ? "Avoid the sun between 11 and 18, drink plenty of water." : "Evitați soarele între orele 11 și 18 și beți multă apă.";
+		if (type.startsWith("low-temperature")) return en ? "Dress warmly and limit time outdoors." : "Îmbrăcați-vă gros și stați cât mai puțin afară.";
+		if (type.startsWith("forest-fire")) return en ? "Do not light fires outdoors." : "Nu aprindeți focul în aer liber.";
+		return "";
 	}
 
 	// --- Precipitation -------------------------------------------------------------------
@@ -1485,6 +1662,27 @@ public final class Screen {
 			g.rect(14, 30, 36, 4, k);
 			g.poly(new float[] { 18, 22, 18, 42, 6, 32 }, k);
 			g.poly(new float[] { 46, 22, 46, 42, 58, 32 }, k);
+		} else if (which.equals("widget")) {
+			// Four tiles of the home screen, one of them wide.
+			g.roundRect(6, 6, 52, 22, 5, k);
+			g.roundRect(9, 9, 46, 16, 3, c.page);
+			g.roundRect(6, 34, 22, 24, 5, k);
+			g.roundRect(9, 37, 16, 18, 3, c.page);
+			g.roundRect(36, 34, 22, 24, 5, k);
+		} else if (which.equals("quake")) {
+			// A seismograph line.
+			float[] xs = { 4, 16, 21, 27, 33, 39, 45, 60 }, ys = { 32, 32, 18, 50, 8, 56, 32, 32 };
+			for (int i = 0; i + 1 < xs.length; i++) {
+				float dx = xs[i + 1] - xs[i], dy = ys[i + 1] - ys[i], len = (float) Math.sqrt(dx * dx + dy * dy);
+				float nx = -dy / len * 2.2f, ny = dx / len * 2.2f;
+				g.poly(new float[] { xs[i] + nx, ys[i] + ny, xs[i + 1] + nx, ys[i + 1] + ny, xs[i + 1] - nx, ys[i + 1] - ny, xs[i] - nx, ys[i] - ny }, k);
+			}
+		} else if (which.equals("roll")) {
+			// Two boxes side by side with an arrow under them.
+			g.roundRect(4, 10, 26, 22, 4, k);
+			g.roundRect(34, 10, 26, 22, 4, k);
+			g.rect(12, 44, 34, 4, k);
+			g.poly(new float[] { 44, 38, 44, 54, 56, 46 }, k);
 		}
 	}
 

@@ -43,11 +43,13 @@ import ro.meteoalarm.android.core.Weather;
 
 /**
  * Meteo Alarm Android: the Kindle weather clock on a phone. The weather is fetched every 15 minutes
- * while the app is open (every hour at night) and kept on disk, so it opens at once offline.
+ * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.71";
-	private static final long WEATHER_MS = 15 * 60000L, NIGHT_MS = 60 * 60000L;
+	static final String VERSION = "Meteo Alarm Android v1.80";
+	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
+	/** The app is on the screen (the refresh in the background then leaves the work to it). */
+	static volatile boolean onScreen;
 
 	private WeatherView view;
 	private Screen s;
@@ -156,7 +158,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return s.T.en
 				? "This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.\n\n"
 						+ "No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent "
-						+ "to Open-Meteo (weather, pollen); the warnings come from MeteoAlarm (ANM).\n\n"
+						+ "to Open-Meteo (weather, pollen); the warnings come from MeteoAlarm (ANM), the earthquakes from EMSC (seismicportal.eu).\n\n"
 						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
 						+ "coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, "
 						+ "with where you were, are kept only on the phone. "
@@ -169,7 +171,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						+ Updater.protectNote(true)
 				: "Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.\n\n"
 						+ "Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele "
-						+ "localității către Open-Meteo (vremea, polenul); avertizările vin de la MeteoAlarm (ANM).\n\n"
+						+ "localității către Open-Meteo (vremea, polenul); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).\n\n"
 						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
 						+ "localității, coordonatele merg la OpenStreetMap (sau la geocoderul telefonului), de unde vin și granițele "
 						+ "localității. Localitățile găsite, cu locul exact, rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
@@ -191,9 +193,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}, null);
 	}
 
+	/** With the app open the screen is on: every 15 minutes, every hour below 25% battery (not charging). */
 	private long interval() {
-		int h = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-		return h >= 23 || h < 6 ? NIGHT_MS : WEATHER_MS;
+		return s.batt >= 0 && s.batt < Refresher.LOW_BATTERY && !s.charging ? LOW_BATTERY_MS : WEATHER_MS;
 	}
 
 	private void applySettings() {
@@ -497,6 +499,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	protected void onResume() {
 		super.onResume();
 		resumed = true;
+		onScreen = true;
 		listenLight("sensor".equals(prefs.getString("theme", "auto")));
 		listenCompass(true);
 		lastTouch = System.currentTimeMillis();
@@ -585,6 +588,27 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Notices of a look started from the town's name go under the line under the town. */
 	private boolean noteTop;
+
+	/** A tap on box K of the warnings row: its details in a bubble, in larger letters (the row waits 20 s). */
+	public void onAlert(final int k, final float[] b) {
+		reopen = new Runnable() {
+			public void run() {
+				if (k < s.alertCount()) onAlert(k, s.alertRect(k));
+			}
+		};
+		List<String[]> info = s.alertInfo(k);
+		if (info.isEmpty()) return;
+		String head = info.get(0)[1];
+		List<Bubble.Row> rows = Bubble.rows();
+		for (int i = 1; i < info.size(); i++) {
+			String[] r = info.get(i);
+			rows.add(new Bubble.Row(r[1], null, r[0].equals("h") ? Bubble.Row.HEADER : Bubble.Row.TEXT, false));
+		}
+		bubble.show(view.px(b), bubbleWidth(0.86f, 280), head, rows, s.T.en, new Bubble.Pick() {
+			public void picked(int i) {
+			}
+		});
+	}
 
 	/**
 	 * A tap on the town's name: one look with the GPS for a better forecast; automatic location
@@ -788,6 +812,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		onScreen = false;
+		// The weather keeps coming in the background (every 15 / 30 / 60 minutes, paused at night with the screen off).
+		Refresher.schedule(this);
 		// Settings changed in the app (town, °C/°F, language) show on the home-screen widget too.
 		Widget.show(this);
 		resumed = false;
@@ -869,6 +896,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 			String x = readCache("warn.xml");
 			if (x != null) s.warns = Warnings.parse(x, s.city.warnNames(), System.currentTimeMillis());
+			s.quakes = Fetcher.quakes(this, s.city);
 		} catch (Exception e) {
 			s.w = null;
 		}
@@ -881,62 +909,20 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.busy = true;
 		view.invalidate();
 		final Cities.City c = s.city;
+		final Context ctx = getApplicationContext();
 		new Thread(new Runnable() {
 			public void run() {
-				String f = null, p = null, x = null;
-				try {
-					f = Weather.get(Weather.forecastUrl(c.lat, c.lon, TimeZone.getDefault().getID()));
-					Weather.parse(f);
-				} catch (Exception e) {
-					f = null;
-				}
-				String uvText = null;
-				try {
-					if (f != null) uvText = Weather.get(Weather.uvUrl(c.lat, c.lon, TimeZone.getDefault().getID()));
-				} catch (Exception e) {
-					uvText = null;
-				}
-				final String uu = uvText;
-				try {
-					p = Weather.get(Weather.pollenUrl(c.lat, c.lon));
-				} catch (Exception e) {
-					p = null;
-				}
-				x = warningsFeed(c.country);
-				final String ff = f, pp = p, xx = x;
+				final Fetcher.Result r = Fetcher.download(ctx, c);
 				handler.post(new Runnable() {
 					public void run() {
-						done(c, ff, pp, xx, uu);
+						done(c, r);
 					}
 				});
 			}
 		}).start();
 	}
 
-	/**
-	 * The country's MeteoAlarm warnings (off the main thread): the feed that worked last time first,
-	 * then the others listed for the country; the one that answers is kept on the phone.
-	 */
-	private String warningsFeed(String cc) {
-		List<String> urls = countries.feeds(cc);
-		String known = prefs.getString("feed_" + cc, null);
-		if (known != null) {
-			urls.remove(known);
-			urls.add(0, known);
-		}
-		for (String u : urls) {
-			try {
-				String x = Weather.get(u);
-				if (!u.equals(known)) prefs.edit().putString("feed_" + cc, u).apply();
-				return x;
-			} catch (Exception e) {
-				// try the next one
-			}
-		}
-		return null;
-	}
-
-	private void done(Cities.City c, String f, String p, String x, String uvText) {
+	private void done(Cities.City c, Fetcher.Result r) {
 		fetching = false;
 		s.busy = false;
 		if (c != s.city) { // the town changed meanwhile
@@ -944,35 +930,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			return;
 		}
 		long now = System.currentTimeMillis();
-		if (f != null) {
-			s.w = Weather.parse(f);
-			if (uvText != null) {
-				Weather.addExtra(s.w, uvText);
-				writeCache("uv.json", uvText);
-			}
+		Fetcher.save(this, c, r);
+		if (r.forecast != null) {
+			s.w = Weather.parse(r.forecast);
+			if (r.uv != null) Weather.addExtra(s.w, r.uv);
 			s.fetched = now;
 			s.offline = false;
-			writeCache("forecast.json", f);
-			prefs.edit().putLong("fetched", now).putString("cacheCity", c.key()).commit();
 			Widget.show(this);
 		} else if (s.w == null) {
 			s.error = s.T.en ? "No internet connection" : "Fără conexiune la internet";
 		}
-		if (p != null) {
+		if (r.pollen != null) {
 			try {
-				Object[] r = Weather.parsePollen(p);
-				s.pollenLvl = (Integer) r[0];
-				s.pollenPlant = (String) r[1];
-				s.aqi = Weather.parseAqi(p);
-				writeCache("pollen.json", p);
+				Object[] pr = Weather.parsePollen(r.pollen);
+				s.pollenLvl = (Integer) pr[0];
+				s.pollenPlant = (String) pr[1];
+				s.aqi = Weather.parseAqi(r.pollen);
 			} catch (Exception e) {
 				// keep the last pollen
 			}
 		}
-		if (x != null) {
-			s.warns = Warnings.parse(x, c.warnNames(), now);
-			writeCache("warn.xml", x);
-		}
+		if (r.warn != null) s.warns = Warnings.parse(r.warn, c.warnNames(), now);
+		if (r.quake != null) s.quakes = Fetcher.quakes(this, c);
 		view.invalidate();
 	}
 
@@ -1048,6 +1027,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: (en ? "Night clock ON" : "Ceas noapte ON"), "night"));
 		ids.add("src"); rows.add(row(osm() ? (en ? "Neighbourhood: OpenStreetMap" : "Cartier: OpenStreetMap") : (en ? "Neighbourhood: phone" : "Cartier: telefon"), "area"));
 		ids.add("loc"); rows.add(row(auto ? (en ? "Location Off" : "Localizare Off") : (en ? "Location On" : "Localizare On"), "locate"));
+		ids.add("widget"); rows.add(row(en ? "Widgets" : "Widget-uri", "widget"));
 		ids.add("update"); rows.add(row(en ? "Check for updates" : "Verifică actualizări", "update"));
 		ids.add("help"); rows.add(row(en ? "Help" : "Ajutor", "help"));
 		ids.add("about"); rows.add(row(en ? "About" : "Despre", "about"));
@@ -1082,6 +1062,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					msg = o ? (en ? "Neighbourhood from OpenStreetMap; tap the location to look again" : "Cartierul din OpenStreetMap; apasă localizarea ca să caute din nou")
 							: (en ? "Neighbourhood from the phone; tap the location to look again" : "Cartierul din telefon; apasă localizarea ca să caute din nou");
 				} else if (it.equals("update")) { updater.check(true); return; }
+				else if (it.equals("widget")) { startActivity(new Intent(MainActivity.this, WidgetConfig.class)); return; }
 				else if (it.equals("help")) { help(); return; }
 				else if (it.equals("night")) {
 					boolean on = !prefs.getBoolean("nightClock", true);
@@ -1152,17 +1133,26 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: "Lângă vânt: săgeata arată încotro bate vântul, rotită după cum ții telefonul (busola); semnul portocaliu e nordul.");
 		help.entry(mini("night"), en ? "Night clock" : "Ceasul de noapte", en ? "While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute."
 				: "Când telefonul se încarcă noaptea (de la apus la răsărit) și nu-l atingi un minut: un ceas mare și estompat. O atingere revine pentru un minut.");
-		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "On the warnings: the next or the previous ones. The hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected."
-				: "Pe avertizări: următoarele sau cele dinainte. Casetele cu ore și cele 5 zile (Mâine și încă 4 zile, câte două) urmează degetul. Graficul Precipitații · următoarele 12 ore apare primul în rândul cu ore, doar când e prognozată ploaie sau ninsoare.");
+		help.entry(mini("roll"), en ? "Warnings and earthquake" : "Avertizări și cutremur", en
+				? "Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours)."
+				: "Sub linie, un singur rând de casete: întâi cutremurul (dacă a fost unul), apoi câte o casetă pentru fiecare cod de avertizare (roșu, portocaliu, galben). Pe ecran încap două; când sunt mai multe, rândul se mută singur la 2 secunde și o ia de la capăt. Îl poți glisa și cu degetul. Atinge o casetă: rândul se oprește 20 de secunde și un balon arată detaliile, cu litere mai mari (la un cod: ce înseamnă, fiecare avertizare cu perioada și sfaturi; la cutremur: magnitudinea, ora, zona, adâncimea, epicentrul și distanța, cum s-a simțit probabil în localitatea ta și toate cutremurele din ultimele 24 de ore).");
+		help.entry(mini("quake"), en ? "Earthquake box" : "Caseta Cutremur", en
+				? "From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours."
+				: "De la EMSC (Centrul Seismologic European-Mediteranean): cutremurele cu magnitudinea 3 sau mai mare din ultimele 24 de ore din țara localității tale (cea găsită de localizare). Caseta îl arată pe cel mai puternic: magnitudinea și ora, și cum s-a simțit în localitatea ta, ca estimare pe scara EMS-98 (după magnitudine și distanța până la focar; EMSC nu publică mărturiile pentru fiecare localitate). Dispare după 24 de ore.");
+		help.entry(mini("swipe"), en ? "Left / right on the boxes" : "Stânga / dreapta pe casete", en ? "The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected."
+				: "Rândul de avertizări, casetele cu ore și cele 5 zile (Mâine și încă 4 zile, câte două) urmează degetul. Graficul Precipitații · următoarele 12 ore apare primul în rândul cu ore, doar când e prognozată ploaie sau ninsoare.");
 		help.entry(mini("swipe"), en ? "The row of boxes at the bottom" : "Rândul de casete de jos", en
 				? "Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass."
 				: "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă.");
-		help.section(en ? "Home-screen widget" : "Widget pe ecranul de pornire");
-		help.entry(mini("refresh"), en ? "Meteo Alarm widget" : "Widgetul Meteo Alarm", en
-				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm. It shows the weather icon, the temperature, the town and the next sunset or sunrise, on the wallpaper. Hold it and drag its edges to resize it: square (2x2), a low strip (4x1, also with the sky) or wide (4x2, also with high / low and the next 5 hours). With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. It follows the town, °C/°F and language of the app and refreshes by itself every 30 minutes; a tap opens the app."
-				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm. Arată iconul vremii, temperatura, localitatea și următorul apus sau răsărit, direct pe imaginea de fundal. Ține-l apăsat și trage de margini ca să-l redimensionezi: pătrat (2x2), bandă joasă (4x1, cu descrierea cerului) sau lat (4x2, cu Max / Min și următoarele 5 ore). Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. Urmează localitatea, °C/°F și limba din aplicație și se reîmprospătează singur la 30 de minute; o atingere deschide aplicația.");
+		help.section(en ? "Home-screen widgets" : "Widget-uri pe ecranul de pornire");
+		help.entry(mini("widget"), en ? "Meteo Alarm widgets" : "Widget-urile Meteo Alarm", en
+				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: there are four, each with its own preview: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky), 4x2 (wide, also with high / low and the next 5 hours) and \"any size\", which picks one of the three by its width. When you put one on the screen, the widget settings open (see ☰ › Widgets). With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. They follow the town, °C/°F and language of the app; a tap opens the app."
+				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: sunt patru, fiecare cu imaginea lui: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului), 4x2 (lat, și cu Max / Min și următoarele 5 ore) și „orice mărime”, care alege una dintre cele trei după lățime. Când pui unul pe ecran se deschid setările widget-urilor (vezi ☰ › Widget-uri). Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. Urmează localitatea, °C/°F și limba din aplicație; o atingere deschide aplicația.");
+		help.entry(mini("refresh"), en ? "Refreshing by itself" : "Reîmprospătare automată", en
+				? "The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging."
+				: "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă.");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
-		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather and the warnings now." : "Descarcă acum vremea și avertizările.");
+		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather, the warnings and the earthquakes now." : "Descarcă acum vremea, avertizările și cutremurele.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");
 		help.entry(mini("unit"), en ? "Temperature °C/°F" : "Temperatura °C/°F", en ? "Switches between Celsius and Fahrenheit." : "Comută între grade Celsius și Fahrenheit.");
 		help.entry(mini("clock"), en ? "Clock 12/24" : "Ceas 12/24", en ? "Switches the clock between 24 hours and 12 hours (AM/PM)." : "Comută ceasul între 24 de ore și 12 ore (AM/PM).");
@@ -1175,6 +1165,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("night"), en ? "Night clock ON / OFF" : "Ceas noapte ON / OFF", en ? "Turns the night clock on or off." : "Pornește sau oprește ceasul de noapte.");
 		help.entry(mini("area"), en ? "Neighbourhood: phone / OpenStreetMap" : "Cartier: telefon / OpenStreetMap", en ? "Where the neighbourhood shown after the town comes from. It is shown only when that source says you are inside it."
 				: "De unde vine cartierul afișat după localitate. Apare doar când sursa confirmă că ești în interiorul lui.");
+		help.entry(mini("widget"), en ? "Widgets" : "Widget-uri", en ? "The widget settings: the background's transparency, for all the widgets, with a preview (from fully see-through, on the wallpaper, to solid)."
+				: "Setările widget-urilor: transparența fundalului, pentru toate widget-urile, cu previzualizare (de la complet transparent, direct pe imaginea de fundal, până la opac).");
 		help.entry(mini("update"), en ? "Check for updates" : "Verifică actualizări", en ? "Looks for a new version on GitHub; it also looks once a week by itself."
 				: "Caută o versiune nouă pe GitHub; caută singură și o dată pe săptămână.");
 		help.entry(mini("help"), en ? "Help" : "Ajutor", en ? "This page." : "Această pagină.");
