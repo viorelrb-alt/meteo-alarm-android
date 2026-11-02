@@ -72,6 +72,8 @@ public final class Screen {
 	public boolean charging, busy, offline;
 	public long fetched;
 	public String error = "";
+	/** Why the last download failed ("no internet", "certificate error", "HTTP 503"...), empty after one that worked. */
+	public String failReason = "";
 	/** Dark theme with the Claude app's colours; otherwise black and white like the Kindle. */
 	public boolean dark;
 	/** Looking for the phone's position (the locate button is drawn in the accent colour). */
@@ -1715,7 +1717,7 @@ public final class Screen {
 			String when = Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12);
 			upd = T.updated + " " + when;
 			if (offline) {
-				upd = "! " + T.noData + " " + when;
+				upd = "! " + T.noData + " " + when + (failReason.length() > 0 ? " · " + failReason : "");
 				bold = true;
 			}
 		}
@@ -1725,7 +1727,7 @@ public final class Screen {
 			int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
 			String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) + " PM" : String.format("%02d:%02d", h, m);
 			rtext(bold, fit(bold, 25, 360, upd), 30, cw - 40 - g.width(true, 50, hm) - 28, upd, bold ? c.ink : c.dim);
-		} else rtext(bold, fit(bold, 25, 400, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
+		} else rtext(bold, fit(bold, 25, cw - 120, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
 	}
 
 	/** How much of the next box shows at the end of a row (units). */

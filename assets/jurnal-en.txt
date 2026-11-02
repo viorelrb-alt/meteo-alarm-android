@@ -5,6 +5,7 @@ v1.80 · 2 November 2026
 - Fixed: on the Samsung A70 (Android 11) the widget picked the wrong layout. It now picks by width.
 - Refreshing by itself, also with the app closed: every 15 minutes with the screen on, every 30 minutes with the screen off, paused from sunset to sunrise with the screen off, and every hour below 25% battery.
 - The neighbourhood is gone: it no longer shows after the town, and ☰ "Neighbourhood: phone / OpenStreetMap" was removed. A tap on the town's name still looks once with the GPS.
+- When the weather cannot be downloaded, the app says why: in the "! no data since …" line under the clock and in a notice (no internet, the server did not answer, secure connection error, server error…).
 - Help updated.
 
 v1.71 · 1 November 2026

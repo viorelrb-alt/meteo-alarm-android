@@ -5,6 +5,7 @@ v1.80 · 2 noiembrie 2026
 - Reparat: pe Samsung A70 (Android 11) widget-ul alegea varianta greșită. Acum alege după lățime.
 - Reîmprospătare automată, și cu aplicația închisă: la 15 minute cu ecranul aprins, la 30 de minute cu ecranul stins, pauză între apus și răsărit cu ecranul stins și la o oră când bateria e sub 25%.
 - Opțiunea „Cartier” a fost scoasă: după localitate nu mai apare cartierul, iar din ☰ a dispărut „Cartier: telefon / OpenStreetMap”. Atingerea numelui localității caută în continuare o dată poziția cu GPS-ul.
+- Când vremea nu se poate descărca, aplicația spune de ce: în rândul „! fără date din …” de sub ceas și într-o notificare (fără internet, serverul nu a răspuns, eroare conexiune securizată, eroare server…).
 - Ajutorul e actualizat.
 
 v1.71 · 1 noiembrie 2026

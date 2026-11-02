@@ -24,6 +24,25 @@ import ro.meteoalarm.android.core.Weather;
 final class Fetcher {
 	static final class Result {
 		String forecast, uv, pollen, warn, quake;
+		/** Why the forecast did not come (null when it came). */
+		Exception error;
+	}
+
+	/** EX in a few words, so the screen can say why the weather did not come. */
+	static String reason(Exception ex, boolean en) {
+		if (ex == null) return "";
+		Throwable t = ex;
+		while (t.getCause() != null && t.getCause() != t && !(t instanceof java.io.IOException)) t = t.getCause();
+		String m = t.getMessage() == null ? "" : t.getMessage();
+		if (t instanceof java.net.UnknownHostException) return en ? "no internet (server not found)" : "fără internet (serverul nu e găsit)";
+		if (t instanceof java.net.SocketTimeoutException) return en ? "the server did not answer in time" : "serverul nu a răspuns la timp";
+		if (t instanceof java.net.ConnectException || t instanceof java.net.NoRouteToHostException) return en ? "no connection" : "fără conexiune";
+		if (t instanceof javax.net.ssl.SSLException || t instanceof java.security.cert.CertificateException)
+			return (en ? "secure connection error: " : "eroare conexiune securizată: ") + t.getClass().getSimpleName();
+		if (t instanceof SecurityException) return en ? "internet not allowed for the app" : "internetul nu e permis aplicației";
+		if (m.startsWith("HTTP ")) return (en ? "server error " : "eroare server ") + m;
+		if (t instanceof java.io.IOException) return (en ? "network error: " : "eroare rețea: ") + t.getClass().getSimpleName() + (m.length() > 0 && m.length() < 40 ? " " + m : "");
+		return (en ? "data error: " : "eroare date: ") + t.getClass().getSimpleName();
 	}
 
 	private static Countries countries;
@@ -52,6 +71,7 @@ final class Fetcher {
 			Weather.parse(r.forecast);
 		} catch (Exception e) {
 			r.forecast = null;
+			r.error = e;
 		}
 		try {
 			if (r.forecast != null) r.uv = Weather.get(Weather.uvUrl(c.lat, c.lon, tz));
@@ -103,7 +123,9 @@ final class Fetcher {
 		if (r.forecast != null) {
 			if (r.uv != null) write(ctx, "uv.json", r.uv);
 			write(ctx, "forecast.json", r.forecast);
-			prefs(ctx).edit().putLong("fetched", now).putString("cacheCity", c.key()).commit();
+			prefs(ctx).edit().putLong("fetched", now).putString("cacheCity", c.key()).putString("failReason", "").commit();
+		} else {
+			prefs(ctx).edit().putString("failReason", reason(r.error, false)).putString("failReasonEn", reason(r.error, true)).apply();
 		}
 		if (r.pollen != null) write(ctx, "pollen.json", r.pollen);
 		if (r.warn != null) write(ctx, "warn.xml", r.warn);

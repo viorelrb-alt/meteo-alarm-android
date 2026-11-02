@@ -891,6 +891,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			String x = readCache("warn.xml");
 			if (x != null) s.warns = Warnings.parse(x, s.city.warnNames(), System.currentTimeMillis());
 			s.quakes = Fetcher.quakes(this, s.city);
+			s.failReason = prefs.getString(s.T.en ? "failReasonEn" : "failReason", "");
 		} catch (Exception e) {
 			s.w = null;
 		}
@@ -930,9 +931,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (r.uv != null) Weather.addExtra(s.w, r.uv);
 			s.fetched = now;
 			s.offline = false;
+			s.failReason = "";
 			Widget.show(this);
-		} else if (s.w == null) {
-			s.error = s.T.en ? "No internet connection" : "Fără conexiune la internet";
+		} else {
+			// Why it did not come: under the line ("no data since …") and in a notice now.
+			s.failReason = Fetcher.reason(r.error, s.T.en);
+			if (s.w == null) s.error = (s.T.en ? "The weather did not come: " : "Vremea nu a venit: ") + s.failReason;
+			else if (resumed) note((s.T.en ? "The weather did not come: " : "Vremea nu a venit: ") + s.failReason, 3000);
 		}
 		if (r.pollen != null) {
 			try {
@@ -1131,8 +1136,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				? "Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: there are four, each with its own preview: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky), 4x2 (wide, also with high / low and the next 5 hours) and \"any size\", which picks one of the three by its width. When you put one on the screen, the widget settings open (see ☰ › Widgets). With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. They follow the town, °C/°F and language of the app; a tap opens the app."
 				: "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: sunt patru, fiecare cu imaginea lui: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului), 4x2 (lat, și cu Max / Min și următoarele 5 ore) și „orice mărime”, care alege una dintre cele trei după lățime. Când pui unul pe ecran se deschid setările widget-urilor (vezi ☰ › Widget-uri). Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. Urmează localitatea, °C/°F și limba din aplicație; o atingere deschide aplicația.");
 		help.entry(mini("refresh"), en ? "Refreshing by itself" : "Reîmprospătare automată", en
-				? "The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging."
-				: "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă.");
+				? "The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line \"! no data since …\" under the clock say why (no internet, the server did not answer, secure connection error, server error…)."
+				: "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă. Când descărcarea eșuează, o notificare și rândul „! fără date din …” de sub ceas spun de ce (fără internet, serverul nu a răspuns, eroare conexiune securizată, eroare server…).");
 		help.section(en ? "The ☰ menu" : "Meniul ☰");
 		help.entry(mini("refresh"), en ? "Refresh" : "Reîmprospătare", en ? "Downloads the weather, the warnings and the earthquakes now." : "Descarcă acum vremea, avertizările și cutremurele.");
 		help.entry(mini("city"), en ? "Town" : "Localitate", en ? "The same as the town button." : "La fel ca butonul de localitate.");
