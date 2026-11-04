@@ -222,6 +222,8 @@ final class Fetcher {
 			write(ctx, "quake.json", r.quake);
 			prefs(ctx).edit().putString("quakeCity", c.key()).apply();
 		}
+		// Rain or snow starting, new warnings, earthquakes: notified once (when the user agreed).
+		if (r.forecast != null || r.warn != null || r.quake != null) Notifier.check(ctx, c);
 	}
 
 	/** The English name of the town's country, as EMSC names regions ("Romania"). */

@@ -14,6 +14,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -198,9 +199,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void welcome() {
 		sheet.show(VERSION, aboutText(), Tr.t("I understand", "Am înțeles"), new Runnable() {
 			public void run() {
-				sheet.hide();
 				prefs.edit().putBoolean("welcomed", true).putString("seenVersion", updater.installed()).apply();
-				if (autoLoc() && !Locator.allowed(MainActivity.this)) askLocation();
+				consents();
 			}
 		}, null);
 	}
@@ -573,11 +573,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 			return;
 		}
-		if (autoLoc() && !Locator.allowed(this) && !asked) askLocation();
+		// Back from the phone's settings, where the user went to allow location or notifications.
+		backFromSettings();
 		// Just updated: what is new in this version, once (instead of the update check this time).
 		String cur = updater.installed();
 		if (!cur.equals(prefs.getString("seenVersion", ""))) {
 			news();
+			return;
+		}
+		// Location and notifications: at the first start and, while refused, after each update.
+		if (!asked && !updater.installed().equals(prefs.getString("consentVer", ""))) {
+			asked = true;
+			consents();
 			return;
 		}
 		// Look for a newer version once a week (the bottom window opens only when there is one).
@@ -602,19 +609,200 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.invalidate();
 	}
 
+	// --- Consents (Viorel 2026-11-04) --------------------------------------------------
+	// Location and notifications are asked with a friendly explanation first: at the first start
+	// and, while refused, again only after an app update (never at every start). After two refusals
+	// Android no longer shows its question: then the button opens the phone's settings.
+
+	private static final int REQ_LOC = 1, REQ_NOTIFY = 2;
+	/** The consents asked one after the other (location, then notifications). */
+	private boolean chain;
+
+	/** Asks what is still missing, in the bottom window (it closes when nothing is). */
+	private void consents() {
+		prefs.edit().putString("consentVer", updater.installed()).apply();
+		chain = true;
+		if (!Locator.allowed(this)) {
+			explainLocation();
+			return;
+		}
+		chainNotify();
+	}
+
+	private void chainNotify() {
+		if (chain && !Notifier.on(this) && !prefs.getBoolean("notifyUserOff", false)) {
+			explainNotify();
+			return;
+		}
+		chain = false;
+		sheet.hide();
+	}
+
+	private void explainLocation() {
+		boolean blocked = prefs.getBoolean("locBlocked", false);
+		Log.i(this, "ACORD", "explicație localizare" + (blocked ? " (blocată, spre setări)" : ""));
+		String msg = Tr.t("Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.",
+				"Meteo Alarm poate găsi singură localitatea ta, ca prognoza, avertizările meteo și cutremurele să fie pentru locul exact în care ești, și când călătorești. Poziția rămâne pe telefon: e folosită doar ca să aleagă localitatea.")
+				+ "\n\n" + (blocked ? Tr.t("The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).",
+						"Telefonul nu mai arată întrebarea lui, așa că permite Locația pentru Meteo Alarm din setările telefonului (Permisiuni › Locație).")
+						: Tr.t("If you say no, choose the town from the list; the app asks again only after an update.",
+								"Dacă refuzi, alegi localitatea din listă; aplicația te mai întreabă doar după o actualizare."));
+		sheet.show(Tr.t("Location", "Localizare"), msg, blocked ? Tr.t("Open settings", "Deschide setările") : Tr.t("Allow", "Permite"), new Runnable() {
+			public void run() {
+				if (prefs.getBoolean("locBlocked", false)) {
+					prefs.edit().putBoolean("locWant", true).apply();
+					openSettings(false);
+					chainNotify();
+				} else {
+					Log.i(MainActivity.this, "ACORD", "localizare: cerere sistem");
+					requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, REQ_LOC);
+				}
+			}
+		}, Tr.t("Not now", "Nu acum"), new Runnable() {
+			public void run() {
+				Log.i(MainActivity.this, "ACORD", "localizare: refuzată în explicație");
+				setAutoLoc(false);
+				chainNotify();
+			}
+		});
+	}
+
+	private void explainNotify() {
+		boolean blocked = prefs.getBoolean("notifyBlocked", false) || (Build.VERSION.SDK_INT < 33 || hasNotifyPermission()) && !Notifier.allowed(this);
+		Log.i(this, "ACORD", "explicație notificări" + (blocked ? " (blocate, spre setări)" : ""));
+		String msg = Tr.t("Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.",
+				"Meteo Alarm îți poate spune, și când e închisă: când începe ploaia sau ninsoarea ori începe în următoarea oră, când se emite o avertizare meteo pentru localitatea ta și când are loc un cutremur cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată, nimic altceva. Așa afli la timp, fără să deschizi aplicația.")
+				+ "\n\n" + (blocked ? Tr.t("The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.",
+						"Telefonul nu lasă aplicația să notifice, așa că pornește notificările pentru Meteo Alarm din setările telefonului.")
+						: Tr.t("You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.",
+								"Le poți opri oricând din ☰ › Notificări. Dacă refuzi, aplicația te mai întreabă doar după o actualizare."));
+		sheet.show(Tr.t("Notifications", "Notificări"), msg, blocked ? Tr.t("Open settings", "Deschide setările") : Tr.t("Allow", "Permite"), new Runnable() {
+			public void run() {
+				askNotify();
+			}
+		}, Tr.t("Not now", "Nu acum"), new Runnable() {
+			public void run() {
+				Log.i(MainActivity.this, "ACORD", "notificări: refuzate în explicație");
+				chain = false;
+				sheet.hide();
+			}
+		});
+	}
+
+	private boolean hasNotifyPermission() {
+		return Build.VERSION.SDK_INT < 33 || checkSelfPermission("android.permission.POST_NOTIFICATIONS") == android.content.pm.PackageManager.PERMISSION_GRANTED;
+	}
+
+	/** Turns the notifications on: the system question (13+), the settings when blocked, else on. */
+	private void askNotify() {
+		if (!hasNotifyPermission() && !prefs.getBoolean("notifyBlocked", false)) {
+			Log.i(this, "ACORD", "notificări: cerere sistem");
+			requestPermissions(new String[] { "android.permission.POST_NOTIFICATIONS" }, REQ_NOTIFY);
+			return;
+		}
+		if (!Notifier.allowed(this)) {
+			prefs.edit().putBoolean("notifyWant", true).apply();
+			chain = false;
+			sheet.hide();
+			openSettings(true);
+			return;
+		}
+		notifyOn();
+		chain = false;
+		sheet.hide();
+	}
+
+	private void notifyOn() {
+		prefs.edit().putBoolean("notify", true).putBoolean("notifyUserOff", false).putBoolean("notifyWant", false)
+				.putLong("notifySince", System.currentTimeMillis()).apply();
+		Log.i(this, "ACORD", "notificări: PORNITE");
+		Notifier.hello(this);
+		note(Tr.t("Notifications ON", "Notificări PORNITE"), 2000);
+	}
+
+	/** ☰ › Notifications: a switch. */
+	private void toggleNotify() {
+		if (Notifier.on(this)) {
+			prefs.edit().putBoolean("notify", false).putBoolean("notifyUserOff", true).apply();
+			Log.i(this, "ACORD", "notificări: OPRITE din meniu");
+			note(Tr.t("Notifications OFF", "Notificări OPRITE"), 2000);
+			return;
+		}
+		chain = false;
+		explainNotify();
+	}
+
+	/** The app's page in the phone's settings (NOTIFY: its notifications page). */
+	private void openSettings(boolean notify) {
+		Log.i(this, "ACORD", "deschid setările telefonului (" + (notify ? "notificări" : "permisiuni") + ")");
+		try {
+			Intent i;
+			if (notify && Build.VERSION.SDK_INT >= 26) {
+				i = new Intent("android.settings.APP_NOTIFICATION_SETTINGS").putExtra("android.provider.extra.APP_PACKAGE", getPackageName());
+			} else {
+				i = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS", android.net.Uri.parse("package:" + getPackageName()));
+			}
+			startActivity(i);
+		} catch (Exception e) {
+			Log.e(this, "ACORD", "setările nu s-au deschis", e);
+		}
+	}
+
+	/** On return from the settings: what the user allowed there. */
+	private void backFromSettings() {
+		if (prefs.getBoolean("notifyWant", false) && Notifier.allowed(this)) {
+			prefs.edit().putBoolean("notifyBlocked", false).apply();
+			notifyOn();
+		}
+		if (prefs.getBoolean("locWant", false) && Locator.allowed(this)) {
+			prefs.edit().putBoolean("locWant", false).putBoolean("locBlocked", false).apply();
+			Log.i(this, "ACORD", "localizare: permisă din setări");
+			setAutoLoc(true);
+			locate(false);
+		}
+	}
+
+	/** From the buttons (town name, locate): the explanation only when Android no longer asks. */
 	private void askLocation() {
 		asked = true;
-		requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, 1);
+		if (prefs.getBoolean("locBlocked", false)) {
+			chain = false;
+			explainLocation();
+			return;
+		}
+		requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, REQ_LOC);
 	}
 
 	@Override
 	public void onRequestPermissionsResult(int code, String[] perms, int[] res) {
+		if (code == REQ_NOTIFY) {
+			if (hasNotifyPermission()) {
+				askNotify();
+			} else {
+				// No question shown any more (two refusals): the next time, the settings.
+				boolean blocked = !shouldShowRequestPermissionRationale("android.permission.POST_NOTIFICATIONS");
+				prefs.edit().putBoolean("notifyBlocked", blocked).apply();
+				Log.i(this, "ACORD", "notificări: refuzate în sistem" + (blocked ? " (Android nu mai întreabă)" : ""));
+				chain = false;
+				sheet.hide();
+			}
+			return;
+		}
 		if (Locator.allowed(this)) {
+			Log.i(this, "ACORD", "localizare: permisă");
+			prefs.edit().putBoolean("locBlocked", false).apply();
+			setAutoLoc(true);
 			locate(true);
 		} else {
+			boolean blocked = !shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)
+					&& !shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_COARSE_LOCATION);
+			prefs.edit().putBoolean("locBlocked", blocked).apply();
+			Log.i(this, "ACORD", "localizare: refuzată în sistem" + (blocked ? " (Android nu mai întreabă)" : ""));
 			setAutoLoc(false);
 			toast(Tr.t("Without location access, choose the town from the list.", "Fără acces la locație, alege localitatea din listă."));
 		}
+		if (chain) chainNotify();
+		else sheet.hide();
 	}
 
 	private void toast(String msg) {
@@ -1122,6 +1310,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (Tr.t("Night clock OFF", "Ceas noapte OFF"))
 				: (Tr.t("Night clock ON", "Ceas noapte ON")), "night"));
 		ids.add("loc"); rows.add(row(auto ? (Tr.t("Location Off", "Localizare Off")) : (Tr.t("Location On", "Localizare On")), "locate"));
+		ids.add("quakes"); rows.add(row(Tr.t("Earthquakes", "Cutremure"), "quake"));
+		ids.add("notify"); rows.add(row(Notifier.on(this) ? Tr.t("Notifications OFF", "Notificări OFF") : Tr.t("Notifications ON", "Notificări ON"), "bell"));
 		ids.add("widget"); rows.add(row(Tr.t("Widgets", "Widget-uri"), "widget"));
 		ids.add("log"); rows.add(row(Tr.t("Log", "Jurnal"), "log"));
 		ids.add("update"); rows.add(row(Tr.t("Check for updates", "Verifică actualizări"), "update"));
@@ -1155,6 +1345,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else if (it.equals("widget")) { startActivity(new Intent(MainActivity.this, WidgetConfig.class)); return; }
 				else if (it.equals("log")) { startActivity(new Intent(MainActivity.this, LogActivity.class)); return; }
 				else if (it.equals("help")) { help(); return; }
+				else if (it.equals("quakes")) { quakesPage(); return; }
+				else if (it.equals("notify")) { toggleNotify(); return; }
 				else if (it.equals("night")) {
 					boolean on = !prefs.getBoolean("nightClock", true);
 					e.putBoolean("nightClock", on);
@@ -1225,9 +1417,113 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 	}
 
+	/** The last lists of the earthquakes page: { country 7 days, Europe 48 h } (EMSC answers). */
+	private String quakesCountry, quakesEurope;
+	private long quakesAt;
+
+	/**
+	 * ☰ › Cutremure (Viorel 2026-11-04): a whole page like Help. On top the earthquakes of the
+	 * last 7 days in the country of the town shown, then those of the last 48 hours in the EU,
+	 * Ukraine and Moldova; magnitude 3 and over, from EMSC.
+	 */
+	private void quakesPage() {
+		Log.i(this, "CUTREMUR", "pagina de cutremure deschisă");
+		showQuakes();
+		if (quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L) return;
+		final Cities.City c = s.city;
+		final Context ctx = getApplicationContext();
+		new Thread(new Runnable() {
+			public void run() {
+				long now = System.currentTimeMillis();
+				String a = null, b = null;
+				try {
+					a = Weather.get(ro.meteoalarm.android.core.Quakes.url(c.lat, c.lon, now - 7 * 86400000L));
+				} catch (Exception e) {
+					Log.e(ctx, "CUTREMUR", "lista țării (7 zile) a eșuat: " + Fetcher.reason(e, false));
+				}
+				try {
+					b = Weather.get(ro.meteoalarm.android.core.Quakes.europeUrl(now - 2 * 86400000L));
+				} catch (Exception e) {
+					Log.e(ctx, "CUTREMUR", "lista Europei (48 h) a eșuat: " + Fetcher.reason(e, false));
+				}
+				final String fa = a, fb = b;
+				handler.post(new Runnable() {
+					public void run() {
+						quakesCountry = fa == null ? "" : fa;
+						quakesEurope = fb == null ? "" : fb;
+						quakesAt = System.currentTimeMillis();
+						if (help.isOpen() && quakesOpen) showQuakes();
+					}
+				});
+			}
+		}).start();
+	}
+
+	private boolean quakesOpen;
+
+	private void showQuakes() {
+		quakesOpen = true;
+		help.begin(Tr.t("Earthquakes", "Cutremure"), Tr.t("Close", "Închide"), s.dark);
+		help.setOnClose(new Runnable() {
+			public void run() {
+				quakesOpen = false;
+				hideBars();
+			}
+		});
+		Cities.City c = s.city;
+		String country = countries.name(c.country, s.T.en);
+		long now = System.currentTimeMillis();
+		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + country);
+		if (quakesCountry == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
+		else if (quakesCountry.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
+		else {
+			List<ro.meteoalarm.android.core.Quakes.Quake> l;
+			try {
+				l = ro.meteoalarm.android.core.Quakes.parse(quakesCountry, new String[] { Fetcher.countryEn(this, c) }, c.lat, c.lon, now, 7 * 86400000L);
+			} catch (Exception e) {
+				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			}
+			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, true);
+			Log.i(this, "CUTREMUR", country + ", 7 zile: " + l.size());
+		}
+		help.section(Tr.t("Last 48 hours · EU, Ukraine, Moldova", "Ultimele 48 de ore · UE, Ucraina, Moldova"));
+		if (quakesEurope == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
+		else if (quakesEurope.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
+		else {
+			List<ro.meteoalarm.android.core.Quakes.Quake> l;
+			try {
+				l = ro.meteoalarm.android.core.Quakes.parse(quakesEurope, ro.meteoalarm.android.core.Quakes.EUROPE, c.lat, c.lon, now, 2 * 86400000L);
+			} catch (Exception e) {
+				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			}
+			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false);
+			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size());
+		}
+		help.text(Tr.t("Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. \"Felt\" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.",
+				"Sursa: EMSC (Centrul Seismologic European-Mediteranean, seismicportal.eu), magnitudine 3 și peste. „Resimțit” e o estimare pe scara EMS-98, după magnitudine și distanța până la focar."));
+		help.show();
+	}
+
+	private void quakeEntry(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean felt) {
+		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace(".", s.T.en ? "." : ",") + " · " + Screen.titleCase(q.region);
+		String what = s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat("dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
+				+ " · " + Tr.t("depth ", "adâncime ") + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km " + Tr.t("from ", "de ") + c.name;
+		if (felt || q.dist < 300) what += "\n" + (q.felt >= 2 ? Tr.t("Probably felt in ", "Probabil resimțit în ") + c.name + ": " + Screen.roman(q.felt) + ", " + s.feltWords(q.felt)
+				: Tr.t("Probably not felt in ", "Probabil nu s-a simțit în ") + c.name);
+		help.entry(mini("quake"), name, what);
+	}
+
 	/** ☰ › Ajutor: every button, gesture and menu option with its icon and what it does. */
 	private void help() {
 		boolean en = s.T.en;
+		quakesOpen = false;
+		help.setOnClose(new Runnable() {
+			public void run() {
+				hideBars();
+			}
+		});
 		help.begin(Tr.t("Help", "Ajutor"), Tr.t("Close", "Închide"), s.dark);
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + (Tr.t(" The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.", " Acordul se cere doar acolo: o singură dată dacă ești de acord (de atunci aplicația verifică singură și o dată pe săptămână), de fiecare dată cât timp refuzi. Fără acord aplicația nu caută niciodată actualizări și nu descarcă nimic.")));
@@ -1280,7 +1576,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (!resumed) return;
 		prefs.edit().putString("seenVersion", updater.installed()).apply();
 		Log.i(this, "APP", "fereastra Ce e nou afișată");
-		sheet.show((Tr.t("What's new", "Ce e nou")) + " · v" + updater.installed(), Updater.howTo(s.T.en) + "\n\n" + log, null, null, Tr.t("Close", "Închide"));
+		asked = true;
+		sheet.show((Tr.t("What's new", "Ce e nou")) + " · v" + updater.installed(), Updater.howTo(s.T.en) + "\n\n" + log, null, null, Tr.t("Close", "Închide"),
+				new Runnable() {
+					public void run() {
+						consents();
+					}
+				});
 	}
 
 	/** The change log from assets, newest first. */

@@ -28,7 +28,7 @@ public final class Quakes {
 	public static String url(double lat, double lon, long since) {
 		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
 		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
-		return "https://www.seismicportal.eu/fdsnws/event/1/query?format=json&limit=200&orderby=time&minmag=" + MIN_MAG
+		return "https://www.seismicportal.eu/fdsnws/event/1/query?format=json&limit=500&orderby=time&minmag=" + MIN_MAG
 				+ "&start=" + f.format(new java.util.Date(since))
 				+ "&minlat=" + Weather.fmt(lat - 9) + "&maxlat=" + Weather.fmt(lat + 9)
 				+ "&minlon=" + Weather.fmt(lon - 12) + "&maxlon=" + Weather.fmt(lon + 12);
@@ -54,9 +54,18 @@ public final class Quakes {
 	 * with the distance and the estimated intensity for the town at LAT LON.
 	 */
 	public static List<Quake> parse(String json, String countryEn, double lat, double lon, long now) {
+		return parse(json, countryEn == null ? new String[0] : new String[] { countryEn }, lat, lon, now, WINDOW_MS);
+	}
+
+	/**
+	 * The quakes of the last WINDOW ms whose EMSC region names one of NAMES (English; none = all),
+	 * newest first, with the distance and the estimated intensity for the town at LAT LON.
+	 */
+	public static List<Quake> parse(String json, String[] names, double lat, double lon, long now, long window) {
 		List<Quake> list = new ArrayList<Quake>();
 		if (json == null || json.trim().length() == 0) return list;
-		String key = countryEn == null ? "" : Warnings.fold(countryEn).toUpperCase(Locale.US);
+		String[] keys = new String[names.length];
+		for (int k = 0; k < names.length; k++) keys[k] = Warnings.fold(names[k]).toUpperCase(Locale.US);
 		Object root = Json.parse(json);
 		@SuppressWarnings("unchecked")
 		List<Object> fs = root instanceof Map ? Json.arr((Map<String, Object>) root, "features") : new ArrayList<Object>();
@@ -74,8 +83,13 @@ public final class Quakes {
 			q.id = id instanceof String ? (String) id : "";
 			q.time = t instanceof String ? Warnings.epoch((String) t) : 0;
 			if (Double.isNaN(q.mag) || Double.isNaN(q.lat) || Double.isNaN(q.lon) || q.mag < MIN_MAG) continue;
-			if (q.time <= 0 || now - q.time > WINDOW_MS || q.time - now > 600000L) continue;
-			if (key.length() > 0 && !Warnings.fold(q.region).toUpperCase(Locale.US).contains(key)) continue;
+			if (q.time <= 0 || now - q.time > window || q.time - now > 600000L) continue;
+			if (keys.length > 0) {
+				String rg2 = Warnings.fold(q.region).toUpperCase(Locale.US);
+				boolean hit = false;
+				for (String k : keys) hit |= k.length() > 0 && rg2.contains(k);
+				if (!hit) continue;
+			}
 			if (Double.isNaN(q.depth)) q.depth = 10;
 			q.dist = km(lat, lon, q.lat, q.lon);
 			q.felt = intensity(q.mag, Math.sqrt(q.dist * q.dist + q.depth * q.depth));
@@ -87,6 +101,21 @@ public final class Quakes {
 			}
 		});
 		return list;
+	}
+
+	/** EU countries, Ukraine and Moldova as EMSC names them (and the European seas and ranges between them). */
+	public static final String[] EUROPE = { "AUSTRIA", "BELGIUM", "BULGARIA", "CROATIA", "CYPRUS", "CZECH", "DENMARK", "ESTONIA", "FINLAND",
+			"FRANCE", "GERMANY", "GREECE", "HUNGARY", "IRELAND", "ITALY", "LATVIA", "LITHUANIA", "LUXEMBOURG", "MALTA", "NETHERLANDS",
+			"POLAND", "PORTUGAL", "ROMANIA", "SLOVAKIA", "SLOVENIA", "SPAIN", "SWEDEN", "UKRAINE", "MOLDOVA", "SICILY", "SARDINIA",
+			"CORSICA", "CRETE", "DODECANESE", "AZORES", "CANARY", "BALEARIC", "MADEIRA", "PYRENEES", "ADRIATIC", "IONIAN", "AEGEAN",
+			"TYRRHENIAN", "LIGURIAN", "BALTIC", "BLACK SEA" };
+
+	/** The query for Europe (the EU, Ukraine, Moldova and around) since SINCE. */
+	public static String europeUrl(long since) {
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
+		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+		return "https://www.seismicportal.eu/fdsnws/event/1/query?format=json&limit=1000&orderby=time&minmag=" + MIN_MAG
+				+ "&start=" + f.format(new java.util.Date(since)) + "&minlat=27&maxlat=71&minlon=-32&maxlon=41";
 	}
 
 	/** The one shown in the box: the strongest of the last 24 h (the newest of equal ones). */

@@ -810,13 +810,13 @@ public final class Screen {
 
 	private static final String[] ROMAN = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII" };
 
-	static String roman(double i) {
+	public static String roman(double i) {
 		int k = (int) Math.round(Math.max(1, Math.min(12, i)));
 		return ROMAN[k - 1];
 	}
 
 	/** EMS-98 in a few words, for intensity I. */
-	private String feltWords(double i) {
+	public String feltWords(double i) {
 		int k = (int) Math.round(Math.max(1, Math.min(12, i)));
 		String[] ro = { "nu se simte", "abia simțit, doar de câțiva oameni aflați în repaus", "slab, simțit de puțini oameni, în interior",
 				"simțit de mulți oameni în interior; geamurile și ușile vibrează", "puternic, simțit de aproape toți; obiectele se mișcă, unii se sperie",
@@ -826,7 +826,7 @@ public final class Screen {
 				"felt by many indoors; windows and doors rattle", "strong, felt by nearly everyone; objects move, some are frightened",
 				"slight damage (cracks in plaster); many run outdoors", "damage to buildings; hard to stand", "heavy damage",
 				"destruction", "great destruction", "very great destruction", "complete destruction" };
-		return (T.en ? en : ro)[k - 1];
+		return T.en ? Tr.t(en[k - 1]) : ro[k - 1];
 	}
 
 	private String dateTime(long ms) {
@@ -837,7 +837,7 @@ public final class Screen {
 				k.get(Calendar.MONTH) + 1, k.get(Calendar.YEAR)) + ", " + hm + ":" + String.format("%02d", k.get(Calendar.SECOND));
 	}
 
-	private static String titleCase(String s) {
+	public static String titleCase(String s) {
 		StringBuilder b = new StringBuilder();
 		boolean up = true;
 		for (char ch : s.toLowerCase().toCharArray()) {
@@ -865,7 +865,7 @@ public final class Screen {
 			out.add(new String[] { "t", (Tr.t("Epicentre: ", "Epicentru: ")) + dec(Math.abs(q.lat)) + "° " + (q.lat >= 0 ? "N" : "S") + ", "
 					+ dec(Math.abs(q.lon)) + "° " + (q.lon >= 0 ? "E" : Tr.t("W", "V")) + (Tr.t(", ", ", la ")) + Math.round(q.dist) + " km"
 					+ (Tr.t(" from ", " de ")) + town });
-			out.add(new String[] { "h", en ? "In " + town : "La " + town });
+			out.add(new String[] { "h", Tr.t("In ", "La ") + town });
 			if (q.felt >= 2) out.add(new String[] { "t", (Tr.t("Probably felt, intensity ", "Probabil resimțit, intensitate ")) + roman(q.felt) + ": " + feltWords(q.felt) + "." });
 			else out.add(new String[] { "t", Tr.t("Probably not felt here.", "Probabil nu s-a simțit aici.") });
 			out.add(new String[] { "t", Tr.t("Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.", "Estimare după magnitudine și distanța până la focar (scara EMS-98); EMSC nu publică mărturiile pentru fiecare localitate.") });
@@ -1687,6 +1687,13 @@ public final class Screen {
 				float nx = -dy / len * 2.2f, ny = dx / len * 2.2f;
 				g.poly(new float[] { xs[i] + nx, ys[i] + ny, xs[i + 1] + nx, ys[i + 1] + ny, xs[i + 1] - nx, ys[i + 1] - ny, xs[i] - nx, ys[i] - ny }, k);
 			}
+		} else if (which.equals("bell")) {
+			// A bell: the notifications.
+			g.roundRect(18, 8, 28, 30, 14, k);
+			g.poly(new float[] { 18, 23, 46, 23, 52, 46, 12, 46 }, k);
+			g.roundRect(8, 44, 48, 6, 3, k);
+			g.roundRect(26, 50, 12, 10, 5, k);
+			g.rect(30, 3, 4, 8, k);
 		} else if (which.equals("log")) {
 			// A page with lines.
 			g.roundRect(10, 4, 44, 56, 6, k);

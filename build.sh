@@ -8,8 +8,9 @@ set -e
 cd "$(dirname "$0")"
 SDK=${ANDROID_JAR:-/usr/lib/android-sdk/platforms/android-23/android.jar}
 # The resources are compiled against a newer platform (API 33) for the widget attributes of Android
-# 12+ (widgetFeatures reconfigurable / configuration_optional, targetCell*, maxResize*); the Java code
-# still against API 23. RES_JAR=path/to/android-33.jar (any API 33 android.jar of the SDK).
+# 12+ (widgetFeatures reconfigurable / configuration_optional, targetCell*, maxResize*), and since
+# v2.00 the Java code too (notification channels, POST_NOTIFICATIONS; newer calls are guarded by
+# Build.VERSION.SDK_INT). RES_JAR=path/to/android-33.jar (any API 33 android.jar of the SDK).
 RES_JAR=${RES_JAR:-$SDK}
 VER=$(sed -n 's/.*android:versionName="\([^"]*\)".*/\1/p' AndroidManifest.xml)
 OUT=build
@@ -23,7 +24,7 @@ if [ "$1" = preview ]; then
 fi
 
 aapt package -f -M AndroidManifest.xml -S res -I "$RES_JAR" -J "$OUT/gen" -m
-javac -nowarn -encoding UTF-8 -source 8 -target 8 -bootclasspath "$SDK" -d "$OUT/classes" \
+javac -nowarn -encoding UTF-8 -source 8 -target 8 -bootclasspath "$RES_JAR" -d "$OUT/classes" \
 	$(find src "$OUT/gen" -name '*.java')
 dalvik-exchange --dex --output="$OUT/classes.dex" "$OUT/classes"
 # resources.arsc stays uncompressed (required from targetSdk 30).

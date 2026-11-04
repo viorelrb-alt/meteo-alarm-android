@@ -110,6 +110,18 @@ final class HelpPanel extends FrameLayout {
 		list.addView(line, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(2, (int) (2 * dp))));
 	}
 
+	/** A plain paragraph (a notice: downloading, nothing found…). */
+	void text(String what) {
+		TextView w = new TextView(getContext());
+		w.setTypeface(reg);
+		w.setTextSize(15);
+		w.setTextColor(dim());
+		w.setLineSpacing(0, 1.1f);
+		w.setText(what);
+		w.setPadding(0, (int) (12 * dp), 0, (int) (12 * dp));
+		list.addView(w);
+	}
+
 	/** One entry: the icon, its name and what it does. */
 	void entry(Bitmap icon, String name, String what) {
 		Context c = getContext();
