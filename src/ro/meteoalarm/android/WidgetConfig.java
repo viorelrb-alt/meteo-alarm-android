@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Cities;
 import ro.meteoalarm.android.core.Countries;
 
@@ -56,7 +57,7 @@ public final class WidgetConfig extends Activity {
 		setTheme(night ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
 		prefs = Widget.prefs(this);
-		en = "en".equals(prefs.getString("lang", "ro"));
+		en = Lang.en(this);
 		dp = getResources().getDisplayMetrics().density;
 		dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		page = dark ? 0xFF000000 : 0xFFF4F4F6;
@@ -88,9 +89,8 @@ public final class WidgetConfig extends Activity {
 		final Map<Integer, String> all = Widget.all(this);
 		if (all.isEmpty()) {
 			new AlertDialog.Builder(this, theme())
-					.setTitle(en ? "Meteo Alarm widgets" : "Widget-uri Meteo Alarm")
-					.setMessage(en ? "There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm."
-							: "Nu ai niciun widget Meteo Alarm pe ecranul de pornire. Ține apăsat pe un loc liber › Widgeturi › Meteo Alarm.")
+					.setTitle(Tr.t("Meteo Alarm widgets", "Widget-uri Meteo Alarm"))
+					.setMessage(Tr.t("There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.", "Nu ai niciun widget Meteo Alarm pe ecranul de pornire. Ține apăsat pe un loc liber › Widgeturi › Meteo Alarm."))
 					.setPositiveButton("OK", null)
 					.setOnDismissListener(new DialogInterface.OnDismissListener() {
 						public void onDismiss(DialogInterface d) {
@@ -108,9 +108,9 @@ public final class WidgetConfig extends Activity {
 		for (int k = 0; k < ids.size(); k++) {
 			int[] f = Widget.frame(this, AppWidgetManager.getInstance(this), ids.get(k), new StringBuilder());
 			Widget.Data d = Widget.data(this, Widget.Set.of(this, ids.get(k)).town);
-			names[k] = "Widget " + Widget.NAMES[Widget.kind(f[0], f[1])] + " · " + (d.c != null ? d.c.name : "");
+			names[k] = "Widget " + Widget.NAMES[Widget.kind(this, AppWidgetManager.getInstance(this), ids.get(k), f[0], f[1])] + " · " + (d.c != null ? d.c.name : "");
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(en ? "Which widget?" : "Care widget?")
+		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Which widget?", "Care widget?"))
 				.setItems(names, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface di, int k) {
 						open(ids.get(k));
@@ -168,20 +168,28 @@ public final class WidgetConfig extends Activity {
 
 	private TextView colorsTitle;
 
+	private static int lastOpenId = -1;
+	private static long lastOpenAt;
+
 	private void open(int widgetId) {
 		id = widgetId;
 		set = Widget.Set.of(this, id);
 		prefs.edit().putBoolean("w" + id + "_seen", true).apply();
 		int[] f = Widget.frame(this, AppWidgetManager.getInstance(this), id, new StringBuilder());
-		kind = Widget.kind(f[0], f[1]);
-		Log.i(this, "WIDGET", "#" + id + " setări deschise · " + set.describe());
+		kind = Widget.kind(this, AppWidgetManager.getInstance(this), id, f[0], f[1]);
+		// Once per opening: the launcher may start this screen again, or the phone recreate it
+		// (A52s log: three lines for one opening).
+		long now = System.currentTimeMillis();
+		if (id != lastOpenId || now - lastOpenAt > 5000) Log.i(this, "WIDGET", "#" + id + " setări deschise · " + set.describe());
+		lastOpenId = id;
+		lastOpenAt = now;
 		loadCities();
 		int pad = (int) (16 * dp);
 
 		LinearLayout col = new LinearLayout(this);
 		col.setOrientation(LinearLayout.VERTICAL);
 		col.setPadding(pad, (int) (24 * dp), pad, pad);
-		col.addView(text(en ? "Widget settings" : "Setări widget", 24, ink, true));
+		col.addView(text(Tr.t("Widget settings", "Setări widget"), 24, ink, true));
 
 		// The preview on a wallpaper-like background.
 		FrameLayout wall = new FrameLayout(this);
@@ -203,7 +211,7 @@ public final class WidgetConfig extends Activity {
 		town.setPadding((int) (22 * dp), (int) (16 * dp), (int) (22 * dp), (int) (16 * dp));
 		townText = text("", 19, ink, false);
 		town.addView(townText, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		TextView change = text(en ? "Change" : "Schimbare", 19, accent, true);
+		TextView change = text(Tr.t("Change", "Schimbare"), 19, accent, true);
 		town.addView(change);
 		change.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -221,7 +229,7 @@ public final class WidgetConfig extends Activity {
 		LinearLayout bgRow = new LinearLayout(this);
 		bgRow.setGravity(Gravity.CENTER_VERTICAL);
 		bgRow.setPadding((int) (20 * dp), (int) (14 * dp), (int) (16 * dp), (int) (6 * dp));
-		bgRow.addView(text(en ? "Background" : "Fundal", 18, ink, false), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		bgRow.addView(text(Tr.t("Background", "Fundal"), 18, ink, false), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		bgSwitch = new Switch(this);
 		bgSwitch.setChecked(set.bg);
 		bgRow.addView(bgSwitch);
@@ -235,7 +243,7 @@ public final class WidgetConfig extends Activity {
 		alpha.setPadding((int) (24 * dp), (int) (10 * dp), (int) (24 * dp), (int) (12 * dp));
 		c.addView(alpha);
 		c.addView(divider());
-		TextView[] cr = choiceRow(c, en ? "Colours" : "Culori", new View.OnClickListener() {
+		TextView[] cr = choiceRow(c, Tr.t("Colours", "Culori"), new View.OnClickListener() {
 			public void onClick(View v) {
 				if (set.bg) pickColors();
 			}
@@ -243,7 +251,7 @@ public final class WidgetConfig extends Activity {
 		colorsTitle = cr[0];
 		colorsValue = cr[1];
 		c.addView(divider());
-		fontValue = choiceRow(c, en ? "Text colour" : "Culoare font", new View.OnClickListener() {
+		fontValue = choiceRow(c, Tr.t("Text colour", "Culoare font"), new View.OnClickListener() {
 			public void onClick(View v) {
 				pickFont();
 			}
@@ -275,7 +283,7 @@ public final class WidgetConfig extends Activity {
 		LinearLayout bar = new LinearLayout(this);
 		bar.setGravity(Gravity.CENTER);
 		bar.setBackground(round(card, 30));
-		TextView cancel = text(en ? "Cancel" : "Anulare", 19, ink, true), save = text(en ? "Save" : "Salvare", 19, ink, true);
+		TextView cancel = text(Tr.t("Cancel", "Anulare"), 19, ink, true), save = text(Tr.t("Save", "Salvare"), 19, ink, true);
 		for (TextView t : new TextView[] { cancel, save }) {
 			t.setGravity(Gravity.CENTER);
 			t.setPadding((int) (28 * dp), (int) (14 * dp), (int) (28 * dp), (int) (14 * dp));
@@ -328,8 +336,8 @@ public final class WidgetConfig extends Activity {
 	private void refresh() {
 		Widget.Data d = Widget.data(this, set.town);
 		Cities.City app = Widget.data(this, "").c;
-		townText.setText("⌖  " + (d.c != null ? d.c.name : "–") + (set.town.length() == 0 ? (en ? "  (as in the app)" : "  (ca în aplicație)") : ""));
-		alphaText.setText((en ? "Transparency: " : "Transparență: ") + (100 - set.alpha) + "%");
+		townText.setText("⌖  " + (d.c != null ? d.c.name : "–") + (set.town.length() == 0 ? (Tr.t("  (as in the app)", "  (ca în aplicație)")) : ""));
+		alphaText.setText((Tr.t("Transparency: ", "Transparență: ")) + (100 - set.alpha) + "%");
 		alpha.setEnabled(set.bg);
 		alphaText.setAlpha(set.bg ? 1f : 0.4f);
 		colorsTitle.setAlpha(set.bg ? 1f : 0.4f);
@@ -347,15 +355,15 @@ public final class WidgetConfig extends Activity {
 	}
 
 	private String colorsName(String c) {
-		if (c.equals("phone")) return en ? "Match the phone's settings" : "Potrivire la setările telefonului";
-		if (c.equals("dark")) return en ? "Dark" : "Închis";
-		return en ? "By the weather" : "După vreme";
+		if (c.equals("phone")) return Tr.t("Match the phone's settings", "Potrivire la setările telefonului");
+		if (c.equals("dark")) return Tr.t("Dark", "Închis");
+		return Tr.t("By the weather", "După vreme");
 	}
 
 	private String fontName(String f) {
-		if (f.equals("white")) return en ? "White" : "Alb";
-		if (f.equals("black")) return en ? "Black" : "Negru";
-		return en ? "Automatic" : "Automat";
+		if (f.equals("white")) return Tr.t("White", "Alb");
+		if (f.equals("black")) return Tr.t("Black", "Negru");
+		return Tr.t("Automatic", "Automat");
 	}
 
 	private void pickColors() {
@@ -366,7 +374,7 @@ public final class WidgetConfig extends Activity {
 			names[k] = colorsName(keys[k]);
 			if (keys[k].equals(set.colors)) cur = k;
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(en ? "Colours" : "Culori").setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Colours", "Culori")).setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
 				set.colors = keys[k];
 				refresh();
@@ -383,7 +391,7 @@ public final class WidgetConfig extends Activity {
 			names[k] = fontName(keys[k]);
 			if (keys[k].equals(set.font)) cur = k;
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(en ? "Text colour" : "Culoare font").setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
+		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Text colour", "Culoare font")).setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
 				set.font = keys[k];
 				refresh();
@@ -398,7 +406,7 @@ public final class WidgetConfig extends Activity {
 		List<String> names = new ArrayList<String>();
 		Cities.City app = Widget.data(this, "").c;
 		keys.add("");
-		names.add((en ? "As in the app" : "Ca în aplicație") + (app != null ? " (" + app.name + ")" : ""));
+		names.add((Tr.t("As in the app", "Ca în aplicație")) + (app != null ? " (" + app.name + ")" : ""));
 		for (String k : prefs.getString("favs", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
 			if (c != null && !keys.contains(c.key())) {
@@ -407,8 +415,8 @@ public final class WidgetConfig extends Activity {
 			}
 		}
 		keys.add("*");
-		names.add(en ? "Choose the county / country…" : "Alege județul / țara…");
-		new AlertDialog.Builder(this, theme()).setTitle(en ? "Town" : "Localitate")
+		names.add(Tr.t("Choose the county / country…", "Alege județul / țara…"));
+		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Town", "Localitate"))
 				.setItems(names.toArray(new String[0]), new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int k) {
 						if (keys.get(k).equals("*")) pickCounty();
@@ -432,7 +440,7 @@ public final class WidgetConfig extends Activity {
 			names.add(cs.name(e.getKey(), en));
 			lists.add(e.getValue());
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(en ? "County / country" : "Județ / țară")
+		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("County / country", "Județ / țară"))
 				.setItems(names.toArray(new String[0]), new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int k) {
 						pickIn(lists.get(k));
@@ -443,7 +451,7 @@ public final class WidgetConfig extends Activity {
 	private void pickIn(final List<Cities.City> towns) {
 		String[] names = new String[towns.size()];
 		for (int k = 0; k < names.length; k++) names[k] = towns.get(k).name;
-		new AlertDialog.Builder(this, theme()).setTitle(en ? "Town" : "Localitate")
+		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Town", "Localitate"))
 				.setItems(names, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int k) {
 						set.town = towns.get(k).key();

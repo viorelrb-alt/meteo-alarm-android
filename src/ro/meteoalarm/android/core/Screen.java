@@ -91,6 +91,9 @@ public final class Screen {
 	public boolean brightBar;
 	/** The theme follows the phone's light sensor (the button next to the sun is filled). */
 	public boolean sensorTheme;
+	/** The phone has a compass (rotation vector) / a light sensor; without one, its box is left out
+	 * and its button grayed (Viorel 2026-11-04: the INCAR G3 tablet has neither). */
+	public boolean hasCompass = true, hasLight = true;
 	public float brightLevel = 0.5f;
 	/**
 	 * The bar's colours, from the phone's theme (Android 12+: its palette, so a pink theme gives a
@@ -796,11 +799,11 @@ public final class Screen {
 	}
 
 	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
-		float hb = alertFrame(x, y, bw, h, f, dark ? QUAKE_DARK : QUAKE_LIGHT, T.en ? "EARTHQUAKE" : "CUTREMUR");
+		float hb = alertFrame(x, y, bw, h, f, dark ? QUAKE_DARK : QUAKE_LIGHT, Tr.t("EARTHQUAKE", "CUTREMUR"));
 		float lx = x + 18, room = bw - 30;
 		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);
-		String l2 = q.felt >= 2 ? (T.en ? "Felt here: " : "Resimțit aici: ") + roman(q.felt) + (T.en ? " (estimate)" : " (estimat)")
-				: (T.en ? "depth " : "adânc. ") + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km";
+		String l2 = q.felt >= 2 ? (Tr.t("Felt here: ", "Resimțit aici: ")) + roman(q.felt) + (Tr.t(" (estimate)", " (estimat)"))
+				: (Tr.t("depth ", "adânc. ")) + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km";
 		ltext(true, fit(true, 30 * f, room, l1), y + hb + 12 * f, lx, l1, c.ink);
 		ltext(false, fit(false, 26 * f, room, l2), y + hb + 50 * f, lx, l2, c.dim);
 	}
@@ -854,25 +857,24 @@ public final class Screen {
 		boolean en = T.en;
 		String town = city != null ? city.name : "";
 		if (q != null && k == 0) {
-			out.add(new String[] { "title", (en ? "Earthquake M" : "Cutremur M") + dec(q.mag) });
-			out.add(new String[] { "t", (en ? "Magnitude: " : "Magnitudine: ") + dec(q.mag) + (q.magType.length() > 0 ? " (" + q.magType.toUpperCase() + ")" : "") });
-			out.add(new String[] { "t", (en ? "Time: " : "Ora: ") + dateTime(q.time) });
-			out.add(new String[] { "t", (en ? "Region: " : "Zona: ") + titleCase(q.region) });
-			out.add(new String[] { "t", (en ? "Depth: " : "Adâncime: ") + Math.round(q.depth) + " km" });
-			out.add(new String[] { "t", (en ? "Epicentre: " : "Epicentru: ") + dec(Math.abs(q.lat)) + "° " + (q.lat >= 0 ? "N" : "S") + ", "
-					+ dec(Math.abs(q.lon)) + "° " + (q.lon >= 0 ? "E" : en ? "W" : "V") + (en ? ", " : ", la ") + Math.round(q.dist) + " km"
-					+ (en ? " from " : " de ") + town });
+			out.add(new String[] { "title", (Tr.t("Earthquake M", "Cutremur M")) + dec(q.mag) });
+			out.add(new String[] { "t", (Tr.t("Magnitude: ", "Magnitudine: ")) + dec(q.mag) + (q.magType.length() > 0 ? " (" + q.magType.toUpperCase() + ")" : "") });
+			out.add(new String[] { "t", (Tr.t("Time: ", "Ora: ")) + dateTime(q.time) });
+			out.add(new String[] { "t", (Tr.t("Region: ", "Zona: ")) + titleCase(q.region) });
+			out.add(new String[] { "t", (Tr.t("Depth: ", "Adâncime: ")) + Math.round(q.depth) + " km" });
+			out.add(new String[] { "t", (Tr.t("Epicentre: ", "Epicentru: ")) + dec(Math.abs(q.lat)) + "° " + (q.lat >= 0 ? "N" : "S") + ", "
+					+ dec(Math.abs(q.lon)) + "° " + (q.lon >= 0 ? "E" : Tr.t("W", "V")) + (Tr.t(", ", ", la ")) + Math.round(q.dist) + " km"
+					+ (Tr.t(" from ", " de ")) + town });
 			out.add(new String[] { "h", en ? "In " + town : "La " + town });
-			if (q.felt >= 2) out.add(new String[] { "t", (en ? "Probably felt, intensity " : "Probabil resimțit, intensitate ") + roman(q.felt) + ": " + feltWords(q.felt) + "." });
-			else out.add(new String[] { "t", en ? "Probably not felt here." : "Probabil nu s-a simțit aici." });
-			out.add(new String[] { "t", en ? "Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town."
-					: "Estimare după magnitudine și distanța până la focar (scara EMS-98); EMSC nu publică mărturiile pentru fiecare localitate." });
+			if (q.felt >= 2) out.add(new String[] { "t", (Tr.t("Probably felt, intensity ", "Probabil resimțit, intensitate ")) + roman(q.felt) + ": " + feltWords(q.felt) + "." });
+			else out.add(new String[] { "t", Tr.t("Probably not felt here.", "Probabil nu s-a simțit aici.") });
+			out.add(new String[] { "t", Tr.t("Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.", "Estimare după magnitudine și distanța până la focar (scara EMS-98); EMSC nu publică mărturiile pentru fiecare localitate.") });
 			if (quakes != null && quakes.size() > 1) {
-				out.add(new String[] { "h", en ? "All in the last 24 h" : "Toate în ultimele 24 h" });
+				out.add(new String[] { "h", Tr.t("All in the last 24 h", "Toate în ultimele 24 h") });
 				for (Quakes.Quake o : quakes)
-					out.add(new String[] { "t", "M" + dec(o.mag) + " · " + T.weekdayTime(o.time, clk12) + " · " + (en ? "depth " : "adânc. ") + Math.round(o.depth) + " km" });
+					out.add(new String[] { "t", "M" + dec(o.mag) + " · " + T.weekdayTime(o.time, clk12) + " · " + (Tr.t("depth ", "adânc. ")) + Math.round(o.depth) + " km" });
 			}
-			out.add(new String[] { "t", en ? "Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h." : "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h." });
+			out.add(new String[] { "t", Tr.t("Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.", "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h.") });
 			return out;
 		}
 		List<WarnGroup> gs = warnGroups();
@@ -892,8 +894,8 @@ public final class Screen {
 		for (Warnings.Warn wr : warns) {
 			if (wr.until <= nowMs || Math.min(3, Math.max(1, wr.level)) != gr.level) continue;
 			out.add(new String[] { "h", T.warnType(wr.type) });
-			String st = wr.from <= nowMs ? (en ? "In force now, until " : "În vigoare acum, până ") + T.weekdayTime(wr.until, clk12)
-					: (en ? "From " : "De ") + T.weekdayTime(wr.from, clk12) + (en ? " until " : " până ") + T.weekdayTime(wr.until, clk12);
+			String st = wr.from <= nowMs ? (Tr.t("In force now, until ", "În vigoare acum, până ")) + T.weekdayTime(wr.until, clk12)
+					: (Tr.t("From ", "De ")) + T.weekdayTime(wr.from, clk12) + (Tr.t(" until ", " până ")) + T.weekdayTime(wr.until, clk12);
 			out.add(new String[] { "t", st });
 			String tip = advice(wr.type);
 			if (tip.length() > 0) out.add(new String[] { "t", tip });
@@ -906,14 +908,14 @@ public final class Screen {
 	/** A short piece of advice for a warning type. */
 	private String advice(String type) {
 		boolean en = T.en;
-		if (type.equals("wind")) return en ? "Stay away from trees, poles and scaffolding; secure loose objects." : "Feriți-vă de copaci, stâlpi și schele; fixați obiectele care pot fi luate de vânt.";
-		if (type.startsWith("thunderstorm")) return en ? "Lightning, downpours, hail and gusts are possible; take shelter indoors." : "Sunt posibile descărcări electrice, averse, grindină și intensificări ale vântului; adăpostiți-vă în clădiri.";
-		if (type.startsWith("rain") || type.startsWith("flood")) return en ? "Avoid flooded roads and river banks." : "Evitați drumurile inundate și malurile râurilor.";
-		if (type.startsWith("snow")) return en ? "Slippery roads; drive only if you must, with winter equipment." : "Drumuri alunecoase; circulați doar dacă e necesar, cu echipament de iarnă.";
-		if (type.equals("fog")) return en ? "Low visibility; drive slowly with the fog lights on." : "Vizibilitate redusă; circulați încet, cu luminile de ceață aprinse.";
-		if (type.startsWith("high-temperature")) return en ? "Avoid the sun between 11 and 18, drink plenty of water." : "Evitați soarele între orele 11 și 18 și beți multă apă.";
-		if (type.startsWith("low-temperature")) return en ? "Dress warmly and limit time outdoors." : "Îmbrăcați-vă gros și stați cât mai puțin afară.";
-		if (type.startsWith("forest-fire")) return en ? "Do not light fires outdoors." : "Nu aprindeți focul în aer liber.";
+		if (type.equals("wind")) return Tr.t("Stay away from trees, poles and scaffolding; secure loose objects.", "Feriți-vă de copaci, stâlpi și schele; fixați obiectele care pot fi luate de vânt.");
+		if (type.startsWith("thunderstorm")) return Tr.t("Lightning, downpours, hail and gusts are possible; take shelter indoors.", "Sunt posibile descărcări electrice, averse, grindină și intensificări ale vântului; adăpostiți-vă în clădiri.");
+		if (type.startsWith("rain") || type.startsWith("flood")) return Tr.t("Avoid flooded roads and river banks.", "Evitați drumurile inundate și malurile râurilor.");
+		if (type.startsWith("snow")) return Tr.t("Slippery roads; drive only if you must, with winter equipment.", "Drumuri alunecoase; circulați doar dacă e necesar, cu echipament de iarnă.");
+		if (type.equals("fog")) return Tr.t("Low visibility; drive slowly with the fog lights on.", "Vizibilitate redusă; circulați încet, cu luminile de ceață aprinse.");
+		if (type.startsWith("high-temperature")) return Tr.t("Avoid the sun between 11 and 18, drink plenty of water.", "Evitați soarele între orele 11 și 18 și beți multă apă.");
+		if (type.startsWith("low-temperature")) return Tr.t("Dress warmly and limit time outdoors.", "Îmbrăcați-vă gros și stați cât mai puțin afară.");
+		if (type.startsWith("forest-fire")) return Tr.t("Do not light fires outdoors.", "Nu aprindeți focul în aer liber.");
 		return "";
 	}
 
@@ -939,7 +941,7 @@ public final class Screen {
 		box(pl, pt, pw, ph, phd);
 		String ttl = T.precipUp + " · " + T.next12;
 		// In a narrow box a short title, so it stays readable.
-		if (fit(true, (phd - 4) * 76 / 100, pw - 41, ttl) < 26) ttl = T.precipUp + " · 12 " + (T.en ? "H" : "ORE");
+		if (fit(true, (phd - 4) * 76 / 100, pw - 41, ttl) < 26) ttl = T.precipUp + " · 12 " + (Tr.t("H", "ORE"));
 		head(pt, phd, pl + pw / 2, pw - 40, ttl, 0);
 		String rt = rainText(), mx = T.max + " " + w.rainMaxP + "%";
 		float room = pw - 42 - g.width(false, 29, mx) - 16;
@@ -1077,7 +1079,7 @@ public final class Screen {
 		l.add("press");
 		l.add("wind");
 		l.add("vis");
-		l.add("compass");
+		if (hasCompass) l.add("compass");
 		return l;
 	}
 
@@ -1147,15 +1149,15 @@ public final class Screen {
 	private String infoTitle(String id) {
 		boolean en = T.en;
 		if (id.equals("sun")) return T.sun;
-		if (id.equals("moon")) return en ? "MOON" : "LUNA";
+		if (id.equals("moon")) return Tr.t("MOON", "LUNA");
 		if (id.equals("uv")) return T.uvT;
 		if (id.equals("pollen")) return T.pollen;
-		if (id.equals("hum")) return en ? "HUMIDITY" : "UMIDITATE";
-		if (id.equals("aqi")) return en ? "AIR QUALITY" : "ICA";
-		if (id.equals("press")) return en ? "PRESSURE" : "PRESIUNE";
-		if (id.equals("wind")) return en ? "WIND" : "VÂNT";
-		if (id.equals("vis")) return en ? "VISIBILITY" : "VIZIBILITATE";
-		return en ? "COMPASS" : "BUSOLĂ";
+		if (id.equals("hum")) return Tr.t("HUMIDITY", "UMIDITATE");
+		if (id.equals("aqi")) return Tr.t("AIR QUALITY", "ICA");
+		if (id.equals("press")) return Tr.t("PRESSURE", "PRESIUNE");
+		if (id.equals("wind")) return Tr.t("WIND", "VÂNT");
+		if (id.equals("vis")) return Tr.t("VISIBILITY", "VIZIBILITATE");
+		return Tr.t("COMPASS", "BUSOLĂ");
 	}
 
 	private static String hm(long ms) {
@@ -1181,9 +1183,9 @@ public final class Screen {
 			long ms = now.getTimeInMillis();
 			long[] rs = city != null ? Moon.riseSet(ms, city.lat, city.lon) : new long[2];
 			float tx = x + (bw - 52) / 2 + 4;
-			ctext(false, 20, top + 54, tx, en ? "Moonrise" : "Răsare", c.ink);
+			ctext(false, 20, top + 54, tx, Tr.t("Moonrise", "Răsare"), c.ink);
 			ctext(true, 29, top + 78, tx, rs[0] > 0 ? Texts.clock(hm(rs[0]), clk12) : "–", c.ink);
-			ctext(false, 20, top + 121, tx, en ? "Moonset" : "Apune", c.ink);
+			ctext(false, 20, top + 121, tx, Tr.t("Moonset", "Apune"), c.ink);
 			ctext(true, 29, top + 145, tx, rs[1] > 0 ? Texts.clock(hm(rs[1]), clk12) : "–", c.ink);
 			float mx = x + bw - 34, my = top + hd + 138 * 0.42f;
 			moonPhase(mx, my, 17, Moon.lit(ms), Moon.waxing(ms));
@@ -1210,7 +1212,7 @@ public final class Screen {
 			}
 			scale(cx - 60, top + 162, 4, Math.max(0, pollenLvl), 27);
 		} else if (id.equals("hum")) {
-			bigValue(cx, top, w.humidity >= 0 ? w.humidity + "%" : "–", en ? "relative humidity" : "umiditate relativă", bw);
+			bigValue(cx, top, w.humidity >= 0 ? w.humidity + "%" : "–", Tr.t("relative humidity", "umiditate relativă"), bw);
 			scale(cx - 60, top + 162, 5, w.humidity < 0 ? 0 : Math.max(1, (w.humidity + 19) / 20), 21);
 		} else if (id.equals("aqi")) {
 			String[] lv = en ? new String[] { "Good", "Fair", "Moderate", "Poor", "Very poor", "Extremely poor" }
@@ -1292,8 +1294,8 @@ public final class Screen {
 		ctext(true, fit(true, 34, r * 1.5f, val), cy - 26, cx, val, c.ink);
 		ctext(false, 18, cy + 10, cx, "hPa", c.ink);
 		double t = w.pressTrend;
-		String tr = Double.isNaN(t) ? "" : Math.abs(t) < 1 ? (en ? "steady" : "stabilă") : t <= -3 ? (en ? "↓ falling fast" : "↓ scade rapid")
-				: t < 0 ? (en ? "↓ falling" : "↓ scade") : t >= 3 ? (en ? "↑ rising fast" : "↑ crește rapid") : (en ? "↑ rising" : "↑ crește");
+		String tr = Double.isNaN(t) ? "" : Math.abs(t) < 1 ? (Tr.t("steady", "stabilă")) : t <= -3 ? (Tr.t("↓ falling fast", "↓ scade rapid"))
+				: t < 0 ? (Tr.t("↓ falling", "↓ scade")) : t >= 3 ? (Tr.t("↑ rising fast", "↑ crește rapid")) : (Tr.t("↑ rising", "↑ crește"));
 		if (tr.length() > 0) ctext(false, fit(false, 18, bw - 16, tr), top + body - 28, cx, tr, c.dim);
 	}
 
@@ -1340,7 +1342,7 @@ public final class Screen {
 		rose(cx, cy, r, has ? heading : 0, has);
 		g.poly(new float[] { cx, cy - r + 6, cx - 7, cy - r - 8, cx + 7, cy - r - 8 }, has ? c.accent : c.dim);
 		if (!has) {
-			ctext(false, fit(false, 17, r * 1.1f, en ? "no compass" : "fără busolă"), cy - 10, cx, en ? "no compass" : "fără busolă", c.dim);
+			ctext(false, fit(false, 17, r * 1.1f, Tr.t("no compass", "fără busolă")), cy - 10, cx, Tr.t("no compass", "fără busolă"), c.dim);
 			return;
 		}
 		int deg = Math.round(((heading % 360) + 360) % 360) % 360;
@@ -1451,7 +1453,7 @@ public final class Screen {
 		}
 		String bat = (batt >= 0 ? batt + "%  " : "") + T.charging;
 		ctext(false, 26, ch - 70, cw / 2, bat, dimInk);
-		ctext(false, 22, ch - 36, cw / 2, T.en ? "Tap to leave the night clock" : "Atinge ecranul ca să ieși din ceasul de noapte", dimInk);
+		ctext(false, 22, ch - 36, cw / 2, Tr.t("Tap to leave the night clock", "Atinge ecranul ca să ieși din ceasul de noapte"), dimInk);
 	}
 
 	// --- Brightness ------------------------------------------------------------------------
@@ -1519,7 +1521,11 @@ public final class Screen {
 		footButton("city", btnCity, false);
 		footButton("locate", btnLocate, autoLoc);
 		footButton("bright", btnBright, brightBar);
-		footButton("sensor", btnSensor, sensorTheme);
+		if (hasLight) footButton("sensor", btnSensor, sensorTheme);
+		else {
+			button(btnSensor);
+			buttonIcon("sensor", btnSensor[0] + 32, btnSensor[1] + 32, c.dim);
+		}
 		float batLeft = cw - 40;
 		float gy = fb + 22;
 		if (batt >= 0) {
@@ -1621,7 +1627,7 @@ public final class Screen {
 			g.rect(10, 32, 6, 3, k);
 			g.rect(48, 32, 6, 3, k);
 		} else if (which.startsWith("lang")) {
-			String t = which.endsWith("ro") ? "RO" : "EN";
+			String t = which.length() > 5 ? which.substring(5).toUpperCase() : "EN";
 			g.roundRect(6, 12, 52, 40, 8, k);
 			g.roundRect(9, 15, 46, 34, 6, c.page);
 			ctext(true, 24, 18, 32, t, k);

@@ -1,0 +1,92 @@
+package ro.meteoalarm.android;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import ro.meteoalarm.android.core.Tr;
+
+/**
+ * The language on the phone (Viorel 2026-11-04): at the first start the phone's own language when
+ * the app has it (else English); later the one chosen in ☰ › Language. The list offers only
+ * English, Romanian and the official languages of the country the phone is in (from the SIM or
+ * the mobile network, else the town shown, else the phone's settings), plus the one in use.
+ */
+final class Lang {
+	private Lang() {
+	}
+
+	/** Loads the language for CTX (once per change) and returns its code. */
+	static synchronized String apply(Context ctx) {
+		SharedPreferences p = Fetcher.prefs(ctx);
+		String code = p.getString("lang", "");
+		if (code.length() == 0 && p.getBoolean("welcomed", false)) {
+			// Installed before v2.00 and never switched to English: Romanian, as it was.
+			code = "ro";
+			p.edit().putString("lang", code).apply();
+		}
+		if (code.length() == 0) {
+			String sys = Locale.getDefault().getLanguage();
+			if ("iw".equals(sys)) sys = "he";
+			if ("in".equals(sys)) sys = "id";
+			code = Tr.known(sys) ? sys : "en";
+			// Moldovan phones may report "mo".
+			if ("mo".equals(sys)) code = "ro";
+			p.edit().putString("lang", code).apply();
+			Log.i(ctx, "LIMBA", "prima pornire: limba telefonului " + sys + " -> " + Tr.name(code));
+		}
+		if (!code.equals(Tr.lang()) || loaded == null) {
+			String table = null;
+			if (!code.equals("ro") && !code.equals("en")) {
+				try {
+					table = Fetcher.readAll(ctx.getAssets().open("lang/" + code + ".txt"));
+				} catch (Exception e) {
+					Log.e(ctx, "LIMBA", "traducerea " + code + " lipsește", e);
+				}
+			}
+			Tr.set(code, table);
+			loaded = code;
+		}
+		return code;
+	}
+
+	private static String loaded;
+
+	/** "ro" is the only language that is not shown in English for the long texts. */
+	static boolean en(Context ctx) {
+		return !"ro".equals(apply(ctx));
+	}
+
+	/** The phone's country (ISO, lower case): SIM, network, then the town shown, then the settings. */
+	static String country(Context ctx) {
+		try {
+			android.telephony.TelephonyManager tm = (android.telephony.TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
+			if (tm != null) {
+				String c = tm.getSimCountryIso();
+				if (c != null && c.length() == 2) return c.toLowerCase();
+				c = tm.getNetworkCountryIso();
+				if (c != null && c.length() == 2) return c.toLowerCase();
+			}
+		} catch (Exception e) {
+			// a tablet without SIM
+		}
+		ro.meteoalarm.android.core.Cities.City t = ro.meteoalarm.android.core.Cities.City.fromKey(Fetcher.prefs(ctx).getString("city", ""));
+		if (t != null && t.country != null && t.country.length() == 2) return t.country.toLowerCase();
+		String c = Locale.getDefault().getCountry();
+		return c == null ? "" : c.toLowerCase();
+	}
+
+	/** The languages offered: English, Romanian, the country's own, and the one in use. */
+	static List<String> offered(Context ctx) {
+		List<String> l = new ArrayList<String>();
+		l.add("en");
+		l.add("ro");
+		for (String c : Tr.ofCountry(country(ctx))) if (!l.contains(c)) l.add(c);
+		String cur = apply(ctx);
+		if (!l.contains(cur)) l.add(cur);
+		return l;
+	}
+}

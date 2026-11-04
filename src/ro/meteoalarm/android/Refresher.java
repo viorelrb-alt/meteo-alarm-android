@@ -34,7 +34,8 @@ public final class Refresher extends BroadcastReceiver {
 		// settings screen must not take them for new ones).
 		if (Intent.ACTION_MY_PACKAGE_REPLACED.equals(act)) {
 			SharedPreferences.Editor e = Fetcher.prefs(app).edit();
-			for (int id : Widget.all(app).keySet()) e.putBoolean("w" + id + "_seen", true);
+			// …and may have been resized since: the size of a home-screen cell is learned only from new ones.
+			for (int id : Widget.all(app).keySet()) e.putBoolean("w" + id + "_seen", true).putBoolean("w" + id + "_cell", true);
 			e.apply();
 			Log.i(app, "APP", "aplicația a fost actualizată la " + MainActivity.VERSION);
 		}

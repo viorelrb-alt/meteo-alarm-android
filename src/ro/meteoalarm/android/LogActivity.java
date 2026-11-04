@@ -1,5 +1,7 @@
 package ro.meteoalarm.android;
 
+import ro.meteoalarm.android.core.Tr;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -32,7 +34,7 @@ public final class LogActivity extends Activity {
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		setTheme(night ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
-		en = "en".equals(getSharedPreferences("settings", MODE_PRIVATE).getString("lang", "ro"));
+		en = Lang.en(this);
 		boolean dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		int bg = dark ? 0xFF1C1C1E : 0xFFFFFFFF, ink = dark ? 0xFFEDEDED : 0xFF111111;
 		float dp = getResources().getDisplayMetrics().density;
@@ -44,13 +46,13 @@ public final class LogActivity extends Activity {
 		col.setPadding((int) (12 * dp), (int) (12 * dp), (int) (12 * dp), (int) (8 * dp));
 
 		TextView title = new TextView(this);
-		title.setText(en ? "Diary (log)" : "Jurnal");
+		title.setText(Tr.t("Diary (log)", "Jurnal"));
 		title.setTextSize(22);
 		title.setTypeface(Typeface.DEFAULT_BOLD);
 		title.setTextColor(ink);
 		col.addView(title);
 		TextView sub = new TextView(this);
-		sub.setText(en ? "Everything the app did in the last 5 days; older errors kept 10 days." : "Tot ce a făcut aplicația în ultimele 5 zile; erorile mai vechi rămân 10 zile.");
+		sub.setText(Tr.t("Everything the app did in the last 5 days; older errors kept 10 days.", "Tot ce a făcut aplicația în ultimele 5 zile; erorile mai vechi rămân 10 zile."));
 		sub.setTextSize(13);
 		sub.setTextColor(dark ? 0xFFA0A0A0 : 0xFF666666);
 		sub.setPadding(0, (int) (2 * dp), 0, (int) (8 * dp));
@@ -76,17 +78,17 @@ public final class LogActivity extends Activity {
 
 		LinearLayout row = new LinearLayout(this);
 		row.setGravity(Gravity.CENTER);
-		row.addView(button(en ? "Share" : "Trimite", new View.OnClickListener() {
+		row.addView(button(Tr.t("Share", "Trimite"), new View.OnClickListener() {
 			public void onClick(View v) {
 				share();
 			}
 		}), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		row.addView(button(en ? "Save" : "Salvează", new View.OnClickListener() {
+		row.addView(button(Tr.t("Save", "Salvează"), new View.OnClickListener() {
 			public void onClick(View v) {
 				save();
 			}
 		}), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		row.addView(button(en ? "Close" : "Închide", new View.OnClickListener() {
+		row.addView(button(Tr.t("Close", "Închide"), new View.OnClickListener() {
 			public void onClick(View v) {
 				finish();
 			}
@@ -110,11 +112,11 @@ public final class LogActivity extends Activity {
 		Uri u = ApkProvider.logUri(f.getName());
 		Intent send = new Intent(Intent.ACTION_SEND).setType("text/plain")
 				.putExtra(Intent.EXTRA_STREAM, u)
-				.putExtra(Intent.EXTRA_SUBJECT, "Meteo Alarm — " + (en ? "log " : "jurnal ") + Log.device())
+				.putExtra(Intent.EXTRA_SUBJECT, "Meteo Alarm — " + (Tr.t("log ", "jurnal ")) + Log.device())
 				.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 		send.setClipData(android.content.ClipData.newRawUri(f.getName(), u));
 		try {
-			startActivity(Intent.createChooser(send, en ? "Send the log" : "Trimite jurnalul"));
+			startActivity(Intent.createChooser(send, Tr.t("Send the log", "Trimite jurnalul")));
 		} catch (Exception e) {
 			Log.e(this, "JURNAL", "trimitere", e);
 		}
@@ -139,10 +141,10 @@ public final class LogActivity extends Activity {
 			out.write(Log.export(this).getBytes("UTF-8"));
 			out.close();
 			Log.i(this, "JURNAL", "salvat pe telefon");
-			Toast.makeText(this, en ? "Log saved" : "Jurnal salvat", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, Tr.t("Log saved", "Jurnal salvat"), Toast.LENGTH_SHORT).show();
 		} catch (Exception e) {
 			Log.e(this, "JURNAL", "salvare", e);
-			Toast.makeText(this, en ? "Could not save" : "Nu s-a putut salva", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, Tr.t("Could not save", "Nu s-a putut salva"), Toast.LENGTH_SHORT).show();
 		}
 	}
 }

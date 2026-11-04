@@ -68,8 +68,35 @@ final class Fetcher {
 		return ctx.getSharedPreferences("settings", Context.MODE_PRIVATE);
 	}
 
-	/** Off the main thread: every part for town C (null where it failed). */
+	private static final Object LOCK = new Object();
+	private static Result last;
+	private static String lastKey = "";
+	private static long lastAt;
+	/** A download for the same town finished this recently is used again instead of a new one. */
+	static final long SHARE_MS = 60000;
+
+	/**
+	 * Off the main thread: every part for town C (null where it failed). One download at a time
+	 * for the whole app: after an update the background refresh and the app started at the same
+	 * moment and both downloaded (A52s log 2026-11-02 17:15:19); the second now waits and takes
+	 * the first one's result.
+	 */
 	static Result download(Context ctx, Cities.City c) {
+		synchronized (LOCK) {
+			long now = System.currentTimeMillis();
+			if (last != null && c.key().equals(lastKey) && now - lastAt < SHARE_MS) {
+				Log.i(ctx, "DATE", "descărcarea pentru " + c.name + " tocmai s-a făcut (acum " + (now - lastAt) / 1000 + " s), o folosesc");
+				return last;
+			}
+			Result r = downloadNow(ctx, c);
+			last = r;
+			lastKey = c.key();
+			lastAt = System.currentTimeMillis();
+			return r;
+		}
+	}
+
+	private static Result downloadNow(Context ctx, Cities.City c) {
 		Result r = new Result();
 		String tz = TimeZone.getDefault().getID();
 		try {

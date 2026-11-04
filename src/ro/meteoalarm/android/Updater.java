@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Release;
 import ro.meteoalarm.android.core.Weather;
 
@@ -28,17 +29,15 @@ final class Updater {
 
 	/** Why Play Protect may warn when the app (or one of its updates) is installed. */
 	static String protectNote(boolean en) {
-		return en
-				? "About the Play Protect warning: Google may say the app \"may be harmful\". It does so because the app "
+		return Tr.t("About the Play Protect warning: Google may say the app \"may be harmful\". It does so because the app "
 						+ "does not come from Google Play, its developer is not registered with Google, and it can install its "
 						+ "own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play "
 						+ "Protect window appears, tap \"More details\" (if shown), then \"Install without scanning\" "
-						+ "(or \"Install anyway\")."
-				: "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare”. O face pentru că "
+						+ "(or \"Install anyway\").", "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare”. O face pentru că "
 						+ "aplicația nu vine din Google Play, dezvoltatorul nu e înregistrat la Google și aplicația își poate "
 						+ "instala singură actualizările (de pe github.com/viorelrb-alt/meteo-alarm-android). Aplicația nu face "
 						+ "nimic altceva. Când apare fereastra Play Protect, apasă „Mai multe” (dacă apare), apoi "
-						+ "„Instalează fără verificare” (sau „Instalează oricum”).";
+						+ "„Instalează fără verificare” (sau „Instalează oricum”).");
 	}
 
 	Updater(Activity a, BottomSheet sheet) {
@@ -55,7 +54,7 @@ final class Updater {
 	}
 
 	private String close() {
-		return en ? "Cancel" : "Renunță";
+		return Tr.t("Cancel", "Renunță");
 	}
 
 	private android.content.SharedPreferences prefs() {
@@ -72,8 +71,7 @@ final class Updater {
 
 	/** The line at the top of What's new, About and Help (Viorel 2026-11-02). */
 	static String howTo(boolean en) {
-		return en ? "To get updates: open ☰ › Check for updates and, when asked, give your consent."
-				: "Pentru actualizări: intră în ☰ › Verifică actualizări și, când ești întrebat, dă-ți acordul.";
+		return Tr.t("To get updates: open ☰ › Check for updates and, when asked, give your consent.", "Pentru actualizări: intră în ☰ › Verifică actualizări și, când ești întrebat, dă-ți acordul.");
 	}
 
 	/**
@@ -82,33 +80,29 @@ final class Updater {
 	 * time while refused. Without it nothing is checked or downloaded. THEN runs after "I agree".
 	 */
 	private void askConsent(final Runnable then) {
-		String msg = en
-				? "Meteo Alarm does not come from Google Play. Its new versions are published on GitHub "
+		String msg = Tr.t("Meteo Alarm does not come from Google Play. Its new versions are published on GitHub "
 						+ "(github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks "
 						+ "about once a week (or when you choose Check for updates), shows what is new, and only when you "
 						+ "tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\n"
 						+ "Do you allow the app to update this way? Without your consent the app does not look for updates "
-						+ "and does not download anything; you can agree later from ☰ › Check for updates."
-				: "Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub "
+						+ "and does not download anything; you can agree later from ☰ › Check for updates.", "Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub "
 						+ "(github.com/viorelrb-alt/meteo-alarm-android), iar aplicația se actualizează de acolo: verifică "
 						+ "cam o dată pe săptămână (sau când alegi Verifică actualizări), arată ce e nou și abia când apeși "
 						+ "Actualizează descarcă versiunea nouă și deschide programul de instalare al telefonului, unde confirmi din nou.\n\n"
 						+ "Ești de acord ca aplicația să se actualizeze așa? Fără acordul tău aplicația nu caută actualizări "
-						+ "și nu descarcă nimic; îți poți da acordul mai târziu din ☰ › Verifică actualizări.";
+						+ "și nu descarcă nimic; îți poți da acordul mai târziu din ☰ › Verifică actualizări.");
 		Log.i(a, "UPDATE", "informare actualizare din GitHub afișată");
-		sheet.show(en ? "Updates from GitHub" : "Actualizări din GitHub", msg, en ? "I agree" : "Sunt de acord", new Runnable() {
+		sheet.show(Tr.t("Updates from GitHub", "Actualizări din GitHub"), msg, Tr.t("I agree", "Sunt de acord"), new Runnable() {
 			public void run() {
 				prefs().edit().putBoolean("ghConsent2", true).apply();
 				Log.i(a, "UPDATE", "utilizatorul a acceptat actualizarea din GitHub");
 				then.run();
 			}
-		}, en ? "Not now" : "Nu acum", new Runnable() {
+		}, Tr.t("Not now", "Nu acum"), new Runnable() {
 			public void run() {
 				Log.i(a, "UPDATE", "utilizatorul a refuzat actualizarea din GitHub");
-				sheet.show(en ? "Updates from GitHub" : "Actualizări din GitHub", en
-						? "Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates."
-						: "Fără acordul tău, aplicația nu se va actualiza. Te poți răzgândi oricând din ☰ › Verifică actualizări.",
-						null, null, en ? "Close" : "Închide");
+				sheet.show(Tr.t("Updates from GitHub", "Actualizări din GitHub"), Tr.t("Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.", "Fără acordul tău, aplicația nu se va actualiza. Te poți răzgândi oricând din ☰ › Verifică actualizări."),
+						null, null, Tr.t("Close", "Închide"));
 			}
 		});
 	}
@@ -129,7 +123,7 @@ final class Updater {
 			return;
 		}
 		busy = true;
-		if (manual) sheet.show(en ? "Updates" : "Actualizări", en ? "Checking GitHub for a new version…" : "Caut pe GitHub o versiune nouă…",
+		if (manual) sheet.show(Tr.t("Updates", "Actualizări"), Tr.t("Checking GitHub for a new version…", "Caut pe GitHub o versiune nouă…"),
 				null, null, close());
 		new Thread(new Runnable() {
 			public void run() {
@@ -154,23 +148,23 @@ final class Updater {
 
 	private void checked(final Release r, String err, boolean manual) {
 		String cur = installed();
-		String t = en ? "Updates" : "Actualizări";
+		String t = Tr.t("Updates", "Actualizări");
 		if (r == null) Log.e(a, "UPDATE", "verificarea actualizărilor a eșuat: " + err);
 		else Log.i(a, "UPDATE", "pe GitHub: v" + r.version + ", instalată v" + cur + (manual ? " (cerut)" : ""));
 		if (r == null) {
 			if (!manual) return;
-			if (err != null && err.contains("404")) sheet.show(t, en ? "No version published yet." : "Încă nu e publicată nicio versiune.", null, null, en ? "Close" : "Închide");
-			else sheet.show(t, en ? "Could not check for updates. Is the internet on?" : "Nu am putut verifica actualizările. Ai internet?", null, null, en ? "Close" : "Închide");
+			if (err != null && err.contains("404")) sheet.show(t, Tr.t("No version published yet.", "Încă nu e publicată nicio versiune."), null, null, Tr.t("Close", "Închide"));
+			else sheet.show(t, Tr.t("Could not check for updates. Is the internet on?", "Nu am putut verifica actualizările. Ai internet?"), null, null, Tr.t("Close", "Închide"));
 			return;
 		}
 		if (!r.newerThan(cur)) {
-			if (manual) sheet.show(t, (en ? "You have the latest version, v" : "Ai ultima versiune, v") + cur + ".", null, null, en ? "Close" : "Închide");
+			if (manual) sheet.show(t, (Tr.t("You have the latest version, v", "Ai ultima versiune, v")) + cur + ".", null, null, Tr.t("Close", "Închide"));
 			return;
 		}
-		String msg = (en ? "Installed: v" : "Instalată: v") + cur + "    " + (en ? "New: v" : "Nouă: v") + r.version;
+		String msg = (Tr.t("Installed: v", "Instalată: v")) + cur + "    " + (Tr.t("New: v", "Nouă: v")) + r.version;
 		if (r.notes.length() > 0) msg += "\n\n" + r.notes;
 		msg += "\n\n" + protectNote(en);
-		sheet.show(en ? "New version: v" + r.version : "Versiune nouă: v" + r.version, msg, en ? "Update" : "Actualizează", new Runnable() {
+		sheet.show(en ? "New version: v" + r.version : "Versiune nouă: v" + r.version, msg, Tr.t("Update", "Actualizează"), new Runnable() {
 			public void run() {
 				download(r);
 			}
@@ -179,7 +173,7 @@ final class Updater {
 
 	private void download(final Release r) {
 		final String t = "v" + r.version;
-		sheet.show(t, en ? "Downloading…" : "Se descarcă…", null, null, en ? "Hide" : "Ascunde");
+		sheet.show(t, Tr.t("Downloading…", "Se descarcă…"), null, null, Tr.t("Hide", "Ascunde"));
 		new Thread(new Runnable() {
 			public void run() {
 				final File f = ApkProvider.file(a);
@@ -206,7 +200,7 @@ final class Updater {
 							last = pct;
 							handler.post(new Runnable() {
 								public void run() {
-									sheet.setMessage((en ? "Downloading… " : "Se descarcă… ") + (pct >= 0 ? pct + "%" : ""));
+									sheet.setMessage((Tr.t("Downloading… ", "Se descarcă… ")) + (pct >= 0 ? pct + "%" : ""));
 								}
 							});
 						}
@@ -222,7 +216,7 @@ final class Updater {
 				final String ee = err;
 				handler.post(new Runnable() {
 					public void run() {
-						if (ee != null) sheet.show(t, en ? "The download failed. Is the internet on?" : "Descărcarea a eșuat. Ai internet?", null, null, en ? "Close" : "Închide");
+						if (ee != null) sheet.show(t, Tr.t("The download failed. Is the internet on?", "Descărcarea a eșuat. Ai internet?"), null, null, Tr.t("Close", "Închide"));
 						else install(t);
 					}
 				});
@@ -239,7 +233,7 @@ final class Updater {
 			a.startActivity(i);
 			sheet.hide();
 		} catch (Exception e) {
-			sheet.show(t, en ? "The installer could not be opened." : "Instalarea nu a putut fi pornită.", null, null, en ? "Close" : "Închide");
+			sheet.show(t, Tr.t("The installer could not be opened.", "Instalarea nu a putut fi pornită."), null, null, Tr.t("Close", "Închide"));
 		}
 	}
 }

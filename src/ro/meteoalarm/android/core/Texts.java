@@ -10,8 +10,16 @@ public final class Texts {
 	public String hoursUp, legSnow, legRain, legDry, pop, sun, uvT, pollen, sunrise, sunset, noPollen, noData2, noPrecip;
 	public String[] warn, uvLv, polLv;
 
+	/** The language code (ro, en, de…); en is true for every language but Romanian. */
+	public final String lang;
+
 	public Texts(boolean en) {
-		this.en = en;
+		this(en ? "en" : "ro");
+	}
+
+	public Texts(String lang) {
+		this.lang = lang;
+		this.en = !"ro".equals(lang);
 		if (en) {
 			until = "until"; now = "now"; rain = "Rain"; rainFrom = "Rain from"; max = "max"; snow = "Snow"; snowFrom = "Snow from";
 			rainW = "Raining"; snowW = "Snowing"; updated = "updated"; noData = "no data since"; loading = "Loading weather…";
@@ -34,6 +42,40 @@ public final class Texts {
 			polLv = new String[] { "Scăzut", "Moderat", "Ridicat", "Foarte ridicat" }; noPollen = "fără polen"; noData2 = "fără date";
 			noPrecip = "Fără precipitații";
 		}
+		if (en && !"en".equals(lang)) {
+			until = Tr.t(until); now = Tr.t(now); rain = Tr.t(rain); rainFrom = Tr.t(rainFrom); max = Tr.t(max); snow = Tr.t(snow);
+			snowFrom = Tr.t(snowFrom); rainW = Tr.t(rainW); snowW = Tr.t(snowW); updated = Tr.t(updated); noData = Tr.t(noData);
+			loading = Tr.t(loading); updating = Tr.t(updating); feels = Tr.t(feels); wind = Tr.t(wind); hi = Tr.t(hi); lo = Tr.t(lo);
+			charging = Tr.t(charging); warnCode = Tr.t(warnCode); day1 = Tr.t(day1); day2 = Tr.t(day2); next12 = Tr.t(next12);
+			hoursUp = Tr.t(hoursUp); nowMark = Tr.t(nowMark); rainUp = Tr.t(rainUp); snowUp = Tr.t(snowUp); precipUp = Tr.t(precipUp);
+			legSnow = Tr.t(legSnow); legRain = Tr.t(legRain); legDry = Tr.t(legDry); pop = Tr.t(pop); sun = Tr.t(sun); uvT = Tr.t(uvT);
+			pollen = Tr.t(pollen); sunrise = Tr.t(sunrise); sunset = Tr.t(sunset); noPollen = Tr.t(noPollen); noData2 = Tr.t(noData2);
+			noPrecip = Tr.t(noPrecip);
+			for (int k = 0; k < warn.length; k++) warn[k] = Tr.t(warn[k]);
+			for (int k = 0; k < uvLv.length; k++) uvLv[k] = Tr.t(uvLv[k]);
+			for (int k = 0; k < polLv.length; k++) polLv[k] = Tr.t(polLv[k]);
+			// Day and month names from the phone (Java knows them for every EU language).
+			java.text.DateFormatSymbols ds = new java.text.DateFormatSymbols(new java.util.Locale(lang));
+			String[] wd = ds.getWeekdays(), sw = ds.getShortWeekdays(), mo = ds.getMonths();
+			wdL = new String[7];
+			wsL = new String[7];
+			wmL = new String[7];
+			moL = new String[12];
+			java.util.Locale loc = new java.util.Locale(lang);
+			for (int k = 0; k < 7; k++) {
+				wdL[k] = cap(wd[k + 1], loc);
+				String sh = sw[k + 1].replace(".", "");
+				wmL[k] = cap(sh, loc);
+				wsL[k] = sh.toUpperCase(loc);
+			}
+			for (int k = 0; k < 12; k++) moL[k] = mo[k];
+		}
+	}
+
+	private String[] wdL, wsL, wmL, moL;
+
+	private static String cap(String s, java.util.Locale l) {
+		return s == null || s.length() == 0 ? "" : s.substring(0, 1).toUpperCase(l) + s.substring(1);
 	}
 
 	/** Icon name and description of a WMO code (day or night icon). */
@@ -64,7 +106,7 @@ public final class Texts {
 		case 96: case 99: icon = "thunder"; ro = "Furtună cu grindină"; enD = "Thunderstorm, hail"; break;
 		default: icon = "cloudy"; ro = "Cod " + code; enD = "Code " + code;
 		}
-		return new String[] { icon, en ? enD : ro };
+		return new String[] { icon, en ? Tr.t(enD) : ro };
 	}
 
 	private static final String[] WD_RO = { "Duminică", "Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă" };
@@ -81,6 +123,7 @@ public final class Texts {
 	/** "Joi, 29 octombrie" / "Thursday, October 29". */
 	public String date(Calendar c) {
 		int wd = c.get(Calendar.DAY_OF_WEEK) - 1, d = c.get(Calendar.DAY_OF_MONTH), mo = c.get(Calendar.MONTH);
+		if (wdL != null) return wdL[wd] + ", " + d + " " + moL[mo];
 		return en ? WD_EN[wd] + ", " + MO_EN[mo] + " " + d : WD_RO[wd] + ", " + d + " " + MO_RO[mo];
 	}
 
@@ -90,7 +133,7 @@ public final class Texts {
 		c.clear();
 		int d = Integer.parseInt(iso.substring(8, 10));
 		c.set(Integer.parseInt(iso.substring(0, 4)), Integer.parseInt(iso.substring(5, 7)) - 1, d);
-		String w = (en ? WS_EN : WS_RO)[c.get(Calendar.DAY_OF_WEEK) - 1];
+		String w = (wsL != null ? wsL : en ? WS_EN : WS_RO)[c.get(Calendar.DAY_OF_WEEK) - 1];
 		return withDay ? w + " " + d : w;
 	}
 
@@ -98,7 +141,7 @@ public final class Texts {
 	public String weekdayTime(long ms, boolean clk12) {
 		Calendar c = Calendar.getInstance();
 		c.setTimeInMillis(ms);
-		return (en ? WM_EN : WM_RO)[c.get(Calendar.DAY_OF_WEEK) - 1] + " "
+		return (wmL != null ? wmL : en ? WM_EN : WM_RO)[c.get(Calendar.DAY_OF_WEEK) - 1] + " "
 				+ clock(String.format("%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE)), clk12);
 	}
 
@@ -118,7 +161,7 @@ public final class Texts {
 		for (String w : types.split(",")) {
 			w = w.trim();
 			String u;
-			if (en) u = w.replace('-', ' ').toUpperCase();
+			if (en) u = Tr.t(w.replace('-', ' ').toUpperCase());
 			else if (w.equals("wind")) u = "VÂNT";
 			else if (w.startsWith("snow")) u = "NINSOARE, POLEI";
 			else if (w.startsWith("thunderstorm")) u = "FURTUNI";
@@ -139,7 +182,7 @@ public final class Texts {
 	}
 
 	public String plant(String p) {
-		if (en) return p.equals("grass") ? "grasses" : p;
+		if (en) return Tr.t(p.equals("grass") ? "grasses" : p);
 		if (p.equals("alder")) return "arin";
 		if (p.equals("birch")) return "mesteacăn";
 		if (p.equals("olive")) return "măslin";

@@ -1,5 +1,7 @@
 package ro.meteoalarm.android;
 
+import ro.meteoalarm.android.core.Tr;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -144,8 +146,8 @@ final class Bubble extends FrameLayout {
 		title.setVisibility(head == null || head.length() == 0 ? GONE : VISIBLE);
 		title.setText(head);
 		title.setTextColor(ink);
-		less.setText(en ? "⌃  more  ⌃" : "⌃  mai multe  ⌃");
-		more.setText(en ? "⌄  more  ⌄" : "⌄  mai multe  ⌄");
+		less.setText(Tr.t("⌃  more  ⌃", "⌃  mai multe  ⌃"));
+		more.setText(Tr.t("⌄  more  ⌄", "⌄  mai multe  ⌄"));
 		less.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
 		more.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
 		list.removeAllViews();

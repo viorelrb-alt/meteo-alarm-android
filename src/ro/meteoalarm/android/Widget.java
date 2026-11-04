@@ -27,6 +27,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Cities;
 import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Warnings;
@@ -179,10 +180,10 @@ public class Widget extends AppWidgetProvider {
 	static Data data(Context ctx, String town) {
 		Data d = new Data();
 		SharedPreferences p = prefs(ctx);
-		d.en = "en".equals(p.getString("lang", "ro"));
+		d.en = Lang.en(ctx);
 		d.unitF = p.getBoolean("unitF", false);
 		d.clk12 = p.getBoolean("clk12", false);
-		d.T = new Texts(d.en);
+		d.T = new Texts(Lang.apply(ctx));
 		Cities.City cached = Cities.City.fromKey(p.getString("cacheCity", ""));
 		Cities.City own = Cities.City.fromKey(town == null ? "" : town);
 		boolean appTown = own == null || (cached != null && own.same(cached));
@@ -289,6 +290,43 @@ public class Widget extends AppWidgetProvider {
 	 * layout (at MIN_ZOOM) = 4x2 when tall enough, else 4x1; narrower = 2x2, or 2x1 when low.
 	 * A frame taller than the layout needs keeps the layout (render() centres it).
 	 */
+	/**
+	 * The layout for widget ID in a frame W x H dp, by the cells it covers when the size of a cell
+	 * on this home screen is known (Viorel 2026-11-04: on the tablet one row is 197 dp tall, so a
+	 * 4x1 always looked like a 4x2). The cell size is learned from the first frame of a widget put
+	 * on the screen at its starting size (2x2, 4x1 or 4x2).
+	 */
+	static int kind(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
+		SharedPreferences p = prefs(ctx);
+		learnCell(ctx, mgr, id, w, h);
+		float cw = p.getFloat("cellW", 0), ch = p.getFloat("cellH", 0);
+		if (cw <= 0 || ch <= 0) return kind(w, h);
+		int cols = Math.max(1, Math.round(w / cw)), rows = Math.max(1, Math.round(h / ch));
+		int k = rows <= 1 ? (cols >= 3 ? 1 : 3) : (cols >= 3 ? 2 : 0);
+		// Still never shrunk below MIN_ZOOM: then the plain rule.
+		return zoom(k, w, h) >= MIN_ZOOM ? k : kind(w, h);
+	}
+
+	/** On a widget's first frame: its cells (from its kind) give the size of one cell. */
+	private static void learnCell(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
+		SharedPreferences p = prefs(ctx);
+		if (p.getBoolean("w" + id + "_cell", false)) return;
+		p.edit().putBoolean("w" + id + "_cell", true).apply();
+		int cols = 2, rows = 2;
+		try {
+			String cls = mgr.getAppWidgetInfo(id).provider.getClassName();
+			if (cls.endsWith("W4x1")) { cols = 4; rows = 1; }
+			else if (cls.endsWith("W4x2")) { cols = 4; rows = 2; }
+			else if (!cls.endsWith("W2x2")) return; // "any size": it may start anywhere
+		} catch (Exception e) {
+			return;
+		}
+		float cw = w / cols, ch = h / rows;
+		if (cw < 40 || ch < 40) return;
+		p.edit().putFloat("cellW", cw).putFloat("cellH", ch).apply();
+		Log.i(ctx, "WIDGET", "#" + id + " celula ecranului de pornire: " + Math.round(cw) + "x" + Math.round(ch) + " dp (din " + cols + "x" + rows + ")");
+	}
+
 	static int kind(float w, float h) {
 		h = Math.max(1f, h);
 		w = Math.max(1f, w);
@@ -313,7 +351,7 @@ public class Widget extends AppWidgetProvider {
 		float dens = ctx.getResources().getDisplayMetrics().density;
 		StringBuilder why = new StringBuilder();
 		int[] f = frame(ctx, mgr, id, why);
-		int kind = kind(f[0], f[1]);
+		int kind = kind(ctx, mgr, id, f[0], f[1]);
 		float s = Math.min(f[0] / RW[kind], f[1] / RH[kind]);
 		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind]
 				+ " zoom " + Math.round(s * 100) + "% · " + (d.c != null ? d.c.name : "-") + (d.w == null ? " fără date" : "") + " · " + st.describe());
@@ -423,7 +461,7 @@ public class Widget extends AppWidgetProvider {
 		String temp = w == null ? "--" : Long.toString(Math.round(d.unitF ? w.temp * 9 / 5 + 32 : w.temp));
 		String icon = w == null ? null : d.T.describe(w.code, w.isDay)[0];
 		String town = d.c != null ? d.c.name : "";
-		String sun = w == null ? (d.en ? "Open the app" : "Deschide aplicația") : sunLine(w, d.en);
+		String sun = w == null ? (Tr.t("Open the app", "Deschide aplicația")) : sunLine(w, d.en);
 		String desc = w == null ? "" : d.T.describe(w.code, w.isDay)[1];
 		if (kind == 0) {
 			pen.at(0, 0);
@@ -581,7 +619,7 @@ public class Widget extends AppWidgetProvider {
 		/** "AVERTIZARE!" at LX (baseline LB) and the three pills from PX at PY; nothing without warnings. */
 		void warnings(int[] levels, float lx, float lb, float px, float py, boolean en) {
 			if (levels.length == 0) return;
-			text(en ? "WARNING!" : "AVERTIZARE!", lx, lb, 8.9f, -1, 0.9f, 3, px - lx - 4);
+			text(Tr.t("WARNING!", "AVERTIZARE!"), lx, lb, 8.9f, -1, 0.9f, 3, px - lx - 4);
 			int[] cols = pills(levels);
 			Paint f = new Paint(Paint.ANTI_ALIAS_FLAG);
 			for (int i = 0; i < 3; i++) {
@@ -609,7 +647,7 @@ public class Widget extends AppWidgetProvider {
 	private static String sunLine(Weather w, boolean en) {
 		Calendar now = Calendar.getInstance();
 		String hm = String.format("%02d:%02d", now.get(Calendar.HOUR_OF_DAY), now.get(Calendar.MINUTE));
-		String rise = en ? "Sunrise at " : "Răsărit la ", set = en ? "Sunset at " : "Apus la ";
+		String rise = Tr.t("Sunrise at ", "Răsărit la "), set = Tr.t("Sunset at ", "Apus la ");
 		if (w.sunrise.length() > 0 && hm.compareTo(w.sunrise) < 0) return rise + w.sunrise;
 		if (w.sunset.length() > 0 && hm.compareTo(w.sunset) < 0) return set + w.sunset;
 		return w.sunrise2.length() > 0 ? rise + w.sunrise2 : "";
