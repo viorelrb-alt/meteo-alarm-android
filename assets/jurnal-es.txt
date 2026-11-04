@@ -1,3 +1,6 @@
+v2.12 · 4 de noviembre de 2026
+- En Ayuda, Terremotos, Acerca de y Novedades: el botón Aa junto a los botones de la derecha muestra la barra de tamaño del texto a la izquierda de la pantalla, sobre la página, como la barra de brillo. Se quitó la barra estrecha de arriba a la derecha.
+
 v2.11 · 4 de noviembre de 2026
 - La barra del tamaño del texto que se abre desde el borde derecho aparece ahora a la izquierda, como la barra de brillo.
 

@@ -1,3 +1,6 @@
+v2.12 · 4 november 2026
+- I Hjälp, Jordbävningar, Om och Nyheter: knappen Aa bredvid knapparna till höger visar reglaget för textstorlek till vänster på skärmen, över sidan, som ljusstyrkereglaget. Det smala reglaget uppe till höger är borta.
+
 v2.11 · 4 november 2026
 - Fältet för textstorlek som öppnas från högerkanten visas nu till vänster, som ljusstyrkefältet.
 

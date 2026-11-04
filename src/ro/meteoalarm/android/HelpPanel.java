@@ -26,10 +26,11 @@ final class HelpPanel extends FrameLayout {
 	private final ScrollView scroll;
 	private boolean open, dark;
 	private Runnable onClose;
-	/** The text size (TextSize), and its bar under the close button. */
+	/** The text size (TextSize); the "Aa" button left of "Închide" shows its bar (SizeOverlay). */
 	private float ts;
-	private final TextSize.Bar bar;
+	private final TextView sizeBtn;
 	private final LinearLayout top;
+	private SizeOverlay sizer;
 
 	HelpPanel(Context c, Typeface reg, Typeface bold) {
 		super(c);
@@ -59,36 +60,42 @@ final class HelpPanel extends FrameLayout {
 				hide();
 			}
 		});
+		sizeBtn = new TextView(c);
+		sizeBtn.setTypeface(bold);
+		sizeBtn.setText("Aa");
+		TextSize.size(sizeBtn, 17, 1);
+		sizeBtn.setGravity(Gravity.CENTER);
+		sizeBtn.setPadding((int) (14 * dp), (int) (8 * dp), (int) (14 * dp), (int) (8 * dp));
+		sizeBtn.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (sizer == null) return;
+				if (sizer.isOpen()) sizer.hide();
+				else sizer.show(new SizeOverlay.Listener() {
+					public void sized(float s, boolean save) {
+						ts = s;
+						TextSize.apply(list, ts);
+						TextSize.apply(title, ts);
+					}
+				});
+			}
+		});
+		LinearLayout.LayoutParams sbp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		sbp.rightMargin = (int) (10 * dp);
+		top.addView(sizeBtn, sbp);
 		top.addView(close);
 		col.addView(top);
 		scroll = new ScrollView(c);
 		list = new LinearLayout(c);
 		list.setOrientation(LinearLayout.VERTICAL);
-		// Room on the right for the text-size bar.
-		list.setPadding(pad, 0, pad + (int) (44 * dp), (int) (24 * dp));
+		list.setPadding(pad, 0, pad, (int) (24 * dp));
 		scroll.addView(list);
 		col.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
 		addView(col, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-		// The text-size bar (Viorel 2026-11-04): on the right, under the close button and centred on it.
-		bar = new TextSize.Bar(c, bold);
-		bar.setListener(new TextSize.Bar.Listener() {
-			public void sized(float s, boolean save) {
-				ts = s;
-				TextSize.apply(list, ts);
-				TextSize.apply(title, ts);
-			}
-		});
-		addView(bar, new LayoutParams((int) (36 * dp), 0));
 	}
 
-	/** The bar under the close button: centred on it, about 40 % of the page high. */
-	@Override
-	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		super.onLayout(changed, l, t, r, b);
-		int bw = (int) (36 * dp), h = b - t;
-		int cx = close.getWidth() > 0 ? top.getLeft() + close.getLeft() + close.getWidth() / 2 : (r - l) - (int) (50 * dp);
-		int y = top.getBottom() + (int) (8 * dp), bh = Math.max((int) (120 * dp), (int) (h * 0.4f));
-		bar.layout(cx - bw / 2, y, cx + bw / 2, Math.min(h - (int) (16 * dp), y + bh));
+	/** The text-size bar over the page (made by MainActivity, on top of every window). */
+	void setSizer(SizeOverlay o) {
+		sizer = o;
 	}
 
 	boolean isOpen() {
@@ -119,11 +126,14 @@ final class HelpPanel extends FrameLayout {
 		bg.setCornerRadius(10 * dp);
 		bg.setStroke((int) (2 * dp), ink());
 		close.setBackground(bg);
+		sizeBtn.setTextColor(ink());
+		GradientDrawable sb = new GradientDrawable();
+		sb.setCornerRadius(10 * dp);
+		sb.setStroke((int) (2 * dp), ink());
+		sizeBtn.setBackground(sb);
 		list.removeAllViews();
 		ts = TextSize.get(getContext());
 		TextSize.apply(title, ts);
-		bar.setDark(dark);
-		bar.sync();
 	}
 
 	/** A section title. */
@@ -193,6 +203,7 @@ final class HelpPanel extends FrameLayout {
 		if (!open) return;
 		open = false;
 		setVisibility(GONE);
+		if (sizer != null) sizer.hide();
 		if (onClose != null) onClose.run();
 	}
 

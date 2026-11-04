@@ -1,3 +1,6 @@
+v2.12 · 4 ta' Novembru 2026
+- F'Għajnuna, Terremoti, Dwar u X'hemm ġdid: il-buttuna Aa ħdejn il-buttuni fuq il-lemin turi l-virga tad-daqs tat-test fuq ix-xellug tal-iskrin, fuq il-paġna, bħall-virga tad-dawl. Il-virga dejqa fuq il-lemin ta' fuq tneħħiet.
+
 v2.11 · 4 ta' Novembru 2026
 - Il-virga tad-daqs tat-test, miftuħa mit-tarf tal-lemin, issa tidher fuq ix-xellug, bħall-virga tal-luminożità.
 

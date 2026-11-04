@@ -1,3 +1,6 @@
+v2.12 · 4. november 2026
+- Abis, Maavärinates, Teabes ja Mis on uut lehel: nupp Aa paremal olevate nuppude kõrval näitab teksti suuruse riba ekraani vasakus servas, lehe peal, nagu heleduse riba. Kitsas riba üleval paremal on eemaldatud.
+
 v2.11 · 4. november 2026
 - Parema serva juurest avatav teksti suuruse riba ilmub nüüd vasakule, nagu heleduse riba.
 

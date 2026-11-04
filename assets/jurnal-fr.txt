@@ -1,3 +1,6 @@
+v2.12 · 4 novembre 2026
+- Dans Aide, Séismes, À propos et Nouveautés : le bouton Aa à côté des boutons de droite affiche la barre de taille du texte à gauche de l'écran, par-dessus la page, comme la barre de luminosité. La barre étroite en haut à droite a été retirée.
+
 v2.11 · 4 novembre 2026
 - La barre de taille du texte ouverte depuis le bord droit apparaît maintenant à gauche, comme la barre de luminosité.
 

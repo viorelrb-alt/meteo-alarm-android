@@ -1,3 +1,6 @@
+v2.12 · 4. November 2026
+- In Hilfe, Erdbeben, Info und Neuigkeiten: Der Knopf Aa neben den Knöpfen rechts zeigt die Leiste für die Textgröße links auf dem Bildschirm, über der Seite, wie die Helligkeitsleiste. Die schmale Leiste oben rechts ist weg.
+
 v2.11 · 4. November 2026
 - Die Leiste für die Textgröße, die man vom rechten Rand aus aufruft, erscheint jetzt links, wie die Helligkeitsleiste.
 

@@ -1,3 +1,6 @@
+v2.12 · 4 november 2026
+- In Help, Aardbevingen, Over en Wat is er nieuw: de knop Aa naast de knoppen rechts toont de balk voor tekstgrootte links op het scherm, boven de pagina, net als de helderheidsbalk. De smalle balk rechtsboven is weg.
+
 v2.11 · 4 november 2026
 - De balk voor de tekstgrootte, geopend vanaf de rechterrand, verschijnt nu links, net als de helderheidsbalk.
 

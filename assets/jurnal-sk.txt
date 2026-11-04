@@ -1,3 +1,6 @@
+v2.12 · 4. novembra 2026
+- V Pomocníkovi, Zemetraseniach, O aplikácii a Čo je nové: tlačidlo Aa vedľa tlačidiel vpravo zobrazí lištu veľkosti textu na ľavej strane obrazovky, nad stránkou, ako lištu jasu. Úzka lišta vpravo hore je preč.
+
 v2.11 · 4. novembra 2026
 - Lišta veľkosti textu vyvolaná od pravého okraja sa teraz objaví vľavo, ako lišta jasu.
 

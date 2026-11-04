@@ -1,11 +1,6 @@
 package ro.meteoalarm.android;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -60,81 +55,6 @@ final class TextSize {
 		if (v instanceof ViewGroup) {
 			ViewGroup g = (ViewGroup) v;
 			for (int k = 0; k < g.getChildCount(); k++) apply(g.getChildAt(k), s);
-		}
-	}
-
-	/**
-	 * The text-size bar on a page: a rounded track filled from the bottom, a small "A" at the
-	 * bottom and a large one at the top; a finger on it sets the size (Listener hears it).
-	 */
-	static final class Bar extends View {
-		interface Listener {
-			/** The new size; SAVE when the finger lifts. */
-			void sized(float s, boolean save);
-		}
-
-		private final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
-		private final float dp;
-		private float level;
-		private boolean dark;
-		private Listener listener;
-
-		Bar(Context c, Typeface bold) {
-			super(c);
-			dp = c.getResources().getDisplayMetrics().density;
-			p.setTypeface(bold);
-			p.setTextAlign(Paint.Align.CENTER);
-			level = pos(get(c));
-		}
-
-		void setListener(Listener l) {
-			listener = l;
-		}
-
-		void setDark(boolean d) {
-			dark = d;
-			invalidate();
-		}
-
-		void sync() {
-			level = pos(get(getContext()));
-			invalidate();
-		}
-
-		@Override
-		protected void onDraw(Canvas c) {
-			float w = getWidth(), h = getHeight(), r = w / 2;
-			int ink = dark ? 0xFFFAF9F5 : 0xFF000000;
-			p.setStyle(Paint.Style.FILL);
-			p.setColor(dark ? 0x665A5954 : 0x33000000);
-			c.drawRoundRect(new RectF(0, 0, w, h), r, r, p);
-			float f = w + level * (h - w);
-			p.setColor(dark ? 0xFFD97757 : 0xFF555555);
-			c.drawRoundRect(new RectF(0, h - f, w, h), r, r, p);
-			p.setColor(dark ? 0xFF262624 : 0xFFFFFFFF);
-			p.setTextSize(w * 0.42f);
-			c.drawText("A", w / 2, h - w / 2 + w * 0.15f, p);
-			p.setColor(ink);
-			p.setTextSize(w * 0.7f);
-			c.drawText("A", w / 2, w / 2 + w * 0.25f, p);
-			p.setStyle(Paint.Style.STROKE);
-			p.setStrokeWidth(Math.max(1, dp));
-			p.setColor(dark ? 0xFF5A5954 : 0xFF999999);
-			c.drawRoundRect(new RectF(dp / 2, dp / 2, w - dp / 2, h - dp / 2), r, r, p);
-		}
-
-		@Override
-		public boolean onTouchEvent(MotionEvent e) {
-			int a = e.getActionMasked();
-			float w = getWidth(), h = getHeight();
-			level = Math.max(0, Math.min(1, (h - w / 2 - e.getY()) / Math.max(1, h - w)));
-			invalidate();
-			boolean up = a == MotionEvent.ACTION_UP || a == MotionEvent.ACTION_CANCEL;
-			if (a == MotionEvent.ACTION_DOWN) getParent().requestDisallowInterceptTouchEvent(true);
-			float s = scale(level);
-			set(getContext(), s, up);
-			if (listener != null) listener.sized(s, up);
-			return true;
 		}
 	}
 }

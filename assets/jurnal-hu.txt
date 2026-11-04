@@ -1,3 +1,6 @@
+v2.12 · 2026. november 4.
+- A Súgóban, Földrengésekben, Névjegyben és Újdonságokban: a jobb oldali gombok melletti Aa gomb a képernyő bal oldalán, az oldal fölött mutatja a szövegméret-sávot, mint a fényerősávot. A jobb felső keskeny sáv megszűnt.
+
 v2.11 · 2026. november 4.
 - A jobb szélről előhívott szövegméret-sáv most bal oldalt jelenik meg, mint a fényerő sávja.
 

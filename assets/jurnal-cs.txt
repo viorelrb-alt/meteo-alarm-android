@@ -1,3 +1,6 @@
+v2.12 · 4. listopadu 2026
+- V Nápovědě, Zemětřeseních, O aplikaci a Co je nového: tlačítko Aa vedle tlačítek vpravo zobrazí lištu velikosti textu na levé straně obrazovky, nad stránkou, jako lištu jasu. Úzká lišta vpravo nahoře je pryč.
+
 v2.11 · 4. listopadu 2026
 - Lišta velikosti textu vyvolaná od pravého okraje se teď objeví vlevo, jako lišta jasu.
 

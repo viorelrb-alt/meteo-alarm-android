@@ -28,9 +28,10 @@ final class BottomSheet extends FrameLayout {
 	private boolean open, dark, cancelable = true;
 	private Runnable onPrimary, onLeft, onClose;
 	private float downY;
-	/** The text-size bar on the right of the text (Despre, Ce e nou), aligned with the right button. */
-	private final TextSize.Bar bar;
-	private final FrameLayout body;
+	/** The "Aa" button next to the right ones (Despre, Ce e nou): it shows the text-size bar (SizeOverlay). */
+	private final Button size;
+	private SizeOverlay sizer;
+	private boolean sized;
 
 	BottomSheet(Context c) {
 		super(c);
@@ -68,6 +69,12 @@ final class BottomSheet extends FrameLayout {
 		row.addView(left);
 		// Free room between the left button and the ones on the right.
 		row.addView(new View(c), new LinearLayout.LayoutParams(0, 1, 1));
+		size = button(c);
+		size.setText("Aa");
+		size.setVisibility(GONE);
+		LinearLayout.LayoutParams zp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		zp.rightMargin = (int) (12 * dp);
+		row.addView(size, zp);
 		secondary = button(c);
 		primary = button(c);
 		row.addView(secondary);
@@ -95,17 +102,18 @@ final class BottomSheet extends FrameLayout {
 			}
 		};
 		scroll.addView(text);
-		body = new FrameLayout(c);
-		body.addView(scroll, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-		bar = new TextSize.Bar(c, Typeface.DEFAULT_BOLD);
-		bar.setVisibility(GONE);
-		bar.setListener(new TextSize.Bar.Listener() {
-			public void sized(float s, boolean save) {
-				text.setTextSize(16 * s);
+		sheet.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		size.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (sizer == null) return;
+				if (sizer.isOpen()) sizer.hide();
+				else sizer.show(new SizeOverlay.Listener() {
+					public void sized(float s, boolean save) {
+						if (sized) text.setTextSize(16 * s);
+					}
+				});
 			}
 		});
-		body.addView(bar, new LayoutParams((int) (36 * dp), (int) (200 * dp), Gravity.END | Gravity.TOP));
-		sheet.addView(body, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		secondary.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				cancel();
@@ -167,32 +175,24 @@ final class BottomSheet extends FrameLayout {
 		secondary.setTextColor(ink);
 		left.setBackground(shape(bg, line, 10 * dp, dp, false));
 		left.setTextColor(ink);
-		bar.setDark(dark);
+		size.setBackground(shape(bg, line, 10 * dp, dp, false));
+		size.setTextColor(ink);
+	}
+
+	/** The text-size bar over every window (made by MainActivity). */
+	void setSizer(SizeOverlay o) {
+		sizer = o;
 	}
 
 	/**
-	 * The text-size bar (Viorel 2026-11-04) on the right of the text, centred under the right
-	 * button, or none; the text in the saved size, or the usual one without the bar.
+	 * The "Aa" button (Viorel 2026-11-04, v2.12) next to the right buttons, which shows the
+	 * text-size bar on the left of the screen, or none; the text in the saved size, or the usual one.
 	 */
 	void sizeBar(boolean on) {
-		bar.setVisibility(on ? VISIBLE : GONE);
-		text.setPadding(0, 0, on ? (int) (48 * dp) : 0, 0);
+		sized = on;
+		size.setVisibility(on ? VISIBLE : GONE);
 		text.setTextSize(16 * (on ? TextSize.get(getContext()) : 1));
-		bar.sync();
-		if (on) body.post(new Runnable() {
-			public void run() {
-				Button r = primary.getVisibility() == VISIBLE ? primary : secondary;
-				int[] a = new int[2], b = new int[2];
-				r.getLocationInWindow(a);
-				body.getLocationInWindow(b);
-				LayoutParams lp = (LayoutParams) bar.getLayoutParams();
-				int bw = lp.width;
-				lp.gravity = Gravity.START | Gravity.TOP;
-				lp.leftMargin = Math.max(0, Math.min(body.getWidth() - bw, a[0] - b[0] + r.getWidth() / 2 - bw / 2));
-				lp.height = Math.max((int) (120 * dp), Math.min((int) (260 * dp), body.getHeight() - (int) (8 * dp)));
-				bar.setLayoutParams(lp);
-			}
-		});
+		if (!on && sizer != null) sizer.hide();
 	}
 
 	boolean isOpen() {
@@ -280,6 +280,7 @@ final class BottomSheet extends FrameLayout {
 		onClose = null;
 		if (!open) return;
 		open = false;
+		if (sizer != null) sizer.hide();
 		scrim.animate().alpha(0).setDuration(200).start();
 		sheet.animate().translationY(sheet.getHeight()).setDuration(220).withEndAction(new Runnable() {
 			public void run() {

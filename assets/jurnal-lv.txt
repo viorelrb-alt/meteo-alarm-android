@@ -1,3 +1,6 @@
+v2.12 · 2026. gada 4. novembris
+- Palīdzībā, Zemestrīcēs, lapā Par un Kas jauns: poga Aa blakus pogām labajā pusē parāda teksta lieluma joslu ekrāna kreisajā pusē, virs lapas, tāpat kā spilgtuma joslu. Šaurā josla augšā pa labi ir noņemta.
+
 v2.11 · 2026. gada 4. novembris
 - Teksta izmēra josla, ko atver no labās malas, tagad parādās kreisajā pusē, kā spilgtuma josla.
 

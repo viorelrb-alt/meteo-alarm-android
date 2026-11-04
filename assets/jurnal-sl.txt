@@ -1,3 +1,6 @@
+v2.12 · 4. november 2026
+- V Pomoči, Potresih, O aplikaciji in Kaj je novega: gumb Aa ob gumbih na desni prikaže vrstico velikosti besedila na levi strani zaslona, nad stranjo, kot vrstico svetlosti. Ozka vrstica zgoraj desno je odstranjena.
+
 v2.11 · 4. november 2026
 - Vrstica velikosti besedila, odprta z desnega roba, se zdaj prikaže levo, kot vrstica svetlosti.
 

@@ -1,3 +1,6 @@
+v2.12 · 4. marraskuuta 2026
+- Ohjeessa, Maanjäristyksissä, Tietoja-sivulla ja Mitä uutta -sivulla: oikealla olevien painikkeiden vieressä oleva Aa-painike näyttää tekstin koon palkin näytön vasemmassa reunassa, sivun päällä, kuten kirkkauspalkin. Kapea palkki oikeassa yläkulmassa on poistettu.
+
 v2.11 · 4. marraskuuta 2026
 - Oikeasta reunasta avattava tekstikoon palkki tulee nyt vasemmalle, kuten kirkkauspalkki.
 

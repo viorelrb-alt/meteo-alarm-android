@@ -1,3 +1,6 @@
+v2.12 · 4. november 2026
+- I Hjælp, Jordskælv, Om og Nyheder: knappen Aa ved siden af knapperne til højre viser bjælken for tekststørrelse i venstre side af skærmen, over siden, ligesom lysstyrkebjælken. Den smalle bjælke øverst til højre er fjernet.
+
 v2.11 · 4. november 2026
 - Bjælken for tekststørrelse, som vises fra højre kant, kommer nu til venstre, som lysstyrkebjælken.
 

@@ -1,3 +1,6 @@
+v2.12 · 4 novembre 2026
+- In Aiuto, Terremoti, Informazioni e Novità: il pulsante Aa accanto ai pulsanti a destra mostra la barra della dimensione del testo a sinistra dello schermo, sopra la pagina, come la barra della luminosità. La barra stretta in alto a destra è stata tolta.
+
 v2.11 · 4 novembre 2026
 - La barra della dimensione del testo aperta dal bordo destro ora appare a sinistra, come la barra della luminosità.
 

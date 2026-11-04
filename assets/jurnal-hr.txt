@@ -1,3 +1,6 @@
+v2.12 · 4. studenoga 2026
+- U Pomoći, Potresima, O aplikaciji i Što je novo: gumb Aa pokraj gumba s desne strane prikazuje traku veličine teksta na lijevoj strani zaslona, iznad stranice, kao traku svjetline. Uska traka gore desno je uklonjena.
+
 v2.11 · 4. studenoga 2026
 - Traka veličine teksta koja se otvara s desnog ruba sada se pojavljuje lijevo, kao traka svjetline.
 

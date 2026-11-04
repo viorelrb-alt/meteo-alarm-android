@@ -1,3 +1,6 @@
+v2.12 · 2026 m. lapkričio 4 d.
+- Pagalboje, Žemės drebėjimuose, Apie ir Kas naujo: mygtukas Aa šalia mygtukų dešinėje parodo teksto dydžio juostą kairėje ekrano pusėje, virš puslapio, kaip ryškumo juostą. Siaura juosta viršuje dešinėje pašalinta.
+
 v2.11 · 2026 m. lapkričio 4 d.
 - Teksto dydžio juosta, atveriama nuo dešiniojo krašto, dabar atsiranda kairėje, kaip ryškumo juosta.
 

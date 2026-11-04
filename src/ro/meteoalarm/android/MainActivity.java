@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.11";
+	static final String VERSION = "Meteo Alarm Android v2.12";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -67,6 +67,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Bubble bubble;
 	private Countries countries;
 	private HelpPanel help;
+	/** The text-size bar over the pages (SizeOverlay, v2.12). */
+	private SizeOverlay sizer;
 	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
 
@@ -154,12 +156,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		root.addView(help, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		// The text-size bar over the pages (v2.12): above every window, on the left like the brightness bar.
+		sizer = new SizeOverlay(this, view.screen);
+		root.addView(sizer, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		help.setSizer(sizer);
+		sheet.setSizer(sizer);
 		setContentView(root);
 	}
 
 	@Override
 	public void onBackPressed() {
-		if (bubble.isOpen()) bubble.hide();
+		if (sizer != null && sizer.isOpen()) sizer.hide();
+		else if (bubble.isOpen()) bubble.hide();
 		else if (help.isOpen()) help.hide();
 		else if (sheet.isOpen()) {
 			if (sheet.isCancelable()) sheet.cancel();
@@ -1565,7 +1573,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.", "Trage ecranul în jos și dă drumul: vremea se reîmprospătează. Dacă tragi iar cât timp se descarcă sau în 10 secunde de la ultima descărcare, nu pornește încă una; o notificare îți spune asta."));
 		help.entry(mini("edge"), Tr.t("Left edge", "Marginea din stânga"), Tr.t("Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.", "Glisează sus-jos lângă marginea din stânga (puțin mai înăuntru): apare bara de lumină, iar glisând pe ea reglezi luminozitatea."));
 		help.entry(mini("edge"), Tr.t("Right edge", "Marginea din dreapta"), Tr.t("Slide up or down near the right edge (a little in from it): the text-size bar appears on the left, like the brightness bar, with the size in percent; sliding on it sets the size of the letters in the ☰ menu and in the Help, Earthquakes, About and What's new pages (80–180 %). It is kept on the device.", "Glisează sus-jos lângă marginea din dreapta (puțin mai înăuntru): apare bara de mărime a textului în stânga, ca bara de luminozitate, cu mărimea în procente; glisând pe ea reglezi mărimea literelor din meniul ☰ și din paginile Ajutor, Cutremure, Despre și Ce e nou (80–180 %). Rămâne salvată pe dispozitiv."));
-		help.entry(mini("textsize"), Tr.t("Text size", "Mărimea textului"), Tr.t("In Help, Earthquakes, About and What's new: the bar on the right, under the close button. Slide on it up for larger letters, down for smaller ones; the size is kept on the device. On a tablet the ☰ menu is 30 % larger.", "În Ajutor, Cutremure, Despre și Ce e nou: bara din dreapta, sub butonul de închidere. Glisează pe ea în sus pentru litere mai mari, în jos pentru mai mici; mărimea rămâne salvată pe dispozitiv. Pe tabletă meniul ☰ e cu 30 % mai mare."));
+		help.entry(mini("textsize"), Tr.t("Text size", "Mărimea textului"), Tr.t("In Help, Earthquakes, About and What's new: the Aa button next to the buttons on the right shows the text-size bar on the left of the screen, over the page, like the brightness bar. Slide on it up for larger letters, down for smaller ones; the size is kept on the device. The bar goes away by itself, or at a touch elsewhere. On a tablet the ☰ menu is 30 % larger.", "În Ajutor, Cutremure, Despre și Ce e nou: butonul Aa de lângă butoanele din dreapta afișează bara de mărime a textului în stânga ecranului, peste pagină, ca bara de luminozitate. Glisează pe ea în sus pentru litere mai mari, în jos pentru mai mici; mărimea rămâne salvată pe dispozitiv. Bara dispare singură sau la o atingere în altă parte. Pe tabletă meniul ☰ e cu 30 % mai mare."));
 		help.entry(mini("compass"), Tr.t("Wind arrow", "Săgeata vântului"), Tr.t("Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.", "Lângă vânt: săgeata arată încotro bate vântul, rotită după cum ții telefonul (busola); semnul portocaliu e nordul."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceasul de noapte"), Tr.t("While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.", "Când telefonul se încarcă noaptea (de la apus la răsărit) și nu-l atingi un minut: un ceas mare și estompat. O atingere revine pentru un minut."));
 		help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).", "Sub linie, un singur rând de casete: întâi cutremurul (dacă a fost unul), apoi câte o casetă pentru fiecare cod de avertizare (roșu, portocaliu, galben). Pe ecran încap două; când sunt mai multe, rândul se mută singur la 2 secunde și o ia de la capăt. Îl poți glisa și cu degetul. Atinge o casetă: rândul se oprește 20 de secunde și un balon arată detaliile, cu litere mai mari (la un cod: ce înseamnă, fiecare avertizare cu perioada și sfaturi; la cutremur: magnitudinea, ora, zona, adâncimea, epicentrul și distanța, cum s-a simțit probabil în localitatea ta și toate cutremurele din ultimele 24 de ore)."));

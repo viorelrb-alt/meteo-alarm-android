@@ -1,3 +1,6 @@
+v2.12 · 4 Samhain 2026
+- I gCabhair, Creathanna talún, Faoi agus Cad atá nua: taispeánann an cnaipe Aa in aice leis na cnaipí ar dheis barra mhéid an téacs ar thaobh na láimhe clé den scáileán, os cionn an leathanaigh, cosúil le barra na gile. Tá an barra caol ag an mbarr ar dheis imithe.
+
 v2.11 · 4 Samhain 2026
 - Tagann barra mhéid an téacs, a osclaítear ón imeall deas, ar chlé anois, cosúil le barra na gile.
 

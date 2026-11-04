@@ -1,3 +1,6 @@
+v2.12 · 4 listopada 2026
+- W Pomocy, Trzęsieniach ziemi, O aplikacji i Co nowego: przycisk Aa obok przycisków po prawej pokazuje pasek rozmiaru tekstu po lewej stronie ekranu, nad stroną, jak pasek jasności. Wąski pasek w prawym górnym rogu został usunięty.
+
 v2.11 · 4 listopada 2026
 - Pasek wielkości tekstu wywoływany od prawej krawędzi pojawia się teraz po lewej, jak pasek jasności.
 

@@ -1,3 +1,6 @@
+v2.12 · 4 noiembrie 2026
+- Mărimea textului în Ajutor, Cutremure, Despre și Ce e nou: butonul Aa de lângă butoanele din dreapta afișează bara în stânga ecranului, peste pagină, la fel ca bara de luminozitate (aceeași mărime și poziție). Bara îngustă din dreapta sus a fost scoasă.
+
 v2.11 · 4 noiembrie 2026
 - Bara de mărime a textului, deschisă de pe marginea din dreapta, apare acum în stânga, ca bara de luminozitate.
 

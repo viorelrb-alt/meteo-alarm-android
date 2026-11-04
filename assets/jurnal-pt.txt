@@ -1,3 +1,6 @@
+v2.12 · 4 de novembro de 2026
+- Em Ajuda, Sismos, Sobre e Novidades: o botão Aa ao lado dos botões à direita mostra a barra do tamanho do texto à esquerda do ecrã, por cima da página, como a barra de brilho. A barra estreita no canto superior direito foi removida.
+
 v2.11 · 4 de novembro de 2026
 - A barra do tamanho do texto aberta a partir da margem direita aparece agora à esquerda, como a barra de brilho.
 

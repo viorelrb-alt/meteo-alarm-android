@@ -183,6 +183,13 @@ public final class Screen {
 	public float sizeLevel = 0.2f;
 	public final float[] sizeArea = { 0, 0, 0, 0 };
 
+	/** Only the text-size bar, on GFX over a page (SizeOverlay, v2.12). */
+	public void drawSizeBarOnly(Gfx gfx, float ch) {
+		g = gfx;
+		c = dark ? Palette.DARK : Palette.LIGHT;
+		drawSizeBar(ch);
+	}
+
 	private void drawSizeBar(float ch) {
 		float bw = 84, x = 50, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
 		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
