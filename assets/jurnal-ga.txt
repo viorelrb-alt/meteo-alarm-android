@@ -1,3 +1,9 @@
+v2.21 · 4 Samhain 2026
+- Taibléad: níl an roghchlár ☰ ach chomh leathan lena líne is faide, agus 5 % níos lú.
+- Leathanaigh: fanann an teideal ar líne amháin agus fásann sé le méid an téacs ach go dtí na cnaipí ar dheis.
+- Barra mhéid an téacs: ar roinnt fón (A70) dhúntaí é nuair a baineadh leis; anois glacann sé an mhéar ar a cholún ar fad.
+- Ní thaispeánann an ciorcal os cionn an bharra ach an luach, gan %.
+
 v2.20 · 4 Samhain 2026
 - Giuirléid 4x2 ar Samsung le One UI 9 (A54): ní thaispeántar í mar 4x3 a thuilleadh le 2 shraith; 4x3 ó 3 shraith amháin.
 - ☰ › Giuirléidí: nuair atá roinnt acu ann, roghnaítear an ghiuirléid ag barr na fuinneoige socruithe agus leanann na socruithe thíos an ceann roghnaithe.

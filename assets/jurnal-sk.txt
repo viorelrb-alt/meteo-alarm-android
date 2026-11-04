@@ -1,3 +1,9 @@
+v2.21 · 4. novembra 2026
+- Tablet: menu ☰ je len také široké ako jeho najdlhší riadok a o 5 % menšie.
+- Stránky: nadpis zostáva na jednom riadku a s veľkosťou textu rastie len po tlačidlá vpravo.
+- Lišta veľkosti textu: na niektorých telefónoch (A70) sa pri dotyku zavrela; teraz berie prst v celom svojom stĺpci.
+- Kruh nad lištou ukazuje len hodnotu, bez %.
+
 v2.20 · 4. novembra 2026
 - Miniaplikácia 4x2 na Samsungu s One UI 9 (A54): pri 2 riadkoch sa už neukazuje ako 4x3; 4x3 až od 3 riadkov.
 - ☰ › Miniaplikácie: keď ich je viac, miniaplikácia sa vyberá hore v okne nastavení a nastavenia pod ňou patria vybranej.

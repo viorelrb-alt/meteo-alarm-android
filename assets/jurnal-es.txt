@@ -1,3 +1,9 @@
+v2.21 · 4 de noviembre de 2026
+- Tableta: el menú ☰ es tan ancho como su línea más larga y un 5 % más pequeño.
+- Páginas: el título queda en una línea y crece con el tamaño del texto solo hasta los botones de la derecha.
+- Barra de tamaño del texto: en algunos teléfonos (A70) se cerraba al tocarla; ahora toma el dedo en toda su columna.
+- El círculo sobre la barra muestra solo el valor, sin %.
+
 v2.20 · 4 de noviembre de 2026
 - Widget 4x2 en Samsung con One UI 9 (A54): ya no se muestra como 4x3 con 2 filas; 4x3 solo con 3 filas.
 - ☰ › Widgets: si hay varios, el widget se elige arriba en la ventana de ajustes y los ajustes de abajo son los del elegido.

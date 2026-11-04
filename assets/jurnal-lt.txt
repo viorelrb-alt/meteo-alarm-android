@@ -1,3 +1,9 @@
+v2.21 · 2026 m. lapkričio 4 d.
+- Planšetė: meniu ☰ tik tokio pločio kaip ilgiausia jo eilutė ir 5 % mažesnis.
+- Puslapiai: pavadinimas lieka vienoje eilutėje ir didėja su teksto dydžiu tik iki mygtukų dešinėje.
+- Teksto dydžio juosta: kai kuriuose telefonuose (A70) ji užsidarydavo palietus; dabar ji priima pirštą visame savo stulpelyje.
+- Apskritimas virš juostos rodo tik reikšmę, be %.
+
 v2.20 · 2026 m. lapkričio 4 d.
 - Valdiklis 4x2 Samsung su One UI 9 (A54): esant 2 eilutėms, nebėra rodomas kaip 4x3; 4x3 tik nuo 3 eilučių.
 - ☰ › Valdikliai: kai jų keli, valdiklis pasirenkamas nustatymų lango viršuje, o nustatymai apačioje priklauso pasirinktam.

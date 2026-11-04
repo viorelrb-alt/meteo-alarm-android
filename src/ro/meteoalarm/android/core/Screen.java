@@ -195,8 +195,9 @@ public final class Screen {
 		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
 		g.roundRect(x, top, bw, bw, bw / 2, ink);
 		g.roundRect(x + 7, top + 7, bw - 14, bw - 14, bw / 2 - 7, bg);
-		String pc = Math.round((0.8f + sizeLevel) * 100) + "%";
-		ctext(true, fit(true, 24, bw - 20, pc), top + bw / 2 - 13, x + bw / 2, pc, ink);
+		// Only the value, no percent sign (Viorel v2.21).
+		String pc = String.valueOf(Math.round((0.8f + sizeLevel) * 100));
+		ctext(true, fit(true, 28, bw - 22, pc), top + bw / 2 - 15, x + bw / 2, pc, ink);
 		sizeArea[0] = x; sizeArea[1] = by; sizeArea[2] = bw; sizeArea[3] = bh;
 		int track = (barTrack & 0xFFFFFF) | 0x80000000;
 		float f = bw + Math.max(0, Math.min(1, sizeLevel)) * (bh - bw);

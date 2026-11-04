@@ -1,3 +1,9 @@
+v2.21 · 4. november 2026
+- Tahvel: menüü ☰ on vaid nii lai kui selle pikim rida ja 5 % väiksem.
+- Lehed: pealkiri jääb ühele reale ja kasvab teksti suurusega vaid paremal olevate nuppudeni.
+- Teksti suuruse riba: mõnel telefonil (A70) sulgus see puudutusel; nüüd võtab see sõrme vastu kogu oma veerus.
+- Riba kohal olev ring näitab ainult väärtust, ilma %-ta.
+
 v2.20 · 4. november 2026
 - Vidin 4x2 One UI 9-ga Samsungil (A54): 2 rea korral ei näidata seda enam 4x3-na; 4x3 alles 3 reast.
 - ☰ › Vidinad: mitme korral valitakse vidin seadete akna ülaosas ja all olevad seaded kuuluvad valitule.

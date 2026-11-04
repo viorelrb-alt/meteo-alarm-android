@@ -11,7 +11,7 @@ import ro.meteoalarm.android.core.Screen;
  * The text-size bar over a page (Ajutor, Cutremure, Despre, Ce e nou), v2.12 (Viorel
  * 2026-11-04): shown by the "Aa" button next to the page's buttons on the right, above the page,
  * on the left of the screen in the same place, size and look as the brightness bar. A finger
- * moving up or down on it sets the size live; it goes away 3 s after the button if unused, 4 s
+ * moving up or down on it sets the size live; it goes away 5 s after the button if unused, 4 s
  * after the finger lifts, or at a touch elsewhere.
  */
 final class SizeOverlay extends View {
@@ -25,6 +25,7 @@ final class SizeOverlay extends View {
 	private Listener listener;
 	private float scale = 1, ox, oy, downY, pos0;
 	private boolean down;
+	private final float[] area = new float[4];
 	private final Runnable hide = new Runnable() {
 		public void run() {
 			hide();
@@ -49,7 +50,7 @@ final class SizeOverlay extends View {
 		setVisibility(VISIBLE);
 		bringToFront();
 		removeCallbacks(hide);
-		postDelayed(hide, 3000);
+		postDelayed(hide, 5000);
 		invalidate();
 		Log.i(getContext(), "GEST", "butonul Aa: bara de mărime a textului");
 	}
@@ -75,15 +76,20 @@ final class SizeOverlay extends View {
 		gfx.c = c;
 		screen.drawSizeBarOnly(gfx, f[2]);
 		c.restore();
+		// Our own copy: the main screen clears its copy at every redraw (each second for the
+		// clock), which left the bar only a thin strip that took the finger (A70, v2.20).
+		System.arraycopy(screen.sizeArea, 0, area, 0, 4);
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
-		float[] a = screen.sizeArea;
+		float[] a = area;
 		switch (e.getActionMasked()) {
 		case MotionEvent.ACTION_DOWN: {
 			float x = (e.getX() - ox) / scale, y = (e.getY() - oy) / scale;
-			down = a[3] > 0 && x >= a[0] - 30 && x <= a[0] + a[2] + 30 && y >= a[1] - 30 && y <= a[1] + a[3] + 30;
+			// The whole column (the value's circle too) and a wide margin take the finger (A70,
+			// v2.20: a finger just beside the bar closed it, as if the bar turned itself off).
+			down = a[3] > 0 && x >= a[0] - 60 && x <= a[0] + a[2] + 60 && y >= a[1] - a[2] - 60 && y <= a[1] + a[3] + 60;
 			if (!down) {
 				// A touch elsewhere closes the bar and does nothing else.
 				hide();
@@ -112,7 +118,7 @@ final class SizeOverlay extends View {
 
 	/** The bar under the finger, DY pixels from where it went down (as the brightness bar). */
 	private void slide(float dy, boolean save) {
-		float[] a = screen.sizeArea;
+		float[] a = area;
 		if (a[3] > 0) screen.sizeLevel = Math.max(0, Math.min(1, pos0 - dy / (a[3] * scale)));
 		float s = TextSize.scale(screen.sizeLevel);
 		TextSize.set(getContext(), s, save);

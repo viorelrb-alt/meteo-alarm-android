@@ -1,3 +1,9 @@
+v2.21 · 4 november 2026
+- Surfplatta: menyn ☰ är bara så bred som sin längsta rad, och 5 % mindre.
+- Sidor: rubriken stannar på en rad och växer med textstorleken bara fram till knapparna till höger.
+- Reglaget för textstorlek: på vissa telefoner (A70) stängdes det vid beröring; nu tar det emot fingret i hela sin kolumn.
+- Cirkeln ovanför reglaget visar bara värdet, utan %.
+
 v2.20 · 4 november 2026
 - Widget 4x2 på Samsung med One UI 9 (A54): visas inte längre som 4x3 vid 2 rader; 4x3 först från 3 rader.
 - ☰ › Widgetar: när det finns flera väljs widgeten överst i inställningsfönstret och inställningarna nedanför hör till den valda.

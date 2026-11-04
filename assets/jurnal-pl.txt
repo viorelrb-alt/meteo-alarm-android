@@ -1,3 +1,9 @@
+v2.21 · 4 listopada 2026
+- Tablet: menu ☰ jest tylko tak szerokie jak jego najdłuższy wiersz i o 5 % mniejsze.
+- Strony: tytuł zostaje w jednym wierszu i rośnie z rozmiarem tekstu tylko do przycisków po prawej.
+- Pasek rozmiaru tekstu: na niektórych telefonach (A70) zamykał się po dotknięciu; teraz przyjmuje palec w całej swojej kolumnie.
+- Kółko nad paskiem pokazuje tylko wartość, bez %.
+
 v2.20 · 4 listopada 2026
 - Widżet 4x2 na Samsungu z One UI 9 (A54): przy 2 wierszach nie pokazuje się już jako 4x3; 4x3 dopiero od 3 wierszy.
 - ☰ › Widżety: gdy jest ich kilka, widżet wybiera się u góry okna ustawień, a ustawienia poniżej dotyczą wybranego.

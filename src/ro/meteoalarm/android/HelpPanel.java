@@ -46,7 +46,28 @@ final class HelpPanel extends FrameLayout {
 		top.setGravity(Gravity.CENTER_VERTICAL);
 		int pad = (int) (16 * dp);
 		top.setPadding(pad, (int) (12 * dp), pad, (int) (12 * dp));
-		title = new TextView(c);
+		// The title on one line (Viorel v2.21): it grows with the text size only as far as the
+		// buttons on its right, then stays at the largest size that fits.
+		title = new TextView(c) {
+			@Override
+			protected void onMeasure(int wSpec, int hSpec) {
+				int avail = MeasureSpec.getSize(wSpec) - getPaddingLeft() - getPaddingRight();
+				float want = android.util.TypedValue.applyDimension(android.util.TypedValue.COMPLEX_UNIT_SP, 22 * ts, getResources().getDisplayMetrics());
+				if (avail > 0 && MeasureSpec.getMode(wSpec) != MeasureSpec.UNSPECIFIED) {
+					android.graphics.Paint pt = new android.graphics.Paint(getPaint());
+					String t = getText().toString();
+					float sz = want;
+					pt.setTextSize(sz);
+					while (sz > 8 && pt.measureText(t) > avail) {
+						sz *= 0.96f;
+						pt.setTextSize(sz);
+					}
+					if (Math.abs(getTextSize() - sz) > 0.5f) setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, sz);
+				}
+				super.onMeasure(wSpec, hSpec);
+			}
+		};
+		title.setSingleLine(true);
 		title.setTypeface(bold);
 		TextSize.size(title, 22, ts);
 		top.addView(title, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
@@ -69,8 +90,8 @@ final class HelpPanel extends FrameLayout {
 		sizeBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (sizer == null) return;
-				if (sizer.isOpen()) sizer.hide();
-				else sizer.show(new SizeOverlay.Listener() {
+				// Always shows it (a second tap no longer hides it: A70 v2.20).
+				sizer.show(new SizeOverlay.Listener() {
 					public void sized(float s, boolean save) {
 						ts = s;
 						TextSize.apply(list, ts);

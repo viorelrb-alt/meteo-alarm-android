@@ -1,3 +1,9 @@
+v2.21 · 4. november 2026
+- Tablet: menuen ☰ er kun så bred som den længste linje og 5 % mindre.
+- Sider: titlen bliver på én linje og vokser med tekststørrelsen kun op til knapperne til højre.
+- Bjælken for tekststørrelse: på nogle telefoner (A70) lukkede den ved berøring; nu tager den fingeren i hele sin kolonne.
+- Cirklen over bjælken viser kun værdien, uden %.
+
 v2.20 · 4. november 2026
 - Widget 4x2 på Samsung med One UI 9 (A54): vises ikke længere som 4x3 ved 2 rækker; 4x3 kun ved 3 rækker.
 - ☰ › Widgets: når der er flere, vælges widgetten øverst i indstillingsvinduet, og indstillingerne nedenunder følger den valgte.

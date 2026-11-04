@@ -1,3 +1,9 @@
+v2.21 · 4 noiembrie 2026
+- Tabletă: meniul ☰ e doar cât cel mai lung rând și cu încă 5 % mai mic.
+- Pagini: titlul rămâne pe un rând și crește cu mărimea textului doar până la butoanele din dreapta.
+- Bara de mărime a textului: pe unele telefoane (A70) se închidea la atingere; acum ia degetul pe toată coloana ei.
+- Cercul de deasupra barei de mărime arată doar valoarea, fără %.
+
 v2.20 · 4 noiembrie 2026
 - Widgetul 4x2 pe Samsung cu One UI 9 (A54): nu mai apare ca 4x3 la 2 rânduri; 4x3 doar de la 3 rânduri.
 - ☰ › Widget-uri: când sunt mai multe, alegerea widgetului e în partea de sus a ferestrei de setări, iar setările de dedesubt sunt ale celui ales.

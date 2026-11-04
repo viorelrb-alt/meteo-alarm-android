@@ -1,3 +1,9 @@
+v2.21 · 4. marraskuuta 2026
+- Tabletti: valikko ☰ on vain pisimmän rivinsä levyinen ja 5 % pienempi.
+- Sivut: otsikko pysyy yhdellä rivillä ja kasvaa tekstin koon mukana vain oikealla oleviin painikkeisiin asti.
+- Tekstin koon palkki: joissakin puhelimissa (A70) se sulkeutui kosketuksesta; nyt se ottaa sormen koko sarakkeeltaan.
+- Palkin yläpuolella oleva ympyrä näyttää vain arvon, ilman %:a.
+
 v2.20 · 4. marraskuuta 2026
 - Widget 4x2 Samsungissa, jossa One UI 9 (A54): ei enää näy 4x3:na 2 rivillä; 4x3 vasta 3 riviltä.
 - ☰ › Widgetit: kun niitä on useita, widget valitaan asetusikkunan yläosasta ja alla olevat asetukset ovat valitun.

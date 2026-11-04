@@ -1,3 +1,9 @@
+v2.21 · 4. listopadu 2026
+- Tablet: menu ☰ je jen tak široké jako nejdelší řádek a o 5 % menší.
+- Stránky: nadpis zůstává na jednom řádku a s velikostí textu roste jen po tlačítka vpravo.
+- Lišta velikosti textu: na některých telefonech (A70) se při dotyku zavřela; teď bere prst v celém svém sloupci.
+- Kruh nad lištou ukazuje jen hodnotu, bez %.
+
 v2.20 · 4. listopadu 2026
 - Widget 4x2 na Samsungu s One UI 9 (A54): při 2 řádcích už se neukazuje jako 4x3; 4x3 je až od 3 řádků.
 - ☰ › Widgety: když jich je víc, výběr widgetu je nahoře v okně nastavení a nastavení pod ním patří vybranému.

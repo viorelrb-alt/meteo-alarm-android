@@ -1,3 +1,9 @@
+v2.21 · 4 november 2026
+- Tablet: het menu ☰ is maar zo breed als zijn langste regel, en 5 % kleiner.
+- Pagina's: de titel blijft op één regel en groeit met de tekstgrootte alleen tot de knoppen rechts.
+- Balk voor tekstgrootte: op sommige telefoons (A70) sloot hij bij aanraking; nu neemt hij de vinger aan over zijn hele kolom.
+- De cirkel boven de balk toont alleen de waarde, zonder %.
+
 v2.20 · 4 november 2026
 - Widget 4x2 op Samsung met One UI 9 (A54): wordt bij 2 rijen niet meer als 4x3 getoond; 4x3 pas vanaf 3 rijen.
 - ☰ › Widgets: bij meerdere kies je de widget bovenaan het instellingenvenster en de instellingen eronder horen bij de gekozen widget.

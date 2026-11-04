@@ -1,3 +1,9 @@
+v2.21 · 4. studenoga 2026
+- Tablet: izbornik ☰ širok je samo koliko njegov najduži red i 5 % manji.
+- Stranice: naslov ostaje u jednom redu i raste s veličinom teksta samo do gumba s desne strane.
+- Traka veličine teksta: na nekim telefonima (A70) zatvarala se pri dodiru; sada prihvaća prst u cijelom svom stupcu.
+- Krug iznad trake prikazuje samo vrijednost, bez %.
+
 v2.20 · 4. studenoga 2026
 - Widget 4x2 na Samsungu s One UI 9 (A54): s 2 reda više se ne prikazuje kao 4x3; 4x3 tek od 3 reda.
 - ☰ › Widgeti: kad ih je više, widget se bira na vrhu prozora postavki, a postavke ispod pripadaju odabranom.

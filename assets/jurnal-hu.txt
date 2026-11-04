@@ -1,3 +1,9 @@
+v2.21 · 2026. november 4.
+- Táblagép: a ☰ menü csak olyan széles, mint a leghosszabb sora, és 5 %-kal kisebb.
+- Oldalak: a cím egy sorban marad, és a szövegmérettel csak a jobb oldali gombokig nő.
+- Szövegméret-sáv: néhány telefonon (A70) érintésre bezárult; most az egész oszlopán fogadja az ujjat.
+- A sáv fölötti kör csak az értéket mutatja, % nélkül.
+
 v2.20 · 2026. november 4.
 - 4x2-es widget One UI 9-es Samsungon (A54): 2 sornál már nem 4x3-ként jelenik meg; 4x3 csak 3 sortól.
 - ☰ › Widgetek: ha több van, a widget a beállítások ablakának tetején választható, az alatta lévő beállítások a kiválasztotthoz tartoznak.

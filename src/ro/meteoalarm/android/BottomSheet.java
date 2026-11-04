@@ -106,8 +106,8 @@ final class BottomSheet extends FrameLayout {
 		size.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (sizer == null) return;
-				if (sizer.isOpen()) sizer.hide();
-				else sizer.show(new SizeOverlay.Listener() {
+				// Always shows it (a second tap no longer hides it: A70 v2.20).
+				sizer.show(new SizeOverlay.Listener() {
 					public void sized(float s, boolean save) {
 						if (sized) text.setTextSize(16 * s);
 					}

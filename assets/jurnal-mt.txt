@@ -1,3 +1,9 @@
+v2.21 · 4 ta' Novembru 2026
+- Tablet: il-menu ☰ huwa wiesa' daqs l-itwal linja tiegħu biss, u 5 % iżgħar.
+- Paġni: it-titlu jibqa' fuq linja waħda u jikber mad-daqs tat-test biss sal-buttuni fuq il-lemin.
+- Virga tad-daqs tat-test: fuq xi telefowns (A70) kienet tingħalaq meta tmissha; issa taqbad is-saba' fuq il-kolonna kollha tagħha.
+- Iċ-ċirku fuq il-virga juri l-valur biss, mingħajr %.
+
 v2.20 · 4 ta' Novembru 2026
 - Widget 4x2 fuq Samsung b'One UI 9 (A54): b'2 ringieli ma jidhirx aktar bħala 4x3; 4x3 biss minn 3 ringieli.
 - ☰ › Widgets: meta jkun hemm aktar minn wieħed, il-widget jintgħażel fuq nett tat-tieqa tas-settings u s-settings ta' taħt huma ta' dak magħżul.

@@ -1,3 +1,9 @@
+v2.21 · 2026. gada 4. novembris
+- Planšete: izvēlne ☰ ir tikai tik plata kā tās garākā rinda un par 5 % mazāka.
+- Lapas: virsraksts paliek vienā rindā un aug ar teksta lielumu tikai līdz pogām labajā pusē.
+- Teksta lieluma josla: dažos tālruņos (A70) tā aizvērās pieskaroties; tagad tā pieņem pirkstu visā savā kolonnā.
+- Aplis virs joslas rāda tikai vērtību, bez %.
+
 v2.20 · 2026. gada 4. novembris
 - Logrīks 4x2 Samsung ar One UI 9 (A54): ar 2 rindām vairs netiek rādīts kā 4x3; 4x3 tikai no 3 rindām.
 - ☰ › Logrīki: ja to ir vairāki, logrīku izvēlas iestatījumu loga augšā, un iestatījumi zemāk pieder izvēlētajam.
