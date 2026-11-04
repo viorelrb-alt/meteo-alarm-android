@@ -1,3 +1,6 @@
+v2.22 · 4 November 2026
+- Install and update: on Samsung phones with Auto Blocker, turn it off first (explained in Help, About, the update window and the message sent with ☰ › Send the app).
+
 v2.21 · 4 November 2026
 - Tablet: the ☰ menu is just as wide as its longest line, and 5 % smaller.
 - Pages: the title stays on one line and grows with the text size only up to the buttons on its right.

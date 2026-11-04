@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.21";
+	static final String VERSION = "Meteo Alarm Android v2.22";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -193,7 +193,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ Tr.t("Updates: ", "Actualizări: ") + Updater.howTo(en) + " "
 				+ Tr.t("After that, once a week the app checks GitHub for a new version and asks before downloading it.",
 						"După aceea, o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte s-o descarce.") + "\n\n"
-				+ Updater.protectNote(en);
+				+ Updater.protectNote(en) + "\n\n" + Updater.autoBlocker();
 	}
 
 	private void welcome() {
@@ -1276,6 +1276,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ "\n\n" + Tr.t("Download the app (Android):", "Descarcă aplicația (Android):") + "\n" + repo + "/releases/download/v" + ver + "/MeteoAlarmAndroid-v" + ver + ".apk"
 				+ "\n\n" + Tr.t("Open the downloaded file and install it. The phone may warn that the app does not come from Google Play: choose \"Install anyway\". The app then updates itself from GitHub.",
 						"Deschide fișierul descărcat și instalează-l. Telefonul poate avertiza că aplicația nu vine din Google Play: alege „Instalează oricum”. Apoi aplicația se actualizează singură de pe GitHub.")
+				+ "\n" + Updater.autoBlocker()
 				+ "\n" + Tr.t("All versions:", "Toate versiunile:") + " " + repo + "/releases";
 		Intent send = new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, msg);
 		for (String pkg : new String[] { "com.whatsapp", "com.whatsapp.w4b" }) {
@@ -1560,6 +1561,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.begin(Tr.t("Help", "Ajutor"), Tr.t("Close", "Închide"), s.dark);
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + (Tr.t(" The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.", " Acordul se cere doar acolo: o singură dată dacă ești de acord (de atunci aplicația verifică singură și o dată pe săptămână), de fiecare dată cât timp refuzi. Fără acord aplicația nu caută niciodată actualizări și nu descarcă nimic.")));
+		help.entry(mini("update"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.", "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea."));
 		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).", "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol)."));

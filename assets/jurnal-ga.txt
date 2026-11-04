@@ -1,3 +1,6 @@
+v2.22 · 4 Samhain 2026
+- Fóin Samsung le Auto Blocker: múch é sula suiteálann nó sula nuashonraíonn tú an aip (Socruithe › Slándáil agus príobháideacht › Auto Blocker), nó diúltóidh an fón don suiteáil; is féidir leat é a chur ar siúl arís ina dhiaidh sin.
+
 v2.21 · 4 Samhain 2026
 - Taibléad: níl an roghchlár ☰ ach chomh leathan lena líne is faide, agus 5 % níos lú.
 - Leathanaigh: fanann an teideal ar líne amháin agus fásann sé le méid an téacs ach go dtí na cnaipí ar dheis.

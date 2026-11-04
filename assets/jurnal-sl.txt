@@ -1,3 +1,6 @@
+v2.22 · 4. november 2026
+- Telefoni Samsung z Auto Blockerjem: pred namestitvijo ali posodobitvijo aplikacije ga izklopite (Nastavitve › Varnost in zasebnost › Auto Blocker), sicer telefon zavrne namestitev; nato ga lahko spet vklopite.
+
 v2.21 · 4. november 2026
 - Tablica: meni ☰ je širok le toliko kot njegova najdaljša vrstica in 5 % manjši.
 - Strani: naslov ostane v eni vrstici in raste z velikostjo besedila le do gumbov na desni.

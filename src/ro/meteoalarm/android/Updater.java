@@ -40,6 +40,15 @@ final class Updater {
 						+ "„Instalează fără verificare” (sau „Instalează oricum”).");
 	}
 
+	/**
+	 * Samsung's Auto Blocker stops apps from outside Galaxy Store / Google Play from installing
+	 * (Viorel 2026-11-04, v2.22): it must be off before installing or updating.
+	 */
+	static String autoBlocker() {
+		return Tr.t("Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.",
+				"Telefoane Samsung cu Auto Blocker (Blocare automată): dezactivează-l înainte de instalarea sau actualizarea aplicației (Setări › Securitate și confidențialitate › Auto Blocker), altfel telefonul refuză instalarea; după aceea îl poți reactiva.");
+	}
+
 	Updater(Activity a, BottomSheet sheet) {
 		this.a = a;
 		this.sheet = sheet;
@@ -163,7 +172,7 @@ final class Updater {
 		}
 		String msg = (Tr.t("Installed: v", "Instalată: v")) + cur + "    " + (Tr.t("New: v", "Nouă: v")) + r.version;
 		if (r.notes.length() > 0) msg += "\n\n" + r.notes;
-		msg += "\n\n" + protectNote(en);
+		msg += "\n\n" + protectNote(en) + "\n\n" + autoBlocker();
 		sheet.show(Tr.t("New version: v", "Versiune nouă: v") + r.version, msg, Tr.t("Update", "Actualizează"), new Runnable() {
 			public void run() {
 				download(r);

@@ -1,3 +1,6 @@
+v2.22 · 4 november 2026
+- Samsung-telefoner med Auto Blocker: stäng av den innan du installerar eller uppdaterar appen (Inställningar › Säkerhet och integritet › Auto Blocker), annars vägrar telefonen installera; efteråt kan du slå på den igen.
+
 v2.21 · 4 november 2026
 - Surfplatta: menyn ☰ är bara så bred som sin längsta rad, och 5 % mindre.
 - Sidor: rubriken stannar på en rad och växer med textstorleken bara fram till knapparna till höger.

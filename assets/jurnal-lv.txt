@@ -1,3 +1,6 @@
+v2.22 · 2026. gada 4. novembris
+- Samsung tālruņi ar Auto Blocker: izslēdziet to pirms lietotnes instalēšanas vai atjaunināšanas (Iestatījumi › Drošība un konfidencialitāte › Auto Blocker), citādi tālrunis atteiks instalēšanu; pēc tam to var atkal ieslēgt.
+
 v2.21 · 2026. gada 4. novembris
 - Planšete: izvēlne ☰ ir tikai tik plata kā tās garākā rinda un par 5 % mazāka.
 - Lapas: virsraksts paliek vienā rindā un aug ar teksta lielumu tikai līdz pogām labajā pusē.

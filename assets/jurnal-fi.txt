@@ -1,3 +1,6 @@
+v2.22 · 4. marraskuuta 2026
+- Samsung-puhelimet, joissa on Auto Blocker: poista se käytöstä ennen sovelluksen asentamista tai päivittämistä (Asetukset › Suojaus ja yksityisyys › Auto Blocker), muuten puhelin kieltäytyy asentamasta; voit ottaa sen sen jälkeen taas käyttöön.
+
 v2.21 · 4. marraskuuta 2026
 - Tabletti: valikko ☰ on vain pisimmän rivinsä levyinen ja 5 % pienempi.
 - Sivut: otsikko pysyy yhdellä rivillä ja kasvaa tekstin koon mukana vain oikealla oleviin painikkeisiin asti.

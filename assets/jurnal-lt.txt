@@ -1,3 +1,6 @@
+v2.22 · 2026 m. lapkričio 4 d.
+- Samsung telefonai su Auto Blocker: išjunkite jį prieš diegdami ar atnaujindami programą (Nustatymai › Sauga ir privatumas › Auto Blocker), kitaip telefonas atsisakys diegti; vėliau galite vėl įjungti.
+
 v2.21 · 2026 m. lapkričio 4 d.
 - Planšetė: meniu ☰ tik tokio pločio kaip ilgiausia jo eilutė ir 5 % mažesnis.
 - Puslapiai: pavadinimas lieka vienoje eilutėje ir didėja su teksto dydžiu tik iki mygtukų dešinėje.

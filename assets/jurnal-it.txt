@@ -1,3 +1,6 @@
+v2.22 · 4 novembre 2026
+- Telefoni Samsung con Auto Blocker: disattivalo prima di installare o aggiornare l'app (Impostazioni › Sicurezza e privacy › Auto Blocker), altrimenti il telefono rifiuta l'installazione; dopo puoi riattivarlo.
+
 v2.21 · 4 novembre 2026
 - Tablet: il menu ☰ è largo solo quanto la sua riga più lunga, e più piccolo del 5 %.
 - Pagine: il titolo resta su una riga e cresce con la dimensione del testo solo fino ai pulsanti a destra.

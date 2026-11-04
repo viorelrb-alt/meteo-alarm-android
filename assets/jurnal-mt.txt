@@ -1,3 +1,6 @@
+v2.22 · 4 ta' Novembru 2026
+- Telefowns Samsung b'Auto Blocker: itfih qabel ma tinstalla jew taġġorna l-app (Settings › Sigurtà u privatezza › Auto Blocker), inkella t-telefon jirrifjuta l-installazzjoni; wara tista' terġa' tixgħelu.
+
 v2.21 · 4 ta' Novembru 2026
 - Tablet: il-menu ☰ huwa wiesa' daqs l-itwal linja tiegħu biss, u 5 % iżgħar.
 - Paġni: it-titlu jibqa' fuq linja waħda u jikber mad-daqs tat-test biss sal-buttuni fuq il-lemin.

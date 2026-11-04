@@ -1,3 +1,6 @@
+v2.22 · 4 november 2026
+- Samsung-telefoons met Auto Blocker: zet het uit voordat je de app installeert of bijwerkt (Instellingen › Beveiliging en privacy › Auto Blocker), anders weigert de telefoon de installatie; daarna kun je het weer aanzetten.
+
 v2.21 · 4 november 2026
 - Tablet: het menu ☰ is maar zo breed als zijn langste regel, en 5 % kleiner.
 - Pagina's: de titel blijft op één regel en groeit met de tekstgrootte alleen tot de knoppen rechts.
