@@ -1,3 +1,6 @@
+v2.11 · 4. marraskuuta 2026
+- Oikeasta reunasta avattava tekstikoon palkki tulee nyt vasemmalle, kuten kirkkauspalkki.
+
 v2.10 · 4. marraskuuta 2026
 - Uusi widget 4x2 · päivät: nykyisen sään alla seuraavat 5 päivää (päivä, kuvake, ylin / alin). Kun ne tehdään vähintään 3 rivin korkuisiksi, molemmista 4x2-widgeteistä (tunnit ja päivät) tulee uusi 4x3, jossa ovat seuraavat tunnit ja päivät.
 - Tekstin koko: Ohjeessa, Maanjäristyksissä, Tietoja- ja Mitä uutta -sivuilla oikealla oleva palkki sulkemispainikkeen alla suurentaa tai pienentää kirjaimia (80–180 %); päänäytöllä liu'utus ylös tai alas oikean reunan lähellä näyttää saman palkin. Koko tallentuu laitteeseen ja koskee myös ☰-valikkoa.

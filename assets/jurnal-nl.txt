@@ -1,3 +1,6 @@
+v2.11 · 4 november 2026
+- De balk voor de tekstgrootte, geopend vanaf de rechterrand, verschijnt nu links, net als de helderheidsbalk.
+
 v2.10 · 4 november 2026
 - Nieuwe widget 4x2 · dagen: onder het weer van nu de komende 5 dagen (dag, pictogram, max / min). Vergroot tot 3 rijen of meer worden beide 4x2-widgets (uren en dagen) de nieuwe 4x3, met de komende uren en de komende dagen.
 - Tekstgrootte: in Help, Aardbevingen, Over en Wat is er nieuw maakt een balk rechts, onder de sluitknop, de letters groter of kleiner (80–180 %); op het hoofdscherm toont omhoog of omlaag vegen vlak bij de rechterrand dezelfde balk. De grootte blijft op het apparaat bewaard en geldt ook voor het menu ☰.

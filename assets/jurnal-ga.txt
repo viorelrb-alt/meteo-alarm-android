@@ -1,3 +1,6 @@
+v2.11 · 4 Samhain 2026
+- Tagann barra mhéid an téacs, a osclaítear ón imeall deas, ar chlé anois, cosúil le barra na gile.
+
 v2.10 · 4 Samhain 2026
 - Giuirléid nua 4x2 · laethanta: faoin aimsir anois, na 5 lá atá romhainn (lá, deilbhín, uas / íos). Nuair a dhéantar 3 shraith ar airde nó níos mó díobh, déantar an 4x3 nua den dá ghiuirléid 4x2 (uaireanta agus laethanta), leis na huaireanta agus na laethanta atá romhainn.
 - Méid an téacs: i gCabhair, Creathanna talún, Faoi agus Cad atá nua, méadaíonn nó laghdaíonn barra ar dheis, faoin gcnaipe dúnta, na litreacha (80–180 %); ar an bpríomhscáileán, taispeánann sleamhnú suas nó síos gar don imeall deas an barra céanna. Coinnítear an méid ar an ngléas agus baineann sé leis an roghchlár ☰ freisin.

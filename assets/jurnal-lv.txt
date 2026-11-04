@@ -1,3 +1,6 @@
+v2.11 · 2026. gada 4. novembris
+- Teksta izmēra josla, ko atver no labās malas, tagad parādās kreisajā pusē, kā spilgtuma josla.
+
 v2.10 · 2026. gada 4. novembris
 - Jauns logrīks 4x2 · dienas: zem pašreizējiem laikapstākļiem nākamās 5 dienas (diena, ikona, augstākā / zemākā). Palielināti līdz 3 rindām vai vairāk, abi 4x2 logrīki (stundas un dienas) kļūst par jauno 4x3, ar nākamajām stundām un dienām.
 - Teksta izmērs: Palīdzībā, Zemestrīcēs, lapā Par un Kas jauns josla labajā pusē, zem aizvēršanas pogas, palielina vai samazina burtus (80–180 %); galvenajā ekrānā to pašu joslu parāda vilkšana uz augšu vai leju pie labās malas. Izmērs saglabājas ierīcē un attiecas arī uz izvēlni ☰.

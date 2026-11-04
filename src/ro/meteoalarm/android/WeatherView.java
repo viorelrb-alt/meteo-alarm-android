@@ -142,7 +142,7 @@ final class WeatherView extends View {
 	};
 
 	/**
-	 * The text-size bar (v2.10): sliding up or down near the right edge shows it at the right and
+	 * The text-size bar (v2.10): sliding up or down near the right edge shows it on the left and
 	 * sets the size of the menus and pages (TextSize); it goes away 4 s after the finger lifts.
 	 */
 	private boolean edgeR, sizing, sizeDown, sizeDrag;

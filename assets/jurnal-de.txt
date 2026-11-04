@@ -1,3 +1,6 @@
+v2.11 · 4. November 2026
+- Die Leiste für die Textgröße, die man vom rechten Rand aus aufruft, erscheint jetzt links, wie die Helligkeitsleiste.
+
 v2.10 · 4. November 2026
 - Neues Widget 4x2 · Tage: unter dem aktuellen Wetter die nächsten 5 Tage (Tag, Symbol, Höchst- / Tiefstwert). Ab 3 Reihen Höhe werden beide 4x2-Widgets (Stunden und Tage) zum neuen 4x3, mit den nächsten Stunden und den nächsten Tagen.
 - Textgröße: In Hilfe, Erdbeben, Info und Neuigkeiten macht eine Leiste rechts, unter dem Schließen-Knopf, die Buchstaben größer oder kleiner (80–180 %); auf dem Hauptbildschirm zeigt ein Wischen nahe dem rechten Rand dieselbe Leiste. Die Größe bleibt auf dem Gerät gespeichert und gilt auch für das Menü ☰.

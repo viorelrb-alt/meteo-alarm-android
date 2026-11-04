@@ -1,3 +1,6 @@
+v2.11 · 4. studenoga 2026
+- Traka veličine teksta koja se otvara s desnog ruba sada se pojavljuje lijevo, kao traka svjetline.
+
 v2.10 · 4. studenoga 2026
 - Novi widget 4x2 · dani: ispod trenutačnog vremena sljedećih 5 dana (dan, ikona, maks. / min.). Povećani na 3 reda ili više, oba widgeta 4x2 (sati i dani) postaju novi 4x3, sa sljedećim satima i danima.
 - Veličina teksta: u Pomoći, Potresima, O aplikaciji i Što je novo traka desno, ispod gumba za zatvaranje, povećava ili smanjuje slova (80–180 %); na glavnom zaslonu istu traku prikazuje povlačenje gore ili dolje blizu desnog ruba. Veličina ostaje spremljena na uređaju i vrijedi i za izbornik ☰.

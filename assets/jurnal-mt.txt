@@ -1,3 +1,6 @@
+v2.11 · 4 ta' Novembru 2026
+- Il-virga tad-daqs tat-test, miftuħa mit-tarf tal-lemin, issa tidher fuq ix-xellug, bħall-virga tal-luminożità.
+
 v2.10 · 4 ta' Novembru 2026
 - Widget ġdid 4x2 · jiem: taħt it-temp ta' issa, il-5 ijiem li ġejjin (jum, ikona, l-ogħla / l-inqas). Meta jitkabbru għal 3 ringieli jew aktar, iż-żewġ widgets 4x2 (sigħat u jiem) isiru l-4x3 il-ġdid, bis-sigħat u l-jiem li ġejjin.
 - Daqs tat-test: f'Għajnuna, Terremoti, Dwar u X'hemm ġdid, virga fuq il-lemin, taħt il-buttuna tal-għeluq, tkabbar jew iċċekken l-ittri (80–180 %); fuq l-iskrin ewlieni, żerżiq 'il fuq jew 'l isfel qrib it-tarf tal-lemin juri l-istess virga. Id-daqs jinżamm fuq l-apparat u japplika wkoll għall-menu ☰.

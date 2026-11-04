@@ -1,3 +1,6 @@
+v2.11 · 4. november 2026
+- Parema serva juurest avatav teksti suuruse riba ilmub nüüd vasakule, nagu heleduse riba.
+
 v2.10 · 4. november 2026
 - Uus vidin 4x2 · päevad: praeguse ilma all järgmised 5 päeva (päev, ikoon, kõrgeim / madalaim). Vähemalt 3 rea kõrguseks tehtuna muutuvad mõlemad 4x2 vidinad (tunnid ja päevad) uueks 4x3-ks, järgmiste tundide ja päevadega.
 - Teksti suurus: Abis, Maavärinates, Teabes ja Mis on uut lehel suurendab või vähendab tähti riba paremal, sulgemisnupu all (80–180 %); põhiekraanil näitab sama riba libistamine üles või alla parema serva lähedal. Suurus jääb seadmesse salvestatuks ja kehtib ka menüüle ☰.

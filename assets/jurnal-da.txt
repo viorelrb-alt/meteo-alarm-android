@@ -1,3 +1,6 @@
+v2.11 · 4. november 2026
+- Bjælken for tekststørrelse, som vises fra højre kant, kommer nu til venstre, som lysstyrkebjælken.
+
 v2.10 · 4. november 2026
 - Ny widget 4x2 · dage: under vejret nu de næste 5 dage (dag, ikon, høj / lav). Gjort 3 rækker høje eller mere bliver begge 4x2-widgets (timer og dage) til den nye 4x3, med de næste timer og de næste dage.
 - Tekststørrelse: i Hjælp, Jordskælv, Om og Nyheder gør en bjælke til højre, under lukkeknappen, bogstaverne større eller mindre (80–180 %); på hovedskærmen viser et strøg op eller ned nær højre kant den samme bjælke. Størrelsen gemmes på enheden og gælder også menuen ☰.

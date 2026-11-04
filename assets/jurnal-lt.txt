@@ -1,3 +1,6 @@
+v2.11 · 2026 m. lapkričio 4 d.
+- Teksto dydžio juosta, atveriama nuo dešiniojo krašto, dabar atsiranda kairėje, kaip ryškumo juosta.
+
 v2.10 · 2026 m. lapkričio 4 d.
 - Naujas valdiklis 4x2 · dienos: po dabartiniais orais kitos 5 dienos (diena, piktograma, aukščiausia / žemiausia). Padidinti iki 3 eilių ar daugiau, abu 4x2 valdikliai (valandos ir dienos) tampa nauju 4x3, su kitomis valandomis ir dienomis.
 - Teksto dydis: Pagalboje, Žemės drebėjimuose, Apie ir Kas naujo juosta dešinėje, po uždarymo mygtuku, padidina ar sumažina raides (80–180 %); pagrindiniame ekrane tą pačią juostą parodo braukimas aukštyn ar žemyn prie dešiniojo krašto. Dydis išsaugomas įrenginyje ir galioja ir meniu ☰.

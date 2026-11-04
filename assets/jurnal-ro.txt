@@ -1,3 +1,6 @@
+v2.11 · 4 noiembrie 2026
+- Bara de mărime a textului, deschisă de pe marginea din dreapta, apare acum în stânga, ca bara de luminozitate.
+
 v2.10 · 4 noiembrie 2026
 - Widget nou 4x2 · zile: sub vremea de acum, următoarele 5 zile (ziua, iconul, max / min). Mărite la 3 rânduri sau mai mult, ambele widget-uri 4x2 (ore și zile) devin noul 4x3, cu următoarele ore și următoarele zile.
 - Mărimea textului: în Ajutor, Cutremure, Despre și Ce e nou, o bară în dreapta, sub butonul de închidere, mărește sau micșorează literele (80–180 %); pe ecranul principal, glisarea sus-jos lângă marginea din dreapta arată aceeași bară. Mărimea rămâne salvată pe dispozitiv și se aplică și meniului ☰.

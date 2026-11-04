@@ -1,3 +1,6 @@
+v2.11 · 4 November 2026
+- The text-size bar shown from the right edge now appears on the left, like the brightness bar.
+
 v2.10 · 4 November 2026
 - New widget 4x2 · days: under the weather now, the next 5 days (day, icon, high / low). Made 3 rows tall or more, both 4x2 widgets (hours and days) become the new 4x3, with the next hours and the next days.
 - Text size: in Help, Earthquakes, About and What's new, a bar on the right, under the close button, makes the letters larger or smaller (80–180 %); on the main screen, sliding up or down near the right edge shows the same bar. The size is kept on the device and also applies to the ☰ menu.

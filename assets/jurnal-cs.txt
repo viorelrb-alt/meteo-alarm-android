@@ -1,3 +1,6 @@
+v2.11 · 4. listopadu 2026
+- Lišta velikosti textu vyvolaná od pravého okraje se teď objeví vlevo, jako lišta jasu.
+
 v2.10 · 4. listopadu 2026
 - Nový widget 4x2 · dny: pod aktuálním počasím příštích 5 dní (den, ikona, max. / min.). Zvětšené na 3 řady a více se oba widgety 4x2 (hodiny a dny) změní na nový 4x3, s příštími hodinami i dny.
 - Velikost textu: v Nápovědě, Zemětřeseních, O aplikaci a Co je nového zvětší nebo zmenší písmena lišta vpravo, pod tlačítkem zavření (80–180 %); na hlavní obrazovce stejnou lištu ukáže přejetí nahoru či dolů u pravého okraje. Velikost zůstane uložena v zařízení a platí i pro nabídku ☰.

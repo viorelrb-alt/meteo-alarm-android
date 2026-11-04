@@ -176,15 +176,15 @@ public final class Screen {
 	}
 
 	/**
-	 * The text-size bar (v2.10): shown by sliding near the right edge, at the right, like the
-	 * brightness one; over it the size in percent. SIZE_LEVEL 0–1 (TextSize 80–180 %).
+	 * The text-size bar (v2.10): shown by sliding near the right edge, on the left like the
+	 * brightness one (Viorel's spec); over it the size in percent. SIZE_LEVEL 0–1 (TextSize 80–180 %).
 	 */
 	public boolean sizeBar;
 	public float sizeLevel = 0.2f;
 	public final float[] sizeArea = { 0, 0, 0, 0 };
 
 	private void drawSizeBar(float ch) {
-		float bw = 84, x = cw - 50 - bw, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
+		float bw = 84, x = 50, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
 		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
 		g.roundRect(x, top, bw, bw, bw / 2, ink);
 		g.roundRect(x + 7, top + 7, bw - 14, bw - 14, bw / 2 - 7, bg);

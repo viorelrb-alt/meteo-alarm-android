@@ -1,3 +1,6 @@
+v2.11 · 4 novembre 2026
+- La barra della dimensione del testo aperta dal bordo destro ora appare a sinistra, come la barra della luminosità.
+
 v2.10 · 4 novembre 2026
 - Nuovo widget 4x2 · giorni: sotto il meteo attuale, i prossimi 5 giorni (giorno, icona, max / min). Ingranditi a 3 file o più, entrambi i widget 4x2 (ore e giorni) diventano il nuovo 4x3, con le prossime ore e i prossimi giorni.
 - Dimensione del testo: in Aiuto, Terremoti, Informazioni e Novità, una barra a destra, sotto il pulsante di chiusura, ingrandisce o rimpicciolisce le lettere (80–180 %); nella schermata principale, scorrere su o giù vicino al bordo destro mostra la stessa barra. La dimensione resta salvata sul dispositivo e vale anche per il menu ☰.

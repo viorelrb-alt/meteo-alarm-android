@@ -1,3 +1,6 @@
+v2.11 · 4 november 2026
+- Fältet för textstorlek som öppnas från högerkanten visas nu till vänster, som ljusstyrkefältet.
+
 v2.10 · 4 november 2026
 - Ny widget 4x2 · dagar: under vädret nu de närmaste 5 dagarna (dag, ikon, högsta / lägsta). Gjorda 3 rader höga eller mer blir båda 4x2-widgetarna (timmar och dagar) den nya 4x3, med de närmaste timmarna och dagarna.
 - Textstorlek: i Hjälp, Jordbävningar, Om och Nyheter gör ett fält till höger, under stängknappen, bokstäverna större eller mindre (80–180 %); på huvudskärmen visar ett svep upp eller ner nära högerkanten samma fält. Storleken sparas på enheten och gäller även menyn ☰.

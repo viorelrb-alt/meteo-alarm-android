@@ -1,3 +1,6 @@
+v2.11 · 4 de novembro de 2026
+- A barra do tamanho do texto aberta a partir da margem direita aparece agora à esquerda, como a barra de brilho.
+
 v2.10 · 4 de novembro de 2026
 - Novo widget 4x2 · dias: por baixo do tempo atual, os próximos 5 dias (dia, ícone, máx. / mín.). Aumentados para 3 filas ou mais, os dois widgets 4x2 (horas e dias) passam a ser o novo 4x3, com as próximas horas e os próximos dias.
 - Tamanho do texto: em Ajuda, Sismos, Sobre e Novidades, uma barra à direita, por baixo do botão de fechar, aumenta ou diminui as letras (80–180 %); no ecrã principal, deslizar para cima ou para baixo junto à margem direita mostra a mesma barra. O tamanho fica guardado no dispositivo e aplica-se também ao menu ☰.

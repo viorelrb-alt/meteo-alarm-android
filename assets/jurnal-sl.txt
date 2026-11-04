@@ -1,3 +1,6 @@
+v2.11 · 4. november 2026
+- Vrstica velikosti besedila, odprta z desnega roba, se zdaj prikaže levo, kot vrstica svetlosti.
+
 v2.10 · 4. november 2026
 - Nov pripomoček 4x2 · dnevi: pod trenutnim vremenom naslednjih 5 dni (dan, ikona, najvišja / najnižja). Povečana na 3 vrstice ali več postaneta oba pripomočka 4x2 (ure in dnevi) nov 4x3, z naslednjimi urami in dnevi.
 - Velikost besedila: v Pomoči, Potresih, O aplikaciji in Kaj je novega vrstica desno, pod gumbom za zapiranje, poveča ali pomanjša črke (80–180 %); na glavnem zaslonu enako vrstico prikaže drsenje gor ali dol blizu desnega roba. Velikost ostane shranjena v napravi in velja tudi za meni ☰.

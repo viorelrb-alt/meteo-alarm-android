@@ -1,3 +1,6 @@
+v2.11 · 4. novembra 2026
+- Lišta veľkosti textu vyvolaná od pravého okraja sa teraz objaví vľavo, ako lišta jasu.
+
 v2.10 · 4. novembra 2026
 - Nová miniaplikácia 4x2 · dni: pod aktuálnym počasím najbližších 5 dní (deň, ikona, max. / min.). Zväčšené na 3 rady a viac sa obe miniaplikácie 4x2 (hodiny a dni) zmenia na novú 4x3, s najbližšími hodinami aj dňami.
 - Veľkosť textu: v Pomocníkovi, Zemetraseniach, O aplikácii a Čo je nové zväčší alebo zmenší písmená lišta vpravo, pod tlačidlom zatvorenia (80–180 %); na hlavnej obrazovke rovnakú lištu ukáže potiahnutie nahor či nadol pri pravom okraji. Veľkosť zostane uložená v zariadení a platí aj pre ponuku ☰.
