@@ -795,7 +795,7 @@ public final class Screen {
 	/** "4,2" (Romanian) or "4.2". */
 	private String dec(double v) {
 		String s = String.format(java.util.Locale.US, "%.1f", v);
-		return T.en ? s : s.replace('.', ',');
+		return s.replace('.', Tr.dot());
 	}
 
 	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
@@ -862,8 +862,8 @@ public final class Screen {
 			out.add(new String[] { "t", (Tr.t("Time: ", "Ora: ")) + dateTime(q.time) });
 			out.add(new String[] { "t", (Tr.t("Region: ", "Zona: ")) + titleCase(q.region) });
 			out.add(new String[] { "t", (Tr.t("Depth: ", "Adâncime: ")) + Math.round(q.depth) + " km" });
-			out.add(new String[] { "t", (Tr.t("Epicentre: ", "Epicentru: ")) + dec(Math.abs(q.lat)) + "° " + (q.lat >= 0 ? "N" : "S") + ", "
-					+ dec(Math.abs(q.lon)) + "° " + (q.lon >= 0 ? "E" : Tr.t("W", "V")) + (Tr.t(", ", ", la ")) + Math.round(q.dist) + " km"
+			out.add(new String[] { "t", (Tr.t("Epicentre: ", "Epicentru: ")) + dec(Math.abs(q.lat)) + "° " + Tr.compass()[q.lat >= 0 ? 0 : 2] + ", "
+					+ dec(Math.abs(q.lon)) + "° " + Tr.compass()[q.lon >= 0 ? 1 : 3] + (Tr.t(", ", ", la ")) + Math.round(q.dist) + " km"
 					+ (Tr.t(" from ", " de ")) + town });
 			out.add(new String[] { "h", Tr.t("In ", "La ") + town });
 			if (q.felt >= 2) out.add(new String[] { "t", (Tr.t("Probably felt, intensity ", "Probabil resimțit, intensitate ")) + roman(q.felt) + ": " + feltWords(q.felt) + "." });
@@ -882,10 +882,10 @@ public final class Screen {
 		if (gi < 0 || gi >= gs.size()) return out;
 		WarnGroup gr = gs.get(gi);
 		String name = T.warn[gr.level - 1];
-		out.add(new String[] { "title", en ? titleCase(name) + " warning" : "Cod " + name.toLowerCase() });
-		String[] what = en ? new String[] { "Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.",
-				"Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.",
-				"Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions." }
+		out.add(new String[] { "title", Tr.ro() ? "Cod " + name.toLowerCase() : Tr.lang().equals("en") ? titleCase(name) + " warning" : Tr.t("Warning") + " · " + titleCase(name) });
+		String[] what = en ? new String[] { Tr.t("Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors."),
+				Tr.t("Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice."),
+				Tr.t("Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.") }
 				: new String[] { "Fenomene meteorologice potențial periculoase (obișnuite pentru sezon, dar local mai intense). Fiți atenți dacă sunteți afară.",
 						"Fenomene meteorologice periculoase, de intensitate mare. Fiți foarte vigilenți, urmăriți prognoza și sfaturile autorităților.",
 						"Fenomene meteorologice foarte periculoase, de intensitate foarte mare. Luați măsuri de protecție și urmați instrucțiunile autorităților." };
@@ -900,7 +900,7 @@ public final class Screen {
 			String tip = advice(wr.type);
 			if (tip.length() > 0) out.add(new String[] { "t", tip });
 		}
-		out.add(new String[] { "t", en ? "Source: MeteoAlarm (the national weather service), for " + (city != null ? city.label() : "")
+		out.add(new String[] { "t", en ? Tr.t("Source: MeteoAlarm (the national weather service), for ") + (city != null ? city.label() : "")
 				: "Sursa: MeteoAlarm (ANM), pentru " + (city != null ? city.label() : "") });
 		return out;
 	}
@@ -1215,7 +1215,7 @@ public final class Screen {
 			bigValue(cx, top, w.humidity >= 0 ? w.humidity + "%" : "–", Tr.t("relative humidity", "umiditate relativă"), bw);
 			scale(cx - 60, top + 162, 5, w.humidity < 0 ? 0 : Math.max(1, (w.humidity + 19) / 20), 21);
 		} else if (id.equals("aqi")) {
-			String[] lv = en ? new String[] { "Good", "Fair", "Moderate", "Poor", "Very poor", "Extremely poor" }
+			String[] lv = en ? new String[] { Tr.t("Good"), Tr.t("Fair"), Tr.t("Moderate"), Tr.t("Poor"), Tr.t("Very poor"), Tr.t("Extremely poor") }
 					: new String[] { "Bună", "Acceptabilă", "Moderată", "Proastă", "Foarte proastă", "Extrem de proastă" };
 			int l = aqi < 0 ? 0 : aqi <= 20 ? 1 : aqi <= 40 ? 2 : aqi <= 60 ? 3 : aqi <= 80 ? 4 : aqi <= 100 ? 5 : 6;
 			bigValue(cx, top, aqi >= 0 ? Integer.toString(aqi) : "–", l > 0 ? lv[l - 1] : T.noData2, bw);
@@ -1226,9 +1226,9 @@ public final class Screen {
 			drawWindRose(cx, top0 + hd, bw, body);
 		} else if (id.equals("vis")) {
 			double v = w.visibility;
-			String val = Double.isNaN(v) ? "–" : v >= 10000 ? Math.round(v / 1000) + " km" : v >= 1000 ? String.format("%.1f km", v / 1000).replace('.', en ? '.' : ',') : Math.round(v / 10) * 10 + " m";
+			String val = Double.isNaN(v) ? "–" : v >= 10000 ? Math.round(v / 1000) + " km" : v >= 1000 ? String.format("%.1f km", v / 1000).replace('.', Tr.dot()) : Math.round(v / 10) * 10 + " m";
 			int l = Double.isNaN(v) ? 0 : v >= 10000 ? 4 : v >= 4000 ? 3 : v >= 1000 ? 2 : 1;
-			String[] lv = en ? new String[] { "Poor (fog)", "Moderate", "Good", "Very good" } : new String[] { "Slabă (ceață)", "Moderată", "Bună", "Foarte bună" };
+			String[] lv = en ? new String[] { Tr.t("Poor (fog)"), Tr.t("Moderate"), Tr.t("Good"), Tr.t("Very good") } : new String[] { "Slabă (ceață)", "Moderată", "Bună", "Foarte bună" };
 			bigValue(cx, top, val, l > 0 ? lv[l - 1] : T.noData2, bw);
 			scale(cx - 60, top + 162, 4, l, 27);
 		} else {
@@ -1308,7 +1308,7 @@ public final class Screen {
 			line(cx + (float) Math.cos(a) * r, cy + (float) Math.sin(a) * r, cx + (float) Math.cos(a) * (r - (i % 2 == 0 ? 7 : 4)),
 					cy + (float) Math.sin(a) * (r - (i % 2 == 0 ? 7 : 4)), 1.5f, c.dim);
 		}
-		String[] L = T.en ? new String[] { "N", "E", "S", "W" } : new String[] { "N", "E", "S", "V" };
+		String[] L = Tr.compass();
 		for (int i = 0; i < 4; i++) {
 			double a = Math.toRadians(i * 90 - rot - 90);
 			float lx = cx + (float) Math.cos(a) * (r - 13), ly = cy + (float) Math.sin(a) * (r - 13);
@@ -1346,7 +1346,7 @@ public final class Screen {
 			return;
 		}
 		int deg = Math.round(((heading % 360) + 360) % 360) % 360;
-		String dir = (en ? DIR_EN : DIR_RO)[(int) Math.round(deg / 45.0) % 8];
+		String dir = Tr.dirs8()[(int) Math.round(deg / 45.0) % 8];
 		ctext(true, 26, cy - 24, cx, dir, c.ink);
 		ctext(false, 18, cy + 4, cx, deg + "°", c.ink);
 	}
@@ -1393,7 +1393,6 @@ public final class Screen {
 	 */
 	public float heading = Float.NaN;
 
-	private static final String[] DIR_RO = { "N", "NE", "E", "SE", "S", "SV", "V", "NV" }, DIR_EN = { "N", "NE", "E", "SE", "S", "SW", "W", "NW" };
 
 	/**
 	 * "WIND NE 9 KM/H" right-aligned at RIGHT, and before it a small compass: a ring with the north
@@ -1403,7 +1402,7 @@ public final class Screen {
 		if (Double.isNaN(w.wind)) return;
 		String speed = unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h";
 		boolean dir = !Double.isNaN(w.windDir);
-		String from = dir ? (T.en ? DIR_EN : DIR_RO)[(int) Math.round(((w.windDir % 360) + 360) % 360 / 45) % 8] + " " : "";
+		String from = dir ? Tr.dirs8()[(int) Math.round(((w.windDir % 360) + 360) % 360 / 45) % 8] + " " : "";
 		String txt = upper(T.wind + " " + from + speed);
 		float x = rtext(false, px, top, right, txt, c.ink);
 		if (!dir || Math.round(w.wind) == 0) return;

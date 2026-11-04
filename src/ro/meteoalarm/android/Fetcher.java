@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import ro.meteoalarm.android.core.Cities;
+import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Countries;
 import ro.meteoalarm.android.core.MetNo;
 import ro.meteoalarm.android.core.Quakes;
@@ -37,18 +38,18 @@ final class Fetcher {
 		Throwable t = ex;
 		while (t.getCause() != null && t.getCause() != t && !(t instanceof java.io.IOException)) t = t.getCause();
 		String m = t.getMessage() == null ? "" : t.getMessage();
-		if (t instanceof java.net.UnknownHostException) return en ? "no internet (server not found)" : "fără internet (serverul nu e găsit)";
-		if (t instanceof java.net.SocketTimeoutException) return en ? "the server did not answer in time" : "serverul nu a răspuns la timp";
-		if (t instanceof java.net.ConnectException || t instanceof java.net.NoRouteToHostException) return en ? "no connection" : "fără conexiune";
+		if (t instanceof java.net.UnknownHostException) return en ? Tr.t("no internet (server not found)") : "fără internet (serverul nu e găsit)";
+		if (t instanceof java.net.SocketTimeoutException) return en ? Tr.t("the server did not answer in time") : "serverul nu a răspuns la timp";
+		if (t instanceof java.net.ConnectException || t instanceof java.net.NoRouteToHostException) return en ? Tr.t("no connection") : "fără conexiune";
 		if (t instanceof javax.net.ssl.SSLException || t instanceof java.security.cert.CertificateException)
-			return (en ? "secure connection error: " : "eroare conexiune securizată: ") + t.getClass().getSimpleName();
-		if (t instanceof SecurityException) return en ? "internet not allowed for the app" : "internetul nu e permis aplicației";
+			return (en ? Tr.t("secure connection error: ") : "eroare conexiune securizată: ") + t.getClass().getSimpleName();
+		if (t instanceof SecurityException) return en ? Tr.t("internet not allowed for the app") : "internetul nu e permis aplicației";
 		if (m.startsWith("HTTP ")) {
 			int sp = m.indexOf(' ', 5);
-			return (en ? "server error " : "eroare server ") + (sp > 0 ? m.substring(0, sp) : m);
+			return (en ? Tr.t("server error ") : "eroare server ") + (sp > 0 ? m.substring(0, sp) : m);
 		}
-		if (t instanceof java.io.IOException) return (en ? "network error: " : "eroare rețea: ") + t.getClass().getSimpleName() + (m.length() > 0 && m.length() < 40 ? " " + m : "");
-		return (en ? "data error: " : "eroare date: ") + t.getClass().getSimpleName();
+		if (t instanceof java.io.IOException) return (en ? Tr.t("network error: ") : "eroare rețea: ") + t.getClass().getSimpleName() + (m.length() > 0 && m.length() < 40 ? " " + m : "");
+		return (en ? Tr.t("data error: ") : "eroare date: ") + t.getClass().getSimpleName();
 	}
 
 	private static Countries countries;

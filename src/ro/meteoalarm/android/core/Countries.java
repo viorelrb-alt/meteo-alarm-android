@@ -30,6 +30,14 @@ public final class Countries {
 		return p == null ? cc.toUpperCase() : en ? p[2] : p[1];
 	}
 
+	/** The name shown in the app's language (Romanian and English from the list, the others from the phone). */
+	public String shown(String cc) {
+		if (Tr.ro()) return name(cc, false);
+		if (Tr.lang().equals("en") || !byCode.containsKey(cc)) return name(cc, true);
+		String n = new java.util.Locale("", cc.toUpperCase()).getDisplayCountry(new java.util.Locale(Tr.lang()));
+		return n == null || n.length() == 0 || n.equalsIgnoreCase(cc) ? name(cc, true) : n;
+	}
+
 	/** The feed URLs to try for CC, in order (none outside MeteoAlarm). */
 	public List<String> feeds(String cc) {
 		List<String> l = new ArrayList<String>();

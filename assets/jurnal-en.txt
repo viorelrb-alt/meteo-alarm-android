@@ -1,3 +1,13 @@
+v2.00 · 4 November 2026
+- Languages: the app now speaks all the official languages of the European Union and Ukrainian (Help included). At the first start it takes the phone's language (English when the app does not have it); afterwards the one chosen in ☰ › Language. The list shows only English, Romanian and the official languages of the country the phone is in.
+- ☰ › Earthquakes: a page with the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the EU, Ukraine and Moldova (time, place, magnitude, depth, distance).
+- Notifications (only with your consent): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event only once. On or off in ☰ › Notifications.
+- Location and notifications are asked with a friendly explanation at the first start; if you say no, the app asks again only after an update. When the phone no longer shows its question, a button opens its settings.
+- At the first start the town found by the location becomes the town shown and is added to the favourites.
+- Phones without a compass or light sensor: the related buttons and boxes are turned off; the Log lists the sensors at every start.
+- Widgets: the 4x1 strip now works on tablets too (the rows of the home screen are counted, not fixed sizes).
+- Fixed: at start after an update the weather was downloaded twice; the Log now records the chosen language and every town picked, and the opening of the widget settings only once.
+
 v1.93 · 2 November 2026
 - Updates with your consent, only from the menu: to get updates, open ☰ › Check for updates and, when asked, give your consent. The question no longer comes up by itself (not at start, not when you tap the widget). If you agree it is never asked again and the app updates as before (also by itself, once a week). If you say no, a notice says the app will not update, and the question comes back every time you choose Check for updates.
 - Without consent the app does not look for updates at all, not even by itself. Consents given in v1.92 (when the question came up by itself) no longer count and will be asked again from the menu.

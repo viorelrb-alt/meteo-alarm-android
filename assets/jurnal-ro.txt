@@ -1,3 +1,13 @@
+v2.00 · 4 noiembrie 2026
+- Limbi: aplicația vorbește acum toate limbile oficiale ale Uniunii Europene și ucraineana (inclusiv Ajutorul). La prima pornire ia limba telefonului (engleza dacă aplicația nu o are); apoi pe cea aleasă în ☰ › Limba. Lista arată doar engleza, româna și limbile oficiale ale țării în care e telefonul.
+- ☰ › Cutremure: o pagină cu cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din UE, Ucraina și Republica Moldova (ora, locul, magnitudinea, adâncimea, distanța).
+- Notificări (doar cu acordul tău): ploaie sau ninsoare care începe, avertizări meteo noi pentru localitatea ta, cutremure cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată. Pornite sau oprite din ☰ › Notificări.
+- Localizarea și notificările se cer cu o explicație prietenoasă la prima pornire; dacă refuzi, aplicația te mai întreabă doar după o actualizare. Când telefonul nu mai arată întrebarea lui, un buton deschide setările.
+- La prima pornire localitatea găsită de localizare devine localitatea afișată și se adaugă la favorite.
+- Telefoane fără busolă sau senzor de lumină: butoanele și casetele lor se dezactivează; Jurnalul scrie senzorii la fiecare pornire.
+- Widget-uri: banda 4x1 merge acum și pe tabletă (se numără rândurile ecranului de pornire, nu mărimi fixe).
+- Reparat: la pornire după o actualizare vremea se descărca de două ori; Jurnalul scrie acum limba aleasă și fiecare localitate aleasă, iar deschiderea setărilor widget-ului o singură dată.
+
 v1.93 · 2 noiembrie 2026
 - Actualizări cu acordul tău, doar din meniu: pentru actualizări intri în ☰ › Verifică actualizări și, când ești întrebat, îți dai acordul. Întrebarea nu mai apare singură (nici la pornire, nici la atingerea widget-ului). Dacă ești de acord, nu mai e pusă niciodată și aplicația se actualizează ca până acum (și singură, o dată pe săptămână). Dacă refuzi, o notificare îți spune că aplicația nu se va actualiza, iar întrebarea revine de fiecare dată când alegi Verifică actualizări.
 - Fără acord aplicația nu caută actualizări deloc, nici automat. Acordurile date în v1.92 (când întrebarea apărea singură) nu mai contează și vor fi cerute din nou din meniu.

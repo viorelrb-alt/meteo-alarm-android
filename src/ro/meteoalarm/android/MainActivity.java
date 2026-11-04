@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.93";
+	static final String VERSION = "Meteo Alarm Android v2.00";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -168,32 +168,24 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** About the app: shown once at the first start (before the location question) and from ☰ › Despre. */
 	private String aboutText() {
-		return s.T.en
-				? Updater.howTo(true) + "\n\nThis is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.\n\n"
-						+ "No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent "
-						+ "to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm (ANM), the earthquakes from EMSC (seismicportal.eu).\n\n"
-						+ "Location: used to show the weather where you are, at start and once an hour. To name the town, the "
-						+ "coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, "
-						+ "with where you were, are kept only on the phone. "
-						+ "Without location access, you choose the town from the list.\n\n"
-						+ "Sensors: the app reads the battery state (night clock while charging), the phone's light sensor "
-						+ "with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. "
-						+ "Nothing leaves the phone.\n\n"
-						+ "Updates: " + Updater.howTo(true) + " After that, once a week the app checks GitHub for a new version "
-						+ "and asks before downloading it.\n\n"
-						+ Updater.protectNote(true)
-				: Updater.howTo(false) + "\n\nAceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.\n\n"
-						+ "Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele "
-						+ "localității către Open-Meteo (vremea, polenul) și, când Open-Meteo e supraîncărcat, către MET Norway (vremea); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).\n\n"
-						+ "Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele "
-						+ "localității, coordonatele merg la OpenStreetMap (sau la geocoderul telefonului), de unde vin și granițele "
-						+ "localității. Localitățile găsite, cu locul exact, rămân doar pe telefon. Fără acces la locație, alegi localitatea din listă.\n\n"
-						+ "Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al "
-						+ "telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după "
-						+ "telefon. Nimic nu pleacă de pe telefon.\n\n"
-						+ "Actualizări: " + Updater.howTo(false) + " După aceea, o dată pe săptămână aplicația caută pe GitHub o "
-						+ "versiune nouă și te întreabă înainte s-o descarce.\n\n"
-						+ Updater.protectNote(false);
+		boolean en = s.T.en;
+		return Updater.howTo(en) + "\n\n"
+				+ Tr.t("This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.",
+						"Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.") + "\n\n"
+				+ Tr.t("No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).",
+						"Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele localității către Open-Meteo (vremea, polenul) și, când Open-Meteo e supraîncărcat, către MET Norway (vremea); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).") + "\n\n"
+				+ Tr.t("Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.",
+						"Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele localității, coordonatele merg la OpenStreetMap (sau la geocoderul telefonului), de unde vin și granițele localității. Localitățile găsite, cu locul exact, rămân doar pe telefon. Aplicația o cere cu o explicație la prima pornire; dacă refuzi, alegi localitatea din listă și te mai întreabă doar după o actualizare.") + "\n\n"
+				+ Tr.t("Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.",
+						"Notificări (doar cu acordul tău): ploaie sau ninsoare care începe, avertizări meteo noi pentru localitatea ta, cutremure cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o dată. Le pornești sau oprești din ☰ › Notificări.") + "\n\n"
+				+ Tr.t("Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.",
+						"Limba: la prima pornire limba telefonului (dacă aplicația o are, altfel engleza), apoi cea aleasă în ☰ › Limba.") + "\n\n"
+				+ Tr.t("Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.",
+						"Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după telefon. Ce nu are telefonul se dezactivează. Nimic nu pleacă de pe telefon.") + "\n\n"
+				+ Tr.t("Updates: ", "Actualizări: ") + Updater.howTo(en) + " "
+				+ Tr.t("After that, once a week the app checks GitHub for a new version and asks before downloading it.",
+						"După aceea, o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte s-o descarce.") + "\n\n"
+				+ Updater.protectNote(en);
 	}
 
 	private void welcome() {
@@ -1471,7 +1463,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		Cities.City c = s.city;
-		String country = countries.name(c.country, s.T.en);
+		String country = countries.shown(c.country);
 		long now = System.currentTimeMillis();
 		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + country);
 		if (quakesCountry == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
@@ -1507,7 +1499,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	private void quakeEntry(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean felt) {
-		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace(".", s.T.en ? "." : ",") + " · " + Screen.titleCase(q.region);
+		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot()) + " · " + Screen.titleCase(q.region);
 		String what = s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat("dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
 				+ " · " + Tr.t("depth ", "adâncime ") + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km " + Tr.t("from ", "de ") + c.name;
 		if (felt || q.dist < 300) what += "\n" + (q.felt >= 2 ? Tr.t("Probably felt in ", "Probabil resimțit în ") + c.name + ": " + Screen.roman(q.felt) + ", " + s.feltWords(q.felt)
@@ -1533,6 +1525,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left: slide on it up or down. It goes away by itself.", "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches between the light and the dark theme.", "Deasupra barei de luminozitate: comută între tema luminoasă și cea întunecată."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme when there is light, dark theme in the dark. Filled while it is on.", "Tema luminoasă când e lumină, cea întunecată pe întuneric. E plin cât timp e pornită."));
+		help.entry(mini("sensor"), Tr.t("Phone without a sensor", "Telefon fără un senzor"), Tr.t("At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.", "La fiecare pornire aplicația verifică senzorii telefonului (busolă, lumină, accelerometru, proximitate, presiune, GPS) și scrie în Jurnal care lipsesc. Fără senzor de lumină, tema Automat (senzor telefon) e gri și nu face nimic; fără busolă, caseta cu săgeata vântului e ascunsă."));
+		help.entry(mini("locate"), Tr.t("Location consent", "Acordul pentru localizare"), Tr.t("At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.", "La prima pornire aplicația explică de ce vrea locația (vremea, avertizările și cutremurele pentru locul exact în care ești), apoi întreabă telefonul. Prima localitate găsită devine localitatea afișată și se adaugă la favorite. Dacă refuzi, alegi localitatea din listă, iar aplicația te mai întreabă doar după o actualizare; când telefonul nu mai întreabă, butonul deschide setările lui."));
 		help.section(Tr.t("Gestures", "Gesturi"));
 		help.entry(mini("locate"), Tr.t("Tap on the town's name", "Atingerea numelui localității"), Tr.t("Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.", "Caută o dată poziția cu GPS-ul, pentru o prognoză mai bună exact unde ești; localizarea automată rămâne cum era."));
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.", "Trage ecranul în jos și dă drumul: vremea se reîmprospătează. Dacă tragi iar cât timp se descarcă sau în 10 secunde de la ultima descărcare, nu pornește încă una; o notificare îți spune asta."));
@@ -1544,7 +1538,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.", "Rândul de avertizări, casetele cu ore și cele 5 zile (Mâine și încă 4 zile, câte două) urmează degetul. Graficul Precipitații · următoarele 12 ore apare primul în rândul cu ore, doar când e prognozată ploaie sau ninsoare."));
 		help.entry(mini("swipe"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.", "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă."));
 		help.section(Tr.t("Home-screen widgets", "Widget-uri pe ecranul de pornire"));
-		help.entry(mini("widget"), Tr.t("Meteo Alarm widgets", "Widget-urile Meteo Alarm"), Tr.t("Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and \"any size\", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.", "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: 2x2, 4x1, 4x2 și „orice mărime”, fiecare cu imaginea lui; se pune direct pe ecran, fără fereastră de setări. Sunt trei modele: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului) și 4x2 (lat, și cu Max / Min și următoarele 5 ore), plus unul mic, 2x1 (icon și temperatură), pentru rame prea mici pentru celelalte. Ține-l apăsat și trage de margini: lat (cam 4 coloane) și un rând = 4x1, lat și mai înalt = 4x2 (rămâne 4x2 oricât de înalt îl faci), îngust = 2x2, îngust și un rând = 2x1. Umple lățimea ramei; când rama e mai înaltă decât are nevoie modelul, widget-ul își păstrează mărimea, centrat, cu fundal doar sub el (restul rămâne transparent). Un model nu se micșorează niciodată atât încât textele să devină prea mici. Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. O atingere deschide aplicația."));
+		help.entry(mini("widget"), Tr.t("Meteo Alarm widgets", "Widget-urile Meteo Alarm"), Tr.t("Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and \"any size\", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.", "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: 2x2, 4x1, 4x2 și „orice mărime”, fiecare cu imaginea lui; se pune direct pe ecran, fără fereastră de setări. Sunt trei modele: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului) și 4x2 (lat, și cu Max / Min și următoarele 5 ore), plus unul mic, 2x1 (icon și temperatură), pentru rame prea mici pentru celelalte. Ține-l apăsat și trage de margini: lat (cam 4 coloane) și un rând = 4x1, lat și mai înalt = 4x2 (rămâne 4x2 oricât de înalt îl faci), îngust = 2x2, îngust și un rând = 2x1. Rândurile și coloanele sunt cele ale ecranului tău de pornire (pe tabletă un rând e mult mai înalt decât pe telefon), așa că banda 4x1 merge și acolo. Umple lățimea ramei; când rama e mai înaltă decât are nevoie modelul, widget-ul își păstrează mărimea, centrat, cu fundal doar sub el (restul rămâne transparent). Un model nu se micșorează niciodată atât încât textele să devină prea mici. Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. O atingere deschide aplicația."));
 		help.entry(mini("widget"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.", "Ține apăsat pe widget › Setări (Android 12 și mai nou) sau ☰ › Widget-uri. Fiecare widget are setările lui: previzualizare; localitatea (ca în aplicație sau alta, cu Schimbare); Fundal pornit / oprit și cât de transparent; Culori: după vreme (cer albastru, albastru de noapte, gri pentru nori, ploaie, zăpadă, furtună, ceață), potrivite cu setările telefonului sau închise; Culoare font: automat (negru pe fundal deschis), alb sau negru. Anulare sau Salvare."));
 		help.entry(mini("refresh"), Tr.t("Refreshing by itself", "Reîmprospătare automată"), Tr.t("The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line \"! no data since …\" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 \"overloaded\") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says \"· MET Norway\"; after a \"busy\" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.", "Vremea, avertizările și cutremurele vin singure, și cu aplicația închisă (pentru widget-uri): la 15 minute cât ecranul e aprins, la 30 de minute cu ecranul stins, deloc între apus și răsărit cât ecranul e stins (așteaptă să se aprindă ecranul) și la o oră când bateria e sub 25% și nu se încarcă. Când descărcarea eșuează, o notificare și rândul „! fără date din …” de sub ceas spun de ce (fără internet, serverul nu a răspuns, eroare conexiune securizată, eroare server…). Când Open-Meteo e supraîncărcat (HTTP 503) sau nu răspunde, prognoza vine de la MET Norway (api.met.no, institutul meteo norvegian), iar rândul de sub ceas scrie „· MET Norway”; după un „supraîncărcat”, aplicația merge direct la MET Norway 20 de minute. Până vin date noi, pe ecran rămâne ultima vreme salvată."));
 		help.section(Tr.t("The ☰ menu", "Meniul ☰"));
@@ -1556,6 +1550,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("keepOn"), Tr.t("Screen on ON / OFF", "Ecran aprins ON / OFF"), Tr.t("ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.", "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon."));
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English, Romanian and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza, româna și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana."));
 		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
+		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.", "O pagină ca aceasta, cu buton de închidere sus: cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din Uniunea Europeană, Ucraina și Republica Moldova. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta. De la EMSC; pagina se derulează."));
+		help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.", "Notificări doar pentru: ploaie sau ninsoare care începe (sau începe în următoarea oră; din nou abia după 3 ore fără precipitații), o avertizare meteo nouă pentru localitatea ta și un cutremur cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată, și cu aplicația închisă. Aplicația le cere la prima pornire; dacă refuzi, te mai întreabă doar după o actualizare, niciodată la fiecare pornire. Când telefonul nu mai arată întrebarea lui (după două refuzuri), butonul deschide setările telefonului, unde le permiți."));
 		help.entry(mini("night"), Tr.t("Night clock ON / OFF", "Ceas noapte ON / OFF"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
 		help.entry(mini("widget"), Tr.t("Widgets", "Widget-uri"), Tr.t("The settings of a widget on the home screen (with several, choose which first).", "Setările unui widget de pe ecranul de pornire (când sunt mai multe, alegi întâi care)."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.", "Tot ce a făcut aplicația, cu ora: senzorii, atingerile și gesturile, localizarea, descărcările de date (și de ce a eșuat una), reîmprospătările din fundal și widget-urile (mărimea dată de telefon, modelul arătat). Păstrează 5 zile, câte un fișier pe zi; erorile din zilele mai vechi rămân încă 10 zile în rubrica Erori. Sus: telefonul (model, Android, One UI) și versiunea aplicației. Îl citești aici, îl Trimiți (WhatsApp, Drive, e-mail…) sau îl Salvezi pe telefon."));
@@ -1589,7 +1585,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private String changeLog() {
 		String log;
 		try {
-			java.io.InputStream in = getAssets().open(Tr.t("jurnal-en.txt", "jurnal-ro.txt"));
+			String name = "jurnal-" + s.T.lang + ".txt";
+			try {
+				getAssets().open(name).close();
+			} catch (Exception e) {
+				name = Tr.t("jurnal-en.txt", "jurnal-ro.txt");
+			}
+			java.io.InputStream in = getAssets().open(name);
 			java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
 			byte[] buf = new byte[8192];
 			int n;
@@ -1654,13 +1656,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final List<String> ccs = new ArrayList<String>(cities.abroad.keySet());
 		java.util.Collections.sort(ccs, new java.util.Comparator<String>() {
 			public int compare(String a, String c) {
-				return Warnings.fold(countries.name(a, en)).compareTo(Warnings.fold(countries.name(c, en)));
+				return Warnings.fold(countries.shown(a)).compareTo(Warnings.fold(countries.shown(c)));
 			}
 		});
 		rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
 		rows.add(new Bubble.Row(Tr.t("Other countries", "Alte țări"), null, Bubble.Row.HEADER, false));
 		final int firstC = rows.size();
-		for (String cc : ccs) rows.add(Bubble.Row.item(countries.name(cc, en)));
+		for (String cc : ccs) rows.add(Bubble.Row.item(countries.shown(cc)));
 		bubble.show(view.px(b), bubbleWidth(0.9f, 300), null, rows, en, new Bubble.Pick() {
 			public void picked(int k) {
 				if (k >= firstC) {
@@ -1694,7 +1696,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		List<Bubble.Row> rows = Bubble.rows();
 		rows.add(Bubble.Row.item(Tr.t("‹  Back", "‹  Înapoi")));
 		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
-		bubble.show(view.px(b), bubbleWidth(0.9f, 300), countries.name(cc, en), rows, en, new Bubble.Pick() {
+		bubble.show(view.px(b), bubbleWidth(0.9f, 300), countries.shown(cc), rows, en, new Bubble.Pick() {
 			public void picked(int k) {
 				if (k == 0) onCity(b);
 				else {

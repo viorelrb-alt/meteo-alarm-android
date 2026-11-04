@@ -164,7 +164,7 @@ final class Updater {
 		String msg = (Tr.t("Installed: v", "Instalată: v")) + cur + "    " + (Tr.t("New: v", "Nouă: v")) + r.version;
 		if (r.notes.length() > 0) msg += "\n\n" + r.notes;
 		msg += "\n\n" + protectNote(en);
-		sheet.show(en ? "New version: v" + r.version : "Versiune nouă: v" + r.version, msg, Tr.t("Update", "Actualizează"), new Runnable() {
+		sheet.show(Tr.t("New version: v", "Versiune nouă: v") + r.version, msg, Tr.t("Update", "Actualizează"), new Runnable() {
 			public void run() {
 				download(r);
 			}

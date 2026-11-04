@@ -110,4 +110,35 @@ public final class Tr {
 		if (cc.equals("ch")) return new String[] { "de", "fr", "it" };
 		return new String[0];
 	}
+	/** North, east, south, west in the current language (the letters of a compass). */
+	public static String[] compass() {
+		String l = lang;
+		if (l.equals("ro")) return new String[] { "N", "E", "S", "V" };
+		if (l.equals("bg")) return new String[] { "С", "И", "Ю", "З" };
+		if (l.equals("cs") || l.equals("sk") || l.equals("sl")) return new String[] { "S", "V", "J", "Z" };
+		if (l.equals("hr")) return new String[] { "S", "I", "J", "Z" };
+		if (l.equals("da")) return new String[] { "N", "Ø", "S", "V" };
+		if (l.equals("sv")) return new String[] { "N", "Ö", "S", "V" };
+		if (l.equals("de")) return new String[] { "N", "O", "S", "W" };
+		if (l.equals("nl")) return new String[] { "N", "O", "Z", "W" };
+		if (l.equals("el")) return new String[] { "Β", "Α", "Ν", "Δ" };
+		if (l.equals("es") || l.equals("fr") || l.equals("it") || l.equals("pt")) return new String[] { "N", "E", "S", "O" };
+		if (l.equals("fi")) return new String[] { "P", "I", "E", "L" };
+		if (l.equals("hu")) return new String[] { "É", "K", "D", "Ny" };
+		if (l.equals("lt")) return new String[] { "Š", "R", "P", "V" };
+		if (l.equals("lv")) return new String[] { "Z", "A", "D", "R" };
+		if (l.equals("uk")) return new String[] { "Пн", "Сх", "Пд", "Зх" };
+		return new String[] { "N", "E", "S", "W" };
+	}
+
+	/** The 8 directions N, NE … NW in the current language. */
+	public static String[] dirs8() {
+		String[] c = compass();
+		return new String[] { c[0], c[0] + c[1], c[1], c[2] + c[1], c[2], c[2] + c[3], c[3], c[0] + c[3] };
+	}
+
+	/** The decimal point: "." in English, Irish and Maltese, "," in the others. */
+	public static char dot() {
+		return lang.equals("en") || lang.equals("ga") || lang.equals("mt") ? '.' : ',';
+	}
 }
