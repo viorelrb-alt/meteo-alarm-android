@@ -103,24 +103,48 @@ public final class WidgetConfig extends Activity {
 			open(all.keySet().iterator().next());
 			return;
 		}
-		final List<Integer> ids = new ArrayList<Integer>(all.keySet());
-		String[] names = new String[ids.size()];
-		for (int k = 0; k < ids.size(); k++) {
-			int[] f = Widget.frame(this, AppWidgetManager.getInstance(this), ids.get(k), new StringBuilder());
-			Widget.Data d = Widget.data(this, Widget.Set.of(this, ids.get(k)).town);
-			names[k] = "Widget " + Widget.NAMES[Widget.kind(this, AppWidgetManager.getInstance(this), ids.get(k), f[0], f[1])] + " · " + (d.c != null ? d.c.name : "");
+		// Several: the choice is on top of the settings window (Viorel 2026-11-04, v2.20).
+		choices = new ArrayList<Integer>(all.keySet());
+		open(choices.get(0));
+	}
+
+	/** From the app with several widgets: all of them, chosen on top of the window. */
+	private List<Integer> choices;
+
+	/** A widget's short name: its model (4x2 · days for the days one) and its town. */
+	private String widgetName(int wid) {
+		AppWidgetManager m = AppWidgetManager.getInstance(this);
+		int[] f = Widget.frame(this, m, wid, new StringBuilder());
+		int k = Widget.kind(this, m, wid, f[0], f[1]);
+		Widget.Data d = Widget.data(this, Widget.Set.of(this, wid).town);
+		String n = Widget.NAMES[k] + (k == 4 ? Tr.t(" · days", " · zile") : "");
+		return n + (d.c != null ? " · " + d.c.name : "");
+	}
+
+	/** The row of widgets to choose from, the current one filled; a tap opens that one's settings. */
+	private View chooser() {
+		android.widget.HorizontalScrollView hs = new android.widget.HorizontalScrollView(this);
+		hs.setHorizontalScrollBarEnabled(false);
+		LinearLayout row = new LinearLayout(this);
+		for (final int wid : choices) {
+			boolean on = wid == id;
+			TextView t = text(widgetName(wid), 16, on ? (dark ? 0xFF000000 : 0xFFFFFFFF) : ink, true);
+			t.setSingleLine(true);
+			t.setPadding((int) (16 * dp), (int) (10 * dp), (int) (16 * dp), (int) (10 * dp));
+			GradientDrawable g = round(on ? accent : card, 20);
+			if (!on) g.setStroke(Math.max(1, (int) dp), dim);
+			t.setBackground(g);
+			t.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					if (wid != id) open(wid);
+				}
+			});
+			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			lp.rightMargin = (int) (10 * dp);
+			row.addView(t, lp);
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Which widget?", "Care widget?"))
-				.setItems(names, new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface di, int k) {
-						open(ids.get(k));
-					}
-				})
-				.setOnCancelListener(new DialogInterface.OnCancelListener() {
-					public void onCancel(DialogInterface d) {
-						finish();
-					}
-				}).show();
+		hs.addView(row);
+		return hs;
 	}
 
 	private int theme() {
@@ -190,6 +214,12 @@ public final class WidgetConfig extends Activity {
 		col.setOrientation(LinearLayout.VERTICAL);
 		col.setPadding(pad, (int) (24 * dp), pad, pad);
 		col.addView(text(Tr.t("Widget settings", "Setări widget"), 24, ink, true));
+		if (choices != null && choices.size() > 1) {
+			TextView q = text(Tr.t("Which widget?", "Care widget?"), 15, dim, false);
+			q.setPadding(0, (int) (12 * dp), 0, (int) (8 * dp));
+			col.addView(q);
+			col.addView(chooser());
+		}
 
 		// The preview on a wallpaper-like background.
 		FrameLayout wall = new FrameLayout(this);

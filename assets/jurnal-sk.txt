@@ -1,3 +1,10 @@
+v2.20 · 4. novembra 2026
+- Miniaplikácia 4x2 na Samsungu s One UI 9 (A54): pri 2 riadkoch sa už neukazuje ako 4x3; 4x3 až od 3 riadkov.
+- ☰ › Miniaplikácie: keď ich je viac, miniaplikácia sa vyberá hore v okne nastavení a nastavenia pod ňou patria vybranej.
+- Tablet: menu ☰ je o 10 % menšie.
+- Denník: text tlačidiel zostáva na jednom riadku.
+- Bez internetu aplikácia čaká, kým sa sieť vráti, namiesto pokusov každé 1–2 minúty.
+
 v2.12 · 4. novembra 2026
 - V Pomocníkovi, Zemetraseniach, O aplikácii a Čo je nové: tlačidlo Aa vedľa tlačidiel vpravo zobrazí lištu veľkosti textu na ľavej strane obrazovky, nad stránkou, ako lištu jasu. Úzka lišta vpravo hore je preč.
 

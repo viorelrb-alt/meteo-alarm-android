@@ -1,3 +1,10 @@
+v2.20 · 4 november 2026
+- Widget 4x2 på Samsung med One UI 9 (A54): visas inte längre som 4x3 vid 2 rader; 4x3 först från 3 rader.
+- ☰ › Widgetar: när det finns flera väljs widgeten överst i inställningsfönstret och inställningarna nedanför hör till den valda.
+- Surfplatta: menyn ☰ är 10 % mindre.
+- Logg: knapparnas text stannar på en rad.
+- Utan internet väntar appen tills nätverket är tillbaka, i stället för att försöka igen var 1–2 minut.
+
 v2.12 · 4 november 2026
 - I Hjälp, Jordbävningar, Om och Nyheter: knappen Aa bredvid knapparna till höger visar reglaget för textstorlek till vänster på skärmen, över sidan, som ljusstyrkereglaget. Det smala reglaget uppe till höger är borta.
 

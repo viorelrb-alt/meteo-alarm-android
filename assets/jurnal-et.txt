@@ -1,3 +1,10 @@
+v2.20 · 4. november 2026
+- Vidin 4x2 One UI 9-ga Samsungil (A54): 2 rea korral ei näidata seda enam 4x3-na; 4x3 alles 3 reast.
+- ☰ › Vidinad: mitme korral valitakse vidin seadete akna ülaosas ja all olevad seaded kuuluvad valitule.
+- Tahvel: menüü ☰ on 10 % väiksem.
+- Logi: nuppude tekst jääb ühele reale.
+- Ilma internetita ootab rakendus võrgu tagasitulekut, selle asemel et iga 1–2 minuti järel uuesti proovida.
+
 v2.12 · 4. november 2026
 - Abis, Maavärinates, Teabes ja Mis on uut lehel: nupp Aa paremal olevate nuppude kõrval näitab teksti suuruse riba ekraani vasakus servas, lehe peal, nagu heleduse riba. Kitsas riba üleval paremal on eemaldatud.
 

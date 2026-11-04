@@ -1,3 +1,10 @@
+v2.20 · 4 november 2026
+- Widget 4x2 op Samsung met One UI 9 (A54): wordt bij 2 rijen niet meer als 4x3 getoond; 4x3 pas vanaf 3 rijen.
+- ☰ › Widgets: bij meerdere kies je de widget bovenaan het instellingenvenster en de instellingen eronder horen bij de gekozen widget.
+- Tablet: het menu ☰ is 10 % kleiner.
+- Logboek: de tekst van de knoppen blijft op één regel.
+- Zonder internet wacht de app tot het netwerk terug is, in plaats van elke 1–2 minuten opnieuw te proberen.
+
 v2.12 · 4 november 2026
 - In Help, Aardbevingen, Over en Wat is er nieuw: de knop Aa naast de knoppen rechts toont de balk voor tekstgrootte links op het scherm, boven de pagina, net als de helderheidsbalk. De smalle balk rechtsboven is weg.
 

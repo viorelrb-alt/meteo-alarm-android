@@ -143,7 +143,7 @@ final class Bubble extends FrameLayout {
 	void show(float[] anchor, int width, String head, List<Row> rows, boolean en, final Pick pick) {
 		Context c = getContext();
 		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there), and the text size of ☰.
-		float zk = (TextSize.tablet(c) ? 1.3f : 1f) * TextSize.get(c);
+		float zk = (TextSize.tablet(c) ? 1.17f : 1f) * TextSize.get(c);
 		width = (int) (width * zk);
 		title.setTextSize(17 * zk);
 		less.setTextSize(14 * zk);

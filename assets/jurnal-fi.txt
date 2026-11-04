@@ -1,3 +1,10 @@
+v2.20 · 4. marraskuuta 2026
+- Widget 4x2 Samsungissa, jossa One UI 9 (A54): ei enää näy 4x3:na 2 rivillä; 4x3 vasta 3 riviltä.
+- ☰ › Widgetit: kun niitä on useita, widget valitaan asetusikkunan yläosasta ja alla olevat asetukset ovat valitun.
+- Tabletti: valikko ☰ on 10 % pienempi.
+- Loki: painikkeiden teksti pysyy yhdellä rivillä.
+- Ilman internetiä sovellus odottaa verkon palaamista sen sijaan, että yrittäisi uudelleen 1–2 minuutin välein.
+
 v2.12 · 4. marraskuuta 2026
 - Ohjeessa, Maanjäristyksissä, Tietoja-sivulla ja Mitä uutta -sivulla: oikealla olevien painikkeiden vieressä oleva Aa-painike näyttää tekstin koon palkin näytön vasemmassa reunassa, sivun päällä, kuten kirkkauspalkin. Kapea palkki oikeassa yläkulmassa on poistettu.
 

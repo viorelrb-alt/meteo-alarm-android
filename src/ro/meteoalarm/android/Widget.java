@@ -285,6 +285,8 @@ public class Widget extends AppWidgetProvider {
 	static final float[] RW = { 192, 384, 384, 192, 384, 384 }, RH = { 192, 96, 192, 96, 192, 280 };
 	/** Below this zoom the texts get too small: such a layout is not used (logs of 2026-11-02: 68% was too small). */
 	static final float MIN_ZOOM = 0.8f;
+	/** The 4x3 needs at least this part of its height (v2.20). */
+	static final float TALL = 0.95f;
 	/** How much taller than the layout (part of its height) the widget may spread; more is left empty. */
 	static final float MAX_SPREAD = 0.25f;
 
@@ -305,6 +307,13 @@ public class Widget extends AppWidgetProvider {
 		learnCell(ctx, mgr, id, w, h);
 		boolean days = days(mgr, id);
 		float cw = p.getFloat("cellW", 0), ch = p.getFloat("cellH", 0);
+		// A cell smaller than any home screen's (A54 v2.11: 45x90 dp, learned from an empty
+		// first frame) is wrong: forgotten, the plain rule until a widget teaches the right one.
+		if ((cw > 0 && cw < 60) || (ch > 0 && ch < 60)) {
+			p.edit().remove("cellW").remove("cellH").apply();
+			Log.i(ctx, "WIDGET", "celula greșită " + Math.round(cw) + "x" + Math.round(ch) + " dp uitată");
+			cw = ch = 0;
+		}
 		if (cw <= 0 || ch <= 0) return kind(w, h, days);
 		int cols = Math.max(1, Math.round(w / cw)), rows = Math.max(1, Math.round(h / ch));
 		// Wide and 3 rows or more: the 4x3, with the hours and the next days (v2.10).
@@ -327,6 +336,10 @@ public class Widget extends AppWidgetProvider {
 	private static void learnCell(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
 		SharedPreferences p = prefs(ctx);
 		if (p.getBoolean("w" + id + "_cell", false)) return;
+		// Only from a real size: One UI 9 sends a first frame without one (0x0), which frame()
+		// makes 180x180 (A54 v2.11: a 4x2 learned 45x90 dp cells, so 2 rows counted as 3).
+		android.os.Bundle o = mgr.getAppWidgetOptions(id);
+		if (o == null || o.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH) <= 0 || o.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT) <= 0) return;
 		p.edit().putBoolean("w" + id + "_cell", true).apply();
 		int cols = 2, rows = 2;
 		try {
@@ -348,7 +361,9 @@ public class Widget extends AppWidgetProvider {
 		w = Math.max(1f, w);
 		boolean wide = w >= RW[2] * MIN_ZOOM;
 		int tall = wide ? (days ? 4 : 2) : 0, low = wide ? 1 : 3;
-		if (wide && zoom(5, w, h) >= MIN_ZOOM) return 5;
+		// The 4x3 only when nearly as tall as it is drawn (a 2-row frame on the A54 is 233 dp:
+		// 83 %, which showed the 4x3 instead of the 4x2; 3 rows on a phone are 350 dp or more).
+		if (wide && zoom(5, w, h) >= MIN_ZOOM && h >= RH[5] * TALL) return 5;
 		if (zoom(tall, w, h) >= MIN_ZOOM) return tall;
 		if (zoom(low, w, h) >= MIN_ZOOM) return low;
 		// Smaller still: the one shown largest.

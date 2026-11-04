@@ -1,3 +1,10 @@
+v2.20 · 2026. november 4.
+- 4x2-es widget One UI 9-es Samsungon (A54): 2 sornál már nem 4x3-ként jelenik meg; 4x3 csak 3 sortól.
+- ☰ › Widgetek: ha több van, a widget a beállítások ablakának tetején választható, az alatta lévő beállítások a kiválasztotthoz tartoznak.
+- Táblagép: a ☰ menü 10 %-kal kisebb.
+- Napló: a gombok felirata egy sorban marad.
+- Internet nélkül az alkalmazás megvárja a hálózat visszatérését, ahelyett hogy 1–2 percenként újrapróbálná.
+
 v2.12 · 2026. november 4.
 - A Súgóban, Földrengésekben, Névjegyben és Újdonságokban: a jobb oldali gombok melletti Aa gomb a képernyő bal oldalán, az oldal fölött mutatja a szövegméret-sávot, mint a fényerősávot. A jobb felső keskeny sáv megszűnt.
 

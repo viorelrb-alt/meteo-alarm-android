@@ -1,3 +1,10 @@
+v2.20 · 4 ta' Novembru 2026
+- Widget 4x2 fuq Samsung b'One UI 9 (A54): b'2 ringieli ma jidhirx aktar bħala 4x3; 4x3 biss minn 3 ringieli.
+- ☰ › Widgets: meta jkun hemm aktar minn wieħed, il-widget jintgħażel fuq nett tat-tieqa tas-settings u s-settings ta' taħt huma ta' dak magħżul.
+- Tablet: il-menu ☰ huwa 10 % iżgħar.
+- Reġistru: it-test tal-buttuni jibqa' fuq linja waħda.
+- Mingħajr internet l-app tistenna li jerġa' jiġi n-netwerk minflok tipprova kull 1–2 minuti.
+
 v2.12 · 4 ta' Novembru 2026
 - F'Għajnuna, Terremoti, Dwar u X'hemm ġdid: il-buttuna Aa ħdejn il-buttuni fuq il-lemin turi l-virga tad-daqs tat-test fuq ix-xellug tal-iskrin, fuq il-paġna, bħall-virga tad-dawl. Il-virga dejqa fuq il-lemin ta' fuq tneħħiet.
 

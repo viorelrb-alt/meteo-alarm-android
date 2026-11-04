@@ -95,14 +95,42 @@ public final class LogActivity extends Activity {
 		}), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		col.addView(row);
 		setContentView(col);
+		// Each label on one line in its button (Viorel 2026-11-04, A52s: "Salvează" broke in two):
+		// smaller letters for a long word or large phone fonts.
+		final LinearLayout r = row;
+		r.post(new Runnable() {
+			public void run() {
+				float min = Float.MAX_VALUE;
+				for (int k = 0; k < r.getChildCount(); k++) min = Math.min(min, fit((Button) r.getChildAt(k)));
+				// The same size on all three.
+				for (int k = 0; k < r.getChildCount(); k++) ((Button) r.getChildAt(k)).setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, min);
+			}
+		});
 	}
 
 	private Button button(String t, View.OnClickListener l) {
 		Button b = new Button(this);
 		b.setText(t);
 		b.setAllCaps(false);
+		b.setSingleLine(true);
+		b.setMaxLines(1);
+		int p = (int) (6 * getResources().getDisplayMetrics().density);
+		b.setPadding(p, b.getPaddingTop(), p, b.getPaddingBottom());
 		b.setOnClickListener(l);
 		return b;
+	}
+
+	/** The largest text size (px) at which B's label fits its width on one line. */
+	private static float fit(Button b) {
+		float room = b.getWidth() - b.getCompoundPaddingLeft() - b.getCompoundPaddingRight();
+		float size = b.getTextSize();
+		android.graphics.Paint pt = new android.graphics.Paint(b.getPaint());
+		String t = b.getText().toString();
+		while (size > 8 && room > 0 && pt.measureText(t) > room) {
+			size *= 0.94f;
+			pt.setTextSize(size);
+		}
+		return size;
 	}
 
 	/** The phone's share menu: WhatsApp, Google Drive, e-mail… */

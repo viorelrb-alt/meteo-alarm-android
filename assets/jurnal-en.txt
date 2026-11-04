@@ -1,3 +1,10 @@
+v2.20 · 4 November 2026
+- Widget 4x2 on Samsung with One UI 9 (A54): no longer shows as 4x3 at 2 rows; 4x3 only from 3 rows.
+- ☰ › Widgets: with several, the widget is chosen on top of the settings window, and the settings below are those of the chosen one.
+- Tablet: the ☰ menu is 10 % smaller.
+- Log: the buttons' text stays on one line.
+- Without internet the app waits for the network to come back instead of trying again every 1–2 minutes.
+
 v2.12 · 4 November 2026
 - Text size in Help, Earthquakes, About and What's new: the Aa button next to the buttons on the right shows the bar on the left of the screen, over the page, just like the brightness bar (same size and place). The narrow bar at the top right is gone.
 

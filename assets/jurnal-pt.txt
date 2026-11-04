@@ -1,3 +1,10 @@
+v2.20 · 4 de novembro de 2026
+- Widget 4x2 em Samsung com One UI 9 (A54): já não aparece como 4x3 com 2 filas; 4x3 só a partir de 3 filas.
+- ☰ › Widgets: quando há vários, o widget escolhe-se no topo da janela de definições e as definições por baixo são as do escolhido.
+- Tablet: o menu ☰ é 10 % mais pequeno.
+- Registo: o texto dos botões fica numa só linha.
+- Sem internet a aplicação espera que a rede volte, em vez de tentar de novo a cada 1–2 minutos.
+
 v2.12 · 4 de novembro de 2026
 - Em Ajuda, Sismos, Sobre e Novidades: o botão Aa ao lado dos botões à direita mostra a barra do tamanho do texto à esquerda do ecrã, por cima da página, como a barra de brilho. A barra estreita no canto superior direito foi removida.
 

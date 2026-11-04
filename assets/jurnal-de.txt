@@ -1,3 +1,10 @@
+v2.20 · 4. November 2026
+- Widget 4x2 auf Samsung mit One UI 9 (A54): erscheint bei 2 Reihen nicht mehr als 4x3; 4x3 erst ab 3 Reihen.
+- ☰ › Widgets: Bei mehreren wird das Widget oben im Einstellungsfenster gewählt, die Einstellungen darunter gehören zum gewählten.
+- Tablet: Das Menü ☰ ist 10 % kleiner.
+- Protokoll: Die Beschriftung der Knöpfe bleibt auf einer Zeile.
+- Ohne Internet wartet die App, bis das Netz zurück ist, statt es alle 1–2 Minuten neu zu versuchen.
+
 v2.12 · 4. November 2026
 - In Hilfe, Erdbeben, Info und Neuigkeiten: Der Knopf Aa neben den Knöpfen rechts zeigt die Leiste für die Textgröße links auf dem Bildschirm, über der Seite, wie die Helligkeitsleiste. Die schmale Leiste oben rechts ist weg.
 

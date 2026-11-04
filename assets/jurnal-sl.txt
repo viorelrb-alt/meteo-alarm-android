@@ -1,3 +1,10 @@
+v2.20 · 4. november 2026
+- Pripomoček 4x2 na Samsungu z One UI 9 (A54): pri 2 vrsticah se ne prikaže več kot 4x3; 4x3 šele od 3 vrstic.
+- ☰ › Pripomočki: kadar jih je več, se pripomoček izbere na vrhu okna z nastavitvami, nastavitve spodaj pa pripadajo izbranemu.
+- Tablica: meni ☰ je 10 % manjši.
+- Dnevnik: besedilo gumbov ostane v eni vrstici.
+- Brez interneta aplikacija počaka, da se omrežje vrne, namesto da bi poskušala vsako 1–2 minuti.
+
 v2.12 · 4. november 2026
 - V Pomoči, Potresih, O aplikaciji in Kaj je novega: gumb Aa ob gumbih na desni prikaže vrstico velikosti besedila na levi strani zaslona, nad stranjo, kot vrstico svetlosti. Ozka vrstica zgoraj desno je odstranjena.
 

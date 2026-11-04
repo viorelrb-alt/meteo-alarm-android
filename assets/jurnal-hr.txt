@@ -1,3 +1,10 @@
+v2.20 · 4. studenoga 2026
+- Widget 4x2 na Samsungu s One UI 9 (A54): s 2 reda više se ne prikazuje kao 4x3; 4x3 tek od 3 reda.
+- ☰ › Widgeti: kad ih je više, widget se bira na vrhu prozora postavki, a postavke ispod pripadaju odabranom.
+- Tablet: izbornik ☰ je 10 % manji.
+- Zapisnik: tekst gumba ostaje u jednom redu.
+- Bez interneta aplikacija čeka da se mreža vrati umjesto da pokušava svake 1–2 minute.
+
 v2.12 · 4. studenoga 2026
 - U Pomoći, Potresima, O aplikaciji i Što je novo: gumb Aa pokraj gumba s desne strane prikazuje traku veličine teksta na lijevoj strani zaslona, iznad stranice, kao traku svjetline. Uska traka gore desno je uklonjena.
 

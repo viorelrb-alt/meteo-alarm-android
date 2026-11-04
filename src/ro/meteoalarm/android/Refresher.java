@@ -44,7 +44,7 @@ public final class Refresher extends BroadcastReceiver {
 		new Thread(new Runnable() {
 			public void run() {
 				try {
-					refresh(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
+					refresh(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith(".NET") ? "rețea revenită" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
 				} catch (Exception e) {
 					Log.e(app, "FUNDAL", "reîmprospătare", e);
 				} finally {
@@ -105,6 +105,12 @@ public final class Refresher extends BroadcastReceiver {
 			return;
 		}
 		SharedPreferences p = Fetcher.prefs(ctx);
+		// No internet: no tries until the network is back (NetJob), the next look as usual.
+		if (!NetJob.online(ctx)) {
+			if (NetJob.waitForNet(ctx)) Log.i(ctx, "FUNDAL", why + " · " + state + " · fără internet: aștept să revină rețeaua");
+			Widget.show(ctx);
+			return;
+		}
 		Cities.City c = Cities.City.fromKey(p.getString("city", ""));
 		if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
 		if (c != null) {
@@ -115,6 +121,10 @@ public final class Refresher extends BroadcastReceiver {
 				Log.i(ctx, "FUNDAL", why + " · " + state + " · descarc pentru " + c.name);
 				Fetcher.Result r = Fetcher.download(ctx, c);
 				Fetcher.save(ctx, c, r);
+				// Failed: the next try after the usual time, not in a minute (a lost network is
+				// caught by NetJob).
+				p.edit().putLong("bgTried", r.error != null ? System.currentTimeMillis() : 0).apply();
+				if (r.error != null && Fetcher.reason(r.error, false).startsWith("fără internet")) NetJob.waitForNet(ctx);
 			}
 		}
 		// The widgets' own towns.
@@ -153,7 +163,8 @@ public final class Refresher extends BroadcastReceiver {
 			else {
 				// When the weather was fetched counts: the next one when it is due.
 				SharedPreferences p = Fetcher.prefs(ctx);
-				long due = Math.max(at + 60000L, p.getLong("fetched", 0) + every);
+				long due = Math.max(at + 60000L, Math.max(p.getLong("fetched", 0), p.getLong("bgTried", 0)) + every);
+				if (!NetJob.online(ctx)) due = at + every;
 				am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, Math.min(due, at + every), pi);
 			}
 		} catch (Exception e) {

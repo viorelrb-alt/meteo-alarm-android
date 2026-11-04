@@ -1,3 +1,10 @@
+v2.20 · 4. listopadu 2026
+- Widget 4x2 na Samsungu s One UI 9 (A54): při 2 řádcích už se neukazuje jako 4x3; 4x3 je až od 3 řádků.
+- ☰ › Widgety: když jich je víc, výběr widgetu je nahoře v okně nastavení a nastavení pod ním patří vybranému.
+- Tablet: menu ☰ je o 10 % menší.
+- Protokol: popisky tlačítek zůstávají na jednom řádku.
+- Bez internetu aplikace čeká, až se síť vrátí, místo pokusů každé 1–2 minuty.
+
 v2.12 · 4. listopadu 2026
 - V Nápovědě, Zemětřeseních, O aplikaci a Co je nového: tlačítko Aa vedle tlačítek vpravo zobrazí lištu velikosti textu na levé straně obrazovky, nad stránkou, jako lištu jasu. Úzká lišta vpravo nahoře je pryč.
 
