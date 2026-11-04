@@ -12,8 +12,9 @@ import ro.meteoalarm.android.core.Tr;
 /**
  * The language on the phone (Viorel 2026-11-04): at the first start the phone's own language when
  * the app has it (else English); later the one chosen in ☰ › Language. The list offers only
- * English, Romanian and the official languages of the country the phone is in (from the SIM or
- * the mobile network, else the town shown, else the phone's settings), plus the one in use.
+ * English, Romanian, the phone's own language and the official languages of the country the phone
+ * is in (from the SIM or the mobile network, else the town shown, else the phone's settings), plus
+ * the one in use.
  */
 final class Lang {
 	private Lang() {
@@ -29,12 +30,8 @@ final class Lang {
 			p.edit().putString("lang", code).apply();
 		}
 		if (code.length() == 0) {
-			String sys = Locale.getDefault().getLanguage();
-			if ("iw".equals(sys)) sys = "he";
-			if ("in".equals(sys)) sys = "id";
+			String sys = system();
 			code = Tr.known(sys) ? sys : "en";
-			// Moldovan phones may report "mo".
-			if ("mo".equals(sys)) code = "ro";
 			p.edit().putString("lang", code).apply();
 			Log.i(ctx, "LIMBA", "prima pornire: limba telefonului " + sys + " -> " + Tr.name(code));
 		}
@@ -54,6 +51,15 @@ final class Lang {
 	}
 
 	private static String loaded;
+
+	/** The phone's language code ("mo", used by some Moldovan phones, is Romanian). */
+	static String system() {
+		String sys = Locale.getDefault().getLanguage();
+		if ("iw".equals(sys)) return "he";
+		if ("in".equals(sys)) return "id";
+		if ("mo".equals(sys)) return "ro";
+		return sys;
+	}
 
 	/** "ro" is the only language that is not shown in English for the long texts. */
 	static boolean en(Context ctx) {
@@ -84,6 +90,9 @@ final class Lang {
 		List<String> l = new ArrayList<String>();
 		l.add("en");
 		l.add("ro");
+		// The phone's own language, when the app has it (Viorel 2026-11-04).
+		String sys = system();
+		if (Tr.known(sys) && !l.contains(sys)) l.add(sys);
 		for (String c : Tr.ofCountry(country(ctx))) if (!l.contains(c)) l.add(c);
 		String cur = apply(ctx);
 		if (!l.contains(cur)) l.add(cur);

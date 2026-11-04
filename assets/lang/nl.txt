@@ -1,0 +1,365 @@
+# Meteo Alarm Android · nl · English<TAB>translation
+Diary (log)	Logboek
+Everything the app did in the last 5 days; older errors kept 10 days.	Alles wat de app de afgelopen 5 dagen deed; oudere fouten blijven 10 dagen.
+Share	Delen
+Save	Opslaan
+Close	Sluiten
+log 	logboek 
+Send the log	Logboek versturen
+Log saved	Logboek opgeslagen
+Could not save	Opslaan mislukt
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Dit is een testversie van Meteo Alarm Android, gemaakt van Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Geen gegevens verzameld: geen account, geen advertenties, geen statistieken. Voor het weer worden alleen de coördinaten van de plaats naar Open-Meteo (weer, pollen) gestuurd en, als Open-Meteo overbelast is, naar MET Norway (weer); de waarschuwingen komen van MeteoAlarm, de aardbevingen van EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Locatie: wordt gebruikt om het weer te tonen waar je bent, bij het starten en eens per uur. Voor de naam van de plaats gaan de coördinaten naar OpenStreetMap (of de geocoder van de telefoon), die ook de grens van de plaats geeft. Gevonden plaatsen, met waar je was, blijven alleen op de telefoon. De app vraagt erom met een uitleg bij de eerste start; zeg je nee, dan kies je de plaats uit de lijst en vraagt ze pas na een update opnieuw.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Meldingen (alleen als je akkoord gaat): beginnende regen of sneeuw, nieuwe weerwaarschuwingen voor je plaats, aardbevingen van magnitude 3 of meer in je land. Elke gebeurtenis één keer. Aan of uit via ☰ › Meldingen.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Taal: bij de eerste start die van de telefoon (als de app die heeft, anders Engels), daarna die gekozen in ☰ › Taal.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Sensoren: de app leest de batterijstatus (nachtklok tijdens het opladen), de lichtsensor van de telefoon met ☰ › Thema › Automatisch (telefoonsensor), en het kompas, dat de windpijl met de telefoon meedraait. Wat de telefoon niet heeft, wordt uitgeschakeld. Niets verlaat de telefoon.
+Updates: 	Updates: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Daarna zoekt de app eens per week op GitHub naar een nieuwe versie en vraagt ze voor het downloaden.
+I understand	Begrepen
+This phone has no light sensor.	Deze telefoon heeft geen lichtsensor.
+Automatic theme (phone sensor): on	Automatisch thema (telefoonsensor): aan
+Automatic theme (phone sensor): off	Automatisch thema (telefoonsensor): uit
+Dark theme	Donker thema
+Light theme	Licht thema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm kan je plaats zelf vinden, zodat de verwachting, de weerwaarschuwingen en de aardbevingen voor de precieze plek gelden waar je bent, ook op reis. De positie blijft op de telefoon: ze dient alleen om de plaats te kiezen.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	De telefoon toont zijn vraag niet meer, dus sta Locatie voor Meteo Alarm toe in de instellingen van de telefoon (Machtigingen › Locatie).
+If you say no, choose the town from the list; the app asks again only after an update.	Zeg je nee, kies dan de plaats uit de lijst; de app vraagt pas na een update opnieuw.
+Location	Locatie
+Open settings	Instellingen openen
+Allow	Toestaan
+Not now	Niet nu
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm kan je iets laten weten, ook als ze gesloten is: als regen of sneeuw begint of binnen het uur begint, als er een weerwaarschuwing voor je plaats wordt uitgegeven en als er in je land een aardbeving van magnitude 3 of meer is. Elke gebeurtenis maar één keer, verder niets. Zo weet je het op tijd, zonder de app te openen.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	De telefoon laat de app geen meldingen sturen; zet de meldingen van Meteo Alarm aan in de instellingen van de telefoon.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Je kunt ze altijd uitzetten via ☰ › Meldingen. Zeg je nee, dan vraagt de app pas na een update opnieuw.
+Notifications	Meldingen
+Notifications ON	Meldingen AAN
+Notifications OFF	Meldingen UIT
+Without location access, choose the town from the list.	Zonder toegang tot de locatie kies je de plaats uit de lijst.
+Brightness: slide on the bar	Helderheid: schuif over de balk
+Automatic location OFF	Automatische locatie UIT
+Automatic location ON	Automatische locatie AAN
+Looking for the exact position…	Precieze positie zoeken…
+Added to the list: 	Toegevoegd aan de lijst: 
+Location is off on the phone.	Locatie staat uit op de telefoon.
+The position could not be found.	De positie is niet gevonden.
+The town could not be found (internet?).	De plaats is niet gevonden (internet?).
+The weather did not come: 	Het weer kwam niet: 
+Already updating…	Wordt al bijgewerkt…
+The weather has just been updated	Het weer is net bijgewerkt
+Just tried; try again in a few seconds	Net geprobeerd; probeer het over een paar seconden opnieuw
+Updating the weather…	Weer bijwerken…
+Refresh	Vernieuwen
+Town	Plaats
+Temperature °C/°F	Temperatuur °C/°F
+Clock 12/24	Klok 12/24
+Theme	Thema
+Screen on OFF	Scherm aan UIT
+Screen on ON	Scherm aan AAN
+Language	Taal
+Night clock OFF	Nachtklok UIT
+Night clock ON	Nachtklok AAN
+Location Off	Locatie Uit
+Location On	Locatie Aan
+Earthquakes	Aardbevingen
+Widgets	Widgets
+Log	Logboek
+Check for updates	Zoeken naar updates
+Help	Help
+About	Over
+24-hour clock	24-uursklok
+12-hour clock	12-uursklok
+The screen stays on while the app is open	Het scherm blijft aan zolang de app open is
+The screen goes off after the phone's timeout	Het scherm gaat uit na de tijd van de telefoon
+While charging at night, the screen shows a big dim clock	Tijdens het opladen 's nachts toont het scherm een grote, gedimde klok
+Night clock off	Nachtklok uit
+Light	Licht
+Dark	Donker
+Automatic	Automatisch
+Last 7 days · 	Laatste 7 dagen · 
+Downloading from EMSC…	Downloaden van EMSC…
+The list could not be downloaded. Is the internet on?	De lijst kon niet worden gedownload. Staat internet aan?
+No earthquake of magnitude 3 or more.	Geen aardbeving van magnitude 3 of meer.
+Last 48 hours · EU, Ukraine, Moldova	Laatste 48 uur · EU, Oekraïne, Moldavië
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Bron: EMSC (Euro-Mediterraan Seismologisch Centrum, seismicportal.eu), magnitude 3 en hoger. "Gevoeld" is een schatting op de EMS-98-schaal op basis van de magnitude en de afstand tot de haard.
+depth 	diepte 
+from 	van 
+Probably felt in 	Waarschijnlijk gevoeld in 
+Probably not felt in 	Waarschijnlijk niet gevoeld in 
+Updates	Updates
+How to update	Zo werk je bij
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 De toestemming wordt alleen daar gevraagd: één keer als je akkoord gaat (vanaf dan kijkt de app ook zelf eens per week), elke keer zolang je nee zegt. Zonder toestemming zoekt de app nooit naar updates en downloadt ze niets.
+Buttons on the screen	Knoppen op het scherm
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Opent de plaatsen: je laatste 3 (favorieten) en de provincies. Tik op een provincie en dan op de plaats.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Vindt waar je bent en toont het weer van die plaats; zoekt elk uur opnieuw. Gevonden plaatsen blijven met je positie op de telefoon, en de getoonde plaats verandert pas als je buiten de grens bent. Werkt ook in andere landen, met MeteoAlarm-waarschuwingen in zo'n 38 Europese landen. Een tik zet de automatische locatie aan (knop gevuld, zoekt nu) of uit (knop leeg).
+Brightness	Helderheid
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Toont links de helderheidsbalk: schuif omhoog of omlaag. Hij verdwijnt vanzelf.
+Light / dark theme	Licht / donker thema
+Over the brightness bar: switches between the light and the dark theme.	Boven de helderheidsbalk: wisselt tussen licht en donker thema.
+Automatic theme (phone sensor)	Automatisch thema (telefoonsensor)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Licht thema bij licht, donker thema in het donker. Gevuld zolang het aan staat.
+Phone without a sensor	Telefoon zonder een sensor
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Bij elke start controleert de app de sensoren van de telefoon (kompas, licht, versnelling, nabijheid, luchtdruk, gps) en schrijft in het Logboek welke ontbreken. Zonder lichtsensor is het thema Automatisch (telefoonsensor) grijs en doet het niets; zonder kompas is het vak met de windpijl verborgen.
+Location consent	Toestemming voor locatie
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Bij de eerste start legt de app uit waarom ze de locatie wil (het weer, de waarschuwingen en de aardbevingen voor de precieze plek waar je bent), daarna vraagt de telefoon. De eerste gevonden plaats wordt de getoonde plaats en komt bij de favorieten. Zeg je nee, dan kies je de plaats uit de lijst en vraagt de app pas na een update opnieuw; als de telefoon niet meer vraagt, opent de knop zijn instellingen.
+Gestures	Gebaren
+Tap on the town's name	Tik op de plaatsnaam
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Zoekt één keer met gps, voor een betere verwachting waar je bent; de automatische locatie blijft zoals ze is.
+Pull down	Omlaag trekken
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Trek het scherm omlaag en laat los: het weer wordt vernieuwd. Opnieuw trekken tijdens het downloaden, of binnen 10 seconden na de laatste download, start er geen nieuwe; een melding zegt dat.
+Left edge	Linkerrand
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Schuif omhoog of omlaag bij de linkerrand (iets naar binnen): de helderheidsbalk verschijnt en schuiven erop stelt de helderheid in.
+Wind arrow	Windpijl
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Naast de wind: de pijl toont waarheen de wind waait, meegedraaid met de telefoon (kompas); de oranje markering is het noorden.
+Night clock	Nachtklok
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Als de telefoon 's nachts oplaadt (zonsondergang tot zonsopkomst) en niemand hem een minuut aanraakt: een grote, gedimde klok. Een tik gaat een minuut terug.
+Warnings and earthquake	Waarschuwingen en aardbeving
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Onder de lijn een rij vakken: eerst de aardbeving (als er een was), daarna één vak per waarschuwingscode (rood, oranje, geel). Er passen er twee op het scherm; met meer schuift de rij elke 2 seconden vanzelf door en begint weer bij de eerste. Je kunt hem ook met de vinger schuiven. Tik op een vak: de rij stopt 20 seconden en een ballon toont de details in grotere letters (bij een code: wat die betekent, elke waarschuwing met periode en advies; bij de aardbeving: magnitude, tijd, regio, diepte, epicentrum en afstand, hoe hij waarschijnlijk in je plaats gevoeld werd, en alle aardbevingen van de laatste 24 uur).
+Earthquake box	Aardbevingsvak
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Van EMSC (Euro-Mediterraan Seismologisch Centrum): aardbevingen van magnitude 3 of meer van de laatste 24 uur in het land van je plaats (gevonden door de locatie). Het vak toont de sterkste: magnitude en tijd, en hoe hij in je plaats gevoeld werd, als schatting op de EMS-98-schaal (uit de magnitude en de afstand tot de haard; EMSC publiceert geen meldingen per plaats). Het verdwijnt na 24 uur.
+Left / right on the boxes	Links / rechts op de vakken
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	De waarschuwingsrij, de uurvakken en de vijf dagen (morgen en de volgende 4 dagen, twee tegelijk) volgen de vinger. De grafiek Neerslag · komende 12 uur staat eerst in de uurrij, alleen als er regen of sneeuw verwacht wordt.
+The row of boxes at the bottom	De rij vakken onderaan
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Schuif hem opzij (liggend: omhoog en omlaag, twee per twee, zonder het windvak): Zon (de Maan na zonsondergang, met opkomst, ondergang en fase), UV-index, Pollen, Luchtvochtigheid (als het regent), Luchtkwaliteit, Luchtdruk, Wind, Zicht en Kompas.
+Home-screen widgets	Widgets op het startscherm
+Meteo Alarm widgets	Meteo Alarm-widgets
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Houd een lege plek op het startscherm ingedrukt, kies Widgets en dan Meteo Alarm: 2x2, 4x1, 4x2 en "elk formaat", elk met een voorbeeld; hij komt meteen op het scherm, zonder instellingenvenster. Er zijn drie indelingen: 2x2 (vierkant: icoon, temperatuur, plaats, volgende zonsondergang of -opkomst), 4x1 (een lage strook, ook met de lucht) en 4x2 (breed, ook met max / min en de volgende 5 uur), plus een kleine 2x1 (icoon en temperatuur) voor te kleine kaders. Houd hem ingedrukt en sleep aan de randen: breed (ongeveer 4 kolommen) en één rij = 4x1, breed en hoger = 4x2 (hij blijft 4x2, hoe hoog ook), smal = 2x2, smal en één rij = 2x1. De rijen en kolommen zijn die van je startscherm (op een tablet is een rij veel hoger dan op een telefoon), dus de 4x1-strook werkt daar ook. Hij vult de breedte van het kader; als het kader hoger is dan nodig, houdt de widget zijn formaat, gecentreerd, met de achtergrond alleen erachter (de rest blijft doorzichtig). Een indeling wordt nooit zo ver verkleind dat de teksten te klein worden. Bij actieve waarschuwingen toont een regel "WAARSCHUWING!" drie pillen: geel = grijs grijs geel, oranje = grijs oranje oranje, rood = alles rood; twee codes = de ergste, grijs, de andere; drie codes = rood oranje geel. Een tik opent de app.
+Widget settings	Widgetinstellingen
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Houd de widget ingedrukt › Instellingen (Android 12 en nieuwer), of ☰ › Widgets. Elke widget heeft eigen instellingen: een voorbeeld; de plaats (zoals in de app, of een andere met Wijzigen); Achtergrond aan / uit en hoe doorzichtig; Kleuren: volgens het weer (blauwe lucht, nachtblauw, grijze wolken, regen, ijzige sneeuw, onweer, mist), zoals de instellingen van de telefoon, of donker; Tekstkleur: automatisch (zwart op lichte achtergrond), wit of zwart. Annuleren of Opslaan.
+Refreshing by itself	Vanzelf vernieuwen
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Het weer, de waarschuwingen en de aardbevingen komen vanzelf, ook met de app gesloten (voor de widgets): elke 15 minuten met het scherm aan, elke 30 minuten met het scherm uit, helemaal niet tussen zonsondergang en zonsopkomst met het scherm uit (er wordt gewacht tot het scherm aangaat), en elk uur als de batterij onder 25% is en niet oplaadt. Als een download mislukt, zeggen een melding en de regel "! geen gegevens sinds …" onder de klok waarom (geen internet, de server antwoordde niet, fout in beveiligde verbinding, serverfout…). Als Open-Meteo bezet is (HTTP 503 "overloaded") of niet antwoordt, komt de verwachting van MET Norway (api.met.no, het Noorse weerinstituut) en staat onder de klok "· MET Norway"; na een "bezet" gaat de app 20 minuten direct naar MET Norway. Tot er nieuwe gegevens komen, blijft het laatst opgeslagen weer op het scherm.
+The ☰ menu	Het menu ☰
+Downloads the weather, the warnings and the earthquakes now.	Downloadt nu het weer, de waarschuwingen en de aardbevingen.
+The same as the town button.	Hetzelfde als de plaatsknop.
+Switches between Celsius and Fahrenheit.	Wisselt tussen Celsius en Fahrenheit.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Wisselt de klok tussen 24 uur en 12 uur (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Licht, Donker of Automatisch (telefoonsensor).
+Screen on ON / OFF	Scherm aan AAN / UIT
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	AAN: het scherm blijft aan zolang de app open is. UIT: het gaat uit na de tijd van de telefoon.
+The list has English, Romanian and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	De lijst bevat Engels, Roemeens en de officiële talen van het land waar de telefoon is (van de simkaart of het mobiele netwerk; zonder, van de getoonde plaats). Bij de eerste start neemt de app de taal van de telefoon, als ze die heeft. De app spreekt alle officiële talen van de EU en Oekraïens.
+Location On / Off	Locatie Aan / Uit
+Turns automatic location on or off (the same as the location button).	Zet de automatische locatie aan of uit (hetzelfde als de locatieknop).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Een pagina zoals deze, met een sluitknop bovenaan: de aardbevingen van magnitude 3 of meer van de laatste 7 dagen in je land, daarna die van de laatste 48 uur in de Europese Unie, Oekraïne en Moldavië. Elke regel: de tijd, de plaats, de magnitude, de diepte en de afstand tot je plaats. Van EMSC; hij scrolt.
+Notifications ON / OFF	Meldingen AAN / UIT
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Meldingen alleen voor: beginnende regen of sneeuw (of begin binnen het uur; opnieuw pas na 3 droge uren), een nieuwe weerwaarschuwing voor je plaats en een aardbeving van magnitude 3 of meer in je land. Elke gebeurtenis maar één keer, ook met de app gesloten. De app vraagt erom bij de eerste start; zeg je nee, dan vraagt ze pas na een update opnieuw, nooit bij elke start. Als de telefoon zijn vraag niet meer toont (na twee weigeringen), opent de knop de instellingen van de telefoon, waar je ze toestaat.
+Night clock ON / OFF	Nachtklok AAN / UIT
+Turns the night clock on or off.	Zet de nachtklok aan of uit.
+The settings of a widget on the home screen (with several, choose which first).	De instellingen van een widget op het startscherm (bij meerdere kies je eerst welke).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Alles wat de app deed, met de tijd: de sensoren, de tikken en gebaren, de locatie, de downloads (en waarom er een mislukte), het vernieuwen op de achtergrond en de widgets (het formaat dat de telefoon ze geeft, de getoonde indeling). Het bewaart 5 dagen, elke dag een nieuw bestand; de fouten van oudere dagen blijven nog 10 dagen in een deel Fouten. Bovenaan: de telefoon (model, Android, One UI) en de versie van de app. Lees het hier, Deel het (WhatsApp, Drive, e-mail…) of Sla het op op de telefoon.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Zoekt op GitHub naar een nieuwe versie. De eerste keer (en elke keer tot je akkoord gaat) legt ze uit dat de updates van GitHub komen, niet van Google Play, en vraagt ze je toestemming; met "Niet nu" zegt een melding dat de app niet wordt bijgewerkt. Er wordt niets geïnstalleerd tot je op Bijwerken tikt en bevestigt in het installatieprogramma van de telefoon.
+This page.	Deze pagina.
+About the app, the data it uses, and what's new in each version.	Over de app, de gegevens die ze gebruikt en wat er nieuw is in elke versie.
+What's new	Wat is er nieuw
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Het donkere thema gebruikt de kleuren van de Claude-app. Lettertype: Liberation Sans.
+Installed version: v	Geïnstalleerde versie: v
+Favourites	Favorieten
+Choose the county	Kies de provincie
+Other countries	Andere landen
+‹  Back	‹  Terug
+‹  Back to the counties	‹  Terug naar de provincies
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Er staat geen Meteo Alarm-widget op het startscherm. Houd een lege plek op het startscherm ingedrukt › Widgets › Meteo Alarm.
+Which widget?	Welke widget?
+Change	Wijzigen
+Background	Achtergrond
+Colours	Kleuren
+Text colour	Tekstkleur
+Cancel	Annuleren
+  (as in the app)	  (zoals in de app)
+Transparency: 	Transparantie: 
+Match the phone's settings	Zoals de instellingen van de telefoon
+By the weather	Volgens het weer
+White	Wit
+Black	Zwart
+As in the app	Zoals in de app
+Choose the county / country…	Kies de provincie / het land…
+County / country	Provincie / land
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Over de waarschuwing van Play Protect: Google kan zeggen dat de app "schadelijk kan zijn". Dat doet het omdat de app niet uit Google Play komt, de ontwikkelaar niet bij Google geregistreerd is en de app haar eigen updates kan installeren (van github.com/viorelrb-alt/meteo-alarm-android). De app doet verder niets. Als het venster van Play Protect verschijnt, tik op "Meer details" (als het er staat) en dan op "Installeren zonder scannen" (of "Toch installeren").
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Voor updates: open ☰ › Zoeken naar updates en geef, als het gevraagd wordt, je toestemming.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm komt niet uit Google Play. Nieuwe versies worden op GitHub gepubliceerd (github.com/viorelrb-alt/meteo-alarm-android) en de app werkt zichzelf vandaar bij: ze kijkt ongeveer eens per week (of als je Zoeken naar updates kiest), toont wat er nieuw is, en pas als je op Bijwerken tikt downloadt ze de nieuwe versie en opent ze het installatieprogramma van de telefoon, waar je nog eens bevestigt.\n\nSta je toe dat de app zich zo bijwerkt? Zonder je toestemming zoekt de app niet naar updates en downloadt ze niets; je kunt later akkoord gaan via ☰ › Zoeken naar updates.
+Updates from GitHub	Updates van GitHub
+I agree	Akkoord
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Zonder je toestemming wordt de app niet bijgewerkt. Je kunt altijd van gedachten veranderen via ☰ › Zoeken naar updates.
+Checking GitHub for a new version…	Op GitHub naar een nieuwe versie zoeken…
+No version published yet.	Nog geen versie gepubliceerd.
+Could not check for updates. Is the internet on?	Updates konden niet worden gecontroleerd. Staat internet aan?
+You have the latest version, v	Je hebt de nieuwste versie, v
+Installed: v	Geïnstalleerd: v
+New: v	Nieuw: v
+New version: v	Nieuwe versie: v
+Update	Bijwerken
+Downloading…	Downloaden…
+Hide	Verbergen
+Downloading… 	Downloaden… 
+The download failed. Is the internet on?	Het downloaden is mislukt. Staat internet aan?
+The installer could not be opened.	Het installatieprogramma kon niet worden geopend.
+no internet (server not found)	geen internet (server niet gevonden)
+the server did not answer in time	de server antwoordde niet op tijd
+no connection	geen verbinding
+secure connection error: 	fout in beveiligde verbinding: 
+internet not allowed for the app	internet niet toegestaan voor de app
+server error 	serverfout 
+network error: 	netwerkfout: 
+data error: 	gegevensfout: 
+⌃  more  ⌃	⌃  meer  ⌃
+⌄  more  ⌄	⌄  meer  ⌄
+Open the app	App openen
+WARNING!	WAARSCHUWING!
+Sunrise at 	Zonsopkomst om 
+Sunset at 	Zonsondergang om 
+Weather, warnings and earthquakes	Weer, waarschuwingen en aardbevingen
+Rain or snow starting, new weather warnings, earthquakes in your country.	Beginnende regen of sneeuw, nieuwe weerwaarschuwingen, aardbevingen in je land.
+Snow	Sneeuw
+Rain	Regen
+It is snowing in 	Het sneeuwt in 
+It is raining in 	Het regent in 
+Snow is expected within the hour in 	Sneeuw verwacht binnen het uur in 
+Rain is expected within the hour in 	Regen verwacht binnen het uur in 
+Warning	Waarschuwing
+Earthquake M	Aardbeving M
+probably felt: 	waarschijnlijk gevoeld: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Meldingen staan aan: regen of sneeuw, weerwaarschuwingen en aardbevingen in je land.
+EARTHQUAKE	AARDBEVING
+Felt here: 	Hier gevoeld: 
+ (estimate)	 (schatting)
+Magnitude: 	Magnitude: 
+Time: 	Tijd: 
+Region: 	Regio: 
+Depth: 	Diepte: 
+Epicentre: 	Epicentrum: 
+ from 	 van 
+In 	In 
+Probably felt, intensity 	Waarschijnlijk gevoeld, intensiteit 
+Probably not felt here.	Hier waarschijnlijk niet gevoeld.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Geschat uit de magnitude en de afstand tot de haard (EMS-98-schaal); EMSC publiceert geen meldingen per plaats.
+All in the last 24 h	Alle van de laatste 24 u
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Bron: EMSC (seismicportal.eu), magnitude 3 en hoger, laatste 24 u.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Mogelijk gevaarlijk weer (gewoon voor het seizoen, maar plaatselijk heviger). Wees voorzichtig buiten.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Gevaarlijk weer van hoge intensiteit. Wees zeer voorzichtig, volg de verwachting en het advies van de autoriteiten.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Zeer gevaarlijk weer van zeer hoge intensiteit. Neem beschermende maatregelen en volg de instructies van de autoriteiten.
+In force now, until 	Nu van kracht, tot 
+From 	Van 
+ until 	 tot 
+Source: MeteoAlarm (the national weather service), for 	Bron: MeteoAlarm (de nationale weerdienst), voor 
+Stay away from trees, poles and scaffolding; secure loose objects.	Blijf uit de buurt van bomen, palen en steigers; zet losse voorwerpen vast.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Bliksem, stortbuien, hagel en windstoten zijn mogelijk; schuil binnen.
+Avoid flooded roads and river banks.	Vermijd ondergelopen wegen en rivieroevers.
+Slippery roads; drive only if you must, with winter equipment.	Gladde wegen; rijd alleen als het moet, met winteruitrusting.
+Low visibility; drive slowly with the fog lights on.	Slecht zicht; rijd langzaam met de mistlampen aan.
+Avoid the sun between 11 and 18, drink plenty of water.	Vermijd de zon tussen 11 en 18 uur, drink veel water.
+Dress warmly and limit time outdoors.	Kleed je warm aan en blijf weinig buiten.
+Do not light fires outdoors.	Maak geen vuur in de open lucht.
+H	U
+MOON	MAAN
+HUMIDITY	LUCHTVOCHTIGHEID
+AIR QUALITY	LUCHTKWALITEIT
+PRESSURE	LUCHTDRUK
+WIND	WIND
+VISIBILITY	ZICHT
+COMPASS	KOMPAS
+Moonrise	Maanopkomst
+Moonset	Maanondergang
+relative humidity	relatieve luchtvochtigheid
+Good	Goed
+Fair	Redelijk
+Moderate	Matig
+Poor	Slecht
+Very poor	Zeer slecht
+Extremely poor	Extreem slecht
+Poor (fog)	Slecht (mist)
+Very good	Zeer goed
+steady	stabiel
+↓ falling fast	↓ daalt snel
+↓ falling	↓ daalt
+↑ rising fast	↑ stijgt snel
+↑ rising	↑ stijgt
+no compass	geen kompas
+Tap to leave the night clock	Tik om de nachtklok te verlaten
+until	tot
+now	nu
+Rain from	Regen vanaf
+max	max
+Snow from	Sneeuw vanaf
+Raining	Het regent
+Snowing	Het sneeuwt
+updated	bijgewerkt
+no data since	geen gegevens sinds
+Loading weather…	Weer laden…
+updating…	bijwerken…
+Feels like	Gevoel
+Wind	Wind
+High	Max
+Low	Min
+Charging	Laadt op
+YELLOW	GEEL
+ORANGE	ORANJE
+RED	ROOD
+WARNING	WAARSCHUWING
+TOMORROW	MORGEN
+DAY AFTER	OVERMORGEN
+NEXT 12 HOURS	KOMENDE 12 UUR
+WEATHER · NEXT HOURS	WEER · KOMENDE UREN
+RAIN	REGEN
+SNOW	SNEEUW
+PRECIPITATION	NEERSLAG
+snow	sneeuw
+rain	regen
+no precipitation	geen neerslag
+SUN	ZON
+UV INDEX	UV-INDEX
+POLLEN	POLLEN
+Sunrise	Zonsopkomst
+Sunset	Zonsondergang
+Very high	Zeer hoog
+Extreme	Extreem
+no pollen	geen pollen
+no data	geen gegevens
+No precipitation	Geen neerslag
+SNOW ICE	SNEEUW, GLADHEID
+THUNDERSTORM	ONWEER
+FOG	MIST
+HIGH TEMPERATURE	HITTE
+LOW TEMPERATURE	KOU
+COASTALEVENT	KUSTVERSCHIJNSELEN
+FOREST FIRE	BOSBRAND
+AVALANCHES	LAWINES
+FLOODING	OVERSTROMINGEN
+RAIN FLOOD	REGEN, OVERSTROMINGEN
+alder	els
+birch	berk
+olive	olijf
+grasses	grassen
+mugwort	bijvoet
+ragweed	ambrosia
+Clear	Helder
+Mostly clear	Overwegend helder
+Partly cloudy	Half bewolkt
+Overcast	Bewolkt
+Fog	Mist
+Drizzle	Motregen
+Freezing drizzle	IJzel (motregen)
+Light rain	Lichte regen
+Heavy rain	Zware regen
+Freezing rain	IJzel
+Light snow	Lichte sneeuw
+Heavy snow	Zware sneeuw
+Snow grains	Korrelsneeuw
+Light showers	Lichte buien
+Showers	Buien
+Heavy showers	Zware buien
+Snow showers	Sneeuwbuien
+Thunderstorm	Onweer
+Thunderstorm, hail	Onweer, hagel
+Code 	Code 
+not felt	niet gevoeld
+scarcely felt, only by a few people at rest	nauwelijks gevoeld, alleen door enkele mensen in rust
+weak, felt by a few people indoors	zwak, door enkele mensen binnen gevoeld
+felt by many indoors; windows and doors rattle	door velen binnen gevoeld; ramen en deuren rammelen
+strong, felt by nearly everyone; objects move, some are frightened	sterk, door bijna iedereen gevoeld; voorwerpen bewegen, sommigen schrikken
+slight damage (cracks in plaster); many run outdoors	lichte schade (scheuren in het pleisterwerk); velen lopen naar buiten
+damage to buildings; hard to stand	schade aan gebouwen; moeilijk te blijven staan
+heavy damage	zware schade
+destruction	verwoesting
+great destruction	grote verwoesting
+very great destruction	zeer grote verwoesting
+complete destruction	totale verwoesting
+The phone's own language is in the list too.	Ook de taal van de telefoon staat in de lijst.

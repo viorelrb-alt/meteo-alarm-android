@@ -1,0 +1,365 @@
+# Meteo Alarm Android · cs · English<TAB>translation
+Diary (log)	Deník
+Everything the app did in the last 5 days; older errors kept 10 days.	Vše, co aplikace dělala za posledních 5 dní; starší chyby zůstávají 10 dní.
+Share	Sdílet
+Save	Uložit
+Close	Zavřít
+log 	deník 
+Send the log	Odeslat deník
+Log saved	Deník uložen
+Could not save	Uložení se nezdařilo
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Toto je testovací verze Meteo Alarm Android, vytvořená z Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Nesbíráme data: žádný účet, žádné reklamy, žádné statistiky. Pro počasí se odesílají jen souřadnice místa do Open-Meteo (počasí, pyl) a, když je Open-Meteo přetížené, do MET Norway (počasí); výstrahy přicházejí z MeteoAlarm, zemětřesení z EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Poloha: slouží k zobrazení počasí tam, kde jste, při spuštění a jednou za hodinu. Pro název obce jdou souřadnice do OpenStreetMap (nebo geokodéru telefonu), odkud jsou i její hranice. Nalezené obce s místem, kde jste byli, zůstávají jen v telefonu. Aplikace o ni žádá s vysvětlením při prvním spuštění; když odmítnete, vyberete obec ze seznamu a zeptá se znovu až po aktualizaci.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Oznámení (jen s vaším souhlasem): začínající déšť nebo sníh, nové meteorologické výstrahy pro vaši obec, zemětřesení o magnitudě 3 a více ve vaší zemi. Každá událost jednou. Zapnout nebo vypnout v ☰ › Oznámení.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Jazyk: při prvním spuštění jazyk telefonu (pokud ho aplikace má, jinak angličtina), potom ten zvolený v ☰ › Jazyk.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Senzory: aplikace čte stav baterie (noční hodiny při nabíjení), senzor světla telefonu s ☰ › Motiv › Automatický (senzor telefonu) a kompas, který otáčí šipku větru s telefonem. Co telefon nemá, se vypne. Nic neopouští telefon.
+Updates: 	Aktualizace: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Potom jednou týdně aplikace hledá novou verzi na GitHubu a před stažením se zeptá.
+I understand	Rozumím
+This phone has no light sensor.	Tento telefon nemá senzor světla.
+Automatic theme (phone sensor): on	Automatický motiv (senzor telefonu): zapnut
+Automatic theme (phone sensor): off	Automatický motiv (senzor telefonu): vypnut
+Dark theme	Tmavý motiv
+Light theme	Světlý motiv
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm může sama najít vaši obec, aby předpověď, meteorologické výstrahy a zemětřesení platily pro přesné místo, kde jste, i na cestách. Poloha zůstává v telefonu: slouží jen k výběru obce.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefon už svou otázku nezobrazuje, povolte proto Polohu pro Meteo Alarm v nastavení telefonu (Oprávnění › Poloha).
+If you say no, choose the town from the list; the app asks again only after an update.	Když odmítnete, vyberte obec ze seznamu; aplikace se zeptá znovu až po aktualizaci.
+Location	Poloha
+Open settings	Otevřít nastavení
+Allow	Povolit
+Not now	Teď ne
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm vám může dát vědět, i když je zavřená: když začne pršet nebo sněžit nebo začne do hodiny, když je vydána meteorologická výstraha pro vaši obec a když ve vaší zemi nastane zemětřesení o magnitudě 3 a více. Každá událost jen jednou, nic jiného. Tak se to dozvíte včas, bez otevírání aplikace.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefon aplikaci nedovoluje posílat oznámení; zapněte oznámení Meteo Alarm v nastavení telefonu.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Můžete je kdykoli vypnout v ☰ › Oznámení. Když odmítnete, aplikace se zeptá znovu až po aktualizaci.
+Notifications	Oznámení
+Notifications ON	Oznámení ZAPNUTA
+Notifications OFF	Oznámení VYPNUTA
+Without location access, choose the town from the list.	Bez přístupu k poloze vyberte obec ze seznamu.
+Brightness: slide on the bar	Jas: posuňte po liště
+Automatic location OFF	Automatická poloha VYPNUTA
+Automatic location ON	Automatická poloha ZAPNUTA
+Looking for the exact position…	Hledám přesnou polohu…
+Added to the list: 	Přidáno do seznamu: 
+Location is off on the phone.	Poloha je v telefonu vypnutá.
+The position could not be found.	Polohu se nepodařilo najít.
+The town could not be found (internet?).	Obec se nepodařilo najít (internet?).
+The weather did not come: 	Počasí nepřišlo: 
+Already updating…	Už se aktualizuje…
+The weather has just been updated	Počasí bylo právě aktualizováno
+Just tried; try again in a few seconds	Právě se zkoušelo; zkuste to za pár sekund
+Updating the weather…	Aktualizuji počasí…
+Refresh	Obnovit
+Town	Obec
+Temperature °C/°F	Teplota °C/°F
+Clock 12/24	Hodiny 12/24
+Theme	Motiv
+Screen on OFF	Displej zapnutý OFF
+Screen on ON	Displej zapnutý ON
+Language	Jazyk
+Night clock OFF	Noční hodiny OFF
+Night clock ON	Noční hodiny ON
+Location Off	Poloha Off
+Location On	Poloha On
+Earthquakes	Zemětřesení
+Widgets	Widgety
+Log	Deník
+Check for updates	Zkontrolovat aktualizace
+Help	Nápověda
+About	O aplikaci
+24-hour clock	24hodinové hodiny
+12-hour clock	12hodinové hodiny
+The screen stays on while the app is open	Displej zůstává zapnutý, dokud je aplikace otevřená
+The screen goes off after the phone's timeout	Displej zhasne po době nastavené v telefonu
+While charging at night, the screen shows a big dim clock	Při nabíjení v noci displej ukazuje velké tlumené hodiny
+Night clock off	Noční hodiny vypnuty
+Light	Světlý
+Dark	Tmavý
+Automatic	Automatický
+Last 7 days · 	Posledních 7 dní · 
+Downloading from EMSC…	Stahuji z EMSC…
+The list could not be downloaded. Is the internet on?	Seznam se nepodařilo stáhnout. Je internet zapnutý?
+No earthquake of magnitude 3 or more.	Žádné zemětřesení o magnitudě 3 a více.
+Last 48 hours · EU, Ukraine, Moldova	Posledních 48 hodin · EU, Ukrajina, Moldavsko
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Zdroj: EMSC (Evropsko-středomořské seismologické centrum, seismicportal.eu), magnituda 3 a více. „Pocítěno“ je odhad na stupnici EMS-98 z magnitudy a vzdálenosti od ohniska.
+depth 	hloubka 
+from 	od 
+Probably felt in 	Pravděpodobně pocítěno v: 
+Probably not felt in 	Pravděpodobně nepocítěno v: 
+Updates	Aktualizace
+How to update	Jak aktualizovat
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Souhlas se žádá jen tam: jednou, pokud souhlasíte (od té doby aplikace kontroluje i sama jednou týdně), pokaždé, dokud odmítáte. Bez něj aplikace nikdy nehledá aktualizace a nic nestahuje.
+Buttons on the screen	Tlačítka na obrazovce
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Otevře obce: vaše poslední 3 (oblíbené) a kraje. Klepněte na kraj, potom na obec.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Zjistí, kde jste, a ukáže počasí té obce; hledá znovu každou hodinu. Nalezené obce zůstávají v telefonu s místem, kde jste byli, a zobrazená obec se změní, až když opustíte její hranice. Funguje i v jiných zemích, s výstrahami MeteoAlarm v asi 38 evropských zemích. Klepnutí zapne automatickou polohu (tlačítko plné, hledá hned) nebo ji vypne (tlačítko prázdné).
+Brightness	Jas
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Ukáže vlevo lištu jasu: posuňte po ní nahoru nebo dolů. Zmizí sama.
+Light / dark theme	Světlý / tmavý motiv
+Over the brightness bar: switches between the light and the dark theme.	Nad lištou jasu: přepíná mezi světlým a tmavým motivem.
+Automatic theme (phone sensor)	Automatický motiv (senzor telefonu)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Světlý motiv, když je světlo, tmavý ve tmě. Plné, dokud je zapnutý.
+Phone without a sensor	Telefon bez některého senzoru
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Při každém spuštění aplikace zkontroluje senzory telefonu (kompas, světlo, akcelerometr, přiblížení, tlak, GPS) a zapíše do Deníku, které chybí. Bez senzoru světla je motiv Automatický (senzor telefonu) šedý a nic nedělá; bez kompasu je pole se šipkou větru skryté.
+Location consent	Souhlas s polohou
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Při prvním spuštění aplikace vysvětlí, proč chce polohu (počasí, výstrahy a zemětřesení pro přesné místo, kde jste), potom se zeptá telefon. První nalezená obec se stane zobrazenou a přidá se k oblíbeným. Když odmítnete, vyberete obec ze seznamu a aplikace se zeptá znovu až po aktualizaci; když se telefon už neptá, tlačítko otevře jeho nastavení.
+Gestures	Gesta
+Tap on the town's name	Klepnutí na název obce
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Jednou hledá přes GPS, pro lepší předpověď tam, kde jste; automatická poloha zůstává, jak je.
+Pull down	Stáhnout dolů
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Stáhněte obrazovku dolů a pusťte: počasí se obnoví. Další stažení během stahování nebo do 10 sekund od posledního nespustí další; řekne to upozornění.
+Left edge	Levý okraj
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Posuňte nahoru nebo dolů u levého okraje (kousek dovnitř): objeví se lišta jasu a posouvání po ní nastavuje jas.
+Wind arrow	Šipka větru
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Vedle větru: šipka ukazuje, kam vítr fouká, otočená s telefonem (kompas); oranžová značka je sever.
+Night clock	Noční hodiny
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Když se telefon v noci nabíjí (od západu do východu slunce) a minutu se ho nikdo nedotkne: velké tlumené hodiny. Klepnutí se na minutu vrátí.
+Warnings and earthquake	Výstrahy a zemětřesení
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Pod čarou řada polí: nejprve zemětřesení (pokud nějaké bylo), potom jedno pole na každý stupeň výstrahy (červený, oranžový, žlutý). Na obrazovku se vejdou dvě; při více se řada sama posouvá každé 2 sekundy a začíná znovu od prvního. Můžete ji posouvat i prstem. Klepněte na pole: řada se na 20 sekund zastaví a bublina ukáže podrobnosti většími písmeny (u stupně: co znamená, každá výstraha s obdobím a radou; u zemětřesení: magnituda, čas, oblast, hloubka, epicentrum a vzdálenost, jak bylo pravděpodobně pocítěno ve vaší obci, a všechna zemětřesení za posledních 24 hodin).
+Earthquake box	Pole Zemětřesení
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Z EMSC (Evropsko-středomořské seismologické centrum): zemětřesení o magnitudě 3 a více za posledních 24 hodin v zemi vaší obce (nalezené polohou). Pole ukazuje nejsilnější: magnitudu a čas a jak bylo pocítěno ve vaší obci, jako odhad na stupnici EMS-98 (z magnitudy a vzdálenosti od ohniska; EMSC nezveřejňuje hlášení pro každou obec). Zmizí po 24 hodinách.
+Left / right on the boxes	Vlevo / vpravo na polích
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Řada výstrah, pole hodin a pět dní (zítra a další 4 dny, po dvou) sledují prst. Graf Srážky · příštích 12 hodin je v řadě hodin první, jen když se čeká déšť nebo sníh.
+The row of boxes at the bottom	Řada polí dole
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Posuňte ji do strany (na šířku: nahoru a dolů, po dvou, bez pole větru): Slunce (po západu Měsíc s východem, západem a fází), UV index, Pyl, Vlhkost (když prší), Kvalita vzduchu, Tlak, Vítr, Viditelnost a Kompas.
+Home-screen widgets	Widgety na domovské obrazovce
+Meteo Alarm widgets	Widgety Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Podržte prázdné místo na domovské obrazovce, zvolte Widgety, potom Meteo Alarm: 2x2, 4x1, 4x2 a „libovolná velikost“, každý s náhledem; jde hned na obrazovku, bez okna nastavení. Jsou tři rozvržení: 2x2 (čtverec: ikona, teplota, obec, příští západ nebo východ slunce), 4x1 (nízký pruh, i s oblohou) a 4x2 (široký, i s max. / min. a příštími 5 hodinami), plus malý 2x1 (ikona a teplota) pro příliš malé rámečky. Podržte ho a táhněte za okraje: široký (asi 4 sloupce) a jeden řádek = 4x1, široký a vyšší = 4x2 (zůstane 4x2, ať je jakkoli vysoký), úzký = 2x2, úzký a jeden řádek = 2x1. Řádky a sloupce jsou ty z vaší domovské obrazovky (na tabletu je řádek mnohem vyšší než na telefonu), takže pruh 4x1 funguje i tam. Vyplní šířku rámečku; když je rámeček vyšší, než je třeba, widget si zachová velikost, vycentrovaný, s pozadím jen pod sebou (zbytek zůstane průhledný). Rozvržení se nikdy nezmenší tak, aby texty byly příliš malé. Při aktivních výstrahách ukazuje řádek „VÝSTRAHA!“ tři tečky: žlutá = šedá šedá žlutá, oranžová = šedá oranžová oranžová, červená = vše červené; dva stupně = horší, šedá, druhý; tři stupně = červená oranžová žlutá. Klepnutí otevře aplikaci.
+Widget settings	Nastavení widgetu
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Podržte widget › Nastavení (Android 12 a novější), nebo ☰ › Widgety. Každý widget má svá: náhled; obec (jako v aplikaci, nebo jinou přes Změnit); Pozadí zap. / vyp. a jak průhledné; Barvy: podle počasí (modrá obloha, noční modrá, šedé mraky, déšť, ledový sníh, bouřka, mlha), podle nastavení telefonu, nebo tmavé; Barva textu: automatická (černá na světlém pozadí), bílá nebo černá. Zrušit nebo Uložit.
+Refreshing by itself	Samočinné obnovování
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Počasí, výstrahy a zemětřesení přicházejí samy, i při zavřené aplikaci (pro widgety): každých 15 minut se zapnutým displejem, každých 30 minut s vypnutým, vůbec ne mezi západem a východem slunce s vypnutým displejem (čeká se na zapnutí displeje) a každou hodinu, když je baterie pod 25 % a nenabíjí se. Když stahování selže, upozornění a řádek „! žádná data od …“ pod hodinami řeknou proč (bez internetu, server neodpověděl, chyba zabezpečeného spojení, chyba serveru…). Když je Open-Meteo vytížené (HTTP 503 „overloaded“) nebo neodpovídá, předpověď přijde z MET Norway (api.met.no, norský meteorologický ústav) a pod hodinami stojí „· MET Norway“; po „vytížené“ jde aplikace 20 minut rovnou na MET Norway. Dokud nepřijdou nová data, zůstává na obrazovce naposledy uložené počasí.
+The ☰ menu	Nabídka ☰
+Downloads the weather, the warnings and the earthquakes now.	Stáhne hned počasí, výstrahy a zemětřesení.
+The same as the town button.	Totéž co tlačítko obce.
+Switches between Celsius and Fahrenheit.	Přepíná mezi stupni Celsia a Fahrenheita.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Přepíná hodiny mezi 24 a 12 hodinami (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Světlý, Tmavý nebo Automatický (senzor telefonu).
+Screen on ON / OFF	Displej zapnutý ON / OFF
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: displej zůstává zapnutý, dokud je aplikace otevřená. OFF: zhasne po době nastavené v telefonu.
+The list has English, Romanian and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Seznam obsahuje angličtinu, rumunštinu a úřední jazyky země, kde je telefon (podle SIM karty nebo mobilní sítě; bez nich podle zobrazené obce). Při prvním spuštění aplikace vezme jazyk telefonu, pokud ho má. Aplikace mluví všemi úředními jazyky EU a ukrajinsky.
+Location On / Off	Poloha On / Off
+Turns automatic location on or off (the same as the location button).	Zapne nebo vypne automatickou polohu (totéž co tlačítko polohy).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Stránka jako tato, s tlačítkem zavřít nahoře: zemětřesení o magnitudě 3 a více za posledních 7 dní ve vaší zemi, potom ta za posledních 48 hodin v Evropské unii, na Ukrajině a v Moldavsku. Každý řádek: čas, místo, magnituda, hloubka a vzdálenost od vaší obce. Z EMSC; dá se posouvat.
+Notifications ON / OFF	Oznámení ON / OFF
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Oznámení jen pro: začínající déšť nebo sníh (nebo začátek do hodiny; znovu až po 3 suchých hodinách), novou meteorologickou výstrahu pro vaši obec a zemětřesení o magnitudě 3 a více ve vaší zemi. Každá událost jen jednou, i při zavřené aplikaci. Aplikace o ně žádá při prvním spuštění; když odmítnete, zeptá se znovu až po aktualizaci, nikdy při každém spuštění. Když telefon svou otázku už nezobrazuje (po dvou odmítnutích), tlačítko otevře nastavení telefonu, kde je povolíte.
+Night clock ON / OFF	Noční hodiny ON / OFF
+Turns the night clock on or off.	Zapne nebo vypne noční hodiny.
+The settings of a widget on the home screen (with several, choose which first).	Nastavení widgetu na domovské obrazovce (když je jich víc, nejdřív vyberete který).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Vše, co aplikace dělala, s časem: senzory, klepnutí a gesta, poloha, stahování (a proč některé selhalo), obnovování na pozadí a widgety (velikost, kterou jim dává telefon, zobrazené rozvržení). Uchovává 5 dní, každý den nový soubor; chyby starších dní zůstávají dalších 10 dní v části Chyby. Nahoře: telefon (model, Android, One UI) a verze aplikace. Čtěte ho zde, Sdílejte ho (WhatsApp, Drive, e-mail…) nebo ho Uložte do telefonu.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Hledá novou verzi na GitHubu. Poprvé (a pokaždé, dokud nesouhlasíte) vysvětlí, že aktualizace přicházejí z GitHubu, ne z Google Play, a požádá o souhlas; při „Teď ne“ upozornění řekne, že se aplikace nebude aktualizovat. Nic se nenainstaluje, dokud neklepnete na Aktualizovat a nepotvrdíte v instalátoru telefonu.
+This page.	Tato stránka.
+About the app, the data it uses, and what's new in each version.	O aplikaci, datech, která používá, a novinkách v každé verzi.
+What's new	Co je nového
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Tmavý motiv používá barvy aplikace Claude. Písmo: Liberation Sans.
+Installed version: v	Nainstalovaná verze: v
+Favourites	Oblíbené
+Choose the county	Vyberte kraj
+Other countries	Jiné země
+‹  Back	‹  Zpět
+‹  Back to the counties	‹  Zpět na kraje
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Na domovské obrazovce není žádný widget Meteo Alarm. Podržte prázdné místo na domovské obrazovce › Widgety › Meteo Alarm.
+Which widget?	Který widget?
+Change	Změnit
+Background	Pozadí
+Colours	Barvy
+Text colour	Barva textu
+Cancel	Zrušit
+  (as in the app)	  (jako v aplikaci)
+Transparency: 	Průhlednost: 
+Match the phone's settings	Podle nastavení telefonu
+By the weather	Podle počasí
+White	Bílá
+Black	Černá
+As in the app	Jako v aplikaci
+Choose the county / country…	Vyberte kraj / zemi…
+County / country	Kraj / země
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	K varování Play Protect: Google může říct, že aplikace „může být škodlivá“. Dělá to proto, že aplikace nepochází z Google Play, její vývojář není u Googlu registrován a umí si sama instalovat aktualizace (z github.com/viorelrb-alt/meteo-alarm-android). Aplikace nic jiného nedělá. Když se objeví okno Play Protect, klepněte na „Další podrobnosti“ (je-li zobrazeno), potom na „Nainstalovat bez kontroly“ (nebo „Přesto nainstalovat“).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Pro aktualizace: otevřete ☰ › Zkontrolovat aktualizace a na dotaz dejte souhlas.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm nepochází z Google Play. Nové verze se zveřejňují na GitHubu (github.com/viorelrb-alt/meteo-alarm-android) a aplikace se odtud aktualizuje: kontroluje zhruba jednou týdně (nebo když zvolíte Zkontrolovat aktualizace), ukáže novinky a teprve když klepnete na Aktualizovat, stáhne novou verzi a otevře instalátor telefonu, kde znovu potvrdíte.\n\nPovolíte aplikaci aktualizovat se takto? Bez vašeho souhlasu aplikace nehledá aktualizace a nic nestahuje; souhlasit můžete později v ☰ › Zkontrolovat aktualizace.
+Updates from GitHub	Aktualizace z GitHubu
+I agree	Souhlasím
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Bez vašeho souhlasu se aplikace nebude aktualizovat. Názor můžete kdykoli změnit v ☰ › Zkontrolovat aktualizace.
+Checking GitHub for a new version…	Hledám novou verzi na GitHubu…
+No version published yet.	Zatím nebyla zveřejněna žádná verze.
+Could not check for updates. Is the internet on?	Aktualizace se nepodařilo zkontrolovat. Je internet zapnutý?
+You have the latest version, v	Máte nejnovější verzi, v
+Installed: v	Nainstalováno: v
+New: v	Nová: v
+New version: v	Nová verze: v
+Update	Aktualizovat
+Downloading…	Stahování…
+Hide	Skrýt
+Downloading… 	Stahování… 
+The download failed. Is the internet on?	Stahování se nezdařilo. Je internet zapnutý?
+The installer could not be opened.	Instalátor se nepodařilo otevřít.
+no internet (server not found)	bez internetu (server nenalezen)
+the server did not answer in time	server neodpověděl včas
+no connection	bez připojení
+secure connection error: 	chyba zabezpečeného spojení: 
+internet not allowed for the app	internet pro aplikaci není povolen
+server error 	chyba serveru 
+network error: 	chyba sítě: 
+data error: 	chyba dat: 
+⌃  more  ⌃	⌃  více  ⌃
+⌄  more  ⌄	⌄  více  ⌄
+Open the app	Otevřít aplikaci
+WARNING!	VÝSTRAHA!
+Sunrise at 	Východ slunce v 
+Sunset at 	Západ slunce v 
+Weather, warnings and earthquakes	Počasí, výstrahy a zemětřesení
+Rain or snow starting, new weather warnings, earthquakes in your country.	Začínající déšť nebo sníh, nové meteorologické výstrahy, zemětřesení ve vaší zemi.
+Snow	Sníh
+Rain	Déšť
+It is snowing in 	Sněží: 
+It is raining in 	Prší: 
+Snow is expected within the hour in 	Sníh do hodiny: 
+Rain is expected within the hour in 	Déšť do hodiny: 
+Warning	Výstraha
+Earthquake M	Zemětřesení M
+probably felt: 	pravděpodobně pocítěno: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Oznámení jsou zapnutá: déšť nebo sníh, meteorologické výstrahy a zemětřesení ve vaší zemi.
+EARTHQUAKE	ZEMĚTŘESENÍ
+Felt here: 	Pocítěno zde: 
+ (estimate)	 (odhad)
+Magnitude: 	Magnituda: 
+Time: 	Čas: 
+Region: 	Oblast: 
+Depth: 	Hloubka: 
+Epicentre: 	Epicentrum: 
+ from 	 od 
+In 	V: 
+Probably felt, intensity 	Pravděpodobně pocítěno, intenzita 
+Probably not felt here.	Zde pravděpodobně nepocítěno.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Odhadnuto z magnitudy a vzdálenosti od ohniska (stupnice EMS-98); EMSC nezveřejňuje hlášení pro každou obec.
+All in the last 24 h	Všechna za posledních 24 h
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Zdroj: EMSC (seismicportal.eu), magnituda 3 a více, posledních 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potenciálně nebezpečné počasí (obvyklé pro roční období, ale místně intenzivnější). Buďte venku opatrní.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Nebezpečné počasí vysoké intenzity. Buďte velmi opatrní, sledujte předpověď a rady úřadů.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Velmi nebezpečné počasí velmi vysoké intenzity. Učiňte ochranná opatření a řiďte se pokyny úřadů.
+In force now, until 	Platí nyní, do 
+From 	Od 
+ until 	 do 
+Source: MeteoAlarm (the national weather service), for 	Zdroj: MeteoAlarm (národní meteorologická služba), pro 
+Stay away from trees, poles and scaffolding; secure loose objects.	Držte se dál od stromů, sloupů a lešení; zajistěte volné předměty.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Možné jsou blesky, přívalové deště, kroupy a nárazy větru; ukryjte se v budově.
+Avoid flooded roads and river banks.	Vyhněte se zaplaveným silnicím a břehům řek.
+Slippery roads; drive only if you must, with winter equipment.	Kluzké silnice; jezděte jen v nutném případě, se zimní výbavou.
+Low visibility; drive slowly with the fog lights on.	Snížená viditelnost; jeďte pomalu s mlhovkami.
+Avoid the sun between 11 and 18, drink plenty of water.	Vyhněte se slunci mezi 11. a 18. hodinou, pijte hodně vody.
+Dress warmly and limit time outdoors.	Teple se oblékněte a omezte pobyt venku.
+Do not light fires outdoors.	Nerozdělávejte oheň venku.
+H	H
+MOON	MĚSÍC
+HUMIDITY	VLHKOST
+AIR QUALITY	KVALITA VZDUCHU
+PRESSURE	TLAK
+WIND	VÍTR
+VISIBILITY	VIDITELNOST
+COMPASS	KOMPAS
+Moonrise	Východ měsíce
+Moonset	Západ měsíce
+relative humidity	relativní vlhkost
+Good	Dobrá
+Fair	Přijatelná
+Moderate	Mírná
+Poor	Špatná
+Very poor	Velmi špatná
+Extremely poor	Extrémně špatná
+Poor (fog)	Špatná (mlha)
+Very good	Velmi dobrá
+steady	stálý
+↓ falling fast	↓ rychle klesá
+↓ falling	↓ klesá
+↑ rising fast	↑ rychle stoupá
+↑ rising	↑ stoupá
+no compass	bez kompasu
+Tap to leave the night clock	Klepnutím opustíte noční hodiny
+until	do
+now	nyní
+Rain from	Déšť od
+max	max.
+Snow from	Sníh od
+Raining	Prší
+Snowing	Sněží
+updated	aktualizováno
+no data since	žádná data od
+Loading weather…	Načítám počasí…
+updating…	aktualizuji…
+Feels like	Pocitově
+Wind	Vítr
+High	Max.
+Low	Min.
+Charging	Nabíjí se
+YELLOW	ŽLUTÁ
+ORANGE	ORANŽOVÁ
+RED	ČERVENÁ
+WARNING	VÝSTRAHA
+TOMORROW	ZÍTRA
+DAY AFTER	POZÍTŘÍ
+NEXT 12 HOURS	PŘÍŠTÍCH 12 HODIN
+WEATHER · NEXT HOURS	POČASÍ · PŘÍŠTÍ HODINY
+RAIN	DÉŠŤ
+SNOW	SNÍH
+PRECIPITATION	SRÁŽKY
+snow	sníh
+rain	déšť
+no precipitation	bez srážek
+SUN	SLUNCE
+UV INDEX	UV INDEX
+POLLEN	PYL
+Sunrise	Východ slunce
+Sunset	Západ slunce
+Very high	Velmi vysoký
+Extreme	Extrémní
+no pollen	bez pylu
+no data	žádná data
+No precipitation	Bez srážek
+SNOW ICE	SNÍH, NÁLEDÍ
+THUNDERSTORM	BOUŘKY
+FOG	MLHA
+HIGH TEMPERATURE	VEDRO
+LOW TEMPERATURE	MRAZ
+COASTALEVENT	POBŘEŽNÍ JEVY
+FOREST FIRE	LESNÍ POŽÁRY
+AVALANCHES	LAVINY
+FLOODING	POVODNĚ
+RAIN FLOOD	DÉŠŤ, POVODNĚ
+alder	olše
+birch	bříza
+olive	olivovník
+grasses	trávy
+mugwort	pelyněk
+ragweed	ambrózie
+Clear	Jasno
+Mostly clear	Převážně jasno
+Partly cloudy	Polojasno
+Overcast	Zataženo
+Fog	Mlha
+Drizzle	Mrholení
+Freezing drizzle	Mrznoucí mrholení
+Light rain	Slabý déšť
+Heavy rain	Silný déšť
+Freezing rain	Mrznoucí déšť
+Light snow	Slabé sněžení
+Heavy snow	Silné sněžení
+Snow grains	Sněhová zrna
+Light showers	Slabé přeháňky
+Showers	Přeháňky
+Heavy showers	Silné přeháňky
+Snow showers	Sněhové přeháňky
+Thunderstorm	Bouřka
+Thunderstorm, hail	Bouřka, kroupy
+Code 	Kód 
+not felt	nepocítěno
+scarcely felt, only by a few people at rest	sotva pocítěno, jen několika lidmi v klidu
+weak, felt by a few people indoors	slabé, pocítěno několika lidmi uvnitř
+felt by many indoors; windows and doors rattle	pocítěno mnoha lidmi uvnitř; okna a dveře drnčí
+strong, felt by nearly everyone; objects move, some are frightened	silné, pocítěno téměř všemi; předměty se pohybují, někteří se lekají
+slight damage (cracks in plaster); many run outdoors	lehká poškození (praskliny v omítce); mnozí vybíhají ven
+damage to buildings; hard to stand	poškození budov; těžko se stojí
+heavy damage	těžká poškození
+destruction	zničení
+great destruction	velké zničení
+very great destruction	velmi velké zničení
+complete destruction	úplné zničení
+The phone's own language is in the list too.	V seznamu je i jazyk telefonu.

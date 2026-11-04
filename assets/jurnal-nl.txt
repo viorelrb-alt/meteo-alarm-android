@@ -1,0 +1,9 @@
+v2.00 · 4 november 2026
+- Talen: de app spreekt nu alle officiële talen van de Europese Unie en Oekraïens (ook de Help). Bij de eerste start neemt ze de taal van de telefoon (Engels als de app die niet heeft); daarna die gekozen in ☰ › Taal. De lijst toont alleen Engels, Roemeens, de taal van de telefoon en de officiële talen van het land waar de telefoon is.
+- ☰ › Aardbevingen: een pagina met de aardbevingen van magnitude 3 of meer van de laatste 7 dagen in je land, daarna die van de laatste 48 uur in de EU, Oekraïne en Moldavië (tijd, plaats, magnitude, diepte, afstand).
+- Meldingen (alleen met je toestemming): beginnende regen of sneeuw, nieuwe weerwaarschuwingen voor je plaats, aardbevingen van magnitude 3 of meer in je land. Elke gebeurtenis maar één keer. Aan of uit via ☰ › Meldingen.
+- Locatie en meldingen worden bij de eerste start gevraagd met een vriendelijke uitleg; zeg je nee, dan vraagt de app pas na een update opnieuw. Als de telefoon zijn vraag niet meer toont, opent een knop zijn instellingen.
+- Bij de eerste start wordt de door de locatie gevonden plaats de getoonde plaats en komt hij bij de favorieten.
+- Telefoons zonder kompas of lichtsensor: de bijbehorende knoppen en vakken worden uitgeschakeld; het Logboek noemt de sensoren bij elke start.
+- Widgets: de 4x1-strook werkt nu ook op tablets (de rijen van het startscherm worden geteld, geen vaste maten).
+- Opgelost: bij de start na een update werd het weer twee keer gedownload; het Logboek noteert nu de gekozen taal en elke gekozen plaats, en het openen van de widgetinstellingen maar één keer.

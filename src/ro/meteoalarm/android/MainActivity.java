@@ -1548,7 +1548,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("clock"), Tr.t("Clock 12/24", "Ceas 12/24"), Tr.t("Switches the clock between 24 hours and 12 hours (AM/PM).", "Comută ceasul între 24 de ore și 12 ore (AM/PM)."));
 		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("Light, Dark, or Automatic (phone sensor).", "Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("keepOn"), Tr.t("Screen on ON / OFF", "Ecran aprins ON / OFF"), Tr.t("ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.", "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon."));
-		help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English, Romanian and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza, româna și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana."));
+		help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English, Romanian and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza, româna și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana.") + " " + Tr.t("The phone's own language is in the list too.", "În listă e și limba telefonului."));
 		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.", "O pagină ca aceasta, cu buton de închidere sus: cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din Uniunea Europeană, Ucraina și Republica Moldova. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta. De la EMSC; pagina se derulează."));
 		help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.", "Notificări doar pentru: ploaie sau ninsoare care începe (sau începe în următoarea oră; din nou abia după 3 ore fără precipitații), o avertizare meteo nouă pentru localitatea ta și un cutremur cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată, și cu aplicația închisă. Aplicația le cere la prima pornire; dacă refuzi, te mai întreabă doar după o actualizare, niciodată la fiecare pornire. Când telefonul nu mai arată întrebarea lui (după două refuzuri), butonul deschide setările telefonului, unde le permiți."));
@@ -1583,25 +1583,33 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The change log from assets, newest first. */
 	private String changeLog() {
-		String log;
+		// Other languages: their file has the newest versions; the older ones follow in English.
+		String own = Tr.ro() || Tr.lang().equals("en") ? null : asset("jurnal-" + s.T.lang + ".txt");
+		String log = asset(Tr.t("jurnal-en.txt", "jurnal-ro.txt"));
+		if (log == null) return own == null ? "" : own;
+		if (own == null) return log;
+		// Skip the English entries the own file already has (the same "vX.YZ" first lines).
+		StringBuilder b = new StringBuilder(own);
+		for (String entry : log.split("\n\n")) {
+			String head = entry.trim(), ver = head.split(" ")[0];
+			if (head.length() > 0 && !own.contains(ver + " ")) b.append("\n\n").append(head);
+		}
+		return b.toString();
+	}
+
+	/** A text file from the assets (null when missing). */
+	private String asset(String name) {
 		try {
-			String name = "jurnal-" + s.T.lang + ".txt";
-			try {
-				getAssets().open(name).close();
-			} catch (Exception e) {
-				name = Tr.t("jurnal-en.txt", "jurnal-ro.txt");
-			}
 			java.io.InputStream in = getAssets().open(name);
 			java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
 			byte[] buf = new byte[8192];
 			int n;
 			while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
 			in.close();
-			log = new String(out.toByteArray(), "UTF-8").trim();
+			return new String(out.toByteArray(), "UTF-8").trim();
 		} catch (Exception e) {
-			return "";
+			return null;
 		}
-		return log;
 	}
 
 	private void about() {

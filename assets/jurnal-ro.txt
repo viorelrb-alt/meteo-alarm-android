@@ -1,5 +1,5 @@
 v2.00 · 4 noiembrie 2026
-- Limbi: aplicația vorbește acum toate limbile oficiale ale Uniunii Europene și ucraineana (inclusiv Ajutorul). La prima pornire ia limba telefonului (engleza dacă aplicația nu o are); apoi pe cea aleasă în ☰ › Limba. Lista arată doar engleza, româna și limbile oficiale ale țării în care e telefonul.
+- Limbi: aplicația vorbește acum toate limbile oficiale ale Uniunii Europene și ucraineana (inclusiv Ajutorul). La prima pornire ia limba telefonului (engleza dacă aplicația nu o are); apoi pe cea aleasă în ☰ › Limba. Lista arată doar engleza, româna, limba telefonului și limbile oficiale ale țării în care e telefonul.
 - ☰ › Cutremure: o pagină cu cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din UE, Ucraina și Republica Moldova (ora, locul, magnitudinea, adâncimea, distanța).
 - Notificări (doar cu acordul tău): ploaie sau ninsoare care începe, avertizări meteo noi pentru localitatea ta, cutremure cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată. Pornite sau oprite din ☰ › Notificări.
 - Localizarea și notificările se cer cu o explicație prietenoasă la prima pornire; dacă refuzi, aplicația te mai întreabă doar după o actualizare. Când telefonul nu mai arată întrebarea lui, un buton deschide setările.

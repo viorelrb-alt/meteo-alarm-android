@@ -1,0 +1,9 @@
+v2.00 · 4 listopada 2026
+- Języki: aplikacja mówi teraz wszystkimi językami urzędowymi Unii Europejskiej i po ukraińsku (także Pomoc). Przy pierwszym uruchomieniu bierze język telefonu (angielski, jeśli aplikacja go nie ma); potem ten wybrany w ☰ › Język. Lista pokazuje tylko angielski, rumuński, język telefonu i języki urzędowe kraju, w którym jest telefon.
+- ☰ › Trzęsienia ziemi: strona z trzęsieniami o magnitudzie 3 lub większej z ostatnich 7 dni w twoim kraju, potem z ostatnich 48 godzin w UE, Ukrainie i Mołdawii (godzina, miejsce, magnituda, głębokość, odległość).
+- Powiadomienia (tylko za twoją zgodą): początek deszczu lub śniegu, nowe ostrzeżenia pogodowe dla twojej miejscowości, trzęsienia ziemi o magnitudzie 3 lub większej w twoim kraju. Każde zdarzenie tylko raz. Włączane lub wyłączane w ☰ › Powiadomienia.
+- O lokalizację i powiadomienia aplikacja prosi z przyjaznym wyjaśnieniem przy pierwszym uruchomieniu; jeśli odmówisz, zapyta ponownie dopiero po aktualizacji. Gdy telefon nie pokazuje już swojego pytania, przycisk otwiera jego ustawienia.
+- Przy pierwszym uruchomieniu miejscowość znaleziona przez lokalizację staje się pokazaną i trafia do ulubionych.
+- Telefony bez kompasu lub czujnika światła: odpowiednie przyciski i pola są wyłączane; Dziennik wypisuje czujniki przy każdym uruchomieniu.
+- Widżety: pasek 4x1 działa teraz także na tabletach (liczone są rzędy ekranu głównego, a nie stałe rozmiary).
+- Naprawiono: przy uruchomieniu po aktualizacji pogoda pobierała się dwa razy; Dziennik zapisuje teraz wybrany język i każdą wybraną miejscowość, a otwarcie ustawień widżetu tylko raz.

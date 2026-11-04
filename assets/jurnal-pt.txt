@@ -1,0 +1,9 @@
+v2.00 · 4 de novembro de 2026
+- Idiomas: a app fala agora todos os idiomas oficiais da União Europeia e ucraniano (incluindo a Ajuda). No primeiro arranque usa o idioma do telefone (inglês se a app não o tiver); depois, o escolhido em ☰ › Idioma. A lista mostra só inglês, romeno, o idioma do telefone e os idiomas oficiais do país onde o telefone está.
+- ☰ › Sismos: uma página com os sismos de magnitude 3 ou mais dos últimos 7 dias no seu país e depois os das últimas 48 horas na UE, na Ucrânia e na Moldávia (hora, local, magnitude, profundidade, distância).
+- Notificações (só com o seu acordo): chuva ou neve a começar, novos avisos meteorológicos para a sua localidade, sismos de magnitude 3 ou mais no seu país. Cada evento só uma vez. Ligar ou desligar em ☰ › Notificações.
+- A localização e as notificações são pedidas com uma explicação amigável no primeiro arranque; se recusar, a app só volta a perguntar depois de uma atualização. Quando o telefone já não mostra a sua pergunta, um botão abre as definições.
+- No primeiro arranque a localidade encontrada pela localização passa a ser a mostrada e é adicionada às favoritas.
+- Telefones sem bússola ou sensor de luz: os botões e caixas correspondentes são desativados; o Registo lista os sensores em cada arranque.
+- Widgets: a faixa 4x1 funciona agora também em tablets (contam-se as filas do ecrã principal, não tamanhos fixos).
+- Corrigido: no arranque após uma atualização o tempo era descarregado duas vezes; o Registo anota agora o idioma escolhido e cada localidade escolhida, e a abertura das definições do widget só uma vez.

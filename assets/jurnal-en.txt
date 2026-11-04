@@ -1,5 +1,5 @@
 v2.00 · 4 November 2026
-- Languages: the app now speaks all the official languages of the European Union and Ukrainian (Help included). At the first start it takes the phone's language (English when the app does not have it); afterwards the one chosen in ☰ › Language. The list shows only English, Romanian and the official languages of the country the phone is in.
+- Languages: the app now speaks all the official languages of the European Union and Ukrainian (Help included). At the first start it takes the phone's language (English when the app does not have it); afterwards the one chosen in ☰ › Language. The list shows only English, Romanian, the phone's language and the official languages of the country the phone is in.
 - ☰ › Earthquakes: a page with the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the EU, Ukraine and Moldova (time, place, magnitude, depth, distance).
 - Notifications (only with your consent): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event only once. On or off in ☰ › Notifications.
 - Location and notifications are asked with a friendly explanation at the first start; if you say no, the app asks again only after an update. When the phone no longer shows its question, a button opens its settings.

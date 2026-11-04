@@ -1,0 +1,9 @@
+v2.00 · 4 novembre 2026
+- Langues : l'appli parle désormais toutes les langues officielles de l'Union européenne et l'ukrainien (Aide comprise). Au premier démarrage, elle prend la langue du téléphone (l'anglais si l'appli ne l'a pas) ; ensuite celle choisie dans ☰ › Langue. La liste ne montre que l'anglais, le roumain, la langue du téléphone et les langues officielles du pays où se trouve le téléphone.
+- ☰ › Séismes : une page avec les séismes de magnitude 3 ou plus des 7 derniers jours dans votre pays, puis ceux des dernières 48 heures dans l'UE, en Ukraine et en Moldavie (heure, lieu, magnitude, profondeur, distance).
+- Notifications (seulement avec votre accord) : pluie ou neige qui commence, nouvelles alertes météo pour votre localité, séismes de magnitude 3 ou plus dans votre pays. Chaque événement une seule fois. Activer ou désactiver dans ☰ › Notifications.
+- La position et les notifications sont demandées avec une explication amicale au premier démarrage ; si vous refusez, l'appli ne redemande qu'après une mise à jour. Quand le téléphone n'affiche plus sa question, un bouton ouvre ses paramètres.
+- Au premier démarrage, la localité trouvée par la position devient la localité affichée et est ajoutée aux favoris.
+- Téléphones sans boussole ou capteur de lumière : les boutons et cases concernés sont désactivés ; le Journal liste les capteurs à chaque démarrage.
+- Widgets : la bande 4x1 fonctionne maintenant aussi sur les tablettes (les rangées de l'écran d'accueil sont comptées, pas des tailles fixes).
+- Corrigé : au démarrage après une mise à jour, la météo était téléchargée deux fois ; le Journal note maintenant la langue choisie et chaque localité choisie, et l'ouverture des réglages du widget une seule fois.

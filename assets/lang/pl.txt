@@ -1,0 +1,365 @@
+# Meteo Alarm Android · pl · English<TAB>translation
+Diary (log)	Dziennik
+Everything the app did in the last 5 days; older errors kept 10 days.	Wszystko, co aplikacja zrobiła w ostatnich 5 dniach; starsze błędy zostają 10 dni.
+Share	Udostępnij
+Save	Zapisz
+Close	Zamknij
+log 	dziennik 
+Send the log	Wyślij dziennik
+Log saved	Dziennik zapisany
+Could not save	Nie udało się zapisać
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	To jest wersja testowa Meteo Alarm Android, powstała z Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Nie zbieramy danych: bez konta, bez reklam, bez statystyk. Do pogody wysyłane są tylko współrzędne miejsca do Open-Meteo (pogoda, pyłki) oraz, gdy Open-Meteo jest przeciążone, do MET Norway (pogoda); ostrzeżenia pochodzą z MeteoAlarm, trzęsienia ziemi z EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Lokalizacja: służy do pokazania pogody tam, gdzie jesteś, przy starcie i raz na godzinę. Aby nazwać miejscowość, współrzędne trafiają do OpenStreetMap (lub geokodera telefonu), skąd pochodzą też jej granice. Znalezione miejscowości, z miejscem, w którym byłeś, zostają tylko w telefonie. Aplikacja prosi o nią z wyjaśnieniem przy pierwszym uruchomieniu; jeśli odmówisz, wybierasz miejscowość z listy, a ona zapyta ponownie dopiero po aktualizacji.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Powiadomienia (tylko za twoją zgodą): początek deszczu lub śniegu, nowe ostrzeżenia pogodowe dla twojej miejscowości, trzęsienia ziemi o magnitudzie 3 lub większej w twoim kraju. Każde zdarzenie raz. Włącz lub wyłącz w ☰ › Powiadomienia.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Język: przy pierwszym uruchomieniu język telefonu (jeśli aplikacja go ma, inaczej angielski), potem wybrany w ☰ › Język.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Czujniki: aplikacja odczytuje stan baterii (zegar nocny podczas ładowania), czujnik światła telefonu przy ☰ › Motyw › Automatyczny (czujnik telefonu) oraz kompas, który obraca strzałkę wiatru razem z telefonem. Czego telefon nie ma, jest wyłączane. Nic nie opuszcza telefonu.
+Updates: 	Aktualizacje: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Potem raz w tygodniu aplikacja szuka nowej wersji na GitHubie i pyta przed pobraniem.
+I understand	Rozumiem
+This phone has no light sensor.	Ten telefon nie ma czujnika światła.
+Automatic theme (phone sensor): on	Motyw automatyczny (czujnik telefonu): włączony
+Automatic theme (phone sensor): off	Motyw automatyczny (czujnik telefonu): wyłączony
+Dark theme	Motyw ciemny
+Light theme	Motyw jasny
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm może sama znaleźć twoją miejscowość, aby prognoza, ostrzeżenia pogodowe i trzęsienia ziemi dotyczyły dokładnie miejsca, w którym jesteś, także w podróży. Pozycja zostaje w telefonie: służy tylko do wyboru miejscowości.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefon nie pokazuje już swojego pytania, więc zezwól na Lokalizację dla Meteo Alarm w ustawieniach telefonu (Uprawnienia › Lokalizacja).
+If you say no, choose the town from the list; the app asks again only after an update.	Jeśli odmówisz, wybierz miejscowość z listy; aplikacja zapyta ponownie dopiero po aktualizacji.
+Location	Lokalizacja
+Open settings	Otwórz ustawienia
+Allow	Zezwól
+Not now	Nie teraz
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm może dać ci znać, także gdy jest zamknięta: gdy zaczyna padać deszcz lub śnieg albo zacznie w ciągu godziny, gdy zostanie wydane ostrzeżenie pogodowe dla twojej miejscowości i gdy w twoim kraju wystąpi trzęsienie ziemi o magnitudzie 3 lub większej. Każde zdarzenie tylko raz, nic więcej. Dzięki temu dowiesz się na czas, bez otwierania aplikacji.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefon nie pozwala aplikacji wysyłać powiadomień; włącz powiadomienia Meteo Alarm w ustawieniach telefonu.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Możesz je wyłączyć w każdej chwili w ☰ › Powiadomienia. Jeśli odmówisz, aplikacja zapyta ponownie dopiero po aktualizacji.
+Notifications	Powiadomienia
+Notifications ON	Powiadomienia WŁĄCZONE
+Notifications OFF	Powiadomienia WYŁĄCZONE
+Without location access, choose the town from the list.	Bez dostępu do lokalizacji wybierz miejscowość z listy.
+Brightness: slide on the bar	Jasność: przesuń po pasku
+Automatic location OFF	Automatyczna lokalizacja WYŁĄCZONA
+Automatic location ON	Automatyczna lokalizacja WŁĄCZONA
+Looking for the exact position…	Szukam dokładnej pozycji…
+Added to the list: 	Dodano do listy: 
+Location is off on the phone.	Lokalizacja jest wyłączona w telefonie.
+The position could not be found.	Nie udało się znaleźć pozycji.
+The town could not be found (internet?).	Nie udało się znaleźć miejscowości (internet?).
+The weather did not come: 	Pogoda nie dotarła: 
+Already updating…	Już aktualizuję…
+The weather has just been updated	Pogoda została właśnie zaktualizowana
+Just tried; try again in a few seconds	Właśnie próbowano; spróbuj za kilka sekund
+Updating the weather…	Aktualizuję pogodę…
+Refresh	Odśwież
+Town	Miejscowość
+Temperature °C/°F	Temperatura °C/°F
+Clock 12/24	Zegar 12/24
+Theme	Motyw
+Screen on OFF	Ekran włączony OFF
+Screen on ON	Ekran włączony ON
+Language	Język
+Night clock OFF	Zegar nocny OFF
+Night clock ON	Zegar nocny ON
+Location Off	Lokalizacja Off
+Location On	Lokalizacja On
+Earthquakes	Trzęsienia ziemi
+Widgets	Widżety
+Log	Dziennik
+Check for updates	Sprawdź aktualizacje
+Help	Pomoc
+About	O aplikacji
+24-hour clock	Zegar 24-godzinny
+12-hour clock	Zegar 12-godzinny
+The screen stays on while the app is open	Ekran pozostaje włączony, dopóki aplikacja jest otwarta
+The screen goes off after the phone's timeout	Ekran gaśnie po czasie ustawionym w telefonie
+While charging at night, the screen shows a big dim clock	Podczas ładowania w nocy ekran pokazuje duży, przyciemniony zegar
+Night clock off	Zegar nocny wyłączony
+Light	Jasny
+Dark	Ciemny
+Automatic	Automatyczny
+Last 7 days · 	Ostatnie 7 dni · 
+Downloading from EMSC…	Pobieram z EMSC…
+The list could not be downloaded. Is the internet on?	Nie udało się pobrać listy. Czy internet jest włączony?
+No earthquake of magnitude 3 or more.	Brak trzęsień ziemi o magnitudzie 3 lub większej.
+Last 48 hours · EU, Ukraine, Moldova	Ostatnie 48 godzin · UE, Ukraina, Mołdawia
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Źródło: EMSC (Europejsko-Śródziemnomorskie Centrum Sejsmologiczne, seismicportal.eu), magnituda 3 i więcej. „Odczuwalne” to szacunek w skali EMS-98 na podstawie magnitudy i odległości od ogniska.
+depth 	głębokość 
+from 	od 
+Probably felt in 	Prawdopodobnie odczuwalne w: 
+Probably not felt in 	Prawdopodobnie nieodczuwalne w: 
+Updates	Aktualizacje
+How to update	Jak aktualizować
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 O zgodę prosi się tylko tam: raz, jeśli się zgodzisz (od tego czasu aplikacja sprawdza też sama raz w tygodniu), za każdym razem, dopóki odmawiasz. Bez niej aplikacja nigdy nie szuka aktualizacji i niczego nie pobiera.
+Buttons on the screen	Przyciski na ekranie
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Otwiera miejscowości: ostatnie 3 (ulubione) i regiony. Dotknij regionu, potem miejscowości.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Znajduje, gdzie jesteś, i pokazuje pogodę tej miejscowości; szuka ponownie co godzinę. Znalezione miejscowości zostają w telefonie z miejscem, w którym byłeś, a pokazana miejscowość zmienia się dopiero, gdy wyjdziesz poza jej granice. Działa też w innych krajach, z ostrzeżeniami MeteoAlarm w około 38 krajach Europy. Dotknięcie włącza automatyczną lokalizację (przycisk wypełniony, szuka od razu) lub ją wyłącza (przycisk pusty).
+Brightness	Jasność
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Pokazuje pasek jasności po lewej: przesuń po nim w górę lub w dół. Znika sam.
+Light / dark theme	Motyw jasny / ciemny
+Over the brightness bar: switches between the light and the dark theme.	Nad paskiem jasności: przełącza między motywem jasnym i ciemnym.
+Automatic theme (phone sensor)	Motyw automatyczny (czujnik telefonu)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Motyw jasny, gdy jest jasno, ciemny w ciemności. Wypełniony, gdy jest włączony.
+Phone without a sensor	Telefon bez jakiegoś czujnika
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Przy każdym uruchomieniu aplikacja sprawdza czujniki telefonu (kompas, światło, akcelerometr, zbliżeniowy, ciśnienie, GPS) i zapisuje w Dzienniku, których brakuje. Bez czujnika światła motyw Automatyczny (czujnik telefonu) jest szary i nic nie robi; bez kompasu pole ze strzałką wiatru jest ukryte.
+Location consent	Zgoda na lokalizację
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Przy pierwszym uruchomieniu aplikacja wyjaśnia, dlaczego chce lokalizacji (pogoda, ostrzeżenia i trzęsienia ziemi dla dokładnego miejsca, w którym jesteś), potem pyta telefon. Pierwsza znaleziona miejscowość staje się pokazaną i trafia do ulubionych. Jeśli odmówisz, wybierasz miejscowość z listy, a aplikacja zapyta ponownie dopiero po aktualizacji; gdy telefon już nie pyta, przycisk otwiera jego ustawienia.
+Gestures	Gesty
+Tap on the town's name	Dotknięcie nazwy miejscowości
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Szuka raz przez GPS, dla lepszej prognozy tam, gdzie jesteś; automatyczna lokalizacja zostaje bez zmian.
+Pull down	Pociągnij w dół
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Pociągnij ekran w dół i puść: pogoda się odświeża. Ponowne pociągnięcie w trakcie pobierania lub w ciągu 10 sekund od ostatniego pobrania nie uruchamia kolejnego; mówi o tym komunikat.
+Left edge	Lewa krawędź
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Przesuń w górę lub w dół przy lewej krawędzi (trochę do środka): pojawia się pasek jasności, a przesuwanie po nim ustawia jasność.
+Wind arrow	Strzałka wiatru
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Obok wiatru: strzałka pokazuje, dokąd wieje wiatr, obracana z telefonem (kompas); pomarańczowy znak to północ.
+Night clock	Zegar nocny
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Gdy telefon ładuje się w nocy (od zachodu do wschodu słońca) i nikt go nie dotyka przez minutę: duży, przyciemniony zegar. Dotknięcie wraca na minutę.
+Warnings and earthquake	Ostrzeżenia i trzęsienie ziemi
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Pod linią rząd pól: najpierw trzęsienie ziemi (jeśli było), potem jedno pole na każdy stopień ostrzeżenia (czerwony, pomarańczowy, żółty). Na ekranie mieszczą się dwa; przy większej liczbie rząd przesuwa się sam co 2 sekundy i zaczyna od pierwszego. Możesz go też przesuwać palcem. Dotknij pola: rząd zatrzymuje się na 20 sekund, a dymek pokazuje szczegóły większymi literami (dla stopnia: co oznacza, każde ostrzeżenie z okresem i radą; dla trzęsienia: magnituda, czas, region, głębokość, epicentrum i odległość, jak prawdopodobnie było odczuwalne w twojej miejscowości oraz wszystkie trzęsienia z ostatnich 24 godzin).
+Earthquake box	Pole Trzęsienie ziemi
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Z EMSC (Europejsko-Śródziemnomorskie Centrum Sejsmologiczne): trzęsienia ziemi o magnitudzie 3 lub większej z ostatnich 24 godzin w kraju twojej miejscowości (znalezionej przez lokalizację). Pole pokazuje najsilniejsze: magnitudę i godzinę oraz jak było odczuwalne w twojej miejscowości, jako szacunek w skali EMS-98 (z magnitudy i odległości od ogniska; EMSC nie publikuje relacji dla każdej miejscowości). Znika po 24 godzinach.
+Left / right on the boxes	W lewo / w prawo na polach
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Rząd ostrzeżeń, pola godzin i pięć dni (jutro i kolejne 4 dni, po dwa) podążają za palcem. Wykres Opady · najbliższe 12 godzin jest pierwszy w rzędzie godzin, tylko gdy spodziewany jest deszcz lub śnieg.
+The row of boxes at the bottom	Rząd pól na dole
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Przesuń go w bok (w poziomie: w górę i w dół, po dwa, bez pola wiatru): Słońce (po zachodzie Księżyc, ze wschodem, zachodem i fazą), indeks UV, Pyłki, Wilgotność (gdy pada), Jakość powietrza, Ciśnienie, Wiatr, Widzialność i Kompas.
+Home-screen widgets	Widżety na ekranie głównym
+Meteo Alarm widgets	Widżety Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Przytrzymaj wolne miejsce na ekranie głównym, wybierz Widżety, potem Meteo Alarm: 2x2, 4x1, 4x2 i „dowolny rozmiar”, każdy z podglądem; trafia od razu na ekran, bez okna ustawień. Są trzy układy: 2x2 (kwadrat: ikona, temperatura, miejscowość, najbliższy zachód lub wschód słońca), 4x1 (niski pasek, także z niebem) i 4x2 (szeroki, także z maks. / min. i najbliższymi 5 godzinami), plus mały 2x1 (ikona i temperatura) dla zbyt małych ramek. Przytrzymaj go i przeciągnij krawędzie: szeroki (około 4 kolumn) i jeden rząd = 4x1, szeroki i wyższy = 4x2 (zostaje 4x2, jakkolwiek wysoki), wąski = 2x2, wąski i jeden rząd = 2x1. Rzędy i kolumny to te z twojego ekranu głównego (na tablecie rząd jest dużo wyższy niż na telefonie), więc pasek 4x1 działa także tam. Wypełnia szerokość ramki; gdy ramka jest wyższa niż potrzeba, widżet zachowuje rozmiar, wyśrodkowany, z tłem tylko pod sobą (reszta zostaje przezroczysta). Układ nigdy nie jest zmniejszany tak bardzo, by teksty stały się za małe. Przy aktywnych ostrzeżeniach wiersz „OSTRZEŻENIE!” pokazuje trzy pastylki: żółty = szary szary żółty, pomarańczowy = szary pomarańczowy pomarańczowy, czerwony = wszystkie czerwone; dwa stopnie = gorszy, szary, drugi; trzy stopnie = czerwony pomarańczowy żółty. Dotknięcie otwiera aplikację.
+Widget settings	Ustawienia widżetu
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Przytrzymaj widżet › Ustawienia (Android 12 i nowszy) lub ☰ › Widżety. Każdy widżet ma własne: podgląd; miejscowość (jak w aplikacji lub inną przez Zmień); Tło wł. / wył. i jego przezroczystość; Kolory: według pogody (niebieskie niebo, nocny granat, szare chmury, deszcz, lodowaty śnieg, burza, mgła), według ustawień telefonu lub ciemne; Kolor tekstu: automatyczny (czarny na jasnym tle), biały lub czarny. Anuluj lub Zapisz.
+Refreshing by itself	Samoczynne odświeżanie
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Pogoda, ostrzeżenia i trzęsienia ziemi przychodzą same, także przy zamkniętej aplikacji (dla widżetów): co 15 minut przy włączonym ekranie, co 30 minut przy wyłączonym, wcale między zachodem a wschodem słońca przy wyłączonym ekranie (czeka na włączenie ekranu) i co godzinę, gdy bateria ma poniżej 25% i się nie ładuje. Gdy pobieranie się nie uda, komunikat i wiersz „! brak danych od …” pod zegarem mówią dlaczego (brak internetu, serwer nie odpowiedział, błąd bezpiecznego połączenia, błąd serwera…). Gdy Open-Meteo jest zajęte (HTTP 503 „overloaded”) lub nie odpowiada, prognoza przychodzi z MET Norway (api.met.no, norweski instytut meteorologiczny), a pod zegarem widać „· MET Norway”; po „zajęte” aplikacja przez 20 minut idzie od razu do MET Norway. Dopóki nie przyjdą nowe dane, na ekranie zostaje ostatnia zapisana pogoda.
+The ☰ menu	Menu ☰
+Downloads the weather, the warnings and the earthquakes now.	Pobiera teraz pogodę, ostrzeżenia i trzęsienia ziemi.
+The same as the town button.	To samo co przycisk miejscowości.
+Switches between Celsius and Fahrenheit.	Przełącza między stopniami Celsjusza i Fahrenheita.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Przełącza zegar między 24 a 12 godzinami (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Jasny, Ciemny lub Automatyczny (czujnik telefonu).
+Screen on ON / OFF	Ekran włączony ON / OFF
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: ekran pozostaje włączony, dopóki aplikacja jest otwarta. OFF: gaśnie po czasie ustawionym w telefonie.
+The list has English, Romanian and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Lista zawiera angielski, rumuński i języki urzędowe kraju, w którym jest telefon (z karty SIM lub sieci komórkowej; bez nich z pokazanej miejscowości). Przy pierwszym uruchomieniu aplikacja bierze język telefonu, jeśli go ma. Aplikacja mówi wszystkimi językami urzędowymi UE i po ukraińsku.
+Location On / Off	Lokalizacja On / Off
+Turns automatic location on or off (the same as the location button).	Włącza lub wyłącza automatyczną lokalizację (to samo co przycisk lokalizacji).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Strona taka jak ta, z przyciskiem zamknięcia u góry: trzęsienia ziemi o magnitudzie 3 lub większej z ostatnich 7 dni w twoim kraju, potem te z ostatnich 48 godzin w Unii Europejskiej, Ukrainie i Mołdawii. Każdy wiersz: godzina, miejsce, magnituda, głębokość i odległość od twojej miejscowości. Z EMSC; strona się przewija.
+Notifications ON / OFF	Powiadomienia ON / OFF
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Powiadomienia tylko o: początku deszczu lub śniegu (lub początku w ciągu godziny; ponownie dopiero po 3 suchych godzinach), nowym ostrzeżeniu pogodowym dla twojej miejscowości i trzęsieniu ziemi o magnitudzie 3 lub większej w twoim kraju. Każde zdarzenie tylko raz, także przy zamkniętej aplikacji. Aplikacja prosi o nie przy pierwszym uruchomieniu; jeśli odmówisz, zapyta ponownie dopiero po aktualizacji, nigdy przy każdym uruchomieniu. Gdy telefon nie pokazuje już swojego pytania (po dwóch odmowach), przycisk otwiera ustawienia telefonu, gdzie na nie zezwalasz.
+Night clock ON / OFF	Zegar nocny ON / OFF
+Turns the night clock on or off.	Włącza lub wyłącza zegar nocny.
+The settings of a widget on the home screen (with several, choose which first).	Ustawienia widżetu na ekranie głównym (gdy jest ich kilka, najpierw wybierasz który).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Wszystko, co zrobiła aplikacja, z godziną: czujniki, dotknięcia i gesty, lokalizacja, pobierania (i dlaczego któreś się nie udało), odświeżania w tle i widżety (rozmiar, jaki daje im telefon, pokazany układ). Przechowuje 5 dni, codziennie nowy plik; błędy ze starszych dni zostają jeszcze 10 dni w sekcji Błędy. U góry: telefon (model, Android, One UI) i wersja aplikacji. Czytaj go tutaj, Udostępnij (WhatsApp, Drive, e-mail…) lub Zapisz w telefonie.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Szuka nowej wersji na GitHubie. Za pierwszym razem (i za każdym, dopóki się nie zgodzisz) wyjaśnia, że aktualizacje pochodzą z GitHuba, a nie z Google Play, i prosi o zgodę; przy „Nie teraz” komunikat mówi, że aplikacja nie będzie aktualizowana. Nic nie jest instalowane, dopóki nie dotkniesz Aktualizuj i nie potwierdzisz w instalatorze telefonu.
+This page.	Ta strona.
+About the app, the data it uses, and what's new in each version.	O aplikacji, danych, których używa, i nowościach w każdej wersji.
+What's new	Co nowego
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Ciemny motyw używa kolorów aplikacji Claude. Czcionka: Liberation Sans.
+Installed version: v	Zainstalowana wersja: v
+Favourites	Ulubione
+Choose the county	Wybierz region
+Other countries	Inne kraje
+‹  Back	‹  Wstecz
+‹  Back to the counties	‹  Wróć do regionów
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Na ekranie głównym nie ma widżetu Meteo Alarm. Przytrzymaj wolne miejsce na ekranie głównym › Widżety › Meteo Alarm.
+Which widget?	Który widżet?
+Change	Zmień
+Background	Tło
+Colours	Kolory
+Text colour	Kolor tekstu
+Cancel	Anuluj
+  (as in the app)	  (jak w aplikacji)
+Transparency: 	Przezroczystość: 
+Match the phone's settings	Według ustawień telefonu
+By the weather	Według pogody
+White	Biały
+Black	Czarny
+As in the app	Jak w aplikacji
+Choose the county / country…	Wybierz region / kraj…
+County / country	Region / kraj
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	O ostrzeżeniu Play Protect: Google może stwierdzić, że aplikacja „może być szkodliwa”. Robi tak, ponieważ aplikacja nie pochodzi z Google Play, jej twórca nie jest zarejestrowany w Google, a ona sama może instalować swoje aktualizacje (z github.com/viorelrb-alt/meteo-alarm-android). Aplikacja nie robi nic więcej. Gdy pojawi się okno Play Protect, dotknij „Więcej szczegółów” (jeśli jest), a potem „Zainstaluj bez skanowania” (lub „Zainstaluj mimo to”).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Aby otrzymywać aktualizacje: otwórz ☰ › Sprawdź aktualizacje i, gdy zostaniesz zapytany, wyraź zgodę.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm nie pochodzi z Google Play. Nowe wersje są publikowane na GitHubie (github.com/viorelrb-alt/meteo-alarm-android), a aplikacja aktualizuje się stamtąd: sprawdza mniej więcej raz w tygodniu (lub gdy wybierzesz Sprawdź aktualizacje), pokazuje nowości i dopiero gdy dotkniesz Aktualizuj, pobiera nową wersję i otwiera instalator telefonu, gdzie potwierdzasz ponownie.\n\nCzy pozwalasz aplikacji aktualizować się w ten sposób? Bez twojej zgody aplikacja nie szuka aktualizacji i niczego nie pobiera; możesz zgodzić się później w ☰ › Sprawdź aktualizacje.
+Updates from GitHub	Aktualizacje z GitHuba
+I agree	Zgadzam się
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Bez twojej zgody aplikacja nie będzie aktualizowana. Możesz zmienić zdanie w każdej chwili w ☰ › Sprawdź aktualizacje.
+Checking GitHub for a new version…	Szukam nowej wersji na GitHubie…
+No version published yet.	Nie opublikowano jeszcze żadnej wersji.
+Could not check for updates. Is the internet on?	Nie udało się sprawdzić aktualizacji. Czy internet jest włączony?
+You have the latest version, v	Masz najnowszą wersję, v
+Installed: v	Zainstalowana: v
+New: v	Nowa: v
+New version: v	Nowa wersja: v
+Update	Aktualizuj
+Downloading…	Pobieranie…
+Hide	Ukryj
+Downloading… 	Pobieranie… 
+The download failed. Is the internet on?	Pobieranie nie powiodło się. Czy internet jest włączony?
+The installer could not be opened.	Nie udało się otworzyć instalatora.
+no internet (server not found)	brak internetu (nie znaleziono serwera)
+the server did not answer in time	serwer nie odpowiedział na czas
+no connection	brak połączenia
+secure connection error: 	błąd bezpiecznego połączenia: 
+internet not allowed for the app	internet niedozwolony dla aplikacji
+server error 	błąd serwera 
+network error: 	błąd sieci: 
+data error: 	błąd danych: 
+⌃  more  ⌃	⌃  więcej  ⌃
+⌄  more  ⌄	⌄  więcej  ⌄
+Open the app	Otwórz aplikację
+WARNING!	OSTRZEŻENIE!
+Sunrise at 	Wschód słońca o 
+Sunset at 	Zachód słońca o 
+Weather, warnings and earthquakes	Pogoda, ostrzeżenia i trzęsienia ziemi
+Rain or snow starting, new weather warnings, earthquakes in your country.	Początek deszczu lub śniegu, nowe ostrzeżenia pogodowe, trzęsienia ziemi w twoim kraju.
+Snow	Śnieg
+Rain	Deszcz
+It is snowing in 	Pada śnieg: 
+It is raining in 	Pada deszcz: 
+Snow is expected within the hour in 	Śnieg w ciągu godziny: 
+Rain is expected within the hour in 	Deszcz w ciągu godziny: 
+Warning	Ostrzeżenie
+Earthquake M	Trzęsienie ziemi M
+probably felt: 	prawdopodobnie odczuwalne: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Powiadomienia są włączone: deszcz lub śnieg, ostrzeżenia pogodowe i trzęsienia ziemi w twoim kraju.
+EARTHQUAKE	TRZĘSIENIE ZIEMI
+Felt here: 	Odczuwalne tutaj: 
+ (estimate)	 (szacunek)
+Magnitude: 	Magnituda: 
+Time: 	Czas: 
+Region: 	Region: 
+Depth: 	Głębokość: 
+Epicentre: 	Epicentrum: 
+ from 	 od 
+In 	W: 
+Probably felt, intensity 	Prawdopodobnie odczuwalne, intensywność 
+Probably not felt here.	Tutaj prawdopodobnie nieodczuwalne.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Oszacowane z magnitudy i odległości od ogniska (skala EMS-98); EMSC nie publikuje relacji dla każdej miejscowości.
+All in the last 24 h	Wszystkie z ostatnich 24 h
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Źródło: EMSC (seismicportal.eu), magnituda 3 i więcej, ostatnie 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potencjalnie niebezpieczna pogoda (zwykła o tej porze roku, ale lokalnie silniejsza). Uważaj na zewnątrz.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Niebezpieczna pogoda o dużej intensywności. Bądź bardzo ostrożny, śledź prognozę i rady władz.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Bardzo niebezpieczna pogoda o bardzo dużej intensywności. Podejmij środki ochrony i stosuj się do poleceń władz.
+In force now, until 	Obowiązuje teraz, do 
+From 	Od 
+ until 	 do 
+Source: MeteoAlarm (the national weather service), for 	Źródło: MeteoAlarm (krajowa służba meteorologiczna), dla 
+Stay away from trees, poles and scaffolding; secure loose objects.	Trzymaj się z dala od drzew, słupów i rusztowań; zabezpiecz luźne przedmioty.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Możliwe są wyładowania, ulewy, grad i porywy wiatru; schroń się w budynku.
+Avoid flooded roads and river banks.	Unikaj zalanych dróg i brzegów rzek.
+Slippery roads; drive only if you must, with winter equipment.	Śliskie drogi; jedź tylko, jeśli musisz, z wyposażeniem zimowym.
+Low visibility; drive slowly with the fog lights on.	Słaba widoczność; jedź powoli z włączonymi światłami przeciwmgłowymi.
+Avoid the sun between 11 and 18, drink plenty of water.	Unikaj słońca między 11 a 18, pij dużo wody.
+Dress warmly and limit time outdoors.	Ubierz się ciepło i ogranicz czas na dworze.
+Do not light fires outdoors.	Nie rozpalaj ognia na otwartej przestrzeni.
+H	GODZ.
+MOON	KSIĘŻYC
+HUMIDITY	WILGOTNOŚĆ
+AIR QUALITY	JAKOŚĆ POWIETRZA
+PRESSURE	CIŚNIENIE
+WIND	WIATR
+VISIBILITY	WIDZIALNOŚĆ
+COMPASS	KOMPAS
+Moonrise	Wschód księżyca
+Moonset	Zachód księżyca
+relative humidity	wilgotność względna
+Good	Dobra
+Fair	Umiarkowanie dobra
+Moderate	Umiarkowana
+Poor	Zła
+Very poor	Bardzo zła
+Extremely poor	Skrajnie zła
+Poor (fog)	Słaba (mgła)
+Very good	Bardzo dobra
+steady	stałe
+↓ falling fast	↓ szybko spada
+↓ falling	↓ spada
+↑ rising fast	↑ szybko rośnie
+↑ rising	↑ rośnie
+no compass	brak kompasu
+Tap to leave the night clock	Dotknij, aby wyjść z zegara nocnego
+until	do
+now	teraz
+Rain from	Deszcz od
+max	maks.
+Snow from	Śnieg od
+Raining	Pada deszcz
+Snowing	Pada śnieg
+updated	zaktualizowano
+no data since	brak danych od
+Loading weather…	Ładowanie pogody…
+updating…	aktualizacja…
+Feels like	Odczuwalna
+Wind	Wiatr
+High	Maks.
+Low	Min.
+Charging	Ładowanie
+YELLOW	ŻÓŁTY
+ORANGE	POMARAŃCZOWY
+RED	CZERWONY
+WARNING	OSTRZEŻENIE
+TOMORROW	JUTRO
+DAY AFTER	POJUTRZE
+NEXT 12 HOURS	NAJBLIŻSZE 12 GODZIN
+WEATHER · NEXT HOURS	POGODA · NAJBLIŻSZE GODZINY
+RAIN	DESZCZ
+SNOW	ŚNIEG
+PRECIPITATION	OPADY
+snow	śnieg
+rain	deszcz
+no precipitation	bez opadów
+SUN	SŁOŃCE
+UV INDEX	INDEKS UV
+POLLEN	PYŁKI
+Sunrise	Wschód słońca
+Sunset	Zachód słońca
+Very high	Bardzo wysoki
+Extreme	Ekstremalny
+no pollen	brak pyłków
+no data	brak danych
+No precipitation	Bez opadów
+SNOW ICE	ŚNIEG, OBLODZENIE
+THUNDERSTORM	BURZE
+FOG	MGŁA
+HIGH TEMPERATURE	UPAŁ
+LOW TEMPERATURE	MRÓZ
+COASTALEVENT	ZJAWISKA PRZYBRZEŻNE
+FOREST FIRE	POŻARY LASÓW
+AVALANCHES	LAWINY
+FLOODING	POWODZIE
+RAIN FLOOD	DESZCZ, POWODZIE
+alder	olcha
+birch	brzoza
+olive	oliwka
+grasses	trawy
+mugwort	bylica
+ragweed	ambrozja
+Clear	Bezchmurnie
+Mostly clear	Przeważnie bezchmurnie
+Partly cloudy	Częściowe zachmurzenie
+Overcast	Pochmurno
+Fog	Mgła
+Drizzle	Mżawka
+Freezing drizzle	Marznąca mżawka
+Light rain	Słaby deszcz
+Heavy rain	Ulewny deszcz
+Freezing rain	Marznący deszcz
+Light snow	Słaby śnieg
+Heavy snow	Intensywny śnieg
+Snow grains	Śnieg ziarnisty
+Light showers	Słabe przelotne opady
+Showers	Przelotne opady
+Heavy showers	Silne przelotne opady
+Snow showers	Przelotny śnieg
+Thunderstorm	Burza
+Thunderstorm, hail	Burza, grad
+Code 	Kod 
+not felt	nieodczuwalne
+scarcely felt, only by a few people at rest	ledwo odczuwalne, tylko przez kilka osób w spoczynku
+weak, felt by a few people indoors	słabe, odczuwalne przez nieliczne osoby w budynkach
+felt by many indoors; windows and doors rattle	odczuwalne przez wielu w budynkach; okna i drzwi drżą
+strong, felt by nearly everyone; objects move, some are frightened	silne, odczuwalne przez prawie wszystkich; przedmioty się przesuwają, niektórzy się boją
+slight damage (cracks in plaster); many run outdoors	lekkie uszkodzenia (pęknięcia tynku); wielu wybiega na zewnątrz
+damage to buildings; hard to stand	uszkodzenia budynków; trudno ustać
+heavy damage	poważne uszkodzenia
+destruction	zniszczenia
+great destruction	duże zniszczenia
+very great destruction	bardzo duże zniszczenia
+complete destruction	całkowite zniszczenie
+The phone's own language is in the list too.	Na liście jest też język telefonu.
