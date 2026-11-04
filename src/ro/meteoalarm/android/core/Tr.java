@@ -78,7 +78,7 @@ public final class Tr {
 		return false;
 	}
 
-	/** The official EU languages (and Ukrainian) of a country (ISO code, lower case). */
+	/** The official EU languages (and Ukrainian; Romanian for Moldova) of a country (ISO code, lower case). */
 	public static String[] ofCountry(String cc) {
 		if (cc == null) return new String[0];
 		cc = cc.toLowerCase();
@@ -107,6 +107,7 @@ public final class Tr {
 		if (cc.equals("es") || cc.equals("ad")) return new String[] { "es" };
 		if (cc.equals("se")) return new String[] { "sv" };
 		if (cc.equals("ua")) return new String[] { "uk" };
+		if (cc.equals("ro") || cc.equals("md")) return new String[] { "ro" };
 		if (cc.equals("ch")) return new String[] { "de", "fr", "it" };
 		return new String[0];
 	}

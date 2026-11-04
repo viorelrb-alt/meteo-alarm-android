@@ -1,5 +1,5 @@
 v2.00 · 4. novembra 2026
-- Jazyky: aplikácia teraz hovorí všetkými úradnými jazykmi Európskej únie a po ukrajinsky (aj Pomocník). Pri prvom spustení vezme jazyk telefónu (angličtinu, ak ho aplikácia nemá); potom ten zvolený v ☰ › Jazyk. Zoznam ukazuje len angličtinu, rumunčinu, jazyk telefónu a úradné jazyky krajiny, kde je telefón.
+- Jazyky: aplikácia teraz hovorí všetkými úradnými jazykmi Európskej únie a po ukrajinsky (aj Pomocník). Pri prvom spustení vezme jazyk telefónu (angličtinu, ak ho aplikácia nemá); potom ten zvolený v ☰ › Jazyk. Zoznam ukazuje len angličtinu, jazyk telefónu a úradné jazyky krajiny, kde je telefón.
 - ☰ › Zemetrasenia: stránka so zemetraseniami s magnitúdou 3 a viac za posledných 7 dní vo vašej krajine, potom za posledných 48 hodín v EÚ, na Ukrajine a v Moldavsku (čas, miesto, magnitúda, hĺbka, vzdialenosť).
 - Upozornenia (len s vaším súhlasom): začínajúci dážď alebo sneh, nové meteorologické výstrahy pre vašu obec, zemetrasenia s magnitúdou 3 a viac vo vašej krajine. Každá udalosť len raz. Zapnúť alebo vypnúť v ☰ › Upozornenia.
 - O polohu a upozornenia aplikácia žiada s priateľským vysvetlením pri prvom spustení; ak odmietnete, opýta sa znova až po aktualizácii. Keď telefón svoju otázku už nezobrazuje, tlačidlo otvorí jeho nastavenia.

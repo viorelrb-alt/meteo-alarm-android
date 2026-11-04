@@ -1,0 +1,9 @@
+v2.00 · 2026. november 4.
+- Nyelvek: az alkalmazás most már az Európai Unió összes hivatalos nyelvén és ukránul beszél (a Súgó is). Első indításkor a telefon nyelvét veszi (angolt, ha az alkalmazásban nincs meg); utána a ☰ › Nyelv alatt választottat. A lista csak az angolt, a telefon nyelvét és annak az országnak a hivatalos nyelveit mutatja, ahol a telefon van.
+- ☰ › Földrengések: egy oldal az elmúlt 7 nap legalább 3-as erősségű földrengéseivel az országodban, aztán az elmúlt 48 óráéval az EU-ban, Ukrajnában és Moldovában (időpont, hely, erősség, mélység, távolság).
+- Értesítések (csak a beleegyezéseddel): kezdődő eső vagy havazás, új időjárási figyelmeztetések a településedre, legalább 3-as erősségű földrengések az országodban. Minden esemény csak egyszer. Be- vagy kikapcsolás: ☰ › Értesítések.
+- A helymeghatározást és az értesítéseket az alkalmazás barátságos magyarázattal kéri első indításkor; ha nemet mondasz, csak frissítés után kérdez újra. Ha a telefon már nem mutatja a kérdését, egy gomb megnyitja a beállításait.
+- Első indításkor a helymeghatározás által talált település lesz a mutatott, és bekerül a kedvencek közé.
+- Iránytű vagy fényérzékelő nélküli telefonok: a hozzájuk tartozó gombok és mezők kikapcsolnak; a Napló minden indításkor felsorolja az érzékelőket.
+- Widgetek: a 4x1-es sáv most már tableten is működik (a kezdőképernyő sorait számolja, nem rögzített méreteket).
+- Javítva: frissítés utáni indításkor az időjárás kétszer töltődött le; a Napló most rögzíti a választott nyelvet és minden választott települést, a widgetbeállítások megnyitását pedig csak egyszer.

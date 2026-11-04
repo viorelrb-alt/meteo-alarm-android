@@ -1,0 +1,365 @@
+# Meteo Alarm Android · uk · English<TAB>translation
+Diary (log)	Щоденник (журнал)
+Everything the app did in the last 5 days; older errors kept 10 days.	Усе, що застосунок робив за останні 5 днів; старіші помилки зберігаються 10 днів.
+Share	Поділитися
+Save	Зберегти
+Close	Закрити
+log 	журнал 
+Send the log	Надіслати журнал
+Log saved	Журнал збережено
+Could not save	Не вдалося зберегти
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Це тестова версія Meteo Alarm Android, створена на основі Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Дані не збираються: без облікового запису, без реклами, без статистики. Щоб отримати погоду, лише координати місця надсилаються до Open-Meteo (погода, пилок) і, коли Open-Meteo перевантажений, до MET Norway (погода); попередження надходять від MeteoAlarm, землетруси від EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Місцезнаходження: використовується, щоб показувати погоду там, де ви є, під час запуску і раз на годину. Щоб назвати місто, координати надсилаються до OpenStreetMap (або геокодера телефона), який також дає межу міста. Знайдені міста разом із тим, де ви були, зберігаються лише на телефоні. Застосунок просить його з поясненням під час першого запуску; якщо відмовитеся, ви вибираєте місто зі списку, і він запитає знову лише після оновлення.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Сповіщення (лише якщо погодитеся): початок дощу чи снігу, нові попередження про погоду для вашого міста, землетруси магнітудою 3 і більше у вашій країні. Кожна подія один раз. Увімкнути чи вимкнути в ☰ › Сповіщення.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Мова: під час першого запуску мова телефона (якщо вона є в застосунку, інакше англійська), потім вибрана в ☰ › Мова.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Датчики: застосунок зчитує стан акумулятора (нічний годинник під час заряджання), датчик освітлення телефона з ☰ › Тема › Автоматична (датчик телефона) і компас, який повертає стрілку вітру разом із телефоном. Чого в телефоні немає, вимикається. Ніщо не залишає телефон.
+Updates: 	Оновлення: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Після цього раз на тиждень застосунок перевіряє GitHub на нову версію і питає перед завантаженням.
+I understand	Зрозуміло
+This phone has no light sensor.	У цьому телефоні немає датчика освітлення.
+Automatic theme (phone sensor): on	Автоматична тема (датчик телефона): увімкнено
+Automatic theme (phone sensor): off	Автоматична тема (датчик телефона): вимкнено
+Dark theme	Темна тема
+Light theme	Світла тема
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm може сам знайти ваше місто, тож прогноз, попередження про погоду і землетруси стосуються саме того місця, де ви є, і в подорожі. Місцезнаходження залишається на телефоні: воно використовується лише для вибору міста.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Телефон більше не показує свого запитання, тож дозвольте Місцезнаходження для Meteo Alarm у налаштуваннях телефона (Дозволи › Місцезнаходження).
+If you say no, choose the town from the list; the app asks again only after an update.	Якщо відмовитеся, виберіть місто зі списку; застосунок запитає знову лише після оновлення.
+Location	Місцезнаходження
+Open settings	Відкрити налаштування
+Allow	Дозволити
+Not now	Не зараз
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm може повідомляти вас, навіть коли закритий: коли починається або протягом години почнеться дощ чи сніг, коли для вашого міста оголошено попередження про погоду, і коли у вашій країні стається землетрус магнітудою 3 і більше. Кожна подія лише один раз, нічого іншого. Так ви дізнаєтеся вчасно, не відкриваючи застосунок.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Телефон не дозволяє застосунку надсилати сповіщення, тож увімкніть сповіщення Meteo Alarm у налаштуваннях телефона.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Ви можете будь-коли вимкнути їх у ☰ › Сповіщення. Якщо відмовитеся, застосунок запитає знову лише після оновлення.
+Notifications	Сповіщення
+Notifications ON	Сповіщення УВІМК.
+Notifications OFF	Сповіщення ВИМК.
+Without location access, choose the town from the list.	Без доступу до місцезнаходження виберіть місто зі списку.
+Brightness: slide on the bar	Яскравість: проведіть по смузі
+Automatic location OFF	Автоматичне місцезнаходження ВИМК.
+Automatic location ON	Автоматичне місцезнаходження УВІМК.
+Looking for the exact position…	Шукаю точне місцезнаходження…
+Added to the list: 	Додано до списку: 
+Location is off on the phone.	Місцезнаходження на телефоні вимкнено.
+The position could not be found.	Не вдалося знайти місцезнаходження.
+The town could not be found (internet?).	Не вдалося знайти місто (інтернет?).
+The weather did not come: 	Погода не надійшла: 
+Already updating…	Уже оновлюється…
+The weather has just been updated	Погоду щойно оновлено
+Just tried; try again in a few seconds	Щойно пробували; спробуйте за кілька секунд
+Updating the weather…	Оновлюю погоду…
+Refresh	Оновити
+Town	Місто
+Temperature °C/°F	Температура °C/°F
+Clock 12/24	Годинник 12/24
+Theme	Тема
+Screen on OFF	Екран увімкнений ВИМК.
+Screen on ON	Екран увімкнений УВІМК.
+Language	Мова
+Night clock OFF	Нічний годинник ВИМК.
+Night clock ON	Нічний годинник УВІМК.
+Location Off	Місцезнаходження вимк.
+Location On	Місцезнаходження увімк.
+Earthquakes	Землетруси
+Widgets	Віджети
+Log	Журнал
+Check for updates	Перевірити оновлення
+Help	Довідка
+About	Про застосунок
+24-hour clock	24-годинний годинник
+12-hour clock	12-годинний годинник
+The screen stays on while the app is open	Екран залишається увімкненим, поки застосунок відкритий
+The screen goes off after the phone's timeout	Екран вимикається після тайм-ауту телефона
+While charging at night, the screen shows a big dim clock	Під час заряджання вночі екран показує великий тьмяний годинник
+Night clock off	Нічний годинник вимкнено
+Light	Світла
+Dark	Темна
+Automatic	Автоматична
+Last 7 days · 	Останні 7 днів · 
+Downloading from EMSC…	Завантаження з EMSC…
+The list could not be downloaded. Is the internet on?	Не вдалося завантажити список. Інтернет увімкнений?
+No earthquake of magnitude 3 or more.	Немає землетрусів магнітудою 3 і більше.
+Last 48 hours · EU, Ukraine, Moldova	Останні 48 годин · ЄС, Україна, Молдова
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Джерело: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), магнітуда 3 і більше. «Відчутний» — це оцінка за шкалою EMS-98 з магнітуди та відстані до вогнища.
+depth 	глибина 
+from 	відстань 
+Probably felt in 	Імовірно відчутний у 
+Probably not felt in 	Імовірно не відчутний у 
+Updates	Оновлення
+How to update	Як оновити
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Згоду запитують лише там: один раз, якщо погодитеся (відтоді застосунок також сам перевіряє раз на тиждень), щоразу, поки відмовляєтеся. Без неї застосунок ніколи не шукає оновлень і нічого не завантажує.
+Buttons on the screen	Кнопки на екрані
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Відкриває міста: ваші останні 3 (обрані) і області. Торкніться області, потім міста.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Знаходить, де ви є, і показує погоду цього міста; перевіряє знову щогодини. Знайдені міста зберігаються на телефоні разом із тим, де ви були, а показане місто змінюється лише тоді, коли ви поза його межею. Працює й в інших країнах, з попередженнями MeteoAlarm приблизно в 38 країнах Європи. Дотик вмикає автоматичне місцезнаходження (кнопка заповнена, шукає зараз) або вимикає (кнопка порожня).
+Brightness	Яскравість
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Показує смугу яскравості ліворуч: проведіть по ній угору чи вниз. Вона зникає сама.
+Light / dark theme	Світла / темна тема
+Over the brightness bar: switches between the light and the dark theme.	Над смугою яскравості: перемикає між світлою і темною темою.
+Automatic theme (phone sensor)	Автоматична тема (датчик телефона)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Світла тема, коли світло, темна тема в темряві. Заповнена, поки увімкнена.
+Phone without a sensor	Телефон без датчика
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Під час кожного запуску застосунок перевіряє датчики телефона (компас, освітлення, акселерометр, наближення, тиск, GPS) і записує в Журнал, яких немає. Без датчика освітлення тема Автоматична (датчик телефона) сіра і нічого не робить; без компаса блок стрілки вітру приховано.
+Location consent	Згода на місцезнаходження
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Під час першого запуску застосунок пояснює, навіщо йому місцезнаходження (погода, попередження і землетруси саме там, де ви є), потім запитує телефон. Перше знайдене місто стає показаним і додається до обраних. Якщо відмовитеся, ви вибираєте місто зі списку, а застосунок запитає знову лише після оновлення; коли телефон більше не запитує, кнопка відкриває його налаштування.
+Gestures	Жести
+Tap on the town's name	Дотик до назви міста
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Один раз перевіряє через GPS для кращого прогнозу там, де ви є; автоматичне місцезнаходження лишається як є.
+Pull down	Потягніть униз
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Потягніть екран униз і відпустіть: погода оновлюється. Повторне потягування під час завантаження або протягом 10 секунд після останнього завантаження не запускає нове; про це каже повідомлення.
+Left edge	Лівий край
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Проведіть угору чи вниз біля лівого краю (трохи всередину від нього): з'являється смуга яскравості, і проведення по ній встановлює яскравість.
+Wind arrow	Стрілка вітру
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Біля вітру: стрілка показує, куди дме вітер, повернута разом із телефоном (компас); помаранчева позначка — північ.
+Night clock	Нічний годинник
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Коли телефон заряджається вночі (від заходу до сходу сонця) і ніхто не торкається його хвилину: великий тьмяний годинник. Дотик повертає на хвилину.
+Warnings and earthquake	Попередження і землетрус
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Під лінією один ряд блоків: спершу землетрус (якщо він був), потім по блоку на кожен код попередження (червоний, помаранчевий, жовтий). На екрані вміщаються два; якщо їх більше, ряд сам зсувається кожні 2 секунди і починає знову з першого. Його можна також гортати пальцем. Торкніться блоку: ряд зупиняється на 20 секунд, а бульбашка показує подробиці більшими літерами (для коду: що він означає, кожне попередження з періодом і порадою; для землетрусу: магнітуда, час, регіон, глибина, епіцентр і відстань, як його імовірно відчули у вашому місті, і всі землетруси за останні 24 години).
+Earthquake box	Блок землетрусу
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Від EMSC (European-Mediterranean Seismological Centre): землетруси магнітудою 3 і більше за останні 24 години в країні вашого міста (яку знайшло місцезнаходження). Блок показує найсильніший: магнітуду і час, а також як його відчули у вашому місті, як оцінку за шкалою EMS-98 (з магнітуди та відстані до вогнища; EMSC не публікує повідомлень кожного міста). Він зникає через 24 години.
+Left / right on the boxes	Ліворуч / праворуч по блоках
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Ряд попереджень, блоки годин і п'ять днів (завтра і наступні 4 дні, по два) рухаються за пальцем. Графік Опади · наступні 12 годин іде першим у ряду годин, лише коли очікується дощ або сніг.
+The row of boxes at the bottom	Нижній ряд блоків
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Гортайте його вбік (у горизонтальному положенні: угору і вниз, по два, без блоку вітру): Сонце (після заходу Місяць зі сходом, заходом і фазою), УФ-індекс, Пилок, Вологість (коли йде дощ), Якість повітря, Тиск, Вітер, Видимість і Компас.
+Home-screen widgets	Віджети головного екрана
+Meteo Alarm widgets	Віджети Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Утримуйте вільне місце на головному екрані, виберіть Віджети, потім Meteo Alarm: 2x2, 4x1, 4x2 і «будь-який розмір», кожен зі своїм попереднім переглядом; він одразу з'являється на екрані, без вікна налаштувань. Є три макети: 2x2 (квадрат: значок, температура, місто, найближчий захід чи схід сонця), 4x1 (низька смуга, також із небом) і 4x2 (широкий, також із максимумом / мінімумом і наступними 5 годинами), а також малий 2x1 (значок і температура) для рамок, замалих для них. Утримуйте його і тягніть його краї: широкий (близько 4 стовпців) і один рядок = 4x1, широкий і вищий = 4x2 (лишається 4x2, хоч якою високою його зробите), вузький = 2x2, вузький і один рядок = 2x1. Рядки і стовпці — це ті, що на вашому головному екрані (на планшеті рядок значно вищий, ніж на телефоні), тож смуга 4x1 працює і там. Він заповнює ширину рамки; коли рамка вища, ніж потрібно макету, віджет зберігає свій розмір, по центру, з фоном лише за ним (решта лишається прозорою). Макет ніколи не зменшується настільки, щоб тексти ставали задрібними. За чинних попереджень рядок «ПОПЕРЕДЖЕННЯ!» показує три пігулки: жовтий = сірий сірий жовтий, помаранчевий = сірий помаранчевий помаранчевий, червоний = усі червоні; два коди = гірший, сірий, інший; три коди = червоний помаранчевий жовтий. Дотик відкриває застосунок.
+Widget settings	Налаштування віджета
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Утримуйте віджет › Налаштування (Android 12 і новіші) або ☰ › Віджети. Кожен віджет має власні: попередній перегляд; місто (як у застосунку або інше через Змінити); Фон увімк. / вимк. і наскільки прозорий; Кольори: за погодою (блакитне небо, нічна синява, сірі хмари, дощ, крижаний сніг, гроза, туман), за налаштуваннями телефона або темні; Колір тексту: автоматичний (чорний на світлому фоні), білий або чорний. Скасувати або Зберегти.
+Refreshing by itself	Оновлюється сам
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Погода, попередження і землетруси надходять самі, навіть із закритим застосунком (для віджетів): кожні 15 хвилин, коли екран увімкнений, кожні 30 хвилин, коли вимкнений, зовсім ні між заходом і сходом сонця, коли екран вимкнений (чекає, доки екран увімкнеться), і раз на годину, коли заряд нижче 25% і телефон не заряджається. Коли завантаження не вдається, повідомлення і рядок «! немає даних з …» під годинником пояснюють чому (немає інтернету, сервер не відповів, помилка захищеного з'єднання, помилка сервера…). Коли Open-Meteo зайнятий (HTTP 503 «overloaded») або не відповідає, прогноз надходить від MET Norway (api.met.no, Норвезький метеорологічний інститут), а рядок під годинником каже «· MET Norway»; після «зайнято» застосунок 20 хвилин звертається одразу до MET Norway. Доки не надійдуть нові дані, на екрані лишається остання збережена погода.
+The ☰ menu	Меню ☰
+Downloads the weather, the warnings and the earthquakes now.	Завантажує погоду, попередження і землетруси зараз.
+The same as the town button.	Те саме, що кнопка міста.
+Switches between Celsius and Fahrenheit.	Перемикає між Цельсієм і Фаренгейтом.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Перемикає годинник між 24 годинами і 12 годинами (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Світла, Темна або Автоматична (датчик телефона).
+Screen on ON / OFF	Екран увімкнений УВІМК. / ВИМК.
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	УВІМК.: екран залишається увімкненим, поки застосунок відкритий. ВИМК.: він вимикається після тайм-ауту телефона.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	У списку є англійська та офіційні мови країни, де перебуває телефон (за SIM-карткою або мобільною мережею; без них — за показаним містом). Під час першого запуску застосунок бере мову телефона, якщо вона в нього є. Застосунок говорить усіма офіційними мовами ЄС і українською.
+Location On / Off	Місцезнаходження увімк. / вимк.
+Turns automatic location on or off (the same as the location button).	Вмикає або вимикає автоматичне місцезнаходження (те саме, що кнопка місцезнаходження).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Сторінка, як ця, з кнопкою закриття вгорі: землетруси магнітудою 3 і більше за останні 7 днів у вашій країні, потім за останні 48 годин у Європейському Союзі, Україні та Молдові. Кожен рядок: час, місце, магнітуда, глибина і відстань від вашого міста. Від EMSC; її можна гортати.
+Notifications ON / OFF	Сповіщення УВІМК. / ВИМК.
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Сповіщення лише про: початок дощу чи снігу (або початок протягом години; знову лише після 3 сухих годин), нове попередження про погоду для вашого міста і землетрус магнітудою 3 і більше у вашій країні. Кожна подія лише один раз, навіть із закритим застосунком. Застосунок просить їх під час першого запуску; якщо відмовитеся, запитає знову лише після оновлення, ніколи під час кожного запуску. Коли телефон більше не показує свого запитання (після двох відмов), кнопка відкриває налаштування телефона, де ви їх дозволяєте.
+Night clock ON / OFF	Нічний годинник УВІМК. / ВИМК.
+Turns the night clock on or off.	Вмикає або вимикає нічний годинник.
+The settings of a widget on the home screen (with several, choose which first).	Налаштування віджета на головному екрані (якщо їх кілька, спершу виберіть який).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Усе, що робив застосунок, із часом: датчики, дотики і жести, місцезнаходження, завантаження даних (і чому якесь не вдалося), оновлення у фоні і віджети (розмір, який дає їм телефон, показаний макет). Зберігає 5 днів, щодня новий файл; помилки старіших днів лишаються ще 10 днів у розділі Помилки. Угорі: телефон (модель, Android, One UI) і версія застосунку. Читайте тут, Поділіться (WhatsApp, Drive, e-mail…) або Збережіть на телефоні.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Шукає нову версію на GitHub. Першого разу (і щоразу, доки не погодитеся) пояснює, що оновлення надходять із GitHub, а не з Google Play, і просить вашої згоди; з «Не зараз» повідомлення каже, що застосунок не оновлюватиметься. Нічого не встановлюється, доки ви не торкнетеся Оновити і не підтвердите в інсталяторі телефона.
+This page.	Ця сторінка.
+About the app, the data it uses, and what's new in each version.	Про застосунок, дані, які він використовує, і що нового в кожній версії.
+What's new	Що нового
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Темна тема використовує кольори застосунку Claude. Шрифт: Liberation Sans.
+Installed version: v	Встановлена версія: v
+Favourites	Обрані
+Choose the county	Виберіть область
+Other countries	Інші країни
+‹  Back	‹  Назад
+‹  Back to the counties	‹  Назад до областей
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	На головному екрані немає віджета Meteo Alarm. Утримуйте вільне місце на головному екрані › Віджети › Meteo Alarm.
+Which widget?	Який віджет?
+Change	Змінити
+Background	Фон
+Colours	Кольори
+Text colour	Колір тексту
+Cancel	Скасувати
+  (as in the app)	  (як у застосунку)
+Transparency: 	Прозорість: 
+Match the phone's settings	За налаштуваннями телефона
+By the weather	За погодою
+White	Білий
+Black	Чорний
+As in the app	Як у застосунку
+Choose the county / country…	Виберіть область / країну…
+County / country	Область / країна
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Про попередження Play Protect: Google може сказати, що застосунок «може бути шкідливим». Він робить так, бо застосунок не з Google Play, його розробник не зареєстрований у Google, і він може сам встановлювати свої оновлення (з github.com/viorelrb-alt/meteo-alarm-android). Застосунок не робить нічого іншого. Коли з'явиться вікно Play Protect, торкніться «Докладніше» (якщо є), потім «Установити без сканування» (або «Усе одно встановити»).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Щоб отримувати оновлення: відкрийте ☰ › Перевірити оновлення і, коли запитають, дайте згоду.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm не з Google Play. Його нові версії публікуються на GitHub (github.com/viorelrb-alt/meteo-alarm-android), і застосунок оновлюється звідти: перевіряє приблизно раз на тиждень (або коли ви вибираєте Перевірити оновлення), показує, що нового, і лише коли ви торкнетеся Оновити, завантажує нову версію і відкриває інсталятор телефона, де ви підтверджуєте ще раз.\n\nДозволяєте застосунку оновлюватися так? Без вашої згоди застосунок не шукає оновлень і нічого не завантажує; погодитися можна пізніше в ☰ › Перевірити оновлення.
+Updates from GitHub	Оновлення з GitHub
+I agree	Погоджуюся
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Без вашої згоди застосунок не оновлюватиметься. Ви можете передумати будь-коли в ☰ › Перевірити оновлення.
+Checking GitHub for a new version…	Шукаю нову версію на GitHub…
+No version published yet.	Ще не опубліковано жодної версії.
+Could not check for updates. Is the internet on?	Не вдалося перевірити оновлення. Інтернет увімкнений?
+You have the latest version, v	У вас найновіша версія, v
+Installed: v	Встановлено: v
+New: v	Нова: v
+New version: v	Нова версія: v
+Update	Оновити
+Downloading…	Завантаження…
+Hide	Сховати
+Downloading… 	Завантаження… 
+The download failed. Is the internet on?	Завантаження не вдалося. Інтернет увімкнений?
+The installer could not be opened.	Не вдалося відкрити інсталятор.
+no internet (server not found)	немає інтернету (сервер не знайдено)
+the server did not answer in time	сервер не відповів вчасно
+no connection	немає з'єднання
+secure connection error: 	помилка захищеного з'єднання: 
+internet not allowed for the app	інтернет не дозволено для застосунку
+server error 	помилка сервера 
+network error: 	помилка мережі: 
+data error: 	помилка даних: 
+⌃  more  ⌃	⌃  більше  ⌃
+⌄  more  ⌄	⌄  більше  ⌄
+Open the app	Відкрити застосунок
+WARNING!	ПОПЕРЕДЖЕННЯ!
+Sunrise at 	Схід сонця о 
+Sunset at 	Захід сонця о 
+Weather, warnings and earthquakes	Погода, попередження і землетруси
+Rain or snow starting, new weather warnings, earthquakes in your country.	Початок дощу чи снігу, нові попередження про погоду, землетруси у вашій країні.
+Snow	Сніг
+Rain	Дощ
+It is snowing in 	Іде сніг: 
+It is raining in 	Іде дощ: 
+Snow is expected within the hour in 	Протягом години очікується сніг: 
+Rain is expected within the hour in 	Протягом години очікується дощ: 
+Warning	Попередження
+Earthquake M	Землетрус M
+probably felt: 	імовірно відчутний: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Сповіщення увімкнено: дощ чи сніг, попередження про погоду і землетруси у вашій країні.
+EARTHQUAKE	ЗЕМЛЕТРУС
+Felt here: 	Відчутний тут: 
+ (estimate)	 (оцінка)
+Magnitude: 	Магнітуда: 
+Time: 	Час: 
+Region: 	Регіон: 
+Depth: 	Глибина: 
+Epicentre: 	Епіцентр: 
+ from 	 від 
+In 	У 
+Probably felt, intensity 	Імовірно відчутний, інтенсивність 
+Probably not felt here.	Тут імовірно не відчутний.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Оцінено з магнітуди та відстані до вогнища (шкала EMS-98); EMSC не публікує повідомлень про відчуття з кожного міста.
+All in the last 24 h	Усі за останні 24 год
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Джерело: EMSC (seismicportal.eu), магнітуда 3 і більше, останні 24 год.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Потенційно небезпечна погода (звичайна для сезону, але місцями інтенсивніша). Будьте обережні надворі.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Небезпечна погода високої інтенсивності. Будьте дуже обережні, стежте за прогнозом і дотримуйтеся порад влади.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Дуже небезпечна погода дуже високої інтенсивності. Вживіть заходів захисту і виконуйте вказівки влади.
+In force now, until 	Діє зараз, до 
+From 	З 
+ until 	 до 
+Source: MeteoAlarm (the national weather service), for 	Джерело: MeteoAlarm (національна метеослужба), для 
+Stay away from trees, poles and scaffolding; secure loose objects.	Тримайтеся подалі від дерев, стовпів і риштовання; закріпіть незакріплені предмети.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Можливі блискавки, зливи, град і пориви; сховайтеся в приміщенні.
+Avoid flooded roads and river banks.	Уникайте затоплених доріг і берегів річок.
+Slippery roads; drive only if you must, with winter equipment.	Слизькі дороги; їдьте лише за потреби, із зимовим спорядженням.
+Low visibility; drive slowly with the fog lights on.	Погана видимість; їдьте повільно з увімкненими протитуманними фарами.
+Avoid the sun between 11 and 18, drink plenty of water.	Уникайте сонця з 11 до 18, пийте багато води.
+Dress warmly and limit time outdoors.	Одягайтеся тепло і менше перебувайте надворі.
+Do not light fires outdoors.	Не розпалюйте вогонь надворі.
+H	П
+MOON	МІСЯЦЬ
+HUMIDITY	ВОЛОГІСТЬ
+AIR QUALITY	ЯКІСТЬ ПОВІТРЯ
+PRESSURE	ТИСК
+WIND	ВІТЕР
+VISIBILITY	ВИДИМІСТЬ
+COMPASS	КОМПАС
+Moonrise	Схід місяця
+Moonset	Захід місяця
+relative humidity	відносна вологість
+Good	Добра
+Fair	Задовільна
+Moderate	Помірна
+Poor	Погана
+Very poor	Дуже погана
+Extremely poor	Надзвичайно погана
+Poor (fog)	Погана (туман)
+Very good	Дуже добра
+steady	стабільний
+↓ falling fast	↓ швидко падає
+↓ falling	↓ падає
+↑ rising fast	↑ швидко зростає
+↑ rising	↑ зростає
+no compass	немає компаса
+Tap to leave the night clock	Торкніться, щоб вийти з нічного годинника
+until	до
+now	зараз
+Rain from	Дощ з
+max	макс.
+Snow from	Сніг з
+Raining	Іде дощ
+Snowing	Іде сніг
+updated	оновлено
+no data since	немає даних з
+Loading weather…	Завантаження погоди…
+updating…	оновлення…
+Feels like	Відчувається як
+Wind	Вітер
+High	Макс.
+Low	Мін.
+Charging	Заряджається
+YELLOW	ЖОВТИЙ
+ORANGE	ПОМАРАНЧЕВИЙ
+RED	ЧЕРВОНИЙ
+WARNING	ПОПЕРЕДЖЕННЯ
+TOMORROW	ЗАВТРА
+DAY AFTER	ПІСЛЯЗАВТРА
+NEXT 12 HOURS	НАСТУПНІ 12 ГОДИН
+WEATHER · NEXT HOURS	ПОГОДА · НАСТУПНІ ГОДИНИ
+RAIN	ДОЩ
+SNOW	СНІГ
+PRECIPITATION	ОПАДИ
+snow	сніг
+rain	дощ
+no precipitation	без опадів
+SUN	СОНЦЕ
+UV INDEX	УФ-ІНДЕКС
+POLLEN	ПИЛОК
+Sunrise	Схід сонця
+Sunset	Захід сонця
+Very high	Дуже високий
+Extreme	Екстремальний
+no pollen	немає пилку
+no data	немає даних
+No precipitation	Без опадів
+SNOW ICE	СНІГ ОЖЕЛЕДЬ
+THUNDERSTORM	ГРОЗА
+FOG	ТУМАН
+HIGH TEMPERATURE	ВИСОКА ТЕМПЕРАТУРА
+LOW TEMPERATURE	НИЗЬКА ТЕМПЕРАТУРА
+COASTALEVENT	ПРИБЕРЕЖНЕ ЯВИЩЕ
+FOREST FIRE	ЛІСОВА ПОЖЕЖА
+AVALANCHES	ЛАВИНИ
+FLOODING	ПОВІНЬ
+RAIN FLOOD	ДОЩОВА ПОВІНЬ
+alder	вільха
+birch	береза
+olive	оливка
+grasses	злаки
+mugwort	полин
+ragweed	амброзія
+Clear	Ясно
+Mostly clear	Переважно ясно
+Partly cloudy	Мінлива хмарність
+Overcast	Похмуро
+Fog	Туман
+Drizzle	Мряка
+Freezing drizzle	Крижана мряка
+Light rain	Невеликий дощ
+Heavy rain	Сильний дощ
+Freezing rain	Крижаний дощ
+Light snow	Невеликий сніг
+Heavy snow	Сильний сніг
+Snow grains	Снігова крупа
+Light showers	Невеликі зливи
+Showers	Зливи
+Heavy showers	Сильні зливи
+Snow showers	Снігопади
+Thunderstorm	Гроза
+Thunderstorm, hail	Гроза, град
+Code 	Код 
+not felt	не відчутний
+scarcely felt, only by a few people at rest	ледь відчутний, лише деякими в спокої
+weak, felt by a few people indoors	слабкий, відчутний деякими в приміщеннях
+felt by many indoors; windows and doors rattle	відчутний багатьма в приміщеннях; брязкотять вікна і двері
+strong, felt by nearly everyone; objects move, some are frightened	сильний, відчутний майже всіма; предмети рухаються, дехто лякається
+slight damage (cracks in plaster); many run outdoors	незначні пошкодження (тріщини в штукатурці); багато хто вибігає надвір
+damage to buildings; hard to stand	пошкодження будівель; важко встояти
+heavy damage	тяжкі пошкодження
+destruction	руйнування
+great destruction	значні руйнування
+very great destruction	дуже значні руйнування
+complete destruction	повне руйнування
+The phone's own language is in the list too.	У списку є й власна мова телефона.

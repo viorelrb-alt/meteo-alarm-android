@@ -1,5 +1,5 @@
 v2.00 · 4. listopadu 2026
-- Jazyky: aplikace nyní mluví všemi úředními jazyky Evropské unie a ukrajinsky (i Nápověda). Při prvním spuštění vezme jazyk telefonu (angličtinu, pokud ho aplikace nemá); potom ten zvolený v ☰ › Jazyk. Seznam ukazuje jen angličtinu, rumunštinu, jazyk telefonu a úřední jazyky země, kde je telefon.
+- Jazyky: aplikace nyní mluví všemi úředními jazyky Evropské unie a ukrajinsky (i Nápověda). Při prvním spuštění vezme jazyk telefonu (angličtinu, pokud ho aplikace nemá); potom ten zvolený v ☰ › Jazyk. Seznam ukazuje jen angličtinu, jazyk telefonu a úřední jazyky země, kde je telefon.
 - ☰ › Zemětřesení: stránka se zemětřeseními o magnitudě 3 a více za posledních 7 dní ve vaší zemi, potom za posledních 48 hodin v EU, na Ukrajině a v Moldavsku (čas, místo, magnituda, hloubka, vzdálenost).
 - Oznámení (jen s vaším souhlasem): začínající déšť nebo sníh, nové meteorologické výstrahy pro vaši obec, zemětřesení o magnitudě 3 a více ve vaší zemi. Každá událost jen jednou. Zapnout nebo vypnout v ☰ › Oznámení.
 - O polohu a oznámení se aplikace žádá s přátelským vysvětlením při prvním spuštění; když odmítnete, zeptá se znovu až po aktualizaci. Když telefon svou otázku už nezobrazuje, tlačítko otevře jeho nastavení.

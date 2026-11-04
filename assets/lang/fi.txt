@@ -1,0 +1,365 @@
+# Meteo Alarm Android · fi · English<TAB>translation
+Diary (log)	Päiväkirja (loki)
+Everything the app did in the last 5 days; older errors kept 10 days.	Kaikki, mitä sovellus teki viimeisten 5 päivän aikana; vanhemmat virheet säilytetään 10 päivää.
+Share	Jaa
+Save	Tallenna
+Close	Sulje
+log 	loki 
+Send the log	Lähetä loki
+Log saved	Loki tallennettu
+Could not save	Tallennus ei onnistunut
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Tämä on Meteo Alarm Androidin testiversio, tehty Meteo Alarm Kindlen pohjalta.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Tietoja ei kerätä: ei tiliä, ei mainoksia, ei tilastoja. Säätä varten vain paikan koordinaatit lähetetään Open-Meteolle (sää, siitepöly) ja, kun Open-Meteo on ylikuormittunut, MET Norwaylle (sää); varoitukset tulevat MeteoAlarmilta, maanjäristykset EMSC:ltä (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Sijainti: käytetään näyttämään sää siellä, missä olet, käynnistyksessä ja kerran tunnissa. Kaupungin nimeämiseksi koordinaatit menevät OpenStreetMapille (tai puhelimen paikannuspalvelulle), joka antaa myös kaupungin rajat. Löydetyt kaupungit ja se, missä olit, säilytetään vain puhelimessa. Sovellus pyytää sitä selityksen kanssa ensimmäisellä käynnistyksellä; jos kieltäydyt, valitset kaupungin luettelosta ja se kysyy uudelleen vasta päivityksen jälkeen.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Ilmoitukset (vain jos hyväksyt): sade tai lumisade alkaa, uudet säävaroitukset kaupungillesi, vähintään magnitudin 3 maanjäristykset maassasi. Jokainen tapahtuma kerran. Päälle tai pois kohdassa ☰ › Ilmoitukset.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Kieli: ensimmäisellä käynnistyksellä puhelimen kieli (jos sovelluksessa on se, muuten englanti), sitten kohdassa ☰ › Kieli valittu.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Anturit: sovellus lukee akun tilan (yökello latauksen aikana), puhelimen valoanturin asetuksella ☰ › Teema › Automaattinen (puhelimen anturi) ja kompassin, joka kääntää tuulinuolta puhelimen mukana. Mitä puhelimessa ei ole, kytketään pois. Mikään ei lähde puhelimesta.
+Updates: 	Päivitykset: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Sen jälkeen sovellus tarkistaa kerran viikossa GitHubista uuden version ja kysyy ennen lataamista.
+I understand	Ymmärrän
+This phone has no light sensor.	Tässä puhelimessa ei ole valoanturia.
+Automatic theme (phone sensor): on	Automaattinen teema (puhelimen anturi): päällä
+Automatic theme (phone sensor): off	Automaattinen teema (puhelimen anturi): pois
+Dark theme	Tumma teema
+Light theme	Vaalea teema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm voi löytää kaupunkisi itse, joten ennuste, säävaroitukset ja maanjäristykset koskevat juuri sitä paikkaa, jossa olet, myös matkoilla. Sijainti pysyy puhelimessa: sitä käytetään vain kaupungin valintaan.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Puhelin ei enää näytä kysymystään, joten salli Sijainti Meteo Alarmille puhelimen asetuksissa (Käyttöoikeudet › Sijainti).
+If you say no, choose the town from the list; the app asks again only after an update.	Jos kieltäydyt, valitse kaupunki luettelosta; sovellus kysyy uudelleen vasta päivityksen jälkeen.
+Location	Sijainti
+Open settings	Avaa asetukset
+Allow	Salli
+Not now	Ei nyt
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm voi kertoa sinulle, myös suljettuna: kun sade tai lumisade alkaa tai alkaa tunnin sisällä, kun kaupungillesi annetaan säävaroitus ja kun maassasi tapahtuu vähintään magnitudin 3 maanjäristys. Jokainen tapahtuma vain kerran, ei muuta. Näin tiedät ajoissa avaamatta sovellusta.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Puhelin ei anna sovelluksen ilmoittaa, joten kytke Meteo Alarmin ilmoitukset päälle puhelimen asetuksissa.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Voit kytkeä ne pois milloin tahansa kohdassa ☰ › Ilmoitukset. Jos kieltäydyt, sovellus kysyy uudelleen vasta päivityksen jälkeen.
+Notifications	Ilmoitukset
+Notifications ON	Ilmoitukset PÄÄLLÄ
+Notifications OFF	Ilmoitukset POIS
+Without location access, choose the town from the list.	Ilman sijaintioikeutta valitse kaupunki luettelosta.
+Brightness: slide on the bar	Kirkkaus: liu'uta palkilla
+Automatic location OFF	Automaattinen sijainti POIS
+Automatic location ON	Automaattinen sijainti PÄÄLLÄ
+Looking for the exact position…	Etsitään tarkkaa sijaintia…
+Added to the list: 	Lisätty luetteloon: 
+Location is off on the phone.	Sijainti on pois päältä puhelimessa.
+The position could not be found.	Sijaintia ei löytynyt.
+The town could not be found (internet?).	Kaupunkia ei löytynyt (internet?).
+The weather did not come: 	Sää ei tullut: 
+Already updating…	Päivitetään jo…
+The weather has just been updated	Sää päivitettiin juuri
+Just tried; try again in a few seconds	Yritettiin juuri; yritä uudelleen muutaman sekunnin kuluttua
+Updating the weather…	Päivitetään säätä…
+Refresh	Päivitä
+Town	Kaupunki
+Temperature °C/°F	Lämpötila °C/°F
+Clock 12/24	Kello 12/24
+Theme	Teema
+Screen on OFF	Näyttö päällä POIS
+Screen on ON	Näyttö päällä PÄÄLLÄ
+Language	Kieli
+Night clock OFF	Yökello POIS
+Night clock ON	Yökello PÄÄLLÄ
+Location Off	Sijainti pois
+Location On	Sijainti päällä
+Earthquakes	Maanjäristykset
+Widgets	Widgetit
+Log	Loki
+Check for updates	Tarkista päivitykset
+Help	Ohje
+About	Tietoja
+24-hour clock	24 tunnin kello
+12-hour clock	12 tunnin kello
+The screen stays on while the app is open	Näyttö pysyy päällä, kun sovellus on auki
+The screen goes off after the phone's timeout	Näyttö sammuu puhelimen aikakatkaisun jälkeen
+While charging at night, the screen shows a big dim clock	Yöllä latauksen aikana näytössä on iso himmeä kello
+Night clock off	Yökello pois
+Light	Vaalea
+Dark	Tumma
+Automatic	Automaattinen
+Last 7 days · 	Viimeiset 7 päivää · 
+Downloading from EMSC…	Ladataan EMSC:ltä…
+The list could not be downloaded. Is the internet on?	Luetteloa ei voitu ladata. Onko internet päällä?
+No earthquake of magnitude 3 or more.	Ei vähintään magnitudin 3 maanjäristyksiä.
+Last 48 hours · EU, Ukraine, Moldova	Viimeiset 48 tuntia · EU, Ukraina, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Lähde: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitudi 3 ja yli. ”Tuntui” on arvio EMS-98-asteikolla magnitudista ja etäisyydestä järistyspesäkkeeseen.
+depth 	syvyys 
+from 	etäisyys 
+Probably felt in 	Tuntui luultavasti: 
+Probably not felt in 	Ei luultavasti tuntunut: 
+Updates	Päivitykset
+How to update	Näin päivität
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Suostumusta kysytään vain siellä: kerran, jos hyväksyt (siitä lähtien sovellus tarkistaa myös itse kerran viikossa), joka kerta, kun kieltäydyt. Ilman sitä sovellus ei koskaan etsi päivityksiä eikä lataa mitään.
+Buttons on the screen	Näytön painikkeet
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Avaa kaupungit: viimeiset 3 (suosikit) ja maakunnat. Napauta maakuntaa, sitten kaupunkia.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Selvittää, missä olet, ja näyttää sen kaupungin sään; se katsoo uudelleen joka tunti. Löydetyt kaupungit säilytetään puhelimessa sen kanssa, missä olit, ja näytetty kaupunki vaihtuu vasta, kun olet sen rajojen ulkopuolella. Se toimii myös muissa maissa, MeteoAlarm-varoituksin noin 38 Euroopan maassa. Napautus kytkee automaattisen sijainnin päälle (painike täytetty, se katsoo heti) tai pois (painike tyhjä).
+Brightness	Kirkkaus
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Näyttää kirkkauspalkin vasemmalla: liu'uta sitä ylös tai alas. Se katoaa itsestään.
+Light / dark theme	Vaalea / tumma teema
+Over the brightness bar: switches between the light and the dark theme.	Kirkkauspalkin yläpuolella: vaihtaa vaalean ja tumman teeman välillä.
+Automatic theme (phone sensor)	Automaattinen teema (puhelimen anturi)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Vaalea teema, kun on valoisaa, tumma teema pimeässä. Täytetty, kun se on päällä.
+Phone without a sensor	Puhelin ilman anturia
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Jokaisella käynnistyksellä sovellus tarkistaa puhelimen anturit (kompassi, valo, kiihtyvyysanturi, läheisyys, ilmanpaine, GPS) ja kirjoittaa Lokiin, mitkä puuttuvat. Ilman valoanturia teema Automaattinen (puhelimen anturi) on harmaa eikä tee mitään; ilman kompassia tuulinuolen ruutu piilotetaan.
+Location consent	Sijaintisuostumus
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Ensimmäisellä käynnistyksellä sovellus selittää, miksi se haluaa sijainnin (sää, varoitukset ja maanjäristykset juuri siinä paikassa, jossa olet), sitten puhelin kysyy. Ensimmäisestä löydetystä kaupungista tulee näytetty kaupunki, ja se lisätään suosikkeihin. Jos kieltäydyt, valitset kaupungin luettelosta, ja sovellus kysyy uudelleen vasta päivityksen jälkeen; kun puhelin ei enää kysy, painike avaa sen asetukset.
+Gestures	Eleet
+Tap on the town's name	Napautus kaupungin nimeen
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Katsoo kerran GPS:llä paremman ennusteen saamiseksi siellä, missä olet; automaattinen sijainti pysyy ennallaan.
+Pull down	Vedä alas
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Vedä näyttöä alas ja päästä irti: sää päivitetään. Uusi veto latauksen aikana tai 10 sekunnin sisällä edellisestä latauksesta ei aloita uutta; ilmoitus kertoo sen.
+Left edge	Vasen reuna
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Liu'uta ylös tai alas lähellä vasenta reunaa (hieman sen sisäpuolella): kirkkauspalkki tulee esiin, ja sillä liu'uttaminen säätää kirkkautta.
+Wind arrow	Tuulinuoli
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Tuulen vieressä: nuoli näyttää, mihin tuuli puhaltaa, käännettynä puhelimen mukana (kompassi); oranssi merkki on pohjoinen.
+Night clock	Yökello
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Kun puhelin latautuu yöllä (auringonlaskusta auringonnousuun) eikä kukaan koske siihen minuuttiin: iso himmeä kello. Napautus palaa minuutiksi.
+Warnings and earthquake	Varoitukset ja maanjäristys
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Viivan alla yksi rivi ruutuja: ensin maanjäristys (kun sellainen oli), sitten yksi ruutu kutakin varoituskoodia kohden (punainen, oranssi, keltainen). Kaksi mahtuu näytölle; jos niitä on enemmän, rivi siirtyy itsestään 2 sekunnin välein ja alkaa uudelleen ensimmäisestä. Voit myös liu'uttaa sitä sormella. Napauta ruutua: rivi pysähtyy 20 sekunniksi ja kupla näyttää tiedot isommin kirjaimin (koodista: mitä se tarkoittaa, jokainen varoitus ajanjaksoineen ja neuvoineen; maanjäristyksestä: magnitudi, aika, alue, syvyys, episentrumi ja etäisyys, miten se luultavasti tuntui kaupungissasi, sekä kaikki viimeisen 24 tunnin maanjäristykset).
+Earthquake box	Maanjäristysruutu
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	EMSC:ltä (European-Mediterranean Seismological Centre): vähintään magnitudin 3 maanjäristykset viimeisen 24 tunnin ajalta kaupunkisi maassa (sijainnin löytämä). Ruutu näyttää voimakkaimman: magnitudin ja ajan sekä sen, miten se tuntui kaupungissasi, arviona EMS-98-asteikolla (magnitudista ja etäisyydestä järistyspesäkkeeseen; EMSC ei julkaise kunkin kaupungin raportteja). Se katoaa 24 tunnin jälkeen.
+Left / right on the boxes	Vasemmalle / oikealle ruuduilla
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Varoitusrivi, tuntiruudut ja viisi päivää (huomenna ja seuraavat 4 päivää, kaksi kerrallaan) seuraavat sormea. Kaavio Sademäärä · seuraavat 12 tuntia tulee ensimmäisenä tuntirivillä, vain kun sadetta tai lunta on odotettavissa.
+The row of boxes at the bottom	Alarivi ruutuja
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Liu'uta sitä sivuttain (vaakatilassa: ylös ja alas, kaksi kerrallaan, ilman tuuliruutua): Aurinko (auringonlaskun jälkeen Kuu nousuineen, laskuineen ja vaiheineen), UV-indeksi, Siitepöly, Kosteus (sateen aikana), Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys ja Kompassi.
+Home-screen widgets	Aloitusnäytön widgetit
+Meteo Alarm widgets	Meteo Alarm -widgetit
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Pidä vapaata kohtaa aloitusnäytöllä, valitse Widgetit, sitten Meteo Alarm: 2x2, 4x1, 4x2 ja ”mikä tahansa koko”, kukin esikatseluineen; se tulee näytölle heti, ilman asetusikkunaa. Asetteluja on kolme: 2x2 (neliö: kuvake, lämpötila, kaupunki, seuraava auringonlasku tai -nousu), 4x1 (matala nauha, myös taivaan kanssa) ja 4x2 (leveä, myös ylin / alin ja seuraavat 5 tuntia), sekä pieni 2x1 (kuvake ja lämpötila) niille liian pienille kehyksille. Pidä sitä ja vedä sen reunoja: leveä (noin 4 saraketta) ja yksi rivi = 4x1, leveä ja korkeampi = 4x2 (se pysyy 4x2:na, vaikka tekisit sen kuinka korkeaksi), kapea = 2x2, kapea ja yksi rivi = 2x1. Rivit ja sarakkeet ovat aloitusnäyttösi omat (tabletilla rivi on paljon korkeampi kuin puhelimessa), joten 4x1-nauha toimii sielläkin. Se täyttää kehyksen leveyden; kun kehys on korkeampi kuin asettelu tarvitsee, widget säilyttää kokonsa keskitettynä, tausta vain sen takana (loppu jää läpinäkyväksi). Asettelua ei koskaan pienennetä niin paljon, että tekstit muuttuvat liian pieniksi. Voimassa olevien varoitusten aikana rivi ”VAROITUS!” näyttää kolme pilleriä: keltainen = harmaa harmaa keltainen, oranssi = harmaa oranssi oranssi, punainen = kaikki punaisia; kaksi koodia = pahempi, harmaa, toinen; kolme koodia = punainen oranssi keltainen. Napautus avaa sovelluksen.
+Widget settings	Widgetin asetukset
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Pidä widgetiä › Asetukset (Android 12 ja uudemmat) tai ☰ › Widgetit. Jokaisella widgetillä on omansa: esikatselu; kaupunki (kuten sovelluksessa tai toinen painikkeella Vaihda); Tausta päällä / pois ja kuinka läpinäkyvä; Värit: sään mukaan (sininen taivas, yön sininen, harmaat pilvet, sade, jäinen lumi, myrsky, sumu), puhelimen asetusten mukaan tai tumma; Tekstin väri: automaattinen (musta vaalealla taustalla), valkoinen tai musta. Peruuta tai Tallenna.
+Refreshing by itself	Päivittyy itsestään
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Sää, varoitukset ja maanjäristykset tulevat itsestään, myös sovelluksen ollessa suljettuna (widgeteille): 15 minuutin välein näytön ollessa päällä, 30 minuutin välein näytön ollessa pois, ei lainkaan auringonlaskun ja -nousun välillä näytön ollessa pois (se odottaa, että näyttö syttyy) ja kerran tunnissa, kun akku on alle 25 % eikä lataudu. Kun lataus epäonnistuu, ilmoitus ja rivi ”! ei tietoja klo … jälkeen” kellon alla kertovat syyn (ei internetiä, palvelin ei vastannut, suojatun yhteyden virhe, palvelinvirhe…). Kun Open-Meteo on kiireinen (HTTP 503 ”overloaded”) tai ei vastaa, ennuste tulee MET Norwaylta (api.met.no, Norjan ilmatieteen laitos) ja kellon alla oleva rivi sanoo ”· MET Norway”; ”kiireisen” jälkeen sovellus menee suoraan MET Norwaylle 20 minuutiksi. Kunnes uutta tietoa tulee, viimeksi tallennettu sää pysyy näytöllä.
+The ☰ menu	☰-valikko
+Downloads the weather, the warnings and the earthquakes now.	Lataa sään, varoitukset ja maanjäristykset nyt.
+The same as the town button.	Sama kuin kaupunkipainike.
+Switches between Celsius and Fahrenheit.	Vaihtaa Celsiuksen ja Fahrenheitin välillä.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Vaihtaa kellon 24 tunnin ja 12 tunnin (AM/PM) välillä.
+Light, Dark, or Automatic (phone sensor).	Vaalea, Tumma tai Automaattinen (puhelimen anturi).
+Screen on ON / OFF	Näyttö päällä PÄÄLLÄ / POIS
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	PÄÄLLÄ: näyttö pysyy päällä, kun sovellus on auki. POIS: se sammuu puhelimen aikakatkaisun jälkeen.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Luettelossa on englanti ja sen maan viralliset kielet, jossa puhelin on (SIM-kortista tai matkapuhelinverkosta; ilman niitä näytetystä kaupungista). Ensimmäisellä käynnistyksellä sovellus ottaa puhelimen kielen, jos sillä on se. Sovellus puhuu kaikkia EU:n virallisia kieliä ja ukrainaa.
+Location On / Off	Sijainti päällä / pois
+Turns automatic location on or off (the same as the location button).	Kytkee automaattisen sijainnin päälle tai pois (sama kuin sijaintipainike).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Tällainen sivu, jossa on sulkemispainike ylhäällä: vähintään magnitudin 3 maanjäristykset viimeisen 7 päivän ajalta maassasi, sitten viimeisen 48 tunnin maanjäristykset Euroopan unionissa, Ukrainassa ja Moldovassa. Jokainen rivi: aika, paikka, magnitudi, syvyys ja etäisyys kaupungistasi. EMSC:ltä; sitä voi vierittää.
+Notifications ON / OFF	Ilmoitukset PÄÄLLÄ / POIS
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Ilmoitukset vain: sade tai lumisade alkaa (tai alkaa tunnin sisällä; uudelleen vasta 3 kuivan tunnin jälkeen), uusi säävaroitus kaupungillesi ja vähintään magnitudin 3 maanjäristys maassasi. Jokainen tapahtuma vain kerran, myös sovelluksen ollessa suljettuna. Sovellus pyytää niitä ensimmäisellä käynnistyksellä; jos kieltäydyt, se kysyy uudelleen vasta päivityksen jälkeen, ei koskaan joka käynnistyksellä. Kun puhelin ei enää näytä kysymystään (kahden kieltäytymisen jälkeen), painike avaa puhelimen asetukset, joissa sallit ne.
+Night clock ON / OFF	Yökello PÄÄLLÄ / POIS
+Turns the night clock on or off.	Kytkee yökellon päälle tai pois.
+The settings of a widget on the home screen (with several, choose which first).	Aloitusnäytön widgetin asetukset (jos niitä on useita, valitse ensin mikä).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Kaikki, mitä sovellus teki, kellonaikoineen: anturit, napautukset ja eleet, sijainti, tietojen lataukset (ja miksi jokin epäonnistui), taustapäivitykset ja widgetit (puhelimen niille antama koko, näytetty asettelu). Se säilyttää 5 päivää, uusi tiedosto joka päivä; vanhempien päivien virheet säilyvät vielä 10 päivää Virheet-osiossa. Ylhäällä: puhelin (malli, Android, One UI) ja sovelluksen versio. Lue se täällä, Jaa se (WhatsApp, Drive, sähköposti…) tai Tallenna se puhelimeen.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Etsii uutta versiota GitHubista. Ensimmäisellä kerralla (ja joka kerta, kunnes hyväksyt) se selittää, että päivitykset tulevat GitHubista, eivät Google Playsta, ja pyytää suostumustasi; valinnalla ”Ei nyt” ilmoitus kertoo, ettei sovellus päivity. Mitään ei asenneta, ennen kuin napautat Päivitä ja vahvistat puhelimen asennusohjelmassa.
+This page.	Tämä sivu.
+About the app, the data it uses, and what's new in each version.	Tietoja sovelluksesta, sen käyttämistä tiedoista ja kunkin version uutuuksista.
+What's new	Mitä uutta
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Tumma teema käyttää Claude-sovelluksen värejä. Fontti: Liberation Sans.
+Installed version: v	Asennettu versio: v
+Favourites	Suosikit
+Choose the county	Valitse maakunta
+Other countries	Muut maat
+‹  Back	‹  Takaisin
+‹  Back to the counties	‹  Takaisin maakuntiin
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Aloitusnäytöllä ei ole Meteo Alarm -widgetiä. Pidä vapaata kohtaa aloitusnäytöllä › Widgetit › Meteo Alarm.
+Which widget?	Mikä widget?
+Change	Vaihda
+Background	Tausta
+Colours	Värit
+Text colour	Tekstin väri
+Cancel	Peruuta
+  (as in the app)	  (kuten sovelluksessa)
+Transparency: 	Läpinäkyvyys: 
+Match the phone's settings	Puhelimen asetusten mukaan
+By the weather	Sään mukaan
+White	Valkoinen
+Black	Musta
+As in the app	Kuten sovelluksessa
+Choose the county / country…	Valitse maakunta / maa…
+County / country	Maakunta / maa
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Play Protect -varoituksesta: Google voi sanoa, että sovellus ”voi olla haitallinen”. Se tekee niin, koska sovellus ei tule Google Playsta, sen kehittäjä ei ole rekisteröitynyt Googlelle ja se voi asentaa omat päivityksensä (osoitteesta github.com/viorelrb-alt/meteo-alarm-android). Sovellus ei tee muuta. Kun Play Protect -ikkuna tulee esiin, napauta ”Lisätietoja” (jos näkyy), sitten ”Asenna tarkistamatta” (tai ”Asenna silti”).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Päivitysten saamiseksi: avaa ☰ › Tarkista päivitykset ja anna pyydettäessä suostumuksesi.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm ei tule Google Playsta. Sen uudet versiot julkaistaan GitHubissa (github.com/viorelrb-alt/meteo-alarm-android), ja sovellus päivittää itsensä sieltä: se tarkistaa noin kerran viikossa (tai kun valitset Tarkista päivitykset), näyttää, mitä uutta on, ja vasta kun napautat Päivitä, lataa uuden version ja avaa puhelimen asennusohjelman, jossa vahvistat uudelleen.\n\nSallitko sovelluksen päivittyä näin? Ilman suostumustasi sovellus ei etsi päivityksiä eikä lataa mitään; voit hyväksyä myöhemmin kohdasta ☰ › Tarkista päivitykset.
+Updates from GitHub	Päivitykset GitHubista
+I agree	Hyväksyn
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Ilman suostumustasi sovellus ei päivity. Voit muuttaa mielesi milloin tahansa kohdassa ☰ › Tarkista päivitykset.
+Checking GitHub for a new version…	Etsitään uutta versiota GitHubista…
+No version published yet.	Versiota ei ole vielä julkaistu.
+Could not check for updates. Is the internet on?	Päivityksiä ei voitu tarkistaa. Onko internet päällä?
+You have the latest version, v	Sinulla on uusin versio, v
+Installed: v	Asennettu: v
+New: v	Uusi: v
+New version: v	Uusi versio: v
+Update	Päivitä
+Downloading…	Ladataan…
+Hide	Piilota
+Downloading… 	Ladataan… 
+The download failed. Is the internet on?	Lataus epäonnistui. Onko internet päällä?
+The installer could not be opened.	Asennusohjelmaa ei voitu avata.
+no internet (server not found)	ei internetiä (palvelinta ei löytynyt)
+the server did not answer in time	palvelin ei vastannut ajoissa
+no connection	ei yhteyttä
+secure connection error: 	suojatun yhteyden virhe: 
+internet not allowed for the app	internet ei sallittu sovellukselle
+server error 	palvelinvirhe 
+network error: 	verkkovirhe: 
+data error: 	tietovirhe: 
+⌃  more  ⌃	⌃  lisää  ⌃
+⌄  more  ⌄	⌄  lisää  ⌄
+Open the app	Avaa sovellus
+WARNING!	VAROITUS!
+Sunrise at 	Auringonnousu klo 
+Sunset at 	Auringonlasku klo 
+Weather, warnings and earthquakes	Sää, varoitukset ja maanjäristykset
+Rain or snow starting, new weather warnings, earthquakes in your country.	Sade tai lumisade alkaa, uudet säävaroitukset, maanjäristykset maassasi.
+Snow	Lumisade
+Rain	Sade
+It is snowing in 	Sataa lunta: 
+It is raining in 	Sataa: 
+Snow is expected within the hour in 	Lumisadetta odotetaan tunnin sisällä: 
+Rain is expected within the hour in 	Sadetta odotetaan tunnin sisällä: 
+Warning	Varoitus
+Earthquake M	Maanjäristys M
+probably felt: 	tuntui luultavasti: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Ilmoitukset ovat päällä: sade tai lumisade, säävaroitukset ja maanjäristykset maassasi.
+EARTHQUAKE	MAANJÄRISTYS
+Felt here: 	Tuntui täällä: 
+ (estimate)	 (arvio)
+Magnitude: 	Magnitudi: 
+Time: 	Aika: 
+Region: 	Alue: 
+Depth: 	Syvyys: 
+Epicentre: 	Episentrumi: 
+ from 	 etäisyys 
+In 	Paikassa 
+Probably felt, intensity 	Tuntui luultavasti, voimakkuus 
+Probably not felt here.	Ei luultavasti tuntunut täällä.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Arvioitu magnitudista ja etäisyydestä järistyspesäkkeeseen (EMS-98-asteikko); EMSC ei julkaise kunkin kaupungin havaintoraportteja.
+All in the last 24 h	Kaikki viimeisen 24 h aikana
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Lähde: EMSC (seismicportal.eu), magnitudi 3 ja yli, viimeiset 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Mahdollisesti vaarallinen sää (vuodenaikaan tavallinen, mutta paikoin voimakkaampi). Ole varovainen ulkona.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Vaarallinen, voimakas sää. Ole hyvin varovainen, seuraa ennustetta ja noudata viranomaisten neuvoja.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Erittäin vaarallinen, hyvin voimakas sää. Suojaudu ja noudata viranomaisten ohjeita.
+In force now, until 	Voimassa nyt, asti 
+From 	Alkaen 
+ until 	 asti 
+Source: MeteoAlarm (the national weather service), for 	Lähde: MeteoAlarm (kansallinen sääpalvelu), alue 
+Stay away from trees, poles and scaffolding; secure loose objects.	Pysy kaukana puista, pylväistä ja telineistä; kiinnitä irtonaiset esineet.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Salamointi, kaatosateet, rakeet ja puuskat mahdollisia; mene sisätiloihin suojaan.
+Avoid flooded roads and river banks.	Vältä tulvivia teitä ja jokien rantoja.
+Slippery roads; drive only if you must, with winter equipment.	Liukkaat tiet; aja vain, jos on pakko, talvivarustuksella.
+Low visibility; drive slowly with the fog lights on.	Huono näkyvyys; aja hitaasti sumuvalot päällä.
+Avoid the sun between 11 and 18, drink plenty of water.	Vältä aurinkoa klo 11–18, juo runsaasti vettä.
+Dress warmly and limit time outdoors.	Pukeudu lämpimästi ja rajoita ulkona oloa.
+Do not light fires outdoors.	Älä sytytä tulta ulkona.
+H	K
+MOON	KUU
+HUMIDITY	KOSTEUS
+AIR QUALITY	ILMANLAATU
+PRESSURE	ILMANPAINE
+WIND	TUULI
+VISIBILITY	NÄKYVYYS
+COMPASS	KOMPASSI
+Moonrise	Kuunnousu
+Moonset	Kuunlasku
+relative humidity	suhteellinen kosteus
+Good	Hyvä
+Fair	Kohtalainen
+Moderate	Tyydyttävä
+Poor	Huono
+Very poor	Erittäin huono
+Extremely poor	Äärimmäisen huono
+Poor (fog)	Huono (sumu)
+Very good	Erittäin hyvä
+steady	vakaa
+↓ falling fast	↓ laskee nopeasti
+↓ falling	↓ laskee
+↑ rising fast	↑ nousee nopeasti
+↑ rising	↑ nousee
+no compass	ei kompassia
+Tap to leave the night clock	Napauta poistuaksesi yökellosta
+until	asti
+now	nyt
+Rain from	Sade klo
+max	maks.
+Snow from	Lumisade klo
+Raining	Sataa
+Snowing	Sataa lunta
+updated	päivitetty
+no data since	ei tietoja jälkeen
+Loading weather…	Ladataan säätä…
+updating…	päivitetään…
+Feels like	Tuntuu kuin
+Wind	Tuuli
+High	Ylin
+Low	Alin
+Charging	Latautuu
+YELLOW	KELTAINEN
+ORANGE	ORANSSI
+RED	PUNAINEN
+WARNING	VAROITUS
+TOMORROW	HUOMENNA
+DAY AFTER	YLIHUOMENNA
+NEXT 12 HOURS	SEURAAVAT 12 TUNTIA
+WEATHER · NEXT HOURS	SÄÄ · SEURAAVAT TUNNIT
+RAIN	SADE
+SNOW	LUMI
+PRECIPITATION	SADEMÄÄRÄ
+snow	lunta
+rain	sadetta
+no precipitation	ei sadetta
+SUN	AURINKO
+UV INDEX	UV-INDEKSI
+POLLEN	SIITEPÖLY
+Sunrise	Auringonnousu
+Sunset	Auringonlasku
+Very high	Erittäin korkea
+Extreme	Äärimmäinen
+no pollen	ei siitepölyä
+no data	ei tietoja
+No precipitation	Ei sadetta
+SNOW ICE	LUMI JÄÄ
+THUNDERSTORM	UKKONEN
+FOG	SUMU
+HIGH TEMPERATURE	KORKEA LÄMPÖTILA
+LOW TEMPERATURE	MATALA LÄMPÖTILA
+COASTALEVENT	RANNIKKOILMIÖ
+FOREST FIRE	METSÄPALO
+AVALANCHES	LUMIVYÖRYT
+FLOODING	TULVA
+RAIN FLOOD	SADETULVA
+alder	leppä
+birch	koivu
+olive	oliivi
+grasses	heinät
+mugwort	pujo
+ragweed	tuoksukki
+Clear	Selkeää
+Mostly clear	Enimmäkseen selkeää
+Partly cloudy	Puolipilvistä
+Overcast	Pilvistä
+Fog	Sumua
+Drizzle	Tihkua
+Freezing drizzle	Jäätävää tihkua
+Light rain	Heikkoa sadetta
+Heavy rain	Voimakasta sadetta
+Freezing rain	Jäätävää sadetta
+Light snow	Heikkoa lumisadetta
+Heavy snow	Voimakasta lumisadetta
+Snow grains	Lumijyväsiä
+Light showers	Heikkoja kuuroja
+Showers	Kuuroja
+Heavy showers	Voimakkaita kuuroja
+Snow showers	Lumikuuroja
+Thunderstorm	Ukkosta
+Thunderstorm, hail	Ukkosta, rakeita
+Code 	Koodi 
+not felt	ei tuntunut
+scarcely felt, only by a few people at rest	tuskin tuntunut, vain harvat levossa olevat
+weak, felt by a few people indoors	heikko, tuntui harvoille sisätiloissa
+felt by many indoors; windows and doors rattle	tuntui monille sisätiloissa; ikkunat ja ovet kolisevat
+strong, felt by nearly everyone; objects move, some are frightened	voimakas, tuntui lähes kaikille; esineet liikkuvat, osa pelästyy
+slight damage (cracks in plaster); many run outdoors	lieviä vaurioita (halkeamia rappauksessa); monet juoksevat ulos
+damage to buildings; hard to stand	vaurioita rakennuksissa; vaikea pysyä pystyssä
+heavy damage	pahoja vaurioita
+destruction	tuhoa
+great destruction	suurta tuhoa
+very great destruction	erittäin suurta tuhoa
+complete destruction	täydellinen tuho
+The phone's own language is in the list too.	Myös puhelimen oma kieli on luettelossa.

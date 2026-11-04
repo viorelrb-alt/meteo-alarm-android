@@ -1,0 +1,365 @@
+# Meteo Alarm Android · lv · English<TAB>translation
+Diary (log)	Dienasgrāmata (žurnāls)
+Everything the app did in the last 5 days; older errors kept 10 days.	Viss, ko lietotne darīja pēdējās 5 dienās; vecākas kļūdas glabā 10 dienas.
+Share	Kopīgot
+Save	Saglabāt
+Close	Aizvērt
+log 	žurnāls 
+Send the log	Sūtīt žurnālu
+Log saved	Žurnāls saglabāts
+Could not save	Neizdevās saglabāt
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Šī ir Meteo Alarm Android testa versija, veidota no Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Dati netiek vākti: nav konta, reklāmu, statistikas. Laikapstākļu iegūšanai uz Open-Meteo (laikapstākļi, ziedputekšņi) un, kad Open-Meteo ir pārslogots, uz MET Norway (laikapstākļi) tiek sūtītas tikai vietas koordinātas; brīdinājumi nāk no MeteoAlarm, zemestrīces no EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Atrašanās vieta: izmanto, lai rādītu laikapstākļus tur, kur esi, palaižot un reizi stundā. Pilsētas nosaukšanai koordinātas nonāk OpenStreetMap (vai tālruņa ģeokodētājā), kas dod arī pilsētas robežu. Atrastās pilsētas kopā ar to, kur biji, glabājas tikai tālrunī. Lietotne to lūdz ar paskaidrojumu pirmajā palaišanā; ja atsakies, pilsētu izvēlies no saraksta, un tā jautā atkal tikai pēc atjauninājuma.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Paziņojumi (tikai ar tavu piekrišanu): lietus vai sniega sākums, jauni laikapstākļu brīdinājumi tavai pilsētai, zemestrīces ar magnitūdu 3 vai vairāk tavā valstī. Katrs notikums vienreiz. Ieslēgt vai izslēgt ☰ › Paziņojumi.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Valoda: pirmajā palaišanā tālruņa valoda (ja lietotnei tā ir, citādi angļu), pēc tam ☰ › Valoda izvēlētā.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Sensori: lietotne nolasa akumulatora stāvokli (nakts pulkstenis uzlādes laikā), tālruņa gaismas sensoru ar ☰ › Motīvs › Automātisks (tālruņa sensors) un kompasu, kas pagriež vēja bultu līdz ar tālruni. Kā tālrunim nav, tiek izslēgts. Nekas neatstāj tālruni.
+Updates: 	Atjauninājumi: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Pēc tam reizi nedēļā lietotne pārbauda GitHub, vai ir jauna versija, un jautā pirms lejupielādes.
+I understand	Sapratu
+This phone has no light sensor.	Šim tālrunim nav gaismas sensora.
+Automatic theme (phone sensor): on	Automātisks motīvs (tālruņa sensors): ieslēgts
+Automatic theme (phone sensor): off	Automātisks motīvs (tālruņa sensors): izslēgts
+Dark theme	Tumšs motīvs
+Light theme	Gaišs motīvs
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm var pati atrast tavu pilsētu, tāpēc prognoze, brīdinājumi un zemestrīces ir tieši par vietu, kur esi, arī ceļojot. Atrašanās vieta paliek tālrunī: to izmanto tikai pilsētas izvēlei.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Tālrunis vairs nerāda savu jautājumu, tāpēc atļauj Meteo Alarm atrašanās vietu tālruņa iestatījumos (Atļaujas › Atrašanās vieta).
+If you say no, choose the town from the list; the app asks again only after an update.	Ja atsakies, izvēlies pilsētu no saraksta; lietotne jautās atkal tikai pēc atjauninājuma.
+Location	Atrašanās vieta
+Open settings	Atvērt iestatījumus
+Allow	Atļaut
+Not now	Ne tagad
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm var tev paziņot, arī aizvērta: kad sākas vai stundas laikā sāksies lietus vai sniegs, kad tavai pilsētai izsludina laikapstākļu brīdinājumu un kad tavā valstī notiek zemestrīce ar magnitūdu 3 vai vairāk. Katrs notikums tikai vienreiz, nekas cits. Tā uzzini laikus, neatverot lietotni.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Tālrunis neļauj lietotnei paziņot, tāpēc ieslēdz Meteo Alarm paziņojumus tālruņa iestatījumos.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Tos var izslēgt jebkurā laikā ☰ › Paziņojumi. Ja atsakies, lietotne jautās atkal tikai pēc atjauninājuma.
+Notifications	Paziņojumi
+Notifications ON	Paziņojumi IESL.
+Notifications OFF	Paziņojumi IZSL.
+Without location access, choose the town from the list.	Bez piekļuves atrašanās vietai izvēlies pilsētu no saraksta.
+Brightness: slide on the bar	Spilgtums: velc pa joslu
+Automatic location OFF	Automātiskā atrašanās vieta IZSL.
+Automatic location ON	Automātiskā atrašanās vieta IESL.
+Looking for the exact position…	Meklē precīzu atrašanās vietu…
+Added to the list: 	Pievienots sarakstam: 
+Location is off on the phone.	Atrašanās vieta tālrunī ir izslēgta.
+The position could not be found.	Atrašanās vietu neizdevās atrast.
+The town could not be found (internet?).	Pilsētu neizdevās atrast (internets?).
+The weather did not come: 	Laikapstākļi nepienāca: 
+Already updating…	Jau atjaunina…
+The weather has just been updated	Laikapstākļi tikko atjaunināti
+Just tried; try again in a few seconds	Tikko mēģināts; mēģini vēlreiz pēc dažām sekundēm
+Updating the weather…	Atjaunina laikapstākļus…
+Refresh	Atsvaidzināt
+Town	Pilsēta
+Temperature °C/°F	Temperatūra °C/°F
+Clock 12/24	Pulkstenis 12/24
+Theme	Motīvs
+Screen on OFF	Ekrāns ieslēgts IZSL.
+Screen on ON	Ekrāns ieslēgts IESL.
+Language	Valoda
+Night clock OFF	Nakts pulkstenis IZSL.
+Night clock ON	Nakts pulkstenis IESL.
+Location Off	Atrašanās vieta izsl.
+Location On	Atrašanās vieta iesl.
+Earthquakes	Zemestrīces
+Widgets	Logrīki
+Log	Žurnāls
+Check for updates	Pārbaudīt atjauninājumus
+Help	Palīdzība
+About	Par
+24-hour clock	24 stundu pulkstenis
+12-hour clock	12 stundu pulkstenis
+The screen stays on while the app is open	Ekrāns paliek ieslēgts, kamēr lietotne ir atvērta
+The screen goes off after the phone's timeout	Ekrāns izslēdzas pēc tālruņa noildzes
+While charging at night, the screen shows a big dim clock	Naktī uzlādes laikā ekrānā ir liels blāvs pulkstenis
+Night clock off	Nakts pulkstenis izslēgts
+Light	Gaišs
+Dark	Tumšs
+Automatic	Automātisks
+Last 7 days · 	Pēdējās 7 dienas · 
+Downloading from EMSC…	Lejupielādē no EMSC…
+The list could not be downloaded. Is the internet on?	Sarakstu neizdevās lejupielādēt. Vai internets ir ieslēgts?
+No earthquake of magnitude 3 or more.	Nav zemestrīču ar magnitūdu 3 vai vairāk.
+Last 48 hours · EU, Ukraine, Moldova	Pēdējās 48 stundas · ES, Ukraina, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Avots: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitūda 3 un vairāk. “Jūtama” ir aplēse EMS-98 skalā pēc magnitūdas un attāluma līdz perēklim.
+depth 	dziļums 
+from 	attālums 
+Probably felt in 	Droši vien jūtama: 
+Probably not felt in 	Droši vien nav jūtama: 
+Updates	Atjauninājumi
+How to update	Kā atjaunināt
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Piekrišanu jautā tikai tur: vienreiz, ja piekrīti (no tā brīža lietotne arī pati pārbauda reizi nedēļā), katru reizi, kamēr atsakies. Bez tās lietotne nekad nemeklē atjauninājumus un neko nelejupielādē.
+Buttons on the screen	Pogas ekrānā
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Atver pilsētas: pēdējās 3 (izlase) un novadus. Pieskaries novadam, tad pilsētai.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Atrod, kur esi, un rāda šīs pilsētas laikapstākļus; meklē atkal katru stundu. Atrastās pilsētas glabājas tālrunī kopā ar to, kur biji, un rādītā pilsēta mainās tikai tad, kad esi ārpus tās robežas. Darbojas arī citās valstīs, ar MeteoAlarm brīdinājumiem aptuveni 38 Eiropas valstīs. Pieskāriens ieslēdz automātisko atrašanās vietu (poga aizpildīta, meklē uzreiz) vai izslēdz (poga tukša).
+Brightness	Spilgtums
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Rāda spilgtuma joslu kreisajā pusē: velc pa to uz augšu vai leju. Tā pazūd pati.
+Light / dark theme	Gaišs / tumšs motīvs
+Over the brightness bar: switches between the light and the dark theme.	Virs spilgtuma joslas: pārslēdz starp gaišo un tumšo motīvu.
+Automatic theme (phone sensor)	Automātisks motīvs (tālruņa sensors)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Gaišs motīvs, kad ir gaišs, tumšs motīvs tumsā. Aizpildīts, kamēr ieslēgts.
+Phone without a sensor	Tālrunis bez sensora
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Katrā palaišanā lietotne pārbauda tālruņa sensorus (kompass, gaisma, akselerometrs, tuvums, spiediens, GPS) un ieraksta žurnālā, kuru trūkst. Bez gaismas sensora motīvs Automātisks (tālruņa sensors) ir pelēks un neko nedara; bez kompasa vēja bultas lodziņš ir paslēpts.
+Location consent	Atrašanās vietas piekrišana
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Pirmajā palaišanā lietotne paskaidro, kāpēc tai vajag atrašanās vietu (laikapstākļi, brīdinājumi un zemestrīces tieši tur, kur esi), tad jautā tālrunis. Pirmā atrastā pilsēta kļūst par rādīto un tiek pievienota izlasei. Ja atsakies, pilsētu izvēlies no saraksta, un lietotne jautā atkal tikai pēc atjauninājuma; kad tālrunis vairs nejautā, poga atver tā iestatījumus.
+Gestures	Žesti
+Tap on the town's name	Pieskāriens pilsētas nosaukumam
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Vienreiz pārbauda ar GPS labākai prognozei tur, kur esi; automātiskā atrašanās vieta paliek, kā ir.
+Pull down	Velc uz leju
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Velc ekrānu uz leju un atlaid: laikapstākļi tiek atsvaidzināti. Jauns vilciens lejupielādes laikā vai 10 sekunžu laikā pēc pēdējās lejupielādes nesāk jaunu; paziņojums to pasaka.
+Left edge	Kreisā mala
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Velc uz augšu vai leju pie kreisās malas (nedaudz uz iekšu): parādās spilgtuma josla, un vilkšana pa to iestata spilgtumu.
+Wind arrow	Vēja bulta
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Blakus vējam: bulta rāda, uz kurieni pūš vējš, pagriezta līdz ar tālruni (kompass); oranžā atzīme ir ziemeļi.
+Night clock	Nakts pulkstenis
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Kad tālrunis naktī lādējas (no saulrieta līdz saullēktam) un neviens to minūti neaiztiek: liels blāvs pulkstenis. Pieskāriens atgriežas uz minūti.
+Warnings and earthquake	Brīdinājumi un zemestrīce
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Zem līnijas viena lodziņu rinda: vispirms zemestrīce (ja tāda bija), tad viens lodziņš katram brīdinājuma kodam (sarkans, oranžs, dzeltens). Ekrānā ietilpst divi; ja to ir vairāk, rinda pati virzās ik pēc 2 sekundēm un sāk atkal no pirmā. To var arī bīdīt ar pirkstu. Pieskaries lodziņam: rinda apstājas uz 20 sekundēm, un burbulis rāda sīkāk lielākiem burtiem (kodam: ko tas nozīmē, katrs brīdinājums ar periodu un padomu; zemestrīcei: magnitūda, laiks, reģions, dziļums, epicentrs un attālums, kā tā droši vien bija jūtama tavā pilsētā, un visas pēdējo 24 stundu zemestrīces).
+Earthquake box	Zemestrīces lodziņš
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	No EMSC (European-Mediterranean Seismological Centre): zemestrīces ar magnitūdu 3 vai vairāk pēdējās 24 stundās tavas pilsētas valstī (ko atrada atrašanās vieta). Lodziņš rāda spēcīgāko: magnitūdu un laiku un to, kā tā bija jūtama tavā pilsētā, kā aplēsi EMS-98 skalā (pēc magnitūdas un attāluma līdz perēklim; EMSC nepublicē katras pilsētas ziņojumus). Tas pazūd pēc 24 stundām.
+Left / right on the boxes	Pa kreisi / pa labi uz lodziņiem
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Brīdinājumu rinda, stundu lodziņi un piecas dienas (rīt un nākamās 4 dienas, pa divām) seko pirkstam. Diagramma Nokrišņi · nākamās 12 stundas ir pirmā stundu rindā, tikai ja gaidāms lietus vai sniegs.
+The row of boxes at the bottom	Apakšējā lodziņu rinda
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Bīdi to uz sāniem (ainavā: uz augšu un leju, pa diviem, bez vēja lodziņa): Saule (pēc saulrieta Mēness ar lēktu, rietu un fāzi), UV indekss, Ziedputekšņi, Mitrums (kamēr līst), Gaisa kvalitāte, Spiediens, Vējš, Redzamība un Kompass.
+Home-screen widgets	Sākuma ekrāna logrīki
+Meteo Alarm widgets	Meteo Alarm logrīki
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Turi brīvu vietu sākuma ekrānā, izvēlies Logrīki, tad Meteo Alarm: 2x2, 4x1, 4x2 un “jebkurš izmērs”, katram ar priekšskatījumu; tas uzreiz nonāk ekrānā, bez iestatījumu loga. Ir trīs izkārtojumi: 2x2 (kvadrāts: ikona, temperatūra, pilsēta, nākamais saulriets vai saullēkts), 4x1 (zema josla, arī ar debesīm) un 4x2 (plats, arī ar augstāko / zemāko un nākamajām 5 stundām), kā arī mazs 2x1 (ikona un temperatūra) rāmjiem, kas tiem ir par mazu. Turi to un velc tā malas: plats (apmēram 4 kolonnas) un viena rinda = 4x1, plats un augstāks = 4x2 (paliek 4x2, lai cik augstu to padarītu), šaurs = 2x2, šaurs un viena rinda = 2x1. Rindas un kolonnas ir tava sākuma ekrāna (planšetdatorā rinda ir daudz augstāka nekā tālrunī), tāpēc 4x1 josla darbojas arī tur. Tas aizpilda rāmja platumu; kad rāmis ir augstāks, nekā vajag izkārtojumam, logrīks saglabā izmēru, centrēts, ar fonu tikai aiz tā (pārējais paliek caurspīdīgs). Izkārtojums nekad netiek samazināts tik ļoti, ka teksti kļūst par maziem. Ar spēkā esošiem brīdinājumiem rinda “BRĪDINĀJUMS!” rāda trīs tabletes: dzeltens = pelēks pelēks dzeltens, oranžs = pelēks oranžs oranžs, sarkans = visi sarkani; divi kodi = sliktākais, pelēks, otrs; trīs kodi = sarkans oranžs dzeltens. Pieskāriens atver lietotni.
+Widget settings	Logrīka iestatījumi
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Turi logrīku › Iestatījumi (Android 12 un jaunāks) vai ☰ › Logrīki. Katram logrīkam ir savi: priekšskatījums; pilsēta (kā lietotnē vai cita ar Mainīt); Fons ieslēgts / izslēgts un cik caurspīdīgs; Krāsas: pēc laikapstākļiem (zilas debesis, nakts zils, pelēki mākoņi, lietus, ledains sniegs, vētra, migla), pēc tālruņa iestatījumiem vai tumšas; Teksta krāsa: automātiska (melna uz gaiša fona), balta vai melna. Atcelt vai Saglabāt.
+Refreshing by itself	Atsvaidzinās pats
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Laikapstākļi, brīdinājumi un zemestrīces nāk paši, arī ar aizvērtu lietotni (logrīkiem): ik pēc 15 minūtēm, kad ekrāns ir ieslēgts, ik pēc 30 minūtēm, kad izslēgts, nemaz starp saulrietu un saullēktu, kad ekrāns ir izslēgts (gaida, līdz ekrāns ieslēdzas), un reizi stundā, kad akumulators ir zem 25% un nelādējas. Kad lejupielāde neizdodas, paziņojums un rinda “! nav datu kopš …” zem pulksteņa pasaka iemeslu (nav interneta, serveris neatbildēja, drošā savienojuma kļūda, servera kļūda…). Kad Open-Meteo ir aizņemts (HTTP 503 “overloaded”) vai neatbild, prognoze nāk no MET Norway (api.met.no, Norvēģijas meteoroloģijas institūts), un rinda zem pulksteņa saka “· MET Norway”; pēc “aizņemts” lietotne 20 minūtes iet tieši uz MET Norway. Kamēr nav jaunu datu, ekrānā paliek pēdējie saglabātie laikapstākļi.
+The ☰ menu	Izvēlne ☰
+Downloads the weather, the warnings and the earthquakes now.	Lejupielādē laikapstākļus, brīdinājumus un zemestrīces tagad.
+The same as the town button.	Tas pats, kas pilsētas poga.
+Switches between Celsius and Fahrenheit.	Pārslēdz starp Celsiju un Fārenheitu.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Pārslēdz pulksteni starp 24 stundām un 12 stundām (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Gaišs, Tumšs vai Automātisks (tālruņa sensors).
+Screen on ON / OFF	Ekrāns ieslēgts IESL. / IZSL.
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	IESL.: ekrāns paliek ieslēgts, kamēr lietotne ir atvērta. IZSL.: tas izslēdzas pēc tālruņa noildzes.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Sarakstā ir angļu valoda un tās valsts oficiālās valodas, kurā ir tālrunis (no SIM kartes vai mobilā tīkla; bez tiem no rādītās pilsētas). Pirmajā palaišanā lietotne ņem tālruņa valodu, ja tai tā ir. Lietotne runā visās ES oficiālajās valodās un ukraiņu valodā.
+Location On / Off	Atrašanās vieta iesl. / izsl.
+Turns automatic location on or off (the same as the location button).	Ieslēdz vai izslēdz automātisko atrašanās vietu (tas pats, kas atrašanās vietas poga).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Lapa kā šī, ar aizvēršanas pogu augšā: zemestrīces ar magnitūdu 3 vai vairāk pēdējās 7 dienās tavā valstī, pēc tam pēdējo 48 stundu zemestrīces Eiropas Savienībā, Ukrainā un Moldovā. Katra rinda: laiks, vieta, magnitūda, dziļums un attālums no tavas pilsētas. No EMSC; to var ritināt.
+Notifications ON / OFF	Paziņojumi IESL. / IZSL.
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Paziņojumi tikai par: lietus vai sniega sākumu (vai sākumu stundas laikā; atkal tikai pēc 3 sausām stundām), jaunu laikapstākļu brīdinājumu tavai pilsētai un zemestrīci ar magnitūdu 3 vai vairāk tavā valstī. Katrs notikums tikai vienreiz, arī ar aizvērtu lietotni. Lietotne tos lūdz pirmajā palaišanā; ja atsakies, tā jautā atkal tikai pēc atjauninājuma, nekad katrā palaišanā. Kad tālrunis vairs nerāda savu jautājumu (pēc diviem atteikumiem), poga atver tālruņa iestatījumus, kur tos atļauj.
+Night clock ON / OFF	Nakts pulkstenis IESL. / IZSL.
+Turns the night clock on or off.	Ieslēdz vai izslēdz nakts pulksteni.
+The settings of a widget on the home screen (with several, choose which first).	Sākuma ekrāna logrīka iestatījumi (ja to ir vairāki, vispirms izvēlies, kuru).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Viss, ko lietotne darīja, ar laiku: sensori, pieskārieni un žesti, atrašanās vieta, datu lejupielādes (un kāpēc kāda neizdevās), atsvaidzināšana fonā un logrīki (izmērs, ko tālrunis tiem dod, rādītais izkārtojums). Glabā 5 dienas, katru dienu jauns fails; vecāko dienu kļūdas paliek vēl 10 dienas sadaļā Kļūdas. Augšā: tālrunis (modelis, Android, One UI) un lietotnes versija. Lasi to šeit, Kopīgo (WhatsApp, Drive, e-pasts…) vai Saglabā tālrunī.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Meklē jaunu versiju GitHub. Pirmo reizi (un katru reizi, līdz piekrīti) tā paskaidro, ka atjauninājumi nāk no GitHub, nevis Google Play, un lūdz tavu piekrišanu; ar “Ne tagad” paziņojums saka, ka lietotne netiks atjaunināta. Nekas netiek instalēts, kamēr nepieskaries Atjaunināt un neapstiprini tālruņa instalētājā.
+This page.	Šī lapa.
+About the app, the data it uses, and what's new in each version.	Par lietotni, tās izmantotajiem datiem un jaunumiem katrā versijā.
+What's new	Kas jauns
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Tumšais motīvs izmanto Claude lietotnes krāsas. Fonts: Liberation Sans.
+Installed version: v	Instalētā versija: v
+Favourites	Izlase
+Choose the county	Izvēlies novadu
+Other countries	Citas valstis
+‹  Back	‹  Atpakaļ
+‹  Back to the counties	‹  Atpakaļ pie novadiem
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Sākuma ekrānā nav Meteo Alarm logrīka. Turi brīvu vietu sākuma ekrānā › Logrīki › Meteo Alarm.
+Which widget?	Kurš logrīks?
+Change	Mainīt
+Background	Fons
+Colours	Krāsas
+Text colour	Teksta krāsa
+Cancel	Atcelt
+  (as in the app)	  (kā lietotnē)
+Transparency: 	Caurspīdīgums: 
+Match the phone's settings	Pēc tālruņa iestatījumiem
+By the weather	Pēc laikapstākļiem
+White	Balta
+Black	Melna
+As in the app	Kā lietotnē
+Choose the county / country…	Izvēlies novadu / valsti…
+County / country	Novads / valsts
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Par Play Protect brīdinājumu: Google var teikt, ka lietotne “var būt kaitīga”. Tas tā notiek, jo lietotne nenāk no Google Play, tās izstrādātājs nav reģistrēts Google un tā var instalēt savus atjauninājumus (no github.com/viorelrb-alt/meteo-alarm-android). Lietotne neko citu nedara. Kad parādās Play Protect logs, pieskaries “Vairāk informācijas” (ja redzams), tad “Instalēt bez skenēšanas” (vai “Tomēr instalēt”).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Lai saņemtu atjauninājumus: atver ☰ › Pārbaudīt atjauninājumus un, kad jautā, dod savu piekrišanu.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm nenāk no Google Play. Tās jaunās versijas tiek publicētas GitHub (github.com/viorelrb-alt/meteo-alarm-android), un lietotne atjauninās no turienes: tā pārbauda apmēram reizi nedēļā (vai kad izvēlies Pārbaudīt atjauninājumus), rāda, kas jauns, un tikai kad pieskaries Atjaunināt, lejupielādē jauno versiju un atver tālruņa instalētāju, kur apstiprini vēlreiz.\n\nVai atļauj lietotnei atjaunināties šādi? Bez tavas piekrišanas lietotne nemeklē atjauninājumus un neko nelejupielādē; piekrist vari vēlāk ☰ › Pārbaudīt atjauninājumus.
+Updates from GitHub	Atjauninājumi no GitHub
+I agree	Piekrītu
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Bez tavas piekrišanas lietotne netiks atjaunināta. Domas vari mainīt jebkurā laikā ☰ › Pārbaudīt atjauninājumus.
+Checking GitHub for a new version…	Meklē jaunu versiju GitHub…
+No version published yet.	Vēl nav publicēta neviena versija.
+Could not check for updates. Is the internet on?	Neizdevās pārbaudīt atjauninājumus. Vai internets ir ieslēgts?
+You have the latest version, v	Tev ir jaunākā versija, v
+Installed: v	Instalēta: v
+New: v	Jauna: v
+New version: v	Jauna versija: v
+Update	Atjaunināt
+Downloading…	Lejupielādē…
+Hide	Paslēpt
+Downloading… 	Lejupielādē… 
+The download failed. Is the internet on?	Lejupielāde neizdevās. Vai internets ir ieslēgts?
+The installer could not be opened.	Instalētāju neizdevās atvērt.
+no internet (server not found)	nav interneta (serveris nav atrasts)
+the server did not answer in time	serveris neatbildēja laikā
+no connection	nav savienojuma
+secure connection error: 	drošā savienojuma kļūda: 
+internet not allowed for the app	internets lietotnei nav atļauts
+server error 	servera kļūda 
+network error: 	tīkla kļūda: 
+data error: 	datu kļūda: 
+⌃  more  ⌃	⌃  vairāk  ⌃
+⌄  more  ⌄	⌄  vairāk  ⌄
+Open the app	Atvērt lietotni
+WARNING!	BRĪDINĀJUMS!
+Sunrise at 	Saullēkts plkst. 
+Sunset at 	Saulriets plkst. 
+Weather, warnings and earthquakes	Laikapstākļi, brīdinājumi un zemestrīces
+Rain or snow starting, new weather warnings, earthquakes in your country.	Lietus vai sniega sākums, jauni laikapstākļu brīdinājumi, zemestrīces tavā valstī.
+Snow	Sniegs
+Rain	Lietus
+It is snowing in 	Snieg: 
+It is raining in 	Līst: 
+Snow is expected within the hour in 	Stundas laikā gaidāms sniegs: 
+Rain is expected within the hour in 	Stundas laikā gaidāms lietus: 
+Warning	Brīdinājums
+Earthquake M	Zemestrīce M
+probably felt: 	droši vien jūtama: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Paziņojumi ir ieslēgti: lietus vai sniegs, laikapstākļu brīdinājumi un zemestrīces tavā valstī.
+EARTHQUAKE	ZEMESTRĪCE
+Felt here: 	Jūtama šeit: 
+ (estimate)	 (aplēse)
+Magnitude: 	Magnitūda: 
+Time: 	Laiks: 
+Region: 	Reģions: 
+Depth: 	Dziļums: 
+Epicentre: 	Epicentrs: 
+ from 	 attālums 
+In 	Vietā 
+Probably felt, intensity 	Droši vien jūtama, intensitāte 
+Probably not felt here.	Šeit droši vien nav jūtama.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Aplēsts pēc magnitūdas un attāluma līdz perēklim (EMS-98 skala); EMSC nepublicē katras pilsētas sajūtu ziņojumus.
+All in the last 24 h	Visas pēdējās 24 h
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Avots: EMSC (seismicportal.eu), magnitūda 3 un vairāk, pēdējās 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potenciāli bīstami laikapstākļi (gadalaikam ierasti, bet vietām intensīvāki). Esi uzmanīgs ārā.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Bīstami, intensīvi laikapstākļi. Esi ļoti uzmanīgs, seko prognozei un ievēro iestāžu ieteikumus.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Ļoti bīstami, ļoti intensīvi laikapstākļi. Veic aizsardzības pasākumus un ievēro iestāžu norādījumus.
+In force now, until 	Spēkā tagad, līdz 
+From 	No 
+ until 	 līdz 
+Source: MeteoAlarm (the national weather service), for 	Avots: MeteoAlarm (valsts meteoroloģiskais dienests), reģionam 
+Stay away from trees, poles and scaffolding; secure loose objects.	Turies tālāk no kokiem, stabiem un sastatnēm; nostiprini vaļīgus priekšmetus.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Iespējami zibens, lietusgāzes, krusa un brāzmas; patveries telpās.
+Avoid flooded roads and river banks.	Izvairies no applūdušiem ceļiem un upju krastiem.
+Slippery roads; drive only if you must, with winter equipment.	Slideni ceļi; brauc tikai tad, ja jābrauc, ar ziemas aprīkojumu.
+Low visibility; drive slowly with the fog lights on.	Slikta redzamība; brauc lēni ar ieslēgtiem miglas lukturiem.
+Avoid the sun between 11 and 18, drink plenty of water.	Izvairies no saules no 11 līdz 18, dzer daudz ūdens.
+Dress warmly and limit time outdoors.	Ģērbies silti un ierobežo laiku ārā.
+Do not light fires outdoors.	Nekuriet uguni ārā.
+H	S
+MOON	MĒNESS
+HUMIDITY	MITRUMS
+AIR QUALITY	GAISA KVALITĀTE
+PRESSURE	SPIEDIENS
+WIND	VĒJŠ
+VISIBILITY	REDZAMĪBA
+COMPASS	KOMPASS
+Moonrise	Mēness lēkts
+Moonset	Mēness riets
+relative humidity	relatīvais mitrums
+Good	Laba
+Fair	Pieņemama
+Moderate	Mērena
+Poor	Slikta
+Very poor	Ļoti slikta
+Extremely poor	Ārkārtīgi slikta
+Poor (fog)	Slikta (migla)
+Very good	Ļoti laba
+steady	stabils
+↓ falling fast	↓ strauji krītas
+↓ falling	↓ krītas
+↑ rising fast	↑ strauji ceļas
+↑ rising	↑ ceļas
+no compass	nav kompasa
+Tap to leave the night clock	Pieskaries, lai izietu no nakts pulksteņa
+until	līdz
+now	tagad
+Rain from	Lietus no
+max	maks.
+Snow from	Sniegs no
+Raining	Līst
+Snowing	Snieg
+updated	atjaunināts
+no data since	nav datu kopš
+Loading weather…	Ielādē laikapstākļus…
+updating…	atjaunina…
+Feels like	Jūtama kā
+Wind	Vējš
+High	Augstākā
+Low	Zemākā
+Charging	Lādējas
+YELLOW	DZELTENS
+ORANGE	ORANŽS
+RED	SARKANS
+WARNING	BRĪDINĀJUMS
+TOMORROW	RĪT
+DAY AFTER	PARĪT
+NEXT 12 HOURS	NĀKAMĀS 12 STUNDAS
+WEATHER · NEXT HOURS	LAIKAPSTĀKĻI · NĀKAMĀS STUNDAS
+RAIN	LIETUS
+SNOW	SNIEGS
+PRECIPITATION	NOKRIŠŅI
+snow	sniegs
+rain	lietus
+no precipitation	nav nokrišņu
+SUN	SAULE
+UV INDEX	UV INDEKSS
+POLLEN	ZIEDPUTEKŠŅI
+Sunrise	Saullēkts
+Sunset	Saulriets
+Very high	Ļoti augsts
+Extreme	Ekstrēms
+no pollen	nav ziedputekšņu
+no data	nav datu
+No precipitation	Nav nokrišņu
+SNOW ICE	SNIEGS LEDUS
+THUNDERSTORM	PĒRKONA NEGAISS
+FOG	MIGLA
+HIGH TEMPERATURE	AUGSTA TEMPERATŪRA
+LOW TEMPERATURE	ZEMA TEMPERATŪRA
+COASTALEVENT	PIEKRASTES PARĀDĪBA
+FOREST FIRE	MEŽA UGUNSGRĒKS
+AVALANCHES	LAVĪNAS
+FLOODING	PLŪDI
+RAIN FLOOD	LIETUS PLŪDI
+alder	alksnis
+birch	bērzs
+olive	olīvkoks
+grasses	stiebrzāles
+mugwort	vībotne
+ragweed	ambrozija
+Clear	Skaidrs
+Mostly clear	Pārsvarā skaidrs
+Partly cloudy	Mainīgs mākoņu daudzums
+Overcast	Apmācies
+Fog	Migla
+Drizzle	Smidzinošs lietus
+Freezing drizzle	Sasalstošs smidzinātājs
+Light rain	Neliels lietus
+Heavy rain	Stiprs lietus
+Freezing rain	Sasalstošs lietus
+Light snow	Neliels sniegs
+Heavy snow	Stiprs sniegs
+Snow grains	Sniega graudi
+Light showers	Vājas lietusgāzes
+Showers	Lietusgāzes
+Heavy showers	Stipras lietusgāzes
+Snow showers	Sniegputeņi
+Thunderstorm	Pērkona negaiss
+Thunderstorm, hail	Pērkona negaiss, krusa
+Code 	Kods 
+not felt	nav jūtama
+scarcely felt, only by a few people at rest	tik tikko jūtama, tikai dažiem miera stāvoklī
+weak, felt by a few people indoors	vāja, jūtama dažiem telpās
+felt by many indoors; windows and doors rattle	jūtama daudziem telpās; logi un durvis grab
+strong, felt by nearly everyone; objects move, some are frightened	spēcīga, jūtama gandrīz visiem; priekšmeti kustas, daži nobīstas
+slight damage (cracks in plaster); many run outdoors	nelieli bojājumi (plaisas apmetumā); daudzi skrien ārā
+damage to buildings; hard to stand	ēku bojājumi; grūti nostāvēt
+heavy damage	smagi bojājumi
+destruction	postījumi
+great destruction	lieli postījumi
+very great destruction	ļoti lieli postījumi
+complete destruction	pilnīga sagrāve
+The phone's own language is in the list too.	Sarakstā ir arī paša tālruņa valoda.

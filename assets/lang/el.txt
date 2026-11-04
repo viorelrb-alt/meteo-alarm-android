@@ -1,0 +1,365 @@
+# Meteo Alarm Android · el · English<TAB>translation
+Diary (log)	Ημερολόγιο
+Everything the app did in the last 5 days; older errors kept 10 days.	Ό,τι έκανε η εφαρμογή τις τελευταίες 5 ημέρες· τα παλαιότερα σφάλματα μένουν 10 ημέρες.
+Share	Κοινοποίηση
+Save	Αποθήκευση
+Close	Κλείσιμο
+log 	ημερολόγιο 
+Send the log	Αποστολή ημερολογίου
+Log saved	Το ημερολόγιο αποθηκεύτηκε
+Could not save	Η αποθήκευση απέτυχε
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Αυτή είναι μια δοκιμαστική έκδοση του Meteo Alarm Android, φτιαγμένη από το Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Δεν συλλέγουμε δεδομένα: χωρίς λογαριασμό, χωρίς διαφημίσεις, χωρίς στατιστικά. Για τον καιρό στέλνονται μόνο οι συντεταγμένες του τόπου στο Open-Meteo (καιρός, γύρη) και, όταν το Open-Meteo είναι υπερφορτωμένο, στο MET Norway (καιρός)· οι προειδοποιήσεις έρχονται από το MeteoAlarm, οι σεισμοί από το EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Τοποθεσία: χρησιμεύει για να δείχνει τον καιρό εκεί που είστε, στην εκκίνηση και μία φορά την ώρα. Για το όνομα του τόπου, οι συντεταγμένες πηγαίνουν στο OpenStreetMap (ή στον γεωκωδικοποιητή του τηλεφώνου), από όπου έρχονται και τα όριά του. Οι τόποι που βρέθηκαν, με το σημείο όπου ήσασταν, μένουν μόνο στο τηλέφωνο. Η εφαρμογή τη ζητά με εξήγηση στην πρώτη εκκίνηση· αν αρνηθείτε, επιλέγετε τον τόπο από τη λίστα και ρωτά ξανά μόνο μετά από ενημέρωση.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Ειδοποιήσεις (μόνο με τη συγκατάθεσή σας): βροχή ή χιόνι που αρχίζει, νέες προειδοποιήσεις καιρού για τον τόπο σας, σεισμοί μεγέθους 3 ή περισσότερο στη χώρα σας. Κάθε γεγονός μία φορά. Ενεργοποίηση ή απενεργοποίηση στο ☰ › Ειδοποιήσεις.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Γλώσσα: στην πρώτη εκκίνηση η γλώσσα του τηλεφώνου (αν την έχει η εφαρμογή, αλλιώς αγγλικά), μετά αυτή που επιλέξατε στο ☰ › Γλώσσα.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Αισθητήρες: η εφαρμογή διαβάζει την κατάσταση της μπαταρίας (νυχτερινό ρολόι κατά τη φόρτιση), τον αισθητήρα φωτός του τηλεφώνου με ☰ › Θέμα › Αυτόματο (αισθητήρας τηλεφώνου) και την πυξίδα, που γυρίζει το βέλος του ανέμου μαζί με το τηλέφωνο. Ό,τι δεν έχει το τηλέφωνο απενεργοποιείται. Τίποτα δεν φεύγει από το τηλέφωνο.
+Updates: 	Ενημερώσεις: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Μετά, μία φορά την εβδομάδα, η εφαρμογή ψάχνει νέα έκδοση στο GitHub και ρωτά πριν τη λήψη.
+I understand	Κατάλαβα
+This phone has no light sensor.	Αυτό το τηλέφωνο δεν έχει αισθητήρα φωτός.
+Automatic theme (phone sensor): on	Αυτόματο θέμα (αισθητήρας τηλεφώνου): ενεργό
+Automatic theme (phone sensor): off	Αυτόματο θέμα (αισθητήρας τηλεφώνου): ανενεργό
+Dark theme	Σκούρο θέμα
+Light theme	Φωτεινό θέμα
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Το Meteo Alarm μπορεί να βρει μόνο του τον τόπο σας, ώστε η πρόγνωση, οι προειδοποιήσεις καιρού και οι σεισμοί να αφορούν το ακριβές σημείο όπου είστε, και όταν ταξιδεύετε. Η θέση μένει στο τηλέφωνο: χρησιμεύει μόνο για την επιλογή του τόπου.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Το τηλέφωνο δεν δείχνει πια την ερώτησή του, γι' αυτό επιτρέψτε την Τοποθεσία για το Meteo Alarm στις ρυθμίσεις του τηλεφώνου (Άδειες › Τοποθεσία).
+If you say no, choose the town from the list; the app asks again only after an update.	Αν αρνηθείτε, επιλέξτε τον τόπο από τη λίστα· η εφαρμογή ρωτά ξανά μόνο μετά από ενημέρωση.
+Location	Τοποθεσία
+Open settings	Άνοιγμα ρυθμίσεων
+Allow	Επιτρέπεται
+Not now	Όχι τώρα
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Το Meteo Alarm μπορεί να σας ειδοποιεί, ακόμη και κλειστό: όταν αρχίζει βροχή ή χιόνι ή θα αρχίσει μέσα σε μία ώρα, όταν εκδίδεται προειδοποίηση καιρού για τον τόπο σας και όταν γίνεται σεισμός μεγέθους 3 ή περισσότερο στη χώρα σας. Κάθε γεγονός μόνο μία φορά, τίποτε άλλο. Έτσι μαθαίνετε έγκαιρα, χωρίς να ανοίξετε την εφαρμογή.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Το τηλέφωνο δεν επιτρέπει στην εφαρμογή να στέλνει ειδοποιήσεις· ενεργοποιήστε τις ειδοποιήσεις του Meteo Alarm στις ρυθμίσεις του τηλεφώνου.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Μπορείτε να τις απενεργοποιήσετε οποτεδήποτε στο ☰ › Ειδοποιήσεις. Αν αρνηθείτε, η εφαρμογή ρωτά ξανά μόνο μετά από ενημέρωση.
+Notifications	Ειδοποιήσεις
+Notifications ON	Ειδοποιήσεις ΕΝΕΡΓΕΣ
+Notifications OFF	Ειδοποιήσεις ΑΝΕΝΕΡΓΕΣ
+Without location access, choose the town from the list.	Χωρίς πρόσβαση στην τοποθεσία, επιλέξτε τον τόπο από τη λίστα.
+Brightness: slide on the bar	Φωτεινότητα: σύρετε στη μπάρα
+Automatic location OFF	Αυτόματη τοποθεσία ΑΝΕΝΕΡΓΗ
+Automatic location ON	Αυτόματη τοποθεσία ΕΝΕΡΓΗ
+Looking for the exact position…	Αναζήτηση ακριβούς θέσης…
+Added to the list: 	Προστέθηκε στη λίστα: 
+Location is off on the phone.	Η τοποθεσία είναι απενεργοποιημένη στο τηλέφωνο.
+The position could not be found.	Η θέση δεν βρέθηκε.
+The town could not be found (internet?).	Ο τόπος δεν βρέθηκε (ίντερνετ;).
+The weather did not come: 	Ο καιρός δεν ήρθε: 
+Already updating…	Ήδη ενημερώνεται…
+The weather has just been updated	Ο καιρός μόλις ενημερώθηκε
+Just tried; try again in a few seconds	Μόλις δοκιμάστηκε· δοκιμάστε ξανά σε λίγα δευτερόλεπτα
+Updating the weather…	Ενημέρωση καιρού…
+Refresh	Ανανέωση
+Town	Τόπος
+Temperature °C/°F	Θερμοκρασία °C/°F
+Clock 12/24	Ρολόι 12/24
+Theme	Θέμα
+Screen on OFF	Οθόνη αναμμένη OFF
+Screen on ON	Οθόνη αναμμένη ON
+Language	Γλώσσα
+Night clock OFF	Νυχτερινό ρολόι OFF
+Night clock ON	Νυχτερινό ρολόι ON
+Location Off	Τοποθεσία Off
+Location On	Τοποθεσία On
+Earthquakes	Σεισμοί
+Widgets	Γραφικά στοιχεία
+Log	Ημερολόγιο
+Check for updates	Έλεγχος ενημερώσεων
+Help	Βοήθεια
+About	Πληροφορίες
+24-hour clock	Ρολόι 24 ωρών
+12-hour clock	Ρολόι 12 ωρών
+The screen stays on while the app is open	Η οθόνη μένει αναμμένη όσο η εφαρμογή είναι ανοιχτή
+The screen goes off after the phone's timeout	Η οθόνη σβήνει μετά τον χρόνο του τηλεφώνου
+While charging at night, the screen shows a big dim clock	Κατά τη φόρτιση τη νύχτα, η οθόνη δείχνει ένα μεγάλο αχνό ρολόι
+Night clock off	Νυχτερινό ρολόι ανενεργό
+Light	Φωτεινό
+Dark	Σκούρο
+Automatic	Αυτόματο
+Last 7 days · 	Τελευταίες 7 ημέρες · 
+Downloading from EMSC…	Λήψη από το EMSC…
+The list could not be downloaded. Is the internet on?	Η λίστα δεν μπόρεσε να ληφθεί. Είναι ανοιχτό το ίντερνετ;
+No earthquake of magnitude 3 or more.	Κανένας σεισμός μεγέθους 3 ή περισσότερο.
+Last 48 hours · EU, Ukraine, Moldova	Τελευταίες 48 ώρες · ΕΕ, Ουκρανία, Μολδαβία
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Πηγή: EMSC (Ευρωμεσογειακό Σεισμολογικό Κέντρο, seismicportal.eu), μέγεθος 3 και άνω. Το «αισθητός» είναι εκτίμηση στην κλίμακα EMS-98 από το μέγεθος και την απόσταση από την εστία.
+depth 	βάθος 
+from 	από 
+Probably felt in 	Πιθανώς αισθητός σε: 
+Probably not felt in 	Πιθανώς μη αισθητός σε: 
+Updates	Ενημερώσεις
+How to update	Πώς να ενημερώσετε
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Η συγκατάθεση ζητείται μόνο εκεί: μία φορά αν συμφωνήσετε (από τότε η εφαρμογή ελέγχει και μόνη της μία φορά την εβδομάδα), κάθε φορά όσο αρνείστε. Χωρίς αυτήν η εφαρμογή ποτέ δεν ψάχνει ενημερώσεις και δεν κατεβάζει τίποτα.
+Buttons on the screen	Κουμπιά στην οθόνη
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Ανοίγει τους τόπους: τους 3 τελευταίους (αγαπημένα) και τις περιφέρειες. Πατήστε μια περιφέρεια, μετά τον τόπο.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Βρίσκει πού είστε και δείχνει τον καιρό εκείνου του τόπου· ψάχνει ξανά κάθε ώρα. Οι τόποι που βρέθηκαν μένουν στο τηλέφωνο με το σημείο όπου ήσασταν, και ο τόπος που εμφανίζεται αλλάζει μόνο όταν βγείτε από τα όριά του. Λειτουργεί και σε άλλες χώρες, με προειδοποιήσεις MeteoAlarm σε περίπου 38 ευρωπαϊκές χώρες. Ένα πάτημα ενεργοποιεί την αυτόματη τοποθεσία (κουμπί γεμάτο, ψάχνει αμέσως) ή την απενεργοποιεί (κουμπί άδειο).
+Brightness	Φωτεινότητα
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Δείχνει τη μπάρα φωτεινότητας αριστερά: σύρετε πάνω ή κάτω. Εξαφανίζεται μόνη της.
+Light / dark theme	Φωτεινό / σκούρο θέμα
+Over the brightness bar: switches between the light and the dark theme.	Πάνω από τη μπάρα φωτεινότητας: εναλλάσσει φωτεινό και σκούρο θέμα.
+Automatic theme (phone sensor)	Αυτόματο θέμα (αισθητήρας τηλεφώνου)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Φωτεινό θέμα όταν έχει φως, σκούρο στο σκοτάδι. Γεμάτο όσο είναι ενεργό.
+Phone without a sensor	Τηλέφωνο χωρίς κάποιον αισθητήρα
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Σε κάθε εκκίνηση η εφαρμογή ελέγχει τους αισθητήρες του τηλεφώνου (πυξίδα, φως, επιταχυνσιόμετρο, εγγύτητα, πίεση, GPS) και γράφει στο Ημερολόγιο ποιοι λείπουν. Χωρίς αισθητήρα φωτός το θέμα Αυτόματο (αισθητήρας τηλεφώνου) είναι γκρι και δεν κάνει τίποτα· χωρίς πυξίδα το πλαίσιο με το βέλος του ανέμου κρύβεται.
+Location consent	Συγκατάθεση για την τοποθεσία
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Στην πρώτη εκκίνηση η εφαρμογή εξηγεί γιατί θέλει την τοποθεσία (τον καιρό, τις προειδοποιήσεις και τους σεισμούς για το ακριβές σημείο όπου είστε), μετά ρωτά το τηλέφωνο. Ο πρώτος τόπος που βρέθηκε γίνεται ο εμφανιζόμενος και μπαίνει στα αγαπημένα. Αν αρνηθείτε, επιλέγετε τον τόπο από τη λίστα και η εφαρμογή ρωτά ξανά μόνο μετά από ενημέρωση· όταν το τηλέφωνο δεν ρωτά πια, το κουμπί ανοίγει τις ρυθμίσεις του.
+Gestures	Χειρονομίες
+Tap on the town's name	Πάτημα στο όνομα του τόπου
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Ψάχνει μία φορά με GPS, για καλύτερη πρόγνωση εκεί που είστε· η αυτόματη τοποθεσία μένει ως έχει.
+Pull down	Τράβηγμα προς τα κάτω
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Τραβήξτε την οθόνη κάτω και αφήστε: ο καιρός ανανεώνεται. Νέο τράβηγμα κατά τη λήψη ή μέσα σε 10 δευτερόλεπτα από την τελευταία δεν ξεκινά άλλη· ένα μήνυμα το λέει.
+Left edge	Αριστερό άκρο
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Σύρετε πάνω ή κάτω κοντά στο αριστερό άκρο (λίγο προς τα μέσα): εμφανίζεται η μπάρα φωτεινότητας και το σύρσιμο πάνω της ρυθμίζει τη φωτεινότητα.
+Wind arrow	Βέλος ανέμου
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Δίπλα στον άνεμο: το βέλος δείχνει πού φυσά ο άνεμος, γυρισμένο με το τηλέφωνο (πυξίδα)· το πορτοκαλί σημάδι είναι ο βορράς.
+Night clock	Νυχτερινό ρολόι
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Όταν το τηλέφωνο φορτίζει τη νύχτα (από τη δύση ως την ανατολή του ηλίου) και κανείς δεν το αγγίζει για ένα λεπτό: ένα μεγάλο αχνό ρολόι. Ένα πάτημα επιστρέφει για ένα λεπτό.
+Warnings and earthquake	Προειδοποιήσεις και σεισμός
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Κάτω από τη γραμμή, μια σειρά πλαισίων: πρώτα ο σεισμός (αν έγινε), μετά ένα πλαίσιο ανά επίπεδο προειδοποίησης (κόκκινο, πορτοκαλί, κίτρινο). Χωρούν δύο στην οθόνη· με περισσότερα, η σειρά προχωρά μόνη της κάθε 2 δευτερόλεπτα και ξαναρχίζει από το πρώτο. Μπορείτε επίσης να τη σύρετε με το δάχτυλο. Πατήστε ένα πλαίσιο: η σειρά σταματά 20 δευτερόλεπτα και ένα συννεφάκι δείχνει τις λεπτομέρειες με μεγαλύτερα γράμματα (για ένα επίπεδο: τι σημαίνει, κάθε προειδοποίηση με την περίοδο και συμβουλή· για τον σεισμό: μέγεθος, ώρα, περιοχή, βάθος, επίκεντρο και απόσταση, πώς πιθανώς έγινε αισθητός στον τόπο σας, και όλοι οι σεισμοί των τελευταίων 24 ωρών).
+Earthquake box	Πλαίσιο Σεισμός
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Από το EMSC (Ευρωμεσογειακό Σεισμολογικό Κέντρο): σεισμοί μεγέθους 3 ή περισσότερο των τελευταίων 24 ωρών στη χώρα του τόπου σας (που βρήκε η τοποθεσία). Το πλαίσιο δείχνει τον ισχυρότερο: μέγεθος και ώρα, και πώς έγινε αισθητός στον τόπο σας, ως εκτίμηση στην κλίμακα EMS-98 (από το μέγεθος και την απόσταση από την εστία· το EMSC δεν δημοσιεύει αναφορές για κάθε τόπο). Εξαφανίζεται μετά από 24 ώρες.
+Left / right on the boxes	Αριστερά / δεξιά στα πλαίσια
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Η σειρά των προειδοποιήσεων, τα πλαίσια των ωρών και οι πέντε ημέρες (αύριο και οι επόμενες 4, ανά δύο) ακολουθούν το δάχτυλο. Το γράφημα Υετός · επόμενες 12 ώρες είναι πρώτο στη σειρά των ωρών, μόνο όταν αναμένεται βροχή ή χιόνι.
+The row of boxes at the bottom	Η σειρά πλαισίων κάτω
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Σύρετέ τη στο πλάι (οριζόντια: πάνω και κάτω, ανά δύο, χωρίς το πλαίσιο του ανέμου): Ήλιος (η Σελήνη μετά τη δύση, με ανατολή, δύση και φάση), δείκτης UV, Γύρη, Υγρασία (όσο βρέχει), Ποιότητα αέρα, Πίεση, Άνεμος, Ορατότητα και Πυξίδα.
+Home-screen widgets	Γραφικά στοιχεία στην αρχική οθόνη
+Meteo Alarm widgets	Γραφικά στοιχεία Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Κρατήστε πατημένο ένα κενό σημείο της αρχικής οθόνης, επιλέξτε Γραφικά στοιχεία, μετά Meteo Alarm: 2x2, 4x1, 4x2 και «οποιοδήποτε μέγεθος», το καθένα με προεπισκόπηση· μπαίνει αμέσως στην οθόνη, χωρίς παράθυρο ρυθμίσεων. Υπάρχουν τρεις διατάξεις: 2x2 (τετράγωνο: εικονίδιο, θερμοκρασία, τόπος, επόμενη δύση ή ανατολή), 4x1 (χαμηλή λωρίδα, και με τον ουρανό) και 4x2 (φαρδύ, και με μέγ. / ελάχ. και τις επόμενες 5 ώρες), συν ένα μικρό 2x1 (εικονίδιο και θερμοκρασία) για πολύ μικρά πλαίσια. Κρατήστε το πατημένο και σύρετε τα άκρα του: φαρδύ (περίπου 4 στήλες) και μία σειρά = 4x1, φαρδύ και ψηλότερο = 4x2 (μένει 4x2 όσο ψηλό κι αν γίνει), στενό = 2x2, στενό και μία σειρά = 2x1. Οι σειρές και οι στήλες είναι αυτές της αρχικής σας οθόνης (σε tablet μια σειρά είναι πολύ ψηλότερη από ό,τι σε τηλέφωνο), οπότε η λωρίδα 4x1 λειτουργεί κι εκεί. Γεμίζει το πλάτος του πλαισίου· όταν το πλαίσιο είναι ψηλότερο απ' όσο χρειάζεται, το γραφικό στοιχείο κρατά το μέγεθός του, στο κέντρο, με φόντο μόνο πίσω του (το υπόλοιπο μένει διάφανο). Μια διάταξη δεν μικραίνει ποτέ τόσο ώστε τα κείμενα να γίνουν πολύ μικρά. Με ενεργές προειδοποιήσεις, μια γραμμή «ΠΡΟΕΙΔΟΠΟΙΗΣΗ!» δείχνει τρεις κουκκίδες: κίτρινο = γκρι γκρι κίτρινο, πορτοκαλί = γκρι πορτοκαλί πορτοκαλί, κόκκινο = όλα κόκκινα· δύο επίπεδα = το χειρότερο, γκρι, το άλλο· τρία επίπεδα = κόκκινο πορτοκαλί κίτρινο. Ένα πάτημα ανοίγει την εφαρμογή.
+Widget settings	Ρυθμίσεις γραφικού στοιχείου
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Κρατήστε πατημένο το γραφικό στοιχείο › Ρυθμίσεις (Android 12 και νεότερα) ή ☰ › Γραφικά στοιχεία. Καθένα έχει τις δικές του: προεπισκόπηση· τον τόπο (όπως στην εφαρμογή ή άλλον με Αλλαγή)· Φόντο ναι / όχι και πόσο διάφανο· Χρώματα: ανάλογα με τον καιρό (γαλάζιος ουρανός, νυχτερινό μπλε, γκρι σύννεφα, βροχή, παγωμένο χιόνι, καταιγίδα, ομίχλη), όπως οι ρυθμίσεις του τηλεφώνου ή σκούρα· Χρώμα κειμένου: αυτόματο (μαύρο σε ανοιχτό φόντο), λευκό ή μαύρο. Ακύρωση ή Αποθήκευση.
+Refreshing by itself	Αυτόματη ανανέωση
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Ο καιρός, οι προειδοποιήσεις και οι σεισμοί έρχονται μόνοι τους, και με κλειστή εφαρμογή (για τα γραφικά στοιχεία): κάθε 15 λεπτά με αναμμένη οθόνη, κάθε 30 λεπτά με σβηστή, καθόλου μεταξύ δύσης και ανατολής με σβηστή οθόνη (περιμένει να ανάψει) και κάθε ώρα όταν η μπαταρία είναι κάτω από 25% και δεν φορτίζει. Όταν μια λήψη αποτύχει, ένα μήνυμα και η γραμμή «! χωρίς δεδομένα από …» κάτω από το ρολόι λένε γιατί (χωρίς ίντερνετ, ο διακομιστής δεν απάντησε, σφάλμα ασφαλούς σύνδεσης, σφάλμα διακομιστή…). Όταν το Open-Meteo είναι απασχολημένο (HTTP 503 «overloaded») ή δεν απαντά, η πρόγνωση έρχεται από το MET Norway (api.met.no, το νορβηγικό μετεωρολογικό ινστιτούτο) και κάτω από το ρολόι γράφει «· MET Norway»· μετά από ένα «απασχολημένο» η εφαρμογή πηγαίνει κατευθείαν στο MET Norway για 20 λεπτά. Μέχρι να έρθουν νέα δεδομένα, μένει στην οθόνη ο τελευταίος αποθηκευμένος καιρός.
+The ☰ menu	Το μενού ☰
+Downloads the weather, the warnings and the earthquakes now.	Κατεβάζει τώρα τον καιρό, τις προειδοποιήσεις και τους σεισμούς.
+The same as the town button.	Το ίδιο με το κουμπί του τόπου.
+Switches between Celsius and Fahrenheit.	Εναλλάσσει Κελσίου και Φαρενάιτ.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Εναλλάσσει το ρολόι μεταξύ 24 και 12 ωρών (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Φωτεινό, Σκούρο ή Αυτόματο (αισθητήρας τηλεφώνου).
+Screen on ON / OFF	Οθόνη αναμμένη ON / OFF
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: η οθόνη μένει αναμμένη όσο η εφαρμογή είναι ανοιχτή. OFF: σβήνει μετά τον χρόνο του τηλεφώνου.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Η λίστα έχει τα αγγλικά και τις επίσημες γλώσσες της χώρας όπου βρίσκεται το τηλέφωνο (από την κάρτα SIM ή το κινητό δίκτυο· χωρίς αυτά, από τον τόπο που εμφανίζεται). Στην πρώτη εκκίνηση η εφαρμογή παίρνει τη γλώσσα του τηλεφώνου, αν την έχει. Η εφαρμογή μιλά όλες τις επίσημες γλώσσες της ΕΕ και ουκρανικά.
+Location On / Off	Τοποθεσία On / Off
+Turns automatic location on or off (the same as the location button).	Ενεργοποιεί ή απενεργοποιεί την αυτόματη τοποθεσία (το ίδιο με το κουμπί τοποθεσίας).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Μια σελίδα σαν αυτή, με κουμπί κλεισίματος πάνω: οι σεισμοί μεγέθους 3 ή περισσότερο των τελευταίων 7 ημερών στη χώρα σας, μετά εκείνοι των τελευταίων 48 ωρών στην Ευρωπαϊκή Ένωση, την Ουκρανία και τη Μολδαβία. Κάθε γραμμή: ώρα, τόπος, μέγεθος, βάθος και απόσταση από τον τόπο σας. Από το EMSC· κυλά.
+Notifications ON / OFF	Ειδοποιήσεις ON / OFF
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Ειδοποιήσεις μόνο για: βροχή ή χιόνι που αρχίζει (ή αρχίζει μέσα σε μία ώρα· ξανά μόνο μετά από 3 ξηρές ώρες), νέα προειδοποίηση καιρού για τον τόπο σας και σεισμό μεγέθους 3 ή περισσότερο στη χώρα σας. Κάθε γεγονός μόνο μία φορά, και με κλειστή εφαρμογή. Η εφαρμογή τις ζητά στην πρώτη εκκίνηση· αν αρνηθείτε, ρωτά ξανά μόνο μετά από ενημέρωση, ποτέ σε κάθε εκκίνηση. Όταν το τηλέφωνο δεν δείχνει πια την ερώτησή του (μετά από δύο αρνήσεις), το κουμπί ανοίγει τις ρυθμίσεις του τηλεφώνου, όπου τις επιτρέπετε.
+Night clock ON / OFF	Νυχτερινό ρολόι ON / OFF
+Turns the night clock on or off.	Ενεργοποιεί ή απενεργοποιεί το νυχτερινό ρολόι.
+The settings of a widget on the home screen (with several, choose which first).	Οι ρυθμίσεις ενός γραφικού στοιχείου της αρχικής οθόνης (αν είναι πολλά, επιλέγετε πρώτα ποιο).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Ό,τι έκανε η εφαρμογή, με την ώρα: οι αισθητήρες, τα πατήματα και οι χειρονομίες, η τοποθεσία, οι λήψεις (και γιατί απέτυχε κάποια), οι ανανεώσεις στο παρασκήνιο και τα γραφικά στοιχεία (το μέγεθος που τους δίνει το τηλέφωνο, η διάταξη που εμφανίζεται). Κρατά 5 ημέρες, κάθε μέρα νέο αρχείο· τα σφάλματα παλαιότερων ημερών μένουν άλλες 10 ημέρες σε μια ενότητα Σφάλματα. Πάνω: το τηλέφωνο (μοντέλο, Android, One UI) και η έκδοση της εφαρμογής. Διαβάστε το εδώ, Κοινοποιήστε το (WhatsApp, Drive, e-mail…) ή Αποθηκεύστε το στο τηλέφωνο.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Ψάχνει νέα έκδοση στο GitHub. Την πρώτη φορά (και κάθε φορά μέχρι να συμφωνήσετε) εξηγεί ότι οι ενημερώσεις έρχονται από το GitHub, όχι από το Google Play, και ζητά τη συγκατάθεσή σας· με «Όχι τώρα» ένα μήνυμα λέει ότι η εφαρμογή δεν θα ενημερωθεί. Τίποτα δεν εγκαθίσταται μέχρι να πατήσετε Ενημέρωση και να επιβεβαιώσετε στο πρόγραμμα εγκατάστασης του τηλεφώνου.
+This page.	Αυτή η σελίδα.
+About the app, the data it uses, and what's new in each version.	Για την εφαρμογή, τα δεδομένα που χρησιμοποιεί και τι νέο έχει κάθε έκδοση.
+What's new	Τι νέο υπάρχει
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Το σκούρο θέμα χρησιμοποιεί τα χρώματα της εφαρμογής Claude. Γραμματοσειρά: Liberation Sans.
+Installed version: v	Εγκατεστημένη έκδοση: v
+Favourites	Αγαπημένα
+Choose the county	Επιλέξτε περιφέρεια
+Other countries	Άλλες χώρες
+‹  Back	‹  Πίσω
+‹  Back to the counties	‹  Πίσω στις περιφέρειες
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Δεν υπάρχει γραφικό στοιχείο Meteo Alarm στην αρχική οθόνη. Κρατήστε πατημένο ένα κενό σημείο της αρχικής οθόνης › Γραφικά στοιχεία › Meteo Alarm.
+Which widget?	Ποιο γραφικό στοιχείο;
+Change	Αλλαγή
+Background	Φόντο
+Colours	Χρώματα
+Text colour	Χρώμα κειμένου
+Cancel	Ακύρωση
+  (as in the app)	  (όπως στην εφαρμογή)
+Transparency: 	Διαφάνεια: 
+Match the phone's settings	Όπως οι ρυθμίσεις του τηλεφώνου
+By the weather	Ανάλογα με τον καιρό
+White	Λευκό
+Black	Μαύρο
+As in the app	Όπως στην εφαρμογή
+Choose the county / country…	Επιλέξτε περιφέρεια / χώρα…
+County / country	Περιφέρεια / χώρα
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Για την προειδοποίηση του Play Protect: η Google μπορεί να πει ότι η εφαρμογή «μπορεί να είναι επιβλαβής». Το κάνει επειδή η εφαρμογή δεν προέρχεται από το Google Play, ο προγραμματιστής της δεν είναι εγγεγραμμένος στη Google και μπορεί να εγκαθιστά μόνη τις ενημερώσεις της (από το github.com/viorelrb-alt/meteo-alarm-android). Η εφαρμογή δεν κάνει τίποτε άλλο. Όταν εμφανιστεί το παράθυρο του Play Protect, πατήστε «Περισσότερες λεπτομέρειες» (αν εμφανίζεται), μετά «Εγκατάσταση χωρίς σάρωση» (ή «Εγκατάσταση ούτως ή άλλως»).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Για ενημερώσεις: ανοίξτε ☰ › Έλεγχος ενημερώσεων και, όταν σας ρωτήσει, δώστε τη συγκατάθεσή σας.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Το Meteo Alarm δεν προέρχεται από το Google Play. Οι νέες εκδόσεις δημοσιεύονται στο GitHub (github.com/viorelrb-alt/meteo-alarm-android) και η εφαρμογή ενημερώνεται από εκεί: ελέγχει περίπου μία φορά την εβδομάδα (ή όταν επιλέξετε Έλεγχος ενημερώσεων), δείχνει τα νέα και μόνο όταν πατήσετε Ενημέρωση κατεβάζει τη νέα έκδοση και ανοίγει το πρόγραμμα εγκατάστασης του τηλεφώνου, όπου επιβεβαιώνετε ξανά.\n\nΕπιτρέπετε στην εφαρμογή να ενημερώνεται έτσι; Χωρίς τη συγκατάθεσή σας η εφαρμογή δεν ψάχνει ενημερώσεις και δεν κατεβάζει τίποτα· μπορείτε να συμφωνήσετε αργότερα από ☰ › Έλεγχος ενημερώσεων.
+Updates from GitHub	Ενημερώσεις από το GitHub
+I agree	Συμφωνώ
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Χωρίς τη συγκατάθεσή σας η εφαρμογή δεν θα ενημερωθεί. Μπορείτε να αλλάξετε γνώμη οποτεδήποτε από ☰ › Έλεγχος ενημερώσεων.
+Checking GitHub for a new version…	Αναζήτηση νέας έκδοσης στο GitHub…
+No version published yet.	Δεν έχει δημοσιευτεί ακόμη καμία έκδοση.
+Could not check for updates. Is the internet on?	Δεν ήταν δυνατός ο έλεγχος ενημερώσεων. Είναι ανοιχτό το ίντερνετ;
+You have the latest version, v	Έχετε την πιο πρόσφατη έκδοση, v
+Installed: v	Εγκατεστημένη: v
+New: v	Νέα: v
+New version: v	Νέα έκδοση: v
+Update	Ενημέρωση
+Downloading…	Λήψη…
+Hide	Απόκρυψη
+Downloading… 	Λήψη… 
+The download failed. Is the internet on?	Η λήψη απέτυχε. Είναι ανοιχτό το ίντερνετ;
+The installer could not be opened.	Το πρόγραμμα εγκατάστασης δεν άνοιξε.
+no internet (server not found)	χωρίς ίντερνετ (ο διακομιστής δεν βρέθηκε)
+the server did not answer in time	ο διακομιστής δεν απάντησε εγκαίρως
+no connection	χωρίς σύνδεση
+secure connection error: 	σφάλμα ασφαλούς σύνδεσης: 
+internet not allowed for the app	το ίντερνετ δεν επιτρέπεται στην εφαρμογή
+server error 	σφάλμα διακομιστή 
+network error: 	σφάλμα δικτύου: 
+data error: 	σφάλμα δεδομένων: 
+⌃  more  ⌃	⌃  περισσότερα  ⌃
+⌄  more  ⌄	⌄  περισσότερα  ⌄
+Open the app	Άνοιγμα εφαρμογής
+WARNING!	ΠΡΟΕΙΔΟΠΟΙΗΣΗ!
+Sunrise at 	Ανατολή στις 
+Sunset at 	Δύση στις 
+Weather, warnings and earthquakes	Καιρός, προειδοποιήσεις και σεισμοί
+Rain or snow starting, new weather warnings, earthquakes in your country.	Βροχή ή χιόνι που αρχίζει, νέες προειδοποιήσεις καιρού, σεισμοί στη χώρα σας.
+Snow	Χιόνι
+Rain	Βροχή
+It is snowing in 	Χιονίζει σε: 
+It is raining in 	Βρέχει σε: 
+Snow is expected within the hour in 	Χιόνι μέσα σε μία ώρα σε: 
+Rain is expected within the hour in 	Βροχή μέσα σε μία ώρα σε: 
+Warning	Προειδοποίηση
+Earthquake M	Σεισμός M
+probably felt: 	πιθανώς αισθητός: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Οι ειδοποιήσεις είναι ενεργές: βροχή ή χιόνι, προειδοποιήσεις καιρού και σεισμοί στη χώρα σας.
+EARTHQUAKE	ΣΕΙΣΜΟΣ
+Felt here: 	Αισθητός εδώ: 
+ (estimate)	 (εκτίμηση)
+Magnitude: 	Μέγεθος: 
+Time: 	Ώρα: 
+Region: 	Περιοχή: 
+Depth: 	Βάθος: 
+Epicentre: 	Επίκεντρο: 
+ from 	 από 
+In 	Σε: 
+Probably felt, intensity 	Πιθανώς αισθητός, ένταση 
+Probably not felt here.	Πιθανώς μη αισθητός εδώ.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Εκτίμηση από το μέγεθος και την απόσταση από την εστία (κλίμακα EMS-98)· το EMSC δεν δημοσιεύει αναφορές για κάθε τόπο.
+All in the last 24 h	Όλοι των τελευταίων 24 ωρών
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Πηγή: EMSC (seismicportal.eu), μέγεθος 3 και άνω, τελευταίες 24 ώρες.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Δυνητικά επικίνδυνος καιρός (συνήθης για την εποχή, αλλά τοπικά πιο έντονος). Προσέχετε έξω.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Επικίνδυνος καιρός μεγάλης έντασης. Να είστε πολύ προσεκτικοί, παρακολουθείτε την πρόγνωση και τις συμβουλές των αρχών.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Πολύ επικίνδυνος καιρός πολύ μεγάλης έντασης. Λάβετε μέτρα προστασίας και ακολουθήστε τις οδηγίες των αρχών.
+In force now, until 	Σε ισχύ τώρα, έως 
+From 	Από 
+ until 	 έως 
+Source: MeteoAlarm (the national weather service), for 	Πηγή: MeteoAlarm (η εθνική μετεωρολογική υπηρεσία), για 
+Stay away from trees, poles and scaffolding; secure loose objects.	Μείνετε μακριά από δέντρα, κολόνες και σκαλωσιές· στερεώστε τα χαλαρά αντικείμενα.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Είναι πιθανοί κεραυνοί, νεροποντές, χαλάζι και ριπές· καταφύγετε σε κτίριο.
+Avoid flooded roads and river banks.	Αποφύγετε πλημμυρισμένους δρόμους και όχθες ποταμών.
+Slippery roads; drive only if you must, with winter equipment.	Ολισθηροί δρόμοι· οδηγείτε μόνο αν χρειάζεται, με χειμερινό εξοπλισμό.
+Low visibility; drive slowly with the fog lights on.	Χαμηλή ορατότητα· οδηγείτε αργά με αναμμένους προβολείς ομίχλης.
+Avoid the sun between 11 and 18, drink plenty of water.	Αποφύγετε τον ήλιο από τις 11 ως τις 18, πίνετε πολύ νερό.
+Dress warmly and limit time outdoors.	Ντυθείτε ζεστά και μείνετε λίγο έξω.
+Do not light fires outdoors.	Μην ανάβετε φωτιά σε ύπαιθρο.
+H	Ω
+MOON	ΣΕΛΗΝΗ
+HUMIDITY	ΥΓΡΑΣΙΑ
+AIR QUALITY	ΠΟΙΟΤΗΤΑ ΑΕΡΑ
+PRESSURE	ΠΙΕΣΗ
+WIND	ΑΝΕΜΟΣ
+VISIBILITY	ΟΡΑΤΟΤΗΤΑ
+COMPASS	ΠΥΞΙΔΑ
+Moonrise	Ανατολή σελήνης
+Moonset	Δύση σελήνης
+relative humidity	σχετική υγρασία
+Good	Καλή
+Fair	Μέτρια καλή
+Moderate	Μέτρια
+Poor	Κακή
+Very poor	Πολύ κακή
+Extremely poor	Εξαιρετικά κακή
+Poor (fog)	Χαμηλή (ομίχλη)
+Very good	Πολύ καλή
+steady	σταθερή
+↓ falling fast	↓ πέφτει γρήγορα
+↓ falling	↓ πέφτει
+↑ rising fast	↑ ανεβαίνει γρήγορα
+↑ rising	↑ ανεβαίνει
+no compass	χωρίς πυξίδα
+Tap to leave the night clock	Πατήστε για έξοδο από το νυχτερινό ρολόι
+until	έως
+now	τώρα
+Rain from	Βροχή από
+max	μέγ.
+Snow from	Χιόνι από
+Raining	Βρέχει
+Snowing	Χιονίζει
+updated	ενημερώθηκε
+no data since	χωρίς δεδομένα από
+Loading weather…	Φόρτωση καιρού…
+updating…	ενημέρωση…
+Feels like	Αίσθηση
+Wind	Άνεμος
+High	Μέγ.
+Low	Ελάχ.
+Charging	Φορτίζει
+YELLOW	ΚΙΤΡΙΝΟ
+ORANGE	ΠΟΡΤΟΚΑΛΙ
+RED	ΚΟΚΚΙΝΟ
+WARNING	ΠΡΟΕΙΔΟΠΟΙΗΣΗ
+TOMORROW	ΑΥΡΙΟ
+DAY AFTER	ΜΕΘΑΥΡΙΟ
+NEXT 12 HOURS	ΕΠΟΜΕΝΕΣ 12 ΩΡΕΣ
+WEATHER · NEXT HOURS	ΚΑΙΡΟΣ · ΕΠΟΜΕΝΕΣ ΩΡΕΣ
+RAIN	ΒΡΟΧΗ
+SNOW	ΧΙΟΝΙ
+PRECIPITATION	ΥΕΤΟΣ
+snow	χιόνι
+rain	βροχή
+no precipitation	χωρίς υετό
+SUN	ΗΛΙΟΣ
+UV INDEX	ΔΕΙΚΤΗΣ UV
+POLLEN	ΓΥΡΗ
+Sunrise	Ανατολή
+Sunset	Δύση
+Very high	Πολύ υψηλός
+Extreme	Ακραίος
+no pollen	χωρίς γύρη
+no data	χωρίς δεδομένα
+No precipitation	Χωρίς υετό
+SNOW ICE	ΧΙΟΝΙ, ΠΑΓΟΣ
+THUNDERSTORM	ΚΑΤΑΙΓΙΔΕΣ
+FOG	ΟΜΙΧΛΗ
+HIGH TEMPERATURE	ΚΑΥΣΩΝΑΣ
+LOW TEMPERATURE	ΨΥΧΟΣ
+COASTALEVENT	ΠΑΡΑΚΤΙΑ ΦΑΙΝΟΜΕΝΑ
+FOREST FIRE	ΔΑΣΙΚΕΣ ΠΥΡΚΑΓΙΕΣ
+AVALANCHES	ΧΙΟΝΟΣΤΙΒΑΔΕΣ
+FLOODING	ΠΛΗΜΜΥΡΕΣ
+RAIN FLOOD	ΒΡΟΧΗ, ΠΛΗΜΜΥΡΕΣ
+alder	σκλήθρο
+birch	σημύδα
+olive	ελιά
+grasses	αγρωστώδη
+mugwort	αρτεμισία
+ragweed	αμβροσία
+Clear	Αίθριος
+Mostly clear	Κυρίως αίθριος
+Partly cloudy	Λίγα σύννεφα
+Overcast	Συννεφιά
+Fog	Ομίχλη
+Drizzle	Ψιχάλα
+Freezing drizzle	Παγωμένη ψιχάλα
+Light rain	Ασθενής βροχή
+Heavy rain	Ισχυρή βροχή
+Freezing rain	Παγωμένη βροχή
+Light snow	Ασθενής χιονόπτωση
+Heavy snow	Ισχυρή χιονόπτωση
+Snow grains	Χιονόκοκκοι
+Light showers	Ασθενείς μπόρες
+Showers	Μπόρες
+Heavy showers	Ισχυρές μπόρες
+Snow showers	Χιονομπόρες
+Thunderstorm	Καταιγίδα
+Thunderstorm, hail	Καταιγίδα, χαλάζι
+Code 	Κωδικός 
+not felt	μη αισθητός
+scarcely felt, only by a few people at rest	μόλις αισθητός, μόνο από λίγους σε ηρεμία
+weak, felt by a few people indoors	ασθενής, αισθητός από λίγους σε εσωτερικούς χώρους
+felt by many indoors; windows and doors rattle	αισθητός από πολλούς σε εσωτερικούς χώρους· τα παράθυρα και οι πόρτες τρίζουν
+strong, felt by nearly everyone; objects move, some are frightened	ισχυρός, αισθητός σχεδόν από όλους· τα αντικείμενα μετακινούνται, κάποιοι τρομάζουν
+slight damage (cracks in plaster); many run outdoors	ελαφριές ζημιές (ρωγμές στον σοβά)· πολλοί βγαίνουν έξω
+damage to buildings; hard to stand	ζημιές σε κτίρια· δύσκολο να σταθεί κανείς όρθιος
+heavy damage	σοβαρές ζημιές
+destruction	καταστροφές
+great destruction	μεγάλες καταστροφές
+very great destruction	πολύ μεγάλες καταστροφές
+complete destruction	ολική καταστροφή
+The phone's own language is in the list too.	Στη λίστα είναι και η γλώσσα του τηλεφώνου.

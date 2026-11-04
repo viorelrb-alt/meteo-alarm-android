@@ -1,0 +1,365 @@
+# Meteo Alarm Android · ga · English<TAB>translation
+Diary (log)	Dialann (logchomhad)
+Everything the app did in the last 5 days; older errors kept 10 days.	Gach rud a rinne an aip le 5 lá anuas; coinnítear earráidí níos sine ar feadh 10 lá.
+Share	Comhroinn
+Save	Sábháil
+Close	Dún
+log 	logchomhad 
+Send the log	Seol an logchomhad
+Log saved	Logchomhad sábháilte
+Could not save	Níorbh fhéidir sábháil
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Is leagan tástála é seo de Meteo Alarm Android, déanta ó Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Ní bhailítear aon sonraí: gan chuntas, gan fógraí, gan staitisticí. Chun an aimsir a fháil, ní sheoltar ach comhordanáidí na háite chuig Open-Meteo (aimsir, pailin) agus, nuair a bhíonn Open-Meteo ró-ualaithe, chuig MET Norway (aimsir); tagann na rabhaidh ó MeteoAlarm, na creathanna talún ó EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Suíomh: úsáidtear é chun an aimsir a thaispeáint san áit a bhfuil tú, ag an tús agus uair san uair. Chun an baile a ainmniú, téann na comhordanáidí chuig OpenStreetMap (nó geochódóir an fhóin), a thugann teorainn an bhaile freisin. Ní choinnítear na bailte a aimsíodh, agus an áit a raibh tú, ach ar an bhfón. Iarrann an aip é le míniú ag an gcéad tús; má dhiúltaíonn tú, roghnaíonn tú an baile ón liosta agus ní iarrann sí arís ach tar éis nuashonraithe.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Fógraí (ach amháin má aontaíonn tú): báisteach nó sneachta ag tosú, rabhaidh aimsire nua do do bhaile, creathanna talún de mhéid 3 nó níos mó i do thír. Gach teagmhas uair amháin. Cas air nó as iad i ☰ › Fógraí.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Teanga: ag an gcéad tús teanga an fhóin (má tá sí ag an aip, Béarla mura bhfuil), ansin an ceann a roghnaíodh i ☰ › Teanga.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Braiteoirí: léann an aip staid an chadhnra (clog oíche le linn luchtaithe), braiteoir solais an fhóin le ☰ › Téama › Uathoibríoch (braiteoir an fhóin), agus an compás, a chasann saighead na gaoithe leis an bhfón. Múchtar a bhfuil in easnamh ar an bhfón. Ní fhágann aon rud an fón.
+Updates: 	Nuashonruithe: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Ina dhiaidh sin, uair sa tseachtain seiceálann an aip GitHub le haghaidh leagan nua agus fiafraíonn sí sula n-íoslódálann sí é.
+I understand	Tuigim
+This phone has no light sensor.	Níl braiteoir solais ar an bhfón seo.
+Automatic theme (phone sensor): on	Téama uathoibríoch (braiteoir an fhóin): air
+Automatic theme (phone sensor): off	Téama uathoibríoch (braiteoir an fhóin): as
+Dark theme	Téama dorcha
+Light theme	Téama geal
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Is féidir le Meteo Alarm do bhaile a aimsiú léi féin, mar sin is don áit chruinn a bhfuil tú an réamhaisnéis, na rabhaidh aimsire agus na creathanna talún, fiú agus tú ag taisteal. Fanann an suíomh ar an bhfón: ní úsáidtear é ach chun an baile a roghnú.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Ní thaispeánann an fón a cheist níos mó, mar sin ceadaigh Suíomh do Meteo Alarm i socruithe an fhóin (Ceadanna › Suíomh).
+If you say no, choose the town from the list; the app asks again only after an update.	Má dhiúltaíonn tú, roghnaigh an baile ón liosta; ní iarrann an aip arís ach tar éis nuashonraithe.
+Location	Suíomh
+Open settings	Oscail socruithe
+Allow	Ceadaigh
+Not now	Ní anois
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Is féidir le Meteo Alarm insint duit, fiú agus í dúnta: nuair a thosaíonn báisteach nó sneachta nó nuair a thosóidh sé laistigh den uair, nuair a eisítear rabhadh aimsire do do bhaile, agus nuair a tharlaíonn crith talún de mhéid 3 nó níos mó i do thír. Gach teagmhas uair amháin, faic eile. Mar sin bíonn a fhios agat in am, gan an aip a oscailt.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Ní ligeann an fón don aip fógra a thabhairt, mar sin cas air fógraí Meteo Alarm i socruithe an fhóin.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Is féidir leat iad a mhúchadh am ar bith i ☰ › Fógraí. Má dhiúltaíonn tú, ní iarrann an aip arís ach tar éis nuashonraithe.
+Notifications	Fógraí
+Notifications ON	Fógraí AIR
+Notifications OFF	Fógraí AS
+Without location access, choose the town from the list.	Gan rochtain ar shuíomh, roghnaigh an baile ón liosta.
+Brightness: slide on the bar	Gile: sleamhnaigh ar an mbarra
+Automatic location OFF	Suíomh uathoibríoch AS
+Automatic location ON	Suíomh uathoibríoch AIR
+Looking for the exact position…	Ag lorg an tsuímh chruinn…
+Added to the list: 	Curtha leis an liosta: 
+Location is off on the phone.	Tá an suíomh múchta ar an bhfón.
+The position could not be found.	Níorbh fhéidir an suíomh a aimsiú.
+The town could not be found (internet?).	Níorbh fhéidir an baile a aimsiú (idirlíon?).
+The weather did not come: 	Níor tháinig an aimsir: 
+Already updating…	Á nuashonrú cheana…
+The weather has just been updated	Nuashonraíodh an aimsir díreach anois
+Just tried; try again in a few seconds	Triaileadh díreach anois; bain triail eile as i gceann cúpla soicind
+Updating the weather…	Ag nuashonrú na haimsire…
+Refresh	Athnuaigh
+Town	Baile
+Temperature °C/°F	Teocht °C/°F
+Clock 12/24	Clog 12/24
+Theme	Téama
+Screen on OFF	Scáileán air AS
+Screen on ON	Scáileán air AIR
+Language	Teanga
+Night clock OFF	Clog oíche AS
+Night clock ON	Clog oíche AIR
+Location Off	Suíomh as
+Location On	Suíomh air
+Earthquakes	Creathanna talún
+Widgets	Giuirléidí
+Log	Logchomhad
+Check for updates	Seiceáil le haghaidh nuashonruithe
+Help	Cabhair
+About	Faoi
+24-hour clock	Clog 24 uair
+12-hour clock	Clog 12 uair
+The screen stays on while the app is open	Fanann an scáileán air fad atá an aip oscailte
+The screen goes off after the phone's timeout	Múchann an scáileán tar éis am scoir an fhóin
+While charging at night, the screen shows a big dim clock	Le linn luchtaithe san oíche, taispeánann an scáileán clog mór lag
+Night clock off	Clog oíche as
+Light	Geal
+Dark	Dorcha
+Automatic	Uathoibríoch
+Last 7 days · 	Na 7 lá deiridh · 
+Downloading from EMSC…	Ag íoslódáil ó EMSC…
+The list could not be downloaded. Is the internet on?	Níorbh fhéidir an liosta a íoslódáil. An bhfuil an t-idirlíon air?
+No earthquake of magnitude 3 or more.	Gan aon chrith talún de mhéid 3 nó níos mó.
+Last 48 hours · EU, Ukraine, Moldova	Na 48 uair deiridh · AE, an Úcráin, an Mholdóiv
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Foinse: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), méid 3 agus os a chionn. Is meastachán é "Mothaithe" ar scála EMS-98 ón méid agus ón bhfad go dtí an fócas.
+depth 	doimhneacht 
+from 	fad 
+Probably felt in 	Mothaithe is dócha i 
+Probably not felt in 	Ní mhothaithe is dócha i 
+Updates	Nuashonruithe
+How to update	Conas nuashonrú
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Ní iarrtar an toiliú ach ansin: uair amháin má aontaíonn tú (as sin amach seiceálann an aip léi féin uair sa tseachtain freisin), gach uair fad a dhiúltaíonn tú. Gan é ní lorgaíonn an aip nuashonruithe riamh agus ní íoslódálann sí faic.
+Buttons on the screen	Cnaipí ar an scáileán
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Osclaíonn sé na bailte: do 3 cinn dheireanacha (ceanáin) agus na contaetha. Tapáil contae, ansin an baile.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Aimsíonn sé cá bhfuil tú agus taispeánann sé aimsir an bhaile sin; féachann sé arís gach uair. Coinnítear na bailte a aimsíodh ar an bhfón leis an áit a raibh tú, agus ní athraíonn an baile a thaispeántar go dtí go mbíonn tú lasmuigh dá theorainn. Oibríonn sé i dtíortha eile freisin, le rabhaidh MeteoAlarm i thart ar 38 tír Eorpach. Casann tapáil an suíomh uathoibríoch air (an cnaipe líonta, féachann sé anois) nó as (an cnaipe folamh).
+Brightness	Gile
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Taispeánann sé barra na gile ar chlé: sleamhnaigh air suas nó síos. Imíonn sé leis féin.
+Light / dark theme	Téama geal / dorcha
+Over the brightness bar: switches between the light and the dark theme.	Os cionn bharra na gile: athraíonn sé idir an téama geal agus an téama dorcha.
+Automatic theme (phone sensor)	Téama uathoibríoch (braiteoir an fhóin)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Téama geal nuair a bhíonn solas ann, téama dorcha sa dorchadas. Líonta fad atá sé air.
+Phone without a sensor	Fón gan braiteoir
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Ag gach tús seiceálann an aip braiteoirí an fhóin (compás, solas, luasmhéadar, gaireacht, brú, GPS) agus scríobhann sí sa Logchomhad cé acu atá in easnamh. Gan braiteoir solais bíonn an téama Uathoibríoch (braiteoir an fhóin) liath agus ní dhéanann sé faic; gan compás bíonn bosca shaighead na gaoithe i bhfolach.
+Location consent	Toiliú suímh
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Ag an gcéad tús míníonn an aip cén fáth a dteastaíonn an suíomh uaithi (an aimsir, na rabhaidh agus na creathanna talún don áit chruinn a bhfuil tú), ansin fiafraíonn an fón. Is é an chéad bhaile a aimsítear an baile a thaispeántar agus cuirtear leis na ceanáin é. Má dhiúltaíonn tú, roghnaíonn tú an baile ón liosta, agus ní iarrann an aip arís ach tar éis nuashonraithe; nuair nach bhfiafraíonn an fón níos mó, osclaíonn an cnaipe a shocruithe.
+Gestures	Gothaí
+Tap on the town's name	Tapáil ar ainm an bhaile
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Féachann sé uair amháin leis an GPS, le haghaidh réamhaisnéis níos fearr san áit a bhfuil tú; fanann an suíomh uathoibríoch mar atá.
+Pull down	Tarraing anuas
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Tarraing an scáileán anuas agus scaoil: athnuaitear an aimsir. Má tharraingítear arís le linn íoslódála, nó laistigh de 10 soicind ón íoslódáil dheireanach, ní thosaítear ceann eile; deir fógra é sin.
+Left edge	Imeall clé
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Sleamhnaigh suas nó síos gar don imeall clé (beagán isteach uaidh): tagann barra na gile chun solais, agus socraíonn sleamhnú air an ghile.
+Wind arrow	Saighead na gaoithe
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	In aice leis an ngaoth: taispeánann an tsaighead cá séideann an ghaoth, casta leis an bhfón (compás); is é an marc oráiste an tuaisceart.
+Night clock	Clog oíche
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Fad a luchtaíonn an fón san oíche (ó luí go héirí na gréine) agus ní bhaineann aon duine leis ar feadh nóiméid: clog mór lag. Filleann tapáil ar feadh nóiméid.
+Warnings and earthquake	Rabhaidh agus crith talún
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Faoin líne, sraith amháin boscaí: an crith talún ar dtús (nuair a bhí ceann ann), ansin bosca amháin do gach cód rabhaidh (dearg, oráiste, buí). Luíonn dhá cheann ar an scáileán; le níos mó, bogann an tsraith ar aghaidh léi féin gach 2 shoicind agus tosaíonn arís ón gcéad cheann. Is féidir leat í a shleamhnú le do mhéar freisin. Tapáil bosca: stopann an tsraith ar feadh 20 soicind agus taispeánann bolgán na sonraí i litreacha níos mó (do chód: cad a chiallaíonn sé, gach rabhadh lena thréimhse agus a chomhairle; don chrith talún: méid, am, réigiún, doimhneacht, eipealár agus fad, conas a mhothaíodh é is dócha i do bhaile, agus gach crith talún le 24 uair anuas).
+Earthquake box	Bosca an chreatha talún
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Ó EMSC (European-Mediterranean Seismological Centre): creathanna talún de mhéid 3 nó níos mó le 24 uair anuas i dtír do bhaile (an ceann a d'aimsigh an suíomh). Taispeánann an bosca an ceann is láidre: méid agus am, agus conas a mhothaíodh é i do bhaile mar mheastachán ar scála EMS-98 (ón méid agus ón bhfad go dtí an fócas; ní fhoilsíonn EMSC tuairiscí gach baile). Imíonn sé tar éis 24 uair.
+Left / right on the boxes	Clé / deas ar na boscaí
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Leanann sraith na rabhadh, boscaí na n-uaireanta agus na cúig lá (amárach agus na 4 lá ina dhiaidh, dhá cheann ag an am) an mhéar. Tagann an chairt Deascadh · na 12 uair atá romhainn ar dtús i sraith na n-uaireanta, ach amháin nuair a bhítear ag súil le báisteach nó sneachta.
+The row of boxes at the bottom	An tsraith boscaí ag an mbun
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Sleamhnaigh í i leataobh (i dtírdhreach: suas agus síos, dhá cheann ag an am, gan bosca na gaoithe): Grian (an Ghealach tar éis luí na gréine, lena héirí, a luí agus a céim), Innéacs UV, Pailin, Taise (fad a bhíonn sé ag cur báistí), Cáilíocht an aeir, Brú, Gaoth, Infheictheacht agus Compás.
+Home-screen widgets	Giuirléidí an scáileáin baile
+Meteo Alarm widgets	Giuirléidí Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Coinnigh spota saor ar an scáileán baile, roghnaigh Giuirléidí, ansin Meteo Alarm: 2x2, 4x1, 4x2 agus "méid ar bith", gach ceann lena réamhamharc; téann sé ar an scáileán láithreach, gan fuinneog socruithe. Tá trí leagan amach ann: 2x2 (cearnóg: deilbhín, teocht, baile, an chéad luí nó éirí gréine eile), 4x1 (stiall íseal, leis an spéir freisin) agus 4x2 (leathan, leis an uasteocht / íosteocht agus na 5 uair atá romhainn freisin), móide 2x1 beag (deilbhín agus teocht) do fhrámaí atá róbheag dóibh. Coinnigh é agus tarraing a imill: leathan (thart ar 4 cholún) agus sraith amháin = 4x1, leathan agus níos airde = 4x2 (fanann sé 4x2 is cuma cé chomh hard a dhéanann tú é), cúng = 2x2, cúng agus sraith amháin = 2x1. Is iad na sraitheanna agus na colúin iad siúd ar do scáileán baile (ar thaibléad tá sraith i bhfad níos airde ná ar fhón), mar sin oibríonn an stiall 4x1 ansin freisin. Líonann sé leithead an fhráma; nuair a bhíonn an fráma níos airde ná mar a theastaíonn ón leagan amach, coinníonn an ghiuirléid a méid, sa lár, leis an gcúlra taobh thiar di amháin (fanann an chuid eile trédhearcach). Ní laghdaítear leagan amach riamh chomh mór sin go n-éiríonn na téacsanna róbheag. Le rabhaidh i bhfeidhm taispeánann sraith "RABHADH!" trí phiollaí: buí = liath liath buí, oráiste = liath oráiste oráiste, dearg = iad uile dearg; dhá chód = an ceann is measa, liath, an ceann eile; trí chód = dearg oráiste buí. Osclaíonn tapáil an aip.
+Widget settings	Socruithe na giuirléide
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Coinnigh an ghiuirléid › Socruithe (Android 12 agus níos nuaí), nó ☰ › Giuirléidí. Tá a cuid féin ag gach giuirléid: réamhamharc; an baile (mar atá san aip, nó ceann eile le hAthraigh); Cúlra air / as agus cé chomh trédhearcach; Dathanna: de réir na haimsire (spéir ghorm, gorm na hoíche, scamaill liatha, báisteach, sneachta oighreata, stoirm, ceo), de réir shocruithe an fhóin, nó dorcha; Dath an téacs: uathoibríoch (dubh ar chúlra geal), bán nó dubh. Cealaigh nó Sábháil.
+Refreshing by itself	Athnuachan léi féin
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Tagann an aimsir, na rabhaidh agus na creathanna talún leo féin, fiú leis an aip dúnta (do na giuirléidí): gach 15 nóiméad fad atá an scáileán air, gach 30 nóiméad leis an scáileán as, ní ar chor ar bith idir luí agus éirí na gréine fad atá an scáileán as (fanann sí go dtagann an scáileán air), agus uair san uair nuair a bhíonn an cadhnra faoi 25% agus gan é a luchtú. Nuair a theipeann ar íoslódáil, insíonn fógra agus an líne "! gan sonraí ó …" faoin gclog cén fáth (gan idirlíon, níor fhreagair an freastalaí, earráid naisc shlán, earráid freastalaí…). Nuair a bhíonn Open-Meteo gnóthach (HTTP 503 "overloaded") nó gan freagra, tagann an réamhaisnéis ó MET Norway (api.met.no, institiúid aimsire na hIorua) agus deir an líne faoin gclog "· MET Norway"; tar éis "gnóthach" téann an aip díreach chuig MET Norway ar feadh 20 nóiméad. Go dtí go dtagann sonraí nua, fanann an aimsir dheireanach a sábháladh ar an scáileán.
+The ☰ menu	An roghchlár ☰
+Downloads the weather, the warnings and the earthquakes now.	Íoslódálann sé an aimsir, na rabhaidh agus na creathanna talún anois.
+The same as the town button.	Mar an gcéanna le cnaipe an bhaile.
+Switches between Celsius and Fahrenheit.	Athraíonn sé idir Celsius agus Fahrenheit.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Athraíonn sé an clog idir 24 uair agus 12 uair (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Geal, Dorcha, nó Uathoibríoch (braiteoir an fhóin).
+Screen on ON / OFF	Scáileán air AIR / AS
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	AIR: fanann an scáileán air fad atá an aip oscailte. AS: múchann sé tar éis am scoir an fhóin.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Tá an Béarla sa liosta agus teangacha oifigiúla na tíre ina bhfuil an fón (ón gcárta SIM nó ón líonra soghluaiste; gan iad, ón mbaile a thaispeántar). Ag an gcéad tús glacann an aip teanga an fhóin, má tá sí aici. Labhraíonn an aip teangacha oifigiúla uile an AE agus an Úcráinis.
+Location On / Off	Suíomh air / as
+Turns automatic location on or off (the same as the location button).	Casann sé an suíomh uathoibríoch air nó as (mar an gcéanna le cnaipe an tsuímh).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Leathanach mar an ceann seo, le cnaipe dúnta ag an mbarr: creathanna talún de mhéid 3 nó níos mó le 7 lá anuas i do thír, ansin iad siúd le 48 uair anuas san Aontas Eorpach, san Úcráin agus sa Mholdóiv. Gach sraith: an t-am, an áit, an méid, an doimhneacht agus an fad ó do bhaile. Ó EMSC; scrollaíonn sé.
+Notifications ON / OFF	Fógraí AIR / AS
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Fógraí ach amháin do: báisteach nó sneachta ag tosú (nó ag tosú laistigh den uair; arís ach amháin tar éis 3 uair thirim), rabhadh aimsire nua do do bhaile, agus crith talún de mhéid 3 nó níos mó i do thír. Gach teagmhas uair amháin, fiú leis an aip dúnta. Iarrann an aip iad ag an gcéad tús; má dhiúltaíonn tú, ní iarrann sí arís ach tar éis nuashonraithe, riamh ag gach tús. Nuair nach dtaispeánann an fón a cheist níos mó (tar éis dhá dhiúltú), osclaíonn an cnaipe socruithe an fhóin, áit a gceadaíonn tú iad.
+Night clock ON / OFF	Clog oíche AIR / AS
+Turns the night clock on or off.	Casann sé an clog oíche air nó as.
+The settings of a widget on the home screen (with several, choose which first).	Socruithe giuirléide ar an scáileán baile (le roinnt acu, roghnaigh cé acu ar dtús).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Gach rud a rinne an aip, leis an am: na braiteoirí, na tapálacha agus na gothaí, an suíomh, íoslódálacha sonraí (agus cén fáth ar theip ar cheann), athnuachan sa chúlra agus na giuirléidí (an méid a thugann an fón dóibh, an leagan amach a thaispeántar). Coinníonn sé 5 lá, comhad nua gach lá; fanann earráidí na laethanta níos sine 10 lá eile i rannán Earráidí. Ag an mbarr: an fón (múnla, Android, One UI) agus leagan na haipe. Léigh anseo é, Comhroinn é (WhatsApp, Drive, ríomhphost…) nó Sábháil ar an bhfón é.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Lorgaíonn sé leagan nua ar GitHub. An chéad uair (agus gach uair go dtí go n-aontaíonn tú) míníonn sé gur ó GitHub a thagann na nuashonruithe, ní ó Google Play, agus iarrann sé do thoiliú; le "Ní anois" deir fógra nach nuashonrófar an aip. Ní shuiteáiltear faic go dtí go dtapálann tú Nuashonraigh agus go ndeimhníonn tú i suiteálaí an fhóin.
+This page.	An leathanach seo.
+About the app, the data it uses, and what's new in each version.	Faoin aip, na sonraí a úsáideann sí, agus cad atá nua i ngach leagan.
+What's new	Cad atá nua
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Úsáideann an téama dorcha dathanna aip Claude. Cló: Liberation Sans.
+Installed version: v	Leagan suiteáilte: v
+Favourites	Ceanáin
+Choose the county	Roghnaigh an contae
+Other countries	Tíortha eile
+‹  Back	‹  Siar
+‹  Back to the counties	‹  Siar chuig na contaetha
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Níl giuirléid Meteo Alarm ar an scáileán baile. Coinnigh spota saor ar an scáileán baile › Giuirléidí › Meteo Alarm.
+Which widget?	Cén ghiuirléid?
+Change	Athraigh
+Background	Cúlra
+Colours	Dathanna
+Text colour	Dath an téacs
+Cancel	Cealaigh
+  (as in the app)	  (mar atá san aip)
+Transparency: 	Trédhearcacht: 
+Match the phone's settings	De réir shocruithe an fhóin
+By the weather	De réir na haimsire
+White	Bán
+Black	Dubh
+As in the app	Mar atá san aip
+Choose the county / country…	Roghnaigh an contae / tír…
+County / country	Contae / tír
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Faoi rabhadh Play Protect: d'fhéadfadh Google a rá go "bhféadfadh an aip a bheith díobhálach". Déanann sé é sin toisc nach ó Google Play a thagann an aip, nach bhfuil a forbróir cláraithe le Google, agus gur féidir léi a nuashonruithe féin a shuiteáil (ó github.com/viorelrb-alt/meteo-alarm-android). Ní dhéanann an aip faic eile. Nuair a thagann fuinneog Play Protect, tapáil "Tuilleadh sonraí" (má thaispeántar), ansin "Suiteáil gan scanadh" (nó "Suiteáil ar aon nós").
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Chun nuashonruithe a fháil: oscail ☰ › Seiceáil le haghaidh nuashonruithe agus, nuair a iarrtar, tabhair do thoiliú.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Ní ó Google Play a thagann Meteo Alarm. Foilsítear a leaganacha nua ar GitHub (github.com/viorelrb-alt/meteo-alarm-android), agus nuashonraíonn an aip í féin as sin: seiceálann sí thart ar uair sa tseachtain (nó nuair a roghnaíonn tú Seiceáil le haghaidh nuashonruithe), taispeánann sí cad atá nua, agus ach amháin nuair a thapálann tú Nuashonraigh íoslódálann sí an leagan nua agus osclaíonn sí suiteálaí an fhóin, áit a ndeimhníonn tú arís.\n\nAn gceadaíonn tú don aip nuashonrú ar an mbealach seo? Gan do thoiliú ní lorgaíonn an aip nuashonruithe agus ní íoslódálann sí faic; is féidir leat aontú níos déanaí ó ☰ › Seiceáil le haghaidh nuashonruithe.
+Updates from GitHub	Nuashonruithe ó GitHub
+I agree	Aontaím
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Gan do thoiliú ní nuashonrófar an aip. Is féidir leat d'intinn a athrú am ar bith ó ☰ › Seiceáil le haghaidh nuashonruithe.
+Checking GitHub for a new version…	Ag seiceáil GitHub le haghaidh leagan nua…
+No version published yet.	Níl aon leagan foilsithe fós.
+Could not check for updates. Is the internet on?	Níorbh fhéidir nuashonruithe a sheiceáil. An bhfuil an t-idirlíon air?
+You have the latest version, v	Tá an leagan is déanaí agat, v
+Installed: v	Suiteáilte: v
+New: v	Nua: v
+New version: v	Leagan nua: v
+Update	Nuashonraigh
+Downloading…	Á íoslódáil…
+Hide	Folaigh
+Downloading… 	Á íoslódáil… 
+The download failed. Is the internet on?	Theip ar an íoslódáil. An bhfuil an t-idirlíon air?
+The installer could not be opened.	Níorbh fhéidir an suiteálaí a oscailt.
+no internet (server not found)	gan idirlíon (freastalaí gan aimsiú)
+the server did not answer in time	níor fhreagair an freastalaí in am
+no connection	gan nasc
+secure connection error: 	earráid naisc shlán: 
+internet not allowed for the app	níl idirlíon ceadaithe don aip
+server error 	earráid freastalaí 
+network error: 	earráid líonra: 
+data error: 	earráid sonraí: 
+⌃  more  ⌃	⌃  tuilleadh  ⌃
+⌄  more  ⌄	⌄  tuilleadh  ⌄
+Open the app	Oscail an aip
+WARNING!	RABHADH!
+Sunrise at 	Éirí gréine ag 
+Sunset at 	Luí gréine ag 
+Weather, warnings and earthquakes	Aimsir, rabhaidh agus creathanna talún
+Rain or snow starting, new weather warnings, earthquakes in your country.	Báisteach nó sneachta ag tosú, rabhaidh aimsire nua, creathanna talún i do thír.
+Snow	Sneachta
+Rain	Báisteach
+It is snowing in 	Tá sé ag cur sneachta i 
+It is raining in 	Tá sé ag cur báistí i 
+Snow is expected within the hour in 	Táthar ag súil le sneachta laistigh den uair i 
+Rain is expected within the hour in 	Táthar ag súil le báisteach laistigh den uair i 
+Warning	Rabhadh
+Earthquake M	Crith talún M
+probably felt: 	mothaithe is dócha: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Tá fógraí air: báisteach nó sneachta, rabhaidh aimsire agus creathanna talún i do thír.
+EARTHQUAKE	CRITH TALÚN
+Felt here: 	Mothaithe anseo: 
+ (estimate)	 (meastachán)
+Magnitude: 	Méid: 
+Time: 	Am: 
+Region: 	Réigiún: 
+Depth: 	Doimhneacht: 
+Epicentre: 	Eipealár: 
+ from 	 ó 
+In 	I 
+Probably felt, intensity 	Mothaithe is dócha, déine 
+Probably not felt here.	Ní mhothaithe anseo is dócha.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Measta ón méid agus ón bhfad go dtí an fócas (scála EMS-98); ní fhoilsíonn EMSC tuairiscí mothaithe gach baile.
+All in the last 24 h	Iad uile le 24 u anuas
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Foinse: EMSC (seismicportal.eu), méid 3 agus os a chionn, 24 u deiridh.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Aimsir a d'fhéadfadh a bheith contúirteach (gnáth don séasúr, ach níos déine go háitiúil). Bí cúramach amuigh.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Aimsir chontúirteach ard-déine. Bí an-chúramach, coinnigh súil ar an réamhaisnéis agus lean comhairle na n-údarás.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Aimsir an-chontúirteach an-ard-déine. Glac bearta cosanta agus lean treoracha na n-údarás.
+In force now, until 	I bhfeidhm anois, go dtí 
+From 	Ó 
+ until 	 go dtí 
+Source: MeteoAlarm (the national weather service), for 	Foinse: MeteoAlarm (an tseirbhís náisiúnta aimsire), do 
+Stay away from trees, poles and scaffolding; secure loose objects.	Fan amach ó chrainn, cuaillí agus scafall; daingnigh rudaí scaoilte.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Is féidir tintreach, díle, cloch shneachta agus siorradh; téigh ar foscadh istigh.
+Avoid flooded roads and river banks.	Seachain bóithre faoi uisce agus bruacha abhann.
+Slippery roads; drive only if you must, with winter equipment.	Bóithre sleamhna; ná tiomáin ach más gá, le trealamh geimhridh.
+Low visibility; drive slowly with the fog lights on.	Infheictheacht íseal; tiomáin go mall le soilse ceo air.
+Avoid the sun between 11 and 18, drink plenty of water.	Seachain an ghrian idir 11 agus 18, ól neart uisce.
+Dress warmly and limit time outdoors.	Gléas go te agus laghdaigh an t-am amuigh.
+Do not light fires outdoors.	Ná las tinte amuigh.
+H	T
+MOON	GEALACH
+HUMIDITY	TAISE
+AIR QUALITY	CÁILÍOCHT AN AEIR
+PRESSURE	BRÚ
+WIND	GAOTH
+VISIBILITY	INFHEICTHEACHT
+COMPASS	COMPÁS
+Moonrise	Éirí gealaí
+Moonset	Luí gealaí
+relative humidity	taise choibhneasta
+Good	Maith
+Fair	Measartha maith
+Moderate	Measartha
+Poor	Lag
+Very poor	An-lag
+Extremely poor	Thar a bheith lag
+Poor (fog)	Lag (ceo)
+Very good	An-mhaith
+steady	seasmhach
+↓ falling fast	↓ ag titim go tapa
+↓ falling	↓ ag titim
+↑ rising fast	↑ ag ardú go tapa
+↑ rising	↑ ag ardú
+no compass	gan compás
+Tap to leave the night clock	Tapáil chun an clog oíche a fhágáil
+until	go dtí
+now	anois
+Rain from	Báisteach ó
+max	uas
+Snow from	Sneachta ó
+Raining	Ag cur báistí
+Snowing	Ag cur sneachta
+updated	nuashonraithe
+no data since	gan sonraí ó
+Loading weather…	Ag lódáil na haimsire…
+updating…	á nuashonrú…
+Feels like	Mothaíonn sé mar
+Wind	Gaoth
+High	Uas
+Low	Íos
+Charging	Á luchtú
+YELLOW	BUÍ
+ORANGE	ORÁISTE
+RED	DEARG
+WARNING	RABHADH
+TOMORROW	AMÁRACH
+DAY AFTER	ARÚ AMÁRACH
+NEXT 12 HOURS	NA 12 UAIR ATÁ ROMHAINN
+WEATHER · NEXT HOURS	AIMSIR · NA HUAIREANTA ATÁ ROMHAINN
+RAIN	BÁISTEACH
+SNOW	SNEACHTA
+PRECIPITATION	DEASCADH
+snow	sneachta
+rain	báisteach
+no precipitation	gan deascadh
+SUN	GRIAN
+UV INDEX	INNÉACS UV
+POLLEN	PAILIN
+Sunrise	Éirí gréine
+Sunset	Luí gréine
+Very high	An-ard
+Extreme	Foircneach
+no pollen	gan phailin
+no data	gan sonraí
+No precipitation	Gan deascadh
+SNOW ICE	SNEACHTA OIGHEAR
+THUNDERSTORM	STOIRM THOIRNEACH
+FOG	CEO
+HIGH TEMPERATURE	TEOCHT ARD
+LOW TEMPERATURE	TEOCHT ÍSEAL
+COASTALEVENT	TEAGMHAS CÓSTA
+FOREST FIRE	TINE FORAOISE
+AVALANCHES	MAIDHMEANNA SNEACHTA
+FLOODING	TUILTE
+RAIN FLOOD	TUILTE BÁISTÍ
+alder	fearnóg
+birch	beith
+olive	ológ
+grasses	féara
+mugwort	mongach mear
+ragweed	ambróise
+Clear	Glan
+Mostly clear	Glan den chuid is mó
+Partly cloudy	Scamallach go páirteach
+Overcast	Scamallach
+Fog	Ceo
+Drizzle	Ceobhrán
+Freezing drizzle	Ceobhrán reo
+Light rain	Báisteach éadrom
+Heavy rain	Báisteach throm
+Freezing rain	Báisteach reo
+Light snow	Sneachta éadrom
+Heavy snow	Sneachta trom
+Snow grains	Gráinní sneachta
+Light showers	Ceathanna éadroma
+Showers	Ceathanna
+Heavy showers	Ceathanna troma
+Snow showers	Ceathanna sneachta
+Thunderstorm	Stoirm thoirní
+Thunderstorm, hail	Stoirm thoirní, cloch shneachta
+Code 	Cód 
+not felt	níor mothaíodh
+scarcely felt, only by a few people at rest	ar éigean mothaithe, ag beagán daoine ar a suaimhneas amháin
+weak, felt by a few people indoors	lag, mothaithe ag beagán daoine istigh
+felt by many indoors; windows and doors rattle	mothaithe ag go leor istigh; bíonn fuinneoga agus doirse ag creathadh
+strong, felt by nearly everyone; objects move, some are frightened	láidir, mothaithe ag beagnach gach duine; bogann rudaí, bíonn eagla ar roinnt
+slight damage (cracks in plaster); many run outdoors	damáiste beag (scoilteanna sa phlástar); ritheann go leor amach
+damage to buildings; hard to stand	damáiste d'fhoirgnimh; deacair seasamh
+heavy damage	damáiste trom
+destruction	scrios
+great destruction	scrios mór
+very great destruction	scrios an-mhór
+complete destruction	scrios iomlán
+The phone's own language is in the list too.	Tá teanga an fhóin féin sa liosta freisin.

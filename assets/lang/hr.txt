@@ -1,0 +1,365 @@
+# Meteo Alarm Android · hr · English<TAB>translation
+Diary (log)	Dnevnik
+Everything the app did in the last 5 days; older errors kept 10 days.	Sve što je aplikacija radila u zadnjih 5 dana; starije pogreške ostaju 10 dana.
+Share	Podijeli
+Save	Spremi
+Close	Zatvori
+log 	dnevnik 
+Send the log	Pošalji dnevnik
+Log saved	Dnevnik spremljen
+Could not save	Spremanje nije uspjelo
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Ovo je probna verzija aplikacije Meteo Alarm Android, nastala iz Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Ne prikupljamo podatke: bez računa, bez oglasa, bez statistike. Za vrijeme se šalju samo koordinate mjesta na Open-Meteo (vrijeme, pelud) i, kad je Open-Meteo preopterećen, na MET Norway (vrijeme); upozorenja dolaze s MeteoAlarma, potresi s EMSC-a (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Lokacija: služi za prikaz vremena ondje gdje jeste, pri pokretanju i jednom na sat. Za naziv mjesta koordinate idu na OpenStreetMap (ili geokoder telefona), odakle dolaze i granice mjesta. Pronađena mjesta, s mjestom gdje ste bili, ostaju samo na telefonu. Aplikacija je traži s objašnjenjem pri prvom pokretanju; ako odbijete, birate mjesto s popisa, a ona ponovno pita tek nakon ažuriranja.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Obavijesti (samo uz vaš pristanak): kiša ili snijeg koji počinje, nova vremenska upozorenja za vaše mjesto, potresi magnitude 3 ili više u vašoj zemlji. Svaki događaj jednom. Uključite ili isključite u ☰ › Obavijesti.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Jezik: pri prvom pokretanju jezik telefona (ako ga aplikacija ima, inače engleski), zatim onaj odabran u ☰ › Jezik.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Senzori: aplikacija čita stanje baterije (noćni sat tijekom punjenja), senzor svjetla telefona uz ☰ › Tema › Automatski (senzor telefona) i kompas, koji okreće strelicu vjetra s telefonom. Ono što telefon nema, isključuje se. Ništa ne napušta telefon.
+Updates: 	Ažuriranja: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Nakon toga aplikacija jednom tjedno traži novu verziju na GitHubu i pita prije preuzimanja.
+I understand	Razumijem
+This phone has no light sensor.	Ovaj telefon nema senzor svjetla.
+Automatic theme (phone sensor): on	Automatska tema (senzor telefona): uključena
+Automatic theme (phone sensor): off	Automatska tema (senzor telefona): isključena
+Dark theme	Tamna tema
+Light theme	Svijetla tema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm može sama pronaći vaše mjesto, da prognoza, vremenska upozorenja i potresi vrijede za točno mjesto gdje jeste, i na putovanju. Položaj ostaje na telefonu: koristi se samo za odabir mjesta.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefon više ne prikazuje svoje pitanje, pa dopustite Lokaciju za Meteo Alarm u postavkama telefona (Dopuštenja › Lokacija).
+If you say no, choose the town from the list; the app asks again only after an update.	Ako odbijete, odaberite mjesto s popisa; aplikacija ponovno pita tek nakon ažuriranja.
+Location	Lokacija
+Open settings	Otvori postavke
+Allow	Dopusti
+Not now	Ne sada
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm vam može javiti, i kad je zatvorena: kad počne kiša ili snijeg ili će početi unutar sat vremena, kad se izda vremensko upozorenje za vaše mjesto i kad se u vašoj zemlji dogodi potres magnitude 3 ili više. Svaki događaj samo jednom, ništa drugo. Tako saznate na vrijeme, bez otvaranja aplikacije.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefon ne dopušta aplikaciji slanje obavijesti; uključite obavijesti za Meteo Alarm u postavkama telefona.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Možete ih isključiti bilo kada u ☰ › Obavijesti. Ako odbijete, aplikacija ponovno pita tek nakon ažuriranja.
+Notifications	Obavijesti
+Notifications ON	Obavijesti UKLJUČENE
+Notifications OFF	Obavijesti ISKLJUČENE
+Without location access, choose the town from the list.	Bez pristupa lokaciji odaberite mjesto s popisa.
+Brightness: slide on the bar	Svjetlina: kliznite po traci
+Automatic location OFF	Automatska lokacija ISKLJUČENA
+Automatic location ON	Automatska lokacija UKLJUČENA
+Looking for the exact position…	Tražim točan položaj…
+Added to the list: 	Dodano na popis: 
+Location is off on the phone.	Lokacija je isključena na telefonu.
+The position could not be found.	Položaj nije pronađen.
+The town could not be found (internet?).	Mjesto nije pronađeno (internet?).
+The weather did not come: 	Vrijeme nije stiglo: 
+Already updating…	Već se ažurira…
+The weather has just been updated	Vrijeme je upravo ažurirano
+Just tried; try again in a few seconds	Upravo pokušano; pokušajte za nekoliko sekundi
+Updating the weather…	Ažuriram vrijeme…
+Refresh	Osvježi
+Town	Mjesto
+Temperature °C/°F	Temperatura °C/°F
+Clock 12/24	Sat 12/24
+Theme	Tema
+Screen on OFF	Zaslon uključen OFF
+Screen on ON	Zaslon uključen ON
+Language	Jezik
+Night clock OFF	Noćni sat OFF
+Night clock ON	Noćni sat ON
+Location Off	Lokacija Off
+Location On	Lokacija On
+Earthquakes	Potresi
+Widgets	Widgeti
+Log	Dnevnik
+Check for updates	Provjeri ažuriranja
+Help	Pomoć
+About	O aplikaciji
+24-hour clock	Sat od 24 sata
+12-hour clock	Sat od 12 sati
+The screen stays on while the app is open	Zaslon ostaje uključen dok je aplikacija otvorena
+The screen goes off after the phone's timeout	Zaslon se gasi nakon vremena postavljenog u telefonu
+While charging at night, the screen shows a big dim clock	Tijekom punjenja noću zaslon prikazuje velik prigušen sat
+Night clock off	Noćni sat isključen
+Light	Svijetla
+Dark	Tamna
+Automatic	Automatski
+Last 7 days · 	Zadnjih 7 dana · 
+Downloading from EMSC…	Preuzimam s EMSC-a…
+The list could not be downloaded. Is the internet on?	Popis nije moguće preuzeti. Je li internet uključen?
+No earthquake of magnitude 3 or more.	Nema potresa magnitude 3 ili više.
+Last 48 hours · EU, Ukraine, Moldova	Zadnjih 48 sati · EU, Ukrajina, Moldavija
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Izvor: EMSC (Euro-mediteranski seizmološki centar, seismicportal.eu), magnituda 3 i više. „Osjetio se” je procjena na ljestvici EMS-98 iz magnitude i udaljenosti od žarišta.
+depth 	dubina 
+from 	od 
+Probably felt in 	Vjerojatno osjećen u: 
+Probably not felt in 	Vjerojatno nije osjećen u: 
+Updates	Ažuriranja
+How to update	Kako ažurirati
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Pristanak se traži samo ondje: jednom ako pristanete (otada aplikacija i sama provjerava jednom tjedno), svaki put dok odbijate. Bez njega aplikacija nikad ne traži ažuriranja i ništa ne preuzima.
+Buttons on the screen	Gumbi na zaslonu
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Otvara mjesta: vaša zadnja 3 (omiljena) i županije. Dodirnite županiju, zatim mjesto.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Pronalazi gdje ste i prikazuje vrijeme tog mjesta; ponovno traži svaki sat. Pronađena mjesta ostaju na telefonu s mjestom gdje ste bili, a prikazano mjesto mijenja se tek kad izađete iz njegovih granica. Radi i u drugim zemljama, s upozorenjima MeteoAlarma u oko 38 europskih zemalja. Dodir uključuje automatsku lokaciju (gumb pun, traži odmah) ili je isključuje (gumb prazan).
+Brightness	Svjetlina
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Prikazuje traku svjetline lijevo: kliznite gore ili dolje. Nestaje sama.
+Light / dark theme	Svijetla / tamna tema
+Over the brightness bar: switches between the light and the dark theme.	Iznad trake svjetline: prebacuje između svijetle i tamne teme.
+Automatic theme (phone sensor)	Automatska tema (senzor telefona)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Svijetla tema kad je svjetlo, tamna u mraku. Puno dok je uključena.
+Phone without a sensor	Telefon bez nekog senzora
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Pri svakom pokretanju aplikacija provjerava senzore telefona (kompas, svjetlo, akcelerometar, blizina, tlak, GPS) i u Dnevnik zapisuje koji nedostaju. Bez senzora svjetla tema Automatski (senzor telefona) je siva i ne radi ništa; bez kompasa polje sa strelicom vjetra je skriveno.
+Location consent	Pristanak za lokaciju
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Pri prvom pokretanju aplikacija objašnjava zašto želi lokaciju (vrijeme, upozorenja i potresi za točno mjesto gdje jeste), zatim pita telefon. Prvo pronađeno mjesto postaje prikazano i dodaje se omiljenima. Ako odbijete, birate mjesto s popisa, a aplikacija ponovno pita tek nakon ažuriranja; kad telefon više ne pita, gumb otvara njegove postavke.
+Gestures	Geste
+Tap on the town's name	Dodir naziva mjesta
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Jednom traži GPS-om, za bolju prognozu ondje gdje jeste; automatska lokacija ostaje kakva jest.
+Pull down	Povuci prema dolje
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Povucite zaslon prema dolje i pustite: vrijeme se osvježava. Ponovno povlačenje tijekom preuzimanja ili unutar 10 sekundi od zadnjeg ne pokreće novo; obavijest to kaže.
+Left edge	Lijevi rub
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Kliznite gore ili dolje uz lijevi rub (malo prema unutra): pojavljuje se traka svjetline, a klizanje po njoj podešava svjetlinu.
+Wind arrow	Strelica vjetra
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Uz vjetar: strelica pokazuje kamo puše vjetar, okrenuta s telefonom (kompas); narančasta oznaka je sjever.
+Night clock	Noćni sat
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Kad se telefon noću puni (od zalaska do izlaska sunca) i nitko ga ne dira minutu: velik prigušen sat. Dodir se vraća na minutu.
+Warnings and earthquake	Upozorenja i potres
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Ispod crte red polja: najprije potres (ako ga je bilo), zatim po jedno polje za svaki stupanj upozorenja (crveno, narančasto, žuto). Na zaslon stanu dva; ako ih je više, red se sam pomiče svake 2 sekunde i kreće ispočetka. Možete ga pomicati i prstom. Dodirnite polje: red stane na 20 sekundi, a oblačić prikaže pojedinosti većim slovima (za stupanj: što znači, svako upozorenje s razdobljem i savjetom; za potres: magnituda, vrijeme, područje, dubina, epicentar i udaljenost, kako se vjerojatno osjetio u vašem mjestu, i svi potresi u zadnja 24 sata).
+Earthquake box	Polje Potres
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	S EMSC-a (Euro-mediteranski seizmološki centar): potresi magnitude 3 ili više u zadnja 24 sata u zemlji vašeg mjesta (koje je pronašla lokacija). Polje prikazuje najjači: magnitudu i vrijeme te kako se osjetio u vašem mjestu, kao procjenu na ljestvici EMS-98 (iz magnitude i udaljenosti od žarišta; EMSC ne objavljuje izvješća za svako mjesto). Nestaje nakon 24 sata.
+Left / right on the boxes	Lijevo / desno po poljima
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Red upozorenja, polja sati i pet dana (sutra i sljedeća 4 dana, po dva) prate prst. Grafikon Oborine · sljedećih 12 sati prvi je u redu sati, samo kad se očekuje kiša ili snijeg.
+The row of boxes at the bottom	Red polja dolje
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Pomaknite ga u stranu (vodoravno: gore i dolje, po dva, bez polja vjetra): Sunce (Mjesec nakon zalaska, s izlaskom, zalaskom i mijenom), UV indeks, Pelud, Vlažnost (dok pada kiša), Kvaliteta zraka, Tlak, Vjetar, Vidljivost i Kompas.
+Home-screen widgets	Widgeti na početnom zaslonu
+Meteo Alarm widgets	Widgeti Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Zadržite prst na praznom mjestu početnog zaslona, odaberite Widgeti, zatim Meteo Alarm: 2x2, 4x1, 4x2 i „bilo koja veličina”, svaki s pregledom; odmah ide na zaslon, bez prozora postavki. Postoje tri rasporeda: 2x2 (kvadrat: ikona, temperatura, mjesto, sljedeći zalazak ili izlazak sunca), 4x1 (niska traka, i s nebom) i 4x2 (širok, i s maks. / min. te sljedećih 5 sati), plus mali 2x1 (ikona i temperatura) za premale okvire. Zadržite ga i povlačite rubove: širok (oko 4 stupca) i jedan red = 4x1, širok i viši = 4x2 (ostaje 4x2 koliko god bio visok), uzak = 2x2, uzak i jedan red = 2x1. Redovi i stupci su oni s vašeg početnog zaslona (na tabletu je red mnogo viši nego na telefonu), pa traka 4x1 radi i ondje. Ispunjava širinu okvira; kad je okvir viši nego što treba, widget zadržava veličinu, centriran, s pozadinom samo ispod sebe (ostalo ostaje prozirno). Raspored se nikad ne smanjuje toliko da bi tekstovi postali premali. Uz aktivna upozorenja red „UPOZORENJE!” prikazuje tri točke: žuto = sivo sivo žuto, narančasto = sivo narančasto narančasto, crveno = sve crveno; dva stupnja = teži, sivo, drugi; tri stupnja = crveno narančasto žuto. Dodir otvara aplikaciju.
+Widget settings	Postavke widgeta
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Zadržite widget › Postavke (Android 12 i noviji) ili ☰ › Widgeti. Svaki widget ima svoje: pregled; mjesto (kao u aplikaciji ili drugo putem Promijeni); Pozadina uklj. / isklj. i koliko prozirna; Boje: prema vremenu (plavo nebo, noćno plava, sivi oblaci, kiša, leden snijeg, oluja, magla), prema postavkama telefona ili tamne; Boja teksta: automatska (crna na svijetloj pozadini), bijela ili crna. Odustani ili Spremi.
+Refreshing by itself	Samostalno osvježavanje
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Vrijeme, upozorenja i potresi stižu sami, i dok je aplikacija zatvorena (za widgete): svakih 15 minuta s uključenim zaslonom, svakih 30 minuta s isključenim, nikako između zalaska i izlaska sunca s isključenim zaslonom (čeka se da se zaslon uključi) i svaki sat kad je baterija ispod 25 % i ne puni se. Kad preuzimanje ne uspije, obavijest i red „! nema podataka od …” ispod sata kažu zašto (nema interneta, poslužitelj nije odgovorio, pogreška sigurne veze, pogreška poslužitelja…). Kad je Open-Meteo zauzet (HTTP 503 „overloaded”) ili ne odgovara, prognoza dolazi s MET Norway (api.met.no, norveški meteorološki institut), a ispod sata piše „· MET Norway”; nakon „zauzet” aplikacija 20 minuta ide izravno na MET Norway. Dok ne stignu novi podaci, na zaslonu ostaje zadnje spremljeno vrijeme.
+The ☰ menu	Izbornik ☰
+Downloads the weather, the warnings and the earthquakes now.	Odmah preuzima vrijeme, upozorenja i potrese.
+The same as the town button.	Isto kao gumb mjesta.
+Switches between Celsius and Fahrenheit.	Prebacuje između Celzija i Fahrenheita.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Prebacuje sat između 24 i 12 sati (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Svijetla, Tamna ili Automatski (senzor telefona).
+Screen on ON / OFF	Zaslon uključen ON / OFF
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: zaslon ostaje uključen dok je aplikacija otvorena. OFF: gasi se nakon vremena postavljenog u telefonu.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Popis ima engleski i službene jezike zemlje u kojoj je telefon (prema SIM kartici ili mobilnoj mreži; bez njih prema prikazanom mjestu). Pri prvom pokretanju aplikacija uzima jezik telefona, ako ga ima. Aplikacija govori sve službene jezike EU-a i ukrajinski.
+Location On / Off	Lokacija On / Off
+Turns automatic location on or off (the same as the location button).	Uključuje ili isključuje automatsku lokaciju (isto kao gumb lokacije).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Stranica poput ove, s gumbom za zatvaranje gore: potresi magnitude 3 ili više u zadnjih 7 dana u vašoj zemlji, zatim oni u zadnjih 48 sati u Europskoj uniji, Ukrajini i Moldaviji. Svaki red: vrijeme, mjesto, magnituda, dubina i udaljenost od vašeg mjesta. S EMSC-a; pomiče se.
+Notifications ON / OFF	Obavijesti ON / OFF
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Obavijesti samo za: kišu ili snijeg koji počinje (ili počinje unutar sat vremena; ponovno tek nakon 3 suha sata), novo vremensko upozorenje za vaše mjesto i potres magnitude 3 ili više u vašoj zemlji. Svaki događaj samo jednom, i dok je aplikacija zatvorena. Aplikacija ih traži pri prvom pokretanju; ako odbijete, ponovno pita tek nakon ažuriranja, nikad pri svakom pokretanju. Kad telefon više ne prikazuje svoje pitanje (nakon dva odbijanja), gumb otvara postavke telefona, gdje ih dopuštate.
+Night clock ON / OFF	Noćni sat ON / OFF
+Turns the night clock on or off.	Uključuje ili isključuje noćni sat.
+The settings of a widget on the home screen (with several, choose which first).	Postavke widgeta na početnom zaslonu (ako ih je više, najprije birate koji).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Sve što je aplikacija radila, s vremenom: senzori, dodiri i geste, lokacija, preuzimanja (i zašto neko nije uspjelo), osvježavanja u pozadini i widgeti (veličina koju im daje telefon, prikazani raspored). Čuva 5 dana, svaki dan nova datoteka; pogreške starijih dana ostaju još 10 dana u odjeljku Pogreške. Gore: telefon (model, Android, One UI) i verzija aplikacije. Čitajte ga ovdje, Podijelite ga (WhatsApp, Drive, e-pošta…) ili ga Spremite na telefon.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Traži novu verziju na GitHubu. Prvi put (i svaki put dok ne pristanete) objašnjava da ažuriranja dolaze s GitHuba, a ne s Google Playa, i traži vaš pristanak; uz „Ne sada” obavijest kaže da se aplikacija neće ažurirati. Ništa se ne instalira dok ne dodirnete Ažuriraj i potvrdite u instalacijskom programu telefona.
+This page.	Ova stranica.
+About the app, the data it uses, and what's new in each version.	O aplikaciji, podacima koje koristi i novostima u svakoj verziji.
+What's new	Što je novo
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Tamna tema koristi boje aplikacije Claude. Font: Liberation Sans.
+Installed version: v	Instalirana verzija: v
+Favourites	Omiljena
+Choose the county	Odaberite županiju
+Other countries	Druge zemlje
+‹  Back	‹  Natrag
+‹  Back to the counties	‹  Natrag na županije
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Na početnom zaslonu nema widgeta Meteo Alarm. Zadržite prst na praznom mjestu početnog zaslona › Widgeti › Meteo Alarm.
+Which widget?	Koji widget?
+Change	Promijeni
+Background	Pozadina
+Colours	Boje
+Text colour	Boja teksta
+Cancel	Odustani
+  (as in the app)	  (kao u aplikaciji)
+Transparency: 	Prozirnost: 
+Match the phone's settings	Prema postavkama telefona
+By the weather	Prema vremenu
+White	Bijela
+Black	Crna
+As in the app	Kao u aplikaciji
+Choose the county / country…	Odaberite županiju / zemlju…
+County / country	Županija / zemlja
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	O upozorenju Play Protect: Google može reći da je aplikacija „možda štetna”. To čini jer aplikacija ne dolazi s Google Playa, njezin razvojni programer nije registriran kod Googlea, a ona može sama instalirati svoja ažuriranja (s github.com/viorelrb-alt/meteo-alarm-android). Aplikacija ne radi ništa drugo. Kad se pojavi prozor Play Protect, dodirnite „Više pojedinosti” (ako postoji), zatim „Instaliraj bez skeniranja” (ili „Ipak instaliraj”).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Za ažuriranja: otvorite ☰ › Provjeri ažuriranja i, kad vas pita, dajte pristanak.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm ne dolazi s Google Playa. Nove verzije objavljuju se na GitHubu (github.com/viorelrb-alt/meteo-alarm-android) i aplikacija se odande ažurira: provjerava otprilike jednom tjedno (ili kad odaberete Provjeri ažuriranja), pokazuje novosti i tek kad dodirnete Ažuriraj preuzima novu verziju i otvara instalacijski program telefona, gdje ponovno potvrđujete.\n\nDopuštate li aplikaciji da se ažurira na ovaj način? Bez vašeg pristanka aplikacija ne traži ažuriranja i ništa ne preuzima; možete pristati kasnije u ☰ › Provjeri ažuriranja.
+Updates from GitHub	Ažuriranja s GitHuba
+I agree	Pristajem
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Bez vašeg pristanka aplikacija se neće ažurirati. Predomisliti se možete bilo kada u ☰ › Provjeri ažuriranja.
+Checking GitHub for a new version…	Tražim novu verziju na GitHubu…
+No version published yet.	Još nije objavljena nijedna verzija.
+Could not check for updates. Is the internet on?	Ažuriranja nije moguće provjeriti. Je li internet uključen?
+You have the latest version, v	Imate najnoviju verziju, v
+Installed: v	Instalirano: v
+New: v	Novo: v
+New version: v	Nova verzija: v
+Update	Ažuriraj
+Downloading…	Preuzimanje…
+Hide	Sakrij
+Downloading… 	Preuzimanje… 
+The download failed. Is the internet on?	Preuzimanje nije uspjelo. Je li internet uključen?
+The installer could not be opened.	Instalacijski program nije moguće otvoriti.
+no internet (server not found)	nema interneta (poslužitelj nije pronađen)
+the server did not answer in time	poslužitelj nije odgovorio na vrijeme
+no connection	nema veze
+secure connection error: 	pogreška sigurne veze: 
+internet not allowed for the app	internet nije dopušten aplikaciji
+server error 	pogreška poslužitelja 
+network error: 	mrežna pogreška: 
+data error: 	pogreška podataka: 
+⌃  more  ⌃	⌃  više  ⌃
+⌄  more  ⌄	⌄  više  ⌄
+Open the app	Otvori aplikaciju
+WARNING!	UPOZORENJE!
+Sunrise at 	Izlazak sunca u 
+Sunset at 	Zalazak sunca u 
+Weather, warnings and earthquakes	Vrijeme, upozorenja i potresi
+Rain or snow starting, new weather warnings, earthquakes in your country.	Kiša ili snijeg koji počinje, nova vremenska upozorenja, potresi u vašoj zemlji.
+Snow	Snijeg
+Rain	Kiša
+It is snowing in 	Pada snijeg: 
+It is raining in 	Pada kiša: 
+Snow is expected within the hour in 	Snijeg unutar sat vremena: 
+Rain is expected within the hour in 	Kiša unutar sat vremena: 
+Warning	Upozorenje
+Earthquake M	Potres M
+probably felt: 	vjerojatno osjećen: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Obavijesti su uključene: kiša ili snijeg, vremenska upozorenja i potresi u vašoj zemlji.
+EARTHQUAKE	POTRES
+Felt here: 	Osjećen ovdje: 
+ (estimate)	 (procjena)
+Magnitude: 	Magnituda: 
+Time: 	Vrijeme: 
+Region: 	Područje: 
+Depth: 	Dubina: 
+Epicentre: 	Epicentar: 
+ from 	 od 
+In 	U: 
+Probably felt, intensity 	Vjerojatno osjećen, intenzitet 
+Probably not felt here.	Ovdje vjerojatno nije osjećen.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Procijenjeno iz magnitude i udaljenosti od žarišta (ljestvica EMS-98); EMSC ne objavljuje izvješća za svako mjesto.
+All in the last 24 h	Svi u zadnja 24 h
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Izvor: EMSC (seismicportal.eu), magnituda 3 i više, zadnja 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potencijalno opasno vrijeme (uobičajeno za doba godine, ali lokalno jače). Budite oprezni na otvorenom.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Opasno vrijeme velikog intenziteta. Budite vrlo oprezni, pratite prognozu i savjete nadležnih.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Vrlo opasno vrijeme vrlo velikog intenziteta. Poduzmite mjere zaštite i slijedite upute nadležnih.
+In force now, until 	Na snazi sada, do 
+From 	Od 
+ until 	 do 
+Source: MeteoAlarm (the national weather service), for 	Izvor: MeteoAlarm (nacionalna meteorološka služba), za 
+Stay away from trees, poles and scaffolding; secure loose objects.	Klonite se drveća, stupova i skela; učvrstite labave predmete.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Mogući su munje, pljuskovi, tuča i udari vjetra; sklonite se u zgradu.
+Avoid flooded roads and river banks.	Izbjegavajte poplavljene ceste i obale rijeka.
+Slippery roads; drive only if you must, with winter equipment.	Skliske ceste; vozite samo ako morate, sa zimskom opremom.
+Low visibility; drive slowly with the fog lights on.	Slaba vidljivost; vozite polako s uključenim svjetlima za maglu.
+Avoid the sun between 11 and 18, drink plenty of water.	Izbjegavajte sunce između 11 i 18 sati, pijte puno vode.
+Dress warmly and limit time outdoors.	Toplo se obucite i što manje boravite vani.
+Do not light fires outdoors.	Ne palite vatru na otvorenom.
+H	H
+MOON	MJESEC
+HUMIDITY	VLAŽNOST
+AIR QUALITY	KVALITETA ZRAKA
+PRESSURE	TLAK
+WIND	VJETAR
+VISIBILITY	VIDLJIVOST
+COMPASS	KOMPAS
+Moonrise	Izlazak mjeseca
+Moonset	Zalazak mjeseca
+relative humidity	relativna vlažnost
+Good	Dobra
+Fair	Prihvatljiva
+Moderate	Umjerena
+Poor	Loša
+Very poor	Vrlo loša
+Extremely poor	Iznimno loša
+Poor (fog)	Slaba (magla)
+Very good	Vrlo dobra
+steady	stalan
+↓ falling fast	↓ brzo pada
+↓ falling	↓ pada
+↑ rising fast	↑ brzo raste
+↑ rising	↑ raste
+no compass	nema kompasa
+Tap to leave the night clock	Dodirnite za izlaz iz noćnog sata
+until	do
+now	sada
+Rain from	Kiša od
+max	maks.
+Snow from	Snijeg od
+Raining	Pada kiša
+Snowing	Pada snijeg
+updated	ažurirano
+no data since	nema podataka od
+Loading weather…	Učitavam vrijeme…
+updating…	ažuriram…
+Feels like	Osjet
+Wind	Vjetar
+High	Maks.
+Low	Min.
+Charging	Puni se
+YELLOW	ŽUTO
+ORANGE	NARANČASTO
+RED	CRVENO
+WARNING	UPOZORENJE
+TOMORROW	SUTRA
+DAY AFTER	PREKOSUTRA
+NEXT 12 HOURS	SLJEDEĆIH 12 SATI
+WEATHER · NEXT HOURS	VRIJEME · SLJEDEĆI SATI
+RAIN	KIŠA
+SNOW	SNIJEG
+PRECIPITATION	OBORINE
+snow	snijeg
+rain	kiša
+no precipitation	bez oborina
+SUN	SUNCE
+UV INDEX	UV INDEKS
+POLLEN	PELUD
+Sunrise	Izlazak sunca
+Sunset	Zalazak sunca
+Very high	Vrlo visok
+Extreme	Ekstreman
+no pollen	bez peludi
+no data	nema podataka
+No precipitation	Bez oborina
+SNOW ICE	SNIJEG, POLEDICA
+THUNDERSTORM	GRMLJAVINSKO NEVRIJEME
+FOG	MAGLA
+HIGH TEMPERATURE	VRUĆINA
+LOW TEMPERATURE	HLADNOĆA
+COASTALEVENT	OBALNE POJAVE
+FOREST FIRE	ŠUMSKI POŽARI
+AVALANCHES	LAVINE
+FLOODING	POPLAVE
+RAIN FLOOD	KIŠA, POPLAVE
+alder	joha
+birch	breza
+olive	maslina
+grasses	trave
+mugwort	pelin
+ragweed	ambrozija
+Clear	Vedro
+Mostly clear	Pretežno vedro
+Partly cloudy	Djelomično oblačno
+Overcast	Oblačno
+Fog	Magla
+Drizzle	Rosulja
+Freezing drizzle	Ledena rosulja
+Light rain	Slaba kiša
+Heavy rain	Jaka kiša
+Freezing rain	Ledena kiša
+Light snow	Slab snijeg
+Heavy snow	Jak snijeg
+Snow grains	Zrnati snijeg
+Light showers	Slabi pljuskovi
+Showers	Pljuskovi
+Heavy showers	Jaki pljuskovi
+Snow showers	Snježni pljuskovi
+Thunderstorm	Grmljavina
+Thunderstorm, hail	Grmljavina, tuča
+Code 	Kod 
+not felt	nije osjećen
+scarcely felt, only by a few people at rest	jedva osjećen, samo kod nekoliko ljudi u mirovanju
+weak, felt by a few people indoors	slab, osjeća ga nekoliko ljudi u zatvorenom
+felt by many indoors; windows and doors rattle	osjećaju ga mnogi u zatvorenom; prozori i vrata zveckaju
+strong, felt by nearly everyone; objects move, some are frightened	jak, osjećaju ga gotovo svi; predmeti se pomiču, neki se uplaše
+slight damage (cracks in plaster); many run outdoors	lakša oštećenja (pukotine u žbuci); mnogi istrčavaju van
+damage to buildings; hard to stand	oštećenja zgrada; teško je stajati
+heavy damage	teška oštećenja
+destruction	razaranja
+great destruction	velika razaranja
+very great destruction	vrlo velika razaranja
+complete destruction	potpuno razaranje
+The phone's own language is in the list too.	Na popisu je i jezik telefona.

@@ -1,0 +1,9 @@
+v2.00 · 4. november 2026
+- Keel: rakendus räägib nüüd kõiki ELi ametlikke keeli ja ukraina keelt (ka Abi). Esimesel käivitamisel võtab see telefoni keele (inglise, kui rakenduses seda pole); seejärel menüüs ☰ › Keel valitud. Loend näitab ainult inglise keelt, telefoni keelt ja selle riigi ametlikke keeli, kus telefon on.
+- ☰ › Maavärinad: leht vähemalt magnituudiga 3 maavärinatega viimase 7 päeva jooksul sinu riigis, seejärel viimase 48 tunni omadega ELis, Ukrainas ja Moldovas (aeg, koht, magnituud, sügavus, kaugus).
+- Teavitused (ainult sinu nõusolekul): vihma või lume algus, uued ilmahoiatused sinu linnale, vähemalt magnituudiga 3 maavärinad sinu riigis. Iga sündmus ainult üks kord. Sisse või välja menüüs ☰ › Teavitused.
+- Asukohta ja teavitusi küsitakse esimesel käivitamisel sõbraliku selgitusega; kui keeldud, küsib rakendus uuesti alles pärast uuendust. Kui telefon enam oma küsimust ei näita, avab nupp selle seaded.
+- Esimesel käivitamisel saab asukoha leitud linnast näidatud linn ja see lisatakse lemmikutesse.
+- Telefonid ilma kompassi või valgusandurita: seotud nupud ja kastid lülitatakse välja; Logi loetleb andurid igal käivitamisel.
+- Vidinad: 4x1 riba töötab nüüd ka tahvelarvutites (loetakse avakuva ridu, mitte fikseeritud suurusi).
+- Parandatud: käivitamisel pärast uuendust laaditi ilm kaks korda; Logi kirjutab nüüd valitud keele ja iga valitud linna ning vidina seadete avamise ainult üks kord.

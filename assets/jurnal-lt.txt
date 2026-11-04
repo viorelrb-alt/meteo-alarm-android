@@ -1,0 +1,9 @@
+v2.00 · 2026 m. lapkričio 4 d.
+- Kalba: programėlė dabar kalba visomis oficialiosiomis ES kalbomis ir ukrainiečių kalba (ir Pagalba). Pirmą kartą paleidus ji paima telefono kalbą (anglų, jei programėlė jos neturi); vėliau pasirinktą ☰ › Kalba. Sąraše rodoma tik anglų kalba, telefono kalba ir šalies, kurioje yra telefonas, oficialiosios kalbos.
+- ☰ › Žemės drebėjimai: puslapis su 3 ar didesnio magnitudo žemės drebėjimais per paskutines 7 dienas jūsų šalyje, tada per paskutines 48 valandas ES, Ukrainoje ir Moldovoje (laikas, vieta, magnitudas, gylis, atstumas).
+- Pranešimai (tik su jūsų sutikimu): prasidedantis lietus ar sniegas, nauji orų įspėjimai jūsų miestui, 3 ar didesnio magnitudo žemės drebėjimai jūsų šalyje. Kiekvienas įvykis tik kartą. Įjungti ar išjungti ☰ › Pranešimai.
+- Vietos ir pranešimų prašoma su draugišku paaiškinimu pirmą kartą paleidus; jei atsisakote, programėlė vėl klausia tik po atnaujinimo. Kai telefonas neberodo savo klausimo, mygtukas atidaro jo nustatymus.
+- Pirmą kartą paleidus miestas, kurį rado vieta, tampa rodomu ir pridedamas prie mėgstamiausių.
+- Telefonai be kompaso ar šviesos jutiklio: susiję mygtukai ir langeliai išjungiami; žurnalas kiekvieną kartą paleidus išvardija jutiklius.
+- Valdikliai: 4x1 juosta dabar veikia ir planšetėse (skaičiuojamos pradžios ekrano eilės, ne fiksuoti dydžiai).
+- Pataisyta: paleidus po atnaujinimo orai buvo atsiunčiami du kartus; žurnalas dabar įrašo pasirinktą kalbą ir kiekvieną pasirinktą miestą, o valdiklio nustatymų atidarymą tik kartą.

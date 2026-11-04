@@ -1,0 +1,9 @@
+v2.00 · 4. november 2026
+- Jeziki: aplikacija zdaj govori vse uradne jezike Evropske unije in ukrajinščino (tudi Pomoč). Ob prvem zagonu vzame jezik telefona (angleščino, če ga aplikacija nima); nato tistega, izbranega v ☰ › Jezik. Seznam kaže samo angleščino, jezik telefona in uradne jezike države, v kateri je telefon.
+- ☰ › Potresi: stran s potresi magnitude 3 ali več zadnjih 7 dni v vaši državi, nato zadnjih 48 ur v EU, Ukrajini in Moldaviji (čas, kraj, magnituda, globina, razdalja).
+- Obvestila (samo z vašim soglasjem): dež ali sneg, ki se začenja, nova vremenska opozorila za vaš kraj, potresi magnitude 3 ali več v vaši državi. Vsak dogodek samo enkrat. Vklop ali izklop v ☰ › Obvestila.
+- Za lokacijo in obvestila aplikacija vpraša s prijazno razlago ob prvem zagonu; če zavrnete, vpraša znova šele po posodobitvi. Ko telefon svojega vprašanja ne prikazuje več, gumb odpre njegove nastavitve.
+- Ob prvem zagonu kraj, ki ga najde lokacija, postane prikazani in se doda med priljubljene.
+- Telefoni brez kompasa ali senzorja svetlobe: povezani gumbi in polja se izklopijo; Dnevnik ob vsakem zagonu izpiše senzorje.
+- Pripomočki: trak 4x1 zdaj deluje tudi na tablicah (štejejo se vrste začetnega zaslona, ne stalne velikosti).
+- Popravljeno: ob zagonu po posodobitvi se je vreme preneslo dvakrat; Dnevnik zdaj zapiše izbrani jezik in vsak izbrani kraj, odpiranje nastavitev pripomočka pa samo enkrat.

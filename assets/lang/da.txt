@@ -1,0 +1,365 @@
+# Meteo Alarm Android · da · English<TAB>translation
+Diary (log)	Log
+Everything the app did in the last 5 days; older errors kept 10 days.	Alt, hvad appen har gjort de sidste 5 dage; ældre fejl gemmes i 10 dage.
+Share	Del
+Save	Gem
+Close	Luk
+log 	log 
+Send the log	Send loggen
+Log saved	Loggen er gemt
+Could not save	Kunne ikke gemme
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Dette er en testversion af Meteo Alarm Android, lavet ud fra Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Ingen data indsamles: ingen konto, ingen reklamer, ingen statistik. For at få vejret sendes kun stedets koordinater til Open-Meteo (vejr, pollen) og, når Open-Meteo er overbelastet, til MET Norway (vejr); varslerne kommer fra MeteoAlarm, jordskælvene fra EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Placering: bruges til at vise vejret, hvor du er, ved start og en gang i timen. For at navngive byen sendes koordinaterne til OpenStreetMap (eller telefonens geokoder), som også giver byens grænse. Fundne byer, med hvor du var, gemmes kun på telefonen. Appen beder om den med en forklaring ved første start; siger du nej, vælger du byen på listen, og den spørger først igen efter en opdatering.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Notifikationer (kun hvis du siger ja): regn eller sne, der begynder, nye vejrvarsler for din by, jordskælv med styrke 3 eller mere i dit land. Hver hændelse én gang. Slå til eller fra i ☰ › Notifikationer.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Sprog: ved første start telefonens sprog (hvis appen har det, ellers engelsk), derefter det valgte i ☰ › Sprog.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Sensorer: appen læser batteritilstanden (natteur under opladning), telefonens lyssensor med ☰ › Tema › Automatisk (telefonens sensor) og kompasset, der drejer vindpilen med telefonen. Det, telefonen ikke har, slås fra. Intet forlader telefonen.
+Updates: 	Opdateringer: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Derefter søger appen en gang om ugen efter en ny version på GitHub og spørger før download.
+I understand	Forstået
+This phone has no light sensor.	Denne telefon har ingen lyssensor.
+Automatic theme (phone sensor): on	Automatisk tema (telefonens sensor): til
+Automatic theme (phone sensor): off	Automatisk tema (telefonens sensor): fra
+Dark theme	Mørkt tema
+Light theme	Lyst tema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm kan selv finde din by, så prognosen, vejrvarslerne og jordskælvene gælder netop det sted, hvor du er, også på rejse. Positionen bliver på telefonen: den bruges kun til at vælge byen.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefonen viser ikke længere sit spørgsmål, så tillad Placering for Meteo Alarm i telefonens indstillinger (Tilladelser › Placering).
+If you say no, choose the town from the list; the app asks again only after an update.	Siger du nej, så vælg byen på listen; appen spørger først igen efter en opdatering.
+Location	Placering
+Open settings	Åbn indstillinger
+Allow	Tillad
+Not now	Ikke nu
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm kan give dig besked, også når den er lukket: når regn eller sne begynder eller begynder inden for en time, når der udsendes et vejrvarsel for din by, og når der er et jordskælv med styrke 3 eller mere i dit land. Hver hændelse kun én gang, intet andet. Så ved du det i tide uden at åbne appen.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefonen lader ikke appen sende notifikationer; slå notifikationer for Meteo Alarm til i telefonens indstillinger.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Du kan altid slå dem fra i ☰ › Notifikationer. Siger du nej, spørger appen først igen efter en opdatering.
+Notifications	Notifikationer
+Notifications ON	Notifikationer TIL
+Notifications OFF	Notifikationer FRA
+Without location access, choose the town from the list.	Uden adgang til placering skal du vælge byen på listen.
+Brightness: slide on the bar	Lysstyrke: stryg på bjælken
+Automatic location OFF	Automatisk placering FRA
+Automatic location ON	Automatisk placering TIL
+Looking for the exact position…	Søger den præcise position…
+Added to the list: 	Tilføjet til listen: 
+Location is off on the phone.	Placering er slået fra på telefonen.
+The position could not be found.	Positionen kunne ikke findes.
+The town could not be found (internet?).	Byen kunne ikke findes (internet?).
+The weather did not come: 	Vejret kom ikke: 
+Already updating…	Opdaterer allerede…
+The weather has just been updated	Vejret er netop opdateret
+Just tried; try again in a few seconds	Lige prøvet; prøv igen om et par sekunder
+Updating the weather…	Opdaterer vejret…
+Refresh	Opdater
+Town	By
+Temperature °C/°F	Temperatur °C/°F
+Clock 12/24	Ur 12/24
+Theme	Tema
+Screen on OFF	Skærm tændt FRA
+Screen on ON	Skærm tændt TIL
+Language	Sprog
+Night clock OFF	Natteur FRA
+Night clock ON	Natteur TIL
+Location Off	Placering Fra
+Location On	Placering Til
+Earthquakes	Jordskælv
+Widgets	Widgets
+Log	Log
+Check for updates	Søg efter opdateringer
+Help	Hjælp
+About	Om
+24-hour clock	24-timers ur
+12-hour clock	12-timers ur
+The screen stays on while the app is open	Skærmen forbliver tændt, mens appen er åben
+The screen goes off after the phone's timeout	Skærmen slukker efter telefonens tid
+While charging at night, the screen shows a big dim clock	Under opladning om natten viser skærmen et stort, dæmpet ur
+Night clock off	Natteur slået fra
+Light	Lyst
+Dark	Mørkt
+Automatic	Automatisk
+Last 7 days · 	Sidste 7 dage · 
+Downloading from EMSC…	Henter fra EMSC…
+The list could not be downloaded. Is the internet on?	Listen kunne ikke hentes. Er internettet tændt?
+No earthquake of magnitude 3 or more.	Ingen jordskælv med styrke 3 eller mere.
+Last 48 hours · EU, Ukraine, Moldova	Sidste 48 timer · EU, Ukraine, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Kilde: EMSC (Det Euro-Middelhavske Seismologiske Center, seismicportal.eu), styrke 3 og derover. "Mærket" er et skøn på EMS-98-skalaen ud fra styrken og afstanden til hypocentret.
+depth 	dybde 
+from 	fra 
+Probably felt in 	Sandsynligvis mærket i 
+Probably not felt in 	Sandsynligvis ikke mærket i 
+Updates	Opdateringer
+How to update	Sådan opdaterer du
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Samtykket bedes der kun om dér: én gang, hvis du siger ja (fra da af tjekker appen også selv en gang om ugen), hver gang, så længe du siger nej. Uden det søger appen aldrig efter opdateringer og henter intet.
+Buttons on the screen	Knapper på skærmen
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Åbner byerne: dine 3 seneste (favoritter) og regionerne. Tryk på en region og derefter på byen.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Finder, hvor du er, og viser vejret for den by; søger igen hver time. Fundne byer gemmes på telefonen med, hvor du var, og den viste by skifter først, når du er uden for dens grænse. Virker også i andre lande, med MeteoAlarm-varsler i omkring 38 europæiske lande. Et tryk slår automatisk placering til (knappen udfyldt, søger nu) eller fra (knappen tom).
+Brightness	Lysstyrke
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Viser lysstyrkebjælken til venstre: stryg op eller ned. Den forsvinder af sig selv.
+Light / dark theme	Lyst / mørkt tema
+Over the brightness bar: switches between the light and the dark theme.	Over lysstyrkebjælken: skifter mellem lyst og mørkt tema.
+Automatic theme (phone sensor)	Automatisk tema (telefonens sensor)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Lyst tema, når der er lys, mørkt i mørke. Udfyldt, mens det er slået til.
+Phone without a sensor	Telefon uden en sensor
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Ved hver start tjekker appen telefonens sensorer (kompas, lys, accelerometer, nærhed, tryk, GPS) og skriver i Loggen, hvilke der mangler. Uden lyssensor er temaet Automatisk (telefonens sensor) gråt og gør intet; uden kompas er feltet med vindpilen skjult.
+Location consent	Samtykke til placering
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Ved første start forklarer appen, hvorfor den vil have placeringen (vejret, varslerne og jordskælvene for netop det sted, hvor du er), derefter spørger telefonen. Den første fundne by bliver den viste og tilføjes favoritterne. Siger du nej, vælger du byen på listen, og appen spørger først igen efter en opdatering; når telefonen ikke længere spørger, åbner knappen dens indstillinger.
+Gestures	Bevægelser
+Tap on the town's name	Tryk på byens navn
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Søger én gang med GPS for en bedre prognose, hvor du er; automatisk placering forbliver som den er.
+Pull down	Træk ned
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Træk skærmen ned og slip: vejret opdateres. Træk igen under download eller inden for 10 sekunder efter den sidste starter ikke en ny; en besked siger det.
+Left edge	Venstre kant
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Stryg op eller ned nær venstre kant (lidt inde): lysstyrkebjælken vises, og strøg på den indstiller lysstyrken.
+Wind arrow	Vindpil
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Ved vinden: pilen viser, hvorhen vinden blæser, drejet med telefonen (kompas); det orange mærke er nord.
+Night clock	Natteur
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Når telefonen oplades om natten (fra solnedgang til solopgang), og ingen rører den i et minut: et stort, dæmpet ur. Et tryk går tilbage i et minut.
+Warnings and earthquake	Varsler og jordskælv
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Under linjen en række felter: først jordskælvet (hvis der var et), derefter ét felt pr. varselsniveau (rød, orange, gul). To kan være på skærmen; med flere rykker rækken selv videre hvert 2. sekund og starter forfra. Du kan også skubbe den med fingeren. Tryk på et felt: rækken stopper i 20 sekunder, og en boble viser detaljerne med større skrift (for et niveau: hvad det betyder, hvert varsel med periode og råd; for jordskælvet: styrke, tid, region, dybde, epicenter og afstand, hvordan det sandsynligvis blev mærket i din by, og alle jordskælv fra de sidste 24 timer).
+Earthquake box	Jordskælvsfelt
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Fra EMSC (Det Euro-Middelhavske Seismologiske Center): jordskælv med styrke 3 eller mere de sidste 24 timer i din bys land (det, placeringen fandt). Feltet viser det kraftigste: styrke og tid, og hvordan det blev mærket i din by, som et skøn på EMS-98-skalaen (ud fra styrken og afstanden til hypocentret; EMSC offentliggør ikke rapporter for hver by). Det forsvinder efter 24 timer.
+Left / right on the boxes	Venstre / højre på felterne
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Varselsrækken, timefelterne og de fem dage (i morgen og de næste 4 dage, to ad gangen) følger fingeren. Grafen Nedbør · næste 12 timer kommer først i timerækken, kun når der ventes regn eller sne.
+The row of boxes at the bottom	Rækken af felter nederst
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Skub den til siden (liggende: op og ned, to ad gangen, uden vindfeltet): Sol (Månen efter solnedgang, med op- og nedgang og fase), UV-indeks, Pollen, Luftfugtighed (mens det regner), Luftkvalitet, Lufttryk, Vind, Sigtbarhed og Kompas.
+Home-screen widgets	Widgets på startskærmen
+Meteo Alarm widgets	Meteo Alarm-widgets
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Hold på et ledigt sted på startskærmen, vælg Widgets og derefter Meteo Alarm: 2x2, 4x1, 4x2 og "enhver størrelse", hver med forhåndsvisning; den kommer straks på skærmen uden indstillingsvindue. Der er tre layouts: 2x2 (kvadrat: ikon, temperatur, by, næste solnedgang eller solopgang), 4x1 (en lav stribe, også med himlen) og 4x2 (bred, også med maks. / min. og de næste 5 timer), plus en lille 2x1 (ikon og temperatur) til for små rammer. Hold på den og træk i kanterne: bred (ca. 4 kolonner) og én række = 4x1, bred og højere = 4x2 (den forbliver 4x2, uanset højde), smal = 2x2, smal og én række = 2x1. Rækker og kolonner er dem på din startskærm (på en tablet er en række meget højere end på en telefon), så 4x1-striben virker også dér. Den fylder rammens bredde; når rammen er højere end nødvendigt, beholder widgetten sin størrelse, centreret, med baggrund kun bag sig (resten forbliver gennemsigtigt). Et layout gøres aldrig så lille, at teksterne bliver for små. Med aktive varsler viser en linje "VARSEL!" tre prikker: gul = grå grå gul, orange = grå orange orange, rød = alt rødt; to niveauer = det værste, grå, det andet; tre niveauer = rød orange gul. Et tryk åbner appen.
+Widget settings	Widgetindstillinger
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Hold på widgetten › Indstillinger (Android 12 og nyere) eller ☰ › Widgets. Hver widget har sine egne: forhåndsvisning; byen (som i appen eller en anden med Skift); Baggrund til / fra og hvor gennemsigtig; Farver: efter vejret (blå himmel, natblå, grå skyer, regn, iskold sne, uvejr, tåge), som telefonens indstillinger eller mørke; Tekstfarve: automatisk (sort på lys baggrund), hvid eller sort. Annuller eller Gem.
+Refreshing by itself	Opdatering af sig selv
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Vejret, varslerne og jordskælvene kommer af sig selv, også med appen lukket (for widgets): hvert 15. minut med skærmen tændt, hvert 30. minut med skærmen slukket, slet ikke mellem solnedgang og solopgang med skærmen slukket (der ventes på, at skærmen tændes), og hver time, når batteriet er under 25 % og ikke oplades. Når en download mislykkes, siger en besked og linjen "! ingen data siden …" under uret hvorfor (intet internet, serveren svarede ikke, fejl i sikker forbindelse, serverfejl…). Når Open-Meteo er optaget (HTTP 503 "overloaded") eller ikke svarer, kommer prognosen fra MET Norway (api.met.no, det norske meteorologiske institut), og under uret står "· MET Norway"; efter et "optaget" går appen direkte til MET Norway i 20 minutter. Indtil nye data kommer, bliver det sidst gemte vejr på skærmen.
+The ☰ menu	Menuen ☰
+Downloads the weather, the warnings and the earthquakes now.	Henter vejret, varslerne og jordskælvene nu.
+The same as the town button.	Det samme som byknappen.
+Switches between Celsius and Fahrenheit.	Skifter mellem Celsius og Fahrenheit.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Skifter uret mellem 24 og 12 timer (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Lyst, Mørkt eller Automatisk (telefonens sensor).
+Screen on ON / OFF	Skærm tændt TIL / FRA
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	TIL: skærmen forbliver tændt, mens appen er åben. FRA: den slukker efter telefonens tid.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Listen har engelsk og de officielle sprog i det land, telefonen er i (fra SIM-kortet eller mobilnettet; uden dem fra den viste by). Ved første start tager appen telefonens sprog, hvis den har det. Appen taler alle EU's officielle sprog og ukrainsk.
+Location On / Off	Placering Til / Fra
+Turns automatic location on or off (the same as the location button).	Slår automatisk placering til eller fra (det samme som placeringsknappen).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	En side som denne med en lukkeknap øverst: jordskælvene med styrke 3 eller mere fra de sidste 7 dage i dit land, derefter dem fra de sidste 48 timer i Den Europæiske Union, Ukraine og Moldova. Hver linje: tid, sted, styrke, dybde og afstand fra din by. Fra EMSC; den kan rulles.
+Notifications ON / OFF	Notifikationer TIL / FRA
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Notifikationer kun for: regn eller sne, der begynder (eller begynder inden for en time; igen først efter 3 tørre timer), et nyt vejrvarsel for din by og et jordskælv med styrke 3 eller mere i dit land. Hver hændelse kun én gang, også med appen lukket. Appen beder om dem ved første start; siger du nej, spørger den først igen efter en opdatering, aldrig ved hver start. Når telefonen ikke længere viser sit spørgsmål (efter to afslag), åbner knappen telefonens indstillinger, hvor du tillader dem.
+Night clock ON / OFF	Natteur TIL / FRA
+Turns the night clock on or off.	Slår natteuret til eller fra.
+The settings of a widget on the home screen (with several, choose which first).	Indstillingerne for en widget på startskærmen (med flere vælger du først hvilken).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Alt, hvad appen gjorde, med tidspunkt: sensorerne, tryk og bevægelser, placeringen, downloads (og hvorfor en mislykkedes), opdateringer i baggrunden og widgets (den størrelse telefonen giver dem, det viste layout). Den gemmer 5 dage, en ny fil hver dag; fejl fra ældre dage bliver 10 dage mere i et afsnit Fejl. Øverst: telefonen (model, Android, One UI) og appens version. Læs den her, Del den (WhatsApp, Drive, e-mail…) eller Gem den på telefonen.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Søger efter en ny version på GitHub. Første gang (og hver gang, indtil du siger ja) forklarer den, at opdateringerne kommer fra GitHub, ikke Google Play, og beder om dit samtykke; med "Ikke nu" siger en besked, at appen ikke vil blive opdateret. Intet installeres, før du trykker på Opdater og bekræfter i telefonens installationsprogram.
+This page.	Denne side.
+About the app, the data it uses, and what's new in each version.	Om appen, de data den bruger, og hvad der er nyt i hver version.
+What's new	Nyheder
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Det mørke tema bruger farverne fra Claude-appen. Skrifttype: Liberation Sans.
+Installed version: v	Installeret version: v
+Favourites	Favoritter
+Choose the county	Vælg regionen
+Other countries	Andre lande
+‹  Back	‹  Tilbage
+‹  Back to the counties	‹  Tilbage til regionerne
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Der er ingen Meteo Alarm-widget på startskærmen. Hold på et ledigt sted på startskærmen › Widgets › Meteo Alarm.
+Which widget?	Hvilken widget?
+Change	Skift
+Background	Baggrund
+Colours	Farver
+Text colour	Tekstfarve
+Cancel	Annuller
+  (as in the app)	  (som i appen)
+Transparency: 	Gennemsigtighed: 
+Match the phone's settings	Som telefonens indstillinger
+By the weather	Efter vejret
+White	Hvid
+Black	Sort
+As in the app	Som i appen
+Choose the county / country…	Vælg region / land…
+County / country	Region / land
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Om Play Protect-advarslen: Google kan sige, at appen "kan være skadelig". Det sker, fordi appen ikke kommer fra Google Play, udvikleren ikke er registreret hos Google, og den kan installere sine egne opdateringer (fra github.com/viorelrb-alt/meteo-alarm-android). Appen gør intet andet. Når Play Protect-vinduet vises, så tryk på "Flere detaljer" (hvis det vises) og derefter "Installer uden scanning" (eller "Installer alligevel").
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	For at få opdateringer: åbn ☰ › Søg efter opdateringer og giv dit samtykke, når du bliver spurgt.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm kommer ikke fra Google Play. Nye versioner udgives på GitHub (github.com/viorelrb-alt/meteo-alarm-android), og appen opdaterer sig selv derfra: den tjekker ca. en gang om ugen (eller når du vælger Søg efter opdateringer), viser nyhederne og henter først den nye version, når du trykker på Opdater, og åbner telefonens installationsprogram, hvor du bekræfter igen.\n\nTillader du, at appen opdaterer sig på denne måde? Uden dit samtykke søger appen ikke efter opdateringer og henter intet; du kan sige ja senere i ☰ › Søg efter opdateringer.
+Updates from GitHub	Opdateringer fra GitHub
+I agree	Jeg accepterer
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Uden dit samtykke bliver appen ikke opdateret. Du kan altid ombestemme dig i ☰ › Søg efter opdateringer.
+Checking GitHub for a new version…	Søger efter en ny version på GitHub…
+No version published yet.	Ingen version udgivet endnu.
+Could not check for updates. Is the internet on?	Kunne ikke søge efter opdateringer. Er internettet tændt?
+You have the latest version, v	Du har den nyeste version, v
+Installed: v	Installeret: v
+New: v	Ny: v
+New version: v	Ny version: v
+Update	Opdater
+Downloading…	Henter…
+Hide	Skjul
+Downloading… 	Henter… 
+The download failed. Is the internet on?	Download mislykkedes. Er internettet tændt?
+The installer could not be opened.	Installationsprogrammet kunne ikke åbnes.
+no internet (server not found)	intet internet (server ikke fundet)
+the server did not answer in time	serveren svarede ikke i tide
+no connection	ingen forbindelse
+secure connection error: 	fejl i sikker forbindelse: 
+internet not allowed for the app	internet ikke tilladt for appen
+server error 	serverfejl 
+network error: 	netværksfejl: 
+data error: 	datafejl: 
+⌃  more  ⌃	⌃  mere  ⌃
+⌄  more  ⌄	⌄  mere  ⌄
+Open the app	Åbn appen
+WARNING!	VARSEL!
+Sunrise at 	Solopgang kl. 
+Sunset at 	Solnedgang kl. 
+Weather, warnings and earthquakes	Vejr, varsler og jordskælv
+Rain or snow starting, new weather warnings, earthquakes in your country.	Regn eller sne, der begynder, nye vejrvarsler, jordskælv i dit land.
+Snow	Sne
+Rain	Regn
+It is snowing in 	Det sner i 
+It is raining in 	Det regner i 
+Snow is expected within the hour in 	Sne ventes inden for en time i 
+Rain is expected within the hour in 	Regn ventes inden for en time i 
+Warning	Varsel
+Earthquake M	Jordskælv M
+probably felt: 	sandsynligvis mærket: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Notifikationer er slået til: regn eller sne, vejrvarsler og jordskælv i dit land.
+EARTHQUAKE	JORDSKÆLV
+Felt here: 	Mærket her: 
+ (estimate)	 (skøn)
+Magnitude: 	Styrke: 
+Time: 	Tid: 
+Region: 	Region: 
+Depth: 	Dybde: 
+Epicentre: 	Epicenter: 
+ from 	 fra 
+In 	I 
+Probably felt, intensity 	Sandsynligvis mærket, intensitet 
+Probably not felt here.	Sandsynligvis ikke mærket her.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Skønnet ud fra styrken og afstanden til hypocentret (EMS-98-skalaen); EMSC offentliggør ikke rapporter for hver by.
+All in the last 24 h	Alle de sidste 24 t
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Kilde: EMSC (seismicportal.eu), styrke 3 og derover, sidste 24 t.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potentielt farligt vejr (normalt for årstiden, men lokalt kraftigere). Vær forsigtig udendørs.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Farligt vejr med høj intensitet. Vær meget forsigtig, følg prognosen og myndighedernes råd.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Meget farligt vejr med meget høj intensitet. Tag beskyttende forholdsregler og følg myndighedernes anvisninger.
+In force now, until 	Gælder nu, indtil 
+From 	Fra 
+ until 	 til 
+Source: MeteoAlarm (the national weather service), for 	Kilde: MeteoAlarm (den nationale vejrtjeneste), for 
+Stay away from trees, poles and scaffolding; secure loose objects.	Hold dig væk fra træer, master og stilladser; fastgør løse genstande.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Lyn, skybrud, hagl og vindstød er mulige; søg ly indendørs.
+Avoid flooded roads and river banks.	Undgå oversvømmede veje og åbredder.
+Slippery roads; drive only if you must, with winter equipment.	Glatte veje; kør kun, hvis du skal, med vinterudstyr.
+Low visibility; drive slowly with the fog lights on.	Dårlig sigtbarhed; kør langsomt med tågelygterne tændt.
+Avoid the sun between 11 and 18, drink plenty of water.	Undgå solen mellem kl. 11 og 18, drik masser af vand.
+Dress warmly and limit time outdoors.	Klæd dig varmt på og vær mindst muligt udenfor.
+Do not light fires outdoors.	Tænd ikke bål udendørs.
+H	T
+MOON	MÅNE
+HUMIDITY	LUFTFUGTIGHED
+AIR QUALITY	LUFTKVALITET
+PRESSURE	LUFTTRYK
+WIND	VIND
+VISIBILITY	SIGTBARHED
+COMPASS	KOMPAS
+Moonrise	Måneopgang
+Moonset	Månenedgang
+relative humidity	relativ luftfugtighed
+Good	God
+Fair	Rimelig
+Moderate	Moderat
+Poor	Dårlig
+Very poor	Meget dårlig
+Extremely poor	Ekstremt dårlig
+Poor (fog)	Dårlig (tåge)
+Very good	Meget god
+steady	stabilt
+↓ falling fast	↓ falder hurtigt
+↓ falling	↓ falder
+↑ rising fast	↑ stiger hurtigt
+↑ rising	↑ stiger
+no compass	intet kompas
+Tap to leave the night clock	Tryk for at forlade natteuret
+until	til
+now	nu
+Rain from	Regn fra
+max	maks.
+Snow from	Sne fra
+Raining	Det regner
+Snowing	Det sner
+updated	opdateret
+no data since	ingen data siden
+Loading weather…	Henter vejret…
+updating…	opdaterer…
+Feels like	Føles som
+Wind	Vind
+High	Maks.
+Low	Min.
+Charging	Oplader
+YELLOW	GUL
+ORANGE	ORANGE
+RED	RØD
+WARNING	VARSEL
+TOMORROW	I MORGEN
+DAY AFTER	I OVERMORGEN
+NEXT 12 HOURS	NÆSTE 12 TIMER
+WEATHER · NEXT HOURS	VEJR · NÆSTE TIMER
+RAIN	REGN
+SNOW	SNE
+PRECIPITATION	NEDBØR
+snow	sne
+rain	regn
+no precipitation	ingen nedbør
+SUN	SOL
+UV INDEX	UV-INDEKS
+POLLEN	POLLEN
+Sunrise	Solopgang
+Sunset	Solnedgang
+Very high	Meget høj
+Extreme	Ekstrem
+no pollen	ingen pollen
+no data	ingen data
+No precipitation	Ingen nedbør
+SNOW ICE	SNE, ISSLAG
+THUNDERSTORM	TORDENVEJR
+FOG	TÅGE
+HIGH TEMPERATURE	HEDE
+LOW TEMPERATURE	KULDE
+COASTALEVENT	KYSTFÆNOMENER
+FOREST FIRE	SKOVBRAND
+AVALANCHES	LAVINER
+FLOODING	OVERSVØMMELSE
+RAIN FLOOD	REGN, OVERSVØMMELSE
+alder	el
+birch	birk
+olive	oliven
+grasses	græsser
+mugwort	bynke
+ragweed	ambrosie
+Clear	Klart
+Mostly clear	Overvejende klart
+Partly cloudy	Delvis skyet
+Overcast	Overskyet
+Fog	Tåge
+Drizzle	Støvregn
+Freezing drizzle	Frysende støvregn
+Light rain	Let regn
+Heavy rain	Kraftig regn
+Freezing rain	Frysende regn
+Light snow	Let sne
+Heavy snow	Kraftig sne
+Snow grains	Kornsne
+Light showers	Lette byger
+Showers	Byger
+Heavy showers	Kraftige byger
+Snow showers	Snebyger
+Thunderstorm	Tordenvejr
+Thunderstorm, hail	Tordenvejr, hagl
+Code 	Kode 
+not felt	ikke mærket
+scarcely felt, only by a few people at rest	knap mærket, kun af få personer i hvile
+weak, felt by a few people indoors	svagt, mærket af få personer indendørs
+felt by many indoors; windows and doors rattle	mærket af mange indendørs; vinduer og døre klirrer
+strong, felt by nearly everyone; objects move, some are frightened	kraftigt, mærket af næsten alle; genstande flytter sig, nogle bliver bange
+slight damage (cracks in plaster); many run outdoors	lette skader (revner i pudsen); mange løber udenfor
+damage to buildings; hard to stand	skader på bygninger; svært at stå
+heavy damage	svære skader
+destruction	ødelæggelse
+great destruction	stor ødelæggelse
+very great destruction	meget stor ødelæggelse
+complete destruction	total ødelæggelse
+The phone's own language is in the list too.	Telefonens eget sprog er også på listen.

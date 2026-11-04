@@ -1,0 +1,365 @@
+# Meteo Alarm Android · sv · English<TAB>translation
+Diary (log)	Logg
+Everything the app did in the last 5 days; older errors kept 10 days.	Allt som appen gjort de senaste 5 dagarna; äldre fel sparas i 10 dagar.
+Share	Dela
+Save	Spara
+Close	Stäng
+log 	logg 
+Send the log	Skicka loggen
+Log saved	Loggen sparad
+Could not save	Kunde inte spara
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Detta är en testversion av Meteo Alarm Android, gjord från Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Inga data samlas in: inget konto, ingen reklam, ingen statistik. För vädret skickas bara platsens koordinater till Open-Meteo (väder, pollen) och, när Open-Meteo är överbelastat, till MET Norway (väder); varningarna kommer från MeteoAlarm, jordbävningarna från EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Plats: används för att visa vädret där du är, vid start och en gång i timmen. För ortens namn skickas koordinaterna till OpenStreetMap (eller telefonens geokodare), som också ger ortens gräns. Hittade orter, med var du var, sparas bara på telefonen. Appen ber om den med en förklaring vid första start; säger du nej väljer du orten i listan och den frågar igen först efter en uppdatering.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Aviseringar (bara om du godkänner): regn eller snö som börjar, nya vädervarningar för din ort, jordbävningar med magnitud 3 eller mer i ditt land. Varje händelse en gång. Slå på eller av i ☰ › Aviseringar.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Språk: vid första start telefonens språk (om appen har det, annars engelska), sedan det som valts i ☰ › Språk.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Sensorer: appen läser batteriets status (nattklocka vid laddning), telefonens ljussensor med ☰ › Tema › Automatiskt (telefonens sensor) och kompassen, som vrider vindpilen med telefonen. Det telefonen saknar stängs av. Inget lämnar telefonen.
+Updates: 	Uppdateringar: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Därefter letar appen en gång i veckan efter en ny version på GitHub och frågar innan den laddas ned.
+I understand	Jag förstår
+This phone has no light sensor.	Den här telefonen har ingen ljussensor.
+Automatic theme (phone sensor): on	Automatiskt tema (telefonens sensor): på
+Automatic theme (phone sensor): off	Automatiskt tema (telefonens sensor): av
+Dark theme	Mörkt tema
+Light theme	Ljust tema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm kan själv hitta din ort, så att prognosen, vädervarningarna och jordbävningarna gäller exakt där du är, även på resa. Positionen stannar på telefonen: den används bara för att välja orten.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefonen visar inte längre sin fråga, så tillåt Plats för Meteo Alarm i telefonens inställningar (Behörigheter › Plats).
+If you say no, choose the town from the list; the app asks again only after an update.	Säger du nej, välj orten i listan; appen frågar igen först efter en uppdatering.
+Location	Plats
+Open settings	Öppna inställningar
+Allow	Tillåt
+Not now	Inte nu
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm kan meddela dig, även när den är stängd: när regn eller snö börjar eller börjar inom en timme, när en vädervarning utfärdas för din ort och när det sker en jordbävning med magnitud 3 eller mer i ditt land. Varje händelse bara en gång, inget annat. Så får du veta i tid, utan att öppna appen.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefonen låter inte appen skicka aviseringar; slå på aviseringar för Meteo Alarm i telefonens inställningar.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Du kan när som helst stänga av dem i ☰ › Aviseringar. Säger du nej frågar appen igen först efter en uppdatering.
+Notifications	Aviseringar
+Notifications ON	Aviseringar PÅ
+Notifications OFF	Aviseringar AV
+Without location access, choose the town from the list.	Utan åtkomst till platsen, välj orten i listan.
+Brightness: slide on the bar	Ljusstyrka: dra på reglaget
+Automatic location OFF	Automatisk plats AV
+Automatic location ON	Automatisk plats PÅ
+Looking for the exact position…	Söker exakt position…
+Added to the list: 	Tillagd i listan: 
+Location is off on the phone.	Platsen är avstängd på telefonen.
+The position could not be found.	Positionen kunde inte hittas.
+The town could not be found (internet?).	Orten kunde inte hittas (internet?).
+The weather did not come: 	Vädret kom inte: 
+Already updating…	Uppdaterar redan…
+The weather has just been updated	Vädret uppdaterades just
+Just tried; try again in a few seconds	Försökte nyss; försök igen om några sekunder
+Updating the weather…	Uppdaterar vädret…
+Refresh	Uppdatera
+Town	Ort
+Temperature °C/°F	Temperatur °C/°F
+Clock 12/24	Klocka 12/24
+Theme	Tema
+Screen on OFF	Skärm på AV
+Screen on ON	Skärm på PÅ
+Language	Språk
+Night clock OFF	Nattklocka AV
+Night clock ON	Nattklocka PÅ
+Location Off	Plats Av
+Location On	Plats På
+Earthquakes	Jordbävningar
+Widgets	Widgetar
+Log	Logg
+Check for updates	Sök efter uppdateringar
+Help	Hjälp
+About	Om
+24-hour clock	24-timmarsklocka
+12-hour clock	12-timmarsklocka
+The screen stays on while the app is open	Skärmen förblir på medan appen är öppen
+The screen goes off after the phone's timeout	Skärmen släcks efter telefonens tid
+While charging at night, the screen shows a big dim clock	Vid laddning på natten visar skärmen en stor, dämpad klocka
+Night clock off	Nattklockan avstängd
+Light	Ljust
+Dark	Mörkt
+Automatic	Automatiskt
+Last 7 days · 	Senaste 7 dagarna · 
+Downloading from EMSC…	Hämtar från EMSC…
+The list could not be downloaded. Is the internet on?	Listan kunde inte hämtas. Är internet på?
+No earthquake of magnitude 3 or more.	Ingen jordbävning med magnitud 3 eller mer.
+Last 48 hours · EU, Ukraine, Moldova	Senaste 48 timmarna · EU, Ukraina, Moldavien
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Källa: EMSC (Europeisk-medelhavets seismologiska centrum, seismicportal.eu), magnitud 3 och uppåt. "Känd" är en uppskattning på EMS-98-skalan utifrån magnituden och avståndet till härden.
+depth 	djup 
+from 	från 
+Probably felt in 	Troligen känd i 
+Probably not felt in 	Troligen inte känd i 
+Updates	Uppdateringar
+How to update	Så uppdaterar du
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Samtycket begärs bara där: en gång om du godkänner (sedan kontrollerar appen också själv en gång i veckan), varje gång så länge du säger nej. Utan det letar appen aldrig efter uppdateringar och laddar inte ned något.
+Buttons on the screen	Knappar på skärmen
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Öppnar orterna: dina 3 senaste (favoriter) och länen. Tryck på ett län och sedan på orten.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Tar reda på var du är och visar vädret för den orten; söker igen varje timme. Hittade orter sparas på telefonen med var du var, och den visade orten byts först när du lämnat dess gräns. Fungerar även i andra länder, med MeteoAlarm-varningar i ungefär 38 europeiska länder. Ett tryck slår på automatisk plats (knappen fylld, söker nu) eller av (knappen tom).
+Brightness	Ljusstyrka
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Visar ljusstyrkereglaget till vänster: dra uppåt eller nedåt. Det försvinner av sig självt.
+Light / dark theme	Ljust / mörkt tema
+Over the brightness bar: switches between the light and the dark theme.	Ovanför ljusstyrkereglaget: växlar mellan ljust och mörkt tema.
+Automatic theme (phone sensor)	Automatiskt tema (telefonens sensor)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Ljust tema när det är ljust, mörkt i mörker. Fylld medan det är på.
+Phone without a sensor	Telefon utan en sensor
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Vid varje start kontrollerar appen telefonens sensorer (kompass, ljus, accelerometer, närhet, lufttryck, GPS) och skriver i Loggen vilka som saknas. Utan ljussensor är temat Automatiskt (telefonens sensor) grått och gör ingenting; utan kompass döljs rutan med vindpilen.
+Location consent	Samtycke till plats
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Vid första start förklarar appen varför den vill ha platsen (vädret, varningarna och jordbävningarna för exakt där du är), sedan frågar telefonen. Den första hittade orten blir den visade och läggs till bland favoriterna. Säger du nej väljer du orten i listan, och appen frågar igen först efter en uppdatering; när telefonen inte längre frågar öppnar knappen dess inställningar.
+Gestures	Gester
+Tap on the town's name	Tryck på ortens namn
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Söker en gång med GPS, för en bättre prognos där du är; automatisk plats förblir som den är.
+Pull down	Dra nedåt
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Dra skärmen nedåt och släpp: vädret uppdateras. Att dra igen under hämtningen, eller inom 10 sekunder efter den senaste, startar ingen ny; ett meddelande säger det.
+Left edge	Vänsterkant
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Dra uppåt eller nedåt nära vänsterkanten (lite innanför): ljusstyrkereglaget visas, och att dra på det ställer in ljusstyrkan.
+Wind arrow	Vindpil
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Bredvid vinden: pilen visar vart vinden blåser, vriden med telefonen (kompass); det orange märket är norr.
+Night clock	Nattklocka
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	När telefonen laddas på natten (från solnedgång till soluppgång) och ingen rör den på en minut: en stor, dämpad klocka. Ett tryck går tillbaka i en minut.
+Warnings and earthquake	Varningar och jordbävning
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Under linjen en rad rutor: först jordbävningen (om det var någon), sedan en ruta per varningsnivå (röd, orange, gul). Två ryms på skärmen; med fler flyttar raden själv vidare var 2:a sekund och börjar om. Du kan också skjuta den med fingret. Tryck på en ruta: raden stannar i 20 sekunder och en bubbla visar detaljerna med större text (för en nivå: vad den betyder, varje varning med period och råd; för jordbävningen: magnitud, tid, region, djup, epicentrum och avstånd, hur den troligen kändes på din ort, och alla jordbävningar de senaste 24 timmarna).
+Earthquake box	Jordbävningsruta
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Från EMSC (Europeisk-medelhavets seismologiska centrum): jordbävningar med magnitud 3 eller mer de senaste 24 timmarna i din orts land (det platsen hittade). Rutan visar den kraftigaste: magnitud och tid, och hur den kändes på din ort, som uppskattning på EMS-98-skalan (utifrån magnituden och avståndet till härden; EMSC publicerar inga rapporter för varje ort). Den försvinner efter 24 timmar.
+Left / right on the boxes	Vänster / höger på rutorna
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Varningsraden, timrutorna och de fem dagarna (i morgon och de följande 4 dagarna, två åt gången) följer fingret. Diagrammet Nederbörd · kommande 12 timmar kommer först i timraden, bara när regn eller snö väntas.
+The row of boxes at the bottom	Raden med rutor längst ned
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Skjut den åt sidan (liggande: upp och ned, två åt gången, utan vindrutan): Sol (månen efter solnedgången, med upp- och nedgång och fas), UV-index, Pollen, Luftfuktighet (medan det regnar), Luftkvalitet, Lufttryck, Vind, Sikt och Kompass.
+Home-screen widgets	Widgetar på startskärmen
+Meteo Alarm widgets	Meteo Alarm-widgetar
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Håll på en ledig plats på startskärmen, välj Widgetar och sedan Meteo Alarm: 2x2, 4x1, 4x2 och "valfri storlek", var och en med förhandsvisning; den hamnar direkt på skärmen, utan inställningsfönster. Det finns tre layouter: 2x2 (kvadrat: ikon, temperatur, ort, nästa solnedgång eller soluppgång), 4x1 (en låg remsa, även med himlen) och 4x2 (bred, även med max / min och de kommande 5 timmarna), plus en liten 2x1 (ikon och temperatur) för för små ramar. Håll på den och dra i kanterna: bred (cirka 4 kolumner) och en rad = 4x1, bred och högre = 4x2 (den förblir 4x2 hur hög den än blir), smal = 2x2, smal och en rad = 2x1. Raderna och kolumnerna är startskärmens egna (på en surfplatta är en rad mycket högre än på en telefon), så 4x1-remsan fungerar även där. Den fyller ramens bredd; när ramen är högre än nödvändigt behåller widgeten sin storlek, centrerad, med bakgrund bara bakom sig (resten förblir genomskinligt). En layout krymps aldrig så mycket att texterna blir för små. Med aktiva varningar visar en rad "VARNING!" tre prickar: gul = grå grå gul, orange = grå orange orange, röd = allt rött; två nivåer = den värsta, grå, den andra; tre nivåer = röd orange gul. Ett tryck öppnar appen.
+Widget settings	Widgetinställningar
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Håll på widgeten › Inställningar (Android 12 och senare), eller ☰ › Widgetar. Varje widget har egna: förhandsvisning; orten (som i appen, eller en annan med Ändra); Bakgrund på / av och hur genomskinlig; Färger: efter vädret (blå himmel, nattblå, grå moln, regn, isig snö, oväder, dimma), enligt telefonens inställningar, eller mörka; Textfärg: automatisk (svart på ljus bakgrund), vit eller svart. Avbryt eller Spara.
+Refreshing by itself	Uppdatering av sig själv
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Vädret, varningarna och jordbävningarna kommer av sig själva, även med appen stängd (för widgetarna): var 15:e minut med skärmen på, var 30:e minut med skärmen av, inte alls mellan solnedgång och soluppgång med skärmen av (den väntar tills skärmen tänds), och varje timme när batteriet är under 25 % och inte laddas. När en hämtning misslyckas säger ett meddelande och raden "! inga data sedan …" under klockan varför (inget internet, servern svarade inte, fel i säker anslutning, serverfel…). När Open-Meteo är upptaget (HTTP 503 "overloaded") eller inte svarar kommer prognosen från MET Norway (api.met.no, Norges meteorologiska institut) och under klockan står "· MET Norway"; efter ett "upptaget" går appen direkt till MET Norway i 20 minuter. Tills nya data kommer stannar det senast sparade vädret på skärmen.
+The ☰ menu	Menyn ☰
+Downloads the weather, the warnings and the earthquakes now.	Hämtar vädret, varningarna och jordbävningarna nu.
+The same as the town button.	Samma som ortknappen.
+Switches between Celsius and Fahrenheit.	Växlar mellan Celsius och Fahrenheit.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Växlar klockan mellan 24 och 12 timmar (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Ljust, Mörkt eller Automatiskt (telefonens sensor).
+Screen on ON / OFF	Skärm på PÅ / AV
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	PÅ: skärmen förblir på medan appen är öppen. AV: den släcks efter telefonens tid.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Listan har engelska och de officiella språken i landet där telefonen är (från SIM-kortet eller mobilnätet; utan dem från den visade orten). Vid första start tar appen telefonens språk, om den har det. Appen talar alla EU:s officiella språk och ukrainska.
+Location On / Off	Plats På / Av
+Turns automatic location on or off (the same as the location button).	Slår på eller av automatisk plats (samma som platsknappen).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	En sida som den här, med en stängknapp överst: jordbävningarna med magnitud 3 eller mer de senaste 7 dagarna i ditt land, sedan de senaste 48 timmarnas i Europeiska unionen, Ukraina och Moldavien. Varje rad: tid, plats, magnitud, djup och avstånd från din ort. Från EMSC; den går att rulla.
+Notifications ON / OFF	Aviseringar PÅ / AV
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Aviseringar bara för: regn eller snö som börjar (eller börjar inom en timme; igen först efter 3 torra timmar), en ny vädervarning för din ort och en jordbävning med magnitud 3 eller mer i ditt land. Varje händelse bara en gång, även med appen stängd. Appen ber om dem vid första start; säger du nej frågar den igen först efter en uppdatering, aldrig vid varje start. När telefonen inte längre visar sin fråga (efter två nej) öppnar knappen telefonens inställningar, där du tillåter dem.
+Night clock ON / OFF	Nattklocka PÅ / AV
+Turns the night clock on or off.	Slår på eller av nattklockan.
+The settings of a widget on the home screen (with several, choose which first).	Inställningarna för en widget på startskärmen (med flera väljer du först vilken).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Allt som appen gjort, med tid: sensorerna, tryck och gester, platsen, hämtningarna (och varför någon misslyckades), uppdateringarna i bakgrunden och widgetarna (storleken telefonen ger dem, den visade layouten). Den sparar 5 dagar, en ny fil varje dag; fel från äldre dagar stannar 10 dagar till i ett avsnitt Fel. Överst: telefonen (modell, Android, One UI) och appens version. Läs den här, Dela den (WhatsApp, Drive, e-post…) eller Spara den på telefonen.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Letar efter en ny version på GitHub. Första gången (och varje gång tills du godkänner) förklarar den att uppdateringarna kommer från GitHub, inte Google Play, och ber om ditt samtycke; med "Inte nu" säger ett meddelande att appen inte kommer att uppdateras. Inget installeras förrän du trycker på Uppdatera och bekräftar i telefonens installationsprogram.
+This page.	Den här sidan.
+About the app, the data it uses, and what's new in each version.	Om appen, data den använder och vad som är nytt i varje version.
+What's new	Nyheter
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Det mörka temat använder färgerna från Claude-appen. Typsnitt: Liberation Sans.
+Installed version: v	Installerad version: v
+Favourites	Favoriter
+Choose the county	Välj län
+Other countries	Andra länder
+‹  Back	‹  Tillbaka
+‹  Back to the counties	‹  Tillbaka till länen
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Det finns ingen Meteo Alarm-widget på startskärmen. Håll på en ledig plats på startskärmen › Widgetar › Meteo Alarm.
+Which widget?	Vilken widget?
+Change	Ändra
+Background	Bakgrund
+Colours	Färger
+Text colour	Textfärg
+Cancel	Avbryt
+  (as in the app)	  (som i appen)
+Transparency: 	Genomskinlighet: 
+Match the phone's settings	Enligt telefonens inställningar
+By the weather	Efter vädret
+White	Vit
+Black	Svart
+As in the app	Som i appen
+Choose the county / country…	Välj län / land…
+County / country	Län / land
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Om Play Protect-varningen: Google kan säga att appen "kan vara skadlig". Det beror på att appen inte kommer från Google Play, att utvecklaren inte är registrerad hos Google och att den kan installera sina egna uppdateringar (från github.com/viorelrb-alt/meteo-alarm-android). Appen gör inget annat. När Play Protect-fönstret visas, tryck på "Mer information" (om det visas) och sedan "Installera utan att skanna" (eller "Installera ändå").
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	För uppdateringar: öppna ☰ › Sök efter uppdateringar och ge ditt samtycke när du tillfrågas.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm kommer inte från Google Play. Nya versioner publiceras på GitHub (github.com/viorelrb-alt/meteo-alarm-android), och appen uppdaterar sig därifrån: den kontrollerar ungefär en gång i veckan (eller när du väljer Sök efter uppdateringar), visar nyheterna och först när du trycker på Uppdatera laddar den ned den nya versionen och öppnar telefonens installationsprogram, där du bekräftar igen.\n\nTillåter du att appen uppdaterar sig på detta sätt? Utan ditt samtycke letar appen inte efter uppdateringar och laddar inte ned något; du kan godkänna senare i ☰ › Sök efter uppdateringar.
+Updates from GitHub	Uppdateringar från GitHub
+I agree	Jag godkänner
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Utan ditt samtycke uppdateras inte appen. Du kan ändra dig när som helst i ☰ › Sök efter uppdateringar.
+Checking GitHub for a new version…	Letar efter en ny version på GitHub…
+No version published yet.	Ingen version publicerad ännu.
+Could not check for updates. Is the internet on?	Kunde inte söka efter uppdateringar. Är internet på?
+You have the latest version, v	Du har den senaste versionen, v
+Installed: v	Installerad: v
+New: v	Ny: v
+New version: v	Ny version: v
+Update	Uppdatera
+Downloading…	Hämtar…
+Hide	Dölj
+Downloading… 	Hämtar… 
+The download failed. Is the internet on?	Hämtningen misslyckades. Är internet på?
+The installer could not be opened.	Installationsprogrammet kunde inte öppnas.
+no internet (server not found)	inget internet (servern hittades inte)
+the server did not answer in time	servern svarade inte i tid
+no connection	ingen anslutning
+secure connection error: 	fel i säker anslutning: 
+internet not allowed for the app	internet inte tillåtet för appen
+server error 	serverfel 
+network error: 	nätverksfel: 
+data error: 	datafel: 
+⌃  more  ⌃	⌃  mer  ⌃
+⌄  more  ⌄	⌄  mer  ⌄
+Open the app	Öppna appen
+WARNING!	VARNING!
+Sunrise at 	Soluppgång kl. 
+Sunset at 	Solnedgång kl. 
+Weather, warnings and earthquakes	Väder, varningar och jordbävningar
+Rain or snow starting, new weather warnings, earthquakes in your country.	Regn eller snö som börjar, nya vädervarningar, jordbävningar i ditt land.
+Snow	Snö
+Rain	Regn
+It is snowing in 	Det snöar i 
+It is raining in 	Det regnar i 
+Snow is expected within the hour in 	Snö väntas inom en timme i 
+Rain is expected within the hour in 	Regn väntas inom en timme i 
+Warning	Varning
+Earthquake M	Jordbävning M
+probably felt: 	troligen känd: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Aviseringar är på: regn eller snö, vädervarningar och jordbävningar i ditt land.
+EARTHQUAKE	JORDBÄVNING
+Felt here: 	Känd här: 
+ (estimate)	 (uppskattning)
+Magnitude: 	Magnitud: 
+Time: 	Tid: 
+Region: 	Region: 
+Depth: 	Djup: 
+Epicentre: 	Epicentrum: 
+ from 	 från 
+In 	I 
+Probably felt, intensity 	Troligen känd, intensitet 
+Probably not felt here.	Troligen inte känd här.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Uppskattat utifrån magnituden och avståndet till härden (EMS-98-skalan); EMSC publicerar inga rapporter för varje ort.
+All in the last 24 h	Alla de senaste 24 h
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Källa: EMSC (seismicportal.eu), magnitud 3 och uppåt, senaste 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potentiellt farligt väder (vanligt för årstiden, men lokalt kraftigare). Var försiktig utomhus.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Farligt väder med hög intensitet. Var mycket försiktig, följ prognosen och myndigheternas råd.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Mycket farligt väder med mycket hög intensitet. Vidta skyddsåtgärder och följ myndigheternas anvisningar.
+In force now, until 	Gäller nu, till 
+From 	Från 
+ until 	 till 
+Source: MeteoAlarm (the national weather service), for 	Källa: MeteoAlarm (den nationella vädertjänsten), för 
+Stay away from trees, poles and scaffolding; secure loose objects.	Håll dig borta från träd, stolpar och byggnadsställningar; säkra lösa föremål.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Blixtar, skyfall, hagel och byar är möjliga; sök skydd inomhus.
+Avoid flooded roads and river banks.	Undvik översvämmade vägar och åkanter.
+Slippery roads; drive only if you must, with winter equipment.	Hala vägar; kör bara om du måste, med vinterutrustning.
+Low visibility; drive slowly with the fog lights on.	Dålig sikt; kör långsamt med dimljusen på.
+Avoid the sun between 11 and 18, drink plenty of water.	Undvik solen mellan kl. 11 och 18, drick mycket vatten.
+Dress warmly and limit time outdoors.	Klä dig varmt och var ute så lite som möjligt.
+Do not light fires outdoors.	Tänd inte eld utomhus.
+H	TIM
+MOON	MÅNE
+HUMIDITY	LUFTFUKTIGHET
+AIR QUALITY	LUFTKVALITET
+PRESSURE	LUFTTRYCK
+WIND	VIND
+VISIBILITY	SIKT
+COMPASS	KOMPASS
+Moonrise	Månuppgång
+Moonset	Månnedgång
+relative humidity	relativ luftfuktighet
+Good	Bra
+Fair	Godtagbar
+Moderate	Måttlig
+Poor	Dålig
+Very poor	Mycket dålig
+Extremely poor	Extremt dålig
+Poor (fog)	Dålig (dimma)
+Very good	Mycket bra
+steady	stabilt
+↓ falling fast	↓ sjunker snabbt
+↓ falling	↓ sjunker
+↑ rising fast	↑ stiger snabbt
+↑ rising	↑ stiger
+no compass	ingen kompass
+Tap to leave the night clock	Tryck för att lämna nattklockan
+until	till
+now	nu
+Rain from	Regn från
+max	max
+Snow from	Snö från
+Raining	Det regnar
+Snowing	Det snöar
+updated	uppdaterat
+no data since	inga data sedan
+Loading weather…	Hämtar vädret…
+updating…	uppdaterar…
+Feels like	Känns som
+Wind	Vind
+High	Max
+Low	Min
+Charging	Laddar
+YELLOW	GUL
+ORANGE	ORANGE
+RED	RÖD
+WARNING	VARNING
+TOMORROW	I MORGON
+DAY AFTER	I ÖVERMORGON
+NEXT 12 HOURS	KOMMANDE 12 TIMMAR
+WEATHER · NEXT HOURS	VÄDER · KOMMANDE TIMMAR
+RAIN	REGN
+SNOW	SNÖ
+PRECIPITATION	NEDERBÖRD
+snow	snö
+rain	regn
+no precipitation	ingen nederbörd
+SUN	SOL
+UV INDEX	UV-INDEX
+POLLEN	POLLEN
+Sunrise	Soluppgång
+Sunset	Solnedgång
+Very high	Mycket högt
+Extreme	Extremt
+no pollen	inget pollen
+no data	inga data
+No precipitation	Ingen nederbörd
+SNOW ICE	SNÖ, ISBILDNING
+THUNDERSTORM	ÅSKA
+FOG	DIMMA
+HIGH TEMPERATURE	VÄRME
+LOW TEMPERATURE	KYLA
+COASTALEVENT	KUSTFENOMEN
+FOREST FIRE	SKOGSBRAND
+AVALANCHES	LAVINER
+FLOODING	ÖVERSVÄMNING
+RAIN FLOOD	REGN, ÖVERSVÄMNING
+alder	al
+birch	björk
+olive	olivträd
+grasses	gräs
+mugwort	gråbo
+ragweed	ambrosia
+Clear	Klart
+Mostly clear	Mestadels klart
+Partly cloudy	Halvklart
+Overcast	Mulet
+Fog	Dimma
+Drizzle	Duggregn
+Freezing drizzle	Underkylt duggregn
+Light rain	Lätt regn
+Heavy rain	Kraftigt regn
+Freezing rain	Underkylt regn
+Light snow	Lätt snöfall
+Heavy snow	Kraftigt snöfall
+Snow grains	Kornsnö
+Light showers	Lätta skurar
+Showers	Skurar
+Heavy showers	Kraftiga skurar
+Snow showers	Snöbyar
+Thunderstorm	Åska
+Thunderstorm, hail	Åska, hagel
+Code 	Kod 
+not felt	inte känd
+scarcely felt, only by a few people at rest	knappt känd, bara av några få i vila
+weak, felt by a few people indoors	svag, känd av några få inomhus
+felt by many indoors; windows and doors rattle	känd av många inomhus; fönster och dörrar skallrar
+strong, felt by nearly everyone; objects move, some are frightened	kraftig, känd av nästan alla; föremål rör sig, en del blir rädda
+slight damage (cracks in plaster); many run outdoors	lätta skador (sprickor i putsen); många springer ut
+damage to buildings; hard to stand	skador på byggnader; svårt att stå
+heavy damage	svåra skador
+destruction	förstörelse
+great destruction	stor förstörelse
+very great destruction	mycket stor förstörelse
+complete destruction	total förstörelse
+The phone's own language is in the list too.	Telefonens eget språk finns också i listan.

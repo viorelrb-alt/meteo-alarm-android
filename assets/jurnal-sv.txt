@@ -1,0 +1,9 @@
+v2.00 · 4 november 2026
+- Språk: appen talar nu alla Europeiska unionens officiella språk och ukrainska (även Hjälp). Vid första start tar den telefonens språk (engelska om appen inte har det); sedan det som valts i ☰ › Språk. Listan visar bara engelska, telefonens språk och de officiella språken i landet där telefonen är.
+- ☰ › Jordbävningar: en sida med jordbävningarna med magnitud 3 eller mer de senaste 7 dagarna i ditt land, sedan de senaste 48 timmarnas i EU, Ukraina och Moldavien (tid, plats, magnitud, djup, avstånd).
+- Aviseringar (bara med ditt samtycke): regn eller snö som börjar, nya vädervarningar för din ort, jordbävningar med magnitud 3 eller mer i ditt land. Varje händelse bara en gång. På eller av i ☰ › Aviseringar.
+- Plats och aviseringar begärs med en vänlig förklaring vid första start; säger du nej frågar appen igen först efter en uppdatering. När telefonen inte längre visar sin fråga öppnar en knapp dess inställningar.
+- Vid första start blir orten som platsen hittade den visade och läggs till bland favoriterna.
+- Telefoner utan kompass eller ljussensor: tillhörande knappar och rutor stängs av; Loggen räknar upp sensorerna vid varje start.
+- Widgetar: 4x1-remsan fungerar nu även på surfplattor (startskärmens rader räknas, inte fasta storlekar).
+- Åtgärdat: vid start efter en uppdatering hämtades vädret två gånger; Loggen skriver nu det valda språket och varje vald ort, och öppnandet av widgetinställningarna bara en gång.

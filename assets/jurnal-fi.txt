@@ -1,0 +1,9 @@
+v2.00 · 4. marraskuuta 2026
+- Kieli: sovellus puhuu nyt kaikkia EU:n virallisia kieliä ja ukrainaa (myös Ohje). Ensimmäisellä käynnistyksellä se ottaa puhelimen kielen (englannin, jos sovelluksessa ei ole sitä); sen jälkeen kohdassa ☰ › Kieli valitun. Luettelo näyttää vain englannin, puhelimen kielen ja sen maan viralliset kielet, jossa puhelin on.
+- ☰ › Maanjäristykset: sivu, jossa ovat vähintään magnitudin 3 maanjäristykset viimeisen 7 päivän ajalta maassasi, sitten viimeisen 48 tunnin maanjäristykset EU:ssa, Ukrainassa ja Moldovassa (aika, paikka, magnitudi, syvyys, etäisyys).
+- Ilmoitukset (vain suostumuksellasi): sade tai lumisade alkaa, uudet säävaroitukset kaupungillesi, vähintään magnitudin 3 maanjäristykset maassasi. Jokainen tapahtuma vain kerran. Päälle tai pois kohdassa ☰ › Ilmoitukset.
+- Sijaintia ja ilmoituksia pyydetään ystävällisen selityksen kanssa ensimmäisellä käynnistyksellä; jos kieltäydyt, sovellus kysyy uudelleen vasta päivityksen jälkeen. Kun puhelin ei enää näytä kysymystään, painike avaa sen asetukset.
+- Ensimmäisellä käynnistyksellä sijainnin löytämästä kaupungista tulee näytetty kaupunki, ja se lisätään suosikkeihin.
+- Puhelimet ilman kompassia tai valoanturia: niihin liittyvät painikkeet ja ruudut kytketään pois; Loki luettelee anturit jokaisella käynnistyksellä.
+- Widgetit: 4x1-nauha toimii nyt myös tableteilla (aloitusnäytön rivit lasketaan, ei kiinteitä kokoja).
+- Korjattu: käynnistyksessä päivityksen jälkeen sää ladattiin kahdesti; Loki kirjaa nyt valitun kielen ja jokaisen valitun kaupungin, ja widgetin asetusten avaamisen vain kerran.

@@ -1,0 +1,9 @@
+v2.00 · 2026. gada 4. novembris
+- Valoda: lietotne tagad runā visās ES oficiālajās valodās un ukraiņu valodā (arī Palīdzība). Pirmajā palaišanā tā ņem tālruņa valodu (angļu, ja lietotnei tās nav); pēc tam ☰ › Valoda izvēlēto. Saraksts rāda tikai angļu valodu, tālruņa valodu un tās valsts oficiālās valodas, kurā ir tālrunis.
+- ☰ › Zemestrīces: lapa ar zemestrīcēm ar magnitūdu 3 vai vairāk pēdējās 7 dienās tavā valstī, pēc tam pēdējās 48 stundās ES, Ukrainā un Moldovā (laiks, vieta, magnitūda, dziļums, attālums).
+- Paziņojumi (tikai ar tavu piekrišanu): lietus vai sniega sākums, jauni laikapstākļu brīdinājumi tavai pilsētai, zemestrīces ar magnitūdu 3 vai vairāk tavā valstī. Katrs notikums tikai vienreiz. Ieslēgt vai izslēgt ☰ › Paziņojumi.
+- Atrašanās vietu un paziņojumus lūdz ar draudzīgu paskaidrojumu pirmajā palaišanā; ja atsakies, lietotne jautā atkal tikai pēc atjauninājuma. Kad tālrunis vairs nerāda savu jautājumu, poga atver tā iestatījumus.
+- Pirmajā palaišanā pilsēta, ko atrada atrašanās vieta, kļūst par rādīto un tiek pievienota izlasei.
+- Tālruņi bez kompasa vai gaismas sensora: saistītās pogas un lodziņi tiek izslēgti; žurnāls katrā palaišanā uzskaita sensorus.
+- Logrīki: 4x1 josla tagad darbojas arī planšetdatoros (skaita sākuma ekrāna rindas, nevis fiksētus izmērus).
+- Labots: palaižot pēc atjauninājuma, laikapstākļi tika lejupielādēti divreiz; žurnāls tagad ieraksta izvēlēto valodu un katru izvēlēto pilsētu, un logrīka iestatījumu atvēršanu tikai vienreiz.

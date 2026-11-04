@@ -1,0 +1,365 @@
+# Meteo Alarm Android · hu · English<TAB>translation
+Diary (log)	Napló
+Everything the app did in the last 5 days; older errors kept 10 days.	Minden, amit az alkalmazás az elmúlt 5 napban tett; a régebbi hibák 10 napig maradnak.
+Share	Megosztás
+Save	Mentés
+Close	Bezárás
+log 	napló 
+Send the log	Napló küldése
+Log saved	Napló mentve
+Could not save	A mentés nem sikerült
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Ez a Meteo Alarm Android tesztváltozata, a Meteo Alarm Kindle alapján.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Nem gyűjtünk adatokat: nincs fiók, nincs reklám, nincs statisztika. Az időjáráshoz csak a hely koordinátáit küldjük el az Open-Meteónak (időjárás, pollen), és ha az Open-Meteo túlterhelt, a MET Norwaynek (időjárás); a figyelmeztetések a MeteoAlarmtól, a földrengések az EMSC-től (seismicportal.eu) jönnek.
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Helymeghatározás: arra szolgál, hogy ott mutassa az időjárást, ahol vagy, induláskor és óránként egyszer. A település nevéhez a koordináták az OpenStreetMaphez (vagy a telefon geokódolójához) mennek, onnan jönnek a település határai is. A megtalált települések a helyeddel csak a telefonon maradnak. Az alkalmazás az első indításkor magyarázattal kéri; ha nemet mondasz, a listából választod a települést, és csak frissítés után kérdez újra.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Értesítések (csak a beleegyezéseddel): kezdődő eső vagy havazás, új időjárási figyelmeztetések a településedre, legalább 3-as erősségű földrengések az országodban. Minden esemény egyszer. Be- vagy kikapcsolás: ☰ › Értesítések.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Nyelv: első indításkor a telefon nyelve (ha az alkalmazásban megvan, különben angol), utána a ☰ › Nyelv alatt választott.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Érzékelők: az alkalmazás olvassa az akkumulátor állapotát (éjszakai óra töltés közben), a telefon fényérzékelőjét a ☰ › Téma › Automatikus (telefon érzékelője) beállításnál, és az iránytűt, amely a telefonnal együtt forgatja a szélnyilat. Amit a telefon nem tud, az kikapcsol. Semmi sem hagyja el a telefont.
+Updates: 	Frissítések: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Ezután hetente egyszer az alkalmazás új verziót keres a GitHubon, és letöltés előtt rákérdez.
+I understand	Értem
+This phone has no light sensor.	Ennek a telefonnak nincs fényérzékelője.
+Automatic theme (phone sensor): on	Automatikus téma (telefon érzékelője): be
+Automatic theme (phone sensor): off	Automatikus téma (telefon érzékelője): ki
+Dark theme	Sötét téma
+Light theme	Világos téma
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	A Meteo Alarm magától megtalálhatja a településedet, hogy az előrejelzés, az időjárási figyelmeztetések és a földrengések pontosan arra a helyre szóljanak, ahol vagy, utazás közben is. A helyzet a telefonon marad: csak a település kiválasztására szolgál.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	A telefon már nem jeleníti meg a kérdését, ezért engedélyezd a Helyadatokat a Meteo Alarm számára a telefon beállításaiban (Engedélyek › Helyadatok).
+If you say no, choose the town from the list; the app asks again only after an update.	Ha nemet mondasz, válaszd ki a települést a listából; az alkalmazás csak frissítés után kérdez újra.
+Location	Helymeghatározás
+Open settings	Beállítások megnyitása
+Allow	Engedélyezés
+Not now	Most nem
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	A Meteo Alarm akkor is szólhat, ha be van zárva: amikor eső vagy havazás kezdődik vagy egy órán belül kezdődni fog, amikor időjárási figyelmeztetést adnak ki a településedre, és amikor legalább 3-as erősségű földrengés van az országodban. Minden esemény csak egyszer, semmi más. Így időben értesülsz, az alkalmazás megnyitása nélkül.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	A telefon nem engedi, hogy az alkalmazás értesítsen; kapcsold be a Meteo Alarm értesítéseit a telefon beállításaiban.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Bármikor kikapcsolhatod őket: ☰ › Értesítések. Ha nemet mondasz, az alkalmazás csak frissítés után kérdez újra.
+Notifications	Értesítések
+Notifications ON	Értesítések BE
+Notifications OFF	Értesítések KI
+Without location access, choose the town from the list.	Helyhozzáférés nélkül válaszd ki a települést a listából.
+Brightness: slide on the bar	Fényerő: csúsztass a sávon
+Automatic location OFF	Automatikus helymeghatározás KI
+Automatic location ON	Automatikus helymeghatározás BE
+Looking for the exact position…	A pontos hely keresése…
+Added to the list: 	Hozzáadva a listához: 
+Location is off on the phone.	A helymeghatározás ki van kapcsolva a telefonon.
+The position could not be found.	A helyet nem sikerült megtalálni.
+The town could not be found (internet?).	A települést nem sikerült megtalálni (internet?).
+The weather did not come: 	Az időjárás nem érkezett meg: 
+Already updating…	Már frissül…
+The weather has just been updated	Az időjárás épp most frissült
+Just tried; try again in a few seconds	Épp most próbálta; próbáld újra pár másodperc múlva
+Updating the weather…	Időjárás frissítése…
+Refresh	Frissítés
+Town	Település
+Temperature °C/°F	Hőmérséklet °C/°F
+Clock 12/24	Óra 12/24
+Theme	Téma
+Screen on OFF	Bekapcsolt kijelző OFF
+Screen on ON	Bekapcsolt kijelző ON
+Language	Nyelv
+Night clock OFF	Éjszakai óra OFF
+Night clock ON	Éjszakai óra ON
+Location Off	Hely Off
+Location On	Hely On
+Earthquakes	Földrengések
+Widgets	Widgetek
+Log	Napló
+Check for updates	Frissítések keresése
+Help	Súgó
+About	Névjegy
+24-hour clock	24 órás óra
+12-hour clock	12 órás óra
+The screen stays on while the app is open	A kijelző bekapcsolva marad, amíg az alkalmazás nyitva van
+The screen goes off after the phone's timeout	A kijelző a telefonon beállított idő után kikapcsol
+While charging at night, the screen shows a big dim clock	Éjszakai töltéskor a kijelző nagy, halvány órát mutat
+Night clock off	Éjszakai óra kikapcsolva
+Light	Világos
+Dark	Sötét
+Automatic	Automatikus
+Last 7 days · 	Elmúlt 7 nap · 
+Downloading from EMSC…	Letöltés az EMSC-től…
+The list could not be downloaded. Is the internet on?	A listát nem sikerült letölteni. Be van kapcsolva az internet?
+No earthquake of magnitude 3 or more.	Nincs legalább 3-as erősségű földrengés.
+Last 48 hours · EU, Ukraine, Moldova	Elmúlt 48 óra · EU, Ukrajna, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Forrás: EMSC (Euromediterrán Szeizmológiai Központ, seismicportal.eu), 3-as erősség felett. Az „érezhető” becslés az EMS-98 skálán az erősségből és a fészektől mért távolságból.
+depth 	mélység 
+from 	távolság: 
+Probably felt in 	Valószínűleg érezhető volt itt: 
+Probably not felt in 	Valószínűleg nem volt érezhető itt: 
+Updates	Frissítések
+How to update	Hogyan frissíts
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 A beleegyezést csak ott kéri: egyszer, ha elfogadod (onnantól az alkalmazás magától is ellenőriz hetente egyszer), minden alkalommal, amíg nemet mondasz. Nélküle az alkalmazás soha nem keres frissítést, és semmit sem tölt le.
+Buttons on the screen	Gombok a képernyőn
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Megnyitja a településeket: az utolsó 3 (kedvencek) és a megyék. Koppints egy megyére, aztán a településre.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Megkeresi, hol vagy, és annak a településnek az időjárását mutatja; óránként újra keres. A megtalált települések a helyeddel a telefonon maradnak, és a mutatott település csak akkor változik, ha elhagyod a határait. Más országokban is működik, a MeteoAlarm figyelmeztetéseivel kb. 38 európai országban. Egy koppintás bekapcsolja az automatikus helymeghatározást (teli gomb, azonnal keres) vagy kikapcsolja (üres gomb).
+Brightness	Fényerő
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Balra megjeleníti a fényerősávot: csúsztass rajta fel vagy le. Magától eltűnik.
+Light / dark theme	Világos / sötét téma
+Over the brightness bar: switches between the light and the dark theme.	A fényerősáv felett: vált a világos és a sötét téma között.
+Automatic theme (phone sensor)	Automatikus téma (telefon érzékelője)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Világos téma, ha világos van, sötét a sötétben. Teli, amíg be van kapcsolva.
+Phone without a sensor	Telefon valamelyik érzékelő nélkül
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Az alkalmazás minden indításkor ellenőrzi a telefon érzékelőit (iránytű, fény, gyorsulásmérő, közelség, légnyomás, GPS), és a Naplóba írja, melyek hiányoznak. Fényérzékelő nélkül az Automatikus (telefon érzékelője) téma szürke és nem csinál semmit; iránytű nélkül a szélnyíl mezője rejtve van.
+Location consent	Beleegyezés a helymeghatározásba
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Első indításkor az alkalmazás elmagyarázza, miért kéri a helyet (az időjárás, a figyelmeztetések és a földrengések pontosan arra a helyre, ahol vagy), aztán a telefon kérdez. Az elsőként megtalált település lesz a mutatott, és bekerül a kedvencek közé. Ha nemet mondasz, a listából választod a települést, és az alkalmazás csak frissítés után kérdez újra; ha a telefon már nem kérdez, a gomb megnyitja a beállításait.
+Gestures	Mozdulatok
+Tap on the town's name	Koppintás a település nevére
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Egyszer keres GPS-szel, a pontosabb előrejelzésért ott, ahol vagy; az automatikus helymeghatározás marad, ahogy van.
+Pull down	Lehúzás
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Húzd le a képernyőt és engedd el: az időjárás frissül. Újabb lehúzás letöltés közben vagy az utolsó letöltés utáni 10 másodpercen belül nem indít újat; egy üzenet jelzi ezt.
+Left edge	Bal szél
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Csúsztass fel vagy le a bal szél közelében (kicsit beljebb): megjelenik a fényerősáv, és rajta csúsztatva állítod a fényerőt.
+Wind arrow	Szélnyíl
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	A szél mellett: a nyíl mutatja, merre fúj a szél, a telefonnal együtt elforgatva (iránytű); a narancssárga jel az észak.
+Night clock	Éjszakai óra
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Ha a telefon éjjel töltődik (napnyugtától napkeltéig), és egy percig senki sem nyúl hozzá: nagy, halvány óra. Egy koppintás egy percre visszavisz.
+Warnings and earthquake	Figyelmeztetések és földrengés
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	A vonal alatt mezők sora: először a földrengés (ha volt), aztán figyelmeztetési fokonként egy mező (piros, narancs, sárga). Kettő fér el a képernyőn; ha több van, a sor 2 másodpercenként magától továbblép, és elölről kezdi. Ujjal is görgetheted. Koppints egy mezőre: a sor 20 másodpercre megáll, és egy buborék nagyobb betűkkel mutatja a részleteket (egy foknál: mit jelent, minden figyelmeztetés az időszakkal és tanáccsal; a földrengésnél: erősség, idő, régió, mélység, epicentrum és távolság, hogyan volt valószínűleg érezhető a településeden, és az elmúlt 24 óra összes földrengése).
+Earthquake box	Földrengés mező
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Az EMSC-től (Euromediterrán Szeizmológiai Központ): legalább 3-as erősségű földrengések az elmúlt 24 órában a településed országában (amelyet a helymeghatározás talált). A mező a legerősebbet mutatja: erősség és időpont, és hogyan volt érezhető a településeden, becslésként az EMS-98 skálán (az erősségből és a fészektől mért távolságból; az EMSC nem közöl beszámolókat minden településről). 24 óra után eltűnik.
+Left / right on the boxes	Balra / jobbra a mezőkön
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	A figyelmeztetések sora, az órák mezői és az öt nap (holnap és a következő 4 nap, kettesével) követi az ujjat. A Csapadék · következő 12 óra grafikon az órák sorában az első, csak ha eső vagy hó várható.
+The row of boxes at the bottom	Az alsó mezősor
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Csúsztasd oldalra (fekvő helyzetben: fel és le, kettesével, a szélmező nélkül): Nap (napnyugta után a Hold, kelte, nyugta és fázisa), UV-index, Pollen, Páratartalom (amíg esik), Levegőminőség, Légnyomás, Szél, Látótávolság és Iránytű.
+Home-screen widgets	Widgetek a kezdőképernyőn
+Meteo Alarm widgets	Meteo Alarm widgetek
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Tarts nyomva egy üres helyet a kezdőképernyőn, válaszd a Widgetek, majd a Meteo Alarm lehetőséget: 2x2, 4x1, 4x2 és „bármilyen méret”, mindegyik előnézettel; azonnal a képernyőre kerül, beállítási ablak nélkül. Három elrendezés van: 2x2 (négyzet: ikon, hőmérséklet, település, következő napnyugta vagy napkelte), 4x1 (alacsony sáv, az éggel is) és 4x2 (széles, a max. / min. értékkel és a következő 5 órával is), plusz egy kicsi 2x1 (ikon és hőmérséklet) a túl kicsi keretekhez. Tartsd nyomva és húzd a széleit: széles (kb. 4 oszlop) és egy sor = 4x1, széles és magasabb = 4x2 (4x2 marad, akármilyen magas), keskeny = 2x2, keskeny és egy sor = 2x1. A sorok és oszlopok a kezdőképernyődéi (tableten egy sor sokkal magasabb, mint telefonon), így a 4x1-es sáv ott is működik. Kitölti a keret szélességét; ha a keret magasabb a szükségesnél, a widget megtartja méretét, középre igazítva, háttérrel csak maga mögött (a többi átlátszó marad). Egy elrendezés sosem kicsinyedik annyira, hogy a szövegek túl kicsik legyenek. Aktív figyelmeztetéseknél egy „FIGYELMEZTETÉS!” sor három pöttyöt mutat: sárga = szürke szürke sárga, narancs = szürke narancs narancs, piros = mind piros; két fok = a súlyosabb, szürke, a másik; három fok = piros narancs sárga. Egy koppintás megnyitja az alkalmazást.
+Widget settings	Widget beállításai
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Tartsd nyomva a widgetet › Beállítások (Android 12 és újabb), vagy ☰ › Widgetek. Minden widgetnek saját beállításai vannak: előnézet; a település (mint az alkalmazásban, vagy egy másik a Módosítás gombbal); Háttér be / ki és mennyire átlátszó; Színek: az időjárás szerint (kék ég, éjkék, szürke felhők, eső, jeges hó, vihar, köd), a telefon beállításai szerint, vagy sötét; Szövegszín: automatikus (fekete világos háttéren), fehér vagy fekete. Mégse vagy Mentés.
+Refreshing by itself	Önálló frissítés
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Az időjárás, a figyelmeztetések és a földrengések maguktól jönnek, zárt alkalmazásnál is (a widgetekhez): 15 percenként bekapcsolt kijelzőnél, 30 percenként kikapcsoltnál, egyáltalán nem napnyugta és napkelte között kikapcsolt kijelzőnél (megvárja, amíg bekapcsol), és óránként, ha az akkumulátor 25% alatt van és nem töltődik. Ha egy letöltés nem sikerül, egy üzenet és az óra alatti „! nincs adat ennyi óta: …” sor megmondja, miért (nincs internet, a szerver nem válaszolt, biztonságos kapcsolat hibája, szerverhiba…). Ha az Open-Meteo foglalt (HTTP 503 „overloaded”) vagy nem válaszol, az előrejelzés a MET Norwaytől jön (api.met.no, a norvég meteorológiai intézet), és az óra alatt „· MET Norway” áll; egy „foglalt” után az alkalmazás 20 percig egyenesen a MET Norwayhez fordul. Amíg nem jön új adat, a legutóbb mentett időjárás marad a képernyőn.
+The ☰ menu	A ☰ menü
+Downloads the weather, the warnings and the earthquakes now.	Most letölti az időjárást, a figyelmeztetéseket és a földrengéseket.
+The same as the town button.	Ugyanaz, mint a település gomb.
+Switches between Celsius and Fahrenheit.	Vált a Celsius és a Fahrenheit között.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Vált a 24 és a 12 órás óra között (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Világos, Sötét vagy Automatikus (telefon érzékelője).
+Screen on ON / OFF	Bekapcsolt kijelző ON / OFF
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: a kijelző bekapcsolva marad, amíg az alkalmazás nyitva van. OFF: a telefonon beállított idő után kikapcsol.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	A listában az angol és annak az országnak a hivatalos nyelvei vannak, ahol a telefon van (a SIM-kártya vagy a mobilhálózat szerint; ezek nélkül a mutatott település szerint). Első indításkor az alkalmazás a telefon nyelvét veszi, ha megvan neki. Az alkalmazás az EU összes hivatalos nyelvén és ukránul beszél.
+Location On / Off	Hely On / Off
+Turns automatic location on or off (the same as the location button).	Be- vagy kikapcsolja az automatikus helymeghatározást (ugyanaz, mint a hely gomb).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Egy ilyen oldal, felül bezárás gombbal: az elmúlt 7 nap legalább 3-as erősségű földrengései az országodban, aztán az elmúlt 48 óráé az Európai Unióban, Ukrajnában és Moldovában. Minden sor: időpont, hely, erősség, mélység és távolság a településedtől. Az EMSC-től; görgethető.
+Notifications ON / OFF	Értesítések ON / OFF
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Értesítések csak erről: kezdődő eső vagy havazás (vagy egy órán belüli kezdés; újra csak 3 száraz óra után), új időjárási figyelmeztetés a településedre és legalább 3-as erősségű földrengés az országodban. Minden esemény csak egyszer, zárt alkalmazásnál is. Az alkalmazás első indításkor kéri őket; ha nemet mondasz, csak frissítés után kérdez újra, soha nem minden indításkor. Ha a telefon már nem mutatja a kérdését (két elutasítás után), a gomb megnyitja a telefon beállításait, ahol engedélyezheted őket.
+Night clock ON / OFF	Éjszakai óra ON / OFF
+Turns the night clock on or off.	Be- vagy kikapcsolja az éjszakai órát.
+The settings of a widget on the home screen (with several, choose which first).	Egy kezdőképernyős widget beállításai (ha több van, előbb választod ki, melyiket).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Minden, amit az alkalmazás tett, időponttal: az érzékelők, a koppintások és mozdulatok, a helymeghatározás, a letöltések (és miért nem sikerült valamelyik), a háttérfrissítések és a widgetek (a méret, amit a telefon ad nekik, a mutatott elrendezés). 5 napot őriz, naponta új fájlt; a régebbi napok hibái még 10 napig maradnak egy Hibák részben. Felül: a telefon (modell, Android, One UI) és az alkalmazás verziója. Olvasd itt, Oszd meg (WhatsApp, Drive, e-mail…) vagy Mentsd a telefonra.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Új verziót keres a GitHubon. Első alkalommal (és minden alkalommal, amíg bele nem egyezel) elmagyarázza, hogy a frissítések a GitHubról jönnek, nem a Google Playről, és a beleegyezésedet kéri; „Most nem” esetén egy üzenet közli, hogy az alkalmazás nem frissül. Semmi sem települ, amíg nem koppintasz a Frissítés gombra és meg nem erősíted a telefon telepítőjében.
+This page.	Ez az oldal.
+About the app, the data it uses, and what's new in each version.	Az alkalmazásról, az általa használt adatokról és az egyes verziók újdonságairól.
+What's new	Újdonságok
+The dark theme uses the Claude app colours. Font: Liberation Sans.	A sötét téma a Claude alkalmazás színeit használja. Betűtípus: Liberation Sans.
+Installed version: v	Telepített verzió: v
+Favourites	Kedvencek
+Choose the county	Válassz megyét
+Other countries	Más országok
+‹  Back	‹  Vissza
+‹  Back to the counties	‹  Vissza a megyékhez
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Nincs Meteo Alarm widget a kezdőképernyőn. Tarts nyomva egy üres helyet a kezdőképernyőn › Widgetek › Meteo Alarm.
+Which widget?	Melyik widget?
+Change	Módosítás
+Background	Háttér
+Colours	Színek
+Text colour	Szövegszín
+Cancel	Mégse
+  (as in the app)	  (mint az alkalmazásban)
+Transparency: 	Átlátszóság: 
+Match the phone's settings	A telefon beállításai szerint
+By the weather	Az időjárás szerint
+White	Fehér
+Black	Fekete
+As in the app	Mint az alkalmazásban
+Choose the county / country…	Válassz megyét / országot…
+County / country	Megye / ország
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	A Play Protect figyelmeztetéséről: a Google mondhatja, hogy az alkalmazás „ártalmas lehet”. Ezt azért teszi, mert az alkalmazás nem a Google Playről származik, a fejlesztője nincs regisztrálva a Google-nél, és saját maga telepítheti a frissítéseit (a github.com/viorelrb-alt/meteo-alarm-android oldalról). Az alkalmazás semmi mást nem tesz. Amikor megjelenik a Play Protect ablak, koppints a „További részletek” lehetőségre (ha látszik), aztán a „Telepítés vizsgálat nélkül” (vagy „Telepítés mindenképp”) gombra.
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Frissítésekhez: nyisd meg a ☰ › Frissítések keresése menüt, és amikor kérdezi, add meg a beleegyezésedet.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	A Meteo Alarm nem a Google Playről származik. Az új verziók a GitHubon jelennek meg (github.com/viorelrb-alt/meteo-alarm-android), és az alkalmazás onnan frissíti magát: hetente egyszer körül ellenőriz (vagy amikor a Frissítések keresése lehetőséget választod), megmutatja az újdonságokat, és csak amikor a Frissítés gombra koppintasz, tölti le az új verziót és nyitja meg a telefon telepítőjét, ahol újra megerősíted.\n\nEngedélyezed, hogy az alkalmazás így frissüljön? A beleegyezésed nélkül az alkalmazás nem keres frissítést és semmit sem tölt le; később is beleegyezhetsz a ☰ › Frissítések keresése menüben.
+Updates from GitHub	Frissítések a GitHubról
+I agree	Elfogadom
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	A beleegyezésed nélkül az alkalmazás nem frissül. Bármikor meggondolhatod magad a ☰ › Frissítések keresése menüben.
+Checking GitHub for a new version…	Új verzió keresése a GitHubon…
+No version published yet.	Még nincs közzétett verzió.
+Could not check for updates. Is the internet on?	A frissítéseket nem sikerült ellenőrizni. Be van kapcsolva az internet?
+You have the latest version, v	A legújabb verzió van telepítve, v
+Installed: v	Telepítve: v
+New: v	Új: v
+New version: v	Új verzió: v
+Update	Frissítés
+Downloading…	Letöltés…
+Hide	Elrejtés
+Downloading… 	Letöltés… 
+The download failed. Is the internet on?	A letöltés nem sikerült. Be van kapcsolva az internet?
+The installer could not be opened.	A telepítőt nem sikerült megnyitni.
+no internet (server not found)	nincs internet (a szerver nem található)
+the server did not answer in time	a szerver nem válaszolt időben
+no connection	nincs kapcsolat
+secure connection error: 	biztonságos kapcsolat hibája: 
+internet not allowed for the app	az internet nincs engedélyezve az alkalmazásnak
+server error 	szerverhiba 
+network error: 	hálózati hiba: 
+data error: 	adathiba: 
+⌃  more  ⌃	⌃  több  ⌃
+⌄  more  ⌄	⌄  több  ⌄
+Open the app	Alkalmazás megnyitása
+WARNING!	FIGYELMEZTETÉS!
+Sunrise at 	Napkelte: 
+Sunset at 	Napnyugta: 
+Weather, warnings and earthquakes	Időjárás, figyelmeztetések és földrengések
+Rain or snow starting, new weather warnings, earthquakes in your country.	Kezdődő eső vagy havazás, új időjárási figyelmeztetések, földrengések az országodban.
+Snow	Hó
+Rain	Eső
+It is snowing in 	Havazik: 
+It is raining in 	Esik az eső: 
+Snow is expected within the hour in 	Egy órán belül havazás várható: 
+Rain is expected within the hour in 	Egy órán belül eső várható: 
+Warning	Figyelmeztetés
+Earthquake M	Földrengés M
+probably felt: 	valószínűleg érezhető: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Az értesítések be vannak kapcsolva: eső vagy hó, időjárási figyelmeztetések és földrengések az országodban.
+EARTHQUAKE	FÖLDRENGÉS
+Felt here: 	Itt érezhető: 
+ (estimate)	 (becslés)
+Magnitude: 	Erősség: 
+Time: 	Időpont: 
+Region: 	Régió: 
+Depth: 	Mélység: 
+Epicentre: 	Epicentrum: 
+ from 	 távolság: 
+In 	Itt: 
+Probably felt, intensity 	Valószínűleg érezhető, intenzitás 
+Probably not felt here.	Itt valószínűleg nem volt érezhető.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Az erősségből és a fészektől mért távolságból becsülve (EMS-98 skála); az EMSC nem közöl beszámolókat minden településről.
+All in the last 24 h	Az elmúlt 24 óra összes
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Forrás: EMSC (seismicportal.eu), 3-as erősség felett, elmúlt 24 óra.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potenciálisan veszélyes időjárás (az évszakban szokásos, de helyenként erősebb). Légy óvatos a szabadban.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Nagy intenzitású veszélyes időjárás. Légy nagyon óvatos, kövesd az előrejelzést és a hatóságok tanácsait.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Nagyon nagy intenzitású, nagyon veszélyes időjárás. Tegyél óvintézkedéseket, és kövesd a hatóságok utasításait.
+In force now, until 	Most érvényes, eddig: 
+From 	Ettől: 
+ until 	 eddig: 
+Source: MeteoAlarm (the national weather service), for 	Forrás: MeteoAlarm (az országos meteorológiai szolgálat), itt: 
+Stay away from trees, poles and scaffolding; secure loose objects.	Kerüld a fákat, oszlopokat és állványokat; rögzítsd a laza tárgyakat.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Villámlás, felhőszakadás, jégeső és széllökések lehetségesek; menj épületbe.
+Avoid flooded roads and river banks.	Kerüld az elárasztott utakat és a folyópartokat.
+Slippery roads; drive only if you must, with winter equipment.	Csúszós utak; csak ha muszáj, téli felszereléssel vezess.
+Low visibility; drive slowly with the fog lights on.	Rossz látási viszonyok; vezess lassan, bekapcsolt ködlámpával.
+Avoid the sun between 11 and 18, drink plenty of water.	Kerüld a napot 11 és 18 óra között, igyál sok vizet.
+Dress warmly and limit time outdoors.	Öltözz melegen, és légy minél kevesebbet a szabadban.
+Do not light fires outdoors.	Ne gyújts tüzet a szabadban.
+H	Ó
+MOON	HOLD
+HUMIDITY	PÁRATARTALOM
+AIR QUALITY	LEVEGŐMINŐSÉG
+PRESSURE	LÉGNYOMÁS
+WIND	SZÉL
+VISIBILITY	LÁTÓTÁVOLSÁG
+COMPASS	IRÁNYTŰ
+Moonrise	Holdkelte
+Moonset	Holdnyugta
+relative humidity	relatív páratartalom
+Good	Jó
+Fair	Elfogadható
+Moderate	Közepes
+Poor	Rossz
+Very poor	Nagyon rossz
+Extremely poor	Rendkívül rossz
+Poor (fog)	Rossz (köd)
+Very good	Nagyon jó
+steady	állandó
+↓ falling fast	↓ gyorsan csökken
+↓ falling	↓ csökken
+↑ rising fast	↑ gyorsan nő
+↑ rising	↑ nő
+no compass	nincs iránytű
+Tap to leave the night clock	Koppints az éjszakai óra elhagyásához
+until	eddig:
+now	most
+Rain from	Eső ettől:
+max	max.
+Snow from	Hó ettől:
+Raining	Esik
+Snowing	Havazik
+updated	frissítve
+no data since	nincs adat ennyi óta:
+Loading weather…	Időjárás betöltése…
+updating…	frissítés…
+Feels like	Hőérzet
+Wind	Szél
+High	Max.
+Low	Min.
+Charging	Töltés
+YELLOW	SÁRGA
+ORANGE	NARANCS
+RED	PIROS
+WARNING	FIGYELMEZTETÉS
+TOMORROW	HOLNAP
+DAY AFTER	HOLNAPUTÁN
+NEXT 12 HOURS	KÖVETKEZŐ 12 ÓRA
+WEATHER · NEXT HOURS	IDŐJÁRÁS · KÖVETKEZŐ ÓRÁK
+RAIN	ESŐ
+SNOW	HÓ
+PRECIPITATION	CSAPADÉK
+snow	hó
+rain	eső
+no precipitation	nincs csapadék
+SUN	NAP
+UV INDEX	UV-INDEX
+POLLEN	POLLEN
+Sunrise	Napkelte
+Sunset	Napnyugta
+Very high	Nagyon magas
+Extreme	Szélsőséges
+no pollen	nincs pollen
+no data	nincs adat
+No precipitation	Nincs csapadék
+SNOW ICE	HÓ, JEGESEDÉS
+THUNDERSTORM	ZIVATAR
+FOG	KÖD
+HIGH TEMPERATURE	HŐSÉG
+LOW TEMPERATURE	HIDEG
+COASTALEVENT	PARTI JELENSÉGEK
+FOREST FIRE	ERDŐTŰZ
+AVALANCHES	LAVINA
+FLOODING	ÁRVÍZ
+RAIN FLOOD	ESŐ, ÁRVÍZ
+alder	éger
+birch	nyír
+olive	olajfa
+grasses	fűfélék
+mugwort	üröm
+ragweed	parlagfű
+Clear	Derült
+Mostly clear	Többnyire derült
+Partly cloudy	Részben felhős
+Overcast	Borult
+Fog	Köd
+Drizzle	Szitálás
+Freezing drizzle	Ónos szitálás
+Light rain	Gyenge eső
+Heavy rain	Erős eső
+Freezing rain	Ónos eső
+Light snow	Gyenge havazás
+Heavy snow	Erős havazás
+Snow grains	Hódara
+Light showers	Gyenge zápor
+Showers	Zápor
+Heavy showers	Erős zápor
+Snow showers	Hózápor
+Thunderstorm	Zivatar
+Thunderstorm, hail	Zivatar, jégeső
+Code 	Kód 
+not felt	nem érezhető
+scarcely felt, only by a few people at rest	alig érezhető, csak néhány nyugalomban lévő ember érzi
+weak, felt by a few people indoors	gyenge, néhányan érzik épületben
+felt by many indoors; windows and doors rattle	sokan érzik épületben; az ablakok és ajtók zörögnek
+strong, felt by nearly everyone; objects move, some are frightened	erős, szinte mindenki érzi; tárgyak mozdulnak el, néhányan megijednek
+slight damage (cracks in plaster); many run outdoors	enyhe károk (repedések a vakolatban); sokan kimenekülnek
+damage to buildings; hard to stand	épületkárok; nehéz megállni
+heavy damage	súlyos károk
+destruction	pusztulás
+great destruction	nagy pusztulás
+very great destruction	nagyon nagy pusztulás
+complete destruction	teljes pusztulás
+The phone's own language is in the list too.	A listában a telefon nyelve is szerepel.

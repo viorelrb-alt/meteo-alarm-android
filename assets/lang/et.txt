@@ -1,0 +1,365 @@
+# Meteo Alarm Android · et · English<TAB>translation
+Diary (log)	Päevik (logi)
+Everything the app did in the last 5 days; older errors kept 10 days.	Kõik, mida rakendus viimase 5 päeva jooksul tegi; vanemaid vigu hoitakse 10 päeva.
+Share	Jaga
+Save	Salvesta
+Close	Sulge
+log 	logi 
+Send the log	Saada logi
+Log saved	Logi salvestatud
+Could not save	Salvestamine ebaõnnestus
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	See on Meteo Alarm Androidi testversioon, tehtud Meteo Alarm Kindle'i põhjal.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Andmeid ei koguta: pole kontot, reklaame ega statistikat. Ilma saamiseks saadetakse ainult koha koordinaadid Open-Meteole (ilm, õietolm) ja, kui Open-Meteo on ülekoormatud, MET Norwayle (ilm); hoiatused tulevad MeteoAlarmilt, maavärinad EMSC-lt (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Asukoht: kasutatakse ilma näitamiseks seal, kus sa oled, käivitamisel ja kord tunnis. Linna nimetamiseks lähevad koordinaadid OpenStreetMapile (või telefoni geokodeerijale), mis annab ka linna piiri. Leitud linnu koos sellega, kus sa olid, hoitakse ainult telefonis. Rakendus küsib seda esimesel käivitamisel koos selgitusega; kui keeldud, valid linna loendist ja see küsib uuesti alles pärast uuendust.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Teavitused (ainult nõusolekul): vihma või lume algus, uued ilmahoiatused sinu linnale, vähemalt magnituudiga 3 maavärinad sinu riigis. Iga sündmus üks kord. Sisse või välja menüüs ☰ › Teavitused.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Keel: esimesel käivitamisel telefoni keel (kui rakenduses see on, muidu inglise), seejärel menüüs ☰ › Keel valitud.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Andurid: rakendus loeb aku olekut (öökell laadimise ajal), telefoni valgusandurit valikuga ☰ › Teema › Automaatne (telefoni andur) ja kompassi, mis pöörab tuulenoolt koos telefoniga. Mida telefonil pole, lülitatakse välja. Midagi ei lahku telefonist.
+Updates: 	Uuendused: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Pärast seda kontrollib rakendus kord nädalas GitHubist uut versiooni ja küsib enne allalaadimist.
+I understand	Sain aru
+This phone has no light sensor.	Sellel telefonil pole valgusandurit.
+Automatic theme (phone sensor): on	Automaatne teema (telefoni andur): sees
+Automatic theme (phone sensor): off	Automaatne teema (telefoni andur): väljas
+Dark theme	Tume teema
+Light theme	Hele teema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm oskab su linna ise leida, nii et prognoos, ilmahoiatused ja maavärinad on täpselt selle koha kohta, kus sa oled, ka reisil. Asukoht jääb telefoni: seda kasutatakse ainult linna valimiseks.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefon ei näita enam oma küsimust, seega luba Meteo Alarmile Asukoht telefoni seadetes (Load › Asukoht).
+If you say no, choose the town from the list; the app asks again only after an update.	Kui keeldud, vali linn loendist; rakendus küsib uuesti alles pärast uuendust.
+Location	Asukoht
+Open settings	Ava seaded
+Allow	Luba
+Not now	Mitte praegu
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm võib sulle teada anda, ka suletuna: kui vihm või lumi algab või algab tunni jooksul, kui sinu linnale antakse ilmahoiatus ja kui sinu riigis toimub vähemalt magnituudiga 3 maavärin. Iga sündmus ainult üks kord, muud mitte. Nii saad teada õigel ajal, rakendust avamata.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefon ei lase rakendusel teavitada, seega lülita Meteo Alarmi teavitused sisse telefoni seadetes.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Saad need igal ajal välja lülitada menüüs ☰ › Teavitused. Kui keeldud, küsib rakendus uuesti alles pärast uuendust.
+Notifications	Teavitused
+Notifications ON	Teavitused SEES
+Notifications OFF	Teavitused VÄLJAS
+Without location access, choose the town from the list.	Ilma asukohaloata vali linn loendist.
+Brightness: slide on the bar	Heledus: libista ribal
+Automatic location OFF	Automaatne asukoht VÄLJAS
+Automatic location ON	Automaatne asukoht SEES
+Looking for the exact position…	Otsin täpset asukohta…
+Added to the list: 	Lisatud loendisse: 
+Location is off on the phone.	Asukoht on telefonis välja lülitatud.
+The position could not be found.	Asukohta ei leitud.
+The town could not be found (internet?).	Linna ei leitud (internet?).
+The weather did not come: 	Ilm ei tulnud: 
+Already updating…	Juba uuendan…
+The weather has just been updated	Ilm uuendati just
+Just tried; try again in a few seconds	Just prooviti; proovi mõne sekundi pärast uuesti
+Updating the weather…	Uuendan ilma…
+Refresh	Värskenda
+Town	Linn
+Temperature °C/°F	Temperatuur °C/°F
+Clock 12/24	Kell 12/24
+Theme	Teema
+Screen on OFF	Ekraan sees VÄLJAS
+Screen on ON	Ekraan sees SEES
+Language	Keel
+Night clock OFF	Öökell VÄLJAS
+Night clock ON	Öökell SEES
+Location Off	Asukoht väljas
+Location On	Asukoht sees
+Earthquakes	Maavärinad
+Widgets	Vidinad
+Log	Logi
+Check for updates	Kontrolli uuendusi
+Help	Abi
+About	Teave
+24-hour clock	24-tunnine kell
+12-hour clock	12-tunnine kell
+The screen stays on while the app is open	Ekraan jääb sisse, kui rakendus on avatud
+The screen goes off after the phone's timeout	Ekraan kustub pärast telefoni ajalõppu
+While charging at night, the screen shows a big dim clock	Öösel laadimise ajal näitab ekraan suurt tuhmi kella
+Night clock off	Öökell väljas
+Light	Hele
+Dark	Tume
+Automatic	Automaatne
+Last 7 days · 	Viimased 7 päeva · 
+Downloading from EMSC…	Laadin EMSC-st…
+The list could not be downloaded. Is the internet on?	Loendit ei saanud alla laadida. Kas internet on sees?
+No earthquake of magnitude 3 or more.	Ühtegi vähemalt magnituudiga 3 maavärinat pole.
+Last 48 hours · EU, Ukraine, Moldova	Viimased 48 tundi · EL, Ukraina, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Allikas: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnituud 3 ja üle. „Tunti“ on hinnang EMS-98 skaalal magnituudi ja koldekauguse põhjal.
+depth 	sügavus 
+from 	kaugus 
+Probably felt in 	Tõenäoliselt tunti: 
+Probably not felt in 	Tõenäoliselt ei tuntud: 
+Updates	Uuendused
+How to update	Kuidas uuendada
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Nõusolekut küsitakse ainult seal: üks kord, kui nõustud (sellest ajast kontrollib rakendus ka ise kord nädalas), iga kord, kuni keeldud. Ilma selleta ei otsi rakendus kunagi uuendusi ega laadi midagi alla.
+Buttons on the screen	Ekraani nupud
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Avab linnad: sinu viimased 3 (lemmikud) ja maakonnad. Puuduta maakonda, siis linna.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Leiab, kus sa oled, ja näitab selle linna ilma; vaatab uuesti iga tund. Leitud linnu hoitakse telefonis koos sellega, kus sa olid, ja näidatud linn muutub alles siis, kui oled selle piirist väljas. Töötab ka teistes riikides, MeteoAlarmi hoiatustega umbes 38 Euroopa riigis. Puudutus lülitab automaatse asukoha sisse (nupp täidetud, ta vaatab kohe) või välja (nupp tühi).
+Brightness	Heledus
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Näitab vasakul heleduse riba: libista sellel üles või alla. See kaob ise.
+Light / dark theme	Hele / tume teema
+Over the brightness bar: switches between the light and the dark theme.	Heleduse riba kohal: vahetab heleda ja tumeda teema vahel.
+Automatic theme (phone sensor)	Automaatne teema (telefoni andur)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Hele teema, kui on valge, tume teema pimedas. Täidetud, kui see on sees.
+Phone without a sensor	Telefon ilma andurita
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Igal käivitamisel kontrollib rakendus telefoni andureid (kompass, valgus, kiirendusandur, lähedus, rõhk, GPS) ja kirjutab Logisse, millised puuduvad. Ilma valgusandurita on teema Automaatne (telefoni andur) hall ega tee midagi; ilma kompassita on tuulenoole kast peidetud.
+Location consent	Asukoha nõusolek
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Esimesel käivitamisel selgitab rakendus, miks ta asukohta tahab (ilm, hoiatused ja maavärinad täpselt selles kohas, kus sa oled), siis küsib telefon. Esimesest leitud linnast saab näidatud linn ja see lisatakse lemmikutesse. Kui keeldud, valid linna loendist ja rakendus küsib uuesti alles pärast uuendust; kui telefon enam ei küsi, avab nupp selle seaded.
+Gestures	Žestid
+Tap on the town's name	Puudutus linna nimel
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Vaatab ühe korra GPS-iga, et saada parem prognoos seal, kus sa oled; automaatne asukoht jääb samaks.
+Pull down	Tõmba alla
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Tõmba ekraani alla ja lase lahti: ilm värskendatakse. Uus tõmbamine allalaadimise ajal või 10 sekundi jooksul viimasest allalaadimisest ei alusta uut; teade ütleb seda.
+Left edge	Vasak serv
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Libista üles või alla vasaku serva lähedal (veidi sellest sees): ilmub heleduse riba ja sellel libistamine seab heleduse.
+Wind arrow	Tuulenool
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Tuule kõrval: nool näitab, kuhu tuul puhub, pööratuna koos telefoniga (kompass); oranž märk on põhi.
+Night clock	Öökell
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Kui telefon laeb öösel (päikeseloojangust päikesetõusuni) ja keegi seda minut aega ei puuduta: suur tuhm kell. Puudutus naaseb minutiks.
+Warnings and earthquake	Hoiatused ja maavärin
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Joone all üks rida kaste: kõigepealt maavärin (kui see oli), siis üks kast iga hoiatuskoodi kohta (punane, oranž, kollane). Ekraanile mahub kaks; kui neid on rohkem, liigub rida ise iga 2 sekundi järel edasi ja alustab uuesti esimesest. Võid seda ka sõrmega libistada. Puuduta kasti: rida peatub 20 sekundiks ja mull näitab üksikasju suuremate tähtedega (koodi puhul: mida see tähendab, iga hoiatus koos perioodi ja nõuandega; maavärina puhul: magnituud, aeg, piirkond, sügavus, epitsenter ja kaugus, kuidas seda sinu linnas tõenäoliselt tunti, ning kõik viimase 24 tunni maavärinad).
+Earthquake box	Maavärina kast
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	EMSC-lt (European-Mediterranean Seismological Centre): vähemalt magnituudiga 3 maavärinad viimase 24 tunni jooksul sinu linna riigis (mille asukoht leidis). Kast näitab tugevaimat: magnituudi ja aega ning seda, kuidas seda sinu linnas tunti, hinnanguna EMS-98 skaalal (magnituudi ja koldekauguse põhjal; EMSC ei avalda iga linna teateid). See kaob 24 tunni pärast.
+Left / right on the boxes	Vasakule / paremale kastidel
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Hoiatuste rida, tunnikastid ja viis päeva (homme ja järgmised 4 päeva, kaks korraga) järgivad sõrme. Graafik Sademed · järgmised 12 tundi on tundide reas esimene, ainult kui oodata on vihma või lund.
+The row of boxes at the bottom	Alumine kastide rida
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Libista seda külgsuunas (rõhtpaigutuses: üles ja alla, kaks kaupa, ilma tuulekastita): Päike (pärast loojangut Kuu oma tõusu, loojangu ja faasiga), UV-indeks, Õietolm, Niiskus (vihma ajal), Õhukvaliteet, Rõhk, Tuul, Nähtavus ja Kompass.
+Home-screen widgets	Avakuva vidinad
+Meteo Alarm widgets	Meteo Alarmi vidinad
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Hoia avakuval vaba kohta, vali Vidinad, siis Meteo Alarm: 2x2, 4x1, 4x2 ja „mis tahes suurus“, igaüks oma eelvaatega; see läheb ekraanile kohe, ilma seadete aknata. Paigutusi on kolm: 2x2 (ruut: ikoon, temperatuur, linn, järgmine päikeseloojang või -tõus), 4x1 (madal riba, ka taevaga) ja 4x2 (lai, ka kõrgeim / madalaim ja järgmised 5 tundi), lisaks väike 2x1 (ikoon ja temperatuur) neile liiga väikeste raamide jaoks. Hoia seda ja lohista selle servi: lai (umbes 4 veergu) ja üks rida = 4x1, lai ja kõrgem = 4x2 (jääb 4x2-ks, ükskõik kui kõrgeks selle teed), kitsas = 2x2, kitsas ja üks rida = 2x1. Read ja veerud on sinu avakuva omad (tahvelarvutis on rida palju kõrgem kui telefonis), nii et 4x1 riba töötab ka seal. See täidab raami laiuse; kui raam on kõrgem, kui paigutus vajab, hoiab vidin oma suurust, keskel, taust ainult selle taga (ülejäänu jääb läbipaistvaks). Paigutust ei vähendata kunagi nii palju, et tekstid jääksid liiga väikeseks. Kehtivate hoiatuste korral näitab rida „HOIATUS!“ kolme pilli: kollane = hall hall kollane, oranž = hall oranž oranž, punane = kõik punased; kaks koodi = halvem, hall, teine; kolm koodi = punane oranž kollane. Puudutus avab rakenduse.
+Widget settings	Vidina seaded
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Hoia vidinat › Seaded (Android 12 ja uuem) või ☰ › Vidinad. Igal vidinal on oma: eelvaade; linn (nagu rakenduses või teine nupuga Muuda); Taust sees / väljas ja kui läbipaistev; Värvid: ilma järgi (sinine taevas, öösinine, hallid pilved, vihm, jäine lumi, torm, udu), telefoni seadete järgi või tume; Teksti värv: automaatne (must heledal taustal), valge või must. Tühista või Salvesta.
+Refreshing by itself	Värskendab ise
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Ilm, hoiatused ja maavärinad tulevad ise, ka suletud rakendusega (vidinate jaoks): iga 15 minuti järel, kui ekraan on sees, iga 30 minuti järel, kui ekraan on väljas, üldse mitte päikeseloojangu ja -tõusu vahel, kui ekraan on väljas (ootab, kuni ekraan süttib), ja kord tunnis, kui aku on alla 25% ja ei lae. Kui allalaadimine ebaõnnestub, ütlevad teade ja rida „! andmeid pole alates …“ kella all põhjuse (internetti pole, server ei vastanud, turvalise ühenduse viga, serveri viga…). Kui Open-Meteo on hõivatud (HTTP 503 „overloaded“) või ei vasta, tuleb prognoos MET Norwaylt (api.met.no, Norra meteoroloogiainstituut) ja kella all olev rida ütleb „· MET Norway“; pärast „hõivatud“ läheb rakendus 20 minutiks otse MET Norwayle. Kuni uued andmed tulevad, jääb ekraanile viimati salvestatud ilm.
+The ☰ menu	Menüü ☰
+Downloads the weather, the warnings and the earthquakes now.	Laadib ilma, hoiatused ja maavärinad kohe alla.
+The same as the town button.	Sama mis linna nupp.
+Switches between Celsius and Fahrenheit.	Vahetab Celsiuse ja Fahrenheiti vahel.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Vahetab kella 24 tunni ja 12 tunni (AM/PM) vahel.
+Light, Dark, or Automatic (phone sensor).	Hele, Tume või Automaatne (telefoni andur).
+Screen on ON / OFF	Ekraan sees SEES / VÄLJAS
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	SEES: ekraan jääb sisse, kui rakendus on avatud. VÄLJAS: see kustub pärast telefoni ajalõppu.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Loendis on inglise keel ja selle riigi ametlikud keeled, kus telefon on (SIM-kaardi või mobiilsidevõrgu järgi; ilma nendeta näidatud linna järgi). Esimesel käivitamisel võtab rakendus telefoni keele, kui see tal on. Rakendus räägib kõiki ELi ametlikke keeli ja ukraina keelt.
+Location On / Off	Asukoht sees / väljas
+Turns automatic location on or off (the same as the location button).	Lülitab automaatse asukoha sisse või välja (sama mis asukoha nupp).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Selline leht nagu see, ülal sulgemisnupuga: vähemalt magnituudiga 3 maavärinad viimase 7 päeva jooksul sinu riigis, seejärel viimase 48 tunni omad Euroopa Liidus, Ukrainas ja Moldovas. Iga rida: aeg, koht, magnituud, sügavus ja kaugus sinu linnast. EMSC-lt; seda saab kerida.
+Notifications ON / OFF	Teavitused SEES / VÄLJAS
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Teavitused ainult: vihma või lume algus (või algus tunni jooksul; uuesti alles pärast 3 kuiva tundi), uus ilmahoiatus sinu linnale ja vähemalt magnituudiga 3 maavärin sinu riigis. Iga sündmus ainult üks kord, ka suletud rakendusega. Rakendus küsib neid esimesel käivitamisel; kui keeldud, küsib uuesti alles pärast uuendust, mitte kunagi igal käivitamisel. Kui telefon ei näita enam oma küsimust (pärast kahte keeldumist), avab nupp telefoni seaded, kus sa need lubad.
+Night clock ON / OFF	Öökell SEES / VÄLJAS
+Turns the night clock on or off.	Lülitab öökella sisse või välja.
+The settings of a widget on the home screen (with several, choose which first).	Avakuva vidina seaded (kui neid on mitu, vali kõigepealt, milline).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Kõik, mida rakendus tegi, koos kellaajaga: andurid, puudutused ja žestid, asukoht, andmete allalaadimised (ja miks mõni ebaõnnestus), taustal värskendused ja vidinad (suurus, mille telefon neile annab, näidatud paigutus). Hoiab 5 päeva, iga päev uus fail; vanemate päevade vead jäävad veel 10 päevaks jaotisse Vead. Ülal: telefon (mudel, Android, One UI) ja rakenduse versioon. Loe seda siin, Jaga (WhatsApp, Drive, e-post…) või Salvesta telefoni.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Otsib GitHubist uut versiooni. Esimesel korral (ja iga kord, kuni nõustud) selgitab, et uuendused tulevad GitHubist, mitte Google Playst, ja küsib sinu nõusolekut; valikuga „Mitte praegu“ ütleb teade, et rakendus ei uuene. Midagi ei paigaldata enne, kui puudutad Uuenda ja kinnitad telefoni paigaldajas.
+This page.	See leht.
+About the app, the data it uses, and what's new in each version.	Teave rakenduse, selle kasutatavate andmete ja iga versiooni uudiste kohta.
+What's new	Mis on uut
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Tume teema kasutab Claude'i rakenduse värve. Font: Liberation Sans.
+Installed version: v	Paigaldatud versioon: v
+Favourites	Lemmikud
+Choose the county	Vali maakond
+Other countries	Teised riigid
+‹  Back	‹  Tagasi
+‹  Back to the counties	‹  Tagasi maakondade juurde
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Avakuval pole Meteo Alarmi vidinat. Hoia avakuval vaba kohta › Vidinad › Meteo Alarm.
+Which widget?	Milline vidin?
+Change	Muuda
+Background	Taust
+Colours	Värvid
+Text colour	Teksti värv
+Cancel	Tühista
+  (as in the app)	  (nagu rakenduses)
+Transparency: 	Läbipaistvus: 
+Match the phone's settings	Telefoni seadete järgi
+By the weather	Ilma järgi
+White	Valge
+Black	Must
+As in the app	Nagu rakenduses
+Choose the county / country…	Vali maakond / riik…
+County / country	Maakond / riik
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Play Protecti hoiatusest: Google võib öelda, et rakendus „võib olla kahjulik“. Ta teeb seda, sest rakendus ei tule Google Playst, selle arendaja pole Google'is registreeritud ja see saab ise oma uuendusi paigaldada (aadressilt github.com/viorelrb-alt/meteo-alarm-android). Rakendus ei tee midagi muud. Kui Play Protecti aken ilmub, puuduta „Rohkem üksikasju“ (kui on näha), siis „Paigalda skannimata“ (või „Paigalda ikkagi“).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Uuenduste saamiseks: ava ☰ › Kontrolli uuendusi ja anna küsimisel oma nõusolek.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm ei tule Google Playst. Selle uued versioonid avaldatakse GitHubis (github.com/viorelrb-alt/meteo-alarm-android) ja rakendus uuendab end sealt: kontrollib umbes kord nädalas (või kui valid Kontrolli uuendusi), näitab, mis on uut, ja alles kui puudutad Uuenda, laadib uue versiooni alla ja avab telefoni paigaldaja, kus kinnitad uuesti.\n\nKas lubad rakendusel nii uueneda? Ilma sinu nõusolekuta ei otsi rakendus uuendusi ega laadi midagi alla; võid nõustuda hiljem menüüs ☰ › Kontrolli uuendusi.
+Updates from GitHub	Uuendused GitHubist
+I agree	Nõustun
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Ilma sinu nõusolekuta rakendus ei uuene. Võid meelt muuta igal ajal menüüs ☰ › Kontrolli uuendusi.
+Checking GitHub for a new version…	Otsin GitHubist uut versiooni…
+No version published yet.	Ühtegi versiooni pole veel avaldatud.
+Could not check for updates. Is the internet on?	Uuendusi ei saanud kontrollida. Kas internet on sees?
+You have the latest version, v	Sul on uusim versioon, v
+Installed: v	Paigaldatud: v
+New: v	Uus: v
+New version: v	Uus versioon: v
+Update	Uuenda
+Downloading…	Laadin alla…
+Hide	Peida
+Downloading… 	Laadin alla… 
+The download failed. Is the internet on?	Allalaadimine ebaõnnestus. Kas internet on sees?
+The installer could not be opened.	Paigaldajat ei saanud avada.
+no internet (server not found)	internetti pole (serverit ei leitud)
+the server did not answer in time	server ei vastanud õigel ajal
+no connection	ühendust pole
+secure connection error: 	turvalise ühenduse viga: 
+internet not allowed for the app	internet pole rakendusele lubatud
+server error 	serveri viga 
+network error: 	võrguviga: 
+data error: 	andmete viga: 
+⌃  more  ⌃	⌃  veel  ⌃
+⌄  more  ⌄	⌄  veel  ⌄
+Open the app	Ava rakendus
+WARNING!	HOIATUS!
+Sunrise at 	Päikesetõus kell 
+Sunset at 	Päikeseloojang kell 
+Weather, warnings and earthquakes	Ilm, hoiatused ja maavärinad
+Rain or snow starting, new weather warnings, earthquakes in your country.	Vihma või lume algus, uued ilmahoiatused, maavärinad sinu riigis.
+Snow	Lumi
+Rain	Vihm
+It is snowing in 	Sajab lund: 
+It is raining in 	Sajab vihma: 
+Snow is expected within the hour in 	Lund on oodata tunni jooksul: 
+Rain is expected within the hour in 	Vihma on oodata tunni jooksul: 
+Warning	Hoiatus
+Earthquake M	Maavärin M
+probably felt: 	tõenäoliselt tunti: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Teavitused on sees: vihm või lumi, ilmahoiatused ja maavärinad sinu riigis.
+EARTHQUAKE	MAAVÄRIN
+Felt here: 	Tunti siin: 
+ (estimate)	 (hinnang)
+Magnitude: 	Magnituud: 
+Time: 	Aeg: 
+Region: 	Piirkond: 
+Depth: 	Sügavus: 
+Epicentre: 	Epitsenter: 
+ from 	 kaugus 
+In 	Kohas 
+Probably felt, intensity 	Tõenäoliselt tunti, intensiivsus 
+Probably not felt here.	Siin tõenäoliselt ei tuntud.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Hinnatud magnituudi ja koldekauguse põhjal (EMS-98 skaala); EMSC ei avalda iga linna tajumisteateid.
+All in the last 24 h	Kõik viimase 24 h jooksul
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Allikas: EMSC (seismicportal.eu), magnituud 3 ja üle, viimased 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potentsiaalselt ohtlik ilm (aastaajale tavaline, kuid kohati tugevam). Ole väljas ettevaatlik.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Ohtlik, tugev ilm. Ole väga ettevaatlik, jälgi prognoosi ja järgi ametiasutuste nõuandeid.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Väga ohtlik, väga tugev ilm. Võta tarvitusele kaitsemeetmed ja järgi ametiasutuste juhiseid.
+In force now, until 	Kehtib praegu, kuni 
+From 	Alates 
+ until 	 kuni 
+Source: MeteoAlarm (the national weather service), for 	Allikas: MeteoAlarm (riiklik ilmateenistus), piirkond 
+Stay away from trees, poles and scaffolding; secure loose objects.	Hoia eemale puudest, postidest ja tellingutest; kinnita lahtised esemed.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Võimalikud välk, paduvihm, rahe ja tuulepuhangud; otsi varju siseruumides.
+Avoid flooded roads and river banks.	Väldi üleujutatud teid ja jõekaldaid.
+Slippery roads; drive only if you must, with winter equipment.	Libedad teed; sõida ainult vajadusel, talvevarustusega.
+Low visibility; drive slowly with the fog lights on.	Halb nähtavus; sõida aeglaselt, udutuled sees.
+Avoid the sun between 11 and 18, drink plenty of water.	Väldi päikest kella 11–18, joo palju vett.
+Dress warmly and limit time outdoors.	Riietu soojalt ja piira õues viibimist.
+Do not light fires outdoors.	Ära tee õues tuld.
+H	K
+MOON	KUU
+HUMIDITY	NIISKUS
+AIR QUALITY	ÕHUKVALITEET
+PRESSURE	RÕHK
+WIND	TUUL
+VISIBILITY	NÄHTAVUS
+COMPASS	KOMPASS
+Moonrise	Kuutõus
+Moonset	Kuuloojang
+relative humidity	suhteline niiskus
+Good	Hea
+Fair	Rahuldav
+Moderate	Mõõdukas
+Poor	Halb
+Very poor	Väga halb
+Extremely poor	Äärmiselt halb
+Poor (fog)	Halb (udu)
+Very good	Väga hea
+steady	püsiv
+↓ falling fast	↓ langeb kiiresti
+↓ falling	↓ langeb
+↑ rising fast	↑ tõuseb kiiresti
+↑ rising	↑ tõuseb
+no compass	kompassi pole
+Tap to leave the night clock	Puuduta, et öökellast väljuda
+until	kuni
+now	nüüd
+Rain from	Vihm alates
+max	maks
+Snow from	Lumi alates
+Raining	Sajab vihma
+Snowing	Sajab lund
+updated	uuendatud
+no data since	andmeid pole alates
+Loading weather…	Laadin ilma…
+updating…	uuendan…
+Feels like	Tundub nagu
+Wind	Tuul
+High	Kõrgeim
+Low	Madalaim
+Charging	Laeb
+YELLOW	KOLLANE
+ORANGE	ORANŽ
+RED	PUNANE
+WARNING	HOIATUS
+TOMORROW	HOMME
+DAY AFTER	ÜLEHOMME
+NEXT 12 HOURS	JÄRGMISED 12 TUNDI
+WEATHER · NEXT HOURS	ILM · JÄRGMISED TUNNID
+RAIN	VIHM
+SNOW	LUMI
+PRECIPITATION	SADEMED
+snow	lumi
+rain	vihm
+no precipitation	sademeid pole
+SUN	PÄIKE
+UV INDEX	UV-INDEKS
+POLLEN	ÕIETOLM
+Sunrise	Päikesetõus
+Sunset	Päikeseloojang
+Very high	Väga kõrge
+Extreme	Äärmuslik
+no pollen	õietolmu pole
+no data	andmeid pole
+No precipitation	Sademeid pole
+SNOW ICE	LUMI JÄÄ
+THUNDERSTORM	ÄIKE
+FOG	UDU
+HIGH TEMPERATURE	KÕRGE TEMPERATUUR
+LOW TEMPERATURE	MADAL TEMPERATUUR
+COASTALEVENT	RANNIKUNÄHTUS
+FOREST FIRE	METSATULEKAHJU
+AVALANCHES	LAVIINID
+FLOODING	ÜLEUJUTUS
+RAIN FLOOD	VIHMAÜLEUJUTUS
+alder	lepp
+birch	kask
+olive	oliiv
+grasses	kõrrelised
+mugwort	puju
+ragweed	ambroosia
+Clear	Selge
+Mostly clear	Peamiselt selge
+Partly cloudy	Vahelduv pilvisus
+Overcast	Pilves
+Fog	Udu
+Drizzle	Uduvihm
+Freezing drizzle	Jäätuv uduvihm
+Light rain	Nõrk vihm
+Heavy rain	Tugev vihm
+Freezing rain	Jäätuv vihm
+Light snow	Nõrk lumesadu
+Heavy snow	Tugev lumesadu
+Snow grains	Lumeteraline
+Light showers	Nõrgad hood
+Showers	Hoovihm
+Heavy showers	Tugevad hood
+Snow showers	Lumehood
+Thunderstorm	Äike
+Thunderstorm, hail	Äike, rahe
+Code 	Kood 
+not felt	ei tuntud
+scarcely felt, only by a few people at rest	vaevu tuntav, ainult üksikud puhkeolekus
+weak, felt by a few people indoors	nõrk, tundsid üksikud siseruumides
+felt by many indoors; windows and doors rattle	tundsid paljud siseruumides; aknad ja uksed klirisevad
+strong, felt by nearly everyone; objects move, some are frightened	tugev, tundsid peaaegu kõik; esemed liiguvad, mõned ehmuvad
+slight damage (cracks in plaster); many run outdoors	kerged kahjustused (praod krohvis); paljud jooksevad õue
+damage to buildings; hard to stand	hoonete kahjustused; raske püsti seista
+heavy damage	rasked kahjustused
+destruction	purustused
+great destruction	suured purustused
+very great destruction	väga suured purustused
+complete destruction	täielik hävitus
+The phone's own language is in the list too.	Loendis on ka telefoni enda keel.

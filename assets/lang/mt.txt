@@ -1,0 +1,365 @@
+# Meteo Alarm Android · mt · English<TAB>translation
+Diary (log)	Djarju (log)
+Everything the app did in the last 5 days; older errors kept 10 days.	Kull ma għamlet l-app fl-aħħar 5 ijiem; żbalji eqdem jinżammu 10 ijiem.
+Share	Aqsam
+Save	Issejvja
+Close	Agħlaq
+log 	log 
+Send the log	Ibgħat il-log
+Log saved	Il-log ġie ssejvjat
+Could not save	Ma setax jiġi ssejvjat
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Din hija verżjoni tat-test ta' Meteo Alarm Android, magħmula minn Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Ebda data ma tinġabar: l-ebda kont, reklami jew statistika. Biex jinġab it-temp, jintbagħtu biss il-koordinati tal-post lil Open-Meteo (temp, polline) u, meta Open-Meteo jkun mgħobbi żżejjed, lil MET Norway (temp); it-twissijiet jiġu minn MeteoAlarm, it-terremoti minn EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Post: jintuża biex juri t-temp fejn tinsab, fil-bidu u darba fis-siegħa. Biex jissemma l-belt, il-koordinati jmorru għand OpenStreetMap (jew il-ġeokodifikatur tat-telefown), li jagħti wkoll il-konfini tal-belt. Il-bliet misjuba, flimkien ma' fejn kont, jinżammu biss fuq it-telefown. L-app titolbu bi spjegazzjoni fl-ewwel bidu; jekk tgħid le, tagħżel il-belt mil-lista u terġa' tistaqsi biss wara aġġornament.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Notifiki (biss jekk taqbel): xita jew borra li tibda, twissijiet ġodda tat-temp għall-belt tiegħek, terremoti ta' kobor 3 jew aktar f'pajjiżek. Kull avveniment darba. Ixgħelhom jew itfihom f'☰ › Notifiki.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Lingwa: fl-ewwel bidu l-lingwa tat-telefown (jekk l-app għandha, inkella l-Ingliż), imbagħad dik magħżula f'☰ › Lingwa.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Sensuri: l-app taqra l-istat tal-batterija (arloġġ tal-lejl waqt l-iċċarġjar), is-sensur tad-dawl tat-telefown b'☰ › Tema › Awtomatika (sensur tat-telefown), u l-kumpass, li jdawwar il-vleġġa tar-riħ mat-telefown. Dak li m'għandux it-telefown jintefa. Xejn ma joħroġ mit-telefown.
+Updates: 	Aġġornamenti: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Wara dan, darba fil-ġimgħa l-app tiċċekkja GitHub għal verżjoni ġdida u tistaqsi qabel tniżżilha.
+I understand	Fhimt
+This phone has no light sensor.	Dan it-telefown m'għandux sensur tad-dawl.
+Automatic theme (phone sensor): on	Tema awtomatika (sensur tat-telefown): mixgħula
+Automatic theme (phone sensor): off	Tema awtomatika (sensur tat-telefown): mitfija
+Dark theme	Tema skura
+Light theme	Tema ċara
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm tista' ssib il-belt tiegħek waħedha, għalhekk it-tbassir, it-twissijiet tat-temp u t-terremoti huma għall-post eżatt fejn tinsab, anke meta tivvjaġġa. Il-pożizzjoni tibqa' fuq it-telefown: tintuża biss biex tagħżel il-belt.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	It-telefown ma jurix aktar il-mistoqsija tiegħu, għalhekk ippermetti l-Post għal Meteo Alarm fis-settings tat-telefown (Permessi › Post).
+If you say no, choose the town from the list; the app asks again only after an update.	Jekk tgħid le, agħżel il-belt mil-lista; l-app terġa' tistaqsi biss wara aġġornament.
+Location	Post
+Open settings	Iftaħ is-settings
+Allow	Ippermetti
+Not now	Mhux issa
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm tista' tgħarrfek, anke meta tkun magħluqa: meta tibda jew se tibda fi żmien siegħa xita jew borra, meta tinħareġ twissija tat-temp għall-belt tiegħek, u meta jseħħ terremot ta' kobor 3 jew aktar f'pajjiżek. Kull avveniment darba biss, xejn aktar. Hekk issir taf fil-ħin, mingħajr ma tiftaħ l-app.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	It-telefown ma jħallix lill-app tibgħat notifiki, għalhekk ixgħel in-notifiki ta' Meteo Alarm fis-settings tat-telefown.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Tista' titfihom meta trid f'☰ › Notifiki. Jekk tgħid le, l-app terġa' tistaqsi biss wara aġġornament.
+Notifications	Notifiki
+Notifications ON	Notifiki MIXGĦULA
+Notifications OFF	Notifiki MITFIJA
+Without location access, choose the town from the list.	Mingħajr aċċess għall-post, agħżel il-belt mil-lista.
+Brightness: slide on the bar	Luminożità: żerżaq fuq il-virga
+Automatic location OFF	Post awtomatiku MITFI
+Automatic location ON	Post awtomatiku MIXGĦUL
+Looking for the exact position…	Qed infittex il-pożizzjoni eżatta…
+Added to the list: 	Miżjud mal-lista: 
+Location is off on the phone.	Il-post huwa mitfi fuq it-telefown.
+The position could not be found.	Il-pożizzjoni ma nstabitx.
+The town could not be found (internet?).	Il-belt ma nstabitx (internet?).
+The weather did not come: 	It-temp ma wasalx: 
+Already updating…	Diġà qed jaġġorna…
+The weather has just been updated	It-temp għadu kemm ġie aġġornat
+Just tried; try again in a few seconds	Għadu kemm ġie ppruvat; erġa' pprova fi ftit sekondi
+Updating the weather…	Qed naġġorna t-temp…
+Refresh	Aġġorna
+Town	Belt
+Temperature °C/°F	Temperatura °C/°F
+Clock 12/24	Arloġġ 12/24
+Theme	Tema
+Screen on OFF	Skrin mixgħul MITFI
+Screen on ON	Skrin mixgħul MIXGĦUL
+Language	Lingwa
+Night clock OFF	Arloġġ tal-lejl MITFI
+Night clock ON	Arloġġ tal-lejl MIXGĦUL
+Location Off	Post mitfi
+Location On	Post mixgħul
+Earthquakes	Terremoti
+Widgets	Widgets
+Log	Log
+Check for updates	Iċċekkja għal aġġornamenti
+Help	Għajnuna
+About	Dwar
+24-hour clock	Arloġġ ta' 24 siegħa
+12-hour clock	Arloġġ ta' 12-il siegħa
+The screen stays on while the app is open	L-iskrin jibqa' mixgħul waqt li l-app tkun miftuħa
+The screen goes off after the phone's timeout	L-iskrin jintefa wara l-ħin tat-telefown
+While charging at night, the screen shows a big dim clock	Waqt l-iċċarġjar bil-lejl, l-iskrin juri arloġġ kbir u baxx
+Night clock off	Arloġġ tal-lejl mitfi
+Light	Ċara
+Dark	Skura
+Automatic	Awtomatika
+Last 7 days · 	L-aħħar 7 ijiem · 
+Downloading from EMSC…	Qed inniżżel minn EMSC…
+The list could not be downloaded. Is the internet on?	Il-lista ma setgħetx titniżżel. L-internet mixgħul?
+No earthquake of magnitude 3 or more.	Ebda terremot ta' kobor 3 jew aktar.
+Last 48 hours · EU, Ukraine, Moldova	L-aħħar 48 siegħa · UE, l-Ukrajna, il-Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Sors: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), kobor 3 u aktar. "Inħass" hija stima fuq l-iskala EMS-98 mill-kobor u d-distanza mill-fokus.
+depth 	fond 
+from 	distanza 
+Probably felt in 	Probabbilment inħass f' 
+Probably not felt in 	Probabbilment ma nħassx f' 
+Updates	Aġġornamenti
+How to update	Kif taġġorna
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Il-kunsens jintalab hemm biss: darba jekk taqbel (minn hemm 'il quddiem l-app tiċċekkja wkoll waħedha darba fil-ġimgħa), kull darba sakemm tgħid le. Mingħajru l-app qatt ma tfittex aġġornamenti u ma tniżżel xejn.
+Buttons on the screen	Buttuni fuq l-iskrin
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Jiftaħ il-bliet: l-aħħar 3 tiegħek (favoriti) u l-kontej. Agħfas kontea, imbagħad il-belt.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Isib fejn tinsab u juri t-temp ta' dik il-belt; jerġa' jfittex kull siegħa. Il-bliet misjuba jinżammu fuq it-telefown ma' fejn kont, u l-belt murija tinbidel biss meta tkun barra l-konfini tagħha. Jaħdem f'pajjiżi oħra wkoll, bi twissijiet MeteoAlarm f'madwar 38 pajjiż Ewropew. Għafsa tixgħel il-post awtomatiku (il-buttuna mimlija, ifittex issa) jew titfih (il-buttuna vojta).
+Brightness	Luminożità
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Juri l-virga tal-luminożità fuq ix-xellug: żerżaq fuqha 'l fuq jew 'l isfel. Titlaq waħedha.
+Light / dark theme	Tema ċara / skura
+Over the brightness bar: switches between the light and the dark theme.	Fuq il-virga tal-luminożità: jaqleb bejn it-tema ċara u dik skura.
+Automatic theme (phone sensor)	Tema awtomatika (sensur tat-telefown)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Tema ċara meta jkun hemm dawl, tema skura fid-dlam. Mimlija waqt li tkun mixgħula.
+Phone without a sensor	Telefown mingħajr sensur
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	F'kull bidu l-app tiċċekkja s-sensuri tat-telefown (kumpass, dawl, aċċelerometru, prossimità, pressjoni, GPS) u tikteb fil-Log liema huma neqsin. Mingħajr sensur tad-dawl it-tema Awtomatika (sensur tat-telefown) hija griża u ma tagħmel xejn; mingħajr kumpass il-kaxxa tal-vleġġa tar-riħ hija moħbija.
+Location consent	Kunsens għall-post
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Fl-ewwel bidu l-app tispjega għaliex trid il-post (it-temp, it-twissijiet u t-terremoti għall-post eżatt fejn tinsab), imbagħad it-telefown jistaqsi. L-ewwel belt misjuba ssir il-belt murija u tiżdied mal-favoriti. Jekk tgħid le, tagħżel il-belt mil-lista, u l-app terġa' tistaqsi biss wara aġġornament; meta t-telefown ma jistaqsix aktar, il-buttuna tiftaħ is-settings tiegħu.
+Gestures	Ġesti
+Tap on the town's name	Għafsa fuq isem il-belt
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Jfittex darba bil-GPS, għal tbassir aħjar fejn tinsab; il-post awtomatiku jibqa' kif inhu.
+Pull down	Iġbed 'l isfel
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Iġbed l-iskrin 'l isfel u erħi: it-temp jiġi aġġornat. Jekk terġa' tiġbed waqt it-tniżżil, jew fi żmien 10 sekondi mill-aħħar tniżżil, ma jibdiex ieħor; avviż jgħid hekk.
+Left edge	Tarf tax-xellug
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Żerżaq 'il fuq jew 'l isfel qrib it-tarf tax-xellug (ftit 'il ġewwa minnu): tidher il-virga tal-luminożità, u ż-żerżiq fuqha jissettja l-luminożità.
+Wind arrow	Vleġġa tar-riħ
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Ħdejn ir-riħ: il-vleġġa turi lejn fejn jonfoħ ir-riħ, imdawra mat-telefown (kumpass); is-sinjal oranġjo huwa t-tramuntana.
+Night clock	Arloġġ tal-lejl
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Waqt li t-telefown jiċċarġja bil-lejl (min-nżul sat-tlugħ tax-xemx) u ħadd ma jmissu għal minuta: arloġġ kbir u baxx. Għafsa terġa' lura għal minuta.
+Warnings and earthquake	Twissijiet u terremot
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Taħt il-linja, ringiela waħda ta' kaxxi: l-ewwel it-terremot (meta kien hemm wieħed), imbagħad kaxxa għal kull kodiċi ta' twissija (aħmar, oranġjo, isfar). Tnejn joqogħdu fuq l-iskrin; b'aktar, ir-ringiela timxi waħedha kull 2 sekondi u terġa' tibda mill-ewwel. Tista' wkoll iżżerżaqha b'sebgħek. Agħfas kaxxa: ir-ringiela tieqaf għal 20 sekonda u bużżieqa turi d-dettalji b'ittri akbar (għal kodiċi: xi jfisser, kull twissija bil-perjodu u l-parir tagħha; għat-terremot: kobor, ħin, reġjun, fond, epiċentru u distanza, kif probabbilment inħass fil-belt tiegħek, u t-terremoti kollha tal-aħħar 24 siegħa).
+Earthquake box	Kaxxa tat-terremot
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Minn EMSC (European-Mediterranean Seismological Centre): terremoti ta' kobor 3 jew aktar fl-aħħar 24 siegħa fil-pajjiż tal-belt tiegħek (dak li sab il-post). Il-kaxxa turi l-aktar wieħed qawwi: kobor u ħin, u kif inħass fil-belt tiegħek bħala stima fuq l-iskala EMS-98 (mill-kobor u d-distanza mill-fokus; EMSC ma tippubblikax ir-rapporti ta' kull belt). Tisparixxi wara 24 siegħa.
+Left / right on the boxes	Xellug / lemin fuq il-kaxxi
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Ir-ringiela tat-twissijiet, il-kaxxi tas-sigħat u l-ħamest ijiem (għada u l-4 ijiem ta' wara, tnejn kull darba) isegwu s-saba'. Il-graff Preċipitazzjoni · it-12-il siegħa li ġejjin jiġi l-ewwel fir-ringiela tas-sigħat, biss meta tkun mistennija xita jew borra.
+The row of boxes at the bottom	Ir-ringiela ta' kaxxi fil-qiegħ
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Żerżaqha lejn il-ġenb (orizzontali: 'il fuq u 'l isfel, tnejn tnejn, mingħajr il-kaxxa tar-riħ): Xemx (il-Qamar wara nżul ix-xemx, bit-tlugħ, in-nżul u l-fażi tiegħu), Indiċi UV, Polline, Umdità (waqt ix-xita), Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà u Kumpass.
+Home-screen widgets	Widgets tal-iskrin ewlieni
+Meteo Alarm widgets	Widgets ta' Meteo Alarm
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Żomm post vojt fuq l-iskrin ewlieni, agħżel Widgets, imbagħad Meteo Alarm: 2x2, 4x1, 4x2 u "kwalunkwe daqs", kull wieħed bid-dehra minn qabel tiegħu; imur fuq l-iskrin mill-ewwel, mingħajr tieqa tas-settings. Hemm tliet tqassimiet: 2x2 (kwadru: ikona, temperatura, belt, l-ewwel nżul jew tlugħ tax-xemx li ġej), 4x1 (strixxa baxxa, ukoll bis-sema) u 4x2 (wiesgħa, ukoll bl-ogħla / l-inqas u l-5 sigħat li ġejjin), flimkien ma' 2x1 żgħir (ikona u temperatura) għal oqfsa żgħar wisq għalihom. Żommu u kaxkar it-truf tiegħu: wiesa' (madwar 4 kolonni) u ringiela waħda = 4x1, wiesa' u ogħla = 4x2 (jibqa' 4x2 kemm tagħmlu għoli), dejjaq = 2x2, dejjaq u ringiela waħda = 2x1. Ir-ringieli u l-kolonni huma dawk tal-iskrin ewlieni tiegħek (fuq tablet ringiela hija ħafna ogħla milli fuq telefown), għalhekk l-istrixxa 4x1 taħdem hemm ukoll. Jimla l-wisa' tal-qafas; meta l-qafas ikun ogħla milli jeħtieġ it-tqassim, il-widget iżomm id-daqs tiegħu, fiċ-ċentru, bl-isfond warajh biss (il-bqija jibqa' trasparenti). Tqassim qatt ma jiċkien tant li t-testi jsiru żgħar wisq. B'twissijiet attivi ringiela "TWISSIJA!" turi tliet pilloli: isfar = griż griż isfar, oranġjo = griż oranġjo oranġjo, aħmar = kollha ħomor; żewġ kodiċijiet = l-agħar wieħed, griż, l-ieħor; tliet kodiċijiet = aħmar oranġjo isfar. Għafsa tiftaħ l-app.
+Widget settings	Settings tal-widget
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Żomm il-widget › Settings (Android 12 u aktar ġodda), jew ☰ › Widgets. Kull widget għandu tiegħu: dehra minn qabel; il-belt (bħal fl-app, jew oħra b'Ibdel); Sfond mixgħul / mitfi u kemm trasparenti; Kuluri: skont it-temp (sema blu, blu tal-lejl, sħab griż, xita, borra silġ, maltempata, ċpar), skont is-settings tat-telefown, jew skur; Kulur tat-test: awtomatiku (iswed fuq sfond ċar), abjad jew iswed. Ikkanċella jew Issejvja.
+Refreshing by itself	Jaġġorna waħdu
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	It-temp, it-twissijiet u t-terremoti jiġu waħedhom, anke bl-app magħluqa (għall-widgets): kull 15-il minuta waqt li l-iskrin ikun mixgħul, kull 30 minuta bl-iskrin mitfi, xejn bejn nżul u tlugħ ix-xemx waqt li l-iskrin ikun mitfi (tistenna sakemm jixgħel l-iskrin), u kull siegħa meta l-batterija tkun taħt il-25% u mhux qed tiċċarġja. Meta tniżżil ifalli, avviż u l-linja "! l-ebda data minn …" taħt l-arloġġ jgħidu għaliex (l-ebda internet, is-server ma weġibx, żball tal-konnessjoni sigura, żball tas-server…). Meta Open-Meteo jkun okkupat (HTTP 503 "overloaded") jew ma jweġibx, it-tbassir jiġi minn MET Norway (api.met.no, l-istitut meteoroloġiku Norveġiż) u l-linja taħt l-arloġġ tgħid "· MET Norway"; wara "okkupat" l-app tmur dritt għand MET Norway għal 20 minuta. Sakemm tasal data ġdida, l-aħħar temp issejvjat jibqa' fuq l-iskrin.
+The ☰ menu	Il-menu ☰
+Downloads the weather, the warnings and the earthquakes now.	Iniżżel it-temp, it-twissijiet u t-terremoti issa.
+The same as the town button.	L-istess bħall-buttuna tal-belt.
+Switches between Celsius and Fahrenheit.	Jaqleb bejn Celsius u Fahrenheit.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Jaqleb l-arloġġ bejn 24 siegħa u 12-il siegħa (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Ċara, Skura, jew Awtomatika (sensur tat-telefown).
+Screen on ON / OFF	Skrin mixgħul MIXGĦUL / MITFI
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	MIXGĦUL: l-iskrin jibqa' mixgħul waqt li l-app tkun miftuħa. MITFI: jintefa wara l-ħin tat-telefown.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Il-lista fiha l-Ingliż u l-lingwi uffiċjali tal-pajjiż fejn jinsab it-telefown (mill-karta SIM jew min-netwerk mobbli; mingħajrhom, mill-belt murija). Fl-ewwel bidu l-app tieħu l-lingwa tat-telefown, jekk għandha. L-app titkellem il-lingwi uffiċjali kollha tal-UE u l-Ukren.
+Location On / Off	Post mixgħul / mitfi
+Turns automatic location on or off (the same as the location button).	Jixgħel jew jitfi l-post awtomatiku (l-istess bħall-buttuna tal-post).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Paġna bħal din, b'buttuna tal-għeluq fuq: it-terremoti ta' kobor 3 jew aktar tal-aħħar 7 ijiem f'pajjiżek, imbagħad dawk tal-aħħar 48 siegħa fl-Unjoni Ewropea, l-Ukrajna u l-Moldova. Kull ringiela: il-ħin, il-post, il-kobor, il-fond u d-distanza mill-belt tiegħek. Minn EMSC; tiskrollja.
+Notifications ON / OFF	Notifiki MIXGĦULA / MITFIJA
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Notifiki biss għal: xita jew borra li tibda (jew se tibda fi żmien siegħa; mill-ġdid biss wara 3 sigħat xotti), twissija ġdida tat-temp għall-belt tiegħek, u terremot ta' kobor 3 jew aktar f'pajjiżek. Kull avveniment darba biss, anke bl-app magħluqa. L-app titlobhom fl-ewwel bidu; jekk tgħid le, terġa' tistaqsi biss wara aġġornament, qatt f'kull bidu. Meta t-telefown ma jurix aktar il-mistoqsija tiegħu (wara żewġ rifjuti), il-buttuna tiftaħ is-settings tat-telefown, fejn tippermettihom.
+Night clock ON / OFF	Arloġġ tal-lejl MIXGĦUL / MITFI
+Turns the night clock on or off.	Jixgħel jew jitfi l-arloġġ tal-lejl.
+The settings of a widget on the home screen (with several, choose which first).	Is-settings ta' widget fuq l-iskrin ewlieni (b'diversi, agħżel liema l-ewwel).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Kull ma għamlet l-app, bil-ħin: is-sensuri, l-għafsiet u l-ġesti, il-post, it-tniżżil tad-data (u għaliex wieħed falla), l-aġġornamenti fl-isfond u l-widgets (id-daqs li jagħtihom it-telefown, it-tqassim muri). Iżomm 5 ijiem, fajl ġdid kuljum; l-iżbalji tal-ijiem eqdem jibqgħu 10 ijiem oħra f'taqsima Żbalji. Fuq: it-telefown (mudell, Android, One UI) u l-verżjoni tal-app. Aqrah hawn, Aqsmu (WhatsApp, Drive, e-mail…) jew Issejvjah fuq it-telefown.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Ifittex verżjoni ġdida fuq GitHub. L-ewwel darba (u kull darba sakemm taqbel) jispjega li l-aġġornamenti jiġu minn GitHub, mhux minn Google Play, u jitlob il-kunsens tiegħek; b'"Mhux issa" avviż jgħid li l-app mhux se tiġi aġġornata. Xejn ma jiġi installat sakemm tagħfas Aġġorna u tikkonferma fl-installatur tat-telefown.
+This page.	Din il-paġna.
+About the app, the data it uses, and what's new in each version.	Dwar l-app, id-data li tuża, u x'hemm ġdid f'kull verżjoni.
+What's new	X'hemm ġdid
+The dark theme uses the Claude app colours. Font: Liberation Sans.	It-tema skura tuża l-kuluri tal-app Claude. Font: Liberation Sans.
+Installed version: v	Verżjoni installata: v
+Favourites	Favoriti
+Choose the county	Agħżel il-kontea
+Other countries	Pajjiżi oħra
+‹  Back	‹  Lura
+‹  Back to the counties	‹  Lura għall-kontej
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	M'hemmx widget ta' Meteo Alarm fuq l-iskrin ewlieni. Żomm post vojt fuq l-iskrin ewlieni › Widgets › Meteo Alarm.
+Which widget?	Liema widget?
+Change	Ibdel
+Background	Sfond
+Colours	Kuluri
+Text colour	Kulur tat-test
+Cancel	Ikkanċella
+  (as in the app)	  (bħal fl-app)
+Transparency: 	Trasparenza: 
+Match the phone's settings	Skont is-settings tat-telefown
+By the weather	Skont it-temp
+White	Abjad
+Black	Iswed
+As in the app	Bħal fl-app
+Choose the county / country…	Agħżel il-kontea / il-pajjiż…
+County / country	Kontea / pajjiż
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Dwar it-twissija ta' Play Protect: Google jista' jgħid li l-app "tista' tkun ta' ħsara". Jagħmel hekk għax l-app ma tiġix minn Google Play, l-iżviluppatur tagħha mhuwiex irreġistrat ma' Google, u tista' tinstalla l-aġġornamenti tagħha stess (minn github.com/viorelrb-alt/meteo-alarm-android). L-app ma tagħmel xejn aktar. Meta tidher it-tieqa ta' Play Protect, agħfas "Aktar dettalji" (jekk tidher), imbagħad "Installa mingħajr skennjar" (jew "Installa xorta").
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Biex tieħu l-aġġornamenti: iftaħ ☰ › Iċċekkja għal aġġornamenti u, meta tintalab, agħti l-kunsens tiegħek.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm ma tiġix minn Google Play. Il-verżjonijiet ġodda tagħha jiġu ppubblikati fuq GitHub (github.com/viorelrb-alt/meteo-alarm-android), u l-app taġġorna lilha nfisha minn hemm: tiċċekkja madwar darba fil-ġimgħa (jew meta tagħżel Iċċekkja għal aġġornamenti), turi x'hemm ġdid, u biss meta tagħfas Aġġorna tniżżel il-verżjoni l-ġdida u tiftaħ l-installatur tat-telefown, fejn terġa' tikkonferma.\n\nTippermetti lill-app taġġorna b'dan il-mod? Mingħajr il-kunsens tiegħek l-app ma tfittixx aġġornamenti u ma tniżżel xejn; tista' taqbel aktar tard minn ☰ › Iċċekkja għal aġġornamenti.
+Updates from GitHub	Aġġornamenti minn GitHub
+I agree	Naqbel
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Mingħajr il-kunsens tiegħek l-app mhux se tiġi aġġornata. Tista' tbiddel fehmtek meta trid minn ☰ › Iċċekkja għal aġġornamenti.
+Checking GitHub for a new version…	Qed niċċekkja GitHub għal verżjoni ġdida…
+No version published yet.	Ebda verżjoni għadha ma ġiet ippubblikata.
+Could not check for updates. Is the internet on?	Ma setgħux jiġu ċċekkjati l-aġġornamenti. L-internet mixgħul?
+You have the latest version, v	Għandek l-aħħar verżjoni, v
+Installed: v	Installata: v
+New: v	Ġdida: v
+New version: v	Verżjoni ġdida: v
+Update	Aġġorna
+Downloading…	Qed iniżżel…
+Hide	Aħbi
+Downloading… 	Qed iniżżel… 
+The download failed. Is the internet on?	It-tniżżil falla. L-internet mixgħul?
+The installer could not be opened.	L-installatur ma setax jinfetaħ.
+no internet (server not found)	l-ebda internet (server ma nstabx)
+the server did not answer in time	is-server ma weġibx fil-ħin
+no connection	l-ebda konnessjoni
+secure connection error: 	żball tal-konnessjoni sigura: 
+internet not allowed for the app	l-internet mhux permess għall-app
+server error 	żball tas-server 
+network error: 	żball tan-netwerk: 
+data error: 	żball tad-data: 
+⌃  more  ⌃	⌃  aktar  ⌃
+⌄  more  ⌄	⌄  aktar  ⌄
+Open the app	Iftaħ l-app
+WARNING!	TWISSIJA!
+Sunrise at 	Tlugħ ix-xemx fil- 
+Sunset at 	Nżul ix-xemx fil- 
+Weather, warnings and earthquakes	Temp, twissijiet u terremoti
+Rain or snow starting, new weather warnings, earthquakes in your country.	Xita jew borra li tibda, twissijiet ġodda tat-temp, terremoti f'pajjiżek.
+Snow	Borra
+Rain	Xita
+It is snowing in 	Qed tagħmel il-borra f' 
+It is raining in 	Qed tagħmel ix-xita f' 
+Snow is expected within the hour in 	Borra mistennija fi żmien siegħa f' 
+Rain is expected within the hour in 	Xita mistennija fi żmien siegħa f' 
+Warning	Twissija
+Earthquake M	Terremot M
+probably felt: 	probabbilment inħass: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	In-notifiki huma mixgħula: xita jew borra, twissijiet tat-temp u terremoti f'pajjiżek.
+EARTHQUAKE	TERREMOT
+Felt here: 	Inħass hawn: 
+ (estimate)	 (stima)
+Magnitude: 	Kobor: 
+Time: 	Ħin: 
+Region: 	Reġjun: 
+Depth: 	Fond: 
+Epicentre: 	Epiċentru: 
+ from 	 minn 
+In 	F' 
+Probably felt, intensity 	Probabbilment inħass, intensità 
+Probably not felt here.	Probabbilment ma nħassx hawn.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Stmat mill-kobor u d-distanza mill-fokus (skala EMS-98); EMSC ma tippubblikax ir-rapporti ta' kif inħass f'kull belt.
+All in the last 24 h	Kollha fl-aħħar 24 siegħa
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Sors: EMSC (seismicportal.eu), kobor 3 u aktar, l-aħħar 24 siegħa.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Temp potenzjalment perikoluż (normali għall-istaġun, iżda lokalment aktar intens). Oqgħod attent barra.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Temp perikoluż ta' intensità għolja. Oqgħod attent ħafna, segwi t-tbassir u l-pariri tal-awtoritajiet.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Temp perikoluż ħafna ta' intensità għolja ħafna. Ieħu miżuri ta' protezzjoni u segwi l-istruzzjonijiet tal-awtoritajiet.
+In force now, until 	Fis-seħħ issa, sa 
+From 	Minn 
+ until 	 sa 
+Source: MeteoAlarm (the national weather service), for 	Sors: MeteoAlarm (is-servizz nazzjonali tat-temp), għal 
+Stay away from trees, poles and scaffolding; secure loose objects.	Żomm 'il bogħod minn siġar, arbli u scaffolding; waħħal oġġetti maħlula.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Sajjetti, xita qawwija, silġ u buffuri possibbli; fittex kenn ġewwa.
+Avoid flooded roads and river banks.	Evita toroq mgħarrqa u xtut tax-xmajjar.
+Slippery roads; drive only if you must, with winter equipment.	Toroq jiżolqu; issuq biss jekk trid, b'tagħmir tax-xitwa.
+Low visibility; drive slowly with the fog lights on.	Viżibbiltà baxxa; issuq bil-mod bid-dwal taċ-ċpar mixgħula.
+Avoid the sun between 11 and 18, drink plenty of water.	Evita x-xemx bejn il-11 u t-18, ixrob ħafna ilma.
+Dress warmly and limit time outdoors.	Ilbes sħun u naqqas il-ħin barra.
+Do not light fires outdoors.	Tqabbadx nirien barra.
+H	T
+MOON	QAMAR
+HUMIDITY	UMDITÀ
+AIR QUALITY	KWALITÀ TAL-ARJA
+PRESSURE	PRESSJONI
+WIND	RIĦ
+VISIBILITY	VIŻIBBILTÀ
+COMPASS	KUMPASS
+Moonrise	Tlugħ il-qamar
+Moonset	Nżul il-qamar
+relative humidity	umdità relattiva
+Good	Tajba
+Fair	Mhux ħażina
+Moderate	Moderata
+Poor	Ħażina
+Very poor	Ħażina ħafna
+Extremely poor	Estremament ħażina
+Poor (fog)	Ħażina (ċpar)
+Very good	Tajba ħafna
+steady	stabbli
+↓ falling fast	↓ nieżla malajr
+↓ falling	↓ nieżla
+↑ rising fast	↑ tielgħa malajr
+↑ rising	↑ tielgħa
+no compass	l-ebda kumpass
+Tap to leave the night clock	Agħfas biex toħroġ mill-arloġġ tal-lejl
+until	sa
+now	issa
+Rain from	Xita minn
+max	mass
+Snow from	Borra minn
+Raining	Qed tagħmel ix-xita
+Snowing	Qed tagħmel il-borra
+updated	aġġornat
+no data since	l-ebda data minn
+Loading weather…	Qed intella' t-temp…
+updating…	qed jaġġorna…
+Feels like	Tinħass
+Wind	Riħ
+High	Għolja
+Low	Baxxa
+Charging	Qed jiċċarġja
+YELLOW	ISFAR
+ORANGE	ORANĠJO
+RED	AĦMAR
+WARNING	TWISSIJA
+TOMORROW	GĦADA
+DAY AFTER	PITGĦADA
+NEXT 12 HOURS	IT-12-IL SIEGĦA LI ĠEJJIN
+WEATHER · NEXT HOURS	TEMP · IS-SIGĦAT LI ĠEJJIN
+RAIN	XITA
+SNOW	BORRA
+PRECIPITATION	PREĊIPITAZZJONI
+snow	borra
+rain	xita
+no precipitation	l-ebda preċipitazzjoni
+SUN	XEMX
+UV INDEX	INDIĊI UV
+POLLEN	POLLINE
+Sunrise	Tlugħ ix-xemx
+Sunset	Nżul ix-xemx
+Very high	Għoli ħafna
+Extreme	Estrem
+no pollen	l-ebda polline
+no data	l-ebda data
+No precipitation	L-ebda preċipitazzjoni
+SNOW ICE	BORRA SILĠ
+THUNDERSTORM	MALTEMPATA BIR-RGĦUD
+FOG	ĊPAR
+HIGH TEMPERATURE	TEMPERATURA GĦOLJA
+LOW TEMPERATURE	TEMPERATURA BAXXA
+COASTALEVENT	AVVENIMENT KOSTALI
+FOREST FIRE	NIRIEN TAL-FORESTI
+AVALANCHES	VALANGI
+FLOODING	GĦARGĦAR
+RAIN FLOOD	GĦARGĦAR MIX-XITA
+alder	alnu
+birch	betula
+olive	żebbuġa
+grasses	ħaxix
+mugwort	artemisja
+ragweed	ambroża
+Clear	Ċar
+Mostly clear	L-aktar ċar
+Partly cloudy	Parzjalment imsaħħab
+Overcast	Imsaħħab
+Fog	Ċpar
+Drizzle	Rixx
+Freezing drizzle	Rixx iffriżat
+Light rain	Xita ħafifa
+Heavy rain	Xita qawwija
+Freezing rain	Xita ffriżata
+Light snow	Borra ħafifa
+Heavy snow	Borra qawwija
+Snow grains	Żerriegħa tal-borra
+Light showers	Xita ħafifa f'daqqiet
+Showers	Xita f'daqqiet
+Heavy showers	Xita qawwija f'daqqiet
+Snow showers	Borra f'daqqiet
+Thunderstorm	Maltempata bir-rgħud
+Thunderstorm, hail	Maltempata bir-rgħud, silġ
+Code 	Kodiċi 
+not felt	ma nħassx
+scarcely felt, only by a few people at rest	bilkemm inħass, biss minn ftit nies mistrieħa
+weak, felt by a few people indoors	dgħajjef, inħass minn ftit nies ġewwa
+felt by many indoors; windows and doors rattle	inħass minn ħafna ġewwa; it-twieqi u l-bibien iċekċku
+strong, felt by nearly everyone; objects move, some are frightened	qawwi, inħass minn kważi kulħadd; l-oġġetti jiċċaqilqu, xi wħud jibżgħu
+slight damage (cracks in plaster); many run outdoors	ħsara żgħira (xquq fil-kisi); ħafna jiġru barra
+damage to buildings; hard to stand	ħsara lill-bini; diffiċli toqgħod bilwieqfa
+heavy damage	ħsara kbira
+destruction	qerda
+great destruction	qerda kbira
+very great destruction	qerda kbira ħafna
+complete destruction	qerda totali
+The phone's own language is in the list too.	Il-lingwa tat-telefown stess tinsab ukoll fil-lista.

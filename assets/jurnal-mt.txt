@@ -1,0 +1,9 @@
+v2.00 · 4 ta' Novembru 2026
+- Lingwa: l-app issa titkellem il-lingwi uffiċjali kollha tal-UE u l-Ukren (anke l-Għajnuna). Fl-ewwel bidu tieħu l-lingwa tat-telefown (l-Ingliż jekk l-app m'għandhiex); imbagħad dik magħżula f'☰ › Lingwa. Il-lista turi biss l-Ingliż, il-lingwa tat-telefown u l-lingwi uffiċjali tal-pajjiż fejn jinsab it-telefown.
+- ☰ › Terremoti: paġna bit-terremoti ta' kobor 3 jew aktar tal-aħħar 7 ijiem f'pajjiżek, imbagħad dawk tal-aħħar 48 siegħa fl-UE, l-Ukrajna u l-Moldova (ħin, post, kobor, fond, distanza).
+- Notifiki (biss bil-kunsens tiegħek): xita jew borra li tibda, twissijiet ġodda tat-temp għall-belt tiegħek, terremoti ta' kobor 3 jew aktar f'pajjiżek. Kull avveniment darba biss. Mixgħula jew mitfija f'☰ › Notifiki.
+- Il-post u n-notifiki jintalbu bi spjegazzjoni ħbiberija fl-ewwel bidu; jekk tgħid le, l-app terġa' tistaqsi biss wara aġġornament. Meta t-telefown ma jurix aktar il-mistoqsija tiegħu, buttuna tiftaħ is-settings tiegħu.
+- Fl-ewwel bidu, il-belt li sab il-post issir il-belt murija u tiżdied mal-favoriti.
+- Telefowns mingħajr kumpass jew sensur tad-dawl: il-buttuni u l-kaxxi relatati jintfew; il-Log jelenka s-sensuri f'kull bidu.
+- Widgets: l-istrixxa 4x1 issa taħdem ukoll fuq it-tablets (jingħaddu r-ringieli tal-iskrin ewlieni, mhux daqsijiet fissi).
+- Imsewwi: fil-bidu wara aġġornament it-temp kien jitniżżel darbtejn; il-Log issa jikteb il-lingwa magħżula u kull belt magħżula, u l-ftuħ tas-settings tal-widget darba biss.

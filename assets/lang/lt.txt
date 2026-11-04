@@ -1,0 +1,365 @@
+# Meteo Alarm Android · lt · English<TAB>translation
+Diary (log)	Dienoraštis (žurnalas)
+Everything the app did in the last 5 days; older errors kept 10 days.	Viskas, ką programėlė darė per paskutines 5 dienas; senesnės klaidos saugomos 10 dienų.
+Share	Bendrinti
+Save	Išsaugoti
+Close	Uždaryti
+log 	žurnalas 
+Send the log	Siųsti žurnalą
+Log saved	Žurnalas išsaugotas
+Could not save	Nepavyko išsaugoti
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Tai bandomoji Meteo Alarm Android versija, sukurta pagal Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Duomenys nerenkami: jokios paskyros, reklamų ar statistikos. Orams gauti į Open-Meteo (orai, žiedadulkės) ir, kai Open-Meteo perkrautas, į MET Norway (orai) siunčiamos tik vietos koordinatės; įspėjimai gaunami iš MeteoAlarm, žemės drebėjimai iš EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Vieta: naudojama orams ten, kur esate, rodyti paleidžiant ir kartą per valandą. Miestui įvardyti koordinatės siunčiamos į OpenStreetMap (arba telefono geokoderį), kuris pateikia ir miesto ribą. Rasti miestai ir tai, kur buvote, saugomi tik telefone. Programėlė jos paprašo su paaiškinimu pirmą kartą paleidus; jei atsisakote, miestą renkatės iš sąrašo, ir ji vėl klausia tik po atnaujinimo.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Pranešimai (tik jei sutinkate): prasidedantis lietus ar sniegas, nauji orų įspėjimai jūsų miestui, 3 ar didesnio magnitudo žemės drebėjimai jūsų šalyje. Kiekvienas įvykis kartą. Įjungti ar išjungti ☰ › Pranešimai.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Kalba: pirmą kartą paleidus telefono kalba (jei programėlė ją turi, kitaip anglų), vėliau pasirinkta ☰ › Kalba.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Jutikliai: programėlė skaito akumuliatoriaus būseną (naktinis laikrodis įkraunant), telefono šviesos jutiklį su ☰ › Tema › Automatinė (telefono jutiklis) ir kompasą, kuris pasuka vėjo rodyklę kartu su telefonu. Ko telefonas neturi, išjungiama. Niekas nepalieka telefono.
+Updates: 	Atnaujinimai: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Po to kartą per savaitę programėlė tikrina GitHub, ar yra nauja versija, ir paklausia prieš atsisiųsdama.
+I understand	Supratau
+This phone has no light sensor.	Šis telefonas neturi šviesos jutiklio.
+Automatic theme (phone sensor): on	Automatinė tema (telefono jutiklis): įjungta
+Automatic theme (phone sensor): off	Automatinė tema (telefono jutiklis): išjungta
+Dark theme	Tamsi tema
+Light theme	Šviesi tema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm gali pati rasti jūsų miestą, todėl prognozė, orų įspėjimai ir žemės drebėjimai yra būtent tai vietai, kurioje esate, ir keliaujant. Vieta lieka telefone: ji naudojama tik miestui pasirinkti.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefonas neberodo savo klausimo, todėl leiskite Meteo Alarm naudoti vietą telefono nustatymuose (Leidimai › Vieta).
+If you say no, choose the town from the list; the app asks again only after an update.	Jei atsisakote, pasirinkite miestą iš sąrašo; programėlė vėl paklaus tik po atnaujinimo.
+Location	Vieta
+Open settings	Atidaryti nustatymus
+Allow	Leisti
+Not now	Ne dabar
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm gali jums pranešti, net kai uždaryta: kai prasideda arba per valandą prasidės lietus ar sniegas, kai jūsų miestui paskelbiamas orų įspėjimas ir kai jūsų šalyje įvyksta 3 ar didesnio magnitudo žemės drebėjimas. Kiekvienas įvykis tik kartą, nieko daugiau. Taip sužinote laiku, neatidarę programėlės.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefonas neleidžia programėlei siųsti pranešimų, todėl įjunkite Meteo Alarm pranešimus telefono nustatymuose.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Galite juos bet kada išjungti ☰ › Pranešimai. Jei atsisakote, programėlė vėl paklaus tik po atnaujinimo.
+Notifications	Pranešimai
+Notifications ON	Pranešimai ĮJUNGTI
+Notifications OFF	Pranešimai IŠJUNGTI
+Without location access, choose the town from the list.	Be prieigos prie vietos pasirinkite miestą iš sąrašo.
+Brightness: slide on the bar	Ryškumas: braukite juosta
+Automatic location OFF	Automatinė vieta IŠJUNGTA
+Automatic location ON	Automatinė vieta ĮJUNGTA
+Looking for the exact position…	Ieškoma tikslios vietos…
+Added to the list: 	Pridėta į sąrašą: 
+Location is off on the phone.	Vieta telefone išjungta.
+The position could not be found.	Vietos rasti nepavyko.
+The town could not be found (internet?).	Miesto rasti nepavyko (internetas?).
+The weather did not come: 	Orai negauti: 
+Already updating…	Jau atnaujinama…
+The weather has just been updated	Orai ką tik atnaujinti
+Just tried; try again in a few seconds	Ką tik bandyta; bandykite po kelių sekundžių
+Updating the weather…	Atnaujinami orai…
+Refresh	Atnaujinti
+Town	Miestas
+Temperature °C/°F	Temperatūra °C/°F
+Clock 12/24	Laikrodis 12/24
+Theme	Tema
+Screen on OFF	Ekranas įjungtas IŠJ.
+Screen on ON	Ekranas įjungtas ĮJ.
+Language	Kalba
+Night clock OFF	Naktinis laikrodis IŠJ.
+Night clock ON	Naktinis laikrodis ĮJ.
+Location Off	Vieta išj.
+Location On	Vieta įj.
+Earthquakes	Žemės drebėjimai
+Widgets	Valdikliai
+Log	Žurnalas
+Check for updates	Tikrinti atnaujinimus
+Help	Pagalba
+About	Apie
+24-hour clock	24 valandų laikrodis
+12-hour clock	12 valandų laikrodis
+The screen stays on while the app is open	Ekranas lieka įjungtas, kol programėlė atidaryta
+The screen goes off after the phone's timeout	Ekranas užgęsta po telefono laukimo laiko
+While charging at night, the screen shows a big dim clock	Naktį įkraunant ekrane rodomas didelis blankus laikrodis
+Night clock off	Naktinis laikrodis išjungtas
+Light	Šviesi
+Dark	Tamsi
+Automatic	Automatinė
+Last 7 days · 	Paskutinės 7 dienos · 
+Downloading from EMSC…	Atsisiunčiama iš EMSC…
+The list could not be downloaded. Is the internet on?	Sąrašo atsisiųsti nepavyko. Ar įjungtas internetas?
+No earthquake of magnitude 3 or more.	Nėra 3 ar didesnio magnitudo žemės drebėjimų.
+Last 48 hours · EU, Ukraine, Moldova	Paskutinės 48 valandos · ES, Ukraina, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Šaltinis: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitudas 3 ir daugiau. „Juntamas“ yra įvertis EMS-98 skalėje pagal magnitudą ir atstumą iki židinio.
+depth 	gylis 
+from 	atstumas 
+Probably felt in 	Tikriausiai juntamas: 
+Probably not felt in 	Tikriausiai nejuntamas: 
+Updates	Atnaujinimai
+How to update	Kaip atnaujinti
+ The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.	 Sutikimo klausiama tik ten: kartą, jei sutinkate (nuo tada programėlė ir pati tikrina kartą per savaitę), kiekvieną kartą, kol atsisakote. Be jo programėlė niekada neieško atnaujinimų ir nieko nesiunčia.
+Buttons on the screen	Ekrano mygtukai
+Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.	Atidaro miestus: paskutinius 3 (mėgstamiausius) ir apskritis. Bakstelėkite apskritį, tada miestą.
+Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).	Nustato, kur esate, ir rodo to miesto orus; tikrina vėl kas valandą. Rasti miestai saugomi telefone kartu su tuo, kur buvote, o rodomas miestas pasikeičia tik tada, kai esate už jo ribos. Veikia ir kitose šalyse, su MeteoAlarm įspėjimais maždaug 38 Europos šalyse. Bakstelėjimas įjungia automatinę vietą (mygtukas užpildytas, ieško iškart) arba išjungia (mygtukas tuščias).
+Brightness	Ryškumas
+Shows the brightness bar on the left: slide on it up or down. It goes away by itself.	Rodo ryškumo juostą kairėje: braukite ja aukštyn ar žemyn. Ji dingsta pati.
+Light / dark theme	Šviesi / tamsi tema
+Over the brightness bar: switches between the light and the dark theme.	Virš ryškumo juostos: perjungia šviesią ir tamsią temą.
+Automatic theme (phone sensor)	Automatinė tema (telefono jutiklis)
+Light theme when there is light, dark theme in the dark. Filled while it is on.	Šviesi tema, kai šviesu, tamsi tema tamsoje. Užpildytas, kol įjungta.
+Phone without a sensor	Telefonas be jutiklio
+At every start the app checks the phone's sensors (compass, light, accelerometer, proximity, pressure, GPS) and writes in the Log which are missing. Without a light sensor the Automatic (phone sensor) theme is gray and does nothing; without a compass the wind arrow box is hidden.	Kiekvieną kartą paleidus programėlė tikrina telefono jutiklius (kompasą, šviesos, akselerometrą, artumo, slėgio, GPS) ir įrašo į žurnalą, kurių trūksta. Be šviesos jutiklio tema Automatinė (telefono jutiklis) yra pilka ir nieko nedaro; be kompaso vėjo rodyklės langelis paslėptas.
+Location consent	Sutikimas dėl vietos
+At the first start the app explains why it wants the location (the weather, the warnings and the earthquakes for the exact place where you are), then the phone asks. The first town found becomes the town shown and is added to the favourites. If you say no, you choose the town from the list, and the app asks again only after an update; when the phone no longer asks, the button opens its settings.	Pirmą kartą paleidus programėlė paaiškina, kodėl jai reikia vietos (orai, įspėjimai ir žemės drebėjimai būtent ten, kur esate), tada klausia telefonas. Pirmas rastas miestas tampa rodomu ir pridedamas prie mėgstamiausių. Jei atsisakote, miestą renkatės iš sąrašo, o programėlė vėl klausia tik po atnaujinimo; kai telefonas nebeklausia, mygtukas atidaro jo nustatymus.
+Gestures	Gestai
+Tap on the town's name	Bakstelėjimas ant miesto pavadinimo
+Looks once with the GPS, for a better forecast where you are; automatic location stays as it is.	Vieną kartą patikrina su GPS, kad prognozė būtų tikslesnė ten, kur esate; automatinė vieta lieka kaip buvo.
+Pull down	Patraukite žemyn
+Pull the screen down and let go: the weather is refreshed. Pulling again while it downloads, or within 10 seconds of the last download, does not start another one; a notice says so.	Patraukite ekraną žemyn ir paleiskite: orai atnaujinami. Dar kartą patraukus siuntimo metu arba per 10 sekundžių po paskutinio siuntimo, naujas nepradedamas; pranešimas tai pasako.
+Left edge	Kairysis kraštas
+Slide up or down near the left edge (a little in from it): the brightness bar appears, and sliding on it sets the brightness.	Braukite aukštyn ar žemyn prie kairiojo krašto (šiek tiek nuo jo į vidų): atsiranda ryškumo juosta, o braukiant ja nustatomas ryškumas.
+Wind arrow	Vėjo rodyklė
+Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.	Šalia vėjo: rodyklė rodo, kur pučia vėjas, pasukta kartu su telefonu (kompasas); oranžinė žymė yra šiaurė.
+Night clock	Naktinis laikrodis
+While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.	Kai telefonas naktį kraunamas (nuo saulėlydžio iki saulėtekio) ir niekas jo neliečia minutę: didelis blankus laikrodis. Bakstelėjimas grąžina minutei.
+Warnings and earthquake	Įspėjimai ir žemės drebėjimas
+Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).	Po linija viena langelių eilė: pirmiausia žemės drebėjimas (kai jis buvo), tada po langelį kiekvienam įspėjimo kodui (raudonas, oranžinis, geltonas). Ekrane telpa du; kai jų daugiau, eilė pati slenka kas 2 sekundes ir vėl pradeda nuo pirmo. Ją galima slinkti ir pirštu. Bakstelėkite langelį: eilė sustoja 20 sekundžių, o burbulas rodo išsamiau didesnėmis raidėmis (kodui: ką jis reiškia, kiekvienas įspėjimas su laikotarpiu ir patarimu; žemės drebėjimui: magnitudas, laikas, regionas, gylis, epicentras ir atstumas, kaip jis tikriausiai buvo juntamas jūsų mieste, ir visi paskutinių 24 valandų žemės drebėjimai).
+Earthquake box	Žemės drebėjimo langelis
+From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.	Iš EMSC (European-Mediterranean Seismological Centre): 3 ar didesnio magnitudo žemės drebėjimai per paskutines 24 valandas jūsų miesto šalyje (kurią rado vieta). Langelis rodo stipriausią: magnitudą ir laiką bei tai, kaip jis buvo juntamas jūsų mieste, kaip įvertį EMS-98 skalėje (pagal magnitudą ir atstumą iki židinio; EMSC neskelbia kiekvieno miesto pranešimų). Jis dingsta po 24 valandų.
+Left / right on the boxes	Kairėn / dešinėn ant langelių
+The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.	Įspėjimų eilė, valandų langeliai ir penkios dienos (rytoj ir kitos 4 dienos, po dvi) seka pirštą. Diagrama Krituliai · kitos 12 valandų yra pirma valandų eilėje, tik kai tikimasi lietaus ar sniego.
+The row of boxes at the bottom	Apatinė langelių eilė
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.	Slinkite ją į šonus (gulsčiai: aukštyn ir žemyn, po du, be vėjo langelio): Saulė (po saulėlydžio Mėnulis su patekėjimu, nusileidimu ir faze), UV indeksas, Žiedadulkės, Drėgmė (kol lyja), Oro kokybė, Slėgis, Vėjas, Matomumas ir Kompasas.
+Home-screen widgets	Pradžios ekrano valdikliai
+Meteo Alarm widgets	Meteo Alarm valdikliai
+Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2 and "any size", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (it stays 4x2 however tall you make it), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row "WARNING!" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.	Palaikykite laisvą vietą pradžios ekrane, pasirinkite Valdikliai, tada Meteo Alarm: 2x2, 4x1, 4x2 ir „bet kokio dydžio“, kiekvienas su peržiūra; jis iškart atsiranda ekrane, be nustatymų lango. Yra trys išdėstymai: 2x2 (kvadratas: piktograma, temperatūra, miestas, kitas saulėlydis ar saulėtekis), 4x1 (žema juosta, taip pat su dangumi) ir 4x2 (platus, taip pat su aukščiausia / žemiausia ir kitomis 5 valandomis), be to, mažas 2x1 (piktograma ir temperatūra) jiems per mažiems rėmeliams. Palaikykite jį ir tempkite jo kraštus: platus (apie 4 stulpelius) ir viena eilė = 4x1, platus ir aukštesnis = 4x2 (lieka 4x2, kad ir kaip aukštai jį padarytumėte), siauras = 2x2, siauras ir viena eilė = 2x1. Eilės ir stulpeliai yra jūsų pradžios ekrano (planšetėje eilė daug aukštesnė nei telefone), todėl 4x1 juosta veikia ir ten. Jis užpildo rėmelio plotį; kai rėmelis aukštesnis, nei reikia išdėstymui, valdiklis išlaiko dydį, centre, su fonu tik už jo (likusi dalis lieka permatoma). Išdėstymas niekada nesumažinamas tiek, kad tekstai taptų per maži. Kai galioja įspėjimai, eilutė „ĮSPĖJIMAS!“ rodo tris piliules: geltonas = pilka pilka geltona, oranžinis = pilka oranžinė oranžinė, raudonas = visos raudonos; du kodai = blogesnis, pilka, kitas; trys kodai = raudona oranžinė geltona. Bakstelėjimas atidaro programėlę.
+Widget settings	Valdiklio nustatymai
+Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. Cancel or Save.	Palaikykite valdiklį › Nustatymai (Android 12 ir naujesnė) arba ☰ › Valdikliai. Kiekvienas valdiklis turi savo: peržiūrą; miestą (kaip programėlėje arba kitą su Keisti); Fonas įjungtas / išjungtas ir kiek permatomas; Spalvos: pagal orus (mėlynas dangus, nakties mėlyna, pilki debesys, lietus, ledinis sniegas, audra, rūkas), pagal telefono nustatymus arba tamsios; Teksto spalva: automatinė (juoda ant šviesaus fono), balta arba juoda. Atšaukti arba Išsaugoti.
+Refreshing by itself	Atsinaujina pats
+The weather, the warnings and the earthquakes come by themselves, also with the app closed (for the widgets): every 15 minutes while the screen is on, every 30 minutes with the screen off, not at all between sunset and sunrise while the screen is off (it waits for the screen to come on), and every hour when the battery is below 25% and not charging. When a download fails, a notice and the line "! no data since …" under the clock say why (no internet, the server did not answer, secure connection error, server error…). When Open-Meteo is busy (HTTP 503 "overloaded") or does not answer, the forecast comes from MET Norway (api.met.no, the Norwegian weather institute) and the line under the clock says "· MET Norway"; after a "busy" the app goes straight to MET Norway for 20 minutes. Until new data comes, the last saved weather stays on the screen.	Orai, įspėjimai ir žemės drebėjimai ateina patys, net uždarius programėlę (valdikliams): kas 15 minučių, kai ekranas įjungtas, kas 30 minučių, kai išjungtas, visai ne nuo saulėlydžio iki saulėtekio, kai ekranas išjungtas (laukia, kol ekranas įsijungs), ir kartą per valandą, kai akumuliatorius žemiau 25% ir nekraunamas. Kai atsisiuntimas nepavyksta, pranešimas ir eilutė „! nėra duomenų nuo …“ po laikrodžiu nurodo priežastį (nėra interneto, serveris neatsakė, saugaus ryšio klaida, serverio klaida…). Kai Open-Meteo užimtas (HTTP 503 „overloaded“) arba neatsako, prognozė gaunama iš MET Norway (api.met.no, Norvegijos meteorologijos institutas), o eilutė po laikrodžiu sako „· MET Norway“; po „užimta“ programėlė 20 minučių eina tiesiai į MET Norway. Kol ateis nauji duomenys, ekrane lieka paskutiniai išsaugoti orai.
+The ☰ menu	Meniu ☰
+Downloads the weather, the warnings and the earthquakes now.	Dabar atsisiunčia orus, įspėjimus ir žemės drebėjimus.
+The same as the town button.	Tas pats kaip miesto mygtukas.
+Switches between Celsius and Fahrenheit.	Perjungia Celsijų ir Farenheitą.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Perjungia laikrodį tarp 24 valandų ir 12 valandų (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Šviesi, Tamsi arba Automatinė (telefono jutiklis).
+Screen on ON / OFF	Ekranas įjungtas ĮJ. / IŠJ.
+ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ĮJ.: ekranas lieka įjungtas, kol programėlė atidaryta. IŠJ.: jis užgęsta po telefono laukimo laiko.
+The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Sąraše yra anglų kalba ir šalies, kurioje yra telefonas, oficialiosios kalbos (pagal SIM kortelę arba mobilųjį tinklą; be jų pagal rodomą miestą). Pirmą kartą paleidus programėlė paima telefono kalbą, jei ją turi. Programėlė kalba visomis oficialiosiomis ES kalbomis ir ukrainiečių kalba.
+Location On / Off	Vieta įj. / išj.
+Turns automatic location on or off (the same as the location button).	Įjungia arba išjungia automatinę vietą (tas pats kaip vietos mygtukas).
+A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.	Toks puslapis kaip šis, su uždarymo mygtuku viršuje: 3 ar didesnio magnitudo žemės drebėjimai per paskutines 7 dienas jūsų šalyje, tada per paskutines 48 valandas Europos Sąjungoje, Ukrainoje ir Moldovoje. Kiekviena eilutė: laikas, vieta, magnitudas, gylis ir atstumas nuo jūsų miesto. Iš EMSC; galima slinkti.
+Notifications ON / OFF	Pranešimai ĮJ. / IŠJ.
+Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.	Pranešimai tik apie: prasidedantį lietų ar sniegą (arba prasidėsiantį per valandą; vėl tik po 3 sausų valandų), naują orų įspėjimą jūsų miestui ir 3 ar didesnio magnitudo žemės drebėjimą jūsų šalyje. Kiekvienas įvykis tik kartą, net uždarius programėlę. Programėlė jų paprašo pirmą kartą paleidus; jei atsisakote, vėl klausia tik po atnaujinimo, niekada kiekvieną kartą paleidus. Kai telefonas neberodo savo klausimo (po dviejų atsisakymų), mygtukas atidaro telefono nustatymus, kur juos leidžiate.
+Night clock ON / OFF	Naktinis laikrodis ĮJ. / IŠJ.
+Turns the night clock on or off.	Įjungia arba išjungia naktinį laikrodį.
+The settings of a widget on the home screen (with several, choose which first).	Pradžios ekrano valdiklio nustatymai (jei jų keli, pirmiausia pasirinkite kurį).
+Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.	Viskas, ką programėlė darė, su laiku: jutikliai, bakstelėjimai ir gestai, vieta, duomenų atsisiuntimai (ir kodėl kuris nepavyko), atnaujinimai fone ir valdikliai (dydis, kurį telefonas jiems suteikia, rodomas išdėstymas). Saugo 5 dienas, kas dieną naujas failas; senesnių dienų klaidos lieka dar 10 dienų skiltyje Klaidos. Viršuje: telefonas (modelis, Android, One UI) ir programėlės versija. Skaitykite čia, Bendrinkite (WhatsApp, Drive, el. paštas…) arba Išsaugokite telefone.
+Looks for a new version on GitHub. The first time (and every time until you agree) it explains that the updates come from GitHub, not Google Play, and asks for your consent; with "Not now" a notice says the app will not update. Nothing is installed until you tap Update and confirm in the phone's installer.	Ieško naujos versijos GitHub. Pirmą kartą (ir kiekvieną kartą, kol sutiksite) paaiškina, kad atnaujinimai ateina iš GitHub, ne iš Google Play, ir prašo jūsų sutikimo; pasirinkus „Ne dabar“, pranešimas sako, kad programėlė nebus atnaujinta. Niekas neįdiegiama, kol nebakstelėsite Atnaujinti ir nepatvirtinsite telefono diegimo programoje.
+This page.	Šis puslapis.
+About the app, the data it uses, and what's new in each version.	Apie programėlę, jos naudojamus duomenis ir kiekvienos versijos naujoves.
+What's new	Kas naujo
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Tamsi tema naudoja Claude programėlės spalvas. Šriftas: Liberation Sans.
+Installed version: v	Įdiegta versija: v
+Favourites	Mėgstamiausi
+Choose the county	Pasirinkite apskritį
+Other countries	Kitos šalys
+‹  Back	‹  Atgal
+‹  Back to the counties	‹  Atgal į apskritis
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Pradžios ekrane nėra Meteo Alarm valdiklio. Palaikykite laisvą vietą pradžios ekrane › Valdikliai › Meteo Alarm.
+Which widget?	Kuris valdiklis?
+Change	Keisti
+Background	Fonas
+Colours	Spalvos
+Text colour	Teksto spalva
+Cancel	Atšaukti
+  (as in the app)	  (kaip programėlėje)
+Transparency: 	Permatomumas: 
+Match the phone's settings	Pagal telefono nustatymus
+By the weather	Pagal orus
+White	Balta
+Black	Juoda
+As in the app	Kaip programėlėje
+Choose the county / country…	Pasirinkite apskritį / šalį…
+County / country	Apskritis / šalis
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Apie Play Protect įspėjimą: Google gali teigti, kad programėlė „gali būti kenkėjiška“. Taip yra todėl, kad programėlė gaunama ne iš Google Play, jos kūrėjas neregistruotas Google ir ji gali pati įdiegti savo atnaujinimus (iš github.com/viorelrb-alt/meteo-alarm-android). Programėlė nieko kito nedaro. Kai pasirodo Play Protect langas, bakstelėkite „Daugiau informacijos“ (jei rodoma), tada „Įdiegti nenuskaičius“ (arba „Vis tiek įdiegti“).
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Kad gautumėte atnaujinimus: atidarykite ☰ › Tikrinti atnaujinimus ir, kai paklaus, duokite sutikimą.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm gaunama ne iš Google Play. Jos naujos versijos skelbiamos GitHub (github.com/viorelrb-alt/meteo-alarm-android), o programėlė atsinaujina iš ten: tikrina maždaug kartą per savaitę (arba kai pasirenkate Tikrinti atnaujinimus), parodo, kas naujo, ir tik bakstelėjus Atnaujinti atsisiunčia naują versiją bei atidaro telefono diegimo programą, kur patvirtinate dar kartą.\n\nAr leidžiate programėlei taip atsinaujinti? Be jūsų sutikimo programėlė neieško atnaujinimų ir nieko nesiunčia; sutikti galite vėliau ☰ › Tikrinti atnaujinimus.
+Updates from GitHub	Atnaujinimai iš GitHub
+I agree	Sutinku
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Be jūsų sutikimo programėlė nebus atnaujinta. Galite persigalvoti bet kada ☰ › Tikrinti atnaujinimus.
+Checking GitHub for a new version…	Ieškoma naujos versijos GitHub…
+No version published yet.	Dar nepaskelbta jokia versija.
+Could not check for updates. Is the internet on?	Nepavyko patikrinti atnaujinimų. Ar įjungtas internetas?
+You have the latest version, v	Turite naujausią versiją, v
+Installed: v	Įdiegta: v
+New: v	Nauja: v
+New version: v	Nauja versija: v
+Update	Atnaujinti
+Downloading…	Atsisiunčiama…
+Hide	Slėpti
+Downloading… 	Atsisiunčiama… 
+The download failed. Is the internet on?	Atsisiųsti nepavyko. Ar įjungtas internetas?
+The installer could not be opened.	Nepavyko atidaryti diegimo programos.
+no internet (server not found)	nėra interneto (serveris nerastas)
+the server did not answer in time	serveris neatsakė laiku
+no connection	nėra ryšio
+secure connection error: 	saugaus ryšio klaida: 
+internet not allowed for the app	internetas programėlei neleidžiamas
+server error 	serverio klaida 
+network error: 	tinklo klaida: 
+data error: 	duomenų klaida: 
+⌃  more  ⌃	⌃  daugiau  ⌃
+⌄  more  ⌄	⌄  daugiau  ⌄
+Open the app	Atidaryti programėlę
+WARNING!	ĮSPĖJIMAS!
+Sunrise at 	Saulėtekis 
+Sunset at 	Saulėlydis 
+Weather, warnings and earthquakes	Orai, įspėjimai ir žemės drebėjimai
+Rain or snow starting, new weather warnings, earthquakes in your country.	Prasidedantis lietus ar sniegas, nauji orų įspėjimai, žemės drebėjimai jūsų šalyje.
+Snow	Sniegas
+Rain	Lietus
+It is snowing in 	Sninga: 
+It is raining in 	Lyja: 
+Snow is expected within the hour in 	Per valandą tikimasi sniego: 
+Rain is expected within the hour in 	Per valandą tikimasi lietaus: 
+Warning	Įspėjimas
+Earthquake M	Žemės drebėjimas M
+probably felt: 	tikriausiai juntamas: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Pranešimai įjungti: lietus ar sniegas, orų įspėjimai ir žemės drebėjimai jūsų šalyje.
+EARTHQUAKE	ŽEMĖS DREBĖJIMAS
+Felt here: 	Juntamas čia: 
+ (estimate)	 (įvertis)
+Magnitude: 	Magnitudas: 
+Time: 	Laikas: 
+Region: 	Regionas: 
+Depth: 	Gylis: 
+Epicentre: 	Epicentras: 
+ from 	 atstumas 
+In 	Vietovėje 
+Probably felt, intensity 	Tikriausiai juntamas, intensyvumas 
+Probably not felt here.	Čia tikriausiai nejuntamas.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Įvertinta pagal magnitudą ir atstumą iki židinio (EMS-98 skalė); EMSC neskelbia kiekvieno miesto pojūčių pranešimų.
+All in the last 24 h	Visi per paskutines 24 h
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Šaltinis: EMSC (seismicportal.eu), magnitudas 3 ir daugiau, paskutinės 24 h.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potencialiai pavojingi orai (įprasti sezonui, bet vietomis intensyvesni). Būkite atsargūs lauke.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Pavojingi, intensyvūs orai. Būkite labai atsargūs, sekite prognozę ir laikykitės institucijų patarimų.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Labai pavojingi, labai intensyvūs orai. Imkitės apsaugos priemonių ir vykdykite institucijų nurodymus.
+In force now, until 	Galioja dabar, iki 
+From 	Nuo 
+ until 	 iki 
+Source: MeteoAlarm (the national weather service), for 	Šaltinis: MeteoAlarm (nacionalinė meteorologijos tarnyba), regionui 
+Stay away from trees, poles and scaffolding; secure loose objects.	Laikykitės atokiau nuo medžių, stulpų ir pastolių; pritvirtinkite laisvus daiktus.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Galimi žaibai, liūtys, kruša ir gūsiai; slėpkitės patalpose.
+Avoid flooded roads and river banks.	Venkite užlietų kelių ir upių krantų.
+Slippery roads; drive only if you must, with winter equipment.	Slidūs keliai; važiuokite tik būtinai, su žiemos įranga.
+Low visibility; drive slowly with the fog lights on.	Prastas matomumas; važiuokite lėtai su įjungtais rūko žibintais.
+Avoid the sun between 11 and 18, drink plenty of water.	Venkite saulės nuo 11 iki 18 val., gerkite daug vandens.
+Dress warmly and limit time outdoors.	Šiltai apsirenkite ir ribokite buvimą lauke.
+Do not light fires outdoors.	Nekurkite ugnies lauke.
+H	Š
+MOON	MĖNULIS
+HUMIDITY	DRĖGMĖ
+AIR QUALITY	ORO KOKYBĖ
+PRESSURE	SLĖGIS
+WIND	VĖJAS
+VISIBILITY	MATOMUMAS
+COMPASS	KOMPASAS
+Moonrise	Mėnulio patekėjimas
+Moonset	Mėnulio nusileidimas
+relative humidity	santykinė drėgmė
+Good	Gera
+Fair	Patenkinama
+Moderate	Vidutinė
+Poor	Prasta
+Very poor	Labai prasta
+Extremely poor	Itin prasta
+Poor (fog)	Prastas (rūkas)
+Very good	Labai geras
+steady	stabilus
+↓ falling fast	↓ greitai krinta
+↓ falling	↓ krinta
+↑ rising fast	↑ greitai kyla
+↑ rising	↑ kyla
+no compass	nėra kompaso
+Tap to leave the night clock	Bakstelėkite, kad išeitumėte iš naktinio laikrodžio
+until	iki
+now	dabar
+Rain from	Lietus nuo
+max	maks.
+Snow from	Sniegas nuo
+Raining	Lyja
+Snowing	Sninga
+updated	atnaujinta
+no data since	nėra duomenų nuo
+Loading weather…	Įkeliami orai…
+updating…	atnaujinama…
+Feels like	Jaučiasi kaip
+Wind	Vėjas
+High	Aukščiausia
+Low	Žemiausia
+Charging	Kraunama
+YELLOW	GELTONAS
+ORANGE	ORANŽINIS
+RED	RAUDONAS
+WARNING	ĮSPĖJIMAS
+TOMORROW	RYTOJ
+DAY AFTER	PORYT
+NEXT 12 HOURS	KITOS 12 VALANDŲ
+WEATHER · NEXT HOURS	ORAI · KITOS VALANDOS
+RAIN	LIETUS
+SNOW	SNIEGAS
+PRECIPITATION	KRITULIAI
+snow	sniegas
+rain	lietus
+no precipitation	kritulių nėra
+SUN	SAULĖ
+UV INDEX	UV INDEKSAS
+POLLEN	ŽIEDADULKĖS
+Sunrise	Saulėtekis
+Sunset	Saulėlydis
+Very high	Labai didelis
+Extreme	Ekstremalus
+no pollen	žiedadulkių nėra
+no data	nėra duomenų
+No precipitation	Kritulių nėra
+SNOW ICE	SNIEGAS LEDAS
+THUNDERSTORM	PERKŪNIJA
+FOG	RŪKAS
+HIGH TEMPERATURE	AUKŠTA TEMPERATŪRA
+LOW TEMPERATURE	ŽEMA TEMPERATŪRA
+COASTALEVENT	PAKRANTĖS REIŠKINYS
+FOREST FIRE	MIŠKO GAISRAS
+AVALANCHES	LAVINOS
+FLOODING	POTVYNIS
+RAIN FLOOD	LIETAUS POTVYNIS
+alder	alksnis
+birch	beržas
+olive	alyvmedis
+grasses	žolės
+mugwort	kietis
+ragweed	ambrozija
+Clear	Giedra
+Mostly clear	Daugiausia giedra
+Partly cloudy	Debesuota su pragiedruliais
+Overcast	Apsiniaukę
+Fog	Rūkas
+Drizzle	Dulksna
+Freezing drizzle	Lijundra dulksna
+Light rain	Nedidelis lietus
+Heavy rain	Smarkus lietus
+Freezing rain	Lijundra
+Light snow	Nedidelis sniegas
+Heavy snow	Smarkus sniegas
+Snow grains	Sniego kruopos
+Light showers	Silpni trumpi lietūs
+Showers	Trumpi lietūs
+Heavy showers	Smarkūs trumpi lietūs
+Snow showers	Trumpas sniegas
+Thunderstorm	Perkūnija
+Thunderstorm, hail	Perkūnija, kruša
+Code 	Kodas 
+not felt	nejuntamas
+scarcely felt, only by a few people at rest	vos juntamas, tik keliems ramybėje
+weak, felt by a few people indoors	silpnas, juntamas keliems patalpose
+felt by many indoors; windows and doors rattle	juntamas daugeliui patalpose; barška langai ir durys
+strong, felt by nearly everyone; objects move, some are frightened	stiprus, juntamas beveik visiems; daiktai juda, kai kurie išsigąsta
+slight damage (cracks in plaster); many run outdoors	nedideli pažeidimai (įtrūkimai tinke); daugelis išbėga laukan
+damage to buildings; hard to stand	pastatų pažeidimai; sunku išstovėti
+heavy damage	sunkūs pažeidimai
+destruction	griovimai
+great destruction	dideli griovimai
+very great destruction	labai dideli griovimai
+complete destruction	visiškas sugriovimas
+The phone's own language is in the list too.	Sąraše yra ir paties telefono kalba.

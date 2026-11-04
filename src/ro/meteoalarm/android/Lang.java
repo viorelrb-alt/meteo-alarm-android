@@ -12,7 +12,7 @@ import ro.meteoalarm.android.core.Tr;
 /**
  * The language on the phone (Viorel 2026-11-04): at the first start the phone's own language when
  * the app has it (else English); later the one chosen in ☰ › Language. The list offers only
- * English, Romanian, the phone's own language and the official languages of the country the phone
+ * English, the phone's own language and the official languages of the country the phone
  * is in (from the SIM or the mobile network, else the town shown, else the phone's settings), plus
  * the one in use.
  */
@@ -85,11 +85,10 @@ final class Lang {
 		return c == null ? "" : c.toLowerCase();
 	}
 
-	/** The languages offered: English, Romanian, the country's own, and the one in use. */
+	/** The languages offered: English, the phone's own, the country's own, and the one in use (Romanian only as one of them). */
 	static List<String> offered(Context ctx) {
 		List<String> l = new ArrayList<String>();
 		l.add("en");
-		l.add("ro");
 		// The phone's own language, when the app has it (Viorel 2026-11-04).
 		String sys = system();
 		if (Tr.known(sys) && !l.contains(sys)) l.add(sys);

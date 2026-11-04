@@ -1,0 +1,9 @@
+v2.00 · 4. november 2026
+- Sprog: appen taler nu alle EU's officielle sprog og ukrainsk (også Hjælp). Ved første start tager den telefonens sprog (engelsk, hvis appen ikke har det); derefter det valgte i ☰ › Sprog. Listen viser kun engelsk, telefonens sprog og de officielle sprog i det land, telefonen er i.
+- ☰ › Jordskælv: en side med jordskælvene med styrke 3 eller mere fra de sidste 7 dage i dit land, derefter dem fra de sidste 48 timer i EU, Ukraine og Moldova (tid, sted, styrke, dybde, afstand).
+- Notifikationer (kun med dit samtykke): regn eller sne, der begynder, nye vejrvarsler for din by, jordskælv med styrke 3 eller mere i dit land. Hver hændelse kun én gang. Til eller fra i ☰ › Notifikationer.
+- Placering og notifikationer bedes der om med en venlig forklaring ved første start; siger du nej, spørger appen først igen efter en opdatering. Når telefonen ikke længere viser sit spørgsmål, åbner en knap dens indstillinger.
+- Ved første start bliver byen, som placeringen fandt, den viste og tilføjes favoritterne.
+- Telefoner uden kompas eller lyssensor: de tilhørende knapper og felter slås fra; Loggen opregner sensorerne ved hver start.
+- Widgets: 4x1-striben virker nu også på tablets (startskærmens rækker tælles, ikke faste størrelser).
+- Rettet: ved start efter en opdatering blev vejret hentet to gange; Loggen skriver nu det valgte sprog og hver valgt by, og åbningen af widgetindstillingerne kun én gang.
