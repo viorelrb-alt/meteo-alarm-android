@@ -1,3 +1,7 @@
+v2.30 · 4 november 2026
+- Delar för att använda appen i USA.
+- ☰ › Temperatur °C/°F: när du lämnar °F frågar appen om du vill byta till metersystemet; med °F visas lufttrycket i inHg och avstånd i miles.
+
 v2.22 · 4 november 2026
 - Samsung-telefoner med Auto Blocker: stäng av den innan du installerar eller uppdaterar appen (Inställningar › Säkerhet och integritet › Auto Blocker), annars vägrar telefonen installera; efteråt kan du slå på den igen.
 

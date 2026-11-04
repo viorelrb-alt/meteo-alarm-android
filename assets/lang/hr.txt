@@ -376,3 +376,9 @@ Sends the download link of the app in a WhatsApp message (or, without WhatsApp, 
  · days	 · dani
 Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Samsung telefoni s Auto Blockerom: isključi ga prije instalacije ili ažuriranja aplikacije (Postavke › Sigurnost i privatnost › Auto Blocker), inače telefon odbija instalaciju; poslije ga možeš ponovno uključiti.
 Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · imperijalne jedinice (mph, inči, inHg, milje)
+Switch to the metric system?	Prijeći na metrički sustav?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, km/h, milimetri, hPa, kilometri i 24-satni sat umjesto °F, mph, inča, inHg, milja i 12-satnog sata. Vratiti se možeš bilo kad: ☰ › Temperatura °C/°F.
+Metric	Metrički
+°C · metric system	°C · metrički sustav
+Keep °F	Zadrži °F

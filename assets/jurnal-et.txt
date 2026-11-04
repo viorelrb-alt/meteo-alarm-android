@@ -1,3 +1,7 @@
+v2.30 · 4. november 2026
+- Elemendid rakenduse kasutamiseks Ameerika Ühendriikides.
+- ☰ › Temperatuur °C/°F: °F-ist lahkudes küsib rakendus, kas minna üle meetermõõdustikule; °F puhul on õhurõhk inHg-des ja kaugused miilides.
+
 v2.22 · 4. november 2026
 - Auto Blockeriga Samsungi telefonid: lülita see enne rakenduse paigaldamist või uuendamist välja (Seaded › Turvalisus ja privaatsus › Auto Blocker), muidu telefon keeldub paigaldamast; pärast võid selle uuesti sisse lülitada.
 

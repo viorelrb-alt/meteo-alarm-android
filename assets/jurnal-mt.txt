@@ -1,3 +1,7 @@
+v2.30 · 4 ta' Novembru 2026
+- Elementi biex tuża l-app fl-Istati Uniti.
+- ☰ › Temperatura °C/°F: meta titlaq minn °F, l-app tistaqsi jekk tridx is-sistema metrika; b'°F il-pressjoni tidher f'inHg u d-distanzi f'mili.
+
 v2.22 · 4 ta' Novembru 2026
 - Telefowns Samsung b'Auto Blocker: itfih qabel ma tinstalla jew taġġorna l-app (Settings › Sigurtà u privatezza › Auto Blocker), inkella t-telefon jirrifjuta l-installazzjoni; wara tista' terġa' tixgħelu.
 

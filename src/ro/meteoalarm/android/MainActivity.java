@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.22";
+	static final String VERSION = "Meteo Alarm Android v2.30";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -118,6 +118,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		try {
 			cities.addWorld(readAll(getAssets().open("world.txt")));
+			// The United States (v2.30): towns of every state.
+			cities.addUS(readAll(getAssets().open("us.txt")));
 			countries = new Countries(readAll(getAssets().open("countries.txt")));
 		} catch (Exception e) {
 			countries = new Countries("");
@@ -182,6 +184,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						"Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.") + "\n\n"
 				+ Tr.t("No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).",
 						"Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele localității către Open-Meteo (vremea, polenul) și, când Open-Meteo e supraîncărcat, către MET Norway (vremea); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).") + "\n\n"
+				+ (Region.showUS(this) ? Tr.t("In the United States the warnings come from the National Weather Service (api.weather.gov) and the earthquakes from USGS (earthquake.usgs.gov); they get only the town's coordinates too.",
+						"În Statele Unite avertizările vin de la National Weather Service (api.weather.gov), iar cutremurele de la USGS (earthquake.usgs.gov); și ele primesc doar coordonatele localității.") + "\n\n" : "")
 				+ Tr.t("Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.",
 						"Locația: o folosim ca să arătăm vremea acolo unde ești, la pornire și o dată pe oră. Pentru numele localității, coordonatele merg la OpenStreetMap (sau la geocoderul telefonului), de unde vin și granițele localității. Localitățile găsite, cu locul exact, rămân doar pe telefon. Aplicația o cere cu o explicație la prima pornire; dacă refuzi, alegi localitatea din listă și te mai întreabă doar după o actualizare.") + "\n\n"
 				+ Tr.t("Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.",
@@ -207,19 +211,19 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** With the app open the screen is on: every 15 minutes, every hour below 25% battery (not charging). */
 	private long interval() {
+		if (Refresher.storm(this)) return Refresher.STORM_MS;
 		return s.batt >= 0 && s.batt < Refresher.LOW_BATTERY && !s.charging ? LOW_BATTERY_MS : WEATHER_MS;
 	}
 
 	private void applySettings() {
 		s.T = new Texts(Lang.apply(this));
-		s.unitF = prefs.getBoolean("unitF", false);
-		s.clk12 = prefs.getBoolean("clk12", false);
 		Cities.City c = Cities.City.fromKey(prefs.getString("city", ""));
 		if (c == null) c = cities.find("Călărași");
 		if (c == null) c = new Cities.City("Călărași", "Călărași", 44.2058, 27.3306);
 		// Keep the town shown even when it was never picked, so the widget finds it too.
 		if (prefs.getString("city", "").length() == 0) prefs.edit().putString("city", c.key()).apply();
 		s.city = c;
+		applyUnits();
 		// No neighbourhood after the town any more (Viorel 2026-11-02).
 		s.district = "";
 		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
@@ -240,6 +244,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (sheet != null) sheet.setDark(s.dark);
 		if (bubble != null) bubble.setDark(s.dark);
 		if (updater != null) updater.en = s.T.en;
+	}
+
+	/** Units and clock of the town shown (US towns imperial with a 12-hour clock, v2.30). */
+	private void applyUnits() {
+		s.unitF = Region.imperial(this, s.city);
+		s.clk12 = Region.clk12(this, s.city);
 	}
 
 	@Override
@@ -909,6 +919,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				Log.i(MainActivity.this, "LOC", "poziție găsită: " + town + ", " + rawCounty + ", " + country + " (" + Math.round(lat * 1000) / 1000.0 + ", " + Math.round(lon * 1000) / 1000.0 + ")");
 				boolean home = country.equals("ro");
 				String county = home ? cities.county(rawCounty) : rawCounty.trim();
+				// United States (v2.30): the state, in English (OpenStreetMap's local names come first in MATCH).
+				if (country.equals("us")) {
+					String st = Cities.stateName(match.split("/")[0]);
+					if (st.length() == 0) st = Cities.stateName(rawCounty);
+					if (st.length() > 0) county = st;
+				}
+				usFound(country, country.equals("us") ? county : "");
 				if (county.length() == 0) county = town;
 				// The neighbourhood is only shown, never kept: the town keeps its name in the list.
 				String name = town;
@@ -931,7 +948,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				boolean moved = cur == null || !here.same(cur) || distKm(cur.lat, cur.lon, la, lo) > 1;
 				// The first town found (first install): it becomes the town shown and a favourite,
 				// even when it is the town shown by default (Viorel 2026-11-04, tablet log).
-				boolean first = !prefs.getBoolean("firstFound", false) || prefs.getString("favs", "").length() == 0;
+				boolean first = !prefs.getBoolean("firstFound", false) || prefs.getString(Region.favsKey(here), "").length() == 0;
 				if (moved || first) {
 					setCity(here, false);
 					if (first) {
@@ -1156,8 +1173,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				s.pollenPlant = (String) r[1];
 				s.aqi = Weather.parseAqi(p);
 			}
-			String x = readCache("warn.xml");
-			if (x != null) s.warns = Warnings.parse(x, s.city.warnNames(), System.currentTimeMillis());
+			s.warns = Fetcher.warnings(this, s.city);
 			s.quakes = Fetcher.quakes(this, s.city);
 			s.failReason = prefs.getString(Tr.t("failReasonEn", "failReason"), "");
 			s.source = prefs.getString("source", "");
@@ -1222,7 +1238,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				// keep the last pollen
 			}
 		}
-		if (r.warn != null) s.warns = Warnings.parse(r.warn, c.warnNames(), now);
+		if (r.warn != null) s.warns = Fetcher.warnings(this, c);
 		if (r.quake != null) s.quakes = Fetcher.quakes(this, c);
 		view.invalidate();
 	}
@@ -1359,9 +1375,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				long ms = 1500;
 				if (it.equals("refresh")) { onRefresh(); return; }
 				else if (it.equals("city")) { onCity(s.btnMenu); return; }
-				else if (it.equals("unit")) { e.putBoolean("unitF", !s.unitF); msg = s.unitF ? "°C" : "°F"; }
+				else if (it.equals("unit")) { toggleUnits(); return; }
 				else if (it.equals("clock")) {
-					e.putBoolean("clk12", !s.clk12);
+					// The clock of this kind of town (US or not, v2.30).
+					Region.setClk12(MainActivity.this, s.city, !s.clk12);
 					msg = s.clk12 ? (Tr.t("24-hour clock", "Ceas 24 de ore")) : (Tr.t("12-hour clock", "Ceas 12 ore"));
 				} else if (it.equals("lang")) { pickLang(); return; }
 				else if (it.equals("keepOn")) {
@@ -1395,6 +1412,40 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (msg != null) note(msg, ms);
 			}
 		});
+	}
+
+	/**
+	 * ☰ › Temperature °C/°F (v2.30, Viorel 2026-11-04). From °F the question whether to switch to
+	 * the metric system (°C, km/h, millimetres, hPa, kilometres, 24-hour clock); from °C straight to
+	 * the imperial units (°F, mph, inches, inHg, miles). Kept for this kind of town (US or not).
+	 */
+	private void toggleUnits() {
+		final Cities.City c = s.city;
+		if (!s.unitF) {
+			Region.setImperial(this, c, true);
+			Log.i(this, "US", "unități imperiale pentru " + (c.us() ? "localitățile din SUA" : "celelalte localități"));
+			applySettings();
+			view.invalidate();
+			note(Tr.t("°F · imperial units (mph, inches, inHg, miles)", "°F · unități imperiale (mph, inch, inHg, mile)"), 2500);
+			return;
+		}
+		AlertDialog.Builder d = dialog();
+		d.setTitle(Tr.t("Switch to the metric system?", "Treci la sistemul metric?"));
+		d.setMessage(Tr.t("°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.",
+				"°C, km/h, milimetri, hPa, kilometri și ceasul de 24 de ore în loc de °F, mph, inch, inHg, mile și ceasul de 12 ore. Poți reveni oricând din ☰ › Temperatura °C/°F."));
+		d.setPositiveButton(Tr.t("Metric", "Metric"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				Region.setImperial(MainActivity.this, c, false);
+				Region.setClk12(MainActivity.this, c, false);
+				Log.i(MainActivity.this, "US", "sistemul metric ales pentru " + (c.us() ? "localitățile din SUA" : "celelalte localități"));
+				applySettings();
+				Widget.show(MainActivity.this);
+				view.invalidate();
+				note(Tr.t("°C · metric system", "°C · sistemul metric"), 2000);
+			}
+		});
+		d.setNegativeButton(Tr.t("Keep °F", "Rămân la °F"), null);
+		show(d);
 	}
 
 	private Bubble.Row row(String text, String icon) {
@@ -1452,7 +1503,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/** The last lists of the earthquakes page: { country 7 days, Europe 48 h } (EMSC answers). */
-	private String quakesCountry, quakesEurope;
+	private String quakesCountry, quakesEurope, quakesKey;
 	private long quakesAt;
 
 	/**
@@ -1462,6 +1513,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 */
 	private void quakesPage() {
 		Log.i(this, "CUTREMUR", "pagina de cutremure deschisă");
+		// The lists are of the town they were downloaded for (EMSC or USGS, v2.30).
+		if (!s.city.key().equals(quakesKey)) {
+			quakesCountry = null;
+			quakesEurope = null;
+			quakesKey = s.city.key();
+		}
 		showQuakes();
 		if (quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L) return;
 		final Cities.City c = s.city;
@@ -1471,18 +1528,20 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				long now = System.currentTimeMillis();
 				String a = null, b = null;
 				try {
-					a = Weather.get(ro.meteoalarm.android.core.Quakes.url(c.lat, c.lon, now - 7 * 86400000L));
+					a = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usgsUrl(c.lat, c.lon, now - 7 * 86400000L)
+							: ro.meteoalarm.android.core.Quakes.url(c.lat, c.lon, now - 7 * 86400000L));
 				} catch (Exception e) {
 					Log.e(ctx, "CUTREMUR", "lista țării (7 zile) a eșuat: " + Fetcher.reason(e, false));
 				}
 				try {
-					b = Weather.get(ro.meteoalarm.android.core.Quakes.europeUrl(now - 2 * 86400000L));
+					b = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usUrl(now - 2 * 86400000L) : ro.meteoalarm.android.core.Quakes.europeUrl(now - 2 * 86400000L));
 				} catch (Exception e) {
 					Log.e(ctx, "CUTREMUR", "lista Europei (48 h) a eșuat: " + Fetcher.reason(e, false));
 				}
 				final String fa = a, fb = b;
 				handler.post(new Runnable() {
 					public void run() {
+						if (!c.key().equals(quakesKey)) return;
 						quakesCountry = fa == null ? "" : fa;
 						quakesEurope = fb == null ? "" : fb;
 						quakesAt = System.currentTimeMillis();
@@ -1505,6 +1564,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		Cities.City c = s.city;
+		if (c.us()) {
+			showQuakesUS(c);
+			return;
+		}
 		String country = countries.shown(c.country);
 		long now = System.currentTimeMillis();
 		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + country);
@@ -1540,10 +1603,47 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.show();
 	}
 
+	/** ☰ › Earthquakes for a US town (v2.30): USGS, 7 days around the town, 48 hours in the US. */
+	private void showQuakesUS(Cities.City c) {
+		long now = System.currentTimeMillis();
+		String radius = s.unitF ? Tr.t("within 300 miles", "pe o rază de 300 de mile") : Tr.t("within 480 km", "pe o rază de 480 km");
+		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + radius);
+		if (quakesCountry == null) help.text(Tr.t("Downloading from USGS…", "Se descarcă de la USGS…"));
+		else if (quakesCountry.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
+		else {
+			List<ro.meteoalarm.android.core.Quakes.Quake> l;
+			try {
+				l = ro.meteoalarm.android.core.Quakes.parseUsgs(quakesCountry, c.lat, c.lon, now, 7 * 86400000L, ro.meteoalarm.android.core.Quakes.US_MIN_MAG, false);
+			} catch (Exception e) {
+				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			}
+			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 2.5 or more.", "Niciun cutremur cu magnitudinea 2,5 sau mai mare."));
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, true);
+			Log.i(this, "CUTREMUR", "USGS în jurul " + c.name + ", 7 zile: " + l.size());
+		}
+		help.section(Tr.t("Last 48 hours · United States", "Ultimele 48 de ore · Statele Unite"));
+		if (quakesEurope == null) help.text(Tr.t("Downloading from USGS…", "Se descarcă de la USGS…"));
+		else if (quakesEurope.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
+		else {
+			List<ro.meteoalarm.android.core.Quakes.Quake> l;
+			try {
+				l = ro.meteoalarm.android.core.Quakes.parseUsgs(quakesEurope, c.lat, c.lon, now, 2 * 86400000L, ro.meteoalarm.android.core.Quakes.MIN_MAG, true);
+			} catch (Exception e) {
+				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			}
+			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false);
+			Log.i(this, "CUTREMUR", "USGS SUA, 48 h: " + l.size());
+		}
+		help.text(Tr.t("Source: USGS (U.S. Geological Survey, earthquake.usgs.gov): magnitude 2.5 and over around your town, 3 and over in the whole country. \"Felt\" is an estimate from the magnitude and the distance to the focus, on a scale like the Modified Mercalli one.",
+				"Sursa: USGS (Serviciul Geologic al SUA, earthquake.usgs.gov): magnitudine 2,5 și peste în jurul localității, 3 și peste în toată țara. „Resimțit” e o estimare după magnitudine și distanța până la focar, pe o scară ca Mercalli modificată."));
+		help.show();
+	}
+
 	private void quakeEntry(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean felt) {
-		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot()) + " · " + Screen.titleCase(q.region);
-		String what = s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat("dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
-				+ " · " + Tr.t("depth ", "adâncime ") + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km " + Tr.t("from ", "de ") + c.name;
+		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot()) + " · " + Screen.place(q.region, s.unitF);
+		String what = s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat(s.unitF ? "M/d" : "dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
+				+ " · " + Tr.t("depth ", "adâncime ") + s.dist(q.depth) + " · " + s.dist(q.dist) + " " + Tr.t("from ", "de ") + c.name;
 		if (felt || q.dist < 300) what += "\n" + (q.felt >= 2 ? Tr.t("Probably felt in ", "Probabil resimțit în ") + c.name + ": " + Screen.roman(q.felt) + ", " + s.feltWords(q.felt)
 				: Tr.t("Probably not felt in ", "Probabil nu s-a simțit în ") + c.name);
 		help.entry(mini("quake"), name, what);
@@ -1559,12 +1659,21 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		help.begin(Tr.t("Help", "Ajutor"), Tr.t("Close", "Închide"), s.dark);
+		// United States (v2.30): its own Help, everything in imperial units.
+		boolean us = s.city.us() || Region.usPhone(this);
+		if (us) {
+			help.section(Tr.t("United States", "Statele Unite"));
+			help.entry(mini("unit"), Tr.t("Imperial units", "Unități imperiale"), Tr.t("For US towns the app shows: temperature in °F (water freezes at 32 °F), wind and gusts in mph, visibility and distances in miles, pressure in inHg (about 30.00 inHg is normal; 29.50 is low, 30.50 high), the 12-hour clock with AM/PM and dates as month/day. ☰ › Temperature °C/°F asks before switching to the metric system.", "Pentru localitățile din SUA aplicația arată: temperatura în °F (apa îngheață la 32 °F), vântul și rafalele în mph, vizibilitatea și distanțele în mile, presiunea în inHg (în jur de 30,00 inHg e normal; 29,50 e scăzută, 30,50 ridicată), ceasul de 12 ore cu AM/PM și datele ca lună/zi. ☰ › Temperatura °C/°F întreabă înainte de a trece la sistemul metric."));
+			help.entry(mini("roll"), Tr.t("Weather alerts", "Avertizări meteo"), Tr.t("From the National Weather Service (weather.gov), for the exact place of your town: Warning = red, Watch = orange, Advisory = yellow. A home-screen widget shows them as the WARNING! row of pills, the same colors.", "De la National Weather Service (weather.gov), pentru locul exact al localității: Warning (avertizare) = roșu, Watch (atenționare) = portocaliu, Advisory (informare) = galben. Un widget de pe ecranul de pornire le arată în rândul de pastile AVERTIZARE!, cu aceleași culori."));
+		}
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + (Tr.t(" The consent is asked only there: once if you agree (from then on the app also checks once a week by itself), every time while you say no. Without it the app never looks for updates and downloads nothing.", " Acordul se cere doar acolo: o singură dată dacă ești de acord (de atunci aplicația verifică singură și o dată pe săptămână), de fiecare dată cât timp refuzi. Fără acord aplicația nu caută niciodată actualizări și nu descarcă nimic.")));
 		help.entry(mini("update"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
-		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.", "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea."));
-		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).", "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol)."));
+		if (us) help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Opens the towns: your 3 favorites (the last 3 US towns used; at the start the 3 main towns of your state), then all the listed towns of the state you are in, then the other states with 3 towns each. When you travel to another state, its towns replace those of the old state; your favorites stay.", "Deschide localitățile: cele 3 favorite (ultimele 3 localități din SUA folosite; la început cele 3 localități principale ale statului tău), apoi toate localitățile din listă ale statului în care ești, apoi celelalte state, cu câte 3 localități. Când călătorești în alt stat, localitățile lui le înlocuiesc pe cele ale statului vechi; favoritele rămân."));
+		else help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Opens the towns: your last 3 (favourites) and the counties. Tap a county, then the town.", "Deschide localitățile: ultimele 3 folosite (favorite) și județele. Alegi județul, apoi localitatea."));
+		if (us) help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Finds where you are and shows that town's weather; it looks again every hour. It also tells the app which state you are in, so the town list shows that state's towns. The towns found are kept on the phone, and the town shown changes only once you are out of its boundary (about 500 feet past it). A tap turns automatic location on (the button filled, it looks now) or off (the button empty).", "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Tot ea îi spune aplicației în ce stat ești, ca lista de localități să arate localitățile acelui stat. Localitățile găsite rămân în telefon, iar localitatea afișată se schimbă abia după ce ieși din granițele ei (cu circa 500 de picioare). O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol)."));
+		else help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Finds where you are and shows that town's weather; it looks again every hour. The towns found are kept on the phone with where you were, and the town shown changes only once you are out of its boundary. It works in other countries too, with MeteoAlarm warnings in about 38 European countries. A tap turns automatic location on (the button filled, it looks now) or off (the button empty).", "Găsește unde ești și arată vremea de acolo; caută din nou în fiecare oră. Localitățile găsite rămân în telefon, cu locul exact, iar localitatea afișată se schimbă abia după ce ieși din granițele ei. Merge și în alte țări, cu avertizările MeteoAlarm din circa 38 de țări europene. O atingere pornește localizarea automată (butonul plin, caută acum) sau o oprește (butonul gol)."));
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left: slide on it up or down. It goes away by itself.", "Arată bara de luminozitate din stânga: glisează pe ea în sus sau în jos. Dispare singură."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches between the light and the dark theme.", "Deasupra barei de luminozitate: comută între tema luminoasă și cea întunecată."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme when there is light, dark theme in the dark. Filled while it is on.", "Tema luminoasă când e lumină, cea întunecată pe întuneric. E plin cât timp e pornită."));
@@ -1578,8 +1687,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("textsize"), Tr.t("Text size", "Mărimea textului"), Tr.t("In Help, Earthquakes, About and What's new: the Aa button next to the buttons on the right shows the text-size bar on the left of the screen, over the page, like the brightness bar. Slide on it up for larger letters, down for smaller ones; the size is kept on the device. The bar goes away by itself, or at a touch elsewhere. On a tablet the ☰ menu is 11 % larger.", "În Ajutor, Cutremure, Despre și Ce e nou: butonul Aa de lângă butoanele din dreapta afișează bara de mărime a textului în stânga ecranului, peste pagină, ca bara de luminozitate. Glisează pe ea în sus pentru litere mai mari, în jos pentru mai mici; mărimea rămâne salvată pe dispozitiv. Bara dispare singură sau la o atingere în altă parte. Pe tabletă meniul ☰ e cu 11 % mai mare."));
 		help.entry(mini("compass"), Tr.t("Wind arrow", "Săgeata vântului"), Tr.t("Next to the wind: the arrow shows where the wind blows, turned with the phone (compass); the orange mark is north.", "Lângă vânt: săgeata arată încotro bate vântul, rotită după cum ții telefonul (busola); semnul portocaliu e nordul."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceasul de noapte"), Tr.t("While the phone charges at night (sunset to sunrise) and nobody touches it for a minute: a big dim clock. A tap goes back for a minute.", "Când telefonul se încarcă noaptea (de la apus la răsărit) și nu-l atingi un minut: un ceas mare și estompat. O atingere revine pentru un minut."));
-		help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).", "Sub linie, un singur rând de casete: întâi cutremurul (dacă a fost unul), apoi câte o casetă pentru fiecare cod de avertizare (roșu, portocaliu, galben). Pe ecran încap două; când sunt mai multe, rândul se mută singur la 2 secunde și o ia de la capăt. Îl poți glisa și cu degetul. Atinge o casetă: rândul se oprește 20 de secunde și un balon arată detaliile, cu litere mai mari (la un cod: ce înseamnă, fiecare avertizare cu perioada și sfaturi; la cutremur: magnitudinea, ora, zona, adâncimea, epicentrul și distanța, cum s-a simțit probabil în localitatea ta și toate cutremurele din ultimele 24 de ore)."));
-		help.entry(mini("quake"), Tr.t("Earthquake box", "Caseta Cutremur"), Tr.t("From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.", "De la EMSC (Centrul Seismologic European-Mediteranean): cutremurele cu magnitudinea 3 sau mai mare din ultimele 24 de ore din țara localității tale (cea găsită de localizare). Caseta îl arată pe cel mai puternic: magnitudinea și ora, și cum s-a simțit în localitatea ta, ca estimare pe scara EMS-98 (după magnitudine și distanța până la focar; EMSC nu publică mărturiile pentru fiecare localitate). Dispare după 24 de ore."));
+		if (us) help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("Under the line, one row of boxes: the earthquake first (when there was one), then one box per National Weather Service level: WARNING (red: the danger is happening or about to happen, act now), WATCH (orange: the conditions are right for it, be ready) and ADVISORY (yellow: a nuisance that can become dangerous if you are not careful). A tornado always comes first. Two boxes fit on the screen; with more, the row moves on by itself every 2 seconds. Tap a box: the row stops for 20 seconds and a bubble shows each alert with its time, the NWS text (what, where, when, impacts) and what to do, in English as NWS publishes it.", "Sub linie, un singur rând de casete: întâi cutremurul (dacă a fost unul), apoi câte o casetă pentru fiecare nivel al National Weather Service: AVERTIZARE (Warning, roșu: pericolul are loc sau e iminent, acționează acum), ATENȚIONARE (Watch, portocaliu: condițiile sunt favorabile, fii pregătit) și INFORMARE (Advisory, galben: vreme neplăcută, care poate deveni periculoasă dacă nu ești atent). Tornada vine mereu prima. Pe ecran încap două casete; când sunt mai multe, rândul se mută singur la 2 secunde. Atinge o casetă: rândul se oprește 20 de secunde și un balon arată fiecare avertizare cu ora, textul NWS (ce, unde, când, efecte) și ce trebuie făcut, în engleză, cum îl publică NWS."));
+		else help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("Under the line, one row of boxes: the earthquake first (when there was one), then one box per warning code (red, orange, yellow). Two fit on the screen; with more, the row moves on by itself every 2 seconds and starts again from the first. You can also slide it with the finger. Tap a box: the row stops for 20 seconds and a bubble shows the details in larger letters (for a code: what it means, each warning with its period and advice; for the earthquake: magnitude, time, region, depth, epicentre and distance, how it was likely felt in your town, and all the earthquakes of the last 24 hours).", "Sub linie, un singur rând de casete: întâi cutremurul (dacă a fost unul), apoi câte o casetă pentru fiecare cod de avertizare (roșu, portocaliu, galben). Pe ecran încap două; când sunt mai multe, rândul se mută singur la 2 secunde și o ia de la capăt. Îl poți glisa și cu degetul. Atinge o casetă: rândul se oprește 20 de secunde și un balon arată detaliile, cu litere mai mari (la un cod: ce înseamnă, fiecare avertizare cu perioada și sfaturi; la cutremur: magnitudinea, ora, zona, adâncimea, epicentrul și distanța, cum s-a simțit probabil în localitatea ta și toate cutremurele din ultimele 24 de ore)."));
+		if (us) help.entry(mini("quake"), Tr.t("Earthquake box", "Caseta Cutremur"), Tr.t("From USGS (U.S. Geological Survey): earthquakes of magnitude 2.5 or more in the last 24 hours within 300 miles of your town. The box shows the strongest one: magnitude and time, and how it was likely felt in your town, as an estimate from the magnitude and the distance to the focus (depth and distance in miles). It disappears after 24 hours.", "De la USGS (Serviciul Geologic al SUA): cutremurele cu magnitudinea 2,5 sau mai mare din ultimele 24 de ore, pe o rază de 300 de mile în jurul localității. Caseta îl arată pe cel mai puternic: magnitudinea și ora, și cum s-a simțit probabil în localitatea ta, ca estimare după magnitudine și distanța până la focar (adâncimea și distanța în mile). Dispare după 24 de ore."));
+		else help.entry(mini("quake"), Tr.t("Earthquake box", "Caseta Cutremur"), Tr.t("From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.", "De la EMSC (Centrul Seismologic European-Mediteranean): cutremurele cu magnitudinea 3 sau mai mare din ultimele 24 de ore din țara localității tale (cea găsită de localizare). Caseta îl arată pe cel mai puternic: magnitudinea și ora, și cum s-a simțit în localitatea ta, ca estimare pe scara EMS-98 (după magnitudine și distanța până la focar; EMSC nu publică mărturiile pentru fiecare localitate). Dispare după 24 de ore."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.", "Rândul de avertizări, casetele cu ore și cele 5 zile (Mâine și încă 4 zile, câte două) urmează degetul. Graficul Precipitații · următoarele 12 ore apare primul în rândul cu ore, doar când e prognozată ploaie sau ninsoare."));
 		help.entry(mini("swipe"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.", "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă."));
 		help.section(Tr.t("Home-screen widgets", "Widget-uri pe ecranul de pornire"));
@@ -1589,14 +1700,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("The ☰ menu", "Meniul ☰"));
 		help.entry(mini("refresh"), Tr.t("Refresh", "Reîmprospătare"), Tr.t("Downloads the weather, the warnings and the earthquakes now.", "Descarcă acum vremea, avertizările și cutremurele."));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("The same as the town button.", "La fel ca butonul de localitate."));
-		help.entry(mini("unit"), Tr.t("Temperature °C/°F", "Temperatura °C/°F"), Tr.t("Switches between Celsius and Fahrenheit.", "Comută între grade Celsius și Fahrenheit."));
+		if (us) help.entry(mini("unit"), Tr.t("Temperature °C/°F", "Temperatura °C/°F"), Tr.t("The app shows the imperial units: temperature in °F, wind in mph, visibility and distances in miles, pressure in inches of mercury (inHg, about 30.00), the 12-hour clock (AM/PM) and dates as month/day. Switching to °C asks whether you want the metric system instead (°C, km/h, hPa, kilometers, the 24-hour clock); a tap from °C goes back to °F and the imperial units.", "Aplicația arată unitățile imperiale: temperatura în °F, vântul în mph, vizibilitatea și distanțele în mile, presiunea în inch coloană de mercur (inHg, în jur de 30,00), ceasul de 12 ore (AM/PM) și datele ca lună/zi. Trecerea la °C te întreabă dacă vrei în locul lor sistemul metric (°C, km/h, hPa, kilometri, ceasul de 24 de ore); o atingere din °C revine la °F și la unitățile imperiale."));
+		else help.entry(mini("unit"), Tr.t("Temperature °C/°F", "Temperatura °C/°F"), Tr.t("Switches between Celsius and Fahrenheit.", "Comută între grade Celsius și Fahrenheit."));
 		help.entry(mini("clock"), Tr.t("Clock 12/24", "Ceas 12/24"), Tr.t("Switches the clock between 24 hours and 12 hours (AM/PM).", "Comută ceasul între 24 de ore și 12 ore (AM/PM)."));
 		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("Light, Dark, or Automatic (phone sensor).", "Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("keepOn"), Tr.t("Screen on ON / OFF", "Ecran aprins ON / OFF"), Tr.t("ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.", "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon."));
-		help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana.") + " " + Tr.t("The phone's own language is in the list too.", "În listă e și limba telefonului."));
+		if (us) help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("In the United States the list has English (US), Spanish and English, and the phone's own language. At the first start the app takes the phone's language: English (US) on an American phone in English.", "În Statele Unite lista are engleza americană (English US), spaniola și engleza, plus limba telefonului. La prima pornire aplicația ia limba telefonului: engleza americană pe un telefon american în engleză."));
+		else help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana.") + " " + Tr.t("The phone's own language is in the list too.", "În listă e și limba telefonului."));
 		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
-		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.", "O pagină ca aceasta, cu buton de închidere sus: cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din Uniunea Europeană, Ucraina și Republica Moldova. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta. De la EMSC; pagina se derulează."));
-		help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.", "Notificări doar pentru: ploaie sau ninsoare care începe (sau începe în următoarea oră; din nou abia după 3 ore fără precipitații), o avertizare meteo nouă pentru localitatea ta și un cutremur cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată, și cu aplicația închisă. Aplicația le cere la prima pornire; dacă refuzi, te mai întreabă doar după o actualizare, niciodată la fiecare pornire. Când telefonul nu mai arată întrebarea lui (după două refuzuri), butonul deschide setările telefonului, unde le permiți."));
+		if (us) help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one: the earthquakes of magnitude 2.5 or more of the last 7 days within 300 miles of your town, then those of magnitude 3 or more of the last 48 hours in the United States. Each row: the time, the place, the magnitude, the depth and the distance from your town, in miles. From USGS; it scrolls.", "O pagină ca aceasta: cutremurele cu magnitudinea 2,5 sau mai mare din ultimele 7 zile, pe o rază de 300 de mile, apoi cele cu magnitudinea 3 sau mai mare din ultimele 48 de ore din Statele Unite. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta, în mile. De la USGS; pagina se derulează."));
+		else help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.", "O pagină ca aceasta, cu buton de închidere sus: cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din Uniunea Europeană, Ucraina și Republica Moldova. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta. De la EMSC; pagina se derulează."));
+		if (us) help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications for: rain or snow starting (or within the hour), each new National Weather Service alert for your town, and earthquakes of magnitude 3 or more within 300 miles. Tornado, severe thunderstorm, flash flood, extreme wind, hurricane, blizzard and ice storm WARNINGS come on a separate channel, \"Tornado and extreme warnings\", with the alarm sound and a strong vibration; to hear them also in Do Not Disturb, allow that channel to override it in the phone's settings. During a tornado watch or warning the app checks every 5 minutes, also at night. The app does not replace the Wireless Emergency Alerts of your phone.", "Notificări pentru: ploaie sau ninsoare care începe (sau în următoarea oră), fiecare avertizare nouă a National Weather Service pentru localitatea ta și cutremurele cu magnitudinea 3 sau mai mare pe o rază de 300 de mile. AVERTIZĂRILE de tornadă, furtună severă, viitură, vânt extrem, uragan, viscol și furtună de gheață vin pe un canal separat, „Tornade și avertizări extreme”, cu sunet de alarmă și vibrație puternică; ca să le auzi și în modul Nu deranja, permite-i acelui canal să-l ignore din setările telefonului. Cât timp e o atenționare sau avertizare de tornadă, aplicația verifică la 5 minute, și noaptea. Aplicația nu înlocuiește alertele de urgență (Wireless Emergency Alerts) ale telefonului."));
+		else help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.", "Notificări doar pentru: ploaie sau ninsoare care începe (sau începe în următoarea oră; din nou abia după 3 ore fără precipitații), o avertizare meteo nouă pentru localitatea ta și un cutremur cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată, și cu aplicația închisă. Aplicația le cere la prima pornire; dacă refuzi, te mai întreabă doar după o actualizare, niciodată la fiecare pornire. Când telefonul nu mai arată întrebarea lui (după două refuzuri), butonul deschide setările telefonului, unde le permiți."));
 		help.entry(mini("night"), Tr.t("Night clock ON / OFF", "Ceas noapte ON / OFF"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
 		help.entry(mini("widget"), Tr.t("Widgets", "Widget-uri"), Tr.t("The settings of a widget on the home screen (with several, choose it on top of the settings window).", "Setările unui widget de pe ecranul de pornire (când sunt mai multe, îl alegi în partea de sus a ferestrei de setări)."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("Everything the app did, with the time: the sensors, the taps and gestures, the location, the data downloads (and why one failed), the refreshes in the background and the widgets (the size the phone gives them, the layout shown). It keeps 5 days, a new file each day; the errors of older days stay 10 more days in an Errors section. At the top: the phone (model, Android, One UI) and the app's version. Read it here, Share it (WhatsApp, Drive, e-mail…) or Save it on the phone.", "Tot ce a făcut aplicația, cu ora: senzorii, atingerile și gesturile, localizarea, descărcările de date (și de ce a eșuat una), reîmprospătările din fundal și widget-urile (mărimea dată de telefon, modelul arătat). Păstrează 5 zile, câte un fișier pe zi; erorile din zilele mai vechi rămân încă 10 zile în rubrica Erori. Sus: telefonul (model, Android, One UI) și versiunea aplicației. Îl citești aici, îl Trimiți (WhatsApp, Drive, e-mail…) sau îl Salvezi pe telefon."));
@@ -1631,7 +1746,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** The change log from assets, newest first. */
 	private String changeLog() {
 		// Other languages: their file has the newest versions; the older ones follow in English.
-		String own = Tr.ro() || Tr.lang().equals("en") ? null : asset("jurnal-" + s.T.lang + ".txt");
+		String own = Tr.ro() || Tr.english() ? null : asset("jurnal-" + s.T.lang + ".txt");
 		String log = asset(Tr.t("jurnal-en.txt", "jurnal-ro.txt"));
 		if (log == null) return own == null ? "" : own;
 		if (own == null) return log;
@@ -1659,6 +1774,45 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 	}
 
+	/**
+	 * The hidden test mode (v2.30, not in the Help nor in the change log): the phone behaves as if
+	 * it were in a US state, and both the European and the US favourites and towns are listed.
+	 */
+	private void testMode() {
+		sheet.hide();
+		reopen = null;
+		final List<String> codes = new ArrayList<String>();
+		List<Bubble.Row> rows = Bubble.rows();
+		boolean on = Region.test(this);
+		String cur = prefs.getString("usTestState", "OK");
+		codes.add("");
+		rows.add(new Bubble.Row(Tr.t("Test mode off", "Mod de test oprit"), null, Bubble.Row.ITEM, !on));
+		for (int k = 0; k < Cities.STATES.length; k += 2) {
+			codes.add(Cities.STATES[k + 1]);
+			rows.add(new Bubble.Row(Cities.STATES[k] + " (" + Cities.STATES[k + 1] + ")", null, Bubble.Row.ITEM, on && cur.equals(Cities.STATES[k + 1])));
+		}
+		Log.i(this, "US", "modul de test: lista statelor");
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.6f, 240), Tr.t("Test mode · USA", "Mod de test · SUA"), rows, s.T.en, new Bubble.Pick() {
+			public void picked(int k) {
+				String c = codes.get(k);
+				if (c.length() == 0) {
+					prefs.edit().putBoolean("usTest", false).apply();
+					Log.i(MainActivity.this, "US", "modul de test OPRIT");
+					note(Tr.t("Test mode off", "Mod de test oprit"), 2000);
+				} else {
+					boolean change = !c.equals(prefs.getString("usTestState", "OK"));
+					prefs.edit().putBoolean("usTest", true).putString("usTestState", c).apply();
+					Log.i(MainActivity.this, "US", "modul de test PORNIT: telefonul e ca în " + Cities.stateName(c));
+					seedUSFavs();
+					note(Tr.t("Test mode: ", "Mod de test: ") + Cities.stateName(c), 2500);
+					if (change) Log.i(MainActivity.this, "US", "statul de test schimbat; favoritele SUA rămân");
+				}
+				applySettings();
+				view.invalidate();
+			}
+		});
+	}
+
 	private void about() {
 		String msg = aboutText() + "\n\n" + (Tr.t("The dark theme uses the Claude app colours. Font: Liberation Sans.", "Tema întunecată folosește culorile aplicației Claude. Font: Liberation Sans."));
 		msg += "\n\n" + (Tr.t("Installed version: v", "Versiunea instalată: v")) + updater.installed()
@@ -1666,6 +1820,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final String aboutMsg = msg;
 		sheet.show(VERSION, msg, null, null, Tr.t("Close", "Închide"));
 		sheet.sizeBar(true);
+		// The hidden test mode for the US (v2.30): 7 taps on the title.
+		sheet.titleTaps(new Runnable() {
+			public void run() {
+				testMode();
+			}
+		});
 		// "Ce e nou" on the left: the change log in the same window, and back to About.
 		final String newsL = Tr.t("What's new", "Ce e nou"), aboutL = Tr.t("About", "Despre");
 		sheet.setLeft(newsL, new Runnable() {
@@ -1691,48 +1851,194 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onCity(b);
 			}
 		};
-		final List<Cities.City> favs = new ArrayList<Cities.City>();
-		for (String k : prefs.getString("favs", "").split("\n")) {
-			Cities.City c = Cities.City.fromKey(k);
-			if (c != null) favs.add(c);
-		}
+		// Europe, the United States, or both in the test mode (v2.30): never mixed.
+		final boolean eu = Region.showEU(this), us = Region.showUS(this);
+		if (us) seedUSFavs();
+		final List<Cities.City> favs = eu ? favList("favs") : new ArrayList<Cities.City>();
+		final List<Cities.City> favsUS = us ? favList("favsUS") : new ArrayList<Cities.City>();
 		final boolean en = s.T.en;
-		final String[] counties = cities.byCounty.keySet().toArray(new String[0]);
-		List<Bubble.Row> rows = Bubble.rows();
-		final int first;
+		final List<Runnable> acts = new ArrayList<Runnable>();
+		final List<Bubble.Row> rows = Bubble.rows();
 		if (!favs.isEmpty()) {
-			rows.add(new Bubble.Row(Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
-			for (Cities.City c : favs) rows.add(Bubble.Row.item(c.label()));
-			rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
-		}
-		rows.add(new Bubble.Row(Tr.t("Choose the county", "Alegeți județul"), null, Bubble.Row.HEADER, false));
-		first = rows.size();
-		for (String co : counties) rows.add(Bubble.Row.item(co));
-		// Other countries, by name: the starting towns and the ones found by the location.
-		final List<String> ccs = new ArrayList<String>(cities.abroad.keySet());
-		java.util.Collections.sort(ccs, new java.util.Comparator<String>() {
-			public int compare(String a, String c) {
-				return Warnings.fold(countries.shown(a)).compareTo(Warnings.fold(countries.shown(c)));
+			rows.add(new Bubble.Row(us ? Tr.t("Favourites · Europe", "Favorite · Europa") : Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
+			acts.add(null);
+			for (final Cities.City c : favs) {
+				rows.add(Bubble.Row.item(c.label()));
+				acts.add(new Runnable() {
+					public void run() {
+						Log.i(MainActivity.this, "LOC", "aleasă din favorite: " + c.label());
+						choose(c);
+					}
+				});
 			}
-		});
-		rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
-		rows.add(new Bubble.Row(Tr.t("Other countries", "Alte țări"), null, Bubble.Row.HEADER, false));
-		final int firstC = rows.size();
-		for (String cc : ccs) rows.add(Bubble.Row.item(countries.shown(cc)));
+		}
+		if (!favsUS.isEmpty()) {
+			rows.add(new Bubble.Row(eu ? Tr.t("Favourites · USA", "Favorite · SUA") : Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
+			acts.add(null);
+			for (final Cities.City c : favsUS) {
+				rows.add(Bubble.Row.item(c.label()));
+				acts.add(new Runnable() {
+					public void run() {
+						Log.i(MainActivity.this, "LOC", "aleasă din favorite SUA: " + c.label());
+						choose(c);
+					}
+				});
+			}
+		}
+		if (!favs.isEmpty() || !favsUS.isEmpty()) {
+			rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+			acts.add(null);
+		}
+		if (eu) {
+			rows.add(new Bubble.Row(Tr.t("Choose the county", "Alegeți județul"), null, Bubble.Row.HEADER, false));
+			acts.add(null);
+			for (final String co : cities.byCounty.keySet()) {
+				rows.add(Bubble.Row.item(co));
+				acts.add(new Runnable() {
+					public void run() {
+						Log.i(MainActivity.this, "LOC", "listă: județul " + co);
+						pickTown(b, co);
+					}
+				});
+			}
+			// Other countries, by name: the starting towns and the ones found by the location.
+			final List<String> ccs = new ArrayList<String>(cities.abroad.keySet());
+			java.util.Collections.sort(ccs, new java.util.Comparator<String>() {
+				public int compare(String a, String c) {
+					return Warnings.fold(countries.shown(a)).compareTo(Warnings.fold(countries.shown(c)));
+				}
+			});
+			rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+			acts.add(null);
+			rows.add(new Bubble.Row(Tr.t("Other countries", "Alte țări"), null, Bubble.Row.HEADER, false));
+			acts.add(null);
+			for (final String cc : ccs) {
+				rows.add(Bubble.Row.item(countries.shown(cc)));
+				acts.add(new Runnable() {
+					public void run() {
+						Log.i(MainActivity.this, "LOC", "listă: țara " + cc);
+						pickAbroad(b, cc);
+					}
+				});
+			}
+		}
+		if (us) {
+			if (eu) {
+				rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+				acts.add(null);
+			}
+			// The state the phone is in: all its towns; the other states: 3 towns each.
+			final String st = Region.state(this);
+			List<Cities.City> mine = st.length() > 0 ? cities.usStates.get(st) : null;
+			if (mine != null) {
+				rows.add(new Bubble.Row(Tr.t("Towns · ", "Localități · ") + st, null, Bubble.Row.HEADER, false));
+				acts.add(null);
+				for (final Cities.City c : mine) {
+					rows.add(Bubble.Row.item(c.name));
+					acts.add(new Runnable() {
+						public void run() {
+							Log.i(MainActivity.this, "LOC", "aleasă din statul " + st + ": " + c.label());
+							choose(c);
+						}
+					});
+				}
+			} else {
+				rows.add(new Bubble.Row(Tr.t("Your state", "Statul tău"), null, Bubble.Row.HEADER, false));
+				acts.add(null);
+				rows.add(Bubble.Row.item(Tr.t("Allow location to see your state's towns", "Permite localizarea ca să vezi localitățile statului tău")));
+				acts.add(new Runnable() {
+					public void run() {
+						Log.i(MainActivity.this, "US", "statul nu e cunoscut: caut poziția");
+						if (!Locator.allowed(MainActivity.this)) askLocation();
+						else {
+							setAutoLoc(true);
+							locate(true);
+						}
+					}
+				});
+			}
+			rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+			acts.add(null);
+			rows.add(new Bubble.Row(Tr.t("Other states", "Alte state"), null, Bubble.Row.HEADER, false));
+			acts.add(null);
+			for (final String o : cities.usStates.keySet()) {
+				if (o.equals(st)) continue;
+				rows.add(Bubble.Row.item(o));
+				acts.add(new Runnable() {
+					public void run() {
+						Log.i(MainActivity.this, "LOC", "listă: statul " + o);
+						pickState(b, o);
+					}
+				});
+			}
+		}
 		bubble.show(view.px(b), bubbleWidth(0.9f, 300), null, rows, en, new Bubble.Pick() {
 			public void picked(int k) {
-				if (k >= firstC) {
-					Log.i(MainActivity.this, "LOC", "listă: țara " + ccs.get(k - firstC));
-					pickAbroad(b, ccs.get(k - firstC));
-				} else if (k >= first && k < first + counties.length) {
-					Log.i(MainActivity.this, "LOC", "listă: județul " + counties[k - first]);
-					pickTown(b, counties[k - first]);
-				} else if (k >= 1 && k <= favs.size()) {
-					Log.i(MainActivity.this, "LOC", "aleasă din favorite: " + favs.get(k - 1).label());
-					choose(favs.get(k - 1));
+				if (k >= 0 && k < acts.size() && acts.get(k) != null) acts.get(k).run();
+			}
+		});
+	}
+
+	/** The favourites kept under KEY ("favs" or "favsUS"). */
+	private List<Cities.City> favList(String key) {
+		List<Cities.City> l = new ArrayList<Cities.City>();
+		for (String k : prefs.getString(key, "").split("\n")) {
+			Cities.City c = Cities.City.fromKey(k);
+			if (c != null) l.add(c);
+		}
+		return l;
+	}
+
+	/** Another state (v2.30): its first 3 towns (all of them for the state the phone is in). */
+	private void pickState(final float[] b, final String st) {
+		reopen = new Runnable() {
+			public void run() {
+				pickState(b, st);
+			}
+		};
+		List<Cities.City> all = cities.usStates.get(st);
+		if (all == null) return;
+		final List<Cities.City> l = new ArrayList<Cities.City>(st.equals(Region.state(this)) ? all : all.subList(0, Math.min(3, all.size())));
+		List<Bubble.Row> rows = Bubble.rows();
+		rows.add(Bubble.Row.item(Tr.t("‹  Back", "‹  Înapoi")));
+		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
+		bubble.show(view.px(b), bubbleWidth(0.9f, 300), st, rows, s.T.en, new Bubble.Pick() {
+			public void picked(int k) {
+				if (k == 0) onCity(b);
+				else if (k - 1 < l.size()) {
+					Log.i(MainActivity.this, "LOC", "aleasă din listă (" + st + "): " + l.get(k - 1).label());
+					choose(l.get(k - 1));
 				}
 			}
 		});
+	}
+
+	/** The 3 US favourites, when there are none yet: the first 3 towns of the state (Oklahoma: Claremore, Pryor, Catoosa). */
+	private void seedUSFavs() {
+		if (prefs.getString("favsUS", "").trim().length() > 0) return;
+		String st = Region.state(this);
+		List<Cities.City> l = st.length() > 0 ? cities.usStates.get(st) : null;
+		if (l == null || l.isEmpty()) return;
+		StringBuilder b = new StringBuilder(), names = new StringBuilder();
+		for (int k = 0; k < Math.min(3, l.size()); k++) {
+			b.append(b.length() > 0 ? "\n" : "").append(l.get(k).key());
+			names.append(names.length() > 0 ? ", " : "").append(l.get(k).name);
+		}
+		prefs.edit().putString("favsUS", b.toString()).apply();
+		Log.i(this, "US", "favorite SUA de pornire (" + st + "): " + names);
+	}
+
+	/**
+	 * The location found a town in COUNTRY (STATE in the US, v2.30): the phone's country and state
+	 * are kept; a new state changes the towns listed, the US favourites stay.
+	 */
+	private void usFound(String country, String state) {
+		String was = prefs.getString("locCountry", ""), wasSt = prefs.getString("usState", "");
+		prefs.edit().putString("locCountry", country).putString("usState", state).apply();
+		if (!country.equals(was) || !state.equals(wasSt))
+			Log.i(this, "US", "telefonul e în " + country.toUpperCase() + (state.length() > 0 ? ", statul " + state : "") + (was.length() > 0 ? " (înainte " + was.toUpperCase() + (wasSt.length() > 0 ? ", " + wasSt : "") + ")" : ""));
+		if (country.equals("us")) seedUSFavs();
+		applyUnits();
 	}
 
 	/** The towns of another country (CC): the starting ones and the ones found by the location. */
@@ -1796,17 +2102,23 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** The shown town, kept in the settings and first among the favourites (the last three). */
 	private void setCity(Cities.City c, boolean clear) {
 		Log.i(this, "LOC", "localitatea: " + c.label() + " (" + c.lat + ", " + c.lon + ")");
+		// US towns and the others have their own 3 favourites, never mixed (v2.30).
+		String key = Region.favsKey(c);
+		if (c.us()) seedUSFavs();
 		StringBuilder favs = new StringBuilder(c.key());
 		int n = 1;
-		for (String k : prefs.getString("favs", "").split("\n")) {
+		for (String k : prefs.getString(key, "").split("\n")) {
 			Cities.City f = Cities.City.fromKey(k);
 			if (n >= 3 || f == null || f.same(c)) continue;
 			favs.append('\n').append(k);
 			n++;
 		}
-		prefs.edit().putString("city", c.key()).putString("favs", favs.toString()).apply();
+		prefs.edit().putString("city", c.key()).putString(key, favs.toString()).apply();
 		boolean same = c.same(s.city);
+		boolean kind = s.city == null || s.city.us() != c.us();
 		s.city = c;
+		applyUnits();
+		if (kind) Log.i(this, "US", "localitate " + (c.us() ? "din SUA: unități " : "din afara SUA: unități ") + (s.unitF ? "imperiale" : "metrice") + ", ceas " + (s.clk12 ? "12 h" : "24 h"));
 		if (clear || !same) {
 			s.w = null;
 			s.warns = null;

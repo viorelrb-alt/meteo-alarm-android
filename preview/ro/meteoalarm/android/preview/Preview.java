@@ -125,9 +125,19 @@ public final class Preview {
 		Screen s = new Screen();
 		s.city = cities.find(opts.contains("brasov") ? "Brașov" : "Călărași");
 		if (opts.contains("sector")) s.city = new Cities.City("București", "București, Sector 3", s.city.lat, s.city.lon);
+		// United States (v2.30): " us" = Claremore, OK in American English with the NWS / USGS samples; " es" Spanish, " ro" Romanian.
+		boolean usa = opts.contains(" us");
+		if (usa) {
+			cities.addUS(new String(Files.readAllBytes(new File(assets, "us.txt").toPath()), "UTF-8"));
+			s.city = cities.usStates.get("Oklahoma").get(0);
+			String lg = opts.contains(" es") ? "es" : opts.contains(" ro") ? "ro" : "us";
+			File lf = new File(assets, "lang/" + lg + ".txt");
+			ro.meteoalarm.android.core.Tr.set(lg, lf.exists() ? new String(Files.readAllBytes(lf.toPath()), "UTF-8") : null);
+			s.T = new Texts(lg);
+		} else
 		s.T = new Texts(opts.contains(" en"));
-		s.unitF = opts.contains(" F");
-		s.clk12 = opts.contains(" 12h");
+		s.unitF = opts.contains(" F") || (usa && !opts.contains(" metric"));
+		s.clk12 = opts.contains(" 12h") || (usa && !opts.contains(" metric"));
 		s.dark = opts.contains(" dark");
 		s.w = Weather.parse(fetch(Weather.forecastUrl(s.city.lat, s.city.lon, "Europe/Bucharest"), opts.contains(" dry") ? "forecast-dry.json" : "forecast.json"));
 		Object[] pol = Weather.parsePollen(fetch(Weather.pollenUrl(s.city.lat, s.city.lon), "pollen.json"));
@@ -135,6 +145,17 @@ public final class Preview {
 		s.pollenPlant = (String) pol[1];
 		long now = System.currentTimeMillis();
 		s.warns = Warnings.parse(fetch(Warnings.FEED, null), s.city.county, now);
+		if (usa) {
+			java.text.SimpleDateFormat iso = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+			String nws = new String(Files.readAllBytes(new File("preview/fixtures/nws.json").toPath()), "UTF-8")
+					.replace("{S}", iso.format(new java.util.Date(now - 600000L))).replace("{E1}", iso.format(new java.util.Date(now + 1800000L)))
+					.replace("{E2}", iso.format(new java.util.Date(now + 5 * 3600000L))).replace("{E3}", iso.format(new java.util.Date(now + 14 * 3600000L)));
+			s.warns = ro.meteoalarm.android.core.Nws.parse(nws, now);
+			String qs = new String(Files.readAllBytes(new File("preview/fixtures/usgs.json").toPath()), "UTF-8")
+					.replace("{T1}", Long.toString(now - 3 * 3600000L)).replace("{T2}", Long.toString(now - 11 * 3600000L));
+			s.quakes = Quakes.parseUsgs(qs, s.city.lat, s.city.lon, now, Quakes.WINDOW_MS, Quakes.US_MIN_MAG, false);
+			for (int k = 0; k < s.alertCount(); k++) for (String[] r : s.alertInfo(k)) System.out.println(k + " " + r[0] + ": " + r[1]);
+		} else
 		if (opts.contains(" warn")) {
 			s.warns = new ArrayList<Warnings.Warn>();
 			int n = opts.contains(" warn3") ? 4 : 2;

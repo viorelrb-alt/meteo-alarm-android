@@ -376,3 +376,9 @@ Sends the download link of the app in a WhatsApp message (or, without WhatsApp, 
  · days	 · laethanta
 Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Fóin Samsung le Auto Blocker: múch é sula suiteálann nó sula nuashonraíonn tú an aip (Socruithe › Slándáil agus príobháideacht › Auto Blocker), nó diúltóidh an fón don suiteáil; is féidir leat é a chur ar siúl arís ina dhiaidh sin.
 Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · aonaid impiriúla (mph, orlaí, inHg, mílte)
+Switch to the metric system?	An athrófar go dtí an córas méadrach?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, km/u, milliméadair, hPa, ciliméadair agus clog 24 uair in ionad °F, mph, orlaí, inHg, mílte agus clog 12 uair. Is féidir leat filleadh am ar bith ó ☰ › Teocht °C/°F.
+Metric	Méadrach
+°C · metric system	°C · córas méadrach
+Keep °F	Fan le °F

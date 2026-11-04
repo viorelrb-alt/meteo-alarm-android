@@ -1,3 +1,7 @@
+v2.30 · 4 de noviembre de 2026
+- Elementos para usar la aplicación en Estados Unidos.
+- ☰ › Temperatura °C/°F: al dejar °F la app pregunta si quieres pasar al sistema métrico; con °F la presión se muestra en inHg y las distancias en millas.
+
 v2.22 · 4 de noviembre de 2026
 - Teléfonos Samsung con Auto Blocker: desactívalo antes de instalar o actualizar la aplicación (Ajustes › Seguridad y privacidad › Auto Blocker); si no, el teléfono rechaza la instalación. Después puedes volver a activarlo.
 

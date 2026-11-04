@@ -15,6 +15,8 @@ import ro.meteoalarm.android.core.Cities;
 import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Countries;
 import ro.meteoalarm.android.core.MetNo;
+import ro.meteoalarm.android.core.Nws;
+import ro.meteoalarm.android.core.Warnings;
 import ro.meteoalarm.android.core.Quakes;
 import ro.meteoalarm.android.core.Weather;
 
@@ -124,6 +126,27 @@ final class Fetcher {
 			r.pollen = null;
 			Log.e(ctx, "DATE", "polen / aer a eșuat: " + reason(e, false));
 		}
+		if (c.us()) {
+			// United States (v2.30): the National Weather Service for the town's point.
+			try {
+				r.warn = Weather.get(Nws.url(c.lat, c.lon));
+				List<Warnings.Warn> ws = Nws.parse(r.warn, System.currentTimeMillis());
+				StringBuilder b = new StringBuilder();
+				for (Warnings.Warn w : ws) b.append(b.length() > 0 ? ", " : "").append(w.type);
+				Log.i(ctx, "US", "avertizări NWS OK: " + ws.size() + (ws.isEmpty() ? "" : " (" + b + ")"));
+			} catch (Exception e) {
+				r.warn = null;
+				Log.e(ctx, "US", "avertizările NWS au eșuat: " + reason(e, false));
+			}
+			try {
+				r.quake = Weather.get(Quakes.usgsUrl(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
+				Log.i(ctx, "US", "cutremure USGS OK: " + quakesOf(r.quake, c).size() + " în 24 h");
+			} catch (Exception e) {
+				r.quake = null;
+				Log.e(ctx, "US", "cutremure USGS a eșuat: " + reason(e, false));
+			}
+			return r;
+		}
 		r.warn = warningsFeed(ctx, c.country);
 		if (r.warn == null) Log.e(ctx, "DATE", "avertizările MeteoAlarm (" + c.country + ") nu au venit");
 		else Log.i(ctx, "DATE", "avertizări MeteoAlarm OK " + r.warn.length() / 1024 + " KB");
@@ -218,7 +241,10 @@ final class Fetcher {
 			prefs(ctx).edit().putString("failReason", reason(r.error, false)).putString("failReasonEn", reason(r.error, true)).apply();
 		}
 		if (r.pollen != null) write(ctx, "pollen.json", r.pollen);
-		if (r.warn != null) write(ctx, "warn.xml", r.warn);
+		if (r.warn != null) {
+			write(ctx, "warn.xml", r.warn);
+			prefs(ctx).edit().putString("warnCity", c.key()).apply();
+		}
 		if (r.quake != null) {
 			write(ctx, "quake.json", r.quake);
 			prefs(ctx).edit().putString("quakeCity", c.key()).apply();
@@ -236,9 +262,31 @@ final class Fetcher {
 	static List<Quakes.Quake> quakes(Context ctx, Cities.City c) {
 		String q = c != null && c.key().equals(prefs(ctx).getString("quakeCity", "")) ? read(ctx, "quake.json") : null;
 		try {
+			if (c != null && c.us()) return quakesOf(q, c);
 			return Quakes.parse(q, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis());
 		} catch (Exception e) {
 			return new java.util.ArrayList<Quakes.Quake>();
+		}
+	}
+
+	/** US town C: the USGS quakes of the last 24 h around it. */
+	private static List<Quakes.Quake> quakesOf(String json, Cities.City c) {
+		return Quakes.parseUsgs(json, c.lat, c.lon, System.currentTimeMillis(), Quakes.WINDOW_MS, Quakes.US_MIN_MAG, false);
+	}
+
+	/**
+	 * The warnings saved for town C. A US town's (NWS, for its point) only when they were
+	 * downloaded for it; the MeteoAlarm feed is the country's, matched by the area names.
+	 */
+	static List<Warnings.Warn> warnings(Context ctx, Cities.City c) {
+		if (c == null) return new java.util.ArrayList<Warnings.Warn>();
+		String x = read(ctx, "warn.xml");
+		String of = prefs(ctx).getString("warnCity", "");
+		if (c.us() && !c.key().equals(of)) return new java.util.ArrayList<Warnings.Warn>();
+		try {
+			return Warnings.of(x, c, System.currentTimeMillis());
+		} catch (Exception e) {
+			return new java.util.ArrayList<Warnings.Warn>();
 		}
 	}
 

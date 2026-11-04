@@ -376,3 +376,9 @@ Sends the download link of the app in a WhatsApp message (or, without WhatsApp, 
  · days	 · dienas
 Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Samsung tālruņi ar Auto Blocker: izslēdziet to pirms lietotnes instalēšanas vai atjaunināšanas (Iestatījumi › Drošība un konfidencialitāte › Auto Blocker), citādi tālrunis atteiks instalēšanu; pēc tam to var atkal ieslēgt.
 Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · imperiālās mērvienības (mph, collas, inHg, jūdzes)
+Switch to the metric system?	Pāriet uz metrisko sistēmu?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, km/h, milimetri, hPa, kilometri un 24 stundu pulkstenis °F, mph, collu, inHg, jūdžu un 12 stundu pulksteņa vietā. Atgriezties var jebkurā laikā: ☰ › Temperatūra °C/°F.
+Metric	Metriskā
+°C · metric system	°C · metriskā sistēma
+Keep °F	Paturēt °F

@@ -376,3 +376,9 @@ Sends the download link of the app in a WhatsApp message (or, without WhatsApp, 
  · days	 · napok
 Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Auto Blockerrel rendelkező Samsung telefonok: kapcsold ki az alkalmazás telepítése vagy frissítése előtt (Beállítások › Biztonság és adatvédelem › Auto Blocker), különben a telefon megtagadja a telepítést; utána újra bekapcsolhatod.
 Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · angolszász mértékegységek (mph, hüvelyk, inHg, mérföld)
+Switch to the metric system?	Átvált a metrikus rendszerre?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, km/h, milliméter, hPa, kilométer és 24 órás óra a °F, mph, hüvelyk, inHg, mérföld és 12 órás óra helyett. Bármikor visszaválthatsz: ☰ › Hőmérséklet °C/°F.
+Metric	Metrikus
+°C · metric system	°C · metrikus rendszer
+Keep °F	Marad a °F

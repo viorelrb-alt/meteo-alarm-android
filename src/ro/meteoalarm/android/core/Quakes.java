@@ -118,6 +118,83 @@ public final class Quakes {
 				+ "&start=" + f.format(new java.util.Date(since)) + "&minlat=27&maxlat=71&minlon=-32&maxlon=41";
 	}
 
+	// --- United States: USGS (v2.30) ------------------------------------------------------
+
+	/** Magnitude from which USGS quakes are shown in the US (Oklahoma has many small ones). */
+	public static final double US_MIN_MAG = 2.5;
+	/** Radius around a US town, km (about 300 miles). */
+	public static final double US_RADIUS_KM = 483;
+
+	private static String usgsTime(long since) {
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
+		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+		return f.format(new java.util.Date(since));
+	}
+
+	/** USGS quakes since SINCE within US_RADIUS_KM of LAT LON, magnitude US_MIN_MAG and more (GeoJSON). */
+	public static String usgsUrl(double lat, double lon, long since) {
+		return "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&limit=500&minmagnitude=" + US_MIN_MAG
+				+ "&starttime=" + usgsTime(since) + "&latitude=" + Weather.fmt(lat) + "&longitude=" + Weather.fmt(lon)
+				+ "&maxradiuskm=" + Math.round(US_RADIUS_KM);
+	}
+
+	/** USGS quakes of magnitude 3 and more since SINCE in and around the United States (Alaska and Hawaii too). */
+	public static String usUrl(long since) {
+		return "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&limit=1000&minmagnitude=" + MIN_MAG
+				+ "&starttime=" + usgsTime(since) + "&minlatitude=17&maxlatitude=72&minlongitude=-180&maxlongitude=-64";
+	}
+
+	/**
+	 * USGS GeoJSON: the quakes of the last WINDOW ms of magnitude MIN or more, newest first, with the
+	 * distance and the estimated intensity for LAT LON. US_ONLY keeps those whose place names a state.
+	 */
+	public static List<Quake> parseUsgs(String json, double lat, double lon, long now, long window, double min, boolean usOnly) {
+		List<Quake> list = new ArrayList<Quake>();
+		if (json == null || json.trim().length() == 0 || !json.trim().startsWith("{")) return list;
+		Object root = Json.parse(json);
+		@SuppressWarnings("unchecked")
+		List<Object> fs = root instanceof Map ? Json.arr((Map<String, Object>) root, "features") : new ArrayList<Object>();
+		for (Object o : fs) {
+			Map<String, Object> p = Json.obj(o, "properties"), g = Json.obj(o, "geometry");
+			if (p == null || g == null) continue;
+			List<Object> xyz = Json.arr(g, "coordinates");
+			if (xyz == null || xyz.size() < 2) continue;
+			Quake q = new Quake();
+			q.mag = Json.num(p, "mag");
+			q.lon = Json.num(xyz, 0);
+			q.lat = Json.num(xyz, 1);
+			q.depth = xyz.size() > 2 ? Math.abs(Json.num(xyz, 2)) : 10;
+			Object pl = p.get("place"), mt = p.get("magType"), t = p.get("time"), id = ((Map<?, ?>) o).get("id");
+			q.region = pl instanceof String ? (String) pl : "";
+			q.magType = mt instanceof String ? (String) mt : "";
+			q.id = id instanceof String ? (String) id : "";
+			q.time = t instanceof Number ? ((Number) t).longValue() : 0;
+			if (Double.isNaN(q.mag) || Double.isNaN(q.lat) || Double.isNaN(q.lon) || q.mag < min) continue;
+			if (q.time <= 0 || now - q.time > window || q.time - now > 600000L) continue;
+			if (usOnly && !namesState(q.region)) continue;
+			if (Double.isNaN(q.depth)) q.depth = 10;
+			q.dist = km(lat, lon, q.lat, q.lon);
+			q.felt = intensity(q.mag, Math.sqrt(q.dist * q.dist + q.depth * q.depth));
+			list.add(q);
+		}
+		java.util.Collections.sort(list, new java.util.Comparator<Quake>() {
+			public int compare(Quake a, Quake b) {
+				return a.time > b.time ? -1 : a.time < b.time ? 1 : 0;
+			}
+		});
+		return list;
+	}
+
+	/** A USGS place in a state: "5 km NE of Prague, Oklahoma", "10 km SW of Ridgecrest, CA". */
+	static boolean namesState(String place) {
+		if (place == null) return false;
+		int c = place.lastIndexOf(", ");
+		String tail = c >= 0 ? place.substring(c + 2).trim() : place.trim();
+		if (Cities.stateCode(tail).length() > 0) return true;
+		for (int k = 0; k < Cities.STATES.length; k += 2) if (place.contains(Cities.STATES[k])) return true;
+		return false;
+	}
+
 	/** The one shown in the box: the strongest of the last 24 h (the newest of equal ones). */
 	public static Quake main(List<Quake> qs) {
 		Quake best = null;

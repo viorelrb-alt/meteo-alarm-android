@@ -1,3 +1,7 @@
+v2.30 · 4. November 2026
+- Elemente für die Nutzung der App in den USA.
+- ☰ › Temperatur °C/°F: Beim Verlassen von °F fragt die App, ob sie zum metrischen System wechseln soll; mit °F wird der Luftdruck in inHg und Entfernungen in Meilen angezeigt.
+
 v2.22 · 4. November 2026
 - Samsung-Telefone mit Auto Blocker: Schalte ihn vor dem Installieren oder Aktualisieren der App aus (Einstellungen › Sicherheit und Datenschutz › Auto Blocker), sonst verweigert das Telefon die Installation; danach kannst du ihn wieder einschalten.
 

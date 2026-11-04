@@ -1,3 +1,7 @@
+v2.30 · 2026. november 4.
+- Elemek az alkalmazás használatához az Egyesült Államokban.
+- ☰ › Hőmérséklet °C/°F: a °F elhagyásakor az alkalmazás megkérdezi, hogy átváltson-e a metrikus rendszerre; °F-nél a légnyomás inHg-ben, a távolságok mérföldben látszanak.
+
 v2.22 · 2026. november 4.
 - Auto Blockerrel rendelkező Samsung telefonok: kapcsold ki az alkalmazás telepítése vagy frissítése előtt (Beállítások › Biztonság és adatvédelem › Auto Blocker), különben a telefon megtagadja a telepítést; utána újra bekapcsolhatod.
 

@@ -11,9 +11,9 @@ import java.util.Map;
  */
 public final class Tr {
 	/** The language codes, as the list shows them, and their names in their own language. */
-	public static final String[] CODES = { "ro", "en", "bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "ga", "hr", "hu", "it",
+	public static final String[] CODES = { "ro", "en", "us", "bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "ga", "hr", "hu", "it",
 			"lt", "lv", "mt", "nl", "pl", "pt", "sk", "sl", "sv", "uk" };
-	public static final String[] NAMES = { "Română", "English", "Български", "Čeština", "Dansk", "Deutsch", "Ελληνικά", "Español",
+	public static final String[] NAMES = { "Română", "English", "English (US)", "Български", "Čeština", "Dansk", "Deutsch", "Ελληνικά", "Español",
 			"Eesti", "Suomi", "Français", "Gaeilge", "Hrvatski", "Magyar", "Italiano", "Lietuvių", "Latviešu", "Malti", "Nederlands",
 			"Polski", "Português", "Slovenčina", "Slovenščina", "Svenska", "Українська" };
 
@@ -45,6 +45,11 @@ public final class Tr {
 
 	public static String lang() {
 		return lang;
+	}
+
+	/** English, British or American (v2.30: "us" = American English, the British texts with American spelling). */
+	public static boolean english() {
+		return "en".equals(lang) || "us".equals(lang);
 	}
 
 	/** Romanian is on. */
@@ -109,6 +114,7 @@ public final class Tr {
 		if (cc.equals("ua")) return new String[] { "uk" };
 		if (cc.equals("ro") || cc.equals("md")) return new String[] { "ro" };
 		if (cc.equals("ch")) return new String[] { "de", "fr", "it" };
+		if (cc.equals("us")) return new String[] { "us", "es" };
 		return new String[0];
 	}
 	/** North, east, south, west in the current language (the letters of a compass). */
@@ -140,6 +146,6 @@ public final class Tr {
 
 	/** The decimal point: "." in English, Irish and Maltese, "," in the others. */
 	public static char dot() {
-		return lang.equals("en") || lang.equals("ga") || lang.equals("mt") ? '.' : ',';
+		return lang.equals("en") || lang.equals("us") || lang.equals("ga") || lang.equals("mt") ? '.' : ',';
 	}
 }

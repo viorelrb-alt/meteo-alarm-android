@@ -199,6 +199,30 @@ final class BottomSheet extends FrameLayout {
 		return open;
 	}
 
+	private int taps;
+	private long tapAt;
+
+	/** RUN after 7 taps on the title within a few seconds (null: none; the title then swipes like the rest). */
+	void titleTaps(final Runnable run) {
+		taps = 0;
+		if (run == null) {
+			title.setOnClickListener(null);
+			title.setClickable(false);
+			return;
+		}
+		title.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				long now = System.currentTimeMillis();
+				taps = now - tapAt < 1500 ? taps + 1 : 1;
+				tapAt = now;
+				if (taps >= 7) {
+					taps = 0;
+					run.run();
+				}
+			}
+		});
+	}
+
 	boolean isCancelable() {
 		return cancelable;
 	}
@@ -218,6 +242,7 @@ final class BottomSheet extends FrameLayout {
 	void show(String t, String msg, String primaryLabel, Runnable action, String closeLabel, Runnable closed) {
 		onClose = closed;
 		title.setText(t);
+		titleTaps(null);
 		text.setText(msg);
 		scroll.scrollTo(0, 0);
 		scroll.getLayoutParams().height = LayoutParams.WRAP_CONTENT;

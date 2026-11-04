@@ -32,6 +32,8 @@ final class Lang {
 		if (code.length() == 0) {
 			String sys = system();
 			code = Tr.known(sys) ? sys : "en";
+			// An American phone in English: American English (v2.30).
+			if (code.equals("en") && "US".equalsIgnoreCase(Locale.getDefault().getCountry())) code = "us";
 			p.edit().putString("lang", code).apply();
 			Log.i(ctx, "LIMBA", "prima pornire: limba telefonului " + sys + " -> " + Tr.name(code));
 		}
@@ -93,6 +95,8 @@ final class Lang {
 		String sys = system();
 		if (Tr.known(sys) && !l.contains(sys)) l.add(sys);
 		for (String c : Tr.ofCountry(country(ctx))) if (!l.contains(c)) l.add(c);
+		// In the US (or the test mode): American English and Spanish (v2.30).
+		if (Region.showUS(ctx)) for (String c : new String[] { "us", "es" }) if (!l.contains(c)) l.add(c);
 		String cur = apply(ctx);
 		if (!l.contains(cur)) l.add(cur);
 		return l;

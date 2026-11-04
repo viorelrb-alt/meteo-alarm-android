@@ -124,7 +124,7 @@ final class Locator {
 		new Thread(new Runnable() {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
-				String town = null, county = null, district = null, country = null, match = "";
+				String town = null, county = null, district = null, country = null, match = "", state = null;
 				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
 					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=16&addressdetails=1&accept-language="
@@ -139,6 +139,7 @@ final class Locator {
 						district = cd != null && cd.startsWith("Sector") ? cd : null;
 						if (district != null && town != null && district.equalsIgnoreCase(town)) district = null;
 						country = (String) ad.get("country_code");
+						state = (String) ad.get("state");
 					}
 				} catch (Exception e) {
 					town = null;
@@ -186,6 +187,8 @@ final class Locator {
 				}
 				if (country == null) country = "ro";
 				country = country.toLowerCase();
+				// United States (v2.30): the state stands where a Romanian town has its county.
+				if (country.equals("us") && state != null && state.trim().length() > 0) county = state.trim();
 				// Abroad, the warnings name the areas in the local language: ask again without a language.
 				if (town != null && !country.equals("ro")) {
 					try {

@@ -1,0 +1,4 @@
+{"type":"FeatureCollection","features":[
+{"type":"Feature","properties":{"mag":3.4,"place":"6 km NE of Prague, Oklahoma","time":{T1},"magType":"ml"},"geometry":{"type":"Point","coordinates":[-96.63,35.52,5.0]},"id":"ok1"},
+{"type":"Feature","properties":{"mag":2.6,"place":"12 km S of Medford, Oklahoma","time":{T2},"magType":"ml"},"geometry":{"type":"Point","coordinates":[-97.73,36.70,7.2]},"id":"ok2"}
+]}

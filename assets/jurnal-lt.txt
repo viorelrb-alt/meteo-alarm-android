@@ -1,3 +1,7 @@
+v2.30 · 2026 m. lapkričio 4 d.
+- Elementai programai naudoti Jungtinėse Valstijose.
+- ☰ › Temperatūra °C/°F: išjungiant °F programa klausia, ar pereiti prie metrinės sistemos; su °F slėgis rodomas inHg, atstumai – myliomis.
+
 v2.22 · 2026 m. lapkričio 4 d.
 - Samsung telefonai su Auto Blocker: išjunkite jį prieš diegdami ar atnaujindami programą (Nustatymai › Sauga ir privatumas › Auto Blocker), kitaip telefonas atsisakys diegti; vėliau galite vėl įjungti.
 

@@ -1,3 +1,7 @@
+v2.30 · 4. november 2026
+- Elementi za uporabo aplikacije v Združenih državah.
+- ☰ › Temperatura °C/°F: ob izhodu iz °F aplikacija vpraša, ali naj preklopi na metrični sistem; z °F je tlak v inHg, razdalje pa v miljah.
+
 v2.22 · 4. november 2026
 - Telefoni Samsung z Auto Blockerjem: pred namestitvijo ali posodobitvijo aplikacije ga izklopite (Nastavitve › Varnost in zasebnost › Auto Blocker), sicer telefon zavrne namestitev; nato ga lahko spet vklopite.
 

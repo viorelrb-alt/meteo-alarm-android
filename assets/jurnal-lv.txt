@@ -1,3 +1,7 @@
+v2.30 · 2026. gada 4. novembris
+- Elementi lietotnes izmantošanai Amerikas Savienotajās Valstīs.
+- ☰ › Temperatūra °C/°F: atstājot °F, lietotne jautā, vai pāriet uz metrisko sistēmu; ar °F spiediens ir inHg un attālumi jūdzēs.
+
 v2.22 · 2026. gada 4. novembris
 - Samsung tālruņi ar Auto Blocker: izslēdziet to pirms lietotnes instalēšanas vai atjaunināšanas (Iestatījumi › Drošība un konfidencialitāte › Auto Blocker), citādi tālrunis atteiks instalēšanu; pēc tam to var atkal ieslēgt.
 

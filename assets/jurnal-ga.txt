@@ -1,3 +1,7 @@
+v2.30 · 4 Samhain 2026
+- Gnéithe chun an aip a úsáid sna Stáit Aontaithe.
+- ☰ › Teocht °C/°F: nuair a fhágann tú °F, fiafraíonn an aip an rachfar go dtí an córas méadrach; le °F, tá an brú in inHg agus na faid i mílte.
+
 v2.22 · 4 Samhain 2026
 - Fóin Samsung le Auto Blocker: múch é sula suiteálann nó sula nuashonraíonn tú an aip (Socruithe › Slándáil agus príobháideacht › Auto Blocker), nó diúltóidh an fón don suiteáil; is féidir leat é a chur ar siúl arís ina dhiaidh sin.
 

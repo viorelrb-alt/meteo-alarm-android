@@ -185,8 +185,6 @@ public class Widget extends AppWidgetProvider {
 		Data d = new Data();
 		SharedPreferences p = prefs(ctx);
 		d.en = Lang.en(ctx);
-		d.unitF = p.getBoolean("unitF", false);
-		d.clk12 = p.getBoolean("clk12", false);
 		d.T = new Texts(Lang.apply(ctx));
 		Cities.City cached = Cities.City.fromKey(p.getString("cacheCity", ""));
 		Cities.City own = Cities.City.fromKey(town == null ? "" : town);
@@ -205,10 +203,13 @@ public class Widget extends AppWidgetProvider {
 		} catch (Exception e) {
 			d.w = null;
 		}
+		// Units and clock as the app shows them for this kind of town (US or not, v2.30).
+		d.unitF = Region.imperial(ctx, d.c);
+		d.clk12 = Region.clk12(ctx, d.c);
 		// The warnings the app saved (the country's feed): which codes (1 yellow, 2 orange, 3 red) are active here.
 		try {
 			if (d.c != null && cached != null && cached.country.equals(d.c.country)) {
-				List<Warnings.Warn> ws = Warnings.parse(read(new File(ctx.getFilesDir(), "warn.xml")), d.c.warnNames(), System.currentTimeMillis());
+				List<Warnings.Warn> ws = Fetcher.warnings(ctx, d.c);
 				boolean[] has = new boolean[4];
 				for (Warnings.Warn x : ws) if (x.level >= 1 && x.level <= 3) has[x.level] = true;
 				int n = 0;

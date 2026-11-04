@@ -1,0 +1,493 @@
+# Meteo Alarm Android: US towns. STATE CODE|State|Town|lat|lon. The first 3 of a state are its
+# starting favourites; all of them are listed for the state the phone is in, the first 3 for the others.
+AL|Alabama|Birmingham|33.5207|-86.8025
+AL|Alabama|Montgomery|32.3668|-86.3000
+AL|Alabama|Mobile|30.6954|-88.0399
+AL|Alabama|Huntsville|34.7304|-86.5861
+AL|Alabama|Tuscaloosa|33.2098|-87.5692
+AL|Alabama|Hoover|33.4054|-86.8114
+AL|Alabama|Dothan|31.2232|-85.3905
+AL|Alabama|Auburn|32.6099|-85.4808
+AL|Alabama|Decatur|34.6059|-86.9833
+AL|Alabama|Madison|34.6993|-86.7483
+AL|Alabama|Florence|34.7998|-87.6773
+AL|Alabama|Phenix City|32.4710|-85.0008
+AK|Alaska|Anchorage|61.2181|-149.9003
+AK|Alaska|Fairbanks|64.8402|-147.7104
+AK|Alaska|Juneau|58.3628|-134.5294
+AK|Alaska|Wasilla|61.5814|-149.4394
+AK|Alaska|Sitka|57.0514|-135.3166
+AK|Alaska|Ketchikan|55.3720|-131.6832
+AK|Alaska|Kenai|60.6145|-151.2546
+AZ|Arizona|Phoenix|33.4484|-112.0740
+AZ|Arizona|Tucson|32.2217|-110.9265
+AZ|Arizona|Mesa|33.4152|-111.8315
+AZ|Arizona|Chandler|33.3062|-111.8413
+AZ|Arizona|Glendale|33.5387|-112.1860
+AZ|Arizona|Gilbert|33.3528|-111.7890
+AZ|Arizona|Scottsdale|33.4942|-111.9261
+AZ|Arizona|Tempe|33.4255|-111.9400
+AZ|Arizona|Peoria|33.5806|-112.2374
+AZ|Arizona|Surprise|33.6292|-112.3679
+AZ|Arizona|Yuma|32.6927|-114.6277
+AZ|Arizona|Avondale|33.4356|-112.3496
+AR|Arkansas|Little Rock|34.7465|-92.2896
+AR|Arkansas|Fort Smith|35.3859|-94.3985
+AR|Arkansas|Fayetteville|36.0626|-94.1574
+AR|Arkansas|Springdale|36.1867|-94.1288
+AR|Arkansas|Jonesboro|35.8423|-90.7043
+AR|Arkansas|North Little Rock|34.7695|-92.2671
+AR|Arkansas|Conway|35.0887|-92.4421
+AR|Arkansas|Rogers|36.3320|-94.1185
+AR|Arkansas|Pine Bluff|34.2284|-92.0032
+AR|Arkansas|Bentonville|36.3729|-94.2088
+CA|California|Los Angeles|34.0522|-118.2437
+CA|California|San Diego|32.7157|-117.1611
+CA|California|San Jose|37.3382|-121.8863
+CA|California|San Francisco|37.7749|-122.4194
+CA|California|Fresno|36.7468|-119.7726
+CA|California|Sacramento|38.5816|-121.4944
+CA|California|Long Beach|33.7701|-118.1937
+CA|California|Oakland|37.8044|-122.2711
+CA|California|Bakersfield|35.3733|-119.0187
+CA|California|Anaheim|33.8353|-117.9145
+CA|California|Santa Ana|33.7456|-117.8678
+CA|California|Riverside|33.9533|-117.3962
+CO|Colorado|Denver|39.7392|-104.9903
+CO|Colorado|Colorado Springs|38.8339|-104.8214
+CO|Colorado|Aurora|39.7294|-104.8319
+CO|Colorado|Fort Collins|40.5853|-105.0844
+CO|Colorado|Lakewood|39.7047|-105.0814
+CO|Colorado|Thornton|39.8680|-104.9719
+CO|Colorado|Arvada|39.8028|-105.0875
+CO|Colorado|Westminster|39.8367|-105.0372
+CO|Colorado|Pueblo|38.2544|-104.6091
+CO|Colorado|Centennial|39.5807|-104.8772
+CO|Colorado|Boulder|40.0150|-105.2705
+CO|Colorado|Greeley|40.4233|-104.7091
+CT|Connecticut|Bridgeport|41.1865|-73.1952
+CT|Connecticut|New Haven|41.3083|-72.9279
+CT|Connecticut|Stamford|41.0534|-73.5387
+CT|Connecticut|Hartford|41.7637|-72.6851
+CT|Connecticut|Waterbury|41.5582|-73.0515
+CT|Connecticut|Norwalk|41.1177|-73.4082
+CT|Connecticut|Danbury|41.3948|-73.4540
+CT|Connecticut|New Britain|41.6612|-72.7795
+CT|Connecticut|Bristol|41.6718|-72.9493
+CT|Connecticut|Meriden|41.5382|-72.8070
+CT|Connecticut|West Haven|41.2705|-72.9470
+CT|Connecticut|Milford|41.2307|-73.0640
+DE|Delaware|Wilmington|39.7391|-75.5398
+DE|Delaware|Dover|39.1582|-75.5244
+DE|Delaware|Newark|39.6349|-75.6993
+DE|Delaware|Middletown|39.4815|-75.6832
+DE|Delaware|Smyrna|39.2934|-75.6008
+DE|Delaware|Georgetown|38.6790|-75.3932
+DC|District of Columbia|Washington|38.9072|-77.0369
+FL|Florida|Jacksonville|30.3322|-81.6557
+FL|Florida|Miami|25.7617|-80.1918
+FL|Florida|Tampa|27.9506|-82.4572
+FL|Florida|Orlando|28.5383|-81.3792
+FL|Florida|St. Petersburg|27.7731|-82.6400
+FL|Florida|Hialeah|25.8576|-80.2781
+FL|Florida|Tallahassee|30.4383|-84.2807
+FL|Florida|Fort Lauderdale|26.1224|-80.1373
+FL|Florida|Port St. Lucie|27.2730|-80.3582
+FL|Florida|Cape Coral|26.5629|-81.9495
+FL|Florida|Pembroke Pines|26.0078|-80.2963
+FL|Florida|Hollywood|26.0112|-80.1495
+GA|Georgia|Atlanta|33.7490|-84.3880
+GA|Georgia|Columbus|32.4610|-84.9877
+GA|Georgia|Augusta|33.4735|-82.0105
+GA|Georgia|Savannah|32.0835|-81.0998
+GA|Georgia|Athens|33.9519|-83.3576
+GA|Georgia|Sandy Springs|33.9304|-84.3733
+GA|Georgia|Roswell|34.0232|-84.3616
+GA|Georgia|Macon|32.8407|-83.6324
+GA|Georgia|Johns Creek|34.0289|-84.1986
+GA|Georgia|Albany|31.5785|-84.1557
+GA|Georgia|Warner Robins|32.6130|-83.6242
+GA|Georgia|Alpharetta|34.0754|-84.2941
+HI|Hawaii|Honolulu|21.3069|-157.8583
+HI|Hawaii|Hilo|19.7025|-155.0939
+HI|Hawaii|Kailua|21.4063|-157.7448
+HI|Hawaii|Kahului|20.8814|-156.4783
+HI|Hawaii|Lihue|21.9816|-159.3683
+ID|Idaho|Boise|43.6187|-116.2146
+ID|Idaho|Nampa|43.5407|-116.5635
+ID|Idaho|Meridian|43.6121|-116.3915
+ID|Idaho|Idaho Falls|43.4917|-112.0340
+ID|Idaho|Pocatello|42.8713|-112.4455
+ID|Idaho|Caldwell|43.6629|-116.6874
+ID|Idaho|Coeur d'Alene|47.6777|-116.7805
+ID|Idaho|Twin Falls|42.5630|-114.4609
+IL|Illinois|Chicago|41.8781|-87.6298
+IL|Illinois|Aurora|41.7606|-88.3201
+IL|Illinois|Rockford|42.2711|-89.0940
+IL|Illinois|Joliet|41.5250|-88.0817
+IL|Illinois|Naperville|41.7508|-88.1535
+IL|Illinois|Springfield|39.7817|-89.6501
+IL|Illinois|Peoria|40.6936|-89.5890
+IL|Illinois|Elgin|42.0354|-88.2826
+IL|Illinois|Waukegan|42.3636|-87.8448
+IL|Illinois|Cicero|41.8456|-87.7539
+IL|Illinois|Champaign|40.1164|-88.2434
+IL|Illinois|Bloomington|40.4842|-88.9937
+IN|Indiana|Indianapolis|39.7684|-86.1581
+IN|Indiana|Fort Wayne|41.0793|-85.1394
+IN|Indiana|Evansville|37.9716|-87.5711
+IN|Indiana|South Bend|41.6764|-86.2520
+IN|Indiana|Carmel|39.9784|-86.1180
+IN|Indiana|Fishers|39.9568|-86.0134
+IN|Indiana|Bloomington|39.1653|-86.5264
+IN|Indiana|Hammond|41.5834|-87.5000
+IN|Indiana|Gary|41.5934|-87.3464
+IN|Indiana|Lafayette|40.4167|-86.8753
+IN|Indiana|Muncie|40.1934|-85.3864
+IN|Indiana|Terre Haute|39.4667|-87.4139
+IA|Iowa|Des Moines|41.6005|-93.6091
+IA|Iowa|Cedar Rapids|41.9779|-91.6656
+IA|Iowa|Davenport|41.5236|-90.5776
+IA|Iowa|Sioux City|42.5000|-96.4003
+IA|Iowa|Iowa City|41.6611|-91.5302
+IA|Iowa|Waterloo|42.4928|-92.3426
+IA|Iowa|Council Bluffs|41.2619|-95.8608
+IA|Iowa|Ames|42.0347|-93.6200
+IA|Iowa|West Des Moines|41.5772|-93.7113
+IA|Iowa|Dubuque|42.5006|-90.6646
+IA|Iowa|Ankeny|41.7318|-93.6001
+IA|Iowa|Urbandale|41.6267|-93.7122
+KS|Kansas|Wichita|37.6889|-97.3361
+KS|Kansas|Overland Park|38.9822|-94.6708
+KS|Kansas|Kansas City|39.1141|-94.6275
+KS|Kansas|Olathe|38.8814|-94.8191
+KS|Kansas|Topeka|39.0558|-95.6890
+KS|Kansas|Lawrence|38.9717|-95.2353
+KS|Kansas|Shawnee|39.0228|-94.7152
+KS|Kansas|Manhattan|39.1836|-96.5717
+KS|Kansas|Lenexa|38.9536|-94.7336
+KS|Kansas|Salina|38.8403|-97.6114
+KS|Kansas|Hutchinson|38.0608|-97.9298
+KY|Kentucky|Louisville|38.2527|-85.7585
+KY|Kentucky|Lexington|38.0406|-84.5037
+KY|Kentucky|Bowling Green|36.9685|-86.4808
+KY|Kentucky|Owensboro|37.7719|-87.1112
+KY|Kentucky|Covington|39.0837|-84.5086
+KY|Kentucky|Frankfort|38.1928|-84.8806
+KY|Kentucky|Richmond|37.7546|-84.2955
+KY|Kentucky|Paducah|37.0634|-88.6632
+LA|Louisiana|New Orleans|29.9511|-90.0715
+LA|Louisiana|Baton Rouge|30.4583|-91.1403
+LA|Louisiana|Shreveport|32.5252|-93.7502
+LA|Louisiana|Lafayette|30.2241|-92.0198
+LA|Louisiana|Lake Charles|30.2266|-93.2174
+LA|Louisiana|Kenner|29.9941|-90.2417
+LA|Louisiana|Bossier City|32.5160|-93.7321
+LA|Louisiana|Monroe|32.5093|-92.1193
+LA|Louisiana|Alexandria|31.3113|-92.4451
+ME|Maine|Portland|43.6615|-70.2553
+ME|Maine|Lewiston|44.0985|-70.1916
+ME|Maine|Bangor|44.8242|-68.7918
+ME|Maine|Augusta|44.3232|-69.7665
+ME|Maine|South Portland|43.6318|-70.2709
+MD|Maryland|Baltimore|39.2904|-76.6122
+MD|Maryland|Frederick|39.4143|-77.4105
+MD|Maryland|Gaithersburg|39.1434|-77.2014
+MD|Maryland|Rockville|39.0840|-77.1528
+MD|Maryland|Bowie|39.0068|-76.7791
+MD|Maryland|Hagerstown|39.6418|-77.7200
+MD|Maryland|Annapolis|38.9784|-76.4922
+MA|Massachusetts|Boston|42.3601|-71.0589
+MA|Massachusetts|Worcester|42.2626|-71.8023
+MA|Massachusetts|Springfield|42.1015|-72.5898
+MA|Massachusetts|Lowell|42.6334|-71.3162
+MA|Massachusetts|Cambridge|42.3736|-71.1097
+MA|Massachusetts|New Bedford|41.6362|-70.9342
+MA|Massachusetts|Brockton|42.0834|-71.0184
+MA|Massachusetts|Quincy|42.2529|-71.0023
+MA|Massachusetts|Lynn|42.4668|-70.9495
+MA|Massachusetts|Fall River|41.7015|-71.1550
+MA|Massachusetts|Newton|42.3370|-71.2092
+MA|Massachusetts|Somerville|42.3876|-71.0995
+MI|Michigan|Detroit|42.3314|-83.0458
+MI|Michigan|Grand Rapids|42.9634|-85.6681
+MI|Michigan|Warren|42.5145|-83.0147
+MI|Michigan|Sterling Heights|42.5803|-83.0302
+MI|Michigan|Ann Arbor|42.2808|-83.7430
+MI|Michigan|Lansing|42.7325|-84.5555
+MI|Michigan|Flint|43.0125|-83.6875
+MI|Michigan|Dearborn|42.3223|-83.1763
+MI|Michigan|Livonia|42.3684|-83.3527
+MI|Michigan|Troy|42.6064|-83.1498
+MI|Michigan|Westland|42.3242|-83.4002
+MI|Michigan|Farmington Hills|42.4990|-83.3677
+MN|Minnesota|Minneapolis|44.9778|-93.2650
+MN|Minnesota|St. Paul|44.9537|-93.0900
+MN|Minnesota|Rochester|44.0121|-92.4802
+MN|Minnesota|Bloomington|44.8408|-93.2983
+MN|Minnesota|Duluth|46.7867|-92.1005
+MN|Minnesota|Brooklyn Park|45.0941|-93.3563
+MN|Minnesota|Plymouth|45.0105|-93.4555
+MN|Minnesota|St. Cloud|45.5579|-94.1632
+MN|Minnesota|Woodbury|44.9239|-92.9594
+MN|Minnesota|Eagan|44.8041|-93.1669
+MN|Minnesota|Maple Grove|45.0725|-93.4558
+MN|Minnesota|Eden Prairie|44.8547|-93.4708
+MS|Mississippi|Jackson|32.2988|-90.1848
+MS|Mississippi|Gulfport|30.3674|-89.0928
+MS|Mississippi|Southaven|34.9890|-90.0126
+MS|Mississippi|Hattiesburg|31.3271|-89.2903
+MS|Mississippi|Biloxi|30.3960|-88.8853
+MS|Mississippi|Meridian|32.3643|-88.7037
+MS|Mississippi|Tupelo|34.2538|-88.7209
+MO|Missouri|Kansas City|39.0997|-94.5786
+MO|Missouri|St. Louis|38.6270|-90.1994
+MO|Missouri|Springfield|37.2090|-93.2923
+MO|Missouri|Independence|39.0911|-94.4155
+MO|Missouri|Columbia|38.9517|-92.3341
+MO|Missouri|Lee's Summit|38.9108|-94.3822
+MO|Missouri|O'Fallon|38.8106|-90.6998
+MO|Missouri|St. Joseph|39.7675|-94.8467
+MO|Missouri|St. Charles|38.7881|-90.4974
+MO|Missouri|St. Peters|38.7875|-90.6299
+MO|Missouri|Blue Springs|39.0170|-94.2816
+MO|Missouri|Florissant|38.7892|-90.3226
+MT|Montana|Billings|45.7833|-108.5007
+MT|Montana|Missoula|46.8787|-113.9966
+MT|Montana|Great Falls|47.4942|-111.2833
+MT|Montana|Bozeman|45.6770|-111.0429
+MT|Montana|Helena|46.6131|-112.0213
+MT|Montana|Butte|45.9916|-112.5178
+MT|Montana|Kalispell|48.2209|-114.2892
+NE|Nebraska|Omaha|41.2524|-95.9980
+NE|Nebraska|Lincoln|40.8258|-96.6852
+NE|Nebraska|Bellevue|41.1544|-95.9146
+NE|Nebraska|Grand Island|40.9264|-98.3420
+NE|Nebraska|Kearney|40.7086|-99.1203
+NE|Nebraska|North Platte|41.1326|-100.7746
+NE|Nebraska|Fremont|41.4416|-96.4945
+NE|Nebraska|Scottsbluff|41.8720|-103.6619
+NV|Nevada|Las Vegas|36.1699|-115.1398
+NV|Nevada|Henderson|36.0395|-114.9817
+NV|Nevada|Reno|39.5296|-119.8138
+NV|Nevada|North Las Vegas|36.1989|-115.1175
+NV|Nevada|Sparks|39.5349|-119.7527
+NV|Nevada|Carson City|39.1638|-119.7674
+NH|New Hampshire|Manchester|42.9956|-71.4548
+NH|New Hampshire|Nashua|42.7654|-71.4676
+NH|New Hampshire|Concord|43.2081|-71.5376
+NH|New Hampshire|Dover|43.1900|-70.8849
+NH|New Hampshire|Rochester|43.2684|-70.9766
+NH|New Hampshire|Keene|42.9431|-72.2895
+NH|New Hampshire|Portsmouth|43.0665|-70.7804
+NJ|New Jersey|Newark|40.7357|-74.1724
+NJ|New Jersey|Jersey City|40.7282|-74.0776
+NJ|New Jersey|Paterson|40.9168|-74.1718
+NJ|New Jersey|Elizabeth|40.6640|-74.2107
+NJ|New Jersey|Clifton|40.8584|-74.1638
+NJ|New Jersey|Trenton|40.2171|-74.7429
+NJ|New Jersey|Camden|39.9259|-75.1196
+NJ|New Jersey|Passaic|40.8568|-74.1285
+NJ|New Jersey|Union City|40.6976|-74.2632
+NJ|New Jersey|Bayonne|40.6687|-74.1143
+NJ|New Jersey|East Orange|40.7673|-74.2049
+NJ|New Jersey|Vineland|39.4864|-75.0260
+NM|New Mexico|Albuquerque|35.0853|-106.6056
+NM|New Mexico|Las Cruces|32.3199|-106.7637
+NM|New Mexico|Rio Rancho|35.2328|-106.6630
+NM|New Mexico|Santa Fe|35.6870|-105.9378
+NM|New Mexico|Roswell|33.3943|-104.5230
+NM|New Mexico|Farmington|36.7281|-108.2187
+NM|New Mexico|Clovis|34.4048|-103.2052
+NY|New York|New York|40.7128|-74.0059
+NY|New York|Buffalo|42.8864|-78.8784
+NY|New York|Rochester|43.1610|-77.6109
+NY|New York|Yonkers|40.9312|-73.8987
+NY|New York|Syracuse|43.0481|-76.1474
+NY|New York|Albany|42.6526|-73.7562
+NY|New York|New Rochelle|40.9115|-73.7824
+NY|New York|Mount Vernon|40.9126|-73.8371
+NY|New York|Schenectady|42.8142|-73.9396
+NY|New York|Utica|43.1009|-75.2327
+NY|New York|White Plains|41.0340|-73.7629
+NY|New York|Hempstead|40.7062|-73.6187
+NC|North Carolina|Charlotte|35.2271|-80.8431
+NC|North Carolina|Raleigh|35.7796|-78.6382
+NC|North Carolina|Greensboro|36.0726|-79.7920
+NC|North Carolina|Durham|35.9940|-78.8986
+NC|North Carolina|Winston-Salem|36.0999|-80.2442
+NC|North Carolina|Fayetteville|35.0527|-78.8784
+NC|North Carolina|Cary|35.7915|-78.7811
+NC|North Carolina|Wilmington|34.2257|-77.9447
+NC|North Carolina|High Point|35.9557|-80.0053
+NC|North Carolina|Greenville|35.6127|-77.3664
+NC|North Carolina|Asheville|35.5951|-82.5515
+NC|North Carolina|Concord|35.4088|-80.5795
+ND|North Dakota|Fargo|46.8772|-96.7898
+ND|North Dakota|Bismarck|46.8083|-100.7837
+ND|North Dakota|Grand Forks|47.9253|-97.0329
+ND|North Dakota|Minot|48.2330|-101.2923
+ND|North Dakota|Williston|48.1679|-103.6317
+ND|North Dakota|Dickinson|46.8873|-102.7876
+OH|Ohio|Columbus|39.9612|-82.9988
+OH|Ohio|Cleveland|41.4993|-81.6944
+OH|Ohio|Cincinnati|39.1031|-84.5120
+OH|Ohio|Toledo|41.6639|-83.5552
+OH|Ohio|Akron|41.0814|-81.5190
+OH|Ohio|Dayton|39.7589|-84.1916
+OH|Ohio|Parma|41.4048|-81.7229
+OH|Ohio|Canton|40.7989|-81.3784
+OH|Ohio|Youngstown|41.0998|-80.6495
+OH|Ohio|Lorain|41.4528|-82.1824
+OH|Ohio|Hamilton|39.3995|-84.5613
+OH|Ohio|Springfield|39.9242|-83.8088
+OK|Oklahoma|Claremore|36.3242|-95.5985
+OK|Oklahoma|Pryor|36.2921|-95.3129
+OK|Oklahoma|Catoosa|36.1721|-95.7273
+OK|Oklahoma|Oklahoma City|35.4676|-97.5164
+OK|Oklahoma|Tulsa|36.1540|-95.9928
+OK|Oklahoma|Norman|35.2226|-97.4395
+OK|Oklahoma|Broken Arrow|36.0609|-95.7975
+OK|Oklahoma|Lawton|34.6036|-98.3959
+OK|Oklahoma|Edmond|35.6528|-97.4781
+OK|Oklahoma|Moore|35.3395|-97.4867
+OK|Oklahoma|Midwest City|35.4495|-97.3967
+OK|Oklahoma|Enid|36.3956|-97.8784
+OR|Oregon|Portland|45.5231|-122.6765
+OR|Oregon|Salem|44.9429|-123.0351
+OR|Oregon|Eugene|44.0521|-123.0868
+OR|Oregon|Gresham|45.5001|-122.4302
+OR|Oregon|Hillsboro|45.5229|-122.9898
+OR|Oregon|Beaverton|45.4871|-122.8037
+OR|Oregon|Bend|44.0582|-121.3153
+OR|Oregon|Medford|42.3265|-122.8756
+OR|Oregon|Springfield|44.0462|-123.0220
+OR|Oregon|Corvallis|44.5646|-123.2620
+OR|Oregon|Albany|44.6365|-123.1059
+OR|Oregon|Tigard|45.4312|-122.7715
+PA|Pennsylvania|Philadelphia|39.9526|-75.1652
+PA|Pennsylvania|Pittsburgh|40.4406|-79.9959
+PA|Pennsylvania|Allentown|40.6084|-75.4902
+PA|Pennsylvania|Erie|42.1292|-80.0851
+PA|Pennsylvania|Reading|40.3356|-75.9269
+PA|Pennsylvania|Scranton|41.4090|-75.6624
+PA|Pennsylvania|Bethlehem|40.6259|-75.3705
+PA|Pennsylvania|Lancaster|40.0379|-76.3055
+PA|Pennsylvania|Harrisburg|40.2732|-76.8867
+PA|Pennsylvania|Altoona|40.5187|-78.3947
+PA|Pennsylvania|York|39.9626|-76.7277
+PA|Pennsylvania|State College|40.7934|-77.8600
+RI|Rhode Island|Providence|41.8240|-71.4128
+RI|Rhode Island|Warwick|41.7001|-71.4162
+RI|Rhode Island|Cranston|41.7798|-71.4373
+RI|Rhode Island|Pawtucket|41.8787|-71.3826
+RI|Rhode Island|East Providence|41.8137|-71.3701
+RI|Rhode Island|Woonsocket|42.0029|-71.5148
+SC|South Carolina|Columbia|34.0007|-81.0348
+SC|South Carolina|Charleston|32.7765|-79.9311
+SC|South Carolina|North Charleston|32.8546|-79.9748
+SC|South Carolina|Mount Pleasant|32.8323|-79.8284
+SC|South Carolina|Rock Hill|34.9249|-81.0251
+SC|South Carolina|Greenville|34.8526|-82.3940
+SC|South Carolina|Summerville|33.0185|-80.1756
+SC|South Carolina|Sumter|33.9204|-80.3415
+SC|South Carolina|Goose Creek|32.9810|-80.0326
+SC|South Carolina|Hilton Head Island|32.2163|-80.7526
+SC|South Carolina|Florence|34.1954|-79.7626
+SC|South Carolina|Spartanburg|34.9496|-81.9320
+SD|South Dakota|Sioux Falls|43.5446|-96.7311
+SD|South Dakota|Rapid City|44.0805|-103.2310
+SD|South Dakota|Aberdeen|45.4661|-98.4856
+SD|South Dakota|Brookings|44.3056|-96.7914
+SD|South Dakota|Watertown|44.9043|-97.1240
+SD|South Dakota|Pierre|44.3695|-100.3211
+TN|Tennessee|Memphis|35.1495|-90.0490
+TN|Tennessee|Nashville|36.1627|-86.7816
+TN|Tennessee|Knoxville|35.9606|-83.9207
+TN|Tennessee|Chattanooga|35.0456|-85.3097
+TN|Tennessee|Clarksville|36.5298|-87.3595
+TN|Tennessee|Murfreesboro|35.8456|-86.3903
+TN|Tennessee|Franklin|35.9251|-86.8689
+TN|Tennessee|Jackson|35.6145|-88.8139
+TN|Tennessee|Johnson City|36.3134|-82.3535
+TN|Tennessee|Bartlett|35.2045|-89.8740
+TN|Tennessee|Hendersonville|36.3048|-86.6200
+TN|Tennessee|Kingsport|36.5484|-82.5618
+TX|Texas|Houston|29.7604|-95.3698
+TX|Texas|San Antonio|29.4241|-98.4936
+TX|Texas|Dallas|32.7767|-96.7970
+TX|Texas|Austin|30.2672|-97.7431
+TX|Texas|Fort Worth|32.7555|-97.3308
+TX|Texas|El Paso|31.7776|-106.4425
+TX|Texas|Arlington|32.7357|-97.1081
+TX|Texas|Corpus Christi|27.8006|-97.3964
+TX|Texas|Plano|33.0198|-96.6989
+TX|Texas|Laredo|27.5306|-99.4803
+TX|Texas|Lubbock|33.5779|-101.8552
+TX|Texas|Garland|32.9126|-96.6389
+UT|Utah|Salt Lake City|40.7608|-111.8910
+UT|Utah|West Valley City|40.6916|-112.0011
+UT|Utah|Provo|40.2338|-111.6585
+UT|Utah|West Jordan|40.6097|-111.9391
+UT|Utah|Orem|40.2969|-111.6946
+UT|Utah|Sandy|40.5650|-111.8390
+UT|Utah|Ogden|41.2230|-111.9738
+UT|Utah|St. George|37.0965|-113.5684
+UT|Utah|Layton|41.0602|-111.9711
+UT|Utah|Taylorsville|40.6677|-111.9388
+UT|Utah|South Jordan|40.5622|-111.9297
+UT|Utah|Lehi|40.3916|-111.8508
+VT|Vermont|Burlington|44.4759|-73.2121
+VT|Vermont|Montpelier|44.2574|-72.5698
+VT|Vermont|Rutland|43.6141|-72.9708
+VT|Vermont|South Burlington|44.4513|-73.1796
+VT|Vermont|Barre|44.1945|-72.4936
+VT|Vermont|Brattleboro|42.8574|-72.5933
+VA|Virginia|Virginia Beach|36.8529|-75.9780
+VA|Virginia|Norfolk|36.8508|-76.2859
+VA|Virginia|Chesapeake|36.7682|-76.2875
+VA|Virginia|Richmond|37.5407|-77.4360
+VA|Virginia|Newport News|37.0871|-76.4730
+VA|Virginia|Alexandria|38.8048|-77.0469
+VA|Virginia|Hampton|37.0299|-76.3452
+VA|Virginia|Roanoke|37.2710|-79.9414
+VA|Virginia|Portsmouth|36.8354|-76.2983
+VA|Virginia|Suffolk|36.7282|-76.5836
+VA|Virginia|Lynchburg|37.4138|-79.1422
+VA|Virginia|Harrisonburg|38.4496|-78.8689
+WA|Washington|Seattle|47.6062|-122.3321
+WA|Washington|Spokane|47.6588|-117.4260
+WA|Washington|Tacoma|47.2529|-122.4443
+WA|Washington|Vancouver|45.6387|-122.6615
+WA|Washington|Bellevue|47.6104|-122.2007
+WA|Washington|Kent|47.3809|-122.2348
+WA|Washington|Everett|47.9790|-122.2021
+WA|Washington|Renton|47.4829|-122.2171
+WA|Washington|Yakima|46.6021|-120.5059
+WA|Washington|Federal Way|47.3223|-122.3126
+WA|Washington|Spokane Valley|47.6732|-117.2394
+WA|Washington|Kirkland|47.6815|-122.2087
+WV|West Virginia|Charleston|38.3498|-81.6326
+WV|West Virginia|Huntington|38.4192|-82.4452
+WV|West Virginia|Morgantown|39.6368|-80.0180
+WV|West Virginia|Parkersburg|39.2644|-81.5354
+WV|West Virginia|Wheeling|40.0727|-80.6851
+WV|West Virginia|Beckley|37.7932|-81.2061
+WI|Wisconsin|Milwaukee|43.0389|-87.9065
+WI|Wisconsin|Madison|43.0731|-89.4012
+WI|Wisconsin|Green Bay|44.5192|-88.0198
+WI|Wisconsin|Kenosha|42.5847|-87.8212
+WI|Wisconsin|Racine|42.7261|-87.7829
+WI|Wisconsin|Appleton|44.2619|-88.4154
+WI|Wisconsin|Waukesha|43.0117|-88.2315
+WI|Wisconsin|Eau Claire|44.8113|-91.4985
+WI|Wisconsin|Oshkosh|44.0247|-88.5426
+WI|Wisconsin|Janesville|42.6828|-89.0187
+WI|Wisconsin|West Allis|43.0167|-88.0070
+WI|Wisconsin|La Crosse|43.8014|-91.2396
+WY|Wyoming|Cheyenne|41.1400|-104.8202
+WY|Wyoming|Casper|42.8666|-106.3131
+WY|Wyoming|Laramie|41.3129|-105.5811
+WY|Wyoming|Gillette|44.2820|-105.4974
+WY|Wyoming|Rock Springs|41.6060|-109.2300
+WY|Wyoming|Sheridan|44.7849|-106.9648

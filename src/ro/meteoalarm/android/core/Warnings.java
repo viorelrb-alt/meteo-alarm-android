@@ -18,6 +18,11 @@ public final class Warnings {
 		public int level; // 1 yellow, 2 orange, 3 red
 		public String type;
 		public long from, until; // epoch ms
+		/** A US warning from the National Weather Service (v2.30): type is its event ("Tornado Warning"). */
+		public boolean nws;
+		/** NWS only: the headline, what / where / when, what to do, the areas (English, as NWS writes them). */
+		public String headline = "", desc = "", instr = "", area = "";
+		long sentAt;
 	}
 
 	/** Lower case without diacritics, so "Călărași" matches "Calarasi" (and "Kärnten" "Karnten"). */
@@ -49,6 +54,14 @@ public final class Warnings {
 			t += s.charAt(19) == '+' ? -off : off;
 		}
 		return t;
+	}
+
+	/** The warnings of town C from the saved text: NWS JSON for a US town, the MeteoAlarm feed for the others. */
+	public static List<Warn> of(String text, Cities.City c, long now) {
+		if (text == null || c == null) return new ArrayList<Warn>();
+		if (c.us()) return Nws.parse(text, now);
+		if (text.trim().startsWith("{")) return new ArrayList<Warn>();
+		return parse(text, c.warnNames(), now);
 	}
 
 	public static List<Warn> parse(String xml, String area, long now) {

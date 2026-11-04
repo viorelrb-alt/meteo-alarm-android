@@ -376,3 +376,9 @@ Sends the download link of the app in a WhatsApp message (or, without WhatsApp, 
  · days	 · dienos
 Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Samsung telefonai su Auto Blocker: išjunkite jį prieš diegdami ar atnaujindami programą (Nustatymai › Sauga ir privatumas › Auto Blocker), kitaip telefonas atsisakys diegti; vėliau galite vėl įjungti.
 Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · imperiniai vienetai (mph, coliai, inHg, mylios)
+Switch to the metric system?	Pereiti prie metrinės sistemos?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, km/h, milimetrai, hPa, kilometrai ir 24 valandų laikrodis vietoj °F, mph, colių, inHg, mylių ir 12 valandų laikrodžio. Grįžti galite bet kada: ☰ › Temperatūra °C/°F.
+Metric	Metrinė
+°C · metric system	°C · metrinė sistema
+Keep °F	Palikti °F

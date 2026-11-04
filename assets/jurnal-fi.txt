@@ -1,3 +1,7 @@
+v2.30 · 4. marraskuuta 2026
+- Osia sovelluksen käyttöön Yhdysvalloissa.
+- ☰ › Lämpötila °C/°F: kun °F vaihdetaan, sovellus kysyy, siirrytäänkö metrijärjestelmään; °F:llä ilmanpaine näytetään inHg:nä ja etäisyydet maileina.
+
 v2.22 · 4. marraskuuta 2026
 - Samsung-puhelimet, joissa on Auto Blocker: poista se käytöstä ennen sovelluksen asentamista tai päivittämistä (Asetukset › Suojaus ja yksityisyys › Auto Blocker), muuten puhelin kieltäytyy asentamasta; voit ottaa sen sen jälkeen taas käyttöön.
 

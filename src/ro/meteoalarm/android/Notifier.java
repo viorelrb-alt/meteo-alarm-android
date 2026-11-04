@@ -13,6 +13,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import ro.meteoalarm.android.core.Cities;
+import ro.meteoalarm.android.core.Nws;
 import ro.meteoalarm.android.core.Quakes;
 import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Tr;
@@ -26,6 +27,8 @@ import ro.meteoalarm.android.core.Weather;
  */
 final class Notifier {
 	private static final String CHANNEL = "alerts";
+	/** US tornado and other extreme warnings (v2.30): high importance, alarm sound, vibration. */
+	private static final String CHANNEL_EXTREME = "extreme";
 	/** How long a notified event is remembered (so it is not notified again). */
 	private static final long KEEP_MS = 3 * 86400000L;
 
@@ -56,6 +59,19 @@ final class Notifier {
 		ch.setDescription(Tr.t("Rain or snow starting, new weather warnings, earthquakes in your country.",
 				"Ploaie sau ninsoare care începe, avertizări meteo noi, cutremure în țara ta."));
 		nm.createNotificationChannel(ch);
+		// Only where the US part is shown (v2.30).
+		if (!Region.showUS(ctx)) return;
+		NotificationChannel ex = new NotificationChannel(CHANNEL_EXTREME, Tr.t("Tornado and extreme warnings", "Tornade și avertizări extreme"),
+				NotificationManager.IMPORTANCE_HIGH);
+		ex.setDescription(Tr.t("United States: tornado, severe thunderstorm, flash flood and other dangerous warnings of the National Weather Service for your town.",
+				"Statele Unite: avertizările de tornadă, furtună severă, viitură și alte fenomene periculoase ale National Weather Service pentru localitatea ta."));
+		ex.enableVibration(true);
+		ex.setVibrationPattern(new long[] { 0, 800, 400, 800, 400, 800 });
+		ex.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+		android.net.Uri alarm = android.media.RingtoneManager.getDefaultUri(android.media.RingtoneManager.TYPE_ALARM);
+		if (alarm != null) ex.setSound(alarm, new android.media.AudioAttributes.Builder().setUsage(android.media.AudioAttributes.USAGE_ALARM)
+				.setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION).build());
+		nm.createNotificationChannel(ex);
 	}
 
 	/** After a download for the app's town C: the new events, notified once each. */
@@ -66,7 +82,7 @@ final class Notifier {
 			SharedPreferences p = prefs(ctx);
 			long now = System.currentTimeMillis();
 			Texts T = new Texts(Tr.lang());
-			boolean clk12 = p.getBoolean("clk12", false);
+			boolean clk12 = Region.clk12(ctx, c), imp = Region.imperial(ctx, c);
 			// Rain or snow: falling now, or starting within the hour.
 			String f = Fetcher.read(ctx, "forecast.json");
 			if (f != null) {
@@ -87,9 +103,8 @@ final class Notifier {
 				}
 			}
 			// New warnings for the town.
-			String x = Fetcher.read(ctx, "warn.xml");
-			if (x != null) {
-				List<Warnings.Warn> ws = Warnings.parse(x, c.warnNames(), now);
+			{
+				List<Warnings.Warn> ws = Fetcher.warnings(ctx, c);
 				for (Warnings.Warn wr : ws) {
 					String key = "nW_" + Warnings.fold(c.key() + "_" + wr.level + "_" + wr.type + "_" + wr.from).replaceAll("[^a-z0-9_]+", "");
 					if (p.getLong(key, 0) > 0) continue;
@@ -97,18 +112,28 @@ final class Notifier {
 					String lvl = T.warn[Math.max(0, Math.min(2, wr.level - 1))];
 					String title = Tr.t("Warning", "Avertizare") + " " + T.warnCode.toLowerCase() + " " + lvl.toLowerCase() + " · " + c.name;
 					String body = T.warnType(wr.type) + " · " + T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12);
-					post(ctx, 100 + (key.hashCode() & 0xFFFF), title, body);
+					boolean loud = false;
+					if (wr.nws) {
+						// United States: the NWS event as the title; the dangerous ones on the loud channel.
+						loud = Nws.extreme(wr.type);
+						title = (loud ? "⚠ " : "") + Nws.event(wr.type).toUpperCase() + " · " + c.name;
+						body = T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12)
+								+ (wr.headline.length() > 0 ? "\n" + wr.headline : "") + (wr.instr.length() > 0 ? "\n" + wr.instr : "");
+					}
+					post(ctx, 100 + (key.hashCode() & 0xFFFF), title, body, loud);
 					Log.i(ctx, "NOTIF", "avertizare: " + title + " · " + body);
 				}
 			}
 			// Earthquakes in the country.
 			for (Quakes.Quake q : Fetcher.quakes(ctx, c)) {
 				if (q.time < p.getLong("notifySince", now)) continue;
+				// US: the box shows from 2.5, the notice comes from 3 (as in Europe).
+				if (c.us() && q.mag < Quakes.MIN_MAG) continue;
 				String key = "nQ_" + (q.id.length() > 0 ? q.id : Long.toString(q.time)).replaceAll("[^A-Za-z0-9_]+", "");
 				if (p.getLong(key, 0) > 0) continue;
 				p.edit().putLong(key, now).apply();
-				String title = Tr.t("Earthquake M", "Cutremur M") + String.format(java.util.Locale.US, "%.1f", q.mag) + " · " + ro.meteoalarm.android.core.Screen.titleCase(q.region);
-				String body = T.weekdayTime(q.time, clk12) + " · " + Math.round(q.dist) + " km " + Tr.t("from ", "de ") + c.name
+				String title = Tr.t("Earthquake M", "Cutremur M") + String.format(java.util.Locale.US, "%.1f", q.mag) + " · " + ro.meteoalarm.android.core.Screen.place(q.region, imp);
+				String body = T.weekdayTime(q.time, clk12) + " · " + (imp ? Math.round(q.dist * 0.621371) + " mi " : Math.round(q.dist) + " km ") + Tr.t("from ", "de ") + c.name
 						+ (q.felt >= 2 ? " · " + Tr.t("probably felt: ", "probabil resimțit: ") + ro.meteoalarm.android.core.Screen.roman(q.felt) : "");
 				post(ctx, 1000 + (key.hashCode() & 0xFFFF), title, body);
 				Log.i(ctx, "NOTIF", "cutremur: " + title + " · " + body);
@@ -132,14 +157,22 @@ final class Notifier {
 		if (e != null) e.apply();
 	}
 
-	@SuppressWarnings("deprecation")
 	private static void post(Context ctx, int id, String title, String body) {
+		post(ctx, id, title, body, false);
+	}
+
+	@SuppressWarnings("deprecation")
+	private static void post(Context ctx, int id, String title, String body, boolean loud) {
 		NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 		if (nm == null) return;
 		channel(ctx, nm);
 		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pi = PendingIntent.getActivity(ctx, 3, open, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, CHANNEL) : new Notification.Builder(ctx);
+		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, loud ? CHANNEL_EXTREME : CHANNEL) : new Notification.Builder(ctx);
+		if (loud) {
+			b.setPriority(Notification.PRIORITY_MAX).setCategory(Notification.CATEGORY_ALARM).setVisibility(Notification.VISIBILITY_PUBLIC);
+			if (Build.VERSION.SDK_INT < 26) b.setDefaults(Notification.DEFAULT_ALL);
+		}
 		b.setSmallIcon(R.drawable.ic_notify).setContentTitle(title).setContentText(body).setContentIntent(pi).setAutoCancel(true)
 				.setStyle(new Notification.BigTextStyle().bigText(body)).setWhen(System.currentTimeMillis()).setShowWhen(true);
 		try {

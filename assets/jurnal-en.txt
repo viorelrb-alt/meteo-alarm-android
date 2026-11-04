@@ -1,3 +1,7 @@
+v2.30 · 4 November 2026
+- Elements for using the app in the United States.
+- ☰ › Temperature °C/°F: leaving °F asks whether to switch to the metric system; with °F the pressure is in inHg and distances in miles.
+
 v2.22 · 4 November 2026
 - Install and update: on Samsung phones with Auto Blocker, turn it off first (explained in Help, About, the update window and the message sent with ☰ › Send the app).
 

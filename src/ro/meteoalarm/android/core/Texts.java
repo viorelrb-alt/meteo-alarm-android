@@ -55,13 +55,13 @@ public final class Texts {
 			for (int k = 0; k < uvLv.length; k++) uvLv[k] = Tr.t(uvLv[k]);
 			for (int k = 0; k < polLv.length; k++) polLv[k] = Tr.t(polLv[k]);
 			// Day and month names from the phone (Java knows them for every EU language).
-			java.text.DateFormatSymbols ds = new java.text.DateFormatSymbols(new java.util.Locale(lang));
+			java.text.DateFormatSymbols ds = new java.text.DateFormatSymbols("us".equals(lang) ? java.util.Locale.US : new java.util.Locale(lang));
 			String[] wd = ds.getWeekdays(), sw = ds.getShortWeekdays(), mo = ds.getMonths();
 			wdL = new String[7];
 			wsL = new String[7];
 			wmL = new String[7];
 			moL = new String[12];
-			java.util.Locale loc = new java.util.Locale(lang);
+			java.util.Locale loc = "us".equals(lang) ? java.util.Locale.US : new java.util.Locale(lang);
 			for (int k = 0; k < 7; k++) {
 				wdL[k] = cap(wd[k + 1], loc);
 				String sh = sw[k + 1].replace(".", "");
@@ -123,6 +123,7 @@ public final class Texts {
 	/** "Joi, 29 octombrie" / "Thursday, October 29". */
 	public String date(Calendar c) {
 		int wd = c.get(Calendar.DAY_OF_WEEK) - 1, d = c.get(Calendar.DAY_OF_MONTH), mo = c.get(Calendar.MONTH);
+		if ("us".equals(lang)) return WD_EN[wd] + ", " + MO_EN[mo] + " " + d;
 		if (wdL != null) return wdL[wd] + ", " + d + " " + moL[mo];
 		return en ? WD_EN[wd] + ", " + MO_EN[mo] + " " + d : WD_RO[wd] + ", " + d + " " + MO_RO[mo];
 	}

@@ -34,6 +34,11 @@ public final class Cities {
 			return !country.equals("ro");
 		}
 
+		/** A town in the United States (county = the state's name; v2.30). */
+		public boolean us() {
+			return country.equals("us");
+		}
+
 		/** "Călărași|Călărași|44.2058|27.3306" in Romania; "bg|Sofia|Sofia|42.69|23.32|Sofia" abroad. */
 		public String key() {
 			String k = county + "|" + name + "|" + lat + "|" + lon;
@@ -58,6 +63,10 @@ public final class Cities {
 
 		/** "Călărași, CL"; abroad "Sofia, BG". */
 		public String label() {
+			if (us()) {
+				String st = stateCode(county);
+				return st.length() > 0 ? name + ", " + st : name + ", US";
+			}
 			if (abroad()) return name + ", " + country.toUpperCase();
 			String c = countyCode(county);
 			return c.length() > 0 ? name + ", " + c : name;
@@ -77,6 +86,8 @@ public final class Cities {
 	public final Map<String, List<City>> byCounty = new LinkedHashMap<String, List<City>>();
 	/** Other countries: country code to its towns. */
 	public final Map<String, List<City>> abroad = new LinkedHashMap<String, List<City>>();
+	/** The United States (v2.30): state name to its towns from us.txt, the biggest first (the first 3 are the starting favourites). */
+	public final Map<String, List<City>> usStates = new LinkedHashMap<String, List<City>>();
 
 	public Cities(String text) {
 		for (String line : text.split("\n")) {
@@ -110,9 +121,24 @@ public final class Cities {
 		}
 	}
 
+	/** The towns of us.txt ("ST|State|Town|lat|lon"), by state. */
+	public void addUS(String text) {
+		for (String line : text.split("\n")) {
+			line = line.trim();
+			if (line.length() == 0 || line.startsWith("#")) continue;
+			String[] p = line.split("\\|", -1);
+			if (p.length < 5) continue;
+			try {
+				add(new City("us", p[1], p[2], Double.parseDouble(p[3]), Double.parseDouble(p[4]), ""));
+			} catch (NumberFormatException e) {
+				// skip a bad line
+			}
+		}
+	}
+
 	private List<City> listOf(City c, boolean make) {
-		Map<String, List<City>> m = c.abroad() ? abroad : byCounty;
-		String k = c.abroad() ? c.country : c.county;
+		Map<String, List<City>> m = c.us() ? usStates : c.abroad() ? abroad : byCounty;
+		String k = c.us() ? c.county : c.abroad() ? c.country : c.county;
 		List<City> l = m.get(k);
 		if (l == null && make) m.put(k, l = new ArrayList<City>());
 		return l;
@@ -141,6 +167,7 @@ public final class Cities {
 	 * become where the phone was found) or is added to its county (its country abroad).
 	 */
 	public void put(City c) {
+		if (c.us() && stateCode(c.county).length() == 0) return;
 		List<City> l = listOf(c, true);
 		City old = find(c);
 		if (old != null) l.set(l.indexOf(old), c);
@@ -149,6 +176,7 @@ public final class Cities {
 
 	/** Adds a town (a new county or country goes at the end), unless it is listed already. */
 	public void add(City c) {
+		if (c.us() && stateCode(c.county).length() == 0) return;
 		if (find(c) != null) return;
 		listOf(c, true).add(c);
 	}
@@ -164,6 +192,33 @@ public final class Cities {
 		if (f.contains("bucuresti") || f.contains("bucharest")) f = "bucuresti";
 		for (String k : byCounty.keySet()) if (Warnings.fold(k).equals(f)) return k;
 		return r;
+	}
+
+	/** The states (and Washington, D.C.) with their postal codes. */
+	public static final String[] STATES = { "Alabama", "AL", "Alaska", "AK", "Arizona", "AZ", "Arkansas", "AR", "California", "CA",
+			"Colorado", "CO", "Connecticut", "CT", "Delaware", "DE", "District of Columbia", "DC", "Florida", "FL", "Georgia", "GA",
+			"Hawaii", "HI", "Idaho", "ID", "Illinois", "IL", "Indiana", "IN", "Iowa", "IA", "Kansas", "KS", "Kentucky", "KY",
+			"Louisiana", "LA", "Maine", "ME", "Maryland", "MD", "Massachusetts", "MA", "Michigan", "MI", "Minnesota", "MN",
+			"Mississippi", "MS", "Missouri", "MO", "Montana", "MT", "Nebraska", "NE", "Nevada", "NV", "New Hampshire", "NH",
+			"New Jersey", "NJ", "New Mexico", "NM", "New York", "NY", "North Carolina", "NC", "North Dakota", "ND", "Ohio", "OH",
+			"Oklahoma", "OK", "Oregon", "OR", "Pennsylvania", "PA", "Rhode Island", "RI", "South Carolina", "SC", "South Dakota", "SD",
+			"Tennessee", "TN", "Texas", "TX", "Utah", "UT", "Vermont", "VT", "Virginia", "VA", "Washington", "WA",
+			"West Virginia", "WV", "Wisconsin", "WI", "Wyoming", "WY" };
+
+	/** "Oklahoma" -> "OK" (empty when not a state). */
+	public static String stateCode(String state) {
+		if (state == null) return "";
+		String f = Warnings.fold(state.trim().replaceFirst("(?i)^state of\\s+", ""));
+		for (int k = 0; k < STATES.length; k += 2) if (Warnings.fold(STATES[k]).equals(f) || STATES[k + 1].equalsIgnoreCase(state.trim())) return STATES[k + 1];
+		if (f.equals("washington, d.c.") || f.equals("washington dc") || f.equals("dc")) return "DC";
+		return "";
+	}
+
+	/** "OK" (or "Oklahoma") -> "Oklahoma" (empty when not a state). */
+	public static String stateName(String s) {
+		String c = stateCode(s);
+		for (int k = 0; k < STATES.length; k += 2) if (STATES[k + 1].equals(c)) return STATES[k];
+		return "";
 	}
 
 	/** Licence plate code of a Romanian county ("Călărași" -> "CL"). */

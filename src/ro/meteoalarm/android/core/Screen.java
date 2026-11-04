@@ -708,6 +708,8 @@ public final class Screen {
 	/** The warnings of one code (level) merged: the types and the whole period. */
 	private static final class WarnGroup {
 		int level;
+		/** US (National Weather Service) warnings: Advisory / Watch / Warning instead of the codes. */
+		boolean nws;
 		String types = "";
 		long from = Long.MAX_VALUE, until;
 	}
@@ -722,7 +724,9 @@ public final class Screen {
 			gr.level = lv;
 			for (Warnings.Warn wr : warns) {
 				if (wr.until <= nowMs || Math.min(3, Math.max(1, wr.level)) != lv) continue;
-				if (!(", " + gr.types + ",").contains(", " + wr.type + ",")) gr.types += (gr.types.length() > 0 ? ", " : "") + wr.type;
+				String ty = wr.nws ? Nws.phenomenonShown(wr.type) : wr.type;
+				if (wr.nws) gr.nws = true;
+				if (!(", " + gr.types + ",").contains(", " + ty + ",")) gr.types += (gr.types.length() > 0 ? ", " : "") + ty;
 				gr.from = Math.min(gr.from, wr.from);
 				gr.until = Math.max(gr.until, wr.until);
 			}
@@ -813,14 +817,15 @@ public final class Screen {
 
 	private void drawWarnBox(WarnGroup gr, float x, float y, float bw, float h, float f) {
 		String name = T.warn[gr.level - 1];
-		float hb = alertFrame(x, y, bw, h, f, (dark ? BAR_DARK : BAR_LIGHT)[gr.level - 1], T.en ? name + " " + T.warnCode : T.warnCode + " " + name);
+		String title = gr.nws ? Nws.levelUp(gr.level) : T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
+		float hb = alertFrame(x, y, bw, h, f, (dark ? BAR_DARK : BAR_LIGHT)[gr.level - 1], title);
 		float lx = x + 18;
 		if (gr.level >= 3) {
 			g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46 * f) / 2, 50 * f, 46 * f, dark ? c.warnR : c.ink);
 			lx = x + 28 + 50 * f;
 		}
 		float room = x + bw - 12 - lx;
-		String txt = T.warnType(gr.types);
+		String txt = gr.nws ? gr.types.toUpperCase() : T.warnType(gr.types);
 		String per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
 		ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, lx, txt, c.ink);
 		ltext(false, fit(false, 26 * f, room, per), y + hb + 50 * f, lx, per, c.dim);
@@ -837,9 +842,14 @@ public final class Screen {
 		float lx = x + 18, room = bw - 30;
 		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);
 		String l2 = q.felt >= 2 ? (Tr.t("Felt here: ", "Resimțit aici: ")) + roman(q.felt) + (Tr.t(" (estimate)", " (estimat)"))
-				: (Tr.t("depth ", "adânc. ")) + Math.round(q.depth) + " km · " + Math.round(q.dist) + " km";
+				: (Tr.t("depth ", "adânc. ")) + dist(q.depth) + " · " + dist(q.dist);
 		ltext(true, fit(true, 30 * f, room, l1), y + hb + 12 * f, lx, l1, c.ink);
 		ltext(false, fit(false, 26 * f, room, l2), y + hb + 50 * f, lx, l2, c.dim);
+	}
+
+	/** A distance of KM kilometres: "12 km", or "7 mi" in imperial units (v2.30). */
+	public String dist(double km) {
+		return unitF ? Math.round(km * 0.621371) + " mi" : Math.round(km) + " km";
 	}
 
 	private static final String[] ROMAN = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII" };
@@ -867,8 +877,23 @@ public final class Screen {
 		Calendar k = Calendar.getInstance();
 		k.setTimeInMillis(ms);
 		String hm = Texts.clock(String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE)), clk12);
-		return T.weekdayTime(ms, clk12).replace(" " + hm, "") + " " + String.format("%02d.%02d.%d", k.get(Calendar.DAY_OF_MONTH),
-				k.get(Calendar.MONTH) + 1, k.get(Calendar.YEAR)) + ", " + hm + ":" + String.format("%02d", k.get(Calendar.SECOND));
+		String date = unitF ? String.format("%d/%d/%d", k.get(Calendar.MONTH) + 1, k.get(Calendar.DAY_OF_MONTH), k.get(Calendar.YEAR))
+				: String.format("%02d.%02d.%d", k.get(Calendar.DAY_OF_MONTH), k.get(Calendar.MONTH) + 1, k.get(Calendar.YEAR));
+		return T.weekdayTime(ms, clk12).replace(" " + hm, "") + " " + date + ", " + hm + ":" + String.format("%02d", k.get(Calendar.SECOND));
+	}
+
+	/**
+	 * A quake's place: EMSC's capitals in title case ("CRETE, GREECE" -> "Crete, Greece"); USGS's
+	 * "5 km NE of Prague, Oklahoma" kept, its kilometres in miles when IMPERIAL (v2.30).
+	 */
+	public static String place(String region, boolean imperial) {
+		if (region == null) return "";
+		if (!region.equals(region.toUpperCase())) {
+			java.util.regex.Matcher m = java.util.regex.Pattern.compile("^(\\d+(?:\\.\\d+)?) km (.*)$").matcher(region);
+			if (imperial && m.find()) return Math.round(Double.parseDouble(m.group(1)) * 0.621371) + " mi " + m.group(2);
+			return region;
+		}
+		return titleCase(region);
 	}
 
 	public static String titleCase(String s) {
@@ -894,29 +919,33 @@ public final class Screen {
 			out.add(new String[] { "title", (Tr.t("Earthquake M", "Cutremur M")) + dec(q.mag) });
 			out.add(new String[] { "t", (Tr.t("Magnitude: ", "Magnitudine: ")) + dec(q.mag) + (q.magType.length() > 0 ? " (" + q.magType.toUpperCase() + ")" : "") });
 			out.add(new String[] { "t", (Tr.t("Time: ", "Ora: ")) + dateTime(q.time) });
-			out.add(new String[] { "t", (Tr.t("Region: ", "Zona: ")) + titleCase(q.region) });
-			out.add(new String[] { "t", (Tr.t("Depth: ", "Adâncime: ")) + Math.round(q.depth) + " km" });
+			out.add(new String[] { "t", (Tr.t("Region: ", "Zona: ")) + place(q.region, unitF) });
+			out.add(new String[] { "t", (Tr.t("Depth: ", "Adâncime: ")) + dist(q.depth) });
 			out.add(new String[] { "t", (Tr.t("Epicentre: ", "Epicentru: ")) + dec(Math.abs(q.lat)) + "° " + Tr.compass()[q.lat >= 0 ? 0 : 2] + ", "
-					+ dec(Math.abs(q.lon)) + "° " + Tr.compass()[q.lon >= 0 ? 1 : 3] + (Tr.t(", ", ", la ")) + Math.round(q.dist) + " km"
+					+ dec(Math.abs(q.lon)) + "° " + Tr.compass()[q.lon >= 0 ? 1 : 3] + (Tr.t(", ", ", la ")) + dist(q.dist)
 					+ (Tr.t(" from ", " de ")) + town });
 			out.add(new String[] { "h", Tr.t("In ", "La ") + town });
 			if (q.felt >= 2) out.add(new String[] { "t", (Tr.t("Probably felt, intensity ", "Probabil resimțit, intensitate ")) + roman(q.felt) + ": " + feltWords(q.felt) + "." });
 			else out.add(new String[] { "t", Tr.t("Probably not felt here.", "Probabil nu s-a simțit aici.") });
-			out.add(new String[] { "t", Tr.t("Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.", "Estimare după magnitudine și distanța până la focar (scara EMS-98); EMSC nu publică mărturiile pentru fiecare localitate.") });
+			boolean us = city != null && city.us();
+			if (us) out.add(new String[] { "t", Tr.t("Estimated from the magnitude and the distance to the focus (an intensity scale like the Modified Mercalli one); for reports from people, see USGS \"Did You Feel It?\".", "Estimare după magnitudine și distanța până la focar (o scară de intensitate ca Mercalli modificată); pentru mărturiile oamenilor, vezi USGS „Did You Feel It?”.") });
+			else out.add(new String[] { "t", Tr.t("Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.", "Estimare după magnitudine și distanța până la focar (scara EMS-98); EMSC nu publică mărturiile pentru fiecare localitate.") });
 			if (quakes != null && quakes.size() > 1) {
 				out.add(new String[] { "h", Tr.t("All in the last 24 h", "Toate în ultimele 24 h") });
 				for (Quakes.Quake o : quakes)
-					out.add(new String[] { "t", "M" + dec(o.mag) + " · " + T.weekdayTime(o.time, clk12) + " · " + (Tr.t("depth ", "adânc. ")) + Math.round(o.depth) + " km" });
+					out.add(new String[] { "t", "M" + dec(o.mag) + " · " + T.weekdayTime(o.time, clk12) + " · " + (Tr.t("depth ", "adânc. ")) + dist(o.depth) });
 			}
-			out.add(new String[] { "t", Tr.t("Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.", "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h.") });
+			if (us) out.add(new String[] { "t", Tr.t("Source: USGS (earthquake.usgs.gov), magnitude 2.5 and over within 300 miles, last 24 h.", "Sursa: USGS (earthquake.usgs.gov), magnitudine 2,5 și peste, pe o rază de 300 de mile, ultimele 24 h.") });
+			else out.add(new String[] { "t", Tr.t("Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.", "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h.") });
 			return out;
 		}
 		List<WarnGroup> gs = warnGroups();
 		int gi = k - (q != null ? 1 : 0);
 		if (gi < 0 || gi >= gs.size()) return out;
 		WarnGroup gr = gs.get(gi);
+		if (gr.nws) return nwsInfo(gr, out);
 		String name = T.warn[gr.level - 1];
-		out.add(new String[] { "title", Tr.ro() ? "Cod " + name.toLowerCase() : Tr.lang().equals("en") ? titleCase(name) + " warning" : Tr.t("Warning") + " · " + titleCase(name) });
+		out.add(new String[] { "title", Tr.ro() ? "Cod " + name.toLowerCase() : Tr.english() ? titleCase(name) + " warning" : Tr.t("Warning") + " · " + titleCase(name) });
 		String[] what = en ? new String[] { Tr.t("Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors."),
 				Tr.t("Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice."),
 				Tr.t("Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.") }
@@ -936,6 +965,36 @@ public final class Screen {
 		}
 		out.add(new String[] { "t", en ? Tr.t("Source: MeteoAlarm (the national weather service), for ") + (city != null ? city.label() : "")
 				: "Sursa: MeteoAlarm (ANM), pentru " + (city != null ? city.label() : "") });
+		return out;
+	}
+
+	/**
+	 * The bubble of a US (NWS) box: what the level means, then each alert with its period, the
+	 * NWS headline, the description (what, where, when, impacts) and what to do, as NWS wrote them.
+	 */
+	private List<String[]> nwsInfo(WarnGroup gr, List<String[]> out) {
+		out.add(new String[] { "title", Nws.levelWord(gr.level) + " · " + (city != null ? city.name : "") });
+		String[] what = { Tr.t("Advisory: weather that is a nuisance or can become dangerous if you are not careful.", "Informare: vreme neplăcută, care poate deveni periculoasă dacă nu ești atent."),
+				Tr.t("Watch: the conditions are right for dangerous weather. Be ready to act, keep up with the warnings.", "Atenționare: condițiile sunt favorabile unor fenomene periculoase. Fii pregătit să acționezi și urmărește avertizările."),
+				Tr.t("Warning: dangerous weather is happening or about to happen. Take action now to protect yourself.", "Avertizare: fenomenul periculos are loc sau e iminent. Acționează acum ca să te protejezi.") };
+		out.add(new String[] { "t", what[gr.level - 1] });
+		long nowMs = now.getTimeInMillis();
+		for (Warnings.Warn wr : warns) {
+			if (!wr.nws || wr.until <= nowMs || Math.min(3, Math.max(1, wr.level)) != gr.level) continue;
+			out.add(new String[] { "h", Nws.event(wr.type) });
+			String st = wr.from <= nowMs ? (Tr.t("In force now, until ", "În vigoare acum, până ")) + T.weekdayTime(wr.until, clk12)
+					: (Tr.t("From ", "De ")) + T.weekdayTime(wr.from, clk12) + (Tr.t(" until ", " până ")) + T.weekdayTime(wr.until, clk12);
+			out.add(new String[] { "t", st });
+			if (wr.headline.length() > 0) out.add(new String[] { "t", wr.headline });
+			if (wr.desc.length() > 0) out.add(new String[] { "t", wr.desc });
+			if (wr.instr.length() > 0) {
+				out.add(new String[] { "h", Tr.t("What to do", "Ce trebuie făcut") });
+				out.add(new String[] { "t", wr.instr });
+			}
+			if (wr.area.length() > 0) out.add(new String[] { "t", Tr.t("Area: ", "Zona: ") + wr.area });
+		}
+		out.add(new String[] { "t", Tr.t("Source: National Weather Service (weather.gov), for ", "Sursa: National Weather Service (weather.gov), pentru ") + (city != null ? city.label() : "")
+				+ ". " + Tr.t("The alert texts are in English, as NWS publishes them.", "Textele avertizărilor sunt în engleză, așa cum le publică NWS.") });
 		return out;
 	}
 
@@ -1204,7 +1263,7 @@ public final class Screen {
 		float cx = x + bw / 2, hd = 46, body = h - hd;
 		boolean en = T.en;
 		box(x, top, bw, h, hd);
-		head(top, hd, cx, bw - 16, infoTitle(id).equals("LUNA") ? "LUNĂ" : infoTitle(id), tp);
+		head(top, hd, cx, bw - 16, Tr.ro() && infoTitle(id).equals("LUNA") ? "LUNĂ" : infoTitle(id), tp);
 		float top0 = top;
 		// The content is laid out for a box 184 high: in a taller one it sits in the middle.
 		top += Math.max(0, (h - 184) / 2);
@@ -1261,6 +1320,11 @@ public final class Screen {
 		} else if (id.equals("vis")) {
 			double v = w.visibility;
 			String val = Double.isNaN(v) ? "–" : v >= 10000 ? Math.round(v / 1000) + " km" : v >= 1000 ? String.format("%.1f km", v / 1000).replace('.', Tr.dot()) : Math.round(v / 10) * 10 + " m";
+			// Imperial (v2.30): miles, tenths below 10.
+			if (unitF && !Double.isNaN(v)) {
+				double mi = v / 1609.344;
+				val = mi >= 10 ? Math.round(mi) + " mi" : String.format(java.util.Locale.US, "%.1f mi", mi).replace('.', Tr.dot());
+			}
 			int l = Double.isNaN(v) ? 0 : v >= 10000 ? 4 : v >= 4000 ? 3 : v >= 1000 ? 2 : 1;
 			String[] lv = en ? new String[] { Tr.t("Poor (fog)"), Tr.t("Moderate"), Tr.t("Good"), Tr.t("Very good") } : new String[] { "Slabă (ceață)", "Moderată", "Bună", "Foarte bună" };
 			bigValue(cx, top, val, l > 0 ? lv[l - 1] : T.noData2, bw);
@@ -1324,9 +1388,10 @@ public final class Screen {
 		}
 		float f = (float) Math.max(0, Math.min(1, (p - 960) / 100));
 		g.arc(cx, cy, r, 135, Math.max(2, 270 * f), 9, c.ink);
-		String val = Long.toString(Math.round(p));
+		// Imperial (v2.30): inches of mercury, as the US weather service gives it.
+		String val = unitF ? String.format(java.util.Locale.US, "%.2f", p * 0.0295300).replace('.', Tr.dot()) : Long.toString(Math.round(p));
 		ctext(true, fit(true, 34, r * 1.5f, val), cy - 26, cx, val, c.ink);
-		ctext(false, 18, cy + 10, cx, "hPa", c.ink);
+		ctext(false, 18, cy + 10, cx, unitF ? "inHg" : "hPa", c.ink);
 		double t = w.pressTrend;
 		String tr = Double.isNaN(t) ? "" : Math.abs(t) < 1 ? (Tr.t("steady", "stabilă")) : t <= -3 ? (Tr.t("↓ falling fast", "↓ scade rapid"))
 				: t < 0 ? (Tr.t("↓ falling", "↓ scade")) : t >= 3 ? (Tr.t("↑ rising fast", "↑ crește rapid")) : (Tr.t("↑ rising", "↑ crește"));

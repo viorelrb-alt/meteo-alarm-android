@@ -66,7 +66,7 @@ public final class Refresher extends BroadcastReceiver {
 			boolean plugged = b.getIntExtra(BatteryManager.EXTRA_PLUGGED, 0) != 0;
 			low = lvl >= 0 && lvl * 100 / Math.max(1, sc) < LOW_BATTERY && !plugged;
 		}
-		return new boolean[] { on, low, night(ctx) };
+		return new boolean[] { on, low, night(ctx), storm(ctx) };
 	}
 
 	/** Between today's sunset and sunrise, from the saved forecast (else 19:00–07:00). */
@@ -84,8 +84,26 @@ public final class Refresher extends BroadcastReceiver {
 		return hm.compareTo(set) >= 0 || hm.compareTo(rise) < 0;
 	}
 
+	/** During a US tornado watch or warning for the town shown: every 5 minutes, also at night (v2.30). */
+	static final long STORM_MS = 5 * 60000L;
+
+	/** A tornado watch or warning (NWS) is in force for the town shown. */
+	static boolean storm(Context ctx) {
+		try {
+			Cities.City c = Cities.City.fromKey(Fetcher.prefs(ctx).getString("city", ""));
+			if (c == null || !c.us()) return false;
+			long now = System.currentTimeMillis();
+			for (ro.meteoalarm.android.core.Warnings.Warn w : Fetcher.warnings(ctx, c))
+				if (ro.meteoalarm.android.core.Nws.tornado(w.type) && w.level >= 2 && w.from <= now + 3600000L && w.until > now) return true;
+		} catch (Exception e) {
+			// no storm known
+		}
+		return false;
+	}
+
 	/** How often now (ms), 0 = paused (night, screen off). */
 	private static long every(boolean[] st) {
+		if (st.length > 3 && st[3]) return STORM_MS;
 		if (!st[0] && st[2]) return 0;
 		if (st[1]) return LOW_BATTERY_MS;
 		return st[0] ? SCREEN_ON_MS : SCREEN_OFF_MS;
@@ -95,7 +113,7 @@ public final class Refresher extends BroadcastReceiver {
 	private static void refresh(Context ctx, String why) {
 		boolean[] st = state(ctx);
 		long every = every(st);
-		String state = (st[0] ? "ecran aprins" : "ecran stins") + (st[1] ? ", baterie sub 25%" : "") + (st[2] ? ", noapte" : ", zi");
+		String state = (st[0] ? "ecran aprins" : "ecran stins") + (st[1] ? ", baterie sub 25%" : "") + (st[2] ? ", noapte" : ", zi") + (st[3] ? ", TORNADĂ: la 5 min" : "");
 		if (MainActivity.onScreen) {
 			Log.i(ctx, "FUNDAL", why + " · " + state + " · aplicația e deschisă, se ocupă ea");
 			return;

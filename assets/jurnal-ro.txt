@@ -1,3 +1,7 @@
+v2.30 · 4 noiembrie 2026
+- Elemente pentru folosirea aplicației în Statele Unite.
+- ☰ › Temperatura °C/°F: la ieșirea din °F aplicația întreabă dacă treci la sistemul metric; cu °F presiunea e în inHg, iar distanțele în mile.
+
 v2.22 · 4 noiembrie 2026
 - Instalare și actualizare: pe telefoanele Samsung cu Auto Blocker (Blocare automată), acesta trebuie dezactivat înainte (explicat în Ajutor, Despre, fereastra de actualizare și mesajul trimis cu ☰ › Trimite aplicația).
 

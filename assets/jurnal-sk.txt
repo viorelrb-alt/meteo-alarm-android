@@ -1,3 +1,7 @@
+v2.30 · 4. novembra 2026
+- Prvky na používanie aplikácie v Spojených štátoch.
+- ☰ › Teplota °C/°F: pri odchode z °F sa aplikácia opýta, či prejsť na metrickú sústavu; s °F je tlak v inHg a vzdialenosti v míľach.
+
 v2.22 · 4. novembra 2026
 - Telefóny Samsung s funkciou Auto Blocker: pred inštaláciou alebo aktualizáciou aplikácie ju vypnite (Nastavenia › Zabezpečenie a súkromie › Auto Blocker), inak telefón inštaláciu odmietne; potom ju môžete znova zapnúť.
 
