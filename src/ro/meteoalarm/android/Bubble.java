@@ -142,6 +142,12 @@ final class Bubble extends FrameLayout {
 	 */
 	void show(float[] anchor, int width, String head, List<Row> rows, boolean en, final Pick pick) {
 		Context c = getContext();
+		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there), and the text size of ☰.
+		float zk = (TextSize.tablet(c) ? 1.3f : 1f) * TextSize.get(c);
+		width = (int) (width * zk);
+		title.setTextSize(17 * zk);
+		less.setTextSize(14 * zk);
+		more.setTextSize(14 * zk);
 		int ink = ink();
 		title.setVisibility(head == null || head.length() == 0 ? GONE : VISIBLE);
 		title.setText(head);
@@ -167,7 +173,7 @@ final class Bubble extends FrameLayout {
 			}
 			if (r.kind == Row.TEXT) {
 				// Information in larger letters, on as many lines as it needs (the warning details).
-				TextView t = text(c, 18, false);
+				TextView t = text(c, 18 * zk, false);
 				t.setTag("text");
 				t.setText(r.text);
 				t.setTextColor(ink);
@@ -185,7 +191,7 @@ final class Bubble extends FrameLayout {
 				list.addView(sep, lp);
 			}
 			first = false;
-			TextView t = text(c, r.kind == Row.HEADER ? 13 : 15, r.kind == Row.HEADER || r.checked);
+			TextView t = text(c, (r.kind == Row.HEADER ? 13 : 15) * zk, r.kind == Row.HEADER || r.checked);
 			t.setText(r.kind == Row.HEADER ? r.text.toUpperCase() : (r.checked ? "✓  " : "") + r.text);
 			t.setTextColor(r.kind == Row.HEADER ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 			t.setGravity(Gravity.CENTER_VERTICAL);
@@ -193,15 +199,15 @@ final class Bubble extends FrameLayout {
 			if (r.kind == Row.HEADER) t.setPadding(ph, (int) (10 * dp), ph, (int) (4 * dp));
 			else {
 				t.setPadding(ph, 0, ph, 0);
-				t.setMinHeight((int) (46 * dp));
+				t.setMinHeight((int) (46 * dp * zk));
 				t.setBackgroundResource(android.R.drawable.list_selector_background);
 			}
 			if (r.icon != null) {
 				BitmapDrawable d = new BitmapDrawable(getResources(), r.icon);
-				int s = (int) (26 * dp);
+				int s = (int) (26 * dp * zk);
 				d.setBounds(0, 0, s, s);
 				t.setCompoundDrawables(d, null, null, null);
-				t.setCompoundDrawablePadding((int) (14 * dp));
+				t.setCompoundDrawablePadding((int) (14 * dp * zk));
 			}
 			if (r.kind == Row.ITEM) t.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
@@ -220,7 +226,7 @@ final class Bubble extends FrameLayout {
 		int margin = (int) (12 * dp), tip = (int) (10 * dp);
 		// Every row on one line, all choices in the same font: the bubble grows to hold the longest
 		// one; only when even the screen is too narrow do all of them get the same smaller font.
-		float need = 0, sp = 15;
+		float need = 0, sp = 15 * zk;
 		for (int pass = 0; pass < 40; pass++) {
 			need = 0;
 			for (int k = 0; k < list.getChildCount(); k++) {
@@ -245,7 +251,7 @@ final class Bubble extends FrameLayout {
 		// screen's edge (in landscape the room under the button).
 		boolean below = (anchor[1] + anchor[3]) / 2 < sh / 2f;
 		int room = below ? sh - (int) anchor[3] - margin - (int) (2 * dp) : (int) anchor[1] - margin - (int) (2 * dp);
-		int maxH = Math.min(Math.max(sw, sh) / 2, room - tip), rowsH = list.getMeasuredHeight();
+		int maxH = Math.min((int) (Math.max(sw, sh) * (TextSize.tablet(c) ? 0.7f : 0.5f)), room - tip), rowsH = list.getMeasuredHeight();
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
 		int scrollH = scrolls ? maxH - titleH - 2 * pad - 2 * more.getMeasuredHeight() : rowsH;
 		less.setVisibility(scrolls ? INVISIBLE : GONE);

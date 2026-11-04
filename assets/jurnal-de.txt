@@ -1,3 +1,10 @@
+v2.10 · 4. November 2026
+- Neues Widget 4x2 · Tage: unter dem aktuellen Wetter die nächsten 5 Tage (Tag, Symbol, Höchst- / Tiefstwert). Ab 3 Reihen Höhe werden beide 4x2-Widgets (Stunden und Tage) zum neuen 4x3, mit den nächsten Stunden und den nächsten Tagen.
+- Textgröße: In Hilfe, Erdbeben, Info und Neuigkeiten macht eine Leiste rechts, unter dem Schließen-Knopf, die Buchstaben größer oder kleiner (80–180 %); auf dem Hauptbildschirm zeigt ein Wischen nahe dem rechten Rand dieselbe Leiste. Die Größe bleibt auf dem Gerät gespeichert und gilt auch für das Menü ☰.
+- Tablet: Das Menü ☰ und die anderen Menüs sind 30 % größer.
+- ☰ › App senden: sendet den Download-Link in einer WhatsApp-Nachricht (oder mit einer anderen App), damit jemand anderes Meteo Alarm installieren kann.
+- Die Widget-Liste zeigt ihre Namen in der Sprache des Telefons.
+
 v2.00 · 4. November 2026
 - Sprachen: Die App spricht jetzt alle Amtssprachen der Europäischen Union und Ukrainisch (auch die Hilfe). Beim ersten Start nimmt sie die Sprache des Telefons (Englisch, wenn die App sie nicht hat); danach die unter ☰ › Sprache gewählte. Die Liste zeigt nur Englisch, die Sprache des Telefons und die Amtssprachen des Landes, in dem das Telefon ist.
 - ☰ › Erdbeben: eine Seite mit den Erdbeben ab Magnitude 3 der letzten 7 Tage in deinem Land, dann denen der letzten 48 Stunden in der EU, der Ukraine und Moldau (Uhrzeit, Ort, Magnitude, Tiefe, Entfernung).

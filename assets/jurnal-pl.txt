@@ -1,3 +1,10 @@
+v2.10 · 4 listopada 2026
+- Nowy widżet 4x2 · dni: pod obecną pogodą najbliższe 5 dni (dzień, ikona, maks. / min.). Powiększone do 3 rzędów lub więcej oba widżety 4x2 (godziny i dni) stają się nowym 4x3, z najbliższymi godzinami i dniami.
+- Wielkość tekstu: w Pomocy, Trzęsieniach ziemi, O aplikacji i Co nowego pasek po prawej, pod przyciskiem zamknięcia, powiększa lub zmniejsza litery (80–180 %); na ekranie głównym przesunięcie w górę lub w dół przy prawej krawędzi pokazuje ten sam pasek. Wielkość zostaje zapisana na urządzeniu i dotyczy też menu ☰.
+- Tablet: menu ☰ i inne menu są o 30 % większe.
+- ☰ › Wyślij aplikację: wysyła link do pobrania w wiadomości WhatsApp (lub inną aplikacją), aby ktoś inny mógł zainstalować Meteo Alarm.
+- Lista widżetów pokazuje nazwy w języku telefonu.
+
 v2.00 · 4 listopada 2026
 - Języki: aplikacja mówi teraz wszystkimi językami urzędowymi Unii Europejskiej i po ukraińsku (także Pomoc). Przy pierwszym uruchomieniu bierze język telefonu (angielski, jeśli aplikacja go nie ma); potem ten wybrany w ☰ › Język. Lista pokazuje tylko angielski, język telefonu i języki urzędowe kraju, w którym jest telefon.
 - ☰ › Trzęsienia ziemi: strona z trzęsieniami o magnitudzie 3 lub większej z ostatnich 7 dni w twoim kraju, potem z ostatnich 48 godzin w UE, Ukrainie i Mołdawii (godzina, miejsce, magnituda, głębokość, odległość).

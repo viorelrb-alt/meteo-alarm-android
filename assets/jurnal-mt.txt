@@ -1,3 +1,10 @@
+v2.10 · 4 ta' Novembru 2026
+- Widget ġdid 4x2 · jiem: taħt it-temp ta' issa, il-5 ijiem li ġejjin (jum, ikona, l-ogħla / l-inqas). Meta jitkabbru għal 3 ringieli jew aktar, iż-żewġ widgets 4x2 (sigħat u jiem) isiru l-4x3 il-ġdid, bis-sigħat u l-jiem li ġejjin.
+- Daqs tat-test: f'Għajnuna, Terremoti, Dwar u X'hemm ġdid, virga fuq il-lemin, taħt il-buttuna tal-għeluq, tkabbar jew iċċekken l-ittri (80–180 %); fuq l-iskrin ewlieni, żerżiq 'il fuq jew 'l isfel qrib it-tarf tal-lemin juri l-istess virga. Id-daqs jinżamm fuq l-apparat u japplika wkoll għall-menu ☰.
+- Tablet: il-menu ☰ u l-menus l-oħra huma 30 % akbar.
+- ☰ › Ibgħat l-app: jibgħat il-link biex titniżżel f'messaġġ WhatsApp (jew b'app oħra), biex xi ħadd ieħor ikun jista' jinstalla Meteo Alarm.
+- Il-lista tal-widgets turi l-ismijiet bil-lingwa tat-telefown.
+
 v2.00 · 4 ta' Novembru 2026
 - Lingwa: l-app issa titkellem il-lingwi uffiċjali kollha tal-UE u l-Ukren (anke l-Għajnuna). Fl-ewwel bidu tieħu l-lingwa tat-telefown (l-Ingliż jekk l-app m'għandhiex); imbagħad dik magħżula f'☰ › Lingwa. Il-lista turi biss l-Ingliż, il-lingwa tat-telefown u l-lingwi uffiċjali tal-pajjiż fejn jinsab it-telefown.
 - ☰ › Terremoti: paġna bit-terremoti ta' kobor 3 jew aktar tal-aħħar 7 ijiem f'pajjiżek, imbagħad dawk tal-aħħar 48 siegħa fl-UE, l-Ukrajna u l-Moldova (ħin, post, kobor, fond, distanza).

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="w_4x2d">Meteo Alarm 4x2 · dni</string>
+    <string name="w_any">Meteo Alarm (dowolny rozmiar)</string>
+    <string name="w_settings">Widżety Meteo Alarm</string>
+</resources>

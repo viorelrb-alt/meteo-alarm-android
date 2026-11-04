@@ -1,3 +1,10 @@
+v2.10 · 4. listopadu 2026
+- Nový widget 4x2 · dny: pod aktuálním počasím příštích 5 dní (den, ikona, max. / min.). Zvětšené na 3 řady a více se oba widgety 4x2 (hodiny a dny) změní na nový 4x3, s příštími hodinami i dny.
+- Velikost textu: v Nápovědě, Zemětřeseních, O aplikaci a Co je nového zvětší nebo zmenší písmena lišta vpravo, pod tlačítkem zavření (80–180 %); na hlavní obrazovce stejnou lištu ukáže přejetí nahoru či dolů u pravého okraje. Velikost zůstane uložena v zařízení a platí i pro nabídku ☰.
+- Tablet: nabídka ☰ a ostatní nabídky jsou o 30 % větší.
+- ☰ › Poslat aplikaci: pošle odkaz ke stažení ve zprávě WhatsApp (nebo jinou aplikací), aby si Meteo Alarm mohl nainstalovat někdo další.
+- Seznam widgetů ukazuje názvy v jazyce telefonu.
+
 v2.00 · 4. listopadu 2026
 - Jazyky: aplikace nyní mluví všemi úředními jazyky Evropské unie a ukrajinsky (i Nápověda). Při prvním spuštění vezme jazyk telefonu (angličtinu, pokud ho aplikace nemá); potom ten zvolený v ☰ › Jazyk. Seznam ukazuje jen angličtinu, jazyk telefonu a úřední jazyky země, kde je telefon.
 - ☰ › Zemětřesení: stránka se zemětřeseními o magnitudě 3 a více za posledních 7 dní ve vaší zemi, potom za posledních 48 hodin v EU, na Ukrajině a v Moldavsku (čas, místo, magnituda, hloubka, vzdálenost).

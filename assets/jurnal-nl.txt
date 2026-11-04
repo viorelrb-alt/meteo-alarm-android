@@ -1,3 +1,10 @@
+v2.10 · 4 november 2026
+- Nieuwe widget 4x2 · dagen: onder het weer van nu de komende 5 dagen (dag, pictogram, max / min). Vergroot tot 3 rijen of meer worden beide 4x2-widgets (uren en dagen) de nieuwe 4x3, met de komende uren en de komende dagen.
+- Tekstgrootte: in Help, Aardbevingen, Over en Wat is er nieuw maakt een balk rechts, onder de sluitknop, de letters groter of kleiner (80–180 %); op het hoofdscherm toont omhoog of omlaag vegen vlak bij de rechterrand dezelfde balk. De grootte blijft op het apparaat bewaard en geldt ook voor het menu ☰.
+- Tablet: het menu ☰ en de andere menu's zijn 30 % groter.
+- ☰ › App versturen: verstuurt de downloadlink in een WhatsApp-bericht (of met een andere app), zodat iemand anders Meteo Alarm kan installeren.
+- De widgetlijst toont de namen in de taal van de telefoon.
+
 v2.00 · 4 november 2026
 - Talen: de app spreekt nu alle officiële talen van de Europese Unie en Oekraïens (ook de Help). Bij de eerste start neemt ze de taal van de telefoon (Engels als de app die niet heeft); daarna die gekozen in ☰ › Taal. De lijst toont alleen Engels, de taal van de telefoon en de officiële talen van het land waar de telefoon is.
 - ☰ › Aardbevingen: een pagina met de aardbevingen van magnitude 3 of meer van de laatste 7 dagen in je land, daarna die van de laatste 48 uur in de EU, Oekraïne en Moldavië (tijd, plaats, magnitude, diepte, afstand).

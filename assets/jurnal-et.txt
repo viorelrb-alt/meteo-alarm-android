@@ -1,3 +1,10 @@
+v2.10 · 4. november 2026
+- Uus vidin 4x2 · päevad: praeguse ilma all järgmised 5 päeva (päev, ikoon, kõrgeim / madalaim). Vähemalt 3 rea kõrguseks tehtuna muutuvad mõlemad 4x2 vidinad (tunnid ja päevad) uueks 4x3-ks, järgmiste tundide ja päevadega.
+- Teksti suurus: Abis, Maavärinates, Teabes ja Mis on uut lehel suurendab või vähendab tähti riba paremal, sulgemisnupu all (80–180 %); põhiekraanil näitab sama riba libistamine üles või alla parema serva lähedal. Suurus jääb seadmesse salvestatuks ja kehtib ka menüüle ☰.
+- Tahvelarvuti: menüü ☰ ja teised menüüd on 30 % suuremad.
+- ☰ › Saada rakendus: saadab allalaadimislingi WhatsAppi sõnumis (või teise rakendusega), et keegi teine saaks Meteo Alarmi paigaldada.
+- Vidinate loend näitab nimesid telefoni keeles.
+
 v2.00 · 4. november 2026
 - Keel: rakendus räägib nüüd kõiki ELi ametlikke keeli ja ukraina keelt (ka Abi). Esimesel käivitamisel võtab see telefoni keele (inglise, kui rakenduses seda pole); seejärel menüüs ☰ › Keel valitud. Loend näitab ainult inglise keelt, telefoni keelt ja selle riigi ametlikke keeli, kus telefon on.
 - ☰ › Maavärinad: leht vähemalt magnituudiga 3 maavärinatega viimase 7 päeva jooksul sinu riigis, seejärel viimase 48 tunni omadega ELis, Ukrainas ja Moldovas (aeg, koht, magnituud, sügavus, kaugus).

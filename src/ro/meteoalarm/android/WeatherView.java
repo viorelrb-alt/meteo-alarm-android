@@ -141,6 +141,32 @@ final class WeatherView extends View {
 		}
 	};
 
+	/**
+	 * The text-size bar (v2.10): sliding up or down near the right edge shows it at the right and
+	 * sets the size of the menus and pages (TextSize); it goes away 4 s after the finger lifts.
+	 */
+	private boolean edgeR, sizing, sizeDown, sizeDrag;
+	private final Runnable hideSize = new Runnable() {
+		public void run() {
+			screen.sizeBar = false;
+			invalidate();
+		}
+	};
+
+	private void showSize(long ms) {
+		if (!screen.sizeBar) screen.sizeLevel = TextSize.pos(TextSize.get(getContext()));
+		screen.sizeBar = true;
+		removeCallbacks(hideSize);
+		if (ms > 0) postDelayed(hideSize, ms);
+		invalidate();
+	}
+
+	private void slideSize(float dy, boolean save) {
+		if (screen.sizeArea[3] > 0) screen.sizeLevel = Math.max(0, Math.min(1, pos0 - dy / (screen.sizeArea[3] * scale)));
+		TextSize.set(getContext(), TextSize.scale(screen.sizeLevel), save);
+		invalidate();
+	}
+
 	private void showBar(long ms) {
 		if (!screen.brightBar) screen.brightLevel = toPos(taps.brightness());
 		screen.brightBar = true;
@@ -259,7 +285,20 @@ final class WeatherView extends View {
 			downY = e.getY();
 			pulling = false;
 			pull = 0;
-			edge = !screen.brightBar && downX >= 12 * dp && downX <= 60 * dp;
+			edge = !screen.brightBar && !screen.sizeBar && downX >= 12 * dp && downX <= 60 * dp;
+			edgeR = !screen.brightBar && !screen.sizeBar && downX >= getWidth() - 60 * dp && downX <= getWidth() - 12 * dp;
+			sizing = false;
+			sizeDown = screen.sizeBar;
+			sizeDrag = false;
+			if (sizeDown) {
+				float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
+				removeCallbacks(hideSize);
+				if (in(screen.sizeArea, ux, uy)) {
+					sizeDrag = true;
+					pos0 = screen.sizeLevel;
+				} else hideSize.run();
+				return true;
+			}
 			sliding = false;
 			slideLogged = false;
 			barDown = screen.brightBar;
@@ -276,6 +315,17 @@ final class WeatherView extends View {
 				else hideBar.run();
 				return true;
 			}
+		}
+		if (sizeDown) {
+			if (act == MotionEvent.ACTION_MOVE && sizeDrag) slideSize(e.getY() - downY, false);
+			if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
+				sizeDown = false;
+				if (sizeDrag) {
+					slideSize(e.getY() - downY, true);
+					showSize(4000);
+				}
+			}
+			return true;
 		}
 		if (barDown) {
 			if (act == MotionEvent.ACTION_MOVE && barDrag) slide(e.getY() - downY);
@@ -327,6 +377,16 @@ final class WeatherView extends View {
 			return true;
 		}
 		if (act == MotionEvent.ACTION_MOVE) {
+			if (edgeR && !pulling && !sizing && Math.abs(dy) > 16 * dp && Math.abs(dy) > 2 * Math.abs(dx)) {
+				sizing = true;
+				showSize(0);
+				pos0 = screen.sizeLevel;
+				Log.i(getContext(), "GEST", "marginea dreaptă: bara de mărime a textului");
+			}
+			if (sizing) {
+				slideSize(dy, false);
+				return true;
+			}
 			if (edge && !pulling && !sliding && Math.abs(dy) > 16 * dp && Math.abs(dy) > 2 * Math.abs(dx)) {
 				sliding = true;
 				showBar(0);
@@ -347,6 +407,12 @@ final class WeatherView extends View {
 				pull = Math.max(0, dy - 24 * dp) * 0.8f;
 				invalidate();
 			}
+			return true;
+		}
+		if (sizing && (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL)) {
+			sizing = false;
+			slideSize(dy, true);
+			showSize(4000);
 			return true;
 		}
 		if (act == MotionEvent.ACTION_CANCEL) {

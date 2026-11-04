@@ -1,3 +1,10 @@
+v2.10 · 4 Samhain 2026
+- Giuirléid nua 4x2 · laethanta: faoin aimsir anois, na 5 lá atá romhainn (lá, deilbhín, uas / íos). Nuair a dhéantar 3 shraith ar airde nó níos mó díobh, déantar an 4x3 nua den dá ghiuirléid 4x2 (uaireanta agus laethanta), leis na huaireanta agus na laethanta atá romhainn.
+- Méid an téacs: i gCabhair, Creathanna talún, Faoi agus Cad atá nua, méadaíonn nó laghdaíonn barra ar dheis, faoin gcnaipe dúnta, na litreacha (80–180 %); ar an bpríomhscáileán, taispeánann sleamhnú suas nó síos gar don imeall deas an barra céanna. Coinnítear an méid ar an ngléas agus baineann sé leis an roghchlár ☰ freisin.
+- Taibléad: tá an roghchlár ☰ agus na roghchláir eile 30 % níos mó.
+- ☰ › Seol an aip: seolann sé an nasc íoslódála i dteachtaireacht WhatsApp (nó le haip eile), ionas gur féidir le duine eile Meteo Alarm a shuiteáil.
+- Taispeánann liosta na ngiuirléidí a n-ainmneacha i dteanga an fhóin.
+
 v2.00 · 4 Samhain 2026
 - Teanga: labhraíonn an aip anois teangacha oifigiúla uile an AE agus an Úcráinis (an Chabhair freisin). Ag an gcéad tús glacann sí teanga an fhóin (Béarla mura bhfuil sí ag an aip); ina dhiaidh sin an ceann a roghnaíodh i ☰ › Teanga. Ní thaispeánann an liosta ach Béarla, teanga an fhóin agus teangacha oifigiúla na tíre ina bhfuil an fón.
 - ☰ › Creathanna talún: leathanach le creathanna talún de mhéid 3 nó níos mó le 7 lá anuas i do thír, ansin iad siúd le 48 uair anuas san AE, san Úcráin agus sa Mholdóiv (am, áit, méid, doimhneacht, fad).

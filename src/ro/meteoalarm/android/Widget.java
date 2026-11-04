@@ -53,7 +53,11 @@ public class Widget extends AppWidgetProvider {
 	public static final class W4x2 extends Widget {
 	}
 
-	static final Class<?>[] KINDS = { Widget.class, W2x2.class, W4x1.class, W4x2.class };
+	/** 4x2 with the next days under the weather now (Viorel 2026-11-04, v2.10). */
+	public static final class W4x2d extends Widget {
+	}
+
+	static final Class<?>[] KINDS = { Widget.class, W2x2.class, W4x1.class, W4x2.class, W4x2d.class };
 
 	@Override
 	public void onUpdate(Context ctx, AppWidgetManager mgr, int[] ids) {
@@ -278,7 +282,7 @@ public class Widget extends AppWidgetProvider {
 	 * The layouts' shapes (dp of Viorel's mockups): 2x2 = 192 x 192, 4x1 = 384 x 96, 4x2 = 384 x 192,
 	 * and the small one, 2x1 = 192 x 96 (icon and temperature only, for frames too small for the others).
 	 */
-	static final float[] RW = { 192, 384, 384, 192 }, RH = { 192, 96, 192, 96 };
+	static final float[] RW = { 192, 384, 384, 192, 384, 384 }, RH = { 192, 96, 192, 96, 192, 280 };
 	/** Below this zoom the texts get too small: such a layout is not used (logs of 2026-11-02: 68% was too small). */
 	static final float MIN_ZOOM = 0.8f;
 	/** How much taller than the layout (part of its height) the widget may spread; more is left empty. */
@@ -299,12 +303,24 @@ public class Widget extends AppWidgetProvider {
 	static int kind(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
 		SharedPreferences p = prefs(ctx);
 		learnCell(ctx, mgr, id, w, h);
+		boolean days = days(mgr, id);
 		float cw = p.getFloat("cellW", 0), ch = p.getFloat("cellH", 0);
-		if (cw <= 0 || ch <= 0) return kind(w, h);
+		if (cw <= 0 || ch <= 0) return kind(w, h, days);
 		int cols = Math.max(1, Math.round(w / cw)), rows = Math.max(1, Math.round(h / ch));
-		int k = rows <= 1 ? (cols >= 3 ? 1 : 3) : (cols >= 3 ? 2 : 0);
+		// Wide and 3 rows or more: the 4x3, with the hours and the next days (v2.10).
+		int k = rows <= 1 ? (cols >= 3 ? 1 : 3) : (cols >= 3 ? (rows >= 3 ? 5 : days ? 4 : 2) : 0);
+		if (k == 5 && zoom(5, w, h) < MIN_ZOOM) k = days ? 4 : 2;
 		// Still never shrunk below MIN_ZOOM: then the plain rule.
-		return zoom(k, w, h) >= MIN_ZOOM ? k : kind(w, h);
+		return zoom(k, w, h) >= MIN_ZOOM ? k : kind(w, h, days);
+	}
+
+	/** The widget shows the next days in its second row (the "4x2 days" entry). */
+	static boolean days(AppWidgetManager mgr, int id) {
+		try {
+			return mgr.getAppWidgetInfo(id).provider.getClassName().endsWith("W4x2d");
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	/** On a widget's first frame: its cells (from its kind) give the size of one cell. */
@@ -316,7 +332,7 @@ public class Widget extends AppWidgetProvider {
 		try {
 			String cls = mgr.getAppWidgetInfo(id).provider.getClassName();
 			if (cls.endsWith("W4x1")) { cols = 4; rows = 1; }
-			else if (cls.endsWith("W4x2")) { cols = 4; rows = 2; }
+			else if (cls.endsWith("W4x2") || cls.endsWith("W4x2d")) { cols = 4; rows = 2; }
 			else if (!cls.endsWith("W2x2")) return; // "any size": it may start anywhere
 		} catch (Exception e) {
 			return;
@@ -327,16 +343,18 @@ public class Widget extends AppWidgetProvider {
 		Log.i(ctx, "WIDGET", "#" + id + " celula ecranului de pornire: " + Math.round(cw) + "x" + Math.round(ch) + " dp (din " + cols + "x" + rows + ")");
 	}
 
-	static int kind(float w, float h) {
+	static int kind(float w, float h, boolean days) {
 		h = Math.max(1f, h);
 		w = Math.max(1f, w);
 		boolean wide = w >= RW[2] * MIN_ZOOM;
-		int tall = wide ? 2 : 0, low = wide ? 1 : 3;
+		int tall = wide ? (days ? 4 : 2) : 0, low = wide ? 1 : 3;
+		if (wide && zoom(5, w, h) >= MIN_ZOOM) return 5;
 		if (zoom(tall, w, h) >= MIN_ZOOM) return tall;
 		if (zoom(low, w, h) >= MIN_ZOOM) return low;
 		// Smaller still: the one shown largest.
 		int best = 0;
 		for (int k = 1; k < 4; k++) if (zoom(k, w, h) > zoom(best, w, h)) best = k;
+		if (best == 2 && days) best = 4;
 		return best;
 	}
 
@@ -344,7 +362,7 @@ public class Widget extends AppWidgetProvider {
 		return Math.min(w / RW[k], h / RH[k]);
 	}
 
-	static final String[] NAMES = { "2x2", "4x1", "4x2", "2x1" };
+	static final String[] NAMES = { "2x2", "4x1", "4x2", "2x1", "4x2", "4x3" };
 
 	/** One widget, drawn as a picture of its frame. */
 	private static void draw(Context ctx, AppWidgetManager mgr, int id, Data d, Set st) {
@@ -353,7 +371,7 @@ public class Widget extends AppWidgetProvider {
 		int[] f = frame(ctx, mgr, id, why);
 		int kind = kind(ctx, mgr, id, f[0], f[1]);
 		float s = Math.min(f[0] / RW[kind], f[1] / RH[kind]);
-		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind]
+		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind] + (kind == 4 ? " zile" : "")
 				+ " zoom " + Math.round(s * 100) + "% · " + (d.c != null ? d.c.name : "-") + (d.w == null ? " fără date" : "") + " · " + st.describe());
 		try {
 			send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens, kind));
@@ -500,24 +518,56 @@ public class Widget extends AppWidgetProvider {
 				pen.text(d.T.hi + " " + deg(w.tmax, d.unitF) + "° · " + d.T.lo + " " + deg(w.tmin, d.unitF) + "°", 369.1f, 62.3f, 13, 1, 1f, 3, 150);
 			pen.text(sun, 369.4f, 80.2f, 13, 1, 1f, 3, 150);
 			pen.warnings(d.levels, 198.2f, 107.6f, 260.7f, 101.4f, d.en);
-			pen.at(0, 0.5f);
+			// 4x2: the next hours (or, "4x2 days", the next days) under a line; 4x3: both rows.
 			float lw = 359.1f + pen.ex;
-			pen.line(11.4f, 111.3f, lw, 0.75f, 0.45f);
-			pen.at(0, 1);
-			if (w != null) {
-				float cw = lw / 5;
-				for (int i = 0; i < 5 && i + 1 < w.tileHours.size(); i++) {
-					int h = i + 1;
-					float cx = 11.4f + cw * i + cw / 2;
-					pen.text(Texts.clock(w.tileHours.get(h), d.clk12), cx, 130f, 14.2f, 0, 0.9f, 3, cw - 4);
-					pen.icon(d.T.describe(w.tileCode[h], w.tileDay[h])[0], cx - 13.15f, 135.8f, 26.3f);
-					if (h < w.tileTemp.length && !Double.isNaN(w.tileTemp[h]))
-						pen.text(deg(w.tileTemp[h], d.unitF) + "°", cx, 178.7f, 15, 0, 1f, 3, cw - 4);
-				}
+			if (kind == 5) {
+				pen.at(0, 1 / 3f);
+				pen.line(11.4f, 111.3f, lw, 0.75f, 0.45f);
+				hoursRow(pen, d, 111.3f, lw);
+				pen.at(0, 2 / 3f);
+				pen.line(11.4f, 196.5f, lw, 0.75f, 0.45f);
+				pen.at(0, 1);
+				daysRow(pen, d, 196.5f, lw);
+			} else {
+				pen.at(0, 0.5f);
+				pen.line(11.4f, 111.3f, lw, 0.75f, 0.45f);
+				pen.at(0, 1);
+				if (kind == 4) daysRow(pen, d, 111.3f, lw);
+				else hoursRow(pen, d, 111.3f, lw);
 			}
 		}
 		pen.done();
 		return out;
+	}
+
+	/** The next 5 hours under the line at Y: hour, icon, temperature. */
+	private static void hoursRow(Pen pen, Data d, float y, float lw) {
+		Weather w = d.w;
+		if (w == null) return;
+		float cw = lw / 5;
+		for (int i = 0; i < 5 && i + 1 < w.tileHours.size(); i++) {
+			int h = i + 1;
+			float cx = 11.4f + cw * i + cw / 2;
+			pen.text(Texts.clock(w.tileHours.get(h), d.clk12), cx, y + 18.7f, 14.2f, 0, 0.9f, 3, cw - 4);
+			pen.icon(d.T.describe(w.tileCode[h], w.tileDay[h])[0], cx - 13.15f, y + 24.5f, 26.3f);
+			if (h < w.tileTemp.length && !Double.isNaN(w.tileTemp[h]))
+				pen.text(deg(w.tileTemp[h], d.unitF) + "°", cx, y + 67.4f, 15, 0, 1f, 3, cw - 4);
+		}
+	}
+
+	/** The next 5 days under the line at Y: tomorrow / weekday, icon, high / low. */
+	private static void daysRow(Pen pen, Data d, float y, float lw) {
+		Weather w = d.w;
+		if (w == null) return;
+		float cw = lw / 5;
+		for (int k = 0; k < 5 && k < w.dayDates.size() && k < w.dayCodes.size(); k++) {
+			float cx = 11.4f + cw * k + cw / 2;
+			String day = k == 0 ? d.T.day1 : d.T.weekdayUp(w.dayDates.get(k), true);
+			pen.text(day, cx, y + 18.7f, 12.6f, 0, 0.9f, 3, cw - 4);
+			pen.icon(d.T.describe(w.dayCodes.get(k), true)[0], cx - 13.15f, y + 24.5f, 26.3f);
+			if (k < w.dayHi.size() && k < w.dayLo.size())
+				pen.text(deg(w.dayHi.get(k), d.unitF) + "° / " + deg(w.dayLo.get(k), d.unitF) + "°", cx, y + 67.4f, 14, 0, 1f, 3, cw - 4);
+		}
 	}
 
 	private static long deg(double c, boolean unitF) {

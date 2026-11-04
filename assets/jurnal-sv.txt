@@ -1,3 +1,10 @@
+v2.10 · 4 november 2026
+- Ny widget 4x2 · dagar: under vädret nu de närmaste 5 dagarna (dag, ikon, högsta / lägsta). Gjorda 3 rader höga eller mer blir båda 4x2-widgetarna (timmar och dagar) den nya 4x3, med de närmaste timmarna och dagarna.
+- Textstorlek: i Hjälp, Jordbävningar, Om och Nyheter gör ett fält till höger, under stängknappen, bokstäverna större eller mindre (80–180 %); på huvudskärmen visar ett svep upp eller ner nära högerkanten samma fält. Storleken sparas på enheten och gäller även menyn ☰.
+- Surfplatta: menyn ☰ och de andra menyerna är 30 % större.
+- ☰ › Skicka appen: skickar nedladdningslänken i ett WhatsApp-meddelande (eller med en annan app), så att någon annan kan installera Meteo Alarm.
+- Widgetlistan visar namnen på telefonens språk.
+
 v2.00 · 4 november 2026
 - Språk: appen talar nu alla Europeiska unionens officiella språk och ukrainska (även Hjälp). Vid första start tar den telefonens språk (engelska om appen inte har det); sedan det som valts i ☰ › Språk. Listan visar bara engelska, telefonens språk och de officiella språken i landet där telefonen är.
 - ☰ › Jordbävningar: en sida med jordbävningarna med magnitud 3 eller mer de senaste 7 dagarna i ditt land, sedan de senaste 48 timmarnas i EU, Ukraina och Moldavien (tid, plats, magnitud, djup, avstånd).

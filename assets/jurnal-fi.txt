@@ -1,3 +1,10 @@
+v2.10 · 4. marraskuuta 2026
+- Uusi widget 4x2 · päivät: nykyisen sään alla seuraavat 5 päivää (päivä, kuvake, ylin / alin). Kun ne tehdään vähintään 3 rivin korkuisiksi, molemmista 4x2-widgeteistä (tunnit ja päivät) tulee uusi 4x3, jossa ovat seuraavat tunnit ja päivät.
+- Tekstin koko: Ohjeessa, Maanjäristyksissä, Tietoja- ja Mitä uutta -sivuilla oikealla oleva palkki sulkemispainikkeen alla suurentaa tai pienentää kirjaimia (80–180 %); päänäytöllä liu'utus ylös tai alas oikean reunan lähellä näyttää saman palkin. Koko tallentuu laitteeseen ja koskee myös ☰-valikkoa.
+- Tabletti: ☰-valikko ja muut valikot ovat 30 % suurempia.
+- ☰ › Lähetä sovellus: lähettää latauslinkin WhatsApp-viestissä (tai toisella sovelluksella), jotta joku muu voi asentaa Meteo Alarmin.
+- Widget-luettelo näyttää nimet puhelimen kielellä.
+
 v2.00 · 4. marraskuuta 2026
 - Kieli: sovellus puhuu nyt kaikkia EU:n virallisia kieliä ja ukrainaa (myös Ohje). Ensimmäisellä käynnistyksellä se ottaa puhelimen kielen (englannin, jos sovelluksessa ei ole sitä); sen jälkeen kohdassa ☰ › Kieli valitun. Luettelo näyttää vain englannin, puhelimen kielen ja sen maan viralliset kielet, jossa puhelin on.
 - ☰ › Maanjäristykset: sivu, jossa ovat vähintään magnitudin 3 maanjäristykset viimeisen 7 päivän ajalta maassasi, sitten viimeisen 48 tunnin maanjäristykset EU:ssa, Ukrainassa ja Moldovassa (aika, paikka, magnitudi, syvyys, etäisyys).

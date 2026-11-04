@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="w_4x2d">Meteo Alarm 4x2 · dagar</string>
+    <string name="w_any">Meteo Alarm (valfri storlek)</string>
+    <string name="w_settings">Meteo Alarm-widgetar</string>
+</resources>

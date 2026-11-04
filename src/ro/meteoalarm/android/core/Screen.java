@@ -171,6 +171,32 @@ public final class Screen {
 		barArea[2] = 0;
 		btnMoon[2] = 0;
 		if (brightBar) drawBrightBar(ch);
+		sizeArea[2] = 0;
+		if (sizeBar) drawSizeBar(ch);
+	}
+
+	/**
+	 * The text-size bar (v2.10): shown by sliding near the right edge, at the right, like the
+	 * brightness one; over it the size in percent. SIZE_LEVEL 0–1 (TextSize 80–180 %).
+	 */
+	public boolean sizeBar;
+	public float sizeLevel = 0.2f;
+	public final float[] sizeArea = { 0, 0, 0, 0 };
+
+	private void drawSizeBar(float ch) {
+		float bw = 84, x = cw - 50 - bw, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
+		int ink = dark ? Gfx.WHITE : Gfx.BLACK, bg = dark ? Gfx.BLACK : Gfx.WHITE;
+		g.roundRect(x, top, bw, bw, bw / 2, ink);
+		g.roundRect(x + 7, top + 7, bw - 14, bw - 14, bw / 2 - 7, bg);
+		String pc = Math.round((0.8f + sizeLevel) * 100) + "%";
+		ctext(true, fit(true, 24, bw - 20, pc), top + bw / 2 - 13, x + bw / 2, pc, ink);
+		sizeArea[0] = x; sizeArea[1] = by; sizeArea[2] = bw; sizeArea[3] = bh;
+		int track = (barTrack & 0xFFFFFF) | 0x80000000;
+		float f = bw + Math.max(0, Math.min(1, sizeLevel)) * (bh - bw);
+		g.roundRect(x, by, bw, bh, bw / 2, track);
+		g.roundRect(x, by + bh - f, bw, f, bw / 2, barFill);
+		ctext(true, 28, by + bh - bw / 2 - 15, x + bw / 2, "A", barIcon);
+		ctext(true, 46, by + bw / 2 - 25, x + bw / 2, "A", barIcon);
 	}
 
 	private void drawPortrait(float ch) {
@@ -1698,6 +1724,19 @@ public final class Screen {
 			g.roundRect(10, 4, 44, 56, 6, k);
 			g.roundRect(14, 8, 36, 48, 4, c.page);
 			for (int i = 0; i < 4; i++) g.rect(19, 16 + i * 10, i == 3 ? 16 : 26, 4, k);
+		} else if (which.equals("share")) {
+			// Three dots joined: share the app.
+			float[][] pt = { { 46, 14 }, { 16, 32 }, { 46, 50 } };
+			for (int i = 0; i < 2; i++) {
+				float x0 = pt[1][0], y0 = pt[1][1], x1 = pt[i * 2][0], y1 = pt[i * 2][1];
+				float dx = x1 - x0, dy = y1 - y0, len = (float) Math.sqrt(dx * dx + dy * dy), nx = -dy / len * 2, ny = dx / len * 2;
+				g.poly(new float[] { x0 + nx, y0 + ny, x1 + nx, y1 + ny, x1 - nx, y1 - ny, x0 - nx, y0 - ny }, k);
+			}
+			for (float[] q : pt) g.roundRect(q[0] - 8, q[1] - 8, 16, 16, 8, k);
+		} else if (which.equals("textsize")) {
+			// A small and a large A: the text size.
+			ctext(true, 22, 30, 17, "A", k);
+			ctext(true, 40, 14, 42, "A", k);
 		} else if (which.equals("roll")) {
 			// Two boxes side by side with an arrow under them.
 			g.roundRect(4, 10, 26, 22, 4, k);

@@ -1,3 +1,10 @@
+v2.10 · 2026. november 4.
+- Új 4x2 · napok widget: a mostani időjárás alatt a következő 5 nap (nap, ikon, max. / min.). 3 sorosra vagy nagyobbra húzva mindkét 4x2 widget (órák és napok) az új 4x3 lesz, a következő órákkal és napokkal.
+- Szövegméret: a Súgóban, Földrengésekben, Névjegyben és Újdonságokban egy jobb oldali sáv a bezárás gomb alatt nagyítja vagy kicsinyíti a betűket (80–180 %); a főképernyőn a jobb szél közelében fel-le csúsztatás ugyanezt a sávot mutatja. A méret az eszközön marad mentve, és a ☰ menüre is érvényes.
+- Táblagép: a ☰ menü és a többi menü 30 %-kal nagyobb.
+- ☰ › Alkalmazás küldése: WhatsApp-üzenetben (vagy más alkalmazással) elküldi a letöltési linket, hogy más is telepíthesse a Meteo Alarmot.
+- A widgetlista a telefon nyelvén mutatja a neveket.
+
 v2.00 · 2026. november 4.
 - Nyelvek: az alkalmazás most már az Európai Unió összes hivatalos nyelvén és ukránul beszél (a Súgó is). Első indításkor a telefon nyelvét veszi (angolt, ha az alkalmazásban nincs meg); utána a ☰ › Nyelv alatt választottat. A lista csak az angolt, a telefon nyelvét és annak az országnak a hivatalos nyelveit mutatja, ahol a telefon van.
 - ☰ › Földrengések: egy oldal az elmúlt 7 nap legalább 3-as erősségű földrengéseivel az országodban, aztán az elmúlt 48 óráéval az EU-ban, Ukrajnában és Moldovában (időpont, hely, erősség, mélység, távolság).

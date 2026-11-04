@@ -1,3 +1,10 @@
+v2.10 · 4. studenoga 2026
+- Novi widget 4x2 · dani: ispod trenutačnog vremena sljedećih 5 dana (dan, ikona, maks. / min.). Povećani na 3 reda ili više, oba widgeta 4x2 (sati i dani) postaju novi 4x3, sa sljedećim satima i danima.
+- Veličina teksta: u Pomoći, Potresima, O aplikaciji i Što je novo traka desno, ispod gumba za zatvaranje, povećava ili smanjuje slova (80–180 %); na glavnom zaslonu istu traku prikazuje povlačenje gore ili dolje blizu desnog ruba. Veličina ostaje spremljena na uređaju i vrijedi i za izbornik ☰.
+- Tablet: izbornik ☰ i ostali izbornici 30 % su veći.
+- ☰ › Pošalji aplikaciju: šalje poveznicu za preuzimanje u WhatsApp poruci (ili drugom aplikacijom), da netko drugi može instalirati Meteo Alarm.
+- Popis widgeta prikazuje nazive na jeziku telefona.
+
 v2.00 · 4. studenoga 2026.
 - Jezici: aplikacija sada govori sve službene jezike Europske unije i ukrajinski (i Pomoć). Pri prvom pokretanju uzima jezik telefona (engleski ako ga aplikacija nema); zatim onaj odabran u ☰ › Jezik. Popis prikazuje samo engleski, jezik telefona i službene jezike zemlje u kojoj je telefon.
 - ☰ › Potresi: stranica s potresima magnitude 3 ili više u zadnjih 7 dana u vašoj zemlji, zatim onima u zadnjih 48 sati u EU-u, Ukrajini i Moldaviji (vrijeme, mjesto, magnituda, dubina, udaljenost).

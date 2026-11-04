@@ -1,3 +1,10 @@
+v2.10 · 2026. gada 4. novembris
+- Jauns logrīks 4x2 · dienas: zem pašreizējiem laikapstākļiem nākamās 5 dienas (diena, ikona, augstākā / zemākā). Palielināti līdz 3 rindām vai vairāk, abi 4x2 logrīki (stundas un dienas) kļūst par jauno 4x3, ar nākamajām stundām un dienām.
+- Teksta izmērs: Palīdzībā, Zemestrīcēs, lapā Par un Kas jauns josla labajā pusē, zem aizvēršanas pogas, palielina vai samazina burtus (80–180 %); galvenajā ekrānā to pašu joslu parāda vilkšana uz augšu vai leju pie labās malas. Izmērs saglabājas ierīcē un attiecas arī uz izvēlni ☰.
+- Planšetdators: izvēlne ☰ un citas izvēlnes ir par 30 % lielākas.
+- ☰ › Sūtīt lietotni: nosūta lejupielādes saiti WhatsApp ziņā (vai ar citu lietotni), lai kāds cits varētu instalēt Meteo Alarm.
+- Logrīku saraksts rāda nosaukumus tālruņa valodā.
+
 v2.00 · 2026. gada 4. novembris
 - Valoda: lietotne tagad runā visās ES oficiālajās valodās un ukraiņu valodā (arī Palīdzība). Pirmajā palaišanā tā ņem tālruņa valodu (angļu, ja lietotnei tās nav); pēc tam ☰ › Valoda izvēlēto. Saraksts rāda tikai angļu valodu, tālruņa valodu un tās valsts oficiālās valodas, kurā ir tālrunis.
 - ☰ › Zemestrīces: lapa ar zemestrīcēm ar magnitūdu 3 vai vairāk pēdējās 7 dienās tavā valstī, pēc tam pēdējās 48 stundās ES, Ukrainā un Moldovā (laiks, vieta, magnitūda, dziļums, attālums).

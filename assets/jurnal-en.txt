@@ -1,3 +1,10 @@
+v2.10 · 4 November 2026
+- New widget 4x2 · days: under the weather now, the next 5 days (day, icon, high / low). Made 3 rows tall or more, both 4x2 widgets (hours and days) become the new 4x3, with the next hours and the next days.
+- Text size: in Help, Earthquakes, About and What's new, a bar on the right, under the close button, makes the letters larger or smaller (80–180 %); on the main screen, sliding up or down near the right edge shows the same bar. The size is kept on the device and also applies to the ☰ menu.
+- Tablet: the ☰ menu and the other menus are 30 % larger.
+- ☰ › Send the app: sends the download link in a WhatsApp message (or with another app), so someone else can install Meteo Alarm.
+- The widget list shows its names in the phone's language.
+
 v2.00 · 4 November 2026
 - Languages: the app now speaks all the official languages of the European Union and Ukrainian (Help included). At the first start it takes the phone's language (English when the app does not have it); afterwards the one chosen in ☰ › Language. The list shows only English, the phone's language and the official languages of the country the phone is in.
 - ☰ › Earthquakes: a page with the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the EU, Ukraine and Moldova (time, place, magnitude, depth, distance).

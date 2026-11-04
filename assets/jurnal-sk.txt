@@ -1,3 +1,10 @@
+v2.10 · 4. novembra 2026
+- Nová miniaplikácia 4x2 · dni: pod aktuálnym počasím najbližších 5 dní (deň, ikona, max. / min.). Zväčšené na 3 rady a viac sa obe miniaplikácie 4x2 (hodiny a dni) zmenia na novú 4x3, s najbližšími hodinami aj dňami.
+- Veľkosť textu: v Pomocníkovi, Zemetraseniach, O aplikácii a Čo je nové zväčší alebo zmenší písmená lišta vpravo, pod tlačidlom zatvorenia (80–180 %); na hlavnej obrazovke rovnakú lištu ukáže potiahnutie nahor či nadol pri pravom okraji. Veľkosť zostane uložená v zariadení a platí aj pre ponuku ☰.
+- Tablet: ponuka ☰ a ostatné ponuky sú o 30 % väčšie.
+- ☰ › Poslať aplikáciu: pošle odkaz na stiahnutie v správe WhatsApp (alebo inou aplikáciou), aby si Meteo Alarm mohol nainštalovať niekto ďalší.
+- Zoznam miniaplikácií ukazuje názvy v jazyku telefónu.
+
 v2.00 · 4. novembra 2026
 - Jazyky: aplikácia teraz hovorí všetkými úradnými jazykmi Európskej únie a po ukrajinsky (aj Pomocník). Pri prvom spustení vezme jazyk telefónu (angličtinu, ak ho aplikácia nemá); potom ten zvolený v ☰ › Jazyk. Zoznam ukazuje len angličtinu, jazyk telefónu a úradné jazyky krajiny, kde je telefón.
 - ☰ › Zemetrasenia: stránka so zemetraseniami s magnitúdou 3 a viac za posledných 7 dní vo vašej krajine, potom za posledných 48 hodín v EÚ, na Ukrajine a v Moldavsku (čas, miesto, magnitúda, hĺbka, vzdialenosť).

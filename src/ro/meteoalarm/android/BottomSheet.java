@@ -28,6 +28,9 @@ final class BottomSheet extends FrameLayout {
 	private boolean open, dark, cancelable = true;
 	private Runnable onPrimary, onLeft, onClose;
 	private float downY;
+	/** The text-size bar on the right of the text (Despre, Ce e nou), aligned with the right button. */
+	private final TextSize.Bar bar;
+	private final FrameLayout body;
 
 	BottomSheet(Context c) {
 		super(c);
@@ -92,7 +95,17 @@ final class BottomSheet extends FrameLayout {
 			}
 		};
 		scroll.addView(text);
-		sheet.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		body = new FrameLayout(c);
+		body.addView(scroll, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		bar = new TextSize.Bar(c, Typeface.DEFAULT_BOLD);
+		bar.setVisibility(GONE);
+		bar.setListener(new TextSize.Bar.Listener() {
+			public void sized(float s, boolean save) {
+				text.setTextSize(16 * s);
+			}
+		});
+		body.addView(bar, new LayoutParams((int) (36 * dp), (int) (200 * dp), Gravity.END | Gravity.TOP));
+		sheet.addView(body, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		secondary.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				cancel();
@@ -154,6 +167,32 @@ final class BottomSheet extends FrameLayout {
 		secondary.setTextColor(ink);
 		left.setBackground(shape(bg, line, 10 * dp, dp, false));
 		left.setTextColor(ink);
+		bar.setDark(dark);
+	}
+
+	/**
+	 * The text-size bar (Viorel 2026-11-04) on the right of the text, centred under the right
+	 * button, or none; the text in the saved size, or the usual one without the bar.
+	 */
+	void sizeBar(boolean on) {
+		bar.setVisibility(on ? VISIBLE : GONE);
+		text.setPadding(0, 0, on ? (int) (48 * dp) : 0, 0);
+		text.setTextSize(16 * (on ? TextSize.get(getContext()) : 1));
+		bar.sync();
+		if (on) body.post(new Runnable() {
+			public void run() {
+				Button r = primary.getVisibility() == VISIBLE ? primary : secondary;
+				int[] a = new int[2], b = new int[2];
+				r.getLocationInWindow(a);
+				body.getLocationInWindow(b);
+				LayoutParams lp = (LayoutParams) bar.getLayoutParams();
+				int bw = lp.width;
+				lp.gravity = Gravity.START | Gravity.TOP;
+				lp.leftMargin = Math.max(0, Math.min(body.getWidth() - bw, a[0] - b[0] + r.getWidth() / 2 - bw / 2));
+				lp.height = Math.max((int) (120 * dp), Math.min((int) (260 * dp), body.getHeight() - (int) (8 * dp)));
+				bar.setLayoutParams(lp);
+			}
+		});
 	}
 
 	boolean isOpen() {
@@ -185,6 +224,7 @@ final class BottomSheet extends FrameLayout {
 		scroll.requestLayout();
 		left.setVisibility(GONE);
 		onLeft = null;
+		sizeBar(false);
 		cancelable = closeLabel != null;
 		secondary.setVisibility(closeLabel == null ? GONE : VISIBLE);
 		if (closeLabel != null) secondary.setText(closeLabel);

@@ -1,3 +1,10 @@
+v2.10 · 2026 m. lapkričio 4 d.
+- Naujas valdiklis 4x2 · dienos: po dabartiniais orais kitos 5 dienos (diena, piktograma, aukščiausia / žemiausia). Padidinti iki 3 eilių ar daugiau, abu 4x2 valdikliai (valandos ir dienos) tampa nauju 4x3, su kitomis valandomis ir dienomis.
+- Teksto dydis: Pagalboje, Žemės drebėjimuose, Apie ir Kas naujo juosta dešinėje, po uždarymo mygtuku, padidina ar sumažina raides (80–180 %); pagrindiniame ekrane tą pačią juostą parodo braukimas aukštyn ar žemyn prie dešiniojo krašto. Dydis išsaugomas įrenginyje ir galioja ir meniu ☰.
+- Planšetė: meniu ☰ ir kiti meniu yra 30 % didesni.
+- ☰ › Siųsti programėlę: išsiunčia atsisiuntimo nuorodą WhatsApp žinute (arba kita programėle), kad kas nors kitas galėtų įdiegti Meteo Alarm.
+- Valdiklių sąrašas rodo pavadinimus telefono kalba.
+
 v2.00 · 2026 m. lapkričio 4 d.
 - Kalba: programėlė dabar kalba visomis oficialiosiomis ES kalbomis ir ukrainiečių kalba (ir Pagalba). Pirmą kartą paleidus ji paima telefono kalbą (anglų, jei programėlė jos neturi); vėliau pasirinktą ☰ › Kalba. Sąraše rodoma tik anglų kalba, telefono kalba ir šalies, kurioje yra telefonas, oficialiosios kalbos.
 - ☰ › Žemės drebėjimai: puslapis su 3 ar didesnio magnitudo žemės drebėjimais per paskutines 7 dienas jūsų šalyje, tada per paskutines 48 valandas ES, Ukrainoje ir Moldovoje (laikas, vieta, magnitudas, gylis, atstumas).
