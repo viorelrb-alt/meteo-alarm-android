@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.30";
+	static final String VERSION = "Meteo Alarm Android v2.40";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1171,7 +1171,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				Object[] r = Weather.parsePollen(p);
 				s.pollenLvl = (Integer) r[0];
 				s.pollenPlant = (String) r[1];
-				s.aqi = Weather.parseAqi(p);
+				s.aqi = Weather.parseAqi(p, s.city.us());
 			}
 			s.warns = Fetcher.warnings(this, s.city);
 			s.quakes = Fetcher.quakes(this, s.city);
@@ -1233,7 +1233,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				Object[] pr = Weather.parsePollen(r.pollen);
 				s.pollenLvl = (Integer) pr[0];
 				s.pollenPlant = (String) pr[1];
-				s.aqi = Weather.parseAqi(r.pollen);
+				s.aqi = Weather.parseAqi(r.pollen, c.us());
 			} catch (Exception e) {
 				// keep the last pollen
 			}
@@ -1359,6 +1359,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: (Tr.t("Night clock ON", "Ceas noapte ON")), "night"));
 		ids.add("loc"); rows.add(row(auto ? (Tr.t("Location Off", "Localizare Off")) : (Tr.t("Location On", "Localizare On")), "locate"));
 		ids.add("quakes"); rows.add(row(Tr.t("Earthquakes", "Cutremure"), "quake"));
+		if (Region.showUS(this)) { ids.add("tornado"); rows.add(row(Tr.t("Tornadoes", "Tornade"), "tornado")); }
 		ids.add("notify"); rows.add(row(Notifier.on(this) ? Tr.t("Notifications OFF", "Notificări OFF") : Tr.t("Notifications ON", "Notificări ON"), "bell"));
 		ids.add("widget"); rows.add(row(Tr.t("Widgets", "Widget-uri"), "widget"));
 		ids.add("log"); rows.add(row(Tr.t("Log", "Jurnal"), "log"));
@@ -1397,6 +1398,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else if (it.equals("log")) { startActivity(new Intent(MainActivity.this, LogActivity.class)); return; }
 				else if (it.equals("help")) { help(); return; }
 				else if (it.equals("quakes")) { quakesPage(); return; }
+				else if (it.equals("tornado")) { tornadoPage(); return; }
 				else if (it.equals("notify")) { toggleNotify(); return; }
 				else if (it.equals("night")) {
 					boolean on = !prefs.getBoolean("nightClock", true);
@@ -1556,6 +1558,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	private void showQuakes() {
 		quakesOpen = true;
+		tornOpen = false;
 		help.begin(Tr.t("Earthquakes", "Cutremure"), Tr.t("Close", "Închide"), s.dark);
 		help.setOnClose(new Runnable() {
 			public void run() {
@@ -1640,6 +1643,172 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.show();
 	}
 
+	/** The last lists of the tornado page: { state alerts, US warnings, US watches, SPC today, SPC yesterday } ("" = failed). */
+	private String[] torn;
+	private String tornKey;
+	private long tornAt;
+	private boolean tornOpen;
+
+	/** The postal code of the state of the town shown, else of the state the phone is in ("OK"). */
+	private String tornState() {
+		String st = s.city.us() ? Cities.stateCode(s.city.county) : "";
+		if (st.length() == 0) st = Cities.stateCode(Region.state(this));
+		return st;
+	}
+
+	/**
+	 * ☰ › Tornade (Viorel 2026-11-04, v2.40), built like ☰ › Cutremure: the tornado watches and
+	 * warnings of the town and of its state (NWS), the tornado reports of the last 2 days around
+	 * the town (NOAA Storm Prediction Center), the count in the whole US and what to do.
+	 */
+	private void tornadoPage() {
+		Log.i(this, "TORNADE", "pagina de tornade deschisă");
+		final String st = tornState();
+		final String key = s.city.key() + "|" + st;
+		if (!key.equals(tornKey)) {
+			torn = null;
+			tornKey = key;
+		}
+		showTornadoes();
+		if (torn != null && System.currentTimeMillis() - tornAt < 5 * 60000L) return;
+		final Context ctx = getApplicationContext();
+		new Thread(new Runnable() {
+			public void run() {
+				String[] urls = { st.length() == 2 ? ro.meteoalarm.android.core.Nws.stateUrl(st) : null,
+						ro.meteoalarm.android.core.Nws.eventUrl("Tornado Warning"), ro.meteoalarm.android.core.Nws.eventUrl("Tornado Watch"),
+						ro.meteoalarm.android.core.Tornadoes.TODAY, ro.meteoalarm.android.core.Tornadoes.YESTERDAY };
+				final String[] got = new String[urls.length];
+				for (int i = 0; i < urls.length; i++) {
+					got[i] = "";
+					if (urls[i] == null) continue;
+					try {
+						got[i] = Weather.get(urls[i]);
+					} catch (Exception e) {
+						Log.e(ctx, "TORNADE", urls[i] + " a eșuat: " + Fetcher.reason(e, false));
+					}
+				}
+				handler.post(new Runnable() {
+					public void run() {
+						if (!key.equals(tornKey)) return;
+						torn = got;
+						tornAt = System.currentTimeMillis();
+						if (help.isOpen() && tornOpen) showTornadoes();
+					}
+				});
+			}
+		}).start();
+	}
+
+	private List<Warnings.Warn> tornAlerts(String json, long now) {
+		List<Warnings.Warn> l = new ArrayList<Warnings.Warn>();
+		try {
+			for (Warnings.Warn w : ro.meteoalarm.android.core.Nws.parse(json, now, false)) if (ro.meteoalarm.android.core.Nws.tornado(w.type)) l.add(w);
+		} catch (Exception e) {
+			// a bad answer
+		}
+		return l;
+	}
+
+	private void tornEntry(Warnings.Warn w, boolean area) {
+		long now = System.currentTimeMillis();
+		String when = w.from <= now ? Tr.t("In force now, until ", "În vigoare acum, până ") + s.T.weekdayTime(w.until, s.clk12)
+				: Tr.t("From ", "De ") + s.T.weekdayTime(w.from, s.clk12) + Tr.t(" until ", " până ") + s.T.weekdayTime(w.until, s.clk12);
+		if (area && w.area.length() > 0) when += "\n" + w.area;
+		help.entry(mini("tornado"), ro.meteoalarm.android.core.Nws.event(w.type), when);
+	}
+
+	private void showTornadoes() {
+		tornOpen = true;
+		quakesOpen = false;
+		help.begin(Tr.t("Tornadoes", "Tornade"), Tr.t("Close", "Închide"), s.dark);
+		help.setOnClose(new Runnable() {
+			public void run() {
+				tornOpen = false;
+				hideBars();
+			}
+		});
+		Cities.City c = s.city;
+		long now = System.currentTimeMillis();
+		String st = tornState();
+		String stName = Cities.stateName(st);
+		String down = Tr.t("Downloading from the National Weather Service…", "Se descarcă de la National Weather Service…");
+		String fail = Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?");
+		// 1. The town shown: its own alerts (already downloaded with the weather).
+		if (c.us()) {
+			help.section(Tr.t("Now · ", "Acum · ") + c.name);
+			int n = 0;
+			if (s.warns != null) for (Warnings.Warn w : s.warns) if (w.nws && ro.meteoalarm.android.core.Nws.tornado(w.type)) {
+				tornEntry(w, false);
+				n++;
+			}
+			if (n == 0) help.text(Tr.t("No tornado watch or warning for ", "Nicio atenționare sau avertizare de tornadă pentru ") + c.name + ".");
+		}
+		// 2. The state.
+		if (stName.length() > 0) {
+			help.section(stName + Tr.t(" · tornado watches and warnings now", " · atenționări și avertizări de tornadă acum"));
+			if (torn == null) help.text(down);
+			else if (torn[0].length() == 0) help.text(fail);
+			else {
+				List<Warnings.Warn> l = tornAlerts(torn[0], now);
+				if (l.isEmpty()) help.text(Tr.t("None in the whole state.", "Niciuna în tot statul."));
+				for (Warnings.Warn w : l) tornEntry(w, true);
+				Log.i(this, "TORNADE", st + ": " + l.size() + " alerte de tornadă");
+			}
+		}
+		// 3. Reports of the last 2 days around the town (SPC).
+		boolean mi = s.unitF;
+		help.section(Tr.t("Tornado reports · last 2 days · ", "Tornade raportate · ultimele 2 zile · ") + (mi ? Tr.t("within 300 miles", "pe o rază de 300 de mile") : Tr.t("within 480 km", "pe o rază de 480 km")));
+		if (torn == null) help.text(Tr.t("Downloading from the Storm Prediction Center…", "Se descarcă de la Storm Prediction Center…"));
+		else if (torn[3].length() == 0 && torn[4].length() == 0) help.text(fail);
+		else {
+			List<ro.meteoalarm.android.core.Tornadoes.Report> all = new ArrayList<ro.meteoalarm.android.core.Tornadoes.Report>();
+			all.addAll(ro.meteoalarm.android.core.Tornadoes.parse(torn[3], ro.meteoalarm.android.core.Tornadoes.dayStart(now, 0), c.lat, c.lon));
+			all.addAll(ro.meteoalarm.android.core.Tornadoes.parse(torn[4], ro.meteoalarm.android.core.Tornadoes.dayStart(now, 1), c.lat, c.lon));
+			List<ro.meteoalarm.android.core.Tornadoes.Report> near = new ArrayList<ro.meteoalarm.android.core.Tornadoes.Report>();
+			for (ro.meteoalarm.android.core.Tornadoes.Report r : all) if (r.dist <= ro.meteoalarm.android.core.Quakes.US_RADIUS_KM) near.add(r);
+			ro.meteoalarm.android.core.Tornadoes.sort(near);
+			if (near.isEmpty()) help.text(Tr.t("No tornado reported nearby.", "Nicio tornadă raportată în apropiere.")
+					+ (all.size() > 0 ? " " + Tr.t("In the whole United States: ", "În toate Statele Unite: ") + all.size() + "." : ""));
+			for (ro.meteoalarm.android.core.Tornadoes.Report r : near) {
+				String name = r.place + (r.state.length() > 0 ? ", " + r.state : "");
+				if (r.scale.length() > 0 && !r.scale.equalsIgnoreCase("UNK")) name += " · " + r.scale;
+				String what = s.T.weekdayTime(r.time, s.clk12) + " " + new java.text.SimpleDateFormat(mi ? "M/d" : "dd.MM", java.util.Locale.US).format(new java.util.Date(r.time))
+						+ " · " + (r.county.length() > 0 ? r.county + Tr.t(" County", " (comitat)") + " · " : "") + s.dist(r.dist) + " " + Tr.t("from ", "de ") + c.name;
+				if (r.comment.length() > 0) what += "\n" + r.comment;
+				help.entry(mini("tornado"), name, what);
+			}
+			Log.i(this, "TORNADE", "SPC 2 zile: " + all.size() + ", aproape: " + near.size());
+		}
+		// 4. The whole country.
+		help.section(Tr.t("United States now", "Statele Unite acum"));
+		if (torn == null) help.text(down);
+		else if (torn[1].length() == 0 && torn[2].length() == 0) help.text(fail);
+		else {
+			List<Warnings.Warn> wa = tornAlerts(torn[1], now), wt = tornAlerts(torn[2], now);
+			help.text(Tr.t("Tornado warnings: ", "Avertizări de tornadă: ") + wa.size() + " · " + Tr.t("tornado watches: ", "atenționări de tornadă: ") + wt.size()
+					+ (wa.isEmpty() ? "" : "\n" + Tr.t("Warnings in: ", "Avertizări în: ") + places(wa)));
+		}
+		// 5. What to do.
+		help.section(Tr.t("What to do", "Ce faci"));
+		help.entry(mini("tornado"), Tr.t("Tornado Watch (orange)", "Tornado Watch · atenționare (portocaliu)"), Tr.t("The weather can make tornadoes in and near the area. Keep the phone with you, know where you would take shelter and watch the sky.", "Vremea poate produce tornade în zonă și în apropiere. Ține telefonul la tine, află unde te-ai adăposti și urmărește cerul."));
+		help.entry(mini("tornado"), Tr.t("Tornado Warning (red)", "Tornado Warning · avertizare (roșu)"), Tr.t("A tornado has been seen or shown by radar. Take shelter now: the lowest floor, an inside room without windows, away from doors and outside walls; cover your head. Leave a car or a mobile home for a sturdy building.", "O tornadă a fost văzută sau arătată de radar. Adăpostește-te acum: cel mai de jos etaj, o cameră interioară fără ferestre, departe de uși și de pereții exteriori; acoperă-ți capul. Părăsește mașina sau casa mobilă pentru o clădire solidă."));
+		help.text(Tr.t("Source: National Weather Service (weather.gov) for the watches and warnings; NOAA Storm Prediction Center (spc.noaa.gov) for the reports, which are preliminary: a tornado can be reported more than once, and EF is the strength when known.",
+				"Sursa: National Weather Service (weather.gov) pentru atenționări și avertizări; NOAA Storm Prediction Center (spc.noaa.gov) pentru rapoarte, care sunt preliminare: o tornadă poate fi raportată de mai multe ori, iar EF e puterea, când se cunoaște."));
+		help.show();
+	}
+
+	/** The places of the alerts, short: the state codes at the end of the areas ("OK, KS, TX"). */
+	private static String places(List<Warnings.Warn> l) {
+		java.util.LinkedHashSet<String> set = new java.util.LinkedHashSet<String>();
+		for (Warnings.Warn w : l) {
+			java.util.regex.Matcher m = java.util.regex.Pattern.compile(",\\s*([A-Z]{2})(?=;|$)").matcher(w.area);
+			while (m.find()) set.add(m.group(1));
+		}
+		StringBuilder b = new StringBuilder();
+		for (String x : set) b.append(b.length() > 0 ? ", " : "").append(x);
+		return b.toString();
+	}
+
 	private void quakeEntry(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean felt) {
 		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot()) + " · " + Screen.place(q.region, s.unitF);
 		String what = s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat(s.unitF ? "M/d" : "dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
@@ -1653,6 +1822,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void help() {
 		boolean en = s.T.en;
 		quakesOpen = false;
+		tornOpen = false;
 		help.setOnClose(new Runnable() {
 			public void run() {
 				hideBars();
@@ -1692,7 +1862,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (us) help.entry(mini("quake"), Tr.t("Earthquake box", "Caseta Cutremur"), Tr.t("From USGS (U.S. Geological Survey): earthquakes of magnitude 2.5 or more in the last 24 hours within 300 miles of your town. The box shows the strongest one: magnitude and time, and how it was likely felt in your town, as an estimate from the magnitude and the distance to the focus (depth and distance in miles). It disappears after 24 hours.", "De la USGS (Serviciul Geologic al SUA): cutremurele cu magnitudinea 2,5 sau mai mare din ultimele 24 de ore, pe o rază de 300 de mile în jurul localității. Caseta îl arată pe cel mai puternic: magnitudinea și ora, și cum s-a simțit probabil în localitatea ta, ca estimare după magnitudine și distanța până la focar (adâncimea și distanța în mile). Dispare după 24 de ore."));
 		else help.entry(mini("quake"), Tr.t("Earthquake box", "Caseta Cutremur"), Tr.t("From EMSC (European-Mediterranean Seismological Centre): earthquakes of magnitude 3 or more in the last 24 hours in your town's country (the one the location found). The box shows the strongest one: magnitude and time, and how it was felt in your town as an estimate on the EMS-98 scale (from the magnitude and the distance to the focus; EMSC does not publish the reports of each town). It disappears after 24 hours.", "De la EMSC (Centrul Seismologic European-Mediteranean): cutremurele cu magnitudinea 3 sau mai mare din ultimele 24 de ore din țara localității tale (cea găsită de localizare). Caseta îl arată pe cel mai puternic: magnitudinea și ora, și cum s-a simțit în localitatea ta, ca estimare pe scara EMS-98 (după magnitudine și distanța până la focar; EMSC nu publică mărturiile pentru fiecare localitate). Dispare după 24 de ore."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The warnings row, the hour boxes and the five days (tomorrow and the next 4 days, two at a time) follow the finger. The Precipitation · next 12 hours chart comes first in the hours row, only when rain or snow is expected.", "Rândul de avertizări, casetele cu ore și cele 5 zile (Mâine și încă 4 zile, câte două) urmează degetul. Graficul Precipitații · următoarele 12 ore apare primul în rândul cu ore, doar când e prognozată ploaie sau ninsoare."));
-		help.entry(mini("swipe"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.", "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă."));
+		if (us) help.entry(mini("swipe"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Humidity (while it rains), Air quality (the US AQI of the EPA: 0–50 good, 51–100 moderate, 101–150 unhealthy for sensitive groups, 151–200 unhealthy, 201–300 very unhealthy, over 300 hazardous), Pressure (inHg), Wind (mph), Visibility (miles) and Compass. There is no Pollen box in the US: the pollen data the app uses cover only Europe.", "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Umiditate (când plouă), Calitatea aerului (indicele american US AQI al EPA: 0–50 bună, 51–100 moderată, 101–150 nesănătoasă pentru persoanele sensibile, 151–200 nesănătoasă, 201–300 foarte nesănătoasă, peste 300 periculoasă), Presiune (inHg), Vânt (mph), Vizibilitate (mile) și Busolă. În SUA nu există caseta Polen: datele de polen folosite de aplicație acoperă doar Europa."));
+		else help.entry(mini("swipe"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Pollen, Humidity (while it rains), Air quality, Pressure, Wind, Visibility and Compass.", "Glisează-l stânga-dreapta (în peisaj: sus-jos, câte două, fără caseta Vânt): Soare (după apus Luna, cu răsăritul, apusul și faza), Indice UV, Polen, Umiditate (când plouă), ICA (calitatea aerului), Presiune, Vânt, Vizibilitate și Busolă."));
 		help.section(Tr.t("Home-screen widgets", "Widget-uri pe ecranul de pornire"));
 		help.entry(mini("widget"), Tr.t("Meteo Alarm widgets", "Widget-urile Meteo Alarm"), Tr.t("Hold a free spot on the home screen, choose Widgets, then Meteo Alarm: 2x2, 4x1, 4x2, 4x2 · days and \"any size\", each with its preview; it goes on the screen at once, without a settings window. There are three layouts: 2x2 (square: icon, temperature, town, next sunset or sunrise), 4x1 (a low strip, also with the sky) and 4x2 (wide, also with high / low and the next 5 hours), plus a small 2x1 (icon and temperature) for frames too small for them. Hold it and drag its edges: wide (about 4 columns) and one row = 4x1, wide and taller = 4x2 (the next hours, or the next days for the 4x2 · days; 3 rows or more = 4x3, with both), narrow = 2x2, narrow and one row = 2x1. The rows and columns are those of your home screen (on a tablet a row is much taller than on a phone), so the 4x1 strip works there too. It fills the frame's width; when the frame is taller than the layout needs, the widget keeps its size, centred, with the background only behind it (the rest stays see-through). A layout is never shrunk so much that the texts get too small. With active warnings a row \"WARNING!\" shows three pills: yellow = gray gray yellow, orange = gray orange orange, red = all red; two codes = the worse one, gray, the other; three codes = red orange yellow. A tap opens the app.", "Ține apăsat pe un loc liber de pe ecranul de pornire, alege Widgeturi, apoi Meteo Alarm: 2x2, 4x1, 4x2, 4x2 · zile și „orice mărime”, fiecare cu imaginea lui; se pune direct pe ecran, fără fereastră de setări. Sunt trei modele: 2x2 (pătrat: icon, temperatură, localitate, următorul apus sau răsărit), 4x1 (bandă joasă, și cu descrierea cerului) și 4x2 (lat, și cu Max / Min și următoarele 5 ore), plus unul mic, 2x1 (icon și temperatură), pentru rame prea mici pentru celelalte. Ține-l apăsat și trage de margini: lat (cam 4 coloane) și un rând = 4x1, lat și mai înalt = 4x2 (următoarele ore sau, la 4x2 · zile, următoarele zile; 3 rânduri sau mai mult = 4x3, cu amândouă), îngust = 2x2, îngust și un rând = 2x1. Rândurile și coloanele sunt cele ale ecranului tău de pornire (pe tabletă un rând e mult mai înalt decât pe telefon), așa că banda 4x1 merge și acolo. Umple lățimea ramei; când rama e mai înaltă decât are nevoie modelul, widget-ul își păstrează mărimea, centrat, cu fundal doar sub el (restul rămâne transparent). Un model nu se micșorează niciodată atât încât textele să devină prea mici. Când sunt avertizări, rândul „AVERTIZARE!” are trei pastile: galben = gri gri galben, portocaliu = gri portocaliu portocaliu, roșu = toate roșii; două coduri = cel mai grav, gri, celălalt; trei coduri = roșu portocaliu galben. O atingere deschide aplicația."));
 		help.entry(mini("widget"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings (Android 12 and newer), or ☰ › Widgets. Each widget has its own: a preview; the town (as in the app, or another one with Change); Background on / off and how see-through; Colours: by the weather (blue sky, night blue, gray clouds, rain, icy snow, storm, fog), matching the phone's settings, or dark; Text colour: automatic (black on a light background), white or black. From ☰ › Widgets, with several widgets, the row on top shows them all: a tap shows that one's settings. Cancel or Save.", "Ține apăsat pe widget › Setări (Android 12 și mai nou) sau ☰ › Widget-uri. Fiecare widget are setările lui: previzualizare; localitatea (ca în aplicație sau alta, cu Schimbare); Fundal pornit / oprit și cât de transparent; Culori: după vreme (cer albastru, albastru de noapte, gri pentru nori, ploaie, zăpadă, furtună, ceață), potrivite cu setările telefonului sau închise; Culoare font: automat (negru pe fundal deschis), alb sau negru. Din ☰ › Widget-uri, când sunt mai multe widget-uri, rândul de sus le arată pe toate: o atingere arată setările aceluia. Anulare sau Salvare."));
@@ -1709,6 +1880,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		else help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana.") + " " + Tr.t("The phone's own language is in the list too.", "În listă e și limba telefonului."));
 		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		if (us) help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one: the earthquakes of magnitude 2.5 or more of the last 7 days within 300 miles of your town, then those of magnitude 3 or more of the last 48 hours in the United States. Each row: the time, the place, the magnitude, the depth and the distance from your town, in miles. From USGS; it scrolls.", "O pagină ca aceasta: cutremurele cu magnitudinea 2,5 sau mai mare din ultimele 7 zile, pe o rază de 300 de mile, apoi cele cu magnitudinea 3 sau mai mare din ultimele 48 de ore din Statele Unite. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta, în mile. De la USGS; pagina se derulează."));
+		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("A page like Earthquakes, for the United States: the tornado watches and warnings of your town and of your whole state now (National Weather Service), the tornadoes reported in the last 2 days within 300 miles (NOAA Storm Prediction Center, with the time, the place, the county, the EF strength when known and the distance in miles), how many there are now in the whole country, and what to do at a Watch and at a Warning. While a tornado watch or warning is in force for your town, the app refreshes every 5 minutes.", "O pagină ca Cutremure, pentru Statele Unite: atenționările și avertizările de tornadă de acum pentru localitatea ta și pentru tot statul (National Weather Service), tornadele raportate în ultimele 2 zile pe o rază de 300 de mile (NOAA Storm Prediction Center, cu ora, locul, comitatul, puterea EF când se cunoaște și distanța în mile), câte sunt acum în toată țara și ce faci la o atenționare (Watch) și la o avertizare (Warning). Cât timp e în vigoare o atenționare sau avertizare de tornadă pentru localitatea ta, aplicația se reîmprospătează la 5 minute."));
 		else help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one, with a close button at the top: the earthquakes of magnitude 3 or more of the last 7 days in your country, then those of the last 48 hours in the European Union, Ukraine and Moldova. Each row: the time, the place, the magnitude, the depth and the distance from your town. From EMSC; it scrolls.", "O pagină ca aceasta, cu buton de închidere sus: cutremurele cu magnitudinea 3 sau mai mare din ultimele 7 zile din țara ta, apoi cele din ultimele 48 de ore din Uniunea Europeană, Ucraina și Republica Moldova. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta. De la EMSC; pagina se derulează."));
 		if (us) help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications for: rain or snow starting (or within the hour), each new National Weather Service alert for your town, and earthquakes of magnitude 3 or more within 300 miles. Tornado, severe thunderstorm, flash flood, extreme wind, hurricane, blizzard and ice storm WARNINGS come on a separate channel, \"Tornado and extreme warnings\", with the alarm sound and a strong vibration; to hear them also in Do Not Disturb, allow that channel to override it in the phone's settings. During a tornado watch or warning the app checks every 5 minutes, also at night. The app does not replace the Wireless Emergency Alerts of your phone.", "Notificări pentru: ploaie sau ninsoare care începe (sau în următoarea oră), fiecare avertizare nouă a National Weather Service pentru localitatea ta și cutremurele cu magnitudinea 3 sau mai mare pe o rază de 300 de mile. AVERTIZĂRILE de tornadă, furtună severă, viitură, vânt extrem, uragan, viscol și furtună de gheață vin pe un canal separat, „Tornade și avertizări extreme”, cu sunet de alarmă și vibrație puternică; ca să le auzi și în modul Nu deranja, permite-i acelui canal să-l ignore din setările telefonului. Cât timp e o atenționare sau avertizare de tornadă, aplicația verifică la 5 minute, și noaptea. Aplicația nu înlocuiește alertele de urgență (Wireless Emergency Alerts) ale telefonului."));
 		else help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Notifications only for: rain or snow starting (or starting within the hour; again only after 3 dry hours), a new weather warning for your town, and an earthquake of magnitude 3 or more in your country. Each event only once, also with the app closed. The app asks for them at the first start; if you say no, it asks again only after an update, never at every start. When the phone no longer shows its question (after two refusals), the button opens the phone's settings, where you allow them.", "Notificări doar pentru: ploaie sau ninsoare care începe (sau începe în următoarea oră; din nou abia după 3 ore fără precipitații), o avertizare meteo nouă pentru localitatea ta și un cutremur cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o singură dată, și cu aplicația închisă. Aplicația le cere la prima pornire; dacă refuzi, te mai întreabă doar după o actualizare, niciodată la fiecare pornire. Când telefonul nu mai arată întrebarea lui (după două refuzuri), butonul deschide setările telefonului, unde le permiți."));

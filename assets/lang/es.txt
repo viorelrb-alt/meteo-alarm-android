@@ -426,3 +426,29 @@ What to do	Qué hacer
 Area: 	Zona: 
 Source: National Weather Service (weather.gov), for 	Fuente: Servicio Meteorológico Nacional (weather.gov), para 
 The alert texts are in English, as NWS publishes them.	Los textos de las alertas están en inglés, tal como los publica el NWS.
+Slide it sideways (in landscape: up and down, two by two, without the wind box): Sun (the Moon after sunset, with its rise, set and phase), UV index, Humidity (while it rains), Air quality (the US AQI of the EPA: 0–50 good, 51–100 moderate, 101–150 unhealthy for sensitive groups, 151–200 unhealthy, 201–300 very unhealthy, over 300 hazardous), Pressure (inHg), Wind (mph), Visibility (miles) and Compass. There is no Pollen box in the US: the pollen data the app uses cover only Europe.	Deslízala hacia los lados (en horizontal: arriba y abajo, de dos en dos, sin el recuadro del viento): Sol (la Luna tras la puesta, con su salida, puesta y fase), Índice UV, Humedad (mientras llueve), Calidad del aire (el índice US AQI de la EPA: 0–50 buena, 51–100 moderada, 101–150 dañina para grupos sensibles, 151–200 dañina, 201–300 muy dañina, más de 300 peligrosa), Presión (inHg), Viento (mph), Visibilidad (millas) y Brújula. En EE. UU. no hay recuadro de Polen: los datos de polen que usa la app cubren solo Europa.
+Unhealthy for sensitive groups	Dañina para grupos sensibles
+Unhealthy	Dañina
+Very unhealthy	Muy dañina
+Hazardous	Peligrosa
+Tornadoes	Tornados
+Downloading from the National Weather Service…	Descargando del National Weather Service…
+Now · 	Ahora · 
+No tornado watch or warning for 	Ninguna vigilancia ni aviso de tornado para 
+ · tornado watches and warnings now	 · vigilancias y avisos de tornado ahora
+None in the whole state.	Ninguno en todo el estado.
+Tornado reports · last 2 days · 	Tornados reportados · últimos 2 días · 
+Downloading from the Storm Prediction Center…	Descargando del Storm Prediction Center…
+No tornado reported nearby.	Ningún tornado reportado cerca.
+In the whole United States: 	En todo Estados Unidos: 
+ County	 (condado)
+United States now	Estados Unidos ahora
+Tornado warnings: 	Avisos de tornado: 
+tornado watches: 	vigilancias de tornado: 
+Warnings in: 	Avisos en: 
+Tornado Watch (orange)	Tornado Watch · vigilancia (naranja)
+The weather can make tornadoes in and near the area. Keep the phone with you, know where you would take shelter and watch the sky.	El tiempo puede formar tornados en la zona y cerca. Lleva el teléfono contigo, piensa dónde te refugiarías y observa el cielo.
+Tornado Warning (red)	Tornado Warning · aviso (rojo)
+A tornado has been seen or shown by radar. Take shelter now: the lowest floor, an inside room without windows, away from doors and outside walls; cover your head. Leave a car or a mobile home for a sturdy building.	Se ha visto un tornado o lo muestra el radar. Refúgiate ya: la planta más baja, una habitación interior sin ventanas, lejos de puertas y paredes exteriores; cúbrete la cabeza. Deja el coche o la casa móvil por un edificio sólido.
+Source: National Weather Service (weather.gov) for the watches and warnings; NOAA Storm Prediction Center (spc.noaa.gov) for the reports, which are preliminary: a tornado can be reported more than once, and EF is the strength when known.	Fuente: National Weather Service (weather.gov) para las vigilancias y los avisos; NOAA Storm Prediction Center (spc.noaa.gov) para los reportes, que son preliminares: un tornado puede reportarse más de una vez, y EF es la fuerza cuando se conoce.
+A page like Earthquakes, for the United States: the tornado watches and warnings of your town and of your whole state now (National Weather Service), the tornadoes reported in the last 2 days within 300 miles (NOAA Storm Prediction Center, with the time, the place, the county, the EF strength when known and the distance in miles), how many there are now in the whole country, and what to do at a Watch and at a Warning. While a tornado watch or warning is in force for your town, the app refreshes every 5 minutes.	Una página como Terremotos, para Estados Unidos: las vigilancias y los avisos de tornado de ahora para tu localidad y todo tu estado (National Weather Service), los tornados reportados en los últimos 2 días en un radio de 300 millas (NOAA Storm Prediction Center, con la hora, el lugar, el condado, la fuerza EF cuando se conoce y la distancia en millas), cuántos hay ahora en todo el país y qué hacer ante una vigilancia (Watch) y un aviso (Warning). Mientras haya una vigilancia o un aviso de tornado para tu localidad, la app se actualiza cada 5 minutos.

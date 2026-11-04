@@ -1,3 +1,7 @@
+v2.40 · 4 de noviembre de 2026
+- Estados Unidos: ☰ › Tornados, una página como Terremotos: las vigilancias y los avisos de tornado de tu localidad y tu estado, los tornados reportados cerca en los últimos 2 días, cuántos hay en todo el país y qué hacer.
+- Estados Unidos: sin recuadro de Polen (allí no hay datos); la calidad del aire con el índice estadounidense US AQI.
+
 v2.30 · 4 de noviembre de 2026
 - Elementos para usar la aplicación en Estados Unidos.
 - ☰ › Temperatura °C/°F: al dejar °F la app pregunta si quieres pasar al sistema métrico; con °F la presión se muestra en inHg y las distancias en millas.

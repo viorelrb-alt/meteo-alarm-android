@@ -1,3 +1,7 @@
+v2.40 · 4 November 2026
+- United States: ☰ › Tornadoes, a page like Earthquakes: the tornado watches and warnings of your town and state, the tornadoes reported nearby in the last 2 days, how many there are in the whole country and what to do.
+- United States: no Pollen box (there are no data there); the air quality as the American US AQI.
+
 v2.30 · 4 November 2026
 - Elements for using the app in the United States.
 - ☰ › Temperature °C/°F: leaving °F asks whether to switch to the metric system; with °F the pressure is in inHg and distances in miles.

@@ -1,3 +1,7 @@
+v2.40 · 4. november 2026
+- USA: ☰ › Tornadoes, en side som Jordskælv: tornadovarsler for din by og stat, tornadoer meldt i nærheden de sidste 2 dage, antallet i hele landet og hvad du skal gøre.
+- USA: ingen Pollen-boks (der er ingen data der); luftkvaliteten vises som det amerikanske US AQI.
+
 v2.30 · 4. november 2026
 - Elementer til brug af appen i USA.
 - ☰ › Temperatur °C/°F: når du forlader °F, spørger appen, om du vil skifte til metersystemet; med °F vises trykket i inHg og afstande i miles.

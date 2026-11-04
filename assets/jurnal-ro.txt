@@ -1,3 +1,7 @@
+v2.40 · 4 noiembrie 2026
+- Statele Unite: ☰ › Tornade, o pagină ca Cutremure: atenționările și avertizările de tornadă pentru localitatea și statul tău, tornadele raportate în apropiere în ultimele 2 zile, câte sunt în toată țara și ce faci.
+- Statele Unite: fără caseta Polen (acolo nu există date); calitatea aerului după indicele american US AQI.
+
 v2.30 · 4 noiembrie 2026
 - Elemente pentru folosirea aplicației în Statele Unite.
 - ☰ › Temperatura °C/°F: la ieșirea din °F aplicația întreabă dacă treci la sistemul metric; cu °F presiunea e în inHg, iar distanțele în mile.

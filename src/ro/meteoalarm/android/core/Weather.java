@@ -115,8 +115,13 @@ public final class Weather {
 
 	/** The European air quality index of an air-quality answer, -1 without one. */
 	public static int parseAqi(String text) {
+		return parseAqi(text, false);
+	}
+
+	/** The European air quality index, or the US one (EPA, 0–500) when US (v2.31); -1 without one. */
+	public static int parseAqi(String text, boolean us) {
 		try {
-			double a = Json.num(Json.obj(Json.parse(text), "current"), "european_aqi");
+			double a = Json.num(Json.obj(Json.parse(text), "current"), us ? "us_aqi" : "european_aqi");
 			return Double.isNaN(a) ? -1 : (int) Math.round(a);
 		} catch (Exception e) {
 			return -1;
@@ -125,7 +130,7 @@ public final class Weather {
 
 	public static String pollenUrl(double lat, double lon) {
 		return "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
-				+ "&current=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen,european_aqi";
+				+ "&current=alder_pollen,birch_pollen,grass_pollen,mugwort_pollen,olive_pollen,ragweed_pollen,european_aqi,us_aqi";
 	}
 
 	static String fmt(double v) { return String.format(Locale.US, "%.4f", v); }

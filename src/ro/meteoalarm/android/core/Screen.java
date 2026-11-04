@@ -1166,7 +1166,8 @@ public final class Screen {
 		List<String> l = new ArrayList<String>();
 		l.add(night() ? "moon" : "sun");
 		l.add("uv");
-		l.add("pollen");
+		// No pollen data in the US (Open-Meteo has it from Copernicus, for Europe only; v2.31).
+		if (city == null || !city.us()) l.add("pollen");
 		if (w.precip > 0 || w.code >= 51) l.add("hum");
 		l.add("aqi");
 		l.add("press");
@@ -1307,6 +1308,13 @@ public final class Screen {
 		} else if (id.equals("hum")) {
 			bigValue(cx, top, w.humidity >= 0 ? w.humidity + "%" : "–", Tr.t("relative humidity", "umiditate relativă"), bw);
 			scale(cx - 60, top + 162, 5, w.humidity < 0 ? 0 : Math.max(1, (w.humidity + 19) / 20), 21);
+		} else if (id.equals("aqi") && city != null && city.us()) {
+			// US AQI (EPA): 0–50 good … 301+ hazardous (v2.31).
+			String[] lv = { Tr.t("Good", "Bună"), Tr.t("Moderate", "Moderată"), Tr.t("Unhealthy for sensitive groups", "Nesănătoasă pentru sensibili"),
+					Tr.t("Unhealthy", "Nesănătoasă"), Tr.t("Very unhealthy", "Foarte nesănătoasă"), Tr.t("Hazardous", "Periculoasă") };
+			int l = aqi < 0 ? 0 : aqi <= 50 ? 1 : aqi <= 100 ? 2 : aqi <= 150 ? 3 : aqi <= 200 ? 4 : aqi <= 300 ? 5 : 6;
+			bigValue(cx, top, aqi >= 0 ? Integer.toString(aqi) : "–", l > 0 ? lv[l - 1] : T.noData2, bw);
+			scale(cx - 60, top + 162, 6, l, 16.67f);
 		} else if (id.equals("aqi")) {
 			String[] lv = en ? new String[] { Tr.t("Good"), Tr.t("Fair"), Tr.t("Moderate"), Tr.t("Poor"), Tr.t("Very poor"), Tr.t("Extremely poor") }
 					: new String[] { "Bună", "Acceptabilă", "Moderată", "Proastă", "Foarte proastă", "Extrem de proastă" };
@@ -1777,6 +1785,10 @@ public final class Screen {
 			g.roundRect(6, 34, 22, 24, 5, k);
 			g.roundRect(9, 37, 16, 18, 3, c.page);
 			g.roundRect(36, 34, 22, 24, 5, k);
+		} else if (which.equals("tornado")) {
+			// A funnel: bands narrowing downwards and leaning (v2.40).
+			float[][] bands = { { 6, 8, 52 }, { 11, 18, 42 }, { 17, 28, 31 }, { 23, 38, 21 }, { 27, 48, 13 }, { 29, 56, 7 } };
+			for (float[] x : bands) g.roundRect(x[0], x[1], x[2], 6, 3, k);
 		} else if (which.equals("quake")) {
 			// A seismograph line.
 			float[] xs = { 4, 16, 21, 27, 33, 39, 45, 60 }, ys = { 32, 32, 18, 50, 8, 56, 32, 32 };

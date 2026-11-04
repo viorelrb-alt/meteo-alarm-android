@@ -1,3 +1,7 @@
+v2.40 · 4 ta' Novembru 2026
+- L-Istati Uniti: ☰ › Tornadoes, paġna bħal Terremoti: it-twissijiet tat-tornado għall-post u l-istat tiegħek, it-tornado rrappurtati fil-qrib fl-aħħar jumejn, kemm hemm fil-pajjiż kollu u x'għandek tagħmel.
+- L-Istati Uniti: ebda kaxxa tal-Polline (m'hemmx data hemmhekk); il-kwalità tal-arja skont l-indiċi Amerikan US AQI.
+
 v2.30 · 4 ta' Novembru 2026
 - Elementi biex tuża l-app fl-Istati Uniti.
 - ☰ › Temperatura °C/°F: meta titlaq minn °F, l-app tistaqsi jekk tridx is-sistema metrika; b'°F il-pressjoni tidher f'inHg u d-distanzi f'mili.

@@ -1,3 +1,7 @@
+v2.40 · 4. listopadu 2026
+- Spojené státy: ☰ › Tornadoes, stránka jako Zemětřesení: výstrahy před tornády pro tvé místo a stát, tornáda hlášená v okolí za poslední 2 dny, jejich počet v celé zemi a co dělat.
+- Spojené státy: bez políčka Pyl (data tam nejsou); kvalita ovzduší podle amerického indexu US AQI.
+
 v2.30 · 4. listopadu 2026
 - Prvky pro používání aplikace ve Spojených státech.
 - ☰ › Teplota °C/°F: při odchodu z °F se aplikace zeptá, zda přejít na metrickou soustavu; s °F je tlak v inHg a vzdálenosti v mílích.

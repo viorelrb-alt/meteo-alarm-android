@@ -1,3 +1,7 @@
+v2.40 · 4. marraskuuta 2026
+- Yhdysvallat: ☰ › Tornadoes, Maanjäristykset-sivun kaltainen sivu: paikkakuntasi ja osavaltiosi tornadovaroitukset, lähistöllä viimeisten 2 päivän aikana raportoidut tornadot, niiden määrä koko maassa ja mitä tehdä.
+- Yhdysvallat: ei Siitepöly-ruutua (siellä ei ole tietoja); ilmanlaatu amerikkalaisena US AQI -indeksinä.
+
 v2.30 · 4. marraskuuta 2026
 - Osia sovelluksen käyttöön Yhdysvalloissa.
 - ☰ › Lämpötila °C/°F: kun °F vaihdetaan, sovellus kysyy, siirrytäänkö metrijärjestelmään; °F:llä ilmanpaine näytetään inHg:nä ja etäisyydet maileina.

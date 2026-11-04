@@ -1,3 +1,7 @@
+v2.40 · 2026 m. lapkričio 4 d.
+- Jungtinės Valstijos: ☰ › Tornadoes, puslapis kaip Žemės drebėjimai: perspėjimai apie tornadus tavo vietovei ir valstijai, per pastarąsias 2 dienas netoliese praneštų tornadų sąrašas, jų skaičius visoje šalyje ir ką daryti.
+- Jungtinės Valstijos: nėra Žiedadulkių langelio (ten nėra duomenų); oro kokybė pagal amerikietišką US AQI indeksą.
+
 v2.30 · 2026 m. lapkričio 4 d.
 - Elementai programai naudoti Jungtinėse Valstijose.
 - ☰ › Temperatūra °C/°F: išjungiant °F programa klausia, ar pereiti prie metrinės sistemos; su °F slėgis rodomas inHg, atstumai – myliomis.

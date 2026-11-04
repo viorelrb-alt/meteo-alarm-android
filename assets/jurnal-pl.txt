@@ -1,3 +1,7 @@
+v2.40 · 4 listopada 2026
+- Stany Zjednoczone: ☰ › Tornadoes, strona jak Trzęsienia ziemi: ostrzeżenia przed tornadem dla twojej miejscowości i stanu, tornada zgłoszone w pobliżu w ostatnich 2 dniach, ich liczba w całym kraju i co robić.
+- Stany Zjednoczone: bez pola Pyłki (brak tam danych); jakość powietrza według amerykańskiego indeksu US AQI.
+
 v2.30 · 4 listopada 2026
 - Elementy do korzystania z aplikacji w Stanach Zjednoczonych.
 - ☰ › Temperatura °C/°F: przy wyjściu z °F aplikacja pyta, czy przejść na system metryczny; przy °F ciśnienie jest w inHg, a odległości w milach.

@@ -1,3 +1,7 @@
+v2.40 · 4. studenoga 2026
+- Sjedinjene Države: ☰ › Tornadoes, stranica poput Potresa: upozorenja na tornado za tvoje mjesto i saveznu državu, tornada prijavljena u blizini u posljednja 2 dana, njihov broj u cijeloj zemlji i što učiniti.
+- Sjedinjene Države: bez okvira Pelud (tamo nema podataka); kvaliteta zraka po američkom indeksu US AQI.
+
 v2.30 · 4. studenoga 2026
 - Elementi za korištenje aplikacije u Sjedinjenim Državama.
 - ☰ › Temperatura °C/°F: pri napuštanju °F aplikacija pita želiš li metrički sustav; s °F tlak je u inHg, a udaljenosti u miljama.

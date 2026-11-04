@@ -1,3 +1,7 @@
+v2.40 · 2026. gada 4. novembris
+- Amerikas Savienotās Valstis: ☰ › Tornadoes, lapa kā Zemestrīces: brīdinājumi par tornado tavai vietai un štatam, pēdējās 2 dienās tuvumā ziņotie tornado, to skaits visā valstī un kas jādara.
+- Amerikas Savienotās Valstis: nav Ziedputekšņu lodziņa (tur nav datu); gaisa kvalitāte pēc amerikāņu US AQI indeksa.
+
 v2.30 · 2026. gada 4. novembris
 - Elementi lietotnes izmantošanai Amerikas Savienotajās Valstīs.
 - ☰ › Temperatūra °C/°F: atstājot °F, lietotne jautā, vai pāriet uz metrisko sistēmu; ar °F spiediens ir inHg un attālumi jūdzēs.

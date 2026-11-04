@@ -1,3 +1,7 @@
+v2.40 · 4 Samhain 2026
+- Na Stáit Aontaithe: ☰ › Tornadoes, leathanach cosúil le Creathanna talún: rabhaidh tornádó do do bhaile agus do stát, na tornádónna a tuairiscíodh in aice láimhe le 2 lá anuas, a líon sa tír ar fad agus cad ba cheart a dhéanamh.
+- Na Stáit Aontaithe: gan bosca Pailine (níl sonraí ann); cáilíocht an aeir de réir an innéacs Mheiriceánaigh US AQI.
+
 v2.30 · 4 Samhain 2026
 - Gnéithe chun an aip a úsáid sna Stáit Aontaithe.
 - ☰ › Teocht °C/°F: nuair a fhágann tú °F, fiafraíonn an aip an rachfar go dtí an córas méadrach; le °F, tá an brú in inHg agus na faid i mílte.

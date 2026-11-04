@@ -1,3 +1,7 @@
+v2.40 · 4 novembre 2026
+- Stati Uniti: ☰ › Tornadoes, una pagina come Terremoti: le allerte tornado per la tua località e il tuo stato, i tornado segnalati vicino negli ultimi 2 giorni, quanti sono in tutto il paese e cosa fare.
+- Stati Uniti: niente riquadro Polline (lì non ci sono dati); la qualità dell'aria con l'indice americano US AQI.
+
 v2.30 · 4 novembre 2026
 - Elementi per usare l'app negli Stati Uniti.
 - ☰ › Temperatura °C/°F: lasciando °F l'app chiede se passare al sistema metrico; con °F la pressione è in inHg e le distanze in miglia.

@@ -1,3 +1,7 @@
+v2.40 · 4. november 2026
+- Ameerika Ühendriigid: ☰ › Tornadoes, leht nagu Maavärinad: tornaadohoiatused sinu koha ja osariigi jaoks, viimase 2 päeva jooksul lähedal teatatud tornaadod, nende arv kogu riigis ja mida teha.
+- Ameerika Ühendriigid: õietolmu kasti pole (seal pole andmeid); õhukvaliteet Ameerika US AQI indeksi järgi.
+
 v2.30 · 4. november 2026
 - Elemendid rakenduse kasutamiseks Ameerika Ühendriikides.
 - ☰ › Temperatuur °C/°F: °F-ist lahkudes küsib rakendus, kas minna üle meetermõõdustikule; °F puhul on õhurõhk inHg-des ja kaugused miilides.

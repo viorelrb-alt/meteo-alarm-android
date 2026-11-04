@@ -1,3 +1,7 @@
+v2.40 · 4. november 2026
+- Združene države: ☰ › Tornadoes, stran kot Potresi: opozorila pred tornadi za tvoj kraj in zvezno državo, tornadi, prijavljeni v bližini v zadnjih 2 dneh, njihovo število v vsej državi in kaj storiti.
+- Združene države: brez okvirja Cvetni prah (tam ni podatkov); kakovost zraka po ameriškem indeksu US AQI.
+
 v2.30 · 4. november 2026
 - Elementi za uporabo aplikacije v Združenih državah.
 - ☰ › Temperatura °C/°F: ob izhodu iz °F aplikacija vpraša, ali naj preklopi na metrični sistem; z °F je tlak v inHg, razdalje pa v miljah.

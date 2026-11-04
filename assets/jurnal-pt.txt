@@ -1,3 +1,7 @@
+v2.40 · 4 de novembro de 2026
+- Estados Unidos: ☰ › Tornadoes, uma página como Sismos: os alertas de tornado para a tua localidade e o teu estado, os tornados reportados perto nos últimos 2 dias, quantos há em todo o país e o que fazer.
+- Estados Unidos: sem a caixa Pólen (não há dados lá); a qualidade do ar com o índice americano US AQI.
+
 v2.30 · 4 de novembro de 2026
 - Elementos para usar a aplicação nos Estados Unidos.
 - ☰ › Temperatura °C/°F: ao sair de °F, a aplicação pergunta se quer mudar para o sistema métrico; com °F a pressão aparece em inHg e as distâncias em milhas.

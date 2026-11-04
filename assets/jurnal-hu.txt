@@ -1,3 +1,7 @@
+v2.40 · 2026. november 4.
+- Egyesült Államok: ☰ › Tornadoes, a Földrengések oldalhoz hasonló oldal: a települések és az állam tornádófigyelmeztetései, az utóbbi 2 napban a közelben jelentett tornádók, számuk az egész országban és a teendők.
+- Egyesült Államok: nincs Pollen doboz (ott nincs adat); a levegőminőség az amerikai US AQI index szerint.
+
 v2.30 · 2026. november 4.
 - Elemek az alkalmazás használatához az Egyesült Államokban.
 - ☰ › Hőmérséklet °C/°F: a °F elhagyásakor az alkalmazás megkérdezi, hogy átváltson-e a metrikus rendszerre; °F-nél a légnyomás inHg-ben, a távolságok mérföldben látszanak.

@@ -1,3 +1,7 @@
+v2.40 · 4. novembra 2026
+- Spojené štáty: ☰ › Tornadoes, stránka ako Zemetrasenia: výstrahy pred tornádami pre tvoje miesto a štát, tornáda hlásené v okolí za posledné 2 dni, ich počet v celej krajine a čo robiť.
+- Spojené štáty: bez políčka Peľ (údaje tam nie sú); kvalita ovzdušia podľa amerického indexu US AQI.
+
 v2.30 · 4. novembra 2026
 - Prvky na používanie aplikácie v Spojených štátoch.
 - ☰ › Teplota °C/°F: pri odchode z °F sa aplikácia opýta, či prejsť na metrickú sústavu; s °F je tlak v inHg a vzdialenosti v míľach.

@@ -1,3 +1,7 @@
+v2.40 · 4 novembre 2026
+- États-Unis : ☰ › Tornadoes, une page comme Séismes : les alertes de tornade pour ta localité et ton État, les tornades signalées à proximité ces 2 derniers jours, leur nombre dans tout le pays et que faire.
+- États-Unis : pas de case Pollen (pas de données là-bas) ; la qualité de l'air selon l'indice américain US AQI.
+
 v2.30 · 4 novembre 2026
 - Éléments pour utiliser l'application aux États-Unis.
 - ☰ › Température °C/°F : en quittant °F, l'application demande s'il faut passer au système métrique ; avec °F, la pression est en inHg et les distances en miles.

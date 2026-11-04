@@ -36,6 +36,16 @@ public final class Nws {
 				|| e.startsWith("blizzard warning") || e.startsWith("ice storm warning");
 	}
 
+	/** Active alerts in STATE (postal code, GeoJSON). */
+	public static String stateUrl(String state) {
+		return "https://api.weather.gov/alerts/active?status=actual&area=" + state;
+	}
+
+	/** Active alerts of EVENT in the whole country ("Tornado Warning"). */
+	public static String eventUrl(String event) {
+		return "https://api.weather.gov/alerts/active?status=actual&event=" + event.replace(" ", "%20");
+	}
+
 	/** A tornado watch or warning (the background refresh then comes every 5 minutes). */
 	public static boolean tornado(String event) {
 		return event != null && event.toLowerCase().startsWith("tornado");
@@ -62,6 +72,11 @@ public final class Nws {
 
 	/** The alerts in force now or starting within 24 h, one per event (the latest text), red first, tornado first. */
 	public static List<Warnings.Warn> parse(String json, long now) {
+		return parse(json, now, true);
+	}
+
+	/** The alerts; MERGE false keeps every alert apart (a state's tornado list, v2.40), with its area. */
+	public static List<Warnings.Warn> parse(String json, long now, boolean merge) {
 		List<Warnings.Warn> list = new ArrayList<Warnings.Warn>();
 		if (json == null || json.trim().length() == 0 || !json.trim().startsWith("{")) return list;
 		Object root = Json.parse(json);
@@ -81,7 +96,7 @@ public final class Nws {
 			if (ex <= now || on - now > 86400000L) continue;
 			long sent = Warnings.epoch(str(p, "sent"));
 			Warnings.Warn same = null;
-			for (Warnings.Warn w : list) if (w.type.equalsIgnoreCase(event)) same = w;
+			if (merge) for (Warnings.Warn w : list) if (w.type.equalsIgnoreCase(event)) same = w;
 			boolean newer = true;
 			if (same == null) {
 				same = new Warnings.Warn();
