@@ -537,3 +537,37 @@ Cloud cover: 	Molnighet:
 Until midnight: 	Till midnatt: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Källa: Open-Meteo. Risken är hur troligt regn är under den timmen, inte hur länge det regnar.
 FARMER	LANTBRUK
+Delete parcels	Radera skiften
+Tap a parcel to see it on the main screen.	Tryck på ett skifte för att se det på huvudskärmen.
+Saved: 	Sparat: 
+Tick the parcels to delete, then tap Delete.	Bocka för skiftena som ska raderas och tryck sedan på Radera.
+Are you sure?	Är du säker?
+These parcels and their statistics are deleted from the phone: 	Dessa skiften och deras statistik raderas från telefonen: 
+Yes, delete	Ja, radera
+Deleted: 	Raderade: 
+No	Nej
+This is the first screen	Det här är första skärmen
+This is the last screen	Det här är sista skärmen
+Near 	Nära 
+Alerts, rename, delete	Varningar, byt namn, radera
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Skiften (i lantbruksläget). ”Spara platsen här” tar GPS-positionen där du står; kartan visar den sedan med en nål: flytta kartan för att sätta nålen exakt på skiftet och ge det ett namn (t.ex. skifte 96/5). ”Välj på kartan” sparar ett skifte hemifrån. ”Radera skiften” visar dem med en kryssruta var; efter Radera frågar appen en gång till (Nej behåller bockarna). Under linjen visas skiftena i ordning efter namn och nummer: ett tryck visar skiftet på huvudskärmen. Skiftena sparas bara på den här telefonen tills du raderar dem.
+Main screens	Huvudskärmar
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	I lantbruksläget finns en huvudskärm för orten och en för varje skifte, i listans ordning. Svep åt sidan över temperaturen och ikonen för att gå från en till nästa; prickarna under linjen visar hur många det finns och vilken du ser. Appen kommer ihåg den visade skärmen.
+A parcel on the main screen	Ett skifte på huvudskärmen
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Vädret är skiftets: dess namn över linjen (förkortat med ”…” när det är långt), timmarna, regnrutorna och i nedersta raden dess egna rutor: luft, vind, riktning, regn, fuktighet, mark och marktemperatur (ett tryck visar de kommande 12 timmarna). Inget pollen och inga jordbävningar; varningarna gäller området kring närmaste ort. Ett tryck på namnet visar hela namnet, koordinaterna samt skiftets statistik och PDF, kartan, varningarna, namnbyte och radering. Widgetar och aviseringar stannar på orten.
+Rain in the last 24 hours	Regn de senaste 24 timmarna
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	I lantbruksläget visar rutan bredvid knapparna för sol och tema hur mycket det har regnat de senaste 24 timmarna på den visade platsen (ort eller skifte); ett tryck visar timmarna med regn. En uppskattning från Open-Meteo, ingen regnmätare.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Från skiftets namn på huvudskärmen: separata rutor för lufttemperatur, vind, vindriktning, risk för regn, luftfuktighet, markfuktighet och marktemperatur, sedan de kommande 12 timmarna. Knappar: statistik, flytta nålen, regn-/vindvarningar, byt namn, radera.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	I Rumänien öppnar ”Andra språk” sist i listan språken för de största minoriteterna som appen talar: ungerska, tyska, ukrainska, slovakiska, bulgariska, kroatiska, tjeckiska, polska, grekiska och italienska.
+AIR	LUFT
+DIRECTION	RIKTNING
+SOIL	MARK
+SOIL TEMP.	MARKTEMP.
+Now: 	Nu: 
+Total: 	Totalt: 
+No rain in the last 24 hours.	Inget regn de senaste 24 timmarna.
+Hours with rain	Timmar med regn
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	En uppskattning från Open-Meteo utifrån vädermodellerna, inte en mätning med regnmätare på platsen.
+rain 24 h	regn 24 h
+Other languages	Andra språk
+Languages of the minorities	Minoriteternas språk

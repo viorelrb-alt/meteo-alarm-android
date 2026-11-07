@@ -1,3 +1,10 @@
+v2.60 · 7 Samhain 2026
+- Mód feirmeora: príomhscáileán don bhaile agus ceann do gach páirc; téann tú ó cheann go ceann trí shvaidhpeáil thar an teocht agus an deilbhín, agus taispeánann na poncanna faoin líne cá bhfuil tú.
+- Taispeánann páirc ar an bpríomhscáileán a haimsir féin agus thíos a boscaí féin (aer, gaoth, treo, báisteach, taise, ithir, teocht na hithreach), gan pailin ná creathanna talún; taispeánann tapáil ar an ainm an t-ainm iomlán agus na comhordanáidí. Fanann na giuirléidí agus na fógraí ar an mbaile.
+- Bosca “báisteach 24 u” in aice leis na cnaipí thíos; taispeánann tapáil na huaireanta le báisteach.
+- ☰ › Páirceanna: scriosadh le ticeanna agus deimhniú; liosta in ord ainmneacha agus uimhreacha.
+- Sa Rómáin tairgeann an roghchlár Teanga › Teangacha eile teangacha na mionlach: Ungáiris, Gearmáinis, Úcráinis agus eile.
+
 v2.50 · 7 Samhain 2026
 - Mód feirmeora: athraíonn an chéad mhír de ☰ idir mód feirmeora agus gnáthmhód. Sa mhód feirmeora, taispeánann tapáil ar bhosca uaire teocht, an teocht is ísle agus is airde sa lá, gaoth le séideáin agus treo (agus cathain a chasfaidh sí), taise an aeir, seans báistí, taise agus teocht na hithreach; cuirtear boscaí báistí in aghaidh na huaire, le sonraí ar thapáil, in áit an ghraif deascadh agus na gcúig lá.
 - ☰ › Páirceanna: sábháil an áit ina seasann tú (GPS), ceartaigh í ar léarscáil OpenStreetMap agus tabhair ainm di; tá boscaí ag gach páirc do ghaoth, treo, báisteach, taise an aeir agus na hithreach, teocht na hithreach agus an aeir, foláirimh báistí agus gaoithe láidre agus staitisticí do thréimhse laistigh de na 28 lá deireanacha, is féidir a shábháil mar PDF in Íoslódálacha.

@@ -87,6 +87,18 @@ final class Lang {
 		return c == null ? "" : c.toLowerCase();
 	}
 
+	/**
+	 * Romania (v2.60, Viorel 2026-11-07): the languages of its main minorities the app has, in
+	 * their own submenu ("Other languages"); those already in the main list are left out.
+	 */
+	static List<String> minorities(Context ctx) {
+		List<String> l = new ArrayList<String>();
+		if (!"ro".equals(country(ctx))) return l;
+		List<String> main = offered(ctx);
+		for (String c : new String[] { "hu", "de", "uk", "sk", "bg", "hr", "cs", "pl", "el", "it" }) if (Tr.known(c) && !main.contains(c)) l.add(c);
+		return l;
+	}
+
 	/** The languages offered: English, the phone's own, the country's own, and the one in use (Romanian only as one of them). */
 	static List<String> offered(Context ctx) {
 		List<String> l = new ArrayList<String>();

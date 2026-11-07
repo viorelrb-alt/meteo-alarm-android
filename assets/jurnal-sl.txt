@@ -1,3 +1,10 @@
+v2.60 · 7. november 2026
+- Način kmeta: glavni zaslon za kraj in po eden za vsako parcelo; med njimi greš s podrsanjem čez temperaturo in ikono, pike pod črto kažejo, kje si.
+- Parcela na glavnem zaslonu kaže svoje vreme in spodaj svoja polja (zrak, veter, smer, dež, vlaga, tla, temperatura tal), brez cvetnega prahu in potresov; tap na ime pokaže celo ime in koordinate. Pripomočki in obvestila ostanejo pri kraju.
+- Polje »dež 24 h« ob gumbih spodaj; tap pokaže ure z dežjem.
+- ☰ › Parcele: brisanje z označevanjem in potrditvijo; seznam po vrstnem redu imen in številk.
+- V Romuniji meni Jezik › Drugi jeziki ponuja jezike manjšin: madžarščino, nemščino, ukrajinščino in druge.
+
 v2.50 · 7. november 2026
 - Način kmeta: prvi element ☰ preklaplja med načinom kmeta in običajnim načinom. V načinu kmeta tap na urno polje pokaže temperaturo, najnižjo in najvišjo dneva, veter s sunki in smerjo (in kdaj se obrne), vlažnost zraka, verjetnost dežja, vlažnost in temperaturo tal; graf dežja in pet dni nadomestijo urna polja dežja s podrobnostmi ob tapu.
 - ☰ › Parcele: shrani kraj, kjer stojiš (GPS), ga popravi na zemljevidu OpenStreetMap in poimenuj; vsaka parcela ima polja za veter, smer, dež, vlažnost zraka in tal, temperaturo tal in zraka, opozorila za dež in močan veter ter statistiko za obdobje zadnjih 28 dni, ki jo lahko shraniš kot PDF v Prenose.

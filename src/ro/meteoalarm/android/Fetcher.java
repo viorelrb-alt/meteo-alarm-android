@@ -125,7 +125,7 @@ final class Fetcher {
 		}
 		if (Parcels.farmer(ctx)) {
 			try {
-				r.farm = Weather.get(Farm.url(c.lat, c.lon, tz, 0, 3));
+				r.farm = Weather.get(Farm.url(c.lat, c.lon, tz, 1, 3));
 				Farm.parse(r.farm);
 				Log.i(ctx, "FERMIER", "prognoza pentru fermieri " + c.name + " OK " + r.farm.length() / 1024 + " KB");
 			} catch (Exception e) {
@@ -171,6 +171,77 @@ final class Fetcher {
 			Log.e(ctx, "DATE", "cutremure EMSC a eșuat: " + reason(e, false));
 		}
 		return r;
+	}
+
+	/**
+	 * Off the main thread: parcel P shown as a main screen (v2.60), as town C (its name and the
+	 * nearest town's country and county): the forecast, the extra boxes, the farmer's data (the
+	 * parcel's own, with its statistics), the air quality and the warnings; no earthquakes or
+	 * pollen (Viorel 2026-11-07). Nothing here is notified or goes to the widgets.
+	 */
+	static Result downloadParcel(Context ctx, Cities.City c, Parcels.Parcel p) {
+		Result r = new Result();
+		String tz = tz(c);
+		try {
+			String[] f = forecast(ctx, c, tz);
+			r.forecast = f[0];
+			r.uv = f[1];
+			r.source = f[2];
+			Log.i(ctx, "FERMIER", "prognoza parcelei " + p.name + " OK · " + r.source);
+		} catch (Exception e) {
+			r.error = e;
+			Log.e(ctx, "FERMIER", "prognoza parcelei " + p.name + " a eșuat: " + reason(e, false));
+		}
+		try {
+			if (r.forecast != null && r.uv == null) r.uv = Weather.get(Weather.uvUrl(c.lat, c.lon, tz));
+		} catch (Exception e) {
+			r.uv = null;
+		}
+		try {
+			Parcels.fetch(ctx, p);
+			r.farm = read(ctx, Parcels.dataFile(p.id));
+		} catch (Exception e) {
+			r.farm = null;
+			Log.e(ctx, "FERMIER", "datele parcelei " + p.name + " au eșuat: " + reason(e, false));
+		}
+		try {
+			r.pollen = Weather.get(Weather.pollenUrl(c.lat, c.lon));
+		} catch (Exception e) {
+			r.pollen = null;
+		}
+		if (c.us()) {
+			try {
+				r.warn = Weather.get(Nws.url(c.lat, c.lon));
+			} catch (Exception e) {
+				r.warn = null;
+			}
+		} else r.warn = warningsFeed(ctx, c.country);
+		return r;
+	}
+
+	/** The files of parcel ID shown as a main screen: "pm-ID-forecast.json" and so on. */
+	static String parcelFile(long id, String part) {
+		return "pm-" + id + "-" + part;
+	}
+
+	/** Keeps on the phone what came for parcel P (never the town's files: the widgets show the town). */
+	static void saveParcel(Context ctx, Parcels.Parcel p, Result r) {
+		if (r.forecast != null) {
+			if (r.uv != null) write(ctx, parcelFile(p.id, "uv.json"), r.uv);
+			write(ctx, parcelFile(p.id, "forecast.json"), r.forecast);
+			prefs(ctx).edit().putLong("pmf_" + p.id, System.currentTimeMillis()).putString("pms_" + p.id, r.source).apply();
+		}
+		if (r.pollen != null) write(ctx, parcelFile(p.id, "air.json"), r.pollen);
+		if (r.warn != null) write(ctx, parcelFile(p.id, "warn.xml"), r.warn);
+	}
+
+	/** The warnings saved for parcel ID, as place C. */
+	static List<Warnings.Warn> parcelWarnings(Context ctx, long id, Cities.City c) {
+		try {
+			return Warnings.of(read(ctx, parcelFile(id, "warn.xml")), c, System.currentTimeMillis());
+		} catch (Exception e) {
+			return new java.util.ArrayList<Warnings.Warn>();
+		}
 	}
 
 	/** After Open-Meteo said "overloaded", MET Norway is asked first for this long. */

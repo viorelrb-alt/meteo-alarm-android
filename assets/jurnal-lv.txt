@@ -1,3 +1,10 @@
+v2.60 · 2026. gada 7. novembris
+- Lauksaimnieka režīms: galvenais ekrāns apdzīvotajai vietai un pa vienam katram laukam; starp tiem pāriet, velkot pāri temperatūrai un ikonai, un punkti zem līnijas rāda, kur tu esi.
+- Lauks galvenajā ekrānā rāda savus laikapstākļus un apakšā savus lodziņus (gaiss, vējš, virziens, lietus, mitrums, augsne, augsnes temperatūra), bez ziedputekšņiem un zemestrīcēm; pieskāriens nosaukumam parāda visu nosaukumu un koordinātas. Logrīki un paziņojumi paliek pie apdzīvotās vietas.
+- Lodziņš “lietus 24 h” blakus apakšējām pogām; pieskāriens parāda stundas ar lietu.
+- ☰ › Lauki: dzēšana ar atzīmēšanu un apstiprinājumu; saraksts nosaukumu un numuru secībā.
+- Rumānijā izvēlne Valoda › Citas valodas piedāvā minoritāšu valodas: ungāru, vācu, ukraiņu un citas.
+
 v2.50 · 2026. gada 7. novembris
 - Lauksaimnieka režīms: ☰ pirmais punkts pārslēdz starp lauksaimnieka un parasto režīmu. Lauksaimnieka režīmā pieskāriens stundas lodziņam rāda temperatūru, dienas zemāko un augstāko, vēju ar brāzmām un virzienu (un kad tas pagriezīsies), gaisa mitrumu, lietus iespējamību, augsnes mitrumu un augsnes temperatūru; nokrišņu grafika un piecu dienu vietā ir stundu lietus lodziņi ar sīkāku informāciju pēc pieskāriena.
 - ☰ › Lauki: saglabājiet vietu, kur stāvat (GPS), precizējiet to OpenStreetMap kartē un piešķiriet nosaukumu; katram laukam ir lodziņi vējam, virzienam, lietum, gaisa un augsnes mitrumam, augsnes un gaisa temperatūrai, lietus un stipra vēja brīdinājumi un statistika par periodu pēdējo 28 dienu robežās, ko var saglabāt PDF mapē Lejupielādes.

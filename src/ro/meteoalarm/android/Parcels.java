@@ -71,6 +71,46 @@ final class Parcels {
 		return out;
 	}
 
+	/**
+	 * The parcels in the order of their names, the numbers in them by value ("parcela 9" before
+	 * "parcela 96/5" before "parcela 120"), letters without case and diacritics (Viorel 2026-11-07).
+	 */
+	static List<Parcel> sorted(Context ctx) {
+		List<Parcel> l = all(ctx);
+		java.util.Collections.sort(l, new java.util.Comparator<Parcel>() {
+			public int compare(Parcel a, Parcel b) {
+				int c = natural(a.name, b.name);
+				return c != 0 ? c : Long.compare(a.id, b.id);
+			}
+		});
+		return l;
+	}
+
+	static int natural(String a, String b) {
+		a = ro.meteoalarm.android.core.Warnings.fold(a);
+		b = ro.meteoalarm.android.core.Warnings.fold(b);
+		int i = 0, j = 0;
+		while (i < a.length() && j < b.length()) {
+			char x = a.charAt(i), y = b.charAt(j);
+			if (Character.isDigit(x) && Character.isDigit(y)) {
+				int i2 = i, j2 = j;
+				while (i2 < a.length() && Character.isDigit(a.charAt(i2))) i2++;
+				while (j2 < b.length() && Character.isDigit(b.charAt(j2))) j2++;
+				String na = a.substring(i, i2).replaceFirst("^0+(?=.)", ""), nb = b.substring(j, j2).replaceFirst("^0+(?=.)", "");
+				if (na.length() != nb.length()) return na.length() - nb.length();
+				int c = na.compareTo(nb);
+				if (c != 0) return c;
+				i = i2;
+				j = j2;
+			} else {
+				if (x != y) return x - y;
+				i++;
+				j++;
+			}
+		}
+		return (a.length() - i) - (b.length() - j);
+	}
+
 	static Parcel get(Context ctx, long id) {
 		for (Parcel p : all(ctx)) if (p.id == id) return p;
 		return null;
@@ -101,7 +141,8 @@ final class Parcels {
 		saveAll(ctx, l);
 		ctx.deleteFile(dataFile(id));
 		ctx.deleteFile(statsFile(id));
-		prefs(ctx).edit().remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pp_" + id).apply();
+		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
+		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pp_" + id).apply();
 	}
 
 	static String dataFile(long id) {

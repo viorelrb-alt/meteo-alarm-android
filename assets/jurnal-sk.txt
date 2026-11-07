@@ -1,3 +1,10 @@
+v2.60 · 7. novembra 2026
+- Režim farmára: hlavná obrazovka pre obec a po jednej pre každý pozemok; prechádza sa posunom prsta po teplote a ikone, bodky pod čiarou ukazujú, kde si.
+- Pozemok na hlavnej obrazovke ukazuje svoje počasie a dole svoje políčka (vzduch, vietor, smer, dážď, vlhkosť, pôda, teplota pôdy), bez peľu a zemetrasení; ťuknutie na názov ukáže celý názov a súradnice. Widgety a upozornenia zostávajú pri obci.
+- Políčko „dážď 24 h“ vedľa tlačidiel dole; ťuknutie ukáže hodiny s dažďom.
+- ☰ › Pozemky: vymazanie so zaškrtnutím a potvrdením; zoznam zoradený podľa názvov a čísel.
+- V Rumunsku ponuka Jazyk › Ďalšie jazyky ponúka jazyky menšín: maďarčinu, nemčinu, ukrajinčinu a ďalšie.
+
 v2.50 · 7. novembra 2026
 - Režim farmára: prvá položka ☰ prepína medzi režimom farmára a normálnym režimom. V režime farmára ťuknutie na hodinové políčko ukáže teplotu, minimum a maximum dňa, vietor s nárazmi a smerom (a kedy sa stočí), vlhkosť vzduchu, pravdepodobnosť dažďa, vlhkosť a teplotu pôdy; graf dažďa a päť dní nahrádzajú hodinové políčka dažďa s podrobnosťami po ťuknutí.
 - ☰ › Pozemky: ulož miesto, kde stojíš (GPS), dolaď ho na mape OpenStreetMap a pomenuj; každý pozemok má políčka pre vietor, smer, dážď, vlhkosť vzduchu a pôdy, teplotu pôdy a vzduchu, výstrahy na dážď a silný vietor a štatistiku za obdobie z posledných 28 dní, ktorú možno uložiť ako PDF do Stiahnutých.

@@ -1,3 +1,10 @@
+v2.60 · 7 listopada 2026
+- Tryb rolnika: ekran główny dla miejscowości i po jednym dla każdej działki; przechodzi się między nimi, przesuwając palcem po temperaturze i ikonie, a kropki pod linią pokazują, gdzie jesteś.
+- Działka na ekranie głównym pokazuje swoją pogodę, a na dole swoje pola (powietrze, wiatr, kierunek, deszcz, wilgotność, gleba, temperatura gleby), bez pyłków i trzęsień ziemi; dotknięcie nazwy pokazuje pełną nazwę i współrzędne. Widżety i powiadomienia zostają przy miejscowości.
+- Pole „deszcz 24 h” obok przycisków na dole; dotknięcie pokazuje godziny z deszczem.
+- ☰ › Działki: usuwanie z zaznaczaniem i potwierdzeniem; lista w kolejności nazw i numerów.
+- W Rumunii menu Język › Inne języki oferuje języki mniejszości: węgierski, niemiecki, ukraiński i inne.
+
 v2.50 · 7 listopada 2026
 - Tryb rolnika: pierwsza pozycja ☰ przełącza między trybem rolnika a trybem normalnym. W trybie rolnika dotknięcie pola godzinowego pokazuje temperaturę, minimum i maksimum dnia, wiatr z porywami i kierunkiem (i kiedy się zmienia), wilgotność powietrza, szansę na deszcz, wilgotność i temperaturę gleby; wykres deszczu i pięć dni zastępują godzinowe pola deszczu ze szczegółami po dotknięciu.
 - ☰ › Działki: zapisz miejsce, w którym stoisz (GPS), popraw je na mapie OpenStreetMap i nadaj nazwę; każda działka ma pola wiatru, kierunku, deszczu, wilgotności powietrza i gleby, temperatury gleby i powietrza, alerty deszczu i silnego wiatru oraz statystyki za okres z ostatnich 28 dni, do zapisania jako PDF w Pobranych.

@@ -607,3 +607,37 @@ Cloud cover: 	Nubosidad:
 Until midnight: 	Hasta medianoche: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Fuente: Open-Meteo. La probabilidad indica cuán probable es que llueva en esa hora, no cuánto tiempo llueve.
 FARMER	AGRICULTOR
+Delete parcels	Borrar parcelas
+Tap a parcel to see it on the main screen.	Toca una parcela para verla en la pantalla principal.
+Saved: 	Guardada: 
+Tick the parcels to delete, then tap Delete.	Marca las parcelas que quieres borrar y luego toca Borrar.
+Are you sure?	¿Estás seguro?
+These parcels and their statistics are deleted from the phone: 	Estas parcelas y sus estadísticas se borran del teléfono: 
+Yes, delete	Sí, borrar
+Deleted: 	Borradas: 
+No	No
+This is the first screen	Esta es la primera pantalla
+This is the last screen	Esta es la última pantalla
+Near 	Cerca de 
+Alerts, rename, delete	Alertas, renombrar, borrar
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Parcelas (en modo agricultor). «Guardar el lugar aquí» toma la posición GPS donde estás; después el mapa la muestra con un alfiler: mueve el mapa para poner el alfiler justo sobre la parcela y dale un nombre (p. ej. parcela 96/5). «Elegir en el mapa» guarda una parcela desde casa. «Borrar parcelas» las muestra con una casilla cada una; después de Borrar la app pregunta otra vez (No mantiene las marcas). Bajo la línea, las parcelas en el orden de sus nombres y números: un toque muestra la parcela en la pantalla principal. Las parcelas se quedan solo en este teléfono, hasta que las borres.
+Main screens	Pantallas principales
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	En el modo agricultor hay una pantalla principal para la localidad y una para cada parcela, en el orden de la lista. Desliza de lado sobre la temperatura y el icono para pasar de una a otra; los puntos bajo la línea muestran cuántas hay y cuál ves. La app recuerda la pantalla mostrada.
+A parcel on the main screen	Una parcela en la pantalla principal
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	El tiempo es el de la parcela: su nombre sobre la línea (cortado con «…» si es largo), las horas, las casillas de lluvia y, en la fila de abajo, sus propias casillas: aire, viento, dirección, lluvia, humedad, suelo y temperatura del suelo (un toque muestra las próximas 12 horas). Sin polen ni terremotos; los avisos son los de la zona de la localidad más cercana. Un toque en el nombre muestra el nombre completo, las coordenadas y las estadísticas con PDF, el mapa, las alertas, renombrar y borrar la parcela. Los widgets y las notificaciones siguen en la localidad.
+Rain in the last 24 hours	Lluvia de las últimas 24 horas
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	En el modo agricultor la casilla junto a los botones de sol y tema muestra cuánto llovió en las últimas 24 horas en el lugar mostrado (localidad o parcela); un toque muestra las horas con lluvia. Una estimación de Open-Meteo, no un pluviómetro.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Desde el nombre de la parcela en la pantalla principal: casillas separadas para temperatura del aire, viento, dirección del viento, probabilidad de lluvia, humedad del aire, humedad del suelo y temperatura del suelo, luego las próximas 12 horas. Botones: estadísticas, mover el alfiler, alertas de lluvia / viento, cambiar nombre, borrar.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	En Rumanía, «Otros idiomas» al final de la lista abre los idiomas de las principales minorías que la app conoce: húngaro, alemán, ucraniano, eslovaco, búlgaro, croata, checo, polaco, griego e italiano.
+AIR	AIRE
+DIRECTION	DIRECCIÓN
+SOIL	SUELO
+SOIL TEMP.	TEMP. SUELO
+Now: 	Ahora: 
+Total: 	Total: 
+No rain in the last 24 hours.	Sin lluvia en las últimas 24 horas.
+Hours with rain	Horas con lluvia
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Una estimación de Open-Meteo a partir de los modelos meteorológicos, no una medición de pluviómetro en el lugar.
+rain 24 h	lluvia 24 h
+Other languages	Otros idiomas
+Languages of the minorities	Idiomas de las minorías

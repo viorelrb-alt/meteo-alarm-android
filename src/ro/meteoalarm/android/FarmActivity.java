@@ -77,6 +77,13 @@ public final class FarmActivity extends Activity {
 	private LocationManager lm;
 	private LocationListener locListener;
 	private TextView status;
+	/**
+	 * Opened from the parcel's name on the main screen (v2.60): "parcel", "stats" or "map" for
+	 * parcel ENTRY_ID; back from that page closes this window. Null: opened from ☰ › Parcele.
+	 */
+	private String entry;
+	/** The parcels ticked for deleting (v2.60). */
+	private final java.util.Set<Long> ticked = new java.util.HashSet<Long>();
 
 	@Override
 	protected void onCreate(Bundle b) {
@@ -102,6 +109,22 @@ public final class FarmActivity extends Activity {
 		root = new FrameLayout(this);
 		root.setBackgroundColor(page);
 		setContentView(root);
+		entry = getIntent().getStringExtra("open");
+		long id = getIntent().getLongExtra("id", -1);
+		Parcels.Parcel p = id >= 0 ? Parcels.get(this, id) : null;
+		if (entry != null && p != null) {
+			Log.i(this, "FERMIER", "parcela " + p.name + ": " + entry);
+			curId = id;
+			if (entry.equals("stats")) {
+				Calendar now = Calendar.getInstance();
+				from = Farm.date(now, -6);
+				to = Farm.date(now, 0);
+				showStats(id);
+			} else if (entry.equals("map")) showMap(id, p.name, p.lat, p.lon, 17, "finish");
+			else showParcel(id);
+			return;
+		}
+		entry = null;
 		Log.i(this, "FERMIER", "pagina Parcele deschisă (" + Parcels.all(this).size() + " parcele)");
 		showList();
 	}
@@ -110,11 +133,23 @@ public final class FarmActivity extends Activity {
 	public void onBackPressed() {
 		if (screen.equals("map")) {
 			stopLoc();
-			if (mapBack.equals("parcel")) showParcel(curId);
+			if (mapBack.equals("finish")) finish();
+			else if (mapBack.equals("parcel")) showParcel(curId);
 			else showList();
-		} else if (screen.equals("stats")) showParcel(curId);
-		else if (screen.equals("parcel")) showList();
+		} else if (screen.equals("stats")) {
+			if ("stats".equals(entry)) finish();
+			else showParcel(curId);
+		} else if (screen.equals("parcel")) {
+			if ("parcel".equals(entry)) finish();
+			else showList();
+		} else if (screen.equals("delete")) showList();
 		else super.onBackPressed();
+	}
+
+	/** Parcel ID picked: its main screen (v2.60). */
+	private void select(long id) {
+		setResult(RESULT_OK, new android.content.Intent().putExtra("select", id));
+		finish();
 	}
 
 	@Override
@@ -321,14 +356,25 @@ public final class FarmActivity extends Activity {
 				showMap(-1, "", c != null ? c.lat : 44.2058, c != null ? c.lon : 27.3306, 13, "list");
 			}
 		}), wide(10));
+		final List<Parcels.Parcel> all = Parcels.sorted(this);
+		if (!all.isEmpty()) col.addView(button(Tr.t("Delete parcels", "Șterge parcele"), new View.OnClickListener() {
+			public void onClick(View v) {
+				ticked.clear();
+				showDelete();
+			}
+		}), wide(10));
 		status = text("", 14, false, dim);
 		col.addView(status, wide(8));
-		List<Parcels.Parcel> all = Parcels.all(this);
 		if (all.isEmpty()) {
 			col.addView(text(Tr.t("No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.",
 					"Nicio parcelă salvată încă. Stai pe parcelă și atinge „Salvează locul aici”, sau alege-o pe hartă."), 16, false, ink), wide(16));
 			return;
 		}
+		// A line between the buttons and the parcels (Viorel 2026-11-07); a tap shows the parcel on the main screen.
+		View sep = new View(this);
+		sep.setBackgroundColor(ink);
+		col.addView(sep, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2)));
+		col.addView(text(Tr.t("Tap a parcel to see it on the main screen.", "Atinge o parcelă ca s-o vezi pe ecranul principal."), 13, false, dim), wide(8));
 		for (final Parcels.Parcel p : all) {
 			LinearLayout card = column();
 			card.setBackground(frame(this.card, 14));
@@ -346,7 +392,8 @@ public final class FarmActivity extends Activity {
 			}
 			card.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
-					showParcel(p.id);
+					Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
+					select(p.id);
 				}
 			});
 			col.addView(card, wide(12));
@@ -553,12 +600,80 @@ public final class FarmActivity extends Activity {
 				Parcels.put(FarmActivity.this, p);
 				Log.i(FarmActivity.this, "FERMIER", (id >= 0 ? "parcelă mutată: " : "parcelă salvată: ") + n + " " + coords(p.lat, p.lon));
 				stopLoc();
-				// Moved: the old data were for another place.
-				if (id >= 0) Fetcher.prefs(FarmActivity.this).edit().putLong("pf_" + p.id, 0).apply();
-				showParcel(p.id);
+				// Moved: the old data were for another place (the main screen downloads them again too).
+				if (id >= 0) Fetcher.prefs(FarmActivity.this).edit().putLong("pf_" + p.id, 0).putLong("pmf_" + p.id, 0).apply();
+				if (mapBack.equals("finish")) finish();
+				else if (id >= 0) showParcel(p.id);
+				else {
+					toast(Tr.t("Saved: ", "Salvată: ") + n);
+					showList();
+				}
 			}
 		}), wide(8));
 		root.addView(col, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+	}
+
+	// --- Deleting parcels (v2.60) ----------------------------------------------------------------
+
+	/**
+	 * The parcels with a tick box each; "Delete" asks once more (Viorel 2026-11-07: if the farmer
+	 * says no, the ticks stay and can be changed).
+	 */
+	private void showDelete() {
+		screen = "delete";
+		LinearLayout col = pageOf(Tr.t("Delete parcels", "Șterge parcele"));
+		col.addView(text(Tr.t("Tick the parcels to delete, then tap Delete.", "Bifează parcelele de șters, apoi atinge Șterge."), 14, false, dim), wide(8));
+		final TextView go = button("", null);
+		final List<Parcels.Parcel> all = Parcels.sorted(this);
+		final Runnable label = new Runnable() {
+			public void run() {
+				go.setText(Tr.t("Delete", "Șterge") + (ticked.isEmpty() ? "" : " (" + ticked.size() + ")"));
+				go.setAlpha(ticked.isEmpty() ? 0.4f : 1f);
+			}
+		};
+		for (final Parcels.Parcel p : all) {
+			final android.widget.CheckBox cb = new android.widget.CheckBox(this);
+			cb.setText(p.name);
+			cb.setTextColor(ink);
+			cb.setTextSize(18 * TextSize.get(this));
+			cb.setChecked(ticked.contains(p.id));
+			if (Build.VERSION.SDK_INT >= 21) cb.setButtonTintList(android.content.res.ColorStateList.valueOf(ink));
+			cb.setPadding(px(8), px(10), px(8), px(10));
+			cb.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener() {
+				public void onCheckedChanged(android.widget.CompoundButton b, boolean on) {
+					if (on) ticked.add(p.id);
+					else ticked.remove(p.id);
+					label.run();
+				}
+			});
+			col.addView(cb, wide(4));
+		}
+		go.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				if (ticked.isEmpty()) return;
+				StringBuilder names = new StringBuilder();
+				for (Parcels.Parcel p : all) if (ticked.contains(p.id)) names.append(names.length() > 0 ? ", " : "").append(p.name);
+				AlertDialog.Builder d = dialog();
+				d.setTitle(Tr.t("Are you sure?", "Ești sigur?"));
+				d.setMessage(Tr.t("These parcels and their statistics are deleted from the phone: ", "Aceste parcele și statistica lor se șterg din telefon: ") + names);
+				d.setPositiveButton(Tr.t("Yes, delete", "Da, șterge"), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface di, int w) {
+						for (Long id : ticked) {
+							Parcels.delete(FarmActivity.this, id);
+						}
+						Log.i(FarmActivity.this, "FERMIER", "parcele șterse: " + names);
+						toast(Tr.t("Deleted: ", "Șterse: ") + ticked.size());
+						ticked.clear();
+						showList();
+					}
+				});
+				// No: back to the ticks, as they were.
+				d.setNegativeButton(Tr.t("No", "Nu"), null);
+				d.show();
+			}
+		});
+		label.run();
+		col.addView(go, wide(18));
 	}
 
 	// --- A parcel ---------------------------------------------------------------------------------
@@ -698,7 +813,8 @@ public final class FarmActivity extends Activity {
 					public void onClick(DialogInterface di, int w) {
 						Parcels.delete(FarmActivity.this, p.id);
 						Log.i(FarmActivity.this, "FERMIER", "parcelă ștearsă: " + p.name);
-						showList();
+						if (entry != null) finish();
+						else showList();
 					}
 				});
 				d.setNegativeButton(Tr.t("Cancel", "Anulează"), null);

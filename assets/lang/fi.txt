@@ -537,3 +537,37 @@ Cloud cover: 	Pilvisyys:
 Until midnight: 	Keskiyöhön: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Lähde: Open-Meteo. Todennäköisyys kertoo, kuinka todennäköistä sade on sinä tuntina, ei kuinka kauan sataa.
 FARMER	VILJELIJÄ
+Delete parcels	Poista lohkoja
+Tap a parcel to see it on the main screen.	Napauta lohkoa nähdäksesi sen päänäkymässä.
+Saved: 	Tallennettu: 
+Tick the parcels to delete, then tap Delete.	Valitse poistettavat lohkot ja napauta sitten Poista.
+Are you sure?	Oletko varma?
+These parcels and their statistics are deleted from the phone: 	Nämä lohkot ja niiden tilastot poistetaan puhelimesta: 
+Yes, delete	Kyllä, poista
+Deleted: 	Poistettu: 
+No	Ei
+This is the first screen	Tämä on ensimmäinen näkymä
+This is the last screen	Tämä on viimeinen näkymä
+Near 	Lähellä: 
+Alerts, rename, delete	Hälytykset, nimeä uudelleen, poista
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Lohkot (viljelijätilassa). ”Tallenna paikka tähän” ottaa GPS-sijainnin, jossa seisot; kartta näyttää sen sitten neulalla: siirrä karttaa asettaaksesi neulan tarkasti lohkolle ja anna sille nimi (esim. lohko 96/5). ”Valitse kartalta” tallentaa lohkon kotoa käsin. ”Poista lohkoja” näyttää ne kukin valintaruudun kanssa; Poista-napautuksen jälkeen sovellus kysyy vielä kerran (Ei säilyttää valinnat). Viivan alla lohkot nimien ja numeroiden järjestyksessä: napautus näyttää lohkon päänäkymässä. Lohkot säilyvät vain tässä puhelimessa, kunnes poistat ne.
+Main screens	Päänäkymät
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Viljelijätilassa on päänäkymä paikkakunnalle ja yksi kullekin lohkolle, luettelon järjestyksessä. Pyyhkäise sivusuunnassa lämpötilan ja kuvakkeen yli siirtyäksesi seuraavaan; viivan alla olevat pisteet näyttävät, montako niitä on ja mitä katsot. Sovellus muistaa näytetyn näkymän.
+A parcel on the main screen	Lohko päänäkymässä
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Sää on lohkon: sen nimi viivan yläpuolella (pitkä nimi lyhennetään ”…”), tunnit, sateen ruudut ja alarivillä sen omat ruudut: ilma, tuuli, suunta, sade, kosteus, maa ja maan lämpötila (napautus näyttää seuraavat 12 tuntia). Ei siitepölyä eikä maanjäristyksiä; varoitukset koskevat lähimmän paikkakunnan aluetta. Nimen napautus näyttää koko nimen, koordinaatit sekä lohkon tilastot ja PDF:n, kartan, hälytykset, uudelleennimeämisen ja poistamisen. Widgetit ja ilmoitukset pysyvät paikkakunnalla.
+Rain in the last 24 hours	Sade viimeisten 24 tunnin aikana
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Viljelijätilassa auringon ja teeman painikkeiden vieressä oleva ruutu näyttää, paljonko on satanut viimeisten 24 tunnin aikana näytetyssä paikassa (paikkakunta tai lohko); napautus näyttää sadetunnit. Open-Meteon arvio, ei sademittari.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Lohkon nimestä päänäkymässä: erilliset ruudut ilman lämpötilalle, tuulelle, tuulen suunnalle, sateen todennäköisyydelle, ilmankosteudelle, maan kosteudelle ja maan lämpötilalle, sitten seuraavat 12 tuntia. Painikkeet: tilastot, siirrä neulaa, sade-/tuulihälytykset, nimeä uudelleen, poista.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Romaniassa luettelon lopussa oleva ”Muut kielet” avaa niiden suurimpien vähemmistöjen kielet, joita sovellus puhuu: unkari, saksa, ukraina, slovakki, bulgaria, kroatia, tšekki, puola, kreikka ja italia.
+AIR	ILMA
+DIRECTION	SUUNTA
+SOIL	MAA
+SOIL TEMP.	MAAN LÄMPÖ
+Now: 	Nyt: 
+Total: 	Yhteensä: 
+No rain in the last 24 hours.	Ei sadetta viimeisten 24 tunnin aikana.
+Hours with rain	Sadetunnit
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Open-Meteon arvio säämalleista, ei sademittarin mittaus paikan päällä.
+rain 24 h	sade 24 h
+Other languages	Muut kielet
+Languages of the minorities	Vähemmistöjen kielet

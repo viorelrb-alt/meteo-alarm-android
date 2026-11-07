@@ -537,3 +537,37 @@ Cloud cover: 	Oblačnost:
 Until midnight: 	Do půlnoci: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Zdroj: Open-Meteo. Pravděpodobnost říká, jak pravděpodobně v té hodině prší, ne jak dlouho.
 FARMER	ZEMĚDĚLEC
+Delete parcels	Smazat pozemky
+Tap a parcel to see it on the main screen.	Klepnutím na pozemek ho uvidíte na hlavní obrazovce.
+Saved: 	Uloženo: 
+Tick the parcels to delete, then tap Delete.	Zaškrtněte pozemky ke smazání a pak klepněte na Smazat.
+Are you sure?	Opravdu?
+These parcels and their statistics are deleted from the phone: 	Tyto pozemky a jejich statistika se smažou z telefonu: 
+Yes, delete	Ano, smazat
+Deleted: 	Smazáno: 
+No	Ne
+This is the first screen	Toto je první obrazovka
+This is the last screen	Toto je poslední obrazovka
+Near 	U 
+Alerts, rename, delete	Upozornění, přejmenovat, smazat
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Pozemky (v režimu zemědělce). „Uložit místo tady“ vezme polohu GPS, kde stojíš; potom ji mapa ukáže se špendlíkem: posuň mapu, aby byl špendlík přesně na pozemku, a dej mu název (např. pozemek 96/5). „Vybrat na mapě“ uloží pozemek z domova. „Smazat pozemky“ je ukáže každý se zaškrtávacím políčkem; po Smazat se aplikace zeptá ještě jednou (Ne ponechá zaškrtnutí). Pod čarou pozemky v pořadí názvů a čísel: klepnutí ukáže pozemek na hlavní obrazovce. Pozemky zůstávají jen v tomto telefonu, dokud je nesmažeš.
+Main screens	Hlavní obrazovky
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	V režimu zemědělce je hlavní obrazovka pro obec a po jedné pro každý pozemek, v pořadí seznamu. Přejeďte prstem do strany přes teplotu a ikonu a přejdete na další; tečky pod čarou ukazují, kolik jich je a kterou vidíte. Aplikace si pamatuje zobrazenou obrazovku.
+A parcel on the main screen	Pozemek na hlavní obrazovce
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Počasí je pro pozemek: jeho název nad čarou (zkrácený „…“, když je dlouhý), hodiny, políčka deště a v dolní řadě jeho vlastní políčka: vzduch, vítr, směr, déšť, vlhkost, půda a teplota půdy (klepnutí ukáže dalších 12 hodin). Bez pylu a zemětřesení; výstrahy jsou pro oblast nejbližší obce. Klepnutí na název ukáže celý název, souřadnice a statistiku s PDF, mapu, upozornění, přejmenování a smazání pozemku. Widgety a oznámení zůstávají u obce.
+Rain in the last 24 hours	Déšť za posledních 24 hodin
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	V režimu zemědělce ukazuje políčko vedle tlačítek slunce a motivu, kolik napršelo za posledních 24 hodin na zobrazeném místě (obec nebo pozemek); klepnutí ukáže hodiny s deštěm. Odhad Open-Meteo, ne srážkoměr.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Z názvu pozemku na hlavní obrazovce: samostatná políčka pro teplotu vzduchu, vítr, směr větru, pravděpodobnost deště, vlhkost vzduchu, vlhkost půdy a teplotu půdy, potom dalších 12 hodin. Tlačítka: statistika, posunout špendlík, upozornění déšť / vítr, přejmenovat, smazat.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	V Rumunsku otevře „Další jazyky“ na konci seznamu jazyky hlavních menšin, které aplikace umí: maďarštinu, němčinu, ukrajinštinu, slovenštinu, bulharštinu, chorvatštinu, češtinu, polštinu, řečtinu a italštinu.
+AIR	VZDUCH
+DIRECTION	SMĚR
+SOIL	PŮDA
+SOIL TEMP.	TEPL. PŮDY
+Now: 	Nyní: 
+Total: 	Celkem: 
+No rain in the last 24 hours.	Za posledních 24 hodin nepršelo.
+Hours with rain	Hodiny s deštěm
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Odhad Open-Meteo z meteorologických modelů, ne měření srážkoměrem na místě.
+rain 24 h	déšť 24 h
+Other languages	Další jazyky
+Languages of the minorities	Jazyky menšin

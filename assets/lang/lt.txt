@@ -537,3 +537,37 @@ Cloud cover: 	Debesuotumas:
 Until midnight: 	Iki vidurnakčio: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Šaltinis: Open-Meteo. Tikimybė rodo, kiek tikėtinas lietus tą valandą, o ne kiek ilgai lis.
 FARMER	ŪKININKAS
+Delete parcels	Ištrinti laukus
+Tap a parcel to see it on the main screen.	Palieskite lauką, kad pamatytumėte jį pagrindiniame ekrane.
+Saved: 	Išsaugota: 
+Tick the parcels to delete, then tap Delete.	Pažymėkite trinamus laukus, tada palieskite Ištrinti.
+Are you sure?	Ar tikrai?
+These parcels and their statistics are deleted from the phone: 	Šie laukai ir jų statistika bus ištrinti iš telefono: 
+Yes, delete	Taip, ištrinti
+Deleted: 	Ištrinta: 
+No	Ne
+This is the first screen	Tai pirmas ekranas
+This is the last screen	Tai paskutinis ekranas
+Near 	Prie 
+Alerts, rename, delete	Įspėjimai, pervadinti, ištrinti
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Laukai (ūkininko režime). „Išsaugoti šią vietą“ paima GPS padėtį, kur stovite; tada žemėlapis ją rodo smeigtuku: perkelkite žemėlapį, kad smeigtukas būtų tiksliai ant lauko, ir suteikite pavadinimą (pvz., laukas 96/5). „Pasirinkti žemėlapyje“ išsaugo lauką iš namų. „Ištrinti laukus“ parodo juos, kiekvieną su žymimuoju langeliu; po Ištrinti programėlė dar kartą paklausia (Ne palieka žymes). Po linija laukai surikiuoti pagal pavadinimus ir numerius: palietus laukas rodomas pagrindiniame ekrane. Laukai lieka tik šiame telefone, kol juos ištrinsite.
+Main screens	Pagrindiniai ekranai
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Ūkininko režime yra pagrindinis ekranas gyvenvietei ir po vieną kiekvienam laukui, sąrašo tvarka. Braukite į šoną per temperatūrą ir piktogramą, kad pereitumėte iš vieno į kitą; taškai po linija rodo, kiek jų yra ir kurį matote. Programėlė prisimena rodomą ekraną.
+A parcel on the main screen	Laukas pagrindiniame ekrane
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Orai yra lauko: jo pavadinimas virš linijos (ilgas sutrumpinamas „…“), valandos, lietaus langeliai, o apatinėje eilutėje jo paties langeliai: oras, vėjas, kryptis, lietus, drėgmė, dirvožemis ir dirvožemio temperatūra (palietus rodomos kitos 12 valandų). Be žiedadulkių ir žemės drebėjimų; perspėjimai yra artimiausios gyvenvietės srities. Palietus pavadinimą rodomas visas pavadinimas, koordinatės, lauko statistika su PDF, žemėlapis, įspėjimai, pervadinimas ir ištrynimas. Valdikliai ir pranešimai lieka prie gyvenvietės.
+Rain in the last 24 hours	Lietus per paskutines 24 valandas
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Ūkininko režime langelis šalia saulės ir temos mygtukų rodo, kiek prilijo per paskutines 24 valandas rodomoje vietoje (gyvenvietėje ar lauke); palietus rodomos valandos su lietumi. Open-Meteo įvertis, ne kritulių matuoklis.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Iš lauko pavadinimo pagrindiniame ekrane: atskiri langeliai oro temperatūrai, vėjui, vėjo krypčiai, lietaus tikimybei, oro drėgmei, dirvos drėgmei ir dirvos temperatūrai, tada kitos 12 valandų. Mygtukai: statistika, perkelti smeigtuką, lietaus / vėjo įspėjimai, pervadinti, ištrinti.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Rumunijoje „Kitos kalbos“ sąrašo pabaigoje atveria pagrindinių mažumų kalbas, kuriomis kalba programėlė: vengrų, vokiečių, ukrainiečių, slovakų, bulgarų, kroatų, čekų, lenkų, graikų ir italų.
+AIR	ORAS
+DIRECTION	KRYPTIS
+SOIL	DIRVA
+SOIL TEMP.	DIRVOS TEMP.
+Now: 	Dabar: 
+Total: 	Iš viso: 
+No rain in the last 24 hours.	Per paskutines 24 valandas nelijo.
+Hours with rain	Valandos su lietumi
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Open-Meteo įvertis pagal orų modelius, ne kritulių matuoklio matavimas vietoje.
+rain 24 h	lietus 24 val.
+Other languages	Kitos kalbos
+Languages of the minorities	Mažumų kalbos

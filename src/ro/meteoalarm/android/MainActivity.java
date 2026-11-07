@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.50";
+	static final String VERSION = "Meteo Alarm Android v2.60";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -59,6 +59,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private SharedPreferences prefs;
 	private final Handler handler = new Handler();
 	private boolean fetching, asked;
+	/**
+	 * Farmer mode (v2.60): the town (the location's or the one picked, kept as "city") and the
+	 * main screen shown: 0 the town's, else a parcel's id (kept as "farmPage").
+	 */
+	private Cities.City town;
+	private long pageId;
+	private boolean townFetching;
+	private static final int REQ_PARCELS = 21;
 	private long lastTry, lastLocate, lastDone;
 	static final long REPULL_MS = 10000;
 	private Locator locator;
@@ -78,6 +86,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.offline = s.fetched > 0 && System.currentTimeMillis() - s.fetched > 2 * interval() + 5 * 60000L;
 			long iv = s.w == null ? 60000L : interval();
 			if (System.currentTimeMillis() - Math.max(s.fetched, lastTry) >= iv) fetch();
+			// A parcel shown (v2.60): the town's weather still comes, for the widgets and the notices.
+			if (pageId != 0 && System.currentTimeMillis() - prefs.getLong("fetched", 0) >= interval()) fetchTownQuiet();
 			// The exact position at start and then every hour, while automatic location is on.
 			if (autoLoc() && Locator.allowed(MainActivity.this) && System.currentTimeMillis() - lastLocate >= LOCATE_MS) locate(false);
 			checkNight();
@@ -136,8 +146,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		locator.osm = false;
 		sheet = new BottomSheet(this);
 		updater = new Updater(this, sheet);
+		pageId = prefs.getLong("farmPage", 0);
 		applySettings();
-		loadCache();
+		loadPage();
 		android.widget.FrameLayout root = new android.widget.FrameLayout(this);
 		root.addView(view);
 		root.addView(sheet);
@@ -222,7 +233,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (c == null) c = new Cities.City("Călărași", "Călărași", 44.2058, 27.3306);
 		// Keep the town shown even when it was never picked, so the widget finds it too.
 		if (prefs.getString("city", "").length() == 0) prefs.edit().putString("city", c.key()).apply();
-		s.city = c;
+		town = c;
+		pageState();
 		applyUnits();
 		// No neighbourhood after the town any more (Viorel 2026-11-02).
 		s.district = "";
@@ -244,6 +256,235 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (sheet != null) sheet.setDark(s.dark);
 		if (bubble != null) bubble.setDark(s.dark);
 		if (updater != null) updater.en = s.T.en;
+	}
+
+	// --- Main screens of farmer mode (v2.60) --------------------------------------------
+
+	/** Parcel P as a place: its name, the nearest town's country and county (for the warnings). */
+	private Cities.City placeOf(Parcels.Parcel p) {
+		Cities.City n = cities.nearest(p.lat, p.lon);
+		if (n == null) n = town;
+		String name = p.name.replace('|', '/');
+		return new Cities.City(n.country, n.county, name, p.lat, p.lon, n.match);
+	}
+
+	/** The parcels in the screens' order (none outside farmer mode). */
+	private List<Parcels.Parcel> pageList() {
+		return prefs.getBoolean("farmer", false) ? Parcels.sorted(this) : new ArrayList<Parcels.Parcel>();
+	}
+
+	/** The place, the name and the dots of the main screen PAGE_ID (the town's when it is gone). */
+	private void pageState() {
+		List<Parcels.Parcel> l = pageList();
+		Parcels.Parcel p = null;
+		int idx = 0;
+		for (int k = 0; k < l.size(); k++) if (l.get(k).id == pageId) {
+			p = l.get(k);
+			idx = k + 1;
+		}
+		if (p == null && pageId != 0) {
+			pageId = 0;
+			prefs.edit().putLong("farmPage", 0).apply();
+		}
+		s.pages = l.isEmpty() ? 1 : l.size() + 1;
+		s.page = idx;
+		s.parcel = p == null ? null : p.name;
+		s.city = p == null ? town : placeOf(p);
+	}
+
+	/** Shows main screen ID (0 the town's, else a parcel's) with what is saved, and downloads when old. */
+	private void showPage(long id) {
+		boolean other = id != pageId;
+		pageId = id;
+		prefs.edit().putLong("farmPage", id).apply();
+		pageState();
+		applyUnits();
+		if (other) Log.i(this, "FERMIER", "ecran principal: " + (s.parcel == null ? town.label() : "parcela " + s.parcel));
+		s.w = null;
+		s.warns = null;
+		s.quakes = null;
+		s.farm = null;
+		s.pollenLvl = -1;
+		s.pollenPlant = "";
+		s.aqi = -1;
+		s.fetched = 0;
+		s.error = "";
+		s.failReason = "";
+		s.source = "";
+		s.hours.scroll = 0;
+		s.rain.scroll = 0;
+		s.info.scroll = 0;
+		s.grid.scroll = 0;
+		s.alerts.scroll = 0;
+		loadPage();
+		view.invalidate();
+		if (System.currentTimeMillis() - s.fetched >= interval()) {
+			lastTry = 0;
+			fetch();
+		}
+	}
+
+	/** A swipe over the weather now: the next or the previous main screen, the town first. */
+	public void onPage(int step) {
+		List<Parcels.Parcel> l = pageList();
+		if (l.isEmpty()) return;
+		int to = s.page + step;
+		if (to < 0 || to > l.size()) {
+			note(to < 0 ? Tr.t("This is the first screen", "Acesta e primul ecran") : Tr.t("This is the last screen", "Acesta e ultimul ecran"), 1500);
+			return;
+		}
+		bubble.hide();
+		showPage(to == 0 ? 0 : l.get(to - 1).id);
+	}
+
+	/** What is saved for the main screen shown. */
+	private void loadPage() {
+		if (pageId == 0) {
+			loadCache();
+			return;
+		}
+		Parcels.Parcel p = Parcels.get(this, pageId);
+		if (p == null) return;
+		try {
+			String f = readCache(Fetcher.parcelFile(p.id, "forecast.json"));
+			if (f != null) s.w = Weather.parse(f);
+			String u = readCache(Fetcher.parcelFile(p.id, "uv.json"));
+			if (s.w != null && u != null) Weather.addExtra(s.w, u);
+			s.fetched = s.w == null ? 0 : prefs.getLong("pmf_" + p.id, 0);
+			s.source = prefs.getString("pms_" + p.id, "");
+			String a = readCache(Fetcher.parcelFile(p.id, "air.json"));
+			if (a != null) s.aqi = Weather.parseAqi(a, s.city.us());
+			s.warns = Fetcher.parcelWarnings(this, p.id, s.city);
+			s.quakes = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			s.farm = Parcels.data(this, p.id);
+		} catch (Exception e) {
+			s.w = null;
+			Log.e(this, "FERMIER", "datele salvate ale parcelei nu au putut fi citite", e);
+		}
+	}
+
+	/** Downloads the parcel shown (its own files; nothing for the widgets or the notices). */
+	private void fetchParcel() {
+		final Parcels.Parcel p = Parcels.get(this, pageId);
+		if (p == null) {
+			showPage(0);
+			return;
+		}
+		fetching = true;
+		lastTry = System.currentTimeMillis();
+		Log.i(this, "FERMIER", "descarc vremea pentru parcela " + p.name);
+		s.busy = true;
+		view.invalidate();
+		final Cities.City c = s.city;
+		final Context ctx = getApplicationContext();
+		new Thread(new Runnable() {
+			public void run() {
+				final Fetcher.Result r = Fetcher.downloadParcel(ctx, c, p);
+				Fetcher.saveParcel(ctx, p, r);
+				handler.post(new Runnable() {
+					public void run() {
+						doneParcel(p, c, r);
+					}
+				});
+			}
+		}).start();
+	}
+
+	private void doneParcel(Parcels.Parcel p, Cities.City c, Fetcher.Result r) {
+		fetching = false;
+		lastDone = System.currentTimeMillis();
+		s.busy = false;
+		if (pageId != p.id || c != s.city) {
+			fetch();
+			return;
+		}
+		if (r.forecast != null) {
+			s.w = Weather.parse(r.forecast);
+			if (r.uv != null) Weather.addExtra(s.w, r.uv);
+			s.fetched = System.currentTimeMillis();
+			s.offline = false;
+			s.failReason = "";
+			s.error = "";
+			s.source = r.source;
+		} else {
+			s.failReason = Fetcher.reason(r.error, s.T.en);
+			if (s.w == null) s.error = Tr.t("The weather did not come: ", "Vremea nu a venit: ") + s.failReason;
+			else if (resumed) note(Tr.t("The weather did not come: ", "Vremea nu a venit: ") + s.failReason, 3000);
+		}
+		if (r.pollen != null) {
+			try {
+				s.aqi = Weather.parseAqi(r.pollen, c.us());
+			} catch (Exception e) {
+				// keep the last one
+			}
+		}
+		if (r.warn != null) s.warns = Fetcher.parcelWarnings(this, p.id, c);
+		if (r.farm != null) {
+			try {
+				s.farm = ro.meteoalarm.android.core.Farm.parse(r.farm);
+			} catch (Exception e) {
+				// keep the last one
+			}
+		} else if (r.error == null) {
+			Parcels.pending(this, p.id);
+			if (resumed) note(Tr.t("Farmer's data: Open-Meteo is not answering; you get a notification when they come", "Date fermier: Open-Meteo nu răspunde; primești o notificare când vin"), 3500);
+		}
+		view.invalidate();
+	}
+
+	/** The town's weather while a parcel is shown: saved for the widgets and the notices only. */
+	private void fetchTownQuiet() {
+		if (townFetching) return;
+		townFetching = true;
+		final Cities.City c = town;
+		final Context ctx = getApplicationContext();
+		Log.i(this, "DATE", "descarc în fundal vremea pentru " + c.label() + " (pe ecran e o parcelă)");
+		new Thread(new Runnable() {
+			public void run() {
+				Fetcher.Result r = Fetcher.download(ctx, c);
+				Fetcher.save(ctx, c, r);
+				if (r.forecast != null) Widget.show(ctx);
+				handler.post(new Runnable() {
+					public void run() {
+						townFetching = false;
+					}
+				});
+			}
+		}).start();
+	}
+
+	/** A tap on the parcel's name: its whole name, its coordinates and what can be done with it. */
+	private void parcelBubble() {
+		final Parcels.Parcel p = Parcels.get(this, pageId);
+		if (p == null) return;
+		Log.i(this, "GEST", "atingere nume parcelă: " + p.name);
+		reopen = null;
+		List<Bubble.Row> rows = Bubble.rows();
+		rows.add(new Bubble.Row(Tr.t("Coordinates: ", "Coordonate: ") + String.format(java.util.Locale.US, "%.5f, %.5f", p.lat, p.lon), null, Bubble.Row.TEXT, false));
+		rows.add(new Bubble.Row(Tr.t("Near ", "Lângă ") + s.city.county + (s.city.abroad() ? ", " + s.city.country.toUpperCase() : ""), null, Bubble.Row.TEXT, false));
+		rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+		final String[] acts = { "stats", "map", "parcel" };
+		rows.add(Bubble.Row.item(Tr.t("Statistics and PDF", "Statistici și PDF")));
+		rows.add(Bubble.Row.item(Tr.t("Move the pin on the map", "Mută acul pe hartă")));
+		rows.add(Bubble.Row.item(Tr.t("Alerts, rename, delete", "Alerte, redenumire, ștergere")));
+		final int first = rows.size() - acts.length;
+		bubble.show(view.px(s.cityArea), bubbleWidth(0.86f, 280), p.name, rows, s.T.en, new Bubble.Pick() {
+			public void picked(int k) {
+				if (k < first || k >= first + acts.length) return;
+				bubble.hide();
+				startActivityForResult(new Intent(MainActivity.this, FarmActivity.class).putExtra("dark", s.dark)
+						.putExtra("open", acts[k - first]).putExtra("id", p.id), REQ_PARCELS);
+			}
+		});
+	}
+
+	@Override
+	protected void onActivityResult(int code, int res, Intent data) {
+		super.onActivityResult(code, res, data);
+		if (code != REQ_PARCELS) return;
+		long sel = data != null ? data.getLongExtra("select", -1) : -1;
+		// A parcel picked in ☰ › Parcele; or back: the parcel shown may be renamed, moved or deleted.
+		showPage(sel >= 0 ? sel : pageId);
 	}
 
 	/** Units and clock of the town shown (US towns imperial with a 12-hour clock, v2.30). */
@@ -881,6 +1122,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * stays as it is.
 	 */
 	public void onTownName() {
+		if (pageId != 0) {
+			parcelBubble();
+			return;
+		}
 		Log.i(this, "GEST", "atingere nume localitate (o căutare GPS)");
 		if (!Locator.allowed(this)) {
 			askLocation();
@@ -942,7 +1187,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				double la = Math.round(lat * 10000) / 10000.0, lo = Math.round(lon * 10000) / 10000.0;
 				// The town shown changes only when the phone is out of its boundary by more than
 				// EDGE_M metres (a more exact name, as a sector of the same town, is taken at once).
-				Cities.City cur = s.city;
+				Cities.City cur = MainActivity.this.town;
 				boolean same = found.same(cur);
 				Area area = cur == null || same ? null : loadArea(cur);
 				boolean keep = area != null && area.holds(lat, lon, EDGE_M);
@@ -964,7 +1209,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					}
 				}
 				view.invalidate();
-				if (moved || say) fetch();
+				if (moved || say) {
+					if (pageId != 0) fetchTownQuiet();
+					else fetch();
+				}
 				noteTop = false;
 			}
 
@@ -1193,6 +1441,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	private void fetch() {
 		if (fetching) return;
+		if (pageId != 0) {
+			fetchParcel();
+			return;
+		}
 		fetching = true;
 		lastTry = System.currentTimeMillis();
 		Log.i(this, "DATE", "descarc vremea pentru " + s.city.label());
@@ -1218,7 +1470,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		fetching = false;
 		lastDone = System.currentTimeMillis();
 		s.busy = false;
-		if (c != s.city) { // the town changed meanwhile
+		if (c != s.city) { // the town (or the main screen) changed meanwhile
+			if (c == town) {
+				Fetcher.save(this, c, r);
+				if (r.forecast != null) Widget.show(this);
+			}
 			fetch();
 			return;
 		}
@@ -1272,6 +1528,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.farmer = on;
 		s.hours.scroll = 0;
 		s.rain.scroll = 0;
+		// Back to the town's screen when leaving farmer mode; the dots when coming in (v2.60).
+		if (!on && pageId != 0) showPage(0);
+		pageState();
 		view.invalidate();
 		note(on ? Tr.t("Farmer mode: tap an hour or a rain box for details", "Mod Fermier: atinge o oră sau o casetă de ploaie pentru detalii")
 				: Tr.t("Normal mode", "Mod Normal"), 2500);
@@ -1280,13 +1539,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Downloads only the farmer's forecast for the town shown. */
 	private void fetchFarm() {
+		if (pageId != 0) {
+			fetch();
+			return;
+		}
 		final Cities.City c = s.city;
 		final Context ctx = getApplicationContext();
 		new Thread(new Runnable() {
 			public void run() {
 				String json = null;
 				try {
-					json = Weather.get(ro.meteoalarm.android.core.Farm.url(c.lat, c.lon, Fetcher.tz(c), 0, 3));
+					json = Weather.get(ro.meteoalarm.android.core.Farm.url(c.lat, c.lon, Fetcher.tz(c), 1, 3));
 					ro.meteoalarm.android.core.Farm.parse(json);
 					Fetcher.saveFarm(ctx, c, json);
 					Log.i(ctx, "FERMIER", "prognoza pentru fermieri " + c.name + " OK");
@@ -1312,17 +1575,19 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Farmer mode: a tap on an hour box (KIND 0) or a rain box (1), at B: its details in a bubble. */
 	public void onFarmBox(final int kind, final int k, final float[] b) {
-		Log.i(this, "GEST", "fermier: atingere casetă " + (kind == 0 ? "oră" : "ploaie") + " " + k);
+		Log.i(this, "GEST", "fermier: atingere casetă " + (kind == 0 ? "oră" : kind == 1 ? "ploaie" : kind == 2 ? "parcelă" : "ploaie 24 h") + " " + k);
 		reopen = new Runnable() {
 			public void run() {
 				onFarmBox(kind, k, s.farmBoxRect(kind, k));
 			}
 		};
-		List<String[]> info = kind == 0 ? s.hourInfo(k) : s.rainInfo(k);
+		List<String[]> info = kind == 0 ? s.hourInfo(k) : kind == 1 ? s.rainInfo(k) : kind == 2 ? s.parcelInfo(k) : s.rain24Info();
 		if (info.isEmpty()) return;
-		if (s.farm == null || s.farmIndex(k) < 0) {
+		boolean missing = kind <= 1 ? s.farm == null || s.farmIndex(k) < 0 : s.farm == null || s.farm.nowIndex(s.now) < 0;
+		if (missing) {
 			// Told that the data come later: they are fetched and notified (Viorel 2026-11-07).
-			Parcels.pendingMain(this);
+			if (pageId != 0) Parcels.pending(this, pageId);
+			else Parcels.pendingMain(this);
 			fetchFarm();
 		}
 		List<Bubble.Row> rows = Bubble.rows();
@@ -1551,7 +1816,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** ☰ › Parcels (farmer mode): the parcels' page, in the app's theme. */
 	private void openParcels() {
-		startActivity(new Intent(this, FarmActivity.class).putExtra("dark", s.dark));
+		startActivityForResult(new Intent(this, FarmActivity.class).putExtra("dark", s.dark), REQ_PARCELS);
 	}
 
 	private Bubble.Row row(String text, String icon) {
@@ -1569,20 +1834,47 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		};
 		final List<String> codes = Lang.offered(this);
+		final List<String> more = Lang.minorities(this);
 		List<Bubble.Row> rows = Bubble.rows();
 		for (String c : codes) rows.add(new Bubble.Row(Tr.name(c), mini("lang-" + c), Bubble.Row.ITEM, c.equals(s.T.lang)));
-		Log.i(this, "LIMBA", "lista de limbi: " + codes + " (țara " + Lang.country(this) + ")");
+		// Romania: the minorities' languages in a submenu of their own (Viorel 2026-11-07).
+		if (!more.isEmpty()) rows.add(new Bubble.Row(Tr.t("Other languages", "Alte limbi") + " ›", null, Bubble.Row.ITEM, more.contains(s.T.lang)));
+		Log.i(this, "LIMBA", "lista de limbi: " + codes + (more.isEmpty() ? "" : " + " + more) + " (țara " + Lang.country(this) + ")");
 		bubble.show(view.px(s.btnMenu), bubbleWidth(0.3f, 170), Tr.t("Language", "Limba"), rows, s.T.en, new Bubble.Pick() {
 			public void picked(int k) {
-				String c = codes.get(k);
-				Log.i(MainActivity.this, "LIMBA", "aleasă: " + Tr.name(c) + " (" + c + ")");
-				prefs.edit().putString("lang", c).apply();
-				applySettings();
-				Widget.show(MainActivity.this);
-				view.invalidate();
-				note(Tr.name(c));
+				if (k >= codes.size()) {
+					pickMinority(more);
+					return;
+				}
+				setLang(codes.get(k));
 			}
 		});
+	}
+
+	/** ☰ › Limba › Mai multe limbi: the languages of Romania's minorities (v2.60). */
+	private void pickMinority(final List<String> codes) {
+		reopen = new Runnable() {
+			public void run() {
+				pickMinority(codes);
+			}
+		};
+		Log.i(this, "LIMBA", "mai multe limbi: " + codes);
+		List<Bubble.Row> rows = Bubble.rows();
+		for (String c : codes) rows.add(new Bubble.Row(Tr.name(c), mini("lang-" + c), Bubble.Row.ITEM, c.equals(s.T.lang)));
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.3f, 170), Tr.t("Languages of the minorities", "Limbile minorităților"), rows, s.T.en, new Bubble.Pick() {
+			public void picked(int k) {
+				setLang(codes.get(k));
+			}
+		});
+	}
+
+	private void setLang(String c) {
+		Log.i(this, "LIMBA", "aleasă: " + Tr.name(c) + " (" + c + ")");
+		prefs.edit().putString("lang", c).apply();
+		applySettings();
+		Widget.show(this);
+		view.invalidate();
+		note(Tr.name(c));
 	}
 
 	/** Light, Dark, and Automatic (the phone's light sensor, when it has one). */
@@ -1620,14 +1912,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void quakesPage() {
 		Log.i(this, "CUTREMUR", "pagina de cutremure deschisă");
 		// The lists are of the town they were downloaded for (EMSC or USGS, v2.30).
-		if (!s.city.key().equals(quakesKey)) {
+		if (!town.key().equals(quakesKey)) {
 			quakesCountry = null;
 			quakesEurope = null;
-			quakesKey = s.city.key();
+			quakesKey = town.key();
 		}
 		showQuakes();
 		if (quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L) return;
-		final Cities.City c = s.city;
+		final Cities.City c = town;
 		final Context ctx = getApplicationContext();
 		new Thread(new Runnable() {
 			public void run() {
@@ -1670,7 +1962,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				hideBars();
 			}
 		});
-		Cities.City c = s.city;
+		Cities.City c = town;
 		if (c.us()) {
 			showQuakesUS(c);
 			return;
@@ -1755,7 +2047,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The postal code of the state of the town shown, else of the state the phone is in ("OK"). */
 	private String tornState() {
-		String st = s.city.us() ? Cities.stateCode(s.city.county) : "";
+		String st = town.us() ? Cities.stateCode(town.county) : "";
 		if (st.length() == 0) st = Cities.stateCode(Region.state(this));
 		return st;
 	}
@@ -1768,7 +2060,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void tornadoPage() {
 		Log.i(this, "TORNADE", "pagina de tornade deschisă");
 		final String st = tornState();
-		final String key = s.city.key() + "|" + st;
+		final String key = town.key() + "|" + st;
 		if (!key.equals(tornKey)) {
 			torn = null;
 			tornKey = key;
@@ -1831,7 +2123,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				hideBars();
 			}
 		});
-		Cities.City c = s.city;
+		Cities.City c = town;
 		long now = System.currentTimeMillis();
 		String st = tornState();
 		String stName = Cities.stateName(st);
@@ -1934,7 +2226,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 		help.begin(Tr.t("Help", "Ajutor"), Tr.t("Close", "Închide"), s.dark);
 		// United States (v2.30): its own Help, everything in imperial units.
-		boolean us = s.city.us() || Region.usPhone(this);
+		boolean us = town.us() || Region.usPhone(this);
 		if (us) {
 			help.section(Tr.t("United States", "Statele Unite"));
 			help.entry(mini("unit"), Tr.t("Imperial units", "Unități imperiale"), Tr.t("For US towns the app shows: temperature in °F (water freezes at 32 °F), wind and gusts in mph, visibility and distances in miles, pressure in inHg (about 30.00 inHg is normal; 29.50 is low, 30.50 high), the 12-hour clock with AM/PM and dates as month/day. ☰ › Temperature °C/°F asks before switching to the metric system.", "Pentru localitățile din SUA aplicația arată: temperatura în °F (apa îngheață la 32 °F), vântul și rafalele în mph, vizibilitatea și distanțele în mile, presiunea în inHg (în jur de 30,00 inHg e normal; 29,50 e scăzută, 30,50 ridicată), ceasul de 12 ore cu AM/PM și datele ca lună/zi. ☰ › Temperatura °C/°F întreabă înainte de a trece la sistemul metric."));
@@ -1950,10 +2242,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Atingerea unei ore deschide o bulă: temperatura, minima și maxima zilei, viteza vântului și rafalele, direcția vântului și când se prognozează că se schimbă, umiditatea aerului, șansa de ploaie, umiditatea solului (3–9 cm) și temperatura solului."));
 		help.entry(mini("farm"), Tr.t("Rain boxes", "Casetele de ploaie"), Tr.t("One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.",
 				"O casetă pe oră: șansa de ploaie cu cifre mari, o bară plină cât șansa, cantitatea și tipul (ploaie, averse, ninsoare, lapoviță). Atingerea arată detaliile: cantitatea pe tipuri, nebulozitatea, umiditatea și câtă ploaie mai vine până la miezul nopții."));
-		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.",
-				"☰ › Parcele (în modul fermier). „Salvează locul aici” ia poziția GPS de unde stai; apoi harta o arată cu un ac: mută harta ca acul să fie exact pe parcelă și dă-i un nume (ex. parcela 96/5). „Alege pe hartă” salvează o parcelă de acasă. Parcelele rămân doar în acest telefon, până le ștergi."));
-		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.",
-				"Casete separate pentru temperatura aerului, vânt, direcția vântului, șansa de ploaie, umiditatea aerului, umiditatea solului și temperatura solului, apoi următoarele 12 ore. Butoane: statistică, mută acul, alerte ploaie / vânt, redenumește, șterge."));
+		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.",
+				"☰ › Parcele (în modul fermier). „Salvează locul aici” ia poziția GPS de unde stai; apoi harta o arată cu un ac: mută harta ca acul să fie exact pe parcelă și dă-i un nume (ex. parcela 96/5). „Alege pe hartă” salvează o parcelă de acasă. „Șterge parcele” le arată cu câte o bifă; după Șterge aplicația mai întreabă o dată (Nu păstrează bifele). Sub linie, parcelele în ordinea numelor și a numerelor: atingerea arată parcela pe ecranul principal. Parcelele rămân doar în acest telefon, până le ștergi."));
+		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.",
+				"În modul fermier există un ecran principal pentru localitate și câte unul pentru fiecare parcelă, în ordinea din listă. Glisează în lateral peste temperatură și icon ca să treci de la unul la altul; punctele de sub linie arată câte sunt și pe care îl vezi. Aplicația ține minte ecranul afișat."));
+		help.entry(mini("parcel"), Tr.t("A parcel on the main screen", "O parcelă pe ecranul principal"), Tr.t("The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.",
+				"Vremea e a parcelei: numele ei deasupra liniei (tăiat cu „…” dacă e lung), orele, casetele de ploaie și, în rândul de jos, casetele ei: aer, vânt, direcție, ploaie, umiditate, sol și temperatura solului (atingerea arată următoarele 12 ore). Fără polen și fără cutremure; avertizările sunt ale zonei localității celei mai apropiate. Atingerea numelui arată numele întreg, coordonatele și statistica cu PDF, harta, alertele, redenumirea și ștergerea parcelei. Widgeturile și notificările rămân pe localitate."));
+		help.entry(mini("farm"), Tr.t("Rain in the last 24 hours", "Ploaia din ultimele 24 de ore"), Tr.t("In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.",
+				"În modul fermier caseta de lângă butoanele soare și temă arată câtă ploaie a căzut în ultimele 24 de ore în locul afișat (localitate sau parcelă); atingerea arată orele cu ploaie. O estimare Open-Meteo, nu un pluviometru."));
+		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.",
+				"Din numele parcelei de pe ecranul principal: casete separate pentru temperatura aerului, vânt, direcția vântului, șansa de ploaie, umiditatea aerului, umiditatea solului și temperatura solului, apoi următoarele 12 ore. Butoane: statistică, mută acul, alerte ploaie / vânt, redenumește, șterge."));
 		help.entry(mini("parcel"), Tr.t("Statistics and PDF", "Statistică și PDF"), Tr.t("For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.",
 				"Pentru o perioadă aleasă din ultimele 28 de zile: pe zi maxima și minima, ploaia totală, vântul maxim și umiditatea medie a solului, plus un rezumat al perioadei. „Salvează PDF în Descărcări” face un fișier pe care îl poți tipări sau trimite. Statistica se păstrează 28 de zile."));
 		help.entry(mini("bell"), Tr.t("Parcel alerts", "Alerte parcelă"), Tr.t("On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.",
@@ -2003,7 +2301,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("Light, Dark, or Automatic (phone sensor).", "Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("keepOn"), Tr.t("Screen on ON / OFF", "Ecran aprins ON / OFF"), Tr.t("ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.", "ON: ecranul rămâne aprins cât timp aplicația e deschisă. OFF: se stinge după timpul setat în telefon."));
 		if (us) help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("In the United States the list has English (US), Spanish and English, and the phone's own language. At the first start the app takes the phone's language: English (US) on an American phone in English.", "În Statele Unite lista are engleza americană (English US), spaniola și engleza, plus limba telefonului. La prima pornire aplicația ia limba telefonului: engleza americană pe un telefon american în engleză."));
-		else help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana.") + " " + Tr.t("The phone's own language is in the list too.", "În listă e și limba telefonului."));
+		else help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.", "Lista are engleza și limbile oficiale ale țării în care se află telefonul (după cartela SIM sau rețeaua mobilă; fără ele, după localitatea afișată). La prima pornire aplicația ia limba telefonului, dacă o are. Aplicația știe toate limbile oficiale ale UE și ucraineana.") + " " + Tr.t("The phone's own language is in the list too.", "În listă e și limba telefonului.")
+				+ " " + Tr.t("In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.",
+						"În România, „Alte limbi” de la sfârșitul listei deschide limbile minorităților principale pe care aplicația le știe: maghiara, germana, ucraineana, slovaca, bulgara, croata, ceha, polona, greaca și italiana."));
 		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		if (us) help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("A page like this one: the earthquakes of magnitude 2.5 or more of the last 7 days within 300 miles of your town, then those of magnitude 3 or more of the last 48 hours in the United States. Each row: the time, the place, the magnitude, the depth and the distance from your town, in miles. From USGS; it scrolls.", "O pagină ca aceasta: cutremurele cu magnitudinea 2,5 sau mai mare din ultimele 7 zile, pe o rază de 300 de mile, apoi cele cu magnitudinea 3 sau mai mare din ultimele 48 de ore din Statele Unite. Pe fiecare rând: ora, locul, magnitudinea, adâncimea și distanța față de localitatea ta, în mile. De la USGS; pagina se derulează."));
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("A page like Earthquakes, for the United States: the tornado watches and warnings of your town and of your whole state now (National Weather Service), the tornadoes reported in the last 2 days within 300 miles (NOAA Storm Prediction Center, with the time, the place, the county, the EF strength when known and the distance in miles), how many there are now in the whole country, and what to do at a Watch and at a Warning. While a tornado watch or warning is in force for your town, the app refreshes every 5 minutes.", "O pagină ca Cutremure, pentru Statele Unite: atenționările și avertizările de tornadă de acum pentru localitatea ta și pentru tot statul (National Weather Service), tornadele raportate în ultimele 2 zile pe o rază de 300 de mile (NOAA Storm Prediction Center, cu ora, locul, comitatul, puterea EF când se cunoaște și distanța în mile), câte sunt acum în toată țara și ce faci la o atenționare (Watch) și la o avertizare (Warning). Cât timp e în vigoare o atenționare sau avertizare de tornadă pentru localitatea ta, aplicația se reîmprospătează la 5 minute."));
@@ -2412,16 +2712,30 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			n++;
 		}
 		prefs.edit().putString("city", c.key()).putString(key, favs.toString()).apply();
-		boolean same = c.same(s.city);
-		boolean kind = s.city == null || s.city.us() != c.us();
-		s.city = c;
+		boolean same = c.same(town);
+		boolean kind = town == null || town.us() != c.us();
+		town = c;
+		// A parcel shown (v2.60): the location changed the town in the background, the parcel stays.
+		if (pageId != 0 && !clear) {
+			pageState();
+			return;
+		}
+		// A town picked by hand: its own screen.
+		if (pageId != 0) {
+			pageId = 0;
+			prefs.edit().putLong("farmPage", 0).apply();
+			clear = true;
+		}
+		pageState();
 		applyUnits();
 		if (kind) Log.i(this, "US", "localitate " + (c.us() ? "din SUA: unități " : "din afara SUA: unități ") + (s.unitF ? "imperiale" : "metrice") + ", ceas " + (s.clk12 ? "12 h" : "24 h"));
 		if (clear || !same) {
 			s.farm = null;
 			s.w = null;
 			s.warns = null;
+			s.quakes = null;
 			s.pollenLvl = -1;
+			s.aqi = -1;
 			s.fetched = 0;
 		}
 		s.error = "";

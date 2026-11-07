@@ -1,3 +1,10 @@
+v2.60 · 7 novembre 2026
+- Modalità agricoltore: una schermata principale per la località e una per ogni appezzamento; si passa dall'una all'altra scorrendo sulla temperatura e sull'icona, e i punti sotto la linea indicano dove sei.
+- Un appezzamento nella schermata principale mostra il suo meteo e in basso le sue caselle (aria, vento, direzione, pioggia, umidità, suolo, temperatura del suolo), senza pollini né terremoti; un tocco sul nome mostra il nome intero e le coordinate. I widget e le notifiche restano sulla località.
+- Casella «pioggia 24 h» accanto ai pulsanti in basso; un tocco mostra le ore con pioggia.
+- ☰ › Appezzamenti: eliminazione con spunte e conferma; l'elenco nell'ordine di nomi e numeri.
+- In Romania il menu Lingua › Altre lingue offre le lingue delle minoranze: ungherese, tedesco, ucraino e altre.
+
 v2.50 · 7 novembre 2026
 - Modalità agricoltore: la prima voce di ☰ passa tra modalità agricoltore e modalità normale. In modalità agricoltore, toccare una casella oraria mostra la temperatura, la minima e la massima del giorno, il vento con raffiche e direzione (e quando gira), l'umidità dell'aria, la probabilità di pioggia, l'umidità e la temperatura del suolo; il grafico della pioggia e i cinque giorni sono sostituiti da caselle di pioggia ora per ora, con dettagli al tocco.
 - ☰ › Appezzamenti: salva il luogo dove ti trovi (GPS), sistemalo sulla mappa OpenStreetMap e dagli un nome; ogni appezzamento ha caselle per vento, direzione, pioggia, umidità dell'aria e del suolo, temperatura del suolo e dell'aria, avvisi di pioggia e vento forte, e statistiche su un periodo degli ultimi 28 giorni, salvabili in PDF in Download.

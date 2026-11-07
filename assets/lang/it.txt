@@ -537,3 +537,37 @@ Cloud cover: 	Nuvolosità:
 Until midnight: 	Fino a mezzanotte: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Fonte: Open-Meteo. La probabilità dice quanto è probabile che piova in quell'ora, non per quanto tempo.
 FARMER	AGRICOLTORE
+Delete parcels	Elimina appezzamenti
+Tap a parcel to see it on the main screen.	Tocca un appezzamento per vederlo nella schermata principale.
+Saved: 	Salvato: 
+Tick the parcels to delete, then tap Delete.	Spunta gli appezzamenti da eliminare, poi tocca Elimina.
+Are you sure?	Sei sicuro?
+These parcels and their statistics are deleted from the phone: 	Questi appezzamenti e le loro statistiche vengono eliminati dal telefono: 
+Yes, delete	Sì, elimina
+Deleted: 	Eliminati: 
+No	No
+This is the first screen	Questa è la prima schermata
+This is the last screen	Questa è l'ultima schermata
+Near 	Vicino a 
+Alerts, rename, delete	Avvisi, rinomina, elimina
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Appezzamenti (in modalità agricoltore). «Salva il luogo qui» prende la posizione GPS dove ti trovi; poi la mappa la mostra con uno spillo: sposta la mappa per mettere lo spillo esattamente sull'appezzamento e dagli un nome (es. appezzamento 96/5). «Scegli sulla mappa» salva un appezzamento da casa. «Elimina appezzamenti» li mostra con una casella ciascuno; dopo Elimina l'app chiede ancora una volta (No mantiene le spunte). Sotto la linea, gli appezzamenti nell'ordine di nomi e numeri: un tocco mostra l'appezzamento nella schermata principale. Gli appezzamenti restano solo su questo telefono, finché non li elimini.
+Main screens	Schermate principali
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Nella modalità agricoltore c'è una schermata principale per la località e una per ogni appezzamento, nell'ordine dell'elenco. Scorri di lato sulla temperatura e sull'icona per passare dall'una all'altra; i punti sotto la linea mostrano quante sono e quale stai vedendo. L'app ricorda la schermata mostrata.
+A parcel on the main screen	Un appezzamento nella schermata principale
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Il meteo è quello dell'appezzamento: il suo nome sopra la linea (tagliato con «…» se lungo), le ore, le caselle della pioggia e, nella fila in basso, le sue caselle: aria, vento, direzione, pioggia, umidità, suolo e temperatura del suolo (un tocco mostra le prossime 12 ore). Niente pollini né terremoti; le allerte sono quelle della zona della località più vicina. Un tocco sul nome mostra il nome intero, le coordinate e le statistiche con PDF, la mappa, gli avvisi, la rinomina e l'eliminazione dell'appezzamento. I widget e le notifiche restano sulla località.
+Rain in the last 24 hours	Pioggia delle ultime 24 ore
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Nella modalità agricoltore la casella accanto ai pulsanti sole e tema mostra quanta pioggia è caduta nelle ultime 24 ore nel luogo mostrato (località o appezzamento); un tocco mostra le ore con pioggia. Una stima di Open-Meteo, non un pluviometro.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Dal nome dell'appezzamento nella schermata principale: caselle separate per temperatura dell'aria, vento, direzione del vento, probabilità di pioggia, umidità dell'aria, umidità del suolo e temperatura del suolo, poi le prossime 12 ore. Pulsanti: statistiche, sposta lo spillo, avvisi pioggia / vento, rinomina, elimina.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	In Romania, «Altre lingue» in fondo all'elenco apre le lingue delle principali minoranze che l'app conosce: ungherese, tedesco, ucraino, slovacco, bulgaro, croato, ceco, polacco, greco e italiano.
+AIR	ARIA
+DIRECTION	DIREZIONE
+SOIL	SUOLO
+SOIL TEMP.	TEMP. SUOLO
+Now: 	Ora: 
+Total: 	Totale: 
+No rain in the last 24 hours.	Nessuna pioggia nelle ultime 24 ore.
+Hours with rain	Ore con pioggia
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Una stima di Open-Meteo dai modelli meteo, non una misura di pluviometro sul posto.
+rain 24 h	pioggia 24 h
+Other languages	Altre lingue
+Languages of the minorities	Lingue delle minoranze

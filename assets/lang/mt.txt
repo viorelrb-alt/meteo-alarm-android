@@ -537,3 +537,37 @@ Cloud cover: 	Sħab:
 Until midnight: 	Sa nofsillejl: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Sors: Open-Meteo. Iċ-ċans huwa kemm hi probabbli x-xita f'dik is-siegħa, mhux kemm iddum tagħmel.
 FARMER	BIDWI
+Delete parcels	Ħassar għelieqi
+Tap a parcel to see it on the main screen.	Agħfas fuq għalqa biex tarah fuq l-iskrin ewlieni.
+Saved: 	Issejvjat: 
+Tick the parcels to delete, then tap Delete.	Immarka l-għelieqi li trid tħassar, imbagħad agħfas Ħassar.
+Are you sure?	Żgur?
+These parcels and their statistics are deleted from the phone: 	Dawn l-għelieqi u l-istatistika tagħhom jitħassru mit-telefon: 
+Yes, delete	Iva, ħassar
+Deleted: 	Imħassra: 
+No	Le
+This is the first screen	Dan hu l-ewwel skrin
+This is the last screen	Dan hu l-aħħar skrin
+Near 	Qrib 
+Alerts, rename, delete	Twissijiet, semmi mill-ġdid, ħassar
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Għelieqi (fil-modalità tal-bidwi). “Issejvja l-post hawn” jieħu l-pożizzjoni GPS fejn int wieqaf; imbagħad il-mappa turiha b'pin: ċaqlaq il-mappa biex il-pin ikun eżatt fuq l-għalqa u agħtiha isem (eż. għalqa 96/5). “Agħżel fuq il-mappa” jissejvja għalqa mid-dar. “Ħassar għelieqi” jurihom b'kaxxa tal-immarkar kull waħda; wara Ħassar l-app terġa' tistaqsi (Le jżomm l-immarkar). Taħt il-linja, l-għelieqi skont l-ordni tal-ismijiet u n-numri: tagħfisa turi l-għalqa fuq l-iskrin ewlieni. L-għelieqi jibqgħu biss fuq dan il-mowbajl, sakemm tħassarhom.
+Main screens	Skrins ewlenin
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Fil-modalità tal-bidwi hemm skrin ewlieni għall-belt u wieħed għal kull għalqa, skont l-ordni tal-lista. Żerżaq ġenb fuq it-temperatura u l-ikona biex tgħaddi minn wieħed għall-ieħor; it-tikek taħt il-linja juru kemm hemm u liema qed tara. L-app tiftakar l-iskrin muri.
+A parcel on the main screen	Għalqa fuq l-iskrin ewlieni
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	It-temp huwa tal-għalqa: isimha fuq il-linja (imqassar b'“…” meta twil), is-sigħat, il-kaxxi tax-xita u fir-ringiela t'isfel il-kaxxi tagħha: arja, riħ, direzzjoni, xita, umdità, ħamrija u temperatura tal-ħamrija (tagħfisa turi t-12-il siegħa li ġejjin). Bla polline u bla terremoti; it-twissijiet huma taż-żona tal-eqreb belt. Tagħfisa fuq l-isem turi l-isem kollu, il-koordinati u l-istatistika tal-għalqa bil-PDF, il-mappa, it-twissijiet, l-isem il-ġdid u t-tħassir. Il-widgets u n-notifiki jibqgħu fuq il-belt.
+Rain in the last 24 hours	Xita fl-aħħar 24 siegħa
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Fil-modalità tal-bidwi l-kaxxa ħdejn il-buttuni tax-xemx u tat-tema turi kemm għamlet xita fl-aħħar 24 siegħa fil-post muri (belt jew għalqa); tagħfisa turi s-sigħat bix-xita. Stima ta' Open-Meteo, mhux kejl tax-xita.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Mill-isem tal-għalqa fuq l-iskrin ewlieni: kaxxi separati għat-temperatura tal-arja, riħ, direzzjoni tar-riħ, ċans ta' xita, umdità tal-arja, umdità tal-ħamrija u temperatura tal-ħamrija, imbagħad il-12-il siegħa li ġejjin. Buttuni: statistika, ċaqlaq il-pin, twissijiet ta' xita / riħ, ibdel l-isem, ħassar.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Fir-Rumanija, “Lingwi oħra” fl-aħħar tal-lista jiftaħ il-lingwi tal-minoranzi ewlenin li titkellem l-app: Ungeriż, Ġermaniż, Ukren, Slovakk, Bulgaru, Kroat, Ċek, Pollakk, Grieg u Taljan.
+AIR	ARJA
+DIRECTION	DIREZZJONI
+SOIL	ĦAMRIJA
+SOIL TEMP.	TEMP. ĦAMRIJA
+Now: 	Issa: 
+Total: 	Total: 
+No rain in the last 24 hours.	L-ebda xita fl-aħħar 24 siegħa.
+Hours with rain	Sigħat bix-xita
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Stima ta' Open-Meteo mill-mudelli tat-temp, mhux kejl b'miżura tax-xita fil-post.
+rain 24 h	xita 24 h
+Other languages	Lingwi oħra
+Languages of the minorities	Lingwi tal-minoranzi

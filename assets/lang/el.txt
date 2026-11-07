@@ -537,3 +537,37 @@ Cloud cover: 	Νεφοκάλυψη:
 Until midnight: 	Ως τα μεσάνυχτα: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Πηγή: Open-Meteo. Η πιθανότητα δείχνει πόσο πιθανό είναι να βρέξει εκείνη την ώρα, όχι πόση ώρα βρέχει.
 FARMER	ΑΓΡΟΤΗΣ
+Delete parcels	Διαγραφή αγροτεμαχίων
+Tap a parcel to see it on the main screen.	Πάτησε ένα αγροτεμάχιο για να το δεις στην κύρια οθόνη.
+Saved: 	Αποθηκεύτηκε: 
+Tick the parcels to delete, then tap Delete.	Σημείωσε τα αγροτεμάχια προς διαγραφή και πάτησε Διαγραφή.
+Are you sure?	Είσαι σίγουρος;
+These parcels and their statistics are deleted from the phone: 	Αυτά τα αγροτεμάχια και τα στατιστικά τους διαγράφονται από το τηλέφωνο: 
+Yes, delete	Ναι, διαγραφή
+Deleted: 	Διαγράφηκαν: 
+No	Όχι
+This is the first screen	Αυτή είναι η πρώτη οθόνη
+This is the last screen	Αυτή είναι η τελευταία οθόνη
+Near 	Κοντά σε 
+Alerts, rename, delete	Ειδοποιήσεις, μετονομασία, διαγραφή
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Αγροτεμάχια (στη λειτουργία αγρότη). Το «Αποθήκευση του σημείου εδώ» παίρνει τη θέση GPS όπου στέκεσαι· μετά ο χάρτης τη δείχνει με καρφίτσα: μετακίνησε τον χάρτη ώστε η καρφίτσα να είναι ακριβώς στο αγροτεμάχιο και δώσε του όνομα (π.χ. αγροτεμάχιο 96/5). Το «Επιλογή στον χάρτη» αποθηκεύει αγροτεμάχιο από το σπίτι. Η «Διαγραφή αγροτεμαχίων» τα δείχνει με ένα κουτάκι το καθένα· μετά τη Διαγραφή η εφαρμογή ρωτά ξανά (το Όχι κρατά τα σημάδια). Κάτω από τη γραμμή, τα αγροτεμάχια με σειρά ονομάτων και αριθμών: ένα πάτημα δείχνει το αγροτεμάχιο στην κύρια οθόνη. Τα αγροτεμάχια μένουν μόνο σε αυτό το τηλέφωνο, μέχρι να τα διαγράψεις.
+Main screens	Κύριες οθόνες
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Στη λειτουργία αγρότη υπάρχει μία κύρια οθόνη για την πόλη και μία για κάθε αγροτεμάχιο, με τη σειρά της λίστας. Σύρε πλάγια πάνω από τη θερμοκρασία και το εικονίδιο για να πας από τη μία στην επόμενη· οι τελείες κάτω από τη γραμμή δείχνουν πόσες είναι και ποια βλέπεις. Η εφαρμογή θυμάται την οθόνη που εμφανίζεται.
+A parcel on the main screen	Ένα αγροτεμάχιο στην κύρια οθόνη
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Ο καιρός είναι του αγροτεμαχίου: το όνομά του πάνω από τη γραμμή (κομμένο με «…» όταν είναι μεγάλο), οι ώρες, τα κουτάκια βροχής και στην κάτω σειρά τα δικά του κουτάκια: αέρας, άνεμος, κατεύθυνση, βροχή, υγρασία, έδαφος και θερμοκρασία εδάφους (ένα πάτημα δείχνει τις επόμενες 12 ώρες). Χωρίς γύρη και σεισμούς· οι προειδοποιήσεις είναι της περιοχής της πλησιέστερης πόλης. Ένα πάτημα στο όνομα δείχνει ολόκληρο το όνομα, τις συντεταγμένες και τα στατιστικά με PDF, τον χάρτη, τις ειδοποιήσεις, τη μετονομασία και τη διαγραφή του αγροτεμαχίου. Τα widget και οι ειδοποιήσεις μένουν στην πόλη.
+Rain in the last 24 hours	Βροχή τις τελευταίες 24 ώρες
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Στη λειτουργία αγρότη το κουτάκι δίπλα στα κουμπιά ήλιου και θέματος δείχνει πόση βροχή έπεσε τις τελευταίες 24 ώρες στο τόπο που εμφανίζεται (πόλη ή αγροτεμάχιο)· ένα πάτημα δείχνει τις ώρες με βροχή. Εκτίμηση του Open-Meteo, όχι βροχόμετρο.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Από το όνομα του αγροτεμαχίου στην κύρια οθόνη: χωριστά πλαίσια για θερμοκρασία αέρα, άνεμο, κατεύθυνση ανέμου, πιθανότητα βροχής, υγρασία αέρα, υγρασία εδάφους και θερμοκρασία εδάφους, μετά οι επόμενες 12 ώρες. Κουμπιά: στατιστικά, μετακίνηση καρφίτσας, ειδοποιήσεις βροχής / ανέμου, μετονομασία, διαγραφή.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Στη Ρουμανία, οι «Άλλες γλώσσες» στο τέλος της λίστας ανοίγουν τις γλώσσες των κύριων μειονοτήτων που μιλά η εφαρμογή: ουγγρικά, γερμανικά, ουκρανικά, σλοβακικά, βουλγαρικά, κροατικά, τσεχικά, πολωνικά, ελληνικά και ιταλικά.
+AIR	ΑΕΡΑΣ
+DIRECTION	ΚΑΤΕΥΘΥΝΣΗ
+SOIL	ΕΔΑΦΟΣ
+SOIL TEMP.	ΘΕΡΜ. ΕΔΑΦΟΥΣ
+Now: 	Τώρα: 
+Total: 	Σύνολο: 
+No rain in the last 24 hours.	Καμία βροχή τις τελευταίες 24 ώρες.
+Hours with rain	Ώρες με βροχή
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Εκτίμηση του Open-Meteo από τα μετεωρολογικά μοντέλα, όχι μέτρηση βροχομέτρου στο σημείο.
+rain 24 h	βροχή 24 ω
+Other languages	Άλλες γλώσσες
+Languages of the minorities	Γλώσσες των μειονοτήτων

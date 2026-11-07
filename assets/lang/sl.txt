@@ -537,3 +537,37 @@ Cloud cover: 	Oblačnost:
 Until midnight: 	Do polnoči: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Vir: Open-Meteo. Verjetnost pove, kako verjetno v tisti uri dežuje, ne koliko časa.
 FARMER	KMET
+Delete parcels	Izbriši parcele
+Tap a parcel to see it on the main screen.	Tapni parcelo, da jo vidiš na glavnem zaslonu.
+Saved: 	Shranjeno: 
+Tick the parcels to delete, then tap Delete.	Označi parcele za brisanje, nato tapni Izbriši.
+Are you sure?	Si prepričan?
+These parcels and their statistics are deleted from the phone: 	Te parcele in njihova statistika bodo izbrisane s telefona: 
+Yes, delete	Da, izbriši
+Deleted: 	Izbrisano: 
+No	Ne
+This is the first screen	To je prvi zaslon
+This is the last screen	To je zadnji zaslon
+Near 	Pri 
+Alerts, rename, delete	Opozorila, preimenovanje, brisanje
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Parcele (v načinu kmeta). »Shrani kraj tukaj« vzame položaj GPS, kjer stojiš; nato ga zemljevid pokaže z buciko: premakni zemljevid, da bo bucika točno na parceli, in jo poimenuj (npr. parcela 96/5). »Izberi na zemljevidu« shrani parcelo od doma. »Izbriši parcele« jih prikaže, vsako s potrditvenim poljem; po Izbriši aplikacija vpraša še enkrat (Ne ohrani oznake). Pod črto so parcele po vrstnem redu imen in številk: tap pokaže parcelo na glavnem zaslonu. Parcele ostanejo samo na tem telefonu, dokler jih ne izbrišeš.
+Main screens	Glavni zasloni
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	V načinu kmeta je en glavni zaslon za kraj in po eden za vsako parcelo, v vrstnem redu seznama. Podrsaj vstran čez temperaturo in ikono, da greš z enega na naslednjega; pike pod črto kažejo, koliko jih je in katerega vidiš. Aplikacija si zapomni prikazani zaslon.
+A parcel on the main screen	Parcela na glavnem zaslonu
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Vreme je parcelino: njeno ime nad črto (pri dolgem imenu skrajšano s »…«), ure, polja dežja in v spodnji vrsti njena polja: zrak, veter, smer, dež, vlaga, tla in temperatura tal (tap pokaže naslednjih 12 ur). Brez cvetnega prahu in potresov; opozorila so za območje najbližjega kraja. Tap na ime pokaže celo ime, koordinate ter statistiko s PDF, zemljevid, opozorila, preimenovanje in brisanje parcele. Pripomočki in obvestila ostanejo pri kraju.
+Rain in the last 24 hours	Dež v zadnjih 24 urah
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	V načinu kmeta polje ob gumbih za sonce in temo pokaže, koliko je deževalo v zadnjih 24 urah na prikazanem mestu (kraj ali parcela); tap pokaže ure z dežjem. Ocena Open-Meteo, ne dežemer.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Iz imena parcele na glavnem zaslonu: ločena polja za temperaturo zraka, veter, smer vetra, verjetnost dežja, vlažnost zraka, vlažnost tal in temperaturo tal, nato naslednjih 12 ur. Gumbi: statistika, premakni buciko, opozorila dež / veter, preimenuj, izbriši.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	V Romuniji »Drugi jeziki« na koncu seznama odprejo jezike glavnih manjšin, ki jih aplikacija govori: madžarščina, nemščina, ukrajinščina, slovaščina, bolgarščina, hrvaščina, češčina, poljščina, grščina in italijanščina.
+AIR	ZRAK
+DIRECTION	SMER
+SOIL	TLA
+SOIL TEMP.	TEMP. TAL
+Now: 	Zdaj: 
+Total: 	Skupaj: 
+No rain in the last 24 hours.	V zadnjih 24 urah ni deževalo.
+Hours with rain	Ure z dežjem
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Ocena Open-Meteo iz vremenskih modelov, ne meritev z dežemerom na mestu.
+rain 24 h	dež 24 h
+Other languages	Drugi jeziki
+Languages of the minorities	Jeziki manjšin

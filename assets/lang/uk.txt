@@ -537,3 +537,37 @@ Cloud cover: 	Хмарність:
 Until midnight: 	До півночі: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Джерело: Open-Meteo. Ймовірність показує, наскільки ймовірно, що в цю годину йтиме дощ, а не як довго.
 FARMER	ФЕРМЕР
+Delete parcels	Видалити ділянки
+Tap a parcel to see it on the main screen.	Торкніться ділянки, щоб побачити її на головному екрані.
+Saved: 	Збережено: 
+Tick the parcels to delete, then tap Delete.	Позначте ділянки для видалення, потім торкніться Видалити.
+Are you sure?	Ви впевнені?
+These parcels and their statistics are deleted from the phone: 	Ці ділянки та їхню статистику буде видалено з телефона: 
+Yes, delete	Так, видалити
+Deleted: 	Видалено: 
+No	Ні
+This is the first screen	Це перший екран
+This is the last screen	Це останній екран
+Near 	Біля 
+Alerts, rename, delete	Сповіщення, перейменування, видалення
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Ділянки (у режимі фермера). «Зберегти місце тут» бере GPS-позицію, де ти стоїш; потім мапа показує її зі шпилькою: пересунь мапу, щоб шпилька була точно на ділянці, і дай їй назву (напр. ділянка 96/5). «Вибрати на мапі» зберігає ділянку з дому. «Видалити ділянки» показує їх, кожну з полем для позначки; після Видалити застосунок питає ще раз (Ні зберігає позначки). Під лінією — ділянки за порядком назв і номерів: дотик показує ділянку на головному екрані. Ділянки залишаються лише на цьому телефоні, доки ти їх не видалиш.
+Main screens	Головні екрани
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	У режимі фермера є головний екран для населеного пункту і по одному для кожної ділянки, у порядку списку. Проведіть пальцем убік по температурі та значку, щоб перейти від одного до наступного; крапки під лінією показують, скільки їх і який ви бачите. Застосунок запам'ятовує показаний екран.
+A parcel on the main screen	Ділянка на головному екрані
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Погода — для ділянки: її назва над лінією (скорочена «…», якщо довга), години, поля дощу, а в нижньому ряду її власні поля: повітря, вітер, напрямок, дощ, вологість, ґрунт і температура ґрунту (дотик показує наступні 12 годин). Без пилку й землетрусів; попередження — для району найближчого населеного пункту. Дотик до назви показує повну назву, координати, а також статистику з PDF, карту, сповіщення, перейменування й видалення ділянки. Віджети та сповіщення залишаються для населеного пункту.
+Rain in the last 24 hours	Дощ за останні 24 години
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	У режимі фермера поле біля кнопок сонця й теми показує, скільки випало дощу за останні 24 години в показаному місці (населений пункт або ділянка); дотик показує години з дощем. Оцінка Open-Meteo, не дощомір.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	З назви ділянки на головному екрані: окремі поля для температури повітря, вітру, напряму вітру, ймовірності дощу, вологості повітря, вологості ґрунту й температури ґрунту, потім наступні 12 годин. Кнопки: статистика, пересунути шпильку, сповіщення дощ / вітер, перейменувати, видалити.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	У Румунії «Інші мови» в кінці списку відкривають мови основних меншин, якими говорить застосунок: угорська, німецька, українська, словацька, болгарська, хорватська, чеська, польська, грецька та італійська.
+AIR	ПОВІТРЯ
+DIRECTION	НАПРЯМОК
+SOIL	ҐРУНТ
+SOIL TEMP.	ТЕМП. ҐРУНТУ
+Now: 	Зараз: 
+Total: 	Разом: 
+No rain in the last 24 hours.	За останні 24 години дощу не було.
+Hours with rain	Години з дощем
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Оцінка Open-Meteo з погодних моделей, а не вимірювання дощоміром на місці.
+rain 24 h	дощ 24 год
+Other languages	Інші мови
+Languages of the minorities	Мови меншин

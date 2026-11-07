@@ -1,3 +1,10 @@
+v2.60 · 7. marraskuuta 2026
+- Viljelijätila: päänäkymä paikkakunnalle ja yksi kullekin lohkolle; vaihdat niiden välillä pyyhkäisemällä lämpötilan ja kuvakkeen yli, ja viivan alla olevat pisteet näyttävät, missä olet.
+- Päänäkymän lohko näyttää oman säänsä ja alhaalla omat ruutunsa (ilma, tuuli, suunta, sade, kosteus, maa, maan lämpötila), ilman siitepölyä ja maanjäristyksiä; nimen napautus näyttää koko nimen ja koordinaatit. Widgetit ja ilmoitukset pysyvät paikkakunnalla.
+- Ruutu ”sade 24 h” alapainikkeiden vieressä; napautus näyttää sadetunnit.
+- ☰ › Lohkot: poisto valinnoilla ja vahvistuksella; luettelo nimien ja numeroiden järjestyksessä.
+- Romaniassa valikko Kieli › Muut kielet tarjoaa vähemmistöjen kieliä: unkari, saksa, ukraina ja muita.
+
 v2.50 · 7. marraskuuta 2026
 - Viljelijätila: ☰-valikon ensimmäinen kohta vaihtaa viljelijätilan ja normaalin tilan välillä. Viljelijätilassa tuntiruudun napautus näyttää lämpötilan, päivän alimman ja ylimmän, tuulen puuskineen ja suuntineen (ja milloin se kääntyy), ilmankosteuden, sateen todennäköisyyden, maan kosteuden ja maan lämpötilan; sadekaavion ja viiden päivän tilalle tulevat tunnin sadeneliöt, joista näkee tiedot napauttamalla.
 - ☰ › Lohkot: tallenna paikka, jossa seisot (GPS), korjaa se OpenStreetMap-kartalla ja anna nimi; jokaisella lohkolla on ruudut tuulelle, suunnalle, sateelle, ilman ja maan kosteudelle, maan ja ilman lämpötilalle, sade- ja kovan tuulen hälytykset sekä tilastot viimeisten 28 päivän jaksolta, tallennettavissa PDF:nä Latauksiin.

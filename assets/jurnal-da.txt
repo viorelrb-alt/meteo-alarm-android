@@ -1,3 +1,10 @@
+v2.60 · 7. november 2026
+- Landmandstilstand: en hovedskærm for byen og én for hver mark; du skifter ved at stryge sidelæns over temperaturen og ikonet, og prikkerne under linjen viser, hvor du er.
+- En mark på hovedskærmen viser sit vejr og nederst sine felter (luft, vind, retning, regn, fugtighed, jord, jordtemperatur), uden pollen og jordskælv; et tryk på navnet viser hele navnet og koordinaterne. Widgets og notifikationer bliver ved byen.
+- Feltet “regn 24 t” ved knapperne nederst; et tryk viser timerne med regn.
+- ☰ › Marker: sletning med flueben og bekræftelse; listen i rækkefølge efter navne og numre.
+- I Rumænien tilbyder menuen Sprog › Andre sprog mindretallenes sprog: ungarsk, tysk, ukrainsk og andre.
+
 v2.50 · 7. november 2026
 - Landmandstilstand: det første punkt i ☰ skifter mellem landmandstilstand og normal tilstand. I landmandstilstand viser et tryk på en timeboks temperatur, dagens laveste og højeste, vind med vindstød og retning (og hvornår den drejer), luftfugtighed, chance for regn, jordfugtighed og jordtemperatur; nedbørsgrafen og de fem dage erstattes af regnbokse pr. time med detaljer ved tryk.
 - ☰ › Marker: gem stedet, hvor du står (GPS), ret det på OpenStreetMap-kortet og giv det et navn; hver mark har bokse for vind, retning, regn, luft- og jordfugtighed, jord- og lufttemperatur, varsler om regn og kraftig vind og statistik for en periode inden for de sidste 28 dage, som kan gemmes som PDF i Overførsler.

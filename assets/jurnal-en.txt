@@ -1,3 +1,10 @@
+v2.60 · 7 November 2026
+- Farmer mode: a main screen for the town and one for each parcel; you go from one to the next by sliding over the temperature and the icon, and the dots under the line show where you are.
+- A parcel on the main screen shows its weather and, at the bottom, its boxes (air, wind, direction, rain, humidity, soil, soil temperature), without pollen and earthquakes; a tap on the name shows the whole name and the coordinates. The widgets and the notifications stay on the town.
+- The “rain 24 h” box next to the bottom buttons; a tap shows the hours with rain.
+- ☰ › Parcels: delete with ticks and a confirmation; the list in the order of names and numbers.
+- In Romania, the Language › Other languages menu offers the minorities' languages: Hungarian, German, Ukrainian and others.
+
 v2.50 · 7 November 2026
 - Farmer mode: the first item of ☰ switches between Farmer mode and Normal mode. In farmer mode a tap on an hour box shows the temperature, the day's low and high, the wind with gusts and direction (and when it turns), air humidity, chance of rain, soil moisture and soil temperature; the precipitation chart and the five days give way to hourly rain boxes, with details on tap.
 - ☰ › Parcels: save the place where you stand (GPS), correct it on the OpenStreetMap map and give it a name; every parcel has boxes for wind, direction, rain, air and soil humidity, soil and air temperature, rain and strong-wind alerts and statistics for a period within the last 28 days, saved as PDF in Downloads.

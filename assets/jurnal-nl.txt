@@ -1,3 +1,10 @@
+v2.60 · 7 november 2026
+- Boerenmodus: een hoofdscherm voor de plaats en een voor elk perceel; je wisselt door zijwaarts over de temperatuur en het pictogram te vegen, de stippen onder de lijn tonen waar je bent.
+- Een perceel op het hoofdscherm toont zijn weer en onderaan zijn vakjes (lucht, wind, richting, regen, vochtigheid, bodem, bodemtemperatuur), zonder pollen en aardbevingen; een tik op de naam toont de hele naam en de coördinaten. De widgets en de meldingen blijven bij de plaats.
+- Vakje „regen 24 u” naast de knoppen onderaan; een tik toont de uren met regen.
+- ☰ › Percelen: verwijderen met vinkjes en bevestiging; de lijst op volgorde van naam en nummer.
+- In Roemenië biedt het menu Taal › Andere talen de talen van de minderheden: Hongaars, Duits, Oekraïens en andere.
+
 v2.50 · 7 november 2026
 - Boerenmodus: het eerste item van ☰ wisselt tussen boerenmodus en normale modus. In de boerenmodus toont tikken op een uurvak de temperatuur, het laagste en hoogste van de dag, de wind met windstoten en richting (en wanneer die draait), de luchtvochtigheid, de kans op regen, het bodemvocht en de bodemtemperatuur; de regengrafiek en de vijf dagen worden vervangen door regenvakken per uur, met details bij tikken.
 - ☰ › Percelen: sla de plek op waar je staat (gps), zet die goed op de OpenStreetMap-kaart en geef een naam; elk perceel heeft vakken voor wind, richting, regen, lucht- en bodemvocht, bodem- en luchttemperatuur, meldingen bij regen en harde wind, en statistiek over een periode van de laatste 28 dagen, op te slaan als pdf in Downloads.

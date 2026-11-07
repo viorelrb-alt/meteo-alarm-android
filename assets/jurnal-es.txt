@@ -1,3 +1,10 @@
+v2.60 · 7 de noviembre de 2026
+- Modo agricultor: una pantalla principal para la localidad y una para cada parcela; se pasa de una a otra deslizando sobre la temperatura y el icono, y los puntos bajo la línea indican dónde estás.
+- Una parcela en la pantalla principal muestra su tiempo y abajo sus casillas (aire, viento, dirección, lluvia, humedad, suelo, temperatura del suelo), sin polen ni terremotos; un toque en el nombre muestra el nombre completo y las coordenadas. Los widgets y las notificaciones siguen en la localidad.
+- Casilla «lluvia 24 h» junto a los botones de abajo; un toque muestra las horas con lluvia.
+- ☰ › Parcelas: borrado con casillas y confirmación; la lista en el orden de nombres y números.
+- En Rumanía, el menú Idioma › Otros idiomas ofrece los idiomas de las minorías: húngaro, alemán, ucraniano y otros.
+
 v2.50 · 7 de noviembre de 2026
 - Modo agricultor: el primer elemento de ☰ cambia entre modo agricultor y modo normal. En modo agricultor, tocar una casilla horaria muestra la temperatura, la mínima y la máxima del día, el viento con rachas y dirección (y cuándo gira), la humedad del aire, la probabilidad de lluvia, la humedad y la temperatura del suelo; el gráfico de lluvia y los cinco días se sustituyen por casillas de lluvia por horas, con detalles al tocarlas.
 - ☰ › Parcelas: guarda el lugar donde estás (GPS), ajústalo en el mapa de OpenStreetMap y ponle un nombre; cada parcela tiene casillas de viento, dirección, lluvia, humedad del aire y del suelo, temperatura del suelo y del aire, alertas de lluvia y viento fuerte, y estadísticas de un periodo de los últimos 28 días, que se pueden guardar en PDF en Descargas.

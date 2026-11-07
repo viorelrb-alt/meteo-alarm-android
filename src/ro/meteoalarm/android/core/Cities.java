@@ -144,6 +144,30 @@ public final class Cities {
 		return l;
 	}
 
+	/**
+	 * The listed town nearest to LAT, LON (null when the list is empty): a parcel takes its
+	 * country and county, for the warnings (v2.60).
+	 */
+	public City nearest(double lat, double lon) {
+		City best = null;
+		double bd = Double.MAX_VALUE, k = Math.cos(Math.toRadians(lat));
+		List<Map<String, List<City>>> all = new ArrayList<Map<String, List<City>>>();
+		all.add(byCounty);
+		all.add(abroad);
+		all.add(usStates);
+		for (Map<String, List<City>> m : all)
+			for (List<City> l : m.values())
+				for (City c : l) {
+					if (c.lat == 0 && c.lon == 0) continue;
+					double dy = c.lat - lat, dx = (c.lon - lon) * k, d = dx * dx + dy * dy;
+					if (d < bd) {
+						bd = d;
+						best = c;
+					}
+				}
+		return best;
+	}
+
 	public City find(String name) {
 		for (List<City> l : byCounty.values()) for (City c : l) if (c.name.equals(name)) return c;
 		return null;

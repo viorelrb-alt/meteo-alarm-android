@@ -1,3 +1,10 @@
+v2.60 · 7 november 2026
+- Lantbruksläge: en huvudskärm för orten och en för varje skifte; du byter genom att svepa åt sidan över temperaturen och ikonen, och prickarna under linjen visar var du är.
+- Ett skifte på huvudskärmen visar sitt väder och längst ner sina rutor (luft, vind, riktning, regn, fuktighet, mark, marktemperatur), utan pollen och jordbävningar; ett tryck på namnet visar hela namnet och koordinaterna. Widgetar och aviseringar stannar på orten.
+- Rutan ”regn 24 h” bredvid knapparna längst ner; ett tryck visar timmarna med regn.
+- ☰ › Skiften: radering med bockar och bekräftelse; listan i ordning efter namn och nummer.
+- I Rumänien erbjuder menyn Språk › Andra språk minoriteternas språk: ungerska, tyska, ukrainska och andra.
+
 v2.50 · 7 november 2026
 - Lantbruksläge: första posten i ☰ växlar mellan lantbruksläge och normalt läge. I lantbruksläget visar ett tryck på en timruta temperatur, dagens lägsta och högsta, vind med byar och riktning (och när den vrider), luftfuktighet, risk för regn, markfuktighet och marktemperatur; nederbördsdiagrammet och de fem dagarna ersätts av regnrutor per timme med detaljer vid tryck.
 - ☰ › Skiften: spara platsen där du står (GPS), justera den på OpenStreetMap-kartan och ge den ett namn; varje skifte har rutor för vind, riktning, regn, luft- och markfuktighet, mark- och lufttemperatur, varningar för regn och hård vind och statistik för en period inom de senaste 28 dagarna, som kan sparas som PDF i Hämtade filer.

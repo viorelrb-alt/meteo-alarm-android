@@ -537,3 +537,37 @@ Cloud cover: 	Mākoņainība:
 Until midnight: 	Līdz pusnaktij: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Avots: Open-Meteo. Iespējamība rāda, cik ticams ir lietus šajā stundā, nevis cik ilgi līst.
 FARMER	LAUKSAIMNIEKS
+Delete parcels	Dzēst laukus
+Tap a parcel to see it on the main screen.	Pieskaries laukam, lai redzētu to galvenajā ekrānā.
+Saved: 	Saglabāts: 
+Tick the parcels to delete, then tap Delete.	Atzīmē dzēšamos laukus un tad pieskaries Dzēst.
+Are you sure?	Vai esi pārliecināts?
+These parcels and their statistics are deleted from the phone: 	Šie lauki un to statistika tiks izdzēsti no tālruņa: 
+Yes, delete	Jā, dzēst
+Deleted: 	Izdzēsti: 
+No	Nē
+This is the first screen	Šis ir pirmais ekrāns
+This is the last screen	Šis ir pēdējais ekrāns
+Near 	Pie 
+Alerts, rename, delete	Brīdinājumi, pārdēvēt, dzēst
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Lauki (lauksaimnieka režīmā). “Saglabāt šo vietu” ņem GPS atrašanās vietu, kur stāvat; pēc tam karte to rāda ar adatu: pārvietojiet karti, lai adata būtu tieši uz lauka, un piešķiriet nosaukumu (piem., lauks 96/5). “Izvēlēties kartē” saglabā lauku no mājām. “Dzēst laukus” parāda tos katru ar izvēles rūtiņu; pēc Dzēst lietotne vēlreiz pajautā (Nē saglabā atzīmes). Zem līnijas ir lauki nosaukumu un numuru secībā: pieskāriens parāda lauku galvenajā ekrānā. Lauki paliek tikai šajā tālrunī, līdz tos izdzēsīsiet.
+Main screens	Galvenie ekrāni
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Lauksaimnieka režīmā ir galvenais ekrāns apdzīvotajai vietai un pa vienam katram laukam, saraksta secībā. Pavelc ar pirkstu uz sāniem pāri temperatūrai un ikonai, lai pārietu no viena uz nākamo; punkti zem līnijas rāda, cik to ir un kuru tu redzi. Lietotne atceras parādīto ekrānu.
+A parcel on the main screen	Lauks galvenajā ekrānā
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Laikapstākļi ir lauka: tā nosaukums virs līnijas (garš nosaukums saīsināts ar “…”), stundas, lietus lodziņi un apakšējā rindā tā lodziņi: gaiss, vējš, virziens, lietus, mitrums, augsne un augsnes temperatūra (pieskāriens parāda nākamās 12 stundas). Bez ziedputekšņiem un zemestrīcēm; brīdinājumi ir tuvākās apdzīvotās vietas apgabalam. Pieskāriens nosaukumam parāda visu nosaukumu, koordinātas un lauka statistiku ar PDF, karti, brīdinājumus, pārdēvēšanu un dzēšanu. Logrīki un paziņojumi paliek pie apdzīvotās vietas.
+Rain in the last 24 hours	Lietus pēdējās 24 stundās
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Lauksaimnieka režīmā lodziņš blakus saules un motīva pogām rāda, cik daudz lijis pēdējās 24 stundās parādītajā vietā (apdzīvotā vieta vai lauks); pieskāriens parāda stundas ar lietu. Open-Meteo novērtējums, nevis nokrišņu mērītājs.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	No lauka nosaukuma galvenajā ekrānā: atsevišķi lodziņi gaisa temperatūrai, vējam, vēja virzienam, lietus iespējamībai, gaisa mitrumam, augsnes mitrumam un augsnes temperatūrai, tad nākamās 12 stundas. Pogas: statistika, pārvietot adatu, lietus/vēja brīdinājumi, pārdēvēt, dzēst.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Rumānijā “Citas valodas” saraksta beigās atver galveno minoritāšu valodas, kurās runā lietotne: ungāru, vācu, ukraiņu, slovāku, bulgāru, horvātu, čehu, poļu, grieķu un itāļu.
+AIR	GAISS
+DIRECTION	VIRZIENS
+SOIL	AUGSNE
+SOIL TEMP.	AUGSNES TEMP.
+Now: 	Tagad: 
+Total: 	Kopā: 
+No rain in the last 24 hours.	Pēdējās 24 stundās nav lijis.
+Hours with rain	Stundas ar lietu
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Open-Meteo novērtējums no laikapstākļu modeļiem, nevis nokrišņu mērītāja mērījums vietā.
+rain 24 h	lietus 24 h
+Other languages	Citas valodas
+Languages of the minorities	Minoritāšu valodas

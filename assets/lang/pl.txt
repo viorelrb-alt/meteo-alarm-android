@@ -537,3 +537,37 @@ Cloud cover: 	Zachmurzenie:
 Until midnight: 	Do północy: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Źródło: Open-Meteo. Szansa mówi, jak prawdopodobny jest deszcz w tej godzinie, a nie jak długo pada.
 FARMER	ROLNIK
+Delete parcels	Usuń działki
+Tap a parcel to see it on the main screen.	Dotknij działki, aby zobaczyć ją na ekranie głównym.
+Saved: 	Zapisano: 
+Tick the parcels to delete, then tap Delete.	Zaznacz działki do usunięcia, a potem dotknij Usuń.
+Are you sure?	Na pewno?
+These parcels and their statistics are deleted from the phone: 	Te działki i ich statystyki zostaną usunięte z telefonu: 
+Yes, delete	Tak, usuń
+Deleted: 	Usunięto: 
+No	Nie
+This is the first screen	To pierwszy ekran
+This is the last screen	To ostatni ekran
+Near 	Koło 
+Alerts, rename, delete	Alerty, zmiana nazwy, usuwanie
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Działki (w trybie rolnika). „Zapisz miejsce tutaj” bierze pozycję GPS, w której stoisz; potem mapa pokazuje ją z pinezką: przesuń mapę, aby pinezka była dokładnie na działce, i nadaj jej nazwę (np. działka 96/5). „Wybierz na mapie” zapisuje działkę z domu. „Usuń działki” pokazuje je z polem wyboru przy każdej; po Usuń aplikacja pyta jeszcze raz (Nie zachowuje zaznaczenia). Pod linią działki w kolejności nazw i numerów: dotknięcie pokazuje działkę na ekranie głównym. Działki zostają tylko na tym telefonie, dopóki ich nie usuniesz.
+Main screens	Ekrany główne
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	W trybie rolnika jest ekran główny dla miejscowości i po jednym dla każdej działki, w kolejności z listy. Przesuń palcem w bok po temperaturze i ikonie, aby przejść z jednego na drugi; kropki pod linią pokazują, ile ich jest i który widzisz. Aplikacja pamięta wyświetlany ekran.
+A parcel on the main screen	Działka na ekranie głównym
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Pogoda jest dla działki: jej nazwa nad linią (skrócona „…”, gdy długa), godziny, pola deszczu, a w dolnym rzędzie jej własne pola: powietrze, wiatr, kierunek, deszcz, wilgotność, gleba i temperatura gleby (dotknięcie pokazuje następne 12 godzin). Bez pyłków i trzęsień ziemi; ostrzeżenia są dla obszaru najbliższej miejscowości. Dotknięcie nazwy pokazuje pełną nazwę, współrzędne oraz statystyki z PDF, mapę, alerty, zmianę nazwy i usuwanie działki. Widżety i powiadomienia zostają przy miejscowości.
+Rain in the last 24 hours	Deszcz z ostatnich 24 godzin
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	W trybie rolnika pole obok przycisków słońca i motywu pokazuje, ile padało w ostatnich 24 godzinach w wyświetlanym miejscu (miejscowość lub działka); dotknięcie pokazuje godziny z deszczem. Szacunek Open-Meteo, nie deszczomierz.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Z nazwy działki na ekranie głównym: osobne pola na temperaturę powietrza, wiatr, kierunek wiatru, szansę na deszcz, wilgotność powietrza, wilgotność gleby i temperaturę gleby, potem następne 12 godzin. Przyciski: statystyki, przesuń pinezkę, alerty deszcz / wiatr, zmień nazwę, usuń.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	W Rumunii „Inne języki” na końcu listy otwierają języki głównych mniejszości, które zna aplikacja: węgierski, niemiecki, ukraiński, słowacki, bułgarski, chorwacki, czeski, polski, grecki i włoski.
+AIR	POWIETRZE
+DIRECTION	KIERUNEK
+SOIL	GLEBA
+SOIL TEMP.	TEMP. GLEBY
+Now: 	Teraz: 
+Total: 	Razem: 
+No rain in the last 24 hours.	Brak deszczu w ostatnich 24 godzinach.
+Hours with rain	Godziny z deszczem
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Szacunek Open-Meteo z modeli pogody, nie pomiar deszczomierzem w tym miejscu.
+rain 24 h	deszcz 24 h
+Other languages	Inne języki
+Languages of the minorities	Języki mniejszości

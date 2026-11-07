@@ -537,3 +537,37 @@ Cloud cover: 	Scamall:
 Until midnight: 	Go meán oíche: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Foinse: Open-Meteo. Is é an seans cé chomh dóchúil is atá báisteach san uair sin, ní cé chomh fada a bheidh sé ag cur.
 FARMER	FEIRMEOIR
+Delete parcels	Scrios páirceanna
+Tap a parcel to see it on the main screen.	Tapáil páirc chun í a fheiceáil ar an bpríomhscáileán.
+Saved: 	Sábháilte: 
+Tick the parcels to delete, then tap Delete.	Cuir tic leis na páirceanna le scriosadh, ansin tapáil Scrios.
+Are you sure?	An bhfuil tú cinnte?
+These parcels and their statistics are deleted from the phone: 	Scriosfar na páirceanna seo agus a staitisticí ón bhfón: 
+Yes, delete	Tá, scrios
+Deleted: 	Scriosta: 
+No	Níl
+This is the first screen	Seo an chéad scáileán
+This is the last screen	Seo an scáileán deireanach
+Near 	In aice le 
+Alerts, rename, delete	Foláirimh, athainmnigh, scrios
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Páirceanna (sa mhód feirmeora). Glacann “Sábháil an áit seo” an suíomh GPS ina seasann tú; ansin taispeánann an léarscáil é le biorán: bog an léarscáil chun an biorán a chur go díreach ar an bpáirc agus tabhair ainm di (m.sh. páirc 96/5). Sábhálann “Roghnaigh ar an léarscáil” páirc ón mbaile. Taispeánann “Scrios páirceanna” iad le bosca tic an ceann; tar éis Scrios fiafraíonn an aip arís (coinníonn Níl na ticeanna). Faoin líne, na páirceanna in ord a n-ainmneacha agus a n-uimhreacha: taispeánann tapáil an pháirc ar an bpríomhscáileán. Fanann na páirceanna ar an bhfón seo amháin, go dtí go scriosann tú iad.
+Main screens	Príomhscáileáin
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	I mód feirmeora tá príomhscáileán don bhaile agus ceann do gach páirc, in ord an liosta. Svaidhpeáil i leataobh thar an teocht agus an deilbhín chun dul ó cheann go ceann; taispeánann na poncanna faoin líne cé mhéad atá ann agus cén ceann atá á fheiceáil agat. Cuimhníonn an aip ar an scáileán a thaispeántar.
+A parcel on the main screen	Páirc ar an bpríomhscáileán
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Is í aimsir na páirce í: a hainm os cionn na líne (giorraithe le “…” nuair atá sé fada), na huaireanta, boscaí na báistí agus sa ró íochtair a boscaí féin: aer, gaoth, treo, báisteach, taise, ithir agus teocht na hithreach (taispeánann tapáil na 12 uair an chloig eile). Gan pailin ná creathanna talún; is le ceantar an bhaile is gaire na rabhaidh. Taispeánann tapáil ar an ainm an t-ainm iomlán, na comhordanáidí agus staitisticí na páirce le PDF, an léarscáil, na foláirimh, athainmniú agus scriosadh. Fanann na giuirléidí agus na fógraí ar an mbaile.
+Rain in the last 24 hours	Báisteach le 24 uair an chloig anuas
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	I mód feirmeora taispeánann an bosca in aice le cnaipí na gréine agus an téama an méid báistí a thit le 24 uair an chloig anuas san áit a thaispeántar (baile nó páirc); taispeánann tapáil na huaireanta le báisteach. Meastachán Open-Meteo, ní tomhsaire báistí.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Ó ainm na páirce ar an bpríomhscáileán: boscaí ar leith do theocht an aeir, gaoth, treo na gaoithe, seans báistí, taise an aeir, taise na hithreach agus teocht na hithreach, ansin an chéad 12 uair eile. Cnaipí: staitisticí, bog an biorán, foláirimh báistí / gaoithe, athainmnigh, scrios.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Sa Rómáin, osclaíonn “Teangacha eile” ag deireadh an liosta teangacha na bpríomh-mhionlach a labhraíonn an aip: Ungáiris, Gearmáinis, Úcráinis, Slóvaicis, Bulgáiris, Cróitis, Seicis, Polainnis, Gréigis agus Iodáilis.
+AIR	AER
+DIRECTION	TREO
+SOIL	ITHIR
+SOIL TEMP.	TEOCHT ITHREACH
+Now: 	Anois: 
+Total: 	Iomlán: 
+No rain in the last 24 hours.	Gan báisteach le 24 uair an chloig anuas.
+Hours with rain	Uaireanta le báisteach
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Meastachán Open-Meteo ó na samhlacha aimsire, ní tomhas tomhsaire báistí san áit.
+rain 24 h	báisteach 24 u
+Other languages	Teangacha eile
+Languages of the minorities	Teangacha na mionlach

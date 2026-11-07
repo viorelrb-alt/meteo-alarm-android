@@ -537,3 +537,37 @@ Cloud cover: 	Bewolking:
 Until midnight: 	Tot middernacht: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Bron: Open-Meteo. De kans zegt hoe waarschijnlijk het in dat uur regent, niet hoe lang.
 FARMER	BOER
+Delete parcels	Percelen verwijderen
+Tap a parcel to see it on the main screen.	Tik op een perceel om het op het hoofdscherm te zien.
+Saved: 	Opgeslagen: 
+Tick the parcels to delete, then tap Delete.	Vink de percelen aan die weg moeten en tik dan op Verwijderen.
+Are you sure?	Weet je het zeker?
+These parcels and their statistics are deleted from the phone: 	Deze percelen en hun statistiek worden van de telefoon verwijderd: 
+Yes, delete	Ja, verwijderen
+Deleted: 	Verwijderd: 
+No	Nee
+This is the first screen	Dit is het eerste scherm
+This is the last screen	Dit is het laatste scherm
+Near 	Bij 
+Alerts, rename, delete	Meldingen, hernoemen, verwijderen
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Percelen (in de boerenmodus). „Plek hier opslaan” neemt de gps-positie waar je staat; daarna toont de kaart die met een speld: schuif de kaart zodat de speld precies op het perceel staat en geef het een naam (bijv. perceel 96/5). „Kiezen op de kaart” slaat een perceel op vanuit huis. „Percelen verwijderen” toont ze elk met een vinkje; na Verwijderen vraagt de app het nog een keer (Nee houdt de vinkjes). Onder de lijn de percelen op volgorde van naam en nummer: een tik toont het perceel op het hoofdscherm. Percelen blijven alleen op deze telefoon, tot je ze verwijdert.
+Main screens	Hoofdschermen
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	In de boerenmodus is er een hoofdscherm voor de plaats en een voor elk perceel, in de volgorde van de lijst. Veeg zijwaarts over de temperatuur en het pictogram om van het ene naar het andere te gaan; de stippen onder de lijn tonen hoeveel er zijn en welk je ziet. De app onthoudt het getoonde scherm.
+A parcel on the main screen	Een perceel op het hoofdscherm
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Het weer is dat van het perceel: de naam boven de lijn (afgekort met „…” als hij lang is), de uren, de regenvakjes en in de onderste rij zijn eigen vakjes: lucht, wind, richting, regen, vochtigheid, bodem en bodemtemperatuur (een tik toont de volgende 12 uur). Geen pollen en geen aardbevingen; de waarschuwingen zijn die van het gebied van de dichtstbijzijnde plaats. Een tik op de naam toont de hele naam, de coördinaten en de statistiek met pdf, de kaart, de meldingen, hernoemen en verwijderen van het perceel. De widgets en de meldingen blijven bij de plaats.
+Rain in the last 24 hours	Regen van de afgelopen 24 uur
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	In de boerenmodus toont het vakje naast de knoppen zon en thema hoeveel het de afgelopen 24 uur heeft geregend op de getoonde plek (plaats of perceel); een tik toont de uren met regen. Een schatting van Open-Meteo, geen regenmeter.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Vanaf de naam van het perceel op het hoofdscherm: aparte vakken voor luchttemperatuur, wind, windrichting, kans op regen, luchtvochtigheid, bodemvocht en bodemtemperatuur, daarna de komende 12 uur. Knoppen: statistiek, speld verplaatsen, regen- / windmeldingen, hernoemen, verwijderen.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	In Roemenië opent „Andere talen” onderaan de lijst de talen van de belangrijkste minderheden die de app kent: Hongaars, Duits, Oekraïens, Slowaaks, Bulgaars, Kroatisch, Tsjechisch, Pools, Grieks en Italiaans.
+AIR	LUCHT
+DIRECTION	RICHTING
+SOIL	BODEM
+SOIL TEMP.	BODEMTEMP.
+Now: 	Nu: 
+Total: 	Totaal: 
+No rain in the last 24 hours.	Geen regen in de afgelopen 24 uur.
+Hours with rain	Uren met regen
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Een schatting van Open-Meteo uit de weermodellen, geen regenmetermeting ter plaatse.
+rain 24 h	regen 24 u
+Other languages	Andere talen
+Languages of the minorities	Talen van de minderheden

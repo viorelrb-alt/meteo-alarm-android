@@ -1,3 +1,10 @@
+v2.60 · 7 noiembrie 2026
+- Mod Fermier: un ecran principal pentru localitate și câte unul pentru fiecare parcelă; treci de la unul la altul glisând peste temperatură și pictogramă, iar punctele de sub linie arată unde ești.
+- O parcelă pe ecranul principal își arată vremea și jos casetele ei (aer, vânt, direcție, ploaie, umiditate, sol, temperatura solului), fără polen și cutremure; atingerea numelui arată numele întreg și coordonatele. Widgeturile și notificările rămân pe localitate.
+- Caseta „ploaie 24 h” lângă butoanele de jos; atingerea ei arată orele cu ploaie.
+- ☰ › Parcele: ștergere cu bifare și confirmare; lista ordonată după nume și număr.
+- În România, meniul Limbă › Alte limbi oferă limbile minorităților: maghiară, germană, ucraineană și altele.
+
 v2.50 · 7 noiembrie 2026
 - Mod Fermier: primul rând din ☰ comută între Mod Fermier și Mod Normal. În Mod Fermier, atingerea unei casete orare arată temperatura, minima și maxima zilei, vântul cu rafale și direcție (și când se schimbă), umiditatea aerului, șansa de ploaie, umiditatea și temperatura solului; graficul de precipitații și cele cinci zile sunt înlocuite de casete orare de ploaie, cu detalii la atingere.
 - ☰ › Parcele: salvezi locul unde stai (GPS), îl corectezi pe harta OpenStreetMap și îi dai un nume; fiecare parcelă are casete pentru vânt, direcție, ploaie, umiditatea aerului și a solului, temperatura solului și a aerului, alerte de ploaie și vânt puternic și statistici pe o perioadă din ultimele 28 de zile, salvate ca PDF în Descărcări.

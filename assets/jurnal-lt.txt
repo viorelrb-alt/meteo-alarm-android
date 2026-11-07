@@ -1,3 +1,10 @@
+v2.60 · 2026 m. lapkričio 7 d.
+- Ūkininko režimas: pagrindinis ekranas gyvenvietei ir po vieną kiekvienam laukui; tarp jų pereinama braukiant per temperatūrą ir piktogramą, o taškai po linija rodo, kur esate.
+- Laukas pagrindiniame ekrane rodo savo orus ir apačioje savo langelius (oras, vėjas, kryptis, lietus, drėgmė, dirvožemis, dirvožemio temperatūra), be žiedadulkių ir žemės drebėjimų; palietus pavadinimą rodomas visas pavadinimas ir koordinatės. Valdikliai ir pranešimai lieka prie gyvenvietės.
+- Langelis „lietus 24 val.“ šalia apatinių mygtukų; palietus rodomos valandos su lietumi.
+- ☰ › Laukai: trynimas pažymint ir patvirtinant; sąrašas pagal pavadinimus ir numerius.
+- Rumunijoje meniu Kalba › Kitos kalbos siūlo mažumų kalbas: vengrų, vokiečių, ukrainiečių ir kitas.
+
 v2.50 · 2026 m. lapkričio 7 d.
 - Ūkininko režimas: pirmasis ☰ punktas perjungia ūkininko ir įprastą režimą. Ūkininko režime palietus valandos langelį rodoma temperatūra, dienos žemiausia ir aukščiausia, vėjas su gūsiais ir kryptimi (ir kada jis pasisuks), oro drėgmė, lietaus tikimybė, dirvos drėgmė ir dirvos temperatūra; kritulių grafiką ir penkias dienas pakeičia valandiniai lietaus langeliai su išsamia informacija palietus.
 - ☰ › Laukai: išsaugokite vietą, kur stovite (GPS), patikslinkite ją OpenStreetMap žemėlapyje ir suteikite pavadinimą; kiekvienas laukas turi langelius vėjui, krypčiai, lietui, oro ir dirvos drėgmei, dirvos ir oro temperatūrai, lietaus ir stipraus vėjo įspėjimus bei statistiką už laikotarpį per paskutines 28 dienas, kurią galima išsaugoti PDF aplanke Atsisiuntimai.

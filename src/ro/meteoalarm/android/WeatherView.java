@@ -49,6 +49,9 @@ final class WeatherView extends View {
 
 		/** Farmer mode: a tap on hour box K (KIND 0) or rain box K (1), at B. */
 		void onFarmBox(int kind, int k, float[] b);
+
+		/** Farmer mode (v2.60): a swipe over the weather now, to the next (+1) or previous (-1) main screen. */
+		void onPage(int step);
 	}
 
 	/**
@@ -446,7 +449,15 @@ final class WeatherView extends View {
 			return true;
 		}
 		float x = (e.getX() - ox) / scale, y = (e.getY() - oy) / scale;
-		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) return true;
+		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) {
+			// Farmer mode (v2.60): sideways over the weather now goes to the next main screen.
+			float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
+			if (screen.pages > 1 && screen.nowArea[2] > 0 && Math.abs(dx) > 50 * dp && in(screen.nowArea, ux, uy)) {
+				Log.i(getContext(), "GEST", "glisare pe vremea de acum: ecranul " + (dx < 0 ? "următor" : "anterior"));
+				taps.onPage(dx < 0 ? 1 : -1);
+			}
+			return true;
+		}
 		// A tap on a warning (or earthquake) box: its details, and the row waits 20 s.
 		int[] fb = screen.farmBoxAt(x, y);
 		if (fb != null) {

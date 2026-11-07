@@ -1,3 +1,10 @@
+v2.60 · 7. November 2026
+- Landwirt-Modus: ein Hauptbildschirm für den Ort und je einer für jede Parzelle; du wechselst durch seitliches Wischen über Temperatur und Symbol, die Punkte unter der Linie zeigen, wo du bist.
+- Eine Parzelle auf dem Hauptbildschirm zeigt ihr Wetter und unten ihre Kästchen (Luft, Wind, Richtung, Regen, Feuchtigkeit, Boden, Bodentemperatur), ohne Pollen und Erdbeben; ein Tippen auf den Namen zeigt den ganzen Namen und die Koordinaten. Widgets und Benachrichtigungen bleiben beim Ort.
+- Kästchen „Regen 24 h“ neben den Tasten unten; ein Tippen zeigt die Stunden mit Regen.
+- ☰ › Parzellen: Löschen mit Häkchen und Bestätigung; die Liste nach Namen und Nummern geordnet.
+- In Rumänien öffnet das Menü Sprache › Weitere Sprachen die Sprachen der Minderheiten: Ungarisch, Deutsch, Ukrainisch und weitere.
+
 v2.50 · 7. November 2026
 - Landwirt-Modus: Der erste Eintrag in ☰ wechselt zwischen Landwirt-Modus und normalem Modus. Im Landwirt-Modus zeigt ein Tippen auf ein Stundenkästchen Temperatur, Tiefst- und Höchstwert des Tages, Wind mit Böen und Richtung (und wann er dreht), Luftfeuchtigkeit, Regenwahrscheinlichkeit, Bodenfeuchte und Bodentemperatur; statt des Regendiagramms und der fünf Tage kommen stündliche Regenkästchen mit Details beim Tippen.
 - ☰ › Parzellen: Speichere den Ort, an dem du stehst (GPS), passe ihn auf der OpenStreetMap-Karte an und gib ihm einen Namen; jede Parzelle hat Kästchen für Wind, Richtung, Regen, Luft- und Bodenfeuchte, Boden- und Lufttemperatur, Warnungen bei Regen und starkem Wind und eine Statistik für einen Zeitraum der letzten 28 Tage, als PDF in Downloads speicherbar.

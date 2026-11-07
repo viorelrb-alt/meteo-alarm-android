@@ -195,6 +195,24 @@ public final class Farm {
 		return new int[] { rain, wind };
 	}
 
+	// --- Rain of the last 24 hours (v2.60) -------------------------------------------
+
+	/**
+	 * The rain (mm) of the 24 hours up to hour CUR: Open-Meteo gives each hour the amount of the
+	 * hour before it, so hours CUR-23 … CUR. NaN when the data do not go back 24 hours.
+	 */
+	public static double last24(Data d, int cur) {
+		if (cur < 23 || !d.has(cur)) return Double.NaN;
+		double s = 0;
+		int known = 0;
+		for (int k = cur - 23; k <= cur; k++) {
+			if (Double.isNaN(d.precip[k])) continue;
+			s += d.precip[k];
+			known++;
+		}
+		return known >= 20 ? s : Double.NaN;
+	}
+
 	private static double nz(double v) {
 		return Double.isNaN(v) ? 0 : v;
 	}

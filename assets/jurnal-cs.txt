@@ -1,3 +1,10 @@
+v2.60 · 7. listopadu 2026
+- Režim zemědělce: hlavní obrazovka pro obec a po jedné pro každý pozemek; přepíná se přejetím přes teplotu a ikonu, tečky pod čarou ukazují, kde jste.
+- Pozemek na hlavní obrazovce ukazuje své počasí a dole svá políčka (vzduch, vítr, směr, déšť, vlhkost, půda, teplota půdy), bez pylu a zemětřesení; klepnutí na název ukáže celý název a souřadnice. Widgety a oznámení zůstávají u obce.
+- Políčko „déšť 24 h“ vedle tlačítek dole; klepnutí ukáže hodiny s deštěm.
+- ☰ › Pozemky: mazání se zaškrtnutím a potvrzením; seznam v pořadí názvů a čísel.
+- V Rumunsku nabízí nabídka Jazyk › Další jazyky jazyky menšin: maďarštinu, němčinu, ukrajinštinu a další.
+
 v2.50 · 7. listopadu 2026
 - Režim zemědělce: první položka ☰ přepíná mezi režimem zemědělce a normálním režimem. V režimu zemědělce klepnutí na hodinové políčko ukáže teplotu, minimum a maximum dne, vítr s nárazy a směrem (a kdy se stočí), vlhkost vzduchu, pravděpodobnost deště, vlhkost a teplotu půdy; graf deště a pět dnů nahrazují hodinová políčka deště s podrobnostmi po klepnutí.
 - ☰ › Pozemky: ulož místo, kde stojíš (GPS), dolaď ho na mapě OpenStreetMap a pojmenuj; každý pozemek má políčka pro vítr, směr, déšť, vlhkost vzduchu a půdy, teplotu půdy a vzduchu, upozornění na déšť a silný vítr a statistiku za období z posledních 28 dní, kterou lze uložit jako PDF do Stažených.

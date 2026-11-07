@@ -126,6 +126,8 @@ public final class Preview {
 		s.city = cities.find(opts.contains("brasov") ? "Brașov" : "Călărași");
 		if (opts.contains("sector")) s.city = new Cities.City("București", "București, Sector 3", s.city.lat, s.city.lon);
 		// United States (v2.30): " us" = Claremore, OK in American English with the NWS / USGS samples; " es" Spanish, " ro" Romanian.
+		java.util.regex.Matcher lm = java.util.regex.Pattern.compile(" lang=(\\w+)").matcher(opts);
+		if (lm.find()) { File lf = new File(assets, "lang/" + lm.group(1) + ".txt"); ro.meteoalarm.android.core.Tr.set(lm.group(1), new String(Files.readAllBytes(lf.toPath()), "UTF-8")); }
 		boolean usa = opts.contains(" us");
 		if (usa) {
 			cities.addUS(new String(Files.readAllBytes(new File(assets, "us.txt").toPath()), "UTF-8"));
@@ -182,12 +184,13 @@ public final class Preview {
 			s.farmer = true;
 			if (!opts.contains(" nofarm")) {
 				Calendar d0 = Calendar.getInstance();
+				d0.add(Calendar.DAY_OF_MONTH, -1);
 				StringBuilder t = new StringBuilder(), v = new StringBuilder();
 				String[] keys = { "temperature_2m", "relative_humidity_2m", "precipitation_probability", "precipitation", "rain", "showers", "snowfall", "cloud_cover",
 						"wind_speed_10m", "wind_direction_10m", "wind_gusts_10m", "soil_temperature_0cm", "soil_moisture_3_to_9cm" };
 				StringBuilder[] cols = new StringBuilder[keys.length];
 				for (int j = 0; j < keys.length; j++) cols[j] = new StringBuilder();
-				for (int h = 0; h < 72; h++) {
+				for (int h = 0; h < 96; h++) {
 					String day = ro.meteoalarm.android.core.Farm.date(d0, h / 24);
 					t.append(h > 0 ? "," : "").append('"').append(day).append(String.format("T%02d:00\"", h % 24));
 					double p = h % 24 >= 14 && h % 24 <= 19 ? 70 : h % 24 > 19 ? 35 : 10;
@@ -198,13 +201,20 @@ public final class Preview {
 				}
 				v.append("{\"hourly\":{\"time\":[").append(t).append("]");
 				for (int j = 0; j < keys.length; j++) v.append(",\"").append(keys[j]).append("\":[").append(cols[j]).append("]");
-				v.append("},\"daily\":{\"time\":[\"").append(ro.meteoalarm.android.core.Farm.date(d0, 0)).append("\",\"").append(ro.meteoalarm.android.core.Farm.date(d0, 1))
+				v.append("},\"daily\":{\"time\":[\"").append(ro.meteoalarm.android.core.Farm.date(d0, 1)).append("\",\"").append(ro.meteoalarm.android.core.Farm.date(d0, 2))
 						.append("\"],\"temperature_2m_max\":[14.2,12.1],\"temperature_2m_min\":[2.1,4.0],\"precipitation_sum\":[7.4,3.1],\"wind_speed_10m_max\":[22,18]}}");
 				s.farm = ro.meteoalarm.android.core.Farm.parse(v.toString());
 			}
 			s.now = Calendar.getInstance();
 			for (String[] r : s.hourInfo(2)) System.out.println("hour " + r[0] + ": " + r[1]);
 			for (String[] r : s.rainInfo(3)) System.out.println("rain " + r[0] + ": " + r[1]);
+			for (String[] r : s.rain24Info()) System.out.println("rain24 " + r[0] + ": " + r[1]);
+			if (opts.contains(" parcel")) {
+				// v2.60: a parcel as the main screen (3rd of 4), with a long name.
+				s.parcel = "parcela 96/5 Valea Mare de lângă pădure";
+				s.pages = 4;
+				s.page = 2;
+			}
 		}
 		if (opts.contains(" alert1")) s.alerts.scroll = 5000;
 		if (opts.contains(" page1")) s.hours.scroll = 700;

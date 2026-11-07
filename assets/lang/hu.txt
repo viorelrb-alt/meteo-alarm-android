@@ -537,3 +537,37 @@ Cloud cover: 	Felhőzet:
 Until midnight: 	Éjfélig: 
 Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Forrás: Open-Meteo. Az esély azt mutatja, mennyire valószínű az eső abban az órában, nem azt, hogy meddig esik.
 FARMER	GAZDA
+Delete parcels	Parcellák törlése
+Tap a parcel to see it on the main screen.	Koppints egy parcellára, hogy a főképernyőn lásd.
+Saved: 	Mentve: 
+Tick the parcels to delete, then tap Delete.	Jelöld be a törlendő parcellákat, majd koppints a Törlés gombra.
+Are you sure?	Biztos vagy benne?
+These parcels and their statistics are deleted from the phone: 	Ezek a parcellák és statisztikáik törlődnek a telefonról: 
+Yes, delete	Igen, törlés
+Deleted: 	Törölve: 
+No	Nem
+This is the first screen	Ez az első képernyő
+This is the last screen	Ez az utolsó képernyő
+Near 	Közel: 
+Alerts, rename, delete	Riasztások, átnevezés, törlés
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.	☰ › Parcellák (gazda módban). A „Hely mentése itt” azt a GPS-pozíciót veszi, ahol állsz; utána a térkép tűvel mutatja: mozgasd a térképet, hogy a tű pontosan a parcellán legyen, és adj neki nevet (pl. 96/5-ös parcella). A „Választás a térképen” otthonról ment parcellát. A „Parcellák törlése” mindegyiket jelölőnégyzettel mutatja; a Törlés után az alkalmazás még egyszer rákérdez (a Nem megtartja a jelöléseket). A vonal alatt a parcellák nevük és számuk sorrendjében: egy koppintás a főképernyőn mutatja a parcellát. A parcellák csak ezen a telefonon maradnak, amíg nem törlöd őket.
+Main screens	Főképernyők
+In farmer mode there is a main screen for the town and one for each parcel, in the list's order. Slide sideways over the temperature and the icon to go from one to the next; the dots under the line show how many there are and which one you see. The app remembers the screen shown.	Gazda módban van egy főképernyő a településnek és egy-egy minden parcellának, a lista sorrendjében. Húzd az ujjad oldalra a hőmérséklet és az ikon fölött, hogy egyikről a másikra válts; a vonal alatti pontok mutatják, hány van és melyiket látod. Az alkalmazás megjegyzi a megjelenített képernyőt.
+A parcel on the main screen	Parcella a főképernyőn
+The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.	Az időjárás a parcelláé: a neve a vonal fölött (hosszú névnél „…”-val rövidítve), az órák, az esőmezők, és az alsó sorban a saját mezői: levegő, szél, irány, eső, páratartalom, talaj és talajhőmérséklet (egy koppintás a következő 12 órát mutatja). Pollen és földrengések nélkül; a figyelmeztetések a legközelebbi település térségére vonatkoznak. A névre koppintva látod a teljes nevet, a koordinátákat, valamint a parcella statisztikáját PDF-fel, a térképet, a riasztásokat, az átnevezést és a törlést. A widgetek és az értesítések a településnél maradnak.
+Rain in the last 24 hours	Eső az elmúlt 24 órában
+In farmer mode the box next to the sun and theme buttons shows how much it rained in the last 24 hours at the place shown (town or parcel); a tap shows the hours with rain. An Open-Meteo estimate, not a rain gauge.	Gazda módban a nap és a téma gombja melletti mező mutatja, mennyi eső esett az elmúlt 24 órában a megjelenített helyen (település vagy parcella); egy koppintás az esős órákat mutatja. Az Open-Meteo becslése, nem esőmérő.
+From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	A parcella nevéről a főképernyőn: külön mezők a levegő hőmérsékletére, szélre, szélirányra, eső esélyére, a levegő páratartalmára, talajnedvességre és talajhőmérsékletre, utána a következő 12 óra. Gombok: statisztika, tű áthelyezése, eső- / szélriasztás, átnevezés, törlés.
+In Romania, “Other languages” at the end of the list opens the languages of the main minorities the app speaks: Hungarian, German, Ukrainian, Slovak, Bulgarian, Croatian, Czech, Polish, Greek and Italian.	Romániában a lista végén lévő „Más nyelvek” megnyitja a fő kisebbségek nyelveit, amelyeken az alkalmazás beszél: magyar, német, ukrán, szlovák, bolgár, horvát, cseh, lengyel, görög és olasz.
+AIR	LEVEGŐ
+DIRECTION	IRÁNY
+SOIL	TALAJ
+SOIL TEMP.	TALAJHŐM.
+Now: 	Most: 
+Total: 	Összesen: 
+No rain in the last 24 hours.	Az elmúlt 24 órában nem esett eső.
+Hours with rain	Esős órák
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Az Open-Meteo becslése az időjárási modellekből, nem esőmérős mérés a helyszínen.
+rain 24 h	eső 24 ó
+Other languages	Más nyelvek
+Languages of the minorities	A kisebbségek nyelvei

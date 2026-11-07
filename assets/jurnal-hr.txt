@@ -1,3 +1,10 @@
+v2.60 · 7. studenoga 2026
+- Način poljoprivrednika: glavni zaslon za mjesto i po jedan za svaku parcelu; prelazi se povlačenjem prsta preko temperature i ikone, točke ispod crte pokazuju gdje si.
+- Parcela na glavnom zaslonu pokazuje svoje vrijeme i dolje svoja polja (zrak, vjetar, smjer, kiša, vlažnost, tlo, temperatura tla), bez peluda i potresa; dodir na ime pokazuje cijelo ime i koordinate. Widgeti i obavijesti ostaju na mjestu.
+- Polje „kiša 24 h” pokraj gumba dolje; dodir pokazuje sate s kišom.
+- ☰ › Parcele: brisanje s označavanjem i potvrdom; popis poredan po imenima i brojevima.
+- U Rumunjskoj izbornik Jezik › Drugi jezici nudi jezike manjina: mađarski, njemački, ukrajinski i druge.
+
 v2.50 · 7. studenoga 2026
 - Način poljoprivrednika: prva stavka ☰ prebacuje između načina poljoprivrednika i normalnog načina. U načinu poljoprivrednika dodir satnog polja prikazuje temperaturu, najnižu i najvišu dana, vjetar s udarima i smjerom (i kad se okreće), vlažnost zraka, vjerojatnost kiše, vlažnost i temperaturu tla; graf kiše i pet dana zamjenjuju satna polja kiše s pojedinostima na dodir.
 - ☰ › Parcele: spremi mjesto na kojem stojiš (GPS), namjesti ga na karti OpenStreetMap i daj mu naziv; svaka parcela ima polja za vjetar, smjer, kišu, vlažnost zraka i tla, temperaturu tla i zraka, upozorenja na kišu i jak vjetar te statistiku za razdoblje unutar zadnjih 28 dana, koju možeš spremiti kao PDF u Preuzimanja.
