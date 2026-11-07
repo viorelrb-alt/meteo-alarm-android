@@ -1,3 +1,6 @@
+v2.70 · 7 Samhain 2026
+- Mód feirmeora: is bosca leathan amháin gach uair (aimsir + báisteach) le fuinneog choiteann ar thapáil; leis an bhfón ar a thaobh, dhá bhosca ceann faoin gceann eile, sleamhnaithe suas agus síos. Cuid uachtair níos mó: deilbhín thuas, teocht 10% níos mó thíos. Is “UISCE SAN ITHIR” anois an bosca “DEASCADH 24”: uisce an chisil 3–9 cm agus a athrú i 24 uair.
+
 v2.64 · 7 Samhain 2026
 - Mód feirmeora, fón ar a thaobh: osclaíonn sonraí na mboscaí i bhfuinneog mhór ar dheis, san áit chéanna agus ar an méid céanna i gcónaí.
 

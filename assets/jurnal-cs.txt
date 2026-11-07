@@ -1,3 +1,6 @@
+v2.70 · 7. listopadu 2026
+- Režim farmáře: každá hodina je jedno široké políčko (počasí + déšť) se společným oknem po klepnutí; na ležícím telefonu dvě políčka pod sebou, posouvaná nahoru a dolů. Větší horní část: ikona nahoře, teplota o 10 % větší dole. Políčko „SRÁŽKY 24“ se mění na „VODA V PŮDĚ“: voda ve vrstvě 3–9 cm a její změna za 24 hodin.
+
 v2.64 · 7. listopadu 2026
 - Režim farmáře, telefon naležato: podrobnosti políček se otevírají ve velkém okně vpravo, vždy na stejném místě a stejně velké.
 

@@ -1,3 +1,6 @@
+v2.70 · 7 ta' Novembru 2026
+- Modalità tal-bidwi: kull siegħa hija kaxxa wiesgħa waħda (temp + xita) b'tieqa komuni meta tmissha; bit-telefon mimdud, żewġ kaxxi waħda taħt l-oħra, imżerżqa 'l fuq u 'l isfel. Parti ta' fuq akbar: ikona fuq, temperatura 10% akbar isfel. Il-kaxxa “PREĊIPITAZZJONI 24” issir “ILMA FIL-ĦAMRIJA”: l-ilma tas-saff ta' 3–9 cm u l-bidla tiegħu f'24 siegħa.
+
 v2.64 · 7 ta' Novembru 2026
 - Modalità tal-bidwi, telefon mimdud: id-dettalji tal-kaxxi jinfetħu f'tieqa kbira fuq il-lemin, dejjem fl-istess post u bl-istess daqs.
 

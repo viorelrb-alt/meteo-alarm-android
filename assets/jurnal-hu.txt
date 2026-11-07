@@ -1,3 +1,6 @@
+v2.70 · 2026. november 7.
+- Gazda mód: minden óra egy széles mező (időjárás + eső), koppintásra közös ablakkal; fekvő telefonon két mező egymás alatt, fel-le húzva. Nagyobb felső rész: fent az ikon, lent a 10%-kal nagyobb hőmérséklet. A „CSAPADÉK 24” mezőből „VÍZ A TALAJBAN” lett: a 3–9 cm-es réteg vize és 24 órás változása.
+
 v2.64 · 2026. november 7.
 - Gazda mód, fekvő telefon: a mezők részletei egy nagy ablakban nyílnak meg jobbra, mindig ugyanott és ugyanakkorán.
 

@@ -1,3 +1,6 @@
+v2.70 · 7 listopada 2026
+- Tryb rolnika: każda godzina to jedno szerokie pole (pogoda + deszcz) ze wspólnym oknem po dotknięciu; gdy telefon leży, dwa pola jedno pod drugim, przesuwane w górę i w dół. Większa górna część: ikona u góry, temperatura o 10% większa na dole. Pole „OPADY 24” staje się „WODA W GLEBIE”: woda w warstwie 3–9 cm i jej zmiana w 24 godziny.
+
 v2.64 · 7 listopada 2026
 - Tryb rolnika, telefon poziomo: szczegóły pól otwierają się w dużym oknie po prawej, zawsze w tym samym miejscu i tej samej wielkości.
 

@@ -1,3 +1,6 @@
+v2.70 · 7. November 2026
+- Landwirt-Modus: Jede Stunde ist ein breites Kästchen (Wetter + Regen) mit einem gemeinsamen Fenster beim Tippen; quer zwei Kästchen untereinander, nach oben und unten geschoben. Größerer oberer Bereich: Symbol oben, Temperatur 10 % größer unten. Das Kästchen „NIEDERSCHLAG 24“ wird zu „WASSER IM BODEN“: das Wasser in der Schicht 3–9 cm und seine Änderung in 24 Stunden.
+
 v2.64 · 7. November 2026
 - Landwirt-Modus, Telefon quer: Die Details der Kästchen öffnen sich in einem großen Fenster rechts, immer am selben Platz und gleich groß.
 

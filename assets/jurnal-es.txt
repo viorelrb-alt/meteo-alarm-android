@@ -1,3 +1,6 @@
+v2.70 · 7 de noviembre de 2026
+- Modo agricultor: cada hora es una casilla ancha (tiempo + lluvia) con una ventana común al tocarla; en horizontal, dos casillas una bajo otra, deslizadas arriba y abajo. Zona superior más grande: icono arriba, temperatura un 10 % mayor abajo. La casilla «PRECIPITACIÓN 24» pasa a ser «AGUA EN EL SUELO»: el agua de la capa de 3–9 cm y su cambio en 24 horas.
+
 v2.64 · 7 de noviembre de 2026
 - Modo agricultor, teléfono en horizontal: los detalles de las casillas se abren en una ventana grande a la derecha, siempre en el mismo sitio y del mismo tamaño.
 

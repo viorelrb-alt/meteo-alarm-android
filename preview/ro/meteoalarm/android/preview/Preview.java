@@ -182,6 +182,7 @@ public final class Preview {
 		if (opts.contains(" farm")) {
 			// Farmer mode (v2.50) with a made-up farmer's forecast from today 00:00, 3 days.
 			s.farmer = true;
+			s.farmMerged = !opts.contains(" nomerged");
 			if (!opts.contains(" nofarm")) {
 				Calendar d0 = Calendar.getInstance();
 				d0.add(Calendar.DAY_OF_MONTH, -1);

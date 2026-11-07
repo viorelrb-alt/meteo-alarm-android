@@ -126,6 +126,10 @@ public final class Screen {
 	 * the farmer's forecast for the town (Open-Meteo; null when it has not come).
 	 */
 	public boolean farmer;
+	/** Farmer mode (v2.70, Viorel 2026-11-07): one row of wide boxes, the hour and its rain together (phones). */
+	public boolean farmMerged = true;
+	/** The merged boxes were drawn in this frame: a tap on one shows the hour and its rain together. */
+	public boolean mergedShown;
 	/**
 	 * Farmer mode (v2.60): the main screens moved sideways over the weather now, the town first
 	 * and then one per parcel. PARCEL is the name of the parcel shown (null on the town's);
@@ -184,6 +188,7 @@ public final class Screen {
 		hourHits.clear();
 		rainHits.clear();
 		infoHits.clear();
+		mergedShown = false;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
 		hs = 1;
@@ -261,30 +266,46 @@ public final class Screen {
 		}
 
 		// The five days are one row of boxes now (no small columns): their room goes to the weather now.
-		float nowBot = 663 + Math.max(0, ch - BASE_H);
+		// Proposal (farmer, merged boxes): the boxes are lower, the weather now gets their room.
+		boolean prop = farmer && farmMerged;
+		float MH = 286, grow = prop ? 494 - MH - 18 : 0;
+		float nowBot = 663 + grow + Math.max(0, ch - BASE_H);
 		float fy = nowBot - 4;
 		dots(W / 2, 112, pages, page);
 		float top = drawWarnBoxes(40, 146, 678, 2, 1);
 		String[] d = T.describe(w.code, w.isDay);
 		float nt = top > 0 ? top + 10 : pages > 1 ? 124 : 104;
-		drawNowStack(d[0], 40, nt, 718, fy + 4);
+		if (prop) drawNowHalves(d[0], 40, nt, 718, fy - 8, fy + 4 - grow);
+		else drawNowStack(d[0], 40, nt, 718, fy + 4);
 		setNow(40, nt, 678, fy + 80 - nt);
 
 		// Description and wind on the right, "feels like" and high / low on the left.
+		if (prop) {
+			nowTexts(d[1], fy - 26, 40, 718);
+		} else {
 		rtext(true, fit(true, 39, 330, d[1]), fy, 712, d[1], c.ink);
 		windLine(30, fy + 40, 712);
 		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+		}
 
 		float y0 = fy + 80;
 		// Both lines sit 15 units from the boxes above and under them.
 		// The precipitation box takes the whole row; the hour boxes after it still show the next one's edge.
+		if (prop) {
+			drawMergedRow(40, y0, 678, MH);
+			y0 -= 494 - MH - 0;
+			y0 += 0;
+		} else if (false) drawMergedRow(40, y0, 678, 494);
+		else {
 		chartFull = true;
 		drawNextHours(40, y0, 678, 264, false);
 		chartFull = false;
 		g.rect(40, y0 + 279, 678, 2, c.line);
-		if (farmer) drawRainRow(40, y0 + 296, 678, 198);
+		}
+		if (farmer && farmMerged) { }
+		else if (farmer) drawRainRow(40, y0 + 296, 678, 198);
 		else drawDayStrip(40, y0 + 296, 678);
 		// A line over the row of info boxes.
 		g.rect(40, y0 + 509, 678, 2, c.line);
@@ -326,11 +347,14 @@ public final class Screen {
 		String[] d = T.describe(w.code, w.isDay);
 		drawNowSide(d[0], 40, nowTop - 60, leftR, fy + 4);
 		setNow(40, nowTop, leftR - 40, fy + 80 - nowTop);
+		if (farmer && farmMerged) nowTexts(d[1], fy - 10, 40, leftR - 6);
+		else {
 		rtext(true, fit(true, 39, (leftR - 40) / 2, d[1]), fy, leftR - 6, d[1], c.ink);
 		windLine(30, fy + 40, leftR - 6);
 		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+		}
 		// Lines between the three parts, like the one under the clock.
 		g.rect(z1 - 1, 124, 2, fb - 14 - 124, c.line);
 		g.rect(z2 - 1, 124, 2, fb - 14 - 124, c.line);
@@ -338,10 +362,14 @@ public final class Screen {
 		float bt = 124, bb = fb - 14, hh = 250;
 		peekW = 15;
 		// The rain chart takes the whole width here; the hour boxes follow it when dragged.
+		if (farmer && farmMerged) drawMergedColumn(mx, bt, mw, bb - bt);
+		else {
 		chartFull = true;
 		drawNextHours(mx, bt, mw, hh, false);
 		chartFull = false;
-		if (farmer) drawRainRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
+		}
+		if (farmer && farmMerged) { }
+		else if (farmer) drawRainRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
 		else drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
 		peekW = 30;
 		drawInfoGrid(rx, bt, rw, bb - bt);
@@ -513,6 +541,7 @@ public final class Screen {
 	 */
 	private void drawNextHours(float x, float y, float wd, float h, boolean line) {
 		hours.area[2] = 0;
+		hoursAlong(false);
 		int avail = w.tileHours.size() - 1;
 		if (avail < 1) {
 			drawPrecipBox(x, y, wd, h, 46);
@@ -545,6 +574,172 @@ public final class Screen {
 		}
 		g.unclip();
 		if (line) g.rect(x, y + bh + 12, wd, 2, c.line);
+	}
+
+	/**
+	 * Proposal: the weather now in two halves, the icon centred in the upper one and the
+	 * temperature centred in the lower one, at the size they have today (computed for OLDBOT).
+	 */
+	private void drawNowHalves(String icon, float l, float top, float r, float bot, float oldBot) {
+		float y0 = 0, y1 = 200;
+		for (String c : CENTRE) {
+			String[] p = c.split(" ");
+			if (p[0].equals(icon)) { y0 = Float.parseFloat(p[2]); y1 = Float.parseFloat(p[4]); }
+		}
+		uPct = 34;
+		dPct = 27;
+		float s = 400, px = 348, room = oldBot - top - 40, cx = (l + r) / 2;
+		while (true) {
+			tempSize(px, r - l - 40);
+			float tot = s * (y1 - y0) / 200 + tp * 15 / 100 + tp * 64 / 100;
+			if (tot <= room || s < 120) break;
+			s = s * 94 / 100;
+			px = px * 94 / 100;
+		}
+		float ih = s * (y1 - y0) / 200, mid = (top + bot) / 2;
+		icLeft = l; icRight = r; icPct = 100; icTop = -100000;
+		drawIconC(icon, cx, (top + mid) / 2, s, ih / 2 + 1, r - l);
+		icTop = 0;
+		// Viorel (2026-11-07): the temperature 10 % larger and nearer the icon, still in the lower half.
+		tempSize(tp * 1.1f, r - l - 40);
+		float dh = tp * 64 / 100, dTop = Math.max(mid + 24, (mid + bot) / 2 - dh / 2 - (bot - mid) * 0.18f);
+		drawTempAt(cx - tW / 2, dTop + dh);
+		uPct = 43;
+		dPct = 43;
+	}
+
+	/**
+	 * Proposal: the lines under the weather now a little larger, the wind ring larger; the left
+	 * and the right texts each keep to their half, so they never run over each other.
+	 */
+	private void nowTexts(String sky, float fy, float l, float r) {
+		float half = (r - l) / 2 - 12, sz = 34;
+		String f = Double.isNaN(w.feels) ? "" : upper(T.feels + " " + t(w.feels) + "°");
+		String hl = Double.isNaN(w.tmax) || Double.isNaN(w.tmin) ? "" : upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°");
+		float lp = Math.min(fit(false, sz, half, f), fit(false, sz, half, hl));
+		if (f.length() > 0) ltext(false, lp, fy + 7, l, f, c.ink);
+		if (hl.length() > 0) ltext(false, lp, fy + 48, l, hl, c.ink);
+		rtext(true, fit(true, 44, half, sky), fy - 10, r - 6, sky, c.ink);
+		if (!Double.isNaN(w.wind)) {
+			String speed = unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h";
+			String from = !Double.isNaN(w.windDir) ? Tr.dirs8()[(int) Math.round(((w.windDir % 360) + 360) % 360 / 45) % 8] + " " : "";
+			float wp = fit(false, sz, half - sz * 1.7f - 12, upper(T.wind + " " + from + speed));
+			windRing = 0.85f;
+			windLine(wp, fy + 48, r - 6);
+			windRing = 0.62f;
+		}
+	}
+
+	/**
+	 * Farmer mode, proposal: one box per hour, twice as wide, with the hour's weather (icon,
+	 * temperature, sky) on the left and its rain (chance, bar, mm, kind) on the right.
+	 */
+	private void drawMergedRow(float x, float y, float wd, float h) {
+		hours.area[2] = 0;
+		rain.area[2] = 0;
+		hoursAlong(false);
+		mergedShown = true;
+		int avail = w.tileHours.size() - 1;
+		if (avail < 1) return;
+		float gap = 16, peek = peekW;
+		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (280 + gap))));
+		float bw = (wd - peek - gap * per) / per, step = bw + gap;
+		float[] starts = new float[avail];
+		for (int i = 0; i < avail; i++) starts[i] = i * step;
+		hours.set(starts, avail * step - gap - wd);
+		hours.area[0] = x; hours.area[1] = y; hours.area[2] = wd; hours.area[3] = h;
+		g.clip(x - 2, y - 2, wd + 4, h + 4);
+		for (int k = 1; k <= avail; k++) {
+			float bx = x + (k - 1) * step - hours.scroll;
+			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
+			drawMergedBox(k, bx, y, bw, h);
+		}
+		g.unclip();
+	}
+
+	/** Landscape, proposal: the same boxes as wide as the middle part, two one over the other, moved up and down. */
+	private void drawMergedColumn(float x, float y, float wd, float h) {
+		hours.area[2] = 0;
+		rain.area[2] = 0;
+		hoursAlong(true);
+		mergedShown = true;
+		int avail = w.tileHours.size() - 1;
+		if (avail < 1) return;
+		float gap = 14, peek = 26, bh = (h - peek - 2 * gap) / 2, step = bh + gap;
+		float[] starts = new float[avail];
+		for (int i = 0; i < avail; i++) starts[i] = i * step;
+		hours.set(starts, avail * step - gap - h);
+		hours.area[0] = x; hours.area[1] = y; hours.area[2] = wd; hours.area[3] = h;
+		g.clip(x - 2, y - 2, wd + 4, h + 4);
+		for (int k = 1; k <= avail; k++) {
+			float by = y + (k - 1) * step - hours.scroll;
+			if (by + bh < y - 4 || by > y + h + 4) continue;
+			drawMergedBox(k, x, by, wd, bh);
+		}
+		g.unclip();
+	}
+
+	/** The hours move sideways, or up and down (landscape, merged boxes); turning starts again at the first hour. */
+	private void hoursAlong(boolean vertical) {
+		if (hours.vertical == vertical) return;
+		hours.vertical = vertical;
+		hours.scroll = 0;
+	}
+
+	/** One merged box: the hour on top; its weather in the left half, its rain in the right half. */
+	private void drawMergedBox(int k, float bx, float y, float bw, float h) {
+		float hd = 46, half = bw / 2, body = h - hd;
+		if (farmer) hourHits.add(new float[] { k, bx * hs, y * hs, bw * hs, h * hs });
+		box(bx, y, bw, h, hd);
+		head(y, hd, bx + bw / 2, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
+		g.rect(bx + half - 1, y + hd + 14, 2, body - 28, c.line);
+		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
+		String tt = Double.isNaN(w.tileTemp[k]) ? "–" : t(w.tileTemp[k]) + "°";
+		int p = probAt(k), kind = kindAt(k);
+		String pc = p + "%";
+		double a = mmAt(k);
+		String amt = a >= 0.05 ? mm(a) : "0 " + (unitF ? "in" : "mm");
+		// Viorel (2026-11-07): "Type: rain", or "no precipitation".
+		String kw = kind == 0 ? Tr.t("no precipitation", "fără precipitații") : Tr.t("Type: ", "Tip: ") + kindWord(kind);
+		// The sky and the kind of rain in larger letters near the bottom line, centred in their half.
+		float lx = bx + half / 2, rx = bx + half + half / 2;
+		// Viorel: as large as the box allows, in the light ink (not grey), each fitted to its half.
+		float labMax = Math.min(42, body * 0.2f);
+		float labL = fit(true, labMax, half - 20, d[1]), labR = fit(true, labMax, half - 20, kw), lab = Math.max(labL, labR);
+		float labY = y + h - 14 - lab;
+		ctext(true, labL, labY + (lab - labL) / 2, lx, d[1], c.ink);
+		ctext(true, labR, labY + (lab - labR) / 2, rx, kw, c.ink);
+		float room = labY - 10 - (y + hd);
+		if (body >= 200) {
+			// Tall: icon over temperature; chance over bar over mm.
+			float tp = fit(true, 50, half - 16, tt);
+			float ic = Math.min(Math.min(96, half * 0.66f), room - tp - 26);
+			float top = y + hd + (room - (ic + 8 + tp)) / 2;
+			drawIcon(Weather.iconOf(w.tileCode[k], w.tileDay[k]), lx - ic / 2, top, ic);
+			ctext(true, tp, top + ic + 8, lx, tt, c.ink);
+			float pp = fit(true, 50, half - 16, pc);
+			float rt = y + hd + (room - (pp + 16 + 12 + 12 + 28)) / 2;
+			ctext(true, pp, rt, rx, pc, p >= Weather.RAIN_PROBABILITY ? c.ink : c.dim);
+			float by = rt + pp + 16, bl = bx + half + 14, bwid = half - 28;
+			g.roundRect(bl, by, bwid, 12, 6, c.dry);
+			if (p > 0) g.roundRect(bl, by, Math.max(12, bwid * p / 100), 12, 6, kind == 3 ? c.snow : c.rain);
+			ctext(false, fit(false, 28, half - 14, amt), by + 24, rx, amt, c.ink);
+		} else {
+			// Low and wide (landscape): icon beside temperature; chance beside bar and mm.
+			float ic = Math.min(room - 16, half * 0.34f), ix = bx + 22, iy = y + hd + (room - ic) / 2;
+			drawIcon(Weather.iconOf(w.tileCode[k], w.tileDay[k]), ix, iy, ic);
+			float tx = ix + ic + 12, tw = bx + half - 14 - tx, tc = tx + tw / 2;
+			float tp = fit(true, 52, tw, tt);
+			ctext(true, tp, y + hd + (room - tp) / 2, tc, tt, c.ink);
+			float rl = bx + half + 18, rw = half - 36, pw = rw * 0.44f;
+			float pp = fit(true, 50, pw, pc);
+			ctext(true, pp, y + hd + (room - pp) / 2, rl + pw / 2, pc, p >= Weather.RAIN_PROBABILITY ? c.ink : c.dim);
+			float ml = rl + pw + 12, mw = rw - pw - 12, mc = ml + mw / 2;
+			float mt = y + hd + (room - (12 + 10 + 28)) / 2;
+			g.roundRect(ml, mt, mw, 12, 6, c.dry);
+			if (p > 0) g.roundRect(ml, mt, Math.max(12, mw * p / 100), 12, 6, kind == 3 ? c.snow : c.rain);
+			ctext(false, fit(false, 28, mw, amt), mt + 22, mc, amt, c.ink);
+		}
 	}
 
 	/** One hour: the hour on top, the icon, the temperature and the sky. */
@@ -797,6 +992,16 @@ public final class Screen {
 		return out;
 	}
 
+	/** Farmer mode, a merged box K (v2.70): the hour's details, then its rain, in one bubble. */
+	public List<String[]> hourRainInfo(int k) {
+		List<String[]> out = hourInfo(k);
+		if (out.isEmpty() || farmIndex(k) < 0) return out;
+		List<String[]> r = rainInfo(k);
+		out.add(new String[] { "h", Tr.t("Rain", "Ploaie") });
+		for (int j = 1; j < r.size(); j++) out.add(r.get(j));
+		return out;
+	}
+
 	/** Farmer mode, the rain box K: the details for the bubble (as hourInfo). */
 	public List<String[]> rainInfo(int k) {
 		List<String[]> out = new java.util.ArrayList<String[]>();
@@ -859,6 +1064,17 @@ public final class Screen {
 
 	private void setNow(float x, float y, float wd, float h) {
 		nowArea[0] = x; nowArea[1] = y; nowArea[2] = wd; nowArea[3] = Math.max(0, h);
+	}
+
+	/** The water in the soil's 3–9 cm layer now (moisture × 60 mm) and its change over 24 hours; NaN when unknown. */
+	public double[] soilWater() {
+		double[] r = { Double.NaN, Double.NaN };
+		if (farm == null || farm.soilM == null) return r;
+		int cur = farm.nowIndex(now);
+		if (cur < 0 || Double.isNaN(farm.soilM[cur])) return r;
+		r[0] = farm.soilM[cur] * 60;
+		if (cur >= 24 && !Double.isNaN(farm.soilM[cur - 24])) r[1] = (farm.soilM[cur] - farm.soilM[cur - 24]) * 60;
+		return r;
 	}
 
 	/** The rain (mm) of the last 24 hours at the place shown, NaN when unknown. */
@@ -975,7 +1191,11 @@ public final class Screen {
 	/** The precipitation of the last 24 hours: what it is, the total and the hours it fell, for the bubble. */
 	public List<String[]> rain24Info() {
 		List<String[]> out = new java.util.ArrayList<String[]>();
-		out.add(new String[] { "title", Tr.t("Precipitation of the last 24 hours", "Precipitațiile din ultimele 24 de ore") + " · " + place() });
+		out.add(new String[] { "title", Tr.t("Water in the soil", "Apa în sol") + " · " + place() });
+		double[] sw = soilWater();
+		out.add(new String[] { "t", Tr.t("The water held now in the soil's 3–9 cm layer, estimated by Open-Meteo: ", "Apa reținută acum în stratul de sol de 3–9 cm, estimată de Open-Meteo: ")
+				+ (Double.isNaN(sw[0]) ? "–" : mm(sw[0]) + " · " + Tr.t("moisture ", "umiditate ") + Math.round(sw[0] / 60 * 100) + "%") });
+		out.add(new String[] { "h", Tr.t("Precipitation of the last 24 hours", "Precipitațiile din ultimele 24 de ore") });
 		out.add(new String[] { "t", Tr.t("The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.",
 				"Apa căzută pe sol în ultimele 24 de ore (ploaie, lapoviță, zăpadă topită) la locul afișat, oră cu oră.") });
 		double r = rain24();
@@ -1761,7 +1981,7 @@ public final class Screen {
 		if (id.equals("press")) return Tr.t("PRESSURE", "PRESIUNE");
 		if (id.equals("wind")) return Tr.t("WIND", "VÂNT");
 		if (id.equals("vis")) return Tr.t("VISIBILITY", "VIZIBILITATE");
-		if (id.equals("r24")) return Tr.t("PRECIPITATION 24", "PRECIPITAȚII 24");
+		if (id.equals("r24")) return Tr.t("WATER IN THE SOIL", "APA ÎN SOL");
 		if (pbox(id)) return boxTitle(id);
 		return Tr.t("COMPASS", "BUSOLĂ");
 	}
@@ -1789,11 +2009,11 @@ public final class Screen {
 		if (pbox(id)) {
 			drawParcelBox(id, cx, top, bw);
 		} else if (id.equals("r24")) {
-			// The precipitation of the last 24 hours (v2.61, Viorel: between sun / moon and UV).
-			double r24 = rain24();
-			String v = Double.isNaN(r24) ? "–" : mm(r24);
+			// The water held now in the soil's 3–9 cm layer (v2.70, Viorel), and its change in 24 hours.
+			double[] sw = soilWater();
+			String v = Double.isNaN(sw[0]) ? "–" : mm(sw[0]);
 			ctext(true, fit(true, 52, bw - 16, v), top + 62, cx, v, c.ink);
-			String sub = Tr.t("last 24 hours", "ultimele 24 de ore");
+			String sub = Double.isNaN(sw[1]) ? Tr.t("layer 3–9 cm", "stratul 3–9 cm") : soilMm(sw[1]) + Tr.t(" in 24 h", " în 24 h");
 			ctext(false, fit(false, 21, bw - 12, sub), top + 128, cx, sub, c.dim);
 		} else if (id.equals("sun")) {
 			ctext(false, 20, top + 54, cx, T.sunrise, c.ink);
@@ -2032,6 +2252,8 @@ public final class Screen {
 	 * "WIND NE 9 KM/H" right-aligned at RIGHT, and before it a small compass: a ring with the north
 	 * mark and an arrow the way the wind blows, both turned with the phone (north up without a compass).
 	 */
+	private float windRing = 0.62f;
+
 	private void windLine(float px, float top, float right) {
 		if (Double.isNaN(w.wind)) return;
 		String speed = unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h";
@@ -2040,7 +2262,7 @@ public final class Screen {
 		String txt = upper(T.wind + " " + from + speed);
 		float x = rtext(false, px, top, right, txt, c.ink);
 		if (!dir || Math.round(w.wind) == 0) return;
-		float r = px * 0.62f, cx = x - r - 12, cy = top + px * 0.52f;
+		float r = px * windRing, cx = x - r - 12, cy = top + px * 0.52f;
 		float turn = Float.isNaN(heading) ? 0 : heading;
 		g.arc(cx, cy, r, 0, 360, 2, c.ink);
 		// North: a small triangle on the ring.

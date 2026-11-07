@@ -1,3 +1,8 @@
+v2.70 · 7 November 2026
+- Farmer mode: each hour is one wide box (weather on the left, rain on the right), and a tap opens one window with both details. With the phone on its side, two boxes show one under the other and slide up and down.
+- The top area is bigger (phone upright): the icon in the upper half, the temperature 10% bigger in the lower half; the texts above the boxes and the wind ring are bigger. At the bottom of the boxes: “Cloudy” and “Type: rain” / “no precipitation”, big and white.
+- The “PRECIPITATION 24” box becomes “WATER IN THE SOIL”: the water held now in the soil's 3–9 cm layer and its change in 24 hours; its window keeps the table of the last 24 hours' precipitation.
+
 v2.64 · 7 November 2026
 - Farmer mode, phone on its side: the details of the boxes open in one large window on the right, always in the same place and the same size.
 

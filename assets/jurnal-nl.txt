@@ -1,3 +1,6 @@
+v2.70 · 7 november 2026
+- Boerenmodus: elk uur is één breed vak (weer + regen) met één gezamenlijk venster bij een tik; dwars twee vakken onder elkaar, omhoog en omlaag geschoven. Groter bovenste deel: pictogram boven, temperatuur 10% groter onder. Het vak „NEERSLAG 24” wordt „WATER IN DE BODEM”: het water in de laag van 3–9 cm en de verandering in 24 uur.
+
 v2.64 · 7 november 2026
 - Boerenmodus, telefoon dwars: de details van de vakken openen in een groot venster rechts, altijd op dezelfde plek en even groot.
 

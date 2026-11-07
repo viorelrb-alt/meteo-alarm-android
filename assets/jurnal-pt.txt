@@ -1,3 +1,6 @@
+v2.70 · 7 de novembro de 2026
+- Modo agricultor: cada hora é uma caixa larga (tempo + chuva) com uma janela comum ao tocar; na horizontal, duas caixas uma sob a outra, deslizadas para cima e para baixo. Zona de cima maior: ícone em cima, temperatura 10 % maior em baixo. A caixa «PRECIPITAÇÃO 24» passa a «ÁGUA NO SOLO»: a água da camada de 3–9 cm e a sua mudança em 24 horas.
+
 v2.64 · 7 de novembro de 2026
 - Modo agricultor, telemóvel na horizontal: os detalhes das caixas abrem-se numa janela grande à direita, sempre no mesmo sítio e do mesmo tamanho.
 

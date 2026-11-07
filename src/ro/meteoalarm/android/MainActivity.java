@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.64";
+	static final String VERSION = "Meteo Alarm Android v2.70";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1580,13 +1580,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Farmer mode: a tap on an hour box (KIND 0) or a rain box (1), at B: its details in a bubble. */
 	public void onFarmBox(final int kind, final int k, final float[] b) {
-		Log.i(this, "GEST", "fermier: atingere casetă " + (kind == 0 ? "oră" : kind == 1 ? "ploaie" : s.r24At(k) ? "precipitații 24 h" : "parcelă") + " " + k);
+		Log.i(this, "GEST", "fermier: atingere casetă " + (kind == 0 ? "oră" : kind == 1 ? "ploaie" : s.r24At(k) ? "apa în sol" : "parcelă") + " " + k);
 		reopen = new Runnable() {
 			public void run() {
 				onFarmBox(kind, k, s.farmBoxRect(kind, k));
 			}
 		};
-		List<String[]> info = kind == 0 ? s.hourInfo(k) : kind == 1 ? s.rainInfo(k) : kind == 2 ? s.parcelInfo(k) : s.rain24Info();
+		List<String[]> info = kind == 0 ? (s.mergedShown ? s.hourRainInfo(k) : s.hourInfo(k)) : kind == 1 ? s.rainInfo(k) : kind == 2 ? s.parcelInfo(k) : s.rain24Info();
 		if (info.isEmpty()) return;
 		boolean missing = kind <= 1 ? s.farm == null || s.farmIndex(k) < 0
 				: s.r24At(k) ? Double.isNaN(s.rain24()) : s.farm == null || s.farm.nowIndex(s.now) < 0;
@@ -2246,9 +2246,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER MODE shows under the top line, at the left, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.",
 				"Primul rând din ☰ comută între cele două moduri; el arată celălalt mod. În modul fermier temperatura și iconul rămân la fel, sub linia de sus, în stânga, scrie MODUL FERMIER, casetele orare deschid detalii, iar diagrama de precipitații și cele cinci zile sunt înlocuite de un rând de casete orare de ploaie.")
 				+ " " + Tr.t("With the phone on its side, the details of every box open in the same large window on the right.",
-						"Cu telefonul culcat, detaliile oricărei casete se deschid în aceeași fereastră mare, în dreapta."));
+						"Cu telefonul culcat, detaliile oricărei casete se deschid în aceeași fereastră mare, în dreapta.")
+				+ " " + Tr.t("On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.",
+						"Pe telefon fiecare oră e o singură casetă lată, cu vremea în stânga și ploaia în dreapta; cu telefonul drept, casetele se glisează în lateral, iar cu telefonul culcat două casete stau una sub alta și se glisează în sus și în jos. Cu telefonul drept, iconul stă în jumătatea de sus a spațiului de deasupra casetelor, iar temperatura în jumătatea de jos."));
 		help.entry(mini("farm"), Tr.t("Hour boxes", "Casetele orare"), Tr.t("A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.",
-				"Atingerea unei ore deschide o bulă: temperatura, minima și maxima zilei, viteza vântului și rafalele, direcția vântului și când se prognozează că se schimbă, umiditatea aerului, șansa de ploaie, umiditatea solului (3–9 cm) și temperatura solului."));
+				"Atingerea unei ore deschide o bulă: temperatura, minima și maxima zilei, viteza vântului și rafalele, direcția vântului și când se prognozează că se schimbă, umiditatea aerului, șansa de ploaie, umiditatea solului (3–9 cm) și temperatura solului.")
+				+ " " + Tr.t("On a wide box the same window also shows, under “Rain”, the hour's rain details.",
+						"La o casetă lată, aceeași fereastră arată și, sub „Ploaie”, detaliile de ploaie ale orei."));
 		help.entry(mini("farm"), Tr.t("Rain boxes", "Casetele de ploaie"), Tr.t("One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.",
 				"O casetă pe oră: șansa de ploaie cu cifre mari, o bară plină cât șansa, cantitatea și tipul (ploaie, averse, ninsoare, lapoviță). Atingerea arată detaliile: cantitatea pe tipuri, nebulozitatea, umiditatea și câtă ploaie mai vine până la miezul nopții."));
 		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. “Delete parcels” lists them with a tick box each; after Delete the app asks once more (No keeps the ticks). Under the line, the parcels in the order of their names and numbers: a tap shows the parcel on the main screen. Parcels stay only on this phone, until you delete them.",
@@ -2257,10 +2261,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"În modul fermier există un ecran principal pentru localitate și câte unul pentru fiecare parcelă, în ordinea din listă. Glisează în lateral peste temperatură și icon ca să treci de la unul la altul; punctele de sub linie arată câte sunt și pe care îl vezi. Aplicația ține minte ecranul afișat."));
 		help.entry(mini("parcel"), Tr.t("A parcel on the main screen", "O parcelă pe ecranul principal"), Tr.t("The weather is the parcel's: its name over the line (cut with “…” when long), the hours, the rain boxes and, in the bottom row, its own boxes: air, wind, direction, rain, humidity, soil and soil temperature (a tap shows the next 12 hours). No pollen and no earthquakes; the warnings are those of the nearest town's area. A tap on the name shows the whole name, the coordinates and the parcel's statistics and PDF, the map, the alerts, renaming and deleting. The widgets and the notifications stay on the town.",
 				"Vremea e a parcelei: numele ei deasupra liniei (tăiat cu „…” dacă e lung), orele, casetele de ploaie și, în rândul de jos, casetele ei: aer, vânt, direcție, ploaie, umiditate, sol și temperatura solului (atingerea arată următoarele 12 ore). Fără polen și fără cutremure; avertizările sunt ale zonei localității celei mai apropiate. Atingerea numelui arată numele întreg, coordonatele și statistica cu PDF, harta, alertele, redenumirea și ștergerea parcelei. Widgeturile și notificările rămân pe localitate."));
-		help.entry(mini("farm"), Tr.t("Precipitation of the last 24 hours", "Precipitațiile din ultimele 24 de ore"), Tr.t("In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.",
-				"În modul fermier caseta „PRECIPITAȚII 24” din rândul de jos, între Soare / Lună și Indice UV, arată apa căzută în ultimele 24 de ore în locul afișat (localitate sau parcelă). Atingerea arată ce reprezintă și un tabel cu orele în care au fost precipitații, cu milimetrii fiecăreia. O estimare Open-Meteo, nu un pluviometru.")
-				+ " " + Tr.t("The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.",
-						"Fereastra arată și cât a reținut solul din această apă în stratul de 3–9 cm, pe toate cele 24 de ore și oră cu oră."));
+		help.entry(mini("farm"), Tr.t("Water in the soil", "Apa în sol"), Tr.t("In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.",
+				"În modul fermier caseta „APA ÎN SOL” din rândul de jos, între Soare / Lună și Indice UV, arată apa reținută acum în stratul de sol de 3–9 cm în locul afișat (localitate sau parcelă), în milimetri, iar sub ea cât s-a schimbat în 24 de ore. Atingerea explică ce reprezintă și arată precipitațiile din ultimele 24 de ore: doar orele în care au fost precipitații, cu milimetrii fiecăreia și cât a reținut solul din ei. O estimare Open-Meteo, nu o măsurătoare."));
 		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("From the parcel's name on the main screen: separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.",
 				"Din numele parcelei de pe ecranul principal: casete separate pentru temperatura aerului, vânt, direcția vântului, șansa de ploaie, umiditatea aerului, umiditatea solului și temperatura solului, apoi următoarele 12 ore. Butoane: statistică, mută acul, alerte ploaie / vânt, redenumește, șterge."));
 		help.entry(mini("parcel"), Tr.t("Statistics and PDF", "Statistică și PDF"), Tr.t("For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.",

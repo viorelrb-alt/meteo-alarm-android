@@ -1,3 +1,8 @@
+v2.70 · 7 noiembrie 2026
+- Mod Fermier: fiecare oră e o singură casetă lată (vremea în stânga, ploaia în dreapta), iar atingerea ei deschide o singură fereastră cu ambele detalii. Cu telefonul culcat, două casete stau una sub alta și se glisează în sus și în jos.
+- Zona de sus e mai mare (telefon drept): iconul în jumătatea de sus, temperatura cu 10% mai mare în jumătatea de jos; textele de deasupra casetelor și cercul vântului sunt mai mari. Jos, în casete: „Înnorat” și „Tip: ploaie” / „fără precipitații”, mari și albe.
+- Caseta „PRECIPITAȚII 24” devine „APA ÎN SOL”: apa reținută acum în stratul de sol de 3–9 cm și schimbarea ei în 24 de ore; fereastra ei păstrează tabelul precipitațiilor din ultimele 24 de ore.
+
 v2.64 · 7 noiembrie 2026
 - Mod Fermier, telefon culcat: detaliile casetelor se deschid într-o fereastră mare în dreapta, mereu în același loc și de aceeași mărime.
 

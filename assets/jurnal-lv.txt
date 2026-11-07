@@ -1,3 +1,6 @@
+v2.70 · 2026. gada 7. novembris
+- Lauksaimnieka režīms: katra stunda ir viens plats lodziņš (laikapstākļi + lietus) ar kopīgu logu pieskaroties; guļus tālrunī divi lodziņi viens zem otra, bīdāmi augšup un lejup. Lielāka augšējā daļa: ikona augšā, temperatūra par 10% lielāka apakšā. Lodziņš „NOKRIŠŅI 24” kļūst par „ŪDENS AUGSNĒ”: ūdens 3–9 cm slānī un tā izmaiņa 24 stundās.
+
 v2.64 · 2026. gada 7. novembris
 - Lauksaimnieka režīms, tālrunis guļus: lodziņu sīkāka informācija atveras lielā logā pa labi, vienmēr tajā pašā vietā un tikpat lielā.
 

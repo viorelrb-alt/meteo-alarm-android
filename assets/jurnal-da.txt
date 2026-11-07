@@ -1,3 +1,6 @@
+v2.70 · 7. november 2026
+- Landmandstilstand: hver time er ét bredt felt (vejr + regn) med ét fælles vindue ved tryk; på tværs to felter under hinanden, skubbet op og ned. Større øverste del: ikon øverst, temperatur 10 % større nederst. Feltet »NEDBØR 24« bliver til »VAND I JORDEN«: vandet i laget på 3–9 cm og ændringen på 24 timer.
+
 v2.64 · 7. november 2026
 - Landmandstilstand, telefonen på tværs: detaljerne for felterne åbner i et stort vindue til højre, altid samme sted og samme størrelse.
 

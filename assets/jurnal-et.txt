@@ -1,3 +1,6 @@
+v2.70 · 7. november 2026
+- Põllumehe režiim: iga tund on üks lai kast (ilm + vihm) ühise aknaga puudutamisel; rõhtsa telefoniga kaks kasti üksteise all, lükatakse üles ja alla. Suurem ülemine osa: ikoon üleval, temperatuur 10% suurem all. Kast „SADEMED 24” muutub kastiks „VESI MULLAS”: kihi 3–9 cm vesi ja selle muutus 24 tunniga.
+
 v2.64 · 7. november 2026
 - Põllumehe režiim, telefon rõhtsalt: kastide üksikasjad avanevad suures aknas paremal, alati samas kohas ja sama suurena.
 

@@ -1,3 +1,6 @@
+v2.70 · 7. studenoga 2026
+- Način poljoprivrednika: svaki sat je jedno široko polje (vrijeme + kiša) sa zajedničkim prozorom na dodir; kad telefon leži, dva polja jedno ispod drugog, povlače se gore i dolje. Veći gornji dio: ikona gore, temperatura 10 % veća dolje. Polje „OBORINE 24” postaje „VODA U TLU”: voda u sloju 3–9 cm i njezina promjena u 24 sata.
+
 v2.64 · 7. studenoga 2026
 - Način poljoprivrednika, telefon položeno: detalji polja otvaraju se u velikom prozoru desno, uvijek na istom mjestu i iste veličine.
 

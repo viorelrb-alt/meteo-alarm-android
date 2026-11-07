@@ -1,3 +1,6 @@
+v2.70 · 7 novembre 2026
+- Mode agriculteur : chaque heure est une case large (météo + pluie) avec une fenêtre commune au toucher ; téléphone couché, deux cases l'une sous l'autre, glissées vers le haut et le bas. Zone du haut plus grande : icône en haut, température 10 % plus grande en bas. La case « PRÉCIPITATIONS 24 » devient « EAU DANS LE SOL » : l'eau de la couche 3–9 cm et son changement en 24 heures.
+
 v2.64 · 7 novembre 2026
 - Mode agriculteur, téléphone en paysage : les détails des cases s'ouvrent dans une grande fenêtre à droite, toujours à la même place et de la même taille.
 

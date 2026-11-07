@@ -1,3 +1,6 @@
+v2.70 · 7 novembre 2026
+- Modalità agricoltore: ogni ora è un riquadro largo (meteo + pioggia) con una finestra comune al tocco; in orizzontale due riquadri uno sotto l'altro, scorsi su e giù. Zona in alto più grande: icona sopra, temperatura più grande del 10 % sotto. Il riquadro «PRECIPITAZIONI 24» diventa «ACQUA NEL SUOLO»: l'acqua dello strato 3–9 cm e il suo cambiamento in 24 ore.
+
 v2.64 · 7 novembre 2026
 - Modalità agricoltore, telefono in orizzontale: i dettagli dei riquadri si aprono in una grande finestra a destra, sempre nello stesso posto e della stessa misura.
 

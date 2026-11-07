@@ -1,3 +1,6 @@
+v2.70 · 7 november 2026
+- Lantbruksläge: varje timme är en bred ruta (väder + regn) med ett gemensamt fönster vid tryck; på tvären två rutor under varandra, dragna upp och ner. Större övre del: ikon överst, temperatur 10 % större nederst. Rutan ”NEDERBÖRD 24” blir ”VATTEN I MARKEN”: vattnet i skiktet 3–9 cm och dess ändring på 24 timmar.
+
 v2.64 · 7 november 2026
 - Lantbruksläge, telefonen på tvären: rutornas detaljer öppnas i ett stort fönster till höger, alltid på samma plats och lika stort.
 

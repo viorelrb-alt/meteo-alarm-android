@@ -1,3 +1,6 @@
+v2.70 · 7. marraskuuta 2026
+- Viljelijätila: jokainen tunti on yksi leveä ruutu (sää + sade), jolla on yhteinen ikkuna napautettaessa; vaakasuunnassa kaksi ruutua päällekkäin, vedetään ylös ja alas. Suurempi yläosa: kuvake ylhäällä, lämpötila 10 % suurempana alhaalla. Ruutu ”SADE 24” muuttuu ruuduksi ”VETTÄ MAASSA”: 3–9 cm:n kerroksen vesi ja sen muutos 24 tunnissa.
+
 v2.64 · 7. marraskuuta 2026
 - Viljelijätila, puhelin vaakasuunnassa: ruutujen tiedot avautuvat suureen ikkunaan oikealle, aina samaan paikkaan ja samankokoisena.
 
