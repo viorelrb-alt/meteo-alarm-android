@@ -583,3 +583,5 @@ Kept by the soil (3–9 cm layer): 	Zadržala tla (plast 3–9 cm):
 moisture 	vlaga 
 “Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	»Zadržala tla«: za koliko se je voda v plasti tal 3–9 cm povečala (ali zmanjšala, z −); ostalo je odteklo, izhlapelo ali šlo globlje.
 The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Okno pokaže tudi, koliko te vode so tla zadržala v plasti 3–9 cm, za vseh 24 ur in uro za uro.
+FARMER MODE	NAČIN KMETA
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER MODE shows under the top line, at the left, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Prvi element ☰ preklaplja med načinoma; prikaže drugi način. V načinu kmeta ostaneta temperatura in ikona enaki, pod zgornjo črto levo piše NAČIN KMETA, urna polja odprejo podrobnosti, namesto grafa padavin in petih dni pa je vrsta urnih polj dežja.

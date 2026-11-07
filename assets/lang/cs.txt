@@ -583,3 +583,5 @@ Kept by the soil (3–9 cm layer): 	Zadržená půdou (vrstva 3–9 cm):
 moisture 	vlhkost 
 “Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Zadržená půdou“: o kolik vzrostla (nebo s − klesla) voda ve vrstvě půdy 3–9 cm; zbytek odtekl, odpařil se nebo prosákl hlouběji.
 The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Okno ukazuje také, kolik z této vody půda zadržela ve vrstvě 3–9 cm, za celých 24 hodin a hodinu po hodině.
+FARMER MODE	REŽIM ZEMĚDĚLCE
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER MODE shows under the top line, at the left, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	První položka ☰ přepíná mezi oběma režimy; ukazuje ten druhý. V režimu zemědělce zůstává teplota i ikona stejná, pod horní čarou vlevo je REŽIM ZEMĚDĚLCE, hodinová políčka otevírají podrobnosti a místo grafu srážek a pěti dnů je řada hodinových políček deště.

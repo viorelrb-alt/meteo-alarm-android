@@ -1,3 +1,6 @@
+v2.63 · 2026. november 7.
+- A „GAZDA MÓD” felirat most a felső vonal alatt, balra a ☰ gomb alatt látszik, nem alul.
+
 v2.62 · 2026. november 7.
 - Gazda mód: a „CSAPADÉK 24” ablak azt is mutatja, mennyi vizet tartott meg a talaj (3–9 cm-es réteg), összesen és óránként.
 

@@ -1,3 +1,6 @@
+v2.63 · 7 noiembrie 2026
+- „MODUL FERMIER” apare acum sub linia de sus, în stânga, sub butonul ☰, în loc de jos.
+
 v2.62 · 7 noiembrie 2026
 - Mod Fermier: fereastra „PRECIPITAȚII 24” arată și cât a reținut solul din apa căzută (stratul de 3–9 cm), pe 24 de ore și oră cu oră; estimare Open-Meteo.
 

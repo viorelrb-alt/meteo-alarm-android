@@ -1,3 +1,6 @@
+v2.63 · 7. listopadu 2026
+- „REŽIM ZEMĚDĚLCE“ je teď pod horní čarou, vlevo pod tlačítkem ☰, místo dole.
+
 v2.62 · 7. listopadu 2026
 - Režim farmáře: okno „SRÁŽKY 24“ ukazuje také, kolik vody půda zadržela (vrstva 3–9 cm), celkem i po hodinách.
 

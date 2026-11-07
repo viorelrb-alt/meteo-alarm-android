@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.62";
+	static final String VERSION = "Meteo Alarm Android v2.63";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2242,8 +2242,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pentru o localitate din SUA, ceasul, orele prognozei și datele arată ora locală a localității, nu pe cea a telefonului (util în modul de test sau când te uiți la o localitate din alt fus orar)."));
 		// Farmer mode (v2.50, Viorel 2026-11-07).
 		help.section(Tr.t("Farmer mode", "Mod Fermier"));
-		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.",
-				"Primul rând din ☰ comută între cele două moduri; el arată celălalt mod. În modul fermier temperatura și iconul rămân la fel, jos scrie FERMIER, casetele orare deschid detalii, iar diagrama de precipitații și cele cinci zile sunt înlocuite de un rând de casete orare de ploaie."));
+		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER MODE shows under the top line, at the left, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.",
+				"Primul rând din ☰ comută între cele două moduri; el arată celălalt mod. În modul fermier temperatura și iconul rămân la fel, sub linia de sus, în stânga, scrie MODUL FERMIER, casetele orare deschid detalii, iar diagrama de precipitații și cele cinci zile sunt înlocuite de un rând de casete orare de ploaie."));
 		help.entry(mini("farm"), Tr.t("Hour boxes", "Casetele orare"), Tr.t("A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.",
 				"Atingerea unei ore deschide o bulă: temperatura, minima și maxima zilei, viteza vântului și rafalele, direcția vântului și când se prognozează că se schimbă, umiditatea aerului, șansa de ploaie, umiditatea solului (3–9 cm) și temperatura solului."));
 		help.entry(mini("farm"), Tr.t("Rain boxes", "Casetele de ploaie"), Tr.t("One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.",

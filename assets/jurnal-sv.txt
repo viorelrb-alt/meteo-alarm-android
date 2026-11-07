@@ -1,3 +1,6 @@
+v2.63 · 7 november 2026
+- ”LANTBRUKSLÄGE” visas nu under den översta linjen, till vänster under knappen ☰, i stället för längst ned.
+
 v2.62 · 7 november 2026
 - Lantbruksläge: fönstret ”NEDERBÖRD 24” visar också hur mycket vatten marken höll kvar (skikt 3–9 cm), totalt och timme för timme.
 

@@ -1,3 +1,6 @@
+v2.63 · 7 Samhain 2026
+- Taispeántar “MÓD FEIRMEORA” anois faoin líne uachtair, ar chlé faoin gcnaipe ☰, in ionad ag an mbun.
+
 v2.62 · 7 Samhain 2026
 - Mód feirmeora: taispeánann fuinneog “DEASCADH 24” freisin an méid uisce a choinnigh an ithir (sraith 3–9 cm), san iomlán agus uair ar uair.
 

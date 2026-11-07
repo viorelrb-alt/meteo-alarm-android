@@ -1,3 +1,6 @@
+v2.63 · 7. november 2026
+- »NAČIN KMETA« je zdaj pod zgornjo črto, levo pod gumbom ☰, namesto spodaj.
+
 v2.62 · 7. november 2026
 - Način kmeta: okno »PADAVINE 24« pokaže tudi, koliko vode so zadržala tla (plast 3–9 cm), skupaj in po urah.
 

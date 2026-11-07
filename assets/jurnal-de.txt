@@ -1,3 +1,6 @@
+v2.63 · 7. November 2026
+- „LANDWIRT-MODUS“ steht jetzt unter der oberen Linie, links unter der Taste ☰, statt unten.
+
 v2.62 · 7. November 2026
 - Landwirt-Modus: Das Fenster „NIEDERSCHLAG 24“ zeigt auch, wie viel Wasser der Boden (Schicht 3–9 cm) gehalten hat, insgesamt und Stunde für Stunde.
 

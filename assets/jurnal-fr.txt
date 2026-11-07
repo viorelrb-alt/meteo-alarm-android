@@ -1,3 +1,6 @@
+v2.63 · 7 novembre 2026
+- « MODE AGRICULTEUR » s'affiche maintenant sous la ligne du haut, à gauche sous le bouton ☰, au lieu d'en bas.
+
 v2.62 · 7 novembre 2026
 - Mode agriculteur : la fenêtre « PRÉCIPITATIONS 24 » montre aussi combien d'eau le sol a retenu (couche 3–9 cm), au total et heure par heure.
 

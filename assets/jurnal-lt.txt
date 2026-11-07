@@ -1,3 +1,6 @@
+v2.63 · 2026 m. lapkričio 7 d.
+- „ŪKININKO REŽIMAS“ dabar rodoma po viršutine linija, kairėje po ☰ mygtuku, o ne apačioje.
+
 v2.62 · 2026 m. lapkričio 7 d.
 - Ūkininko režimas: langas „KRITULIAI 24“ taip pat rodo, kiek vandens sulaikė dirvožemis (3–9 cm sluoksnis), iš viso ir kas valandą.
 

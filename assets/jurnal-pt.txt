@@ -1,3 +1,6 @@
+v2.63 · 7 de novembro de 2026
+- «MODO AGRICULTOR» aparece agora sob a linha de cima, à esquerda sob o botão ☰, em vez de em baixo.
+
 v2.62 · 7 de novembro de 2026
 - Modo agricultor: a janela «PRECIPITAÇÃO 24» mostra também quanta água o solo reteve (camada 3–9 cm), no total e hora a hora.
 

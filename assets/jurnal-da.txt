@@ -1,3 +1,6 @@
+v2.63 · 7. november 2026
+- “LANDMANDSTILSTAND” står nu under den øverste linje, til venstre under ☰-knappen, i stedet for nederst.
+
 v2.62 · 7. november 2026
 - Landmandstilstand: vinduet “NEDBØR 24” viser også, hvor meget vand jorden holdt (lag 3–9 cm), i alt og time for time.
 

@@ -1,3 +1,6 @@
+v2.63 · 7 November 2026
+- “FARMER MODE” now shows under the top line, at the left under the ☰ button, instead of at the bottom.
+
 v2.62 · 7 November 2026
 - Farmer mode: the “PRECIPITATION 24” window also shows how much of the fallen water the soil kept (3–9 cm layer), for the 24 hours and hour by hour; an Open-Meteo estimate.
 

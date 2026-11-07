@@ -1,3 +1,6 @@
+v2.63 · 7 listopada 2026
+- „TRYB ROLNIKA” jest teraz pod górną linią, po lewej pod przyciskiem ☰, zamiast na dole.
+
 v2.62 · 7 listopada 2026
 - Tryb rolnika: okno „OPADY 24” pokazuje też, ile wody zatrzymała gleba (warstwa 3–9 cm), łącznie i godzina po godzinie.
 

@@ -563,7 +563,25 @@ public final class Screen {
 	}
 
 	/** N dots centred on CX, the current one in ink (nothing for a single page). */
+	/** Room taken at the left under the top line by "FARMER MODE" (the "updated" text keeps clear of it). */
+	private float farmTagW;
+
+	/**
+	 * Farmer mode (v2.63, Viorel): "FARMER MODE" under the top line, left under the ☰ button, at the
+	 * height of the dots and of "updated"; it keeps clear of the dots centred at CX.
+	 */
+	private void farmTag(float cx, int n) {
+		farmTagW = 0;
+		if (!farmer) return;
+		String s = Tr.t("FARMER MODE", "MODUL FERMIER");
+		float maxw = n > 1 ? cx - (n * 22 - 10) / 2f - 24 - 40 : 380;
+		float p = fit(true, 25, Math.max(60, maxw), s);
+		ltext(true, p, 110 + (25 - p) / 2, 40, s, c.accent);
+		farmTagW = g.width(true, p, s) + 30;
+	}
+
 	private void dots(float cx, float y, int n, int cur) {
+		farmTag(cx, n);
 		if (n <= 1) return;
 		float dx = cx - (n * 22 - 10) / 2f;
 		for (int k = 0; k < n; k++) g.roundRect(dx + k * 22, y, 12, 12, 6, k == cur ? c.ink : c.dim);
@@ -2153,17 +2171,9 @@ public final class Screen {
 			if (charging) {
 				g.icon("icons/bolt.png", batLeft - 16, gy + 2, 11, 17, c.ink);
 				batLeft -= 16;
-				if (!farmer) {
-					float mp = fit(true, 26, batLeft - 10 - 330, T.charging);
-					batLeft = rtext(true, mp, gy - 4 + (26 - mp) * 81 / 100, batLeft - 10, T.charging, c.ink);
-				}
+				float mp = fit(true, 26, batLeft - 10 - 330, T.charging);
+				batLeft = rtext(true, mp, gy - 4 + (26 - mp) * 81 / 100, batLeft - 10, T.charging, c.ink);
 			}
-		}
-		if (farmer) {
-			float fx = btnSensor[0] + btnSensor[2] + 20;
-			String fm = Tr.t("FARMER", "FERMIER");
-			float fp = fit(true, 24, batLeft - fx - 16, fm);
-			if (fp >= 12) ltext(true, fp, gy - 2 + (24 - fp) / 2, fx, fm, c.accent);
 		}
 		drawUpdated();
 		drawNote(fb);
@@ -2406,7 +2416,11 @@ public final class Screen {
 			int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
 			String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) + " PM" : String.format("%02d:%02d", h, m);
 			rtext(bold, fit(bold, 25, 360, upd), 30, cw - 40 - g.width(true, 50, hm) - 28, upd, bold ? c.ink : c.dim);
-		} else rtext(bold, fit(bold, 25, cw - 120, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
+		} else {
+			// Clear of "FARMER MODE" at the left, and of the dots in the middle when there are several screens.
+			float room = pages > 1 ? cw / 2f - (pages * 22 - 10) / 2f - 24 - 40 : cw - 80 - Math.max(40, farmTagW);
+			rtext(bold, fit(bold, 25, room, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
+		}
 	}
 
 	/** How much of the next box shows at the end of a row (units). */
