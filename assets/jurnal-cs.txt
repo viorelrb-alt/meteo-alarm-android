@@ -1,3 +1,6 @@
+v2.62 · 7. listopadu 2026
+- Režim farmáře: okno „SRÁŽKY 24“ ukazuje také, kolik vody půda zadržela (vrstva 3–9 cm), celkem i po hodinách.
+
 v2.61 · 7. listopadu 2026
 - Režim farmáře: políčko „SRÁŽKY 24“ je nyní v dolní řadě, mezi Slunce / Měsíc a UV index; klepnutí ho vysvětlí a ukáže hodiny se srážkami a jejich milimetry.
 - Opraveno: v režimu farmáře ukazovala políčka Pyl a Tlak teplotu půdy.

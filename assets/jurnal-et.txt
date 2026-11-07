@@ -1,3 +1,6 @@
+v2.62 · 7. november 2026
+- Põllumehe režiim: aken „SADEMED 24” näitab ka, kui palju vett jäi mulda (kiht 3–9 cm), kokku ja tunniti.
+
 v2.61 · 7. november 2026
 - Põllumehe režiim: kast „SADEMED 24” on nüüd alumises reas, Päike / Kuu ja UV-indeksi vahel; puudutus selgitab seda ja näitab sademetega tunde ja nende millimeetreid.
 - Parandatud: põllumehe režiimis näitasid kastid Õietolm ja Õhurõhk mulla temperatuuri.

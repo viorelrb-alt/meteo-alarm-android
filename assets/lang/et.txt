@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Viimase 24 tunni jooksul sademeid ei olnud.
 Hours with precipitation	Sademetega tunnid
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Põllumehe režiimis näitab alumise rea kast „SADEMED 24”, Päike / Kuu ja UV-indeksi vahel, viimase 24 tunni jooksul näidatud kohas (asula või põld) langenud vett. Puudutus selgitab, mis see on, ja näitab tabelit sademetega tundidest koos iga tunni millimeetritega. Open-Meteo hinnang, mitte sademete mõõtja.
+Kept by the soil (3–9 cm layer): 	Mullas püsinud (kiht 3–9 cm): 
+moisture 	niiskus 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Mullas püsinud”: kui palju vesi mulla 3–9 cm kihis kasvas (või −-märgiga vähenes); ülejäänu voolas ära, aurustus või imbus sügavamale.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Aken näitab ka, kui palju sellest veest jäi mulla 3–9 cm kihti, kogu ööpäeva kohta ja tund-tunnilt.

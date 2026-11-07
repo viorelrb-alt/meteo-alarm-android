@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Pēdējās 24 stundās nokrišņu nebija.
 Hours with precipitation	Stundas ar nokrišņiem
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Lauksaimnieka režīmā apakšējās rindas lodziņš “NOKRIŠŅI 24”, starp Saule / Mēness un UV indeksu, rāda pēdējās 24 stundās nokritušo ūdeni parādītajā vietā (apdzīvotā vieta vai lauks). Pieskāriens paskaidro, kas tas ir, un parāda tabulu ar stundām, kurās bija nokrišņi, ar katras milimetriem. Open-Meteo novērtējums, nevis nokrišņu mērītājs.
+Kept by the soil (3–9 cm layer): 	Augsnē palicis (slānis 3–9 cm): 
+moisture 	mitrums 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	“Augsnē palicis”: par cik ūdens augsnes 3–9 cm slānī palielinājās (vai ar − samazinājās); pārējais notecēja, iztvaikoja vai nonāca dziļāk.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Logs rāda arī, cik daudz no šī ūdens augsne aizturēja 3–9 cm slānī, visās 24 stundās un stundu pa stundai.

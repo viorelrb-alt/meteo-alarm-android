@@ -1,3 +1,6 @@
+v2.62 · 7 November 2026
+- Farmer mode: the “PRECIPITATION 24” window also shows how much of the fallen water the soil kept (3–9 cm layer), for the 24 hours and hour by hour; an Open-Meteo estimate.
+
 v2.61 · 7 November 2026
 - Farmer mode: the “PRECIPITATION 24” box moves into the bottom row, between Sun / Moon and UV index; a tap explains it and shows a table of the hours with precipitation and the millimetres of each.
 - Fixed: in farmer mode the Pollen and Pressure boxes showed the soil temperature.

@@ -1,3 +1,6 @@
+v2.62 · 7 november 2026
+- Lantbruksläge: fönstret ”NEDERBÖRD 24” visar också hur mycket vatten marken höll kvar (skikt 3–9 cm), totalt och timme för timme.
+
 v2.61 · 7 november 2026
 - Lantbruksläge: rutan ”NEDERBÖRD 24” finns nu i nedersta raden, mellan Sol / Måne och UV-index; ett tryck förklarar den och visar timmarna med nederbörd och deras millimeter.
 - Åtgärdat: i lantbruksläget visade rutorna Pollen och Lufttryck marktemperaturen.

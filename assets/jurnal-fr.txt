@@ -1,3 +1,6 @@
+v2.62 · 7 novembre 2026
+- Mode agriculteur : la fenêtre « PRÉCIPITATIONS 24 » montre aussi combien d'eau le sol a retenu (couche 3–9 cm), au total et heure par heure.
+
 v2.61 · 7 novembre 2026
 - Mode agriculteur : la case « PRÉCIPITATIONS 24 » passe dans la rangée du bas, entre Soleil / Lune et Indice UV ; une touche l'explique et liste les heures avec précipitations et leurs millimètres.
 - Corrigé : en mode agriculteur, les cases Pollen et Pression affichaient la température du sol.

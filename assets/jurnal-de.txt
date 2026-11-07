@@ -1,3 +1,6 @@
+v2.62 · 7. November 2026
+- Landwirt-Modus: Das Fenster „NIEDERSCHLAG 24“ zeigt auch, wie viel Wasser der Boden (Schicht 3–9 cm) gehalten hat, insgesamt und Stunde für Stunde.
+
 v2.61 · 7. November 2026
 - Landwirt-Modus: Das Kästchen „NIEDERSCHLAG 24“ steht jetzt in der unteren Reihe, zwischen Sonne / Mond und UV-Index; ein Tippen erklärt es und zeigt die Stunden mit Niederschlag und ihre Millimeter.
 - Behoben: Im Landwirt-Modus zeigten die Kästchen Pollen und Luftdruck die Bodentemperatur.

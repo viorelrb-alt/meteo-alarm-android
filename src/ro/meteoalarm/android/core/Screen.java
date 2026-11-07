@@ -968,6 +968,14 @@ public final class Screen {
 		}
 		out.add(new String[] { "h", Tr.t("Total: ", "Total: ") + mm(r) });
 		int cur = farm.nowIndex(now), n = 0;
+		// The water kept by the soil (v2.62, Viorel): the change of the 3–9 cm layer's moisture, 60 mm thick.
+		double m0 = farm.soilM == null ? Double.NaN : farm.soilM[cur - 24 >= 0 ? cur - 24 : cur - 23], m1 = farm.soilM == null ? Double.NaN : farm.soilM[cur];
+		boolean soil = !Double.isNaN(m0) && !Double.isNaN(m1);
+		if (soil) {
+			String kept = soilMm((m1 - m0) * 60);
+			out.add(new String[] { "t", Tr.t("Kept by the soil (3–9 cm layer): ", "Reținută de sol (stratul 3–9 cm): ") + kept + " · "
+					+ Tr.t("moisture ", "umiditate ") + Math.round(m0 * 100) + "% → " + Math.round(m1 * 100) + "%" });
+		}
 		for (int k = cur - 23; k <= cur; k++) if (nz(farm.precip[k]) >= 0.05) n++;
 		if (n == 0) out.add(new String[] { "t", Tr.t("No precipitation in the last 24 hours.", "Fără precipitații în ultimele 24 de ore.") });
 		else {
@@ -976,12 +984,23 @@ public final class Screen {
 				if (nz(farm.precip[k]) < 0.05) continue;
 				int from = k - 1;
 				String a = from >= 0 ? Texts.clock(farm.hourOf(from), clk12) : "", b = Texts.clock(farm.hourOf(k), clk12);
-				out.add(new String[] { "t", a + "–" + b + "   " + mm(farm.precip[k]) });
+				String sk = "";
+				if (soil && k >= 1 && !Double.isNaN(farm.soilM[k]) && !Double.isNaN(farm.soilM[k - 1]))
+					sk = " · " + Tr.t("soil ", "sol ") + soilMm((farm.soilM[k] - farm.soilM[k - 1]) * 60);
+				out.add(new String[] { "t", a + "–" + b + "   " + mm(farm.precip[k]) + sk });
 			}
 		}
+		if (soil) out.add(new String[] { "t", Tr.t("“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.",
+				"„Reținută de sol”: cât a crescut (sau a scăzut, cu −) apa din stratul de sol de 3–9 cm; restul s-a scurs, s-a evaporat sau a ajuns mai adânc.") });
 		out.add(new String[] { "t", Tr.t("An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.",
 				"Estimare Open-Meteo din modelele meteo, nu o măsurătoare de pluviometru în acel loc.") });
 		return out;
+	}
+
+	/** Water in mm with its sign, for the soil's change (inches in the US). */
+	private String soilMm(double v) {
+		if (Math.abs(v) < 0.05) return "0 " + (unitF ? "in" : "mm");
+		return (v > 0 ? "+" : "−") + mm(Math.abs(v));
 	}
 
 	// --- Helpers ---------------------------------------------------------------------

@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Без валежи през последните 24 часа.
 Hours with precipitation	Часове с валежи
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	В режим фермер полето „ВАЛЕЖИ 24“ на долния ред, между Слънце / Луна и UV индекс, показва водата, паднала през последните 24 часа на показаното място (населено място или парцел). Докосване обяснява какво е и показва таблица с часовете с валежи и милиметрите за всеки. Оценка на Open-Meteo, не дъждомер.
+Kept by the soil (3–9 cm layer): 	Задържана от почвата (слой 3–9 см): 
+moisture 	влажност 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Задържана от почвата“: с колко се е увеличила (или намалила, с −) водата в почвения слой 3–9 см; останалото се е оттекло, изпарило или е отишло по-дълбоко.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Прозорецът показва и колко от тази вода е задържала почвата в слоя си 3–9 см, за всичките 24 часа и час по час.

@@ -1,3 +1,6 @@
+v2.62 · 7 de noviembre de 2026
+- Modo agricultor: la ventana «PRECIPITACIÓN 24» muestra también cuánta agua retuvo el suelo (capa 3–9 cm), en total y hora a hora.
+
 v2.61 · 7 de noviembre de 2026
 - Modo agricultor: la casilla «PRECIPITACIÓN 24» pasa a la fila de abajo, entre Sol / Luna e Índice UV; un toque la explica y lista las horas con precipitación y sus milímetros.
 - Corregido: en el modo agricultor, las casillas Polen y Presión mostraban la temperatura del suelo.

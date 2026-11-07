@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Sem precipitação nas últimas 24 horas.
 Hours with precipitation	Horas com precipitação
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	No modo agricultor, a caixa «PRECIPITAÇÃO 24» na fila de baixo, entre Sol / Lua e Índice UV, mostra a água caída nas últimas 24 horas no local mostrado (localidade ou parcela). Um toque explica o que é e mostra uma tabela com as horas em que houve precipitação, com os milímetros de cada uma. Uma estimativa do Open-Meteo, não um pluviómetro.
+Kept by the soil (3–9 cm layer): 	Retida pelo solo (camada 3–9 cm): 
+moisture 	humidade 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	«Retida pelo solo»: quanto aumentou (ou diminuiu, com −) a água da camada de solo de 3–9 cm; o resto escorreu, evaporou-se ou desceu mais fundo.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	A janela mostra também quanta desta água o solo reteve na camada de 3–9 cm, nas 24 horas e hora a hora.

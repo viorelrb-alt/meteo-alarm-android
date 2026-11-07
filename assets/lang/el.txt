@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Χωρίς υετό τις τελευταίες 24 ώρες.
 Hours with precipitation	Ώρες με υετό
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Στη λειτουργία αγρότη το κουτάκι «ΥΕΤΟΣ 24» στην κάτω σειρά, ανάμεσα σε Ήλιο / Σελήνη και Δείκτη UV, δείχνει το νερό που έπεσε τις τελευταίες 24 ώρες στον τόπο που εμφανίζεται (πόλη ή αγροτεμάχιο). Ένα πάτημα εξηγεί τι είναι και δείχνει πίνακα με τις ώρες που είχαν υετό, με τα χιλιοστά καθεμιάς. Εκτίμηση του Open-Meteo, όχι βροχόμετρο.
+Kept by the soil (3–9 cm layer): 	Συγκράτησε το έδαφος (στρώμα 3–9 εκ.): 
+moisture 	υγρασία 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	«Συγκράτησε το έδαφος»: πόσο αυξήθηκε (ή μειώθηκε, με −) το νερό στο στρώμα εδάφους 3–9 εκ.· το υπόλοιπο απορρέει, εξατμίστηκε ή πήγε βαθύτερα.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Το παράθυρο δείχνει επίσης πόσο από αυτό το νερό συγκράτησε το έδαφος στο στρώμα 3–9 εκ., για όλο το 24ωρο και ώρα προς ώρα.

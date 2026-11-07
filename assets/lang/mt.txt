@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	L-ebda preċipitazzjoni fl-aħħar 24 siegħa.
 Hours with precipitation	Sigħat bi preċipitazzjoni
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Fil-modalità tal-bidwi l-kaxxa “PREĊIPITAZZJONI 24” fir-ringiela t'isfel, bejn Xemx / Qamar u Indiċi UV, turi l-ilma li waqa' fl-aħħar 24 siegħa fil-post muri (belt jew għalqa). Tagħfisa tispjega x'inhi u turi tabella tas-sigħat bi preċipitazzjoni, bil-millimetri ta' kull waħda. Stima ta' Open-Meteo, mhux kejl tax-xita.
+Kept by the soil (3–9 cm layer): 	Miżmum mill-ħamrija (saff 3–9 cm): 
+moisture 	umdità 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	“Miżmum mill-ħamrija”: kemm żdied (jew naqas, b'−) l-ilma fis-saff tal-ħamrija ta' 3–9 cm; il-bqija nixxa, evapora jew niżel aktar fil-fond.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	It-tieqa turi wkoll kemm minn dan l-ilma żammet il-ħamrija fis-saff ta' 3–9 cm, għall-24 siegħa kollha u siegħa b'siegħa.

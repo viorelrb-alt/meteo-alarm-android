@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Za posledních 24 hodin žádné srážky.
 Hours with precipitation	Hodiny se srážkami
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	V režimu farmáře ukazuje políčko „SRÁŽKY 24“ v dolní řadě, mezi Slunce / Měsíc a UV index, vodu spadlou za posledních 24 hodin na zobrazeném místě (obec nebo pozemek). Klepnutí vysvětlí, co to je, a ukáže tabulku hodin se srážkami s milimetry každé z nich. Odhad Open-Meteo, ne srážkoměr.
+Kept by the soil (3–9 cm layer): 	Zadržená půdou (vrstva 3–9 cm): 
+moisture 	vlhkost 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Zadržená půdou“: o kolik vzrostla (nebo s − klesla) voda ve vrstvě půdy 3–9 cm; zbytek odtekl, odpařil se nebo prosákl hlouběji.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Okno ukazuje také, kolik z této vody půda zadržela ve vrstvě 3–9 cm, za celých 24 hodin a hodinu po hodině.

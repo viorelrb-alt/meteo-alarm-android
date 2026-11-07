@@ -1,3 +1,6 @@
+v2.62 · 7 ta' Novembru 2026
+- Modalità tal-bidwi: it-tieqa “PREĊIPITAZZJONI 24” turi wkoll kemm ilma żammet il-ħamrija (saff 3–9 cm), b'kollox u siegħa b'siegħa.
+
 v2.61 · 7 ta' Novembru 2026
 - Modalità tal-bidwi: il-kaxxa “PREĊIPITAZZJONI 24” issa tinsab fir-ringiela t'isfel, bejn Xemx / Qamar u Indiċi UV; tagħfisa tispjegaha u turi s-sigħat bi preċipitazzjoni u l-millimetri tagħhom.
 - Imsewwi: fil-modalità tal-bidwi l-kaxxi Polline u Pressjoni kienu juru t-temperatura tal-ħamrija.

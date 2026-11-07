@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Gan deascadh le 24 uair an chloig anuas.
 Hours with precipitation	Uaireanta le deascadh
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	I mód feirmeora taispeánann an bosca “DEASCADH 24” sa ró íochtair, idir Grian / Gealach agus Innéacs UV, an t-uisce a thit le 24 uair an chloig anuas san áit a thaispeántar (baile nó páirc). Míníonn tapáil cad é agus taispeánann sí tábla de na huaireanta a raibh deascadh iontu, le milliméadair gach ceann. Meastachán Open-Meteo, ní tomhsaire báistí.
+Kept by the soil (3–9 cm layer): 	Coinnithe ag an ithir (sraith 3–9 cm): 
+moisture 	taise 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	“Coinnithe ag an ithir”: an méid a mhéadaigh (nó a laghdaigh, le −) an t-uisce i sraith 3–9 cm na hithreach; rith an chuid eile chun srutha, galaíodh é nó chuaigh sé níos doimhne.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Taispeánann an fhuinneog freisin an méid den uisce seo a choinnigh an ithir ina sraith 3–9 cm, don 24 uair an chloig ar fad agus uair ar uair.

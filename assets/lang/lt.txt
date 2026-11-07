@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Per paskutines 24 valandas kritulių nebuvo.
 Hours with precipitation	Valandos su krituliais
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Ūkininko režime apatinės eilutės langelis „KRITULIAI 24“, tarp Saulė / Mėnulis ir UV indekso, rodo per paskutines 24 valandas iškritusį vandenį rodomoje vietoje (gyvenvietėje ar lauke). Palietus paaiškinama, kas tai, ir rodoma lentelė su valandomis, kai buvo kritulių, su kiekvienos milimetrais. Open-Meteo įvertis, ne kritulių matuoklis.
+Kept by the soil (3–9 cm layer): 	Sulaikė dirvožemis (3–9 cm sluoksnis): 
+moisture 	drėgmė 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Sulaikė dirvožemis“: kiek padidėjo (arba sumažėjo, su −) vanduo 3–9 cm dirvožemio sluoksnyje; likusi dalis nutekėjo, išgaravo ar susigėrė giliau.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Langas taip pat rodo, kiek šio vandens dirvožemis sulaikė 3–9 cm sluoksnyje per visas 24 valandas ir kas valandą.

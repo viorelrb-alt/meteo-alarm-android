@@ -1,3 +1,6 @@
+v2.62 · 7. november 2026
+- Landmandstilstand: vinduet “NEDBØR 24” viser også, hvor meget vand jorden holdt (lag 3–9 cm), i alt og time for time.
+
 v2.61 · 7. november 2026
 - Landmandstilstand: feltet “NEDBØR 24” står nu i den nederste række, mellem Sol / Måne og UV-indeks; et tryk forklarer det og viser timerne med nedbør og deres millimeter.
 - Rettet: i landmandstilstand viste felterne Pollen og Lufttryk jordtemperaturen.

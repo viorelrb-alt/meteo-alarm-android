@@ -1,3 +1,6 @@
+v2.62 · 7 de novembro de 2026
+- Modo agricultor: a janela «PRECIPITAÇÃO 24» mostra também quanta água o solo reteve (camada 3–9 cm), no total e hora a hora.
+
 v2.61 · 7 de novembro de 2026
 - Modo agricultor: a caixa «PRECIPITAÇÃO 24» passa para a fila de baixo, entre Sol / Lua e Índice UV; um toque explica-a e lista as horas com precipitação e os seus milímetros.
 - Corrigido: no modo agricultor, as caixas Pólen e Pressão mostravam a temperatura do solo.

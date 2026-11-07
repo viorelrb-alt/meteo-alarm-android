@@ -1,3 +1,6 @@
+v2.62 · 7 novembre 2026
+- Modalità agricoltore: la finestra «PRECIPITAZIONI 24» mostra anche quanta acqua ha trattenuto il suolo (strato 3–9 cm), in totale e ora per ora.
+
 v2.61 · 7 novembre 2026
 - Modalità agricoltore: il riquadro «PRECIPITAZIONI 24» passa nella fila in basso, tra Sole / Luna e Indice UV; un tocco lo spiega ed elenca le ore con precipitazioni e i loro millimetri.
 - Corretto: in modalità agricoltore i riquadri Polline e Pressione mostravano la temperatura del suolo.

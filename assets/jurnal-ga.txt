@@ -1,3 +1,6 @@
+v2.62 · 7 Samhain 2026
+- Mód feirmeora: taispeánann fuinneog “DEASCADH 24” freisin an méid uisce a choinnigh an ithir (sraith 3–9 cm), san iomlán agus uair ar uair.
+
 v2.61 · 7 Samhain 2026
 - Mód feirmeora: tá an bosca “DEASCADH 24” sa ró íochtair anois, idir Grian / Gealach agus Innéacs UV; míníonn tapáil é agus taispeánann sí na huaireanta le deascadh agus a milliméadair.
 - Ceartaithe: i mód feirmeora thaispeáin na boscaí Pailin agus Brú teocht na hithreach.

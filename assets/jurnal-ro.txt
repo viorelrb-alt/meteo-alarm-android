@@ -1,3 +1,6 @@
+v2.62 · 7 noiembrie 2026
+- Mod Fermier: fereastra „PRECIPITAȚII 24” arată și cât a reținut solul din apa căzută (stratul de 3–9 cm), pe 24 de ore și oră cu oră; estimare Open-Meteo.
+
 v2.61 · 7 noiembrie 2026
 - Mod Fermier: caseta „PRECIPITAȚII 24” trece în rândul de casete de jos, între Soare / Lună și Indice UV; atingerea ei explică ce reprezintă și arată un tabel cu orele în care au fost precipitații și milimetrii fiecăreia.
 - Reparat: în Mod Fermier casetele Polen și Presiune arătau temperatura solului.

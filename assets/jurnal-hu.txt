@@ -1,3 +1,6 @@
+v2.62 · 2026. november 7.
+- Gazda mód: a „CSAPADÉK 24” ablak azt is mutatja, mennyi vizet tartott meg a talaj (3–9 cm-es réteg), összesen és óránként.
+
 v2.61 · 2026. november 7.
 - Gazda mód: a „CSAPADÉK 24” mező most az alsó sorban van, a Nap / Hold és az UV-index között; egy koppintás elmagyarázza, és mutatja a csapadékos órákat és millimétereiket.
 - Javítva: gazda módban a Pollen és a Légnyomás mező a talajhőmérsékletet mutatta.

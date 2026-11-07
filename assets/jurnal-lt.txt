@@ -1,3 +1,6 @@
+v2.62 · 2026 m. lapkričio 7 d.
+- Ūkininko režimas: langas „KRITULIAI 24“ taip pat rodo, kiek vandens sulaikė dirvožemis (3–9 cm sluoksnis), iš viso ir kas valandą.
+
 v2.61 · 2026 m. lapkričio 7 d.
 - Ūkininko režimas: langelis „KRITULIAI 24“ dabar yra apatinėje eilutėje, tarp Saulė / Mėnulis ir UV indekso; palietus jis paaiškinamas ir rodomos valandos su krituliais ir jų milimetrai.
 - Pataisyta: ūkininko režime langeliai Žiedadulkės ir Slėgis rodė dirvožemio temperatūrą.

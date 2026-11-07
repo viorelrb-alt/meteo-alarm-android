@@ -1,3 +1,6 @@
+v2.62 · 7. studenoga 2026
+- Način poljoprivrednika: prozor „OBORINE 24” pokazuje i koliko je vode tlo zadržalo (sloj 3–9 cm), ukupno i po satima.
+
 v2.61 · 7. studenoga 2026
 - Način poljoprivrednika: polje „OBORINE 24” sada je u donjem redu, između Sunce / Mjesec i UV indeksa; dodir ga objašnjava i pokazuje sate s oborinama i njihove milimetre.
 - Ispravljeno: u načinu poljoprivrednika polja Pelud i Tlak pokazivala su temperaturu tla.

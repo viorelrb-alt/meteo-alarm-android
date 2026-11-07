@@ -1,3 +1,6 @@
+v2.62 · 2026. gada 7. novembris
+- Lauksaimnieka režīms: logs “NOKRIŠŅI 24” rāda arī, cik daudz ūdens aizturēja augsne (slānis 3–9 cm), kopā un pa stundām.
+
 v2.61 · 2026. gada 7. novembris
 - Lauksaimnieka režīms: lodziņš “NOKRIŠŅI 24” tagad ir apakšējā rindā, starp Saule / Mēness un UV indeksu; pieskāriens to paskaidro un parāda stundas ar nokrišņiem un to milimetrus.
 - Labots: lauksaimnieka režīmā lodziņi Ziedputekšņi un Spiediens rādīja augsnes temperatūru.

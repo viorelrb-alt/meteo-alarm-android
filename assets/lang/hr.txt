@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Bez oborina u zadnja 24 sata.
 Hours with precipitation	Sati s oborinama
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	U načinu poljoprivrednika polje „OBORINE 24” u donjem redu, između Sunce / Mjesec i UV indeksa, pokazuje vodu palu u zadnja 24 sata na prikazanom mjestu (mjesto ili parcela). Dodir objašnjava što je to i pokazuje tablicu sati s oborinama, s milimetrima svakog. Procjena Open-Meteo, ne kišomjer.
+Kept by the soil (3–9 cm layer): 	Zadržalo tlo (sloj 3–9 cm): 
+moisture 	vlažnost 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Zadržalo tlo”: koliko je voda u sloju tla od 3–9 cm porasla (ili pala, s −); ostatak je otekao, isparilo ili otišao dublje.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Prozor pokazuje i koliko je te vode tlo zadržalo u sloju od 3–9 cm, za sva 24 sata i sat po sat.

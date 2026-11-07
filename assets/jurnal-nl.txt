@@ -1,3 +1,6 @@
+v2.62 · 7 november 2026
+- Boerenmodus: het venster „NEERSLAG 24” toont ook hoeveel water de bodem vasthield (laag 3–9 cm), in totaal en uur per uur.
+
 v2.61 · 7 november 2026
 - Boerenmodus: het vak „NEERSLAG 24” staat nu in de onderste rij, tussen Zon / Maan en UV-index; een tik legt het uit en toont de uren met neerslag en hun millimeters.
 - Opgelost: in boerenmodus toonden de vakken Pollen en Luchtdruk de bodemtemperatuur.

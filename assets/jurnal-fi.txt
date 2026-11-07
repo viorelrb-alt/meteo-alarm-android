@@ -1,3 +1,6 @@
+v2.62 · 7. marraskuuta 2026
+- Viljelijätila: ”SADEMÄÄRÄ 24” -ikkuna näyttää myös, kuinka paljon vettä maahan jäi (kerros 3–9 cm), yhteensä ja tunneittain.
+
 v2.61 · 7. marraskuuta 2026
 - Viljelijätila: ruutu ”SADEMÄÄRÄ 24” on nyt alarivissä, Aurinko / Kuu- ja UV-indeksi-ruutujen välissä; napautus selittää sen ja näyttää sadetunnit millimetreineen.
 - Korjattu: viljelijätilassa Siitepöly- ja Ilmanpaine-ruudut näyttivät maan lämpötilan.

@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Geen neerslag in de laatste 24 uur.
 Hours with precipitation	Uren met neerslag
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	In boerenmodus toont het vak „NEERSLAG 24” in de onderste rij, tussen Zon / Maan en UV-index, het water dat de laatste 24 uur viel op de getoonde plek (plaats of perceel). Een tik legt uit wat het is en toont een tabel met de uren met neerslag, met de millimeters van elk uur. Een schatting van Open-Meteo, geen regenmeter.
+Kept by the soil (3–9 cm layer): 	Vastgehouden door de bodem (laag 3–9 cm): 
+moisture 	vocht 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Vastgehouden door de bodem”: hoeveel het water in de bodemlaag van 3–9 cm steeg (of daalde, met −); de rest liep weg, verdampte of zakte dieper.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Het venster toont ook hoeveel van dit water de bodem in zijn laag van 3–9 cm vasthield, over de 24 uur en uur per uur.

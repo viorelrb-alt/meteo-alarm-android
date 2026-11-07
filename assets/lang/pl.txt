@@ -579,3 +579,7 @@ The data of the last 24 hours are being downloaded; tap again in a moment. If Op
 No precipitation in the last 24 hours.	Brak opadów w ostatnich 24 godzinach.
 Hours with precipitation	Godziny z opadami
 In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	W trybie rolnika pole „OPADY 24” w dolnym rzędzie, między Słońce / Księżyc a Indeks UV, pokazuje wodę, która spadła w ostatnich 24 godzinach w wyświetlanym miejscu (miejscowość lub działka). Dotknięcie wyjaśnia, co to jest, i pokazuje tabelę godzin z opadami, z milimetrami każdej z nich. Szacunek Open-Meteo, nie deszczomierz.
+Kept by the soil (3–9 cm layer): 	Zatrzymana przez glebę (warstwa 3–9 cm): 
+moisture 	wilgotność 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Zatrzymana przez glebę”: o ile wzrosła (lub spadła, z −) woda w warstwie gleby 3–9 cm; reszta spłynęła, odparowała lub wsiąkła głębiej.
+The window also shows how much of this water the soil kept in its 3–9 cm layer, for the whole 24 hours and hour by hour.	Okno pokazuje też, ile tej wody gleba zatrzymała w warstwie 3–9 cm, w ciągu 24 godzin i godzina po godzinie.
