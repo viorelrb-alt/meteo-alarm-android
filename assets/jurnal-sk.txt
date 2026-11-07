@@ -1,3 +1,6 @@
+v2.64 · 7. novembra 2026
+- Režim farmára, telefón naležato: podrobnosti políčok sa otvárajú vo veľkom okne vpravo, vždy na rovnakom mieste a rovnako veľké.
+
 v2.63 · 7. novembra 2026
 - „REŽIM FARMÁRA“ je teraz pod hornou čiarou, vľavo pod tlačidlom ☰, namiesto dole.
 

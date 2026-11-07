@@ -1,3 +1,6 @@
+v2.64 · 7. marraskuuta 2026
+- Viljelijätila, puhelin vaakasuunnassa: ruutujen tiedot avautuvat suureen ikkunaan oikealle, aina samaan paikkaan ja samankokoisena.
+
 v2.63 · 7. marraskuuta 2026
 - ”VILJELIJÄTILA” näkyy nyt ylemmän viivan alla, vasemmalla ☰-painikkeen alla, eikä alareunassa.
 

@@ -1,3 +1,6 @@
+v2.64 · 7 novembre 2026
+- Mode agriculteur, téléphone en paysage : les détails des cases s'ouvrent dans une grande fenêtre à droite, toujours à la même place et de la même taille.
+
 v2.63 · 7 novembre 2026
 - « MODE AGRICULTEUR » s'affiche maintenant sous la ligne du haut, à gauche sous le bouton ☰, au lieu d'en bas.
 

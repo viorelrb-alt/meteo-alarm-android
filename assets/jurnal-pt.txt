@@ -1,3 +1,6 @@
+v2.64 · 7 de novembro de 2026
+- Modo agricultor, telemóvel na horizontal: os detalhes das caixas abrem-se numa janela grande à direita, sempre no mesmo sítio e do mesmo tamanho.
+
 v2.63 · 7 de novembro de 2026
 - «MODO AGRICULTOR» aparece agora sob a linha de cima, à esquerda sob o botão ☰, em vez de em baixo.
 

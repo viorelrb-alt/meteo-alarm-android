@@ -1,3 +1,6 @@
+v2.64 · 7 novembre 2026
+- Modalità agricoltore, telefono in orizzontale: i dettagli dei riquadri si aprono in una grande finestra a destra, sempre nello stesso posto e della stessa misura.
+
 v2.63 · 7 novembre 2026
 - «MODALITÀ AGRICOLTORE» compare ora sotto la linea in alto, a sinistra sotto il pulsante ☰, invece che in basso.
 

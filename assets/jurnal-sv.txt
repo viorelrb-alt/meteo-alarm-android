@@ -1,3 +1,6 @@
+v2.64 · 7 november 2026
+- Lantbruksläge, telefonen på tvären: rutornas detaljer öppnas i ett stort fönster till höger, alltid på samma plats och lika stort.
+
 v2.63 · 7 november 2026
 - ”LANTBRUKSLÄGE” visas nu under den översta linjen, till vänster under knappen ☰, i stället för längst ned.
 

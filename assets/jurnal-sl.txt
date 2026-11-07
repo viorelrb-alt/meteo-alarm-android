@@ -1,3 +1,6 @@
+v2.64 · 7. november 2026
+- Način kmeta, telefon leže: podrobnosti polj se odprejo v velikem oknu desno, vedno na istem mestu in enako veliko.
+
 v2.63 · 7. november 2026
 - »NAČIN KMETA« je zdaj pod zgornjo črto, levo pod gumbom ☰, namesto spodaj.
 

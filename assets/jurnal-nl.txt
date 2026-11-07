@@ -1,3 +1,6 @@
+v2.64 · 7 november 2026
+- Boerenmodus, telefoon dwars: de details van de vakken openen in een groot venster rechts, altijd op dezelfde plek en even groot.
+
 v2.63 · 7 november 2026
 - „BOERENMODUS” staat nu onder de bovenste lijn, links onder de knop ☰, in plaats van onderaan.
 

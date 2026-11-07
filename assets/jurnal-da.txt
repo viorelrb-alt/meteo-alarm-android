@@ -1,3 +1,6 @@
+v2.64 · 7. november 2026
+- Landmandstilstand, telefonen på tværs: detaljerne for felterne åbner i et stort vindue til højre, altid samme sted og samme størrelse.
+
 v2.63 · 7. november 2026
 - “LANDMANDSTILSTAND” står nu under den øverste linje, til venstre under ☰-knappen, i stedet for nederst.
 

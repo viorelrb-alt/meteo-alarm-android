@@ -1,3 +1,6 @@
+v2.64 · 2026 m. lapkričio 7 d.
+- Ūkininko režimas, telefonas gulsčias: langelių informacija atsidaro dideliame lange dešinėje, visada toje pačioje vietoje ir to paties dydžio.
+
 v2.63 · 2026 m. lapkričio 7 d.
 - „ŪKININKO REŽIMAS“ dabar rodoma po viršutine linija, kairėje po ☰ mygtuku, o ne apačioje.
 

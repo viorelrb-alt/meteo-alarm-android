@@ -1,3 +1,6 @@
+v2.64 · 7 listopada 2026
+- Tryb rolnika, telefon poziomo: szczegóły pól otwierają się w dużym oknie po prawej, zawsze w tym samym miejscu i tej samej wielkości.
+
 v2.63 · 7 listopada 2026
 - „TRYB ROLNIKA” jest teraz pod górną linią, po lewej pod przyciskiem ☰, zamiast na dole.
 

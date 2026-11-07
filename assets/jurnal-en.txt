@@ -1,3 +1,6 @@
+v2.64 · 7 November 2026
+- Farmer mode, phone on its side: the details of the boxes open in one large window on the right, always in the same place and the same size.
+
 v2.63 · 7 November 2026
 - “FARMER MODE” now shows under the top line, at the left under the ☰ button, instead of at the bottom.
 

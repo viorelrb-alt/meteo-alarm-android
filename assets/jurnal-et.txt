@@ -1,3 +1,6 @@
+v2.64 · 7. november 2026
+- Põllumehe režiim, telefon rõhtsalt: kastide üksikasjad avanevad suures aknas paremal, alati samas kohas ja sama suurena.
+
 v2.63 · 7. november 2026
 - „PÕLLUMEHE REŽIIM” on nüüd ülemise joone all, vasakul ☰ nupu all, mitte all.
 

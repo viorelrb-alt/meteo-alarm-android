@@ -1,3 +1,6 @@
+v2.64 · 7 de noviembre de 2026
+- Modo agricultor, teléfono en horizontal: los detalles de las casillas se abren en una ventana grande a la derecha, siempre en el mismo sitio y del mismo tamaño.
+
 v2.63 · 7 de noviembre de 2026
 - «MODO AGRICULTOR» aparece ahora bajo la línea de arriba, a la izquierda bajo el botón ☰, en lugar de abajo.
 

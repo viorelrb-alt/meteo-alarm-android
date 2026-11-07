@@ -140,7 +140,15 @@ final class Bubble extends FrameLayout {
 	 * Opens next to the button at ANCHOR (pixels: left, top, right, bottom), WIDTH pixels wide, with
 	 * TITLE (none when empty) and ROWS; PICK hears the tapped row, after the bubble has closed.
 	 */
+	/**
+	 * Set before show(): in landscape the bubble is one standard panel, the same place and size for
+	 * every box of the right side (Viorel 2026-11-07: the small bubbles could not be used there).
+	 */
+	boolean panel;
+
 	void show(float[] anchor, int width, String head, List<Row> rows, boolean en, final Pick pick) {
+		boolean pan = panel;
+		panel = false;
 		Context c = getContext();
 		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there; +30 %, then 10 % and
 		// 5 % less in v2.20 / v2.21), and the text size of ☰.
@@ -244,8 +252,12 @@ final class Bubble extends FrameLayout {
 			sp -= 0.5f;
 		}
 		// On a tablet just as wide as the longest row (Viorel v2.21: it was too wide there).
-		if (TextSize.tablet(c)) width = (int) Math.ceil(need + 8 * dp);
-		width = Math.min(Math.max(width, (int) Math.ceil(need)), sw - 2 * margin);
+		pan = pan && sw > sh;
+		if (pan) width = (int) (sw * 0.62f);
+		else {
+			if (TextSize.tablet(c)) width = (int) Math.ceil(need + 8 * dp);
+			width = Math.min(Math.max(width, (int) Math.ceil(need)), sw - 2 * margin);
+		}
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		title.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		more.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -254,9 +266,12 @@ final class Bubble extends FrameLayout {
 		// screen's edge (in landscape the room under the button).
 		boolean below = (anchor[1] + anchor[3]) / 2 < sh / 2f;
 		int room = below ? sh - (int) anchor[3] - margin - (int) (2 * dp) : (int) anchor[1] - margin - (int) (2 * dp);
-		int maxH = Math.min((int) (Math.max(sw, sh) * (TextSize.tablet(c) ? 0.7f : 0.5f)), room - tip), rowsH = list.getMeasuredHeight();
+		if (pan) tip = 0;
+		int maxH = pan ? sh - 2 * margin : Math.min((int) (Math.max(sw, sh) * (TextSize.tablet(c) ? 0.7f : 0.5f)), room - tip), rowsH = list.getMeasuredHeight();
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
 		int scrollH = scrolls ? maxH - titleH - 2 * pad - 2 * more.getMeasuredHeight() : rowsH;
+		// The panel keeps its full height whatever it holds.
+		if (pan && !scrolls) scrollH = maxH - titleH - 2 * pad;
 		less.setVisibility(scrolls ? INVISIBLE : GONE);
 		more.setVisibility(scrolls ? VISIBLE : GONE);
 		scroll.getLayoutParams().height = scrollH;
@@ -266,6 +281,12 @@ final class Bubble extends FrameLayout {
 		int x = (int) Math.max(margin, Math.min(anchor[0], sw - margin - width));
 		int y = below ? (int) anchor[3] + (int) (2 * dp) : (int) anchor[1] - (int) (2 * dp) - cardH;
 		y = Math.max(margin, Math.min(y, sh - margin - cardH));
+		if (pan) {
+			// The right side of the screen, from the top to the bottom, reaching far to the left.
+			x = sw - margin - width;
+			y = margin;
+			below = false;
+		}
 		card.tipUp = below;
 		card.tipX = (anchor[0] + anchor[2]) / 2 - x;
 		card.tip = tip;

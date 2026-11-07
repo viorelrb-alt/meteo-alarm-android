@@ -1,3 +1,6 @@
+v2.64 · 7 ta' Novembru 2026
+- Modalità tal-bidwi, telefon mimdud: id-dettalji tal-kaxxi jinfetħu f'tieqa kbira fuq il-lemin, dejjem fl-istess post u bl-istess daqs.
+
 v2.63 · 7 ta' Novembru 2026
 - “MODALITÀ TAL-BIDWI” issa jidher taħt il-linja ta' fuq, fuq ix-xellug taħt il-buttuna ☰, minflok isfel.
 

@@ -1,3 +1,6 @@
+v2.64 · 2026. november 7.
+- Gazda mód, fekvő telefon: a mezők részletei egy nagy ablakban nyílnak meg jobbra, mindig ugyanott és ugyanakkorán.
+
 v2.63 · 2026. november 7.
 - A „GAZDA MÓD” felirat most a felső vonal alatt, balra a ☰ gomb alatt látszik, nem alul.
 

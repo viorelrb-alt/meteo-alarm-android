@@ -1,3 +1,6 @@
+v2.64 · 7. listopadu 2026
+- Režim farmáře, telefon naležato: podrobnosti políček se otevírají ve velkém okně vpravo, vždy na stejném místě a stejně velké.
+
 v2.63 · 7. listopadu 2026
 - „REŽIM ZEMĚDĚLCE“ je teď pod horní čarou, vlevo pod tlačítkem ☰, místo dole.
 

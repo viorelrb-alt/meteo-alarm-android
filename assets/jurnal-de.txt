@@ -1,3 +1,6 @@
+v2.64 · 7. November 2026
+- Landwirt-Modus, Telefon quer: Die Details der Kästchen öffnen sich in einem großen Fenster rechts, immer am selben Platz und gleich groß.
+
 v2.63 · 7. November 2026
 - „LANDWIRT-MODUS“ steht jetzt unter der oberen Linie, links unter der Taste ☰, statt unten.
 

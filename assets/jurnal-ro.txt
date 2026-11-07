@@ -1,3 +1,6 @@
+v2.64 · 7 noiembrie 2026
+- Mod Fermier, telefon culcat: detaliile casetelor se deschid într-o fereastră mare în dreapta, mereu în același loc și de aceeași mărime.
+
 v2.63 · 7 noiembrie 2026
 - „MODUL FERMIER” apare acum sub linia de sus, în stânga, sub butonul ☰, în loc de jos.
 
