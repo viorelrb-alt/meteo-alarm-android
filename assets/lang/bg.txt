@@ -382,3 +382,158 @@ Switch to the metric system?	Преминаване към метричната 
 Metric	Метрична
 °C · metric system	°C · метрична система
 Keep °F	Остави °F
+dry	сухо
+moderate	умерено
+moist	влажно
+very wet	много мокро
+Parcels	Парцели
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Запазени само на този телефон, докато не ги изтриеш. Статистиката се пази 28 дни.
+Save the place here	Запази мястото тук
+Choose on the map	Избери на картата
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Още няма запазени парцели. Застани на парцела и докосни „Запази мястото тук“ или я избери на картата.
+alerts on	сигнали включени
+wind 	вятър 
+rain 	дъжд 
+soil 	почва 
+updated 	обновено 
+Without location the place can only be chosen on the map.	Без местоположение мястото може да се избере само на картата.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Телефонът не разрешава известия на приложението: сигналите не могат да се покажат.
+Looking for the position (GPS)… stay outside, on the parcel.	Търся позицията (GPS)… остани навън, на парцела.
+The position was not found.	Позицията не беше намерена.
+The position was not found: move the map to the parcel.	Позицията не беше намерена: премести картата до парцела.
+The position is approximate (±	Позицията е приблизителна (±
+ m): check the pin on the map.	 м): провери карфицата на картата.
+New parcel	Нов парцел
+Move the pin	Премести карфицата
+Name, e.g. parcel 96/5	Име, напр. парцел 96/5
+move the map to put the pin on the parcel	премести картата, за да е карфицата върху парцела
+My position	Моята позиция
+Give the parcel a name	Дай име на парцела
+Downloading from Open-Meteo…	Изтеглям от Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo не отговаря в момента (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Когато достъпът се върне, приложението изтегля данните на парцела и ти изпраща известие.
+low 	мин 
+high 	макс 
+turns to 	обръща към 
+ around 	 около 
+steady for 12 hours	постоянна 12 часа
+today up to 	днес до 
+Air temperature	Температура на въздуха
+gusts 	пориви 
+Wind direction	Посока на вятъра
+Chance of rain	Вероятност за дъжд
+Air humidity	Влажност на въздуха
+Soil moisture	Влажност на почвата
+3–9 cm, estimated	3–9 см, оценка
+Soil temperature	Температура на почвата
+surface, estimated	повърхност, оценка
+Next 12 hours	Следващите 12 часа
+Statistics (last 28 days)	Статистика (последните 28 дни)
+Move the pin on the map	Премести карфицата на картата
+Rain / wind alerts: ON	Сигнали дъжд / вятър: ВКЛ.
+Rain / wind alerts: OFF	Сигнали дъжд / вятър: ИЗКЛ.
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Получаваш известие, когато за този парцел в следващите 12 часа се прогнозира дъжд или силен вятър (проверка на всеки 3 часа).
+Rename	Преименувай
+Delete the parcel	Изтрий парцела
+Delete 	Да изтрия 
+The parcel and its statistics are deleted from the phone.	Парцелът и статистиката му се изтриват от телефона.
+Delete	Изтрий
+Statistics · 	Статистика · 
+Choose the period, within the last 28 days.	Избери периода в рамките на последните 28 дни.
+ days	 дни
+To 	До 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Още няма данни за този период. Отвори парцела веднъж с интернет: приложението изтегля последните 28 дни от Open-Meteo.
+Summary	Обобщение
+Lowest / highest	Най-ниска / най-висока
+Rain total	Общо валежи
+ days with rain (1 mm+)	 дни с дъжд (от 1 мм)
+Highest wind	Най-силен вятър
+gusts up to 	пориви до 
+mean, estimated	средно, оценка
+Day by day	Ден по ден
+Date	Дата
+Max	Макс
+Min	Мин
+Soil	Почва
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Източник: Open-Meteo (модели и оценки за минали дни). Влажност на почвата на 3–9 см, оценка.
+Save as PDF in Downloads	Запази PDF в Изтегляния
+The PDF could not be saved: 	PDF файлът не можа да се запази: 
+PDF saved	PDF запазен
+In Downloads: 	В Изтегляния: 
+Open	Отвори
+No app on the phone opens PDF files.	Нито едно приложение на телефона не отваря PDF файлове.
+Max wind	Макс. вятър
+Parcel statistics · 	Статистика на парцела · 
+Coordinates: 	Координати: 
+Period: 	Период: 
+ days)	 дни)
+Made on 	Създадено на 
+Lowest temperature: 	Най-ниска температура: 
+Highest temperature: 	Най-висока температура: 
+Rain total: 	Общо валежи: 
+Highest wind: 	Най-силен вятър: 
+Mean soil moisture (3–9 cm, estimated): 	Средна влажност на почвата (3–9 см, оценка): 
+Source: Open-Meteo (open-meteo.com), weather models.	Източник: Open-Meteo (open-meteo.com), метеорологични модели.
+Soil moisture and soil temperature are estimates, not measurements.	Влажността и температурата на почвата са оценки, не измервания.
+Farmer mode	Режим фермер
+Open-Meteo answers again: the farmer's data for 	Open-Meteo отговаря отново: данните за фермери за 
+ have been downloaded.	 са изтеглени.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Данни за фермери: Open-Meteo не отговаря; ще получиш известие, когато дойдат
+Farmer mode: tap an hour or a rain box for details	Режим фермер: докосни час или поле за дъжд за подробности
+Normal mode	Нормален режим
+Local time	Местно време
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	За населено място в САЩ часовникът, часовете на прогнозата и датите показват местното време на мястото, не това на телефона (полезно в тестовия режим или когато гледаш място в друга часова зона).
+Farmer mode / Normal mode	Режим фермер / Нормален режим
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Първият ред в ☰ превключва между двата режима; показва другия режим. В режим фермер температурата и иконата остават същите, долу пише ФЕРМЕР, часовите полета отварят подробности, а графиката на валежите и петте дни отстъпват място на ред часови полета за дъжд.
+Hour boxes	Часови полета
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Докосване на час отваря балон: температура, минимум и максимум на деня, скорост на вятъра и пориви, посока на вятъра и кога се очаква да се обърне, влажност на въздуха, вероятност за дъжд, влажност на почвата (3–9 см) и температура на почвата.
+Rain boxes	Полета за дъжд
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Едно поле на час: вероятността за дъжд с големи цифри, лента, пълна колкото вероятността, количеството и вида (дъжд, превалявания, сняг, суграшица). Докосването показва подробности: количество по вид, облачност, влажност и колко дъжд пада до полунощ.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Парцели (в режим фермер). „Запази мястото тук“ взема GPS позицията, където стоиш; после картата я показва с карфица: премести картата, за да е карфицата точно върху парцела, и му дай име (напр. парцел 96/5). „Избери на картата“ запазва парцел от вкъщи. Парцелите остават само на този телефон, докато не ги изтриеш.
+A parcel's page	Страницата на парцел
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Отделни полета за температура на въздуха, вятър, посока на вятъра, вероятност за дъжд, влажност на въздуха, влажност на почвата и температура на почвата, после следващите 12 часа. Бутони: статистика, премести карфицата, сигнали дъжд / вятър, преименувай, изтрий.
+Statistics and PDF	Статистика и PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	За избран период от последните 28 дни: за всеки ден максимум и минимум, общо валежи, най-силен вятър и средна влажност на почвата, плюс обобщение на периода. „Запази PDF в Изтегляния“ създава файл за печат или изпращане. Статистиката се пази 28 дни.
+Parcel alerts	Сигнали за парцел
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	На страницата на парцела, сигнали ВКЛ.: на всеки 3 часа приложението гледа следващите 12 часа и изпраща известие, когато се прогнозира дъжд (60% и 0,5 мм, или 1 мм) или силен вятър (пориви от 50 км/ч); едно известие на епизод. Нощем, при изключен екран, проверката чака екрана.
+Soil data and source	Данни за почвата и източник
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Всичко за фермери идва от Open-Meteo. Влажността на почвата (процент от обема, на 3–9 см) и температурата на почвата са оценки на метеорологичния модел, не измервания; близки парцели (1–11 км) може да имат същите стойности. Когато Open-Meteo не отговаря, приложението казва това, изтегля данните при връщане на достъпа и изпраща известие.
+The map	Картата
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, безплатна и без акаунт (© OpenStreetMap contributors); има нужда от интернет. Един пръст я мести, два пръста или двойно докосване увеличават; „Моята позиция“ показва със синя точка къде си. Парчетата от картата остават в телефона една седмица.
+Farmer · 	Фермер · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo отговаря отново: данните на парцела са изтеглени.
+Rain expected from 	Очаква се дъжд от 
+ in the next 12 hours	 в следващите 12 часа
+Rain · 	Дъжд · 
+Strong wind from 	Силен вятър от 
+, gusts 	, пориви 
+Wind · 	Вятър · 
+showers	превалявания
+sleet	суграшица
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Данните за фермери (вятър по часове, влажност, почва) идват само от Open-Meteo, който в момента не отговаря. Когато достъпът се върне, приложението ги изтегля и ти изпраща известие.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Влажността и температурата на почвата са оценки на метеорологичния модел, не измервания · източник: Open-Meteo (open-meteo.com).
+Temperature: 	Температура: 
+Chance of rain: 	Вероятност за дъжд: 
+Day's low / high: 	Минимум / максимум на деня: 
+Speed: 	Скорост: 
+Direction: from 	Посока: от 
+Change: it turns from 	Промяна: обръща от 
+ to 	 към 
+Change: it keeps its direction for the next 12 hours	Промяна: запазва посоката си следващите 12 часа
+Air and rain	Въздух и дъжд
+Air humidity: 	Влажност на въздуха: 
+Soil (estimated)	Почва (оценка)
+Soil moisture (3–9 cm): 	Влажност на почвата (3–9 см): 
+Soil temperature (surface): 	Температура на почвата (повърхност): 
+likely	вероятен
+possible	възможен
+unlikely	малко вероятен
+Amount: 	Количество: 
+Kind: 	Вид: 
+showers 	превалявания 
+snow 	сняг 
+Of which: 	От тях: 
+Cloud cover: 	Облачност: 
+Until midnight: 	До полунощ: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Източник: Open-Meteo. Вероятността показва колко вероятно е да вали в този час, а не колко дълго.
+FARMER	ФЕРМЕР

@@ -1,3 +1,10 @@
+v2.50 · 7 novembre 2026
+- Modalità agricoltore: la prima voce di ☰ passa tra modalità agricoltore e modalità normale. In modalità agricoltore, toccare una casella oraria mostra la temperatura, la minima e la massima del giorno, il vento con raffiche e direzione (e quando gira), l'umidità dell'aria, la probabilità di pioggia, l'umidità e la temperatura del suolo; il grafico della pioggia e i cinque giorni sono sostituiti da caselle di pioggia ora per ora, con dettagli al tocco.
+- ☰ › Appezzamenti: salva il luogo dove ti trovi (GPS), sistemalo sulla mappa OpenStreetMap e dagli un nome; ogni appezzamento ha caselle per vento, direzione, pioggia, umidità dell'aria e del suolo, temperatura del suolo e dell'aria, avvisi di pioggia e vento forte, e statistiche su un periodo degli ultimi 28 giorni, salvabili in PDF in Download.
+- I dati del suolo sono stime di Open-Meteo; se Open-Meteo non risponde, l'app li scarica più tardi e ti manda una notifica.
+- Stati Uniti: l'orologio e le ore mostrano l'ora locale della località scelta.
+- Notifiche solo per la località scelta (nella modalità di prova) o dove si trova il telefono: niente più avvisi dagli Stati Uniti quando l'app mostra una località europea.
+
 v2.40 · 4 novembre 2026
 - Stati Uniti: ☰ › Tornadoes, una pagina come Terremoti: le allerte tornado per la tua località e il tuo stato, i tornado segnalati vicino negli ultimi 2 giorni, quanti sono in tutto il paese e cosa fare.
 - Stati Uniti: niente riquadro Polline (lì non ci sono dati); la qualità dell'aria con l'indice americano US AQI.

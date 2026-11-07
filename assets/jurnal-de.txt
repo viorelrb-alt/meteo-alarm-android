@@ -1,3 +1,10 @@
+v2.50 · 7. November 2026
+- Landwirt-Modus: Der erste Eintrag in ☰ wechselt zwischen Landwirt-Modus und normalem Modus. Im Landwirt-Modus zeigt ein Tippen auf ein Stundenkästchen Temperatur, Tiefst- und Höchstwert des Tages, Wind mit Böen und Richtung (und wann er dreht), Luftfeuchtigkeit, Regenwahrscheinlichkeit, Bodenfeuchte und Bodentemperatur; statt des Regendiagramms und der fünf Tage kommen stündliche Regenkästchen mit Details beim Tippen.
+- ☰ › Parzellen: Speichere den Ort, an dem du stehst (GPS), passe ihn auf der OpenStreetMap-Karte an und gib ihm einen Namen; jede Parzelle hat Kästchen für Wind, Richtung, Regen, Luft- und Bodenfeuchte, Boden- und Lufttemperatur, Warnungen bei Regen und starkem Wind und eine Statistik für einen Zeitraum der letzten 28 Tage, als PDF in Downloads speicherbar.
+- Die Bodendaten sind Schätzungen von Open-Meteo; wenn Open-Meteo nicht antwortet, lädt die App sie später und schickt dir eine Benachrichtigung.
+- USA: Uhr und Stunden zeigen die Ortszeit des gewählten Ortes.
+- Benachrichtigungen nur für den gewählten Ort (im Testmodus) oder dort, wo das Telefon ist: keine Meldungen aus den USA mehr, wenn die App einen Ort in Europa zeigt.
+
 v2.40 · 4. November 2026
 - USA: ☰ › Tornadoes, eine Seite wie Erdbeben: die Tornado-Warnungen für deinen Ort und Bundesstaat, die in den letzten 2 Tagen in der Nähe gemeldeten Tornados, ihre Zahl im ganzen Land und was zu tun ist.
 - USA: kein Pollen-Kästchen (dort gibt es keine Daten); die Luftqualität als amerikanischer US-AQI.

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import ro.meteoalarm.android.core.Cities;
+import ro.meteoalarm.android.core.Farm;
 import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Countries;
 import ro.meteoalarm.android.core.MetNo;
@@ -28,6 +29,8 @@ import ro.meteoalarm.android.core.Weather;
 final class Fetcher {
 	static final class Result {
 		String forecast, uv, pollen, warn, quake;
+		/** Farmer mode (v2.50): the farmer's forecast (Open-Meteo only), null when it did not come or is not wanted. */
+		String farm;
 		/** Where the forecast came from: "Open-Meteo" or MetNo.NAME. */
 		String source = "";
 		/** Why the forecast did not come (null when it came). */
@@ -101,7 +104,7 @@ final class Fetcher {
 
 	private static Result downloadNow(Context ctx, Cities.City c) {
 		Result r = new Result();
-		String tz = TimeZone.getDefault().getID();
+		String tz = tz(c);
 		try {
 			String[] f = forecast(ctx, c, tz);
 			r.forecast = f[0];
@@ -119,6 +122,16 @@ final class Fetcher {
 		} catch (Exception e) {
 			r.uv = null;
 			Log.e(ctx, "DATE", "UV a eșuat: " + reason(e, false));
+		}
+		if (Parcels.farmer(ctx)) {
+			try {
+				r.farm = Weather.get(Farm.url(c.lat, c.lon, tz, 0, 3));
+				Farm.parse(r.farm);
+				Log.i(ctx, "FERMIER", "prognoza pentru fermieri " + c.name + " OK " + r.farm.length() / 1024 + " KB");
+			} catch (Exception e) {
+				r.farm = null;
+				Log.e(ctx, "FERMIER", "prognoza pentru fermieri a eșuat: " + reason(e, false));
+			}
 		}
 		try {
 			r.pollen = Weather.get(Weather.pollenUrl(c.lat, c.lon));
@@ -241,6 +254,7 @@ final class Fetcher {
 			prefs(ctx).edit().putString("failReason", reason(r.error, false)).putString("failReasonEn", reason(r.error, true)).apply();
 		}
 		if (r.pollen != null) write(ctx, "pollen.json", r.pollen);
+		if (r.farm != null) saveFarm(ctx, c, r.farm);
 		if (r.warn != null) {
 			write(ctx, "warn.xml", r.warn);
 			prefs(ctx).edit().putString("warnCity", c.key()).apply();
@@ -251,6 +265,36 @@ final class Fetcher {
 		}
 		// Rain or snow starting, new warnings, earthquakes: notified once (when the user agreed).
 		if (r.forecast != null || r.warn != null || r.quake != null) Notifier.check(ctx, c);
+	}
+
+	/** The time zone of town C: a US town's own (v2.50, its local time), else the phone's. */
+	static String tz(Cities.City c) {
+		String z = c != null && c.us() ? Cities.tzOf(c) : null;
+		return z != null ? z : TimeZone.getDefault().getID();
+	}
+
+	/** Keeps the farmer's forecast of town C; the notice promised when it had not come (v2.50). */
+	static void saveFarm(Context ctx, Cities.City c, String json) {
+		write(ctx, "farm.json", json);
+		SharedPreferences p = prefs(ctx);
+		p.edit().putString("farmCity", c.key()).putLong("farmFetched", System.currentTimeMillis()).apply();
+		if (p.getBoolean("farmPending", false)) {
+			p.edit().remove("farmPending").apply();
+			Notifier.post(ctx, 2900, Tr.t("Farmer mode", "Mod Fermier"), Tr.t("Open-Meteo answers again: the farmer's data for ", "Open-Meteo răspunde din nou: datele pentru fermieri pentru ")
+					+ c.name + Tr.t(" have been downloaded.", " au fost descărcate."));
+			Log.i(ctx, "NOTIF", "datele pentru fermieri au venit după pauza Open-Meteo");
+		}
+	}
+
+	/** The farmer's forecast saved for town C (null when none or for another town). */
+	static Farm.Data farm(Context ctx, Cities.City c) {
+		if (c == null || !c.key().equals(prefs(ctx).getString("farmCity", ""))) return null;
+		try {
+			String f = read(ctx, "farm.json");
+			return f == null ? null : Farm.parse(f);
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	/** The English name of the town's country, as EMSC names regions ("Romania"). */

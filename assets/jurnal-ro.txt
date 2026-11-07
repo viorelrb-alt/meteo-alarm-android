@@ -1,3 +1,10 @@
+v2.50 · 7 noiembrie 2026
+- Mod Fermier: primul rând din ☰ comută între Mod Fermier și Mod Normal. În Mod Fermier, atingerea unei casete orare arată temperatura, minima și maxima zilei, vântul cu rafale și direcție (și când se schimbă), umiditatea aerului, șansa de ploaie, umiditatea și temperatura solului; graficul de precipitații și cele cinci zile sunt înlocuite de casete orare de ploaie, cu detalii la atingere.
+- ☰ › Parcele: salvezi locul unde stai (GPS), îl corectezi pe harta OpenStreetMap și îi dai un nume; fiecare parcelă are casete pentru vânt, direcție, ploaie, umiditatea aerului și a solului, temperatura solului și a aerului, alerte de ploaie și vânt puternic și statistici pe o perioadă din ultimele 28 de zile, salvate ca PDF în Descărcări.
+- Datele de sol sunt estimări Open-Meteo; dacă Open-Meteo nu răspunde, aplicația le descarcă mai târziu și îți trimite o notificare.
+- Statele Unite: ceasul și orele arată ora locală a localității alese.
+- Notificări doar pentru localitatea aleasă (în modul de test) sau pentru locul unde e telefonul: nu mai vin alerte din Statele Unite când aplicația arată o localitate din Europa.
+
 v2.40 · 4 noiembrie 2026
 - Statele Unite: ☰ › Tornade, o pagină ca Cutremure: atenționările și avertizările de tornadă pentru localitatea și statul tău, tornadele raportate în apropiere în ultimele 2 zile, câte sunt în toată țara și ce faci.
 - Statele Unite: fără caseta Polen (acolo nu există date); calitatea aerului după indicele american US AQI.

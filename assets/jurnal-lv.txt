@@ -1,3 +1,10 @@
+v2.50 · 2026. gada 7. novembris
+- Lauksaimnieka režīms: ☰ pirmais punkts pārslēdz starp lauksaimnieka un parasto režīmu. Lauksaimnieka režīmā pieskāriens stundas lodziņam rāda temperatūru, dienas zemāko un augstāko, vēju ar brāzmām un virzienu (un kad tas pagriezīsies), gaisa mitrumu, lietus iespējamību, augsnes mitrumu un augsnes temperatūru; nokrišņu grafika un piecu dienu vietā ir stundu lietus lodziņi ar sīkāku informāciju pēc pieskāriena.
+- ☰ › Lauki: saglabājiet vietu, kur stāvat (GPS), precizējiet to OpenStreetMap kartē un piešķiriet nosaukumu; katram laukam ir lodziņi vējam, virzienam, lietum, gaisa un augsnes mitrumam, augsnes un gaisa temperatūrai, lietus un stipra vēja brīdinājumi un statistika par periodu pēdējo 28 dienu robežās, ko var saglabāt PDF mapē Lejupielādes.
+- Augsnes dati ir Open-Meteo aplēses; ja Open-Meteo neatbild, lietotne tos lejupielādē vēlāk un nosūta paziņojumu.
+- ASV: pulkstenis un stundas rāda izvēlētās pilsētas vietējo laiku.
+- Paziņojumi tikai par izvēlēto pilsētu (testa režīmā) vai vietu, kur atrodas tālrunis: vairs nav brīdinājumu no ASV, kad lietotne rāda pilsētu Eiropā.
+
 v2.40 · 2026. gada 4. novembris
 - Amerikas Savienotās Valstis: ☰ › Tornadoes, lapa kā Zemestrīces: brīdinājumi par tornado tavai vietai un štatam, pēdējās 2 dienās tuvumā ziņotie tornado, to skaits visā valstī un kas jādara.
 - Amerikas Savienotās Valstis: nav Ziedputekšņu lodziņa (tur nav datu); gaisa kvalitāte pēc amerikāņu US AQI indeksa.

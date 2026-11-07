@@ -1,3 +1,10 @@
+v2.50 · 7. listopadu 2026
+- Režim zemědělce: první položka ☰ přepíná mezi režimem zemědělce a normálním režimem. V režimu zemědělce klepnutí na hodinové políčko ukáže teplotu, minimum a maximum dne, vítr s nárazy a směrem (a kdy se stočí), vlhkost vzduchu, pravděpodobnost deště, vlhkost a teplotu půdy; graf deště a pět dnů nahrazují hodinová políčka deště s podrobnostmi po klepnutí.
+- ☰ › Pozemky: ulož místo, kde stojíš (GPS), dolaď ho na mapě OpenStreetMap a pojmenuj; každý pozemek má políčka pro vítr, směr, déšť, vlhkost vzduchu a půdy, teplotu půdy a vzduchu, upozornění na déšť a silný vítr a statistiku za období z posledních 28 dní, kterou lze uložit jako PDF do Stažených.
+- Údaje o půdě jsou odhady Open-Meteo; když Open-Meteo neodpovídá, aplikace je stáhne později a pošle ti oznámení.
+- Spojené státy: hodiny a časy ukazují místní čas vybrané obce.
+- Oznámení jen pro vybranou obec (v testovacím režimu) nebo tam, kde je telefon: žádná hlášení z USA, když aplikace ukazuje obec v Evropě.
+
 v2.40 · 4. listopadu 2026
 - Spojené státy: ☰ › Tornadoes, stránka jako Zemětřesení: výstrahy před tornády pro tvé místo a stát, tornáda hlášená v okolí za poslední 2 dny, jejich počet v celé zemi a co dělat.
 - Spojené státy: bez políčka Pyl (data tam nejsou); kvalita ovzduší podle amerického indexu US AQI.

@@ -67,7 +67,7 @@ public final class Screen {
 	}
 	public Texts T = new Texts(false);
 	public boolean unitF, clk12;
-	public Calendar now = Calendar.getInstance();
+	public Calendar now = Zone.now();
 	public int batt = -1;
 	public boolean charging, busy, offline;
 	public long fetched;
@@ -113,11 +113,23 @@ public final class Screen {
 	/** Where the hour boxes are (for the swipe) and the page shown; set by draw. */
 	/** The rows moved by the finger: next hours, five days (landscape), info boxes, info grid (landscape). */
 	public final Strip hours = new Strip(false), days = new Strip(false), info = new Strip(false), grid = new Strip(true),
-			alerts = new Strip(false);
+			alerts = new Strip(false), rain = new Strip(false);
 
 	public Strip[] strips() {
-		return new Strip[] { hours, days, info, grid, alerts };
+		return new Strip[] { hours, days, info, grid, alerts, rain };
 	}
+
+	/**
+	 * Farmer mode (v2.50): the hour boxes open a bubble with the farmer's details and the rain
+	 * chart gives way to a row of hourly rain-chance boxes (in place of the five days). FARM is
+	 * the farmer's forecast for the town (Open-Meteo; null when it has not come).
+	 */
+	public boolean farmer;
+	public Farm.Data farm;
+	/** The hour and rain boxes drawn: { hour index, x, y, w, h } in canvas units; set by draw. */
+	private final List<float[]> hourHits = new java.util.ArrayList<float[]>(), rainHits = new java.util.ArrayList<float[]>();
+	/** The scale of the boxes being drawn (tablet: 1.2). */
+	private float hs = 1;
 
 	/** Canvas width: 758 in portrait, wider in landscape. */
 	private float cw = W;
@@ -155,6 +167,9 @@ public final class Screen {
 		c = dark ? Palette.DARK : Palette.LIGHT;
 		this.cw = cw;
 		updHead = false;
+		hourHits.clear();
+		rainHits.clear();
+		hs = 1;
 		if (nightClock) {
 			drawNightClock(ch);
 			return;
@@ -249,7 +264,8 @@ public final class Screen {
 		drawNextHours(40, y0, 678, 264, false);
 		chartFull = false;
 		g.rect(40, y0 + 279, 678, 2, c.line);
-		drawDayStrip(40, y0 + 296, 678);
+		if (farmer) drawRainRow(40, y0 + 296, 678, 198);
+		else drawDayStrip(40, y0 + 296, 678);
 		// A line over the row of info boxes.
 		g.rect(40, y0 + 509, 678, 2, c.line);
 		drawInfoStrip(40, y0 + 526, 678, 184);
@@ -302,7 +318,8 @@ public final class Screen {
 		chartFull = true;
 		drawNextHours(mx, bt, mw, hh, false);
 		chartFull = false;
-		drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
+		if (farmer) drawRainRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
+		else drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
 		peekW = 30;
 		drawInfoGrid(rx, bt, rw, bb - bt);
 		footer(fb);
@@ -384,12 +401,17 @@ public final class Screen {
 		Gfx g0 = g;
 		float bs = 1.2f;
 		g = new Scaled(g0, bs);
+		hs = bs;
 		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 146 : nb + 24) / bs;
-		float avail = (fb - 14) / bs - by, ih = 190, hh = Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
+		float avail = (fb - 14) / bs - by, ih = 190, hh = farmer ? Math.min(420, (avail - ih - 28) / 2) : Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
 		drawNextHours(bx, by, bw, hh, true);
 		for (int k = 0; k < 4; k++) hours.area[k] *= bs;
 		float dy = by + hh + 14, dw = (bw - 4 * 12) / 5;
-		for (int k = 0; k < 5; k++) {
+		if (farmer) {
+			drawRainRow(bx, dy, bw, dh);
+			for (int k = 0; k < 4; k++) rain.area[k] *= bs;
+		}
+		for (int k = 0; k < (farmer ? 0 : 5); k++) {
 			float x = bx + k * (dw + 12), cx = x + dw / 2;
 			box(x, dy, dw, dh, 44);
 			if (k >= w.dayDates.size()) continue;
@@ -406,6 +428,7 @@ public final class Screen {
 		drawInfoStrip(bx, dy + dh + 14, bw, ih);
 		for (int k = 0; k < 4; k++) info.area[k] *= bs;
 		g = g0;
+		hs = 1;
 		footer(fb);
 	}
 
@@ -470,7 +493,7 @@ public final class Screen {
 			drawPrecipBox(x, y, wd, h, 46);
 			return;
 		}
-		boolean chart = rainText().length() > 0;
+		boolean chart = !farmer && rainText().length() > 0;
 		float gap = 16, peek = peekW, bh = line ? h - 26 : h;
 		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
 		float bw = avail <= per && !chart ? (wd - gap * (avail - 1)) / avail : (wd - peek - gap * per) / per;
@@ -502,6 +525,7 @@ public final class Screen {
 	/** One hour: the hour on top, the icon, the temperature and the sky. */
 	private void drawHourBox(int k, float x, float y, float bw, float bh, float tp, float dp) {
 		float hd = 44, cx = x + bw / 2;
+		if (farmer) hourHits.add(new float[] { k, x * hs, y * hs, bw * hs, bh * hs });
 		box(x, y, bw, bh, hd);
 		head(y, hd, cx, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
 		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
@@ -518,6 +542,240 @@ public final class Screen {
 		if (n <= 1) return;
 		float dx = cx - (n * 22 - 10) / 2f;
 		for (int k = 0; k < n; k++) g.roundRect(dx + k * 22, y, 12, 12, 6, k == cur ? c.ink : c.dim);
+	}
+
+	// --- Farmer mode (v2.50) -----------------------------------------------------------
+
+	/** The index in FARM of tile hour K (-1 when FARM lacks it). */
+	public int farmIndex(int k) {
+		if (farm == null || w == null || w.tileHours.isEmpty() || k < 0 || k >= w.tileHours.size()) return -1;
+		int cur = farm.nowIndex(now), start = Math.max(0, cur < 0 ? 0 : cur - 3);
+		String first = w.tileHours.get(0);
+		for (int i = start; i < farm.size() && i < start + 30; i++) {
+			if (farm.hourOf(i).equals(first)) return farm.has(i + k) ? i + k : -1;
+		}
+		return -1;
+	}
+
+	/** The chance (%) of rain in tile hour K: from the farmer's forecast, else the usual one. */
+	private int probAt(int k) {
+		int i = farmIndex(k);
+		if (i >= 0 && !Double.isNaN(farm.prob[i])) return (int) Math.round(farm.prob[i]);
+		return k < w.tileProb.length ? w.tileProb[k] : 0;
+	}
+
+	private double mmAt(int k) {
+		int i = farmIndex(k);
+		if (i >= 0 && !Double.isNaN(farm.precip[i])) return farm.precip[i];
+		return k < w.tileAmt.length ? w.tileAmt[k] : 0;
+	}
+
+	/** 0 dry, 1 rain, 2 showers, 3 snow, 4 sleet (rain and snow) of tile hour K. */
+	private int kindAt(int k) {
+		int i = farmIndex(k);
+		double mm = mmAt(k);
+		if (i >= 0) {
+			double sn = nz(farm.snow[i]), ra = nz(farm.rain[i]), sh = nz(farm.showers[i]);
+			if (sn > 0 && ra + sh > 0) return 4;
+			if (sn > 0) return 3;
+			if (sh > ra && sh > 0) return 2;
+			if (ra > 0 || mm > 0) return 1;
+		} else if (mm > 0) return Weather.snowCode(w.tileCode[k]) ? 3 : 1;
+		int p = probAt(k);
+		if (p >= 30) return k < w.tileCode.length && Weather.snowCode(w.tileCode[k]) ? 3 : 1;
+		return 0;
+	}
+
+	private String kindWord(int kind) {
+		switch (kind) {
+		case 1: return Tr.t("rain", "ploaie");
+		case 2: return Tr.t("showers", "averse");
+		case 3: return Tr.t("snow", "ninsoare");
+		case 4: return Tr.t("sleet", "lapoviță");
+		default: return Tr.t("dry", "uscat");
+		}
+	}
+
+	private static double nz(double v) {
+		return Double.isNaN(v) ? 0 : v;
+	}
+
+	/** A number with one decimal, the language's decimal point. */
+	private static String d1(double v) {
+		return String.format(java.util.Locale.US, "%.1f", v).replace('.', Tr.dot());
+	}
+
+	/** Millimetres (or inches when imperial). */
+	private String mm(double v) {
+		return unitF ? String.format(java.util.Locale.US, "%.2f", v / 25.4).replace('.', Tr.dot()) + " in" : d1(v) + " mm";
+	}
+
+	private String kmh(double v) {
+		return unitF ? Math.round(v * 0.621371) + " mph" : Math.round(v) + " km/h";
+	}
+
+	private String deg(double v) {
+		return Double.isNaN(v) ? "–" : t(v) + "°";
+	}
+
+	private static String dir8(double deg) {
+		return Double.isNaN(deg) ? "–" : Tr.dirs8()[Farm.sector(deg)];
+	}
+
+	/**
+	 * Farmer mode: the hours as rain-chance boxes, moved sideways like the hour boxes (each: the
+	 * hour, the chance in big digits, a bar as full as the chance, the amount and the kind).
+	 */
+	private void drawRainRow(float x, float y, float wd, float h) {
+		rain.area[2] = 0;
+		int avail = w.tileHours.size() - 1;
+		if (avail < 1) return;
+		float gap = 16, peek = peekW;
+		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
+		float bw = (wd - peek - gap * per) / per, step = bw + gap;
+		float[] starts = new float[avail];
+		for (int i = 0; i < avail; i++) starts[i] = i * step;
+		rain.set(starts, avail * step - gap - wd);
+		rain.area[0] = x; rain.area[1] = y; rain.area[2] = wd; rain.area[3] = h;
+		float hd = 44, pp = Math.min(54, (h - hd) * 0.34f);
+		g.clip(x - 2, y - 2, wd + 4, h + 4);
+		for (int k = 1; k <= avail; k++) {
+			float bx = x + (k - 1) * step - rain.scroll, cx = bx + bw / 2;
+			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
+			rainHits.add(new float[] { k, bx * hs, y * hs, bw * hs, h * hs });
+			box(bx, y, bw, h, hd);
+			head(y, hd, cx, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
+			int p = probAt(k), kind = kindAt(k);
+			float body = h - hd, top = y + hd + Math.max(6, (body - pp - 22 - 26 - 24) / 2 - 4);
+			String pc = p + "%";
+			ctext(true, fit(true, pp, bw - 16, pc), top, cx, pc, p >= Weather.RAIN_PROBABILITY ? c.ink : c.dim);
+			float by = top + pp + 8, bl = bx + 14, bwid = bw - 28;
+			g.roundRect(bl, by, bwid, 12, 6, c.dry);
+			if (p > 0) g.roundRect(bl, by, Math.max(12, bwid * p / 100), 12, 6, kind == 3 ? c.snow : c.rain);
+			double a = mmAt(k);
+			String amt = a >= 0.05 ? mm(a) : "0 " + (unitF ? "in" : "mm");
+			ctext(false, fit(false, 24, bw - 12, amt), by + 22, cx, amt, c.ink);
+			String kw = kindWord(kind);
+			ctext(false, fit(false, 22, bw - 12, kw), by + 52, cx, kw, c.dim);
+		}
+		g.unclip();
+	}
+
+	/** Farmer mode: the box under X, Y: { 0 hour box / 1 rain box, hour index }; null for none. */
+	public int[] farmBoxAt(float x, float y) {
+		if (!farmer || w == null) return null;
+		for (int kind = 0; kind < 2; kind++) {
+			Strip st = kind == 0 ? hours : rain;
+			if (st.area[2] <= 0 || x < st.area[0] || x > st.area[0] + st.area[2] || y < st.area[1] || y > st.area[1] + st.area[3]) continue;
+			for (float[] b : kind == 0 ? hourHits : rainHits)
+				if (x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return new int[] { kind, (int) b[0] };
+		}
+		return null;
+	}
+
+	/** Where box KIND / K is (x, y, w, h), for the bubble's arrow. */
+	public float[] farmBoxRect(int kind, int k) {
+		for (float[] b : kind == 0 ? hourHits : rainHits) if ((int) b[0] == k) return new float[] { b[1], b[2], b[3], b[4] };
+		return new float[] { cw / 2 - 50, 400, 100, 100 };
+	}
+
+	/** The notice when the farmer's data did not come (Viorel: say they come and are notified later). */
+	public static String farmMissing() {
+		return Tr.t("The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.",
+				"Datele pentru fermieri (vânt orar, umiditate, sol) vin doar de la Open-Meteo, care nu răspunde acum. Când accesul revine, aplicația le descarcă și îți trimite o notificare.");
+	}
+
+	/** "Estimated data" note for the soil values (Viorel: say they are estimated and from where). */
+	public static String soilNote() {
+		return Tr.t("Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).",
+				"Umiditatea și temperatura solului sunt estimări ale modelului meteo, nu măsurători · sursa: Open-Meteo (open-meteo.com).");
+	}
+
+	/** Soil moisture as percent of volume and in words. */
+	public String soilText(double m) {
+		if (Double.isNaN(m)) return "–";
+		int lv = Farm.soilLevel(m);
+		String[] words = { Tr.t("dry", "uscat"), Tr.t("moderate", "potrivit"), Tr.t("moist", "umed"), Tr.t("very wet", "foarte umed") };
+		return Math.round(m * 100) + "% · " + words[lv];
+	}
+
+	/** The title of hour K: "15:00 · Sâm 7". */
+	private String hourTitle(int k) {
+		String hr = Texts.clock(w.tileHours.get(k), clk12);
+		int i = farmIndex(k);
+		String date = i >= 0 ? farm.dateOf(i) : "";
+		return date.length() == 10 ? hr + " · " + T.weekdayUp(date, true) : hr;
+	}
+
+	/**
+	 * Farmer mode, the hour box K: the details for the bubble, first { "title", … }, then
+	 * { "h" header | "t" text, … }.
+	 */
+	public List<String[]> hourInfo(int k) {
+		List<String[]> out = new java.util.ArrayList<String[]>();
+		if (w == null || k < 0 || k >= w.tileHours.size()) return out;
+		out.add(new String[] { "title", hourTitle(k) });
+		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
+		out.add(new String[] { "t", Tr.t("Temperature: ", "Temperatura: ") + deg(w.tileTemp[k]) + " · " + d[1] });
+		int i = farmIndex(k);
+		if (i < 0) {
+			out.add(new String[] { "t", Tr.t("Chance of rain: ", "Șansa de ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
+			out.add(new String[] { "t", farmMissing() });
+			return out;
+		}
+		int di = farm.dayIndex(farm.dateOf(i));
+		if (di >= 0) out.add(new String[] { "t", Tr.t("Day's low / high: ", "Minima / maxima zilei: ") + deg(farm.dMin[di]) + " / " + deg(farm.dMax[di]) });
+		out.add(new String[] { "h", Tr.t("Wind", "Vânt") });
+		if (!Double.isNaN(farm.wind[i]))
+			out.add(new String[] { "t", Tr.t("Speed: ", "Viteza: ") + kmh(farm.wind[i]) + (Double.isNaN(farm.gust[i]) ? "" : " · " + Tr.t("gusts ", "rafale ") + kmh(farm.gust[i])) });
+		out.add(new String[] { "t", Tr.t("Direction: from ", "Direcția: dinspre ") + dir8(farm.dir[i]) + (Double.isNaN(farm.dir[i]) ? "" : " (" + Math.round(farm.dir[i]) + "°)") });
+		int sh = Farm.windShift(farm, i, 12);
+		if (sh >= 0)
+			out.add(new String[] { "t", Tr.t("Change: it turns from ", "Schimbare: se întoarce dinspre ") + dir8(farm.dir[i]) + Tr.t(" to ", " spre ") + dir8(farm.dir[sh])
+					+ Tr.t(" around ", " în jurul orei ") + Texts.clock(farm.hourOf(sh), clk12) });
+		else if (!Double.isNaN(farm.dir[i]))
+			out.add(new String[] { "t", Tr.t("Change: it keeps its direction for the next 12 hours", "Schimbare: își păstrează direcția în următoarele 12 ore") });
+		out.add(new String[] { "h", Tr.t("Air and rain", "Aer și ploaie") });
+		if (!Double.isNaN(farm.hum[i])) out.add(new String[] { "t", Tr.t("Air humidity: ", "Umiditatea aerului: ") + Math.round(farm.hum[i]) + "%" });
+		out.add(new String[] { "t", Tr.t("Chance of rain: ", "Șansa de ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
+		out.add(new String[] { "h", Tr.t("Soil (estimated)", "Sol (estimat)") });
+		out.add(new String[] { "t", Tr.t("Soil moisture (3–9 cm): ", "Umiditatea solului (3–9 cm): ") + soilText(farm.soilM[i]) });
+		out.add(new String[] { "t", Tr.t("Soil temperature (surface): ", "Temperatura solului (suprafață): ") + deg(farm.soilT[i]) });
+		out.add(new String[] { "t", soilNote() });
+		return out;
+	}
+
+	/** Farmer mode, the rain box K: the details for the bubble (as hourInfo). */
+	public List<String[]> rainInfo(int k) {
+		List<String[]> out = new java.util.ArrayList<String[]>();
+		if (w == null || k < 0 || k >= w.tileHours.size()) return out;
+		out.add(new String[] { "title", Tr.t("Rain · ", "Ploaie · ") + hourTitle(k) });
+		int p = probAt(k), kind = kindAt(k), i = farmIndex(k);
+		String chance = p >= 60 ? Tr.t("likely", "probabilă") : p >= 30 ? Tr.t("possible", "posibilă") : Tr.t("unlikely", "puțin probabilă");
+		out.add(new String[] { "t", Tr.t("Chance of rain: ", "Șansa de ploaie: ") + p + "% · " + chance });
+		out.add(new String[] { "t", Tr.t("Amount: ", "Cantitate: ") + mm(mmAt(k)) });
+		out.add(new String[] { "t", Tr.t("Kind: ", "Tip: ") + kindWord(kind) });
+		if (i < 0) {
+			out.add(new String[] { "t", farmMissing() });
+			return out;
+		}
+		if (nz(farm.rain[i]) + nz(farm.showers[i]) + nz(farm.snow[i]) > 0) {
+			StringBuilder b = new StringBuilder();
+			if (nz(farm.rain[i]) > 0) b.append(Tr.t("rain ", "ploaie ")).append(mm(farm.rain[i]));
+			if (nz(farm.showers[i]) > 0) b.append(b.length() > 0 ? " · " : "").append(Tr.t("showers ", "averse ")).append(mm(farm.showers[i]));
+			if (nz(farm.snow[i]) > 0) b.append(b.length() > 0 ? " · " : "").append(Tr.t("snow ", "ninsoare ")).append(unitF ? d1(farm.snow[i] / 2.54) + " in" : d1(farm.snow[i]) + " cm");
+			out.add(new String[] { "t", Tr.t("Of which: ", "Din care: ") + b });
+		}
+		if (!Double.isNaN(farm.cloud[i])) out.add(new String[] { "t", Tr.t("Cloud cover: ", "Nebulozitate: ") + Math.round(farm.cloud[i]) + "%" });
+		if (!Double.isNaN(farm.hum[i])) out.add(new String[] { "t", Tr.t("Air humidity: ", "Umiditatea aerului: ") + Math.round(farm.hum[i]) + "%" });
+		// The rest of the day: how much rain and when it stops.
+		String date = farm.dateOf(i);
+		double tot = 0;
+		for (int j = i; j < farm.size() && farm.dateOf(j).equals(date); j++) tot += nz(farm.precip[j]);
+		out.add(new String[] { "t", Tr.t("Until midnight: ", "Până la miezul nopții: ") + mm(tot) });
+		out.add(new String[] { "t", Tr.t("Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.",
+				"Sursa: Open-Meteo. Șansa arată cât de probabil plouă în acea oră, nu cât timp plouă.") });
+		return out;
 	}
 
 	// --- Helpers ---------------------------------------------------------------------
@@ -874,7 +1132,7 @@ public final class Screen {
 	}
 
 	private String dateTime(long ms) {
-		Calendar k = Calendar.getInstance();
+		Calendar k = Zone.now();
 		k.setTimeInMillis(ms);
 		String hm = Texts.clock(String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE)), clk12);
 		String date = unitF ? String.format("%d/%d/%d", k.get(Calendar.MONTH) + 1, k.get(Calendar.DAY_OF_MONTH), k.get(Calendar.YEAR))
@@ -1255,7 +1513,7 @@ public final class Screen {
 	}
 
 	private static String hm(long ms) {
-		Calendar k = Calendar.getInstance();
+		Calendar k = Zone.now();
 		k.setTimeInMillis(ms);
 		return String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE));
 	}
@@ -1648,6 +1906,11 @@ public final class Screen {
 				batLeft = rtext(true, mp, gy - 4 + (26 - mp) * 81 / 100, batLeft - 10, T.charging, c.ink);
 			}
 		}
+		if (farmer) {
+			String fm = Tr.t("FARMER", "FERMIER");
+			float fx = (hasLight ? btnSensor[0] + btnSensor[2] : btnSensor[0] + btnSensor[2]) + 20, fp = fit(true, 24, batLeft - fx - 16, fm);
+			if (fp >= 16) ltext(true, fp, gy - 2, fx, fm, c.accent);
+		}
 		drawUpdated();
 		drawNote(fb);
 	}
@@ -1708,7 +1971,26 @@ public final class Screen {
 		if (which.equals("city") || which.equals("locate") || which.equals("bright") || which.equals("sensor"))
 			footButton(which, b, which.equals("sensor") && sensorTheme);
 		else if (which.equals("moon")) moonButton(2, 2, 60);
-		else if (which.equals("refresh")) {
+		else if (which.equals("farm")) {
+			// A sprout over a furrowed field (farmer mode, v2.50).
+			g.rect(30, 20, 4, 26, k);
+			g.poly(new float[] { 32, 30, 12, 24, 8, 10, 26, 14 }, k);
+			g.poly(new float[] { 32, 24, 50, 8, 58, 18, 42, 30 }, k);
+			g.rect(6, 48, 52, 4, k);
+			g.rect(12, 56, 40, 4, k);
+		} else if (which.equals("normal")) {
+			// A sun and a cloud: back to the usual screen.
+			sun(24, 24, 18, k);
+			g.roundRect(18, 32, 40, 20, 10, k);
+			g.roundRect(30, 22, 20, 20, 10, k);
+		} else if (which.equals("parcel")) {
+			// A pin over a field drawn in perspective.
+			g.poly(new float[] { 4, 58, 60, 58, 50, 40, 14, 40 }, k);
+			g.poly(new float[] { 8, 55, 56, 55, 48, 43, 16, 43 }, c.page);
+			g.roundRect(20, 2, 24, 24, 12, k);
+			g.poly(new float[] { 22, 18, 42, 18, 32, 44 }, k);
+			g.roundRect(28, 10, 8, 8, 4, c.page);
+		} else if (which.equals("refresh")) {
 			g.arc(32, 32, 17, -50, 290, 4, k);
 			g.poly(new float[] { 36, 7, 53, 21, 35, 28 }, k);
 		} else if (which.equals("unit")) {
@@ -1855,7 +2137,7 @@ public final class Screen {
 		if (busy) {
 			upd = T.updating;
 		} else if (fetched > 0) {
-			Calendar cal = Calendar.getInstance();
+			Calendar cal = Zone.now();
 			cal.setTimeInMillis(fetched);
 			String when = Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12);
 			upd = T.updated + " " + when + (source.length() > 0 && !source.equals("Open-Meteo") ? " · " + source : "");

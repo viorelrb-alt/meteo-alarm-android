@@ -382,3 +382,158 @@ Switch to the metric system?	Pereiti prie metrinės sistemos?
 Metric	Metrinė
 °C · metric system	°C · metrinė sistema
 Keep °F	Palikti °F
+dry	sausa
+moderate	vidutinė
+moist	drėgna
+very wet	labai šlapia
+Parcels	Laukai
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Saugomi tik šiame telefone, kol juos ištrinsite. Statistika saugoma 28 dienas.
+Save the place here	Išsaugoti šią vietą
+Choose on the map	Pasirinkti žemėlapyje
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Dar neišsaugotas nė vienas laukas. Atsistokite lauke ir palieskite „Išsaugoti šią vietą“ arba pasirinkite jį žemėlapyje.
+alerts on	įspėjimai įjungti
+wind 	vėjas 
+rain 	lietus 
+soil 	dirva 
+updated 	atnaujinta 
+Without location the place can only be chosen on the map.	Be vietovės vietą galima pasirinkti tik žemėlapyje.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Telefonas neleidžia programėlei rodyti pranešimų: įspėjimų negalima parodyti.
+Looking for the position (GPS)… stay outside, on the parcel.	Ieškoma padėtis (GPS)… likite lauke, ant sklypo.
+The position was not found.	Padėtis nerasta.
+The position was not found: move the map to the parcel.	Padėtis nerasta: perkelkite žemėlapį prie lauko.
+The position is approximate (±	Padėtis apytikslė (±
+ m): check the pin on the map.	 m): patikrinkite smeigtuką žemėlapyje.
+New parcel	Naujas laukas
+Move the pin	Perkelti smeigtuką
+Name, e.g. parcel 96/5	Pavadinimas, pvz., laukas 96/5
+move the map to put the pin on the parcel	perkelkite žemėlapį, kad smeigtukas būtų ant lauko
+My position	Mano padėtis
+Give the parcel a name	Suteikite laukui pavadinimą
+Downloading from Open-Meteo…	Atsisiunčiama iš Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo dabar neatsako (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Kai prieiga atsinaujins, programėlė atsisiųs lauko duomenis ir atsiųs jums pranešimą.
+low 	žemiausia 
+high 	aukščiausia 
+turns to 	pasisuka į 
+ around 	 apie 
+steady for 12 hours	pastovus 12 valandų
+today up to 	šiandien iki 
+Air temperature	Oro temperatūra
+gusts 	gūsiai 
+Wind direction	Vėjo kryptis
+Chance of rain	Lietaus tikimybė
+Air humidity	Oro drėgmė
+Soil moisture	Dirvos drėgmė
+3–9 cm, estimated	3–9 cm, įvertis
+Soil temperature	Dirvos temperatūra
+surface, estimated	paviršius, įvertis
+Next 12 hours	Kitos 12 valandų
+Statistics (last 28 days)	Statistika (paskutinės 28 dienos)
+Move the pin on the map	Perkelti smeigtuką žemėlapyje
+Rain / wind alerts: ON	Lietaus / vėjo įspėjimai: ĮJUNGTI
+Rain / wind alerts: OFF	Lietaus / vėjo įspėjimai: IŠJUNGTI
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Gausite pranešimą, kai šiam laukui per kitas 12 valandų bus prognozuojamas lietus ar stiprus vėjas (tikrinama kas 3 valandas).
+Rename	Pervadinti
+Delete the parcel	Ištrinti lauką
+Delete 	Ištrinti 
+The parcel and its statistics are deleted from the phone.	Laukas ir jo statistika bus ištrinti iš telefono.
+Delete	Ištrinti
+Statistics · 	Statistika · 
+Choose the period, within the last 28 days.	Pasirinkite laikotarpį per paskutines 28 dienas.
+ days	 dienos
+To 	Iki 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Šiam laikotarpiui dar nėra duomenų. Vieną kartą atidarykite lauką su internetu: programėlė atsisiųs paskutines 28 dienas iš Open-Meteo.
+Summary	Santrauka
+Lowest / highest	Žemiausia / aukščiausia
+Rain total	Lietaus iš viso
+ days with rain (1 mm+)	 lietingos dienos (1 mm+)
+Highest wind	Stipriausias vėjas
+gusts up to 	gūsiai iki 
+mean, estimated	vidurkis, įvertis
+Day by day	Diena po dienos
+Date	Data
+Max	Maks.
+Min	Min.
+Soil	Dirva
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Šaltinis: Open-Meteo (modeliai ir praėjusių dienų įverčiai). Dirvos drėgmė 3–9 cm gylyje, įvertis.
+Save as PDF in Downloads	Išsaugoti PDF aplanke Atsisiuntimai
+The PDF could not be saved: 	PDF nepavyko išsaugoti: 
+PDF saved	PDF išsaugotas
+In Downloads: 	Aplanke Atsisiuntimai: 
+Open	Atidaryti
+No app on the phone opens PDF files.	Telefone nėra programėlės, galinčios atidaryti PDF failus.
+Max wind	Maks. vėjas
+Parcel statistics · 	Lauko statistika · 
+Coordinates: 	Koordinatės: 
+Period: 	Laikotarpis: 
+ days)	 dienos)
+Made on 	Sudaryta 
+Lowest temperature: 	Žemiausia temperatūra: 
+Highest temperature: 	Aukščiausia temperatūra: 
+Rain total: 	Lietaus iš viso: 
+Highest wind: 	Stipriausias vėjas: 
+Mean soil moisture (3–9 cm, estimated): 	Vidutinė dirvos drėgmė (3–9 cm, įvertis): 
+Source: Open-Meteo (open-meteo.com), weather models.	Šaltinis: Open-Meteo (open-meteo.com), orų modeliai.
+Soil moisture and soil temperature are estimates, not measurements.	Dirvos drėgmė ir dirvos temperatūra yra įverčiai, o ne matavimai.
+Farmer mode	Ūkininko režimas
+Open-Meteo answers again: the farmer's data for 	Open-Meteo vėl atsako: ūkininko duomenys vietovei 
+ have been downloaded.	 atsisiųsti.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Ūkininko duomenys: Open-Meteo neatsako; gausite pranešimą, kai jie ateis
+Farmer mode: tap an hour or a rain box for details	Ūkininko režimas: palieskite valandą arba lietaus langelį, kad pamatytumėte išsamiau
+Normal mode	Įprastas režimas
+Local time	Vietos laikas
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	JAV miestui laikrodis, prognozės valandos ir datos rodo miesto vietos laiką, o ne telefono (naudinga bandomajame režime arba žiūrint miestą kitoje laiko juostoje).
+Farmer mode / Normal mode	Ūkininko režimas / Įprastas režimas
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Pirmasis ☰ punktas perjungia du režimus; jame rodomas kito režimo pavadinimas. Ūkininko režime temperatūra ir piktograma nesikeičia, apačioje rodoma ŪKININKAS, valandų langeliai atveria išsamią informaciją, o kritulių grafiką ir penkias dienas pakeičia valandinių lietaus langelių eilė.
+Hour boxes	Valandų langeliai
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Palietus valandą atsidaro burbulas: temperatūra, dienos žemiausia ir aukščiausia, vėjo greitis ir gūsiai, vėjo kryptis ir kada jis turėtų pasisukti, oro drėgmė, lietaus tikimybė, dirvos drėgmė (3–9 cm) ir dirvos temperatūra.
+Rain boxes	Lietaus langeliai
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Vienas langelis valandai: lietaus tikimybė dideliais skaitmenimis, pagal tikimybę užpildyta juosta, kiekis ir rūšis (lietus, liūtys, sniegas, šlapdriba). Palietus rodoma išsamiau: kiekis pagal rūšį, debesuotumas, drėgmė ir lietaus kiekis iki vidurnakčio.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Laukai (ūkininko režime). „Išsaugoti šią vietą“ paima GPS padėtį, kur stovite; tada žemėlapis ją rodo smeigtuku: perkelkite žemėlapį, kad smeigtukas būtų tiksliai ant lauko, ir suteikite pavadinimą (pvz., laukas 96/5). „Pasirinkti žemėlapyje“ išsaugo lauką iš namų. Laukai lieka tik šiame telefone, kol juos ištrinsite.
+A parcel's page	Lauko puslapis
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Atskiri langeliai oro temperatūrai, vėjui, vėjo krypčiai, lietaus tikimybei, oro drėgmei, dirvos drėgmei ir dirvos temperatūrai, tada kitos 12 valandų. Mygtukai: statistika, perkelti smeigtuką, lietaus / vėjo įspėjimai, pervadinti, ištrinti.
+Statistics and PDF	Statistika ir PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Jūsų pasirinktam laikotarpiui per paskutines 28 dienas: kiekvienos dienos aukščiausia ir žemiausia temperatūra, lietaus iš viso, stipriausias vėjas ir vidutinė dirvos drėgmė bei laikotarpio santrauka. „Išsaugoti PDF aplanke Atsisiuntimai“ sukuria failą, kurį galite atspausdinti ar išsiųsti. Statistika saugoma 28 dienas.
+Parcel alerts	Lauko įspėjimai
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Lauko puslapyje įspėjimai ĮJUNGTI: kas 3 valandas programėlė peržiūri kitas 12 valandų ir siunčia pranešimą, kai prognozuojamas lietus (60 % ir 0,5 mm arba 1 mm) ar stiprus vėjas (gūsiai 50 km/h); vienas pranešimas laikotarpiui. Naktį, kai ekranas išjungtas, patikra laukia ekrano.
+Soil data and source	Dirvos duomenys ir šaltinis
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Visi ūkininko duomenys gaunami iš Open-Meteo. Dirvos drėgmė (tūrio procentai, 3–9 cm gylyje) ir dirvos temperatūra yra orų modelio įverčiai, o ne matavimai; artimi laukai (1–11 km) gali rodyti tas pačias reikšmes. Kai Open-Meteo neatsako, programėlė tai praneša, atsisiunčia duomenis, kai prieiga atsinaujina, ir siunčia pranešimą.
+The map	Žemėlapis
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, nemokamas ir be paskyros (© OpenStreetMap bendraautoriai); reikia interneto. Vienas pirštas jį perkelia, du pirštai arba dvigubas palietimas keičia mastelį; „Mano padėtis“ rodo, kur esate, mėlynu tašku. Žemėlapio dalys telefone saugomos savaitę.
+Farmer · 	Ūkininkas · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo vėl atsako: lauko duomenys atsisiųsti.
+Rain expected from 	Lietus tikėtinas nuo 
+ in the next 12 hours	 per kitas 12 valandų
+Rain · 	Lietus · 
+Strong wind from 	Stiprus vėjas nuo 
+, gusts 	, gūsiai 
+Wind · 	Vėjas · 
+showers	liūtys
+sleet	šlapdriba
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Ūkininko duomenys (valandinis vėjas, drėgmė, dirva) gaunami tik iš Open-Meteo, kuris dabar neatsako. Kai prieiga atsinaujins, programėlė juos atsisiųs ir atsiųs jums pranešimą.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Dirvos drėgmė ir dirvos temperatūra yra orų modelio įverčiai, o ne matavimai · šaltinis: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatūra: 
+Chance of rain: 	Lietaus tikimybė: 
+Day's low / high: 	Dienos žemiausia / aukščiausia: 
+Speed: 	Greitis: 
+Direction: from 	Kryptis: iš 
+Change: it turns from 	Pokytis: pasisuka iš 
+ to 	 į 
+Change: it keeps its direction for the next 12 hours	Pokytis: kryptis išlieka kitas 12 valandų
+Air and rain	Oras ir lietus
+Air humidity: 	Oro drėgmė: 
+Soil (estimated)	Dirva (įvertis)
+Soil moisture (3–9 cm): 	Dirvos drėgmė (3–9 cm): 
+Soil temperature (surface): 	Dirvos temperatūra (paviršius): 
+likely	tikėtinas
+possible	galimas
+unlikely	mažai tikėtinas
+Amount: 	Kiekis: 
+Kind: 	Rūšis: 
+showers 	liūtys 
+snow 	sniegas 
+Of which: 	Iš jo: 
+Cloud cover: 	Debesuotumas: 
+Until midnight: 	Iki vidurnakčio: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Šaltinis: Open-Meteo. Tikimybė rodo, kiek tikėtinas lietus tą valandą, o ne kiek ilgai lis.
+FARMER	ŪKININKAS

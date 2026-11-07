@@ -382,3 +382,158 @@ Switch to the metric system?	Vaihdetaanko metrijärjestelmään?
 Metric	Metrinen
 °C · metric system	°C · metrijärjestelmä
 Keep °F	Pidä °F
+dry	kuiva
+moderate	kohtalainen
+moist	kostea
+very wet	hyvin märkä
+Parcels	Lohkot
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Tallennetaan vain tähän puhelimeen, kunnes poistat ne. Tilastot säilytetään 28 päivää.
+Save the place here	Tallenna paikka tähän
+Choose on the map	Valitse kartalta
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Lohkoja ei ole vielä tallennettu. Seiso lohkolla ja napauta ”Tallenna paikka tähän” tai valitse se kartalta.
+alerts on	hälytykset päällä
+wind 	tuuli 
+rain 	sade 
+soil 	maa 
+updated 	päivitetty 
+Without location the place can only be chosen on the map.	Ilman sijaintia paikan voi valita vain kartalta.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Puhelin ei salli sovelluksen ilmoituksia: hälytyksiä ei voi näyttää.
+Looking for the position (GPS)… stay outside, on the parcel.	Haetaan sijaintia (GPS)… pysy ulkona, lohkolla.
+The position was not found.	Sijaintia ei löytynyt.
+The position was not found: move the map to the parcel.	Sijaintia ei löytynyt: siirrä kartta lohkon kohdalle.
+The position is approximate (±	Sijainti on likimääräinen (±
+ m): check the pin on the map.	 m): tarkista neula kartalta.
+New parcel	Uusi lohko
+Move the pin	Siirrä neulaa
+Name, e.g. parcel 96/5	Nimi, esim. lohko 96/5
+move the map to put the pin on the parcel	siirrä karttaa asettaaksesi neulan lohkolle
+My position	Oma sijainti
+Give the parcel a name	Anna lohkolle nimi
+Downloading from Open-Meteo…	Ladataan Open-Meteosta…
+Open-Meteo is not answering now (	Open-Meteo ei vastaa nyt (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Kun yhteys palaa, sovellus lataa lohkon tiedot ja lähettää sinulle ilmoituksen.
+low 	alin 
+high 	ylin 
+turns to 	kääntyy suuntaan 
+ around 	 noin klo 
+steady for 12 hours	vakaa 12 tuntia
+today up to 	tänään enintään 
+Air temperature	Ilman lämpötila
+gusts 	puuskat 
+Wind direction	Tuulen suunta
+Chance of rain	Sateen todennäköisyys
+Air humidity	Ilmankosteus
+Soil moisture	Maan kosteus
+3–9 cm, estimated	3–9 cm, arvio
+Soil temperature	Maan lämpötila
+surface, estimated	pinta, arvio
+Next 12 hours	Seuraavat 12 tuntia
+Statistics (last 28 days)	Tilastot (viimeiset 28 päivää)
+Move the pin on the map	Siirrä neulaa kartalla
+Rain / wind alerts: ON	Sade-/tuulihälytykset: PÄÄLLÄ
+Rain / wind alerts: OFF	Sade-/tuulihälytykset: POIS
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Saat ilmoituksen, kun tälle lohkolle ennustetaan sadetta tai kovaa tuulta seuraavien 12 tunnin aikana (tarkistetaan 3 tunnin välein).
+Rename	Nimeä uudelleen
+Delete the parcel	Poista lohko
+Delete 	Poistetaanko 
+The parcel and its statistics are deleted from the phone.	Lohko ja sen tilastot poistetaan puhelimesta.
+Delete	Poista
+Statistics · 	Tilastot · 
+Choose the period, within the last 28 days.	Valitse jakso viimeisten 28 päivän ajalta.
+ days	 päivää
+To 	Asti 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Tälle jaksolle ei ole vielä tietoja. Avaa lohko kerran internetyhteydellä: sovellus lataa viimeiset 28 päivää Open-Meteosta.
+Summary	Yhteenveto
+Lowest / highest	Alin / ylin
+Rain total	Sade yhteensä
+ days with rain (1 mm+)	 sadepäivää (1 mm+)
+Highest wind	Kovin tuuli
+gusts up to 	puuskat enintään 
+mean, estimated	keskiarvo, arvio
+Day by day	Päivä päivältä
+Date	Päivä
+Max	Max
+Min	Min
+Soil	Maa
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Lähde: Open-Meteo (mallit ja menneiden päivien arviot). Maan kosteus 3–9 cm syvyydessä, arvio.
+Save as PDF in Downloads	Tallenna PDF:nä Latauksiin
+The PDF could not be saved: 	PDF:ää ei voitu tallentaa: 
+PDF saved	PDF tallennettu
+In Downloads: 	Latauksissa: 
+Open	Avaa
+No app on the phone opens PDF files.	Puhelimessa ei ole sovellusta, joka avaa PDF-tiedostoja.
+Max wind	Kovin tuuli
+Parcel statistics · 	Lohkon tilastot · 
+Coordinates: 	Koordinaatit: 
+Period: 	Jakso: 
+ days)	 päivää)
+Made on 	Laadittu 
+Lowest temperature: 	Alin lämpötila: 
+Highest temperature: 	Ylin lämpötila: 
+Rain total: 	Sade yhteensä: 
+Highest wind: 	Kovin tuuli: 
+Mean soil moisture (3–9 cm, estimated): 	Maan keskikosteus (3–9 cm, arvio): 
+Source: Open-Meteo (open-meteo.com), weather models.	Lähde: Open-Meteo (open-meteo.com), säämallit.
+Soil moisture and soil temperature are estimates, not measurements.	Maan kosteus ja maan lämpötila ovat arvioita, eivät mittauksia.
+Farmer mode	Viljelijätila
+Open-Meteo answers again: the farmer's data for 	Open-Meteo vastaa taas: viljelijän tiedot kohteelle 
+ have been downloaded.	 on ladattu.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Viljelijän tiedot: Open-Meteo ei vastaa; saat ilmoituksen, kun ne tulevat
+Farmer mode: tap an hour or a rain box for details	Viljelijätila: napauta tuntia tai sadeneliötä nähdäksesi tiedot
+Normal mode	Normaali tila
+Local time	Paikallinen aika
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Yhdysvaltalaiselle paikkakunnalle kello, ennusteen tunnit ja päivämäärät näyttävät paikkakunnan paikallisen ajan, eivät puhelimen (hyödyllistä testitilassa tai kun katsot paikkakuntaa toisella aikavyöhykkeellä).
+Farmer mode / Normal mode	Viljelijätila / Normaali tila
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	☰-valikon ensimmäinen kohta vaihtaa kahden tilan välillä; se näyttää toisen tilan nimen. Viljelijätilassa lämpötila ja kuvake pysyvät samoina, alareunassa lukee VILJELIJÄ, tuntiruudut avaavat tiedot, ja sadekaavion ja viiden päivän tilalle tulee rivi tunnin sadeneliöitä.
+Hour boxes	Tuntiruudut
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Tunnin napautus avaa kuplan: lämpötila, päivän alin ja ylin, tuulen nopeus ja puuskat, tuulen suunta ja milloin sen odotetaan kääntyvän, ilmankosteus, sateen todennäköisyys, maan kosteus (3–9 cm) ja maan lämpötila.
+Rain boxes	Sadeneliöt
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Yksi ruutu tunnissa: sateen todennäköisyys isoin numeroin, todennäköisyyden mukaan täyttyvä palkki, määrä ja tyyppi (sade, kuurot, lumi, räntä). Napautus näyttää tiedot: määrä tyypeittäin, pilvisyys, kosteus ja sademäärä keskiyöhön asti.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Lohkot (viljelijätilassa). ”Tallenna paikka tähän” ottaa GPS-sijainnin, jossa seisot; kartta näyttää sen sitten neulalla: siirrä karttaa asettaaksesi neulan tarkasti lohkolle ja anna sille nimi (esim. lohko 96/5). ”Valitse kartalta” tallentaa lohkon kotoa käsin. Lohkot säilyvät vain tässä puhelimessa, kunnes poistat ne.
+A parcel's page	Lohkon sivu
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Erilliset ruudut ilman lämpötilalle, tuulelle, tuulen suunnalle, sateen todennäköisyydelle, ilmankosteudelle, maan kosteudelle ja maan lämpötilalle, sitten seuraavat 12 tuntia. Painikkeet: tilastot, siirrä neulaa, sade-/tuulihälytykset, nimeä uudelleen, poista.
+Statistics and PDF	Tilastot ja PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Valitsemallesi jaksolle viimeisten 28 päivän ajalta: päivittäin ylin ja alin, sade yhteensä, kovin tuuli ja maan keskikosteus sekä jakson yhteenveto. ”Tallenna PDF:nä Latauksiin” tekee tiedoston, jonka voit tulostaa tai lähettää. Tilastot säilytetään 28 päivää.
+Parcel alerts	Lohkohälytykset
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Lohkon sivulla hälytykset PÄÄLLÄ: 3 tunnin välein sovellus katsoo seuraavat 12 tuntia ja lähettää ilmoituksen, kun ennustetaan sadetta (60 % ja 0,5 mm tai 1 mm) tai kovaa tuulta (puuskat 50 km/h); yksi ilmoitus jaksoa kohden. Yöllä näytön ollessa pois päältä tarkistus odottaa näyttöä.
+Soil data and source	Maatiedot ja lähde
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Kaikki viljelijän tiedot tulevat Open-Meteosta. Maan kosteus (tilavuusprosentti, 3–9 cm syvyydessä) ja maan lämpötila ovat säämallin arvioita, eivät mittauksia; lähekkäiset lohkot (1–11 km) voivat näyttää samoja arvoja. Kun Open-Meteo ei vastaa, sovellus kertoo sen, lataa tiedot yhteyden palattua ja lähettää ilmoituksen.
+The map	Kartta
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, ilmainen ja ilman tiliä (© OpenStreetMap-tekijät); vaatii internetin. Yksi sormi siirtää sitä, kaksi sormea tai kaksoisnapautus zoomaa; ”Oma sijainti” näyttää paikkasi sinisenä pisteenä. Karttapalat säilytetään puhelimessa viikon.
+Farmer · 	Viljelijä · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo vastaa taas: lohkon tiedot on ladattu.
+Rain expected from 	Sadetta odotettavissa klo 
+ in the next 12 hours	 seuraavien 12 tunnin aikana
+Rain · 	Sade · 
+Strong wind from 	Kovaa tuulta klo 
+, gusts 	, puuskat 
+Wind · 	Tuuli · 
+showers	kuurot
+sleet	räntä
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Viljelijän tiedot (tunnin tuuli, kosteus, maa) tulevat vain Open-Meteosta, joka ei vastaa nyt. Kun yhteys palaa, sovellus lataa ne ja lähettää sinulle ilmoituksen.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Maan kosteus ja maan lämpötila ovat säämallin arvioita, eivät mittauksia · lähde: Open-Meteo (open-meteo.com).
+Temperature: 	Lämpötila: 
+Chance of rain: 	Sateen todennäköisyys: 
+Day's low / high: 	Päivän alin / ylin: 
+Speed: 	Nopeus: 
+Direction: from 	Suunta: suunnasta 
+Change: it turns from 	Muutos: kääntyy suunnasta 
+ to 	 suuntaan 
+Change: it keeps its direction for the next 12 hours	Muutos: suunta pysyy seuraavat 12 tuntia
+Air and rain	Ilma ja sade
+Air humidity: 	Ilmankosteus: 
+Soil (estimated)	Maa (arvio)
+Soil moisture (3–9 cm): 	Maan kosteus (3–9 cm): 
+Soil temperature (surface): 	Maan lämpötila (pinta): 
+likely	todennäköinen
+possible	mahdollinen
+unlikely	epätodennäköinen
+Amount: 	Määrä: 
+Kind: 	Tyyppi: 
+showers 	kuurot 
+snow 	lumi 
+Of which: 	Josta: 
+Cloud cover: 	Pilvisyys: 
+Until midnight: 	Keskiyöhön: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Lähde: Open-Meteo. Todennäköisyys kertoo, kuinka todennäköistä sade on sinä tuntina, ei kuinka kauan sataa.
+FARMER	VILJELIJÄ

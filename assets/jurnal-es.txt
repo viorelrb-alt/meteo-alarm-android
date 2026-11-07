@@ -1,3 +1,10 @@
+v2.50 · 7 de noviembre de 2026
+- Modo agricultor: el primer elemento de ☰ cambia entre modo agricultor y modo normal. En modo agricultor, tocar una casilla horaria muestra la temperatura, la mínima y la máxima del día, el viento con rachas y dirección (y cuándo gira), la humedad del aire, la probabilidad de lluvia, la humedad y la temperatura del suelo; el gráfico de lluvia y los cinco días se sustituyen por casillas de lluvia por horas, con detalles al tocarlas.
+- ☰ › Parcelas: guarda el lugar donde estás (GPS), ajústalo en el mapa de OpenStreetMap y ponle un nombre; cada parcela tiene casillas de viento, dirección, lluvia, humedad del aire y del suelo, temperatura del suelo y del aire, alertas de lluvia y viento fuerte, y estadísticas de un periodo de los últimos 28 días, que se pueden guardar en PDF en Descargas.
+- Los datos del suelo son estimaciones de Open-Meteo; si Open-Meteo no responde, la app los descarga más tarde y te envía una notificación.
+- Estados Unidos: el reloj y las horas muestran la hora local de la localidad elegida.
+- Notificaciones solo para la localidad elegida (en el modo de prueba) o donde está el teléfono: ya no llegan avisos de EE. UU. cuando la app muestra una localidad de Europa.
+
 v2.40 · 4 de noviembre de 2026
 - Estados Unidos: ☰ › Tornados, una página como Terremotos: las vigilancias y los avisos de tornado de tu localidad y tu estado, los tornados reportados cerca en los últimos 2 días, cuántos hay en todo el país y qué hacer.
 - Estados Unidos: sin recuadro de Polen (allí no hay datos); la calidad del aire con el índice estadounidense US AQI.

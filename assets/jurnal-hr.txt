@@ -1,3 +1,10 @@
+v2.50 · 7. studenoga 2026
+- Način poljoprivrednika: prva stavka ☰ prebacuje između načina poljoprivrednika i normalnog načina. U načinu poljoprivrednika dodir satnog polja prikazuje temperaturu, najnižu i najvišu dana, vjetar s udarima i smjerom (i kad se okreće), vlažnost zraka, vjerojatnost kiše, vlažnost i temperaturu tla; graf kiše i pet dana zamjenjuju satna polja kiše s pojedinostima na dodir.
+- ☰ › Parcele: spremi mjesto na kojem stojiš (GPS), namjesti ga na karti OpenStreetMap i daj mu naziv; svaka parcela ima polja za vjetar, smjer, kišu, vlažnost zraka i tla, temperaturu tla i zraka, upozorenja na kišu i jak vjetar te statistiku za razdoblje unutar zadnjih 28 dana, koju možeš spremiti kao PDF u Preuzimanja.
+- Podaci o tlu su procjene Open-Meteo; kad Open-Meteo ne odgovara, aplikacija ih preuzima kasnije i šalje ti obavijest.
+- Sjedinjene Države: sat i sati pokazuju lokalno vrijeme odabranog mjesta.
+- Obavijesti samo za odabrano mjesto (u testnom načinu) ili ondje gdje je telefon: više nema poruka iz SAD-a kad aplikacija prikazuje mjesto u Europi.
+
 v2.40 · 4. studenoga 2026
 - Sjedinjene Države: ☰ › Tornadoes, stranica poput Potresa: upozorenja na tornado za tvoje mjesto i saveznu državu, tornada prijavljena u blizini u posljednja 2 dana, njihov broj u cijeloj zemlji i što učiniti.
 - Sjedinjene Države: bez okvira Pelud (tamo nema podataka); kvaliteta zraka po američkom indeksu US AQI.

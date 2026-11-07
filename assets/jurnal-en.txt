@@ -1,3 +1,10 @@
+v2.50 · 7 November 2026
+- Farmer mode: the first item of ☰ switches between Farmer mode and Normal mode. In farmer mode a tap on an hour box shows the temperature, the day's low and high, the wind with gusts and direction (and when it turns), air humidity, chance of rain, soil moisture and soil temperature; the precipitation chart and the five days give way to hourly rain boxes, with details on tap.
+- ☰ › Parcels: save the place where you stand (GPS), correct it on the OpenStreetMap map and give it a name; every parcel has boxes for wind, direction, rain, air and soil humidity, soil and air temperature, rain and strong-wind alerts and statistics for a period within the last 28 days, saved as PDF in Downloads.
+- Soil data are Open-Meteo estimates; when Open-Meteo does not answer, the app downloads them later and sends you a notification.
+- United States: the clock and the hours show the chosen town's local time.
+- Notifications only for the chosen town (in the test mode) or where the phone is: no more alerts from the United States when the app shows a town in Europe.
+
 v2.40 · 4 November 2026
 - United States: ☰ › Tornadoes, a page like Earthquakes: the tornado watches and warnings of your town and state, the tornadoes reported nearby in the last 2 days, how many there are in the whole country and what to do.
 - United States: no Pollen box (there are no data there); the air quality as the American US AQI.

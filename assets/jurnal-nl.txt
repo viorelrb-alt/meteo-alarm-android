@@ -1,3 +1,10 @@
+v2.50 · 7 november 2026
+- Boerenmodus: het eerste item van ☰ wisselt tussen boerenmodus en normale modus. In de boerenmodus toont tikken op een uurvak de temperatuur, het laagste en hoogste van de dag, de wind met windstoten en richting (en wanneer die draait), de luchtvochtigheid, de kans op regen, het bodemvocht en de bodemtemperatuur; de regengrafiek en de vijf dagen worden vervangen door regenvakken per uur, met details bij tikken.
+- ☰ › Percelen: sla de plek op waar je staat (gps), zet die goed op de OpenStreetMap-kaart en geef een naam; elk perceel heeft vakken voor wind, richting, regen, lucht- en bodemvocht, bodem- en luchttemperatuur, meldingen bij regen en harde wind, en statistiek over een periode van de laatste 28 dagen, op te slaan als pdf in Downloads.
+- De bodemgegevens zijn schattingen van Open-Meteo; als Open-Meteo niet antwoordt, downloadt de app ze later en stuurt je een melding.
+- Verenigde Staten: klok en uren tonen de lokale tijd van de gekozen plaats.
+- Meldingen alleen voor de gekozen plaats (in de testmodus) of waar de telefoon is: geen meldingen uit de VS meer als de app een plaats in Europa toont.
+
 v2.40 · 4 november 2026
 - Verenigde Staten: ☰ › Tornadoes, een pagina zoals Aardbevingen: de tornadowaarschuwingen voor je plaats en staat, de tornado's die de laatste 2 dagen in de buurt zijn gemeld, het aantal in het hele land en wat je moet doen.
 - Verenigde Staten: geen Pollen-vak (daar zijn geen gegevens); de luchtkwaliteit als de Amerikaanse US AQI.

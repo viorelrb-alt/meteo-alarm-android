@@ -46,6 +46,9 @@ final class WeatherView extends View {
 
 		/** A tap on box K of the warnings row, at B (canvas units: x, y, w, h). */
 		void onAlert(int k, float[] b);
+
+		/** Farmer mode: a tap on hour box K (KIND 0) or rain box K (1), at B. */
+		void onFarmBox(int kind, int k, float[] b);
 	}
 
 	/**
@@ -82,7 +85,7 @@ final class WeatherView extends View {
 	private boolean slideLogged;
 
 	private String stripName(Strip st) {
-		return st == screen.hours ? "orele" : st == screen.days ? "cele 5 zile" : st == screen.info ? "casetele de jos" : st == screen.grid ? "grila de info" : st == screen.alerts ? "avertizări" : "rând";
+		return st == screen.hours ? "orele" : st == screen.days ? "cele 5 zile" : st == screen.info ? "casetele de jos" : st == screen.grid ? "grila de info" : st == screen.alerts ? "avertizări" : st == screen.rain ? "casetele de ploaie" : "rând";
 	}
 
 	/** Stops the row moving by itself for 20 s (a tap on a box, a finger on the row). */
@@ -445,6 +448,11 @@ final class WeatherView extends View {
 		float x = (e.getX() - ox) / scale, y = (e.getY() - oy) / scale;
 		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) return true;
 		// A tap on a warning (or earthquake) box: its details, and the row waits 20 s.
+		int[] fb = screen.farmBoxAt(x, y);
+		if (fb != null) {
+			taps.onFarmBox(fb[0], fb[1], screen.farmBoxRect(fb[0], fb[1]));
+			return true;
+		}
 		int ak = screen.alertAt(x, y);
 		if (ak >= 0) {
 			pauseRoll();

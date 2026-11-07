@@ -382,3 +382,158 @@ Switch to the metric system?	An athrófar go dtí an córas méadrach?
 Metric	Méadrach
 °C · metric system	°C · córas méadrach
 Keep °F	Fan le °F
+dry	tirim
+moderate	measartha
+moist	tais
+very wet	an-fhliuch
+Parcels	Páirceanna
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Coinnítear ar an bhfón seo amháin iad, go dtí go scriosann tú iad. Coinnítear a staitisticí 28 lá.
+Save the place here	Sábháil an áit seo
+Choose on the map	Roghnaigh ar an léarscáil
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Níl aon pháirc sábháilte fós. Seas ar an bpáirc agus tapáil “Sábháil an áit seo”, nó roghnaigh í ar an léarscáil.
+alerts on	foláirimh ar siúl
+wind 	gaoth 
+rain 	báisteach 
+soil 	ithir 
+updated 	nuashonraithe 
+Without location the place can only be chosen on the map.	Gan suíomh, ní féidir an áit a roghnú ach ar an léarscáil.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Ní cheadaíonn an fón fógraí don aip: ní féidir na foláirimh a thaispeáint.
+Looking for the position (GPS)… stay outside, on the parcel.	Ag lorg an tsuímh (GPS)… fan amuigh, ar an bpáirc.
+The position was not found.	Níor aimsíodh an suíomh.
+The position was not found: move the map to the parcel.	Níor aimsíodh an suíomh: bog an léarscáil go dtí an pháirc.
+The position is approximate (±	Tá an suíomh garbh (±
+ m): check the pin on the map.	 m): seiceáil an biorán ar an léarscáil.
+New parcel	Páirc nua
+Move the pin	Bog an biorán
+Name, e.g. parcel 96/5	Ainm, m.sh. páirc 96/5
+move the map to put the pin on the parcel	bog an léarscáil chun an biorán a chur ar an bpáirc
+My position	Mo shuíomh
+Give the parcel a name	Tabhair ainm don pháirc
+Downloading from Open-Meteo…	Á íoslódáil ó Open-Meteo…
+Open-Meteo is not answering now (	Níl Open-Meteo ag freagairt anois (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Nuair a bheidh rochtain ar ais, íoslódálfaidh an aip sonraí na páirce agus seolfaidh sí fógra chugat.
+low 	íseal 
+high 	ard 
+turns to 	casann go 
+ around 	 timpeall 
+steady for 12 hours	seasta ar feadh 12 uair
+today up to 	inniu suas le 
+Air temperature	Teocht an aeir
+gusts 	séideáin 
+Wind direction	Treo na gaoithe
+Chance of rain	Seans báistí
+Air humidity	Taise an aeir
+Soil moisture	Taise na hithreach
+3–9 cm, estimated	3–9 cm, measta
+Soil temperature	Teocht na hithreach
+surface, estimated	dromchla, measta
+Next 12 hours	An chéad 12 uair eile
+Statistics (last 28 days)	Staitisticí (28 lá deireanacha)
+Move the pin on the map	Bog an biorán ar an léarscáil
+Rain / wind alerts: ON	Foláirimh báistí / gaoithe: AR SIÚL
+Rain / wind alerts: OFF	Foláirimh báistí / gaoithe: MÚCHTA
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Gheobhaidh tú fógra nuair a bheidh báisteach nó gaoth láidir tuartha don pháirc seo sa chéad 12 uair eile (seiceáiltear gach 3 huaire).
+Rename	Athainmnigh
+Delete the parcel	Scrios an pháirc
+Delete 	Scrios 
+The parcel and its statistics are deleted from the phone.	Scriosfar an pháirc agus a staitisticí ón bhfón.
+Delete	Scrios
+Statistics · 	Staitisticí · 
+Choose the period, within the last 28 days.	Roghnaigh an tréimhse, laistigh de na 28 lá deireanacha.
+ days	 lá
+To 	Go dtí 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Níl sonraí don tréimhse seo fós. Oscail an pháirc uair amháin le hidirlíon: íoslódálfaidh an aip na 28 lá deireanacha ó Open-Meteo.
+Summary	Achoimre
+Lowest / highest	Is ísle / is airde
+Rain total	Báisteach iomlán
+ days with rain (1 mm+)	 lá le báisteach (1 mm+)
+Highest wind	An ghaoth is láidre
+gusts up to 	séideáin suas le 
+mean, estimated	meán, measta
+Day by day	Lá ar lá
+Date	Dáta
+Max	Uas
+Min	Íos
+Soil	Ithir
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Foinse: Open-Meteo (samhlacha agus meastacháin na laethanta seo caite). Taise na hithreach 3–9 cm domhain, measta.
+Save as PDF in Downloads	Sábháil mar PDF in Íoslódálacha
+The PDF could not be saved: 	Níorbh fhéidir an PDF a shábháil: 
+PDF saved	PDF sábháilte
+In Downloads: 	In Íoslódálacha: 
+Open	Oscail
+No app on the phone opens PDF files.	Níl aon aip ar an bhfón a osclaíonn comhaid PDF.
+Max wind	Gaoth uas
+Parcel statistics · 	Staitisticí páirce · 
+Coordinates: 	Comhordanáidí: 
+Period: 	Tréimhse: 
+ days)	 lá)
+Made on 	Déanta ar 
+Lowest temperature: 	An teocht is ísle: 
+Highest temperature: 	An teocht is airde: 
+Rain total: 	Báisteach iomlán: 
+Highest wind: 	An ghaoth is láidre: 
+Mean soil moisture (3–9 cm, estimated): 	Meántaise na hithreach (3–9 cm, measta): 
+Source: Open-Meteo (open-meteo.com), weather models.	Foinse: Open-Meteo (open-meteo.com), samhlacha aimsire.
+Soil moisture and soil temperature are estimates, not measurements.	Is meastacháin iad taise agus teocht na hithreach, ní tomhais.
+Farmer mode	Mód feirmeora
+Open-Meteo answers again: the farmer's data for 	Tá Open-Meteo ag freagairt arís: sonraí an fheirmeora do 
+ have been downloaded.	 íoslódáilte.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Sonraí an fheirmeora: níl Open-Meteo ag freagairt; gheobhaidh tú fógra nuair a thiocfaidh siad
+Farmer mode: tap an hour or a rain box for details	Mód feirmeora: tapáil uair nó bosca báistí le haghaidh sonraí
+Normal mode	Gnáthmhód
+Local time	Am áitiúil
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	I gcás baile sna Stáit Aontaithe, taispeánann an clog, uaireanta na réamhaisnéise agus na dátaí am áitiúil an bhaile, ní am an fhóin (úsáideach sa mhód tástála nó nuair a fhéachann tú ar bhaile i gcrios ama eile).
+Farmer mode / Normal mode	Mód feirmeora / Gnáthmhód
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Athraíonn an chéad mhír de ☰ idir an dá mhód; taispeánann sí ainm an mhóid eile. Sa mhód feirmeora fanann an teocht agus an deilbhín mar an gcéanna, taispeántar FEIRMEOIR ag an mbun, osclaíonn na boscaí uaire sonraí, agus cuirtear sraith de bhoscaí báistí in aghaidh na huaire in áit an ghraif deascadh agus na gcúig lá.
+Hour boxes	Boscaí uaire
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Osclaíonn tapáil ar uair bolgán: teocht, an teocht is ísle agus is airde sa lá, luas na gaoithe agus séideáin, treo na gaoithe agus cathain a mheastar a chasfaidh sí, taise an aeir, seans báistí, taise na hithreach (3–9 cm) agus teocht na hithreach.
+Rain boxes	Boscaí báistí
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Bosca amháin in aghaidh na huaire: seans báistí i ndigití móra, barra chomh lán leis an seans, an méid agus an cineál (báisteach, ceathanna, sneachta, flichshneachta). Taispeánann tapáil na sonraí: méid de réir cineáil, scamall, taise agus méid báistí go meán oíche.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Páirceanna (sa mhód feirmeora). Glacann “Sábháil an áit seo” an suíomh GPS ina seasann tú; ansin taispeánann an léarscáil é le biorán: bog an léarscáil chun an biorán a chur go díreach ar an bpáirc agus tabhair ainm di (m.sh. páirc 96/5). Sábhálann “Roghnaigh ar an léarscáil” páirc ón mbaile. Fanann na páirceanna ar an bhfón seo amháin, go dtí go scriosann tú iad.
+A parcel's page	Leathanach páirce
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Boscaí ar leith do theocht an aeir, gaoth, treo na gaoithe, seans báistí, taise an aeir, taise na hithreach agus teocht na hithreach, ansin an chéad 12 uair eile. Cnaipí: staitisticí, bog an biorán, foláirimh báistí / gaoithe, athainmnigh, scrios.
+Statistics and PDF	Staitisticí agus PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Do thréimhse a roghnaíonn tú laistigh de na 28 lá deireanacha: in aghaidh an lae an teocht is airde agus is ísle, báisteach iomlán, an ghaoth is láidre agus meántaise na hithreach, agus achoimre ar an tréimhse. Déanann “Sábháil mar PDF in Íoslódálacha” comhad is féidir leat a phriontáil nó a sheoladh. Coinnítear na staitisticí 28 lá.
+Parcel alerts	Foláirimh páirce
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Ar leathanach páirce, foláirimh AR SIÚL: gach 3 huaire féachann an aip ar an gcéad 12 uair eile agus seolann sí fógra nuair a bheidh báisteach (60% agus 0.5 mm, nó 1 mm) nó gaoth láidir (séideáin 50 km/u) tuartha; fógra amháin in aghaidh na tréimhse. San oíche, leis an scáileán múchta, fanann an seiceáil leis an scáileán.
+Soil data and source	Sonraí ithreach agus foinse
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Tagann gach rud d'fheirmeoirí ó Open-Meteo. Is meastacháin den tsamhail aimsire iad taise na hithreach (céatadán toirte, 3–9 cm domhain) agus teocht na hithreach, ní tomhais; féadfaidh páirceanna gar dá chéile (1–11 km) na luachanna céanna a thaispeáint. Nuair nach bhfreagraíonn Open-Meteo, deir an aip é sin, íoslódálann sí na sonraí nuair a bhíonn rochtain ar ais agus seolann sí fógra.
+The map	An léarscáil
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, saor in aisce agus gan chuntas (© rannpháirtithe OpenStreetMap); teastaíonn idirlíon. Bogann méar amháin í, déanann dhá mhéar nó tapáil dhúbailte zúmáil; taispeánann “Mo shuíomh” cá bhfuil tú mar phonc gorm. Coinnítear píosaí na léarscáile ar an bhfón ar feadh seachtaine.
+Farmer · 	Feirmeoir · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Tá Open-Meteo ag freagairt arís: íoslódáladh sonraí na páirce.
+Rain expected from 	Báisteach ag súil leis ó 
+ in the next 12 hours	 sa chéad 12 uair eile
+Rain · 	Báisteach · 
+Strong wind from 	Gaoth láidir ó 
+, gusts 	, séideáin 
+Wind · 	Gaoth · 
+showers	ceathanna
+sleet	flichshneachta
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Tagann sonraí an fheirmeora (gaoth in aghaidh na huaire, taise, ithir) ó Open-Meteo amháin, nach bhfuil ag freagairt anois. Nuair a bheidh rochtain ar ais, íoslódálfaidh an aip iad agus seolfaidh sí fógra chugat.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Is meastacháin den tsamhail aimsire iad taise agus teocht na hithreach, ní tomhais · foinse: Open-Meteo (open-meteo.com).
+Temperature: 	Teocht: 
+Chance of rain: 	Seans báistí: 
+Day's low / high: 	Is ísle / is airde an lae: 
+Speed: 	Luas: 
+Direction: from 	Treo: ón 
+Change: it turns from 	Athrú: casann ón 
+ to 	 go 
+Change: it keeps its direction for the next 12 hours	Athrú: coimeádann sí a treo an chéad 12 uair eile
+Air and rain	Aer agus báisteach
+Air humidity: 	Taise an aeir: 
+Soil (estimated)	Ithir (measta)
+Soil moisture (3–9 cm): 	Taise na hithreach (3–9 cm): 
+Soil temperature (surface): 	Teocht na hithreach (dromchla): 
+likely	dóchúil
+possible	féideartha
+unlikely	neamhdhóchúil
+Amount: 	Méid: 
+Kind: 	Cineál: 
+showers 	ceathanna 
+snow 	sneachta 
+Of which: 	As sin: 
+Cloud cover: 	Scamall: 
+Until midnight: 	Go meán oíche: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Foinse: Open-Meteo. Is é an seans cé chomh dóchúil is atá báisteach san uair sin, ní cé chomh fada a bheidh sé ag cur.
+FARMER	FEIRMEOIR

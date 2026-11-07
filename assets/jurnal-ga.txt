@@ -1,3 +1,10 @@
+v2.50 · 7 Samhain 2026
+- Mód feirmeora: athraíonn an chéad mhír de ☰ idir mód feirmeora agus gnáthmhód. Sa mhód feirmeora, taispeánann tapáil ar bhosca uaire teocht, an teocht is ísle agus is airde sa lá, gaoth le séideáin agus treo (agus cathain a chasfaidh sí), taise an aeir, seans báistí, taise agus teocht na hithreach; cuirtear boscaí báistí in aghaidh na huaire, le sonraí ar thapáil, in áit an ghraif deascadh agus na gcúig lá.
+- ☰ › Páirceanna: sábháil an áit ina seasann tú (GPS), ceartaigh í ar léarscáil OpenStreetMap agus tabhair ainm di; tá boscaí ag gach páirc do ghaoth, treo, báisteach, taise an aeir agus na hithreach, teocht na hithreach agus an aeir, foláirimh báistí agus gaoithe láidre agus staitisticí do thréimhse laistigh de na 28 lá deireanacha, is féidir a shábháil mar PDF in Íoslódálacha.
+- Is meastacháin ó Open-Meteo iad sonraí na hithreach; mura bhfreagraíonn Open-Meteo, íoslódálann an aip iad níos déanaí agus seolann sí fógra.
+- SAM: taispeánann an clog agus na huaireanta am áitiúil an bhaile roghnaithe.
+- Fógraí don bhaile roghnaithe amháin (sa mhód tástála) nó don áit ina bhfuil an fón: níl a thuilleadh foláirimh ó SAM nuair a thaispeánann an aip baile san Eoraip.
+
 v2.40 · 4 Samhain 2026
 - Na Stáit Aontaithe: ☰ › Tornadoes, leathanach cosúil le Creathanna talún: rabhaidh tornádó do do bhaile agus do stát, na tornádónna a tuairiscíodh in aice láimhe le 2 lá anuas, a líon sa tír ar fad agus cad ba cheart a dhéanamh.
 - Na Stáit Aontaithe: gan bosca Pailine (níl sonraí ann); cáilíocht an aeir de réir an innéacs Mheiriceánaigh US AQI.

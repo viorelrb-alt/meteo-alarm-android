@@ -47,6 +47,9 @@ public final class Weather {
 	public double[] tileTemp = new double[0];
 	public int[] tileCode = new int[0];
 	public boolean[] tileDay = new boolean[0];
+	/** The chance (%) and amount (mm) of precipitation of each tile hour (farmer mode's rain boxes, v2.50). */
+	public int[] tileProb = new int[0];
+	public double[] tileAmt = new double[0];
 
 	// Next days (tomorrow first): ISO date, code, rounded high/low, max precipitation probability.
 	public final List<String> dayDates = new ArrayList<String>();
@@ -241,12 +244,16 @@ public final class Weather {
 		w.tileTemp = new double[nt];
 		w.tileCode = new int[nt];
 		w.tileDay = new boolean[nt];
+		w.tileProb = new int[nt];
+		w.tileAmt = new double[nt];
 		for (int k = 0; k < nt; k++) {
 			String t = Json.str(hTime, k);
 			w.tileHours.add(t != null && t.length() >= 16 ? t.substring(11, 16) : "");
 			w.tileTemp[k] = Json.num(hTemp, k);
 			w.tileCode[k] = (int) nz(Json.num(hCode, k));
 			w.tileDay[k] = Json.num(hDay, k) != 0;
+			w.tileProb[k] = (int) nz(Json.num(hProb, k));
+			w.tileAmt[k] = nz(Json.num(hAmt, k));
 		}
 		w.probs = new int[n];
 		w.wet = new boolean[n];

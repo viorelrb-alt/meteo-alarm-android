@@ -382,3 +382,158 @@ Switch to the metric system?	Byta till metersystemet?
 Metric	Metriskt
 °C · metric system	°C · metersystemet
 Keep °F	Behåll °F
+dry	torr
+moderate	måttlig
+moist	fuktig
+very wet	mycket blöt
+Parcels	Skiften
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Sparas bara på den här telefonen tills du raderar dem. Statistiken sparas i 28 dagar.
+Save the place here	Spara platsen här
+Choose on the map	Välj på kartan
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Inget skifte sparat än. Stå på skiftet och tryck på ”Spara platsen här”, eller välj det på kartan.
+alerts on	varningar på
+wind 	vind 
+rain 	regn 
+soil 	mark 
+updated 	uppdaterad 
+Without location the place can only be chosen on the map.	Utan plats kan platsen bara väljas på kartan.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Telefonen tillåter inte aviseringar för appen: varningarna kan inte visas.
+Looking for the position (GPS)… stay outside, on the parcel.	Söker position (GPS)… stanna utomhus, på skiftet.
+The position was not found.	Positionen hittades inte.
+The position was not found: move the map to the parcel.	Positionen hittades inte: flytta kartan till skiftet.
+The position is approximate (±	Positionen är ungefärlig (±
+ m): check the pin on the map.	 m): kontrollera nålen på kartan.
+New parcel	Nytt skifte
+Move the pin	Flytta nålen
+Name, e.g. parcel 96/5	Namn, t.ex. skifte 96/5
+move the map to put the pin on the parcel	flytta kartan för att sätta nålen på skiftet
+My position	Min position
+Give the parcel a name	Ge skiftet ett namn
+Downloading from Open-Meteo…	Hämtar från Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo svarar inte just nu (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). När åtkomsten är tillbaka hämtar appen skiftets data och skickar en avisering.
+low 	låg 
+high 	hög 
+turns to 	vrider till 
+ around 	 runt 
+steady for 12 hours	stadig i 12 timmar
+today up to 	i dag upp till 
+Air temperature	Lufttemperatur
+gusts 	byar 
+Wind direction	Vindriktning
+Chance of rain	Risk för regn
+Air humidity	Luftfuktighet
+Soil moisture	Markfuktighet
+3–9 cm, estimated	3–9 cm, uppskattad
+Soil temperature	Marktemperatur
+surface, estimated	yta, uppskattad
+Next 12 hours	Kommande 12 timmar
+Statistics (last 28 days)	Statistik (senaste 28 dagarna)
+Move the pin on the map	Flytta nålen på kartan
+Rain / wind alerts: ON	Regn-/vindvarningar: PÅ
+Rain / wind alerts: OFF	Regn-/vindvarningar: AV
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Du får en avisering när regn eller hård vind är prognosticerad för det här skiftet de kommande 12 timmarna (kontrolleras var 3:e timme).
+Rename	Byt namn
+Delete the parcel	Radera skiftet
+Delete 	Radera 
+The parcel and its statistics are deleted from the phone.	Skiftet och dess statistik raderas från telefonen.
+Delete	Radera
+Statistics · 	Statistik · 
+Choose the period, within the last 28 days.	Välj perioden inom de senaste 28 dagarna.
+ days	 dagar
+To 	Till 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Inga data för den här perioden än. Öppna skiftet en gång med internet: appen hämtar de senaste 28 dagarna från Open-Meteo.
+Summary	Sammanfattning
+Lowest / highest	Lägsta / högsta
+Rain total	Regn totalt
+ days with rain (1 mm+)	 dagar med regn (1 mm+)
+Highest wind	Högsta vind
+gusts up to 	byar upp till 
+mean, estimated	medel, uppskattad
+Day by day	Dag för dag
+Date	Datum
+Max	Max
+Min	Min
+Soil	Mark
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Källa: Open-Meteo (modeller och uppskattningar för de senaste dagarna). Markfuktighet 3–9 cm djup, uppskattad.
+Save as PDF in Downloads	Spara som PDF i Hämtade filer
+The PDF could not be saved: 	PDF:en kunde inte sparas: 
+PDF saved	PDF sparad
+In Downloads: 	I Hämtade filer: 
+Open	Öppna
+No app on the phone opens PDF files.	Ingen app på telefonen kan öppna PDF-filer.
+Max wind	Max vind
+Parcel statistics · 	Skiftesstatistik · 
+Coordinates: 	Koordinater: 
+Period: 	Period: 
+ days)	 dagar)
+Made on 	Skapad 
+Lowest temperature: 	Lägsta temperatur: 
+Highest temperature: 	Högsta temperatur: 
+Rain total: 	Regn totalt: 
+Highest wind: 	Högsta vind: 
+Mean soil moisture (3–9 cm, estimated): 	Genomsnittlig markfuktighet (3–9 cm, uppskattad): 
+Source: Open-Meteo (open-meteo.com), weather models.	Källa: Open-Meteo (open-meteo.com), vädermodeller.
+Soil moisture and soil temperature are estimates, not measurements.	Markfuktighet och marktemperatur är uppskattningar, inte mätningar.
+Farmer mode	Lantbruksläge
+Open-Meteo answers again: the farmer's data for 	Open-Meteo svarar igen: lantbruksdata för 
+ have been downloaded.	 har hämtats.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Lantbruksdata: Open-Meteo svarar inte; du får en avisering när de kommer
+Farmer mode: tap an hour or a rain box for details	Lantbruksläge: tryck på en timme eller en regnruta för detaljer
+Normal mode	Normalt läge
+Local time	Lokal tid
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	För en ort i USA visar klockan, prognosens timmar och datumen ortens lokala tid, inte telefonens (användbart i testläget eller när du tittar på en ort i en annan tidszon).
+Farmer mode / Normal mode	Lantbruksläge / Normalt läge
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Första posten i ☰ växlar mellan de två lägena; den visar namnet på det andra läget. I lantbruksläget är temperaturen och ikonen desamma, LANTBRUK visas längst ned, timrutorna öppnar detaljer och nederbördsdiagrammet och de fem dagarna ersätts av en rad regnrutor per timme.
+Hour boxes	Timrutor
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Ett tryck på en timme öppnar en bubbla: temperatur, dagens lägsta och högsta, vindhastighet och byar, vindriktning och när den väntas vrida, luftfuktighet, risk för regn, markfuktighet (3–9 cm) och marktemperatur.
+Rain boxes	Regnrutor
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	En ruta per timme: risken för regn med stora siffror, en stapel fylld efter risken, mängden och typen (regn, skurar, snö, snöblandat regn). Ett tryck visar detaljerna: mängd per typ, molnighet, fuktighet och hur mycket regn till midnatt.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Skiften (i lantbruksläget). ”Spara platsen här” tar GPS-positionen där du står; kartan visar den sedan med en nål: flytta kartan för att sätta nålen exakt på skiftet och ge det ett namn (t.ex. skifte 96/5). ”Välj på kartan” sparar ett skifte hemifrån. Skiftena sparas bara på den här telefonen tills du raderar dem.
+A parcel's page	Ett skiftes sida
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Separata rutor för lufttemperatur, vind, vindriktning, risk för regn, luftfuktighet, markfuktighet och marktemperatur, sedan de kommande 12 timmarna. Knappar: statistik, flytta nålen, regn-/vindvarningar, byt namn, radera.
+Statistics and PDF	Statistik och PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	För en period du väljer inom de senaste 28 dagarna: per dag högsta och lägsta, regn totalt, högsta vind och genomsnittlig markfuktighet, och en sammanfattning av perioden. ”Spara som PDF i Hämtade filer” skapar en fil du kan skriva ut eller skicka. Statistiken sparas i 28 dagar.
+Parcel alerts	Skiftesvarningar
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	På ett skiftes sida, varningar PÅ: var 3:e timme tittar appen på de kommande 12 timmarna och skickar en avisering när regn (60 % och 0,5 mm, eller 1 mm) eller hård vind (byar på 50 km/h) är prognosticerad; ett meddelande per period. På natten med skärmen av väntar kontrollen på skärmen.
+Soil data and source	Markdata och källa
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Allt för lantbrukare kommer från Open-Meteo. Markfuktighet (volymprocent, 3–9 cm djup) och marktemperatur är vädermodellens uppskattningar, inte mätningar; närliggande skiften (1–11 km) kan visa samma värden. När Open-Meteo inte svarar säger appen det, hämtar data när åtkomsten är tillbaka och skickar en avisering.
+The map	Kartan
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, gratis och utan konto (© OpenStreetMap-bidragsgivare); kräver internet. Ett finger flyttar den, två fingrar eller dubbeltryck zoomar; ”Min position” visar var du är som en blå prick. Kartbitarna sparas på telefonen i en vecka.
+Farmer · 	Lantbruk · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo svarar igen: skiftets data har hämtats.
+Rain expected from 	Regn väntas från 
+ in the next 12 hours	 de kommande 12 timmarna
+Rain · 	Regn · 
+Strong wind from 	Hård vind från 
+, gusts 	, byar 
+Wind · 	Vind · 
+showers	skurar
+sleet	snöblandat regn
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Lantbruksdata (vind per timme, fuktighet, mark) kommer bara från Open-Meteo, som inte svarar just nu. När åtkomsten är tillbaka hämtar appen dem och skickar en avisering.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Markfuktighet och marktemperatur är vädermodellens uppskattningar, inte mätningar · källa: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatur: 
+Chance of rain: 	Risk för regn: 
+Day's low / high: 	Dagens lägsta / högsta: 
+Speed: 	Hastighet: 
+Direction: from 	Riktning: från 
+Change: it turns from 	Ändring: vrider från 
+ to 	 till 
+Change: it keeps its direction for the next 12 hours	Ändring: behåller riktningen de kommande 12 timmarna
+Air and rain	Luft och regn
+Air humidity: 	Luftfuktighet: 
+Soil (estimated)	Mark (uppskattad)
+Soil moisture (3–9 cm): 	Markfuktighet (3–9 cm): 
+Soil temperature (surface): 	Marktemperatur (yta): 
+likely	trolig
+possible	möjlig
+unlikely	osannolik
+Amount: 	Mängd: 
+Kind: 	Typ: 
+showers 	skurar 
+snow 	snö 
+Of which: 	Varav: 
+Cloud cover: 	Molnighet: 
+Until midnight: 	Till midnatt: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Källa: Open-Meteo. Risken är hur troligt regn är under den timmen, inte hur länge det regnar.
+FARMER	LANTBRUK

@@ -1,3 +1,10 @@
+v2.50 · 7 novembre 2026
+- Mode agriculteur : le premier élément de ☰ passe du mode agriculteur au mode normal. En mode agriculteur, toucher une case horaire montre la température, le minimum et le maximum du jour, le vent avec rafales et direction (et quand il tourne), l'humidité de l'air, le risque de pluie, l'humidité et la température du sol ; le graphique de pluie et les cinq jours sont remplacés par des cases de pluie heure par heure, avec des détails au toucher.
+- ☰ › Parcelles : enregistre le lieu où tu te trouves (GPS), ajuste-le sur la carte OpenStreetMap et donne-lui un nom ; chaque parcelle a des cases pour le vent, la direction, la pluie, l'humidité de l'air et du sol, la température du sol et de l'air, des alertes de pluie et de vent fort, et des statistiques sur une période des 28 derniers jours, enregistrables en PDF dans Téléchargements.
+- Les données du sol sont des estimations d'Open-Meteo ; si Open-Meteo ne répond pas, l'appli les télécharge plus tard et t'envoie une notification.
+- États-Unis : l'horloge et les heures montrent l'heure locale de la localité choisie.
+- Notifications seulement pour la localité choisie (en mode test) ou là où se trouve le téléphone : plus d'alertes des États-Unis quand l'appli montre une localité d'Europe.
+
 v2.40 · 4 novembre 2026
 - États-Unis : ☰ › Tornadoes, une page comme Séismes : les alertes de tornade pour ta localité et ton État, les tornades signalées à proximité ces 2 derniers jours, leur nombre dans tout le pays et que faire.
 - États-Unis : pas de case Pollen (pas de données là-bas) ; la qualité de l'air selon l'indice américain US AQI.

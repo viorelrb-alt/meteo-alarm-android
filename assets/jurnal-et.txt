@@ -1,3 +1,10 @@
+v2.50 · 7. november 2026
+- Põllumehe režiim: ☰ esimene punkt lülitab põllumehe ja tavarežiimi vahel. Põllumehe režiimis näitab tunnikasti puudutus temperatuuri, päeva madalaimat ja kõrgeimat, tuult puhangute ja suunaga (ja millal see pöördub), õhuniiskust, vihma tõenäosust, mullaniiskust ja mullatemperatuuri; sademete graafiku ja viie päeva asemel on tunnipõhised vihmakastid, mille üksikasjad avanevad puudutusel.
+- ☰ › Põllud: salvesta koht, kus seisad (GPS), paranda seda OpenStreetMapi kaardil ja anna nimi; igal põllul on kastid tuule, suuna, vihma, õhu- ja mullaniiskuse, mulla- ja õhutemperatuuri jaoks, vihma ja tugeva tuule hoiatused ning statistika viimase 28 päeva perioodi kohta, mida saab salvestada PDF-ina allalaadimistesse.
+- Mullaandmed on Open-Meteo hinnangud; kui Open-Meteo ei vasta, laadib rakendus need hiljem alla ja saadab teavituse.
+- USA: kell ja tunnid näitavad valitud asula kohalikku aega.
+- Teavitused ainult valitud asula kohta (testrežiimis) või seal, kus telefon on: enam pole hoiatusi USA-st, kui rakendus näitab Euroopa asulat.
+
 v2.40 · 4. november 2026
 - Ameerika Ühendriigid: ☰ › Tornadoes, leht nagu Maavärinad: tornaadohoiatused sinu koha ja osariigi jaoks, viimase 2 päeva jooksul lähedal teatatud tornaadod, nende arv kogu riigis ja mida teha.
 - Ameerika Ühendriigid: õietolmu kasti pole (seal pole andmeid); õhukvaliteet Ameerika US AQI indeksi järgi.

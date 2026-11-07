@@ -145,6 +145,8 @@ public final class Refresher extends BroadcastReceiver {
 				if (r.error != null && Fetcher.reason(r.error, false).startsWith("fără internet")) NetJob.waitForNet(ctx);
 			}
 		}
+		// Farmer mode (v2.50): the parcels' alerts and the data promised when Open-Meteo did not answer.
+		if (Parcels.anything(ctx)) Parcels.background(ctx);
 		// The widgets' own towns.
 		for (Cities.City o : Widget.ownTowns(ctx)) if (c == null || !o.same(c)) fetchTown(ctx, o, false);
 		Widget.show(ctx);
@@ -156,7 +158,7 @@ public final class Refresher extends BroadcastReceiver {
 		String f = Widget.townFile(c);
 		if (!now && System.currentTimeMillis() - p.getLong(f, 0) < SCREEN_OFF_MS - 60000L) return;
 		try {
-			String json = Fetcher.forecast(ctx, c, java.util.TimeZone.getDefault().getID())[0];
+			String json = Fetcher.forecast(ctx, c, Fetcher.tz(c))[0];
 			Fetcher.write(ctx, f, json);
 			p.edit().putLong(f, System.currentTimeMillis()).apply();
 			Log.i(ctx, "DATE", "widget: prognoza pentru " + c.name + " OK");

@@ -1,3 +1,10 @@
+v2.50 · 7. november 2026
+- Landmandstilstand: det første punkt i ☰ skifter mellem landmandstilstand og normal tilstand. I landmandstilstand viser et tryk på en timeboks temperatur, dagens laveste og højeste, vind med vindstød og retning (og hvornår den drejer), luftfugtighed, chance for regn, jordfugtighed og jordtemperatur; nedbørsgrafen og de fem dage erstattes af regnbokse pr. time med detaljer ved tryk.
+- ☰ › Marker: gem stedet, hvor du står (GPS), ret det på OpenStreetMap-kortet og giv det et navn; hver mark har bokse for vind, retning, regn, luft- og jordfugtighed, jord- og lufttemperatur, varsler om regn og kraftig vind og statistik for en periode inden for de sidste 28 dage, som kan gemmes som PDF i Overførsler.
+- Jorddata er estimater fra Open-Meteo; svarer Open-Meteo ikke, henter appen dem senere og sender dig en notifikation.
+- USA: uret og timerne viser den valgte bys lokale tid.
+- Notifikationer kun for den valgte by (i testtilstanden) eller dér, hvor telefonen er: ikke flere varsler fra USA, når appen viser en by i Europa.
+
 v2.40 · 4. november 2026
 - USA: ☰ › Tornadoes, en side som Jordskælv: tornadovarsler for din by og stat, tornadoer meldt i nærheden de sidste 2 dage, antallet i hele landet og hvad du skal gøre.
 - USA: ingen Pollen-boks (der er ingen data der); luftkvaliteten vises som det amerikanske US AQI.

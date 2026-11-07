@@ -382,3 +382,158 @@ Switch to the metric system?	Pāriet uz metrisko sistēmu?
 Metric	Metriskā
 °C · metric system	°C · metriskā sistēma
 Keep °F	Paturēt °F
+dry	sauss
+moderate	mērens
+moist	mitrs
+very wet	ļoti slapjš
+Parcels	Lauki
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Tiek glabāti tikai šajā tālrunī, līdz tos izdzēsīsiet. Statistika tiek glabāta 28 dienas.
+Save the place here	Saglabāt šo vietu
+Choose on the map	Izvēlēties kartē
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Vēl nav saglabāts neviens lauks. Nostājieties uz lauka un pieskarieties “Saglabāt šo vietu” vai izvēlieties to kartē.
+alerts on	brīdinājumi ieslēgti
+wind 	vējš 
+rain 	lietus 
+soil 	augsne 
+updated 	atjaunināts 
+Without location the place can only be chosen on the map.	Bez atrašanās vietas vietu var izvēlēties tikai kartē.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Tālrunis neļauj lietotnei rādīt paziņojumus: brīdinājumus nevar parādīt.
+Looking for the position (GPS)… stay outside, on the parcel.	Meklē atrašanās vietu (GPS)… palieciet ārā, uz lauka.
+The position was not found.	Atrašanās vieta netika atrasta.
+The position was not found: move the map to the parcel.	Atrašanās vieta netika atrasta: pārvietojiet karti uz lauku.
+The position is approximate (±	Atrašanās vieta ir aptuvena (±
+ m): check the pin on the map.	 m): pārbaudiet adatu kartē.
+New parcel	Jauns lauks
+Move the pin	Pārvietot adatu
+Name, e.g. parcel 96/5	Nosaukums, piem., lauks 96/5
+move the map to put the pin on the parcel	pārvietojiet karti, lai novietotu adatu uz lauka
+My position	Mana atrašanās vieta
+Give the parcel a name	Piešķiriet laukam nosaukumu
+Downloading from Open-Meteo…	Lejupielādē no Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo pašlaik neatbild (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Kad piekļuve atjaunosies, lietotne lejupielādēs lauka datus un nosūtīs jums paziņojumu.
+low 	zemākā 
+high 	augstākā 
+turns to 	pagriežas uz 
+ around 	 ap 
+steady for 12 hours	stabils 12 stundas
+today up to 	šodien līdz 
+Air temperature	Gaisa temperatūra
+gusts 	brāzmas 
+Wind direction	Vēja virziens
+Chance of rain	Lietus iespējamība
+Air humidity	Gaisa mitrums
+Soil moisture	Augsnes mitrums
+3–9 cm, estimated	3–9 cm, aplēse
+Soil temperature	Augsnes temperatūra
+surface, estimated	virsma, aplēse
+Next 12 hours	Nākamās 12 stundas
+Statistics (last 28 days)	Statistika (pēdējās 28 dienas)
+Move the pin on the map	Pārvietot adatu kartē
+Rain / wind alerts: ON	Lietus/vēja brīdinājumi: IESLĒGTI
+Rain / wind alerts: OFF	Lietus/vēja brīdinājumi: IZSLĒGTI
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Jūs saņemsiet paziņojumu, ja šim laukam nākamajās 12 stundās prognozēts lietus vai stiprs vējš (pārbauda ik pēc 3 stundām).
+Rename	Pārdēvēt
+Delete the parcel	Dzēst lauku
+Delete 	Dzēst 
+The parcel and its statistics are deleted from the phone.	Lauks un tā statistika tiks izdzēsti no tālruņa.
+Delete	Dzēst
+Statistics · 	Statistika · 
+Choose the period, within the last 28 days.	Izvēlieties periodu pēdējo 28 dienu robežās.
+ days	 dienas
+To 	Līdz 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Šim periodam vēl nav datu. Vienreiz atveriet lauku ar internetu: lietotne lejupielādēs pēdējās 28 dienas no Open-Meteo.
+Summary	Kopsavilkums
+Lowest / highest	Zemākā / augstākā
+Rain total	Lietus kopā
+ days with rain (1 mm+)	 lietainas dienas (1 mm+)
+Highest wind	Stiprākais vējš
+gusts up to 	brāzmas līdz 
+mean, estimated	vidēji, aplēse
+Day by day	Pa dienām
+Date	Datums
+Max	Maks.
+Min	Min.
+Soil	Augsne
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Avots: Open-Meteo (modeļi un pagājušo dienu aplēses). Augsnes mitrums 3–9 cm dziļumā, aplēse.
+Save as PDF in Downloads	Saglabāt PDF mapē Lejupielādes
+The PDF could not be saved: 	PDF nevarēja saglabāt: 
+PDF saved	PDF saglabāts
+In Downloads: 	Mapē Lejupielādes: 
+Open	Atvērt
+No app on the phone opens PDF files.	Tālrunī nav lietotnes, kas atver PDF failus.
+Max wind	Maks. vējš
+Parcel statistics · 	Lauka statistika · 
+Coordinates: 	Koordinātas: 
+Period: 	Periods: 
+ days)	 dienas)
+Made on 	Sagatavots 
+Lowest temperature: 	Zemākā temperatūra: 
+Highest temperature: 	Augstākā temperatūra: 
+Rain total: 	Lietus kopā: 
+Highest wind: 	Stiprākais vējš: 
+Mean soil moisture (3–9 cm, estimated): 	Vidējais augsnes mitrums (3–9 cm, aplēse): 
+Source: Open-Meteo (open-meteo.com), weather models.	Avots: Open-Meteo (open-meteo.com), laikapstākļu modeļi.
+Soil moisture and soil temperature are estimates, not measurements.	Augsnes mitrums un augsnes temperatūra ir aplēses, nevis mērījumi.
+Farmer mode	Lauksaimnieka režīms
+Open-Meteo answers again: the farmer's data for 	Open-Meteo atkal atbild: lauksaimnieka dati vietai 
+ have been downloaded.	 ir lejupielādēti.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Lauksaimnieka dati: Open-Meteo neatbild; jūs saņemsiet paziņojumu, kad tie pienāks
+Farmer mode: tap an hour or a rain box for details	Lauksaimnieka režīms: pieskarieties stundai vai lietus lodziņam, lai redzētu sīkāk
+Normal mode	Parastais režīms
+Local time	Vietējais laiks
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	ASV pilsētai pulkstenis, prognozes stundas un datumi rāda pilsētas vietējo laiku, nevis tālruņa (noderīgi testa režīmā vai skatot pilsētu citā laika joslā).
+Farmer mode / Normal mode	Lauksaimnieka režīms / Parastais režīms
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	☰ pirmais punkts pārslēdz starp abiem režīmiem; tas rāda otra režīma nosaukumu. Lauksaimnieka režīmā temperatūra un ikona paliek tādas pašas, apakšā redzams LAUKSAIMNIEKS, stundu lodziņi atver sīkāku informāciju, un nokrišņu grafika un piecu dienu vietā ir stundu lietus lodziņu rinda.
+Hour boxes	Stundu lodziņi
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Pieskāriens stundai atver burbuli: temperatūra, dienas zemākā un augstākā, vēja ātrums un brāzmas, vēja virziens un kad tas varētu pagriezties, gaisa mitrums, lietus iespējamība, augsnes mitrums (3–9 cm) un augsnes temperatūra.
+Rain boxes	Lietus lodziņi
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Viens lodziņš stundā: lietus iespējamība lieliem cipariem, josla, kas aizpildīta atbilstoši iespējamībai, daudzums un veids (lietus, gāzes, sniegs, slapjdraņķis). Pieskāriens parāda sīkāk: daudzums pa veidiem, mākoņainība, mitrums un lietus daudzums līdz pusnaktij.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Lauki (lauksaimnieka režīmā). “Saglabāt šo vietu” ņem GPS atrašanās vietu, kur stāvat; pēc tam karte to rāda ar adatu: pārvietojiet karti, lai adata būtu tieši uz lauka, un piešķiriet nosaukumu (piem., lauks 96/5). “Izvēlēties kartē” saglabā lauku no mājām. Lauki paliek tikai šajā tālrunī, līdz tos izdzēsīsiet.
+A parcel's page	Lauka lapa
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Atsevišķi lodziņi gaisa temperatūrai, vējam, vēja virzienam, lietus iespējamībai, gaisa mitrumam, augsnes mitrumam un augsnes temperatūrai, tad nākamās 12 stundas. Pogas: statistika, pārvietot adatu, lietus/vēja brīdinājumi, pārdēvēt, dzēst.
+Statistics and PDF	Statistika un PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Jūsu izvēlētam periodam pēdējo 28 dienu robežās: katrai dienai augstākā un zemākā temperatūra, lietus kopā, stiprākais vējš un vidējais augsnes mitrums, kā arī perioda kopsavilkums. “Saglabāt PDF mapē Lejupielādes” izveido failu, ko var izdrukāt vai nosūtīt. Statistika tiek glabāta 28 dienas.
+Parcel alerts	Lauka brīdinājumi
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Lauka lapā brīdinājumi IESLĒGTI: ik pēc 3 stundām lietotne pārskata nākamās 12 stundas un nosūta paziņojumu, ja prognozēts lietus (60% un 0,5 mm vai 1 mm) vai stiprs vējš (brāzmas 50 km/h); viens paziņojums par periodu. Naktī, kad ekrāns izslēgts, pārbaude gaida ekrānu.
+Soil data and source	Augsnes dati un avots
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Visi lauksaimnieka dati nāk no Open-Meteo. Augsnes mitrums (tilpuma procenti, 3–9 cm dziļumā) un augsnes temperatūra ir laikapstākļu modeļa aplēses, nevis mērījumi; tuvi lauki (1–11 km) var rādīt vienādas vērtības. Ja Open-Meteo neatbild, lietotne to paziņo, lejupielādē datus, kad piekļuve atjaunojas, un nosūta paziņojumu.
+The map	Karte
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, bez maksas un bez konta (© OpenStreetMap līdzstrādnieki); nepieciešams internets. Viens pirksts to pārvieto, divi pirksti vai dubultskāriens tuvina; “Mana atrašanās vieta” parāda, kur esat, ar zilu punktu. Kartes gabali tālrunī tiek glabāti nedēļu.
+Farmer · 	Lauksaimnieks · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo atkal atbild: lauka dati ir lejupielādēti.
+Rain expected from 	Lietus gaidāms no 
+ in the next 12 hours	 nākamajās 12 stundās
+Rain · 	Lietus · 
+Strong wind from 	Stiprs vējš no 
+, gusts 	, brāzmas 
+Wind · 	Vējš · 
+showers	gāzes
+sleet	slapjdraņķis
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Lauksaimnieka dati (vējš pa stundām, mitrums, augsne) nāk tikai no Open-Meteo, kas pašlaik neatbild. Kad piekļuve atjaunosies, lietotne tos lejupielādēs un nosūtīs jums paziņojumu.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Augsnes mitrums un augsnes temperatūra ir laikapstākļu modeļa aplēses, nevis mērījumi · avots: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatūra: 
+Chance of rain: 	Lietus iespējamība: 
+Day's low / high: 	Dienas zemākā / augstākā: 
+Speed: 	Ātrums: 
+Direction: from 	Virziens: no 
+Change: it turns from 	Izmaiņas: pagriežas no 
+ to 	 uz 
+Change: it keeps its direction for the next 12 hours	Izmaiņas: virziens nemainās nākamās 12 stundas
+Air and rain	Gaiss un lietus
+Air humidity: 	Gaisa mitrums: 
+Soil (estimated)	Augsne (aplēse)
+Soil moisture (3–9 cm): 	Augsnes mitrums (3–9 cm): 
+Soil temperature (surface): 	Augsnes temperatūra (virsma): 
+likely	iespējams
+possible	varbūtējs
+unlikely	maz ticams
+Amount: 	Daudzums: 
+Kind: 	Veids: 
+showers 	gāzes 
+snow 	sniegs 
+Of which: 	No tā: 
+Cloud cover: 	Mākoņainība: 
+Until midnight: 	Līdz pusnaktij: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Avots: Open-Meteo. Iespējamība rāda, cik ticams ir lietus šajā stundā, nevis cik ilgi līst.
+FARMER	LAUKSAIMNIEKS

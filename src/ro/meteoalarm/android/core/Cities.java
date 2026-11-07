@@ -214,6 +214,39 @@ public final class Cities {
 		return "";
 	}
 
+	/**
+	 * The time zone of a US town (v2.50, Viorel 2026-11-07: the clock shows the town's local time),
+	 * from its state; the states split between two zones by the town's longitude (or latitude for
+	 * Idaho). Null for a town outside the US.
+	 */
+	public static String tzOf(City c) {
+		if (c == null || !c.us()) return null;
+		String st = stateCode(c.county);
+		double lon = c.lon, lat = c.lat;
+		String E = "America/New_York", C = "America/Chicago", M = "America/Denver", P = "America/Los_Angeles";
+		if (st.equals("HI")) return "Pacific/Honolulu";
+		if (st.equals("AK")) return "America/Anchorage";
+		if (st.equals("AZ")) return "America/Phoenix";
+		if (st.equals("CA") || st.equals("WA") || st.equals("NV")) return P;
+		if (st.equals("OR")) return lat < 44.5 && lon > -117.6 ? "America/Boise" : P;
+		if (st.equals("ID")) return lat > 45.6 ? P : "America/Boise";
+		if (st.equals("MT") || st.equals("WY") || st.equals("CO") || st.equals("UT") || st.equals("NM")) return M;
+		if (st.equals("ND")) return lon < -101.3 && lat < 47.5 ? M : C;
+		if (st.equals("SD")) return lon < -100.4 ? M : C;
+		if (st.equals("NE")) return lon < -101.3 ? M : C;
+		if (st.equals("KS")) return lon < -101.5 ? M : C;
+		if (st.equals("TX")) return lon < -104.9 ? M : C;
+		if (st.equals("FL")) return lon < -85.0 ? C : E;
+		if (st.equals("TN")) return lon < -85.3 ? C : E;
+		if (st.equals("KY")) return lon < -85.8 ? C : E;
+		if (st.equals("IN")) return (lon < -86.8 && (lat > 41.0 || lat < 38.5)) ? C : "America/Indiana/Indianapolis";
+		if (st.equals("MI")) return lon < -87.6 && lat > 45.0 ? C : "America/Detroit";
+		if (st.equals("AL") || st.equals("AR") || st.equals("IL") || st.equals("IA") || st.equals("LA") || st.equals("MN") || st.equals("MS")
+				|| st.equals("MO") || st.equals("OK") || st.equals("WI")) return C;
+		if (st.length() == 2) return E;
+		return null;
+	}
+
 	/** "OK" (or "Oklahoma") -> "Oklahoma" (empty when not a state). */
 	public static String stateName(String s) {
 		String c = stateCode(s);

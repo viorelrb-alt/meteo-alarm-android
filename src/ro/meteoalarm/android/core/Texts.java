@@ -140,7 +140,7 @@ public final class Texts {
 
 	/** "Lun 09:40" for an epoch time. */
 	public String weekdayTime(long ms, boolean clk12) {
-		Calendar c = Calendar.getInstance();
+		Calendar c = Zone.now();
 		c.setTimeInMillis(ms);
 		return (wmL != null ? wmL : en ? WM_EN : WM_RO)[c.get(Calendar.DAY_OF_WEEK) - 1] + " "
 				+ clock(String.format("%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE)), clk12);

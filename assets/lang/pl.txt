@@ -382,3 +382,158 @@ Switch to the metric system?	Przejść na system metryczny?
 Metric	Metryczny
 °C · metric system	°C · system metryczny
 Keep °F	Zostań przy °F
+dry	sucho
+moderate	umiarkowanie
+moist	wilgotno
+very wet	bardzo mokro
+Parcels	Działki
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Zapisane tylko na tym telefonie, dopóki ich nie usuniesz. Statystyki są przechowywane 28 dni.
+Save the place here	Zapisz miejsce tutaj
+Choose on the map	Wybierz na mapie
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Nie zapisano jeszcze żadnej działki. Stań na działce i dotknij „Zapisz miejsce tutaj” albo wybierz ją na mapie.
+alerts on	alerty włączone
+wind 	wiatr 
+rain 	deszcz 
+soil 	gleba 
+updated 	zaktualizowano 
+Without location the place can only be chosen on the map.	Bez lokalizacji miejsce można wybrać tylko na mapie.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Telefon nie pozwala aplikacji na powiadomienia: alerty nie mogą się pojawić.
+Looking for the position (GPS)… stay outside, on the parcel.	Szukam pozycji (GPS)… zostań na zewnątrz, na działce.
+The position was not found.	Nie znaleziono pozycji.
+The position was not found: move the map to the parcel.	Nie znaleziono pozycji: przesuń mapę do działki.
+The position is approximate (±	Pozycja jest przybliżona (±
+ m): check the pin on the map.	 m): sprawdź pinezkę na mapie.
+New parcel	Nowa działka
+Move the pin	Przesuń pinezkę
+Name, e.g. parcel 96/5	Nazwa, np. działka 96/5
+move the map to put the pin on the parcel	przesuń mapę, aby pinezka była na działce
+My position	Moja pozycja
+Give the parcel a name	Nadaj działce nazwę
+Downloading from Open-Meteo…	Pobieram z Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo teraz nie odpowiada (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Gdy dostęp wróci, aplikacja pobierze dane działki i wyśle ci powiadomienie.
+low 	min 
+high 	maks 
+turns to 	skręca na 
+ around 	 około 
+steady for 12 hours	stały przez 12 godzin
+today up to 	dziś do 
+Air temperature	Temperatura powietrza
+gusts 	porywy 
+Wind direction	Kierunek wiatru
+Chance of rain	Szansa na deszcz
+Air humidity	Wilgotność powietrza
+Soil moisture	Wilgotność gleby
+3–9 cm, estimated	3–9 cm, szacowana
+Soil temperature	Temperatura gleby
+surface, estimated	powierzchnia, szacowana
+Next 12 hours	Następne 12 godzin
+Statistics (last 28 days)	Statystyki (ostatnie 28 dni)
+Move the pin on the map	Przesuń pinezkę na mapie
+Rain / wind alerts: ON	Alerty deszcz / wiatr: WŁĄCZONE
+Rain / wind alerts: OFF	Alerty deszcz / wiatr: WYŁĄCZONE
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Dostaniesz powiadomienie, gdy dla tej działki w ciągu 12 godzin prognozowany jest deszcz lub silny wiatr (sprawdzane co 3 godziny).
+Rename	Zmień nazwę
+Delete the parcel	Usuń działkę
+Delete 	Usunąć 
+The parcel and its statistics are deleted from the phone.	Działka i jej statystyki zostaną usunięte z telefonu.
+Delete	Usuń
+Statistics · 	Statystyki · 
+Choose the period, within the last 28 days.	Wybierz okres w ostatnich 28 dniach.
+ days	 dni
+To 	Do 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Brak jeszcze danych za ten okres. Otwórz działkę raz z internetem: aplikacja pobierze ostatnie 28 dni z Open-Meteo.
+Summary	Podsumowanie
+Lowest / highest	Najniższa / najwyższa
+Rain total	Suma opadów
+ days with rain (1 mm+)	 dni z deszczem (od 1 mm)
+Highest wind	Najsilniejszy wiatr
+gusts up to 	porywy do 
+mean, estimated	średnia, szacowana
+Day by day	Dzień po dniu
+Date	Data
+Max	Maks
+Min	Min
+Soil	Gleba
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Źródło: Open-Meteo (modele i szacunki dla minionych dni). Wilgotność gleby na głębokości 3–9 cm, szacowana.
+Save as PDF in Downloads	Zapisz PDF w Pobranych
+The PDF could not be saved: 	Nie udało się zapisać PDF: 
+PDF saved	PDF zapisany
+In Downloads: 	W Pobranych: 
+Open	Otwórz
+No app on the phone opens PDF files.	Żadna aplikacja na telefonie nie otwiera plików PDF.
+Max wind	Maks. wiatr
+Parcel statistics · 	Statystyki działki · 
+Coordinates: 	Współrzędne: 
+Period: 	Okres: 
+ days)	 dni)
+Made on 	Utworzono 
+Lowest temperature: 	Temperatura minimalna: 
+Highest temperature: 	Temperatura maksymalna: 
+Rain total: 	Suma opadów: 
+Highest wind: 	Najsilniejszy wiatr: 
+Mean soil moisture (3–9 cm, estimated): 	Średnia wilgotność gleby (3–9 cm, szacowana): 
+Source: Open-Meteo (open-meteo.com), weather models.	Źródło: Open-Meteo (open-meteo.com), modele pogodowe.
+Soil moisture and soil temperature are estimates, not measurements.	Wilgotność i temperatura gleby to szacunki, nie pomiary.
+Farmer mode	Tryb rolnika
+Open-Meteo answers again: the farmer's data for 	Open-Meteo znów odpowiada: dane dla rolnika dla 
+ have been downloaded.	 zostały pobrane.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Dane rolnika: Open-Meteo nie odpowiada; dostaniesz powiadomienie, gdy przyjdą
+Farmer mode: tap an hour or a rain box for details	Tryb rolnika: dotknij godziny lub pola deszczu, aby zobaczyć szczegóły
+Normal mode	Tryb normalny
+Local time	Czas lokalny
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Dla miejscowości w USA zegar, godziny prognozy i daty pokazują czas lokalny miejscowości, a nie telefonu (przydatne w trybie testowym albo gdy patrzysz na miejscowość w innej strefie czasowej).
+Farmer mode / Normal mode	Tryb rolnika / Tryb normalny
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Pierwsza pozycja ☰ przełącza między dwoma trybami; pokazuje ten drugi tryb. W trybie rolnika temperatura i ikona pozostają takie same, na dole widać ROLNIK, pola godzinowe otwierają szczegóły, a wykres opadów i pięć dni ustępują miejsca rzędowi godzinowych pól deszczu.
+Hour boxes	Pola godzinowe
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Dotknięcie godziny otwiera dymek: temperatura, minimum i maksimum dnia, prędkość wiatru i porywy, kierunek wiatru i kiedy ma się zmienić, wilgotność powietrza, szansa na deszcz, wilgotność gleby (3–9 cm) i temperatura gleby.
+Rain boxes	Pola deszczu
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Jedno pole na godzinę: szansa na deszcz dużymi cyframi, pasek wypełniony jak szansa, ilość i rodzaj (deszcz, przelotne opady, śnieg, deszcz ze śniegiem). Dotknięcie pokazuje szczegóły: ilość według rodzaju, zachmurzenie, wilgotność i ile deszczu spadnie do północy.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Działki (w trybie rolnika). „Zapisz miejsce tutaj” bierze pozycję GPS, w której stoisz; potem mapa pokazuje ją z pinezką: przesuń mapę, aby pinezka była dokładnie na działce, i nadaj jej nazwę (np. działka 96/5). „Wybierz na mapie” zapisuje działkę z domu. Działki zostają tylko na tym telefonie, dopóki ich nie usuniesz.
+A parcel's page	Strona działki
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Osobne pola na temperaturę powietrza, wiatr, kierunek wiatru, szansę na deszcz, wilgotność powietrza, wilgotność gleby i temperaturę gleby, potem następne 12 godzin. Przyciski: statystyki, przesuń pinezkę, alerty deszcz / wiatr, zmień nazwę, usuń.
+Statistics and PDF	Statystyki i PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Dla wybranego okresu z ostatnich 28 dni: na każdy dzień maksimum i minimum, suma opadów, najsilniejszy wiatr i średnia wilgotność gleby, oraz podsumowanie okresu. „Zapisz PDF w Pobranych” tworzy plik do wydruku lub wysłania. Statystyki są przechowywane 28 dni.
+Parcel alerts	Alerty działki
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Na stronie działki, alerty WŁĄCZONE: co 3 godziny aplikacja sprawdza następne 12 godzin i wysyła powiadomienie, gdy prognozowany jest deszcz (60% i 0,5 mm albo 1 mm) lub silny wiatr (porywy 50 km/h); jedno powiadomienie na epizod. W nocy, przy wyłączonym ekranie, sprawdzanie czeka na ekran.
+Soil data and source	Dane o glebie i źródło
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Wszystko dla rolników pochodzi z Open-Meteo. Wilgotność gleby (procent objętości, 3–9 cm) i temperatura gleby to szacunki modelu pogody, nie pomiary; bliskie działki (1–11 km) mogą mieć te same wartości. Gdy Open-Meteo nie odpowiada, aplikacja o tym mówi, pobiera dane po powrocie dostępu i wysyła powiadomienie.
+The map	Mapa
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, darmowa i bez konta (© OpenStreetMap contributors); potrzebuje internetu. Jeden palec ją przesuwa, dwa palce lub podwójne dotknięcie powiększają; „Moja pozycja” pokazuje, gdzie jesteś, niebieską kropką. Kawałki mapy zostają w telefonie tydzień.
+Farmer · 	Rolnik · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo znów odpowiada: dane działki zostały pobrane.
+Rain expected from 	Deszcz prognozowany od 
+ in the next 12 hours	 w ciągu następnych 12 godzin
+Rain · 	Deszcz · 
+Strong wind from 	Silny wiatr od 
+, gusts 	, porywy 
+Wind · 	Wiatr · 
+showers	przelotne opady
+sleet	deszcz ze śniegiem
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Dane dla rolnika (wiatr co godzinę, wilgotność, gleba) pochodzą tylko z Open-Meteo, które teraz nie odpowiada. Gdy dostęp wróci, aplikacja je pobierze i wyśle ci powiadomienie.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Wilgotność i temperatura gleby to szacunki modelu pogody, nie pomiary · źródło: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatura: 
+Chance of rain: 	Szansa na deszcz: 
+Day's low / high: 	Minimum / maksimum dnia: 
+Speed: 	Prędkość: 
+Direction: from 	Kierunek: z 
+Change: it turns from 	Zmiana: skręca z 
+ to 	 na 
+Change: it keeps its direction for the next 12 hours	Zmiana: utrzymuje kierunek przez następne 12 godzin
+Air and rain	Powietrze i deszcz
+Air humidity: 	Wilgotność powietrza: 
+Soil (estimated)	Gleba (szacunek)
+Soil moisture (3–9 cm): 	Wilgotność gleby (3–9 cm): 
+Soil temperature (surface): 	Temperatura gleby (powierzchnia): 
+likely	prawdopodobny
+possible	możliwy
+unlikely	mało prawdopodobny
+Amount: 	Ilość: 
+Kind: 	Rodzaj: 
+showers 	przelotne opady 
+snow 	śnieg 
+Of which: 	W tym: 
+Cloud cover: 	Zachmurzenie: 
+Until midnight: 	Do północy: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Źródło: Open-Meteo. Szansa mówi, jak prawdopodobny jest deszcz w tej godzinie, a nie jak długo pada.
+FARMER	ROLNIK

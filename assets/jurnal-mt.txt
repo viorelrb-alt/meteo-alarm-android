@@ -1,3 +1,10 @@
+v2.50 · 7 ta' Novembru 2026
+- Modalità tal-bidwi: l-ewwel għażla ta' ☰ taqleb bejn il-modalità tal-bidwi u dik normali. Fil-modalità tal-bidwi, meta tagħfas kaxxa ta' siegħa tara t-temperatura, l-aktar baxxa u l-aktar għolja tal-jum, ir-riħ bil-buffuri u d-direzzjoni (u meta jdur), l-umdità tal-arja, iċ-ċans ta' xita, l-umdità u t-temperatura tal-ħamrija; il-grafika tax-xita u l-ħamest ijiem jinbidlu b'kaxxi tax-xita kull siegħa b'dettalji meta tagħfas.
+- ☰ › Għelieqi: issejvja l-post fejn int wieqaf (GPS), ikkoreġih fuq il-mappa OpenStreetMap u agħtih isem; kull għalqa għandha kaxxi għar-riħ, id-direzzjoni, ix-xita, l-umdità tal-arja u tal-ħamrija, it-temperatura tal-ħamrija u tal-arja, twissijiet ta' xita u riħ qawwi u statistika għal perjodu fl-aħħar 28 jum, li tista' tissejvja bħala PDF f'Downloads.
+- Id-dejta tal-ħamrija hija stimi ta' Open-Meteo; jekk Open-Meteo ma jwiġibx, l-app tniżżilha aktar tard u tibgħat notifika.
+- Stati Uniti: l-arloġġ u s-sigħat juru l-ħin lokali tal-belt magħżula.
+- Notifiki biss għall-belt magħżula (fil-modalità tat-test) jew fejn hu l-mowbajl: m'hemmx aktar twissijiet mill-Istati Uniti meta l-app turi belt fl-Ewropa.
+
 v2.40 · 4 ta' Novembru 2026
 - L-Istati Uniti: ☰ › Tornadoes, paġna bħal Terremoti: it-twissijiet tat-tornado għall-post u l-istat tiegħek, it-tornado rrappurtati fil-qrib fl-aħħar jumejn, kemm hemm fil-pajjiż kollu u x'għandek tagħmel.
 - L-Istati Uniti: ebda kaxxa tal-Polline (m'hemmx data hemmhekk); il-kwalità tal-arja skont l-indiċi Amerikan US AQI.

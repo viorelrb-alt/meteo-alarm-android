@@ -1,3 +1,10 @@
+v2.50 · 2026 m. lapkričio 7 d.
+- Ūkininko režimas: pirmasis ☰ punktas perjungia ūkininko ir įprastą režimą. Ūkininko režime palietus valandos langelį rodoma temperatūra, dienos žemiausia ir aukščiausia, vėjas su gūsiais ir kryptimi (ir kada jis pasisuks), oro drėgmė, lietaus tikimybė, dirvos drėgmė ir dirvos temperatūra; kritulių grafiką ir penkias dienas pakeičia valandiniai lietaus langeliai su išsamia informacija palietus.
+- ☰ › Laukai: išsaugokite vietą, kur stovite (GPS), patikslinkite ją OpenStreetMap žemėlapyje ir suteikite pavadinimą; kiekvienas laukas turi langelius vėjui, krypčiai, lietui, oro ir dirvos drėgmei, dirvos ir oro temperatūrai, lietaus ir stipraus vėjo įspėjimus bei statistiką už laikotarpį per paskutines 28 dienas, kurią galima išsaugoti PDF aplanke Atsisiuntimai.
+- Dirvos duomenys yra Open-Meteo įverčiai; jei Open-Meteo neatsako, programėlė juos atsisiunčia vėliau ir siunčia pranešimą.
+- JAV: laikrodis ir valandos rodo pasirinkto miesto vietos laiką.
+- Pranešimai tik apie pasirinktą miestą (bandomajame režime) arba vietą, kur yra telefonas: nebėra įspėjimų iš JAV, kai programėlė rodo miestą Europoje.
+
 v2.40 · 2026 m. lapkričio 4 d.
 - Jungtinės Valstijos: ☰ › Tornadoes, puslapis kaip Žemės drebėjimai: perspėjimai apie tornadus tavo vietovei ir valstijai, per pastarąsias 2 dienas netoliese praneštų tornadų sąrašas, jų skaičius visoje šalyje ir ką daryti.
 - Jungtinės Valstijos: nėra Žiedadulkių langelio (ten nėra duomenų); oro kokybė pagal amerikietišką US AQI indeksą.

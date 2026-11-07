@@ -382,3 +382,158 @@ Switch to the metric system?	Перейти на метричну систему
 Metric	Метрична
 °C · metric system	°C · метрична система
 Keep °F	Залишити °F
+dry	сухо
+moderate	помірно
+moist	волого
+very wet	дуже мокро
+Parcels	Ділянки
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Зберігаються лише на цьому телефоні, доки ти їх не видалиш. Статистика зберігається 28 днів.
+Save the place here	Зберегти місце тут
+Choose on the map	Вибрати на мапі
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Ще немає збережених ділянок. Стань на ділянку й торкнися «Зберегти місце тут» або вибери її на мапі.
+alerts on	сповіщення увімкнено
+wind 	вітер 
+rain 	дощ 
+soil 	ґрунт 
+updated 	оновлено 
+Without location the place can only be chosen on the map.	Без геолокації місце можна вибрати лише на мапі.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Телефон не дозволяє застосунку сповіщення: попередження не можуть з'явитися.
+Looking for the position (GPS)… stay outside, on the parcel.	Шукаю позицію (GPS)… залишайся надворі, на ділянці.
+The position was not found.	Позицію не знайдено.
+The position was not found: move the map to the parcel.	Позицію не знайдено: пересунь мапу до ділянки.
+The position is approximate (±	Позиція приблизна (±
+ m): check the pin on the map.	 м): перевір шпильку на мапі.
+New parcel	Нова ділянка
+Move the pin	Пересунути шпильку
+Name, e.g. parcel 96/5	Назва, напр. ділянка 96/5
+move the map to put the pin on the parcel	пересунь мапу, щоб шпилька була на ділянці
+My position	Моя позиція
+Give the parcel a name	Дай ділянці назву
+Downloading from Open-Meteo…	Завантажую з Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo зараз не відповідає (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Коли доступ повернеться, застосунок завантажить дані ділянки й надішле тобі сповіщення.
+low 	мін 
+high 	макс 
+turns to 	повертає на 
+ around 	 близько 
+steady for 12 hours	стабільний 12 годин
+today up to 	сьогодні до 
+Air temperature	Температура повітря
+gusts 	пориви 
+Wind direction	Напрям вітру
+Chance of rain	Ймовірність дощу
+Air humidity	Вологість повітря
+Soil moisture	Вологість ґрунту
+3–9 cm, estimated	3–9 см, оцінка
+Soil temperature	Температура ґрунту
+surface, estimated	поверхня, оцінка
+Next 12 hours	Наступні 12 годин
+Statistics (last 28 days)	Статистика (останні 28 днів)
+Move the pin on the map	Пересунути шпильку на мапі
+Rain / wind alerts: ON	Сповіщення дощ / вітер: УВІМК.
+Rain / wind alerts: OFF	Сповіщення дощ / вітер: ВИМК.
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Ти отримаєш сповіщення, коли для цієї ділянки в найближчі 12 годин прогнозують дощ або сильний вітер (перевірка кожні 3 години).
+Rename	Перейменувати
+Delete the parcel	Видалити ділянку
+Delete 	Видалити 
+The parcel and its statistics are deleted from the phone.	Ділянку та її статистику буде видалено з телефона.
+Delete	Видалити
+Statistics · 	Статистика · 
+Choose the period, within the last 28 days.	Вибери період у межах останніх 28 днів.
+ days	 днів
+To 	До 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Для цього періоду ще немає даних. Відкрий ділянку один раз з інтернетом: застосунок завантажить останні 28 днів з Open-Meteo.
+Summary	Підсумок
+Lowest / highest	Найнижча / найвища
+Rain total	Опадів усього
+ days with rain (1 mm+)	 днів з дощем (від 1 мм)
+Highest wind	Найсильніший вітер
+gusts up to 	пориви до 
+mean, estimated	середня, оцінка
+Day by day	День за днем
+Date	Дата
+Max	Макс
+Min	Мін
+Soil	Ґрунт
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Джерело: Open-Meteo (моделі та оцінки за минулі дні). Вологість ґрунту на глибині 3–9 см, оцінка.
+Save as PDF in Downloads	Зберегти PDF у Завантаження
+The PDF could not be saved: 	Не вдалося зберегти PDF: 
+PDF saved	PDF збережено
+In Downloads: 	У Завантаженнях: 
+Open	Відкрити
+No app on the phone opens PDF files.	Жоден застосунок на телефоні не відкриває PDF-файли.
+Max wind	Макс. вітер
+Parcel statistics · 	Статистика ділянки · 
+Coordinates: 	Координати: 
+Period: 	Період: 
+ days)	 днів)
+Made on 	Створено 
+Lowest temperature: 	Найнижча температура: 
+Highest temperature: 	Найвища температура: 
+Rain total: 	Опадів усього: 
+Highest wind: 	Найсильніший вітер: 
+Mean soil moisture (3–9 cm, estimated): 	Середня вологість ґрунту (3–9 см, оцінка): 
+Source: Open-Meteo (open-meteo.com), weather models.	Джерело: Open-Meteo (open-meteo.com), метеорологічні моделі.
+Soil moisture and soil temperature are estimates, not measurements.	Вологість і температура ґрунту — це оцінки, а не вимірювання.
+Farmer mode	Режим фермера
+Open-Meteo answers again: the farmer's data for 	Open-Meteo знову відповідає: дані для фермерів для 
+ have been downloaded.	 завантажено.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Дані для фермера: Open-Meteo не відповідає; отримаєш сповіщення, коли вони надійдуть
+Farmer mode: tap an hour or a rain box for details	Режим фермера: торкнися години або поля дощу, щоб побачити деталі
+Normal mode	Звичайний режим
+Local time	Місцевий час
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Для населеного пункту в США годинник, години прогнозу й дати показують місцевий час цього пункту, а не телефона (корисно в тестовому режимі або коли дивишся на пункт в іншому часовому поясі).
+Farmer mode / Normal mode	Режим фермера / Звичайний режим
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Перший пункт ☰ перемикає між двома режимами; він показує інший режим. У режимі фермера температура й значок не змінюються, внизу видно ФЕРМЕР, погодинні поля відкривають деталі, а графік опадів і п'ять днів поступаються місцем ряду погодинних полів дощу.
+Hour boxes	Погодинні поля
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Дотик до години відкриває бульбашку: температура, мінімум і максимум дня, швидкість вітру й пориви, напрям вітру і коли він має змінитися, вологість повітря, ймовірність дощу, вологість ґрунту (3–9 см) і температура ґрунту.
+Rain boxes	Поля дощу
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Одне поле на годину: ймовірність дощу великими цифрами, смужка, заповнена як ймовірність, кількість і вид (дощ, зливи, сніг, мокрий сніг). Дотик показує деталі: кількість за видами, хмарність, вологість і скільки дощу випаде до півночі.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Ділянки (у режимі фермера). «Зберегти місце тут» бере GPS-позицію, де ти стоїш; потім мапа показує її зі шпилькою: пересунь мапу, щоб шпилька була точно на ділянці, і дай їй назву (напр. ділянка 96/5). «Вибрати на мапі» зберігає ділянку з дому. Ділянки залишаються лише на цьому телефоні, доки ти їх не видалиш.
+A parcel's page	Сторінка ділянки
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Окремі поля для температури повітря, вітру, напряму вітру, ймовірності дощу, вологості повітря, вологості ґрунту й температури ґрунту, потім наступні 12 годин. Кнопки: статистика, пересунути шпильку, сповіщення дощ / вітер, перейменувати, видалити.
+Statistics and PDF	Статистика і PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	За вибраний період з останніх 28 днів: для кожного дня максимум і мінімум, сума опадів, найсильніший вітер і середня вологість ґрунту, а також підсумок періоду. «Зберегти PDF у Завантаження» створює файл для друку чи надсилання. Статистика зберігається 28 днів.
+Parcel alerts	Сповіщення ділянки
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	На сторінці ділянки, сповіщення УВІМК.: кожні 3 години застосунок дивиться на наступні 12 годин і надсилає сповіщення, коли прогнозують дощ (60% і 0,5 мм або 1 мм) чи сильний вітер (пориви 50 км/год); одне сповіщення на епізод. Уночі, з вимкненим екраном, перевірка чекає на екран.
+Soil data and source	Дані про ґрунт і джерело
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Усе для фермерів надходить з Open-Meteo. Вологість ґрунту (відсоток об'єму, 3–9 см) і температура ґрунту — це оцінки метеомоделі, а не вимірювання; сусідні ділянки (1–11 км) можуть мати ті самі значення. Коли Open-Meteo не відповідає, застосунок про це каже, завантажує дані, коли доступ повертається, і надсилає сповіщення.
+The map	Мапа
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, безкоштовна й без облікового запису (© OpenStreetMap contributors); потрібен інтернет. Один палець пересуває її, два пальці або подвійний дотик масштабують; «Моя позиція» показує синьою точкою, де ти. Шматочки мапи зберігаються в телефоні тиждень.
+Farmer · 	Фермер · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo знову відповідає: дані ділянки завантажено.
+Rain expected from 	Дощ очікується з 
+ in the next 12 hours	 у найближчі 12 годин
+Rain · 	Дощ · 
+Strong wind from 	Сильний вітер з 
+, gusts 	, пориви 
+Wind · 	Вітер · 
+showers	зливи
+sleet	мокрий сніг
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Дані для фермерів (погодинний вітер, вологість, ґрунт) надходять лише з Open-Meteo, який зараз не відповідає. Коли доступ повернеться, застосунок їх завантажить і надішле тобі сповіщення.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Вологість і температура ґрунту — це оцінки метеомоделі, а не вимірювання · джерело: Open-Meteo (open-meteo.com).
+Temperature: 	Температура: 
+Chance of rain: 	Ймовірність дощу: 
+Day's low / high: 	Мінімум / максимум дня: 
+Speed: 	Швидкість: 
+Direction: from 	Напрям: з 
+Change: it turns from 	Зміна: повертає з 
+ to 	 на 
+Change: it keeps its direction for the next 12 hours	Зміна: зберігає напрям наступні 12 годин
+Air and rain	Повітря і дощ
+Air humidity: 	Вологість повітря: 
+Soil (estimated)	Ґрунт (оцінка)
+Soil moisture (3–9 cm): 	Вологість ґрунту (3–9 см): 
+Soil temperature (surface): 	Температура ґрунту (поверхня): 
+likely	ймовірний
+possible	можливий
+unlikely	малоймовірний
+Amount: 	Кількість: 
+Kind: 	Вид: 
+showers 	зливи 
+snow 	сніг 
+Of which: 	З них: 
+Cloud cover: 	Хмарність: 
+Until midnight: 	До півночі: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Джерело: Open-Meteo. Ймовірність показує, наскільки ймовірно, що в цю годину йтиме дощ, а не як довго.
+FARMER	ФЕРМЕР

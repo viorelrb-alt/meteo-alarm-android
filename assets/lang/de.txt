@@ -382,3 +382,158 @@ Switch to the metric system?	Zum metrischen System wechseln?
 Metric	Metrisch
 °C · metric system	°C · metrisches System
 Keep °F	Bei °F bleiben
+dry	trocken
+moderate	mäßig
+moist	feucht
+very wet	sehr nass
+Parcels	Parzellen
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Nur auf diesem Telefon gespeichert, bis du sie löschst. Ihre Statistik wird 28 Tage aufbewahrt.
+Save the place here	Ort hier speichern
+Choose on the map	Auf der Karte wählen
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Noch keine Parzelle gespeichert. Stell dich auf die Parzelle und tippe auf „Ort hier speichern“, oder wähle sie auf der Karte.
+alerts on	Warnungen an
+wind 	Wind 
+rain 	Regen 
+soil 	Boden 
+updated 	aktualisiert 
+Without location the place can only be chosen on the map.	Ohne Standort kann der Ort nur auf der Karte gewählt werden.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Das Telefon erlaubt der App keine Benachrichtigungen: Die Warnungen können nicht angezeigt werden.
+Looking for the position (GPS)… stay outside, on the parcel.	Suche die Position (GPS)… bleib draußen, auf der Parzelle.
+The position was not found.	Die Position wurde nicht gefunden.
+The position was not found: move the map to the parcel.	Die Position wurde nicht gefunden: Schieb die Karte zur Parzelle.
+The position is approximate (±	Die Position ist ungefähr (±
+ m): check the pin on the map.	 m): Prüfe die Nadel auf der Karte.
+New parcel	Neue Parzelle
+Move the pin	Nadel verschieben
+Name, e.g. parcel 96/5	Name, z. B. Parzelle 96/5
+move the map to put the pin on the parcel	schieb die Karte, damit die Nadel auf der Parzelle steht
+My position	Meine Position
+Give the parcel a name	Gib der Parzelle einen Namen
+Downloading from Open-Meteo…	Lade von Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo antwortet gerade nicht (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Sobald der Zugang zurück ist, lädt die App die Daten der Parzelle und schickt dir eine Benachrichtigung.
+low 	Tief 
+high 	Hoch 
+turns to 	dreht auf 
+ around 	 gegen 
+steady for 12 hours	beständig für 12 Stunden
+today up to 	heute bis 
+Air temperature	Lufttemperatur
+gusts 	Böen 
+Wind direction	Windrichtung
+Chance of rain	Regenwahrscheinlichkeit
+Air humidity	Luftfeuchtigkeit
+Soil moisture	Bodenfeuchte
+3–9 cm, estimated	3–9 cm, geschätzt
+Soil temperature	Bodentemperatur
+surface, estimated	Oberfläche, geschätzt
+Next 12 hours	Nächste 12 Stunden
+Statistics (last 28 days)	Statistik (letzte 28 Tage)
+Move the pin on the map	Nadel auf der Karte verschieben
+Rain / wind alerts: ON	Regen-/Windwarnungen: AN
+Rain / wind alerts: OFF	Regen-/Windwarnungen: AUS
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Du bekommst eine Benachrichtigung, wenn für diese Parzelle in den nächsten 12 Stunden Regen oder starker Wind vorhergesagt wird (alle 3 Stunden geprüft).
+Rename	Umbenennen
+Delete the parcel	Parzelle löschen
+Delete 	Löschen: 
+The parcel and its statistics are deleted from the phone.	Die Parzelle und ihre Statistik werden vom Telefon gelöscht.
+Delete	Löschen
+Statistics · 	Statistik · 
+Choose the period, within the last 28 days.	Wähle den Zeitraum, innerhalb der letzten 28 Tage.
+ days	 Tage
+To 	Bis 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Für diesen Zeitraum gibt es noch keine Daten. Öffne die Parzelle einmal mit Internet: Die App lädt die letzten 28 Tage von Open-Meteo.
+Summary	Zusammenfassung
+Lowest / highest	Tiefst- / Höchstwert
+Rain total	Regen gesamt
+ days with rain (1 mm+)	 Tage mit Regen (ab 1 mm)
+Highest wind	Stärkster Wind
+gusts up to 	Böen bis 
+mean, estimated	Mittel, geschätzt
+Day by day	Tag für Tag
+Date	Datum
+Max	Max
+Min	Min
+Soil	Boden
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Quelle: Open-Meteo (Modelle und Schätzungen für die vergangenen Tage). Bodenfeuchte in 3–9 cm Tiefe, geschätzt.
+Save as PDF in Downloads	Als PDF in Downloads speichern
+The PDF could not be saved: 	Das PDF konnte nicht gespeichert werden: 
+PDF saved	PDF gespeichert
+In Downloads: 	In Downloads: 
+Open	Öffnen
+No app on the phone opens PDF files.	Keine App auf dem Telefon öffnet PDF-Dateien.
+Max wind	Max. Wind
+Parcel statistics · 	Parzellenstatistik · 
+Coordinates: 	Koordinaten: 
+Period: 	Zeitraum: 
+ days)	 Tage)
+Made on 	Erstellt am 
+Lowest temperature: 	Tiefsttemperatur: 
+Highest temperature: 	Höchsttemperatur: 
+Rain total: 	Regen gesamt: 
+Highest wind: 	Stärkster Wind: 
+Mean soil moisture (3–9 cm, estimated): 	Mittlere Bodenfeuchte (3–9 cm, geschätzt): 
+Source: Open-Meteo (open-meteo.com), weather models.	Quelle: Open-Meteo (open-meteo.com), Wettermodelle.
+Soil moisture and soil temperature are estimates, not measurements.	Bodenfeuchte und Bodentemperatur sind Schätzungen, keine Messungen.
+Farmer mode	Landwirt-Modus
+Open-Meteo answers again: the farmer's data for 	Open-Meteo antwortet wieder: Die Landwirt-Daten für 
+ have been downloaded.	 wurden geladen.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Landwirt-Daten: Open-Meteo antwortet nicht; du bekommst eine Benachrichtigung, wenn sie kommen
+Farmer mode: tap an hour or a rain box for details	Landwirt-Modus: Tippe auf eine Stunde oder ein Regenkästchen für Details
+Normal mode	Normaler Modus
+Local time	Ortszeit
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Bei einem Ort in den USA zeigen die Uhr, die Stunden der Vorhersage und die Daten die Ortszeit des Ortes, nicht die des Telefons (nützlich im Testmodus oder wenn du einen Ort in einer anderen Zeitzone ansiehst).
+Farmer mode / Normal mode	Landwirt-Modus / Normaler Modus
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Der erste Eintrag in ☰ wechselt zwischen den beiden Modi; er nennt den anderen Modus. Im Landwirt-Modus bleiben Temperatur und Symbol gleich, unten steht LANDWIRT, die Stundenkästchen öffnen Details, und statt des Niederschlagsdiagramms und der fünf Tage kommt eine Reihe stündlicher Regenkästchen.
+Hour boxes	Stundenkästchen
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Ein Tippen auf eine Stunde öffnet eine Blase: Temperatur, Tiefst- und Höchstwert des Tages, Windgeschwindigkeit und Böen, Windrichtung und wann sie drehen soll, Luftfeuchtigkeit, Regenwahrscheinlichkeit, Bodenfeuchte (3–9 cm) und Bodentemperatur.
+Rain boxes	Regenkästchen
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Ein Kästchen pro Stunde: die Regenwahrscheinlichkeit in großen Ziffern, ein Balken so voll wie die Wahrscheinlichkeit, die Menge und die Art (Regen, Schauer, Schnee, Schneeregen). Ein Tippen zeigt die Details: Menge nach Art, Bewölkung, Feuchtigkeit und wie viel Regen bis Mitternacht kommt.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Parzellen (im Landwirt-Modus). „Ort hier speichern“ nimmt die GPS-Position, an der du stehst; dann zeigt die Karte sie mit einer Nadel: Schieb die Karte, damit die Nadel genau auf der Parzelle steht, und gib ihr einen Namen (z. B. Parzelle 96/5). „Auf der Karte wählen“ speichert eine Parzelle von zu Hause aus. Die Parzellen bleiben nur auf diesem Telefon, bis du sie löschst.
+A parcel's page	Die Seite einer Parzelle
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Eigene Kästchen für Lufttemperatur, Wind, Windrichtung, Regenwahrscheinlichkeit, Luftfeuchtigkeit, Bodenfeuchte und Bodentemperatur, dann die nächsten 12 Stunden. Tasten: Statistik, Nadel verschieben, Regen-/Windwarnungen, umbenennen, löschen.
+Statistics and PDF	Statistik und PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Für einen gewählten Zeitraum der letzten 28 Tage: pro Tag Höchst- und Tiefstwert, Regensumme, stärkster Wind und mittlere Bodenfeuchte, dazu eine Zusammenfassung des Zeitraums. „Als PDF in Downloads speichern“ erstellt eine Datei zum Drucken oder Versenden. Die Statistik wird 28 Tage aufbewahrt.
+Parcel alerts	Parzellenwarnungen
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Auf der Seite der Parzelle, Warnungen AN: Alle 3 Stunden schaut die App auf die nächsten 12 Stunden und schickt eine Benachrichtigung, wenn Regen (60 % und 0,5 mm, oder 1 mm) oder starker Wind (Böen von 50 km/h) vorhergesagt wird; eine Meldung pro Ereignis. Nachts bei ausgeschaltetem Bildschirm wartet die Prüfung auf den Bildschirm.
+Soil data and source	Bodendaten und Quelle
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Alles für Landwirte kommt von Open-Meteo. Bodenfeuchte (Volumenprozent, 3–9 cm tief) und Bodentemperatur sind Schätzungen des Wettermodells, keine Messungen; nahe Parzellen (1–11 km) können dieselben Werte zeigen. Wenn Open-Meteo nicht antwortet, sagt die App es, lädt die Daten, sobald der Zugang zurück ist, und schickt eine Benachrichtigung.
+The map	Die Karte
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, kostenlos und ohne Konto (© OpenStreetMap contributors); sie braucht Internet. Ein Finger verschiebt sie, zwei Finger oder ein Doppeltippen zoomen; „Meine Position“ zeigt als blauen Punkt, wo du bist. Die Kartenstücke bleiben eine Woche auf dem Telefon.
+Farmer · 	Landwirt · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo antwortet wieder: Die Daten der Parzelle wurden geladen.
+Rain expected from 	Regen erwartet ab 
+ in the next 12 hours	 in den nächsten 12 Stunden
+Rain · 	Regen · 
+Strong wind from 	Starker Wind ab 
+, gusts 	, Böen 
+Wind · 	Wind · 
+showers	Schauer
+sleet	Schneeregen
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Die Landwirt-Daten (stündlicher Wind, Feuchtigkeit, Boden) kommen nur von Open-Meteo, das gerade nicht antwortet. Sobald der Zugang zurück ist, lädt die App sie und schickt dir eine Benachrichtigung.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Bodenfeuchte und Bodentemperatur sind Schätzungen des Wettermodells, keine Messungen · Quelle: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatur: 
+Chance of rain: 	Regenwahrscheinlichkeit: 
+Day's low / high: 	Tiefst- / Höchstwert des Tages: 
+Speed: 	Geschwindigkeit: 
+Direction: from 	Richtung: aus 
+Change: it turns from 	Änderung: dreht von 
+ to 	 nach 
+Change: it keeps its direction for the next 12 hours	Änderung: behält seine Richtung für die nächsten 12 Stunden
+Air and rain	Luft und Regen
+Air humidity: 	Luftfeuchtigkeit: 
+Soil (estimated)	Boden (geschätzt)
+Soil moisture (3–9 cm): 	Bodenfeuchte (3–9 cm): 
+Soil temperature (surface): 	Bodentemperatur (Oberfläche): 
+likely	wahrscheinlich
+possible	möglich
+unlikely	unwahrscheinlich
+Amount: 	Menge: 
+Kind: 	Art: 
+showers 	Schauer 
+snow 	Schnee 
+Of which: 	Davon: 
+Cloud cover: 	Bewölkung: 
+Until midnight: 	Bis Mitternacht: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Quelle: Open-Meteo. Die Wahrscheinlichkeit sagt, wie wahrscheinlich es in dieser Stunde regnet, nicht wie lange.
+FARMER	LANDWIRT

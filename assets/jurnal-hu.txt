@@ -1,3 +1,10 @@
+v2.50 · 2026. november 7.
+- Gazda mód: a ☰ első eleme vált a gazda mód és a normál mód között. Gazda módban egy órás mezőre koppintva látod a hőmérsékletet, a nap minimumát és maximumát, a szelet széllökéssel és iránnyal (és hogy mikor fordul), a levegő páratartalmát, az eső esélyét, a talajnedvességet és a talajhőmérsékletet; az esőgrafikon és az öt nap helyett óránkénti esőmezők vannak, koppintásra részletekkel.
+- ☰ › Parcellák: mentsd el a helyet, ahol állsz (GPS), igazítsd az OpenStreetMap-térképen, és adj neki nevet; minden parcellának vannak mezői a szélre, irányra, esőre, a levegő és a talaj nedvességére, a talaj és a levegő hőmérsékletére, eső- és szélriasztásai, valamint statisztikája az utolsó 28 nap egy időszakára, amely PDF-ként menthető a Letöltésekbe.
+- A talajadatok az Open-Meteo becslései; ha az Open-Meteo nem válaszol, az alkalmazás később tölti le őket, és értesítést küld.
+- Egyesült Államok: az óra és az órák a választott település helyi idejét mutatják.
+- Értesítések csak a választott településre (tesztmódban) vagy oda, ahol a telefon van: nincs több amerikai értesítés, amikor az alkalmazás európai települést mutat.
+
 v2.40 · 2026. november 4.
 - Egyesült Államok: ☰ › Tornadoes, a Földrengések oldalhoz hasonló oldal: a települések és az állam tornádófigyelmeztetései, az utóbbi 2 napban a közelben jelentett tornádók, számuk az egész országban és a teendők.
 - Egyesült Államok: nincs Pollen doboz (ott nincs adat); a levegőminőség az amerikai US AQI index szerint.

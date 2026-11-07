@@ -1,3 +1,10 @@
+v2.50 · 7 de novembro de 2026
+- Modo agricultor: o primeiro item de ☰ alterna entre modo agricultor e modo normal. No modo agricultor, tocar numa caixa horária mostra a temperatura, a mínima e a máxima do dia, o vento com rajadas e direção (e quando roda), a humidade do ar, a probabilidade de chuva, a humidade e a temperatura do solo; o gráfico de chuva e os cinco dias são substituídos por caixas de chuva hora a hora, com detalhes ao tocar.
+- ☰ › Parcelas: guarda o local onde estás (GPS), ajusta-o no mapa OpenStreetMap e dá-lhe um nome; cada parcela tem caixas para vento, direção, chuva, humidade do ar e do solo, temperatura do solo e do ar, alertas de chuva e vento forte, e estatísticas de um período dos últimos 28 dias, que podem ser guardadas em PDF em Transferências.
+- Os dados do solo são estimativas do Open-Meteo; se o Open-Meteo não responder, a app descarrega-os mais tarde e envia-te uma notificação.
+- Estados Unidos: o relógio e as horas mostram a hora local da localidade escolhida.
+- Notificações só para a localidade escolhida (no modo de teste) ou para onde está o telemóvel: já não chegam avisos dos EUA quando a app mostra uma localidade da Europa.
+
 v2.40 · 4 de novembro de 2026
 - Estados Unidos: ☰ › Tornadoes, uma página como Sismos: os alertas de tornado para a tua localidade e o teu estado, os tornados reportados perto nos últimos 2 dias, quantos há em todo o país e o que fazer.
 - Estados Unidos: sem a caixa Pólen (não há dados lá); a qualidade do ar com o índice americano US AQI.

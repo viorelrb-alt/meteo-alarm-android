@@ -177,6 +177,35 @@ public final class Preview {
 			s.quakes = Quakes.parse(js, "Romania", s.city.lat, s.city.lon, now);
 			for (String[] r : s.alertInfo(0)) System.out.println(r[0] + ": " + r[1]);
 		}
+		if (opts.contains(" farm")) {
+			// Farmer mode (v2.50) with a made-up farmer's forecast from today 00:00, 3 days.
+			s.farmer = true;
+			if (!opts.contains(" nofarm")) {
+				Calendar d0 = Calendar.getInstance();
+				StringBuilder t = new StringBuilder(), v = new StringBuilder();
+				String[] keys = { "temperature_2m", "relative_humidity_2m", "precipitation_probability", "precipitation", "rain", "showers", "snowfall", "cloud_cover",
+						"wind_speed_10m", "wind_direction_10m", "wind_gusts_10m", "soil_temperature_0cm", "soil_moisture_3_to_9cm" };
+				StringBuilder[] cols = new StringBuilder[keys.length];
+				for (int j = 0; j < keys.length; j++) cols[j] = new StringBuilder();
+				for (int h = 0; h < 72; h++) {
+					String day = ro.meteoalarm.android.core.Farm.date(d0, h / 24);
+					t.append(h > 0 ? "," : "").append('"').append(day).append(String.format("T%02d:00\"", h % 24));
+					double p = h % 24 >= 14 && h % 24 <= 19 ? 70 : h % 24 > 19 ? 35 : 10;
+					double mm = p >= 70 ? 1.2 : p >= 30 ? 0.2 : 0;
+					double[] val = { 8 + 6 * Math.sin((h % 24 - 9) / 24.0 * 2 * Math.PI), 70 + p / 4, p, mm, mm * 0.7, mm * 0.3, 0, 40 + p / 2,
+							12 + (h % 24 > 15 ? 10 : 0), h % 24 < 17 ? 300 : 190, 25 + (h % 24 > 15 ? 18 : 0), 6 + 4 * Math.sin((h % 24 - 10) / 24.0 * 2 * Math.PI), 0.27 };
+					for (int j = 0; j < keys.length; j++) cols[j].append(h > 0 ? "," : "").append(String.format(java.util.Locale.US, "%.2f", val[j]));
+				}
+				v.append("{\"hourly\":{\"time\":[").append(t).append("]");
+				for (int j = 0; j < keys.length; j++) v.append(",\"").append(keys[j]).append("\":[").append(cols[j]).append("]");
+				v.append("},\"daily\":{\"time\":[\"").append(ro.meteoalarm.android.core.Farm.date(d0, 0)).append("\",\"").append(ro.meteoalarm.android.core.Farm.date(d0, 1))
+						.append("\"],\"temperature_2m_max\":[14.2,12.1],\"temperature_2m_min\":[2.1,4.0],\"precipitation_sum\":[7.4,3.1],\"wind_speed_10m_max\":[22,18]}}");
+				s.farm = ro.meteoalarm.android.core.Farm.parse(v.toString());
+			}
+			s.now = Calendar.getInstance();
+			for (String[] r : s.hourInfo(2)) System.out.println("hour " + r[0] + ": " + r[1]);
+			for (String[] r : s.rainInfo(3)) System.out.println("rain " + r[0] + ": " + r[1]);
+		}
 		if (opts.contains(" alert1")) s.alerts.scroll = 5000;
 		if (opts.contains(" page1")) s.hours.scroll = 700;
 		if (opts.contains(" snow")) {

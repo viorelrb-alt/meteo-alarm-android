@@ -79,8 +79,25 @@ final class Notifier {
 		try {
 			Lang.apply(ctx);
 			if (!on(ctx) || c == null) return;
+			// The times in the town's own zone (a US town's local time, v2.50).
+			ro.meteoalarm.android.core.Zone.set(Fetcher.tz(c));
 			SharedPreferences p = prefs(ctx);
 			long now = System.currentTimeMillis();
+			// Only for the town chosen now (v2.50, Viorel 2026-11-07: a US earthquake came while the
+			// app showed Călărași): a download for a town left meanwhile notifies nothing, and US
+			// events only where the US part is shown (a phone in the US, or the test mode).
+			Cities.City sel = Cities.City.fromKey(p.getString("city", ""));
+			if (sel != null && !sel.same(c)) {
+				Log.i(ctx, "NOTIF", "descărcare pentru " + c.name + ", dar localitatea aleasă e " + sel.name + ": fără notificări");
+				return;
+			}
+			if (c.us() ? !Region.showUS(ctx) : !Region.showEU(ctx)) {
+				Log.i(ctx, "NOTIF", c.name + " nu e în partea arătată acum (Europa / SUA): fără notificări");
+				return;
+			}
+			// A newly chosen town: its earthquakes from before the choice are not notified.
+			if (!c.key().equals(p.getString("nCity", ""))) p.edit().putString("nCity", c.key()).putLong("nCityAt", now).apply();
+			long quakesSince = Math.max(p.getLong("notifySince", now), p.getLong("nCityAt", now));
 			Texts T = new Texts(Tr.lang());
 			boolean clk12 = Region.clk12(ctx, c), imp = Region.imperial(ctx, c);
 			// Rain or snow: falling now, or starting within the hour.
@@ -126,7 +143,7 @@ final class Notifier {
 			}
 			// Earthquakes in the country.
 			for (Quakes.Quake q : Fetcher.quakes(ctx, c)) {
-				if (q.time < p.getLong("notifySince", now)) continue;
+				if (q.time < quakesSince) continue;
 				// US: the box shows from 2.5, the notice comes from 3 (as in Europe).
 				if (c.us() && q.mag < Quakes.MIN_MAG) continue;
 				String key = "nQ_" + (q.id.length() > 0 ? q.id : Long.toString(q.time)).replaceAll("[^A-Za-z0-9_]+", "");
@@ -157,7 +174,7 @@ final class Notifier {
 		if (e != null) e.apply();
 	}
 
-	private static void post(Context ctx, int id, String title, String body) {
+	static void post(Context ctx, int id, String title, String body) {
 		post(ctx, id, title, body, false);
 	}
 

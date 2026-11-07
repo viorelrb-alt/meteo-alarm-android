@@ -382,3 +382,158 @@ Switch to the metric system?	Taqleb għas-sistema metrika?
 Metric	Metrika
 °C · metric system	°C · sistema metrika
 Keep °F	Żomm °F
+dry	niexef
+moderate	moderat
+moist	umdu
+very wet	mxarrab ħafna
+Parcels	Għelieqi
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Jinżammu biss fuq dan il-mowbajl, sakemm tħassarhom. L-istatistika tagħhom tinżamm 28 jum.
+Save the place here	Issejvja l-post hawn
+Choose on the map	Agħżel fuq il-mappa
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Għadu ma ġie ssejvjat l-ebda għalqa. Ieqaf fuq l-għalqa u agħfas “Issejvja l-post hawn”, jew agħżilha fuq il-mappa.
+alerts on	twissijiet mixgħula
+wind 	riħ 
+rain 	xita 
+soil 	ħamrija 
+updated 	aġġornat 
+Without location the place can only be chosen on the map.	Mingħajr lokazzjoni l-post jista' jintgħażel biss fuq il-mappa.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Il-mowbajl ma jippermettix notifiki għall-app: it-twissijiet ma jistgħux jintwerew.
+Looking for the position (GPS)… stay outside, on the parcel.	Qed infittex il-pożizzjoni (GPS)… ibqa' barra, fuq l-għalqa.
+The position was not found.	Il-pożizzjoni ma nstabitx.
+The position was not found: move the map to the parcel.	Il-pożizzjoni ma nstabitx: ċaqlaq il-mappa sal-għalqa.
+The position is approximate (±	Il-pożizzjoni hija approssimattiva (±
+ m): check the pin on the map.	 m): iċċekkja l-pin fuq il-mappa.
+New parcel	Għalqa ġdida
+Move the pin	Ċaqlaq il-pin
+Name, e.g. parcel 96/5	Isem, eż. għalqa 96/5
+move the map to put the pin on the parcel	ċaqlaq il-mappa biex tpoġġi l-pin fuq l-għalqa
+My position	Il-pożizzjoni tiegħi
+Give the parcel a name	Agħti isem lill-għalqa
+Downloading from Open-Meteo…	Qed niddawnlowdja minn Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo mhux qed iwieġeb issa (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Meta l-aċċess jerġa' lura, l-app tniżżel id-dejta tal-għalqa u tibagħtlek notifika.
+low 	baxxa 
+high 	għolja 
+turns to 	idur lejn 
+ around 	 madwar 
+steady for 12 hours	stabbli għal 12-il siegħa
+today up to 	illum sa 
+Air temperature	Temperatura tal-arja
+gusts 	buffuri 
+Wind direction	Direzzjoni tar-riħ
+Chance of rain	Ċans ta' xita
+Air humidity	Umdità tal-arja
+Soil moisture	Umdità tal-ħamrija
+3–9 cm, estimated	3–9 cm, stmata
+Soil temperature	Temperatura tal-ħamrija
+surface, estimated	wiċċ, stmata
+Next 12 hours	Il-12-il siegħa li ġejjin
+Statistics (last 28 days)	Statistika (l-aħħar 28 jum)
+Move the pin on the map	Ċaqlaq il-pin fuq il-mappa
+Rain / wind alerts: ON	Twissijiet ta' xita / riħ: MIXGĦULA
+Rain / wind alerts: OFF	Twissijiet ta' xita / riħ: MITFIJA
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Tirċievi notifika meta tkun imbassra xita jew riħ qawwi għal din l-għalqa fil-12-il siegħa li ġejjin (iċċekkjat kull 3 sigħat).
+Rename	Ibdel l-isem
+Delete the parcel	Ħassar l-għalqa
+Delete 	Tħassar 
+The parcel and its statistics are deleted from the phone.	L-għalqa u l-istatistika tagħha jitħassru mill-mowbajl.
+Delete	Ħassar
+Statistics · 	Statistika · 
+Choose the period, within the last 28 days.	Agħżel il-perjodu, fl-aħħar 28 jum.
+ days	 jiem
+To 	Sa 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Għad m'hemmx dejta għal dan il-perjodu. Iftaħ l-għalqa darba bl-internet: l-app tniżżel l-aħħar 28 jum minn Open-Meteo.
+Summary	Sommarju
+Lowest / highest	L-aktar baxxa / l-aktar għolja
+Rain total	Xita totali
+ days with rain (1 mm+)	 jiem bix-xita (1 mm+)
+Highest wind	L-aktar riħ qawwi
+gusts up to 	buffuri sa 
+mean, estimated	medja, stmata
+Day by day	Jum b'jum
+Date	Data
+Max	Mass
+Min	Min
+Soil	Ħamrija
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Sors: Open-Meteo (mudelli u stimi tal-ġranet li għaddew). Umdità tal-ħamrija 3–9 cm fil-fond, stmata.
+Save as PDF in Downloads	Issejvja bħala PDF f'Downloads
+The PDF could not be saved: 	Il-PDF ma setax jiġi ssejvjat: 
+PDF saved	PDF issejvjat
+In Downloads: 	F'Downloads: 
+Open	Iftaħ
+No app on the phone opens PDF files.	L-ebda app fuq il-mowbajl ma tiftaħ fajls PDF.
+Max wind	Riħ mass
+Parcel statistics · 	Statistika tal-għalqa · 
+Coordinates: 	Koordinati: 
+Period: 	Perjodu: 
+ days)	 jiem)
+Made on 	Magħmul fi 
+Lowest temperature: 	L-aktar temperatura baxxa: 
+Highest temperature: 	L-aktar temperatura għolja: 
+Rain total: 	Xita totali: 
+Highest wind: 	L-aktar riħ qawwi: 
+Mean soil moisture (3–9 cm, estimated): 	Umdità medja tal-ħamrija (3–9 cm, stmata): 
+Source: Open-Meteo (open-meteo.com), weather models.	Sors: Open-Meteo (open-meteo.com), mudelli tat-temp.
+Soil moisture and soil temperature are estimates, not measurements.	L-umdità u t-temperatura tal-ħamrija huma stimi, mhux kejl.
+Farmer mode	Modalità tal-bidwi
+Open-Meteo answers again: the farmer's data for 	Open-Meteo qed iwieġeb mill-ġdid: id-dejta tal-bidwi għal 
+ have been downloaded.	 tniżżlet.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Dejta tal-bidwi: Open-Meteo mhux qed iwieġeb; tirċievi notifika meta tasal
+Farmer mode: tap an hour or a rain box for details	Modalità tal-bidwi: agħfas siegħa jew kaxxa tax-xita għad-dettalji
+Normal mode	Modalità normali
+Local time	Ħin lokali
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Għal belt fl-Istati Uniti, l-arloġġ, is-sigħat tat-tbassir u d-dati juru l-ħin lokali tal-belt, mhux dak tal-mowbajl (utli fil-modalità tat-test jew meta tħares lejn belt f'żona tal-ħin oħra).
+Farmer mode / Normal mode	Modalità tal-bidwi / Modalità normali
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	L-ewwel għażla ta' ☰ taqleb bejn iż-żewġ modalitajiet; turi l-isem tal-modalità l-oħra. Fil-modalità tal-bidwi t-temperatura u l-ikona jibqgħu l-istess, BIDWI jidher isfel, il-kaxxi tas-sigħat jiftħu d-dettalji, u l-grafika tal-preċipitazzjoni u l-ħamest ijiem jinbidlu b'ringiela ta' kaxxi tax-xita kull siegħa.
+Hour boxes	Kaxxi tas-sigħat
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Meta tagħfas fuq siegħa tinfetaħ bużżieqa: temperatura, l-aktar baxxa u l-aktar għolja tal-jum, veloċità tar-riħ u buffuri, direzzjoni tar-riħ u meta mistenni jdur, umdità tal-arja, ċans ta' xita, umdità tal-ħamrija (3–9 cm) u temperatura tal-ħamrija.
+Rain boxes	Kaxxi tax-xita
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Kaxxa waħda kull siegħa: iċ-ċans ta' xita b'numri kbar, strixxa mimlija skont iċ-ċans, l-ammont u t-tip (xita, rxiex, borra, silġ bix-xita). Meta tagħfas jidhru d-dettalji: ammont skont it-tip, sħab, umdità u kemm xita sa nofsillejl.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Għelieqi (fil-modalità tal-bidwi). “Issejvja l-post hawn” jieħu l-pożizzjoni GPS fejn int wieqaf; imbagħad il-mappa turiha b'pin: ċaqlaq il-mappa biex il-pin ikun eżatt fuq l-għalqa u agħtiha isem (eż. għalqa 96/5). “Agħżel fuq il-mappa” jissejvja għalqa mid-dar. L-għelieqi jibqgħu biss fuq dan il-mowbajl, sakemm tħassarhom.
+A parcel's page	Il-paġna ta' għalqa
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Kaxxi separati għat-temperatura tal-arja, riħ, direzzjoni tar-riħ, ċans ta' xita, umdità tal-arja, umdità tal-ħamrija u temperatura tal-ħamrija, imbagħad il-12-il siegħa li ġejjin. Buttuni: statistika, ċaqlaq il-pin, twissijiet ta' xita / riħ, ibdel l-isem, ħassar.
+Statistics and PDF	Statistika u PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Għal perjodu li tagħżel fl-aħħar 28 jum: għal kull jum l-ogħla u l-inqas temperatura, xita totali, l-aktar riħ qawwi u l-umdità medja tal-ħamrija, u sommarju tal-perjodu. “Issejvja bħala PDF f'Downloads” jagħmel fajl li tista' tistampa jew tibgħat. L-istatistika tinżamm 28 jum.
+Parcel alerts	Twissijiet tal-għalqa
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Fuq il-paġna ta' għalqa, twissijiet MIXGĦULA: kull 3 sigħat l-app tħares lejn il-12-il siegħa li ġejjin u tibgħat notifika meta tkun imbassra xita (60% u 0.5 mm, jew 1 mm) jew riħ qawwi (buffuri ta' 50 km/h); messaġġ wieħed għal kull perjodu. Bil-lejl, bl-iskrin mitfi, iċ-ċekk jistenna l-iskrin.
+Soil data and source	Dejta tal-ħamrija u sors
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Kollox għall-bdiewa jiġi minn Open-Meteo. L-umdità tal-ħamrija (perċentwal tal-volum, 3–9 cm fil-fond) u t-temperatura tal-ħamrija huma stimi tal-mudell tat-temp, mhux kejl; għelieqi qrib xulxin (1–11 km) jistgħu juru l-istess valuri. Meta Open-Meteo ma jwiġibx, l-app tgħid hekk, tniżżel id-dejta meta l-aċċess jerġa' lura u tibgħat notifika.
+The map	Il-mappa
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, b'xejn u mingħajr kont (© kontributuri ta' OpenStreetMap); teħtieġ l-internet. Saba' wieħed iċaqlaqha, żewġ swaba' jew daqqa doppja jżummjaw; “Il-pożizzjoni tiegħi” turi fejn int bħala tikka blu. Il-biċċiet tal-mappa jinżammu fuq il-mowbajl għal ġimgħa.
+Farmer · 	Bidwi · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo qed iwieġeb mill-ġdid: id-dejta tal-għalqa tniżżlet.
+Rain expected from 	Xita mistennija minn 
+ in the next 12 hours	 fil-12-il siegħa li ġejjin
+Rain · 	Xita · 
+Strong wind from 	Riħ qawwi minn 
+, gusts 	, buffuri 
+Wind · 	Riħ · 
+showers	rxiex
+sleet	silġ bix-xita
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Id-dejta tal-bidwi (riħ kull siegħa, umdità, ħamrija) tiġi biss minn Open-Meteo, li mhux qed iwieġeb issa. Meta l-aċċess jerġa' lura, l-app tniżżilha u tibagħtlek notifika.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	L-umdità u t-temperatura tal-ħamrija huma stimi tal-mudell tat-temp, mhux kejl · sors: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatura: 
+Chance of rain: 	Ċans ta' xita: 
+Day's low / high: 	L-aktar baxxa / għolja tal-jum: 
+Speed: 	Veloċità: 
+Direction: from 	Direzzjoni: minn 
+Change: it turns from 	Bidla: idur minn 
+ to 	 għal 
+Change: it keeps its direction for the next 12 hours	Bidla: iżomm id-direzzjoni għall-12-il siegħa li ġejjin
+Air and rain	Arja u xita
+Air humidity: 	Umdità tal-arja: 
+Soil (estimated)	Ħamrija (stmata)
+Soil moisture (3–9 cm): 	Umdità tal-ħamrija (3–9 cm): 
+Soil temperature (surface): 	Temperatura tal-ħamrija (wiċċ): 
+likely	probabbli
+possible	possibbli
+unlikely	improbabbli
+Amount: 	Ammont: 
+Kind: 	Tip: 
+showers 	rxiex 
+snow 	borra 
+Of which: 	Minnhom: 
+Cloud cover: 	Sħab: 
+Until midnight: 	Sa nofsillejl: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Sors: Open-Meteo. Iċ-ċans huwa kemm hi probabbli x-xita f'dik is-siegħa, mhux kemm iddum tagħmel.
+FARMER	BIDWI

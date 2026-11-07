@@ -382,3 +382,158 @@ Switch to the metric system?	Átvált a metrikus rendszerre?
 Metric	Metrikus
 °C · metric system	°C · metrikus rendszer
 Keep °F	Marad a °F
+dry	száraz
+moderate	mérsékelt
+moist	nedves
+very wet	nagyon vizes
+Parcels	Parcellák
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Csak ezen a telefonon tárolva, amíg nem törlöd őket. A statisztikájuk 28 napig marad meg.
+Save the place here	Hely mentése itt
+Choose on the map	Választás a térképen
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Még nincs mentett parcella. Állj a parcellára, és koppints a „Hely mentése itt” gombra, vagy válaszd ki a térképen.
+alerts on	riasztások be
+wind 	szél 
+rain 	eső 
+soil 	talaj 
+updated 	frissítve 
+Without location the place can only be chosen on the map.	Helymeghatározás nélkül a hely csak a térképen választható.
+The phone does not allow notifications for the app: the alerts cannot be shown.	A telefon nem engedi az alkalmazás értesítéseit: a riasztások nem jelenhetnek meg.
+Looking for the position (GPS)… stay outside, on the parcel.	Pozíció keresése (GPS)… maradj kint, a parcellán.
+The position was not found.	A pozíció nem található.
+The position was not found: move the map to the parcel.	A pozíció nem található: mozgasd a térképet a parcellához.
+The position is approximate (±	A pozíció közelítő (±
+ m): check the pin on the map.	 m): ellenőrizd a tűt a térképen.
+New parcel	Új parcella
+Move the pin	Tű áthelyezése
+Name, e.g. parcel 96/5	Név, pl. 96/5-ös parcella
+move the map to put the pin on the parcel	mozgasd a térképet, hogy a tű a parcellán legyen
+My position	Saját pozícióm
+Give the parcel a name	Adj nevet a parcellának
+Downloading from Open-Meteo…	Letöltés az Open-Meteóról…
+Open-Meteo is not answering now (	Az Open-Meteo most nem válaszol (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Ha a hozzáférés visszatér, az alkalmazás letölti a parcella adatait, és értesítést küld.
+low 	min. 
+high 	max. 
+turns to 	fordul: 
+ around 	 kb. 
+steady for 12 hours	12 órán át állandó
+today up to 	ma legfeljebb 
+Air temperature	Levegő hőmérséklete
+gusts 	széllökés 
+Wind direction	Szélirány
+Chance of rain	Eső esélye
+Air humidity	Levegő páratartalma
+Soil moisture	Talajnedvesség
+3–9 cm, estimated	3–9 cm, becslés
+Soil temperature	Talajhőmérséklet
+surface, estimated	felszín, becslés
+Next 12 hours	Következő 12 óra
+Statistics (last 28 days)	Statisztika (utolsó 28 nap)
+Move the pin on the map	Tű áthelyezése a térképen
+Rain / wind alerts: ON	Eső- / szélriasztás: BE
+Rain / wind alerts: OFF	Eső- / szélriasztás: KI
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Értesítést kapsz, ha erre a parcellára a következő 12 órában esőt vagy erős szelet jeleznek (3 óránként ellenőrizve).
+Rename	Átnevezés
+Delete the parcel	Parcella törlése
+Delete 	Törlöd: 
+The parcel and its statistics are deleted from the phone.	A parcella és a statisztikája törlődik a telefonról.
+Delete	Törlés
+Statistics · 	Statisztika · 
+Choose the period, within the last 28 days.	Válaszd ki az időszakot az utolsó 28 napon belül.
+ days	 nap
+To 	Eddig: 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Erre az időszakra még nincs adat. Nyisd meg egyszer a parcellát internettel: az alkalmazás letölti az utolsó 28 napot az Open-Meteóról.
+Summary	Összefoglaló
+Lowest / highest	Legalacsonyabb / legmagasabb
+Rain total	Összes csapadék
+ days with rain (1 mm+)	 esős nap (1 mm-től)
+Highest wind	Legerősebb szél
+gusts up to 	széllökés legfeljebb 
+mean, estimated	átlag, becslés
+Day by day	Napról napra
+Date	Dátum
+Max	Max.
+Min	Min.
+Soil	Talaj
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Forrás: Open-Meteo (modellek és becslések a múlt napokra). Talajnedvesség 3–9 cm mélyen, becslés.
+Save as PDF in Downloads	PDF mentése a Letöltésekbe
+The PDF could not be saved: 	A PDF-et nem sikerült menteni: 
+PDF saved	PDF mentve
+In Downloads: 	A Letöltésekben: 
+Open	Megnyitás
+No app on the phone opens PDF files.	A telefonon egy alkalmazás sem nyit meg PDF-fájlokat.
+Max wind	Max. szél
+Parcel statistics · 	Parcellastatisztika · 
+Coordinates: 	Koordináták: 
+Period: 	Időszak: 
+ days)	 nap)
+Made on 	Készült: 
+Lowest temperature: 	Legalacsonyabb hőmérséklet: 
+Highest temperature: 	Legmagasabb hőmérséklet: 
+Rain total: 	Összes csapadék: 
+Highest wind: 	Legerősebb szél: 
+Mean soil moisture (3–9 cm, estimated): 	Átlagos talajnedvesség (3–9 cm, becslés): 
+Source: Open-Meteo (open-meteo.com), weather models.	Forrás: Open-Meteo (open-meteo.com), időjárási modellek.
+Soil moisture and soil temperature are estimates, not measurements.	A talajnedvesség és a talajhőmérséklet becslés, nem mérés.
+Farmer mode	Gazda mód
+Open-Meteo answers again: the farmer's data for 	Az Open-Meteo újra válaszol: letöltöttük a gazdaadatokat: 
+ have been downloaded.	 .
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Gazdaadatok: az Open-Meteo nem válaszol; értesítést kapsz, amikor megérkeznek
+Farmer mode: tap an hour or a rain box for details	Gazda mód: koppints egy órára vagy esőmezőre a részletekért
+Normal mode	Normál mód
+Local time	Helyi idő
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Egy amerikai településnél az óra, az előrejelzés órái és a dátumok a település helyi idejét mutatják, nem a telefonét (hasznos tesztmódban, vagy ha más időzónájú települést nézel).
+Farmer mode / Normal mode	Gazda mód / Normál mód
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	A ☰ első eleme vált a két mód között; a másik módot mutatja. Gazda módban a hőmérséklet és az ikon ugyanaz marad, alul GAZDA felirat látszik, az órás mezők részleteket nyitnak, a csapadékgrafikon és az öt nap helyén pedig óránkénti esőmezők sora jelenik meg.
+Hour boxes	Órás mezők
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Egy órára koppintva buborék nyílik: hőmérséklet, a nap minimuma és maximuma, szélsebesség és széllökések, szélirány és mikor várható, hogy forduljon, a levegő páratartalma, eső esélye, talajnedvesség (3–9 cm) és talajhőmérséklet.
+Rain boxes	Esőmezők
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Óránként egy mező: az eső esélye nagy számjegyekkel, egy sáv, amely az eséllyel arányosan telik, a mennyiség és a fajta (eső, zápor, hó, havas eső). Koppintásra részletek: mennyiség fajtánként, felhőzet, páratartalom és mennyi eső esik éjfélig.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Parcellák (gazda módban). A „Hely mentése itt” azt a GPS-pozíciót veszi, ahol állsz; utána a térkép tűvel mutatja: mozgasd a térképet, hogy a tű pontosan a parcellán legyen, és adj neki nevet (pl. 96/5-ös parcella). A „Választás a térképen” otthonról ment parcellát. A parcellák csak ezen a telefonon maradnak, amíg nem törlöd őket.
+A parcel's page	Egy parcella oldala
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Külön mezők a levegő hőmérsékletére, szélre, szélirányra, eső esélyére, a levegő páratartalmára, talajnedvességre és talajhőmérsékletre, utána a következő 12 óra. Gombok: statisztika, tű áthelyezése, eső- / szélriasztás, átnevezés, törlés.
+Statistics and PDF	Statisztika és PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Az utolsó 28 napból választott időszakra: naponta a maximum és minimum, az összes csapadék, a legerősebb szél és az átlagos talajnedvesség, valamint az időszak összefoglalója. A „PDF mentése a Letöltésekbe” nyomtatható vagy elküldhető fájlt készít. A statisztika 28 napig marad meg.
+Parcel alerts	Parcellariasztások
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	A parcella oldalán, riasztás BE: az alkalmazás 3 óránként megnézi a következő 12 órát, és értesítést küld, ha esőt (60% és 0,5 mm, vagy 1 mm) vagy erős szelet (50 km/h-s széllökések) jeleznek; epizódonként egy értesítés. Éjjel, kikapcsolt képernyőnél az ellenőrzés vár a képernyőre.
+Soil data and source	Talajadatok és forrás
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Minden gazdaadat az Open-Meteóról jön. A talajnedvesség (térfogatszázalék, 3–9 cm) és a talajhőmérséklet az időjárási modell becslése, nem mérés; a közeli parcellák (1–11 km) ugyanazt az értéket mutathatják. Ha az Open-Meteo nem válaszol, az alkalmazás jelzi, letölti az adatokat, amikor a hozzáférés visszatér, és értesítést küld.
+The map	A térkép
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, ingyenes és fiók nélkül (© OpenStreetMap contributors); internet kell hozzá. Egy ujjal mozgatható, két ujjal vagy dupla koppintással nagyítható; a „Saját pozícióm” kék ponttal mutatja, hol vagy. A térképdarabok egy hétig maradnak a telefonon.
+Farmer · 	Gazda · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Az Open-Meteo újra válaszol: letöltöttük a parcella adatait.
+Rain expected from 	Eső várható ettől: 
+ in the next 12 hours	 a következő 12 órában
+Rain · 	Eső · 
+Strong wind from 	Erős szél ettől: 
+, gusts 	, széllökés 
+Wind · 	Szél · 
+showers	zápor
+sleet	havas eső
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	A gazdaadatok (óránkénti szél, páratartalom, talaj) csak az Open-Meteóról jönnek, amely most nem válaszol. Ha a hozzáférés visszatér, az alkalmazás letölti őket, és értesítést küld.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	A talajnedvesség és a talajhőmérséklet az időjárási modell becslése, nem mérés · forrás: Open-Meteo (open-meteo.com).
+Temperature: 	Hőmérséklet: 
+Chance of rain: 	Eső esélye: 
+Day's low / high: 	A nap minimuma / maximuma: 
+Speed: 	Sebesség: 
+Direction: from 	Irány: innen: 
+Change: it turns from 	Változás: fordul innen: 
+ to 	 ide: 
+Change: it keeps its direction for the next 12 hours	Változás: a következő 12 órában megtartja az irányát
+Air and rain	Levegő és eső
+Air humidity: 	Levegő páratartalma: 
+Soil (estimated)	Talaj (becslés)
+Soil moisture (3–9 cm): 	Talajnedvesség (3–9 cm): 
+Soil temperature (surface): 	Talajhőmérséklet (felszín): 
+likely	valószínű
+possible	lehetséges
+unlikely	nem valószínű
+Amount: 	Mennyiség: 
+Kind: 	Fajta: 
+showers 	zápor 
+snow 	hó 
+Of which: 	Ebből: 
+Cloud cover: 	Felhőzet: 
+Until midnight: 	Éjfélig: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Forrás: Open-Meteo. Az esély azt mutatja, mennyire valószínű az eső abban az órában, nem azt, hogy meddig esik.
+FARMER	GAZDA

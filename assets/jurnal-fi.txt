@@ -1,3 +1,10 @@
+v2.50 · 7. marraskuuta 2026
+- Viljelijätila: ☰-valikon ensimmäinen kohta vaihtaa viljelijätilan ja normaalin tilan välillä. Viljelijätilassa tuntiruudun napautus näyttää lämpötilan, päivän alimman ja ylimmän, tuulen puuskineen ja suuntineen (ja milloin se kääntyy), ilmankosteuden, sateen todennäköisyyden, maan kosteuden ja maan lämpötilan; sadekaavion ja viiden päivän tilalle tulevat tunnin sadeneliöt, joista näkee tiedot napauttamalla.
+- ☰ › Lohkot: tallenna paikka, jossa seisot (GPS), korjaa se OpenStreetMap-kartalla ja anna nimi; jokaisella lohkolla on ruudut tuulelle, suunnalle, sateelle, ilman ja maan kosteudelle, maan ja ilman lämpötilalle, sade- ja kovan tuulen hälytykset sekä tilastot viimeisten 28 päivän jaksolta, tallennettavissa PDF:nä Latauksiin.
+- Maatiedot ovat Open-Meteon arvioita; jos Open-Meteo ei vastaa, sovellus lataa ne myöhemmin ja lähettää ilmoituksen.
+- Yhdysvallat: kello ja tunnit näyttävät valitun paikkakunnan paikallisen ajan.
+- Ilmoitukset vain valitulle paikkakunnalle (testitilassa) tai sinne, missä puhelin on: ei enää hälytyksiä Yhdysvalloista, kun sovellus näyttää paikkakuntaa Euroopassa.
+
 v2.40 · 4. marraskuuta 2026
 - Yhdysvallat: ☰ › Tornadoes, Maanjäristykset-sivun kaltainen sivu: paikkakuntasi ja osavaltiosi tornadovaroitukset, lähistöllä viimeisten 2 päivän aikana raportoidut tornadot, niiden määrä koko maassa ja mitä tehdä.
 - Yhdysvallat: ei Siitepöly-ruutua (siellä ei ole tietoja); ilmanlaatu amerikkalaisena US AQI -indeksinä.

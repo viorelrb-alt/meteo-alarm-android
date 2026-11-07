@@ -382,3 +382,158 @@ Switch to the metric system?	Overschakelen naar het metrische stelsel?
 Metric	Metrisch
 °C · metric system	°C · metrisch stelsel
 Keep °F	°F houden
+dry	droog
+moderate	matig
+moist	vochtig
+very wet	zeer nat
+Parcels	Percelen
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Alleen op deze telefoon bewaard, tot je ze verwijdert. Hun statistiek wordt 28 dagen bewaard.
+Save the place here	Plek hier opslaan
+Choose on the map	Kiezen op de kaart
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Nog geen perceel opgeslagen. Ga op het perceel staan en tik op „Plek hier opslaan”, of kies het op de kaart.
+alerts on	meldingen aan
+wind 	wind 
+rain 	regen 
+soil 	bodem 
+updated 	bijgewerkt 
+Without location the place can only be chosen on the map.	Zonder locatie kan de plek alleen op de kaart worden gekozen.
+The phone does not allow notifications for the app: the alerts cannot be shown.	De telefoon staat geen meldingen toe voor de app: de waarschuwingen kunnen niet worden getoond.
+Looking for the position (GPS)… stay outside, on the parcel.	Positie zoeken (gps)… blijf buiten, op het perceel.
+The position was not found.	De positie is niet gevonden.
+The position was not found: move the map to the parcel.	De positie is niet gevonden: schuif de kaart naar het perceel.
+The position is approximate (±	De positie is bij benadering (±
+ m): check the pin on the map.	 m): controleer de speld op de kaart.
+New parcel	Nieuw perceel
+Move the pin	Speld verplaatsen
+Name, e.g. parcel 96/5	Naam, bijv. perceel 96/5
+move the map to put the pin on the parcel	schuif de kaart zodat de speld op het perceel staat
+My position	Mijn positie
+Give the parcel a name	Geef het perceel een naam
+Downloading from Open-Meteo…	Downloaden van Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo antwoordt nu niet (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Zodra de toegang terug is, downloadt de app de gegevens van het perceel en stuurt je een melding.
+low 	min 
+high 	max 
+turns to 	draait naar 
+ around 	 rond 
+steady for 12 hours	stabiel gedurende 12 uur
+today up to 	vandaag tot 
+Air temperature	Luchttemperatuur
+gusts 	windstoten 
+Wind direction	Windrichting
+Chance of rain	Kans op regen
+Air humidity	Luchtvochtigheid
+Soil moisture	Bodemvocht
+3–9 cm, estimated	3–9 cm, geschat
+Soil temperature	Bodemtemperatuur
+surface, estimated	oppervlak, geschat
+Next 12 hours	Komende 12 uur
+Statistics (last 28 days)	Statistiek (laatste 28 dagen)
+Move the pin on the map	Speld verplaatsen op de kaart
+Rain / wind alerts: ON	Regen- / windmeldingen: AAN
+Rain / wind alerts: OFF	Regen- / windmeldingen: UIT
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Je krijgt een melding als voor dit perceel regen of harde wind wordt voorspeld in de komende 12 uur (elke 3 uur gecontroleerd).
+Rename	Hernoemen
+Delete the parcel	Perceel verwijderen
+Delete 	Verwijderen: 
+The parcel and its statistics are deleted from the phone.	Het perceel en de statistiek worden van de telefoon verwijderd.
+Delete	Verwijderen
+Statistics · 	Statistiek · 
+Choose the period, within the last 28 days.	Kies de periode, binnen de laatste 28 dagen.
+ days	 dagen
+To 	Tot 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Nog geen gegevens voor deze periode. Open het perceel één keer met internet: de app downloadt de laatste 28 dagen van Open-Meteo.
+Summary	Samenvatting
+Lowest / highest	Laagste / hoogste
+Rain total	Totale regen
+ days with rain (1 mm+)	 dagen met regen (1 mm of meer)
+Highest wind	Hoogste wind
+gusts up to 	windstoten tot 
+mean, estimated	gemiddeld, geschat
+Day by day	Dag voor dag
+Date	Datum
+Max	Max
+Min	Min
+Soil	Bodem
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Bron: Open-Meteo (modellen en schattingen voor de afgelopen dagen). Bodemvocht op 3–9 cm diepte, geschat.
+Save as PDF in Downloads	Opslaan als pdf in Downloads
+The PDF could not be saved: 	De pdf kon niet worden opgeslagen: 
+PDF saved	Pdf opgeslagen
+In Downloads: 	In Downloads: 
+Open	Openen
+No app on the phone opens PDF files.	Geen app op de telefoon opent pdf-bestanden.
+Max wind	Max. wind
+Parcel statistics · 	Perceelstatistiek · 
+Coordinates: 	Coördinaten: 
+Period: 	Periode: 
+ days)	 dagen)
+Made on 	Gemaakt op 
+Lowest temperature: 	Laagste temperatuur: 
+Highest temperature: 	Hoogste temperatuur: 
+Rain total: 	Totale regen: 
+Highest wind: 	Hoogste wind: 
+Mean soil moisture (3–9 cm, estimated): 	Gemiddeld bodemvocht (3–9 cm, geschat): 
+Source: Open-Meteo (open-meteo.com), weather models.	Bron: Open-Meteo (open-meteo.com), weermodellen.
+Soil moisture and soil temperature are estimates, not measurements.	Bodemvocht en bodemtemperatuur zijn schattingen, geen metingen.
+Farmer mode	Boerenmodus
+Open-Meteo answers again: the farmer's data for 	Open-Meteo antwoordt weer: de boerengegevens voor 
+ have been downloaded.	 zijn gedownload.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Boerengegevens: Open-Meteo antwoordt niet; je krijgt een melding zodra ze er zijn
+Farmer mode: tap an hour or a rain box for details	Boerenmodus: tik op een uur of een regenvak voor details
+Normal mode	Normale modus
+Local time	Lokale tijd
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Voor een plaats in de VS tonen de klok, de uren van de verwachting en de datums de lokale tijd van die plaats, niet die van de telefoon (handig in de testmodus of als je naar een plaats in een andere tijdzone kijkt).
+Farmer mode / Normal mode	Boerenmodus / Normale modus
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Het eerste item van ☰ wisselt tussen de twee modi; het noemt de andere modus. In de boerenmodus blijven temperatuur en icoon gelijk, onderaan staat BOER, de uurvakken openen details en de neerslaggrafiek en de vijf dagen maken plaats voor een rij regenvakken per uur.
+Hour boxes	Uurvakken
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Tikken op een uur opent een ballon: temperatuur, laagste en hoogste van de dag, windsnelheid en windstoten, windrichting en wanneer die naar verwachting draait, luchtvochtigheid, kans op regen, bodemvocht (3–9 cm) en bodemtemperatuur.
+Rain boxes	Regenvakken
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Eén vak per uur: de kans op regen in grote cijfers, een balk zo vol als de kans, de hoeveelheid en de soort (regen, buien, sneeuw, natte sneeuw). Tikken toont de details: hoeveelheid per soort, bewolking, vochtigheid en hoeveel regen er tot middernacht valt.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Percelen (in de boerenmodus). „Plek hier opslaan” neemt de gps-positie waar je staat; daarna toont de kaart die met een speld: schuif de kaart zodat de speld precies op het perceel staat en geef het een naam (bijv. perceel 96/5). „Kiezen op de kaart” slaat een perceel op vanuit huis. Percelen blijven alleen op deze telefoon, tot je ze verwijdert.
+A parcel's page	De pagina van een perceel
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Aparte vakken voor luchttemperatuur, wind, windrichting, kans op regen, luchtvochtigheid, bodemvocht en bodemtemperatuur, daarna de komende 12 uur. Knoppen: statistiek, speld verplaatsen, regen- / windmeldingen, hernoemen, verwijderen.
+Statistics and PDF	Statistiek en pdf
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Voor een gekozen periode binnen de laatste 28 dagen: per dag het hoogste en laagste, de totale regen, de hoogste wind en het gemiddelde bodemvocht, plus een samenvatting van de periode. „Opslaan als pdf in Downloads” maakt een bestand om te printen of te versturen. De statistiek wordt 28 dagen bewaard.
+Parcel alerts	Perceelmeldingen
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Op de pagina van het perceel, meldingen AAN: elke 3 uur kijkt de app naar de komende 12 uur en stuurt een melding als regen (60% en 0,5 mm, of 1 mm) of harde wind (windstoten van 50 km/h) wordt voorspeld; één melding per periode. 's Nachts, met het scherm uit, wacht de controle op het scherm.
+Soil data and source	Bodemgegevens en bron
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Alles voor boeren komt van Open-Meteo. Bodemvocht (volumeprocent, 3–9 cm diep) en bodemtemperatuur zijn schattingen van het weermodel, geen metingen; nabije percelen (1–11 km) kunnen dezelfde waarden tonen. Als Open-Meteo niet antwoordt, zegt de app dat, downloadt de gegevens zodra de toegang terug is en stuurt een melding.
+The map	De kaart
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, gratis en zonder account (© OpenStreetMap contributors); internet is nodig. Eén vinger verschuift de kaart, twee vingers of dubbeltikken zoomen; „Mijn positie” toont waar je bent als blauwe stip. De kaartstukken blijven een week op de telefoon.
+Farmer · 	Boer · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo antwoordt weer: de gegevens van het perceel zijn gedownload.
+Rain expected from 	Regen verwacht vanaf 
+ in the next 12 hours	 in de komende 12 uur
+Rain · 	Regen · 
+Strong wind from 	Harde wind vanaf 
+, gusts 	, windstoten 
+Wind · 	Wind · 
+showers	buien
+sleet	natte sneeuw
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	De boerengegevens (wind per uur, vochtigheid, bodem) komen alleen van Open-Meteo, dat nu niet antwoordt. Zodra de toegang terug is, downloadt de app ze en stuurt je een melding.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Bodemvocht en bodemtemperatuur zijn schattingen van het weermodel, geen metingen · bron: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatuur: 
+Chance of rain: 	Kans op regen: 
+Day's low / high: 	Laagste / hoogste van de dag: 
+Speed: 	Snelheid: 
+Direction: from 	Richting: uit 
+Change: it turns from 	Verandering: draait van 
+ to 	 naar 
+Change: it keeps its direction for the next 12 hours	Verandering: houdt de komende 12 uur dezelfde richting
+Air and rain	Lucht en regen
+Air humidity: 	Luchtvochtigheid: 
+Soil (estimated)	Bodem (geschat)
+Soil moisture (3–9 cm): 	Bodemvocht (3–9 cm): 
+Soil temperature (surface): 	Bodemtemperatuur (oppervlak): 
+likely	waarschijnlijk
+possible	mogelijk
+unlikely	onwaarschijnlijk
+Amount: 	Hoeveelheid: 
+Kind: 	Soort: 
+showers 	buien 
+snow 	sneeuw 
+Of which: 	Waarvan: 
+Cloud cover: 	Bewolking: 
+Until midnight: 	Tot middernacht: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Bron: Open-Meteo. De kans zegt hoe waarschijnlijk het in dat uur regent, niet hoe lang.
+FARMER	BOER

@@ -382,3 +382,158 @@ Switch to the metric system?	Mudar para o sistema métrico?
 Metric	Métrico
 °C · metric system	°C · sistema métrico
 Keep °F	Manter °F
+dry	seco
+moderate	moderado
+moist	húmido
+very wet	muito molhado
+Parcels	Parcelas
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Guardadas só neste telemóvel, até as apagares. As estatísticas ficam 28 dias.
+Save the place here	Guardar o local aqui
+Choose on the map	Escolher no mapa
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Ainda nenhuma parcela guardada. Fica na parcela e toca em «Guardar o local aqui», ou escolhe-a no mapa.
+alerts on	alertas ligados
+wind 	vento 
+rain 	chuva 
+soil 	solo 
+updated 	atualizado 
+Without location the place can only be chosen on the map.	Sem localização, o local só pode ser escolhido no mapa.
+The phone does not allow notifications for the app: the alerts cannot be shown.	O telemóvel não permite notificações à app: os alertas não podem ser mostrados.
+Looking for the position (GPS)… stay outside, on the parcel.	À procura da posição (GPS)… fica ao ar livre, na parcela.
+The position was not found.	A posição não foi encontrada.
+The position was not found: move the map to the parcel.	A posição não foi encontrada: move o mapa até à parcela.
+The position is approximate (±	A posição é aproximada (±
+ m): check the pin on the map.	 m): verifica o alfinete no mapa.
+New parcel	Nova parcela
+Move the pin	Mover o alfinete
+Name, e.g. parcel 96/5	Nome, p. ex. parcela 96/5
+move the map to put the pin on the parcel	move o mapa para pôr o alfinete na parcela
+My position	A minha posição
+Give the parcel a name	Dá um nome à parcela
+Downloading from Open-Meteo…	A descarregar do Open-Meteo…
+Open-Meteo is not answering now (	O Open-Meteo não responde agora (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Quando o acesso voltar, a app descarrega os dados da parcela e envia-te uma notificação.
+low 	mín 
+high 	máx 
+turns to 	roda para 
+ around 	 por volta das 
+steady for 12 hours	estável durante 12 horas
+today up to 	hoje até 
+Air temperature	Temperatura do ar
+gusts 	rajadas 
+Wind direction	Direção do vento
+Chance of rain	Probabilidade de chuva
+Air humidity	Humidade do ar
+Soil moisture	Humidade do solo
+3–9 cm, estimated	3–9 cm, estimada
+Soil temperature	Temperatura do solo
+surface, estimated	superfície, estimada
+Next 12 hours	Próximas 12 horas
+Statistics (last 28 days)	Estatísticas (últimos 28 dias)
+Move the pin on the map	Mover o alfinete no mapa
+Rain / wind alerts: ON	Alertas de chuva / vento: LIGADOS
+Rain / wind alerts: OFF	Alertas de chuva / vento: DESLIGADOS
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Recebes uma notificação quando houver previsão de chuva ou vento forte nesta parcela nas próximas 12 horas (verificado a cada 3 horas).
+Rename	Mudar o nome
+Delete the parcel	Apagar a parcela
+Delete 	Apagar 
+The parcel and its statistics are deleted from the phone.	A parcela e as suas estatísticas são apagadas do telemóvel.
+Delete	Apagar
+Statistics · 	Estatísticas · 
+Choose the period, within the last 28 days.	Escolhe o período, nos últimos 28 dias.
+ days	 dias
+To 	Até 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Ainda não há dados para este período. Abre a parcela uma vez com internet: a app descarrega os últimos 28 dias do Open-Meteo.
+Summary	Resumo
+Lowest / highest	Mínima / máxima
+Rain total	Chuva total
+ days with rain (1 mm+)	 dias com chuva (1 mm ou mais)
+Highest wind	Vento máximo
+gusts up to 	rajadas até 
+mean, estimated	média, estimada
+Day by day	Dia a dia
+Date	Data
+Max	Máx
+Min	Mín
+Soil	Solo
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Fonte: Open-Meteo (modelos e estimativas para os dias passados). Humidade do solo a 3–9 cm, estimada.
+Save as PDF in Downloads	Guardar PDF em Transferências
+The PDF could not be saved: 	Não foi possível guardar o PDF: 
+PDF saved	PDF guardado
+In Downloads: 	Em Transferências: 
+Open	Abrir
+No app on the phone opens PDF files.	Nenhuma app do telemóvel abre ficheiros PDF.
+Max wind	Vento máx
+Parcel statistics · 	Estatísticas da parcela · 
+Coordinates: 	Coordenadas: 
+Period: 	Período: 
+ days)	 dias)
+Made on 	Criado em 
+Lowest temperature: 	Temperatura mínima: 
+Highest temperature: 	Temperatura máxima: 
+Rain total: 	Chuva total: 
+Highest wind: 	Vento máximo: 
+Mean soil moisture (3–9 cm, estimated): 	Humidade média do solo (3–9 cm, estimada): 
+Source: Open-Meteo (open-meteo.com), weather models.	Fonte: Open-Meteo (open-meteo.com), modelos meteorológicos.
+Soil moisture and soil temperature are estimates, not measurements.	A humidade e a temperatura do solo são estimativas, não medições.
+Farmer mode	Modo agricultor
+Open-Meteo answers again: the farmer's data for 	O Open-Meteo responde de novo: os dados de agricultor para 
+ have been downloaded.	 foram descarregados.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Dados de agricultor: o Open-Meteo não responde; recebes uma notificação quando chegarem
+Farmer mode: tap an hour or a rain box for details	Modo agricultor: toca numa hora ou numa caixa de chuva para ver detalhes
+Normal mode	Modo normal
+Local time	Hora local
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Para uma localidade dos EUA, o relógio, as horas da previsão e as datas mostram a hora local da localidade, não a do telemóvel (útil no modo de teste ou quando vês uma localidade noutro fuso horário).
+Farmer mode / Normal mode	Modo agricultor / Modo normal
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	O primeiro item de ☰ alterna entre os dois modos; mostra o outro modo. No modo agricultor a temperatura e o ícone ficam iguais, em baixo aparece AGRICULTOR, as caixas horárias abrem detalhes e o gráfico de precipitação e os cinco dias dão lugar a uma fila de caixas de chuva hora a hora.
+Hour boxes	Caixas horárias
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Tocar numa hora abre um balão: temperatura, mínima e máxima do dia, velocidade do vento e rajadas, direção do vento e quando deve rodar, humidade do ar, probabilidade de chuva, humidade do solo (3–9 cm) e temperatura do solo.
+Rain boxes	Caixas de chuva
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Uma caixa por hora: a probabilidade de chuva em números grandes, uma barra tão cheia quanto a probabilidade, a quantidade e o tipo (chuva, aguaceiros, neve, água-neve). Um toque mostra os detalhes: quantidade por tipo, nebulosidade, humidade e quanta chuva cai até à meia-noite.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Parcelas (no modo agricultor). «Guardar o local aqui» usa a posição GPS onde estás; depois o mapa mostra-a com um alfinete: move o mapa para pôr o alfinete exatamente na parcela e dá-lhe um nome (p. ex. parcela 96/5). «Escolher no mapa» guarda uma parcela a partir de casa. As parcelas ficam só neste telemóvel, até as apagares.
+A parcel's page	A página de uma parcela
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Caixas separadas para temperatura do ar, vento, direção do vento, probabilidade de chuva, humidade do ar, humidade do solo e temperatura do solo, depois as próximas 12 horas. Botões: estatísticas, mover o alfinete, alertas de chuva / vento, mudar o nome, apagar.
+Statistics and PDF	Estatísticas e PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Para um período escolhido nos últimos 28 dias: por dia a máxima e a mínima, a chuva total, o vento máximo e a humidade média do solo, e um resumo do período. «Guardar PDF em Transferências» cria um ficheiro para imprimir ou enviar. As estatísticas ficam 28 dias.
+Parcel alerts	Alertas da parcela
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Na página da parcela, alertas LIGADOS: a cada 3 horas a app vê as próximas 12 horas e envia uma notificação quando há previsão de chuva (60% e 0,5 mm, ou 1 mm) ou vento forte (rajadas de 50 km/h); um aviso por episódio. De noite, com o ecrã desligado, a verificação espera pelo ecrã.
+Soil data and source	Dados do solo e fonte
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Tudo para agricultores vem do Open-Meteo. A humidade do solo (percentagem do volume, a 3–9 cm) e a temperatura do solo são estimativas do modelo meteorológico, não medições; parcelas próximas (1–11 km) podem ter os mesmos valores. Quando o Open-Meteo não responde, a app avisa, descarrega os dados quando o acesso volta e envia uma notificação.
+The map	O mapa
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, gratuito e sem conta (© OpenStreetMap contributors); precisa de internet. Um dedo move-o, dois dedos ou um toque duplo fazem zoom; «A minha posição» mostra onde estás com um ponto azul. Os pedaços do mapa ficam no telemóvel uma semana.
+Farmer · 	Agricultor · 
+Open-Meteo answers again: the parcel's data have been downloaded.	O Open-Meteo responde de novo: os dados da parcela foram descarregados.
+Rain expected from 	Chuva prevista a partir das 
+ in the next 12 hours	 nas próximas 12 horas
+Rain · 	Chuva · 
+Strong wind from 	Vento forte a partir das 
+, gusts 	, rajadas 
+Wind · 	Vento · 
+showers	aguaceiros
+sleet	água-neve
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Os dados de agricultor (vento hora a hora, humidade, solo) vêm só do Open-Meteo, que agora não responde. Quando o acesso voltar, a app descarrega-os e envia-te uma notificação.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	A humidade e a temperatura do solo são estimativas do modelo meteorológico, não medições · fonte: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatura: 
+Chance of rain: 	Probabilidade de chuva: 
+Day's low / high: 	Mínima / máxima do dia: 
+Speed: 	Velocidade: 
+Direction: from 	Direção: de 
+Change: it turns from 	Mudança: roda de 
+ to 	 para 
+Change: it keeps its direction for the next 12 hours	Mudança: mantém a direção nas próximas 12 horas
+Air and rain	Ar e chuva
+Air humidity: 	Humidade do ar: 
+Soil (estimated)	Solo (estimado)
+Soil moisture (3–9 cm): 	Humidade do solo (3–9 cm): 
+Soil temperature (surface): 	Temperatura do solo (superfície): 
+likely	provável
+possible	possível
+unlikely	pouco provável
+Amount: 	Quantidade: 
+Kind: 	Tipo: 
+showers 	aguaceiros 
+snow 	neve 
+Of which: 	Dos quais: 
+Cloud cover: 	Nebulosidade: 
+Until midnight: 	Até à meia-noite: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Fonte: Open-Meteo. A probabilidade diz quão provável é chover nessa hora, não quanto tempo chove.
+FARMER	AGRICULTOR

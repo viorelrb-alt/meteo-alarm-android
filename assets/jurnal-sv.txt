@@ -1,3 +1,10 @@
+v2.50 · 7 november 2026
+- Lantbruksläge: första posten i ☰ växlar mellan lantbruksläge och normalt läge. I lantbruksläget visar ett tryck på en timruta temperatur, dagens lägsta och högsta, vind med byar och riktning (och när den vrider), luftfuktighet, risk för regn, markfuktighet och marktemperatur; nederbördsdiagrammet och de fem dagarna ersätts av regnrutor per timme med detaljer vid tryck.
+- ☰ › Skiften: spara platsen där du står (GPS), justera den på OpenStreetMap-kartan och ge den ett namn; varje skifte har rutor för vind, riktning, regn, luft- och markfuktighet, mark- och lufttemperatur, varningar för regn och hård vind och statistik för en period inom de senaste 28 dagarna, som kan sparas som PDF i Hämtade filer.
+- Markdata är uppskattningar från Open-Meteo; om Open-Meteo inte svarar hämtar appen dem senare och skickar en avisering.
+- USA: klockan och timmarna visar den valda ortens lokala tid.
+- Aviseringar bara för den valda orten (i testläget) eller där telefonen är: inga fler varningar från USA när appen visar en ort i Europa.
+
 v2.40 · 4 november 2026
 - USA: ☰ › Tornadoes, en sida som Jordbävningar: tornadovarningarna för din ort och delstat, tornadorna som rapporterats i närheten de senaste 2 dagarna, antalet i hela landet och vad du ska göra.
 - USA: ingen Pollen-ruta (där finns inga data); luftkvaliteten som det amerikanska US AQI.

@@ -1,3 +1,10 @@
+v2.50 · 7. novembra 2026
+- Režim farmára: prvá položka ☰ prepína medzi režimom farmára a normálnym režimom. V režime farmára ťuknutie na hodinové políčko ukáže teplotu, minimum a maximum dňa, vietor s nárazmi a smerom (a kedy sa stočí), vlhkosť vzduchu, pravdepodobnosť dažďa, vlhkosť a teplotu pôdy; graf dažďa a päť dní nahrádzajú hodinové políčka dažďa s podrobnosťami po ťuknutí.
+- ☰ › Pozemky: ulož miesto, kde stojíš (GPS), dolaď ho na mape OpenStreetMap a pomenuj; každý pozemok má políčka pre vietor, smer, dážď, vlhkosť vzduchu a pôdy, teplotu pôdy a vzduchu, výstrahy na dážď a silný vietor a štatistiku za obdobie z posledných 28 dní, ktorú možno uložiť ako PDF do Stiahnutých.
+- Údaje o pôde sú odhady Open-Meteo; keď Open-Meteo neodpovedá, aplikácia ich stiahne neskôr a pošle ti upozornenie.
+- Spojené štáty: hodiny a časy ukazujú miestny čas vybranej obce.
+- Upozornenia len pre vybranú obec (v testovacom režime) alebo tam, kde je telefón: žiadne hlásenia z USA, keď aplikácia ukazuje obec v Európe.
+
 v2.40 · 4. novembra 2026
 - Spojené štáty: ☰ › Tornadoes, stránka ako Zemetrasenia: výstrahy pred tornádami pre tvoje miesto a štát, tornáda hlásené v okolí za posledné 2 dni, ich počet v celej krajine a čo robiť.
 - Spojené štáty: bez políčka Peľ (údaje tam nie sú); kvalita ovzdušia podľa amerického indexu US AQI.

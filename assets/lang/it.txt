@@ -382,3 +382,158 @@ Switch to the metric system?	Passare al sistema metrico?
 Metric	Metrico
 °C · metric system	°C · sistema metrico
 Keep °F	Resta su °F
+dry	secco
+moderate	moderato
+moist	umido
+very wet	molto bagnato
+Parcels	Appezzamenti
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Salvati solo su questo telefono, finché non li elimini. Le loro statistiche restano 28 giorni.
+Save the place here	Salva il luogo qui
+Choose on the map	Scegli sulla mappa
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Nessun appezzamento salvato. Mettiti sull'appezzamento e tocca «Salva il luogo qui», oppure sceglilo sulla mappa.
+alerts on	avvisi attivi
+wind 	vento 
+rain 	pioggia 
+soil 	suolo 
+updated 	aggiornato 
+Without location the place can only be chosen on the map.	Senza localizzazione il luogo si può scegliere solo sulla mappa.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Il telefono non permette notifiche all'app: gli avvisi non possono essere mostrati.
+Looking for the position (GPS)… stay outside, on the parcel.	Cerco la posizione (GPS)… resta all'aperto, sull'appezzamento.
+The position was not found.	La posizione non è stata trovata.
+The position was not found: move the map to the parcel.	La posizione non è stata trovata: sposta la mappa fino all'appezzamento.
+The position is approximate (±	La posizione è approssimativa (±
+ m): check the pin on the map.	 m): controlla lo spillo sulla mappa.
+New parcel	Nuovo appezzamento
+Move the pin	Sposta lo spillo
+Name, e.g. parcel 96/5	Nome, es. appezzamento 96/5
+move the map to put the pin on the parcel	sposta la mappa per mettere lo spillo sull'appezzamento
+My position	La mia posizione
+Give the parcel a name	Dai un nome all'appezzamento
+Downloading from Open-Meteo…	Scarico da Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo non risponde ora (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Quando l'accesso torna, l'app scarica i dati dell'appezzamento e ti manda una notifica.
+low 	min 
+high 	max 
+turns to 	gira verso 
+ around 	 verso le 
+steady for 12 hours	stabile per 12 ore
+today up to 	oggi fino a 
+Air temperature	Temperatura dell'aria
+gusts 	raffiche 
+Wind direction	Direzione del vento
+Chance of rain	Probabilità di pioggia
+Air humidity	Umidità dell'aria
+Soil moisture	Umidità del suolo
+3–9 cm, estimated	3–9 cm, stimata
+Soil temperature	Temperatura del suolo
+surface, estimated	superficie, stimata
+Next 12 hours	Prossime 12 ore
+Statistics (last 28 days)	Statistiche (ultimi 28 giorni)
+Move the pin on the map	Sposta lo spillo sulla mappa
+Rain / wind alerts: ON	Avvisi pioggia / vento: ATTIVI
+Rain / wind alerts: OFF	Avvisi pioggia / vento: DISATTIVI
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Ricevi una notifica quando su questo appezzamento sono previsti pioggia o vento forte nelle prossime 12 ore (controllo ogni 3 ore).
+Rename	Rinomina
+Delete the parcel	Elimina l'appezzamento
+Delete 	Eliminare 
+The parcel and its statistics are deleted from the phone.	L'appezzamento e le sue statistiche vengono eliminati dal telefono.
+Delete	Elimina
+Statistics · 	Statistiche · 
+Choose the period, within the last 28 days.	Scegli il periodo, negli ultimi 28 giorni.
+ days	 giorni
+To 	A 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Ancora nessun dato per questo periodo. Apri l'appezzamento una volta con internet: l'app scarica gli ultimi 28 giorni da Open-Meteo.
+Summary	Riepilogo
+Lowest / highest	Minima / massima
+Rain total	Pioggia totale
+ days with rain (1 mm+)	 giorni di pioggia (1 mm e più)
+Highest wind	Vento massimo
+gusts up to 	raffiche fino a 
+mean, estimated	media, stimata
+Day by day	Giorno per giorno
+Date	Data
+Max	Max
+Min	Min
+Soil	Suolo
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Fonte: Open-Meteo (modelli e stime per i giorni passati). Umidità del suolo a 3–9 cm, stimata.
+Save as PDF in Downloads	Salva PDF in Download
+The PDF could not be saved: 	Il PDF non è stato salvato: 
+PDF saved	PDF salvato
+In Downloads: 	In Download: 
+Open	Apri
+No app on the phone opens PDF files.	Nessuna app del telefono apre i file PDF.
+Max wind	Vento max
+Parcel statistics · 	Statistiche dell'appezzamento · 
+Coordinates: 	Coordinate: 
+Period: 	Periodo: 
+ days)	 giorni)
+Made on 	Creato il 
+Lowest temperature: 	Temperatura minima: 
+Highest temperature: 	Temperatura massima: 
+Rain total: 	Pioggia totale: 
+Highest wind: 	Vento massimo: 
+Mean soil moisture (3–9 cm, estimated): 	Umidità media del suolo (3–9 cm, stimata): 
+Source: Open-Meteo (open-meteo.com), weather models.	Fonte: Open-Meteo (open-meteo.com), modelli meteo.
+Soil moisture and soil temperature are estimates, not measurements.	Umidità e temperatura del suolo sono stime, non misure.
+Farmer mode	Modalità agricoltore
+Open-Meteo answers again: the farmer's data for 	Open-Meteo risponde di nuovo: i dati per agricoltori di 
+ have been downloaded.	 sono stati scaricati.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Dati agricoltore: Open-Meteo non risponde; riceverai una notifica quando arrivano
+Farmer mode: tap an hour or a rain box for details	Modalità agricoltore: tocca un'ora o una casella di pioggia per i dettagli
+Normal mode	Modalità normale
+Local time	Ora locale
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Per una località degli Stati Uniti l'orologio, le ore della previsione e le date mostrano l'ora locale della località, non quella del telefono (utile nella modalità di prova o quando guardi una località in un altro fuso orario).
+Farmer mode / Normal mode	Modalità agricoltore / Modalità normale
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	La prima voce di ☰ passa da una modalità all'altra; indica l'altra modalità. In modalità agricoltore temperatura e icona restano uguali, in basso compare AGRICOLTORE, le caselle orarie aprono i dettagli e il grafico delle precipitazioni e i cinque giorni lasciano il posto a una fila di caselle di pioggia ora per ora.
+Hour boxes	Caselle orarie
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Toccare un'ora apre una bolla: temperatura, minima e massima del giorno, velocità del vento e raffiche, direzione del vento e quando dovrebbe girare, umidità dell'aria, probabilità di pioggia, umidità del suolo (3–9 cm) e temperatura del suolo.
+Rain boxes	Caselle di pioggia
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Una casella per ora: la probabilità di pioggia in cifre grandi, una barra piena quanto la probabilità, la quantità e il tipo (pioggia, rovesci, neve, nevischio). Il tocco mostra i dettagli: quantità per tipo, nuvolosità, umidità e quanta pioggia cade fino a mezzanotte.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Appezzamenti (in modalità agricoltore). «Salva il luogo qui» prende la posizione GPS dove ti trovi; poi la mappa la mostra con uno spillo: sposta la mappa per mettere lo spillo esattamente sull'appezzamento e dagli un nome (es. appezzamento 96/5). «Scegli sulla mappa» salva un appezzamento da casa. Gli appezzamenti restano solo su questo telefono, finché non li elimini.
+A parcel's page	La pagina di un appezzamento
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Caselle separate per temperatura dell'aria, vento, direzione del vento, probabilità di pioggia, umidità dell'aria, umidità del suolo e temperatura del suolo, poi le prossime 12 ore. Pulsanti: statistiche, sposta lo spillo, avvisi pioggia / vento, rinomina, elimina.
+Statistics and PDF	Statistiche e PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Per un periodo scelto negli ultimi 28 giorni: per giorno la massima e la minima, la pioggia totale, il vento massimo e l'umidità media del suolo, più un riepilogo del periodo. «Salva PDF in Download» crea un file da stampare o inviare. Le statistiche restano 28 giorni.
+Parcel alerts	Avvisi dell'appezzamento
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Sulla pagina dell'appezzamento, avvisi ATTIVI: ogni 3 ore l'app guarda le prossime 12 ore e manda una notifica quando sono previsti pioggia (60% e 0,5 mm, o 1 mm) o vento forte (raffiche di 50 km/h); una notifica per episodio. Di notte, a schermo spento, il controllo aspetta lo schermo.
+Soil data and source	Dati del suolo e fonte
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Tutto per gli agricoltori viene da Open-Meteo. L'umidità del suolo (percentuale del volume, a 3–9 cm) e la temperatura del suolo sono stime del modello meteo, non misure; appezzamenti vicini (1–11 km) possono avere gli stessi valori. Se Open-Meteo non risponde, l'app lo dice, scarica i dati quando l'accesso torna e manda una notifica.
+The map	La mappa
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, gratuita e senza account (© OpenStreetMap contributors); serve internet. Un dito la sposta, due dita o un doppio tocco ingrandiscono; «La mia posizione» mostra dove sei con un punto blu. I pezzi di mappa restano sul telefono una settimana.
+Farmer · 	Agricoltore · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo risponde di nuovo: i dati dell'appezzamento sono stati scaricati.
+Rain expected from 	Pioggia prevista dalle 
+ in the next 12 hours	 nelle prossime 12 ore
+Rain · 	Pioggia · 
+Strong wind from 	Vento forte dalle 
+, gusts 	, raffiche 
+Wind · 	Vento · 
+showers	rovesci
+sleet	nevischio
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	I dati per agricoltori (vento orario, umidità, suolo) vengono solo da Open-Meteo, che ora non risponde. Quando l'accesso torna, l'app li scarica e ti manda una notifica.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Umidità e temperatura del suolo sono stime del modello meteo, non misure · fonte: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatura: 
+Chance of rain: 	Probabilità di pioggia: 
+Day's low / high: 	Minima / massima del giorno: 
+Speed: 	Velocità: 
+Direction: from 	Direzione: da 
+Change: it turns from 	Cambio: gira da 
+ to 	 a 
+Change: it keeps its direction for the next 12 hours	Cambio: mantiene la direzione per le prossime 12 ore
+Air and rain	Aria e pioggia
+Air humidity: 	Umidità dell'aria: 
+Soil (estimated)	Suolo (stimato)
+Soil moisture (3–9 cm): 	Umidità del suolo (3–9 cm): 
+Soil temperature (surface): 	Temperatura del suolo (superficie): 
+likely	probabile
+possible	possibile
+unlikely	poco probabile
+Amount: 	Quantità: 
+Kind: 	Tipo: 
+showers 	rovesci 
+snow 	neve 
+Of which: 	Di cui: 
+Cloud cover: 	Nuvolosità: 
+Until midnight: 	Fino a mezzanotte: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Fonte: Open-Meteo. La probabilità dice quanto è probabile che piova in quell'ora, non per quanto tempo.
+FARMER	AGRICOLTORE

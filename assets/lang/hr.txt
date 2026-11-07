@@ -382,3 +382,158 @@ Switch to the metric system?	Prijeći na metrički sustav?
 Metric	Metrički
 °C · metric system	°C · metrički sustav
 Keep °F	Zadrži °F
+dry	suho
+moderate	umjereno
+moist	vlažno
+very wet	vrlo mokro
+Parcels	Parcele
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Spremljene samo na ovom telefonu, dok ih ne izbrišeš. Statistika se čuva 28 dana.
+Save the place here	Spremi mjesto ovdje
+Choose on the map	Odaberi na karti
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Još nema spremljenih parcela. Stani na parcelu i dodirni „Spremi mjesto ovdje” ili je odaberi na karti.
+alerts on	upozorenja uključena
+wind 	vjetar 
+rain 	kiša 
+soil 	tlo 
+updated 	ažurirano 
+Without location the place can only be chosen on the map.	Bez lokacije mjesto se može odabrati samo na karti.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Telefon aplikaciji ne dopušta obavijesti: upozorenja se ne mogu prikazati.
+Looking for the position (GPS)… stay outside, on the parcel.	Tražim položaj (GPS)… ostani vani, na parceli.
+The position was not found.	Položaj nije pronađen.
+The position was not found: move the map to the parcel.	Položaj nije pronađen: pomakni kartu do parcele.
+The position is approximate (±	Položaj je približan (±
+ m): check the pin on the map.	 m): provjeri pribadaču na karti.
+New parcel	Nova parcela
+Move the pin	Pomakni pribadaču
+Name, e.g. parcel 96/5	Naziv, npr. parcela 96/5
+move the map to put the pin on the parcel	pomakni kartu da pribadača bude na parceli
+My position	Moj položaj
+Give the parcel a name	Daj parceli naziv
+Downloading from Open-Meteo…	Preuzimam s Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo trenutno ne odgovara (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Kad se pristup vrati, aplikacija preuzima podatke parcele i šalje ti obavijest.
+low 	min 
+high 	maks 
+turns to 	okreće se prema 
+ around 	 oko 
+steady for 12 hours	stalan 12 sati
+today up to 	danas do 
+Air temperature	Temperatura zraka
+gusts 	udari 
+Wind direction	Smjer vjetra
+Chance of rain	Vjerojatnost kiše
+Air humidity	Vlažnost zraka
+Soil moisture	Vlažnost tla
+3–9 cm, estimated	3–9 cm, procjena
+Soil temperature	Temperatura tla
+surface, estimated	površina, procjena
+Next 12 hours	Sljedećih 12 sati
+Statistics (last 28 days)	Statistika (zadnjih 28 dana)
+Move the pin on the map	Pomakni pribadaču na karti
+Rain / wind alerts: ON	Upozorenja kiša / vjetar: UKLJ.
+Rain / wind alerts: OFF	Upozorenja kiša / vjetar: ISKLJ.
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Dobit ćeš obavijest kad se za ovu parcelu u sljedećih 12 sati prognozira kiša ili jak vjetar (provjera svaka 3 sata).
+Rename	Preimenuj
+Delete the parcel	Izbriši parcelu
+Delete 	Izbrisati 
+The parcel and its statistics are deleted from the phone.	Parcela i njezina statistika brišu se s telefona.
+Delete	Izbriši
+Statistics · 	Statistika · 
+Choose the period, within the last 28 days.	Odaberi razdoblje unutar zadnjih 28 dana.
+ days	 dana
+To 	Do 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Za ovo razdoblje još nema podataka. Otvori parcelu jednom s internetom: aplikacija preuzima zadnjih 28 dana s Open-Meteo.
+Summary	Sažetak
+Lowest / highest	Najniža / najviša
+Rain total	Ukupno kiše
+ days with rain (1 mm+)	 dana s kišom (od 1 mm)
+Highest wind	Najjači vjetar
+gusts up to 	udari do 
+mean, estimated	prosjek, procjena
+Day by day	Dan po dan
+Date	Datum
+Max	Maks
+Min	Min
+Soil	Tlo
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Izvor: Open-Meteo (modeli i procjene za prošle dane). Vlažnost tla na dubini 3–9 cm, procjena.
+Save as PDF in Downloads	Spremi PDF u Preuzimanja
+The PDF could not be saved: 	PDF nije spremljen: 
+PDF saved	PDF spremljen
+In Downloads: 	U Preuzimanjima: 
+Open	Otvori
+No app on the phone opens PDF files.	Nijedna aplikacija na telefonu ne otvara PDF datoteke.
+Max wind	Maks. vjetar
+Parcel statistics · 	Statistika parcele · 
+Coordinates: 	Koordinate: 
+Period: 	Razdoblje: 
+ days)	 dana)
+Made on 	Izrađeno 
+Lowest temperature: 	Najniža temperatura: 
+Highest temperature: 	Najviša temperatura: 
+Rain total: 	Ukupno kiše: 
+Highest wind: 	Najjači vjetar: 
+Mean soil moisture (3–9 cm, estimated): 	Prosječna vlažnost tla (3–9 cm, procjena): 
+Source: Open-Meteo (open-meteo.com), weather models.	Izvor: Open-Meteo (open-meteo.com), vremenski modeli.
+Soil moisture and soil temperature are estimates, not measurements.	Vlažnost i temperatura tla su procjene, ne mjerenja.
+Farmer mode	Način poljoprivrednika
+Open-Meteo answers again: the farmer's data for 	Open-Meteo ponovno odgovara: podaci za poljoprivrednike za 
+ have been downloaded.	 su preuzeti.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Podaci za poljoprivrednike: Open-Meteo ne odgovara; dobit ćeš obavijest kad stignu
+Farmer mode: tap an hour or a rain box for details	Način poljoprivrednika: dodirni sat ili polje kiše za pojedinosti
+Normal mode	Normalni način
+Local time	Lokalno vrijeme
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Za mjesto u SAD-u sat, sati prognoze i datumi pokazuju lokalno vrijeme mjesta, a ne telefona (korisno u testnom načinu ili kad gledaš mjesto u drugoj vremenskoj zoni).
+Farmer mode / Normal mode	Način poljoprivrednika / Normalni način
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Prva stavka ☰ prebacuje između dva načina; prikazuje drugi način. U načinu poljoprivrednika temperatura i ikona ostaju iste, dolje piše POLJOPRIVREDNIK, satna polja otvaraju pojedinosti, a umjesto grafa oborina i pet dana dolazi red satnih polja kiše.
+Hour boxes	Satna polja
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Dodir sata otvara oblačić: temperatura, najniža i najviša dana, brzina vjetra i udari, smjer vjetra i kad bi se trebao okrenuti, vlažnost zraka, vjerojatnost kiše, vlažnost tla (3–9 cm) i temperatura tla.
+Rain boxes	Polja kiše
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Jedno polje po satu: vjerojatnost kiše velikim brojkama, traka puna koliko vjerojatnost, količina i vrsta (kiša, pljuskovi, snijeg, susnježica). Dodir prikazuje pojedinosti: količinu po vrsti, naoblaku, vlažnost i koliko kiše padne do ponoći.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Parcele (u načinu poljoprivrednika). „Spremi mjesto ovdje” uzima GPS položaj na kojem stojiš; zatim ga karta prikazuje s pribadačom: pomakni kartu da pribadača bude točno na parceli i daj joj naziv (npr. parcela 96/5). „Odaberi na karti” sprema parcelu od kuće. Parcele ostaju samo na ovom telefonu, dok ih ne izbrišeš.
+A parcel's page	Stranica parcele
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Zasebna polja za temperaturu zraka, vjetar, smjer vjetra, vjerojatnost kiše, vlažnost zraka, vlažnost tla i temperaturu tla, zatim sljedećih 12 sati. Gumbi: statistika, pomakni pribadaču, upozorenja kiša / vjetar, preimenuj, izbriši.
+Statistics and PDF	Statistika i PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Za odabrano razdoblje unutar zadnjih 28 dana: po danu najviša i najniža, ukupna kiša, najjači vjetar i prosječna vlažnost tla, uz sažetak razdoblja. „Spremi PDF u Preuzimanja” stvara datoteku za ispis ili slanje. Statistika se čuva 28 dana.
+Parcel alerts	Upozorenja parcele
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Na stranici parcele, upozorenja UKLJ.: svaka 3 sata aplikacija gleda sljedećih 12 sati i šalje obavijest kad se prognozira kiša (60 % i 0,5 mm, ili 1 mm) ili jak vjetar (udari od 50 km/h); jedna obavijest po epizodi. Noću, s ugašenim zaslonom, provjera čeka zaslon.
+Soil data and source	Podaci o tlu i izvor
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Sve za poljoprivrednike dolazi s Open-Meteo. Vlažnost tla (postotak volumena, 3–9 cm) i temperatura tla su procjene vremenskog modela, ne mjerenja; obližnje parcele (1–11 km) mogu imati iste vrijednosti. Kad Open-Meteo ne odgovara, aplikacija to kaže, preuzima podatke kad se pristup vrati i šalje obavijest.
+The map	Karta
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, besplatna i bez računa (© OpenStreetMap contributors); treba internet. Jedan prst je pomiče, dva prsta ili dvostruki dodir povećavaju; „Moj položaj” plavom točkom pokazuje gdje si. Dijelovi karte ostaju na telefonu tjedan dana.
+Farmer · 	Poljoprivrednik · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo ponovno odgovara: podaci parcele su preuzeti.
+Rain expected from 	Kiša se očekuje od 
+ in the next 12 hours	 u sljedećih 12 sati
+Rain · 	Kiša · 
+Strong wind from 	Jak vjetar od 
+, gusts 	, udari 
+Wind · 	Vjetar · 
+showers	pljuskovi
+sleet	susnježica
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Podaci za poljoprivrednike (satni vjetar, vlažnost, tlo) dolaze samo s Open-Meteo, koji trenutno ne odgovara. Kad se pristup vrati, aplikacija ih preuzima i šalje ti obavijest.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Vlažnost i temperatura tla su procjene vremenskog modela, ne mjerenja · izvor: Open-Meteo (open-meteo.com).
+Temperature: 	Temperatura: 
+Chance of rain: 	Vjerojatnost kiše: 
+Day's low / high: 	Najniža / najviša dana: 
+Speed: 	Brzina: 
+Direction: from 	Smjer: od 
+Change: it turns from 	Promjena: okreće se od 
+ to 	 prema 
+Change: it keeps its direction for the next 12 hours	Promjena: zadržava smjer sljedećih 12 sati
+Air and rain	Zrak i kiša
+Air humidity: 	Vlažnost zraka: 
+Soil (estimated)	Tlo (procjena)
+Soil moisture (3–9 cm): 	Vlažnost tla (3–9 cm): 
+Soil temperature (surface): 	Temperatura tla (površina): 
+likely	vjerojatna
+possible	moguća
+unlikely	malo vjerojatna
+Amount: 	Količina: 
+Kind: 	Vrsta: 
+showers 	pljuskovi 
+snow 	snijeg 
+Of which: 	Od toga: 
+Cloud cover: 	Naoblaka: 
+Until midnight: 	Do ponoći: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Izvor: Open-Meteo. Vjerojatnost kaže koliko je vjerojatno da u tom satu pada kiša, a ne koliko dugo.
+FARMER	POLJOPRIVREDNIK

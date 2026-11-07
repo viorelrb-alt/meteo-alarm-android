@@ -382,3 +382,158 @@ Switch to the metric system?	Prepnúť na metrickú sústavu?
 Metric	Metrická
 °C · metric system	°C · metrická sústava
 Keep °F	Ponechať °F
+dry	sucho
+moderate	stredne
+moist	vlhko
+very wet	veľmi mokro
+Parcels	Pozemky
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Uložené len v tomto telefóne, kým ich nevymažeš. Štatistika sa uchováva 28 dní.
+Save the place here	Uložiť miesto tu
+Choose on the map	Vybrať na mape
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Zatiaľ žiadny uložený pozemok. Postav sa na pozemok a ťukni na „Uložiť miesto tu“, alebo ho vyber na mape.
+alerts on	upozornenia zapnuté
+wind 	vietor 
+rain 	dážď 
+soil 	pôda 
+updated 	aktualizované 
+Without location the place can only be chosen on the map.	Bez polohy sa miesto dá vybrať len na mape.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Telefón aplikácii nepovoľuje upozornenia: výstrahy sa nedajú zobraziť.
+Looking for the position (GPS)… stay outside, on the parcel.	Hľadám polohu (GPS)… zostaň vonku, na pozemku.
+The position was not found.	Poloha sa nenašla.
+The position was not found: move the map to the parcel.	Poloha sa nenašla: posuň mapu k pozemku.
+The position is approximate (±	Poloha je približná (±
+ m): check the pin on the map.	 m): skontroluj špendlík na mape.
+New parcel	Nový pozemok
+Move the pin	Posunúť špendlík
+Name, e.g. parcel 96/5	Názov, napr. pozemok 96/5
+move the map to put the pin on the parcel	posuň mapu tak, aby bol špendlík na pozemku
+My position	Moja poloha
+Give the parcel a name	Daj pozemku názov
+Downloading from Open-Meteo…	Sťahujem z Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo teraz neodpovedá (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Keď sa prístup vráti, aplikácia stiahne údaje pozemku a pošle ti upozornenie.
+low 	min 
+high 	max 
+turns to 	stočí sa na 
+ around 	 okolo 
+steady for 12 hours	stály 12 hodín
+today up to 	dnes až 
+Air temperature	Teplota vzduchu
+gusts 	nárazy 
+Wind direction	Smer vetra
+Chance of rain	Pravdepodobnosť dažďa
+Air humidity	Vlhkosť vzduchu
+Soil moisture	Vlhkosť pôdy
+3–9 cm, estimated	3–9 cm, odhad
+Soil temperature	Teplota pôdy
+surface, estimated	povrch, odhad
+Next 12 hours	Ďalších 12 hodín
+Statistics (last 28 days)	Štatistika (posledných 28 dní)
+Move the pin on the map	Posunúť špendlík na mape
+Rain / wind alerts: ON	Výstrahy dážď / vietor: ZAP
+Rain / wind alerts: OFF	Výstrahy dážď / vietor: VYP
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Dostaneš upozornenie, keď sa pre tento pozemok v najbližších 12 hodinách predpovedá dážď alebo silný vietor (kontrola každé 3 hodiny).
+Rename	Premenovať
+Delete the parcel	Vymazať pozemok
+Delete 	Vymazať 
+The parcel and its statistics are deleted from the phone.	Pozemok a jeho štatistika sa z telefónu vymažú.
+Delete	Vymazať
+Statistics · 	Štatistika · 
+Choose the period, within the last 28 days.	Vyber obdobie v posledných 28 dňoch.
+ days	 dní
+To 	Do 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Pre toto obdobie zatiaľ nie sú údaje. Otvor pozemok raz s internetom: aplikácia stiahne posledných 28 dní z Open-Meteo.
+Summary	Zhrnutie
+Lowest / highest	Najnižšia / najvyššia
+Rain total	Zrážky spolu
+ days with rain (1 mm+)	 dní s dažďom (od 1 mm)
+Highest wind	Najsilnejší vietor
+gusts up to 	nárazy do 
+mean, estimated	priemer, odhad
+Day by day	Deň po dni
+Date	Dátum
+Max	Max
+Min	Min
+Soil	Pôda
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Zdroj: Open-Meteo (modely a odhady pre minulé dni). Vlhkosť pôdy v hĺbke 3–9 cm, odhad.
+Save as PDF in Downloads	Uložiť PDF do Stiahnutých
+The PDF could not be saved: 	PDF sa nepodarilo uložiť: 
+PDF saved	PDF uložené
+In Downloads: 	V Stiahnutých: 
+Open	Otvoriť
+No app on the phone opens PDF files.	Žiadna aplikácia v telefóne neotvára súbory PDF.
+Max wind	Max. vietor
+Parcel statistics · 	Štatistika pozemku · 
+Coordinates: 	Súradnice: 
+Period: 	Obdobie: 
+ days)	 dní)
+Made on 	Vytvorené 
+Lowest temperature: 	Najnižšia teplota: 
+Highest temperature: 	Najvyššia teplota: 
+Rain total: 	Zrážky spolu: 
+Highest wind: 	Najsilnejší vietor: 
+Mean soil moisture (3–9 cm, estimated): 	Priemerná vlhkosť pôdy (3–9 cm, odhad): 
+Source: Open-Meteo (open-meteo.com), weather models.	Zdroj: Open-Meteo (open-meteo.com), meteorologické modely.
+Soil moisture and soil temperature are estimates, not measurements.	Vlhkosť a teplota pôdy sú odhady, nie merania.
+Farmer mode	Režim farmára
+Open-Meteo answers again: the farmer's data for 	Open-Meteo opäť odpovedá: údaje pre farmárov pre 
+ have been downloaded.	 boli stiahnuté.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Údaje farmára: Open-Meteo neodpovedá; keď prídu, dostaneš upozornenie
+Farmer mode: tap an hour or a rain box for details	Režim farmára: ťukni na hodinu alebo políčko dažďa pre podrobnosti
+Normal mode	Normálny režim
+Local time	Miestny čas
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Pri obci v USA ukazujú hodiny, hodiny predpovede a dátumy miestny čas obce, nie čas telefónu (užitočné v testovacom režime alebo keď sa pozeráš na obec v inom časovom pásme).
+Farmer mode / Normal mode	Režim farmára / Normálny režim
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Prvá položka ☰ prepína medzi oboma režimami; ukazuje ten druhý. V režime farmára zostáva teplota aj ikona rovnaká, dole je FARMÁR, hodinové políčka otvárajú podrobnosti a namiesto grafu zrážok a piatich dní je rad hodinových políčok dažďa.
+Hour boxes	Hodinové políčka
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Ťuknutie na hodinu otvorí bublinu: teplota, minimum a maximum dňa, rýchlosť vetra a nárazy, smer vetra a kedy sa má stočiť, vlhkosť vzduchu, pravdepodobnosť dažďa, vlhkosť pôdy (3–9 cm) a teplota pôdy.
+Rain boxes	Políčka dažďa
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Jedno políčko za hodinu: pravdepodobnosť dažďa veľkými číslicami, pruh plný podľa pravdepodobnosti, množstvo a druh (dážď, prehánky, sneh, dážď so snehom). Ťuknutie ukáže podrobnosti: množstvo podľa druhu, oblačnosť, vlhkosť a koľko dažďa spadne do polnoci.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Pozemky (v režime farmára). „Uložiť miesto tu“ vezme polohu GPS, kde stojíš; potom ju mapa ukáže so špendlíkom: posuň mapu, aby bol špendlík presne na pozemku, a daj mu názov (napr. pozemok 96/5). „Vybrať na mape“ uloží pozemok z domu. Pozemky zostávajú len v tomto telefóne, kým ich nevymažeš.
+A parcel's page	Stránka pozemku
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Samostatné políčka pre teplotu vzduchu, vietor, smer vetra, pravdepodobnosť dažďa, vlhkosť vzduchu, vlhkosť pôdy a teplotu pôdy, potom ďalších 12 hodín. Tlačidlá: štatistika, posunúť špendlík, výstrahy dážď / vietor, premenovať, vymazať.
+Statistics and PDF	Štatistika a PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Pre vybrané obdobie z posledných 28 dní: za každý deň maximum a minimum, zrážky spolu, najsilnejší vietor a priemerná vlhkosť pôdy, plus zhrnutie obdobia. „Uložiť PDF do Stiahnutých“ vytvorí súbor na tlač alebo odoslanie. Štatistika sa uchováva 28 dní.
+Parcel alerts	Výstrahy pozemku
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Na stránke pozemku, výstrahy ZAP: každé 3 hodiny sa aplikácia pozrie na ďalších 12 hodín a pošle upozornenie, keď sa predpovedá dážď (60 % a 0,5 mm, alebo 1 mm) alebo silný vietor (nárazy 50 km/h); jedno upozornenie na epizódu. V noci pri vypnutej obrazovke kontrola čaká na obrazovku.
+Soil data and source	Údaje o pôde a zdroj
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Všetko pre farmárov pochádza z Open-Meteo. Vlhkosť pôdy (percento objemu, 3–9 cm) a teplota pôdy sú odhady meteorologického modelu, nie merania; blízke pozemky (1–11 km) môžu mať rovnaké hodnoty. Keď Open-Meteo neodpovedá, aplikácia to povie, stiahne údaje po návrate prístupu a pošle upozornenie.
+The map	Mapa
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, zadarmo a bez účtu (© OpenStreetMap contributors); potrebuje internet. Jeden prst ju posúva, dva prsty alebo dvojité ťuknutie zväčšujú; „Moja poloha“ ukáže modrou bodkou, kde si. Kúsky mapy zostávajú v telefóne týždeň.
+Farmer · 	Farmár · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo opäť odpovedá: údaje pozemku boli stiahnuté.
+Rain expected from 	Dážď očakávaný od 
+ in the next 12 hours	 v najbližších 12 hodinách
+Rain · 	Dážď · 
+Strong wind from 	Silný vietor od 
+, gusts 	, nárazy 
+Wind · 	Vietor · 
+showers	prehánky
+sleet	dážď so snehom
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Údaje pre farmárov (hodinový vietor, vlhkosť, pôda) prichádzajú len z Open-Meteo, ktoré teraz neodpovedá. Keď sa prístup vráti, aplikácia ich stiahne a pošle ti upozornenie.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Vlhkosť a teplota pôdy sú odhady meteorologického modelu, nie merania · zdroj: Open-Meteo (open-meteo.com).
+Temperature: 	Teplota: 
+Chance of rain: 	Pravdepodobnosť dažďa: 
+Day's low / high: 	Minimum / maximum dňa: 
+Speed: 	Rýchlosť: 
+Direction: from 	Smer: od 
+Change: it turns from 	Zmena: stočí sa od 
+ to 	 na 
+Change: it keeps its direction for the next 12 hours	Zmena: drží smer ďalších 12 hodín
+Air and rain	Vzduch a dážď
+Air humidity: 	Vlhkosť vzduchu: 
+Soil (estimated)	Pôda (odhad)
+Soil moisture (3–9 cm): 	Vlhkosť pôdy (3–9 cm): 
+Soil temperature (surface): 	Teplota pôdy (povrch): 
+likely	pravdepodobný
+possible	možný
+unlikely	nepravdepodobný
+Amount: 	Množstvo: 
+Kind: 	Druh: 
+showers 	prehánky 
+snow 	sneh 
+Of which: 	Z toho: 
+Cloud cover: 	Oblačnosť: 
+Until midnight: 	Do polnoci: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Zdroj: Open-Meteo. Pravdepodobnosť hovorí, ako pravdepodobne v tej hodine prší, nie ako dlho.
+FARMER	FARMÁR

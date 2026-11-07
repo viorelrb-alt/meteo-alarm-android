@@ -1,3 +1,10 @@
+v2.50 · 7. november 2026
+- Način kmeta: prvi element ☰ preklaplja med načinom kmeta in običajnim načinom. V načinu kmeta tap na urno polje pokaže temperaturo, najnižjo in najvišjo dneva, veter s sunki in smerjo (in kdaj se obrne), vlažnost zraka, verjetnost dežja, vlažnost in temperaturo tal; graf dežja in pet dni nadomestijo urna polja dežja s podrobnostmi ob tapu.
+- ☰ › Parcele: shrani kraj, kjer stojiš (GPS), ga popravi na zemljevidu OpenStreetMap in poimenuj; vsaka parcela ima polja za veter, smer, dež, vlažnost zraka in tal, temperaturo tal in zraka, opozorila za dež in močan veter ter statistiko za obdobje zadnjih 28 dni, ki jo lahko shraniš kot PDF v Prenose.
+- Podatki o tleh so ocene Open-Meteo; ko Open-Meteo ne odgovarja, jih aplikacija prenese pozneje in ti pošlje obvestilo.
+- Združene države: ura in ure kažejo krajevni čas izbranega kraja.
+- Obvestila samo za izbrani kraj (v preizkusnem načinu) ali tam, kjer je telefon: nič več sporočil iz ZDA, ko aplikacija kaže kraj v Evropi.
+
 v2.40 · 4. november 2026
 - Združene države: ☰ › Tornadoes, stran kot Potresi: opozorila pred tornadi za tvoj kraj in zvezno državo, tornadi, prijavljeni v bližini v zadnjih 2 dneh, njihovo število v vsej državi in kaj storiti.
 - Združene države: brez okvirja Cvetni prah (tam ni podatkov); kakovost zraka po ameriškem indeksu US AQI.

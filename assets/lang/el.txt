@@ -382,3 +382,158 @@ Switch to the metric system?	Μετάβαση στο μετρικό σύστημ
 Metric	Μετρικό
 °C · metric system	°C · μετρικό σύστημα
 Keep °F	Παραμονή στους °F
+dry	ξηρό
+moderate	μέτριο
+moist	υγρό
+very wet	πολύ υγρό
+Parcels	Αγροτεμάχια
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Αποθηκεύονται μόνο σε αυτό το τηλέφωνο, μέχρι να τα διαγράψεις. Τα στατιστικά κρατιούνται 28 ημέρες.
+Save the place here	Αποθήκευση του σημείου εδώ
+Choose on the map	Επιλογή στον χάρτη
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Δεν έχει αποθηκευτεί κανένα αγροτεμάχιο. Στάσου στο αγροτεμάχιο και πάτησε «Αποθήκευση του σημείου εδώ» ή διάλεξέ το στον χάρτη.
+alerts on	ειδοποιήσεις ενεργές
+wind 	άνεμος 
+rain 	βροχή 
+soil 	έδαφος 
+updated 	ενημέρωση 
+Without location the place can only be chosen on the map.	Χωρίς τοποθεσία, το σημείο μπορεί να επιλεγεί μόνο στον χάρτη.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Το τηλέφωνο δεν επιτρέπει ειδοποιήσεις στην εφαρμογή: οι ειδοποιήσεις δεν μπορούν να εμφανιστούν.
+Looking for the position (GPS)… stay outside, on the parcel.	Αναζήτηση θέσης (GPS)… μείνε έξω, στο αγροτεμάχιο.
+The position was not found.	Η θέση δεν βρέθηκε.
+The position was not found: move the map to the parcel.	Η θέση δεν βρέθηκε: μετακίνησε τον χάρτη στο αγροτεμάχιο.
+The position is approximate (±	Η θέση είναι κατά προσέγγιση (±
+ m): check the pin on the map.	 m): έλεγξε την καρφίτσα στον χάρτη.
+New parcel	Νέο αγροτεμάχιο
+Move the pin	Μετακίνηση καρφίτσας
+Name, e.g. parcel 96/5	Όνομα, π.χ. αγροτεμάχιο 96/5
+move the map to put the pin on the parcel	μετακίνησε τον χάρτη ώστε η καρφίτσα να είναι στο αγροτεμάχιο
+My position	Η θέση μου
+Give the parcel a name	Δώσε όνομα στο αγροτεμάχιο
+Downloading from Open-Meteo…	Λήψη από το Open-Meteo…
+Open-Meteo is not answering now (	Το Open-Meteo δεν απαντά τώρα (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Όταν επανέλθει η πρόσβαση, η εφαρμογή κατεβάζει τα δεδομένα του αγροτεμαχίου και σου στέλνει ειδοποίηση.
+low 	ελάχ. 
+high 	μέγ. 
+turns to 	γυρίζει προς 
+ around 	 γύρω στις 
+steady for 12 hours	σταθερή για 12 ώρες
+today up to 	σήμερα έως 
+Air temperature	Θερμοκρασία αέρα
+gusts 	ριπές 
+Wind direction	Κατεύθυνση ανέμου
+Chance of rain	Πιθανότητα βροχής
+Air humidity	Υγρασία αέρα
+Soil moisture	Υγρασία εδάφους
+3–9 cm, estimated	3–9 cm, εκτίμηση
+Soil temperature	Θερμοκρασία εδάφους
+surface, estimated	επιφάνεια, εκτίμηση
+Next 12 hours	Επόμενες 12 ώρες
+Statistics (last 28 days)	Στατιστικά (τελευταίες 28 ημέρες)
+Move the pin on the map	Μετακίνηση καρφίτσας στον χάρτη
+Rain / wind alerts: ON	Ειδοποιήσεις βροχής / ανέμου: ΝΑΙ
+Rain / wind alerts: OFF	Ειδοποιήσεις βροχής / ανέμου: ΟΧΙ
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Θα λαμβάνεις ειδοποίηση όταν προβλέπεται βροχή ή ισχυρός άνεμος σε αυτό το αγροτεμάχιο τις επόμενες 12 ώρες (έλεγχος κάθε 3 ώρες).
+Rename	Μετονομασία
+Delete the parcel	Διαγραφή αγροτεμαχίου
+Delete 	Διαγραφή: 
+The parcel and its statistics are deleted from the phone.	Το αγροτεμάχιο και τα στατιστικά του διαγράφονται από το τηλέφωνο.
+Delete	Διαγραφή
+Statistics · 	Στατιστικά · 
+Choose the period, within the last 28 days.	Διάλεξε την περίοδο, μέσα στις τελευταίες 28 ημέρες.
+ days	 ημέρες
+To 	Έως 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Δεν υπάρχουν ακόμη δεδομένα για αυτή την περίοδο. Άνοιξε το αγροτεμάχιο μία φορά με ίντερνετ: η εφαρμογή κατεβάζει τις τελευταίες 28 ημέρες από το Open-Meteo.
+Summary	Σύνοψη
+Lowest / highest	Ελάχιστη / μέγιστη
+Rain total	Συνολική βροχή
+ days with rain (1 mm+)	 ημέρες με βροχή (1 mm+)
+Highest wind	Ισχυρότερος άνεμος
+gusts up to 	ριπές έως 
+mean, estimated	μέση, εκτίμηση
+Day by day	Μέρα με τη μέρα
+Date	Ημερομηνία
+Max	Μέγ.
+Min	Ελάχ.
+Soil	Έδαφος
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Πηγή: Open-Meteo (μοντέλα και εκτιμήσεις για τις περασμένες ημέρες). Υγρασία εδάφους σε βάθος 3–9 cm, εκτίμηση.
+Save as PDF in Downloads	Αποθήκευση PDF στις Λήψεις
+The PDF could not be saved: 	Το PDF δεν αποθηκεύτηκε: 
+PDF saved	Το PDF αποθηκεύτηκε
+In Downloads: 	Στις Λήψεις: 
+Open	Άνοιγμα
+No app on the phone opens PDF files.	Καμία εφαρμογή του τηλεφώνου δεν ανοίγει αρχεία PDF.
+Max wind	Μέγ. άνεμος
+Parcel statistics · 	Στατιστικά αγροτεμαχίου · 
+Coordinates: 	Συντεταγμένες: 
+Period: 	Περίοδος: 
+ days)	 ημέρες)
+Made on 	Δημιουργήθηκε 
+Lowest temperature: 	Ελάχιστη θερμοκρασία: 
+Highest temperature: 	Μέγιστη θερμοκρασία: 
+Rain total: 	Συνολική βροχή: 
+Highest wind: 	Ισχυρότερος άνεμος: 
+Mean soil moisture (3–9 cm, estimated): 	Μέση υγρασία εδάφους (3–9 cm, εκτίμηση): 
+Source: Open-Meteo (open-meteo.com), weather models.	Πηγή: Open-Meteo (open-meteo.com), μετεωρολογικά μοντέλα.
+Soil moisture and soil temperature are estimates, not measurements.	Η υγρασία και η θερμοκρασία του εδάφους είναι εκτιμήσεις, όχι μετρήσεις.
+Farmer mode	Λειτουργία αγρότη
+Open-Meteo answers again: the farmer's data for 	Το Open-Meteo απαντά ξανά: τα δεδομένα αγρότη για 
+ have been downloaded.	 κατέβηκαν.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Δεδομένα αγρότη: το Open-Meteo δεν απαντά· θα λάβεις ειδοποίηση όταν έρθουν
+Farmer mode: tap an hour or a rain box for details	Λειτουργία αγρότη: πάτησε μια ώρα ή ένα πλαίσιο βροχής για λεπτομέρειες
+Normal mode	Κανονική λειτουργία
+Local time	Τοπική ώρα
+For a US town the clock, the hours of the forecast and the dates show the town's local time, not the phone's (useful in the test mode or when you look at a town in another time zone).	Για πόλη των ΗΠΑ, το ρολόι, οι ώρες της πρόγνωσης και οι ημερομηνίες δείχνουν την τοπική ώρα της πόλης, όχι του τηλεφώνου (χρήσιμο στη δοκιμαστική λειτουργία ή όταν βλέπεις πόλη σε άλλη ζώνη ώρας).
+Farmer mode / Normal mode	Λειτουργία αγρότη / Κανονική λειτουργία
+The first item of ☰ switches between the two modes; it names the other mode. In farmer mode the temperature and the icon stay the same, FARMER shows at the bottom, the hour boxes open details and the precipitation chart and the five days give way to a row of hourly rain boxes.	Το πρώτο στοιχείο του ☰ αλλάζει ανάμεσα στις δύο λειτουργίες· δείχνει την άλλη λειτουργία. Στη λειτουργία αγρότη η θερμοκρασία και το εικονίδιο μένουν ίδια, κάτω γράφει ΑΓΡΟΤΗΣ, τα ωριαία πλαίσια ανοίγουν λεπτομέρειες και το διάγραμμα υετού και οι πέντε ημέρες δίνουν τη θέση τους σε μια σειρά ωριαίων πλαισίων βροχής.
+Hour boxes	Ωριαία πλαίσια
+A tap on an hour opens a bubble: temperature, the day's low and high, wind speed and gusts, wind direction and when it is expected to turn, air humidity, chance of rain, soil moisture (3–9 cm) and soil temperature.	Πατώντας μια ώρα ανοίγει ένα συννεφάκι: θερμοκρασία, ελάχιστη και μέγιστη της ημέρας, ταχύτητα ανέμου και ριπές, κατεύθυνση ανέμου και πότε αναμένεται να γυρίσει, υγρασία αέρα, πιθανότητα βροχής, υγρασία εδάφους (3–9 cm) και θερμοκρασία εδάφους.
+Rain boxes	Πλαίσια βροχής
+One box per hour: the chance of rain in big digits, a bar as full as the chance, the amount and the kind (rain, showers, snow, sleet). A tap shows the details: amount by kind, cloud cover, humidity and how much rain until midnight.	Ένα πλαίσιο ανά ώρα: η πιθανότητα βροχής με μεγάλα ψηφία, μια μπάρα γεμάτη όσο η πιθανότητα, η ποσότητα και το είδος (βροχή, μπόρες, χιόνι, χιονόνερο). Το πάτημα δείχνει λεπτομέρειες: ποσότητα ανά είδος, νεφοκάλυψη, υγρασία και πόση βροχή πέφτει ως τα μεσάνυχτα.
+☰ › Parcels (in farmer mode). “Save the place here” takes the GPS position where you stand; the map then shows it with a pin: move the map to put the pin exactly on the parcel and give it a name (e.g. parcel 96/5). “Choose on the map” saves a parcel from home. Parcels stay only on this phone, until you delete them.	☰ › Αγροτεμάχια (στη λειτουργία αγρότη). Το «Αποθήκευση του σημείου εδώ» παίρνει τη θέση GPS όπου στέκεσαι· μετά ο χάρτης τη δείχνει με καρφίτσα: μετακίνησε τον χάρτη ώστε η καρφίτσα να είναι ακριβώς στο αγροτεμάχιο και δώσε του όνομα (π.χ. αγροτεμάχιο 96/5). Το «Επιλογή στον χάρτη» αποθηκεύει αγροτεμάχιο από το σπίτι. Τα αγροτεμάχια μένουν μόνο σε αυτό το τηλέφωνο, μέχρι να τα διαγράψεις.
+A parcel's page	Η σελίδα ενός αγροτεμαχίου
+Separate boxes for air temperature, wind, wind direction, chance of rain, air humidity, soil moisture and soil temperature, then the next 12 hours. Buttons: statistics, move the pin, rain / wind alerts, rename, delete.	Χωριστά πλαίσια για θερμοκρασία αέρα, άνεμο, κατεύθυνση ανέμου, πιθανότητα βροχής, υγρασία αέρα, υγρασία εδάφους και θερμοκρασία εδάφους, μετά οι επόμενες 12 ώρες. Κουμπιά: στατιστικά, μετακίνηση καρφίτσας, ειδοποιήσεις βροχής / ανέμου, μετονομασία, διαγραφή.
+Statistics and PDF	Στατιστικά και PDF
+For a period you choose within the last 28 days: per day the high and low, the rain total, the highest wind and the mean soil moisture, and a summary of the period. “Save as PDF in Downloads” makes a file you can print or send. The statistics are kept 28 days.	Για περίοδο που διαλέγεις μέσα στις τελευταίες 28 ημέρες: ανά ημέρα μέγιστη και ελάχιστη, συνολική βροχή, ισχυρότερος άνεμος και μέση υγρασία εδάφους, μαζί με σύνοψη της περιόδου. Το «Αποθήκευση PDF στις Λήψεις» φτιάχνει αρχείο για εκτύπωση ή αποστολή. Τα στατιστικά κρατιούνται 28 ημέρες.
+Parcel alerts	Ειδοποιήσεις αγροτεμαχίου
+On a parcel's page, alerts ON: every 3 hours the app looks at the next 12 hours and sends a notification when rain (60% and 0.5 mm, or 1 mm) or strong wind (gusts of 50 km/h) is forecast; one notice per spell. At night, with the screen off, the check waits for the screen.	Στη σελίδα του αγροτεμαχίου, ειδοποιήσεις ΝΑΙ: κάθε 3 ώρες η εφαρμογή κοιτάζει τις επόμενες 12 ώρες και στέλνει ειδοποίηση όταν προβλέπεται βροχή (60% και 0,5 mm, ή 1 mm) ή ισχυρός άνεμος (ριπές 50 km/h)· μία ειδοποίηση ανά επεισόδιο. Τη νύχτα, με την οθόνη σβηστή, ο έλεγχος περιμένει την οθόνη.
+Soil data and source	Δεδομένα εδάφους και πηγή
+Everything for farmers comes from Open-Meteo. Soil moisture (percent of volume, 3–9 cm deep) and soil temperature are estimates of the weather model, not measurements; nearby parcels (1–11 km) can show the same values. When Open-Meteo does not answer, the app says so, downloads the data when access is back and sends a notification.	Όλα για τους αγρότες έρχονται από το Open-Meteo. Η υγρασία εδάφους (ποσοστό όγκου, 3–9 cm) και η θερμοκρασία εδάφους είναι εκτιμήσεις του μετεωρολογικού μοντέλου, όχι μετρήσεις· κοντινά αγροτεμάχια (1–11 km) μπορεί να έχουν τις ίδιες τιμές. Όταν το Open-Meteo δεν απαντά, η εφαρμογή το λέει, κατεβάζει τα δεδομένα όταν επανέλθει η πρόσβαση και στέλνει ειδοποίηση.
+The map	Ο χάρτης
+OpenStreetMap, free and without an account (© OpenStreetMap contributors); it needs internet. One finger moves it, two fingers or a double tap zoom; “My position” shows where you are as a blue dot. The map pieces are kept on the phone for a week.	OpenStreetMap, δωρεάν και χωρίς λογαριασμό (© OpenStreetMap contributors)· χρειάζεται ίντερνετ. Ένα δάχτυλο τον μετακινεί, δύο δάχτυλα ή διπλό πάτημα κάνουν ζουμ· το «Η θέση μου» δείχνει πού είσαι με μια μπλε κουκκίδα. Τα κομμάτια του χάρτη μένουν στο τηλέφωνο μία εβδομάδα.
+Farmer · 	Αγρότης · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Το Open-Meteo απαντά ξανά: τα δεδομένα του αγροτεμαχίου κατέβηκαν.
+Rain expected from 	Αναμένεται βροχή από 
+ in the next 12 hours	 τις επόμενες 12 ώρες
+Rain · 	Βροχή · 
+Strong wind from 	Ισχυρός άνεμος από 
+, gusts 	, ριπές 
+Wind · 	Άνεμος · 
+showers	μπόρες
+sleet	χιονόνερο
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Τα δεδομένα αγρότη (ωριαίος άνεμος, υγρασία, έδαφος) έρχονται μόνο από το Open-Meteo, που τώρα δεν απαντά. Όταν επανέλθει η πρόσβαση, η εφαρμογή τα κατεβάζει και σου στέλνει ειδοποίηση.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Η υγρασία και η θερμοκρασία του εδάφους είναι εκτιμήσεις του μετεωρολογικού μοντέλου, όχι μετρήσεις · πηγή: Open-Meteo (open-meteo.com).
+Temperature: 	Θερμοκρασία: 
+Chance of rain: 	Πιθανότητα βροχής: 
+Day's low / high: 	Ελάχιστη / μέγιστη ημέρας: 
+Speed: 	Ταχύτητα: 
+Direction: from 	Κατεύθυνση: από 
+Change: it turns from 	Αλλαγή: γυρίζει από 
+ to 	 προς 
+Change: it keeps its direction for the next 12 hours	Αλλαγή: κρατά την κατεύθυνσή του τις επόμενες 12 ώρες
+Air and rain	Αέρας και βροχή
+Air humidity: 	Υγρασία αέρα: 
+Soil (estimated)	Έδαφος (εκτίμηση)
+Soil moisture (3–9 cm): 	Υγρασία εδάφους (3–9 cm): 
+Soil temperature (surface): 	Θερμοκρασία εδάφους (επιφάνεια): 
+likely	πιθανή
+possible	ενδεχόμενη
+unlikely	απίθανη
+Amount: 	Ποσότητα: 
+Kind: 	Είδος: 
+showers 	μπόρες 
+snow 	χιόνι 
+Of which: 	Από αυτά: 
+Cloud cover: 	Νεφοκάλυψη: 
+Until midnight: 	Ως τα μεσάνυχτα: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Πηγή: Open-Meteo. Η πιθανότητα δείχνει πόσο πιθανό είναι να βρέξει εκείνη την ώρα, όχι πόση ώρα βρέχει.
+FARMER	ΑΓΡΟΤΗΣ
