@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	regen 24 u
 Other languages	Andere talen
 Languages of the minorities	Talen van de minderheden
+PRECIPITATION 24	NEERSLAG 24
+last 24 hours	laatste 24 uur
+Precipitation of the last 24 hours	Neerslag van de laatste 24 uur
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Het water dat de laatste 24 uur op de grond viel (regen, natte sneeuw, gesmolten sneeuw) op de getoonde plek, uur per uur.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	De gegevens van de laatste 24 uur worden gedownload; tik zo meteen opnieuw. Als Open-Meteo niet antwoordt, krijg je een melding zodra ze er zijn.
+No precipitation in the last 24 hours.	Geen neerslag in de laatste 24 uur.
+Hours with precipitation	Uren met neerslag
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	In boerenmodus toont het vak „NEERSLAG 24” in de onderste rij, tussen Zon / Maan en UV-index, het water dat de laatste 24 uur viel op de getoonde plek (plaats of perceel). Een tik legt uit wat het is en toont een tabel met de uren met neerslag, met de millimeters van elk uur. Een schatting van Open-Meteo, geen regenmeter.

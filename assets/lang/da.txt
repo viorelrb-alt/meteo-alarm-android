@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	regn 24 t
 Other languages	Andre sprog
 Languages of the minorities	Mindretallenes sprog
+PRECIPITATION 24	NEDBØR 24
+last 24 hours	seneste 24 timer
+Precipitation of the last 24 hours	Nedbør de seneste 24 timer
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Det vand, der er faldet på jorden de seneste 24 timer (regn, slud, smeltet sne) på det viste sted, time for time.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Dataene for de seneste 24 timer hentes; tryk igen om et øjeblik. Hvis Open-Meteo ikke svarer, får du en notifikation, når de kommer.
+No precipitation in the last 24 hours.	Ingen nedbør de seneste 24 timer.
+Hours with precipitation	Timer med nedbør
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	I landmandstilstand viser feltet “NEDBØR 24” i den nederste række, mellem Sol / Måne og UV-indeks, det vand, der er faldet de seneste 24 timer på det viste sted (by eller mark). Et tryk forklarer, hvad det er, og viser en tabel over timerne med nedbør med millimeter for hver. Et skøn fra Open-Meteo, ikke en regnmåler.

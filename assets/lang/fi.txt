@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	sade 24 h
 Other languages	Muut kielet
 Languages of the minorities	Vähemmistöjen kielet
+PRECIPITATION 24	SADEMÄÄRÄ 24
+last 24 hours	viimeiset 24 tuntia
+Precipitation of the last 24 hours	Viimeisten 24 tunnin sademäärä
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Viimeisten 24 tunnin aikana maahan satanut vesi (sade, räntä, sulanut lumi) näytetyssä paikassa tunti tunnilta.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Viimeisten 24 tunnin tietoja ladataan; napauta uudelleen hetken päästä. Jos Open-Meteo ei vastaa, saat ilmoituksen, kun ne tulevat.
+No precipitation in the last 24 hours.	Ei sadetta viimeisten 24 tunnin aikana.
+Hours with precipitation	Sadetunnit
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Viljelijätilassa alarivin ruutu ”SADEMÄÄRÄ 24”, Aurinko / Kuu- ja UV-indeksi-ruutujen välissä, näyttää viimeisten 24 tunnin aikana sataneen veden näytetyssä paikassa (paikkakunta tai lohko). Napautus kertoo, mitä se on, ja näyttää taulukon sadetunneista ja kunkin millimetreistä. Open-Meteon arvio, ei sademittari.

@@ -1,3 +1,8 @@
+v2.61 · 7. studenoga 2026
+- Način poljoprivrednika: polje „OBORINE 24” sada je u donjem redu, između Sunce / Mjesec i UV indeksa; dodir ga objašnjava i pokazuje sate s oborinama i njihove milimetre.
+- Ispravljeno: u načinu poljoprivrednika polja Pelud i Tlak pokazivala su temperaturu tla.
+- Ispravljeno: oborine zadnja 24 sata preuzimaju se same kad nedostaju; „Puni se” više ne ide ispod POLJOPRIVREDNIK.
+
 v2.60 · 7. studenoga 2026
 - Način poljoprivrednika: glavni zaslon za mjesto i po jedan za svaku parcelu; prelazi se povlačenjem prsta preko temperature i ikone, točke ispod crte pokazuju gdje si.
 - Parcela na glavnom zaslonu pokazuje svoje vrijeme i dolje svoja polja (zrak, vjetar, smjer, kiša, vlažnost, tlo, temperatura tla), bez peluda i potresa; dodir na ime pokazuje cijelo ime i koordinate. Widgeti i obavijesti ostaju na mjestu.

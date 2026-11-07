@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	vihm 24 h
 Other languages	Muud keeled
 Languages of the minorities	Vähemuste keeled
+PRECIPITATION 24	SADEMED 24
+last 24 hours	viimased 24 tundi
+Precipitation of the last 24 hours	Viimase 24 tunni sademed
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Viimase 24 tunni jooksul maapinnale langenud vesi (vihm, lörts, sulanud lumi) näidatud kohas tund-tunnilt.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Viimase 24 tunni andmeid laaditakse; puuduta hetke pärast uuesti. Kui Open-Meteo ei vasta, saad teavituse, kui need saabuvad.
+No precipitation in the last 24 hours.	Viimase 24 tunni jooksul sademeid ei olnud.
+Hours with precipitation	Sademetega tunnid
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Põllumehe režiimis näitab alumise rea kast „SADEMED 24”, Päike / Kuu ja UV-indeksi vahel, viimase 24 tunni jooksul näidatud kohas (asula või põld) langenud vett. Puudutus selgitab, mis see on, ja näitab tabelit sademetega tundidest koos iga tunni millimeetritega. Open-Meteo hinnang, mitte sademete mõõtja.

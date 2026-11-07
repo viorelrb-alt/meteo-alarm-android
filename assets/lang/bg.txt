@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	дъжд 24 ч
 Other languages	Други езици
 Languages of the minorities	Езици на малцинствата
+PRECIPITATION 24	ВАЛЕЖИ 24
+last 24 hours	последните 24 часа
+Precipitation of the last 24 hours	Валежи през последните 24 часа
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Водата, паднала на земята през последните 24 часа (дъжд, суграшица, разтопен сняг) на показаното място, час по час.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Данните за последните 24 часа се изтеглят; докосни отново след малко. Ако Open-Meteo не отговаря, ще получиш известие, когато пристигнат.
+No precipitation in the last 24 hours.	Без валежи през последните 24 часа.
+Hours with precipitation	Часове с валежи
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	В режим фермер полето „ВАЛЕЖИ 24“ на долния ред, между Слънце / Луна и UV индекс, показва водата, паднала през последните 24 часа на показаното място (населено място или парцел). Докосване обяснява какво е и показва таблица с часовете с валежи и милиметрите за всеки. Оценка на Open-Meteo, не дъждомер.

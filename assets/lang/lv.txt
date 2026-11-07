@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	lietus 24 h
 Other languages	Citas valodas
 Languages of the minorities	Minoritāšu valodas
+PRECIPITATION 24	NOKRIŠŅI 24
+last 24 hours	pēdējās 24 stundas
+Precipitation of the last 24 hours	Nokrišņi pēdējās 24 stundās
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Ūdens, kas pēdējās 24 stundās nokritis uz zemes (lietus, slapjš sniegs, izkusis sniegs) parādītajā vietā, stundu pa stundai.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Pēdējo 24 stundu dati tiek lejupielādēti; pēc brīža pieskaries vēlreiz. Ja Open-Meteo neatbild, saņemsi paziņojumu, kad tie pienāks.
+No precipitation in the last 24 hours.	Pēdējās 24 stundās nokrišņu nebija.
+Hours with precipitation	Stundas ar nokrišņiem
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Lauksaimnieka režīmā apakšējās rindas lodziņš “NOKRIŠŅI 24”, starp Saule / Mēness un UV indeksu, rāda pēdējās 24 stundās nokritušo ūdeni parādītajā vietā (apdzīvotā vieta vai lauks). Pieskāriens paskaidro, kas tas ir, un parāda tabulu ar stundām, kurās bija nokrišņi, ar katras milimetriem. Open-Meteo novērtējums, nevis nokrišņu mērītājs.

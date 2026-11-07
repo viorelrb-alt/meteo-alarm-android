@@ -1,3 +1,8 @@
+v2.61 · 7 novembre 2026
+- Mode agriculteur : la case « PRÉCIPITATIONS 24 » passe dans la rangée du bas, entre Soleil / Lune et Indice UV ; une touche l'explique et liste les heures avec précipitations et leurs millimètres.
+- Corrigé : en mode agriculteur, les cases Pollen et Pression affichaient la température du sol.
+- Corrigé : les précipitations des dernières 24 heures se téléchargent toutes seules quand elles manquent ; « En charge » ne passe plus sous AGRICULTEUR.
+
 v2.60 · 7 novembre 2026
 - Mode agriculteur : un écran principal pour la localité et un pour chaque parcelle ; on passe de l'un à l'autre en glissant sur la température et l'icône, les points sous la ligne indiquent où l'on est.
 - Une parcelle sur l'écran principal montre sa météo et, en bas, ses cases (air, vent, direction, pluie, humidité, sol, température du sol), sans pollen ni séismes ; un toucher sur le nom affiche le nom entier et les coordonnées. Les widgets et les notifications restent sur la localité.

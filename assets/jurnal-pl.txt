@@ -1,3 +1,8 @@
+v2.61 · 7 listopada 2026
+- Tryb rolnika: pole „OPADY 24” jest teraz w dolnym rzędzie, między Słońce / Księżyc a Indeks UV; dotknięcie je wyjaśnia i pokazuje godziny z opadami i ich milimetry.
+- Naprawiono: w trybie rolnika pola Pyłki i Ciśnienie pokazywały temperaturę gleby.
+- Naprawiono: opady z ostatnich 24 godzin pobierają się same, gdy ich brakuje; „Ładowanie” nie nachodzi już na ROLNIK.
+
 v2.60 · 7 listopada 2026
 - Tryb rolnika: ekran główny dla miejscowości i po jednym dla każdej działki; przechodzi się między nimi, przesuwając palcem po temperaturze i ikonie, a kropki pod linią pokazują, gdzie jesteś.
 - Działka na ekranie głównym pokazuje swoją pogodę, a na dole swoje pola (powietrze, wiatr, kierunek, deszcz, wilgotność, gleba, temperatura gleby), bez pyłków i trzęsień ziemi; dotknięcie nazwy pokazuje pełną nazwę i współrzędne. Widżety i powiadomienia zostają przy miejscowości.

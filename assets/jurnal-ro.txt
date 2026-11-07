@@ -1,3 +1,8 @@
+v2.61 · 7 noiembrie 2026
+- Mod Fermier: caseta „PRECIPITAȚII 24” trece în rândul de casete de jos, între Soare / Lună și Indice UV; atingerea ei explică ce reprezintă și arată un tabel cu orele în care au fost precipitații și milimetrii fiecăreia.
+- Reparat: în Mod Fermier casetele Polen și Presiune arătau temperatura solului.
+- Reparat: precipitațiile ultimelor 24 de ore se descarcă singure când lipsesc; „Încarcă” nu mai intră sub FERMIER.
+
 v2.60 · 7 noiembrie 2026
 - Mod Fermier: un ecran principal pentru localitate și câte unul pentru fiecare parcelă; treci de la unul la altul glisând peste temperatură și pictogramă, iar punctele de sub linie arată unde ești.
 - O parcelă pe ecranul principal își arată vremea și jos casetele ei (aer, vânt, direcție, ploaie, umiditate, sol, temperatura solului), fără polen și cutremure; atingerea numelui arată numele întreg și coordonatele. Widgeturile și notificările rămân pe localitate.

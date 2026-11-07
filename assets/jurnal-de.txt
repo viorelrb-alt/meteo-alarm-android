@@ -1,3 +1,8 @@
+v2.61 · 7. November 2026
+- Landwirt-Modus: Das Kästchen „NIEDERSCHLAG 24“ steht jetzt in der unteren Reihe, zwischen Sonne / Mond und UV-Index; ein Tippen erklärt es und zeigt die Stunden mit Niederschlag und ihre Millimeter.
+- Behoben: Im Landwirt-Modus zeigten die Kästchen Pollen und Luftdruck die Bodentemperatur.
+- Behoben: Fehlt der Niederschlag der letzten 24 Stunden, lädt die App ihn selbst; „Lädt“ läuft nicht mehr unter LANDWIRT.
+
 v2.60 · 7. November 2026
 - Landwirt-Modus: ein Hauptbildschirm für den Ort und je einer für jede Parzelle; du wechselst durch seitliches Wischen über Temperatur und Symbol, die Punkte unter der Linie zeigen, wo du bist.
 - Eine Parzelle auf dem Hauptbildschirm zeigt ihr Wetter und unten ihre Kästchen (Luft, Wind, Richtung, Regen, Feuchtigkeit, Boden, Bodentemperatur), ohne Pollen und Erdbeben; ein Tippen auf den Namen zeigt den ganzen Namen und die Koordinaten. Widgets und Benachrichtigungen bleiben beim Ort.

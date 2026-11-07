@@ -1,3 +1,8 @@
+v2.61 · 2026 m. lapkričio 7 d.
+- Ūkininko režimas: langelis „KRITULIAI 24“ dabar yra apatinėje eilutėje, tarp Saulė / Mėnulis ir UV indekso; palietus jis paaiškinamas ir rodomos valandos su krituliais ir jų milimetrai.
+- Pataisyta: ūkininko režime langeliai Žiedadulkės ir Slėgis rodė dirvožemio temperatūrą.
+- Pataisyta: paskutinių 24 valandų krituliai atsisiunčiami patys, kai jų trūksta; „Kraunama“ nebeužlenda po ŪKININKAS.
+
 v2.60 · 2026 m. lapkričio 7 d.
 - Ūkininko režimas: pagrindinis ekranas gyvenvietei ir po vieną kiekvienam laukui; tarp jų pereinama braukiant per temperatūrą ir piktogramą, o taškai po linija rodo, kur esate.
 - Laukas pagrindiniame ekrane rodo savo orus ir apačioje savo langelius (oras, vėjas, kryptis, lietus, drėgmė, dirvožemis, dirvožemio temperatūra), be žiedadulkių ir žemės drebėjimų; palietus pavadinimą rodomas visas pavadinimas ir koordinatės. Valdikliai ir pranešimai lieka prie gyvenvietės.

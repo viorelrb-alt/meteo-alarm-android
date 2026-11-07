@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	déšť 24 h
 Other languages	Další jazyky
 Languages of the minorities	Jazyky menšin
+PRECIPITATION 24	SRÁŽKY 24
+last 24 hours	posledních 24 hodin
+Precipitation of the last 24 hours	Srážky za posledních 24 hodin
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Voda, která za posledních 24 hodin spadla na zem (déšť, déšť se sněhem, roztátý sníh) na zobrazeném místě, hodinu po hodině.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Data za posledních 24 hodin se stahují; za chvíli klepni znovu. Pokud Open-Meteo neodpovídá, dostaneš oznámení, až dorazí.
+No precipitation in the last 24 hours.	Za posledních 24 hodin žádné srážky.
+Hours with precipitation	Hodiny se srážkami
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	V režimu farmáře ukazuje políčko „SRÁŽKY 24“ v dolní řadě, mezi Slunce / Měsíc a UV index, vodu spadlou za posledních 24 hodin na zobrazeném místě (obec nebo pozemek). Klepnutí vysvětlí, co to je, a ukáže tabulku hodin se srážkami s milimetry každé z nich. Odhad Open-Meteo, ne srážkoměr.

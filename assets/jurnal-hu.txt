@@ -1,3 +1,8 @@
+v2.61 · 2026. november 7.
+- Gazda mód: a „CSAPADÉK 24” mező most az alsó sorban van, a Nap / Hold és az UV-index között; egy koppintás elmagyarázza, és mutatja a csapadékos órákat és millimétereiket.
+- Javítva: gazda módban a Pollen és a Légnyomás mező a talajhőmérsékletet mutatta.
+- Javítva: az utolsó 24 óra csapadéka magától letöltődik, ha hiányzik; a „Töltés” már nem fut a GAZDA alá.
+
 v2.60 · 2026. november 7.
 - Gazda mód: egy főképernyő a településnek és egy-egy minden parcellának; a hőmérséklet és az ikon fölötti oldalra húzással váltasz köztük, a vonal alatti pontok mutatják, hol vagy.
 - A főképernyőn lévő parcella a saját időjárását és lent a saját mezőit mutatja (levegő, szél, irány, eső, páratartalom, talaj, talajhőmérséklet), pollen és földrengések nélkül; a névre koppintva látod a teljes nevet és a koordinátákat. A widgetek és az értesítések a településnél maradnak.

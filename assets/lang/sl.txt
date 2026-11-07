@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	dež 24 h
 Other languages	Drugi jeziki
 Languages of the minorities	Jeziki manjšin
+PRECIPITATION 24	PADAVINE 24
+last 24 hours	zadnjih 24 ur
+Precipitation of the last 24 hours	Padavine v zadnjih 24 urah
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Voda, ki je v zadnjih 24 urah padla na tla (dež, žled, staljeni sneg) na prikazanem mestu, uro za uro.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Podatki zadnjih 24 ur se prenašajo; čez trenutek tapni znova. Če Open-Meteo ne odgovarja, dobiš obvestilo, ko prispejo.
+No precipitation in the last 24 hours.	V zadnjih 24 urah ni bilo padavin.
+Hours with precipitation	Ure s padavinami
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	V načinu kmeta polje »PADAVINE 24« v spodnji vrsti, med Sonce / Luna in UV-indeks, kaže vodo, ki je padla v zadnjih 24 urah na prikazanem mestu (kraj ali parcela). Tap pojasni, kaj je to, in pokaže tabelo ur s padavinami, z milimetri vsake. Ocena Open-Meteo, ne dežemer.

@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	xita 24 h
 Other languages	Lingwi oħra
 Languages of the minorities	Lingwi tal-minoranzi
+PRECIPITATION 24	PREĊIPITAZZJONI 24
+last 24 hours	l-aħħar 24 siegħa
+Precipitation of the last 24 hours	Preċipitazzjoni tal-aħħar 24 siegħa
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	L-ilma li waqa' fuq l-art fl-aħħar 24 siegħa (xita, silġ irqiq, borra maħlula) fil-post muri, siegħa b'siegħa.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Id-data tal-aħħar 24 siegħa qed titniżżel; erġa' agħfas ftit wara. Jekk Open-Meteo ma jwiġibx, tirċievi notifika meta tasal.
+No precipitation in the last 24 hours.	L-ebda preċipitazzjoni fl-aħħar 24 siegħa.
+Hours with precipitation	Sigħat bi preċipitazzjoni
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Fil-modalità tal-bidwi l-kaxxa “PREĊIPITAZZJONI 24” fir-ringiela t'isfel, bejn Xemx / Qamar u Indiċi UV, turi l-ilma li waqa' fl-aħħar 24 siegħa fil-post muri (belt jew għalqa). Tagħfisa tispjega x'inhi u turi tabella tas-sigħat bi preċipitazzjoni, bil-millimetri ta' kull waħda. Stima ta' Open-Meteo, mhux kejl tax-xita.

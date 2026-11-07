@@ -1,3 +1,8 @@
+v2.61 · 7. november 2026
+- Landmandstilstand: feltet “NEDBØR 24” står nu i den nederste række, mellem Sol / Måne og UV-indeks; et tryk forklarer det og viser timerne med nedbør og deres millimeter.
+- Rettet: i landmandstilstand viste felterne Pollen og Lufttryk jordtemperaturen.
+- Rettet: nedbøren de seneste 24 timer hentes af sig selv, når den mangler; “Oplader” løber ikke længere ind under LANDMAND.
+
 v2.60 · 7. november 2026
 - Landmandstilstand: en hovedskærm for byen og én for hver mark; du skifter ved at stryge sidelæns over temperaturen og ikonet, og prikkerne under linjen viser, hvor du er.
 - En mark på hovedskærmen viser sit vejr og nederst sine felter (luft, vind, retning, regn, fugtighed, jord, jordtemperatur), uden pollen og jordskælv; et tryk på navnet viser hele navnet og koordinaterne. Widgets og notifikationer bliver ved byen.

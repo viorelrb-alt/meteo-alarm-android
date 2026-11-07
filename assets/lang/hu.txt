@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	eső 24 ó
 Other languages	Más nyelvek
 Languages of the minorities	A kisebbségek nyelvei
+PRECIPITATION 24	CSAPADÉK 24
+last 24 hours	utolsó 24 óra
+Precipitation of the last 24 hours	Az utolsó 24 óra csapadéka
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Az utolsó 24 órában a talajra hullott víz (eső, havas eső, olvadt hó) a megjelenített helyen, óráról órára.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Az utolsó 24 óra adatai letöltés alatt vannak; koppints újra egy pillanat múlva. Ha az Open-Meteo nem válaszol, értesítést kapsz, amikor megérkeznek.
+No precipitation in the last 24 hours.	Nem volt csapadék az utolsó 24 órában.
+Hours with precipitation	Csapadékos órák
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Gazda módban az alsó sorban, a Nap / Hold és az UV-index között lévő „CSAPADÉK 24” mező mutatja az utolsó 24 órában hullott vizet a megjelenített helyen (település vagy parcella). Egy koppintás elmagyarázza, mi ez, és táblázatban mutatja a csapadékos órákat, mindegyik milliméterével. Az Open-Meteo becslése, nem esőmérő.

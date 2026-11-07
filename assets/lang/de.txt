@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	Regen 24 h
 Other languages	Weitere Sprachen
 Languages of the minorities	Sprachen der Minderheiten
+PRECIPITATION 24	NIEDERSCHLAG 24
+last 24 hours	letzte 24 Stunden
+Precipitation of the last 24 hours	Niederschlag der letzten 24 Stunden
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Das in den letzten 24 Stunden auf den Boden gefallene Wasser (Regen, Schneeregen, geschmolzener Schnee) am angezeigten Ort, Stunde für Stunde.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Die Daten der letzten 24 Stunden werden heruntergeladen; tippe gleich noch einmal. Wenn Open-Meteo nicht antwortet, bekommst du eine Benachrichtigung, sobald sie da sind.
+No precipitation in the last 24 hours.	Kein Niederschlag in den letzten 24 Stunden.
+Hours with precipitation	Stunden mit Niederschlag
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	Im Landwirt-Modus zeigt das Kästchen „NIEDERSCHLAG 24“ in der unteren Reihe, zwischen Sonne / Mond und UV-Index, das in den letzten 24 Stunden gefallene Wasser am angezeigten Ort (Ort oder Parzelle). Ein Tippen erklärt es und zeigt eine Tabelle der Stunden mit Niederschlag, mit den Millimetern jeder Stunde. Eine Schätzung von Open-Meteo, kein Regenmesser.

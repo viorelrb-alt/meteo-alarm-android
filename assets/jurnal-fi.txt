@@ -1,3 +1,8 @@
+v2.61 · 7. marraskuuta 2026
+- Viljelijätila: ruutu ”SADEMÄÄRÄ 24” on nyt alarivissä, Aurinko / Kuu- ja UV-indeksi-ruutujen välissä; napautus selittää sen ja näyttää sadetunnit millimetreineen.
+- Korjattu: viljelijätilassa Siitepöly- ja Ilmanpaine-ruudut näyttivät maan lämpötilan.
+- Korjattu: viimeisten 24 tunnin sademäärä ladataan itsestään, kun se puuttuu; ”Latautuu” ei enää mene VILJELIJÄ-tekstin alle.
+
 v2.60 · 7. marraskuuta 2026
 - Viljelijätila: päänäkymä paikkakunnalle ja yksi kullekin lohkolle; vaihdat niiden välillä pyyhkäisemällä lämpötilan ja kuvakkeen yli, ja viivan alla olevat pisteet näyttävät, missä olet.
 - Päänäkymän lohko näyttää oman säänsä ja alhaalla omat ruutunsa (ilma, tuuli, suunta, sade, kosteus, maa, maan lämpötila), ilman siitepölyä ja maanjäristyksiä; nimen napautus näyttää koko nimen ja koordinaatit. Widgetit ja ilmoitukset pysyvät paikkakunnalla.

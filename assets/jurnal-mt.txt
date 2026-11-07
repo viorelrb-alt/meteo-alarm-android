@@ -1,3 +1,8 @@
+v2.61 · 7 ta' Novembru 2026
+- Modalità tal-bidwi: il-kaxxa “PREĊIPITAZZJONI 24” issa tinsab fir-ringiela t'isfel, bejn Xemx / Qamar u Indiċi UV; tagħfisa tispjegaha u turi s-sigħat bi preċipitazzjoni u l-millimetri tagħhom.
+- Imsewwi: fil-modalità tal-bidwi l-kaxxi Polline u Pressjoni kienu juru t-temperatura tal-ħamrija.
+- Imsewwi: il-preċipitazzjoni tal-aħħar 24 siegħa titniżżel waħedha meta tkun nieqsa; “Qed jiċċarġja” ma jibqax jgħaddi taħt BIDWI.
+
 v2.60 · 7 ta' Novembru 2026
 - Modalità tal-bidwi: skrin ewlieni għall-belt u wieħed għal kull għalqa; tgħaddi minn wieħed għall-ieħor billi żżerżaq fuq it-temperatura u l-ikona, u t-tikek taħt il-linja juru fejn int.
 - Għalqa fuq l-iskrin ewlieni turi t-temp tagħha u isfel il-kaxxi tagħha (arja, riħ, direzzjoni, xita, umdità, ħamrija, temperatura tal-ħamrija), bla polline u bla terremoti; tagħfisa fuq l-isem turi l-isem kollu u l-koordinati. Il-widgets u n-notifiki jibqgħu fuq il-belt.

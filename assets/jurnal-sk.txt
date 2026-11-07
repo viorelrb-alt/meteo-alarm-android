@@ -1,3 +1,8 @@
+v2.61 · 7. novembra 2026
+- Režim farmára: políčko „ZRÁŽKY 24“ je teraz v dolnom rade, medzi Slnko / Mesiac a UV index; ťuknutie ho vysvetlí a ukáže hodiny so zrážkami a ich milimetre.
+- Opravené: v režime farmára ukazovali políčka Peľ a Tlak teplotu pôdy.
+- Opravené: zrážky za posledných 24 hodín sa stiahnu samy, keď chýbajú; „Nabíja sa“ už nezasahuje pod FARMÁR.
+
 v2.60 · 7. novembra 2026
 - Režim farmára: hlavná obrazovka pre obec a po jednej pre každý pozemok; prechádza sa posunom prsta po teplote a ikone, bodky pod čiarou ukazujú, kde si.
 - Pozemok na hlavnej obrazovke ukazuje svoje počasie a dole svoje políčka (vzduch, vietor, smer, dážď, vlhkosť, pôda, teplota pôdy), bez peľu a zemetrasení; ťuknutie na názov ukáže celý názov a súradnice. Widgety a upozornenia zostávajú pri obci.

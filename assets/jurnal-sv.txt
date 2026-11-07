@@ -1,3 +1,8 @@
+v2.61 · 7 november 2026
+- Lantbruksläge: rutan ”NEDERBÖRD 24” finns nu i nedersta raden, mellan Sol / Måne och UV-index; ett tryck förklarar den och visar timmarna med nederbörd och deras millimeter.
+- Åtgärdat: i lantbruksläget visade rutorna Pollen och Lufttryck marktemperaturen.
+- Åtgärdat: nederbörden de senaste 24 timmarna laddas ner av sig själv när den saknas; ”Laddar” hamnar inte längre under LANTBRUK.
+
 v2.60 · 7 november 2026
 - Lantbruksläge: en huvudskärm för orten och en för varje skifte; du byter genom att svepa åt sidan över temperaturen och ikonen, och prickarna under linjen visar var du är.
 - Ett skifte på huvudskärmen visar sitt väder och längst ner sina rutor (luft, vind, riktning, regn, fuktighet, mark, marktemperatur), utan pollen och jordbävningar; ett tryck på namnet visar hela namnet och koordinaterna. Widgetar och aviseringar stannar på orten.

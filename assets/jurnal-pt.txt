@@ -1,3 +1,8 @@
+v2.61 · 7 de novembro de 2026
+- Modo agricultor: a caixa «PRECIPITAÇÃO 24» passa para a fila de baixo, entre Sol / Lua e Índice UV; um toque explica-a e lista as horas com precipitação e os seus milímetros.
+- Corrigido: no modo agricultor, as caixas Pólen e Pressão mostravam a temperatura do solo.
+- Corrigido: a precipitação das últimas 24 horas é descarregada sozinha quando falta; «A carregar» já não fica por baixo de AGRICULTOR.
+
 v2.60 · 7 de novembro de 2026
 - Modo agricultor: um ecrã principal para a localidade e um para cada parcela; passa-se de um para outro deslizando sobre a temperatura e o ícone, e os pontos sob a linha mostram onde está.
 - Uma parcela no ecrã principal mostra o seu tempo e em baixo as suas caixas (ar, vento, direção, chuva, humidade, solo, temperatura do solo), sem pólen nem sismos; um toque no nome mostra o nome completo e as coordenadas. Os widgets e as notificações ficam na localidade.

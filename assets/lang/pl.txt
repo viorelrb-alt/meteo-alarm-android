@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	deszcz 24 h
 Other languages	Inne języki
 Languages of the minorities	Języki mniejszości
+PRECIPITATION 24	OPADY 24
+last 24 hours	ostatnie 24 godziny
+Precipitation of the last 24 hours	Opady z ostatnich 24 godzin
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Woda, która spadła na ziemię w ostatnich 24 godzinach (deszcz, deszcz ze śniegiem, stopiony śnieg) w wyświetlanym miejscu, godzina po godzinie.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Dane z ostatnich 24 godzin są pobierane; dotknij ponownie za chwilę. Jeśli Open-Meteo nie odpowiada, dostaniesz powiadomienie, gdy przyjdą.
+No precipitation in the last 24 hours.	Brak opadów w ostatnich 24 godzinach.
+Hours with precipitation	Godziny z opadami
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	W trybie rolnika pole „OPADY 24” w dolnym rzędzie, między Słońce / Księżyc a Indeks UV, pokazuje wodę, która spadła w ostatnich 24 godzinach w wyświetlanym miejscu (miejscowość lub działka). Dotknięcie wyjaśnia, co to jest, i pokazuje tabelę godzin z opadami, z milimetrami każdej z nich. Szacunek Open-Meteo, nie deszczomierz.

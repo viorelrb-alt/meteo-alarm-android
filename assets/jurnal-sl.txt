@@ -1,3 +1,8 @@
+v2.61 · 7. november 2026
+- Način kmeta: polje »PADAVINE 24« je zdaj v spodnji vrsti, med Sonce / Luna in UV-indeks; tap ga pojasni in pokaže ure s padavinami in njihove milimetre.
+- Popravljeno: v načinu kmeta sta polji Cvetni prah in Tlak kazali temperaturo tal.
+- Popravljeno: padavine zadnjih 24 ur se prenesejo same, ko manjkajo; »Polni se« ne teče več pod KMET.
+
 v2.60 · 7. november 2026
 - Način kmeta: glavni zaslon za kraj in po eden za vsako parcelo; med njimi greš s podrsanjem čez temperaturo in ikono, pike pod črto kažejo, kje si.
 - Parcela na glavnem zaslonu kaže svoje vreme in spodaj svoja polja (zrak, veter, smer, dež, vlaga, tla, temperatura tal), brez cvetnega prahu in potresov; tap na ime pokaže celo ime in koordinate. Pripomočki in obvestila ostanejo pri kraju.

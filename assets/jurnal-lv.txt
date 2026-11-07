@@ -1,3 +1,8 @@
+v2.61 · 2026. gada 7. novembris
+- Lauksaimnieka režīms: lodziņš “NOKRIŠŅI 24” tagad ir apakšējā rindā, starp Saule / Mēness un UV indeksu; pieskāriens to paskaidro un parāda stundas ar nokrišņiem un to milimetrus.
+- Labots: lauksaimnieka režīmā lodziņi Ziedputekšņi un Spiediens rādīja augsnes temperatūru.
+- Labots: pēdējo 24 stundu nokrišņi lejupielādējas paši, ja to trūkst; “Lādējas” vairs nenonāk zem LAUKSAIMNIEKS.
+
 v2.60 · 2026. gada 7. novembris
 - Lauksaimnieka režīms: galvenais ekrāns apdzīvotajai vietai un pa vienam katram laukam; starp tiem pāriet, velkot pāri temperatūrai un ikonai, un punkti zem līnijas rāda, kur tu esi.
 - Lauks galvenajā ekrānā rāda savus laikapstākļus un apakšā savus lodziņus (gaiss, vējš, virziens, lietus, mitrums, augsne, augsnes temperatūra), bez ziedputekšņiem un zemestrīcēm; pieskāriens nosaukumam parāda visu nosaukumu un koordinātas. Logrīki un paziņojumi paliek pie apdzīvotās vietas.

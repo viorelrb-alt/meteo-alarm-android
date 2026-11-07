@@ -1,3 +1,8 @@
+v2.61 · 7 novembre 2026
+- Modalità agricoltore: il riquadro «PRECIPITAZIONI 24» passa nella fila in basso, tra Sole / Luna e Indice UV; un tocco lo spiega ed elenca le ore con precipitazioni e i loro millimetri.
+- Corretto: in modalità agricoltore i riquadri Polline e Pressione mostravano la temperatura del suolo.
+- Corretto: le precipitazioni delle ultime 24 ore si scaricano da sole quando mancano; «In carica» non finisce più sotto AGRICOLTORE.
+
 v2.60 · 7 novembre 2026
 - Modalità agricoltore: una schermata principale per la località e una per ogni appezzamento; si passa dall'una all'altra scorrendo sulla temperatura e sull'icona, e i punti sotto la linea indicano dove sei.
 - Un appezzamento nella schermata principale mostra il suo meteo e in basso le sue caselle (aria, vento, direzione, pioggia, umidità, suolo, temperatura del suolo), senza pollini né terremoti; un tocco sul nome mostra il nome intero e le coordinate. I widget e le notifiche restano sulla località.

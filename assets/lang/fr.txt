@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	pluie 24 h
 Other languages	Autres langues
 Languages of the minorities	Langues des minorités
+PRECIPITATION 24	PRÉCIPITATIONS 24
+last 24 hours	dernières 24 heures
+Precipitation of the last 24 hours	Précipitations des dernières 24 heures
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	L'eau tombée au sol ces dernières 24 heures (pluie, neige fondue, grésil) à l'endroit affiché, heure par heure.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Les données des dernières 24 heures sont en cours de téléchargement ; touchez de nouveau dans un instant. Si Open-Meteo ne répond pas, vous recevez une notification quand elles arrivent.
+No precipitation in the last 24 hours.	Aucune précipitation ces dernières 24 heures.
+Hours with precipitation	Heures avec précipitations
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	En mode agriculteur, la case « PRÉCIPITATIONS 24 » de la rangée du bas, entre Soleil / Lune et Indice UV, montre l'eau tombée ces dernières 24 heures à l'endroit affiché (localité ou parcelle). Une touche explique ce que c'est et affiche un tableau des heures avec précipitations, avec les millimètres de chacune. Une estimation d'Open-Meteo, pas un pluviomètre.

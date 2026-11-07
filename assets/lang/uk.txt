@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	дощ 24 год
 Other languages	Інші мови
 Languages of the minorities	Мови меншин
+PRECIPITATION 24	ОПАДИ 24
+last 24 hours	останні 24 години
+Precipitation of the last 24 hours	Опади за останні 24 години
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Вода, що випала на землю за останні 24 години (дощ, мокрий сніг, розталий сніг) у показаному місці, година за годиною.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Дані за останні 24 години завантажуються; торкніться ще раз за мить. Якщо Open-Meteo не відповідає, ви отримаєте сповіщення, коли вони надійдуть.
+No precipitation in the last 24 hours.	За останні 24 години опадів не було.
+Hours with precipitation	Години з опадами
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	У режимі фермера поле «ОПАДИ 24» у нижньому ряду, між Сонце / Місяць та УФ-індексом, показує воду, що випала за останні 24 години в показаному місці (населений пункт або ділянка). Дотик пояснює, що це, і показує таблицю годин з опадами, з міліметрами кожної. Оцінка Open-Meteo, а не дощомір.

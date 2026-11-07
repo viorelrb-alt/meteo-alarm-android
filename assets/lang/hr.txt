@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	kiša 24 h
 Other languages	Drugi jezici
 Languages of the minorities	Jezici manjina
+PRECIPITATION 24	OBORINE 24
+last 24 hours	zadnja 24 sata
+Precipitation of the last 24 hours	Oborine u zadnja 24 sata
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Voda koja je u zadnja 24 sata pala na tlo (kiša, susnježica, otopljeni snijeg) na prikazanom mjestu, sat po sat.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Podaci za zadnja 24 sata se preuzimaju; dodirni ponovno za trenutak. Ako Open-Meteo ne odgovara, dobit ćeš obavijest kad stignu.
+No precipitation in the last 24 hours.	Bez oborina u zadnja 24 sata.
+Hours with precipitation	Sati s oborinama
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	U načinu poljoprivrednika polje „OBORINE 24” u donjem redu, između Sunce / Mjesec i UV indeksa, pokazuje vodu palu u zadnja 24 sata na prikazanom mjestu (mjesto ili parcela). Dodir objašnjava što je to i pokazuje tablicu sati s oborinama, s milimetrima svakog. Procjena Open-Meteo, ne kišomjer.

@@ -571,3 +571,11 @@ An estimate of Open-Meteo from the weather models, not a rain-gauge measurement 
 rain 24 h	báisteach 24 u
 Other languages	Teangacha eile
 Languages of the minorities	Teangacha na mionlach
+PRECIPITATION 24	DEASCADH 24
+last 24 hours	na 24 uair an chloig deireanacha
+Precipitation of the last 24 hours	Deascadh na 24 uair an chloig deireanacha
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	An t-uisce a thit ar an talamh le 24 uair an chloig anuas (báisteach, flichshneachta, sneachta leáite) san áit a thaispeántar, uair ar uair.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Tá sonraí na 24 uair an chloig deireanacha á n-íoslódáil; tapáil arís i gceann nóiméid. Mura bhfreagraíonn Open-Meteo, gheobhaidh tú fógra nuair a thagann siad.
+No precipitation in the last 24 hours.	Gan deascadh le 24 uair an chloig anuas.
+Hours with precipitation	Uaireanta le deascadh
+In farmer mode the “PRECIPITATION 24” box in the bottom row, between Sun / Moon and UV index, shows the water fallen in the last 24 hours at the place shown (town or parcel). A tap shows what it is and a table with the hours that had precipitation, with the millimetres of each. An Open-Meteo estimate, not a rain gauge.	I mód feirmeora taispeánann an bosca “DEASCADH 24” sa ró íochtair, idir Grian / Gealach agus Innéacs UV, an t-uisce a thit le 24 uair an chloig anuas san áit a thaispeántar (baile nó páirc). Míníonn tapáil cad é agus taispeánann sí tábla de na huaireanta a raibh deascadh iontu, le milliméadair gach ceann. Meastachán Open-Meteo, ní tomhsaire báistí.
