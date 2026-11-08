@@ -1,4 +1,4 @@
-Versione attuale: v.3.00 · 8.11.2026
+Versione attuale: v.3.01 · 8.11.2026
 Miglioramenti di design / struttura.
 - Icona della connessione accanto all’orologio: Wi-Fi, dati mobili o nessuna.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.

@@ -1,4 +1,4 @@
-Versión actual: v.3.00 · 8.11.2026
+Versión actual: v.3.01 · 8.11.2026
 Mejoras de diseño / estructura.
 - Icono de conexión junto al reloj: Wi-Fi, datos móviles o ninguna.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.

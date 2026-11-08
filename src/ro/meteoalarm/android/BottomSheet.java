@@ -72,8 +72,13 @@ final class BottomSheet extends FrameLayout {
 		size = button(c);
 		size.setText("Aa");
 		size.setVisibility(GONE);
+		// v3.01: narrow, so the left button ("Ce e nou") is not pushed off the edge (Viorel).
+		size.setMinWidth(0);
+		size.setMinimumWidth(0);
+		size.setPadding((int) (10 * dp), 0, (int) (10 * dp), 0);
 		LinearLayout.LayoutParams zp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-		zp.rightMargin = (int) (12 * dp);
+		zp.leftMargin = (int) (6 * dp);
+		zp.rightMargin = (int) (8 * dp);
 		row.addView(size, zp);
 		secondary = button(c);
 		primary = button(c);

@@ -1,4 +1,4 @@
-Aktuelle Version: v.3.00 · 8.11.2026
+Aktuelle Version: v.3.01 · 8.11.2026
 Verbesserungen an Design / Struktur.
 - Verbindungssymbol neben der Uhr: WLAN, mobile Daten oder keine.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.

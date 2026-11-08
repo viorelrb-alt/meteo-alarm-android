@@ -1,4 +1,4 @@
-Praegune versioon: v.3.00 · 8.11.2026
+Praegune versioon: v.3.01 · 8.11.2026
 Kujunduse / ülesehituse parandused.
 - Ühenduse ikoon kella kõrval: Wi-Fi, mobiilne andmeside või puudub.
 - Uuendused: esmalt kontrollitakse ühendust, juba alla laaditud versioon paigaldatakse kohe, kuni 5 katset, kui GitHub ei vasta, ja põhjus kuvatakse.

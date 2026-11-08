@@ -1,4 +1,4 @@
-Pašreizējā versija: v.3.00 · 8.11.2026
+Pašreizējā versija: v.3.01 · 8.11.2026
 Dizaina / struktūras uzlabojumi.
 - Savienojuma ikona pie pulksteņa: Wi-Fi, mobilie dati vai nav.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.

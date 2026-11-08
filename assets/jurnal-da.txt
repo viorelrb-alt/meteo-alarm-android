@@ -1,4 +1,4 @@
-Nuværende version: v.3.00 · 8.11.2026
+Nuværende version: v.3.01 · 8.11.2026
 Forbedringer af design / struktur.
 - Forbindelsesikon ved uret: Wi-Fi, mobildata eller ingen.
 - Opdateringer: forbindelsen tjekkes først, en allerede hentet version installeres straks, op til 5 forsøg, når GitHub ikke svarer, og årsagen vises.

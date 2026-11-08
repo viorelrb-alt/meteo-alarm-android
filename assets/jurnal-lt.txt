@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.00 · 8.11.2026
+Dabartinė versija: v.3.01 · 8.11.2026
 Dizaino / struktūros patobulinimai.
 - Ryšio piktograma šalia laikrodžio: Wi-Fi, mobilieji duomenys arba nėra.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
