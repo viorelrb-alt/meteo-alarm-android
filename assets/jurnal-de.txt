@@ -1,77 +1,30 @@
-v2.70 · 7. November 2026
-- Landwirt-Modus: Jede Stunde ist ein breites Kästchen (Wetter + Regen) mit einem gemeinsamen Fenster beim Tippen; quer zwei Kästchen untereinander, nach oben und unten geschoben. Größerer oberer Bereich: Symbol oben, Temperatur 10 % größer unten. Das Kästchen „NIEDERSCHLAG 24“ wird zu „WASSER IM BODEN“: das Wasser in der Schicht 3–9 cm und seine Änderung in 24 Stunden.
+Version 1
+- Das Wetter jetzt, die nächsten Stunden, Niederschlag für 12 Stunden und 5 Tage.
+- Kästchen: Sonne / Mond, UV, Pollen, Feuchte, Luftqualität, Luftdruck, Wind, Sicht, Kompass, Erdbeben.
+- Wetterwarnungen nach Farbcode (MeteoAlarm, etwa 38 Länder).
+- Automatische Ortung, Favoriten, andere Länder.
+- Helles, dunkles und automatisches Design; Helligkeit vom Bildschirmrand; Nachtuhr.
+- Hochformat, Querformat, Tablet.
+- Widgets 2x2, 4x1, 4x2, mit Einstellungen.
+- Automatische Aktualisierung; MET Norway als Ersatzvorhersage.
+- Updates aus der App, Hilfe, Protokoll.
 
-v2.64 · 7. November 2026
-- Landwirt-Modus, Telefon quer: Die Details der Kästchen öffnen sich in einem großen Fenster rechts, immer am selben Platz und gleich groß.
+Version 2
+- Alle EU-Amtssprachen und Ukrainisch.
+- Seite Erdbeben.
+- Benachrichtigungen mit deiner Zustimmung: Regen oder Schnee, Warnungen, Erdbeben.
 
-v2.63 · 7. November 2026
-- „LANDWIRT-MODUS“ steht jetzt unter der oberen Linie, links unter der Taste ☰, statt unten.
+Aktuelle Version: v2.80 · 8.11.2026
+Verbesserungen an Design / Struktur.
+- Parzellen: die Taste Bearbeiten und der Stift auf jeder Parzelle, für Namen und Ort auf der Karte.
+- Neue Sprachen: Türkisch, Russisch, Serbisch.
 
-v2.62 · 7. November 2026
-- Landwirt-Modus: Das Fenster „NIEDERSCHLAG 24“ zeigt auch, wie viel Wasser der Boden (Schicht 3–9 cm) gehalten hat, insgesamt und Stunde für Stunde.
-
-v2.61 · 7. November 2026
-- Landwirt-Modus: Das Kästchen „NIEDERSCHLAG 24“ steht jetzt in der unteren Reihe, zwischen Sonne / Mond und UV-Index; ein Tippen erklärt es und zeigt die Stunden mit Niederschlag und ihre Millimeter.
-- Behoben: Im Landwirt-Modus zeigten die Kästchen Pollen und Luftdruck die Bodentemperatur.
-- Behoben: Fehlt der Niederschlag der letzten 24 Stunden, lädt die App ihn selbst; „Lädt“ läuft nicht mehr unter LANDWIRT.
-
-v2.60 · 7. November 2026
-- Landwirt-Modus: ein Hauptbildschirm für den Ort und je einer für jede Parzelle; du wechselst durch seitliches Wischen über Temperatur und Symbol, die Punkte unter der Linie zeigen, wo du bist.
-- Eine Parzelle auf dem Hauptbildschirm zeigt ihr Wetter und unten ihre Kästchen (Luft, Wind, Richtung, Regen, Feuchtigkeit, Boden, Bodentemperatur), ohne Pollen und Erdbeben; ein Tippen auf den Namen zeigt den ganzen Namen und die Koordinaten. Widgets und Benachrichtigungen bleiben beim Ort.
-- Kästchen „Regen 24 h“ neben den Tasten unten; ein Tippen zeigt die Stunden mit Regen.
-- ☰ › Parzellen: Löschen mit Häkchen und Bestätigung; die Liste nach Namen und Nummern geordnet.
-- In Rumänien öffnet das Menü Sprache › Weitere Sprachen die Sprachen der Minderheiten: Ungarisch, Deutsch, Ukrainisch und weitere.
-
-v2.50 · 7. November 2026
-- Landwirt-Modus: Der erste Eintrag in ☰ wechselt zwischen Landwirt-Modus und normalem Modus. Im Landwirt-Modus zeigt ein Tippen auf ein Stundenkästchen Temperatur, Tiefst- und Höchstwert des Tages, Wind mit Böen und Richtung (und wann er dreht), Luftfeuchtigkeit, Regenwahrscheinlichkeit, Bodenfeuchte und Bodentemperatur; statt des Regendiagramms und der fünf Tage kommen stündliche Regenkästchen mit Details beim Tippen.
-- ☰ › Parzellen: Speichere den Ort, an dem du stehst (GPS), passe ihn auf der OpenStreetMap-Karte an und gib ihm einen Namen; jede Parzelle hat Kästchen für Wind, Richtung, Regen, Luft- und Bodenfeuchte, Boden- und Lufttemperatur, Warnungen bei Regen und starkem Wind und eine Statistik für einen Zeitraum der letzten 28 Tage, als PDF in Downloads speicherbar.
-- Die Bodendaten sind Schätzungen von Open-Meteo; wenn Open-Meteo nicht antwortet, lädt die App sie später und schickt dir eine Benachrichtigung.
-- USA: Uhr und Stunden zeigen die Ortszeit des gewählten Ortes.
-- Benachrichtigungen nur für den gewählten Ort (im Testmodus) oder dort, wo das Telefon ist: keine Meldungen aus den USA mehr, wenn die App einen Ort in Europa zeigt.
-
-v2.40 · 4. November 2026
-- USA: ☰ › Tornadoes, eine Seite wie Erdbeben: die Tornado-Warnungen für deinen Ort und Bundesstaat, die in den letzten 2 Tagen in der Nähe gemeldeten Tornados, ihre Zahl im ganzen Land und was zu tun ist.
-- USA: kein Pollen-Kästchen (dort gibt es keine Daten); die Luftqualität als amerikanischer US-AQI.
-
-v2.30 · 4. November 2026
-- Elemente für die Nutzung der App in den USA.
-- ☰ › Temperatur °C/°F: Beim Verlassen von °F fragt die App, ob sie zum metrischen System wechseln soll; mit °F wird der Luftdruck in inHg und Entfernungen in Meilen angezeigt.
-
-v2.22 · 4. November 2026
-- Samsung-Telefone mit Auto Blocker: Schalte ihn vor dem Installieren oder Aktualisieren der App aus (Einstellungen › Sicherheit und Datenschutz › Auto Blocker), sonst verweigert das Telefon die Installation; danach kannst du ihn wieder einschalten.
-
-v2.21 · 4. November 2026
-- Tablet: Das Menü ☰ ist nur so breit wie seine längste Zeile und 5 % kleiner.
-- Seiten: Der Titel bleibt auf einer Zeile und wächst mit der Textgröße nur bis zu den Knöpfen rechts.
-- Leiste für die Textgröße: Auf manchen Telefonen (A70) schloss sie sich bei Berührung; jetzt nimmt sie den Finger in ihrer ganzen Spalte an.
-- Der Kreis über der Leiste zeigt nur den Wert, ohne %.
-
-v2.20 · 4. November 2026
-- Widget 4x2 auf Samsung mit One UI 9 (A54): erscheint bei 2 Reihen nicht mehr als 4x3; 4x3 erst ab 3 Reihen.
-- ☰ › Widgets: Bei mehreren wird das Widget oben im Einstellungsfenster gewählt, die Einstellungen darunter gehören zum gewählten.
-- Tablet: Das Menü ☰ ist 10 % kleiner.
-- Protokoll: Die Beschriftung der Knöpfe bleibt auf einer Zeile.
-- Ohne Internet wartet die App, bis das Netz zurück ist, statt es alle 1–2 Minuten neu zu versuchen.
-
-v2.12 · 4. November 2026
-- In Hilfe, Erdbeben, Info und Neuigkeiten: Der Knopf Aa neben den Knöpfen rechts zeigt die Leiste für die Textgröße links auf dem Bildschirm, über der Seite, wie die Helligkeitsleiste. Die schmale Leiste oben rechts ist weg.
-
-v2.11 · 4. November 2026
-- Die Leiste für die Textgröße, die man vom rechten Rand aus aufruft, erscheint jetzt links, wie die Helligkeitsleiste.
-
-v2.10 · 4. November 2026
-- Neues Widget 4x2 · Tage: unter dem aktuellen Wetter die nächsten 5 Tage (Tag, Symbol, Höchst- / Tiefstwert). Ab 3 Reihen Höhe werden beide 4x2-Widgets (Stunden und Tage) zum neuen 4x3, mit den nächsten Stunden und den nächsten Tagen.
-- Textgröße: In Hilfe, Erdbeben, Info und Neuigkeiten macht eine Leiste rechts, unter dem Schließen-Knopf, die Buchstaben größer oder kleiner (80–180 %); auf dem Hauptbildschirm zeigt ein Wischen nahe dem rechten Rand dieselbe Leiste. Die Größe bleibt auf dem Gerät gespeichert und gilt auch für das Menü ☰.
-- Tablet: Das Menü ☰ und die anderen Menüs sind 30 % größer.
-- ☰ › App senden: sendet den Download-Link in einer WhatsApp-Nachricht (oder mit einer anderen App), damit jemand anderes Meteo Alarm installieren kann.
-- Die Widget-Liste zeigt ihre Namen in der Sprache des Telefons.
-
-v2.00 · 4. November 2026
-- Sprachen: Die App spricht jetzt alle Amtssprachen der Europäischen Union und Ukrainisch (auch die Hilfe). Beim ersten Start nimmt sie die Sprache des Telefons (Englisch, wenn die App sie nicht hat); danach die unter ☰ › Sprache gewählte. Die Liste zeigt nur Englisch, die Sprache des Telefons und die Amtssprachen des Landes, in dem das Telefon ist.
-- ☰ › Erdbeben: eine Seite mit den Erdbeben ab Magnitude 3 der letzten 7 Tage in deinem Land, dann denen der letzten 48 Stunden in der EU, der Ukraine und Moldau (Uhrzeit, Ort, Magnitude, Tiefe, Entfernung).
-- Benachrichtigungen (nur mit deiner Zustimmung): beginnender Regen oder Schnee, neue Wetterwarnungen für deinen Ort, Erdbeben ab Magnitude 3 in deinem Land. Jedes Ereignis nur einmal. Ein oder aus unter ☰ › Benachrichtigungen.
-- Standort und Benachrichtigungen werden beim ersten Start mit einer freundlichen Erklärung erfragt; sagst du nein, fragt die App erst nach einem Update wieder. Zeigt das Telefon seine Frage nicht mehr, öffnet eine Taste seine Einstellungen.
-- Beim ersten Start wird der vom Standort gefundene Ort angezeigt und zu den Favoriten hinzugefügt.
-- Telefone ohne Kompass oder Lichtsensor: Die zugehörigen Tasten und Felder werden abgeschaltet; das Protokoll listet die Sensoren bei jedem Start.
-- Widgets: Der 4x1-Streifen funktioniert jetzt auch auf Tablets (es werden die Reihen des Startbildschirms gezählt, keine festen Größen).
-- Behoben: Beim Start nach einem Update wurde das Wetter zweimal geladen; das Protokoll schreibt jetzt die gewählte Sprache und jeden gewählten Ort, und das Öffnen der Widget-Einstellungen nur einmal.
+────────
+Neue Funktionen seit v2.10
+- Landwirt-Modus: Stundenkästchen mit Wetter und Regen, Details beim Tippen, und das Kästchen Wasser im Boden.
+- Parzellen: per GPS oder auf der Karte gespeichert, ein Hauptbildschirm für jede, 28-Tage-Statistik mit PDF, Regen- und Windwarnungen.
+- Widgets 4x2 Tage und 4x3.
+- Textgröße (Aa).
+- ☰ › App senden.
+- Vereinigte Staaten: NWS-Warnungen, Tornados, °F, Ortszeit.
+- Weitere Sprachen: die Sprachen der Minderheiten Rumäniens.

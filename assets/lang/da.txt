@@ -595,3 +595,45 @@ Type: 	Type:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	På en telefon er hver time ét bredt felt, vejret til venstre og regnen til højre; med telefonen oprejst skubber du felterne til siden, og på tværs står to felter under hinanden: skub dem op og ned. Oprejst står ikonet i den øverste halvdel af pladsen over felterne og temperaturen i den nederste.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Ved et bredt felt viser samme vindue også, under »Regn«, timens regndetaljer.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	I landmandstilstand viser feltet »VAND I JORDEN« i nederste række, mellem Sol / Måne og UV-indeks, det vand, jordlaget på 3–9 cm holder nu på det viste sted (by eller mark), i millimeter, og under det, hvor meget det ændrede sig på 24 timer. Et tryk forklarer det og viser nedbøren de sidste 24 timer: kun timerne med nedbør, med millimeter for hver og hvor meget jorden holdt på. Et skøn fra Open-Meteo, ikke en måling.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Første punkt i ☰ skifter tilstand. I landmandstilstand er hver time ét bredt felt med vejr og regn; på tværs to felter under hinanden, skubbet op og ned.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Et tryk viser timens detaljer: temperatur, vind og retning, fugtighed, regn, jord.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Vandet, som jordlaget på 3–9 cm holder nu, og ændringen på 24 timer; et tryk viser timerne med nedbør. Skøn fra Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Marker: gem stedet, hvor du står, eller vælg det på kortet og giv det et navn. Rediger (eller blyanten) ændrer navn og nål; Slet marker fjerner dem. Kun på denne telefon.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Én hovedskærm for byen og én pr. mark: stryg til siden over temperaturen.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Et tryk på markens navn: dens felter, de næste 12 timer, statistik med PDF, advarsler, omdøb, slet.
+When ON, a notification for rain or strong wind forecast on the parcel.	Når TIL, en notifikation ved varslet regn eller kraftig vind på marken.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Jorddata er modelskøn fra Open-Meteo, ikke målinger; nærliggende marker kan vise de samme værdier.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: flyt med én finger, zoom med to; kræver internet.
+Choose the town: favourites, then counties (or states).	Vælg by: favoritter, derefter regioner (eller stater).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Slår automatisk placering til (udfyldt) eller fra (tom); viser vejret, hvor du er.
+Shows the brightness bar on the left.	Viser lysstyrkebjælken til venstre.
+Over the brightness bar: switches the theme.	Over lysstyrkebjælken: skifter tema.
+Light theme in the light, dark in the dark (needs a light sensor).	Lyst tema i lys, mørkt i mørke (kræver lyssensor).
+Looks once with the GPS.	Søger én gang med GPS.
+Refreshes the weather.	Opdaterer vejret.
+Slide up or down: brightness.	Stryg op eller ned: lysstyrke.
+Slide up or down: text size.	Stryg op eller ned: tekststørrelse.
+The Aa button on the pages shows the text-size bar.	Knappen Aa på siderne viser tekststørrelsesbjælken.
+Shows where the wind blows, turned with the phone.	Viser, hvor vinden blæser hen, drejet med telefonen.
+A big dim clock while the phone charges at night.	Et stort, dæmpet ur, når telefonen lader om natten.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Én række under linjen: jordskælvet, derefter varslerne efter farve. Et tryk viser detaljerne.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Det kraftigste jordskælv de sidste 24 timer i dit land, og hvordan det sandsynligvis føltes (EMSC).
+The rows of boxes follow the finger.	Rækkerne af felter følger fingeren.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sol / Måne, UV, Pollen, Fugtighed, Luftkvalitet, Lufttryk, Vind, Sigtbarhed, Kompas; et tryk viser detaljerne.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Hold på startskærmen › Widgets › Meteo Alarm. Træk i kanterne for at skifte layout (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Hold på widgetten › Indstillinger, eller ☰ › Widgets: by, baggrund, farver.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Hvert 15. minut med skærmen tændt, 30 med den slukket; MET Norway, når Open-Meteo er optaget.
+Downloads the weather now.	Henter vejret nu.
+Keeps the screen on while the app is open.	Holder skærmen tændt, mens appen er åben.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Engelsk, telefonens sprog og landets sprog; i Rumænien også »Andre sprog«.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	De seneste dages jordskælv i nærheden, med tid, sted, styrke og afstand.
+Rain or snow starting, new warnings and earthquakes, each only once.	Regn eller sne, der begynder, nye varsler og jordskælv, hver kun én gang.
+The settings of the widgets on the home screen.	Indstillingerne for widgets på startskærmen.
+What the app did, with the time; read, share or save it.	Hvad appen gjorde, med tid; læs, del eller gem.
+Looks for a new version on GitHub, with your consent.	Søger efter en ny version på GitHub, med dit samtykke.
+Sends the download link, e.g. on WhatsApp.	Sender downloadlinket, f.eks. på WhatsApp.
+About the app, its data and what's new.	Om appen, dens data og hvad der er nyt.
+Edit	Rediger
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Tryk på en mark for at se den på hovedskærmen. Blyanten åbner den til redigering.
+temp: 	temp.: 
+Tap the parcel to edit: its name and the pin on the map.	Tryk på marken, der skal redigeres: navnet og nålen på kortet.

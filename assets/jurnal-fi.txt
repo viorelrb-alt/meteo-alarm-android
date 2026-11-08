@@ -1,77 +1,30 @@
-v2.70 · 7. marraskuuta 2026
-- Viljelijätila: jokainen tunti on yksi leveä ruutu (sää + sade), jolla on yhteinen ikkuna napautettaessa; vaakasuunnassa kaksi ruutua päällekkäin, vedetään ylös ja alas. Suurempi yläosa: kuvake ylhäällä, lämpötila 10 % suurempana alhaalla. Ruutu ”SADE 24” muuttuu ruuduksi ”VETTÄ MAASSA”: 3–9 cm:n kerroksen vesi ja sen muutos 24 tunnissa.
+Versio 1
+- Sää nyt, seuraavat tunnit, sademäärä 12 tunnille ja 5 päivälle.
+- Ruudut: Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys, Kompassi, Maanjäristys.
+- Säävaroitukset värikoodein (MeteoAlarm, noin 38 maata).
+- Automaattinen sijainti, suosikit, muut maat.
+- Vaalea, tumma ja automaattinen teema; kirkkaus näytön reunasta; yökello.
+- Pysty, vaaka, tabletti.
+- Widgetit 2x2, 4x1, 4x2, asetuksineen.
+- Päivittyy itsestään; MET Norway varaennusteena.
+- Päivitykset sovelluksesta, Ohje, Loki.
 
-v2.64 · 7. marraskuuta 2026
-- Viljelijätila, puhelin vaakasuunnassa: ruutujen tiedot avautuvat suureen ikkunaan oikealle, aina samaan paikkaan ja samankokoisena.
+Versio 2
+- Kaikki EU:n viralliset kielet ja ukraina.
+- Maanjäristykset-sivu.
+- Ilmoitukset suostumuksellasi: sade tai lumi, varoitukset, maanjäristykset.
 
-v2.63 · 7. marraskuuta 2026
-- ”VILJELIJÄTILA” näkyy nyt ylemmän viivan alla, vasemmalla ☰-painikkeen alla, eikä alareunassa.
+Nykyinen versio: v2.80 · 8.11.2026
+Ulkoasun / rakenteen parannuksia.
+- Lohkot: Muokkaa-painike ja kynä jokaisessa lohkossa, nimeä ja karttasijaintia varten.
+- Uudet kielet: turkki, venäjä, serbia.
 
-v2.62 · 7. marraskuuta 2026
-- Viljelijätila: ”SADEMÄÄRÄ 24” -ikkuna näyttää myös, kuinka paljon vettä maahan jäi (kerros 3–9 cm), yhteensä ja tunneittain.
-
-v2.61 · 7. marraskuuta 2026
-- Viljelijätila: ruutu ”SADEMÄÄRÄ 24” on nyt alarivissä, Aurinko / Kuu- ja UV-indeksi-ruutujen välissä; napautus selittää sen ja näyttää sadetunnit millimetreineen.
-- Korjattu: viljelijätilassa Siitepöly- ja Ilmanpaine-ruudut näyttivät maan lämpötilan.
-- Korjattu: viimeisten 24 tunnin sademäärä ladataan itsestään, kun se puuttuu; ”Latautuu” ei enää mene VILJELIJÄ-tekstin alle.
-
-v2.60 · 7. marraskuuta 2026
-- Viljelijätila: päänäkymä paikkakunnalle ja yksi kullekin lohkolle; vaihdat niiden välillä pyyhkäisemällä lämpötilan ja kuvakkeen yli, ja viivan alla olevat pisteet näyttävät, missä olet.
-- Päänäkymän lohko näyttää oman säänsä ja alhaalla omat ruutunsa (ilma, tuuli, suunta, sade, kosteus, maa, maan lämpötila), ilman siitepölyä ja maanjäristyksiä; nimen napautus näyttää koko nimen ja koordinaatit. Widgetit ja ilmoitukset pysyvät paikkakunnalla.
-- Ruutu ”sade 24 h” alapainikkeiden vieressä; napautus näyttää sadetunnit.
-- ☰ › Lohkot: poisto valinnoilla ja vahvistuksella; luettelo nimien ja numeroiden järjestyksessä.
-- Romaniassa valikko Kieli › Muut kielet tarjoaa vähemmistöjen kieliä: unkari, saksa, ukraina ja muita.
-
-v2.50 · 7. marraskuuta 2026
-- Viljelijätila: ☰-valikon ensimmäinen kohta vaihtaa viljelijätilan ja normaalin tilan välillä. Viljelijätilassa tuntiruudun napautus näyttää lämpötilan, päivän alimman ja ylimmän, tuulen puuskineen ja suuntineen (ja milloin se kääntyy), ilmankosteuden, sateen todennäköisyyden, maan kosteuden ja maan lämpötilan; sadekaavion ja viiden päivän tilalle tulevat tunnin sadeneliöt, joista näkee tiedot napauttamalla.
-- ☰ › Lohkot: tallenna paikka, jossa seisot (GPS), korjaa se OpenStreetMap-kartalla ja anna nimi; jokaisella lohkolla on ruudut tuulelle, suunnalle, sateelle, ilman ja maan kosteudelle, maan ja ilman lämpötilalle, sade- ja kovan tuulen hälytykset sekä tilastot viimeisten 28 päivän jaksolta, tallennettavissa PDF:nä Latauksiin.
-- Maatiedot ovat Open-Meteon arvioita; jos Open-Meteo ei vastaa, sovellus lataa ne myöhemmin ja lähettää ilmoituksen.
-- Yhdysvallat: kello ja tunnit näyttävät valitun paikkakunnan paikallisen ajan.
-- Ilmoitukset vain valitulle paikkakunnalle (testitilassa) tai sinne, missä puhelin on: ei enää hälytyksiä Yhdysvalloista, kun sovellus näyttää paikkakuntaa Euroopassa.
-
-v2.40 · 4. marraskuuta 2026
-- Yhdysvallat: ☰ › Tornadoes, Maanjäristykset-sivun kaltainen sivu: paikkakuntasi ja osavaltiosi tornadovaroitukset, lähistöllä viimeisten 2 päivän aikana raportoidut tornadot, niiden määrä koko maassa ja mitä tehdä.
-- Yhdysvallat: ei Siitepöly-ruutua (siellä ei ole tietoja); ilmanlaatu amerikkalaisena US AQI -indeksinä.
-
-v2.30 · 4. marraskuuta 2026
-- Osia sovelluksen käyttöön Yhdysvalloissa.
-- ☰ › Lämpötila °C/°F: kun °F vaihdetaan, sovellus kysyy, siirrytäänkö metrijärjestelmään; °F:llä ilmanpaine näytetään inHg:nä ja etäisyydet maileina.
-
-v2.22 · 4. marraskuuta 2026
-- Samsung-puhelimet, joissa on Auto Blocker: poista se käytöstä ennen sovelluksen asentamista tai päivittämistä (Asetukset › Suojaus ja yksityisyys › Auto Blocker), muuten puhelin kieltäytyy asentamasta; voit ottaa sen sen jälkeen taas käyttöön.
-
-v2.21 · 4. marraskuuta 2026
-- Tabletti: valikko ☰ on vain pisimmän rivinsä levyinen ja 5 % pienempi.
-- Sivut: otsikko pysyy yhdellä rivillä ja kasvaa tekstin koon mukana vain oikealla oleviin painikkeisiin asti.
-- Tekstin koon palkki: joissakin puhelimissa (A70) se sulkeutui kosketuksesta; nyt se ottaa sormen koko sarakkeeltaan.
-- Palkin yläpuolella oleva ympyrä näyttää vain arvon, ilman %:a.
-
-v2.20 · 4. marraskuuta 2026
-- Widget 4x2 Samsungissa, jossa One UI 9 (A54): ei enää näy 4x3:na 2 rivillä; 4x3 vasta 3 riviltä.
-- ☰ › Widgetit: kun niitä on useita, widget valitaan asetusikkunan yläosasta ja alla olevat asetukset ovat valitun.
-- Tabletti: valikko ☰ on 10 % pienempi.
-- Loki: painikkeiden teksti pysyy yhdellä rivillä.
-- Ilman internetiä sovellus odottaa verkon palaamista sen sijaan, että yrittäisi uudelleen 1–2 minuutin välein.
-
-v2.12 · 4. marraskuuta 2026
-- Ohjeessa, Maanjäristyksissä, Tietoja-sivulla ja Mitä uutta -sivulla: oikealla olevien painikkeiden vieressä oleva Aa-painike näyttää tekstin koon palkin näytön vasemmassa reunassa, sivun päällä, kuten kirkkauspalkin. Kapea palkki oikeassa yläkulmassa on poistettu.
-
-v2.11 · 4. marraskuuta 2026
-- Oikeasta reunasta avattava tekstikoon palkki tulee nyt vasemmalle, kuten kirkkauspalkki.
-
-v2.10 · 4. marraskuuta 2026
-- Uusi widget 4x2 · päivät: nykyisen sään alla seuraavat 5 päivää (päivä, kuvake, ylin / alin). Kun ne tehdään vähintään 3 rivin korkuisiksi, molemmista 4x2-widgeteistä (tunnit ja päivät) tulee uusi 4x3, jossa ovat seuraavat tunnit ja päivät.
-- Tekstin koko: Ohjeessa, Maanjäristyksissä, Tietoja- ja Mitä uutta -sivuilla oikealla oleva palkki sulkemispainikkeen alla suurentaa tai pienentää kirjaimia (80–180 %); päänäytöllä liu'utus ylös tai alas oikean reunan lähellä näyttää saman palkin. Koko tallentuu laitteeseen ja koskee myös ☰-valikkoa.
-- Tabletti: ☰-valikko ja muut valikot ovat 30 % suurempia.
-- ☰ › Lähetä sovellus: lähettää latauslinkin WhatsApp-viestissä (tai toisella sovelluksella), jotta joku muu voi asentaa Meteo Alarmin.
-- Widget-luettelo näyttää nimet puhelimen kielellä.
-
-v2.00 · 4. marraskuuta 2026
-- Kieli: sovellus puhuu nyt kaikkia EU:n virallisia kieliä ja ukrainaa (myös Ohje). Ensimmäisellä käynnistyksellä se ottaa puhelimen kielen (englannin, jos sovelluksessa ei ole sitä); sen jälkeen kohdassa ☰ › Kieli valitun. Luettelo näyttää vain englannin, puhelimen kielen ja sen maan viralliset kielet, jossa puhelin on.
-- ☰ › Maanjäristykset: sivu, jossa ovat vähintään magnitudin 3 maanjäristykset viimeisen 7 päivän ajalta maassasi, sitten viimeisen 48 tunnin maanjäristykset EU:ssa, Ukrainassa ja Moldovassa (aika, paikka, magnitudi, syvyys, etäisyys).
-- Ilmoitukset (vain suostumuksellasi): sade tai lumisade alkaa, uudet säävaroitukset kaupungillesi, vähintään magnitudin 3 maanjäristykset maassasi. Jokainen tapahtuma vain kerran. Päälle tai pois kohdassa ☰ › Ilmoitukset.
-- Sijaintia ja ilmoituksia pyydetään ystävällisen selityksen kanssa ensimmäisellä käynnistyksellä; jos kieltäydyt, sovellus kysyy uudelleen vasta päivityksen jälkeen. Kun puhelin ei enää näytä kysymystään, painike avaa sen asetukset.
-- Ensimmäisellä käynnistyksellä sijainnin löytämästä kaupungista tulee näytetty kaupunki, ja se lisätään suosikkeihin.
-- Puhelimet ilman kompassia tai valoanturia: niihin liittyvät painikkeet ja ruudut kytketään pois; Loki luettelee anturit jokaisella käynnistyksellä.
-- Widgetit: 4x1-nauha toimii nyt myös tableteilla (aloitusnäytön rivit lasketaan, ei kiinteitä kokoja).
-- Korjattu: käynnistyksessä päivityksen jälkeen sää ladattiin kahdesti; Loki kirjaa nyt valitun kielen ja jokaisen valitun kaupungin, ja widgetin asetusten avaamisen vain kerran.
+────────
+Uudet toiminnot v2.10:stä alkaen
+- Viljelijätila: tuntiruudut säällä ja sateella, tiedot napauttamalla ja ruutu Vesi maaperässä.
+- Lohkot: tallennettu GPS:llä tai kartalta, oma päänäkymä kullekin, 28 päivän tilasto PDF:nä, sade- ja tuulihälytykset.
+- Widgetit 4x2 päivät ja 4x3.
+- Tekstin koko (Aa).
+- ☰ › Lähetä sovellus.
+- Yhdysvallat: NWS-varoitukset, tornadot, °F, paikallinen aika.
+- Muut kielet: Romanian vähemmistökielet.

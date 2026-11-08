@@ -595,3 +595,45 @@ Type: 	Druh:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Na telefonu je každá hodina jedno široké políčko, vlevo počasí a vpravo déšť; na stojícím telefonu posouvej políčka do stran, na ležícím jsou dvě políčka pod sebou: posouvej je nahoru a dolů. Na stojícím telefonu je ikona v horní polovině prostoru nad políčky a teplota v dolní.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	U širokého políčka ukáže totéž okno pod „Déšť“ i podrobnosti deště v dané hodině.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	V režimu farmáře ukazuje políčko „VODA V PŮDĚ“ v dolní řadě, mezi Slunce / Měsíc a UV index, vodu zadrženou nyní ve vrstvě půdy 3–9 cm v zobrazeném místě (obec nebo parcela), v milimetrech, a pod ní, jak se změnila za 24 hodin. Klepnutí ji vysvětlí a ukáže srážky za posledních 24 hodin: jen hodiny se srážkami, s milimetry každé a kolik z toho půda zadržela. Odhad Open-Meteo, ne měření.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	První položka ☰ přepíná režim. V režimu farmáře je každá hodina jedno široké políčko s počasím a deštěm; na ležícím telefonu dvě políčka pod sebou, posouvaná nahoru a dolů.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Klepnutí ukáže podrobnosti hodiny: teplotu, vítr a směr, vlhkost, déšť, půdu.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Voda zadržená nyní ve vrstvě půdy 3–9 cm a její změna za 24 hodin; klepnutí ukáže hodiny se srážkami. Odhad Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Parcely: ulož místo, kde stojíš, nebo ho vyber na mapě a pojmenuj ho. Upravit (nebo tužka) mění název a špendlík; Smazat parcely je odstraní. Jen v tomto telefonu.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Jedna hlavní obrazovka pro obec a jedna pro každou parcelu: přejeď do strany přes teplotu.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Klepnutí na název parcely: její políčka, příštích 12 hodin, statistika s PDF, upozornění, přejmenovat, smazat.
+When ON, a notification for rain or strong wind forecast on the parcel.	Když jsou ZAPNUTÁ, oznámení při předpovědi deště nebo silného větru na parcele.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Údaje o půdě jsou odhady modelu Open-Meteo, ne měření; blízké parcely mohou mít stejné hodnoty.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: posouvej jedním prstem, přibližuj dvěma; potřebuje internet.
+Choose the town: favourites, then counties (or states).	Vyber obec: oblíbené, pak kraje (nebo státy).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Zapne (plné) nebo vypne (prázdné) automatickou polohu; ukazuje počasí tam, kde jsi.
+Shows the brightness bar on the left.	Ukáže lištu jasu vlevo.
+Over the brightness bar: switches the theme.	Nad lištou jasu: přepne motiv.
+Light theme in the light, dark in the dark (needs a light sensor).	Světlý motiv na světle, tmavý ve tmě (potřebuje senzor světla).
+Looks once with the GPS.	Hledá jednou pomocí GPS.
+Refreshes the weather.	Obnoví počasí.
+Slide up or down: brightness.	Přejeď nahoru nebo dolů: jas.
+Slide up or down: text size.	Přejeď nahoru nebo dolů: velikost textu.
+The Aa button on the pages shows the text-size bar.	Tlačítko Aa na stránkách ukáže lištu velikosti textu.
+Shows where the wind blows, turned with the phone.	Ukazuje, kam fouká vítr, otáčená s telefonem.
+A big dim clock while the phone charges at night.	Velké tlumené hodiny, když se telefon v noci nabíjí.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Jedna řada pod čarou: zemětřesení, pak výstrahy podle barvy. Klepnutí ukáže podrobnosti.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Nejsilnější zemětřesení za posledních 24 hodin ve tvé zemi a jak bylo asi pociťováno (EMSC).
+The rows of boxes follow the finger.	Řady políček sledují prst.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita vzduchu, Tlak, Vítr, Viditelnost, Kompas; klepnutí ukáže podrobnosti.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Podrž plochu › Widgety › Meteo Alarm. Tahem za okraje změníš vzhled (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Podrž widget › Nastavení, nebo ☰ › Widgety: obec, pozadí, barvy.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Každých 15 minut se zapnutou obrazovkou, 30 s vypnutou; MET Norway, když je Open-Meteo vytížené.
+Downloads the weather now.	Stáhne počasí teď.
+Keeps the screen on while the app is open.	Nechá obrazovku svítit, dokud je aplikace otevřená.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Angličtina, jazyk telefonu a jazyky země; v Rumunsku také „Další jazyky“.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Zemětřesení posledních dní poblíž, s časem, místem, magnitudem a vzdáleností.
+Rain or snow starting, new warnings and earthquakes, each only once.	Začínající déšť nebo sníh, nové výstrahy a zemětřesení, každé jen jednou.
+The settings of the widgets on the home screen.	Nastavení widgetů na ploše.
+What the app did, with the time; read, share or save it.	Co aplikace dělala, s časem; přečti, sdílej nebo ulož.
+Looks for a new version on GitHub, with your consent.	Hledá novou verzi na GitHubu, s tvým souhlasem.
+Sends the download link, e.g. on WhatsApp.	Pošle odkaz ke stažení, např. přes WhatsApp.
+About the app, its data and what's new.	O aplikaci, jejích datech a novinkách.
+Edit	Upravit
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Klepni na parcelu a uvidíš ji na hlavní obrazovce. Tužka ji otevře k úpravě.
+temp: 	tepl.: 
+Tap the parcel to edit: its name and the pin on the map.	Klepni na parcelu k úpravě: název a špendlík na mapě.

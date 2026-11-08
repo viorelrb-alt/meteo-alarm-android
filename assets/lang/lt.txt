@@ -595,3 +595,45 @@ Type: 	Rūšis:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Telefone kiekviena valanda yra vienas platus langelis, kairėje orai, dešinėje lietus; telefonui stovint langelius slink į šonus, gulint du langeliai yra vienas po kitu: slink juos aukštyn ir žemyn. Telefonui stovint piktograma yra viršutinėje erdvės virš langelių pusėje, o temperatūra – apatinėje.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Plataus langelio tas pats langas po „Lietus“ rodo ir valandos lietaus informaciją.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Ūkininko režime apatinės eilės langelis „VANDUO DIRVOJE“, tarp Saulė / Mėnulis ir UV indekso, rodo vandenį, kurį dabar sulaiko 3–9 cm dirvos sluoksnis rodomoje vietoje (gyvenvietėje ar sklype), milimetrais, o po juo – kiek jis pasikeitė per 24 valandas. Palietus paaiškinama ir rodomi paskutinių 24 valandų krituliai: tik valandos su krituliais, kiekvienos milimetrai ir kiek iš jų sulaikė dirva. Open-Meteo įvertis, ne matavimas.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Pirmasis ☰ punktas keičia režimą. Ūkininko režime kiekviena valanda yra vienas platus langelis su orais ir lietumi; gulsčias telefonas rodo du langelius vienas po kitu, slenkamus aukštyn ir žemyn.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Palietus rodoma valandos informacija: temperatūra, vėjas ir kryptis, drėgmė, lietus, dirva.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Vanduo, kurį dabar sulaiko 3–9 cm dirvos sluoksnis, ir jo pokytis per 24 valandas; palietus rodomos valandos su krituliais. Open-Meteo įvertis.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Sklypai: išsaugok vietą, kur stovi, arba pasirink ją žemėlapyje ir duok pavadinimą. Redaguoti (arba pieštukas) keičia pavadinimą ir smeigtuką; Ištrinti sklypus juos pašalina. Tik šiame telefone.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Vienas pagrindinis ekranas gyvenvietei ir po vieną kiekvienam sklypui: braukite į šoną virš temperatūros.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Palietus sklypo pavadinimą: jo langeliai, kitos 12 valandų, statistika su PDF, įspėjimai, pervadinti, ištrinti.
+When ON, a notification for rain or strong wind forecast on the parcel.	Kai ĮJUNGTA, pranešimas, kai sklypui prognozuojamas lietus ar stiprus vėjas.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Dirvos duomenys yra Open-Meteo modelio įverčiai, ne matavimai; artimi sklypai gali rodyti tas pačias reikšmes.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: stumk vienu pirštu, didink dviem; reikia interneto.
+Choose the town: favourites, then counties (or states).	Pasirink vietovę: mėgstamos, tada apskritys (ar valstijos).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Įjungia (pilnas) arba išjungia (tuščias) automatinę vietą; rodo orus ten, kur esi.
+Shows the brightness bar on the left.	Rodo ryškumo juostą kairėje.
+Over the brightness bar: switches the theme.	Virš ryškumo juostos: keičia temą.
+Light theme in the light, dark in the dark (needs a light sensor).	Šviesi tema šviesoje, tamsi tamsoje (reikia šviesos jutiklio).
+Looks once with the GPS.	Ieško vieną kartą GPS.
+Refreshes the weather.	Atnaujina orus.
+Slide up or down: brightness.	Braukite aukštyn ar žemyn: ryškumas.
+Slide up or down: text size.	Braukite aukštyn ar žemyn: teksto dydis.
+The Aa button on the pages shows the text-size bar.	Mygtukas Aa puslapiuose rodo teksto dydžio juostą.
+Shows where the wind blows, turned with the phone.	Rodo, kur pučia vėjas, sukasi kartu su telefonu.
+A big dim clock while the phone charges at night.	Didelis blankus laikrodis, kai telefonas naktį kraunamas.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Viena eilė po linija: žemės drebėjimas, tada įspėjimai pagal spalvą. Palietus rodoma informacija.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Stipriausias per paskutines 24 valandas žemės drebėjimas tavo šalyje ir kaip jis tikriausiai buvo jaučiamas (EMSC).
+The rows of boxes follow the finger.	Langelių eilės seka pirštą.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas; palietus rodoma informacija.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Laikyk pradžios ekraną › Valdikliai › Meteo Alarm. Tempk kraštus, kad pakeistum išdėstymą (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Laikyk valdiklį › Nustatymai, arba ☰ › Valdikliai: vietovė, fonas, spalvos.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Kas 15 minučių įjungus ekraną, kas 30 išjungus; MET Norway, kai Open-Meteo užimtas.
+Downloads the weather now.	Atsisiunčia orus dabar.
+Keeps the screen on while the app is open.	Laiko ekraną įjungtą, kol programėlė atidaryta.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Anglų kalba, telefono kalba ir šalies kalbos; Rumunijoje ir „Kitos kalbos“.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Pastarųjų dienų žemės drebėjimai netoliese, su laiku, vieta, magnitude ir atstumu.
+Rain or snow starting, new warnings and earthquakes, each only once.	Prasidedantis lietus ar sniegas, nauji įspėjimai ir žemės drebėjimai, kiekvienas tik kartą.
+The settings of the widgets on the home screen.	Pradžios ekrano valdiklių nustatymai.
+What the app did, with the time; read, share or save it.	Ką darė programėlė, su laiku; skaityk, bendrink ar išsaugok.
+Looks for a new version on GitHub, with your consent.	Ieško naujos versijos GitHub, su tavo sutikimu.
+Sends the download link, e.g. on WhatsApp.	Siunčia atsisiuntimo nuorodą, pvz., per WhatsApp.
+About the app, its data and what's new.	Apie programėlę, jos duomenis ir naujoves.
+Edit	Redaguoti
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Paliesk sklypą, kad matytum jį pagrindiniame ekrane. Pieštukas atidaro jį redaguoti.
+temp: 	temp.: 
+Tap the parcel to edit: its name and the pin on the map.	Paliesk redaguotiną sklypą: pavadinimas ir smeigtukas žemėlapyje.

@@ -1,0 +1,573 @@
+# Meteo Alarm Android · tr · English<TAB>translation
+Diary (log)	Günlük (kayıt)
+Everything the app did in the last 5 days; older errors kept 10 days.	Uygulamanın son 5 günde yaptığı her şey; eski hatalar 10 gün saklanır.
+Share	Paylaş
+Save	Kaydet
+Close	Kapat
+log 	günlük 
+Send the log	Günlüğü gönder
+Log saved	Günlük kaydedildi
+Could not save	Kaydedilemedi
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Bu, Meteo Alarm Kindle'dan yapılmış Meteo Alarm Android'in bir test sürümüdür.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Veri toplanmaz: hesap yok, reklam yok, istatistik yok. Hava durumu için yalnızca yerin koordinatları Open-Meteo'ya (hava, polen) ve Open-Meteo aşırı yüklüyken MET Norway'e (hava) gönderilir; uyarılar MeteoAlarm'dan, depremler EMSC'den (seismicportal.eu) gelir.
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Konum: bulunduğunuz yerin havasını göstermek için, açılışta ve saatte bir kullanılır. Yerleşimin adını bulmak için koordinatlar OpenStreetMap'e (veya telefonun coğrafi kodlayıcısına) gider; bu, yerleşimin sınırını da verir. Bulunan yerleşimler, bulunduğunuz yerle birlikte yalnızca telefonda saklanır. Uygulama ilk açılışta bir açıklamayla izin ister; hayır derseniz yerleşimi listeden seçersiniz ve yalnızca bir güncellemeden sonra yeniden sorar.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Bildirimler (yalnızca kabul ederseniz): başlayan yağmur veya kar, yerleşiminiz için yeni hava uyarıları, ülkenizde büyüklüğü 3 veya daha fazla olan depremler. Her olay bir kez. ☰ › Bildirimler'den açın veya kapatın.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Dil: ilk açılışta telefonun dili (uygulamada varsa, yoksa İngilizce), sonra ☰ › Dil'de seçilen.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Sensörler: uygulama pil durumunu (şarjda gece saati), ☰ › Tema › Otomatik (telefon sensörü) ile telefonun ışık sensörünü ve rüzgâr okunu telefonla döndüren pusulayı okur. Telefonda olmayan kapatılır. Hiçbir şey telefondan çıkmaz.
+Updates: 	Güncellemeler: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	Bundan sonra uygulama haftada bir GitHub'da yeni sürüm arar ve indirmeden önce sorar.
+I understand	Anladım
+This phone has no light sensor.	Bu telefonda ışık sensörü yok.
+Automatic theme (phone sensor): on	Otomatik tema (telefon sensörü): açık
+Automatic theme (phone sensor): off	Otomatik tema (telefon sensörü): kapalı
+Dark theme	Koyu tema
+Light theme	Açık tema
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm yerleşiminizi kendisi bulabilir; böylece tahmin, hava uyarıları ve depremler, seyahat ederken de, tam bulunduğunuz yer için olur. Konum telefonda kalır: yalnızca yerleşimi seçmek için kullanılır.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Telefon artık sorusunu göstermiyor; telefonun ayarlarında Meteo Alarm için Konum'a izin verin (İzinler › Konum).
+If you say no, choose the town from the list; the app asks again only after an update.	Hayır derseniz yerleşimi listeden seçin; uygulama yalnızca bir güncellemeden sonra yeniden sorar.
+Location	Konum
+Open settings	Ayarları aç
+Allow	İzin ver
+Not now	Şimdi değil
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm, kapalıyken de size bildirebilir: yağmur veya kar başladığında ya da bir saat içinde başlayacağında, yerleşiminiz için bir hava uyarısı yayımlandığında ve ülkenizde büyüklüğü 3 veya daha fazla bir deprem olduğunda. Her olay yalnızca bir kez, başka bir şey değil. Böylece uygulamayı açmadan zamanında öğrenirsiniz.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Telefon uygulamanın bildirim göndermesine izin vermiyor; telefonun ayarlarında Meteo Alarm bildirimlerini açın.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	İstediğiniz zaman ☰ › Bildirimler'den kapatabilirsiniz. Hayır derseniz uygulama yalnızca bir güncellemeden sonra yeniden sorar.
+Notifications	Bildirimler
+Notifications ON	Bildirimler AÇIK
+Notifications OFF	Bildirimler KAPALI
+Without location access, choose the town from the list.	Konum izni olmadan yerleşimi listeden seçin.
+Brightness: slide on the bar	Parlaklık: çubukta kaydırın
+Automatic location OFF	Otomatik konum KAPALI
+Automatic location ON	Otomatik konum AÇIK
+Looking for the exact position…	Tam konum aranıyor…
+Added to the list: 	Listeye eklendi: 
+Location is off on the phone.	Telefonda konum kapalı.
+The position could not be found.	Konum bulunamadı.
+The town could not be found (internet?).	Yerleşim bulunamadı (internet?).
+The weather did not come: 	Hava durumu gelmedi: 
+Already updating…	Zaten güncelleniyor…
+The weather has just been updated	Hava durumu az önce güncellendi
+Just tried; try again in a few seconds	Az önce denendi; birkaç saniye sonra yeniden deneyin
+Updating the weather…	Hava durumu güncelleniyor…
+Refresh	Yenile
+Town	Yerleşim
+Temperature °C/°F	Sıcaklık °C/°F
+Clock 12/24	Saat 12/24
+Theme	Tema
+Screen on OFF	Ekran açık KAPALI
+Screen on ON	Ekran açık AÇIK
+Language	Dil
+Night clock OFF	Gece saati KAPALI
+Night clock ON	Gece saati AÇIK
+Location Off	Konum Kapalı
+Location On	Konum Açık
+Earthquakes	Depremler
+Widgets	Widget'lar
+Log	Günlük
+Check for updates	Güncellemeleri denetle
+Help	Yardım
+About	Hakkında
+24-hour clock	24 saat
+12-hour clock	12 saat
+The screen stays on while the app is open	Uygulama açıkken ekran açık kalır
+The screen goes off after the phone's timeout	Ekran, telefonun zaman aşımından sonra kapanır
+While charging at night, the screen shows a big dim clock	Gece şarj olurken ekran büyük, loş bir saat gösterir
+Night clock off	Gece saati kapalı
+Light	Açık
+Dark	Koyu
+Automatic	Otomatik
+Last 7 days · 	Son 7 gün · 
+Downloading from EMSC…	EMSC'den indiriliyor…
+The list could not be downloaded. Is the internet on?	Liste indirilemedi. İnternet açık mı?
+No earthquake of magnitude 3 or more.	Büyüklüğü 3 veya daha fazla deprem yok.
+Last 48 hours · EU, Ukraine, Moldova	Son 48 saat · AB, Ukrayna, Moldova
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Kaynak: EMSC (Avrupa-Akdeniz Sismoloji Merkezi, seismicportal.eu), büyüklük 3 ve üzeri. "Hissedildi", büyüklük ve odağa uzaklıktan EMS-98 ölçeğinde bir tahmindir.
+depth 	derinlik 
+from 	uzaklık 
+Probably felt in 	Muhtemelen hissedildi: 
+Probably not felt in 	Muhtemelen hissedilmedi: 
+Updates	Güncellemeler
+How to update	Nasıl güncellenir
+Buttons on the screen	Ekrandaki düğmeler
+Brightness	Parlaklık
+Light / dark theme	Açık / koyu tema
+Automatic theme (phone sensor)	Otomatik tema (telefon sensörü)
+Gestures	Hareketler
+Tap on the town's name	Yerleşim adına dokunma
+Pull down	Aşağı çek
+Left edge	Sol kenar
+Wind arrow	Rüzgâr oku
+Night clock	Gece saati
+Warnings and earthquake	Uyarılar ve deprem
+Earthquake box	Deprem kutusu
+Left / right on the boxes	Kutularda sola / sağa
+The row of boxes at the bottom	Alttaki kutu sırası
+Home-screen widgets	Ana ekran widget'ları
+Meteo Alarm widgets	Meteo Alarm widget'ları
+Widget settings	Widget ayarları
+Refreshing by itself	Kendiliğinden yenileme
+The ☰ menu	☰ menüsü
+Switches between Celsius and Fahrenheit.	Celsius ve Fahrenheit arasında geçiş yapar.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Saati 24 saat ile 12 saat (ÖÖ/ÖS) arasında değiştirir.
+Light, Dark, or Automatic (phone sensor).	Açık, Koyu veya Otomatik (telefon sensörü).
+Screen on ON / OFF	Ekran açık AÇIK / KAPALI
+Location On / Off	Konum Açık / Kapalı
+Turns automatic location on or off (the same as the location button).	Otomatik konumu açar veya kapatır (konum düğmesiyle aynı).
+Notifications ON / OFF	Bildirimler AÇIK / KAPALI
+Night clock ON / OFF	Gece saati AÇIK / KAPALI
+Turns the night clock on or off.	Gece saatini açar veya kapatır.
+This page.	Bu sayfa.
+What's new	Yenilikler
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Koyu tema Claude uygulamasının renklerini kullanır. Yazı tipi: Liberation Sans.
+Installed version: v	Yüklü sürüm: v
+Favourites	Favoriler
+Choose the county	İli seçin
+Other countries	Diğer ülkeler
+‹  Back	‹  Geri
+‹  Back to the counties	‹  İllere geri
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	Ana ekranda Meteo Alarm widget'ı yok. Ana ekranda boş bir yere basılı tutun › Widget'lar › Meteo Alarm.
+Which widget?	Hangi widget?
+Change	Değiştir
+Background	Arka plan
+Colours	Renkler
+Text colour	Yazı rengi
+Cancel	İptal
+  (as in the app)	  (uygulamadaki gibi)
+Transparency: 	Saydamlık: 
+Match the phone's settings	Telefonun ayarlarına uy
+By the weather	Havaya göre
+White	Beyaz
+Black	Siyah
+As in the app	Uygulamadaki gibi
+Choose the county / country…	İli / ülkeyi seçin…
+County / country	İl / ülke
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Güncellemeler için: ☰ › Güncellemeleri denetle'yi açın ve sorulduğunda onay verin.
+Updates from GitHub	GitHub'dan güncellemeler
+I agree	Kabul ediyorum
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Onayınız olmadan uygulama güncellenmez. Fikrinizi istediğiniz zaman ☰ › Güncellemeleri denetle'den değiştirebilirsiniz.
+Checking GitHub for a new version…	GitHub'da yeni sürüm aranıyor…
+No version published yet.	Henüz yayımlanmış sürüm yok.
+Could not check for updates. Is the internet on?	Güncellemeler denetlenemedi. İnternet açık mı?
+You have the latest version, v	En son sürüme sahipsiniz, v
+Installed: v	Yüklü: v
+New: v	Yeni: v
+New version: v	Yeni sürüm: v
+Update	Güncelle
+Downloading…	İndiriliyor…
+Hide	Gizle
+Downloading… 	İndiriliyor… 
+The download failed. Is the internet on?	İndirme başarısız oldu. İnternet açık mı?
+The installer could not be opened.	Yükleyici açılamadı.
+no internet (server not found)	internet yok (sunucu bulunamadı)
+the server did not answer in time	sunucu zamanında yanıt vermedi
+no connection	bağlantı yok
+secure connection error: 	güvenli bağlantı hatası: 
+internet not allowed for the app	uygulamaya internet izni yok
+server error 	sunucu hatası 
+network error: 	ağ hatası: 
+data error: 	veri hatası: 
+⌃  more  ⌃	⌃  daha fazla  ⌃
+⌄  more  ⌄	⌄  daha fazla  ⌄
+Open the app	Uygulamayı aç
+WARNING!	UYARI!
+Sunrise at 	Gün doğumu 
+Sunset at 	Gün batımı 
+Weather, warnings and earthquakes	Hava, uyarılar ve depremler
+Rain or snow starting, new weather warnings, earthquakes in your country.	Başlayan yağmur veya kar, yeni hava uyarıları, ülkenizdeki depremler.
+Snow	Kar
+Rain	Yağmur
+It is snowing in 	Kar yağıyor: 
+It is raining in 	Yağmur yağıyor: 
+Snow is expected within the hour in 	Bir saat içinde kar bekleniyor: 
+Rain is expected within the hour in 	Bir saat içinde yağmur bekleniyor: 
+Warning	Uyarı
+Earthquake M	Deprem M
+probably felt: 	muhtemelen hissedildi: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Bildirimler açık: yağmur veya kar, hava uyarıları ve ülkenizdeki depremler.
+EARTHQUAKE	DEPREM
+Felt here: 	Burada hissedildi: 
+ (estimate)	 (tahmin)
+Magnitude: 	Büyüklük: 
+Time: 	Saat: 
+Region: 	Bölge: 
+Depth: 	Derinlik: 
+Epicentre: 	Merkez üssü: 
+ from 	 uzaklık 
+In 	Konum: 
+Probably felt, intensity 	Muhtemelen hissedildi, şiddet 
+Probably not felt here.	Muhtemelen burada hissedilmedi.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Büyüklük ve odağa uzaklıktan tahmin edildi (EMS-98 ölçeği); EMSC her yerleşimin hissedilme bildirimlerini yayımlamaz.
+All in the last 24 h	Son 24 saattekilerin hepsi
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Kaynak: EMSC (seismicportal.eu), büyüklük 3 ve üzeri, son 24 saat.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Potansiyel olarak tehlikeli hava (mevsime uygun ama yer yer daha şiddetli). Dışarıda dikkatli olun.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Yüksek şiddette tehlikeli hava. Çok dikkatli olun, tahminleri izleyin ve yetkililerin önerilerine uyun.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Çok yüksek şiddette çok tehlikeli hava. Korunma önlemleri alın ve yetkililerin talimatlarına uyun.
+In force now, until 	Şu an yürürlükte, bitiş 
+From 	Başlangıç 
+ until 	 bitiş 
+Source: MeteoAlarm (the national weather service), for 	Kaynak: MeteoAlarm (ulusal meteoroloji servisi), 
+Stay away from trees, poles and scaffolding; secure loose objects.	Ağaçlardan, direklerden ve iskelelerden uzak durun; açıkta duran eşyaları sabitleyin.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Yıldırım, sağanak, dolu ve fırtına olabilir; kapalı bir yere sığının.
+Avoid flooded roads and river banks.	Su basmış yollardan ve dere kenarlarından uzak durun.
+Slippery roads; drive only if you must, with winter equipment.	Yollar kaygan; zorunlu değilse araç kullanmayın, kış donanımıyla gidin.
+Low visibility; drive slowly with the fog lights on.	Görüş düşük; sis farlarıyla yavaş sürün.
+Avoid the sun between 11 and 18, drink plenty of water.	11 ile 18 arası güneşten kaçının, bol su için.
+Dress warmly and limit time outdoors.	Sıkı giyinin ve dışarıda kalma süresini kısaltın.
+Do not light fires outdoors.	Açık alanda ateş yakmayın.
+H	SA
+MOON	AY
+HUMIDITY	NEM
+AIR QUALITY	HAVA KALİTESİ
+PRESSURE	BASINÇ
+WIND	RÜZGÂR
+VISIBILITY	GÖRÜŞ
+COMPASS	PUSULA
+Moonrise	Ay doğuşu
+Moonset	Ay batışı
+relative humidity	bağıl nem
+Good	İyi
+Fair	Orta
+Moderate	Makul
+Poor	Kötü
+Very poor	Çok kötü
+Extremely poor	Son derece kötü
+Poor (fog)	Kötü (sis)
+Very good	Çok iyi
+steady	sabit
+↓ falling fast	↓ hızla düşüyor
+↓ falling	↓ düşüyor
+↑ rising fast	↑ hızla yükseliyor
+↑ rising	↑ yükseliyor
+no compass	pusula yok
+Tap to leave the night clock	Gece saatinden çıkmak için dokunun
+until	kadar
+now	şimdi
+Rain from	Yağmur başlangıcı
+max	maks
+Snow from	Kar başlangıcı
+Raining	Yağmur yağıyor
+Snowing	Kar yağıyor
+updated	güncellendi
+no data since	veri yok, şu andan beri
+Loading weather…	Hava durumu yükleniyor…
+updating…	güncelleniyor…
+Feels like	Hissedilen
+Wind	Rüzgâr
+High	Maks
+Low	Min
+Charging	Şarj oluyor
+YELLOW	SARI
+ORANGE	TURUNCU
+RED	KIRMIZI
+WARNING	UYARI
+TOMORROW	YARIN
+DAY AFTER	ÖBÜR GÜN
+NEXT 12 HOURS	SONRAKİ 12 SAAT
+WEATHER · NEXT HOURS	HAVA · SONRAKİ SAATLER
+RAIN	YAĞMUR
+SNOW	KAR
+PRECIPITATION	YAĞIŞ
+snow	kar
+rain	yağmur
+no precipitation	yağış yok
+SUN	GÜNEŞ
+UV INDEX	UV ENDEKSİ
+POLLEN	POLEN
+Sunrise	Gün doğumu
+Sunset	Gün batımı
+Very high	Çok yüksek
+Extreme	Aşırı
+no pollen	polen yok
+no data	veri yok
+No precipitation	Yağış yok
+alder	kızılağaç
+birch	huş
+olive	zeytin
+grasses	çimenler
+mugwort	pelin
+ragweed	ambrozya
+Clear	Açık
+Mostly clear	Çoğunlukla açık
+Partly cloudy	Parçalı bulutlu
+Overcast	Kapalı
+Fog	Sis
+Drizzle	Çisenti
+Freezing drizzle	Donan çisenti
+Light rain	Hafif yağmur
+Heavy rain	Şiddetli yağmur
+Freezing rain	Donan yağmur
+Light snow	Hafif kar
+Heavy snow	Yoğun kar
+Snow grains	Kar taneleri
+Light showers	Hafif sağanak
+Showers	Sağanak
+Heavy showers	Şiddetli sağanak
+Snow showers	Kar sağanağı
+Thunderstorm	Gök gürültülü fırtına
+Thunderstorm, hail	Gök gürültülü fırtına, dolu
+Code 	Kod 
+not felt	hissedilmedi
+scarcely felt, only by a few people at rest	pek hissedilmedi, yalnızca dinlenen birkaç kişi
+weak, felt by a few people indoors	zayıf, içeride birkaç kişi tarafından hissedildi
+felt by many indoors; windows and doors rattle	içeride birçok kişi tarafından hissedildi; pencereler ve kapılar takırdar
+strong, felt by nearly everyone; objects move, some are frightened	güçlü, neredeyse herkes tarafından hissedildi; eşyalar oynar, bazıları korkar
+slight damage (cracks in plaster); many run outdoors	hafif hasar (sıvada çatlaklar); birçok kişi dışarı kaçar
+damage to buildings; hard to stand	binalarda hasar; ayakta durmak zor
+heavy damage	ağır hasar
+destruction	yıkım
+great destruction	büyük yıkım
+very great destruction	çok büyük yıkım
+complete destruction	tam yıkım
+Meteo Alarm: the weather, weather warnings and earthquakes where you are, free and without ads.	Meteo Alarm: bulunduğunuz yerin havası, hava uyarıları ve depremler; ücretsiz ve reklamsız.
+Download the app (Android):	Uygulamayı indirin (Android):
+Open the downloaded file and install it. The phone may warn that the app does not come from Google Play: choose "Install anyway". The app then updates itself from GitHub.	İndirilen dosyayı açın ve yükleyin. Telefon, uygulamanın Google Play'den gelmediği konusunda uyarabilir: "Yine de yükle"yi seçin. Uygulama daha sonra kendini GitHub'dan günceller.
+All versions:	Tüm sürümler:
+Send the app	Uygulamayı gönder
+Right edge	Sağ kenar
+Text size	Yazı boyutu
+ · days	 · günler
+Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Auto Blocker (Otomatik Engelleyici) olan Samsung telefonlar: uygulamayı yüklemeden veya güncellemeden önce kapatın (Ayarlar › Güvenlik ve gizlilik › Auto Blocker), yoksa telefon yüklemeyi reddeder; sonra yeniden açabilirsiniz.
+Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · emperyal birimler (mph, inç, inHg, mil)
+Switch to the metric system?	Metrik sisteme geçilsin mi?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°F, mph, inç, inHg, mil ve 12 saat yerine °C, km/sa, milimetre, hPa, kilometre ve 24 saat. İstediğiniz zaman ☰ › Sıcaklık °C/°F'den geri dönebilirsiniz.
+Metric	Metrik
+°C · metric system	°C · metrik sistem
+Keep °F	°F kalsın
+dry	kuru
+moderate	orta
+moist	nemli
+very wet	çok ıslak
+Parcels	Parseller
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Yalnızca bu telefonda, siz silene kadar saklanır. İstatistikleri 28 gün tutulur.
+Save the place here	Burayı kaydet
+Choose on the map	Haritada seç
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Henüz kayıtlı parsel yok. Parselin üzerinde durun ve “Burayı kaydet”e dokunun ya da haritada seçin.
+alerts on	uyarılar açık
+wind 	rüzgâr 
+rain 	yağmur 
+soil 	toprak 
+updated 	güncellendi 
+Without location the place can only be chosen on the map.	Konum olmadan yer yalnızca haritada seçilebilir.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Telefon uygulamanın bildirimlerine izin vermiyor: uyarılar gösterilemez.
+Looking for the position (GPS)… stay outside, on the parcel.	Konum aranıyor (GPS)… dışarıda, parselin üzerinde kalın.
+The position was not found.	Konum bulunamadı.
+The position was not found: move the map to the parcel.	Konum bulunamadı: haritayı parsele kaydırın.
+The position is approximate (±	Konum yaklaşık (±
+ m): check the pin on the map.	 m): haritadaki iğneyi kontrol edin.
+New parcel	Yeni parsel
+Move the pin	İğneyi taşı
+Name, e.g. parcel 96/5	Ad, ör. parsel 96/5
+move the map to put the pin on the parcel	iğneyi parsele getirmek için haritayı kaydırın
+My position	Konumum
+Give the parcel a name	Parsele bir ad verin
+Downloading from Open-Meteo…	Open-Meteo'dan indiriliyor…
+Open-Meteo is not answering now (	Open-Meteo şu an yanıt vermiyor (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Erişim geri gelince uygulama parselin verilerini indirir ve size bildirim gönderir.
+low 	en düşük 
+high 	en yüksek 
+turns to 	dönüyor: 
+ around 	 saat civarı 
+steady for 12 hours	12 saat boyunca sabit
+today up to 	bugün en fazla 
+Air temperature	Hava sıcaklığı
+gusts 	hamle 
+Wind direction	Rüzgâr yönü
+Chance of rain	Yağmur olasılığı
+Air humidity	Hava nemi
+Soil moisture	Toprak nemi
+3–9 cm, estimated	3–9 cm, tahmini
+Soil temperature	Toprak sıcaklığı
+surface, estimated	yüzey, tahmini
+Next 12 hours	Sonraki 12 saat
+Statistics (last 28 days)	İstatistikler (son 28 gün)
+Move the pin on the map	İğneyi haritada taşı
+Rain / wind alerts: ON	Yağmur / rüzgâr uyarıları: AÇIK
+Rain / wind alerts: OFF	Yağmur / rüzgâr uyarıları: KAPALI
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Bu parsel için sonraki 12 saatte yağmur veya kuvvetli rüzgâr tahmin edildiğinde bildirim alırsınız (3 saatte bir kontrol edilir).
+Rename	Yeniden adlandır
+Delete the parcel	Parseli sil
+Delete 	Sil: 
+The parcel and its statistics are deleted from the phone.	Parsel ve istatistikleri telefondan silinir.
+Delete	Sil
+Statistics · 	İstatistikler · 
+Choose the period, within the last 28 days.	Son 28 gün içinden dönemi seçin.
+ days	 gün
+To 	Bitiş 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Bu dönem için henüz veri yok. Parseli bir kez internetle açın: uygulama son 28 günü Open-Meteo'dan indirir.
+Summary	Özet
+Lowest / highest	En düşük / en yüksek
+Rain total	Toplam yağış
+ days with rain (1 mm+)	 yağışlı gün (1 mm+)
+Highest wind	En kuvvetli rüzgâr
+gusts up to 	hamleler en fazla 
+mean, estimated	ortalama, tahmini
+Day by day	Gün gün
+Date	Tarih
+Max	Maks
+Min	Min
+Soil	Toprak
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Kaynak: Open-Meteo (modeller ve geçmiş günlerin tahminleri). Toprak nemi 3–9 cm derinlikte, tahmini.
+Save as PDF in Downloads	PDF olarak İndirilenler'e kaydet
+The PDF could not be saved: 	PDF kaydedilemedi: 
+PDF saved	PDF kaydedildi
+In Downloads: 	İndirilenler'de: 
+Open	Aç
+No app on the phone opens PDF files.	Telefonda PDF dosyalarını açan uygulama yok.
+Max wind	Maks rüzgâr
+Parcel statistics · 	Parsel istatistikleri · 
+Coordinates: 	Koordinatlar: 
+Period: 	Dönem: 
+ days)	 gün)
+Made on 	Oluşturulma: 
+Lowest temperature: 	En düşük sıcaklık: 
+Highest temperature: 	En yüksek sıcaklık: 
+Rain total: 	Toplam yağış: 
+Highest wind: 	En kuvvetli rüzgâr: 
+Mean soil moisture (3–9 cm, estimated): 	Ortalama toprak nemi (3–9 cm, tahmini): 
+Source: Open-Meteo (open-meteo.com), weather models.	Kaynak: Open-Meteo (open-meteo.com), hava modelleri.
+Soil moisture and soil temperature are estimates, not measurements.	Toprak nemi ve toprak sıcaklığı tahmindir, ölçüm değildir.
+Farmer mode	Çiftçi modu
+Open-Meteo answers again: the farmer's data for 	Open-Meteo yeniden yanıt veriyor: çiftçi verileri (
+ have been downloaded.	 için) indirildi.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Çiftçi verileri: Open-Meteo yanıt vermiyor; geldiklerinde bildirim alacaksınız
+Farmer mode: tap an hour or a rain box for details	Çiftçi modu: ayrıntılar için bir saate veya yağmur kutusuna dokunun
+Normal mode	Normal mod
+Local time	Yerel saat
+Farmer mode / Normal mode	Çiftçi modu / Normal mod
+Hour boxes	Saat kutuları
+A parcel's page	Parsel sayfası
+Statistics and PDF	İstatistikler ve PDF
+Parcel alerts	Parsel uyarıları
+Soil data and source	Toprak verileri ve kaynak
+The map	Harita
+Farmer · 	Çiftçi · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo yeniden yanıt veriyor: parselin verileri indirildi.
+Rain expected from 	Yağmur bekleniyor, başlangıç 
+ in the next 12 hours	 sonraki 12 saatte
+Rain · 	Yağmur · 
+Strong wind from 	Kuvvetli rüzgâr, başlangıç 
+, gusts 	, hamleler 
+Wind · 	Rüzgâr · 
+showers	sağanak
+sleet	karla karışık yağmur
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Çiftçi verileri (saatlik rüzgâr, nem, toprak) yalnızca şu an yanıt vermeyen Open-Meteo'dan gelir. Erişim geri gelince uygulama bunları indirir ve size bildirim gönderir.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Toprak nemi ve toprak sıcaklığı hava modelinin tahminleridir, ölçüm değildir · kaynak: Open-Meteo (open-meteo.com).
+Temperature: 	Sıcaklık: 
+Chance of rain: 	Yağmur olasılığı: 
+Day's low / high: 	Günün en düşük / en yüksek: 
+Speed: 	Hız: 
+Direction: from 	Yön: 
+Change: it turns from 	Değişim: dönüyor, 
+ to 	 → 
+Change: it keeps its direction for the next 12 hours	Değişim: sonraki 12 saat yönünü koruyor
+Air and rain	Hava ve yağmur
+Air humidity: 	Hava nemi: 
+Soil (estimated)	Toprak (tahmini)
+Soil moisture (3–9 cm): 	Toprak nemi (3–9 cm): 
+Soil temperature (surface): 	Toprak sıcaklığı (yüzey): 
+likely	olası
+possible	mümkün
+unlikely	olası değil
+Amount: 	Miktar: 
+Kind: 	Tür: 
+showers 	sağanak 
+snow 	kar 
+Of which: 	Bunun: 
+Cloud cover: 	Bulutluluk: 
+Until midnight: 	Gece yarısına kadar: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Kaynak: Open-Meteo. Olasılık, o saatte yağmur yağma ihtimalidir, ne kadar süre yağdığı değil.
+FARMER	ÇİFTÇİ
+Delete parcels	Parselleri sil
+Tap a parcel to see it on the main screen.	Ana ekranda görmek için bir parsele dokunun.
+Saved: 	Kaydedildi: 
+Tick the parcels to delete, then tap Delete.	Silinecek parselleri işaretleyin, sonra Sil'e dokunun.
+Are you sure?	Emin misiniz?
+These parcels and their statistics are deleted from the phone: 	Bu parseller ve istatistikleri telefondan silinir: 
+Yes, delete	Evet, sil
+Deleted: 	Silindi: 
+No	Hayır
+This is the first screen	Bu ilk ekran
+This is the last screen	Bu son ekran
+Near 	Yakını: 
+Alerts, rename, delete	Uyarılar, yeniden adlandır, sil
+Main screens	Ana ekranlar
+AIR	HAVA
+DIRECTION	YÖN
+SOIL	TOPRAK
+SOIL TEMP.	TOPRAK SIC.
+Now: 	Şimdi: 
+Total: 	Toplam: 
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Open-Meteo'nun hava modellerinden tahmini; o yerde yağmur ölçer ölçümü değildir.
+Other languages	Diğer diller
+Languages of the minorities	Azınlık dilleri
+last 24 hours	son 24 saat
+Precipitation of the last 24 hours	Son 24 saatin yağışı
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Gösterilen yerde son 24 saatte yere düşen su (yağmur, karla karışık yağmur, eriyen kar), saat saat.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Son 24 saatin verileri indiriliyor; birazdan yeniden dokunun. Open-Meteo yanıt vermiyorsa, veriler gelince bildirim alırsınız.
+No precipitation in the last 24 hours.	Son 24 saatte yağış yok.
+Hours with precipitation	Yağışlı saatler
+Kept by the soil (3–9 cm layer): 	Toprağın tuttuğu (3–9 cm katmanı): 
+moisture 	nem 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	“Toprağın tuttuğu”: toprağın 3–9 cm katmanındaki suyun ne kadar arttığı (veya − ile azaldığı); geri kalanı aktı, buharlaştı veya daha derine indi.
+FARMER MODE	ÇİFTÇİ MODU
+WATER IN THE SOIL	TOPRAKTAKİ SU
+layer 3–9 cm	3–9 cm katmanı
+ in 24 h	 24 saatte
+Water in the soil	Topraktaki su
+The water held now in the soil's 3–9 cm layer, estimated by Open-Meteo: 	Toprağın 3–9 cm katmanında şu an tutulan su, Open-Meteo tahmini: 
+Type: 	Tür: 
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	Play Protect uyarısı hakkında: Google uygulamanın "zararlı olabileceğini" söyleyebilir. Bunun nedeni uygulamanın Google Play'den gelmemesi, geliştiricisinin Google'a kayıtlı olmaması ve kendi güncellemelerini yükleyebilmesidir (github.com/viorelrb-alt/meteo-alarm-android'den). Uygulama başka bir şey yapmaz. Play Protect penceresi çıkınca "Diğer ayrıntılar"a (görünüyorsa), sonra "Taramadan yükle"ye (veya "Yine de yükle") dokunun.
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm Google Play'den gelmez. Yeni sürümleri GitHub'da (github.com/viorelrb-alt/meteo-alarm-android) yayımlanır ve uygulama kendini oradan günceller: yaklaşık haftada bir (veya Güncellemeleri denetle'yi seçtiğinizde) kontrol eder, yenilikleri gösterir ve yalnızca Güncelle'ye dokunduğunuzda yeni sürümü indirip telefonun yükleyicisini açar; orada bir kez daha onaylarsınız.\n\nUygulamanın bu şekilde güncellenmesine izin veriyor musunuz? Onayınız olmadan uygulama güncelleme aramaz ve hiçbir şey indirmez; daha sonra ☰ › Güncellemeleri denetle'den kabul edebilirsiniz.
+SNOW ICE	KAR BUZ
+THUNDERSTORM	GÖK GÜRÜLTÜLÜ FIRTINA
+FOG	SİS
+HIGH TEMPERATURE	YÜKSEK SICAKLIK
+LOW TEMPERATURE	DÜŞÜK SICAKLIK
+COASTALEVENT	KIYI OLAYI
+FOREST FIRE	ORMAN YANGINI
+AVALANCHES	ÇIĞ
+FLOODING	SEL
+RAIN FLOOD	YAĞMUR SELİ
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	☰'nin ilk satırı modu değiştirir. Çiftçi modunda her saat, hava ve yağmuru içeren geniş bir kutudur; telefon yan yatınca iki kutu alt alta, yukarı ve aşağı kaydırılır.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Dokunma saatin ayrıntılarını gösterir: sıcaklık, rüzgâr ve yönü, nem, yağmur, toprak.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Toprağın 3–9 cm katmanında şu an tutulan su ve 24 saatteki değişimi; dokunma yağışlı saatleri gösterir. Open-Meteo tahmini.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Parseller: bulunduğunuz yeri kaydedin veya haritada seçin, bir ad verin. Düzenle (veya kalem) adı ve iğneyi değiştirir; Parselleri sil onları kaldırır. Yalnızca bu telefonda.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Yerleşim için bir ana ekran ve her parsel için bir tane: sıcaklığın üzerinde yana kaydırın.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Parsel adına dokunma: kutuları, sonraki 12 saat, PDF'li istatistikler, uyarılar, yeniden adlandırma, silme.
+When ON, a notification for rain or strong wind forecast on the parcel.	AÇIK olduğunda, parselde yağmur veya kuvvetli rüzgâr tahmin edilince bildirim.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Toprak verileri Open-Meteo modelinin tahminleridir, ölçüm değildir; yakın parseller aynı değerleri gösterebilir.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: bir parmakla kaydırın, iki parmakla yakınlaştırın; internet gerekir.
+Choose the town: favourites, then counties (or states).	Yerleşimi seçin: favoriler, sonra iller (veya eyaletler).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Otomatik konumu açar (dolu) veya kapatır (boş); bulunduğunuz yerin havasını gösterir.
+Shows the brightness bar on the left.	Soldaki parlaklık çubuğunu gösterir.
+Over the brightness bar: switches the theme.	Parlaklık çubuğunun üstünde: temayı değiştirir.
+Light theme in the light, dark in the dark (needs a light sensor).	Işıkta açık tema, karanlıkta koyu tema (ışık sensörü gerekir).
+Looks once with the GPS.	GPS ile bir kez arar.
+Refreshes the weather.	Hava durumunu yeniler.
+Slide up or down: brightness.	Yukarı veya aşağı kaydırın: parlaklık.
+Slide up or down: text size.	Yukarı veya aşağı kaydırın: yazı boyutu.
+The Aa button on the pages shows the text-size bar.	Sayfalardaki Aa düğmesi yazı boyutu çubuğunu gösterir.
+Shows where the wind blows, turned with the phone.	Rüzgârın nereye estiğini gösterir, telefonla döner.
+A big dim clock while the phone charges at night.	Telefon gece şarj olurken büyük, loş bir saat.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Çizginin altında bir sıra: deprem, sonra renge göre uyarılar. Dokunma ayrıntıları gösterir.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Son 24 saatte ülkenizdeki en güçlü deprem ve muhtemelen nasıl hissedildiği (EMSC).
+The rows of boxes follow the finger.	Kutu sıraları parmağı izler.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula; dokunma ayrıntıları gösterir.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Ana ekrana basılı tutun › Widget'lar › Meteo Alarm. Düzeni değiştirmek için kenarları sürükleyin (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Widget'a basılı tutun › Ayarlar veya ☰ › Widget'lar: yerleşim, arka plan, renkler.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Ekran açıkken 15 dakikada, kapalıyken 30 dakikada bir; Open-Meteo meşgulken MET Norway.
+Downloads the weather now.	Hava durumunu şimdi indirir.
+Keeps the screen on while the app is open.	Uygulama açıkken ekranı açık tutar.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	İngilizce, telefonun dili ve ülkenin dilleri; Romanya'da ayrıca “Diğer diller”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Yakınınızdaki son günlerin depremleri; saat, yer, büyüklük ve uzaklıkla.
+Rain or snow starting, new warnings and earthquakes, each only once.	Başlayan yağmur veya kar, yeni uyarılar ve depremler, her biri yalnızca bir kez.
+The settings of the widgets on the home screen.	Ana ekrandaki widget'ların ayarları.
+What the app did, with the time; read, share or save it.	Uygulamanın yaptıkları, saatiyle; okuyun, paylaşın veya kaydedin.
+Looks for a new version on GitHub, with your consent.	Onayınızla GitHub'da yeni sürüm arar.
+Sends the download link, e.g. on WhatsApp.	İndirme bağlantısını gönderir, ör. WhatsApp'ta.
+About the app, its data and what's new.	Uygulama, verileri ve yenilikler hakkında.
+Edit	Düzenle
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Ana ekranda görmek için bir parsele dokunun. Kalem onu düzenlemek için açar.
+temp: 	sıcaklık: 
+Tap the parcel to edit: its name and the pin on the map.	Düzenlenecek parsele dokunun: adı ve haritadaki iğne.

@@ -595,3 +595,45 @@ Type: 	Veids:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Tālrunī katra stunda ir viens plats lodziņš, laikapstākļi pa kreisi un lietus pa labi; stāvus tālrunī bīdi lodziņus uz sāniem, guļus divi lodziņi ir viens zem otra: bīdi tos augšup un lejup. Stāvus tālrunī ikona ir telpas virs lodziņiem augšējā pusē, bet temperatūra apakšējā.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Platam lodziņam tas pats logs zem „Lietus” rāda arī stundas lietus informāciju.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Lauksaimnieka režīmā apakšējās rindas lodziņš „ŪDENS AUGSNĒ”, starp Saule / Mēness un UV indeksu, rāda ūdeni, ko augsnes slānis 3–9 cm tagad notur rādītajā vietā (apdzīvotā vieta vai lauks), milimetros, un zem tā, cik tas mainījies 24 stundās. Pieskāriens to izskaidro un rāda pēdējo 24 stundu nokrišņus: tikai stundas ar nokrišņiem, katras milimetrus un cik no tiem noturēja augsne. Open-Meteo novērtējums, nevis mērījums.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	☰ pirmais punkts maina režīmu. Lauksaimnieka režīmā katra stunda ir viens plats lodziņš ar laikapstākļiem un lietu; guļus tālrunī divi lodziņi viens zem otra, bīdāmi augšup un lejup.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Pieskāriens rāda stundas informāciju: temperatūru, vēju un virzienu, mitrumu, lietu, augsni.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Ūdens, ko augsnes slānis 3–9 cm tagad notur, un tā izmaiņa 24 stundās; pieskāriens rāda stundas ar nokrišņiem. Open-Meteo novērtējums.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Lauki: saglabā vietu, kur stāvi, vai izvēlies to kartē un dod tai nosaukumu. Rediģēt (vai zīmulis) maina nosaukumu un adatu; Dzēst laukus tos izdzēš. Tikai šajā tālrunī.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Viens galvenais ekrāns apdzīvotajai vietai un pa vienam katram laukam: velc uz sāniem pāri temperatūrai.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Pieskāriens lauka nosaukumam: tā lodziņi, nākamās 12 stundas, statistika ar PDF, brīdinājumi, pārdēvēt, dzēst.
+When ON, a notification for rain or strong wind forecast on the parcel.	Kad IESLĒGTS, paziņojums, ja laukam prognozē lietu vai stipru vēju.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Augsnes dati ir Open-Meteo modeļa novērtējumi, nevis mērījumi; tuvi lauki var rādīt tās pašas vērtības.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: pārvieto ar vienu pirkstu, tuvini ar diviem; vajag internetu.
+Choose the town: favourites, then counties (or states).	Izvēlies vietu: izlase, tad novadi (vai štati).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Ieslēdz (pilna) vai izslēdz (tukša) automātisko atrašanās vietu; rāda laiku, kur tu esi.
+Shows the brightness bar on the left.	Rāda spilgtuma joslu pa kreisi.
+Over the brightness bar: switches the theme.	Virs spilgtuma joslas: maina motīvu.
+Light theme in the light, dark in the dark (needs a light sensor).	Gaišs motīvs gaismā, tumšs tumsā (vajag gaismas sensoru).
+Looks once with the GPS.	Meklē vienreiz ar GPS.
+Refreshes the weather.	Atsvaidzina laikapstākļus.
+Slide up or down: brightness.	Velc augšup vai lejup: spilgtums.
+Slide up or down: text size.	Velc augšup vai lejup: teksta lielums.
+The Aa button on the pages shows the text-size bar.	Poga Aa lapās rāda teksta lieluma joslu.
+Shows where the wind blows, turned with the phone.	Rāda, uz kurieni pūš vējš, griežas līdz ar tālruni.
+A big dim clock while the phone charges at night.	Liels, blāvs pulkstenis, kad tālrunis naktī lādējas.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Viena rinda zem līnijas: zemestrīce, tad brīdinājumi pēc krāsas. Pieskāriens rāda informāciju.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Pēdējo 24 stundu spēcīgākā zemestrīce tavā valstī un kā tā, visticamāk, bija jūtama (EMSC).
+The rows of boxes follow the finger.	Lodziņu rindas seko pirkstam.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass; pieskāriens rāda informāciju.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Turi sākuma ekrānu › Logrīki › Meteo Alarm. Velc malas, lai mainītu izkārtojumu (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Turi logrīku › Iestatījumi, vai ☰ › Logrīki: vieta, fons, krāsas.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Ik pēc 15 minūtēm ar ieslēgtu ekrānu, 30 ar izslēgtu; MET Norway, kad Open-Meteo ir aizņemts.
+Downloads the weather now.	Lejupielādē laikapstākļus tagad.
+Keeps the screen on while the app is open.	Tur ekrānu ieslēgtu, kamēr lietotne ir atvērta.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Angļu valoda, tālruņa valoda un valsts valodas; Rumānijā arī „Citas valodas”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Pēdējo dienu zemestrīces tuvumā, ar laiku, vietu, magnitūdu un attālumu.
+Rain or snow starting, new warnings and earthquakes, each only once.	Lietus vai sniega sākums, jauni brīdinājumi un zemestrīces, katrs tikai vienreiz.
+The settings of the widgets on the home screen.	Sākuma ekrāna logrīku iestatījumi.
+What the app did, with the time; read, share or save it.	Ko lietotne darīja, ar laiku; lasi, kopīgo vai saglabā.
+Looks for a new version on GitHub, with your consent.	Meklē jaunu versiju GitHub ar tavu piekrišanu.
+Sends the download link, e.g. on WhatsApp.	Nosūta lejupielādes saiti, piem., WhatsApp.
+About the app, its data and what's new.	Par lietotni, tās datiem un jaunumiem.
+Edit	Rediģēt
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Pieskaries laukam, lai to redzētu galvenajā ekrānā. Zīmulis to atver rediģēšanai.
+temp: 	temp.: 
+Tap the parcel to edit: its name and the pin on the map.	Pieskaries laukam rediģēšanai: nosaukums un adata kartē.

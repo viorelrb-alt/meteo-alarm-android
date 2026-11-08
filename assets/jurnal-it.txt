@@ -1,77 +1,30 @@
-v2.70 · 7 novembre 2026
-- Modalità agricoltore: ogni ora è un riquadro largo (meteo + pioggia) con una finestra comune al tocco; in orizzontale due riquadri uno sotto l'altro, scorsi su e giù. Zona in alto più grande: icona sopra, temperatura più grande del 10 % sotto. Il riquadro «PRECIPITAZIONI 24» diventa «ACQUA NEL SUOLO»: l'acqua dello strato 3–9 cm e il suo cambiamento in 24 ore.
+Versione 1
+- Il meteo attuale, le prossime ore, le precipitazioni per 12 ore e 5 giorni.
+- Riquadri: Sole / Luna, UV, Pollini, Umidità, Qualità dell'aria, Pressione, Vento, Visibilità, Bussola, Terremoto.
+- Allerte meteo per codice colore (MeteoAlarm, circa 38 paesi).
+- Localizzazione automatica, preferite, altri paesi.
+- Tema chiaro, scuro e automatico; luminosità dal bordo dello schermo; orologio notturno.
+- Verticale, orizzontale, tablet.
+- Widget 2x2, 4x1, 4x2, con impostazioni.
+- Aggiornamento automatico; previsione di riserva MET Norway.
+- Aggiornamenti dall'app, Aiuto, Registro.
 
-v2.64 · 7 novembre 2026
-- Modalità agricoltore, telefono in orizzontale: i dettagli dei riquadri si aprono in una grande finestra a destra, sempre nello stesso posto e della stessa misura.
+Versione 2
+- Tutte le lingue ufficiali dell'UE e l'ucraino.
+- Pagina Terremoti.
+- Notifiche con il tuo consenso: pioggia o neve, allerte, terremoti.
 
-v2.63 · 7 novembre 2026
-- «MODALITÀ AGRICOLTORE» compare ora sotto la linea in alto, a sinistra sotto il pulsante ☰, invece che in basso.
+Versione attuale: v2.80 · 8.11.2026
+Miglioramenti di design / struttura.
+- Particelle: il pulsante Modifica e la matita su ogni particella, per il nome e il punto sulla mappa.
+- Nuove lingue: turco, russo, serbo.
 
-v2.62 · 7 novembre 2026
-- Modalità agricoltore: la finestra «PRECIPITAZIONI 24» mostra anche quanta acqua ha trattenuto il suolo (strato 3–9 cm), in totale e ora per ora.
-
-v2.61 · 7 novembre 2026
-- Modalità agricoltore: il riquadro «PRECIPITAZIONI 24» passa nella fila in basso, tra Sole / Luna e Indice UV; un tocco lo spiega ed elenca le ore con precipitazioni e i loro millimetri.
-- Corretto: in modalità agricoltore i riquadri Polline e Pressione mostravano la temperatura del suolo.
-- Corretto: le precipitazioni delle ultime 24 ore si scaricano da sole quando mancano; «In carica» non finisce più sotto AGRICOLTORE.
-
-v2.60 · 7 novembre 2026
-- Modalità agricoltore: una schermata principale per la località e una per ogni appezzamento; si passa dall'una all'altra scorrendo sulla temperatura e sull'icona, e i punti sotto la linea indicano dove sei.
-- Un appezzamento nella schermata principale mostra il suo meteo e in basso le sue caselle (aria, vento, direzione, pioggia, umidità, suolo, temperatura del suolo), senza pollini né terremoti; un tocco sul nome mostra il nome intero e le coordinate. I widget e le notifiche restano sulla località.
-- Casella «pioggia 24 h» accanto ai pulsanti in basso; un tocco mostra le ore con pioggia.
-- ☰ › Appezzamenti: eliminazione con spunte e conferma; l'elenco nell'ordine di nomi e numeri.
-- In Romania il menu Lingua › Altre lingue offre le lingue delle minoranze: ungherese, tedesco, ucraino e altre.
-
-v2.50 · 7 novembre 2026
-- Modalità agricoltore: la prima voce di ☰ passa tra modalità agricoltore e modalità normale. In modalità agricoltore, toccare una casella oraria mostra la temperatura, la minima e la massima del giorno, il vento con raffiche e direzione (e quando gira), l'umidità dell'aria, la probabilità di pioggia, l'umidità e la temperatura del suolo; il grafico della pioggia e i cinque giorni sono sostituiti da caselle di pioggia ora per ora, con dettagli al tocco.
-- ☰ › Appezzamenti: salva il luogo dove ti trovi (GPS), sistemalo sulla mappa OpenStreetMap e dagli un nome; ogni appezzamento ha caselle per vento, direzione, pioggia, umidità dell'aria e del suolo, temperatura del suolo e dell'aria, avvisi di pioggia e vento forte, e statistiche su un periodo degli ultimi 28 giorni, salvabili in PDF in Download.
-- I dati del suolo sono stime di Open-Meteo; se Open-Meteo non risponde, l'app li scarica più tardi e ti manda una notifica.
-- Stati Uniti: l'orologio e le ore mostrano l'ora locale della località scelta.
-- Notifiche solo per la località scelta (nella modalità di prova) o dove si trova il telefono: niente più avvisi dagli Stati Uniti quando l'app mostra una località europea.
-
-v2.40 · 4 novembre 2026
-- Stati Uniti: ☰ › Tornadoes, una pagina come Terremoti: le allerte tornado per la tua località e il tuo stato, i tornado segnalati vicino negli ultimi 2 giorni, quanti sono in tutto il paese e cosa fare.
-- Stati Uniti: niente riquadro Polline (lì non ci sono dati); la qualità dell'aria con l'indice americano US AQI.
-
-v2.30 · 4 novembre 2026
-- Elementi per usare l'app negli Stati Uniti.
-- ☰ › Temperatura °C/°F: lasciando °F l'app chiede se passare al sistema metrico; con °F la pressione è in inHg e le distanze in miglia.
-
-v2.22 · 4 novembre 2026
-- Telefoni Samsung con Auto Blocker: disattivalo prima di installare o aggiornare l'app (Impostazioni › Sicurezza e privacy › Auto Blocker), altrimenti il telefono rifiuta l'installazione; dopo puoi riattivarlo.
-
-v2.21 · 4 novembre 2026
-- Tablet: il menu ☰ è largo solo quanto la sua riga più lunga, e più piccolo del 5 %.
-- Pagine: il titolo resta su una riga e cresce con la dimensione del testo solo fino ai pulsanti a destra.
-- Barra della dimensione del testo: su alcuni telefoni (A70) si chiudeva al tocco; ora prende il dito su tutta la sua colonna.
-- Il cerchio sopra la barra mostra solo il valore, senza %.
-
-v2.20 · 4 novembre 2026
-- Widget 4x2 su Samsung con One UI 9 (A54): con 2 righe non appare più come 4x3; 4x3 solo da 3 righe.
-- ☰ › Widget: se ce ne sono diversi, il widget si sceglie in alto nella finestra delle impostazioni e le impostazioni sotto sono quelle del widget scelto.
-- Tablet: il menu ☰ è più piccolo del 10 %.
-- Registro: il testo dei pulsanti resta su una riga.
-- Senza internet l'app aspetta che torni la rete invece di riprovare ogni 1–2 minuti.
-
-v2.12 · 4 novembre 2026
-- In Aiuto, Terremoti, Informazioni e Novità: il pulsante Aa accanto ai pulsanti a destra mostra la barra della dimensione del testo a sinistra dello schermo, sopra la pagina, come la barra della luminosità. La barra stretta in alto a destra è stata tolta.
-
-v2.11 · 4 novembre 2026
-- La barra della dimensione del testo aperta dal bordo destro ora appare a sinistra, come la barra della luminosità.
-
-v2.10 · 4 novembre 2026
-- Nuovo widget 4x2 · giorni: sotto il meteo attuale, i prossimi 5 giorni (giorno, icona, max / min). Ingranditi a 3 file o più, entrambi i widget 4x2 (ore e giorni) diventano il nuovo 4x3, con le prossime ore e i prossimi giorni.
-- Dimensione del testo: in Aiuto, Terremoti, Informazioni e Novità, una barra a destra, sotto il pulsante di chiusura, ingrandisce o rimpicciolisce le lettere (80–180 %); nella schermata principale, scorrere su o giù vicino al bordo destro mostra la stessa barra. La dimensione resta salvata sul dispositivo e vale anche per il menu ☰.
-- Tablet: il menu ☰ e gli altri menu sono più grandi del 30 %.
-- ☰ › Invia l'app: invia il link per scaricarla in un messaggio WhatsApp (o con un'altra app), così un'altra persona può installare Meteo Alarm.
-- L'elenco dei widget mostra i loro nomi nella lingua del telefono.
-
-v2.00 · 4 novembre 2026
-- Lingue: l'app parla ora tutte le lingue ufficiali dell'Unione Europea e l'ucraino (Aiuto compreso). Al primo avvio prende la lingua del telefono (l'inglese se l'app non ce l'ha); poi quella scelta in ☰ › Lingua. L'elenco mostra solo inglese, la lingua del telefono e le lingue ufficiali del paese in cui si trova il telefono.
-- ☰ › Terremoti: una pagina con i terremoti di magnitudo 3 o più degli ultimi 7 giorni nel tuo paese, poi quelli delle ultime 48 ore nell'UE, in Ucraina e in Moldavia (ora, luogo, magnitudo, profondità, distanza).
-- Notifiche (solo con il tuo consenso): pioggia o neve che inizia, nuove allerte meteo per la tua località, terremoti di magnitudo 3 o più nel tuo paese. Ogni evento una sola volta. Attive o disattive da ☰ › Notifiche.
-- Posizione e notifiche vengono chieste con una spiegazione amichevole al primo avvio; se rifiuti, l'app richiede solo dopo un aggiornamento. Quando il telefono non mostra più la sua domanda, un pulsante apre le sue impostazioni.
-- Al primo avvio la località trovata dalla posizione diventa quella mostrata e viene aggiunta alle preferite.
-- Telefoni senza bussola o sensore di luce: i relativi pulsanti e riquadri vengono disattivati; il Registro elenca i sensori a ogni avvio.
-- Widget: la striscia 4x1 ora funziona anche sui tablet (si contano le righe della schermata Home, non dimensioni fisse).
-- Corretto: all'avvio dopo un aggiornamento il meteo veniva scaricato due volte; il Registro annota ora la lingua scelta e ogni località scelta, e l'apertura delle impostazioni del widget una sola volta.
+────────
+Nuove funzioni dalla v2.10
+- Modalità agricoltore: riquadri orari con meteo e pioggia, dettagli al tocco, e il riquadro Acqua nel suolo.
+- Particelle: salvate con il GPS o sulla mappa, una schermata principale per ciascuna, statistiche di 28 giorni con PDF, allerte di pioggia e vento.
+- Widget 4x2 giorni e 4x3.
+- Dimensione del testo (Aa).
+- ☰ › Invia l'app.
+- Stati Uniti: allerte NWS, tornado, °F, ora locale.
+- Altre lingue: le lingue delle minoranze della Romania.

@@ -595,3 +595,45 @@ Type: 	Typ:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	På en telefon är varje timme en bred ruta, vädret till vänster och regnet till höger; med telefonen upprätt drar du rutorna i sidled, och på tvären står två rutor under varandra: dra dem upp och ner. Upprätt sitter ikonen i övre halvan av utrymmet ovanför rutorna och temperaturen i den nedre.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	För en bred ruta visar samma fönster också, under ”Regn”, timmens regndetaljer.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	I lantbruksläget visar rutan ”VATTEN I MARKEN” i nedersta raden, mellan Sol / Måne och UV-index, vattnet som markskiktet 3–9 cm håller nu på den visade platsen (ort eller skifte), i millimeter, och under det hur mycket det ändrats på 24 timmar. Ett tryck förklarar det och visar nederbörden de senaste 24 timmarna: bara timmarna med nederbörd, med millimeter för varje och hur mycket marken höll kvar. En uppskattning från Open-Meteo, inte en mätning.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Första raden i ☰ byter läge. I lantbruksläget är varje timme en bred ruta med väder och regn; på tvären två rutor under varandra, dragna upp och ner.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Ett tryck visar timmens detaljer: temperatur, vind och riktning, fuktighet, regn, mark.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Vattnet som markskiktet 3–9 cm håller nu och dess ändring på 24 timmar; ett tryck visar timmarna med nederbörd. Uppskattning från Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Skiften: spara platsen där du står eller välj den på kartan och ge den ett namn. Redigera (eller pennan) ändrar namn och nål; Ta bort skiften raderar dem. Bara på den här telefonen.
+One main screen for the town and one per parcel: slide sideways over the temperature.	En huvudskärm för orten och en per skifte: svep i sidled över temperaturen.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Ett tryck på skiftets namn: dess rutor, de närmaste 12 timmarna, statistik med PDF, varningar, byt namn, ta bort.
+When ON, a notification for rain or strong wind forecast on the parcel.	När PÅ, en avisering när regn eller hård vind väntas på skiftet.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Markdata är modelluppskattningar från Open-Meteo, inte mätningar; närliggande skiften kan visa samma värden.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: flytta med ett finger, zooma med två; kräver internet.
+Choose the town: favourites, then counties (or states).	Välj ort: favoriter, sedan län (eller delstater).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Slår på (fylld) eller av (tom) automatisk plats; visar vädret där du är.
+Shows the brightness bar on the left.	Visar ljusstyrkereglaget till vänster.
+Over the brightness bar: switches the theme.	Ovanför ljusstyrkereglaget: byter tema.
+Light theme in the light, dark in the dark (needs a light sensor).	Ljust tema i ljus, mörkt i mörker (kräver ljussensor).
+Looks once with the GPS.	Söker en gång med GPS.
+Refreshes the weather.	Uppdaterar vädret.
+Slide up or down: brightness.	Svep upp eller ner: ljusstyrka.
+Slide up or down: text size.	Svep upp eller ner: textstorlek.
+The Aa button on the pages shows the text-size bar.	Knappen Aa på sidorna visar textstorleksreglaget.
+Shows where the wind blows, turned with the phone.	Visar vart vinden blåser, vriden med telefonen.
+A big dim clock while the phone charges at night.	En stor, dämpad klocka när telefonen laddar på natten.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	En rad under linjen: jordskalvet, sedan varningarna efter färg. Ett tryck visar detaljerna.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Det kraftigaste jordskalvet de senaste 24 timmarna i ditt land och hur det troligen kändes (EMSC).
+The rows of boxes follow the finger.	Raderna med rutor följer fingret.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sol / Måne, UV, Pollen, Fuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass; ett tryck visar detaljerna.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Håll på startskärmen › Widgetar › Meteo Alarm. Dra i kanterna för att byta layout (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Håll på widgeten › Inställningar, eller ☰ › Widgetar: ort, bakgrund, färger.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Var 15:e minut med skärmen på, 30 med den av; MET Norway när Open-Meteo är upptaget.
+Downloads the weather now.	Hämtar vädret nu.
+Keeps the screen on while the app is open.	Håller skärmen på medan appen är öppen.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Engelska, telefonens språk och landets språk; i Rumänien även ”Andra språk”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	De senaste dagarnas jordskalv i närheten, med tid, plats, magnitud och avstånd.
+Rain or snow starting, new warnings and earthquakes, each only once.	Regn eller snö som börjar, nya varningar och jordskalv, vart och ett bara en gång.
+The settings of the widgets on the home screen.	Inställningarna för widgetarna på startskärmen.
+What the app did, with the time; read, share or save it.	Vad appen gjorde, med tid; läs, dela eller spara.
+Looks for a new version on GitHub, with your consent.	Söker efter en ny version på GitHub, med ditt samtycke.
+Sends the download link, e.g. on WhatsApp.	Skickar nedladdningslänken, t.ex. på WhatsApp.
+About the app, its data and what's new.	Om appen, dess data och vad som är nytt.
+Edit	Redigera
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Tryck på ett skifte för att se det på huvudskärmen. Pennan öppnar det för redigering.
+temp: 	temp: 
+Tap the parcel to edit: its name and the pin on the map.	Tryck på skiftet som ska redigeras: namnet och nålen på kartan.

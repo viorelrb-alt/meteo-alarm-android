@@ -1,77 +1,30 @@
-v2.70 · 7 Samhain 2026
-- Mód feirmeora: is bosca leathan amháin gach uair (aimsir + báisteach) le fuinneog choiteann ar thapáil; leis an bhfón ar a thaobh, dhá bhosca ceann faoin gceann eile, sleamhnaithe suas agus síos. Cuid uachtair níos mó: deilbhín thuas, teocht 10% níos mó thíos. Is “UISCE SAN ITHIR” anois an bosca “DEASCADH 24”: uisce an chisil 3–9 cm agus a athrú i 24 uair.
+Leagan 1
+- An aimsir anois, na huaireanta romhainn, deascadh do 12 uair agus 5 lá.
+- Boscaí: Grian / Gealach, UV, Pailin, Taise, Cáilíocht aeir, Brú, Gaoth, Infheictheacht, Compás, Crith talún.
+- Rabhaidh aimsire de réir dath (MeteoAlarm, timpeall 38 tír).
+- Suíomh uathoibríoch, ceanáin, tíortha eile.
+- Téama geal, dorcha agus uathoibríoch; gile ó imeall an scáileáin; clog oíche.
+- Ingearach, cothrománach, táibléad.
+- Giuirléidí 2x2, 4x1, 4x2, le socruithe.
+- Athnuachan uaithi féin; MET Norway mar réamhaisnéis chúltaca.
+- Nuashonruithe ón aip, Cabhair, Logáil.
 
-v2.64 · 7 Samhain 2026
-- Mód feirmeora, fón ar a thaobh: osclaíonn sonraí na mboscaí i bhfuinneog mhór ar dheis, san áit chéanna agus ar an méid céanna i gcónaí.
+Leagan 2
+- Teangacha oifigiúla uile an AE agus Úcráinis.
+- Leathanach Creathanna talún.
+- Fógraí le do thoiliú: báisteach nó sneachta, rabhaidh, creathanna talún.
 
-v2.63 · 7 Samhain 2026
-- Taispeántar “MÓD FEIRMEORA” anois faoin líne uachtair, ar chlé faoin gcnaipe ☰, in ionad ag an mbun.
+Leagan reatha: v2.80 · 8.11.2026
+Feabhsuithe ar dhearadh / ar struchtúr.
+- Páirceanna: an cnaipe Cuir in eagar agus peann luaidhe ar gach páirc, don ainm agus don áit ar an léarscáil.
+- Teangacha nua: Tuircis, Rúisis, Seirbis.
 
-v2.62 · 7 Samhain 2026
-- Mód feirmeora: taispeánann fuinneog “DEASCADH 24” freisin an méid uisce a choinnigh an ithir (sraith 3–9 cm), san iomlán agus uair ar uair.
-
-v2.61 · 7 Samhain 2026
-- Mód feirmeora: tá an bosca “DEASCADH 24” sa ró íochtair anois, idir Grian / Gealach agus Innéacs UV; míníonn tapáil é agus taispeánann sí na huaireanta le deascadh agus a milliméadair.
-- Ceartaithe: i mód feirmeora thaispeáin na boscaí Pailin agus Brú teocht na hithreach.
-- Ceartaithe: íoslódáiltear deascadh na 24 uair an chloig deireanacha uaidh féin nuair atá sé in easnamh; ní théann “Ag luchtú” faoi FEIRMEOIR a thuilleadh.
-
-v2.60 · 7 Samhain 2026
-- Mód feirmeora: príomhscáileán don bhaile agus ceann do gach páirc; téann tú ó cheann go ceann trí shvaidhpeáil thar an teocht agus an deilbhín, agus taispeánann na poncanna faoin líne cá bhfuil tú.
-- Taispeánann páirc ar an bpríomhscáileán a haimsir féin agus thíos a boscaí féin (aer, gaoth, treo, báisteach, taise, ithir, teocht na hithreach), gan pailin ná creathanna talún; taispeánann tapáil ar an ainm an t-ainm iomlán agus na comhordanáidí. Fanann na giuirléidí agus na fógraí ar an mbaile.
-- Bosca “báisteach 24 u” in aice leis na cnaipí thíos; taispeánann tapáil na huaireanta le báisteach.
-- ☰ › Páirceanna: scriosadh le ticeanna agus deimhniú; liosta in ord ainmneacha agus uimhreacha.
-- Sa Rómáin tairgeann an roghchlár Teanga › Teangacha eile teangacha na mionlach: Ungáiris, Gearmáinis, Úcráinis agus eile.
-
-v2.50 · 7 Samhain 2026
-- Mód feirmeora: athraíonn an chéad mhír de ☰ idir mód feirmeora agus gnáthmhód. Sa mhód feirmeora, taispeánann tapáil ar bhosca uaire teocht, an teocht is ísle agus is airde sa lá, gaoth le séideáin agus treo (agus cathain a chasfaidh sí), taise an aeir, seans báistí, taise agus teocht na hithreach; cuirtear boscaí báistí in aghaidh na huaire, le sonraí ar thapáil, in áit an ghraif deascadh agus na gcúig lá.
-- ☰ › Páirceanna: sábháil an áit ina seasann tú (GPS), ceartaigh í ar léarscáil OpenStreetMap agus tabhair ainm di; tá boscaí ag gach páirc do ghaoth, treo, báisteach, taise an aeir agus na hithreach, teocht na hithreach agus an aeir, foláirimh báistí agus gaoithe láidre agus staitisticí do thréimhse laistigh de na 28 lá deireanacha, is féidir a shábháil mar PDF in Íoslódálacha.
-- Is meastacháin ó Open-Meteo iad sonraí na hithreach; mura bhfreagraíonn Open-Meteo, íoslódálann an aip iad níos déanaí agus seolann sí fógra.
-- SAM: taispeánann an clog agus na huaireanta am áitiúil an bhaile roghnaithe.
-- Fógraí don bhaile roghnaithe amháin (sa mhód tástála) nó don áit ina bhfuil an fón: níl a thuilleadh foláirimh ó SAM nuair a thaispeánann an aip baile san Eoraip.
-
-v2.40 · 4 Samhain 2026
-- Na Stáit Aontaithe: ☰ › Tornadoes, leathanach cosúil le Creathanna talún: rabhaidh tornádó do do bhaile agus do stát, na tornádónna a tuairiscíodh in aice láimhe le 2 lá anuas, a líon sa tír ar fad agus cad ba cheart a dhéanamh.
-- Na Stáit Aontaithe: gan bosca Pailine (níl sonraí ann); cáilíocht an aeir de réir an innéacs Mheiriceánaigh US AQI.
-
-v2.30 · 4 Samhain 2026
-- Gnéithe chun an aip a úsáid sna Stáit Aontaithe.
-- ☰ › Teocht °C/°F: nuair a fhágann tú °F, fiafraíonn an aip an rachfar go dtí an córas méadrach; le °F, tá an brú in inHg agus na faid i mílte.
-
-v2.22 · 4 Samhain 2026
-- Fóin Samsung le Auto Blocker: múch é sula suiteálann nó sula nuashonraíonn tú an aip (Socruithe › Slándáil agus príobháideacht › Auto Blocker), nó diúltóidh an fón don suiteáil; is féidir leat é a chur ar siúl arís ina dhiaidh sin.
-
-v2.21 · 4 Samhain 2026
-- Taibléad: níl an roghchlár ☰ ach chomh leathan lena líne is faide, agus 5 % níos lú.
-- Leathanaigh: fanann an teideal ar líne amháin agus fásann sé le méid an téacs ach go dtí na cnaipí ar dheis.
-- Barra mhéid an téacs: ar roinnt fón (A70) dhúntaí é nuair a baineadh leis; anois glacann sé an mhéar ar a cholún ar fad.
-- Ní thaispeánann an ciorcal os cionn an bharra ach an luach, gan %.
-
-v2.20 · 4 Samhain 2026
-- Giuirléid 4x2 ar Samsung le One UI 9 (A54): ní thaispeántar í mar 4x3 a thuilleadh le 2 shraith; 4x3 ó 3 shraith amháin.
-- ☰ › Giuirléidí: nuair atá roinnt acu ann, roghnaítear an ghiuirléid ag barr na fuinneoige socruithe agus leanann na socruithe thíos an ceann roghnaithe.
-- Taibléad: tá an roghchlár ☰ 10 % níos lú.
-- Logáil: fanann téacs na gcnaipí ar líne amháin.
-- Gan idirlíon fanann an aip go bhfillfidh an líonra in ionad triail a bhaint arís gach 1–2 nóiméad.
-
-v2.12 · 4 Samhain 2026
-- I gCabhair, Creathanna talún, Faoi agus Cad atá nua: taispeánann an cnaipe Aa in aice leis na cnaipí ar dheis barra mhéid an téacs ar thaobh na láimhe clé den scáileán, os cionn an leathanaigh, cosúil le barra na gile. Tá an barra caol ag an mbarr ar dheis imithe.
-
-v2.11 · 4 Samhain 2026
-- Tagann barra mhéid an téacs, a osclaítear ón imeall deas, ar chlé anois, cosúil le barra na gile.
-
-v2.10 · 4 Samhain 2026
-- Giuirléid nua 4x2 · laethanta: faoin aimsir anois, na 5 lá atá romhainn (lá, deilbhín, uas / íos). Nuair a dhéantar 3 shraith ar airde nó níos mó díobh, déantar an 4x3 nua den dá ghiuirléid 4x2 (uaireanta agus laethanta), leis na huaireanta agus na laethanta atá romhainn.
-- Méid an téacs: i gCabhair, Creathanna talún, Faoi agus Cad atá nua, méadaíonn nó laghdaíonn barra ar dheis, faoin gcnaipe dúnta, na litreacha (80–180 %); ar an bpríomhscáileán, taispeánann sleamhnú suas nó síos gar don imeall deas an barra céanna. Coinnítear an méid ar an ngléas agus baineann sé leis an roghchlár ☰ freisin.
-- Taibléad: tá an roghchlár ☰ agus na roghchláir eile 30 % níos mó.
-- ☰ › Seol an aip: seolann sé an nasc íoslódála i dteachtaireacht WhatsApp (nó le haip eile), ionas gur féidir le duine eile Meteo Alarm a shuiteáil.
-- Taispeánann liosta na ngiuirléidí a n-ainmneacha i dteanga an fhóin.
-
-v2.00 · 4 Samhain 2026
-- Teanga: labhraíonn an aip anois teangacha oifigiúla uile an AE agus an Úcráinis (an Chabhair freisin). Ag an gcéad tús glacann sí teanga an fhóin (Béarla mura bhfuil sí ag an aip); ina dhiaidh sin an ceann a roghnaíodh i ☰ › Teanga. Ní thaispeánann an liosta ach Béarla, teanga an fhóin agus teangacha oifigiúla na tíre ina bhfuil an fón.
-- ☰ › Creathanna talún: leathanach le creathanna talún de mhéid 3 nó níos mó le 7 lá anuas i do thír, ansin iad siúd le 48 uair anuas san AE, san Úcráin agus sa Mholdóiv (am, áit, méid, doimhneacht, fad).
-- Fógraí (le do thoiliú amháin): báisteach nó sneachta ag tosú, rabhaidh aimsire nua do do bhaile, creathanna talún de mhéid 3 nó níos mó i do thír. Gach teagmhas uair amháin. Air nó as i ☰ › Fógraí.
-- Iarrtar suíomh agus fógraí le míniú cairdiúil ag an gcéad tús; má dhiúltaíonn tú, ní iarrann an aip arís ach tar éis nuashonraithe. Nuair nach dtaispeánann an fón a cheist níos mó, osclaíonn cnaipe a shocruithe.
-- Ag an gcéad tús, is é an baile a d'aimsigh an suíomh an ceann a thaispeántar agus cuirtear leis na ceanáin é.
-- Fóin gan compás nó braiteoir solais: múchtar na cnaipí agus na boscaí gaolmhara; liostaíonn an Logchomhad na braiteoirí ag gach tús.
-- Giuirléidí: oibríonn an stiall 4x1 ar thaibléid anois freisin (comhairtear sraitheanna an scáileáin baile, ní méideanna seasta).
-- Ceartaithe: ag an tús tar éis nuashonraithe íoslódáladh an aimsir faoi dhó; scríobhann an Logchomhad anois an teanga a roghnaíodh agus gach baile a roghnaíodh, agus oscailt shocruithe na giuirléide uair amháin.
+────────
+Feidhmeanna nua ó v2.10
+- Mód feirmeora: boscaí uaire le haimsir agus báisteach, sonraí ach tapáil, agus an bosca Uisce san ithir.
+- Páirceanna: sábháilte trí GPS nó ar an léarscáil, príomhscáileán do gach ceann, staitisticí 28 lá le PDF, foláirimh bháistí agus ghaoithe.
+- Giuirléidí 4x2 laethanta agus 4x3.
+- Méid an téacs (Aa).
+- ☰ › Seol an aip.
+- Na Stáit Aontaithe: rabhaidh NWS, tornadónna, °F, am áitiúil.
+- Teangacha eile: teangacha mionlaigh na Rómáine.

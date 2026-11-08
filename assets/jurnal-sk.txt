@@ -1,77 +1,30 @@
-v2.70 · 7. novembra 2026
-- Režim farmára: každá hodina je jedno široké políčko (počasie + dážď) so spoločným oknom po ťuknutí; na ležiacom telefóne dve políčka pod sebou, posúvané hore a dole. Väčšia horná časť: ikona hore, teplota o 10 % väčšia dole. Políčko „ZRÁŽKY 24“ sa mení na „VODA V PÔDE“: voda vo vrstve 3–9 cm a jej zmena za 24 hodín.
+Verzia 1
+- Počasie teraz, nasledujúce hodiny, zrážky na 12 hodín a 5 dní.
+- Políčka: Slnko / Mesiac, UV, Peľ, Vlhkosť, Kvalita vzduchu, Tlak, Vietor, Viditeľnosť, Kompas, Zemetrasenie.
+- Výstrahy podľa farieb (MeteoAlarm, asi 38 krajín).
+- Automatická poloha, obľúbené, ďalšie krajiny.
+- Svetlý, tmavý a automatický motív; jas z okraja obrazovky; nočné hodiny.
+- Na výšku, na šírku, tablet.
+- Miniaplikácie 2x2, 4x1, 4x2, s nastaveniami.
+- Samočinné obnovovanie; záložná predpoveď MET Norway.
+- Aktualizácie z aplikácie, Pomocník, Denník.
 
-v2.64 · 7. novembra 2026
-- Režim farmára, telefón naležato: podrobnosti políčok sa otvárajú vo veľkom okne vpravo, vždy na rovnakom mieste a rovnako veľké.
+Verzia 2
+- Všetky úradné jazyky EÚ a ukrajinčina.
+- Stránka Zemetrasenia.
+- Oznámenia s tvojím súhlasom: dážď alebo sneh, výstrahy, zemetrasenia.
 
-v2.63 · 7. novembra 2026
-- „REŽIM FARMÁRA“ je teraz pod hornou čiarou, vľavo pod tlačidlom ☰, namiesto dole.
+Súčasná verzia: v2.80 · 8.11.2026
+Vylepšenia vzhľadu / štruktúry.
+- Parcely: tlačidlo Upraviť a ceruzka na každej parcele, pre názov a miesto na mape.
+- Nové jazyky: turečtina, ruština, srbčina.
 
-v2.62 · 7. novembra 2026
-- Režim farmára: okno „ZRÁŽKY 24“ ukazuje aj to, koľko vody pôda zadržala (vrstva 3–9 cm), spolu aj po hodinách.
-
-v2.61 · 7. novembra 2026
-- Režim farmára: políčko „ZRÁŽKY 24“ je teraz v dolnom rade, medzi Slnko / Mesiac a UV index; ťuknutie ho vysvetlí a ukáže hodiny so zrážkami a ich milimetre.
-- Opravené: v režime farmára ukazovali políčka Peľ a Tlak teplotu pôdy.
-- Opravené: zrážky za posledných 24 hodín sa stiahnu samy, keď chýbajú; „Nabíja sa“ už nezasahuje pod FARMÁR.
-
-v2.60 · 7. novembra 2026
-- Režim farmára: hlavná obrazovka pre obec a po jednej pre každý pozemok; prechádza sa posunom prsta po teplote a ikone, bodky pod čiarou ukazujú, kde si.
-- Pozemok na hlavnej obrazovke ukazuje svoje počasie a dole svoje políčka (vzduch, vietor, smer, dážď, vlhkosť, pôda, teplota pôdy), bez peľu a zemetrasení; ťuknutie na názov ukáže celý názov a súradnice. Widgety a upozornenia zostávajú pri obci.
-- Políčko „dážď 24 h“ vedľa tlačidiel dole; ťuknutie ukáže hodiny s dažďom.
-- ☰ › Pozemky: vymazanie so zaškrtnutím a potvrdením; zoznam zoradený podľa názvov a čísel.
-- V Rumunsku ponuka Jazyk › Ďalšie jazyky ponúka jazyky menšín: maďarčinu, nemčinu, ukrajinčinu a ďalšie.
-
-v2.50 · 7. novembra 2026
-- Režim farmára: prvá položka ☰ prepína medzi režimom farmára a normálnym režimom. V režime farmára ťuknutie na hodinové políčko ukáže teplotu, minimum a maximum dňa, vietor s nárazmi a smerom (a kedy sa stočí), vlhkosť vzduchu, pravdepodobnosť dažďa, vlhkosť a teplotu pôdy; graf dažďa a päť dní nahrádzajú hodinové políčka dažďa s podrobnosťami po ťuknutí.
-- ☰ › Pozemky: ulož miesto, kde stojíš (GPS), dolaď ho na mape OpenStreetMap a pomenuj; každý pozemok má políčka pre vietor, smer, dážď, vlhkosť vzduchu a pôdy, teplotu pôdy a vzduchu, výstrahy na dážď a silný vietor a štatistiku za obdobie z posledných 28 dní, ktorú možno uložiť ako PDF do Stiahnutých.
-- Údaje o pôde sú odhady Open-Meteo; keď Open-Meteo neodpovedá, aplikácia ich stiahne neskôr a pošle ti upozornenie.
-- Spojené štáty: hodiny a časy ukazujú miestny čas vybranej obce.
-- Upozornenia len pre vybranú obec (v testovacom režime) alebo tam, kde je telefón: žiadne hlásenia z USA, keď aplikácia ukazuje obec v Európe.
-
-v2.40 · 4. novembra 2026
-- Spojené štáty: ☰ › Tornadoes, stránka ako Zemetrasenia: výstrahy pred tornádami pre tvoje miesto a štát, tornáda hlásené v okolí za posledné 2 dni, ich počet v celej krajine a čo robiť.
-- Spojené štáty: bez políčka Peľ (údaje tam nie sú); kvalita ovzdušia podľa amerického indexu US AQI.
-
-v2.30 · 4. novembra 2026
-- Prvky na používanie aplikácie v Spojených štátoch.
-- ☰ › Teplota °C/°F: pri odchode z °F sa aplikácia opýta, či prejsť na metrickú sústavu; s °F je tlak v inHg a vzdialenosti v míľach.
-
-v2.22 · 4. novembra 2026
-- Telefóny Samsung s funkciou Auto Blocker: pred inštaláciou alebo aktualizáciou aplikácie ju vypnite (Nastavenia › Zabezpečenie a súkromie › Auto Blocker), inak telefón inštaláciu odmietne; potom ju môžete znova zapnúť.
-
-v2.21 · 4. novembra 2026
-- Tablet: menu ☰ je len také široké ako jeho najdlhší riadok a o 5 % menšie.
-- Stránky: nadpis zostáva na jednom riadku a s veľkosťou textu rastie len po tlačidlá vpravo.
-- Lišta veľkosti textu: na niektorých telefónoch (A70) sa pri dotyku zavrela; teraz berie prst v celom svojom stĺpci.
-- Kruh nad lištou ukazuje len hodnotu, bez %.
-
-v2.20 · 4. novembra 2026
-- Miniaplikácia 4x2 na Samsungu s One UI 9 (A54): pri 2 riadkoch sa už neukazuje ako 4x3; 4x3 až od 3 riadkov.
-- ☰ › Miniaplikácie: keď ich je viac, miniaplikácia sa vyberá hore v okne nastavení a nastavenia pod ňou patria vybranej.
-- Tablet: menu ☰ je o 10 % menšie.
-- Denník: text tlačidiel zostáva na jednom riadku.
-- Bez internetu aplikácia čaká, kým sa sieť vráti, namiesto pokusov každé 1–2 minúty.
-
-v2.12 · 4. novembra 2026
-- V Pomocníkovi, Zemetraseniach, O aplikácii a Čo je nové: tlačidlo Aa vedľa tlačidiel vpravo zobrazí lištu veľkosti textu na ľavej strane obrazovky, nad stránkou, ako lištu jasu. Úzka lišta vpravo hore je preč.
-
-v2.11 · 4. novembra 2026
-- Lišta veľkosti textu vyvolaná od pravého okraja sa teraz objaví vľavo, ako lišta jasu.
-
-v2.10 · 4. novembra 2026
-- Nová miniaplikácia 4x2 · dni: pod aktuálnym počasím najbližších 5 dní (deň, ikona, max. / min.). Zväčšené na 3 rady a viac sa obe miniaplikácie 4x2 (hodiny a dni) zmenia na novú 4x3, s najbližšími hodinami aj dňami.
-- Veľkosť textu: v Pomocníkovi, Zemetraseniach, O aplikácii a Čo je nové zväčší alebo zmenší písmená lišta vpravo, pod tlačidlom zatvorenia (80–180 %); na hlavnej obrazovke rovnakú lištu ukáže potiahnutie nahor či nadol pri pravom okraji. Veľkosť zostane uložená v zariadení a platí aj pre ponuku ☰.
-- Tablet: ponuka ☰ a ostatné ponuky sú o 30 % väčšie.
-- ☰ › Poslať aplikáciu: pošle odkaz na stiahnutie v správe WhatsApp (alebo inou aplikáciou), aby si Meteo Alarm mohol nainštalovať niekto ďalší.
-- Zoznam miniaplikácií ukazuje názvy v jazyku telefónu.
-
-v2.00 · 4. novembra 2026
-- Jazyky: aplikácia teraz hovorí všetkými úradnými jazykmi Európskej únie a po ukrajinsky (aj Pomocník). Pri prvom spustení vezme jazyk telefónu (angličtinu, ak ho aplikácia nemá); potom ten zvolený v ☰ › Jazyk. Zoznam ukazuje len angličtinu, jazyk telefónu a úradné jazyky krajiny, kde je telefón.
-- ☰ › Zemetrasenia: stránka so zemetraseniami s magnitúdou 3 a viac za posledných 7 dní vo vašej krajine, potom za posledných 48 hodín v EÚ, na Ukrajine a v Moldavsku (čas, miesto, magnitúda, hĺbka, vzdialenosť).
-- Upozornenia (len s vaším súhlasom): začínajúci dážď alebo sneh, nové meteorologické výstrahy pre vašu obec, zemetrasenia s magnitúdou 3 a viac vo vašej krajine. Každá udalosť len raz. Zapnúť alebo vypnúť v ☰ › Upozornenia.
-- O polohu a upozornenia aplikácia žiada s priateľským vysvetlením pri prvom spustení; ak odmietnete, opýta sa znova až po aktualizácii. Keď telefón svoju otázku už nezobrazuje, tlačidlo otvorí jeho nastavenia.
-- Pri prvom spustení sa obec nájdená polohou stane zobrazenou a pridá sa k obľúbeným.
-- Telefóny bez kompasu alebo senzora svetla: súvisiace tlačidlá a polia sa vypnú; Denník vypíše senzory pri každom spustení.
-- Miniaplikácie: pás 4x1 teraz funguje aj na tabletoch (počítajú sa riadky domovskej obrazovky, nie pevné veľkosti).
-- Opravené: pri spustení po aktualizácii sa počasie sťahovalo dvakrát; Denník teraz zapisuje zvolený jazyk a každú zvolenú obec a otvorenie nastavení miniaplikácie len raz.
+────────
+Nové funkcie od v2.10
+- Režim farmára: hodinové políčka s počasím a dažďom, podrobnosti po ťuknutí a políčko Voda v pôde.
+- Parcely: uložené cez GPS alebo na mape, hlavná obrazovka pre každú, štatistika za 28 dní s PDF, upozornenia na dážď a vietor.
+- Miniaplikácie 4x2 dni a 4x3.
+- Veľkosť textu (Aa).
+- ☰ › Poslať aplikáciu.
+- Spojené štáty: výstrahy NWS, tornáda, °F, miestny čas.
+- Ďalšie jazyky: jazyky menšín Rumunska.

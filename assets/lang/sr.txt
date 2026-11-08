@@ -1,0 +1,573 @@
+# Meteo Alarm Android · sr · English<TAB>translation
+Diary (log)	Дневник (записник)
+Everything the app did in the last 5 days; older errors kept 10 days.	Све што је апликација радила последњих 5 дана; старије грешке се чувају 10 дана.
+Share	Подели
+Save	Сачувај
+Close	Затвори
+log 	записник 
+Send the log	Пошаљи записник
+Log saved	Записник је сачуван
+Could not save	Чување није успело
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Ово је пробна верзија апликације Meteo Alarm Android, направљена од Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Подаци се не прикупљају: без налога, без реклама, без статистике. За временску прогнозу шаљу се само координате места сервису Open-Meteo (време, полен), а кад је Open-Meteo преоптерећен, сервису MET Norway (време); упозорења долазе од MeteoAlarm, земљотреси од EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Локација: користи се да прикаже време тамо где сте, при покретању и једном на сат. Да би се добило име места, координате иду у OpenStreetMap (или геокодер телефона), који даје и границу места. Пронађена места, с тим где сте били, чувају се само у телефону. Апликација тражи дозволу уз објашњење при првом покретању; ако одбијете, бирате место са листе, а апликација поново пита тек после ажурирања.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Обавештења (само уз вашу сагласност): почетак кише или снега, нова метеоролошка упозорења за ваше место, земљотреси магнитуде 3 или више у вашој земљи. Сваки догађај једном. Укључују се и искључују у ☰ › Обавештења.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Језик: при првом покретању језик телефона (ако га апликација има, иначе енглески), затим онај изабран у ☰ › Језик.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Сензори: апликација чита стање батерије (ноћни сат током пуњења), сензор светла телефона уз ☰ › Тема › Аутоматски (сензор телефона) и компас, који окреће стрелицу ветра с телефоном. Оно што телефон нема се искључује. Ништа не напушта телефон.
+Updates: 	Ажурирања: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	После тога апликација једном недељно тражи нову верзију на GitHub-у и пита пре преузимања.
+I understand	Разумем
+This phone has no light sensor.	Овај телефон нема сензор светла.
+Automatic theme (phone sensor): on	Аутоматска тема (сензор телефона): укључена
+Automatic theme (phone sensor): off	Аутоматска тема (сензор телефона): искључена
+Dark theme	Тамна тема
+Light theme	Светла тема
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm може сам да пронађе ваше место, па су прогноза, упозорења и земљотреси за тачно место где сте, и кад путујете. Положај остаје у телефону: користи се само за избор места.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Телефон више не приказује своје питање, па дозволите Локацију за Meteo Alarm у подешавањима телефона (Дозволе › Локација).
+If you say no, choose the town from the list; the app asks again only after an update.	Ако одбијете, изаберите место са листе; апликација поново пита тек после ажурирања.
+Location	Локација
+Open settings	Отвори подешавања
+Allow	Дозволи
+Not now	Не сада
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm може да вас обавести и кад је затворен: кад киша или снег почне или ће почети у наредном сату, кад се изда метеоролошко упозорење за ваше место и кад се у вашој земљи догоди земљотрес магнитуде 3 или више. Сваки догађај само једном, ништа друго. Тако сазнате на време, без отварања апликације.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Телефон не дозвољава апликацији да обавештава, па укључите обавештења за Meteo Alarm у подешавањима телефона.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Можете их искључити кад год хоћете у ☰ › Обавештења. Ако одбијете, апликација поново пита тек после ажурирања.
+Notifications	Обавештења
+Notifications ON	Обавештења УКЉ.
+Notifications OFF	Обавештења ИСКЉ.
+Without location access, choose the town from the list.	Без приступа локацији изаберите место са листе.
+Brightness: slide on the bar	Осветљеност: превуците по траци
+Automatic location OFF	Аутоматска локација ИСКЉ.
+Automatic location ON	Аутоматска локација УКЉ.
+Looking for the exact position…	Тражи се тачан положај…
+Added to the list: 	Додато на листу: 
+Location is off on the phone.	Локација је искључена у телефону.
+The position could not be found.	Положај није пронађен.
+The town could not be found (internet?).	Место није пронађено (интернет?).
+The weather did not come: 	Време није стигло: 
+Already updating…	Већ се ажурира…
+The weather has just been updated	Време је управо ажурирано
+Just tried; try again in a few seconds	Управо је покушано; покушајте поново за неколико секунди
+Updating the weather…	Ажурира се време…
+Refresh	Освежи
+Town	Место
+Temperature °C/°F	Температура °C/°F
+Clock 12/24	Сат 12/24
+Theme	Тема
+Screen on OFF	Екран упаљен ИСКЉ.
+Screen on ON	Екран упаљен УКЉ.
+Language	Језик
+Night clock OFF	Ноћни сат ИСКЉ.
+Night clock ON	Ноћни сат УКЉ.
+Location Off	Локација искључена
+Location On	Локација укључена
+Earthquakes	Земљотреси
+Widgets	Виџети
+Log	Записник
+Check for updates	Провери ажурирања
+Help	Помоћ
+About	О апликацији
+24-hour clock	24-часовни сат
+12-hour clock	12-часовни сат
+The screen stays on while the app is open	Екран остаје упаљен док је апликација отворена
+The screen goes off after the phone's timeout	Екран се гаси после истека времена телефона
+While charging at night, the screen shows a big dim clock	Током ноћног пуњења екран приказује велики пригушени сат
+Night clock off	Ноћни сат искључен
+Light	Светла
+Dark	Тамна
+Automatic	Аутоматски
+Last 7 days · 	Последњих 7 дана · 
+Downloading from EMSC…	Преузимање са EMSC…
+The list could not be downloaded. Is the internet on?	Листа није преузета. Да ли је интернет укључен?
+No earthquake of magnitude 3 or more.	Нема земљотреса магнитуде 3 или више.
+Last 48 hours · EU, Ukraine, Moldova	Последњих 48 сати · ЕУ, Украјина, Молдавија
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Извор: EMSC (Европско-медитерански сеизмолошки центар, seismicportal.eu), магнитуда 3 и више. „Осећао се” је процена на скали EMS-98 према магнитуди и удаљености од жаришта.
+depth 	дубина 
+from 	од 
+Probably felt in 	Вероватно се осетио у 
+Probably not felt in 	Вероватно се није осетио у 
+Updates	Ажурирања
+How to update	Како се ажурира
+Buttons on the screen	Дугмад на екрану
+Brightness	Осветљеност
+Light / dark theme	Светла / тамна тема
+Automatic theme (phone sensor)	Аутоматска тема (сензор телефона)
+Gestures	Покрети
+Tap on the town's name	Додир имена места
+Pull down	Повуци надоле
+Left edge	Леви руб
+Wind arrow	Стрелица ветра
+Night clock	Ноћни сат
+Warnings and earthquake	Упозорења и земљотрес
+Earthquake box	Поље Земљотрес
+Left / right on the boxes	Лево / десно по пољима
+The row of boxes at the bottom	Доњи ред поља
+Home-screen widgets	Виџети на почетном екрану
+Meteo Alarm widgets	Meteo Alarm виџети
+Widget settings	Подешавања виџета
+Refreshing by itself	Аутоматско освежавање
+The ☰ menu	Мени ☰
+Switches between Celsius and Fahrenheit.	Пребацује између Целзијуса и Фаренхајта.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Пребацује сат између 24 и 12 сати (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Светла, Тамна или Аутоматски (сензор телефона).
+Screen on ON / OFF	Екран упаљен УКЉ. / ИСКЉ.
+Location On / Off	Локација укључена / искључена
+Turns automatic location on or off (the same as the location button).	Укључује или искључује аутоматску локацију (исто као дугме за локацију).
+Notifications ON / OFF	Обавештења УКЉ. / ИСКЉ.
+Night clock ON / OFF	Ноћни сат УКЉ. / ИСКЉ.
+Turns the night clock on or off.	Укључује или искључује ноћни сат.
+This page.	Ова страница.
+What's new	Шта је ново
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Тамна тема користи боје апликације Claude. Фонт: Liberation Sans.
+Installed version: v	Инсталирана верзија: v
+Favourites	Омиљена
+Choose the county	Изаберите округ
+Other countries	Друге земље
+‹  Back	‹  Назад
+‹  Back to the counties	‹  Назад на округе
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	На почетном екрану нема виџета Meteo Alarm. Задржите прст на празном месту почетног екрана › Виџети › Meteo Alarm.
+Which widget?	Који виџет?
+Change	Промени
+Background	Позадина
+Colours	Боје
+Text colour	Боја текста
+Cancel	Откажи
+  (as in the app)	  (као у апликацији)
+Transparency: 	Провидност: 
+Match the phone's settings	Као у подешавањима телефона
+By the weather	Према времену
+White	Бела
+Black	Црна
+As in the app	Као у апликацији
+Choose the county / country…	Изаберите округ / земљу…
+County / country	Округ / земља
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	За ажурирања: отворите ☰ › Провери ажурирања и, кад вас питају, дајте сагласност.
+Updates from GitHub	Ажурирања са GitHub-а
+I agree	Слажем се
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Без ваше сагласности апликација се неће ажурирати. Можете се предомислити кад год хоћете у ☰ › Провери ажурирања.
+Checking GitHub for a new version…	Тражи се нова верзија на GitHub-у…
+No version published yet.	Још нема објављене верзије.
+Could not check for updates. Is the internet on?	Провера ажурирања није успела. Да ли је интернет укључен?
+You have the latest version, v	Имате најновију верзију, v
+Installed: v	Инсталирана: v
+New: v	Нова: v
+New version: v	Нова верзија: v
+Update	Ажурирај
+Downloading…	Преузимање…
+Hide	Сакриј
+Downloading… 	Преузимање… 
+The download failed. Is the internet on?	Преузимање није успело. Да ли је интернет укључен?
+The installer could not be opened.	Инсталер није могао да се отвори.
+no internet (server not found)	нема интернета (сервер није пронађен)
+the server did not answer in time	сервер није одговорио на време
+no connection	нема везе
+secure connection error: 	грешка безбедне везе: 
+internet not allowed for the app	апликацији није дозвољен интернет
+server error 	грешка сервера 
+network error: 	грешка мреже: 
+data error: 	грешка података: 
+⌃  more  ⌃	⌃  још  ⌃
+⌄  more  ⌄	⌄  још  ⌄
+Open the app	Отвори апликацију
+WARNING!	УПОЗОРЕЊЕ!
+Sunrise at 	Излазак сунца у 
+Sunset at 	Залазак сунца у 
+Weather, warnings and earthquakes	Време, упозорења и земљотреси
+Rain or snow starting, new weather warnings, earthquakes in your country.	Почетак кише или снега, нова метеоролошка упозорења, земљотреси у вашој земљи.
+Snow	Снег
+Rain	Киша
+It is snowing in 	Пада снег у месту 
+It is raining in 	Пада киша у месту 
+Snow is expected within the hour in 	У наредном сату очекује се снег у месту 
+Rain is expected within the hour in 	У наредном сату очекује се киша у месту 
+Warning	Упозорење
+Earthquake M	Земљотрес M
+probably felt: 	вероватно се осетио: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Обавештења су укључена: киша или снег, метеоролошка упозорења и земљотреси у вашој земљи.
+EARTHQUAKE	ЗЕМЉОТРЕС
+Felt here: 	Осећао се овде: 
+ (estimate)	 (процена)
+Magnitude: 	Магнитуда: 
+Time: 	Време: 
+Region: 	Област: 
+Depth: 	Дубина: 
+Epicentre: 	Епицентар: 
+ from 	 од 
+In 	У 
+Probably felt, intensity 	Вероватно се осетио, интензитет 
+Probably not felt here.	Вероватно се овде није осетио.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Процењено према магнитуди и удаљености од жаришта (скала EMS-98); EMSC не објављује изјаве о осећају за свако место.
+All in the last 24 h	Сви у последња 24 ч
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Извор: EMSC (seismicportal.eu), магнитуда 3 и више, последња 24 ч.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Потенцијално опасно време (уобичајено за сезону, али локално јаче). Будите опрезни напољу.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Опасно време високог интензитета. Будите веома опрезни, пратите прогнозу и савете надлежних.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Веома опасно време веома високог интензитета. Предузмите мере заштите и пратите упутства надлежних.
+In force now, until 	На снази сада, до 
+From 	Од 
+ until 	 до 
+Source: MeteoAlarm (the national weather service), for 	Извор: MeteoAlarm (национална метеоролошка служба), за 
+Stay away from trees, poles and scaffolding; secure loose objects.	Држите се даље од дрвећа, стубова и скела; учврстите слободне предмете.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Могуће су муње, пљускови, град и удари ветра; склоните се у затворено.
+Avoid flooded roads and river banks.	Избегавајте поплављене путеве и обале река.
+Slippery roads; drive only if you must, with winter equipment.	Клизави путеви; возите само ако морате, са зимском опремом.
+Low visibility; drive slowly with the fog lights on.	Слаба видљивост; возите полако са упаљеним светлима за маглу.
+Avoid the sun between 11 and 18, drink plenty of water.	Избегавајте сунце између 11 и 18 часова, пијте доста воде.
+Dress warmly and limit time outdoors.	Обуците се топло и мање боравите напољу.
+Do not light fires outdoors.	Не палите ватру на отвореном.
+H	Ч
+MOON	МЕСЕЦ
+HUMIDITY	ВЛАЖНОСТ
+AIR QUALITY	КВАЛИТЕТ ВАЗДУХА
+PRESSURE	ПРИТИСАК
+WIND	ВЕТАР
+VISIBILITY	ВИДЉИВОСТ
+COMPASS	КОМПАС
+Moonrise	Излазак месеца
+Moonset	Залазак месеца
+relative humidity	релативна влажност
+Good	Добар
+Fair	Прихватљив
+Moderate	Умерен
+Poor	Лош
+Very poor	Веома лош
+Extremely poor	Изузетно лош
+Poor (fog)	Лош (магла)
+Very good	Веома добар
+steady	стабилан
+↓ falling fast	↓ брзо пада
+↓ falling	↓ пада
+↑ rising fast	↑ брзо расте
+↑ rising	↑ расте
+no compass	нема компаса
+Tap to leave the night clock	Додирните да изађете из ноћног сата
+until	до
+now	сада
+Rain from	Киша од
+max	макс.
+Snow from	Снег од
+Raining	Пада киша
+Snowing	Пада снег
+updated	ажурирано
+no data since	нема података од
+Loading weather…	Учитава се време…
+updating…	ажурира се…
+Feels like	Осећај
+Wind	Ветар
+High	Макс.
+Low	Мин.
+Charging	Пуни се
+YELLOW	ЖУТО
+ORANGE	НАРАНЏАСТО
+RED	ЦРВЕНО
+WARNING	УПОЗОРЕЊЕ
+TOMORROW	СУТРА
+DAY AFTER	ПРЕКОСУТРА
+NEXT 12 HOURS	НАРЕДНИХ 12 САТИ
+WEATHER · NEXT HOURS	ВРЕМЕ · НАРЕДНИ САТИ
+RAIN	КИША
+SNOW	СНЕГ
+PRECIPITATION	ПАДАВИНЕ
+snow	снег
+rain	киша
+no precipitation	без падавина
+SUN	СУНЦЕ
+UV INDEX	УВ ИНДЕКС
+POLLEN	ПОЛЕН
+Sunrise	Излазак сунца
+Sunset	Залазак сунца
+Very high	Веома висок
+Extreme	Екстреман
+no pollen	нема полена
+no data	нема података
+No precipitation	Без падавина
+alder	јова
+birch	бреза
+olive	маслина
+grasses	траве
+mugwort	пелин
+ragweed	амброзија
+Clear	Ведро
+Mostly clear	Претежно ведро
+Partly cloudy	Делимично облачно
+Overcast	Облачно
+Fog	Магла
+Drizzle	Росуља
+Freezing drizzle	Ледена росуља
+Light rain	Слаба киша
+Heavy rain	Јака киша
+Freezing rain	Ледена киша
+Light snow	Слаб снег
+Heavy snow	Јак снег
+Snow grains	Снежна зрна
+Light showers	Слаби пљускови
+Showers	Пљускови
+Heavy showers	Јаки пљускови
+Snow showers	Снежни пљускови
+Thunderstorm	Грмљавина
+Thunderstorm, hail	Грмљавина, град
+Code 	Код 
+not felt	није се осетио
+scarcely felt, only by a few people at rest	једва се осетио, само неколико особа у мировању
+weak, felt by a few people indoors	слаб, осетило га је неколико особа у затвореном
+felt by many indoors; windows and doors rattle	осетили су га многи у затвореном; звецкају прозори и врата
+strong, felt by nearly everyone; objects move, some are frightened	јак, осетили су га скоро сви; предмети се померају, неки се уплаше
+slight damage (cracks in plaster); many run outdoors	лака оштећења (пукотине у малтеру); многи истрчавају напоље
+damage to buildings; hard to stand	оштећења зграда; тешко је стајати
+heavy damage	тешка оштећења
+destruction	разарање
+great destruction	велико разарање
+very great destruction	веома велико разарање
+complete destruction	потпуно разарање
+Meteo Alarm: the weather, weather warnings and earthquakes where you are, free and without ads.	Meteo Alarm: време, метеоролошка упозорења и земљотреси тамо где сте, бесплатно и без реклама.
+Download the app (Android):	Преузмите апликацију (Android):
+Open the downloaded file and install it. The phone may warn that the app does not come from Google Play: choose "Install anyway". The app then updates itself from GitHub.	Отворите преузету датотеку и инсталирајте је. Телефон може да упозори да апликација не долази са Google Play: изаберите „Ипак инсталирај”. Апликација се затим сама ажурира са GitHub-а.
+All versions:	Све верзије:
+Send the app	Пошаљи апликацију
+Right edge	Десни руб
+Text size	Величина текста
+ · days	 · дани
+Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Samsung телефони са Auto Blocker: искључите га пре инсталирања или ажурирања апликације (Подешавања › Безбедност и приватност › Auto Blocker), иначе телефон одбија инсталацију; после га можете поново укључити.
+Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · империјалне јединице (mph, инчи, inHg, миље)
+Switch to the metric system?	Прећи на метрички систем?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, km/h, милиметри, hPa, километри и 24-часовни сат уместо °F, mph, инча, inHg, миља и 12-часовног сата. Можете се вратити кад год хоћете у ☰ › Температура °C/°F.
+Metric	Метрички
+°C · metric system	°C · метрички систем
+Keep °F	Задржи °F
+dry	суво
+moderate	умерено
+moist	влажно
+very wet	веома мокро
+Parcels	Парцеле
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Чувају се само у овом телефону, док их не обришете. Њихова статистика се чува 28 дана.
+Save the place here	Сачувај ово место
+Choose on the map	Изабери на мапи
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Још нема сачуване парцеле. Станите на парцелу и додирните „Сачувај ово место”, или је изаберите на мапи.
+alerts on	упозорења укључена
+wind 	ветар 
+rain 	киша 
+soil 	тло 
+updated 	ажурирано 
+Without location the place can only be chosen on the map.	Без локације место се може изабрати само на мапи.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Телефон не дозвољава обавештења апликације: упозорења не могу да се прикажу.
+Looking for the position (GPS)… stay outside, on the parcel.	Тражи се положај (GPS)… останите напољу, на парцели.
+The position was not found.	Положај није пронађен.
+The position was not found: move the map to the parcel.	Положај није пронађен: померите мапу до парцеле.
+The position is approximate (±	Положај је приближан (±
+ m): check the pin on the map.	 m): проверите чиоду на мапи.
+New parcel	Нова парцела
+Move the pin	Помери чиоду
+Name, e.g. parcel 96/5	Име, нпр. парцела 96/5
+move the map to put the pin on the parcel	померите мапу да чиода буде на парцели
+My position	Мој положај
+Give the parcel a name	Дајте парцели име
+Downloading from Open-Meteo…	Преузимање са Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo сада не одговара (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Кад се приступ врати, апликација преузима податке парцеле и шаље вам обавештење.
+low 	најниже 
+high 	највише 
+turns to 	окреће се на 
+ around 	 око 
+steady for 12 hours	стабилно 12 сати
+today up to 	данас до 
+Air temperature	Температура ваздуха
+gusts 	удари 
+Wind direction	Смер ветра
+Chance of rain	Вероватноћа кише
+Air humidity	Влажност ваздуха
+Soil moisture	Влажност тла
+3–9 cm, estimated	3–9 cm, процена
+Soil temperature	Температура тла
+surface, estimated	површина, процена
+Next 12 hours	Наредних 12 сати
+Statistics (last 28 days)	Статистика (последњих 28 дана)
+Move the pin on the map	Помери чиоду на мапи
+Rain / wind alerts: ON	Упозорења киша / ветар: УКЉ.
+Rain / wind alerts: OFF	Упозорења киша / ветар: ИСКЉ.
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Добијате обавештење кад се за ову парцелу у наредних 12 сати прогнозира киша или јак ветар (провера свака 3 сата).
+Rename	Преименуј
+Delete the parcel	Обриши парцелу
+Delete 	Обриши 
+The parcel and its statistics are deleted from the phone.	Парцела и њена статистика бришу се из телефона.
+Delete	Обриши
+Statistics · 	Статистика · 
+Choose the period, within the last 28 days.	Изаберите период у оквиру последњих 28 дана.
+ days	 дана
+To 	До 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Још нема података за овај период. Отворите парцелу једном са интернетом: апликација преузима последњих 28 дана са Open-Meteo.
+Summary	Сажетак
+Lowest / highest	Најниже / највише
+Rain total	Укупно киша
+ days with rain (1 mm+)	 дана са кишом (1 mm+)
+Highest wind	Најјачи ветар
+gusts up to 	удари до 
+mean, estimated	просек, процена
+Day by day	Дан по дан
+Date	Датум
+Max	Макс.
+Min	Мин.
+Soil	Тло
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Извор: Open-Meteo (модели и процене протеклих дана). Влажност тла на 3–9 cm дубине, процена.
+Save as PDF in Downloads	Сачувај PDF у Преузимања
+The PDF could not be saved: 	PDF није сачуван: 
+PDF saved	PDF је сачуван
+In Downloads: 	У Преузимањима: 
+Open	Отвори
+No app on the phone opens PDF files.	У телефону нема апликације која отвара PDF.
+Max wind	Макс. ветар
+Parcel statistics · 	Статистика парцеле · 
+Coordinates: 	Координате: 
+Period: 	Период: 
+ days)	 дана)
+Made on 	Направљено 
+Lowest temperature: 	Најнижа температура: 
+Highest temperature: 	Највиша температура: 
+Rain total: 	Укупно киша: 
+Highest wind: 	Најјачи ветар: 
+Mean soil moisture (3–9 cm, estimated): 	Просечна влажност тла (3–9 cm, процена): 
+Source: Open-Meteo (open-meteo.com), weather models.	Извор: Open-Meteo (open-meteo.com), метеоролошки модели.
+Soil moisture and soil temperature are estimates, not measurements.	Влажност и температура тла су процене, а не мерења.
+Farmer mode	Режим пољопривредника
+Open-Meteo answers again: the farmer's data for 	Open-Meteo поново одговара: подаци пољопривредника за 
+ have been downloaded.	 су преузети.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Подаци пољопривредника: Open-Meteo не одговара; добићете обавештење кад стигну
+Farmer mode: tap an hour or a rain box for details	Режим пољопривредника: додирните сат или поље кише за детаље
+Normal mode	Нормални режим
+Local time	Локално време
+Farmer mode / Normal mode	Режим пољопривредника / Нормални режим
+Hour boxes	Поља по сатима
+A parcel's page	Страница парцеле
+Statistics and PDF	Статистика и PDF
+Parcel alerts	Упозорења парцеле
+Soil data and source	Подаци о тлу и извор
+The map	Мапа
+Farmer · 	Пољопривредник · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo поново одговара: подаци парцеле су преузети.
+Rain expected from 	Очекује се киша од 
+ in the next 12 hours	 у наредних 12 сати
+Rain · 	Киша · 
+Strong wind from 	Јак ветар од 
+, gusts 	, удари 
+Wind · 	Ветар · 
+showers	пљускови
+sleet	суснежица
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Подаци пољопривредника (ветар по сатима, влажност, тло) долазе само од Open-Meteo, који сада не одговара. Кад се приступ врати, апликација их преузима и шаље вам обавештење.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Влажност и температура тла су процене метеоролошког модела, а не мерења · извор: Open-Meteo (open-meteo.com).
+Temperature: 	Температура: 
+Chance of rain: 	Вероватноћа кише: 
+Day's low / high: 	Најнижа / највиша у дану: 
+Speed: 	Брзина: 
+Direction: from 	Смер: 
+Change: it turns from 	Промена: окреће се са 
+ to 	 на 
+Change: it keeps its direction for the next 12 hours	Промена: задржава смер наредних 12 сати
+Air and rain	Ваздух и киша
+Air humidity: 	Влажност ваздуха: 
+Soil (estimated)	Тло (процена)
+Soil moisture (3–9 cm): 	Влажност тла (3–9 cm): 
+Soil temperature (surface): 	Температура тла (површина): 
+likely	вероватно
+possible	могуће
+unlikely	мало вероватно
+Amount: 	Количина: 
+Kind: 	Врста: 
+showers 	пљускови 
+snow 	снег 
+Of which: 	Од тога: 
+Cloud cover: 	Облачност: 
+Until midnight: 	До поноћи: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Извор: Open-Meteo. Вероватноћа је шанса за кишу у том сату, а не колико дуго пада.
+FARMER	ПОЉОПРИВРЕДНИК
+Delete parcels	Обриши парцеле
+Tap a parcel to see it on the main screen.	Додирните парцелу да је видите на главном екрану.
+Saved: 	Сачувано: 
+Tick the parcels to delete, then tap Delete.	Означите парцеле за брисање, затим додирните Обриши.
+Are you sure?	Да ли сте сигурни?
+These parcels and their statistics are deleted from the phone: 	Ове парцеле и њихова статистика бришу се из телефона: 
+Yes, delete	Да, обриши
+Deleted: 	Обрисано: 
+No	Не
+This is the first screen	Ово је први екран
+This is the last screen	Ово је последњи екран
+Near 	Близу 
+Alerts, rename, delete	Упозорења, преименовање, брисање
+Main screens	Главни екрани
+AIR	ВАЗДУХ
+DIRECTION	СМЕР
+SOIL	ТЛО
+SOIL TEMP.	ТЕМП. ТЛА
+Now: 	Сада: 
+Total: 	Укупно: 
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Процена Open-Meteo из метеоролошких модела, а не мерење кишомером на месту.
+Other languages	Други језици
+Languages of the minorities	Језици мањина
+last 24 hours	последња 24 сата
+Precipitation of the last 24 hours	Падавине у последња 24 сата
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Вода која је пала на тло у последња 24 сата (киша, суснежица, отопљени снег) на приказаном месту, сат по сат.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Подаци за последња 24 сата се преузимају; додирните поново за тренутак. Ако Open-Meteo не одговара, добићете обавештење кад стигну.
+No precipitation in the last 24 hours.	Нема падавина у последња 24 сата.
+Hours with precipitation	Сати са падавинама
+Kept by the soil (3–9 cm layer): 	Задржало тло (слој 3–9 cm): 
+moisture 	влажност 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	„Задржало тло”: колико је порасла (или опала, са −) вода у слоју тла од 3–9 cm; остатак је отекао, испарио или отишао дубље.
+FARMER MODE	РЕЖИМ ПОЉОПРИВРЕДНИКА
+WATER IN THE SOIL	ВОДА У ТЛУ
+layer 3–9 cm	слој 3–9 cm
+ in 24 h	 за 24 ч
+Water in the soil	Вода у тлу
+The water held now in the soil's 3–9 cm layer, estimated by Open-Meteo: 	Вода коју сада задржава слој тла од 3–9 cm, процена Open-Meteo: 
+Type: 	Врста: 
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	О упозорењу Play Protect: Google може рећи да апликација „може бити штетна”. То је зато што апликација не долази са Google Play, њен програмер није регистрован код Google-а и може сама да инсталира своја ажурирања (са github.com/viorelrb-alt/meteo-alarm-android). Апликација не ради ништа друго. Кад се појави прозор Play Protect, додирните „Више детаља” (ако се приказује), затим „Инсталирај без скенирања” (или „Ипак инсталирај”).
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm не долази са Google Play. Нове верзије се објављују на GitHub-у (github.com/viorelrb-alt/meteo-alarm-android), а апликација се одатле сама ажурира: проверава отприлике једном недељно (или кад изаберете Провери ажурирања), приказује шта је ново и тек кад додирнете Ажурирај преузима нову верзију и отвара инсталер телефона, где још једном потврђујете.\n\nДа ли дозвољавате да се апликација овако ажурира? Без ваше сагласности апликација не тражи ажурирања и ништа не преузима; можете се сложити касније у ☰ › Провери ажурирања.
+SNOW ICE	СНЕГ ЛЕД
+THUNDERSTORM	ГРМЉАВИНА
+FOG	МАГЛА
+HIGH TEMPERATURE	ВИСОКА ТЕМПЕРАТУРА
+LOW TEMPERATURE	НИСКА ТЕМПЕРАТУРА
+COASTALEVENT	ОБАЛНА ПОЈАВА
+FOREST FIRE	ШУМСКИ ПОЖАР
+AVALANCHES	ЛАВИНЕ
+FLOODING	ПОПЛАВА
+RAIN FLOOD	ПОПЛАВА ОД КИШЕ
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Прва ставка ☰ мења режим. У режиму пољопривредника сваки сат је једно широко поље са временом и кишом; кад телефон лежи, два поља једно испод другог, померају се горе и доле.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Додир приказује детаље сата: температуру, ветар и смер, влажност, кишу, тло.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Вода коју сада задржава слој тла од 3–9 cm и њена промена за 24 сата; додир приказује сате са падавинама. Процена Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Парцеле: сачувајте место на ком стојите или га изаберите на мапи и дајте му име. Уреди (или оловка) мења име и чиоду; Обриши парцеле их уклања. Само у овом телефону.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Један главни екран за место и по један за сваку парцелу: превуците у страну преко температуре.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Додир имена парцеле: њена поља, наредних 12 сати, статистика са PDF-ом, упозорења, преименовање, брисање.
+When ON, a notification for rain or strong wind forecast on the parcel.	Кад су УКЉУЧЕНА, обавештење кад се на парцели прогнозира киша или јак ветар.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Подаци о тлу су процене модела Open-Meteo, а не мерења; оближње парцеле могу имати исте вредности.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: померајте једним прстом, увећавајте са два; потребан је интернет.
+Choose the town: favourites, then counties (or states).	Изаберите место: омиљена, па окрузи (или државе).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Укључује (пуно) или искључује (празно) аутоматску локацију; приказује време тамо где сте.
+Shows the brightness bar on the left.	Приказује траку осветљености лево.
+Over the brightness bar: switches the theme.	Изнад траке осветљености: мења тему.
+Light theme in the light, dark in the dark (needs a light sensor).	Светла тема на светлу, тамна у мраку (потребан сензор светла).
+Looks once with the GPS.	Тражи једном помоћу GPS-а.
+Refreshes the weather.	Освежава време.
+Slide up or down: brightness.	Превуците горе или доле: осветљеност.
+Slide up or down: text size.	Превуците горе или доле: величина текста.
+The Aa button on the pages shows the text-size bar.	Дугме Aa на страницама приказује траку величине текста.
+Shows where the wind blows, turned with the phone.	Показује куда дува ветар, окреће се с телефоном.
+A big dim clock while the phone charges at night.	Велики пригушени сат кад се телефон ноћу пуни.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Један ред испод линије: земљотрес, па упозорења по бојама. Додир приказује детаље.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Најјачи земљотрес у последња 24 сата у вашој земљи и како се вероватно осетио (EMSC).
+The rows of boxes follow the finger.	Редови поља прате прст.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Сунце / Месец, УВ, Полен, Влажност, Квалитет ваздуха, Притисак, Ветар, Видљивост, Компас; додир приказује детаље.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Задржите почетни екран › Виџети › Meteo Alarm. Повуците ивице да промените изглед (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Задржите виџет › Подешавања, или ☰ › Виџети: место, позадина, боје.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Сваких 15 минута са упаљеним екраном, 30 са угашеним; MET Norway кад је Open-Meteo заузет.
+Downloads the weather now.	Сада преузима време.
+Keeps the screen on while the app is open.	Држи екран упаљен док је апликација отворена.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Енглески, језик телефона и језици земље; у Румунији и „Други језици”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Земљотреси последњих дана у близини, са временом, местом, магнитудом и удаљеношћу.
+Rain or snow starting, new warnings and earthquakes, each only once.	Почетак кише или снега, нова упозорења и земљотреси, сваки само једном.
+The settings of the widgets on the home screen.	Подешавања виџета на почетном екрану.
+What the app did, with the time; read, share or save it.	Шта је апликација радила, са временом; прочитајте, поделите или сачувајте.
+Looks for a new version on GitHub, with your consent.	Тражи нову верзију на GitHub-у, уз вашу сагласност.
+Sends the download link, e.g. on WhatsApp.	Шаље линк за преузимање, нпр. на WhatsApp.
+About the app, its data and what's new.	О апликацији, њеним подацима и новостима.
+Edit	Уреди
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Додирните парцелу да је видите на главном екрану. Оловка је отвара за уређивање.
+temp: 	темп.: 
+Tap the parcel to edit: its name and the pin on the map.	Додирните парцелу за уређивање: име и чиода на мапи.

@@ -1,77 +1,30 @@
-v2.70 · 7. studenoga 2026
-- Način poljoprivrednika: svaki sat je jedno široko polje (vrijeme + kiša) sa zajedničkim prozorom na dodir; kad telefon leži, dva polja jedno ispod drugog, povlače se gore i dolje. Veći gornji dio: ikona gore, temperatura 10 % veća dolje. Polje „OBORINE 24” postaje „VODA U TLU”: voda u sloju 3–9 cm i njezina promjena u 24 sata.
+Verzija 1
+- Vrijeme sada, sljedeći sati, oborine za 12 sati i 5 dana.
+- Polja: Sunce / Mjesec, UV, Pelud, Vlaga, Kvaliteta zraka, Tlak, Vjetar, Vidljivost, Kompas, Potres.
+- Upozorenja po bojama (MeteoAlarm, oko 38 zemalja).
+- Automatska lokacija, omiljena, druge zemlje.
+- Svijetla, tamna i automatska tema; svjetlina s ruba zaslona; noćni sat.
+- Uspravno, položeno, tablet.
+- Widgeti 2x2, 4x1, 4x2, s postavkama.
+- Samostalno osvježavanje; rezervna prognoza MET Norway.
+- Ažuriranja iz aplikacije, Pomoć, Dnevnik.
 
-v2.64 · 7. studenoga 2026
-- Način poljoprivrednika, telefon položeno: detalji polja otvaraju se u velikom prozoru desno, uvijek na istom mjestu i iste veličine.
+Verzija 2
+- Svi službeni jezici EU-a i ukrajinski.
+- Stranica Potresi.
+- Obavijesti uz tvoj pristanak: kiša ili snijeg, upozorenja, potresi.
 
-v2.63 · 7. studenoga 2026
-- „NAČIN POLJOPRIVREDNIKA” sada stoji ispod gornje crte, lijevo ispod gumba ☰, umjesto dolje.
+Trenutačna verzija: v2.80 · 8.11.2026
+Poboljšanja izgleda / strukture.
+- Parcele: gumb Uredi i olovka na svakoj parceli, za ime i mjesto na karti.
+- Novi jezici: turski, ruski, srpski.
 
-v2.62 · 7. studenoga 2026
-- Način poljoprivrednika: prozor „OBORINE 24” pokazuje i koliko je vode tlo zadržalo (sloj 3–9 cm), ukupno i po satima.
-
-v2.61 · 7. studenoga 2026
-- Način poljoprivrednika: polje „OBORINE 24” sada je u donjem redu, između Sunce / Mjesec i UV indeksa; dodir ga objašnjava i pokazuje sate s oborinama i njihove milimetre.
-- Ispravljeno: u načinu poljoprivrednika polja Pelud i Tlak pokazivala su temperaturu tla.
-- Ispravljeno: oborine zadnja 24 sata preuzimaju se same kad nedostaju; „Puni se” više ne ide ispod POLJOPRIVREDNIK.
-
-v2.60 · 7. studenoga 2026
-- Način poljoprivrednika: glavni zaslon za mjesto i po jedan za svaku parcelu; prelazi se povlačenjem prsta preko temperature i ikone, točke ispod crte pokazuju gdje si.
-- Parcela na glavnom zaslonu pokazuje svoje vrijeme i dolje svoja polja (zrak, vjetar, smjer, kiša, vlažnost, tlo, temperatura tla), bez peluda i potresa; dodir na ime pokazuje cijelo ime i koordinate. Widgeti i obavijesti ostaju na mjestu.
-- Polje „kiša 24 h” pokraj gumba dolje; dodir pokazuje sate s kišom.
-- ☰ › Parcele: brisanje s označavanjem i potvrdom; popis poredan po imenima i brojevima.
-- U Rumunjskoj izbornik Jezik › Drugi jezici nudi jezike manjina: mađarski, njemački, ukrajinski i druge.
-
-v2.50 · 7. studenoga 2026
-- Način poljoprivrednika: prva stavka ☰ prebacuje između načina poljoprivrednika i normalnog načina. U načinu poljoprivrednika dodir satnog polja prikazuje temperaturu, najnižu i najvišu dana, vjetar s udarima i smjerom (i kad se okreće), vlažnost zraka, vjerojatnost kiše, vlažnost i temperaturu tla; graf kiše i pet dana zamjenjuju satna polja kiše s pojedinostima na dodir.
-- ☰ › Parcele: spremi mjesto na kojem stojiš (GPS), namjesti ga na karti OpenStreetMap i daj mu naziv; svaka parcela ima polja za vjetar, smjer, kišu, vlažnost zraka i tla, temperaturu tla i zraka, upozorenja na kišu i jak vjetar te statistiku za razdoblje unutar zadnjih 28 dana, koju možeš spremiti kao PDF u Preuzimanja.
-- Podaci o tlu su procjene Open-Meteo; kad Open-Meteo ne odgovara, aplikacija ih preuzima kasnije i šalje ti obavijest.
-- Sjedinjene Države: sat i sati pokazuju lokalno vrijeme odabranog mjesta.
-- Obavijesti samo za odabrano mjesto (u testnom načinu) ili ondje gdje je telefon: više nema poruka iz SAD-a kad aplikacija prikazuje mjesto u Europi.
-
-v2.40 · 4. studenoga 2026
-- Sjedinjene Države: ☰ › Tornadoes, stranica poput Potresa: upozorenja na tornado za tvoje mjesto i saveznu državu, tornada prijavljena u blizini u posljednja 2 dana, njihov broj u cijeloj zemlji i što učiniti.
-- Sjedinjene Države: bez okvira Pelud (tamo nema podataka); kvaliteta zraka po američkom indeksu US AQI.
-
-v2.30 · 4. studenoga 2026
-- Elementi za korištenje aplikacije u Sjedinjenim Državama.
-- ☰ › Temperatura °C/°F: pri napuštanju °F aplikacija pita želiš li metrički sustav; s °F tlak je u inHg, a udaljenosti u miljama.
-
-v2.22 · 4. studenoga 2026
-- Samsung telefoni s Auto Blockerom: isključi ga prije instalacije ili ažuriranja aplikacije (Postavke › Sigurnost i privatnost › Auto Blocker), inače telefon odbija instalaciju; poslije ga možeš ponovno uključiti.
-
-v2.21 · 4. studenoga 2026
-- Tablet: izbornik ☰ širok je samo koliko njegov najduži red i 5 % manji.
-- Stranice: naslov ostaje u jednom redu i raste s veličinom teksta samo do gumba s desne strane.
-- Traka veličine teksta: na nekim telefonima (A70) zatvarala se pri dodiru; sada prihvaća prst u cijelom svom stupcu.
-- Krug iznad trake prikazuje samo vrijednost, bez %.
-
-v2.20 · 4. studenoga 2026
-- Widget 4x2 na Samsungu s One UI 9 (A54): s 2 reda više se ne prikazuje kao 4x3; 4x3 tek od 3 reda.
-- ☰ › Widgeti: kad ih je više, widget se bira na vrhu prozora postavki, a postavke ispod pripadaju odabranom.
-- Tablet: izbornik ☰ je 10 % manji.
-- Zapisnik: tekst gumba ostaje u jednom redu.
-- Bez interneta aplikacija čeka da se mreža vrati umjesto da pokušava svake 1–2 minute.
-
-v2.12 · 4. studenoga 2026
-- U Pomoći, Potresima, O aplikaciji i Što je novo: gumb Aa pokraj gumba s desne strane prikazuje traku veličine teksta na lijevoj strani zaslona, iznad stranice, kao traku svjetline. Uska traka gore desno je uklonjena.
-
-v2.11 · 4. studenoga 2026
-- Traka veličine teksta koja se otvara s desnog ruba sada se pojavljuje lijevo, kao traka svjetline.
-
-v2.10 · 4. studenoga 2026
-- Novi widget 4x2 · dani: ispod trenutačnog vremena sljedećih 5 dana (dan, ikona, maks. / min.). Povećani na 3 reda ili više, oba widgeta 4x2 (sati i dani) postaju novi 4x3, sa sljedećim satima i danima.
-- Veličina teksta: u Pomoći, Potresima, O aplikaciji i Što je novo traka desno, ispod gumba za zatvaranje, povećava ili smanjuje slova (80–180 %); na glavnom zaslonu istu traku prikazuje povlačenje gore ili dolje blizu desnog ruba. Veličina ostaje spremljena na uređaju i vrijedi i za izbornik ☰.
-- Tablet: izbornik ☰ i ostali izbornici 30 % su veći.
-- ☰ › Pošalji aplikaciju: šalje poveznicu za preuzimanje u WhatsApp poruci (ili drugom aplikacijom), da netko drugi može instalirati Meteo Alarm.
-- Popis widgeta prikazuje nazive na jeziku telefona.
-
-v2.00 · 4. studenoga 2026.
-- Jezici: aplikacija sada govori sve službene jezike Europske unije i ukrajinski (i Pomoć). Pri prvom pokretanju uzima jezik telefona (engleski ako ga aplikacija nema); zatim onaj odabran u ☰ › Jezik. Popis prikazuje samo engleski, jezik telefona i službene jezike zemlje u kojoj je telefon.
-- ☰ › Potresi: stranica s potresima magnitude 3 ili više u zadnjih 7 dana u vašoj zemlji, zatim onima u zadnjih 48 sati u EU-u, Ukrajini i Moldaviji (vrijeme, mjesto, magnituda, dubina, udaljenost).
-- Obavijesti (samo uz vaš pristanak): kiša ili snijeg koji počinje, nova vremenska upozorenja za vaše mjesto, potresi magnitude 3 ili više u vašoj zemlji. Svaki događaj samo jednom. Uključite ili isključite u ☰ › Obavijesti.
-- Lokacija i obavijesti traže se s ljubaznim objašnjenjem pri prvom pokretanju; ako odbijete, aplikacija ponovno pita tek nakon ažuriranja. Kad telefon više ne prikazuje svoje pitanje, gumb otvara njegove postavke.
-- Pri prvom pokretanju mjesto koje je pronašla lokacija postaje prikazano i dodaje se omiljenima.
-- Telefoni bez kompasa ili senzora svjetla: pripadni gumbi i polja se isključuju; Dnevnik pri svakom pokretanju navodi senzore.
-- Widgeti: traka 4x1 sada radi i na tabletima (broje se redovi početnog zaslona, a ne stalne veličine).
-- Ispravljeno: pri pokretanju nakon ažuriranja vrijeme se preuzimalo dvaput; Dnevnik sada bilježi odabrani jezik i svako odabrano mjesto, a otvaranje postavki widgeta samo jednom.
+────────
+Nove funkcije od v2.10
+- Način poljoprivrednika: polja po satima s vremenom i kišom, pojedinosti na dodir i polje Voda u tlu.
+- Parcele: spremljene GPS-om ili na karti, glavni zaslon za svaku, statistika za 28 dana s PDF-om, upozorenja za kišu i vjetar.
+- Widgeti 4x2 dani i 4x3.
+- Veličina teksta (Aa).
+- ☰ › Pošalji aplikaciju.
+- Sjedinjene Države: upozorenja NWS-a, tornada, °F, lokalno vrijeme.
+- Ostali jezici: jezici manjina u Rumunjskoj.

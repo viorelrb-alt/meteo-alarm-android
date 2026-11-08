@@ -1,77 +1,30 @@
-v2.70 · 2026. november 7.
-- Gazda mód: minden óra egy széles mező (időjárás + eső), koppintásra közös ablakkal; fekvő telefonon két mező egymás alatt, fel-le húzva. Nagyobb felső rész: fent az ikon, lent a 10%-kal nagyobb hőmérséklet. A „CSAPADÉK 24” mezőből „VÍZ A TALAJBAN” lett: a 3–9 cm-es réteg vize és 24 órás változása.
+1. verzió
+- Az időjárás most, a következő órák, csapadék 12 órára és 5 napra.
+- Mezők: Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű, Földrengés.
+- Figyelmeztetések színkód szerint (MeteoAlarm, kb. 38 ország).
+- Automatikus helymeghatározás, kedvencek, más országok.
+- Világos, sötét és automatikus téma; fényerő a képernyő széléről; éjszakai óra.
+- Álló, fekvő, táblagép.
+- Widgetek 2x2, 4x1, 4x2, beállításokkal.
+- Önálló frissítés; tartalék előrejelzés: MET Norway.
+- Frissítések az alkalmazásból, Súgó, Napló.
 
-v2.64 · 2026. november 7.
-- Gazda mód, fekvő telefon: a mezők részletei egy nagy ablakban nyílnak meg jobbra, mindig ugyanott és ugyanakkorán.
+2. verzió
+- Az EU összes hivatalos nyelve és az ukrán.
+- Földrengések oldal.
+- Értesítések a hozzájárulásoddal: eső vagy hó, figyelmeztetések, földrengések.
 
-v2.63 · 2026. november 7.
-- A „GAZDA MÓD” felirat most a felső vonal alatt, balra a ☰ gomb alatt látszik, nem alul.
+Jelenlegi verzió: v2.80 · 2026.11.08.
+Dizájn / szerkezet fejlesztései.
+- Parcellák: a Szerkesztés gomb és a ceruza minden parcellán, a névhez és a térképen lévő helyhez.
+- Új nyelvek: török, orosz, szerb.
 
-v2.62 · 2026. november 7.
-- Gazda mód: a „CSAPADÉK 24” ablak azt is mutatja, mennyi vizet tartott meg a talaj (3–9 cm-es réteg), összesen és óránként.
-
-v2.61 · 2026. november 7.
-- Gazda mód: a „CSAPADÉK 24” mező most az alsó sorban van, a Nap / Hold és az UV-index között; egy koppintás elmagyarázza, és mutatja a csapadékos órákat és millimétereiket.
-- Javítva: gazda módban a Pollen és a Légnyomás mező a talajhőmérsékletet mutatta.
-- Javítva: az utolsó 24 óra csapadéka magától letöltődik, ha hiányzik; a „Töltés” már nem fut a GAZDA alá.
-
-v2.60 · 2026. november 7.
-- Gazda mód: egy főképernyő a településnek és egy-egy minden parcellának; a hőmérséklet és az ikon fölötti oldalra húzással váltasz köztük, a vonal alatti pontok mutatják, hol vagy.
-- A főképernyőn lévő parcella a saját időjárását és lent a saját mezőit mutatja (levegő, szél, irány, eső, páratartalom, talaj, talajhőmérséklet), pollen és földrengések nélkül; a névre koppintva látod a teljes nevet és a koordinátákat. A widgetek és az értesítések a településnél maradnak.
-- „Eső 24 ó” mező a lenti gombok mellett; egy koppintás az esős órákat mutatja.
-- ☰ › Parcellák: törlés bejelöléssel és megerősítéssel; lista a nevek és számok sorrendjében.
-- Romániában a Nyelv › Más nyelvek menü a kisebbségek nyelveit kínálja: magyar, német, ukrán és más nyelvek.
-
-v2.50 · 2026. november 7.
-- Gazda mód: a ☰ első eleme vált a gazda mód és a normál mód között. Gazda módban egy órás mezőre koppintva látod a hőmérsékletet, a nap minimumát és maximumát, a szelet széllökéssel és iránnyal (és hogy mikor fordul), a levegő páratartalmát, az eső esélyét, a talajnedvességet és a talajhőmérsékletet; az esőgrafikon és az öt nap helyett óránkénti esőmezők vannak, koppintásra részletekkel.
-- ☰ › Parcellák: mentsd el a helyet, ahol állsz (GPS), igazítsd az OpenStreetMap-térképen, és adj neki nevet; minden parcellának vannak mezői a szélre, irányra, esőre, a levegő és a talaj nedvességére, a talaj és a levegő hőmérsékletére, eső- és szélriasztásai, valamint statisztikája az utolsó 28 nap egy időszakára, amely PDF-ként menthető a Letöltésekbe.
-- A talajadatok az Open-Meteo becslései; ha az Open-Meteo nem válaszol, az alkalmazás később tölti le őket, és értesítést küld.
-- Egyesült Államok: az óra és az órák a választott település helyi idejét mutatják.
-- Értesítések csak a választott településre (tesztmódban) vagy oda, ahol a telefon van: nincs több amerikai értesítés, amikor az alkalmazás európai települést mutat.
-
-v2.40 · 2026. november 4.
-- Egyesült Államok: ☰ › Tornadoes, a Földrengések oldalhoz hasonló oldal: a települések és az állam tornádófigyelmeztetései, az utóbbi 2 napban a közelben jelentett tornádók, számuk az egész országban és a teendők.
-- Egyesült Államok: nincs Pollen doboz (ott nincs adat); a levegőminőség az amerikai US AQI index szerint.
-
-v2.30 · 2026. november 4.
-- Elemek az alkalmazás használatához az Egyesült Államokban.
-- ☰ › Hőmérséklet °C/°F: a °F elhagyásakor az alkalmazás megkérdezi, hogy átváltson-e a metrikus rendszerre; °F-nél a légnyomás inHg-ben, a távolságok mérföldben látszanak.
-
-v2.22 · 2026. november 4.
-- Auto Blockerrel rendelkező Samsung telefonok: kapcsold ki az alkalmazás telepítése vagy frissítése előtt (Beállítások › Biztonság és adatvédelem › Auto Blocker), különben a telefon megtagadja a telepítést; utána újra bekapcsolhatod.
-
-v2.21 · 2026. november 4.
-- Táblagép: a ☰ menü csak olyan széles, mint a leghosszabb sora, és 5 %-kal kisebb.
-- Oldalak: a cím egy sorban marad, és a szövegmérettel csak a jobb oldali gombokig nő.
-- Szövegméret-sáv: néhány telefonon (A70) érintésre bezárult; most az egész oszlopán fogadja az ujjat.
-- A sáv fölötti kör csak az értéket mutatja, % nélkül.
-
-v2.20 · 2026. november 4.
-- 4x2-es widget One UI 9-es Samsungon (A54): 2 sornál már nem 4x3-ként jelenik meg; 4x3 csak 3 sortól.
-- ☰ › Widgetek: ha több van, a widget a beállítások ablakának tetején választható, az alatta lévő beállítások a kiválasztotthoz tartoznak.
-- Táblagép: a ☰ menü 10 %-kal kisebb.
-- Napló: a gombok felirata egy sorban marad.
-- Internet nélkül az alkalmazás megvárja a hálózat visszatérését, ahelyett hogy 1–2 percenként újrapróbálná.
-
-v2.12 · 2026. november 4.
-- A Súgóban, Földrengésekben, Névjegyben és Újdonságokban: a jobb oldali gombok melletti Aa gomb a képernyő bal oldalán, az oldal fölött mutatja a szövegméret-sávot, mint a fényerősávot. A jobb felső keskeny sáv megszűnt.
-
-v2.11 · 2026. november 4.
-- A jobb szélről előhívott szövegméret-sáv most bal oldalt jelenik meg, mint a fényerő sávja.
-
-v2.10 · 2026. november 4.
-- Új 4x2 · napok widget: a mostani időjárás alatt a következő 5 nap (nap, ikon, max. / min.). 3 sorosra vagy nagyobbra húzva mindkét 4x2 widget (órák és napok) az új 4x3 lesz, a következő órákkal és napokkal.
-- Szövegméret: a Súgóban, Földrengésekben, Névjegyben és Újdonságokban egy jobb oldali sáv a bezárás gomb alatt nagyítja vagy kicsinyíti a betűket (80–180 %); a főképernyőn a jobb szél közelében fel-le csúsztatás ugyanezt a sávot mutatja. A méret az eszközön marad mentve, és a ☰ menüre is érvényes.
-- Táblagép: a ☰ menü és a többi menü 30 %-kal nagyobb.
-- ☰ › Alkalmazás küldése: WhatsApp-üzenetben (vagy más alkalmazással) elküldi a letöltési linket, hogy más is telepíthesse a Meteo Alarmot.
-- A widgetlista a telefon nyelvén mutatja a neveket.
-
-v2.00 · 2026. november 4.
-- Nyelvek: az alkalmazás most már az Európai Unió összes hivatalos nyelvén és ukránul beszél (a Súgó is). Első indításkor a telefon nyelvét veszi (angolt, ha az alkalmazásban nincs meg); utána a ☰ › Nyelv alatt választottat. A lista csak az angolt, a telefon nyelvét és annak az országnak a hivatalos nyelveit mutatja, ahol a telefon van.
-- ☰ › Földrengések: egy oldal az elmúlt 7 nap legalább 3-as erősségű földrengéseivel az országodban, aztán az elmúlt 48 óráéval az EU-ban, Ukrajnában és Moldovában (időpont, hely, erősség, mélység, távolság).
-- Értesítések (csak a beleegyezéseddel): kezdődő eső vagy havazás, új időjárási figyelmeztetések a településedre, legalább 3-as erősségű földrengések az országodban. Minden esemény csak egyszer. Be- vagy kikapcsolás: ☰ › Értesítések.
-- A helymeghatározást és az értesítéseket az alkalmazás barátságos magyarázattal kéri első indításkor; ha nemet mondasz, csak frissítés után kérdez újra. Ha a telefon már nem mutatja a kérdését, egy gomb megnyitja a beállításait.
-- Első indításkor a helymeghatározás által talált település lesz a mutatott, és bekerül a kedvencek közé.
-- Iránytű vagy fényérzékelő nélküli telefonok: a hozzájuk tartozó gombok és mezők kikapcsolnak; a Napló minden indításkor felsorolja az érzékelőket.
-- Widgetek: a 4x1-es sáv most már tableten is működik (a kezdőképernyő sorait számolja, nem rögzített méreteket).
-- Javítva: frissítés utáni indításkor az időjárás kétszer töltődött le; a Napló most rögzíti a választott nyelvet és minden választott települést, a widgetbeállítások megnyitását pedig csak egyszer.
+────────
+Új funkciók a v2.10 óta
+- Gazda mód: óránkénti mezők időjárással és esővel, részletek koppintásra, és a Víz a talajban mező.
+- Parcellák: GPS-szel vagy térképen mentve, mindegyiknek főképernyő, 28 napos statisztika PDF-fel, eső- és szélriasztások.
+- Widgetek 4x2 napok és 4x3.
+- Szövegméret (Aa).
+- ☰ › Alkalmazás küldése.
+- Egyesült Államok: NWS-figyelmeztetések, tornádók, °F, helyi idő.
+- Egyéb nyelvek: a romániai kisebbségek nyelvei.

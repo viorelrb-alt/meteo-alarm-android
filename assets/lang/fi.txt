@@ -595,3 +595,45 @@ Type: 	Laji:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Puhelimessa jokainen tunti on yksi leveä ruutu, sää vasemmalla ja sade oikealla; pystyssä vedä ruutuja sivuttain, vaakasuunnassa kaksi ruutua on päällekkäin: vedä niitä ylös ja alas. Pystyssä kuvake on ruutujen yläpuolisen tilan ylemmässä puoliskossa ja lämpötila alemmassa.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Leveässä ruudussa sama ikkuna näyttää myös ”Sade”-otsikon alla tunnin sadetiedot.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Viljelijätilassa alarivin ruutu ”VETTÄ MAASSA”, Aurinko / Kuu ja UV-indeksin välissä, näyttää veden, jota 3–9 cm:n maakerros nyt pidättää näytetyssä paikassa (paikkakunta tai lohko), millimetreinä, ja sen alla, paljonko se muuttui 24 tunnissa. Napautus selittää sen ja näyttää viimeisten 24 tunnin sademäärän: vain tunnit, joina satoi, kunkin millimetrit ja paljonko maa pidätti. Open-Meteon arvio, ei mittaus.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	☰:n ensimmäinen kohta vaihtaa tilaa. Viljelijätilassa jokainen tunti on yksi leveä ruutu säällä ja sateella; vaakasuunnassa kaksi ruutua päällekkäin, vedetään ylös ja alas.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Napautus näyttää tunnin tiedot: lämpötilan, tuulen ja suunnan, kosteuden, sateen, maan.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Vesi, jota 3–9 cm:n maakerros nyt pidättää, ja sen muutos 24 tunnissa; napautus näyttää sadetunnit. Open-Meteon arvio.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Lohkot: tallenna paikka, jossa seisot, tai valitse se kartalta ja anna sille nimi. Muokkaa (tai kynä) muuttaa nimen ja nastan; Poista lohkoja poistaa ne. Vain tässä puhelimessa.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Yksi päänäkymä paikkakunnalle ja yksi kullekin lohkolle: pyyhkäise sivulle lämpötilan päällä.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Napautus lohkon nimeen: sen ruudut, seuraavat 12 tuntia, tilastot PDF:nä, hälytykset, nimeä uudelleen, poista.
+When ON, a notification for rain or strong wind forecast on the parcel.	Kun PÄÄLLÄ, ilmoitus, kun lohkolle ennustetaan sadetta tai kovaa tuulta.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Maatiedot ovat Open-Meteon mallin arvioita, eivät mittauksia; lähellä olevat lohkot voivat näyttää samoja arvoja.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: liikuta yhdellä sormella, zoomaa kahdella; tarvitsee internetin.
+Choose the town: favourites, then counties (or states).	Valitse paikkakunta: suosikit, sitten maakunnat (tai osavaltiot).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Kytkee automaattisen sijainnin päälle (täysi) tai pois (tyhjä); näyttää sään siellä, missä olet.
+Shows the brightness bar on the left.	Näyttää kirkkauspalkin vasemmalla.
+Over the brightness bar: switches the theme.	Kirkkauspalkin yläpuolella: vaihtaa teeman.
+Light theme in the light, dark in the dark (needs a light sensor).	Vaalea teema valossa, tumma pimeässä (tarvitsee valoanturin).
+Looks once with the GPS.	Hakee kerran GPS:llä.
+Refreshes the weather.	Päivittää sään.
+Slide up or down: brightness.	Pyyhkäise ylös tai alas: kirkkaus.
+Slide up or down: text size.	Pyyhkäise ylös tai alas: tekstin koko.
+The Aa button on the pages shows the text-size bar.	Sivujen Aa-painike näyttää tekstikokopalkin.
+Shows where the wind blows, turned with the phone.	Näyttää, mihin tuuli puhaltaa, kääntyy puhelimen mukana.
+A big dim clock while the phone charges at night.	Suuri himmeä kello, kun puhelin latautuu yöllä.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Yksi rivi viivan alla: maanjäristys, sitten varoitukset värin mukaan. Napautus näyttää tiedot.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Viimeisen 24 tunnin voimakkain maanjäristys maassasi ja miten se luultavasti tuntui (EMSC).
+The rows of boxes follow the finger.	Ruuturivit seuraavat sormea.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys, Kompassi; napautus näyttää tiedot.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Paina pitkään aloitusnäyttöä › Widgetit › Meteo Alarm. Vedä reunoista vaihtaaksesi asettelua (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Paina widgetiä pitkään › Asetukset, tai ☰ › Widgetit: paikkakunta, tausta, värit.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	15 minuutin välein näyttö päällä, 30 näyttö pois; MET Norway, kun Open-Meteo on varattu.
+Downloads the weather now.	Lataa sään nyt.
+Keeps the screen on while the app is open.	Pitää näytön päällä, kun sovellus on auki.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Englanti, puhelimen kieli ja maan kielet; Romaniassa myös ”Muut kielet”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Viime päivien maanjäristykset lähelläsi, aika, paikka, magnitudi ja etäisyys.
+Rain or snow starting, new warnings and earthquakes, each only once.	Alkava sade tai lumi, uudet varoitukset ja maanjäristykset, kukin vain kerran.
+The settings of the widgets on the home screen.	Aloitusnäytön widgetien asetukset.
+What the app did, with the time; read, share or save it.	Mitä sovellus teki, kellonaikoineen; lue, jaa tai tallenna.
+Looks for a new version on GitHub, with your consent.	Etsii uutta versiota GitHubista suostumuksellasi.
+Sends the download link, e.g. on WhatsApp.	Lähettää latauslinkin, esim. WhatsAppissa.
+About the app, its data and what's new.	Tietoja sovelluksesta, sen tiedoista ja uutuuksista.
+Edit	Muokkaa
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Napauta lohkoa nähdäksesi sen päänäkymässä. Kynä avaa sen muokattavaksi.
+temp: 	lämp.: 
+Tap the parcel to edit: its name and the pin on the map.	Napauta muokattavaa lohkoa: nimi ja nasta kartalla.

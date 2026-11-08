@@ -1,77 +1,30 @@
-v2.70 · 7. november 2026
-- Način kmeta: vsaka ura je eno široko polje (vreme + dež) s skupnim oknom ob dotiku; pri ležečem telefonu dve polji eno pod drugim, drsani gor in dol. Večji zgornji del: ikona zgoraj, temperatura 10 % večja spodaj. Polje »PADAVINE 24« postane »VODA V TLEH«: voda v plasti 3–9 cm in njena sprememba v 24 urah.
+Različica 1
+- Vreme zdaj, naslednje ure, padavine za 12 ur in 5 dni.
+- Polja: Sonce / Luna, UV, Cvetni prah, Vlaga, Kakovost zraka, Tlak, Veter, Vidljivost, Kompas, Potres.
+- Vremenska opozorila po barvah (MeteoAlarm, približno 38 držav).
+- Samodejna lokacija, priljubljeni, druge države.
+- Svetla, temna in samodejna tema; svetlost z roba zaslona; nočna ura.
+- Pokončno, ležeče, tablica.
+- Pripomočki 2x2, 4x1, 4x2, z nastavitvami.
+- Samodejno osveževanje; rezervna napoved MET Norway.
+- Posodobitve iz aplikacije, Pomoč, Dnevnik.
 
-v2.64 · 7. november 2026
-- Način kmeta, telefon leže: podrobnosti polj se odprejo v velikem oknu desno, vedno na istem mestu in enako veliko.
+Različica 2
+- Vsi uradni jeziki EU in ukrajinščina.
+- Stran Potresi.
+- Obvestila z tvojim soglasjem: dež ali sneg, opozorila, potresi.
 
-v2.63 · 7. november 2026
-- »NAČIN KMETA« je zdaj pod zgornjo črto, levo pod gumbom ☰, namesto spodaj.
+Trenutna različica: v2.80 · 8.11.2026
+Izboljšave videza / zgradbe.
+- Parcele: gumb Uredi in svinčnik na vsaki parceli, za ime in kraj na zemljevidu.
+- Novi jeziki: turščina, ruščina, srbščina.
 
-v2.62 · 7. november 2026
-- Način kmeta: okno »PADAVINE 24« pokaže tudi, koliko vode so zadržala tla (plast 3–9 cm), skupaj in po urah.
-
-v2.61 · 7. november 2026
-- Način kmeta: polje »PADAVINE 24« je zdaj v spodnji vrsti, med Sonce / Luna in UV-indeks; tap ga pojasni in pokaže ure s padavinami in njihove milimetre.
-- Popravljeno: v načinu kmeta sta polji Cvetni prah in Tlak kazali temperaturo tal.
-- Popravljeno: padavine zadnjih 24 ur se prenesejo same, ko manjkajo; »Polni se« ne teče več pod KMET.
-
-v2.60 · 7. november 2026
-- Način kmeta: glavni zaslon za kraj in po eden za vsako parcelo; med njimi greš s podrsanjem čez temperaturo in ikono, pike pod črto kažejo, kje si.
-- Parcela na glavnem zaslonu kaže svoje vreme in spodaj svoja polja (zrak, veter, smer, dež, vlaga, tla, temperatura tal), brez cvetnega prahu in potresov; tap na ime pokaže celo ime in koordinate. Pripomočki in obvestila ostanejo pri kraju.
-- Polje »dež 24 h« ob gumbih spodaj; tap pokaže ure z dežjem.
-- ☰ › Parcele: brisanje z označevanjem in potrditvijo; seznam po vrstnem redu imen in številk.
-- V Romuniji meni Jezik › Drugi jeziki ponuja jezike manjšin: madžarščino, nemščino, ukrajinščino in druge.
-
-v2.50 · 7. november 2026
-- Način kmeta: prvi element ☰ preklaplja med načinom kmeta in običajnim načinom. V načinu kmeta tap na urno polje pokaže temperaturo, najnižjo in najvišjo dneva, veter s sunki in smerjo (in kdaj se obrne), vlažnost zraka, verjetnost dežja, vlažnost in temperaturo tal; graf dežja in pet dni nadomestijo urna polja dežja s podrobnostmi ob tapu.
-- ☰ › Parcele: shrani kraj, kjer stojiš (GPS), ga popravi na zemljevidu OpenStreetMap in poimenuj; vsaka parcela ima polja za veter, smer, dež, vlažnost zraka in tal, temperaturo tal in zraka, opozorila za dež in močan veter ter statistiko za obdobje zadnjih 28 dni, ki jo lahko shraniš kot PDF v Prenose.
-- Podatki o tleh so ocene Open-Meteo; ko Open-Meteo ne odgovarja, jih aplikacija prenese pozneje in ti pošlje obvestilo.
-- Združene države: ura in ure kažejo krajevni čas izbranega kraja.
-- Obvestila samo za izbrani kraj (v preizkusnem načinu) ali tam, kjer je telefon: nič več sporočil iz ZDA, ko aplikacija kaže kraj v Evropi.
-
-v2.40 · 4. november 2026
-- Združene države: ☰ › Tornadoes, stran kot Potresi: opozorila pred tornadi za tvoj kraj in zvezno državo, tornadi, prijavljeni v bližini v zadnjih 2 dneh, njihovo število v vsej državi in kaj storiti.
-- Združene države: brez okvirja Cvetni prah (tam ni podatkov); kakovost zraka po ameriškem indeksu US AQI.
-
-v2.30 · 4. november 2026
-- Elementi za uporabo aplikacije v Združenih državah.
-- ☰ › Temperatura °C/°F: ob izhodu iz °F aplikacija vpraša, ali naj preklopi na metrični sistem; z °F je tlak v inHg, razdalje pa v miljah.
-
-v2.22 · 4. november 2026
-- Telefoni Samsung z Auto Blockerjem: pred namestitvijo ali posodobitvijo aplikacije ga izklopite (Nastavitve › Varnost in zasebnost › Auto Blocker), sicer telefon zavrne namestitev; nato ga lahko spet vklopite.
-
-v2.21 · 4. november 2026
-- Tablica: meni ☰ je širok le toliko kot njegova najdaljša vrstica in 5 % manjši.
-- Strani: naslov ostane v eni vrstici in raste z velikostjo besedila le do gumbov na desni.
-- Vrstica velikosti besedila: na nekaterih telefonih (A70) se je ob dotiku zaprla; zdaj sprejme prst v celem svojem stolpcu.
-- Krog nad vrstico prikazuje le vrednost, brez %.
-
-v2.20 · 4. november 2026
-- Pripomoček 4x2 na Samsungu z One UI 9 (A54): pri 2 vrsticah se ne prikaže več kot 4x3; 4x3 šele od 3 vrstic.
-- ☰ › Pripomočki: kadar jih je več, se pripomoček izbere na vrhu okna z nastavitvami, nastavitve spodaj pa pripadajo izbranemu.
-- Tablica: meni ☰ je 10 % manjši.
-- Dnevnik: besedilo gumbov ostane v eni vrstici.
-- Brez interneta aplikacija počaka, da se omrežje vrne, namesto da bi poskušala vsako 1–2 minuti.
-
-v2.12 · 4. november 2026
-- V Pomoči, Potresih, O aplikaciji in Kaj je novega: gumb Aa ob gumbih na desni prikaže vrstico velikosti besedila na levi strani zaslona, nad stranjo, kot vrstico svetlosti. Ozka vrstica zgoraj desno je odstranjena.
-
-v2.11 · 4. november 2026
-- Vrstica velikosti besedila, odprta z desnega roba, se zdaj prikaže levo, kot vrstica svetlosti.
-
-v2.10 · 4. november 2026
-- Nov pripomoček 4x2 · dnevi: pod trenutnim vremenom naslednjih 5 dni (dan, ikona, najvišja / najnižja). Povečana na 3 vrstice ali več postaneta oba pripomočka 4x2 (ure in dnevi) nov 4x3, z naslednjimi urami in dnevi.
-- Velikost besedila: v Pomoči, Potresih, O aplikaciji in Kaj je novega vrstica desno, pod gumbom za zapiranje, poveča ali pomanjša črke (80–180 %); na glavnem zaslonu enako vrstico prikaže drsenje gor ali dol blizu desnega roba. Velikost ostane shranjena v napravi in velja tudi za meni ☰.
-- Tablica: meni ☰ in drugi meniji so za 30 % večji.
-- ☰ › Pošlji aplikacijo: pošlje povezavo za prenos v sporočilu WhatsApp (ali z drugo aplikacijo), da lahko Meteo Alarm namesti še kdo drug.
-- Seznam pripomočkov prikaže imena v jeziku telefona.
-
-v2.00 · 4. november 2026
-- Jeziki: aplikacija zdaj govori vse uradne jezike Evropske unije in ukrajinščino (tudi Pomoč). Ob prvem zagonu vzame jezik telefona (angleščino, če ga aplikacija nima); nato tistega, izbranega v ☰ › Jezik. Seznam kaže samo angleščino, jezik telefona in uradne jezike države, v kateri je telefon.
-- ☰ › Potresi: stran s potresi magnitude 3 ali več zadnjih 7 dni v vaši državi, nato zadnjih 48 ur v EU, Ukrajini in Moldaviji (čas, kraj, magnituda, globina, razdalja).
-- Obvestila (samo z vašim soglasjem): dež ali sneg, ki se začenja, nova vremenska opozorila za vaš kraj, potresi magnitude 3 ali več v vaši državi. Vsak dogodek samo enkrat. Vklop ali izklop v ☰ › Obvestila.
-- Za lokacijo in obvestila aplikacija vpraša s prijazno razlago ob prvem zagonu; če zavrnete, vpraša znova šele po posodobitvi. Ko telefon svojega vprašanja ne prikazuje več, gumb odpre njegove nastavitve.
-- Ob prvem zagonu kraj, ki ga najde lokacija, postane prikazani in se doda med priljubljene.
-- Telefoni brez kompasa ali senzorja svetlobe: povezani gumbi in polja se izklopijo; Dnevnik ob vsakem zagonu izpiše senzorje.
-- Pripomočki: trak 4x1 zdaj deluje tudi na tablicah (štejejo se vrste začetnega zaslona, ne stalne velikosti).
-- Popravljeno: ob zagonu po posodobitvi se je vreme preneslo dvakrat; Dnevnik zdaj zapiše izbrani jezik in vsak izbrani kraj, odpiranje nastavitev pripomočka pa samo enkrat.
+────────
+Nove funkcije od v2.10
+- Način kmeta: urna polja z vremenom in dežjem, podrobnosti ob dotiku ter polje Voda v tleh.
+- Parcele: shranjene z GPS ali na zemljevidu, glavni zaslon za vsako, statistika za 28 dni s PDF, opozorila za dež in veter.
+- Pripomočki 4x2 dnevi in 4x3.
+- Velikost besedila (Aa).
+- ☰ › Pošlji aplikacijo.
+- Združene države: opozorila NWS, tornadi, °F, krajevni čas.
+- Drugi jeziki: jeziki manjšin v Romuniji.

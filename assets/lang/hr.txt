@@ -595,3 +595,45 @@ Type: 	Vrsta:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Na telefonu je svaki sat jedno široko polje, lijevo vrijeme i desno kiša; dok telefon stoji, polja povlačiš u stranu, a kad leži, dva polja su jedno ispod drugog: povlači ih gore i dolje. Dok telefon stoji, ikona je u gornjoj polovici prostora iznad polja, a temperatura u donjoj.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Kod širokog polja isti prozor pokazuje i, pod „Kiša”, pojedinosti kiše za taj sat.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	U načinu poljoprivrednika polje „VODA U TLU” u donjem redu, između Sunce / Mjesec i UV indeks, pokazuje vodu koju sada zadržava sloj tla od 3–9 cm na prikazanom mjestu (mjesto ili parcela), u milimetrima, a ispod koliko se promijenila u 24 sata. Dodir je objašnjava i pokazuje oborine zadnjih 24 sata: samo sate s oborinama, s milimetrima svakog i koliko je tlo zadržalo. Procjena Open-Meteo, ne mjerenje.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Prva stavka ☰ mijenja način. U načinu poljoprivrednika svaki sat je jedno široko polje s vremenom i kišom; kad telefon leži, dva polja jedno ispod drugog, povlače se gore i dolje.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Dodir pokazuje pojedinosti sata: temperaturu, vjetar i smjer, vlagu, kišu, tlo.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Voda koju sada zadržava sloj tla od 3–9 cm i njezina promjena u 24 sata; dodir pokazuje sate s oborinama. Procjena Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Parcele: spremi mjesto na kojem stojiš ili ga odaberi na karti i daj mu ime. Uredi (ili olovka) mijenja ime i pribadaču; Obriši parcele ih uklanja. Samo na ovom telefonu.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Jedan glavni zaslon za mjesto i po jedan za svaku parcelu: povuci u stranu preko temperature.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Dodir imena parcele: njezina polja, sljedećih 12 sati, statistika s PDF-om, upozorenja, preimenuj, obriši.
+When ON, a notification for rain or strong wind forecast on the parcel.	Kad su UKLJUČENA, obavijest kad se prognozira kiša ili jak vjetar na parceli.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Podaci o tlu su procjene modela Open-Meteo, ne mjerenja; obližnje parcele mogu imati iste vrijednosti.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: pomiči jednim prstom, uvećavaj s dva; treba internet.
+Choose the town: favourites, then counties (or states).	Odaberi mjesto: omiljena, pa županije (ili savezne države).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Uključuje (puno) ili isključuje (prazno) automatsku lokaciju; pokazuje vrijeme gdje jesi.
+Shows the brightness bar on the left.	Pokazuje traku svjetline lijevo.
+Over the brightness bar: switches the theme.	Iznad trake svjetline: mijenja temu.
+Light theme in the light, dark in the dark (needs a light sensor).	Svijetla tema na svjetlu, tamna u mraku (treba senzor svjetla).
+Looks once with the GPS.	Traži jednom s GPS-om.
+Refreshes the weather.	Osvježava vrijeme.
+Slide up or down: brightness.	Povuci gore ili dolje: svjetlina.
+Slide up or down: text size.	Povuci gore ili dolje: veličina teksta.
+The Aa button on the pages shows the text-size bar.	Gumb Aa na stranicama pokazuje traku veličine teksta.
+Shows where the wind blows, turned with the phone.	Pokazuje kamo puše vjetar, okrenuta s telefonom.
+A big dim clock while the phone charges at night.	Veliki prigušeni sat kad se telefon noću puni.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Jedan red ispod crte: potres, pa upozorenja po bojama. Dodir pokazuje pojedinosti.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Najjači potres u zadnja 24 sata u tvojoj zemlji i kako se vjerojatno osjetio (EMSC).
+The rows of boxes follow the finger.	Redovi polja prate prst.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sunce / Mjesec, UV, Pelud, Vlaga, Kvaliteta zraka, Tlak, Vjetar, Vidljivost, Kompas; dodir pokazuje pojedinosti.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Drži početni zaslon › Widgeti › Meteo Alarm. Povuci rubove za promjenu izgleda (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Drži widget › Postavke, ili ☰ › Widgeti: mjesto, pozadina, boje.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Svakih 15 minuta s upaljenim zaslonom, 30 s ugašenim; MET Norway kad je Open-Meteo zauzet.
+Downloads the weather now.	Sada preuzima vrijeme.
+Keeps the screen on while the app is open.	Drži zaslon upaljenim dok je aplikacija otvorena.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Engleski, jezik telefona i jezici zemlje; u Rumunjskoj i „Ostali jezici”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Potresi zadnjih dana u blizini, s vremenom, mjestom, magnitudom i udaljenošću.
+Rain or snow starting, new warnings and earthquakes, each only once.	Početak kiše ili snijega, nova upozorenja i potresi, svako samo jednom.
+The settings of the widgets on the home screen.	Postavke widgeta na početnom zaslonu.
+What the app did, with the time; read, share or save it.	Što je aplikacija radila, s vremenom; čitaj, dijeli ili spremi.
+Looks for a new version on GitHub, with your consent.	Traži novu verziju na GitHubu, uz tvoj pristanak.
+Sends the download link, e.g. on WhatsApp.	Šalje poveznicu za preuzimanje, npr. na WhatsAppu.
+About the app, its data and what's new.	O aplikaciji, njezinim podacima i novostima.
+Edit	Uredi
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Dodirni parcelu da je vidiš na glavnom zaslonu. Olovka je otvara za uređivanje.
+temp: 	temp.: 
+Tap the parcel to edit: its name and the pin on the map.	Dodirni parcelu za uređivanje: ime i pribadača na karti.

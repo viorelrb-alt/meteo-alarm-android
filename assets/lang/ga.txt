@@ -595,3 +595,45 @@ Type: 	Cineál:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Ar fhón is bosca leathan amháin gach uair, an aimsir ar chlé agus an bháisteach ar dheis; leis an bhfón ina sheasamh, sleamhnaigh na boscaí i leataobh, agus leis ar a thaobh bíonn dhá bhosca ceann faoin gceann eile: sleamhnaigh suas agus síos iad. Leis an bhfón ina sheasamh, bíonn an deilbhín sa leath uachtair den spás os cionn na mboscaí agus an teocht sa leath íochtair.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	I gcás bosca leathan, taispeánann an fhuinneog chéanna freisin, faoi “Báisteach”, sonraí báistí na huaire.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	I mód feirmeora taispeánann an bosca “UISCE SAN ITHIR” sa tsraith íochtair, idir Grian / Gealach agus Innéacs UV, an t-uisce a choinníonn ciseal 3–9 cm na hithreach anois san áit a thaispeántar (baile nó gabháltas), i milliméadair, agus faoi sin an méid a d'athraigh sé i 24 uair. Míníonn tapáil é agus taispeánann sí an deascadh le 24 uair anuas: na huaireanta a raibh deascadh iontu amháin, milliméadair gach ceann agus an méid a choinnigh an ithir. Meastachán Open-Meteo, ní tomhas.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Athraíonn an chéad mhír de ☰ an mód. I mód feirmeora is bosca leathan amháin gach uair leis an aimsir agus an bháisteach; leis an bhfón ar a thaobh, dhá bhosca ceann faoin gceann eile, sleamhnaithe suas agus síos.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Taispeánann tapáil sonraí na huaire: teocht, gaoth agus treo, taise, báisteach, ithir.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	An t-uisce a choinníonn ciseal 3–9 cm na hithreach anois agus a athrú i 24 uair; taispeánann tapáil na huaireanta le deascadh. Meastachán Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Gabháltais: sábháil an áit ina seasann tú nó roghnaigh ar an léarscáil í agus tabhair ainm di. Athraíonn Cuir in eagar (nó an peann luaidhe) an t-ainm agus an biorán; baineann Scrios gabháltais iad. Ar an bhfón seo amháin.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Príomhscáileán amháin don bhaile agus ceann do gach gabháltas: sleamhnaigh i leataobh thar an teocht.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Tapáil ar ainm an ghabháltais: a bhoscaí, na 12 uair romhainn, staitisticí le PDF, foláirimh, athainmnigh, scrios.
+When ON, a notification for rain or strong wind forecast on the parcel.	Nuair atá siad ANN, fógra nuair a thuartar báisteach nó gaoth láidir ar an ngabháltas.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Is meastacháin de mhúnla Open-Meteo iad sonraí na hithreach, ní tomhais; d'fhéadfadh na luachanna céanna a bheith ag gabháltais gar dá chéile.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: bog le méar amháin í, zúmáil le dhá cheann; teastaíonn idirlíon.
+Choose the town: favourites, then counties (or states).	Roghnaigh an baile: ceanáin, ansin contaetha (nó stáit).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Cuireann sé an suíomh uathoibríoch ar siúl (lán) nó as (folamh); taispeánann sé an aimsir san áit ina bhfuil tú.
+Shows the brightness bar on the left.	Taispeánann sé barra na gile ar chlé.
+Over the brightness bar: switches the theme.	Os cionn bharra na gile: athraíonn sé an téama.
+Light theme in the light, dark in the dark (needs a light sensor).	Téama geal sa solas, dorcha sa dorchadas (teastaíonn braiteoir solais).
+Looks once with the GPS.	Cuardaíonn sé uair amháin leis an GPS.
+Refreshes the weather.	Athnuann sé an aimsir.
+Slide up or down: brightness.	Sleamhnaigh suas nó síos: gile.
+Slide up or down: text size.	Sleamhnaigh suas nó síos: méid an téacs.
+The Aa button on the pages shows the text-size bar.	Taispeánann an cnaipe Aa ar na leathanaigh barra mhéid an téacs.
+Shows where the wind blows, turned with the phone.	Taispeánann sé cá séideann an ghaoth, casta leis an bhfón.
+A big dim clock while the phone charges at night.	Clog mór lag nuair a bhíonn an fón á luchtú san oíche.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Sraith amháin faoin líne: an crith talún, ansin na rabhaidh de réir datha. Taispeánann tapáil na sonraí.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	An crith talún is láidre le 24 uair anuas i do thír agus conas a mhothaíodh é is dócha (EMSC).
+The rows of boxes follow the finger.	Leanann sraitheanna na mboscaí an mhéar.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Grian / Gealach, UV, Pailin, Taise, Cáilíocht an aeir, Brú, Gaoth, Infheictheacht, Compás; taispeánann tapáil na sonraí.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Coinnigh an scáileán baile › Giuirléidí › Meteo Alarm. Tarraing na himill chun an leagan amach a athrú (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Coinnigh an ghiuirléid › Socruithe, nó ☰ › Giuirléidí: baile, cúlra, dathanna.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Gach 15 nóiméad leis an scáileán ar siúl, 30 leis as; MET Norway nuair atá Open-Meteo gnóthach.
+Downloads the weather now.	Íoslódálann sé an aimsir anois.
+Keeps the screen on while the app is open.	Coinníonn sé an scáileán ar siúl fad atá an aip oscailte.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Béarla, teanga an fhóin agus teangacha na tíre; sa Rómáin freisin “Teangacha eile”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Creathanna talún na laethanta deireanacha in aice leat, le ham, áit, méid agus fad.
+Rain or snow starting, new warnings and earthquakes, each only once.	Báisteach nó sneachta ag tosú, rabhaidh nua agus creathanna talún, gach ceann uair amháin.
+The settings of the widgets on the home screen.	Socruithe na ngiuirléidí ar an scáileán baile.
+What the app did, with the time; read, share or save it.	Cad a rinne an aip, leis an am; léigh, comhroinn nó sábháil é.
+Looks for a new version on GitHub, with your consent.	Cuardaíonn sé leagan nua ar GitHub, le do thoiliú.
+Sends the download link, e.g. on WhatsApp.	Seolann sé nasc na híoslódála, m.sh. ar WhatsApp.
+About the app, its data and what's new.	Faoin aip, a sonraí agus a bhfuil nua.
+Edit	Cuir in eagar
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Tapáil gabháltas chun é a fheiceáil ar an bpríomhscáileán. Osclaíonn an peann luaidhe é le cur in eagar.
+temp: 	teocht: 
+Tap the parcel to edit: its name and the pin on the map.	Tapáil an gabháltas le cur in eagar: a ainm agus an biorán ar an léarscáil.

@@ -12,10 +12,10 @@ import java.util.Map;
 public final class Tr {
 	/** The language codes, as the list shows them, and their names in their own language. */
 	public static final String[] CODES = { "ro", "en", "us", "bg", "cs", "da", "de", "el", "es", "et", "fi", "fr", "ga", "hr", "hu", "it",
-			"lt", "lv", "mt", "nl", "pl", "pt", "sk", "sl", "sv", "uk" };
+			"lt", "lv", "mt", "nl", "pl", "pt", "ru", "sk", "sl", "sr", "sv", "tr", "uk" };
 	public static final String[] NAMES = { "Română", "English", "English (US)", "Български", "Čeština", "Dansk", "Deutsch", "Ελληνικά", "Español",
 			"Eesti", "Suomi", "Français", "Gaeilge", "Hrvatski", "Magyar", "Italiano", "Lietuvių", "Latviešu", "Malti", "Nederlands",
-			"Polski", "Português", "Slovenčina", "Slovenščina", "Svenska", "Українська" };
+			"Polski", "Português", "Русский", "Slovenčina", "Slovenščina", "Српски", "Svenska", "Türkçe", "Українська" };
 
 	private static String lang = "ro";
 	private static Map<String, String> map = new HashMap<String, String>();
@@ -112,6 +112,8 @@ public final class Tr {
 		if (cc.equals("es") || cc.equals("ad")) return new String[] { "es" };
 		if (cc.equals("se")) return new String[] { "sv" };
 		if (cc.equals("ua")) return new String[] { "uk" };
+		if (cc.equals("rs") || cc.equals("me") || cc.equals("ba")) return new String[] { "sr" };
+		if (cc.equals("tr")) return new String[] { "tr" };
 		if (cc.equals("ro") || cc.equals("md")) return new String[] { "ro" };
 		if (cc.equals("ch")) return new String[] { "de", "fr", "it" };
 		if (cc.equals("us")) return new String[] { "us", "es" };
@@ -135,6 +137,10 @@ public final class Tr {
 		if (l.equals("lt")) return new String[] { "Š", "R", "P", "V" };
 		if (l.equals("lv")) return new String[] { "Z", "A", "D", "R" };
 		if (l.equals("uk")) return new String[] { "Пн", "Сх", "Пд", "Зх" };
+		// v2.80: Russian, Serbian (Cyrillic) and Turkish.
+		if (l.equals("ru")) return new String[] { "С", "В", "Ю", "З" };
+		if (l.equals("sr")) return new String[] { "С", "И", "Ј", "З" };
+		if (l.equals("tr")) return new String[] { "K", "D", "G", "B" };
 		return new String[] { "N", "E", "S", "W" };
 	}
 

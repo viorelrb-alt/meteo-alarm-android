@@ -1,77 +1,30 @@
-v2.70 · 7. november 2026
-- Landmandstilstand: hver time er ét bredt felt (vejr + regn) med ét fælles vindue ved tryk; på tværs to felter under hinanden, skubbet op og ned. Større øverste del: ikon øverst, temperatur 10 % større nederst. Feltet »NEDBØR 24« bliver til »VAND I JORDEN«: vandet i laget på 3–9 cm og ændringen på 24 timer.
+Version 1
+- Vejret nu, de næste timer, nedbør for 12 timer og 5 dage.
+- Felter: Sol / Måne, UV, Pollen, Luftfugtighed, Luftkvalitet, Lufttryk, Vind, Sigtbarhed, Kompas, Jordskælv.
+- Vejrvarsler efter farvekode (MeteoAlarm, omkring 38 lande).
+- Automatisk placering, favoritter, andre lande.
+- Lyst, mørkt og automatisk tema; lysstyrke fra skærmkanten; natur.
+- Stående, liggende, tablet.
+- Widgets 2x2, 4x1, 4x2, med indstillinger.
+- Opdaterer af sig selv; MET Norway som reserveudsigt.
+- Opdateringer fra appen, Hjælp, Log.
 
-v2.64 · 7. november 2026
-- Landmandstilstand, telefonen på tværs: detaljerne for felterne åbner i et stort vindue til højre, altid samme sted og samme størrelse.
+Version 2
+- Alle EU's officielle sprog og ukrainsk.
+- Siden Jordskælv.
+- Notifikationer med dit samtykke: regn eller sne, varsler, jordskælv.
 
-v2.63 · 7. november 2026
-- “LANDMANDSTILSTAND” står nu under den øverste linje, til venstre under ☰-knappen, i stedet for nederst.
+Nuværende version: v2.80 · 8.11.2026
+Forbedringer af design / struktur.
+- Marker: knappen Rediger og en blyant på hver mark, til navn og sted på kortet.
+- Nye sprog: tyrkisk, russisk, serbisk.
 
-v2.62 · 7. november 2026
-- Landmandstilstand: vinduet “NEDBØR 24” viser også, hvor meget vand jorden holdt (lag 3–9 cm), i alt og time for time.
-
-v2.61 · 7. november 2026
-- Landmandstilstand: feltet “NEDBØR 24” står nu i den nederste række, mellem Sol / Måne og UV-indeks; et tryk forklarer det og viser timerne med nedbør og deres millimeter.
-- Rettet: i landmandstilstand viste felterne Pollen og Lufttryk jordtemperaturen.
-- Rettet: nedbøren de seneste 24 timer hentes af sig selv, når den mangler; “Oplader” løber ikke længere ind under LANDMAND.
-
-v2.60 · 7. november 2026
-- Landmandstilstand: en hovedskærm for byen og én for hver mark; du skifter ved at stryge sidelæns over temperaturen og ikonet, og prikkerne under linjen viser, hvor du er.
-- En mark på hovedskærmen viser sit vejr og nederst sine felter (luft, vind, retning, regn, fugtighed, jord, jordtemperatur), uden pollen og jordskælv; et tryk på navnet viser hele navnet og koordinaterne. Widgets og notifikationer bliver ved byen.
-- Feltet “regn 24 t” ved knapperne nederst; et tryk viser timerne med regn.
-- ☰ › Marker: sletning med flueben og bekræftelse; listen i rækkefølge efter navne og numre.
-- I Rumænien tilbyder menuen Sprog › Andre sprog mindretallenes sprog: ungarsk, tysk, ukrainsk og andre.
-
-v2.50 · 7. november 2026
-- Landmandstilstand: det første punkt i ☰ skifter mellem landmandstilstand og normal tilstand. I landmandstilstand viser et tryk på en timeboks temperatur, dagens laveste og højeste, vind med vindstød og retning (og hvornår den drejer), luftfugtighed, chance for regn, jordfugtighed og jordtemperatur; nedbørsgrafen og de fem dage erstattes af regnbokse pr. time med detaljer ved tryk.
-- ☰ › Marker: gem stedet, hvor du står (GPS), ret det på OpenStreetMap-kortet og giv det et navn; hver mark har bokse for vind, retning, regn, luft- og jordfugtighed, jord- og lufttemperatur, varsler om regn og kraftig vind og statistik for en periode inden for de sidste 28 dage, som kan gemmes som PDF i Overførsler.
-- Jorddata er estimater fra Open-Meteo; svarer Open-Meteo ikke, henter appen dem senere og sender dig en notifikation.
-- USA: uret og timerne viser den valgte bys lokale tid.
-- Notifikationer kun for den valgte by (i testtilstanden) eller dér, hvor telefonen er: ikke flere varsler fra USA, når appen viser en by i Europa.
-
-v2.40 · 4. november 2026
-- USA: ☰ › Tornadoes, en side som Jordskælv: tornadovarsler for din by og stat, tornadoer meldt i nærheden de sidste 2 dage, antallet i hele landet og hvad du skal gøre.
-- USA: ingen Pollen-boks (der er ingen data der); luftkvaliteten vises som det amerikanske US AQI.
-
-v2.30 · 4. november 2026
-- Elementer til brug af appen i USA.
-- ☰ › Temperatur °C/°F: når du forlader °F, spørger appen, om du vil skifte til metersystemet; med °F vises trykket i inHg og afstande i miles.
-
-v2.22 · 4. november 2026
-- Samsung-telefoner med Auto Blocker: slå den fra, før du installerer eller opdaterer appen (Indstillinger › Sikkerhed og privatliv › Auto Blocker), ellers afviser telefonen installationen; bagefter kan du slå den til igen.
-
-v2.21 · 4. november 2026
-- Tablet: menuen ☰ er kun så bred som den længste linje og 5 % mindre.
-- Sider: titlen bliver på én linje og vokser med tekststørrelsen kun op til knapperne til højre.
-- Bjælken for tekststørrelse: på nogle telefoner (A70) lukkede den ved berøring; nu tager den fingeren i hele sin kolonne.
-- Cirklen over bjælken viser kun værdien, uden %.
-
-v2.20 · 4. november 2026
-- Widget 4x2 på Samsung med One UI 9 (A54): vises ikke længere som 4x3 ved 2 rækker; 4x3 kun ved 3 rækker.
-- ☰ › Widgets: når der er flere, vælges widgetten øverst i indstillingsvinduet, og indstillingerne nedenunder følger den valgte.
-- Tablet: menuen ☰ er 10 % mindre.
-- Log: knappernes tekst bliver på én linje.
-- Uden internet venter appen på, at netværket kommer tilbage, i stedet for at prøve igen hvert 1.–2. minut.
-
-v2.12 · 4. november 2026
-- I Hjælp, Jordskælv, Om og Nyheder: knappen Aa ved siden af knapperne til højre viser bjælken for tekststørrelse i venstre side af skærmen, over siden, ligesom lysstyrkebjælken. Den smalle bjælke øverst til højre er fjernet.
-
-v2.11 · 4. november 2026
-- Bjælken for tekststørrelse, som vises fra højre kant, kommer nu til venstre, som lysstyrkebjælken.
-
-v2.10 · 4. november 2026
-- Ny widget 4x2 · dage: under vejret nu de næste 5 dage (dag, ikon, høj / lav). Gjort 3 rækker høje eller mere bliver begge 4x2-widgets (timer og dage) til den nye 4x3, med de næste timer og de næste dage.
-- Tekststørrelse: i Hjælp, Jordskælv, Om og Nyheder gør en bjælke til højre, under lukkeknappen, bogstaverne større eller mindre (80–180 %); på hovedskærmen viser et strøg op eller ned nær højre kant den samme bjælke. Størrelsen gemmes på enheden og gælder også menuen ☰.
-- Tablet: menuen ☰ og de andre menuer er 30 % større.
-- ☰ › Send appen: sender downloadlinket i en WhatsApp-besked (eller med en anden app), så en anden kan installere Meteo Alarm.
-- Widgetlisten viser navnene på telefonens sprog.
-
-v2.00 · 4. november 2026
-- Sprog: appen taler nu alle EU's officielle sprog og ukrainsk (også Hjælp). Ved første start tager den telefonens sprog (engelsk, hvis appen ikke har det); derefter det valgte i ☰ › Sprog. Listen viser kun engelsk, telefonens sprog og de officielle sprog i det land, telefonen er i.
-- ☰ › Jordskælv: en side med jordskælvene med styrke 3 eller mere fra de sidste 7 dage i dit land, derefter dem fra de sidste 48 timer i EU, Ukraine og Moldova (tid, sted, styrke, dybde, afstand).
-- Notifikationer (kun med dit samtykke): regn eller sne, der begynder, nye vejrvarsler for din by, jordskælv med styrke 3 eller mere i dit land. Hver hændelse kun én gang. Til eller fra i ☰ › Notifikationer.
-- Placering og notifikationer bedes der om med en venlig forklaring ved første start; siger du nej, spørger appen først igen efter en opdatering. Når telefonen ikke længere viser sit spørgsmål, åbner en knap dens indstillinger.
-- Ved første start bliver byen, som placeringen fandt, den viste og tilføjes favoritterne.
-- Telefoner uden kompas eller lyssensor: de tilhørende knapper og felter slås fra; Loggen opregner sensorerne ved hver start.
-- Widgets: 4x1-striben virker nu også på tablets (startskærmens rækker tælles, ikke faste størrelser).
-- Rettet: ved start efter en opdatering blev vejret hentet to gange; Loggen skriver nu det valgte sprog og hver valgt by, og åbningen af widgetindstillingerne kun én gang.
+────────
+Nye funktioner siden v2.10
+- Landmandstilstand: timefelter med vejr og regn, detaljer ved tryk og feltet Vand i jorden.
+- Marker: gemt via GPS eller på kortet, hovedskærm for hver, statistik for 28 dage med PDF, varsler om regn og vind.
+- Widgets 4x2 dage og 4x3.
+- Tekststørrelse (Aa).
+- ☰ › Send appen.
+- USA: NWS-varsler, tornadoer, °F, lokal tid.
+- Andre sprog: Rumæniens mindretalssprog.

@@ -1,77 +1,30 @@
-v2.70 · 7 listopada 2026
-- Tryb rolnika: każda godzina to jedno szerokie pole (pogoda + deszcz) ze wspólnym oknem po dotknięciu; gdy telefon leży, dwa pola jedno pod drugim, przesuwane w górę i w dół. Większa górna część: ikona u góry, temperatura o 10% większa na dole. Pole „OPADY 24” staje się „WODA W GLEBIE”: woda w warstwie 3–9 cm i jej zmiana w 24 godziny.
+Wersja 1
+- Pogoda teraz, następne godziny, opady na 12 godzin i 5 dni.
+- Pola: Słońce / Księżyc, UV, Pyłki, Wilgotność, Jakość powietrza, Ciśnienie, Wiatr, Widoczność, Kompas, Trzęsienie ziemi.
+- Ostrzeżenia pogodowe według koloru (MeteoAlarm, około 38 krajów).
+- Automatyczna lokalizacja, ulubione, inne kraje.
+- Motyw jasny, ciemny i automatyczny; jasność z krawędzi ekranu; zegar nocny.
+- Pion, poziom, tablet.
+- Widżety 2x2, 4x1, 4x2, z ustawieniami.
+- Samoczynne odświeżanie; zapasowa prognoza MET Norway.
+- Aktualizacje z aplikacji, Pomoc, Dziennik.
 
-v2.64 · 7 listopada 2026
-- Tryb rolnika, telefon poziomo: szczegóły pól otwierają się w dużym oknie po prawej, zawsze w tym samym miejscu i tej samej wielkości.
+Wersja 2
+- Wszystkie języki urzędowe UE i ukraiński.
+- Strona Trzęsienia ziemi.
+- Powiadomienia za twoją zgodą: deszcz lub śnieg, ostrzeżenia, trzęsienia ziemi.
 
-v2.63 · 7 listopada 2026
-- „TRYB ROLNIKA” jest teraz pod górną linią, po lewej pod przyciskiem ☰, zamiast na dole.
+Obecna wersja: v2.80 · 8.11.2026
+Ulepszenia wyglądu / struktury.
+- Działki: przycisk Edytuj i ołówek na każdej działce, dla nazwy i miejsca na mapie.
+- Nowe języki: turecki, rosyjski, serbski.
 
-v2.62 · 7 listopada 2026
-- Tryb rolnika: okno „OPADY 24” pokazuje też, ile wody zatrzymała gleba (warstwa 3–9 cm), łącznie i godzina po godzinie.
-
-v2.61 · 7 listopada 2026
-- Tryb rolnika: pole „OPADY 24” jest teraz w dolnym rzędzie, między Słońce / Księżyc a Indeks UV; dotknięcie je wyjaśnia i pokazuje godziny z opadami i ich milimetry.
-- Naprawiono: w trybie rolnika pola Pyłki i Ciśnienie pokazywały temperaturę gleby.
-- Naprawiono: opady z ostatnich 24 godzin pobierają się same, gdy ich brakuje; „Ładowanie” nie nachodzi już na ROLNIK.
-
-v2.60 · 7 listopada 2026
-- Tryb rolnika: ekran główny dla miejscowości i po jednym dla każdej działki; przechodzi się między nimi, przesuwając palcem po temperaturze i ikonie, a kropki pod linią pokazują, gdzie jesteś.
-- Działka na ekranie głównym pokazuje swoją pogodę, a na dole swoje pola (powietrze, wiatr, kierunek, deszcz, wilgotność, gleba, temperatura gleby), bez pyłków i trzęsień ziemi; dotknięcie nazwy pokazuje pełną nazwę i współrzędne. Widżety i powiadomienia zostają przy miejscowości.
-- Pole „deszcz 24 h” obok przycisków na dole; dotknięcie pokazuje godziny z deszczem.
-- ☰ › Działki: usuwanie z zaznaczaniem i potwierdzeniem; lista w kolejności nazw i numerów.
-- W Rumunii menu Język › Inne języki oferuje języki mniejszości: węgierski, niemiecki, ukraiński i inne.
-
-v2.50 · 7 listopada 2026
-- Tryb rolnika: pierwsza pozycja ☰ przełącza między trybem rolnika a trybem normalnym. W trybie rolnika dotknięcie pola godzinowego pokazuje temperaturę, minimum i maksimum dnia, wiatr z porywami i kierunkiem (i kiedy się zmienia), wilgotność powietrza, szansę na deszcz, wilgotność i temperaturę gleby; wykres deszczu i pięć dni zastępują godzinowe pola deszczu ze szczegółami po dotknięciu.
-- ☰ › Działki: zapisz miejsce, w którym stoisz (GPS), popraw je na mapie OpenStreetMap i nadaj nazwę; każda działka ma pola wiatru, kierunku, deszczu, wilgotności powietrza i gleby, temperatury gleby i powietrza, alerty deszczu i silnego wiatru oraz statystyki za okres z ostatnich 28 dni, do zapisania jako PDF w Pobranych.
-- Dane o glebie to szacunki Open-Meteo; gdy Open-Meteo nie odpowiada, aplikacja pobiera je później i wysyła ci powiadomienie.
-- Stany Zjednoczone: zegar i godziny pokazują czas lokalny wybranej miejscowości.
-- Powiadomienia tylko dla wybranej miejscowości (w trybie testowym) lub tam, gdzie jest telefon: koniec komunikatów z USA, gdy aplikacja pokazuje miejscowość w Europie.
-
-v2.40 · 4 listopada 2026
-- Stany Zjednoczone: ☰ › Tornadoes, strona jak Trzęsienia ziemi: ostrzeżenia przed tornadem dla twojej miejscowości i stanu, tornada zgłoszone w pobliżu w ostatnich 2 dniach, ich liczba w całym kraju i co robić.
-- Stany Zjednoczone: bez pola Pyłki (brak tam danych); jakość powietrza według amerykańskiego indeksu US AQI.
-
-v2.30 · 4 listopada 2026
-- Elementy do korzystania z aplikacji w Stanach Zjednoczonych.
-- ☰ › Temperatura °C/°F: przy wyjściu z °F aplikacja pyta, czy przejść na system metryczny; przy °F ciśnienie jest w inHg, a odległości w milach.
-
-v2.22 · 4 listopada 2026
-- Telefony Samsung z funkcją Auto Blocker: wyłącz ją przed instalacją lub aktualizacją aplikacji (Ustawienia › Bezpieczeństwo i prywatność › Auto Blocker), inaczej telefon odmówi instalacji; potem możesz ją znów włączyć.
-
-v2.21 · 4 listopada 2026
-- Tablet: menu ☰ jest tylko tak szerokie jak jego najdłuższy wiersz i o 5 % mniejsze.
-- Strony: tytuł zostaje w jednym wierszu i rośnie z rozmiarem tekstu tylko do przycisków po prawej.
-- Pasek rozmiaru tekstu: na niektórych telefonach (A70) zamykał się po dotknięciu; teraz przyjmuje palec w całej swojej kolumnie.
-- Kółko nad paskiem pokazuje tylko wartość, bez %.
-
-v2.20 · 4 listopada 2026
-- Widżet 4x2 na Samsungu z One UI 9 (A54): przy 2 wierszach nie pokazuje się już jako 4x3; 4x3 dopiero od 3 wierszy.
-- ☰ › Widżety: gdy jest ich kilka, widżet wybiera się u góry okna ustawień, a ustawienia poniżej dotyczą wybranego.
-- Tablet: menu ☰ jest o 10 % mniejsze.
-- Dziennik: napisy na przyciskach mieszczą się w jednym wierszu.
-- Bez internetu aplikacja czeka, aż sieć wróci, zamiast próbować co 1–2 minuty.
-
-v2.12 · 4 listopada 2026
-- W Pomocy, Trzęsieniach ziemi, O aplikacji i Co nowego: przycisk Aa obok przycisków po prawej pokazuje pasek rozmiaru tekstu po lewej stronie ekranu, nad stroną, jak pasek jasności. Wąski pasek w prawym górnym rogu został usunięty.
-
-v2.11 · 4 listopada 2026
-- Pasek wielkości tekstu wywoływany od prawej krawędzi pojawia się teraz po lewej, jak pasek jasności.
-
-v2.10 · 4 listopada 2026
-- Nowy widżet 4x2 · dni: pod obecną pogodą najbliższe 5 dni (dzień, ikona, maks. / min.). Powiększone do 3 rzędów lub więcej oba widżety 4x2 (godziny i dni) stają się nowym 4x3, z najbliższymi godzinami i dniami.
-- Wielkość tekstu: w Pomocy, Trzęsieniach ziemi, O aplikacji i Co nowego pasek po prawej, pod przyciskiem zamknięcia, powiększa lub zmniejsza litery (80–180 %); na ekranie głównym przesunięcie w górę lub w dół przy prawej krawędzi pokazuje ten sam pasek. Wielkość zostaje zapisana na urządzeniu i dotyczy też menu ☰.
-- Tablet: menu ☰ i inne menu są o 30 % większe.
-- ☰ › Wyślij aplikację: wysyła link do pobrania w wiadomości WhatsApp (lub inną aplikacją), aby ktoś inny mógł zainstalować Meteo Alarm.
-- Lista widżetów pokazuje nazwy w języku telefonu.
-
-v2.00 · 4 listopada 2026
-- Języki: aplikacja mówi teraz wszystkimi językami urzędowymi Unii Europejskiej i po ukraińsku (także Pomoc). Przy pierwszym uruchomieniu bierze język telefonu (angielski, jeśli aplikacja go nie ma); potem ten wybrany w ☰ › Język. Lista pokazuje tylko angielski, język telefonu i języki urzędowe kraju, w którym jest telefon.
-- ☰ › Trzęsienia ziemi: strona z trzęsieniami o magnitudzie 3 lub większej z ostatnich 7 dni w twoim kraju, potem z ostatnich 48 godzin w UE, Ukrainie i Mołdawii (godzina, miejsce, magnituda, głębokość, odległość).
-- Powiadomienia (tylko za twoją zgodą): początek deszczu lub śniegu, nowe ostrzeżenia pogodowe dla twojej miejscowości, trzęsienia ziemi o magnitudzie 3 lub większej w twoim kraju. Każde zdarzenie tylko raz. Włączane lub wyłączane w ☰ › Powiadomienia.
-- O lokalizację i powiadomienia aplikacja prosi z przyjaznym wyjaśnieniem przy pierwszym uruchomieniu; jeśli odmówisz, zapyta ponownie dopiero po aktualizacji. Gdy telefon nie pokazuje już swojego pytania, przycisk otwiera jego ustawienia.
-- Przy pierwszym uruchomieniu miejscowość znaleziona przez lokalizację staje się pokazaną i trafia do ulubionych.
-- Telefony bez kompasu lub czujnika światła: odpowiednie przyciski i pola są wyłączane; Dziennik wypisuje czujniki przy każdym uruchomieniu.
-- Widżety: pasek 4x1 działa teraz także na tabletach (liczone są rzędy ekranu głównego, a nie stałe rozmiary).
-- Naprawiono: przy uruchomieniu po aktualizacji pogoda pobierała się dwa razy; Dziennik zapisuje teraz wybrany język i każdą wybraną miejscowość, a otwarcie ustawień widżetu tylko raz.
+────────
+Nowe funkcje od v2.10
+- Tryb rolnika: pola godzinowe z pogodą i deszczem, szczegóły po dotknięciu oraz pole Woda w glebie.
+- Działki: zapisane przez GPS lub na mapie, ekran główny dla każdej, statystyka 28 dni z PDF, alerty deszczu i wiatru.
+- Widżety 4x2 dni i 4x3.
+- Rozmiar tekstu (Aa).
+- ☰ › Wyślij aplikację.
+- Stany Zjednoczone: ostrzeżenia NWS, tornada, °F, czas lokalny.
+- Inne języki: języki mniejszości Rumunii.

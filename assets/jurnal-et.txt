@@ -1,77 +1,30 @@
-v2.70 · 7. november 2026
-- Põllumehe režiim: iga tund on üks lai kast (ilm + vihm) ühise aknaga puudutamisel; rõhtsa telefoniga kaks kasti üksteise all, lükatakse üles ja alla. Suurem ülemine osa: ikoon üleval, temperatuur 10% suurem all. Kast „SADEMED 24” muutub kastiks „VESI MULLAS”: kihi 3–9 cm vesi ja selle muutus 24 tunniga.
+Versioon 1
+- Ilm praegu, järgmised tunnid, sademed 12 tunniks ja 5 päevaks.
+- Kastid: Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Õhurõhk, Tuul, Nähtavus, Kompass, Maavärin.
+- Ilmahoiatused värvikoodi järgi (MeteoAlarm, umbes 38 riiki).
+- Automaatne asukoht, lemmikud, teised riigid.
+- Hele, tume ja automaatne teema; heledus ekraani servast; öökell.
+- Püst, rõht, tahvelarvuti.
+- Vidinad 2x2, 4x1, 4x2, seadetega.
+- Värskendab ise; MET Norway varuprognoosina.
+- Uuendused rakendusest, Abi, Logi.
 
-v2.64 · 7. november 2026
-- Põllumehe režiim, telefon rõhtsalt: kastide üksikasjad avanevad suures aknas paremal, alati samas kohas ja sama suurena.
+Versioon 2
+- Kõik ELi ametlikud keeled ja ukraina keel.
+- Leht Maavärinad.
+- Teavitused sinu nõusolekul: vihm või lumi, hoiatused, maavärinad.
 
-v2.63 · 7. november 2026
-- „PÕLLUMEHE REŽIIM” on nüüd ülemise joone all, vasakul ☰ nupu all, mitte all.
+Praegune versioon: v2.80 · 8.11.2026
+Kujunduse / ülesehituse parandused.
+- Põllud: nupp Muuda ja pliiats igal põllul, nime ja kaardil asukoha jaoks.
+- Uued keeled: türgi, vene, serbia.
 
-v2.62 · 7. november 2026
-- Põllumehe režiim: aken „SADEMED 24” näitab ka, kui palju vett jäi mulda (kiht 3–9 cm), kokku ja tunniti.
-
-v2.61 · 7. november 2026
-- Põllumehe režiim: kast „SADEMED 24” on nüüd alumises reas, Päike / Kuu ja UV-indeksi vahel; puudutus selgitab seda ja näitab sademetega tunde ja nende millimeetreid.
-- Parandatud: põllumehe režiimis näitasid kastid Õietolm ja Õhurõhk mulla temperatuuri.
-- Parandatud: viimase 24 tunni sademed laaditakse ise, kui need puuduvad; „Laeb” ei jää enam POLLUMEES-teksti alla.
-
-v2.60 · 7. november 2026
-- Põllumehe režiim: põhiekraan asula jaoks ja üks iga põllu jaoks; nende vahel liigud, libistades üle temperatuuri ja ikooni, ning joone all olevad punktid näitavad, kus oled.
-- Põld põhiekraanil näitab oma ilma ja all oma kaste (õhk, tuul, suund, vihm, niiskus, muld, mulla temperatuur), ilma õietolmu ja maavärinateta; nime puudutus näitab kogu nime ja koordinaate. Vidinad ja teavitused jäävad asula juurde.
-- Kast „vihm 24 h” all olevate nuppude kõrval; puudutus näitab vihmaseid tunde.
-- ☰ › Põllud: kustutamine märkimise ja kinnitusega; loend nimede ja numbrite järjekorras.
-- Rumeenias pakub menüü Keel › Muud keeled vähemuste keeli: ungari, saksa, ukraina ja teisi.
-
-v2.50 · 7. november 2026
-- Põllumehe režiim: ☰ esimene punkt lülitab põllumehe ja tavarežiimi vahel. Põllumehe režiimis näitab tunnikasti puudutus temperatuuri, päeva madalaimat ja kõrgeimat, tuult puhangute ja suunaga (ja millal see pöördub), õhuniiskust, vihma tõenäosust, mullaniiskust ja mullatemperatuuri; sademete graafiku ja viie päeva asemel on tunnipõhised vihmakastid, mille üksikasjad avanevad puudutusel.
-- ☰ › Põllud: salvesta koht, kus seisad (GPS), paranda seda OpenStreetMapi kaardil ja anna nimi; igal põllul on kastid tuule, suuna, vihma, õhu- ja mullaniiskuse, mulla- ja õhutemperatuuri jaoks, vihma ja tugeva tuule hoiatused ning statistika viimase 28 päeva perioodi kohta, mida saab salvestada PDF-ina allalaadimistesse.
-- Mullaandmed on Open-Meteo hinnangud; kui Open-Meteo ei vasta, laadib rakendus need hiljem alla ja saadab teavituse.
-- USA: kell ja tunnid näitavad valitud asula kohalikku aega.
-- Teavitused ainult valitud asula kohta (testrežiimis) või seal, kus telefon on: enam pole hoiatusi USA-st, kui rakendus näitab Euroopa asulat.
-
-v2.40 · 4. november 2026
-- Ameerika Ühendriigid: ☰ › Tornadoes, leht nagu Maavärinad: tornaadohoiatused sinu koha ja osariigi jaoks, viimase 2 päeva jooksul lähedal teatatud tornaadod, nende arv kogu riigis ja mida teha.
-- Ameerika Ühendriigid: õietolmu kasti pole (seal pole andmeid); õhukvaliteet Ameerika US AQI indeksi järgi.
-
-v2.30 · 4. november 2026
-- Elemendid rakenduse kasutamiseks Ameerika Ühendriikides.
-- ☰ › Temperatuur °C/°F: °F-ist lahkudes küsib rakendus, kas minna üle meetermõõdustikule; °F puhul on õhurõhk inHg-des ja kaugused miilides.
-
-v2.22 · 4. november 2026
-- Auto Blockeriga Samsungi telefonid: lülita see enne rakenduse paigaldamist või uuendamist välja (Seaded › Turvalisus ja privaatsus › Auto Blocker), muidu telefon keeldub paigaldamast; pärast võid selle uuesti sisse lülitada.
-
-v2.21 · 4. november 2026
-- Tahvel: menüü ☰ on vaid nii lai kui selle pikim rida ja 5 % väiksem.
-- Lehed: pealkiri jääb ühele reale ja kasvab teksti suurusega vaid paremal olevate nuppudeni.
-- Teksti suuruse riba: mõnel telefonil (A70) sulgus see puudutusel; nüüd võtab see sõrme vastu kogu oma veerus.
-- Riba kohal olev ring näitab ainult väärtust, ilma %-ta.
-
-v2.20 · 4. november 2026
-- Vidin 4x2 One UI 9-ga Samsungil (A54): 2 rea korral ei näidata seda enam 4x3-na; 4x3 alles 3 reast.
-- ☰ › Vidinad: mitme korral valitakse vidin seadete akna ülaosas ja all olevad seaded kuuluvad valitule.
-- Tahvel: menüü ☰ on 10 % väiksem.
-- Logi: nuppude tekst jääb ühele reale.
-- Ilma internetita ootab rakendus võrgu tagasitulekut, selle asemel et iga 1–2 minuti järel uuesti proovida.
-
-v2.12 · 4. november 2026
-- Abis, Maavärinates, Teabes ja Mis on uut lehel: nupp Aa paremal olevate nuppude kõrval näitab teksti suuruse riba ekraani vasakus servas, lehe peal, nagu heleduse riba. Kitsas riba üleval paremal on eemaldatud.
-
-v2.11 · 4. november 2026
-- Parema serva juurest avatav teksti suuruse riba ilmub nüüd vasakule, nagu heleduse riba.
-
-v2.10 · 4. november 2026
-- Uus vidin 4x2 · päevad: praeguse ilma all järgmised 5 päeva (päev, ikoon, kõrgeim / madalaim). Vähemalt 3 rea kõrguseks tehtuna muutuvad mõlemad 4x2 vidinad (tunnid ja päevad) uueks 4x3-ks, järgmiste tundide ja päevadega.
-- Teksti suurus: Abis, Maavärinates, Teabes ja Mis on uut lehel suurendab või vähendab tähti riba paremal, sulgemisnupu all (80–180 %); põhiekraanil näitab sama riba libistamine üles või alla parema serva lähedal. Suurus jääb seadmesse salvestatuks ja kehtib ka menüüle ☰.
-- Tahvelarvuti: menüü ☰ ja teised menüüd on 30 % suuremad.
-- ☰ › Saada rakendus: saadab allalaadimislingi WhatsAppi sõnumis (või teise rakendusega), et keegi teine saaks Meteo Alarmi paigaldada.
-- Vidinate loend näitab nimesid telefoni keeles.
-
-v2.00 · 4. november 2026
-- Keel: rakendus räägib nüüd kõiki ELi ametlikke keeli ja ukraina keelt (ka Abi). Esimesel käivitamisel võtab see telefoni keele (inglise, kui rakenduses seda pole); seejärel menüüs ☰ › Keel valitud. Loend näitab ainult inglise keelt, telefoni keelt ja selle riigi ametlikke keeli, kus telefon on.
-- ☰ › Maavärinad: leht vähemalt magnituudiga 3 maavärinatega viimase 7 päeva jooksul sinu riigis, seejärel viimase 48 tunni omadega ELis, Ukrainas ja Moldovas (aeg, koht, magnituud, sügavus, kaugus).
-- Teavitused (ainult sinu nõusolekul): vihma või lume algus, uued ilmahoiatused sinu linnale, vähemalt magnituudiga 3 maavärinad sinu riigis. Iga sündmus ainult üks kord. Sisse või välja menüüs ☰ › Teavitused.
-- Asukohta ja teavitusi küsitakse esimesel käivitamisel sõbraliku selgitusega; kui keeldud, küsib rakendus uuesti alles pärast uuendust. Kui telefon enam oma küsimust ei näita, avab nupp selle seaded.
-- Esimesel käivitamisel saab asukoha leitud linnast näidatud linn ja see lisatakse lemmikutesse.
-- Telefonid ilma kompassi või valgusandurita: seotud nupud ja kastid lülitatakse välja; Logi loetleb andurid igal käivitamisel.
-- Vidinad: 4x1 riba töötab nüüd ka tahvelarvutites (loetakse avakuva ridu, mitte fikseeritud suurusi).
-- Parandatud: käivitamisel pärast uuendust laaditi ilm kaks korda; Logi kirjutab nüüd valitud keele ja iga valitud linna ning vidina seadete avamise ainult üks kord.
+────────
+Uued funktsioonid alates v2.10
+- Põllumehe režiim: tunnikastid ilma ja vihmaga, puudutades üksikasjad ja kast Vesi mullas.
+- Põllud: salvestatud GPS-iga või kaardil, igaühele põhiekraan, 28 päeva statistika PDF-ina, vihma- ja tuulehoiatused.
+- Vidinad 4x2 päevad ja 4x3.
+- Teksti suurus (Aa).
+- ☰ › Saada rakendus.
+- USA: NWS-i hoiatused, tornaadod, °F, kohalik aeg.
+- Teised keeled: Rumeenia vähemuste keeled.

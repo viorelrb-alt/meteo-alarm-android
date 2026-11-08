@@ -1,77 +1,30 @@
-v2.70 · 7 november 2026
-- Lantbruksläge: varje timme är en bred ruta (väder + regn) med ett gemensamt fönster vid tryck; på tvären två rutor under varandra, dragna upp och ner. Större övre del: ikon överst, temperatur 10 % större nederst. Rutan ”NEDERBÖRD 24” blir ”VATTEN I MARKEN”: vattnet i skiktet 3–9 cm och dess ändring på 24 timmar.
+Version 1
+- Vädret nu, de närmaste timmarna, nederbörd för 12 timmar och 5 dagar.
+- Rutor: Sol / Måne, UV, Pollen, Luftfuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass, Jordbävning.
+- Vädervarningar efter färgkod (MeteoAlarm, omkring 38 länder).
+- Automatisk plats, favoriter, andra länder.
+- Ljust, mörkt och automatiskt tema; ljusstyrka från skärmkanten; nattklocka.
+- Stående, liggande, surfplatta.
+- Widgetar 2x2, 4x1, 4x2, med inställningar.
+- Uppdaterar sig själv; MET Norway som reservprognos.
+- Uppdateringar från appen, Hjälp, Logg.
 
-v2.64 · 7 november 2026
-- Lantbruksläge, telefonen på tvären: rutornas detaljer öppnas i ett stort fönster till höger, alltid på samma plats och lika stort.
+Version 2
+- Alla EU:s officiella språk och ukrainska.
+- Sidan Jordbävningar.
+- Aviseringar med ditt samtycke: regn eller snö, varningar, jordbävningar.
 
-v2.63 · 7 november 2026
-- ”LANTBRUKSLÄGE” visas nu under den översta linjen, till vänster under knappen ☰, i stället för längst ned.
+Nuvarande version: v2.80 · 8.11.2026
+Förbättringar av design / struktur.
+- Skiften: knappen Redigera och en penna på varje skifte, för namn och plats på kartan.
+- Nya språk: turkiska, ryska, serbiska.
 
-v2.62 · 7 november 2026
-- Lantbruksläge: fönstret ”NEDERBÖRD 24” visar också hur mycket vatten marken höll kvar (skikt 3–9 cm), totalt och timme för timme.
-
-v2.61 · 7 november 2026
-- Lantbruksläge: rutan ”NEDERBÖRD 24” finns nu i nedersta raden, mellan Sol / Måne och UV-index; ett tryck förklarar den och visar timmarna med nederbörd och deras millimeter.
-- Åtgärdat: i lantbruksläget visade rutorna Pollen och Lufttryck marktemperaturen.
-- Åtgärdat: nederbörden de senaste 24 timmarna laddas ner av sig själv när den saknas; ”Laddar” hamnar inte längre under LANTBRUK.
-
-v2.60 · 7 november 2026
-- Lantbruksläge: en huvudskärm för orten och en för varje skifte; du byter genom att svepa åt sidan över temperaturen och ikonen, och prickarna under linjen visar var du är.
-- Ett skifte på huvudskärmen visar sitt väder och längst ner sina rutor (luft, vind, riktning, regn, fuktighet, mark, marktemperatur), utan pollen och jordbävningar; ett tryck på namnet visar hela namnet och koordinaterna. Widgetar och aviseringar stannar på orten.
-- Rutan ”regn 24 h” bredvid knapparna längst ner; ett tryck visar timmarna med regn.
-- ☰ › Skiften: radering med bockar och bekräftelse; listan i ordning efter namn och nummer.
-- I Rumänien erbjuder menyn Språk › Andra språk minoriteternas språk: ungerska, tyska, ukrainska och andra.
-
-v2.50 · 7 november 2026
-- Lantbruksläge: första posten i ☰ växlar mellan lantbruksläge och normalt läge. I lantbruksläget visar ett tryck på en timruta temperatur, dagens lägsta och högsta, vind med byar och riktning (och när den vrider), luftfuktighet, risk för regn, markfuktighet och marktemperatur; nederbördsdiagrammet och de fem dagarna ersätts av regnrutor per timme med detaljer vid tryck.
-- ☰ › Skiften: spara platsen där du står (GPS), justera den på OpenStreetMap-kartan och ge den ett namn; varje skifte har rutor för vind, riktning, regn, luft- och markfuktighet, mark- och lufttemperatur, varningar för regn och hård vind och statistik för en period inom de senaste 28 dagarna, som kan sparas som PDF i Hämtade filer.
-- Markdata är uppskattningar från Open-Meteo; om Open-Meteo inte svarar hämtar appen dem senare och skickar en avisering.
-- USA: klockan och timmarna visar den valda ortens lokala tid.
-- Aviseringar bara för den valda orten (i testläget) eller där telefonen är: inga fler varningar från USA när appen visar en ort i Europa.
-
-v2.40 · 4 november 2026
-- USA: ☰ › Tornadoes, en sida som Jordbävningar: tornadovarningarna för din ort och delstat, tornadorna som rapporterats i närheten de senaste 2 dagarna, antalet i hela landet och vad du ska göra.
-- USA: ingen Pollen-ruta (där finns inga data); luftkvaliteten som det amerikanska US AQI.
-
-v2.30 · 4 november 2026
-- Delar för att använda appen i USA.
-- ☰ › Temperatur °C/°F: när du lämnar °F frågar appen om du vill byta till metersystemet; med °F visas lufttrycket i inHg och avstånd i miles.
-
-v2.22 · 4 november 2026
-- Samsung-telefoner med Auto Blocker: stäng av den innan du installerar eller uppdaterar appen (Inställningar › Säkerhet och integritet › Auto Blocker), annars vägrar telefonen installera; efteråt kan du slå på den igen.
-
-v2.21 · 4 november 2026
-- Surfplatta: menyn ☰ är bara så bred som sin längsta rad, och 5 % mindre.
-- Sidor: rubriken stannar på en rad och växer med textstorleken bara fram till knapparna till höger.
-- Reglaget för textstorlek: på vissa telefoner (A70) stängdes det vid beröring; nu tar det emot fingret i hela sin kolumn.
-- Cirkeln ovanför reglaget visar bara värdet, utan %.
-
-v2.20 · 4 november 2026
-- Widget 4x2 på Samsung med One UI 9 (A54): visas inte längre som 4x3 vid 2 rader; 4x3 först från 3 rader.
-- ☰ › Widgetar: när det finns flera väljs widgeten överst i inställningsfönstret och inställningarna nedanför hör till den valda.
-- Surfplatta: menyn ☰ är 10 % mindre.
-- Logg: knapparnas text stannar på en rad.
-- Utan internet väntar appen tills nätverket är tillbaka, i stället för att försöka igen var 1–2 minut.
-
-v2.12 · 4 november 2026
-- I Hjälp, Jordbävningar, Om och Nyheter: knappen Aa bredvid knapparna till höger visar reglaget för textstorlek till vänster på skärmen, över sidan, som ljusstyrkereglaget. Det smala reglaget uppe till höger är borta.
-
-v2.11 · 4 november 2026
-- Fältet för textstorlek som öppnas från högerkanten visas nu till vänster, som ljusstyrkefältet.
-
-v2.10 · 4 november 2026
-- Ny widget 4x2 · dagar: under vädret nu de närmaste 5 dagarna (dag, ikon, högsta / lägsta). Gjorda 3 rader höga eller mer blir båda 4x2-widgetarna (timmar och dagar) den nya 4x3, med de närmaste timmarna och dagarna.
-- Textstorlek: i Hjälp, Jordbävningar, Om och Nyheter gör ett fält till höger, under stängknappen, bokstäverna större eller mindre (80–180 %); på huvudskärmen visar ett svep upp eller ner nära högerkanten samma fält. Storleken sparas på enheten och gäller även menyn ☰.
-- Surfplatta: menyn ☰ och de andra menyerna är 30 % större.
-- ☰ › Skicka appen: skickar nedladdningslänken i ett WhatsApp-meddelande (eller med en annan app), så att någon annan kan installera Meteo Alarm.
-- Widgetlistan visar namnen på telefonens språk.
-
-v2.00 · 4 november 2026
-- Språk: appen talar nu alla Europeiska unionens officiella språk och ukrainska (även Hjälp). Vid första start tar den telefonens språk (engelska om appen inte har det); sedan det som valts i ☰ › Språk. Listan visar bara engelska, telefonens språk och de officiella språken i landet där telefonen är.
-- ☰ › Jordbävningar: en sida med jordbävningarna med magnitud 3 eller mer de senaste 7 dagarna i ditt land, sedan de senaste 48 timmarnas i EU, Ukraina och Moldavien (tid, plats, magnitud, djup, avstånd).
-- Aviseringar (bara med ditt samtycke): regn eller snö som börjar, nya vädervarningar för din ort, jordbävningar med magnitud 3 eller mer i ditt land. Varje händelse bara en gång. På eller av i ☰ › Aviseringar.
-- Plats och aviseringar begärs med en vänlig förklaring vid första start; säger du nej frågar appen igen först efter en uppdatering. När telefonen inte längre visar sin fråga öppnar en knapp dess inställningar.
-- Vid första start blir orten som platsen hittade den visade och läggs till bland favoriterna.
-- Telefoner utan kompass eller ljussensor: tillhörande knappar och rutor stängs av; Loggen räknar upp sensorerna vid varje start.
-- Widgetar: 4x1-remsan fungerar nu även på surfplattor (startskärmens rader räknas, inte fasta storlekar).
-- Åtgärdat: vid start efter en uppdatering hämtades vädret två gånger; Loggen skriver nu det valda språket och varje vald ort, och öppnandet av widgetinställningarna bara en gång.
+────────
+Nya funktioner sedan v2.10
+- Lantbruksläge: timrutor med väder och regn, detaljer vid tryck och rutan Vatten i marken.
+- Skiften: sparade via GPS eller på kartan, huvudskärm för varje, statistik för 28 dagar med PDF, varningar för regn och vind.
+- Widgetar 4x2 dagar och 4x3.
+- Textstorlek (Aa).
+- ☰ › Skicka appen.
+- USA: NWS-varningar, tornados, °F, lokal tid.
+- Andra språk: Rumäniens minoritetsspråk.

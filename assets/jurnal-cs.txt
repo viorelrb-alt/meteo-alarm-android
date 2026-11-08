@@ -1,77 +1,30 @@
-v2.70 · 7. listopadu 2026
-- Režim farmáře: každá hodina je jedno široké políčko (počasí + déšť) se společným oknem po klepnutí; na ležícím telefonu dvě políčka pod sebou, posouvaná nahoru a dolů. Větší horní část: ikona nahoře, teplota o 10 % větší dole. Políčko „SRÁŽKY 24“ se mění na „VODA V PŮDĚ“: voda ve vrstvě 3–9 cm a její změna za 24 hodin.
+Verze 1
+- Počasí teď, příští hodiny, srážky na 12 hodin a 5 dní.
+- Políčka: Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita vzduchu, Tlak, Vítr, Viditelnost, Kompas, Zemětřesení.
+- Výstrahy podle barev (MeteoAlarm, asi 38 zemí).
+- Automatická poloha, oblíbené, další země.
+- Světlý, tmavý a automatický motiv; jas z okraje obrazovky; noční hodiny.
+- Na výšku, na šířku, tablet.
+- Widgety 2x2, 4x1, 4x2, s nastavením.
+- Samočinné obnovování; záložní předpověď MET Norway.
+- Aktualizace z aplikace, Nápověda, Deník.
 
-v2.64 · 7. listopadu 2026
-- Režim farmáře, telefon naležato: podrobnosti políček se otevírají ve velkém okně vpravo, vždy na stejném místě a stejně velké.
+Verze 2
+- Všechny úřední jazyky EU a ukrajinština.
+- Stránka Zemětřesení.
+- Oznámení s tvým souhlasem: déšť nebo sníh, výstrahy, zemětřesení.
 
-v2.63 · 7. listopadu 2026
-- „REŽIM ZEMĚDĚLCE“ je teď pod horní čarou, vlevo pod tlačítkem ☰, místo dole.
+Současná verze: v2.80 · 8.11.2026
+Vylepšení vzhledu / struktury.
+- Parcely: tlačítko Upravit a tužka na každé parcele, pro název a místo na mapě.
+- Nové jazyky: turečtina, ruština, srbština.
 
-v2.62 · 7. listopadu 2026
-- Režim farmáře: okno „SRÁŽKY 24“ ukazuje také, kolik vody půda zadržela (vrstva 3–9 cm), celkem i po hodinách.
-
-v2.61 · 7. listopadu 2026
-- Režim farmáře: políčko „SRÁŽKY 24“ je nyní v dolní řadě, mezi Slunce / Měsíc a UV index; klepnutí ho vysvětlí a ukáže hodiny se srážkami a jejich milimetry.
-- Opraveno: v režimu farmáře ukazovala políčka Pyl a Tlak teplotu půdy.
-- Opraveno: srážky za posledních 24 hodin se stáhnou samy, když chybí; „Nabíjí se“ už nezasahuje pod FARMÁŘ.
-
-v2.60 · 7. listopadu 2026
-- Režim zemědělce: hlavní obrazovka pro obec a po jedné pro každý pozemek; přepíná se přejetím přes teplotu a ikonu, tečky pod čarou ukazují, kde jste.
-- Pozemek na hlavní obrazovce ukazuje své počasí a dole svá políčka (vzduch, vítr, směr, déšť, vlhkost, půda, teplota půdy), bez pylu a zemětřesení; klepnutí na název ukáže celý název a souřadnice. Widgety a oznámení zůstávají u obce.
-- Políčko „déšť 24 h“ vedle tlačítek dole; klepnutí ukáže hodiny s deštěm.
-- ☰ › Pozemky: mazání se zaškrtnutím a potvrzením; seznam v pořadí názvů a čísel.
-- V Rumunsku nabízí nabídka Jazyk › Další jazyky jazyky menšin: maďarštinu, němčinu, ukrajinštinu a další.
-
-v2.50 · 7. listopadu 2026
-- Režim zemědělce: první položka ☰ přepíná mezi režimem zemědělce a normálním režimem. V režimu zemědělce klepnutí na hodinové políčko ukáže teplotu, minimum a maximum dne, vítr s nárazy a směrem (a kdy se stočí), vlhkost vzduchu, pravděpodobnost deště, vlhkost a teplotu půdy; graf deště a pět dnů nahrazují hodinová políčka deště s podrobnostmi po klepnutí.
-- ☰ › Pozemky: ulož místo, kde stojíš (GPS), dolaď ho na mapě OpenStreetMap a pojmenuj; každý pozemek má políčka pro vítr, směr, déšť, vlhkost vzduchu a půdy, teplotu půdy a vzduchu, upozornění na déšť a silný vítr a statistiku za období z posledních 28 dní, kterou lze uložit jako PDF do Stažených.
-- Údaje o půdě jsou odhady Open-Meteo; když Open-Meteo neodpovídá, aplikace je stáhne později a pošle ti oznámení.
-- Spojené státy: hodiny a časy ukazují místní čas vybrané obce.
-- Oznámení jen pro vybranou obec (v testovacím režimu) nebo tam, kde je telefon: žádná hlášení z USA, když aplikace ukazuje obec v Evropě.
-
-v2.40 · 4. listopadu 2026
-- Spojené státy: ☰ › Tornadoes, stránka jako Zemětřesení: výstrahy před tornády pro tvé místo a stát, tornáda hlášená v okolí za poslední 2 dny, jejich počet v celé zemi a co dělat.
-- Spojené státy: bez políčka Pyl (data tam nejsou); kvalita ovzduší podle amerického indexu US AQI.
-
-v2.30 · 4. listopadu 2026
-- Prvky pro používání aplikace ve Spojených státech.
-- ☰ › Teplota °C/°F: při odchodu z °F se aplikace zeptá, zda přejít na metrickou soustavu; s °F je tlak v inHg a vzdálenosti v mílích.
-
-v2.22 · 4. listopadu 2026
-- Telefony Samsung s funkcí Auto Blocker: před instalací nebo aktualizací aplikace ji vypněte (Nastavení › Zabezpečení a soukromí › Auto Blocker), jinak telefon instalaci odmítne; potom ji můžete znovu zapnout.
-
-v2.21 · 4. listopadu 2026
-- Tablet: menu ☰ je jen tak široké jako nejdelší řádek a o 5 % menší.
-- Stránky: nadpis zůstává na jednom řádku a s velikostí textu roste jen po tlačítka vpravo.
-- Lišta velikosti textu: na některých telefonech (A70) se při dotyku zavřela; teď bere prst v celém svém sloupci.
-- Kruh nad lištou ukazuje jen hodnotu, bez %.
-
-v2.20 · 4. listopadu 2026
-- Widget 4x2 na Samsungu s One UI 9 (A54): při 2 řádcích už se neukazuje jako 4x3; 4x3 je až od 3 řádků.
-- ☰ › Widgety: když jich je víc, výběr widgetu je nahoře v okně nastavení a nastavení pod ním patří vybranému.
-- Tablet: menu ☰ je o 10 % menší.
-- Protokol: popisky tlačítek zůstávají na jednom řádku.
-- Bez internetu aplikace čeká, až se síť vrátí, místo pokusů každé 1–2 minuty.
-
-v2.12 · 4. listopadu 2026
-- V Nápovědě, Zemětřeseních, O aplikaci a Co je nového: tlačítko Aa vedle tlačítek vpravo zobrazí lištu velikosti textu na levé straně obrazovky, nad stránkou, jako lištu jasu. Úzká lišta vpravo nahoře je pryč.
-
-v2.11 · 4. listopadu 2026
-- Lišta velikosti textu vyvolaná od pravého okraje se teď objeví vlevo, jako lišta jasu.
-
-v2.10 · 4. listopadu 2026
-- Nový widget 4x2 · dny: pod aktuálním počasím příštích 5 dní (den, ikona, max. / min.). Zvětšené na 3 řady a více se oba widgety 4x2 (hodiny a dny) změní na nový 4x3, s příštími hodinami i dny.
-- Velikost textu: v Nápovědě, Zemětřeseních, O aplikaci a Co je nového zvětší nebo zmenší písmena lišta vpravo, pod tlačítkem zavření (80–180 %); na hlavní obrazovce stejnou lištu ukáže přejetí nahoru či dolů u pravého okraje. Velikost zůstane uložena v zařízení a platí i pro nabídku ☰.
-- Tablet: nabídka ☰ a ostatní nabídky jsou o 30 % větší.
-- ☰ › Poslat aplikaci: pošle odkaz ke stažení ve zprávě WhatsApp (nebo jinou aplikací), aby si Meteo Alarm mohl nainstalovat někdo další.
-- Seznam widgetů ukazuje názvy v jazyce telefonu.
-
-v2.00 · 4. listopadu 2026
-- Jazyky: aplikace nyní mluví všemi úředními jazyky Evropské unie a ukrajinsky (i Nápověda). Při prvním spuštění vezme jazyk telefonu (angličtinu, pokud ho aplikace nemá); potom ten zvolený v ☰ › Jazyk. Seznam ukazuje jen angličtinu, jazyk telefonu a úřední jazyky země, kde je telefon.
-- ☰ › Zemětřesení: stránka se zemětřeseními o magnitudě 3 a více za posledních 7 dní ve vaší zemi, potom za posledních 48 hodin v EU, na Ukrajině a v Moldavsku (čas, místo, magnituda, hloubka, vzdálenost).
-- Oznámení (jen s vaším souhlasem): začínající déšť nebo sníh, nové meteorologické výstrahy pro vaši obec, zemětřesení o magnitudě 3 a více ve vaší zemi. Každá událost jen jednou. Zapnout nebo vypnout v ☰ › Oznámení.
-- O polohu a oznámení se aplikace žádá s přátelským vysvětlením při prvním spuštění; když odmítnete, zeptá se znovu až po aktualizaci. Když telefon svou otázku už nezobrazuje, tlačítko otevře jeho nastavení.
-- Při prvním spuštění se obec nalezená polohou stane zobrazenou a přidá se k oblíbeným.
-- Telefony bez kompasu nebo senzoru světla: související tlačítka a pole se vypnou; Deník vypíše senzory při každém spuštění.
-- Widgety: pruh 4x1 nyní funguje i na tabletech (počítají se řádky domovské obrazovky, ne pevné velikosti).
-- Opraveno: při spuštění po aktualizaci se počasí stahovalo dvakrát; Deník nyní zapisuje zvolený jazyk a každou zvolenou obec a otevření nastavení widgetu jen jednou.
+────────
+Nové funkce od v2.10
+- Režim farmáře: hodinová políčka s počasím a deštěm, podrobnosti po klepnutí a políčko Voda v půdě.
+- Parcely: uložené přes GPS nebo na mapě, hlavní obrazovka pro každou, statistika za 28 dní s PDF, upozornění na déšť a vítr.
+- Widgety 4x2 dny a 4x3.
+- Velikost textu (Aa).
+- ☰ › Poslat aplikaci.
+- Spojené státy: výstrahy NWS, tornáda, °F, místní čas.
+- Další jazyky: jazyky menšin Rumunska.

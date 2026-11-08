@@ -595,3 +595,45 @@ Type: 	Fajta:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Telefonon minden óra egy széles mező, bal oldalon az időjárás, jobb oldalon az eső; álló telefonon oldalra húzd a mezőket, fekvőn két mező van egymás alatt: húzd őket fel és le. Álló telefonon az ikon a mezők feletti terület felső felében van, a hőmérséklet az alsóban.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Széles mezőnél ugyanaz az ablak az „Eső” alatt az óra esőadatait is mutatja.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Gazda módban az alsó sorban, a Nap / Hold és az UV-index között a „VÍZ A TALAJBAN” mező a talaj 3–9 cm-es rétegében most tárolt vizet mutatja a megjelenített helyen (település vagy parcella), milliméterben, alatta pedig, mennyit változott 24 óra alatt. Koppintásra elmagyarázza, és mutatja az utolsó 24 óra csapadékát: csak a csapadékos órákat, mindegyik millimétereivel és azzal, mennyit tartott meg belőle a talaj. Az Open-Meteo becslése, nem mérés.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	A ☰ első sora módot vált. Gazda módban minden óra egy széles mező időjárással és esővel; fekvő telefonon két mező egymás alatt, fel-le húzva.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Koppintásra az óra részletei: hőmérséklet, szél és irány, páratartalom, eső, talaj.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	A talaj 3–9 cm-es rétegében most tárolt víz és 24 órás változása; koppintásra a csapadékos órák. Az Open-Meteo becslése.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Parcellák: mentsd a helyet, ahol állsz, vagy válaszd ki a térképen, és adj neki nevet. A Szerkesztés (vagy a ceruza) a nevet és a tűt módosítja; a Parcellák törlése eltávolítja őket. Csak ezen a telefonon.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Egy főképernyő a településnek és egy-egy minden parcellának: húzd oldalra a hőmérséklet fölött.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Koppintás a parcella nevére: mezői, a következő 12 óra, statisztika PDF-fel, riasztások, átnevezés, törlés.
+When ON, a notification for rain or strong wind forecast on the parcel.	BEKAPCSOLVA értesítés, ha esőt vagy erős szelet jeleznek előre a parcellára.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	A talajadatok az Open-Meteo modelljének becslései, nem mérések; a közeli parcellák ugyanazt mutathatják.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: egy ujjal mozgasd, kettővel nagyíts; internet kell hozzá.
+Choose the town: favourites, then counties (or states).	Válassz települést: kedvencek, aztán megyék (vagy államok).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Be- (tele) vagy kikapcsolja (üres) az automatikus helymeghatározást; az időjárást mutatja ott, ahol vagy.
+Shows the brightness bar on the left.	Megjeleníti a fényerősávot bal oldalon.
+Over the brightness bar: switches the theme.	A fényerősáv fölött: témát vált.
+Light theme in the light, dark in the dark (needs a light sensor).	Világos téma világosban, sötét sötétben (fényérzékelő kell).
+Looks once with the GPS.	Egyszer keres a GPS-szel.
+Refreshes the weather.	Frissíti az időjárást.
+Slide up or down: brightness.	Húzd fel vagy le: fényerő.
+Slide up or down: text size.	Húzd fel vagy le: szövegméret.
+The Aa button on the pages shows the text-size bar.	Az oldalakon az Aa gomb megjeleníti a szövegméret-sávot.
+Shows where the wind blows, turned with the phone.	Megmutatja, merre fúj a szél, a telefonnal együtt fordul.
+A big dim clock while the phone charges at night.	Nagy, halvány óra, amikor a telefon éjjel töltődik.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Egy sor a vonal alatt: a földrengés, aztán a figyelmeztetések szín szerint. Koppintásra a részletek.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Az elmúlt 24 óra legerősebb földrengése az országodban, és valószínűleg hogyan érezték (EMSC).
+The rows of boxes follow the finger.	A mezősorok követik az ujjadat.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű; koppintásra a részletek.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Tartsd lenyomva a kezdőképernyőt › Widgetek › Meteo Alarm. A széleket húzva váltasz elrendezést (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Tartsd lenyomva a widgetet › Beállítások, vagy ☰ › Widgetek: település, háttér, színek.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	15 percenként bekapcsolt képernyővel, 30 percenként kikapcsolttal; MET Norway, ha az Open-Meteo foglalt.
+Downloads the weather now.	Most letölti az időjárást.
+Keeps the screen on while the app is open.	Bekapcsolva tartja a képernyőt, amíg az alkalmazás nyitva van.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Angol, a telefon nyelve és az ország nyelvei; Romániában az „Egyéb nyelvek” is.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Az elmúlt napok földrengései a közelben, idővel, hellyel, magnitúdóval és távolsággal.
+Rain or snow starting, new warnings and earthquakes, each only once.	Kezdődő eső vagy hó, új figyelmeztetések és földrengések, mindegyik csak egyszer.
+The settings of the widgets on the home screen.	A kezdőképernyő widgetjeinek beállításai.
+What the app did, with the time; read, share or save it.	Mit csinált az alkalmazás, idővel; olvasd, oszd meg vagy mentsd.
+Looks for a new version on GitHub, with your consent.	Új verziót keres a GitHubon, a hozzájárulásoddal.
+Sends the download link, e.g. on WhatsApp.	Elküldi a letöltési linket, pl. WhatsAppon.
+About the app, its data and what's new.	Az alkalmazásról, az adatairól és az újdonságokról.
+Edit	Szerkesztés
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Koppints egy parcellára, hogy a főképernyőn lásd. A ceruza szerkesztésre nyitja meg.
+temp: 	hőm.: 
+Tap the parcel to edit: its name and the pin on the map.	Koppints a szerkesztendő parcellára: a neve és a tű a térképen.

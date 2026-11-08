@@ -595,3 +595,45 @@ Type: 	Rodzaj:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Na telefonie każda godzina to jedno szerokie pole, pogoda po lewej i deszcz po prawej; gdy telefon stoi, przesuwaj pola w bok, a gdy leży, dwa pola są jedno pod drugim: przesuwaj je w górę i w dół. Gdy telefon stoi, ikona jest w górnej połowie miejsca nad polami, a temperatura w dolnej.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Przy szerokim polu to samo okno pokazuje też, pod „Deszcz”, szczegóły deszczu w danej godzinie.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	W trybie rolnika pole „WODA W GLEBIE” w dolnym rzędzie, między Słońce / Księżyc a Indeks UV, pokazuje wodę zatrzymaną teraz w warstwie gleby 3–9 cm w pokazanym miejscu (miejscowość lub działka), w milimetrach, a pod nią, jak zmieniła się w 24 godziny. Dotknięcie wyjaśnia ją i pokazuje opady z ostatnich 24 godzin: tylko godziny z opadami, z milimetrami każdej i ile z tego zatrzymała gleba. Szacunek Open-Meteo, nie pomiar.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Pierwsza pozycja ☰ zmienia tryb. W trybie rolnika każda godzina to jedno szerokie pole z pogodą i deszczem; gdy telefon leży, dwa pola jedno pod drugim, przesuwane w górę i w dół.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Dotknięcie pokazuje szczegóły godziny: temperaturę, wiatr i kierunek, wilgotność, deszcz, glebę.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Woda zatrzymana teraz w warstwie gleby 3–9 cm i jej zmiana w 24 godziny; dotknięcie pokazuje godziny z opadami. Szacunek Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Działki: zapisz miejsce, w którym stoisz, albo wybierz je na mapie i nadaj nazwę. Edytuj (lub ołówek) zmienia nazwę i pinezkę; Usuń działki je kasuje. Tylko na tym telefonie.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Jeden ekran główny dla miejscowości i po jednym dla każdej działki: przesuń w bok nad temperaturą.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Dotknięcie nazwy działki: jej pola, następne 12 godzin, statystyka z PDF, alerty, zmiana nazwy, usunięcie.
+When ON, a notification for rain or strong wind forecast on the parcel.	Gdy WŁĄCZONE, powiadomienie o prognozowanym deszczu lub silnym wietrze na działce.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Dane o glebie to szacunki modelu Open-Meteo, nie pomiary; pobliskie działki mogą mieć te same wartości.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: przesuwaj jednym palcem, powiększaj dwoma; potrzebny internet.
+Choose the town: favourites, then counties (or states).	Wybierz miejscowość: ulubione, potem województwa (lub stany).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Włącza (pełny) lub wyłącza (pusty) automatyczną lokalizację; pokazuje pogodę tam, gdzie jesteś.
+Shows the brightness bar on the left.	Pokazuje pasek jasności po lewej.
+Over the brightness bar: switches the theme.	Nad paskiem jasności: zmienia motyw.
+Light theme in the light, dark in the dark (needs a light sensor).	Jasny motyw przy świetle, ciemny po ciemku (potrzebny czujnik światła).
+Looks once with the GPS.	Szuka raz przez GPS.
+Refreshes the weather.	Odświeża pogodę.
+Slide up or down: brightness.	Przesuń w górę lub w dół: jasność.
+Slide up or down: text size.	Przesuń w górę lub w dół: rozmiar tekstu.
+The Aa button on the pages shows the text-size bar.	Przycisk Aa na stronach pokazuje pasek rozmiaru tekstu.
+Shows where the wind blows, turned with the phone.	Pokazuje, dokąd wieje wiatr, obracana z telefonem.
+A big dim clock while the phone charges at night.	Duży, przyciemniony zegar, gdy telefon ładuje się w nocy.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Jeden rząd pod linią: trzęsienie ziemi, potem ostrzeżenia według koloru. Dotknięcie pokazuje szczegóły.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Najsilniejsze trzęsienie ziemi z ostatnich 24 godzin w twoim kraju i jak prawdopodobnie było odczuwalne (EMSC).
+The rows of boxes follow the finger.	Rzędy pól podążają za palcem.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Słońce / Księżyc, UV, Pyłki, Wilgotność, Jakość powietrza, Ciśnienie, Wiatr, Widoczność, Kompas; dotknięcie pokazuje szczegóły.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Przytrzymaj ekran główny › Widżety › Meteo Alarm. Przeciągnij krawędzie, by zmienić układ (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Przytrzymaj widżet › Ustawienia albo ☰ › Widżety: miejscowość, tło, kolory.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Co 15 minut przy włączonym ekranie, co 30 przy wyłączonym; MET Norway, gdy Open-Meteo jest zajęte.
+Downloads the weather now.	Pobiera pogodę teraz.
+Keeps the screen on while the app is open.	Utrzymuje ekran włączony, gdy aplikacja jest otwarta.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Angielski, język telefonu i języki kraju; w Rumunii także „Inne języki”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Trzęsienia ziemi z ostatnich dni w pobliżu, z godziną, miejscem, magnitudą i odległością.
+Rain or snow starting, new warnings and earthquakes, each only once.	Początek deszczu lub śniegu, nowe ostrzeżenia i trzęsienia ziemi, każde tylko raz.
+The settings of the widgets on the home screen.	Ustawienia widżetów na ekranie głównym.
+What the app did, with the time; read, share or save it.	Co robiła aplikacja, z godziną; czytaj, udostępnij lub zapisz.
+Looks for a new version on GitHub, with your consent.	Szuka nowej wersji na GitHubie, za twoją zgodą.
+Sends the download link, e.g. on WhatsApp.	Wysyła link do pobrania, np. przez WhatsApp.
+About the app, its data and what's new.	O aplikacji, jej danych i nowościach.
+Edit	Edytuj
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Dotknij działki, aby zobaczyć ją na ekranie głównym. Ołówek otwiera ją do edycji.
+temp: 	temp.: 
+Tap the parcel to edit: its name and the pin on the map.	Dotknij działki do edycji: jej nazwa i pinezka na mapie.

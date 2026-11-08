@@ -595,3 +595,45 @@ Type: 	Liik:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Telefonis on iga tund üks lai kast, vasakul ilm ja paremal vihm; püstise telefoniga lükka kaste külje suunas, rõhtsalt on kaks kasti üksteise all: lükka neid üles ja alla. Püstise telefoniga on ikoon kastide kohal oleva ala ülemises pooles ja temperatuur alumises.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Laia kasti puhul näitab sama aken ka pealkirja „Vihm” all tunni vihmaandmeid.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Põllumehe režiimis näitab alumise rea kast „VESI MULLAS”, Päikese / Kuu ja UV-indeksi vahel, vett, mida mullakiht 3–9 cm praegu näidatud kohas (asula või põld) hoiab, millimeetrites, ja selle all, kui palju see 24 tunniga muutus. Puudutus selgitab seda ja näitab viimase 24 tunni sademeid: ainult sademetega tunnid, igaühe millimeetrid ja kui palju muld sellest hoidis. Open-Meteo hinnang, mitte mõõtmine.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	☰ esimene rida vahetab režiimi. Põllumehe režiimis on iga tund üks lai kast ilma ja vihmaga; rõhtsalt kaks kasti üksteise all, lükatakse üles ja alla.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Puudutus näitab tunni üksikasju: temperatuur, tuul ja suund, niiskus, vihm, muld.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Vesi, mida mullakiht 3–9 cm praegu hoiab, ja selle muutus 24 tunniga; puudutus näitab sademetega tunde. Open-Meteo hinnang.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Põllud: salvesta koht, kus seisad, või vali see kaardil ja anna nimi. Muuda (või pliiats) muudab nime ja nõela; Kustuta põllud eemaldab need. Ainult selles telefonis.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Üks põhivaade asula jaoks ja üks iga põllu jaoks: libista temperatuuri kohal külje suunas.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Puudutus põllu nimel: selle kastid, järgmised 12 tundi, statistika PDF-iga, hoiatused, nimeta ümber, kustuta.
+When ON, a notification for rain or strong wind forecast on the parcel.	Kui SEES, teade, kui põllule ennustatakse vihma või tugevat tuult.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Mullaandmed on Open-Meteo mudeli hinnangud, mitte mõõtmised; lähedased põllud võivad näidata samu väärtusi.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: liiguta ühe sõrmega, suumi kahega; vajab internetti.
+Choose the town: favourites, then counties (or states).	Vali asula: lemmikud, siis maakonnad (või osariigid).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Lülitab automaatse asukoha sisse (täis) või välja (tühi); näitab ilma seal, kus oled.
+Shows the brightness bar on the left.	Näitab heleduse riba vasakul.
+Over the brightness bar: switches the theme.	Heleduse riba kohal: vahetab teema.
+Light theme in the light, dark in the dark (needs a light sensor).	Hele teema valguses, tume pimedas (vajab valgusandurit).
+Looks once with the GPS.	Otsib korra GPS-iga.
+Refreshes the weather.	Värskendab ilma.
+Slide up or down: brightness.	Libista üles või alla: heledus.
+Slide up or down: text size.	Libista üles või alla: teksti suurus.
+The Aa button on the pages shows the text-size bar.	Lehtede nupp Aa näitab teksti suuruse riba.
+Shows where the wind blows, turned with the phone.	Näitab, kuhu tuul puhub, pöördub koos telefoniga.
+A big dim clock while the phone charges at night.	Suur hämar kell, kui telefon öösel laeb.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Üks rida joone all: maavärin, siis hoiatused värvi järgi. Puudutus näitab üksikasju.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Viimase 24 tunni tugevaim maavärin sinu riigis ja kuidas seda tõenäoliselt tunti (EMSC).
+The rows of boxes follow the finger.	Kastide read järgivad sõrme.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Õhurõhk, Tuul, Nähtavus, Kompass; puudutus näitab üksikasju.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Hoia avakuva › Vidinad › Meteo Alarm. Lohista servi, et paigutust muuta (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Hoia vidinat › Seaded, või ☰ › Vidinad: asula, taust, värvid.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Iga 15 minuti järel ekraan sees, 30 ekraan väljas; MET Norway, kui Open-Meteo on hõivatud.
+Downloads the weather now.	Laadib ilma kohe.
+Keeps the screen on while the app is open.	Hoiab ekraani sees, kuni rakendus on avatud.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Inglise keel, telefoni keel ja riigi keeled; Rumeenias ka „Muud keeled”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Viimaste päevade maavärinad läheduses, aja, koha, magnituudi ja kaugusega.
+Rain or snow starting, new warnings and earthquakes, each only once.	Algav vihm või lumi, uued hoiatused ja maavärinad, igaüks vaid korra.
+The settings of the widgets on the home screen.	Avakuva vidinate seaded.
+What the app did, with the time; read, share or save it.	Mida rakendus tegi, kellaajaga; loe, jaga või salvesta.
+Looks for a new version on GitHub, with your consent.	Otsib sinu nõusolekul GitHubist uut versiooni.
+Sends the download link, e.g. on WhatsApp.	Saadab allalaadimislingi, nt WhatsAppis.
+About the app, its data and what's new.	Rakendusest, selle andmetest ja uudistest.
+Edit	Muuda
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Puuduta põldu, et seda põhivaates näha. Pliiats avab selle muutmiseks.
+temp: 	temp: 
+Tap the parcel to edit: its name and the pin on the map.	Puuduta muudetavat põldu: nimi ja nõel kaardil.

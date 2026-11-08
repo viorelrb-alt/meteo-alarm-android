@@ -1,77 +1,30 @@
-v2.70 · 2026. gada 7. novembris
-- Lauksaimnieka režīms: katra stunda ir viens plats lodziņš (laikapstākļi + lietus) ar kopīgu logu pieskaroties; guļus tālrunī divi lodziņi viens zem otra, bīdāmi augšup un lejup. Lielāka augšējā daļa: ikona augšā, temperatūra par 10% lielāka apakšā. Lodziņš „NOKRIŠŅI 24” kļūst par „ŪDENS AUGSNĒ”: ūdens 3–9 cm slānī un tā izmaiņa 24 stundās.
+Versija 1
+- Laiks tagad, nākamās stundas, nokrišņi 12 stundām un 5 dienām.
+- Lodziņi: Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass, Zemestrīce.
+- Brīdinājumi pēc krāsu koda (MeteoAlarm, ap 38 valstīm).
+- Automātiska atrašanās vieta, izlase, citas valstis.
+- Gaiša, tumša un automātiska tēma; spilgtums no ekrāna malas; nakts pulkstenis.
+- Portrets, ainava, planšete.
+- Logrīki 2x2, 4x1, 4x2, ar iestatījumiem.
+- Atjaunojas pati; MET Norway kā rezerves prognoze.
+- Atjauninājumi no lietotnes, Palīdzība, Žurnāls.
 
-v2.64 · 2026. gada 7. novembris
-- Lauksaimnieka režīms, tālrunis guļus: lodziņu sīkāka informācija atveras lielā logā pa labi, vienmēr tajā pašā vietā un tikpat lielā.
+Versija 2
+- Visas ES oficiālās valodas un ukraiņu valoda.
+- Lapa Zemestrīces.
+- Paziņojumi ar tavu piekrišanu: lietus vai sniegs, brīdinājumi, zemestrīces.
 
-v2.63 · 2026. gada 7. novembris
-- “LAUKSAIMNIEKA REŽĪMS” tagad redzams zem augšējās līnijas, pa kreisi zem ☰ pogas, nevis apakšā.
+Pašreizējā versija: v2.80 · 8.11.2026
+Dizaina / struktūras uzlabojumi.
+- Lauki: poga Rediģēt un zīmulis uz katra lauka, nosaukumam un vietai kartē.
+- Jaunas valodas: turku, krievu, serbu.
 
-v2.62 · 2026. gada 7. novembris
-- Lauksaimnieka režīms: logs “NOKRIŠŅI 24” rāda arī, cik daudz ūdens aizturēja augsne (slānis 3–9 cm), kopā un pa stundām.
-
-v2.61 · 2026. gada 7. novembris
-- Lauksaimnieka režīms: lodziņš “NOKRIŠŅI 24” tagad ir apakšējā rindā, starp Saule / Mēness un UV indeksu; pieskāriens to paskaidro un parāda stundas ar nokrišņiem un to milimetrus.
-- Labots: lauksaimnieka režīmā lodziņi Ziedputekšņi un Spiediens rādīja augsnes temperatūru.
-- Labots: pēdējo 24 stundu nokrišņi lejupielādējas paši, ja to trūkst; “Lādējas” vairs nenonāk zem LAUKSAIMNIEKS.
-
-v2.60 · 2026. gada 7. novembris
-- Lauksaimnieka režīms: galvenais ekrāns apdzīvotajai vietai un pa vienam katram laukam; starp tiem pāriet, velkot pāri temperatūrai un ikonai, un punkti zem līnijas rāda, kur tu esi.
-- Lauks galvenajā ekrānā rāda savus laikapstākļus un apakšā savus lodziņus (gaiss, vējš, virziens, lietus, mitrums, augsne, augsnes temperatūra), bez ziedputekšņiem un zemestrīcēm; pieskāriens nosaukumam parāda visu nosaukumu un koordinātas. Logrīki un paziņojumi paliek pie apdzīvotās vietas.
-- Lodziņš “lietus 24 h” blakus apakšējām pogām; pieskāriens parāda stundas ar lietu.
-- ☰ › Lauki: dzēšana ar atzīmēšanu un apstiprinājumu; saraksts nosaukumu un numuru secībā.
-- Rumānijā izvēlne Valoda › Citas valodas piedāvā minoritāšu valodas: ungāru, vācu, ukraiņu un citas.
-
-v2.50 · 2026. gada 7. novembris
-- Lauksaimnieka režīms: ☰ pirmais punkts pārslēdz starp lauksaimnieka un parasto režīmu. Lauksaimnieka režīmā pieskāriens stundas lodziņam rāda temperatūru, dienas zemāko un augstāko, vēju ar brāzmām un virzienu (un kad tas pagriezīsies), gaisa mitrumu, lietus iespējamību, augsnes mitrumu un augsnes temperatūru; nokrišņu grafika un piecu dienu vietā ir stundu lietus lodziņi ar sīkāku informāciju pēc pieskāriena.
-- ☰ › Lauki: saglabājiet vietu, kur stāvat (GPS), precizējiet to OpenStreetMap kartē un piešķiriet nosaukumu; katram laukam ir lodziņi vējam, virzienam, lietum, gaisa un augsnes mitrumam, augsnes un gaisa temperatūrai, lietus un stipra vēja brīdinājumi un statistika par periodu pēdējo 28 dienu robežās, ko var saglabāt PDF mapē Lejupielādes.
-- Augsnes dati ir Open-Meteo aplēses; ja Open-Meteo neatbild, lietotne tos lejupielādē vēlāk un nosūta paziņojumu.
-- ASV: pulkstenis un stundas rāda izvēlētās pilsētas vietējo laiku.
-- Paziņojumi tikai par izvēlēto pilsētu (testa režīmā) vai vietu, kur atrodas tālrunis: vairs nav brīdinājumu no ASV, kad lietotne rāda pilsētu Eiropā.
-
-v2.40 · 2026. gada 4. novembris
-- Amerikas Savienotās Valstis: ☰ › Tornadoes, lapa kā Zemestrīces: brīdinājumi par tornado tavai vietai un štatam, pēdējās 2 dienās tuvumā ziņotie tornado, to skaits visā valstī un kas jādara.
-- Amerikas Savienotās Valstis: nav Ziedputekšņu lodziņa (tur nav datu); gaisa kvalitāte pēc amerikāņu US AQI indeksa.
-
-v2.30 · 2026. gada 4. novembris
-- Elementi lietotnes izmantošanai Amerikas Savienotajās Valstīs.
-- ☰ › Temperatūra °C/°F: atstājot °F, lietotne jautā, vai pāriet uz metrisko sistēmu; ar °F spiediens ir inHg un attālumi jūdzēs.
-
-v2.22 · 2026. gada 4. novembris
-- Samsung tālruņi ar Auto Blocker: izslēdziet to pirms lietotnes instalēšanas vai atjaunināšanas (Iestatījumi › Drošība un konfidencialitāte › Auto Blocker), citādi tālrunis atteiks instalēšanu; pēc tam to var atkal ieslēgt.
-
-v2.21 · 2026. gada 4. novembris
-- Planšete: izvēlne ☰ ir tikai tik plata kā tās garākā rinda un par 5 % mazāka.
-- Lapas: virsraksts paliek vienā rindā un aug ar teksta lielumu tikai līdz pogām labajā pusē.
-- Teksta lieluma josla: dažos tālruņos (A70) tā aizvērās pieskaroties; tagad tā pieņem pirkstu visā savā kolonnā.
-- Aplis virs joslas rāda tikai vērtību, bez %.
-
-v2.20 · 2026. gada 4. novembris
-- Logrīks 4x2 Samsung ar One UI 9 (A54): ar 2 rindām vairs netiek rādīts kā 4x3; 4x3 tikai no 3 rindām.
-- ☰ › Logrīki: ja to ir vairāki, logrīku izvēlas iestatījumu loga augšā, un iestatījumi zemāk pieder izvēlētajam.
-- Planšete: izvēlne ☰ ir par 10 % mazāka.
-- Žurnāls: pogu teksts paliek vienā rindā.
-- Bez interneta lietotne gaida, līdz tīkls atgriežas, nevis mēģina ik pēc 1–2 minūtēm.
-
-v2.12 · 2026. gada 4. novembris
-- Palīdzībā, Zemestrīcēs, lapā Par un Kas jauns: poga Aa blakus pogām labajā pusē parāda teksta lieluma joslu ekrāna kreisajā pusē, virs lapas, tāpat kā spilgtuma joslu. Šaurā josla augšā pa labi ir noņemta.
-
-v2.11 · 2026. gada 4. novembris
-- Teksta izmēra josla, ko atver no labās malas, tagad parādās kreisajā pusē, kā spilgtuma josla.
-
-v2.10 · 2026. gada 4. novembris
-- Jauns logrīks 4x2 · dienas: zem pašreizējiem laikapstākļiem nākamās 5 dienas (diena, ikona, augstākā / zemākā). Palielināti līdz 3 rindām vai vairāk, abi 4x2 logrīki (stundas un dienas) kļūst par jauno 4x3, ar nākamajām stundām un dienām.
-- Teksta izmērs: Palīdzībā, Zemestrīcēs, lapā Par un Kas jauns josla labajā pusē, zem aizvēršanas pogas, palielina vai samazina burtus (80–180 %); galvenajā ekrānā to pašu joslu parāda vilkšana uz augšu vai leju pie labās malas. Izmērs saglabājas ierīcē un attiecas arī uz izvēlni ☰.
-- Planšetdators: izvēlne ☰ un citas izvēlnes ir par 30 % lielākas.
-- ☰ › Sūtīt lietotni: nosūta lejupielādes saiti WhatsApp ziņā (vai ar citu lietotni), lai kāds cits varētu instalēt Meteo Alarm.
-- Logrīku saraksts rāda nosaukumus tālruņa valodā.
-
-v2.00 · 2026. gada 4. novembris
-- Valoda: lietotne tagad runā visās ES oficiālajās valodās un ukraiņu valodā (arī Palīdzība). Pirmajā palaišanā tā ņem tālruņa valodu (angļu, ja lietotnei tās nav); pēc tam ☰ › Valoda izvēlēto. Saraksts rāda tikai angļu valodu, tālruņa valodu un tās valsts oficiālās valodas, kurā ir tālrunis.
-- ☰ › Zemestrīces: lapa ar zemestrīcēm ar magnitūdu 3 vai vairāk pēdējās 7 dienās tavā valstī, pēc tam pēdējās 48 stundās ES, Ukrainā un Moldovā (laiks, vieta, magnitūda, dziļums, attālums).
-- Paziņojumi (tikai ar tavu piekrišanu): lietus vai sniega sākums, jauni laikapstākļu brīdinājumi tavai pilsētai, zemestrīces ar magnitūdu 3 vai vairāk tavā valstī. Katrs notikums tikai vienreiz. Ieslēgt vai izslēgt ☰ › Paziņojumi.
-- Atrašanās vietu un paziņojumus lūdz ar draudzīgu paskaidrojumu pirmajā palaišanā; ja atsakies, lietotne jautā atkal tikai pēc atjauninājuma. Kad tālrunis vairs nerāda savu jautājumu, poga atver tā iestatījumus.
-- Pirmajā palaišanā pilsēta, ko atrada atrašanās vieta, kļūst par rādīto un tiek pievienota izlasei.
-- Tālruņi bez kompasa vai gaismas sensora: saistītās pogas un lodziņi tiek izslēgti; žurnāls katrā palaišanā uzskaita sensorus.
-- Logrīki: 4x1 josla tagad darbojas arī planšetdatoros (skaita sākuma ekrāna rindas, nevis fiksētus izmērus).
-- Labots: palaižot pēc atjauninājuma, laikapstākļi tika lejupielādēti divreiz; žurnāls tagad ieraksta izvēlēto valodu un katru izvēlēto pilsētu, un logrīka iestatījumu atvēršanu tikai vienreiz.
+────────
+Jaunas funkcijas kopš v2.10
+- Lauksaimnieka režīms: stundu lodziņi ar laiku un lietu, detaļas pieskaroties un lodziņš Ūdens augsnē.
+- Lauki: saglabāti ar GPS vai kartē, galvenais ekrāns katram, 28 dienu statistika ar PDF, lietus un vēja brīdinājumi.
+- Logrīki 4x2 dienas un 4x3.
+- Teksta lielums (Aa).
+- ☰ › Sūtīt lietotni.
+- ASV: NWS brīdinājumi, tornado, °F, vietējais laiks.
+- Citas valodas: Rumānijas minoritāšu valodas.

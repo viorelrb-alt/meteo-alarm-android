@@ -1,0 +1,30 @@
+Sürüm 1
+- Şimdiki hava, sonraki saatler, 12 saatlik ve 5 günlük yağış.
+- Kutular: Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula, Deprem.
+- Renk koduna göre hava uyarıları (MeteoAlarm, yaklaşık 38 ülke).
+- Otomatik konum, favoriler, diğer ülkeler.
+- Açık, koyu ve otomatik tema; ekran kenarından parlaklık; gece saati.
+- Dikey, yatay, tablet.
+- Ayarlı 2x2, 4x1, 4x2 widget'lar.
+- Kendiliğinden yenileme; yedek tahmin olarak MET Norway.
+- Uygulamadan güncellemeler, Yardım, Günlük.
+
+Sürüm 2
+- AB'nin tüm resmî dilleri ve Ukraynaca.
+- Depremler sayfası.
+- İzninle bildirimler: yağmur veya kar, uyarılar, depremler.
+
+Geçerli sürüm: v2.80 · 8.11.2026
+Tasarım / yapı iyileştirmeleri.
+- Parseller: Düzenle düğmesi ve her parselde kalem, ad ve haritadaki yer için.
+- Yeni diller: Türkçe, Rusça, Sırpça.
+
+────────
+v2.10'dan beri yeni işlevler
+- Çiftçi modu: hava ve yağmurlu saatlik kutular, dokununca ayrıntılar ve Topraktaki su kutusu.
+- Parseller: GPS ile veya haritada kaydedilir, her biri için ana ekran, PDF'li 28 günlük istatistik, yağmur ve rüzgâr uyarıları.
+- 4x2 günler ve 4x3 widget'lar.
+- Metin boyutu (Aa).
+- ☰ › Uygulamayı gönder.
+- ABD: NWS uyarıları, hortumlar, °F, yerel saat.
+- Diğer diller: Romanya'daki azınlık dilleri.

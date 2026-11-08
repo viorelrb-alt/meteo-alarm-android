@@ -595,3 +595,45 @@ Type: 	Soort:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Op een telefoon is elk uur één breed vak, het weer links en de regen rechts; rechtop schuif je de vakken opzij, dwars staan twee vakken onder elkaar: schuif ze omhoog en omlaag. Rechtop staat het pictogram in de bovenste helft van de ruimte boven de vakken en de temperatuur in de onderste.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Bij een breed vak toont hetzelfde venster ook, onder „Regen”, de regendetails van het uur.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	In de boerenmodus toont het vak „WATER IN DE BODEM” in de onderste rij, tussen Zon / Maan en UV-index, het water dat nu in de bodemlaag van 3–9 cm zit op de getoonde plek (plaats of perceel), in millimeter, en daaronder hoeveel het in 24 uur veranderde. Een tik legt het uit en toont de neerslag van de laatste 24 uur: alleen de uren met neerslag, met de millimeters van elk en hoeveel de bodem ervan vasthield. Een schatting van Open-Meteo, geen meting.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Het eerste item van ☰ wisselt de modus. In de boerenmodus is elk uur één breed vak met weer en regen; dwars staan twee vakken onder elkaar, omhoog en omlaag geschoven.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Een tik toont de details van het uur: temperatuur, wind en richting, vochtigheid, regen, bodem.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Het water dat nu in de bodemlaag van 3–9 cm zit en de verandering in 24 uur; een tik toont de uren met neerslag. Een schatting van Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Percelen: sla de plek op waar je staat of kies hem op de kaart en geef hem een naam. Bewerken (of het potlood) wijzigt naam en speld; Percelen verwijderen wist ze. Alleen op deze telefoon.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Eén hoofdscherm voor de plaats en één per perceel: veeg opzij over de temperatuur.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Een tik op de naam van het perceel: zijn vakken, de komende 12 uur, statistiek met pdf, meldingen, hernoemen, verwijderen.
+When ON, a notification for rain or strong wind forecast on the parcel.	Indien AAN, een melding bij voorspelde regen of harde wind op het perceel.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Bodemgegevens zijn modelschattingen van Open-Meteo, geen metingen; nabije percelen kunnen dezelfde waarden tonen.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: verschuif met één vinger, zoom met twee; internet nodig.
+Choose the town: favourites, then counties (or states).	Kies de plaats: favorieten, dan provincies (of staten).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Zet automatische locatie aan (gevuld) of uit (leeg); toont het weer waar je bent.
+Shows the brightness bar on the left.	Toont de helderheidsbalk links.
+Over the brightness bar: switches the theme.	Boven de helderheidsbalk: wisselt het thema.
+Light theme in the light, dark in the dark (needs a light sensor).	Licht thema bij licht, donker in het donker (lichtsensor nodig).
+Looks once with the GPS.	Zoekt één keer met de gps.
+Refreshes the weather.	Vernieuwt het weer.
+Slide up or down: brightness.	Veeg omhoog of omlaag: helderheid.
+Slide up or down: text size.	Veeg omhoog of omlaag: tekstgrootte.
+The Aa button on the pages shows the text-size bar.	De knop Aa op de pagina's toont de tekstgroottebalk.
+Shows where the wind blows, turned with the phone.	Toont waar de wind heen waait, meegedraaid met de telefoon.
+A big dim clock while the phone charges at night.	Een grote, gedimde klok als de telefoon 's nachts laadt.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Eén rij onder de lijn: de aardbeving, dan de waarschuwingen per kleur. Een tik toont de details.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	De sterkste aardbeving van de laatste 24 uur in je land en hoe ze waarschijnlijk gevoeld werd (EMSC).
+The rows of boxes follow the finger.	De rijen vakken volgen je vinger.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas; een tik toont de details.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Houd het startscherm ingedrukt › Widgets › Meteo Alarm. Sleep aan de randen om de vorm te wijzigen (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Houd de widget ingedrukt › Instellingen, of ☰ › Widgets: plaats, achtergrond, kleuren.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Elke 15 minuten met het scherm aan, 30 met het uit; MET Norway als Open-Meteo bezet is.
+Downloads the weather now.	Haalt het weer nu op.
+Keeps the screen on while the app is open.	Houdt het scherm aan zolang de app open is.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Engels, de taal van de telefoon en de talen van het land; in Roemenië ook „Andere talen”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	De aardbevingen van de laatste dagen in de buurt, met tijd, plaats, magnitude en afstand.
+Rain or snow starting, new warnings and earthquakes, each only once.	Beginnende regen of sneeuw, nieuwe waarschuwingen en aardbevingen, elk maar één keer.
+The settings of the widgets on the home screen.	De instellingen van de widgets op het startscherm.
+What the app did, with the time; read, share or save it.	Wat de app deed, met de tijd; lezen, delen of opslaan.
+Looks for a new version on GitHub, with your consent.	Zoekt met je toestemming een nieuwe versie op GitHub.
+Sends the download link, e.g. on WhatsApp.	Stuurt de downloadlink, bijv. via WhatsApp.
+About the app, its data and what's new.	Over de app, de gegevens en wat er nieuw is.
+Edit	Bewerken
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Tik op een perceel om het op het hoofdscherm te zien. Het potlood opent het om te bewerken.
+temp: 	temp.: 
+Tap the parcel to edit: its name and the pin on the map.	Tik op het perceel om te bewerken: de naam en de speld op de kaart.

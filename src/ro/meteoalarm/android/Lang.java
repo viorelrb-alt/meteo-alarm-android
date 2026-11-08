@@ -95,7 +95,7 @@ final class Lang {
 		List<String> l = new ArrayList<String>();
 		if (!"ro".equals(country(ctx))) return l;
 		List<String> main = offered(ctx);
-		for (String c : new String[] { "hu", "de", "uk", "sk", "bg", "hr", "cs", "pl", "el", "it" }) if (Tr.known(c) && !main.contains(c)) l.add(c);
+		for (String c : new String[] { "hu", "de", "uk", "sk", "bg", "hr", "cs", "pl", "el", "it", "tr", "ru", "sr" }) if (Tr.known(c) && !main.contains(c)) l.add(c);
 		return l;
 	}
 

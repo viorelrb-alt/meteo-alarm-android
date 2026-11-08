@@ -1,77 +1,30 @@
-v2.70 · 7 november 2026
-- Boerenmodus: elk uur is één breed vak (weer + regen) met één gezamenlijk venster bij een tik; dwars twee vakken onder elkaar, omhoog en omlaag geschoven. Groter bovenste deel: pictogram boven, temperatuur 10% groter onder. Het vak „NEERSLAG 24” wordt „WATER IN DE BODEM”: het water in de laag van 3–9 cm en de verandering in 24 uur.
+Versie 1
+- Het weer nu, de komende uren, neerslag voor 12 uur en 5 dagen.
+- Vakken: Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas, Aardbeving.
+- Weerwaarschuwingen met kleurcode (MeteoAlarm, ongeveer 38 landen).
+- Automatische locatie, favorieten, andere landen.
+- Licht, donker en automatisch thema; helderheid vanaf de schermrand; nachtklok.
+- Staand, liggend, tablet.
+- Widgets 2x2, 4x1, 4x2, met instellingen.
+- Vanzelf vernieuwen; MET Norway als reserveverwachting.
+- Updates vanuit de app, Help, Logboek.
 
-v2.64 · 7 november 2026
-- Boerenmodus, telefoon dwars: de details van de vakken openen in een groot venster rechts, altijd op dezelfde plek en even groot.
+Versie 2
+- Alle officiële EU-talen en Oekraïens.
+- Pagina Aardbevingen.
+- Meldingen met je toestemming: regen of sneeuw, waarschuwingen, aardbevingen.
 
-v2.63 · 7 november 2026
-- „BOERENMODUS” staat nu onder de bovenste lijn, links onder de knop ☰, in plaats van onderaan.
+Huidige versie: v2.80 · 8.11.2026
+Verbeteringen in ontwerp / structuur.
+- Percelen: de knop Bewerken en het potlood op elk perceel, voor de naam en de plek op de kaart.
+- Nieuwe talen: Turks, Russisch, Servisch.
 
-v2.62 · 7 november 2026
-- Boerenmodus: het venster „NEERSLAG 24” toont ook hoeveel water de bodem vasthield (laag 3–9 cm), in totaal en uur per uur.
-
-v2.61 · 7 november 2026
-- Boerenmodus: het vak „NEERSLAG 24” staat nu in de onderste rij, tussen Zon / Maan en UV-index; een tik legt het uit en toont de uren met neerslag en hun millimeters.
-- Opgelost: in boerenmodus toonden de vakken Pollen en Luchtdruk de bodemtemperatuur.
-- Opgelost: de neerslag van de laatste 24 uur wordt vanzelf gedownload als die ontbreekt; „Laden” loopt niet meer onder BOER.
-
-v2.60 · 7 november 2026
-- Boerenmodus: een hoofdscherm voor de plaats en een voor elk perceel; je wisselt door zijwaarts over de temperatuur en het pictogram te vegen, de stippen onder de lijn tonen waar je bent.
-- Een perceel op het hoofdscherm toont zijn weer en onderaan zijn vakjes (lucht, wind, richting, regen, vochtigheid, bodem, bodemtemperatuur), zonder pollen en aardbevingen; een tik op de naam toont de hele naam en de coördinaten. De widgets en de meldingen blijven bij de plaats.
-- Vakje „regen 24 u” naast de knoppen onderaan; een tik toont de uren met regen.
-- ☰ › Percelen: verwijderen met vinkjes en bevestiging; de lijst op volgorde van naam en nummer.
-- In Roemenië biedt het menu Taal › Andere talen de talen van de minderheden: Hongaars, Duits, Oekraïens en andere.
-
-v2.50 · 7 november 2026
-- Boerenmodus: het eerste item van ☰ wisselt tussen boerenmodus en normale modus. In de boerenmodus toont tikken op een uurvak de temperatuur, het laagste en hoogste van de dag, de wind met windstoten en richting (en wanneer die draait), de luchtvochtigheid, de kans op regen, het bodemvocht en de bodemtemperatuur; de regengrafiek en de vijf dagen worden vervangen door regenvakken per uur, met details bij tikken.
-- ☰ › Percelen: sla de plek op waar je staat (gps), zet die goed op de OpenStreetMap-kaart en geef een naam; elk perceel heeft vakken voor wind, richting, regen, lucht- en bodemvocht, bodem- en luchttemperatuur, meldingen bij regen en harde wind, en statistiek over een periode van de laatste 28 dagen, op te slaan als pdf in Downloads.
-- De bodemgegevens zijn schattingen van Open-Meteo; als Open-Meteo niet antwoordt, downloadt de app ze later en stuurt je een melding.
-- Verenigde Staten: klok en uren tonen de lokale tijd van de gekozen plaats.
-- Meldingen alleen voor de gekozen plaats (in de testmodus) of waar de telefoon is: geen meldingen uit de VS meer als de app een plaats in Europa toont.
-
-v2.40 · 4 november 2026
-- Verenigde Staten: ☰ › Tornadoes, een pagina zoals Aardbevingen: de tornadowaarschuwingen voor je plaats en staat, de tornado's die de laatste 2 dagen in de buurt zijn gemeld, het aantal in het hele land en wat je moet doen.
-- Verenigde Staten: geen Pollen-vak (daar zijn geen gegevens); de luchtkwaliteit als de Amerikaanse US AQI.
-
-v2.30 · 4 november 2026
-- Onderdelen om de app in de Verenigde Staten te gebruiken.
-- ☰ › Temperatuur °C/°F: bij het verlaten van °F vraagt de app of je naar het metrische stelsel wilt; met °F staat de luchtdruk in inHg en afstanden in mijl.
-
-v2.22 · 4 november 2026
-- Samsung-telefoons met Auto Blocker: zet het uit voordat je de app installeert of bijwerkt (Instellingen › Beveiliging en privacy › Auto Blocker), anders weigert de telefoon de installatie; daarna kun je het weer aanzetten.
-
-v2.21 · 4 november 2026
-- Tablet: het menu ☰ is maar zo breed als zijn langste regel, en 5 % kleiner.
-- Pagina's: de titel blijft op één regel en groeit met de tekstgrootte alleen tot de knoppen rechts.
-- Balk voor tekstgrootte: op sommige telefoons (A70) sloot hij bij aanraking; nu neemt hij de vinger aan over zijn hele kolom.
-- De cirkel boven de balk toont alleen de waarde, zonder %.
-
-v2.20 · 4 november 2026
-- Widget 4x2 op Samsung met One UI 9 (A54): wordt bij 2 rijen niet meer als 4x3 getoond; 4x3 pas vanaf 3 rijen.
-- ☰ › Widgets: bij meerdere kies je de widget bovenaan het instellingenvenster en de instellingen eronder horen bij de gekozen widget.
-- Tablet: het menu ☰ is 10 % kleiner.
-- Logboek: de tekst van de knoppen blijft op één regel.
-- Zonder internet wacht de app tot het netwerk terug is, in plaats van elke 1–2 minuten opnieuw te proberen.
-
-v2.12 · 4 november 2026
-- In Help, Aardbevingen, Over en Wat is er nieuw: de knop Aa naast de knoppen rechts toont de balk voor tekstgrootte links op het scherm, boven de pagina, net als de helderheidsbalk. De smalle balk rechtsboven is weg.
-
-v2.11 · 4 november 2026
-- De balk voor de tekstgrootte, geopend vanaf de rechterrand, verschijnt nu links, net als de helderheidsbalk.
-
-v2.10 · 4 november 2026
-- Nieuwe widget 4x2 · dagen: onder het weer van nu de komende 5 dagen (dag, pictogram, max / min). Vergroot tot 3 rijen of meer worden beide 4x2-widgets (uren en dagen) de nieuwe 4x3, met de komende uren en de komende dagen.
-- Tekstgrootte: in Help, Aardbevingen, Over en Wat is er nieuw maakt een balk rechts, onder de sluitknop, de letters groter of kleiner (80–180 %); op het hoofdscherm toont omhoog of omlaag vegen vlak bij de rechterrand dezelfde balk. De grootte blijft op het apparaat bewaard en geldt ook voor het menu ☰.
-- Tablet: het menu ☰ en de andere menu's zijn 30 % groter.
-- ☰ › App versturen: verstuurt de downloadlink in een WhatsApp-bericht (of met een andere app), zodat iemand anders Meteo Alarm kan installeren.
-- De widgetlijst toont de namen in de taal van de telefoon.
-
-v2.00 · 4 november 2026
-- Talen: de app spreekt nu alle officiële talen van de Europese Unie en Oekraïens (ook de Help). Bij de eerste start neemt ze de taal van de telefoon (Engels als de app die niet heeft); daarna die gekozen in ☰ › Taal. De lijst toont alleen Engels, de taal van de telefoon en de officiële talen van het land waar de telefoon is.
-- ☰ › Aardbevingen: een pagina met de aardbevingen van magnitude 3 of meer van de laatste 7 dagen in je land, daarna die van de laatste 48 uur in de EU, Oekraïne en Moldavië (tijd, plaats, magnitude, diepte, afstand).
-- Meldingen (alleen met je toestemming): beginnende regen of sneeuw, nieuwe weerwaarschuwingen voor je plaats, aardbevingen van magnitude 3 of meer in je land. Elke gebeurtenis maar één keer. Aan of uit via ☰ › Meldingen.
-- Locatie en meldingen worden bij de eerste start gevraagd met een vriendelijke uitleg; zeg je nee, dan vraagt de app pas na een update opnieuw. Als de telefoon zijn vraag niet meer toont, opent een knop zijn instellingen.
-- Bij de eerste start wordt de door de locatie gevonden plaats de getoonde plaats en komt hij bij de favorieten.
-- Telefoons zonder kompas of lichtsensor: de bijbehorende knoppen en vakken worden uitgeschakeld; het Logboek noemt de sensoren bij elke start.
-- Widgets: de 4x1-strook werkt nu ook op tablets (de rijen van het startscherm worden geteld, geen vaste maten).
-- Opgelost: bij de start na een update werd het weer twee keer gedownload; het Logboek noteert nu de gekozen taal en elke gekozen plaats, en het openen van de widgetinstellingen maar één keer.
+────────
+Nieuwe functies sinds v2.10
+- Boerenmodus: uurvakken met weer en regen, details bij een tik, en het vak Water in de bodem.
+- Percelen: opgeslagen via gps of op de kaart, een hoofdscherm per perceel, statistiek over 28 dagen met pdf, regen- en windmeldingen.
+- Widgets 4x2 dagen en 4x3.
+- Tekstgrootte (Aa).
+- ☰ › App versturen.
+- Verenigde Staten: NWS-waarschuwingen, tornado's, °F, lokale tijd.
+- Andere talen: de talen van de minderheden in Roemenië.

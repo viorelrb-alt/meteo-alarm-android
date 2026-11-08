@@ -595,3 +595,45 @@ Type: 	Вид:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	На телефона всеки час е едно широко поле, времето вляво и дъждът вдясно; при изправен телефон плъзгай полетата встрани, а при легнал две полета са едно под друго: плъзгай ги нагоре и надолу. При изправен телефон иконата е в горната половина на мястото над полетата, а температурата – в долната.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	При широко поле същият прозорец показва и, под „Дъжд“, подробностите за дъжда в този час.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	В режим фермер полето „ВОДА В ПОЧВАТА“ в долния ред, между Слънце / Луна и UV индекс, показва водата, задържана сега в почвения слой 3–9 см на показаното място (селище или парцел), в милиметри, а под нея колко се е променила за 24 часа. Докосването я обяснява и показва валежите за последните 24 часа: само часовете с валежи, с милиметрите на всеки и колко от тях е задържала почвата. Оценка на Open-Meteo, не измерване.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Първият ред в ☰ сменя режима. В режим фермер всеки час е едно широко поле с времето и дъжда; при легнал телефон две полета едно под друго, плъзгани нагоре и надолу.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Докосването показва подробностите за часа: температура, вятър и посока, влажност, дъжд, почва.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Водата, задържана сега в почвения слой 3–9 см, и промяната ѝ за 24 часа; докосването показва часовете с валежи. Оценка на Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Парцели: запази мястото, където стоиш, или го избери на картата и му дай име. Редактиране (или моливът) сменя името и карфицата; Изтрий парцели ги премахва. Само в този телефон.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Един основен екран за селището и по един за всеки парцел: плъзни встрани над температурата.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Докосване на името на парцела: полетата му, следващите 12 часа, статистика с PDF, сигнали, преименуване, изтриване.
+When ON, a notification for rain or strong wind forecast on the parcel.	Когато са ВКЛЮЧЕНИ, известие при прогноза за дъжд или силен вятър над парцела.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Данните за почвата са оценки на модела Open-Meteo, не измервания; близки парцели може да имат същите стойности.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: мести я с един пръст, увеличавай с два; трябва интернет.
+Choose the town: favourites, then counties (or states).	Избери селище: любими, после области (или щати).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Включва (пълен) или изключва (празен) автоматичното местоположение; показва времето, където си.
+Shows the brightness bar on the left.	Показва лентата за яркост вляво.
+Over the brightness bar: switches the theme.	Над лентата за яркост: сменя темата.
+Light theme in the light, dark in the dark (needs a light sensor).	Светла тема на светло, тъмна на тъмно (нужен е сензор за светлина).
+Looks once with the GPS.	Търси веднъж с GPS.
+Refreshes the weather.	Опреснява времето.
+Slide up or down: brightness.	Плъзни нагоре или надолу: яркост.
+Slide up or down: text size.	Плъзни нагоре или надолу: размер на текста.
+The Aa button on the pages shows the text-size bar.	Бутонът Aa на страниците показва лентата за размер на текста.
+Shows where the wind blows, turned with the phone.	Показва накъде духа вятърът, завъртяна с телефона.
+A big dim clock while the phone charges at night.	Голям приглушен часовник, когато телефонът се зарежда нощем.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Един ред под линията: земетресението, после предупрежденията по цвят. Докосването показва подробностите.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Най-силното земетресение за последните 24 часа в страната ти и как вероятно е усетено (EMSC).
+The rows of boxes follow the finger.	Редовете полета следват пръста.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Слънце / Луна, UV, Прашец, Влажност, Качество на въздуха, Налягане, Вятър, Видимост, Компас; докосването показва подробностите.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Задръж началния екран › Уиджети › Meteo Alarm. Дърпай краищата, за да смениш вида (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Задръж уиджета › Настройки, или ☰ › Уиджети: селище, фон, цветове.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	На 15 минути с включен екран, на 30 с изключен; MET Norway, когато Open-Meteo е зает.
+Downloads the weather now.	Изтегля времето сега.
+Keeps the screen on while the app is open.	Държи екрана включен, докато приложението е отворено.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Английски, езикът на телефона и езиците на страната; в Румъния и „Други езици“.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Земетресенията от последните дни наблизо, с час, място, магнитуд и разстояние.
+Rain or snow starting, new warnings and earthquakes, each only once.	Започващ дъжд или сняг, нови предупреждения и земетресения, всяко само веднъж.
+The settings of the widgets on the home screen.	Настройките на уиджетите на началния екран.
+What the app did, with the time; read, share or save it.	Какво е правило приложението, с часа; прочети, сподели или запази.
+Looks for a new version on GitHub, with your consent.	Търси нова версия в GitHub, с твоето съгласие.
+Sends the download link, e.g. on WhatsApp.	Изпраща връзката за изтегляне, напр. по WhatsApp.
+About the app, its data and what's new.	За приложението, данните му и новостите.
+Edit	Редактиране
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Докосни парцел, за да го видиш на основния екран. Моливът го отваря за редактиране.
+temp: 	темп.: 
+Tap the parcel to edit: its name and the pin on the map.	Докосни парцела за редактиране: името и карфицата на картата.

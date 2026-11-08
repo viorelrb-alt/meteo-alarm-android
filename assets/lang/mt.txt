@@ -595,3 +595,45 @@ Type: 	Tip:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Fuq telefon kull siegħa hija kaxxa wiesgħa waħda, it-temp fuq ix-xellug u x-xita fuq il-lemin; bit-telefon wieqaf, żerżaq il-kaxxi lejn il-ġenb, u bit-telefon mimdud żewġ kaxxi jkunu waħda taħt l-oħra: żerżaqhom 'il fuq u 'l isfel. Bit-telefon wieqaf, l-ikona tkun fin-nofs ta' fuq tal-ispazju 'l fuq mill-kaxxi u t-temperatura f'dak ta' isfel.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	F'kaxxa wiesgħa, l-istess tieqa turi wkoll, taħt “Xita”, id-dettalji tax-xita tas-siegħa.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Fil-modalità tal-bidwi l-kaxxa “ILMA FIL-ĦAMRIJA” fir-ringiela ta' isfel, bejn Xemx / Qamar u Indiċi UV, turi l-ilma miżmum issa fis-saff tal-ħamrija ta' 3–9 cm fil-post muri (lokalità jew biċċa art), f'millimetri, u taħtu kemm inbidel f'24 siegħa. Mess jispjegah u juri l-preċipitazzjoni tal-aħħar 24 siegħa: is-sigħat bil-preċipitazzjoni biss, bil-millimetri ta' kull waħda u kemm żammet minnha l-ħamrija. Stima ta' Open-Meteo, mhux kejl.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	L-ewwel għażla ta' ☰ tibdel il-modalità. Fil-modalità tal-bidwi kull siegħa hija kaxxa wiesgħa waħda bit-temp u x-xita; bit-telefon mimdud, żewġ kaxxi waħda taħt l-oħra, imżerżqa 'l fuq u 'l isfel.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Mess juri d-dettalji tas-siegħa: temperatura, riħ u direzzjoni, umdità, xita, ħamrija.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	L-ilma miżmum issa fis-saff tal-ħamrija ta' 3–9 cm u l-bidla tiegħu f'24 siegħa; mess juri s-sigħat bil-preċipitazzjoni. Stima ta' Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Biċċiet tal-art: issejvja l-post fejn int jew agħżlu fuq il-mappa u agħtih isem. Editja (jew il-lapes) tibdel l-isem u l-labra; Ħassar biċċiet tal-art tneħħihom. Fuq dan it-telefon biss.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Skrin ewlieni wieħed għal-lokalità u wieħed għal kull biċċa art: żerżaq lejn il-ġenb fuq it-temperatura.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Mess fuq l-isem tal-biċċa art: il-kaxxi tagħha, it-12-il siegħa li ġejjin, statistika b'PDF, twissijiet, ibdel l-isem, ħassar.
+When ON, a notification for rain or strong wind forecast on the parcel.	Meta MIXGĦULA, notifika meta titbassar xita jew riħ qawwi fuq il-biċċa art.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Id-data tal-ħamrija hija stimi tal-mudell ta' Open-Meteo, mhux kejl; biċċiet tal-art qrib jistgħu juru l-istess valuri.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: ċċaqlaqha b'saba' wieħed, kabbar b'żewġ; teħtieġ l-internet.
+Choose the town: favourites, then counties (or states).	Agħżel il-lokalità: favoriti, imbagħad reġjuni (jew stati).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Ixgħel (mimli) jew itfi (vojt) il-lokalizzazzjoni awtomatika; juri t-temp fejn int.
+Shows the brightness bar on the left.	Juri l-istrixxa tad-dawl fuq ix-xellug.
+Over the brightness bar: switches the theme.	Fuq l-istrixxa tad-dawl: jibdel it-tema.
+Light theme in the light, dark in the dark (needs a light sensor).	Tema ċara fid-dawl, skura fid-dlam (teħtieġ sensur tad-dawl).
+Looks once with the GPS.	Ifittex darba bil-GPS.
+Refreshes the weather.	Jaġġorna t-temp.
+Slide up or down: brightness.	Żerżaq 'il fuq jew 'l isfel: dawl.
+Slide up or down: text size.	Żerżaq 'il fuq jew 'l isfel: daqs tat-test.
+The Aa button on the pages shows the text-size bar.	Il-buttuna Aa fil-paġni turi l-istrixxa tad-daqs tat-test.
+Shows where the wind blows, turned with the phone.	Turi fejn qed jonfoħ ir-riħ, iddur mat-telefon.
+A big dim clock while the phone charges at night.	Arloġġ kbir u baxx meta t-telefon jiċċarġja bil-lejl.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Ringiela waħda taħt il-linja: it-terremot, imbagħad it-twissijiet skont il-kulur. Mess juri d-dettalji.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	L-iktar terremot qawwi tal-aħħar 24 siegħa f'pajjiżek u kif probabbilment inħass (EMSC).
+The rows of boxes follow the finger.	Ir-ringieli tal-kaxxi jsegwu s-saba'.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Xemx / Qamar, UV, Polline, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla; mess juri d-dettalji.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Żomm l-iskrin ewlieni › Widgets › Meteo Alarm. Iġbed it-truf biex tibdel id-disinn (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Żomm il-widget › Settings, jew ☰ › Widgets: lokalità, sfond, kuluri.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Kull 15-il minuta bl-iskrin mixgħul, 30 bih mitfi; MET Norway meta Open-Meteo jkun okkupat.
+Downloads the weather now.	Iniżżel it-temp issa.
+Keeps the screen on while the app is open.	Iżomm l-iskrin mixgħul sakemm l-app tkun miftuħa.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	L-Ingliż, il-lingwa tat-telefon u l-lingwi tal-pajjiż; fir-Rumanija wkoll “Lingwi oħra”.
+The earthquakes of the last days near you, with time, place, magnitude and distance.	It-terremoti tal-aħħar jiem qrib tiegħek, bil-ħin, il-post, il-manjitudni u d-distanza.
+Rain or snow starting, new warnings and earthquakes, each only once.	Xita jew silġ li jibda, twissijiet ġodda u terremoti, kull wieħed darba biss.
+The settings of the widgets on the home screen.	Is-settings tal-widgets fuq l-iskrin ewlieni.
+What the app did, with the time; read, share or save it.	X'għamlet l-app, bil-ħin; aqrah, aqsmu jew issejvjah.
+Looks for a new version on GitHub, with your consent.	Tfittex verżjoni ġdida fuq GitHub, bil-kunsens tiegħek.
+Sends the download link, e.g. on WhatsApp.	Tibgħat il-link biex tniżżilha, eż. fuq WhatsApp.
+About the app, its data and what's new.	Dwar l-app, id-data tagħha u x'hemm ġdid.
+Edit	Editja
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Mess biċċa art biex tarah fuq l-iskrin ewlieni. Il-lapes jiftaħha biex teditjaha.
+temp: 	temp: 
+Tap the parcel to edit: its name and the pin on the map.	Mess il-biċċa art li trid teditja: l-isem u l-labra fuq il-mappa.

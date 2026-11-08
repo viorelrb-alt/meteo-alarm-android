@@ -1,0 +1,573 @@
+# Meteo Alarm Android · ru · English<TAB>translation
+Diary (log)	Журнал
+Everything the app did in the last 5 days; older errors kept 10 days.	Всё, что приложение делало за последние 5 дней; старые ошибки хранятся 10 дней.
+Share	Поделиться
+Save	Сохранить
+Close	Закрыть
+log 	журнал 
+Send the log	Отправить журнал
+Log saved	Журнал сохранён
+Could not save	Не удалось сохранить
+This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.	Это тестовая версия Meteo Alarm Android, сделанная из Meteo Alarm Kindle.
+No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).	Данные не собираются: без аккаунта, без рекламы, без статистики. Для погоды отправляются только координаты места в Open-Meteo (погода, пыльца), а при перегрузке Open-Meteo — в MET Norway (погода); предупреждения приходят от MeteoAlarm, землетрясения — от EMSC (seismicportal.eu).
+Location: used to show the weather where you are, at start and once an hour. To name the town, the coordinates go to OpenStreetMap (or the phone's geocoder), which also gives the town's boundary. Towns found, with where you were, are kept only on the phone. The app asks for it with an explanation at the first start; if you say no, you choose the town from the list and it asks again only after an update.	Местоположение: используется, чтобы показывать погоду там, где вы находитесь, при запуске и раз в час. Чтобы назвать населённый пункт, координаты отправляются в OpenStreetMap (или геокодер телефона), который также даёт его границу. Найденные населённые пункты, вместе с тем, где вы были, хранятся только в телефоне. Приложение спрашивает разрешение с пояснением при первом запуске; если вы откажете, выбираете пункт из списка, а приложение спросит снова только после обновления.
+Notifications (only if you agree): rain or snow starting, new weather warnings for your town, earthquakes of magnitude 3 or more in your country. Each event once. Turn them on or off in ☰ › Notifications.	Уведомления (только с вашего согласия): начало дождя или снега, новые метеопредупреждения для вашего пункта, землетрясения магнитудой 3 и более в вашей стране. Каждое событие один раз. Включаются и выключаются в ☰ › Уведомления.
+Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.	Язык: при первом запуске язык телефона (если он есть в приложении, иначе английский), затем выбранный в ☰ › Язык.
+Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.	Датчики: приложение читает состояние батареи (ночные часы при зарядке), датчик освещённости с ☰ › Тема › Автоматически (датчик телефона) и компас, который поворачивает стрелку ветра вместе с телефоном. То, чего в телефоне нет, отключается. Ничего не покидает телефон.
+Updates: 	Обновления: 
+After that, once a week the app checks GitHub for a new version and asks before downloading it.	После этого раз в неделю приложение ищет новую версию на GitHub и спрашивает перед загрузкой.
+I understand	Понятно
+This phone has no light sensor.	В этом телефоне нет датчика освещённости.
+Automatic theme (phone sensor): on	Автоматическая тема (датчик телефона): вкл.
+Automatic theme (phone sensor): off	Автоматическая тема (датчик телефона): выкл.
+Dark theme	Тёмная тема
+Light theme	Светлая тема
+Meteo Alarm can find your town by itself, so the forecast, the weather warnings and the earthquakes are for the exact place where you are, also when you travel. The position stays on the phone: it is used only to choose the town.	Meteo Alarm может сам находить ваш населённый пункт, чтобы прогноз, предупреждения и землетрясения были для того места, где вы находитесь, и в поездках. Местоположение остаётся в телефоне: оно используется только для выбора пункта.
+The phone no longer shows its question, so allow Location for Meteo Alarm in the phone's settings (Permissions › Location).	Телефон больше не показывает свой вопрос, поэтому разрешите Местоположение для Meteo Alarm в настройках телефона (Разрешения › Местоположение).
+If you say no, choose the town from the list; the app asks again only after an update.	Если откажете, выберите пункт из списка; приложение спросит снова только после обновления.
+Location	Местоположение
+Open settings	Открыть настройки
+Allow	Разрешить
+Not now	Не сейчас
+Meteo Alarm can tell you, also while it is closed: when rain or snow starts or will start within the hour, when a weather warning is issued for your town, and when an earthquake of magnitude 3 or more happens in your country. Each event only once, nothing else. So you learn in time, without opening the app.	Meteo Alarm может сообщать и в закрытом виде: когда начинается дождь или снег или начнётся в течение часа, когда для вашего пункта выпущено метеопредупреждение и когда в вашей стране происходит землетрясение магнитудой 3 и более. Каждое событие только один раз, ничего больше. Так вы узнаете вовремя, не открывая приложение.
+The phone does not let the app notify, so turn on the notifications of Meteo Alarm in the phone's settings.	Телефон не разрешает приложению уведомлять, поэтому включите уведомления Meteo Alarm в настройках телефона.
+You can turn them off anytime in ☰ › Notifications. If you say no, the app asks again only after an update.	Их можно выключить в любое время в ☰ › Уведомления. Если откажете, приложение спросит снова только после обновления.
+Notifications	Уведомления
+Notifications ON	Уведомления ВКЛ
+Notifications OFF	Уведомления ВЫКЛ
+Without location access, choose the town from the list.	Без доступа к местоположению выберите пункт из списка.
+Brightness: slide on the bar	Яркость: проведите по полосе
+Automatic location OFF	Автоопределение места ВЫКЛ
+Automatic location ON	Автоопределение места ВКЛ
+Looking for the exact position…	Поиск точного положения…
+Added to the list: 	Добавлено в список: 
+Location is off on the phone.	Местоположение в телефоне выключено.
+The position could not be found.	Не удалось определить положение.
+The town could not be found (internet?).	Не удалось найти населённый пункт (интернет?).
+The weather did not come: 	Погода не пришла: 
+Already updating…	Уже обновляется…
+The weather has just been updated	Погода только что обновлена
+Just tried; try again in a few seconds	Только что пробовали; попробуйте через несколько секунд
+Updating the weather…	Обновление погоды…
+Refresh	Обновить
+Town	Населённый пункт
+Temperature °C/°F	Температура °C/°F
+Clock 12/24	Часы 12/24
+Theme	Тема
+Screen on OFF	Экран включён ВЫКЛ
+Screen on ON	Экран включён ВКЛ
+Language	Язык
+Night clock OFF	Ночные часы ВЫКЛ
+Night clock ON	Ночные часы ВКЛ
+Location Off	Местоположение выкл.
+Location On	Местоположение вкл.
+Earthquakes	Землетрясения
+Widgets	Виджеты
+Log	Журнал
+Check for updates	Проверить обновления
+Help	Справка
+About	О приложении
+24-hour clock	24-часовой формат
+12-hour clock	12-часовой формат
+The screen stays on while the app is open	Экран не гаснет, пока приложение открыто
+The screen goes off after the phone's timeout	Экран гаснет по тайм-ауту телефона
+While charging at night, the screen shows a big dim clock	При зарядке ночью экран показывает большие тусклые часы
+Night clock off	Ночные часы выключены
+Light	Светлая
+Dark	Тёмная
+Automatic	Автоматически
+Last 7 days · 	Последние 7 дней · 
+Downloading from EMSC…	Загрузка с EMSC…
+The list could not be downloaded. Is the internet on?	Не удалось загрузить список. Интернет включён?
+No earthquake of magnitude 3 or more.	Нет землетрясений магнитудой 3 и более.
+Last 48 hours · EU, Ukraine, Moldova	Последние 48 часов · ЕС, Украина, Молдова
+Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Источник: EMSC (Европейско-Средиземноморский сейсмологический центр, seismicportal.eu), магнитуда 3 и более. «Ощущалось» — оценка по шкале EMS-98 по магнитуде и расстоянию до очага.
+depth 	глубина 
+from 	от 
+Probably felt in 	Вероятно, ощущалось в 
+Probably not felt in 	Вероятно, не ощущалось в 
+Updates	Обновления
+How to update	Как обновить
+Buttons on the screen	Кнопки на экране
+Brightness	Яркость
+Light / dark theme	Светлая / тёмная тема
+Automatic theme (phone sensor)	Автоматическая тема (датчик телефона)
+Gestures	Жесты
+Tap on the town's name	Касание названия пункта
+Pull down	Потянуть вниз
+Left edge	Левый край
+Wind arrow	Стрелка ветра
+Night clock	Ночные часы
+Warnings and earthquake	Предупреждения и землетрясение
+Earthquake box	Поле «Землетрясение»
+Left / right on the boxes	Влево / вправо по полям
+The row of boxes at the bottom	Нижний ряд полей
+Home-screen widgets	Виджеты на главном экране
+Meteo Alarm widgets	Виджеты Meteo Alarm
+Widget settings	Настройки виджета
+Refreshing by itself	Автоматическое обновление
+The ☰ menu	Меню ☰
+Switches between Celsius and Fahrenheit.	Переключает между Цельсием и Фаренгейтом.
+Switches the clock between 24 hours and 12 hours (AM/PM).	Переключает часы между 24 и 12 часами (AM/PM).
+Light, Dark, or Automatic (phone sensor).	Светлая, Тёмная или Автоматически (датчик телефона).
+Screen on ON / OFF	Экран включён ВКЛ / ВЫКЛ
+Location On / Off	Местоположение вкл. / выкл.
+Turns automatic location on or off (the same as the location button).	Включает или выключает автоопределение места (как кнопка местоположения).
+Notifications ON / OFF	Уведомления ВКЛ / ВЫКЛ
+Night clock ON / OFF	Ночные часы ВКЛ / ВЫКЛ
+Turns the night clock on or off.	Включает или выключает ночные часы.
+This page.	Эта страница.
+What's new	Что нового
+The dark theme uses the Claude app colours. Font: Liberation Sans.	Тёмная тема использует цвета приложения Claude. Шрифт: Liberation Sans.
+Installed version: v	Установленная версия: v
+Favourites	Избранное
+Choose the county	Выберите уезд
+Other countries	Другие страны
+‹  Back	‹  Назад
+‹  Back to the counties	‹  Назад к уездам
+There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.	На главном экране нет виджета Meteo Alarm. Удерживайте свободное место на главном экране › Виджеты › Meteo Alarm.
+Which widget?	Какой виджет?
+Change	Изменить
+Background	Фон
+Colours	Цвета
+Text colour	Цвет текста
+Cancel	Отмена
+  (as in the app)	  (как в приложении)
+Transparency: 	Прозрачность: 
+Match the phone's settings	Как в настройках телефона
+By the weather	По погоде
+White	Белый
+Black	Чёрный
+As in the app	Как в приложении
+Choose the county / country…	Выберите уезд / страну…
+County / country	Уезд / страна
+To get updates: open ☰ › Check for updates and, when asked, give your consent.	Чтобы получать обновления: откройте ☰ › Проверить обновления и, когда спросят, дайте согласие.
+Updates from GitHub	Обновления с GitHub
+I agree	Согласен
+Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.	Без вашего согласия приложение не будет обновляться. Передумать можно в любой момент в ☰ › Проверить обновления.
+Checking GitHub for a new version…	Поиск новой версии на GitHub…
+No version published yet.	Ещё нет опубликованных версий.
+Could not check for updates. Is the internet on?	Не удалось проверить обновления. Интернет включён?
+You have the latest version, v	У вас последняя версия, v
+Installed: v	Установлена: v
+New: v	Новая: v
+New version: v	Новая версия: v
+Update	Обновить
+Downloading…	Загрузка…
+Hide	Скрыть
+Downloading… 	Загрузка… 
+The download failed. Is the internet on?	Загрузка не удалась. Интернет включён?
+The installer could not be opened.	Не удалось открыть установщик.
+no internet (server not found)	нет интернета (сервер не найден)
+the server did not answer in time	сервер не ответил вовремя
+no connection	нет соединения
+secure connection error: 	ошибка защищённого соединения: 
+internet not allowed for the app	приложению запрещён интернет
+server error 	ошибка сервера 
+network error: 	ошибка сети: 
+data error: 	ошибка данных: 
+⌃  more  ⌃	⌃  ещё  ⌃
+⌄  more  ⌄	⌄  ещё  ⌄
+Open the app	Открыть приложение
+WARNING!	ВНИМАНИЕ!
+Sunrise at 	Восход в 
+Sunset at 	Закат в 
+Weather, warnings and earthquakes	Погода, предупреждения и землетрясения
+Rain or snow starting, new weather warnings, earthquakes in your country.	Начало дождя или снега, новые метеопредупреждения, землетрясения в вашей стране.
+Snow	Снег
+Rain	Дождь
+It is snowing in 	Идёт снег в 
+It is raining in 	Идёт дождь в 
+Snow is expected within the hour in 	В течение часа ожидается снег в 
+Rain is expected within the hour in 	В течение часа ожидается дождь в 
+Warning	Предупреждение
+Earthquake M	Землетрясение M
+probably felt: 	вероятно, ощущалось: 
+Notifications are on: rain or snow, weather warnings and earthquakes in your country.	Уведомления включены: дождь или снег, метеопредупреждения и землетрясения в вашей стране.
+EARTHQUAKE	ЗЕМЛЕТРЯСЕНИЕ
+Felt here: 	Ощущалось здесь: 
+ (estimate)	 (оценка)
+Magnitude: 	Магнитуда: 
+Time: 	Время: 
+Region: 	Регион: 
+Depth: 	Глубина: 
+Epicentre: 	Эпицентр: 
+ from 	 от 
+In 	В 
+Probably felt, intensity 	Вероятно, ощущалось, интенсивность 
+Probably not felt here.	Вероятно, здесь не ощущалось.
+Estimated from the magnitude and the distance to the focus (EMS-98 scale); EMSC does not publish the felt reports of each town.	Оценка по магнитуде и расстоянию до очага (шкала EMS-98); EMSC не публикует сообщения об ощущениях для каждого пункта.
+All in the last 24 h	Все за последние 24 ч
+Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.	Источник: EMSC (seismicportal.eu), магнитуда 3 и более, последние 24 ч.
+Potentially dangerous weather (usual for the season, but locally of higher intensity). Be careful outdoors.	Потенциально опасная погода (обычная для сезона, но местами сильнее). Будьте осторожны на улице.
+Dangerous weather of high intensity. Be very careful, keep up with the forecast and follow the authorities' advice.	Опасная погода высокой интенсивности. Будьте очень осторожны, следите за прогнозом и советами властей.
+Very dangerous weather of very high intensity. Take protective measures and follow the authorities' instructions.	Очень опасная погода очень высокой интенсивности. Примите меры защиты и следуйте указаниям властей.
+In force now, until 	Действует сейчас, до 
+From 	С 
+ until 	 до 
+Source: MeteoAlarm (the national weather service), for 	Источник: MeteoAlarm (национальная метеослужба), для 
+Stay away from trees, poles and scaffolding; secure loose objects.	Держитесь подальше от деревьев, столбов и строительных лесов; закрепите незакреплённые предметы.
+Lightning, downpours, hail and gusts are possible; take shelter indoors.	Возможны молнии, ливни, град и порывы ветра; укройтесь в помещении.
+Avoid flooded roads and river banks.	Избегайте затопленных дорог и берегов рек.
+Slippery roads; drive only if you must, with winter equipment.	Скользкие дороги; садитесь за руль только при необходимости, с зимним снаряжением.
+Low visibility; drive slowly with the fog lights on.	Плохая видимость; езжайте медленно с противотуманными фарами.
+Avoid the sun between 11 and 18, drink plenty of water.	Избегайте солнца с 11 до 18, пейте много воды.
+Dress warmly and limit time outdoors.	Одевайтесь тепло и меньше бывайте на улице.
+Do not light fires outdoors.	Не разводите огонь на открытом воздухе.
+H	Ч
+MOON	ЛУНА
+HUMIDITY	ВЛАЖНОСТЬ
+AIR QUALITY	КАЧЕСТВО ВОЗДУХА
+PRESSURE	ДАВЛЕНИЕ
+WIND	ВЕТЕР
+VISIBILITY	ВИДИМОСТЬ
+COMPASS	КОМПАС
+Moonrise	Восход луны
+Moonset	Заход луны
+relative humidity	относительная влажность
+Good	Хорошее
+Fair	Удовлетворительное
+Moderate	Умеренное
+Poor	Плохое
+Very poor	Очень плохое
+Extremely poor	Крайне плохое
+Poor (fog)	Плохое (туман)
+Very good	Очень хорошее
+steady	без изменений
+↓ falling fast	↓ быстро падает
+↓ falling	↓ падает
+↑ rising fast	↑ быстро растёт
+↑ rising	↑ растёт
+no compass	нет компаса
+Tap to leave the night clock	Коснитесь, чтобы выйти из ночных часов
+until	до
+now	сейчас
+Rain from	Дождь с
+max	макс.
+Snow from	Снег с
+Raining	Идёт дождь
+Snowing	Идёт снег
+updated	обновлено
+no data since	нет данных с
+Loading weather…	Загрузка погоды…
+updating…	обновление…
+Feels like	Ощущается как
+Wind	Ветер
+High	Макс.
+Low	Мин.
+Charging	Зарядка
+YELLOW	ЖЁЛТЫЙ
+ORANGE	ОРАНЖЕВЫЙ
+RED	КРАСНЫЙ
+WARNING	ПРЕДУПРЕЖДЕНИЕ
+TOMORROW	ЗАВТРА
+DAY AFTER	ПОСЛЕЗАВТРА
+NEXT 12 HOURS	СЛЕДУЮЩИЕ 12 ЧАСОВ
+WEATHER · NEXT HOURS	ПОГОДА · СЛЕДУЮЩИЕ ЧАСЫ
+RAIN	ДОЖДЬ
+SNOW	СНЕГ
+PRECIPITATION	ОСАДКИ
+snow	снег
+rain	дождь
+no precipitation	без осадков
+SUN	СОЛНЦЕ
+UV INDEX	УФ-ИНДЕКС
+POLLEN	ПЫЛЬЦА
+Sunrise	Восход
+Sunset	Закат
+Very high	Очень высокий
+Extreme	Экстремальный
+no pollen	нет пыльцы
+no data	нет данных
+No precipitation	Без осадков
+alder	ольха
+birch	берёза
+olive	олива
+grasses	злаки
+mugwort	полынь
+ragweed	амброзия
+Clear	Ясно
+Mostly clear	Преимущественно ясно
+Partly cloudy	Переменная облачность
+Overcast	Пасмурно
+Fog	Туман
+Drizzle	Морось
+Freezing drizzle	Ледяная морось
+Light rain	Небольшой дождь
+Heavy rain	Сильный дождь
+Freezing rain	Ледяной дождь
+Light snow	Небольшой снег
+Heavy snow	Сильный снег
+Snow grains	Снежная крупа
+Light showers	Небольшие ливни
+Showers	Ливни
+Heavy showers	Сильные ливни
+Snow showers	Снегопады
+Thunderstorm	Гроза
+Thunderstorm, hail	Гроза, град
+Code 	Код 
+not felt	не ощущалось
+scarcely felt, only by a few people at rest	едва ощущалось, лишь немногими в покое
+weak, felt by a few people indoors	слабое, ощущалось немногими в помещении
+felt by many indoors; windows and doors rattle	ощущалось многими в помещении; дребезжат окна и двери
+strong, felt by nearly everyone; objects move, some are frightened	сильное, ощущалось почти всеми; предметы сдвигаются, некоторые пугаются
+slight damage (cracks in plaster); many run outdoors	лёгкие повреждения (трещины в штукатурке); многие выбегают на улицу
+damage to buildings; hard to stand	повреждения зданий; трудно стоять
+heavy damage	тяжёлые повреждения
+destruction	разрушения
+great destruction	большие разрушения
+very great destruction	очень большие разрушения
+complete destruction	полное разрушение
+Meteo Alarm: the weather, weather warnings and earthquakes where you are, free and without ads.	Meteo Alarm: погода, метеопредупреждения и землетрясения там, где вы, бесплатно и без рекламы.
+Download the app (Android):	Скачать приложение (Android):
+Open the downloaded file and install it. The phone may warn that the app does not come from Google Play: choose "Install anyway". The app then updates itself from GitHub.	Откройте скачанный файл и установите его. Телефон может предупредить, что приложение не из Google Play: выберите «Всё равно установить». Затем приложение обновляется само с GitHub.
+All versions:	Все версии:
+Send the app	Отправить приложение
+Right edge	Правый край
+Text size	Размер текста
+ · days	 · дни
+Samsung phones with Auto Blocker: turn it off before installing or updating the app (Settings › Security and privacy › Auto Blocker), otherwise the phone refuses to install; you can turn it back on afterwards.	Телефоны Samsung с Auto Blocker (Автоблокировщик): отключите его перед установкой или обновлением приложения (Настройки › Безопасность и конфиденциальность › Auto Blocker), иначе телефон откажется устанавливать; потом его можно включить снова.
+Samsung: Auto Blocker	Samsung: Auto Blocker
+°F · imperial units (mph, inches, inHg, miles)	°F · имперские единицы (миль/ч, дюймы, inHg, мили)
+Switch to the metric system?	Перейти на метрическую систему?
+°C, km/h, millimetres, hPa, kilometres and the 24-hour clock instead of °F, mph, inches, inHg, miles and the 12-hour clock. You can switch back anytime from ☰ › Temperature °C/°F.	°C, км/ч, миллиметры, гПа, километры и 24-часовой формат вместо °F, миль/ч, дюймов, inHg, миль и 12-часового формата. Вернуться можно в любой момент в ☰ › Температура °C/°F.
+Metric	Метрическая
+°C · metric system	°C · метрическая система
+Keep °F	Оставить °F
+dry	сухо
+moderate	умеренно
+moist	влажно
+very wet	очень влажно
+Parcels	Участки
+Kept only on this phone, until you delete them. Their statistics are kept 28 days.	Хранятся только в этом телефоне, пока вы их не удалите. Статистика хранится 28 дней.
+Save the place here	Сохранить это место
+Choose on the map	Выбрать на карте
+No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.	Сохранённых участков пока нет. Встаньте на участке и нажмите «Сохранить это место» или выберите его на карте.
+alerts on	сигналы вкл.
+wind 	ветер 
+rain 	дождь 
+soil 	почва 
+updated 	обновлено 
+Without location the place can only be chosen on the map.	Без местоположения место можно выбрать только на карте.
+The phone does not allow notifications for the app: the alerts cannot be shown.	Телефон не разрешает уведомления приложения: сигналы не могут показываться.
+Looking for the position (GPS)… stay outside, on the parcel.	Поиск положения (GPS)… оставайтесь на улице, на участке.
+The position was not found.	Положение не найдено.
+The position was not found: move the map to the parcel.	Положение не найдено: передвиньте карту к участку.
+The position is approximate (±	Положение приблизительное (±
+ m): check the pin on the map.	 м): проверьте булавку на карте.
+New parcel	Новый участок
+Move the pin	Передвинуть булавку
+Name, e.g. parcel 96/5	Название, напр. участок 96/5
+move the map to put the pin on the parcel	двигайте карту, чтобы булавка была на участке
+My position	Моё положение
+Give the parcel a name	Дайте участку название
+Downloading from Open-Meteo…	Загрузка с Open-Meteo…
+Open-Meteo is not answering now (	Open-Meteo сейчас не отвечает (
+). When access is back, the app downloads the parcel's data and sends you a notification.	). Когда доступ вернётся, приложение загрузит данные участка и пришлёт уведомление.
+low 	мин. 
+high 	макс. 
+turns to 	меняется на 
+ around 	 около 
+steady for 12 hours	без изменений 12 часов
+today up to 	сегодня до 
+Air temperature	Температура воздуха
+gusts 	порывы 
+Wind direction	Направление ветра
+Chance of rain	Вероятность дождя
+Air humidity	Влажность воздуха
+Soil moisture	Влажность почвы
+3–9 cm, estimated	3–9 см, оценка
+Soil temperature	Температура почвы
+surface, estimated	поверхность, оценка
+Next 12 hours	Следующие 12 часов
+Statistics (last 28 days)	Статистика (последние 28 дней)
+Move the pin on the map	Передвинуть булавку на карте
+Rain / wind alerts: ON	Сигналы дождь / ветер: ВКЛ
+Rain / wind alerts: OFF	Сигналы дождь / ветер: ВЫКЛ
+You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).	Вы получите уведомление, когда для этого участка на ближайшие 12 часов прогнозируется дождь или сильный ветер (проверка каждые 3 часа).
+Rename	Переименовать
+Delete the parcel	Удалить участок
+Delete 	Удалить 
+The parcel and its statistics are deleted from the phone.	Участок и его статистика удаляются из телефона.
+Delete	Удалить
+Statistics · 	Статистика · 
+Choose the period, within the last 28 days.	Выберите период в пределах последних 28 дней.
+ days	 дн.
+To 	По 
+No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.	Данных за этот период пока нет. Откройте участок один раз с интернетом: приложение загрузит последние 28 дней с Open-Meteo.
+Summary	Итог
+Lowest / highest	Минимум / максимум
+Rain total	Сумма осадков
+ days with rain (1 mm+)	 дн. с дождём (1 мм+)
+Highest wind	Сильнейший ветер
+gusts up to 	порывы до 
+mean, estimated	среднее, оценка
+Day by day	По дням
+Date	Дата
+Max	Макс.
+Min	Мин.
+Soil	Почва
+Source: Open-Meteo (models and the past days' estimates). Soil moisture 3–9 cm deep, estimated.	Источник: Open-Meteo (модели и оценки прошедших дней). Влажность почвы на глубине 3–9 см, оценка.
+Save as PDF in Downloads	Сохранить PDF в Загрузки
+The PDF could not be saved: 	Не удалось сохранить PDF: 
+PDF saved	PDF сохранён
+In Downloads: 	В Загрузках: 
+Open	Открыть
+No app on the phone opens PDF files.	В телефоне нет приложения для PDF.
+Max wind	Макс. ветер
+Parcel statistics · 	Статистика участка · 
+Coordinates: 	Координаты: 
+Period: 	Период: 
+ days)	 дн.)
+Made on 	Создано 
+Lowest temperature: 	Самая низкая температура: 
+Highest temperature: 	Самая высокая температура: 
+Rain total: 	Сумма осадков: 
+Highest wind: 	Сильнейший ветер: 
+Mean soil moisture (3–9 cm, estimated): 	Средняя влажность почвы (3–9 см, оценка): 
+Source: Open-Meteo (open-meteo.com), weather models.	Источник: Open-Meteo (open-meteo.com), погодные модели.
+Soil moisture and soil temperature are estimates, not measurements.	Влажность и температура почвы — оценки, а не измерения.
+Farmer mode	Режим фермера
+Open-Meteo answers again: the farmer's data for 	Open-Meteo снова отвечает: данные фермера для 
+ have been downloaded.	 загружены.
+Farmer's data: Open-Meteo is not answering; you get a notification when they come	Данные фермера: Open-Meteo не отвечает; вы получите уведомление, когда они придут
+Farmer mode: tap an hour or a rain box for details	Режим фермера: коснитесь часа или поля дождя для подробностей
+Normal mode	Обычный режим
+Local time	Местное время
+Farmer mode / Normal mode	Режим фермера / Обычный режим
+Hour boxes	Поля по часам
+A parcel's page	Страница участка
+Statistics and PDF	Статистика и PDF
+Parcel alerts	Сигналы участка
+Soil data and source	Данные о почве и источник
+The map	Карта
+Farmer · 	Фермер · 
+Open-Meteo answers again: the parcel's data have been downloaded.	Open-Meteo снова отвечает: данные участка загружены.
+Rain expected from 	Ожидается дождь с 
+ in the next 12 hours	 в ближайшие 12 часов
+Rain · 	Дождь · 
+Strong wind from 	Сильный ветер с 
+, gusts 	, порывы 
+Wind · 	Ветер · 
+showers	ливни
+sleet	мокрый снег
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.	Данные фермера (почасовой ветер, влажность, почва) приходят только от Open-Meteo, который сейчас не отвечает. Когда доступ вернётся, приложение их загрузит и пришлёт уведомление.
+Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).	Влажность и температура почвы — оценки погодной модели, а не измерения · источник: Open-Meteo (open-meteo.com).
+Temperature: 	Температура: 
+Chance of rain: 	Вероятность дождя: 
+Day's low / high: 	Минимум / максимум дня: 
+Speed: 	Скорость: 
+Direction: from 	Направление: 
+Change: it turns from 	Изменение: меняется с 
+ to 	 на 
+Change: it keeps its direction for the next 12 hours	Изменение: направление сохранится следующие 12 часов
+Air and rain	Воздух и дождь
+Air humidity: 	Влажность воздуха: 
+Soil (estimated)	Почва (оценка)
+Soil moisture (3–9 cm): 	Влажность почвы (3–9 см): 
+Soil temperature (surface): 	Температура почвы (поверхность): 
+likely	вероятно
+possible	возможно
+unlikely	маловероятно
+Amount: 	Количество: 
+Kind: 	Вид: 
+showers 	ливни 
+snow 	снег 
+Of which: 	Из них: 
+Cloud cover: 	Облачность: 
+Until midnight: 	До полуночи: 
+Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.	Источник: Open-Meteo. Вероятность — шанс дождя в этот час, а не то, как долго он идёт.
+FARMER	ФЕРМЕР
+Delete parcels	Удалить участки
+Tap a parcel to see it on the main screen.	Коснитесь участка, чтобы увидеть его на главном экране.
+Saved: 	Сохранено: 
+Tick the parcels to delete, then tap Delete.	Отметьте участки для удаления и нажмите Удалить.
+Are you sure?	Вы уверены?
+These parcels and their statistics are deleted from the phone: 	Эти участки и их статистика удаляются из телефона: 
+Yes, delete	Да, удалить
+Deleted: 	Удалено: 
+No	Нет
+This is the first screen	Это первый экран
+This is the last screen	Это последний экран
+Near 	Рядом с 
+Alerts, rename, delete	Сигналы, переименовать, удалить
+Main screens	Главные экраны
+AIR	ВОЗДУХ
+DIRECTION	НАПРАВЛЕНИЕ
+SOIL	ПОЧВА
+SOIL TEMP.	ТЕМП. ПОЧВЫ
+Now: 	Сейчас: 
+Total: 	Всего: 
+An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.	Оценка Open-Meteo по погодным моделям, а не измерение дождемером на месте.
+Other languages	Другие языки
+Languages of the minorities	Языки меньшинств
+last 24 hours	последние 24 часа
+Precipitation of the last 24 hours	Осадки за последние 24 часа
+The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.	Вода, выпавшая на землю за последние 24 часа (дождь, мокрый снег, растаявший снег) в показанном месте, по часам.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.	Данные за последние 24 часа загружаются; коснитесь ещё раз чуть позже. Если Open-Meteo не отвечает, вы получите уведомление, когда они придут.
+No precipitation in the last 24 hours.	Осадков за последние 24 часа не было.
+Hours with precipitation	Часы с осадками
+Kept by the soil (3–9 cm layer): 	Удержано почвой (слой 3–9 см): 
+moisture 	влажность 
+“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.	«Удержано почвой»: насколько выросла (или уменьшилась, с −) вода в слое почвы 3–9 см; остальное стекло, испарилось или ушло глубже.
+FARMER MODE	РЕЖИМ ФЕРМЕРА
+WATER IN THE SOIL	ВОДА В ПОЧВЕ
+layer 3–9 cm	слой 3–9 см
+ in 24 h	 за 24 ч
+Water in the soil	Вода в почве
+The water held now in the soil's 3–9 cm layer, estimated by Open-Meteo: 	Вода, удерживаемая сейчас в слое почвы 3–9 см, оценка Open-Meteo: 
+Type: 	Тип: 
+About the Play Protect warning: Google may say the app "may be harmful". It does so because the app does not come from Google Play, its developer is not registered with Google, and it can install its own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play Protect window appears, tap "More details" (if shown), then "Install without scanning" (or "Install anyway").	О предупреждении Play Protect: Google может сказать, что приложение «может быть вредным». Это потому, что приложение не из Google Play, его разработчик не зарегистрирован в Google и оно может устанавливать свои обновления (с github.com/viorelrb-alt/meteo-alarm-android). Больше приложение ничего не делает. Когда появится окно Play Protect, нажмите «Подробнее» (если есть), затем «Установить без проверки» (или «Всё равно установить»).
+Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks about once a week (or when you choose Check for updates), shows what is new, and only when you tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\nDo you allow the app to update this way? Without your consent the app does not look for updates and does not download anything; you can agree later from ☰ › Check for updates.	Meteo Alarm не из Google Play. Его новые версии публикуются на GitHub (github.com/viorelrb-alt/meteo-alarm-android), и приложение обновляется оттуда само: проверяет примерно раз в неделю (или когда вы выбираете Проверить обновления), показывает, что нового, и только когда вы нажмёте Обновить, загружает новую версию и открывает установщик телефона, где вы подтверждаете ещё раз.\n\nРазрешаете обновлять приложение так? Без вашего согласия приложение не ищет обновления и ничего не загружает; согласиться можно позже в ☰ › Проверить обновления.
+SNOW ICE	СНЕГ ГОЛОЛЁД
+THUNDERSTORM	ГРОЗА
+FOG	ТУМАН
+HIGH TEMPERATURE	ВЫСОКАЯ ТЕМПЕРАТУРА
+LOW TEMPERATURE	НИЗКАЯ ТЕМПЕРАТУРА
+COASTALEVENT	ПРИБРЕЖНОЕ ЯВЛЕНИЕ
+FOREST FIRE	ЛЕСНОЙ ПОЖАР
+AVALANCHES	ЛАВИНЫ
+FLOODING	НАВОДНЕНИЕ
+RAIN FLOOD	ПАВОДОК ОТ ДОЖДЯ
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Первый пункт ☰ переключает режим. В режиме фермера каждый час — одно широкое поле с погодой и дождём; когда телефон лежит, два поля одно под другим, прокручиваются вверх и вниз.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Касание показывает подробности часа: температуру, ветер и направление, влажность, дождь, почву.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Вода, удерживаемая сейчас в слое почвы 3–9 см, и её изменение за 24 часа; касание показывает часы с осадками. Оценка Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Участки: сохраните место, где стоите, или выберите его на карте и дайте название. Изменить (или карандаш) меняет название и булавку; Удалить участки удаляет их. Только в этом телефоне.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Один главный экран для населённого пункта и по одному для каждого участка: листайте вбок над температурой.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Касание названия участка: его поля, следующие 12 часов, статистика с PDF, сигналы, переименование, удаление.
+When ON, a notification for rain or strong wind forecast on the parcel.	Когда ВКЛ, уведомление при прогнозе дождя или сильного ветра на участке.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Данные о почве — оценки модели Open-Meteo, а не измерения; соседние участки могут показывать одинаковые значения.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: двигайте одним пальцем, масштабируйте двумя; нужен интернет.
+Choose the town: favourites, then counties (or states).	Выберите населённый пункт: избранное, затем уезды (или штаты).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Включает (заполнена) или выключает (пустая) автоопределение места; показывает погоду там, где вы.
+Shows the brightness bar on the left.	Показывает полосу яркости слева.
+Over the brightness bar: switches the theme.	Над полосой яркости: переключает тему.
+Light theme in the light, dark in the dark (needs a light sensor).	Светлая тема на свету, тёмная в темноте (нужен датчик освещённости).
+Looks once with the GPS.	Один раз ищет по GPS.
+Refreshes the weather.	Обновляет погоду.
+Slide up or down: brightness.	Проведите вверх или вниз: яркость.
+Slide up or down: text size.	Проведите вверх или вниз: размер текста.
+The Aa button on the pages shows the text-size bar.	Кнопка Aa на страницах показывает полосу размера текста.
+Shows where the wind blows, turned with the phone.	Показывает, куда дует ветер, поворачивается вместе с телефоном.
+A big dim clock while the phone charges at night.	Большие тусклые часы, когда телефон заряжается ночью.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Один ряд под линией: землетрясение, затем предупреждения по цвету. Касание показывает подробности.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Самое сильное землетрясение за последние 24 часа в вашей стране и как оно, вероятно, ощущалось (EMSC).
+The rows of boxes follow the finger.	Ряды полей следуют за пальцем.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Солнце / Луна, УФ, Пыльца, Влажность, Качество воздуха, Давление, Ветер, Видимость, Компас; касание показывает подробности.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Удерживайте главный экран › Виджеты › Meteo Alarm. Тяните края, чтобы сменить вид (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Удерживайте виджет › Настройки, или ☰ › Виджеты: населённый пункт, фон, цвета.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Каждые 15 минут при включённом экране, 30 при выключенном; MET Norway, когда Open-Meteo занят.
+Downloads the weather now.	Загружает погоду сейчас.
+Keeps the screen on while the app is open.	Не даёт экрану гаснуть, пока приложение открыто.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Английский, язык телефона и языки страны; в Румынии также «Другие языки».
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Землетрясения последних дней поблизости, со временем, местом, магнитудой и расстоянием.
+Rain or snow starting, new warnings and earthquakes, each only once.	Начало дождя или снега, новые предупреждения и землетрясения, каждое только раз.
+The settings of the widgets on the home screen.	Настройки виджетов на главном экране.
+What the app did, with the time; read, share or save it.	Что делало приложение, со временем; прочитать, поделиться или сохранить.
+Looks for a new version on GitHub, with your consent.	Ищет новую версию на GitHub, с вашего согласия.
+Sends the download link, e.g. on WhatsApp.	Отправляет ссылку для загрузки, напр. в WhatsApp.
+About the app, its data and what's new.	О приложении, его данных и новостях.
+Edit	Изменить
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Коснитесь участка, чтобы увидеть его на главном экране. Карандаш открывает его для изменения.
+temp: 	темп.: 
+Tap the parcel to edit: its name and the pin on the map.	Коснитесь участка для изменения: название и булавка на карте.

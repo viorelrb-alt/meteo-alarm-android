@@ -142,7 +142,7 @@ public final class FarmActivity extends Activity {
 		} else if (screen.equals("parcel")) {
 			if ("parcel".equals(entry)) finish();
 			else showList();
-		} else if (screen.equals("delete")) showList();
+		} else if (screen.equals("delete") || screen.equals("edit")) showList();
 		else super.onBackPressed();
 	}
 
@@ -339,30 +339,155 @@ public final class FarmActivity extends Activity {
 
 	// --- The list -----------------------------------------------------------------------------
 
+	private boolean land() {
+		return getResources().getConfiguration().orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE;
+	}
+
+	@Override
+	public void onConfigurationChanged(android.content.res.Configuration c) {
+		super.onConfigurationChanged(c);
+		// The list and the edit list change their layout with the phone's position (v2.80).
+		if (screen.equals("list")) showList();
+		else if (screen.equals("edit")) showEditList();
+	}
+
+	/** Views in rows of two in landscape (v2.80, Viorel), one under the other in portrait. */
+	private void addGrid(LinearLayout col, List<View> views, int top, int gap) {
+		if (!land()) {
+			for (int k = 0; k < views.size(); k++) col.addView(views.get(k), wide(k == 0 ? top : gap));
+			return;
+		}
+		for (int k = 0; k < views.size(); k += 2) col.addView(pair(views.get(k), k + 1 < views.size() ? views.get(k + 1) : null), wide(k == 0 ? top : gap));
+	}
+
+	/** The inner width of a parcel's card, in pixels: half the page in landscape. */
+	private int cardInner() {
+		int w = getResources().getDisplayMetrics().widthPixels - px(32);
+		if (land()) w = (w - px(12)) / 2;
+		return w - px(28);
+	}
+
+	/** The biggest text size (sp, 15 to 26) at which every line of LINES fits WIDTH pixels. */
+	private float fitSp(int width, String... lines) {
+		Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+		pt.setTypeface(Typeface.DEFAULT);
+		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+		for (float sp = 26; sp > 15; sp -= 0.5f) {
+			pt.setTextSize(sp * scale);
+			boolean ok = true;
+			for (String l : lines) if (pt.measureText(l) > width) ok = false;
+			if (ok) return sp;
+		}
+		return 15;
+	}
+
+	/** A small framed pencil (v2.80): drawn, so it looks the same on every phone. */
+	private View pencil(final Parcels.Parcel p) {
+		View v = new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float s = Math.min(getWidth(), getHeight()), m = s * 0.24f;
+				pt.setColor(ink);
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(dp * 1.5f);
+				c.drawRoundRect(new android.graphics.RectF(dp, dp, s - dp, s - dp), dp * 8, dp * 8, pt);
+				pt.setStyle(Paint.Style.FILL);
+				android.graphics.Path path = new android.graphics.Path();
+				float w = s * 0.09f, x0 = m, y0 = s - m, x1 = s - m, y1 = m;
+				float tx = x0 + (x1 - x0) * 0.2f, ty = y0 + (y1 - y0) * 0.2f;
+				float nx = w * 0.7071f, ny = w * 0.7071f;
+				path.moveTo(x0, y0);
+				path.lineTo(tx - nx, ty - ny);
+				path.lineTo(x1 - nx, y1 - ny);
+				path.lineTo(x1 + nx, y1 + ny);
+				path.lineTo(tx + nx, ty + ny);
+				path.close();
+				c.drawPath(path, pt);
+			}
+		};
+		v.setContentDescription(Tr.t("Edit", "Editare"));
+		v.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View x) {
+				edit(p);
+			}
+		});
+		return v;
+	}
+
+	/** Parcel P's name and position, on the map page (v2.80: "Edit"); back goes to the list. */
+	private void edit(Parcels.Parcel p) {
+		Log.i(this, "FERMIER", "editare parcelă: " + p.name);
+		showMap(p.id, p.name, p.lat, p.lon, 17, "list");
+	}
+
+	/**
+	 * The name and, in landscape, the coordinates on the same line when there is room (v2.80,
+	 * Viorel); else the coordinates under the name.
+	 */
+	private void nameLines(LinearLayout card, Parcels.Parcel p, String extra, View right) {
+		LinearLayout top = new LinearLayout(this);
+		top.setGravity(Gravity.TOP);
+		LinearLayout left = column();
+		TextView name = text(p.name, 19, true, ink);
+		String c = coords(p.lat, p.lon) + extra;
+		TextView co = text(c, 13, false, dim);
+		int room = cardInner() - (right != null ? px(40) : 0);
+		boolean same = land() && name.getPaint().measureText(p.name) + px(14) + co.getPaint().measureText(c) <= room;
+		if (same) {
+			LinearLayout row = new LinearLayout(this);
+			row.setGravity(Gravity.BOTTOM);
+			row.addView(name);
+			co.setPadding(px(14), 0, 0, px(2));
+			row.addView(co);
+			left.addView(row);
+		} else {
+			left.addView(name);
+			left.addView(co);
+		}
+		top.addView(left, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		if (right != null) {
+			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(px(30), px(30));
+			rl.leftMargin = px(10);
+			top.addView(right, rl);
+		}
+		card.addView(top);
+	}
+
 	private void showList() {
 		screen = "list";
 		LinearLayout col = pageOf(Tr.t("Parcels", "Parcele"));
 		TextView sub = text(Tr.t("Kept only on this phone, until you delete them. Their statistics are kept 28 days.",
 				"Salvate doar pe acest telefon, până le ștergi. Statistica lor se păstrează 28 de zile."), 14, false, dim);
 		col.addView(sub, wide(8));
-		col.addView(button("＋  " + Tr.t("Save the place here", "Salvează locul aici"), new View.OnClickListener() {
+		final List<Parcels.Parcel> all = Parcels.sorted(this);
+		List<View> buttons = new java.util.ArrayList<View>();
+		buttons.add(button("＋  " + Tr.t("Save the place here", "Salvează locul aici"), new View.OnClickListener() {
 			public void onClick(View v) {
 				saveHere();
 			}
-		}), wide(14));
-		col.addView(button(Tr.t("Choose on the map", "Alege pe hartă"), new View.OnClickListener() {
+		}));
+		buttons.add(button(Tr.t("Choose on the map", "Alege pe hartă"), new View.OnClickListener() {
 			public void onClick(View v) {
 				Cities.City c = Cities.City.fromKey(Fetcher.prefs(FarmActivity.this).getString("city", ""));
 				showMap(-1, "", c != null ? c.lat : 44.2058, c != null ? c.lon : 27.3306, 13, "list");
 			}
-		}), wide(10));
-		final List<Parcels.Parcel> all = Parcels.sorted(this);
-		if (!all.isEmpty()) col.addView(button(Tr.t("Delete parcels", "Șterge parcele"), new View.OnClickListener() {
-			public void onClick(View v) {
-				ticked.clear();
-				showDelete();
-			}
-		}), wide(10));
+		}));
+		if (!all.isEmpty()) {
+			buttons.add(button(Tr.t("Edit", "Editare"), new View.OnClickListener() {
+				public void onClick(View v) {
+					showEditList();
+				}
+			}));
+			buttons.add(button(Tr.t("Delete parcels", "Șterge parcele"), new View.OnClickListener() {
+				public void onClick(View v) {
+					ticked.clear();
+					showDelete();
+				}
+			}));
+		}
+		addGrid(col, buttons, 14, 10);
 		status = text("", 14, false, dim);
 		col.addView(status, wide(8));
 		if (all.isEmpty()) {
@@ -374,21 +499,30 @@ public final class FarmActivity extends Activity {
 		View sep = new View(this);
 		sep.setBackgroundColor(ink);
 		col.addView(sep, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2)));
-		col.addView(text(Tr.t("Tap a parcel to see it on the main screen.", "Atinge o parcelă ca s-o vezi pe ecranul principal."), 13, false, dim), wide(8));
+		col.addView(text(Tr.t("Tap a parcel to see it on the main screen. The pencil opens it for editing.",
+				"Atinge o parcelă ca s-o vezi pe ecranul principal. Creionul o deschide pentru editare."), 13, false, dim), wide(8));
+		List<View> cards = new java.util.ArrayList<View>();
 		for (final Parcels.Parcel p : all) {
 			LinearLayout card = column();
 			card.setBackground(frame(this.card, 14));
 			card.setPadding(px(14), px(10), px(14), px(12));
-			card.addView(text(p.name, 19, true, ink));
+			nameLines(card, p, p.alerts ? " · " + Tr.t("alerts on", "alerte pornite") : "", pencil(p));
 			long f = Parcels.fetched(this, p.id);
-			String line = coords(p.lat, p.lon) + (p.alerts ? " · " + Tr.t("alerts on", "alerte pornite") : "");
-			card.addView(text(line, 13, false, dim));
 			Farm.Data d = Parcels.data(this, p.id);
 			if (d != null) {
 				int i = d.nowIndex(Calendar.getInstance());
-				if (i >= 0) card.addView(text(deg(d.temp[i]) + " · " + Tr.t("wind ", "vânt ") + dir8(d.dir[i]) + " " + kmh(d.wind[i]) + " · "
-						+ Tr.t("rain ", "ploaie ") + pct(d.prob[i]) + " · " + Tr.t("soil ", "sol ") + soil(d.soilM[i]), 15, false, ink));
-				if (f > 0) card.addView(text(Tr.t("updated ", "actualizat ") + time(f), 12, false, dim));
+				if (i >= 0) {
+					// Two lines, as big as the card allows (v2.80, Viorel).
+					String l1 = Tr.t("temp: ", "temp: ") + deg(d.temp[i]) + " · " + Tr.t("wind ", "vânt ") + dir8(d.dir[i]) + " " + kmh(d.wind[i]);
+					String l2 = Tr.t("rain ", "ploaie ") + pct(d.prob[i]) + " · " + Tr.t("soil ", "sol ") + soil(d.soilM[i]);
+					float sp = fitSp(cardInner(), l1, l2) / TextSize.get(this);
+					TextView t1 = text(l1, sp, false, ink), t2 = text(l2, sp, false, ink);
+					t1.setSingleLine(true);
+					t2.setSingleLine(true);
+					card.addView(t1, wide(4));
+					card.addView(t2);
+				}
+				if (f > 0) card.addView(text(Tr.t("updated ", "actualizat ") + time(f), 12, false, dim), wide(2));
 			}
 			card.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
@@ -396,8 +530,30 @@ public final class FarmActivity extends Activity {
 					select(p.id);
 				}
 			});
-			col.addView(card, wide(12));
+			cards.add(card);
 		}
+		addGrid(col, cards, 12, 12);
+	}
+
+	/** "Edit" (v2.80): the parcels; a tap opens one for editing its name and its place. */
+	private void showEditList() {
+		screen = "edit";
+		LinearLayout col = pageOf(Tr.t("Edit", "Editare"));
+		col.addView(text(Tr.t("Tap the parcel to edit: its name and the pin on the map.", "Atinge parcela de editat: numele și acul pe hartă."), 14, false, dim), wide(8));
+		List<View> cards = new java.util.ArrayList<View>();
+		for (final Parcels.Parcel p : Parcels.sorted(this)) {
+			LinearLayout card = column();
+			card.setBackground(frame(this.card, 14));
+			card.setPadding(px(14), px(10), px(14), px(12));
+			nameLines(card, p, "", null);
+			card.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					edit(p);
+				}
+			});
+			cards.add(card);
+		}
+		addGrid(col, cards, 12, 12);
 	}
 
 	// --- The phone's position -------------------------------------------------------------------
@@ -528,7 +684,7 @@ public final class FarmActivity extends Activity {
 		root.removeAllViews();
 		LinearLayout col = column();
 		col.setPadding(px(12), px(10), px(12), px(10));
-		col.addView(header(id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Move the pin", "Mută acul")));
+		col.addView(header(id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Edit", "Editare")));
 		final EditText nameIn = new EditText(this);
 		nameIn.setSingleLine(true);
 		nameIn.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
@@ -594,16 +750,21 @@ public final class FarmActivity extends Activity {
 					p = new Parcels.Parcel();
 					p.id = System.currentTimeMillis();
 				}
+				boolean moved = id < 0 || Math.abs(p.lat - map.lat()) > 1e-6 || Math.abs(p.lon - map.lon()) > 1e-6;
 				p.name = n;
 				p.lat = map.lat();
 				p.lon = map.lon();
 				Parcels.put(FarmActivity.this, p);
-				Log.i(FarmActivity.this, "FERMIER", (id >= 0 ? "parcelă mutată: " : "parcelă salvată: ") + n + " " + coords(p.lat, p.lon));
+				Log.i(FarmActivity.this, "FERMIER", (id >= 0 ? (moved ? "parcelă editată și mutată: " : "parcelă editată: ") : "parcelă salvată: ") + n + " " + coords(p.lat, p.lon));
 				stopLoc();
 				// Moved: the old data were for another place (the main screen downloads them again too).
-				if (id >= 0) Fetcher.prefs(FarmActivity.this).edit().putLong("pf_" + p.id, 0).putLong("pmf_" + p.id, 0).apply();
+				if (id >= 0 && moved) Fetcher.prefs(FarmActivity.this).edit().putLong("pf_" + p.id, 0).putLong("pmf_" + p.id, 0).apply();
 				if (mapBack.equals("finish")) finish();
-				else if (id >= 0) showParcel(p.id);
+				else if (id >= 0 && mapBack.equals("parcel")) showParcel(p.id);
+				else if (id >= 0) {
+					toast(Tr.t("Saved: ", "Salvată: ") + n);
+					showList();
+				}
 				else {
 					toast(Tr.t("Saved: ", "Salvată: ") + n);
 					showList();

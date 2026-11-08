@@ -595,3 +595,45 @@ Type: 	Τύπος:
 On a phone each hour is one wide box, its weather on the left and its rain on the right; held upright, slide the boxes sideways, and on its side two boxes show one under the other: slide them up and down. Held upright, the icon sits in the upper half of the space above the boxes and the temperature in the lower half.	Στο τηλέφωνο κάθε ώρα είναι ένα φαρδύ κουτί, ο καιρός αριστερά και η βροχή δεξιά· με το τηλέφωνο όρθιο σύρε τα κουτιά στο πλάι, και οριζόντια δύο κουτιά είναι το ένα κάτω από το άλλο: σύρε τα πάνω και κάτω. Με το τηλέφωνο όρθιο, το εικονίδιο είναι στο πάνω μισό του χώρου πάνω από τα κουτιά και η θερμοκρασία στο κάτω.
 On a wide box the same window also shows, under “Rain”, the hour's rain details.	Σε φαρδύ κουτί το ίδιο παράθυρο δείχνει επίσης, κάτω από «Βροχή», τις λεπτομέρειες βροχής της ώρας.
 In farmer mode the “WATER IN THE SOIL” box in the bottom row, between Sun / Moon and UV index, shows the water held now in the soil's 3–9 cm layer at the place shown (town or parcel), in millimetres, and under it how much it changed in 24 hours. A tap explains it and shows the precipitation of the last 24 hours: only the hours that had precipitation, with the millimetres of each and how much of it the soil kept. An Open-Meteo estimate, not a measurement.	Στη λειτουργία αγρότη το κουτί «ΝΕΡΟ ΣΤΟ ΕΔΑΦΟΣ» στην κάτω σειρά, ανάμεσα σε Ήλιος / Σελήνη και Δείκτη UV, δείχνει το νερό που συγκρατεί τώρα το στρώμα εδάφους 3–9 cm στο εμφανιζόμενο μέρος (πόλη ή αγροτεμάχιο), σε χιλιοστά, και από κάτω πόσο άλλαξε σε 24 ώρες. Ένα άγγιγμα το εξηγεί και δείχνει τον υετό των τελευταίων 24 ωρών: μόνο τις ώρες με υετό, με τα χιλιοστά καθεμιάς και πόσο κράτησε το έδαφος. Εκτίμηση Open-Meteo, όχι μέτρηση.
+The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.	Το πρώτο στοιχείο του ☰ αλλάζει λειτουργία. Στη λειτουργία αγρότη κάθε ώρα είναι ένα φαρδύ κουτί με καιρό και βροχή· οριζόντια, δύο κουτιά το ένα κάτω από το άλλο, που σύρονται πάνω και κάτω.
+A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.	Ένα άγγιγμα δείχνει τις λεπτομέρειες της ώρας: θερμοκρασία, άνεμο και κατεύθυνση, υγρασία, βροχή, έδαφος.
+The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.	Το νερό που συγκρατεί τώρα το στρώμα εδάφους 3–9 cm και η αλλαγή του σε 24 ώρες· ένα άγγιγμα δείχνει τις ώρες με υετό. Εκτίμηση Open-Meteo.
+☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.	☰ › Αγροτεμάχια: αποθήκευσε το σημείο όπου στέκεσαι ή διάλεξέ το στον χάρτη και δώσε του όνομα. Επεξεργασία (ή το μολύβι) αλλάζει όνομα και πινέζα· Διαγραφή αγροτεμαχίων τα αφαιρεί. Μόνο σε αυτό το τηλέφωνο.
+One main screen for the town and one per parcel: slide sideways over the temperature.	Μία κύρια οθόνη για την πόλη και μία για κάθε αγροτεμάχιο: σύρε στο πλάι πάνω από τη θερμοκρασία.
+A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.	Άγγιγμα στο όνομα του αγροτεμαχίου: τα κουτιά του, οι επόμενες 12 ώρες, στατιστικά με PDF, ειδοποιήσεις, μετονομασία, διαγραφή.
+When ON, a notification for rain or strong wind forecast on the parcel.	Όταν είναι ΕΝΕΡΓΕΣ, ειδοποίηση όταν προβλέπεται βροχή ή δυνατός άνεμος στο αγροτεμάχιο.
+Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Τα δεδομένα εδάφους είναι εκτιμήσεις του μοντέλου Open-Meteo, όχι μετρήσεις· κοντινά αγροτεμάχια μπορεί να έχουν τις ίδιες τιμές.
+OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: μετακίνησέ τον με ένα δάχτυλο, μεγέθυνε με δύο· χρειάζεται ίντερνετ.
+Choose the town: favourites, then counties (or states).	Διάλεξε πόλη: αγαπημένες, μετά νομούς (ή πολιτείες).
+Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Ενεργοποιεί (γεμάτο) ή απενεργοποιεί (άδειο) τον αυτόματο εντοπισμό· δείχνει τον καιρό εκεί που είσαι.
+Shows the brightness bar on the left.	Δείχνει τη μπάρα φωτεινότητας αριστερά.
+Over the brightness bar: switches the theme.	Πάνω από τη μπάρα φωτεινότητας: αλλάζει το θέμα.
+Light theme in the light, dark in the dark (needs a light sensor).	Φωτεινό θέμα στο φως, σκοτεινό στο σκοτάδι (χρειάζεται αισθητήρα φωτός).
+Looks once with the GPS.	Ψάχνει μία φορά με το GPS.
+Refreshes the weather.	Ανανεώνει τον καιρό.
+Slide up or down: brightness.	Σύρε πάνω ή κάτω: φωτεινότητα.
+Slide up or down: text size.	Σύρε πάνω ή κάτω: μέγεθος κειμένου.
+The Aa button on the pages shows the text-size bar.	Το κουμπί Aa στις σελίδες δείχνει τη μπάρα μεγέθους κειμένου.
+Shows where the wind blows, turned with the phone.	Δείχνει πού φυσά ο άνεμος, γυρίζοντας με το τηλέφωνο.
+A big dim clock while the phone charges at night.	Ένα μεγάλο αμυδρό ρολόι όταν το τηλέφωνο φορτίζει τη νύχτα.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Μία σειρά κάτω από τη γραμμή: ο σεισμός, μετά οι προειδοποιήσεις ανά χρώμα. Ένα άγγιγμα δείχνει τις λεπτομέρειες.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Ο ισχυρότερος σεισμός των τελευταίων 24 ωρών στη χώρα σου και πώς πιθανώς έγινε αισθητός (EMSC).
+The rows of boxes follow the finger.	Οι σειρές κουτιών ακολουθούν το δάχτυλο.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Ήλιος / Σελήνη, UV, Γύρη, Υγρασία, Ποιότητα αέρα, Πίεση, Άνεμος, Ορατότητα, Πυξίδα· ένα άγγιγμα δείχνει τις λεπτομέρειες.
+Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Κράτησε πατημένη την αρχική οθόνη › Γραφικά στοιχεία › Meteo Alarm. Σύρε τις άκρες για να αλλάξεις μορφή (2x2, 4x1, 4x2, 4x3).
+Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Κράτησε πατημένο το γραφικό στοιχείο › Ρυθμίσεις, ή ☰ › Γραφικά στοιχεία: πόλη, φόντο, χρώματα.
+Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Κάθε 15 λεπτά με την οθόνη αναμμένη, 30 με σβηστή· MET Norway όταν το Open-Meteo είναι απασχολημένο.
+Downloads the weather now.	Κατεβάζει τον καιρό τώρα.
+Keeps the screen on while the app is open.	Κρατά την οθόνη αναμμένη όσο η εφαρμογή είναι ανοιχτή.
+English, the phone's language and the country's languages; in Romania also “Other languages”.	Αγγλικά, η γλώσσα του τηλεφώνου και οι γλώσσες της χώρας· στη Ρουμανία και «Άλλες γλώσσες».
+The earthquakes of the last days near you, with time, place, magnitude and distance.	Οι σεισμοί των τελευταίων ημερών κοντά σου, με ώρα, τόπο, μέγεθος και απόσταση.
+Rain or snow starting, new warnings and earthquakes, each only once.	Βροχή ή χιόνι που αρχίζει, νέες προειδοποιήσεις και σεισμοί, το καθένα μόνο μία φορά.
+The settings of the widgets on the home screen.	Οι ρυθμίσεις των γραφικών στοιχείων της αρχικής οθόνης.
+What the app did, with the time; read, share or save it.	Τι έκανε η εφαρμογή, με την ώρα· διάβασέ το, μοιράσου το ή αποθήκευσέ το.
+Looks for a new version on GitHub, with your consent.	Ψάχνει νέα έκδοση στο GitHub, με τη συγκατάθεσή σου.
+Sends the download link, e.g. on WhatsApp.	Στέλνει τον σύνδεσμο λήψης, π.χ. στο WhatsApp.
+About the app, its data and what's new.	Σχετικά με την εφαρμογή, τα δεδομένα της και τα νέα.
+Edit	Επεξεργασία
+Tap a parcel to see it on the main screen. The pencil opens it for editing.	Άγγιξε ένα αγροτεμάχιο για να το δεις στην κύρια οθόνη. Το μολύβι το ανοίγει για επεξεργασία.
+temp: 	θερμ.: 
+Tap the parcel to edit: its name and the pin on the map.	Άγγιξε το αγροτεμάχιο για επεξεργασία: το όνομα και την πινέζα στον χάρτη.

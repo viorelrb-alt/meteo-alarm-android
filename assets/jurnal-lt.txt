@@ -1,77 +1,30 @@
-v2.70 · 2026 m. lapkričio 7 d.
-- Ūkininko režimas: kiekviena valanda yra vienas platus langelis (orai + lietus) su bendru langu palietus; gulint du langeliai vienas po kitu, slenkami aukštyn ir žemyn. Didesnė viršutinė dalis: piktograma viršuje, temperatūra 10 % didesnė apačioje. Langelis „KRITULIAI 24“ tampa „VANDUO DIRVOJE“: vanduo 3–9 cm sluoksnyje ir jo pokytis per 24 valandas.
+1 versija
+- Orai dabar, artimiausios valandos, krituliai 12 valandų ir 5 dienoms.
+- Langeliai: Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas, Žemės drebėjimas.
+- Įspėjimai pagal spalvų kodą (MeteoAlarm, apie 38 šalis).
+- Automatinė vieta, mėgstamos, kitos šalys.
+- Šviesi, tamsi ir automatinė tema; ryškumas nuo ekrano krašto; naktinis laikrodis.
+- Stačias, gulsčias, planšetė.
+- Valdikliai 2x2, 4x1, 4x2, su nustatymais.
+- Atsinaujina pati; MET Norway kaip atsarginė prognozė.
+- Atnaujinimai iš programėlės, Pagalba, Žurnalas.
 
-v2.64 · 2026 m. lapkričio 7 d.
-- Ūkininko režimas, telefonas gulsčias: langelių informacija atsidaro dideliame lange dešinėje, visada toje pačioje vietoje ir to paties dydžio.
+2 versija
+- Visos oficialiosios ES kalbos ir ukrainiečių.
+- Puslapis Žemės drebėjimai.
+- Pranešimai su tavo sutikimu: lietus ar sniegas, įspėjimai, žemės drebėjimai.
 
-v2.63 · 2026 m. lapkričio 7 d.
-- „ŪKININKO REŽIMAS“ dabar rodoma po viršutine linija, kairėje po ☰ mygtuku, o ne apačioje.
+Dabartinė versija: v2.80 · 8.11.2026
+Dizaino / struktūros patobulinimai.
+- Laukai: mygtukas Redaguoti ir pieštukas ant kiekvieno lauko, pavadinimui ir vietai žemėlapyje.
+- Naujos kalbos: turkų, rusų, serbų.
 
-v2.62 · 2026 m. lapkričio 7 d.
-- Ūkininko režimas: langas „KRITULIAI 24“ taip pat rodo, kiek vandens sulaikė dirvožemis (3–9 cm sluoksnis), iš viso ir kas valandą.
-
-v2.61 · 2026 m. lapkričio 7 d.
-- Ūkininko režimas: langelis „KRITULIAI 24“ dabar yra apatinėje eilutėje, tarp Saulė / Mėnulis ir UV indekso; palietus jis paaiškinamas ir rodomos valandos su krituliais ir jų milimetrai.
-- Pataisyta: ūkininko režime langeliai Žiedadulkės ir Slėgis rodė dirvožemio temperatūrą.
-- Pataisyta: paskutinių 24 valandų krituliai atsisiunčiami patys, kai jų trūksta; „Kraunama“ nebeužlenda po ŪKININKAS.
-
-v2.60 · 2026 m. lapkričio 7 d.
-- Ūkininko režimas: pagrindinis ekranas gyvenvietei ir po vieną kiekvienam laukui; tarp jų pereinama braukiant per temperatūrą ir piktogramą, o taškai po linija rodo, kur esate.
-- Laukas pagrindiniame ekrane rodo savo orus ir apačioje savo langelius (oras, vėjas, kryptis, lietus, drėgmė, dirvožemis, dirvožemio temperatūra), be žiedadulkių ir žemės drebėjimų; palietus pavadinimą rodomas visas pavadinimas ir koordinatės. Valdikliai ir pranešimai lieka prie gyvenvietės.
-- Langelis „lietus 24 val.“ šalia apatinių mygtukų; palietus rodomos valandos su lietumi.
-- ☰ › Laukai: trynimas pažymint ir patvirtinant; sąrašas pagal pavadinimus ir numerius.
-- Rumunijoje meniu Kalba › Kitos kalbos siūlo mažumų kalbas: vengrų, vokiečių, ukrainiečių ir kitas.
-
-v2.50 · 2026 m. lapkričio 7 d.
-- Ūkininko režimas: pirmasis ☰ punktas perjungia ūkininko ir įprastą režimą. Ūkininko režime palietus valandos langelį rodoma temperatūra, dienos žemiausia ir aukščiausia, vėjas su gūsiais ir kryptimi (ir kada jis pasisuks), oro drėgmė, lietaus tikimybė, dirvos drėgmė ir dirvos temperatūra; kritulių grafiką ir penkias dienas pakeičia valandiniai lietaus langeliai su išsamia informacija palietus.
-- ☰ › Laukai: išsaugokite vietą, kur stovite (GPS), patikslinkite ją OpenStreetMap žemėlapyje ir suteikite pavadinimą; kiekvienas laukas turi langelius vėjui, krypčiai, lietui, oro ir dirvos drėgmei, dirvos ir oro temperatūrai, lietaus ir stipraus vėjo įspėjimus bei statistiką už laikotarpį per paskutines 28 dienas, kurią galima išsaugoti PDF aplanke Atsisiuntimai.
-- Dirvos duomenys yra Open-Meteo įverčiai; jei Open-Meteo neatsako, programėlė juos atsisiunčia vėliau ir siunčia pranešimą.
-- JAV: laikrodis ir valandos rodo pasirinkto miesto vietos laiką.
-- Pranešimai tik apie pasirinktą miestą (bandomajame režime) arba vietą, kur yra telefonas: nebėra įspėjimų iš JAV, kai programėlė rodo miestą Europoje.
-
-v2.40 · 2026 m. lapkričio 4 d.
-- Jungtinės Valstijos: ☰ › Tornadoes, puslapis kaip Žemės drebėjimai: perspėjimai apie tornadus tavo vietovei ir valstijai, per pastarąsias 2 dienas netoliese praneštų tornadų sąrašas, jų skaičius visoje šalyje ir ką daryti.
-- Jungtinės Valstijos: nėra Žiedadulkių langelio (ten nėra duomenų); oro kokybė pagal amerikietišką US AQI indeksą.
-
-v2.30 · 2026 m. lapkričio 4 d.
-- Elementai programai naudoti Jungtinėse Valstijose.
-- ☰ › Temperatūra °C/°F: išjungiant °F programa klausia, ar pereiti prie metrinės sistemos; su °F slėgis rodomas inHg, atstumai – myliomis.
-
-v2.22 · 2026 m. lapkričio 4 d.
-- Samsung telefonai su Auto Blocker: išjunkite jį prieš diegdami ar atnaujindami programą (Nustatymai › Sauga ir privatumas › Auto Blocker), kitaip telefonas atsisakys diegti; vėliau galite vėl įjungti.
-
-v2.21 · 2026 m. lapkričio 4 d.
-- Planšetė: meniu ☰ tik tokio pločio kaip ilgiausia jo eilutė ir 5 % mažesnis.
-- Puslapiai: pavadinimas lieka vienoje eilutėje ir didėja su teksto dydžiu tik iki mygtukų dešinėje.
-- Teksto dydžio juosta: kai kuriuose telefonuose (A70) ji užsidarydavo palietus; dabar ji priima pirštą visame savo stulpelyje.
-- Apskritimas virš juostos rodo tik reikšmę, be %.
-
-v2.20 · 2026 m. lapkričio 4 d.
-- Valdiklis 4x2 Samsung su One UI 9 (A54): esant 2 eilutėms, nebėra rodomas kaip 4x3; 4x3 tik nuo 3 eilučių.
-- ☰ › Valdikliai: kai jų keli, valdiklis pasirenkamas nustatymų lango viršuje, o nustatymai apačioje priklauso pasirinktam.
-- Planšetė: meniu ☰ 10 % mažesnis.
-- Žurnalas: mygtukų tekstas lieka vienoje eilutėje.
-- Be interneto programa laukia, kol grįš tinklas, užuot bandžiusi kas 1–2 minutes.
-
-v2.12 · 2026 m. lapkričio 4 d.
-- Pagalboje, Žemės drebėjimuose, Apie ir Kas naujo: mygtukas Aa šalia mygtukų dešinėje parodo teksto dydžio juostą kairėje ekrano pusėje, virš puslapio, kaip ryškumo juostą. Siaura juosta viršuje dešinėje pašalinta.
-
-v2.11 · 2026 m. lapkričio 4 d.
-- Teksto dydžio juosta, atveriama nuo dešiniojo krašto, dabar atsiranda kairėje, kaip ryškumo juosta.
-
-v2.10 · 2026 m. lapkričio 4 d.
-- Naujas valdiklis 4x2 · dienos: po dabartiniais orais kitos 5 dienos (diena, piktograma, aukščiausia / žemiausia). Padidinti iki 3 eilių ar daugiau, abu 4x2 valdikliai (valandos ir dienos) tampa nauju 4x3, su kitomis valandomis ir dienomis.
-- Teksto dydis: Pagalboje, Žemės drebėjimuose, Apie ir Kas naujo juosta dešinėje, po uždarymo mygtuku, padidina ar sumažina raides (80–180 %); pagrindiniame ekrane tą pačią juostą parodo braukimas aukštyn ar žemyn prie dešiniojo krašto. Dydis išsaugomas įrenginyje ir galioja ir meniu ☰.
-- Planšetė: meniu ☰ ir kiti meniu yra 30 % didesni.
-- ☰ › Siųsti programėlę: išsiunčia atsisiuntimo nuorodą WhatsApp žinute (arba kita programėle), kad kas nors kitas galėtų įdiegti Meteo Alarm.
-- Valdiklių sąrašas rodo pavadinimus telefono kalba.
-
-v2.00 · 2026 m. lapkričio 4 d.
-- Kalba: programėlė dabar kalba visomis oficialiosiomis ES kalbomis ir ukrainiečių kalba (ir Pagalba). Pirmą kartą paleidus ji paima telefono kalbą (anglų, jei programėlė jos neturi); vėliau pasirinktą ☰ › Kalba. Sąraše rodoma tik anglų kalba, telefono kalba ir šalies, kurioje yra telefonas, oficialiosios kalbos.
-- ☰ › Žemės drebėjimai: puslapis su 3 ar didesnio magnitudo žemės drebėjimais per paskutines 7 dienas jūsų šalyje, tada per paskutines 48 valandas ES, Ukrainoje ir Moldovoje (laikas, vieta, magnitudas, gylis, atstumas).
-- Pranešimai (tik su jūsų sutikimu): prasidedantis lietus ar sniegas, nauji orų įspėjimai jūsų miestui, 3 ar didesnio magnitudo žemės drebėjimai jūsų šalyje. Kiekvienas įvykis tik kartą. Įjungti ar išjungti ☰ › Pranešimai.
-- Vietos ir pranešimų prašoma su draugišku paaiškinimu pirmą kartą paleidus; jei atsisakote, programėlė vėl klausia tik po atnaujinimo. Kai telefonas neberodo savo klausimo, mygtukas atidaro jo nustatymus.
-- Pirmą kartą paleidus miestas, kurį rado vieta, tampa rodomu ir pridedamas prie mėgstamiausių.
-- Telefonai be kompaso ar šviesos jutiklio: susiję mygtukai ir langeliai išjungiami; žurnalas kiekvieną kartą paleidus išvardija jutiklius.
-- Valdikliai: 4x1 juosta dabar veikia ir planšetėse (skaičiuojamos pradžios ekrano eilės, ne fiksuoti dydžiai).
-- Pataisyta: paleidus po atnaujinimo orai buvo atsiunčiami du kartus; žurnalas dabar įrašo pasirinktą kalbą ir kiekvieną pasirinktą miestą, o valdiklio nustatymų atidarymą tik kartą.
+────────
+Naujos funkcijos nuo v2.10
+- Ūkininko režimas: valandiniai langeliai su orais ir lietumi, išsamiau palietus ir langelis Vanduo dirvoje.
+- Laukai: išsaugoti GPS arba žemėlapyje, pagrindinis ekranas kiekvienam, 28 dienų statistika su PDF, lietaus ir vėjo įspėjimai.
+- Valdikliai 4x2 dienos ir 4x3.
+- Teksto dydis (Aa).
+- ☰ › Siųsti programėlę.
+- JAV: NWS įspėjimai, tornadai, °F, vietos laikas.
+- Kitos kalbos: Rumunijos mažumų kalbos.
