@@ -9,6 +9,51 @@ public final class Release {
 
 	public String version = "", apkUrl = "", notes = "", page = "";
 	public long size = -1;
+	/** v3.03: where it was found: 0 GitHub Releases, 1 the second GitHub server, 2 Google Drive. */
+	public int src;
+
+	/**
+	 * v3.03 (Viorel 2026-11-08): the second GitHub server (raw.githubusercontent.com) holds
+	 * dist/latest.txt and the APK in dist/ of the main branch.
+	 */
+	public static final String RAW = "https://raw.githubusercontent.com/" + REPO + "/main/dist/";
+	public static final String RAW_LATEST = RAW + "latest.txt";
+
+	/**
+	 * v3.03: the copy on Google Drive, folder "Meteo Alarm Android - actualizari": the document
+	 * "versiune" (shared with anyone who has the link). Its link is never shown to the user.
+	 */
+	public static final String DRIVE_DOC = "https://docs.google.com/document/d/1_qVjT-WcfTu7k_FomGoI42kVFk6WxCAoxE2E7hX-sj8/export?format=txt";
+
+	/** The "versiune=" / "apk=" / "marime=" text of source SRC (1 or 2). */
+	public static Release fromText(String text, int src) {
+		Release r = new Release();
+		r.src = src;
+		String apk = "";
+		for (String line : text.replace("\uFEFF", "").split("\n")) {
+			int eq = line.indexOf('=');
+			if (eq <= 0) continue;
+			String k = line.substring(0, eq).trim().toLowerCase(), v = line.substring(eq + 1).trim();
+			if (k.equals("versiune") || k.equals("version")) r.version = v.replaceFirst("^[vV]", "");
+			else if (k.equals("apk")) apk = v;
+			else if (k.equals("marime") || k.equals("size")) {
+				try {
+					r.size = Long.parseLong(v);
+				} catch (NumberFormatException e) {
+					r.size = -1;
+				}
+			}
+		}
+		if (!r.version.matches("[0-9]+(\\.[0-9]+)*")) throw new IllegalArgumentException("source " + src + ": no version");
+		if (src == 1) {
+			if (!apk.matches("[A-Za-z0-9._-]+\\.apk")) throw new IllegalArgumentException("source 1: no apk");
+			r.apkUrl = RAW + apk;
+		} else {
+			if (!apk.matches("[A-Za-z0-9_-]{10,}")) throw new IllegalArgumentException("drive: no apk");
+			r.apkUrl = "https://drive.usercontent.google.com/download?id=" + apk + "&export=download&confirm=t";
+		}
+		return r;
+	}
 
 	/** The release JSON of the GitHub API: tag "v0.14", the first .apk asset, the notes. */
 	@SuppressWarnings("unchecked")

@@ -1,4 +1,4 @@
-Trenutna različica: v.3.02 · 8.11.2026
+Trenutna različica: v.3.03 · 8.11.2026
 Izboljšave videza / zgradbe.
 - Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
 - Posodobitve: najprej se preveri povezava, že prenesena različica se takoj namesti, do 5 poskusov, ko GitHub ne odgovori, in prikaže se razlog.

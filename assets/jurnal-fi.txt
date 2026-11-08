@@ -1,4 +1,4 @@
-Nykyinen versio: v.3.02 · 8.11.2026
+Nykyinen versio: v.3.03 · 8.11.2026
 Ulkoasun / rakenteen parannuksia.
 - Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
 - Päivitykset: yhteys tarkistetaan ensin, jo ladattu versio asennetaan heti, enintään 5 yritystä, kun GitHub ei vastaa, ja syy näytetään.

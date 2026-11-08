@@ -154,27 +154,28 @@ final class Updater {
 				Release r = null;
 				String err = null;
 				Exception ex = null;
-				// v3.02 (Viorel 2026-11-08: GitHub answered 504 and the window waited almost a minute):
-				// 2 short tries of the GitHub API, then the github.com page of the newest release.
-				for (int k = 1; k <= 3 && r == null; k++) {
-					try {
-						r = k < 3 ? Release.parse(get(Release.LATEST)) : Release.fromTag(webTag());
-						err = null;
-						ex = null;
-						if (k == 3) Log.i(a, "UPDATE", "versiunea găsită pe pagina github.com (API-ul nu a răspuns)");
-					} catch (Exception e) {
-						ex = e;
-						err = String.valueOf(e.getMessage());
-						Log.i(a, "UPDATE", "verificarea pe GitHub, încercarea " + k + "/3" + (k == 3 ? " (pagina github.com)" : "") + ": " + Fetcher.reason(e, false));
-						if (NetJob.kind(a) == 0 || k == 3) break;
-						final String m = Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + (k + 1) + "/3)…";
+				// v3.03 (Viorel 2026-11-08): one try on each: GitHub, the second GitHub server, Google Drive.
+				for (int k = 0; k < 3 && r == null; k++) {
+					if (k > 0) {
+						if (NetJob.kind(a) == 0) break;
+						final String m = k == 1 ? Tr.t("GitHub did not answer, trying the second server…", "GitHub nu a răspuns, încerc serverul secundar…")
+								: Tr.t("GitHub did not answer, looking on Google Drive…", "GitHub nu a răspuns, caut pe Google Drive…");
 						checkMsg = m;
 						if (manual) handler.post(new Runnable() {
 							public void run() {
 								if (busy) dots(m);
 							}
 						});
-						sleep(1500);
+					}
+					try {
+						r = source(k);
+						err = null;
+						ex = null;
+						Log.i(a, "UPDATE", SRC[k] + ": v" + r.version + (r.size > 0 ? ", " + r.size + " octeți" : ""));
+					} catch (Exception e) {
+						ex = e;
+						err = String.valueOf(e.getMessage());
+						Log.i(a, "UPDATE", "verificarea pe " + SRC[k] + ": " + err + " (" + Fetcher.reason(e, false) + ")");
 					}
 				}
 				final Release rr = r;
@@ -189,6 +190,19 @@ final class Updater {
 				});
 			}
 		}).start();
+	}
+
+	/** The names of the sources, for the log. */
+	private static final String[] SRC = { "GitHub", "serverul secundar GitHub", "Google Drive" };
+
+	/** The newest version as source K tells it (0 GitHub Releases, 1 second GitHub server, 2 Google Drive). */
+	private static Release source(int k) throws Exception {
+		if (k == 0) {
+			Release r = Release.parse(get(Release.LATEST));
+			r.src = 0;
+			return r;
+		}
+		return Release.fromText(get(k == 1 ? Release.RAW_LATEST : Release.DRIVE_DOC), k);
 	}
 
 	/** The text of the window while looking (null when not looking). */
@@ -248,23 +262,6 @@ final class Updater {
 		}
 	}
 
-	/** The tag of the newest release from github.com/…/releases/latest, which sends to …/tag/vX. */
-	private static String webTag() throws Exception {
-		HttpURLConnection c = (HttpURLConnection) new URL("https://github.com/" + Release.REPO + "/releases/latest").openConnection();
-		c.setConnectTimeout(8000);
-		c.setReadTimeout(12000);
-		c.setInstanceFollowRedirects(false);
-		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid");
-		try {
-			int code = c.getResponseCode();
-			String loc = c.getHeaderField("Location");
-			if (code / 100 != 3 || loc == null || loc.indexOf("/tag/") < 0) throw new Exception("HTTP " + code);
-			return loc.substring(loc.lastIndexOf("/tag/") + 5);
-		} finally {
-			c.disconnect();
-		}
-	}
-
 	private void checked(final Release r, String err, Exception ex, boolean manual) {
 		stopDots();
 		String cur = installed();
@@ -276,8 +273,7 @@ final class Updater {
 			if (err != null && err.contains("404")) sheet.show(t, Tr.t("No version published yet.", "Încă nu e publicată nicio versiune."), null, null, Tr.t("Close", "Închide"));
 			else {
 				// v3.02 (Viorel): always the reason, and a button to try again.
-				String m = NetJob.kind(a) == 0 ? noNet() : busyServer(err) ? why(null, err)
-						: Tr.t("Could not reach GitHub: ", "Nu am putut ajunge la GitHub: ") + Fetcher.reason(ex, !Tr.ro()) + Tr.t(". Try again in a few minutes.", ". Încearcă din nou peste câteva minute.");
+				String m = NetJob.kind(a) == 0 ? noNet() : Tr.t("None of the update servers answered (GitHub, the second server, Google Drive). Try again in a few minutes.", "Niciun server de actualizare nu a răspuns (GitHub, serverul secundar, Google Drive). Încearcă din nou peste câteva minute.");
 				Log.i(a, "UPDATE", "afișat: " + m);
 				sheet.show(t, m, Tr.t("Try again", "Încearcă din nou"), new Runnable() {
 					public void run() {
@@ -327,6 +323,7 @@ final class Updater {
 			return Tr.t("GitHub is not answering now (error ", "GitHub nu răspunde acum (eroare ") + code
 					+ Tr.t("). Try again in a few minutes.", "). Încearcă din nou peste câteva minute.");
 		}
+		if (err != null && err.startsWith("drive")) return Tr.t("The update could not be downloaded from any server. Try again in a few minutes.", "Actualizarea nu a putut fi descărcată de pe niciun server. Încearcă din nou peste câteva minute.");
 		if (err != null && err.startsWith("size ")) return Tr.t("The downloaded file is incomplete. Try again.", "Fișierul descărcat e incomplet. Încearcă din nou.");
 		return Tr.t("The download failed: ", "Descărcarea a eșuat: ") + Fetcher.reason(e, !Tr.ro()) + ".";
 	}
@@ -370,13 +367,32 @@ final class Updater {
 						Log.e(a, "UPDATE", "descărcarea, încercarea " + k + "/" + TRIES + ": " + err + " (" + Fetcher.reason(e, false) + ")");
 						boolean again = k < TRIES && (busyServer(err) || e instanceof java.io.IOException || err.startsWith("size ")) && NetJob.kind(a) != 0;
 						if (!again) break;
+						// v3.03 (Viorel): after a failed try, the next source that has the same version.
+						boolean moved = false;
+						for (int n = r.src + 1; n < 3 && !moved; n++) {
+							try {
+								Release d = source(n);
+								if (d.version.equals(r.version) && d.apkUrl.length() > 0) {
+									r.apkUrl = d.apkUrl;
+									if (d.size > 0) r.size = d.size;
+									r.src = n;
+									moved = true;
+									Log.i(a, "UPDATE", "descarc de pe " + SRC[n]);
+								} else Log.i(a, "UPDATE", SRC[n] + " are v" + d.version + ", nu v" + r.version);
+							} catch (Exception de) {
+								Log.i(a, "UPDATE", SRC[n] + ": " + de.getMessage() + " (" + Fetcher.reason(de, false) + ")");
+							}
+						}
 						final int next = k + 1;
+						final int sr = r.src;
 						handler.post(new Runnable() {
 							public void run() {
-								dots(Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + next + "/" + TRIES + ")…");
+								dots(sr == 2 ? Tr.t("Downloading from Google Drive…", "Se descarcă de pe Google Drive…")
+										: sr == 1 ? Tr.t("Downloading from the second server…", "Se descarcă de pe serverul secundar…")
+										: Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + next + "/" + TRIES + ")…");
 							}
 						});
-						sleep(3000L * k);
+						if (!moved) sleep(3000L * k);
 					}
 				}
 				final String ee = err;
@@ -425,6 +441,9 @@ final class Updater {
 			int code = c.getResponseCode();
 			Log.i(a, "UPDATE", "încercarea " + k + ": răspuns HTTP " + code + (c.getURL() != null ? " de la " + c.getURL().getHost() : ""));
 			if (code / 100 != 2) throw new Exception("HTTP " + code);
+			// A Google Drive file that is not shared answers with a sign-in page.
+			String ct = c.getContentType();
+			if (ct != null && ct.startsWith("text/html")) throw new Exception("drive html (not shared?)");
 			long total = r.size > 0 ? r.size : c.getContentLength();
 			InputStream in = c.getInputStream();
 			FileOutputStream out = new FileOutputStream(f);

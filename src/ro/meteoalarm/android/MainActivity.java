@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.02";
+	static final String VERSION = "Meteo Alarm Android v3.03";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2343,8 +2343,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			help.entry(mini("clock"), Tr.t("Local time", "Ora locală"), Tr.t("The clock and the hours show the town's local time.", "Ceasul și orele arată ora locală a localității."));
 		}
 		help.section(Tr.t("Farmer mode", "Mod Fermier"));
-		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down.",
-				"Primul rând din ☰ schimbă modul. În modul fermier fiecare oră e o casetă lată, cu vremea și ploaia; cu telefonul culcat, două casete una sub alta, glisate sus-jos."));
+		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.",
+				"Primul rând din ☰ schimbă modul. În modul fermier fiecare oră e o casetă lată, cu vremea și ploaia; cu telefonul culcat, două casete una sub alta, glisate sus-jos. Alegerea altei localități revine la modul normal."));
 		help.entry(mini("farm"), Tr.t("Hour boxes", "Casetele orare"), Tr.t("A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.",
 				"Atingerea arată detaliile orei: temperatura, vântul și direcția lui, umiditatea, ploaia, solul."));
 		help.entry(mini("farm"), Tr.t("Water in the soil", "Apa în sol"), Tr.t("The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.",
@@ -2366,8 +2366,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en));
 		help.entry(mini("update"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
-		help.entry(mini("update"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.",
-				"Aplicația verifică întâi internetul, caută versiunea nouă de 3 ori și o descarcă din până la 5 încercări; când GitHub nu răspunde, arată motivul. O versiune deja descărcată se instalează direct."));
+		help.entry(mini("update"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.",
+				"Aplicația verifică întâi internetul, apoi caută pe GitHub, pe un server secundar GitHub și pe Google Drive și descarcă de la primul care răspunde. O versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
 		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are.",
@@ -2787,6 +2787,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** A town picked from the list: automatic location goes off until the locate button. */
 	private void choose(Cities.City c) {
+		// v3.03 (Viorel): another town picked by hand leaves farmer mode (the parcels belong to the old place).
+		if (prefs.getBoolean("farmer", false) && !c.same(town)) {
+			Log.i(this, "FERMIER", "localitate schimbată: ies din modul fermier");
+			toggleFarmer();
+		}
 		setAutoLoc(false);
 		setCity(c, true);
 		setDistrict("");

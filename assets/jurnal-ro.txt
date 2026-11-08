@@ -1,4 +1,4 @@
-Versiunea curentă: v.3.02 · 8.11.2026
+Versiunea curentă: v.3.03 · 8.11.2026
 Îmbunătățiri de design / structură.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.

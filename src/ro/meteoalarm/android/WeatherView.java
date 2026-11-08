@@ -474,7 +474,8 @@ final class WeatherView extends View {
 			// footer, not on a row of boxes, moves the whole middle of the screen.
 			float[] bd = getWidth() > 0 ? band() : new float[] { 0, 0 };
 			paging = false;
-			pgCand = drag == null && screen.pages > 1 && !edge && !edgeR && downY > bd[0] && downY < bd[1];
+			// v3.03 (Viorel): also above the top line (town, clock, dots).
+			pgCand = drag == null && screen.pages > 1 && !edge && !edgeR && downY < bd[1];
 			if (pgCand) {
 				if (vt == null) vt = VelocityTracker.obtain();
 				vt.clear();

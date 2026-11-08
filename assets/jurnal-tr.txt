@@ -1,4 +1,4 @@
-Geçerli sürüm: v.3.02 · 8.11.2026
+Geçerli sürüm: v.3.03 · 8.11.2026
 Tasarım / yapı iyileştirmeleri.
 - Saatin yanında bağlantı simgesi: Wi-Fi, mobil veri veya yok.
 - Güncellemeler: önce bağlantı kontrol edilir, zaten indirilmiş sürüm hemen kurulur, GitHub yanıt vermezse 5 denemeye kadar, ve neden gösterilir.
