@@ -14,11 +14,12 @@ Verzia 2
 - Stránka Zemetrasenia.
 - Oznámenia s tvojím súhlasom: dážď alebo sneh, výstrahy, zemetrasenia.
 
-Súčasná verzia: v2.90 · 8.11.2026
+Súčasná verzia: v2.91 · 8.11.2026
 Vylepšenia vzhľadu / štruktúry.
 - Pozemky: mapa so všetkými parcelami, tlačidlo GPS (modrá bodka) a „Uložiť miesto GPS“.
 - Režim farmára: hlavné obrazovky sa posúvajú s prstom.
 - Tablet: spojené rámčeky režimu farmára, parcely v 2 stĺpcoch.
+- Pozemky: GPS sa spustí so stránkou; aj stránka novej parcely má veľkú mapu.
 
 ────────
 Nové funkcie od v2.10

@@ -14,11 +14,12 @@ Verze 2
 - Stránka Zemětřesení.
 - Oznámení s tvým souhlasem: déšť nebo sníh, výstrahy, zemětřesení.
 
-Současná verze: v2.90 · 8.11.2026
+Současná verze: v2.91 · 8.11.2026
 Vylepšení vzhledu / struktury.
 - Pozemky: mapa se všemi parcelami, tlačítko GPS (modrá tečka) a „Uložit místo GPS“.
 - Režim zemědělce: hlavní obrazovky se posouvají prstem.
 - Tablet: spojené rámečky režimu farmáře, parcely ve 2 sloupcích.
+- Pozemky: GPS se spustí se stránkou; stránka nové parcely má také velkou mapu.
 
 ────────
 Nové funkce od v2.10

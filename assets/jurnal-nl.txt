@@ -14,11 +14,12 @@ Versie 2
 - Pagina Aardbevingen.
 - Meldingen met je toestemming: regen of sneeuw, waarschuwingen, aardbevingen.
 
-Huidige versie: v2.90 · 8.11.2026
+Huidige versie: v2.91 · 8.11.2026
 Verbeteringen in ontwerp / structuur.
 - Percelen: een kaart met alle percelen, de GPS-knop (blauwe stip) en „GPS-plek opslaan”.
 - Boerenmodus: de hoofdschermen schuiven mee met je vinger.
 - Tablet: de samengevoegde vakken van de boerenmodus, percelen in 2 kolommen.
+- Percelen: GPS start met de pagina; ook de pagina voor een nieuw perceel heeft de grote kaart.
 
 ────────
 Nieuwe functies sinds v2.10

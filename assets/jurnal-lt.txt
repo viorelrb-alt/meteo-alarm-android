@@ -14,11 +14,12 @@
 - Puslapis Žemės drebėjimai.
 - Pranešimai su tavo sutikimu: lietus ar sniegas, įspėjimai, žemės drebėjimai.
 
-Dabartinė versija: v2.90 · 8.11.2026
+Dabartinė versija: v2.91 · 8.11.2026
 Dizaino / struktūros patobulinimai.
 - Laukai: žemėlapis su visais sklypais, GPS mygtukas (mėlynas taškas) ir „Išsaugoti GPS vietą“.
 - Ūkininko režimas: pagrindiniai ekranai slenka su pirštu.
 - Planšetė: sujungti ūkininko režimo langeliai, sklypai 2 stulpeliuose.
+- Laukai: GPS įsijungia su puslapiu; naujo sklypo puslapyje irgi didelis žemėlapis.
 
 ────────
 Naujos funkcijos nuo v2.10

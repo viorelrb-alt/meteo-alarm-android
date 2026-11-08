@@ -14,11 +14,12 @@ Versão 2
 - Página Sismos.
 - Notificações com o teu consentimento: chuva ou neve, avisos, sismos.
 
-Versão atual: v2.90 · 8.11.2026
+Versão atual: v2.91 · 8.11.2026
 Melhorias de design / estrutura.
 - Parcelas: um mapa com todas as parcelas, o botão GPS (ponto azul) e «Guardar local GPS».
 - Modo agricultor: os ecrãs principais deslizam com o dedo.
 - Tablet: as caixas unidas do modo agricultor, parcelas em 2 colunas.
+- Parcelas: o GPS começa com a página; a página de nova parcela também tem o mapa grande.
 
 ────────
 Novas funções desde a v2.10

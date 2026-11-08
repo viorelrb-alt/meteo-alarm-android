@@ -14,11 +14,12 @@ Leagan 2
 - Leathanach Creathanna talún.
 - Fógraí le do thoiliú: báisteach nó sneachta, rabhaidh, creathanna talún.
 
-Leagan reatha: v2.90 · 8.11.2026
+Leagan reatha: v2.91 · 8.11.2026
 Feabhsuithe ar dhearadh / ar struchtúr.
 - Páirceanna: léarscáil leis na páirceanna go léir, an cnaipe GPS (ponc gorm) agus “Sábháil áit GPS”.
 - Mód feirmeora: sleamhnaíonn na príomhscáileáin le do mhéar.
 - Táibléad: boscaí cumaiscthe an mhód feirmeora, páirceanna i 2 cholún.
+- Páirceanna: tosaíonn an GPS leis an leathanach; tá an léarscáil mhór ar leathanach na páirce nua freisin.
 
 ────────
 Feidhmeanna nua ó v2.10

@@ -14,11 +14,12 @@ Versione 2
 - Pagina Terremoti.
 - Notifiche con il tuo consenso: pioggia o neve, allerte, terremoti.
 
-Versione attuale: v2.90 · 8.11.2026
+Versione attuale: v2.91 · 8.11.2026
 Miglioramenti di design / struttura.
 - Appezzamenti: una mappa con tutte le parcelle, il pulsante GPS (punto blu) e «Salva luogo GPS».
 - Modalità agricoltore: le schermate principali scorrono con il dito.
 - Tablet: le caselle unite della modalità agricoltore, parcelle su 2 colonne.
+- Appezzamenti: il GPS parte con la pagina; anche la pagina della nuova parcella ha la mappa grande.
 
 ────────
 Nuove funzioni dalla v2.10

@@ -14,11 +14,12 @@ Verzija 2
 - Stranica Potresi.
 - Obavijesti uz tvoj pristanak: kiša ili snijeg, upozorenja, potresi.
 
-Trenutačna verzija: v2.90 · 8.11.2026
+Trenutačna verzija: v2.91 · 8.11.2026
 Poboljšanja izgleda / strukture.
 - Parcele: karta sa svim parcelama, gumb GPS (plava točka) i „Spremi GPS mjesto”.
 - Način poljoprivrednika: glavni zasloni klize s prstom.
 - Tablet: spojeni okviri načina rada za poljoprivrednike, parcele u 2 stupca.
+- Parcele: GPS se pokreće sa stranicom; i stranica nove parcele ima veliku kartu.
 
 ────────
 Nove funkcije od v2.10

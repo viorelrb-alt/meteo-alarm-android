@@ -14,11 +14,12 @@ Version 2
 - Seite Erdbeben.
 - Benachrichtigungen mit deiner Zustimmung: Regen oder Schnee, Warnungen, Erdbeben.
 
-Aktuelle Version: v2.90 · 8.11.2026
+Aktuelle Version: v2.91 · 8.11.2026
 Verbesserungen an Design / Struktur.
 - Parzellen: eine Karte mit allen Parzellen, die GPS-Taste (blauer Punkt) und „GPS-Ort speichern“.
 - Landwirt-Modus: Die Hauptbildschirme gleiten mit dem Finger.
 - Tablet: die zusammengelegten Kästen des Landwirt-Modus, Parzellen in 2 Spalten.
+- Parzellen: GPS startet mit der Seite; auch die Seite für eine neue Parzelle hat die große Karte.
 
 ────────
 Neue Funktionen seit v2.10

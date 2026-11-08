@@ -14,11 +14,12 @@ Version 2
 - Siden Jordskælv.
 - Notifikationer med dit samtykke: regn eller sne, varsler, jordskælv.
 
-Nuværende version: v2.90 · 8.11.2026
+Nuværende version: v2.91 · 8.11.2026
 Forbedringer af design / struktur.
 - Marker: et kort med alle parceller, GPS-knappen (blå prik) og “Gem GPS-sted”.
 - Landmandstilstand: hovedskærmene glider med fingeren.
 - Tablet: landmandstilstandens samlede felter, parceller i 2 kolonner.
+- Marker: GPS starter med siden; siden for ny parcel har også det store kort.
 
 ────────
 Nye funktioner siden v2.10

@@ -128,6 +128,9 @@ public final class FarmActivity extends Activity {
 		entry = null;
 		Log.i(this, "FERMIER", "pagina Parcele deschisă (" + Parcels.all(this).size() + " parcele)");
 		showList();
+		// v2.91 (Viorel): the GPS starts with the page, the blue dot shows where the farmer is.
+		centerMe = false;
+		locate();
 	}
 
 	@Override
@@ -350,7 +353,12 @@ public final class FarmActivity extends Activity {
 		// The list and the edit list change their layout with the phone's position (v2.80).
 		if (screen.equals("list")) showList();
 		else if (screen.equals("edit")) showEditList();
+		else if (screen.equals("map") && map != null && mapNameIn != null)
+			showMap(mapId, mapNameIn.getText().toString(), map.lat(), map.lon(), map.zoom(), mapBack);
 	}
+
+	/** The name box of the map page (kept when the phone turns, v2.91). */
+	private EditText mapNameIn;
 
 	/** Views in rows of two in landscape (v2.80, Viorel), one under the other in portrait. */
 	private void addGrid(LinearLayout col, List<View> views, int top, int gap) {
@@ -534,6 +542,102 @@ public final class FarmActivity extends Activity {
 		};
 	}
 
+	/** Hides the GPS bubble 1.5 s after it is shown (v2.91, Viorel). */
+	private final Runnable hideGps = new Runnable() {
+		public void run() {
+			if (gpsBubble != null) gpsBubble.setVisibility(View.GONE);
+		}
+	};
+	/** The GPS button was tapped: the map goes to the position found (else only the blue dot). */
+	private boolean centerMe;
+
+	/**
+	 * What floats over a map (v2.90, v2.91 also on the new parcel / edit map): ＋ and − at the top
+	 * left, the back button with TITLE at the top right and the GPS button under it, whose bubble
+	 * says for 1.5 s that the position is being looked for.
+	 */
+	private void mapFloats(FrameLayout mapBox, final MapView m, String title, boolean tab) {
+		int fb = px(tab ? 46 : 42), mg = px(12);
+		TextView zin = text("＋", 22, true, ink), zout = text("−", 22, true, ink);
+		zin.setGravity(Gravity.CENTER);
+		zout.setGravity(Gravity.CENTER);
+		FrameLayout.LayoutParams zl = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+		zl.setMargins(mg, mg, 0, 0);
+		mapBox.addView(floatBtn(zin, new View.OnClickListener() {
+			public void onClick(View v) {
+				m.zoomBy(1);
+			}
+		}), zl);
+		FrameLayout.LayoutParams zl2 = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+		zl2.setMargins(mg, mg + fb + px(8), 0, 0);
+		mapBox.addView(floatBtn(zout, new View.OnClickListener() {
+			public void onClick(View v) {
+				m.zoomBy(-1);
+			}
+		}), zl2);
+		LinearLayout badge = new LinearLayout(this);
+		badge.setGravity(Gravity.CENTER_VERTICAL);
+		badge.setBackground(frame(btn, 12));
+		badge.setElevation(px(3));
+		TextView back = text("‹", 24, true, ink);
+		back.setGravity(Gravity.CENTER);
+		back.setPadding(0, 0, 0, px(4));
+		back.setBackground(frame(btn, 12));
+		back.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				onBackPressed();
+			}
+		});
+		badge.addView(back, new LinearLayout.LayoutParams(fb + px(2), fb + px(2)));
+		TextView tt = text(title, tab ? 22 : 20, true, ink);
+		tt.setPadding(px(12), 0, px(14), 0);
+		tt.setSingleLine(true);
+		badge.addView(tt);
+		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		bl.setMargins(0, mg, mg, 0);
+		mapBox.addView(badge, bl);
+		FrameLayout.LayoutParams gl = new FrameLayout.LayoutParams(fb + px(4), fb + px(4), Gravity.TOP | Gravity.RIGHT);
+		gl.setMargins(0, mg + fb + px(14), mg, 0);
+		View gps = floatBtn(crosshair(), new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "harta: localizare precisă (GPS)");
+				if (gpsBubble != null) {
+					gpsBubble.setVisibility(View.VISIBLE);
+					ui.removeCallbacks(hideGps);
+					ui.postDelayed(hideGps, 1500);
+				}
+				centerMe = true;
+				locate();
+			}
+		});
+		gps.setContentDescription(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"));
+		mapBox.addView(gps, gl);
+		LinearLayout bub = column();
+		bub.setBackground(frame(card, 12));
+		bub.setPadding(px(14), px(10), px(14), px(12));
+		bub.setElevation(px(5));
+		bub.addView(text(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), 16, true, ink));
+		bub.addView(text(Tr.t("Locating by GPS…", "Se efectuează localizarea GPS…"), 14, false, ink), wide(4));
+		bub.setVisibility(View.GONE);
+		ui.removeCallbacks(hideGps);
+		gpsBubble = bub;
+		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		ql.setMargins(0, mg + 2 * fb + px(26), mg, 0);
+		mapBox.addView(bub, ql);
+	}
+
+	/** Looks for the phone's position for the map's blue dot (asks for the permission first). */
+	private void locate() {
+		afterLoc = new Runnable() {
+			public void run() {
+				findMe(false);
+			}
+		};
+		if (!Locator.allowed(this))
+			requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, ASK_LOC);
+		else findMe(false);
+	}
+
 	/**
 	 * v2.90 (Viorel 2026-11-08): the map with every parcel (a pin and its name; a tap on the pin
 	 * = a tap on its card), the back button and the title floating at its top right, the GPS button
@@ -580,82 +684,7 @@ public final class FarmActivity extends Activity {
 		} else m.fitPins();
 		if (!Double.isNaN(meLa)) m.setMe(meLa, meLo);
 		mapBox.addView(m, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-		int fb = px(tab ? 46 : 42), mg = px(12);
-		TextView zin = text("＋", 22, true, ink), zout = text("−", 22, true, ink);
-		zin.setGravity(Gravity.CENTER);
-		zout.setGravity(Gravity.CENTER);
-		FrameLayout.LayoutParams zl = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-		zl.setMargins(mg, mg, 0, 0);
-		mapBox.addView(floatBtn(zin, new View.OnClickListener() {
-			public void onClick(View v) {
-				m.zoomBy(1);
-			}
-		}), zl);
-		FrameLayout.LayoutParams zl2 = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-		zl2.setMargins(mg, mg + fb + px(8), 0, 0);
-		mapBox.addView(floatBtn(zout, new View.OnClickListener() {
-			public void onClick(View v) {
-				m.zoomBy(-1);
-			}
-		}), zl2);
-		// The back button and the title: a badge at the map's top right edge (Viorel 2026-11-08).
-		LinearLayout badge = new LinearLayout(this);
-		badge.setGravity(Gravity.CENTER_VERTICAL);
-		badge.setBackground(frame(btn, 12));
-		badge.setElevation(px(3));
-		TextView back = text("‹", 24, true, ink);
-		back.setGravity(Gravity.CENTER);
-		back.setPadding(0, 0, 0, px(4));
-		back.setBackground(frame(btn, 12));
-		back.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				onBackPressed();
-			}
-		});
-		badge.addView(back, new LinearLayout.LayoutParams(fb + px(2), fb + px(2)));
-		TextView title = text(Tr.t("Parcels", "Parcele"), tab ? 22 : 20, true, ink);
-		title.setPadding(px(12), 0, px(14), 0);
-		title.setSingleLine(true);
-		badge.addView(title);
-		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		bl.setMargins(0, mg, mg, 0);
-		mapBox.addView(badge, bl);
-		// The GPS button under it: the bubble says what happens, the blue dot shows the place.
-		FrameLayout.LayoutParams gl = new FrameLayout.LayoutParams(fb + px(4), fb + px(4), Gravity.TOP | Gravity.RIGHT);
-		gl.setMargins(0, mg + fb + px(14), mg, 0);
-		View gps = floatBtn(crosshair(), new View.OnClickListener() {
-			public void onClick(View v) {
-				Log.i(FarmActivity.this, "FERMIER", "lista parcelelor: localizare precisă (GPS)");
-				if (gpsBubble != null) gpsBubble.setVisibility(View.VISIBLE);
-				afterLoc = new Runnable() {
-					public void run() {
-						findMe(false);
-					}
-				};
-				if (!Locator.allowed(FarmActivity.this))
-					requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, ASK_LOC);
-				else findMe(false);
-			}
-		});
-		gps.setContentDescription(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"));
-		mapBox.addView(gps, gl);
-		LinearLayout bub = column();
-		bub.setBackground(frame(card, 12));
-		bub.setPadding(px(14), px(10), px(14), px(12));
-		bub.setElevation(px(5));
-		bub.addView(text(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), 16, true, ink));
-		bub.addView(text(Tr.t("Looking for your exact place by GPS… Stay outside; the blue dot shows where you are.",
-				"Caut locația ta exactă prin GPS… Stai afară; punctul albastru arată unde ești."), 14, false, ink), wide(4));
-		bub.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				v.setVisibility(View.GONE);
-			}
-		});
-		bub.setVisibility(locListener != null ? View.VISIBLE : View.GONE);
-		gpsBubble = bub;
-		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(px(tab ? 320 : 250), ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		ql.setMargins(0, mg + 2 * fb + px(26), mg, 0);
-		mapBox.addView(bub, ql);
+		mapFloats(mapBox, m, Tr.t("Parcels", "Parcele"), tab);
 
 		// --- The panel: the fixed buttons, then the scrolled cards.
 		LinearLayout panel = column();
@@ -685,7 +714,6 @@ public final class FarmActivity extends Activity {
 				}
 			}));
 		}
-		int bgap = px(tab ? 10 : 8);
 		// The labels shrink to fit their button (the right third of a phone in landscape is narrow).
 		int bw0 = ((land ? getResources().getDisplayMetrics().widthPixels / 3 : getResources().getDisplayMetrics().widthPixels) - 2 * px(12) - px(12)) / 2 - px(16);
 		for (View v : buttons) {
@@ -698,7 +726,7 @@ public final class FarmActivity extends Activity {
 		}
 		for (int k = 0; k < buttons.size(); k += 2) {
 			LinearLayout row = pair(buttons.get(k), k + 1 < buttons.size() ? buttons.get(k + 1) : null);
-			panel.addView(row, wide(k == 0 ? 0 : bgap));
+			panel.addView(row, wide(k == 0 ? 0 : tab ? 10 : 8));
 		}
 		status = text("", 14, false, dim);
 		status.setVisibility(View.GONE);
@@ -729,7 +757,7 @@ public final class FarmActivity extends Activity {
 					"Nicio parcelă salvată încă. Stai pe parcelă și atinge „Salvare loc. GPS”, sau alege-o pe hartă."), 16, false, ink));
 		for (int k = 0; k < cards.size(); k += cols) {
 			View row = cols == 1 ? cards.get(k) : pairGap(cards.get(k), k + 1 < cards.size() ? cards.get(k + 1) : null, gap);
-			list.addView(row, wide(k == 0 ? 0 : gap));
+			list.addView(row, wide(k == 0 ? 0 : 10));
 			rows.add(row);
 		}
 		LinearLayout.LayoutParams svl;
@@ -908,6 +936,13 @@ public final class FarmActivity extends Activity {
 			// not allowed
 		}
 		final Location last = best;
+		// v2.91: the blue dot at once where the phone was last, until GPS answers.
+		if (!isNew && best != null && Double.isNaN(meLa) && map != null) {
+			meLa = best.getLatitude();
+			meLo = best.getLongitude();
+			map.setMe(meLa, meLo);
+			if (map == listMap && !map.touched() && !centerMe) map.fitPins();
+		}
 		List<String> on = lm.getProviders(true);
 		String prov = on.contains(LocationManager.GPS_PROVIDER) ? LocationManager.GPS_PROVIDER
 				: on.contains("fused") ? "fused" : on.contains(LocationManager.NETWORK_PROVIDER) ? LocationManager.NETWORK_PROVIDER : null;
@@ -961,15 +996,19 @@ public final class FarmActivity extends Activity {
 	private void found(Location l, boolean isNew, boolean late) {
 		if (l != null) Log.i(this, "FERMIER", "poziție " + l.getProvider() + " ±" + Math.round(l.getAccuracy()) + " m" + (late ? " (ultima cunoscută)" : ""));
 		if (!isNew) {
-			if (gpsBubble != null) gpsBubble.setVisibility(View.GONE);
-			if (l != null && map == listMap) {
+			boolean go = centerMe;
+			centerMe = false;
+			if (l != null) {
 				meLa = l.getLatitude();
 				meLo = l.getLongitude();
 			}
 			if (l != null && map != null) {
 				map.setMe(l.getLatitude(), l.getLongitude());
-				map.center(l.getLatitude(), l.getLongitude());
-			} else if (l == null) toast(Tr.t("The position was not found.", "Poziția nu a fost găsită."));
+				// v2.91: the GPS button takes the map there; when the Parcels page opens, the
+				// map only makes room for the blue dot next to the parcels (if not moved yet).
+				if (go) map.center(l.getLatitude(), l.getLongitude());
+				else if (map == listMap && !map.touched()) map.fitPins();
+			} else if (l == null && go) toast(Tr.t("The position was not found.", "Poziția nu a fost găsită."));
 			return;
 		}
 		if (status != null) {
@@ -996,9 +1035,14 @@ public final class FarmActivity extends Activity {
 		mapId = id;
 		mapBack = back;
 		root.removeAllViews();
+		// v2.91 (Viorel): like the Parcels page: the map large with its buttons floating over it
+		// (landscape: the left 2/3; portrait: on top), the name and Save beside or under it.
+		final boolean tab = TextSize.tablet(this), land = land();
+		LinearLayout body = new LinearLayout(this);
+		body.setOrientation(land ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+		FrameLayout mapBox = new FrameLayout(this);
 		LinearLayout col = column();
-		col.setPadding(px(12), px(10), px(12), px(10));
-		col.addView(header(id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Edit", "Editare")));
+		col.setPadding(px(14), px(12), px(14), px(12));
 		final EditText nameIn = new EditText(this);
 		nameIn.setSingleLine(true);
 		nameIn.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
@@ -1006,51 +1050,30 @@ public final class FarmActivity extends Activity {
 		nameIn.setText(name);
 		nameIn.setTextColor(ink);
 		nameIn.setHintTextColor(dim);
-		nameIn.setTextSize(18);
-		col.addView(nameIn, wide(6));
-		final TextView where = text("", 13, false, dim);
-		col.addView(where, wide(2));
+		nameIn.setTextSize(tab ? 20 : 18);
+		mapNameIn = nameIn;
+		col.addView(nameIn);
+		final TextView where = text("", 14, false, dim);
+		col.addView(where, wide(4));
+		col.addView(text(Tr.t("move the map to put the pin on the parcel", "mută harta ca acul să fie pe parcelă"), 14, false, dim), wide(2));
 		map = new MapView(this);
 		map.setDark(dark);
 		map.clean();
+		map.setTopPad(px(tab ? 130 : 120));
 		map.setOnMoved(new MapView.Moved() {
 			public void moved(double la, double lo) {
-				where.setText(coords(la, lo) + "  ·  " + Tr.t("move the map to put the pin on the parcel", "mută harta ca acul să fie pe parcelă"));
+				where.setText(coords(la, lo));
 			}
 		});
 		map.setZoom(zoom);
 		map.center(lat, lon);
-		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
-		ml.topMargin = px(6);
-		col.addView(map, ml);
-		LinearLayout zoomRow = new LinearLayout(this);
-		zoomRow.addView(button("−", new View.OnClickListener() {
-			public void onClick(View v) {
-				map.zoomBy(-1);
-			}
-		}), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		View gap1 = new View(this);
-		zoomRow.addView(gap1, new LinearLayout.LayoutParams(px(8), 1));
-		zoomRow.addView(button("＋", new View.OnClickListener() {
-			public void onClick(View v) {
-				map.zoomBy(1);
-			}
-		}), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		View gap2 = new View(this);
-		zoomRow.addView(gap2, new LinearLayout.LayoutParams(px(8), 1));
-		zoomRow.addView(button(Tr.t("My position", "Poziția mea"), new View.OnClickListener() {
-			public void onClick(View v) {
-				afterLoc = new Runnable() {
-					public void run() {
-						findMe(false);
-					}
-				};
-				if (!Locator.allowed(FarmActivity.this))
-					requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, ASK_LOC);
-				else findMe(false);
-			}
-		}), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 2));
-		col.addView(zoomRow, wide(8));
+		if (!Double.isNaN(meLa)) map.setMe(meLa, meLo);
+		mapBox.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		mapFloats(mapBox, map, id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Edit", "Editare"), tab);
+		if (land) {
+			// Save at the bottom of the right third.
+			col.addView(new View(this), new LinearLayout.LayoutParams(1, 0, 1));
+		}
 		col.addView(button(Tr.t("Save", "Salvează"), new View.OnClickListener() {
 			public void onClick(View v) {
 				String n = nameIn.getText().toString().trim();
@@ -1089,8 +1112,24 @@ public final class FarmActivity extends Activity {
 					showList();
 				}
 			}
-		}), wide(8));
-		root.addView(col, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		}), wide(land ? 0 : 10));
+		if (land) {
+			body.addView(mapBox, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 2));
+			View line = new View(this);
+			line.setBackgroundColor(ink);
+			body.addView(line, new LinearLayout.LayoutParams(px(2), ViewGroup.LayoutParams.MATCH_PARENT));
+			ScrollView sv = new ScrollView(this);
+			sv.setFillViewport(true);
+			sv.addView(col);
+			body.addView(sv, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+		} else {
+			body.addView(mapBox, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+			View line = new View(this);
+			line.setBackgroundColor(ink);
+			body.addView(line, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2)));
+			body.addView(col, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		}
+		root.addView(body, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 	}
 
 	// --- Deleting parcels (v2.60) ----------------------------------------------------------------

@@ -150,8 +150,16 @@ final class MapView extends View {
 			lo0 = Math.min(lo0, p.lon);
 			lo1 = Math.max(lo1, p.lon);
 		}
+		// v2.91: the blue dot too, when it is near (not 50 km away).
+		boolean me = !Double.isNaN(meLat) && Math.abs(meLat - (la0 + la1) / 2) < 0.4 && Math.abs(meLon - (lo0 + lo1) / 2) < 0.6;
+		if (me) {
+			la0 = Math.min(la0, meLat);
+			la1 = Math.max(la1, meLat);
+			lo0 = Math.min(lo0, meLon);
+			lo1 = Math.max(lo1, meLon);
+		}
 		double z = 15;
-		if (pins.size() > 1) {
+		if (pins.size() > 1 || me) {
 			// Room for the pins and their names: 50 dp on the sides, the pin height at the top.
 			float w = getWidth() - 100 * dp, h = getHeight() - topPad - 90 * dp;
 			for (z = 17; z > MIN_Z; z -= 0.25) {
@@ -221,7 +229,15 @@ final class MapView extends View {
 	}
 
 	void zoomBy(double dz) {
+		touched = true;
 		setZoom(zoom + dz);
+	}
+
+	/** v2.91: the farmer moved or zoomed the map (then it is not fitted again by itself). */
+	private boolean touched;
+
+	boolean touched() {
+		return touched;
 	}
 
 	// World pixels (of TILE-sized tiles) at zoom Z.
@@ -271,6 +287,7 @@ final class MapView extends View {
 			return true;
 		}
 		if (act == MotionEvent.ACTION_MOVE) {
+			touched = true;
 			double world = tile * Math.pow(2, zoom);
 			double cx = wx(lon, world) - (x - lastX), cy = wy(lat, world) - (y - lastY);
 			cy = Math.max(0, Math.min(world, cy));

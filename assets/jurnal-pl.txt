@@ -14,11 +14,12 @@ Wersja 2
 - Strona Trzęsienia ziemi.
 - Powiadomienia za twoją zgodą: deszcz lub śnieg, ostrzeżenia, trzęsienia ziemi.
 
-Obecna wersja: v2.90 · 8.11.2026
+Obecna wersja: v2.91 · 8.11.2026
 Ulepszenia wyglądu / struktury.
 - Działki: mapa ze wszystkimi działkami, przycisk GPS (niebieska kropka) i „Zapisz miejsce GPS”.
 - Tryb rolnika: ekrany główne przesuwają się z palcem.
 - Tablet: połączone pola trybu rolnika, działki w 2 kolumnach.
+- Działki: GPS włącza się razem ze stroną; strona nowej działki też ma dużą mapę.
 
 ────────
 Nowe funkcje od v2.10

@@ -14,11 +14,12 @@ Različica 2
 - Stran Potresi.
 - Obvestila z tvojim soglasjem: dež ali sneg, opozorila, potresi.
 
-Trenutna različica: v2.90 · 8.11.2026
+Trenutna različica: v2.91 · 8.11.2026
 Izboljšave videza / zgradbe.
 - Parcele: zemljevid z vsemi parcelami, gumb GPS (modra pika) in »Shrani mesto GPS«.
 - Način kmeta: glavni zasloni drsijo s prstom.
 - Tablica: združena polja kmetovalskega načina, parcele v 2 stolpcih.
+- Parcele: GPS se zažene s stranjo; tudi stran nove parcele ima velik zemljevid.
 
 ────────
 Nove funkcije od v2.10
