@@ -1,6 +1,7 @@
 package ro.meteoalarm.android;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -52,6 +53,15 @@ final class WeatherView extends View {
 
 		/** Farmer mode (v2.60): a swipe over the weather now, to the next (+1) or previous (-1) main screen. */
 		void onPage(int step);
+
+		/** v2.90: shows the next (+1) or previous (-1) main screen while the finger slides; false: none. */
+		boolean pagePeek(int step);
+
+		/** v2.90: back to the screen the finger started from. */
+		void pageBack();
+
+		/** v2.90: the finger let the new screen stay. */
+		void pageDone();
 	}
 
 	/**
@@ -193,6 +203,113 @@ final class WeatherView extends View {
 
 	@Override
 	protected void onDraw(Canvas c) {
+		if (pgA != null) {
+			drawPaging(c);
+			return;
+		}
+		drawScreen(c);
+		if (pull > 0) drawPull(c);
+	}
+
+	// --- v2.90 (Viorel 2026-11-08): farmer mode, the main screens slide with the finger -----------
+	// Only the part between the top line (with the FARMER MODE row and the dots) and the footer
+	// (the buttons) moves; past half the width the next screen stays, else the screen goes back.
+
+	/** The screen the finger started on, and the next one (null when there is none). */
+	private Bitmap pgA, pgB;
+	/** Toward which screen (+1 next, -1 previous), whether it exists, and how far (pixels). */
+	private int pgStep;
+	private boolean pgOk, pgCand, paging;
+	private float pgDx;
+	private android.animation.ValueAnimator pgAnim;
+
+	/** The screen drawn into a picture of the view's size. */
+	private Bitmap shot() {
+		Bitmap b = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+		drawScreen(new Canvas(b));
+		return b;
+	}
+
+	/** The top and the bottom of the moving part, in pixels. */
+	private float[] band() {
+		float[] f = Screen.fit(getWidth(), getHeight(), screen.tablet);
+		return new float[] { oy + 137 * scale, oy + (f[2] - 80) * scale };
+	}
+
+	private void drawPaging(Canvas c) {
+		int w = getWidth();
+		float[] b = band();
+		c.drawBitmap(pgA, 0, 0, null);
+		c.save();
+		c.clipRect(0, b[0], w, b[1]);
+		c.drawColor(screen.dark ? 0xFF262624 : 0xFFFFFFFF);
+		c.drawBitmap(pgA, pgDx, 0, null);
+		if (pgB != null) c.drawBitmap(pgB, pgDx + (pgStep > 0 ? w : -w), 0, null);
+		c.restore();
+	}
+
+	/** The finger started sliding the screens toward STEP: pictures of this screen and of that one. */
+	private void pageStart(int step) {
+		if (settle != null) settle.cancel();
+		pgA = shot();
+		pageTo(step);
+	}
+
+	private void pageTo(int step) {
+		pgStep = step;
+		pgOk = taps.pagePeek(step);
+		if (pgB != null) pgB.recycle();
+		pgB = pgOk ? shot() : null;
+		invalidate();
+	}
+
+	private void pageMove(float dx) {
+		int step = dx < 0 ? 1 : -1;
+		if (dx != 0 && step != pgStep) {
+			if (pgOk) taps.pageBack();
+			pageTo(step);
+		}
+		// No screen that way: the screen only gives a little.
+		pgDx = pgOk ? dx : dx * 0.25f;
+		invalidate();
+	}
+
+	private void pageEnd(float vx) {
+		final int w = getWidth();
+		boolean fling = Math.abs(vx) > 1200 * dp && (vx < 0) == (pgStep > 0) && Math.abs(pgDx) > 30 * dp;
+		final boolean go = pgOk && (Math.abs(pgDx) > w / 2f || fling);
+		if (!pgOk && Math.abs(pgDx) > 12 * dp) taps.onPage(pgStep);
+		float to = go ? (pgStep > 0 ? -w : w) : 0;
+		Log.i(getContext(), "GEST", "glisare între ecrane: " + (go ? (pgStep > 0 ? "următorul" : "anteriorul") : "rămâne"));
+		pgAnim = android.animation.ValueAnimator.ofFloat(pgDx, to);
+		pgAnim.setDuration((long) Math.min(320, 140 + Math.abs(to - pgDx) / dp * 0.6f));
+		pgAnim.setInterpolator(new android.view.animation.DecelerateInterpolator(1.6f));
+		pgAnim.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+			public void onAnimationUpdate(android.animation.ValueAnimator a) {
+				pgDx = (Float) a.getAnimatedValue();
+				invalidate();
+			}
+		});
+		pgAnim.addListener(new android.animation.AnimatorListenerAdapter() {
+			boolean done;
+
+			@Override
+			public void onAnimationEnd(android.animation.Animator a) {
+				if (done) return;
+				done = true;
+				if (go) taps.pageDone();
+				else if (pgOk) taps.pageBack();
+				if (pgA != null) pgA.recycle();
+				if (pgB != null) pgB.recycle();
+				pgA = pgB = null;
+				pgDx = 0;
+				invalidate();
+			}
+		});
+		pgAnim.start();
+	}
+
+	private void drawScreen(Canvas c) {
 		int w = getWidth(), h = getHeight();
 		if (w == 0 || h == 0) return;
 		// A tablet: at least 600 dp on the short side (a foldable when open, too).
@@ -209,7 +326,6 @@ final class WeatherView extends View {
 		gfx.c = c;
 		screen.draw(gfx, cw, ch);
 		c.restore();
-		if (pull > 0) drawPull(c);
 	}
 
 	/** A round button with the refresh arrow that follows the finger down; full arrow = release to refresh. */
@@ -286,6 +402,8 @@ final class WeatherView extends View {
 			return true;
 		}
 		if (act == MotionEvent.ACTION_DOWN) taps.onTouched();
+		// The screens are still sliding into place.
+		if (pgA != null && !paging) return true;
 		if (act == MotionEvent.ACTION_DOWN) {
 			downX = e.getX();
 			downY = e.getY();
@@ -352,6 +470,15 @@ final class WeatherView extends View {
 			float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
 			for (Strip st : screen.strips()) if (st.area[2] > 0 && st.max > 0 && in(st.area, ux, uy)) drag = st;
 			if (drag == screen.alerts) pauseRoll();
+			// v2.90: farmer mode with parcels: a sideways slide between the top line and the
+			// footer, not on a row of boxes, moves the whole middle of the screen.
+			float[] bd = getWidth() > 0 ? band() : new float[] { 0, 0 };
+			paging = false;
+			pgCand = drag == null && screen.pages > 1 && !edge && !edgeR && downY > bd[0] && downY < bd[1];
+			if (pgCand) {
+				if (vt == null) vt = VelocityTracker.obtain();
+				vt.clear();
+			}
 			if (drag != null) {
 				if (settle != null) settle.cancel();
 				scroll0 = drag.scroll;
@@ -359,7 +486,22 @@ final class WeatherView extends View {
 				vt.clear();
 			}
 		}
-		if (drag != null && vt != null) vt.addMovement(e);
+		if ((drag != null || pgCand) && vt != null) vt.addMovement(e);
+		if (pgCand && !paging && act == MotionEvent.ACTION_MOVE && !pulling && Math.abs(dx) > 10 * dp && Math.abs(dx) > Math.abs(dy)) {
+			paging = true;
+			Log.i(getContext(), "GEST", "glisare între ecrane începută");
+			pageStart(dx < 0 ? 1 : -1);
+		}
+		if (paging) {
+			if (act == MotionEvent.ACTION_MOVE) pageMove(dx);
+			else if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
+				paging = false;
+				pgCand = false;
+				vt.computeCurrentVelocity(1000);
+				pageEnd(act == MotionEvent.ACTION_CANCEL ? 0 : vt.getXVelocity());
+			}
+			return true;
+		}
 		if (drag != null && act == MotionEvent.ACTION_MOVE && !dragging && !pulling && !sliding) {
 			float along = drag.vertical ? dy : dx, across = drag.vertical ? dx : dy;
 			if (Math.abs(along) > 10 * dp && Math.abs(along) > Math.abs(across)) dragging = true;

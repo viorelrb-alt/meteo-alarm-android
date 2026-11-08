@@ -37,6 +37,25 @@ final class MapView extends View {
 		void moved(double lat, double lon);
 	}
 
+	/** v2.90: a tap on one of the parcel pins of the Parcels list. */
+	interface PinTap {
+		void tapped(long id);
+	}
+
+	/** v2.90: a parcel pin with its name, drawn where it is (the list map). */
+	static final class Pin {
+		final long id;
+		final double lat, lon;
+		final String name;
+
+		Pin(long id, double lat, double lon, String name) {
+			this.id = id;
+			this.lat = lat;
+			this.lon = lon;
+			this.name = name;
+		}
+	}
+
 	private static final String UA = "MeteoAlarmAndroid/2.50 (+https://github.com/viorelrb-alt/meteo-alarm-android)";
 	private static final int MIN_Z = 3, MAX_Z = 19;
 	private static final long KEEP_MS = 7 * 86400000L;
@@ -57,6 +76,10 @@ final class MapView extends View {
 	private final GestureDetector taps;
 	private float lastX, lastY;
 	private boolean dark;
+	/** v2.90: the pins of all the parcels (list map); with them no pin in the middle. */
+	private java.util.List<Pin> pins;
+	private PinTap pinTap;
+	private float topPad;
 
 	MapView(Context ctx) {
 		super(ctx);
@@ -78,6 +101,13 @@ final class MapView extends View {
 				zoomBy(1);
 				return true;
 			}
+
+			@Override
+			public boolean onSingleTapConfirmed(MotionEvent e) {
+				long id = pinAt(e.getX(), e.getY());
+				if (id != Long.MIN_VALUE && pinTap != null) pinTap.tapped(id);
+				return true;
+			}
 		});
 		setClickable(true);
 	}
@@ -85,6 +115,75 @@ final class MapView extends View {
 	void setDark(boolean d) {
 		dark = d;
 		invalidate();
+	}
+
+	/** v2.90: shows these pins (with their names) instead of the pin in the middle. */
+	void setPins(java.util.List<Pin> ps, PinTap t) {
+		pins = ps;
+		pinTap = t;
+		invalidate();
+	}
+
+	/** v2.90: room at the top covered by floating buttons, kept free when fitting. */
+	void setTopPad(float px) {
+		topPad = px;
+	}
+
+	/**
+	 * v2.90: centre and zoom so every pin is seen (one pin: zoom 15). Needs the size: before the
+	 * first layout it is done right after it.
+	 */
+	void fitPins() {
+		if (pins == null || pins.isEmpty()) return;
+		if (getWidth() == 0) {
+			post(new Runnable() {
+				public void run() {
+					if (getWidth() > 0) fitPins();
+				}
+			});
+			return;
+		}
+		double la0 = 90, la1 = -90, lo0 = 180, lo1 = -180;
+		for (Pin p : pins) {
+			la0 = Math.min(la0, p.lat);
+			la1 = Math.max(la1, p.lat);
+			lo0 = Math.min(lo0, p.lon);
+			lo1 = Math.max(lo1, p.lon);
+		}
+		double z = 15;
+		if (pins.size() > 1) {
+			// Room for the pins and their names: 50 dp on the sides, the pin height at the top.
+			float w = getWidth() - 100 * dp, h = getHeight() - topPad - 90 * dp;
+			for (z = 17; z > MIN_Z; z -= 0.25) {
+				double world = tile * Math.pow(2, z);
+				if (Math.abs(wx(lo1, world) - wx(lo0, world)) <= w && Math.abs(wy(la0, world) - wy(la1, world)) <= h) break;
+			}
+		}
+		setZoom(z);
+		// The middle of the pins a bit lower, under the floating buttons at the top.
+		double world = tile * Math.pow(2, zoom);
+		double cy = (wy(la0, world) + wy(la1, world)) / 2 - (topPad / 2 + 15 * dp);
+		lat = latOf(Math.max(0, Math.min(world, cy)), world);
+		lon = (lo0 + lo1) / 2;
+		invalidate();
+	}
+
+	/** The id of the pin under X, Y (the head of the pin or its name), else Long.MIN_VALUE. */
+	private long pinAt(float x, float y) {
+		if (pins == null) return Long.MIN_VALUE;
+		double world = tile * Math.pow(2, zoom);
+		double left = wx(lon, world) - getWidth() / 2.0, top = wy(lat, world) - getHeight() / 2.0;
+		long best = Long.MIN_VALUE;
+		double bd = 30 * dp;
+		for (Pin p : pins) {
+			double px = wx(p.lon, world) - left, py = wy(p.lat, world) - top - 22 * dp;
+			double d = Math.hypot(px - x, py - y);
+			if (d < bd) {
+				bd = d;
+				best = p.id;
+			}
+		}
+		return best;
 	}
 
 	void setOnMoved(Moved m) {
@@ -115,6 +214,10 @@ final class MapView extends View {
 
 	double lon() {
 		return lon;
+	}
+
+	double zoom() {
+		return zoom;
 	}
 
 	void zoomBy(double dz) {
@@ -227,7 +330,24 @@ final class MapView extends View {
 			paint.setColor(0xFF2F6BEA);
 			c.drawCircle(mx, my, 5 * dp, paint);
 		}
-		drawPin(c, w / 2f, h / 2f);
+		if (pins == null) drawPin(c, w / 2f, h / 2f);
+		else {
+			paint.setTextSize(13 * dp);
+			paint.setFakeBoldText(true);
+			for (Pin p : pins) {
+				float px = (float) (wx(p.lon, world) - left), py = (float) (wy(p.lat, world) - top);
+				if (px < -60 * dp || px > w + 60 * dp || py < -10 * dp || py > h + 50 * dp) continue;
+				drawPin(c, px, py);
+				// The name under the pin, on a white label.
+				String nm = p.name.length() > 18 ? p.name.substring(0, 17) + "…" : p.name;
+				float tw = paint.measureText(nm);
+				paint.setColor(0xE6FFFFFF);
+				c.drawRoundRect(new RectF(px - tw / 2 - 5 * dp, py + 3 * dp, px + tw / 2 + 5 * dp, py + 21 * dp), 5 * dp, 5 * dp, paint);
+				paint.setColor(0xFF1A1A1A);
+				c.drawText(nm, px - tw / 2, py + 17 * dp, paint);
+			}
+			paint.setFakeBoldText(false);
+		}
 		// The attribution the OpenStreetMap licence asks for.
 		String att = "© OpenStreetMap contributors";
 		paint.setTextSize(11 * dp);

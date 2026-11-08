@@ -296,12 +296,63 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** Shows main screen ID (0 the town's, else a parcel's) with what is saved, and downloads when old. */
 	private void showPage(long id) {
+		showPage(id, false);
+	}
+
+	/**
+	 * Main screen ID. QUIET (v2.90, while a finger slides the screens): only its saved data are
+	 * shown, it is not remembered, logged or downloaded until the finger lets it stay (pageDone).
+	 */
+	private void showPage(long id, boolean quiet) {
 		boolean other = id != pageId;
 		pageId = id;
-		prefs.edit().putLong("farmPage", id).apply();
+		if (!quiet) prefs.edit().putLong("farmPage", id).apply();
 		pageState();
 		applyUnits();
+		if (quiet) {
+			clearPage();
+			loadPage();
+			view.invalidate();
+			return;
+		}
 		if (other) Log.i(this, "FERMIER", "ecran principal: " + (s.parcel == null ? town.label() : "parcela " + s.parcel));
+		clearPage();
+		loadPage();
+		view.invalidate();
+		if (System.currentTimeMillis() - s.fetched >= interval()) {
+			lastTry = 0;
+			fetch();
+		}
+	}
+
+	/** The main screen before the finger started sliding (v2.90). */
+	private long pagePrev;
+
+	/** v2.90: the finger slides toward the next (+1) or previous (-1) screen: shows it quietly. */
+	public boolean pagePeek(int step) {
+		List<Parcels.Parcel> l = pageList();
+		int to = s.page + step;
+		if (l.isEmpty() || to < 0 || to > l.size()) return false;
+		bubble.hide();
+		pagePrev = pageId;
+		showPage(to == 0 ? 0 : l.get(to - 1).id, true);
+		return true;
+	}
+
+	/** v2.90: the finger went back: the screen it started from. */
+	public void pageBack() {
+		showPage(pagePrev, true);
+	}
+
+	/** v2.90: the finger let the new screen stay: remembered, and downloaded when old. */
+	public void pageDone() {
+		long id = pageId;
+		pageId = pagePrev;
+		showPage(id);
+	}
+
+	/** Forgets the data of the screen shown (before another's are loaded). */
+	private void clearPage() {
 		s.w = null;
 		s.warns = null;
 		s.quakes = null;
@@ -318,12 +369,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.info.scroll = 0;
 		s.grid.scroll = 0;
 		s.alerts.scroll = 0;
-		loadPage();
-		view.invalidate();
-		if (System.currentTimeMillis() - s.fetched >= interval()) {
-			lastTry = 0;
-			fetch();
-		}
 	}
 
 	/** A swipe over the weather now: the next or the previous main screen, the town first. */

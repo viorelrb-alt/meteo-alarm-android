@@ -363,6 +363,7 @@ public final class FarmActivity extends Activity {
 
 	/** The inner width of a parcel's card, in pixels: half the page in landscape. */
 	private int cardInner() {
+		if (screen.equals("list") && cardW > 0) return cardW;
 		int w = getResources().getDisplayMetrics().widthPixels - px(32);
 		if (land()) w = (w - px(12)) / 2;
 		return w - px(28);
@@ -432,6 +433,8 @@ public final class FarmActivity extends Activity {
 		top.setGravity(Gravity.TOP);
 		LinearLayout left = column();
 		TextView name = text(p.name, 19, true, ink);
+		name.setMaxLines(2);
+		name.setEllipsize(android.text.TextUtils.TruncateAt.END);
 		String c = coords(p.lat, p.lon) + extra;
 		TextView co = text(c, 13, false, dim);
 		int room = cardInner() - (right != null ? px(40) : 0);
@@ -479,84 +482,347 @@ public final class FarmActivity extends Activity {
 		}).start();
 	}
 
+	/** The list map's view, kept when the list is drawn again (NaN: fit it to the parcels). */
+	private double listLat = Double.NaN, listLon, listZoom;
+	/** The phone's position found with the list map's GPS button (NaN: none). */
+	private double meLa = Double.NaN, meLo;
+	private MapView listMap;
+	/** The bubble shown while the GPS button looks for the position. */
+	private View gpsBubble;
+	/** The inner width of a parcel's card on the list (pixels), 0 before the list is built. */
+	private int cardW;
+
+	/** A smaller button for the list's fixed 2×2 block (v2.90): smaller on a phone. */
+	private TextView smallButton(String label, View.OnClickListener l) {
+		boolean tab = TextSize.tablet(this);
+		TextView t = button(label, l);
+		t.setTextSize((tab ? 16 : 13) * TextSize.get(this));
+		t.setMinHeight(px(tab ? 48 : 38));
+		t.setPadding(px(6), px(tab ? 10 : 6), px(6), px(tab ? 10 : 6));
+		t.setSingleLine(true);
+		t.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		return t;
+	}
+
+	/** A small square button floating over the map. */
+	private View floatBtn(View v, View.OnClickListener l) {
+		v.setBackground(frame(btn, 10));
+		v.setOnClickListener(l);
+		v.setElevation(px(3));
+		return v;
+	}
+
+	/** The GPS button's crosshair (drawn, blue as the dot of the phone's position). */
+	private View crosshair() {
+		return new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float cx = getWidth() / 2f, cy = getHeight() / 2f, r = Math.min(getWidth(), getHeight()) * 0.26f;
+				pt.setColor(0xFF2F6BEA);
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(dp * 2.2f);
+				c.drawCircle(cx, cy, r, pt);
+				c.drawLine(cx - r * 1.5f, cy, cx - r * 0.6f, cy, pt);
+				c.drawLine(cx + r * 0.6f, cy, cx + r * 1.5f, cy, pt);
+				c.drawLine(cx, cy - r * 1.5f, cx, cy - r * 0.6f, pt);
+				c.drawLine(cx, cy + r * 0.6f, cx, cy + r * 1.5f, pt);
+				pt.setStyle(Paint.Style.FILL);
+				c.drawCircle(cx, cy, r * 0.4f, pt);
+			}
+		};
+	}
+
+	/**
+	 * v2.90 (Viorel 2026-11-08): the map with every parcel (a pin and its name; a tap on the pin
+	 * = a tap on its card), the back button and the title floating at its top right, the GPS button
+	 * under them; landscape: the map on the left 2/3, on the right the 2×2 buttons (fixed) and the
+	 * cards (scrolled); portrait: the map on top, under it the buttons and 2 cards (a phone) or 2½
+	 * rows of 2 cards (a tablet).
+	 */
 	private void showList() {
 		screen = "list";
-		LinearLayout col = pageOf(Tr.t("Parcels", "Parcele"));
-		TextView sub = text(Tr.t("Kept only on this phone, until you delete them. Their statistics are kept 28 days.",
-				"Salvate doar pe acest telefon, până le ștergi. Statistica lor se păstrează 28 de zile."), 14, false, dim);
-		col.addView(sub, wide(8));
+		if (listMap != null && listMap.getWidth() > 0) {
+			listLat = listMap.lat();
+			listLon = listMap.lon();
+			listZoom = listMap.zoom();
+		}
+		root.removeAllViews();
+		final boolean tab = TextSize.tablet(this), land = land();
 		final List<Parcels.Parcel> all = Parcels.sorted(this);
+		LinearLayout body = new LinearLayout(this);
+		body.setOrientation(land ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+
+		// --- The map and what floats over it.
+		FrameLayout mapBox = new FrameLayout(this);
+		final MapView m = new MapView(this);
+		map = listMap = m;
+		m.setDark(dark);
+		m.clean();
+		m.setTopPad(px(tab ? 130 : 120));
+		List<MapView.Pin> pins = new java.util.ArrayList<MapView.Pin>();
+		for (Parcels.Parcel p : all) pins.add(new MapView.Pin(p.id, p.lat, p.lon, p.name));
+		m.setPins(pins, new MapView.PinTap() {
+			public void tapped(long id) {
+				Parcels.Parcel p = Parcels.get(FarmActivity.this, id);
+				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pe hartă: " + (p != null ? p.name : id));
+				select(id);
+			}
+		});
+		if (!Double.isNaN(listLat)) {
+			m.setZoom(listZoom);
+			m.center(listLat, listLon);
+		} else if (all.isEmpty()) {
+			Cities.City c = Cities.City.fromKey(Fetcher.prefs(this).getString("city", ""));
+			m.setZoom(13);
+			m.center(c != null ? c.lat : 44.2058, c != null ? c.lon : 27.3306);
+		} else m.fitPins();
+		if (!Double.isNaN(meLa)) m.setMe(meLa, meLo);
+		mapBox.addView(m, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		int fb = px(tab ? 46 : 42), mg = px(12);
+		TextView zin = text("＋", 22, true, ink), zout = text("−", 22, true, ink);
+		zin.setGravity(Gravity.CENTER);
+		zout.setGravity(Gravity.CENTER);
+		FrameLayout.LayoutParams zl = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+		zl.setMargins(mg, mg, 0, 0);
+		mapBox.addView(floatBtn(zin, new View.OnClickListener() {
+			public void onClick(View v) {
+				m.zoomBy(1);
+			}
+		}), zl);
+		FrameLayout.LayoutParams zl2 = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+		zl2.setMargins(mg, mg + fb + px(8), 0, 0);
+		mapBox.addView(floatBtn(zout, new View.OnClickListener() {
+			public void onClick(View v) {
+				m.zoomBy(-1);
+			}
+		}), zl2);
+		// The back button and the title: a badge at the map's top right edge (Viorel 2026-11-08).
+		LinearLayout badge = new LinearLayout(this);
+		badge.setGravity(Gravity.CENTER_VERTICAL);
+		badge.setBackground(frame(btn, 12));
+		badge.setElevation(px(3));
+		TextView back = text("‹", 24, true, ink);
+		back.setGravity(Gravity.CENTER);
+		back.setPadding(0, 0, 0, px(4));
+		back.setBackground(frame(btn, 12));
+		back.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				onBackPressed();
+			}
+		});
+		badge.addView(back, new LinearLayout.LayoutParams(fb + px(2), fb + px(2)));
+		TextView title = text(Tr.t("Parcels", "Parcele"), tab ? 22 : 20, true, ink);
+		title.setPadding(px(12), 0, px(14), 0);
+		title.setSingleLine(true);
+		badge.addView(title);
+		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		bl.setMargins(0, mg, mg, 0);
+		mapBox.addView(badge, bl);
+		// The GPS button under it: the bubble says what happens, the blue dot shows the place.
+		FrameLayout.LayoutParams gl = new FrameLayout.LayoutParams(fb + px(4), fb + px(4), Gravity.TOP | Gravity.RIGHT);
+		gl.setMargins(0, mg + fb + px(14), mg, 0);
+		View gps = floatBtn(crosshair(), new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "lista parcelelor: localizare precisă (GPS)");
+				if (gpsBubble != null) gpsBubble.setVisibility(View.VISIBLE);
+				afterLoc = new Runnable() {
+					public void run() {
+						findMe(false);
+					}
+				};
+				if (!Locator.allowed(FarmActivity.this))
+					requestPermissions(new String[] { Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION }, ASK_LOC);
+				else findMe(false);
+			}
+		});
+		gps.setContentDescription(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"));
+		mapBox.addView(gps, gl);
+		LinearLayout bub = column();
+		bub.setBackground(frame(card, 12));
+		bub.setPadding(px(14), px(10), px(14), px(12));
+		bub.setElevation(px(5));
+		bub.addView(text(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), 16, true, ink));
+		bub.addView(text(Tr.t("Looking for your exact place by GPS… Stay outside; the blue dot shows where you are.",
+				"Caut locația ta exactă prin GPS… Stai afară; punctul albastru arată unde ești."), 14, false, ink), wide(4));
+		bub.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				v.setVisibility(View.GONE);
+			}
+		});
+		bub.setVisibility(locListener != null ? View.VISIBLE : View.GONE);
+		gpsBubble = bub;
+		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(px(tab ? 320 : 250), ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		ql.setMargins(0, mg + 2 * fb + px(26), mg, 0);
+		mapBox.addView(bub, ql);
+
+		// --- The panel: the fixed buttons, then the scrolled cards.
+		LinearLayout panel = column();
+		int pad = px(12);
+		panel.setPadding(pad, px(land ? 12 : 10), pad, land ? px(8) : px(6));
 		List<View> buttons = new java.util.ArrayList<View>();
-		buttons.add(button("＋  " + Tr.t("Save the place here", "Salvează locul aici"), new View.OnClickListener() {
+		buttons.add(smallButton("＋  " + Tr.t("Save GPS place", "Salvare loc. GPS"), new View.OnClickListener() {
 			public void onClick(View v) {
 				saveHere();
 			}
 		}));
-		buttons.add(button(Tr.t("Choose on the map", "Alege pe hartă"), new View.OnClickListener() {
+		buttons.add(smallButton(Tr.t("Choose on the map", "Alege pe hartă"), new View.OnClickListener() {
 			public void onClick(View v) {
-				Cities.City c = Cities.City.fromKey(Fetcher.prefs(FarmActivity.this).getString("city", ""));
-				showMap(-1, "", c != null ? c.lat : 44.2058, c != null ? c.lon : 27.3306, 13, "list");
+				showMap(-1, "", m.lat(), m.lon(), Math.max(13, m.zoom()), "list");
 			}
 		}));
 		if (!all.isEmpty()) {
-			buttons.add(button(Tr.t("Edit", "Editare"), new View.OnClickListener() {
+			buttons.add(smallButton(Tr.t("Edit", "Editare"), new View.OnClickListener() {
 				public void onClick(View v) {
 					showEditList();
 				}
 			}));
-			buttons.add(button(Tr.t("Delete parcels", "Șterge parcele"), new View.OnClickListener() {
+			buttons.add(smallButton(Tr.t("Delete parcels", "Șterge parcele"), new View.OnClickListener() {
 				public void onClick(View v) {
 					ticked.clear();
 					showDelete();
 				}
 			}));
 		}
-		addGrid(col, buttons, 14, 10);
-		status = text("", 14, false, dim);
-		col.addView(status, wide(8));
-		if (all.isEmpty()) {
-			col.addView(text(Tr.t("No parcel saved yet. Stand on the parcel and tap “Save the place here”, or choose it on the map.",
-					"Nicio parcelă salvată încă. Stai pe parcelă și atinge „Salvează locul aici”, sau alege-o pe hartă."), 16, false, ink), wide(16));
-			return;
+		int bgap = px(tab ? 10 : 8);
+		for (int k = 0; k < buttons.size(); k += 2) {
+			LinearLayout row = pair(buttons.get(k), k + 1 < buttons.size() ? buttons.get(k + 1) : null);
+			panel.addView(row, wide(k == 0 ? 0 : bgap));
 		}
-		// A line between the buttons and the parcels (Viorel 2026-11-07); a tap shows the parcel on the main screen.
+		status = text("", 14, false, dim);
+		status.setVisibility(View.GONE);
+		panel.addView(status, wide(6));
 		View sep = new View(this);
 		sep.setBackgroundColor(ink);
-		col.addView(sep, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2)));
-		col.addView(text(Tr.t("Tap a parcel to see it on the main screen. The pencil opens it for editing.",
-				"Atinge o parcelă ca s-o vezi pe ecranul principal. Creionul o deschide pentru editare."), 13, false, dim), wide(8));
+		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2));
+		sl.topMargin = px(tab ? 12 : 9);
+		panel.addView(sep, sl);
+		final ScrollView sv = new ScrollView(this);
+		sv.setVerticalScrollBarEnabled(true);
+		LinearLayout list = column();
+		list.setPadding(0, px(tab ? 12 : 9), 0, px(8));
+		sv.addView(list);
+
+		// The width of the panel, so the cards' text fits it.
+		int sw = getResources().getDisplayMetrics().widthPixels;
+		int panelW = land ? sw / 3 : sw;
+		int cols = tab ? 2 : 1, gap = px(tab ? 10 : 10);
+		int colW = (panelW - 2 * pad - (cols - 1) * gap) / cols;
+		cardW = colW - px(28);
+		final boolean stacked = tab && land;
 		List<View> cards = new java.util.ArrayList<View>();
-		for (final Parcels.Parcel p : all) {
-			LinearLayout card = column();
-			card.setBackground(frame(this.card, 14));
-			card.setPadding(px(14), px(10), px(14), px(12));
-			nameLines(card, p, p.alerts ? " · " + Tr.t("alerts on", "alerte pornite") : "", pencil(p));
-			long f = Parcels.fetched(this, p.id);
-			Farm.Data d = Parcels.data(this, p.id);
-			if (d != null) {
-				int i = d.nowIndex(Calendar.getInstance());
-				if (i >= 0) {
-					// Two lines, as big as the card allows (v2.80, Viorel).
-					String l1 = Tr.t("temp: ", "temp: ") + deg(d.temp[i]) + " · " + Tr.t("wind ", "vânt ") + dir8(d.dir[i]) + " " + kmh(d.wind[i]);
-					String l2 = Tr.t("rain ", "ploaie ") + pct(d.prob[i]) + " · " + Tr.t("soil ", "sol ") + soil(d.soilM[i]);
-					float sp = fitSp(cardInner(), l1, l2) / TextSize.get(this);
-					TextView t1 = text(l1, sp, false, ink), t2 = text(l2, sp, false, ink);
-					t1.setSingleLine(true);
-					t2.setSingleLine(true);
-					card.addView(t1, wide(4));
-					card.addView(t2);
-				}
-				if (f > 0) card.addView(text(Tr.t("updated ", "actualizat ") + time(f), 12, false, dim), wide(2));
+		for (Parcels.Parcel p : all) cards.add(listCard(p, stacked));
+		final List<View> rows = new java.util.ArrayList<View>();
+		if (all.isEmpty())
+			list.addView(text(Tr.t("No parcel saved yet. Stand on the parcel and tap “Save GPS place”, or choose it on the map.",
+					"Nicio parcelă salvată încă. Stai pe parcelă și atinge „Salvare loc. GPS”, sau alege-o pe hartă."), 16, false, ink));
+		for (int k = 0; k < cards.size(); k += cols) {
+			View row = cols == 1 ? cards.get(k) : pairGap(cards.get(k), k + 1 < cards.size() ? cards.get(k + 1) : null, gap);
+			list.addView(row, wide(k == 0 ? 0 : gap));
+			rows.add(row);
+		}
+		LinearLayout.LayoutParams svl;
+		if (land || rows.isEmpty()) svl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, land ? 0 : ViewGroup.LayoutParams.WRAP_CONTENT, land ? 1 : 0);
+		else {
+			// Portrait: the cards' room is 2 cards (a phone) or 2½ rows (a tablet); the map the rest.
+			int h = px(9);
+			int show = tab ? 3 : 2;
+			for (int k = 0; k < Math.min(show, rows.size()); k++) {
+				View r = rows.get(k);
+				r.measure(View.MeasureSpec.makeMeasureSpec(panelW - 2 * pad, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+				int rh = r.getMeasuredHeight();
+				h += tab && k == 2 ? rh / 2 : rh + (k > 0 ? gap : 0);
+				if (tab && k == 2) h += gap;
 			}
-			card.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
-					select(p.id);
+			svl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, h);
+		}
+		panel.addView(sv, svl);
+		if (stacked && !rows.isEmpty()) {
+			// Tablet landscape: rows of 2 tall cards, 2 rows and the top half of the 3rd (Viorel).
+			sv.post(new Runnable() {
+				public void run() {
+					int avail = sv.getHeight() - px(9);
+					if (avail <= 0) return;
+					int rh = Math.round((avail - 2 * px(10)) / 2.55f);
+					for (View r : rows) {
+						r.measure(View.MeasureSpec.makeMeasureSpec(sv.getWidth(), View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+						ViewGroup.LayoutParams lp = r.getLayoutParams();
+						lp.height = Math.max(rh, r.getMeasuredHeight());
+						r.setLayoutParams(lp);
+					}
 				}
 			});
-			cards.add(card);
 		}
-		addGrid(col, cards, 12, 12);
+		panel.setBackgroundColor(page);
+		if (land) {
+			body.addView(mapBox, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 2));
+			View line = new View(this);
+			line.setBackgroundColor(ink);
+			body.addView(line, new LinearLayout.LayoutParams(px(2), ViewGroup.LayoutParams.MATCH_PARENT));
+			body.addView(panel, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+		} else {
+			body.addView(mapBox, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+			View line = new View(this);
+			line.setBackgroundColor(ink);
+			body.addView(line, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2)));
+			body.addView(panel, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		}
+		root.addView(body, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+	}
+
+	/** Two views side by side with GAP between them (the tablet's 2 columns of cards). */
+	private LinearLayout pairGap(View a, View b, int gap) {
+		LinearLayout row = new LinearLayout(this);
+		LinearLayout.LayoutParams la = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+		la.rightMargin = gap / 2;
+		row.addView(a, la);
+		LinearLayout.LayoutParams lb = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+		lb.leftMargin = gap - gap / 2;
+		row.addView(b != null ? b : new View(this), lb);
+		return row;
+	}
+
+	/**
+	 * A parcel's card on the list: the name (2 lines at most), the coordinates, the weather now in
+	 * 2 lines ("temp · wind" / "rain · soil"), or one value per line when STACKED (tablet landscape),
+	 * as big as the card allows; a tap shows the parcel on the main screen, the pencil edits it.
+	 */
+	private View listCard(final Parcels.Parcel p, boolean stacked) {
+		LinearLayout card = column();
+		card.setBackground(frame(this.card, 14));
+		card.setPadding(px(14), px(10), px(14), px(12));
+		nameLines(card, p, p.alerts ? " · " + Tr.t("alerts on", "alerte pornite") : "", pencil(p));
+		long f = Parcels.fetched(this, p.id);
+		Farm.Data d = Parcels.data(this, p.id);
+		if (d != null) {
+			int i = d.nowIndex(Calendar.getInstance());
+			if (i >= 0) {
+				String t = Tr.t("temp: ", "temp: ") + deg(d.temp[i]), w = Tr.t("wind ", "vânt ") + dir8(d.dir[i]) + " " + kmh(d.wind[i]);
+				String r = Tr.t("rain ", "ploaie ") + pct(d.prob[i]), s = Tr.t("soil ", "sol ") + soil(d.soilM[i]);
+				String[] lines = stacked ? new String[] { t, w, r, s } : new String[] { t + " · " + w, r + " · " + s };
+				float sp = fitSp(cardInner(), lines) / TextSize.get(this);
+				for (int k = 0; k < lines.length; k++) {
+					TextView tv = text(lines[k], sp, false, ink);
+					tv.setSingleLine(true);
+					card.addView(tv, wide(k == 0 ? 4 : 0));
+				}
+			}
+			if (f > 0) {
+				if (stacked) {
+					View fill = new View(this);
+					card.addView(fill, new LinearLayout.LayoutParams(1, 0, 1));
+				}
+				card.addView(text(Tr.t("updated ", "actualizat ") + time(f), 12, false, dim), wide(2));
+			}
+		}
+		card.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
+				select(p.id);
+			}
+		});
+		return card;
 	}
 
 	/** "Edit" (v2.80): the parcels; a tap opens one for editing its name and its place. */
@@ -601,7 +867,10 @@ public final class FarmActivity extends Activity {
 	public void onRequestPermissionsResult(int code, String[] perms, int[] res) {
 		if (code == ASK_LOC) {
 			if (Locator.allowed(this) && afterLoc != null) afterLoc.run();
-			else toast(Tr.t("Without location the place can only be chosen on the map.", "Fără localizare, locul se poate alege doar pe hartă."));
+			else {
+				if (gpsBubble != null) gpsBubble.setVisibility(View.GONE);
+				toast(Tr.t("Without location the place can only be chosen on the map.", "Fără localizare, locul se poate alege doar pe hartă."));
+			}
 		} else if (code == ASK_NOTIFY && !Notifier.allowed(this))
 			toast(Tr.t("The phone does not allow notifications for the app: the alerts cannot be shown.", "Telefonul nu permite notificări aplicației: alertele nu pot fi afișate."));
 	}
@@ -615,7 +884,10 @@ public final class FarmActivity extends Activity {
 		stopLoc();
 		lm = (LocationManager) getSystemService(LOCATION_SERVICE);
 		if (lm == null) return;
-		if (isNew && status != null) status.setText(Tr.t("Looking for the position (GPS)… stay outside, on the parcel.", "Caut poziția (GPS)… stai afară, pe parcelă."));
+		if (isNew && status != null) {
+			status.setText(Tr.t("Looking for the position (GPS)… stay outside, on the parcel.", "Caut poziția (GPS)… stai afară, pe parcelă."));
+			status.setVisibility(View.VISIBLE);
+		}
 		Location best = null;
 		try {
 			for (String p : lm.getAllProviders()) {
@@ -679,13 +951,21 @@ public final class FarmActivity extends Activity {
 	private void found(Location l, boolean isNew, boolean late) {
 		if (l != null) Log.i(this, "FERMIER", "poziție " + l.getProvider() + " ±" + Math.round(l.getAccuracy()) + " m" + (late ? " (ultima cunoscută)" : ""));
 		if (!isNew) {
+			if (gpsBubble != null) gpsBubble.setVisibility(View.GONE);
+			if (l != null && map == listMap) {
+				meLa = l.getLatitude();
+				meLo = l.getLongitude();
+			}
 			if (l != null && map != null) {
 				map.setMe(l.getLatitude(), l.getLongitude());
 				map.center(l.getLatitude(), l.getLongitude());
 			} else if (l == null) toast(Tr.t("The position was not found.", "Poziția nu a fost găsită."));
 			return;
 		}
-		if (status != null) status.setText("");
+		if (status != null) {
+			status.setText("");
+			if (screen.equals("list")) status.setVisibility(View.GONE);
+		}
 		Cities.City c = Cities.City.fromKey(Fetcher.prefs(this).getString("city", ""));
 		if (l == null) {
 			toast(Tr.t("The position was not found: move the map to the parcel.", "Poziția nu a fost găsită: mută harta la parcelă."));
@@ -786,6 +1066,8 @@ public final class FarmActivity extends Activity {
 				// v2.81 (Viorel): a new or moved parcel gets its weather at once, and its card fills in
 				// on the list without leaving the page.
 				if (moved) fetchNow(p);
+				// v2.90: the list map shows all the parcels again, the new or moved one among them.
+				if (moved) listLat = Double.NaN;
 				if (mapBack.equals("finish")) finish();
 				else if (id >= 0 && mapBack.equals("parcel")) showParcel(p.id);
 				else if (id >= 0) {

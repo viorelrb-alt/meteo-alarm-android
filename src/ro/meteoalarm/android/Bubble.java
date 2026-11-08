@@ -236,6 +236,7 @@ final class Bubble extends FrameLayout {
 		// Every row on one line, all choices in the same font: the bubble grows to hold the longest
 		// one; only when even the screen is too narrow do all of them get the same smaller font.
 		float need = 0, sp = 15 * zk;
+		boolean choices = false;
 		for (int pass = 0; pass < 40; pass++) {
 			need = 0;
 			for (int k = 0; k < list.getChildCount(); k++) {
@@ -243,7 +244,10 @@ final class Bubble extends FrameLayout {
 				if (!(v instanceof TextView) || "text".equals(v.getTag())) continue;
 				TextView t = (TextView) v;
 				t.setSingleLine(true);
-				if (t.isClickable()) t.setTextSize(sp);
+				if (t.isClickable()) {
+					t.setTextSize(sp);
+					choices = true;
+				}
 				android.graphics.drawable.Drawable ic = t.getCompoundDrawables()[0];
 				need = Math.max(need, t.getPaint().measureText(t.getText().toString()) + t.getPaddingLeft() + t.getPaddingRight()
 						+ (ic != null ? ic.getBounds().width() + t.getCompoundDrawablePadding() : 0) + 4 * dp);
@@ -255,7 +259,11 @@ final class Bubble extends FrameLayout {
 		pan = pan && sw > sh;
 		if (pan) width = (int) (sw * 0.62f);
 		else {
-			if (TextSize.tablet(c)) width = (int) Math.ceil(need + 8 * dp);
+			// v2.90: only a bubble of choices shrinks to its longest row; one of info rows (only
+			// headers and texts) keeps its own width (it was narrow and tall on the Tab S9 FE).
+			boolean texts = false;
+			for (Row r : rows) if (r.kind == Row.TEXT) texts = true;
+			if (TextSize.tablet(c) && choices && !texts) width = (int) Math.ceil(need + 8 * dp);
 			width = Math.min(Math.max(width, (int) Math.ceil(need)), sw - 2 * margin);
 		}
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
