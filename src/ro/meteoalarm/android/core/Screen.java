@@ -431,7 +431,12 @@ public final class Screen {
 			footer(fb);
 			return;
 		}
+		// Farmer mode, merged boxes (v2.81, as on the phone): portrait keeps one row of wide boxes
+		// under the weather now, which gets the room of the second row.
+		boolean merged = farmer && farmMerged;
+		float bs = 1.2f, MH = 330, ih = 190;
 		float nl = 40, nr = land ? cw / 2 - 20 : cw - 40, nt = land ? (pages > 1 ? 132 : 116) : 146, nb = land ? fb - 20 : ch * 0.42f;
+		if (merged && !land) nb = Math.max(nb, fb - 14 - (MH + 14 + ih + 24) * bs);
 		dots((nl + nr) / 2, 112, pages, page);
 		float wf = 1.25f, wb = drawWarnBoxes(nl, nt, nr - nl, 3, wf);
 		float top = Math.max(wb, nt + 130 * wf) + 16;
@@ -444,19 +449,35 @@ public final class Screen {
 		tempSize(420, mid - nl - 30);
 		drawTempAt(mid - 12 - tW, cy + tp * 32 / 100);
 		setNow(nl, top, nr - nl, lineY + 80 - top);
+		if (merged) nowTexts(d[1], lineY - 10, nl, nr);
+		else {
 		rtext(true, fit(true, 44, (nr - nl) / 2, d[1]), lineY, nr - 6, d[1], c.ink);
 		windLine(32, lineY + 46, nr - 6);
 		if (!Double.isNaN(w.feels)) ltext(false, 32, lineY + 7, nl, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 32, lineY + 46, nl, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+		}
 
 		// The boxes, in units 1.2 times larger.
 		Gfx g0 = g;
-		float bs = 1.2f;
 		g = new Scaled(g0, bs);
 		hs = bs;
 		float bx = (land ? cw / 2 + 20 : 40) / bs, bw = (land ? cw / 2 - 60 : cw - 80) / bs, by = (land ? 146 : nb + 24) / bs;
-		float avail = (fb - 14) / bs - by, ih = 190, hh = farmer ? Math.min(420, (avail - ih - 28) / 2) : Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
+		if (merged) {
+			float avail = (fb - 14) / bs - by, mh = avail - ih - 14;
+			peekW = land ? 15 : 30;
+			if (land) drawMergedColumn(bx, by, bw, mh);
+			else drawMergedRow(bx, by, bw, mh);
+			peekW = 30;
+			for (int k = 0; k < 4; k++) hours.area[k] *= bs;
+			drawInfoStrip(bx, by + mh + 14, bw, ih);
+			for (int k = 0; k < 4; k++) info.area[k] *= bs;
+			g = g0;
+			hs = 1;
+			footer(fb);
+			return;
+		}
+		float avail = (fb - 14) / bs - by, hh = farmer ? Math.min(420, (avail - ih - 28) / 2) : Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
 		drawNextHours(bx, by, bw, hh, true);
 		for (int k = 0; k < 4; k++) hours.area[k] *= bs;
 		float dy = by + hh + 14, dw = (bw - 4 * 12) / 5;

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -455,6 +456,29 @@ public final class FarmActivity extends Activity {
 		card.addView(top);
 	}
 
+	/** Downloads parcel P's data now (off the main thread), then redraws the list if it is open. */
+	private void fetchNow(final Parcels.Parcel p) {
+		final Context ctx = getApplicationContext();
+		new Thread(new Runnable() {
+			public void run() {
+				try {
+					Parcels.fetch(ctx, p);
+					Log.i(ctx, "FERMIER", "parcela " + p.name + " descărcată după salvare");
+				} catch (Exception e) {
+					Log.e(ctx, "FERMIER", "datele parcelei " + p.name + " au eșuat după salvare: " + e.getMessage());
+					return;
+				}
+				runOnUiThread(new Runnable() {
+					public void run() {
+						if (isFinishing()) return;
+						if (screen.equals("list")) showList();
+						else if (screen.equals("edit")) showEditList();
+					}
+				});
+			}
+		}).start();
+	}
+
 	private void showList() {
 		screen = "list";
 		LinearLayout col = pageOf(Tr.t("Parcels", "Parcele"));
@@ -759,6 +783,9 @@ public final class FarmActivity extends Activity {
 				stopLoc();
 				// Moved: the old data were for another place (the main screen downloads them again too).
 				if (id >= 0 && moved) Fetcher.prefs(FarmActivity.this).edit().putLong("pf_" + p.id, 0).putLong("pmf_" + p.id, 0).apply();
+				// v2.81 (Viorel): a new or moved parcel gets its weather at once, and its card fills in
+				// on the list without leaving the page.
+				if (moved) fetchNow(p);
 				if (mapBack.equals("finish")) finish();
 				else if (id >= 0 && mapBack.equals("parcel")) showParcel(p.id);
 				else if (id >= 0) {
