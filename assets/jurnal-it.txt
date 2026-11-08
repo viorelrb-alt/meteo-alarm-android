@@ -14,10 +14,11 @@ Versione 2
 - Pagina Terremoti.
 - Notifiche con il tuo consenso: pioggia o neve, allerte, terremoti.
 
-Versione attuale: v2.80 · 8.11.2026
+Versione attuale: v2.90 · 8.11.2026
 Miglioramenti di design / struttura.
-- Particelle: il pulsante Modifica e la matita su ogni particella, per il nome e il punto sulla mappa.
-- Nuove lingue: turco, russo, serbo.
+- Appezzamenti: una mappa con tutte le parcelle, il pulsante GPS (punto blu) e «Salva luogo GPS».
+- Modalità agricoltore: le schermate principali scorrono con il dito.
+- Tablet: le caselle unite della modalità agricoltore, parcelle su 2 colonne.
 
 ────────
 Nuove funzioni dalla v2.10

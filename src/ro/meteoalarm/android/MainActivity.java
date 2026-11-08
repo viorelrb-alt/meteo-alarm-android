@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.80";
+	static final String VERSION = "Meteo Alarm Android v2.90";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2292,10 +2292,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Atingerea arată detaliile orei: temperatura, vântul și direcția lui, umiditatea, ploaia, solul."));
 		help.entry(mini("farm"), Tr.t("Water in the soil", "Apa în sol"), Tr.t("The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.",
 				"Apa reținută acum în stratul de sol de 3–9 cm și schimbarea ei în 24 de ore; atingerea arată orele cu precipitații. Estimare Open-Meteo."));
-		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: save the place where you stand or choose it on the map, give it a name. Edit (or the pencil) changes the name and the pin; Delete parcels removes them. Kept only on this phone.",
-				"☰ › Parcele: salvezi locul unde stai sau îl alegi pe hartă și îi dai un nume. Editare (sau creionul) schimbă numele și acul; Șterge parcele le șterge. Rămân doar în acest telefon."));
-		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways over the temperature.",
-				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral peste temperatură."));
+		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. Kept only on this phone.",
+				"☰ › Parcele: harta arată toate parcelele; atingerea unui ac sau a unei parcele o deschide pe ecranul principal. „Salvare loc. GPS” salvează locul unde stai, „Alege pe hartă” merge și de acasă; butonul GPS arată unde ești (punctul albastru). Editare (sau creionul) schimbă numele și acul. Rămân doar în acest telefon."));
+		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
+				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral; mijlocul ecranului urmează degetul și după jumătate trece la următorul."));
 		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.",
 				"Atingerea numelui parcelei: casetele ei, următoarele 12 ore, statistică cu PDF, alerte, redenumire, ștergere."));
 		help.entry(mini("bell"), Tr.t("Parcel alerts", "Alerte parcelă"), Tr.t("When ON, a notification for rain or strong wind forecast on the parcel.",

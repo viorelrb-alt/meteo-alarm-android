@@ -14,10 +14,11 @@ Versija 2
 - Lapa Zemestrīces.
 - Paziņojumi ar tavu piekrišanu: lietus vai sniegs, brīdinājumi, zemestrīces.
 
-Pašreizējā versija: v2.80 · 8.11.2026
+Pašreizējā versija: v2.90 · 8.11.2026
 Dizaina / struktūras uzlabojumi.
-- Lauki: poga Rediģēt un zīmulis uz katra lauka, nosaukumam un vietai kartē.
-- Jaunas valodas: turku, krievu, serbu.
+- Lauki: karte ar visiem laukiem, GPS poga (zilais punkts) un “Saglabāt GPS vietu”.
+- Lauksaimnieka režīms: galvenie ekrāni slīd līdzi pirkstam.
+- Planšete: zemnieka režīma apvienotie lodziņi, lauki 2 kolonnās.
 
 ────────
 Jaunas funkcijas kopš v2.10

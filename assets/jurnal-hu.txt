@@ -14,10 +14,11 @@
 - Földrengések oldal.
 - Értesítések a hozzájárulásoddal: eső vagy hó, figyelmeztetések, földrengések.
 
-Jelenlegi verzió: v2.80 · 2026.11.08.
+Jelenlegi verzió: v2.90 · 2026.11.08.
 Dizájn / szerkezet fejlesztései.
-- Parcellák: a Szerkesztés gomb és a ceruza minden parcellán, a névhez és a térképen lévő helyhez.
-- Új nyelvek: török, orosz, szerb.
+- Parcellák: térkép az összes parcellával, GPS gomb (kék pont) és „GPS-hely mentése”.
+- Gazda mód: a főképernyők az ujjal együtt csúsznak.
+- Táblagép: a gazda mód összevont dobozai, parcellák 2 oszlopban.
 
 ────────
 Új funkciók a v2.10 óta

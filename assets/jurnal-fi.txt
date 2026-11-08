@@ -14,10 +14,11 @@ Versio 2
 - Maanjäristykset-sivu.
 - Ilmoitukset suostumuksellasi: sade tai lumi, varoitukset, maanjäristykset.
 
-Nykyinen versio: v2.80 · 8.11.2026
+Nykyinen versio: v2.90 · 8.11.2026
 Ulkoasun / rakenteen parannuksia.
-- Lohkot: Muokkaa-painike ja kynä jokaisessa lohkossa, nimeä ja karttasijaintia varten.
-- Uudet kielet: turkki, venäjä, serbia.
+- Lohkot: kartta kaikista lohkoista, GPS-painike (sininen piste) ja ”Tallenna GPS-paikka”.
+- Viljelijätila: päänäytöt liukuvat sormen mukana.
+- Tabletti: viljelijätilan yhdistetyt ruudut, lohkot 2 sarakkeessa.
 
 ────────
 Uudet toiminnot v2.10:stä alkaen

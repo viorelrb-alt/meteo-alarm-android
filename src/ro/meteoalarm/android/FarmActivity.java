@@ -686,6 +686,16 @@ public final class FarmActivity extends Activity {
 			}));
 		}
 		int bgap = px(tab ? 10 : 8);
+		// The labels shrink to fit their button (the right third of a phone in landscape is narrow).
+		int bw0 = ((land ? getResources().getDisplayMetrics().widthPixels / 3 : getResources().getDisplayMetrics().widthPixels) - 2 * px(12) - px(12)) / 2 - px(16);
+		for (View v : buttons) {
+			TextView t = (TextView) v;
+			float sz = t.getTextSize();
+			while (sz > 8 * dp && t.getPaint().measureText(t.getText().toString()) > bw0) {
+				sz -= dp / 2;
+				t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, sz);
+			}
+		}
 		for (int k = 0; k < buttons.size(); k += 2) {
 			LinearLayout row = pair(buttons.get(k), k + 1 < buttons.size() ? buttons.get(k + 1) : null);
 			panel.addView(row, wide(k == 0 ? 0 : bgap));

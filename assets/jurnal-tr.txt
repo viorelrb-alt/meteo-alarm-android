@@ -14,10 +14,11 @@ Sürüm 2
 - Depremler sayfası.
 - İzninle bildirimler: yağmur veya kar, uyarılar, depremler.
 
-Geçerli sürüm: v2.80 · 8.11.2026
+Geçerli sürüm: v2.90 · 8.11.2026
 Tasarım / yapı iyileştirmeleri.
-- Parseller: Düzenle düğmesi ve her parselde kalem, ad ve haritadaki yer için.
-- Yeni diller: Türkçe, Rusça, Sırpça.
+- Parseller: tüm parselleri gösteren harita, GPS düğmesi (mavi nokta) ve “GPS yerini kaydet”.
+- Çiftçi modu: ana ekranlar parmakla birlikte kayar.
+- Tablet: çiftçi modunun birleşik kutuları, parseller 2 sütunda.
 
 ────────
 v2.10'dan beri yeni işlevler

@@ -14,10 +14,11 @@ Version 2
 - Earthquakes page.
 - Notifications with your consent: rain or snow, warnings, earthquakes.
 
-Current version: v2.80 · 8.11.2026
+Current version: v2.90 · 8.11.2026
 Design / structure improvements.
-- Parcels: the Edit button and the pencil on each parcel, for the name and the place on the map.
-- New languages: Turkish, Russian, Serbian.
+- Parcels: a map with all the parcels, the GPS button (blue dot) and “Save GPS place”.
+- Farmer mode: the main screens slide with the finger.
+- Tablet: the merged boxes of farmer mode, parcels in 2 columns.
 
 ────────
 New functions since v2.10

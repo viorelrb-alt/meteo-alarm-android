@@ -14,10 +14,11 @@ Version 2
 - Seite Erdbeben.
 - Benachrichtigungen mit deiner Zustimmung: Regen oder Schnee, Warnungen, Erdbeben.
 
-Aktuelle Version: v2.80 · 8.11.2026
+Aktuelle Version: v2.90 · 8.11.2026
 Verbesserungen an Design / Struktur.
-- Parzellen: die Taste Bearbeiten und der Stift auf jeder Parzelle, für Namen und Ort auf der Karte.
-- Neue Sprachen: Türkisch, Russisch, Serbisch.
+- Parzellen: eine Karte mit allen Parzellen, die GPS-Taste (blauer Punkt) und „GPS-Ort speichern“.
+- Landwirt-Modus: Die Hauptbildschirme gleiten mit dem Finger.
+- Tablet: die zusammengelegten Kästen des Landwirt-Modus, Parzellen in 2 Spalten.
 
 ────────
 Neue Funktionen seit v2.10

@@ -14,10 +14,11 @@ Versiunea 2
 - Pagina Cutremure.
 - Notificări cu acordul tău: ploaie sau ninsoare, avertizări, cutremure.
 
-Versiunea curentă: v2.80 · 8.11.2026
+Versiunea curentă: v2.90 · 8.11.2026
 Îmbunătățiri de design / structură.
-- Parcele: butonul Editare și creionul de pe fiecare parcelă, pentru nume și loc pe hartă.
-- Limbi noi: turcă, rusă, sârbă.
+- Parcele: harta cu toate parcelele, butonul GPS (punctul albastru) și „Salvare loc. GPS”.
+- Mod Fermier: ecranele principale glisează cu degetul.
+- Tabletă: casetele unite din Mod Fermier, parcelele pe 2 coloane.
 
 ────────
 Funcții noi de la v2.10

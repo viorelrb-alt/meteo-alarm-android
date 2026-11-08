@@ -14,10 +14,11 @@ Version 2
 - Sidan Jordbävningar.
 - Aviseringar med ditt samtycke: regn eller snö, varningar, jordbävningar.
 
-Nuvarande version: v2.80 · 8.11.2026
+Nuvarande version: v2.90 · 8.11.2026
 Förbättringar av design / struktur.
-- Skiften: knappen Redigera och en penna på varje skifte, för namn och plats på kartan.
-- Nya språk: turkiska, ryska, serbiska.
+- Skiften: en karta med alla skiften, GPS-knappen (blå prick) och ”Spara GPS-plats”.
+- Lantbruksläge: huvudskärmarna glider med fingret.
+- Surfplatta: lantbruksläget sammanslagna rutor, skiften i 2 kolumner.
 
 ────────
 Nya funktioner sedan v2.10

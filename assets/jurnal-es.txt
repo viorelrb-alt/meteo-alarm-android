@@ -14,10 +14,11 @@ Versión 2
 - Página Terremotos.
 - Notificaciones con tu permiso: lluvia o nieve, avisos, terremotos.
 
-Versión actual: v2.80 · 8.11.2026
+Versión actual: v2.90 · 8.11.2026
 Mejoras de diseño / estructura.
-- Parcelas: el botón Editar y el lápiz en cada parcela, para el nombre y el lugar en el mapa.
-- Idiomas nuevos: turco, ruso, serbio.
+- Parcelas: un mapa con todas las parcelas, el botón GPS (punto azul) y «Guardar lugar GPS».
+- Modo agricultor: las pantallas principales se deslizan con el dedo.
+- Tableta: las casillas unidas del modo agricultor, parcelas en 2 columnas.
 
 ────────
 Funciones nuevas desde la v2.10

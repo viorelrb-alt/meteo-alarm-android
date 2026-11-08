@@ -14,10 +14,11 @@ Versioon 2
 - Leht Maavärinad.
 - Teavitused sinu nõusolekul: vihm või lumi, hoiatused, maavärinad.
 
-Praegune versioon: v2.80 · 8.11.2026
+Praegune versioon: v2.90 · 8.11.2026
 Kujunduse / ülesehituse parandused.
-- Põllud: nupp Muuda ja pliiats igal põllul, nime ja kaardil asukoha jaoks.
-- Uued keeled: türgi, vene, serbia.
+- Põllud: kaart kõigi maatükkidega, GPS-nupp (sinine täpp) ja „Salvesta GPS-koht“.
+- Põllumehe režiim: põhiekraanid liiguvad koos sõrmega.
+- Tahvelarvuti: põllumehe režiimi ühendatud kastid, maatükid 2 veerus.
 
 ────────
 Uued funktsioonid alates v2.10

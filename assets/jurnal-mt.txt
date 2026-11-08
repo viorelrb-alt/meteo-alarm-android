@@ -14,10 +14,11 @@ Verżjoni 2
 - Il-paġna Terremoti.
 - Notifiki bil-kunsens tiegħek: xita jew silġ, twissijiet, terremoti.
 
-Verżjoni attwali: v2.80 · 8.11.2026
+Verżjoni attwali: v2.90 · 8.11.2026
 Titjib fid-disinn / fl-istruttura.
-- Għelieqi: il-buttuna Editja u lapes fuq kull għalqa, għall-isem u l-post fuq il-mappa.
-- Lingwi ġodda: Tork, Russu, Serb.
+- Għelieqi: mappa bl-għelieqi kollha, il-buttuna GPS (tikka blu) u “Issejvja post GPS”.
+- Modalità tal-bidwi: l-iskrins ewlenin jiżżerżqu mas-saba’.
+- Tablet: il-kaxxi magħquda tal-modalità tal-bidwi, għelieqi f’2 kolonni.
 
 ────────
 Funzjonijiet ġodda minn v2.10

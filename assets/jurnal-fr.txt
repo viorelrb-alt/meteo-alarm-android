@@ -14,10 +14,11 @@ Version 2
 - Page Séismes.
 - Notifications avec votre accord : pluie ou neige, alertes, séismes.
 
-Version actuelle : v2.80 · 8.11.2026
+Version actuelle : v2.90 · 8.11.2026
 Améliorations de design / structure.
-- Parcelles : le bouton Modifier et le crayon sur chaque parcelle, pour le nom et l'emplacement sur la carte.
-- Nouvelles langues : turc, russe, serbe.
+- Parcelles : une carte avec toutes les parcelles, le bouton GPS (point bleu) et « Enregistrer lieu GPS ».
+- Mode agriculteur : les écrans principaux glissent avec le doigt.
+- Tablette : les cases réunies du mode agriculteur, parcelles sur 2 colonnes.
 
 ────────
 Nouvelles fonctions depuis la v2.10

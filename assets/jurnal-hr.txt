@@ -14,10 +14,11 @@ Verzija 2
 - Stranica Potresi.
 - Obavijesti uz tvoj pristanak: kiša ili snijeg, upozorenja, potresi.
 
-Trenutačna verzija: v2.80 · 8.11.2026
+Trenutačna verzija: v2.90 · 8.11.2026
 Poboljšanja izgleda / strukture.
-- Parcele: gumb Uredi i olovka na svakoj parceli, za ime i mjesto na karti.
-- Novi jezici: turski, ruski, srpski.
+- Parcele: karta sa svim parcelama, gumb GPS (plava točka) i „Spremi GPS mjesto”.
+- Način poljoprivrednika: glavni zasloni klize s prstom.
+- Tablet: spojeni okviri načina rada za poljoprivrednike, parcele u 2 stupca.
 
 ────────
 Nove funkcije od v2.10

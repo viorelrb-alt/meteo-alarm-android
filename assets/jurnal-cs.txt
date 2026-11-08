@@ -14,10 +14,11 @@ Verze 2
 - Stránka Zemětřesení.
 - Oznámení s tvým souhlasem: déšť nebo sníh, výstrahy, zemětřesení.
 
-Současná verze: v2.80 · 8.11.2026
+Současná verze: v2.90 · 8.11.2026
 Vylepšení vzhledu / struktury.
-- Parcely: tlačítko Upravit a tužka na každé parcele, pro název a místo na mapě.
-- Nové jazyky: turečtina, ruština, srbština.
+- Pozemky: mapa se všemi parcelami, tlačítko GPS (modrá tečka) a „Uložit místo GPS“.
+- Režim zemědělce: hlavní obrazovky se posouvají prstem.
+- Tablet: spojené rámečky režimu farmáře, parcely ve 2 sloupcích.
 
 ────────
 Nové funkce od v2.10
