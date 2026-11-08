@@ -656,3 +656,6 @@ When the download fails	Ko prenos ne uspe
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Aplikacija najprej preveri internet, poskusi do 5-krat, ko GitHub ne odgovori, in pokaže razlog; že prenesena različica se takoj namesti.
 Connection	Povezava
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Ob uri: Wi-Fi (loki), mobilni podatki (črtice), drugo omrežje (globus), prečrtano, ko ni interneta.
+Could not reach GitHub: 	GitHuba ni bilo mogoče doseči: 
+. Try again in a few minutes.	. Poskusi znova čez nekaj minut.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Aplikacija najprej preveri internet, novo različico išče 3-krat in jo prenese v največ 5 poskusih; ko GitHub ne odgovori, pokaže razlog. Že prenesena različica se takoj namesti.

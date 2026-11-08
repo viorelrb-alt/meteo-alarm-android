@@ -1,4 +1,4 @@
-Nuvarande version: v.3.01 · 8.11.2026
+Nuvarande version: v.3.02 · 8.11.2026
 Förbättringar av design / struktur.
 - Anslutningsikon vid klockan: Wi-Fi, mobildata eller ingen.
 - Uppdateringar: anslutningen kontrolleras först, en redan hämtad version installeras direkt, upp till 5 försök när GitHub inte svarar, och orsaken visas.

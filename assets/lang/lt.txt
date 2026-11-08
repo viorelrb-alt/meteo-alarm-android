@@ -656,3 +656,6 @@ When the download fails	Kai nepavyksta atsisiųsti
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Programa pirmiausia tikrina internetą, bando iki 5 kartų, kai GitHub neatsako, ir parodo priežastį; jau atsisiųsta versija įdiegiama iš karto.
 Connection	Ryšys
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Šalia laikrodžio: Wi-Fi (lankai), mobilieji duomenys (stulpeliai), kitas tinklas (gaublys), perbraukta, kai nėra interneto.
+Could not reach GitHub: 	Nepavyko pasiekti GitHub: 
+. Try again in a few minutes.	. Bandyk dar kartą po kelių minučių.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Programėlė pirmiausia tikrina internetą, 3 kartus ieško naujos versijos ir atsisiunčia ją iki 5 bandymų; kai GitHub neatsako, parodo priežastį. Jau atsisiųsta versija įdiegiama iš karto.

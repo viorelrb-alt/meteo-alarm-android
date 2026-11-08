@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.01";
+	static final String VERSION = "Meteo Alarm Android v3.02";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2366,8 +2366,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en));
 		help.entry(mini("update"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
-		help.entry(mini("update"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.",
-				"Aplicația verifică întâi internetul, încearcă de până la 5 ori când GitHub nu răspunde și arată motivul; o versiune deja descărcată se instalează direct."));
+		help.entry(mini("update"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.",
+				"Aplicația verifică întâi internetul, caută versiunea nouă de 3 ori și o descarcă din până la 5 încercări; când GitHub nu răspunde, arată motivul. O versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
 		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are.",

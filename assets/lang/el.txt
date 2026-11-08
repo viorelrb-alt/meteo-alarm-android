@@ -656,3 +656,6 @@ When the download fails	Όταν η λήψη αποτυγχάνει
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Η εφαρμογή ελέγχει πρώτα το διαδίκτυο, δοκιμάζει έως 5 φορές όταν το GitHub δεν απαντά και δείχνει την αιτία· μια έκδοση που έχει ήδη ληφθεί εγκαθίσταται αμέσως.
 Connection	Σύνδεση
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Δίπλα στο ρολόι: Wi-Fi (τόξα), δεδομένα κινητής (μπάρες), άλλο δίκτυο (υδρόγειος), διαγραμμένο όταν δεν υπάρχει διαδίκτυο.
+Could not reach GitHub: 	Δεν ήταν δυνατή η σύνδεση με το GitHub: 
+. Try again in a few minutes.	. Δοκίμασε ξανά σε λίγα λεπτά.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Η εφαρμογή ελέγχει πρώτα το διαδίκτυο, αναζητά τη νέα έκδοση 3 φορές και την κατεβάζει σε έως 5 προσπάθειες· όταν το GitHub δεν απαντά, δείχνει την αιτία. Μια έκδοση που έχει ήδη ληφθεί εγκαθίσταται αμέσως.

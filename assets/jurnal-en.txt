@@ -1,4 +1,4 @@
-Current version: v.3.01 · 8.11.2026
+Current version: v.3.02 · 8.11.2026
 Design / structure improvements.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.

@@ -656,3 +656,6 @@ When the download fails	Quand le téléchargement échoue
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	L’app vérifie d’abord internet, essaie jusqu’à 5 fois quand GitHub ne répond pas et montre la raison ; une version déjà téléchargée s’installe aussitôt.
 Connection	Connexion
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	À côté de l’horloge : Wi-Fi (arcs), données mobiles (barres), autre réseau (globe), barré quand il n’y a pas d’internet.
+Could not reach GitHub: 	Impossible de joindre GitHub : 
+. Try again in a few minutes.	. Réessaie dans quelques minutes.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	L’appli vérifie d’abord internet, cherche la nouvelle version 3 fois et la télécharge en 5 essais au plus ; quand GitHub ne répond pas, elle affiche la raison. Une version déjà téléchargée s’installe aussitôt.

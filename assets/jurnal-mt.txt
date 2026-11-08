@@ -1,4 +1,4 @@
-Verżjoni attwali: v.3.01 · 8.11.2026
+Verżjoni attwali: v.3.02 · 8.11.2026
 Titjib fid-disinn / fl-istruttura.
 - Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.

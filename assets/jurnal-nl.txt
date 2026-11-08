@@ -1,4 +1,4 @@
-Huidige versie: v.3.01 · 8.11.2026
+Huidige versie: v.3.02 · 8.11.2026
 Verbeteringen in ontwerp / structuur.
 - Verbindingspictogram naast de klok: wifi, mobiele data of geen.
 - Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.

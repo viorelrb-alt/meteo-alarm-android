@@ -656,3 +656,6 @@ When the download fails	När hämtningen misslyckas
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Appen kontrollerar först internet, försöker upp till 5 gånger när GitHub inte svarar och visar orsaken; en redan hämtad version installeras direkt.
 Connection	Anslutning
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Vid klockan: Wi-Fi (bågar), mobildata (staplar), annat nätverk (jordglob), överstruken när det inte finns internet.
+Could not reach GitHub: 	Kunde inte nå GitHub: 
+. Try again in a few minutes.	. Försök igen om några minuter.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Appen kontrollerar först internet, söker efter den nya versionen 3 gånger och hämtar den med upp till 5 försök; när GitHub inte svarar visas orsaken. En redan hämtad version installeras direkt.

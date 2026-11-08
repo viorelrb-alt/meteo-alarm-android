@@ -656,3 +656,6 @@ When the download fails	Když stahování selže
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Aplikace nejdřív ověří internet, zkusí to až 5krát, když GitHub neodpovídá, a ukáže důvod; již stažená verze se hned nainstaluje.
 Connection	Připojení
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Vedle hodin: Wi-Fi (oblouky), mobilní data (čárky), jiná síť (glóbus), přeškrtnuté, když není internet.
+Could not reach GitHub: 	Nepodařilo se spojit s GitHubem: 
+. Try again in a few minutes.	. Zkus to znovu za pár minut.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Aplikace nejdřív ověří internet, hledá novou verzi 3krát a stáhne ji až na 5 pokusů; když GitHub neodpovídá, ukáže důvod. Již stažená verze se hned nainstaluje.

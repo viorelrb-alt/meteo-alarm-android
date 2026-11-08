@@ -1,4 +1,4 @@
-Současná verze: v.3.01 · 8.11.2026
+Současná verze: v.3.02 · 8.11.2026
 Vylepšení vzhledu / struktury.
 - Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.

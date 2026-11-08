@@ -656,3 +656,6 @@ When the download fails	Ha a letöltés nem sikerül
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Az alkalmazás először az internetet ellenőrzi, legfeljebb 5-ször próbálkozik, ha a GitHub nem válaszol, és kiírja az okot; a már letöltött verzió azonnal települ.
 Connection	Kapcsolat
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Az óra mellett: Wi-Fi (ívek), mobiladat (oszlopok), más hálózat (földgömb), áthúzva, ha nincs internet.
+Could not reach GitHub: 	Nem sikerült elérni a GitHubot: 
+. Try again in a few minutes.	. Próbáld újra néhány perc múlva.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Az alkalmazás először az internetet ellenőrzi, 3-szor keresi az új verziót, és legfeljebb 5 próbálkozással tölti le; ha a GitHub nem válaszol, kiírja az okot. A már letöltött verzió azonnal települ.

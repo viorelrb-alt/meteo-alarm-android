@@ -656,3 +656,6 @@ When the download fails	Ja lejupielāde neizdodas
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Lietotne vispirms pārbauda internetu, mēģina līdz 5 reizēm, ja GitHub neatbild, un parāda iemeslu; jau lejupielādēta versija tiek uzreiz instalēta.
 Connection	Savienojums
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Pie pulksteņa: Wi-Fi (loki), mobilie dati (stabiņi), cits tīkls (globuss), pārsvītrots, ja nav interneta.
+Could not reach GitHub: 	Neizdevās sasniegt GitHub: 
+. Try again in a few minutes.	. Mēģini vēlreiz pēc dažām minūtēm.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Lietotne vispirms pārbauda internetu, 3 reizes meklē jauno versiju un lejupielādē to ar līdz 5 mēģinājumiem; ja GitHub neatbild, parāda iemeslu. Jau lejupielādēta versija tiek uzreiz instalēta.

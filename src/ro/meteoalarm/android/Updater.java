@@ -12,7 +12,6 @@ import java.net.URL;
 
 import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Release;
-import ro.meteoalarm.android.core.Weather;
 
 /**
  * In-app updates: the newest GitHub Release of the app is compared with the installed version and
@@ -118,7 +117,14 @@ final class Updater {
 
 	/** MANUAL (from the menu): the window opens at once and also says when there is nothing new. */
 	void check(final boolean manual) {
-		if (busy) return;
+		if (busy) {
+			// v3.02: a second tap while looking shows the window again (it did nothing).
+			if (manual && checkMsg != null) {
+				sheet.show(Tr.t("Updates", "Actualizări"), checkMsg, null, null, close());
+				dots(checkMsg);
+			}
+			return;
+		}
 		if (!agreed()) {
 			if (!manual) {
 				Log.i(a, "UPDATE", "fără acord pentru actualizarea din GitHub, nu verific");
@@ -138,37 +144,129 @@ final class Updater {
 			return;
 		}
 		busy = true;
-		if (manual) sheet.show(Tr.t("Updates", "Actualizări"), Tr.t("Checking GitHub for a new version…", "Caut pe GitHub o versiune nouă…"),
-				null, null, close());
+		checkMsg = Tr.t("Checking GitHub for a new version…", "Caut pe GitHub o versiune nouă…");
+		if (manual) {
+			sheet.show(Tr.t("Updates", "Actualizări"), checkMsg, null, null, close());
+			dots(checkMsg);
+		}
 		new Thread(new Runnable() {
 			public void run() {
 				Release r = null;
 				String err = null;
-				// GitHub sometimes answers 5xx (busy): up to 3 tries.
+				Exception ex = null;
+				// v3.02 (Viorel 2026-11-08: GitHub answered 504 and the window waited almost a minute):
+				// 2 short tries of the GitHub API, then the github.com page of the newest release.
 				for (int k = 1; k <= 3 && r == null; k++) {
 					try {
-						r = Release.parse(Weather.get(Release.LATEST));
+						r = k < 3 ? Release.parse(get(Release.LATEST)) : Release.fromTag(webTag());
 						err = null;
+						ex = null;
+						if (k == 3) Log.i(a, "UPDATE", "versiunea găsită pe pagina github.com (API-ul nu a răspuns)");
 					} catch (Exception e) {
+						ex = e;
 						err = String.valueOf(e.getMessage());
-						Log.i(a, "UPDATE", "verificarea pe GitHub, încercarea " + k + "/3: " + Fetcher.reason(e, false));
-						if (!busyServer(err) && !(e instanceof java.io.IOException)) break;
-						sleep(2000L * k);
+						Log.i(a, "UPDATE", "verificarea pe GitHub, încercarea " + k + "/3" + (k == 3 ? " (pagina github.com)" : "") + ": " + Fetcher.reason(e, false));
+						if (NetJob.kind(a) == 0 || k == 3) break;
+						final String m = Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + (k + 1) + "/3)…";
+						checkMsg = m;
+						if (manual) handler.post(new Runnable() {
+							public void run() {
+								if (busy) dots(m);
+							}
+						});
+						sleep(1500);
 					}
 				}
 				final Release rr = r;
 				final String ee = err;
+				final Exception fx = ex;
 				handler.post(new Runnable() {
 					public void run() {
 						busy = false;
-						checked(rr, ee, manual);
+						checkMsg = null;
+						checked(rr, ee, fx, manual);
 					}
 				});
 			}
 		}).start();
 	}
 
-	private void checked(final Release r, String err, boolean manual) {
+	/** The text of the window while looking (null when not looking). */
+	private String checkMsg;
+	private String dotsHead, dotsTail;
+	private int dotsN;
+
+	/** v3.02 (Viorel): the "…" of MSG grows dot by dot while the window waits. */
+	private void dots(String msg) {
+		int i = msg.indexOf('…');
+		boolean running = dotsHead != null;
+		dotsHead = i < 0 ? msg : msg.substring(0, i);
+		dotsTail = i < 0 ? "" : msg.substring(i + 1);
+		if (!running) {
+			dotsN = 0;
+			handler.post(dotsTick);
+		}
+	}
+
+	private void stopDots() {
+		dotsHead = null;
+		handler.removeCallbacks(dotsTick);
+	}
+
+	private final Runnable dotsTick = new Runnable() {
+		public void run() {
+			if (dotsHead == null) return;
+			if (!sheet.isOpen()) {
+				dotsHead = null;
+				return;
+			}
+			dotsN = (dotsN + 1) % 4;
+			sheet.setMessage(dotsHead + "...".substring(0, dotsN) + dotsTail);
+			handler.postDelayed(this, 400);
+		}
+	};
+
+	/** A short GET (8 s to connect, 12 s to answer); "HTTP code" on a bad answer. */
+	private static String get(String url) throws Exception {
+		HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
+		c.setConnectTimeout(8000);
+		c.setReadTimeout(12000);
+		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid");
+		c.setRequestProperty("Accept", "application/vnd.github+json");
+		try {
+			int code = c.getResponseCode();
+			if (code / 100 != 2) throw new Exception("HTTP " + code);
+			InputStream in = c.getInputStream();
+			java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+			byte[] buf = new byte[16384];
+			int n;
+			while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
+			in.close();
+			return out.toString("UTF-8");
+		} finally {
+			c.disconnect();
+		}
+	}
+
+	/** The tag of the newest release from github.com/…/releases/latest, which sends to …/tag/vX. */
+	private static String webTag() throws Exception {
+		HttpURLConnection c = (HttpURLConnection) new URL("https://github.com/" + Release.REPO + "/releases/latest").openConnection();
+		c.setConnectTimeout(8000);
+		c.setReadTimeout(12000);
+		c.setInstanceFollowRedirects(false);
+		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid");
+		try {
+			int code = c.getResponseCode();
+			String loc = c.getHeaderField("Location");
+			if (code / 100 != 3 || loc == null || loc.indexOf("/tag/") < 0) throw new Exception("HTTP " + code);
+			return loc.substring(loc.lastIndexOf("/tag/") + 5);
+		} finally {
+			c.disconnect();
+		}
+	}
+
+	private void checked(final Release r, String err, Exception ex, boolean manual) {
+		stopDots();
 		String cur = installed();
 		String t = Tr.t("Updates", "Actualizări");
 		if (r == null) Log.e(a, "UPDATE", "verificarea actualizărilor a eșuat: " + err);
@@ -176,8 +274,17 @@ final class Updater {
 		if (r == null) {
 			if (!manual) return;
 			if (err != null && err.contains("404")) sheet.show(t, Tr.t("No version published yet.", "Încă nu e publicată nicio versiune."), null, null, Tr.t("Close", "Închide"));
-			else if (busyServer(err)) sheet.show(t, why(null, err), null, null, Tr.t("Close", "Închide"));
-			else sheet.show(t, NetJob.kind(a) == 0 ? noNet() : Tr.t("Could not check for updates. Is the internet on?", "Nu am putut verifica actualizările. Ai internet?"), null, null, Tr.t("Close", "Închide"));
+			else {
+				// v3.02 (Viorel): always the reason, and a button to try again.
+				String m = NetJob.kind(a) == 0 ? noNet() : busyServer(err) ? why(null, err)
+						: Tr.t("Could not reach GitHub: ", "Nu am putut ajunge la GitHub: ") + Fetcher.reason(ex, !Tr.ro()) + Tr.t(". Try again in a few minutes.", ". Încearcă din nou peste câteva minute.");
+				Log.i(a, "UPDATE", "afișat: " + m);
+				sheet.show(t, m, Tr.t("Try again", "Încearcă din nou"), new Runnable() {
+					public void run() {
+						check(true);
+					}
+				}, Tr.t("Close", "Închide"));
+			}
 			return;
 		}
 		if (!r.newerThan(cur)) {
@@ -242,6 +349,7 @@ final class Updater {
 			return;
 		}
 		sheet.show(t, Tr.t("Downloading…", "Se descarcă…"), null, null, Tr.t("Hide", "Ascunde"));
+		dots(Tr.t("Downloading…", "Se descarcă…"));
 		Log.i(a, "UPDATE", "descarc v" + r.version + " (" + r.size + " octeți) de la " + r.apkUrl);
 		new Thread(new Runnable() {
 			public void run() {
@@ -265,7 +373,7 @@ final class Updater {
 						final int next = k + 1;
 						handler.post(new Runnable() {
 							public void run() {
-								sheet.setMessage(Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + next + "/" + TRIES + ")…");
+								dots(Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + next + "/" + TRIES + ")…");
 							}
 						});
 						sleep(3000L * k);
@@ -275,6 +383,7 @@ final class Updater {
 				final Exception fe = ex;
 				handler.post(new Runnable() {
 					public void run() {
+						stopDots();
 						if (ee == null) {
 							install(t);
 							return;
@@ -331,7 +440,7 @@ final class Updater {
 						last = pct;
 						handler.post(new Runnable() {
 							public void run() {
-								sheet.setMessage((Tr.t("Downloading… ", "Se descarcă… ")) + (pct >= 0 ? pct + "%" : ""));
+								dots((Tr.t("Downloading… ", "Se descarcă… ")) + (pct >= 0 ? pct + "%" : ""));
 							}
 						});
 					}

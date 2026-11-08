@@ -656,3 +656,6 @@ When the download fails	Nuair a theipeann ar an íoslódáil
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Seiceálann an aip an t-idirlíon ar dtús, déanann sí suas le 5 iarracht nuair nach bhfreagraíonn GitHub agus taispeánann sí an chúis; suiteáiltear leagan atá íoslódáilte cheana láithreach.
 Connection	Ceangal
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	In aice leis an gclog: Wi-Fi (stuanna), sonraí móibíleacha (barraí), líonra eile (cruinneog), trasnaithe nuair nach bhfuil idirlíon ann.
+Could not reach GitHub: 	Níorbh fhéidir GitHub a bhaint amach: 
+. Try again in a few minutes.	. Bain triail eile as i gceann cúpla nóiméad.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Seiceálann an aip an t-idirlíon ar dtús, lorgaíonn sí an leagan nua 3 huaire agus íoslódálann sí é i suas le 5 iarracht; nuair nach bhfreagraíonn GitHub, taispeánann sí an chúis. Suiteáiltear leagan atá íoslódáilte cheana láithreach.

@@ -1,4 +1,4 @@
-Obecna wersja: v.3.01 · 8.11.2026
+Obecna wersja: v.3.02 · 8.11.2026
 Ulepszenia wyglądu / struktury.
 - Ikona połączenia obok zegara: Wi-Fi, dane komórkowe lub brak.
 - Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.

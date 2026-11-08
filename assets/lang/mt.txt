@@ -656,3 +656,6 @@ When the download fails	Meta t-tniżżil ma jirnexxix
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	L-app l-ewwel tiċċekkja l-internet, tipprova sa 5 darbiet meta GitHub ma jwieġibx u turi r-raġuni; verżjoni diġà mniżżla tiġi installata mill-ewwel.
 Connection	Konnessjoni
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Ħdejn l-arloġġ: Wi-Fi (arkati), data mobbli (vireg), netwerk ieħor (globu), maqtugħ meta m’hemmx internet.
+Could not reach GitHub: 	Ma stajtx nilħaq lil GitHub: 
+. Try again in a few minutes.	. Erġa’ pprova fi ftit minuti.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	L-app l-ewwel tiċċekkja l-internet, tfittex il-verżjoni l-ġdida 3 darbiet u tniżżilha f’sa 5 tentattivi; meta GitHub ma jwieġibx, turi r-raġuni. Verżjoni diġà mniżżla tiġi installata mill-ewwel.

@@ -656,3 +656,6 @@ When the download fails	Kun lataus epäonnistuu
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Sovellus tarkistaa ensin internetin, yrittää enintään 5 kertaa, kun GitHub ei vastaa, ja näyttää syyn; jo ladattu versio asennetaan heti.
 Connection	Yhteys
 Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Kellon vieressä: Wi-Fi (kaaret), mobiilidata (palkit), muu verkko (maapallo), yliviivattu, kun internetiä ei ole.
+Could not reach GitHub: 	GitHubiin ei saatu yhteyttä: 
+. Try again in a few minutes.	. Yritä uudelleen muutaman minuutin päästä.
+The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Sovellus tarkistaa ensin internetin, etsii uutta versiota 3 kertaa ja lataa sen enintään 5 yrityksellä; kun GitHub ei vastaa, se näyttää syyn. Jo ladattu versio asennetaan heti.

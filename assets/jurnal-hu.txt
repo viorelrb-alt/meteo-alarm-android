@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.3.01 · 2026.11.08.
+Jelenlegi verzió: v.3.02 · 2026.11.08.
 Dizájn / szerkezet fejlesztései.
 - Kapcsolatikon az óra mellett: Wi-Fi, mobiladat vagy nincs.
 - Frissítések: először a kapcsolatot ellenőrzi, a már letöltött verzió azonnal települ, legfeljebb 5 próbálkozás, ha a GitHub nem válaszol, és kiírja az okot.

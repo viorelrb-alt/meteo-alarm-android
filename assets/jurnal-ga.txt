@@ -1,4 +1,4 @@
-Leagan reatha: v.3.01 · 8.11.2026
+Leagan reatha: v.3.02 · 8.11.2026
 Feabhsuithe ar dhearadh / ar struchtúr.
 - Deilbhín ceangail in aice leis an gclog: Wi-Fi, sonraí móibíleacha nó gan cheangal.
 - Nuashonruithe: seiceáiltear an ceangal ar dtús, suiteáiltear leagan atá íoslódáilte cheana láithreach, suas le 5 iarracht nuair nach bhfreagraíonn GitHub, agus taispeántar an chúis.

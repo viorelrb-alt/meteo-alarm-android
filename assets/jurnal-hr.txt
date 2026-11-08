@@ -1,4 +1,4 @@
-Trenutačna verzija: v.3.01 · 8.11.2026
+Trenutačna verzija: v.3.02 · 8.11.2026
 Poboljšanja izgleda / strukture.
 - Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.

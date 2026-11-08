@@ -34,6 +34,16 @@ public final class Release {
 		return r;
 	}
 
+	/** v3.02: the release of TAG ("v3.01") without the API: the APK by its usual name, no notes. */
+	public static Release fromTag(String tag) {
+		Release r = new Release();
+		r.version = tag.trim().replaceFirst("^[vV]", "");
+		if (!r.version.matches("[0-9]+(\\.[0-9]+)*")) throw new IllegalArgumentException("tag " + tag);
+		r.apkUrl = "https://github.com/" + REPO + "/releases/download/v" + r.version + "/MeteoAlarmAndroid-v" + r.version + ".apk";
+		r.page = "https://github.com/" + REPO + "/releases/tag/v" + r.version;
+		return r;
+	}
+
 	/** Compares "0.13" and "0.14" part by part as numbers: negative when A is older. */
 	public static int compare(String a, String b) {
 		String[] x = a.split("[^0-9]+"), y = b.split("[^0-9]+");
