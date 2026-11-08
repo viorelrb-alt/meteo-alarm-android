@@ -1,4 +1,24 @@
-Version 1
+Current version: v.3.00 · 8.11.2026
+Design / structure improvements.
+- Connection icon next to the clock: Wi-Fi, mobile data or none.
+- Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
+
+Version 2 (v.2.00 – v.2.91)
+- All official EU languages and Ukrainian.
+- Earthquakes page.
+- Notifications with your consent: rain or snow, warnings, earthquakes.
+- Farmer mode: hour boxes with the weather and the rain, details at a tap, and the Water in the soil box.
+- Parcels: saved by GPS or on the map, a main screen for each, 28-day statistics with PDF, rain and wind alerts.
+- Widgets 4x2 days and 4x3.
+- Text size (Aa).
+- ☰ › Send the app.
+- United States: NWS alerts, tornadoes, °F, local time.
+- Other languages: the languages of Romania's minorities.
+- Parcels: a map with all the parcels, the GPS button (blue dot) and “Save GPS place”.
+- Farmer mode: the main screens slide with the finger.
+- Design improvements and bug fixes.
+
+Version 1 (v.1.00 – v.1.93)
 - The weather now, the next hours, precipitation for 12 hours and 5 days.
 - Boxes: Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass, Earthquake.
 - Weather warnings by colour code (MeteoAlarm, about 38 countries).
@@ -8,25 +28,4 @@ Version 1
 - Widgets 2x2, 4x1, 4x2, with settings.
 - Refreshing by itself; MET Norway as spare forecast.
 - Updates from the app, Help, Log.
-
-Version 2
-- All official EU languages and Ukrainian.
-- Earthquakes page.
-- Notifications with your consent: rain or snow, warnings, earthquakes.
-
-Current version: v2.91 · 8.11.2026
-Design / structure improvements.
-- Parcels: a map with all the parcels, the GPS button (blue dot) and “Save GPS place”.
-- Farmer mode: the main screens slide with the finger.
-- Tablet: the merged boxes of farmer mode, parcels in 2 columns.
-- Parcels: the GPS starts with the page; the new parcel page has the large map too.
-
-────────
-New functions since v2.10
-- Farmer mode: hour boxes with the weather and the rain, details at a tap, and the Water in the soil box.
-- Parcels: saved by GPS or on the map, a main screen for each, 28-day statistics with PDF, rain and wind alerts.
-- Widgets 4x2 days and 4x3.
-- Text size (Aa).
-- ☰ › Send the app.
-- United States: NWS alerts, tornadoes, °F, local time.
-- Other languages: the languages of Romania's minorities.
+- Design improvements and bug fixes.

@@ -1,4 +1,24 @@
-Versione 1
+Versione attuale: v.3.00 · 8.11.2026
+Miglioramenti di design / struttura.
+- Icona della connessione accanto all’orologio: Wi-Fi, dati mobili o nessuna.
+- Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
+
+Versione 2 (v.2.00 – v.2.91)
+- Tutte le lingue ufficiali dell'UE e l'ucraino.
+- Pagina Terremoti.
+- Notifiche con il tuo consenso: pioggia o neve, allerte, terremoti.
+- Modalità agricoltore: riquadri orari con meteo e pioggia, dettagli al tocco, e il riquadro Acqua nel suolo.
+- Particelle: salvate con il GPS o sulla mappa, una schermata principale per ciascuna, statistiche di 28 giorni con PDF, allerte di pioggia e vento.
+- Widget 4x2 giorni e 4x3.
+- Dimensione del testo (Aa).
+- ☰ › Invia l'app.
+- Stati Uniti: allerte NWS, tornado, °F, ora locale.
+- Altre lingue: le lingue delle minoranze della Romania.
+- Appezzamenti: una mappa con tutte le parcelle, il pulsante GPS (punto blu) e «Salva luogo GPS».
+- Modalità agricoltore: le schermate principali scorrono con il dito.
+- Miglioramenti del design e correzioni di errori.
+
+Versione 1 (v.1.00 – v.1.93)
 - Il meteo attuale, le prossime ore, le precipitazioni per 12 ore e 5 giorni.
 - Riquadri: Sole / Luna, UV, Pollini, Umidità, Qualità dell'aria, Pressione, Vento, Visibilità, Bussola, Terremoto.
 - Allerte meteo per codice colore (MeteoAlarm, circa 38 paesi).
@@ -8,25 +28,4 @@ Versione 1
 - Widget 2x2, 4x1, 4x2, con impostazioni.
 - Aggiornamento automatico; previsione di riserva MET Norway.
 - Aggiornamenti dall'app, Aiuto, Registro.
-
-Versione 2
-- Tutte le lingue ufficiali dell'UE e l'ucraino.
-- Pagina Terremoti.
-- Notifiche con il tuo consenso: pioggia o neve, allerte, terremoti.
-
-Versione attuale: v2.91 · 8.11.2026
-Miglioramenti di design / struttura.
-- Appezzamenti: una mappa con tutte le parcelle, il pulsante GPS (punto blu) e «Salva luogo GPS».
-- Modalità agricoltore: le schermate principali scorrono con il dito.
-- Tablet: le caselle unite della modalità agricoltore, parcelle su 2 colonne.
-- Appezzamenti: il GPS parte con la pagina; anche la pagina della nuova parcella ha la mappa grande.
-
-────────
-Nuove funzioni dalla v2.10
-- Modalità agricoltore: riquadri orari con meteo e pioggia, dettagli al tocco, e il riquadro Acqua nel suolo.
-- Particelle: salvate con il GPS o sulla mappa, una schermata principale per ciascuna, statistiche di 28 giorni con PDF, allerte di pioggia e vento.
-- Widget 4x2 giorni e 4x3.
-- Dimensione del testo (Aa).
-- ☰ › Invia l'app.
-- Stati Uniti: allerte NWS, tornado, °F, ora locale.
-- Altre lingue: le lingue delle minoranze della Romania.
+- Miglioramenti del design e correzioni di errori.

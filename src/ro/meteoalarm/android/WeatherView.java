@@ -594,7 +594,9 @@ final class WeatherView extends View {
 		if (Math.abs(dx) > 40 * scale && Math.abs(dx) > Math.abs(dy)) {
 			// Farmer mode (v2.60): sideways over the weather now goes to the next main screen.
 			float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
-			if (screen.pages > 1 && screen.nowArea[2] > 0 && Math.abs(dx) > 50 * dp && in(screen.nowArea, ux, uy)) {
+			// v3.00 (Viorel): only a slide that began under the top line (above it nothing moves).
+			float[] bd = band();
+			if (screen.pages > 1 && screen.nowArea[2] > 0 && Math.abs(dx) > 50 * dp && in(screen.nowArea, ux, uy) && downY > bd[0] && downY < bd[1]) {
 				Log.i(getContext(), "GEST", "glisare pe vremea de acum: ecranul " + (dx < 0 ? "următor" : "anterior"));
 				taps.onPage(dx < 0 ? 1 : -1);
 			}

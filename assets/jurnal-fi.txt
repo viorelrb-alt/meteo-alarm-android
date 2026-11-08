@@ -1,4 +1,24 @@
-Versio 1
+Nykyinen versio: v.3.00 · 8.11.2026
+Ulkoasun / rakenteen parannuksia.
+- Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
+- Päivitykset: yhteys tarkistetaan ensin, jo ladattu versio asennetaan heti, enintään 5 yritystä, kun GitHub ei vastaa, ja syy näytetään.
+
+Versio 2 (v.2.00 – v.2.91)
+- Kaikki EU:n viralliset kielet ja ukraina.
+- Maanjäristykset-sivu.
+- Ilmoitukset suostumuksellasi: sade tai lumi, varoitukset, maanjäristykset.
+- Viljelijätila: tuntiruudut säällä ja sateella, tiedot napauttamalla ja ruutu Vesi maaperässä.
+- Lohkot: tallennettu GPS:llä tai kartalta, oma päänäkymä kullekin, 28 päivän tilasto PDF:nä, sade- ja tuulihälytykset.
+- Widgetit 4x2 päivät ja 4x3.
+- Tekstin koko (Aa).
+- ☰ › Lähetä sovellus.
+- Yhdysvallat: NWS-varoitukset, tornadot, °F, paikallinen aika.
+- Muut kielet: Romanian vähemmistökielet.
+- Lohkot: kartta kaikista lohkoista, GPS-painike (sininen piste) ja ”Tallenna GPS-paikka”.
+- Viljelijätila: päänäytöt liukuvat sormen mukana.
+- Ulkoasun parannuksia ja virheenkorjauksia.
+
+Versio 1 (v.1.00 – v.1.93)
 - Sää nyt, seuraavat tunnit, sademäärä 12 tunnille ja 5 päivälle.
 - Ruudut: Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys, Kompassi, Maanjäristys.
 - Säävaroitukset värikoodein (MeteoAlarm, noin 38 maata).
@@ -8,25 +28,4 @@ Versio 1
 - Widgetit 2x2, 4x1, 4x2, asetuksineen.
 - Päivittyy itsestään; MET Norway varaennusteena.
 - Päivitykset sovelluksesta, Ohje, Loki.
-
-Versio 2
-- Kaikki EU:n viralliset kielet ja ukraina.
-- Maanjäristykset-sivu.
-- Ilmoitukset suostumuksellasi: sade tai lumi, varoitukset, maanjäristykset.
-
-Nykyinen versio: v2.91 · 8.11.2026
-Ulkoasun / rakenteen parannuksia.
-- Lohkot: kartta kaikista lohkoista, GPS-painike (sininen piste) ja ”Tallenna GPS-paikka”.
-- Viljelijätila: päänäytöt liukuvat sormen mukana.
-- Tabletti: viljelijätilan yhdistetyt ruudut, lohkot 2 sarakkeessa.
-- Lohkot: GPS käynnistyy sivun mukana; myös uuden lohkon sivulla on iso kartta.
-
-────────
-Uudet toiminnot v2.10:stä alkaen
-- Viljelijätila: tuntiruudut säällä ja sateella, tiedot napauttamalla ja ruutu Vesi maaperässä.
-- Lohkot: tallennettu GPS:llä tai kartalta, oma päänäkymä kullekin, 28 päivän tilasto PDF:nä, sade- ja tuulihälytykset.
-- Widgetit 4x2 päivät ja 4x3.
-- Tekstin koko (Aa).
-- ☰ › Lähetä sovellus.
-- Yhdysvallat: NWS-varoitukset, tornadot, °F, paikallinen aika.
-- Muut kielet: Romanian vähemmistökielet.
+- Ulkoasun parannuksia ja virheenkorjauksia.

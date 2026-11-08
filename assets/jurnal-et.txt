@@ -1,4 +1,24 @@
-Versioon 1
+Praegune versioon: v.3.00 · 8.11.2026
+Kujunduse / ülesehituse parandused.
+- Ühenduse ikoon kella kõrval: Wi-Fi, mobiilne andmeside või puudub.
+- Uuendused: esmalt kontrollitakse ühendust, juba alla laaditud versioon paigaldatakse kohe, kuni 5 katset, kui GitHub ei vasta, ja põhjus kuvatakse.
+
+Versioon 2 (v.2.00 – v.2.91)
+- Kõik ELi ametlikud keeled ja ukraina keel.
+- Leht Maavärinad.
+- Teavitused sinu nõusolekul: vihm või lumi, hoiatused, maavärinad.
+- Põllumehe režiim: tunnikastid ilma ja vihmaga, puudutades üksikasjad ja kast Vesi mullas.
+- Põllud: salvestatud GPS-iga või kaardil, igaühele põhiekraan, 28 päeva statistika PDF-ina, vihma- ja tuulehoiatused.
+- Vidinad 4x2 päevad ja 4x3.
+- Teksti suurus (Aa).
+- ☰ › Saada rakendus.
+- USA: NWS-i hoiatused, tornaadod, °F, kohalik aeg.
+- Teised keeled: Rumeenia vähemuste keeled.
+- Põllud: kaart kõigi maatükkidega, GPS-nupp (sinine täpp) ja „Salvesta GPS-koht“.
+- Põllumehe režiim: põhiekraanid liiguvad koos sõrmega.
+- Disainiparandused ja vigade parandused.
+
+Versioon 1 (v.1.00 – v.1.93)
 - Ilm praegu, järgmised tunnid, sademed 12 tunniks ja 5 päevaks.
 - Kastid: Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Õhurõhk, Tuul, Nähtavus, Kompass, Maavärin.
 - Ilmahoiatused värvikoodi järgi (MeteoAlarm, umbes 38 riiki).
@@ -8,25 +28,4 @@ Versioon 1
 - Vidinad 2x2, 4x1, 4x2, seadetega.
 - Värskendab ise; MET Norway varuprognoosina.
 - Uuendused rakendusest, Abi, Logi.
-
-Versioon 2
-- Kõik ELi ametlikud keeled ja ukraina keel.
-- Leht Maavärinad.
-- Teavitused sinu nõusolekul: vihm või lumi, hoiatused, maavärinad.
-
-Praegune versioon: v2.91 · 8.11.2026
-Kujunduse / ülesehituse parandused.
-- Põllud: kaart kõigi maatükkidega, GPS-nupp (sinine täpp) ja „Salvesta GPS-koht“.
-- Põllumehe režiim: põhiekraanid liiguvad koos sõrmega.
-- Tahvelarvuti: põllumehe režiimi ühendatud kastid, maatükid 2 veerus.
-- Põllud: GPS käivitub koos lehega; ka uue maatüki lehel on suur kaart.
-
-────────
-Uued funktsioonid alates v2.10
-- Põllumehe režiim: tunnikastid ilma ja vihmaga, puudutades üksikasjad ja kast Vesi mullas.
-- Põllud: salvestatud GPS-iga või kaardil, igaühele põhiekraan, 28 päeva statistika PDF-ina, vihma- ja tuulehoiatused.
-- Vidinad 4x2 päevad ja 4x3.
-- Teksti suurus (Aa).
-- ☰ › Saada rakendus.
-- USA: NWS-i hoiatused, tornaadod, °F, kohalik aeg.
-- Teised keeled: Rumeenia vähemuste keeled.
+- Disainiparandused ja vigade parandused.

@@ -131,6 +131,12 @@ final class Updater {
 			});
 			return;
 		}
+		// v3.00 (Viorel): first, is there a connection at all?
+		if (NetJob.kind(a) == 0) {
+			Log.i(a, "UPDATE", "fără conexiune la internet, nu verific");
+			if (manual) sheet.show(Tr.t("Updates", "Actualizări"), noNet(), null, null, Tr.t("Close", "Închide"));
+			return;
+		}
 		busy = true;
 		if (manual) sheet.show(Tr.t("Updates", "Actualizări"), Tr.t("Checking GitHub for a new version…", "Caut pe GitHub o versiune nouă…"),
 				null, null, close());
@@ -138,10 +144,17 @@ final class Updater {
 			public void run() {
 				Release r = null;
 				String err = null;
-				try {
-					r = Release.parse(Weather.get(Release.LATEST));
-				} catch (Exception e) {
-					err = String.valueOf(e.getMessage());
+				// GitHub sometimes answers 5xx (busy): up to 3 tries.
+				for (int k = 1; k <= 3 && r == null; k++) {
+					try {
+						r = Release.parse(Weather.get(Release.LATEST));
+						err = null;
+					} catch (Exception e) {
+						err = String.valueOf(e.getMessage());
+						Log.i(a, "UPDATE", "verificarea pe GitHub, încercarea " + k + "/3: " + Fetcher.reason(e, false));
+						if (!busyServer(err) && !(e instanceof java.io.IOException)) break;
+						sleep(2000L * k);
+					}
 				}
 				final Release rr = r;
 				final String ee = err;
@@ -163,7 +176,8 @@ final class Updater {
 		if (r == null) {
 			if (!manual) return;
 			if (err != null && err.contains("404")) sheet.show(t, Tr.t("No version published yet.", "Încă nu e publicată nicio versiune."), null, null, Tr.t("Close", "Închide"));
-			else sheet.show(t, Tr.t("Could not check for updates. Is the internet on?", "Nu am putut verifica actualizările. Ai internet?"), null, null, Tr.t("Close", "Închide"));
+			else if (busyServer(err)) sheet.show(t, why(null, err), null, null, Tr.t("Close", "Închide"));
+			else sheet.show(t, NetJob.kind(a) == 0 ? noNet() : Tr.t("Could not check for updates. Is the internet on?", "Nu am putut verifica actualizările. Ai internet?"), null, null, Tr.t("Close", "Închide"));
 			return;
 		}
 		if (!r.newerThan(cur)) {
@@ -180,57 +194,156 @@ final class Updater {
 		}, close());
 	}
 
+	private static final int TRIES = 5;
+
+	private static String noNet() {
+		return Tr.t("No internet connection. Turn on Wi-Fi or mobile data and try again.", "Nu ai conexiune la internet. Pornește Wi-Fi-ul sau datele mobile și încearcă din nou.");
+	}
+
+	/** An answer of a busy server (5xx, 429): worth trying again. */
+	private static boolean busyServer(String err) {
+		return err != null && (err.startsWith("HTTP 5") || err.startsWith("HTTP 429"));
+	}
+
+	private static void sleep(long ms) {
+		try {
+			Thread.sleep(ms);
+		} catch (InterruptedException e) {
+			// go on
+		}
+	}
+
+	/** Why the download stopped, in words, for the window (v3.00). */
+	private static String why(Exception e, String err) {
+		if (busyServer(err)) {
+			String code = err.length() >= 8 ? err.substring(5, 8) : "";
+			return Tr.t("GitHub is not answering now (error ", "GitHub nu răspunde acum (eroare ") + code
+					+ Tr.t("). Try again in a few minutes.", "). Încearcă din nou peste câteva minute.");
+		}
+		if (err != null && err.startsWith("size ")) return Tr.t("The downloaded file is incomplete. Try again.", "Fișierul descărcat e incomplet. Încearcă din nou.");
+		return Tr.t("The download failed: ", "Descărcarea a eșuat: ") + Fetcher.reason(e, !Tr.ro()) + ".";
+	}
+
+	/**
+	 * Downloads the new version (v3.00, Viorel 2026-11-08: GitHub answered 504 to about two tries
+	 * in three): up to 5 tries a few seconds apart, each step in the log, the reason on the screen.
+	 */
 	private void download(final Release r) {
 		final String t = "v" + r.version;
+		if (NetJob.kind(a) == 0) {
+			Log.i(a, "UPDATE", "descărcare oprită: fără conexiune la internet");
+			sheet.show(t, noNet(), null, null, Tr.t("Close", "Închide"));
+			return;
+		}
+		// v3.00 (Viorel): the same version already downloaded whole: straight to the installer.
+		if (downloaded(r)) {
+			Log.i(a, "UPDATE", "v" + r.version + " e deja descărcată (" + ApkProvider.file(a).length() + " octeți): pornesc instalarea");
+			install(t);
+			return;
+		}
 		sheet.show(t, Tr.t("Downloading…", "Se descarcă…"), null, null, Tr.t("Hide", "Ascunde"));
+		Log.i(a, "UPDATE", "descarc v" + r.version + " (" + r.size + " octeți) de la " + r.apkUrl);
 		new Thread(new Runnable() {
 			public void run() {
 				final File f = ApkProvider.file(a);
 				String err = null;
-				try {
-					f.delete();
-					HttpURLConnection c = (HttpURLConnection) new URL(r.apkUrl).openConnection();
-					c.setConnectTimeout(20000);
-					c.setReadTimeout(60000);
-					c.setInstanceFollowRedirects(true);
-					c.setRequestProperty("User-Agent", "MeteoAlarmAndroid");
-					if (c.getResponseCode() / 100 != 2) throw new Exception("HTTP " + c.getResponseCode());
-					long total = r.size > 0 ? r.size : c.getContentLength();
-					InputStream in = c.getInputStream();
-					FileOutputStream out = new FileOutputStream(f);
-					byte[] buf = new byte[32768];
-					long got = 0;
-					int n, last = -1;
-					while ((n = in.read(buf)) > 0) {
-						out.write(buf, 0, n);
-						got += n;
-						final int pct = total > 0 ? (int) (got * 100 / total) : -1;
-						if (pct != last) {
-							last = pct;
-							handler.post(new Runnable() {
-								public void run() {
-									sheet.setMessage((Tr.t("Downloading… ", "Se descarcă… ")) + (pct >= 0 ? pct + "%" : ""));
-								}
-							});
-						}
+				Exception ex = null;
+				for (int k = 1; k <= TRIES; k++) {
+					err = null;
+					ex = null;
+					try {
+						fetch(r, f, k);
+						Log.i(a, "UPDATE", "descărcat: " + f.length() + " octeți, încercarea " + k);
+						break;
+					} catch (Exception e) {
+						ex = e;
+						err = String.valueOf(e.getMessage());
+						f.delete();
+						Log.e(a, "UPDATE", "descărcarea, încercarea " + k + "/" + TRIES + ": " + err + " (" + Fetcher.reason(e, false) + ")");
+						boolean again = k < TRIES && (busyServer(err) || e instanceof java.io.IOException || err.startsWith("size ")) && NetJob.kind(a) != 0;
+						if (!again) break;
+						final int next = k + 1;
+						handler.post(new Runnable() {
+							public void run() {
+								sheet.setMessage(Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + next + "/" + TRIES + ")…");
+							}
+						});
+						sleep(3000L * k);
 					}
-					out.close();
-					in.close();
-					c.disconnect();
-					if (r.size > 0 && f.length() != r.size) throw new Exception("size " + f.length() + " != " + r.size);
-				} catch (Exception e) {
-					err = String.valueOf(e.getMessage());
-					f.delete();
 				}
 				final String ee = err;
+				final Exception fe = ex;
 				handler.post(new Runnable() {
 					public void run() {
-						if (ee != null) sheet.show(t, Tr.t("The download failed. Is the internet on?", "Descărcarea a eșuat. Ai internet?"), null, null, Tr.t("Close", "Închide"));
-						else install(t);
+						if (ee == null) {
+							install(t);
+							return;
+						}
+						String m = NetJob.kind(a) == 0 ? noNet() : why(fe, ee);
+						Log.e(a, "UPDATE", "actualizarea a eșuat: " + m);
+						sheet.show(t, m, Tr.t("Try again", "Încearcă din nou"), new Runnable() {
+							public void run() {
+								download(r);
+							}
+						}, Tr.t("Close", "Închide"));
 					}
 				});
 			}
 		}).start();
+	}
+
+	/** The APK kept from an earlier download is this version, whole (its size and its version name). */
+	private boolean downloaded(Release r) {
+		try {
+			File f = ApkProvider.file(a);
+			if (!f.exists() || f.length() == 0 || (r.size > 0 && f.length() != r.size)) return false;
+			android.content.pm.PackageInfo pi = a.getPackageManager().getPackageArchiveInfo(f.getPath(), 0);
+			return pi != null && r.version.equals(pi.versionName);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	/** One try (K) of the download into F; throws on a bad answer or a short file. */
+	private void fetch(Release r, File f, int k) throws Exception {
+		f.delete();
+		HttpURLConnection c = (HttpURLConnection) new URL(r.apkUrl).openConnection();
+		c.setConnectTimeout(20000);
+		c.setReadTimeout(60000);
+		c.setInstanceFollowRedirects(true);
+		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid");
+		try {
+			int code = c.getResponseCode();
+			Log.i(a, "UPDATE", "încercarea " + k + ": răspuns HTTP " + code + (c.getURL() != null ? " de la " + c.getURL().getHost() : ""));
+			if (code / 100 != 2) throw new Exception("HTTP " + code);
+			long total = r.size > 0 ? r.size : c.getContentLength();
+			InputStream in = c.getInputStream();
+			FileOutputStream out = new FileOutputStream(f);
+			try {
+				byte[] buf = new byte[32768];
+				long got = 0;
+				int n, last = -1;
+				while ((n = in.read(buf)) > 0) {
+					out.write(buf, 0, n);
+					got += n;
+					final int pct = total > 0 ? (int) (got * 100 / total) : -1;
+					if (pct != last) {
+						last = pct;
+						handler.post(new Runnable() {
+							public void run() {
+								sheet.setMessage((Tr.t("Downloading… ", "Se descarcă… ")) + (pct >= 0 ? pct + "%" : ""));
+							}
+						});
+					}
+				}
+			} finally {
+				out.close();
+				in.close();
+			}
+			if (r.size > 0 && f.length() != r.size) throw new Exception("size " + f.length() + " != " + r.size);
+		} finally {
+			c.disconnect();
+		}
 	}
 
 	/** Opens the system installer on the downloaded APK; the window closes, the installer takes over. */
@@ -240,8 +353,10 @@ final class Updater {
 		i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
 		try {
 			a.startActivity(i);
+			Log.i(a, "UPDATE", "programul de instalare al telefonului a fost deschis");
 			sheet.hide();
 		} catch (Exception e) {
+			Log.e(a, "UPDATE", "programul de instalare nu a putut fi deschis: " + e);
 			sheet.show(t, Tr.t("The installer could not be opened.", "Instalarea nu a putut fi pornită."), null, null, Tr.t("Close", "Închide"));
 		}
 	}

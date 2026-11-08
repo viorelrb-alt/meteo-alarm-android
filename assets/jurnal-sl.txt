@@ -1,4 +1,24 @@
-Različica 1
+Trenutna različica: v.3.00 · 8.11.2026
+Izboljšave videza / zgradbe.
+- Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
+- Posodobitve: najprej se preveri povezava, že prenesena različica se takoj namesti, do 5 poskusov, ko GitHub ne odgovori, in prikaže se razlog.
+
+Različica 2 (v.2.00 – v.2.91)
+- Vsi uradni jeziki EU in ukrajinščina.
+- Stran Potresi.
+- Obvestila z tvojim soglasjem: dež ali sneg, opozorila, potresi.
+- Način kmeta: urna polja z vremenom in dežjem, podrobnosti ob dotiku ter polje Voda v tleh.
+- Parcele: shranjene z GPS ali na zemljevidu, glavni zaslon za vsako, statistika za 28 dni s PDF, opozorila za dež in veter.
+- Pripomočki 4x2 dnevi in 4x3.
+- Velikost besedila (Aa).
+- ☰ › Pošlji aplikacijo.
+- Združene države: opozorila NWS, tornadi, °F, krajevni čas.
+- Drugi jeziki: jeziki manjšin v Romuniji.
+- Parcele: zemljevid z vsemi parcelami, gumb GPS (modra pika) in »Shrani mesto GPS«.
+- Način kmeta: glavni zasloni drsijo s prstom.
+- Izboljšave oblikovanja in popravki napak.
+
+Različica 1 (v.1.00 – v.1.93)
 - Vreme zdaj, naslednje ure, padavine za 12 ur in 5 dni.
 - Polja: Sonce / Luna, UV, Cvetni prah, Vlaga, Kakovost zraka, Tlak, Veter, Vidljivost, Kompas, Potres.
 - Vremenska opozorila po barvah (MeteoAlarm, približno 38 držav).
@@ -8,25 +28,4 @@ Različica 1
 - Pripomočki 2x2, 4x1, 4x2, z nastavitvami.
 - Samodejno osveževanje; rezervna napoved MET Norway.
 - Posodobitve iz aplikacije, Pomoč, Dnevnik.
-
-Različica 2
-- Vsi uradni jeziki EU in ukrajinščina.
-- Stran Potresi.
-- Obvestila z tvojim soglasjem: dež ali sneg, opozorila, potresi.
-
-Trenutna različica: v2.91 · 8.11.2026
-Izboljšave videza / zgradbe.
-- Parcele: zemljevid z vsemi parcelami, gumb GPS (modra pika) in »Shrani mesto GPS«.
-- Način kmeta: glavni zasloni drsijo s prstom.
-- Tablica: združena polja kmetovalskega načina, parcele v 2 stolpcih.
-- Parcele: GPS se zažene s stranjo; tudi stran nove parcele ima velik zemljevid.
-
-────────
-Nove funkcije od v2.10
-- Način kmeta: urna polja z vremenom in dežjem, podrobnosti ob dotiku ter polje Voda v tleh.
-- Parcele: shranjene z GPS ali na zemljevidu, glavni zaslon za vsako, statistika za 28 dni s PDF, opozorila za dež in veter.
-- Pripomočki 4x2 dnevi in 4x3.
-- Velikost besedila (Aa).
-- ☰ › Pošlji aplikacijo.
-- Združene države: opozorila NWS, tornadi, °F, krajevni čas.
-- Drugi jeziki: jeziki manjšin v Romuniji.
+- Izboljšave oblikovanja in popravki napak.

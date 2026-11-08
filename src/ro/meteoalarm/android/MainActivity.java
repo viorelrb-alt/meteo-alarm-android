@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.91";
+	static final String VERSION = "Meteo Alarm Android v3.00";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -83,6 +83,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private final Runnable tick = new Runnable() {
 		public void run() {
 			s.now = ro.meteoalarm.android.core.Zone.now();
+			showNet();
 			s.offline = s.fetched > 0 && System.currentTimeMillis() - s.fetched > 2 * interval() + 5 * 60000L;
 			long iv = s.w == null ? 60000L : interval();
 			if (System.currentTimeMillis() - Math.max(s.fetched, lastTry) >= iv) fetch();
@@ -858,6 +859,60 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.invalidate();
 	}
 
+	/** v3.00 (Viorel): the connection icon next to the clock follows the phone's network. */
+	private android.net.ConnectivityManager.NetworkCallback netCb;
+
+	private void showNet() {
+		int k = NetJob.kind(this);
+		if (k != s.net) {
+			if (s.net >= 0) Log.i(this, "REȚEA", k == 0 ? "fără internet" : k == 1 ? "Wi-Fi" : k == 2 ? "date mobile" : "altă rețea");
+			s.net = k;
+			view.invalidate();
+		}
+	}
+
+	private void listenNet(boolean on) {
+		showNet();
+		if (Build.VERSION.SDK_INT < 24) return;
+		android.net.ConnectivityManager cm = (android.net.ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+		if (cm == null) return;
+		try {
+			if (on && netCb == null) {
+				netCb = new android.net.ConnectivityManager.NetworkCallback() {
+					private void again() {
+						handler.post(new Runnable() {
+							public void run() {
+								showNet();
+							}
+						});
+					}
+
+					@Override
+					public void onAvailable(android.net.Network n) {
+						again();
+					}
+
+					@Override
+					public void onLost(android.net.Network n) {
+						again();
+					}
+
+					@Override
+					public void onCapabilitiesChanged(android.net.Network n, android.net.NetworkCapabilities nc) {
+						again();
+					}
+				};
+				cm.registerDefaultNetworkCallback(netCb);
+			} else if (!on && netCb != null) {
+				cm.unregisterNetworkCallback(netCb);
+				netCb = null;
+			}
+		} catch (Exception e) {
+			Log.e(this, "REȚEA", "urmărirea rețelei nu a pornit", e);
+			netCb = null;
+		}
+	}
+
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -869,6 +924,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		lastTouch = System.currentTimeMillis();
 		hideBars();
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+		listenNet(true);
 		handler.removeCallbacks(tick);
 		handler.post(tick);
 		if (!prefs.getBoolean("welcomed", false)) {
@@ -1402,6 +1458,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		listenLight(false);
 		listenCompass(false);
 		handler.removeCallbacks(tick);
+		listenNet(false);
 		try {
 			unregisterReceiver(battery);
 		} catch (Exception e) {
@@ -2309,6 +2366,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en));
 		help.entry(mini("update"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
+		help.entry(mini("update"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.",
+				"Aplicația verifică întâi internetul, încearcă de până la 5 ori când GitHub nu răspunde și arată motivul; o versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
 		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are.",
@@ -2316,6 +2375,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left.", "Arată bara de luminozitate din stânga."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches the theme.", "Deasupra barei de luminozitate: schimbă tema."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));
+		help.entry(mini("clock"), Tr.t("Connection", "Conexiune"), Tr.t("Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.",
+				"Lângă ceas: Wi-Fi (arce), date mobile (bare), altă rețea (glob), tăiat când nu ai internet."));
 		help.section(Tr.t("Gestures", "Gesturi"));
 		help.entry(mini("locate"), Tr.t("Tap on the town's name", "Atingerea numelui localității"), Tr.t("Looks once with the GPS.", "Caută o dată poziția cu GPS-ul."));
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Refreshes the weather.", "Reîmprospătează vremea."));
@@ -2365,16 +2426,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String log = changeLog();
 		if (log.length() == 0) return;
 		// v2.80 (Viorel): the change log is a summary; after an update only the installed version's part shows.
-		String cur = log;
-		for (String part : log.split("\n\n")) if (part.contains("v" + updater.installed())) { cur = part; break; }
-		log = cur.trim();
+		// v3.00 (Viorel): the current version is the first block.
+		log = log.split("\n\n")[0].trim();
 		// Marked as seen only once it is really on the screen (on the A54 the app went to the
 		// background right after the update and the window was never seen).
 		if (!resumed) return;
 		prefs.edit().putString("seenVersion", updater.installed()).apply();
 		Log.i(this, "APP", "fereastra Ce e nou afișată");
 		asked = true;
-		sheet.show((Tr.t("What's new", "Ce e nou")) + " · v" + updater.installed(), Updater.howTo(s.T.en) + "\n\n" + log, null, null, Tr.t("Close", "Închide"),
+		sheet.show((Tr.t("What's new", "Ce e nou")) + " · v." + updater.installed(), Updater.howTo(s.T.en) + "\n\n" + log, null, null, Tr.t("Close", "Închide"),
 				new Runnable() {
 					public void run() {
 						consents();
@@ -2385,8 +2445,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The change log from assets, newest first. */
 	private String changeLog() {
-		// v2.80 (Viorel 2026-11-07): one summary per language (version 1, version 2, the current
-		// version, then the new functions since v2.10); English when a language has none.
+		// v3.00 (Viorel 2026-11-08): one summary per language: the current version, version 2,
+		// version 1; English when a language has none.
 		String own = Tr.ro() || Tr.english() ? null : asset("jurnal-" + s.T.lang + ".txt");
 		if (own != null) return own;
 		String log = asset(Tr.t("jurnal-en.txt", "jurnal-ro.txt"));

@@ -70,6 +70,10 @@ public final class Screen {
 	public boolean unitF, clk12;
 	public Calendar now = Zone.now();
 	public int batt = -1;
+	/** v3.00: the connection, drawn left of the clock: -1 not shown, 0 none, 1 Wi-Fi, 2 mobile, 3 other. */
+	public int net = -1;
+	/** Where the clock (and the connection icon left of it) begins, in units. */
+	private float clockLeft;
 	public boolean charging, busy, offline;
 	public long fetched;
 	public String error = "";
@@ -283,9 +287,10 @@ public final class Screen {
 		if (prop) {
 			nowTexts(d[1], fy - 26, 40, 718);
 		} else {
-		rtext(true, fit(true, 39, 330, d[1]), fy, 712, d[1], c.ink);
+		float sp = skySize(39, 330, d[1]);
+		rtext(true, sp, fy, 712, d[1], c.ink);
 		windLine(30, fy + 40, 712);
-		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, fy, 40, feelsText(), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
 		}
@@ -349,9 +354,10 @@ public final class Screen {
 		setNow(40, nowTop, leftR - 40, fy + 80 - nowTop);
 		if (farmer && farmMerged) nowTexts(d[1], fy - 10, 40, leftR - 6);
 		else {
-		rtext(true, fit(true, 39, (leftR - 40) / 2, d[1]), fy, leftR - 6, d[1], c.ink);
+		float sp = skySize(39, (leftR - 40) / 2, d[1]);
+		rtext(true, sp, fy, leftR - 6, d[1], c.ink);
 		windLine(30, fy + 40, leftR - 6);
-		if (!Double.isNaN(w.feels)) ltext(false, 30, fy + 7, 40, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, fy, 40, feelsText(), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
 		}
@@ -451,9 +457,10 @@ public final class Screen {
 		setNow(nl, top, nr - nl, lineY + 80 - top);
 		if (merged) nowTexts(d[1], lineY - 10, nl, nr);
 		else {
-		rtext(true, fit(true, 44, (nr - nl) / 2, d[1]), lineY, nr - 6, d[1], c.ink);
+		float sp = skySize(44, (nr - nl) / 2 - 12, d[1]);
+		rtext(true, sp, lineY, nr - 6, d[1], c.ink);
 		windLine(32, lineY + 46, nr - 6);
-		if (!Double.isNaN(w.feels)) ltext(false, 32, lineY + 7, nl, upper(T.feels + " " + t(w.feels) + "°"), c.ink);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, lineY, nl, feelsText(), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			ltext(false, 32, lineY + 46, nl, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
 		}
@@ -633,14 +640,27 @@ public final class Screen {
 	 * Proposal: the lines under the weather now a little larger, the wind ring larger; the left
 	 * and the right texts each keep to their half, so they never run over each other.
 	 */
+	/** v3.00: "Feels like 4°", written like the sky's word (bold, not in capitals). */
+	private String feelsText() {
+		return T.feels + " " + t(w.feels) + "°";
+	}
+
+	/** The size of the sky's word and of "Feels like" (the same for both): at most MAX, each within ROOM. */
+	private float skySize(float max, float room, String sky) {
+		float s = fit(true, max, room, sky);
+		if (!Double.isNaN(w.feels)) s = Math.min(s, fit(true, max, room, feelsText()));
+		return s;
+	}
+
 	private void nowTexts(String sky, float fy, float l, float r) {
 		float half = (r - l) / 2 - 12, sz = 34;
-		String f = Double.isNaN(w.feels) ? "" : upper(T.feels + " " + t(w.feels) + "°");
 		String hl = Double.isNaN(w.tmax) || Double.isNaN(w.tmin) ? "" : upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°");
-		float lp = Math.min(fit(false, sz, half, f), fit(false, sz, half, hl));
-		if (f.length() > 0) ltext(false, lp, fy + 7, l, f, c.ink);
+		float lp = fit(false, sz, half, hl);
+		// v3.00 (Viorel): "Feels like" written like the sky: bold, the same size, on its line.
+		float sp = skySize(44, half, sky);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 10, l, feelsText(), c.ink);
 		if (hl.length() > 0) ltext(false, lp, fy + 48, l, hl, c.ink);
-		rtext(true, fit(true, 44, half, sky), fy - 10, r - 6, sky, c.ink);
+		rtext(true, sp, fy - 10, r - 6, sky, c.ink);
 		if (!Double.isNaN(w.wind)) {
 			String speed = unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h";
 			String from = !Double.isNaN(w.windDir) ? Tr.dirs8()[(int) Math.round(((w.windDir % 360) + 360) % 360 / 45) % 8] + " " : "";
@@ -1328,6 +1348,37 @@ public final class Screen {
 			ltext(true, 22, 17 + 50 * 81 / 100 - 18, right - pw, pm, c.ink);
 		} else {
 			rtext(true, 50, 17, right, String.format("%02d:%02d", h, m), c.ink);
+		}
+		String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) : String.format("%02d:%02d", h, m);
+		clockLeft = right - g.width(true, 50, hm) - (clk12 ? g.width(true, 22, "PM") + 4 : 0);
+		if (net >= 0) {
+			drawNet(clockLeft - 14 - 36, 25, 36, 32);
+			clockLeft -= 14 + 36;
+		}
+	}
+
+	/**
+	 * v3.00 (Viorel): the connection in a box X Y W H: Wi-Fi (3 arcs and a dot), mobile data (4
+	 * bars), another network (a globe), none (the Wi-Fi drawing dim and struck through).
+	 */
+	private void drawNet(float x, float y, float wd, float h) {
+		int col = net == 0 ? c.dim : c.ink;
+		if (net == 1 || net == 0) {
+			float cx = x + wd / 2, cy = y + h - 3;
+			for (int k = 1; k <= 3; k++) g.arc(cx, cy, k * 9.5f, 225, 90, 4, col);
+			g.roundRect(cx - 3.5f, cy - 3.5f, 7, 7, 3.5f, col);
+			if (net == 0) g.poly(new float[] { x + 2, y + h - 1, x + 5, y + h + 2, x + wd - 2, y + 1, x + wd - 5, y - 2 }, c.ink);
+		} else if (net == 2) {
+			float bw = 6, gap = 3.3f, x0 = x + (wd - 4 * bw - 3 * gap) / 2;
+			for (int k = 0; k < 4; k++) {
+				float bh = h * (k + 1) / 4f;
+				g.rect(x0 + k * (bw + gap), y + h - bh, bw, bh, col);
+			}
+		} else {
+			float cx = x + wd / 2, cy = y + h / 2, r = Math.min(wd, h) / 2 - 2;
+			g.arc(cx, cy, r, 0, 360, 3, col);
+			g.rect(cx - r, cy - 1.5f, 2 * r, 3, col);
+			g.rect(cx - 1.5f, cy - r, 3, 2 * r, col);
 		}
 	}
 
@@ -2656,9 +2707,7 @@ public final class Screen {
 		if (upd.length() == 0) return;
 		if (updHead) {
 			// Landscape: in the header, left of the clock.
-			int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
-			String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) + " PM" : String.format("%02d:%02d", h, m);
-			rtext(bold, fit(bold, 25, 360, upd), 30, cw - 40 - g.width(true, 50, hm) - 28, upd, bold ? c.ink : c.dim);
+			rtext(bold, fit(bold, 25, 360, upd), 30, clockLeft - 24, upd, bold ? c.ink : c.dim);
 		} else {
 			// Clear of "FARMER MODE" at the left, and of the dots in the middle when there are several screens.
 			float room = pages > 1 ? cw / 2f - (pages * 22 - 10) / 2f - 24 - 40 : cw - 80 - Math.max(40, farmTagW);

@@ -1,4 +1,24 @@
-Version 1
+Aktuelle Version: v.3.00 · 8.11.2026
+Verbesserungen an Design / Struktur.
+- Verbindungssymbol neben der Uhr: WLAN, mobile Daten oder keine.
+- Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.
+
+Version 2 (v.2.00 – v.2.91)
+- Alle EU-Amtssprachen und Ukrainisch.
+- Seite Erdbeben.
+- Benachrichtigungen mit deiner Zustimmung: Regen oder Schnee, Warnungen, Erdbeben.
+- Landwirt-Modus: Stundenkästchen mit Wetter und Regen, Details beim Tippen, und das Kästchen Wasser im Boden.
+- Parzellen: per GPS oder auf der Karte gespeichert, ein Hauptbildschirm für jede, 28-Tage-Statistik mit PDF, Regen- und Windwarnungen.
+- Widgets 4x2 Tage und 4x3.
+- Textgröße (Aa).
+- ☰ › App senden.
+- Vereinigte Staaten: NWS-Warnungen, Tornados, °F, Ortszeit.
+- Weitere Sprachen: die Sprachen der Minderheiten Rumäniens.
+- Parzellen: eine Karte mit allen Parzellen, die GPS-Taste (blauer Punkt) und „GPS-Ort speichern“.
+- Landwirt-Modus: Die Hauptbildschirme gleiten mit dem Finger.
+- Design-Verbesserungen und Fehlerbehebungen.
+
+Version 1 (v.1.00 – v.1.93)
 - Das Wetter jetzt, die nächsten Stunden, Niederschlag für 12 Stunden und 5 Tage.
 - Kästchen: Sonne / Mond, UV, Pollen, Feuchte, Luftqualität, Luftdruck, Wind, Sicht, Kompass, Erdbeben.
 - Wetterwarnungen nach Farbcode (MeteoAlarm, etwa 38 Länder).
@@ -8,25 +28,4 @@ Version 1
 - Widgets 2x2, 4x1, 4x2, mit Einstellungen.
 - Automatische Aktualisierung; MET Norway als Ersatzvorhersage.
 - Updates aus der App, Hilfe, Protokoll.
-
-Version 2
-- Alle EU-Amtssprachen und Ukrainisch.
-- Seite Erdbeben.
-- Benachrichtigungen mit deiner Zustimmung: Regen oder Schnee, Warnungen, Erdbeben.
-
-Aktuelle Version: v2.91 · 8.11.2026
-Verbesserungen an Design / Struktur.
-- Parzellen: eine Karte mit allen Parzellen, die GPS-Taste (blauer Punkt) und „GPS-Ort speichern“.
-- Landwirt-Modus: Die Hauptbildschirme gleiten mit dem Finger.
-- Tablet: die zusammengelegten Kästen des Landwirt-Modus, Parzellen in 2 Spalten.
-- Parzellen: GPS startet mit der Seite; auch die Seite für eine neue Parzelle hat die große Karte.
-
-────────
-Neue Funktionen seit v2.10
-- Landwirt-Modus: Stundenkästchen mit Wetter und Regen, Details beim Tippen, und das Kästchen Wasser im Boden.
-- Parzellen: per GPS oder auf der Karte gespeichert, ein Hauptbildschirm für jede, 28-Tage-Statistik mit PDF, Regen- und Windwarnungen.
-- Widgets 4x2 Tage und 4x3.
-- Textgröße (Aa).
-- ☰ › App senden.
-- Vereinigte Staaten: NWS-Warnungen, Tornados, °F, Ortszeit.
-- Weitere Sprachen: die Sprachen der Minderheiten Rumäniens.
+- Design-Verbesserungen und Fehlerbehebungen.

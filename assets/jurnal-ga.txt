@@ -1,4 +1,24 @@
-Leagan 1
+Leagan reatha: v.3.00 · 8.11.2026
+Feabhsuithe ar dhearadh / ar struchtúr.
+- Deilbhín ceangail in aice leis an gclog: Wi-Fi, sonraí móibíleacha nó gan cheangal.
+- Nuashonruithe: seiceáiltear an ceangal ar dtús, suiteáiltear leagan atá íoslódáilte cheana láithreach, suas le 5 iarracht nuair nach bhfreagraíonn GitHub, agus taispeántar an chúis.
+
+Leagan 2 (v.2.00 – v.2.91)
+- Teangacha oifigiúla uile an AE agus Úcráinis.
+- Leathanach Creathanna talún.
+- Fógraí le do thoiliú: báisteach nó sneachta, rabhaidh, creathanna talún.
+- Mód feirmeora: boscaí uaire le haimsir agus báisteach, sonraí ach tapáil, agus an bosca Uisce san ithir.
+- Páirceanna: sábháilte trí GPS nó ar an léarscáil, príomhscáileán do gach ceann, staitisticí 28 lá le PDF, foláirimh bháistí agus ghaoithe.
+- Giuirléidí 4x2 laethanta agus 4x3.
+- Méid an téacs (Aa).
+- ☰ › Seol an aip.
+- Na Stáit Aontaithe: rabhaidh NWS, tornadónna, °F, am áitiúil.
+- Teangacha eile: teangacha mionlaigh na Rómáine.
+- Páirceanna: léarscáil leis na páirceanna go léir, an cnaipe GPS (ponc gorm) agus “Sábháil áit GPS”.
+- Mód feirmeora: sleamhnaíonn na príomhscáileáin le do mhéar.
+- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+
+Leagan 1 (v.1.00 – v.1.93)
 - An aimsir anois, na huaireanta romhainn, deascadh do 12 uair agus 5 lá.
 - Boscaí: Grian / Gealach, UV, Pailin, Taise, Cáilíocht aeir, Brú, Gaoth, Infheictheacht, Compás, Crith talún.
 - Rabhaidh aimsire de réir dath (MeteoAlarm, timpeall 38 tír).
@@ -8,25 +28,4 @@ Leagan 1
 - Giuirléidí 2x2, 4x1, 4x2, le socruithe.
 - Athnuachan uaithi féin; MET Norway mar réamhaisnéis chúltaca.
 - Nuashonruithe ón aip, Cabhair, Logáil.
-
-Leagan 2
-- Teangacha oifigiúla uile an AE agus Úcráinis.
-- Leathanach Creathanna talún.
-- Fógraí le do thoiliú: báisteach nó sneachta, rabhaidh, creathanna talún.
-
-Leagan reatha: v2.91 · 8.11.2026
-Feabhsuithe ar dhearadh / ar struchtúr.
-- Páirceanna: léarscáil leis na páirceanna go léir, an cnaipe GPS (ponc gorm) agus “Sábháil áit GPS”.
-- Mód feirmeora: sleamhnaíonn na príomhscáileáin le do mhéar.
-- Táibléad: boscaí cumaiscthe an mhód feirmeora, páirceanna i 2 cholún.
-- Páirceanna: tosaíonn an GPS leis an leathanach; tá an léarscáil mhór ar leathanach na páirce nua freisin.
-
-────────
-Feidhmeanna nua ó v2.10
-- Mód feirmeora: boscaí uaire le haimsir agus báisteach, sonraí ach tapáil, agus an bosca Uisce san ithir.
-- Páirceanna: sábháilte trí GPS nó ar an léarscáil, príomhscáileán do gach ceann, staitisticí 28 lá le PDF, foláirimh bháistí agus ghaoithe.
-- Giuirléidí 4x2 laethanta agus 4x3.
-- Méid an téacs (Aa).
-- ☰ › Seol an aip.
-- Na Stáit Aontaithe: rabhaidh NWS, tornadónna, °F, am áitiúil.
-- Teangacha eile: teangacha mionlaigh na Rómáine.
+- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.

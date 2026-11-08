@@ -83,8 +83,7 @@ final class BottomSheet extends FrameLayout {
 		row.addView(primary, pp);
 		LinearLayout.LayoutParams rp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		rp.topMargin = (int) (12 * dp);
-		rp.bottomMargin = (int) (12 * dp);
-		sheet.addView(row, rp);
+		rp.bottomMargin = 0;
 		text = new TextView(c);
 		text.setTextSize(16);
 		text.setLineSpacing(0, 1.15f);
@@ -102,7 +101,11 @@ final class BottomSheet extends FrameLayout {
 			}
 		};
 		scroll.addView(text);
-		sheet.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		sl.topMargin = (int) (12 * dp);
+		sheet.addView(scroll, sl);
+		// v3.00 (Viorel): the buttons under the text.
+		sheet.addView(row, rp);
 		size.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (sizer == null) return;

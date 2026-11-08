@@ -1,4 +1,24 @@
-Verze 1
+Současná verze: v.3.00 · 8.11.2026
+Vylepšení vzhledu / struktury.
+- Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
+- Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
+
+Verze 2 (v.2.00 – v.2.91)
+- Všechny úřední jazyky EU a ukrajinština.
+- Stránka Zemětřesení.
+- Oznámení s tvým souhlasem: déšť nebo sníh, výstrahy, zemětřesení.
+- Režim farmáře: hodinová políčka s počasím a deštěm, podrobnosti po klepnutí a políčko Voda v půdě.
+- Parcely: uložené přes GPS nebo na mapě, hlavní obrazovka pro každou, statistika za 28 dní s PDF, upozornění na déšť a vítr.
+- Widgety 4x2 dny a 4x3.
+- Velikost textu (Aa).
+- ☰ › Poslat aplikaci.
+- Spojené státy: výstrahy NWS, tornáda, °F, místní čas.
+- Další jazyky: jazyky menšin Rumunska.
+- Pozemky: mapa se všemi parcelami, tlačítko GPS (modrá tečka) a „Uložit místo GPS“.
+- Režim zemědělce: hlavní obrazovky se posouvají prstem.
+- Vylepšení vzhledu a opravy chyb.
+
+Verze 1 (v.1.00 – v.1.93)
 - Počasí teď, příští hodiny, srážky na 12 hodin a 5 dní.
 - Políčka: Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita vzduchu, Tlak, Vítr, Viditelnost, Kompas, Zemětřesení.
 - Výstrahy podle barev (MeteoAlarm, asi 38 zemí).
@@ -8,25 +28,4 @@ Verze 1
 - Widgety 2x2, 4x1, 4x2, s nastavením.
 - Samočinné obnovování; záložní předpověď MET Norway.
 - Aktualizace z aplikace, Nápověda, Deník.
-
-Verze 2
-- Všechny úřední jazyky EU a ukrajinština.
-- Stránka Zemětřesení.
-- Oznámení s tvým souhlasem: déšť nebo sníh, výstrahy, zemětřesení.
-
-Současná verze: v2.91 · 8.11.2026
-Vylepšení vzhledu / struktury.
-- Pozemky: mapa se všemi parcelami, tlačítko GPS (modrá tečka) a „Uložit místo GPS“.
-- Režim zemědělce: hlavní obrazovky se posouvají prstem.
-- Tablet: spojené rámečky režimu farmáře, parcely ve 2 sloupcích.
-- Pozemky: GPS se spustí se stránkou; stránka nové parcely má také velkou mapu.
-
-────────
-Nové funkce od v2.10
-- Režim farmáře: hodinová políčka s počasím a deštěm, podrobnosti po klepnutí a políčko Voda v půdě.
-- Parcely: uložené přes GPS nebo na mapě, hlavní obrazovka pro každou, statistika za 28 dní s PDF, upozornění na déšť a vítr.
-- Widgety 4x2 dny a 4x3.
-- Velikost textu (Aa).
-- ☰ › Poslat aplikaci.
-- Spojené státy: výstrahy NWS, tornáda, °F, místní čas.
-- Další jazyky: jazyky menšin Rumunska.
+- Vylepšení vzhledu a opravy chyb.

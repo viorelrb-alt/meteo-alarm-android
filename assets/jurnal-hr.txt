@@ -1,4 +1,24 @@
-Verzija 1
+Trenutačna verzija: v.3.00 · 8.11.2026
+Poboljšanja izgleda / strukture.
+- Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
+- Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
+
+Verzija 2 (v.2.00 – v.2.91)
+- Svi službeni jezici EU-a i ukrajinski.
+- Stranica Potresi.
+- Obavijesti uz tvoj pristanak: kiša ili snijeg, upozorenja, potresi.
+- Način poljoprivrednika: polja po satima s vremenom i kišom, pojedinosti na dodir i polje Voda u tlu.
+- Parcele: spremljene GPS-om ili na karti, glavni zaslon za svaku, statistika za 28 dana s PDF-om, upozorenja za kišu i vjetar.
+- Widgeti 4x2 dani i 4x3.
+- Veličina teksta (Aa).
+- ☰ › Pošalji aplikaciju.
+- Sjedinjene Države: upozorenja NWS-a, tornada, °F, lokalno vrijeme.
+- Ostali jezici: jezici manjina u Rumunjskoj.
+- Parcele: karta sa svim parcelama, gumb GPS (plava točka) i „Spremi GPS mjesto”.
+- Način poljoprivrednika: glavni zasloni klize s prstom.
+- Poboljšanja dizajna i ispravci pogrešaka.
+
+Verzija 1 (v.1.00 – v.1.93)
 - Vrijeme sada, sljedeći sati, oborine za 12 sati i 5 dana.
 - Polja: Sunce / Mjesec, UV, Pelud, Vlaga, Kvaliteta zraka, Tlak, Vjetar, Vidljivost, Kompas, Potres.
 - Upozorenja po bojama (MeteoAlarm, oko 38 zemalja).
@@ -8,25 +28,4 @@ Verzija 1
 - Widgeti 2x2, 4x1, 4x2, s postavkama.
 - Samostalno osvježavanje; rezervna prognoza MET Norway.
 - Ažuriranja iz aplikacije, Pomoć, Dnevnik.
-
-Verzija 2
-- Svi službeni jezici EU-a i ukrajinski.
-- Stranica Potresi.
-- Obavijesti uz tvoj pristanak: kiša ili snijeg, upozorenja, potresi.
-
-Trenutačna verzija: v2.91 · 8.11.2026
-Poboljšanja izgleda / strukture.
-- Parcele: karta sa svim parcelama, gumb GPS (plava točka) i „Spremi GPS mjesto”.
-- Način poljoprivrednika: glavni zasloni klize s prstom.
-- Tablet: spojeni okviri načina rada za poljoprivrednike, parcele u 2 stupca.
-- Parcele: GPS se pokreće sa stranicom; i stranica nove parcele ima veliku kartu.
-
-────────
-Nove funkcije od v2.10
-- Način poljoprivrednika: polja po satima s vremenom i kišom, pojedinosti na dodir i polje Voda u tlu.
-- Parcele: spremljene GPS-om ili na karti, glavni zaslon za svaku, statistika za 28 dana s PDF-om, upozorenja za kišu i vjetar.
-- Widgeti 4x2 dani i 4x3.
-- Veličina teksta (Aa).
-- ☰ › Pošalji aplikaciju.
-- Sjedinjene Države: upozorenja NWS-a, tornada, °F, lokalno vrijeme.
-- Ostali jezici: jezici manjina u Rumunjskoj.
+- Poboljšanja dizajna i ispravci pogrešaka.

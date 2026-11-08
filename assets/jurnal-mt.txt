@@ -1,4 +1,24 @@
-Verżjoni 1
+Verżjoni attwali: v.3.00 · 8.11.2026
+Titjib fid-disinn / fl-istruttura.
+- Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
+- Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
+
+Verżjoni 2 (v.2.00 – v.2.91)
+- Il-lingwi uffiċjali kollha tal-UE u l-Ukren.
+- Il-paġna Terremoti.
+- Notifiki bil-kunsens tiegħek: xita jew silġ, twissijiet, terremoti.
+- Modalità tal-bidwi: kaxxi tas-siegħa bit-temp u x-xita, dettalji meta tmiss, u l-kaxxa Ilma fil-ħamrija.
+- Għelieqi: issejvjati bil-GPS jew fuq il-mappa, skrin ewlieni għal kull waħda, statistika ta' 28 jum b'PDF, twissijiet ta' xita u riħ.
+- Widgets 4x2 jiem u 4x3.
+- Daqs tat-test (Aa).
+- ☰ › Ibgħat l-app.
+- L-Istati Uniti: twissijiet NWS, tornado, °F, ħin lokali.
+- Lingwi oħra: il-lingwi tal-minoranzi tar-Rumanija.
+- Għelieqi: mappa bl-għelieqi kollha, il-buttuna GPS (tikka blu) u “Issejvja post GPS”.
+- Modalità tal-bidwi: l-iskrins ewlenin jiżżerżqu mas-saba’.
+- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+
+Verżjoni 1 (v.1.00 – v.1.93)
 - It-temp issa, is-sigħat li ġejjin, il-preċipitazzjoni għal 12-il siegħa u 5 ijiem.
 - Kaxxi: Xemx / Qamar, UV, Pollen, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla, Terremot.
 - Twissijiet tat-temp skont il-kulur (MeteoAlarm, madwar 38 pajjiż).
@@ -8,25 +28,4 @@ Verżjoni 1
 - Widgets 2x2, 4x1, 4x2, bl-issettjar.
 - Aġġornament waħdu; MET Norway bħala tbassir ta' riżerva.
 - Aġġornamenti mill-app, Għajnuna, Reġistru.
-
-Verżjoni 2
-- Il-lingwi uffiċjali kollha tal-UE u l-Ukren.
-- Il-paġna Terremoti.
-- Notifiki bil-kunsens tiegħek: xita jew silġ, twissijiet, terremoti.
-
-Verżjoni attwali: v2.91 · 8.11.2026
-Titjib fid-disinn / fl-istruttura.
-- Għelieqi: mappa bl-għelieqi kollha, il-buttuna GPS (tikka blu) u “Issejvja post GPS”.
-- Modalità tal-bidwi: l-iskrins ewlenin jiżżerżqu mas-saba’.
-- Tablet: il-kaxxi magħquda tal-modalità tal-bidwi, għelieqi f’2 kolonni.
-- Għelieqi: il-GPS jibda mal-paġna; il-paġna tal-għalqa l-ġdida għandha wkoll il-mappa l-kbira.
-
-────────
-Funzjonijiet ġodda minn v2.10
-- Modalità tal-bidwi: kaxxi tas-siegħa bit-temp u x-xita, dettalji meta tmiss, u l-kaxxa Ilma fil-ħamrija.
-- Għelieqi: issejvjati bil-GPS jew fuq il-mappa, skrin ewlieni għal kull waħda, statistika ta' 28 jum b'PDF, twissijiet ta' xita u riħ.
-- Widgets 4x2 jiem u 4x3.
-- Daqs tat-test (Aa).
-- ☰ › Ibgħat l-app.
-- L-Istati Uniti: twissijiet NWS, tornado, °F, ħin lokali.
-- Lingwi oħra: il-lingwi tal-minoranzi tar-Rumanija.
+- Titjib fid-disinn u korrezzjoni ta’ żbalji.

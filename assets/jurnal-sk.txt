@@ -1,4 +1,24 @@
-Verzia 1
+Súčasná verzia: v.3.00 · 8.11.2026
+Vylepšenia vzhľadu / štruktúry.
+- Ikona pripojenia vedľa hodín: Wi-Fi, mobilné dáta alebo žiadne.
+- Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
+
+Verzia 2 (v.2.00 – v.2.91)
+- Všetky úradné jazyky EÚ a ukrajinčina.
+- Stránka Zemetrasenia.
+- Oznámenia s tvojím súhlasom: dážď alebo sneh, výstrahy, zemetrasenia.
+- Režim farmára: hodinové políčka s počasím a dažďom, podrobnosti po ťuknutí a políčko Voda v pôde.
+- Parcely: uložené cez GPS alebo na mape, hlavná obrazovka pre každú, štatistika za 28 dní s PDF, upozornenia na dážď a vietor.
+- Miniaplikácie 4x2 dni a 4x3.
+- Veľkosť textu (Aa).
+- ☰ › Poslať aplikáciu.
+- Spojené štáty: výstrahy NWS, tornáda, °F, miestny čas.
+- Ďalšie jazyky: jazyky menšín Rumunska.
+- Pozemky: mapa so všetkými parcelami, tlačidlo GPS (modrá bodka) a „Uložiť miesto GPS“.
+- Režim farmára: hlavné obrazovky sa posúvajú s prstom.
+- Vylepšenia vzhľadu a opravy chýb.
+
+Verzia 1 (v.1.00 – v.1.93)
 - Počasie teraz, nasledujúce hodiny, zrážky na 12 hodín a 5 dní.
 - Políčka: Slnko / Mesiac, UV, Peľ, Vlhkosť, Kvalita vzduchu, Tlak, Vietor, Viditeľnosť, Kompas, Zemetrasenie.
 - Výstrahy podľa farieb (MeteoAlarm, asi 38 krajín).
@@ -8,25 +28,4 @@ Verzia 1
 - Miniaplikácie 2x2, 4x1, 4x2, s nastaveniami.
 - Samočinné obnovovanie; záložná predpoveď MET Norway.
 - Aktualizácie z aplikácie, Pomocník, Denník.
-
-Verzia 2
-- Všetky úradné jazyky EÚ a ukrajinčina.
-- Stránka Zemetrasenia.
-- Oznámenia s tvojím súhlasom: dážď alebo sneh, výstrahy, zemetrasenia.
-
-Súčasná verzia: v2.91 · 8.11.2026
-Vylepšenia vzhľadu / štruktúry.
-- Pozemky: mapa so všetkými parcelami, tlačidlo GPS (modrá bodka) a „Uložiť miesto GPS“.
-- Režim farmára: hlavné obrazovky sa posúvajú s prstom.
-- Tablet: spojené rámčeky režimu farmára, parcely v 2 stĺpcoch.
-- Pozemky: GPS sa spustí so stránkou; aj stránka novej parcely má veľkú mapu.
-
-────────
-Nové funkcie od v2.10
-- Režim farmára: hodinové políčka s počasím a dažďom, podrobnosti po ťuknutí a políčko Voda v pôde.
-- Parcely: uložené cez GPS alebo na mape, hlavná obrazovka pre každú, štatistika za 28 dní s PDF, upozornenia na dážď a vietor.
-- Miniaplikácie 4x2 dni a 4x3.
-- Veľkosť textu (Aa).
-- ☰ › Poslať aplikáciu.
-- Spojené štáty: výstrahy NWS, tornáda, °F, miestny čas.
-- Ďalšie jazyky: jazyky menšín Rumunska.
+- Vylepšenia vzhľadu a opravy chýb.

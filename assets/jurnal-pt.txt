@@ -1,4 +1,24 @@
-Versão 1
+Versão atual: v.3.00 · 8.11.2026
+Melhorias de design / estrutura.
+- Ícone de ligação junto ao relógio: Wi-Fi, dados móveis ou nenhuma.
+- Atualizações: primeiro verifica-se a ligação, uma versão já descarregada instala-se logo, até 5 tentativas quando o GitHub não responde, e mostra-se o motivo.
+
+Versão 2 (v.2.00 – v.2.91)
+- Todas as línguas oficiais da UE e o ucraniano.
+- Página Sismos.
+- Notificações com o teu consentimento: chuva ou neve, avisos, sismos.
+- Modo agricultor: caixas horárias com o tempo e a chuva, detalhes ao tocar, e a caixa Água no solo.
+- Parcelas: guardadas por GPS ou no mapa, um ecrã principal para cada uma, estatísticas de 28 dias com PDF, alertas de chuva e vento.
+- Widgets 4x2 dias e 4x3.
+- Tamanho do texto (Aa).
+- ☰ › Enviar a app.
+- Estados Unidos: avisos NWS, tornados, °F, hora local.
+- Outras línguas: as línguas das minorias da Roménia.
+- Parcelas: um mapa com todas as parcelas, o botão GPS (ponto azul) e «Guardar local GPS».
+- Modo agricultor: os ecrãs principais deslizam com o dedo.
+- Melhorias de design e correção de erros.
+
+Versão 1 (v.1.00 – v.1.93)
 - O tempo agora, as próximas horas, a precipitação de 12 horas e 5 dias.
 - Caixas: Sol / Lua, UV, Pólen, Humidade, Qualidade do ar, Pressão, Vento, Visibilidade, Bússola, Sismo.
 - Avisos meteorológicos por código de cor (MeteoAlarm, cerca de 38 países).
@@ -8,25 +28,4 @@ Versão 1
 - Widgets 2x2, 4x1, 4x2, com definições.
 - Atualização automática; previsão de reserva MET Norway.
 - Atualizações a partir da app, Ajuda, Registo.
-
-Versão 2
-- Todas as línguas oficiais da UE e o ucraniano.
-- Página Sismos.
-- Notificações com o teu consentimento: chuva ou neve, avisos, sismos.
-
-Versão atual: v2.91 · 8.11.2026
-Melhorias de design / estrutura.
-- Parcelas: um mapa com todas as parcelas, o botão GPS (ponto azul) e «Guardar local GPS».
-- Modo agricultor: os ecrãs principais deslizam com o dedo.
-- Tablet: as caixas unidas do modo agricultor, parcelas em 2 colunas.
-- Parcelas: o GPS começa com a página; a página de nova parcela também tem o mapa grande.
-
-────────
-Novas funções desde a v2.10
-- Modo agricultor: caixas horárias com o tempo e a chuva, detalhes ao tocar, e a caixa Água no solo.
-- Parcelas: guardadas por GPS ou no mapa, um ecrã principal para cada uma, estatísticas de 28 dias com PDF, alertas de chuva e vento.
-- Widgets 4x2 dias e 4x3.
-- Tamanho do texto (Aa).
-- ☰ › Enviar a app.
-- Estados Unidos: avisos NWS, tornados, °F, hora local.
-- Outras línguas: as línguas das minorias da Roménia.
+- Melhorias de design e correção de erros.

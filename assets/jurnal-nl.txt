@@ -1,4 +1,24 @@
-Versie 1
+Huidige versie: v.3.00 · 8.11.2026
+Verbeteringen in ontwerp / structuur.
+- Verbindingspictogram naast de klok: wifi, mobiele data of geen.
+- Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.
+
+Versie 2 (v.2.00 – v.2.91)
+- Alle officiële EU-talen en Oekraïens.
+- Pagina Aardbevingen.
+- Meldingen met je toestemming: regen of sneeuw, waarschuwingen, aardbevingen.
+- Boerenmodus: uurvakken met weer en regen, details bij een tik, en het vak Water in de bodem.
+- Percelen: opgeslagen via gps of op de kaart, een hoofdscherm per perceel, statistiek over 28 dagen met pdf, regen- en windmeldingen.
+- Widgets 4x2 dagen en 4x3.
+- Tekstgrootte (Aa).
+- ☰ › App versturen.
+- Verenigde Staten: NWS-waarschuwingen, tornado's, °F, lokale tijd.
+- Andere talen: de talen van de minderheden in Roemenië.
+- Percelen: een kaart met alle percelen, de GPS-knop (blauwe stip) en „GPS-plek opslaan”.
+- Boerenmodus: de hoofdschermen schuiven mee met je vinger.
+- Ontwerpverbeteringen en foutoplossingen.
+
+Versie 1 (v.1.00 – v.1.93)
 - Het weer nu, de komende uren, neerslag voor 12 uur en 5 dagen.
 - Vakken: Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas, Aardbeving.
 - Weerwaarschuwingen met kleurcode (MeteoAlarm, ongeveer 38 landen).
@@ -8,25 +28,4 @@ Versie 1
 - Widgets 2x2, 4x1, 4x2, met instellingen.
 - Vanzelf vernieuwen; MET Norway als reserveverwachting.
 - Updates vanuit de app, Help, Logboek.
-
-Versie 2
-- Alle officiële EU-talen en Oekraïens.
-- Pagina Aardbevingen.
-- Meldingen met je toestemming: regen of sneeuw, waarschuwingen, aardbevingen.
-
-Huidige versie: v2.91 · 8.11.2026
-Verbeteringen in ontwerp / structuur.
-- Percelen: een kaart met alle percelen, de GPS-knop (blauwe stip) en „GPS-plek opslaan”.
-- Boerenmodus: de hoofdschermen schuiven mee met je vinger.
-- Tablet: de samengevoegde vakken van de boerenmodus, percelen in 2 kolommen.
-- Percelen: GPS start met de pagina; ook de pagina voor een nieuw perceel heeft de grote kaart.
-
-────────
-Nieuwe functies sinds v2.10
-- Boerenmodus: uurvakken met weer en regen, details bij een tik, en het vak Water in de bodem.
-- Percelen: opgeslagen via gps of op de kaart, een hoofdscherm per perceel, statistiek over 28 dagen met pdf, regen- en windmeldingen.
-- Widgets 4x2 dagen en 4x3.
-- Tekstgrootte (Aa).
-- ☰ › App versturen.
-- Verenigde Staten: NWS-waarschuwingen, tornado's, °F, lokale tijd.
-- Andere talen: de talen van de minderheden in Roemenië.
+- Ontwerpverbeteringen en foutoplossingen.

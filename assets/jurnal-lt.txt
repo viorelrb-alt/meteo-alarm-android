@@ -1,4 +1,24 @@
-1 versija
+Dabartinė versija: v.3.00 · 8.11.2026
+Dizaino / struktūros patobulinimai.
+- Ryšio piktograma šalia laikrodžio: Wi-Fi, mobilieji duomenys arba nėra.
+- Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
+
+2 versija (v.2.00 – v.2.91)
+- Visos oficialiosios ES kalbos ir ukrainiečių.
+- Puslapis Žemės drebėjimai.
+- Pranešimai su tavo sutikimu: lietus ar sniegas, įspėjimai, žemės drebėjimai.
+- Ūkininko režimas: valandiniai langeliai su orais ir lietumi, išsamiau palietus ir langelis Vanduo dirvoje.
+- Laukai: išsaugoti GPS arba žemėlapyje, pagrindinis ekranas kiekvienam, 28 dienų statistika su PDF, lietaus ir vėjo įspėjimai.
+- Valdikliai 4x2 dienos ir 4x3.
+- Teksto dydis (Aa).
+- ☰ › Siųsti programėlę.
+- JAV: NWS įspėjimai, tornadai, °F, vietos laikas.
+- Kitos kalbos: Rumunijos mažumų kalbos.
+- Laukai: žemėlapis su visais sklypais, GPS mygtukas (mėlynas taškas) ir „Išsaugoti GPS vietą“.
+- Ūkininko režimas: pagrindiniai ekranai slenka su pirštu.
+- Dizaino patobulinimai ir klaidų taisymai.
+
+1 versija (v.1.00 – v.1.93)
 - Orai dabar, artimiausios valandos, krituliai 12 valandų ir 5 dienoms.
 - Langeliai: Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas, Žemės drebėjimas.
 - Įspėjimai pagal spalvų kodą (MeteoAlarm, apie 38 šalis).
@@ -8,25 +28,4 @@
 - Valdikliai 2x2, 4x1, 4x2, su nustatymais.
 - Atsinaujina pati; MET Norway kaip atsarginė prognozė.
 - Atnaujinimai iš programėlės, Pagalba, Žurnalas.
-
-2 versija
-- Visos oficialiosios ES kalbos ir ukrainiečių.
-- Puslapis Žemės drebėjimai.
-- Pranešimai su tavo sutikimu: lietus ar sniegas, įspėjimai, žemės drebėjimai.
-
-Dabartinė versija: v2.91 · 8.11.2026
-Dizaino / struktūros patobulinimai.
-- Laukai: žemėlapis su visais sklypais, GPS mygtukas (mėlynas taškas) ir „Išsaugoti GPS vietą“.
-- Ūkininko režimas: pagrindiniai ekranai slenka su pirštu.
-- Planšetė: sujungti ūkininko režimo langeliai, sklypai 2 stulpeliuose.
-- Laukai: GPS įsijungia su puslapiu; naujo sklypo puslapyje irgi didelis žemėlapis.
-
-────────
-Naujos funkcijos nuo v2.10
-- Ūkininko režimas: valandiniai langeliai su orais ir lietumi, išsamiau palietus ir langelis Vanduo dirvoje.
-- Laukai: išsaugoti GPS arba žemėlapyje, pagrindinis ekranas kiekvienam, 28 dienų statistika su PDF, lietaus ir vėjo įspėjimai.
-- Valdikliai 4x2 dienos ir 4x3.
-- Teksto dydis (Aa).
-- ☰ › Siųsti programėlę.
-- JAV: NWS įspėjimai, tornadai, °F, vietos laikas.
-- Kitos kalbos: Rumunijos mažumų kalbos.
+- Dizaino patobulinimai ir klaidų taisymai.

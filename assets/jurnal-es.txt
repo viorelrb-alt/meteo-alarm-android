@@ -1,4 +1,24 @@
-Versión 1
+Versión actual: v.3.00 · 8.11.2026
+Mejoras de diseño / estructura.
+- Icono de conexión junto al reloj: Wi-Fi, datos móviles o ninguna.
+- Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.
+
+Versión 2 (v.2.00 – v.2.91)
+- Todos los idiomas oficiales de la UE y el ucraniano.
+- Página Terremotos.
+- Notificaciones con tu permiso: lluvia o nieve, avisos, terremotos.
+- Modo agricultor: casillas por hora con el tiempo y la lluvia, detalles al tocar, y la casilla Agua en el suelo.
+- Parcelas: guardadas por GPS o en el mapa, una pantalla principal para cada una, estadísticas de 28 días con PDF, alertas de lluvia y viento.
+- Widgets 4x2 días y 4x3.
+- Tamaño del texto (Aa).
+- ☰ › Enviar la app.
+- Estados Unidos: avisos NWS, tornados, °F, hora local.
+- Otros idiomas: los idiomas de las minorías de Rumanía.
+- Parcelas: un mapa con todas las parcelas, el botón GPS (punto azul) y «Guardar lugar GPS».
+- Modo agricultor: las pantallas principales se deslizan con el dedo.
+- Mejoras de diseño y corrección de errores.
+
+Versión 1 (v.1.00 – v.1.93)
 - El tiempo actual, las próximas horas, la precipitación de 12 horas y 5 días.
 - Casillas: Sol / Luna, UV, Polen, Humedad, Calidad del aire, Presión, Viento, Visibilidad, Brújula, Terremoto.
 - Avisos meteorológicos por código de color (MeteoAlarm, unos 38 países).
@@ -8,25 +28,4 @@ Versión 1
 - Widgets 2x2, 4x1, 4x2, con ajustes.
 - Actualización automática; previsión de reserva MET Norway.
 - Actualizaciones desde la app, Ayuda, Registro.
-
-Versión 2
-- Todos los idiomas oficiales de la UE y el ucraniano.
-- Página Terremotos.
-- Notificaciones con tu permiso: lluvia o nieve, avisos, terremotos.
-
-Versión actual: v2.91 · 8.11.2026
-Mejoras de diseño / estructura.
-- Parcelas: un mapa con todas las parcelas, el botón GPS (punto azul) y «Guardar lugar GPS».
-- Modo agricultor: las pantallas principales se deslizan con el dedo.
-- Tableta: las casillas unidas del modo agricultor, parcelas en 2 columnas.
-- Parcelas: el GPS se inicia con la página; la página de parcela nueva también tiene el mapa grande.
-
-────────
-Funciones nuevas desde la v2.10
-- Modo agricultor: casillas por hora con el tiempo y la lluvia, detalles al tocar, y la casilla Agua en el suelo.
-- Parcelas: guardadas por GPS o en el mapa, una pantalla principal para cada una, estadísticas de 28 días con PDF, alertas de lluvia y viento.
-- Widgets 4x2 días y 4x3.
-- Tamaño del texto (Aa).
-- ☰ › Enviar la app.
-- Estados Unidos: avisos NWS, tornados, °F, hora local.
-- Otros idiomas: los idiomas de las minorías de Rumanía.
+- Mejoras de diseño y corrección de errores.

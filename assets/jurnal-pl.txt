@@ -1,4 +1,24 @@
-Wersja 1
+Obecna wersja: v.3.00 · 8.11.2026
+Ulepszenia wyglądu / struktury.
+- Ikona połączenia obok zegara: Wi-Fi, dane komórkowe lub brak.
+- Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
+
+Wersja 2 (v.2.00 – v.2.91)
+- Wszystkie języki urzędowe UE i ukraiński.
+- Strona Trzęsienia ziemi.
+- Powiadomienia za twoją zgodą: deszcz lub śnieg, ostrzeżenia, trzęsienia ziemi.
+- Tryb rolnika: pola godzinowe z pogodą i deszczem, szczegóły po dotknięciu oraz pole Woda w glebie.
+- Działki: zapisane przez GPS lub na mapie, ekran główny dla każdej, statystyka 28 dni z PDF, alerty deszczu i wiatru.
+- Widżety 4x2 dni i 4x3.
+- Rozmiar tekstu (Aa).
+- ☰ › Wyślij aplikację.
+- Stany Zjednoczone: ostrzeżenia NWS, tornada, °F, czas lokalny.
+- Inne języki: języki mniejszości Rumunii.
+- Działki: mapa ze wszystkimi działkami, przycisk GPS (niebieska kropka) i „Zapisz miejsce GPS”.
+- Tryb rolnika: ekrany główne przesuwają się z palcem.
+- Ulepszenia wyglądu i poprawki błędów.
+
+Wersja 1 (v.1.00 – v.1.93)
 - Pogoda teraz, następne godziny, opady na 12 godzin i 5 dni.
 - Pola: Słońce / Księżyc, UV, Pyłki, Wilgotność, Jakość powietrza, Ciśnienie, Wiatr, Widoczność, Kompas, Trzęsienie ziemi.
 - Ostrzeżenia pogodowe według koloru (MeteoAlarm, około 38 krajów).
@@ -8,25 +28,4 @@ Wersja 1
 - Widżety 2x2, 4x1, 4x2, z ustawieniami.
 - Samoczynne odświeżanie; zapasowa prognoza MET Norway.
 - Aktualizacje z aplikacji, Pomoc, Dziennik.
-
-Wersja 2
-- Wszystkie języki urzędowe UE i ukraiński.
-- Strona Trzęsienia ziemi.
-- Powiadomienia za twoją zgodą: deszcz lub śnieg, ostrzeżenia, trzęsienia ziemi.
-
-Obecna wersja: v2.91 · 8.11.2026
-Ulepszenia wyglądu / struktury.
-- Działki: mapa ze wszystkimi działkami, przycisk GPS (niebieska kropka) i „Zapisz miejsce GPS”.
-- Tryb rolnika: ekrany główne przesuwają się z palcem.
-- Tablet: połączone pola trybu rolnika, działki w 2 kolumnach.
-- Działki: GPS włącza się razem ze stroną; strona nowej działki też ma dużą mapę.
-
-────────
-Nowe funkcje od v2.10
-- Tryb rolnika: pola godzinowe z pogodą i deszczem, szczegóły po dotknięciu oraz pole Woda w glebie.
-- Działki: zapisane przez GPS lub na mapie, ekran główny dla każdej, statystyka 28 dni z PDF, alerty deszczu i wiatru.
-- Widżety 4x2 dni i 4x3.
-- Rozmiar tekstu (Aa).
-- ☰ › Wyślij aplikację.
-- Stany Zjednoczone: ostrzeżenia NWS, tornada, °F, czas lokalny.
-- Inne języki: języki mniejszości Rumunii.
+- Ulepszenia wyglądu i poprawki błędów.

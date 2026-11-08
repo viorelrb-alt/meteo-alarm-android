@@ -1,4 +1,24 @@
-Version 1
+Version actuelle : v.3.00 · 8.11.2026
+Améliorations de design / structure.
+- Icône de connexion à côté de l’horloge : Wi-Fi, données mobiles ou aucune.
+- Mises à jour : la connexion est vérifiée d’abord, une version déjà téléchargée s’installe aussitôt, jusqu’à 5 essais quand GitHub ne répond pas, et la raison est affichée.
+
+Version 2 (v.2.00 – v.2.91)
+- Toutes les langues officielles de l'UE et l'ukrainien.
+- Page Séismes.
+- Notifications avec votre accord : pluie ou neige, alertes, séismes.
+- Mode agriculteur : cases horaires avec la météo et la pluie, détails au toucher, et la case Eau dans le sol.
+- Parcelles : enregistrées par GPS ou sur la carte, un écran principal pour chacune, statistiques sur 28 jours avec PDF, alertes pluie et vent.
+- Widgets 4x2 jours et 4x3.
+- Taille du texte (Aa).
+- ☰ › Envoyer l'application.
+- États-Unis : alertes NWS, tornades, °F, heure locale.
+- Autres langues : les langues des minorités de Roumanie.
+- Parcelles : une carte avec toutes les parcelles, le bouton GPS (point bleu) et « Enregistrer lieu GPS ».
+- Mode agriculteur : les écrans principaux glissent avec le doigt.
+- Améliorations du design et corrections de bugs.
+
+Version 1 (v.1.00 – v.1.93)
 - La météo actuelle, les prochaines heures, les précipitations sur 12 heures et 5 jours.
 - Cases : Soleil / Lune, UV, Pollen, Humidité, Qualité de l'air, Pression, Vent, Visibilité, Boussole, Séisme.
 - Alertes météo par code couleur (MeteoAlarm, environ 38 pays).
@@ -8,25 +28,4 @@ Version 1
 - Widgets 2x2, 4x1, 4x2, avec réglages.
 - Actualisation automatique ; prévision de secours MET Norway.
 - Mises à jour depuis l'application, Aide, Journal.
-
-Version 2
-- Toutes les langues officielles de l'UE et l'ukrainien.
-- Page Séismes.
-- Notifications avec votre accord : pluie ou neige, alertes, séismes.
-
-Version actuelle : v2.91 · 8.11.2026
-Améliorations de design / structure.
-- Parcelles : une carte avec toutes les parcelles, le bouton GPS (point bleu) et « Enregistrer lieu GPS ».
-- Mode agriculteur : les écrans principaux glissent avec le doigt.
-- Tablette : les cases réunies du mode agriculteur, parcelles sur 2 colonnes.
-- Parcelles : le GPS démarre avec la page ; la page de nouvelle parcelle a aussi la grande carte.
-
-────────
-Nouvelles fonctions depuis la v2.10
-- Mode agriculteur : cases horaires avec la météo et la pluie, détails au toucher, et la case Eau dans le sol.
-- Parcelles : enregistrées par GPS ou sur la carte, un écran principal pour chacune, statistiques sur 28 jours avec PDF, alertes pluie et vent.
-- Widgets 4x2 jours et 4x3.
-- Taille du texte (Aa).
-- ☰ › Envoyer l'application.
-- États-Unis : alertes NWS, tornades, °F, heure locale.
-- Autres langues : les langues des minorités de Roumanie.
+- Améliorations du design et corrections de bugs.

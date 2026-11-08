@@ -1,4 +1,24 @@
-1. verzió
+Jelenlegi verzió: v.3.00 · 2026.11.08.
+Dizájn / szerkezet fejlesztései.
+- Kapcsolatikon az óra mellett: Wi-Fi, mobiladat vagy nincs.
+- Frissítések: először a kapcsolatot ellenőrzi, a már letöltött verzió azonnal települ, legfeljebb 5 próbálkozás, ha a GitHub nem válaszol, és kiírja az okot.
+
+2. verzió (v.2.00 – v.2.91)
+- Az EU összes hivatalos nyelve és az ukrán.
+- Földrengések oldal.
+- Értesítések a hozzájárulásoddal: eső vagy hó, figyelmeztetések, földrengések.
+- Gazda mód: óránkénti mezők időjárással és esővel, részletek koppintásra, és a Víz a talajban mező.
+- Parcellák: GPS-szel vagy térképen mentve, mindegyiknek főképernyő, 28 napos statisztika PDF-fel, eső- és szélriasztások.
+- Widgetek 4x2 napok és 4x3.
+- Szövegméret (Aa).
+- ☰ › Alkalmazás küldése.
+- Egyesült Államok: NWS-figyelmeztetések, tornádók, °F, helyi idő.
+- Egyéb nyelvek: a romániai kisebbségek nyelvei.
+- Parcellák: térkép az összes parcellával, GPS gomb (kék pont) és „GPS-hely mentése”.
+- Gazda mód: a főképernyők az ujjal együtt csúsznak.
+- Dizájnjavítások és hibajavítások.
+
+1. verzió (v.1.00 – v.1.93)
 - Az időjárás most, a következő órák, csapadék 12 órára és 5 napra.
 - Mezők: Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű, Földrengés.
 - Figyelmeztetések színkód szerint (MeteoAlarm, kb. 38 ország).
@@ -8,25 +28,4 @@
 - Widgetek 2x2, 4x1, 4x2, beállításokkal.
 - Önálló frissítés; tartalék előrejelzés: MET Norway.
 - Frissítések az alkalmazásból, Súgó, Napló.
-
-2. verzió
-- Az EU összes hivatalos nyelve és az ukrán.
-- Földrengések oldal.
-- Értesítések a hozzájárulásoddal: eső vagy hó, figyelmeztetések, földrengések.
-
-Jelenlegi verzió: v2.91 · 2026.11.08.
-Dizájn / szerkezet fejlesztései.
-- Parcellák: térkép az összes parcellával, GPS gomb (kék pont) és „GPS-hely mentése”.
-- Gazda mód: a főképernyők az ujjal együtt csúsznak.
-- Táblagép: a gazda mód összevont dobozai, parcellák 2 oszlopban.
-- Parcellák: a GPS az oldallal indul; az új parcella oldalán is nagy a térkép.
-
-────────
-Új funkciók a v2.10 óta
-- Gazda mód: óránkénti mezők időjárással és esővel, részletek koppintásra, és a Víz a talajban mező.
-- Parcellák: GPS-szel vagy térképen mentve, mindegyiknek főképernyő, 28 napos statisztika PDF-fel, eső- és szélriasztások.
-- Widgetek 4x2 napok és 4x3.
-- Szövegméret (Aa).
-- ☰ › Alkalmazás küldése.
-- Egyesült Államok: NWS-figyelmeztetések, tornádók, °F, helyi idő.
-- Egyéb nyelvek: a romániai kisebbségek nyelvei.
+- Dizájnjavítások és hibajavítások.

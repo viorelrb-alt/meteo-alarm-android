@@ -1,4 +1,24 @@
-Version 1
+Nuværende version: v.3.00 · 8.11.2026
+Forbedringer af design / struktur.
+- Forbindelsesikon ved uret: Wi-Fi, mobildata eller ingen.
+- Opdateringer: forbindelsen tjekkes først, en allerede hentet version installeres straks, op til 5 forsøg, når GitHub ikke svarer, og årsagen vises.
+
+Version 2 (v.2.00 – v.2.91)
+- Alle EU's officielle sprog og ukrainsk.
+- Siden Jordskælv.
+- Notifikationer med dit samtykke: regn eller sne, varsler, jordskælv.
+- Landmandstilstand: timefelter med vejr og regn, detaljer ved tryk og feltet Vand i jorden.
+- Marker: gemt via GPS eller på kortet, hovedskærm for hver, statistik for 28 dage med PDF, varsler om regn og vind.
+- Widgets 4x2 dage og 4x3.
+- Tekststørrelse (Aa).
+- ☰ › Send appen.
+- USA: NWS-varsler, tornadoer, °F, lokal tid.
+- Andre sprog: Rumæniens mindretalssprog.
+- Marker: et kort med alle parceller, GPS-knappen (blå prik) og “Gem GPS-sted”.
+- Landmandstilstand: hovedskærmene glider med fingeren.
+- Designforbedringer og fejlrettelser.
+
+Version 1 (v.1.00 – v.1.93)
 - Vejret nu, de næste timer, nedbør for 12 timer og 5 dage.
 - Felter: Sol / Måne, UV, Pollen, Luftfugtighed, Luftkvalitet, Lufttryk, Vind, Sigtbarhed, Kompas, Jordskælv.
 - Vejrvarsler efter farvekode (MeteoAlarm, omkring 38 lande).
@@ -8,25 +28,4 @@ Version 1
 - Widgets 2x2, 4x1, 4x2, med indstillinger.
 - Opdaterer af sig selv; MET Norway som reserveudsigt.
 - Opdateringer fra appen, Hjælp, Log.
-
-Version 2
-- Alle EU's officielle sprog og ukrainsk.
-- Siden Jordskælv.
-- Notifikationer med dit samtykke: regn eller sne, varsler, jordskælv.
-
-Nuværende version: v2.91 · 8.11.2026
-Forbedringer af design / struktur.
-- Marker: et kort med alle parceller, GPS-knappen (blå prik) og “Gem GPS-sted”.
-- Landmandstilstand: hovedskærmene glider med fingeren.
-- Tablet: landmandstilstandens samlede felter, parceller i 2 kolonner.
-- Marker: GPS starter med siden; siden for ny parcel har også det store kort.
-
-────────
-Nye funktioner siden v2.10
-- Landmandstilstand: timefelter med vejr og regn, detaljer ved tryk og feltet Vand i jorden.
-- Marker: gemt via GPS eller på kortet, hovedskærm for hver, statistik for 28 dage med PDF, varsler om regn og vind.
-- Widgets 4x2 dage og 4x3.
-- Tekststørrelse (Aa).
-- ☰ › Send appen.
-- USA: NWS-varsler, tornadoer, °F, lokal tid.
-- Andre sprog: Rumæniens mindretalssprog.
+- Designforbedringer og fejlrettelser.

@@ -1,4 +1,24 @@
-Version 1
+Nuvarande version: v.3.00 · 8.11.2026
+Förbättringar av design / struktur.
+- Anslutningsikon vid klockan: Wi-Fi, mobildata eller ingen.
+- Uppdateringar: anslutningen kontrolleras först, en redan hämtad version installeras direkt, upp till 5 försök när GitHub inte svarar, och orsaken visas.
+
+Version 2 (v.2.00 – v.2.91)
+- Alla EU:s officiella språk och ukrainska.
+- Sidan Jordbävningar.
+- Aviseringar med ditt samtycke: regn eller snö, varningar, jordbävningar.
+- Lantbruksläge: timrutor med väder och regn, detaljer vid tryck och rutan Vatten i marken.
+- Skiften: sparade via GPS eller på kartan, huvudskärm för varje, statistik för 28 dagar med PDF, varningar för regn och vind.
+- Widgetar 4x2 dagar och 4x3.
+- Textstorlek (Aa).
+- ☰ › Skicka appen.
+- USA: NWS-varningar, tornados, °F, lokal tid.
+- Andra språk: Rumäniens minoritetsspråk.
+- Skiften: en karta med alla skiften, GPS-knappen (blå prick) och ”Spara GPS-plats”.
+- Lantbruksläge: huvudskärmarna glider med fingret.
+- Designförbättringar och felrättningar.
+
+Version 1 (v.1.00 – v.1.93)
 - Vädret nu, de närmaste timmarna, nederbörd för 12 timmar och 5 dagar.
 - Rutor: Sol / Måne, UV, Pollen, Luftfuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass, Jordbävning.
 - Vädervarningar efter färgkod (MeteoAlarm, omkring 38 länder).
@@ -8,25 +28,4 @@ Version 1
 - Widgetar 2x2, 4x1, 4x2, med inställningar.
 - Uppdaterar sig själv; MET Norway som reservprognos.
 - Uppdateringar från appen, Hjälp, Logg.
-
-Version 2
-- Alla EU:s officiella språk och ukrainska.
-- Sidan Jordbävningar.
-- Aviseringar med ditt samtycke: regn eller snö, varningar, jordbävningar.
-
-Nuvarande version: v2.91 · 8.11.2026
-Förbättringar av design / struktur.
-- Skiften: en karta med alla skiften, GPS-knappen (blå prick) och ”Spara GPS-plats”.
-- Lantbruksläge: huvudskärmarna glider med fingret.
-- Surfplatta: lantbruksläget sammanslagna rutor, skiften i 2 kolumner.
-- Skiften: GPS startar med sidan; även sidan för nytt skifte har den stora kartan.
-
-────────
-Nya funktioner sedan v2.10
-- Lantbruksläge: timrutor med väder och regn, detaljer vid tryck och rutan Vatten i marken.
-- Skiften: sparade via GPS eller på kartan, huvudskärm för varje, statistik för 28 dagar med PDF, varningar för regn och vind.
-- Widgetar 4x2 dagar och 4x3.
-- Textstorlek (Aa).
-- ☰ › Skicka appen.
-- USA: NWS-varningar, tornados, °F, lokal tid.
-- Andra språk: Rumäniens minoritetsspråk.
+- Designförbättringar och felrättningar.

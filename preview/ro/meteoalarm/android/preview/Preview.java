@@ -141,6 +141,8 @@ public final class Preview {
 		s.unitF = opts.contains(" F") || (usa && !opts.contains(" metric"));
 		s.clk12 = opts.contains(" 12h") || (usa && !opts.contains(" metric"));
 		s.dark = opts.contains(" dark");
+		java.util.regex.Matcher nm = java.util.regex.Pattern.compile(" net=(\\d)").matcher(opts);
+		if (nm.find()) s.net = Integer.parseInt(nm.group(1));
 		s.w = Weather.parse(fetch(Weather.forecastUrl(s.city.lat, s.city.lon, "Europe/Bucharest"), opts.contains(" dry") ? "forecast-dry.json" : "forecast.json"));
 		Object[] pol = Weather.parsePollen(fetch(Weather.pollenUrl(s.city.lat, s.city.lon), "pollen.json"));
 		s.pollenLvl = (Integer) pol[0];

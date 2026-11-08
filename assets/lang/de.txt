@@ -645,3 +645,14 @@ No parcel saved yet. Stand on the parcel and tap “Save GPS place”, or choose
 One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.	Ein Hauptbildschirm für den Ort und einer pro Parzelle: zur Seite wischen; die Mitte des Bildschirms folgt dem Finger und wechselt ab der Hälfte zum nächsten.
 Locating by GPS…	GPS-Ortung läuft…
 On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.	Auf den Parzellenkarten zeigt der blaue Punkt, wo du bist: GPS startet mit der Seite; die GPS-Taste bringt die Karte dorthin.
+No internet connection. Turn on Wi-Fi or mobile data and try again.	Keine Internetverbindung. Schalte WLAN oder mobile Daten ein und versuche es erneut.
+GitHub is not answering now (error 	GitHub antwortet gerade nicht (Fehler 
+). Try again in a few minutes.	). Versuche es in ein paar Minuten erneut.
+The downloaded file is incomplete. Try again.	Die geladene Datei ist unvollständig. Versuche es erneut.
+The download failed: 	Der Download ist fehlgeschlagen: 
+GitHub did not answer, trying again (	GitHub hat nicht geantwortet, neuer Versuch (
+Try again	Erneut versuchen
+When the download fails	Wenn der Download nicht klappt
+The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Die App prüft zuerst das Internet, versucht es bis zu 5-mal, wenn GitHub nicht antwortet, und zeigt den Grund; eine bereits geladene Version wird sofort installiert.
+Connection	Verbindung
+Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Neben der Uhr: WLAN (Bögen), mobile Daten (Balken), anderes Netz (Globus), durchgestrichen ohne Internet.

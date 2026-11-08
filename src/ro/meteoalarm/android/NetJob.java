@@ -31,6 +31,25 @@ public final class NetJob extends JobService {
 		}
 	}
 
+	/**
+	 * v3.00: the connection now: 0 none, 1 Wi-Fi, 2 mobile data, 3 another (cable, VPN…), for the
+	 * icon next to the clock and the check before an update.
+	 */
+	static int kind(Context ctx) {
+		try {
+			ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+			if (cm == null) return 3;
+			android.net.Network n = cm.getActiveNetwork();
+			android.net.NetworkCapabilities nc = n == null ? null : cm.getNetworkCapabilities(n);
+			if (nc == null) return 0;
+			if (nc.hasTransport(android.net.NetworkCapabilities.TRANSPORT_WIFI)) return 1;
+			if (nc.hasTransport(android.net.NetworkCapabilities.TRANSPORT_CELLULAR)) return 2;
+			return 3;
+		} catch (Exception e) {
+			return 3; // unknown: as if there were one
+		}
+	}
+
 	/** Asks the phone to start this job when a network comes; true when it was set. */
 	static boolean waitForNet(Context ctx) {
 		try {
