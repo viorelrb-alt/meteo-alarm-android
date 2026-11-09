@@ -415,7 +415,7 @@ final class WeatherView extends View {
 			pulling = false;
 			pull = 0;
 			edge = !screen.brightBar && !screen.sizeBar && downX >= 12 * dp && downX <= 60 * dp;
-			edgeR = !screen.brightBar && !screen.sizeBar && downX >= getWidth() - 60 * dp && downX <= getWidth() - 12 * dp;
+			edgeR = false; // v3.11 (Viorel): no text-size bar from the right edge any more (Aa in Help / About stays).
 			sizing = false;
 			sizeDown = screen.sizeBar;
 			sizeDrag = false;

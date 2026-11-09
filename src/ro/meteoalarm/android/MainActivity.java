@@ -123,6 +123,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ (b != null ? " · recreată de sistem" : "") + " · de la: " + (st == null || st.getAction() == null ? "?" : st.getAction().replace("android.intent.action.", ""))
 				+ " · task " + getTaskId());
 		prefs = getSharedPreferences("settings", MODE_PRIVATE);
+		// v3.11 (Viorel): the right-edge text-size bar is gone; a size set by it by mistake (it also grew the ☰ menu) goes back to 100% once.
+		if (!prefs.getBoolean("textReset311", false)) {
+			Widget.prefs(this).edit().remove("textScale").apply();
+			prefs.edit().putBoolean("textReset311", true).apply();
+		}
 		view = new WeatherView(this, this);
 		s = view.screen;
 		try {
@@ -2409,7 +2414,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("locate"), Tr.t("Tap on the town's name", "Atingerea numelui localității"), Tr.t("Looks once with the GPS.", "Caută o dată poziția cu GPS-ul."));
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Refreshes the weather.", "Reîmprospătează vremea."));
 		help.entry(mini("edge"), Tr.t("Left edge", "Marginea din stânga"), Tr.t("Slide up or down: brightness.", "Glisează sus-jos: luminozitatea."));
-		help.entry(mini("edge"), Tr.t("Right edge", "Marginea din dreapta"), Tr.t("Slide up or down: text size.", "Glisează sus-jos: mărimea textului."));
 		help.entry(mini("textsize"), Tr.t("Text size", "Mărimea textului"), Tr.t("The Aa button on the pages shows the text-size bar.", "Butonul Aa de pe pagini arată bara de mărime a textului."));
 		help.entry(mini("compass"), Tr.t("Wind arrow", "Săgeata vântului"), Tr.t("Shows where the wind blows, turned with the phone.", "Arată încotro bate vântul, rotită după telefon."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceasul de noapte"), Tr.t("A big dim clock while the phone charges at night.", "Un ceas mare și estompat când telefonul se încarcă noaptea."));
