@@ -1,5 +1,8 @@
-Obecna wersja: v.3.11 · 9.11.2026
+Obecna wersja: v.3.20 · 9.11.2026
 Ulepszenia wyglądu / struktury.
+- Pola w Działkach i Statystyce pokazują tylko wartość; szczegóły pojawiają się po dotknięciu.
+- Dymki: linie między częściami, tabele z liniami przesuwane w bok, źródło na dole, raz.
+- Osobne powiadomienia INFORMACJA dla każdej działki: szron, mróz, mgła, marznący deszcz, silne porywy.
 - Tryb rolnika: nowe pola po Wodzie w glebie: Oprysk, Bilans wodny, Burze, Suma ciepła, 16 dni.
 - W USA, w trybie rolnika: pola NWS, Susza, Pożar, Grad.
 - Przycisk „Statystyka · PDF” na mapie działek i na ekranie każdej działki.

@@ -27,7 +27,9 @@ public final class Farm {
 	private static final String HOURLY = "temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,rain,showers,snowfall,"
 			+ "cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,soil_moisture_3_to_9cm,"
 			// v3.10: evapotranspiration, storm energy (CAPE), lightning (where a model gives it).
-			+ "et0_fao_evapotranspiration,cape,lightning_potential";
+			+ "et0_fao_evapotranspiration,cape,lightning_potential,"
+			// v3.20: the sky's code and day / night, for the information notices of the parcels.
+			+ "weather_code,is_day";
 	/** v3.10: the forecast goes this many days ahead (the 16-day trend). */
 	public static final int AHEAD = 16;
 
@@ -47,7 +49,7 @@ public final class Farm {
 	/** One answer, read. Missing values are NaN. */
 	public static final class Data {
 		public String[] time = new String[0];
-		public double[] temp, hum, prob, precip, rain, showers, snow, cloud, wind, dir, gust, soilT, soilM, et0, cape, light;
+		public double[] temp, hum, prob, precip, rain, showers, snow, cloud, wind, dir, gust, soilT, soilM, et0, cape, light, code, isDay;
 		public String[] dDate = new String[0];
 		public double[] dMax, dMin, dRain, dWind, dGust, dPop, dEt0;
 		public double cTemp = Double.NaN, cHum = Double.NaN, cPrecip = Double.NaN, cWind = Double.NaN, cDir = Double.NaN, cGust = Double.NaN;
@@ -114,6 +116,8 @@ public final class Farm {
 		r.et0 = nums(h, "et0_fao_evapotranspiration", n);
 		r.cape = nums(h, "cape", n);
 		r.light = nums(h, "lightning_potential", n);
+		r.code = nums(h, "weather_code", n);
+		r.isDay = nums(h, "is_day", n);
 		if (d != null) {
 			List<Object> dt = Json.arr(d, "time");
 			int m = dt == null ? 0 : dt.size();

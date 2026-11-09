@@ -1,5 +1,8 @@
-Pašreizējā versija: v.3.11 · 9.11.2026
+Pašreizējā versija: v.3.20 · 9.11.2026
 Dizaina / struktūras uzlabojumi.
+- Lauku un Statistikas lodziņi rāda tikai vērtību; sīkāka informācija parādās pēc pieskāriena.
+- Burbuļi: līnijas starp daļām, tabulas ar līnijām, kas bīdās uz sāniem, avots apakšā, vienreiz.
+- Atsevišķi INFORMĀCIJAS paziņojumi katram laukam: sarma, sals, migla, apledojums, stipras brāzmas.
 - Zemnieka režīms: jauni lodziņi pēc Ūdens augsnē: Smidzināšana, Ūdens bilance, Vētras, Siltuma summa, 16 dienas.
 - ASV, zemnieka režīmā: lodziņi NWS, Sausums, Ugunsgrēks, Krusa.
 - Poga “Statistika · PDF” lauku kartē un katra lauka ekrānā.

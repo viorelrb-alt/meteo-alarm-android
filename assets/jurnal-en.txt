@@ -1,5 +1,8 @@
-Current version: v.3.11 · 9.11.2026
+Current version: v.3.20 · 9.11.2026
 Design / structure improvements.
+- The boxes in Parcels and Statistics show only the value; the details appear at a tap.
+- Bubbles: lines between sections, tables with lines that slide sideways, the source at the bottom, once.
+- Separate INFORMATION notifications for each parcel: frost, freeze, fog, freezing rain, strong gusts.
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
 - The “Statistics · PDF” button on the parcels' map and on each parcel's screen.

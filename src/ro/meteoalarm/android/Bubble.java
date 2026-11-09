@@ -35,7 +35,13 @@ final class Bubble extends FrameLayout {
 		final Bitmap icon;
 		final int kind;
 		final boolean checked;
-		static final int ITEM = 0, HEADER = 1, LINE = 2, TEXT = 3;
+		/** A table's cells, the first row is the header (kind TABLE). */
+		String[][] cells;
+		/**
+		 * v3.20: VALUE = "label: value" kept on one line (smaller when needed), TABLE = cells with
+		 * lines, sliding sideways, SOURCE = where the data come from, gathered at the bottom once.
+		 */
+		static final int ITEM = 0, HEADER = 1, LINE = 2, TEXT = 3, VALUE = 4, TABLE = 5, SOURCE = 6;
 
 		Row(String text, Bitmap icon, int kind, boolean checked) {
 			this.text = text;
@@ -47,6 +53,30 @@ final class Bubble extends FrameLayout {
 		static Row item(String text) {
 			return new Row(text, null, ITEM, false);
 		}
+	}
+
+	/**
+	 * Info rows as Screen gives them (after the title, from index 1): "h" header, "t" text, "v"
+	 * value, "s" source, "T" table (each next element a tab-separated row).
+	 */
+	static List<Row> info(List<String[]> info) {
+		List<Row> rows = new ArrayList<Row>();
+		for (int i = 1; i < info.size(); i++) {
+			String[] r = info.get(i);
+			String k = r[0];
+			if (k.equals("T")) {
+				Row t = new Row("", null, Row.TABLE, false);
+				t.cells = new String[r.length - 1][];
+				for (int j = 1; j < r.length; j++) t.cells[j - 1] = r[j].split("\t", -1);
+				rows.add(t);
+			} else rows.add(new Row(r[1], null, k.equals("h") ? Row.HEADER : k.equals("v") ? Row.VALUE : k.equals("s") ? Row.SOURCE : Row.TEXT, false));
+		}
+		return rows;
+	}
+
+	/** A number keeps its unit on its line: the space after a digit does not break (v3.20). */
+	static String nb(String s) {
+		return s.replaceAll("(\\d) (?=\\S)", "$1\u00A0");
 	}
 
 	interface Pick {
@@ -166,31 +196,72 @@ final class Bubble extends FrameLayout {
 		less.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
 		more.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
 		list.removeAllViews();
-		boolean first = true;
+		boolean first = true, info = false;
+		for (Row r : rows) if (r.kind >= Row.TEXT) info = true;
+		// v3.20 (Viorel): the sources once, at the bottom, after a line.
+		List<String> sources = new ArrayList<String>();
+		List<Row> body = new ArrayList<Row>();
+		for (Row r : rows) {
+			if (r.kind != Row.SOURCE) body.add(r);
+			else if (!sources.contains(r.text)) sources.add(r.text);
+		}
+		if (!sources.isEmpty()) {
+			// Only info bubbles have sources; a pick's index counts all rows, so these never mix with choices.
+			rows = body;
+			rows.add(new Row("", null, Row.LINE, false));
+			for (String src : sources) rows.add(new Row(src, null, Row.SOURCE, false));
+		}
+		List<Grid> grids = new ArrayList<Grid>();
+		List<TextView> values = new ArrayList<TextView>();
 		for (int k = 0; k < rows.size(); k++) {
 			final Row r = rows.get(k);
 			final int idx = k;
 			if (r.kind == Row.LINE) {
 				View v = new View(c);
-				v.setBackgroundColor(ink);
-				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(2, (int) (2 * dp)));
+				boolean thin = info && !sources.isEmpty() && k > 0 && k < rows.size() - 1 && rows.get(k + 1).kind == Row.SOURCE;
+				v.setBackgroundColor(thin ? line() : ink);
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(thin ? 1 : 2, (int) ((thin ? 1 : 2) * dp)));
 				lp.leftMargin = lp.rightMargin = (int) (10 * dp);
 				lp.topMargin = lp.bottomMargin = (int) (4 * dp);
 				list.addView(v, lp);
 				first = true;
 				continue;
 			}
-			if (r.kind == Row.TEXT) {
+			if (r.kind == Row.TABLE) {
+				Grid g = new Grid(c, r.cells, 15 * zk);
+				grids.add(g);
+				android.widget.HorizontalScrollView hs = new android.widget.HorizontalScrollView(c);
+				hs.setHorizontalScrollBarEnabled(true);
+				hs.addView(g);
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				lp.leftMargin = lp.rightMargin = (int) (16 * dp);
+				lp.topMargin = lp.bottomMargin = (int) (6 * dp);
+				list.addView(hs, lp);
+				first = true;
+				continue;
+			}
+			if (r.kind == Row.TEXT || r.kind == Row.VALUE || r.kind == Row.SOURCE) {
 				// Information in larger letters, on as many lines as it needs (the warning details).
-				TextView t = text(c, 18 * zk, false);
+				boolean src = r.kind == Row.SOURCE;
+				TextView t = text(c, (src ? 15 : 18) * zk, false);
 				t.setTag("text");
-				t.setText(r.text);
-				t.setTextColor(ink);
+				t.setText(nb(r.text));
+				if (r.kind == Row.VALUE) values.add(t);
+				t.setTextColor(src ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 				t.setLineSpacing(2 * dp, 1);
 				t.setPadding((int) (16 * dp), (int) (5 * dp), (int) (16 * dp), (int) (5 * dp));
 				list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 				first = true;
 				continue;
+			}
+			if (info && r.kind == Row.HEADER && k > 0) {
+				// v3.20 (Viorel): a line before each section's title, to tell the parts apart.
+				View sep = new View(c);
+				sep.setBackgroundColor(line());
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
+				lp.leftMargin = lp.rightMargin = (int) (10 * dp);
+				lp.topMargin = (int) (8 * dp);
+				list.addView(sep, lp);
 			}
 			if (!first && r.kind == Row.ITEM) {
 				View sep = new View(c);
@@ -266,6 +337,18 @@ final class Bubble extends FrameLayout {
 			if (TextSize.tablet(c) && choices && !texts) width = (int) Math.ceil(need + 8 * dp);
 			width = Math.min(Math.max(width, (int) Math.ceil(need)), sw - 2 * margin);
 		}
+		// A value with its label on one line, smaller when needed; a table at least as wide as the bubble.
+		int inner = width - (int) (32 * dp);
+		for (TextView t : values) {
+			Paint pt = new Paint(t.getPaint());
+			float vs = 18 * zk;
+			for (; vs > 12 * zk; vs -= 0.5f) {
+				pt.setTextSize(vs * getResources().getDisplayMetrics().scaledDensity);
+				if (pt.measureText(t.getText().toString()) <= inner - 2 * dp) break;
+			}
+			t.setTextSize(vs);
+		}
+		for (Grid g : grids) g.minW = inner;
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		title.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		more.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
@@ -370,6 +453,89 @@ final class Bubble extends FrameLayout {
 			p.setStrokeWidth(sw);
 			p.setColor(ink());
 			c.drawPath(path, p);
+		}
+	}
+
+	/**
+	 * A table in a bubble (v3.20, Viorel): lines around every cell, the header on a shaded band;
+	 * wider than the bubble it slides sideways (in a HorizontalScrollView).
+	 */
+	private final class Grid extends View {
+		final String[][] cells;
+		int minW;
+		private final Paint tp = new Paint(Paint.ANTI_ALIAS_FLAG), hp = new Paint(Paint.ANTI_ALIAS_FLAG), lp = new Paint();
+		private float[] colW;
+		private float rowH, padX;
+		private boolean[] right;
+
+		Grid(Context c, String[][] cells, float sp) {
+			super(c);
+			this.cells = cells;
+			float px = sp * getResources().getDisplayMetrics().scaledDensity;
+			tp.setTextSize(px);
+			tp.setTypeface(reg);
+			hp.setTextSize(px);
+			hp.setTypeface(bold);
+			lp.setStrokeWidth(Math.max(1, dp));
+			padX = 8 * dp;
+			rowH = px * 1.9f;
+			int n = 0;
+			for (String[] r : cells) n = Math.max(n, r.length);
+			colW = new float[n];
+			right = new boolean[n];
+			for (int j = 0; j < n; j++) {
+				int num = 0, all = 0;
+				for (int i = 0; i < cells.length; i++) {
+					String v = j < cells[i].length ? cells[i][j] : "";
+					colW[j] = Math.max(colW[j], (i == 0 ? hp : tp).measureText(v) + 2 * padX);
+					if (i > 0 && v.length() > 0) {
+						all++;
+						if (v.matches("^[−+\\-–]?\\d.*")) num++;
+					}
+				}
+				right[j] = j > 0 && all > 0 && num * 2 >= all;
+			}
+		}
+
+		private float natural() {
+			float w = 0;
+			for (float c : colW) w += c;
+			return w + lp.getStrokeWidth();
+		}
+
+		@Override
+		protected void onMeasure(int ws, int hs) {
+			setMeasuredDimension((int) Math.ceil(Math.max(natural(), minW)), (int) Math.ceil(rowH * cells.length + lp.getStrokeWidth()));
+		}
+
+		@Override
+		protected void onDraw(Canvas c) {
+			float extra = Math.max(0, getWidth() - natural()) / Math.max(1, colW.length), sw = lp.getStrokeWidth(), h = rowH * cells.length;
+			int ink = ink();
+			tp.setColor(ink);
+			hp.setColor(ink);
+			Paint band = new Paint();
+			band.setColor(dark ? 0xFF3A3936 : 0xFFE8E6DC);
+			c.drawRect(0, 0, getWidth(), rowH, band);
+			lp.setColor(dark ? 0xFF6B6A65 : 0xFF000000);
+			float x = sw / 2;
+			for (int j = 0; j <= colW.length; j++) {
+				c.drawLine(x, 0, x, h + sw / 2, lp);
+				if (j < colW.length) x += colW[j] + extra;
+			}
+			for (int i = 0; i <= cells.length; i++) c.drawLine(0, sw / 2 + i * rowH, getWidth(), sw / 2 + i * rowH, lp);
+			Paint.FontMetrics fm = tp.getFontMetrics();
+			for (int i = 0; i < cells.length; i++) {
+				float cx = sw / 2, base = sw / 2 + i * rowH + rowH / 2 - (fm.ascent + fm.descent) / 2;
+				for (int j = 0; j < colW.length; j++) {
+					String v = j < cells[i].length ? cells[i][j] : "";
+					Paint p = i == 0 ? hp : tp;
+					float cw = colW[j] + extra;
+					float tx = right[j] ? cx + cw - padX - p.measureText(v) : cx + padX;
+					c.drawText(v, tx, base, p);
+					cx += cw;
+				}
+			}
 		}
 	}
 

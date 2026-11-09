@@ -1,5 +1,8 @@
-Aktuelle Version: v.3.11 · 9.11.2026
+Aktuelle Version: v.3.20 · 9.11.2026
 Verbesserungen an Design / Struktur.
+- Die Felder in Parzellen und Statistik zeigen nur den Wert; die Details erscheinen beim Tippen.
+- Blasen: Linien zwischen Abschnitten, Tabellen mit Linien, seitlich verschiebbar, die Quelle unten, einmal.
+- Eigene HINWEIS-Benachrichtigungen für jede Parzelle: Reif, Frost, Nebel, gefrierender Regen, starke Böen.
 - Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.
 - In den USA, im Landwirt-Modus: die Felder NWS, Dürre, Brand, Hagel.
 - Die Schaltfläche „Statistik · PDF“ auf der Parzellenkarte und auf dem Bildschirm jeder Parzelle.

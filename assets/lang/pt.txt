@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Outro período e PDF: o menu ⋮ no canto superior direito.
 The ⋮ menu	O menu ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Em Parcelas, na página de uma parcela e em Estatística, os comandos estão no menu ⋮ no canto superior direito. Um toque numa caixa mostra-a em letra grande; uma tabela larga desliza para o lado.
+* forecast	* previsão
+Air hum.: 	Hum. ar: 
+Alerts and information: OFF	Alertas e informações: NÃO
+Alerts and information: ON	Alertas e informações: SIM
+Amount	Quant.
+Balance	Balanço
+By day	Por dia
+Chance	Prob.
+Day min. / max.: 	Mín. / máx. dia: 
+Day	Dia
+From	De
+Gusts	Rajadas
+Hours	Horas
+Info bubbles	Balões de informação
+Information · 	Informação · 
+Kept by soil (3–9 cm): 	Retida pelo solo (3–9 cm): 
+Moisture	Hum.
+Rain chance: 	Prob. chuva: 
+Risk	Risco
+Soil moist. 3–9 cm: 	Hum. solo 3–9 cm: 
+Soil temp. (surf.): 	Temp. solo (superf.): 
+Spraying	Pulverização
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	A probabilidade indica quão provável é chover nessa hora, não quanto tempo chove.
+Until 24:00: 	Até às 24:00: 
+Warmth	Calor
+Water	Água
+Week	Semana
+lowest 	mínima 
+tomorrow 	amanhã 
+In the soil now (3–9 cm): 	No solo agora (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Uma estimativa dos modelos meteorológicos, não uma medição de pluviómetro no local.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	A humidade e a temperatura do solo são estimativas do modelo meteorológico, não medições.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Em Parcelas, na página de uma parcela e em Estatística os comandos estão no menu ⋮ no canto superior direito. As caixas mostram só o valor; um toque mostra os detalhes. Uma tabela larga desliza para o lado.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	As secções são separadas por linhas; as tabelas têm linhas e deslizam para o lado; a fonte está em baixo, uma só vez.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Quando SIM, uma notificação de chuva ou vento forte na parcela e uma por parcela para geada, gelo, nevoeiro, chuva gelada ou rajadas fortes.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Recebe uma notificação para esta parcela quando se prevê chuva ou vento forte nas próximas 12 horas, e uma para geada, gelo, nevoeiro, chuva gelada ou rajadas fortes (verificado a cada 3 horas).

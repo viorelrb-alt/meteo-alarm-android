@@ -1,5 +1,8 @@
-Současná verze: v.3.11 · 9.11.2026
+Současná verze: v.3.20 · 9.11.2026
 Vylepšení vzhledu / struktury.
+- Pole v Parcelách a Statistice ukazují jen hodnotu; podrobnosti se zobrazí klepnutím.
+- Bubliny: čáry mezi částmi, tabulky s čarami posuvné do stran, zdroj dole, jednou.
+- Samostatná oznámení INFORMACE pro každou parcelu: jinovatka, mráz, mlha, mrznoucí déšť, silné nárazy.
 - Režim farmáře: nová pole za Vodou v půdě: Postřik, Vodní bilance, Bouřky, Teplotní sumy, 16 dní.
 - V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.
 - Tlačítko „Statistika · PDF“ na mapě parcel a na obrazovce každé parcely.

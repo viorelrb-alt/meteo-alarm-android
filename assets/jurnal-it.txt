@@ -1,5 +1,8 @@
-Versione attuale: v.3.11 · 9.11.2026
+Versione attuale: v.3.20 · 9.11.2026
 Miglioramenti di design / struttura.
+- I riquadri di Appezzamenti e Statistiche mostrano solo il valore; i dettagli appaiono al tocco.
+- Fumetti: linee tra le sezioni, tabelle con linee che scorrono di lato, la fonte in basso, una volta.
+- Notifiche INFORMAZIONE separate per ogni appezzamento: brina, gelo, nebbia, pioggia gelata, raffiche forti.
 - Modalità agricoltore: nuove caselle dopo Acqua nel suolo: Irrorazione, Bilancio idrico, Temporali, Gradi-giorno, 16 giorni.
 - Negli USA, in modalità agricoltore: le caselle NWS, Siccità, Incendio, Grandine.
 - Il pulsante «Statistica · PDF» sulla mappa degli appezzamenti e sulla schermata di ciascuno.

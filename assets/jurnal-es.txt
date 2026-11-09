@@ -1,5 +1,8 @@
-Versión actual: v.3.11 · 9.11.2026
+Versión actual: v.3.20 · 9.11.2026
 Mejoras de diseño / estructura.
+- Las casillas de Parcelas y Estadística muestran solo el valor; los detalles aparecen al tocar.
+- Burbujas: líneas entre secciones, tablas con líneas que se deslizan hacia los lados, la fuente abajo, una vez.
+- Avisos de INFORMACIÓN separados para cada parcela: escarcha, helada, niebla, lluvia engelante, rachas fuertes.
 - Modo agricultor: nuevas casillas tras Agua en el suelo: Pulverizar, Balance hídrico, Tormentas, Grados-día, 16 días.
 - En EE. UU., en modo agricultor: las casillas NWS, Sequía, Incendio, Granizo.
 - El botón «Estadística · PDF» en el mapa de parcelas y en la pantalla de cada parcela.

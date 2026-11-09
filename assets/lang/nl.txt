@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Andere periode en PDF: het menu ⋮ rechtsboven.
 The ⋮ menu	Het menu ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	In Percelen, op de pagina van een perceel en in Statistiek staan de opdrachten in het menu ⋮ rechtsboven. Een tik op een vak toont het in grote letters; een brede tabel schuift opzij.
+* forecast	* verwachting
+Air hum.: 	Luchtvocht.: 
+Alerts and information: OFF	Waarschuwingen en informatie: UIT
+Alerts and information: ON	Waarschuwingen en informatie: AAN
+Amount	Hoev.
+Balance	Balans
+By day	Per dag
+Chance	Kans
+Day min. / max.: 	Dag min. / max.: 
+Day	Dag
+From	Uit
+Gusts	Windstoten
+Hours	Uren
+Info bubbles	Infobubbels
+Information · 	Informatie · 
+Kept by soil (3–9 cm): 	Door bodem vastgehouden (3–9 cm): 
+Moisture	Vocht
+Rain chance: 	Regenkans: 
+Risk	Risico
+Soil moist. 3–9 cm: 	Bodemvocht 3–9 cm: 
+Soil temp. (surf.): 	Bodemtemp. (opp.): 
+Spraying	Spuiten
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	De kans geeft aan hoe waarschijnlijk het in dat uur regent, niet hoe lang het regent.
+Until 24:00: 	Tot 24:00: 
+Warmth	Warmte
+Water	Water
+Week	Week
+lowest 	laagste 
+tomorrow 	morgen 
+In the soil now (3–9 cm): 	Nu in de bodem (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Een schatting van de weermodellen, geen regenmetermeting ter plaatse.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Bodemvocht en bodemtemperatuur zijn schattingen van het weermodel, geen metingen.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	In Percelen, op de pagina van een perceel en in Statistiek staan de opdrachten in het menu ⋮ rechtsboven. De vakken tonen alleen de waarde; een tik toont de details. Een brede tabel schuift opzij.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Onderdelen zijn gescheiden door lijnen; tabellen hebben lijnen en schuiven opzij; de bron staat onderaan, één keer.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Bij AAN een melding bij regen of harde wind op het perceel, en per perceel één bij rijp, vorst, mist, ijzel of zware windstoten.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Je krijgt een melding voor dit perceel als er in de komende 12 uur regen of harde wind wordt verwacht, en één bij rijp, vorst, mist, ijzel of zware windstoten (elke 3 uur gecontroleerd).

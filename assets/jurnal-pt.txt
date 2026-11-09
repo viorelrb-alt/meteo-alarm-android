@@ -1,5 +1,8 @@
-Versão atual: v.3.11 · 9.11.2026
+Versão atual: v.3.20 · 9.11.2026
 Melhorias de design / estrutura.
+- As caixas de Parcelas e Estatística mostram só o valor; os detalhes aparecem com um toque.
+- Balões: linhas entre secções, tabelas com linhas que deslizam para o lado, a fonte em baixo, uma vez.
+- Notificações de INFORMAÇÃO separadas para cada parcela: geada, gelo, nevoeiro, chuva gelada, rajadas fortes.
 - Modo agricultor: novas caixas depois de Água no solo: Pulverizar, Balanço hídrico, Tempestades, Graus-dia, 16 dias.
 - Nos EUA, em modo agricultor: as caixas NWS, Seca, Incêndio, Granizo.
 - O botão «Estatística · PDF» no mapa das parcelas e no ecrã de cada parcela.

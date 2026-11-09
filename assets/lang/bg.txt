@@ -744,3 +744,40 @@ Temp.	Темп.
 Other period and PDF: the ⋮ menu at the top right.	Друг период и PDF: менюто ⋮ горе вдясно.
 The ⋮ menu	Менюто ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	В „Парцели“, на страницата на парцела и в „Статистика“ командите са в менюто ⋮ горе вдясно. Докосване на кутия я показва с едър текст; широка таблица се плъзга встрани.
+* forecast	* прогноза
+Air hum.: 	Влажн. въздух: 
+Alerts and information: OFF	Сигнали и информации: ИЗКЛ.
+Alerts and information: ON	Сигнали и информации: ВКЛ.
+Amount	Колич.
+Balance	Баланс
+By day	По дни
+Chance	Вероятн.
+Day min. / max.: 	Мин. / макс. ден: 
+Day	Ден
+From	От
+Gusts	Пориви
+Hours	Часове
+Info bubbles	Информационни балончета
+Information · 	Информация · 
+Kept by soil (3–9 cm): 	Задържана от почвата (3–9 cm): 
+Moisture	Влажн.
+Rain chance: 	Вер. дъжд: 
+Risk	Риск
+Soil moist. 3–9 cm: 	Влажн. почва 3–9 cm: 
+Soil temp. (surf.): 	Темп. почва (поврхн.): 
+Spraying	Пръскане
+Temp.: 	Темп.: 
+The chance is how likely rain is in that hour, not how long it rains.	Вероятността показва колко вероятно е да вали в този час, а не колко дълго вали.
+Until 24:00: 	До 24:00: 
+Warmth	Топлина
+Water	Вода
+Week	Седмица
+lowest 	най-ниска 
+tomorrow 	утре 
+In the soil now (3–9 cm): 	В почвата сега (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Оценка от метеорологичните модели, не измерване с дъждомер на мястото.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Влажността и температурата на почвата са оценки на метеорологичния модел, не измервания.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	В „Парцели“, на страницата на парцела и в „Статистика“ командите са в менюто ⋮ горе вдясно. Кутиите показват само стойността; докосването показва подробностите. Широка таблица се плъзга встрани.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Разделите са отделени с линии; таблиците имат линии и се плъзгат встрани; източникът е най-долу, веднъж.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Когато са ВКЛ., известие за дъжд или силен вятър на парцела и по едно за всеки парцел при слана, замръзване, мъгла, поледица или силни пориви.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Получавате известие за този парцел при прогноза за дъжд или силен вятър през следващите 12 часа и друго при слана, замръзване, мъгла, поледица или силни пориви (проверка на всеки 3 часа).

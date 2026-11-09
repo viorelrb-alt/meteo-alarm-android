@@ -1,5 +1,8 @@
-Praegune versioon: v.3.11 · 9.11.2026
+Praegune versioon: v.3.20 · 9.11.2026
 Kujunduse / ülesehituse parandused.
+- Põldude ja Statistika kastid näitavad ainult väärtust; üksikasjad ilmuvad puudutusel.
+- Mullid: jooned osade vahel, joontega tabelid, mida saab külgsuunas lohistada, allikas all, üks kord.
+- Eraldi TEATE-märguanded iga põllu kohta: hall, külm, udu, jäävihm, tugevad puhangud.
 - Põllumehe režiim: uued kastid pärast Vesi mullas: Pritsimine, Veebilanss, Tormid, Kraadpäevad, 16 päeva.
 - USA-s põllumehe režiimis: kastid NWS, Põud, Tulekahju, Rahe.
 - Nupp „Statistika · PDF” põldude kaardil ja iga põllu ekraanil.

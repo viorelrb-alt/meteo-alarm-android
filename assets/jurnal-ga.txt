@@ -1,5 +1,8 @@
-Leagan reatha: v.3.11 · 9.11.2026
+Leagan reatha: v.3.20 · 9.11.2026
 Feabhsuithe ar dhearadh / ar struchtúr.
+- Ní thaispeánann boscaí Páirceanna agus Staitisticí ach an luach; feictear na sonraí le tapáil.
+- Boilgeoga: línte idir codanna, táblaí le línte a shleamhnaíonn i leataobh, an fhoinse ag an mbun, uair amháin.
+- Fógraí FAISNÉISE ar leith do gach páirc: sioc bán, reo, ceo, báisteach reoite, siotaí láidre.
 - Mód feirmeora: boscaí nua i ndiaidh Uisce san ithir: Spréáil, Comhardú uisce, Stoirmeacha, Céimlaethanta, 16 lá.
 - Sna SA, i mód feirmeora: na boscaí NWS, Triomach, Dóiteán, Clocha sneachta.
 - An cnaipe “Staitisticí · PDF” ar léarscáil na gceapach agus ar scáileán gach ceapaí.

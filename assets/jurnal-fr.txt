@@ -1,5 +1,8 @@
-Version actuelle : v.3.11 · 9.11.2026
+Version actuelle : v.3.20 · 9.11.2026
 Améliorations de design / structure.
+- Les cases de Parcelles et Statistiques montrent seulement la valeur ; les détails apparaissent au toucher.
+- Bulles : lignes entre les sections, tableaux à lignes qui glissent sur le côté, la source en bas, une fois.
+- Notifications INFORMATION séparées pour chaque parcelle : gelée blanche, gel, brouillard, pluie verglaçante, fortes rafales.
 - Mode agriculteur : nouvelles cases après Eau dans le sol : Pulvérisation, Bilan hydrique, Orages, Degrés-jours, 16 jours.
 - Aux États-Unis, en mode agriculteur : les cases NWS, Sécheresse, Incendie, Grêle.
 - Le bouton « Statistiques · PDF » sur la carte des parcelles et sur l'écran de chaque parcelle.

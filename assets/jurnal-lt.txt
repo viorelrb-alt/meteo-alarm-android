@@ -1,5 +1,8 @@
-Dabartinė versija: v.3.11 · 9.11.2026
+Dabartinė versija: v.3.20 · 9.11.2026
 Dizaino / struktūros patobulinimai.
+- Sklypų ir Statistikos langeliai rodo tik reikšmę; išsami informacija rodoma palietus.
+- Burbulai: linijos tarp dalių, lentelės su linijomis, slenkančios į šoną, šaltinis apačioje, vieną kartą.
+- Atskiri INFORMACIJOS pranešimai kiekvienam sklypui: šerkšnas, šalna, rūkas, lijundra, stiprūs gūsiai.
 - Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
 - JAV, ūkininko režimu: langeliai NWS, Sausra, Gaisras, Kruša.
 - Mygtukas „Statistika · PDF“ sklypų žemėlapyje ir kiekvieno sklypo ekrane.

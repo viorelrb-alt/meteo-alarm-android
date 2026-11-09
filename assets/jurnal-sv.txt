@@ -1,5 +1,8 @@
-Nuvarande version: v.3.11 · 9.11.2026
+Nuvarande version: v.3.20 · 9.11.2026
 Förbättringar av design / struktur.
+- Rutorna i Skiften och Statistik visar bara värdet; detaljerna visas vid ett tryck.
+- Bubblor: linjer mellan avsnitt, tabeller med linjer som kan skjutas åt sidan, källan längst ner, en gång.
+- Separata INFORMATION-aviseringar för varje skifte: rimfrost, frost, dimma, underkylt regn, kraftiga byar.
 - Lantbruksläge: nya rutor efter Vatten i marken: Besprutning, Vattenbalans, Åska, Dygnsgrader, 16 dagar.
 - I USA, i lantbruksläge: rutorna NWS, Torka, Brand, Hagel.
 - Knappen ”Statistik · PDF” på skifteskartan och på varje skiftes skärm.

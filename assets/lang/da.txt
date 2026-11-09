@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Anden periode og PDF: menuen ⋮ øverst til højre.
 The ⋮ menu	Menuen ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	I Marker, på en marks side og i Statistik er kommandoerne i menuen ⋮ øverst til højre. Et tryk på et felt viser det med stor tekst; en bred tabel kan skubbes til siden.
+* forecast	* prognose
+Air hum.: 	Luftfugt.: 
+Alerts and information: OFF	Varsler og information: FRA
+Alerts and information: ON	Varsler og information: TIL
+Amount	Mængde
+Balance	Balance
+By day	Pr. dag
+Chance	Sandsyn.
+Day min. / max.: 	Dag min. / maks.: 
+Day	Dag
+From	Fra
+Gusts	Vindstød
+Hours	Timer
+Info bubbles	Infobobler
+Information · 	Information · 
+Kept by soil (3–9 cm): 	Holdt af jorden (3–9 cm): 
+Moisture	Fugt
+Rain chance: 	Regnsandsyn.: 
+Risk	Risiko
+Soil moist. 3–9 cm: 	Jordfugt. 3–9 cm: 
+Soil temp. (surf.): 	Jordtemp. (overfl.): 
+Spraying	Sprøjtning
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Sandsynligheden viser, hvor sandsynligt det regner i den time, ikke hvor længe det regner.
+Until 24:00: 	Til 24:00: 
+Warmth	Varme
+Water	Vand
+Week	Uge
+lowest 	laveste 
+tomorrow 	i morgen 
+In the soil now (3–9 cm): 	I jorden nu (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Et skøn fra vejrmodellerne, ikke en regnmålermåling på stedet.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Jordfugtighed og jordtemperatur er skøn fra vejrmodellen, ikke målinger.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	I Marker, på en marks side og i Statistik er kommandoerne i menuen ⋮ øverst til højre. Felterne viser kun værdien; et tryk viser detaljerne. En bred tabel kan skubbes til siden.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Afsnit er adskilt af linjer; tabeller har linjer og kan skubbes til siden; kilden står nederst, én gang.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Når TIL: en notifikation om regn eller kraftig vind på marken og én pr. mark om rimfrost, frost, tåge, isslag eller kraftige vindstød.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Du får en notifikation for denne mark, når der varsles regn eller kraftig vind de næste 12 timer, og én om rimfrost, frost, tåge, isslag eller kraftige vindstød (tjekket hver 3. time).

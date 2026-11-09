@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.11";
+	static final String VERSION = "Meteo Alarm Android v3.20";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1240,11 +1240,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		List<String[]> info = s.alertInfo(k);
 		if (info.isEmpty()) return;
 		String head = info.get(0)[1];
-		List<Bubble.Row> rows = Bubble.rows();
-		for (int i = 1; i < info.size(); i++) {
-			String[] r = info.get(i);
-			rows.add(new Bubble.Row(r[1], null, r[0].equals("h") ? Bubble.Row.HEADER : Bubble.Row.TEXT, false));
-		}
+		List<Bubble.Row> rows = Bubble.info(info);
 		bubble.show(view.px(b), bubbleWidth(0.86f, 280), head, rows, s.T.en, new Bubble.Pick() {
 			public void picked(int i) {
 			}
@@ -1729,11 +1725,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			else Parcels.pendingMain(this);
 			fetchFarm();
 		}
-		List<Bubble.Row> rows = Bubble.rows();
-		for (int i = 1; i < info.size(); i++) {
-			String[] r = info.get(i);
-			rows.add(new Bubble.Row(r[1], null, r[0].equals("h") ? Bubble.Row.HEADER : Bubble.Row.TEXT, false));
-		}
+		List<Bubble.Row> rows = Bubble.info(info);
 		bubble.panel = true;
 		bubble.show(view.px(b), bubbleWidth(0.86f, 280), info.get(0)[1], rows, s.T.en, new Bubble.Pick() {
 			public void picked(int i) {
@@ -2386,16 +2378,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
 		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.",
 				"☰ › Parcele: harta arată toate parcelele; atingerea unui ac sau a unei parcele o deschide pe ecranul principal. „Salvare loc. GPS” salvează locul unde stai, „Alege pe hartă” merge și de acasă; butonul GPS arată unde ești (punctul albastru). Editare (sau creionul) schimbă numele și acul. „Statistică · PDF” (pe hartă și pe ecranul principal al unei parcele) deschide statistica. Rămân doar în acest telefon."));
-		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.",
-				"În Parcele, pe pagina unei parcele și în Statistică, comenzile sunt în meniul ⋮ din dreapta sus. Atingerea unei casete o arată cu text mare; un tabel lat se glisează în lateral."));
+		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.",
+				"În Parcele, pe pagina unei parcele și în Statistică, comenzile sunt în meniul ⋮ din dreapta sus. Casetele arată doar valoarea; atingerea arată detaliile. Un tabel lat se glisează în lateral."));
+		help.entry(mini("farm"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.",
+				"Secțiunile sunt despărțite de linii; tabelele au linii și se glisează în lateral; sursa e jos, o singură dată."));
 		help.entry(mini("parcel"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
 		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
 				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral; mijlocul ecranului urmează degetul și după jumătate trece la următorul."));
 		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("A tap on the parcel's name: its boxes, the next 12 hours, statistics with PDF, alerts, rename, delete.",
 				"Atingerea numelui parcelei: casetele ei, următoarele 12 ore, statistică cu PDF, alerte, redenumire, ștergere."));
-		help.entry(mini("bell"), Tr.t("Parcel alerts", "Alerte parcelă"), Tr.t("When ON, a notification for rain or strong wind forecast on the parcel.",
-				"Când sunt PORNITE, o notificare când se prognozează ploaie sau vânt puternic pe parcelă."));
+		help.entry(mini("bell"), Tr.t("Parcel alerts", "Alerte parcelă"), Tr.t("When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.",
+				"Când sunt PORNITE, o notificare pentru ploaie sau vânt puternic pe parcelă și câte una pe parcelă pentru brumă, îngheț, ceață, polei sau rafale puternice."));
 		help.entry(mini("farm"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
 		help.entry(mini("parcel"), Tr.t("The map", "Harta"), Tr.t("OpenStreetMap: move it with one finger, zoom with two; it needs internet.",

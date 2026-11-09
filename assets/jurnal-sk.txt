@@ -1,5 +1,8 @@
-Súčasná verzia: v.3.11 · 9.11.2026
+Súčasná verzia: v.3.20 · 9.11.2026
 Vylepšenia vzhľadu / štruktúry.
+- Polia v Parcelách a Štatistike ukazujú len hodnotu; podrobnosti sa zobrazia ťuknutím.
+- Bubliny: čiary medzi časťami, tabuľky s čiarami posuvné do strán, zdroj dole, raz.
+- Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
 - Režim farmára: nové polia za Vodou v pôde: Postrek, Vodná bilancia, Búrky, Teplotné sumy, 16 dní.
 - V USA v režime farmára: polia NWS, Sucho, Požiar, Krupobitie.
 - Tlačidlo „Štatistika · PDF“ na mape parciel a na obrazovke každej parcely.

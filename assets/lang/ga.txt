@@ -744,3 +744,40 @@ Temp.	Teocht
 Other period and PDF: the ⋮ menu at the top right.	Tréimhse eile agus PDF: an roghchlár ⋮ ag an mbarr ar dheis.
 The ⋮ menu	An roghchlár ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	I gCeapacha, ar leathanach ceapaí agus i Staitisticí tá na horduithe sa roghchlár ⋮ ag an mbarr ar dheis. Taispeánann tadhall ar bhosca é i dtéacs mór; sleamhnaíonn tábla leathan i leataobh.
+* forecast	* réamhaisnéis
+Air hum.: 	Tais aeir: 
+Alerts and information: OFF	Rabhaidh agus faisnéis: AS
+Alerts and information: ON	Rabhaidh agus faisnéis: ANSIN
+Amount	Méid
+Balance	Cothromaíocht
+By day	In aghaidh an lae
+Chance	Dóch.
+Day min. / max.: 	Íos. / uas. lae: 
+Day	Lá
+From	Ó
+Gusts	Siotaí
+Hours	Uaireanta
+Info bubbles	Boilgeoga eolais
+Information · 	Faisnéis · 
+Kept by soil (3–9 cm): 	Coinnithe ag an ithir (3–9 cm): 
+Moisture	Tais
+Rain chance: 	Dóch. báistí: 
+Risk	Riosca
+Soil moist. 3–9 cm: 	Tais ithreach 3–9 cm: 
+Soil temp. (surf.): 	Teocht ithreach (dromchla): 
+Spraying	Spraeáil
+Temp.: 	Teocht: 
+The chance is how likely rain is in that hour, not how long it rains.	Léiríonn an dóchúlacht cé chomh dóchúil is atá sé go mbeidh báisteach san uair sin, ní cé chomh fada a mhairfidh sí.
+Until 24:00: 	Go dtí 24:00: 
+Warmth	Teas
+Water	Uisce
+Week	Seachtain
+lowest 	is ísle 
+tomorrow 	amárach 
+In the soil now (3–9 cm): 	San ithir anois (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Meastachán ó na samhlacha aimsire, ní tomhas báistéadair ag an áit.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Is meastacháin den tsamhail aimsire iad taise agus teocht na hithreach, ní tomhais.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	I bPáirceanna, ar leathanach páirce agus i Staitisticí tá na horduithe sa roghchlár ⋮ ag barr ar dheis. Ní thaispeánann na boscaí ach an luach; taispeánann tapáil na sonraí. Sleamhnaíonn tábla leathan i leataobh.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Tá línte idir na codanna; tá línte ar na táblaí agus sleamhnaíonn siad i leataobh; tá an fhoinse ag an mbun, uair amháin.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Nuair atá siad ANSIN, fógra faoi bháisteach nó gaoth láidir ar an bpáirc, agus ceann in aghaidh na páirce faoi shioc bán, reo, ceo, báisteach reoite nó siotaí láidre.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Faigheann tú fógra don pháirc seo nuair a thuartar báisteach nó gaoth láidir sna 12 uair an chloig seo chugainn, agus ceann faoi shioc bán, reo, ceo, báisteach reoite nó siotaí láidre (seiceáilte gach 3 huaire).

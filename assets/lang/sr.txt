@@ -678,3 +678,40 @@ Temp.	Темп.
 Other period and PDF: the ⋮ menu at the top right.	Други период и PDF: мени ⋮ горе десно.
 The ⋮ menu	Мени ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	У Парцелама, на страници парцеле и у Статистици команде су у менију ⋮ горе десно. Додир поља приказује га крупним словима; широка табела се помера у страну.
+* forecast	* прогноза
+Air hum.: 	Влаж. ваздуха: 
+Alerts and information: OFF	Упозорења и обавештења: ИСКЉ.
+Alerts and information: ON	Упозорења и обавештења: УКЉ.
+Amount	Кол.
+Balance	Биланс
+By day	По данима
+Chance	Вероватн.
+Day min. / max.: 	Мин. / макс. дана: 
+Day	Дан
+From	Одакле
+Gusts	Удари
+Hours	Сати
+Info bubbles	Информативни облачићи
+Information · 	Обавештење · 
+Kept by soil (3–9 cm): 	Задржано у земљишту (3–9 cm): 
+Moisture	Влаж.
+Rain chance: 	Вер. кише: 
+Risk	Ризик
+Soil moist. 3–9 cm: 	Влаж. земљ. 3–9 cm: 
+Soil temp. (surf.): 	Темп. земљ. (површ.): 
+Spraying	Прскање
+Temp.: 	Темп.: 
+The chance is how likely rain is in that hour, not how long it rains.	Вероватноћа показује колико је вероватно да у том сату пада киша, а не колико дуго пада.
+Until 24:00: 	До 24:00: 
+Warmth	Топлота
+Water	Вода
+Week	Недеља
+lowest 	најнижа 
+tomorrow 	сутра 
+In the soil now (3–9 cm): 	У земљишту сада (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Процена метеоролошких модела, а не мерење кишомером на месту.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Влажност и температура земљишта су процене метеоролошког модела, а не мерења.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	У Парцелама, на страници парцеле и у Статистици команде су у менију ⋮ горе десно. Поља показују само вредност; додир показује детаље. Широка табела клизи у страну.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Делови су одвојени линијама; табеле имају линије и клизе у страну; извор је доле, једном.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Кад је УКЉ., обавештење о киши или јаком ветру на парцели и по једно за сваку парцелу о слани, мразу, магли, леденој киши или јаким ударима.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Добијате обавештење за ову парцелу кад се у наредних 12 сати предвиђа киша или јак ветар, и једно о слани, мразу, магли, леденој киши или јаким ударима (провера на свака 3 сата).

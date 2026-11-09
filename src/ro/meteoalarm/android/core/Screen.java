@@ -1002,6 +1002,32 @@ public final class Screen {
 				"Datele pentru fermieri (vânt orar, umiditate, sol) vin doar de la Open-Meteo, care nu răspunde acum. Când accesul revine, aplicația le descarcă și îți trimite o notificare.");
 	}
 
+	/** The Open-Meteo source line (v3.20: in a bubble or on a page only once, at the bottom). */
+	public static String srcOM() {
+		return Tr.t("Source: Open-Meteo (open-meteo.com), weather models.", "Sursa: Open-Meteo (open-meteo.com), modele meteo.");
+	}
+
+	/** The soil values are estimates (v3.20: without the source, which comes at the bottom). */
+	public static String soilEst() {
+		return Tr.t("Soil moisture and soil temperature are estimates of the weather model, not measurements.",
+				"Umiditatea și temperatura solului sunt estimări ale modelului meteo, nu măsurători.");
+	}
+
+	private static String join(String[] a) {
+		StringBuilder b = new StringBuilder();
+		for (int k = 0; k < a.length; k++) b.append(k > 0 ? "\t" : "").append(a[k]);
+		return b.toString();
+	}
+
+	/** A table for a bubble (v3.20): { "T", header, rows… }, the cells separated by tabs. */
+	static String[] table(String[] head, List<String[]> rows) {
+		String[] out = new String[rows.size() + 2];
+		out[0] = "T";
+		out[1] = join(head);
+		for (int k = 0; k < rows.size(); k++) out[k + 2] = join(rows.get(k));
+		return out;
+	}
+
 	/** "Estimated data" note for the soil values (Viorel: say they are estimated and from where). */
 	public static String soilNote() {
 		return Tr.t("Soil moisture and soil temperature are estimates of the weather model, not measurements · source: Open-Meteo (open-meteo.com).",
@@ -1033,19 +1059,19 @@ public final class Screen {
 		if (w == null || k < 0 || k >= w.tileHours.size()) return out;
 		out.add(new String[] { "title", hourTitle(k) });
 		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
-		out.add(new String[] { "t", Tr.t("Temperature: ", "Temperatura: ") + deg(w.tileTemp[k]) + " · " + d[1] });
+		out.add(new String[] { "v", Tr.t("Temp.: ", "Temp.: ") + deg(w.tileTemp[k]) + " · " + d[1] });
 		int i = farmIndex(k);
 		if (i < 0) {
-			out.add(new String[] { "t", Tr.t("Chance of rain: ", "Șansa de ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
+			out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
 			out.add(new String[] { "t", farmMissing() });
 			return out;
 		}
 		int di = farm.dayIndex(farm.dateOf(i));
-		if (di >= 0) out.add(new String[] { "t", Tr.t("Day's low / high: ", "Minima / maxima zilei: ") + deg(farm.dMin[di]) + " / " + deg(farm.dMax[di]) });
+		if (di >= 0) out.add(new String[] { "v", Tr.t("Day min. / max.: ", "Min. / max. zi: ") + deg(farm.dMin[di]) + " / " + deg(farm.dMax[di]) });
 		out.add(new String[] { "h", Tr.t("Wind", "Vânt") });
 		if (!Double.isNaN(farm.wind[i]))
-			out.add(new String[] { "t", Tr.t("Speed: ", "Viteza: ") + kmh(farm.wind[i]) + (Double.isNaN(farm.gust[i]) ? "" : " · " + Tr.t("gusts ", "rafale ") + kmh(farm.gust[i])) });
-		out.add(new String[] { "t", Tr.t("Direction: from ", "Direcția: dinspre ") + dir8(farm.dir[i]) + (Double.isNaN(farm.dir[i]) ? "" : " (" + Math.round(farm.dir[i]) + "°)") });
+			out.add(new String[] { "v", Tr.t("Speed: ", "Viteza: ") + kmh(farm.wind[i]) + (Double.isNaN(farm.gust[i]) ? "" : " · " + Tr.t("gusts ", "rafale ") + kmh(farm.gust[i])) });
+		out.add(new String[] { "v", Tr.t("Direction: from ", "Direcția: dinspre ") + dir8(farm.dir[i]) + (Double.isNaN(farm.dir[i]) ? "" : " (" + Math.round(farm.dir[i]) + "°)") });
 		int sh = Farm.windShift(farm, i, 12);
 		if (sh >= 0)
 			out.add(new String[] { "t", Tr.t("Change: it turns from ", "Schimbare: se întoarce dinspre ") + dir8(farm.dir[i]) + Tr.t(" to ", " spre ") + dir8(farm.dir[sh])
@@ -1053,12 +1079,13 @@ public final class Screen {
 		else if (!Double.isNaN(farm.dir[i]))
 			out.add(new String[] { "t", Tr.t("Change: it keeps its direction for the next 12 hours", "Schimbare: își păstrează direcția în următoarele 12 ore") });
 		out.add(new String[] { "h", Tr.t("Air and rain", "Aer și ploaie") });
-		if (!Double.isNaN(farm.hum[i])) out.add(new String[] { "t", Tr.t("Air humidity: ", "Umiditatea aerului: ") + Math.round(farm.hum[i]) + "%" });
-		out.add(new String[] { "t", Tr.t("Chance of rain: ", "Șansa de ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
+		if (!Double.isNaN(farm.hum[i])) out.add(new String[] { "v", Tr.t("Air hum.: ", "Umid. aer: ") + Math.round(farm.hum[i]) + "%" });
+		out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
 		out.add(new String[] { "h", Tr.t("Soil (estimated)", "Sol (estimat)") });
-		out.add(new String[] { "t", Tr.t("Soil moisture (3–9 cm): ", "Umiditatea solului (3–9 cm): ") + soilText(farm.soilM[i]) });
-		out.add(new String[] { "t", Tr.t("Soil temperature (surface): ", "Temperatura solului (suprafață): ") + deg(farm.soilT[i]) });
-		out.add(new String[] { "t", soilNote() });
+		out.add(new String[] { "v", Tr.t("Soil moist. 3–9 cm: ", "Umid. sol 3–9 cm: ") + soilText(farm.soilM[i]) });
+		out.add(new String[] { "v", Tr.t("Soil temp. (surf.): ", "Temp. sol (supraf.): ") + deg(farm.soilT[i]) });
+		out.add(new String[] { "t", soilEst() });
+		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
 
@@ -1079,9 +1106,9 @@ public final class Screen {
 		out.add(new String[] { "title", Tr.t("Rain · ", "Ploaie · ") + hourTitle(k) });
 		int p = probAt(k), kind = kindAt(k), i = farmIndex(k);
 		String chance = p >= 60 ? Tr.t("likely", "probabilă") : p >= 30 ? Tr.t("possible", "posibilă") : Tr.t("unlikely", "puțin probabilă");
-		out.add(new String[] { "t", Tr.t("Chance of rain: ", "Șansa de ploaie: ") + p + "% · " + chance });
-		out.add(new String[] { "t", Tr.t("Amount: ", "Cantitate: ") + mm(mmAt(k)) });
-		out.add(new String[] { "t", Tr.t("Kind: ", "Tip: ") + kindWord(kind) });
+		out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + p + "% · " + chance });
+		out.add(new String[] { "v", Tr.t("Amount: ", "Cantitate: ") + mm(mmAt(k)) });
+		out.add(new String[] { "v", Tr.t("Kind: ", "Tip: ") + kindWord(kind) });
 		if (i < 0) {
 			out.add(new String[] { "t", farmMissing() });
 			return out;
@@ -1091,17 +1118,17 @@ public final class Screen {
 			if (nz(farm.rain[i]) > 0) b.append(Tr.t("rain ", "ploaie ")).append(mm(farm.rain[i]));
 			if (nz(farm.showers[i]) > 0) b.append(b.length() > 0 ? " · " : "").append(Tr.t("showers ", "averse ")).append(mm(farm.showers[i]));
 			if (nz(farm.snow[i]) > 0) b.append(b.length() > 0 ? " · " : "").append(Tr.t("snow ", "ninsoare ")).append(unitF ? d1(farm.snow[i] / 2.54) + " in" : d1(farm.snow[i]) + " cm");
-			out.add(new String[] { "t", Tr.t("Of which: ", "Din care: ") + b });
+			out.add(new String[] { "v", Tr.t("Of which: ", "Din care: ") + b });
 		}
-		if (!Double.isNaN(farm.cloud[i])) out.add(new String[] { "t", Tr.t("Cloud cover: ", "Nebulozitate: ") + Math.round(farm.cloud[i]) + "%" });
-		if (!Double.isNaN(farm.hum[i])) out.add(new String[] { "t", Tr.t("Air humidity: ", "Umiditatea aerului: ") + Math.round(farm.hum[i]) + "%" });
+		if (!Double.isNaN(farm.cloud[i])) out.add(new String[] { "v", Tr.t("Cloud cover: ", "Nebulozitate: ") + Math.round(farm.cloud[i]) + "%" });
+		if (!Double.isNaN(farm.hum[i])) out.add(new String[] { "v", Tr.t("Air hum.: ", "Umid. aer: ") + Math.round(farm.hum[i]) + "%" });
 		// The rest of the day: how much rain and when it stops.
 		String date = farm.dateOf(i);
 		double tot = 0;
 		for (int j = i; j < farm.size() && farm.dateOf(j).equals(date); j++) tot += nz(farm.precip[j]);
-		out.add(new String[] { "t", Tr.t("Until midnight: ", "Până la miezul nopții: ") + mm(tot) });
-		out.add(new String[] { "t", Tr.t("Source: Open-Meteo. The chance is how likely rain is in that hour, not how long it rains.",
-				"Sursa: Open-Meteo. Șansa arată cât de probabil plouă în acea oră, nu cât timp plouă.") });
+		out.add(new String[] { "v", Tr.t("Until 24:00: ", "Până la 24:00: ") + mm(tot) });
+		out.add(new String[] { "t", Tr.t("The chance is how likely rain is in that hour, not how long it rains.", "Probabilitatea arată cât de probabil plouă în acea oră, nu cât timp plouă.") });
+		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
 
@@ -1265,24 +1292,25 @@ public final class Screen {
 		List<String[]> out = new java.util.ArrayList<String[]>();
 		out.add(new String[] { "title", xLong(id) + " · " + place() });
 		String[] v = xValues(id);
-		out.add(new String[] { "t", Tr.t("Now: ", "Acum: ") + v[0] + (v[1].length() > 0 ? " · " + v[1] : "") + (v[2].length() > 0 ? " · " + v[2] : "") });
+		out.add(new String[] { "v", Tr.t("Now: ", "Acum: ") + v[0] + (v[1].length() > 0 ? " · " + v[1] : "") + (v[2].length() > 0 ? " · " + v[2] : "") });
 		long ms = now.getTimeInMillis();
 		if (id.startsWith("u")) {
 			if (us == null) return out;
 			if (id.equals("uNws") && us.hasGrid()) {
 				out.add(new String[] { "h", Tr.t("Next 24 hours, every 3 hours", "Următoarele 24 de ore, din 3 în 3") });
+				List<String[]> tb = new java.util.ArrayList<String[]>();
 				for (int k = 0; k < 8; k++) {
 					long t = ms + k * 3 * 3600000L;
 					Calendar c = (Calendar) now.clone();
 					c.setTimeInMillis(t);
 					String h = String.format(java.util.Locale.US, "%02d:00", c.get(Calendar.HOUR_OF_DAY));
 					double pop = us.at("probabilityOfPrecipitation", t), wd = us.at("twentyFootWindSpeed", t), th = us.at("probabilityOfThunder", t);
-					out.add(new String[] { "t", Texts.clock(h, clk12) + "   " + Tr.t("rain ", "ploaie ") + (Double.isNaN(pop) ? "–" : Math.round(pop) + "%")
-							+ " · " + Tr.t("wind 20 ft ", "vânt la 6 m ") + (Double.isNaN(wd) ? "–" : kmh(wd)) + " · " + Tr.t("thunder ", "oraje ") + (Double.isNaN(th) ? "–" : Math.round(th) + "%") });
+					tb.add(new String[] { Texts.clock(h, clk12), Double.isNaN(pop) ? "–" : Math.round(pop) + "%", Double.isNaN(wd) ? "–" : kmh(wd), Double.isNaN(th) ? "–" : Math.round(th) + "%" });
 				}
+				out.add(table(new String[] { Tr.t("Hour", "Ora"), Tr.t("Rain", "Ploaie"), Tr.t("Wind 20 ft", "Vânt 6 m"), Tr.t("Thunder", "Oraje") }, tb));
 				double q = us.sum("quantitativePrecipitation", ms - 3600000L, ms + 24 * 3600000L);
-				out.add(new String[] { "t", Tr.t("Rain in 24 hours: ", "Ploaie în 24 de ore: ") + (Double.isNaN(q) ? "–" : mm(q)) });
-				out.add(new String[] { "t", Tr.t("The official forecast of the National Weather Service for a 2.5 km square (weather.gov).",
+				out.add(new String[] { "v", Tr.t("Rain in 24 h: ", "Ploaie în 24 h: ") + (Double.isNaN(q) ? "–" : mm(q)) });
+				out.add(new String[] { "s", Tr.t("The official forecast of the National Weather Service for a 2.5 km square (weather.gov).",
 						"Prognoza oficială a National Weather Service pentru un pătrat de 2,5 km (weather.gov).") });
 			} else if (id.equals("uDrought")) {
 				out.add(new String[] { "t", Tr.t("D0 abnormally dry, D1 moderate, D2 severe, D3 extreme, D4 exceptional drought.",
@@ -1292,16 +1320,17 @@ public final class Screen {
 			} else if (id.equals("uFire") && us.hasGrid()) {
 				double f = us.max("grasslandFireDangerIndex", ms, ms + 12 * 3600000L), rf = us.max("redFlagThreatIndex", ms, ms + 24 * 3600000L);
 				double lal = us.max("lightningActivityLevel", ms, ms + 24 * 3600000L), th = us.max("probabilityOfThunder", ms, ms + 24 * 3600000L);
-				out.add(new String[] { "t", Tr.t("Grassland fire danger (12 h): ", "Pericol de incendiu în pășuni (12 h): ") + fireWord(f) });
-				out.add(new String[] { "t", Tr.t("Red flag threat index (24 h): ", "Indicele de „steag roșu” (24 h): ") + (Double.isNaN(rf) ? "–" : Long.toString(Math.round(rf))) });
-				out.add(new String[] { "t", Tr.t("Lightning activity level (1–6, 24 h): ", "Activitatea fulgerelor (1–6, 24 h): ") + (Double.isNaN(lal) ? "–" : Long.toString(Math.round(lal))) });
-				out.add(new String[] { "t", Tr.t("Chance of thunder (24 h): ", "Șansa de oraje (24 h): ") + (Double.isNaN(th) ? "–" : Math.round(th) + "%") });
+				out.add(new String[] { "v", Tr.t("Grass fire (12 h): ", "Incendiu pășuni (12 h): ") + fireWord(f) });
+				out.add(new String[] { "v", Tr.t("Red flag index (24 h): ", "Indice „steag roșu” (24 h): ") + (Double.isNaN(rf) ? "–" : Long.toString(Math.round(rf))) });
+				out.add(new String[] { "v", Tr.t("Lightning (1–6, 24 h): ", "Fulgere (1–6, 24 h): ") + (Double.isNaN(lal) ? "–" : Long.toString(Math.round(lal))) });
+				out.add(new String[] { "v", Tr.t("Thunder chance (24 h): ", "Prob. oraje (24 h): ") + (Double.isNaN(th) ? "–" : Math.round(th) + "%") });
 				out.add(new String[] { "t", Tr.t("A Red Flag Warning, when there is one, is among the warnings.", "Un Red Flag Warning, când există, apare între avertizări.") });
 			} else if (id.equals("uHail") && us.reportsOk) {
 				out.add(new String[] { "h", Tr.t("Reports today and yesterday, within 50 km", "Rapoarte azi și ieri, pe o rază de 50 km") });
 				List<Tornadoes.Report> all = new java.util.ArrayList<Tornadoes.Report>(us.hail);
 				all.addAll(us.wind);
 				Tornadoes.sort(all);
+				List<String[]> tb = new java.util.ArrayList<String[]>();
 				for (Tornadoes.Report r : all) {
 					boolean hail = us.hail.contains(r);
 					String what = hail ? Tr.t("hail ", "grindină ") + (Double.isNaN(UsFarm.hailInches(r.scale)) ? r.scale
@@ -1310,10 +1339,11 @@ public final class Screen {
 					Calendar c = (Calendar) now.clone();
 					c.setTimeInMillis(r.time);
 					String h = String.format(java.util.Locale.US, "%02d:%02d", c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE));
-					out.add(new String[] { "t", Texts.clock(h, clk12) + "   " + what + " · " + r.place + " · " + dist(r.dist) });
+					tb.add(new String[] { Texts.clock(h, clk12), what, dist(r.dist), r.place });
 				}
 				if (all.isEmpty()) out.add(new String[] { "t", Tr.t("No hail or damaging wind reported.", "Nicio grindină sau vânt puternic raportate.") });
-				out.add(new String[] { "t", Tr.t("Source: NOAA Storm Prediction Center (spc.noaa.gov); the reports are preliminary.",
+				else out.add(table(new String[] { Tr.t("Hour", "Ora"), Tr.t("What", "Ce"), Tr.t("Dist.", "Dist."), Tr.t("Place", "Loc") }, tb));
+				out.add(new String[] { "s", Tr.t("Source: NOAA Storm Prediction Center (spc.noaa.gov); the reports are preliminary.",
 						"Sursa: NOAA Storm Prediction Center (spc.noaa.gov); rapoartele sunt preliminare.") });
 			}
 			return out;
@@ -1330,36 +1360,45 @@ public final class Screen {
 			out.add(new String[] { "h", Tr.t("Next 24 hours", "Următoarele 24 de ore") });
 			// The hours grouped while the verdict stays the same (short, Viorel).
 			int end = Math.min(farm.size(), i + 24);
+			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int j = i; j < end;) {
 				int st = Farm.spray(farm, j), k = j;
 				while (k + 1 < end && Farm.spray(farm, k + 1) == st) k++;
 				String span = Texts.clock(farm.hourOf(j), clk12) + (k > j ? " – " + Texts.clock(farm.hourOf(k), clk12) : "");
-				out.add(new String[] { "t", span + "   " + (st == 0 ? "✓ " : "✗ ") + sprayWhy(st) });
+				tb.add(new String[] { span, (st == 0 ? "✓ " : "✗ ") + sprayWhy(st) });
 				j = k + 1;
 			}
+			out.add(table(new String[] { Tr.t("Hours", "Orele"), Tr.t("Spraying", "Stropit") }, tb));
 		} else if (id.equals("fWater")) {
 			out.add(new String[] { "t", Tr.t("Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.",
 					"Ploaia minus apa pe care solul și plantele o pierd (evapotranspirația ET0, FAO): sub zero solul se usucă.") });
-			out.add(new String[] { "h", Tr.t("Day   rain · ET0", "Ziua   ploaie · ET0") });
+			out.add(new String[] { "h", Tr.t("By day", "Pe zile") });
 			int t = farm.dayIndex(today);
+			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int k = Math.max(0, t - 6); t >= 0 && k <= Math.min(farm.dDate.length - 1, t + 3); k++) {
 				double e = farm.dEt0 != null && k < farm.dEt0.length ? farm.dEt0[k] : Double.NaN;
-				out.add(new String[] { "t", farm.dDate[k].substring(5) + (k > t ? Tr.t(" (forecast)", " (prognoză)") : "") + "   " + mm(nz(farm.dRain[k])) + " · " + (Double.isNaN(e) ? "–" : mm(e)) });
+				double bal = nz(farm.dRain[k]) - (Double.isNaN(e) ? 0 : e);
+				tb.add(new String[] { farm.dDate[k].substring(5) + (k > t ? " *" : ""), mm(nz(farm.dRain[k])), Double.isNaN(e) ? "–" : mm(e), Double.isNaN(e) ? "–" : soilMm(bal) });
 			}
+			out.add(table(new String[] { Tr.t("Day", "Ziua"), Tr.t("Rain", "Ploaie"), "ET0", Tr.t("Balance", "Bilanț") }, tb));
+			out.add(new String[] { "t", Tr.t("* forecast", "* prognoză") });
 		} else if (id.equals("fStorm")) {
 			out.add(new String[] { "t", Tr.t("CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.",
 					"CAPE e energia pe care o furtună o poate lua din aer: sub 300 J/kg scăzut, 300–1000 moderat, 1000–2500 ridicat, peste, foarte ridicat.") });
 			out.add(new String[] { "h", Tr.t("Next 24 hours, every 3 hours", "Următoarele 24 de ore, din 3 în 3") });
+			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int j = i; j < i + 24 && j < farm.size(); j += 3) {
 				double cp = farm.cape == null ? Double.NaN : farm.cape[j];
-				out.add(new String[] { "t", Texts.clock(farm.hourOf(j), clk12) + "   CAPE " + (Double.isNaN(cp) ? "–" : Math.round(cp) + " J/kg") + " · " + stormWord(Farm.stormLevel(cp))
-						+ " · " + Tr.t("rain ", "ploaie ") + (Double.isNaN(farm.prob[j]) ? "–" : Math.round(farm.prob[j]) + "%") });
+				tb.add(new String[] { Texts.clock(farm.hourOf(j), clk12), Double.isNaN(cp) ? "–" : Long.toString(Math.round(cp)), stormWord(Farm.stormLevel(cp)),
+						Double.isNaN(farm.prob[j]) ? "–" : Math.round(farm.prob[j]) + "%" });
 			}
+			out.add(table(new String[] { Tr.t("Hour", "Ora"), "CAPE J/kg", Tr.t("Risk", "Risc"), Tr.t("Rain", "Ploaie") }, tb));
 		} else if (id.equals("fGdd")) {
 			out.add(new String[] { "t", Tr.t("The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.",
 					"Căldura adunată de culturi: în fiecare zi media dintre maximă și minimă (ținute între 10 și 30 °C) minus 10. Porumbul are nevoie de circa 1300–1500 de la semănat la coacere.") });
 			int t = farm.dayIndex(today);
 			out.add(new String[] { "h", Tr.t("By week", "Pe săptămâni") });
+			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int wk = 0; wk < 4 && t >= 0; wk++) {
 				double sum = 0;
 				int a = t - wk * 7 - 6, b = t - wk * 7;
@@ -1368,16 +1407,18 @@ public final class Screen {
 					if (!Double.isNaN(g)) sum += g;
 				}
 				if (b < 0) break;
-				out.add(new String[] { "t", farm.dDate[Math.max(0, a)].substring(5) + " – " + farm.dDate[b].substring(5) + "   " + gddText(sum) });
+				tb.add(new String[] { farm.dDate[Math.max(0, a)].substring(5) + " – " + farm.dDate[b].substring(5), gddText(sum) });
 			}
+			out.add(table(new String[] { Tr.t("Week", "Săptămâna"), Tr.t("Warmth", "Căldură") }, tb));
 		} else {
 			out.add(new String[] { "t", Tr.t("The model's outlook: the second week is less certain than the first.", "Perspectiva modelului: a doua săptămână e mai nesigură decât prima.") });
-			out.add(new String[] { "h", Tr.t("Day   high / low · rain", "Ziua   max / min · ploaie") });
 			int t = farm.dayIndex(today);
+			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int k = Math.max(0, t + 1); t >= 0 && k < farm.dDate.length; k++)
-				out.add(new String[] { "t", farm.dDate[k].substring(5) + "   " + deg(farm.dMax[k]) + " / " + deg(farm.dMin[k]) + " · " + mm(nz(farm.dRain[k])) });
+				tb.add(new String[] { T.weekdayUp(farm.dDate[k], true), deg(farm.dMax[k]), deg(farm.dMin[k]), mm(nz(farm.dRain[k])) });
+			out.add(table(new String[] { Tr.t("Day", "Ziua"), "Max", "Min", Tr.t("Rain", "Ploaie") }, tb));
 		}
-		out.add(new String[] { "t", Tr.t("Source: Open-Meteo (open-meteo.com), weather models.", "Sursa: Open-Meteo (open-meteo.com), modele meteo.") });
+		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
 
@@ -1510,26 +1551,35 @@ public final class Screen {
 		if (xbox(id)) return xInfo(id);
 		out.add(new String[] { "title", parcelTitle(id) + " · " + place() });
 		String[] v = parcelValues(id);
-		out.add(new String[] { "t", Tr.t("Now: ", "Acum: ") + v[0] + (v[1].length() > 0 ? " · " + v[1] : "") + (v[2].length() > 0 ? " · " + v[2] : "") });
+		out.add(new String[] { "v", Tr.t("Now: ", "Acum: ") + v[0] + (v[1].length() > 0 ? " · " + v[1] : "") + (v[2].length() > 0 ? " · " + v[2] : "") });
 		int i = farm == null ? -1 : farm.nowIndex(now);
 		if (i < 0) {
 			out.add(new String[] { "t", farmMissing() });
 			return out;
 		}
 		out.add(new String[] { "h", Tr.t("Next 12 hours", "Următoarele 12 ore") });
+		// v3.20: a table with lines (Viorel), the values with their units.
+		String[] head;
+		if (id.equals("pWind")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Wind", "Vânt"), Tr.t("Gusts", "Rafale") };
+		else if (id.equals("pDir")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("From", "Dinspre"), "°" };
+		else if (id.equals("pProb")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Chance", "Prob."), Tr.t("Amount", "Cant.") };
+		else if (id.equals("pSoilM")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Moisture", "Umid."), Tr.t("Soil", "Sol") };
+		else head = new String[] { Tr.t("Hour", "Ora"), parcelTitle(id) };
+		List<String[]> tb = new java.util.ArrayList<String[]>();
+		String[] lv = { Tr.t("dry", "uscat"), Tr.t("moderate", "potrivit"), Tr.t("moist", "umed"), Tr.t("very wet", "foarte umed") };
 		for (int j = i + 1; j <= i + 12 && j < farm.size(); j++) {
-			String val;
-			if (id.equals("pTemp")) val = deg(farm.temp[j]);
-			else if (id.equals("pWind")) val = kmh(farm.wind[j]) + (Double.isNaN(farm.gust[j]) ? "" : " · " + Tr.t("gusts ", "rafale ") + kmh(farm.gust[j]));
-			else if (id.equals("pDir")) val = dir8(farm.dir[j]) + (Double.isNaN(farm.dir[j]) ? "" : " (" + Math.round(farm.dir[j]) + "°)");
-			else if (id.equals("pProb")) val = (Double.isNaN(farm.prob[j]) ? "–" : Math.round(farm.prob[j]) + "%") + " · " + mm(nz(farm.precip[j]));
-			else if (id.equals("pHum")) val = Double.isNaN(farm.hum[j]) ? "–" : Math.round(farm.hum[j]) + "%";
-			else if (id.equals("pSoilM")) val = soilText(farm.soilM[j]);
-			else val = deg(farm.soilT[j]);
-			out.add(new String[] { "t", Texts.clock(farm.hourOf(j), clk12) + "   " + val });
+			String hr = Texts.clock(farm.hourOf(j), clk12);
+			if (id.equals("pTemp")) tb.add(new String[] { hr, deg(farm.temp[j]) });
+			else if (id.equals("pWind")) tb.add(new String[] { hr, kmh(farm.wind[j]), Double.isNaN(farm.gust[j]) ? "–" : kmh(farm.gust[j]) });
+			else if (id.equals("pDir")) tb.add(new String[] { hr, dir8(farm.dir[j]), Double.isNaN(farm.dir[j]) ? "–" : Math.round(farm.dir[j]) + "°" });
+			else if (id.equals("pProb")) tb.add(new String[] { hr, Double.isNaN(farm.prob[j]) ? "–" : Math.round(farm.prob[j]) + "%", mm(nz(farm.precip[j])) });
+			else if (id.equals("pHum")) tb.add(new String[] { hr, Double.isNaN(farm.hum[j]) ? "–" : Math.round(farm.hum[j]) + "%" });
+			else if (id.equals("pSoilM")) tb.add(new String[] { hr, Double.isNaN(farm.soilM[j]) ? "–" : Math.round(farm.soilM[j] * 100) + "%", Double.isNaN(farm.soilM[j]) ? "–" : lv[Farm.soilLevel(farm.soilM[j])] });
+			else tb.add(new String[] { hr, deg(farm.soilT[j]) });
 		}
-		if (id.startsWith("pSoil")) out.add(new String[] { "t", soilNote() });
-		else out.add(new String[] { "t", Tr.t("Source: Open-Meteo (open-meteo.com), weather models.", "Sursa: Open-Meteo (open-meteo.com), modele meteo.") });
+		out.add(table(head, tb));
+		if (id.startsWith("pSoil")) out.add(new String[] { "t", soilEst() });
+		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
 
@@ -1538,7 +1588,7 @@ public final class Screen {
 		List<String[]> out = new java.util.ArrayList<String[]>();
 		out.add(new String[] { "title", Tr.t("Water in the soil", "Apa în sol") + " · " + place() });
 		double[] sw = soilWater();
-		out.add(new String[] { "t", Tr.t("The water held now in the soil's 3–9 cm layer, estimated by Open-Meteo: ", "Apa reținută acum în stratul de sol de 3–9 cm, estimată de Open-Meteo: ")
+		out.add(new String[] { "v", Tr.t("In the soil now (3–9 cm): ", "În sol acum (3–9 cm): ")
 				+ (Double.isNaN(sw[0]) ? "–" : mm(sw[0]) + " · " + Tr.t("moisture ", "umiditate ") + Math.round(sw[0] / 60 * 100) + "%") });
 		out.add(new String[] { "h", Tr.t("Precipitation of the last 24 hours", "Precipitațiile din ultimele 24 de ore") });
 		out.add(new String[] { "t", Tr.t("The water fallen on the ground in the last 24 hours (rain, sleet, melted snow) at the place shown, hour by hour.",
@@ -1556,27 +1606,30 @@ public final class Screen {
 		boolean soil = !Double.isNaN(m0) && !Double.isNaN(m1);
 		if (soil) {
 			String kept = soilMm((m1 - m0) * 60);
-			out.add(new String[] { "t", Tr.t("Kept by the soil (3–9 cm layer): ", "Reținută de sol (stratul 3–9 cm): ") + kept + " · "
+			out.add(new String[] { "v", Tr.t("Kept by soil (3–9 cm): ", "Reținută de sol (3–9 cm): ") + kept + " · "
 					+ Tr.t("moisture ", "umiditate ") + Math.round(m0 * 100) + "% → " + Math.round(m1 * 100) + "%" });
 		}
 		for (int k = cur - 23; k <= cur; k++) if (nz(farm.precip[k]) >= 0.05) n++;
 		if (n == 0) out.add(new String[] { "t", Tr.t("No precipitation in the last 24 hours.", "Fără precipitații în ultimele 24 de ore.") });
 		else {
 			out.add(new String[] { "h", Tr.t("Hours with precipitation", "Orele cu precipitații") });
+			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int k = cur - 23; k <= cur; k++) {
 				if (nz(farm.precip[k]) < 0.05) continue;
 				int from = k - 1;
 				String a = from >= 0 ? Texts.clock(farm.hourOf(from), clk12) : "", b = Texts.clock(farm.hourOf(k), clk12);
-				String sk = "";
+				String sk = "–";
 				if (soil && k >= 1 && !Double.isNaN(farm.soilM[k]) && !Double.isNaN(farm.soilM[k - 1]))
-					sk = " · " + Tr.t("soil ", "sol ") + soilMm((farm.soilM[k] - farm.soilM[k - 1]) * 60);
-				out.add(new String[] { "t", a + "–" + b + "   " + mm(farm.precip[k]) + sk });
+					sk = soilMm((farm.soilM[k] - farm.soilM[k - 1]) * 60);
+				tb.add(soil ? new String[] { a + "–" + b, mm(farm.precip[k]), sk } : new String[] { a + "–" + b, mm(farm.precip[k]) });
 			}
+			out.add(table(soil ? new String[] { Tr.t("Hours", "Orele"), Tr.t("Water", "Apă"), Tr.t("Soil", "Sol") } : new String[] { Tr.t("Hours", "Orele"), Tr.t("Water", "Apă") }, tb));
 		}
 		if (soil) out.add(new String[] { "t", Tr.t("“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.",
 				"„Reținută de sol”: cât a crescut (sau a scăzut, cu −) apa din stratul de sol de 3–9 cm; restul s-a scurs, s-a evaporat sau a ajuns mai adânc.") });
-		out.add(new String[] { "t", Tr.t("An estimate of Open-Meteo from the weather models, not a rain-gauge measurement at the place.",
-				"Estimare Open-Meteo din modelele meteo, nu o măsurătoare de pluviometru în acel loc.") });
+		out.add(new String[] { "t", Tr.t("An estimate from the weather models, not a rain-gauge measurement at the place.",
+				"Estimare din modelele meteo, nu o măsurătoare de pluviometru în acel loc.") });
+		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
 
@@ -1849,23 +1902,59 @@ public final class Screen {
 		if (warns != null) for (Warnings.Warn wr : warns) if (!wr.nws && wr.until > nowMs) off += wr.type + ",";
 		int mon = now.get(Calendar.MONTH) + 1;
 		boolean grow = (mon >= 3 && mon <= 5) || (mon >= 9 && mon <= 11);
+		int n = Math.min(w.tileTemp.length, 25);
+		double[] code = new double[n], day = new double[n];
+		for (int k = 0; k < n; k++) {
+			code[k] = k < w.tileCode.length ? w.tileCode[k] : 0;
+			day[k] = k < w.tileDay.length && !w.tileDay[k] ? 0 : 1;
+		}
+		List<OwnHit> hits = ownHits(w.tileTemp, w.tileCloud, w.tileWind, w.tileGust, code, day, 0, n, mon, off);
+		Calendar h0 = (Calendar) now.clone();
+		h0.set(Calendar.MINUTE, 0); h0.set(Calendar.SECOND, 0); h0.set(Calendar.MILLISECOND, 0);
+		long t0 = h0.getTimeInMillis();
+		for (OwnHit h : hits) {
+			WarnGroup gr = new WarnGroup();
+			gr.own = true;
+			gr.level = 1;
+			gr.types = h.key;
+			gr.from = Math.max(nowMs, t0 + h.a * 3600000L);
+			gr.until = t0 + (h.b + 1) * 3600000L;
+			gr.val = h.val;
+			out.add(gr);
+		}
+		return out;
+	}
+
+	/** One own information found in the forecast: its kind, first and last hour (indexes), value. */
+	public static final class OwnHit {
+		public String key;
+		public int a, b;
+		public double val;
+	}
+
+	/**
+	 * The own information of the hours FROM .. FROM+N-1 (v3.10 rules; v3.20 shared with the parcels'
+	 * notices): MONTH 1–12, OFF = the types of the official warnings in force (they win).
+	 */
+	public static List<OwnHit> ownHits(double[] temp, double[] cloud, double[] wind, double[] gust, double[] code, double[] day, int from, int n, int month, String off) {
+		boolean grow = (month >= 3 && month <= 5) || (month >= 9 && month <= 11);
 		String[] keys = { "freeze", "frost", "fog", "ice", "wind" };
 		int[] a = new int[5], b = new int[5], cnt = new int[5];
 		double[] val = { 99, 99, 0, 0, 0 };
 		java.util.Arrays.fill(a, -1);
 		boolean rime = false;
-		int n = Math.min(w.tileTemp.length, 25);
-		for (int k = 0; k < n; k++) {
-			double t = w.tileTemp[k], cl = at(w.tileCloud, k), wi = at(w.tileWind, k), gu = at(w.tileGust, k);
-			int code = k < w.tileCode.length ? w.tileCode[k] : 0;
-			boolean night = k < w.tileDay.length && !w.tileDay[k];
+		for (int k = from; k < from + n && k < temp.length; k++) {
+			double t = temp[k], cl = at(cloud, k), wi = at(wind, k), gu = at(gust, k), cd = at(code, k);
+			if (Double.isNaN(t)) continue;
+			int c = Double.isNaN(cd) ? 0 : (int) Math.round(cd);
+			boolean night = !Double.isNaN(at(day, k)) && at(day, k) < 0.5;
 			boolean[] hit = new boolean[5];
 			hit[0] = grow && t <= -2;
 			hit[1] = grow && night && t <= (Double.isNaN(cl) ? 2 : 3) && t > -2 && (Double.isNaN(cl) || cl < 40) && (Double.isNaN(wi) || wi < 12);
-			hit[2] = code == 45 || code == 48;
-			hit[3] = code == 56 || code == 57 || code == 66 || code == 67;
+			hit[2] = c == 45 || c == 48;
+			hit[3] = c == 56 || c == 57 || c == 66 || c == 67;
 			hit[4] = !Double.isNaN(gu) && gu >= 65;
-			if (code == 48) rime = true;
+			if (c == 48) rime = true;
 			for (int i = 0; i < 5; i++) {
 				if (!hit[i]) continue;
 				if (a[i] < 0) a[i] = k;
@@ -1880,19 +1969,15 @@ public final class Screen {
 		if (off.contains("snow")) cnt[3] = 0;
 		if (off.contains("wind")) cnt[4] = 0;
 		if (off.contains("low-temperature")) cnt[0] = 0;
-		Calendar h0 = (Calendar) now.clone();
-		h0.set(Calendar.MINUTE, 0); h0.set(Calendar.SECOND, 0); h0.set(Calendar.MILLISECOND, 0);
-		long t0 = h0.getTimeInMillis();
+		List<OwnHit> out = new java.util.ArrayList<OwnHit>();
 		for (int i = 0; i < 5; i++) {
 			if (cnt[i] == 0) continue;
-			WarnGroup gr = new WarnGroup();
-			gr.own = true;
-			gr.level = 1;
-			gr.types = i == 2 && rime ? "rime" : keys[i];
-			gr.from = Math.max(nowMs, t0 + a[i] * 3600000L);
-			gr.until = t0 + (b[i] + 1) * 3600000L;
-			gr.val = val[i];
-			out.add(gr);
+			OwnHit h = new OwnHit();
+			h.key = i == 2 && rime ? "rime" : keys[i];
+			h.a = a[i] - from;
+			h.b = b[i] - from;
+			h.val = val[i];
+			out.add(h);
 		}
 		return out;
 	}
@@ -1902,7 +1987,7 @@ public final class Screen {
 	}
 
 	/** The name of an own information box. */
-	private static String ownName(String key) {
+	public static String ownName(String key) {
 		if (key.equals("freeze")) return Tr.t("FREEZE", "ÎNGHEȚ");
 		if (key.equals("frost")) return Tr.t("FROST", "BRUMĂ");
 		if (key.equals("rime")) return Tr.t("FREEZING FOG", "CEAȚĂ CU CHICIURĂ");
@@ -1922,13 +2007,13 @@ public final class Screen {
 		else if (k.equals("ice")) what = Tr.t("Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.", "Ploaie sau burniță care îngheață la sol: drumuri și trotuare alunecoase, gheață pe plante și fire.");
 		else what = Tr.t("Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.", "Rafale puternice: fixați obiectele, atenție la crengi; nu e momentul pentru stropit.");
 		out.add(new String[] { "t", what });
-		out.add(new String[] { "t", Tr.t("Interval: ", "Interval: ") + T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12) });
+		out.add(new String[] { "v", Tr.t("Interval: ", "Interval: ") + T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12) });
 		if (k.equals("freeze") || k.equals("frost")) {
-			out.add(new String[] { "t", Tr.t("Lowest: ", "Minima: ") + t(gr.val) + "°" });
+			out.add(new String[] { "v", Tr.t("Lowest: ", "Minima: ") + t(gr.val) + "°" });
 			out.add(new String[] { "t", Tr.t("Shown only in spring (March–May) and autumn (September–November).", "Apare doar primăvara (martie–mai) și toamna (septembrie–noiembrie).") });
 		}
-		if (k.equals("wind")) out.add(new String[] { "t", Tr.t("Strongest gust: ", "Rafala cea mai puternică: ") + Math.round(gr.val) + " km/h" });
-		out.add(new String[] { "t", Tr.t("Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.", "Calculată de aplicație din prognoza Open-Meteo, ca informările NWS din SUA; nu e o avertizare oficială.") });
+		if (k.equals("wind")) out.add(new String[] { "v", Tr.t("Strongest gust: ", "Rafala cea mai puternică: ") + Math.round(gr.val) + " km/h" });
+		out.add(new String[] { "s", Tr.t("Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.", "Calculată de aplicație din prognoza Open-Meteo, ca informările NWS din SUA; nu e o avertizare oficială.") });
 		return out;
 	}
 
@@ -2140,8 +2225,8 @@ public final class Screen {
 				for (Quakes.Quake o : quakes)
 					out.add(new String[] { "t", "M" + dec(o.mag) + " · " + T.weekdayTime(o.time, clk12) + " · " + (Tr.t("depth ", "adânc. ")) + dist(o.depth) });
 			}
-			if (us) out.add(new String[] { "t", Tr.t("Source: USGS (earthquake.usgs.gov), magnitude 2.5 and over within 300 miles, last 24 h.", "Sursa: USGS (earthquake.usgs.gov), magnitudine 2,5 și peste, pe o rază de 300 de mile, ultimele 24 h.") });
-			else out.add(new String[] { "t", Tr.t("Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.", "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h.") });
+			if (us) out.add(new String[] { "s", Tr.t("Source: USGS (earthquake.usgs.gov), magnitude 2.5 and over within 300 miles, last 24 h.", "Sursa: USGS (earthquake.usgs.gov), magnitudine 2,5 și peste, pe o rază de 300 de mile, ultimele 24 h.") });
+			else out.add(new String[] { "s", Tr.t("Source: EMSC (seismicportal.eu), magnitude 3 and over, last 24 h.", "Sursa: EMSC (seismicportal.eu), magnitudine 3 și peste, ultimele 24 h.") });
 			return out;
 		}
 		List<WarnGroup> gs = warnGroups();
@@ -2169,7 +2254,7 @@ public final class Screen {
 			String tip = advice(wr.type);
 			if (tip.length() > 0) out.add(new String[] { "t", tip });
 		}
-		out.add(new String[] { "t", en ? Tr.t("Source: MeteoAlarm (the national weather service), for ") + (city != null ? city.label() : "")
+		out.add(new String[] { "s", en ? Tr.t("Source: MeteoAlarm (the national weather service), for ") + (city != null ? city.label() : "")
 				: "Sursa: MeteoAlarm (ANM), pentru " + (city != null ? city.label() : "") });
 		return out;
 	}
@@ -2199,7 +2284,7 @@ public final class Screen {
 			}
 			if (wr.area.length() > 0) out.add(new String[] { "t", Tr.t("Area: ", "Zona: ") + wr.area });
 		}
-		out.add(new String[] { "t", Tr.t("Source: National Weather Service (weather.gov), for ", "Sursa: National Weather Service (weather.gov), pentru ") + (city != null ? city.label() : "")
+		out.add(new String[] { "s", Tr.t("Source: National Weather Service (weather.gov), for ", "Sursa: National Weather Service (weather.gov), pentru ") + (city != null ? city.label() : "")
 				+ ". " + Tr.t("The alert texts are in English, as NWS publishes them.", "Textele avertizărilor sunt în engleză, așa cum le publică NWS.") });
 		return out;
 	}

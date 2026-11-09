@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Perjodu ieħor u PDF: il-menu ⋮ fuq il-lemin.
 The ⋮ menu	Il-menu ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Fil-Biċċiet tal-art, fil-paġna ta' biċċa art u fl-Istatistika l-kmandi huma fil-menu ⋮ fuq il-lemin. Mess fuq kaxxa juriha b'kitba kbira; tabella wiesgħa tiżżerżaq il-ġenb.
+* forecast	* tbassir
+Air hum.: 	Umdità arja: 
+Alerts and information: OFF	Twissijiet u informazzjoni: MITFI
+Alerts and information: ON	Twissijiet u informazzjoni: MIXGĦUL
+Amount	Ammont
+Balance	Bilanċ
+By day	Kull jum
+Chance	Ċans
+Day min. / max.: 	Min. / mass. tal-jum: 
+Day	Jum
+From	Minn
+Gusts	Buffuri
+Hours	Siegħat
+Info bubbles	Bżieżaq ta' informazzjoni
+Information · 	Informazzjoni · 
+Kept by soil (3–9 cm): 	Miżmum mill-ħamrija (3–9 cm): 
+Moisture	Umdità
+Rain chance: 	Ċans ta' xita: 
+Risk	Riskju
+Soil moist. 3–9 cm: 	Umdità ħamrija 3–9 cm: 
+Soil temp. (surf.): 	Temp. ħamrija (wiċċ): 
+Spraying	Sprejjar
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Iċ-ċans juri kemm hu probabbli li tagħmel ix-xita f'dik is-siegħa, mhux kemm iddum.
+Until 24:00: 	Sa 24:00: 
+Warmth	Sħana
+Water	Ilma
+Week	Ġimgħa
+lowest 	l-aktar baxxa 
+tomorrow 	għada 
+In the soil now (3–9 cm): 	Fil-ħamrija issa (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Stima mill-mudelli tat-temp, mhux kejl ta' pluvjometru fil-post.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	L-umdità u t-temperatura tal-ħamrija huma stimi tal-mudell tat-temp, mhux kejl.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	F'Għelieqi, fil-paġna ta' għalqa u fl-Istatistika l-kmandi jinsabu fil-menu ⋮ fuq il-lemin. Il-kaxxi juru l-valur biss; mess juri d-dettalji. Tabella wiesgħa tiżżerżaq lejn il-ġenb.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Il-partijiet huma mifrudin b'linji; it-tabelli għandhom linji u jiżżerżqu lejn il-ġenb; is-sors jinsab isfel, darba.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Meta MIXGĦUL, notifika għal xita jew riħ qawwi fuq l-għalqa, u waħda għal kull għalqa għal ġlata bajda, silġ, ċpar, xita ffriżata jew buffuri qawwija.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Tirċievi notifika għal din l-għalqa meta jkun imbassar xita jew riħ qawwi fit-12-il siegħa li ġejjin, u waħda għal ġlata bajda, silġ, ċpar, xita ffriżata jew buffuri qawwija (iċċekkjat kull 3 sigħat).

@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Kitas laikotarpis ir PDF: meniu ⋮ viršuje dešinėje.
 The ⋮ menu	Meniu ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Sklypuose, sklypo puslapyje ir Statistikoje komandos yra meniu ⋮ viršuje dešinėje. Palietus langelį, jis rodomas dideliu šriftu; plačią lentelę galima slinkti į šoną.
+* forecast	* prognozė
+Air hum.: 	Oro drėgm.: 
+Alerts and information: OFF	Įspėjimai ir informacija: IŠJ.
+Alerts and information: ON	Įspėjimai ir informacija: ĮJ.
+Amount	Kiekis
+Balance	Balansas
+By day	Pagal dienas
+Chance	Tikim.
+Day min. / max.: 	Dienos min. / maks.: 
+Day	Diena
+From	Iš
+Gusts	Gūsiai
+Hours	Valandos
+Info bubbles	Informaciniai burbulai
+Information · 	Informacija · 
+Kept by soil (3–9 cm): 	Dirvos sulaikyta (3–9 cm): 
+Moisture	Drėgm.
+Rain chance: 	Lietaus tikim.: 
+Risk	Rizika
+Soil moist. 3–9 cm: 	Dirvos drėgm. 3–9 cm: 
+Soil temp. (surf.): 	Dirvos temp. (pav.): 
+Spraying	Purškimas
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Tikimybė rodo, kiek tikėtina, kad tą valandą lis, o ne kiek ilgai lis.
+Until 24:00: 	Iki 24:00: 
+Warmth	Šiluma
+Water	Vanduo
+Week	Savaitė
+lowest 	žemiausia 
+tomorrow 	rytoj 
+In the soil now (3–9 cm): 	Dirvoje dabar (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Orų modelių įvertis, ne lietmačio matavimas vietoje.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Dirvos drėgmė ir temperatūra yra orų modelio įverčiai, ne matavimai.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Sklypuose, sklypo puslapyje ir Statistikoje komandos yra meniu ⋮ viršuje dešinėje. Langeliai rodo tik reikšmę; palietus matyti išsami informacija. Plačią lentelę galima slinkti į šoną.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Dalys atskirtos linijomis; lentelės turi linijas ir slenka į šoną; šaltinis apačioje, vieną kartą.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kai ĮJ., pranešimas apie lietų ar stiprų vėją sklype ir po vieną kiekvienam sklypui apie šerkšną, šalną, rūką, lijundrą ar stiprius gūsius.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Gausite pranešimą apie šį sklypą, kai per artimiausias 12 valandų prognozuojamas lietus ar stiprus vėjas, ir vieną apie šerkšną, šalną, rūką, lijundrą ar stiprius gūsius (tikrinama kas 3 valandas).

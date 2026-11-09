@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Drugo obdobje in PDF: meni ⋮ zgoraj desno.
 The ⋮ menu	Meni ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	V Parcelah, na strani parcele in v Statistiki so ukazi v meniju ⋮ zgoraj desno. Dotik polja ga pokaže z velikim besedilom; široko tabelo lahko premikate vstran.
+* forecast	* napoved
+Air hum.: 	Vlaž. zraka: 
+Alerts and information: OFF	Opozorila in obvestila: IZKL.
+Alerts and information: ON	Opozorila in obvestila: VKL.
+Amount	Kol.
+Balance	Bilanca
+By day	Po dnevih
+Chance	Verj.
+Day min. / max.: 	Min. / maks. dneva: 
+Day	Dan
+From	Od
+Gusts	Sunki
+Hours	Ure
+Info bubbles	Informacijski oblački
+Information · 	Obvestilo · 
+Kept by soil (3–9 cm): 	Zadržano v tleh (3–9 cm): 
+Moisture	Vlaž.
+Rain chance: 	Verj. dežja: 
+Risk	Tveganje
+Soil moist. 3–9 cm: 	Vlaž. tal 3–9 cm: 
+Soil temp. (surf.): 	Temp. tal (površ.): 
+Spraying	Škropljenje
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Verjetnost pove, kako verjetno v tisti uri dežuje, ne koliko časa dežuje.
+Until 24:00: 	Do 24:00: 
+Warmth	Toplota
+Water	Voda
+Week	Teden
+lowest 	najnižja 
+tomorrow 	jutri 
+In the soil now (3–9 cm): 	V tleh zdaj (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Ocena vremenskih modelov, ne meritev z dežemerom na kraju.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Vlažnost in temperatura tal sta oceni vremenskega modela, ne meritvi.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	V Parcelah, na strani parcele in v Statistiki so ukazi v meniju ⋮ zgoraj desno. Polja kažejo le vrednost; dotik pokaže podrobnosti. Široko tabelo lahko premikate vstran.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Deli so ločeni s črtami; tabele imajo črte in se premikajo vstran; vir je spodaj, enkrat.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Ko je VKL., obvestilo o dežju ali močnem vetru na parceli in za vsako parcelo eno o slani, zmrzali, megli, žledu ali močnih sunkih.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Za to parcelo prejmete obvestilo, ko je v naslednjih 12 urah napovedan dež ali močan veter, in eno o slani, zmrzali, megli, žledu ali močnih sunkih (preverjeno vsake 3 ure).

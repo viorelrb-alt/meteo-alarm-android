@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Drugo razdoblje i PDF: izbornik ⋮ gore desno.
 The ⋮ menu	Izbornik ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	U Parcelama, na stranici parcele i u Statistici naredbe su u izborniku ⋮ gore desno. Dodir polja prikazuje ga velikim slovima; široka tablica pomiče se ustranu.
+* forecast	* prognoza
+Air hum.: 	Vlaž. zraka: 
+Alerts and information: OFF	Upozorenja i obavijesti: ISKLJ.
+Alerts and information: ON	Upozorenja i obavijesti: UKLJ.
+Amount	Kol.
+Balance	Bilanca
+By day	Po danima
+Chance	Vjer.
+Day min. / max.: 	Min. / maks. dana: 
+Day	Dan
+From	Iz smjera
+Gusts	Udari
+Hours	Sati
+Info bubbles	Informativni oblačići
+Information · 	Obavijest · 
+Kept by soil (3–9 cm): 	Zadržano u tlu (3–9 cm): 
+Moisture	Vlaž.
+Rain chance: 	Vjer. kiše: 
+Risk	Rizik
+Soil moist. 3–9 cm: 	Vlaž. tla 3–9 cm: 
+Soil temp. (surf.): 	Temp. tla (površ.): 
+Spraying	Prskanje
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Vjerojatnost pokazuje koliko je vjerojatno da u tom satu pada kiša, a ne koliko dugo pada.
+Until 24:00: 	Do 24:00: 
+Warmth	Toplina
+Water	Voda
+Week	Tjedan
+lowest 	najniža 
+tomorrow 	sutra 
+In the soil now (3–9 cm): 	U tlu sada (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Procjena meteoroloških modela, a ne mjerenje kišomjerom na mjestu.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Vlažnost i temperatura tla procjene su meteorološkog modela, a ne mjerenja.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	U Parcelama, na stranici parcele i u Statistici naredbe su u izborniku ⋮ gore desno. Okviri pokazuju samo vrijednost; dodir pokazuje pojedinosti. Široka tablica klizi u stranu.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Dijelovi su odvojeni crtama; tablice imaju crte i klize u stranu; izvor je dolje, jednom.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kad je UKLJ., obavijest o kiši ili jakom vjetru na parceli i po jedna za svaku parcelu o mrazu, smrzavanju, magli, ledenoj kiši ili jakim udarima.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Dobivate obavijest za ovu parcelu kad se u sljedećih 12 sati predviđa kiša ili jak vjetar, i jednu o mrazu, smrzavanju, magli, ledenoj kiši ili jakim udarima (provjera svaka 3 sata).

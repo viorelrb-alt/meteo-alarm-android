@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Inny okres i PDF: menu ⋮ w prawym górnym rogu.
 The ⋮ menu	Menu ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	W Działkach, na stronie działki i w Statystyce polecenia są w menu ⋮ w prawym górnym rogu. Dotknięcie pola pokazuje je dużym tekstem; szeroką tabelę przesuwa się na boki.
+* forecast	* prognoza
+Air hum.: 	Wilg. powietrza: 
+Alerts and information: OFF	Alerty i informacje: WYŁ.
+Alerts and information: ON	Alerty i informacje: WŁ.
+Amount	Ilość
+Balance	Bilans
+By day	Dziennie
+Chance	Prawd.
+Day min. / max.: 	Min. / maks. dnia: 
+Day	Dzień
+From	Z kierunku
+Gusts	Porywy
+Hours	Godziny
+Info bubbles	Dymki informacyjne
+Information · 	Informacja · 
+Kept by soil (3–9 cm): 	Zatrzymane przez glebę (3–9 cm): 
+Moisture	Wilg.
+Rain chance: 	Prawd. deszczu: 
+Risk	Ryzyko
+Soil moist. 3–9 cm: 	Wilg. gleby 3–9 cm: 
+Soil temp. (surf.): 	Temp. gleby (powierzch.): 
+Spraying	Opryski
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Prawdopodobieństwo mówi, jak prawdopodobny jest deszcz w tej godzinie, a nie jak długo pada.
+Until 24:00: 	Do 24:00: 
+Warmth	Ciepło
+Water	Woda
+Week	Tydzień
+lowest 	najniższa 
+tomorrow 	jutro 
+In the soil now (3–9 cm): 	W glebie teraz (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Szacunek modeli pogodowych, nie pomiar deszczomierzem w tym miejscu.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Wilgotność i temperatura gleby to szacunki modelu pogodowego, nie pomiary.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	W Działkach, na stronie działki i w Statystyce polecenia są w menu ⋮ w prawym górnym rogu. Pola pokazują tylko wartość; dotknięcie pokazuje szczegóły. Szeroką tabelę można przesuwać w bok.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Części są oddzielone liniami; tabele mają linie i przesuwają się w bok; źródło jest na dole, raz.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Gdy WŁ., powiadomienie o deszczu lub silnym wietrze na działce i po jednym dla każdej działki o szronie, mrozie, mgle, marznącym deszczu lub silnych porywach.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Otrzymasz powiadomienie dla tej działki, gdy w ciągu 12 godzin prognozowany jest deszcz lub silny wiatr, oraz jedno o szronie, mrozie, mgle, marznącym deszczu lub silnych porywach (sprawdzane co 3 godziny).

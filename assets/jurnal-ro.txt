@@ -1,5 +1,8 @@
-Versiunea curentă: v.3.11 · 9.11.2026
+Versiunea curentă: v.3.20 · 9.11.2026
 Îmbunătățiri de design / structură.
+- Casetele din Parcele și Statistică arată doar valoarea; detaliile apar la atingere.
+- Bulele: linii între secțiuni, tabele cu linii care glisează în lateral, sursa jos, o singură dată.
+- Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
 - Butonul „Statistică · PDF” pe harta parcelelor și pe ecranul fiecărei parcele.

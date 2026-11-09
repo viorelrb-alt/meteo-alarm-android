@@ -1,5 +1,8 @@
-Geçerli sürüm: v.3.11 · 9.11.2026
+Geçerli sürüm: v.3.20 · 9.11.2026
 Tasarım / yapı iyileştirmeleri.
+- Parseller ve İstatistikteki kutular yalnızca değeri gösterir; ayrıntılar dokununca görünür.
+- Baloncuklar: bölümler arasında çizgiler, yana kayan çizgili tablolar, kaynak en altta, bir kez.
+- Her parsel için ayrı BİLGİ bildirimleri: kırağı, don, sis, donan yağmur, kuvvetli hamleler.
 - Çiftçi modu: Topraktaki sudan sonra yeni kutular: İlaçlama, Su dengesi, Fırtınalar, Sıcaklık toplamı, 16 gün.
 - ABD'de, çiftçi modunda: NWS, Kuraklık, Yangın, Dolu kutuları.
 - Parsel haritasında ve her parselin ekranında “İstatistik · PDF” düğmesi.

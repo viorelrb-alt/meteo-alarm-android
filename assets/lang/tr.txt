@@ -678,3 +678,40 @@ Temp.	Sıc.
 Other period and PDF: the ⋮ menu at the top right.	Başka dönem ve PDF: sağ üstteki ⋮ menüsü.
 The ⋮ menu	⋮ menüsü
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Parsellerde, bir parselin sayfasında ve İstatistikte komutlar sağ üstteki ⋮ menüsündedir. Bir kutuya dokunmak onu büyük yazıyla gösterir; geniş bir tablo yana kaydırılır.
+* forecast	* tahmin
+Air hum.: 	Hava nemi: 
+Alerts and information: OFF	Uyarılar ve bilgiler: KAPALI
+Alerts and information: ON	Uyarılar ve bilgiler: AÇIK
+Amount	Miktar
+Balance	Denge
+By day	Günlük
+Chance	Olas.
+Day min. / max.: 	Gün min. / maks.: 
+Day	Gün
+From	Yönünden
+Gusts	Hamleler
+Hours	Saatler
+Info bubbles	Bilgi baloncukları
+Information · 	Bilgi · 
+Kept by soil (3–9 cm): 	Toprakta tutulan (3–9 cm): 
+Moisture	Nem
+Rain chance: 	Yağmur olas.: 
+Risk	Risk
+Soil moist. 3–9 cm: 	Toprak nemi 3–9 cm: 
+Soil temp. (surf.): 	Toprak sıc. (yüzey): 
+Spraying	İlaçlama
+Temp.: 	Sıc.: 
+The chance is how likely rain is in that hour, not how long it rains.	Olasılık, o saatte yağmur yağmasının ne kadar olası olduğunu gösterir, ne kadar süreceğini değil.
+Until 24:00: 	24:00'e kadar: 
+Warmth	Sıcaklık birikimi
+Water	Su
+Week	Hafta
+lowest 	en düşük 
+tomorrow 	yarın 
+In the soil now (3–9 cm): 	Şu an toprakta (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Hava modellerinin tahmini, yerinde yağmur ölçer ölçümü değil.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Toprak nemi ve toprak sıcaklığı hava modelinin tahminleridir, ölçüm değildir.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Parsellerde, bir parselin sayfasında ve İstatistikte komutlar sağ üstteki ⋮ menüsündedir. Kutular yalnızca değeri gösterir; dokunmak ayrıntıları gösterir. Geniş bir tablo yana kaydırılır.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Bölümler çizgilerle ayrılır; tablolarda çizgiler vardır ve yana kayarlar; kaynak en altta, bir kez yer alır.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	AÇIK olduğunda parselde yağmur veya kuvvetli rüzgâr için bir bildirim ve her parsel için kırağı, don, sis, donan yağmur veya kuvvetli hamleler için bir bildirim.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Bu parsel için önümüzdeki 12 saatte yağmur veya kuvvetli rüzgâr beklendiğinde bir bildirim, kırağı, don, sis, donan yağmur veya kuvvetli hamleler için de bir bildirim alırsınız (3 saatte bir kontrol edilir).

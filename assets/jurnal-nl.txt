@@ -1,5 +1,8 @@
-Huidige versie: v.3.11 · 9.11.2026
+Huidige versie: v.3.20 · 9.11.2026
 Verbeteringen in ontwerp / structuur.
+- De vakken in Percelen en Statistiek tonen alleen de waarde; de details verschijnen bij een tik.
+- Bubbels: lijnen tussen onderdelen, tabellen met lijnen die opzij schuiven, de bron onderaan, één keer.
+- Aparte INFORMATIE-meldingen voor elk perceel: rijp, vorst, mist, ijzel, zware windstoten.
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.
 - De knop “Statistiek · PDF” op de perceelkaart en op het scherm van elk perceel.

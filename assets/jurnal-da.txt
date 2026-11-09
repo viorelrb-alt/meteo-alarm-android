@@ -1,5 +1,8 @@
-Nuværende version: v.3.11 · 9.11.2026
+Nuværende version: v.3.20 · 9.11.2026
 Forbedringer af design / struktur.
+- Felterne i Marker og Statistik viser kun værdien; detaljerne vises ved et tryk.
+- Bobler: linjer mellem afsnit, tabeller med linjer der kan skubbes til siden, kilden nederst, én gang.
+- Separate INFORMATION-notifikationer for hver mark: rimfrost, frost, tåge, isslag, kraftige vindstød.
 - Landmandstilstand: nye felter efter Vand i jorden: Sprøjtning, Vandbalance, Storme, Graddage, 16 dage.
 - I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.
 - Knappen “Statistik · PDF” på markkortet og på hver marks skærm.

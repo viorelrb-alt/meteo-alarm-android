@@ -744,3 +744,40 @@ Temp.	Hőm.
 Other period and PDF: the ⋮ menu at the top right.	Más időszak és PDF: a ⋮ menü jobbra fent.
 The ⋮ menu	A ⋮ menü
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	A Parcellákban, egy parcella oldalán és a Statisztikában a parancsok a jobb felső ⋮ menüben vannak. Egy mező érintése nagy betűvel mutatja; a széles táblázat oldalra görgethető.
+* forecast	* előrejelzés
+Air hum.: 	Levegő párat.: 
+Alerts and information: OFF	Riasztások és tájékoztatók: KI
+Alerts and information: ON	Riasztások és tájékoztatók: BE
+Amount	Menny.
+Balance	Mérleg
+By day	Naponként
+Chance	Valószín.
+Day min. / max.: 	Napi min. / max.: 
+Day	Nap
+From	Honnan
+Gusts	Széllökések
+Hours	Órák
+Info bubbles	Információs buborékok
+Information · 	Tájékoztató · 
+Kept by soil (3–9 cm): 	A talaj megtartotta (3–9 cm): 
+Moisture	Nedv.
+Rain chance: 	Eső valószín.: 
+Risk	Kockázat
+Soil moist. 3–9 cm: 	Talajnedv. 3–9 cm: 
+Soil temp. (surf.): 	Talajhőm. (felszín): 
+Spraying	Permetezés
+Temp.: 	Hőm.: 
+The chance is how likely rain is in that hour, not how long it rains.	A valószínűség azt mutatja, mennyire valószínű, hogy abban az órában esik, nem azt, hogy meddig esik.
+Until 24:00: 	24:00-ig: 
+Warmth	Meleg
+Water	Víz
+Week	Hét
+lowest 	legalacsonyabb 
+tomorrow 	holnap 
+In the soil now (3–9 cm): 	A talajban most (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Az időjárási modellek becslése, nem esőmérős mérés a helyszínen.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	A talaj nedvessége és hőmérséklete az időjárási modell becslése, nem mérés.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	A Parcellákban, egy parcella oldalán és a Statisztikában a parancsok a jobb felső ⋮ menüben vannak. A mezők csak az értéket mutatják; koppintásra látszanak a részletek. A széles táblázat oldalra húzható.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	A részeket vonalak választják el; a táblázatoknak vonalai vannak és oldalra húzhatók; a forrás alul van, egyszer.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	BE állásban értesítés esőről vagy erős szélről a parcellán, és parcellánként egy dérről, fagyról, ködről, ónos esőről vagy erős széllökésekről.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Értesítést kapsz erről a parcelláról, ha a következő 12 órára esőt vagy erős szelet jeleznek, és egyet dérről, fagyról, ködről, ónos esőről vagy erős széllökésekről (3 óránként ellenőrizve).

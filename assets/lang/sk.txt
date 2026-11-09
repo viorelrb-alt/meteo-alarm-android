@@ -744,3 +744,40 @@ Temp.	Tepl.
 Other period and PDF: the ⋮ menu at the top right.	Iné obdobie a PDF: ponuka ⋮ vpravo hore.
 The ⋮ menu	Ponuka ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	V Parcelách, na stránke parcely a v Štatistike sú príkazy v ponuke ⋮ vpravo hore. Ťuknutie na pole ho ukáže veľkým písmom; širokou tabuľkou sa dá posúvať do strán.
+* forecast	* predpoveď
+Air hum.: 	Vlhk. vzduchu: 
+Alerts and information: OFF	Výstrahy a informácie: VYP
+Alerts and information: ON	Výstrahy a informácie: ZAP
+Amount	Množ.
+Balance	Bilancia
+By day	Po dňoch
+Chance	Pravd.
+Day min. / max.: 	Min. / max. dňa: 
+Day	Deň
+From	Odkiaľ
+Gusts	Nárazy
+Hours	Hodiny
+Info bubbles	Informačné bubliny
+Information · 	Informácia · 
+Kept by soil (3–9 cm): 	Zadržané pôdou (3–9 cm): 
+Moisture	Vlhk.
+Rain chance: 	Pravd. dažďa: 
+Risk	Riziko
+Soil moist. 3–9 cm: 	Vlhk. pôdy 3–9 cm: 
+Soil temp. (surf.): 	Tepl. pôdy (povrch): 
+Spraying	Postrek
+Temp.: 	Tepl.: 
+The chance is how likely rain is in that hour, not how long it rains.	Pravdepodobnosť ukazuje, ako pravdepodobne v tej hodine prší, nie ako dlho prší.
+Until 24:00: 	Do 24:00: 
+Warmth	Teplo
+Water	Voda
+Week	Týždeň
+lowest 	najnižšia 
+tomorrow 	zajtra 
+In the soil now (3–9 cm): 	V pôde teraz (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Odhad z meteorologických modelov, nie meranie zrážkomerom na mieste.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Vlhkosť a teplota pôdy sú odhady meteorologického modelu, nie merania.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	V Parcelách, na stránke parcely a v Štatistike sú príkazy v ponuke ⋮ vpravo hore. Polia ukazujú len hodnotu; ťuknutie ukáže podrobnosti. Širokú tabuľku možno posúvať do strán.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Časti oddeľujú čiary; tabuľky majú čiary a posúvajú sa do strán; zdroj je dole, raz.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Keď je ZAP, upozornenie na dážď alebo silný vietor na parcele a pre každú parcelu jedno na inovať, mráz, hmlu, mrznúci dážď alebo silné nárazy.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Dostanete upozornenie pre túto parcelu, keď sa v najbližších 12 hodinách predpovedá dážď alebo silný vietor, a jedno na inovať, mráz, hmlu, mrznúci dážď alebo silné nárazy (kontrola každé 3 hodiny).

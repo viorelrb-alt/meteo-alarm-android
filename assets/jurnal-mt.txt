@@ -1,5 +1,8 @@
-Verżjoni attwali: v.3.11 · 9.11.2026
+Verżjoni attwali: v.3.20 · 9.11.2026
 Titjib fid-disinn / fl-istruttura.
+- Il-kaxxi f'Għelieqi u Statistika juru l-valur biss; id-dettalji jidhru b'mess.
+- Bżieżaq: linji bejn il-partijiet, tabelli b'linji li jiżżerżqu lejn il-ġenb, is-sors isfel, darba.
+- Notifiki ta' INFORMAZZJONI separati għal kull għalqa: ġlata bajda, silġ, ċpar, xita ffriżata, buffuri qawwija.
 - Modalità tal-bidwi: kaxxi ġodda wara Ilma fil-ħamrija: Irxix, Bilanċ tal-ilma, Maltempi, Gradi-jiem, 16-il jum.
 - Fl-Istati Uniti, fil-modalità tal-bidwi: il-kaxxi NWS, Nixfa, Nar, Silġ.
 - Il-buttuna “Statistika · PDF” fuq il-mappa tal-biċċiet tal-art u fuq l-iskrin ta' kull waħda.

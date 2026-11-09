@@ -744,3 +744,40 @@ Temp.	Θερμ.
 Other period and PDF: the ⋮ menu at the top right.	Άλλη περίοδος και PDF: το μενού ⋮ πάνω δεξιά.
 The ⋮ menu	Το μενού ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Στα Αγροτεμάχια, στη σελίδα ενός αγροτεμαχίου και στα Στατιστικά οι εντολές είναι στο μενού ⋮ πάνω δεξιά. Το άγγιγμα ενός πλαισίου το δείχνει με μεγάλα γράμματα· ένας φαρδύς πίνακας κυλά στο πλάι.
+* forecast	* πρόγνωση
+Air hum.: 	Υγρ. αέρα: 
+Alerts and information: OFF	Ειδοποιήσεις και ενημερώσεις: ΟΧΙ
+Alerts and information: ON	Ειδοποιήσεις και ενημερώσεις: ΝΑΙ
+Amount	Ποσότ.
+Balance	Ισοζύγιο
+By day	Ανά ημέρα
+Chance	Πιθαν.
+Day min. / max.: 	Ελάχ. / μέγ. ημέρας: 
+Day	Ημέρα
+From	Από
+Gusts	Ριπές
+Hours	Ώρες
+Info bubbles	Φυσαλίδες πληροφοριών
+Information · 	Ενημέρωση · 
+Kept by soil (3–9 cm): 	Κράτησε το έδαφος (3–9 cm): 
+Moisture	Υγρ.
+Rain chance: 	Πιθ. βροχής: 
+Risk	Κίνδυνος
+Soil moist. 3–9 cm: 	Υγρ. εδάφους 3–9 cm: 
+Soil temp. (surf.): 	Θερμ. εδάφους (επιφ.): 
+Spraying	Ψεκασμός
+Temp.: 	Θερμ.: 
+The chance is how likely rain is in that hour, not how long it rains.	Η πιθανότητα δείχνει πόσο πιθανό είναι να βρέξει εκείνη την ώρα, όχι πόσο θα κρατήσει.
+Until 24:00: 	Έως 24:00: 
+Warmth	Θερμότητα
+Water	Νερό
+Week	Εβδομάδα
+lowest 	ελάχιστη 
+tomorrow 	αύριο 
+In the soil now (3–9 cm): 	Στο έδαφος τώρα (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Εκτίμηση από τα μετεωρολογικά μοντέλα, όχι μέτρηση βροχόμετρου στο σημείο.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Η υγρασία και η θερμοκρασία του εδάφους είναι εκτιμήσεις του μετεωρολογικού μοντέλου, όχι μετρήσεις.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Στα Αγροτεμάχια, στη σελίδα ενός αγροτεμαχίου και στα Στατιστικά οι εντολές είναι στο μενού ⋮ πάνω δεξιά. Τα πλαίσια δείχνουν μόνο την τιμή· το άγγιγμα δείχνει τις λεπτομέρειες. Ένας φαρδύς πίνακας σύρεται στο πλάι.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Οι ενότητες χωρίζονται με γραμμές· οι πίνακες έχουν γραμμές και σύρονται στο πλάι· η πηγή είναι κάτω, μία φορά.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Όταν είναι ΝΑΙ, ειδοποίηση για βροχή ή ισχυρό άνεμο στο αγροτεμάχιο και μία ανά αγροτεμάχιο για πάχνη, παγετό, ομίχλη, παγωμένη βροχή ή ισχυρές ριπές.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Λαμβάνετε ειδοποίηση για αυτό το αγροτεμάχιο όταν προβλέπεται βροχή ή ισχυρός άνεμος τις επόμενες 12 ώρες και μία για πάχνη, παγετό, ομίχλη, παγωμένη βροχή ή ισχυρές ριπές (έλεγχος κάθε 3 ώρες).

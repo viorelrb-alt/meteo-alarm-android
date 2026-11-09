@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Cits periods un PDF: izvēlne ⋮ augšā pa labi.
 The ⋮ menu	Izvēlne ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Laukos, lauka lapā un Statistikā komandas ir izvēlnē ⋮ augšā pa labi. Pieskaroties lodziņam, tas parādās lielā tekstā; platu tabulu var bīdīt uz sāniem.
+* forecast	* prognoze
+Air hum.: 	Gaisa mitr.: 
+Alerts and information: OFF	Brīdinājumi un informācija: IZSL.
+Alerts and information: ON	Brīdinājumi un informācija: IESL.
+Amount	Daudz.
+Balance	Bilance
+By day	Pa dienām
+Chance	Varb.
+Day min. / max.: 	Dienas min. / maks.: 
+Day	Diena
+From	No
+Gusts	Brāzmas
+Hours	Stundas
+Info bubbles	Informācijas burbuļi
+Information · 	Informācija · 
+Kept by soil (3–9 cm): 	Augsnes aizturēts (3–9 cm): 
+Moisture	Mitr.
+Rain chance: 	Lietus varb.: 
+Risk	Risks
+Soil moist. 3–9 cm: 	Augsnes mitr. 3–9 cm: 
+Soil temp. (surf.): 	Augsnes temp. (virsma): 
+Spraying	Smidzināšana
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Varbūtība rāda, cik iespējams, ka tajā stundā līs, nevis cik ilgi līs.
+Until 24:00: 	Līdz 24:00: 
+Warmth	Siltums
+Water	Ūdens
+Week	Nedēļa
+lowest 	zemākā 
+tomorrow 	rīt 
+In the soil now (3–9 cm): 	Augsnē tagad (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Laika modeļu novērtējums, nevis nokrišņu mērītāja mērījums vietā.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Augsnes mitrums un temperatūra ir laika modeļa novērtējumi, nevis mērījumi.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Laukos, lauka lapā un Statistikā komandas ir izvēlnē ⋮ augšā pa labi. Lodziņi rāda tikai vērtību; pieskāriens rāda sīkāku informāciju. Platu tabulu var bīdīt uz sāniem.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Daļas atdala līnijas; tabulām ir līnijas un tās var bīdīt uz sāniem; avots ir apakšā, vienreiz.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kad IESL., paziņojums par lietu vai stipru vēju laukā un pa vienam katram laukam par sarmu, salu, miglu, apledojumu vai stiprām brāzmām.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Jūs saņemat paziņojumu par šo lauku, ja nākamajās 12 stundās prognozē lietu vai stipru vēju, un vienu par sarmu, salu, miglu, apledojumu vai stiprām brāzmām (pārbauda ik pēc 3 stundām).

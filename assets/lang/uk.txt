@@ -744,3 +744,40 @@ Temp.	Темп.
 Other period and PDF: the ⋮ menu at the top right.	Інший період і PDF: меню ⋮ угорі праворуч.
 The ⋮ menu	Меню ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	У «Ділянках», на сторінці ділянки та в «Статистиці» команди в меню ⋮ угорі праворуч. Дотик до вікна показує його великим текстом; широку таблицю можна гортати вбік.
+* forecast	* прогноз
+Air hum.: 	Волог. повітря: 
+Alerts and information: OFF	Сповіщення та інформація: ВИМК.
+Alerts and information: ON	Сповіщення та інформація: УВІМК.
+Amount	Кільк.
+Balance	Баланс
+By day	По днях
+Chance	Імовірн.
+Day min. / max.: 	Мін. / макс. дня: 
+Day	День
+From	Звідки
+Gusts	Пориви
+Hours	Години
+Info bubbles	Інформаційні бульбашки
+Information · 	Інформація · 
+Kept by soil (3–9 cm): 	Утримано ґрунтом (3–9 см): 
+Moisture	Волог.
+Rain chance: 	Імов. дощу: 
+Risk	Ризик
+Soil moist. 3–9 cm: 	Волог. ґрунту 3–9 см: 
+Soil temp. (surf.): 	Темп. ґрунту (поверхня): 
+Spraying	Обприскування
+Temp.: 	Темп.: 
+The chance is how likely rain is in that hour, not how long it rains.	Імовірність показує, наскільки ймовірний дощ у цю годину, а не як довго він іде.
+Until 24:00: 	До 24:00: 
+Warmth	Тепло
+Water	Вода
+Week	Тиждень
+lowest 	мінімум 
+tomorrow 	завтра 
+In the soil now (3–9 cm): 	У ґрунті зараз (3–9 см): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Оцінка метеомоделей, а не вимірювання дощоміром на місці.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Вологість і температура ґрунту — оцінки метеомоделі, а не вимірювання.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	У «Ділянках», на сторінці ділянки та в «Статистиці» команди в меню ⋮ праворуч угорі. Плитки показують лише значення; дотик показує подробиці. Широку таблицю можна зсувати вбік.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Розділи відокремлені лініями; таблиці мають лінії та зсуваються вбік; джерело внизу, один раз.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Коли УВІМК., сповіщення про дощ або сильний вітер на ділянці та по одному для кожної ділянки про приморозок, мороз, туман, крижаний дощ або сильні пориви.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Ви отримаєте сповіщення для цієї ділянки, коли в найближчі 12 годин прогнозують дощ або сильний вітер, і ще одне про приморозок, мороз, туман, крижаний дощ або сильні пориви (перевірка кожні 3 години).

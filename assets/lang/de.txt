@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Anderer Zeitraum und PDF: das Menü ⋮ oben rechts.
 The ⋮ menu	Das Menü ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	In Parzellen, auf der Seite einer Parzelle und in Statistik stehen die Befehle im Menü ⋮ oben rechts. Ein Tippen auf ein Feld zeigt es in großer Schrift; eine breite Tabelle lässt sich seitlich schieben.
+* forecast	* Vorhersage
+Air hum.: 	Luftfeucht.: 
+Alerts and information: OFF	Warnungen und Hinweise: AUS
+Alerts and information: ON	Warnungen und Hinweise: AN
+Amount	Menge
+Balance	Bilanz
+By day	Pro Tag
+Chance	Wahrsch.
+Day min. / max.: 	Tag min. / max.: 
+Day	Tag
+From	Aus
+Gusts	Böen
+Hours	Stunden
+Info bubbles	Info-Blasen
+Information · 	Hinweis · 
+Kept by soil (3–9 cm): 	Vom Boden gehalten (3–9 cm): 
+Moisture	Feuchte
+Rain chance: 	Regenwahrsch.: 
+Risk	Risiko
+Soil moist. 3–9 cm: 	Bodenfeuchte 3–9 cm: 
+Soil temp. (surf.): 	Bodentemp. (Oberfl.): 
+Spraying	Spritzen
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Die Wahrscheinlichkeit zeigt, wie wahrscheinlich es in dieser Stunde regnet, nicht wie lange.
+Until 24:00: 	Bis 24:00: 
+Warmth	Wärme
+Water	Wasser
+Week	Woche
+lowest 	Tiefstwert 
+tomorrow 	morgen 
+In the soil now (3–9 cm): 	Jetzt im Boden (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Eine Schätzung der Wettermodelle, keine Regenmesser-Messung vor Ort.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Bodenfeuchte und Bodentemperatur sind Schätzungen des Wettermodells, keine Messungen.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	In Parzellen, auf der Seite einer Parzelle und in Statistik stehen die Befehle im Menü ⋮ oben rechts. Die Felder zeigen nur den Wert; ein Tippen zeigt die Details. Eine breite Tabelle lässt sich seitlich schieben.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Abschnitte sind durch Linien getrennt; Tabellen haben Linien und lassen sich seitlich schieben; die Quelle steht unten, einmal.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Wenn AN: eine Benachrichtigung bei Regen oder starkem Wind auf der Parzelle und eine pro Parzelle bei Reif, Frost, Nebel, gefrierendem Regen oder starken Böen.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Sie erhalten für diese Parzelle eine Benachrichtigung, wenn in den nächsten 12 Stunden Regen oder starker Wind vorhergesagt wird, und eine bei Reif, Frost, Nebel, gefrierendem Regen oder starken Böen (alle 3 Stunden geprüft).

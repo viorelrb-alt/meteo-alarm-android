@@ -744,3 +744,40 @@ Temp.	Lämp.
 Other period and PDF: the ⋮ menu at the top right.	Muu aikaväli ja PDF: valikko ⋮ oikealla ylhäällä.
 The ⋮ menu	Valikko ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Lohkoissa, lohkon sivulla ja Tilastoissa komennot ovat valikossa ⋮ oikealla ylhäällä. Ruudun napautus näyttää sen isolla tekstillä; leveää taulukkoa voi vierittää sivuttain.
+* forecast	* ennuste
+Air hum.: 	Ilman kost.: 
+Alerts and information: OFF	Varoitukset ja tiedotteet: POIS
+Alerts and information: ON	Varoitukset ja tiedotteet: PÄÄLLÄ
+Amount	Määrä
+Balance	Tase
+By day	Päivittäin
+Chance	Todenn.
+Day min. / max.: 	Päivän alin / ylin: 
+Day	Päivä
+From	Suunnasta
+Gusts	Puuskat
+Hours	Tunnit
+Info bubbles	Infokuplat
+Information · 	Tiedote · 
+Kept by soil (3–9 cm): 	Maahan jäänyt (3–9 cm): 
+Moisture	Kosteus
+Rain chance: 	Sateen todenn.: 
+Risk	Riski
+Soil moist. 3–9 cm: 	Maan kost. 3–9 cm: 
+Soil temp. (surf.): 	Maan lämpö (pinta): 
+Spraying	Ruiskutus
+Temp.: 	Lämpö: 
+The chance is how likely rain is in that hour, not how long it rains.	Todennäköisyys kertoo, kuinka todennäköisesti sillä tunnilla sataa, ei kuinka kauan sataa.
+Until 24:00: 	Klo 24:00 asti: 
+Warmth	Lämpö
+Water	Vesi
+Week	Viikko
+lowest 	alin 
+tomorrow 	huomenna 
+In the soil now (3–9 cm): 	Maassa nyt (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Sääennustemallien arvio, ei sademittarin mittaus paikalla.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Maan kosteus ja lämpötila ovat säämallin arvioita, eivät mittauksia.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Lohkoissa, lohkon sivulla ja Tilastoissa komennot ovat valikossa ⋮ oikealla ylhäällä. Ruudut näyttävät vain arvon; napautus näyttää tiedot. Leveää taulukkoa voi liu'uttaa sivuttain.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Osiot on erotettu viivoilla; taulukoissa on viivat ja niitä voi liu'uttaa sivuttain; lähde on alhaalla, kerran.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kun PÄÄLLÄ: ilmoitus sateesta tai kovasta tuulesta lohkolla ja lohkokohtainen ilmoitus kuurasta, pakkasesta, sumusta, jäätävästä sateesta tai kovista puuskista.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Saat tästä lohkosta ilmoituksen, kun seuraaville 12 tunnille ennustetaan sadetta tai kovaa tuulta, ja toisen kuurasta, pakkasesta, sumusta, jäätävästä sateesta tai kovista puuskista (tarkistus 3 tunnin välein).

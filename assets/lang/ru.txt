@@ -678,3 +678,40 @@ Temp.	Темп.
 Other period and PDF: the ⋮ menu at the top right.	Другой период и PDF: меню ⋮ вверху справа.
 The ⋮ menu	Меню ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	В «Участках», на странице участка и в «Статистике» команды находятся в меню ⋮ вверху справа. Касание окна показывает его крупным текстом; широкую таблицу можно сдвигать в сторону.
+* forecast	* прогноз
+Air hum.: 	Влажн. возд.: 
+Alerts and information: OFF	Оповещения и информация: ВЫКЛ.
+Alerts and information: ON	Оповещения и информация: ВКЛ.
+Amount	Колич.
+Balance	Баланс
+By day	По дням
+Chance	Вероятн.
+Day min. / max.: 	Мин. / макс. дня: 
+Day	День
+From	Откуда
+Gusts	Порывы
+Hours	Часы
+Info bubbles	Информационные пузыри
+Information · 	Информация · 
+Kept by soil (3–9 cm): 	Удержано почвой (3–9 см): 
+Moisture	Влажн.
+Rain chance: 	Вер. дождя: 
+Risk	Риск
+Soil moist. 3–9 cm: 	Влажн. почвы 3–9 см: 
+Soil temp. (surf.): 	Темп. почвы (поверхн.): 
+Spraying	Опрыскивание
+Temp.: 	Темп.: 
+The chance is how likely rain is in that hour, not how long it rains.	Вероятность показывает, насколько вероятен дождь в этот час, а не как долго он идёт.
+Until 24:00: 	До 24:00: 
+Warmth	Тепло
+Water	Вода
+Week	Неделя
+lowest 	минимум 
+tomorrow 	завтра 
+In the soil now (3–9 cm): 	В почве сейчас (3–9 см): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Оценка метеомоделей, а не измерение дождемером на месте.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Влажность и температура почвы — оценки метеомодели, а не измерения.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	В «Участках», на странице участка и в «Статистике» команды находятся в меню ⋮ справа вверху. Плитки показывают только значение; касание показывает подробности. Широкую таблицу можно сдвигать в сторону.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Разделы отделены линиями; у таблиц есть линии, и их можно сдвигать в сторону; источник внизу, один раз.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Когда ВКЛ., уведомление о дожде или сильном ветре на участке и по одному для каждого участка о заморозке, морозе, тумане, ледяном дожде или сильных порывах.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Вы получите уведомление для этого участка, если в ближайшие 12 часов ожидается дождь или сильный ветер, и ещё одно о заморозке, морозе, тумане, ледяном дожде или сильных порывах (проверка каждые 3 часа).

@@ -744,3 +744,40 @@ Temp.	Temp.
 Other period and PDF: the ⋮ menu at the top right.	Muu ajavahemik ja PDF: menüü ⋮ üleval paremal.
 The ⋮ menu	Menüü ⋮
 In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Põldudes, põllu lehel ja Statistikas on käsud menüüs ⋮ üleval paremal. Kasti puudutus näitab seda suures kirjas; laia tabelit saab külgsuunas lohistada.
+* forecast	* prognoos
+Air hum.: 	Õhuniiskus: 
+Alerts and information: OFF	Hoiatused ja teated: VÄLJAS
+Alerts and information: ON	Hoiatused ja teated: SEES
+Amount	Kogus
+Balance	Bilanss
+By day	Päeviti
+Chance	Tõenäos.
+Day min. / max.: 	Päeva min / maks: 
+Day	Päev
+From	Suunast
+Gusts	Puhangud
+Hours	Tunnid
+Info bubbles	Infomullid
+Information · 	Teade · 
+Kept by soil (3–9 cm): 	Mulla poolt hoitud (3–9 cm): 
+Moisture	Niiskus
+Rain chance: 	Vihma tõenäos.: 
+Risk	Risk
+Soil moist. 3–9 cm: 	Mulla niisk. 3–9 cm: 
+Soil temp. (surf.): 	Mulla temp. (pind): 
+Spraying	Pritsimine
+Temp.: 	Temp.: 
+The chance is how likely rain is in that hour, not how long it rains.	Tõenäosus näitab, kui tõenäoliselt sel tunnil sajab, mitte kui kaua sajab.
+Until 24:00: 	Kuni 24:00: 
+Warmth	Soojus
+Water	Vesi
+Week	Nädal
+lowest 	madalaim 
+tomorrow 	homme 
+In the soil now (3–9 cm): 	Mullas praegu (3–9 cm): 
+An estimate from the weather models, not a rain-gauge measurement at the place.	Ilmamudelite hinnang, mitte vihmamõõturi mõõtmine kohapeal.
+Soil moisture and soil temperature are estimates of the weather model, not measurements.	Mulla niiskus ja temperatuur on ilmamudeli hinnangud, mitte mõõtmised.
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details. A wide table slides sideways.	Põldudes, põllu lehel ja Statistikas on käsud menüüs ⋮ üleval paremal. Kastid näitavad ainult väärtust; puudutus näitab üksikasju. Laia tabelit saab külgsuunas lohistada.
+Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Osad on eraldatud joontega; tabelitel on jooned ja neid saab külgsuunas lohistada; allikas on all, üks kord.
+When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kui SEES: teade vihma või tugeva tuule kohta põllul ja iga põllu kohta üks hall, külm, udu, jäävihm või tugevad puhangud.
+You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Saad selle põllu kohta teate, kui järgmiseks 12 tunniks on ennustatud vihma või tugevat tuult, ja teise halla, külma, udu, jäävihma või tugevate puhangute kohta (kontroll iga 3 tunni järel).

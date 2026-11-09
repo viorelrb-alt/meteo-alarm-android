@@ -1,5 +1,8 @@
-Nykyinen versio: v.3.11 · 9.11.2026
+Nykyinen versio: v.3.20 · 9.11.2026
 Ulkoasun / rakenteen parannuksia.
+- Lohkojen ja Tilastojen ruudut näyttävät vain arvon; tiedot näkyvät napautuksella.
+- Kuplat: viivat osioiden välissä, viivalliset taulukot liukuvat sivuttain, lähde alhaalla, kerran.
+- Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.
 - Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
 - ”Tilastot · PDF” -painike lohkojen kartalla ja jokaisen lohkon näkymässä.

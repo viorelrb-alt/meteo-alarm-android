@@ -1,5 +1,8 @@
-Trenutna različica: v.3.11 · 9.11.2026
+Trenutna različica: v.3.20 · 9.11.2026
 Izboljšave videza / zgradbe.
+- Polja v Parcelah in Statistiki kažejo le vrednost; podrobnosti se pokažejo ob dotiku.
+- Oblački: črte med deli, tabele s črtami, ki se premikajo vstran, vir spodaj, enkrat.
+- Ločena obvestila OBVESTILO za vsako parcelo: slana, zmrzal, megla, žled, močni sunki.
 - Kmetijski način: nova polja za Vodo v tleh: Škropljenje, Vodna bilanca, Nevihte, Toplotne vsote, 16 dni.
 - V ZDA v kmetijskem načinu: polja NWS, Suša, Požar, Toča.
 - Gumb »Statistika · PDF« na zemljevidu parcel in na zaslonu vsake parcele.

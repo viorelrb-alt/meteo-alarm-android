@@ -287,6 +287,44 @@ final class Parcels {
 			}
 			sp.edit().putLong(key, at).apply();
 		}
+		info(ctx, p, d, cur, u);
+	}
+
+	/**
+	 * v3.20 (Viorel): the information boxes (frost, freeze, fog, freezing rain, strong wind) found
+	 * for parcel P in the next 25 hours, in a notice of its own for each parcel; each spell once.
+	 * Europe only, as the boxes (in the US the NWS advisories do this).
+	 */
+	static void info(Context ctx, Parcel p, Farm.Data d, int cur, Cities0 u) {
+		if (p.lat > 15 && p.lat < 72 && p.lon < -50 && p.lon > -180) return;
+		if (d.code == null || d.isDay == null) return;
+		int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
+		List<ro.meteoalarm.android.core.Screen.OwnHit> hits = ro.meteoalarm.android.core.Screen.ownHits(d.temp, d.cloud, d.wind, d.gust, d.code, d.isDay, cur, 25, month, "");
+		SharedPreferences sp = prefs(ctx);
+		StringBuilder body = new StringBuilder();
+		SharedPreferences.Editor ed = sp.edit();
+		String today = d.dateOf(cur);
+		for (ro.meteoalarm.android.core.Screen.OwnHit h : hits) {
+			int a = cur + h.a, b = cur + h.b;
+			// Each spell once: the end of the last one told; a spell starting before it is the same one.
+			String key = "pi_" + p.id + "_" + h.key, start = d.time[a], end = d.time[b];
+			String told = sp.getString(key, "");
+			if (told.length() > 0 && start.compareTo(told) <= 0) {
+				if (end.compareTo(told) > 0) ed.putString(key, end);
+				continue;
+			}
+			ed.putString(key, end);
+			String name = ro.meteoalarm.android.core.Screen.ownName(h.key);
+			String when = (d.dateOf(a).equals(today) ? "" : Tr.t("tomorrow ", "mâine ")) + u.clock(d.hourOf(a)) + "–" + u.clock(d.hourOf(Math.min(d.size() - 1, b + 1)));
+			String val = h.key.equals("freeze") || h.key.equals("frost") ? " · " + Tr.t("lowest ", "minima ") + u.deg(h.val)
+					: h.key.equals("wind") ? " · " + Tr.t("gusts ", "rafale ") + u.kmh(h.val) : "";
+			if (body.length() > 0) body.append("\n");
+			body.append(name.substring(0, 1)).append(name.substring(1).toLowerCase()).append(": ").append(when).append(val);
+		}
+		ed.apply();
+		if (body.length() == 0) return;
+		Notifier.post(ctx, 3300 + (int) (p.id & 0xFFF), Tr.t("Information · ", "Informare · ") + p.name, body.toString());
+		Log.i(ctx, "NOTIF", "parcela " + p.name + ": informare " + body.toString().replace('\n', ';'));
 	}
 
 	/** Units of the phone's region for the notices (metric or imperial, 24 or 12 hours). */
@@ -309,6 +347,10 @@ final class Parcels {
 
 		String kmh(double v) {
 			return imp ? Math.round(v * 0.621371) + " mph" : Math.round(v) + " km/h";
+		}
+
+		String deg(double c) {
+			return (imp ? Math.round(c * 9 / 5 + 32) : Math.round(c)) + "°";
 		}
 	}
 }

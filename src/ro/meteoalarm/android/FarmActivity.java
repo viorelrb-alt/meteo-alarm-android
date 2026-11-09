@@ -425,24 +425,22 @@ public final class FarmActivity extends Activity {
 		hb.setCornerRadii(new float[] { r, r, r, r, 0, 0, 0, 0 });
 		h.setBackground(hb);
 		b.addView(h, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		TextView v = text(value, 24, true, ink);
+		// v3.20 (Viorel): only the value in the box; the line under it shows in the bubble.
+		TextView v = text(nb(value), 28, true, ink);
 		v.setGravity(Gravity.CENTER);
-		fitLines(v, w - px(14), 24, 12, 1);
+		fitLines(v, w - px(14), 28, 12, 1);
 		b.addView(v, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
-		v.setGravity(Gravity.CENTER);
-		if (sub != null && sub.length() > 0) {
-			TextView s = text(sub, 11, false, dim);
-			s.setGravity(Gravity.CENTER);
-			s.setPadding(px(4), 0, px(4), px(2));
-			fitLines(s, w - px(12), 11, 9, 2);
-			b.addView(s, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		}
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View x) {
 				bubble(title, value, sub);
 			}
 		});
 		return b;
+	}
+
+	/** A number keeps its unit on the same line (v3.20): the space after a digit does not break. */
+	static String nb(String s) {
+		return s == null ? null : s.replaceAll("(\\d) (?=\\S)", "$1\u00A0");
 	}
 
 	/** A box's bubble: its title, value and line in big text, in the middle of the screen. */
@@ -469,12 +467,14 @@ public final class FarmActivity extends Activity {
 		hb.setCornerRadii(new float[] { r, r, r, r, 0, 0, 0, 0 });
 		h.setBackground(hb);
 		c.addView(h, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		TextView v = text(value, 40, true, ink);
+		int bw = Math.min(getResources().getDisplayMetrics().widthPixels - px(48), px(460));
+		TextView v = text(nb(value), 40, true, ink);
 		v.setGravity(Gravity.CENTER);
 		v.setPadding(px(14), px(14), px(14), 0);
+		fitLines(v, bw - px(32), 40, 16, 1);
 		c.addView(v, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		if (sub != null && sub.length() > 0) {
-			TextView s = text(sub, 20, false, ink);
+			TextView s = text(nb(sub), 20, false, ink);
 			s.setGravity(Gravity.CENTER);
 			s.setPadding(px(16), px(8), px(16), 0);
 			c.addView(s, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -1614,7 +1614,7 @@ public final class FarmActivity extends Activity {
 		double gust = !Double.isNaN(d.cGust) ? d.cGust : h ? d.gust[i] : Double.NaN;
 		double dir = !Double.isNaN(d.cDir) ? d.cDir : h ? d.dir[i] : Double.NaN;
 		double hum = !Double.isNaN(d.cHum) ? d.cHum : h ? d.hum[i] : Double.NaN;
-		if (fetched > 0) status.setText(Tr.t("updated ", "actualizat ") + time(fetched) + " · Open-Meteo");
+		if (fetched > 0) status.setText(Tr.t("updated ", "actualizat ") + time(fetched));
 		String hiLo = di >= 0 ? Tr.t("low ", "min ") + deg(d.dMin[di]) + " · " + Tr.t("high ", "max ") + deg(d.dMax[di]) : "";
 		int sh = h ? Farm.windShift(d, i, 12) : -1;
 		String shift = sh >= 0 ? Tr.t("turns to ", "se întoarce spre ") + dir8(d.dir[sh]) + Tr.t(" around ", " în jurul orei ") + Texts.clock(d.hourOf(sh), clk12)
@@ -1638,7 +1638,9 @@ public final class FarmActivity extends Activity {
 			col.addView(table(new String[] { Tr.t("Hour", "Ora"), Tr.t("Temp.", "Temp."), Tr.t("Rain", "Ploaie"), "mm", Tr.t("Wind", "Vânt") }, hr,
 					new boolean[] { false, true, true, true, true }), wide(6));
 		}
-		col.addView(text(Screen.soilNote(), 13, false, dim), wide(14));
+		// v3.20 (Viorel): the source once, at the bottom, 3 points smaller than the text.
+		col.addView(text(Screen.soilEst(), 16, false, dim), wide(14));
+		col.addView(text(Screen.srcOM(), 13, false, dim), wide(8));
 	}
 
 	/** The parcel's commands in the ⋮ menu (v3.11): statistics, map, alerts, rename, delete. */
@@ -1658,7 +1660,7 @@ public final class FarmActivity extends Activity {
 				showMap(p.id, p.name, p.lat, p.lon, 17, "parcel");
 			}
 		}));
-		it.add(new Item(p.alerts ? Tr.t("Rain / wind alerts: ON", "Alerte ploaie / vânt: PORNITE") : Tr.t("Rain / wind alerts: OFF", "Alerte ploaie / vânt: OPRITE"), new Runnable() {
+		it.add(new Item(p.alerts ? Tr.t("Alerts and information: ON", "Alerte și informări: PORNITE") : Tr.t("Alerts and information: OFF", "Alerte și informări: OPRITE"), new Runnable() {
 			public void run() {
 				p.alerts = !p.alerts;
 				Parcels.put(FarmActivity.this, p);
@@ -1666,8 +1668,8 @@ public final class FarmActivity extends Activity {
 				if (p.alerts) {
 					if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission("android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED)
 						requestPermissions(new String[] { "android.permission.POST_NOTIFICATIONS" }, ASK_NOTIFY);
-					toast(Tr.t("You get a notification when rain or strong wind is forecast for this parcel in the next 12 hours (checked every 3 hours).",
-							"Primești o notificare când se prognozează ploaie sau vânt puternic pe această parcelă în următoarele 12 ore (verificat la 3 ore)."));
+					toast(Tr.t("You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).",
+							"Primești o notificare pentru această parcelă când se prognozează ploaie sau vânt puternic în următoarele 12 ore și una pentru brumă, îngheț, ceață, polei sau rafale puternice (verificat la 3 ore)."));
 				}
 				showParcel(p.id);
 			}
