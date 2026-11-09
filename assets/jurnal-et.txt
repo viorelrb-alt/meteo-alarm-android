@@ -1,5 +1,6 @@
-Praegune versioon: v.3.40 · 9.11.2026
+Praegune versioon: v.3.50 · 9.11.2026
 Kujunduse / ülesehituse parandused.
+- Selgemad mullid: koht pealkirja all, „⌄ rohkem ⌃“ pealkirja kõrval, väiksem allikas; Statistika: koordinaadid ja „Uuendatud“ alumisel real, periood vahetub hüppeta; enne värskendust installiloa kontroll ja Auto Blockeri (Samsung) märkus nupuga seadetesse.
 - Teavitused nagu telefoni Ilm-rakenduses („Koht | Vihm“): vihm või lumi järgmise tunni jooksul ja pärast kella 20 homseks, asula ja põldude kohta; teadet pole enam, kui Open-Meteo jälle vastab.
 - Põllu leht ühendatud statistikaga: üleval paigal olevad praeguse hetke ja perioodi kastid; all 12 tunni ja päev-päevalt tabelid.
 - Iga põllu ruut „Teavitused ja hoiatused“ lülitab sisse kõik selle teavitused, nüüd ka lumi ja põud.

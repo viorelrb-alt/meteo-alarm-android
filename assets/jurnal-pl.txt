@@ -1,5 +1,6 @@
-Obecna wersja: v.3.40 · 9.11.2026
+Obecna wersja: v.3.50 · 9.11.2026
 Ulepszenia wyglądu / struktury.
+- Czytelniejsze dymki: miejsce pod tytułem, „⌄ więcej ⌃” obok tytułu, mniejsze źródło; Statystyka: współrzędne i „Zaktualizowano” w dolnym wierszu, okres zmienia się bez skoku; przed aktualizacją sprawdzenie zgody na instalację i uwaga o Auto Blocker (Samsung) z przyciskiem do ustawień.
 - Powiadomienia jak w aplikacji Pogoda w telefonie („Miejsce | Deszcz”): deszcz lub śnieg w ciągu godziny i po 20:00 na jutro, dla miejscowości i działek; bez powiadomienia, gdy Open-Meteo znów odpowiada.
 - Strona działki połączona ze Statystyką: u góry stałe pola teraz i okresu; pod nimi tabele 12-godzinna i dzień po dniu.
 - Pole „Powiadomienia i ostrzeżenia” przy każdej działce włącza wszystkie jej powiadomienia, teraz też śnieg i suszę.

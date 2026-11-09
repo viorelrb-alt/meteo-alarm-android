@@ -208,7 +208,18 @@ public final class FarmActivity extends Activity {
 	/** The page's title row with RIGHT (v3.31: the PDF button) at its right. */
 	private LinearLayout header(String title, View right) {
 		LinearLayout row = header(title, (List<Item>) null);
-		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, px(52));
+		// v3.50 (Viorel): on the parcel's page the back and PDF buttons 20 % smaller.
+		View back = row.getChildAt(0);
+		back.setLayoutParams(new LinearLayout.LayoutParams(px(42), px(42)));
+		if (back instanceof TextView) ((TextView) back).setMinHeight(0);
+		if (back instanceof TextView) ((TextView) back).setTextSize(19 * TextSize.get(this));
+		if (right instanceof TextView) {
+			TextView rt = (TextView) right;
+			rt.setTextSize(13 * TextSize.get(this));
+			rt.setMinHeight(px(38));
+			rt.setPadding(px(10), px(4), px(10), px(4));
+		}
+		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, px(42));
 		ml.leftMargin = px(10);
 		row.addView(right, ml);
 		return row;
@@ -605,6 +616,12 @@ public final class FarmActivity extends Activity {
 	 * title 19, the rest 18 (texts differ by one point at most).
 	 */
 	private void bubble(String title, String value, String sub) {
+		String period = null;
+		int cut = sub == null ? -1 : sub.indexOf('\u0001');
+		if (cut >= 0) {
+			period = sub.substring(cut + 1);
+			sub = sub.substring(0, cut);
+		}
 		closeOverlay();
 		Log.i(this, "FERMIER", "casetă: " + title);
 		FrameLayout ov = new FrameLayout(this);
@@ -617,7 +634,7 @@ public final class FarmActivity extends Activity {
 		});
 		LinearLayout c = column();
 		c.setBackground(frame(card, 16));
-		c.setPadding(px(2), px(2), px(2), px(16));
+		c.setPadding(px(2), px(2), px(2), px(period != null ? 6 : 16));
 		c.setElevation(px(8));
 		TextView h = text(title.toUpperCase(), 19, true, bandInk);
 		h.setGravity(Gravity.CENTER);
@@ -629,6 +646,15 @@ public final class FarmActivity extends Activity {
 		h.setBackground(hb);
 		c.addView(h, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		int bw = Math.min(getResources().getDisplayMetrics().widthPixels - px(48), px(460));
+		// v3.50 (Viorel): under the title, the place the bubble is about.
+		Parcels.Parcel pl = curId != 0 ? Parcels.get(this, curId) : null;
+		if (pl != null) {
+			TextView where = text(pl.name, 16, false, dim);
+			where.setGravity(Gravity.CENTER);
+			where.setPadding(px(12), px(6), px(12), 0);
+			fitLines(where, bw - px(28), 16, 11, 1);
+			c.addView(where, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		}
 		TextView v = text(nb(value), 18, true, ink);
 		v.setGravity(Gravity.CENTER);
 		v.setPadding(px(14), px(12), px(14), 0);
@@ -639,6 +665,14 @@ public final class FarmActivity extends Activity {
 			s.setGravity(Gravity.CENTER);
 			s.setPadding(px(16), px(6), px(16), 0);
 			c.addView(s, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		}
+		if (period != null) {
+			// At least 3 points smaller, one line (smaller still when it does not fit), near the bottom edge.
+			TextView pe = text(nb(period), 15, false, dim);
+			pe.setGravity(Gravity.CENTER);
+			pe.setPadding(px(12), px(14), px(12), 0);
+			fitLines(pe, bw - px(28), 15, 9, 1);
+			c.addView(pe, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		}
 		FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(bw, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
 		ov.addView(c, cl);
@@ -926,7 +960,8 @@ public final class FarmActivity extends Activity {
 	 * The name and, in landscape, the coordinates on the same line when there is room (v2.80,
 	 * Viorel); else the coordinates under the name.
 	 */
-	private void nameLines(LinearLayout card, Parcels.Parcel p, String extra, View right) {
+	/** v3.50: returns the size (sp) of the coordinates. */
+	private float nameLines(LinearLayout card, Parcels.Parcel p, String extra, View right) {
 		LinearLayout top = new LinearLayout(this);
 		top.setGravity(Gravity.TOP);
 		LinearLayout left = column();
@@ -938,6 +973,7 @@ public final class FarmActivity extends Activity {
 		co.setSingleLine(true);
 		int room = cardInner() - (right != null ? px(40) : 0);
 		boolean same = land() && name.getPaint().measureText(p.name) + px(14) + co.getPaint().measureText(c) <= room;
+		float z = 15;
 		if (same) {
 			LinearLayout row = new LinearLayout(this);
 			row.setGravity(Gravity.BOTTOM);
@@ -948,7 +984,6 @@ public final class FarmActivity extends Activity {
 		} else {
 			left.addView(name);
 			// v3.32: the coordinates on one line, smaller when the card is narrow.
-			float z = 15;
 			Paint cp = new Paint(co.getPaint());
 			float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
 			for (; z > 10; z -= 0.5f) {
@@ -965,6 +1000,7 @@ public final class FarmActivity extends Activity {
 			top.addView(right, rl);
 		}
 		card.addView(top);
+		return z;
 	}
 
 	/** Downloads parcel P's data now (off the main thread), then redraws the list if it is open. */
@@ -1040,11 +1076,11 @@ public final class FarmActivity extends Activity {
 				}
 				String[] names = new String[all.size()];
 				for (int k = 0; k < names.length; k++) names[k] = all.get(k).name;
-				dialog().setTitle(Tr.t("Statistics of which parcel?", "Statistica cărei parcele?")).setItems(names, new android.content.DialogInterface.OnClickListener() {
+				Dlg.show(dialog().setTitle(Tr.t("Statistics of which parcel?", "Statistica cărei parcele?")).setItems(names, new android.content.DialogInterface.OnClickListener() {
 					public void onClick(android.content.DialogInterface d, int which) {
 						openStats(all.get(which).id);
 					}
-				}).setNegativeButton(Tr.t("Cancel", "Renunță"), null).show();
+				}).setNegativeButton(Tr.t("Cancel", "Renunță"), null));
 			}
 		}), sl);
 	}
@@ -1378,7 +1414,7 @@ public final class FarmActivity extends Activity {
 		LinearLayout card = column();
 		card.setBackground(frame(this.card, 14));
 		card.setPadding(px(14), px(10), px(14), px(12));
-		nameLines(card, p, "", pencil(p));
+		float small = nameLines(card, p, "", pencil(p));
 		long f = Parcels.fetched(this, p.id);
 		Farm.Data d = Parcels.data(this, p.id);
 		if (d != null) {
@@ -1388,6 +1424,7 @@ public final class FarmActivity extends Activity {
 				String r = Tr.t("rain ", "ploaie ") + pct(d.prob[i]), s = Tr.t("soil ", "sol ") + soil(d.soilM[i]);
 				String[] lines = stacked ? new String[] { t, w, r, s } : new String[] { t + " · " + w, r + " · " + s };
 				float sp = fitSp(cardInner(), lines) / TextSize.get(this);
+				small = Math.min(small, sp);
 				for (int k = 0; k < lines.length; k++) {
 					TextView tv = text(lines[k], sp, false, ink);
 					tv.setSingleLine(true);
@@ -1401,7 +1438,12 @@ public final class FarmActivity extends Activity {
 		}
 		// v3.32 (Viorel): the notifications are switched from the bell button on the map; the card
 		// keeps only when it was updated (it was too tall in landscape).
-		if (d != null && f > 0) card.addView(text(Tr.t("updated ", "actualizat ") + time(f), 15, false, dim), wide(2));
+		// v3.50 (Viorel): "updated" the smallest text of the card, 1 point under the smallest other one.
+		if (d != null && f > 0) {
+			TextView up = text(Tr.t("updated ", "actualizat ") + time(f), Math.max(9, small - 1), false, dim);
+			up.setSingleLine(true);
+			card.addView(up, wide(2));
+		}
 		card.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
@@ -1506,10 +1548,11 @@ public final class FarmActivity extends Activity {
 		ScrollView sv = new ScrollView(this);
 		sv.addView(list);
 		AlertDialog.Builder d = dialog();
-		d.setTitle(Tr.t("Parcel notifications", "Notificări parcele"));
+		// v3.50 (Viorel): "Select notification", Cancel / OK (OK in every language).
+		d.setTitle(Tr.t("Select notification", "Selectare notificare"));
 		d.setView(sv);
-		d.setNegativeButton(Tr.t("No", "Nu"), null);
-		d.setPositiveButton(Tr.t("Yes", "Da"), new DialogInterface.OnClickListener() {
+		d.setNegativeButton(Tr.t("Cancel", "Anulare"), null);
+		d.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface di, int w) {
 				boolean any = false;
 				StringBuilder log = new StringBuilder();
@@ -1531,7 +1574,7 @@ public final class FarmActivity extends Activity {
 				} else toast(Tr.t("Parcel notifications OFF", "Notificările parcelelor sunt OPRITE"));
 			}
 		});
-		d.show();
+		Dlg.show(d);
 	}
 
 	/** "Edit" (v2.80): the parcels; a tap opens one for editing its name and its place. */
@@ -1878,7 +1921,7 @@ public final class FarmActivity extends Activity {
 				});
 				// No: back to the ticks, as they were.
 				d.setNegativeButton(Tr.t("No", "Nu"), null);
-				d.show();
+				Dlg.show(d);
 			}
 		});
 		label.run();
@@ -1912,6 +1955,8 @@ public final class FarmActivity extends Activity {
 			showList();
 			return;
 		}
+		// v3.50 (Viorel): the same page again (another period, new data): it stays where it was scrolled.
+		boolean again = "parcel".equals(screen) && curId == id;
 		screen = "parcel";
 		curId = id;
 		final Calendar now = Calendar.getInstance();
@@ -1950,6 +1995,8 @@ public final class FarmActivity extends Activity {
 		final boolean tab = TextSize.tablet(this), land = land(), whole = land && !tab;
 		// v3.30 font rule (Viorel): the texts differ by one point at most, the source 3 points smaller.
 		float fz = land || tab ? 1.2f : 1f, tx = 15 * fz;
+		final List<int[]> keep = new java.util.ArrayList<int[]>();
+		if (again) scrolls(root, keep);
 		root.removeAllViews();
 		overlay = null;
 
@@ -1977,13 +2024,14 @@ public final class FarmActivity extends Activity {
 		bx.add(new BoxSpec(Tr.t("Soil hum.", "Umid. sol"), Tr.t("Soil moisture", "Umiditatea solului"), h ? soil(d.soilM[i]) : "–",
 				(h ? soilWord(d.soilM[i]) + " · " : "") + Tr.t("3–9 cm, estimated", "3–9 cm, estimat"), false));
 		bx.add(new BoxSpec(Tr.t("Soil temp.", "Temp. sol"), Tr.t("Soil temperature", "Temperatura solului"), h ? deg(d.soilT[i]) : "–", Tr.t("surface, estimated", "suprafață, estimat"), false));
-		String per = " · " + dateText(from) + " – " + dateText(to);
+		// v3.50 (Viorel): the period on a line of its own at the bottom of the bubble.
+		String per = "\u0001" + dateText(from) + " – " + dateText(to);
 		bx.add(new BoxSpec(Tr.t("Min. / max.", "Min. / max."), Tr.t("Lowest / highest", "Minima / maxima"), s == null ? "–" : deg(s[0]) + " / " + deg(s[1]),
 				s == null ? "" : days.size() + Tr.t(" days", " zile") + per, true));
 		bx.add(new BoxSpec(Tr.t("Rain total", "Ploaie tot."), Tr.t("Rain total", "Ploaie totală"), s == null ? "–" : mm(s[2]),
 				s == null ? "" : Math.round(s[5]) + Tr.t(" days with rain (1 mm+)", " zile cu ploaie (1 mm+)") + per, true));
 		bx.add(new BoxSpec(Tr.t("Max wind", "Vânt max."), Tr.t("Highest wind", "Vânt maxim"), s == null ? "–" : kmh(s[3]),
-				s == null || Double.isNaN(s[6]) ? "" : Tr.t("gusts up to ", "rafale până la ") + kmh(s[6]) + per, true));
+				s == null ? "" : (Double.isNaN(s[6]) ? "" : Tr.t("gusts up to ", "rafale până la ") + kmh(s[6])) + per, true));
 		bx.add(new BoxSpec(Tr.t("Mean soil hum.", "Umid. sol med."), Tr.t("Soil moisture", "Umiditatea solului"), s == null ? "–" : soil(s[4]),
 				s == null ? "" : Tr.t("mean, estimated", "medie, estimată") + per, true));
 		for (int k = 0; k < bx.size(); k++) {
@@ -2001,7 +2049,6 @@ public final class FarmActivity extends Activity {
 		});
 		pdfBtn.setContentDescription(Tr.t("Save as PDF in Downloads", "Salvează PDF în Descărcări"));
 		top.addView(header(p.name, pdfBtn));
-		top.addView(text(coords(p.lat, p.lon), tx, false, dim), wide(4));
 		String period = shortDate(from) + " – " + shortDate(to);
 		top.addView(oneLine(Tr.t("Now", "Acum").toUpperCase() + "  ·  " + Tr.t("Summary", "Rezumat").toUpperCase() + " " + period, tx, contentW()), wide(8));
 		top.addView(boxRow(bx), wide(6));
@@ -2058,7 +2105,7 @@ public final class FarmActivity extends Activity {
 			sv.addView(col);
 			LinearLayout page = column();
 			page.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
-			addStatus(page, f, tx);
+			addStatus(page, f, tx, p);
 			root.addView(page, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		} else {
 			LinearLayout body = column();
@@ -2102,19 +2149,64 @@ public final class FarmActivity extends Activity {
 				sv.addView(tb);
 				body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 			}
-			addStatus(body, f, tx);
+			addStatus(body, f, tx, p);
 			root.addView(body, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		}
+		if (!keep.isEmpty()) root.post(new Runnable() {
+			public void run() {
+				List<View> views = new java.util.ArrayList<View>();
+				scrollViews(root, views);
+				for (int k = 0; k < views.size() && k < keep.size(); k++) views.get(k).scrollTo(keep.get(k)[0], keep.get(k)[1]);
+			}
+		});
 		if (d == null || System.currentTimeMillis() - f > FRESH_MS) download(p);
 	}
 
+	/** The scroll positions of the scrolling views under V, in order. */
+	private static void scrolls(View v, List<int[]> out) {
+		List<View> views = new java.util.ArrayList<View>();
+		scrollViews(v, views);
+		for (View x : views) out.add(new int[] { x.getScrollX(), x.getScrollY() });
+	}
+
+	private static void scrollViews(View v, List<View> out) {
+		if (v instanceof ScrollView || v instanceof android.widget.HorizontalScrollView) out.add(v);
+		if (v instanceof ViewGroup) {
+			ViewGroup g = (ViewGroup) v;
+			for (int k = 0; k < g.getChildCount(); k++) scrollViews(g.getChildAt(k), out);
+		}
+	}
+
 	/** v3.33 (Viorel): a fixed line at the bottom of the parcel page saying when the data were updated. */
-	private void addStatus(LinearLayout page, long f, float tx) {
+	private void addStatus(LinearLayout page, long f, float tx, Parcels.Parcel p) {
 		page.addView(rule(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, px(1))));
+		// v3.50 (Viorel): the coordinates at the left, "Updated" at the right, as big as the source
+		// at most; "Updated" smaller when the two would touch.
+		float sz = tx - 3;
+		LinearLayout line = new LinearLayout(this);
+		line.setGravity(Gravity.CENTER_VERTICAL);
+		line.setPadding(px(16), px(6), px(16), px(8));
+		String c = coords(p.lat, p.lon);
+		TextView co = text(c, sz, false, dim);
+		co.setSingleLine(true);
+		line.addView(co, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		String u = Tr.t("updated ", "actualizat ");
-		status = text(f > 0 ? u.substring(0, 1).toUpperCase() + u.substring(1) + time(f) : "", tx, false, dim);
-		status.setPadding(px(16), px(6), px(16), px(8));
-		page.addView(status, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		String up = f > 0 ? u.substring(0, 1).toUpperCase() + u.substring(1) + time(f) : "";
+		float us = sz;
+		Paint pc = new Paint(co.getPaint()), pu = new Paint(co.getPaint());
+		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+		int room = getResources().getDisplayMetrics().widthPixels - px(32) - px(12);
+		for (; us > 8; us -= 0.5f) {
+			pu.setTextSize(us * scale);
+			if (pc.measureText(c) + pu.measureText(up) <= room) break;
+		}
+		status = text(up, us, false, dim);
+		status.setGravity(Gravity.RIGHT | Gravity.CENTER_VERTICAL);
+		status.setMaxLines(2);
+		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		sl.leftMargin = px(12);
+		line.addView(status, sl);
+		page.addView(line, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 	}
 
 	/** "07.11" (or "11/7") of a date "2026-11-07". */
@@ -2206,7 +2298,7 @@ public final class FarmActivity extends Activity {
 				pdf(p, pd);
 			}
 		});
-		d.show();
+		Dlg.show(d);
 	}
 
 	/** Off the main thread: the parcel's data; the page again when they come. */
@@ -2232,9 +2324,12 @@ public final class FarmActivity extends Activity {
 						}
 						// Viorel: say that the data come later and are notified.
 						Parcels.pending(FarmActivity.this, p.id);
-						if (status != null) status.setText(Tr.t("Open-Meteo is not answering now (", "Open-Meteo nu răspunde acum (") + Fetcher.reason(fe, !Tr.ro())
+						String msg = Tr.t("Open-Meteo is not answering now (", "Open-Meteo nu răspunde acum (") + Fetcher.reason(fe, !Tr.ro())
 								+ Tr.t("). When access is back, the app downloads the parcel's data by itself.",
-										"). Când accesul revine, aplicația descarcă singură datele parcelei."));
+										"). Când accesul revine, aplicația descarcă singură datele parcelei.");
+						// v3.50: the bottom line is short; the whole message also as a toast.
+						if (status != null) status.setText(msg);
+						toast(msg);
 					}
 				});
 			}
@@ -2257,7 +2352,7 @@ public final class FarmActivity extends Activity {
 			}
 		});
 		d.setNegativeButton(Tr.t("Cancel", "Anulează"), null);
-		d.show();
+		Dlg.show(d);
 	}
 
 	private void pick(final boolean start, String oldest, String today, final long id) {
@@ -2276,7 +2371,7 @@ public final class FarmActivity extends Activity {
 		}, Integer.parseInt(cur.substring(0, 4)), Integer.parseInt(cur.substring(5, 7)) - 1, Integer.parseInt(cur.substring(8, 10)));
 		d.getDatePicker().setMinDate(millis(oldest));
 		d.getDatePicker().setMaxDate(millis(today) + 86400000L - 1);
-		d.show();
+		Dlg.show(d);
 	}
 
 	private static long millis(String iso) {
@@ -2344,7 +2439,7 @@ public final class FarmActivity extends Activity {
 			}
 		});
 		d.setNegativeButton("OK", null);
-		d.show();
+		Dlg.show(d);
 	}
 
 	/** The PDF's pages: the title, the boxes in rows of 6 squares, the table of 12 hours, the days. */

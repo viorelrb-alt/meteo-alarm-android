@@ -815,7 +815,7 @@ Screen on	Екран включен
 Automatic location	Автоматично местоположение
 Boxes in ☰	Кутийки в ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Кутийка с X: функцията е включена; празна: изключена. Докосване я превключва и съобщение го казва.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Фермерски режим: камбанката под бутона GPS на картата „Парцели“ отваря „Известия за парцели“; парцел с X получава всичките си известия: дъжд или сняг през следващия час, след 20 ч. дъжд или сняг утре, вятър, сняг, слана, замръзване, мъгла, поледица, суша (суха почва, без дъжд 7 дни).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Фермерски режим: камбанката под бутона GPS на картата „Парцели“ отваря „Избор на известие“; парцел с X получава всичките си известия: дъжд или сняг през следващия час, след 20 ч. дъжд или сняг утре, вятър, сняг, слана, замръзване, мъгла, поледица, суша (суха почва, без дъжд 7 дни).
 No parcel saved yet.	Още няма запазен парцел.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Известията са ВКЛЮЧЕНИ за отметнатите парцели: дъжд, вятър, сняг, слана, замръзване, мъгла, поледица, суша.
 Parcel notifications OFF	Известията за парцели са ИЗКЛЮЧЕНИ
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Фермерските данни (вятър по часове, влажност, почва) идват само от Open-Meteo, който сега не отговаря. Когато достъпът се върне, приложението ги изтегля само.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Данните за последните 24 часа се изтеглят; докоснете отново след малко. Ако Open-Meteo не отговаря, те идват сами по-късно.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Дъжд или сняг през следващия час, след 20 ч. дъжд или сняг утре, нови предупреждения и земетресения, всяко само веднъж.
+Auto location	Авто местоположение
+Select notification	Избор на известие
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm няма разрешение да инсталира актуализации. Докоснете Отвори настройките, включете Разрешаване от този източник, после се върнете и докоснете отново Актуализирай.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker трябва да е изключен, иначе телефонът отказва актуализацията. Приложението не може да види дали е включен. Докоснете Настройки, за да отворите страницата му, изключете го, после се върнете и докоснете Продължи. Можете да го включите отново след актуализацията.
+Continue	Продължи
+Don't show again	Не показвай повече
+Settings	Настройки
+Security	Сигурност
+more	още
+Before an update	Преди актуализация
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Приложението първо проверява дали може да инсталира актуализации (иначе отваря тази настройка). На Samsung напомня да изключите Auto Blocker; Настройки отваря страницата му.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Под заглавието – мястото; ⌄ още ⌃ до заглавието превърта надолу или нагоре. Разделите са отделени с линии; таблиците се плъзгат встрани; източникът е долу, веднъж.

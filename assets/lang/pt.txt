@@ -815,7 +815,7 @@ Screen on	Ecrã ligado
 Automatic location	Localização automática
 Boxes in ☰	Caixas em ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Uma caixa com X: a função está ligada; vazia: desligada. Um toque muda-a e uma mensagem di-lo.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modo agricultor: o sino sob o botão GPS do mapa Parcelas abre Notificações das parcelas; uma parcela com X recebe todas as suas notificações: chuva ou neve na próxima hora, depois das 20 h chuva ou neve para amanhã, vento, neve, geada branca, geada, nevoeiro, chuva gelada, seca (solo seco, 7 dias sem chuva).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modo agricultor: o sino sob o botão GPS do mapa Parcelas abre Selecionar notificação; uma parcela com X recebe todas as suas notificações: chuva ou neve na próxima hora, depois das 20 h chuva ou neve para amanhã, vento, neve, geada branca, geada, nevoeiro, chuva gelada, seca (solo seco, 7 dias sem chuva).
 No parcel saved yet.	Ainda não há parcelas guardadas.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notificações LIGADAS para as parcelas assinaladas: chuva, vento, neve, geada branca, geada, nevoeiro, chuva gelada, seca.
 Parcel notifications OFF	Notificações das parcelas DESLIGADAS
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Os dados do agricultor (vento horário, humidade, solo) vêm só do Open-Meteo, que agora não responde. Quando o acesso voltar, a aplicação descarrega-os sozinha.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Os dados das últimas 24 horas estão a ser descarregados; toque de novo daqui a pouco. Se o Open-Meteo não responder, chegam sozinhos mais tarde.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Chuva ou neve na próxima hora, depois das 20 h chuva ou neve para amanhã, novos avisos e sismos, cada um só uma vez.
+Auto location	Localização auto
+Select notification	Selecionar notificação
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	O Meteo Alarm não tem permissão para instalar atualizações. Toque em Abrir definições, ative Permitir desta fonte, volte e toque de novo em Atualizar.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: o Auto Blocker tem de estar desligado, senão o telemóvel recusa a atualização. A aplicação não consegue ver se está ligado. Toque em Definições para abrir a página dele, desligue-o, volte e toque em Continuar. Pode voltar a ligá-lo depois da atualização.
+Continue	Continuar
+Don't show again	Não mostrar de novo
+Settings	Definições
+Security	Segurança
+more	mais
+Before an update	Antes de uma atualização
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	A aplicação verifica primeiro se pode instalar atualizações (senão abre essa definição). Na Samsung lembra de desligar o Auto Blocker; Definições abre a página dele.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Sob o título, o local; ⌄ mais ⌃ junto ao título desloca para baixo ou para cima. As secções são separadas por linhas; as tabelas deslizam para o lado; a fonte está em baixo, uma vez.

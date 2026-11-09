@@ -1,5 +1,6 @@
-Nuvarande version: v.3.40 · 9.11.2026
+Nuvarande version: v.3.50 · 9.11.2026
 Förbättringar av design / struktur.
+- Tydligare bubblor: platsen under titeln, ”⌄ mer ⌃” vid titeln, mindre källa; Statistik: koordinater och ”Uppdaterad” på nedersta raden, perioden byts utan hopp; före en uppdatering kontroll av installationsbehörigheten och en notis om Auto Blocker (Samsung) med knapp till inställningarna.
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - Skiftets sida sammanslagen med Statistik: överst fasta rutor för nu och för perioden; under dem tabellerna för 12 timmar och dag för dag.
 - Rutan ”Aviseringar och varningar” på varje skifte slår på alla dess aviseringar, nu även snö och torka.

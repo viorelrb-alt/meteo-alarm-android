@@ -815,7 +815,7 @@ Screen on	Skrin mixgħul
 Automatic location	Post awtomatiku
 Boxes in ☰	Kaxxi fil-☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Kaxxa b’X: il-funzjoni mixgħula; vojta: mitfija. Mess jaqlibha u messaġġ jgħid hekk.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità bidwi: il-qanpiena taħt il-buttuna GPS fuq il-mappa tal-Għelieqi tiftaħ in-Notifiki tal-għelieqi; għalqa b’X tirċievi n-notifiki kollha tagħha: xita jew borra fis-siegħa li ġejja, wara t-8 ta' filgħaxija xita jew borra għada, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa (ħamrija niexfa, 7 ijiem mingħajr xita).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità bidwi: il-qanpiena taħt il-buttuna GPS fuq il-mappa tal-Għelieqi tiftaħ in-Agħżel notifika; għalqa b’X tirċievi n-notifiki kollha tagħha: xita jew borra fis-siegħa li ġejja, wara t-8 ta' filgħaxija xita jew borra għada, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa (ħamrija niexfa, 7 ijiem mingħajr xita).
 No parcel saved yet.	L-ebda għalqa ma ġiet issejvjata s’issa.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifiki MIXGĦULA għall-għelieqi mmarkati: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa.
 Parcel notifications OFF	Notifiki tal-għelieqi MITFIJA
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Id-data tal-bdiewa (riħ kull siegħa, umidità, ħamrija) tiġi biss minn Open-Meteo, li issa mhux qed iwieġeb. Meta l-aċċess jerġa' lura, l-app tniżżilha waħedha.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Id-data tal-aħħar 24 siegħa qed titniżżel; erġa' agħfas ftit wara. Jekk Open-Meteo ma jwieġibx, tasal waħedha aktar tard.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Xita jew borra fis-siegħa li ġejja, wara t-8 ta' filgħaxija xita jew borra għada, twissijiet ġodda u terremoti, kull wieħed darba biss.
+Auto location	Post awtomatiku
+Select notification	Agħżel notifika
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm m'għandux permess jinstalla aġġornamenti. Agħfas Iftaħ is-settings, ixgħel Ippermetti minn dan is-sors, imbagħad erġa' lura u agħfas Aġġorna mill-ġdid.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker irid ikun mitfi, inkella t-telefon jirrifjuta l-aġġornament. L-app ma tistax tara jekk huwiex mixgħul. Agħfas Settings biex tiftaħ il-paġna tiegħu, itfih, erġa' lura u agħfas Kompli. Tista' terġa' tixgħelu wara l-aġġornament.
+Continue	Kompli
+Don't show again	Terġax turi
+Settings	Settings
+Security	Sigurtà
+more	aktar
+Before an update	Qabel aġġornament
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	L-app l-ewwel tiċċekkja jekk tistax tinstalla aġġornamenti (inkella tiftaħ dak is-setting). Fuq Samsung tfakkrek titfi Auto Blocker; Settings tiftaħ il-paġna tiegħu.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Taħt it-titlu, il-post; ⌄ aktar ⌃ ħdejn it-titlu jiskrollja 'l isfel jew 'il fuq. Is-sezzjonijiet maqsuma b'linji; it-tabelli jiżżerżqu lejn il-ġenb; is-sors isfel, darba.

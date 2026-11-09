@@ -1,5 +1,6 @@
-Versiunea curentă: v.3.40 · 9.11.2026
+Versiunea curentă: v.3.50 · 9.11.2026
 Îmbunătățiri de design / structură.
+- Bule mai clare: locul sub titlu, „⌄ mai multe ⌃” lângă titlu, sursa mai mică; Statistică: coordonatele și „Actualizat” pe linia de jos, perioada se schimbă fără salt; înainte de actualizare, verificarea permisiunii de instalare și nota Auto Blocker (Samsung) cu buton spre setări.
 - Notificări ca în aplicația Vreme a telefonului („Loc | Ploaie”): ploaie sau ninsoare în următoarea oră și, după ora 20, pentru mâine, pentru localitate și parcele; fără notificare când Open-Meteo răspunde din nou.
 - Pagina parcelei unită cu Statistica: sus casetele de acum și ale perioadei, fixe; dedesubt tabelele pe 12 ore și zi cu zi.
 - Caseta „Notificări și avertizări” pe fiecare parcelă pornește toate notificările ei, acum și ninsoare și secetă.

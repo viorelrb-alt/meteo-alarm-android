@@ -815,7 +815,7 @@ Screen on	Scherm aan
 Automatic location	Automatische locatie
 Boxes in ☰	Vakjes in ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Een vakje met X: de functie staat aan; leeg: uit. Een tik schakelt om en een bericht zegt het.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Boerenmodus: de bel onder de GPS-knop op de kaart Percelen opent Perceelmeldingen; een perceel met X krijgt al zijn meldingen: regen of sneeuw binnen het uur, na 20 uur regen of sneeuw voor morgen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte (droge bodem, 7 dagen geen regen).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Boerenmodus: de bel onder de GPS-knop op de kaart Percelen opent Melding kiezen; een perceel met X krijgt al zijn meldingen: regen of sneeuw binnen het uur, na 20 uur regen of sneeuw voor morgen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte (droge bodem, 7 dagen geen regen).
 No parcel saved yet.	Nog geen perceel opgeslagen.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Meldingen AAN voor de aangevinkte percelen: regen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte.
 Parcel notifications OFF	Perceelmeldingen UIT
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	De boerengegevens (wind per uur, vochtigheid, bodem) komen alleen van Open-Meteo, dat nu niet antwoordt. Als de toegang terug is, laadt de app ze zelf.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	De gegevens van de laatste 24 uur worden geladen; tik zo meteen opnieuw. Als Open-Meteo niet antwoordt, komen ze later vanzelf.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Regen of sneeuw binnen het uur, na 20 uur regen of sneeuw voor morgen, nieuwe waarschuwingen en aardbevingen, elk maar één keer.
+Auto location	Auto-locatie
+Select notification	Melding kiezen
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm mag geen updates installeren. Tik op Instellingen openen, zet Toestaan van deze bron aan, kom terug en tik opnieuw op Bijwerken.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker moet uit staan, anders weigert de telefoon de update. De app kan niet zien of hij aan staat. Tik op Instellingen om zijn pagina te openen, zet hem uit, kom terug en tik op Doorgaan. Na de update kun je hem weer aanzetten.
+Continue	Doorgaan
+Don't show again	Niet meer tonen
+Settings	Instellingen
+Security	Beveiliging
+more	meer
+Before an update	Voor een update
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	De app controleert eerst of hij updates mag installeren (anders opent hij die instelling). Op Samsung herinnert hij je eraan Auto Blocker uit te zetten; Instellingen opent zijn pagina.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Onder de titel de plaats; ⌄ meer ⌃ naast de titel scrolt omlaag of omhoog. Delen zijn gescheiden door lijnen; tabellen schuiven opzij; de bron staat onderaan, één keer.

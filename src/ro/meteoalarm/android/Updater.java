@@ -295,6 +295,11 @@ final class Updater {
 				download(r);
 			}
 		}, close());
+		if (!autoBlockerPhone()) sheet.setLeft(Tr.t("Security", "Securitate"), new Runnable() {
+			public void run() {
+				openAutoBlocker(a);
+			}
+		});
 	}
 
 	private static final int TRIES = 5;
@@ -334,6 +339,42 @@ final class Updater {
 	 */
 	private void download(final Release r) {
 		final String t = "v" + r.version;
+		// v3.50 (Viorel): before an update, what would stop the phone from installing it.
+		if (!canInstall()) {
+			Log.i(a, "UPDATE", "aplicația nu are voie să instaleze aplicații: deschid setarea");
+			sheet.show(t, Tr.t("Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.",
+					"Meteo Alarm nu are voie să instaleze actualizări. Apasă Deschide setările, pornește Permite din această sursă, apoi revino și apasă din nou Actualizează."),
+					Tr.t("Open settings", "Deschide setările"), new Runnable() {
+						public void run() {
+							sheet.hide();
+							openInstallSetting();
+						}
+					}, close());
+			return;
+		}
+		if (autoBlockerPhone() && !prefs().getBoolean("abSkip", false) && !r.version.equals(abSeen)) {
+			abSeen = r.version;
+			Log.i(a, "UPDATE", "telefon Samsung cu Auto Blocker: arăt nota înainte de descărcare");
+			sheet.show(t, Tr.t("Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.",
+					"Samsung: Auto Blocker trebuie să fie oprit, altfel telefonul refuză actualizarea. Aplicația nu poate vedea dacă e pornit. Apasă Setări ca să-i deschizi pagina, oprește-l, apoi revino și apasă Continuă. Îl poți porni din nou după actualizare."),
+					Tr.t("Continue", "Continuă"), new Runnable() {
+						public void run() {
+							download(r);
+						}
+					}, Tr.t("Don't show again", "Nu mai afișa"), new Runnable() {
+						public void run() {
+							prefs().edit().putBoolean("abSkip", true).apply();
+							Log.i(a, "UPDATE", "nota Auto Blocker: nu mai afișa");
+							download(r);
+						}
+					});
+			sheet.setLeft(Tr.t("Settings", "Setări"), new Runnable() {
+				public void run() {
+					openAutoBlocker(a);
+				}
+			});
+			return;
+		}
 		if (NetJob.kind(a) == 0) {
 			Log.i(a, "UPDATE", "descărcare oprită: fără conexiune la internet");
 			sheet.show(t, noNet(), null, null, Tr.t("Close", "Închide"));
@@ -471,6 +512,72 @@ final class Updater {
 			if (r.size > 0 && f.length() != r.size) throw new Exception("size " + f.length() + " != " + r.size);
 		} finally {
 			c.disconnect();
+		}
+	}
+
+	/** The version whose Auto Blocker note was shown in this window (shown once per update). */
+	private String abSeen;
+
+	/** v3.50: may the app install packages (Android 8+: "Install unknown apps" for this app)? */
+	private boolean canInstall() {
+		if (android.os.Build.VERSION.SDK_INT < 26) return true;
+		try {
+			Object ok = a.getPackageManager().getClass().getMethod("canRequestPackageInstalls").invoke(a.getPackageManager());
+			return !(ok instanceof Boolean) || (Boolean) ok;
+		} catch (Exception e) {
+			return true;
+		}
+	}
+
+	/** The phone's "Install unknown apps" page for this app. */
+	private void openInstallSetting() {
+		Intent i = new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", android.net.Uri.parse("package:" + a.getPackageName()));
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		try {
+			a.startActivity(i);
+		} catch (Exception e) {
+			open(a, new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS), "securitate");
+		}
+	}
+
+	/** A Samsung phone with One UI 6 or newer (Android 14+), where Auto Blocker exists. */
+	static boolean autoBlockerPhone() {
+		return "samsung".equalsIgnoreCase(android.os.Build.MANUFACTURER) && android.os.Build.VERSION.SDK_INT >= 34;
+	}
+
+	/**
+	 * v3.50 (Viorel): Auto Blocker's own page when the phone opens it, else Security and privacy, else
+	 * the settings; on other phones Play Protect, else the security settings. Each try is logged.
+	 */
+	static void openAutoBlocker(Activity a) {
+		java.util.List<Intent> tries = new java.util.ArrayList<Intent>();
+		if ("samsung".equalsIgnoreCase(android.os.Build.MANUFACTURER)) {
+			tries.add(new Intent("com.samsung.android.settings.AUTO_BLOCKER"));
+			tries.add(new Intent("com.samsung.settings.AUTO_BLOCKER_SETTINGS"));
+			tries.add(new Intent().setClassName("com.android.settings", "com.samsung.android.settings.privacy.AutoBlockerSettingsActivity"));
+			tries.add(new Intent().setClassName("com.android.settings", "com.samsung.android.settings.autoblocker.AutoBlockerSettingsActivity"));
+			tries.add(new Intent("com.samsung.android.settings.SECURITY_AND_PRIVACY"));
+		} else {
+			tries.add(new Intent().setClassName("com.google.android.gms", "com.google.android.gms.security.settings.VerifyAppsSettingsActivity"));
+		}
+		tries.add(new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS));
+		tries.add(new Intent(android.provider.Settings.ACTION_SETTINGS));
+		for (Intent i : tries) if (open(a, i, String.valueOf(i.getComponent() != null ? i.getComponent().getClassName() : i.getAction()))) return;
+	}
+
+	private static boolean open(Activity a, Intent i, String what) {
+		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		try {
+			if (i.resolveActivity(a.getPackageManager()) == null) {
+				Log.i(a, "UPDATE", "setări: " + what + " nu există pe acest telefon");
+				return false;
+			}
+			a.startActivity(i);
+			Log.i(a, "UPDATE", "setări deschise: " + what);
+			return true;
+		} catch (Exception e) {
+			Log.i(a, "UPDATE", "setări: " + what + " nu s-a putut deschide (" + e + ")");
+			return false;
 		}
 	}
 

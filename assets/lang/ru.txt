@@ -749,7 +749,7 @@ Screen on	Экран включён
 Automatic location	Автоматическое местоположение
 Boxes in ☰	Флажки в ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Флажок с X: функция включена; пустой: выключена. Касание переключает, и сообщение говорит об этом.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим фермера: колокольчик под кнопкой GPS на карте Участков открывает Уведомления участков; участок с X получает все свои уведомления: дождь или снег в ближайший час, после 20:00 дождь или снег завтра, ветер, снег, иней, заморозок, туман, ледяной дождь, засуха (сухая почва, 7 дней без дождя).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим фермера: колокольчик под кнопкой GPS на карте Участков открывает Выбор уведомлений; участок с X получает все свои уведомления: дождь или снег в ближайший час, после 20:00 дождь или снег завтра, ветер, снег, иней, заморозок, туман, ледяной дождь, засуха (сухая почва, 7 дней без дождя).
 No parcel saved yet.	Пока нет сохранённых участков.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Уведомления ВКЛЮЧЕНЫ для отмеченных участков: дождь, ветер, снег, иней, заморозок, туман, ледяной дождь, засуха.
 Parcel notifications OFF	Уведомления участков ВЫКЛЮЧЕНЫ
@@ -764,3 +764,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Данные для фермера (ветер по часам, влажность, почва) приходят только от Open-Meteo, который сейчас не отвечает. Когда доступ вернётся, приложение само их загрузит.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Данные за последние 24 часа загружаются; нажмите ещё раз через минуту. Если Open-Meteo не отвечает, они придут сами позже.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Дождь или снег в ближайший час, после 20:00 дождь или снег завтра, новые предупреждения и землетрясения, каждое только один раз.
+Auto location	Автоопределение места
+Select notification	Выбор уведомлений
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm не разрешено устанавливать обновления. Нажмите Открыть настройки, включите Разрешить из этого источника, затем вернитесь и снова нажмите Обновить.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker должен быть выключен, иначе телефон откажет в обновлении. Приложение не видит, включён ли он. Нажмите Настройки, чтобы открыть его страницу, выключите его, вернитесь и нажмите Продолжить. После обновления его можно снова включить.
+Continue	Продолжить
+Don't show again	Больше не показывать
+Settings	Настройки
+Security	Безопасность
+more	ещё
+Before an update	Перед обновлением
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Приложение сначала проверяет, может ли оно устанавливать обновления (иначе открывает эту настройку). На Samsung напоминает выключить Auto Blocker; Настройки открывают его страницу.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Под заголовком — место; ⌄ ещё ⌃ рядом с заголовком прокручивает вниз или вверх. Разделы отделены линиями; таблицы сдвигаются вбок; источник внизу, один раз.

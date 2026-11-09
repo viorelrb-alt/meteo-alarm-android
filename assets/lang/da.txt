@@ -815,7 +815,7 @@ Screen on	Skærm tændt
 Automatic location	Automatisk placering
 Boxes in ☰	Felter i ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Et felt med X: funktionen er slået til; tomt: slået fra. Et tryk skifter, og en besked siger det.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Landmandstilstand: klokken under GPS-knappen på kortet Marker åbner Notifikationer for marker; en mark med X får alle sine notifikationer: regn eller sne inden for en time, efter kl. 20 regn eller sne i morgen, vind, sne, rimfrost, frost, tåge, isslag, tørke (tør jord, 7 dage uden regn).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Landmandstilstand: klokken under GPS-knappen på kortet Marker åbner Vælg notifikation; en mark med X får alle sine notifikationer: regn eller sne inden for en time, efter kl. 20 regn eller sne i morgen, vind, sne, rimfrost, frost, tåge, isslag, tørke (tør jord, 7 dage uden regn).
 No parcel saved yet.	Ingen mark gemt endnu.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifikationer TIL for de afkrydsede marker: regn, vind, sne, rimfrost, frost, tåge, isslag, tørke.
 Parcel notifications OFF	Notifikationer for marker er FRA
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Landmandsdata (vind time for time, fugt, jord) kommer kun fra Open-Meteo, som ikke svarer nu. Når adgangen er tilbage, henter appen dem selv.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Data for de sidste 24 timer hentes; tryk igen om lidt. Hvis Open-Meteo ikke svarer, kommer de selv senere.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Regn eller sne inden for en time, efter kl. 20 regn eller sne i morgen, nye varsler og jordskælv, hver kun én gang.
+Auto location	Auto-placering
+Select notification	Vælg notifikation
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm må ikke installere opdateringer. Tryk på Åbn indstillinger, slå Tillad fra denne kilde til, kom tilbage og tryk på Opdater igen.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker skal være slået fra, ellers afviser telefonen opdateringen. Appen kan ikke se, om den er slået til. Tryk på Indstillinger for at åbne dens side, slå den fra, kom tilbage og tryk på Fortsæt. Du kan slå den til igen efter opdateringen.
+Continue	Fortsæt
+Don't show again	Vis ikke igen
+Settings	Indstillinger
+Security	Sikkerhed
+more	mere
+Before an update	Før en opdatering
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Appen tjekker først, at den må installere opdateringer (ellers åbner den indstillingen). På Samsung minder den dig om at slå Auto Blocker fra; Indstillinger åbner dens side.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Under titlen stedet; ⌄ mere ⌃ ved titlen ruller ned eller op. Afsnit adskilles af linjer; tabeller glider til siden; kilden står nederst, én gang.

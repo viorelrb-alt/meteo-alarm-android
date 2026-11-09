@@ -815,7 +815,7 @@ Screen on	Ekrāns ieslēgts
 Automatic location	Automātiska atrašanās vieta
 Boxes in ☰	Rūtiņas ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Rūtiņa ar X: funkcija ieslēgta; tukša: izslēgta. Pieskāriens to pārslēdz, un ziņa to pasaka.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Lauksaimnieka režīms: zvaniņš zem GPS pogas Lauku kartē atver Lauku paziņojumus; lauks ar X saņem visus savus paziņojumus: lietus vai sniegs nākamās stundas laikā, pēc plkst. 20 rītdienas lietus vai sniegs, vējš, sniegs, sarma, sals, migla, apledojums, sausums (sausa augsne, 7 dienas bez lietus).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Lauksaimnieka režīms: zvaniņš zem GPS pogas Lauku kartē atver „Izvēlēties paziņojumu“; lauks ar X saņem visus savus paziņojumus: lietus vai sniegs nākamās stundas laikā, pēc plkst. 20 rītdienas lietus vai sniegs, vējš, sniegs, sarma, sals, migla, apledojums, sausums (sausa augsne, 7 dienas bez lietus).
 No parcel saved yet.	Vēl nav saglabāts neviens lauks.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Paziņojumi IESLĒGTI atzīmētajiem laukiem: lietus, vējš, sniegs, sarma, sals, migla, apledojums, sausums.
 Parcel notifications OFF	Lauku paziņojumi IZSLĒGTI
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Zemnieka dati (vējš pa stundām, mitrums, augsne) nāk tikai no Open-Meteo, kas tagad neatbild. Kad piekļuve atgriezīsies, lietotne tos lejupielādēs pati.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Pēdējo 24 stundu dati tiek lejupielādēti; pēc brīža pieskarieties vēlreiz. Ja Open-Meteo neatbild, tie pienāks paši vēlāk.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Lietus vai sniegs nākamās stundas laikā, pēc plkst. 20 rītdienas lietus vai sniegs, jauni brīdinājumi un zemestrīces, katrs tikai vienreiz.
+Auto location	Auto atrašanās vieta
+Select notification	Izvēlēties paziņojumu
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm nav atļauts instalēt atjauninājumus. Pieskarieties Atvērt iestatījumus, ieslēdziet Atļaut no šī avota, tad atgriezieties un vēlreiz pieskarieties Atjaunināt.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker jābūt izslēgtam, citādi tālrunis atteiks atjauninājumu. Lietotne nevar redzēt, vai tas ir ieslēgts. Pieskarieties Iestatījumi, lai atvērtu tā lapu, izslēdziet to, atgriezieties un pieskarieties Turpināt. Pēc atjaunināšanas varat to atkal ieslēgt.
+Continue	Turpināt
+Don't show again	Vairs nerādīt
+Settings	Iestatījumi
+Security	Drošība
+more	vairāk
+Before an update	Pirms atjaunināšanas
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Lietotne vispirms pārbauda, vai tai ir atļauts instalēt atjauninājumus (citādi atver šo iestatījumu). Samsung tālrunī atgādina izslēgt Auto Blocker; Iestatījumi atver tā lapu.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Zem virsraksta vieta; ⌄ vairāk ⌃ blakus virsrakstam ritina uz leju vai augšu. Sadaļas atdala līnijas; tabulas slīd uz sāniem; avots ir apakšā, vienreiz.

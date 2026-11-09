@@ -815,7 +815,7 @@ Screen on	Képernyő bekapcsolva
 Automatic location	Automatikus helymeghatározás
 Boxes in ☰	Négyzetek a ☰ menüben
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	X-es négyzet: a funkció be van kapcsolva; üres: ki. Koppintásra vált, és egy üzenet jelzi.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Gazda mód: a Parcellák térképén a GPS gomb alatti csengő megnyitja a Parcella-értesítéseket; az X-es parcella minden értesítést megkap: eső vagy hó a következő órában, 20 óra után holnapi eső vagy hó, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napig nincs eső).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Gazda mód: a Parcellák térképén a GPS gomb alatti csengő megnyitja a Értesítés kiválasztásaet; az X-es parcella minden értesítést megkap: eső vagy hó a következő órában, 20 óra után holnapi eső vagy hó, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napig nincs eső).
 No parcel saved yet.	Még nincs mentett parcella.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Értesítések BEKAPCSOLVA a bejelölt parcellákra: eső, szél, hó, dér, fagy, köd, ónos eső, aszály.
 Parcel notifications OFF	A parcella-értesítések KIKAPCSOLVA
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	A gazdaadatok (óránkénti szél, páratartalom, talaj) csak az Open-Meteótól jönnek, amely most nem válaszol. Amikor a hozzáférés visszatér, az alkalmazás magától letölti őket.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Az utolsó 24 óra adatai töltődnek; koppints újra egy pillanat múlva. Ha az Open-Meteo nem válaszol, később maguktól megjönnek.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Eső vagy hó a következő órában, 20 óra után holnapi eső vagy hó, új figyelmeztetések és földrengések, mindegyik csak egyszer.
+Auto location	Auto helymeghatározás
+Select notification	Értesítés kiválasztása
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	A Meteo Alarm nem telepíthet frissítéseket. Koppints a Beállítások megnyitása gombra, kapcsold be az Engedélyezés ebből a forrásból lehetőséget, majd térj vissza és koppints újra a Frissítés gombra.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: az Auto Blockernek kikapcsolva kell lennie, különben a telefon elutasítja a frissítést. Az alkalmazás nem látja, hogy be van-e kapcsolva. Koppints a Beállítások gombra az oldala megnyitásához, kapcsold ki, térj vissza és koppints a Folytatás gombra. A frissítés után visszakapcsolhatod.
+Continue	Folytatás
+Don't show again	Ne mutasd többé
+Settings	Beállítások
+Security	Biztonság
+more	több
+Before an update	Frissítés előtt
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Az alkalmazás először ellenőrzi, hogy telepíthet-e frissítéseket (különben megnyitja ezt a beállítást). Samsungon emlékeztet az Auto Blocker kikapcsolására; a Beállítások megnyitja az oldalát.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	A cím alatt a hely; a cím melletti ⌄ több ⌃ le vagy fel görget. A részeket vonalak választják el; a táblázatok oldalra csúsznak; a forrás lent van, egyszer.

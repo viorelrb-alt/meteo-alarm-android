@@ -815,7 +815,7 @@ Screen on	Obrazovka zapnutá
 Automatic location	Automatická poloha
 Boxes in ☰	Políčka v ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Políčko s X: funkcia je zapnutá; prázdne: vypnutá. Ťuknutie ju prepne a správa to oznámi.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Režim farmára: zvonček pod tlačidlom GPS na mape Parcely otvorí Oznámenia parciel; parcela s X dostáva všetky svoje oznámenia: dážď alebo sneh počas hodiny, po 20. hodine dážď alebo sneh zajtra, vietor, sneh, inovať, mráz, hmla, mrznúci dážď, sucho (suchá pôda, 7 dní bez dažďa).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Režim farmára: zvonček pod tlačidlom GPS na mape Parcely otvorí Výber oznámenia; parcela s X dostáva všetky svoje oznámenia: dážď alebo sneh počas hodiny, po 20. hodine dážď alebo sneh zajtra, vietor, sneh, inovať, mráz, hmla, mrznúci dážď, sucho (suchá pôda, 7 dní bez dažďa).
 No parcel saved yet.	Zatiaľ nie je uložená žiadna parcela.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Oznámenia ZAPNUTÉ pre označené parcely: dážď, vietor, sneh, inovať, mráz, hmla, mrznúci dážď, sucho.
 Parcel notifications OFF	Oznámenia parciel sú VYPNUTÉ
@@ -830,3 +830,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Údaje pre farmárov (hodinový vietor, vlhkosť, pôda) sú len z Open-Meteo, ktoré teraz neodpovedá. Keď sa prístup obnoví, aplikácia ich stiahne sama.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Údaje za posledných 24 hodín sa sťahujú; o chvíľu ťuknite znova. Ak Open-Meteo neodpovedá, prídu neskôr samy.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Dážď alebo sneh počas hodiny, po 20. hodine dážď alebo sneh zajtra, nové výstrahy a zemetrasenia, každé len raz.
+Auto location	Auto poloha
+Select notification	Výber oznámenia
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm nemá povolené inštalovať aktualizácie. Ťuknite na Otvoriť nastavenia, zapnite Povoliť z tohto zdroja, potom sa vráťte a znova ťuknite na Aktualizovať.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker musí byť vypnutý, inak telefón aktualizáciu odmietne. Aplikácia nevidí, či je zapnutý. Ťuknutím na Nastavenia otvoríte jeho stránku, vypnite ho, vráťte sa a ťuknite na Pokračovať. Po aktualizácii ho môžete znova zapnúť.
+Continue	Pokračovať
+Don't show again	Už nezobrazovať
+Settings	Nastavenia
+Security	Zabezpečenie
+more	viac
+Before an update	Pred aktualizáciou
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Aplikácia najprv overí, či smie inštalovať aktualizácie (inak otvorí toto nastavenie). Na Samsungu pripomenie vypnúť Auto Blocker; Nastavenia otvoria jeho stránku.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Pod názvom miesto; ⌄ viac ⌃ vedľa názvu posúva nadol alebo nahor. Časti delia čiary; tabuľky sa posúvajú do strán; zdroj je dole, raz.

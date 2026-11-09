@@ -1,5 +1,6 @@
-Jelenlegi verzió: v.3.40 · 2026.11.09.
+Jelenlegi verzió: v.3.50 · 2026.11.09.
 Dizájn / szerkezet fejlesztései.
+- Áttekinthetőbb buborékok: a hely a cím alatt, „⌄ több ⌃” a cím mellett, kisebb forrás; Statisztika: koordináták és „Frissítve” az alsó sorban, az időszak ugrás nélkül vált; frissítés előtt a telepítési engedély ellenőrzése és Auto Blocker-megjegyzés (Samsung) beállítások gombbal.
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
 - A parcella oldala egyesítve a Statisztikával: fent rögzített mostani és időszaki dobozok; alattuk a 12 órás és a napról napra táblázat.
 - Minden parcellán a „Értesítések és figyelmeztetések” négyzet bekapcsolja minden értesítését, most már havazást és aszályt is.

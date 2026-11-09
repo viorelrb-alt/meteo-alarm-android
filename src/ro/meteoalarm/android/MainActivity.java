@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.40";
+	static final String VERSION = "Meteo Alarm Android v3.50";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1104,7 +1104,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		prefs.edit().putBoolean("notify", true).putBoolean("notifyUserOff", false).putBoolean("notifyWant", false)
 				.putLong("notifySince", System.currentTimeMillis()).apply();
 		Log.i(this, "ACORD", "notificări: PORNITE");
-		Notifier.hello(this);
+		// v3.50 (Viorel): no notice on the phone that the notifications are on; only the message in the app.
 		note(Tr.t("Notifications ON", "Notificări PORNITE"), 2000);
 	}
 
@@ -1237,6 +1237,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (info.isEmpty()) return;
 		String head = info.get(0)[1];
 		List<Bubble.Row> rows = Bubble.info(info);
+		bubble.place = s.place();
 		bubble.show(view.px(b), bubbleWidth(0.86f, 280), head, rows, s.T.en, new Bubble.Pick() {
 			public void picked(int i) {
 			}
@@ -1723,6 +1724,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		List<Bubble.Row> rows = Bubble.info(info);
 		bubble.panel = true;
+		bubble.place = s.place();
 		bubble.show(view.px(b), bubbleWidth(0.86f, 280), info.get(0)[1], rows, s.T.en, new Bubble.Pick() {
 			public void picked(int i) {
 			}
@@ -1743,7 +1745,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				hideBars();
 			}
 		});
-		d.show();
+		Dlg.show(d);
 	}
 
 	public void onRefresh() {
@@ -1846,7 +1848,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("keepOn"); rows.add(row(Tr.t("Screen on", "Ecran aprins"), "keepOn").tick(keepOn));
 		ids.add("lang"); rows.add(row(Tr.t("Display language", "Limbă afișaj"), "lang-" + s.T.lang));
 		ids.add("night"); rows.add(row(Tr.t("Night clock", "Ceas noapte"), "night").tick(prefs.getBoolean("nightClock", true)));
-		ids.add("loc"); rows.add(row(Tr.t("Automatic location", "Localizare automată"), "locate").tick(auto));
+		ids.add("loc"); rows.add(row(Tr.t("Auto location", "Localizare auto"), "locate").tick(auto));
 		ids.add("quakes"); rows.add(row(Tr.t("Earthquakes", "Cutremure"), "quake"));
 		if (Region.showUS(this)) { ids.add("tornado"); rows.add(row(Tr.t("Tornadoes", "Tornade"), "tornado")); }
 		ids.add("notify"); rows.add(row(Tr.t("Notifications", "Notificări"), "bell").tick(Notifier.on(this)));
@@ -2375,16 +2377,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"☰ › Parcele: harta arată toate parcelele; atingerea deschide una pe ecranul principal. „Salvare loc. GPS” sau „Alege pe hartă” adaugă una; butonul GPS arată unde ești. Creionul editează numele și acul; meniul ⋮ de acolo are Statistică · PDF și Ștergere. Rămân doar în acest telefon."));
 		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.",
 				"În Parcele și pe pagina de editare comenzile sunt în meniul ⋮ din dreapta sus. Casetele arată doar valoarea; atingerea arată detaliile."));
-		help.entry(mini("farm"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.",
-				"Secțiunile sunt despărțite de linii; tabelele au linii și se glisează în lateral; sursa e jos, o singură dată."));
+		help.entry(mini("farm"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.",
+				"Sub titlu, locul; ⌄ mai multe ⌃ de lângă titlu derulează în jos sau în sus. Secțiunile sunt despărțite de linii; tabelele se glisează în lateral; sursa e jos, o singură dată."));
 		help.entry(mini("parcel"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
 		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
 				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral; mijlocul ecranului urmează degetul și după jumătate trece la următorul."));
 		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.",
 				"Statistică · PDF: sus casetele de acum și ale perioadei, pe un rând care glisează în lateral; sub ele următoarele 12 ore și zi cu zi (se derulează). ☰ de lângă zile alege perioada; butonul PDF salvează casetele și tabelele."));
-		help.entry(mini("bell"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
-				"Mod fermier: clopoțelul de sub butonul GPS de pe harta Parcele deschide Notificări parcele; o parcelă cu X primește toate notificările ei: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
+		help.entry(mini("bell"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
+				"Mod fermier: clopoțelul de sub butonul GPS de pe harta Parcele deschide Selectare notificare; o parcelă cu X primește toate notificările ei: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("farm"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
 		help.entry(mini("parcel"), Tr.t("The map", "Harta"), Tr.t("OpenStreetMap: move it with one finger, zoom with two; it needs internet.",
@@ -2392,6 +2394,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en));
 		help.entry(mini("update"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
+		help.entry(mini("update"), Tr.t("Before an update", "Înainte de actualizare"), Tr.t("The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.",
+				"Aplicația verifică întâi dacă are voie să instaleze actualizări (altfel deschide setarea). Pe Samsung amintește să oprești Auto Blocker; Setări îi deschide pagina."));
 		help.entry(mini("update"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.",
 				"Aplicația verifică întâi internetul, apoi caută pe GitHub, pe un server secundar GitHub și pe Google Drive și descarcă de la primul care răspunde. O versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
@@ -2436,7 +2440,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("keepOn"), Tr.t("Screen on", "Ecran aprins"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("English, the phone's language and the country's languages; in Romania also “Other languages”.",
 				"Engleza, limba telefonului și limbile țării; în România și „Alte limbi”."));
-		help.entry(mini("locate"), Tr.t("Automatic location", "Localizare automată"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
+		help.entry(mini("locate"), Tr.t("Auto location", "Localizare auto"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The earthquakes of the last days near you, with time, place, magnitude and distance.", "Cutremurele din ultimele zile din jur, cu ora, locul, magnitudinea și distanța."));
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("Tornado alerts and reports near you, and what to do.", "Alertele și raportările de tornade din jur și ce faci."));
 		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată."));

@@ -1,5 +1,6 @@
-Versão atual: v.3.40 · 9.11.2026
+Versão atual: v.3.50 · 9.11.2026
 Melhorias de design / estrutura.
+- Balões mais claros: o local sob o título, «⌄ mais ⌃» junto ao título, fonte mais pequena; Estatística: coordenadas e «Atualizado» na linha de baixo, o período muda sem salto; antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
 - Notificações como a app Tempo do telemóvel («Local | Chuva»): chuva ou neve na próxima hora e, depois das 20 h, para amanhã, para a localidade e as parcelas; sem aviso quando o Open-Meteo volta a responder.
 - A página da parcela junta com a Estatística: em cima as caixas fixas de agora e do período; por baixo as tabelas de 12 horas e dia a dia.
 - A caixa «Notificações e avisos» de cada parcela liga todas as suas notificações, agora também neve e seca.

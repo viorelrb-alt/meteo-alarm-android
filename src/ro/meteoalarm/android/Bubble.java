@@ -25,7 +25,7 @@ import java.util.List;
  * A menu as a speech bubble, as on the Kindle: a rounded frame next to the button that opened it,
  * with a small tip pointing at the button, and rows separated by thin lines. It opens under a
  * button in the upper half of the screen and over one in the lower half, is at most half the
- * screen high (the rows scroll, with "⌃ more ⌃" / "⌄ more ⌄" where there are more) and closes
+ * screen high (the rows scroll, with "⌄ more ⌃" on the title's line where there are more) and closes
  * at a tap outside it.
  */
 final class Bubble extends FrameLayout {
@@ -97,7 +97,8 @@ final class Bubble extends FrameLayout {
 	private final Card card;
 	private final ScrollView scroll;
 	private final LinearLayout list;
-	private final TextView title, less, more;
+	private final TextView title, where, nav;
+	private final LinearLayout top;
 	private boolean dark, open;
 	private Runnable onClose;
 
@@ -110,19 +111,40 @@ final class Bubble extends FrameLayout {
 		card = new Card(c);
 		card.setOrientation(LinearLayout.VERTICAL);
 		card.setClickable(true);
+		// v3.50 (Viorel): "⌄ more ⌃" on the title's line, at the right; under the title the place.
+		top = new LinearLayout(c);
+		top.setOrientation(LinearLayout.HORIZONTAL);
+		top.setGravity(Gravity.CENTER_VERTICAL);
 		title = text(c, 17, true);
-		title.setPadding((int) (16 * dp), (int) (12 * dp), (int) (16 * dp), (int) (8 * dp));
-		card.addView(title);
-		less = hint(c);
-		card.addView(less);
+		title.setPadding((int) (16 * dp), (int) (12 * dp), (int) (8 * dp), (int) (8 * dp));
+		top.addView(title, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
+		nav = text(c, 14, false);
+		nav.setSingleLine(true);
+		nav.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+		nav.setPadding((int) (4 * dp), (int) (10 * dp), (int) (14 * dp), (int) (10 * dp));
+		nav.setOnTouchListener(new OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent e) {
+				if (e.getActionMasked() != MotionEvent.ACTION_UP) return true;
+				// The left half (⌄) goes down, the right half (⌃) goes up, a screenful at a time.
+				boolean down = e.getX() < v.getWidth() / 2f;
+				int step = Math.max(1, scroll.getHeight() - (int) (24 * dp));
+				scroll.smoothScrollBy(0, down ? step : -step);
+				return true;
+			}
+		});
+		top.addView(nav, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		card.addView(top, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		where = text(c, 15, false);
+		where.setSingleLine(true);
+		where.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		where.setPadding((int) (16 * dp), 0, (int) (16 * dp), (int) (6 * dp));
+		card.addView(where);
 		scroll = new ScrollView(c);
 		scroll.setVerticalScrollBarEnabled(true);
 		list = new LinearLayout(c);
 		list.setOrientation(LinearLayout.VERTICAL);
 		scroll.addView(list);
 		card.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-		more = hint(c);
-		card.addView(more);
 		scroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
 			public void onScrollChange(View v, int x, int y, int ox, int oy) {
 				hints();
@@ -150,18 +172,6 @@ final class Bubble extends FrameLayout {
 		return t;
 	}
 
-	private TextView hint(final Context c) {
-		TextView t = text(c, 14, false);
-		t.setGravity(Gravity.CENTER);
-		t.setPadding(0, (int) (4 * dp), 0, (int) (4 * dp));
-		t.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				scroll.smoothScrollTo(0, v == less ? 0 : list.getHeight());
-			}
-		});
-		return t;
-	}
-
 	private int ink() {
 		return dark ? 0xFFFAF9F5 : 0xFF000000;
 	}
@@ -184,25 +194,32 @@ final class Bubble extends FrameLayout {
 	 */
 	boolean panel;
 
+	/** v3.50 (Viorel): set before show(): the place an information bubble is about, under its title. */
+	String place;
+
 	void show(float[] anchor, int width, String head, List<Row> rows, boolean en, final Pick pick) {
 		boolean pan = panel;
 		panel = false;
+		String at = place;
+		place = null;
 		Context c = getContext();
 		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there; +30 %, then 10 % and
 		// 5 % less in v2.20 / v2.21), and the text size of ☰.
 		float zk = (TextSize.tablet(c) ? 1.11f : 1f) * TextSize.get(c);
 		width = (int) (width * zk);
 		title.setTextSize(17 * zk);
-		less.setTextSize(14 * zk);
-		more.setTextSize(14 * zk);
+		nav.setTextSize(14 * zk);
 		int ink = ink();
-		title.setVisibility(head == null || head.length() == 0 ? GONE : VISIBLE);
-		title.setText(head);
+		boolean hasTitle = head != null && head.length() > 0;
+		title.setVisibility(hasTitle ? VISIBLE : INVISIBLE);
+		title.setText(hasTitle ? head : "");
 		title.setTextColor(ink);
-		less.setText(Tr.t("⌃  more  ⌃", "⌃  mai multe  ⌃"));
-		more.setText(Tr.t("⌄  more  ⌄", "⌄  mai multe  ⌄"));
-		less.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
-		more.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
+		nav.setText("⌄  " + Tr.t("more", "mai multe") + "  ⌃");
+		nav.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
+		where.setTextSize(15 * zk);
+		where.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
+		where.setText(at == null ? "" : at);
+		where.setVisibility(at == null || at.length() == 0 || !hasTitle ? GONE : VISIBLE);
 		list.removeAllViews();
 		boolean first = true, info = false;
 		for (Row r : rows) if (r.kind >= Row.TEXT) info = true;
@@ -268,7 +285,7 @@ final class Bubble extends FrameLayout {
 				sep.setBackgroundColor(line());
 				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
 				lp.leftMargin = lp.rightMargin = (int) (10 * dp);
-				lp.topMargin = (int) (8 * dp);
+				lp.topMargin = (int) (6 * dp);
 				list.addView(sep, lp);
 			}
 			if (!first && r.kind == Row.ITEM) {
@@ -279,12 +296,13 @@ final class Bubble extends FrameLayout {
 				list.addView(sep, lp);
 			}
 			first = false;
-			TextView t = text(c, (r.kind == Row.HEADER ? 13 : 15) * zk, r.kind == Row.HEADER || r.checked);
+			// v3.50 (Viorel): in an information bubble the section titles as big as the texts (0.5 smaller at most).
+			TextView t = text(c, (r.kind == Row.HEADER ? (info ? 17.5f : 13) : 15) * zk, r.kind == Row.HEADER || r.checked);
 			t.setText(r.kind == Row.HEADER ? r.text.toUpperCase() : (r.checked ? "✓  " : "") + r.text);
 			t.setTextColor(r.kind == Row.HEADER ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 			t.setGravity(Gravity.CENTER_VERTICAL);
 			int ph = (int) (16 * dp);
-			if (r.kind == Row.HEADER) t.setPadding(ph, (int) (10 * dp), ph, (int) (4 * dp));
+			if (r.kind == Row.HEADER) t.setPadding(ph, (int) ((info ? 6 : 10) * dp), ph, (int) (4 * dp));
 			else {
 				t.setPadding(ph, 0, ph, 0);
 				t.setMinHeight((int) (46 * dp * zk));
@@ -366,6 +384,7 @@ final class Bubble extends FrameLayout {
 				if (!(v instanceof TextView) || "text".equals(v.getTag())) continue;
 				TextView t = (TextView) v;
 				t.setSingleLine(true);
+				t.setEllipsize(android.text.TextUtils.TruncateAt.END);
 				if (t.isClickable()) {
 					t.setTextSize(sp);
 					choices = true;
@@ -402,9 +421,9 @@ final class Bubble extends FrameLayout {
 		}
 		for (Grid g : grids) g.minW = inner;
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-		title.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-		more.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-		int pad = (int) (6 * dp), titleH = title.getVisibility() == VISIBLE ? title.getMeasuredHeight() : 0;
+		nav.setVisibility(GONE);
+		top.setVisibility(title.getVisibility() == VISIBLE ? VISIBLE : GONE);
+		int pad = (int) (6 * dp), titleH = head(width);
 		// The same shape in both orientations: at most half the portrait height, and never past the
 		// screen's edge (in landscape the room under the button).
 		boolean below = (anchor[1] + anchor[3]) / 2 < sh / 2f;
@@ -412,14 +431,34 @@ final class Bubble extends FrameLayout {
 		if (pan) tip = 0;
 		int maxH = pan ? sh - 2 * margin : Math.min((int) (Math.max(sw, sh) * (TextSize.tablet(c) ? 0.7f : 0.5f)), room - tip), rowsH = list.getMeasuredHeight();
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
-		int scrollH = scrolls ? maxH - titleH - 2 * pad - 2 * more.getMeasuredHeight() : rowsH;
+		if (scrolls) {
+			// The "⌄ more ⌃" on the title's line, smaller when the title would not fit on one line.
+			top.setVisibility(VISIBLE);
+			nav.setVisibility(VISIBLE);
+			float ns = 14 * zk;
+			String tt = title.getText().toString();
+			Paint tp = new Paint(title.getPaint()), np = new Paint(nav.getPaint());
+			float sd = getResources().getDisplayMetrics().scaledDensity;
+			for (; ns > 9; ns -= 0.5f) {
+				np.setTextSize(ns * sd);
+				float navW = np.measureText(nav.getText().toString()) + nav.getPaddingLeft() + nav.getPaddingRight();
+				float titleW = tt.length() == 0 ? 0 : tp.measureText(tt) + title.getPaddingLeft() + title.getPaddingRight();
+				if (navW + titleW <= width) break;
+			}
+			nav.setTextSize(ns);
+			titleH = head(width);
+		}
+		int scrollH = scrolls ? maxH - titleH - 2 * pad : rowsH;
 		// The panel keeps its full height whatever it holds.
 		if (pan && !scrolls) scrollH = maxH - titleH - 2 * pad;
-		less.setVisibility(scrolls ? INVISIBLE : GONE);
-		more.setVisibility(scrolls ? VISIBLE : GONE);
 		scroll.getLayoutParams().height = scrollH;
 		scroll.scrollTo(0, 0);
-		int cardH = titleH + scrollH + 2 * pad + (scrolls ? 2 * more.getMeasuredHeight() : 0) + tip;
+		if (scrolls) post(new Runnable() {
+			public void run() {
+				hints();
+			}
+		});
+		int cardH = titleH + scrollH + 2 * pad + tip;
 		// Under the button in the upper half of the screen, over it in the lower half.
 		int x = (int) Math.max(margin, Math.min(anchor[0], sw - margin - width));
 		int y = below ? (int) anchor[3] + (int) (2 * dp) : (int) anchor[1] - (int) (2 * dp) - cardH;
@@ -446,11 +485,30 @@ final class Bubble extends FrameLayout {
 		bringToFront();
 	}
 
+	/** The height of the title's line (with "more") and the place under it, at WIDTH. */
+	private int head(int width) {
+		int h = 0;
+		if (top.getVisibility() == VISIBLE) {
+			top.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+			h += top.getMeasuredHeight();
+		}
+		if (where.getVisibility() == VISIBLE) {
+			where.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+			h += where.getMeasuredHeight();
+		}
+		return h;
+	}
+
+	/** v3.50: the arrows of "⌄ more ⌃" fade at the end they cannot go further. */
 	private void hints() {
-		if (more.getVisibility() == GONE) return;
+		if (nav.getVisibility() != VISIBLE) return;
 		int y = scroll.getScrollY(), end = list.getHeight() - scroll.getHeight();
-		less.setVisibility(y > 0 ? VISIBLE : INVISIBLE);
-		more.setVisibility(y < end - 1 ? VISIBLE : INVISIBLE);
+		String w = Tr.t("more", "mai multe");
+		android.text.SpannableString sp = new android.text.SpannableString("⌄  " + w + "  ⌃");
+		int dim = dark ? 0x40A6A39A : 0x40555555;
+		if (y >= end - 1) sp.setSpan(new android.text.style.ForegroundColorSpan(dim), 0, 1, 0);
+		if (y <= 0) sp.setSpan(new android.text.style.ForegroundColorSpan(dim), sp.length() - 1, sp.length(), 0);
+		nav.setText(sp);
 	}
 
 	void hide() {

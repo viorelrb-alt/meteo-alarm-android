@@ -1,5 +1,6 @@
-Súčasná verzia: v.3.40 · 9.11.2026
+Súčasná verzia: v.3.50 · 9.11.2026
 Vylepšenia vzhľadu / štruktúry.
+- Prehľadnejšie bubliny: miesto pod názvom, „⌄ viac ⌃“ vedľa názvu, menší zdroj; Štatistika: súradnice a „Aktualizované“ v spodnom riadku, obdobie sa mení bez skoku; pred aktualizáciou kontrola povolenia na inštaláciu a poznámka o Auto Blocker (Samsung) s tlačidlom do nastavení.
 - Oznámenia ako v aplikácii Počasie v telefóne („Miesto | Dážď“): dážď alebo sneh počas hodiny a po 20. hodine na zajtra, pre obec aj parcely; žiadne oznámenie, keď Open-Meteo znova odpovie.
 - Stránka parcely spojená so Štatistikou: hore pevné polia pre teraz a pre obdobie; pod nimi tabuľky na 12 hodín a deň po dni.
 - Políčko „Oznámenia a výstrahy“ pri každej parcele zapne všetky jej oznámenia, teraz aj sneh a sucho.

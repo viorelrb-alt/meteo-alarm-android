@@ -1,5 +1,6 @@
-Trenutna različica: v.3.40 · 9.11.2026
+Trenutna različica: v.3.50 · 9.11.2026
 Izboljšave videza / zgradbe.
+- Jasnejši oblački: kraj pod naslovom, »⌄ več ⌃« ob naslovu, manjši vir; Statistika: koordinate in »Posodobljeno« v spodnji vrstici, obdobje se zamenja brez skoka; pred posodobitvijo preverjanje dovoljenja za nameščanje in opomba o Auto Blocker (Samsung) z gumbom do nastavitev.
 - Obvestila kot v aplikaciji Vreme na telefonu (»Kraj | Dež«): dež ali sneg v naslednji uri in po 20. uri za jutri, za kraj in parcele; brez obvestila, ko Open-Meteo spet odgovori.
 - Stran parcele združena s Statistiko: zgoraj nepremična polja za zdaj in za obdobje; pod njimi tabeli za 12 ur in dan za dnem.
 - Polje »Obvestila in opozorila« pri vsaki parceli vklopi vsa njena obvestila, zdaj tudi sneg in sušo.

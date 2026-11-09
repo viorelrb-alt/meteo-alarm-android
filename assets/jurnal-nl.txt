@@ -1,5 +1,6 @@
-Huidige versie: v.3.40 · 9.11.2026
+Huidige versie: v.3.50 · 9.11.2026
 Verbeteringen in ontwerp / structuur.
+- Duidelijkere ballonnen: de plaats onder de titel, ‘⌄ meer ⌃’ naast de titel, kleinere bron; Statistiek: coördinaten en ‘Bijgewerkt’ op de onderste regel, de periode wisselt zonder sprong; voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
 - Meldingen zoals de Weer-app van de telefoon (‘Plaats | Regen’): regen of sneeuw binnen het uur en na 20 uur voor morgen, voor de plaats en de percelen; geen melding meer als Open-Meteo weer antwoordt.
 - De perceelpagina samengevoegd met Statistiek: bovenaan vaste vakken van nu en van de periode; daaronder de tabellen voor 12 uur en dag voor dag.
 - Het vakje ‘Meldingen en waarschuwingen’ bij elk perceel zet al zijn meldingen aan, nu ook sneeuw en droogte.

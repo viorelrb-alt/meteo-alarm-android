@@ -280,8 +280,13 @@ public final class Screen {
 		float nowBot = 663 + grow + Math.max(0, ch - BASE_H);
 		float fy = nowBot - 4;
 		dots(W / 2, 112, pages, page);
-		float sb = statsButton(40, 150, 58, 400, 26) > 40 ? 72 : 0;
-		float top = drawWarnBoxes(40, 146 + sb, 678, 2, 1);
+		// v3.50 (Viorel): the "Statistics · PDF" button under the information / warning / earthquake
+		// boxes when they show; in their place (under the top line) when they do not.
+		float top = drawWarnBoxes(40, 146, 678, 2, 1), sb;
+		if (top > 0) {
+			sb = statsButton(40, top + 12, 58, 400, 26) > 40 ? 70 : 0;
+			top += sb;
+		} else sb = statsButton(40, 150, 58, 400, 26) > 40 ? 72 : 0;
 		String[] d = T.describe(w.code, w.isDay);
 		float nt = top > 0 ? top + 10 : pages > 1 ? 124 + sb : 104;
 		if (prop) drawNowHalves(d[0], 40, nt, 718, fy - 8, fy + 4 - grow);

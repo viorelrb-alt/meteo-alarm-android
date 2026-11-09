@@ -88,7 +88,7 @@ public final class WidgetConfig extends Activity {
 		// From the app: the widget to set, when there are several.
 		final Map<Integer, String> all = Widget.all(this);
 		if (all.isEmpty()) {
-			new AlertDialog.Builder(this, theme())
+			Dlg.show(new AlertDialog.Builder(this, theme())
 					.setTitle(Tr.t("Meteo Alarm widgets", "Widget-uri Meteo Alarm"))
 					.setMessage(Tr.t("There is no Meteo Alarm widget on the home screen. Hold a free spot on the home screen › Widgets › Meteo Alarm.", "Nu ai niciun widget Meteo Alarm pe ecranul de pornire. Ține apăsat pe un loc liber › Widgeturi › Meteo Alarm."))
 					.setPositiveButton("OK", null)
@@ -96,7 +96,7 @@ public final class WidgetConfig extends Activity {
 						public void onDismiss(DialogInterface d) {
 							finish();
 						}
-					}).show();
+					}));
 			return;
 		}
 		if (all.size() == 1) {
@@ -404,13 +404,13 @@ public final class WidgetConfig extends Activity {
 			names[k] = colorsName(keys[k]);
 			if (keys[k].equals(set.colors)) cur = k;
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Colours", "Culori")).setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
+		Dlg.show(new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Colours", "Culori")).setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
 				set.colors = keys[k];
 				refresh();
 				d.dismiss();
 			}
-		}).show();
+		}));
 	}
 
 	private void pickFont() {
@@ -421,13 +421,13 @@ public final class WidgetConfig extends Activity {
 			names[k] = fontName(keys[k]);
 			if (keys[k].equals(set.font)) cur = k;
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Text colour", "Culoare font")).setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
+		Dlg.show(new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Text colour", "Culoare font")).setSingleChoiceItems(names, cur, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface d, int k) {
 				set.font = keys[k];
 				refresh();
 				d.dismiss();
 			}
-		}).show();
+		}));
 	}
 
 	/** The app's town, the favourites, or a town from a county (another country). */
@@ -446,7 +446,7 @@ public final class WidgetConfig extends Activity {
 		}
 		keys.add("*");
 		names.add(Tr.t("Choose the county / country…", "Alege județul / țara…"));
-		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Town", "Localitate"))
+		Dlg.show(new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Town", "Localitate"))
 				.setItems(names.toArray(new String[0]), new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int k) {
 						if (keys.get(k).equals("*")) pickCounty();
@@ -455,7 +455,7 @@ public final class WidgetConfig extends Activity {
 							refresh();
 						}
 					}
-				}).show();
+				}));
 	}
 
 	private void pickCounty() {
@@ -470,24 +470,24 @@ public final class WidgetConfig extends Activity {
 			names.add(cs.name(e.getKey(), en));
 			lists.add(e.getValue());
 		}
-		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("County / country", "Județ / țară"))
+		Dlg.show(new AlertDialog.Builder(this, theme()).setTitle(Tr.t("County / country", "Județ / țară"))
 				.setItems(names.toArray(new String[0]), new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int k) {
 						pickIn(lists.get(k));
 					}
-				}).show();
+				}));
 	}
 
 	private void pickIn(final List<Cities.City> towns) {
 		String[] names = new String[towns.size()];
 		for (int k = 0; k < names.length; k++) names[k] = towns.get(k).name;
-		new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Town", "Localitate"))
+		Dlg.show(new AlertDialog.Builder(this, theme()).setTitle(Tr.t("Town", "Localitate"))
 				.setItems(names, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface d, int k) {
 						set.town = towns.get(k).key();
 						refresh();
 					}
-				}).show();
+				}));
 	}
 
 	private void save() {

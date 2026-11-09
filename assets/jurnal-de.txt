@@ -1,5 +1,6 @@
-Aktuelle Version: v.3.40 · 9.11.2026
+Aktuelle Version: v.3.50 · 9.11.2026
 Verbesserungen an Design / Struktur.
+- Klarere Blasen: der Ort unter dem Titel, „⌄ mehr ⌃“ neben dem Titel, kleinere Quelle; Statistik: Koordinaten und „Aktualisiert“ in der unteren Zeile, der Zeitraum wechselt ohne Sprung; vor einem Update Prüfung der Installationserlaubnis und Hinweis zu Auto Blocker (Samsung) mit Taste zu den Einstellungen.
 - Benachrichtigungen wie in der Wetter-App des Telefons („Ort | Regen“): Regen oder Schnee in der nächsten Stunde und nach 20 Uhr für morgen, für den Ort und die Parzellen; keine Meldung mehr, wenn Open-Meteo wieder antwortet.
 - Die Parzellenseite mit der Statistik vereint: oben feste Felder für jetzt und den Zeitraum; darunter die Tabellen für 12 Stunden und Tag für Tag.
 - Das Kästchen „Benachrichtigungen und Warnungen“ jeder Parzelle schaltet alle ihre Benachrichtigungen ein, jetzt auch Schnee und Dürre.

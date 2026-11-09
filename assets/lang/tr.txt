@@ -749,7 +749,7 @@ Screen on	Ekran açık
 Automatic location	Otomatik konum
 Boxes in ☰	☰ içindeki kutular
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	X'li kutu: işlev açık; boş: kapalı. Dokunmak değiştirir ve bir mesaj bunu söyler.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Çiftçi modu: Parseller haritasında GPS düğmesinin altındaki zil Parsel bildirimlerini açar; X'li parsel tüm bildirimlerini alır: bir saat içinde yağmur veya kar, saat 20'den sonra yarın için yağmur veya kar, rüzgâr, kar, kırağı, don, sis, donan yağmur, kuraklık (kuru toprak, 7 gün yağmursuz).
+Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Çiftçi modu: Parseller haritasında GPS düğmesinin altındaki zil Bildirim seçni açar; X'li parsel tüm bildirimlerini alır: bir saat içinde yağmur veya kar, saat 20'den sonra yarın için yağmur veya kar, rüzgâr, kar, kırağı, don, sis, donan yağmur, kuraklık (kuru toprak, 7 gün yağmursuz).
 No parcel saved yet.	Henüz kayıtlı parsel yok.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	İşaretli parseller için bildirimler AÇIK: yağmur, rüzgâr, kar, kırağı, don, sis, donan yağmur, kuraklık.
 Parcel notifications OFF	Parsel bildirimleri KAPALI
@@ -764,3 +764,15 @@ Farmer's data: Open-Meteo is not answering; they are downloaded when it answers 
 The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Çiftçi verileri (saatlik rüzgâr, nem, toprak) yalnızca şu an yanıt vermeyen Open-Meteo'dan gelir. Erişim geri geldiğinde uygulama bunları kendisi indirir.
 The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Son 24 saatin verileri indiriliyor; birazdan yeniden dokunun. Open-Meteo yanıt vermezse veriler daha sonra kendiliğinden gelir.
 Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Bir saat içinde yağmur veya kar, saat 20'den sonra yarın için yağmur veya kar, yeni uyarılar ve depremler, her biri yalnızca bir kez.
+Auto location	Otomatik konum
+Select notification	Bildirim seç
+Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.	Meteo Alarm'ın güncelleme yükleme izni yok. Ayarları aç'a dokunun, Bu kaynaktan izin ver'i açın, sonra geri dönüp yeniden Güncelle'ye dokunun.
+Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.	Samsung: Auto Blocker kapalı olmalı, yoksa telefon güncellemeyi reddeder. Uygulama açık olup olmadığını göremez. Sayfasını açmak için Ayarlar'a dokunun, kapatın, geri dönüp Devam'a dokunun. Güncellemeden sonra yeniden açabilirsiniz.
+Continue	Devam
+Don't show again	Bir daha gösterme
+Settings	Ayarlar
+Security	Güvenlik
+more	daha fazla
+Before an update	Güncellemeden önce
+The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Uygulama önce güncelleme yükleyip yükleyemeyeceğini kontrol eder (yoksa o ayarı açar). Samsung'da Auto Blocker'ı kapatmayı hatırlatır; Ayarlar sayfasını açar.
+Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Başlığın altında yer; başlığın yanındaki ⌄ daha fazla ⌃ aşağı veya yukarı kaydırır. Bölümler çizgilerle ayrılır; tablolar yana kayar; kaynak altta, bir kez.
