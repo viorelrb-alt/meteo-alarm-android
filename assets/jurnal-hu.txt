@@ -1,9 +1,11 @@
-Jelenlegi verzió: v.3.61 · 9.11.2026
+Jelenlegi verzió: v.3.70 · 9.11.2026
 ÉRTESÍTÉSEK
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
 - Külön TÁJÉKOZTATÁS értesítés a településre is.
 - Külön TÁJÉKOZTATÓ értesítések minden parcellához: dér, fagy, köd, ónos eső, erős széllökések.
 FŐKÉPERNYŐ
+- Időjárás-ikonok: a téma színeiben; a nagy 3 másodpercig mozog.
+- Kamerasáv: álló helyzetben az óra, a kapcsolat és a dátum a kamera mellett van (Android 9+).
 - Kapcsolatikon az óra mellett: Wi-Fi, mobiladat vagy nincs.
 - TÁJÉKOZTATÁS mezők Európában: dér, fagy, köd, ónos eső, erős szél.
 FRISSÍTÉSEK

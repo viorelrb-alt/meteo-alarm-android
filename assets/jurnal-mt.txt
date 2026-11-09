@@ -1,4 +1,4 @@
-Verżjoni attwali: v.3.61 · 9.11.2026
+Verżjoni attwali: v.3.70 · 9.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
@@ -13,7 +13,9 @@ NOTIFIKI
 - Notifiki bħall-app tat-Temp tat-telefon (“Post | Xita”): xita jew borra fis-siegħa li ġejja u, wara t-8 ta' filgħaxija, għal għada, għall-lokalità u l-għelieqi; l-ebda avviż meta Open-Meteo jerġa' jwieġeb.
 - Notifiki ta' INFORMAZZJONI separati għal kull għalqa: ġlata bajda, silġ, ċpar, xita ffriżata, buffuri qawwija.
 SKRIN EWLIENI
+- Faxxa tal-kamera: f'portrait l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera (Android 9+).
 - Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
+- Ikoni tat-temp: fil-kuluri tat-tema; il-kbira tiċċaqlaq għal 3 sekondi.
 - Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.
 TEMI
 - 6 temi tal-kulur (Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda), kull wieħed ċar u skur: ☰ › Tema.

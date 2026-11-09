@@ -64,6 +64,30 @@ final class AndroidGfx implements Gfx {
 	}
 
 	public void icon(String asset, float x, float y, float w, float h, int color) {
+		Bitmap b = load(asset);
+		if (b == null) return;
+		src.set(0, 0, b.getWidth(), b.getHeight());
+		rf.set(x, y, x + w, y + h);
+		bmp.setColor(color);
+		c.drawBitmap(b, src, rf, bmp);
+	}
+
+	public void sprite(String asset, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int color, float alpha, float rot, float px, float py) {
+		Bitmap b = load(asset);
+		if (b == null || alpha <= 0) return;
+		src.set(sx, sy, sx + sw, sy + sh);
+		rf.set(x, y, x + w, y + h);
+		bmp.setColor(color);
+		bmp.setAlpha(Math.round((color >>> 24) * Math.min(1, alpha)));
+		if (rot != 0) {
+			c.save();
+			c.rotate(rot, px, py);
+		}
+		c.drawBitmap(b, src, rf, bmp);
+		if (rot != 0) c.restore();
+	}
+
+	private Bitmap load(String asset) {
 		Bitmap b = bitmaps.get(asset);
 		if (b == null) {
 			try {
@@ -71,14 +95,11 @@ final class AndroidGfx implements Gfx {
 				b = mask(BitmapFactory.decodeStream(in));
 				in.close();
 			} catch (Exception e) {
-				return;
+				return null;
 			}
 			bitmaps.put(asset, b);
 		}
-		src.set(0, 0, b.getWidth(), b.getHeight());
-		rf.set(x, y, x + w, y + h);
-		bmp.setColor(color);
-		c.drawBitmap(b, src, rf, bmp);
+		return b;
 	}
 
 	/** Alpha mask of a black-on-white image: dark pixels opaque, white transparent. */

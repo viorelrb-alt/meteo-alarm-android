@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.61";
+	static final String VERSION = "Meteo Alarm Android v3.70";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -194,6 +194,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * black band there): the window uses the cutout's edges (Android 9+), the page's colour fills
 	 * the band and the content starts right under the camera.
 	 */
+	private int lastBand = -1;
+
 	private void cutout(final android.widget.FrameLayout root) {
 		if (Build.VERSION.SDK_INT < 28) return;
 		try {
@@ -213,9 +215,25 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						}
 					} catch (Exception e) {
 					}
-					if (v.getPaddingTop() != t || v.getPaddingLeft() != l || v.getPaddingRight() != r) {
-						v.setPadding(l, t, r, 0);
-						Log.i(MainActivity.this, "APP", "decupaj cameră: stânga " + l + ", sus " + t + ", dreapta " + r + " px");
+					// v3.70 (Viorel): in portrait on a phone the band of the camera holds the clock,
+					// the connection and the date (WeatherView draws them); the panels stay below it.
+					android.content.res.Configuration cf = getResources().getConfiguration();
+					int band = t > 0 && cf.orientation == android.content.res.Configuration.ORIENTATION_PORTRAIT && cf.smallestScreenWidthDp < 600 ? t : 0;
+					int pt = band > 0 ? 0 : t;
+					if (v.getPaddingTop() != pt || v.getPaddingLeft() != l || v.getPaddingRight() != r || band != lastBand) {
+						v.setPadding(l, pt, r, 0);
+						lastBand = band;
+						view.band(band);
+						View[] panels = { sheet, help, sizer };
+						for (View p : panels) {
+							if (p == null || !(p.getLayoutParams() instanceof ViewGroup.MarginLayoutParams)) continue;
+							ViewGroup.MarginLayoutParams mp = (ViewGroup.MarginLayoutParams) p.getLayoutParams();
+							if (mp.topMargin != band) {
+								mp.topMargin = band;
+								p.setLayoutParams(mp);
+							}
+						}
+						Log.i(MainActivity.this, "APP", "decupaj cameră: stânga " + l + ", sus " + t + ", dreapta " + r + " px" + (band > 0 ? "; ceas, rețea și dată în banda camerei" : ""));
 					}
 					return in;
 				}
@@ -251,6 +269,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						"Notificări (doar cu acordul tău): ploaie sau ninsoare care începe, avertizări meteo noi pentru localitatea ta, cutremure cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o dată. Le pornești sau oprești din ☰ › Notificări.") + "\n\n"
 				+ Tr.t("Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.",
 						"Limba: la prima pornire limba telefonului (dacă aplicația o are, altfel engleza), apoi cea aleasă în ☰ › Limba.") + "\n\n"
+				+ Tr.t("Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.", "Iconurile vremii: “Coloured weather icons collection”, titusurya (magnific.com), vectori gratuiți.") + "\n\n"
 				+ Tr.t("Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.",
 						"Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după telefon. Ce nu are telefonul se dezactivează. Nimic nu pleacă de pe telefon.") + "\n\n"
 				+ Tr.t("Updates: ", "Actualizări: ") + Updater.howTo(en) + " "
@@ -990,6 +1009,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		hideBars();
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		listenNet(true);
+		view.replayIcon();
 		handler.removeCallbacks(tick);
 		handler.post(tick);
 		if (!prefs.getBoolean("welcomed", false)) {
@@ -2462,6 +2482,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));
 		help.entry(mini("clock"), Tr.t("Connection", "Conexiune"), Tr.t("Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.",
 				"Lângă ceas: Wi-Fi (arce), date mobile (bare), altă rețea (glob), tăiat când nu ai internet."));
+		help.entry(mini("clock"), Tr.t("Weather icons", "Iconurile vremii"), Tr.t("In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.",
+				"În culorile temei; cel mare se mișcă 3 secunde când se deschide ecranul sau se schimbă vremea."));
+		help.entry(mini("clock"), Tr.t("Camera band", "Banda camerei"), Tr.t("In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.",
+				"În portret, pe telefoanele cu camera în ecran (Android 9+), ceasul, conexiunea și data stau lângă cameră; localitatea are tot rândul."));
 		help.section(Tr.t("Gestures", "Gesturi"));
 		help.entry(mini("locate"), Tr.t("Tap on the town's name", "Atingerea numelui localității"), Tr.t("Looks once with the GPS.", "Caută o dată poziția cu GPS-ul."));
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Refreshes the weather.", "Reîmprospătează vremea."));

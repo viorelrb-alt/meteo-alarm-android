@@ -200,6 +200,7 @@ public final class Screen {
 		rainHits.clear();
 		infoHits.clear();
 		mergedShown = false;
+		bigIcon = null;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
 		hs = 1;
@@ -211,8 +212,11 @@ public final class Screen {
 		button(btnMenu);
 		for (int k = 0; k < 3; k++) g.rect(57, 41 + k * 13, 30, 4, c.ink);
 		// Refreshing is in the ☰ menu and by pulling the screen down: the clock takes the corner.
-		drawClock();
-		rtext(false, 26, 71, cw - 40, T.date(now), c.ink);
+		if (band > 0 && cw < ch && !tablet) drawBand();
+		else {
+			drawClock();
+			rtext(false, 26, 71, cw - 40, T.date(now), c.ink);
+		}
 		// v3.10 (Viorel): in landscape "FARMER MODE" sits at the bottom left, after the buttons.
 		tagLow = cw > ch;
 		statsLow = tagLow || tablet;
@@ -268,8 +272,10 @@ public final class Screen {
 		warnArea[2] = 0;
 		alerts.area[2] = 0;
 		// The town next to the menu button, above the line.
-		String label = headName(340);
-		float lp = fit(true, 40, 340, label);
+		// v3.70: with the clock and the date in the camera band the town has the whole row.
+		float lw = band > 0 ? cw - 124 - 40 : 340;
+		String label = headName(lw);
+		float lp = fit(true, 40, lw, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
 		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
 		if (w == null) {
@@ -560,6 +566,10 @@ public final class Screen {
 			g.icon(a, x * s, y * s, w * s, h * s, c);
 		}
 
+		public void sprite(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int c, float al, float rot, float px, float py) {
+			g.sprite(a, sx, sy, sw, sh, x * s, y * s, w * s, h * s, c, al, rot, px * s, py * s);
+		}
+
 		public void arc(float cx, float cy, float r, float st, float sw, float k, int c) {
 			g.arc(cx * s, cy * s, r * s, st, sw, k * s, c);
 		}
@@ -626,11 +636,8 @@ public final class Screen {
 	 * temperature centred in the lower one, at the size they have today (computed for OLDBOT).
 	 */
 	private void drawNowHalves(String icon, float l, float top, float r, float bot, float oldBot) {
-		float y0 = 0, y1 = 200;
-		for (String c : CENTRE) {
-			String[] p = c.split(" ");
-			if (p[0].equals(icon)) { y0 = Float.parseFloat(p[2]); y1 = Float.parseFloat(p[4]); }
-		}
+		float[] cb = centre(icon);
+		float y0 = cb[1], y1 = cb[3];
 		uPct = 34;
 		dPct = 27;
 		float s = 400, px = 348, room = oldBot - top - 40, cx = (l + r) / 2;
@@ -1710,6 +1717,37 @@ public final class Screen {
 		g.rect(x + 2, y + hd - 2, w - 4, 2, c.line);
 	}
 
+	/**
+	 * v3.70 (Viorel): in portrait, on phones with the camera in the screen (Android 9+), the band
+	 * of the camera (BAND units high, its top at BAND_TOP, above the page) holds the clock and the
+	 * connection at the right and the date at the left; the middle stays free for the camera.
+	 */
+	public float band, bandTop;
+
+	private void drawBand() {
+		float top = -band, mid = top + band / 2;
+		int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
+		float px = Math.min(44, band * 0.62f), right = cw - 40;
+		String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) : String.format("%02d:%02d", h, m);
+		float y = mid - px * 0.45f;
+		if (clk12) {
+			String pm = h < 12 ? "AM" : "PM";
+			float pp = px * 0.44f, pw = g.width(true, pp, pm);
+			ltext(true, pp, y + px * 0.81f - pp * 0.81f, right - pw, pm, c.ink);
+			right -= pw + 4;
+		}
+		rtext(true, px, y, right, hm, c.ink);
+		clockLeft = right - g.width(true, px, hm);
+		if (net >= 0) {
+			float nh = px * 0.64f, nw = nh * 36 / 32;
+			drawNet(clockLeft - 12 - nw, mid - nh / 2, nw, nh);
+			clockLeft -= 12 + nw;
+		}
+		String d = T.date(now);
+		float dp = fit(false, Math.min(28, band * 0.42f), Math.max(120, cw / 2 - 90 - 40), d);
+		ltext(false, dp, mid - dp * 0.5f, 40, d, c.ink);
+	}
+
 	private void drawClock() {
 		int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
 		float right = cw - 40;
@@ -1736,20 +1774,21 @@ public final class Screen {
 	 */
 	private void drawNet(float x, float y, float wd, float h) {
 		int col = net == 0 ? c.dim : c.ink;
+		float f = h / 32; // v3.70: smaller in the camera band
 		if (net == 1 || net == 0) {
-			float cx = x + wd / 2, cy = y + h - 3;
-			for (int k = 1; k <= 3; k++) g.arc(cx, cy, k * 9.5f, 225, 90, 4, col);
-			g.roundRect(cx - 3.5f, cy - 3.5f, 7, 7, 3.5f, col);
+			float cx = x + wd / 2, cy = y + h - 3 * f;
+			for (int k = 1; k <= 3; k++) g.arc(cx, cy, k * 9.5f * f, 225, 90, 4 * f, col);
+			g.roundRect(cx - 3.5f * f, cy - 3.5f * f, 7 * f, 7 * f, 3.5f * f, col);
 			if (net == 0) g.poly(new float[] { x + 2, y + h - 1, x + 5, y + h + 2, x + wd - 2, y + 1, x + wd - 5, y - 2 }, c.ink);
 		} else if (net == 2) {
-			float bw = 6, gap = 3.3f, x0 = x + (wd - 4 * bw - 3 * gap) / 2;
+			float bw = 6 * f, gap = 3.3f * f, x0 = x + (wd - 4 * bw - 3 * gap) / 2;
 			for (int k = 0; k < 4; k++) {
 				float bh = h * (k + 1) / 4f;
 				g.rect(x0 + k * (bw + gap), y + h - bh, bw, bh, col);
 			}
 		} else {
 			float cx = x + wd / 2, cy = y + h / 2, r = Math.min(wd, h) / 2 - 2;
-			g.arc(cx, cy, r, 0, 360, 3, col);
+			g.arc(cx, cy, r, 0, 360, 3 * f, col);
 			g.rect(cx - r, cy - 1.5f, 2 * r, 3, col);
 			g.rect(cx - 1.5f, cy - r, 3, 2 * r, col);
 		}
@@ -1759,8 +1798,30 @@ public final class Screen {
 
 	private float icLeft = 0, icRight = 758, icTop = 0, icPct = 100;
 
+	/**
+	 * v3.70: the big icon of the weather now moves while ICON_T runs from 0 to 1 (WeatherView,
+	 * 3 seconds when the screen opens or the weather changes); BIG_ICON is the one drawn.
+	 */
+	public float iconT = 1;
+	public String bigIcon;
+
 	private void drawIcon(String icon, float x, float y, float s) {
-		g.icon("icons/" + icon + ".png", x, y, s, s, c.ink);
+		if (WxIcon.has(icon)) {
+			boolean big = s >= 140;
+			if (big) bigIcon = icon;
+			WxIcon.draw(g, icon, x, y, s, big ? iconT : 1, Theme.icon(dark));
+		} else g.icon("icons/" + icon + ".png", x, y, s, s, c.ink);
+	}
+
+	/** Where the drawing of ICON is in its 200 x 200 square. */
+	private static float[] centre(String icon) {
+		float[] b = WxIcon.box(icon);
+		if (b != null) return b;
+		for (String c : CENTRE) {
+			String[] p = c.split(" ");
+			if (p[0].equals(icon)) return new float[] { Float.parseFloat(p[1]), Float.parseFloat(p[2]), Float.parseFloat(p[3]), Float.parseFloat(p[4]) };
+		}
+		return new float[] { 0, 0, 200, 200 };
 	}
 
 	/**
@@ -1768,13 +1829,8 @@ public final class Screen {
 	 * drawing at most HALF_H above and below CY and MAXW wide.
 	 */
 	private void drawIconC(String icon, float cx, float cy, float size, float halfH, float maxw) {
-		float x0 = 0, y0 = 0, x1 = 200, y1 = 200;
-		for (String c : CENTRE) {
-			String[] p = c.split(" ");
-			if (p[0].equals(icon)) {
-				x0 = Float.parseFloat(p[1]); y0 = Float.parseFloat(p[2]); x1 = Float.parseFloat(p[3]); y1 = Float.parseFloat(p[4]);
-			}
-		}
+		float[] cb = centre(icon);
+		float x0 = cb[0], y0 = cb[1], x1 = cb[2], y1 = cb[3];
 		float s = size, dh = y1 - y0, dw = x1 - x0;
 		if (s * dh / 200 > halfH * 2) s = halfH * 2 * 200 / dh;
 		if (s * dw / 200 > maxw) s = maxw * 200 / dw;
@@ -2895,7 +2951,8 @@ public final class Screen {
 			String line = t(w.temp) + "°  " + d[1] + (city != null ? "  ·  " + place() : "");
 			float lp = fit(false, 32, cw - 220, line), lw = g.width(false, lp, line), ic = lp * 1.6f;
 			float lx = cw / 2 - (lw + ic + 14) / 2;
-			g.icon("icons/" + d[0] + ".png", lx, y + 64 - ic * 0.25f, ic, ic, ink);
+			if (WxIcon.has(d[0])) WxIcon.draw(g, d[0], lx, y + 64 - ic * 0.25f, ic, 1, Theme.icon(dark));
+			else g.icon("icons/" + d[0] + ".png", lx, y + 64 - ic * 0.25f, ic, ic, ink);
 			ltext(false, lp, y + 64, lx + ic + 14, line, ink);
 		}
 		String bat = (batt >= 0 ? batt + "%  " : "") + T.charging;

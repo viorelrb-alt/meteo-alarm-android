@@ -851,3 +851,8 @@ Sky	Ég
 Peach	Barack
 Rose	Rózsa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 színtéma: Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa; a vonal alatt Világos, Sötét vagy Automatikus (telefon érzékelője).
+Weather icons	Időjárás-ikonok
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	A téma színeiben; a nagy 3 másodpercig mozog, amikor a képernyő megnyílik vagy változik az időjárás.
+Camera band	Kamerasáv
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Álló helyzetben, a kijelzőbe épített kamerás telefonokon (Android 9+) az óra, a kapcsolat és a dátum a kamera mellett van; a település az egész sort kapja.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Időjárás-ikonok: “Coloured weather icons collection”, titusurya (magnific.com), ingyenes vektorok.

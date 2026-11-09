@@ -851,3 +851,8 @@ Sky	Taivas
 Peach	Persikka
 Rose	Ruusu
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 väriteemaa: Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu; viivan alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).
+Weather icons	Sääkuvakkeet
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Teeman väreissä; iso liikkuu 3 sekuntia, kun näyttö avautuu tai sää muuttuu.
+Camera band	Kamerakaista
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Pystyasennossa, puhelimissa, joissa kamera on näytössä (Android 9+), kello, yhteys ja päivämäärä ovat kameran vieressä; paikkakunta saa koko rivin.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Sääkuvakkeet: “Coloured weather icons collection”, titusurya (magnific.com), ilmaiset vektorit.

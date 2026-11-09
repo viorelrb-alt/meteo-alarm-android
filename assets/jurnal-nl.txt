@@ -1,10 +1,12 @@
-Huidige versie: v.3.61 · 9.11.2026
+Huidige versie: v.3.70 · 9.11.2026
 BOERENMODUS
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.
 HOOFDSCHERM
+- Camerabalk: staand staan de klok, de verbinding en de datum naast de camera (Android 9+).
 - INFORMATIE-vakken in Europa: rijp, vorst, mist, ijzel, harde wind.
 - Verbindingspictogram naast de klok: wifi, mobiele data of geen.
+- Weerpictogrammen: in de kleuren van het thema; de grote beweegt 3 seconden.
 MELDINGEN
 - Aparte INFORMATIE-meldingen voor elk perceel: rijp, vorst, mist, ijzel, zware windstoten.
 - Een aparte INFORMATIE-melding ook voor de plaats.

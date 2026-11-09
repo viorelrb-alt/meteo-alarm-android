@@ -1,11 +1,13 @@
-Trenutačna verzija: v.3.61 · 9.11.2026
+Trenutačna verzija: v.3.70 · 9.11.2026
 AŽURIRANJA
 - Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
 - Prije ažuriranja provjera dopuštenja za instalaciju i napomena o Auto Blockeru (Samsung) s gumbom za postavke.
 GLAVNI ZASLON
 - Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
+- Ikone vremena: u bojama teme; velika se miče 3 sekunde.
 - Polja INFORMACIJA u Europi: mraz, smrzavanje, magla, ledena kiša, jak vjetar.
+- Traka kamere: u uspravnom položaju sat, veza i datum stoje uz kameru (Android 9+).
 NAČIN RADA ZA POLJOPRIVREDNIKE
 - Način rada za poljoprivrednike: nova polja nakon Vode u tlu: Prskanje, Vodna bilanca, Oluje, Toplinske jedinice, 16 dana.
 - U SAD-u, u načinu za poljoprivrednike: polja NWS, Suša, Požar, Tuča.

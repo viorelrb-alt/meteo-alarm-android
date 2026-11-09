@@ -1,7 +1,9 @@
-Version actuelle : v.3.61 · 9.11.2026
+Version actuelle : v.3.70 · 9.11.2026
 ÉCRAN PRINCIPAL
+- Bande de la caméra : en portrait, l'horloge, la connexion et la date sont à côté de la caméra (Android 9+).
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
 - Icône de connexion à côté de l’horloge : Wi-Fi, données mobiles ou aucune.
+- Icônes météo : aux couleurs du thème ; la grande bouge 3 secondes.
 MISES À JOUR
 - Avant une mise à jour, vérification du droit d'installer et note sur Auto Blocker (Samsung) avec bouton vers les paramètres.
 - Mises à jour : la connexion est vérifiée d’abord, une version déjà téléchargée s’installe aussitôt, jusqu’à 5 essais quand GitHub ne répond pas, et la raison est affichée.

@@ -1,7 +1,9 @@
-Nuværende version: v.3.61 · 9.11.2026
+Nuværende version: v.3.70 · 9.11.2026
 HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi, mobildata eller ingen.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
+- Kamerabånd: i portræt står uret, forbindelsen og datoen ved siden af kameraet (Android 9+).
+- Vejrikoner: i temaets farver; den store bevæger sig i 3 sekunder.
 LANDMANDSTILSTAND
 - I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.
 - Landmandstilstand: nye felter efter Vand i jorden: Sprøjtning, Vandbalance, Storme, Graddage, 16 dage.

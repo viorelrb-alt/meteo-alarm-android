@@ -1,11 +1,13 @@
-Versiunea curentă: v.3.61 · 9.11.2026
+Versiunea curentă: v.3.70 · 9.11.2026
 ACTUALIZĂRI
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
 - Înainte de actualizare, verificarea permisiunii de instalare și nota Auto Blocker (Samsung) cu buton spre setări.
 ECRAN PRINCIPAL
+- Banda camerei: în portret, ceasul, conexiunea și data stau lângă cameră (Android 9+).
 - Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
+- Iconurile vremii: în culorile temei; cel mare se mișcă 3 secunde.
 MOD FERMIER
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.

@@ -851,3 +851,8 @@ Sky	Céu
 Peach	Pêssego
 Rose	Rosa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temas de cor: Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa; sob a linha Claro, Escuro ou Automático (sensor do telefone).
+Weather icons	Ícones do tempo
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Nas cores do tema; o grande mexe-se durante 3 segundos quando o ecrã abre ou o tempo muda.
+Camera band	Faixa da câmara
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Na vertical, em telefones com a câmara no ecrã (Android 9+), o relógio, a ligação e a data ficam junto à câmara; a localidade fica com a linha toda.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ícones do tempo: “Coloured weather icons collection”, titusurya (magnific.com), vetores gratuitos.

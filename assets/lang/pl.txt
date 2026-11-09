@@ -851,3 +851,8 @@ Sky	Niebo
 Peach	Brzoskwinia
 Rose	Róża
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 motywów kolorystycznych: Monochromatyczny, Szałwia, Lawenda, Niebo, Brzoskwinia, Róża; pod linią Jasny, Ciemny lub Automatyczny (czujnik telefonu).
+Weather icons	Ikony pogody
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	W kolorach motywu; duża porusza się przez 3 sekundy, gdy otwiera się ekran lub zmienia się pogoda.
+Camera band	Pasek kamery
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	W pionie, w telefonach z kamerą w ekranie (Android 9+), zegar, połączenie i data są obok kamery; miejscowość ma cały wiersz.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony pogody: “Coloured weather icons collection”, titusurya (magnific.com), darmowe wektory.

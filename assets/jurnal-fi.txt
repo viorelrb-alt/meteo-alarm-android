@@ -1,9 +1,11 @@
-Nykyinen versio: v.3.61 · 9.11.2026
+Nykyinen versio: v.3.70 · 9.11.2026
 ILMOITUKSET
 - Erillinen TIEDOTE-ilmoitus myös paikkakunnalle.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.
 - Ilmoitukset kuten puhelimen Sää-sovelluksessa (”Paikka | Sade”): sade tai lumi tunnin sisällä ja klo 20 jälkeen huomiselle, paikkakunnalle ja lohkoille; ei ilmoitusta, kun Open-Meteo vastaa taas.
 PÄÄNÄYTTÖ
+- Kamerakaista: pystyasennossa kello, yhteys ja päivämäärä ovat kameran vieressä (Android 9+).
+- Sääkuvakkeet: teeman väreissä; iso liikkuu 3 sekuntia.
 - TIEDOTE-ruudut Euroopassa: kuura, halla, sumu, jäätävä sade, kova tuuli.
 - Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
 PÄIVITYKSET

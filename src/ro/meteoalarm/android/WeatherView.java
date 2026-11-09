@@ -212,6 +212,59 @@ final class WeatherView extends View {
 		}
 		drawScreen(c);
 		if (pull > 0) drawPull(c);
+		String big = screen.bigIcon;
+		if (big != null && !big.equals(iconDone) && (iconAnim == null || !iconAnim.isRunning())) startIcon(big);
+	}
+
+	// --- v3.70 (Viorel): the icon of the weather now moves for 3 seconds, then stays still ------
+
+	private android.animation.ValueAnimator iconAnim;
+	/** The icon that already moved; another one (other weather, town or screen) moves again. */
+	private String iconDone;
+
+	/** The icon moves again (the app comes back on the screen). */
+	void replayIcon() {
+		iconDone = null;
+		invalidate();
+	}
+
+	private void startIcon(String big) {
+		iconDone = big;
+		screen.iconT = 0;
+		iconAnim = android.animation.ValueAnimator.ofFloat(0, 1);
+		iconAnim.setDuration(3000);
+		iconAnim.setInterpolator(new android.view.animation.LinearInterpolator());
+		iconAnim.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+			public void onAnimationUpdate(android.animation.ValueAnimator a) {
+				screen.iconT = (Float) a.getAnimatedValue();
+				invalidate();
+			}
+		});
+		iconAnim.addListener(new android.animation.AnimatorListenerAdapter() {
+			@Override
+			public void onAnimationEnd(android.animation.Animator a) {
+				screen.iconT = 1;
+				invalidate();
+			}
+		});
+		iconAnim.start();
+		invalidate();
+	}
+
+	// --- v3.70 (Viorel): in portrait the clock, the connection and the date sit in the camera band --
+
+	/** Height of the camera band at the top (pixels; 0 = none or not used). */
+	private int bandPx;
+
+	void band(int px) {
+		if (px == bandPx) return;
+		bandPx = px;
+		invalidate();
+	}
+
+	/** The band is used only in portrait on a phone. */
+	private int bandUsed() {
+		return bandPx > 0 && getWidth() < getHeight() && !screen.tablet ? bandPx : 0;
 	}
 
 	// --- v2.90 (Viorel 2026-11-08): farmer mode, the main screens slide with the finger -----------
@@ -235,7 +288,7 @@ final class WeatherView extends View {
 
 	/** The top and the bottom of the moving part, in pixels. */
 	private float[] band() {
-		float[] f = Screen.fit(getWidth(), getHeight(), screen.tablet);
+		float[] f = Screen.fit(getWidth(), getHeight() - bandUsed(), screen.tablet);
 		// v3.10: in landscape the boxes start right under the dots (124 units), so the slide starts there.
 		float top = getWidth() > getHeight() ? 123 : 137;
 		return new float[] { oy + top * scale, oy + (f[2] - 80) * scale };
@@ -319,11 +372,14 @@ final class WeatherView extends View {
 		if (w == 0 || h == 0) return;
 		// A tablet: at least 600 dp on the short side (a foldable when open, too).
 		screen.tablet = Math.min(w, h) / dp >= 600;
-		float[] f = Screen.fit(w, h, screen.tablet);
+		int bp = bandUsed();
+		float[] f = Screen.fit(w, h - bp, screen.tablet);
 		scale = f[0];
 		float cw = f[1], ch = f[2];
 		ox = f[3];
-		oy = f[4];
+		oy = f[4] + bp;
+		screen.band = bp / scale;
+		screen.bandTop = -oy / scale;
 		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
 		c.save();
 		c.translate(ox, oy);

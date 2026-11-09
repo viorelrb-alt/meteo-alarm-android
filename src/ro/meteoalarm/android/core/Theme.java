@@ -33,6 +33,22 @@ public final class Theme {
 			{ 0xFF2A221D, 0xFFF8EFE7, 0xFFB0A093, 0xFFEBC9AE, 0xFFEBC9AE, 0xFF17120F, 0xFF362C25, 0xFF54453B, 0xFFD0BBAA, 0xFFE09A6E, 0xFFE09A6E, DY, DO, DR, 0xFF2A221D, 0xFF2A221D },
 			{ 0xFF291E23, 0xFFF8EEF2, 0xFFB39BA6, 0xFFE8BFD0, 0xFFE8BFD0, 0xFF161013, 0xFF35282E, 0xFF544049, 0xFFD4B6C3, 0xFFE08AAE, 0xFFE08AAE, DY, DO, DR, 0xFF291E23, 0xFF291E23 } };
 
+	/**
+	 * v3.70: the three colours of the weather icons (sun, light parts, dark parts) for each
+	 * theme, light and dark, as in the pictures Viorel chose.
+	 */
+	private static final int[][] ICON_LIGHT = { { 0xFF000000, 0xFF8A8A8A, 0xFF000000 }, { 0xFFD9A93F, 0xFF8FB8A0, 0xFF3E6B55 },
+			{ 0xFFE0B04A, 0xFFB3A3D6, 0xFF6B5B95 }, { 0xFFF0C030, 0xFF6FAEE3, 0xFF2F6690 }, { 0xFFE8A23A, 0xFFE0B596, 0xFFB5714A },
+			{ 0xFFE8B04A, 0xFFE3A8C0, 0xFFA8577A } };
+	private static final int[][] ICON_DARK = { { 0xFFD97757, 0xFFA6A39A, 0xFFFAF9F5 }, { 0xFFE3C46A, 0xFFA9C7B5, 0xFF6E9E84 },
+			{ 0xFFE8C46A, 0xFFC9BDE3, 0xFF9381C9 }, { 0xFFF2CD5A, 0xFFA9C8E6, 0xFF5A8DBA }, { 0xFFEDB65E, 0xFFEBC9AE, 0xFFC98A62 },
+			{ 0xFFEDC06A, 0xFFE8BFD0, 0xFFC47394 } };
+
+	public static int[] icon(boolean dark) {
+		int p = pal < 0 || pal >= ICON_LIGHT.length ? 0 : pal;
+		return (dark ? ICON_DARK : ICON_LIGHT)[p];
+	}
+
 	public static int[] colors(boolean dark) {
 		int p = pal < 0 || pal >= LIGHT.length ? 0 : pal;
 		return (dark ? DARK : LIGHT)[p];

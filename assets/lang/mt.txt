@@ -851,3 +851,8 @@ Sky	Sema
 Peach	Ħawħa
 Rose	Warda
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temi tal-kulur: Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda; taħt il-linja Ċar, Skur jew Awtomatiku (sensur tat-telefon).
+Weather icons	Ikoni tat-temp
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Fil-kuluri tat-tema; il-kbira tiċċaqlaq għal 3 sekondi meta jinfetaħ l-iskrin jew jinbidel it-temp.
+Camera band	Faxxa tal-kamera
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	F'portrait, fuq telefowns bil-kamera fl-iskrin (Android 9+), l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera; il-lokalità għandha r-ringiela kollha.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikoni tat-temp: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn.

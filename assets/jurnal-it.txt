@@ -1,4 +1,4 @@
-Versione attuale: v.3.61 · 9.11.2026
+Versione attuale: v.3.70 · 9.11.2026
 AGGIORNAMENTI
 - Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
@@ -14,7 +14,9 @@ PARTICELLE
 - Notifiche delle particelle, scelte con il pulsante campanella sulla mappa: pioggia, vento, neve, siccità.
 SCHERMATA PRINCIPALE
 - Caselle INFORMAZIONE in Europa: brina, gelo, nebbia, pioggia che gela, vento forte.
+- Fascia della fotocamera: in verticale orologio, connessione e data stanno accanto alla fotocamera (Android 9+).
 - Icona della connessione accanto all’orologio: Wi-Fi, dati mobili o nessuna.
+- Icone meteo: nei colori del tema; quella grande si muove per 3 secondi.
 TEMI
 - 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ☰ › Tema.
 - Miglioramenti del design e correzioni di errori.

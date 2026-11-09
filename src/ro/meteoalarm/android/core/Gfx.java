@@ -22,6 +22,12 @@ public interface Gfx {
 	 */
 	void icon(String asset, float x, float y, float w, float h, int color);
 
+	/**
+	 * v3.70: the part SX SY SW SH (pixels) of the asset (black-on-white like ICON) drawn in X Y W H
+	 * in COLOR, ALPHA (0..1) opaque, turned ROT degrees around PX PY.
+	 */
+	void sprite(String asset, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int color, float alpha, float rot, float px, float py);
+
 	void arc(float cx, float cy, float r, float startDeg, float sweepDeg, float stroke, int color);
 
 	void poly(float[] xy, int color);

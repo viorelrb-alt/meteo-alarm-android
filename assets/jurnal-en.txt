@@ -1,10 +1,12 @@
-Current version: v.3.61 · 9.11.2026
+Current version: v.3.70 · 9.11.2026
 FARMER MODE
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
 MAIN SCREEN
+- Camera band: in portrait the clock, the connection and the date sit next to the camera (Android 9+).
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
+- Weather icons: in the theme's colours; the big one moves for 3 seconds.
 NOTIFICATIONS
 - A separate INFORMATION notification for the town too.
 - Notifications like the phone's Weather app (“Place | Rain”): rain or snow within the hour and, after 8 pm, for tomorrow, for the town and the parcels; no notice when Open-Meteo answers again.

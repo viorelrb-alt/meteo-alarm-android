@@ -851,3 +851,8 @@ Sky	Nebo
 Peach	Broskyňa
 Rose	Ruža
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 farebných motívov: Monochromatický, Šalvia, Levanduľa, Nebo, Broskyňa, Ruža; pod čiarou Svetlý, Tmavý alebo Automatický (senzor telefónu).
+Weather icons	Ikony počasia
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Vo farbách motívu; veľká sa 3 sekundy hýbe, keď sa otvorí obrazovka alebo sa zmení počasie.
+Camera band	Pás kamery
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Na výšku, na telefónoch s kamerou v displeji (Android 9+), sú hodiny, pripojenie a dátum vedľa kamery; obec má celý riadok.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony počasia: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory.

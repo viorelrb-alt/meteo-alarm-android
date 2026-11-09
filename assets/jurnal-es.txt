@@ -1,4 +1,4 @@
-Versión actual: v.3.61 · 9.11.2026
+Versión actual: v.3.70 · 9.11.2026
 ACTUALIZACIONES
 - Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.
@@ -12,7 +12,9 @@ NOTIFICACIONES
 - Una notificación de INFORMACIÓN propia también para la localidad.
 PANTALLA PRINCIPAL
 - Casillas INFORMACIÓN en Europa: escarcha, helada, niebla, lluvia engelante, viento fuerte.
+- Franja de la cámara: en vertical, el reloj, la conexión y la fecha están junto a la cámara (Android 9+).
 - Icono de conexión junto al reloj: Wi-Fi, datos móviles o ninguna.
+- Iconos del tiempo: en los colores del tema; el grande se mueve 3 segundos.
 PARCELAS
 - Notificaciones de parcelas, elegidas con el botón de campana del mapa: lluvia, viento, nieve, sequía.
 TEMAS

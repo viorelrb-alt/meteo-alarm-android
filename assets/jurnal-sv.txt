@@ -1,4 +1,4 @@
-Nuvarande version: v.3.61 · 9.11.2026
+Nuvarande version: v.3.70 · 9.11.2026
 AVISERINGAR
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - En egen INFORMATION-avisering även för orten.
@@ -6,6 +6,8 @@ AVISERINGAR
 HUVUDSKÄRM
 - Anslutningsikon vid klockan: Wi-Fi, mobildata eller ingen.
 - INFORMATION-rutor i Europa: rimfrost, frost, dimma, underkylt regn, hård vind.
+- Kameraband: i stående läge står klockan, anslutningen och datumet bredvid kameran (Android 9+).
+- Väderikoner: i temats färger; den stora rör sig i 3 sekunder.
 LANTBRUKARLÄGE
 - I USA, i lantbruksläge: rutorna NWS, Torka, Brand, Hagel.
 - Lantbruksläge: nya rutor efter Vatten i marken: Besprutning, Vattenbalans, Åska, Dygnsgrader, 16 dagar.

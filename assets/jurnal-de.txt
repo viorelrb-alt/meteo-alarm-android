@@ -1,4 +1,4 @@
-Aktuelle Version: v.3.61 · 9.11.2026
+Aktuelle Version: v.3.70 · 9.11.2026
 AKTUALISIERUNGEN
 - Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.
@@ -11,7 +11,9 @@ DESIGNS
 - 6 Farbdesigns (Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose), jeweils hell und dunkel: ☰ › Design.
 HAUPTBILDSCHIRM
 - HINWEIS-Felder in Europa: Reif, Frost, Nebel, gefrierender Regen, starker Wind.
+- Kameraleiste: im Hochformat stehen Uhr, Verbindung und Datum neben der Kamera (Android 9+).
 - Verbindungssymbol neben der Uhr: WLAN, mobile Daten oder keine.
+- Wettersymbole: in den Farben des Designs; das große bewegt sich 3 Sekunden.
 LANDWIRT-MODUS
 - In den USA, im Landwirt-Modus: die Felder NWS, Dürre, Brand, Hagel.
 - Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.

@@ -851,3 +851,8 @@ Sky	Spéir
 Peach	Péitseog
 Rose	Rós
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 théama datha: Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós; faoin líne Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
+Weather icons	Deilbhíní aimsire
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	I ndathanna an téama; bogann an ceann mór ar feadh 3 soicind nuair a osclaíonn an scáileán nó nuair a athraíonn an aimsir.
+Camera band	Banda an cheamara
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Sa phortráid, ar fhóin leis an gceamara sa scáileán (Android 9+), tá an clog, an ceangal agus an dáta in aice leis an gceamara; tá an tsraith iomlán ag an mbaile.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Deilbhíní aimsire: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce.

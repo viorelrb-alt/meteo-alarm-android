@@ -851,3 +851,8 @@ Sky	Himmel
 Peach	Fersken
 Rose	Rose
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 farvetemaer: Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose; under linjen Lyst, Mørkt eller Automatisk (telefonens sensor).
+Weather icons	Vejrikoner
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	I temaets farver; den store bevæger sig i 3 sekunder, når skærmen åbnes, eller vejret skifter.
+Camera band	Kamerabånd
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	I portræt, på telefoner med kameraet i skærmen (Android 9+), står uret, forbindelsen og datoen ved siden af kameraet; byen får hele rækken.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Vejrikoner: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer.

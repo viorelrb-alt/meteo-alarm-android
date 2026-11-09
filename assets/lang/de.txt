@@ -851,3 +851,8 @@ Sky	Himmel
 Peach	Pfirsich
 Rose	Rose
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 Farbdesigns: Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose; unter der Linie Hell, Dunkel oder Automatisch (Telefonsensor).
+Weather icons	Wettersymbole
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	In den Farben des Designs; das große bewegt sich 3 Sekunden, wenn der Bildschirm öffnet oder das Wetter wechselt.
+Camera band	Kameraleiste
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Im Hochformat, auf Handys mit Kamera im Bildschirm (Android 9+), stehen Uhr, Verbindung und Datum neben der Kamera; der Ort hat die ganze Zeile.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Wettersymbole: “Coloured weather icons collection”, titusurya (magnific.com), kostenlose Vektoren.

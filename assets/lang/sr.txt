@@ -785,3 +785,8 @@ Sky	Небо
 Peach	Бресква
 Rose	Ружа
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 тема боја: Једнобојна, Жалфија, Лаванда, Небо, Бресква, Ружа; испод линије Светла, Тамна или Аутоматска (сензор телефона).
+Weather icons	Иконе времена
+In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	У бојама теме; велика се помера 3 секунде када се екран отвори или се време промени.
+Camera band	Трака камере
+In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Усправно, на телефонима са камером у екрану (Android 9+), сат, веза и датум су поред камере; место добија цео ред.
+Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Иконе времена: “Coloured weather icons collection”, titusurya (magnific.com), бесплатни вектори.

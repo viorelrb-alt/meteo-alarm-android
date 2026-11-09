@@ -78,6 +78,37 @@ public final class Preview {
 			}
 		}
 
+		private final java.util.Map<String, BufferedImage> masks = new java.util.HashMap<>();
+
+		public void sprite(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int c, float al, float rot, float px, float py) {
+			try {
+				String key = a + (c & 0xFFFFFF);
+				BufferedImage m = masks.get(key);
+				if (m == null) {
+					BufferedImage im = ImageIO.read(new File(assets, a));
+					m = new BufferedImage(im.getWidth(), im.getHeight(), BufferedImage.TYPE_INT_ARGB);
+					for (int j = 0; j < im.getHeight(); j++)
+						for (int i = 0; i < im.getWidth(); i++) {
+							int p = im.getRGB(i, j);
+							int lum = (((p >> 16) & 255) * 299 + ((p >> 8) & 255) * 587 + (p & 255) * 114) / 1000;
+							m.setRGB(i, j, ((255 - lum) * (p >>> 24) / 255) << 24 | (c & 0xFFFFFF));
+						}
+					masks.put(key, m);
+				}
+				java.awt.geom.AffineTransform old = g.getTransform();
+				java.awt.Composite oc = g.getComposite();
+				if (rot != 0) g.rotate(Math.toRadians(rot), px, py);
+				g.setComposite(java.awt.AlphaComposite.getInstance(java.awt.AlphaComposite.SRC_OVER, Math.max(0, Math.min(1, al))));
+				g.translate(x, y);
+				g.scale(w / sw, h / sh);
+				g.drawImage(m, 0, 0, sw, sh, sx, sy, sx + sw, sy + sh, null);
+				g.setTransform(old);
+				g.setComposite(oc);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		}
+
 		public void arc(float cx, float cy, float r, float st, float sw, float stroke, int c) {
 			g.setColor(new Color(c, true));
 			g.setStroke(new BasicStroke(stroke));
@@ -264,6 +295,8 @@ public final class Preview {
 		s.fetched = now;
 		s.now = Calendar.getInstance();
 		s.tablet = opts.contains(" tab");
+		for (String o : a) if (o.startsWith("t=")) s.iconT = Float.parseFloat(o.substring(2));
+		for (String o : a) if (o.startsWith("pal=")) ro.meteoalarm.android.core.Theme.pal = Integer.parseInt(o.substring(4));
 		s.brightBar = opts.contains(" bar");
 		s.sensorTheme = opts.contains(" sensor");
 		s.nightClock = opts.contains(" night");
@@ -280,15 +313,19 @@ public final class Preview {
 		if (opts.contains(" evening")) s.now.set(Calendar.HOUR_OF_DAY, 22);
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";
 		s.brightLevel = 0.45f;
-		float[] f = Screen.fit(pw, ph, s.tablet);
-		float scale = f[0], cw = f[1], ch = f[2], ox = f[3], oy = f[4];
+		int bp = 0;
+		for (String o : a) if (o.startsWith("band=")) bp = Integer.parseInt(o.substring(5));
+		float[] f = Screen.fit(pw, ph - bp, s.tablet);
+		float scale = f[0], cw = f[1], ch = f[2], ox = f[3], oy = f[4] + bp;
+		s.band = bp / scale;
+		s.bandTop = -oy / scale;
 		BufferedImage img = new BufferedImage(pw, ph, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = img.createGraphics();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
 		g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
-		g.setColor(new Color(Screen.theme != null ? Screen.theme[0] & 0xFFFFFF : s.dark ? 0x262624 : 0xFFFFFF));
+		g.setColor(new Color(Screen.theme != null ? Screen.theme[0] & 0xFFFFFF : ro.meteoalarm.android.core.Theme.page(s.dark) & 0xFFFFFF));
 		g.fillRect(0, 0, pw, ph);
 		g.translate(ox, oy);
 		g.scale(scale, scale);
