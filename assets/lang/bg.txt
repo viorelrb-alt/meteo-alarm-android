@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Разделите са отделени с линии; таблиците имат линии и се плъзгат встрани; източникът е най-долу, веднъж.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Когато са ВКЛ., известие за дъжд или силен вятър на парцела и по едно за всеки парцел при слана, замръзване, мъгла, поледица или силни пориви.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Получавате известие за този парцел при прогноза за дъжд или силен вятър през следващите 12 часа и друго при слана, замръзване, мъгла, поледица или силни пориви (проверка на всеки 3 часа).
+Now	Сега
+Air temp.	Темп. въздух
+Wind dir.	Посока вятър
+Rain chance	Вер. дъжд
+Air hum.	Влажн. въздух
+Soil hum.	Влажн. почва
+Soil temp.	Темп. почва
+Min. / max.	Мин. / макс.
+Mean soil hum.	Ср. влажн. почва
+Notifications and warnings	Известия и предупреждения
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Известия за този парцел: дъжд, вятър, сняг, слана, замръзване, мъгла, поледица, суша.
+Snow expected from 	Сняг се очаква от 
+Snow · 	Сняг · 
+Drought · 	Суша · 
+Dry soil (	Суха почва (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% на 3–9 cm, оценка) и без дъжд през следващите 7 дни.
+Parcel notifications	Известия за парцели
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Парцели: картата показва всички парцели; докосване отваря парцела на главния екран. „Запази GPS място“ или „Избери на картата“ добавя парцел; бутонът GPS показва къде си. Моливът променя името и карфицата; менюто ⋮ там има Статистика · PDF и Изтриване. Пазят се само в този телефон.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	В „Парцели“ и на страницата на парцел командите са в менюто ⋮ горе вдясно. Кутиите показват само стойността; докосване показва подробностите.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Статистика · PDF: горе кутиите за сега и за периода (неподвижни), под тях следващите 12 часа и ден по ден (превъртат се). Период и PDF в ⋮. Докосване на името на парцела показва името и координатите.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Фермерски режим: кутийката „Известия и предупреждения“ в картата на парцела включва всичките му известия: дъжд, вятър, сняг, слана, замръзване, мъгла, поледица, суша (суха почва, без дъжд 7 дни). Всеки парцел има свои.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Сини кутии ИНФОРМАЦИЯ след предупрежденията: слана, замръзване (пролет и есен), мъгла, поледица, силен вятър през следващите 24 часа. Изчислени от приложението от прогнозата; не са официални. Идват и като отделно известие.

@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Avsnitt skiljs åt av linjer; tabeller har linjer och kan skjutas åt sidan; källan står längst ner, en gång.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	När PÅ, en avisering om regn eller kraftig vind på skiftet och en per skifte om rimfrost, frost, dimma, underkylt regn eller kraftiga byar.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Du får en avisering för detta skifte när regn eller kraftig vind väntas de kommande 12 timmarna, och en om rimfrost, frost, dimma, underkylt regn eller kraftiga byar (kontrolleras var tredje timme).
+Now	Nu
+Air temp.	Lufttemp.
+Wind dir.	Vindriktn.
+Rain chance	Regnchans
+Air hum.	Luftfukt.
+Soil hum.	Markfukt.
+Soil temp.	Marktemp.
+Min. / max.	Min. / max.
+Mean soil hum.	Medel markfukt.
+Notifications and warnings	Aviseringar och varningar
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Aviseringar för detta skifte: regn, vind, snö, rimfrost, frost, dimma, underkylt regn, torka.
+Snow expected from 	Snö väntas från 
+Snow · 	Snö · 
+Drought · 	Torka · 
+Dry soil (	Torr mark (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% på 3–9 cm, uppskattat) och inget regn de kommande 7 dagarna.
+Parcel notifications	Aviseringar för skiften
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Skiften: kartan visar alla skiften; ett tryck öppnar ett på huvudskärmen. ”Spara GPS-plats” eller ”Välj på kartan” lägger till ett; GPS-knappen visar var du är. Pennan ändrar namn och nål; dess ⋮ har Statistik · PDF och Radera. Sparas bara i denna telefon.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	I Skiften och på ett skiftes sida finns kommandona i menyn ⋮ uppe till höger. Rutorna visar bara värdet; ett tryck visar detaljerna.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistik · PDF: överst rutorna för nu och för perioden (fasta), under dem de kommande 12 timmarna och dag för dag (de rullar). Period och PDF i ⋮. Ett tryck på skiftets namn visar namn och koordinater.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Lantbrukarläge: rutan ”Aviseringar och varningar” på skiftets kort slår på alla dess aviseringar: regn, vind, snö, rimfrost, frost, dimma, underkylt regn, torka (torr mark, 7 dagar utan regn). Varje skifte har sina egna.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Blå INFORMATION-rutor efter varningarna: rimfrost, frost (vår och höst), dimma, underkylt regn, hård vind de kommande 24 timmarna. Beräknas av appen ur prognosen; inte officiella. De kommer också som en egen avisering.

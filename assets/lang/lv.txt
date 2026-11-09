@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Daļas atdala līnijas; tabulām ir līnijas un tās var bīdīt uz sāniem; avots ir apakšā, vienreiz.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kad IESL., paziņojums par lietu vai stipru vēju laukā un pa vienam katram laukam par sarmu, salu, miglu, apledojumu vai stiprām brāzmām.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Jūs saņemat paziņojumu par šo lauku, ja nākamajās 12 stundās prognozē lietu vai stipru vēju, un vienu par sarmu, salu, miglu, apledojumu vai stiprām brāzmām (pārbauda ik pēc 3 stundām).
+Now	Tagad
+Air temp.	Gaisa temp.
+Wind dir.	Vēja virz.
+Rain chance	Lietus varb.
+Air hum.	Gaisa mitr.
+Soil hum.	Augsnes mitr.
+Soil temp.	Augsnes temp.
+Min. / max.	Min. / maks.
+Mean soil hum.	Vid. augsnes mitr.
+Notifications and warnings	Paziņojumi un brīdinājumi
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Šī lauka paziņojumi: lietus, vējš, sniegs, sarma, sals, migla, apledojums, sausums.
+Snow expected from 	Sniegs gaidāms no 
+Snow · 	Sniegs · 
+Drought · 	Sausums · 
+Dry soil (	Sausa augsne (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% 3–9 cm dziļumā, aplēse) un nākamās 7 dienas bez lietus.
+Parcel notifications	Lauku paziņojumi
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Lauki: karte rāda visus laukus; pieskāriens atver lauku galvenajā ekrānā. „Saglabāt GPS vietu“ vai „Izvēlēties kartē“ pievieno lauku; GPS poga rāda, kur esat. Zīmulis maina nosaukumu un spraudīti; tā ⋮ ir Statistika · PDF un Dzēst. Glabājas tikai šajā tālrunī.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Laukos un lauka lapā komandas ir izvēlnē ⋮ augšā pa labi. Lodziņi rāda tikai vērtību; pieskāriens rāda sīkāk.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistika · PDF: augšā šī brīža un perioda lodziņi (nekustīgi), zem tiem nākamās 12 stundas un diena pa dienai (ritinās). Periods un PDF izvēlnē ⋮. Pieskāriens lauka nosaukumam rāda nosaukumu un koordinātas.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Lauksaimnieka režīms: rūtiņa „Paziņojumi un brīdinājumi“ lauka kartītē ieslēdz visus tā paziņojumus: lietus, vējš, sniegs, sarma, sals, migla, apledojums, sausums (sausa augsne, 7 dienas bez lietus). Katram laukam ir savi.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Zilie INFORMĀCIJAS lodziņi pēc brīdinājumiem: sarma, sals (pavasarī un rudenī), migla, apledojums, stiprs vējš nākamajās 24 stundās. Lietotne tos aprēķina no prognozes; nav oficiāli. Tie nāk arī kā atsevišķs paziņojums.

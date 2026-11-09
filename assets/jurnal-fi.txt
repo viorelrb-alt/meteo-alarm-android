@@ -1,5 +1,8 @@
-Nykyinen versio: v.3.20 · 9.11.2026
+Nykyinen versio: v.3.30 · 9.11.2026
 Ulkoasun / rakenteen parannuksia.
+- Lohkon sivu yhdistetty tilastoihin: ylhäällä kiinteät nykyhetken ja jakson ruudut; alla 12 tunnin ja päivä päivältä -taulukot.
+- Jokaisen lohkon ruutu ”Ilmoitukset ja varoitukset” kytkee päälle kaikki sen ilmoitukset, nyt myös lumen ja kuivuuden.
+- Erillinen TIEDOTE-ilmoitus myös paikkakunnalle; ⋮-valikot näyttävät päävalikolta.
 - Lohkojen ja Tilastojen ruudut näyttävät vain arvon; tiedot näkyvät napautuksella.
 - Kuplat: viivat osioiden välissä, viivalliset taulukot liukuvat sivuttain, lähde alhaalla, kerran.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.

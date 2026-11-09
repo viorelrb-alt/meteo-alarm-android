@@ -1,5 +1,8 @@
-Trenutačna verzija: v.3.20 · 9.11.2026
+Trenutačna verzija: v.3.30 · 9.11.2026
 Poboljšanja izgleda / strukture.
+- Stranica parcele spojena sa Statistikom: gore nepomični okviri za sada i za razdoblje; ispod tablice za 12 sati i dan po dan.
+- Kućica „Obavijesti i upozorenja” na svakoj parceli uključuje sve njezine obavijesti, sada i snijeg i sušu.
+- Zasebna obavijest INFORMACIJA i za mjesto; izbornici ⋮ izgledaju kao glavni izbornik.
 - Okviri u Parcelama i Statistici pokazuju samo vrijednost; pojedinosti se vide na dodir.
 - Oblačići: crte između dijelova, tablice s crtama koje klize u stranu, izvor dolje, jednom.
 - Zasebne obavijesti OBAVIJEST za svaku parcelu: mraz, smrzavanje, magla, ledena kiša, jaki udari.

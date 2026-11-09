@@ -1,5 +1,8 @@
-Versiunea curentă: v.3.20 · 9.11.2026
+Versiunea curentă: v.3.30 · 9.11.2026
 Îmbunătățiri de design / structură.
+- Pagina parcelei unită cu Statistica: sus casetele de acum și ale perioadei, fixe; dedesubt tabelele pe 12 ore și zi cu zi.
+- Caseta „Notificări și avertizări” pe fiecare parcelă pornește toate notificările ei, acum și ninsoare și secetă.
+- Notificare INFORMARE separată și pentru localitate; meniurile ⋮ arată ca meniul principal.
 - Casetele din Parcele și Statistică arată doar valoarea; detaliile apar la atingere.
 - Bulele: linii între secțiuni, tabele cu linii care glisează în lateral, sursa jos, o singură dată.
 - Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.

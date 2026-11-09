@@ -851,3 +851,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Las secciones se separan con líneas; las tablas tienen líneas y se deslizan hacia los lados; la fuente está abajo, una sola vez.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Si está en SÍ, un aviso de lluvia o viento fuerte en la parcela y uno por parcela de escarcha, helada, niebla, lluvia engelante o rachas fuertes.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Recibes un aviso para esta parcela cuando se prevé lluvia o viento fuerte en las próximas 12 horas, y otro de escarcha, helada, niebla, lluvia engelante o rachas fuertes (se comprueba cada 3 horas).
+Now	Ahora
+Air temp.	Temp. aire
+Wind dir.	Dir. viento
+Rain chance	Prob. lluvia
+Air hum.	Hum. aire
+Soil hum.	Hum. suelo
+Soil temp.	Temp. suelo
+Min. / max.	Mín. / máx.
+Mean soil hum.	Hum. suelo media
+Notifications and warnings	Notificaciones y avisos
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notificaciones de esta parcela: lluvia, viento, nieve, escarcha, helada, niebla, lluvia helada, sequía.
+Snow expected from 	Nieve prevista desde las 
+Snow · 	Nieve · 
+Drought · 	Sequía · 
+Dry soil (	Suelo seco (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% a 3–9 cm, estimado) y sin lluvia en los próximos 7 días.
+Parcel notifications	Notificaciones de parcelas
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Parcelas: el mapa muestra todas las parcelas; un toque abre una en la pantalla principal. «Guardar lugar GPS» o «Elegir en el mapa» añade una; el botón GPS muestra dónde estás. El lápiz cambia el nombre y el alfiler; su ⋮ tiene Estadística · PDF y Borrar. Solo se guardan en este teléfono.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	En Parcelas y en la página de una parcela los comandos están en el menú ⋮ arriba a la derecha. Las casillas muestran solo el valor; un toque muestra los detalles.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Estadística · PDF: arriba las casillas de ahora y del periodo (fijas), debajo las próximas 12 horas y día a día (se desplazan). Periodo y PDF en ⋮. Un toque en el nombre de la parcela muestra su nombre y coordenadas.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Modo agricultor: la casilla «Notificaciones y avisos» en la tarjeta de la parcela activa todas sus notificaciones: lluvia, viento, nieve, escarcha, helada, niebla, lluvia helada, sequía (suelo seco, 7 días sin lluvia). Cada parcela tiene las suyas.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Casillas azules de INFORMACIÓN tras los avisos: escarcha, helada (primavera y otoño), niebla, lluvia helada, viento fuerte en las próximas 24 horas. Calculadas por la app a partir del pronóstico; no oficiales. También llegan como notificación propia.

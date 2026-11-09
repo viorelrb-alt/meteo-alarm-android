@@ -1,5 +1,8 @@
-Geçerli sürüm: v.3.20 · 9.11.2026
+Geçerli sürüm: v.3.30 · 9.11.2026
 Tasarım / yapı iyileştirmeleri.
+- Parsel sayfası İstatistik ile birleşti: üstte şimdinin ve dönemin sabit kutuları; altında 12 saatlik ve gün gün tablolar.
+- Her parseldeki “Bildirimler ve uyarılar” kutusu tüm bildirimlerini açar, artık kar ve kuraklık da var.
+- Yerleşim yeri için de ayrı bir BİLGİ bildirimi; ⋮ menüleri ana menü gibi görünür.
 - Parseller ve İstatistikteki kutular yalnızca değeri gösterir; ayrıntılar dokununca görünür.
 - Baloncuklar: bölümler arasında çizgiler, yana kayan çizgili tablolar, kaynak en altta, bir kez.
 - Her parsel için ayrı BİLGİ bildirimleri: kırağı, don, sis, donan yağmur, kuvvetli hamleler.

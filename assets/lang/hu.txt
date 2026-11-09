@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	A részeket vonalak választják el; a táblázatoknak vonalai vannak és oldalra húzhatók; a forrás alul van, egyszer.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	BE állásban értesítés esőről vagy erős szélről a parcellán, és parcellánként egy dérről, fagyról, ködről, ónos esőről vagy erős széllökésekről.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Értesítést kapsz erről a parcelláról, ha a következő 12 órára esőt vagy erős szelet jeleznek, és egyet dérről, fagyról, ködről, ónos esőről vagy erős széllökésekről (3 óránként ellenőrizve).
+Now	Most
+Air temp.	Léghőm.
+Wind dir.	Szélirány
+Rain chance	Eső esély
+Air hum.	Légnedv.
+Soil hum.	Talajnedv.
+Soil temp.	Talajhőm.
+Min. / max.	Min. / max.
+Mean soil hum.	Átl. talajnedv.
+Notifications and warnings	Értesítések és figyelmeztetések
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Értesítések ehhez a parcellához: eső, szél, hó, dér, fagy, köd, ónos eső, aszály.
+Snow expected from 	Havazás várható ettől: 
+Snow · 	Havazás · 
+Drought · 	Aszály · 
+Dry soil (	Száraz talaj (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% 3–9 cm-en, becsült) és nincs eső a következő 7 napban.
+Parcel notifications	Parcella-értesítések
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Parcellák: a térkép minden parcellát mutat; koppintásra a főképernyőn nyílik meg. A „GPS-hely mentése” vagy „Választás a térképen” hozzáad egyet; a GPS gomb mutatja, hol vagy. A ceruza a nevet és a tűt módosítja; a ⋮ menüjében Statisztika · PDF és Törlés van. Csak ezen a telefonon maradnak.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	A Parcellákban és egy parcella oldalán a parancsok a jobb felső ⋮ menüben vannak. A dobozok csak az értéket mutatják; koppintásra látszanak a részletek.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statisztika · PDF: fent a mostani és az időszak dobozai (rögzítve), alattuk a következő 12 óra és napról napra (görgethetők). Időszak és PDF a ⋮ menüben. A parcella nevére koppintva a név és a koordináták látszanak.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Gazda mód: a parcella kártyáján a „Értesítések és figyelmeztetések” jelölőnégyzet bekapcsolja minden értesítését: eső, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napig nincs eső). Minden parcellának sajátja van.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Kék TÁJÉKOZTATÁS dobozok a figyelmeztetések után: dér, fagy (tavasszal és ősszel), köd, ónos eső, erős szél a következő 24 órában. Az alkalmazás számolja az előrejelzésből; nem hivatalos. Külön értesítésként is érkeznek.

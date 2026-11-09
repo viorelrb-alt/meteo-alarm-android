@@ -715,3 +715,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Разделы отделены линиями; у таблиц есть линии, и их можно сдвигать в сторону; источник внизу, один раз.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Когда ВКЛ., уведомление о дожде или сильном ветре на участке и по одному для каждого участка о заморозке, морозе, тумане, ледяном дожде или сильных порывах.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Вы получите уведомление для этого участка, если в ближайшие 12 часов ожидается дождь или сильный ветер, и ещё одно о заморозке, морозе, тумане, ледяном дожде или сильных порывах (проверка каждые 3 часа).
+Now	Сейчас
+Air temp.	Темп. возд.
+Wind dir.	Напр. ветра
+Rain chance	Вер. дождя
+Air hum.	Влажн. возд.
+Soil hum.	Влажн. почвы
+Soil temp.	Темп. почвы
+Min. / max.	Мин. / макс.
+Mean soil hum.	Ср. влажн. почвы
+Notifications and warnings	Уведомления и предупреждения
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Уведомления для этого участка: дождь, ветер, снег, иней, заморозок, туман, ледяной дождь, засуха.
+Snow expected from 	Снег ожидается с 
+Snow · 	Снег · 
+Drought · 	Засуха · 
+Dry soil (	Сухая почва (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% на 3–9 см, оценка) и без дождя в ближайшие 7 дней.
+Parcel notifications	Уведомления участков
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Участки: карта показывает все участки; касание открывает участок на главном экране. «Сохранить место GPS» или «Выбрать на карте» добавляет участок; кнопка GPS показывает, где вы. Карандаш меняет название и булавку; в его ⋮ есть Статистика · PDF и Удалить. Хранятся только на этом телефоне.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	В Участках и на странице участка команды находятся в меню ⋮ справа вверху. Ячейки показывают только значение; касание показывает подробности.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Статистика · PDF: вверху ячейки «сейчас» и периода (неподвижны), под ними ближайшие 12 часов и по дням (прокручиваются). Период и PDF в ⋮. Касание названия участка показывает название и координаты.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Режим фермера: флажок «Уведомления и предупреждения» на карточке участка включает все его уведомления: дождь, ветер, снег, иней, заморозок, туман, ледяной дождь, засуха (сухая почва, 7 дней без дождя). У каждого участка свои.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Синие ячейки ИНФОРМАЦИЯ после предупреждений: иней, заморозок (весной и осенью), туман, ледяной дождь, сильный ветер в ближайшие 24 часа. Рассчитываются приложением по прогнозу; неофициальные. Приходят и отдельным уведомлением.

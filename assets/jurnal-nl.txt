@@ -1,5 +1,8 @@
-Huidige versie: v.3.20 · 9.11.2026
+Huidige versie: v.3.30 · 9.11.2026
 Verbeteringen in ontwerp / structuur.
+- De perceelpagina samengevoegd met Statistiek: bovenaan vaste vakken van nu en van de periode; daaronder de tabellen voor 12 uur en dag voor dag.
+- Het vakje ‘Meldingen en waarschuwingen’ bij elk perceel zet al zijn meldingen aan, nu ook sneeuw en droogte.
+- Een aparte INFORMATIE-melding ook voor de plaats; de ⋮-menu’s lijken op het hoofdmenu.
 - De vakken in Percelen en Statistiek tonen alleen de waarde; de details verschijnen bij een tik.
 - Bubbels: lijnen tussen onderdelen, tabellen met lijnen die opzij schuiven, de bron onderaan, één keer.
 - Aparte INFORMATIE-meldingen voor elk perceel: rijp, vorst, mist, ijzel, zware windstoten.

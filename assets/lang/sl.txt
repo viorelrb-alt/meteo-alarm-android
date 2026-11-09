@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Deli so ločeni s črtami; tabele imajo črte in se premikajo vstran; vir je spodaj, enkrat.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Ko je VKL., obvestilo o dežju ali močnem vetru na parceli in za vsako parcelo eno o slani, zmrzali, megli, žledu ali močnih sunkih.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Za to parcelo prejmete obvestilo, ko je v naslednjih 12 urah napovedan dež ali močan veter, in eno o slani, zmrzali, megli, žledu ali močnih sunkih (preverjeno vsake 3 ure).
+Now	Zdaj
+Air temp.	Temp. zraka
+Wind dir.	Smer vetra
+Rain chance	Verj. dežja
+Air hum.	Vlaga zraka
+Soil hum.	Vlaga tal
+Soil temp.	Temp. tal
+Min. / max.	Min. / maks.
+Mean soil hum.	Povpr. vlaga tal
+Notifications and warnings	Obvestila in opozorila
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Obvestila za to parcelo: dež, veter, sneg, slana, pozeba, megla, žled, suša.
+Snow expected from 	Sneg pričakovan od 
+Snow · 	Sneg · 
+Drought · 	Suša · 
+Dry soil (	Suha tla (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% na 3–9 cm, ocena) in brez dežja v naslednjih 7 dneh.
+Parcel notifications	Obvestila parcel
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Parcele: zemljevid kaže vse parcele; dotik odpre parcelo na glavnem zaslonu. »Shrani GPS mesto« ali »Izberi na zemljevidu« doda parcelo; gumb GPS pokaže, kje ste. Svinčnik spremeni ime in bucko; njegov ⋮ ima Statistika · PDF in Izbriši. Ostanejo samo v tem telefonu.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	V Parcelah in na strani parcele so ukazi v meniju ⋮ zgoraj desno. Polja kažejo samo vrednost; dotik pokaže podrobnosti.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistika · PDF: zgoraj polja za zdaj in za obdobje (nepremična), pod njimi naslednjih 12 ur in dan za dnem (se pomikajo). Obdobje in PDF v ⋮. Dotik imena parcele pokaže ime in koordinate.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Kmečki način: polje »Obvestila in opozorila« na kartici parcele vklopi vsa njena obvestila: dež, veter, sneg, slana, pozeba, megla, žled, suša (suha tla, 7 dni brez dežja). Vsaka parcela ima svoja.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Modra polja INFORMACIJA po opozorilih: slana, pozeba (spomladi in jeseni), megla, žled, močan veter v naslednjih 24 urah. Izračuna jih aplikacija iz napovedi; niso uradna. Pridejo tudi kot ločeno obvestilo.

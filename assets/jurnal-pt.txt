@@ -1,5 +1,8 @@
-Versão atual: v.3.20 · 9.11.2026
+Versão atual: v.3.30 · 9.11.2026
 Melhorias de design / estrutura.
+- A página da parcela junta com a Estatística: em cima as caixas fixas de agora e do período; por baixo as tabelas de 12 horas e dia a dia.
+- A caixa «Notificações e avisos» de cada parcela liga todas as suas notificações, agora também neve e seca.
+- Uma notificação de INFORMAÇÃO própria também para a localidade; os menus ⋮ parecem o menu principal.
 - As caixas de Parcelas e Estatística mostram só o valor; os detalhes aparecem com um toque.
 - Balões: linhas entre secções, tabelas com linhas que deslizam para o lado, a fonte em baixo, uma vez.
 - Notificações de INFORMAÇÃO separadas para cada parcela: geada, gelo, nevoeiro, chuva gelada, rajadas fortes.

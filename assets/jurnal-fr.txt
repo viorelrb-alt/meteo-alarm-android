@@ -1,5 +1,8 @@
-Version actuelle : v.3.20 · 9.11.2026
+Version actuelle : v.3.30 · 9.11.2026
 Améliorations de design / structure.
+- La page de la parcelle réunie avec les Statistiques : en haut les cases fixes de maintenant et de la période ; dessous les tableaux sur 12 heures et jour par jour.
+- La case « Notifications et avertissements » de chaque parcelle active toutes ses notifications, désormais aussi neige et sécheresse.
+- Une notification INFORMATION séparée aussi pour la localité ; les menus ⋮ ressemblent au menu principal.
 - Les cases de Parcelles et Statistiques montrent seulement la valeur ; les détails apparaissent au toucher.
 - Bulles : lignes entre les sections, tableaux à lignes qui glissent sur le côté, la source en bas, une fois.
 - Notifications INFORMATION séparées pour chaque parcelle : gelée blanche, gel, brouillard, pluie verglaçante, fortes rafales.

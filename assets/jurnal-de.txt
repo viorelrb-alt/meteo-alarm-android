@@ -1,5 +1,8 @@
-Aktuelle Version: v.3.20 · 9.11.2026
+Aktuelle Version: v.3.30 · 9.11.2026
 Verbesserungen an Design / Struktur.
+- Die Parzellenseite mit der Statistik vereint: oben feste Felder für jetzt und den Zeitraum; darunter die Tabellen für 12 Stunden und Tag für Tag.
+- Das Kästchen „Benachrichtigungen und Warnungen“ jeder Parzelle schaltet alle ihre Benachrichtigungen ein, jetzt auch Schnee und Dürre.
+- Eine eigene HINWEIS-Benachrichtigung auch für den Ort; die ⋮-Menüs sehen aus wie das Hauptmenü.
 - Die Felder in Parzellen und Statistik zeigen nur den Wert; die Details erscheinen beim Tippen.
 - Blasen: Linien zwischen Abschnitten, Tabellen mit Linien, seitlich verschiebbar, die Quelle unten, einmal.
 - Eigene HINWEIS-Benachrichtigungen für jede Parzelle: Reif, Frost, Nebel, gefrierender Regen, starke Böen.

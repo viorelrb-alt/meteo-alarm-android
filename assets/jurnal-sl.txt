@@ -1,5 +1,8 @@
-Trenutna različica: v.3.20 · 9.11.2026
+Trenutna različica: v.3.30 · 9.11.2026
 Izboljšave videza / zgradbe.
+- Stran parcele združena s Statistiko: zgoraj nepremična polja za zdaj in za obdobje; pod njimi tabeli za 12 ur in dan za dnem.
+- Polje »Obvestila in opozorila« pri vsaki parceli vklopi vsa njena obvestila, zdaj tudi sneg in sušo.
+- Ločeno obvestilo INFORMACIJA tudi za kraj; meniji ⋮ so videti kot glavni meni.
 - Polja v Parcelah in Statistiki kažejo le vrednost; podrobnosti se pokažejo ob dotiku.
 - Oblački: črte med deli, tabele s črtami, ki se premikajo vstran, vir spodaj, enkrat.
 - Ločena obvestila OBVESTILO za vsako parcelo: slana, zmrzal, megla, žled, močni sunki.

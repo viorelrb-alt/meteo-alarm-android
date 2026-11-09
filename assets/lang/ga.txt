@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Tá línte idir na codanna; tá línte ar na táblaí agus sleamhnaíonn siad i leataobh; tá an fhoinse ag an mbun, uair amháin.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Nuair atá siad ANSIN, fógra faoi bháisteach nó gaoth láidir ar an bpáirc, agus ceann in aghaidh na páirce faoi shioc bán, reo, ceo, báisteach reoite nó siotaí láidre.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Faigheann tú fógra don pháirc seo nuair a thuartar báisteach nó gaoth láidir sna 12 uair an chloig seo chugainn, agus ceann faoi shioc bán, reo, ceo, báisteach reoite nó siotaí láidre (seiceáilte gach 3 huaire).
+Now	Anois
+Air temp.	Teocht aeir
+Wind dir.	Treo gaoithe
+Rain chance	Seans báistí
+Air hum.	Taise aeir
+Soil hum.	Taise ithreach
+Soil temp.	Teocht ithreach
+Min. / max.	Íos. / uas.
+Mean soil hum.	Meántaise ithreach
+Notifications and warnings	Fógraí agus rabhaidh
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Fógraí don cheapach seo: báisteach, gaoth, sneachta, sioc bán, sioc, ceo, báisteach reoite, triomach.
+Snow expected from 	Sneachta ag súil leis ó 
+Snow · 	Sneachta · 
+Drought · 	Triomach · 
+Dry soil (	Ithir thirim (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% ag 3–9 cm, measta) agus gan báisteach sna 7 lá atá romhainn.
+Parcel notifications	Fógraí ceapach
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Ceapacha: taispeánann an léarscáil na ceapacha go léir; osclaíonn tapáil ceann ar an bpríomhscáileán. Cuireann „Sábháil áit GPS“ nó „Roghnaigh ar an léarscáil“ ceann leis; taispeánann an cnaipe GPS cá bhfuil tú. Athraíonn an peann luaidhe an t-ainm agus an biorán; tá Staitisticí · PDF agus Scrios ina ⋮. Ar an bhfón seo amháin.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	In Ceapacha agus ar leathanach ceapaí tá na horduithe sa roghchlár ⋮ ar barr ar dheis. Ní thaispeánann na boscaí ach an luach; taispeánann tapáil na sonraí.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Staitisticí · PDF: ar barr boscaí an ama seo agus na tréimhse (seasta), fúthu na 12 uair atá romhainn agus lá ar lá (scrollaíonn siad). Tréimhse agus PDF sa ⋮. Taispeánann tapáil ar ainm na ceapaí an t-ainm agus na comhordanáidí.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Mód feirmeora: casann an bosca „Fógraí agus rabhaidh“ ar chárta na ceapaí a fógraí go léir air: báisteach, gaoth, sneachta, sioc bán, sioc, ceo, báisteach reoite, triomach (ithir thirim, 7 lá gan báisteach). Tá a cuid féin ag gach ceapach.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Boscaí gorma FAISNÉIS i ndiaidh na rabhadh: sioc bán, sioc (earrach agus fómhar), ceo, báisteach reoite, gaoth láidir sna 24 uair atá romhainn. Ríomhann an aip iad ón réamhaisnéis; níl siad oifigiúil. Tagann siad freisin mar fhógra ar leith.

@@ -1,5 +1,8 @@
-Pašreizējā versija: v.3.20 · 9.11.2026
+Pašreizējā versija: v.3.30 · 9.11.2026
 Dizaina / struktūras uzlabojumi.
+- Lauka lapa apvienota ar statistiku: augšā nekustīgi šī brīža un perioda lodziņi; zem tiem 12 stundu un dienu tabulas.
+- Katra lauka rūtiņa „Paziņojumi un brīdinājumi“ ieslēdz visus tā paziņojumus, tagad arī sniegu un sausumu.
+- Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai; izvēlnes ⋮ izskatās kā galvenā izvēlne.
 - Lauku un Statistikas lodziņi rāda tikai vērtību; sīkāka informācija parādās pēc pieskāriena.
 - Burbuļi: līnijas starp daļām, tabulas ar līnijām, kas bīdās uz sāniem, avots apakšā, vienreiz.
 - Atsevišķi INFORMĀCIJAS paziņojumi katram laukam: sarma, sals, migla, apledojums, stipras brāzmas.

@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Afsnit er adskilt af linjer; tabeller har linjer og kan skubbes til siden; kilden står nederst, én gang.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Når TIL: en notifikation om regn eller kraftig vind på marken og én pr. mark om rimfrost, frost, tåge, isslag eller kraftige vindstød.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Du får en notifikation for denne mark, når der varsles regn eller kraftig vind de næste 12 timer, og én om rimfrost, frost, tåge, isslag eller kraftige vindstød (tjekket hver 3. time).
+Now	Nu
+Air temp.	Lufttemp.
+Wind dir.	Vindretn.
+Rain chance	Regnchance
+Air hum.	Luftfugt.
+Soil hum.	Jordfugt.
+Soil temp.	Jordtemp.
+Min. / max.	Min. / maks.
+Mean soil hum.	Gns. jordfugt.
+Notifications and warnings	Notifikationer og varsler
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifikationer for denne mark: regn, vind, sne, rimfrost, frost, tåge, isslag, tørke.
+Snow expected from 	Sne ventet fra 
+Snow · 	Sne · 
+Drought · 	Tørke · 
+Dry soil (	Tør jord (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% i 3–9 cm, anslået) og ingen regn de næste 7 dage.
+Parcel notifications	Notifikationer for marker
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Marker: kortet viser alle marker; et tryk åbner en på hovedskærmen. „Gem GPS-sted“ eller „Vælg på kortet“ tilføjer en; GPS-knappen viser, hvor du er. Blyanten ændrer navn og nål; dens ⋮ har Statistik · PDF og Slet. Gemmes kun på denne telefon.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	I Marker og på en marks side er kommandoerne i menuen ⋮ øverst til højre. Felterne viser kun værdien; et tryk viser detaljerne.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistik · PDF: øverst felterne for nu og for perioden (faste), under dem de næste 12 timer og dag for dag (de ruller). Periode og PDF i ⋮. Et tryk på markens navn viser navn og koordinater.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Landmandstilstand: feltet „Notifikationer og varsler“ på markens kort tænder alle dens notifikationer: regn, vind, sne, rimfrost, frost, tåge, isslag, tørke (tør jord, ingen regn i 7 dage). Hver mark har sine egne.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Blå INFORMATION-felter efter varslerne: rimfrost, frost (forår og efterår), tåge, isslag, kraftig vind de næste 24 timer. Beregnet af appen ud fra prognosen; ikke officielle. De kommer også som en separat notifikation.

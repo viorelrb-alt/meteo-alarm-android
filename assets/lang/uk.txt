@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Розділи відокремлені лініями; таблиці мають лінії та зсуваються вбік; джерело внизу, один раз.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Коли УВІМК., сповіщення про дощ або сильний вітер на ділянці та по одному для кожної ділянки про приморозок, мороз, туман, крижаний дощ або сильні пориви.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Ви отримаєте сповіщення для цієї ділянки, коли в найближчі 12 годин прогнозують дощ або сильний вітер, і ще одне про приморозок, мороз, туман, крижаний дощ або сильні пориви (перевірка кожні 3 години).
+Now	Зараз
+Air temp.	Темп. повітря
+Wind dir.	Напр. вітру
+Rain chance	Імов. дощу
+Air hum.	Волог. повітря
+Soil hum.	Волог. ґрунту
+Soil temp.	Темп. ґрунту
+Min. / max.	Мін. / макс.
+Mean soil hum.	Сер. волог. ґрунту
+Notifications and warnings	Сповіщення та попередження
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Сповіщення для цієї ділянки: дощ, вітер, сніг, іній, заморозок, туман, крижаний дощ, посуха.
+Snow expected from 	Сніг очікується з 
+Snow · 	Сніг · 
+Drought · 	Посуха · 
+Dry soil (	Сухий ґрунт (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% на 3–9 см, оцінка) і без дощу найближчі 7 днів.
+Parcel notifications	Сповіщення ділянок
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Ділянки: мапа показує всі ділянки; дотик відкриває ділянку на головному екрані. «Зберегти місце GPS» або «Вибрати на мапі» додає ділянку; кнопка GPS показує, де ви. Олівець змінює назву і шпильку; у його ⋮ є Статистика · PDF і Видалити. Зберігаються лише на цьому телефоні.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	У Ділянках і на сторінці ділянки команди в меню ⋮ праворуч угорі. Клітинки показують лише значення; дотик показує подробиці.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Статистика · PDF: угорі клітинки «зараз» і періоду (нерухомі), під ними найближчі 12 годин і день за днем (прокручуються). Період і PDF у ⋮. Дотик до назви ділянки показує назву й координати.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Режим фермера: прапорець «Сповіщення та попередження» на картці ділянки вмикає всі її сповіщення: дощ, вітер, сніг, іній, заморозок, туман, крижаний дощ, посуха (сухий ґрунт, 7 днів без дощу). Кожна ділянка має свої.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Сині клітинки ІНФОРМАЦІЯ після попереджень: іній, заморозок (весною й восени), туман, крижаний дощ, сильний вітер у найближчі 24 години. Обчислюються застосунком із прогнозу; неофіційні. Надходять і окремим сповіщенням.

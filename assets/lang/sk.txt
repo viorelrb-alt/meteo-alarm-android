@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Časti oddeľujú čiary; tabuľky majú čiary a posúvajú sa do strán; zdroj je dole, raz.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Keď je ZAP, upozornenie na dážď alebo silný vietor na parcele a pre každú parcelu jedno na inovať, mráz, hmlu, mrznúci dážď alebo silné nárazy.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Dostanete upozornenie pre túto parcelu, keď sa v najbližších 12 hodinách predpovedá dážď alebo silný vietor, a jedno na inovať, mráz, hmlu, mrznúci dážď alebo silné nárazy (kontrola každé 3 hodiny).
+Now	Teraz
+Air temp.	Tepl. vzd.
+Wind dir.	Smer vetra
+Rain chance	Pravd. dažďa
+Air hum.	Vlhk. vzd.
+Soil hum.	Vlhk. pôdy
+Soil temp.	Tepl. pôdy
+Min. / max.	Min. / max.
+Mean soil hum.	Priem. vlhk. pôdy
+Notifications and warnings	Oznámenia a výstrahy
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Oznámenia pre túto parcelu: dážď, vietor, sneh, inovať, mráz, hmla, mrznúci dážď, sucho.
+Snow expected from 	Sneh sa očakáva od 
+Snow · 	Sneh · 
+Drought · 	Sucho · 
+Dry soil (	Suchá pôda (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% v 3–9 cm, odhad) a žiadny dážď v najbližších 7 dňoch.
+Parcel notifications	Oznámenia parciel
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Parcely: mapa ukazuje všetky parcely; ťuknutie otvorí parcelu na hlavnej obrazovke. „Uložiť miesto GPS“ alebo „Vybrať na mape“ pridá parcelu; tlačidlo GPS ukáže, kde ste. Ceruzka mení názov a špendlík; jej ponuka ⋮ má Štatistika · PDF a Vymazať. Zostávajú len v tomto telefóne.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	V Parcelách a na stránke parcely sú príkazy v ponuke ⋮ vpravo hore. Polia ukazujú len hodnotu; ťuknutie ukáže podrobnosti.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Štatistika · PDF: hore polia pre teraz a pre obdobie (pevné), pod nimi najbližších 12 hodín a deň po dni (posúvajú sa). Obdobie a PDF v ⋮. Ťuknutie na názov parcely ukáže názov a súradnice.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Režim farmára: políčko „Oznámenia a výstrahy“ na karte parcely zapne všetky jej oznámenia: dážď, vietor, sneh, inovať, mráz, hmla, mrznúci dážď, sucho (suchá pôda, 7 dní bez dažďa). Každá parcela má svoje.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Modré polia INFORMÁCIA po výstrahách: inovať, mráz (jar a jeseň), hmla, mrznúci dážď, silný vietor v najbližších 24 hodinách. Vypočíta ich aplikácia z predpovede; nie sú oficiálne. Prichádzajú aj ako samostatné oznámenie.

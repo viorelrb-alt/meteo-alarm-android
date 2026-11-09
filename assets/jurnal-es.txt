@@ -1,5 +1,8 @@
-Versión actual: v.3.20 · 9.11.2026
+Versión actual: v.3.30 · 9.11.2026
 Mejoras de diseño / estructura.
+- La página de la parcela unida a Estadística: arriba las casillas fijas de ahora y del periodo; debajo las tablas de 12 horas y día a día.
+- La casilla «Notificaciones y avisos» de cada parcela activa todas sus notificaciones, ahora también nieve y sequía.
+- Una notificación de INFORMACIÓN propia también para la localidad; los menús ⋮ se parecen al menú principal.
 - Las casillas de Parcelas y Estadística muestran solo el valor; los detalles aparecen al tocar.
 - Burbujas: líneas entre secciones, tablas con líneas que se deslizan hacia los lados, la fuente abajo, una vez.
 - Avisos de INFORMACIÓN separados para cada parcela: escarcha, helada, niebla, lluvia engelante, rachas fuertes.

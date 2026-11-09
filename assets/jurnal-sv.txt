@@ -1,5 +1,8 @@
-Nuvarande version: v.3.20 · 9.11.2026
+Nuvarande version: v.3.30 · 9.11.2026
 Förbättringar av design / struktur.
+- Skiftets sida sammanslagen med Statistik: överst fasta rutor för nu och för perioden; under dem tabellerna för 12 timmar och dag för dag.
+- Rutan ”Aviseringar och varningar” på varje skifte slår på alla dess aviseringar, nu även snö och torka.
+- En egen INFORMATION-avisering även för orten; ⋮-menyerna ser ut som huvudmenyn.
 - Rutorna i Skiften och Statistik visar bara värdet; detaljerna visas vid ett tryck.
 - Bubblor: linjer mellan avsnitt, tabeller med linjer som kan skjutas åt sidan, källan längst ner, en gång.
 - Separata INFORMATION-aviseringar för varje skifte: rimfrost, frost, dimma, underkylt regn, kraftiga byar.

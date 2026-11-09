@@ -141,6 +141,9 @@ final class Notifier {
 					Log.i(ctx, "NOTIF", "avertizare: " + title + " · " + body);
 				}
 			}
+			// v3.30 (Viorel): the app's own information (frost, freeze, fog, freezing rain, strong
+			// gusts) for the town, in a notice of its own; Europe only (the US has the NWS advisories).
+			if (!c.us() && f != null) info(ctx, c, Weather.parse(f), Fetcher.warnings(ctx, c), clk12, imp);
 			// Earthquakes in the country.
 			for (Quakes.Quake q : Fetcher.quakes(ctx, c)) {
 				if (q.time < quakesSince) continue;
@@ -159,6 +162,57 @@ final class Notifier {
 		} catch (Exception e) {
 			Log.e(ctx, "NOTIF", "verificarea notificărilor", e);
 		}
+	}
+
+	/** The town's own information found in the next 25 hours; each spell told once. */
+	private static void info(Context ctx, Cities.City c, Weather w, List<Warnings.Warn> ws, boolean clk12, boolean imp) {
+		int n = Math.min(w.tileTemp.length, 25);
+		if (n == 0) return;
+		long nowMs = System.currentTimeMillis();
+		String off = "";
+		for (Warnings.Warn wr : ws) if (!wr.nws && wr.until > nowMs) off += wr.type + ",";
+		double[] code = new double[n], day = new double[n];
+		for (int k = 0; k < n; k++) {
+			code[k] = k < w.tileCode.length ? w.tileCode[k] : 0;
+			day[k] = k < w.tileDay.length && !w.tileDay[k] ? 0 : 1;
+		}
+		java.util.Calendar h0 = ro.meteoalarm.android.core.Zone.now();
+		int month = h0.get(java.util.Calendar.MONTH) + 1;
+		h0.set(java.util.Calendar.MINUTE, 0);
+		h0.set(java.util.Calendar.SECOND, 0);
+		h0.set(java.util.Calendar.MILLISECOND, 0);
+		long t0 = h0.getTimeInMillis();
+		int today = h0.get(java.util.Calendar.DAY_OF_YEAR);
+		List<ro.meteoalarm.android.core.Screen.OwnHit> hits = ro.meteoalarm.android.core.Screen.ownHits(w.tileTemp, w.tileCloud, w.tileWind, w.tileGust, code, day, 0, n, month, off);
+		SharedPreferences p = prefs(ctx);
+		SharedPreferences.Editor ed = p.edit();
+		StringBuilder body = new StringBuilder();
+		for (ro.meteoalarm.android.core.Screen.OwnHit h : hits) {
+			long a = t0 + h.a * 3600000L, b = t0 + (h.b + 1) * 3600000L;
+			String key = "nI_" + Warnings.fold(c.key()).replaceAll("[^a-z0-9_]+", "") + "_" + h.key;
+			long told = p.getLong(key, 0);
+			// A spell starting before the end of the last one told is the same one.
+			if (told > 0 && a < told) {
+				if (b > told) ed.putLong(key, b);
+				continue;
+			}
+			ed.putLong(key, b);
+			java.util.Calendar ca = (java.util.Calendar) h0.clone(), cb = (java.util.Calendar) h0.clone();
+			ca.setTimeInMillis(a);
+			cb.setTimeInMillis(b);
+			String name = ro.meteoalarm.android.core.Screen.ownName(h.key);
+			String when = (ca.get(java.util.Calendar.DAY_OF_YEAR) == today ? "" : Tr.t("tomorrow ", "mâine "))
+					+ Texts.clock(String.format(java.util.Locale.US, "%02d:00", ca.get(java.util.Calendar.HOUR_OF_DAY)), clk12) + "–"
+					+ Texts.clock(String.format(java.util.Locale.US, "%02d:00", cb.get(java.util.Calendar.HOUR_OF_DAY)), clk12);
+			String val = h.key.equals("freeze") || h.key.equals("frost") ? " · " + Tr.t("lowest ", "minima ") + (imp ? Math.round(h.val * 9 / 5 + 32) : Math.round(h.val)) + "°"
+					: h.key.equals("wind") ? " · " + Tr.t("gusts ", "rafale ") + (imp ? Math.round(h.val * 0.621371) + " mph" : Math.round(h.val) + " km/h") : "";
+			if (body.length() > 0) body.append("\n");
+			body.append(name.substring(0, 1)).append(name.substring(1).toLowerCase()).append(": ").append(when).append(val);
+		}
+		ed.apply();
+		if (body.length() == 0) return;
+		post(ctx, 1500, Tr.t("Information · ", "Informare · ") + c.name, body.toString());
+		Log.i(ctx, "NOTIF", "informare " + c.name + ": " + body.toString().replace('\n', ';'));
 	}
 
 	/** Forgets events notified more than KEEP_MS ago. */

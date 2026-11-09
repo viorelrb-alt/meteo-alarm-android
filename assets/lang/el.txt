@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Οι ενότητες χωρίζονται με γραμμές· οι πίνακες έχουν γραμμές και σύρονται στο πλάι· η πηγή είναι κάτω, μία φορά.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Όταν είναι ΝΑΙ, ειδοποίηση για βροχή ή ισχυρό άνεμο στο αγροτεμάχιο και μία ανά αγροτεμάχιο για πάχνη, παγετό, ομίχλη, παγωμένη βροχή ή ισχυρές ριπές.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Λαμβάνετε ειδοποίηση για αυτό το αγροτεμάχιο όταν προβλέπεται βροχή ή ισχυρός άνεμος τις επόμενες 12 ώρες και μία για πάχνη, παγετό, ομίχλη, παγωμένη βροχή ή ισχυρές ριπές (έλεγχος κάθε 3 ώρες).
+Now	Τώρα
+Air temp.	Θερμ. αέρα
+Wind dir.	Κατ. ανέμου
+Rain chance	Πιθ. βροχής
+Air hum.	Υγρ. αέρα
+Soil hum.	Υγρ. εδάφους
+Soil temp.	Θερμ. εδάφους
+Min. / max.	Ελάχ. / μέγ.
+Mean soil hum.	Μέση υγρ. εδάφους
+Notifications and warnings	Ειδοποιήσεις και προειδοποιήσεις
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Ειδοποιήσεις για αυτό το αγροτεμάχιο: βροχή, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία.
+Snow expected from 	Χιόνι αναμένεται από 
+Snow · 	Χιόνι · 
+Drought · 	Ξηρασία · 
+Dry soil (	Ξηρό έδαφος (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% σε 3–9 cm, εκτίμηση) και χωρίς βροχή τις επόμενες 7 ημέρες.
+Parcel notifications	Ειδοποιήσεις αγροτεμαχίων
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης δείχνει όλα τα αγροτεμάχια· ένα άγγιγμα ανοίγει ένα στην κύρια οθόνη. «Αποθήκευση θέσης GPS» ή «Επιλογή στον χάρτη» προσθέτει ένα· το κουμπί GPS δείχνει πού είστε. Το μολύβι αλλάζει όνομα και καρφίτσα· το ⋮ του έχει Στατιστικά · PDF και Διαγραφή. Μένουν μόνο σε αυτό το τηλέφωνο.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Στα Αγροτεμάχια και στη σελίδα ενός αγροτεμαχίου οι εντολές είναι στο μενού ⋮ πάνω δεξιά. Τα πλαίσια δείχνουν μόνο την τιμή· ένα άγγιγμα δείχνει τις λεπτομέρειες.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Στατιστικά · PDF: πάνω τα πλαίσια του τώρα και της περιόδου (σταθερά), κάτω οι επόμενες 12 ώρες και μέρα με τη μέρα (κυλούν). Περίοδος και PDF στο ⋮. Άγγιγμα στο όνομα δείχνει όνομα και συντεταγμένες.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Λειτουργία αγρότη: το κουτάκι «Ειδοποιήσεις και προειδοποιήσεις» στην κάρτα του αγροτεμαχίου ανάβει όλες τις ειδοποιήσεις του: βροχή, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία (ξηρό έδαφος, 7 ημέρες χωρίς βροχή). Κάθε αγροτεμάχιο έχει τις δικές του.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Μπλε πλαίσια ΕΝΗΜΕΡΩΣΗΣ μετά τις προειδοποιήσεις: πάχνη, παγετός (άνοιξη και φθινόπωρο), ομίχλη, παγωμένη βροχή, ισχυρός άνεμος τις επόμενες 24 ώρες. Υπολογίζονται από την εφαρμογή από την πρόγνωση· όχι επίσημα. Έρχονται και ως χωριστή ειδοποίηση.

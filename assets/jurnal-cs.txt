@@ -1,5 +1,8 @@
-Současná verze: v.3.20 · 9.11.2026
+Současná verze: v.3.30 · 9.11.2026
 Vylepšení vzhledu / struktury.
+- Stránka parcely spojená se Statistikou: nahoře pevná pole pro teď a pro období; pod nimi tabulky na 12 hodin a den po dni.
+- Políčko „Oznámení a výstrahy“ u každé parcely zapne všechna její oznámení, nově i sníh a sucho.
+- Samostatné oznámení INFORMACE i pro obec; nabídky ⋮ vypadají jako hlavní nabídka.
 - Pole v Parcelách a Statistice ukazují jen hodnotu; podrobnosti se zobrazí klepnutím.
 - Bubliny: čáry mezi částmi, tabulky s čarami posuvné do stran, zdroj dole, jednou.
 - Samostatná oznámení INFORMACE pro každou parcelu: jinovatka, mráz, mlha, mrznoucí déšť, silné nárazy.

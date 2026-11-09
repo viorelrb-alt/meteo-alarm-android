@@ -142,7 +142,7 @@ final class Parcels {
 		ctx.deleteFile(dataFile(id));
 		ctx.deleteFile(statsFile(id));
 		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
-		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pp_" + id).apply();
+		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pp_" + id).apply();
 	}
 
 	static String dataFile(long id) {
@@ -220,7 +220,8 @@ final class Parcels {
 			long now = System.currentTimeMillis();
 			for (Parcel p : all(ctx)) {
 				boolean pend = sp.getBoolean("pp_" + p.id, false);
-				boolean due = p.alerts && now - sp.getLong("pa_" + p.id, 0) >= ALERT_MS - 60000L;
+				// v3.30 (Viorel): a parcel's notifications only in farmer mode.
+				boolean due = p.alerts && farmer(ctx) && now - sp.getLong("pa_" + p.id, 0) >= ALERT_MS - 60000L;
 				if (!pend && !due) continue;
 				Farm.Data d;
 				try {
@@ -236,7 +237,7 @@ final class Parcels {
 							Tr.t("Open-Meteo answers again: the parcel's data have been downloaded.", "Open-Meteo răspunde din nou: datele parcelei au fost descărcate."));
 					Log.i(ctx, "NOTIF", "parcela " + p.name + ": date descărcate după pauza Open-Meteo");
 				}
-				if (p.alerts) {
+				if (due) {
 					sp.edit().putLong("pa_" + p.id, now).apply();
 					check(ctx, p, d);
 				}
@@ -253,7 +254,28 @@ final class Parcels {
 		int[] a = Farm.alert(d, cur, ALERT_HOURS);
 		SharedPreferences sp = prefs(ctx);
 		Cities0 u = new Cities0(ctx);
-		if (a[0] >= 0) {
+		// v3.30 (Viorel): snow in the next 12 hours, a notice of its own (it stands for the rain one).
+		int snowAt = -1;
+		double cm = 0;
+		if (d.snow != null) for (int k = cur; k < Math.min(d.size(), cur + ALERT_HOURS + 1); k++) {
+			if (Double.isNaN(d.snow[k]) || d.snow[k] < 0.1) continue;
+			if (snowAt < 0) snowAt = k;
+			cm += d.snow[k];
+		}
+		if (snowAt >= 0) {
+			String key = "pn_" + p.id + "_s";
+			long last = sp.getLong(key, 0), at = System.currentTimeMillis();
+			if (at - last > 6 * 3600000L) {
+				String body = Tr.t("Snow expected from ", "Ninsoare prognozată de la ") + u.clock(d.hourOf(snowAt)) + " · "
+						+ (u.imp ? String.format(java.util.Locale.US, "%.1f in", cm / 2.54) : String.format(java.util.Locale.US, "%.1f cm", cm).replace('.', Tr.dot()))
+						+ Tr.t(" in the next 12 hours", " în următoarele 12 ore");
+				Notifier.post(ctx, 3400 + (int) (p.id & 0xFFF), Tr.t("Snow · ", "Ninsoare · ") + p.name, body);
+				Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
+			}
+			sp.edit().putLong(key, at).apply();
+		}
+		drought(ctx, p, d, cur);
+		if (a[0] >= 0 && snowAt < 0) {
 			// One notice per rain spell: a new one only 6 hours after the last rain hour notified.
 			String key = "pn_" + p.id + "_r";
 			long last = sp.getLong(key, 0), at = System.currentTimeMillis();
@@ -288,6 +310,30 @@ final class Parcels {
 			sp.edit().putLong(key, at).apply();
 		}
 		info(ctx, p, d, cur, u);
+	}
+
+	/**
+	 * v3.30 (Viorel): drought on parcel P: the soil at 3–9 cm "dry" now and no rain (under 1 mm) in
+	 * the next 7 days; told once, again only after the soil got wetter or rain came in the forecast.
+	 */
+	static void drought(Context ctx, Parcel p, Farm.Data d, int cur) {
+		if (d.soilM == null || cur >= d.soilM.length) return;
+		double m = d.soilM[cur];
+		int end = Math.min(d.size(), cur + 1 + 7 * 24);
+		double rain = 0;
+		for (int k = cur + 1; k < end; k++) if (!Double.isNaN(d.precip[k])) rain += d.precip[k];
+		boolean dry = Farm.soilLevel(m) == 0 && end - cur > 6 * 24 && rain < 1;
+		SharedPreferences sp = prefs(ctx);
+		String key = "pd_" + p.id;
+		if (!dry) {
+			if (sp.getBoolean(key, false)) sp.edit().remove(key).apply();
+			return;
+		}
+		if (sp.getBoolean(key, false)) return;
+		sp.edit().putBoolean(key, true).apply();
+		String body = Tr.t("Dry soil (", "Sol uscat (") + Math.round(m * 100) + Tr.t("% at 3–9 cm, estimated) and no rain in the next 7 days.", "% la 3–9 cm, estimat) și fără ploaie în următoarele 7 zile.");
+		Notifier.post(ctx, 3500 + (int) (p.id & 0xFFF), Tr.t("Drought · ", "Secetă · ") + p.name, body);
+		Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
 	}
 
 	/**

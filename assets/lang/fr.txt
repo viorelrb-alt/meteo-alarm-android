@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Les sections sont séparées par des lignes ; les tableaux ont des lignes et glissent sur le côté ; la source est en bas, une seule fois.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Si OUI : une notification de pluie ou de vent fort sur la parcelle, et une par parcelle pour gelée blanche, gel, brouillard, pluie verglaçante ou fortes rafales.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Vous recevez une notification pour cette parcelle quand de la pluie ou un vent fort est prévu dans les 12 prochaines heures, et une pour gelée blanche, gel, brouillard, pluie verglaçante ou fortes rafales (vérifié toutes les 3 heures).
+Now	Maintenant
+Air temp.	Temp. air
+Wind dir.	Dir. vent
+Rain chance	Prob. pluie
+Air hum.	Hum. air
+Soil hum.	Hum. sol
+Soil temp.	Temp. sol
+Min. / max.	Min. / max.
+Mean soil hum.	Hum. sol moy.
+Notifications and warnings	Notifications et avertissements
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifications de cette parcelle : pluie, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse.
+Snow expected from 	Neige prévue à partir de 
+Snow · 	Neige · 
+Drought · 	Sécheresse · 
+Dry soil (	Sol sec (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% à 3–9 cm, estimé) et pas de pluie dans les 7 prochains jours.
+Parcel notifications	Notifications des parcelles
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Parcelles : la carte montre toutes les parcelles ; un appui en ouvre une sur l’écran principal. « Enregistrer le lieu GPS » ou « Choisir sur la carte » en ajoute une ; le bouton GPS montre où vous êtes. Le crayon change le nom et l’épingle ; son ⋮ propose Statistiques · PDF et Supprimer. Gardées uniquement sur ce téléphone.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Dans Parcelles et sur la page d’une parcelle, les commandes sont dans le menu ⋮ en haut à droite. Les cases n’affichent que la valeur ; un appui montre les détails.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistiques · PDF : en haut les cases de maintenant et de la période (fixes), dessous les 12 prochaines heures et jour par jour (elles défilent). Période et PDF dans ⋮. Un appui sur le nom de la parcelle montre son nom et ses coordonnées.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Mode agriculteur : la case « Notifications et avertissements » sur la carte de la parcelle active toutes ses notifications : pluie, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse (sol sec, 7 jours sans pluie). Chaque parcelle a les siennes.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Cases bleues INFORMATION après les avertissements : gelée blanche, gel (printemps et automne), brouillard, pluie verglaçante, vent fort dans les 24 prochaines heures. Calculées par l’application à partir de la prévision ; non officielles. Elles arrivent aussi en notification séparée.

@@ -1,5 +1,8 @@
-Jelenlegi verzió: v.3.20 · 2026.11.09.
+Jelenlegi verzió: v.3.30 · 2026.11.09.
 Dizájn / szerkezet fejlesztései.
+- A parcella oldala egyesítve a Statisztikával: fent rögzített mostani és időszaki dobozok; alattuk a 12 órás és a napról napra táblázat.
+- Minden parcellán a „Értesítések és figyelmeztetések” négyzet bekapcsolja minden értesítését, most már havazást és aszályt is.
+- Külön TÁJÉKOZTATÁS értesítés a településre is; a ⋮ menük úgy néznek ki, mint a főmenü.
 - A Parcellák és a Statisztika mezői csak az értéket mutatják; a részletek koppintásra jelennek meg.
 - Buborékok: vonalak a részek között, vonalas táblázatok, amelyek oldalra húzhatók, a forrás alul, egyszer.
 - Külön TÁJÉKOZTATÓ értesítések minden parcellához: dér, fagy, köd, ónos eső, erős széllökések.

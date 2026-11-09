@@ -1,5 +1,8 @@
-Versione attuale: v.3.20 · 9.11.2026
+Versione attuale: v.3.30 · 9.11.2026
 Miglioramenti di design / struttura.
+- La pagina della parcella unita alle Statistiche: in alto le caselle fisse di adesso e del periodo; sotto le tabelle di 12 ore e giorno per giorno.
+- La casella «Notifiche e avvisi» di ogni parcella attiva tutte le sue notifiche, ora anche neve e siccità.
+- Una notifica INFORMAZIONE a parte anche per la località; i menu ⋮ somigliano al menu principale.
 - I riquadri di Appezzamenti e Statistiche mostrano solo il valore; i dettagli appaiono al tocco.
 - Fumetti: linee tra le sezioni, tabelle con linee che scorrono di lato, la fonte in basso, una volta.
 - Notifiche INFORMAZIONE separate per ogni appezzamento: brina, gelo, nebbia, pioggia gelata, raffiche forti.

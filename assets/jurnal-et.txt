@@ -1,5 +1,8 @@
-Praegune versioon: v.3.20 · 9.11.2026
+Praegune versioon: v.3.30 · 9.11.2026
 Kujunduse / ülesehituse parandused.
+- Põllu leht ühendatud statistikaga: üleval paigal olevad praeguse hetke ja perioodi kastid; all 12 tunni ja päev-päevalt tabelid.
+- Iga põllu ruut „Teavitused ja hoiatused“ lülitab sisse kõik selle teavitused, nüüd ka lumi ja põud.
+- Eraldi TEAVE-teavitus ka asula kohta; ⋮ menüüd näevad välja nagu peamenüü.
 - Põldude ja Statistika kastid näitavad ainult väärtust; üksikasjad ilmuvad puudutusel.
 - Mullid: jooned osade vahel, joontega tabelid, mida saab külgsuunas lohistada, allikas all, üks kord.
 - Eraldi TEATE-märguanded iga põllu kohta: hall, külm, udu, jäävihm, tugevad puhangud.

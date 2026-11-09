@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Dalys atskirtos linijomis; lentelės turi linijas ir slenka į šoną; šaltinis apačioje, vieną kartą.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Kai ĮJ., pranešimas apie lietų ar stiprų vėją sklype ir po vieną kiekvienam sklypui apie šerkšną, šalną, rūką, lijundrą ar stiprius gūsius.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Gausite pranešimą apie šį sklypą, kai per artimiausias 12 valandų prognozuojamas lietus ar stiprus vėjas, ir vieną apie šerkšną, šalną, rūką, lijundrą ar stiprius gūsius (tikrinama kas 3 valandas).
+Now	Dabar
+Air temp.	Oro temp.
+Wind dir.	Vėjo kryptis
+Rain chance	Lietaus tikim.
+Air hum.	Oro drėgm.
+Soil hum.	Dirvos drėgm.
+Soil temp.	Dirvos temp.
+Min. / max.	Min. / maks.
+Mean soil hum.	Vid. dirvos drėgm.
+Notifications and warnings	Pranešimai ir įspėjimai
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Šio sklypo pranešimai: lietus, vėjas, sniegas, šerkšnas, šalna, rūkas, lijundra, sausra.
+Snow expected from 	Sniegas tikėtinas nuo 
+Snow · 	Sniegas · 
+Drought · 	Sausra · 
+Dry soil (	Sausa dirva (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% 3–9 cm gylyje, įvertis) ir 7 dienas nelis.
+Parcel notifications	Sklypų pranešimai
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Sklypai: žemėlapyje matyti visi sklypai; palietus sklypas atsidaro pagrindiniame ekrane. „Išsaugoti GPS vietą“ arba „Pasirinkti žemėlapyje“ prideda sklypą; GPS mygtukas rodo, kur esate. Pieštukas keičia pavadinimą ir smeigtuką; jo ⋮ yra Statistika · PDF ir Ištrinti. Laikoma tik šiame telefone.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Sklypuose ir sklypo puslapyje komandos yra meniu ⋮ viršuje dešinėje. Langeliai rodo tik reikšmę; palietus matyti išsamiau.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistika · PDF: viršuje dabarties ir laikotarpio langeliai (nejudantys), po jais kitos 12 valandų ir diena po dienos (slenka). Laikotarpis ir PDF meniu ⋮. Palietus sklypo pavadinimą matyti pavadinimas ir koordinatės.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Ūkininko režimas: langelis „Pranešimai ir įspėjimai“ sklypo kortelėje įjungia visus jo pranešimus: lietus, vėjas, sniegas, šerkšnas, šalna, rūkas, lijundra, sausra (sausa dirva, 7 dienas be lietaus). Kiekvienas sklypas turi savus.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Mėlyni INFORMACIJOS langeliai po įspėjimų: šerkšnas, šalna (pavasarį ir rudenį), rūkas, lijundra, stiprus vėjas per artimiausias 24 valandas. Apskaičiuoja programėlė iš prognozės; neoficialūs. Jie ateina ir kaip atskiras pranešimas.

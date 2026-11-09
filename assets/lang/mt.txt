@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Il-partijiet huma mifrudin b'linji; it-tabelli għandhom linji u jiżżerżqu lejn il-ġenb; is-sors jinsab isfel, darba.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Meta MIXGĦUL, notifika għal xita jew riħ qawwi fuq l-għalqa, u waħda għal kull għalqa għal ġlata bajda, silġ, ċpar, xita ffriżata jew buffuri qawwija.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Tirċievi notifika għal din l-għalqa meta jkun imbassar xita jew riħ qawwi fit-12-il siegħa li ġejjin, u waħda għal ġlata bajda, silġ, ċpar, xita ffriżata jew buffuri qawwija (iċċekkjat kull 3 sigħat).
+Now	Issa
+Air temp.	Temp. arja
+Wind dir.	Dir. riħ
+Rain chance	Ċans xita
+Air hum.	Umid. arja
+Soil hum.	Umid. ħamrija
+Soil temp.	Temp. ħamrija
+Min. / max.	Min. / mass.
+Mean soil hum.	Umid. ħamrija medja
+Notifications and warnings	Notifiki u twissijiet
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifiki għal din l-għalqa: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa.
+Snow expected from 	Borra mistennija mill-
+Snow · 	Borra · 
+Drought · 	Nixfa · 
+Dry soil (	Ħamrija niexfa (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% f’3–9 cm, stima) u l-ebda xita fis-7 ijiem li ġejjin.
+Parcel notifications	Notifiki tal-għelieqi
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Għelieqi: il-mappa turi l-għelieqi kollha; mess jiftaħ waħda fuq l-iskrin prinċipali. “Issejvja post GPS” jew “Agħżel fuq il-mappa” iżżid waħda; il-buttuna GPS turi fejn int. Il-lapes ibiddel l-isem u l-pin; il-⋮ tiegħu għandu Statistika · PDF u Ħassar. Jinżammu biss f’dan it-telefon.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Fl-Għelieqi u fil-paġna ta’ għalqa l-kmandi huma fil-menu ⋮ fuq il-lemin. Il-kaxxi juru l-valur biss; mess juri d-dettalji.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistika · PDF: fuq il-kaxxi ta’ issa u tal-perjodu (fissi), taħthom it-12-il siegħa li ġejjin u jum b’jum (jiskrollaw). Perjodu u PDF fil-⋮. Mess fuq l-isem tal-għalqa juri l-isem u l-koordinati.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Modalità bidwi: il-kaxxa “Notifiki u twissijiet” fuq il-karta tal-għalqa tixgħel in-notifiki kollha tagħha: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa (ħamrija niexfa, 7 ijiem mingħajr xita). Kull għalqa għandha tagħha.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Kaxxi blu ta’ INFORMAZZJONI wara t-twissijiet: ġlata bajda, ġlata (rebbiegħa u ħarifa), ċpar, xita silġ, riħ qawwi fl-24 siegħa li ġejjin. Ikkalkulati mill-app mit-tbassir; mhux uffiċjali. Jiġu wkoll bħala notifika għaliha.

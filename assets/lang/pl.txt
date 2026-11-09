@@ -781,3 +781,25 @@ In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ men
 Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.	Części są oddzielone liniami; tabele mają linie i przesuwają się w bok; źródło jest na dole, raz.
 When ON, a notification for rain or strong wind on the parcel, and one per parcel for frost, freeze, fog, freezing rain or strong gusts.	Gdy WŁ., powiadomienie o deszczu lub silnym wietrze na działce i po jednym dla każdej działki o szronie, mrozie, mgle, marznącym deszczu lub silnych porywach.
 You get a notification for this parcel when rain or strong wind is forecast in the next 12 hours, and one for frost, freeze, fog, freezing rain or strong gusts (checked every 3 hours).	Otrzymasz powiadomienie dla tej działki, gdy w ciągu 12 godzin prognozowany jest deszcz lub silny wiatr, oraz jedno o szronie, mrozie, mgle, marznącym deszczu lub silnych porywach (sprawdzane co 3 godziny).
+Now	Teraz
+Air temp.	Temp. pow.
+Wind dir.	Kier. wiatru
+Rain chance	Szansa deszczu
+Air hum.	Wilg. pow.
+Soil hum.	Wilg. gleby
+Soil temp.	Temp. gleby
+Min. / max.	Min. / maks.
+Mean soil hum.	Śr. wilg. gleby
+Notifications and warnings	Powiadomienia i ostrzeżenia
+Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Powiadomienia dla tej działki: deszcz, wiatr, śnieg, szron, mróz, mgła, marznący deszcz, susza.
+Snow expected from 	Śnieg spodziewany od 
+Snow · 	Śnieg · 
+Drought · 	Susza · 
+Dry soil (	Sucha gleba (
+% at 3–9 cm, estimated) and no rain in the next 7 days.	% na 3–9 cm, szacunek) i brak deszczu w ciągu 7 dni.
+Parcel notifications	Powiadomienia działek
+☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.	☰ › Działki: mapa pokazuje wszystkie działki; dotknięcie otwiera działkę na ekranie głównym. „Zapisz miejsce GPS” lub „Wybierz na mapie” dodaje działkę; przycisk GPS pokazuje, gdzie jesteś. Ołówek zmienia nazwę i pinezkę; jego ⋮ ma Statystyka · PDF i Usuń. Przechowywane tylko w tym telefonie.
+In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	W Działkach i na stronie działki polecenia są w menu ⋮ w prawym górnym rogu. Pola pokazują tylko wartość; dotknięcie pokazuje szczegóły.
+Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statystyka · PDF: u góry pola teraz i okresu (stałe), pod nimi następne 12 godzin i dzień po dniu (przewijają się). Okres i PDF w ⋮. Dotknięcie nazwy działki pokazuje nazwę i współrzędne.
+Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Tryb rolnika: pole „Powiadomienia i ostrzeżenia” na karcie działki włącza wszystkie jej powiadomienia: deszcz, wiatr, śnieg, szron, mróz, mgła, marznący deszcz, susza (sucha gleba, 7 dni bez deszczu). Każda działka ma swoje.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Niebieskie pola INFORMACJA po ostrzeżeniach: szron, mróz (wiosną i jesienią), mgła, marznący deszcz, silny wiatr w ciągu 24 godzin. Wyliczane przez aplikację z prognozy; nieoficjalne. Przychodzą też jako osobne powiadomienie.
