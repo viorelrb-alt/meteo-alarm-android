@@ -815,7 +815,18 @@ Screen on	Écran allumé
 Automatic location	Localisation automatique
 Boxes in ☰	Cases dans ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Une case avec X : la fonction est activée ; vide : désactivée. Un appui la change et un message l’indique.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Mode agriculteur : la cloche sous le bouton GPS de la carte Parcelles ouvre Notifications des parcelles ; une parcelle avec X reçoit toutes ses notifications : pluie, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse (sol sec, 7 jours sans pluie).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Mode agriculteur : la cloche sous le bouton GPS de la carte Parcelles ouvre Notifications des parcelles ; une parcelle avec X reçoit toutes ses notifications : pluie ou neige dans l'heure, après 20 h pluie ou neige pour demain, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse (sol sec, 7 jours sans pluie).
 No parcel saved yet.	Aucune parcelle enregistrée pour l’instant.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifications ACTIVÉES pour les parcelles cochées : pluie, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse.
 Parcel notifications OFF	Notifications des parcelles DÉSACTIVÉES
+Rain possible within the hour	Pluie possible dans l'heure
+Snow possible within the hour	Neige possible dans l'heure
+Rain possible tomorrow	Pluie possible demain
+Snow possible tomorrow	Neige possible demain
+It is raining now	Il pleut maintenant
+It is snowing now	Il neige maintenant
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Données agricoles : Open-Meteo ne répond pas ; elles seront téléchargées dès qu'il répondra
+). When access is back, the app downloads the parcel's data by itself.	). Quand l'accès revient, l'application télécharge seule les données de la parcelle.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Les données agricoles (vent horaire, humidité, sol) viennent seulement d'Open-Meteo, qui ne répond pas maintenant. Quand l'accès revient, l'application les télécharge seule.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Les données des dernières 24 heures se téléchargent ; touchez à nouveau dans un instant. Si Open-Meteo ne répond pas, elles arrivent seules plus tard.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Pluie ou neige dans l'heure, après 20 h pluie ou neige pour demain, nouvelles alertes et séismes, chacun une seule fois.

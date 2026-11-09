@@ -815,7 +815,18 @@ Screen on	Obrazovka zapnutá
 Automatic location	Automatická poloha
 Boxes in ☰	Políčka v ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Políčko s X: funkce je zapnutá; prázdné: vypnutá. Klepnutí ji přepne a zpráva to oznámí.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Režim farmáře: zvonek pod tlačítkem GPS na mapě Parcely otevře Oznámení parcel; parcela s X dostává všechna svá oznámení: déšť, vítr, sníh, jinovatka, mráz, mlha, mrznoucí déšť, sucho (suchá půda, 7 dní bez deště).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Režim farmáře: zvonek pod tlačítkem GPS na mapě Parcely otevře Oznámení parcel; parcela s X dostává všechna svá oznámení: déšť nebo sníh během hodiny, po 20. hodině déšť nebo sníh zítra, vítr, sníh, jinovatka, mráz, mlha, mrznoucí déšť, sucho (suchá půda, 7 dní bez deště).
 No parcel saved yet.	Zatím není uložena žádná parcela.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Oznámení ZAPNUTA pro zaškrtnuté parcely: déšť, vítr, sníh, jinovatka, mráz, mlha, mrznoucí déšť, sucho.
 Parcel notifications OFF	Oznámení parcel jsou VYPNUTA
+Rain possible within the hour	Možný déšť během hodiny
+Snow possible within the hour	Možné sněžení během hodiny
+Rain possible tomorrow	Možný déšť zítra
+Snow possible tomorrow	Možné sněžení zítra
+It is raining now	Právě prší
+It is snowing now	Právě sněží
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Data pro zemědělce: Open-Meteo neodpovídá; stáhnou se, až znovu odpoví
+). When access is back, the app downloads the parcel's data by itself.	). Až se přístup obnoví, aplikace data parcely stáhne sama.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Data pro zemědělce (hodinový vítr, vlhkost, půda) jsou jen z Open-Meteo, které teď neodpovídá. Až se přístup obnoví, aplikace je stáhne sama.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Data za posledních 24 hodin se stahují; za chvíli klepněte znovu. Pokud Open-Meteo neodpovídá, přijdou později sama.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Déšť nebo sníh během hodiny, po 20. hodině déšť nebo sníh zítra, nové výstrahy a zemětřesení, každé jen jednou.

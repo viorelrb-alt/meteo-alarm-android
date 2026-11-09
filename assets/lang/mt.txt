@@ -815,7 +815,18 @@ Screen on	Skrin mixgħul
 Automatic location	Post awtomatiku
 Boxes in ☰	Kaxxi fil-☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Kaxxa b’X: il-funzjoni mixgħula; vojta: mitfija. Mess jaqlibha u messaġġ jgħid hekk.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità bidwi: il-qanpiena taħt il-buttuna GPS fuq il-mappa tal-Għelieqi tiftaħ in-Notifiki tal-għelieqi; għalqa b’X tirċievi n-notifiki kollha tagħha: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa (ħamrija niexfa, 7 ijiem mingħajr xita).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità bidwi: il-qanpiena taħt il-buttuna GPS fuq il-mappa tal-Għelieqi tiftaħ in-Notifiki tal-għelieqi; għalqa b’X tirċievi n-notifiki kollha tagħha: xita jew borra fis-siegħa li ġejja, wara t-8 ta' filgħaxija xita jew borra għada, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa (ħamrija niexfa, 7 ijiem mingħajr xita).
 No parcel saved yet.	L-ebda għalqa ma ġiet issejvjata s’issa.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifiki MIXGĦULA għall-għelieqi mmarkati: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa.
 Parcel notifications OFF	Notifiki tal-għelieqi MITFIJA
+Rain possible within the hour	Xita possibbli fis-siegħa li ġejja
+Snow possible within the hour	Borra possibbli fis-siegħa li ġejja
+Rain possible tomorrow	Xita possibbli għada
+Snow possible tomorrow	Borra possibbli għada
+It is raining now	Qiegħda tagħmel ix-xita issa
+It is snowing now	Qiegħda tagħmel il-borra issa
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Data tal-bdiewa: Open-Meteo mhux qed iwieġeb; titniżżel meta jerġa' jwieġeb
+). When access is back, the app downloads the parcel's data by itself.	). Meta l-aċċess jerġa' lura, l-app tniżżel id-data tal-għalqa waħedha.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Id-data tal-bdiewa (riħ kull siegħa, umidità, ħamrija) tiġi biss minn Open-Meteo, li issa mhux qed iwieġeb. Meta l-aċċess jerġa' lura, l-app tniżżilha waħedha.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Id-data tal-aħħar 24 siegħa qed titniżżel; erġa' agħfas ftit wara. Jekk Open-Meteo ma jwieġibx, tasal waħedha aktar tard.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Xita jew borra fis-siegħa li ġejja, wara t-8 ta' filgħaxija xita jew borra għada, twissijiet ġodda u terremoti, kull wieħed darba biss.

@@ -1,5 +1,6 @@
-Leagan reatha: v.3.33 · 9.11.2026
+Leagan reatha: v.3.40 · 9.11.2026
 Feabhsuithe ar dhearadh / ar struchtúr.
+- Fógraí cosúil le haip Aimsire an fhóin („Áit | Báisteach“): báisteach nó sneachta laistigh den uair agus, tar éis 8 i.n., don lá amárach, don bhaile agus do na ceapacha; gan fógra nuair a fhreagraíonn Open-Meteo arís.
 - Leathanach na ceapaí in éineacht le Staitisticí: ar barr boscaí seasta an ama seo agus na tréimhse; fúthu táblaí 12 uair agus lá ar lá.
 - Casann an bosca „Fógraí agus rabhaidh“ ar gach ceapach a fógraí go léir air, sneachta agus triomach anois freisin.
 - Fógra FAISNÉIS ar leith don bhaile freisin; tá cuma an phríomhroghchláir ar na roghchláir ⋮.

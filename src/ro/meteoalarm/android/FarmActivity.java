@@ -2233,8 +2233,8 @@ public final class FarmActivity extends Activity {
 						// Viorel: say that the data come later and are notified.
 						Parcels.pending(FarmActivity.this, p.id);
 						if (status != null) status.setText(Tr.t("Open-Meteo is not answering now (", "Open-Meteo nu răspunde acum (") + Fetcher.reason(fe, !Tr.ro())
-								+ Tr.t("). When access is back, the app downloads the parcel's data and sends you a notification.",
-										"). Când accesul revine, aplicația descarcă datele parcelei și îți trimite o notificare."));
+								+ Tr.t("). When access is back, the app downloads the parcel's data by itself.",
+										"). Când accesul revine, aplicația descarcă singură datele parcelei."));
 					}
 				});
 			}

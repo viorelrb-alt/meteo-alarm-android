@@ -815,7 +815,18 @@ Screen on	Skærm tændt
 Automatic location	Automatisk placering
 Boxes in ☰	Felter i ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Et felt med X: funktionen er slået til; tomt: slået fra. Et tryk skifter, og en besked siger det.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Landmandstilstand: klokken under GPS-knappen på kortet Marker åbner Notifikationer for marker; en mark med X får alle sine notifikationer: regn, vind, sne, rimfrost, frost, tåge, isslag, tørke (tør jord, 7 dage uden regn).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Landmandstilstand: klokken under GPS-knappen på kortet Marker åbner Notifikationer for marker; en mark med X får alle sine notifikationer: regn eller sne inden for en time, efter kl. 20 regn eller sne i morgen, vind, sne, rimfrost, frost, tåge, isslag, tørke (tør jord, 7 dage uden regn).
 No parcel saved yet.	Ingen mark gemt endnu.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifikationer TIL for de afkrydsede marker: regn, vind, sne, rimfrost, frost, tåge, isslag, tørke.
 Parcel notifications OFF	Notifikationer for marker er FRA
+Rain possible within the hour	Regn muligt inden for en time
+Snow possible within the hour	Sne muligt inden for en time
+Rain possible tomorrow	Regn muligt i morgen
+Snow possible tomorrow	Sne muligt i morgen
+It is raining now	Det regner nu
+It is snowing now	Det sner nu
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Landmandsdata: Open-Meteo svarer ikke; de hentes, når den svarer igen
+). When access is back, the app downloads the parcel's data by itself.	). Når adgangen er tilbage, henter appen selv markens data.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Landmandsdata (vind time for time, fugt, jord) kommer kun fra Open-Meteo, som ikke svarer nu. Når adgangen er tilbage, henter appen dem selv.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Data for de sidste 24 timer hentes; tryk igen om lidt. Hvis Open-Meteo ikke svarer, kommer de selv senere.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Regn eller sne inden for en time, efter kl. 20 regn eller sne i morgen, nye varsler og jordskælv, hver kun én gang.

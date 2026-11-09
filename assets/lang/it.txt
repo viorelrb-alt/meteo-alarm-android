@@ -815,7 +815,18 @@ Screen on	Schermo acceso
 Automatic location	Posizione automatica
 Boxes in ☰	Caselle in ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Una casella con X: la funzione è attiva; vuota: spenta. Un tocco la cambia e un messaggio lo dice.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità agricoltore: la campanella sotto il pulsante GPS della mappa Parcelle apre Notifiche delle parcelle; una parcella con X riceve tutte le sue notifiche: pioggia, vento, neve, brina, gelo, nebbia, pioggia gelata, siccità (suolo secco, 7 giorni senza pioggia).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità agricoltore: la campanella sotto il pulsante GPS della mappa Parcelle apre Notifiche delle parcelle; una parcella con X riceve tutte le sue notifiche: pioggia o neve entro un'ora, dopo le 20 pioggia o neve per domani, vento, neve, brina, gelo, nebbia, pioggia gelata, siccità (suolo secco, 7 giorni senza pioggia).
 No parcel saved yet.	Ancora nessuna parcella salvata.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifiche ATTIVE per le parcelle spuntate: pioggia, vento, neve, brina, gelo, nebbia, pioggia gelata, siccità.
 Parcel notifications OFF	Notifiche delle parcelle DISATTIVATE
+Rain possible within the hour	Pioggia possibile entro un'ora
+Snow possible within the hour	Neve possibile entro un'ora
+Rain possible tomorrow	Pioggia possibile domani
+Snow possible tomorrow	Neve possibile domani
+It is raining now	Sta piovendo ora
+It is snowing now	Sta nevicando ora
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Dati agricoli: Open-Meteo non risponde; verranno scaricati quando risponderà di nuovo
+). When access is back, the app downloads the parcel's data by itself.	). Quando l'accesso torna, l'app scarica da sola i dati della parcella.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	I dati agricoli (vento orario, umidità, suolo) arrivano solo da Open-Meteo, che ora non risponde. Quando l'accesso torna, l'app li scarica da sola.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	I dati delle ultime 24 ore si stanno scaricando; tocca di nuovo tra poco. Se Open-Meteo non risponde, arrivano da soli più tardi.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Pioggia o neve entro un'ora, dopo le 20 pioggia o neve per domani, nuove allerte e terremoti, ognuno una sola volta.

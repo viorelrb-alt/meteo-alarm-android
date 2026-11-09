@@ -815,7 +815,18 @@ Screen on	Skärm på
 Automatic location	Automatisk plats
 Boxes in ☰	Rutor i ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	En ruta med X: funktionen är på; tom: av. Ett tryck växlar och ett meddelande säger det.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Lantbrukarläge: klockan under GPS-knappen på kartan Skiften öppnar Aviseringar för skiften; ett skifte med X får alla sina aviseringar: regn, vind, snö, rimfrost, frost, dimma, underkylt regn, torka (torr mark, 7 dagar utan regn).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Lantbrukarläge: klockan under GPS-knappen på kartan Skiften öppnar Aviseringar för skiften; ett skifte med X får alla sina aviseringar: regn eller snö inom en timme, efter kl. 20 regn eller snö i morgon, vind, snö, rimfrost, frost, dimma, underkylt regn, torka (torr mark, 7 dagar utan regn).
 No parcel saved yet.	Inget skifte sparat ännu.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Aviseringar PÅ för de markerade skiftena: regn, vind, snö, rimfrost, frost, dimma, underkylt regn, torka.
 Parcel notifications OFF	Aviseringar för skiften AV
+Rain possible within the hour	Regn möjligt inom en timme
+Snow possible within the hour	Snö möjligt inom en timme
+Rain possible tomorrow	Regn möjligt i morgon
+Snow possible tomorrow	Snö möjligt i morgon
+It is raining now	Det regnar nu
+It is snowing now	Det snöar nu
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Lantbruksdata: Open-Meteo svarar inte; de hämtas när den svarar igen
+). When access is back, the app downloads the parcel's data by itself.	). När åtkomsten är tillbaka hämtar appen skiftets data själv.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Lantbruksdata (vind per timme, fukt, mark) kommer bara från Open-Meteo, som inte svarar nu. När åtkomsten är tillbaka hämtar appen dem själv.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Data för de senaste 24 timmarna hämtas; tryck igen om en stund. Om Open-Meteo inte svarar kommer de av sig själva senare.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Regn eller snö inom en timme, efter kl. 20 regn eller snö i morgon, nya varningar och jordbävningar, var och en bara en gång.

@@ -1,5 +1,6 @@
-Current version: v.3.33 · 9.11.2026
+Current version: v.3.40 · 9.11.2026
 Design / structure improvements.
+- Notifications like the phone's Weather app (“Place | Rain”): rain or snow within the hour and, after 8 pm, for tomorrow, for the town and the parcels; no notice when Open-Meteo answers again.
 - The parcel's page joined with Statistics: on top the boxes of now and of the period, fixed; under them the 12-hour and day-by-day tables.
 - The “Notifications and warnings” box on each parcel turns on all its notifications, now also snow and drought.
 - A separate INFORMATION notification for the town too; the ⋮ menus look like the main menu.

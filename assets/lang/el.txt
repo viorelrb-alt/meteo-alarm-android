@@ -815,7 +815,18 @@ Screen on	Οθόνη αναμμένη
 Automatic location	Αυτόματη τοποθεσία
 Boxes in ☰	Κουτάκια στο ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Κουτάκι με X: η λειτουργία είναι ενεργή· κενό: ανενεργή. Ένα άγγιγμα την αλλάζει και ένα μήνυμα το λέει.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Λειτουργία αγρότη: το καμπανάκι κάτω από το κουμπί GPS στον χάρτη Αγροτεμάχια ανοίγει τις Ειδοποιήσεις αγροτεμαχίων· ένα αγροτεμάχιο με X παίρνει όλες τις ειδοποιήσεις του: βροχή, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία (ξηρό έδαφος, 7 ημέρες χωρίς βροχή).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Λειτουργία αγρότη: το καμπανάκι κάτω από το κουμπί GPS στον χάρτη Αγροτεμάχια ανοίγει τις Ειδοποιήσεις αγροτεμαχίων· ένα αγροτεμάχιο με X παίρνει όλες τις ειδοποιήσεις του: βροχή ή χιόνι μέσα στην ώρα, μετά τις 20:00 βροχή ή χιόνι αύριο, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία (ξηρό έδαφος, 7 ημέρες χωρίς βροχή).
 No parcel saved yet.	Δεν έχει αποθηκευτεί ακόμη αγροτεμάχιο.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Ειδοποιήσεις ΕΝΕΡΓΕΣ για τα επιλεγμένα αγροτεμάχια: βροχή, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία.
 Parcel notifications OFF	Οι ειδοποιήσεις αγροτεμαχίων είναι ΑΝΕΝΕΡΓΕΣ
+Rain possible within the hour	Πιθανή βροχή μέσα στην ώρα
+Snow possible within the hour	Πιθανό χιόνι μέσα στην ώρα
+Rain possible tomorrow	Πιθανή βροχή αύριο
+Snow possible tomorrow	Πιθανό χιόνι αύριο
+It is raining now	Βρέχει τώρα
+It is snowing now	Χιονίζει τώρα
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Δεδομένα αγροτών: το Open-Meteo δεν απαντά· θα ληφθούν όταν απαντήσει ξανά
+). When access is back, the app downloads the parcel's data by itself.	). Όταν επανέλθει η πρόσβαση, η εφαρμογή κατεβάζει μόνη της τα δεδομένα του αγροτεμαχίου.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Τα δεδομένα αγροτών (ωριαίος άνεμος, υγρασία, έδαφος) έρχονται μόνο από το Open-Meteo, που δεν απαντά τώρα. Όταν επανέλθει η πρόσβαση, η εφαρμογή τα κατεβάζει μόνη της.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Τα δεδομένα των τελευταίων 24 ωρών κατεβαίνουν· αγγίξτε ξανά σε λίγο. Αν το Open-Meteo δεν απαντά, έρχονται αργότερα μόνα τους.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Βροχή ή χιόνι μέσα στην ώρα, μετά τις 20:00 βροχή ή χιόνι αύριο, νέες προειδοποιήσεις και σεισμοί, το καθένα μόνο μία φορά.

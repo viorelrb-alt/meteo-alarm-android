@@ -815,7 +815,18 @@ Screen on	Képernyő bekapcsolva
 Automatic location	Automatikus helymeghatározás
 Boxes in ☰	Négyzetek a ☰ menüben
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	X-es négyzet: a funkció be van kapcsolva; üres: ki. Koppintásra vált, és egy üzenet jelzi.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Gazda mód: a Parcellák térképén a GPS gomb alatti csengő megnyitja a Parcella-értesítéseket; az X-es parcella minden értesítést megkap: eső, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napig nincs eső).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Gazda mód: a Parcellák térképén a GPS gomb alatti csengő megnyitja a Parcella-értesítéseket; az X-es parcella minden értesítést megkap: eső vagy hó a következő órában, 20 óra után holnapi eső vagy hó, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napig nincs eső).
 No parcel saved yet.	Még nincs mentett parcella.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Értesítések BEKAPCSOLVA a bejelölt parcellákra: eső, szél, hó, dér, fagy, köd, ónos eső, aszály.
 Parcel notifications OFF	A parcella-értesítések KIKAPCSOLVA
+Rain possible within the hour	Eső lehetséges a következő órában
+Snow possible within the hour	Havazás lehetséges a következő órában
+Rain possible tomorrow	Holnap eső lehetséges
+Snow possible tomorrow	Holnap havazás lehetséges
+It is raining now	Most esik az eső
+It is snowing now	Most havazik
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Gazdaadatok: az Open-Meteo nem válaszol; letöltődnek, amikor újra válaszol
+). When access is back, the app downloads the parcel's data by itself.	). Amikor a hozzáférés visszatér, az alkalmazás magától letölti a parcella adatait.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	A gazdaadatok (óránkénti szél, páratartalom, talaj) csak az Open-Meteótól jönnek, amely most nem válaszol. Amikor a hozzáférés visszatér, az alkalmazás magától letölti őket.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Az utolsó 24 óra adatai töltődnek; koppints újra egy pillanat múlva. Ha az Open-Meteo nem válaszol, később maguktól megjönnek.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Eső vagy hó a következő órában, 20 óra után holnapi eső vagy hó, új figyelmeztetések és földrengések, mindegyik csak egyszer.

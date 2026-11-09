@@ -1,5 +1,6 @@
-Geçerli sürüm: v.3.33 · 9.11.2026
+Geçerli sürüm: v.3.40 · 9.11.2026
 Tasarım / yapı iyileştirmeleri.
+- Telefonun Hava Durumu uygulaması gibi bildirimler (“Yer | Yağmur”): bir saat içinde yağmur veya kar ve saat 20'den sonra yarın için, yerleşim yeri ve parseller için; Open-Meteo yeniden yanıt verdiğinde bildirim yok.
 - Parsel sayfası İstatistik ile birleşti: üstte şimdinin ve dönemin sabit kutuları; altında 12 saatlik ve gün gün tablolar.
 - Her parseldeki “Bildirimler ve uyarılar” kutusu tüm bildirimlerini açar, artık kar ve kuraklık da var.
 - Yerleşim yeri için de ayrı bir BİLGİ bildirimi; ⋮ menüleri ana menü gibi görünür.

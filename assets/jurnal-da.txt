@@ -1,5 +1,6 @@
-Nuværende version: v.3.33 · 9.11.2026
+Nuværende version: v.3.40 · 9.11.2026
 Forbedringer af design / struktur.
+- Notifikationer som telefonens Vejr-app (”Sted | Regn”): regn eller sne inden for en time og efter kl. 20 for i morgen, for byen og markerne; ingen besked, når Open-Meteo svarer igen.
 - Markens side samlet med Statistik: øverst faste felter for nu og for perioden; under dem tabellerne for 12 timer og dag for dag.
 - Feltet „Notifikationer og varsler“ på hver mark tænder alle dens notifikationer, nu også sne og tørke.
 - En separat INFORMATION-notifikation også for byen; menuerne ⋮ ligner hovedmenuen.

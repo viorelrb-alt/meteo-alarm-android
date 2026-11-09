@@ -815,7 +815,18 @@ Screen on	Екран увімкнений
 Automatic location	Автоматичне місцезнаходження
 Boxes in ☰	Квадратики в ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Квадратик з X: функцію ввімкнено; порожній: вимкнено. Дотик перемикає, і повідомлення про це каже.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим фермера: дзвіночок під кнопкою GPS на мапі Ділянок відкриває Сповіщення ділянок; ділянка з X отримує всі свої сповіщення: дощ, вітер, сніг, іній, заморозок, туман, крижаний дощ, посуха (сухий ґрунт, 7 днів без дощу).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим фермера: дзвіночок під кнопкою GPS на мапі Ділянок відкриває Сповіщення ділянок; ділянка з X отримує всі свої сповіщення: дощ або сніг протягом години, після 20:00 дощ або сніг завтра, вітер, сніг, іній, заморозок, туман, крижаний дощ, посуха (сухий ґрунт, 7 днів без дощу).
 No parcel saved yet.	Ще немає збережених ділянок.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Сповіщення УВІМКНЕНО для позначених ділянок: дощ, вітер, сніг, іній, заморозок, туман, крижаний дощ, посуха.
 Parcel notifications OFF	Сповіщення ділянок ВИМКНЕНО
+Rain possible within the hour	Можливий дощ протягом години
+Snow possible within the hour	Можливий сніг протягом години
+Rain possible tomorrow	Завтра можливий дощ
+Snow possible tomorrow	Завтра можливий сніг
+It is raining now	Зараз іде дощ
+It is snowing now	Зараз іде сніг
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Дані для фермера: Open-Meteo не відповідає; їх буде завантажено, коли він знову відповість
+). When access is back, the app downloads the parcel's data by itself.	). Коли доступ повернеться, застосунок сам завантажить дані ділянки.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Дані для фермера (вітер щогодини, вологість, ґрунт) надходять лише від Open-Meteo, який зараз не відповідає. Коли доступ повернеться, застосунок сам їх завантажить.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Дані за останні 24 години завантажуються; торкніться ще раз за хвилину. Якщо Open-Meteo не відповідає, вони надійдуть самі пізніше.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Дощ або сніг протягом години, після 20:00 дощ або сніг завтра, нові попередження та землетруси, кожне лише один раз.

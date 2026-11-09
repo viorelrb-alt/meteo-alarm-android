@@ -350,10 +350,9 @@ final class Fetcher {
 		SharedPreferences p = prefs(ctx);
 		p.edit().putString("farmCity", c.key()).putLong("farmFetched", System.currentTimeMillis()).apply();
 		if (p.getBoolean("farmPending", false)) {
+			// v3.40 (Viorel): no notice any more when the data come after a pause of Open-Meteo.
 			p.edit().remove("farmPending").apply();
-			Notifier.post(ctx, 2900, Tr.t("Farmer mode", "Mod Fermier"), Tr.t("Open-Meteo answers again: the farmer's data for ", "Open-Meteo răspunde din nou: datele pentru fermieri pentru ")
-					+ c.name + Tr.t(" have been downloaded.", " au fost descărcate."));
-			Log.i(ctx, "NOTIF", "datele pentru fermieri au venit după pauza Open-Meteo");
+			Log.i(ctx, "FERMIER", "datele pentru fermieri au venit după pauza Open-Meteo");
 		}
 	}
 

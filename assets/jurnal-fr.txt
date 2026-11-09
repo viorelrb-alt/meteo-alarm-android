@@ -1,5 +1,6 @@
-Version actuelle : v.3.33 · 9.11.2026
+Version actuelle : v.3.40 · 9.11.2026
 Améliorations de design / structure.
+- Notifications comme l'appli Météo du téléphone (« Lieu | Pluie ») : pluie ou neige dans l'heure et, après 20 h, pour demain, pour la localité et les parcelles ; plus d'avis quand Open-Meteo répond de nouveau.
 - La page de la parcelle réunie avec les Statistiques : en haut les cases fixes de maintenant et de la période ; dessous les tableaux sur 12 heures et jour par jour.
 - La case « Notifications et avertissements » de chaque parcelle active toutes ses notifications, désormais aussi neige et sécheresse.
 - Une notification INFORMATION séparée aussi pour la localité ; les menus ⋮ ressemblent au menu principal.

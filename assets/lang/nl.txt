@@ -815,7 +815,18 @@ Screen on	Scherm aan
 Automatic location	Automatische locatie
 Boxes in ☰	Vakjes in ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Een vakje met X: de functie staat aan; leeg: uit. Een tik schakelt om en een bericht zegt het.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Boerenmodus: de bel onder de GPS-knop op de kaart Percelen opent Perceelmeldingen; een perceel met X krijgt al zijn meldingen: regen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte (droge bodem, 7 dagen geen regen).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Boerenmodus: de bel onder de GPS-knop op de kaart Percelen opent Perceelmeldingen; een perceel met X krijgt al zijn meldingen: regen of sneeuw binnen het uur, na 20 uur regen of sneeuw voor morgen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte (droge bodem, 7 dagen geen regen).
 No parcel saved yet.	Nog geen perceel opgeslagen.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Meldingen AAN voor de aangevinkte percelen: regen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte.
 Parcel notifications OFF	Perceelmeldingen UIT
+Rain possible within the hour	Regen mogelijk binnen het uur
+Snow possible within the hour	Sneeuw mogelijk binnen het uur
+Rain possible tomorrow	Morgen regen mogelijk
+Snow possible tomorrow	Morgen sneeuw mogelijk
+It is raining now	Het regent nu
+It is snowing now	Het sneeuwt nu
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Boerengegevens: Open-Meteo antwoordt niet; ze worden geladen zodra het weer antwoordt
+). When access is back, the app downloads the parcel's data by itself.	). Als de toegang terug is, laadt de app de gegevens van het perceel zelf.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	De boerengegevens (wind per uur, vochtigheid, bodem) komen alleen van Open-Meteo, dat nu niet antwoordt. Als de toegang terug is, laadt de app ze zelf.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	De gegevens van de laatste 24 uur worden geladen; tik zo meteen opnieuw. Als Open-Meteo niet antwoordt, komen ze later vanzelf.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Regen of sneeuw binnen het uur, na 20 uur regen of sneeuw voor morgen, nieuwe waarschuwingen en aardbevingen, elk maar één keer.

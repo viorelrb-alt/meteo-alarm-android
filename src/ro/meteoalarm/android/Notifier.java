@@ -109,15 +109,18 @@ final class Notifier {
 					boolean snow = w.wetNow() ? Weather.snowCode(w.code) : w.snowy.length > 1 && w.snowy[1];
 					// One notice per spell: again only after 3 dry hours.
 					if (now - p.getLong("nPrecipLast", 0) > 3 * 3600000L) {
-						String title = snow ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie");
-						String body = (w.wetNow() ? (snow ? Tr.t("It is snowing in ", "Ninge în ") : Tr.t("It is raining in ", "Plouă în "))
-								: (snow ? Tr.t("Snow is expected within the hour in ", "Ninsoare în următoarea oră în ") : Tr.t("Rain is expected within the hour in ", "Ploaie în următoarea oră în ")))
-								+ c.name + (w.rainEnd.length() > 0 ? " · " + T.until + " " + Texts.clock(w.rainEnd, clk12) : "");
+						// v3.40 (Viorel): like the phone's weather app: "Town | Rain", "Rain possible within the hour".
+						String title = c.name + " | " + (snow ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie"));
+						String body = (w.wetNow() ? (snow ? Tr.t("It is snowing now", "Ninge acum") : Tr.t("It is raining now", "Plouă acum"))
+								: (snow ? Tr.t("Snow possible within the hour", "Ninsoare posibilă în următoarea oră") : Tr.t("Rain possible within the hour", "Ploaie posibilă în următoarea oră"))
+										+ (w.probs.length > 1 && w.probs[1] > 0 ? " · " + w.probs[1] + "%" : ""))
+								+ (w.rainEnd.length() > 0 ? " · " + T.until + " " + Texts.clock(w.rainEnd, clk12) : "");
 						post(ctx, 1, title, body);
 						Log.i(ctx, "NOTIF", "precipitații: " + body);
 					}
 					p.edit().putLong("nPrecipLast", now).apply();
 				}
+				tomorrow(ctx, c, w, p);
 			}
 			// New warnings for the town.
 			{
@@ -127,13 +130,13 @@ final class Notifier {
 					if (p.getLong(key, 0) > 0) continue;
 					p.edit().putLong(key, now).apply();
 					String lvl = T.warn[Math.max(0, Math.min(2, wr.level - 1))];
-					String title = Tr.t("Warning", "Avertizare") + " " + T.warnCode.toLowerCase() + " " + lvl.toLowerCase() + " · " + c.name;
+					String title = c.name + " | " + Tr.t("Warning", "Avertizare") + " " + T.warnCode.toLowerCase() + " " + lvl.toLowerCase();
 					String body = T.warnType(wr.type) + " · " + T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12);
 					boolean loud = false;
 					if (wr.nws) {
 						// United States: the NWS event as the title; the dangerous ones on the loud channel.
 						loud = Nws.extreme(wr.type);
-						title = (loud ? "⚠ " : "") + Nws.event(wr.type).toUpperCase() + " · " + c.name;
+						title = (loud ? "⚠ " : "") + c.name + " | " + Nws.event(wr.type).toUpperCase();
 						body = T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12)
 								+ (wr.headline.length() > 0 ? "\n" + wr.headline : "") + (wr.instr.length() > 0 ? "\n" + wr.instr : "");
 					}
@@ -165,6 +168,26 @@ final class Notifier {
 	}
 
 	/** The town's own information found in the next 25 hours; each spell told once. */
+	/**
+	 * v3.40 (Viorel): after 8 in the evening, once a day, a notice when rain (or snow) is possible
+	 * tomorrow in town C ("Town | Rain", "Rain possible tomorrow · 70%").
+	 */
+	private static void tomorrow(Context ctx, Cities.City c, Weather w, SharedPreferences p) {
+		Calendar now = Calendar.getInstance();
+		if (now.get(Calendar.HOUR_OF_DAY) < 20) return;
+		String today = ro.meteoalarm.android.core.Farm.date(now, 0), tom = ro.meteoalarm.android.core.Farm.date(now, 1);
+		if (today.equals(p.getString("nTom", ""))) return;
+		int i = w.dayDates.indexOf(tom);
+		if (i < 0) return;
+		p.edit().putString("nTom", today).apply();
+		int pop = w.dayPop.get(i), code = w.dayCodes.get(i);
+		if (pop < Weather.RAIN_PROBABILITY || code < 50) return;
+		boolean snow = Weather.snowCode(code);
+		String body = (snow ? Tr.t("Snow possible tomorrow", "Ninsoare posibilă mâine") : Tr.t("Rain possible tomorrow", "Ploaie posibilă mâine")) + " · " + pop + "%";
+		post(ctx, 1600, c.name + " | " + (snow ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie")), body);
+		Log.i(ctx, "NOTIF", "mâine: " + body);
+	}
+
 	private static void info(Context ctx, Cities.City c, Weather w, List<Warnings.Warn> ws, boolean clk12, boolean imp) {
 		int n = Math.min(w.tileTemp.length, 25);
 		if (n == 0) return;
@@ -211,7 +234,7 @@ final class Notifier {
 		}
 		ed.apply();
 		if (body.length() == 0) return;
-		post(ctx, 1500, Tr.t("Information · ", "Informare · ") + c.name, body.toString());
+		post(ctx, 1500, Parcels.title(c.name, Tr.t("Information · ", "Informare · ")), body.toString());
 		Log.i(ctx, "NOTIF", "informare " + c.name + ": " + body.toString().replace('\n', ';'));
 	}
 

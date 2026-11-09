@@ -1,5 +1,6 @@
-Dabartinė versija: v.3.33 · 9.11.2026
+Dabartinė versija: v.3.40 · 9.11.2026
 Dizaino / struktūros patobulinimai.
+- Pranešimai kaip telefono Orų programoje („Vieta | Lietus“): lietus ar sniegas per valandą ir po 20 val. rytojui, gyvenvietei ir sklypams; jokio pranešimo, kai Open-Meteo vėl atsako.
 - Sklypo puslapis sujungtas su statistika: viršuje nejudantys dabarties ir laikotarpio langeliai; po jais 12 valandų ir dienų lentelės.
 - Kiekvieno sklypo langelis „Pranešimai ir įspėjimai“ įjungia visus jo pranešimus, dabar ir sniegą bei sausrą.
 - Atskiras INFORMACIJOS pranešimas ir gyvenvietei; meniu ⋮ atrodo kaip pagrindinis meniu.

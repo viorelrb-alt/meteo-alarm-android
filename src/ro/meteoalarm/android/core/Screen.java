@@ -998,8 +998,8 @@ public final class Screen {
 
 	/** The notice when the farmer's data did not come (Viorel: say they come and are notified later). */
 	public static String farmMissing() {
-		return Tr.t("The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them and sends you a notification.",
-				"Datele pentru fermieri (vânt orar, umiditate, sol) vin doar de la Open-Meteo, care nu răspunde acum. Când accesul revine, aplicația le descarcă și îți trimite o notificare.");
+		return Tr.t("The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.",
+				"Datele pentru fermieri (vânt orar, umiditate, sol) vin doar de la Open-Meteo, care nu răspunde acum. Când accesul revine, aplicația le descarcă singură.");
 	}
 
 	/** The Open-Meteo source line (v3.20: in a bubble or on a page only once, at the bottom). */
@@ -1595,8 +1595,8 @@ public final class Screen {
 				"Apa căzută pe sol în ultimele 24 de ore (ploaie, lapoviță, zăpadă topită) la locul afișat, oră cu oră.") });
 		double r = rain24();
 		if (Double.isNaN(r)) {
-			out.add(new String[] { "t", Tr.t("The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, you get a notification when they come.",
-					"Datele ultimelor 24 de ore se descarcă; atinge din nou peste puțin timp. Dacă Open-Meteo nu răspunde, primești o notificare când vin.") });
+			out.add(new String[] { "t", Tr.t("The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.",
+					"Datele ultimelor 24 de ore se descarcă; atinge din nou peste puțin timp. Dacă Open-Meteo nu răspunde, vin mai târziu singure.") });
 			return out;
 		}
 		out.add(new String[] { "h", Tr.t("Total: ", "Total: ") + mm(r) });

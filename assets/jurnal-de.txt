@@ -1,5 +1,6 @@
-Aktuelle Version: v.3.33 · 9.11.2026
+Aktuelle Version: v.3.40 · 9.11.2026
 Verbesserungen an Design / Struktur.
+- Benachrichtigungen wie in der Wetter-App des Telefons („Ort | Regen“): Regen oder Schnee in der nächsten Stunde und nach 20 Uhr für morgen, für den Ort und die Parzellen; keine Meldung mehr, wenn Open-Meteo wieder antwortet.
 - Die Parzellenseite mit der Statistik vereint: oben feste Felder für jetzt und den Zeitraum; darunter die Tabellen für 12 Stunden und Tag für Tag.
 - Das Kästchen „Benachrichtigungen und Warnungen“ jeder Parzelle schaltet alle ihre Benachrichtigungen ein, jetzt auch Schnee und Dürre.
 - Eine eigene HINWEIS-Benachrichtigung auch für den Ort; die ⋮-Menüs sehen aus wie das Hauptmenü.

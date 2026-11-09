@@ -815,7 +815,18 @@ Screen on	Zaslon uključen
 Automatic location	Automatska lokacija
 Boxes in ☰	Kućice u ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Kućica s X: funkcija je uključena; prazna: isključena. Dodir je mijenja i poruka to javlja.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Način rada poljoprivrednika: zvono ispod gumba GPS na karti Parcele otvara Obavijesti parcela; parcela s X dobiva sve svoje obavijesti: kiša, vjetar, snijeg, inje, mraz, magla, ledena kiša, suša (suho tlo, 7 dana bez kiše).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Način rada poljoprivrednika: zvono ispod gumba GPS na karti Parcele otvara Obavijesti parcela; parcela s X dobiva sve svoje obavijesti: kiša ili snijeg unutar sat vremena, nakon 20 h kiša ili snijeg sutra, vjetar, snijeg, inje, mraz, magla, ledena kiša, suša (suho tlo, 7 dana bez kiše).
 No parcel saved yet.	Još nema spremljenih parcela.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Obavijesti UKLJUČENE za označene parcele: kiša, vjetar, snijeg, inje, mraz, magla, ledena kiša, suša.
 Parcel notifications OFF	Obavijesti parcela su ISKLJUČENE
+Rain possible within the hour	Moguća kiša unutar sat vremena
+Snow possible within the hour	Moguć snijeg unutar sat vremena
+Rain possible tomorrow	Moguća kiša sutra
+Snow possible tomorrow	Moguć snijeg sutra
+It is raining now	Sada pada kiša
+It is snowing now	Sada pada snijeg
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Podaci za poljoprivrednike: Open-Meteo ne odgovara; preuzet će se kad ponovno odgovori
+). When access is back, the app downloads the parcel's data by itself.	). Kad se pristup vrati, aplikacija sama preuzima podatke parcele.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Podaci za poljoprivrednike (vjetar po satima, vlaga, tlo) dolaze samo s Open-Meteo, koji sada ne odgovara. Kad se pristup vrati, aplikacija ih sama preuzima.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Podaci za zadnja 24 sata se preuzimaju; dodirni ponovno za trenutak. Ako Open-Meteo ne odgovara, stići će sami kasnije.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Kiša ili snijeg unutar sat vremena, nakon 20 h kiša ili snijeg sutra, nova upozorenja i potresi, svako samo jednom.

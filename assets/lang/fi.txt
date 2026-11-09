@@ -815,7 +815,18 @@ Screen on	Näyttö päällä
 Automatic location	Automaattinen sijainti
 Boxes in ☰	Ruudut ☰-valikossa
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Ruutu, jossa X: toiminto on päällä; tyhjä: pois. Napautus vaihtaa sen ja viesti kertoo sen.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Viljelijätila: Lohkot-kartan GPS-painikkeen alla oleva kello avaa lohkojen ilmoitukset; lohko, jossa on X, saa kaikki ilmoituksensa: sade, tuuli, lumi, kuura, pakkanen, sumu, jäätävä sade, kuivuus (kuiva maa, 7 päivää ilman sadetta).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Viljelijätila: Lohkot-kartan GPS-painikkeen alla oleva kello avaa lohkojen ilmoitukset; lohko, jossa on X, saa kaikki ilmoituksensa: sade tai lumi tunnin sisällä, klo 20 jälkeen huomisen sade tai lumi, tuuli, lumi, kuura, pakkanen, sumu, jäätävä sade, kuivuus (kuiva maa, 7 päivää ilman sadetta).
 No parcel saved yet.	Lohkoja ei ole vielä tallennettu.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Ilmoitukset PÄÄLLÄ merkityille lohkoille: sade, tuuli, lumi, kuura, pakkanen, sumu, jäätävä sade, kuivuus.
 Parcel notifications OFF	Lohkojen ilmoitukset ovat POIS
+Rain possible within the hour	Sadetta mahdollisesti tunnin sisällä
+Snow possible within the hour	Lumisadetta mahdollisesti tunnin sisällä
+Rain possible tomorrow	Sadetta mahdollisesti huomenna
+Snow possible tomorrow	Lumisadetta mahdollisesti huomenna
+It is raining now	Nyt sataa
+It is snowing now	Nyt sataa lunta
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Viljelijän tiedot: Open-Meteo ei vastaa; ne ladataan, kun se vastaa taas
+). When access is back, the app downloads the parcel's data by itself.	). Kun yhteys palaa, sovellus lataa lohkon tiedot itse.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Viljelijän tiedot (tuuli tunneittain, kosteus, maaperä) tulevat vain Open-Meteolta, joka ei nyt vastaa. Kun yhteys palaa, sovellus lataa ne itse.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Viimeisen 24 tunnin tietoja ladataan; napauta hetken päästä uudelleen. Jos Open-Meteo ei vastaa, ne tulevat myöhemmin itsestään.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Sade tai lumi tunnin sisällä, klo 20 jälkeen huomisen sade tai lumi, uudet varoitukset ja maanjäristykset, kukin vain kerran.

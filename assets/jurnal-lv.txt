@@ -1,5 +1,6 @@
-Pašreizējā versija: v.3.33 · 9.11.2026
+Pašreizējā versija: v.3.40 · 9.11.2026
 Dizaina / struktūras uzlabojumi.
+- Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
 - Lauka lapa apvienota ar statistiku: augšā nekustīgi šī brīža un perioda lodziņi; zem tiem 12 stundu un dienu tabulas.
 - Katra lauka rūtiņa „Paziņojumi un brīdinājumi“ ieslēdz visus tā paziņojumus, tagad arī sniegu un sausumu.
 - Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai; izvēlnes ⋮ izskatās kā galvenā izvēlne.

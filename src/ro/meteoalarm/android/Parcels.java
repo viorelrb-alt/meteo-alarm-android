@@ -142,7 +142,7 @@ final class Parcels {
 		ctx.deleteFile(dataFile(id));
 		ctx.deleteFile(statsFile(id));
 		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
-		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pp_" + id).apply();
+		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pt_" + id).remove("pp_" + id).apply();
 	}
 
 	static String dataFile(long id) {
@@ -222,7 +222,15 @@ final class Parcels {
 				boolean pend = sp.getBoolean("pp_" + p.id, false);
 				// v3.30 (Viorel): a parcel's notifications only in farmer mode.
 				boolean due = p.alerts && farmer(ctx) && now - sp.getLong("pa_" + p.id, 0) >= ALERT_MS - 60000L;
-				if (!pend && !due) continue;
+				boolean on = p.alerts && farmer(ctx);
+				if (!pend && !due) {
+					// v3.40 (Viorel): rain in the next hour and, in the evening, tomorrow's rain, from the saved data.
+					if (on) {
+						Farm.Data d0 = data(ctx, p.id);
+						if (d0 != null && now - fetched(ctx, p.id) < 6 * 3600000L) soon(ctx, p, d0);
+					}
+					continue;
+				}
 				Farm.Data d;
 				try {
 					d = fetch(ctx, p);
@@ -232,11 +240,11 @@ final class Parcels {
 					continue;
 				}
 				if (pend) {
+					// v3.40 (Viorel): no notice any more when the data come after a pause of Open-Meteo.
 					sp.edit().remove("pp_" + p.id).apply();
-					Notifier.post(ctx, 3000 + (int) (p.id & 0xFFF), Tr.t("Farmer · ", "Fermier · ") + p.name,
-							Tr.t("Open-Meteo answers again: the parcel's data have been downloaded.", "Open-Meteo răspunde din nou: datele parcelei au fost descărcate."));
-					Log.i(ctx, "NOTIF", "parcela " + p.name + ": date descărcate după pauza Open-Meteo");
+					Log.i(ctx, "FERMIER", "parcela " + p.name + ": date descărcate după pauza Open-Meteo");
 				}
+				if (on) soon(ctx, p, d);
 				if (due) {
 					sp.edit().putLong("pa_" + p.id, now).apply();
 					check(ctx, p, d);
@@ -269,30 +277,12 @@ final class Parcels {
 				String body = Tr.t("Snow expected from ", "Ninsoare prognozată de la ") + u.clock(d.hourOf(snowAt)) + " · "
 						+ (u.imp ? String.format(java.util.Locale.US, "%.1f in", cm / 2.54) : String.format(java.util.Locale.US, "%.1f cm", cm).replace('.', Tr.dot()))
 						+ Tr.t(" in the next 12 hours", " în următoarele 12 ore");
-				Notifier.post(ctx, 3400 + (int) (p.id & 0xFFF), Tr.t("Snow · ", "Ninsoare · ") + p.name, body);
+				Notifier.post(ctx, 3400 + (int) (p.id & 0xFFF), title(p.name, Tr.t("Snow · ", "Ninsoare · ")), body);
 				Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
 			}
 			sp.edit().putLong(key, at).apply();
 		}
 		drought(ctx, p, d, cur);
-		if (a[0] >= 0 && snowAt < 0) {
-			// One notice per rain spell: a new one only 6 hours after the last rain hour notified.
-			String key = "pn_" + p.id + "_r";
-			long last = sp.getLong(key, 0), at = System.currentTimeMillis();
-			if (at - last > 6 * 3600000L) {
-				double mm = 0;
-				int pmax = 0;
-				for (int k = a[0]; k < Math.min(d.size(), cur + ALERT_HOURS + 1); k++) {
-					mm += Double.isNaN(d.precip[k]) ? 0 : d.precip[k];
-					if (!Double.isNaN(d.prob[k])) pmax = Math.max(pmax, (int) Math.round(d.prob[k]));
-				}
-				String body = Tr.t("Rain expected from ", "Ploaie prognozată de la ") + u.clock(d.hourOf(a[0])) + " · " + pmax + "% · "
-						+ u.mm(mm) + Tr.t(" in the next 12 hours", " în următoarele 12 ore");
-				Notifier.post(ctx, 3100 + (int) (p.id & 0xFFF), Tr.t("Rain · ", "Ploaie · ") + p.name, body);
-				Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
-			}
-			sp.edit().putLong(key, at).apply();
-		}
 		if (a[1] >= 0) {
 			String key = "pn_" + p.id + "_w";
 			long last = sp.getLong(key, 0), at = System.currentTimeMillis();
@@ -304,12 +294,59 @@ final class Parcels {
 				}
 				String body = Tr.t("Strong wind from ", "Vânt puternic de la ") + u.clock(d.hourOf(a[1])) + " · " + u.kmh(wmax)
 						+ Tr.t(", gusts ", ", rafale ") + u.kmh(gmax);
-				Notifier.post(ctx, 3200 + (int) (p.id & 0xFFF), Tr.t("Wind · ", "Vânt · ") + p.name, body);
+				Notifier.post(ctx, 3200 + (int) (p.id & 0xFFF), title(p.name, Tr.t("Wind · ", "Vânt · ")), body);
 				Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
 			}
 			sp.edit().putLong(key, at).apply();
 		}
 		info(ctx, p, d, cur, u);
+	}
+
+	/**
+	 * v3.40 (Viorel): rain (or snow) possible in the next hour on parcel P, like the phone's weather
+	 * app ("Parcel | Rain", "Rain possible within the hour"), again only after 3 dry hours; and after
+	 * 8 in the evening, once a day, rain (or snow) possible tomorrow.
+	 */
+	static void soon(Context ctx, Parcel p, Farm.Data d) {
+		Calendar now = Calendar.getInstance();
+		int cur = d.nowIndex(now);
+		if (cur < 0) return;
+		SharedPreferences sp = prefs(ctx);
+		long at = System.currentTimeMillis();
+		int k = cur + 1;
+		if (k < d.size()) {
+			double pr = d.prob[k], mm = d.precip[k];
+			boolean wet = (!Double.isNaN(pr) && pr >= Weather.RAIN_PROBABILITY) || (!Double.isNaN(mm) && mm >= 0.1);
+			if (wet) {
+				boolean sn = d.snow != null && !Double.isNaN(d.snow[k]) && d.snow[k] > 0;
+				String key = "pn_" + p.id + "_r";
+				if (at - sp.getLong(key, 0) > 3 * 3600000L) {
+					String body = (sn ? Tr.t("Snow possible within the hour", "Ninsoare posibilă în următoarea oră") : Tr.t("Rain possible within the hour", "Ploaie posibilă în următoarea oră"))
+							+ (Double.isNaN(pr) ? "" : " · " + Math.round(pr) + "%");
+					Notifier.post(ctx, 3100 + (int) (p.id & 0xFFF), p.name + " | " + (sn ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie")), body);
+					Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
+				}
+				sp.edit().putLong(key, at).apply();
+			}
+		}
+		if (now.get(Calendar.HOUR_OF_DAY) < 20) return;
+		String today = Farm.date(now, 0), key = "pt_" + p.id;
+		if (today.equals(sp.getString(key, ""))) return;
+		int t = d.dayIndex(Farm.date(now, 1));
+		if (t < 0 || t >= d.dPop.length) return;
+		sp.edit().putString(key, today).apply();
+		double pop = d.dPop[t], mm = t < d.dRain.length ? d.dRain[t] : Double.NaN;
+		boolean wet = (!Double.isNaN(pop) && pop >= Weather.RAIN_PROBABILITY && (Double.isNaN(mm) || mm >= 0.5)) || (!Double.isNaN(mm) && mm >= 1);
+		if (!wet) return;
+		double cm = 0;
+		String tom = Farm.date(now, 1);
+		if (d.snow != null) for (int h = 0; h < d.size(); h++) if (tom.equals(d.dateOf(h)) && !Double.isNaN(d.snow[h])) cm += d.snow[h];
+		boolean sn = cm >= 0.5;
+		Cities0 u = new Cities0(ctx);
+		String body = (sn ? Tr.t("Snow possible tomorrow", "Ninsoare posibilă mâine") : Tr.t("Rain possible tomorrow", "Ploaie posibilă mâine"))
+				+ (Double.isNaN(pop) ? "" : " · " + Math.round(pop) + "%") + (Double.isNaN(mm) ? "" : " · " + u.mm(mm));
+		Notifier.post(ctx, 3000 + (int) (p.id & 0xFFF), p.name + " | " + (sn ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie")), body);
+		Log.i(ctx, "NOTIF", "parcela " + p.name + ": mâine " + body);
 	}
 
 	/**
@@ -332,7 +369,7 @@ final class Parcels {
 		if (sp.getBoolean(key, false)) return;
 		sp.edit().putBoolean(key, true).apply();
 		String body = Tr.t("Dry soil (", "Sol uscat (") + Math.round(m * 100) + Tr.t("% at 3–9 cm, estimated) and no rain in the next 7 days.", "% la 3–9 cm, estimat) și fără ploaie în următoarele 7 zile.");
-		Notifier.post(ctx, 3500 + (int) (p.id & 0xFFF), Tr.t("Drought · ", "Secetă · ") + p.name, body);
+		Notifier.post(ctx, 3500 + (int) (p.id & 0xFFF), title(p.name, Tr.t("Drought · ", "Secetă · ")), body);
 		Log.i(ctx, "NOTIF", "parcela " + p.name + ": " + body);
 	}
 
@@ -369,8 +406,15 @@ final class Parcels {
 		}
 		ed.apply();
 		if (body.length() == 0) return;
-		Notifier.post(ctx, 3300 + (int) (p.id & 0xFFF), Tr.t("Information · ", "Informare · ") + p.name, body.toString());
+		Notifier.post(ctx, 3300 + (int) (p.id & 0xFFF), title(p.name, Tr.t("Information · ", "Informare · ")), body.toString());
 		Log.i(ctx, "NOTIF", "parcela " + p.name + ": informare " + body.toString().replace('\n', ';'));
+	}
+
+	/** v3.40 (Viorel): a notice's title as the phone's weather app writes it: "Place | Rain". */
+	static String title(String place, String what) {
+		what = what.trim();
+		if (what.endsWith("·")) what = what.substring(0, what.length() - 1).trim();
+		return place + " | " + what;
 	}
 
 	/** Units of the phone's region for the notices (metric or imperial, 24 or 12 hours). */

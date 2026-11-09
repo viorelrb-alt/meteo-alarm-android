@@ -1,5 +1,6 @@
-Versiunea curentă: v.3.33 · 9.11.2026
+Versiunea curentă: v.3.40 · 9.11.2026
 Îmbunătățiri de design / structură.
+- Notificări ca în aplicația Vreme a telefonului („Loc | Ploaie”): ploaie sau ninsoare în următoarea oră și, după ora 20, pentru mâine, pentru localitate și parcele; fără notificare când Open-Meteo răspunde din nou.
 - Pagina parcelei unită cu Statistica: sus casetele de acum și ale perioadei, fixe; dedesubt tabelele pe 12 ore și zi cu zi.
 - Caseta „Notificări și avertizări” pe fiecare parcelă pornește toate notificările ei, acum și ninsoare și secetă.
 - Notificare INFORMARE separată și pentru localitate; meniurile ⋮ arată ca meniul principal.

@@ -815,7 +815,18 @@ Screen on	Ekraan sees
 Automatic location	Automaatne asukoht
 Boxes in ☰	Ruudud menüüs ☰
 A box with X: the function is on; empty: off. A tap switches it and a message says so.	Ruut X-iga: funktsioon on sees; tühi: väljas. Puudutus lülitab ja teade ütleb seda.
-Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Põllumehe režiim: kell GPS-nupu all põldude kaardil avab põldude teavitused; X-iga põld saab kõik oma teavitused: vihm, tuul, lumi, hall, külm, udu, jäävihm, põud (kuiv muld, 7 päeva vihmata).
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Põllumehe režiim: kell GPS-nupu all põldude kaardil avab põldude teavitused; X-iga põld saab kõik oma teavitused: vihm või lumi järgmise tunni jooksul, pärast kella 20 homne vihm või lumi, tuul, lumi, hall, külm, udu, jäävihm, põud (kuiv muld, 7 päeva vihmata).
 No parcel saved yet.	Ühtegi põldu pole veel salvestatud.
 Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Teavitused SEES märgitud põldudele: vihm, tuul, lumi, hall, külm, udu, jäävihm, põud.
 Parcel notifications OFF	Põldude teavitused on VÄLJAS
+Rain possible within the hour	Järgmise tunni jooksul võimalik vihm
+Snow possible within the hour	Järgmise tunni jooksul võimalik lumi
+Rain possible tomorrow	Homme võimalik vihm
+Snow possible tomorrow	Homme võimalik lumi
+It is raining now	Praegu sajab vihma
+It is snowing now	Praegu sajab lund
+Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again	Põllumehe andmed: Open-Meteo ei vasta; need laaditakse, kui see jälle vastab
+). When access is back, the app downloads the parcel's data by itself.	). Kui ühendus taastub, laadib rakendus põllu andmed ise.
+The farmer's data (hourly wind, humidity, soil) come only from Open-Meteo, which is not answering now. When access is back, the app downloads them by itself.	Põllumehe andmed (tunnituul, niiskus, muld) tulevad ainult Open-Meteost, mis praegu ei vasta. Kui ühendus taastub, laadib rakendus need ise.
+The data of the last 24 hours are being downloaded; tap again in a moment. If Open-Meteo is not answering, they come later by themselves.	Viimase 24 tunni andmeid laaditakse; puuduta hetke pärast uuesti. Kui Open-Meteo ei vasta, tulevad need hiljem ise.
+Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.	Vihm või lumi järgmise tunni jooksul, pärast kella 20 homne vihm või lumi, uued hoiatused ja maavärinad, igaüks ainult üks kord.
