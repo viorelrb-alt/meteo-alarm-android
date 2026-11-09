@@ -1,4 +1,4 @@
-Praegune versioon: v.3.60 · 9.11.2026
+Praegune versioon: v.3.61 · 9.11.2026
 PÕHIEKRAAN
 - TEAVE-kastid Euroopas: härmatis, öökülm, udu, jäide, tugev tuul.
 - Ühenduse ikoon kella kõrval: Wi-Fi, mobiilne andmeside või puudub.

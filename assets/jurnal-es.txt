@@ -1,4 +1,4 @@
-Versión actual: v.3.60 · 9.11.2026
+Versión actual: v.3.61 · 9.11.2026
 ACTUALIZACIONES
 - Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.

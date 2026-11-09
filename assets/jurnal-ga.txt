@@ -1,4 +1,4 @@
-Leagan reatha: v.3.60 · 9.11.2026
+Leagan reatha: v.3.61 · 9.11.2026
 CEAPACHA
 - Fógraí do na ceapacha, roghnaithe leis an gcnaipe cloigín ar an léarscáil: báisteach, gaoth, sneachta, triomach.
 FÓGRAÍ

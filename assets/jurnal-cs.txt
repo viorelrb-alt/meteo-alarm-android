@@ -1,4 +1,4 @@
-Současná verze: v.3.60 · 9.11.2026
+Současná verze: v.3.61 · 9.11.2026
 AKTUALIZACE
 - Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.

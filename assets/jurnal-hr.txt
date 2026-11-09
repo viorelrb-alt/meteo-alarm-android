@@ -1,4 +1,4 @@
-Trenutačna verzija: v.3.60 · 9.11.2026
+Trenutačna verzija: v.3.61 · 9.11.2026
 AŽURIRANJA
 - Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.

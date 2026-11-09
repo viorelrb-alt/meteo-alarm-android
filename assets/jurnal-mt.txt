@@ -1,4 +1,4 @@
-Verżjoni attwali: v.3.60 · 9.11.2026
+Verżjoni attwali: v.3.61 · 9.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.

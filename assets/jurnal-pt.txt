@@ -1,4 +1,4 @@
-Versão atual: v.3.60 · 9.11.2026
+Versão atual: v.3.61 · 9.11.2026
 ATUALIZAÇÕES
 - Antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
 - Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.

@@ -1,4 +1,4 @@
-Geçerli sürüm: v.3.60 · 9.11.2026
+Geçerli sürüm: v.3.61 · 9.11.2026
 ANA EKRAN
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
 - Saatin yanında bağlantı simgesi: Wi-Fi, mobil veri veya yok.

@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.60";
+	static final String VERSION = "Meteo Alarm Android v3.61";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -185,7 +185,44 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		root.addView(sizer, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		help.setSizer(sizer);
 		sheet.setSizer(sizer);
+		cutout(root);
 		setContentView(root);
+	}
+
+	/**
+	 * v3.61 (Viorel): the page reaches up into the band of the camera (the hidden status bar was a
+	 * black band there): the window uses the cutout's edges (Android 9+), the page's colour fills
+	 * the band and the content starts right under the camera.
+	 */
+	private void cutout(final android.widget.FrameLayout root) {
+		if (Build.VERSION.SDK_INT < 28) return;
+		try {
+			WindowManager.LayoutParams lp = getWindow().getAttributes();
+			// LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES = 1
+			WindowManager.LayoutParams.class.getField("layoutInDisplayCutoutMode").setInt(lp, 1);
+			getWindow().setAttributes(lp);
+			root.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+				public android.view.WindowInsets onApplyWindowInsets(View v, android.view.WindowInsets in) {
+					int l = 0, t = 0, r = 0;
+					try {
+						Object dc = in.getClass().getMethod("getDisplayCutout").invoke(in);
+						if (dc != null) {
+							l = (Integer) dc.getClass().getMethod("getSafeInsetLeft").invoke(dc);
+							t = (Integer) dc.getClass().getMethod("getSafeInsetTop").invoke(dc);
+							r = (Integer) dc.getClass().getMethod("getSafeInsetRight").invoke(dc);
+						}
+					} catch (Exception e) {
+					}
+					if (v.getPaddingTop() != t || v.getPaddingLeft() != l || v.getPaddingRight() != r) {
+						v.setPadding(l, t, r, 0);
+						Log.i(MainActivity.this, "APP", "decupaj cameră: stânga " + l + ", sus " + t + ", dreapta " + r + " px");
+					}
+					return in;
+				}
+			});
+		} catch (Exception e) {
+			Log.w(this, "APP", "decupaj cameră indisponibil: " + e);
+		}
 	}
 
 	@Override

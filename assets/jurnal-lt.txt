@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.60 · 9.11.2026
+Dabartinė versija: v.3.61 · 9.11.2026
 NAUJINIMAI
 - Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.

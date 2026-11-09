@@ -1,4 +1,4 @@
-Version actuelle : v.3.60 · 9.11.2026
+Version actuelle : v.3.61 · 9.11.2026
 ÉCRAN PRINCIPAL
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
 - Icône de connexion à côté de l’horloge : Wi-Fi, données mobiles ou aucune.

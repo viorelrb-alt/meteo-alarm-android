@@ -1,4 +1,4 @@
-Huidige versie: v.3.60 · 9.11.2026
+Huidige versie: v.3.61 · 9.11.2026
 BOERENMODUS
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.

@@ -1,4 +1,4 @@
-Trenutna različica: v.3.60 · 9.11.2026
+Trenutna različica: v.3.61 · 9.11.2026
 GLAVNI ZASLON
 - Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
 - Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.

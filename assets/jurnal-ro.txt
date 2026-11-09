@@ -1,4 +1,4 @@
-Versiunea curentă: v.3.60 · 9.11.2026
+Versiunea curentă: v.3.61 · 9.11.2026
 ACTUALIZĂRI
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
