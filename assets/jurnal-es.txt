@@ -1,4 +1,4 @@
-Versión actual: v.3.91 · 9.11.2026
+Versión actual: v.3.92 · 9.11.2026
 ACTUALIZACIONES
 - Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.
@@ -14,7 +14,7 @@ NOTIFICACIONES
 PANTALLA PRINCIPAL
 - Casillas INFORMACIÓN en Europa: escarcha, helada, niebla, lluvia engelante, viento fuerte.
 - Franja de la cámara: en vertical, el reloj, la conexión y la fecha están junto a la cámara (Android 9+).
-- Gráfico de precipitación: un toque explica lo que muestra.
+- Gráfico de precipitación y casillas de 4 horas: un toque muestra la probabilidad y la cantidad de cada hora y luego explica el gráfico.
 - Icono de conexión junto al reloj: Wi-Fi o datos móviles con la intensidad de la señal y el tipo (Wi-Fi 6, 5G…), o sin internet.
 - Iconos del tiempo: en los colores del tema; el grande y los de los días se mueven 3 segundos, también tras cada actualización.
 - Precipitación 12 horas: cuando llueve o nieva solo parte del tiempo, casillas de 4 horas (Lluvias o Nevadas, con las horas) en lugar del gráfico.

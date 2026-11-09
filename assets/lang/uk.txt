@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Кольорові стовпчики: очікуються опади (ймовірність 50% і більше або щонайменше 0,1 мм), кольору снігу, коли йде сніг. Сірі стовпчики: сухо.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Пунктир позначає 50%; «зараз» показує поточний час. Угорі: коли йде дощ (з–до) і найбільша ймовірність.
 Precipitation chart	Графік опадів
-A tap on the chart of the next 12 hours explains what it shows.	Дотик до графіка на наступні 12 годин пояснює, що він показує.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	У кольорах теми; великий і значки днів рухаються 3 секунди, коли відкривається екран, після кожного оновлення або коли змінюється погода.
 Rain spells	Дощі
 Snow spells	Снігопади
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Дотик до графіка опадів або поля на 4 години показує ймовірність і кількість (мм) для кожної години, потім пояснює графік.

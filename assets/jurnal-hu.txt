@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.3.91 · 9.11.2026
+Jelenlegi verzió: v.3.92 · 9.11.2026
 ÉRTESÍTÉSEK
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
 - Külön TÁJÉKOZTATÁS értesítés a településre is.
@@ -6,7 +6,7 @@ Jelenlegi verzió: v.3.91 · 9.11.2026
 - Település váltásakor a régi település értesítései törlődnek.
 FŐKÉPERNYŐ
 - Csapadék 12 óra: ha csak az idő egy részében esik eső vagy hó, 4 órás mezők (Esők vagy Havazások, az órákkal) a grafikon helyett.
-- Csapadékgrafikon: érintésre elmagyarázza, mit mutat.
+- Csapadékgrafikon és 4 órás mezők: érintésre minden óra valószínűsége és mennyisége, majd a grafikon magyarázata.
 - Időjárás-ikonok: a téma színeiben; a nagy és a napoké 3 másodpercig mozog, minden frissítés után is.
 - Kamerasáv: álló helyzetben az óra, a kapcsolat és a dátum a kamera mellett van (Android 9+).
 - Kapcsolat ikon az óra mellett: Wi-Fi vagy mobiladat a jelerősséggel és a típussal (Wi-Fi 6, 5G…), vagy nincs internet.

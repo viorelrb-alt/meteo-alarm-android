@@ -1,10 +1,10 @@
-Súčasná verzia: v.3.91 · 9.11.2026
+Súčasná verzia: v.3.92 · 9.11.2026
 AKTUALIZÁCIE
 - Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
 - Pred aktualizáciou kontrola povolenia na inštaláciu a poznámka o Auto Blocker (Samsung) s tlačidlom do nastavení.
 HLAVNÁ OBRAZOVKA
-- Graf zrážok: ťuknutie vysvetlí, čo ukazuje.
+- Graf zrážok a polia 4 hodín: ťuknutie ukáže pravdepodobnosť a množstvo pre každú hodinu a potom vysvetlí graf.
 - Ikona pripojenia vedľa hodín: Wi-Fi alebo mobilné dáta so silou signálu a typom (Wi-Fi 6, 5G…), alebo bez internetu.
 - Ikony počasia: vo farbách motívu; veľká a tie pri dňoch sa 3 sekundy hýbu, aj po každom obnovení.
 - Pás kamery: na výšku sú hodiny, pripojenie a dátum vedľa kamery (Android 9+).

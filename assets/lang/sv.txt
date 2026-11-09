@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Färgade staplar: nederbörd väntas (en risk på 50 % eller mer, eller minst 0,1 mm), i snöfärgen när det snöar. Grå staplar: torrt.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Den prickade linjen visar 50 %; ”nu” visar aktuell tid. Överst: när det regnar (från–till) och den högsta risken.
 Precipitation chart	Nederbördsdiagram
-A tap on the chart of the next 12 hours explains what it shows.	Ett tryck på diagrammet för de kommande 12 timmarna förklarar vad det visar.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I temats färger; den stora och dagarnas rör sig i 3 sekunder när skärmen öppnas, efter varje uppdatering eller när vädret ändras.
 Rain spells	Regn
 Snow spells	Snö
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Ett tryck på nederbördsdiagrammet eller en 4-timmarsruta visar varje timmes chans och mängd (mm) och förklarar sedan diagrammet.

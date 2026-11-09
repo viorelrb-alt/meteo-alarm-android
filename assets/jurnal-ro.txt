@@ -1,4 +1,4 @@
-Versiunea curentă: v.3.91 · 9.11.2026
+Versiunea curentă: v.3.92 · 9.11.2026
 ACTUALIZĂRI
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
@@ -6,7 +6,7 @@ ACTUALIZĂRI
 ECRAN PRINCIPAL
 - Banda camerei: în portret, ceasul, conexiunea și data stau lângă cameră (Android 9+).
 - Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
-- Graficul de precipitații: atingerea explică ce arată.
+- Graficul de precipitații și casetele de 4 ore: atingerea arată probabilitatea și cantitatea pentru fiecare oră, apoi explică graficul.
 - Iconul de conexiune lângă ceas: Wi-Fi sau date mobile, cu puterea semnalului și tipul (Wi-Fi 6, 5G…), sau fără internet.
 - Iconurile vremii: în culorile temei; cel mare și cele ale zilelor se mișcă 3 secunde, și după fiecare reîmprospătare.
 - Precipitații 12 ore: când plouă sau ninge doar o parte din timp, casete de 4 ore (Ploi sau Ninsori, cu intervalul orar) în locul graficului.

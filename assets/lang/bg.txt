@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Цветни ленти: очаквани валежи (вероятност 50% или повече, или поне 0,1 мм), в цвета на снега, когато вали сняг. Сиви ленти: сухо.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Пунктирната линия отбелязва 50%; „сега“ показва текущия час. Горе: кога вали (от–до) и най-високата вероятност.
 Precipitation chart	Графика на валежите
-A tap on the chart of the next 12 hours explains what it shows.	Докосване на графиката за следващите 12 часа обяснява какво показва.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	В цветовете на темата; голямата и тези на дните се движат 3 секунди при отваряне на екрана, след всяко опресняване или при промяна на времето.
 Rain spells	Дъждове
 Snow spells	Снеговалежи
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Докосване на графиката на валежите или на поле от 4 часа показва вероятността и количеството (мм) за всеки час, след това обяснява графиката.

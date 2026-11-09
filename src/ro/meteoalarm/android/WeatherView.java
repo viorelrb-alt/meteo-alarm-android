@@ -55,7 +55,7 @@ final class WeatherView extends View {
 		void onFarmBox(int kind, int k, float[] b);
 
 		/** v3.90: a tap on the precipitation chart of the next 12 hours, at B. */
-		void onPrecip(float[] b);
+		void onPrecip(float[] b, int part);
 
 		/** Farmer mode (v2.60): a swipe over the weather now, to the next (+1) or previous (-1) main screen. */
 		void onPage(int step);
@@ -297,7 +297,8 @@ final class WeatherView extends View {
 
 	/** v3.91 (Viorel): on a phone the menu, the town and the line sit this many units higher; the weather gets the room. */
 	private float lift() {
-		return screen.tablet ? 0 : 16;
+		// v3.92 (Viorel): in portrait under the camera band right up to it.
+		return screen.tablet ? 0 : bandUsed() > 0 ? 22 : 16;
 	}
 
 	/** The top and the bottom of the moving part, in pixels. */
@@ -693,7 +694,8 @@ final class WeatherView extends View {
 			return true;
 		}
 		if (screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
-			taps.onPrecip(screen.precipArea.clone());
+			int j = screen.partAt(x, y);
+			taps.onPrecip(j < 0 ? screen.precipArea.clone() : screen.partArea[j].clone(), j < 0 ? -1 : screen.partIdx[j]);
 			return true;
 		}
 		if (in(screen.btnMenu, x, y)) taps.onMenu();

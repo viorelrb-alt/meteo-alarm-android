@@ -1,4 +1,4 @@
-Current version: v.3.91 · 9.11.2026
+Current version: v.3.92 · 9.11.2026
 FARMER MODE
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
@@ -7,7 +7,7 @@ MAIN SCREEN
 - Connection icon next to the clock: Wi-Fi or mobile data with the signal strength and the kind (Wi-Fi 6, 5G…), or none.
 - INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
 - Precipitation 12 hours: when it rains or snows only part of the time, 4-hour boxes (Rain or Snow, with the hours) instead of the chart.
-- Precipitation chart: a tap explains what it shows.
+- Precipitation chart and 4-hour boxes: a tap shows each hour's chance and amount, then explains the chart.
 - Weather icons: in the theme's colours; the big one and those of the days move for 3 seconds, also after every refresh.
 NOTIFICATIONS
 - A separate INFORMATION notification for the town too.

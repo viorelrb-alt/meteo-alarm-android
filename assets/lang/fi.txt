@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Värilliset pylväät: sadetta odotettavissa (todennäköisyys 50 % tai enemmän tai vähintään 0,1 mm), lumen värisinä kun sataa lunta. Harmaat pylväät: poutaa.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Pisteviiva merkitsee 50 %; ”nyt” näyttää nykyisen ajan. Ylhäällä: milloin sataa (alkaen–asti) ja suurin todennäköisyys.
 Precipitation chart	Sadekaavio
-A tap on the chart of the next 12 hours explains what it shows.	Seuraavan 12 tunnin kaavion napautus selittää, mitä se näyttää.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Teeman väreissä; iso ja päivien kuvakkeet liikkuvat 3 sekuntia, kun näyttö avautuu, jokaisen päivityksen jälkeen tai kun sää muuttuu.
 Rain spells	Sateet
 Snow spells	Lumisateet
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Napautus sadekaavioon tai 4 tunnin ruutuun näyttää jokaisen tunnin todennäköisyyden ja määrän (mm) ja selittää sitten kaavion.

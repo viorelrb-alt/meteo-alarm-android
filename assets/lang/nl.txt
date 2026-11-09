@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Gekleurde balken: neerslag verwacht (een kans van 50% of meer, of minstens 0,1 mm), in de sneeuwkleur als het sneeuwt. Grijze balken: droog.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	De stippellijn markeert 50%; ‘nu’ toont de huidige tijd. Bovenaan: wanneer het regent (van–tot) en de hoogste kans.
 Precipitation chart	Neerslaggrafiek
-A tap on the chart of the next 12 hours explains what it shows.	Een tik op de grafiek van de komende 12 uur legt uit wat die toont.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	In de kleuren van het thema; de grote en die van de dagen bewegen 3 seconden als het scherm opent, na elke vernieuwing of als het weer verandert.
 Rain spells	Regen
 Snow spells	Sneeuw
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Een tik op de neerslaggrafiek of op een vak van 4 uur toont per uur de kans en de hoeveelheid (mm) en legt daarna de grafiek uit.

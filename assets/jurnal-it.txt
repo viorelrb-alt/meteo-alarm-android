@@ -1,4 +1,4 @@
-Versione attuale: v.3.91 · 9.11.2026
+Versione attuale: v.3.92 · 9.11.2026
 AGGIORNAMENTI
 - Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
@@ -16,7 +16,7 @@ PARTICELLE
 SCHERMATA PRINCIPALE
 - Caselle INFORMAZIONE in Europa: brina, gelo, nebbia, pioggia che gela, vento forte.
 - Fascia della fotocamera: in verticale orologio, connessione e data stanno accanto alla fotocamera (Android 9+).
-- Grafico delle precipitazioni: un tocco spiega cosa mostra.
+- Grafico delle precipitazioni e caselle di 4 ore: un tocco mostra la probabilità e la quantità di ogni ora, poi spiega il grafico.
 - Icona della connessione accanto all'orologio: Wi-Fi o dati mobili con la potenza del segnale e il tipo (Wi-Fi 6, 5G…), o senza internet.
 - Icone meteo: nei colori del tema; quella grande e quelle dei giorni si muovono per 3 secondi, anche dopo ogni aggiornamento.
 - Precipitazioni 12 ore: quando piove o nevica solo per parte del tempo, caselle di 4 ore (Piogge o Nevicate, con gli orari) al posto del grafico.

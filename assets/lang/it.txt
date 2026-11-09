@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barre colorate: precipitazioni previste (probabilità del 50% o più, o almeno 0,1 mm), nel colore della neve quando nevica. Barre grigie: asciutto.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	La linea tratteggiata segna il 50%; «ora» indica l'ora attuale. In alto: quando piove (dalle–alle) e la probabilità più alta.
 Precipitation chart	Grafico delle precipitazioni
-A tap on the chart of the next 12 hours explains what it shows.	Un tocco sul grafico delle prossime 12 ore spiega cosa mostra.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Nei colori del tema; quella grande e quelle dei giorni si muovono per 3 secondi all'apertura dello schermo, dopo ogni aggiornamento o quando cambia il tempo.
 Rain spells	Piogge
 Snow spells	Nevicate
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Un tocco sul grafico delle precipitazioni o su una casella di 4 ore mostra la probabilità e la quantità (mm) di ogni ora, poi spiega il grafico.

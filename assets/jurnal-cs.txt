@@ -1,10 +1,10 @@
-Současná verze: v.3.91 · 9.11.2026
+Současná verze: v.3.92 · 9.11.2026
 AKTUALIZACE
 - Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
 - Před aktualizací kontrola oprávnění k instalaci a poznámka o Auto Blocker (Samsung) s tlačítkem do nastavení.
 HLAVNÍ OBRAZOVKA
-- Graf srážek: klepnutí vysvětlí, co ukazuje.
+- Graf srážek a pole 4 hodin: klepnutí ukáže pravděpodobnost a množství pro každou hodinu a pak vysvětlí graf.
 - Ikona připojení vedle hodin: Wi-Fi nebo mobilní data se silou signálu a typem (Wi-Fi 6, 5G…), nebo bez internetu.
 - Ikony počasí: v barvách motivu; velká a ty u dnů se 3 sekundy pohybují, i po každém obnovení.
 - Pás kamery: na výšku jsou hodiny, připojení a datum vedle kamery (Android 9+).

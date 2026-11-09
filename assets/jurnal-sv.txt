@@ -1,4 +1,4 @@
-Nuvarande version: v.3.91 · 9.11.2026
+Nuvarande version: v.3.92 · 9.11.2026
 AVISERINGAR
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - En egen INFORMATION-avisering även för orten.
@@ -9,7 +9,7 @@ HUVUDSKÄRM
 - INFORMATION-rutor i Europa: rimfrost, frost, dimma, underkylt regn, hård vind.
 - Kameraband: i stående läge står klockan, anslutningen och datumet bredvid kameran (Android 9+).
 - Nederbörd 12 timmar: när det regnar eller snöar bara en del av tiden, rutor på 4 timmar (Regn eller Snö, med klockslagen) i stället för diagrammet.
-- Nederbördsdiagram: ett tryck förklarar vad det visar.
+- Nederbördsdiagram och 4-timmarsrutor: ett tryck visar varje timmes chans och mängd och förklarar sedan diagrammet.
 - Väderikoner: i temats färger; den stora och dagarnas rör sig i 3 sekunder, även efter varje uppdatering.
 LANTBRUKARLÄGE
 - I USA, i lantbruksläge: rutorna NWS, Torka, Brand, Hagel.

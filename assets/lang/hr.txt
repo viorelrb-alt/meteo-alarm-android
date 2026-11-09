@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Obojeni stupci: očekuje se oborina (vjerojatnost 50 % ili više, ili barem 0,1 mm), u boji snijega kad sniježi. Sivi stupci: suho.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Točkasta crta označava 50 %; „sad” pokazuje trenutačno vrijeme. Gore: kad pada kiša (od–do) i najveća vjerojatnost.
 Precipitation chart	Grafikon oborina
-A tap on the chart of the next 12 hours explains what it shows.	Dodir grafikona za sljedećih 12 sati objašnjava što prikazuje.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	U bojama teme; velika i one za dane miču se 3 sekunde kad se zaslon otvori, nakon svakog osvježavanja ili kad se vrijeme promijeni.
 Rain spells	Kiše
 Snow spells	Snijeg
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Dodir grafikona oborina ili okvira od 4 sata prikazuje vjerojatnost i količinu (mm) za svaki sat, a zatim objašnjava grafikon.

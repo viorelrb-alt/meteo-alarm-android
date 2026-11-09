@@ -794,7 +794,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Renkli çubuklar: yağış bekleniyor (%50 veya daha fazla olasılık ya da en az 0,1 mm), kar yağarken kar renginde. Gri çubuklar: kuru.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Noktalı çizgi %50'yi gösterir; “şimdi” şu anki saati gösterir. Üstte: ne zaman yağdığı (–den –e) ve en yüksek olasılık.
 Precipitation chart	Yağış grafiği
-A tap on the chart of the next 12 hours explains what it shows.	Sonraki 12 saatin grafiğine dokunmak neyi gösterdiğini açıklar.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Temanın renklerinde; büyük olan ve günlerinkiler ekran açılınca, her yenilemeden sonra veya hava değişince 3 saniye hareket eder.
 Rain spells	Yağmurlar
 Snow spells	Kar yağışları
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Yağış grafiğine veya 4 saatlik bir kutuya dokunmak her saatin olasılığını ve miktarını (mm) gösterir, ardından grafiği açıklar.

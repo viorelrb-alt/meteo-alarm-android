@@ -1,4 +1,4 @@
-Aktuelle Version: v.3.91 · 9.11.2026
+Aktuelle Version: v.3.92 · 9.11.2026
 AKTUALISIERUNGEN
 - Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.
@@ -14,7 +14,7 @@ HAUPTBILDSCHIRM
 - HINWEIS-Felder in Europa: Reif, Frost, Nebel, gefrierender Regen, starker Wind.
 - Kameraleiste: im Hochformat stehen Uhr, Verbindung und Datum neben der Kamera (Android 9+).
 - Niederschlag 12 Stunden: wenn es nur zeitweise regnet oder schneit, 4-Stunden-Felder (Regen oder Schnee, mit den Uhrzeiten) statt der Grafik.
-- Niederschlagsgrafik: ein Tippen erklärt, was sie zeigt.
+- Niederschlagsgrafik und 4-Stunden-Felder: Tippen zeigt für jede Stunde Wahrscheinlichkeit und Menge und erklärt dann die Grafik.
 - Verbindungssymbol neben der Uhr: WLAN oder mobile Daten mit Signalstärke und Art (Wi-Fi 6, 5G…), oder kein Internet.
 - Wettersymbole: in den Farben des Designs; das große und die der Tage bewegen sich 3 Sekunden, auch nach jeder Aktualisierung.
 LANDWIRT-MODUS

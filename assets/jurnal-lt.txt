@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.91 · 9.11.2026
+Dabartinė versija: v.3.92 · 9.11.2026
 NAUJINIMAI
 - Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
@@ -7,7 +7,7 @@ PAGRINDINIS EKRANAS
 - INFORMACIJOS langeliai Europoje: šerkšnas, šalna, rūkas, lijundra, stiprus vėjas.
 - Kameros juosta: vertikaliai laikrodis, ryšys ir data yra šalia kameros (Android 9+).
 - Krituliai 12 val.: kai lyja ar sninga tik dalį laiko, 4 valandų langeliai (Lietus arba Sniegas, su valandomis) vietoj grafiko.
-- Kritulių grafikas: palietus paaiškinama, ką jis rodo.
+- Kritulių grafikas ir 4 valandų langeliai: palietus rodoma kiekvienos valandos tikimybė ir kiekis, tada paaiškinamas grafikas.
 - Orų piktogramos: temos spalvomis; didžioji ir dienų piktogramos juda 3 sekundes, taip pat po kiekvieno atnaujinimo.
 - Ryšio piktograma šalia laikrodžio: Wi-Fi arba mobilieji duomenys su signalo stiprumu ir tipu (Wi-Fi 6, 5G…) arba be interneto.
 PRANEŠIMAI

@@ -1,10 +1,10 @@
-Nuværende version: v.3.91 · 9.11.2026
+Nuværende version: v.3.92 · 9.11.2026
 HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi eller mobildata med signalstyrke og type (Wi-Fi 6, 5G…), eller intet internet.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
 - Kamerabånd: i portræt står uret, forbindelsen og datoen ved siden af kameraet (Android 9+).
 - Nedbør 12 timer: når det kun regner eller sner en del af tiden, felter på 4 timer (Regn eller Sne, med tidspunkterne) i stedet for grafen.
-- Nedbørsgraf: et tryk forklarer, hvad den viser.
+- Nedbørsgraf og 4-timers felter: et tryk viser hver times chance og mængde og forklarer derefter grafen.
 - Vejrikoner: i temaets farver; den store og dagenes bevæger sig i 3 sekunder, også efter hver opdatering.
 LANDMANDSTILSTAND
 - I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.

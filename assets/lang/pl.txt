@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Kolorowe słupki: spodziewane opady (szansa 50% lub więcej albo co najmniej 0,1 mm), w kolorze śniegu, gdy pada śnieg. Szare słupki: sucho.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Linia przerywana oznacza 50%; „teraz” pokazuje bieżącą godzinę. U góry: kiedy pada (od–do) i najwyższa szansa.
 Precipitation chart	Wykres opadów
-A tap on the chart of the next 12 hours explains what it shows.	Dotknięcie wykresu następnych 12 godzin wyjaśnia, co pokazuje.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	W kolorach motywu; duża i te dni poruszają się przez 3 sekundy po otwarciu ekranu, po każdym odświeżeniu lub gdy zmienia się pogoda.
 Rain spells	Deszcze
 Snow spells	Opady śniegu
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Dotknięcie wykresu opadów lub pola 4 godzin pokazuje prawdopodobieństwo i ilość (mm) dla każdej godziny, a potem objaśnia wykres.

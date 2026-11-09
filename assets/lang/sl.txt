@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barvni stolpci: pričakovane padavine (verjetnost 50 % ali več ali vsaj 0,1 mm), v barvi snega, ko sneži. Sivi stolpci: suho.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Pikčasta črta označuje 50 %; »zdaj« kaže trenutni čas. Zgoraj: kdaj dežuje (od–do) in največja verjetnost.
 Precipitation chart	Graf padavin
-A tap on the chart of the next 12 hours explains what it shows.	Dotik grafa za naslednjih 12 ur razloži, kaj prikazuje.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	V barvah teme; velika in tiste pri dnevih se 3 sekunde premikajo, ko se zaslon odpre, po vsaki osvežitvi ali ko se vreme spremeni.
 Rain spells	Dež
 Snow spells	Sneg
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Dotik grafa padavin ali polja 4 ur pokaže verjetnost in količino (mm) za vsako uro, nato razloži graf.

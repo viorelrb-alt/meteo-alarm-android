@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Krāsaini stabiņi: gaidāmi nokrišņi (varbūtība 50% vai vairāk vai vismaz 0,1 mm), sniega krāsā, kad snieg. Pelēki stabiņi: sauss.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Punktētā līnija atzīmē 50%; „tagad“ rāda pašreizējo laiku. Augšā: kad līst (no–līdz) un lielākā varbūtība.
 Precipitation chart	Nokrišņu grafiks
-A tap on the chart of the next 12 hours explains what it shows.	Pieskaroties nākamo 12 stundu grafikam, tiek paskaidrots, ko tas rāda.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Tēmas krāsās; lielā un dienu ikonas kustas 3 sekundes, kad atveras ekrāns, pēc katras atsvaidzināšanas vai kad mainās laiks.
 Rain spells	Lietus
 Snow spells	Sniegs
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Pieskaroties nokrišņu diagrammai vai 4 stundu lodziņam, redzama katras stundas varbūtība un daudzums (mm), pēc tam diagrammas skaidrojums.

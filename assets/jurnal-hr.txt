@@ -1,10 +1,10 @@
-Trenutačna verzija: v.3.91 · 9.11.2026
+Trenutačna verzija: v.3.92 · 9.11.2026
 AŽURIRANJA
 - Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
 - Prije ažuriranja provjera dopuštenja za instalaciju i napomena o Auto Blockeru (Samsung) s gumbom za postavke.
 GLAVNI ZASLON
-- Grafikon oborina: dodir objašnjava što prikazuje.
+- Grafikon oborina i okviri od 4 sata: dodir prikazuje vjerojatnost i količinu za svaki sat, a zatim objašnjava grafikon.
 - Ikona veze uz sat: Wi-Fi ili mobilni podaci s jačinom signala i vrstom (Wi-Fi 6, 5G…), ili bez interneta.
 - Ikone vremena: u bojama teme; velika i one za dane miču se 3 sekunde, i nakon svakog osvježavanja.
 - Oborine 12 sati: kad kiša ili snijeg padaju samo dio vremena, okviri od 4 sata (Kiše ili Snijeg, sa satima) umjesto grafikona.

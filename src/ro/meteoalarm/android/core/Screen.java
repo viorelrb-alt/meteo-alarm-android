@@ -205,6 +205,7 @@ public final class Screen {
 		mergedShown = false;
 		bigIcon = null;
 		precipArea[2] = 0;
+		parts = 0;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
 		hs = 1;
@@ -636,7 +637,10 @@ public final class Screen {
 			for (int j = 0; j < segs.length; j++) {
 				float sx = x - sc + j * (sw + gap);
 				if (sx + sw >= x - 4 && sx <= x + wd + 4) drawRainPart(sx, y, sw, bh, segs[j]);
+				partArea[j][0] = sx * hs; partArea[j][1] = y * hs; partArea[j][2] = sw * hs; partArea[j][3] = bh * hs;
+				partIdx[j] = segs[j];
 			}
+			parts = segs.length;
 			precipArea[0] = (x - sc) * hs; precipArea[1] = y * hs; precipArea[2] = cwd * hs; precipArea[3] = bh * hs;
 		} else if (chart && sc < cwd + 4) drawPrecipBox(x - sc, y, cwd, bh, 46);
 		for (int k = 1; k <= avail; k++) {
@@ -2491,6 +2495,36 @@ public final class Screen {
 			ltext(false, 20, y - 2, x + 23, ls[k], c.dim);
 			x += 23 + g.width(false, 20, ls[k]) + 22;
 		}
+	}
+
+	/** v3.91: the boxes of 4 hours on screen (PARTS of them): their areas and which part (0–2) each shows. */
+	public final float[][] partArea = new float[3][4];
+	public final int[] partIdx = new int[3];
+	public int parts;
+
+	/** v3.91: the slot (index into partArea) of the part box at X, Y (canvas units), -1 for none (the whole chart). */
+	public int partAt(float x, float y) {
+		for (int j = 0; j < parts; j++) {
+			float[] a = partArea[j];
+			if (x >= a[0] && x <= a[0] + a[2] && y >= a[1] && y <= a[1] + a[3]) return j;
+		}
+		return -1;
+	}
+
+	/** v3.91: "from–to" of part I of the 12 hours (its end is the hour after its last one). */
+	public String partRange(int i) {
+		String a = w.hours.get(4 * i), last = w.hours.get(4 * i + 3);
+		String end = last.length() >= 5 ? String.format(java.util.Locale.US, "%02d", (Integer.parseInt(last.substring(0, 2)) + 1) % 24) + last.substring(2) : last;
+		return Texts.clock(a, clk12) + "–" + Texts.clock(end, clk12);
+	}
+
+	/** v3.91 (Viorel): the chance and the amount of each hour of part I (-1 = all 12 hours), for the bubble. */
+	public String[] partTable(int i) {
+		int from = i < 0 ? 0 : 4 * i, to = i < 0 ? Math.min(12, w.probs.length) : from + 4;
+		List<String[]> tb = new ArrayList<String[]>();
+		for (int k = from; k < to; k++)
+			tb.add(new String[] { Texts.clock(w.hours.get(k), clk12), w.probs[k] + "%", k < w.tileAmt.length ? mm(w.tileAmt[k]) : "–" });
+		return table(new String[] { Tr.t("Hour", "Ora"), Tr.t("Chance", "Prob."), Tr.t("Amount", "Cant.") }, tb);
 	}
 
 	/** v3.90: which of the three parts of 4 hours (0, 1, 2) have rain or snow; none without 12 hours. */

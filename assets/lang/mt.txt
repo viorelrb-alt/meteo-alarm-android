@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Vireg ikkuluriti: preċipitazzjoni mistennija (ċans ta' 50% jew aktar, jew mill-inqas 0.1 mm), bil-kulur tas-silġ meta jagħmel is-silġ. Vireg griżi: niexef.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Il-linja bit-tikki timmarka 50%; „issa“ turi l-ħin attwali. Fuq: meta tagħmel ix-xita (minn–sa) u l-ogħla ċans.
 Precipitation chart	Graff tal-preċipitazzjoni
-A tap on the chart of the next 12 hours explains what it shows.	Mess fuq il-graff tat-12-il siegħa li ġejjin jispjega x'juri.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Fil-kuluri tat-tema; il-kbira u dawk tal-jiem jiċċaqilqu għal 3 sekondi meta jinfetaħ l-iskrin, wara kull aġġornament jew meta jinbidel it-temp.
 Rain spells	Xita
 Snow spells	Borra
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Tagħfisa fuq il-grafika tal-preċipitazzjoni jew fuq kaxxa ta' 4 sigħat turi ċ-ċans u l-ammont (mm) ta' kull siegħa, imbagħad tispjega l-grafika.

@@ -1,4 +1,4 @@
-Verżjoni attwali: v.3.91 · 9.11.2026
+Verżjoni attwali: v.3.92 · 9.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
@@ -15,7 +15,7 @@ NOTIFIKI
 - Notifiki ta' INFORMAZZJONI separati għal kull għalqa: ġlata bajda, silġ, ċpar, xita ffriżata, buffuri qawwija.
 SKRIN EWLIENI
 - Faxxa tal-kamera: f'portrait l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera (Android 9+).
-- Graff tal-preċipitazzjoni: mess jispjega x'juri.
+- Grafika tal-preċipitazzjoni u kaxxi ta' 4 sigħat: tagħfisa turi ċ-ċans u l-ammont ta' kull siegħa, imbagħad tispjega l-grafika.
 - Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi jew data mobbli bis-saħħa tas-sinjal u t-tip (Wi-Fi 6, 5G…), jew mingħajr internet.
 - Ikoni tat-temp: fil-kuluri tat-tema; il-kbira u dawk tal-jiem jiċċaqilqu għal 3 sekondi, anke wara kull aġġornament.
 - Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.

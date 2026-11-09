@@ -1,4 +1,4 @@
-Nykyinen versio: v.3.91 · 9.11.2026
+Nykyinen versio: v.3.92 · 9.11.2026
 ILMOITUKSET
 - Erillinen TIEDOTE-ilmoitus myös paikkakunnalle.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.
@@ -7,7 +7,7 @@ ILMOITUKSET
 PÄÄNÄYTTÖ
 - Kamerakaista: pystyasennossa kello, yhteys ja päivämäärä ovat kameran vieressä (Android 9+).
 - Sääkuvakkeet: teeman väreissä; iso ja päivien kuvakkeet liikkuvat 3 sekuntia, myös jokaisen päivityksen jälkeen.
-- Sadekaavio: napautus selittää, mitä se näyttää.
+- Sadekaavio ja 4 tunnin ruudut: napautus näyttää jokaisen tunnin todennäköisyyden ja määrän ja selittää sitten kaavion.
 - Sademäärä 12 tuntia: kun sataa vettä tai lunta vain osan ajasta, 4 tunnin ruudut (Sateet tai Lumisateet, kellonajoin) kaavion sijaan.
 - TIEDOTE-ruudut Euroopassa: kuura, halla, sumu, jäätävä sade, kova tuuli.
 - Yhteyskuvake kellon vieressä: Wi-Fi tai mobiilidata signaalin voimakkuuden ja tyypin kanssa (Wi-Fi 6, 5G…) tai ei internetiä.

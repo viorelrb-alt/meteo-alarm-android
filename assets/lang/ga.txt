@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barraí daite: táthar ag súil le deascadh (seans 50% nó níos mó, nó 0.1 mm ar a laghad), i ndath an tsneachta nuair a chuireann sé sneachta. Barraí liatha: tirim.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Marcálann an líne phonc 50%; taispeánann „anois“ an t-am reatha. Ag an mbarr: cathain a bheidh báisteach (ó–go) agus an seans is airde.
 Precipitation chart	Cairt deascadh
-A tap on the chart of the next 12 hours explains what it shows.	Mínítear le tapáil ar chairt na 12 uair an chloig eile cad a thaispeánann sí.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I ndathanna an téama; bogann an ceann mór agus deilbhíní na laethanta ar feadh 3 soicind nuair a osclaíonn an scáileán, tar éis gach athnuachana nó nuair a athraíonn an aimsir.
 Rain spells	Báisteach
 Snow spells	Sneachta
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Taispeánann tapáil ar ghraf na frasaíochta nó ar bhosca 4 uair an seans agus an méid (mm) do gach uair, agus míníonn sé an graf ansin.

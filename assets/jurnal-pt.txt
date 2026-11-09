@@ -1,4 +1,4 @@
-Versão atual: v.3.91 · 9.11.2026
+Versão atual: v.3.92 · 9.11.2026
 ATUALIZAÇÕES
 - Antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
 - Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.
@@ -6,7 +6,7 @@ ATUALIZAÇÕES
 ECRÃ PRINCIPAL
 - Caixas INFORMAÇÃO na Europa: geada, congelação, nevoeiro, chuva gelada, vento forte.
 - Faixa da câmara: na vertical, o relógio, a ligação e a data ficam junto à câmara (Android 9+).
-- Gráfico de precipitação: um toque explica o que mostra.
+- Gráfico de precipitação e caixas de 4 horas: um toque mostra a probabilidade e a quantidade de cada hora e depois explica o gráfico.
 - Ícone de ligação junto ao relógio: Wi-Fi ou dados móveis com a força do sinal e o tipo (Wi-Fi 6, 5G…), ou sem internet.
 - Ícones do tempo: nas cores do tema; o grande e os dos dias mexem-se durante 3 segundos, também após cada atualização.
 - Precipitação 12 horas: quando chove ou neva só parte do tempo, caixas de 4 horas (Chuvas ou Nevões, com as horas) em vez do gráfico.

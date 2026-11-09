@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.91";
+	static final String VERSION = "Meteo Alarm Android v3.92";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1810,15 +1810,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/** v3.90 (Viorel): a tap on the precipitation chart: what it shows, in a bubble. */
-	public void onPrecip(final float[] b) {
-		Log.i(this, "GEST", "atingere grafic precipitații");
+	public void onPrecip(final float[] b, final int part) {
+		Log.i(this, "GEST", "atingere grafic precipitații" + (part >= 0 ? ", caseta " + (part + 1) : ""));
 		reopen = new Runnable() {
 			public void run() {
-				onPrecip(s.precipArea.clone());
+				onPrecip(b.clone(), part);
 			}
 		};
 		List<String[]> info = new ArrayList<String[]>();
-		info.add(new String[] { "", s.T.precipUp + " · " + s.T.next12 });
+		// v3.91 (Viorel): a box of 4 hours is "Precipitation (from–to)"; first each hour's chance and amount, then the help.
+		info.add(new String[] { "", part >= 0 ? s.T.precipUp + " (" + s.partRange(part) + ")" : s.T.precipUp + " · " + s.T.next12 });
+		if (s.w != null) info.add(s.partTable(part));
 		info.add(new String[] { "h", Tr.t("What the chart shows", "Ce arată graficul") });
 		info.add(new String[] { "t", Tr.t("One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).",
 				"O bară pentru fiecare din următoarele 12 ore; înălțimea ei e probabilitatea de ploaie sau ninsoare în acea oră (0–100%).") });
@@ -2544,8 +2546,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Un rând sub linie: cutremurul, apoi avertizările pe culori. Atingerea arată detaliile."));
 		if (!us) help.entry(mini("info"), Tr.t("Information boxes", "Casete de informare"), Tr.t("Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.",
 				"Casetele albastre INFORMARE, după avertizări: brumă, îngheț (primăvara și toamna), ceață, polei, vânt tare în următoarele 24 de ore. Calculate de aplicație din prognoză; nu sunt oficiale. Vin și ca notificare separată."));
-		help.entry(mini("chart"), Tr.t("Precipitation chart", "Graficul de precipitații"), Tr.t("A tap on the chart of the next 12 hours explains what it shows.",
-				"Atingerea graficului pentru următoarele 12 ore explică ce arată."));
+		help.entry(mini("chart"), Tr.t("Precipitation chart", "Graficul de precipitații"), Tr.t("A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.",
+				"Atingerea graficului de precipitații sau a unei casete de 4 ore arată probabilitatea și cantitatea (mm) pentru fiecare oră, apoi explică graficul."));
 		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
 				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));

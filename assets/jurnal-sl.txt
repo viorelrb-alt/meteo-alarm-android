@@ -1,6 +1,6 @@
-Trenutna različica: v.3.91 · 9.11.2026
+Trenutna različica: v.3.92 · 9.11.2026
 GLAVNI ZASLON
-- Graf padavin: dotik razloži, kaj prikazuje.
+- Graf padavin in polja 4 ur: dotik pokaže verjetnost in količino za vsako uro, nato razloži graf.
 - Ikona povezave ob uri: Wi-Fi ali mobilni podatki z močjo signala in vrsto (Wi-Fi 6, 5G…) ali brez interneta.
 - Padavine 12 ur: ko dežuje ali sneži le del časa, polja po 4 ure (Dež ali Sneg, z urami) namesto grafa.
 - Pas kamere: pokončno so ura, povezava in datum ob kameri (Android 9+).

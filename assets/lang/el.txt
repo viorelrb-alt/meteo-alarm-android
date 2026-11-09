@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Χρωματιστές μπάρες: αναμένεται υετός (πιθανότητα 50% ή περισσότερο, ή τουλάχιστον 0,1 mm), στο χρώμα του χιονιού όταν χιονίζει. Γκρι μπάρες: ξηρό.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Η διακεκομμένη γραμμή δείχνει το 50%· το «τώρα» δείχνει την τρέχουσα ώρα. Πάνω: πότε βρέχει (από–έως) και η μεγαλύτερη πιθανότητα.
 Precipitation chart	Γράφημα υετού
-A tap on the chart of the next 12 hours explains what it shows.	Ένα άγγιγμα στο γράφημα των επόμενων 12 ωρών εξηγεί τι δείχνει.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Στα χρώματα του θέματος· το μεγάλο και αυτά των ημερών κινούνται 3 δευτερόλεπτα όταν ανοίγει η οθόνη, μετά από κάθε ανανέωση ή όταν αλλάζει ο καιρός.
 Rain spells	Βροχές
 Snow spells	Χιονοπτώσεις
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Ένα άγγιγμα στο γράφημα υετού ή σε πλαίσιο 4 ωρών δείχνει την πιθανότητα και την ποσότητα (mm) κάθε ώρας και μετά εξηγεί το γράφημα.

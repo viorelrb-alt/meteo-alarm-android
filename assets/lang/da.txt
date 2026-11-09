@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Farvede søjler: nedbør ventet (en chance på 50 % eller mere, eller mindst 0,1 mm), i snefarven når det sner. Grå søjler: tørt.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Den stiplede linje viser 50 %; »nu« viser tidspunktet nu. Øverst: hvornår det regner (fra–til) og den højeste chance.
 Precipitation chart	Nedbørsgraf
-A tap on the chart of the next 12 hours explains what it shows.	Et tryk på grafen for de næste 12 timer forklarer, hvad den viser.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I temaets farver; den store og dagenes bevæger sig i 3 sekunder, når skærmen åbnes, efter hver opdatering eller når vejret skifter.
 Rain spells	Regn
 Snow spells	Sne
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Et tryk på nedbørsgrafen eller et 4-timers felt viser hver times chance og mængde (mm) og forklarer derefter grafen.

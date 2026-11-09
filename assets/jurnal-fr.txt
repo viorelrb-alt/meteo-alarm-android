@@ -1,8 +1,8 @@
-Version actuelle : v.3.91 · 9.11.2026
+Version actuelle : v.3.92 · 9.11.2026
 ÉCRAN PRINCIPAL
 - Bande de la caméra : en portrait, l'horloge, la connexion et la date sont à côté de la caméra (Android 9+).
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
-- Graphique des précipitations : un appui explique ce qu'il montre.
+- Graphique des précipitations et cases de 4 heures : un appui montre la probabilité et la quantité de chaque heure, puis explique le graphique.
 - Icône de connexion près de l'horloge : Wi-Fi ou données mobiles avec la force du signal et le type (Wi-Fi 6, 5G…), ou sans internet.
 - Icônes météo : aux couleurs du thème ; la grande et celles des jours bougent 3 secondes, aussi après chaque actualisation.
 - Précipitations 12 heures : quand il pleut ou neige seulement une partie du temps, des cases de 4 heures (Pluie ou Neige, avec les heures) à la place du graphique.

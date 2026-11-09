@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Värvilised tulbad: oodata on sademeid (tõenäosus 50% või rohkem või vähemalt 0,1 mm), lume värvi, kui sajab lund. Hallid tulbad: kuiv.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Punktiirjoon märgib 50%; „nüüd“ näitab praegust aega. Üleval: millal sajab (alates–kuni) ja suurim tõenäosus.
 Precipitation chart	Sademete graafik
-A tap on the chart of the next 12 hours explains what it shows.	Järgmise 12 tunni graafiku puudutamine selgitab, mida see näitab.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Teema värvides; suur ja päevade omad liiguvad 3 sekundit, kui ekraan avaneb, pärast iga värskendust või kui ilm muutub.
 Rain spells	Vihm
 Snow spells	Lumi
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Puudutus sademete graafikul või 4-tunnisel kastil näitab iga tunni tõenäosust ja hulka (mm) ning selgitab siis graafikut.

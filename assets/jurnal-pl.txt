@@ -1,4 +1,4 @@
-Obecna wersja: v.3.91 · 9.11.2026
+Obecna wersja: v.3.92 · 9.11.2026
 AKTUALIZACJE
 - Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
 - Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
@@ -11,7 +11,7 @@ EKRAN GŁÓWNY
 - Opady 12 godzin: gdy pada deszcz lub śnieg tylko przez część czasu, pola po 4 godziny (Deszcze lub Opady śniegu, z godzinami) zamiast wykresu.
 - Pasek kamery: w pionie zegar, połączenie i data są obok kamery (Android 9+).
 - Pola INFORMACJA w Europie: szron, przymrozek, mgła, marznący deszcz, silny wiatr.
-- Wykres opadów: dotknięcie wyjaśnia, co pokazuje.
+- Wykres opadów i pola 4 godzin: dotknięcie pokazuje prawdopodobieństwo i ilość dla każdej godziny, a potem objaśnia wykres.
 MOTYWY
 - 6 motywów kolorystycznych (Monochromatyczny, Szałwia, Lawenda, Niebo, Brzoskwinia, Róża), każdy jasny i ciemny: ☰ › Motyw.
 POWIADOMIENIA

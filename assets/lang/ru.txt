@@ -794,7 +794,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Цветные столбики: ожидаются осадки (вероятность 50% и более или не меньше 0,1 мм), цвета снега, когда идёт снег. Серые столбики: сухо.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Пунктир отмечает 50%; «сейчас» показывает текущее время. Сверху: когда идёт дождь (с–до) и наибольшая вероятность.
 Precipitation chart	График осадков
-A tap on the chart of the next 12 hours explains what it shows.	Касание графика на следующие 12 часов объясняет, что он показывает.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	В цветах темы; большой и значки дней двигаются 3 секунды при открытии экрана, после каждого обновления или при смене погоды.
 Rain spells	Дожди
 Snow spells	Снегопады
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Касание графика осадков или поля на 4 часа показывает вероятность и количество (мм) для каждого часа, затем объясняет график.

@@ -1,9 +1,9 @@
-Praegune versioon: v.3.91 · 9.11.2026
+Praegune versioon: v.3.92 · 9.11.2026
 PÕHIEKRAAN
 - Ilmaikoonid: teema värvides; suur ja päevade omad liiguvad 3 sekundit, ka pärast iga värskendust.
 - Kaamera riba: püstpaigutuses on kell, ühendus ja kuupäev kaamera kõrval (Android 9+).
 - Sademed 12 tundi: kui sajab vihma või lund ainult osa ajast, 4-tunnised kastid (Vihm või Lumi, kellaaegadega) graafiku asemel.
-- Sademete graafik: puudutus selgitab, mida see näitab.
+- Sademete graafik ja 4-tunnised kastid: puudutus näitab iga tunni tõenäosust ja hulka ning selgitab siis graafikut.
 - TEAVE-kastid Euroopas: härmatis, öökülm, udu, jäide, tugev tuul.
 - Ühenduse ikoon kella kõrval: Wi-Fi või mobiilne andmeside koos signaali tugevuse ja tüübiga (Wi-Fi 6, 5G…) või internetita.
 PÕLLULAPID

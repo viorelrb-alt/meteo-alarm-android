@@ -860,7 +860,7 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Farebné stĺpce: očakávané zrážky (pravdepodobnosť 50 % a viac alebo aspoň 0,1 mm), vo farbe snehu, keď sneží. Sivé stĺpce: sucho.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Bodkovaná čiara značí 50 %; „teraz“ ukazuje aktuálny čas. Hore: kedy prší (od–do) a najvyššia pravdepodobnosť.
 Precipitation chart	Graf zrážok
-A tap on the chart of the next 12 hours explains what it shows.	Ťuknutie na graf nasledujúcich 12 hodín vysvetlí, čo ukazuje.
 In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Vo farbách motívu; veľká a tie pri dňoch sa 3 sekundy hýbu pri otvorení obrazovky, po každom obnovení alebo pri zmene počasia.
 Rain spells	Dažde
 Snow spells	Sneženie
+A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Ťuknutie na graf zrážok alebo na pole 4 hodín ukáže pravdepodobnosť a množstvo (mm) pre každú hodinu a potom vysvetlí graf.
