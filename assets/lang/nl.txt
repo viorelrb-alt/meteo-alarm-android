@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Een grote, gedimde klok als de
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Eén rij onder de lijn: de aardbeving, dan de waarschuwingen per kleur. Een tik toont de details.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	De sterkste aardbeving van de laatste 24 uur in je land en hoe ze waarschijnlijk gevoeld werd (EMSC).
 The rows of boxes follow the finger.	De rijen vakken volgen je vinger.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas; een tik toont de details.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Houd het startscherm ingedrukt › Widgets › Meteo Alarm. Sleep aan de randen om de vorm te wijzigen (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Houd de widget ingedrukt › Instellingen, of ☰ › Widgets: plaats, achtergrond, kleuren.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Elke 15 minuten met het scherm aan, 30 met het uit; MET Norway als Open-Meteo bezet is.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Gekleurde balken: neerslag verwacht (een kans van 50% of meer, of minstens 0,1 mm), in de sneeuwkleur als het sneeuwt. Grijze balken: droog.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	De stippellijn markeert 50%; ‘nu’ toont de huidige tijd. Bovenaan: wanneer het regent (van–tot) en de hoogste kans.
 Precipitation chart	Neerslaggrafiek
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	In de kleuren van het thema; de grote en die van de dagen bewegen 3 seconden als het scherm opent, na elke vernieuwing of als het weer verandert.
 Rain spells	Regen
 Snow spells	Sneeuw
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Een tik op de neerslaggrafiek of op een vak van 4 uur toont per uur de kans en de hoeveelheid (mm) en legt daarna de grafiek uit.
+Day length: 	Daglengte: 
+Sunrise and sunset at the town, local time.	Zonsopkomst en zonsondergang in de plaats, plaatselijke tijd.
+Lit part of the Moon: 	Verlicht deel van de maan: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Maanopkomst en maanondergang in de plaats; de cirkel toont het verlichte deel van de maan.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-index: hoe sterk de ultraviolette stralen van de zon 's middags bij heldere hemel zijn. 0–2 laag, 3–5 matig, 6–7 hoog, 8–10 zeer hoog, 11+ extreem.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Vanaf 3: zonnebril, hoed en zonnebrandcrème rond het middaguur.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pollen in de lucht vandaag, voor de plant met de meeste: laag, matig, hoog of zeer hoog.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relatieve luchtvochtigheid: hoeveel waterdamp de lucht bevat vergeleken met het maximum bij deze temperatuur. Boven 90% zijn mist of dauw waarschijnlijk.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Amerikaanse luchtkwaliteitsindex (EPA, 0–500): 0–50 goed, 51–100 matig, boven 150 ongezond. Lager is beter.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Europese luchtkwaliteitsindex: de slechtste van fijnstof, ozon, stikstofdioxide en zwaveldioxide. 0–20 goed, 20–40 redelijk, boven 60 slecht. Lager is beter.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Luchtdruk op zeeniveau. Stijgend: bestendig weer op komst; snel dalend: wind en regen kunnen komen.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Windsnelheid 10 m boven de grond en de richting waar hij vandaan waait (de wijzer op de ring).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Hoe ver men kan kijken: onder 1 km slecht (mist), 1–4 km matig, 4–10 km goed, boven 10 km zeer goed.
+The forecast for this hour at the town.	De verwachting voor dit uur in de plaats.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	De verwachting voor de dag in de plaats: de hoogste en laagste temperatuur, het weer en de kans op regen.
+Direction	Richting
+Latitude	Breedtegraad
+Longitude	Lengtegraad
+Place	Plaats
+GPS accuracy	GPS-nauwkeurigheid
+the town (no GPS fix)	de plaats (geen GPS)
+NEARBY TOWNS	PLAATSEN IN DE BUURT
+Towns	Plaatsen
+Share the coordinates	Coördinaten delen
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	In de kleuren van het thema; alle bewegen 3 seconden bij het openen, na elke vernieuwing of als het weer verandert, ook op de widgets.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas. Een tik op een vak (ook de uren en dagen) toont bovenaan de waarde en eronder de uitleg.
+Big compass	Groot kompas
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Een tik op het vak Kompas: een groot kompas, de GPS-coördinaten en de 3 dichtstbijzijnde plaatsen, elk in een eigen kleur (een tik op een: naam en afstand). Delen stuurt de coördinaten; Plaatsen toont of verbergt ze.

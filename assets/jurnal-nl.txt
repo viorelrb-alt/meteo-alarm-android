@@ -1,4 +1,11 @@
-Huidige versie: v.3.92 · 9.11.2026
+Huidige versie: v.4.00 · 9.11.2026
+HOOFDSCHERM
+- Groot kompas: een tik op het vak Kompas toont het kompas, de GPS-coördinaten en de 3 dichtstbijzijnde plaatsen in kleuren; Delen stuurt de coördinaten.
+- Vakken: een tik op een vak toont bovenaan de waarde en eronder de uitleg.
+- Weerpictogrammen: in de kleuren van het thema; alle bewegen 3 seconden, ook na elke vernieuwing en op de widgets.
+- Ontwerpverbeteringen en foutoplossingen.
+
+Versie 3 (v.3.00 – v.3.92)
 BOERENMODUS
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.

@@ -552,7 +552,6 @@ A big dim clock while the phone charges at night.	Велики пригушен�
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Један ред испод линије: земљотрес, па упозорења по бојама. Додир приказује детаље.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Најјачи земљотрес у последња 24 сата у вашој земљи и како се вероватно осетио (EMSC).
 The rows of boxes follow the finger.	Редови поља прате прст.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Сунце / Месец, УВ, Полен, Влажност, Квалитет ваздуха, Притисак, Ветар, Видљивост, Компас; додир приказује детаље.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Задржите почетни екран › Виџети › Meteo Alarm. Повуците ивице да промените изглед (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Задржите виџет › Подешавања, или ☰ › Виџети: место, позадина, боје.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Сваких 15 минута са упаљеним екраном, 30 са угашеним; MET Norway кад је Open-Meteo заузет.
@@ -794,7 +793,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Обојени стубићи: очекују се падавине (вероватноћа 50% или више, или бар 0,1 mm), у боји снега када пада снег. Сиви стубићи: суво.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Тачкаста линија означава 50%; „сада“ показује тренутно време. Горе: када пада киша (од–до) и највећа вероватноћа.
 Precipitation chart	Графикон падавина
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	У бојама теме; велика и иконе дана се померају 3 секунде када се екран отвори, после сваког освежавања или када се време промени.
 Rain spells	Кише
 Snow spells	Снег
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Додир графикона падавина или оквира од 4 сата приказује вероватноћу и количину (мм) за сваки сат, а затим објашњава графикон.
+Day length: 	Дужина дана: 
+Sunrise and sunset at the town, local time.	Излазак и залазак Сунца у месту, локално време.
+Lit part of the Moon: 	Осветљени део Месеца: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Излазак и залазак Месеца у месту; круг показује осветљени део Месеца.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV индекс: колико су јаки ултраљубичасти зраци Сунца у подне при ведром небу. 0–2 низак, 3–5 умерен, 6–7 висок, 8–10 веома висок, 11+ екстреман.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Од 3 навише: наочаре за сунце, шешир и крема за сунчање око поднева.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Полен у ваздуху данас, за биљку са највише: низак, умерен, висок или веома висок.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Релативна влажност: колико водене паре има ваздух у односу на највише што може да држи на овој температури. Изнад 90% вероватни су магла или роса.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Амерички индекс квалитета ваздуха (EPA, 0–500): 0–50 добар, 51–100 умерен, преко 150 нездрав. Ниже је боље.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Европски индекс квалитета ваздуха: најгори од финих честица, озона, азот-диоксида и сумпор-диоксида. 0–20 добар, 20–40 прихватљив, преко 60 лош. Ниже је боље.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Ваздушни притисак на нивоу мора. Расте: долази стабилно време; брзо пада: могу доћи ветар и киша.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Брзина ветра 10 m изнад тла и смер из ког дува (показивач на кругу).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Колико далеко се види: испод 1 km лоша (магла), 1–4 km умерена, 4–10 km добра, преко 10 km веома добра.
+The forecast for this hour at the town.	Прогноза за овај сат у месту.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Прогноза за дан у месту: највиша и најнижа температура, време и вероватноћа кише.
+Direction	Смер
+Latitude	Географска ширина
+Longitude	Географска дужина
+Place	Место
+GPS accuracy	Тачност GPS
+the town (no GPS fix)	место (без GPS)
+NEARBY TOWNS	БЛИСКА МЕСТА
+Towns	Места
+Share the coordinates	Подели координате
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	У бојама теме; све се померају 3 секунде када се екран отвори, после сваког освежавања или кад се време промени, и на виџетима.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Сунце / Месец, UV, Полен, Влажност, Квалитет ваздуха, Притисак, Ветар, Видљивост, Компас. Додир било ког поља (и сати и дана) приказује вредност горе и објашњења испод.
+Big compass	Велики компас
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Додир поља Компас: велики компас, GPS координате и 3 најближа места, свако у својој боји (додир једног: име и удаљеност). Подели шаље координате; Места их приказује или скрива.

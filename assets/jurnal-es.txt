@@ -1,4 +1,11 @@
-Versión actual: v.3.92 · 9.11.2026
+Versión actual: v.4.00 · 9.11.2026
+PANTALLA PRINCIPAL
+- Brújula grande: un toque en la casilla Brújula muestra la brújula, las coordenadas GPS y las 3 localidades más cercanas en colores; Compartir envía las coordenadas.
+- Casillas: un toque en cualquier casilla muestra el valor arriba y las explicaciones debajo.
+- Iconos del tiempo: en los colores del tema; todos se mueven 3 segundos, también tras cada actualización y en los widgets.
+- Mejoras de diseño y corrección de errores.
+
+Versión 3 (v.3.00 – v.3.92)
 ACTUALIZACIONES
 - Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.

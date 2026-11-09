@@ -1,4 +1,11 @@
-Leagan reatha: v.3.92 · 9.11.2026
+Leagan reatha: v.4.00 · 9.11.2026
+PRÍOMHSCÁILEÁN
+- Boscaí: taispeánann tapáil ar aon bhosca an luach thuas agus na mínithe faoi.
+- Compás mór: taispeánann tapáil ar an mbosca Compás an compás, comhordanáidí GPS agus na 3 bhaile is gaire i ndathanna; seolann Comhroinn na comhordanáidí.
+- Deilbhíní aimsire: i ndathanna an téama; bogann siad go léir ar feadh 3 soicind, tar éis gach athnuachana freisin agus ar na giuirléidí.
+- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+
+Leagan 3 (v.3.00 – v.3.92)
 CEAPACHA
 - Fógraí do na ceapacha, roghnaithe leis an gcnaipe cloigín ar an léarscáil: báisteach, gaoth, sneachta, triomach.
 FÓGRAÍ

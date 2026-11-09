@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Didelis blankus laikrodis, kai
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Viena eilė po linija: žemės drebėjimas, tada įspėjimai pagal spalvą. Palietus rodoma informacija.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Stipriausias per paskutines 24 valandas žemės drebėjimas tavo šalyje ir kaip jis tikriausiai buvo jaučiamas (EMSC).
 The rows of boxes follow the finger.	Langelių eilės seka pirštą.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas; palietus rodoma informacija.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Laikyk pradžios ekraną › Valdikliai › Meteo Alarm. Tempk kraštus, kad pakeistum išdėstymą (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Laikyk valdiklį › Nustatymai, arba ☰ › Valdikliai: vietovė, fonas, spalvos.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Kas 15 minučių įjungus ekraną, kas 30 išjungus; MET Norway, kai Open-Meteo užimtas.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Spalvoti stulpeliai: laukiama kritulių (tikimybė 50 % ar daugiau arba bent 0,1 mm), sniego spalva, kai sninga. Pilki stulpeliai: sausa.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Taškinė linija žymi 50 %; „dabar“ rodo dabartinį laiką. Viršuje: kada lyja (nuo–iki) ir didžiausia tikimybė.
 Precipitation chart	Kritulių grafikas
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Temos spalvomis; didžioji ir dienų piktogramos juda 3 sekundes, kai atsidaro ekranas, po kiekvieno atnaujinimo arba kai pasikeičia orai.
 Rain spells	Lietus
 Snow spells	Sniegas
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Palietus kritulių grafiką ar 4 valandų langelį, rodoma kiekvienos valandos tikimybė ir kiekis (mm), tada paaiškinamas grafikas.
+Day length: 	Dienos trukmė: 
+Sunrise and sunset at the town, local time.	Saulėtekis ir saulėlydis vietovėje, vietos laiku.
+Lit part of the Moon: 	Apšviesta Mėnulio dalis: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Mėnulio patekėjimas ir nusileidimas vietovėje; apskritimas rodo apšviestą Mėnulio dalį.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV indeksas: kokie stiprūs saulės ultravioletiniai spinduliai vidurdienį giedrą dieną. 0–2 žemas, 3–5 vidutinis, 6–7 aukštas, 8–10 labai aukštas, 11+ ekstremalus.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Nuo 3: akiniai nuo saulės, skrybėlė ir apsauginis kremas apie vidurdienį.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Žiedadulkės ore šiandien, augalui, kurio daugiausia: mažai, vidutiniškai, daug ar labai daug.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Santykinė drėgmė: kiek vandens garų yra ore, palyginti su daugiausia, kiek jo gali būti esant šiai temperatūrai. Virš 90 % tikėtinas rūkas ar rasa.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	JAV oro kokybės indeksas (EPA, 0–500): 0–50 gera, 51–100 vidutinė, virš 150 nesveika. Mažesnis – geriau.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Europos oro kokybės indeksas: blogiausias iš smulkiųjų kietųjų dalelių, ozono, azoto dioksido ir sieros dioksido. 0–20 gera, 20–40 priimtina, virš 60 bloga. Mažesnis – geriau.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Oro slėgis jūros lygyje. Kyla: ateina pastovūs orai; greitai krinta: gali ateiti vėjas ir lietus.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Vėjo greitis 10 m virš žemės ir kryptis, iš kurios pučia (rodyklė ant apskritimo).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Kaip toli matyti: mažiau nei 1 km bloga (rūkas), 1–4 km vidutinė, 4–10 km gera, daugiau nei 10 km labai gera.
+The forecast for this hour at the town.	Šios valandos prognozė vietovėje.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Dienos prognozė vietovėje: aukščiausia ir žemiausia temperatūra, orai ir lietaus tikimybė.
+Direction	Kryptis
+Latitude	Platuma
+Longitude	Ilguma
+Place	Vieta
+GPS accuracy	GPS tikslumas
+the town (no GPS fix)	vietovė (be GPS)
+NEARBY TOWNS	ARTIMIAUSIOS VIETOVĖS
+Towns	Vietovės
+Share the coordinates	Bendrinti koordinates
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Temos spalvomis; visos juda 3 sekundes atidarius ekraną, po kiekvieno atnaujinimo ar pasikeitus orams, ir valdikliuose.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas. Palietus bet kurį langelį (ir valandų bei dienų) viršuje rodoma vertė, o po ja paaiškinimai.
+Big compass	Didelis kompasas
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Palietus langelį Kompasas: didelis kompasas, GPS koordinatės ir 3 artimiausios vietovės, kiekviena savo spalva (palietus vieną: pavadinimas ir atstumas). Bendrinti siunčia koordinates; Vietovės jas rodo arba slepia.

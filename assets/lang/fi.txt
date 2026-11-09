@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Suuri himmeä kello, kun puhel
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Yksi rivi viivan alla: maanjäristys, sitten varoitukset värin mukaan. Napautus näyttää tiedot.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Viimeisen 24 tunnin voimakkain maanjäristys maassasi ja miten se luultavasti tuntui (EMSC).
 The rows of boxes follow the finger.	Ruuturivit seuraavat sormea.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys, Kompassi; napautus näyttää tiedot.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Paina pitkään aloitusnäyttöä › Widgetit › Meteo Alarm. Vedä reunoista vaihtaaksesi asettelua (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Paina widgetiä pitkään › Asetukset, tai ☰ › Widgetit: paikkakunta, tausta, värit.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	15 minuutin välein näyttö päällä, 30 näyttö pois; MET Norway, kun Open-Meteo on varattu.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Värilliset pylväät: sadetta odotettavissa (todennäköisyys 50 % tai enemmän tai vähintään 0,1 mm), lumen värisinä kun sataa lunta. Harmaat pylväät: poutaa.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Pisteviiva merkitsee 50 %; ”nyt” näyttää nykyisen ajan. Ylhäällä: milloin sataa (alkaen–asti) ja suurin todennäköisyys.
 Precipitation chart	Sadekaavio
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Teeman väreissä; iso ja päivien kuvakkeet liikkuvat 3 sekuntia, kun näyttö avautuu, jokaisen päivityksen jälkeen tai kun sää muuttuu.
 Rain spells	Sateet
 Snow spells	Lumisateet
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Napautus sadekaavioon tai 4 tunnin ruutuun näyttää jokaisen tunnin todennäköisyyden ja määrän (mm) ja selittää sitten kaavion.
+Day length: 	Päivän pituus: 
+Sunrise and sunset at the town, local time.	Auringonnousu ja -lasku paikkakunnalla, paikallista aikaa.
+Lit part of the Moon: 	Kuun valaistu osa: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Kuunnousu ja -lasku paikkakunnalla; ympyrä näyttää Kuun valaistun osan.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-indeksi: kuinka voimakkaita auringon ultraviolettisäteet ovat keskipäivällä kirkkaalla säällä. 0–2 matala, 3–5 kohtalainen, 6–7 korkea, 8–10 erittäin korkea, 11+ äärimmäinen.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Kolmesta ylöspäin: aurinkolasit, hattu ja aurinkovoide keskipäivän aikaan.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Siitepöly ilmassa tänään, eniten pölyttävälle kasville: matala, kohtalainen, korkea tai erittäin korkea.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Suhteellinen kosteus: kuinka paljon vesihöyryä ilmassa on verrattuna suurimpaan mahdolliseen tässä lämpötilassa. Yli 90 %:ssa sumu tai kaste on todennäköinen.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Yhdysvaltain ilmanlaatuindeksi (EPA, 0–500): 0–50 hyvä, 51–100 kohtalainen, yli 150 epäterveellinen. Pienempi on parempi.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Eurooppalainen ilmanlaatuindeksi: huonoin pienhiukkasista, otsonista, typpidioksidista ja rikkidioksidista. 0–20 hyvä, 20–40 tyydyttävä, yli 60 huono. Pienempi on parempi.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Ilmanpaine merenpinnan tasolla. Nouseva: vakaa sää on tulossa; nopeasti laskeva: tuulta ja sadetta voi tulla.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Tuulen nopeus 10 m maanpinnan yläpuolella ja suunta, josta se puhaltaa (osoitin kehällä).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Kuinka kauas näkee: alle 1 km huono (sumu), 1–4 km kohtalainen, 4–10 km hyvä, yli 10 km erittäin hyvä.
+The forecast for this hour at the town.	Tämän tunnin ennuste paikkakunnalla.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Päivän ennuste paikkakunnalla: ylin ja alin lämpötila, sää ja sateen todennäköisyys.
+Direction	Suunta
+Latitude	Leveysaste
+Longitude	Pituusaste
+Place	Paikka
+GPS accuracy	GPS-tarkkuus
+the town (no GPS fix)	paikkakunta (ei GPS:ää)
+NEARBY TOWNS	LÄHIMMÄT PAIKKAKUNNAT
+Towns	Paikkakunnat
+Share the coordinates	Jaa koordinaatit
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Teeman väreissä; kaikki liikkuvat 3 sekuntia näytön avautuessa, jokaisen päivityksen jälkeen tai sään muuttuessa, myös widgeteissä.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Paine, Tuuli, Näkyvyys, Kompassi. Napautus mihin tahansa ruutuun (myös tunteihin ja päiviin) näyttää arvon ylhäällä ja selitykset sen alla.
+Big compass	Iso kompassi
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Napautus Kompassi-ruutuun: iso kompassi, GPS-koordinaatit ja 3 lähintä paikkakuntaa, kukin omalla värillään (napautus yhteen: nimi ja etäisyys). Jaa lähettää koordinaatit; Paikkakunnat näyttää tai piilottaa ne.

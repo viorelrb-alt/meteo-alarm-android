@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Veliki prigušeni sat kad se t
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Jedan red ispod crte: potres, pa upozorenja po bojama. Dodir pokazuje pojedinosti.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Najjači potres u zadnja 24 sata u tvojoj zemlji i kako se vjerojatno osjetio (EMSC).
 The rows of boxes follow the finger.	Redovi polja prate prst.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sunce / Mjesec, UV, Pelud, Vlaga, Kvaliteta zraka, Tlak, Vjetar, Vidljivost, Kompas; dodir pokazuje pojedinosti.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Drži početni zaslon › Widgeti › Meteo Alarm. Povuci rubove za promjenu izgleda (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Drži widget › Postavke, ili ☰ › Widgeti: mjesto, pozadina, boje.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Svakih 15 minuta s upaljenim zaslonom, 30 s ugašenim; MET Norway kad je Open-Meteo zauzet.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Obojeni stupci: očekuje se oborina (vjerojatnost 50 % ili više, ili barem 0,1 mm), u boji snijega kad sniježi. Sivi stupci: suho.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Točkasta crta označava 50 %; „sad” pokazuje trenutačno vrijeme. Gore: kad pada kiša (od–do) i najveća vjerojatnost.
 Precipitation chart	Grafikon oborina
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	U bojama teme; velika i one za dane miču se 3 sekunde kad se zaslon otvori, nakon svakog osvježavanja ili kad se vrijeme promijeni.
 Rain spells	Kiše
 Snow spells	Snijeg
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Dodir grafikona oborina ili okvira od 4 sata prikazuje vjerojatnost i količinu (mm) za svaki sat, a zatim objašnjava grafikon.
+Day length: 	Trajanje dana: 
+Sunrise and sunset at the town, local time.	Izlazak i zalazak sunca u mjestu, lokalno vrijeme.
+Lit part of the Moon: 	Osvijetljeni dio Mjeseca: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Izlazak i zalazak Mjeseca u mjestu; krug pokazuje osvijetljeni dio Mjeseca.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV indeks: koliko su jake ultraljubičaste zrake sunca u podne uz vedro nebo. 0–2 nizak, 3–5 umjeren, 6–7 visok, 8–10 vrlo visok, 11+ ekstreman.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Od 3 naviše: sunčane naočale, šešir i krema za sunčanje oko podneva.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pelud u zraku danas, za biljku s najviše: nizak, umjeren, visok ili vrlo visok.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relativna vlažnost: koliko vodene pare ima zrak u odnosu na najviše što može zadržati pri ovoj temperaturi. Iznad 90 % vjerojatna je magla ili rosa.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Američki indeks kakvoće zraka (EPA, 0–500): 0–50 dobra, 51–100 umjerena, iznad 150 nezdrava. Niže je bolje.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Europski indeks kakvoće zraka: najlošije od sitnih čestica, ozona, dušikova dioksida i sumporova dioksida. 0–20 dobra, 20–40 prihvatljiva, iznad 60 loša. Niže je bolje.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Tlak zraka na razini mora. Raste: dolazi stabilno vrijeme; brzo pada: mogu doći vjetar i kiša.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Brzina vjetra 10 m iznad tla i smjer iz kojeg puše (pokazivač na krugu).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Koliko se daleko vidi: ispod 1 km slaba (magla), 1–4 km umjerena, 4–10 km dobra, iznad 10 km vrlo dobra.
+The forecast for this hour at the town.	Prognoza za ovaj sat u mjestu.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Prognoza za dan u mjestu: najviša i najniža temperatura, vrijeme i vjerojatnost kiše.
+Direction	Smjer
+Latitude	Zemljopisna širina
+Longitude	Zemljopisna dužina
+Place	Mjesto
+GPS accuracy	Točnost GPS-a
+the town (no GPS fix)	mjesto (bez GPS-a)
+NEARBY TOWNS	OBLIŽNJA MJESTA
+Towns	Mjesta
+Share the coordinates	Podijeli koordinate
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	U bojama teme; sve se miču 3 sekunde pri otvaranju zaslona, nakon svakog osvježavanja ili kad se vrijeme promijeni, i na widgetima.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sunce / Mjesec, UV, Pelud, Vlažnost, Kakvoća zraka, Tlak, Vjetar, Vidljivost, Kompas. Dodir bilo kojeg okvira (i sati i dana) prikazuje vrijednost gore i objašnjenja ispod nje.
+Big compass	Veliki kompas
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Dodir okvira Kompas: veliki kompas, GPS koordinate i 3 najbliža mjesta, svako u svojoj boji (dodir jednog: ime i udaljenost). Podijeli šalje koordinate; Mjesta ih prikazuje ili skriva.

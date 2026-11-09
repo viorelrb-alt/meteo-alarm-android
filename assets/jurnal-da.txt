@@ -1,4 +1,11 @@
-Nuværende version: v.3.92 · 9.11.2026
+Nuværende version: v.4.00 · 9.11.2026
+HOVEDSKÆRM
+- Felter: et tryk på et felt viser værdien øverst og forklaringerne under den.
+- Stort kompas: et tryk på feltet Kompas viser kompasset, GPS-koordinaterne og de 3 nærmeste byer i farver; Del sender koordinaterne.
+- Vejrikoner: i temaets farver; alle bevæger sig i 3 sekunder, også efter hver opdatering og på widgets.
+- Designforbedringer og fejlrettelser.
+
+Version 3 (v.3.00 – v.3.92)
 HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi eller mobildata med signalstyrke og type (Wi-Fi 6, 5G…), eller intet internet.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.

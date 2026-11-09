@@ -1,4 +1,11 @@
-Versiunea curentă: v.3.92 · 9.11.2026
+Versiunea curentă: v.4.00 · 9.11.2026
+ECRAN PRINCIPAL
+- Busola mare: atingerea casetei Busolă arată busola, coordonatele GPS și cele mai apropiate 3 localități colorate; Partajare trimite coordonatele.
+- Casete: atingerea oricărei casete arată valoarea sus și explicațiile dedesubt.
+- Iconurile vremii: în culorile temei; toate se mișcă 3 secunde, și după fiecare reîmprospătare, și pe widget-uri.
+- Îmbunătățiri de design și corectarea erorilor.
+
+Versiunea 3 (v.3.00 – v.3.92)
 ACTUALIZĂRI
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.

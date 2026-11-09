@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Liels, blāvs pulkstenis, kad 
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Viena rinda zem līnijas: zemestrīce, tad brīdinājumi pēc krāsas. Pieskāriens rāda informāciju.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Pēdējo 24 stundu spēcīgākā zemestrīce tavā valstī un kā tā, visticamāk, bija jūtama (EMSC).
 The rows of boxes follow the finger.	Lodziņu rindas seko pirkstam.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass; pieskāriens rāda informāciju.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Turi sākuma ekrānu › Logrīki › Meteo Alarm. Velc malas, lai mainītu izkārtojumu (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Turi logrīku › Iestatījumi, vai ☰ › Logrīki: vieta, fons, krāsas.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Ik pēc 15 minūtēm ar ieslēgtu ekrānu, 30 ar izslēgtu; MET Norway, kad Open-Meteo ir aizņemts.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Krāsaini stabiņi: gaidāmi nokrišņi (varbūtība 50% vai vairāk vai vismaz 0,1 mm), sniega krāsā, kad snieg. Pelēki stabiņi: sauss.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Punktētā līnija atzīmē 50%; „tagad“ rāda pašreizējo laiku. Augšā: kad līst (no–līdz) un lielākā varbūtība.
 Precipitation chart	Nokrišņu grafiks
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Tēmas krāsās; lielā un dienu ikonas kustas 3 sekundes, kad atveras ekrāns, pēc katras atsvaidzināšanas vai kad mainās laiks.
 Rain spells	Lietus
 Snow spells	Sniegs
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Pieskaroties nokrišņu diagrammai vai 4 stundu lodziņam, redzama katras stundas varbūtība un daudzums (mm), pēc tam diagrammas skaidrojums.
+Day length: 	Dienas garums: 
+Sunrise and sunset at the town, local time.	Saullēkts un saulriets apdzīvotajā vietā, vietējais laiks.
+Lit part of the Moon: 	Mēness apgaismotā daļa: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Mēness lēkts un riets apdzīvotajā vietā; aplis rāda Mēness apgaismoto daļu.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV indekss: cik spēcīgi ir saules ultravioletie stari pusdienlaikā skaidrās debesīs. 0–2 zems, 3–5 mērens, 6–7 augsts, 8–10 ļoti augsts, 11+ ekstrēms.
+From 3 up: sunglasses, a hat and sunscreen around midday.	No 3 uz augšu: saulesbrilles, cepure un saules krēms ap pusdienlaiku.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Ziedputekšņi gaisā šodien augam ar visvairāk: zems, mērens, augsts vai ļoti augsts.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relatīvais mitrums: cik daudz ūdens tvaika ir gaisā salīdzinājumā ar maksimālo šajā temperatūrā. Virs 90% iespējama migla vai rasa.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	ASV gaisa kvalitātes indekss (EPA, 0–500): 0–50 laba, 51–100 mērena, virs 150 neveselīga. Zemāks ir labāks.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Eiropas gaisa kvalitātes indekss: sliktākais no smalkajām daļiņām, ozona, slāpekļa dioksīda un sēra dioksīda. 0–20 laba, 20–40 pieņemama, virs 60 slikta. Zemāks ir labāks.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Gaisa spiediens jūras līmenī. Pieaug: gaidāms stabils laiks; strauji krītas: var būt vējš un lietus.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Vēja ātrums 10 m virs zemes un virziens, no kura tas pūš (rādītājs uz apļa).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Cik tālu var redzēt: zem 1 km slikta (migla), 1–4 km mērena, 4–10 km laba, virs 10 km ļoti laba.
+The forecast for this hour at the town.	Šīs stundas prognoze apdzīvotajā vietā.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Dienas prognoze apdzīvotajā vietā: augstākā un zemākā temperatūra, laiks un lietus varbūtība.
+Direction	Virziens
+Latitude	Platums
+Longitude	Garums
+Place	Vieta
+GPS accuracy	GPS precizitāte
+the town (no GPS fix)	apdzīvotā vieta (bez GPS)
+NEARBY TOWNS	TUVĀKĀS APDZĪVOTĀS VIETAS
+Towns	Vietas
+Share the coordinates	Kopīgot koordinātas
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Motīva krāsās; visas kustas 3 sekundes, atverot ekrānu, pēc katras atjaunināšanas vai laikam mainoties, arī logrīkos.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass. Pieskaroties jebkuram lodziņam (arī stundām un dienām), augšā redzama vērtība, zem tās skaidrojumi.
+Big compass	Lielais kompass
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Pieskaroties lodziņam Kompass: liels kompass, GPS koordinātas un 3 tuvākās apdzīvotās vietas, katra savā krāsā (pieskaroties vienai: nosaukums un attālums). Kopīgot nosūta koordinātas; Vietas tās rāda vai paslēpj.

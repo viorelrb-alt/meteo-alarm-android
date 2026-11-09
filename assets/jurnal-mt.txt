@@ -1,4 +1,11 @@
-Verżjoni attwali: v.3.92 · 9.11.2026
+Verżjoni attwali: v.4.00 · 9.11.2026
+SKRIN EWLIENI
+- Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.
+- Ikoni tat-temp: fil-kuluri tat-tema; kollha jiċċaqilqu 3 sekondi, anke wara kull aġġornament u fuq il-widgets.
+- Kaxxi: tagħfisa fuq kwalunkwe kaxxa turi l-valur fuq u l-ispjegazzjonijiet taħtu.
+- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+
+Verżjoni 3 (v.3.00 – v.3.92)
 AĠĠORNAMENTI
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.

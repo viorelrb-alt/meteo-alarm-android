@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Arloġġ kbir u baxx meta t-te
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Ringiela waħda taħt il-linja: it-terremot, imbagħad it-twissijiet skont il-kulur. Mess juri d-dettalji.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	L-iktar terremot qawwi tal-aħħar 24 siegħa f'pajjiżek u kif probabbilment inħass (EMSC).
 The rows of boxes follow the finger.	Ir-ringieli tal-kaxxi jsegwu s-saba'.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Xemx / Qamar, UV, Polline, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla; mess juri d-dettalji.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Żomm l-iskrin ewlieni › Widgets › Meteo Alarm. Iġbed it-truf biex tibdel id-disinn (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Żomm il-widget › Settings, jew ☰ › Widgets: lokalità, sfond, kuluri.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Kull 15-il minuta bl-iskrin mixgħul, 30 bih mitfi; MET Norway meta Open-Meteo jkun okkupat.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Vireg ikkuluriti: preċipitazzjoni mistennija (ċans ta' 50% jew aktar, jew mill-inqas 0.1 mm), bil-kulur tas-silġ meta jagħmel is-silġ. Vireg griżi: niexef.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Il-linja bit-tikki timmarka 50%; „issa“ turi l-ħin attwali. Fuq: meta tagħmel ix-xita (minn–sa) u l-ogħla ċans.
 Precipitation chart	Graff tal-preċipitazzjoni
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Fil-kuluri tat-tema; il-kbira u dawk tal-jiem jiċċaqilqu għal 3 sekondi meta jinfetaħ l-iskrin, wara kull aġġornament jew meta jinbidel it-temp.
 Rain spells	Xita
 Snow spells	Borra
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Tagħfisa fuq il-grafika tal-preċipitazzjoni jew fuq kaxxa ta' 4 sigħat turi ċ-ċans u l-ammont (mm) ta' kull siegħa, imbagħad tispjega l-grafika.
+Day length: 	Tul tal-jum: 
+Sunrise and sunset at the town, local time.	Tlugħ u nżul ix-xemx fil-lokalità, ħin lokali.
+Lit part of the Moon: 	Il-parti mdawla tal-Qamar: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Tlugħ u nżul il-Qamar fil-lokalità; iċ-ċirku juri l-parti mdawla tal-Qamar.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	Indiċi UV: kemm huma qawwija r-raġġi ultravjola tax-xemx f'nofsinhar b'sema ċara. 0–2 baxx, 3–5 moderat, 6–7 għoli, 8–10 għoli ħafna, 11+ estrem.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Minn 3 'il fuq: nuċċali tax-xemx, kappell u krema għax-xemx madwar nofsinhar.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Polline fl-arja llum, għall-pjanta li għandha l-aktar: baxx, moderat, għoli jew għoli ħafna.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Umdità relattiva: kemm fwar tal-ilma għandu l-arja meta mqabbel mal-aktar li jista' jżomm f'din it-temperatura. 'Il fuq minn 90% x'aktarx ċpar jew nida.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Indiċi Amerikan tal-kwalità tal-arja (EPA, 0–500): 0–50 tajba, 51–100 moderata, 'il fuq minn 150 ħażina għas-saħħa. Aktar baxx huwa aħjar.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Indiċi Ewropew tal-kwalità tal-arja: l-agħar fost partiċelli fini, ożonu, dijossidu tan-nitroġenu u dijossidu tal-kubrit. 0–20 tajba, 20–40 aċċettabbli, 'il fuq minn 60 fqira. Aktar baxx huwa aħjar.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Pressjoni tal-arja fil-livell tal-baħar. Tiela': ġej temp stabbli; nieżla malajr: jistgħu jiġu riħ u xita.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Veloċità tar-riħ 10 m 'il fuq mill-art u d-direzzjoni minn fejn jonfoħ (l-indikatur fuq iċ-ċirku).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Kemm wieħed jara 'l bogħod: inqas minn 1 km fqira (ċpar), 1–4 km moderata, 4–10 km tajba, aktar minn 10 km tajba ħafna.
+The forecast for this hour at the town.	It-tbassir għal din is-siegħa fil-lokalità.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	It-tbassir tal-ġurnata fil-lokalità: l-ogħla u l-inqas temperatura, it-temp u ċ-ċans ta' xita.
+Direction	Direzzjoni
+Latitude	Latitudni
+Longitude	Lonġitudni
+Place	Post
+GPS accuracy	Preċiżjoni GPS
+the town (no GPS fix)	il-lokalità (mingħajr GPS)
+NEARBY TOWNS	LOKALITAJIET QRIB
+Towns	Lokalitajiet
+Share the coordinates	Aqsam il-koordinati
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Fil-kuluri tat-tema; kollha jiċċaqilqu 3 sekondi meta jinfetaħ l-iskrin, wara kull aġġornament jew meta jinbidel it-temp, anke fuq il-widgets.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Xemx / Qamar, UV, Polline, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla. Tagħfisa fuq kwalunkwe kaxxa (anke s-sigħat u l-jiem) turi l-valur fuq u l-ispjegazzjonijiet taħtu.
+Big compass	Boxxla kbira
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Tagħfisa fuq il-kaxxa Boxxla: boxxla kbira, il-koordinati GPS u l-eqreb 3 lokalitajiet, kull waħda bil-kulur tagħha (tagħfisa fuq waħda: isem u distanza). Aqsam jibgħat il-koordinati; Lokalitajiet juruhom jew jaħbuhom.

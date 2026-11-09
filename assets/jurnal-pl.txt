@@ -1,4 +1,11 @@
-Obecna wersja: v.3.92 · 9.11.2026
+Obecna wersja: v.4.00 · 9.11.2026
+EKRAN GŁÓWNY
+- Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
+- Ikony pogody: w kolorach motywu; wszystkie poruszają się 3 sekundy, także po każdym odświeżeniu i na widżetach.
+- Pola: dotknięcie dowolnego pola pokazuje wartość u góry i objaśnienia pod nią.
+- Ulepszenia wyglądu i poprawki błędów.
+
+Wersja 3 (v.3.00 – v.3.92)
 AKTUALIZACJE
 - Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
 - Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.

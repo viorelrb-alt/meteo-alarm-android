@@ -1,4 +1,11 @@
-Súčasná verzia: v.3.92 · 9.11.2026
+Súčasná verzia: v.4.00 · 9.11.2026
+HLAVNÁ OBRAZOVKA
+- Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
+- Polia: ťuknutie na ktorékoľvek pole ukáže hodnotu hore a vysvetlenie pod ňou.
+- Veľký kompas: ťuknutie na pole Kompas ukáže kompas, súradnice GPS a 3 najbližšie obce farebne; Zdieľať pošle súradnice.
+- Vylepšenia vzhľadu a opravy chýb.
+
+Verzia 3 (v.3.00 – v.3.92)
 AKTUALIZÁCIE
 - Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.

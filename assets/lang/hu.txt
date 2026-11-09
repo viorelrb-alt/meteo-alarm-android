@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Nagy, halvány óra, amikor a 
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Egy sor a vonal alatt: a földrengés, aztán a figyelmeztetések szín szerint. Koppintásra a részletek.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Az elmúlt 24 óra legerősebb földrengése az országodban, és valószínűleg hogyan érezték (EMSC).
 The rows of boxes follow the finger.	A mezősorok követik az ujjadat.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű; koppintásra a részletek.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Tartsd lenyomva a kezdőképernyőt › Widgetek › Meteo Alarm. A széleket húzva váltasz elrendezést (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Tartsd lenyomva a widgetet › Beállítások, vagy ☰ › Widgetek: település, háttér, színek.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	15 percenként bekapcsolt képernyővel, 30 percenként kikapcsolttal; MET Norway, ha az Open-Meteo foglalt.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Színes oszlopok: csapadék várható (50% vagy nagyobb esély, vagy legalább 0,1 mm), havazáskor a hó színében. Szürke oszlopok: száraz.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	A pontozott vonal az 50%-ot jelöli; a „most” a jelenlegi időt mutatja. Fent: mikor esik (-tól–ig) és a legnagyobb esély.
 Precipitation chart	Csapadékgrafikon
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	A téma színeiben; a nagy és a napoké 3 másodpercig mozog a képernyő megnyitásakor, minden frissítés után vagy ha változik az időjárás.
 Rain spells	Esők
 Snow spells	Havazások
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	A csapadékgrafikon vagy egy 4 órás mező megérintése megmutatja minden óra valószínűségét és mennyiségét (mm), majd elmagyarázza a grafikont.
+Day length: 	A nap hossza: 
+Sunrise and sunset at the town, local time.	Napkelte és napnyugta a településen, helyi idő szerint.
+Lit part of the Moon: 	A Hold megvilágított része: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Holdkelte és holdnyugta a településen; a kör a Hold megvilágított részét mutatja.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-index: milyen erősek a nap ultraibolya sugarai délben derült égnél. 0–2 alacsony, 3–5 mérsékelt, 6–7 magas, 8–10 nagyon magas, 11+ extrém.
+From 3 up: sunglasses, a hat and sunscreen around midday.	3-tól felfelé: napszemüveg, kalap és naptej dél körül.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pollen a levegőben ma, a legtöbbet szóró növényre: alacsony, mérsékelt, magas vagy nagyon magas.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relatív páratartalom: mennyi vízgőz van a levegőben ahhoz képest, amennyit ezen a hőmérsékleten legfeljebb tarthat. 90% felett köd vagy harmat valószínű.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Amerikai levegőminőségi index (EPA, 0–500): 0–50 jó, 51–100 mérsékelt, 150 felett egészségtelen. Az alacsonyabb a jobb.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Európai levegőminőségi index: a legrosszabb a szálló por, ózon, nitrogén-dioxid és kén-dioxid közül. 0–20 jó, 20–40 elfogadható, 60 felett rossz. Az alacsonyabb a jobb.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Légnyomás tengerszinten. Emelkedik: tartós idő jön; gyorsan csökken: szél és eső jöhet.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Szélsebesség 10 m-rel a talaj felett és az irány, ahonnan fúj (a mutató a körön).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Milyen messzire lehet látni: 1 km alatt gyenge (köd), 1–4 km mérsékelt, 4–10 km jó, 10 km felett nagyon jó.
+The forecast for this hour at the town.	Az erre az órára szóló előrejelzés a településen.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	A napi előrejelzés a településen: a legmagasabb és a legalacsonyabb hőmérséklet, az időjárás és az eső valószínűsége.
+Direction	Irány
+Latitude	Szélesség
+Longitude	Hosszúság
+Place	Hely
+GPS accuracy	GPS pontosság
+the town (no GPS fix)	a település (GPS nélkül)
+NEARBY TOWNS	KÖZELI TELEPÜLÉSEK
+Towns	Települések
+Share the coordinates	Koordináták megosztása
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	A téma színeiben; mind mozog 3 másodpercig a képernyő megnyitásakor, minden frissítés után vagy időváltozáskor, a widgeteken is.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű. Bármely mező megérintése (az óráké és napoké is) felül az értéket, alatta a magyarázatot mutatja.
+Big compass	Nagy iránytű
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Az Iránytű mező megérintése: nagy iránytű, a GPS-koordináták és a 3 legközelebbi település, mind a saját színével (egyre koppintva: név és távolság). A Megosztás elküldi a koordinátákat; a Települések megjeleníti vagy elrejti őket.

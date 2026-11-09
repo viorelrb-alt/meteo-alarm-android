@@ -390,16 +390,55 @@ public class Widget extends AppWidgetProvider {
 		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind] + (kind == 4 ? " zile" : "")
 				+ " zoom " + Math.round(s * 100) + "% · " + (d.c != null ? d.c.name : "-") + (d.w == null ? " fără date" : "") + " · " + st.describe());
 		try {
-			send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens, kind));
+			send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens, kind, 0));
+			animate(ctx, mgr, id, d, st, f, dens, kind);
 		} catch (Throwable e) {
 			// Too large a picture for the home screen: half the sharpness, still the same widget.
 			Log.e(ctx, "WIDGET", "#" + id + " imagine prea mare, desenez la jumătate", e);
 			try {
-				send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens / 2, kind));
+				send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens / 2, kind, 1));
 			} catch (Throwable e2) {
 				Log.e(ctx, "WIDGET", "#" + id + " nu s-a putut desena", e2);
 			}
 		}
+	}
+
+	// --- v4.00 (Viorel): the weather icon moves for 3 s after each drawing, as in the app ----------
+
+	private static final android.os.Handler UI = new android.os.Handler(android.os.Looper.getMainLooper());
+	private static final HashMap<Integer, Runnable> RUNS = new HashMap<Integer, Runnable>();
+	private static final int FRAMES = 12;
+
+	/** Sends the next frames of widget ID (only while the screen is on; the last one is the still icon). */
+	private static void animate(final Context ctx, final AppWidgetManager mgr, final int id, final Data d, final Set st, final int[] f, final float dens, final int kind) {
+		synchronized (RUNS) {
+			Runnable old = RUNS.remove(id);
+			if (old != null) UI.removeCallbacks(old);
+		}
+		boolean on = true;
+		try {
+			on = ((android.os.PowerManager) ctx.getSystemService(Context.POWER_SERVICE)).isInteractive();
+		} catch (Throwable t) {
+		}
+		if (d.w == null) return;
+		final int[] k = { on ? 1 : FRAMES };
+		Runnable r = new Runnable() {
+			public void run() {
+				try {
+					send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens, kind, k[0] / (float) FRAMES));
+				} catch (Throwable e) {
+					return;
+				}
+				if (++k[0] <= FRAMES) UI.postDelayed(this, 3000 / FRAMES);
+				else synchronized (RUNS) {
+					RUNS.remove(id);
+				}
+			}
+		};
+		synchronized (RUNS) {
+			RUNS.put(id, r);
+		}
+		UI.postDelayed(r, on ? 3000 / FRAMES : 0);
 	}
 
 	private static void send(Context ctx, AppWidgetManager mgr, int id, Data d, Bitmap bm) {
@@ -470,6 +509,11 @@ public class Widget extends AppWidgetProvider {
 	 * (and its top and bottom), so no empty bands at the sides.
 	 */
 	static Bitmap render(Context ctx, Data d, Set st, int wdp, int hdp, float dens, int kind) {
+		return render(ctx, d, st, wdp, hdp, dens, kind, 1);
+	}
+
+	/** T: the moment of the icons' movement (0–1, 1 = still). */
+	static Bitmap render(Context ctx, Data d, Set st, int wdp, int hdp, float dens, int kind, float t) {
 		float rw = RW[kind], rh = RH[kind];
 		float s = Math.min(wdp / rw, hdp / rh);
 		int W = Math.max(1, Math.round(wdp * dens)), H = Math.max(1, Math.round(hdp * dens));
@@ -491,7 +535,9 @@ public class Widget extends AppWidgetProvider {
 		float ey = H / k - rh, keep = Math.min(ey, rh * MAX_SPREAD), top = (ey - keep) / 2 * k;
 		cv.translate(0, top);
 		cv.scale(k, k);
+		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(ctx).getInt("palette", 0);
 		Pen pen = new Pen(ctx, cv, blackText(ctx, st, w), W / k - rw, keep);
+		pen.t = t;
 		String temp = w == null ? "--" : Long.toString(Math.round(d.unitF ? w.temp * 9 / 5 + 32 : w.temp));
 		String icon = w == null ? null : d.T.describe(w.code, w.isDay)[0];
 		String town = d.c != null ? d.c.name : "";
@@ -655,8 +701,18 @@ public class Widget extends AppWidgetProvider {
 			text(name, right - ps - 1.5f, base, size, 1, 0.9f, 3, maxw);
 		}
 
+		/** The moment of the icons' movement (0–1). */
+		float t = 1;
+
 		void icon(String name, float x, float y, float size) {
 			if (name == null) return;
+			// v4.00 (Viorel): the coloured icons of the app, in the theme's colours, moving.
+			if (ro.meteoalarm.android.core.WxIcon.has(name)) {
+				AndroidGfx g = gfx(ctx);
+				g.c = cv;
+				ro.meteoalarm.android.core.WxIcon.draw(g, name, x, y, size, t, ro.meteoalarm.android.core.Theme.icon(!black));
+				return;
+			}
 			Bitmap b = Widget.icon(ctx, "icons/" + name + ".png", 200, black);
 			// The picture keeps 1/16 of its side free on each edge for the shadow: the drawing fills X Y SIZE.
 			float e = size / 14;
@@ -717,6 +773,13 @@ public class Widget extends AppWidgetProvider {
 		if (w.sunrise.length() > 0 && hm.compareTo(w.sunrise) < 0) return rise + w.sunrise;
 		if (w.sunset.length() > 0 && hm.compareTo(w.sunset) < 0) return set + w.sunset;
 		return w.sunrise2.length() > 0 ? rise + w.sunrise2 : "";
+	}
+
+	private static AndroidGfx GFX;
+
+	private static AndroidGfx gfx(Context ctx) {
+		if (GFX == null) GFX = new AndroidGfx(ctx.getApplicationContext().getAssets());
+		return GFX;
 	}
 
 	private static final HashMap<String, Bitmap> ICONS = new HashMap<String, Bitmap>();

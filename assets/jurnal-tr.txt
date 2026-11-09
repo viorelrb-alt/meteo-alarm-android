@@ -1,4 +1,11 @@
-Geçerli sürüm: v.3.92 · 9.11.2026
+Geçerli sürüm: v.4.00 · 9.11.2026
+ANA EKRAN
+- Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
+- Hava simgeleri: temanın renklerinde; hepsi 3 saniye hareket eder, her yenilemeden sonra ve widget'larda da.
+- Kutular: herhangi bir kutuya dokunmak değeri üstte, açıklamaları altında gösterir.
+- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+
+Sürüm 3 (v.3.00 – v.3.92)
 ANA EKRAN
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
 - Hava simgeleri: temanın renklerinde; büyük olan ve günlerinkiler 3 saniye hareket eder, her yenilemeden sonra da.

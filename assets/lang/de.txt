@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Eine große, gedimmte Uhr, wen
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Eine Reihe unter der Linie: das Erdbeben, dann die Warnungen nach Farbe. Ein Tippen zeigt die Details.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Das stärkste Erdbeben der letzten 24 Stunden in deinem Land und wie es wahrscheinlich zu spüren war (EMSC).
 The rows of boxes follow the finger.	Die Kästchenreihen folgen dem Finger.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sonne / Mond, UV, Pollen, Feuchte, Luftqualität, Luftdruck, Wind, Sicht, Kompass; ein Tippen zeigt die Details.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Startbildschirm gedrückt halten › Widgets › Meteo Alarm. An den Rändern ziehen, um das Layout zu ändern (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Widget gedrückt halten › Einstellungen, oder ☰ › Widgets: Ort, Hintergrund, Farben.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Alle 15 Minuten bei eingeschaltetem Bildschirm, 30 bei ausgeschaltetem; MET Norway, wenn Open-Meteo ausgelastet ist.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Farbige Balken: Niederschlag erwartet (Wahrscheinlichkeit ab 50 % oder mindestens 0,1 mm), in der Schneefarbe, wenn es schneit. Graue Balken: trocken.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Die gepunktete Linie markiert 50 %; „jetzt“ zeigt die aktuelle Uhrzeit. Oben: wann es regnet (von–bis) und die höchste Wahrscheinlichkeit.
 Precipitation chart	Niederschlagsgrafik
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	In den Farben des Designs; das große und die der Tage bewegen sich 3 Sekunden, wenn der Bildschirm öffnet, nach jeder Aktualisierung oder wenn das Wetter wechselt.
 Rain spells	Regen
 Snow spells	Schnee
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Ein Tippen auf die Niederschlagsgrafik oder ein 4-Stunden-Feld zeigt für jede Stunde Wahrscheinlichkeit und Menge (mm) und erklärt dann die Grafik.
+Day length: 	Tageslänge: 
+Sunrise and sunset at the town, local time.	Sonnenaufgang und -untergang im Ort, Ortszeit.
+Lit part of the Moon: 	Beleuchteter Teil des Mondes: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Mondaufgang und -untergang im Ort; der Kreis zeigt den beleuchteten Teil des Mondes.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-Index: wie stark die ultravioletten Strahlen der Sonne mittags bei klarem Himmel sind. 0–2 niedrig, 3–5 mäßig, 6–7 hoch, 8–10 sehr hoch, 11+ extrem.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Ab 3: Sonnenbrille, Hut und Sonnencreme um die Mittagszeit.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pollen in der Luft heute, für die Pflanze mit den meisten: niedrig, mäßig, hoch oder sehr hoch.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relative Luftfeuchtigkeit: wie viel Wasserdampf die Luft enthält im Vergleich zum Höchstwert bei dieser Temperatur. Über 90 % sind Nebel oder Tau wahrscheinlich.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	US-Luftqualitätsindex (EPA, 0–500): 0–50 gut, 51–100 mäßig, über 150 ungesund. Niedriger ist besser.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Europäischer Luftqualitätsindex: der schlechteste Wert aus Feinstaub, Ozon, Stickstoffdioxid und Schwefeldioxid. 0–20 gut, 20–40 annehmbar, über 60 schlecht. Niedriger ist besser.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Luftdruck auf Meereshöhe. Steigend: beständiges Wetter kommt; schnell fallend: Wind und Regen können kommen.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Windgeschwindigkeit 10 m über dem Boden und die Richtung, aus der er weht (der Zeiger am Ring).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Wie weit man sieht: unter 1 km schlecht (Nebel), 1–4 km mäßig, 4–10 km gut, über 10 km sehr gut.
+The forecast for this hour at the town.	Die Vorhersage für diese Stunde im Ort.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Die Vorhersage für den Tag im Ort: höchste und niedrigste Temperatur, das Wetter und die Regenwahrscheinlichkeit.
+Direction	Richtung
+Latitude	Breite
+Longitude	Länge
+Place	Ort
+GPS accuracy	GPS-Genauigkeit
+the town (no GPS fix)	der Ort (kein GPS)
+NEARBY TOWNS	ORTE IN DER NÄHE
+Towns	Orte
+Share the coordinates	Koordinaten teilen
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	In den Farben des Designs; alle bewegen sich 3 Sekunden beim Öffnen, nach jeder Aktualisierung oder bei Wetterwechsel, auch auf den Widgets.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sonne / Mond, UV, Pollen, Feuchtigkeit, Luftqualität, Druck, Wind, Sicht, Kompass. Ein Tippen auf ein Feld (auch Stunden und Tage) zeigt oben den Wert und darunter die Erklärungen.
+Big compass	Großer Kompass
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Tippen auf das Feld Kompass: ein großer Kompass, die GPS-Koordinaten und die 3 nächsten Orte, jeder in seiner Farbe (Tippen auf einen: Name und Entfernung). Teilen sendet die Koordinaten; Orte zeigt oder verbirgt sie.

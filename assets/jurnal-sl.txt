@@ -1,4 +1,11 @@
-Trenutna različica: v.3.92 · 9.11.2026
+Trenutna različica: v.4.00 · 9.11.2026
+GLAVNI ZASLON
+- Okvirji: dotik katerega koli okvirja pokaže vrednost zgoraj in razlage pod njo.
+- Veliki kompas: dotik okvirja Kompas pokaže kompas, koordinate GPS in 3 najbližje kraje v barvah; Deli pošlje koordinate.
+- Vremenske ikone: v barvah teme; vse se premikajo 3 sekunde, tudi po vsaki osvežitvi in na pripomočkih.
+- Izboljšave oblikovanja in popravki napak.
+
+Različica 3 (v.3.00 – v.3.92)
 GLAVNI ZASLON
 - Graf padavin in polja 4 ur: dotik pokaže verjetnost in količino za vsako uro, nato razloži graf.
 - Ikona povezave ob uri: Wi-Fi ali mobilni podatki z močjo signala in vrsto (Wi-Fi 6, 5G…) ali brez interneta.

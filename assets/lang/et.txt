@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Suur hämar kell, kui telefon 
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Üks rida joone all: maavärin, siis hoiatused värvi järgi. Puudutus näitab üksikasju.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Viimase 24 tunni tugevaim maavärin sinu riigis ja kuidas seda tõenäoliselt tunti (EMSC).
 The rows of boxes follow the finger.	Kastide read järgivad sõrme.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Õhurõhk, Tuul, Nähtavus, Kompass; puudutus näitab üksikasju.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Hoia avakuva › Vidinad › Meteo Alarm. Lohista servi, et paigutust muuta (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Hoia vidinat › Seaded, või ☰ › Vidinad: asula, taust, värvid.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Iga 15 minuti järel ekraan sees, 30 ekraan väljas; MET Norway, kui Open-Meteo on hõivatud.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Värvilised tulbad: oodata on sademeid (tõenäosus 50% või rohkem või vähemalt 0,1 mm), lume värvi, kui sajab lund. Hallid tulbad: kuiv.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Punktiirjoon märgib 50%; „nüüd“ näitab praegust aega. Üleval: millal sajab (alates–kuni) ja suurim tõenäosus.
 Precipitation chart	Sademete graafik
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Teema värvides; suur ja päevade omad liiguvad 3 sekundit, kui ekraan avaneb, pärast iga värskendust või kui ilm muutub.
 Rain spells	Vihm
 Snow spells	Lumi
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Puudutus sademete graafikul või 4-tunnisel kastil näitab iga tunni tõenäosust ja hulka (mm) ning selgitab siis graafikut.
+Day length: 	Päeva pikkus: 
+Sunrise and sunset at the town, local time.	Päikesetõus ja -loojang asulas, kohalik aeg.
+Lit part of the Moon: 	Kuu valgustatud osa: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Kuutõus ja -loojang asulas; ring näitab Kuu valgustatud osa.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-indeks: kui tugevad on päikese ultraviolettkiired keskpäeval selge taevaga. 0–2 madal, 3–5 mõõdukas, 6–7 kõrge, 8–10 väga kõrge, 11+ äärmuslik.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Alates 3-st: päikeseprillid, müts ja päikesekreem keskpäeva paiku.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Õietolm õhus täna, kõige rohkem tolmavale taimele: madal, mõõdukas, kõrge või väga kõrge.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Suhteline niiskus: kui palju veeauru õhus on võrreldes suurima võimalikuga sellel temperatuuril. Üle 90% on udu või kaste tõenäoline.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	USA õhukvaliteedi indeks (EPA, 0–500): 0–50 hea, 51–100 mõõdukas, üle 150 ebatervislik. Madalam on parem.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Euroopa õhukvaliteedi indeks: halvim peentolmust, osoonist, lämmastikdioksiidist ja vääveldioksiidist. 0–20 hea, 20–40 rahuldav, üle 60 halb. Madalam on parem.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Õhurõhk merepinnal. Tõuseb: tuleb püsiv ilm; langeb kiiresti: võivad tulla tuul ja vihm.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Tuule kiirus 10 m kõrgusel maapinnast ja suund, kust see puhub (osuti ringil).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Kui kaugele näeb: alla 1 km halb (udu), 1–4 km mõõdukas, 4–10 km hea, üle 10 km väga hea.
+The forecast for this hour at the town.	Selle tunni prognoos asulas.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Päeva prognoos asulas: kõrgeim ja madalaim temperatuur, ilm ja vihma tõenäosus.
+Direction	Suund
+Latitude	Laiuskraad
+Longitude	Pikkuskraad
+Place	Koht
+GPS accuracy	GPS-i täpsus
+the town (no GPS fix)	asula (GPS-ita)
+NEARBY TOWNS	LÄHIMAD ASULAD
+Towns	Asulad
+Share the coordinates	Jaga koordinaate
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Teema värvides; kõik liiguvad 3 sekundit ekraani avamisel, pärast iga värskendust või ilma muutumisel, ka vidinatel.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Rõhk, Tuul, Nähtavus, Kompass. Puudutus mis tahes kastil (ka tundidel ja päevadel) näitab ülal väärtust ja all selgitusi.
+Big compass	Suur kompass
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Puudutus kastil Kompass: suur kompass, GPS-koordinaadid ja 3 lähimat asulat, igaüks oma värviga (puudutus ühel: nimi ja kaugus). Jaga saadab koordinaadid; Asulad näitab või peidab need.

@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.92";
+	static final String VERSION = "Meteo Alarm Android v4.00";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -75,6 +75,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Bubble bubble;
 	private Countries countries;
 	private HelpPanel help;
+	/** v4.00: the big compass over the screen (a tap on the Compass box). */
+	private CompassPanel compassPanel;
 	/** The text-size bar over the pages (SizeOverlay, v2.12). */
 	private SizeOverlay sizer;
 	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
@@ -180,6 +182,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		root.addView(help, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		compassPanel = new CompassPanel(this, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
+				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+		compassPanel.setOnClose(new Runnable() {
+			public void run() {
+				hideBars();
+			}
+		});
+		root.addView(compassPanel, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		// The text-size bar over the pages (v2.12): above every window, on the left like the brightness bar.
 		sizer = new SizeOverlay(this, view.screen);
 		root.addView(sizer, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -254,6 +264,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	public void onBackPressed() {
 		if (sizer != null && sizer.isOpen()) sizer.hide();
+		else if (compassPanel != null && compassPanel.isOpen()) compassPanel.hide();
 		else if (bubble.isOpen()) bubble.hide();
 		else if (help.isOpen()) help.hide();
 		else if (sheet.isOpen()) {
@@ -693,6 +704,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				s.heading = headSmooth;
 				if (!s.nightClock) view.invalidate();
 			}
+			if (compassPanel != null) compassPanel.heading(headSmooth);
 		}
 
 		public void onAccuracyChanged(Sensor sn, int acc) {
@@ -1553,6 +1565,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		resumed = false;
 		listenLight(false);
 		listenCompass(false);
+		if (compassPanel != null) compassPanel.hide();
 		handler.removeCallbacks(tick);
 		listenNet(false);
 		try {
@@ -1804,6 +1817,45 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		bubble.panel = true;
 		bubble.place = s.place();
 		bubble.show(view.px(b), bubbleWidth(0.86f, 280), info.get(0)[1], rows, s.T.en, new Bubble.Pick() {
+			public void picked(int i) {
+			}
+		});
+	}
+
+	/** v4.00 (Viorel): a tap on the Compass box: the big compass, the GPS coordinates and the nearest towns. */
+	public void onCompass() {
+		Log.i(this, "GEST", "atingere casetă busolă");
+		double la = s.city != null ? s.city.lat : Double.NaN, lo = s.city != null ? s.city.lon : Double.NaN;
+		compassPanel.show(cities, la, lo, s.heading, s.dark, s.unitF);
+	}
+
+	/** v4.00 (Viorel): a tap on a box of the bottom row: its value on top, the explanations under it. */
+	public void onInfoBox(final int k, final float[] b) {
+		Log.i(this, "GEST", "atingere casetă " + s.infoId(k));
+		reopen = new Runnable() {
+			public void run() {
+				onInfoBox(k, s.infoRect(k));
+			}
+		};
+		infoBubble(s.boxInfo(k), b);
+	}
+
+	/** v4.00: a tap on an hour box (KIND 0) or a day box (1) outside the farmer mode. */
+	public void onBox(final int kind, final int k, final float[] b) {
+		Log.i(this, "GEST", "atingere casetă " + (kind == 0 ? "oră" : "zi") + " " + k);
+		reopen = new Runnable() {
+			public void run() {
+				onBox(kind, k, s.boxRect(kind, k));
+			}
+		};
+		infoBubble(kind == 0 ? s.townHourInfo(k) : s.dayInfo(k), b);
+	}
+
+	private void infoBubble(List<String[]> info, float[] b) {
+		if (info.isEmpty()) return;
+		bubble.panel = true;
+		bubble.place = s.place();
+		bubble.show(view.px(b), bubbleWidth(0.86f, 280), info.get(0)[1], Bubble.info(info), s.T.en, new Bubble.Pick() {
 			public void picked(int i) {
 			}
 		});
@@ -2531,8 +2583,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));
 		help.entry(mini("wifi"), Tr.t("Connection", "Conexiune"), Tr.t("Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.",
 				"Lângă ceas: Wi-Fi (arce) sau date mobile (bare); arcele sau barele pline arată semnalul, textul mic tipul (6 = Wi-Fi 6, 5G…). Altă rețea: glob; tăiat când nu ai internet."));
-		help.entry(mini("wxicon"), Tr.t("Weather icons", "Iconurile vremii"), Tr.t("In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.",
-				"În culorile temei; cel mare și cele ale zilelor se mișcă 3 secunde când se deschide ecranul, după fiecare reîmprospătare sau când se schimbă vremea."));
+		help.entry(mini("wxicon"), Tr.t("Weather icons", "Iconurile vremii"), Tr.t("In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.",
+				"În culorile temei; toate se mișcă 3 secunde când se deschide ecranul, după fiecare reîmprospătare sau când se schimbă vremea, și pe widget-uri."));
 		help.entry(mini("camera"), Tr.t("Camera band", "Banda camerei"), Tr.t("In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.",
 				"În portret, pe telefoanele cu camera în ecran (Android 9+), ceasul, conexiunea și data stau lângă cameră; localitatea are tot rândul."));
 		help.section(Tr.t("Gestures", "Gesturi"));
@@ -2551,8 +2603,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
 				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
-		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.",
-				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă; atingerea arată detaliile."));
+		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
+				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));
+		if (s.hasCompass) help.entry(mini("bigcompass"), Tr.t("Big compass", "Busola mare"), Tr.t("A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.",
+				"Atingerea casetei Busolă: o busolă mare, coordonatele GPS și cele mai apropiate 3 localități, fiecare în culoarea ei (atingerea uneia: nume și distanță). Partajare trimite coordonatele; Localități le arată sau le ascunde."));
 		help.section(Tr.t("Home-screen widgets", "Widget-uri pe ecranul de pornire"));
 		help.entry(mini("widget"), Tr.t("Meteo Alarm widgets", "Widget-urile Meteo Alarm"), Tr.t("Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).",
 				"Ține apăsat pe ecranul de pornire › Widgeturi › Meteo Alarm. Trage de margini ca să schimbi modelul (2x2, 4x1, 4x2, 4x3)."));

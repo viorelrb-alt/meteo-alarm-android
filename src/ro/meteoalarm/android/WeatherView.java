@@ -57,6 +57,15 @@ final class WeatherView extends View {
 		/** v3.90: a tap on the precipitation chart of the next 12 hours, at B. */
 		void onPrecip(float[] b, int part);
 
+		/** v4.00: a tap on box K of the bottom row (not the farmer's), at B. */
+		void onInfoBox(int k, float[] b);
+
+		/** v4.00: a tap on an hour box (KIND 0) or a day box (1) outside the farmer mode. */
+		void onBox(int kind, int k, float[] b);
+
+		/** v4.00: a tap on the compass box: the big compass. */
+		void onCompass();
+
 		/** Farmer mode (v2.60): a swipe over the weather now, to the next (+1) or previous (-1) main screen. */
 		void onPage(int step);
 
@@ -696,6 +705,17 @@ final class WeatherView extends View {
 		if (screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
 			int j = screen.partAt(x, y);
 			taps.onPrecip(j < 0 ? screen.precipArea.clone() : screen.partArea[j].clone(), j < 0 ? -1 : screen.partIdx[j]);
+			return true;
+		}
+		int ik = screen.infoAt(x, y);
+		if (ik >= 0) {
+			if (screen.infoId(ik).equals("compass")) taps.onCompass();
+			else taps.onInfoBox(ik, screen.infoRect(ik));
+			return true;
+		}
+		int[] hb = screen.boxAt(x, y);
+		if (hb != null) {
+			taps.onBox(hb[0], hb[1], screen.boxRect(hb[0], hb[1]));
 			return true;
 		}
 		if (in(screen.btnMenu, x, y)) taps.onMenu();

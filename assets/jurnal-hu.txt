@@ -1,4 +1,11 @@
-Jelenlegi verzió: v.3.92 · 9.11.2026
+Jelenlegi verzió: v.4.00 · 9.11.2026
+FŐKÉPERNYŐ
+- Időjárás-ikonok: a téma színeiben; mind mozog 3 másodpercig, minden frissítés után és a widgeteken is.
+- Mezők: bármely mező megérintése felül az értéket, alatta a magyarázatot mutatja.
+- Nagy iránytű: az Iránytű mező megérintése az iránytűt, a GPS-koordinátákat és a 3 legközelebbi települést mutatja színesen; a Megosztás elküldi a koordinátákat.
+- Dizájnjavítások és hibajavítások.
+
+3. verzió (v.3.00 – v.3.92)
 ÉRTESÍTÉSEK
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
 - Külön TÁJÉKOZTATÁS értesítés a településre is.

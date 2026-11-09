@@ -42,6 +42,8 @@ final class Bubble extends FrameLayout {
 		 * lines, sliding sideways, SOURCE = where the data come from, gathered at the bottom once.
 		 */
 		static final int ITEM = 0, HEADER = 1, LINE = 2, TEXT = 3, VALUE = 4, TABLE = 5, SOURCE = 6;
+		/** v4.00 (Viorel): the box's value, big, at the top of its bubble; the explanations follow. */
+		static final int BIG = 7;
 
 		Row(String text, Bitmap icon, int kind, boolean checked) {
 			this.text = text;
@@ -77,7 +79,7 @@ final class Bubble extends FrameLayout {
 				t.cells = new String[r.length - 1][];
 				for (int j = 1; j < r.length; j++) t.cells[j - 1] = r[j].split("\t", -1);
 				rows.add(t);
-			} else rows.add(new Row(r[1], null, k.equals("h") ? Row.HEADER : k.equals("v") ? Row.VALUE : k.equals("s") ? Row.SOURCE : Row.TEXT, false));
+			} else rows.add(new Row(r[1], null, k.equals("h") ? Row.HEADER : k.equals("V") ? Row.BIG : k.equals("v") ? Row.VALUE : k.equals("s") ? Row.SOURCE : Row.TEXT, false));
 		}
 		return rows;
 	}
@@ -265,6 +267,16 @@ final class Bubble extends FrameLayout {
 				lp.leftMargin = lp.rightMargin = (int) (16 * dp);
 				lp.topMargin = lp.bottomMargin = (int) (6 * dp);
 				list.addView(hs, lp);
+				first = true;
+				continue;
+			}
+			if (r.kind == Row.BIG) {
+				TextView t = text(c, 34 * zk, true);
+				t.setText(nb(r.text));
+				t.setTextColor(ink);
+				t.setGravity(Gravity.CENTER);
+				t.setPadding((int) (16 * dp), (int) (4 * dp), (int) (16 * dp), (int) (6 * dp));
+				list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 				first = true;
 				continue;
 			}

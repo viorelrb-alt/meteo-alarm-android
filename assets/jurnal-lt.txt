@@ -1,4 +1,11 @@
-Dabartinė versija: v.3.92 · 9.11.2026
+Dabartinė versija: v.4.00 · 9.11.2026
+PAGRINDINIS EKRANAS
+- Didelis kompasas: palietus langelį Kompasas rodomas kompasas, GPS koordinatės ir 3 artimiausios vietovės spalvomis; Bendrinti siunčia koordinates.
+- Langeliai: palietus bet kurį langelį viršuje rodoma vertė, o po ja paaiškinimai.
+- Orų piktogramos: temos spalvomis; visos juda 3 sekundes, ir po kiekvieno atnaujinimo, ir valdikliuose.
+- Dizaino patobulinimai ir klaidų taisymai.
+
+3 versija (v.3.00 – v.3.92)
 NAUJINIMAI
 - Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.

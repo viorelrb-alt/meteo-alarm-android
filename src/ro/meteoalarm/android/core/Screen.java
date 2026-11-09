@@ -149,6 +149,8 @@ public final class Screen {
 	public final float[] btnRain24 = { 0, 0, 0, 0 };
 	/** The parcel's boxes drawn in the bottom row: { box index, x, y, w, h }; set by draw. */
 	private final List<float[]> infoHits = new java.util.ArrayList<float[]>();
+	/** v4.00: where the day boxes are { k, x, y, w, h }. */
+	private final List<float[]> dayHits = new java.util.ArrayList<float[]>();
 	private List<String> infoIds = new java.util.ArrayList<String>();
 	public Farm.Data farm;
 	/** The hour and rain boxes drawn: { hour index, x, y, w, h } in canvas units; set by draw. */
@@ -202,6 +204,7 @@ public final class Screen {
 		hourHits.clear();
 		rainHits.clear();
 		infoHits.clear();
+		dayHits.clear();
 		mergedShown = false;
 		bigIcon = null;
 		precipArea[2] = 0;
@@ -426,6 +429,7 @@ public final class Screen {
 		for (int k = 0; k < n; k++) {
 			float bx = x + k * step - days.scroll, cx = bx + dw / 2;
 			if (bx + dw < x - 4 || bx > x + wd + 4) continue;
+			dayHits.add(new float[] { k, bx * hs, top * hs, dw * hs, h * hs });
 			box(bx, top, dw, h, 44);
 			String title = k == 0 ? T.day1 : k == 1 ? T.day2 : T.weekdayUp(w.dayDates.get(k), true);
 			head(top, 44, cx, dw - 20, title, 0);
@@ -775,7 +779,7 @@ public final class Screen {
 	/** One merged box: the hour on top; its weather in the left half, its rain in the right half. */
 	private void drawMergedBox(int k, float bx, float y, float bw, float h) {
 		float hd = 46, half = bw / 2, body = h - hd;
-		if (farmer) hourHits.add(new float[] { k, bx * hs, y * hs, bw * hs, h * hs });
+		hourHits.add(new float[] { k, bx * hs, y * hs, bw * hs, h * hs });
 		box(bx, y, bw, h, hd);
 		head(y, hd, bx + bw / 2, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
 		g.rect(bx + half - 1, y + hd + 14, 2, body - 28, c.line);
@@ -831,7 +835,7 @@ public final class Screen {
 	/** One hour: the hour on top, the icon, the temperature and the sky. */
 	private void drawHourBox(int k, float x, float y, float bw, float bh, float tp, float dp) {
 		float hd = 44, cx = x + bw / 2;
-		if (farmer) hourHits.add(new float[] { k, x * hs, y * hs, bw * hs, bh * hs });
+		hourHits.add(new float[] { k, x * hs, y * hs, bw * hs, bh * hs });
 		box(x, y, bw, bh, hd);
 		head(y, hd, cx, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
 		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
@@ -1015,7 +1019,7 @@ public final class Screen {
 		for (Strip st : new Strip[] { info, grid }) {
 			if (st.area[2] <= 0 || x < st.area[0] || x > st.area[0] + st.area[2] || y < st.area[1] || y > st.area[1] + st.area[3]) continue;
 			for (float[] b : infoHits)
-				if (x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return new int[] { 2, (int) b[0] };
+				if (farmInfo(infoId((int) b[0])) && x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return new int[] { 2, (int) b[0] };
 		}
 		for (int kind = 0; kind < 2; kind++) {
 			Strip st = kind == 0 ? hours : rain;
@@ -1099,7 +1103,7 @@ public final class Screen {
 		if (w == null || k < 0 || k >= w.tileHours.size()) return out;
 		out.add(new String[] { "title", hourTitle(k) });
 		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
-		out.add(new String[] { "v", Tr.t("Air temp.: ", "Temp. aer: ") + deg(w.tileTemp[k]) + " · " + d[1] });
+		out.add(new String[] { "V", deg(w.tileTemp[k]) + " · " + d[1] });
 		int i = farmIndex(k);
 		if (i < 0) {
 			out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
@@ -1135,7 +1139,7 @@ public final class Screen {
 		if (out.isEmpty() || farmIndex(k) < 0) return out;
 		List<String[]> r = rainInfo(k);
 		out.add(new String[] { "h", Tr.t("Rain", "Ploaie") });
-		for (int j = 1; j < r.size(); j++) out.add(r.get(j));
+		for (int j = 1; j < r.size(); j++) if (!r.get(j)[0].equals("V")) out.add(r.get(j));
 		return out;
 	}
 
@@ -1146,6 +1150,7 @@ public final class Screen {
 		out.add(new String[] { "title", Tr.t("Rain · ", "Ploaie · ") + hourTitle(k) });
 		int p = probAt(k), kind = kindAt(k), i = farmIndex(k);
 		String chance = p >= 60 ? Tr.t("likely", "probabilă") : p >= 30 ? Tr.t("possible", "posibilă") : Tr.t("unlikely", "puțin probabilă");
+		out.add(new String[] { "V", p + "% · " + mm(mmAt(k)) });
 		out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + p + "% · " + chance });
 		out.add(new String[] { "v", Tr.t("Amount: ", "Cantitate: ") + mm(mmAt(k)) });
 		out.add(new String[] { "v", Tr.t("Kind: ", "Tip: ") + kindWord(kind) });
@@ -1332,7 +1337,8 @@ public final class Screen {
 		List<String[]> out = new java.util.ArrayList<String[]>();
 		out.add(new String[] { "title", xLong(id) + " · " + place() });
 		String[] v = xValues(id);
-		out.add(new String[] { "v", Tr.t("Now: ", "Acum: ") + v[0] + (v[1].length() > 0 ? " · " + v[1] : "") + (v[2].length() > 0 ? " · " + v[2] : "") });
+		out.add(new String[] { "V", v[0] });
+		if (v[1].length() > 0 || v[2].length() > 0) out.add(new String[] { "v", v[1] + (v[1].length() > 0 && v[2].length() > 0 ? " · " : "") + v[2] });
 		long ms = now.getTimeInMillis();
 		if (id.startsWith("u")) {
 			if (us == null) return out;
@@ -1572,6 +1578,12 @@ public final class Screen {
 
 	private void drawParcelBox(String id, float cx, float top, float bw) {
 		String[] v = xbox(id) ? xValues(id) : parcelValues(id);
+		if (v[1].length() == 0 && v[2].length() == 0) {
+			// v4.00 (Viorel): a value alone (Humidity) sits in the middle of the box, both ways.
+			float p = fit(true, 60, bw - 16, v[0]), mid = top + 46 + (184 - 46) / 2f;
+			ctext(true, p, mid - p * 0.5f, cx, v[0], c.ink);
+			return;
+		}
 		ctext(true, fit(true, 52, bw - 16, v[0]), top + 58, cx, v[0], c.ink);
 		if (v[1].length() > 0) ctext(false, fit(false, 21, bw - 12, v[1]), top + 122, cx, v[1], c.ink);
 		if (v[2].length() > 0) ctext(false, fit(false, 19, bw - 12, v[2]), top + 150, cx, v[2], c.dim);
@@ -1591,7 +1603,8 @@ public final class Screen {
 		if (xbox(id)) return xInfo(id);
 		out.add(new String[] { "title", parcelTitle(id) + " · " + place() });
 		String[] v = parcelValues(id);
-		out.add(new String[] { "v", Tr.t("Now: ", "Acum: ") + v[0] + (v[1].length() > 0 ? " · " + v[1] : "") + (v[2].length() > 0 ? " · " + v[2] : "") });
+		out.add(new String[] { "V", v[0] });
+		if (v[1].length() > 0 || v[2].length() > 0) out.add(new String[] { "v", v[1] + (v[1].length() > 0 && v[2].length() > 0 ? " · " : "") + v[2] });
 		int i = farm == null ? -1 : farm.nowIndex(now);
 		if (i < 0) {
 			out.add(new String[] { "t", farmMissing() });
@@ -1632,6 +1645,7 @@ public final class Screen {
 		List<String[]> out = new java.util.ArrayList<String[]>();
 		out.add(new String[] { "title", Tr.t("Water in the soil", "Apa în sol") + " · " + place() });
 		double[] sw = soilWater();
+		out.add(new String[] { "V", Double.isNaN(sw[0]) ? "–" : mm(sw[0]) });
 		out.add(new String[] { "v", Tr.t("In the soil now (3–9 cm): ", "În sol acum (3–9 cm): ")
 				+ (Double.isNaN(sw[0]) ? "–" : mm(sw[0]) + " · " + Tr.t("moisture ", "umiditate ") + Math.round(sw[0] / 60 * 100) + "%") });
 		out.add(new String[] { "h", Tr.t("Precipitation of the last 24 hours", "Precipitațiile din ultimele 24 de ore") });
@@ -1856,7 +1870,7 @@ public final class Screen {
 	private void drawIcon(String icon, float x, float y, float s) {
 		if (WxIcon.has(icon)) {
 			if (nowIcon) bigIcon = icon;
-			WxIcon.draw(g, icon, x, y, s, nowIcon || dayIcon ? iconT : 1, Theme.icon(dark));
+			WxIcon.draw(g, icon, x, y, s, iconT, Theme.icon(dark)); // v4.00 (Viorel): every weather icon moves
 		} else g.icon("icons/" + icon + ".png", x, y, s, s, c.ink);
 	}
 
@@ -2603,6 +2617,7 @@ public final class Screen {
 
 	/** Tomorrow / the day after: title, icon, big high, gray "/ low", description. */
 	private void drawDayCard(float left, float top, int k, String title) {
+		dayHits.add(new float[] { k, left * hs, top * hs, 331 * hs, 198 * hs });
 		box(left, top, 331, 198, 52);
 		head(top, 52, left + 165, 290, title, 0);
 		if (k >= w.dayDates.size()) return;
@@ -2733,7 +2748,7 @@ public final class Screen {
 		for (int i = 0; i < ids.size(); i++) {
 			float bx = x + i * step - info.scroll;
 			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
-			if (farmInfo(ids.get(i))) infoHits.add(new float[] { i, bx * hs, top * hs, bw * hs, h * hs });
+			infoHits.add(new float[] { i, bx * hs, top * hs, bw * hs, h * hs });
 			drawInfoBox(ids.get(i), bx, top, bw, h, tp);
 		}
 		g.unclip();
@@ -2760,7 +2775,7 @@ public final class Screen {
 		for (int i = 0; i < ids.size(); i++) {
 			float by = top + (i / 2) * step - grid.scroll;
 			if (by + bh < top - 4 || by > top + h + 4) continue;
-			if (farmInfo(ids.get(i))) infoHits.add(new float[] { i, (x + (i % 2) * (bw + gap)) * hs, by * hs, bw * hs, bh * hs });
+			infoHits.add(new float[] { i, (x + (i % 2) * (bw + gap)) * hs, by * hs, bw * hs, bh * hs });
 			drawInfoBox(ids.get(i), x + (i % 2) * (bw + gap), by, bw, bh, tp);
 		}
 		g.unclip();
@@ -2883,6 +2898,154 @@ public final class Screen {
 			scale(cx - 60, top + 162, 4, l, 27);
 		} else {
 			drawCompassBox(cx, top0 + hd, bw, body);
+		}
+	}
+
+	/** v4.00: the id of box K of the bottom row ("" for none). */
+	public String infoId(int k) {
+		return k >= 0 && k < infoIds.size() ? infoIds.get(k) : "";
+	}
+
+	/** v4.00: the box of the bottom row under X, Y (any mode), -1 for none. */
+	public int infoAt(float x, float y) {
+		Strip[] sts = { info, grid };
+		for (Strip st : sts) {
+			if (st.area[2] <= 0 || x < st.area[0] || x > st.area[0] + st.area[2] || y < st.area[1] || y > st.area[1] + st.area[3]) continue;
+			for (float[] b : infoHits)
+				if (x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return (int) b[0];
+		}
+		return -1;
+	}
+
+	/** v4.00: where box K of the bottom row is (x, y, w, h). */
+	public float[] infoRect(int k) {
+		for (float[] b : infoHits) if ((int) b[0] == k) return new float[] { b[1], b[2], b[3], b[4] };
+		return new float[] { cw / 2 - 50, 900, 100, 100 };
+	}
+
+	/**
+	 * v4.00 (Viorel): the bubble of a box of the bottom row: its value big at the top ("V"), the
+	 * explanations under it. The farmer's boxes keep their own (parcelInfo).
+	 */
+	public List<String[]> boxInfo(int k) {
+		List<String[]> out = new java.util.ArrayList<String[]>();
+		String id = infoId(k);
+		if (w == null || id.length() == 0) return out;
+		if (farmInfo(id)) return parcelInfo(k);
+		String ttl = infoTitle(id);
+		if (Tr.ro() && ttl.equals("LUNA")) ttl = "LUNĂ";
+		out.add(new String[] { "title", ttl + " · " + place() });
+		if (id.equals("sun")) {
+			out.add(new String[] { "V", "↑ " + Texts.clock(w.sunrise, clk12) + "   ↓ " + Texts.clock(w.sunset, clk12) });
+			int len = minutes(w.sunset) - minutes(w.sunrise);
+			if (len > 0) out.add(new String[] { "v", Tr.t("Day length: ", "Durata zilei: ") + len / 60 + " h " + len % 60 + " min" });
+			out.add(new String[] { "t", Tr.t("Sunrise and sunset at the town, local time.", "Răsăritul și apusul soarelui în localitate, ora locală.") });
+		} else if (id.equals("moon")) {
+			long ms = now.getTimeInMillis();
+			long[] rs = city != null ? Moon.riseSet(ms, city.lat, city.lon) : new long[2];
+			out.add(new String[] { "V", "↑ " + (rs[0] > 0 ? Texts.clock(hm(rs[0]), clk12) : "–") + "   ↓ " + (rs[1] > 0 ? Texts.clock(hm(rs[1]), clk12) : "–") });
+			out.add(new String[] { "v", Tr.t("Lit part of the Moon: ", "Partea luminată a Lunii: ") + Math.round(Moon.lit(ms) * 100) + "%" });
+			out.add(new String[] { "t", Tr.t("Moonrise and moonset at the town; the circle shows the lit part of the Moon.", "Răsăritul și apusul Lunii în localitate; cercul arată partea luminată a Lunii.") });
+		} else if (id.equals("uv")) {
+			int uv = w.uv, l = uv < 0 ? 0 : uv <= 2 ? 1 : uv <= 5 ? 2 : uv <= 7 ? 3 : uv <= 10 ? 4 : 5;
+			out.add(new String[] { "V", uv < 0 ? "–" : uv + " · " + T.uvLv[l - 1] });
+			out.add(new String[] { "t", Tr.t("UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.",
+					"Indicele UV: cât de puternice sunt razele ultraviolete ale soarelui la prânz, pe cer senin. 0–2 scăzut, 3–5 moderat, 6–7 ridicat, 8–10 foarte ridicat, 11+ extrem.") });
+			out.add(new String[] { "t", Tr.t("From 3 up: sunglasses, a hat and sunscreen around midday.", "De la 3 în sus: ochelari de soare, pălărie și cremă de protecție în jurul prânzului.") });
+		} else if (id.equals("pollen")) {
+			out.add(new String[] { "V", pollenLvl > 0 ? T.polLv[pollenLvl - 1] : "–" });
+			if (pollenLvl > 0 && pollenPlant.length() > 0) out.add(new String[] { "v", T.plant(pollenPlant) });
+			out.add(new String[] { "t", Tr.t("Pollen in the air today, for the plant with the most: low, moderate, high or very high.", "Polenul din aer azi, pentru planta cu cel mai mult: scăzut, moderat, ridicat sau foarte ridicat.") });
+		} else if (id.equals("hum")) {
+			out.add(new String[] { "V", w.humidity >= 0 ? w.humidity + "%" : "–" });
+			out.add(new String[] { "t", Tr.t("Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.",
+					"Umiditatea relativă: câți vapori de apă are aerul față de cât ar putea ține la această temperatură. Peste 90% sunt probabile ceața sau roua.") });
+		} else if (id.equals("aqi")) {
+			boolean us = city != null && city.us();
+			out.add(new String[] { "V", aqi >= 0 ? Integer.toString(aqi) : "–" });
+			out.add(new String[] { "t", us ? Tr.t("US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.",
+					"Indicele american al calității aerului (EPA, 0–500): 0–50 bun, 51–100 moderat, peste 150 nesănătos. Mai mic e mai bine.")
+					: Tr.t("European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.",
+							"Indicele european al calității aerului: cel mai rău dintre particulele fine, ozon, dioxid de azot și dioxid de sulf. 0–20 bun, 20–40 acceptabil, peste 60 slab. Mai mic e mai bine.") });
+		} else if (id.equals("press")) {
+			double pr = w.pressure;
+			out.add(new String[] { "V", Double.isNaN(pr) ? "–" : unitF ? String.format(java.util.Locale.US, "%.2f inHg", pr * 0.0295300).replace('.', Tr.dot()) : Math.round(pr) + " hPa" });
+			out.add(new String[] { "t", Tr.t("Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.",
+					"Presiunea aerului la nivelul mării. În creștere: vine vreme stabilă; în scădere rapidă: pot veni vânt și ploaie.") });
+		} else if (id.equals("wind")) {
+			out.add(new String[] { "V", Double.isNaN(w.wind) ? "–" : kmh(w.wind) + (Double.isNaN(w.windDir) ? "" : " · " + dir8(w.windDir)) });
+			out.add(new String[] { "t", Tr.t("Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).",
+					"Viteza vântului la 10 m deasupra solului și direcția din care bate (indicatorul de pe cerc).") });
+		} else if (id.equals("vis")) {
+			double v = w.visibility;
+			String val = Double.isNaN(v) ? "–" : v >= 1000 ? Math.round(v / 100) / 10.0 + " km" : Math.round(v / 10) * 10 + " m";
+			if (unitF && !Double.isNaN(v)) val = String.format(java.util.Locale.US, "%.1f mi", v / 1609.344);
+			out.add(new String[] { "V", val.replace(".0 ", " ").replace('.', Tr.dot()) });
+			out.add(new String[] { "t", Tr.t("How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.",
+					"Cât de departe se vede: sub 1 km slab (ceață), 1–4 km moderat, 4–10 km bun, peste 10 km foarte bun.") });
+		}
+		out.add(new String[] { "s", srcOM() });
+		return out;
+	}
+
+	/** v4.00: the bubble of hour box K outside the farmer mode: the value first, then what it means. */
+	public List<String[]> townHourInfo(int k) {
+		List<String[]> out = new java.util.ArrayList<String[]>();
+		if (w == null || k < 0 || k >= w.tileHours.size()) return out;
+		out.add(new String[] { "title", hourTitle(k) + " · " + place() });
+		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
+		out.add(new String[] { "V", deg(w.tileTemp[k]) + " · " + d[1] });
+		out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
+		out.add(new String[] { "t", Tr.t("The forecast for this hour at the town.", "Prognoza pentru această oră în localitate.") });
+		out.add(new String[] { "s", srcOM() });
+		return out;
+	}
+
+	/** v4.00: the box under X, Y in LIST ({ k, x, y, w, h } each) inside strip ST, -1 for none. */
+	private static int hitAt(List<float[]> list, Strip st, float x, float y) {
+		if (st.area[2] <= 0 || x < st.area[0] || x > st.area[0] + st.area[2] || y < st.area[1] || y > st.area[1] + st.area[3]) return -1;
+		for (float[] b : list) if (x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return (int) b[0];
+		return -1;
+	}
+
+	private static float[] hitRect(List<float[]> list, int k) {
+		for (float[] b : list) if ((int) b[0] == k) return new float[] { b[1], b[2], b[3], b[4] };
+		return null;
+	}
+
+	/** v4.00: the hour box (outside the farmer mode) or day box under X, Y: { 0 hour / 1 day, k }; null for none. */
+	public int[] boxAt(float x, float y) {
+		if (w == null) return null;
+		int k = hitAt(hourHits, hours, x, y);
+		if (k >= 1) return new int[] { 0, k };
+		k = hitAt(dayHits, days, x, y);
+		return k >= 0 ? new int[] { 1, k } : null;
+	}
+
+	public float[] boxRect(int kind, int k) {
+		float[] r = hitRect(kind == 0 ? hourHits : dayHits, k);
+		return r != null ? r : new float[] { cw / 2 - 50, 900, 100, 100 };
+	}
+
+	/** v4.00: the bubble of day box K: the highest and lowest temperature first. */
+	public List<String[]> dayInfo(int k) {
+		List<String[]> out = new java.util.ArrayList<String[]>();
+		if (w == null || k < 0 || k >= w.dayDates.size()) return out;
+		String title = k == 0 ? T.day1 : k == 1 ? T.day2 : T.weekdayUp(w.dayDates.get(k), true);
+		out.add(new String[] { "title", title + " · " + place() });
+		out.add(new String[] { "V", t(w.dayHi.get(k)) + "° / " + t(w.dayLo.get(k)) + "°" });
+		out.add(new String[] { "v", T.describe(w.dayCodes.get(k), true)[1] + " · " + T.pop + " " + w.dayPop.get(k) + "%" });
+		out.add(new String[] { "t", Tr.t("The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.",
+				"Prognoza zilei în localitate: temperatura cea mai mare și cea mai mică, vremea și probabilitatea de ploaie.") });
+		out.add(new String[] { "s", srcOM() });
+		return out;
+	}
+
+	private static int minutes(String hhmm) {
+		try {
+			return Integer.parseInt(hhmm.substring(0, 2)) * 60 + Integer.parseInt(hhmm.substring(3, 5));
+		} catch (Exception e) {
+			return 0;
 		}
 	}
 
@@ -3555,6 +3718,11 @@ public final class Screen {
 			g.roundRect(6, 34, 22, 24, 5, k);
 			g.rect(44, 34, 4, 24, a);
 			g.rect(34, 44, 24, 4, a);
+		} else if (which.equals("bigcompass")) {
+			g.arc(32, 32, 27, 0, 360, 4, k);
+			g.poly(new float[] { 32, 10, 38, 32, 26, 32 }, a);
+			g.poly(new float[] { 32, 54, 38, 32, 26, 32 }, k);
+			g.roundRect(28, 28, 8, 8, 4, p);
 		} else if (which.equals("chart")) {
 			g.rect(4, 56, 56, 4, k);
 			int[] hs = { 18, 34, 26, 44 };

@@ -1,4 +1,11 @@
-Aktuelle Version: v.3.92 · 9.11.2026
+Aktuelle Version: v.4.00 · 9.11.2026
+HAUPTBILDSCHIRM
+- Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.
+- Großer Kompass: Tippen auf das Feld Kompass zeigt den Kompass, die GPS-Koordinaten und die 3 nächsten Orte in Farben; Teilen sendet die Koordinaten.
+- Wettersymbole: in den Farben des Designs; alle bewegen sich 3 Sekunden, auch nach jeder Aktualisierung und auf den Widgets.
+- Design-Verbesserungen und Fehlerbehebungen.
+
+Version 3 (v.3.00 – v.3.92)
 AKTUALISIERUNGEN
 - Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.

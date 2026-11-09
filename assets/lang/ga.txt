@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Clog mór lag nuair a bhíonn 
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Sraith amháin faoin líne: an crith talún, ansin na rabhaidh de réir datha. Taispeánann tapáil na sonraí.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	An crith talún is láidre le 24 uair anuas i do thír agus conas a mhothaíodh é is dócha (EMSC).
 The rows of boxes follow the finger.	Leanann sraitheanna na mboscaí an mhéar.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Grian / Gealach, UV, Pailin, Taise, Cáilíocht an aeir, Brú, Gaoth, Infheictheacht, Compás; taispeánann tapáil na sonraí.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Coinnigh an scáileán baile › Giuirléidí › Meteo Alarm. Tarraing na himill chun an leagan amach a athrú (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Coinnigh an ghiuirléid › Socruithe, nó ☰ › Giuirléidí: baile, cúlra, dathanna.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Gach 15 nóiméad leis an scáileán ar siúl, 30 leis as; MET Norway nuair atá Open-Meteo gnóthach.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barraí daite: táthar ag súil le deascadh (seans 50% nó níos mó, nó 0.1 mm ar a laghad), i ndath an tsneachta nuair a chuireann sé sneachta. Barraí liatha: tirim.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Marcálann an líne phonc 50%; taispeánann „anois“ an t-am reatha. Ag an mbarr: cathain a bheidh báisteach (ó–go) agus an seans is airde.
 Precipitation chart	Cairt deascadh
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I ndathanna an téama; bogann an ceann mór agus deilbhíní na laethanta ar feadh 3 soicind nuair a osclaíonn an scáileán, tar éis gach athnuachana nó nuair a athraíonn an aimsir.
 Rain spells	Báisteach
 Snow spells	Sneachta
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Taispeánann tapáil ar ghraf na frasaíochta nó ar bhosca 4 uair an seans agus an méid (mm) do gach uair, agus míníonn sé an graf ansin.
+Day length: 	Fad an lae: 
+Sunrise and sunset at the town, local time.	Éirí agus luí na gréine sa bhaile, am áitiúil.
+Lit part of the Moon: 	Cuid shoilsithe na Gealaí: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Éirí agus luí na Gealaí sa bhaile; taispeánann an ciorcal an chuid shoilsithe den Ghealach.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	Innéacs UV: chomh láidir agus atá gathanna ultraivialait na gréine ag meán lae le spéir ghlan. 0–2 íseal, 3–5 measartha, 6–7 ard, 8–10 an-ard, 11+ foircneach.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Ó 3 suas: spéaclaí gréine, hata agus uachtar gréine timpeall meán lae.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pailin san aer inniu, don phlanda is mó: íseal, measartha, ard nó an-ard.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Bogthaise choibhneasta: an méid gaile uisce san aer i gcomparáid leis an méid is mó is féidir ag an teocht seo. Os cionn 90% is dócha go mbeidh ceo nó drúcht ann.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Innéacs cáilíochta aeir SAM (EPA, 0–500): 0–50 maith, 51–100 measartha, os cionn 150 míshláintiúil. Is fearr níos ísle.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Innéacs Eorpach cáilíochta aeir: an ceann is measa de mhíreanna mína, ózón, dé-ocsaíd nítrigine agus dé-ocsaíd sulfair. 0–20 maith, 20–40 cothrom, os cionn 60 lag. Is fearr níos ísle.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Brú aeir ag leibhéal na farraige. Ag ardú: aimsir shocair ag teacht; ag titim go tapa: d'fhéadfadh gaoth agus báisteach teacht.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Luas na gaoithe 10 m os cionn na talún agus an treo as a séideann sí (an pointeoir ar an bhfáinne).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Cé chomh fada is féidir a fheiceáil: faoi 1 km lag (ceo), 1–4 km measartha, 4–10 km maith, os cionn 10 km an-mhaith.
+The forecast for this hour at the town.	An réamhaisnéis don uair seo sa bhaile.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Réamhaisnéis an lae sa bhaile: an teocht is airde agus is ísle, an aimsir agus an seans báistí.
+Direction	Treo
+Latitude	Domhanleithead
+Longitude	Domhanfhad
+Place	Áit
+GPS accuracy	Cruinneas GPS
+the town (no GPS fix)	an baile (gan GPS)
+NEARBY TOWNS	BAILTE IN AICE LÁIMHE
+Towns	Bailte
+Share the coordinates	Comhroinn na comhordanáidí
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	I ndathanna an téama; bogann siad go léir ar feadh 3 soicind nuair a osclaítear an scáileán, tar éis gach athnuachana nó nuair a athraíonn an aimsir, ar na giuirléidí freisin.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Grian / Gealach, UV, Pailin, Bogthaise, Cáilíocht aeir, Brú, Gaoth, Infheictheacht, Compás. Taispeánann tapáil ar aon bhosca (na huaireanta agus na laethanta freisin) an luach thuas agus na mínithe faoi.
+Big compass	Compás mór
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Tapáil ar an mbosca Compás: compás mór, comhordanáidí GPS agus na 3 bhaile is gaire, gach ceann ina dhath féin (tapáil ar cheann: ainm agus fad). Seolann Comhroinn na comhordanáidí; taispeánann nó folaíonn Bailte iad.

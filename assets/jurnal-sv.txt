@@ -1,4 +1,11 @@
-Nuvarande version: v.3.92 · 9.11.2026
+Nuvarande version: v.4.00 · 9.11.2026
+HUVUDSKÄRM
+- Rutor: ett tryck på valfri ruta visar värdet överst och förklaringarna under.
+- Stor kompass: ett tryck på rutan Kompass visar kompassen, GPS-koordinaterna och de 3 närmaste orterna i färger; Dela skickar koordinaterna.
+- Vädersymboler: i temats färger; alla rör sig i 3 sekunder, även efter varje uppdatering och på widgetarna.
+- Designförbättringar och felrättningar.
+
+Version 3 (v.3.00 – v.3.92)
 AVISERINGAR
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - En egen INFORMATION-avisering även för orten.

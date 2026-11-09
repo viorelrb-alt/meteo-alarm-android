@@ -1,4 +1,11 @@
-Versão atual: v.3.92 · 9.11.2026
+Versão atual: v.4.00 · 9.11.2026
+ECRÃ PRINCIPAL
+- Bússola grande: um toque na caixa Bússola mostra a bússola, as coordenadas GPS e as 3 localidades mais próximas em cores; Partilhar envia as coordenadas.
+- Caixas: um toque em qualquer caixa mostra o valor em cima e as explicações por baixo.
+- Ícones do tempo: nas cores do tema; todos se movem 3 segundos, também após cada atualização e nos widgets.
+- Melhorias de design e correção de erros.
+
+Versão 3 (v.3.00 – v.3.92)
 ATUALIZAÇÕES
 - Antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
 - Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.

@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	En stor, dämpad klocka när t
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	En rad under linjen: jordskalvet, sedan varningarna efter färg. Ett tryck visar detaljerna.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Det kraftigaste jordskalvet de senaste 24 timmarna i ditt land och hur det troligen kändes (EMSC).
 The rows of boxes follow the finger.	Raderna med rutor följer fingret.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sol / Måne, UV, Pollen, Fuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass; ett tryck visar detaljerna.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Håll på startskärmen › Widgetar › Meteo Alarm. Dra i kanterna för att byta layout (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Håll på widgeten › Inställningar, eller ☰ › Widgetar: ort, bakgrund, färger.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Var 15:e minut med skärmen på, 30 med den av; MET Norway när Open-Meteo är upptaget.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Färgade staplar: nederbörd väntas (en risk på 50 % eller mer, eller minst 0,1 mm), i snöfärgen när det snöar. Grå staplar: torrt.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Den prickade linjen visar 50 %; ”nu” visar aktuell tid. Överst: när det regnar (från–till) och den högsta risken.
 Precipitation chart	Nederbördsdiagram
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I temats färger; den stora och dagarnas rör sig i 3 sekunder när skärmen öppnas, efter varje uppdatering eller när vädret ändras.
 Rain spells	Regn
 Snow spells	Snö
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Ett tryck på nederbördsdiagrammet eller en 4-timmarsruta visar varje timmes chans och mängd (mm) och förklarar sedan diagrammet.
+Day length: 	Dagens längd: 
+Sunrise and sunset at the town, local time.	Soluppgång och solnedgång på orten, lokal tid.
+Lit part of the Moon: 	Månens upplysta del: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Månuppgång och månnedgång på orten; cirkeln visar Månens upplysta del.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-index: hur starka solens ultravioletta strålar är mitt på dagen vid klar himmel. 0–2 lågt, 3–5 måttligt, 6–7 högt, 8–10 mycket högt, 11+ extremt.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Från 3 och uppåt: solglasögon, hatt och solskydd runt middagstid.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pollen i luften i dag, för växten med mest: låg, måttlig, hög eller mycket hög.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relativ luftfuktighet: hur mycket vattenånga luften håller jämfört med det mesta den kan hålla vid denna temperatur. Över 90 % är dimma eller dagg trolig.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Amerikanskt luftkvalitetsindex (EPA, 0–500): 0–50 bra, 51–100 måttlig, över 150 ohälsosam. Lägre är bättre.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Europeiskt luftkvalitetsindex: det sämsta av fina partiklar, ozon, kvävedioxid och svaveldioxid. 0–20 bra, 20–40 godtagbar, över 60 dålig. Lägre är bättre.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Lufttryck vid havsytan. Stigande: stadigt väder kommer; snabbt fallande: vind och regn kan komma.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Vindhastighet 10 m över marken och riktningen den blåser från (visaren på ringen).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Hur långt man kan se: under 1 km dålig (dimma), 1–4 km måttlig, 4–10 km bra, över 10 km mycket bra.
+The forecast for this hour at the town.	Prognosen för denna timme på orten.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Prognosen för dagen på orten: högsta och lägsta temperatur, vädret och risken för regn.
+Direction	Riktning
+Latitude	Latitud
+Longitude	Longitud
+Place	Plats
+GPS accuracy	GPS-noggrannhet
+the town (no GPS fix)	orten (ingen GPS)
+NEARBY TOWNS	NÄRLIGGANDE ORTER
+Towns	Orter
+Share the coordinates	Dela koordinaterna
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	I temats färger; alla rör sig i 3 sekunder när skärmen öppnas, efter varje uppdatering eller när vädret ändras, även på widgetarna.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sol / Måne, UV, Pollen, Luftfuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass. Ett tryck på valfri ruta (även timmarna och dagarna) visar värdet överst och förklaringarna under.
+Big compass	Stor kompass
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Ett tryck på rutan Kompass: en stor kompass, GPS-koordinaterna och de 3 närmaste orterna, var och en i sin färg (tryck på en: namn och avstånd). Dela skickar koordinaterna; Orter visar eller döljer dem.

@@ -168,6 +168,36 @@ public final class Cities {
 		return best;
 	}
 
+	/** v4.00: the N listed towns nearest to LAT, LON, nearest first (for the big compass). */
+	public List<City> nearest(double lat, double lon, int n) {
+		final double k = Math.cos(Math.toRadians(lat));
+		List<City> best = new ArrayList<City>();
+		List<Double> dist = new ArrayList<Double>();
+		List<Map<String, List<City>>> all = new ArrayList<Map<String, List<City>>>();
+		all.add(byCounty);
+		all.add(abroad);
+		all.add(usStates);
+		for (Map<String, List<City>> m : all)
+			for (List<City> l : m.values())
+				for (City c : l) {
+					if (c.lat == 0 && c.lon == 0) continue;
+					double dy = c.lat - lat, dx = (c.lon - lon) * k, d = dx * dx + dy * dy;
+					boolean dup = false;
+					for (City b : best) if (b.name.equals(c.name) && Math.abs(b.lat - c.lat) < 0.01) dup = true;
+					if (dup) continue;
+					int i = 0;
+					while (i < dist.size() && dist.get(i) <= d) i++;
+					if (i >= n) continue;
+					best.add(i, c);
+					dist.add(i, d);
+					if (best.size() > n) {
+						best.remove(n);
+						dist.remove(n);
+					}
+				}
+		return best;
+	}
+
 	public City find(String name) {
 		for (List<City> l : byCounty.values()) for (City c : l) if (c.name.equals(name)) return c;
 		return null;

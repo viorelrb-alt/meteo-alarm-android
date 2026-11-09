@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Velké tlumené hodiny, když 
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Jedna řada pod čarou: zemětřesení, pak výstrahy podle barvy. Klepnutí ukáže podrobnosti.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Nejsilnější zemětřesení za posledních 24 hodin ve tvé zemi a jak bylo asi pociťováno (EMSC).
 The rows of boxes follow the finger.	Řady políček sledují prst.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita vzduchu, Tlak, Vítr, Viditelnost, Kompas; klepnutí ukáže podrobnosti.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Podrž plochu › Widgety › Meteo Alarm. Tahem za okraje změníš vzhled (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Podrž widget › Nastavení, nebo ☰ › Widgety: obec, pozadí, barvy.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Každých 15 minut se zapnutou obrazovkou, 30 s vypnutou; MET Norway, když je Open-Meteo vytížené.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barevné sloupce: očekávané srážky (pravděpodobnost 50 % a více, nebo aspoň 0,1 mm), v barvě sněhu, když sněží. Šedé sloupce: sucho.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Tečkovaná čára značí 50 %; „teď“ ukazuje aktuální čas. Nahoře: kdy prší (od–do) a nejvyšší pravděpodobnost.
 Precipitation chart	Graf srážek
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	V barvách motivu; velká a ty u dnů se 3 sekundy pohybují při otevření obrazovky, po každém obnovení nebo při změně počasí.
 Rain spells	Deště
 Snow spells	Sněžení
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Klepnutí na graf srážek nebo na pole 4 hodin ukáže pravděpodobnost a množství (mm) pro každou hodinu a pak vysvětlí graf.
+Day length: 	Délka dne: 
+Sunrise and sunset at the town, local time.	Východ a západ slunce v obci, místní čas.
+Lit part of the Moon: 	Osvětlená část Měsíce: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Východ a západ Měsíce v obci; kruh ukazuje osvětlenou část Měsíce.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV index: jak silné jsou ultrafialové paprsky slunce v poledne za jasné oblohy. 0–2 nízký, 3–5 střední, 6–7 vysoký, 8–10 velmi vysoký, 11+ extrémní.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Od 3 výš: sluneční brýle, klobouk a opalovací krém kolem poledne.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pyl ve vzduchu dnes, pro rostlinu s nejvyšším množstvím: nízký, střední, vysoký nebo velmi vysoký.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relativní vlhkost: kolik vodní páry vzduch obsahuje oproti nejvíce, co může při této teplotě udržet. Nad 90 % je pravděpodobná mlha nebo rosa.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Americký index kvality ovzduší (EPA, 0–500): 0–50 dobrá, 51–100 střední, nad 150 nezdravá. Nižší je lepší.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Evropský index kvality ovzduší: nejhorší z jemných částic, ozonu, oxidu dusičitého a oxidu siřičitého. 0–20 dobrá, 20–40 přijatelná, nad 60 špatná. Nižší je lepší.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Tlak vzduchu na hladině moře. Roste: přichází stálé počasí; rychle klesá: může přijít vítr a déšť.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Rychlost větru 10 m nad zemí a směr, odkud fouká (ukazatel na kruhu).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Jak daleko je vidět: pod 1 km špatná (mlha), 1–4 km střední, 4–10 km dobrá, nad 10 km velmi dobrá.
+The forecast for this hour at the town.	Předpověď na tuto hodinu v obci.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Předpověď na den v obci: nejvyšší a nejnižší teplota, počasí a pravděpodobnost deště.
+Direction	Směr
+Latitude	Zeměpisná šířka
+Longitude	Zeměpisná délka
+Place	Místo
+GPS accuracy	Přesnost GPS
+the town (no GPS fix)	obec (bez GPS)
+NEARBY TOWNS	NEJBLIŽŠÍ OBCE
+Towns	Obce
+Share the coordinates	Sdílet souřadnice
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	V barvách motivu; všechny se 3 sekundy pohybují při otevření obrazovky, po každém obnovení nebo při změně počasí, i na widgetech.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita ovzduší, Tlak, Vítr, Viditelnost, Kompas. Klepnutí na kterékoli pole (i na hodiny a dny) ukáže hodnotu nahoře a vysvětlení pod ní.
+Big compass	Velký kompas
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Klepnutí na pole Kompas: velký kompas, souřadnice GPS a 3 nejbližší obce, každá ve své barvě (klepnutí na jednu: název a vzdálenost). Sdílet pošle souřadnice; Obce je ukáže nebo skryje.

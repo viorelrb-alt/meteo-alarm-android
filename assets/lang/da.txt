@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Et stort, dæmpet ur, når tel
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Én række under linjen: jordskælvet, derefter varslerne efter farve. Et tryk viser detaljerne.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Det kraftigste jordskælv de sidste 24 timer i dit land, og hvordan det sandsynligvis føltes (EMSC).
 The rows of boxes follow the finger.	Rækkerne af felter følger fingeren.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Sol / Måne, UV, Pollen, Fugtighed, Luftkvalitet, Lufttryk, Vind, Sigtbarhed, Kompas; et tryk viser detaljerne.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Hold på startskærmen › Widgets › Meteo Alarm. Træk i kanterne for at skifte layout (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Hold på widgetten › Indstillinger, eller ☰ › Widgets: by, baggrund, farver.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Hvert 15. minut med skærmen tændt, 30 med den slukket; MET Norway, når Open-Meteo er optaget.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Farvede søjler: nedbør ventet (en chance på 50 % eller mere, eller mindst 0,1 mm), i snefarven når det sner. Grå søjler: tørt.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Den stiplede linje viser 50 %; »nu« viser tidspunktet nu. Øverst: hvornår det regner (fra–til) og den højeste chance.
 Precipitation chart	Nedbørsgraf
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I temaets farver; den store og dagenes bevæger sig i 3 sekunder, når skærmen åbnes, efter hver opdatering eller når vejret skifter.
 Rain spells	Regn
 Snow spells	Sne
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Et tryk på nedbørsgrafen eller et 4-timers felt viser hver times chance og mængde (mm) og forklarer derefter grafen.
+Day length: 	Dagens længde: 
+Sunrise and sunset at the town, local time.	Solopgang og solnedgang i byen, lokal tid.
+Lit part of the Moon: 	Månens oplyste del: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Månens op- og nedgang i byen; cirklen viser månens oplyste del.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV-indeks: hvor stærke solens ultraviolette stråler er ved middag under klar himmel. 0–2 lav, 3–5 moderat, 6–7 høj, 8–10 meget høj, 11+ ekstrem.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Fra 3 og op: solbriller, hat og solcreme omkring middag.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Pollen i luften i dag, for planten med mest: lav, moderat, høj eller meget høj.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Relativ luftfugtighed: hvor meget vanddamp luften indeholder i forhold til det mest, den kan rumme ved denne temperatur. Over 90 % er tåge eller dug sandsynlig.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Amerikansk luftkvalitetsindeks (EPA, 0–500): 0–50 god, 51–100 moderat, over 150 usund. Lavere er bedre.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Europæisk luftkvalitetsindeks: det værste af fine partikler, ozon, kvælstofdioxid og svovldioxid. 0–20 god, 20–40 rimelig, over 60 dårlig. Lavere er bedre.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Lufttryk ved havniveau. Stigende: stabilt vejr på vej; hurtigt faldende: vind og regn kan komme.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Vindhastighed 10 m over jorden og retningen, den blæser fra (viseren på ringen).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Hvor langt man kan se: under 1 km dårlig (tåge), 1–4 km moderat, 4–10 km god, over 10 km meget god.
+The forecast for this hour at the town.	Prognosen for denne time i byen.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Prognosen for dagen i byen: den højeste og laveste temperatur, vejret og chancen for regn.
+Direction	Retning
+Latitude	Breddegrad
+Longitude	Længdegrad
+Place	Sted
+GPS accuracy	GPS-nøjagtighed
+the town (no GPS fix)	byen (ingen GPS)
+NEARBY TOWNS	NÆRMESTE BYER
+Towns	Byer
+Share the coordinates	Del koordinaterne
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	I temaets farver; alle bevæger sig i 3 sekunder, når skærmen åbnes, efter hver opdatering eller når vejret skifter, også på widgets.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sol / Måne, UV, Pollen, Luftfugtighed, Luftkvalitet, Tryk, Vind, Sigtbarhed, Kompas. Et tryk på et felt (også timerne og dagene) viser værdien øverst og forklaringerne under den.
+Big compass	Stort kompas
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Et tryk på feltet Kompas: et stort kompas, GPS-koordinaterne og de 3 nærmeste byer, hver i sin farve (et tryk på en: navn og afstand). Del sender koordinaterne; Byer viser eller skjuler dem.

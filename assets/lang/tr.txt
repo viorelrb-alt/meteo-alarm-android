@@ -552,7 +552,6 @@ A big dim clock while the phone charges at night.	Telefon gece şarj olurken bü
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Çizginin altında bir sıra: deprem, sonra renge göre uyarılar. Dokunma ayrıntıları gösterir.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Son 24 saatte ülkenizdeki en güçlü deprem ve muhtemelen nasıl hissedildiği (EMSC).
 The rows of boxes follow the finger.	Kutu sıraları parmağı izler.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula; dokunma ayrıntıları gösterir.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Ana ekrana basılı tutun › Widget'lar › Meteo Alarm. Düzeni değiştirmek için kenarları sürükleyin (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Widget'a basılı tutun › Ayarlar veya ☰ › Widget'lar: yerleşim, arka plan, renkler.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Ekran açıkken 15 dakikada, kapalıyken 30 dakikada bir; Open-Meteo meşgulken MET Norway.
@@ -794,7 +793,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Renkli çubuklar: yağış bekleniyor (%50 veya daha fazla olasılık ya da en az 0,1 mm), kar yağarken kar renginde. Gri çubuklar: kuru.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Noktalı çizgi %50'yi gösterir; “şimdi” şu anki saati gösterir. Üstte: ne zaman yağdığı (–den –e) ve en yüksek olasılık.
 Precipitation chart	Yağış grafiği
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Temanın renklerinde; büyük olan ve günlerinkiler ekran açılınca, her yenilemeden sonra veya hava değişince 3 saniye hareket eder.
 Rain spells	Yağmurlar
 Snow spells	Kar yağışları
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Yağış grafiğine veya 4 saatlik bir kutuya dokunmak her saatin olasılığını ve miktarını (mm) gösterir, ardından grafiği açıklar.
+Day length: 	Gün uzunluğu: 
+Sunrise and sunset at the town, local time.	Yerleşim yerinde gün doğumu ve gün batımı, yerel saat.
+Lit part of the Moon: 	Ay'ın aydınlık kısmı: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Yerleşim yerinde Ay'ın doğuşu ve batışı; daire Ay'ın aydınlık kısmını gösterir.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	UV indeksi: açık havada öğle saatinde güneşin morötesi ışınlarının ne kadar güçlü olduğu. 0–2 düşük, 3–5 orta, 6–7 yüksek, 8–10 çok yüksek, 11+ aşırı.
+From 3 up: sunglasses, a hat and sunscreen around midday.	3 ve üzeri: öğle saatlerinde güneş gözlüğü, şapka ve güneş kremi.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Bugün havadaki polen, en çok olan bitki için: düşük, orta, yüksek veya çok yüksek.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Bağıl nem: havanın bu sıcaklıkta tutabileceği en fazla miktara göre ne kadar su buharı taşıdığı. %90'ın üzerinde sis veya çiy olasıdır.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	ABD hava kalitesi indeksi (EPA, 0–500): 0–50 iyi, 51–100 orta, 150'nin üzeri sağlıksız. Düşük olan daha iyidir.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Avrupa hava kalitesi indeksi: ince partiküller, ozon, azot dioksit ve kükürt dioksitten en kötüsü. 0–20 iyi, 20–40 kabul edilebilir, 60'ın üzeri kötü. Düşük olan daha iyidir.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Deniz seviyesinde hava basıncı. Yükseliyor: durgun hava geliyor; hızla düşüyor: rüzgâr ve yağmur gelebilir.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Yerden 10 m yükseklikte rüzgâr hızı ve estiği yön (halkadaki işaretçi).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Ne kadar uzağı görebildiğimiz: 1 km altı kötü (sis), 1–4 km orta, 4–10 km iyi, 10 km üzeri çok iyi.
+The forecast for this hour at the town.	Yerleşim yerinde bu saatin tahmini.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Yerleşim yerinde günün tahmini: en yüksek ve en düşük sıcaklık, hava durumu ve yağmur olasılığı.
+Direction	Yön
+Latitude	Enlem
+Longitude	Boylam
+Place	Yer
+GPS accuracy	GPS doğruluğu
+the town (no GPS fix)	yerleşim yeri (GPS yok)
+NEARBY TOWNS	YAKINDAKİ YERLEŞİM YERLERİ
+Towns	Yerler
+Share the coordinates	Koordinatları paylaş
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Temanın renklerinde; hepsi ekran açıldığında, her yenilemeden sonra veya hava değiştiğinde 3 saniye hareket eder, widget'larda da.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula. Herhangi bir kutuya (saatler ve günler dahil) dokunmak değeri üstte, açıklamaları altında gösterir.
+Big compass	Büyük pusula
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Pusula kutusuna dokunma: büyük bir pusula, GPS koordinatları ve en yakın 3 yerleşim yeri, her biri kendi renginde (birine dokunma: ad ve mesafe). Paylaş koordinatları gönderir; Yerler onları gösterir veya gizler.

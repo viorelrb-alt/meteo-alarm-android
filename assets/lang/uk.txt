@@ -618,7 +618,6 @@ A big dim clock while the phone charges at night.	Великий приглуш�
 One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Один ряд під лінією: землетрус, потім попередження за кольором. Дотик показує подробиці.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Найсильніший землетрус за останні 24 години у твоїй країні і як його, імовірно, відчули (EMSC).
 The rows of boxes follow the finger.	Ряди полів рухаються за пальцем.
-Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass; a tap shows the details.	Сонце / Місяць, УФ, Пилок, Вологість, Якість повітря, Тиск, Вітер, Видимість, Компас; дотик показує подробиці.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Утримуй головний екран › Віджети › Meteo Alarm. Тягни краї, щоб змінити вигляд (2x2, 4x1, 4x2, 4x3).
 Hold the widget › Settings, or ☰ › Widgets: town, background, colours.	Утримуй віджет › Налаштування, або ☰ › Віджети: населений пункт, тло, кольори.
 Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.	Кожні 15 хвилин з увімкненим екраном, 30 з вимкненим; MET Norway, коли Open-Meteo зайнятий.
@@ -860,7 +859,34 @@ One bar for each of the next 12 hours; its height is the chance of rain or snow 
 Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Кольорові стовпчики: очікуються опади (ймовірність 50% і більше або щонайменше 0,1 мм), кольору снігу, коли йде сніг. Сірі стовпчики: сухо.
 The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Пунктир позначає 50%; «зараз» показує поточний час. Угорі: коли йде дощ (з–до) і найбільша ймовірність.
 Precipitation chart	Графік опадів
-In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	У кольорах теми; великий і значки днів рухаються 3 секунди, коли відкривається екран, після кожного оновлення або коли змінюється погода.
 Rain spells	Дощі
 Snow spells	Снігопади
 A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.	Дотик до графіка опадів або поля на 4 години показує ймовірність і кількість (мм) для кожної години, потім пояснює графік.
+Day length: 	Тривалість дня: 
+Sunrise and sunset at the town, local time.	Схід і захід Сонця в населеному пункті, місцевий час.
+Lit part of the Moon: 	Освітлена частина Місяця: 
+Moonrise and moonset at the town; the circle shows the lit part of the Moon.	Схід і захід Місяця в населеному пункті; коло показує освітлену частину Місяця.
+UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.	УФ-індекс: наскільки сильне ультрафіолетове випромінювання Сонця опівдні при ясному небі. 0–2 низький, 3–5 помірний, 6–7 високий, 8–10 дуже високий, 11+ екстремальний.
+From 3 up: sunglasses, a hat and sunscreen around midday.	Від 3 і вище: сонцезахисні окуляри, капелюх і сонцезахисний крем близько полудня.
+Pollen in the air today, for the plant with the most: low, moderate, high or very high.	Пилок у повітрі сьогодні, для рослини, якої найбільше: низький, помірний, високий або дуже високий.
+Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.	Відносна вологість: скільки водяної пари містить повітря порівняно з найбільшою можливою при цій температурі. Понад 90% імовірні туман або роса.
+US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.	Індекс якості повітря США (EPA, 0–500): 0–50 добра, 51–100 помірна, понад 150 шкідлива. Менше — краще.
+European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.	Європейський індекс якості повітря: найгірший із дрібних частинок, озону, діоксиду азоту та діоксиду сірки. 0–20 добра, 20–40 прийнятна, понад 60 погана. Менше — краще.
+Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.	Атмосферний тиск на рівні моря. Зростає: настає стала погода; швидко падає: можуть бути вітер і дощ.
+Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).	Швидкість вітру на висоті 10 м і напрямок, звідки він дме (покажчик на колі).
+How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.	Як далеко видно: менше 1 км погана (туман), 1–4 км помірна, 4–10 км добра, понад 10 км дуже добра.
+The forecast for this hour at the town.	Прогноз на цю годину в населеному пункті.
+The forecast for the day at the town: the highest and the lowest temperature, the weather and the chance of rain.	Прогноз на день у населеному пункті: найвища й найнижча температура, погода та ймовірність дощу.
+Direction	Напрямок
+Latitude	Широта
+Longitude	Довгота
+Place	Місце
+GPS accuracy	Точність GPS
+the town (no GPS fix)	населений пункт (без GPS)
+NEARBY TOWNS	НАЙБЛИЖЧІ НАСЕЛЕНІ ПУНКТИ
+Towns	Пункти
+Share the coordinates	Поділитися координатами
+In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	У кольорах теми; усі рухаються 3 секунди при відкритті екрана, після кожного оновлення або коли змінюється погода, і на віджетах.
+Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Сонце / Місяць, УФ, Пилок, Вологість, Якість повітря, Тиск, Вітер, Видимість, Компас. Дотик до будь-якого поля (і годин, і днів) показує значення вгорі та пояснення під ним.
+Big compass	Великий компас
+A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Дотик до поля Компас: великий компас, GPS-координати та 3 найближчі населені пункти, кожен своїм кольором (дотик до одного: назва й відстань). Поділитися надсилає координати; Пункти показує або ховає їх.
