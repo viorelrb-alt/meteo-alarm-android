@@ -1,4 +1,4 @@
-Versão atual: v.3.32 · 9.11.2026
+Versão atual: v.3.33 · 9.11.2026
 Melhorias de design / estrutura.
 - A página da parcela junta com a Estatística: em cima as caixas fixas de agora e do período; por baixo as tabelas de 12 horas e dia a dia.
 - A caixa «Notificações e avisos» de cada parcela liga todas as suas notificações, agora também neve e seca.

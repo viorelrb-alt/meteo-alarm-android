@@ -1,4 +1,4 @@
-Aktuelle Version: v.3.32 · 9.11.2026
+Aktuelle Version: v.3.33 · 9.11.2026
 Verbesserungen an Design / Struktur.
 - Die Parzellenseite mit der Statistik vereint: oben feste Felder für jetzt und den Zeitraum; darunter die Tabellen für 12 Stunden und Tag für Tag.
 - Das Kästchen „Benachrichtigungen und Warnungen“ jeder Parzelle schaltet alle ihre Benachrichtigungen ein, jetzt auch Schnee und Dürre.

@@ -1,4 +1,4 @@
-Současná verze: v.3.32 · 9.11.2026
+Současná verze: v.3.33 · 9.11.2026
 Vylepšení vzhledu / struktury.
 - Stránka parcely spojená se Statistikou: nahoře pevná pole pro teď a pro období; pod nimi tabulky na 12 hodin a den po dni.
 - Políčko „Oznámení a výstrahy“ u každé parcely zapne všechna její oznámení, nově i sníh a sucho.

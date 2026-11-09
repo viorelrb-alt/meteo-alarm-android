@@ -1,4 +1,4 @@
-Geçerli sürüm: v.3.32 · 9.11.2026
+Geçerli sürüm: v.3.33 · 9.11.2026
 Tasarım / yapı iyileştirmeleri.
 - Parsel sayfası İstatistik ile birleşti: üstte şimdinin ve dönemin sabit kutuları; altında 12 saatlik ve gün gün tablolar.
 - Her parseldeki “Bildirimler ve uyarılar” kutusu tüm bildirimlerini açar, artık kar ve kuraklık da var.

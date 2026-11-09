@@ -2001,8 +2001,7 @@ public final class FarmActivity extends Activity {
 		});
 		pdfBtn.setContentDescription(Tr.t("Save as PDF in Downloads", "Salvează PDF în Descărcări"));
 		top.addView(header(p.name, pdfBtn));
-		status = text(coords(p.lat, p.lon) + (f > 0 ? " · " + Tr.t("updated ", "actualizat ") + time(f) : ""), tx, false, dim);
-		top.addView(status, wide(4));
+		top.addView(text(coords(p.lat, p.lon), tx, false, dim), wide(4));
 		String period = shortDate(from) + " – " + shortDate(to);
 		top.addView(oneLine(Tr.t("Now", "Acum").toUpperCase() + "  ·  " + Tr.t("Summary", "Rezumat").toUpperCase() + " " + period, tx, contentW()), wide(8));
 		top.addView(boxRow(bx), wide(6));
@@ -2057,7 +2056,10 @@ public final class FarmActivity extends Activity {
 			tb.addView(foot);
 			col.addView(tb);
 			sv.addView(col);
-			root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+			LinearLayout page = column();
+			page.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+			addStatus(page, f, tx);
+			root.addView(page, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		} else {
 			LinearLayout body = column();
 			body.addView(top);
@@ -2100,9 +2102,19 @@ public final class FarmActivity extends Activity {
 				sv.addView(tb);
 				body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 			}
+			addStatus(body, f, tx);
 			root.addView(body, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		}
 		if (d == null || System.currentTimeMillis() - f > FRESH_MS) download(p);
+	}
+
+	/** v3.33 (Viorel): a fixed line at the bottom of the parcel page saying when the data were updated. */
+	private void addStatus(LinearLayout page, long f, float tx) {
+		page.addView(rule(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, px(1))));
+		String u = Tr.t("updated ", "actualizat ");
+		status = text(f > 0 ? u.substring(0, 1).toUpperCase() + u.substring(1) + time(f) : "", tx, false, dim);
+		status.setPadding(px(16), px(6), px(16), px(8));
+		page.addView(status, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 	}
 
 	/** "07.11" (or "11/7") of a date "2026-11-07". */
@@ -2199,7 +2211,7 @@ public final class FarmActivity extends Activity {
 
 	/** Off the main thread: the parcel's data; the page again when they come. */
 	private void download(final Parcels.Parcel p) {
-		if (status != null) status.setText(coords(p.lat, p.lon) + " · " + Tr.t("Downloading from Open-Meteo…", "Descarc de la Open-Meteo…"));
+		if (status != null) status.setText(Tr.t("Downloading from Open-Meteo…", "Descarc de la Open-Meteo…"));
 		final android.content.Context app = getApplicationContext();
 		new Thread(new Runnable() {
 			public void run() {

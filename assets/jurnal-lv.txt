@@ -1,4 +1,4 @@
-Pašreizējā versija: v.3.32 · 9.11.2026
+Pašreizējā versija: v.3.33 · 9.11.2026
 Dizaina / struktūras uzlabojumi.
 - Lauka lapa apvienota ar statistiku: augšā nekustīgi šī brīža un perioda lodziņi; zem tiem 12 stundu un dienu tabulas.
 - Katra lauka rūtiņa „Paziņojumi un brīdinājumi“ ieslēdz visus tā paziņojumus, tagad arī sniegu un sausumu.

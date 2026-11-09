@@ -1,4 +1,4 @@
-Trenutna različica: v.3.32 · 9.11.2026
+Trenutna različica: v.3.33 · 9.11.2026
 Izboljšave videza / zgradbe.
 - Stran parcele združena s Statistiko: zgoraj nepremična polja za zdaj in za obdobje; pod njimi tabeli za 12 ur in dan za dnem.
 - Polje »Obvestila in opozorila« pri vsaki parceli vklopi vsa njena obvestila, zdaj tudi sneg in sušo.

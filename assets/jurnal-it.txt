@@ -1,4 +1,4 @@
-Versione attuale: v.3.32 · 9.11.2026
+Versione attuale: v.3.33 · 9.11.2026
 Miglioramenti di design / struttura.
 - La pagina della parcella unita alle Statistiche: in alto le caselle fisse di adesso e del periodo; sotto le tabelle di 12 ore e giorno per giorno.
 - La casella «Notifiche e avvisi» di ogni parcella attiva tutte le sue notifiche, ora anche neve e siccità.
