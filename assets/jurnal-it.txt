@@ -1,15 +1,22 @@
-Versione attuale: v.3.51 · 9.11.2026
+Versione attuale: v.3.60 · 9.11.2026
+AGGIORNAMENTI
+- Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
+- Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
 - Prima di un aggiornamento, controllo del permesso di installazione e nota su Auto Blocker (Samsung) con pulsante per le impostazioni.
-- Notifiche come l'app Meteo del telefono («Luogo | Pioggia»): pioggia o neve entro un'ora e, dopo le 20, per domani, per la località e le parcelle; nessun avviso quando Open-Meteo risponde di nuovo.
-- Notifiche delle particelle, scelte con il pulsante campanella sulla mappa: pioggia, vento, neve, siccità.
-- Una notifica INFORMAZIONE a parte anche per la località.
-- Notifiche INFORMAZIONE separate per ogni appezzamento: brina, gelo, nebbia, pioggia gelata, raffiche forti.
+MODALITÀ AGRICOLTORE
 - Modalità agricoltore: nuove caselle dopo Acqua nel suolo: Irrorazione, Bilancio idrico, Temporali, Gradi-giorno, 16 giorni.
 - Negli USA, in modalità agricoltore: le caselle NWS, Siccità, Incendio, Grandine.
+NOTIFICHE
+- Notifiche come l'app Meteo del telefono («Luogo | Pioggia»): pioggia o neve entro un'ora e, dopo le 20, per domani, per la località e le parcelle; nessun avviso quando Open-Meteo risponde di nuovo.
+- Notifiche INFORMAZIONE separate per ogni appezzamento: brina, gelo, nebbia, pioggia gelata, raffiche forti.
+- Una notifica INFORMAZIONE a parte anche per la località.
+PARTICELLE
+- Notifiche delle particelle, scelte con il pulsante campanella sulla mappa: pioggia, vento, neve, siccità.
+SCHERMATA PRINCIPALE
 - Caselle INFORMAZIONE in Europa: brina, gelo, nebbia, pioggia che gela, vento forte.
-- Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Icona della connessione accanto all’orologio: Wi-Fi, dati mobili o nessuna.
-- Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
+TEMI
+- 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ☰ › Tema.
 - Miglioramenti del design e correzioni di errori.
 
 Versione 2 (v.2.00 – v.2.91)

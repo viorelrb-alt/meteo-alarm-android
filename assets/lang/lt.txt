@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Dabar atsisiunčia 
 The same as the town button.	Tas pats kaip miesto mygtukas.
 Switches between Celsius and Fahrenheit.	Perjungia Celsijų ir Farenheitą.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Perjungia laikrodį tarp 24 valandų ir 12 valandų (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Šviesi, Tamsi arba Automatinė (telefono jutiklis).
 Screen on ON / OFF	Ekranas įjungtas ĮJ. / IŠJ.
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ĮJ.: ekranas lieka įjungtas, kol programėlė atidaryta. IŠJ.: jis užgęsta po telefono laukimo laiko.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Sąraše yra anglų kalba ir šalies, kurioje yra telefonas, oficialiosios kalbos (pagal SIM kortelę arba mobilųjį tinklą; be jų pagal rodomą miestą). Pirmą kartą paleidus programėlė paima telefono kalbą, jei ją turi. Programėlė kalba visomis oficialiosiomis ES kalbomis ir ukrainiečių kalba.
@@ -845,3 +844,10 @@ Favourites USA	Mėgstamiausi JAV
 Air temp.: 	Oro temp.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Sklypuose komandos yra meniu ⋮ viršuje dešinėje; redagavimo puslapyje Ištrinti yra kairėje nuo Išsaugoti. Laukeliai rodo tik reikšmę; palietus rodomos detalės.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Po pavadinimu – vieta; ▲ ir ▼ šalia burbulo slenka aukštyn arba žemyn. Skyriai atskirti linijomis; lentelės telpa burbule arba slenka į šoną; šaltinis apačioje, vieną kartą.
+Monochrome	Vienspalvė
+Sage	Šalavijas
+Lavender	Levanda
+Sky	Dangus
+Peach	Persikas
+Rose	Rožė
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 spalvų temos: Vienspalvė, Šalavijas, Levanda, Dangus, Persikas, Rožė; po linija Šviesi, Tamsi arba Automatinė (telefono jutiklis).

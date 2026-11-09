@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Pobiera teraz pogod
 The same as the town button.	To samo co przycisk miejscowości.
 Switches between Celsius and Fahrenheit.	Przełącza między stopniami Celsjusza i Fahrenheita.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Przełącza zegar między 24 a 12 godzinami (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Jasny, Ciemny lub Automatyczny (czujnik telefonu).
 Screen on ON / OFF	Ekran włączony ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: ekran pozostaje włączony, dopóki aplikacja jest otwarta. OFF: gaśnie po czasie ustawionym w telefonie.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Lista zawiera angielski i języki urzędowe kraju, w którym jest telefon (z karty SIM lub sieci komórkowej; bez nich z pokazanej miejscowości). Przy pierwszym uruchomieniu aplikacja bierze język telefonu, jeśli go ma. Aplikacja mówi wszystkimi językami urzędowymi UE i po ukraińsku.
@@ -845,3 +844,10 @@ Favourites USA	Ulubione USA
 Air temp.: 	Temp. pow.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	W Działkach polecenia są w menu ⋮ w prawym górnym rogu; na stronie edycji Usuń jest po lewej stronie Zapisz. Pola pokazują tylko wartość; dotknięcie pokazuje szczegóły.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Pod tytułem miejsce; ▲ i ▼ obok dymka przewijają w górę lub w dół. Sekcje są oddzielone liniami; tabele mieszczą się w dymku lub przesuwają się na boki; źródło jest na dole, raz.
+Monochrome	Monochromatyczny
+Sage	Szałwia
+Lavender	Lawenda
+Sky	Niebo
+Peach	Brzoskwinia
+Rose	Róża
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 motywów kolorystycznych: Monochromatyczny, Szałwia, Lawenda, Niebo, Brzoskwinia, Róża; pod linią Jasny, Ciemny lub Automatyczny (czujnik telefonu).

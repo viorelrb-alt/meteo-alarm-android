@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Lataa sään, varoi
 The same as the town button.	Sama kuin kaupunkipainike.
 Switches between Celsius and Fahrenheit.	Vaihtaa Celsiuksen ja Fahrenheitin välillä.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Vaihtaa kellon 24 tunnin ja 12 tunnin (AM/PM) välillä.
-Light, Dark, or Automatic (phone sensor).	Vaalea, Tumma tai Automaattinen (puhelimen anturi).
 Screen on ON / OFF	Näyttö päällä PÄÄLLÄ / POIS
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	PÄÄLLÄ: näyttö pysyy päällä, kun sovellus on auki. POIS: se sammuu puhelimen aikakatkaisun jälkeen.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Luettelossa on englanti ja sen maan viralliset kielet, jossa puhelin on (SIM-kortista tai matkapuhelinverkosta; ilman niitä näytetystä kaupungista). Ensimmäisellä käynnistyksellä sovellus ottaa puhelimen kielen, jos sillä on se. Sovellus puhuu kaikkia EU:n virallisia kieliä ja ukrainaa.
@@ -845,3 +844,10 @@ Favourites USA	Suosikit USA
 Air temp.: 	Ilman lämpö: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Peltolohkoissa komennot ovat oikean yläkulman ⋮-valikossa; muokkaussivulla Poista on Tallenna-painikkeen vasemmalla. Ruudut näyttävät vain arvon; napautus näyttää tiedot.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Otsikon alla paikka; kuplan vieressä olevat ▲ ja ▼ vierittävät ylös tai alas. Osiot erotetaan viivoilla; taulukot mahtuvat kuplaan tai liukuvat sivuttain; lähde on alhaalla, kerran.
+Monochrome	Yksivärinen
+Sage	Salvia
+Lavender	Laventeli
+Sky	Taivas
+Peach	Persikka
+Rose	Ruusu
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 väriteemaa: Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu; viivan alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).

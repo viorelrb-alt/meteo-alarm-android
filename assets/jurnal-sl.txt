@@ -1,15 +1,22 @@
-Trenutna različica: v.3.51 · 9.11.2026
-- Pred posodobitvijo preverjanje dovoljenja za nameščanje in opomba o Auto Blocker (Samsung) z gumbom do nastavitev.
-- Obvestila kot v aplikaciji Vreme na telefonu (»Kraj | Dež«): dež ali sneg v naslednji uri in po 20. uri za jutri, za kraj in parcele; brez obvestila, ko Open-Meteo spet odgovori.
-- Obvestila za parcele, izbrana z gumbom zvonec na zemljevidu: dež, veter, sneg, suša.
-- Ločeno obvestilo INFORMACIJA tudi za kraj.
-- Ločena obvestila OBVESTILO za vsako parcelo: slana, zmrzal, megla, žled, močni sunki.
+Trenutna različica: v.3.60 · 9.11.2026
+GLAVNI ZASLON
+- Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
+- Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.
+KMETOVALSKI NAČIN
 - Kmetijski način: nova polja za Vodo v tleh: Škropljenje, Vodna bilanca, Nevihte, Toplotne vsote, 16 dni.
 - V ZDA v kmetijskem načinu: polja NWS, Suša, Požar, Toča.
-- Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.
+OBVESTILA
+- Ločena obvestila OBVESTILO za vsako parcelo: slana, zmrzal, megla, žled, močni sunki.
+- Ločeno obvestilo INFORMACIJA tudi za kraj.
+- Obvestila kot v aplikaciji Vreme na telefonu (»Kraj | Dež«): dež ali sneg v naslednji uri in po 20. uri za jutri, za kraj in parcele; brez obvestila, ko Open-Meteo spet odgovori.
+PARCELE
+- Obvestila za parcele, izbrana z gumbom zvonec na zemljevidu: dež, veter, sneg, suša.
+POSODOBITVE
 - Posodobitve iz treh virov: GitHub, drugi strežnik GitHub in Google Drive.
-- Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
 - Posodobitve: najprej se preveri povezava, že prenesena različica se takoj namesti, do 5 poskusov, ko GitHub ne odgovori, in prikaže se razlog.
+- Pred posodobitvijo preverjanje dovoljenja za nameščanje in opomba o Auto Blocker (Samsung) z gumbom do nastavitev.
+TEME
+- 6 barvnih tem (Enobarvna, Žajbelj, Sivka, Nebo, Breskev, Vrtnica), vsaka svetla in temna: ☰ › Tema.
 - Izboljšave oblikovanja in popravki napak.
 
 Različica 2 (v.2.00 – v.2.91)

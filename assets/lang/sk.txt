@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Stiahne hneď poča
 The same as the town button.	To isté ako tlačidlo obce.
 Switches between Celsius and Fahrenheit.	Prepína medzi stupňami Celzia a Fahrenheita.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Prepína hodiny medzi 24 a 12 hodinami (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Svetlý, Tmavý alebo Automatický (senzor telefónu).
 Screen on ON / OFF	Obrazovka zapnutá ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: obrazovka zostáva zapnutá, kým je aplikácia otvorená. OFF: zhasne po čase nastavenom v telefóne.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Zoznam obsahuje angličtinu a úradné jazyky krajiny, kde je telefón (podľa SIM karty alebo mobilnej siete; bez nich podľa zobrazenej obce). Pri prvom spustení aplikácia vezme jazyk telefónu, ak ho má. Aplikácia hovorí všetkými úradnými jazykmi EÚ a po ukrajinsky.
@@ -845,3 +844,10 @@ Favourites USA	Obľúbené USA
 Air temp.: 	Tepl. vzd.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	V Pozemkoch sú príkazy v ponuke ⋮ vpravo hore; na stránke úprav je Vymazať vľavo od Uložiť. Polia ukazujú len hodnotu; ťuknutie ukáže podrobnosti.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Pod nadpisom miesto; ▲ a ▼ vedľa bubliny posúvajú nahor alebo nadol. Časti oddeľujú čiary; tabuľky sa zmestia do bubliny alebo sa posúvajú do strán; zdroj je dole, raz.
+Monochrome	Monochromatický
+Sage	Šalvia
+Lavender	Levanduľa
+Sky	Nebo
+Peach	Broskyňa
+Rose	Ruža
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 farebných motívov: Monochromatický, Šalvia, Levanduľa, Nebo, Broskyňa, Ruža; pod čiarou Svetlý, Tmavý alebo Automatický (senzor telefónu).

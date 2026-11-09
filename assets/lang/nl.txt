@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Downloadt nu het we
 The same as the town button.	Hetzelfde als de plaatsknop.
 Switches between Celsius and Fahrenheit.	Wisselt tussen Celsius en Fahrenheit.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Wisselt de klok tussen 24 uur en 12 uur (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Licht, Donker of Automatisch (telefoonsensor).
 Screen on ON / OFF	Scherm aan AAN / UIT
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	AAN: het scherm blijft aan zolang de app open is. UIT: het gaat uit na de tijd van de telefoon.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	De lijst bevat Engels en de officiële talen van het land waar de telefoon is (van de simkaart of het mobiele netwerk; zonder, van de getoonde plaats). Bij de eerste start neemt de app de taal van de telefoon, als ze die heeft. De app spreekt alle officiële talen van de EU en Oekraïens.
@@ -845,3 +844,10 @@ Favourites USA	Favorieten VS
 Air temp.: 	Luchttemp.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	In Percelen staan de opdrachten in het menu ⋮ rechtsboven; op de bewerkpagina staat Verwijderen links van Opslaan. De vakken tonen alleen de waarde; tikken toont de details.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Onder de titel de plaats; ▲ en ▼ naast de ballon scrollen omhoog of omlaag. Delen zijn gescheiden door lijnen; tabellen passen in de ballon of schuiven opzij; de bron staat onderaan, één keer.
+Monochrome	Monochroom
+Sage	Salie
+Lavender	Lavendel
+Sky	Lucht
+Peach	Perzik
+Rose	Roos
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 kleurthema's: Monochroom, Salie, Lavendel, Lucht, Perzik, Roos; onder de lijn Licht, Donker of Automatisch (telefoonsensor).

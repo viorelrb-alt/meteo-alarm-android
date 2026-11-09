@@ -109,7 +109,6 @@ Refreshing by itself	Автоматическое обновление
 The ☰ menu	Меню ☰
 Switches between Celsius and Fahrenheit.	Переключает между Цельсием и Фаренгейтом.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Переключает часы между 24 и 12 часами (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Светлая, Тёмная или Автоматически (датчик телефона).
 Screen on ON / OFF	Экран включён ВКЛ / ВЫКЛ
 Location On / Off	Местоположение вкл. / выкл.
 Turns automatic location on or off (the same as the location button).	Включает или выключает автоопределение места (как кнопка местоположения).
@@ -779,3 +778,10 @@ Favourites USA	Избранное США
 Air temp.: 	Темп. возд.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	В разделе Участки команды находятся в меню ⋮ справа вверху; на странице правки Удалить слева от Сохранить. Поля показывают только значение; касание показывает подробности.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Под заголовком — место; ▲ и ▼ рядом с пузырьком прокручивают вверх или вниз. Разделы отделены линиями; таблицы помещаются в пузырёк или сдвигаются вбок; источник внизу, один раз.
+Monochrome	Монохромная
+Sage	Шалфей
+Lavender	Лаванда
+Sky	Небо
+Peach	Персик
+Rose	Роза
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 цветовых тем: Монохромная, Шалфей, Лаванда, Небо, Персик, Роза; под линией Светлая, Тёмная или Автоматическая (датчик телефона).

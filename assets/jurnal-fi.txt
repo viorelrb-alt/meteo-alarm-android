@@ -1,15 +1,22 @@
-Nykyinen versio: v.3.51 · 9.11.2026
-- Ennen päivitystä asennusluvan tarkistus ja Auto Blocker -huomautus (Samsung) painikkeella asetuksiin.
-- Ilmoitukset kuten puhelimen Sää-sovelluksessa (”Paikka | Sade”): sade tai lumi tunnin sisällä ja klo 20 jälkeen huomiselle, paikkakunnalle ja lohkoille; ei ilmoitusta, kun Open-Meteo vastaa taas.
-- Peltolohkojen ilmoitukset, valitaan kartan kellopainikkeella: sade, tuuli, lumi, kuivuus.
+Nykyinen versio: v.3.60 · 9.11.2026
+ILMOITUKSET
 - Erillinen TIEDOTE-ilmoitus myös paikkakunnalle.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.
+- Ilmoitukset kuten puhelimen Sää-sovelluksessa (”Paikka | Sade”): sade tai lumi tunnin sisällä ja klo 20 jälkeen huomiselle, paikkakunnalle ja lohkoille; ei ilmoitusta, kun Open-Meteo vastaa taas.
+PÄÄNÄYTTÖ
+- TIEDOTE-ruudut Euroopassa: kuura, halla, sumu, jäätävä sade, kova tuuli.
+- Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
+PÄIVITYKSET
+- Ennen päivitystä asennusluvan tarkistus ja Auto Blocker -huomautus (Samsung) painikkeella asetuksiin.
+- Päivitykset kolmesta lähteestä: GitHub, toinen GitHub-palvelin ja Google Drive.
+- Päivitykset: yhteys tarkistetaan ensin, jo ladattu versio asennetaan heti, enintään 5 yritystä, kun GitHub ei vastaa, ja syy näytetään.
+PELTOLOHKOT
+- Peltolohkojen ilmoitukset, valitaan kartan kellopainikkeella: sade, tuuli, lumi, kuivuus.
+TEEMAT
+- 6 väriteemaa (Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu), kukin vaalea ja tumma: ☰ › Teema.
+VILJELIJÄTILA
 - Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
-- TIEDOTE-ruudut Euroopassa: kuura, halla, sumu, jäätävä sade, kova tuuli.
-- Päivitykset kolmesta lähteestä: GitHub, toinen GitHub-palvelin ja Google Drive.
-- Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
-- Päivitykset: yhteys tarkistetaan ensin, jo ladattu versio asennetaan heti, enintään 5 yritystä, kun GitHub ei vastaa, ja syy näytetään.
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
 Versio 2 (v.2.00 – v.2.91)

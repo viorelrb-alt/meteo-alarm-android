@@ -1,15 +1,22 @@
-Versiunea curentă: v.3.51 · 9.11.2026
-- Înainte de actualizare, verificarea permisiunii de instalare și nota Auto Blocker (Samsung) cu buton spre setări.
-- Notificări ca în aplicația Vreme a telefonului („Loc | Ploaie”): ploaie sau ninsoare în următoarea oră și, după ora 20, pentru mâine, pentru localitate și parcele; fără notificare când Open-Meteo răspunde din nou.
-- Notificări pentru parcele, alese din butonul clopoțel de pe hartă: ploaie, vânt, ninsoare, secetă.
-- Notificare INFORMARE separată și pentru localitate.
-- Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.
-- Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
-- În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
-- Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
+Versiunea curentă: v.3.60 · 9.11.2026
+ACTUALIZĂRI
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
-- Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
+- Înainte de actualizare, verificarea permisiunii de instalare și nota Auto Blocker (Samsung) cu buton spre setări.
+ECRAN PRINCIPAL
+- Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
+- Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
+MOD FERMIER
+- În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
+- Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
+NOTIFICĂRI
+- Notificare INFORMARE separată și pentru localitate.
+- Notificări ca în aplicația Vreme a telefonului („Loc | Ploaie”): ploaie sau ninsoare în următoarea oră și, după ora 20, pentru mâine, pentru localitate și parcele; fără notificare când Open-Meteo răspunde din nou.
+- Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.
+PARCELE
+- Notificări pentru parcele, alese din butonul clopoțel de pe hartă: ploaie, vânt, ninsoare, secetă.
+TEME
+- 6 teme de culoare (Monocrom, Salvie, Lavandă, Cer, Piersică, Trandafir), fiecare luminoasă și întunecată: ☰ › Temă.
 - Îmbunătățiri de design și corectarea erorilor.
 
 Versiunea 2 (v.2.00 – v.2.91)

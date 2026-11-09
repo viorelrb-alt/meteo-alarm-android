@@ -1,15 +1,22 @@
-Verżjoni attwali: v.3.51 · 9.11.2026
-- Qabel aġġornament, kontroll tal-permess tal-installazzjoni u nota dwar Auto Blocker (Samsung) b'buttuna għas-settings.
-- Notifiki bħall-app tat-Temp tat-telefon (“Post | Xita”): xita jew borra fis-siegħa li ġejja u, wara t-8 ta' filgħaxija, għal għada, għall-lokalità u l-għelieqi; l-ebda avviż meta Open-Meteo jerġa' jwieġeb.
-- Notifiki għall-biċċiet tal-art, magħżula bil-buttuna tal-qanpiena fuq il-mappa: xita, riħ, borra, nixfa.
-- Notifika ta’ INFORMAZZJONI separata anke għall-lokalità.
-- Notifiki ta' INFORMAZZJONI separati għal kull għalqa: ġlata bajda, silġ, ċpar, xita ffriżata, buffuri qawwija.
-- Modalità tal-bidwi: kaxxi ġodda wara Ilma fil-ħamrija: Irxix, Bilanċ tal-ilma, Maltempi, Gradi-jiem, 16-il jum.
-- Fl-Istati Uniti, fil-modalità tal-bidwi: il-kaxxi NWS, Nixfa, Nar, Silġ.
-- Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.
+Verżjoni attwali: v.3.60 · 9.11.2026
+AĠĠORNAMENTI
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
-- Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
+- Qabel aġġornament, kontroll tal-permess tal-installazzjoni u nota dwar Auto Blocker (Samsung) b'buttuna għas-settings.
+GĦELIEQI
+- Notifiki għall-biċċiet tal-art, magħżula bil-buttuna tal-qanpiena fuq il-mappa: xita, riħ, borra, nixfa.
+MODALITÀ TAL-BIDWI
+- Fl-Istati Uniti, fil-modalità tal-bidwi: il-kaxxi NWS, Nixfa, Nar, Silġ.
+- Modalità tal-bidwi: kaxxi ġodda wara Ilma fil-ħamrija: Irxix, Bilanċ tal-ilma, Maltempi, Gradi-jiem, 16-il jum.
+NOTIFIKI
+- Notifika ta’ INFORMAZZJONI separata anke għall-lokalità.
+- Notifiki bħall-app tat-Temp tat-telefon (“Post | Xita”): xita jew borra fis-siegħa li ġejja u, wara t-8 ta' filgħaxija, għal għada, għall-lokalità u l-għelieqi; l-ebda avviż meta Open-Meteo jerġa' jwieġeb.
+- Notifiki ta' INFORMAZZJONI separati għal kull għalqa: ġlata bajda, silġ, ċpar, xita ffriżata, buffuri qawwija.
+SKRIN EWLIENI
+- Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
+- Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.
+TEMI
+- 6 temi tal-kulur (Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda), kull wieħed ċar u skur: ☰ › Tema.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 2 (v.2.00 – v.2.91)

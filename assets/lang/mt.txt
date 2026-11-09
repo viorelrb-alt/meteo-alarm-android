@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Iniżżel it-temp, 
 The same as the town button.	L-istess bħall-buttuna tal-belt.
 Switches between Celsius and Fahrenheit.	Jaqleb bejn Celsius u Fahrenheit.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Jaqleb l-arloġġ bejn 24 siegħa u 12-il siegħa (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Ċara, Skura, jew Awtomatika (sensur tat-telefown).
 Screen on ON / OFF	Skrin mixgħul MIXGĦUL / MITFI
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	MIXGĦUL: l-iskrin jibqa' mixgħul waqt li l-app tkun miftuħa. MITFI: jintefa wara l-ħin tat-telefown.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Il-lista fiha l-Ingliż u l-lingwi uffiċjali tal-pajjiż fejn jinsab it-telefown (mill-karta SIM jew min-netwerk mobbli; mingħajrhom, mill-belt murija). Fl-ewwel bidu l-app tieħu l-lingwa tat-telefown, jekk għandha. L-app titkellem il-lingwi uffiċjali kollha tal-UE u l-Ukren.
@@ -845,3 +844,10 @@ Favourites USA	Favoriti USA
 Air temp.: 	Temp. arja: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Fl-Għelieqi l-kmandi huma fil-menu ⋮ fuq il-lemin; fil-paġna tal-editjar Ħassar jinsab fuq ix-xellug ta' Issejvja. Il-kaxxi juru l-valur biss; tmiss turi d-dettalji.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Taħt it-titlu, il-post; ▲ u ▼ ħdejn il-bużżieqa jiskrollaw 'il fuq jew 'l isfel. It-taqsimiet huma mifruda b'linji; it-tabelli jidħlu fil-bużżieqa jew jiżżerżqu lejn il-ġenb; is-sors huwa isfel, darba.
+Monochrome	Monokromu
+Sage	Salvja
+Lavender	Lavanda
+Sky	Sema
+Peach	Ħawħa
+Rose	Warda
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temi tal-kulur: Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda; taħt il-linja Ċar, Skur jew Awtomatiku (sensur tat-telefon).

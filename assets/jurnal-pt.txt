@@ -1,15 +1,22 @@
-Versão atual: v.3.51 · 9.11.2026
+Versão atual: v.3.60 · 9.11.2026
+ATUALIZAÇÕES
 - Antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
-- Notificações como a app Tempo do telemóvel («Local | Chuva»): chuva ou neve na próxima hora e, depois das 20 h, para amanhã, para a localidade e as parcelas; sem aviso quando o Open-Meteo volta a responder.
-- Notificações das parcelas, escolhidas com o botão do sino no mapa: chuva, vento, neve, seca.
-- Uma notificação de INFORMAÇÃO própria também para a localidade.
-- Notificações de INFORMAÇÃO separadas para cada parcela: geada, gelo, nevoeiro, chuva gelada, rajadas fortes.
+- Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.
+- Atualizações: primeiro verifica-se a ligação, uma versão já descarregada instala-se logo, até 5 tentativas quando o GitHub não responde, e mostra-se o motivo.
+ECRÃ PRINCIPAL
+- Caixas INFORMAÇÃO na Europa: geada, congelação, nevoeiro, chuva gelada, vento forte.
+- Ícone de ligação junto ao relógio: Wi-Fi, dados móveis ou nenhuma.
+MODO AGRICULTOR
 - Modo agricultor: novas caixas depois de Água no solo: Pulverizar, Balanço hídrico, Tempestades, Graus-dia, 16 dias.
 - Nos EUA, em modo agricultor: as caixas NWS, Seca, Incêndio, Granizo.
-- Caixas INFORMAÇÃO na Europa: geada, congelação, nevoeiro, chuva gelada, vento forte.
-- Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.
-- Ícone de ligação junto ao relógio: Wi-Fi, dados móveis ou nenhuma.
-- Atualizações: primeiro verifica-se a ligação, uma versão já descarregada instala-se logo, até 5 tentativas quando o GitHub não responde, e mostra-se o motivo.
+NOTIFICAÇÕES
+- Notificações como a app Tempo do telemóvel («Local | Chuva»): chuva ou neve na próxima hora e, depois das 20 h, para amanhã, para a localidade e as parcelas; sem aviso quando o Open-Meteo volta a responder.
+- Notificações de INFORMAÇÃO separadas para cada parcela: geada, gelo, nevoeiro, chuva gelada, rajadas fortes.
+- Uma notificação de INFORMAÇÃO própria também para a localidade.
+PARCELAS
+- Notificações das parcelas, escolhidas com o botão do sino no mapa: chuva, vento, neve, seca.
+TEMAS
+- 6 temas de cor (Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa), cada um claro e escuro: ☰ › Tema.
 - Melhorias de design e correção de erros.
 
 Versão 2 (v.2.00 – v.2.91)

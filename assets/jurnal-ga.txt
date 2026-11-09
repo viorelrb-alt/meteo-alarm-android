@@ -1,15 +1,22 @@
-Leagan reatha: v.3.51 · 9.11.2026
-- Roimh nuashonrú, seiceáil ar chead suiteála agus nóta Auto Blocker (Samsung) le cnaipe chuig na socruithe.
-- Fógraí cosúil le haip Aimsire an fhóin („Áit | Báisteach“): báisteach nó sneachta laistigh den uair agus, tar éis 8 i.n., don lá amárach, don bhaile agus do na ceapacha; gan fógra nuair a fhreagraíonn Open-Meteo arís.
+Leagan reatha: v.3.60 · 9.11.2026
+CEAPACHA
 - Fógraí do na ceapacha, roghnaithe leis an gcnaipe cloigín ar an léarscáil: báisteach, gaoth, sneachta, triomach.
+FÓGRAÍ
 - Fógra FAISNÉIS ar leith don bhaile freisin.
+- Fógraí cosúil le haip Aimsire an fhóin („Áit | Báisteach“): báisteach nó sneachta laistigh den uair agus, tar éis 8 i.n., don lá amárach, don bhaile agus do na ceapacha; gan fógra nuair a fhreagraíonn Open-Meteo arís.
 - Fógraí FAISNÉISE ar leith do gach páirc: sioc bán, reo, ceo, báisteach reoite, siotaí láidre.
+MÓD FEIRMEORA
 - Mód feirmeora: boscaí nua i ndiaidh Uisce san ithir: Spréáil, Comhardú uisce, Stoirmeacha, Céimlaethanta, 16 lá.
 - Sna SA, i mód feirmeora: na boscaí NWS, Triomach, Dóiteán, Clocha sneachta.
-- Boscaí FAISNÉIS san Eoraip: sioc bán, reo, ceo, báisteach reoite, gaoth láidir.
+NUASHONRUITHE
 - Nuashonruithe ó thrí fhoinse: GitHub, dara freastalaí GitHub agus Google Drive.
-- Deilbhín ceangail in aice leis an gclog: Wi-Fi, sonraí móibíleacha nó gan cheangal.
 - Nuashonruithe: seiceáiltear an ceangal ar dtús, suiteáiltear leagan atá íoslódáilte cheana láithreach, suas le 5 iarracht nuair nach bhfreagraíonn GitHub, agus taispeántar an chúis.
+- Roimh nuashonrú, seiceáil ar chead suiteála agus nóta Auto Blocker (Samsung) le cnaipe chuig na socruithe.
+PRÍOMHSCÁILEÁN
+- Boscaí FAISNÉIS san Eoraip: sioc bán, reo, ceo, báisteach reoite, gaoth láidir.
+- Deilbhín ceangail in aice leis an gclog: Wi-Fi, sonraí móibíleacha nó gan cheangal.
+TÉAMAÍ
+- 6 théama datha (Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós), gach ceann geal agus dorcha: ☰ › Téama.
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
 
 Leagan 2 (v.2.00 – v.2.91)

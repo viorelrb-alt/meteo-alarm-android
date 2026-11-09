@@ -1,15 +1,22 @@
-Version actuelle : v.3.51 · 9.11.2026
-- Avant une mise à jour, vérification du droit d'installer et note sur Auto Blocker (Samsung) avec bouton vers les paramètres.
-- Notifications comme l'appli Météo du téléphone (« Lieu | Pluie ») : pluie ou neige dans l'heure et, après 20 h, pour demain, pour la localité et les parcelles ; plus d'avis quand Open-Meteo répond de nouveau.
-- Notifications des parcelles, choisies avec le bouton cloche de la carte : pluie, vent, neige, sécheresse.
-- Une notification INFORMATION séparée aussi pour la localité.
-- Notifications INFORMATION séparées pour chaque parcelle : gelée blanche, gel, brouillard, pluie verglaçante, fortes rafales.
-- Mode agriculteur : nouvelles cases après Eau dans le sol : Pulvérisation, Bilan hydrique, Orages, Degrés-jours, 16 jours.
-- Aux États-Unis, en mode agriculteur : les cases NWS, Sécheresse, Incendie, Grêle.
+Version actuelle : v.3.60 · 9.11.2026
+ÉCRAN PRINCIPAL
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
-- Mises à jour depuis trois sources : GitHub, un second serveur GitHub et Google Drive.
 - Icône de connexion à côté de l’horloge : Wi-Fi, données mobiles ou aucune.
+MISES À JOUR
+- Avant une mise à jour, vérification du droit d'installer et note sur Auto Blocker (Samsung) avec bouton vers les paramètres.
 - Mises à jour : la connexion est vérifiée d’abord, une version déjà téléchargée s’installe aussitôt, jusqu’à 5 essais quand GitHub ne répond pas, et la raison est affichée.
+- Mises à jour depuis trois sources : GitHub, un second serveur GitHub et Google Drive.
+MODE AGRICULTEUR
+- Aux États-Unis, en mode agriculteur : les cases NWS, Sécheresse, Incendie, Grêle.
+- Mode agriculteur : nouvelles cases après Eau dans le sol : Pulvérisation, Bilan hydrique, Orages, Degrés-jours, 16 jours.
+NOTIFICATIONS
+- Notifications comme l'appli Météo du téléphone (« Lieu | Pluie ») : pluie ou neige dans l'heure et, après 20 h, pour demain, pour la localité et les parcelles ; plus d'avis quand Open-Meteo répond de nouveau.
+- Notifications INFORMATION séparées pour chaque parcelle : gelée blanche, gel, brouillard, pluie verglaçante, fortes rafales.
+- Une notification INFORMATION séparée aussi pour la localité.
+PARCELLES
+- Notifications des parcelles, choisies avec le bouton cloche de la carte : pluie, vent, neige, sécheresse.
+THÈMES
+- 6 thèmes de couleur (Monochrome, Sauge, Lavande, Ciel, Pêche, Rose), chacun clair et sombre : ☰ › Thème.
 - Améliorations du design et corrections de bugs.
 
 Version 2 (v.2.00 – v.2.91)

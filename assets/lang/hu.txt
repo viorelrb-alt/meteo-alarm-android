@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Most letölti az id
 The same as the town button.	Ugyanaz, mint a település gomb.
 Switches between Celsius and Fahrenheit.	Vált a Celsius és a Fahrenheit között.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Vált a 24 és a 12 órás óra között (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Világos, Sötét vagy Automatikus (telefon érzékelője).
 Screen on ON / OFF	Bekapcsolt kijelző ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: a kijelző bekapcsolva marad, amíg az alkalmazás nyitva van. OFF: a telefonon beállított idő után kikapcsol.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	A listában az angol és annak az országnak a hivatalos nyelvei vannak, ahol a telefon van (a SIM-kártya vagy a mobilhálózat szerint; ezek nélkül a mutatott település szerint). Első indításkor az alkalmazás a telefon nyelvét veszi, ha megvan neki. Az alkalmazás az EU összes hivatalos nyelvén és ukránul beszél.
@@ -845,3 +844,10 @@ Favourites USA	Kedvencek USA
 Air temp.: 	Léghőm.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	A Parcellákban a parancsok a jobb felső ⋮ menüben vannak; a szerkesztő oldalon a Törlés a Mentés bal oldalán van. A mezők csak az értéket mutatják; koppintásra látszanak a részletek.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	A cím alatt a hely; a buborék melletti ▲ és ▼ felfelé vagy lefelé görget. A részeket vonalak választják el; a táblázatok beférnek a buborékba vagy oldalra csúsztathatók; a forrás alul van, egyszer.
+Monochrome	Egyszínű
+Sage	Zsálya
+Lavender	Levendula
+Sky	Ég
+Peach	Barack
+Rose	Rózsa
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 színtéma: Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa; a vonal alatt Világos, Sötét vagy Automatikus (telefon érzékelője).

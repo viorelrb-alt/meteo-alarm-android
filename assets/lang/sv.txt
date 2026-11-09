@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Hämtar vädret, va
 The same as the town button.	Samma som ortknappen.
 Switches between Celsius and Fahrenheit.	Växlar mellan Celsius och Fahrenheit.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Växlar klockan mellan 24 och 12 timmar (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Ljust, Mörkt eller Automatiskt (telefonens sensor).
 Screen on ON / OFF	Skärm på PÅ / AV
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	PÅ: skärmen förblir på medan appen är öppen. AV: den släcks efter telefonens tid.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Listan har engelska och de officiella språken i landet där telefonen är (från SIM-kortet eller mobilnätet; utan dem från den visade orten). Vid första start tar appen telefonens språk, om den har det. Appen talar alla EU:s officiella språk och ukrainska.
@@ -845,3 +844,10 @@ Favourites USA	Favoriter USA
 Air temp.: 	Lufttemp.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	I Skiften finns kommandona i menyn ⋮ uppe till höger; på redigeringssidan står Radera till vänster om Spara. Rutorna visar bara värdet; ett tryck visar detaljerna.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Under rubriken platsen; ▲ och ▼ vid bubblan rullar upp eller ner. Avsnitt skiljs av linjer; tabeller ryms i bubblan eller glider åt sidan; källan står längst ner, en gång.
+Monochrome	Monokrom
+Sage	Salvia
+Lavender	Lavendel
+Sky	Himmel
+Peach	Persika
+Rose	Ros
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 färgteman: Monokrom, Salvia, Lavendel, Himmel, Persika, Ros; under linjen Ljust, Mörkt eller Automatiskt (telefonens sensor).

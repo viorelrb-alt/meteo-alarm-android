@@ -1,15 +1,22 @@
-Obecna wersja: v.3.51 · 9.11.2026
+Obecna wersja: v.3.60 · 9.11.2026
+AKTUALIZACJE
+- Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
+- Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
 - Przed aktualizacją sprawdzenie zgody na instalację i uwaga o Auto Blocker (Samsung) z przyciskiem do ustawień.
-- Powiadomienia jak w aplikacji Pogoda w telefonie („Miejsce | Deszcz”): deszcz lub śnieg w ciągu godziny i po 20:00 na jutro, dla miejscowości i działek; bez powiadomienia, gdy Open-Meteo znów odpowiada.
+DZIAŁKI
 - Powiadomienia dla działek, wybierane przyciskiem dzwonka na mapie: deszcz, wiatr, śnieg, susza.
-- Osobne powiadomienie INFORMACJA także dla miejscowości.
+EKRAN GŁÓWNY
+- Ikona połączenia obok zegara: Wi-Fi, dane komórkowe lub brak.
+- Pola INFORMACJA w Europie: szron, przymrozek, mgła, marznący deszcz, silny wiatr.
+MOTYWY
+- 6 motywów kolorystycznych (Monochromatyczny, Szałwia, Lawenda, Niebo, Brzoskwinia, Róża), każdy jasny i ciemny: ☰ › Motyw.
+POWIADOMIENIA
 - Osobne powiadomienia INFORMACJA dla każdej działki: szron, mróz, mgła, marznący deszcz, silne porywy.
+- Osobne powiadomienie INFORMACJA także dla miejscowości.
+- Powiadomienia jak w aplikacji Pogoda w telefonie („Miejsce | Deszcz”): deszcz lub śnieg w ciągu godziny i po 20:00 na jutro, dla miejscowości i działek; bez powiadomienia, gdy Open-Meteo znów odpowiada.
+TRYB ROLNIKA
 - Tryb rolnika: nowe pola po Wodzie w glebie: Oprysk, Bilans wodny, Burze, Suma ciepła, 16 dni.
 - W USA, w trybie rolnika: pola NWS, Susza, Pożar, Grad.
-- Pola INFORMACJA w Europie: szron, przymrozek, mgła, marznący deszcz, silny wiatr.
-- Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
-- Ikona połączenia obok zegara: Wi-Fi, dane komórkowe lub brak.
-- Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
 - Ulepszenia wyglądu i poprawki błędów.
 
 Wersja 2 (v.2.00 – v.2.91)

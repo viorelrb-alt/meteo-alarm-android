@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Odmah preuzima vrij
 The same as the town button.	Isto kao gumb mjesta.
 Switches between Celsius and Fahrenheit.	Prebacuje između Celzija i Fahrenheita.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Prebacuje sat između 24 i 12 sati (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Svijetla, Tamna ili Automatski (senzor telefona).
 Screen on ON / OFF	Zaslon uključen ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: zaslon ostaje uključen dok je aplikacija otvorena. OFF: gasi se nakon vremena postavljenog u telefonu.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Popis ima engleski i službene jezike zemlje u kojoj je telefon (prema SIM kartici ili mobilnoj mreži; bez njih prema prikazanom mjestu). Pri prvom pokretanju aplikacija uzima jezik telefona, ako ga ima. Aplikacija govori sve službene jezike EU-a i ukrajinski.
@@ -845,3 +844,10 @@ Favourites USA	Omiljena SAD
 Air temp.: 	Temp. zraka: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	U Parcelama su naredbe u izborniku ⋮ gore desno; na stranici uređivanja Izbriši je lijevo od Spremi. Okviri pokazuju samo vrijednost; dodir pokazuje pojedinosti.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Ispod naslova mjesto; ▲ i ▼ uz oblačić pomiču gore ili dolje. Odjeljci su odvojeni crtama; tablice stanu u oblačić ili klize u stranu; izvor je dolje, jednom.
+Monochrome	Jednobojna
+Sage	Kadulja
+Lavender	Lavanda
+Sky	Nebo
+Peach	Breskva
+Rose	Ruža
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 tema boja: Jednobojna, Kadulja, Lavanda, Nebo, Breskva, Ruža; ispod crte Svijetla, Tamna ili Automatska (senzor telefona).

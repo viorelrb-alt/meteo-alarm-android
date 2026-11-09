@@ -1,15 +1,22 @@
-Huidige versie: v.3.51 · 9.11.2026
-- Voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
-- Meldingen zoals de Weer-app van de telefoon (‘Plaats | Regen’): regen of sneeuw binnen het uur en na 20 uur voor morgen, voor de plaats en de percelen; geen melding meer als Open-Meteo weer antwoordt.
-- Meldingen voor percelen, gekozen met de belknop op de kaart: regen, wind, sneeuw, droogte.
-- Een aparte INFORMATIE-melding ook voor de plaats.
-- Aparte INFORMATIE-meldingen voor elk perceel: rijp, vorst, mist, ijzel, zware windstoten.
+Huidige versie: v.3.60 · 9.11.2026
+BOERENMODUS
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.
+HOOFDSCHERM
 - INFORMATIE-vakken in Europa: rijp, vorst, mist, ijzel, harde wind.
-- Updates uit drie bronnen: GitHub, een tweede GitHub-server en Google Drive.
 - Verbindingspictogram naast de klok: wifi, mobiele data of geen.
+MELDINGEN
+- Aparte INFORMATIE-meldingen voor elk perceel: rijp, vorst, mist, ijzel, zware windstoten.
+- Een aparte INFORMATIE-melding ook voor de plaats.
+- Meldingen zoals de Weer-app van de telefoon (‘Plaats | Regen’): regen of sneeuw binnen het uur en na 20 uur voor morgen, voor de plaats en de percelen; geen melding meer als Open-Meteo weer antwoordt.
+PERCELEN
+- Meldingen voor percelen, gekozen met de belknop op de kaart: regen, wind, sneeuw, droogte.
+THEMA'S
+- 6 kleurthema's (Monochroom, Salie, Lavendel, Lucht, Perzik, Roos), elk licht en donker: ☰ › Thema.
+UPDATES
+- Updates uit drie bronnen: GitHub, een tweede GitHub-server en Google Drive.
 - Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.
+- Voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
 - Ontwerpverbeteringen en foutoplossingen.
 
 Versie 2 (v.2.00 – v.2.91)

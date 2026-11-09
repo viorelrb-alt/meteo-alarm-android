@@ -1,15 +1,22 @@
-Pašreizējā versija: v.3.51 · 9.11.2026
-- Pirms atjaunināšanas instalēšanas atļaujas pārbaude un Auto Blocker (Samsung) piezīme ar pogu uz iestatījumiem.
-- Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
-- Paziņojumi par laukiem, izvēlami ar zvaniņa pogu kartē: lietus, vējš, sniegs, sausums.
-- Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai.
-- Atsevišķi INFORMĀCIJAS paziņojumi katram laukam: sarma, sals, migla, apledojums, stipras brāzmas.
-- Zemnieka režīms: jauni lodziņi pēc Ūdens augsnē: Smidzināšana, Ūdens bilance, Vētras, Siltuma summa, 16 dienas.
-- ASV, zemnieka režīmā: lodziņi NWS, Sausums, Ugunsgrēks, Krusa.
-- INFORMĀCIJAS lodziņi Eiropā: sarma, salna, migla, salstošs lietus, stiprs vējš.
+Pašreizējā versija: v.3.60 · 9.11.2026
+ATJAUNINĀJUMI
 - Atjauninājumi no trim avotiem: GitHub, otrs GitHub serveris un Google Drive.
-- Savienojuma ikona pie pulksteņa: Wi-Fi, mobilie dati vai nav.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.
+- Pirms atjaunināšanas instalēšanas atļaujas pārbaude un Auto Blocker (Samsung) piezīme ar pogu uz iestatījumiem.
+GALVENAIS EKRĀNS
+- INFORMĀCIJAS lodziņi Eiropā: sarma, salna, migla, salstošs lietus, stiprs vējš.
+- Savienojuma ikona pie pulksteņa: Wi-Fi, mobilie dati vai nav.
+LAUKI
+- Paziņojumi par laukiem, izvēlami ar zvaniņa pogu kartē: lietus, vējš, sniegs, sausums.
+LAUKSAIMNIEKA REŽĪMS
+- ASV, zemnieka režīmā: lodziņi NWS, Sausums, Ugunsgrēks, Krusa.
+- Zemnieka režīms: jauni lodziņi pēc Ūdens augsnē: Smidzināšana, Ūdens bilance, Vētras, Siltuma summa, 16 dienas.
+MOTĪVI
+- 6 krāsu motīvi (Vienkrāsaina, Salvija, Lavanda, Debesis, Persiks, Roze), katrs gaišs un tumšs: ☰ › Motīvs.
+PAZIŅOJUMI
+- Atsevišķi INFORMĀCIJAS paziņojumi katram laukam: sarma, sals, migla, apledojums, stipras brāzmas.
+- Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai.
+- Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
 - Dizaina uzlabojumi un kļūdu labojumi.
 
 Versija 2 (v.2.00 – v.2.91)

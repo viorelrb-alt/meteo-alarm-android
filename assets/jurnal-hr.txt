@@ -1,15 +1,22 @@
-Trenutačna verzija: v.3.51 · 9.11.2026
+Trenutačna verzija: v.3.60 · 9.11.2026
+AŽURIRANJA
+- Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
+- Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
 - Prije ažuriranja provjera dopuštenja za instalaciju i napomena o Auto Blockeru (Samsung) s gumbom za postavke.
-- Obavijesti kao u aplikaciji Vrijeme na telefonu („Mjesto | Kiša”): kiša ili snijeg unutar sat vremena i nakon 20 h za sutra, za mjesto i parcele; bez obavijesti kad Open-Meteo ponovno odgovori.
-- Obavijesti za parcele, odabrane gumbom zvona na karti: kiša, vjetar, snijeg, suša.
-- Zasebna obavijest INFORMACIJA i za mjesto.
-- Zasebne obavijesti OBAVIJEST za svaku parcelu: mraz, smrzavanje, magla, ledena kiša, jaki udari.
+GLAVNI ZASLON
+- Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
+- Polja INFORMACIJA u Europi: mraz, smrzavanje, magla, ledena kiša, jak vjetar.
+NAČIN RADA ZA POLJOPRIVREDNIKE
 - Način rada za poljoprivrednike: nova polja nakon Vode u tlu: Prskanje, Vodna bilanca, Oluje, Toplinske jedinice, 16 dana.
 - U SAD-u, u načinu za poljoprivrednike: polja NWS, Suša, Požar, Tuča.
-- Polja INFORMACIJA u Europi: mraz, smrzavanje, magla, ledena kiša, jak vjetar.
-- Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
-- Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
-- Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
+OBAVIJESTI
+- Obavijesti kao u aplikaciji Vrijeme na telefonu („Mjesto | Kiša”): kiša ili snijeg unutar sat vremena i nakon 20 h za sutra, za mjesto i parcele; bez obavijesti kad Open-Meteo ponovno odgovori.
+- Zasebna obavijest INFORMACIJA i za mjesto.
+- Zasebne obavijesti OBAVIJEST za svaku parcelu: mraz, smrzavanje, magla, ledena kiša, jaki udari.
+PARCELE
+- Obavijesti za parcele, odabrane gumbom zvona na karti: kiša, vjetar, snijeg, suša.
+TEME
+- 6 tema boja (Jednobojna, Kadulja, Lavanda, Nebo, Breskva, Ruža), svaka svijetla i tamna: ☰ › Tema.
 - Poboljšanja dizajna i ispravci pogrešaka.
 
 Verzija 2 (v.2.00 – v.2.91)

@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Laadib ilma, hoiatu
 The same as the town button.	Sama mis linna nupp.
 Switches between Celsius and Fahrenheit.	Vahetab Celsiuse ja Fahrenheiti vahel.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Vahetab kella 24 tunni ja 12 tunni (AM/PM) vahel.
-Light, Dark, or Automatic (phone sensor).	Hele, Tume või Automaatne (telefoni andur).
 Screen on ON / OFF	Ekraan sees SEES / VÄLJAS
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	SEES: ekraan jääb sisse, kui rakendus on avatud. VÄLJAS: see kustub pärast telefoni ajalõppu.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Loendis on inglise keel ja selle riigi ametlikud keeled, kus telefon on (SIM-kaardi või mobiilsidevõrgu järgi; ilma nendeta näidatud linna järgi). Esimesel käivitamisel võtab rakendus telefoni keele, kui see tal on. Rakendus räägib kõiki ELi ametlikke keeli ja ukraina keelt.
@@ -845,3 +844,10 @@ Favourites USA	Lemmikud USA
 Air temp.: 	Õhutemp.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Põllulappides on käsud ülal paremal menüüs ⋮; muutmislehel on Kustuta nupust Salvesta vasakul. Kastid näitavad ainult väärtust; puudutus näitab üksikasju.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Pealkirja all koht; ▲ ja ▼ mulli kõrval kerivad üles või alla. Osad on eraldatud joontega; tabelid mahuvad mulli või libisevad külgsuunas; allikas on all, üks kord.
+Monochrome	Ühevärviline
+Sage	Salvei
+Lavender	Lavendel
+Sky	Taevas
+Peach	Virsik
+Rose	Roos
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 värviteemat: Ühevärviline, Salvei, Lavendel, Taevas, Virsik, Roos; joone all Hele, Tume või Automaatne (telefoni andur).

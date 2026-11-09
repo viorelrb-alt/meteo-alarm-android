@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.51";
+	static final String VERSION = "Meteo Alarm Android v3.60";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -251,6 +251,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.district = "";
 		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
 		// "sensor" (dark when the room is dark, from the light sensor).
+		ro.meteoalarm.android.core.Theme.pal = prefs.getInt("palette", 0);
 		String theme = prefs.getString("theme", "auto");
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		s.dark = theme.equals("dark") || (theme.equals("auto") && night) || (theme.equals("sensor") && roomDark);
@@ -259,9 +260,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.autoLoc = autoLoc();
 		s.sensorTheme = theme.equals("sensor");
 		barColours();
-		view.setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
+		view.setBackgroundColor(ro.meteoalarm.android.core.Theme.page(s.dark));
 		hideBars();
-		getWindow().getDecorView().setBackgroundColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
+		getWindow().getDecorView().setBackgroundColor(ro.meteoalarm.android.core.Theme.page(s.dark));
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		else if (!s.nightClock) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		if (sheet != null) sheet.setDark(s.dark);
@@ -1504,7 +1505,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (view == null) return;
 		// 0x10 = SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR (Android 8+): dark buttons on the light page.
 		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | (s.dark ? 0 : 0x10));
-		getWindow().setNavigationBarColor(s.dark ? 0xFF262624 : 0xFFFFFFFF);
+		getWindow().setNavigationBarColor(ro.meteoalarm.android.core.Theme.page(s.dark));
 	}
 
 	// --- Data --------------------------------------------------------------------------
@@ -2007,6 +2008,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/** Light, Dark, and Automatic (the phone's light sensor, when it has one). */
+	/**
+	 * v3.60 (Viorel): the 6 colour themes, a line, then Light and Dark with a box each (and
+	 * Automatic); every theme has both sides.
+	 */
 	private void pickTheme() {
 		reopen = new Runnable() {
 			public void run() {
@@ -2014,15 +2019,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		};
 		final boolean en = s.T.en;
-		final String[] keys = hasLight() ? new String[] { "light", "dark", "sensor" } : new String[] { "light", "dark" };
-		String[] names = { Tr.t("Light", "Luminos"), Tr.t("Dark", "Întunecat"), Tr.t("Automatic", "Automat") };
-		String[] icons = { "light", "dark", "sensor" };
+		final int nt = ro.meteoalarm.android.core.Theme.NAMES.length;
+		int pal = prefs.getInt("palette", 0);
 		String cur = prefs.getString("theme", "auto");
 		List<Bubble.Row> rows = Bubble.rows();
-		for (int k = 0; k < keys.length; k++) rows.add(new Bubble.Row(names[k], mini(icons[k]), Bubble.Row.ITEM, keys[k].equals(cur)));
+		for (int k = 0; k < nt; k++) {
+			String[] nm = ro.meteoalarm.android.core.Theme.NAMES[k];
+			rows.add(new Bubble.Row(Tr.t(nm[0], nm[1]), null, Bubble.Row.ITEM, k == pal));
+		}
+		rows.add(new Bubble.Row("", null, Bubble.Row.LINE, false));
+		final String auto = hasLight() ? "sensor" : "auto";
+		rows.add(new Bubble.Row(Tr.t("Light", "Luminos"), mini("light"), Bubble.Row.ITEM, false).tick(cur.equals("light")));
+		rows.add(new Bubble.Row(Tr.t("Dark", "Întunecat"), mini("dark"), Bubble.Row.ITEM, false).tick(cur.equals("dark")));
+		rows.add(new Bubble.Row(Tr.t("Automatic", "Automat"), mini("sensor"), Bubble.Row.ITEM, false).tick(cur.equals("auto") || cur.equals("sensor")));
 		bubble.show(view.px(s.btnMenu), bubbleWidth(0.3f, 160), Tr.t("Theme", "Temă"), rows, en, new Bubble.Pick() {
 			public void picked(int k) {
-				prefs.edit().putString("theme", keys[k]).apply();
+				if (k < nt) {
+					prefs.edit().putInt("palette", k).apply();
+					Log.i(MainActivity.this, "TEMA", "temă: " + ro.meteoalarm.android.core.Theme.NAMES[k][1]);
+				} else if (k > nt) {
+					String[] modes = { "light", "dark", auto };
+					prefs.edit().putString("theme", modes[k - nt - 1]).apply();
+				}
 				applySettings();
 				view.invalidate();
 			}
@@ -2434,7 +2452,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("refresh"), Tr.t("Refresh", "Reîmprospătare"), Tr.t("Downloads the weather now.", "Descarcă vremea acum."));
 		help.entry(mini("unit"), Tr.t("Temperature °C/°F", "Temperatura °C/°F"), Tr.t("Switches between Celsius and Fahrenheit.", "Comută între grade Celsius și Fahrenheit."));
 		help.entry(mini("clock"), Tr.t("Clock 12/24", "Ceas 12/24"), Tr.t("Switches the clock between 24 hours and 12 hours (AM/PM).", "Comută ceasul între 24 de ore și 12 ore (AM/PM)."));
-		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("Light, Dark, or Automatic (phone sensor).", "Luminos, Întunecat sau Automat (senzor telefon)."));
+		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).", "6 teme de culoare: Monocrom, Salvie, Lavandă, Cer, Piersică, Trandafir; sub linie Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("keepOn"), Tr.t("Boxes in ☰", "Căsuțele din ☰"), Tr.t("A box with X: the function is on; empty: off. A tap switches it and a message says so.",
 				"Căsuță cu X: funcția e pornită; goală: oprită. Atingerea o comută și un mesaj spune asta."));
 		help.entry(mini("keepOn"), Tr.t("Screen on", "Ecran aprins"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));

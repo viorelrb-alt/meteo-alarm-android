@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Télécharge mainte
 The same as the town button.	Comme le bouton de localité.
 Switches between Celsius and Fahrenheit.	Bascule entre Celsius et Fahrenheit.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Bascule l'horloge entre 24 heures et 12 heures (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Clair, Sombre ou Automatique (capteur du téléphone).
 Screen on ON / OFF	Écran allumé ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON : l'écran reste allumé tant que l'appli est ouverte. OFF : il s'éteint après le délai du téléphone.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	La liste contient l'anglais et les langues officielles du pays où se trouve le téléphone (d'après la carte SIM ou le réseau mobile ; sans eux, d'après la localité affichée). Au premier démarrage, l'appli prend la langue du téléphone, si elle l'a. L'appli parle toutes les langues officielles de l'UE et l'ukrainien.
@@ -845,3 +844,10 @@ Favourites USA	Favoris É.-U.
 Air temp.: 	Temp. air : 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Dans Parcelles, les commandes sont dans le menu ⋮ en haut à droite ; sur la page de modification, Supprimer est à gauche d'Enregistrer. Les cases n'affichent que la valeur ; un appui montre les détails.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Sous le titre, le lieu ; ▲ et ▼ à côté de la bulle font défiler vers le haut ou le bas. Les sections sont séparées par des lignes ; les tableaux tiennent dans la bulle ou glissent sur le côté ; la source est en bas, une fois.
+Monochrome	Monochrome
+Sage	Sauge
+Lavender	Lavande
+Sky	Ciel
+Peach	Pêche
+Rose	Rose
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 thèmes de couleur : Monochrome, Sauge, Lavande, Ciel, Pêche, Rose ; sous la ligne Clair, Sombre ou Automatique (capteur du téléphone).

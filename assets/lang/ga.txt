@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Íoslódálann sé 
 The same as the town button.	Mar an gcéanna le cnaipe an bhaile.
 Switches between Celsius and Fahrenheit.	Athraíonn sé idir Celsius agus Fahrenheit.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Athraíonn sé an clog idir 24 uair agus 12 uair (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Geal, Dorcha, nó Uathoibríoch (braiteoir an fhóin).
 Screen on ON / OFF	Scáileán air AIR / AS
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	AIR: fanann an scáileán air fad atá an aip oscailte. AS: múchann sé tar éis am scoir an fhóin.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Tá an Béarla sa liosta agus teangacha oifigiúla na tíre ina bhfuil an fón (ón gcárta SIM nó ón líonra soghluaiste; gan iad, ón mbaile a thaispeántar). Ag an gcéad tús glacann an aip teanga an fhóin, má tá sí aici. Labhraíonn an aip teangacha oifigiúla uile an AE agus an Úcráinis.
@@ -845,3 +844,10 @@ Favourites USA	Ceanáin SAM
 Air temp.: 	Teocht aeir: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	In Ceapacha tá na horduithe sa roghchlár ⋮ ag barr ar dheis; ar an leathanach eagarthóireachta tá Scrios ar chlé ó Sábháil. Ní thaispeánann na boscaí ach an luach; taispeánann tapáil na sonraí.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Faoin teideal, an áit; scrollaíonn ▲ agus ▼ in aice leis an mboilgeog suas nó síos. Tá línte idir na codanna; luíonn na táblaí sa bhoilgeog nó sleamhnaíonn siad i leataobh; tá an fhoinse ag an mbun, uair amháin.
+Monochrome	Aondathach
+Sage	Sáiste
+Lavender	Labhandar
+Sky	Spéir
+Peach	Péitseog
+Rose	Rós
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 théama datha: Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós; faoin líne Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).

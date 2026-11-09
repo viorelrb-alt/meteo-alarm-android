@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Κατεβάζει 
 The same as the town button.	Το ίδιο με το κουμπί του τόπου.
 Switches between Celsius and Fahrenheit.	Εναλλάσσει Κελσίου και Φαρενάιτ.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Εναλλάσσει το ρολόι μεταξύ 24 και 12 ωρών (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Φωτεινό, Σκούρο ή Αυτόματο (αισθητήρας τηλεφώνου).
 Screen on ON / OFF	Οθόνη αναμμένη ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: η οθόνη μένει αναμμένη όσο η εφαρμογή είναι ανοιχτή. OFF: σβήνει μετά τον χρόνο του τηλεφώνου.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Η λίστα έχει τα αγγλικά και τις επίσημες γλώσσες της χώρας όπου βρίσκεται το τηλέφωνο (από την κάρτα SIM ή το κινητό δίκτυο· χωρίς αυτά, από τον τόπο που εμφανίζεται). Στην πρώτη εκκίνηση η εφαρμογή παίρνει τη γλώσσα του τηλεφώνου, αν την έχει. Η εφαρμογή μιλά όλες τις επίσημες γλώσσες της ΕΕ και ουκρανικά.
@@ -845,3 +844,10 @@ Favourites USA	Αγαπημένα ΗΠΑ
 Air temp.: 	Θερμ. αέρα: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Στα Αγροτεμάχια οι εντολές είναι στο μενού ⋮ πάνω δεξιά· στη σελίδα επεξεργασίας η Διαγραφή είναι αριστερά της Αποθήκευσης. Τα πλαίσια δείχνουν μόνο την τιμή· ένα άγγιγμα δείχνει τις λεπτομέρειες.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Κάτω από τον τίτλο ο τόπος· τα ▲ και ▼ δίπλα στο συννεφάκι κυλούν πάνω ή κάτω. Οι ενότητες χωρίζονται με γραμμές· οι πίνακες χωρούν στο συννεφάκι ή σύρονται στο πλάι· η πηγή είναι κάτω, μία φορά.
+Monochrome	Μονόχρωμο
+Sage	Φασκόμηλο
+Lavender	Λεβάντα
+Sky	Ουρανός
+Peach	Ροδάκινο
+Rose	Τριαντάφυλλο
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 χρωματικά θέματα: Μονόχρωμο, Φασκόμηλο, Λεβάντα, Ουρανός, Ροδάκινο, Τριαντάφυλλο· κάτω από τη γραμμή Φωτεινό, Σκοτεινό ή Αυτόματο (αισθητήρας τηλεφώνου).

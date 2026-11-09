@@ -1,15 +1,22 @@
-Súčasná verzia: v.3.51 · 9.11.2026
+Súčasná verzia: v.3.60 · 9.11.2026
+AKTUALIZÁCIE
+- Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
+- Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
 - Pred aktualizáciou kontrola povolenia na inštaláciu a poznámka o Auto Blocker (Samsung) s tlačidlom do nastavení.
-- Oznámenia ako v aplikácii Počasie v telefóne („Miesto | Dážď“): dážď alebo sneh počas hodiny a po 20. hodine na zajtra, pre obec aj parcely; žiadne oznámenie, keď Open-Meteo znova odpovie.
+HLAVNÁ OBRAZOVKA
+- Ikona pripojenia vedľa hodín: Wi-Fi, mobilné dáta alebo žiadne.
+- Polia INFORMÁCIA v Európe: srieň, mráz, hmla, mrznúci dážď, silný vietor.
+MOTÍVY
+- 6 farebných motívov (Monochromatický, Šalvia, Levanduľa, Nebo, Broskyňa, Ruža), každý svetlý aj tmavý: ☰ › Motív.
+POZEMKY
 - Upozornenia pre pozemky, volené tlačidlom zvončeka na mape: dážď, vietor, sneh, sucho.
-- Samostatné oznámenie INFORMÁCIA aj pre obec.
-- Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
+REŽIM FARMÁRA
 - Režim farmára: nové polia za Vodou v pôde: Postrek, Vodná bilancia, Búrky, Teplotné sumy, 16 dní.
 - V USA v režime farmára: polia NWS, Sucho, Požiar, Krupobitie.
-- Polia INFORMÁCIA v Európe: srieň, mráz, hmla, mrznúci dážď, silný vietor.
-- Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
-- Ikona pripojenia vedľa hodín: Wi-Fi, mobilné dáta alebo žiadne.
-- Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
+UPOZORNENIA
+- Oznámenia ako v aplikácii Počasie v telefóne („Miesto | Dážď“): dážď alebo sneh počas hodiny a po 20. hodine na zajtra, pre obec aj parcely; žiadne oznámenie, keď Open-Meteo znova odpovie.
+- Samostatné oznámenie INFORMÁCIA aj pre obec.
+- Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
 - Vylepšenia vzhľadu a opravy chýb.
 
 Verzia 2 (v.2.00 – v.2.91)

@@ -1,14 +1,21 @@
-Current version: v.3.51 · 9.11.2026
-- Before an update, the install permission check and the Auto Blocker note (Samsung) with a button to the settings.
-- Notifications like the phone's Weather app (“Place | Rain”): rain or snow within the hour and, after 8 pm, for tomorrow, for the town and the parcels; no notice when Open-Meteo answers again.
-- Parcel notifications, chosen with the bell button on the map: rain, wind, snow, drought.
-- A separate INFORMATION notification for the town too.
-- Separate INFORMATION notifications for each parcel: frost, freeze, fog, freezing rain, strong gusts.
+Current version: v.3.60 · 9.11.2026
+FARMER MODE
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
-- INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
-- Updates from three sources: GitHub, a second GitHub server and Google Drive.
+MAIN SCREEN
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
+- INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
+NOTIFICATIONS
+- A separate INFORMATION notification for the town too.
+- Notifications like the phone's Weather app (“Place | Rain”): rain or snow within the hour and, after 8 pm, for tomorrow, for the town and the parcels; no notice when Open-Meteo answers again.
+- Separate INFORMATION notifications for each parcel: frost, freeze, fog, freezing rain, strong gusts.
+PARCELS
+- Parcel notifications, chosen with the bell button on the map: rain, wind, snow, drought.
+THEMES
+- 6 colour themes (Monochrome, Sage, Lavender, Sky, Peach, Rose), each light and dark: ☰ › Theme.
+UPDATES
+- Before an update, the install permission check and the Auto Blocker note (Samsung) with a button to the settings.
+- Updates from three sources: GitHub, a second GitHub server and Google Drive.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
 - Design improvements and bug fixes.
 

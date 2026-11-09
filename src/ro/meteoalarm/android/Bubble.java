@@ -177,15 +177,15 @@ final class Bubble extends FrameLayout {
 	}
 
 	private int ink() {
-		return dark ? 0xFFFAF9F5 : 0xFF000000;
+		return ro.meteoalarm.android.core.Theme.ink(dark);
 	}
 
 	private int page() {
-		return dark ? 0xFF262624 : 0xFFFFFFFF;
+		return ro.meteoalarm.android.core.Theme.page(dark);
 	}
 
 	private int line() {
-		return dark ? 0xFF5A5954 : 0xFF999999;
+		return ro.meteoalarm.android.core.Theme.thin(dark);
 	}
 
 	/**
@@ -220,7 +220,7 @@ final class Bubble extends FrameLayout {
 		title.setText(hasTitle ? head : "");
 		title.setTextColor(ink);
 		where.setTextSize(15 * zk);
-		where.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
+		where.setTextColor(ro.meteoalarm.android.core.Theme.dim(dark));
 		where.setText(at == null ? "" : at);
 		where.setVisibility(at == null || at.length() == 0 || !hasTitle ? GONE : VISIBLE);
 		list.removeAllViews();
@@ -276,7 +276,7 @@ final class Bubble extends FrameLayout {
 				t.setText(nb(r.text));
 				if (r.kind == Row.VALUE) values.add(t);
 				if (src) srcs.add(t);
-				t.setTextColor(src ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
+				t.setTextColor(src ? ro.meteoalarm.android.core.Theme.dim(dark) : ink);
 				t.setLineSpacing(2 * dp, 1);
 				t.setPadding((int) (16 * dp), (int) (2.5f * dp), (int) (16 * dp), (int) (2.5f * dp)); // v3.51: half the gap
 				list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
@@ -303,7 +303,7 @@ final class Bubble extends FrameLayout {
 			// v3.50 (Viorel): in an information bubble the section titles as big as the texts (0.5 smaller at most).
 			TextView t = text(c, (r.kind == Row.HEADER ? (info ? 17.5f : 13) : 15) * zk, r.kind == Row.HEADER || r.checked);
 			t.setText(r.kind == Row.HEADER ? r.text.toUpperCase() : r.text + (r.checked ? "  ✓" : "")); // v3.51: ✓ at the right
-			t.setTextColor(r.kind == Row.HEADER ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
+			t.setTextColor(r.kind == Row.HEADER ? ro.meteoalarm.android.core.Theme.dim(dark) : ink);
 			t.setGravity(Gravity.CENTER_VERTICAL);
 			int ph = (int) (16 * dp);
 			if (r.kind == Row.HEADER) t.setPadding(ph, (int) ((info ? 3 : 10) * dp), ph, (int) ((info ? 2 : 4) * dp));
@@ -678,9 +678,9 @@ final class Bubble extends FrameLayout {
 			tp.setColor(ink);
 			hp.setColor(ink);
 			Paint band = new Paint();
-			band.setColor(dark ? 0xFF3A3936 : 0xFFE8E6DC);
+			band.setColor(ro.meteoalarm.android.core.Theme.tableBand(dark));
 			c.drawRect(0, 0, getWidth(), rowH, band);
-			lp.setColor(dark ? 0xFF6B6A65 : 0xFF000000);
+			lp.setColor(ro.meteoalarm.android.core.Theme.grid(dark));
 			float x = sw / 2;
 			for (int j = 0; j <= colW.length; j++) {
 				c.drawLine(x, 0, x, h + sw / 2, lp);

@@ -89,19 +89,21 @@ public final class FarmActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle b) {
 		dark = getIntent().getBooleanExtra("dark", false);
+		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(this).getInt("palette", 0);
 		setTheme(dark ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
 		Lang.apply(this);
 		dp = getResources().getDisplayMetrics().density;
 		// The app's colours: the Kindle's black and white, or Claude's dark ones.
-		page = dark ? 0xFF262624 : 0xFFFFFFFF;
-		ink = dark ? 0xFFFAF9F5 : 0xFF000000;
-		dim = dark ? 0xFFA6A39A : 0xFF555555;
-		band = dark ? 0xFFEFE6D2 : 0xFF000000;
-		bandInk = dark ? 0xFF262624 : 0xFFFFFFFF;
-		card = dark ? 0xFF000000 : 0xFFFFFFFF;
-		btn = dark ? 0xFF30302E : 0xFFFFFFFF;
-		accent = dark ? 0xFFD97757 : 0xFF000000;
+		// v3.60: the colours of the theme in use.
+		page = ro.meteoalarm.android.core.Theme.page(dark);
+		ink = ro.meteoalarm.android.core.Theme.ink(dark);
+		dim = ro.meteoalarm.android.core.Theme.dim(dark);
+		band = ro.meteoalarm.android.core.Theme.band(dark);
+		bandInk = ro.meteoalarm.android.core.Theme.bandInk(dark);
+		card = ro.meteoalarm.android.core.Theme.card(dark);
+		btn = ro.meteoalarm.android.core.Theme.surface(dark);
+		accent = ro.meteoalarm.android.core.Theme.accent(dark);
 		Cities.City c = Cities.City.fromKey(Fetcher.prefs(this).getString("city", ""));
 		imp = Region.imperial(this, c);
 		clk12 = Region.clk12(this, c);
@@ -368,7 +370,7 @@ public final class FarmActivity extends Activity {
 		float longest = 0;
 		for (Item it : items) longest = Math.max(longest, pt.measureText(it.label));
 		int pw = Math.min(sw - px(24), Math.max(px(220), Math.round(longest) + px(40)));
-		int line = dark ? 0xFF6B6A65 : 0xFF000000;
+		int line = ro.meteoalarm.android.core.Theme.grid(dark);
 		for (int k = 0; k < items.size(); k++) {
 			final Item it = items.get(k);
 			if (k > 0) {
@@ -506,7 +508,7 @@ public final class FarmActivity extends Activity {
 			fp.setColor(ink);
 			c.drawRoundRect(all, r, r, fp);
 			tp.setTextSize(tSize);
-			tp.setColor(b.sum ? 0xFF262624 : bandInk);
+			tp.setColor(b.sum ? ro.meteoalarm.android.core.Theme.page(true) : bandInk);
 			Paint.FontMetrics fm = tp.getFontMetrics();
 			float lh = (fm.descent - fm.ascent) * 0.92f, top = (band - lh * lines.length) / 2f;
 			for (int k = 0; k < lines.length; k++) c.drawText(lines[k], w / 2f, top + k * lh - fm.ascent * 0.96f, tp);
@@ -748,7 +750,7 @@ public final class FarmActivity extends Activity {
 			int extra = (avail - total) / nc;
 			for (int k = 0; k < nc; k++) cw[k] += extra;
 		}
-		int line = dark ? 0xFF6B6A65 : 0xFF000000, thin = Math.max(1, px(1));
+		int line = ro.meteoalarm.android.core.Theme.grid(dark), thin = Math.max(1, px(1));
 		LinearLayout t = column();
 		GradientDrawable outer = new GradientDrawable();
 		outer.setStroke(thin, line);
@@ -1535,7 +1537,7 @@ public final class FarmActivity extends Activity {
 		final boolean[][] on = new boolean[all.size()][];
 		LinearLayout list = column();
 		list.setPadding(px(20), px(6), px(20), px(6));
-		int line = dark ? 0xFF6B6A65 : 0xFF000000;
+		int line = ro.meteoalarm.android.core.Theme.grid(dark);
 		for (int k = 0; k < all.size(); k++) {
 			final Parcels.Parcel p = all.get(k);
 			on[k] = new boolean[] { p.alerts };
@@ -2153,7 +2155,7 @@ public final class FarmActivity extends Activity {
 				a2.addView(c2);
 				two.addView(a1, new LinearLayout.LayoutParams(w1, ViewGroup.LayoutParams.MATCH_PARENT));
 				View vl = new View(this);
-				vl.setBackgroundColor(dark ? 0xFF6B6A65 : 0xFF000000);
+				vl.setBackgroundColor(ro.meteoalarm.android.core.Theme.grid(dark));
 				LinearLayout.LayoutParams vp = new LinearLayout.LayoutParams(Math.max(1, px(1)), ViewGroup.LayoutParams.MATCH_PARENT);
 				vp.leftMargin = (gp - px(1)) / 2;
 				vp.rightMargin = gp - px(1) - vp.leftMargin;

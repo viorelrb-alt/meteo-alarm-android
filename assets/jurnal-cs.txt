@@ -1,15 +1,22 @@
-Současná verze: v.3.51 · 9.11.2026
+Současná verze: v.3.60 · 9.11.2026
+AKTUALIZACE
+- Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
+- Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
 - Před aktualizací kontrola oprávnění k instalaci a poznámka o Auto Blocker (Samsung) s tlačítkem do nastavení.
+HLAVNÍ OBRAZOVKA
+- Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
+- Pole INFORMACE v Evropě: jinovatka, mráz, mlha, mrznoucí déšť, silný vítr.
+MOTIVY
+- 6 barevných motivů (Monochromatický, Šalvěj, Levandule, Nebe, Broskev, Růže), každý světlý i tmavý: ☰ › Motiv.
+OZNÁMENÍ
 - Oznámení jako v aplikaci Počasí v telefonu („Místo | Déšť“): déšť nebo sníh během hodiny a po 20. hodině na zítřek, pro obec i parcely; žádné oznámení, když Open-Meteo znovu odpoví.
-- Oznámení pro pozemky, volená tlačítkem zvonku na mapě: déšť, vítr, sníh, sucho.
-- Samostatné oznámení INFORMACE i pro obec.
 - Samostatná oznámení INFORMACE pro každou parcelu: jinovatka, mráz, mlha, mrznoucí déšť, silné nárazy.
+- Samostatné oznámení INFORMACE i pro obec.
+POZEMKY
+- Oznámení pro pozemky, volená tlačítkem zvonku na mapě: déšť, vítr, sníh, sucho.
+REŽIM FARMÁŘE
 - Režim farmáře: nová pole za Vodou v půdě: Postřik, Vodní bilance, Bouřky, Teplotní sumy, 16 dní.
 - V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.
-- Pole INFORMACE v Evropě: jinovatka, mráz, mlha, mrznoucí déšť, silný vítr.
-- Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
-- Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
-- Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
 - Vylepšení vzhledu a opravy chyb.
 
 Verze 2 (v.2.00 – v.2.91)

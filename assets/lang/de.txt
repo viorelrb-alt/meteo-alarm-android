@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Lädt jetzt Wetter,
 The same as the town button.	Wie die Orts-Taste.
 Switches between Celsius and Fahrenheit.	Wechselt zwischen Celsius und Fahrenheit.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Wechselt die Uhr zwischen 24 und 12 Stunden (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Hell, Dunkel oder Automatisch (Telefonsensor).
 Screen on ON / OFF	Bildschirm an EIN / AUS
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	EIN: Der Bildschirm bleibt an, solange die App offen ist. AUS: Er geht nach der Zeit des Telefons aus.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Die Liste enthält Englisch und die Amtssprachen des Landes, in dem das Telefon ist (von der SIM-Karte oder dem Mobilnetz; ohne sie vom angezeigten Ort). Beim ersten Start nimmt die App die Sprache des Telefons, wenn sie sie hat. Die App spricht alle Amtssprachen der EU und Ukrainisch.
@@ -845,3 +844,10 @@ Favourites USA	Favoriten USA
 Air temp.: 	Lufttemp.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	In Parzellen sind die Befehle im Menü ⋮ oben rechts; auf der Bearbeitungsseite steht Löschen links von Speichern. Die Felder zeigen nur den Wert; Tippen zeigt die Details.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Unter dem Titel der Ort; ▲ und ▼ neben der Blase scrollen nach oben oder unten. Abschnitte sind durch Linien getrennt; Tabellen passen in die Blase oder lassen sich seitlich schieben; die Quelle steht unten, einmal.
+Monochrome	Monochrom
+Sage	Salbei
+Lavender	Lavendel
+Sky	Himmel
+Peach	Pfirsich
+Rose	Rose
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 Farbdesigns: Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose; unter der Linie Hell, Dunkel oder Automatisch (Telefonsensor).

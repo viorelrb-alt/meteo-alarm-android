@@ -1,15 +1,22 @@
-Dabartinė versija: v.3.51 · 9.11.2026
+Dabartinė versija: v.3.60 · 9.11.2026
+NAUJINIMAI
+- Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
+- Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
 - Prieš naujinimą – diegimo leidimo patikra ir Auto Blocker (Samsung) pastaba su mygtuku į nustatymus.
-- Pranešimai kaip telefono Orų programoje („Vieta | Lietus“): lietus ar sniegas per valandą ir po 20 val. rytojui, gyvenvietei ir sklypams; jokio pranešimo, kai Open-Meteo vėl atsako.
-- Sklypų pranešimai, pasirenkami žemėlapio varpelio mygtuku: lietus, vėjas, sniegas, sausra.
+PAGRINDINIS EKRANAS
+- INFORMACIJOS langeliai Europoje: šerkšnas, šalna, rūkas, lijundra, stiprus vėjas.
+- Ryšio piktograma šalia laikrodžio: Wi-Fi, mobilieji duomenys arba nėra.
+PRANEŠIMAI
 - Atskiras INFORMACIJOS pranešimas ir gyvenvietei.
 - Atskiri INFORMACIJOS pranešimai kiekvienam sklypui: šerkšnas, šalna, rūkas, lijundra, stiprūs gūsiai.
-- Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
+- Pranešimai kaip telefono Orų programoje („Vieta | Lietus“): lietus ar sniegas per valandą ir po 20 val. rytojui, gyvenvietei ir sklypams; jokio pranešimo, kai Open-Meteo vėl atsako.
+SKLYPAI
+- Sklypų pranešimai, pasirenkami žemėlapio varpelio mygtuku: lietus, vėjas, sniegas, sausra.
+TEMOS
+- 6 spalvų temos (Vienspalvė, Šalavijas, Levanda, Dangus, Persikas, Rožė), kiekviena šviesi ir tamsi: ☰ › Tema.
+ŪKININKO REŽIMAS
 - JAV, ūkininko režimu: langeliai NWS, Sausra, Gaisras, Kruša.
-- INFORMACIJOS langeliai Europoje: šerkšnas, šalna, rūkas, lijundra, stiprus vėjas.
-- Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
-- Ryšio piktograma šalia laikrodžio: Wi-Fi, mobilieji duomenys arba nėra.
-- Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
+- Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
 - Dizaino patobulinimai ir klaidų taisymai.
 
 2 versija (v.2.00 – v.2.91)

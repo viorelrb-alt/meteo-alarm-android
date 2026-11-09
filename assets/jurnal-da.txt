@@ -1,15 +1,22 @@
-Nuværende version: v.3.51 · 9.11.2026
-- Før en opdatering tjek af installationstilladelsen og note om Auto Blocker (Samsung) med knap til indstillingerne.
-- Notifikationer som telefonens Vejr-app (”Sted | Regn”): regn eller sne inden for en time og efter kl. 20 for i morgen, for byen og markerne; ingen besked, når Open-Meteo svarer igen.
-- Notifikationer for marker, valgt med klokkeknappen på kortet: regn, vind, sne, tørke.
-- En separat INFORMATION-notifikation også for byen.
-- Separate INFORMATION-notifikationer for hver mark: rimfrost, frost, tåge, isslag, kraftige vindstød.
-- Landmandstilstand: nye felter efter Vand i jorden: Sprøjtning, Vandbalance, Storme, Graddage, 16 dage.
-- I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.
-- INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
-- Opdateringer fra tre kilder: GitHub, en anden GitHub-server og Google Drive.
+Nuværende version: v.3.60 · 9.11.2026
+HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi, mobildata eller ingen.
+- INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
+LANDMANDSTILSTAND
+- I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.
+- Landmandstilstand: nye felter efter Vand i jorden: Sprøjtning, Vandbalance, Storme, Graddage, 16 dage.
+MARKER
+- Notifikationer for marker, valgt med klokkeknappen på kortet: regn, vind, sne, tørke.
+NOTIFIKATIONER
+- En separat INFORMATION-notifikation også for byen.
+- Notifikationer som telefonens Vejr-app (”Sted | Regn”): regn eller sne inden for en time og efter kl. 20 for i morgen, for byen og markerne; ingen besked, når Open-Meteo svarer igen.
+- Separate INFORMATION-notifikationer for hver mark: rimfrost, frost, tåge, isslag, kraftige vindstød.
+OPDATERINGER
+- Før en opdatering tjek af installationstilladelsen og note om Auto Blocker (Samsung) med knap til indstillingerne.
+- Opdateringer fra tre kilder: GitHub, en anden GitHub-server og Google Drive.
 - Opdateringer: forbindelsen tjekkes først, en allerede hentet version installeres straks, op til 5 forsøg, når GitHub ikke svarer, og årsagen vises.
+TEMAER
+- 6 farvetemaer (Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose), hvert lyst og mørkt: ☰ › Tema.
 - Designforbedringer og fejlrettelser.
 
 Version 2 (v.2.00 – v.2.91)

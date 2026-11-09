@@ -1,15 +1,22 @@
-Geçerli sürüm: v.3.51 · 9.11.2026
-- Güncellemeden önce yükleme izni kontrolü ve ayarlara düğmeli Auto Blocker (Samsung) notu.
-- Telefonun Hava Durumu uygulaması gibi bildirimler (“Yer | Yağmur”): bir saat içinde yağmur veya kar ve saat 20'den sonra yarın için, yerleşim yeri ve parseller için; Open-Meteo yeniden yanıt verdiğinde bildirim yok.
-- Parsel bildirimleri, haritadaki zil düğmesiyle seçilir: yağmur, rüzgâr, kar, kuraklık.
-- Yerleşim yeri için de ayrı bir BİLGİ bildirimi.
-- Her parsel için ayrı BİLGİ bildirimleri: kırağı, don, sis, donan yağmur, kuvvetli hamleler.
-- Çiftçi modu: Topraktaki sudan sonra yeni kutular: İlaçlama, Su dengesi, Fırtınalar, Sıcaklık toplamı, 16 gün.
-- ABD'de, çiftçi modunda: NWS, Kuraklık, Yangın, Dolu kutuları.
+Geçerli sürüm: v.3.60 · 9.11.2026
+ANA EKRAN
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
-- Üç kaynaktan güncelleme: GitHub, ikinci bir GitHub sunucusu ve Google Drive.
 - Saatin yanında bağlantı simgesi: Wi-Fi, mobil veri veya yok.
+BILDIRIMLER
+- Her parsel için ayrı BİLGİ bildirimleri: kırağı, don, sis, donan yağmur, kuvvetli hamleler.
+- Telefonun Hava Durumu uygulaması gibi bildirimler (“Yer | Yağmur”): bir saat içinde yağmur veya kar ve saat 20'den sonra yarın için, yerleşim yeri ve parseller için; Open-Meteo yeniden yanıt verdiğinde bildirim yok.
+- Yerleşim yeri için de ayrı bir BİLGİ bildirimi.
+ÇIFTÇI MODU
+- ABD'de, çiftçi modunda: NWS, Kuraklık, Yangın, Dolu kutuları.
+- Çiftçi modu: Topraktaki sudan sonra yeni kutular: İlaçlama, Su dengesi, Fırtınalar, Sıcaklık toplamı, 16 gün.
+GÜNCELLEMELER
+- Güncellemeden önce yükleme izni kontrolü ve ayarlara düğmeli Auto Blocker (Samsung) notu.
 - Güncellemeler: önce bağlantı kontrol edilir, zaten indirilmiş sürüm hemen kurulur, GitHub yanıt vermezse 5 denemeye kadar, ve neden gösterilir.
+- Üç kaynaktan güncelleme: GitHub, ikinci bir GitHub sunucusu ve Google Drive.
+PARSELLER
+- Parsel bildirimleri, haritadaki zil düğmesiyle seçilir: yağmur, rüzgâr, kar, kuraklık.
+TEMALAR
+- 6 renk teması (Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül), her biri açık ve koyu: ☰ › Tema.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 2 (v.2.00 – v.2.91)

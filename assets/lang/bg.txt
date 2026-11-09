@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Изтегля ве
 The same as the town button.	Същото като бутона за селище.
 Switches between Celsius and Fahrenheit.	Превключва между Целзий и Фаренхайт.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Превключва часовника между 24 и 12 часа (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Светла, Тъмна или Автоматично (сензор на телефона).
 Screen on ON / OFF	Включен екран ON / OFF
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	ON: екранът остава включен, докато приложението е отворено. OFF: изгасва след времето, зададено в телефона.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Списъкът съдържа английски и официалните езици на страната, в която е телефонът (по SIM картата или мобилната мрежа; без тях по показаното селище). При първото стартиране приложението взема езика на телефона, ако го има. Приложението говори всички официални езици на ЕС и украински.
@@ -845,3 +844,10 @@ Favourites USA	Любими САЩ
 Air temp.: 	Темп. въздух: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	В Парцели командите са в менюто ⋮ горе вдясно; на страницата за редакция Изтрий е вляво от Запази. Полетата показват само стойността; докосване показва подробностите.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Под заглавието – мястото; ▲ и ▼ до балончето превъртат нагоре или надолу. Разделите са отделени с линии; таблиците се побират в балончето или се плъзгат встрани; източникът е долу, веднъж.
+Monochrome	Монохромна
+Sage	Градински чай
+Lavender	Лавандула
+Sky	Небе
+Peach	Праскова
+Rose	Роза
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 цветови теми: Монохромна, Градински чай, Лавандула, Небе, Праскова, Роза; под линията Светла, Тъмна или Автоматична (сензор на телефона).

@@ -109,7 +109,6 @@ Refreshing by itself	Kendiliğinden yenileme
 The ☰ menu	☰ menüsü
 Switches between Celsius and Fahrenheit.	Celsius ve Fahrenheit arasında geçiş yapar.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Saati 24 saat ile 12 saat (ÖÖ/ÖS) arasında değiştirir.
-Light, Dark, or Automatic (phone sensor).	Açık, Koyu veya Otomatik (telefon sensörü).
 Screen on ON / OFF	Ekran açık AÇIK / KAPALI
 Location On / Off	Konum Açık / Kapalı
 Turns automatic location on or off (the same as the location button).	Otomatik konumu açar veya kapatır (konum düğmesiyle aynı).
@@ -779,3 +778,10 @@ Favourites USA	Favoriler ABD
 Air temp.: 	Hava sıc.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Parsellerde komutlar sağ üstteki ⋮ menüsündedir; düzenleme sayfasında Sil, Kaydet'in solundadır. Kutular yalnızca değeri gösterir; dokunmak ayrıntıları gösterir.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Başlığın altında yer; balonun yanındaki ▲ ve ▼ yukarı veya aşağı kaydırır. Bölümler çizgilerle ayrılır; tablolar balona sığar veya yana kayar; kaynak altta, bir kez.
+Monochrome	Tek renk
+Sage	Adaçayı
+Lavender	Lavanta
+Sky	Gökyüzü
+Peach	Şeftali
+Rose	Gül
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 renk teması: Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül; çizginin altında Açık, Koyu veya Otomatik (telefon sensörü).

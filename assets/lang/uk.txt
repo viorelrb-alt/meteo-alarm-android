@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Завантажу�
 The same as the town button.	Те саме, що кнопка міста.
 Switches between Celsius and Fahrenheit.	Перемикає між Цельсієм і Фаренгейтом.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Перемикає годинник між 24 годинами і 12 годинами (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Світла, Темна або Автоматична (датчик телефона).
 Screen on ON / OFF	Екран увімкнений УВІМК. / ВИМК.
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	УВІМК.: екран залишається увімкненим, поки застосунок відкритий. ВИМК.: він вимикається після тайм-ауту телефона.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	У списку є англійська та офіційні мови країни, де перебуває телефон (за SIM-карткою або мобільною мережею; без них — за показаним містом). Під час першого запуску застосунок бере мову телефона, якщо вона в нього є. Застосунок говорить усіма офіційними мовами ЄС і українською.
@@ -845,3 +844,10 @@ Favourites USA	Обрані США
 Air temp.: 	Темп. повітря: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	У Ділянках команди в меню ⋮ праворуч угорі; на сторінці редагування Видалити ліворуч від Зберегти. Поля показують лише значення; дотик показує подробиці.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Під заголовком — місце; ▲ і ▼ біля бульбашки прокручують угору або вниз. Розділи відокремлені лініями; таблиці вміщуються в бульбашку або зсуваються вбік; джерело внизу, один раз.
+Monochrome	Монохромна
+Sage	Шавлія
+Lavender	Лаванда
+Sky	Небо
+Peach	Персик
+Rose	Троянда
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 колірних тем: Монохромна, Шавлія, Лаванда, Небо, Персик, Троянда; під лінією Світла, Темна або Автоматична (датчик телефона).

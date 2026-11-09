@@ -182,7 +182,7 @@ public final class Screen {
 	public static int[] theme;
 
 	private Palette pal() {
-		return theme != null ? new Palette(theme) : dark ? Palette.DARK : Palette.LIGHT;
+		return new Palette(theme != null ? theme : Theme.colors(dark));
 	}
 
 	// Middle of the weather icon's drawing inside its 200 x 200 file (icons/centru.txt).
@@ -2099,7 +2099,7 @@ public final class Screen {
 	/** The frame of a box with its title bar in BAR and TITLE in it; returns the bar's height. */
 	private float alertFrame(float x, float y, float bw, float h, float f, int bar, String title) {
 		float hb = 44 * f, r = 14;
-		int border = c.ink, body = dark ? 0xFF000000 : c.page;
+		int border = c.ink, body = dark ? c.card : c.page;
 		g.roundRect(x, y, bw, h, r, border);
 		g.roundRect(x + 2, y + 2, bw - 4, h - 4, r - 2, body);
 		g.roundRect(x + 2, y + 2, bw - 4, hb, r - 2, bar);

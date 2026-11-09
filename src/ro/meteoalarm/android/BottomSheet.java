@@ -170,15 +170,15 @@ final class BottomSheet extends FrameLayout {
 	/** Kindle black and white, or the Claude dark colours. */
 	void setDark(boolean dark) {
 		this.dark = dark;
-		int bg = dark ? 0xFF30302E : 0xFFFFFFFF, ink = dark ? 0xFFFAF9F5 : 0xFF000000, line = dark ? 0xFF4A4944 : 0xFF000000;
-		int accent = dark ? 0xFFD97757 : 0xFF000000;
+		int bg = ro.meteoalarm.android.core.Theme.surface(dark), ink = ro.meteoalarm.android.core.Theme.ink(dark), line = ro.meteoalarm.android.core.Theme.pal == 0 ? (dark ? 0xFF4A4944 : 0xFF000000) : ro.meteoalarm.android.core.Theme.grid(dark);
+		int accent = ro.meteoalarm.android.core.Theme.accent(dark);
 		sheet.setBackground(shape(bg, line, 18 * dp, dp, true));
 		sheet.findViewWithTag("handle").setBackground(shape(dark ? 0xFF6B6A65 : 0xFFAAAAAA, 0, 2 * dp, dp, false));
 		title.setTextColor(ink);
 		text.setTextColor(dark ? 0xFFC2C0B6 : 0xFF333333);
 		scroll.setBackgroundColor(0);
 		primary.setBackground(shape(accent, 0, 10 * dp, dp, false));
-		primary.setTextColor(dark ? 0xFF262624 : 0xFFFFFFFF);
+		primary.setTextColor(ro.meteoalarm.android.core.Theme.page(dark));
 		secondary.setBackground(shape(bg, line, 10 * dp, dp, false));
 		secondary.setTextColor(ink);
 		left.setBackground(shape(bg, line, 10 * dp, dp, false));

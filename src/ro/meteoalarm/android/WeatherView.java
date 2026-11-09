@@ -247,7 +247,7 @@ final class WeatherView extends View {
 		c.drawBitmap(pgA, 0, 0, null);
 		c.save();
 		c.clipRect(0, b[0], w, b[1]);
-		c.drawColor(screen.dark ? 0xFF262624 : 0xFFFFFFFF);
+		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
 		c.drawBitmap(pgA, pgDx, 0, null);
 		if (pgB != null) c.drawBitmap(pgB, pgDx + (pgStep > 0 ? w : -w), 0, null);
 		c.restore();
@@ -324,7 +324,7 @@ final class WeatherView extends View {
 		float cw = f[1], ch = f[2];
 		ox = f[3];
 		oy = f[4];
-		c.drawColor(screen.dark ? 0xFF262624 : 0xFFFFFFFF);
+		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
 		c.save();
 		c.translate(ox, oy);
 		c.scale(scale, scale);
@@ -336,7 +336,7 @@ final class WeatherView extends View {
 	/** A round button with the refresh arrow that follows the finger down; full arrow = release to refresh. */
 	private void drawPull(Canvas c) {
 		float r = 22 * dp, cx = getWidth() / 2f, cy = Math.min(pull, max()) - r + 8 * dp;
-		int ink = screen.dark ? 0xFFFAF9F5 : 0xFF000000, page = screen.dark ? 0xFF30302E : 0xFFFFFFFF;
+		int ink = ro.meteoalarm.android.core.Theme.ink(screen.dark), page = ro.meteoalarm.android.core.Theme.surface(screen.dark);
 		pp.setStyle(Paint.Style.FILL);
 		pp.setColor(page);
 		c.drawCircle(cx, cy, r, pp);
@@ -346,7 +346,7 @@ final class WeatherView extends View {
 		c.drawCircle(cx, cy, r, pp);
 		float a = Math.min(1, pull / max());
 		pp.setStrokeWidth(3 * dp);
-		pp.setColor(a >= 1 && screen.dark ? 0xFFD97757 : ink);
+		pp.setColor(a >= 1 && screen.dark ? ro.meteoalarm.android.core.Theme.accent(true) : ink);
 		float ar = 11 * dp;
 		c.drawArc(new RectF(cx - ar, cy - ar, cx + ar, cy + ar), -90, 330 * a, false, pp);
 	}

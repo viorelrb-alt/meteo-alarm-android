@@ -128,17 +128,17 @@ final class HelpPanel extends FrameLayout {
 	}
 
 	private int ink() {
-		return dark ? 0xFFFAF9F5 : 0xFF000000;
+		return ro.meteoalarm.android.core.Theme.ink(dark);
 	}
 
 	private int dim() {
-		return dark ? 0xFFA6A39A : 0xFF555555;
+		return ro.meteoalarm.android.core.Theme.dim(dark);
 	}
 
 	/** Starts a new help text: TITLE, the close button's label, the theme. */
 	void begin(String head, String closeLabel, boolean d) {
 		dark = d;
-		setBackgroundColor(dark ? 0xFF262624 : 0xFFFFFFFF);
+		setBackgroundColor(ro.meteoalarm.android.core.Theme.page(dark));
 		title.setText(head);
 		title.setTextColor(ink());
 		close.setText(closeLabel);

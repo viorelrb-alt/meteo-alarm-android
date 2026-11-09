@@ -109,7 +109,6 @@ Refreshing by itself	Аутоматско освежавање
 The ☰ menu	Мени ☰
 Switches between Celsius and Fahrenheit.	Пребацује између Целзијуса и Фаренхајта.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Пребацује сат између 24 и 12 сати (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Светла, Тамна или Аутоматски (сензор телефона).
 Screen on ON / OFF	Екран упаљен УКЉ. / ИСКЉ.
 Location On / Off	Локација укључена / искључена
 Turns automatic location on or off (the same as the location button).	Укључује или искључује аутоматску локацију (исто као дугме за локацију).
@@ -779,3 +778,10 @@ Favourites USA	Омиљена САД
 Air temp.: 	Темп. ваздуха: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	У Парцелама су команде у менију ⋮ горе десно; на страници за уређивање Избриши је лево од Сачувај. Поља показују само вредност; додир показује детаље.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Испод наслова место; ▲ и ▼ поред облачића померају горе или доле. Одељци су раздвојени линијама; табеле стају у облачић или клизе у страну; извор је доле, једном.
+Monochrome	Једнобојна
+Sage	Жалфија
+Lavender	Лаванда
+Sky	Небо
+Peach	Бресква
+Rose	Ружа
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 тема боја: Једнобојна, Жалфија, Лаванда, Небо, Бресква, Ружа; испод линије Светла, Тамна или Аутоматска (сензор телефона).

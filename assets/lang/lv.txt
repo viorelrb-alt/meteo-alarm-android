@@ -133,7 +133,6 @@ Downloads the weather, the warnings and the earthquakes now.	Lejupielādē laika
 The same as the town button.	Tas pats, kas pilsētas poga.
 Switches between Celsius and Fahrenheit.	Pārslēdz starp Celsiju un Fārenheitu.
 Switches the clock between 24 hours and 12 hours (AM/PM).	Pārslēdz pulksteni starp 24 stundām un 12 stundām (AM/PM).
-Light, Dark, or Automatic (phone sensor).	Gaišs, Tumšs vai Automātisks (tālruņa sensors).
 Screen on ON / OFF	Ekrāns ieslēgts IESL. / IZSL.
 ON: the screen stays on while the app is open. OFF: it goes off after the phone's timeout.	IESL.: ekrāns paliek ieslēgts, kamēr lietotne ir atvērta. IZSL.: tas izslēdzas pēc tālruņa noildzes.
 The list has English and the official languages of the country the phone is in (from the SIM card or the mobile network; without them, from the town shown). At the first start the app takes the phone's language, when it has it. The app speaks all the official EU languages and Ukrainian.	Sarakstā ir angļu valoda un tās valsts oficiālās valodas, kurā ir tālrunis (no SIM kartes vai mobilā tīkla; bez tiem no rādītās pilsētas). Pirmajā palaišanā lietotne ņem tālruņa valodu, ja tai tā ir. Lietotne runā visās ES oficiālajās valodās un ukraiņu valodā.
@@ -845,3 +844,10 @@ Favourites USA	Izlase ASV
 Air temp.: 	Gaisa temp.: 
 In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Laukos komandas ir izvēlnē ⋮ augšā pa labi; rediģēšanas lapā Dzēst ir pa kreisi no Saglabāt. Lodziņi rāda tikai vērtību; pieskāriens parāda sīkāku informāciju.
 Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Zem virsraksta – vieta; ▲ un ▼ blakus burbulim ritina augšup vai lejup. Sadaļas atdala līnijas; tabulas ietilpst burbulī vai slīd uz sāniem; avots ir apakšā, vienreiz.
+Monochrome	Vienkrāsaina
+Sage	Salvija
+Lavender	Lavanda
+Sky	Debesis
+Peach	Persiks
+Rose	Roze
+6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 krāsu motīvi: Vienkrāsaina, Salvija, Lavanda, Debesis, Persiks, Roze; zem līnijas Gaišs, Tumšs vai Automātisks (tālruņa sensors).

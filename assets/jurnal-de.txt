@@ -1,15 +1,22 @@
-Aktuelle Version: v.3.51 · 9.11.2026
-- Vor einem Update Prüfung der Installationserlaubnis und Hinweis zu Auto Blocker (Samsung) mit Taste zu den Einstellungen.
-- Benachrichtigungen wie in der Wetter-App des Telefons („Ort | Regen“): Regen oder Schnee in der nächsten Stunde und nach 20 Uhr für morgen, für den Ort und die Parzellen; keine Meldung mehr, wenn Open-Meteo wieder antwortet.
-- Benachrichtigungen für Parzellen, gewählt mit der Glocken-Taste auf der Karte: Regen, Wind, Schnee, Dürre.
-- Eine eigene HINWEIS-Benachrichtigung auch für den Ort.
-- Eigene HINWEIS-Benachrichtigungen für jede Parzelle: Reif, Frost, Nebel, gefrierender Regen, starke Böen.
-- Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.
-- In den USA, im Landwirt-Modus: die Felder NWS, Dürre, Brand, Hagel.
-- HINWEIS-Felder in Europa: Reif, Frost, Nebel, gefrierender Regen, starker Wind.
+Aktuelle Version: v.3.60 · 9.11.2026
+AKTUALISIERUNGEN
 - Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
-- Verbindungssymbol neben der Uhr: WLAN, mobile Daten oder keine.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.
+- Vor einem Update Prüfung der Installationserlaubnis und Hinweis zu Auto Blocker (Samsung) mit Taste zu den Einstellungen.
+BENACHRICHTIGUNGEN
+- Benachrichtigungen wie in der Wetter-App des Telefons („Ort | Regen“): Regen oder Schnee in der nächsten Stunde und nach 20 Uhr für morgen, für den Ort und die Parzellen; keine Meldung mehr, wenn Open-Meteo wieder antwortet.
+- Eigene HINWEIS-Benachrichtigungen für jede Parzelle: Reif, Frost, Nebel, gefrierender Regen, starke Böen.
+- Eine eigene HINWEIS-Benachrichtigung auch für den Ort.
+DESIGNS
+- 6 Farbdesigns (Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose), jeweils hell und dunkel: ☰ › Design.
+HAUPTBILDSCHIRM
+- HINWEIS-Felder in Europa: Reif, Frost, Nebel, gefrierender Regen, starker Wind.
+- Verbindungssymbol neben der Uhr: WLAN, mobile Daten oder keine.
+LANDWIRT-MODUS
+- In den USA, im Landwirt-Modus: die Felder NWS, Dürre, Brand, Hagel.
+- Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.
+PARZELLEN
+- Benachrichtigungen für Parzellen, gewählt mit der Glocken-Taste auf der Karte: Regen, Wind, Schnee, Dürre.
 - Design-Verbesserungen und Fehlerbehebungen.
 
 Version 2 (v.2.00 – v.2.91)
