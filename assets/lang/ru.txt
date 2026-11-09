@@ -588,7 +588,6 @@ Try again	Попробовать снова
 When the download fails	Если скачивание не удалось
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Приложение сначала проверяет интернет, пробует до 5 раз, если GitHub не отвечает, и показывает причину; уже скачанная версия сразу устанавливается.
 Connection	Подключение
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Рядом с часами: Wi-Fi (дуги), мобильные данные (столбики), другая сеть (глобус), зачёркнуто, когда нет интернета.
 Could not reach GitHub: 	Не удалось связаться с GitHub: 
 . Try again in a few minutes.	. Попробуй снова через несколько минут.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Приложение сначала проверяет интернет, ищет новую версию 3 раза и скачивает её за 5 попыток максимум; если GitHub не отвечает, показывает причину. Уже скачанная версия устанавливается сразу.
@@ -790,3 +789,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Полоса камеры
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	В портретном режиме, на телефонах с камерой в экране (Android 9+), часы, связь и дата находятся рядом с камерой; населённому пункту отдана вся строка.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Значки погоды: “Coloured weather icons collection”, titusurya (magnific.com), бесплатные векторы.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Рядом с часами: Wi-Fi (дуги) или мобильные данные (столбики); полные дуги или столбики показывают сигнал, маленький текст — тип (6 = Wi-Fi 6, 5G…). Другая сеть: глобус; зачёркнут без интернета.

@@ -654,7 +654,6 @@ Try again	Bain triail eile as
 When the download fails	Nuair a theipeann ar an íoslódáil
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Seiceálann an aip an t-idirlíon ar dtús, déanann sí suas le 5 iarracht nuair nach bhfreagraíonn GitHub agus taispeánann sí an chúis; suiteáiltear leagan atá íoslódáilte cheana láithreach.
 Connection	Ceangal
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	In aice leis an gclog: Wi-Fi (stuanna), sonraí móibíleacha (barraí), líonra eile (cruinneog), trasnaithe nuair nach bhfuil idirlíon ann.
 Could not reach GitHub: 	Níorbh fhéidir GitHub a bhaint amach: 
 . Try again in a few minutes.	. Bain triail eile as i gceann cúpla nóiméad.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Seiceálann an aip an t-idirlíon ar dtús, lorgaíonn sí an leagan nua 3 huaire agus íoslódálann sí é i suas le 5 iarracht; nuair nach bhfreagraíonn GitHub, taispeánann sí an chúis. Suiteáiltear leagan atá íoslódáilte cheana láithreach.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Banda an cheamara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Sa phortráid, ar fhóin leis an gceamara sa scáileán (Android 9+), tá an clog, an ceangal agus an dáta in aice leis an gceamara; tá an tsraith iomlán ag an mbaile.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Deilbhíní aimsire: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	In aice leis an gclog: Wi-Fi (stuanna) nó sonraí móibíleacha (barraí); taispeánann na stuanna nó na barraí lána an comhartha, an téacs beag an cineál (6 = Wi-Fi 6, 5G…). Líonra eile: cruinneog; trasnaithe gan idirlíon.

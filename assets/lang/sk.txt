@@ -654,7 +654,6 @@ Try again	Skúsiť znova
 When the download fails	Keď sťahovanie zlyhá
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Aplikácia najprv overí internet, skúsi to až 5-krát, keď GitHub neodpovedá, a ukáže dôvod; už stiahnutá verzia sa hneď nainštaluje.
 Connection	Pripojenie
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Vedľa hodín: Wi-Fi (oblúky), mobilné dáta (paličky), iná sieť (glóbus), prečiarknuté, keď nie je internet.
 Could not reach GitHub: 	Nepodarilo sa spojiť s GitHubom: 
 . Try again in a few minutes.	. Skús to znova o pár minút.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Aplikácia najprv overí internet, hľadá novú verziu 3-krát a stiahne ju najviac na 5 pokusov; keď GitHub neodpovedá, ukáže dôvod. Už stiahnutá verzia sa hneď nainštaluje.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Pás kamery
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Na výšku, na telefónoch s kamerou v displeji (Android 9+), sú hodiny, pripojenie a dátum vedľa kamery; obec má celý riadok.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony počasia: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Vedľa hodín: Wi-Fi (oblúky) alebo mobilné dáta (stĺpce); plné oblúky alebo stĺpce ukazujú signál, malý text typ (6 = Wi-Fi 6, 5G…). Iná sieť: glóbus; prečiarknutá bez internetu.

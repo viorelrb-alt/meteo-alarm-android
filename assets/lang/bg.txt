@@ -654,7 +654,6 @@ Try again	Опитай отново
 When the download fails	Когато изтеглянето не успее
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Приложението първо проверява интернета, опитва до 5 пъти, когато GitHub не отговаря, и показва причината; вече изтеглена версия се инсталира веднага.
 Connection	Връзка
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	До часовника: Wi-Fi (дъги), мобилни данни (чертички), друга мрежа (глобус), зачеркнато, когато няма интернет.
 Could not reach GitHub: 	Не успях да се свържа с GitHub: 
 . Try again in a few minutes.	. Опитай пак след няколко минути.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Приложението първо проверява интернета, търси новата версия 3 пъти и я изтегля с до 5 опита; когато GitHub не отговаря, показва причината. Вече изтеглена версия се инсталира веднага.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Лента на камерата
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	В портретен режим, на телефони с камера в екрана (Android 9+), часовникът, връзката и датата са до камерата; населеното място заема целия ред.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Икони за времето: “Coloured weather icons collection”, titusurya (magnific.com), безплатни вектори.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	До часовника: Wi-Fi (дъги) или мобилни данни (чертички); пълните дъги или чертички показват сигнала, малкият текст вида (6 = Wi-Fi 6, 5G…). Друга мрежа: глобус; зачеркната без интернет.

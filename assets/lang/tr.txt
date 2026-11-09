@@ -588,7 +588,6 @@ Try again	Tekrar dene
 When the download fails	İndirme başarısız olduğunda
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Uygulama önce interneti kontrol eder, GitHub yanıt vermezse 5 kereye kadar dener ve nedenini gösterir; zaten indirilmiş sürüm hemen kurulur.
 Connection	Bağlantı
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Saatin yanında: Wi-Fi (yaylar), mobil veri (çubuklar), başka ağ (küre), internet yoksa üstü çizili.
 Could not reach GitHub: 	GitHub'a ulaşılamadı: 
 . Try again in a few minutes.	. Birkaç dakika sonra yeniden dene.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Uygulama önce interneti kontrol eder, yeni sürümü 3 kez arar ve en fazla 5 denemede indirir; GitHub yanıt vermezse nedenini gösterir. Zaten indirilmiş sürüm hemen kurulur.
@@ -790,3 +789,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Kamera şeridi
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Dikeyde, kamerası ekranda olan telefonlarda (Android 9+), saat, bağlantı ve tarih kameranın yanında durur; yerleşim yeri tüm satırı kullanır.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Hava simgeleri: “Coloured weather icons collection”, titusurya (magnific.com), ücretsiz vektörler.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Saatin yanında: Wi-Fi (yaylar) veya mobil veri (çubuklar); dolu yaylar veya çubuklar sinyali, küçük yazı türü gösterir (6 = Wi-Fi 6, 5G…). Başka ağ: küre; internet yokken üstü çizili.

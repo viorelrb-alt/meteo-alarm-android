@@ -654,7 +654,6 @@ Try again	Riprova
 When the download fails	Quando il download non riesce
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	L’app controlla prima internet, prova fino a 5 volte quando GitHub non risponde e mostra il motivo; una versione già scaricata si installa subito.
 Connection	Connessione
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Accanto all’orologio: Wi-Fi (archi), dati mobili (barre), altra rete (globo), barrato quando non c’è internet.
 Could not reach GitHub: 	Impossibile raggiungere GitHub: 
 . Try again in a few minutes.	. Riprova tra qualche minuto.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	L’app controlla prima internet, cerca la nuova versione 3 volte e la scarica in fino a 5 tentativi; quando GitHub non risponde mostra il motivo. Una versione già scaricata si installa subito.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Fascia della fotocamera
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	In verticale, sui telefoni con la fotocamera nello schermo (Android 9+), orologio, connessione e data stanno accanto alla fotocamera; la località ha tutta la riga.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Icone meteo: “Coloured weather icons collection”, titusurya (magnific.com), vettori gratuiti.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Accanto all'orologio: Wi-Fi (archi) o dati mobili (barre); gli archi o le barre pieni mostrano il segnale, il testo piccolo il tipo (6 = Wi-Fi 6, 5G…). Altra rete: un globo; barrata senza internet.

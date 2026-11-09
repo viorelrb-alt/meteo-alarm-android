@@ -654,7 +654,6 @@ Try again	Mēģināt vēlreiz
 When the download fails	Ja lejupielāde neizdodas
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Lietotne vispirms pārbauda internetu, mēģina līdz 5 reizēm, ja GitHub neatbild, un parāda iemeslu; jau lejupielādēta versija tiek uzreiz instalēta.
 Connection	Savienojums
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Pie pulksteņa: Wi-Fi (loki), mobilie dati (stabiņi), cits tīkls (globuss), pārsvītrots, ja nav interneta.
 Could not reach GitHub: 	Neizdevās sasniegt GitHub: 
 . Try again in a few minutes.	. Mēģini vēlreiz pēc dažām minūtēm.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Lietotne vispirms pārbauda internetu, 3 reizes meklē jauno versiju un lejupielādē to ar līdz 5 mēģinājumiem; ja GitHub neatbild, parāda iemeslu. Jau lejupielādēta versija tiek uzreiz instalēta.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Kameras josla
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Portretā, tālruņos ar kameru ekrānā (Android 9+), pulkstenis, savienojums un datums ir blakus kamerai; apdzīvotajai vietai ir visa rinda.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Laika ikonas: “Coloured weather icons collection”, titusurya (magnific.com), bezmaksas vektori.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Blakus pulkstenim: Wi-Fi (loki) vai mobilie dati (stabiņi); pilnie loki vai stabiņi rāda signālu, mazais teksts – veidu (6 = Wi-Fi 6, 5G…). Cits tīkls: globuss; pārsvītrots bez interneta.

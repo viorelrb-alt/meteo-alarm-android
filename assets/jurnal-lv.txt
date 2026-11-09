@@ -1,4 +1,4 @@
-Pašreizējā versija: v.3.70 · 9.11.2026
+Pašreizējā versija: v.3.80 · 9.11.2026
 ATJAUNINĀJUMI
 - Atjauninājumi no trim avotiem: GitHub, otrs GitHub serveris un Google Drive.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.
@@ -7,7 +7,7 @@ GALVENAIS EKRĀNS
 - INFORMĀCIJAS lodziņi Eiropā: sarma, salna, migla, salstošs lietus, stiprs vējš.
 - Kameras josla: portretā pulkstenis, savienojums un datums ir blakus kamerai (Android 9+).
 - Laika ikonas: tēmas krāsās; lielā kustas 3 sekundes.
-- Savienojuma ikona pie pulksteņa: Wi-Fi, mobilie dati vai nav.
+- Savienojuma ikona blakus pulkstenim: Wi-Fi vai mobilie dati ar signāla stiprumu un veidu (Wi-Fi 6, 5G…) vai bez interneta.
 LAUKI
 - Paziņojumi par laukiem, izvēlami ar zvaniņa pogu kartē: lietus, vējš, sniegs, sausums.
 LAUKSAIMNIEKA REŽĪMS

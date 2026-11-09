@@ -654,7 +654,6 @@ Try again	Réessayer
 When the download fails	Quand le téléchargement échoue
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	L’app vérifie d’abord internet, essaie jusqu’à 5 fois quand GitHub ne répond pas et montre la raison ; une version déjà téléchargée s’installe aussitôt.
 Connection	Connexion
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	À côté de l’horloge : Wi-Fi (arcs), données mobiles (barres), autre réseau (globe), barré quand il n’y a pas d’internet.
 Could not reach GitHub: 	Impossible de joindre GitHub : 
 . Try again in a few minutes.	. Réessaie dans quelques minutes.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	L’appli vérifie d’abord internet, cherche la nouvelle version 3 fois et la télécharge en 5 essais au plus ; quand GitHub ne répond pas, elle affiche la raison. Une version déjà téléchargée s’installe aussitôt.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Bande de la caméra
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	En portrait, sur les téléphones avec la caméra dans l'écran (Android 9+), l'horloge, la connexion et la date sont à côté de la caméra ; la localité a toute la ligne.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Icônes météo : “Coloured weather icons collection”, titusurya (magnific.com), vecteurs gratuits.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Près de l'horloge : Wi-Fi (arcs) ou données mobiles (barres) ; les arcs ou barres pleins montrent le signal, le petit texte le type (6 = Wi-Fi 6, 5G…). Autre réseau : un globe ; barré sans internet.

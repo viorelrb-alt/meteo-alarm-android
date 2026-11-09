@@ -1,6 +1,6 @@
-Trenutna različica: v.3.70 · 9.11.2026
+Trenutna različica: v.3.80 · 9.11.2026
 GLAVNI ZASLON
-- Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
+- Ikona povezave ob uri: Wi-Fi ali mobilni podatki z močjo signala in vrsto (Wi-Fi 6, 5G…) ali brez interneta.
 - Pas kamere: pokončno so ura, povezava in datum ob kameri (Android 9+).
 - Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.
 - Vremenske ikone: v barvah teme; velika se 3 sekunde premika.

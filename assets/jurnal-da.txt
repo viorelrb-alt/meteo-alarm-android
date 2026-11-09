@@ -1,6 +1,6 @@
-Nuværende version: v.3.70 · 9.11.2026
+Nuværende version: v.3.80 · 9.11.2026
 HOVEDSKÆRM
-- Forbindelsesikon ved uret: Wi-Fi, mobildata eller ingen.
+- Forbindelsesikon ved uret: Wi-Fi eller mobildata med signalstyrke og type (Wi-Fi 6, 5G…), eller intet internet.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
 - Kamerabånd: i portræt står uret, forbindelsen og datoen ved siden af kameraet (Android 9+).
 - Vejrikoner: i temaets farver; den store bevæger sig i 3 sekunder.

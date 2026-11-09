@@ -654,7 +654,6 @@ Try again	Spróbuj ponownie
 When the download fails	Gdy pobieranie się nie udaje
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Aplikacja najpierw sprawdza internet, próbuje do 5 razy, gdy GitHub nie odpowiada, i pokazuje powód; już pobrana wersja instaluje się od razu.
 Connection	Połączenie
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Obok zegara: Wi-Fi (łuki), dane komórkowe (słupki), inna sieć (globus), przekreślone, gdy nie ma internetu.
 Could not reach GitHub: 	Nie udało się połączyć z GitHubem: 
 . Try again in a few minutes.	. Spróbuj ponownie za kilka minut.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Aplikacja najpierw sprawdza internet, szuka nowej wersji 3 razy i pobiera ją w maksymalnie 5 próbach; gdy GitHub nie odpowiada, pokazuje powód. Już pobrana wersja instaluje się od razu.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Pasek kamery
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	W pionie, w telefonach z kamerą w ekranie (Android 9+), zegar, połączenie i data są obok kamery; miejscowość ma cały wiersz.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony pogody: “Coloured weather icons collection”, titusurya (magnific.com), darmowe wektory.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Obok zegara: Wi-Fi (łuki) lub dane komórkowe (słupki); pełne łuki lub słupki pokazują sygnał, mały tekst typ (6 = Wi-Fi 6, 5G…). Inna sieć: globus; przekreślona bez internetu.

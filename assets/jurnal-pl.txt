@@ -1,4 +1,4 @@
-Obecna wersja: v.3.70 · 9.11.2026
+Obecna wersja: v.3.80 · 9.11.2026
 AKTUALIZACJE
 - Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
 - Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
@@ -6,7 +6,7 @@ AKTUALIZACJE
 DZIAŁKI
 - Powiadomienia dla działek, wybierane przyciskiem dzwonka na mapie: deszcz, wiatr, śnieg, susza.
 EKRAN GŁÓWNY
-- Ikona połączenia obok zegara: Wi-Fi, dane komórkowe lub brak.
+- Ikona połączenia obok zegara: Wi-Fi lub dane komórkowe z siłą sygnału i typem (Wi-Fi 6, 5G…) albo brak internetu.
 - Ikony pogody: w kolorach motywu; duża porusza się przez 3 sekundy.
 - Pasek kamery: w pionie zegar, połączenie i data są obok kamery (Android 9+).
 - Pola INFORMACJA w Europie: szron, przymrozek, mgła, marznący deszcz, silny wiatr.

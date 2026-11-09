@@ -72,6 +72,9 @@ public final class Screen {
 	public int batt = -1;
 	/** v3.00: the connection, drawn left of the clock: -1 not shown, 0 none, 1 Wi-Fi, 2 mobile, 3 other. */
 	public int net = -1;
+	/** v3.80: the signal (0..4, -1 unknown) and the kind ("6" Wi-Fi 6, "5G"…) of the connection. */
+	public int netLevel = -1;
+	public String netTag = "";
 	/** Where the clock (and the connection icon left of it) begins, in units. */
 	private float clockLeft;
 	public boolean charging, busy, offline;
@@ -302,7 +305,8 @@ public final class Screen {
 		} else sb = statsButton(40, 150, 58, 400, 26) > 40 ? 72 : 0;
 		String[] d = T.describe(w.code, w.isDay);
 		float nt = top > 0 ? top + 10 : pages > 1 ? 124 + sb : 104;
-		if (prop) drawNowHalves(d[0], 40, nt, 718, fy - 8, fy + 4 - grow);
+		if (top > 0) drawNowSplit(d[0], 40, nt, 718, prop ? fy - 8 : fy + 4);
+		else if (prop) drawNowHalves(d[0], 40, nt, 718, fy - 8, fy + 4 - grow);
 		else drawNowStack(d[0], 40, nt, 718, fy + 4);
 		setNow(40, nt, 678, fy + 80 - nt);
 
@@ -1739,9 +1743,8 @@ public final class Screen {
 		rtext(true, px, y, right, hm, c.ink);
 		clockLeft = right - g.width(true, px, hm);
 		if (net >= 0) {
-			float nh = px * 0.64f, nw = nh * 36 / 32;
-			drawNet(clockLeft - 12 - nw, mid - nh / 2, nw, nh);
-			clockLeft -= 12 + nw;
+			float nh = px * 0.64f;
+			clockLeft = netAt(clockLeft - 12, mid - nh / 2, nh);
 		}
 		String d = T.date(now);
 		float dp = fit(false, Math.min(28, band * 0.42f), Math.max(120, cw / 2 - 90 - 40), d);
@@ -1762,29 +1765,47 @@ public final class Screen {
 		}
 		String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) : String.format("%02d:%02d", h, m);
 		clockLeft = right - g.width(true, 50, hm) - (clk12 ? g.width(true, 22, "PM") + 4 : 0);
-		if (net >= 0) {
-			drawNet(clockLeft - 14 - 36, 25, 36, 32);
-			clockLeft -= 14 + 36;
-		}
+		if (net >= 0) clockLeft = netAt(clockLeft - 14, 25, 32);
 	}
 
 	/**
 	 * v3.00 (Viorel): the connection in a box X Y W H: Wi-Fi (3 arcs and a dot), mobile data (4
 	 * bars), another network (a globe), none (the Wi-Fi drawing dim and struck through).
 	 */
+	private static int faint(int col) {
+		return (col & 0xFFFFFF) | 0x48000000;
+	}
+
+	/**
+	 * v3.80: the connection icon H high, its top at Y and its right edge at RIGHT, with its kind
+	 * before it ("6" for Wi-Fi 6, "5G"…); returns its left edge.
+	 */
+	private float netAt(float right, float y, float h) {
+		float f = h / 32, wd = 36 * f, x = right - wd;
+		drawNet(x, y, wd, h);
+		if ((net == 1 || net == 2) && netTag.length() > 0) {
+			float tp = h * 0.8f, tw = g.width(true, tp, netTag);
+			x -= tw + 5 * f;
+			ltext(true, tp, y + h - tp * 0.81f, x, netTag, c.ink);
+		}
+		return x;
+	}
+
 	private void drawNet(float x, float y, float wd, float h) {
 		int col = net == 0 ? c.dim : c.ink;
 		float f = h / 32; // v3.70: smaller in the camera band
 		if (net == 1 || net == 0) {
 			float cx = x + wd / 2, cy = y + h - 3 * f;
-			for (int k = 1; k <= 3; k++) g.arc(cx, cy, k * 9.5f * f, 225, 90, 4 * f, col);
+			// v3.80: the arcs that the signal reaches are full, the others faint.
+			int lit = net == 0 || netLevel < 0 ? 3 : new int[] { 0, 1, 1, 2, 3 }[netLevel];
+			for (int k = 1; k <= 3; k++) g.arc(cx, cy, k * 9.5f * f, 225, 90, 4 * f, k <= lit ? col : faint(col));
 			g.roundRect(cx - 3.5f * f, cy - 3.5f * f, 7 * f, 7 * f, 3.5f * f, col);
 			if (net == 0) g.poly(new float[] { x + 2, y + h - 1, x + 5, y + h + 2, x + wd - 2, y + 1, x + wd - 5, y - 2 }, c.ink);
 		} else if (net == 2) {
 			float bw = 6 * f, gap = 3.3f * f, x0 = x + (wd - 4 * bw - 3 * gap) / 2;
 			for (int k = 0; k < 4; k++) {
 				float bh = h * (k + 1) / 4f;
-				g.rect(x0 + k * (bw + gap), y + h - bh, bw, bh, col);
+				g.rect(x0 + k * (bw + gap), y + h - bh, bw, bh, netLevel < 0 || k < netLevel ? col : faint(col));
 			}
 		} else {
 			float cx = x + wd / 2, cy = y + h / 2, r = Math.min(wd, h) / 2 - 2;
@@ -1803,11 +1824,12 @@ public final class Screen {
 	 * 3 seconds when the screen opens or the weather changes); BIG_ICON is the one drawn.
 	 */
 	public float iconT = 1;
+	private boolean nowIcon;
 	public String bigIcon;
 
 	private void drawIcon(String icon, float x, float y, float s) {
 		if (WxIcon.has(icon)) {
-			boolean big = s >= 140;
+			boolean big = nowIcon;
 			if (big) bigIcon = icon;
 			WxIcon.draw(g, icon, x, y, s, big ? iconT : 1, Theme.icon(dark));
 		} else g.icon("icons/" + icon + ".png", x, y, s, s, c.ink);
@@ -1841,7 +1863,9 @@ public final class Screen {
 		if (x + s * x1 / 200 > icRight) x = icRight - s * x1 / 200;
 		float y = cy - s * (y0 + y1) / 400;
 		if (y < icTop) y = icTop;
+		nowIcon = true;
 		drawIcon(icon, x, y, s);
+		nowIcon = false;
 	}
 
 	// Measured temperature: size, minus, digits, unit.
@@ -1888,11 +1912,8 @@ public final class Screen {
 	 * together centred between TOP and BOT; smaller when they do not fit.
 	 */
 	private void drawNowStack(String icon, float l, float top, float r, float bot) {
-		float y0 = 0, y1 = 200;
-		for (String c : CENTRE) {
-			String[] p = c.split(" ");
-			if (p[0].equals(icon)) { y0 = Float.parseFloat(p[2]); y1 = Float.parseFloat(p[4]); }
-		}
+		float[] cb = centre(icon);
+		float y0 = cb[1], y1 = cb[3];
 		uPct = 34;
 		dPct = 27;
 		float s = 400, px = 348, room = bot - top - 40, cx = (l + r) / 2;
@@ -1910,6 +1931,29 @@ public final class Screen {
 		drawIconC(icon, cx, bt + ih / 2, s, ih / 2 + 1, r - l);
 		icTop = 0;
 		drawTempAt(cx - tW / 2, bt + ih + gap + dh);
+		uPct = 43;
+		dPct = 43;
+	}
+
+	/**
+	 * v3.80 (Viorel): with information, code or warning boxes the room left is split in two: the
+	 * temperature centred in the left half, the icon centred in the right half.
+	 */
+	private void drawNowSplit(String icon, float l, float top, float r, float bot) {
+		float mid = (l + r) / 2, hw = (r - l) / 2, cy = (top + bot) / 2, room = bot - top - 30;
+		uPct = 34;
+		dPct = 27;
+		float px = 300;
+		while (true) {
+			tempSize(px, hw - 24);
+			if (tp * 64 / 100 <= room * 0.8f || px < 80) break;
+			px = px * 94 / 100;
+		}
+		float dh = tp * 64 / 100;
+		drawTempAt(l + hw / 2 - tW / 2, cy + dh / 2);
+		icLeft = mid + 2; icRight = r; icPct = 100; icTop = top;
+		drawIconC(icon, mid + hw / 2, cy, 360, room / 2, hw - 24);
+		icTop = 0;
 		uPct = 43;
 		dPct = 43;
 	}

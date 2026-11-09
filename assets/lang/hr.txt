@@ -654,7 +654,6 @@ Try again	Pokušaj ponovno
 When the download fails	Kad preuzimanje ne uspije
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Aplikacija najprije provjerava internet, pokušava do 5 puta kad GitHub ne odgovara i pokazuje razlog; već preuzeta verzija odmah se instalira.
 Connection	Veza
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Pokraj sata: Wi-Fi (lukovi), mobilni podaci (crtice), druga mreža (globus), prekriženo kad nema interneta.
 Could not reach GitHub: 	Nije moguće doći do GitHuba: 
 . Try again in a few minutes.	. Pokušaj ponovno za nekoliko minuta.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Aplikacija najprije provjerava internet, traži novu verziju 3 puta i preuzima je u do 5 pokušaja; kad GitHub ne odgovara, prikazuje razlog. Već preuzeta verzija odmah se instalira.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Traka kamere
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	U uspravnom položaju, na telefonima s kamerom u zaslonu (Android 9+), sat, veza i datum stoje uz kameru; mjesto dobiva cijeli redak.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikone vremena: “Coloured weather icons collection”, titusurya (magnific.com), besplatni vektori.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Uz sat: Wi-Fi (lukovi) ili mobilni podaci (stupci); puni lukovi ili stupci pokazuju signal, mali tekst vrstu (6 = Wi-Fi 6, 5G…). Druga mreža: globus; prekrižena bez interneta.

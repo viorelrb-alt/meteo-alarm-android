@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.70 · 9.11.2026
+Dabartinė versija: v.3.80 · 9.11.2026
 NAUJINIMAI
 - Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
@@ -7,7 +7,7 @@ PAGRINDINIS EKRANAS
 - INFORMACIJOS langeliai Europoje: šerkšnas, šalna, rūkas, lijundra, stiprus vėjas.
 - Kameros juosta: vertikaliai laikrodis, ryšys ir data yra šalia kameros (Android 9+).
 - Orų piktogramos: temos spalvomis; didžioji juda 3 sekundes.
-- Ryšio piktograma šalia laikrodžio: Wi-Fi, mobilieji duomenys arba nėra.
+- Ryšio piktograma šalia laikrodžio: Wi-Fi arba mobilieji duomenys su signalo stiprumu ir tipu (Wi-Fi 6, 5G…) arba be interneto.
 PRANEŠIMAI
 - Atskiras INFORMACIJOS pranešimas ir gyvenvietei.
 - Atskiri INFORMACIJOS pranešimai kiekvienam sklypui: šerkšnas, šalna, rūkas, lijundra, stiprūs gūsiai.

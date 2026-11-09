@@ -1,9 +1,9 @@
-Praegune versioon: v.3.70 · 9.11.2026
+Praegune versioon: v.3.80 · 9.11.2026
 PÕHIEKRAAN
 - Ilmaikoonid: teema värvides; suur liigub 3 sekundit.
 - Kaamera riba: püstpaigutuses on kell, ühendus ja kuupäev kaamera kõrval (Android 9+).
 - TEAVE-kastid Euroopas: härmatis, öökülm, udu, jäide, tugev tuul.
-- Ühenduse ikoon kella kõrval: Wi-Fi, mobiilne andmeside või puudub.
+- Ühenduse ikoon kella kõrval: Wi-Fi või mobiilne andmeside koos signaali tugevuse ja tüübiga (Wi-Fi 6, 5G…) või internetita.
 PÕLLULAPID
 - Põllulappide teavitused, valitakse kaardi kellanupuga: vihm, tuul, lumi, põud.
 PÕLLUMEHE REŽIIM

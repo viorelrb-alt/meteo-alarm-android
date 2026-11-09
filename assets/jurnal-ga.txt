@@ -1,4 +1,4 @@
-Leagan reatha: v.3.70 · 9.11.2026
+Leagan reatha: v.3.80 · 9.11.2026
 CEAPACHA
 - Fógraí do na ceapacha, roghnaithe leis an gcnaipe cloigín ar an léarscáil: báisteach, gaoth, sneachta, triomach.
 FÓGRAÍ
@@ -15,7 +15,7 @@ NUASHONRUITHE
 PRÍOMHSCÁILEÁN
 - Banda an cheamara: sa phortráid, tá an clog, an ceangal agus an dáta in aice leis an gceamara (Android 9+).
 - Boscaí FAISNÉIS san Eoraip: sioc bán, reo, ceo, báisteach reoite, gaoth láidir.
-- Deilbhín ceangail in aice leis an gclog: Wi-Fi, sonraí móibíleacha nó gan cheangal.
+- Deilbhín ceangail in aice leis an gclog: Wi-Fi nó sonraí móibíleacha le neart an chomhartha agus an cineál (Wi-Fi 6, 5G…), nó gan idirlíon.
 - Deilbhíní aimsire: i ndathanna an téama; bogann an ceann mór ar feadh 3 soicind.
 TÉAMAÍ
 - 6 théama datha (Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós), gach ceann geal agus dorcha: ☰ › Téama.

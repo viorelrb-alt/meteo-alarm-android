@@ -654,7 +654,6 @@ Try again	Opnieuw proberen
 When the download fails	Als het downloaden mislukt
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	De app controleert eerst het internet, probeert tot 5 keer als GitHub niet antwoordt en toont de reden; een al gedownloade versie wordt meteen geïnstalleerd.
 Connection	Verbinding
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Naast de klok: wifi (bogen), mobiele data (streepjes), ander netwerk (wereldbol), doorgestreept zonder internet.
 Could not reach GitHub: 	GitHub niet bereikbaar: 
 . Try again in a few minutes.	. Probeer het over een paar minuten opnieuw.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	De app controleert eerst het internet, zoekt 3 keer naar de nieuwe versie en downloadt die in maximaal 5 pogingen; als GitHub niet antwoordt, toont hij de reden. Een al gedownloade versie wordt meteen geïnstalleerd.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Camerabalk
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Staand, op telefoons met de camera in het scherm (Android 9+), staan de klok, de verbinding en de datum naast de camera; de plaats krijgt de hele rij.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Weerpictogrammen: “Coloured weather icons collection”, titusurya (magnific.com), gratis vectoren.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Naast de klok: wifi (bogen) of mobiele data (balkjes); de volle bogen of balkjes tonen het signaal, de kleine tekst het type (6 = Wi-Fi 6, 5G…). Ander netwerk: een wereldbol; doorgestreept zonder internet.

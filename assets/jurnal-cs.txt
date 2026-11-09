@@ -1,10 +1,10 @@
-Současná verze: v.3.70 · 9.11.2026
+Současná verze: v.3.80 · 9.11.2026
 AKTUALIZACE
 - Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
 - Před aktualizací kontrola oprávnění k instalaci a poznámka o Auto Blocker (Samsung) s tlačítkem do nastavení.
 HLAVNÍ OBRAZOVKA
-- Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
+- Ikona připojení vedle hodin: Wi-Fi nebo mobilní data se silou signálu a typem (Wi-Fi 6, 5G…), nebo bez internetu.
 - Ikony počasí: v barvách motivu; velká se 3 sekundy pohybuje.
 - Pás kamery: na výšku jsou hodiny, připojení a datum vedle kamery (Android 9+).
 - Pole INFORMACE v Evropě: jinovatka, mráz, mlha, mrznoucí déšť, silný vítr.

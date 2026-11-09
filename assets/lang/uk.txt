@@ -654,7 +654,6 @@ Try again	Спробувати знову
 When the download fails	Коли завантаження не вдається
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Застосунок спершу перевіряє інтернет, пробує до 5 разів, коли GitHub не відповідає, і показує причину; уже завантажена версія встановлюється одразу.
 Connection	З’єднання
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Біля годинника: Wi-Fi (дуги), мобільні дані (стовпчики), інша мережа (глобус), закреслено, коли немає інтернету.
 Could not reach GitHub: 	Не вдалося зв’язатися з GitHub: 
 . Try again in a few minutes.	. Спробуй ще раз за кілька хвилин.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Застосунок спершу перевіряє інтернет, шукає нову версію 3 рази й завантажує її за щонайбільше 5 спроб; коли GitHub не відповідає, показує причину. Уже завантажена версія встановлюється одразу.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Смуга камери
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	У портретному режимі, на телефонах із камерою в екрані (Android 9+), годинник, зв'язок і дата розташовані поруч із камерою; населеному пункту віддано весь рядок.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Значки погоди: “Coloured weather icons collection”, titusurya (magnific.com), безкоштовні вектори.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Біля годинника: Wi-Fi (дуги) або мобільні дані (стовпчики); повні дуги чи стовпчики показують сигнал, малий текст — тип (6 = Wi-Fi 6, 5G…). Інша мережа: глобус; закреслений без інтернету.

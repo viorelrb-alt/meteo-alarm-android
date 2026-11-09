@@ -654,7 +654,6 @@ Try again	Erġa’ pprova
 When the download fails	Meta t-tniżżil ma jirnexxix
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	L-app l-ewwel tiċċekkja l-internet, tipprova sa 5 darbiet meta GitHub ma jwieġibx u turi r-raġuni; verżjoni diġà mniżżla tiġi installata mill-ewwel.
 Connection	Konnessjoni
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Ħdejn l-arloġġ: Wi-Fi (arkati), data mobbli (vireg), netwerk ieħor (globu), maqtugħ meta m’hemmx internet.
 Could not reach GitHub: 	Ma stajtx nilħaq lil GitHub: 
 . Try again in a few minutes.	. Erġa’ pprova fi ftit minuti.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	L-app l-ewwel tiċċekkja l-internet, tfittex il-verżjoni l-ġdida 3 darbiet u tniżżilha f’sa 5 tentattivi; meta GitHub ma jwieġibx, turi r-raġuni. Verżjoni diġà mniżżla tiġi installata mill-ewwel.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Faxxa tal-kamera
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	F'portrait, fuq telefowns bil-kamera fl-iskrin (Android 9+), l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera; il-lokalità għandha r-ringiela kollha.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikoni tat-temp: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Ħdejn l-arloġġ: Wi-Fi (arki) jew data mobbli (vireg); l-arki jew il-vireg mimlija juru s-sinjal, it-test żgħir it-tip (6 = Wi-Fi 6, 5G…). Netwerk ieħor: globu; maqsuma mingħajr internet.

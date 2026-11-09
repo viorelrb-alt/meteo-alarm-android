@@ -1,4 +1,4 @@
-Versão atual: v.3.70 · 9.11.2026
+Versão atual: v.3.80 · 9.11.2026
 ATUALIZAÇÕES
 - Antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
 - Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.
@@ -6,7 +6,7 @@ ATUALIZAÇÕES
 ECRÃ PRINCIPAL
 - Caixas INFORMAÇÃO na Europa: geada, congelação, nevoeiro, chuva gelada, vento forte.
 - Faixa da câmara: na vertical, o relógio, a ligação e a data ficam junto à câmara (Android 9+).
-- Ícone de ligação junto ao relógio: Wi-Fi, dados móveis ou nenhuma.
+- Ícone de ligação junto ao relógio: Wi-Fi ou dados móveis com a força do sinal e o tipo (Wi-Fi 6, 5G…), ou sem internet.
 - Ícones do tempo: nas cores do tema; o grande mexe-se durante 3 segundos.
 MODO AGRICULTOR
 - Modo agricultor: novas caixas depois de Água no solo: Pulverizar, Balanço hídrico, Tempestades, Graus-dia, 16 dias.

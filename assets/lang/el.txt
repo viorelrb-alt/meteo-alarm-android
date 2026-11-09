@@ -654,7 +654,6 @@ Try again	Δοκίμασε ξανά
 When the download fails	Όταν η λήψη αποτυγχάνει
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Η εφαρμογή ελέγχει πρώτα το διαδίκτυο, δοκιμάζει έως 5 φορές όταν το GitHub δεν απαντά και δείχνει την αιτία· μια έκδοση που έχει ήδη ληφθεί εγκαθίσταται αμέσως.
 Connection	Σύνδεση
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Δίπλα στο ρολόι: Wi-Fi (τόξα), δεδομένα κινητής (μπάρες), άλλο δίκτυο (υδρόγειος), διαγραμμένο όταν δεν υπάρχει διαδίκτυο.
 Could not reach GitHub: 	Δεν ήταν δυνατή η σύνδεση με το GitHub: 
 . Try again in a few minutes.	. Δοκίμασε ξανά σε λίγα λεπτά.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Η εφαρμογή ελέγχει πρώτα το διαδίκτυο, αναζητά τη νέα έκδοση 3 φορές και την κατεβάζει σε έως 5 προσπάθειες· όταν το GitHub δεν απαντά, δείχνει την αιτία. Μια έκδοση που έχει ήδη ληφθεί εγκαθίσταται αμέσως.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Ζώνη κάμερας
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Σε κατακόρυφη θέση, σε τηλέφωνα με κάμερα στην οθόνη (Android 9+), το ρολόι, η σύνδεση και η ημερομηνία είναι δίπλα στην κάμερα· η τοποθεσία έχει όλη τη γραμμή.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Εικονίδια καιρού: “Coloured weather icons collection”, titusurya (magnific.com), δωρεάν διανύσματα.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Δίπλα στο ρολόι: Wi-Fi (τόξα) ή δεδομένα κινητής (μπάρες)· τα γεμάτα τόξα ή μπάρες δείχνουν το σήμα, το μικρό κείμενο το είδος (6 = Wi-Fi 6, 5G…). Άλλο δίκτυο: υδρόγειος· διαγραμμένο χωρίς internet.

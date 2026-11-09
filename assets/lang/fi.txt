@@ -654,7 +654,6 @@ Try again	Yritä uudelleen
 When the download fails	Kun lataus epäonnistuu
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Sovellus tarkistaa ensin internetin, yrittää enintään 5 kertaa, kun GitHub ei vastaa, ja näyttää syyn; jo ladattu versio asennetaan heti.
 Connection	Yhteys
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Kellon vieressä: Wi-Fi (kaaret), mobiilidata (palkit), muu verkko (maapallo), yliviivattu, kun internetiä ei ole.
 Could not reach GitHub: 	GitHubiin ei saatu yhteyttä: 
 . Try again in a few minutes.	. Yritä uudelleen muutaman minuutin päästä.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Sovellus tarkistaa ensin internetin, etsii uutta versiota 3 kertaa ja lataa sen enintään 5 yrityksellä; kun GitHub ei vastaa, se näyttää syyn. Jo ladattu versio asennetaan heti.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Kamerakaista
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Pystyasennossa, puhelimissa, joissa kamera on näytössä (Android 9+), kello, yhteys ja päivämäärä ovat kameran vieressä; paikkakunta saa koko rivin.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Sääkuvakkeet: “Coloured weather icons collection”, titusurya (magnific.com), ilmaiset vektorit.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Kellon vieressä: Wi-Fi (kaaret) tai mobiilidata (palkit); täydet kaaret tai palkit näyttävät signaalin, pieni teksti tyypin (6 = Wi-Fi 6, 5G…). Muu verkko: maapallo; yliviivattu ilman internetiä.

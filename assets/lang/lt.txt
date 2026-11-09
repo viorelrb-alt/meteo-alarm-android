@@ -654,7 +654,6 @@ Try again	Bandyti dar kartą
 When the download fails	Kai nepavyksta atsisiųsti
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	Programa pirmiausia tikrina internetą, bando iki 5 kartų, kai GitHub neatsako, ir parodo priežastį; jau atsisiųsta versija įdiegiama iš karto.
 Connection	Ryšys
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Šalia laikrodžio: Wi-Fi (lankai), mobilieji duomenys (stulpeliai), kitas tinklas (gaublys), perbraukta, kai nėra interneto.
 Could not reach GitHub: 	Nepavyko pasiekti GitHub: 
 . Try again in a few minutes.	. Bandyk dar kartą po kelių minučių.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	Programėlė pirmiausia tikrina internetą, 3 kartus ieško naujos versijos ir atsisiunčia ją iki 5 bandymų; kai GitHub neatsako, parodo priežastį. Jau atsisiųsta versija įdiegiama iš karto.
@@ -856,3 +855,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Kameros juosta
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Vertikaliai, telefonuose su kamera ekrane (Android 9+), laikrodis, ryšys ir data yra šalia kameros; vietovei lieka visa eilutė.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Orų piktogramos: “Coloured weather icons collection”, titusurya (magnific.com), nemokami vektoriai.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Šalia laikrodžio: Wi-Fi (lankai) arba mobilieji duomenys (stulpeliai); pilni lankai ar stulpeliai rodo signalą, mažas tekstas – tipą (6 = Wi-Fi 6, 5G…). Kitas tinklas: gaublys; perbraukta be interneto.

@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.70";
+	static final String VERSION = "Meteo Alarm Android v3.80";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -195,6 +195,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * the band and the content starts right under the camera.
 	 */
 	private int lastBand = -1;
+	private int cutLogged = -1;
 
 	private void cutout(final android.widget.FrameLayout root) {
 		if (Build.VERSION.SDK_INT < 28) return;
@@ -219,7 +220,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					// the connection and the date (WeatherView draws them); the panels stay below it.
 					android.content.res.Configuration cf = getResources().getConfiguration();
 					int band = t > 0 && cf.orientation == android.content.res.Configuration.ORIENTATION_PORTRAIT && cf.smallestScreenWidthDp < 600 ? t : 0;
-					int pt = band > 0 ? 0 : t;
+					// Not used for the clock: the top stays free as before (the hidden status bar's height).
+					@SuppressWarnings("deprecation")
+					int stable = in.getStableInsetTop();
+					int pt = band > 0 ? 0 : Math.max(t, stable);
+					if (cutLogged != t * 10000 + stable) {
+						cutLogged = t * 10000 + stable;
+						Log.i(MainActivity.this, "APP", "margini ecran: decupaj sus " + t + " px, bara de stare " + stable + " px" + (band > 0 ? " -> banda camerei folosită" : ""));
+					}
 					if (v.getPaddingTop() != pt || v.getPaddingLeft() != l || v.getPaddingRight() != r || band != lastBand) {
 						v.setPadding(l, pt, r, 0);
 						lastBand = band;
@@ -948,9 +956,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	private void showNet() {
 		int k = NetJob.kind(this);
-		if (k != s.net) {
-			if (s.net >= 0) Log.i(this, "REȚEA", k == 0 ? "fără internet" : k == 1 ? "Wi-Fi" : k == 2 ? "date mobile" : "altă rețea");
+		Object[] sg = NetJob.signal(this, k);
+		int lv = (Integer) sg[0];
+		String tag = (String) sg[1];
+		if (k != s.net || lv != s.netLevel || !tag.equals(s.netTag)) {
+			if (k != s.net || !tag.equals(s.netTag))
+				Log.i(this, "REȚEA", (k == 0 ? "fără internet" : k == 1 ? "Wi-Fi" : k == 2 ? "date mobile" : "altă rețea") + (tag.length() > 0 ? " " + tag : "") + (lv >= 0 ? ", semnal " + lv + "/4" : ", semnal necunoscut"));
 			s.net = k;
+			s.netLevel = lv;
+			s.netTag = tag;
 			view.invalidate();
 		}
 	}
@@ -1561,7 +1575,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void hideBars() {
 		if (view == null) return;
 		// 0x10 = SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR (Android 8+): dark buttons on the light page.
-		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | (s.dark ? 0 : 0x10));
+		// v3.71: on Android 9+ the page is laid out under the hidden status bar (LAYOUT_FULLSCREEN), so
+		// the cutout's insets reach cutout(); before, LAYOUT_STABLE alone kept a bar's height free on top
+		// and the camera band was never used (A54 log 2026-11-09: no "decupaj cameră" line).
+		int lay = Build.VERSION.SDK_INT >= 28 ? View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN : 0;
+		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE | lay | (s.dark ? 0 : 0x10));
 		getWindow().setNavigationBarColor(ro.meteoalarm.android.core.Theme.page(s.dark));
 	}
 
@@ -2480,8 +2498,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left.", "Arată bara de luminozitate din stânga."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches the theme.", "Deasupra barei de luminozitate: schimbă tema."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));
-		help.entry(mini("clock"), Tr.t("Connection", "Conexiune"), Tr.t("Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.",
-				"Lângă ceas: Wi-Fi (arce), date mobile (bare), altă rețea (glob), tăiat când nu ai internet."));
+		help.entry(mini("clock"), Tr.t("Connection", "Conexiune"), Tr.t("Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.",
+				"Lângă ceas: Wi-Fi (arce) sau date mobile (bare); arcele sau barele pline arată semnalul, textul mic tipul (6 = Wi-Fi 6, 5G…). Altă rețea: glob; tăiat când nu ai internet."));
 		help.entry(mini("clock"), Tr.t("Weather icons", "Iconurile vremii"), Tr.t("In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.",
 				"În culorile temei; cel mare se mișcă 3 secunde când se deschide ecranul sau se schimbă vremea."));
 		help.entry(mini("clock"), Tr.t("Camera band", "Banda camerei"), Tr.t("In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.",

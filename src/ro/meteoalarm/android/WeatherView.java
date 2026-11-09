@@ -213,14 +213,15 @@ final class WeatherView extends View {
 		drawScreen(c);
 		if (pull > 0) drawPull(c);
 		String big = screen.bigIcon;
-		if (big != null && !big.equals(iconDone) && (iconAnim == null || !iconAnim.isRunning())) startIcon(big);
+		if (big != null && !big.equals(iconDone)) startIcon(big);
 	}
 
 	// --- v3.70 (Viorel): the icon of the weather now moves for 3 seconds, then stays still ------
 
-	private android.animation.ValueAnimator iconAnim;
 	/** The icon that already moved; another one (other weather, town or screen) moves again. */
 	private String iconDone;
+	private long iconStart;
+	private boolean iconRunning;
 
 	/** The icon moves again (the app comes back on the screen). */
 	void replayIcon() {
@@ -228,26 +229,31 @@ final class WeatherView extends View {
 		invalidate();
 	}
 
-	private void startIcon(String big) {
-		iconDone = big;
-		screen.iconT = 0;
-		iconAnim = android.animation.ValueAnimator.ofFloat(0, 1);
-		iconAnim.setDuration(3000);
-		iconAnim.setInterpolator(new android.view.animation.LinearInterpolator());
-		iconAnim.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
-			public void onAnimationUpdate(android.animation.ValueAnimator a) {
-				screen.iconT = (Float) a.getAnimatedValue();
-				invalidate();
-			}
-		});
-		iconAnim.addListener(new android.animation.AnimatorListenerAdapter() {
-			@Override
-			public void onAnimationEnd(android.animation.Animator a) {
+	// v3.71: its own clock, not a ValueAnimator: with the phone's animations shortened or turned
+	// off (developer options, power saving) a ValueAnimator ends at once and the icon never moved.
+	private final Runnable iconStep = new Runnable() {
+		public void run() {
+			float t = (android.os.SystemClock.uptimeMillis() - iconStart) / 3000f;
+			if (t >= 1 || !isShown()) {
 				screen.iconT = 1;
-				invalidate();
+				iconRunning = false;
+			} else {
+				screen.iconT = t;
+				postOnAnimation(this);
 			}
-		});
-		iconAnim.start();
+			invalidate();
+		}
+	};
+
+	private void startIcon(String big) {
+		boolean first = iconDone == null;
+		iconDone = big;
+		if (iconRunning) return;
+		iconRunning = true;
+		iconStart = android.os.SystemClock.uptimeMillis();
+		screen.iconT = 0;
+		if (first) Log.i(getContext(), "ECRAN", "iconul vremii se mișcă 3 s: " + big);
+		postOnAnimation(iconStep);
 		invalidate();
 	}
 

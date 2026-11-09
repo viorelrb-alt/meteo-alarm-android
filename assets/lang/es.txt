@@ -724,7 +724,6 @@ Try again	Intentar de nuevo
 When the download fails	Cuando falla la descarga
 The app checks the internet first, tries up to 5 times when GitHub does not answer and shows why; a version already downloaded is installed at once.	La app comprueba primero internet, lo intenta hasta 5 veces si GitHub no responde y muestra el motivo; una versión ya descargada se instala al momento.
 Connection	Conexión
-Next to the clock: Wi-Fi (arcs), mobile data (bars), another network (globe), struck through when there is no internet.	Junto al reloj: Wi-Fi (arcos), datos móviles (barras), otra red (globo), tachado cuando no hay internet.
 Could not reach GitHub: 	No se pudo conectar con GitHub: 
 . Try again in a few minutes.	. Vuelve a intentarlo en unos minutos.
 The app checks the internet first, looks for the new version 3 times and downloads it in up to 5 tries; when GitHub does not answer it shows why. A version already downloaded is installed at once.	La app comprueba primero internet, busca la nueva versión 3 veces y la descarga en hasta 5 intentos; si GitHub no responde, muestra el motivo. Una versión ya descargada se instala al momento.
@@ -926,3 +925,4 @@ In the theme's colours; the big one moves for 3 seconds when the screen opens or
 Camera band	Franja de la cámara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	En vertical, en teléfonos con la cámara en la pantalla (Android 9+), el reloj, la conexión y la fecha están junto a la cámara; la localidad ocupa toda la fila.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Iconos del tiempo: “Coloured weather icons collection”, titusurya (magnific.com), vectores gratuitos.
+Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Junto al reloj: Wi-Fi (arcos) o datos móviles (barras); los arcos o barras llenos muestran la señal, el texto pequeño el tipo (6 = Wi-Fi 6, 5G…). Otra red: un globo; tachado sin internet.

@@ -32,6 +32,57 @@ public final class NetJob extends JobService {
 	}
 
 	/**
+	 * v3.80 (Viorel): how strong the connection is (0..4, -1 unknown) and its kind: "4", "5",
+	 * "6", "6E", "7" for Wi-Fi 4..7, "2G".."5G" for mobile data ("" unknown).
+	 */
+	static Object[] signal(Context ctx, int kind) {
+		int level = -1;
+		String tag = "";
+		try {
+			if (kind == 1) {
+				Object wi = null;
+				if (android.os.Build.VERSION.SDK_INT >= 31) {
+					ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+					android.net.Network n = cm.getActiveNetwork();
+					android.net.NetworkCapabilities nc = n == null ? null : cm.getNetworkCapabilities(n);
+					if (nc != null) wi = nc.getClass().getMethod("getTransportInfo").invoke(nc);
+				}
+				if (!(wi instanceof android.net.wifi.WifiInfo)) {
+					android.net.wifi.WifiManager wm = (android.net.wifi.WifiManager) ctx.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+					wi = wm == null ? null : wm.getConnectionInfo();
+				}
+				if (wi instanceof android.net.wifi.WifiInfo) {
+					android.net.wifi.WifiInfo w = (android.net.wifi.WifiInfo) wi;
+					int rssi = w.getRssi();
+					if (rssi > -127 && rssi < 0) level = rssi >= -55 ? 4 : rssi >= -66 ? 3 : rssi >= -77 ? 2 : rssi >= -88 ? 1 : 0;
+					if (android.os.Build.VERSION.SDK_INT >= 30) {
+						int std = (Integer) w.getClass().getMethod("getWifiStandard").invoke(w);
+						tag = std == 4 ? "4" : std == 5 ? "5" : std == 6 ? (w.getFrequency() > 5925 ? "6E" : "6") : std == 8 ? "7" : "";
+					}
+				}
+			} else if (kind == 2 && android.os.Build.VERSION.SDK_INT >= 28) {
+				android.telephony.TelephonyManager tm = (android.telephony.TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
+				Object ss = tm == null ? null : tm.getClass().getMethod("getSignalStrength").invoke(tm);
+				if (ss != null) {
+					level = (Integer) ss.getClass().getMethod("getLevel").invoke(ss);
+					if (android.os.Build.VERSION.SDK_INT >= 29) {
+						java.util.List<?> cells = (java.util.List<?>) ss.getClass().getMethod("getCellSignalStrengths").invoke(ss);
+						int best = 0;
+						for (Object c : cells) {
+							String n = c.getClass().getSimpleName();
+							int g = n.contains("Nr") ? 5 : n.contains("Lte") ? 4 : n.contains("Wcdma") || n.contains("Tdscdma") ? 3 : n.contains("Gsm") || n.contains("Cdma") ? 2 : 0;
+							best = Math.max(best, g);
+						}
+						if (best > 0) tag = best + "G";
+					}
+				}
+			}
+		} catch (Throwable e) {
+		}
+		return new Object[] { Math.max(-1, Math.min(4, level)), tag };
+	}
+
+	/**
 	 * v3.00: the connection now: 0 none, 1 Wi-Fi, 2 mobile data, 3 another (cable, VPN…), for the
 	 * icon next to the clock and the check before an update.
 	 */

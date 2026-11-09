@@ -1,10 +1,10 @@
-Nuvarande version: v.3.70 · 9.11.2026
+Nuvarande version: v.3.80 · 9.11.2026
 AVISERINGAR
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - En egen INFORMATION-avisering även för orten.
 - Separata INFORMATION-aviseringar för varje skifte: rimfrost, frost, dimma, underkylt regn, kraftiga byar.
 HUVUDSKÄRM
-- Anslutningsikon vid klockan: Wi-Fi, mobildata eller ingen.
+- Anslutningsikon bredvid klockan: wifi eller mobildata med signalstyrka och typ (Wi-Fi 6, 5G…), eller inget internet.
 - INFORMATION-rutor i Europa: rimfrost, frost, dimma, underkylt regn, hård vind.
 - Kameraband: i stående läge står klockan, anslutningen och datumet bredvid kameran (Android 9+).
 - Väderikoner: i temats färger; den stora rör sig i 3 sekunder.
