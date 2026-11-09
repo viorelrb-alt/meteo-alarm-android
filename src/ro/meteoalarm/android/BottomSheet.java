@@ -62,7 +62,16 @@ final class BottomSheet extends FrameLayout {
 		title.setTextSize(20);
 		title.setTypeface(Typeface.DEFAULT_BOLD);
 		sheet.addView(title);
-		LinearLayout row = new LinearLayout(c);
+		// v3.61 (Viorel): with three buttons (Settings · Don't show again · Continue) the row was wider
+		// than the screen and the left button went off the left edge: the labels now get smaller
+		// (and the buttons narrower) until the whole row fits.
+		LinearLayout row = new LinearLayout(c) {
+			@Override
+			protected void onMeasure(int ws, int hs) {
+				fitRow(this, MeasureSpec.getSize(ws));
+				super.onMeasure(ws, hs);
+			}
+		};
 		row.setGravity(Gravity.END);
 		left = button(c);
 		left.setVisibility(GONE);
@@ -146,6 +155,39 @@ final class BottomSheet extends FrameLayout {
 		LayoutParams sp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, Gravity.BOTTOM);
 		addView(sheet, sp);
 		setDark(false);
+	}
+
+	/** The buttons of ROW in one size, 16 sp or smaller, so that together they fit WIDTH pixels. */
+	private void fitRow(LinearLayout row, int width) {
+		if (width <= 0) return;
+		float sd = getResources().getDisplayMetrics().scaledDensity;
+		for (float sp = 16; ; sp -= 0.5f) {
+			int pad = (int) ((sp >= 14 ? 18 : 10) * dp);
+			float need = 0;
+			android.graphics.Paint p = new android.graphics.Paint(primary.getPaint());
+			p.setTextSize(sp * sd);
+			for (int k = 0; k < row.getChildCount(); k++) {
+				View v = row.getChildAt(k);
+				if (v.getVisibility() == GONE || !(v instanceof Button)) continue;
+				LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) v.getLayoutParams();
+				Button b = (Button) v;
+				need += lp.leftMargin + lp.rightMargin + (b == size ? b.getPaddingLeft() + b.getPaddingRight() + p.measureText("Aa")
+						: Math.max(p.measureText(b.getText().toString()) + 2 * pad, 0));
+			}
+			if (need <= width || sp <= 10) {
+				for (int k = 0; k < row.getChildCount(); k++) {
+					View v = row.getChildAt(k);
+					if (!(v instanceof Button)) continue;
+					Button b = (Button) v;
+					if (Math.abs(b.getTextSize() - sp * sd) > 0.5f) b.setTextSize(sp);
+					b.setMinWidth(0);
+					b.setMinimumWidth(0);
+					b.setSingleLine(true);
+					if (b != size && b.getPaddingLeft() != pad) b.setPadding(pad, 0, pad, 0);
+				}
+				return;
+			}
+		}
 	}
 
 	private Button button(Context c) {
