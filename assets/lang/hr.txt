@@ -809,7 +809,6 @@ Save as PDF?	Spremiti kao PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Aplikacija izrađuje PDF s okvirima i dvjema tablicama ove parcele i sprema ga u Preuzimanja.
 Yes	Da
 Parcel · 	Parcela · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	U Parcelama i na stranici za uređivanje naredbe su u izborniku ⋮ gore desno. Okviri prikazuju samo vrijednost; dodir prikazuje pojedinosti.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: gore okviri za sada i za razdoblje u jednom redu koji klizi u stranu; ispod idućih 12 sati i dan po dan (pomiču se). ☰ uz dane bira razdoblje; gumb PDF sprema okvire i tablice.
 Screen on	Zaslon uključen
 Automatic location	Automatska lokacija
@@ -841,4 +840,8 @@ Security	Sigurnost
 more	više
 Before an update	Prije ažuriranja
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Aplikacija najprije provjerava smije li instalirati ažuriranja (inače otvara tu postavku). Na Samsungu podsjeća da isključite Auto Blocker; Postavke otvaraju njegovu stranicu.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Ispod naslova mjesto; ⌄ više ⌃ pokraj naslova pomiče dolje ili gore. Dijelovi su odvojeni crtama; tablice klize u stranu; izvor je dolje, jednom.
+Favourites EU	Omiljena EU
+Favourites USA	Omiljena SAD
+Air temp.: 	Temp. zraka: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	U Parcelama su naredbe u izborniku ⋮ gore desno; na stranici uređivanja Izbriši je lijevo od Spremi. Okviri pokazuju samo vrijednost; dodir pokazuje pojedinosti.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Ispod naslova mjesto; ▲ i ▼ uz oblačić pomiču gore ili dolje. Odjeljci su odvojeni crtama; tablice stanu u oblačić ili klize u stranu; izvor je dolje, jednom.

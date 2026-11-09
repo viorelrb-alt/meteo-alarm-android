@@ -1,20 +1,16 @@
-Huidige versie: v.3.50 · 9.11.2026
-Verbeteringen in ontwerp / structuur.
-- Duidelijkere ballonnen: de plaats onder de titel, ‘⌄ meer ⌃’ naast de titel, kleinere bron; Statistiek: coördinaten en ‘Bijgewerkt’ op de onderste regel, de periode wisselt zonder sprong; voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
+Huidige versie: v.3.51 · 9.11.2026
+- Voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
 - Meldingen zoals de Weer-app van de telefoon (‘Plaats | Regen’): regen of sneeuw binnen het uur en na 20 uur voor morgen, voor de plaats en de percelen; geen melding meer als Open-Meteo weer antwoordt.
-- De perceelpagina samengevoegd met Statistiek: bovenaan vaste vakken van nu en van de periode; daaronder de tabellen voor 12 uur en dag voor dag.
-- Het vakje ‘Meldingen en waarschuwingen’ bij elk perceel zet al zijn meldingen aan, nu ook sneeuw en droogte.
-- Een aparte INFORMATIE-melding ook voor de plaats; de ⋮-menu’s lijken op het hoofdmenu.
-- De vakken in Percelen en Statistiek tonen alleen de waarde; de details verschijnen bij een tik.
-- Bubbels: lijnen tussen onderdelen, tabellen met lijnen die opzij schuiven, de bron onderaan, één keer.
+- Meldingen voor percelen, gekozen met de belknop op de kaart: regen, wind, sneeuw, droogte.
+- Een aparte INFORMATIE-melding ook voor de plaats.
 - Aparte INFORMATIE-meldingen voor elk perceel: rijp, vorst, mist, ijzel, zware windstoten.
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.
-- De knop “Statistiek · PDF” op de perceelkaart en op het scherm van elk perceel.
 - INFORMATIE-vakken in Europa: rijp, vorst, mist, ijzel, harde wind.
 - Updates uit drie bronnen: GitHub, een tweede GitHub-server en Google Drive.
 - Verbindingspictogram naast de klok: wifi, mobiele data of geen.
 - Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.
+- Ontwerpverbeteringen en foutoplossingen.
 
 Versie 2 (v.2.00 – v.2.91)
 - Alle officiële EU-talen en Oekraïens.

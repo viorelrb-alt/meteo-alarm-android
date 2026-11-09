@@ -809,7 +809,6 @@ Save as PDF?	Да се запази ли като PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Приложението прави PDF с кутиите и двете таблици на този парцел и го запазва в „Изтегляния“.
 Yes	Да
 Parcel · 	Парцел · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	В „Парцели“ и на страницата за редактиране командите са в менюто ⋮ горе вдясно. Кутиите показват само стойността; докосване показва подробностите.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Статистика · PDF: горе кутиите за сега и за периода в един ред, който се плъзга встрани; под тях следващите 12 часа и ден по ден (превъртат се). ☰ до дните избира периода; бутонът PDF запазва кутиите и таблиците.
 Screen on	Екран включен
 Automatic location	Автоматично местоположение
@@ -841,4 +840,8 @@ Security	Сигурност
 more	още
 Before an update	Преди актуализация
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Приложението първо проверява дали може да инсталира актуализации (иначе отваря тази настройка). На Samsung напомня да изключите Auto Blocker; Настройки отваря страницата му.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Под заглавието – мястото; ⌄ още ⌃ до заглавието превърта надолу или нагоре. Разделите са отделени с линии; таблиците се плъзгат встрани; източникът е долу, веднъж.
+Favourites EU	Любими ЕС
+Favourites USA	Любими САЩ
+Air temp.: 	Темп. въздух: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	В Парцели командите са в менюто ⋮ горе вдясно; на страницата за редакция Изтрий е вляво от Запази. Полетата показват само стойността; докосване показва подробностите.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Под заглавието – мястото; ▲ и ▼ до балончето превъртат нагоре или надолу. Разделите са отделени с линии; таблиците се побират в балончето или се плъзгат встрани; източникът е долу, веднъж.

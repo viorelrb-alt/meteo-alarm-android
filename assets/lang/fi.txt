@@ -809,7 +809,6 @@ Save as PDF?	Tallennetaanko PDF:nä?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Sovellus tekee tämän lohkon ruuduista ja kahdesta taulukosta PDF:n ja tallentaa sen Latauksiin.
 Yes	Kyllä
 Parcel · 	Lohko · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Lohkoissa ja muokkaussivulla komennot ovat ⋮-valikossa oikealla ylhäällä. Ruudut näyttävät vain arvon; napautus näyttää tiedot.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Tilastot · PDF: ylhäällä nykyhetken ja jakson ruudut yhdessä sivulle liukuvassa rivissä; alla seuraavat 12 tuntia ja päivä päivältä (vierivät). Päivien vieressä oleva ☰ valitsee jakson; PDF-painike tallentaa ruudut ja taulukot.
 Screen on	Näyttö päällä
 Automatic location	Automaattinen sijainti
@@ -841,4 +840,8 @@ Security	Suojaus
 more	lisää
 Before an update	Ennen päivitystä
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Sovellus tarkistaa ensin, saako se asentaa päivityksiä (muuten se avaa asetuksen). Samsungilla se muistuttaa kytkemään Auto Blockerin pois; Asetukset avaa sen sivun.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Otsikon alla paikka; ⌄ lisää ⌃ otsikon vieressä vierittää alas tai ylös. Osiot erotetaan viivoin; taulukot liukuvat sivuttain; lähde on alhaalla, kerran.
+Favourites EU	Suosikit EU
+Favourites USA	Suosikit USA
+Air temp.: 	Ilman lämpö: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Peltolohkoissa komennot ovat oikean yläkulman ⋮-valikossa; muokkaussivulla Poista on Tallenna-painikkeen vasemmalla. Ruudut näyttävät vain arvon; napautus näyttää tiedot.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Otsikon alla paikka; kuplan vieressä olevat ▲ ja ▼ vierittävät ylös tai alas. Osiot erotetaan viivoilla; taulukot mahtuvat kuplaan tai liukuvat sivuttain; lähde on alhaalla, kerran.

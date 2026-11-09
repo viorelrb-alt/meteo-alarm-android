@@ -1,24 +1,20 @@
 # Meteo Alarm Android v3.32
 
-În ☰ funcțiile pornite/oprite au o căsuță (X = pornit); pe harta Parcele, sub butonul GPS, clopoțelul deschide „Notificări parcele” (Nu / Da); cardurile parcelelor mai scunde în peisaj. / In ☰ the on/off functions have a box (X = on); on the Parcels map, under the GPS button, the bell opens “Parcel notifications” (No / Yes); lower parcel cards in landscape.
+Pe harta Parcele, clopoțelul alege notificările parcelelor; îmbunătățiri de design. / On the Parcels map, the bell chooses the parcels' notifications; design improvements.
 
 ## Română
 
 ### Versiunea curentă: v.3.32 · 9.11.2026
-Îmbunătățiri de design / structură.
-- Pagina parcelei unită cu Statistica: sus casetele de acum și ale perioadei, fixe; dedesubt tabelele pe 12 ore și zi cu zi.
 - Caseta „Notificări și avertizări” pe fiecare parcelă pornește toate notificările ei, acum și ninsoare și secetă.
-- Notificare INFORMARE separată și pentru localitate; meniurile ⋮ arată ca meniul principal.
-- Casetele din Parcele și Statistică arată doar valoarea; detaliile apar la atingere.
-- Bulele: linii între secțiuni, tabele cu linii care glisează în lateral, sursa jos, o singură dată.
+- Notificare INFORMARE separată și pentru localitate.
 - Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
-- Butonul „Statistică · PDF” pe harta parcelelor și pe ecranul fiecărei parcele.
 - Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
+- Îmbunătățiri de design și corectarea erorilor.
 
 
 ### Versiunea 2 (v.2.00 – v.2.91)
@@ -52,20 +48,16 @@
 ## English
 
 ### Current version: v.3.32 · 9.11.2026
-Design / structure improvements.
-- The parcel's page joined with Statistics: on top the boxes of now and of the period, fixed; under them the 12-hour and day-by-day tables.
 - The “Notifications and warnings” box on each parcel turns on all its notifications, now also snow and drought.
-- A separate INFORMATION notification for the town too; the ⋮ menus look like the main menu.
-- The boxes in Parcels and Statistics show only the value; the details appear at a tap.
-- Bubbles: lines between sections, tables with lines that slide sideways, the source at the bottom, once.
+- A separate INFORMATION notification for the town too.
 - Separate INFORMATION notifications for each parcel: frost, freeze, fog, freezing rain, strong gusts.
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
-- The “Statistics · PDF” button on the parcels' map and on each parcel's screen.
 - INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
 - Updates from three sources: GitHub, a second GitHub server and Google Drive.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
+- Design improvements and bug fixes.
 
 
 ### Version 2 (v.2.00 – v.2.91)

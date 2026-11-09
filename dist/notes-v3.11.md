@@ -1,18 +1,18 @@
 # Meteo Alarm Android v3.11
 
-Parcele și Statistică: comenzile în meniul ⋮ din dreapta sus, casete pătrate cu bulă la atingere, tabele cu linii care se glisează în lateral, titlul încape pe ecran; înapoi din Statistică duce de unde ai venit. Bara de mărime a textului de pe marginea dreaptă a fost scoasă. / Parcels and Statistics: the commands in the ⋮ menu at the top right, square boxes with a bubble on tap, tables with lines that slide sideways, the title fits the screen; back from Statistics goes where you came from. The text-size bar on the right edge is gone.
+Îmbunătățiri de design și corectarea erorilor. / Design improvements and bug fixes.
 
 ## Română
 
 ### Versiunea curentă: v.3.11 · 9.11.2026
-Îmbunătățiri de design / structură.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
-- Butonul „Statistică · PDF” pe harta parcelelor și pe ecranul fiecărei parcele.
 - Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
+- Îmbunătățiri de design și corectarea erorilor.
+
 
 ### Versiunea 2 (v.2.00 – v.2.91)
 - Toate limbile oficiale ale UE și ucraineana.
@@ -44,14 +44,14 @@ Parcele și Statistică: comenzile în meniul ⋮ din dreapta sus, casete pătra
 ## English
 
 ### Current version: v.3.11 · 9.11.2026
-Design / structure improvements.
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
-- The “Statistics · PDF” button on the parcels' map and on each parcel's screen.
 - INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
 - Updates from three sources: GitHub, a second GitHub server and Google Drive.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
+- Design improvements and bug fixes.
+
 
 ### Version 2 (v.2.00 – v.2.91)
 - All official EU languages and Ukrainian.

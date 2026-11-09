@@ -1,24 +1,20 @@
 # Meteo Alarm Android v3.31
 
-Pagina parcelei: casetele pe un singur rând care glisează în lateral, titlul în treimea de sus și valoarea mare dedesubt; tabelele cu titlul pe un rând, ☰ pentru perioadă lângă tabelul zi cu zi, butonul PDF în dreapta sus (PDF-ul cuprinde casetele și ambele tabele); nota și sursa după ultimul tabel; ☰ › Limbă afișaj. / The parcel's page: the boxes in one row that slides sideways, the title in the top third and a big value below; table titles on one line, ☰ for the period next to the day-by-day table, the PDF button at the top right (the PDF holds the boxes and both tables); the note and the source after the last table; ☰ › Display language.
+☰ › Limbă afișaj; PDF-ul parcelei cuprinde casetele și ambele tabele; îmbunătățiri de design. / ☰ › Display language; the parcel's PDF holds the boxes and both tables; design improvements.
 
 ## Română
 
 ### Versiunea curentă: v.3.31 · 9.11.2026
-Îmbunătățiri de design / structură.
-- Pagina parcelei unită cu Statistica: sus casetele de acum și ale perioadei, fixe; dedesubt tabelele pe 12 ore și zi cu zi.
 - Caseta „Notificări și avertizări” pe fiecare parcelă pornește toate notificările ei, acum și ninsoare și secetă.
-- Notificare INFORMARE separată și pentru localitate; meniurile ⋮ arată ca meniul principal.
-- Casetele din Parcele și Statistică arată doar valoarea; detaliile apar la atingere.
-- Bulele: linii între secțiuni, tabele cu linii care glisează în lateral, sursa jos, o singură dată.
+- Notificare INFORMARE separată și pentru localitate.
 - Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
-- Butonul „Statistică · PDF” pe harta parcelelor și pe ecranul fiecărei parcele.
 - Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
+- Îmbunătățiri de design și corectarea erorilor.
 
 
 ### Versiunea 2 (v.2.00 – v.2.91)
@@ -52,20 +48,16 @@ Pagina parcelei: casetele pe un singur rând care glisează în lateral, titlul 
 ## English
 
 ### Current version: v.3.31 · 9.11.2026
-Design / structure improvements.
-- The parcel's page joined with Statistics: on top the boxes of now and of the period, fixed; under them the 12-hour and day-by-day tables.
 - The “Notifications and warnings” box on each parcel turns on all its notifications, now also snow and drought.
-- A separate INFORMATION notification for the town too; the ⋮ menus look like the main menu.
-- The boxes in Parcels and Statistics show only the value; the details appear at a tap.
-- Bubbles: lines between sections, tables with lines that slide sideways, the source at the bottom, once.
+- A separate INFORMATION notification for the town too.
 - Separate INFORMATION notifications for each parcel: frost, freeze, fog, freezing rain, strong gusts.
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
-- The “Statistics · PDF” button on the parcels' map and on each parcel's screen.
 - INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
 - Updates from three sources: GitHub, a second GitHub server and Google Drive.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
+- Design improvements and bug fixes.
 
 
 ### Version 2 (v.2.00 – v.2.91)

@@ -1,20 +1,16 @@
-Versión actual: v.3.50 · 9.11.2026
-Mejoras de diseño / estructura.
-- Burbujas más claras: el lugar bajo el título, «⌄ más ⌃» junto al título, fuente más pequeña; Estadística: coordenadas y «Actualizado» en la línea inferior, el periodo cambia sin salto; antes de actualizar, comprobación del permiso de instalación y nota de Auto Blocker (Samsung) con botón a los ajustes.
+Versión actual: v.3.51 · 9.11.2026
+- Antes de actualizar, comprobación del permiso de instalación y nota de Auto Blocker (Samsung) con botón a los ajustes.
 - Notificaciones como la app Tiempo del teléfono («Lugar | Lluvia»): lluvia o nieve en la próxima hora y, después de las 20 h, para mañana, para la localidad y las parcelas; sin aviso cuando Open-Meteo vuelve a responder.
-- La página de la parcela unida a Estadística: arriba las casillas fijas de ahora y del periodo; debajo las tablas de 12 horas y día a día.
-- La casilla «Notificaciones y avisos» de cada parcela activa todas sus notificaciones, ahora también nieve y sequía.
-- Una notificación de INFORMACIÓN propia también para la localidad; los menús ⋮ se parecen al menú principal.
-- Las casillas de Parcelas y Estadística muestran solo el valor; los detalles aparecen al tocar.
-- Burbujas: líneas entre secciones, tablas con líneas que se deslizan hacia los lados, la fuente abajo, una vez.
+- Notificaciones de parcelas, elegidas con el botón de campana del mapa: lluvia, viento, nieve, sequía.
+- Una notificación de INFORMACIÓN propia también para la localidad.
 - Avisos de INFORMACIÓN separados para cada parcela: escarcha, helada, niebla, lluvia engelante, rachas fuertes.
 - Modo agricultor: nuevas casillas tras Agua en el suelo: Pulverizar, Balance hídrico, Tormentas, Grados-día, 16 días.
 - En EE. UU., en modo agricultor: las casillas NWS, Sequía, Incendio, Granizo.
-- El botón «Estadística · PDF» en el mapa de parcelas y en la pantalla de cada parcela.
 - Casillas INFORMACIÓN en Europa: escarcha, helada, niebla, lluvia engelante, viento fuerte.
 - Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Icono de conexión junto al reloj: Wi-Fi, datos móviles o ninguna.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.
+- Mejoras de diseño y corrección de errores.
 
 Versión 2 (v.2.00 – v.2.91)
 - Todos los idiomas oficiales de la UE y el ucraniano.

@@ -1,20 +1,16 @@
-Versione attuale: v.3.50 · 9.11.2026
-Miglioramenti di design / struttura.
-- Fumetti più chiari: il luogo sotto il titolo, «⌄ altro ⌃» accanto al titolo, fonte più piccola; Statistiche: coordinate e «Aggiornato» sulla riga in basso, il periodo cambia senza salti; prima di un aggiornamento, controllo del permesso di installazione e nota su Auto Blocker (Samsung) con pulsante per le impostazioni.
+Versione attuale: v.3.51 · 9.11.2026
+- Prima di un aggiornamento, controllo del permesso di installazione e nota su Auto Blocker (Samsung) con pulsante per le impostazioni.
 - Notifiche come l'app Meteo del telefono («Luogo | Pioggia»): pioggia o neve entro un'ora e, dopo le 20, per domani, per la località e le parcelle; nessun avviso quando Open-Meteo risponde di nuovo.
-- La pagina della parcella unita alle Statistiche: in alto le caselle fisse di adesso e del periodo; sotto le tabelle di 12 ore e giorno per giorno.
-- La casella «Notifiche e avvisi» di ogni parcella attiva tutte le sue notifiche, ora anche neve e siccità.
-- Una notifica INFORMAZIONE a parte anche per la località; i menu ⋮ somigliano al menu principale.
-- I riquadri di Appezzamenti e Statistiche mostrano solo il valore; i dettagli appaiono al tocco.
-- Fumetti: linee tra le sezioni, tabelle con linee che scorrono di lato, la fonte in basso, una volta.
+- Notifiche delle particelle, scelte con il pulsante campanella sulla mappa: pioggia, vento, neve, siccità.
+- Una notifica INFORMAZIONE a parte anche per la località.
 - Notifiche INFORMAZIONE separate per ogni appezzamento: brina, gelo, nebbia, pioggia gelata, raffiche forti.
 - Modalità agricoltore: nuove caselle dopo Acqua nel suolo: Irrorazione, Bilancio idrico, Temporali, Gradi-giorno, 16 giorni.
 - Negli USA, in modalità agricoltore: le caselle NWS, Siccità, Incendio, Grandine.
-- Il pulsante «Statistica · PDF» sulla mappa degli appezzamenti e sulla schermata di ciascuno.
 - Caselle INFORMAZIONE in Europa: brina, gelo, nebbia, pioggia che gela, vento forte.
 - Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Icona della connessione accanto all’orologio: Wi-Fi, dati mobili o nessuna.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
+- Miglioramenti del design e correzioni di errori.
 
 Versione 2 (v.2.00 – v.2.91)
 - Tutte le lingue ufficiali dell'UE e l'ucraino.

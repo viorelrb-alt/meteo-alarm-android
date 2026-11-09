@@ -879,7 +879,6 @@ Save as PDF?	¿Guardar como PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	La app hace un PDF con las casillas y las dos tablas de esta parcela y lo guarda en Descargas.
 Yes	Sí
 Parcel · 	Parcela · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	En Parcelas y en la página de edición los comandos están en el menú ⋮ arriba a la derecha. Las casillas muestran solo el valor; un toque muestra los detalles.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Estadística · PDF: arriba las casillas de ahora y del periodo en una fila que se desliza hacia los lados; debajo las próximas 12 horas y día a día (se desplazan). El ☰ junto a los días elige el periodo; el botón PDF guarda las casillas y las tablas.
 Screen on	Pantalla encendida
 Automatic location	Ubicación automática
@@ -911,4 +910,8 @@ Security	Seguridad
 more	más
 Before an update	Antes de una actualización
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	La aplicación comprueba primero que puede instalar actualizaciones (si no, abre ese ajuste). En Samsung recuerda desactivar Auto Blocker; Ajustes abre su página.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Bajo el título, el lugar; ⌄ más ⌃ junto al título desplaza hacia abajo o arriba. Las secciones se separan con líneas; las tablas se deslizan de lado; la fuente está abajo, una vez.
+Favourites EU	Favoritas UE
+Favourites USA	Favoritas EE. UU.
+Air temp.: 	Temp. aire: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	En Parcelas los comandos están en el menú ⋮ arriba a la derecha; en la página de edición Eliminar está a la izquierda de Guardar. Las casillas muestran solo el valor; un toque muestra los detalles.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Bajo el título, el lugar; ▲ y ▼ junto a la burbuja desplazan arriba o abajo. Las secciones se separan con líneas; las tablas caben en la burbuja o se deslizan de lado; la fuente está abajo, una vez.

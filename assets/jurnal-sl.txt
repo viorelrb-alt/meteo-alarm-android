@@ -1,20 +1,16 @@
-Trenutna različica: v.3.50 · 9.11.2026
-Izboljšave videza / zgradbe.
-- Jasnejši oblački: kraj pod naslovom, »⌄ več ⌃« ob naslovu, manjši vir; Statistika: koordinate in »Posodobljeno« v spodnji vrstici, obdobje se zamenja brez skoka; pred posodobitvijo preverjanje dovoljenja za nameščanje in opomba o Auto Blocker (Samsung) z gumbom do nastavitev.
+Trenutna različica: v.3.51 · 9.11.2026
+- Pred posodobitvijo preverjanje dovoljenja za nameščanje in opomba o Auto Blocker (Samsung) z gumbom do nastavitev.
 - Obvestila kot v aplikaciji Vreme na telefonu (»Kraj | Dež«): dež ali sneg v naslednji uri in po 20. uri za jutri, za kraj in parcele; brez obvestila, ko Open-Meteo spet odgovori.
-- Stran parcele združena s Statistiko: zgoraj nepremična polja za zdaj in za obdobje; pod njimi tabeli za 12 ur in dan za dnem.
-- Polje »Obvestila in opozorila« pri vsaki parceli vklopi vsa njena obvestila, zdaj tudi sneg in sušo.
-- Ločeno obvestilo INFORMACIJA tudi za kraj; meniji ⋮ so videti kot glavni meni.
-- Polja v Parcelah in Statistiki kažejo le vrednost; podrobnosti se pokažejo ob dotiku.
-- Oblački: črte med deli, tabele s črtami, ki se premikajo vstran, vir spodaj, enkrat.
+- Obvestila za parcele, izbrana z gumbom zvonec na zemljevidu: dež, veter, sneg, suša.
+- Ločeno obvestilo INFORMACIJA tudi za kraj.
 - Ločena obvestila OBVESTILO za vsako parcelo: slana, zmrzal, megla, žled, močni sunki.
 - Kmetijski način: nova polja za Vodo v tleh: Škropljenje, Vodna bilanca, Nevihte, Toplotne vsote, 16 dni.
 - V ZDA v kmetijskem načinu: polja NWS, Suša, Požar, Toča.
-- Gumb »Statistika · PDF« na zemljevidu parcel in na zaslonu vsake parcele.
 - Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.
 - Posodobitve iz treh virov: GitHub, drugi strežnik GitHub in Google Drive.
 - Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
 - Posodobitve: najprej se preveri povezava, že prenesena različica se takoj namesti, do 5 poskusov, ko GitHub ne odgovori, in prikaže se razlog.
+- Izboljšave oblikovanja in popravki napak.
 
 Različica 2 (v.2.00 – v.2.91)
 - Vsi uradni jeziki EU in ukrajinščina.

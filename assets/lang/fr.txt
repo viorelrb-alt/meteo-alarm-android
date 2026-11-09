@@ -809,7 +809,6 @@ Save as PDF?	Enregistrer en PDF ?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	L’application crée un PDF avec les cases et les deux tableaux de cette parcelle et l’enregistre dans Téléchargements.
 Yes	Oui
 Parcel · 	Parcelle · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Dans Parcelles et sur la page de modification, les commandes sont dans le menu ⋮ en haut à droite. Les cases n’affichent que la valeur ; un appui montre les détails.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistiques · PDF : en haut les cases de maintenant et de la période sur une rangée qui glisse sur le côté ; dessous les 12 prochaines heures et jour par jour (elles défilent). Le ☰ près des jours choisit la période ; le bouton PDF enregistre les cases et les tableaux.
 Screen on	Écran allumé
 Automatic location	Localisation automatique
@@ -841,4 +840,8 @@ Security	Sécurité
 more	plus
 Before an update	Avant une mise à jour
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	L'application vérifie d'abord qu'elle peut installer des mises à jour (sinon elle ouvre ce paramètre). Sur Samsung, elle rappelle de désactiver Auto Blocker ; Paramètres ouvre sa page.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Sous le titre, le lieu ; ⌄ plus ⌃ à côté du titre fait défiler vers le bas ou le haut. Les sections sont séparées par des lignes ; les tableaux glissent sur le côté ; la source est en bas, une fois.
+Favourites EU	Favoris UE
+Favourites USA	Favoris É.-U.
+Air temp.: 	Temp. air : 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Dans Parcelles, les commandes sont dans le menu ⋮ en haut à droite ; sur la page de modification, Supprimer est à gauche d'Enregistrer. Les cases n'affichent que la valeur ; un appui montre les détails.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Sous le titre, le lieu ; ▲ et ▼ à côté de la bulle font défiler vers le haut ou le bas. Les sections sont séparées par des lignes ; les tableaux tiennent dans la bulle ou glissent sur le côté ; la source est en bas, une fois.

@@ -173,9 +173,18 @@ final class HelpPanel extends FrameLayout {
 
 	/** A plain paragraph (a notice: downloading, nothing found…). */
 	void text(String what) {
+		text(what, 15);
+	}
+
+	/** v3.51 (Viorel): where the data come from, as big as every source text (14). */
+	void source(String what) {
+		text(what, 14);
+	}
+
+	private void text(String what, float sp) {
 		TextView w = new TextView(getContext());
 		w.setTypeface(reg);
-		TextSize.size(w, 15, ts);
+		TextSize.size(w, sp, ts);
 		w.setTextColor(dim());
 		w.setLineSpacing(0, 1.1f);
 		w.setText(what);

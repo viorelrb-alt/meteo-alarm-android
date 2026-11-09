@@ -1,20 +1,16 @@
-Súčasná verzia: v.3.50 · 9.11.2026
-Vylepšenia vzhľadu / štruktúry.
-- Prehľadnejšie bubliny: miesto pod názvom, „⌄ viac ⌃“ vedľa názvu, menší zdroj; Štatistika: súradnice a „Aktualizované“ v spodnom riadku, obdobie sa mení bez skoku; pred aktualizáciou kontrola povolenia na inštaláciu a poznámka o Auto Blocker (Samsung) s tlačidlom do nastavení.
+Súčasná verzia: v.3.51 · 9.11.2026
+- Pred aktualizáciou kontrola povolenia na inštaláciu a poznámka o Auto Blocker (Samsung) s tlačidlom do nastavení.
 - Oznámenia ako v aplikácii Počasie v telefóne („Miesto | Dážď“): dážď alebo sneh počas hodiny a po 20. hodine na zajtra, pre obec aj parcely; žiadne oznámenie, keď Open-Meteo znova odpovie.
-- Stránka parcely spojená so Štatistikou: hore pevné polia pre teraz a pre obdobie; pod nimi tabuľky na 12 hodín a deň po dni.
-- Políčko „Oznámenia a výstrahy“ pri každej parcele zapne všetky jej oznámenia, teraz aj sneh a sucho.
-- Samostatné oznámenie INFORMÁCIA aj pre obec; ponuky ⋮ vyzerajú ako hlavná ponuka.
-- Polia v Parcelách a Štatistike ukazujú len hodnotu; podrobnosti sa zobrazia ťuknutím.
-- Bubliny: čiary medzi časťami, tabuľky s čiarami posuvné do strán, zdroj dole, raz.
+- Upozornenia pre pozemky, volené tlačidlom zvončeka na mape: dážď, vietor, sneh, sucho.
+- Samostatné oznámenie INFORMÁCIA aj pre obec.
 - Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
 - Režim farmára: nové polia za Vodou v pôde: Postrek, Vodná bilancia, Búrky, Teplotné sumy, 16 dní.
 - V USA v režime farmára: polia NWS, Sucho, Požiar, Krupobitie.
-- Tlačidlo „Štatistika · PDF“ na mape parciel a na obrazovke každej parcely.
 - Polia INFORMÁCIA v Európe: srieň, mráz, hmla, mrznúci dážď, silný vietor.
 - Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
 - Ikona pripojenia vedľa hodín: Wi-Fi, mobilné dáta alebo žiadne.
 - Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
+- Vylepšenia vzhľadu a opravy chýb.
 
 Verzia 2 (v.2.00 – v.2.91)
 - Všetky úradné jazyky EÚ a ukrajinčina.

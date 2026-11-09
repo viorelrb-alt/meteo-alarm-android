@@ -809,7 +809,6 @@ Save as PDF?	Spara som PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Appen gör en PDF med rutorna och de två tabellerna för detta skifte och sparar den i Hämtade filer.
 Yes	Ja
 Parcel · 	Skifte · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	I Skiften och på redigeringssidan finns kommandona i menyn ⋮ uppe till höger. Rutorna visar bara värdet; ett tryck visar detaljerna.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistik · PDF: överst rutorna för nu och för perioden i en rad som glider åt sidan; under dem de kommande 12 timmarna och dag för dag (de rullar). ☰ vid dagarna väljer perioden; PDF-knappen sparar rutorna och tabellerna.
 Screen on	Skärm på
 Automatic location	Automatisk plats
@@ -841,4 +840,8 @@ Security	Säkerhet
 more	mer
 Before an update	Före en uppdatering
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Appen kontrollerar först att den får installera uppdateringar (annars öppnar den inställningen). På Samsung påminner den om att stänga av Auto Blocker; Inställningar öppnar dess sida.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Under titeln platsen; ⌄ mer ⌃ vid titeln rullar ned eller upp. Avsnitt skiljs av linjer; tabeller glider åt sidan; källan står längst ned, en gång.
+Favourites EU	Favoriter EU
+Favourites USA	Favoriter USA
+Air temp.: 	Lufttemp.: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	I Skiften finns kommandona i menyn ⋮ uppe till höger; på redigeringssidan står Radera till vänster om Spara. Rutorna visar bara värdet; ett tryck visar detaljerna.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Under rubriken platsen; ▲ och ▼ vid bubblan rullar upp eller ner. Avsnitt skiljs av linjer; tabeller ryms i bubblan eller glider åt sidan; källan står längst ner, en gång.

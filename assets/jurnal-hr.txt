@@ -1,20 +1,16 @@
-Trenutačna verzija: v.3.50 · 9.11.2026
-Poboljšanja izgleda / strukture.
-- Jasniji oblačići: mjesto ispod naslova, „⌄ više ⌃” pokraj naslova, manji izvor; Statistika: koordinate i „Ažurirano” u donjem retku, razdoblje se mijenja bez skoka; prije ažuriranja provjera dopuštenja za instalaciju i napomena o Auto Blockeru (Samsung) s gumbom za postavke.
+Trenutačna verzija: v.3.51 · 9.11.2026
+- Prije ažuriranja provjera dopuštenja za instalaciju i napomena o Auto Blockeru (Samsung) s gumbom za postavke.
 - Obavijesti kao u aplikaciji Vrijeme na telefonu („Mjesto | Kiša”): kiša ili snijeg unutar sat vremena i nakon 20 h za sutra, za mjesto i parcele; bez obavijesti kad Open-Meteo ponovno odgovori.
-- Stranica parcele spojena sa Statistikom: gore nepomični okviri za sada i za razdoblje; ispod tablice za 12 sati i dan po dan.
-- Kućica „Obavijesti i upozorenja” na svakoj parceli uključuje sve njezine obavijesti, sada i snijeg i sušu.
-- Zasebna obavijest INFORMACIJA i za mjesto; izbornici ⋮ izgledaju kao glavni izbornik.
-- Okviri u Parcelama i Statistici pokazuju samo vrijednost; pojedinosti se vide na dodir.
-- Oblačići: crte između dijelova, tablice s crtama koje klize u stranu, izvor dolje, jednom.
+- Obavijesti za parcele, odabrane gumbom zvona na karti: kiša, vjetar, snijeg, suša.
+- Zasebna obavijest INFORMACIJA i za mjesto.
 - Zasebne obavijesti OBAVIJEST za svaku parcelu: mraz, smrzavanje, magla, ledena kiša, jaki udari.
 - Način rada za poljoprivrednike: nova polja nakon Vode u tlu: Prskanje, Vodna bilanca, Oluje, Toplinske jedinice, 16 dana.
 - U SAD-u, u načinu za poljoprivrednike: polja NWS, Suša, Požar, Tuča.
-- Gumb „Statistika · PDF” na karti parcela i na zaslonu svake parcele.
 - Polja INFORMACIJA u Europi: mraz, smrzavanje, magla, ledena kiša, jak vjetar.
 - Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
 - Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
+- Poboljšanja dizajna i ispravci pogrešaka.
 
 Verzija 2 (v.2.00 – v.2.91)
 - Svi službeni jezici EU-a i ukrajinski.

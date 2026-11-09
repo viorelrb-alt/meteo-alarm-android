@@ -1,20 +1,16 @@
-Pašreizējā versija: v.3.50 · 9.11.2026
-Dizaina / struktūras uzlabojumi.
-- Skaidrāki burbuļi: vieta zem virsraksta, „⌄ vairāk ⌃“ blakus virsrakstam, mazāks avots; Statistika: koordinātas un „Atjaunināts“ apakšējā rindā, periods mainās bez lēciena; pirms atjaunināšanas instalēšanas atļaujas pārbaude un Auto Blocker (Samsung) piezīme ar pogu uz iestatījumiem.
+Pašreizējā versija: v.3.51 · 9.11.2026
+- Pirms atjaunināšanas instalēšanas atļaujas pārbaude un Auto Blocker (Samsung) piezīme ar pogu uz iestatījumiem.
 - Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
-- Lauka lapa apvienota ar statistiku: augšā nekustīgi šī brīža un perioda lodziņi; zem tiem 12 stundu un dienu tabulas.
-- Katra lauka rūtiņa „Paziņojumi un brīdinājumi“ ieslēdz visus tā paziņojumus, tagad arī sniegu un sausumu.
-- Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai; izvēlnes ⋮ izskatās kā galvenā izvēlne.
-- Lauku un Statistikas lodziņi rāda tikai vērtību; sīkāka informācija parādās pēc pieskāriena.
-- Burbuļi: līnijas starp daļām, tabulas ar līnijām, kas bīdās uz sāniem, avots apakšā, vienreiz.
+- Paziņojumi par laukiem, izvēlami ar zvaniņa pogu kartē: lietus, vējš, sniegs, sausums.
+- Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai.
 - Atsevišķi INFORMĀCIJAS paziņojumi katram laukam: sarma, sals, migla, apledojums, stipras brāzmas.
 - Zemnieka režīms: jauni lodziņi pēc Ūdens augsnē: Smidzināšana, Ūdens bilance, Vētras, Siltuma summa, 16 dienas.
 - ASV, zemnieka režīmā: lodziņi NWS, Sausums, Ugunsgrēks, Krusa.
-- Poga “Statistika · PDF” lauku kartē un katra lauka ekrānā.
 - INFORMĀCIJAS lodziņi Eiropā: sarma, salna, migla, salstošs lietus, stiprs vējš.
 - Atjauninājumi no trim avotiem: GitHub, otrs GitHub serveris un Google Drive.
 - Savienojuma ikona pie pulksteņa: Wi-Fi, mobilie dati vai nav.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.
+- Dizaina uzlabojumi un kļūdu labojumi.
 
 Versija 2 (v.2.00 – v.2.91)
 - Visas ES oficiālās valodas un ukraiņu valoda.

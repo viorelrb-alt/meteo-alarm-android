@@ -809,7 +809,6 @@ Save as PDF?	Mentés PDF-ként?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Az alkalmazás PDF-et készít a parcella dobozaival és két táblázatával, és a Letöltésekbe menti.
 Yes	Igen
 Parcel · 	Parcella · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	A Parcellákban és a szerkesztőoldalon a parancsok a jobb felső ⋮ menüben vannak. A dobozok csak az értéket mutatják; koppintásra látszanak a részletek.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statisztika · PDF: fent a mostani és az időszak dobozai egy oldalra csúsztatható sorban; alattuk a következő 12 óra és napról napra (görgethetők). A napok melletti ☰ választja az időszakot; a PDF gomb menti a dobozokat és a táblázatokat.
 Screen on	Képernyő bekapcsolva
 Automatic location	Automatikus helymeghatározás
@@ -841,4 +840,8 @@ Security	Biztonság
 more	több
 Before an update	Frissítés előtt
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Az alkalmazás először ellenőrzi, hogy telepíthet-e frissítéseket (különben megnyitja ezt a beállítást). Samsungon emlékeztet az Auto Blocker kikapcsolására; a Beállítások megnyitja az oldalát.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	A cím alatt a hely; a cím melletti ⌄ több ⌃ le vagy fel görget. A részeket vonalak választják el; a táblázatok oldalra csúsznak; a forrás lent van, egyszer.
+Favourites EU	Kedvencek EU
+Favourites USA	Kedvencek USA
+Air temp.: 	Léghőm.: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	A Parcellákban a parancsok a jobb felső ⋮ menüben vannak; a szerkesztő oldalon a Törlés a Mentés bal oldalán van. A mezők csak az értéket mutatják; koppintásra látszanak a részletek.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	A cím alatt a hely; a buborék melletti ▲ és ▼ felfelé vagy lefelé görget. A részeket vonalak választják el; a táblázatok beférnek a buborékba vagy oldalra csúsztathatók; a forrás alul van, egyszer.

@@ -25,8 +25,8 @@ import java.util.List;
  * A menu as a speech bubble, as on the Kindle: a rounded frame next to the button that opened it,
  * with a small tip pointing at the button, and rows separated by thin lines. It opens under a
  * button in the upper half of the screen and over one in the lower half, is at most half the
- * screen high (the rows scroll, with "⌄ more ⌃" on the title's line where there are more) and closes
- * at a tap outside it.
+ * screen high (the rows scroll, with ▲ / ▼ floating outside the frame where there are more, v3.51)
+ * and closes at a tap outside it.
  */
 final class Bubble extends FrameLayout {
 	/** A row: a choice, a section title, or a line between sections. */
@@ -97,7 +97,7 @@ final class Bubble extends FrameLayout {
 	private final Card card;
 	private final ScrollView scroll;
 	private final LinearLayout list;
-	private final TextView title, where, nav;
+	private final TextView title, where, up, down;
 	private final LinearLayout top;
 	private boolean dark, open;
 	private Runnable onClose;
@@ -118,21 +118,6 @@ final class Bubble extends FrameLayout {
 		title = text(c, 17, true);
 		title.setPadding((int) (16 * dp), (int) (12 * dp), (int) (8 * dp), (int) (8 * dp));
 		top.addView(title, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
-		nav = text(c, 14, false);
-		nav.setSingleLine(true);
-		nav.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
-		nav.setPadding((int) (4 * dp), (int) (10 * dp), (int) (14 * dp), (int) (10 * dp));
-		nav.setOnTouchListener(new OnTouchListener() {
-			public boolean onTouch(View v, MotionEvent e) {
-				if (e.getActionMasked() != MotionEvent.ACTION_UP) return true;
-				// The left half (⌄) goes down, the right half (⌃) goes up, a screenful at a time.
-				boolean down = e.getX() < v.getWidth() / 2f;
-				int step = Math.max(1, scroll.getHeight() - (int) (24 * dp));
-				scroll.smoothScrollBy(0, down ? step : -step);
-				return true;
-			}
-		});
-		top.addView(nav, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		card.addView(top, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		where = text(c, 15, false);
 		where.setSingleLine(true);
@@ -151,6 +136,25 @@ final class Bubble extends FrameLayout {
 			}
 		});
 		addView(card, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		// v3.51 (Viorel): only ▲ and ▼, floating outside the bubble, ▲ at its top, ▼ at its bottom.
+		up = arrow(c, false);
+		down = arrow(c, true);
+	}
+
+	private TextView arrow(Context c, final boolean dn) {
+		TextView a = text(c, 16, true);
+		a.setText(dn ? "▼" : "▲");
+		a.setGravity(Gravity.CENTER);
+		a.setIncludeFontPadding(false);
+		a.setVisibility(GONE);
+		a.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				int step = Math.max(1, scroll.getHeight() - (int) (24 * dp));
+				scroll.smoothScrollBy(0, dn ? step : -step);
+			}
+		});
+		addView(a, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		return a;
 	}
 
 	boolean isOpen() {
@@ -208,14 +212,13 @@ final class Bubble extends FrameLayout {
 		float zk = (TextSize.tablet(c) ? 1.11f : 1f) * TextSize.get(c);
 		width = (int) (width * zk);
 		title.setTextSize(17 * zk);
-		nav.setTextSize(14 * zk);
 		int ink = ink();
+		// v3.51 (Viorel): the place is written under the title, not in it as well.
+		if (head != null && at != null && at.length() > 0 && head.endsWith(" · " + at)) head = head.substring(0, head.length() - at.length() - 3);
 		boolean hasTitle = head != null && head.length() > 0;
 		title.setVisibility(hasTitle ? VISIBLE : INVISIBLE);
 		title.setText(hasTitle ? head : "");
 		title.setTextColor(ink);
-		nav.setText("⌄  " + Tr.t("more", "mai multe") + "  ⌃");
-		nav.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
 		where.setTextSize(15 * zk);
 		where.setTextColor(dark ? 0xFFA6A39A : 0xFF555555);
 		where.setText(at == null ? "" : at);
@@ -268,13 +271,13 @@ final class Bubble extends FrameLayout {
 			if (r.kind == Row.TEXT || r.kind == Row.VALUE || r.kind == Row.SOURCE) {
 				// Information in larger letters, on as many lines as it needs (the warning details).
 				boolean src = r.kind == Row.SOURCE;
-				TextView t = text(c, (src ? 15 : 18) * zk, false);
+				TextView t = text(c, (src ? 14 : 18) * zk, false); // v3.51: sources as big as the old "more"
 				t.setTag("text");
 				t.setText(nb(r.text));
 				if (r.kind == Row.VALUE) values.add(t);
 				t.setTextColor(src ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 				t.setLineSpacing(2 * dp, 1);
-				t.setPadding((int) (16 * dp), (int) (5 * dp), (int) (16 * dp), (int) (5 * dp));
+				t.setPadding((int) (16 * dp), (int) (2.5f * dp), (int) (16 * dp), (int) (2.5f * dp)); // v3.51: half the gap
 				list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 				first = true;
 				continue;
@@ -285,7 +288,7 @@ final class Bubble extends FrameLayout {
 				sep.setBackgroundColor(line());
 				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
 				lp.leftMargin = lp.rightMargin = (int) (10 * dp);
-				lp.topMargin = (int) (6 * dp);
+				lp.topMargin = (int) (3 * dp);
 				list.addView(sep, lp);
 			}
 			if (!first && r.kind == Row.ITEM) {
@@ -298,11 +301,11 @@ final class Bubble extends FrameLayout {
 			first = false;
 			// v3.50 (Viorel): in an information bubble the section titles as big as the texts (0.5 smaller at most).
 			TextView t = text(c, (r.kind == Row.HEADER ? (info ? 17.5f : 13) : 15) * zk, r.kind == Row.HEADER || r.checked);
-			t.setText(r.kind == Row.HEADER ? r.text.toUpperCase() : (r.checked ? "✓  " : "") + r.text);
+			t.setText(r.kind == Row.HEADER ? r.text.toUpperCase() : r.text + (r.checked ? "  ✓" : "")); // v3.51: ✓ at the right
 			t.setTextColor(r.kind == Row.HEADER ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 			t.setGravity(Gravity.CENTER_VERTICAL);
 			int ph = (int) (16 * dp);
-			if (r.kind == Row.HEADER) t.setPadding(ph, (int) ((info ? 6 : 10) * dp), ph, (int) (4 * dp));
+			if (r.kind == Row.HEADER) t.setPadding(ph, (int) ((info ? 3 : 10) * dp), ph, (int) ((info ? 2 : 4) * dp));
 			else {
 				t.setPadding(ph, 0, ph, 0);
 				t.setMinHeight((int) (46 * dp * zk));
@@ -419,9 +422,10 @@ final class Bubble extends FrameLayout {
 			}
 			t.setTextSize(vs);
 		}
-		for (Grid g : grids) g.minW = inner;
+		for (Grid g : grids) g.fit(inner, 11 * zk);
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
-		nav.setVisibility(GONE);
+		up.setVisibility(GONE);
+		down.setVisibility(GONE);
 		top.setVisibility(title.getVisibility() == VISIBLE ? VISIBLE : GONE);
 		int pad = (int) (6 * dp), titleH = head(width);
 		// The same shape in both orientations: at most half the portrait height, and never past the
@@ -431,22 +435,19 @@ final class Bubble extends FrameLayout {
 		if (pan) tip = 0;
 		int maxH = pan ? sh - 2 * margin : Math.min((int) (Math.max(sw, sh) * (TextSize.tablet(c) ? 0.7f : 0.5f)), room - tip), rowsH = list.getMeasuredHeight();
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
-		if (scrolls) {
-			// The "⌄ more ⌃" on the title's line, smaller when the title would not fit on one line.
-			top.setVisibility(VISIBLE);
-			nav.setVisibility(VISIBLE);
-			float ns = 14 * zk;
-			String tt = title.getText().toString();
-			Paint tp = new Paint(title.getPaint()), np = new Paint(nav.getPaint());
-			float sd = getResources().getDisplayMetrics().scaledDensity;
-			for (; ns > 9; ns -= 0.5f) {
-				np.setTextSize(ns * sd);
-				float navW = np.measureText(nav.getText().toString()) + nav.getPaddingLeft() + nav.getPaddingRight();
-				float titleW = tt.length() == 0 ? 0 : tp.measureText(tt) + title.getPaddingLeft() + title.getPaddingRight();
-				if (navW + titleW <= width) break;
+		// v3.51: ▲ / ▼ outside the frame, at the right where there is room, else at the left; when
+		// neither side has room the bubble gets narrower by the arrows' width.
+		int aw = (int) (34 * dp * zk), gap = (int) (4 * dp);
+		if (scrolls && !pan) {
+			int nw = sw - gap - aw - 2 * gap;
+			if (nw < width) {
+				width = nw;
+				inner = width - (int) (32 * dp);
+				for (Grid g : grids) g.fit(inner, 11 * zk);
+				list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+				rowsH = list.getMeasuredHeight();
+				titleH = head(width);
 			}
-			nav.setTextSize(ns);
-			titleH = head(width);
 		}
 		int scrollH = scrolls ? maxH - titleH - 2 * pad : rowsH;
 		// The panel keeps its full height whatever it holds.
@@ -469,6 +470,35 @@ final class Bubble extends FrameLayout {
 			y = margin;
 			below = false;
 		}
+		if (scrolls) {
+			int ax;
+			if (x + width + gap + aw <= sw - gap) ax = x + width + gap;
+			else if (x - gap - aw >= gap) ax = x - gap - aw;
+			else {
+				x = Math.max(gap, sw - 2 * gap - aw - width);
+				ax = x + width + gap;
+			}
+			int ink2 = ink();
+			for (TextView a : new TextView[]{up, down}) {
+				a.setTextSize(16 * zk);
+				a.setTextColor(ink2);
+				android.graphics.drawable.GradientDrawable bg = new android.graphics.drawable.GradientDrawable();
+				bg.setShape(android.graphics.drawable.GradientDrawable.OVAL);
+				bg.setColor(page());
+				bg.setStroke(Math.max(1, (int) (1.5f * dp)), ink2);
+				a.setBackground(bg);
+				a.setAlpha(1f);
+				LayoutParams al = (LayoutParams) a.getLayoutParams();
+				al.width = al.height = aw;
+				al.leftMargin = ax;
+				a.setVisibility(VISIBLE);
+			}
+			int cardTop = y + (below ? tip : 0), cardBot = y + cardH - (below ? 0 : tip);
+			((LayoutParams) up.getLayoutParams()).topMargin = cardTop;
+			((LayoutParams) down.getLayoutParams()).topMargin = cardBot - aw;
+			up.requestLayout();
+			down.requestLayout();
+		}
 		card.tipUp = below;
 		card.tipX = (anchor[0] + anchor[2]) / 2 - x;
 		card.tip = tip;
@@ -485,7 +515,7 @@ final class Bubble extends FrameLayout {
 		bringToFront();
 	}
 
-	/** The height of the title's line (with "more") and the place under it, at WIDTH. */
+	/** The height of the title's line and the place under it, at WIDTH. */
 	private int head(int width) {
 		int h = 0;
 		if (top.getVisibility() == VISIBLE) {
@@ -499,16 +529,12 @@ final class Bubble extends FrameLayout {
 		return h;
 	}
 
-	/** v3.50: the arrows of "⌄ more ⌃" fade at the end they cannot go further. */
+	/** The arrows fade at the end they cannot go further. */
 	private void hints() {
-		if (nav.getVisibility() != VISIBLE) return;
+		if (up.getVisibility() != VISIBLE) return;
 		int y = scroll.getScrollY(), end = list.getHeight() - scroll.getHeight();
-		String w = Tr.t("more", "mai multe");
-		android.text.SpannableString sp = new android.text.SpannableString("⌄  " + w + "  ⌃");
-		int dim = dark ? 0x40A6A39A : 0x40555555;
-		if (y >= end - 1) sp.setSpan(new android.text.style.ForegroundColorSpan(dim), 0, 1, 0);
-		if (y <= 0) sp.setSpan(new android.text.style.ForegroundColorSpan(dim), sp.length() - 1, sp.length(), 0);
-		nav.setText(sp);
+		up.setAlpha(y <= 0 ? 0.3f : 1f);
+		down.setAlpha(y >= end - 1 ? 0.3f : 1f);
 	}
 
 	void hide() {
@@ -575,36 +601,46 @@ final class Bubble extends FrameLayout {
 		int minW;
 		private final Paint tp = new Paint(Paint.ANTI_ALIAS_FLAG), hp = new Paint(Paint.ANTI_ALIAS_FLAG), lp = new Paint();
 		private float[] colW;
-		private float rowH, padX;
-		private boolean[] right;
+		private float rowH, padX, px0;
 
 		Grid(Context c, String[][] cells, float sp) {
 			super(c);
 			this.cells = cells;
-			float px = sp * getResources().getDisplayMetrics().scaledDensity;
-			tp.setTextSize(px);
+			px0 = sp * getResources().getDisplayMetrics().scaledDensity;
 			tp.setTypeface(reg);
-			hp.setTextSize(px);
 			hp.setTypeface(bold);
 			lp.setStrokeWidth(Math.max(1, dp));
-			padX = 8 * dp;
+			size(px0);
+		}
+
+		private void size(float px) {
+			tp.setTextSize(px);
+			hp.setTextSize(px);
+			padX = 8 * dp * px / px0;
 			rowH = px * 1.9f;
 			int n = 0;
 			for (String[] r : cells) n = Math.max(n, r.length);
 			colW = new float[n];
-			right = new boolean[n];
-			for (int j = 0; j < n; j++) {
-				int num = 0, all = 0;
+			for (int j = 0; j < n; j++)
 				for (int i = 0; i < cells.length; i++) {
 					String v = j < cells[i].length ? cells[i][j] : "";
 					colW[j] = Math.max(colW[j], (i == 0 ? hp : tp).measureText(v) + 2 * padX);
-					if (i > 0 && v.length() > 0) {
-						all++;
-						if (v.matches("^[−+\\-–]?\\d.*")) num++;
-					}
 				}
-				right[j] = j > 0 && all > 0 && num * 2 >= all;
+		}
+
+		/**
+		 * v3.51 (Viorel): the table fits the bubble: its letters get smaller down to MINSP; only past
+		 * that it slides sideways.
+		 */
+		void fit(int w, float minSp) {
+			minW = w;
+			float min = minSp * getResources().getDisplayMetrics().scaledDensity, px = px0;
+			size(px);
+			while (natural() > w && px > min) {
+				px = Math.max(min, px - 0.5f * dp);
+				size(px);
 			}
+			requestLayout();
 		}
 
 		private float natural() {
@@ -641,8 +677,8 @@ final class Bubble extends FrameLayout {
 					String v = j < cells[i].length ? cells[i][j] : "";
 					Paint p = i == 0 ? hp : tp;
 					float cw = colW[j] + extra;
-					float tx = right[j] ? cx + cw - padX - p.measureText(v) : cx + padX;
-					c.drawText(v, tx, base, p);
+					// v3.51 (Viorel): titles and values centred in their column.
+					c.drawText(v, cx + (cw - p.measureText(v)) / 2, base, p);
 					cx += cw;
 				}
 			}

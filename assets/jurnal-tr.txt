@@ -1,20 +1,16 @@
-Geçerli sürüm: v.3.50 · 9.11.2026
-Tasarım / yapı iyileştirmeleri.
-- Daha net baloncuklar: başlığın altında yer, başlığın yanında “⌄ daha fazla ⌃”, daha küçük kaynak; İstatistik: koordinatlar ve “Güncellendi” alt satırda, dönem sıçramadan değişir; güncellemeden önce yükleme izni kontrolü ve ayarlara düğmeli Auto Blocker (Samsung) notu.
+Geçerli sürüm: v.3.51 · 9.11.2026
+- Güncellemeden önce yükleme izni kontrolü ve ayarlara düğmeli Auto Blocker (Samsung) notu.
 - Telefonun Hava Durumu uygulaması gibi bildirimler (“Yer | Yağmur”): bir saat içinde yağmur veya kar ve saat 20'den sonra yarın için, yerleşim yeri ve parseller için; Open-Meteo yeniden yanıt verdiğinde bildirim yok.
-- Parsel sayfası İstatistik ile birleşti: üstte şimdinin ve dönemin sabit kutuları; altında 12 saatlik ve gün gün tablolar.
-- Her parseldeki “Bildirimler ve uyarılar” kutusu tüm bildirimlerini açar, artık kar ve kuraklık da var.
-- Yerleşim yeri için de ayrı bir BİLGİ bildirimi; ⋮ menüleri ana menü gibi görünür.
-- Parseller ve İstatistikteki kutular yalnızca değeri gösterir; ayrıntılar dokununca görünür.
-- Baloncuklar: bölümler arasında çizgiler, yana kayan çizgili tablolar, kaynak en altta, bir kez.
+- Parsel bildirimleri, haritadaki zil düğmesiyle seçilir: yağmur, rüzgâr, kar, kuraklık.
+- Yerleşim yeri için de ayrı bir BİLGİ bildirimi.
 - Her parsel için ayrı BİLGİ bildirimleri: kırağı, don, sis, donan yağmur, kuvvetli hamleler.
 - Çiftçi modu: Topraktaki sudan sonra yeni kutular: İlaçlama, Su dengesi, Fırtınalar, Sıcaklık toplamı, 16 gün.
 - ABD'de, çiftçi modunda: NWS, Kuraklık, Yangın, Dolu kutuları.
-- Parsel haritasında ve her parselin ekranında “İstatistik · PDF” düğmesi.
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
 - Üç kaynaktan güncelleme: GitHub, ikinci bir GitHub sunucusu ve Google Drive.
 - Saatin yanında bağlantı simgesi: Wi-Fi, mobil veri veya yok.
 - Güncellemeler: önce bağlantı kontrol edilir, zaten indirilmiş sürüm hemen kurulur, GitHub yanıt vermezse 5 denemeye kadar, ve neden gösterilir.
+- Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 2 (v.2.00 – v.2.91)
 - AB'nin tüm resmî dilleri ve Ukraynaca.

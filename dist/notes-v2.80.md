@@ -17,11 +17,13 @@
 - Notificări cu acordul tău: ploaie sau ninsoare, avertizări, cutremure.
 
 ### Versiunea curentă: v2.80 · 8.11.2026
-Îmbunătățiri de design / structură.
 - Parcele: butonul Editare și creionul de pe fiecare parcelă, pentru nume și loc pe hartă.
 - Limbi noi: turcă, rusă, sârbă.
+- Îmbunătățiri de design și corectarea erorilor.
 
 ---
+
+
 ### Funcții noi de la v2.10
 - Mod Fermier: casete orare cu vremea și ploaia, cu detalii la atingere, și caseta Apa în sol.
 - Parcele: salvare cu GPS sau pe hartă, ecran principal pentru fiecare, statistici pe 28 de zile cu PDF, alerte de ploaie și vânt.
@@ -50,11 +52,13 @@
 - Notifications with your consent: rain or snow, warnings, earthquakes.
 
 ### Current version: v2.80 · 8.11.2026
-Design / structure improvements.
 - Parcels: the Edit button and the pencil on each parcel, for the name and the place on the map.
 - New languages: Turkish, Russian, Serbian.
+- Design improvements and bug fixes.
 
 ---
+
+
 ### New functions since v2.10
 - Farmer mode: hour boxes with the weather and the rain, details at a tap, and the Water in the soil box.
 - Parcels: saved by GPS or on the map, a main screen for each, 28-day statistics with PDF, rain and wind alerts.

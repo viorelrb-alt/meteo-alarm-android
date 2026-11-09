@@ -809,7 +809,6 @@ Save as PDF?	Αποθήκευση ως PDF;
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Η εφαρμογή φτιάχνει ένα PDF με τα πλαίσια και τους δύο πίνακες αυτού του αγροτεμαχίου και το αποθηκεύει στις Λήψεις.
 Yes	Ναι
 Parcel · 	Αγροτεμάχιο · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Στα Αγροτεμάχια και στη σελίδα επεξεργασίας οι εντολές είναι στο μενού ⋮ πάνω δεξιά. Τα πλαίσια δείχνουν μόνο την τιμή· ένα άγγιγμα δείχνει τις λεπτομέρειες.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Στατιστικά · PDF: πάνω τα πλαίσια του τώρα και της περιόδου σε μία σειρά που σύρεται στο πλάι· κάτω οι επόμενες 12 ώρες και μέρα με τη μέρα (κυλούν). Το ☰ δίπλα στις μέρες επιλέγει την περίοδο· το κουμπί PDF αποθηκεύει πλαίσια και πίνακες.
 Screen on	Οθόνη αναμμένη
 Automatic location	Αυτόματη τοποθεσία
@@ -841,4 +840,8 @@ Security	Ασφάλεια
 more	περισσότερα
 Before an update	Πριν από μια ενημέρωση
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Η εφαρμογή ελέγχει πρώτα αν επιτρέπεται να εγκαθιστά ενημερώσεις (αλλιώς ανοίγει αυτή τη ρύθμιση). Σε Samsung θυμίζει να απενεργοποιήσετε το Auto Blocker· οι Ρυθμίσεις ανοίγουν τη σελίδα του.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Κάτω από τον τίτλο ο τόπος· το ⌄ περισσότερα ⌃ δίπλα στον τίτλο κυλά κάτω ή πάνω. Οι ενότητες χωρίζονται με γραμμές· οι πίνακες γλιστρούν στο πλάι· η πηγή είναι κάτω, μία φορά.
+Favourites EU	Αγαπημένα ΕΕ
+Favourites USA	Αγαπημένα ΗΠΑ
+Air temp.: 	Θερμ. αέρα: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Στα Αγροτεμάχια οι εντολές είναι στο μενού ⋮ πάνω δεξιά· στη σελίδα επεξεργασίας η Διαγραφή είναι αριστερά της Αποθήκευσης. Τα πλαίσια δείχνουν μόνο την τιμή· ένα άγγιγμα δείχνει τις λεπτομέρειες.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Κάτω από τον τίτλο ο τόπος· τα ▲ και ▼ δίπλα στο συννεφάκι κυλούν πάνω ή κάτω. Οι ενότητες χωρίζονται με γραμμές· οι πίνακες χωρούν στο συννεφάκι ή σύρονται στο πλάι· η πηγή είναι κάτω, μία φορά.

@@ -1,20 +1,16 @@
-Version actuelle : v.3.50 · 9.11.2026
-Améliorations de design / structure.
-- Bulles plus claires : le lieu sous le titre, « ⌄ plus ⌃ » à côté du titre, source plus petite ; Statistiques : coordonnées et « Mis à jour » sur la ligne du bas, la période change sans saut ; avant une mise à jour, vérification du droit d'installer et note sur Auto Blocker (Samsung) avec bouton vers les paramètres.
+Version actuelle : v.3.51 · 9.11.2026
+- Avant une mise à jour, vérification du droit d'installer et note sur Auto Blocker (Samsung) avec bouton vers les paramètres.
 - Notifications comme l'appli Météo du téléphone (« Lieu | Pluie ») : pluie ou neige dans l'heure et, après 20 h, pour demain, pour la localité et les parcelles ; plus d'avis quand Open-Meteo répond de nouveau.
-- La page de la parcelle réunie avec les Statistiques : en haut les cases fixes de maintenant et de la période ; dessous les tableaux sur 12 heures et jour par jour.
-- La case « Notifications et avertissements » de chaque parcelle active toutes ses notifications, désormais aussi neige et sécheresse.
-- Une notification INFORMATION séparée aussi pour la localité ; les menus ⋮ ressemblent au menu principal.
-- Les cases de Parcelles et Statistiques montrent seulement la valeur ; les détails apparaissent au toucher.
-- Bulles : lignes entre les sections, tableaux à lignes qui glissent sur le côté, la source en bas, une fois.
+- Notifications des parcelles, choisies avec le bouton cloche de la carte : pluie, vent, neige, sécheresse.
+- Une notification INFORMATION séparée aussi pour la localité.
 - Notifications INFORMATION séparées pour chaque parcelle : gelée blanche, gel, brouillard, pluie verglaçante, fortes rafales.
 - Mode agriculteur : nouvelles cases après Eau dans le sol : Pulvérisation, Bilan hydrique, Orages, Degrés-jours, 16 jours.
 - Aux États-Unis, en mode agriculteur : les cases NWS, Sécheresse, Incendie, Grêle.
-- Le bouton « Statistiques · PDF » sur la carte des parcelles et sur l'écran de chaque parcelle.
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
 - Mises à jour depuis trois sources : GitHub, un second serveur GitHub et Google Drive.
 - Icône de connexion à côté de l’horloge : Wi-Fi, données mobiles ou aucune.
 - Mises à jour : la connexion est vérifiée d’abord, une version déjà téléchargée s’installe aussitôt, jusqu’à 5 essais quand GitHub ne répond pas, et la raison est affichée.
+- Améliorations du design et corrections de bugs.
 
 Version 2 (v.2.00 – v.2.91)
 - Toutes les langues officielles de l'UE et l'ukrainien.

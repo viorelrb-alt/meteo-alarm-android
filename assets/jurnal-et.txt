@@ -1,20 +1,16 @@
-Praegune versioon: v.3.50 · 9.11.2026
-Kujunduse / ülesehituse parandused.
-- Selgemad mullid: koht pealkirja all, „⌄ rohkem ⌃“ pealkirja kõrval, väiksem allikas; Statistika: koordinaadid ja „Uuendatud“ alumisel real, periood vahetub hüppeta; enne värskendust installiloa kontroll ja Auto Blockeri (Samsung) märkus nupuga seadetesse.
+Praegune versioon: v.3.51 · 9.11.2026
+- Enne värskendust installiloa kontroll ja Auto Blockeri (Samsung) märkus nupuga seadetesse.
 - Teavitused nagu telefoni Ilm-rakenduses („Koht | Vihm“): vihm või lumi järgmise tunni jooksul ja pärast kella 20 homseks, asula ja põldude kohta; teadet pole enam, kui Open-Meteo jälle vastab.
-- Põllu leht ühendatud statistikaga: üleval paigal olevad praeguse hetke ja perioodi kastid; all 12 tunni ja päev-päevalt tabelid.
-- Iga põllu ruut „Teavitused ja hoiatused“ lülitab sisse kõik selle teavitused, nüüd ka lumi ja põud.
-- Eraldi TEAVE-teavitus ka asula kohta; ⋮ menüüd näevad välja nagu peamenüü.
-- Põldude ja Statistika kastid näitavad ainult väärtust; üksikasjad ilmuvad puudutusel.
-- Mullid: jooned osade vahel, joontega tabelid, mida saab külgsuunas lohistada, allikas all, üks kord.
+- Põllulappide teavitused, valitakse kaardi kellanupuga: vihm, tuul, lumi, põud.
+- Eraldi TEAVE-teavitus ka asula kohta.
 - Eraldi TEATE-märguanded iga põllu kohta: hall, külm, udu, jäävihm, tugevad puhangud.
 - Põllumehe režiim: uued kastid pärast Vesi mullas: Pritsimine, Veebilanss, Tormid, Kraadpäevad, 16 päeva.
 - USA-s põllumehe režiimis: kastid NWS, Põud, Tulekahju, Rahe.
-- Nupp „Statistika · PDF” põldude kaardil ja iga põllu ekraanil.
 - TEAVE-kastid Euroopas: härmatis, öökülm, udu, jäide, tugev tuul.
 - Uuendused kolmest allikast: GitHub, teine GitHubi server ja Google Drive.
 - Ühenduse ikoon kella kõrval: Wi-Fi, mobiilne andmeside või puudub.
 - Uuendused: esmalt kontrollitakse ühendust, juba alla laaditud versioon paigaldatakse kohe, kuni 5 katset, kui GitHub ei vasta, ja põhjus kuvatakse.
+- Disainiparandused ja vigade parandused.
 
 Versioon 2 (v.2.00 – v.2.91)
 - Kõik ELi ametlikud keeled ja ukraina keel.

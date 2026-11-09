@@ -1,9 +1,10 @@
 # Meteo Alarm Android v3.00
 
 ### Versiunea curentă: v.3.00 · 8.11.2026
-Îmbunătățiri de design / structură.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
+- Îmbunătățiri de design și corectarea erorilor.
+
 
 ### Versiunea 2 (v.2.00 – v.2.91)
 - Toate limbile oficiale ale UE și ucraineana.
@@ -35,9 +36,10 @@
 ## English
 
 ### Current version: v.3.00 · 8.11.2026
-Design / structure improvements.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
+- Design improvements and bug fixes.
+
 
 ### Version 2 (v.2.00 – v.2.91)
 - All official EU languages and Ukrainian.

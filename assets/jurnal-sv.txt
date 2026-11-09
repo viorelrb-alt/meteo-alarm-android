@@ -1,20 +1,16 @@
-Nuvarande version: v.3.50 · 9.11.2026
-Förbättringar av design / struktur.
-- Tydligare bubblor: platsen under titeln, ”⌄ mer ⌃” vid titeln, mindre källa; Statistik: koordinater och ”Uppdaterad” på nedersta raden, perioden byts utan hopp; före en uppdatering kontroll av installationsbehörigheten och en notis om Auto Blocker (Samsung) med knapp till inställningarna.
+Nuvarande version: v.3.51 · 9.11.2026
+- Före en uppdatering kontroll av installationsbehörigheten och en notis om Auto Blocker (Samsung) med knapp till inställningarna.
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
-- Skiftets sida sammanslagen med Statistik: överst fasta rutor för nu och för perioden; under dem tabellerna för 12 timmar och dag för dag.
-- Rutan ”Aviseringar och varningar” på varje skifte slår på alla dess aviseringar, nu även snö och torka.
-- En egen INFORMATION-avisering även för orten; ⋮-menyerna ser ut som huvudmenyn.
-- Rutorna i Skiften och Statistik visar bara värdet; detaljerna visas vid ett tryck.
-- Bubblor: linjer mellan avsnitt, tabeller med linjer som kan skjutas åt sidan, källan längst ner, en gång.
+- Aviseringar för skiften, väljs med klockknappen på kartan: regn, vind, snö, torka.
+- En egen INFORMATION-avisering även för orten.
 - Separata INFORMATION-aviseringar för varje skifte: rimfrost, frost, dimma, underkylt regn, kraftiga byar.
 - Lantbruksläge: nya rutor efter Vatten i marken: Besprutning, Vattenbalans, Åska, Dygnsgrader, 16 dagar.
 - I USA, i lantbruksläge: rutorna NWS, Torka, Brand, Hagel.
-- Knappen ”Statistik · PDF” på skifteskartan och på varje skiftes skärm.
 - INFORMATION-rutor i Europa: rimfrost, frost, dimma, underkylt regn, hård vind.
 - Uppdateringar från tre källor: GitHub, en andra GitHub-server och Google Drive.
 - Anslutningsikon vid klockan: Wi-Fi, mobildata eller ingen.
 - Uppdateringar: anslutningen kontrolleras först, en redan hämtad version installeras direkt, upp till 5 försök när GitHub inte svarar, och orsaken visas.
+- Designförbättringar och felrättningar.
 
 Version 2 (v.2.00 – v.2.91)
 - Alla EU:s officiella språk och ukrainska.

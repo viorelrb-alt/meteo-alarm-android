@@ -1,20 +1,16 @@
-Nykyinen versio: v.3.50 · 9.11.2026
-Ulkoasun / rakenteen parannuksia.
-- Selkeämmät kuplat: paikka otsikon alla, ”⌄ lisää ⌃” otsikon vieressä, pienempi lähde; Tilastot: koordinaatit ja ”Päivitetty” alarivillä, jakso vaihtuu hyppäämättä; ennen päivitystä asennusluvan tarkistus ja Auto Blocker -huomautus (Samsung) painikkeella asetuksiin.
+Nykyinen versio: v.3.51 · 9.11.2026
+- Ennen päivitystä asennusluvan tarkistus ja Auto Blocker -huomautus (Samsung) painikkeella asetuksiin.
 - Ilmoitukset kuten puhelimen Sää-sovelluksessa (”Paikka | Sade”): sade tai lumi tunnin sisällä ja klo 20 jälkeen huomiselle, paikkakunnalle ja lohkoille; ei ilmoitusta, kun Open-Meteo vastaa taas.
-- Lohkon sivu yhdistetty tilastoihin: ylhäällä kiinteät nykyhetken ja jakson ruudut; alla 12 tunnin ja päivä päivältä -taulukot.
-- Jokaisen lohkon ruutu ”Ilmoitukset ja varoitukset” kytkee päälle kaikki sen ilmoitukset, nyt myös lumen ja kuivuuden.
-- Erillinen TIEDOTE-ilmoitus myös paikkakunnalle; ⋮-valikot näyttävät päävalikolta.
-- Lohkojen ja Tilastojen ruudut näyttävät vain arvon; tiedot näkyvät napautuksella.
-- Kuplat: viivat osioiden välissä, viivalliset taulukot liukuvat sivuttain, lähde alhaalla, kerran.
+- Peltolohkojen ilmoitukset, valitaan kartan kellopainikkeella: sade, tuuli, lumi, kuivuus.
+- Erillinen TIEDOTE-ilmoitus myös paikkakunnalle.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.
 - Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
-- ”Tilastot · PDF” -painike lohkojen kartalla ja jokaisen lohkon näkymässä.
 - TIEDOTE-ruudut Euroopassa: kuura, halla, sumu, jäätävä sade, kova tuuli.
 - Päivitykset kolmesta lähteestä: GitHub, toinen GitHub-palvelin ja Google Drive.
 - Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
 - Päivitykset: yhteys tarkistetaan ensin, jo ladattu versio asennetaan heti, enintään 5 yritystä, kun GitHub ei vastaa, ja syy näytetään.
+- Ulkoasun parannuksia ja virheenkorjauksia.
 
 Versio 2 (v.2.00 – v.2.91)
 - Kaikki EU:n viralliset kielet ja ukraina.

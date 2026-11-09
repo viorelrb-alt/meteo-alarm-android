@@ -1,20 +1,16 @@
-Current version: v.3.50 · 9.11.2026
-Design / structure improvements.
-- Clearer bubbles: the place under the title, “⌄ more ⌃” next to the title, smaller source; Statistics: the coordinates and “Updated” on the bottom line, the period changes without a jump; before an update, the install permission check and the Auto Blocker note (Samsung) with a button to the settings.
+Current version: v.3.51 · 9.11.2026
+- Before an update, the install permission check and the Auto Blocker note (Samsung) with a button to the settings.
 - Notifications like the phone's Weather app (“Place | Rain”): rain or snow within the hour and, after 8 pm, for tomorrow, for the town and the parcels; no notice when Open-Meteo answers again.
-- The parcel's page joined with Statistics: on top the boxes of now and of the period, fixed; under them the 12-hour and day-by-day tables.
-- The “Notifications and warnings” box on each parcel turns on all its notifications, now also snow and drought.
-- A separate INFORMATION notification for the town too; the ⋮ menus look like the main menu.
-- The boxes in Parcels and Statistics show only the value; the details appear at a tap.
-- Bubbles: lines between sections, tables with lines that slide sideways, the source at the bottom, once.
+- Parcel notifications, chosen with the bell button on the map: rain, wind, snow, drought.
+- A separate INFORMATION notification for the town too.
 - Separate INFORMATION notifications for each parcel: frost, freeze, fog, freezing rain, strong gusts.
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
-- The “Statistics · PDF” button on the parcels' map and on each parcel's screen.
 - INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
 - Updates from three sources: GitHub, a second GitHub server and Google Drive.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
+- Design improvements and bug fixes.
 
 Version 2 (v.2.00 – v.2.91)
 - All official EU languages and Ukrainian.

@@ -181,7 +181,11 @@ final class Notifier {
 		if (i < 0) return;
 		p.edit().putString("nTom", today).apply();
 		int pop = w.dayPop.get(i), code = w.dayCodes.get(i);
-		if (pop < Weather.RAIN_PROBABILITY || code < 50) return;
+		if (pop < Weather.RAIN_PROBABILITY || code < 50) {
+			// v3.51: the evening check is in the log even when nothing is told.
+			Log.i(ctx, "NOTIF", "mâine: fără anunț (" + c.name + ", prob. " + pop + "% < " + Weather.RAIN_PROBABILITY + "% sau cod " + code + ")");
+			return;
+		}
 		boolean snow = Weather.snowCode(code);
 		String body = (snow ? Tr.t("Snow possible tomorrow", "Ninsoare posibilă mâine") : Tr.t("Rain possible tomorrow", "Ploaie posibilă mâine")) + " · " + pop + "%";
 		post(ctx, 1600, c.name + " | " + (snow ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie")), body);

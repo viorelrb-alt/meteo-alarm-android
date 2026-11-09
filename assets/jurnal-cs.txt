@@ -1,20 +1,16 @@
-Současná verze: v.3.50 · 9.11.2026
-Vylepšení vzhledu / struktury.
-- Přehlednější bubliny: místo pod názvem, „⌄ více ⌃“ vedle názvu, menší zdroj; Statistika: souřadnice a „Aktualizováno“ na spodním řádku, období se mění bez skoku; před aktualizací kontrola oprávnění k instalaci a poznámka o Auto Blocker (Samsung) s tlačítkem do nastavení.
+Současná verze: v.3.51 · 9.11.2026
+- Před aktualizací kontrola oprávnění k instalaci a poznámka o Auto Blocker (Samsung) s tlačítkem do nastavení.
 - Oznámení jako v aplikaci Počasí v telefonu („Místo | Déšť“): déšť nebo sníh během hodiny a po 20. hodině na zítřek, pro obec i parcely; žádné oznámení, když Open-Meteo znovu odpoví.
-- Stránka parcely spojená se Statistikou: nahoře pevná pole pro teď a pro období; pod nimi tabulky na 12 hodin a den po dni.
-- Políčko „Oznámení a výstrahy“ u každé parcely zapne všechna její oznámení, nově i sníh a sucho.
-- Samostatné oznámení INFORMACE i pro obec; nabídky ⋮ vypadají jako hlavní nabídka.
-- Pole v Parcelách a Statistice ukazují jen hodnotu; podrobnosti se zobrazí klepnutím.
-- Bubliny: čáry mezi částmi, tabulky s čarami posuvné do stran, zdroj dole, jednou.
+- Oznámení pro pozemky, volená tlačítkem zvonku na mapě: déšť, vítr, sníh, sucho.
+- Samostatné oznámení INFORMACE i pro obec.
 - Samostatná oznámení INFORMACE pro každou parcelu: jinovatka, mráz, mlha, mrznoucí déšť, silné nárazy.
 - Režim farmáře: nová pole za Vodou v půdě: Postřik, Vodní bilance, Bouřky, Teplotní sumy, 16 dní.
 - V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.
-- Tlačítko „Statistika · PDF“ na mapě parcel a na obrazovce každé parcely.
 - Pole INFORMACE v Evropě: jinovatka, mráz, mlha, mrznoucí déšť, silný vítr.
 - Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
+- Vylepšení vzhledu a opravy chyb.
 
 Verze 2 (v.2.00 – v.2.91)
 - Všechny úřední jazyky EU a ukrajinština.

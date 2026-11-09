@@ -1,20 +1,16 @@
-Jelenlegi verzió: v.3.50 · 2026.11.09.
-Dizájn / szerkezet fejlesztései.
-- Áttekinthetőbb buborékok: a hely a cím alatt, „⌄ több ⌃” a cím mellett, kisebb forrás; Statisztika: koordináták és „Frissítve” az alsó sorban, az időszak ugrás nélkül vált; frissítés előtt a telepítési engedély ellenőrzése és Auto Blocker-megjegyzés (Samsung) beállítások gombbal.
+Jelenlegi verzió: v.3.51 · 9.11.2026
+- Frissítés előtt a telepítési engedély ellenőrzése és Auto Blocker-megjegyzés (Samsung) beállítások gombbal.
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
-- A parcella oldala egyesítve a Statisztikával: fent rögzített mostani és időszaki dobozok; alattuk a 12 órás és a napról napra táblázat.
-- Minden parcellán a „Értesítések és figyelmeztetések” négyzet bekapcsolja minden értesítését, most már havazást és aszályt is.
-- Külön TÁJÉKOZTATÁS értesítés a településre is; a ⋮ menük úgy néznek ki, mint a főmenü.
-- A Parcellák és a Statisztika mezői csak az értéket mutatják; a részletek koppintásra jelennek meg.
-- Buborékok: vonalak a részek között, vonalas táblázatok, amelyek oldalra húzhatók, a forrás alul, egyszer.
+- Parcellaértesítések a térkép csengő gombjával: eső, szél, hó, aszály.
+- Külön TÁJÉKOZTATÁS értesítés a településre is.
 - Külön TÁJÉKOZTATÓ értesítések minden parcellához: dér, fagy, köd, ónos eső, erős széllökések.
 - Gazda mód: új mezők a Víz a talajban után: Permetezés, Vízmérleg, Viharok, Hőösszeg, 16 nap.
 - Az USA-ban, gazda módban: az NWS, Aszály, Tűz, Jégeső mezők.
-- A „Statisztika · PDF” gomb a parcellák térképén és minden parcella képernyőjén.
 - TÁJÉKOZTATÁS mezők Európában: dér, fagy, köd, ónos eső, erős szél.
 - Frissítések három forrásból: GitHub, egy második GitHub-szerver és a Google Drive.
 - Kapcsolatikon az óra mellett: Wi-Fi, mobiladat vagy nincs.
 - Frissítések: először a kapcsolatot ellenőrzi, a már letöltött verzió azonnal települ, legfeljebb 5 próbálkozás, ha a GitHub nem válaszol, és kiírja az okot.
+- Dizájnjavítások és hibajavítások.
 
 2. verzió (v.2.00 – v.2.91)
 - Az EU összes hivatalos nyelve és az ukrán.

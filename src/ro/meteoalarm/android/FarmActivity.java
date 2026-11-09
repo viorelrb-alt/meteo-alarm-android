@@ -668,10 +668,10 @@ public final class FarmActivity extends Activity {
 		}
 		if (period != null) {
 			// At least 3 points smaller, one line (smaller still when it does not fit), near the bottom edge.
-			TextView pe = text(nb(period), 15, false, dim);
+			TextView pe = text(nb(period), 14, false, dim);
 			pe.setGravity(Gravity.CENTER);
 			pe.setPadding(px(12), px(14), px(12), 0);
-			fitLines(pe, bw - px(28), 15, 9, 1);
+			fitLines(pe, bw - px(28), 14, 9, 1);
 			c.addView(pe, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		}
 		FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(bw, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
@@ -1784,30 +1784,14 @@ public final class FarmActivity extends Activity {
 		map.center(lat, lon);
 		if (!Double.isNaN(meLa)) map.setMe(meLa, meLo);
 		mapBox.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-		// v3.30 (Viorel): a parcel's options only here, on its edit page: its page with the
-		// statistics and the PDF, and deleting it.
-		List<Item> opts = null;
+		// v3.51 (Viorel): no ⋮ on the edit page; "Delete" left of "Save".
 		final Parcels.Parcel ed = id >= 0 ? Parcels.get(this, id) : null;
-		if (ed != null) {
-			opts = new java.util.ArrayList<Item>();
-			opts.add(new Item(Tr.t("Statistics · PDF", "Statistică · PDF"), new Runnable() {
-				public void run() {
-					stopLoc();
-					openStats(ed.id);
-				}
-			}));
-			opts.add(new Item(Tr.t("Delete the parcel", "Șterge parcela"), new Runnable() {
-				public void run() {
-					askDelete(ed);
-				}
-			}));
-		}
-		mapFloats(mapBox, map, id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Edit", "Editare"), tab, opts);
+		mapFloats(mapBox, map, id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Edit", "Editare"), tab, null);
 		if (land) {
 			// Save at the bottom of the right third.
 			col.addView(new View(this), new LinearLayout.LayoutParams(1, 0, 1));
 		}
-		col.addView(button(Tr.t("Save", "Salvează"), new View.OnClickListener() {
+		TextView saveBtn = button(Tr.t("Save", "Salvează"), new View.OnClickListener() {
 			public void onClick(View v) {
 				String n = nameIn.getText().toString().trim();
 				if (n.length() == 0) {
@@ -1845,7 +1829,21 @@ public final class FarmActivity extends Activity {
 					showList();
 				}
 			}
-		}), wide(land ? 0 : 10));
+		});
+		if (ed == null) col.addView(saveBtn, wide(land ? 0 : 10));
+		else {
+			LinearLayout two = new LinearLayout(this);
+			TextView del = button(Tr.t("Delete", "Șterge"), new View.OnClickListener() {
+				public void onClick(View v) {
+					askDelete(ed);
+				}
+			});
+			LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			dl.rightMargin = px(10);
+			two.addView(del, dl);
+			two.addView(saveBtn, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			col.addView(two, wide(land ? 0 : 10));
+		}
 		if (land) {
 			body.addView(mapBox, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 2));
 			View line = new View(this);
@@ -2086,7 +2084,7 @@ public final class FarmActivity extends Activity {
 		LinearLayout foot = column();
 		foot.setPadding(0, px(14), 0, px(10));
 		foot.addView(text(Screen.soilEst(), tx, false, dim));
-		foot.addView(text(Screen.srcOM(), tx - 3, false, dim), wide(4));
+		foot.addView(text(Screen.srcOM(), tx - 1, false, dim), wide(4)); // v3.51: sources 14
 
 		int cw = contentW();
 		if (whole) {
@@ -2182,7 +2180,7 @@ public final class FarmActivity extends Activity {
 		page.addView(rule(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, px(1))));
 		// v3.50 (Viorel): the coordinates at the left, "Updated" at the right, as big as the source
 		// at most; "Updated" smaller when the two would touch.
-		float sz = tx - 3;
+		float sz = tx - 1; // v3.51: as big as the source (14)
 		LinearLayout line = new LinearLayout(this);
 		line.setGravity(Gravity.CENTER_VERTICAL);
 		line.setPadding(px(16), px(6), px(16), px(8));

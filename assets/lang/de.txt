@@ -809,7 +809,6 @@ Save as PDF?	Als PDF speichern?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Die App erstellt ein PDF mit den Feldern und den zwei Tabellen dieser Parzelle und speichert es unter Downloads.
 Yes	Ja
 Parcel · 	Parzelle · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	In Parzellen und auf der Bearbeitungsseite sind die Befehle im Menü ⋮ oben rechts. Die Felder zeigen nur den Wert; Tippen zeigt die Details.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistik · PDF: oben die Felder für jetzt und den Zeitraum in einer seitlich verschiebbaren Reihe; darunter die nächsten 12 Stunden und Tag für Tag (sie scrollen). ☰ bei den Tagen wählt den Zeitraum; die Taste PDF speichert Felder und Tabellen.
 Screen on	Bildschirm an
 Automatic location	Automatischer Standort
@@ -841,4 +840,8 @@ Security	Sicherheit
 more	mehr
 Before an update	Vor einem Update
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Die App prüft zuerst, ob sie Updates installieren darf (sonst öffnet sie diese Einstellung). Auf Samsung erinnert sie daran, Auto Blocker auszuschalten; Einstellungen öffnet seine Seite.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Unter dem Titel der Ort; ⌄ mehr ⌃ neben dem Titel blättert nach unten oder oben. Abschnitte sind durch Linien getrennt; Tabellen lassen sich seitlich schieben; die Quelle steht unten, einmal.
+Favourites EU	Favoriten EU
+Favourites USA	Favoriten USA
+Air temp.: 	Lufttemp.: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	In Parzellen sind die Befehle im Menü ⋮ oben rechts; auf der Bearbeitungsseite steht Löschen links von Speichern. Die Felder zeigen nur den Wert; Tippen zeigt die Details.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Unter dem Titel der Ort; ▲ und ▼ neben der Blase scrollen nach oben oder unten. Abschnitte sind durch Linien getrennt; Tabellen passen in die Blase oder lassen sich seitlich schieben; die Quelle steht unten, einmal.

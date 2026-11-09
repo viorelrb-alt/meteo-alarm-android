@@ -809,7 +809,6 @@ Save as PDF?	Зберегти як PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Застосунок створює PDF із клітинками й двома таблицями цієї ділянки та зберігає його в «Завантаження».
 Yes	Так
 Parcel · 	Ділянка · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	У Ділянках і на сторінці редагування команди в меню ⋮ праворуч угорі. Клітинки показують лише значення; дотик показує подробиці.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Статистика · PDF: угорі клітинки «зараз» і періоду в одному ряду, що зсувається вбік; під ними найближчі 12 годин і день за днем (прокручуються). ☰ біля днів вибирає період; кнопка PDF зберігає клітинки й таблиці.
 Screen on	Екран увімкнений
 Automatic location	Автоматичне місцезнаходження
@@ -841,4 +840,8 @@ Security	Безпека
 more	ще
 Before an update	Перед оновленням
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Застосунок спершу перевіряє, чи може він встановлювати оновлення (інакше відкриває це налаштування). На Samsung нагадує вимкнути Auto Blocker; Налаштування відкривають його сторінку.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Під заголовком — місце; ⌄ ще ⌃ біля заголовка прокручує вниз або вгору. Розділи відокремлені лініями; таблиці зсуваються вбік; джерело внизу, один раз.
+Favourites EU	Обрані ЄС
+Favourites USA	Обрані США
+Air temp.: 	Темп. повітря: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	У Ділянках команди в меню ⋮ праворуч угорі; на сторінці редагування Видалити ліворуч від Зберегти. Поля показують лише значення; дотик показує подробиці.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Під заголовком — місце; ▲ і ▼ біля бульбашки прокручують угору або вниз. Розділи відокремлені лініями; таблиці вміщуються в бульбашку або зсуваються вбік; джерело внизу, один раз.

@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.50";
+	static final String VERSION = "Meteo Alarm Android v3.51";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2126,7 +2126,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false);
 			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size());
 		}
-		help.text(Tr.t("Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. \"Felt\" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.",
+		help.source(Tr.t("Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. \"Felt\" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.",
 				"Sursa: EMSC (Centrul Seismologic European-Mediteranean, seismicportal.eu), magnitudine 3 și peste. „Resimțit” e o estimare pe scara EMS-98, după magnitudine și distanța până la focar."));
 		help.show();
 	}
@@ -2163,7 +2163,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false);
 			Log.i(this, "CUTREMUR", "USGS SUA, 48 h: " + l.size());
 		}
-		help.text(Tr.t("Source: USGS (U.S. Geological Survey, earthquake.usgs.gov): magnitude 2.5 and over around your town, 3 and over in the whole country. \"Felt\" is an estimate from the magnitude and the distance to the focus, on a scale like the Modified Mercalli one.",
+		help.source(Tr.t("Source: USGS (U.S. Geological Survey, earthquake.usgs.gov): magnitude 2.5 and over around your town, 3 and over in the whole country. \"Felt\" is an estimate from the magnitude and the distance to the focus, on a scale like the Modified Mercalli one.",
 				"Sursa: USGS (Serviciul Geologic al SUA, earthquake.usgs.gov): magnitudine 2,5 și peste în jurul localității, 3 și peste în toată țara. „Resimțit” e o estimare după magnitudine și distanța până la focar, pe o scară ca Mercalli modificată."));
 		help.show();
 	}
@@ -2317,7 +2317,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("What to do", "Ce faci"));
 		help.entry(mini("tornado"), Tr.t("Tornado Watch (orange)", "Tornado Watch · atenționare (portocaliu)"), Tr.t("The weather can make tornadoes in and near the area. Keep the phone with you, know where you would take shelter and watch the sky.", "Vremea poate produce tornade în zonă și în apropiere. Ține telefonul la tine, află unde te-ai adăposti și urmărește cerul."));
 		help.entry(mini("tornado"), Tr.t("Tornado Warning (red)", "Tornado Warning · avertizare (roșu)"), Tr.t("A tornado has been seen or shown by radar. Take shelter now: the lowest floor, an inside room without windows, away from doors and outside walls; cover your head. Leave a car or a mobile home for a sturdy building.", "O tornadă a fost văzută sau arătată de radar. Adăpostește-te acum: cel mai de jos etaj, o cameră interioară fără ferestre, departe de uși și de pereții exteriori; acoperă-ți capul. Părăsește mașina sau casa mobilă pentru o clădire solidă."));
-		help.text(Tr.t("Source: National Weather Service (weather.gov) for the watches and warnings; NOAA Storm Prediction Center (spc.noaa.gov) for the reports, which are preliminary: a tornado can be reported more than once, and EF is the strength when known.",
+		help.source(Tr.t("Source: National Weather Service (weather.gov) for the watches and warnings; NOAA Storm Prediction Center (spc.noaa.gov) for the reports, which are preliminary: a tornado can be reported more than once, and EF is the strength when known.",
 				"Sursa: National Weather Service (weather.gov) pentru atenționări și avertizări; NOAA Storm Prediction Center (spc.noaa.gov) pentru rapoarte, care sunt preliminare: o tornadă poate fi raportată de mai multe ori, iar EF e puterea, când se cunoaște."));
 		help.show();
 	}
@@ -2375,10 +2375,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
 		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.",
 				"☰ › Parcele: harta arată toate parcelele; atingerea deschide una pe ecranul principal. „Salvare loc. GPS” sau „Alege pe hartă” adaugă una; butonul GPS arată unde ești. Creionul editează numele și acul; meniul ⋮ de acolo are Statistică · PDF și Ștergere. Rămân doar în acest telefon."));
-		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.",
-				"În Parcele și pe pagina de editare comenzile sunt în meniul ⋮ din dreapta sus. Casetele arată doar valoarea; atingerea arată detaliile."));
-		help.entry(mini("farm"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.",
-				"Sub titlu, locul; ⌄ mai multe ⌃ de lângă titlu derulează în jos sau în sus. Secțiunile sunt despărțite de linii; tabelele se glisează în lateral; sursa e jos, o singură dată."));
+		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.",
+				"În Parcele comenzile sunt în meniul ⋮ din dreapta sus; pe pagina de editare Șterge e la stânga lui Salvează. Casetele arată doar valoarea; atingerea arată detaliile."));
+		help.entry(mini("farm"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.",
+				"Sub titlu, locul; ▲ și ▼ de lângă bulă derulează în sus sau în jos. Secțiunile sunt despărțite de linii; tabelele încap în bulă sau se glisează în lateral; sursa e jos, o singură dată."));
 		help.entry(mini("parcel"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
 		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
@@ -2587,7 +2587,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final List<Runnable> acts = new ArrayList<Runnable>();
 		final List<Bubble.Row> rows = Bubble.rows();
 		if (!favs.isEmpty()) {
-			rows.add(new Bubble.Row(us ? Tr.t("Favourites · Europe", "Favorite · Europa") : Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
+			rows.add(new Bubble.Row(us ? Tr.t("Favourites EU", "Favorite UE") : Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
 			acts.add(null);
 			for (final Cities.City c : favs) {
 				rows.add(Bubble.Row.item(c.label()));
@@ -2600,7 +2600,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		}
 		if (!favsUS.isEmpty()) {
-			rows.add(new Bubble.Row(eu ? Tr.t("Favourites · USA", "Favorite · SUA") : Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
+			rows.add(new Bubble.Row(eu ? Tr.t("Favourites USA", "Favorite SUA") : Tr.t("Favourites", "Favorite"), null, Bubble.Row.HEADER, false));
 			acts.add(null);
 			for (final Cities.City c : favsUS) {
 				rows.add(Bubble.Row.item(c.label()));
@@ -2658,7 +2658,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			final String st = Region.state(this);
 			List<Cities.City> mine = st.length() > 0 ? cities.usStates.get(st) : null;
 			if (mine != null) {
-				rows.add(new Bubble.Row(Tr.t("Towns · ", "Localități · ") + st, null, Bubble.Row.HEADER, false));
+				rows.add(new Bubble.Row(st, null, Bubble.Row.HEADER, false));
 				acts.add(null);
 				for (final Cities.City c : mine) {
 					rows.add(Bubble.Row.item(c.name));

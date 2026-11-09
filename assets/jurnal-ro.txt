@@ -1,20 +1,16 @@
-Versiunea curentă: v.3.50 · 9.11.2026
-Îmbunătățiri de design / structură.
-- Bule mai clare: locul sub titlu, „⌄ mai multe ⌃” lângă titlu, sursa mai mică; Statistică: coordonatele și „Actualizat” pe linia de jos, perioada se schimbă fără salt; înainte de actualizare, verificarea permisiunii de instalare și nota Auto Blocker (Samsung) cu buton spre setări.
+Versiunea curentă: v.3.51 · 9.11.2026
+- Înainte de actualizare, verificarea permisiunii de instalare și nota Auto Blocker (Samsung) cu buton spre setări.
 - Notificări ca în aplicația Vreme a telefonului („Loc | Ploaie”): ploaie sau ninsoare în următoarea oră și, după ora 20, pentru mâine, pentru localitate și parcele; fără notificare când Open-Meteo răspunde din nou.
-- Pagina parcelei unită cu Statistica: sus casetele de acum și ale perioadei, fixe; dedesubt tabelele pe 12 ore și zi cu zi.
-- Caseta „Notificări și avertizări” pe fiecare parcelă pornește toate notificările ei, acum și ninsoare și secetă.
-- Notificare INFORMARE separată și pentru localitate; meniurile ⋮ arată ca meniul principal.
-- Casetele din Parcele și Statistică arată doar valoarea; detaliile apar la atingere.
-- Bulele: linii între secțiuni, tabele cu linii care glisează în lateral, sursa jos, o singură dată.
+- Notificări pentru parcele, alese din butonul clopoțel de pe hartă: ploaie, vânt, ninsoare, secetă.
+- Notificare INFORMARE separată și pentru localitate.
 - Notificări INFORMARE separate pentru fiecare parcelă: brumă, îngheț, ceață, polei, rafale puternice.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.
-- Butonul „Statistică · PDF” pe harta parcelelor și pe ecranul fiecărei parcele.
 - Casete INFORMARE în Europa: brumă, îngheț, ceață, polei, vânt tare.
 - Actualizări din trei surse: GitHub, un al doilea server GitHub și Google Drive.
 - Iconul de conexiune lângă ceas: Wi-Fi, date mobile sau fără internet.
 - Actualizări: verifică întâi conexiunea, o versiune deja descărcată se instalează direct, până la 5 încercări când GitHub nu răspunde, iar motivul e afișat.
+- Îmbunătățiri de design și corectarea erorilor.
 
 Versiunea 2 (v.2.00 – v.2.91)
 - Toate limbile oficiale ale UE și ucraineana.

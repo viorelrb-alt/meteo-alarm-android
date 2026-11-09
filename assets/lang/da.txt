@@ -809,7 +809,6 @@ Save as PDF?	Gem som PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Appen laver en PDF med felterne og de to tabeller for denne mark og gemmer den i Overførsler.
 Yes	Ja
 Parcel · 	Mark · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	I Marker og på redigeringssiden er kommandoerne i menuen ⋮ øverst til højre. Felterne viser kun værdien; et tryk viser detaljerne.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistik · PDF: øverst felterne for nu og for perioden i én række, der kan skubbes til siden; under dem de næste 12 timer og dag for dag (de ruller). ☰ ved dagene vælger perioden; PDF-knappen gemmer felterne og tabellerne.
 Screen on	Skærm tændt
 Automatic location	Automatisk placering
@@ -841,4 +840,8 @@ Security	Sikkerhed
 more	mere
 Before an update	Før en opdatering
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Appen tjekker først, at den må installere opdateringer (ellers åbner den indstillingen). På Samsung minder den dig om at slå Auto Blocker fra; Indstillinger åbner dens side.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Under titlen stedet; ⌄ mere ⌃ ved titlen ruller ned eller op. Afsnit adskilles af linjer; tabeller glider til siden; kilden står nederst, én gang.
+Favourites EU	Favoritter EU
+Favourites USA	Favoritter USA
+Air temp.: 	Lufttemp.: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	I Marker er kommandoerne i ⋮-menuen øverst til højre; på redigeringssiden er Slet til venstre for Gem. Felterne viser kun værdien; et tryk viser detaljerne.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Under titlen stedet; ▲ og ▼ ved boblen ruller op eller ned. Afsnit adskilles af linjer; tabeller passer i boblen eller glider sidelæns; kilden står nederst, én gang.

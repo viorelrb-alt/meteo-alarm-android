@@ -1064,7 +1064,7 @@ public final class Screen {
 		if (w == null || k < 0 || k >= w.tileHours.size()) return out;
 		out.add(new String[] { "title", hourTitle(k) });
 		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
-		out.add(new String[] { "v", Tr.t("Temp.: ", "Temp.: ") + deg(w.tileTemp[k]) + " · " + d[1] });
+		out.add(new String[] { "v", Tr.t("Air temp.: ", "Temp. aer: ") + deg(w.tileTemp[k]) + " · " + d[1] });
 		int i = farmIndex(k);
 		if (i < 0) {
 			out.add(new String[] { "v", Tr.t("Rain chance: ", "Prob. ploaie: ") + probAt(k) + "% · " + mm(mmAt(k)) });
@@ -1569,6 +1569,10 @@ public final class Screen {
 		else if (id.equals("pDir")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("From", "Dinspre"), "°" };
 		else if (id.equals("pProb")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Chance", "Prob."), Tr.t("Amount", "Cant.") };
 		else if (id.equals("pSoilM")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Moisture", "Umid."), Tr.t("Soil", "Sol") };
+		// v3.51 (Viorel): short column titles.
+		else if (id.equals("pTemp")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Air temp.", "Temp. aer") };
+		else if (id.equals("pHum")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Air hum.", "Umid. aer") };
+		else if (id.equals("pSoilT")) head = new String[] { Tr.t("Hour", "Ora"), Tr.t("Soil temp.", "Temp. sol") };
 		else head = new String[] { Tr.t("Hour", "Ora"), parcelTitle(id) };
 		List<String[]> tb = new java.util.ArrayList<String[]>();
 		String[] lv = { Tr.t("dry", "uscat"), Tr.t("moderate", "potrivit"), Tr.t("moist", "umed"), Tr.t("very wet", "foarte umed") };

@@ -809,7 +809,6 @@ Save as PDF?	Sábháil mar PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Déanann an aip PDF le boscaí agus le dhá tábla na ceapaí seo agus sábhálann sé in Íoslódálacha é.
 Yes	Is ea
 Parcel · 	Ceapach · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	In Ceapacha agus ar an leathanach eagarthóireachta tá na horduithe sa roghchlár ⋮ ar barr ar dheis. Ní thaispeánann na boscaí ach an luach; taispeánann tapáil na sonraí.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Staitisticí · PDF: ar barr boscaí an ama seo agus na tréimhse i ró amháin a shleamhnaíonn i leataobh; fúthu na 12 uair atá romhainn agus lá ar lá (scrollaíonn siad). Roghnaíonn an ☰ in aice na laethanta an tréimhse; sábhálann an cnaipe PDF na boscaí agus na táblaí.
 Screen on	Scáileán ar siúl
 Automatic location	Suíomh uathoibríoch
@@ -841,4 +840,8 @@ Security	Slándáil
 more	tuilleadh
 Before an update	Roimh nuashonrú
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Seiceálann an aip ar dtús an bhfuil cead aici nuashonruithe a shuiteáil (nó osclaíonn sí an socrú sin). Ar Samsung meabhraíonn sí duit Auto Blocker a mhúchadh; osclaíonn Socruithe a leathanach.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Faoin teideal, an áit; scrollaíonn ⌄ tuilleadh ⌃ in aice leis an teideal síos nó suas. Línte idir na codanna; sleamhnaíonn táblaí ar leataobh; tá an fhoinse thíos, uair amháin.
+Favourites EU	Ceanáin AE
+Favourites USA	Ceanáin SAM
+Air temp.: 	Teocht aeir: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	In Ceapacha tá na horduithe sa roghchlár ⋮ ag barr ar dheis; ar an leathanach eagarthóireachta tá Scrios ar chlé ó Sábháil. Ní thaispeánann na boscaí ach an luach; taispeánann tapáil na sonraí.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Faoin teideal, an áit; scrollaíonn ▲ agus ▼ in aice leis an mboilgeog suas nó síos. Tá línte idir na codanna; luíonn na táblaí sa bhoilgeog nó sleamhnaíonn siad i leataobh; tá an fhoinse ag an mbun, uair amháin.

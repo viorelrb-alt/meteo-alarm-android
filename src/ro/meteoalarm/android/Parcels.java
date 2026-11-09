@@ -337,7 +337,10 @@ final class Parcels {
 		sp.edit().putString(key, today).apply();
 		double pop = d.dPop[t], mm = t < d.dRain.length ? d.dRain[t] : Double.NaN;
 		boolean wet = (!Double.isNaN(pop) && pop >= Weather.RAIN_PROBABILITY && (Double.isNaN(mm) || mm >= 0.5)) || (!Double.isNaN(mm) && mm >= 1);
-		if (!wet) return;
+		if (!wet) {
+			Log.i(ctx, "NOTIF", "parcela " + p.name + ": mâine fără anunț (prob. " + (Double.isNaN(pop) ? "–" : Math.round(pop) + "%") + ", " + (Double.isNaN(mm) ? "–" : String.format(java.util.Locale.US, "%.1f mm", mm)) + ")");
+			return;
+		}
 		double cm = 0;
 		String tom = Farm.date(now, 1);
 		if (d.snow != null) for (int h = 0; h < d.size(); h++) if (tom.equals(d.dateOf(h)) && !Double.isNaN(d.snow[h])) cm += d.snow[h];

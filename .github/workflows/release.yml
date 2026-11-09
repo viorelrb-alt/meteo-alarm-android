@@ -25,3 +25,16 @@ jobs:
           NOTES=dist/notes-v$VER.md
           [ -f "$NOTES" ] || NOTES=/dev/null
           gh release create "v$VER" "$APK" --title "Meteo Alarm Android v$VER" --notes-file "$NOTES"
+      - name: Keep the texts of the published Releases as in dist/notes-v*.md
+        # v3.51 (Viorel): the release notes of every version follow the current rule (only new
+        # functions, design changes as one line); a Release whose text differs is updated.
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for f in dist/notes-v*.md; do
+            v=${f#dist/notes-}; v=${v%.md}
+            body=$(gh release view "$v" --json body -q .body 2>/dev/null) || continue
+            if [ "$(printf '%s' "$body" | sed -e 's/[[:space:]]*$//')" != "$(sed -e 's/[[:space:]]*$//' "$f")" ]; then
+              gh release edit "$v" --notes-file "$f" && echo "updated $v"
+            fi
+          done

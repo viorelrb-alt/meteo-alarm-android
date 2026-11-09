@@ -6,8 +6,7 @@
 - Localizarea și notificările se cer cu o explicație prietenoasă la prima pornire; dacă refuzi, aplicația te mai întreabă doar după o actualizare. Când telefonul nu mai arată întrebarea lui, un buton deschide setările.
 - La prima pornire localitatea găsită de localizare devine localitatea afișată și se adaugă la favorite.
 - Telefoane fără busolă sau senzor de lumină: butoanele și casetele lor se dezactivează; Jurnalul scrie senzorii la fiecare pornire.
-- Widget-uri: banda 4x1 merge acum și pe tabletă (se numără rândurile ecranului de pornire, nu mărimi fixe).
-- Reparat: la pornire după o actualizare vremea se descărca de două ori; Jurnalul scrie acum limba aleasă și fiecare localitate aleasă, iar deschiderea setărilor widget-ului o singură dată.
+- Îmbunătățiri de design și corectarea erorilor.
 
 ## English
 
@@ -17,5 +16,4 @@
 - Location and notifications are asked with a friendly explanation at the first start; if you say no, the app asks again only after an update. When the phone no longer shows its question, a button opens its settings.
 - At the first start the town found by the location becomes the town shown and is added to the favourites.
 - Phones without a compass or light sensor: the related buttons and boxes are turned off; the Log lists the sensors at every start.
-- Widgets: the 4x1 strip now works on tablets too (the rows of the home screen are counted, not fixed sizes).
-- Fixed: at start after an update the weather was downloaded twice; the Log now records the chosen language and every town picked, and the opening of the widget settings only once.
+- Design improvements and bug fixes.

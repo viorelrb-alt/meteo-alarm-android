@@ -1,20 +1,16 @@
-Verżjoni attwali: v.3.50 · 9.11.2026
-Titjib fid-disinn / fl-istruttura.
-- Bżieżaq aktar ċari: il-post taħt it-titlu, “⌄ aktar ⌃” ħdejn it-titlu, sors iżgħar; Statistika: il-koordinati u “Aġġornat” fil-linja t'isfel, il-perjodu jinbidel mingħajr qabża; qabel aġġornament, kontroll tal-permess tal-installazzjoni u nota dwar Auto Blocker (Samsung) b'buttuna għas-settings.
+Verżjoni attwali: v.3.51 · 9.11.2026
+- Qabel aġġornament, kontroll tal-permess tal-installazzjoni u nota dwar Auto Blocker (Samsung) b'buttuna għas-settings.
 - Notifiki bħall-app tat-Temp tat-telefon (“Post | Xita”): xita jew borra fis-siegħa li ġejja u, wara t-8 ta' filgħaxija, għal għada, għall-lokalità u l-għelieqi; l-ebda avviż meta Open-Meteo jerġa' jwieġeb.
-- Il-paġna tal-għalqa magħquda mal-Istatistika: fuq il-kaxxi fissi ta’ issa u tal-perjodu; taħthom it-tabelli ta’ 12-il siegħa u jum b’jum.
-- Il-kaxxa “Notifiki u twissijiet” fuq kull għalqa tixgħel in-notifiki kollha tagħha, issa wkoll borra u nixfa.
-- Notifika ta’ INFORMAZZJONI separata anke għall-lokalità; il-menus ⋮ jidhru bħall-menu prinċipali.
-- Il-kaxxi f'Għelieqi u Statistika juru l-valur biss; id-dettalji jidhru b'mess.
-- Bżieżaq: linji bejn il-partijiet, tabelli b'linji li jiżżerżqu lejn il-ġenb, is-sors isfel, darba.
+- Notifiki għall-biċċiet tal-art, magħżula bil-buttuna tal-qanpiena fuq il-mappa: xita, riħ, borra, nixfa.
+- Notifika ta’ INFORMAZZJONI separata anke għall-lokalità.
 - Notifiki ta' INFORMAZZJONI separati għal kull għalqa: ġlata bajda, silġ, ċpar, xita ffriżata, buffuri qawwija.
 - Modalità tal-bidwi: kaxxi ġodda wara Ilma fil-ħamrija: Irxix, Bilanċ tal-ilma, Maltempi, Gradi-jiem, 16-il jum.
 - Fl-Istati Uniti, fil-modalità tal-bidwi: il-kaxxi NWS, Nixfa, Nar, Silġ.
-- Il-buttuna “Statistika · PDF” fuq il-mappa tal-biċċiet tal-art u fuq l-iskrin ta' kull waħda.
 - Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
+- Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 2 (v.2.00 – v.2.91)
 - Il-lingwi uffiċjali kollha tal-UE u l-Ukren.

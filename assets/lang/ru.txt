@@ -743,7 +743,6 @@ Save as PDF?	Сохранить в PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Приложение создаёт PDF с ячейками и двумя таблицами этого участка и сохраняет его в «Загрузки».
 Yes	Да
 Parcel · 	Участок · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	В Участках и на странице редактирования команды находятся в меню ⋮ справа вверху. Ячейки показывают только значение; касание показывает подробности.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Статистика · PDF: вверху ячейки «сейчас» и периода в одном ряду, который сдвигается вбок; под ними ближайшие 12 часов и по дням (прокручиваются). ☰ рядом с днями выбирает период; кнопка PDF сохраняет ячейки и таблицы.
 Screen on	Экран включён
 Automatic location	Автоматическое местоположение
@@ -775,4 +774,8 @@ Security	Безопасность
 more	ещё
 Before an update	Перед обновлением
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Приложение сначала проверяет, может ли оно устанавливать обновления (иначе открывает эту настройку). На Samsung напоминает выключить Auto Blocker; Настройки открывают его страницу.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Под заголовком — место; ⌄ ещё ⌃ рядом с заголовком прокручивает вниз или вверх. Разделы отделены линиями; таблицы сдвигаются вбок; источник внизу, один раз.
+Favourites EU	Избранное ЕС
+Favourites USA	Избранное США
+Air temp.: 	Темп. возд.: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	В разделе Участки команды находятся в меню ⋮ справа вверху; на странице правки Удалить слева от Сохранить. Поля показывают только значение; касание показывает подробности.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Под заголовком — место; ▲ и ▼ рядом с пузырьком прокручивают вверх или вниз. Разделы отделены линиями; таблицы помещаются в пузырёк или сдвигаются вбок; источник внизу, один раз.

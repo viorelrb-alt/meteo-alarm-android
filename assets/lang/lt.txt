@@ -809,7 +809,6 @@ Save as PDF?	Išsaugoti kaip PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Programėlė sukuria PDF su šio sklypo langeliais ir dviem lentelėmis ir išsaugo jį Atsisiuntimuose.
 Yes	Taip
 Parcel · 	Sklypas · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Sklypuose ir redagavimo puslapyje komandos yra meniu ⋮ viršuje dešinėje. Langeliai rodo tik reikšmę; palietus matyti išsamiau.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: viršuje dabarties ir laikotarpio langeliai vienoje į šoną slenkančioje eilėje; po jais kitos 12 valandų ir diena po dienos (slenka). ☰ prie dienų parenka laikotarpį; mygtukas PDF išsaugo langelius ir lenteles.
 Screen on	Ekranas įjungtas
 Automatic location	Automatinė vieta
@@ -841,4 +840,8 @@ Security	Sauga
 more	daugiau
 Before an update	Prieš naujinimą
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	Programa pirmiausia patikrina, ar jai leidžiama diegti naujinius (kitaip atidaro tą nustatymą). „Samsung“ telefone primena išjungti Auto Blocker; Nustatymai atidaro jo puslapį.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Po pavadinimu – vieta; ⌄ daugiau ⌃ šalia pavadinimo slenka žemyn arba aukštyn. Skyriai atskirti linijomis; lentelės slenka į šonus; šaltinis apačioje, vieną kartą.
+Favourites EU	Mėgstamiausi ES
+Favourites USA	Mėgstamiausi JAV
+Air temp.: 	Oro temp.: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	Sklypuose komandos yra meniu ⋮ viršuje dešinėje; redagavimo puslapyje Ištrinti yra kairėje nuo Išsaugoti. Laukeliai rodo tik reikšmę; palietus rodomos detalės.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Po pavadinimu – vieta; ▲ ir ▼ šalia burbulo slenka aukštyn arba žemyn. Skyriai atskirti linijomis; lentelės telpa burbule arba slenka į šoną; šaltinis apačioje, vieną kartą.

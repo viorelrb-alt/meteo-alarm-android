@@ -1,20 +1,16 @@
-Obecna wersja: v.3.50 · 9.11.2026
-Ulepszenia wyglądu / struktury.
-- Czytelniejsze dymki: miejsce pod tytułem, „⌄ więcej ⌃” obok tytułu, mniejsze źródło; Statystyka: współrzędne i „Zaktualizowano” w dolnym wierszu, okres zmienia się bez skoku; przed aktualizacją sprawdzenie zgody na instalację i uwaga o Auto Blocker (Samsung) z przyciskiem do ustawień.
+Obecna wersja: v.3.51 · 9.11.2026
+- Przed aktualizacją sprawdzenie zgody na instalację i uwaga o Auto Blocker (Samsung) z przyciskiem do ustawień.
 - Powiadomienia jak w aplikacji Pogoda w telefonie („Miejsce | Deszcz”): deszcz lub śnieg w ciągu godziny i po 20:00 na jutro, dla miejscowości i działek; bez powiadomienia, gdy Open-Meteo znów odpowiada.
-- Strona działki połączona ze Statystyką: u góry stałe pola teraz i okresu; pod nimi tabele 12-godzinna i dzień po dniu.
-- Pole „Powiadomienia i ostrzeżenia” przy każdej działce włącza wszystkie jej powiadomienia, teraz też śnieg i suszę.
-- Osobne powiadomienie INFORMACJA także dla miejscowości; menu ⋮ wyglądają jak menu główne.
-- Pola w Działkach i Statystyce pokazują tylko wartość; szczegóły pojawiają się po dotknięciu.
-- Dymki: linie między częściami, tabele z liniami przesuwane w bok, źródło na dole, raz.
+- Powiadomienia dla działek, wybierane przyciskiem dzwonka na mapie: deszcz, wiatr, śnieg, susza.
+- Osobne powiadomienie INFORMACJA także dla miejscowości.
 - Osobne powiadomienia INFORMACJA dla każdej działki: szron, mróz, mgła, marznący deszcz, silne porywy.
 - Tryb rolnika: nowe pola po Wodzie w glebie: Oprysk, Bilans wodny, Burze, Suma ciepła, 16 dni.
 - W USA, w trybie rolnika: pola NWS, Susza, Pożar, Grad.
-- Przycisk „Statystyka · PDF” na mapie działek i na ekranie każdej działki.
 - Pola INFORMACJA w Europie: szron, przymrozek, mgła, marznący deszcz, silny wiatr.
 - Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
 - Ikona połączenia obok zegara: Wi-Fi, dane komórkowe lub brak.
 - Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
+- Ulepszenia wyglądu i poprawki błędów.
 
 Wersja 2 (v.2.00 – v.2.91)
 - Wszystkie języki urzędowe UE i ukraiński.

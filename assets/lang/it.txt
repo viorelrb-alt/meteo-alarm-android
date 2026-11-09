@@ -809,7 +809,6 @@ Save as PDF?	Salvare come PDF?
 The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	L’app crea un PDF con le caselle e le due tabelle di questa parcella e lo salva in Download.
 Yes	Sì
 Parcel · 	Parcella · 
-In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	In Parcelle e nella pagina di modifica i comandi sono nel menu ⋮ in alto a destra. Le caselle mostrano solo il valore; un tocco mostra i dettagli.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistiche · PDF: in alto le caselle di adesso e del periodo in una riga che scorre di lato; sotto le prossime 12 ore e giorno per giorno (scorrono). Il ☰ accanto ai giorni sceglie il periodo; il pulsante PDF salva caselle e tabelle.
 Screen on	Schermo acceso
 Automatic location	Posizione automatica
@@ -841,4 +840,8 @@ Security	Sicurezza
 more	altro
 Before an update	Prima di un aggiornamento
 The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.	L'app verifica prima di poter installare aggiornamenti (altrimenti apre quell'impostazione). Su Samsung ricorda di disattivare Auto Blocker; Impostazioni apre la sua pagina.
-Under the title, the place; ⌄ more ⌃ next to the title scrolls down or up. Sections are split by lines; tables slide sideways; the source is at the bottom, once.	Sotto il titolo, il luogo; ⌄ altro ⌃ accanto al titolo scorre giù o su. Le sezioni sono divise da linee; le tabelle scorrono di lato; la fonte è in fondo, una volta.
+Favourites EU	Preferite UE
+Favourites USA	Preferite USA
+Air temp.: 	Temp. aria: 
+In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.	In Particelle i comandi sono nel menu ⋮ in alto a destra; nella pagina di modifica Elimina è a sinistra di Salva. Le caselle mostrano solo il valore; un tocco mostra i dettagli.
+Under the title, the place; ▲ and ▼ next to the bubble scroll up or down. Sections are split by lines; tables fit the bubble or slide sideways; the source is at the bottom, once.	Sotto il titolo, il luogo; ▲ e ▼ accanto alla bolla scorrono su o giù. Le sezioni sono separate da linee; le tabelle stanno nella bolla o scorrono di lato; la fonte è in basso, una volta.
