@@ -803,3 +803,11 @@ In Parcels and on a parcel's page the commands are in the ⋮ menu at the top ri
 Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistika · PDF: üleval praeguse hetke ja perioodi kastid (paigal), nende all järgmised 12 tundi ja päev-päevalt (kerivad). Periood ja PDF menüüs ⋮. Põllu nime puudutus näitab nime ja koordinaate.
 Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Põllumehe režiim: põllu kaardil olev ruut „Teavitused ja hoiatused“ lülitab sisse kõik selle teavitused: vihm, tuul, lumi, hall, külm, udu, jäävihm, põud (kuiv muld, 7 päeva vihmata). Igal põllul on omad.
 Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Sinised TEAVE-kastid hoiatuste järel: hall, külm (kevadel ja sügisel), udu, jäävihm, tugev tuul järgmise 24 tunni jooksul. Rakendus arvutab need prognoosist; pole ametlikud. Need tulevad ka eraldi teavitusena.
+Display language	Kuvakeel
+Period	Periood
+Save as PDF?	Salvestada PDF-ina?
+The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Rakendus teeb selle põllu kastidest ja kahest tabelist PDF-i ning salvestab selle allalaadimistesse.
+Yes	Jah
+Parcel · 	Põld · 
+In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Põldudes ja muutmislehel on käsud menüüs ⋮ üleval paremal. Kastid näitavad ainult väärtust; puudutus näitab üksikasju.
+Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: üleval praeguse hetke ja perioodi kastid ühes küljele libisevas reas; nende all järgmised 12 tundi ja päev-päevalt (kerivad). ☰ päevade kõrval valib perioodi; PDF-nupp salvestab kastid ja tabelid.

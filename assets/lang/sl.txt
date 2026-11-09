@@ -803,3 +803,11 @@ In Parcels and on a parcel's page the commands are in the ⋮ menu at the top ri
 Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Statistika · PDF: zgoraj polja za zdaj in za obdobje (nepremična), pod njimi naslednjih 12 ur in dan za dnem (se pomikajo). Obdobje in PDF v ⋮. Dotik imena parcele pokaže ime in koordinate.
 Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Kmečki način: polje »Obvestila in opozorila« na kartici parcele vklopi vsa njena obvestila: dež, veter, sneg, slana, pozeba, megla, žled, suša (suha tla, 7 dni brez dežja). Vsaka parcela ima svoja.
 Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Modra polja INFORMACIJA po opozorilih: slana, pozeba (spomladi in jeseni), megla, žled, močan veter v naslednjih 24 urah. Izračuna jih aplikacija iz napovedi; niso uradna. Pridejo tudi kot ločeno obvestilo.
+Display language	Jezik prikaza
+Period	Obdobje
+Save as PDF?	Shranim kot PDF?
+The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Aplikacija naredi PDF s polji in obema tabelama te parcele ter ga shrani v Prenose.
+Yes	Da
+Parcel · 	Parcela · 
+In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	V Parcelah in na strani za urejanje so ukazi v meniju ⋮ zgoraj desno. Polja kažejo samo vrednost; dotik pokaže podrobnosti.
+Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: zgoraj polja za zdaj in za obdobje v eni vrsti, ki drsi vstran; pod njimi naslednjih 12 ur in dan za dnem (se pomikajo). ☰ ob dnevih izbere obdobje; gumb PDF shrani polja in tabeli.

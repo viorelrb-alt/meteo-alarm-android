@@ -1,4 +1,4 @@
-Nuværende version: v.3.30 · 9.11.2026
+Nuværende version: v.3.31 · 9.11.2026
 Forbedringer af design / struktur.
 - Markens side samlet med Statistik: øverst faste felter for nu og for perioden; under dem tabellerne for 12 timer og dag for dag.
 - Feltet „Notifikationer og varsler“ på hver mark tænder alle dens notifikationer, nu også sne og tørke.

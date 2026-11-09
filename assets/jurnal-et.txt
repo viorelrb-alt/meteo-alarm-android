@@ -1,4 +1,4 @@
-Praegune versioon: v.3.30 · 9.11.2026
+Praegune versioon: v.3.31 · 9.11.2026
 Kujunduse / ülesehituse parandused.
 - Põllu leht ühendatud statistikaga: üleval paigal olevad praeguse hetke ja perioodi kastid; all 12 tunni ja päev-päevalt tabelid.
 - Iga põllu ruut „Teavitused ja hoiatused“ lülitab sisse kõik selle teavitused, nüüd ka lumi ja põud.

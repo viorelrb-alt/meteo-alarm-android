@@ -202,7 +202,16 @@ public final class FarmActivity extends Activity {
 
 	/** The page's title row: a back arrow and TITLE. */
 	private LinearLayout header(String title) {
-		return header(title, null);
+		return header(title, (List<Item>) null);
+	}
+
+	/** The page's title row with RIGHT (v3.31: the PDF button) at its right. */
+	private LinearLayout header(String title, View right) {
+		LinearLayout row = header(title, (List<Item>) null);
+		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, px(52));
+		ml.leftMargin = px(10);
+		row.addView(right, ml);
+		return row;
 	}
 
 	/** The page's title row: a back arrow, TITLE fitted to its room, and the ⋮ menu with ITEMS (v3.11). */
@@ -302,6 +311,11 @@ public final class FarmActivity extends Activity {
 	 * them, no buttons; at the top right, as wide as its longest row.
 	 */
 	private void openMenu(final List<Item> items) {
+		openMenu(items, null);
+	}
+
+	/** The menu; ANCHOR (v3.31): under that button, at its left (else at the top right). */
+	private void openMenu(final List<Item> items, View anchor) {
 		closeOverlay();
 		Log.i(this, "FERMIER", "meniul ⋮ deschis (" + screen + ")");
 		FrameLayout ov = new FrameLayout(this);
@@ -352,6 +366,16 @@ public final class FarmActivity extends Activity {
 		sv.addView(panel);
 		FrameLayout.LayoutParams pl = new FrameLayout.LayoutParams(pw, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
 		pl.setMargins(0, px(70), px(12), px(12));
+		if (anchor != null) {
+			int[] at = new int[2], ra = new int[2];
+			anchor.getLocationInWindow(at);
+			root.getLocationInWindow(ra);
+			int x = at[0] - ra[0], y = at[1] - ra[1] + anchor.getHeight() + px(4);
+			int need = items.size() * px(47) + px(14), sh = root.getHeight();
+			if (sh > 0 && y + need > sh - px(12)) y = Math.max(px(12), sh - px(12) - need);
+			pl = new FrameLayout.LayoutParams(pw, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT);
+			pl.setMargins(Math.max(px(8), Math.min(x, sw - pw - px(8))), y, 0, px(12));
+		}
 		ov.addView(sv, pl);
 		overlay = ov;
 		root.addView(ov, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -392,64 +416,183 @@ public final class FarmActivity extends Activity {
 		return px(8);
 	}
 
+	/** A box of the parcel's page: its short title, the whole one for the bubble, value, line. */
+	private static final class BoxSpec {
+		final String title, full, value, sub;
+		final boolean sum;
+
+		BoxSpec(String title, String full, String value, String sub, boolean sum) {
+			this.title = title;
+			this.full = full;
+			this.value = value;
+			this.sub = sub;
+			this.sum = sum;
+		}
+	}
+
 	/**
-	 * v3.30 (Viorel): the size of a box on a phone held upright (4 in a row); in landscape and on a
-	 * tablet the boxes are at most 20% bigger than that.
+	 * A square box drawn whole (v3.31, Viorel): the top third its short title in bold, on one or two
+	 * lines; the lower two thirds its value, filling up to 90% of them. A tap shows the details.
 	 */
-	private int phoneBox() {
+	private final class BoxView extends View {
+		final BoxSpec b;
+		String[] lines = new String[0];
+		float tSize, vSize;
+		final Paint tp = new Paint(Paint.ANTI_ALIAS_FLAG), vp = new Paint(Paint.ANTI_ALIAS_FLAG), fp = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		BoxView(final BoxSpec b) {
+			super(FarmActivity.this);
+			this.b = b;
+			tp.setTypeface(Typeface.DEFAULT_BOLD);
+			vp.setTypeface(Typeface.DEFAULT_BOLD);
+			tp.setTextAlign(Paint.Align.CENTER);
+			vp.setTextAlign(Paint.Align.CENTER);
+			setContentDescription(b.full + " " + b.value);
+			setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					bubble(b.full, b.value, b.sub);
+				}
+			});
+		}
+
+		@Override
+		protected void onDraw(Canvas c) {
+			float w = getWidth(), h = getHeight(), st = dp * 2, r = dp * 12, band = h / 3f;
+			android.graphics.RectF all = new android.graphics.RectF(st / 2, st / 2, w - st / 2, h - st / 2);
+			fp.setStyle(Paint.Style.FILL);
+			fp.setColor(card);
+			c.drawRoundRect(all, r, r, fp);
+			// The title's band: the top third, the summary's darker.
+			c.save();
+			android.graphics.Path clip = new android.graphics.Path();
+			clip.addRoundRect(all, r, r, android.graphics.Path.Direction.CW);
+			c.clipPath(clip);
+			fp.setColor(b.sum ? (dark ? 0xFFD6C6A0 : 0xFFB8B8B8) : band());
+			c.drawRect(0, 0, w, band, fp);
+			c.restore();
+			fp.setStyle(Paint.Style.STROKE);
+			fp.setStrokeWidth(st);
+			fp.setColor(ink);
+			c.drawRoundRect(all, r, r, fp);
+			tp.setTextSize(tSize);
+			tp.setColor(b.sum ? 0xFF262624 : bandInk);
+			Paint.FontMetrics fm = tp.getFontMetrics();
+			float lh = (fm.descent - fm.ascent) * 0.92f, top = (band - lh * lines.length) / 2f;
+			for (int k = 0; k < lines.length; k++) c.drawText(lines[k], w / 2f, top + k * lh - fm.ascent * 0.96f, tp);
+			vp.setTextSize(vSize);
+			vp.setColor(ink);
+			android.graphics.Rect bd = new android.graphics.Rect();
+			String v = b.value;
+			vp.getTextBounds(v, 0, v.length(), bd);
+			c.drawText(v, w / 2f, band + (h - band) / 2f - bd.exactCenterY(), vp);
+		}
+	}
+
+	/** The band colour of the boxes. */
+	private int band() {
+		return band;
+	}
+
+	/**
+	 * The biggest bold size (pixels) at which TITLE fits the top third of a box of BW pixels, on one
+	 * line or broken in two at the best space: { size, the space's word index (0: one line) }.
+	 */
+	private float[] titleFit(String title, int bw) {
+		Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+		pt.setTypeface(Typeface.DEFAULT_BOLD);
+		pt.setTextSize(100);
+		Paint.FontMetrics fm = pt.getFontMetrics();
+		float lh = (fm.descent - fm.ascent) * 0.92f;
+		float wl = bw - px(10), hl = bw / 3f - px(6);
+		String[] w = title.split(" ");
+		float best = 0, at = 0;
+		for (int k = 0; k < w.length; k++) {
+			String l1 = k == 0 ? title : join(w, 0, k), l2 = k == 0 ? "" : join(w, k, w.length);
+			float mw = Math.max(pt.measureText(l1), pt.measureText(l2));
+			int n = k == 0 ? 1 : 2;
+			float size = Math.min(wl / mw, hl / (lh * n)) * 100;
+			if (size > best) {
+				best = size;
+				at = k;
+			}
+		}
+		return new float[] { best, at };
+	}
+
+	private static String join(String[] w, int a, int b) {
+		StringBuilder s = new StringBuilder();
+		for (int k = a; k < b; k++) s.append(k > a ? " " : "").append(w[k]);
+		return s.toString();
+	}
+
+	/** The biggest bold size (pixels) at which VALUE fills at most 90% of a box's lower two thirds. */
+	private float valueFit(String value, int bw) {
+		Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+		pt.setTypeface(Typeface.DEFAULT_BOLD);
+		pt.setTextSize(100);
+		android.graphics.Rect bd = new android.graphics.Rect();
+		pt.getTextBounds(value, 0, value.length(), bd);
+		float vw = Math.max(1, pt.measureText(value)), vh = Math.max(1, bd.height());
+		return Math.min(0.9f * (bw - px(10)) / vw, 0.9f * (bw * 2 / 3f) / vh) * 100;
+	}
+
+	/**
+	 * v3.31 (Viorel): the boxes in one row that slides sideways, all square and of one size, as the
+	 * town's; the titles differ by 1 point at most, the values by 1.5; when the titles would be too
+	 * small the boxes grow (up to 40%).
+	 */
+	private View boxRow(List<BoxSpec> specs) {
+		float sp = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+		int g = gap();
+		int bw = !land() && !TextSize.tablet(this) ? Math.round((contentW() - 2 * g) / 3.3f) : Math.round(phoneBoxRow() * 1.2f);
+		int base = bw;
+		float[][] tf = new float[specs.size()][];
+		float T = 0;
+		for (int pass = 0; pass < 9; pass++) {
+			T = Float.MAX_VALUE;
+			for (int k = 0; k < specs.size(); k++) {
+				tf[k] = titleFit(specs.get(k).title.toUpperCase(), bw);
+				T = Math.min(T, tf[k][0]);
+			}
+			if (T >= 12 * sp || bw >= base * 1.4f) break;
+			bw = Math.round(bw * 1.05f);
+		}
+		float V = Float.MAX_VALUE;
+		float[] vf = new float[specs.size()];
+		for (int k = 0; k < specs.size(); k++) {
+			vf[k] = valueFit(specs.get(k).value, bw);
+			V = Math.min(V, vf[k]);
+		}
+		LinearLayout row = new LinearLayout(this);
+		row.setGravity(Gravity.CENTER_HORIZONTAL);
+		for (int k = 0; k < specs.size(); k++) {
+			BoxSpec b = specs.get(k);
+			BoxView v = new BoxView(b);
+			String t = b.title.toUpperCase();
+			int at = Math.round(tf[k][1]);
+			if (at == 0) v.lines = new String[] { t };
+			else {
+				String[] w = t.split(" ");
+				v.lines = new String[] { join(w, 0, at), join(w, at, w.length) };
+			}
+			v.tSize = Math.min(tf[k][0], T + sp);
+			v.vSize = Math.min(vf[k], V + 1.5f * sp);
+			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(bw, bw);
+			if (k > 0) lp.leftMargin = g;
+			row.addView(v, lp);
+		}
+		android.widget.HorizontalScrollView hs = new android.widget.HorizontalScrollView(this);
+		hs.setHorizontalScrollBarEnabled(false);
+		hs.setFillViewport(true);
+		hs.addView(row, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, bw));
+		return hs;
+	}
+
+	/** A box's size on a phone held upright (3.3 in view, as the town's boxes). */
+	private int phoneBoxRow() {
 		int sdp = getResources().getConfiguration().smallestScreenWidthDp;
 		if (TextSize.tablet(this) || sdp <= 0) sdp = 412;
-		return Math.round((sdp - 32 - 3 * 8) * dp / 4f);
-	}
-
-	/** The boxes' size and how many in a row: [size, per row], rows as even as they can be. */
-	private int[] boxGrid(int count) {
-		int w = contentW(), g = gap();
-		if (!land() && !TextSize.tablet(this)) return new int[] { (w - 3 * g) / 4, 4 };
-		int max = Math.round(phoneBox() * 1.2f);
-		int kmax = Math.max(1, (w + g) / (max + g));
-		int rows = (count + kmax - 1) / kmax;
-		int n = (count + rows - 1) / rows;
-		return new int[] { Math.min(max, (w - (n - 1) * g) / n), n };
-	}
-
-	/** The size of the boxes being built (set by addBoxes' caller through boxGrid). */
-	private int boxSize;
-
-	/**
-	 * A square box (v3.11, Viorel; v3.30: a short title, never wider than the box, on 2 close lines
-	 * at most; SUM: a box of the period's summary, its band darker): the value fitted to the width;
-	 * a tap shows FULL (the whole title), the value and the line under it in a bubble.
-	 */
-	private View box(String title, final String full, final String value, final String sub, boolean sum) {
-		final int w = boxSize > 0 ? boxSize : boxGrid(11)[0];
-		LinearLayout b = column();
-		b.setBackground(frame(card, 12));
-		b.setPadding(px(2), px(2), px(2), px(4));
-		TextView h = text(title.toUpperCase(), 14, true, sum ? 0xFF262624 : bandInk);
-		h.setGravity(Gravity.CENTER);
-		h.setPadding(px(3), px(4), px(3), px(4));
-		h.setLineSpacing(0, 0.88f);
-		h.setIncludeFontPadding(false);
-		fitLines(h, w - px(10), 14, 7, 2);
-		GradientDrawable hb = new GradientDrawable();
-		hb.setColor(sum ? (dark ? 0xFFD6C6A0 : 0xFFB8B8B8) : band);
-		float r = px(10);
-		hb.setCornerRadii(new float[] { r, r, r, r, 0, 0, 0, 0 });
-		h.setBackground(hb);
-		b.addView(h, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-		// v3.20 (Viorel): only the value in the box; the line under it shows in the bubble.
-		float big = Math.min(30, w / dp * 0.3f);
-		TextView v = text(nb(value), big, true, ink);
-		v.setGravity(Gravity.CENTER);
-		fitLines(v, w - px(12), big, 10, 1);
-		b.addView(v, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
-		b.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View x) {
-				bubble(full, value, sub);
-			}
-		});
-		return b;
+		return Math.round((sdp - 32 - 2 * 8) * dp / 3.3f);
 	}
 
 	/** A number keeps its unit on the same line (v3.20): the space after a digit does not break. */
@@ -501,21 +644,6 @@ public final class FarmActivity extends Activity {
 		ov.addView(c, cl);
 		overlay = ov;
 		root.addView(ov, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-	}
-
-	/** BOXES in centred rows of N squares of SIZE (v3.30, Viorel). */
-	private void addBoxes(LinearLayout col, List<View> boxes, int size, int n, int top) {
-		int g = gap();
-		for (int k = 0; k < boxes.size(); k += n) {
-			LinearLayout row = new LinearLayout(this);
-			row.setGravity(Gravity.CENTER_HORIZONTAL);
-			for (int j = k; j < k + n && j < boxes.size(); j++) {
-				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(size, size);
-				if (j > k) lp.leftMargin = g;
-				row.addView(boxes.get(j), lp);
-			}
-			col.addView(row, wide(k == 0 ? top : 8));
-		}
 	}
 
 	/** The natural width (pixels) of the table's columns at SP, each with its padding. */
@@ -1648,14 +1776,24 @@ public final class FarmActivity extends Activity {
 
 	// --- A parcel ---------------------------------------------------------------------------------
 
+	/** What the PDF holds (v3.31, Viorel): the boxes and the two tables, as the page shows them. */
+	private static final class PdfData {
+		List<BoxSpec> boxes;
+		String t12, tdd, period;
+		String[] h12, hd;
+		boolean[] r12, rd;
+		List<String[]> hr, dr;
+		int days;
+	}
+
 	/**
-	 * v3.30 (Viorel 2026-11-09): the parcel's page and its statistics in one. On top, fixed: the
-	 * title with the ⋮ menu (the period, PDF), the coordinates, the boxes of now (7) and of the
-	 * period's summary (4, the band darker), in centred rows; a line; under it the tables of the next
-	 * 12 hours and of the days, which scroll up and down: one under the other, as wide as the screen
-	 * (a phone held upright: a wider table slides sideways; a tablet: scaled to fit), on a tablet in
-	 * landscape side by side, each scrolling by itself. A phone in landscape has no room for a fixed
-	 * part: there the whole page scrolls.
+	 * v3.30 (Viorel 2026-11-09): the parcel's page and its statistics in one. v3.31: on top, fixed:
+	 * the title with the PDF button, the coordinates, the boxes of now (7) and of the period (4, the
+	 * band darker) in ONE row that slides sideways; a line; under it the tables of the next 12 hours
+	 * and of the days (its ☰ on the left picks the period), then the note on the soil and the
+	 * source, all scrolling: one under the other (a phone held upright: a wider table slides
+	 * sideways; a tablet: scaled to fit), on a tablet in landscape side by side, each scrolling by
+	 * itself. A phone in landscape has no room for a fixed part: there the whole page scrolls.
 	 */
 	private void showParcel(final long id) {
 		final Parcels.Parcel p = Parcels.get(this, id);
@@ -1674,11 +1812,11 @@ public final class FarmActivity extends Activity {
 		if (from.compareTo(to) > 0) from = to;
 		final List<Farm.Day> days = Farm.read(Parcels.stats(this, id), from, to);
 		final double[] s = days.isEmpty() ? null : Farm.summary(days);
-		List<Item> items = new java.util.ArrayList<Item>();
+		final List<Item> periods = new java.util.ArrayList<Item>();
 		int[] spans = { 7, 14, 28 };
 		for (int k = 0; k < spans.length; k++) {
 			final int n = spans[k];
-			items.add(new Item(Tr.t("Period: ", "Perioada: ") + n + Tr.t(" days", " zile"), new Runnable() {
+			periods.add(new Item(Tr.t("Period: ", "Perioada: ") + n + Tr.t(" days", " zile"), new Runnable() {
 				public void run() {
 					from = Farm.date(now, -(n - 1));
 					to = today;
@@ -1686,19 +1824,14 @@ public final class FarmActivity extends Activity {
 				}
 			}));
 		}
-		items.add(new Item(Tr.t("From ", "De la ") + dateText(from), new Runnable() {
+		periods.add(new Item(Tr.t("From ", "De la ") + dateText(from), new Runnable() {
 			public void run() {
 				pick(true, oldest, today, id);
 			}
 		}));
-		items.add(new Item(Tr.t("To ", "Până la ") + dateText(to), new Runnable() {
+		periods.add(new Item(Tr.t("To ", "Până la ") + dateText(to), new Runnable() {
 			public void run() {
 				pick(false, oldest, today, id);
-			}
-		}));
-		if (s != null) items.add(new Item(Tr.t("Save as PDF in Downloads", "Salvează PDF în Descărcări"), new Runnable() {
-			public void run() {
-				pdf(p, days, s);
 			}
 		}));
 		Farm.Data d = Parcels.data(this, id);
@@ -1709,18 +1842,9 @@ public final class FarmActivity extends Activity {
 		root.removeAllViews();
 		overlay = null;
 
-		// --- The fixed part: the title, the coordinates, the boxes.
-		LinearLayout top = column();
-		top.setPadding(px(16), px(14), px(16), px(10));
-		top.addView(header(p.name, items));
-		status = text(coords(p.lat, p.lon) + (f > 0 ? " · " + Tr.t("updated ", "actualizat ") + time(f) : ""), tx, false, dim);
-		top.addView(status, wide(4));
-		String period = dateText(from).substring(0, 5) + " – " + dateText(to).substring(0, 5);
-		if (imp) period = dateText(from).substring(0, dateText(from).lastIndexOf('/')) + " – " + dateText(to).substring(0, dateText(to).lastIndexOf('/'));
-		top.addView(text(Tr.t("Now", "Acum").toUpperCase() + "  ·  " + Tr.t("Summary", "Rezumat").toUpperCase() + " " + period, tx, true, dim), wide(8));
-		int[] g = boxGrid(11);
-		boxSize = g[0];
-		List<View> bx = new java.util.ArrayList<View>();
+		// --- The boxes' contents.
+		final PdfData pd = new PdfData();
+		List<BoxSpec> bx = new java.util.ArrayList<BoxSpec>();
 		int i = d != null ? d.nowIndex(now) : -1;
 		boolean h = i >= 0;
 		int di = h ? d.dayIndex(d.dateOf(i)) : -1;
@@ -1734,25 +1858,43 @@ public final class FarmActivity extends Activity {
 		String shift = !h ? "" : sh >= 0 ? Tr.t("turns to ", "se întoarce spre ") + dir8(d.dir[sh]) + Tr.t(" around ", " în jurul orei ") + Texts.clock(d.hourOf(sh), clk12)
 				: Tr.t("steady for 12 hours", "stabilă 12 ore");
 		String rainSub = di >= 0 ? Tr.t("today up to ", "azi până la ") + pct(d.dPop[di]) + " · " + mm(d.dRain[di]) : "";
-		bx.add(box(Tr.t("Air temp.", "Temp. aer"), Tr.t("Air temperature", "Temperatura aerului"), deg(temp), hiLo, false));
-		bx.add(box(Tr.t("Wind", "Vânt"), Tr.t("Wind", "Vânt"), kmh(wind), Double.isNaN(gust) ? "" : Tr.t("gusts ", "rafale ") + kmh(gust), false));
-		bx.add(box(Tr.t("Wind dir.", "Dir. vânt"), Tr.t("Wind direction", "Direcția vântului"), dir8(dir), shift, false));
-		bx.add(box(Tr.t("Rain chance", "Prob. ploaie"), Tr.t("Chance of rain", "Șansa de ploaie"), h ? pct(d.prob[i]) : "–", rainSub, false));
-		bx.add(box(Tr.t("Air hum.", "Umid. aer"), Tr.t("Air humidity", "Umiditatea aerului"), pct(hum), "", false));
-		bx.add(box(Tr.t("Soil hum.", "Umid. sol"), Tr.t("Soil moisture", "Umiditatea solului"), h ? soil(d.soilM[i]) : "–",
+		bx.add(new BoxSpec(Tr.t("Air temp.", "Temp. aer"), Tr.t("Air temperature", "Temperatura aerului"), deg(temp), hiLo, false));
+		bx.add(new BoxSpec(Tr.t("Wind", "Vânt"), Tr.t("Wind", "Vânt"), kmh(wind), Double.isNaN(gust) ? "" : Tr.t("gusts ", "rafale ") + kmh(gust), false));
+		bx.add(new BoxSpec(Tr.t("Wind dir.", "Dir. vânt"), Tr.t("Wind direction", "Direcția vântului"), dir8(dir), shift, false));
+		bx.add(new BoxSpec(Tr.t("Rain chance", "Prob. ploaie"), Tr.t("Chance of rain", "Șansa de ploaie"), h ? pct(d.prob[i]) : "–", rainSub, false));
+		bx.add(new BoxSpec(Tr.t("Air hum.", "Umid. aer"), Tr.t("Air humidity", "Umiditatea aerului"), pct(hum), "", false));
+		bx.add(new BoxSpec(Tr.t("Soil hum.", "Umid. sol"), Tr.t("Soil moisture", "Umiditatea solului"), h ? soil(d.soilM[i]) : "–",
 				(h ? soilWord(d.soilM[i]) + " · " : "") + Tr.t("3–9 cm, estimated", "3–9 cm, estimat"), false));
-		bx.add(box(Tr.t("Soil temp.", "Temp. sol"), Tr.t("Soil temperature", "Temperatura solului"), h ? deg(d.soilT[i]) : "–", Tr.t("surface, estimated", "suprafață, estimat"), false));
+		bx.add(new BoxSpec(Tr.t("Soil temp.", "Temp. sol"), Tr.t("Soil temperature", "Temperatura solului"), h ? deg(d.soilT[i]) : "–", Tr.t("surface, estimated", "suprafață, estimat"), false));
 		String per = " · " + dateText(from) + " – " + dateText(to);
-		bx.add(box(Tr.t("Min. / max.", "Min. / max."), Tr.t("Lowest / highest", "Minima / maxima"), s == null ? "–" : deg(s[0]) + " / " + deg(s[1]),
+		bx.add(new BoxSpec(Tr.t("Min. / max.", "Min. / max."), Tr.t("Lowest / highest", "Minima / maxima"), s == null ? "–" : deg(s[0]) + " / " + deg(s[1]),
 				s == null ? "" : days.size() + Tr.t(" days", " zile") + per, true));
-		bx.add(box(Tr.t("Rain total", "Ploaie tot."), Tr.t("Rain total", "Ploaie totală"), s == null ? "–" : mm(s[2]),
+		bx.add(new BoxSpec(Tr.t("Rain total", "Ploaie tot."), Tr.t("Rain total", "Ploaie totală"), s == null ? "–" : mm(s[2]),
 				s == null ? "" : Math.round(s[5]) + Tr.t(" days with rain (1 mm+)", " zile cu ploaie (1 mm+)") + per, true));
-		bx.add(box(Tr.t("Max wind", "Vânt max."), Tr.t("Highest wind", "Vânt maxim"), s == null ? "–" : kmh(s[3]),
+		bx.add(new BoxSpec(Tr.t("Max wind", "Vânt max."), Tr.t("Highest wind", "Vânt maxim"), s == null ? "–" : kmh(s[3]),
 				s == null || Double.isNaN(s[6]) ? "" : Tr.t("gusts up to ", "rafale până la ") + kmh(s[6]) + per, true));
-		bx.add(box(Tr.t("Mean soil hum.", "Umid. sol med."), Tr.t("Soil moisture", "Umiditatea solului"), s == null ? "–" : soil(s[4]),
+		bx.add(new BoxSpec(Tr.t("Mean soil hum.", "Umid. sol med."), Tr.t("Soil moisture", "Umiditatea solului"), s == null ? "–" : soil(s[4]),
 				s == null ? "" : Tr.t("mean, estimated", "medie, estimată") + per, true));
-		addBoxes(top, bx, g[0], g[1], 6);
-		boxSize = 0;
+		for (int k = 0; k < bx.size(); k++) {
+			BoxSpec b = bx.get(k);
+			bx.set(k, new BoxSpec(b.title, b.full, nb(b.value), b.sub, b.sum));
+		}
+
+		// --- The fixed part: the title with the PDF button, the coordinates, the boxes.
+		LinearLayout top = column();
+		top.setPadding(px(16), px(14), px(16), px(10));
+		TextView pdfBtn = button("PDF", new View.OnClickListener() {
+			public void onClick(View v) {
+				askPdf(p, pd);
+			}
+		});
+		pdfBtn.setContentDescription(Tr.t("Save as PDF in Downloads", "Salvează PDF în Descărcări"));
+		top.addView(header(p.name, pdfBtn));
+		status = text(coords(p.lat, p.lon) + (f > 0 ? " · " + Tr.t("updated ", "actualizat ") + time(f) : ""), tx, false, dim);
+		top.addView(status, wide(4));
+		String period = shortDate(from) + " – " + shortDate(to);
+		top.addView(oneLine(Tr.t("Now", "Acum").toUpperCase() + "  ·  " + Tr.t("Summary", "Rezumat").toUpperCase() + " " + period, tx, contentW()), wide(8));
+		top.addView(boxRow(bx), wide(6));
 
 		// --- The tables.
 		String[] h12 = { Tr.t("Hour", "Ora"), Tr.t("Temp.", "Temp."), Tr.t("Rain", "Ploaie"), "mm", Tr.t("Wind", "Vânt") };
@@ -1766,16 +1908,26 @@ public final class FarmActivity extends Activity {
 		List<String[]> dr = new java.util.ArrayList<String[]>();
 		for (int k = days.size() - 1; k >= 0; k--) {
 			Farm.Day x = days.get(k);
-			String dt = dateText(x.date);
-			dr.add(new String[] { dt.substring(0, imp ? dt.lastIndexOf('/') : 5), deg(x.tmax), deg(x.tmin), mm(x.rain), kmh(x.wind), soil(x.soil) });
+			dr.add(new String[] { shortDate(x.date), deg(x.tmax), deg(x.tmin), mm(x.rain), kmh(x.wind), soil(x.soil) });
 		}
-		String t12 = Tr.t("Next 12 hours", "Următoarele 12 ore").toUpperCase(), tdd = Tr.t("Day by day", "Zi cu zi").toUpperCase() + per;
+		String t12 = Tr.t("Next 12 hours", "Următoarele 12 ore").toUpperCase(), tdd = Tr.t("Day by day", "Zi cu zi").toUpperCase() + " · " + period;
 		String none = Tr.t("No data for this period yet. Open the parcel once with internet: the app downloads the last 28 days from Open-Meteo.",
 				"Încă nu sunt date pentru această perioadă. Deschide parcela o dată cu internet: aplicația descarcă ultimele 28 de zile de la Open-Meteo.");
+		pd.boxes = bx;
+		pd.t12 = t12;
+		pd.tdd = tdd;
+		pd.period = dateText(from) + " – " + dateText(to);
+		pd.h12 = h12;
+		pd.hd = hd;
+		pd.r12 = r12;
+		pd.rd = rd;
+		pd.hr = hr;
+		pd.dr = dr;
+		pd.days = days.size();
 
-		// --- The note on the soil and the source (3 points smaller), at the bottom.
+		// --- The note on the soil and the source (3 points smaller), after the last table (v3.31).
 		LinearLayout foot = column();
-		foot.setPadding(px(16), px(6), px(16), px(10));
+		foot.setPadding(0, px(14), 0, px(10));
 		foot.addView(text(Screen.soilEst(), tx, false, dim));
 		foot.addView(text(Screen.srcOM(), tx - 3, false, dim), wide(4));
 
@@ -1789,10 +1941,10 @@ public final class FarmActivity extends Activity {
 			col.addView(rule(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(2)));
 			LinearLayout tb = column();
 			tb.setPadding(px(16), px(10), px(16), 0);
-			addTable(tb, t12, h12, hr, r12, cw, true, null, tx);
-			addTable(tb, tdd, hd, dr, rd, cw, true, none, tx);
+			addTable(tb, t12, h12, hr, r12, cw, true, null, tx, null);
+			addTable(tb, tdd, hd, dr, rd, cw, true, none, tx, periods);
+			tb.addView(foot);
 			col.addView(tb);
-			col.addView(foot);
 			sv.addView(col);
 			root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		} else {
@@ -1812,8 +1964,9 @@ public final class FarmActivity extends Activity {
 				LinearLayout c1 = column(), c2 = column();
 				c1.setPadding(0, px(10), 0, px(10));
 				c2.setPadding(0, px(10), 0, px(10));
-				addTable(c1, t12, h12, hr, r12, w1, true, null, tx);
-				addTable(c2, tdd, hd, dr, rd, w2, true, none, tx);
+				addTable(c1, t12, h12, hr, r12, w1, true, null, tx, null);
+				addTable(c2, tdd, hd, dr, rd, w2, true, none, tx, periods);
+				c2.addView(foot);
 				a1.addView(c1);
 				a2.addView(c2);
 				two.addView(a1, new LinearLayout.LayoutParams(w1, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -1830,15 +1983,36 @@ public final class FarmActivity extends Activity {
 				ScrollView sv = new ScrollView(this);
 				LinearLayout tb = column();
 				tb.setPadding(px(16), px(10), px(16), px(10));
-				addTable(tb, t12, h12, hr, r12, cw, tab, null, tx);
-				addTable(tb, tdd, hd, dr, rd, cw, tab, none, tx);
+				addTable(tb, t12, h12, hr, r12, cw, tab, null, tx, null);
+				addTable(tb, tdd, hd, dr, rd, cw, tab, none, tx, periods);
+				tb.addView(foot);
 				sv.addView(tb);
 				body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 			}
-			body.addView(foot);
 			root.addView(body, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		}
 		if (d == null || System.currentTimeMillis() - f > FRESH_MS) download(p);
+	}
+
+	/** "07.11" (or "11/7") of a date "2026-11-07". */
+	private String shortDate(String iso) {
+		String t = dateText(iso);
+		return t.length() == 0 ? t : t.substring(0, imp ? t.lastIndexOf('/') : 5);
+	}
+
+	/** S in bold DIM on one line, at SP or smaller until it fits WIDTH pixels (v3.31: titles on one line). */
+	private TextView oneLine(String s, float sp, int width) {
+		TextView t = text(s, sp, true, dim);
+		t.setSingleLine(true);
+		Paint pt = new Paint(t.getPaint());
+		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+		float z = sp;
+		for (; z > 9; z -= 0.5f) {
+			pt.setTextSize(z * scale);
+			if (pt.measureText(s) <= width) break;
+		}
+		t.setTextSize(z * TextSize.get(this));
+		return t;
 	}
 
 	/** The line between the fixed boxes and the tables. */
@@ -1848,12 +2022,68 @@ public final class FarmActivity extends Activity {
 		return v;
 	}
 
-	/** TITLE, then the table (or NONE when it has no rows), AVAIL pixels wide. */
-	private void addTable(LinearLayout col, String title, String[] head, List<String[]> rows, boolean[] right, int avail, boolean fit, String none, float tx) {
+	/**
+	 * TITLE on one line, then the table (or NONE when it has no rows), AVAIL pixels wide; MENU
+	 * (v3.31, Viorel): a ☰ button left of the title opens these commands (the period).
+	 */
+	private void addTable(LinearLayout col, String title, String[] head, List<String[]> rows, boolean[] right, int avail, boolean fit, String none, float tx,
+			final List<Item> menu) {
 		if (rows.isEmpty() && none == null) return;
-		col.addView(text(title, tx, true, dim), wide(col.getChildCount() == 0 ? 0 : 18));
+		LinearLayout tr = new LinearLayout(this);
+		tr.setGravity(Gravity.CENTER_VERTICAL);
+		int room = avail;
+		if (menu != null) {
+			final View mb = burger();
+			mb.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					openMenu(menu, v);
+				}
+			});
+			int bs = px(42);
+			LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(bs, bs);
+			ml.rightMargin = px(10);
+			tr.addView(mb, ml);
+			room -= bs + px(10);
+		}
+		tr.addView(oneLine(title, tx, room));
+		col.addView(tr, wide(col.getChildCount() == 0 ? 0 : 18));
 		if (rows.isEmpty()) col.addView(text(none, tx, false, ink), wide(6));
 		else col.addView(table(head, rows, right, avail, fit), wide(6));
+	}
+
+	/** A small framed ☰ button (three lines, drawn). */
+	private View burger() {
+		View v = new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				pt.setColor(ink);
+				pt.setStrokeWidth(dp * 2.2f);
+				pt.setStrokeCap(Paint.Cap.ROUND);
+				float w = getWidth(), h = getHeight(), x0 = w * 0.27f, x1 = w * 0.73f;
+				for (int k = -1; k <= 1; k++) c.drawLine(x0, h / 2f + k * h * 0.17f, x1, h / 2f + k * h * 0.17f, pt);
+			}
+		};
+		v.setBackground(frame(btn, 10));
+		v.setContentDescription(Tr.t("Period", "Perioada"));
+		return v;
+	}
+
+	/** v3.31 (Viorel): what the PDF button does, then Save? with No on the left and Yes on the right. */
+	private void askPdf(final Parcels.Parcel p, final PdfData pd) {
+		Log.i(this, "FERMIER", "buton PDF: " + p.name);
+		AlertDialog.Builder d = dialog();
+		d.setTitle(Tr.t("Save as PDF?", "Salvezi ca PDF?"));
+		d.setMessage(Tr.t("The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.",
+				"Aplicația face un PDF cu casetele și cele două tabele ale acestei parcele și îl salvează în Descărcări."));
+		d.setNegativeButton(Tr.t("No", "Nu"), null);
+		d.setPositiveButton(Tr.t("Yes", "Da"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				pdf(p, pd);
+			}
+		});
+		d.show();
 	}
 
 	/** Off the main thread: the parcel's data; the page again when they come. */
@@ -1935,10 +2165,10 @@ public final class FarmActivity extends Activity {
 
 	// --- PDF -------------------------------------------------------------------------------------
 
-	/** The statistics as an A4 PDF, saved in Downloads (Android 10+), else where the user picks. */
-	private void pdf(Parcels.Parcel p, List<Farm.Day> days, double[] s) {
+	/** The page as an A4 PDF (v3.31: the boxes and both tables), saved in Downloads (Android 10+), else where the user picks. */
+	private void pdf(Parcels.Parcel p, PdfData pd) {
 		try {
-			pdfBytes = makePdf(p, days, s);
+			pdfBytes = makePdf(p, pd);
 			pdfName = "MeteoAlarm-" + p.name.replaceAll("[^A-Za-z0-9ĂÂÎȘȚăâîșț_-]+", "-") + "-" + from + "_" + to + ".pdf";
 			Log.i(this, "FERMIER", "PDF " + pdfName + " " + pdfBytes.length / 1024 + " KB");
 			if (Build.VERSION.SDK_INT >= 29) {
@@ -1994,73 +2224,141 @@ public final class FarmActivity extends Activity {
 		d.show();
 	}
 
-	private byte[] makePdf(Parcels.Parcel p, List<Farm.Day> days, double[] s) throws Exception {
-		PdfDocument doc = new PdfDocument();
-		int W = 595, H = 842, M = 48;
-		Paint t = new Paint(Paint.ANTI_ALIAS_FLAG), b = new Paint(Paint.ANTI_ALIAS_FLAG), l = new Paint();
+	/** The PDF's pages: the title, the boxes in rows of 6 squares, the table of 12 hours, the days. */
+	private byte[] makePdf(Parcels.Parcel p, PdfData pd) throws Exception {
+		final PdfDocument doc = new PdfDocument();
+		final int W = 595, H = 842, M = 40;
+		Paint t = new Paint(Paint.ANTI_ALIAS_FLAG), b = new Paint(Paint.ANTI_ALIAS_FLAG), l = new Paint(Paint.ANTI_ALIAS_FLAG), f = new Paint(Paint.ANTI_ALIAS_FLAG);
 		t.setColor(0xFF000000);
 		b.setColor(0xFF000000);
 		b.setTypeface(Typeface.DEFAULT_BOLD);
 		l.setColor(0xFF000000);
-		l.setStrokeWidth(1);
-		float[] cols = { M, M + 120, M + 190, M + 260, M + 350, M + 440 };
-		String[] heads = { Tr.t("Date", "Data"), Tr.t("Max", "Max"), Tr.t("Min", "Min"), Tr.t("Rain", "Ploaie"), Tr.t("Max wind", "Vânt max"), Tr.t("Soil", "Sol") };
-		int pageNo = 0, k = days.size() - 1;
+		l.setStrokeWidth(0.8f);
+		l.setStyle(Paint.Style.STROKE);
 		Calendar now = Calendar.getInstance();
-		while (true) {
-			pageNo++;
-			PdfDocument.Page pg = doc.startPage(new PdfDocument.PageInfo.Builder(W, H, pageNo).create());
-			Canvas c = pg.getCanvas();
-			float y = M;
-			if (pageNo == 1) {
-				b.setTextSize(20);
-				c.drawText(Tr.t("Parcel statistics · ", "Statistică parcelă · ") + p.name, M, y + 14, b);
-				y += 34;
-				t.setTextSize(11);
-				c.drawText(Tr.t("Coordinates: ", "Coordonate: ") + coords(p.lat, p.lon), M, y, t);
-				y += 16;
-				c.drawText(Tr.t("Period: ", "Perioada: ") + dateText(from) + " – " + dateText(to) + " (" + days.size() + Tr.t(" days)", " zile)"), M, y, t);
-				y += 16;
-				c.drawText(Tr.t("Made on ", "Generat la ") + dateText(Farm.date(now, 0)) + " " + time(now.getTimeInMillis()) + " · Meteo Alarm Android", M, y, t);
-				y += 26;
-				b.setTextSize(13);
-				c.drawText(Tr.t("Summary", "Rezumat"), M, y, b);
-				y += 18;
-				t.setTextSize(12);
-				String[] sum = { Tr.t("Lowest temperature: ", "Temperatura minimă: ") + deg(s[0]), Tr.t("Highest temperature: ", "Temperatura maximă: ") + deg(s[1]),
-						Tr.t("Rain total: ", "Ploaie totală: ") + mm(s[2]) + " · " + Math.round(s[5]) + Tr.t(" days with rain (1 mm+)", " zile cu ploaie (1 mm+)"),
-						Tr.t("Highest wind: ", "Vânt maxim: ") + kmh(s[3]) + (Double.isNaN(s[6]) ? "" : " · " + Tr.t("gusts up to ", "rafale până la ") + kmh(s[6])),
-						Tr.t("Mean soil moisture (3–9 cm, estimated): ", "Umiditatea medie a solului (3–9 cm, estimată): ") + soil(s[4]) + " " + (Double.isNaN(s[4]) ? "" : soilWord(s[4])) };
-				for (String x : sum) {
-					c.drawText(x, M + 8, y, t);
-					y += 17;
+		int[] pageNo = { 1 };
+		PdfDocument.Page[] pg = { doc.startPage(new PdfDocument.PageInfo.Builder(W, H, 1).create()) };
+		Canvas c = pg[0].getCanvas();
+		float y = M;
+		b.setTextSize(18);
+		c.drawText(Tr.t("Parcel · ", "Parcelă · ") + p.name, M, y + 14, b);
+		y += 32;
+		t.setTextSize(10);
+		c.drawText(Tr.t("Coordinates: ", "Coordonate: ") + coords(p.lat, p.lon), M, y, t);
+		y += 14;
+		c.drawText(Tr.t("Period: ", "Perioada: ") + pd.period + " (" + pd.days + Tr.t(" days)", " zile)"), M, y, t);
+		y += 14;
+		c.drawText(Tr.t("Made on ", "Generat la ") + dateText(Farm.date(now, 0)) + " " + time(now.getTimeInMillis()) + " · Meteo Alarm Android", M, y, t);
+		y += 20;
+		// The boxes: 6 squares in a row, the title in the top third, the value in the rest.
+		int per = 6;
+		float gap = 8, bw = (W - 2 * M - (per - 1) * gap) / per;
+		b.setTextAlign(Paint.Align.CENTER);
+		for (int k = 0; k < pd.boxes.size(); k++) {
+			BoxSpec bs = pd.boxes.get(k);
+			float x = M + (k % per) * (bw + gap);
+			if (k > 0 && k % per == 0) y += bw + gap;
+			f.setStyle(Paint.Style.FILL);
+			f.setColor(bs.sum ? 0xFFC8C8C8 : 0xFFE8E6DC);
+			c.drawRect(x, y, x + bw, y + bw / 3, f);
+			c.drawRect(x, y, x + bw, y + bw, l);
+			c.drawLine(x, y + bw / 3, x + bw, y + bw / 3, l);
+			String tt = bs.title.toUpperCase();
+			b.setTextSize(7.5f);
+			String[] w = tt.split(" ");
+			String[] lines = { tt };
+			if (b.measureText(tt) > bw - 6 && w.length > 1) {
+				int best = 1;
+				float bm = Float.MAX_VALUE;
+				for (int s2 = 1; s2 < w.length; s2++) {
+					float m = Math.max(b.measureText(join(w, 0, s2)), b.measureText(join(w, s2, w.length)));
+					if (m < bm) {
+						bm = m;
+						best = s2;
+					}
 				}
-				y += 14;
+				lines = new String[] { join(w, 0, best), join(w, best, w.length) };
 			}
-			b.setTextSize(11);
-			for (int i = 0; i < cols.length; i++) c.drawText(heads[i], cols[i], y, b);
-			y += 6;
-			c.drawLine(M, y, W - M, y, l);
-			y += 15;
-			t.setTextSize(11);
-			while (k >= 0 && y < H - M - 40) {
-				Farm.Day d = days.get(k--);
-				String[] v = { dateText(d.date), deg(d.tmax), deg(d.tmin), mm(d.rain), kmh(d.wind), soil(d.soil) };
-				for (int i = 0; i < cols.length; i++) c.drawText(v[i], cols[i], y, t);
-				y += 16;
+			float ty = y + bw / 6 - (lines.length - 1) * 4.5f + 2.5f;
+			for (String ln : lines) {
+				c.drawText(ln, x + bw / 2, ty, b);
+				ty += 9;
 			}
-			t.setTextSize(9);
-			t.setColor(0xFF555555);
-			c.drawText(Tr.t("Source: Open-Meteo (open-meteo.com), weather models.", "Sursa: Open-Meteo (open-meteo.com), modele meteo."), M, H - M - 6, t);
-			c.drawText(Tr.t("Soil moisture and soil temperature are estimates, not measurements.", "Umiditatea și temperatura solului sunt estimări, nu măsurători."), M, H - M + 6, t);
-			c.drawText(pageNo + "", W - M - 10, H - M + 20, t);
-			t.setColor(0xFF000000);
-			doc.finishPage(pg);
-			if (k < 0) break;
+			float vs = 16;
+			b.setTextSize(vs);
+			while (b.measureText(bs.value) > bw - 8 && vs > 7) b.setTextSize(vs -= 0.5f);
+			c.drawText(bs.value, x + bw / 2, y + bw / 3 + (bw * 2 / 3) / 2 + vs * 0.36f, b);
 		}
+		b.setTextAlign(Paint.Align.LEFT);
+		y += bw + 26;
+		Object[] st = { c, y };
+		st = pdfTable(doc, pg, pageNo, st, W, H, M, pd.t12, pd.h12, pd.hr, pd.r12, t, b, l);
+		st = pdfTable(doc, pg, pageNo, st, W, H, M, pd.tdd, pd.hd, pd.dr, pd.rd, t, b, l);
+		c = (Canvas) st[0];
+		t.setTextSize(9);
+		t.setColor(0xFF555555);
+		c.drawText(Tr.t("Soil moisture and soil temperature are estimates, not measurements.", "Umiditatea și temperatura solului sunt estimări, nu măsurători."), M, H - M - 6, t);
+		c.drawText(Tr.t("Source: Open-Meteo (open-meteo.com), weather models.", "Sursa: Open-Meteo (open-meteo.com), modele meteo."), M, H - M + 6, t);
+		doc.finishPage(pg[0]);
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
 		doc.writeTo(out);
 		doc.close();
 		return out.toByteArray();
+	}
+
+	/** A table in the PDF at the place ST {canvas, y}: its title, the head on a band, the rows; new pages as needed. */
+	private Object[] pdfTable(PdfDocument doc, PdfDocument.Page[] pg, int[] pageNo, Object[] st, int W, int H, int M, String title, String[] head, List<String[]> rows,
+			boolean[] right, Paint t, Paint b, Paint l) {
+		Canvas c = (Canvas) st[0];
+		float y = (Float) st[1];
+		if (rows.isEmpty()) return st;
+		int nc = head.length;
+		float[] cw = new float[nc];
+		t.setTextSize(10);
+		b.setTextSize(10);
+		float tot = 0;
+		for (int k = 0; k < nc; k++) {
+			cw[k] = b.measureText(head[k]);
+			for (String[] r : rows) cw[k] = Math.max(cw[k], t.measureText(r[k]));
+			cw[k] += 14;
+			tot += cw[k];
+		}
+		float extra = (W - 2 * M - tot) / nc;
+		for (int k = 0; k < nc; k++) cw[k] += extra;
+		float rh = 16;
+		if (y + 20 + 2 * rh > H - M - 20) {
+			doc.finishPage(pg[0]);
+			pageNo[0]++;
+			pg[0] = doc.startPage(new PdfDocument.PageInfo.Builder(W, H, pageNo[0]).create());
+			c = pg[0].getCanvas();
+			y = M;
+		}
+		b.setTextSize(11);
+		c.drawText(title, M, y, b);
+		y += 8;
+		Paint band = new Paint();
+		band.setColor(0xFFE8E6DC);
+		for (int r = -1; r < rows.size(); r++) {
+			if (y + rh > H - M - 20) {
+				doc.finishPage(pg[0]);
+				pageNo[0]++;
+				pg[0] = doc.startPage(new PdfDocument.PageInfo.Builder(W, H, pageNo[0]).create());
+				c = pg[0].getCanvas();
+				y = M;
+			}
+			String[] v = r < 0 ? head : rows.get(r);
+			if (r < 0) c.drawRect(M, y, W - M, y + rh, band);
+			float x = M;
+			Paint pt = r < 0 ? b : t;
+			pt.setTextSize(10);
+			for (int k = 0; k < nc; k++) {
+				float tw = pt.measureText(v[k]);
+				c.drawText(v[k], right[k] ? x + cw[k] - 7 - tw : x + 7, y + rh - 4.5f, pt);
+				c.drawRect(x, y, x + cw[k], y + rh, l);
+				x += cw[k];
+			}
+			y += rh;
+		}
+		return new Object[] { c, y + 26 };
 	}
 }

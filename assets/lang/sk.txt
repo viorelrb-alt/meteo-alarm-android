@@ -803,3 +803,11 @@ In Parcels and on a parcel's page the commands are in the ⋮ menu at the top ri
 Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.	Štatistika · PDF: hore polia pre teraz a pre obdobie (pevné), pod nimi najbližších 12 hodín a deň po dni (posúvajú sa). Obdobie a PDF v ⋮. Ťuknutie na názov parcely ukáže názov a súradnice.
 Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.	Režim farmára: políčko „Oznámenia a výstrahy“ na karte parcely zapne všetky jej oznámenia: dážď, vietor, sneh, inovať, mráz, hmla, mrznúci dážď, sucho (suchá pôda, 7 dní bez dažďa). Každá parcela má svoje.
 Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.	Modré polia INFORMÁCIA po výstrahách: inovať, mráz (jar a jeseň), hmla, mrznúci dážď, silný vietor v najbližších 24 hodinách. Vypočíta ich aplikácia z predpovede; nie sú oficiálne. Prichádzajú aj ako samostatné oznámenie.
+Display language	Jazyk zobrazenia
+Period	Obdobie
+Save as PDF?	Uložiť ako PDF?
+The app makes a PDF with the boxes and the two tables of this parcel and saves it in Downloads.	Aplikácia vytvorí PDF s poliami a oboma tabuľkami tejto parcely a uloží ho do Stiahnutých súborov.
+Yes	Áno
+Parcel · 	Parcela · 
+In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	V Parcelách a na stránke úprav sú príkazy v ponuke ⋮ vpravo hore. Polia ukazujú len hodnotu; ťuknutie ukáže podrobnosti.
+Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Štatistika · PDF: hore polia pre teraz a pre obdobie v jednom rade posuvnom do strán; pod nimi najbližších 12 hodín a deň po dni (posúvajú sa). ☰ pri dňoch vyberá obdobie; tlačidlo PDF uloží polia a tabuľky.

@@ -1,4 +1,4 @@
-Current version: v.3.30 · 9.11.2026
+Current version: v.3.31 · 9.11.2026
 Design / structure improvements.
 - The parcel's page joined with Statistics: on top the boxes of now and of the period, fixed; under them the 12-hour and day-by-day tables.
 - The “Notifications and warnings” box on each parcel turns on all its notifications, now also snow and drought.

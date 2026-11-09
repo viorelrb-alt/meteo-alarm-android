@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.30";
+	static final String VERSION = "Meteo Alarm Android v3.31";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1844,7 +1844,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("clock"); rows.add(row(Tr.t("Clock 12/24", "Ceas 12/24"), "clock"));
 		ids.add("theme"); rows.add(row(Tr.t("Theme", "Temă"), "moon"));
 		ids.add("keepOn"); rows.add(row(keepOn ? (Tr.t("Screen on OFF", "Ecran aprins OFF")) : (Tr.t("Screen on ON", "Ecran aprins ON")), "keepOn"));
-		ids.add("lang"); rows.add(row(Tr.t("Language", "Limba") + " · " + Tr.name(s.T.lang), "lang-" + s.T.lang));
+		ids.add("lang"); rows.add(row(Tr.t("Display language", "Limbă afișaj"), "lang-" + s.T.lang));
 		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (Tr.t("Night clock OFF", "Ceas noapte OFF"))
 				: (Tr.t("Night clock ON", "Ceas noapte ON")), "night"));
 		ids.add("loc"); rows.add(row(auto ? (Tr.t("Location Off", "Localizare Off")) : (Tr.t("Location On", "Localizare On")), "locate"));
@@ -1968,7 +1968,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Romania: the minorities' languages in a submenu of their own (Viorel 2026-11-07).
 		if (!more.isEmpty()) rows.add(new Bubble.Row(Tr.t("Other languages", "Alte limbi") + " ›", null, Bubble.Row.ITEM, more.contains(s.T.lang)));
 		Log.i(this, "LIMBA", "lista de limbi: " + codes + (more.isEmpty() ? "" : " + " + more) + " (țara " + Lang.country(this) + ")");
-		bubble.show(view.px(s.btnMenu), bubbleWidth(0.3f, 170), Tr.t("Language", "Limba"), rows, s.T.en, new Bubble.Pick() {
+		bubble.show(view.px(s.btnMenu), bubbleWidth(0.3f, 170), Tr.t("Display language", "Limbă afișaj"), rows, s.T.en, new Bubble.Pick() {
 			public void picked(int k) {
 				if (k >= codes.size()) {
 					pickMinority(more);
@@ -2374,16 +2374,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
 		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.",
 				"☰ › Parcele: harta arată toate parcelele; atingerea deschide una pe ecranul principal. „Salvare loc. GPS” sau „Alege pe hartă” adaugă una; butonul GPS arată unde ești. Creionul editează numele și acul; meniul ⋮ de acolo are Statistică · PDF și Ștergere. Rămân doar în acest telefon."));
-		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels and on a parcel's page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.",
-				"În Parcele și pe pagina unei parcele comenzile sunt în meniul ⋮ din dreapta sus. Casetele arată doar valoarea; atingerea arată detaliile."));
+		help.entry(mini("parcel"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.",
+				"În Parcele și pe pagina de editare comenzile sunt în meniul ⋮ din dreapta sus. Casetele arată doar valoarea; atingerea arată detaliile."));
 		help.entry(mini("farm"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("Sections are split by lines; tables have lines and slide sideways; the source is at the bottom, once.",
 				"Secțiunile sunt despărțite de linii; tabelele au linii și se glisează în lateral; sursa e jos, o singură dată."));
 		help.entry(mini("parcel"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
 		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
 				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral; mijlocul ecranului urmează degetul și după jumătate trece la următorul."));
-		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period (fixed), under them the next 12 hours and day by day (they scroll). Period and PDF in ⋮. A tap on the parcel's name shows its name and coordinates.",
-				"Statistică · PDF: sus casetele de acum și ale perioadei (fixe), sub ele următoarele 12 ore și zi cu zi (se derulează). Perioada și PDF în ⋮. Atingerea numelui parcelei arată numele și coordonatele."));
+		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.",
+				"Statistică · PDF: sus casetele de acum și ale perioadei, pe un rând care glisează în lateral; sub ele următoarele 12 ore și zi cu zi (se derulează). ☰ de lângă zile alege perioada; butonul PDF salvează casetele și tabelele."));
 		help.entry(mini("bell"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.",
 				"Mod fermier: caseta „Notificări și avertizări” de pe cardul parcelei pornește toate notificările ei: ploaie, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile). Fiecare parcelă le are pe ale ei."));
 		help.entry(mini("farm"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
@@ -2433,7 +2433,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("clock"), Tr.t("Clock 12/24", "Ceas 12/24"), Tr.t("Switches the clock between 24 hours and 12 hours (AM/PM).", "Comută ceasul între 24 de ore și 12 ore (AM/PM)."));
 		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("Light, Dark, or Automatic (phone sensor).", "Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("keepOn"), Tr.t("Screen on ON / OFF", "Ecran aprins ON / OFF"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));
-		help.entry(mini("lang-" + s.T.lang), Tr.t("Language", "Limba"), Tr.t("English, the phone's language and the country's languages; in Romania also “Other languages”.",
+		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("English, the phone's language and the country's languages; in Romania also “Other languages”.",
 				"Engleza, limba telefonului și limbile țării; în România și „Alte limbi”."));
 		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The earthquakes of the last days near you, with time, place, magnitude and distance.", "Cutremurele din ultimele zile din jur, cu ora, locul, magnitudinea și distanța."));
