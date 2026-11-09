@@ -188,7 +188,27 @@ public final class FarmActivity extends Activity {
 		return t;
 	}
 
-	private LinearLayout column() {
+	/** The buttons' labels on one line each, all in the same size, smaller when one does not fit. */
+	private void oneLine(final TextView... bs) {
+		for (TextView b : bs) b.setSingleLine(true);
+		bs[0].post(new Runnable() {
+			public void run() {
+				float sp = bs[0].getTextSize() / getResources().getDisplayMetrics().scaledDensity;
+				for (; sp > 9; sp -= 0.5f) {
+					boolean ok = true;
+					for (TextView b : bs) {
+						Paint p = new Paint(b.getPaint());
+						p.setTextSize(sp * getResources().getDisplayMetrics().scaledDensity);
+						if (p.measureText(b.getText().toString()) > b.getWidth() - b.getPaddingLeft() - b.getPaddingRight()) ok = false;
+					}
+					if (ok) break;
+				}
+				for (TextView b : bs) b.setTextSize(sp);
+			}
+		});
+	}
+
+		private LinearLayout column() {
 		LinearLayout l = new LinearLayout(this);
 		l.setOrientation(LinearLayout.VERTICAL);
 		return l;
@@ -668,10 +688,10 @@ public final class FarmActivity extends Activity {
 		}
 		if (period != null) {
 			// At least 3 points smaller, one line (smaller still when it does not fit), near the bottom edge.
-			TextView pe = text(nb(period), 14, false, dim);
+			TextView pe = text(nb(period), 15.5f, false, dim); // v3.52: 0.5 under the place (16)
 			pe.setGravity(Gravity.CENTER);
 			pe.setPadding(px(12), px(14), px(12), 0);
-			fitLines(pe, bw - px(28), 14, 9, 1);
+			fitLines(pe, bw - px(28), 15.5f, 9, 1);
 			c.addView(pe, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		}
 		FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(bw, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER);
@@ -1843,6 +1863,8 @@ public final class FarmActivity extends Activity {
 			two.addView(del, dl);
 			two.addView(saveBtn, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 			col.addView(two, wide(land ? 0 : 10));
+			// v3.52 (Viorel): both labels on one line, the same size (smaller when "Salvează" does not fit).
+			oneLine(del, saveBtn);
 		}
 		if (land) {
 			body.addView(mapBox, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 2));
@@ -2083,8 +2105,10 @@ public final class FarmActivity extends Activity {
 		// --- The note on the soil and the source (3 points smaller), after the last table (v3.31).
 		LinearLayout foot = column();
 		foot.setPadding(0, px(14), 0, px(10));
-		foot.addView(text(Screen.soilEst(), tx, false, dim));
-		foot.addView(text(Screen.srcOM(), tx - 1, false, dim), wide(4)); // v3.51: sources 14
+		// v3.52 (Viorel): the notes at the bottom 0.5 smaller than the page's smallest text.
+		float fs = Math.min(tx, tableSp()) - 0.5f;
+		foot.addView(text(Screen.soilEst(), fs, false, dim));
+		foot.addView(text(Screen.srcOM(), fs, false, dim), wide(4));
 
 		int cw = contentW();
 		if (whole) {
@@ -2180,7 +2204,7 @@ public final class FarmActivity extends Activity {
 		page.addView(rule(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, px(1))));
 		// v3.50 (Viorel): the coordinates at the left, "Updated" at the right, as big as the source
 		// at most; "Updated" smaller when the two would touch.
-		float sz = tx - 1; // v3.51: as big as the source (14)
+		float sz = tx - 1; // the coordinates (v3.51)
 		LinearLayout line = new LinearLayout(this);
 		line.setGravity(Gravity.CENTER_VERTICAL);
 		line.setPadding(px(16), px(6), px(16), px(8));
@@ -2190,7 +2214,7 @@ public final class FarmActivity extends Activity {
 		line.addView(co, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		String u = Tr.t("updated ", "actualizat ");
 		String up = f > 0 ? u.substring(0, 1).toUpperCase() + u.substring(1) + time(f) : "";
-		float us = sz;
+		float us = Math.min(tx, tableSp()) - 0.5f; // v3.52: "Updated" 0.5 smaller than the page's texts
 		Paint pc = new Paint(co.getPaint()), pu = new Paint(co.getPaint());
 		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
 		int room = getResources().getDisplayMetrics().widthPixels - px(32) - px(12);

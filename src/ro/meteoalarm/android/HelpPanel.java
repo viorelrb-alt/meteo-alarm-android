@@ -176,9 +176,9 @@ final class HelpPanel extends FrameLayout {
 		text(what, 15);
 	}
 
-	/** v3.51 (Viorel): where the data come from, as big as every source text (14). */
+	/** v3.52 (Viorel): where the data come from, 0.5 smaller than the page's texts (15). */
 	void source(String what) {
-		text(what, 14);
+		text(what, 14.5f);
 	}
 
 	private void text(String what, float sp) {

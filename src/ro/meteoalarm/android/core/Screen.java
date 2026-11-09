@@ -178,6 +178,13 @@ public final class Screen {
 				0xFF30302E, 0xFF4F4E4A, 0xFFC2C0B6, 0xFFD97757, 0xFFD97757, 0xFFE3B341, 0xFFD97757, 0xFFD14D4D, 0xFF262624, 0xFF262624);
 	}
 
+	/** v3.52: a colour theme (16 colours, as Palette), null = Kindle / Claude dark. */
+	public static int[] theme;
+
+	private Palette pal() {
+		return theme != null ? new Palette(theme) : dark ? Palette.DARK : Palette.LIGHT;
+	}
+
 	// Middle of the weather icon's drawing inside its 200 x 200 file (icons/centru.txt).
 	private static final String[] CENTRE = { "clear-day 24 24 177 177", "clear-night 38 38 144 163", "cloudy 26 59 174 136",
 			"drizzle 26 21 174 158", "fog 25 28 176 176", "partly-day 8 8 183 157", "partly-night 31 24 183 157",
@@ -186,7 +193,7 @@ public final class Screen {
 	/** Draws the screen on a canvas CW x CH: landscape when it is wider than high. */
 	public void draw(Gfx gfx, float cw, float ch) {
 		g = gfx;
-		c = dark ? Palette.DARK : Palette.LIGHT;
+		c = pal();
 		this.cw = cw;
 		updHead = false;
 		hourHits.clear();
@@ -231,7 +238,7 @@ public final class Screen {
 	/** Only the text-size bar, on GFX over a page (SizeOverlay, v2.12). */
 	public void drawSizeBarOnly(Gfx gfx, float ch) {
 		g = gfx;
-		c = dark ? Palette.DARK : Palette.LIGHT;
+		c = pal();
 		drawSizeBar(ch);
 	}
 
@@ -1089,7 +1096,7 @@ public final class Screen {
 		out.add(new String[] { "h", Tr.t("Soil (estimated)", "Sol (estimat)") });
 		out.add(new String[] { "v", Tr.t("Soil moist. 3–9 cm: ", "Umid. sol 3–9 cm: ") + soilText(farm.soilM[i]) });
 		out.add(new String[] { "v", Tr.t("Soil temp. (surf.): ", "Temp. sol (supraf.): ") + deg(farm.soilT[i]) });
-		out.add(new String[] { "t", soilEst() });
+		out.add(new String[] { "s", soilEst() });
 		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
@@ -1587,7 +1594,7 @@ public final class Screen {
 			else tb.add(new String[] { hr, deg(farm.soilT[j]) });
 		}
 		out.add(table(head, tb));
-		if (id.startsWith("pSoil")) out.add(new String[] { "t", soilEst() });
+		if (id.startsWith("pSoil")) out.add(new String[] { "s", soilEst() });
 		out.add(new String[] { "s", srcOM() });
 		return out;
 	}
@@ -1636,7 +1643,7 @@ public final class Screen {
 		}
 		if (soil) out.add(new String[] { "t", Tr.t("“Kept by the soil”: how much the water in the soil's 3–9 cm layer grew (or fell, with −); the rest ran off, evaporated or went deeper.",
 				"„Reținută de sol”: cât a crescut (sau a scăzut, cu −) apa din stratul de sol de 3–9 cm; restul s-a scurs, s-a evaporat sau a ajuns mai adânc.") });
-		out.add(new String[] { "t", Tr.t("An estimate from the weather models, not a rain-gauge measurement at the place.",
+		out.add(new String[] { "s", Tr.t("An estimate from the weather models, not a rain-gauge measurement at the place.",
 				"Estimare din modelele meteo, nu o măsurătoare de pluviometru în acel loc.") });
 		out.add(new String[] { "s", srcOM() });
 		return out;
@@ -3050,7 +3057,7 @@ public final class Screen {
 	 */
 	public void menuIcon(Gfx gfx, String which) {
 		g = gfx;
-		c = dark ? Palette.DARK : Palette.LIGHT;
+		c = pal();
 		int k = c.ink;
 		float[] b = { 0, 0, 64, 64 };
 		if (which.equals("city") || which.equals("locate") || which.equals("bright") || which.equals("sensor"))

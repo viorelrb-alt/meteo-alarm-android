@@ -240,7 +240,7 @@ final class Bubble extends FrameLayout {
 			for (String src : sources) rows.add(new Row(src, null, Row.SOURCE, false));
 		}
 		List<Grid> grids = new ArrayList<Grid>();
-		List<TextView> values = new ArrayList<TextView>();
+		List<TextView> values = new ArrayList<TextView>(), srcs = new ArrayList<TextView>();
 		for (int k = 0; k < rows.size(); k++) {
 			final Row r = rows.get(k);
 			final int idx = k;
@@ -275,6 +275,7 @@ final class Bubble extends FrameLayout {
 				t.setTag("text");
 				t.setText(nb(r.text));
 				if (r.kind == Row.VALUE) values.add(t);
+				if (src) srcs.add(t);
 				t.setTextColor(src ? (dark ? 0xFFA6A39A : 0xFF555555) : ink);
 				t.setLineSpacing(2 * dp, 1);
 				t.setPadding((int) (16 * dp), (int) (2.5f * dp), (int) (16 * dp), (int) (2.5f * dp)); // v3.51: half the gap
@@ -423,6 +424,7 @@ final class Bubble extends FrameLayout {
 			t.setTextSize(vs);
 		}
 		for (Grid g : grids) g.fit(inner, 11 * zk);
+		small(srcs, values, grids, 18 * zk);
 		list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 		up.setVisibility(GONE);
 		down.setVisibility(GONE);
@@ -437,13 +439,14 @@ final class Bubble extends FrameLayout {
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
 		// v3.51: ▲ / ▼ outside the frame, at the right where there is room, else at the left; when
 		// neither side has room the bubble gets narrower by the arrows' width.
-		int aw = (int) (34 * dp * zk), gap = (int) (4 * dp);
+		int aw = (int) (28 * dp * zk), gap = (int) (1 * dp);
 		if (scrolls && !pan) {
 			int nw = sw - gap - aw - 2 * gap;
 			if (nw < width) {
 				width = nw;
 				inner = width - (int) (32 * dp);
 				for (Grid g : grids) g.fit(inner, 11 * zk);
+				small(srcs, values, grids, 18 * zk);
 				list.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
 				rowsH = list.getMeasuredHeight();
 				titleH = head(width);
@@ -480,13 +483,10 @@ final class Bubble extends FrameLayout {
 			}
 			int ink2 = ink();
 			for (TextView a : new TextView[]{up, down}) {
-				a.setTextSize(16 * zk);
+				// v3.52 (Viorel): only the arrow heads, no circle, close to the bubble's side.
+				a.setTextSize(20 * zk);
 				a.setTextColor(ink2);
-				android.graphics.drawable.GradientDrawable bg = new android.graphics.drawable.GradientDrawable();
-				bg.setShape(android.graphics.drawable.GradientDrawable.OVAL);
-				bg.setColor(page());
-				bg.setStroke(Math.max(1, (int) (1.5f * dp)), ink2);
-				a.setBackground(bg);
+				a.setBackground(null);
 				a.setAlpha(1f);
 				LayoutParams al = (LayoutParams) a.getLayoutParams();
 				al.width = al.height = aw;
@@ -513,6 +513,18 @@ final class Bubble extends FrameLayout {
 		open = true;
 		setVisibility(VISIBLE);
 		bringToFront();
+	}
+
+	/**
+	 * v3.52 (Viorel): the source / estimate texts at the bottom are 0.5 points smaller than the
+	 * smallest other text of the bubble (TEXT size, values and tables).
+	 */
+	private void small(List<TextView> srcs, List<TextView> values, List<Grid> grids, float text) {
+		if (srcs.isEmpty()) return;
+		float sd = getResources().getDisplayMetrics().scaledDensity, min = text;
+		for (TextView t : values) min = Math.min(min, t.getTextSize() / sd);
+		for (Grid g : grids) min = Math.min(min, g.sp());
+		for (TextView t : srcs) t.setTextSize(min - 0.5f);
 	}
 
 	/** The height of the title's line and the place under it, at WIDTH. */
@@ -641,6 +653,11 @@ final class Bubble extends FrameLayout {
 				size(px);
 			}
 			requestLayout();
+		}
+
+		/** The table's text size now (sp). */
+		float sp() {
+			return tp.getTextSize() / getResources().getDisplayMetrics().scaledDensity;
 		}
 
 		private float natural() {

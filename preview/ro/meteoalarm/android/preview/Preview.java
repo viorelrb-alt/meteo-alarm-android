@@ -141,6 +141,13 @@ public final class Preview {
 		s.unitF = opts.contains(" F") || (usa && !opts.contains(" metric"));
 		s.clk12 = opts.contains(" 12h") || (usa && !opts.contains(" metric"));
 		s.dark = opts.contains(" dark");
+		java.util.regex.Matcher tm = java.util.regex.Pattern.compile(" theme=([0-9A-Fa-f,]+)").matcher(opts);
+		if (tm.find()) {
+			String[] hx = tm.group(1).split(",");
+			int[] t = new int[hx.length];
+			for (int i = 0; i < hx.length; i++) t[i] = 0xFF000000 | Integer.parseInt(hx[i], 16);
+			Screen.theme = t;
+		}
 		java.util.regex.Matcher nm = java.util.regex.Pattern.compile(" net=(\\d)").matcher(opts);
 		if (nm.find()) s.net = Integer.parseInt(nm.group(1));
 		s.w = Weather.parse(fetch(Weather.forecastUrl(s.city.lat, s.city.lon, "Europe/Bucharest"), opts.contains(" dry") ? "forecast-dry.json" : "forecast.json"));
@@ -281,7 +288,7 @@ public final class Preview {
 		g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
 		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
 		g.setRenderingHint(RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON);
-		g.setColor(new Color(s.dark ? 0x262624 : 0xFFFFFF));
+		g.setColor(new Color(Screen.theme != null ? Screen.theme[0] & 0xFFFFFF : s.dark ? 0x262624 : 0xFFFFFF));
 		g.fillRect(0, 0, pw, ph);
 		g.translate(ox, oy);
 		g.scale(scale, scale);
