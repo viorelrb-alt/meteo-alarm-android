@@ -1,4 +1,4 @@
-Nuvarande version: v.3.90 · 9.11.2026
+Nuvarande version: v.3.91 · 9.11.2026
 AVISERINGAR
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - En egen INFORMATION-avisering även för orten.

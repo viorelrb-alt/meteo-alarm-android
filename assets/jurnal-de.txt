@@ -1,4 +1,4 @@
-Aktuelle Version: v.3.90 · 9.11.2026
+Aktuelle Version: v.3.91 · 9.11.2026
 AKTUALISIERUNGEN
 - Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.

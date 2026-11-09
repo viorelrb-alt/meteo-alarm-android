@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.3.90 · 9.11.2026
+Jelenlegi verzió: v.3.91 · 9.11.2026
 ÉRTESÍTÉSEK
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
 - Külön TÁJÉKOZTATÁS értesítés a településre is.

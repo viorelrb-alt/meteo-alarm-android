@@ -295,9 +295,15 @@ final class WeatherView extends View {
 		return b;
 	}
 
+	/** v3.91 (Viorel): on a phone the menu, the town and the line sit this many units higher; the weather gets the room. */
+	private float lift() {
+		return screen.tablet ? 0 : 16;
+	}
+
 	/** The top and the bottom of the moving part, in pixels. */
 	private float[] band() {
 		float[] f = Screen.fit(getWidth(), getHeight() - bandUsed(), screen.tablet);
+		f[2] += lift();
 		// v3.10: in landscape the boxes start right under the dots (124 units), so the slide starts there.
 		float top = getWidth() > getHeight() ? 123 : 137;
 		return new float[] { oy + top * scale, oy + (f[2] - 80) * scale };
@@ -384,9 +390,10 @@ final class WeatherView extends View {
 		int bp = bandUsed();
 		float[] f = Screen.fit(w, h - bp, screen.tablet);
 		scale = f[0];
-		float cw = f[1], ch = f[2];
+		float lift = lift(), cw = f[1], ch = f[2] + lift;
 		ox = f[3];
-		oy = f[4] + bp;
+		oy = f[4] + bp - lift * scale;
+		screen.lift = lift;
 		screen.band = bp / scale;
 		screen.bandTop = -oy / scale;
 		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));

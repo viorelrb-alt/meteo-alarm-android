@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.90";
+	static final String VERSION = "Meteo Alarm Android v3.91";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -220,10 +220,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					// the connection and the date (WeatherView draws them); the panels stay below it.
 					android.content.res.Configuration cf = getResources().getConfiguration();
 					int band = t > 0 && cf.orientation == android.content.res.Configuration.ORIENTATION_PORTRAIT && cf.smallestScreenWidthDp < 600 ? t : 0;
-					// Not used for the clock: the top stays free as before (the hidden status bar's height).
+					// v3.91 (Viorel): the status bar is hidden, so its room goes to the page (only the camera stays free).
 					@SuppressWarnings("deprecation")
 					int stable = in.getStableInsetTop();
-					int pt = band > 0 ? 0 : Math.max(t, stable);
+					int pt = band > 0 ? 0 : t;
 					if (cutLogged != t * 10000 + stable) {
 						cutLogged = t * 10000 + stable;
 						Log.i(MainActivity.this, "APP", "margini ecran: decupaj sus " + t + " px, bara de stare " + stable + " px" + (band > 0 ? " -> banda camerei folosită" : ""));

@@ -1,4 +1,4 @@
-Geçerli sürüm: v.3.90 · 9.11.2026
+Geçerli sürüm: v.3.91 · 9.11.2026
 ANA EKRAN
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
 - Hava simgeleri: temanın renklerinde; büyük olan ve günlerinkiler 3 saniye hareket eder, her yenilemeden sonra da.

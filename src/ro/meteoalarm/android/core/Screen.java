@@ -1740,9 +1740,11 @@ public final class Screen {
 	 * connection at the right and the date at the left; the middle stays free for the camera.
 	 */
 	public float band, bandTop;
+	/** v3.91: the page is drawn this many units higher (WeatherView); the camera band stays above it. */
+	public float lift;
 
 	private void drawBand() {
-		float top = -band, mid = top + band / 2;
+		float top = lift - band, mid = top + band / 2;
 		int h = now.get(Calendar.HOUR_OF_DAY), m = now.get(Calendar.MINUTE);
 		float px = Math.min(44, band * 0.62f), right = cw - 40;
 		String hm = clk12 ? (h % 12 == 0 ? 12 : h % 12) + String.format(":%02d", m) : String.format("%02d:%02d", h, m);

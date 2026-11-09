@@ -318,7 +318,9 @@ public final class Preview {
 		int bp = 0;
 		for (String o : a) if (o.startsWith("band=")) bp = Integer.parseInt(o.substring(5));
 		float[] f = Screen.fit(pw, ph - bp, s.tablet);
-		float scale = f[0], cw = f[1], ch = f[2], ox = f[3], oy = f[4] + bp;
+		float lift = s.tablet || opts.contains(" nolift") ? 0 : 16;
+		float scale = f[0], cw = f[1], ch = f[2] + lift, ox = f[3], oy = f[4] + bp - lift * scale;
+		s.lift = lift;
 		s.band = bp / scale;
 		s.bandTop = -oy / scale;
 		BufferedImage img = new BufferedImage(pw, ph, BufferedImage.TYPE_INT_RGB);

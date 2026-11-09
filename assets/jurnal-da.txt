@@ -1,4 +1,4 @@
-Nuværende version: v.3.90 · 9.11.2026
+Nuværende version: v.3.91 · 9.11.2026
 HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi eller mobildata med signalstyrke og type (Wi-Fi 6, 5G…), eller intet internet.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.

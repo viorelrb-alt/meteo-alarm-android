@@ -1,4 +1,4 @@
-Praegune versioon: v.3.90 · 9.11.2026
+Praegune versioon: v.3.91 · 9.11.2026
 PÕHIEKRAAN
 - Ilmaikoonid: teema värvides; suur ja päevade omad liiguvad 3 sekundit, ka pärast iga värskendust.
 - Kaamera riba: püstpaigutuses on kell, ühendus ja kuupäev kaamera kõrval (Android 9+).

@@ -1,4 +1,4 @@
-Trenutna različica: v.3.90 · 9.11.2026
+Trenutna različica: v.3.91 · 9.11.2026
 GLAVNI ZASLON
 - Graf padavin: dotik razloži, kaj prikazuje.
 - Ikona povezave ob uri: Wi-Fi ali mobilni podatki z močjo signala in vrsto (Wi-Fi 6, 5G…) ali brez interneta.

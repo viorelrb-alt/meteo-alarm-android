@@ -1,4 +1,4 @@
-Version actuelle : v.3.90 · 9.11.2026
+Version actuelle : v.3.91 · 9.11.2026
 ÉCRAN PRINCIPAL
 - Bande de la caméra : en portrait, l'horloge, la connexion et la date sont à côté de la caméra (Android 9+).
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.

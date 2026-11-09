@@ -1,4 +1,4 @@
-Nykyinen versio: v.3.90 · 9.11.2026
+Nykyinen versio: v.3.91 · 9.11.2026
 ILMOITUKSET
 - Erillinen TIEDOTE-ilmoitus myös paikkakunnalle.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.

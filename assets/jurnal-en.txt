@@ -1,4 +1,4 @@
-Current version: v.3.90 · 9.11.2026
+Current version: v.3.91 · 9.11.2026
 FARMER MODE
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
