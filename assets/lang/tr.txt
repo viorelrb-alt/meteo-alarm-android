@@ -745,3 +745,11 @@ Yes	Evet
 Parcel · 	Parsel · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Parsellerde ve düzenleme sayfasında komutlar sağ üstteki ⋮ menüsündedir. Kutular yalnızca değeri gösterir; dokunmak ayrıntıları gösterir.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	İstatistik · PDF: üstte şimdinin ve dönemin kutuları yana kayan tek bir sırada; altında sonraki 12 saat ve gün gün (kayar). Günlerin yanındaki ☰ dönemi seçer; PDF düğmesi kutuları ve tabloları kaydeder.
+Screen on	Ekran açık
+Automatic location	Otomatik konum
+Boxes in ☰	☰ içindeki kutular
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	X'li kutu: işlev açık; boş: kapalı. Dokunmak değiştirir ve bir mesaj bunu söyler.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Çiftçi modu: Parseller haritasında GPS düğmesinin altındaki zil Parsel bildirimlerini açar; X'li parsel tüm bildirimlerini alır: yağmur, rüzgâr, kar, kırağı, don, sis, donan yağmur, kuraklık (kuru toprak, 7 gün yağmursuz).
+No parcel saved yet.	Henüz kayıtlı parsel yok.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	İşaretli parseller için bildirimler AÇIK: yağmur, rüzgâr, kar, kırağı, don, sis, donan yağmur, kuraklık.
+Parcel notifications OFF	Parsel bildirimleri KAPALI

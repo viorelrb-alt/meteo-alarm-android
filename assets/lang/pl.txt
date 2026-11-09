@@ -811,3 +811,11 @@ Yes	Tak
 Parcel · 	Działka · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	W Działkach i na stronie edycji polecenia są w menu ⋮ w prawym górnym rogu. Pola pokazują tylko wartość; dotknięcie pokazuje szczegóły.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statystyka · PDF: u góry pola teraz i okresu w jednym rzędzie przesuwanym w bok; pod nimi następne 12 godzin i dzień po dniu (przewijają się). ☰ przy dniach wybiera okres; przycisk PDF zapisuje pola i tabele.
+Screen on	Ekran włączony
+Automatic location	Automatyczna lokalizacja
+Boxes in ☰	Pola w ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Pole z X: funkcja włączona; puste: wyłączona. Dotknięcie przełącza, a komunikat o tym mówi.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Tryb rolnika: dzwonek pod przyciskiem GPS na mapie Działek otwiera Powiadomienia działek; działka z X dostaje wszystkie swoje powiadomienia: deszcz, wiatr, śnieg, szron, mróz, mgła, marznący deszcz, susza (sucha gleba, 7 dni bez deszczu).
+No parcel saved yet.	Nie zapisano jeszcze żadnej działki.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Powiadomienia WŁĄCZONE dla zaznaczonych działek: deszcz, wiatr, śnieg, szron, mróz, mgła, marznący deszcz, susza.
+Parcel notifications OFF	Powiadomienia działek WYŁĄCZONE

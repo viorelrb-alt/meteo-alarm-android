@@ -935,6 +935,7 @@ public final class FarmActivity extends Activity {
 		name.setEllipsize(android.text.TextUtils.TruncateAt.END);
 		String c = coords(p.lat, p.lon) + extra;
 		TextView co = text(c, 15, false, dim);
+		co.setSingleLine(true);
 		int room = cardInner() - (right != null ? px(40) : 0);
 		boolean same = land() && name.getPaint().measureText(p.name) + px(14) + co.getPaint().measureText(c) <= room;
 		if (same) {
@@ -946,6 +947,15 @@ public final class FarmActivity extends Activity {
 			left.addView(row);
 		} else {
 			left.addView(name);
+			// v3.32: the coordinates on one line, smaller when the card is narrow.
+			float z = 15;
+			Paint cp = new Paint(co.getPaint());
+			float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+			for (; z > 10; z -= 0.5f) {
+				cp.setTextSize(z * scale);
+				if (cp.measureText(c) <= room) break;
+			}
+			co.setTextSize(z * TextSize.get(this));
 			left.addView(co);
 		}
 		top.addView(left, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
@@ -1161,7 +1171,7 @@ public final class FarmActivity extends Activity {
 		ui.removeCallbacks(hideGps);
 		gpsBubble = bub;
 		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		ql.setMargins(0, mg + 2 * fb + px(26), mg, 0);
+		ql.setMargins(0, mg + 2 * fb + px(26) + (items != null ? fb + px(14) : 0), mg, 0);
 		mapBox.addView(bub, ql);
 	}
 
@@ -1250,6 +1260,19 @@ public final class FarmActivity extends Activity {
 			}));
 		}
 		mapFloats(mapBox, m, Tr.t("Parcels", "Parcele"), tab, items);
+		// v3.32 (Viorel): under the GPS button, the bell: the parcels' notifications on or off.
+		{
+			int fb = px(tab ? 46 : 42), mg = px(12);
+			FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(fb + px(4), fb + px(4), Gravity.TOP | Gravity.RIGHT);
+			bl.setMargins(0, mg + 2 * fb + px(28), mg, 0);
+			View bb = floatBtn(bell(), new View.OnClickListener() {
+				public void onClick(View v) {
+					parcelNotify();
+				}
+			});
+			bb.setContentDescription(Tr.t("Parcel notifications", "Notificări parcele"));
+			mapBox.addView(bb, bl);
+		}
 		if (!all.isEmpty()) statsFloat(mapBox, all, tab);
 
 		// --- The panel: the scrolled cards.
@@ -1376,15 +1399,9 @@ public final class FarmActivity extends Activity {
 			View fill = new View(this);
 			card.addView(fill, new LinearLayout.LayoutParams(1, 0, 1));
 		}
-		// v3.30 (Viorel): the last row: when it was updated, and at the right the parcel's ONLY switch
-		// for all its notifications.
-		LinearLayout last = new LinearLayout(this);
-		last.setGravity(Gravity.BOTTOM);
-		TextView up = text(d != null && f > 0 ? Tr.t("updated ", "actualizat ") + time(f) : "", 15, false, dim);
-		up.setPadding(0, 0, 0, px(10));
-		last.addView(up, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		last.addView(notifyBox(p));
-		card.addView(last, wide(2));
+		// v3.32 (Viorel): the notifications are switched from the bell button on the map; the card
+		// keeps only when it was updated (it was too tall in landscape).
+		if (d != null && f > 0) card.addView(text(Tr.t("updated ", "actualizat ") + time(f), 15, false, dim), wide(2));
 		card.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
@@ -1394,33 +1411,127 @@ public final class FarmActivity extends Activity {
 		return card;
 	}
 
-	/**
-	 * The tick box "Notifications and warnings" (v3.30, Viorel): the only switch for every
-	 * notification of parcel P (rain, wind, snow, frost, freeze, fog, freezing rain, drought).
-	 */
-	private View notifyBox(final Parcels.Parcel p) {
-		final android.widget.CheckBox cb = new android.widget.CheckBox(this);
-		cb.setText(Tr.t("Notifications and warnings", "Notificări și avertizări"));
-		cb.setTextColor(ink);
-		cb.setTextSize(15 * TextSize.get(this));
-		cb.setChecked(p.alerts);
-		if (Build.VERSION.SDK_INT >= 21) cb.setButtonTintList(android.content.res.ColorStateList.valueOf(ink));
-		cb.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener() {
-			public void onCheckedChanged(android.widget.CompoundButton b, boolean on) {
-				Parcels.Parcel cur = Parcels.get(FarmActivity.this, p.id);
-				if (cur == null) return;
-				cur.alerts = p.alerts = on;
-				Parcels.put(FarmActivity.this, cur);
-				Log.i(FarmActivity.this, "FERMIER", "notificări " + cur.name + ": " + (on ? "pornite" : "oprite"));
-				if (on) {
-					if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission("android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED)
-						requestPermissions(new String[] { "android.permission.POST_NOTIFICATIONS" }, ASK_NOTIFY);
-					toast(Tr.t("Notifications for this parcel: rain, wind, snow, frost, freeze, fog, freezing rain, drought.",
-							"Notificări pentru această parcelă: ploaie, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă."));
+	/** A box drawn the same in every language (v3.32, Viorel): X when ON, empty when OFF. */
+	private View tickBox(final boolean[] on) {
+		View v = new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float w = dp * 2, s = Math.min(getWidth(), getHeight()), x0 = (getWidth() - s) / 2f, y0 = (getHeight() - s) / 2f;
+				pt.setColor(ink);
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(w);
+				pt.setStrokeCap(Paint.Cap.ROUND);
+				c.drawRoundRect(new android.graphics.RectF(x0 + w, y0 + w, x0 + s - w, y0 + s - w), dp * 3, dp * 3, pt);
+				if (on[0]) {
+					float in = s * 0.27f;
+					c.drawLine(x0 + in, y0 + in, x0 + s - in, y0 + s - in, pt);
+					c.drawLine(x0 + s - in, y0 + in, x0 + in, y0 + s - in, pt);
 				}
 			}
+		};
+		return v;
+	}
+
+	/** The bell button of the Parcels map (v3.32, drawn). */
+	private View bell() {
+		return new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float w = getWidth(), h = getHeight(), cx = w / 2f, s = Math.min(w, h) * 0.5f, top = h / 2f - s * 0.55f;
+				pt.setColor(ink);
+				pt.setStyle(Paint.Style.FILL);
+				android.graphics.Path p = new android.graphics.Path();
+				p.moveTo(cx - s * 0.5f, top + s * 0.85f);
+				p.cubicTo(cx - s * 0.5f, top + s * 0.1f, cx - s * 0.3f, top, cx, top);
+				p.cubicTo(cx + s * 0.3f, top, cx + s * 0.5f, top + s * 0.1f, cx + s * 0.5f, top + s * 0.85f);
+				p.lineTo(cx + s * 0.62f, top + s * 0.98f);
+				p.lineTo(cx - s * 0.62f, top + s * 0.98f);
+				p.close();
+				c.drawPath(p, pt);
+				c.drawCircle(cx, top + s * 1.12f, s * 0.13f, pt);
+				c.drawCircle(cx, top - s * 0.06f, s * 0.08f, pt);
+			}
+		};
+	}
+
+	/**
+	 * v3.32 (Viorel): "Parcel notifications": every parcel with its box (X: ON), scrolling; No
+	 * leaves everything as it was, Yes keeps the ticks. ON = all the parcel's notifications (rain,
+	 * wind, snow, frost, freeze, fog, freezing rain, drought), in farmer mode.
+	 */
+	private void parcelNotify() {
+		final List<Parcels.Parcel> all = Parcels.sorted(this);
+		Log.i(this, "FERMIER", "fereastra Notificări parcele");
+		if (all.isEmpty()) {
+			toast(Tr.t("No parcel saved yet.", "Nicio parcelă salvată încă."));
+			return;
+		}
+		final boolean[][] on = new boolean[all.size()][];
+		LinearLayout list = column();
+		list.setPadding(px(20), px(6), px(20), px(6));
+		int line = dark ? 0xFF6B6A65 : 0xFF000000;
+		for (int k = 0; k < all.size(); k++) {
+			final Parcels.Parcel p = all.get(k);
+			on[k] = new boolean[] { p.alerts };
+			final boolean[] mine = on[k];
+			if (k > 0) {
+				View sep = new View(this);
+				sep.setBackgroundColor(line);
+				list.addView(sep, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, px(1))));
+			}
+			LinearLayout row = new LinearLayout(this);
+			row.setGravity(Gravity.CENTER_VERTICAL);
+			row.setMinimumHeight(px(52));
+			TextView name = text(p.name, 16, false, ink);
+			name.setMaxLines(2);
+			name.setEllipsize(android.text.TextUtils.TruncateAt.END);
+			row.addView(name, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			final View box = tickBox(mine);
+			LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(px(26), px(26));
+			bl.leftMargin = px(12);
+			row.addView(box, bl);
+			row.setBackgroundResource(android.R.drawable.list_selector_background);
+			row.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					mine[0] = !mine[0];
+					box.invalidate();
+				}
+			});
+			list.addView(row, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		}
+		ScrollView sv = new ScrollView(this);
+		sv.addView(list);
+		AlertDialog.Builder d = dialog();
+		d.setTitle(Tr.t("Parcel notifications", "Notificări parcele"));
+		d.setView(sv);
+		d.setNegativeButton(Tr.t("No", "Nu"), null);
+		d.setPositiveButton(Tr.t("Yes", "Da"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				boolean any = false;
+				StringBuilder log = new StringBuilder();
+				for (int k = 0; k < all.size(); k++) {
+					Parcels.Parcel cur = Parcels.get(FarmActivity.this, all.get(k).id);
+					if (cur == null) continue;
+					if (on[k][0]) any = true;
+					log.append(cur.name).append(on[k][0] ? " ON; " : " OFF; ");
+					if (cur.alerts == on[k][0]) continue;
+					cur.alerts = on[k][0];
+					Parcels.put(FarmActivity.this, cur);
+				}
+				Log.i(FarmActivity.this, "FERMIER", "notificări parcele: " + log);
+				if (any) {
+					if (Build.VERSION.SDK_INT >= 33 && checkSelfPermission("android.permission.POST_NOTIFICATIONS") != PackageManager.PERMISSION_GRANTED)
+						requestPermissions(new String[] { "android.permission.POST_NOTIFICATIONS" }, ASK_NOTIFY);
+					toast(Tr.t("Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.",
+							"Notificări PORNITE pentru parcelele bifate: ploaie, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă."));
+				} else toast(Tr.t("Parcel notifications OFF", "Notificările parcelelor sunt OPRITE"));
+			}
 		});
-		return cb;
+		d.show();
 	}
 
 	/** "Edit" (v2.80): the parcels; a tap opens one for editing its name and its place. */

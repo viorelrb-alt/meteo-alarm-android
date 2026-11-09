@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.3.31 · 2026.11.09.
+Jelenlegi verzió: v.3.32 · 2026.11.09.
 Dizájn / szerkezet fejlesztései.
 - A parcella oldala egyesítve a Statisztikával: fent rögzített mostani és időszaki dobozok; alattuk a 12 órás és a napról napra táblázat.
 - Minden parcellán a „Értesítések és figyelmeztetések” négyzet bekapcsolja minden értesítését, most már havazást és aszályt is.

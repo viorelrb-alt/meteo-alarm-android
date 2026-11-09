@@ -53,6 +53,14 @@ final class Bubble extends FrameLayout {
 		static Row item(String text) {
 			return new Row(text, null, ITEM, false);
 		}
+
+		/** v3.32 (Viorel): a function that is on or off: a box at the right, X when on, empty when off. */
+		int tick = -1;
+
+		Row tick(boolean on) {
+			tick = on ? 1 : 0;
+			return this;
+		}
 	}
 
 	/**
@@ -289,6 +297,49 @@ final class Bubble extends FrameLayout {
 				t.setCompoundDrawables(d, null, null, null);
 				t.setCompoundDrawablePadding((int) (14 * dp * zk));
 			}
+			if (r.tick >= 0) {
+				// v3.32 (Viorel): the same box in every language, X when the function is on.
+				final boolean on = r.tick == 1;
+				final int col = ink;
+				android.graphics.drawable.Drawable box = new android.graphics.drawable.Drawable() {
+					final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+					@Override
+					public void draw(android.graphics.Canvas cv) {
+						android.graphics.Rect b = getBounds();
+						float w = dp * 2;
+						p.setColor(col);
+						p.setStyle(Paint.Style.STROKE);
+						p.setStrokeWidth(w);
+						p.setStrokeCap(Paint.Cap.ROUND);
+						android.graphics.RectF rf = new android.graphics.RectF(b.left + w, b.top + w, b.right - w, b.bottom - w);
+						cv.drawRoundRect(rf, dp * 3, dp * 3, p);
+						if (on) {
+							float in = b.width() * 0.27f;
+							cv.drawLine(b.left + in, b.top + in, b.right - in, b.bottom - in, p);
+							cv.drawLine(b.right - in, b.top + in, b.left + in, b.bottom - in, p);
+						}
+					}
+
+					@Override
+					public void setAlpha(int a) {
+					}
+
+					@Override
+					public void setColorFilter(android.graphics.ColorFilter f) {
+					}
+
+					@Override
+					public int getOpacity() {
+						return android.graphics.PixelFormat.TRANSLUCENT;
+					}
+				};
+				int bs = (int) (22 * dp * zk);
+				box.setBounds(0, 0, bs, bs);
+				android.graphics.drawable.Drawable[] cd = t.getCompoundDrawables();
+				t.setCompoundDrawables(cd[0], null, box, null);
+				t.setContentDescription(r.text + (on ? " ✓" : ""));
+			}
 			if (r.kind == Row.ITEM) t.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					hide();
@@ -319,9 +370,10 @@ final class Bubble extends FrameLayout {
 					t.setTextSize(sp);
 					choices = true;
 				}
-				android.graphics.drawable.Drawable ic = t.getCompoundDrawables()[0];
+				android.graphics.drawable.Drawable ic = t.getCompoundDrawables()[0], tk = t.getCompoundDrawables()[2];
 				need = Math.max(need, t.getPaint().measureText(t.getText().toString()) + t.getPaddingLeft() + t.getPaddingRight()
-						+ (ic != null ? ic.getBounds().width() + t.getCompoundDrawablePadding() : 0) + 4 * dp);
+						+ (ic != null ? ic.getBounds().width() + t.getCompoundDrawablePadding() : 0)
+						+ (tk != null ? tk.getBounds().width() + t.getCompoundDrawablePadding() + 12 * dp : 0) + 4 * dp);
 			}
 			if (need <= sw - 2 * margin || sp <= 11) break;
 			sp -= 0.5f;

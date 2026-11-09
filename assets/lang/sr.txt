@@ -745,3 +745,11 @@ Yes	Да
 Parcel · 	Парцела · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	У Парцелама и на страници за уређивање наредбе су у менију ⋮ горе десно. Поља приказују само вредност; додир приказује детаље.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Статистика · PDF: горе поља за сада и за период у једном реду који клизи у страну; испод наредних 12 сати и дан по дан (померају се). ☰ поред дана бира период; дугме PDF чува поља и табеле.
+Screen on	Екран укључен
+Automatic location	Аутоматска локација
+Boxes in ☰	Поља у ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Поље са X: функција је укључена; празно: искључена. Додир је мења и порука то каже.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим пољопривредника: звонце испод дугмета GPS на мапи Парцеле отвара Обавештења парцела; парцела са X добија сва своја обавештења: киша, ветар, снег, иње, мраз, магла, ледена киша, суша (суво земљиште, 7 дана без кише).
+No parcel saved yet.	Још нема сачуваних парцела.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Обавештења УКЉУЧЕНА за означене парцеле: киша, ветар, снег, иње, мраз, магла, ледена киша, суша.
+Parcel notifications OFF	Обавештења парцела су ИСКЉУЧЕНА

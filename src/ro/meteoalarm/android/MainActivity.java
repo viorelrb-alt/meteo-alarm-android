@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.31";
+	static final String VERSION = "Meteo Alarm Android v3.32";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1831,7 +1831,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final boolean en = s.T.en;
 		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
 		// Item ids in menu order, each with its icon; the ones that are also a button on the screen
-		// show that button. On / Off name what a tap does.
+		// show that button. v3.32 (Viorel): a function on or off has a box at the right, X when on.
 		final List<String> ids = new ArrayList<String>();
 		List<Bubble.Row> rows = Bubble.rows();
 		// Farmer mode (v2.50): always the first item, naming the other mode; then the parcels.
@@ -1843,14 +1843,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		ids.add("unit"); rows.add(row(Tr.t("Temperature °C/°F", "Temperatura °C/°F"), "unit"));
 		ids.add("clock"); rows.add(row(Tr.t("Clock 12/24", "Ceas 12/24"), "clock"));
 		ids.add("theme"); rows.add(row(Tr.t("Theme", "Temă"), "moon"));
-		ids.add("keepOn"); rows.add(row(keepOn ? (Tr.t("Screen on OFF", "Ecran aprins OFF")) : (Tr.t("Screen on ON", "Ecran aprins ON")), "keepOn"));
+		ids.add("keepOn"); rows.add(row(Tr.t("Screen on", "Ecran aprins"), "keepOn").tick(keepOn));
 		ids.add("lang"); rows.add(row(Tr.t("Display language", "Limbă afișaj"), "lang-" + s.T.lang));
-		ids.add("night"); rows.add(row(prefs.getBoolean("nightClock", true) ? (Tr.t("Night clock OFF", "Ceas noapte OFF"))
-				: (Tr.t("Night clock ON", "Ceas noapte ON")), "night"));
-		ids.add("loc"); rows.add(row(auto ? (Tr.t("Location Off", "Localizare Off")) : (Tr.t("Location On", "Localizare On")), "locate"));
+		ids.add("night"); rows.add(row(Tr.t("Night clock", "Ceas noapte"), "night").tick(prefs.getBoolean("nightClock", true)));
+		ids.add("loc"); rows.add(row(Tr.t("Automatic location", "Localizare automată"), "locate").tick(auto));
 		ids.add("quakes"); rows.add(row(Tr.t("Earthquakes", "Cutremure"), "quake"));
 		if (Region.showUS(this)) { ids.add("tornado"); rows.add(row(Tr.t("Tornadoes", "Tornade"), "tornado")); }
-		ids.add("notify"); rows.add(row(Notifier.on(this) ? Tr.t("Notifications OFF", "Notificări OFF") : Tr.t("Notifications ON", "Notificări ON"), "bell"));
+		ids.add("notify"); rows.add(row(Tr.t("Notifications", "Notificări"), "bell").tick(Notifier.on(this)));
 		ids.add("widget"); rows.add(row(Tr.t("Widgets", "Widget-uri"), "widget"));
 		ids.add("log"); rows.add(row(Tr.t("Log", "Jurnal"), "log"));
 		ids.add("update"); rows.add(row(Tr.t("Check for updates", "Verifică actualizări"), "update"));
@@ -2384,8 +2383,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral; mijlocul ecranului urmează degetul și după jumătate trece la următorul."));
 		help.entry(mini("parcel"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.",
 				"Statistică · PDF: sus casetele de acum și ale perioadei, pe un rând care glisează în lateral; sub ele următoarele 12 ore și zi cu zi (se derulează). ☰ de lângă zile alege perioada; butonul PDF salvează casetele și tabelele."));
-		help.entry(mini("bell"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the “Notifications and warnings” box on a parcel's card turns on all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days). Each parcel has its own.",
-				"Mod fermier: caseta „Notificări și avertizări” de pe cardul parcelei pornește toate notificările ei: ploaie, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile). Fiecare parcelă le are pe ale ei."));
+		help.entry(mini("bell"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
+				"Mod fermier: clopoțelul de sub butonul GPS de pe harta Parcele deschide Notificări parcele; o parcelă cu X primește toate notificările ei: ploaie, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("farm"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
 		help.entry(mini("parcel"), Tr.t("The map", "Harta"), Tr.t("OpenStreetMap: move it with one finger, zoom with two; it needs internet.",
@@ -2432,14 +2431,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("unit"), Tr.t("Temperature °C/°F", "Temperatura °C/°F"), Tr.t("Switches between Celsius and Fahrenheit.", "Comută între grade Celsius și Fahrenheit."));
 		help.entry(mini("clock"), Tr.t("Clock 12/24", "Ceas 12/24"), Tr.t("Switches the clock between 24 hours and 12 hours (AM/PM).", "Comută ceasul între 24 de ore și 12 ore (AM/PM)."));
 		help.entry(mini("moon"), Tr.t("Theme", "Temă"), Tr.t("Light, Dark, or Automatic (phone sensor).", "Luminos, Întunecat sau Automat (senzor telefon)."));
-		help.entry(mini("keepOn"), Tr.t("Screen on ON / OFF", "Ecran aprins ON / OFF"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));
+		help.entry(mini("keepOn"), Tr.t("Boxes in ☰", "Căsuțele din ☰"), Tr.t("A box with X: the function is on; empty: off. A tap switches it and a message says so.",
+				"Căsuță cu X: funcția e pornită; goală: oprită. Atingerea o comută și un mesaj spune asta."));
+		help.entry(mini("keepOn"), Tr.t("Screen on", "Ecran aprins"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("English, the phone's language and the country's languages; in Romania also “Other languages”.",
 				"Engleza, limba telefonului și limbile țării; în România și „Alte limbi”."));
-		help.entry(mini("locate"), Tr.t("Location On / Off", "Localizare On / Off"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
+		help.entry(mini("locate"), Tr.t("Automatic location", "Localizare automată"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The earthquakes of the last days near you, with time, place, magnitude and distance.", "Cutremurele din ultimele zile din jur, cu ora, locul, magnitudinea și distanța."));
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("Tornado alerts and reports near you, and what to do.", "Alertele și raportările de tornade din jur și ce faci."));
-		help.entry(mini("bell"), Tr.t("Notifications ON / OFF", "Notificări ON / OFF"), Tr.t("Rain or snow starting, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare care începe, avertizări noi și cutremure, fiecare o singură dată."));
-		help.entry(mini("night"), Tr.t("Night clock ON / OFF", "Ceas noapte ON / OFF"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
+		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow starting, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare care începe, avertizări noi și cutremure, fiecare o singură dată."));
+		help.entry(mini("night"), Tr.t("Night clock", "Ceas noapte"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
 		help.entry(mini("widget"), Tr.t("Widgets", "Widget-uri"), Tr.t("The settings of the widgets on the home screen.", "Setările widget-urilor de pe ecranul de pornire."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi."));
 		help.entry(mini("update"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));

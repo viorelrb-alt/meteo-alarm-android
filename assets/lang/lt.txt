@@ -811,3 +811,11 @@ Yes	Taip
 Parcel · 	Sklypas · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Sklypuose ir redagavimo puslapyje komandos yra meniu ⋮ viršuje dešinėje. Langeliai rodo tik reikšmę; palietus matyti išsamiau.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: viršuje dabarties ir laikotarpio langeliai vienoje į šoną slenkančioje eilėje; po jais kitos 12 valandų ir diena po dienos (slenka). ☰ prie dienų parenka laikotarpį; mygtukas PDF išsaugo langelius ir lenteles.
+Screen on	Ekranas įjungtas
+Automatic location	Automatinė vieta
+Boxes in ☰	Langeliai meniu ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Langelis su X: funkcija įjungta; tuščias: išjungta. Palietus perjungiama, o pranešimas tai praneša.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Ūkininko režimas: varpelis po GPS mygtuku Sklypų žemėlapyje atidaro Sklypų pranešimus; sklypas su X gauna visus savo pranešimus: lietus, vėjas, sniegas, šerkšnas, šalna, rūkas, lijundra, sausra (sausa dirva, 7 dienos be lietaus).
+No parcel saved yet.	Dar neišsaugotas nė vienas sklypas.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Pranešimai ĮJUNGTI pažymėtiems sklypams: lietus, vėjas, sniegas, šerkšnas, šalna, rūkas, lijundra, sausra.
+Parcel notifications OFF	Sklypų pranešimai IŠJUNGTI

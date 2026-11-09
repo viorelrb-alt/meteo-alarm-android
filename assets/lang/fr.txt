@@ -811,3 +811,11 @@ Yes	Oui
 Parcel · 	Parcelle · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Dans Parcelles et sur la page de modification, les commandes sont dans le menu ⋮ en haut à droite. Les cases n’affichent que la valeur ; un appui montre les détails.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistiques · PDF : en haut les cases de maintenant et de la période sur une rangée qui glisse sur le côté ; dessous les 12 prochaines heures et jour par jour (elles défilent). Le ☰ près des jours choisit la période ; le bouton PDF enregistre les cases et les tableaux.
+Screen on	Écran allumé
+Automatic location	Localisation automatique
+Boxes in ☰	Cases dans ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Une case avec X : la fonction est activée ; vide : désactivée. Un appui la change et un message l’indique.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Mode agriculteur : la cloche sous le bouton GPS de la carte Parcelles ouvre Notifications des parcelles ; une parcelle avec X reçoit toutes ses notifications : pluie, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse (sol sec, 7 jours sans pluie).
+No parcel saved yet.	Aucune parcelle enregistrée pour l’instant.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifications ACTIVÉES pour les parcelles cochées : pluie, vent, neige, gelée blanche, gel, brouillard, pluie verglaçante, sécheresse.
+Parcel notifications OFF	Notifications des parcelles DÉSACTIVÉES

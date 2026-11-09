@@ -1,4 +1,4 @@
-Huidige versie: v.3.31 · 9.11.2026
+Huidige versie: v.3.32 · 9.11.2026
 Verbeteringen in ontwerp / structuur.
 - De perceelpagina samengevoegd met Statistiek: bovenaan vaste vakken van nu en van de periode; daaronder de tabellen voor 12 uur en dag voor dag.
 - Het vakje ‘Meldingen en waarschuwingen’ bij elk perceel zet al zijn meldingen aan, nu ook sneeuw en droogte.

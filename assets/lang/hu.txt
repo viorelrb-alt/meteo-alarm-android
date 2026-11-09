@@ -811,3 +811,11 @@ Yes	Igen
 Parcel · 	Parcella · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	A Parcellákban és a szerkesztőoldalon a parancsok a jobb felső ⋮ menüben vannak. A dobozok csak az értéket mutatják; koppintásra látszanak a részletek.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statisztika · PDF: fent a mostani és az időszak dobozai egy oldalra csúsztatható sorban; alattuk a következő 12 óra és napról napra (görgethetők). A napok melletti ☰ választja az időszakot; a PDF gomb menti a dobozokat és a táblázatokat.
+Screen on	Képernyő bekapcsolva
+Automatic location	Automatikus helymeghatározás
+Boxes in ☰	Négyzetek a ☰ menüben
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	X-es négyzet: a funkció be van kapcsolva; üres: ki. Koppintásra vált, és egy üzenet jelzi.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Gazda mód: a Parcellák térképén a GPS gomb alatti csengő megnyitja a Parcella-értesítéseket; az X-es parcella minden értesítést megkap: eső, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napig nincs eső).
+No parcel saved yet.	Még nincs mentett parcella.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Értesítések BEKAPCSOLVA a bejelölt parcellákra: eső, szél, hó, dér, fagy, köd, ónos eső, aszály.
+Parcel notifications OFF	A parcella-értesítések KIKAPCSOLVA

@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.31 · 9.11.2026
+Dabartinė versija: v.3.32 · 9.11.2026
 Dizaino / struktūros patobulinimai.
 - Sklypo puslapis sujungtas su statistika: viršuje nejudantys dabarties ir laikotarpio langeliai; po jais 12 valandų ir dienų lentelės.
 - Kiekvieno sklypo langelis „Pranešimai ir įspėjimai“ įjungia visus jo pranešimus, dabar ir sniegą bei sausrą.

@@ -811,3 +811,11 @@ Yes	Sim
 Parcel · 	Parcela · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Em Parcelas e na página de edição os comandos estão no menu ⋮ em cima à direita. As caixas mostram só o valor; um toque mostra os detalhes.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Estatística · PDF: em cima as caixas de agora e do período numa fila que desliza para o lado; por baixo as próximas 12 horas e dia a dia (deslizam). O ☰ junto aos dias escolhe o período; o botão PDF guarda caixas e tabelas.
+Screen on	Ecrã ligado
+Automatic location	Localização automática
+Boxes in ☰	Caixas em ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Uma caixa com X: a função está ligada; vazia: desligada. Um toque muda-a e uma mensagem di-lo.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modo agricultor: o sino sob o botão GPS do mapa Parcelas abre Notificações das parcelas; uma parcela com X recebe todas as suas notificações: chuva, vento, neve, geada branca, geada, nevoeiro, chuva gelada, seca (solo seco, 7 dias sem chuva).
+No parcel saved yet.	Ainda não há parcelas guardadas.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notificações LIGADAS para as parcelas assinaladas: chuva, vento, neve, geada branca, geada, nevoeiro, chuva gelada, seca.
+Parcel notifications OFF	Notificações das parcelas DESLIGADAS

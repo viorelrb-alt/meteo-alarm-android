@@ -1,4 +1,4 @@
-Verżjoni attwali: v.3.31 · 9.11.2026
+Verżjoni attwali: v.3.32 · 9.11.2026
 Titjib fid-disinn / fl-istruttura.
 - Il-paġna tal-għalqa magħquda mal-Istatistika: fuq il-kaxxi fissi ta’ issa u tal-perjodu; taħthom it-tabelli ta’ 12-il siegħa u jum b’jum.
 - Il-kaxxa “Notifiki u twissijiet” fuq kull għalqa tixgħel in-notifiki kollha tagħha, issa wkoll borra u nixfa.

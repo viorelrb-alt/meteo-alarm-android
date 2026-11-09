@@ -811,3 +811,11 @@ Yes	Jah
 Parcel · 	Põld · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Põldudes ja muutmislehel on käsud menüüs ⋮ üleval paremal. Kastid näitavad ainult väärtust; puudutus näitab üksikasju.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: üleval praeguse hetke ja perioodi kastid ühes küljele libisevas reas; nende all järgmised 12 tundi ja päev-päevalt (kerivad). ☰ päevade kõrval valib perioodi; PDF-nupp salvestab kastid ja tabelid.
+Screen on	Ekraan sees
+Automatic location	Automaatne asukoht
+Boxes in ☰	Ruudud menüüs ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Ruut X-iga: funktsioon on sees; tühi: väljas. Puudutus lülitab ja teade ütleb seda.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Põllumehe režiim: kell GPS-nupu all põldude kaardil avab põldude teavitused; X-iga põld saab kõik oma teavitused: vihm, tuul, lumi, hall, külm, udu, jäävihm, põud (kuiv muld, 7 päeva vihmata).
+No parcel saved yet.	Ühtegi põldu pole veel salvestatud.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Teavitused SEES märgitud põldudele: vihm, tuul, lumi, hall, külm, udu, jäävihm, põud.
+Parcel notifications OFF	Põldude teavitused on VÄLJAS

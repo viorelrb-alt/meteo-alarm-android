@@ -1,4 +1,4 @@
-Versión actual: v.3.31 · 9.11.2026
+Versión actual: v.3.32 · 9.11.2026
 Mejoras de diseño / estructura.
 - La página de la parcela unida a Estadística: arriba las casillas fijas de ahora y del periodo; debajo las tablas de 12 horas y día a día.
 - La casilla «Notificaciones y avisos» de cada parcela activa todas sus notificaciones, ahora también nieve y sequía.

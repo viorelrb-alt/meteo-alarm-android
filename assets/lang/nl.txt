@@ -811,3 +811,11 @@ Yes	Ja
 Parcel · 	Perceel · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	In Percelen en op de bewerkpagina staan de opdrachten in het menu ⋮ rechtsboven. De vakken tonen alleen de waarde; een tik toont de details.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistiek · PDF: bovenaan de vakken van nu en van de periode in één rij die opzij schuift; daaronder de komende 12 uur en dag voor dag (ze scrollen). ☰ bij de dagen kiest de periode; de knop PDF bewaart vakken en tabellen.
+Screen on	Scherm aan
+Automatic location	Automatische locatie
+Boxes in ☰	Vakjes in ☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Een vakje met X: de functie staat aan; leeg: uit. Een tik schakelt om en een bericht zegt het.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Boerenmodus: de bel onder de GPS-knop op de kaart Percelen opent Perceelmeldingen; een perceel met X krijgt al zijn meldingen: regen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte (droge bodem, 7 dagen geen regen).
+No parcel saved yet.	Nog geen perceel opgeslagen.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Meldingen AAN voor de aangevinkte percelen: regen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte.
+Parcel notifications OFF	Perceelmeldingen UIT

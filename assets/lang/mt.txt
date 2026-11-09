@@ -811,3 +811,11 @@ Yes	Iva
 Parcel · 	Għalqa · 
 In Parcels and on the edit page the commands are in the ⋮ menu at the top right. The boxes show only the value; a tap shows the details.	Fl-Għelieqi u fil-paġna tal-editjar il-kmandi huma fil-menu ⋮ fuq il-lemin. Il-kaxxi juru l-valur biss; mess juri d-dettalji.
 Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.	Statistika · PDF: fuq il-kaxxi ta’ issa u tal-perjodu f’ringiela waħda li tiżżerżaq mal-ġenb; taħthom it-12-il siegħa li ġejjin u jum b’jum (jiskrollaw). Il-☰ ħdejn il-jiem jagħżel il-perjodu; il-buttuna PDF tissejvja l-kaxxi u t-tabelli.
+Screen on	Skrin mixgħul
+Automatic location	Post awtomatiku
+Boxes in ☰	Kaxxi fil-☰
+A box with X: the function is on; empty: off. A tap switches it and a message says so.	Kaxxa b’X: il-funzjoni mixgħula; vojta: mitfija. Mess jaqlibha u messaġġ jgħid hekk.
+Farmer mode: the bell under the GPS button on the Parcels map opens Parcel notifications; a parcel with X gets all its notifications: rain, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità bidwi: il-qanpiena taħt il-buttuna GPS fuq il-mappa tal-Għelieqi tiftaħ in-Notifiki tal-għelieqi; għalqa b’X tirċievi n-notifiki kollha tagħha: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa (ħamrija niexfa, 7 ijiem mingħajr xita).
+No parcel saved yet.	L-ebda għalqa ma ġiet issejvjata s’issa.
+Parcel notifications ON for the parcels ticked: rain, wind, snow, frost, freeze, fog, freezing rain, drought.	Notifiki MIXGĦULA għall-għelieqi mmarkati: xita, riħ, borra, ġlata bajda, ġlata, ċpar, xita silġ, nixfa.
+Parcel notifications OFF	Notifiki tal-għelieqi MITFIJA
