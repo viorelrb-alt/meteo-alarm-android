@@ -71,6 +71,8 @@ public final class FarmActivity extends Activity {
 	/** The map: the parcel moved (its id) or a new one (-1); where to go back. */
 	private long mapId = -1;
 	private String mapBack = "list";
+	/** v3.11 (Viorel): where back from Statistics goes: "list" (the map's button), "parcel" or the entry. */
+	private String statsBack = "parcel";
 	private String from, to;
 	private byte[] pdfBytes;
 	private String pdfName;
@@ -142,6 +144,7 @@ public final class FarmActivity extends Activity {
 			else showList();
 		} else if (screen.equals("stats")) {
 			if ("stats".equals(entry)) finish();
+			else if (statsBack.equals("list")) showList();
 			else showParcel(curId);
 		} else if (screen.equals("parcel")) {
 			if ("parcel".equals(entry)) finish();
@@ -551,6 +554,7 @@ public final class FarmActivity extends Activity {
 
 	/** The statistics of parcel ID for the last 7 days (the period can be changed there; PDF from there). */
 	private void openStats(long id) {
+		statsBack = "list";
 		Calendar now = Calendar.getInstance();
 		from = Farm.date(now, -6);
 		to = Farm.date(now, 0);
@@ -1335,6 +1339,7 @@ public final class FarmActivity extends Activity {
 				Calendar now = Calendar.getInstance();
 				from = Farm.date(now, -6);
 				to = Farm.date(now, 0);
+				statsBack = "parcel";
 				showStats(p.id);
 			}
 		}), wide(16));
