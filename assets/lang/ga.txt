@@ -738,3 +738,9 @@ high	ard
 low	íseal
 until 	go dtí 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Páirceanna: taispeánann an léarscáil na páirceanna go léir; osclaíonn tapáil ar bhiorán nó ar pháirc í ar an bpríomhscáileán. Sábhálann “Sábháil áit GPS” an áit ina seasann tú, oibríonn “Roghnaigh ar an léarscáil” ón mbaile freisin; taispeánann an cnaipe GPS cá bhfuil tú (ponc gorm). Athraíonn Cuir in eagar (nó an peann luaidhe) an t-ainm agus an biorán. Fanann siad ar an bhfón seo amháin. Osclaíonn “Staitisticí · PDF” (ar an léarscáil agus ar phríomhscáileán ceapaí) a staitisticí.
+Menu	Roghchlár
+Hour	Uair
+Temp.	Teocht
+Other period and PDF: the ⋮ menu at the top right.	Tréimhse eile agus PDF: an roghchlár ⋮ ag an mbarr ar dheis.
+The ⋮ menu	An roghchlár ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	I gCeapacha, ar leathanach ceapaí agus i Staitisticí tá na horduithe sa roghchlár ⋮ ag an mbarr ar dheis. Taispeánann tadhall ar bhosca é i dtéacs mór; sleamhnaíonn tábla leathan i leataobh.

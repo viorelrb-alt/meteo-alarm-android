@@ -1,4 +1,4 @@
-Geçerli sürüm: v.3.10 · 9.11.2026
+Geçerli sürüm: v.3.11 · 9.11.2026
 Tasarım / yapı iyileştirmeleri.
 - Çiftçi modu: Topraktaki sudan sonra yeni kutular: İlaçlama, Su dengesi, Fırtınalar, Sıcaklık toplamı, 16 gün.
 - ABD'de, çiftçi modunda: NWS, Kuraklık, Yangın, Dolu kutuları.

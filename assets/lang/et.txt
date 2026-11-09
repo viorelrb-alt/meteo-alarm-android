@@ -738,3 +738,9 @@ high	kõrge
 low	madal
 until 	kuni 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Põllud: kaart näitab kõiki maatükke; nõela või maatüki puudutus avab selle põhiekraanil. „Salvesta GPS-koht“ salvestab koha, kus seisad, „Vali kaardilt“ töötab ka kodust; GPS-nupp näitab, kus oled (sinine täpp). Muuda (või pliiats) muudab nime ja nõela. Jäävad ainult sellesse telefoni. „Statistika · PDF” (kaardil ja põllu põhiekraanil) avab selle statistika.
+Menu	Menüü
+Hour	Kell
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Muu ajavahemik ja PDF: menüü ⋮ üleval paremal.
+The ⋮ menu	Menüü ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Põldudes, põllu lehel ja Statistikas on käsud menüüs ⋮ üleval paremal. Kasti puudutus näitab seda suures kirjas; laia tabelit saab külgsuunas lohistada.

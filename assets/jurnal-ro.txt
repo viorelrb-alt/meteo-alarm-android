@@ -1,4 +1,4 @@
-Versiunea curentă: v.3.10 · 9.11.2026
+Versiunea curentă: v.3.11 · 9.11.2026
 Îmbunătățiri de design / structură.
 - Mod Fermier: casete noi după Apa în sol: Stropit, Bilanț apă, Furtuni, Grade-zile, 16 zile.
 - În SUA, în Mod Fermier: casetele NWS, Secetă, Incendiu, Grindină.

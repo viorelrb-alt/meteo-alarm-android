@@ -1,4 +1,4 @@
-Aktuelle Version: v.3.10 · 9.11.2026
+Aktuelle Version: v.3.11 · 9.11.2026
 Verbesserungen an Design / Struktur.
 - Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.
 - In den USA, im Landwirt-Modus: die Felder NWS, Dürre, Brand, Hagel.

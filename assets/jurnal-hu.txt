@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.3.10 · 2026.11.09.
+Jelenlegi verzió: v.3.11 · 2026.11.09.
 Dizájn / szerkezet fejlesztései.
 - Gazda mód: új mezők a Víz a talajban után: Permetezés, Vízmérleg, Viharok, Hőösszeg, 16 nap.
 - Az USA-ban, gazda módban: az NWS, Aszály, Tűz, Jégeső mezők.

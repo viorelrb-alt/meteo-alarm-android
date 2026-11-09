@@ -1,4 +1,4 @@
-Versión actual: v.3.10 · 9.11.2026
+Versión actual: v.3.11 · 9.11.2026
 Mejoras de diseño / estructura.
 - Modo agricultor: nuevas casillas tras Agua en el suelo: Pulverizar, Balance hídrico, Tormentas, Grados-día, 16 días.
 - En EE. UU., en modo agricultor: las casillas NWS, Sequía, Incendio, Granizo.

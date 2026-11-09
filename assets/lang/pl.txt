@@ -738,3 +738,9 @@ high	wysokie
 low	niskie
 until 	do 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Działki: mapa pokazuje wszystkie działki; dotknięcie pinezki lub działki otwiera ją na ekranie głównym. „Zapisz miejsce GPS” zapisuje miejsce, w którym stoisz, „Wybierz na mapie” działa też z domu; przycisk GPS pokazuje, gdzie jesteś (niebieska kropka). Edytuj (lub ołówek) zmienia nazwę i pinezkę. Zostają tylko w tym telefonie. „Statystyka · PDF” (na mapie i na ekranie głównym działki) otwiera jej statystykę.
+Menu	Menu
+Hour	Godzina
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Inny okres i PDF: menu ⋮ w prawym górnym rogu.
+The ⋮ menu	Menu ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	W Działkach, na stronie działki i w Statystyce polecenia są w menu ⋮ w prawym górnym rogu. Dotknięcie pola pokazuje je dużym tekstem; szeroką tabelę przesuwa się na boki.

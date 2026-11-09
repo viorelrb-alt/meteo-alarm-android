@@ -738,3 +738,9 @@ high	alto
 low	basso
 until 	fino alle 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Appezzamenti: la mappa mostra tutte le parcelle; un tocco su uno spillo o su una parcella la apre nella schermata principale. «Salva luogo GPS» salva il luogo dove ti trovi, «Scegli sulla mappa» funziona anche da casa; il pulsante GPS mostra dove sei (punto blu). Modifica (o la matita) cambia il nome e lo spillo. Restano solo su questo telefono. «Statistica · PDF» (sulla mappa e sulla schermata principale di un appezzamento) apre la sua statistica.
+Menu	Menu
+Hour	Ora
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Altro periodo e PDF: il menu ⋮ in alto a destra.
+The ⋮ menu	Il menu ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	In Appezzamenti, nella pagina di un appezzamento e in Statistica i comandi sono nel menu ⋮ in alto a destra. Un tocco su una casella la mostra in grande; una tabella larga scorre di lato.

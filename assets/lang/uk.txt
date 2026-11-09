@@ -738,3 +738,9 @@ high	високий
 low	низький
 until 	до 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Ділянки: на мапі всі ділянки; дотик до шпильки чи ділянки відкриває її на головному екрані. «Зберегти місце GPS» зберігає місце, де ти стоїш, «Вибрати на мапі» працює і з дому; кнопка GPS показує, де ти (синя крапка). Редагувати (або олівець) змінює назву та шпильку. Зберігаються лише в цьому телефоні. «Статистика · PDF» (на карті та на головному екрані ділянки) відкриває її статистику.
+Menu	Меню
+Hour	Година
+Temp.	Темп.
+Other period and PDF: the ⋮ menu at the top right.	Інший період і PDF: меню ⋮ угорі праворуч.
+The ⋮ menu	Меню ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	У «Ділянках», на сторінці ділянки та в «Статистиці» команди в меню ⋮ угорі праворуч. Дотик до вікна показує його великим текстом; широку таблицю можна гортати вбік.

@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.10 · 9.11.2026
+Dabartinė versija: v.3.11 · 9.11.2026
 Dizaino / struktūros patobulinimai.
 - Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
 - JAV, ūkininko režimu: langeliai NWS, Sausra, Gaisras, Kruša.

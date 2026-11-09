@@ -672,3 +672,9 @@ high	yüksek
 low	düşük
 until 	bitiş: 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Parseller: harita tüm parselleri gösterir; bir iğneye veya parsele dokunmak onu ana ekranda açar. “GPS yerini kaydet” durduğun yeri kaydeder, “Haritada seç” evden de çalışır; GPS düğmesi nerede olduğunu gösterir (mavi nokta). Düzenle (veya kalem) adı ve iğneyi değiştirir. Yalnızca bu telefonda kalır. “İstatistik · PDF” (haritada ve bir parselin ana ekranında) istatistiğini açar.
+Menu	Menü
+Hour	Saat
+Temp.	Sıc.
+Other period and PDF: the ⋮ menu at the top right.	Başka dönem ve PDF: sağ üstteki ⋮ menüsü.
+The ⋮ menu	⋮ menüsü
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Parsellerde, bir parselin sayfasında ve İstatistikte komutlar sağ üstteki ⋮ menüsündedir. Bir kutuya dokunmak onu büyük yazıyla gösterir; geniş bir tablo yana kaydırılır.

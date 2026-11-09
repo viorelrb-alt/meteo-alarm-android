@@ -738,3 +738,9 @@ high	magas
 low	alacsony
 until 	eddig: 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Parcellák: a térkép az összes parcellát mutatja; egy tűre vagy parcellára koppintva megnyílik a főképernyőn. A „GPS-hely mentése” elmenti a helyet, ahol állsz, a „Választás a térképen” otthonról is megy; a GPS gomb mutatja, hol vagy (kék pont). A Szerkesztés (vagy a ceruza) a nevet és a tűt módosítja. Csak ezen a telefonon maradnak. A „Statisztika · PDF” (a térképen és egy parcella főképernyőjén) megnyitja a statisztikáját.
+Menu	Menü
+Hour	Óra
+Temp.	Hőm.
+Other period and PDF: the ⋮ menu at the top right.	Más időszak és PDF: a ⋮ menü jobbra fent.
+The ⋮ menu	A ⋮ menü
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	A Parcellákban, egy parcella oldalán és a Statisztikában a parancsok a jobb felső ⋮ menüben vannak. Egy mező érintése nagy betűvel mutatja; a széles táblázat oldalra görgethető.

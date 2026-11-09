@@ -738,3 +738,9 @@ high	augsts
 low	zems
 until 	līdz 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Lauki: kartē redzami visi lauki; pieskāriens adatai vai laukam to atver galvenajā ekrānā. “Saglabāt GPS vietu” saglabā vietu, kur stāvi, “Izvēlēties kartē” darbojas arī no mājām; GPS poga rāda, kur tu esi (zilais punkts). Rediģēt (vai zīmulis) maina nosaukumu un adatu. Paliek tikai šajā tālrunī. “Statistika · PDF” (kartē un lauka galvenajā ekrānā) atver tā statistiku.
+Menu	Izvēlne
+Hour	Stunda
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Cits periods un PDF: izvēlne ⋮ augšā pa labi.
+The ⋮ menu	Izvēlne ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Laukos, lauka lapā un Statistikā komandas ir izvēlnē ⋮ augšā pa labi. Pieskaroties lodziņam, tas parādās lielā tekstā; platu tabulu var bīdīt uz sāniem.

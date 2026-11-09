@@ -738,3 +738,9 @@ high	vysoké
 low	nízké
 until 	do 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Pozemky: mapa ukazuje všechny parcely; klepnutí na špendlík nebo na parcelu ji otevře na hlavní obrazovce. „Uložit místo GPS“ uloží místo, kde stojíš, „Vybrat na mapě“ funguje i z domova; tlačítko GPS ukáže, kde jsi (modrá tečka). Upravit (nebo tužka) mění název a špendlík. Zůstávají jen v tomto telefonu. „Statistika · PDF“ (na mapě a na hlavní obrazovce parcely) otevře její statistiku.
+Menu	Nabídka
+Hour	Hodina
+Temp.	Tepl.
+Other period and PDF: the ⋮ menu at the top right.	Jiné období a PDF: nabídka ⋮ vpravo nahoře.
+The ⋮ menu	Nabídka ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	V Parcelách, na stránce parcely a ve Statistice jsou příkazy v nabídce ⋮ vpravo nahoře. Klepnutí na pole ho ukáže velkým písmem; širokou tabulkou lze posouvat do stran.

@@ -1,4 +1,4 @@
-Versione attuale: v.3.10 · 9.11.2026
+Versione attuale: v.3.11 · 9.11.2026
 Miglioramenti di design / struttura.
 - Modalità agricoltore: nuove caselle dopo Acqua nel suolo: Irrorazione, Bilancio idrico, Temporali, Gradi-giorno, 16 giorni.
 - Negli USA, in modalità agricoltore: le caselle NWS, Siccità, Incendio, Grandine.

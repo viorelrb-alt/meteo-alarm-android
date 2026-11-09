@@ -738,3 +738,9 @@ high	didelė
 low	maža
 until 	iki 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Laukai: žemėlapyje matyti visi sklypai; palietus smeigtuką ar sklypą, jis atidaromas pagrindiniame ekrane. „Išsaugoti GPS vietą“ išsaugo vietą, kur stovi, „Pasirinkti žemėlapyje“ veikia ir iš namų; GPS mygtukas rodo, kur esi (mėlynas taškas). Redaguoti (arba pieštukas) keičia pavadinimą ir smeigtuką. Lieka tik šiame telefone. „Statistika · PDF“ (žemėlapyje ir sklypo pagrindiniame ekrane) atveria jo statistiką.
+Menu	Meniu
+Hour	Valanda
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Kitas laikotarpis ir PDF: meniu ⋮ viršuje dešinėje.
+The ⋮ menu	Meniu ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Sklypuose, sklypo puslapyje ir Statistikoje komandos yra meniu ⋮ viršuje dešinėje. Palietus langelį, jis rodomas dideliu šriftu; plačią lentelę galima slinkti į šoną.

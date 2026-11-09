@@ -1,4 +1,4 @@
-Nuvarande version: v.3.10 · 9.11.2026
+Nuvarande version: v.3.11 · 9.11.2026
 Förbättringar av design / struktur.
 - Lantbruksläge: nya rutor efter Vatten i marken: Besprutning, Vattenbalans, Åska, Dygnsgrader, 16 dagar.
 - I USA, i lantbruksläge: rutorna NWS, Torka, Brand, Hagel.

@@ -738,3 +738,9 @@ high	korkea
 low	matala
 until 	kunnes 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Lohkot: kartta näyttää kaikki lohkot; nuppineulan tai lohkon napautus avaa sen päänäytölle. ”Tallenna GPS-paikka” tallentaa paikan, jossa seisot, ”Valitse kartalta” toimii myös kotoa; GPS-painike näyttää, missä olet (sininen piste). Muokkaa (tai kynä) muuttaa nimen ja neulan. Ne pysyvät vain tässä puhelimessa. ”Tilastot · PDF” (kartalla ja lohkon päänäkymässä) avaa sen tilastot.
+Menu	Valikko
+Hour	Tunti
+Temp.	Lämp.
+Other period and PDF: the ⋮ menu at the top right.	Muu aikaväli ja PDF: valikko ⋮ oikealla ylhäällä.
+The ⋮ menu	Valikko ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Lohkoissa, lohkon sivulla ja Tilastoissa komennot ovat valikossa ⋮ oikealla ylhäällä. Ruudun napautus näyttää sen isolla tekstillä; leveää taulukkoa voi vierittää sivuttain.

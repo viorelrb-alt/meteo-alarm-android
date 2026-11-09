@@ -1,4 +1,4 @@
-Version actuelle : v.3.10 · 9.11.2026
+Version actuelle : v.3.11 · 9.11.2026
 Améliorations de design / structure.
 - Mode agriculteur : nouvelles cases après Eau dans le sol : Pulvérisation, Bilan hydrique, Orages, Degrés-jours, 16 jours.
 - Aux États-Unis, en mode agriculteur : les cases NWS, Sécheresse, Incendie, Grêle.

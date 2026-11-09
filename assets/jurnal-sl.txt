@@ -1,4 +1,4 @@
-Trenutna različica: v.3.10 · 9.11.2026
+Trenutna različica: v.3.11 · 9.11.2026
 Izboljšave videza / zgradbe.
 - Kmetijski način: nova polja za Vodo v tleh: Škropljenje, Vodna bilanca, Nevihte, Toplotne vsote, 16 dni.
 - V ZDA v kmetijskem načinu: polja NWS, Suša, Požar, Toča.

@@ -738,3 +738,9 @@ high	υψηλός
 low	χαμηλός
 until 	έως 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης δείχνει όλα τα αγροτεμάχια· ένα άγγιγμα σε καρφίτσα ή σε αγροτεμάχιο το ανοίγει στην κύρια οθόνη. «Αποθήκευση θέσης GPS» αποθηκεύει το σημείο όπου στέκεσαι, «Επιλογή στον χάρτη» λειτουργεί και από το σπίτι· το κουμπί GPS δείχνει πού είσαι (μπλε κουκκίδα). Επεξεργασία (ή το μολύβι) αλλάζει το όνομα και την καρφίτσα. Μένουν μόνο σε αυτό το τηλέφωνο. Το «Στατιστικά · PDF» (στον χάρτη και στην κύρια οθόνη ενός αγροτεμαχίου) ανοίγει τα στατιστικά του.
+Menu	Μενού
+Hour	Ώρα
+Temp.	Θερμ.
+Other period and PDF: the ⋮ menu at the top right.	Άλλη περίοδος και PDF: το μενού ⋮ πάνω δεξιά.
+The ⋮ menu	Το μενού ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Στα Αγροτεμάχια, στη σελίδα ενός αγροτεμαχίου και στα Στατιστικά οι εντολές είναι στο μενού ⋮ πάνω δεξιά. Το άγγιγμα ενός πλαισίου το δείχνει με μεγάλα γράμματα· ένας φαρδύς πίνακας κυλά στο πλάι.

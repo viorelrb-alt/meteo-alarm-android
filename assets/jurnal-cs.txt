@@ -1,4 +1,4 @@
-Současná verze: v.3.10 · 9.11.2026
+Současná verze: v.3.11 · 9.11.2026
 Vylepšení vzhledu / struktury.
 - Režim farmáře: nová pole za Vodou v půdě: Postřik, Vodní bilance, Bouřky, Teplotní sumy, 16 dní.
 - V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.

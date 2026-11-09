@@ -672,3 +672,9 @@ high	висок
 low	низак
 until 	до 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Парцеле: мапа приказује све парцеле; додир чиоде или парцеле отвара је на главном екрану. „Сачувај GPS место” чува место где стојиш, „Изабери на мапи” ради и од куће; дугме GPS показује где си (плава тачка). Уреди (или оловка) мења име и чиоду. Остају само на овом телефону. „Статистика · PDF” (на мапи и на главном екрану парцеле) отвара њену статистику.
+Menu	Мени
+Hour	Сат
+Temp.	Темп.
+Other period and PDF: the ⋮ menu at the top right.	Други период и PDF: мени ⋮ горе десно.
+The ⋮ menu	Мени ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	У Парцелама, на страници парцеле и у Статистици команде су у менију ⋮ горе десно. Додир поља приказује га крупним словима; широка табела се помера у страну.

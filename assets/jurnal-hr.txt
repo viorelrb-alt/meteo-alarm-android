@@ -1,4 +1,4 @@
-Trenutačna verzija: v.3.10 · 9.11.2026
+Trenutačna verzija: v.3.11 · 9.11.2026
 Poboljšanja izgleda / strukture.
 - Način rada za poljoprivrednike: nova polja nakon Vode u tlu: Prskanje, Vodna bilanca, Oluje, Toplinske jedinice, 16 dana.
 - U SAD-u, u načinu za poljoprivrednike: polja NWS, Suša, Požar, Tuča.

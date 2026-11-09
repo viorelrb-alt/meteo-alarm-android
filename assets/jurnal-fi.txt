@@ -1,4 +1,4 @@
-Nykyinen versio: v.3.10 · 9.11.2026
+Nykyinen versio: v.3.11 · 9.11.2026
 Ulkoasun / rakenteen parannuksia.
 - Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.

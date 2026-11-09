@@ -738,3 +738,9 @@ high	hög
 low	låg
 until 	till 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Skiften: kartan visar alla skiften; ett tryck på en nål eller ett skifte öppnar det på huvudskärmen. ”Spara GPS-plats” sparar platsen där du står, ”Välj på kartan” fungerar även hemifrån; GPS-knappen visar var du är (blå prick). Redigera (eller pennan) ändrar namnet och nålen. Sparas bara i den här telefonen. ”Statistik · PDF” (på kartan och på ett skiftes huvudskärm) öppnar dess statistik.
+Menu	Meny
+Hour	Timme
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Annan period och PDF: menyn ⋮ uppe till höger.
+The ⋮ menu	Menyn ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	I Skiften, på ett skiftes sida och i Statistik finns kommandona i menyn ⋮ uppe till höger. Ett tryck på en ruta visar den med stor text; en bred tabell kan dras i sidled.

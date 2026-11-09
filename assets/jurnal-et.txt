@@ -1,4 +1,4 @@
-Praegune versioon: v.3.10 · 9.11.2026
+Praegune versioon: v.3.11 · 9.11.2026
 Kujunduse / ülesehituse parandused.
 - Põllumehe režiim: uued kastid pärast Vesi mullas: Pritsimine, Veebilanss, Tormid, Kraadpäevad, 16 päeva.
 - USA-s põllumehe režiimis: kastid NWS, Põud, Tulekahju, Rahe.

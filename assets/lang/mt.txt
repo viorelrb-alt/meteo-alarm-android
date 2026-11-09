@@ -738,3 +738,9 @@ high	għoli
 low	baxx
 until 	sa 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Għelieqi: il-mappa turi l-għelieqi kollha; mess fuq labra jew għalqa jiftaħha fuq l-iskrin ewlieni. “Issejvja post GPS” isejvja l-post fejn int, “Agħżel fuq il-mappa” jaħdem anke mid-dar; il-buttuna GPS turi fejn int (tikka blu). Editja (jew il-lapes) ibiddel l-isem u l-labra. Jibqgħu biss f’dan it-telefon. “Statistika · PDF” (fuq il-mappa u fuq l-iskrin ewlieni ta' biċċa art) tiftaħ l-istatistika tagħha.
+Menu	Menu
+Hour	Siegħa
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Perjodu ieħor u PDF: il-menu ⋮ fuq il-lemin.
+The ⋮ menu	Il-menu ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Fil-Biċċiet tal-art, fil-paġna ta' biċċa art u fl-Istatistika l-kmandi huma fil-menu ⋮ fuq il-lemin. Mess fuq kaxxa juriha b'kitba kbira; tabella wiesgħa tiżżerżaq il-ġenb.

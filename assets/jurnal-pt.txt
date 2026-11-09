@@ -1,4 +1,4 @@
-Versão atual: v.3.10 · 9.11.2026
+Versão atual: v.3.11 · 9.11.2026
 Melhorias de design / estrutura.
 - Modo agricultor: novas caixas depois de Água no solo: Pulverizar, Balanço hídrico, Tempestades, Graus-dia, 16 dias.
 - Nos EUA, em modo agricultor: as caixas NWS, Seca, Incêndio, Granizo.

@@ -1,4 +1,4 @@
-Nuværende version: v.3.10 · 9.11.2026
+Nuværende version: v.3.11 · 9.11.2026
 Forbedringer af design / struktur.
 - Landmandstilstand: nye felter efter Vand i jorden: Sprøjtning, Vandbalance, Storme, Graddage, 16 dage.
 - I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.

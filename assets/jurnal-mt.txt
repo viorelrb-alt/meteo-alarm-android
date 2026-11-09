@@ -1,4 +1,4 @@
-Verżjoni attwali: v.3.10 · 9.11.2026
+Verżjoni attwali: v.3.11 · 9.11.2026
 Titjib fid-disinn / fl-istruttura.
 - Modalità tal-bidwi: kaxxi ġodda wara Ilma fil-ħamrija: Irxix, Bilanċ tal-ilma, Maltempi, Gradi-jiem, 16-il jum.
 - Fl-Istati Uniti, fil-modalità tal-bidwi: il-kaxxi NWS, Nixfa, Nar, Silġ.

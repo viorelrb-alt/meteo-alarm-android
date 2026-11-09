@@ -672,3 +672,9 @@ high	высокий
 low	низкий
 until 	до 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Участки: на карте все участки; касание булавки или участка открывает его на главном экране. «Сохранить место GPS» сохраняет место, где ты стоишь, «Выбрать на карте» работает и из дома; кнопка GPS показывает, где ты (синяя точка). Изменить (или карандаш) меняет название и булавку. Хранятся только в этом телефоне. «Статистика · PDF» (на карте и на главном экране участка) открывает его статистику.
+Menu	Меню
+Hour	Час
+Temp.	Темп.
+Other period and PDF: the ⋮ menu at the top right.	Другой период и PDF: меню ⋮ вверху справа.
+The ⋮ menu	Меню ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	В «Участках», на странице участка и в «Статистике» команды находятся в меню ⋮ вверху справа. Касание окна показывает его крупным текстом; широкую таблицу можно сдвигать в сторону.

@@ -1,4 +1,4 @@
-Obecna wersja: v.3.10 · 9.11.2026
+Obecna wersja: v.3.11 · 9.11.2026
 Ulepszenia wyglądu / struktury.
 - Tryb rolnika: nowe pola po Wodzie w glebie: Oprysk, Bilans wodny, Burze, Suma ciepła, 16 dni.
 - W USA, w trybie rolnika: pola NWS, Susza, Pożar, Grad.

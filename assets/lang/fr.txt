@@ -738,3 +738,9 @@ high	élevé
 low	faible
 until 	jusqu'à 
 ☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Parcelles : la carte montre toutes les parcelles ; un toucher sur une épingle ou une parcelle l’ouvre sur l’écran principal. « Enregistrer lieu GPS » enregistre l’endroit où tu te trouves, « Choisir sur la carte » marche aussi depuis chez toi ; le bouton GPS montre où tu es (point bleu). Modifier (ou le crayon) change le nom et l’épingle. Gardées seulement sur ce téléphone. « Statistiques · PDF » (sur la carte et sur l'écran principal d'une parcelle) ouvre ses statistiques.
+Menu	Menu
+Hour	Heure
+Temp.	Temp.
+Other period and PDF: the ⋮ menu at the top right.	Autre période et PDF : le menu ⋮ en haut à droite.
+The ⋮ menu	Le menu ⋮
+In Parcels, on a parcel's page and in Statistics the commands are in the ⋮ menu at the top right. A tap on a box shows it in big text; a wide table slides sideways.	Dans Parcelles, sur la page d'une parcelle et dans Statistiques, les commandes sont dans le menu ⋮ en haut à droite. Un toucher sur une case l'affiche en gros ; un tableau large défile de côté.
