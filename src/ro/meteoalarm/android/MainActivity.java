@@ -90,7 +90,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			// A parcel shown (v2.60): the town's weather still comes, for the widgets and the notices.
 			if (pageId != 0 && System.currentTimeMillis() - prefs.getLong("fetched", 0) >= interval()) fetchTownQuiet();
 			// Farmer data without the last 24 hours (saved by v2.50, or not come): asked again, at most every 5 minutes (v2.61).
-			if (s.farmer && s.w != null && Double.isNaN(s.rain24()) && System.currentTimeMillis() - lastFarmTry >= 5 * 60000L) fetchFarm();
+			// v3.11: also data saved before v3.10 (without the daily ET0, CAPE, the 16 days): the new boxes stayed empty until the next download.
+			boolean oldFarm = s.farm != null && (s.farm.dEt0 == null || s.farm.dEt0.length == 0 || s.farm.cape == null);
+			if (s.farmer && s.w != null && (Double.isNaN(s.rain24()) || oldFarm) && System.currentTimeMillis() - lastFarmTry >= 5 * 60000L) fetchFarm();
 			usFarm();
 			// The exact position at start and then every hour, while automatic location is on.
 			if (autoLoc() && Locator.allowed(MainActivity.this) && System.currentTimeMillis() - lastLocate >= LOCATE_MS) locate(false);
