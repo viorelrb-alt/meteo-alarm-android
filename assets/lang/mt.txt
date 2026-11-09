@@ -851,8 +851,16 @@ Peach	Ħawħa
 Rose	Warda
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temi tal-kulur: Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda; taħt il-linja Ċar, Skur jew Awtomatiku (sensur tat-telefon).
 Weather icons	Ikoni tat-temp
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Fil-kuluri tat-tema; il-kbira tiċċaqlaq għal 3 sekondi meta jinfetaħ l-iskrin jew jinbidel it-temp.
 Camera band	Faxxa tal-kamera
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	F'portrait, fuq telefowns bil-kamera fl-iskrin (Android 9+), l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera; il-lokalità għandha r-ringiela kollha.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikoni tat-temp: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Ħdejn l-arloġġ: Wi-Fi (arki) jew data mobbli (vireg); l-arki jew il-vireg mimlija juru s-sinjal, it-test żgħir it-tip (6 = Wi-Fi 6, 5G…). Netwerk ieħor: globu; maqsuma mingħajr internet.
+What the chart shows	X'turi l-graff
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Virga waħda għal kull waħda mit-12-il siegħa li ġejjin; l-għoli tagħha hu ċ-ċans ta' xita jew silġ f'dik is-siegħa (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Vireg ikkuluriti: preċipitazzjoni mistennija (ċans ta' 50% jew aktar, jew mill-inqas 0.1 mm), bil-kulur tas-silġ meta jagħmel is-silġ. Vireg griżi: niexef.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Il-linja bit-tikki timmarka 50%; „issa“ turi l-ħin attwali. Fuq: meta tagħmel ix-xita (minn–sa) u l-ogħla ċans.
+Precipitation chart	Graff tal-preċipitazzjoni
+A tap on the chart of the next 12 hours explains what it shows.	Mess fuq il-graff tat-12-il siegħa li ġejjin jispjega x'juri.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Fil-kuluri tat-tema; il-kbira u dawk tal-jiem jiċċaqilqu għal 3 sekondi meta jinfetaħ l-iskrin, wara kull aġġornament jew meta jinbidel it-temp.
+Rain spells	Xita
+Snow spells	Borra

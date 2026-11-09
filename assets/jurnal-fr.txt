@@ -1,9 +1,11 @@
-Version actuelle : v.3.80 · 9.11.2026
+Version actuelle : v.3.90 · 9.11.2026
 ÉCRAN PRINCIPAL
 - Bande de la caméra : en portrait, l'horloge, la connexion et la date sont à côté de la caméra (Android 9+).
 - Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
+- Graphique des précipitations : un appui explique ce qu'il montre.
 - Icône de connexion près de l'horloge : Wi-Fi ou données mobiles avec la force du signal et le type (Wi-Fi 6, 5G…), ou sans internet.
-- Icônes météo : aux couleurs du thème ; la grande bouge 3 secondes.
+- Icônes météo : aux couleurs du thème ; la grande et celles des jours bougent 3 secondes, aussi après chaque actualisation.
+- Précipitations 12 heures : quand il pleut ou neige seulement une partie du temps, des cases de 4 heures (Pluie ou Neige, avec les heures) à la place du graphique.
 MISES À JOUR
 - Avant une mise à jour, vérification du droit d'installer et note sur Auto Blocker (Samsung) avec bouton vers les paramètres.
 - Mises à jour : la connexion est vérifiée d’abord, une version déjà téléchargée s’installe aussitôt, jusqu’à 5 essais quand GitHub ne répond pas, et la raison est affichée.
@@ -14,6 +16,7 @@ MODE AGRICULTEUR
 NOTIFICATIONS
 - Notifications comme l'appli Météo du téléphone (« Lieu | Pluie ») : pluie ou neige dans l'heure et, après 20 h, pour demain, pour la localité et les parcelles ; plus d'avis quand Open-Meteo répond de nouveau.
 - Notifications INFORMATION séparées pour chaque parcelle : gelée blanche, gel, brouillard, pluie verglaçante, fortes rafales.
+- Quand vous changez de localité, les notifications de l'ancienne sont retirées.
 - Une notification INFORMATION séparée aussi pour la localité.
 PARCELLES
 - Notifications des parcelles, choisies avec le bouton cloche de la carte : pluie, vent, neige, sécheresse.

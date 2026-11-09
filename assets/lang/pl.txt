@@ -851,8 +851,16 @@ Peach	Brzoskwinia
 Rose	Róża
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 motywów kolorystycznych: Monochromatyczny, Szałwia, Lawenda, Niebo, Brzoskwinia, Róża; pod linią Jasny, Ciemny lub Automatyczny (czujnik telefonu).
 Weather icons	Ikony pogody
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	W kolorach motywu; duża porusza się przez 3 sekundy, gdy otwiera się ekran lub zmienia się pogoda.
 Camera band	Pasek kamery
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	W pionie, w telefonach z kamerą w ekranie (Android 9+), zegar, połączenie i data są obok kamery; miejscowość ma cały wiersz.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony pogody: “Coloured weather icons collection”, titusurya (magnific.com), darmowe wektory.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Obok zegara: Wi-Fi (łuki) lub dane komórkowe (słupki); pełne łuki lub słupki pokazują sygnał, mały tekst typ (6 = Wi-Fi 6, 5G…). Inna sieć: globus; przekreślona bez internetu.
+What the chart shows	Co pokazuje wykres
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Jeden słupek na każdą z następnych 12 godzin; jego wysokość to szansa na deszcz lub śnieg w tej godzinie (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Kolorowe słupki: spodziewane opady (szansa 50% lub więcej albo co najmniej 0,1 mm), w kolorze śniegu, gdy pada śnieg. Szare słupki: sucho.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Linia przerywana oznacza 50%; „teraz” pokazuje bieżącą godzinę. U góry: kiedy pada (od–do) i najwyższa szansa.
+Precipitation chart	Wykres opadów
+A tap on the chart of the next 12 hours explains what it shows.	Dotknięcie wykresu następnych 12 godzin wyjaśnia, co pokazuje.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	W kolorach motywu; duża i te dni poruszają się przez 3 sekundy po otwarciu ekranu, po każdym odświeżeniu lub gdy zmienia się pogoda.
+Rain spells	Deszcze
+Snow spells	Opady śniegu

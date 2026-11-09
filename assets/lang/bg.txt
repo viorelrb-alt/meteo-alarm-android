@@ -851,8 +851,16 @@ Peach	Праскова
 Rose	Роза
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 цветови теми: Монохромна, Градински чай, Лавандула, Небе, Праскова, Роза; под линията Светла, Тъмна или Автоматична (сензор на телефона).
 Weather icons	Икони за времето
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	В цветовете на темата; голямата се движи 3 секунди, когато екранът се отвори или времето се промени.
 Camera band	Лента на камерата
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	В портретен режим, на телефони с камера в екрана (Android 9+), часовникът, връзката и датата са до камерата; населеното място заема целия ред.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Икони за времето: “Coloured weather icons collection”, titusurya (magnific.com), безплатни вектори.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	До часовника: Wi-Fi (дъги) или мобилни данни (чертички); пълните дъги или чертички показват сигнала, малкият текст вида (6 = Wi-Fi 6, 5G…). Друга мрежа: глобус; зачеркната без интернет.
+What the chart shows	Какво показва графиката
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	По една лента за всеки от следващите 12 часа; височината ѝ е вероятността за дъжд или сняг в този час (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Цветни ленти: очаквани валежи (вероятност 50% или повече, или поне 0,1 мм), в цвета на снега, когато вали сняг. Сиви ленти: сухо.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Пунктирната линия отбелязва 50%; „сега“ показва текущия час. Горе: кога вали (от–до) и най-високата вероятност.
+Precipitation chart	Графика на валежите
+A tap on the chart of the next 12 hours explains what it shows.	Докосване на графиката за следващите 12 часа обяснява какво показва.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	В цветовете на темата; голямата и тези на дните се движат 3 секунди при отваряне на екрана, след всяко опресняване или при промяна на времето.
+Rain spells	Дъждове
+Snow spells	Снеговалежи

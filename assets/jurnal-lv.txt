@@ -1,4 +1,4 @@
-Pašreizējā versija: v.3.80 · 9.11.2026
+Pašreizējā versija: v.3.90 · 9.11.2026
 ATJAUNINĀJUMI
 - Atjauninājumi no trim avotiem: GitHub, otrs GitHub serveris un Google Drive.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.
@@ -6,7 +6,9 @@ ATJAUNINĀJUMI
 GALVENAIS EKRĀNS
 - INFORMĀCIJAS lodziņi Eiropā: sarma, salna, migla, salstošs lietus, stiprs vējš.
 - Kameras josla: portretā pulkstenis, savienojums un datums ir blakus kamerai (Android 9+).
-- Laika ikonas: tēmas krāsās; lielā kustas 3 sekundes.
+- Laika ikonas: tēmas krāsās; lielā un dienu ikonas kustas 3 sekundes, arī pēc katras atsvaidzināšanas.
+- Nokrišņi 12 stundas: ja līst vai snieg tikai daļu laika, 4 stundu lodziņi (Lietus vai Sniegs, ar stundām) diagrammas vietā.
+- Nokrišņu grafiks: pieskāriens paskaidro, ko tas rāda.
 - Savienojuma ikona blakus pulkstenim: Wi-Fi vai mobilie dati ar signāla stiprumu un veidu (Wi-Fi 6, 5G…) vai bez interneta.
 LAUKI
 - Paziņojumi par laukiem, izvēlami ar zvaniņa pogu kartē: lietus, vējš, sniegs, sausums.
@@ -18,6 +20,7 @@ MOTĪVI
 PAZIŅOJUMI
 - Atsevišķi INFORMĀCIJAS paziņojumi katram laukam: sarma, sals, migla, apledojums, stipras brāzmas.
 - Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai.
+- Mainot apdzīvoto vietu, vecās vietas paziņojumi tiek noņemti.
 - Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
 - Dizaina uzlabojumi un kļūdu labojumi.
 

@@ -1,17 +1,20 @@
-Současná verze: v.3.80 · 9.11.2026
+Současná verze: v.3.90 · 9.11.2026
 AKTUALIZACE
 - Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
 - Před aktualizací kontrola oprávnění k instalaci a poznámka o Auto Blocker (Samsung) s tlačítkem do nastavení.
 HLAVNÍ OBRAZOVKA
+- Graf srážek: klepnutí vysvětlí, co ukazuje.
 - Ikona připojení vedle hodin: Wi-Fi nebo mobilní data se silou signálu a typem (Wi-Fi 6, 5G…), nebo bez internetu.
-- Ikony počasí: v barvách motivu; velká se 3 sekundy pohybuje.
+- Ikony počasí: v barvách motivu; velká a ty u dnů se 3 sekundy pohybují, i po každém obnovení.
 - Pás kamery: na výšku jsou hodiny, připojení a datum vedle kamery (Android 9+).
 - Pole INFORMACE v Evropě: jinovatka, mráz, mlha, mrznoucí déšť, silný vítr.
+- Srážky 12 hodin: když prší nebo sněží jen část doby, pole po 4 hodinách (Deště nebo Sněžení, s hodinami) místo grafu.
 MOTIVY
 - 6 barevných motivů (Monochromatický, Šalvěj, Levandule, Nebe, Broskev, Růže), každý světlý i tmavý: ☰ › Motiv.
 OZNÁMENÍ
 - Oznámení jako v aplikaci Počasí v telefonu („Místo | Déšť“): déšť nebo sníh během hodiny a po 20. hodině na zítřek, pro obec i parcely; žádné oznámení, když Open-Meteo znovu odpoví.
+- Při změně obce se oznámení staré obce odstraní.
 - Samostatná oznámení INFORMACE pro každou parcelu: jinovatka, mráz, mlha, mrznoucí déšť, silné nárazy.
 - Samostatné oznámení INFORMACE i pro obec.
 POZEMKY

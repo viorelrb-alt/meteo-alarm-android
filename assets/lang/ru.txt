@@ -785,8 +785,16 @@ Peach	Персик
 Rose	Роза
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 цветовых тем: Монохромная, Шалфей, Лаванда, Небо, Персик, Роза; под линией Светлая, Тёмная или Автоматическая (датчик телефона).
 Weather icons	Значки погоды
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	В цветах темы; большой двигается 3 секунды, когда открывается экран или меняется погода.
 Camera band	Полоса камеры
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	В портретном режиме, на телефонах с камерой в экране (Android 9+), часы, связь и дата находятся рядом с камерой; населённому пункту отдана вся строка.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Значки погоды: “Coloured weather icons collection”, titusurya (magnific.com), бесплатные векторы.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Рядом с часами: Wi-Fi (дуги) или мобильные данные (столбики); полные дуги или столбики показывают сигнал, маленький текст — тип (6 = Wi-Fi 6, 5G…). Другая сеть: глобус; зачёркнут без интернета.
+What the chart shows	Что показывает график
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Один столбик на каждый из следующих 12 часов; его высота — вероятность дождя или снега в этот час (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Цветные столбики: ожидаются осадки (вероятность 50% и более или не меньше 0,1 мм), цвета снега, когда идёт снег. Серые столбики: сухо.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Пунктир отмечает 50%; «сейчас» показывает текущее время. Сверху: когда идёт дождь (с–до) и наибольшая вероятность.
+Precipitation chart	График осадков
+A tap on the chart of the next 12 hours explains what it shows.	Касание графика на следующие 12 часов объясняет, что он показывает.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	В цветах темы; большой и значки дней двигаются 3 секунды при открытии экрана, после каждого обновления или при смене погоды.
+Rain spells	Дожди
+Snow spells	Снегопады

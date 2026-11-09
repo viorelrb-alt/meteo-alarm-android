@@ -851,8 +851,16 @@ Peach	Breskva
 Rose	Ruža
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 tema boja: Jednobojna, Kadulja, Lavanda, Nebo, Breskva, Ruža; ispod crte Svijetla, Tamna ili Automatska (senzor telefona).
 Weather icons	Ikone vremena
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	U bojama teme; velika se miče 3 sekunde kad se zaslon otvori ili se vrijeme promijeni.
 Camera band	Traka kamere
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	U uspravnom položaju, na telefonima s kamerom u zaslonu (Android 9+), sat, veza i datum stoje uz kameru; mjesto dobiva cijeli redak.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikone vremena: “Coloured weather icons collection”, titusurya (magnific.com), besplatni vektori.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Uz sat: Wi-Fi (lukovi) ili mobilni podaci (stupci); puni lukovi ili stupci pokazuju signal, mali tekst vrstu (6 = Wi-Fi 6, 5G…). Druga mreža: globus; prekrižena bez interneta.
+What the chart shows	Što grafikon prikazuje
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Jedan stupac za svaki od sljedećih 12 sati; njegova visina je vjerojatnost kiše ili snijega u tom satu (0–100 %).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Obojeni stupci: očekuje se oborina (vjerojatnost 50 % ili više, ili barem 0,1 mm), u boji snijega kad sniježi. Sivi stupci: suho.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Točkasta crta označava 50 %; „sad” pokazuje trenutačno vrijeme. Gore: kad pada kiša (od–do) i najveća vjerojatnost.
+Precipitation chart	Grafikon oborina
+A tap on the chart of the next 12 hours explains what it shows.	Dodir grafikona za sljedećih 12 sati objašnjava što prikazuje.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	U bojama teme; velika i one za dane miču se 3 sekunde kad se zaslon otvori, nakon svakog osvježavanja ili kad se vrijeme promijeni.
+Rain spells	Kiše
+Snow spells	Snijeg

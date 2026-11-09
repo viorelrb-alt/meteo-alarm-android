@@ -851,8 +851,16 @@ Peach	Breskev
 Rose	Vrtnica
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 barvnih tem: Enobarvna, Žajbelj, Sivka, Nebo, Breskev, Vrtnica; pod črto Svetla, Temna ali Samodejna (senzor telefona).
 Weather icons	Vremenske ikone
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	V barvah teme; velika se 3 sekunde premika, ko se zaslon odpre ali se vreme spremeni.
 Camera band	Pas kamere
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Pokončno, na telefonih s kamero v zaslonu (Android 9+), so ura, povezava in datum ob kameri; kraj dobi celo vrstico.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Vremenske ikone: “Coloured weather icons collection”, titusurya (magnific.com), brezplačni vektorji.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Ob uri: Wi-Fi (loki) ali mobilni podatki (stolpci); polni loki ali stolpci kažejo signal, majhno besedilo vrsto (6 = Wi-Fi 6, 5G…). Drugo omrežje: globus; prečrtana brez interneta.
+What the chart shows	Kaj prikazuje graf
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	En stolpec za vsako od naslednjih 12 ur; njegova višina je verjetnost dežja ali snega v tisti uri (0–100 %).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barvni stolpci: pričakovane padavine (verjetnost 50 % ali več ali vsaj 0,1 mm), v barvi snega, ko sneži. Sivi stolpci: suho.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Pikčasta črta označuje 50 %; »zdaj« kaže trenutni čas. Zgoraj: kdaj dežuje (od–do) in največja verjetnost.
+Precipitation chart	Graf padavin
+A tap on the chart of the next 12 hours explains what it shows.	Dotik grafa za naslednjih 12 ur razloži, kaj prikazuje.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	V barvah teme; velika in tiste pri dnevih se 3 sekunde premikajo, ko se zaslon odpre, po vsaki osvežitvi ali ko se vreme spremeni.
+Rain spells	Dež
+Snow spells	Sneg

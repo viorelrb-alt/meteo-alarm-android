@@ -851,8 +851,16 @@ Peach	Barack
 Rose	Rózsa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 színtéma: Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa; a vonal alatt Világos, Sötét vagy Automatikus (telefon érzékelője).
 Weather icons	Időjárás-ikonok
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	A téma színeiben; a nagy 3 másodpercig mozog, amikor a képernyő megnyílik vagy változik az időjárás.
 Camera band	Kamerasáv
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Álló helyzetben, a kijelzőbe épített kamerás telefonokon (Android 9+) az óra, a kapcsolat és a dátum a kamera mellett van; a település az egész sort kapja.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Időjárás-ikonok: “Coloured weather icons collection”, titusurya (magnific.com), ingyenes vektorok.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Az óra mellett: Wi-Fi (ívek) vagy mobiladat (oszlopok); a teli ívek vagy oszlopok a jelet mutatják, a kis szöveg a típust (6 = Wi-Fi 6, 5G…). Más hálózat: földgömb; áthúzva, ha nincs internet.
+What the chart shows	Mit mutat a grafikon
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Egy oszlop a következő 12 óra mindegyikére; magassága az eső vagy havazás esélye abban az órában (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Színes oszlopok: csapadék várható (50% vagy nagyobb esély, vagy legalább 0,1 mm), havazáskor a hó színében. Szürke oszlopok: száraz.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	A pontozott vonal az 50%-ot jelöli; a „most” a jelenlegi időt mutatja. Fent: mikor esik (-tól–ig) és a legnagyobb esély.
+Precipitation chart	Csapadékgrafikon
+A tap on the chart of the next 12 hours explains what it shows.	A következő 12 óra grafikonjának megérintése elmagyarázza, mit mutat.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	A téma színeiben; a nagy és a napoké 3 másodpercig mozog a képernyő megnyitásakor, minden frissítés után vagy ha változik az időjárás.
+Rain spells	Esők
+Snow spells	Havazások

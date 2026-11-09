@@ -851,8 +851,16 @@ Peach	Persika
 Rose	Ros
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 färgteman: Monokrom, Salvia, Lavendel, Himmel, Persika, Ros; under linjen Ljust, Mörkt eller Automatiskt (telefonens sensor).
 Weather icons	Väderikoner
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	I temats färger; den stora rör sig i 3 sekunder när skärmen öppnas eller vädret ändras.
 Camera band	Kameraband
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	I stående läge, på telefoner med kameran i skärmen (Android 9+), står klockan, anslutningen och datumet bredvid kameran; orten får hela raden.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Väderikoner: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Bredvid klockan: wifi (bågar) eller mobildata (staplar); fulla bågar eller staplar visar signalen, den lilla texten typen (6 = Wi-Fi 6, 5G…). Annat nätverk: en jordglob; överstruken utan internet.
+What the chart shows	Vad diagrammet visar
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	En stapel för var och en av de kommande 12 timmarna; höjden är risken för regn eller snö den timmen (0–100 %).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Färgade staplar: nederbörd väntas (en risk på 50 % eller mer, eller minst 0,1 mm), i snöfärgen när det snöar. Grå staplar: torrt.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Den prickade linjen visar 50 %; ”nu” visar aktuell tid. Överst: när det regnar (från–till) och den högsta risken.
+Precipitation chart	Nederbördsdiagram
+A tap on the chart of the next 12 hours explains what it shows.	Ett tryck på diagrammet för de kommande 12 timmarna förklarar vad det visar.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I temats färger; den stora och dagarnas rör sig i 3 sekunder när skärmen öppnas, efter varje uppdatering eller när vädret ändras.
+Rain spells	Regn
+Snow spells	Snö

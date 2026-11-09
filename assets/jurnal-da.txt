@@ -1,9 +1,11 @@
-Nuværende version: v.3.80 · 9.11.2026
+Nuværende version: v.3.90 · 9.11.2026
 HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi eller mobildata med signalstyrke og type (Wi-Fi 6, 5G…), eller intet internet.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
 - Kamerabånd: i portræt står uret, forbindelsen og datoen ved siden af kameraet (Android 9+).
-- Vejrikoner: i temaets farver; den store bevæger sig i 3 sekunder.
+- Nedbør 12 timer: når det kun regner eller sner en del af tiden, felter på 4 timer (Regn eller Sne, med tidspunkterne) i stedet for grafen.
+- Nedbørsgraf: et tryk forklarer, hvad den viser.
+- Vejrikoner: i temaets farver; den store og dagenes bevæger sig i 3 sekunder, også efter hver opdatering.
 LANDMANDSTILSTAND
 - I USA, i landmandstilstand: felterne NWS, Tørke, Brand, Hagl.
 - Landmandstilstand: nye felter efter Vand i jorden: Sprøjtning, Vandbalance, Storme, Graddage, 16 dage.
@@ -11,6 +13,7 @@ MARKER
 - Notifikationer for marker, valgt med klokkeknappen på kortet: regn, vind, sne, tørke.
 NOTIFIKATIONER
 - En separat INFORMATION-notifikation også for byen.
+- Når du skifter by, fjernes den gamle bys notifikationer.
 - Notifikationer som telefonens Vejr-app (”Sted | Regn”): regn eller sne inden for en time og efter kl. 20 for i morgen, for byen og markerne; ingen besked, når Open-Meteo svarer igen.
 - Separate INFORMATION-notifikationer for hver mark: rimfrost, frost, tåge, isslag, kraftige vindstød.
 OPDATERINGER

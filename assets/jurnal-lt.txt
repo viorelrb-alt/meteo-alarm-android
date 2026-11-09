@@ -1,4 +1,4 @@
-Dabartinė versija: v.3.80 · 9.11.2026
+Dabartinė versija: v.3.90 · 9.11.2026
 NAUJINIMAI
 - Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
@@ -6,11 +6,14 @@ NAUJINIMAI
 PAGRINDINIS EKRANAS
 - INFORMACIJOS langeliai Europoje: šerkšnas, šalna, rūkas, lijundra, stiprus vėjas.
 - Kameros juosta: vertikaliai laikrodis, ryšys ir data yra šalia kameros (Android 9+).
-- Orų piktogramos: temos spalvomis; didžioji juda 3 sekundes.
+- Krituliai 12 val.: kai lyja ar sninga tik dalį laiko, 4 valandų langeliai (Lietus arba Sniegas, su valandomis) vietoj grafiko.
+- Kritulių grafikas: palietus paaiškinama, ką jis rodo.
+- Orų piktogramos: temos spalvomis; didžioji ir dienų piktogramos juda 3 sekundes, taip pat po kiekvieno atnaujinimo.
 - Ryšio piktograma šalia laikrodžio: Wi-Fi arba mobilieji duomenys su signalo stiprumu ir tipu (Wi-Fi 6, 5G…) arba be interneto.
 PRANEŠIMAI
 - Atskiras INFORMACIJOS pranešimas ir gyvenvietei.
 - Atskiri INFORMACIJOS pranešimai kiekvienam sklypui: šerkšnas, šalna, rūkas, lijundra, stiprūs gūsiai.
+- Pakeitus vietovę, senosios vietovės pranešimai pašalinami.
 - Pranešimai kaip telefono Orų programoje („Vieta | Lietus“): lietus ar sniegas per valandą ir po 20 val. rytojui, gyvenvietei ir sklypams; jokio pranešimo, kai Open-Meteo vėl atsako.
 SKLYPAI
 - Sklypų pranešimai, pasirenkami žemėlapio varpelio mygtuku: lietus, vėjas, sniegas, sausra.

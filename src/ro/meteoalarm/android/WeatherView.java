@@ -54,6 +54,9 @@ final class WeatherView extends View {
 		/** Farmer mode: a tap on hour box K (KIND 0) or rain box K (1), at B. */
 		void onFarmBox(int kind, int k, float[] b);
 
+		/** v3.90: a tap on the precipitation chart of the next 12 hours, at B. */
+		void onPrecip(float[] b);
+
 		/** Farmer mode (v2.60): a swipe over the weather now, to the next (+1) or previous (-1) main screen. */
 		void onPage(int step);
 
@@ -680,6 +683,10 @@ final class WeatherView extends View {
 		if (ak >= 0) {
 			pauseRoll();
 			taps.onAlert(ak, screen.alertRect(ak));
+			return true;
+		}
+		if (screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
+			taps.onPrecip(screen.precipArea.clone());
 			return true;
 		}
 		if (in(screen.btnMenu, x, y)) taps.onMenu();

@@ -851,8 +851,16 @@ Peach	Persikka
 Rose	Ruusu
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 väriteemaa: Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu; viivan alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).
 Weather icons	Sääkuvakkeet
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Teeman väreissä; iso liikkuu 3 sekuntia, kun näyttö avautuu tai sää muuttuu.
 Camera band	Kamerakaista
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Pystyasennossa, puhelimissa, joissa kamera on näytössä (Android 9+), kello, yhteys ja päivämäärä ovat kameran vieressä; paikkakunta saa koko rivin.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Sääkuvakkeet: “Coloured weather icons collection”, titusurya (magnific.com), ilmaiset vektorit.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Kellon vieressä: Wi-Fi (kaaret) tai mobiilidata (palkit); täydet kaaret tai palkit näyttävät signaalin, pieni teksti tyypin (6 = Wi-Fi 6, 5G…). Muu verkko: maapallo; yliviivattu ilman internetiä.
+What the chart shows	Mitä kaavio näyttää
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Yksi pylväs kullekin seuraavalle 12 tunnille; sen korkeus on sateen tai lumen todennäköisyys sinä tuntina (0–100 %).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Värilliset pylväät: sadetta odotettavissa (todennäköisyys 50 % tai enemmän tai vähintään 0,1 mm), lumen värisinä kun sataa lunta. Harmaat pylväät: poutaa.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Pisteviiva merkitsee 50 %; ”nyt” näyttää nykyisen ajan. Ylhäällä: milloin sataa (alkaen–asti) ja suurin todennäköisyys.
+Precipitation chart	Sadekaavio
+A tap on the chart of the next 12 hours explains what it shows.	Seuraavan 12 tunnin kaavion napautus selittää, mitä se näyttää.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Teeman väreissä; iso ja päivien kuvakkeet liikkuvat 3 sekuntia, kun näyttö avautuu, jokaisen päivityksen jälkeen tai kun sää muuttuu.
+Rain spells	Sateet
+Snow spells	Lumisateet

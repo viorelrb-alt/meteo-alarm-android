@@ -204,6 +204,7 @@ public final class Screen {
 		infoHits.clear();
 		mergedShown = false;
 		bigIcon = null;
+		precipArea[2] = 0;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
 		hs = 1;
@@ -431,7 +432,7 @@ public final class Screen {
 			String hl = t(w.dayHi.get(k)) + "° / " + t(w.dayLo.get(k)) + "°";
 			float p = fit(true, 38, dw - 16, hl), ic = Math.min(90, h - 44 - p - 96);
 			float iy = top + 44 + Math.max(6, (h - 44 - ic - p - 86) / 2), ty = iy + ic + 4;
-			drawIcon(dd[0], cx - ic / 2, iy, ic);
+			dayIcon(dd[0], cx - ic / 2, iy, ic);
 			ctext(true, p, ty, cx, hl, c.ink);
 			ctext(false, fit(false, 25, dw - 14, dd[1]), ty + p + 6, cx, dd[1], c.ink);
 			ctext(false, 22, ty + p + 40, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
@@ -528,7 +529,7 @@ public final class Screen {
 			String hl = t(w.dayHi.get(k)) + "° / " + t(w.dayLo.get(k)) + "°";
 			float p = fit(true, 40, dw - 16, hl), ic = Math.max(40, Math.min(Math.min(120, dw - 24), dh - 44 - p - 84));
 			float iy = dy + 44 + Math.max(6, (dh - 44 - ic - 6 - p - 62) / 2), ty = iy + ic + 6;
-			drawIcon(dd[0], cx - ic / 2, iy, ic);
+			dayIcon(dd[0], cx - ic / 2, iy, ic);
 			ctext(true, p, ty, cx, hl, c.ink);
 			ctext(false, fit(false, 23, dw - 12, dd[1]), ty + p + 6, cx, dd[1], c.ink);
 			ctext(false, 21, ty + p + 36, cx, T.pop + " " + w.dayPop.get(k) + "%", c.dim);
@@ -610,8 +611,14 @@ public final class Screen {
 		float gap = 16, peek = peekW, bh = line ? h - 26 : h;
 		int per = Math.max(1, Math.min(avail, (int) ((wd - peek + gap) / (140 + gap))));
 		float bw = avail <= per && !chart ? (wd - gap * (avail - 1)) / avail : (wd - peek - gap * per) / per;
+		// v3.90 (Viorel): the 12 hours in three parts of 4; when only one or two of them have
+		// rain or snow, only those parts show, each in a box of its own; with all three, the
+		// whole chart as before.
+		int[] segs = chart ? wetParts() : new int[0];
+		boolean split = segs.length > 0 && segs.length < 3;
+		float sw = Math.max(bw * 1.45f, 196);
 		// The chart leaves room for the edge of the first hour box, so it is clear the row goes on.
-		float cwd = chartFull ? wd : wd - peek - gap, x0 = chart ? cwd + gap : 0, step = bw + gap;
+		float cwd = split ? segs.length * sw + (segs.length - 1) * gap : chartFull ? wd : wd - peek - gap, x0 = chart ? cwd + gap : 0, step = bw + gap;
 		float[] starts = new float[avail + (chart ? 1 : 0)];
 		int n = 0;
 		if (chart) starts[n++] = x0;
@@ -625,7 +632,13 @@ public final class Screen {
 		}
 		float sc = hours.scroll;
 		g.clip(x - 2, y - 2, wd + 4, bh + 4);
-		if (chart && sc < cwd + 4) drawPrecipBox(x - sc, y, cwd, bh, 46);
+		if (split) {
+			for (int j = 0; j < segs.length; j++) {
+				float sx = x - sc + j * (sw + gap);
+				if (sx + sw >= x - 4 && sx <= x + wd + 4) drawRainPart(sx, y, sw, bh, segs[j]);
+			}
+			precipArea[0] = (x - sc) * hs; precipArea[1] = y * hs; precipArea[2] = cwd * hs; precipArea[3] = bh * hs;
+		} else if (chart && sc < cwd + 4) drawPrecipBox(x - sc, y, cwd, bh, 46);
 		for (int k = 1; k <= avail; k++) {
 			float bx = x + x0 + (k - 1) * step - sc;
 			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
@@ -1824,14 +1837,20 @@ public final class Screen {
 	 * 3 seconds when the screen opens or the weather changes); BIG_ICON is the one drawn.
 	 */
 	public float iconT = 1;
-	private boolean nowIcon;
+	private boolean nowIcon, dayIcon;
+
+	/** v3.90 (Viorel): the icons of the day boxes move with the big one. */
+	private void dayIcon(String icon, float x, float y, float s) {
+		dayIcon = true;
+		drawIcon(icon, x, y, s);
+		dayIcon = false;
+	}
 	public String bigIcon;
 
 	private void drawIcon(String icon, float x, float y, float s) {
 		if (WxIcon.has(icon)) {
-			boolean big = nowIcon;
-			if (big) bigIcon = icon;
-			WxIcon.draw(g, icon, x, y, s, big ? iconT : 1, Theme.icon(dark));
+			if (nowIcon) bigIcon = icon;
+			WxIcon.draw(g, icon, x, y, s, nowIcon || dayIcon ? iconT : 1, Theme.icon(dark));
 		} else g.icon("icons/" + icon + ".png", x, y, s, s, c.ink);
 	}
 
@@ -2436,7 +2455,11 @@ public final class Screen {
 		return "";
 	}
 
+	/** v3.90: where the precipitation box is (a tap explains the chart). */
+	public final float[] precipArea = { 0, 0, 0, 0 };
+
 	private void drawPrecipBox(float pl, float pt, float pw, float ph, float phd) {
+		precipArea[0] = pl * hs; precipArea[1] = pt * hs; precipArea[2] = pw * hs; precipArea[3] = ph * hs;
 		boolean snow = w.snowMaj || ((w.wetNow() || w.precip > 0) && Weather.snowCode(w.code));
 		box(pl, pt, pw, ph, phd);
 		String ttl = T.precipUp + " · " + T.next12;
@@ -2465,6 +2488,52 @@ public final class Screen {
 			g.rect(x, y, 16, 16, cs[k]);
 			ltext(false, 20, y - 2, x + 23, ls[k], c.dim);
 			x += 23 + g.width(false, 20, ls[k]) + 22;
+		}
+	}
+
+	/** v3.90: which of the three parts of 4 hours (0, 1, 2) have rain or snow; none without 12 hours. */
+	private int[] wetParts() {
+		if (w.probs.length < 12) return new int[0];
+		int[] out = new int[3];
+		int n = 0;
+		for (int i = 0; i < 3; i++)
+			for (int k = 4 * i; k < 4 * i + 4; k++)
+				if (w.wet[k]) {
+					out[n++] = i;
+					break;
+				}
+		return java.util.Arrays.copyOf(out, n);
+	}
+
+	/** v3.90: part I (hours 4i..4i+3) of the precipitation chart in a box of its own. */
+	private void drawRainPart(float x, float y, float wd, float h, int i) {
+		int from = 4 * i, to = from + 4;
+		boolean snow = false;
+		int mx = 0;
+		for (int k = from; k < to; k++) {
+			if (w.wet[k] && w.snowy[k]) snow = true;
+			mx = Math.max(mx, w.probs[k]);
+		}
+		box(x, y, wd, h, 44);
+		String last = w.hours.get(to - 1);
+		String end = last.length() >= 5 ? String.format(java.util.Locale.US, "%02d", (Integer.parseInt(last.substring(0, 2)) + 1) % 24) + last.substring(2) : last;
+		// Viorel: the box is called "Rain" or "Snow" (plural in Romanian: Ploi / Ninsori) and its hours.
+		String word = snow ? Tr.t("Snow spells", "Ninsori") : Tr.t("Rain spells", "Ploi");
+		head(y, 44, x + wd / 2, wd - 20, word.toUpperCase(), 0);
+		String hrs = Texts.clock(w.hours.get(from), clk12) + "–" + Texts.clock(end, clk12);
+		ctext(true, fit(true, 30, wd - 24, hrs), y + 54, x + wd / 2, hrs, c.ink);
+		String m = T.max + " " + mx + "%";
+		ctext(false, fit(false, 24, wd - 24, m), y + 92, x + wd / 2, m, c.dim);
+		float ct = y + 132, ch = h - 132 - 38, cl = x + 14, cw2 = wd - 28;
+		float pitch = cw2 / 4, bw = pitch * 72 / 100;
+		float ty = ct + ch - Weather.RAIN_PROBABILITY * ch / 100;
+		for (float d = cl; d < cl + cw2; d += 10) g.rect(d, ty, 5, 2, c.dim);
+		for (int k = from; k < to; k++) {
+			float bh = Math.max(4, w.probs[k] * ch / 100), bx = cl + (k - from) * pitch + (pitch - bw) / 2;
+			g.rect(bx, ct + ch - bh, bw, bh, !w.wet[k] ? c.dry : w.snowy[k] ? c.snow : c.rain);
+			String hr = w.hours.get(k);
+			String lab = clk12 ? Texts.clock(hr, true).replace(":00", "") : hr.length() >= 2 ? hr.substring(0, 2) : hr;
+			ctext(false, fit(false, 22, pitch, lab), ct + ch + 8, bx + bw / 2, lab, c.dim);
 		}
 	}
 
@@ -2512,7 +2581,7 @@ public final class Screen {
 			hp = hp * 94 / 100;
 		}
 		float gx = Math.max(left + 8, left + (331 - 84 - wh - 4 - wl) / 2);
-		drawIcon(d[0], gx - 10, top + 67, 92);
+		dayIcon(d[0], gx - 10, top + 67, 92);
 		ltext(true, hp, top + 51 + (93 - hp) * 81 / 100, gx + 84, hi, c.ink);
 		ltext(false, lp, top + 90 + (47 - lp) * 81 / 100, gx + 84 + wh + 4, lo, c.dim);
 		ctext(false, fit(false, 30, 310, d[1]), top + 160, left + 165, d[1], c.ink);
@@ -2549,7 +2618,7 @@ public final class Screen {
 			if (k >= w.dayDates.size()) continue;
 			float cx = x + 107.5f;
 			head(top, 44, cx, 190, T.weekdayUp(w.dayDates.get(k), true), 0);
-			drawIcon(T.describe(w.dayCodes.get(k), true)[0], cx - 30, top + 46, 60);
+			dayIcon(T.describe(w.dayCodes.get(k), true)[0], cx - 30, top + 46, 60);
 			String s = t(w.dayHi.get(k)) + "° / " + t(w.dayLo.get(k)) + "°";
 			float p = fit(true, 36, 190, s);
 			ctext(true, p, top + 104 + (36 - p) * 6 / 10, cx, s, c.ink);
@@ -3303,6 +3372,158 @@ public final class Screen {
 			g.roundRect(34, 10, 26, 22, 4, k);
 			g.rect(12, 44, 34, 4, k);
 			g.poly(new float[] { 44, 38, 44, 54, 56, 46 }, k);
+		} else moreIcons(which, k);
+	}
+
+	/** v3.90 (Viorel): one picture for each Help entry, none used twice. */
+	private void moreIcons(String which, int k) {
+		int p = c.page, a = c.accent;
+		if (which.equals("hours")) {
+			for (int i = 0; i < 3; i++) {
+				g.roundRect(4 + i * 20, 8, 16, 48, 4, k);
+				g.roundRect(7 + i * 20, 20, 10, 33, 2, p);
+				g.roundRect(9 + i * 20, 30, 6, 6, 3, k);
+			}
+		} else if (which.equals("soil")) {
+			g.roundRect(22, 20, 20, 20, 10, a);
+			g.poly(new float[] { 32, 4, 23, 26, 41, 26 }, a);
+			g.rect(6, 46, 52, 4, k);
+			g.rect(12, 54, 40, 4, k);
+		} else if (which.equals("grid4")) {
+			for (int i = 0; i < 4; i++) {
+				float x = 6 + (i % 2) * 28, y = 6 + (i / 2) * 28;
+				g.roundRect(x, y, 24, 24, 5, k);
+				g.roundRect(x + 3, y + 9, 18, 12, 3, p);
+			}
+		} else if (which.equals("us") || which.equals("mph") || which.equals("degf") || which.equals("c12") || which.equals("quakebox")) {
+			String t = which.equals("us") ? "US" : which.equals("mph") ? "mph" : which.equals("degf") ? "°F" : which.equals("c12") ? "12/24" : "M3+";
+			g.roundRect(4, 10, 56, 44, 8, k);
+			g.roundRect(7, 13, 50, 38, 6, p);
+			ctext(true, fit(true, 26, 44, t), 18, 32, t, k);
+		} else if (which.equals("bubble")) {
+			g.roundRect(4, 6, 56, 40, 8, k);
+			g.roundRect(7, 9, 50, 34, 6, p);
+			g.poly(new float[] { 14, 44, 28, 44, 12, 58 }, k);
+			for (int i = 0; i < 3; i++) g.rect(13, 16 + i * 8, i == 2 ? 22 : 38, 4, k);
+		} else if (which.equals("layers")) {
+			g.rect(6, 12, 52, 10, a);
+			g.rect(6, 26, 52, 10, k);
+			g.rect(6, 40, 52, 10, k);
+			g.rect(6, 54, 52, 4, k);
+		} else if (which.equals("dots")) {
+			for (int i = 0; i < 3; i++) g.roundRect(26, 4 + i * 21, 12, 12, 6, k);
+		} else if (which.equals("gps") || which.equals("autoloc")) {
+			g.arc(32, 32, 20, 0, 360, 4, k);
+			g.rect(30, 2, 4, 10, k);
+			g.rect(30, 52, 4, 10, k);
+			g.rect(2, 30, 10, 4, k);
+			g.rect(52, 30, 10, 4, k);
+			if (which.equals("gps")) g.roundRect(24, 24, 16, 16, 8, 0xFF3D7BE0);
+			else ctext(true, 20, 21, 32, "A", k);
+		} else if (which.equals("table")) {
+			g.roundRect(6, 10, 52, 44, 5, k);
+			g.roundRect(9, 13, 46, 38, 3, p);
+			g.rect(9, 24, 46, 3, k);
+			g.rect(9, 37, 46, 3, k);
+			g.rect(25, 13, 3, 38, k);
+			g.rect(41, 13, 3, 38, k);
+		} else if (which.equals("map")) {
+			g.poly(new float[] { 4, 14, 21, 8, 21, 52, 4, 58 }, k);
+			g.poly(new float[] { 24, 8, 40, 14, 40, 58, 24, 52 }, a);
+			g.poly(new float[] { 43, 14, 60, 8, 60, 52, 43, 58 }, k);
+		} else if (which.equals("shield")) {
+			g.poly(new float[] { 32, 4, 56, 12, 54, 36, 32, 60, 10, 36, 8, 12 }, k);
+			g.poly(new float[] { 32, 9, 51, 15, 49, 35, 32, 54, 15, 35, 13, 15 }, p);
+			g.rect(29, 18, 6, 18, k);
+			g.rect(29, 40, 6, 6, k);
+		} else if (which.equals("check")) {
+			g.roundRect(6, 6, 52, 52, 8, k);
+			g.roundRect(9, 9, 46, 46, 6, p);
+			g.poly(new float[] { 15, 32, 21, 26, 29, 34, 45, 18, 51, 24, 29, 46 }, k);
+		} else if (which.equals("retry")) {
+			g.rect(22, 6, 4, 26, k);
+			g.poly(new float[] { 12, 28, 36, 28, 24, 42 }, k);
+			g.rect(6, 52, 52, 4, k);
+			g.poly(new float[] { 40, 10, 44, 6, 60, 22, 56, 26 }, a);
+			g.poly(new float[] { 56, 6, 60, 10, 44, 26, 40, 22 }, a);
+		} else if (which.equals("updnew")) {
+			g.arc(32, 32, 26, 0, 360, 4, k);
+			g.rect(30, 14, 4, 22, k);
+			g.poly(new float[] { 20, 32, 44, 32, 32, 46 }, k);
+		} else if (which.equals("wifi")) {
+			for (int i = 1; i <= 3; i++) g.arc(32, 52, i * 13, 225, 90, 5, i == 3 ? faint(k) : k);
+			g.roundRect(27, 47, 10, 10, 5, k);
+			ltext(true, 16, 40, 46, "6", k);
+		} else if (which.equals("wxicon")) {
+			WxIcon.draw(g, "partly-day", 2, 2, 60, 1, Theme.icon(dark));
+		} else if (which.equals("camera")) {
+			g.roundRect(16, 2, 32, 60, 7, k);
+			g.roundRect(19, 5, 26, 54, 5, p);
+			g.roundRect(29, 8, 6, 6, 3, k);
+			g.rect(21, 9, 6, 3, a);
+			g.rect(37, 9, 6, 3, a);
+		} else if (which.equals("tap")) {
+			g.arc(32, 22, 15, 0, 360, 3, a);
+			g.roundRect(27, 18, 10, 40, 5, k);
+			g.roundRect(37, 34, 9, 22, 4, k);
+			g.roundRect(18, 36, 9, 20, 4, k);
+		} else if (which.equals("info")) {
+			g.roundRect(4, 8, 56, 48, 8, k);
+			g.rect(4, 22, 56, 3, p);
+			g.roundRect(7, 25, 50, 28, 5, p);
+			ctext(true, 24, 25, 32, "i", k);
+		} else if (which.equals("row")) {
+			for (int i = 0; i < 3; i++) g.roundRect(4 + i * 20, 14, 16, 22, 4, k);
+			g.rect(14, 46, 36, 4, k);
+			g.poly(new float[] { 16, 40, 16, 56, 6, 48 }, k);
+			g.poly(new float[] { 48, 40, 48, 56, 58, 48 }, k);
+		} else if (which.equals("pages")) {
+			g.roundRect(4, 6, 24, 44, 5, k);
+			g.roundRect(7, 9, 18, 38, 3, p);
+			g.roundRect(36, 6, 24, 44, 5, k);
+			for (int i = 0; i < 3; i++) g.roundRect(20 + i * 10, 54, 6, 6, 3, i == 1 ? a : k);
+		} else if (which.equals("gear")) {
+			for (int i = 0; i < 8; i++) {
+				double r = Math.PI * i / 4;
+				g.roundRect(32 + (float) (21 * Math.cos(r)) - 6, 32 + (float) (21 * Math.sin(r)) - 6, 12, 12, 3, k);
+			}
+			g.roundRect(12, 12, 40, 40, 20, k);
+			g.roundRect(24, 24, 16, 16, 8, p);
+		} else if (which.equals("auto")) {
+			g.arc(32, 32, 22, -50, 290, 4, k);
+			g.poly(new float[] { 38, 4, 56, 16, 37, 24 }, k);
+			ctext(true, 22, 20, 32, "A", k);
+		} else if (which.equals("palette")) {
+			g.roundRect(4, 4, 56, 56, 28, k);
+			g.roundRect(8, 8, 48, 48, 24, p);
+			int[] ic = Theme.icon(dark);
+			g.roundRect(16, 16, 12, 12, 6, ic[0]);
+			g.roundRect(36, 14, 12, 12, 6, ic[1]);
+			g.roundRect(40, 34, 12, 12, 6, ic[2]);
+			g.roundRect(18, 36, 12, 12, 6, a);
+		} else if (which.equals("bellp")) {
+			menuIcon(g, "bell");
+			g.poly(new float[] { 46, 20, 52, 6, 62, 4, 58, 16 }, a);
+		} else if (which.equals("warn")) {
+			g.poly(new float[] { 32, 4, 61, 56, 3, 56 }, k);
+			g.poly(new float[] { 32, 14, 52, 51, 12, 51 }, p);
+			g.rect(30, 24, 4, 16, k);
+			g.rect(30, 44, 4, 4, k);
+		} else if (which.equals("sleep")) {
+			crescent(26, 36, 22, k, p);
+			ltext(true, 18, 4, 40, "z", k);
+			ltext(true, 14, 16, 50, "z", k);
+		} else if (which.equals("widgetplus")) {
+			g.roundRect(6, 6, 52, 22, 5, k);
+			g.roundRect(9, 9, 46, 16, 3, p);
+			g.roundRect(6, 34, 22, 24, 5, k);
+			g.rect(44, 34, 4, 24, a);
+			g.rect(34, 44, 24, 4, a);
+		} else if (which.equals("chart")) {
+			g.rect(4, 56, 56, 4, k);
+			int[] hs = { 18, 34, 26, 44 };
+			for (int i = 0; i < 4; i++) g.roundRect(7 + i * 13, 54 - hs[i], 10, hs[i], 2, i == 3 ? a : k);
+			for (int i = 0; i < 7; i++) g.rect(4 + i * 8, 28, 5, 3, a);
 		}
 	}
 

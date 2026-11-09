@@ -1,11 +1,13 @@
-Trenutačna verzija: v.3.80 · 9.11.2026
+Trenutačna verzija: v.3.90 · 9.11.2026
 AŽURIRANJA
 - Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
 - Prije ažuriranja provjera dopuštenja za instalaciju i napomena o Auto Blockeru (Samsung) s gumbom za postavke.
 GLAVNI ZASLON
+- Grafikon oborina: dodir objašnjava što prikazuje.
 - Ikona veze uz sat: Wi-Fi ili mobilni podaci s jačinom signala i vrstom (Wi-Fi 6, 5G…), ili bez interneta.
-- Ikone vremena: u bojama teme; velika se miče 3 sekunde.
+- Ikone vremena: u bojama teme; velika i one za dane miču se 3 sekunde, i nakon svakog osvježavanja.
+- Oborine 12 sati: kad kiša ili snijeg padaju samo dio vremena, okviri od 4 sata (Kiše ili Snijeg, sa satima) umjesto grafikona.
 - Polja INFORMACIJA u Europi: mraz, smrzavanje, magla, ledena kiša, jak vjetar.
 - Traka kamere: u uspravnom položaju sat, veza i datum stoje uz kameru (Android 9+).
 NAČIN RADA ZA POLJOPRIVREDNIKE
@@ -13,6 +15,7 @@ NAČIN RADA ZA POLJOPRIVREDNIKE
 - U SAD-u, u načinu za poljoprivrednike: polja NWS, Suša, Požar, Tuča.
 OBAVIJESTI
 - Obavijesti kao u aplikaciji Vrijeme na telefonu („Mjesto | Kiša”): kiša ili snijeg unutar sat vremena i nakon 20 h za sutra, za mjesto i parcele; bez obavijesti kad Open-Meteo ponovno odgovori.
+- Pri promjeni mjesta uklanjaju se obavijesti starog mjesta.
 - Zasebna obavijest INFORMACIJA i za mjesto.
 - Zasebne obavijesti OBAVIJEST za svaku parcelu: mraz, smrzavanje, magla, ledena kiša, jaki udari.
 PARCELE

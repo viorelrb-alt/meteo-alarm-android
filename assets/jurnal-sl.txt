@@ -1,15 +1,18 @@
-Trenutna različica: v.3.80 · 9.11.2026
+Trenutna različica: v.3.90 · 9.11.2026
 GLAVNI ZASLON
+- Graf padavin: dotik razloži, kaj prikazuje.
 - Ikona povezave ob uri: Wi-Fi ali mobilni podatki z močjo signala in vrsto (Wi-Fi 6, 5G…) ali brez interneta.
+- Padavine 12 ur: ko dežuje ali sneži le del časa, polja po 4 ure (Dež ali Sneg, z urami) namesto grafa.
 - Pas kamere: pokončno so ura, povezava in datum ob kameri (Android 9+).
 - Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.
-- Vremenske ikone: v barvah teme; velika se 3 sekunde premika.
+- Vremenske ikone: v barvah teme; velika in tiste pri dnevih se 3 sekunde premikajo, tudi po vsaki osvežitvi.
 KMETOVALSKI NAČIN
 - Kmetijski način: nova polja za Vodo v tleh: Škropljenje, Vodna bilanca, Nevihte, Toplotne vsote, 16 dni.
 - V ZDA v kmetijskem načinu: polja NWS, Suša, Požar, Toča.
 OBVESTILA
 - Ločena obvestila OBVESTILO za vsako parcelo: slana, zmrzal, megla, žled, močni sunki.
 - Ločeno obvestilo INFORMACIJA tudi za kraj.
+- Ob menjavi kraja se obvestila starega kraja odstranijo.
 - Obvestila kot v aplikaciji Vreme na telefonu (»Kraj | Dež«): dež ali sneg v naslednji uri in po 20. uri za jutri, za kraj in parcele; brez obvestila, ko Open-Meteo spet odgovori.
 PARCELE
 - Obvestila za parcele, izbrana z gumbom zvonec na zemljevidu: dež, veter, sneg, suša.

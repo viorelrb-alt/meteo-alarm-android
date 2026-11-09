@@ -1,13 +1,15 @@
-Súčasná verzia: v.3.80 · 9.11.2026
+Súčasná verzia: v.3.90 · 9.11.2026
 AKTUALIZÁCIE
 - Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
 - Pred aktualizáciou kontrola povolenia na inštaláciu a poznámka o Auto Blocker (Samsung) s tlačidlom do nastavení.
 HLAVNÁ OBRAZOVKA
+- Graf zrážok: ťuknutie vysvetlí, čo ukazuje.
 - Ikona pripojenia vedľa hodín: Wi-Fi alebo mobilné dáta so silou signálu a typom (Wi-Fi 6, 5G…), alebo bez internetu.
-- Ikony počasia: vo farbách motívu; veľká sa 3 sekundy hýbe.
+- Ikony počasia: vo farbách motívu; veľká a tie pri dňoch sa 3 sekundy hýbu, aj po každom obnovení.
 - Pás kamery: na výšku sú hodiny, pripojenie a dátum vedľa kamery (Android 9+).
 - Polia INFORMÁCIA v Európe: srieň, mráz, hmla, mrznúci dážď, silný vietor.
+- Zrážky 12 hodín: keď prší alebo sneží len časť času, polia po 4 hodiny (Dažde alebo Sneženie, s hodinami) namiesto grafu.
 MOTÍVY
 - 6 farebných motívov (Monochromatický, Šalvia, Levanduľa, Nebo, Broskyňa, Ruža), každý svetlý aj tmavý: ☰ › Motív.
 POZEMKY
@@ -17,6 +19,7 @@ REŽIM FARMÁRA
 - V USA v režime farmára: polia NWS, Sucho, Požiar, Krupobitie.
 UPOZORNENIA
 - Oznámenia ako v aplikácii Počasie v telefóne („Miesto | Dážď“): dážď alebo sneh počas hodiny a po 20. hodine na zajtra, pre obec aj parcely; žiadne oznámenie, keď Open-Meteo znova odpovie.
+- Pri zmene obce sa upozornenia starej obce odstránia.
 - Samostatné oznámenie INFORMÁCIA aj pre obec.
 - Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
 - Vylepšenia vzhľadu a opravy chýb.

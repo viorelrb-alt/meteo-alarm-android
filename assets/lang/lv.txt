@@ -851,8 +851,16 @@ Peach	Persiks
 Rose	Roze
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 krāsu motīvi: Vienkrāsaina, Salvija, Lavanda, Debesis, Persiks, Roze; zem līnijas Gaišs, Tumšs vai Automātisks (tālruņa sensors).
 Weather icons	Laika ikonas
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Tēmas krāsās; lielā kustas 3 sekundes, kad atveras ekrāns vai mainās laiks.
 Camera band	Kameras josla
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Portretā, tālruņos ar kameru ekrānā (Android 9+), pulkstenis, savienojums un datums ir blakus kamerai; apdzīvotajai vietai ir visa rinda.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Laika ikonas: “Coloured weather icons collection”, titusurya (magnific.com), bezmaksas vektori.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Blakus pulkstenim: Wi-Fi (loki) vai mobilie dati (stabiņi); pilnie loki vai stabiņi rāda signālu, mazais teksts – veidu (6 = Wi-Fi 6, 5G…). Cits tīkls: globuss; pārsvītrots bez interneta.
+What the chart shows	Ko rāda grafiks
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Viens stabiņš katrai no nākamajām 12 stundām; tā augstums ir lietus vai sniega varbūtība tajā stundā (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Krāsaini stabiņi: gaidāmi nokrišņi (varbūtība 50% vai vairāk vai vismaz 0,1 mm), sniega krāsā, kad snieg. Pelēki stabiņi: sauss.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Punktētā līnija atzīmē 50%; „tagad“ rāda pašreizējo laiku. Augšā: kad līst (no–līdz) un lielākā varbūtība.
+Precipitation chart	Nokrišņu grafiks
+A tap on the chart of the next 12 hours explains what it shows.	Pieskaroties nākamo 12 stundu grafikam, tiek paskaidrots, ko tas rāda.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Tēmas krāsās; lielā un dienu ikonas kustas 3 sekundes, kad atveras ekrāns, pēc katras atsvaidzināšanas vai kad mainās laiks.
+Rain spells	Lietus
+Snow spells	Sniegs

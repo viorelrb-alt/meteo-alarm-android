@@ -851,8 +851,16 @@ Peach	Péitseog
 Rose	Rós
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 théama datha: Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós; faoin líne Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
 Weather icons	Deilbhíní aimsire
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	I ndathanna an téama; bogann an ceann mór ar feadh 3 soicind nuair a osclaíonn an scáileán nó nuair a athraíonn an aimsir.
 Camera band	Banda an cheamara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Sa phortráid, ar fhóin leis an gceamara sa scáileán (Android 9+), tá an clog, an ceangal agus an dáta in aice leis an gceamara; tá an tsraith iomlán ag an mbaile.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Deilbhíní aimsire: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	In aice leis an gclog: Wi-Fi (stuanna) nó sonraí móibíleacha (barraí); taispeánann na stuanna nó na barraí lána an comhartha, an téacs beag an cineál (6 = Wi-Fi 6, 5G…). Líonra eile: cruinneog; trasnaithe gan idirlíon.
+What the chart shows	Cad a thaispeánann an chairt
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Barra amháin do gach ceann de na 12 uair an chloig eile; is é a airde an seans báistí nó sneachta san uair sin (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barraí daite: táthar ag súil le deascadh (seans 50% nó níos mó, nó 0.1 mm ar a laghad), i ndath an tsneachta nuair a chuireann sé sneachta. Barraí liatha: tirim.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Marcálann an líne phonc 50%; taispeánann „anois“ an t-am reatha. Ag an mbarr: cathain a bheidh báisteach (ó–go) agus an seans is airde.
+Precipitation chart	Cairt deascadh
+A tap on the chart of the next 12 hours explains what it shows.	Mínítear le tapáil ar chairt na 12 uair an chloig eile cad a thaispeánann sí.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	I ndathanna an téama; bogann an ceann mór agus deilbhíní na laethanta ar feadh 3 soicind nuair a osclaíonn an scáileán, tar éis gach athnuachana nó nuair a athraíonn an aimsir.
+Rain spells	Báisteach
+Snow spells	Sneachta

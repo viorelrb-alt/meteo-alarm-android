@@ -851,8 +851,16 @@ Peach	Pêche
 Rose	Rose
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 thèmes de couleur : Monochrome, Sauge, Lavande, Ciel, Pêche, Rose ; sous la ligne Clair, Sombre ou Automatique (capteur du téléphone).
 Weather icons	Icônes météo
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Aux couleurs du thème ; la grande bouge 3 secondes à l'ouverture de l'écran ou quand le temps change.
 Camera band	Bande de la caméra
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	En portrait, sur les téléphones avec la caméra dans l'écran (Android 9+), l'horloge, la connexion et la date sont à côté de la caméra ; la localité a toute la ligne.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Icônes météo : “Coloured weather icons collection”, titusurya (magnific.com), vecteurs gratuits.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Près de l'horloge : Wi-Fi (arcs) ou données mobiles (barres) ; les arcs ou barres pleins montrent le signal, le petit texte le type (6 = Wi-Fi 6, 5G…). Autre réseau : un globe ; barré sans internet.
+What the chart shows	Ce que montre le graphique
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Une barre pour chacune des 12 prochaines heures ; sa hauteur est la probabilité de pluie ou de neige pendant cette heure (0–100 %).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Barres colorées : précipitations prévues (probabilité de 50 % ou plus, ou au moins 0,1 mm), couleur neige quand il neige. Barres grises : sec.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	La ligne pointillée marque 50 % ; « maintenant » montre l'heure actuelle. En haut : quand il pleut (de–à) et la probabilité la plus haute.
+Precipitation chart	Graphique des précipitations
+A tap on the chart of the next 12 hours explains what it shows.	Un appui sur le graphique des 12 prochaines heures explique ce qu'il montre.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Aux couleurs du thème ; la grande et celles des jours bougent 3 secondes à l'ouverture de l'écran, après chaque actualisation ou quand le temps change.
+Rain spells	Pluie
+Snow spells	Neige

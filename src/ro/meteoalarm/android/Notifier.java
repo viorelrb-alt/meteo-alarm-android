@@ -255,6 +255,31 @@ final class Notifier {
 		if (e != null) e.apply();
 	}
 
+	/**
+	 * v3.90 (Viorel): another town was chosen: the notices of OLD (rain, warnings, information,
+	 * tomorrow; their titles start with "Town |") are removed. Parcels and earthquakes stay.
+	 */
+	static void clearTown(Context ctx, Cities.City old) {
+		try {
+			NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+			if (nm == null || Build.VERSION.SDK_INT < 23) return;
+			String a = old.name + " |", b = "⚠ " + old.name + " |";
+			int n = 0;
+			for (android.service.notification.StatusBarNotification sb : nm.getActiveNotifications()) {
+				int id = sb.getId();
+				CharSequence t = sb.getNotification().extras.getCharSequence(Notification.EXTRA_TITLE);
+				String title = t == null ? "" : t.toString();
+				if (id == 1 || id == 1500 || id == 1600 || title.startsWith(a) || title.startsWith(b)) {
+					nm.cancel(sb.getTag(), id);
+					n++;
+				}
+			}
+			if (n > 0) Log.i(ctx, "NOTIF", "localitate schimbată: " + n + " notificări pentru " + old.name + " șterse");
+		} catch (Exception e) {
+			Log.e(ctx, "NOTIF", "notificările vechi nu au putut fi șterse", e);
+		}
+	}
+
 	static void post(Context ctx, int id, String title, String body) {
 		post(ctx, id, title, body, false);
 	}

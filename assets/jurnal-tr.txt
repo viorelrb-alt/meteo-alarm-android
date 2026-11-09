@@ -1,13 +1,16 @@
-Geçerli sürüm: v.3.80 · 9.11.2026
+Geçerli sürüm: v.3.90 · 9.11.2026
 ANA EKRAN
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
-- Hava simgeleri: temanın renklerinde; büyük olan 3 saniye hareket eder.
+- Hava simgeleri: temanın renklerinde; büyük olan ve günlerinkiler 3 saniye hareket eder, her yenilemeden sonra da.
 - Kamera şeridi: dikeyde saat, bağlantı ve tarih kameranın yanında durur (Android 9+).
 - Saatin yanındaki bağlantı simgesi: sinyal gücü ve türüyle (Wi-Fi 6, 5G…) Wi-Fi veya mobil veri ya da internet yok.
+- Yağış 12 saat: yağmur veya kar yalnızca zamanın bir kısmında yağdığında, grafik yerine 4 saatlik kutular (Yağmurlar veya Kar yağışları, saatlerle).
+- Yağış grafiği: dokununca neyi gösterdiğini açıklar.
 BILDIRIMLER
 - Her parsel için ayrı BİLGİ bildirimleri: kırağı, don, sis, donan yağmur, kuvvetli hamleler.
 - Telefonun Hava Durumu uygulaması gibi bildirimler (“Yer | Yağmur”): bir saat içinde yağmur veya kar ve saat 20'den sonra yarın için, yerleşim yeri ve parseller için; Open-Meteo yeniden yanıt verdiğinde bildirim yok.
 - Yerleşim yeri için de ayrı bir BİLGİ bildirimi.
+- Yerleşim yerini değiştirdiğinizde eski yerin bildirimleri kaldırılır.
 ÇIFTÇI MODU
 - ABD'de, çiftçi modunda: NWS, Kuraklık, Yangın, Dolu kutuları.
 - Çiftçi modu: Topraktaki sudan sonra yeni kutular: İlaçlama, Su dengesi, Fırtınalar, Sıcaklık toplamı, 16 gün.

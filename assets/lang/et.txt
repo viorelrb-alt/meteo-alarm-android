@@ -851,8 +851,16 @@ Peach	Virsik
 Rose	Roos
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 värviteemat: Ühevärviline, Salvei, Lavendel, Taevas, Virsik, Roos; joone all Hele, Tume või Automaatne (telefoni andur).
 Weather icons	Ilmaikoonid
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Teema värvides; suur liigub 3 sekundit, kui ekraan avaneb või ilm muutub.
 Camera band	Kaamera riba
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Püstpaigutuses, ekraanis kaameraga telefonides (Android 9+), on kell, ühendus ja kuupäev kaamera kõrval; asulal on terve rida.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ilmaikoonid: “Coloured weather icons collection”, titusurya (magnific.com), tasuta vektorid.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Kella kõrval: Wi-Fi (kaared) või mobiilne andmeside (tulbad); täis kaared või tulbad näitavad signaali, väike tekst tüüpi (6 = Wi-Fi 6, 5G…). Muu võrk: gloobus; läbi kriipsutatud ilma internetita.
+What the chart shows	Mida graafik näitab
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Üks tulp iga järgmise 12 tunni kohta; selle kõrgus on vihma või lume tõenäosus sel tunnil (0–100%).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Värvilised tulbad: oodata on sademeid (tõenäosus 50% või rohkem või vähemalt 0,1 mm), lume värvi, kui sajab lund. Hallid tulbad: kuiv.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Punktiirjoon märgib 50%; „nüüd“ näitab praegust aega. Üleval: millal sajab (alates–kuni) ja suurim tõenäosus.
+Precipitation chart	Sademete graafik
+A tap on the chart of the next 12 hours explains what it shows.	Järgmise 12 tunni graafiku puudutamine selgitab, mida see näitab.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Teema värvides; suur ja päevade omad liiguvad 3 sekundit, kui ekraan avaneb, pärast iga värskendust või kui ilm muutub.
+Rain spells	Vihm
+Snow spells	Lumi

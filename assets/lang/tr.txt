@@ -785,8 +785,16 @@ Peach	Şeftali
 Rose	Gül
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 renk teması: Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül; çizginin altında Açık, Koyu veya Otomatik (telefon sensörü).
 Weather icons	Hava simgeleri
-In the theme's colours; the big one moves for 3 seconds when the screen opens or the weather changes.	Temanın renklerinde; büyük olan ekran açılınca veya hava değişince 3 saniye hareket eder.
 Camera band	Kamera şeridi
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Dikeyde, kamerası ekranda olan telefonlarda (Android 9+), saat, bağlantı ve tarih kameranın yanında durur; yerleşim yeri tüm satırı kullanır.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Hava simgeleri: “Coloured weather icons collection”, titusurya (magnific.com), ücretsiz vektörler.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Saatin yanında: Wi-Fi (yaylar) veya mobil veri (çubuklar); dolu yaylar veya çubuklar sinyali, küçük yazı türü gösterir (6 = Wi-Fi 6, 5G…). Başka ağ: küre; internet yokken üstü çizili.
+What the chart shows	Grafik neyi gösterir
+One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Sonraki 12 saatin her biri için bir çubuk; yüksekliği o saatte yağmur veya kar olasılığıdır (%0–100).
+Coloured bars: precipitation expected (a chance of 50% or more, or at least 0.1 mm), in the snow colour when it snows. Grey bars: dry.	Renkli çubuklar: yağış bekleniyor (%50 veya daha fazla olasılık ya da en az 0,1 mm), kar yağarken kar renginde. Gri çubuklar: kuru.
+The dotted line marks 50%; “now” shows the current time. On top: when it rains (from–to) and the highest chance.	Noktalı çizgi %50'yi gösterir; “şimdi” şu anki saati gösterir. Üstte: ne zaman yağdığı (–den –e) ve en yüksek olasılık.
+Precipitation chart	Yağış grafiği
+A tap on the chart of the next 12 hours explains what it shows.	Sonraki 12 saatin grafiğine dokunmak neyi gösterdiğini açıklar.
+In the theme's colours; the big one and those of the days move for 3 seconds when the screen opens, after every refresh or when the weather changes.	Temanın renklerinde; büyük olan ve günlerinkiler ekran açılınca, her yenilemeden sonra veya hava değişince 3 saniye hareket eder.
+Rain spells	Yağmurlar
+Snow spells	Kar yağışları

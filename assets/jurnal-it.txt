@@ -1,4 +1,4 @@
-Versione attuale: v.3.80 · 9.11.2026
+Versione attuale: v.3.90 · 9.11.2026
 AGGIORNAMENTI
 - Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
@@ -9,14 +9,17 @@ MODALITÀ AGRICOLTORE
 NOTIFICHE
 - Notifiche come l'app Meteo del telefono («Luogo | Pioggia»): pioggia o neve entro un'ora e, dopo le 20, per domani, per la località e le parcelle; nessun avviso quando Open-Meteo risponde di nuovo.
 - Notifiche INFORMAZIONE separate per ogni appezzamento: brina, gelo, nebbia, pioggia gelata, raffiche forti.
+- Quando cambi località, le notifiche della vecchia vengono rimosse.
 - Una notifica INFORMAZIONE a parte anche per la località.
 PARTICELLE
 - Notifiche delle particelle, scelte con il pulsante campanella sulla mappa: pioggia, vento, neve, siccità.
 SCHERMATA PRINCIPALE
 - Caselle INFORMAZIONE in Europa: brina, gelo, nebbia, pioggia che gela, vento forte.
 - Fascia della fotocamera: in verticale orologio, connessione e data stanno accanto alla fotocamera (Android 9+).
+- Grafico delle precipitazioni: un tocco spiega cosa mostra.
 - Icona della connessione accanto all'orologio: Wi-Fi o dati mobili con la potenza del segnale e il tipo (Wi-Fi 6, 5G…), o senza internet.
-- Icone meteo: nei colori del tema; quella grande si muove per 3 secondi.
+- Icone meteo: nei colori del tema; quella grande e quelle dei giorni si muovono per 3 secondi, anche dopo ogni aggiornamento.
+- Precipitazioni 12 ore: quando piove o nevica solo per parte del tempo, caselle di 4 ore (Piogge o Nevicate, con gli orari) al posto del grafico.
 TEMI
 - 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ☰ › Tema.
 - Miglioramenti del design e correzioni di errori.
