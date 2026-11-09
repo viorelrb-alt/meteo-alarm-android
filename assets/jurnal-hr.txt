@@ -1,5 +1,10 @@
-Trenutačna verzija: v.3.03 · 8.11.2026
+Trenutačna verzija: v.3.10 · 9.11.2026
 Poboljšanja izgleda / strukture.
+- Način rada za poljoprivrednike: nova polja nakon Vode u tlu: Prskanje, Vodna bilanca, Oluje, Toplinske jedinice, 16 dana.
+- U SAD-u, u načinu za poljoprivrednike: polja NWS, Suša, Požar, Tuča.
+- Gumb „Statistika · PDF” na karti parcela i na zaslonu svake parcele.
+- Polja INFORMACIJA u Europi: mraz, smrzavanje, magla, ledena kiša, jak vjetar.
+- Ažuriranja iz tri izvora: GitHub, drugi GitHub poslužitelj i Google Drive.
 - Ikona veze pokraj sata: Wi-Fi, mobilni podaci ili bez veze.
 - Ažuriranja: najprije se provjerava veza, već preuzeta verzija odmah se instalira, do 5 pokušaja kad GitHub ne odgovara, i prikazuje se razlog.
 

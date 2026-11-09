@@ -1,5 +1,10 @@
-Huidige versie: v.3.03 · 8.11.2026
+Huidige versie: v.3.10 · 9.11.2026
 Verbeteringen in ontwerp / structuur.
+- Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
+- In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.
+- De knop “Statistiek · PDF” op de perceelkaart en op het scherm van elk perceel.
+- INFORMATIE-vakken in Europa: rijp, vorst, mist, ijzel, harde wind.
+- Updates uit drie bronnen: GitHub, een tweede GitHub-server en Google Drive.
 - Verbindingspictogram naast de klok: wifi, mobiele data of geen.
 - Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.
 

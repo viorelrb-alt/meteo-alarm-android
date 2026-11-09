@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Uuendust ei saanud ühestki serverist alla laadida. Proovi mõne minuti pärast uuesti.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	☰ esimene rida vahetab režiimi. Põllumehe režiimis on iga tund üks lai kast ilma ja vihmaga; rõhtsalt kaks kasti üksteise all, mida libistatakse üles-alla. Teise koha valimine viib tagasi tavarežiimi.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Rakendus kontrollib esmalt internetti, siis otsib GitHubist, teisest GitHubi serverist ja Google Drive'ist ning laadib alla esimesest, mis vastab. Juba alla laaditud versioon paigaldatakse kohe.
+ (forecast)	 (prognoos)
+ after day 7	 pärast 7. päeva
+16 DAYS	16 PÄEVA
+7 days: rain − evaporation	7 päeva: vihm − aurumine
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Pärast Vesi mullas: PRITSIMINE (tuul, vihm, kuumus), VEEBILANSS (vihm miinus aurumine, 7 päeva), TORMID, KRAADPÄEVAD, 16 PÄEVA. Puudutus selgitab igaüht.
+By week	Nädalate kaupa
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE on energia, mida torm saab õhust võtta: alla 300 J/kg madal, 300–1000 mõõdukas, 1000–2500 kõrge, sellest üle väga kõrge.
+Day   high / low · rain	Päev   max / min · vihm
+Day   rain · ET0	Päev   vihm · ET0
+Farmer boxes	Põllumehe kastid
+Farmer boxes in the US	Põllumehe kastid USA-s
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	USA linna puhul lisaks: NWS (ametlik prognoos), DROUGHT (US Drought Monitor), FIRE ja HAIL (teated 50 km raadiuses).
+GROWING DEGREES	KRAADPÄEVAD
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Hea: tuul 3–15 km/h, puhangud alla 25, 2 tundi vihmata, alla 28°, õhuniiskus üle 40%.
+Growing degree days	Kasvukraadpäevad
+NO	EI
+Next 24 hours	Järgmised 24 tundi
+Next 24 hours, every 3 hours	Järgmised 24 tundi, iga 3 tunni järel
+Rain in 24 hours: 	Vihm 24 tunniga: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Vihm miinus vesi, mida muld ja taimed eraldavad (evapotranspiratsioon ET0, FAO): alla nulli muld kuivab.
+SPRAYING	PRITSIMINE
+STORMS	TORMID
+Spraying window	Pritsimise aken
+Statistics of which parcel?	Millise põllu statistika?
+Statistics · PDF	Statistika · PDF
+Storm risk	Tormioht
+The model's outlook: the second week is less certain than the first.	Mudeli väljavaade: teine nädal on ebakindlam kui esimene.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Kultuuride kogutud soojus: iga päev max ja min keskmine (10 ja 30 °C vahel) miinus 10. Mais vajab külvist valmimiseni umbes 1300–1500.
+Trend for 16 days	16 päeva suundumus
+WATER BALANCE	VEEBILANSS
+Water balance	Veebilanss
+YES	JAH
+base 	alus 
+colder	külmem
+dry air	kuiv õhk
+good from 	hea alates 
+highest at 	kõrgeim kell 
+last 	viimased 
+next 24 h	järgmised 24 h
+not in 24 h	mitte 24 h jooksul
+similar	sarnane
+too hot	liiga palav
+too little wind	liiga vähe tuult
+too much wind	liiga palju tuult
+very high	väga kõrge
+warmer	soojem
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Selge ja tuulevaikne öö 3° või vähemaga: võib tekkida härmatis, mis kõrvetab õrnu taimi.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Sinised TEAVE-kastid hoiatuste järel: härmatis, öökülm (kevad ja sügis), udu, jäide, tugev tuul järgmise 24 tunni jooksul. Rakendus arvutab need prognoosist, nagu NWS-i teated; need pole ametlikud.
+FREEZE	ÖÖKÜLM
+FREEZING FOG	JÄÄTUV UDU
+FREEZING RAIN	JÄIDE
+FROST	HÄRMATIS
+Fog for several hours: visibility can drop a lot. Drive carefully.	Udu mitu tundi: nähtavus võib palju langeda. Sõida ettevaatlikult.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Udu, mis jätab puudele, juhtmetele ja teedele kirme: halb nähtavus ja libedad kohad.
+INFORMATION	TEAVE
+Information	Teave
+Information boxes	Teabekastid
+Interval: 	Ajavahemik: 
+Lowest: 	Madalaim: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Vihm või uduvihm, mis maas jäätub: libedad teed ja kõnniteed, jää taimedel ja juhtmetel.
+STRONG WIND	TUGEV TUUL
+Shown only in spring (March–May) and autumn (September–November).	Ainult kevadel (märts–mai) ja sügisel (september–november).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Tugevad puhangud: kinnita lahtised esemed, hoia eemale langevatest okstest; pole pritsimise aeg.
+Strongest gust: 	Tugevaim puhang: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperatuur −2° ja madalam: katmata kultuurid, õied ja köögiviljad võivad külmuda.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Rakendus arvutas Open-Meteo prognoosist, nagu NWS-i teated USA-s; see pole ametlik hoiatus.
+good	hea
+high	kõrge
+low	madal
+until 	kuni 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Põllud: kaart näitab kõiki maatükke; nõela või maatüki puudutus avab selle põhiekraanil. „Salvesta GPS-koht“ salvestab koha, kus seisad, „Vali kaardilt“ töötab ka kodust; GPS-nupp näitab, kus oled (sinine täpp). Muuda (või pliiats) muudab nime ja nõela. Jäävad ainult sellesse telefoni. „Statistika · PDF” (kaardil ja põllu põhiekraanil) avab selle statistika.

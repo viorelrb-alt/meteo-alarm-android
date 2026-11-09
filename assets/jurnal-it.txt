@@ -1,5 +1,10 @@
-Versione attuale: v.3.03 · 8.11.2026
+Versione attuale: v.3.10 · 9.11.2026
 Miglioramenti di design / struttura.
+- Modalità agricoltore: nuove caselle dopo Acqua nel suolo: Irrorazione, Bilancio idrico, Temporali, Gradi-giorno, 16 giorni.
+- Negli USA, in modalità agricoltore: le caselle NWS, Siccità, Incendio, Grandine.
+- Il pulsante «Statistica · PDF» sulla mappa degli appezzamenti e sulla schermata di ciascuno.
+- Caselle INFORMAZIONE in Europa: brina, gelo, nebbia, pioggia che gela, vento forte.
+- Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Icona della connessione accanto all’orologio: Wi-Fi, dati mobili o nessuna.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
 

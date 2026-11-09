@@ -1,5 +1,10 @@
-Current version: v.3.03 · 8.11.2026
+Current version: v.3.10 · 9.11.2026
 Design / structure improvements.
+- Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
+- In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
+- The “Statistics · PDF” button on the parcels' map and on each parcel's screen.
+- INFORMATION boxes in Europe: frost, freeze, fog, freezing rain, strong wind.
+- Updates from three sources: GitHub, a second GitHub server and Google Drive.
 - Connection icon next to the clock: Wi-Fi, mobile data or none.
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
 

@@ -1,5 +1,10 @@
-Aktuelle Version: v.3.03 · 8.11.2026
+Aktuelle Version: v.3.10 · 9.11.2026
 Verbesserungen an Design / Struktur.
+- Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.
+- In den USA, im Landwirt-Modus: die Felder NWS, Dürre, Brand, Hagel.
+- Die Schaltfläche „Statistik · PDF“ auf der Parzellenkarte und auf dem Bildschirm jeder Parzelle.
+- HINWEIS-Felder in Europa: Reif, Frost, Nebel, gefrierender Regen, starker Wind.
+- Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
 - Verbindungssymbol neben der Uhr: WLAN, mobile Daten oder keine.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.
 

@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Актуализацията не можа да се изтегли от никой сървър. Опитай пак след няколко минути.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Първият ред в ☰ сменя режима. В режим „Фермер“ всеки час е едно широко поле с времето и валежите; хоризонтално две полета едно под друго, плъзгани нагоре-надолу. Изборът на друго населено място връща нормалния режим.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Приложението първо проверява интернета, после търси в GitHub, на втори сървър на GitHub и в Google Drive и изтегля от първия, който отговори. Вече изтеглена версия се инсталира веднага.
+ (forecast)	 (прогноза)
+ after day 7	 след 7-ия ден
+16 DAYS	16 ДНИ
+7 days: rain − evaporation	7 дни: дъжд − изпарение
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	След Вода в почвата: ПРЪСКАНЕ (вятър, дъжд, жега), ВОДЕН БАЛАНС (дъжд минус изпарение, 7 дни), БУРИ, ГРАДУСОДНИ, 16 ДНИ. Докосването обяснява всяка.
+By week	По седмици
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE е енергията, която бурята може да вземе от въздуха: под 300 J/kg ниска, 300–1000 умерена, 1000–2500 висока, над това много висока.
+Day   high / low · rain	Ден   макс / мин · дъжд
+Day   rain · ET0	Ден   дъжд · ET0
+Farmer boxes	Кутиите на фермера
+Farmer boxes in the US	Кутиите на фермера в САЩ
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	За град в САЩ още: NWS (официална прогноза), DROUGHT (US Drought Monitor), FIRE и HAIL (доклади в радиус 50 km).
+GROWING DEGREES	ГРАДУСОДНИ
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Добре: вятър 3–15 km/h, пориви под 25, без дъжд 2 часа, под 28°, влажност на въздуха над 40%.
+Growing degree days	Градусодни на растеж
+NO	НЕ
+Next 24 hours	Следващите 24 часа
+Next 24 hours, every 3 hours	Следващите 24 часа, през 3 часа
+Rain in 24 hours: 	Дъжд за 24 часа: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Дъждът минус водата, която почвата и растенията отдават (евапотранспирация ET0, FAO): под нула почвата изсъхва.
+SPRAYING	ПРЪСКАНЕ
+STORMS	БУРИ
+Spraying window	Прозорец за пръскане
+Statistics of which parcel?	Статистиката на коя парцела?
+Statistics · PDF	Статистика · PDF
+Storm risk	Риск от буря
+The model's outlook: the second week is less certain than the first.	Перспективата на модела: втората седмица е по-несигурна от първата.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Топлината, събрана от културите: всеки ден средното от макс и мин (между 10 и 30 °C) минус 10. Царевицата иска около 1300–1500 от сеитбата до узряването.
+Trend for 16 days	Тенденция за 16 дни
+WATER BALANCE	ВОДЕН БАЛАНС
+Water balance	Воден баланс
+YES	ДА
+base 	база 
+colder	по-студено
+dry air	сух въздух
+good from 	добре от 
+highest at 	най-високо в 
+last 	последните 
+next 24 h	следващите 24 h
+not in 24 h	не в 24 h
+similar	подобно
+too hot	твърде горещо
+too little wind	твърде слаб вятър
+too much wind	твърде силен вятър
+very high	много висок
+warmer	по-топло
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Ясна, тиха нощ с 3° или по-малко: може да падне слана, която изгаря нежните растения.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Сини кутии ИНФОРМАЦИЯ след предупрежденията: слана, замръзване (пролет и есен), мъгла, поледица, силен вятър през следващите 24 часа. Изчислени от приложението от прогнозата, като съобщенията на NWS; не са официални.
+FREEZE	ЗАМРЪЗВАНЕ
+FREEZING FOG	МЪГЛА СЪС СКРЕЖ
+FREEZING RAIN	ПОЛЕДИЦА
+FROST	СЛАНА
+Fog for several hours: visibility can drop a lot. Drive carefully.	Мъгла няколко часа: видимостта може силно да спадне. Карайте внимателно.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Мъгла, която оставя скреж по дърветата, жиците и пътищата: слаба видимост и хлъзгави места.
+INFORMATION	ИНФОРМАЦИЯ
+Information	Информация
+Information boxes	Информационни кутии
+Interval: 	Интервал: 
+Lowest: 	Минимум: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Дъжд или ръмеж, които замръзват на земята: хлъзгави пътища и тротоари, лед по растенията и жиците.
+STRONG WIND	СИЛЕН ВЯТЪР
+Shown only in spring (March–May) and autumn (September–November).	Показва се само през пролетта (март–май) и есента (септември–ноември).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Силни пориви: закрепете предметите, пазете се от падащи клони; не е време за пръскане.
+Strongest gust: 	Най-силен порив: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Температури от −2° и по-ниски: незащитените култури, цветове и зеленчуци могат да замръзнат.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Изчислено от приложението от прогнозата на Open-Meteo, като съобщенията на NWS в САЩ; не е официално предупреждение.
+good	добре
+high	висок
+low	нисък
+until 	до 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Парцели: картата показва всички парцели; докосване на карфица или на парцел го отваря на главния екран. „Запази GPS място“ запазва мястото, където стоиш, „Избери на картата“ работи и от вкъщи; бутонът GPS показва къде си (синята точка). Редактиране (или моливът) променя името и карфицата. Остават само на този телефон. „Статистика · PDF“ (на картата и на главния екран на парцела) отваря статистиката му.

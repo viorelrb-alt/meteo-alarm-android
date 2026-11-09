@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Η ενημέρωση δεν μπόρεσε να ληφθεί από κανέναν διακομιστή. Δοκίμασε ξανά σε λίγα λεπτά.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Η πρώτη γραμμή του ☰ αλλάζει τη λειτουργία. Στη λειτουργία αγρότη κάθε ώρα είναι ένα φαρδύ πλαίσιο με τον καιρό και τη βροχή· σε οριζόντια θέση δύο πλαίσια το ένα κάτω από το άλλο, που σύρονται πάνω-κάτω. Η επιλογή άλλης τοποθεσίας επιστρέφει στην κανονική λειτουργία.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Η εφαρμογή ελέγχει πρώτα το διαδίκτυο, μετά ψάχνει στο GitHub, σε δεύτερο διακομιστή του GitHub και στο Google Drive και κατεβάζει από τον πρώτο που απαντά. Μια έκδοση που έχει ήδη ληφθεί εγκαθίσταται αμέσως.
+ (forecast)	 (πρόγνωση)
+ after day 7	 μετά την 7η ημέρα
+16 DAYS	16 ΗΜΕΡΕΣ
+7 days: rain − evaporation	7 ημέρες: βροχή − εξάτμιση
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Μετά το Νερό στο έδαφος: ΨΕΚΑΣΜΟΣ (άνεμος, βροχή, ζέστη), ΙΣΟΖΥΓΙΟ ΝΕΡΟΥ (βροχή μείον εξάτμιση, 7 ημέρες), ΚΑΤΑΙΓΙΔΕΣ, ΒΑΘΜΟΗΜΕΡΕΣ, 16 ΗΜΕΡΕΣ. Το άγγιγμα εξηγεί το καθένα.
+By week	Ανά εβδομάδα
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	Το CAPE είναι η ενέργεια που μπορεί να αντλήσει μια καταιγίδα από τον αέρα: κάτω από 300 J/kg χαμηλό, 300–1000 μέτριο, 1000–2500 υψηλό, πάνω από αυτό πολύ υψηλό.
+Day   high / low · rain	Ημέρα   μέγ / ελάχ · βροχή
+Day   rain · ET0	Ημέρα   βροχή · ET0
+Farmer boxes	Πλαίσια του αγρότη
+Farmer boxes in the US	Πλαίσια του αγρότη στις ΗΠΑ
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Για πόλη στις ΗΠΑ επιπλέον: NWS (επίσημη πρόγνωση), DROUGHT (US Drought Monitor), FIRE και HAIL (αναφορές σε ακτίνα 50 km).
+GROWING DEGREES	ΒΑΘΜΟΗΜΕΡΕΣ
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Καλό: άνεμος 3–15 km/h, ριπές κάτω από 25, χωρίς βροχή για 2 ώρες, κάτω από 28°, υγρασία αέρα πάνω από 40%.
+Growing degree days	Βαθμοημέρες ανάπτυξης
+NO	ΟΧΙ
+Next 24 hours	Οι επόμενες 24 ώρες
+Next 24 hours, every 3 hours	Οι επόμενες 24 ώρες, ανά 3 ώρες
+Rain in 24 hours: 	Βροχή σε 24 ώρες: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Η βροχή μείον το νερό που αποδίδουν το έδαφος και τα φυτά (εξατμισοδιαπνοή ET0, FAO): κάτω από το μηδέν το έδαφος ξεραίνεται.
+SPRAYING	ΨΕΚΑΣΜΟΣ
+STORMS	ΚΑΤΑΙΓΙΔΕΣ
+Spraying window	Παράθυρο ψεκασμού
+Statistics of which parcel?	Στατιστικά ποιου αγροτεμαχίου;
+Statistics · PDF	Στατιστικά · PDF
+Storm risk	Κίνδυνος καταιγίδας
+The model's outlook: the second week is less certain than the first.	Η προοπτική του μοντέλου: η δεύτερη εβδομάδα είναι λιγότερο βέβαιη από την πρώτη.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Η θερμότητα που μάζεψαν οι καλλιέργειες: κάθε ημέρα ο μέσος όρος μέγιστης και ελάχιστης (μεταξύ 10 και 30 °C) μείον 10. Το καλαμπόκι θέλει περίπου 1300–1500 από τη σπορά ως την ωρίμανση.
+Trend for 16 days	Τάση για 16 ημέρες
+WATER BALANCE	ΙΣΟΖΥΓΙΟ ΝΕΡΟΥ
+Water balance	Ισοζύγιο νερού
+YES	ΝΑΙ
+base 	βάση 
+colder	πιο κρύο
+dry air	ξηρός αέρας
+good from 	καλό από 
+highest at 	μέγιστο στις 
+last 	τελευταίες 
+next 24 h	επόμενες 24 ώ
+not in 24 h	όχι σε 24 ώ
+similar	παρόμοιο
+too hot	πολύ ζέστη
+too little wind	πολύ λίγος άνεμος
+too much wind	πολύς άνεμος
+very high	πολύ υψηλός
+warmer	πιο ζεστό
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Αίθρια νύχτα χωρίς άνεμο με 3° ή λιγότερο: μπορεί να πέσει πάχνη που καίει τα ευαίσθητα φυτά.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Μπλε πλαίσια ΕΝΗΜΕΡΩΣΗ μετά τις προειδοποιήσεις: πάχνη, παγετός (άνοιξη και φθινόπωρο), ομίχλη, παγωμένη βροχή, ισχυρός άνεμος τις επόμενες 24 ώρες. Υπολογίζονται από την εφαρμογή από την πρόγνωση, όπως οι ενημερώσεις της NWS· δεν είναι επίσημα.
+FREEZE	ΠΑΓΕΤΟΣ
+FREEZING FOG	ΠΑΓΩΜΕΝΗ ΟΜΙΧΛΗ
+FREEZING RAIN	ΠΑΓΩΜΕΝΗ ΒΡΟΧΗ
+FROST	ΠΑΧΝΗ
+Fog for several hours: visibility can drop a lot. Drive carefully.	Ομίχλη για αρκετές ώρες: η ορατότητα μπορεί να πέσει πολύ. Οδηγείτε προσεκτικά.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Ομίχλη που αφήνει πάχνη σε δέντρα, καλώδια και δρόμους: κακή ορατότητα και ολισθηρά σημεία.
+INFORMATION	ΕΝΗΜΕΡΩΣΗ
+Information	Ενημέρωση
+Information boxes	Πλαίσια ενημέρωσης
+Interval: 	Διάστημα: 
+Lowest: 	Ελάχιστη: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Βροχή ή ψιχάλα που παγώνει στο έδαφος: ολισθηροί δρόμοι και πεζοδρόμια, πάγος σε φυτά και καλώδια.
+STRONG WIND	ΙΣΧΥΡΟΣ ΑΝΕΜΟΣ
+Shown only in spring (March–May) and autumn (September–November).	Εμφανίζεται μόνο την άνοιξη (Μάρτιος–Μάιος) και το φθινόπωρο (Σεπτέμβριος–Νοέμβριος).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Ισχυρές ριπές: στερεώστε τα αντικείμενα, προσοχή σε κλαδιά που πέφτουν· δεν είναι ώρα για ψεκασμό.
+Strongest gust: 	Ισχυρότερη ριπή: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Θερμοκρασίες −2° και χαμηλότερα: απροστάτευτες καλλιέργειες, άνθη και λαχανικά μπορεί να παγώσουν.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Υπολογίζεται από την εφαρμογή από την πρόγνωση Open-Meteo, όπως οι ενημερώσεις της NWS στις ΗΠΑ· δεν είναι επίσημη προειδοποίηση.
+good	καλό
+high	υψηλός
+low	χαμηλός
+until 	έως 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης δείχνει όλα τα αγροτεμάχια· ένα άγγιγμα σε καρφίτσα ή σε αγροτεμάχιο το ανοίγει στην κύρια οθόνη. «Αποθήκευση θέσης GPS» αποθηκεύει το σημείο όπου στέκεσαι, «Επιλογή στον χάρτη» λειτουργεί και από το σπίτι· το κουμπί GPS δείχνει πού είσαι (μπλε κουκκίδα). Επεξεργασία (ή το μολύβι) αλλάζει το όνομα και την καρφίτσα. Μένουν μόνο σε αυτό το τηλέφωνο. Το «Στατιστικά · PDF» (στον χάρτη και στην κύρια οθόνη ενός αγροτεμαχίου) ανοίγει τα στατιστικά του.

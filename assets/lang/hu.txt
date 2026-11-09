@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	A frissítést egyik szerverről sem sikerült letölteni. Próbáld újra néhány perc múlva.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	A ☰ első sora módot vált. Gazda módban minden óra egy széles mező az időjárással és az esővel; fekvő helyzetben két mező egymás alatt, fel-le görgethetők. Másik település választása visszavált normál módba.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Az alkalmazás először az internetet ellenőrzi, majd a GitHubon, egy második GitHub-szerveren és a Google Drive-on keres, és az elsőről tölt le, amelyik válaszol. A már letöltött verzió azonnal települ.
+ (forecast)	 (előrejelzés)
+ after day 7	 a 7. nap után
+16 DAYS	16 NAP
+7 days: rain − evaporation	7 nap: eső − párolgás
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	A Víz a talajban után: PERMETEZÉS (szél, eső, hőség), VÍZMÉRLEG (eső mínusz párolgás, 7 nap), VIHAROK, HŐÖSSZEG, 16 NAP. Érintésre mindegyik elmagyarázza magát.
+By week	Hetenként
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	A CAPE az az energia, amit egy vihar a levegőből nyerhet: 300 J/kg alatt alacsony, 300–1000 mérsékelt, 1000–2500 magas, felette nagyon magas.
+Day   high / low · rain	Nap   max / min · eső
+Day   rain · ET0	Nap   eső · ET0
+Farmer boxes	A gazda mezői
+Farmer boxes in the US	A gazda mezői az USA-ban
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Egyesült államokbeli településnél még: NWS (hivatalos előrejelzés), DROUGHT (US Drought Monitor), FIRE és HAIL (jelentések 50 km-en belül).
+GROWING DEGREES	HŐÖSSZEG
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Jó: szél 3–15 km/h, széllökés 25 alatt, 2 órán át nincs eső, 28° alatt, légnedvesség 40% felett.
+Growing degree days	Növekedési hőösszeg
+NO	NEM
+Next 24 hours	A következő 24 óra
+Next 24 hours, every 3 hours	A következő 24 óra, 3 óránként
+Rain in 24 hours: 	Eső 24 óra alatt: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Az eső mínusz a talaj és a növények által leadott víz (evapotranszspiráció ET0, FAO): nulla alatt a talaj szárad.
+SPRAYING	PERMETEZÉS
+STORMS	VIHAROK
+Spraying window	Permetezési ablak
+Statistics of which parcel?	Melyik parcella statisztikája?
+Statistics · PDF	Statisztika · PDF
+Storm risk	Viharveszély
+The model's outlook: the second week is less certain than the first.	A modell kilátása: a második hét bizonytalanabb, mint az első.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	A növények által gyűjtött hő: naponta a maximum és minimum átlaga (10 és 30 °C között tartva) mínusz 10. A kukoricának vetéstől érésig kb. 1300–1500 kell.
+Trend for 16 days	16 napos irányzat
+WATER BALANCE	VÍZMÉRLEG
+Water balance	Vízmérleg
+YES	IGEN
+base 	alap 
+colder	hidegebb
+dry air	száraz levegő
+good from 	jó ettől: 
+highest at 	legmagasabb: 
+last 	utolsó 
+next 24 h	következő 24 h
+not in 24 h	nem 24 h-n belül
+similar	hasonló
+too hot	túl meleg
+too little wind	túl gyenge szél
+too much wind	túl erős szél
+very high	nagyon magas
+warmer	melegebb
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Derült, szélcsendes éjszaka 3° vagy kevesebb fokkal: dér képződhet, ami megperzseli az érzékeny növényeket.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Kék TÁJÉKOZTATÁS mezők a figyelmeztetések után: dér, fagy (tavasszal és ősszel), köd, ónos eső, erős szél a következő 24 órában. Az alkalmazás számolja az előrejelzésből, mint az NWS tájékoztatói; nem hivatalosak.
+FREEZE	FAGY
+FREEZING FOG	ZÚZMARÁS KÖD
+FREEZING RAIN	ÓNOS ESŐ
+FROST	DÉR
+Fog for several hours: visibility can drop a lot. Drive carefully.	Több órán át köd: a látótávolság nagyon lecsökkenhet. Óvatosan vezessen.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Köd, amely zúzmarát hagy a fákon, vezetékeken és utakon: rossz látás és csúszós helyek.
+INFORMATION	TÁJÉKOZTATÁS
+Information	Tájékoztatás
+Information boxes	Tájékoztató mezők
+Interval: 	Időszak: 
+Lowest: 	Legalacsonyabb: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Eső vagy szitálás, amely a talajon megfagy: csúszós utak és járdák, jég a növényeken és vezetékeken.
+STRONG WIND	ERŐS SZÉL
+Shown only in spring (March–May) and autumn (September–November).	Csak tavasszal (március–május) és ősszel (szeptember–november).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Erős széllökések: rögzítse a tárgyakat, vigyázzon a lehulló ágakra; nem permetezési idő.
+Strongest gust: 	Legerősebb széllökés: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	−2° és alacsonyabb hőmérséklet: a takaratlan kultúrák, virágok és zöldségek elfagyhatnak.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Az alkalmazás számolta az Open-Meteo előrejelzéséből, mint az NWS tájékoztatói az USA-ban; nem hivatalos figyelmeztetés.
+good	jó
+high	magas
+low	alacsony
+until 	eddig: 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Parcellák: a térkép az összes parcellát mutatja; egy tűre vagy parcellára koppintva megnyílik a főképernyőn. A „GPS-hely mentése” elmenti a helyet, ahol állsz, a „Választás a térképen” otthonról is megy; a GPS gomb mutatja, hol vagy (kék pont). A Szerkesztés (vagy a ceruza) a nevet és a tűt módosítja. Csak ezen a telefonon maradnak. A „Statisztika · PDF” (a térképen és egy parcella főképernyőjén) megnyitja a statisztikáját.

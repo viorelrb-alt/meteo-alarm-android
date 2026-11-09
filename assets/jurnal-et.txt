@@ -1,5 +1,10 @@
-Praegune versioon: v.3.03 · 8.11.2026
+Praegune versioon: v.3.10 · 9.11.2026
 Kujunduse / ülesehituse parandused.
+- Põllumehe režiim: uued kastid pärast Vesi mullas: Pritsimine, Veebilanss, Tormid, Kraadpäevad, 16 päeva.
+- USA-s põllumehe režiimis: kastid NWS, Põud, Tulekahju, Rahe.
+- Nupp „Statistika · PDF” põldude kaardil ja iga põllu ekraanil.
+- TEAVE-kastid Euroopas: härmatis, öökülm, udu, jäide, tugev tuul.
+- Uuendused kolmest allikast: GitHub, teine GitHubi server ja Google Drive.
 - Ühenduse ikoon kella kõrval: Wi-Fi, mobiilne andmeside või puudub.
 - Uuendused: esmalt kontrollitakse ühendust, juba alla laaditud versioon paigaldatakse kohe, kuni 5 katset, kui GitHub ei vasta, ja põhjus kuvatakse.
 

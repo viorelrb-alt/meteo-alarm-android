@@ -182,7 +182,7 @@ final class Parcels {
 	 * the statistics; throws when Open-Meteo does not answer.
 	 */
 	static Farm.Data fetch(Context ctx, Parcel p) throws Exception {
-		String json = Weather.get(Farm.url(p.lat, p.lon, tz(), Farm.KEEP_DAYS, 3));
+		String json = Weather.get(Farm.url(p.lat, p.lon, tz(), Farm.KEEP_DAYS, Farm.AHEAD));
 		Farm.Data d = Farm.parse(json);
 		Fetcher.write(ctx, dataFile(p.id), json);
 		Calendar now = Calendar.getInstance();

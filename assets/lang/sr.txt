@@ -601,3 +601,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Ажурирање није могло да се преузме ни са једног сервера. Покушај поново за неколико минута.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Први ред у ☰ мења режим. У режиму пољопривредника сваки сат је једно широко поље са временом и кишом; положено, два поља једно испод другог, померају се горе-доле. Избор другог места враћа обичан режим.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Апликација прво проверава интернет, затим тражи на GitHub-у, на другом GitHub серверу и на Google Drive-у и преузима са првог који одговори. Већ преузета верзија се одмах инсталира.
+ (forecast)	 (прогноза)
+ after day 7	 после 7. дана
+16 DAYS	16 ДАНА
+7 days: rain − evaporation	7 дана: киша − испаравање
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	После Воде у земљишту: ПРСКАЊЕ (ветар, киша, врућина), БИЛАНС ВОДЕ (киша минус испаравање, 7 дана), ОЛУЈЕ, ТОПЛОТНЕ СУМЕ, 16 ДАНА. Додир објашњава свако.
+By week	По недељама
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE је енергија коју олуја може да узме из ваздуха: испод 300 J/kg ниска, 300–1000 умерена, 1000–2500 висока, изнад тога веома висока.
+Day   high / low · rain	Дан   макс / мин · киша
+Day   rain · ET0	Дан   киша · ET0
+Farmer boxes	Поља пољопривредника
+Farmer boxes in the US	Поља пољопривредника у САД
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	За место у САД још: NWS (званична прогноза), DROUGHT (US Drought Monitor), FIRE и HAIL (пријаве у кругу од 50 km).
+GROWING DEGREES	ТОПЛОТНЕ СУМЕ
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Добро: ветар 3–15 km/h, удари испод 25, 2 сата без кише, испод 28°, влажност ваздуха изнад 40%.
+Growing degree days	Степен-дани раста
+NO	НЕ
+Next 24 hours	Наредна 24 сата
+Next 24 hours, every 3 hours	Наредна 24 сата, на 3 сата
+Rain in 24 hours: 	Киша за 24 сата: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Киша минус вода коју отпуштају земљиште и биљке (евапотранспирација ET0, FAO): испод нуле земљиште се суши.
+SPRAYING	ПРСКАЊЕ
+STORMS	ОЛУЈЕ
+Spraying window	Прозор за прскање
+Statistics of which parcel?	Статистика које парцеле?
+Statistics · PDF	Статистика · PDF
+Storm risk	Ризик од олује
+The model's outlook: the second week is less certain than the first.	Изглед модела: друга недеља је несигурнија од прве.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Топлота коју су усеви сакупили: сваког дана просек максимума и минимума (између 10 и 30 °C) минус 10. Кукурузу треба око 1300–1500 од сетве до зрелости.
+Trend for 16 days	Тренд за 16 дана
+WATER BALANCE	БИЛАНС ВОДЕ
+Water balance	Биланс воде
+YES	ДА
+base 	база 
+colder	хладније
+dry air	сув ваздух
+good from 	добро од 
+highest at 	највише у 
+last 	последњих 
+next 24 h	наредна 24 h
+not in 24 h	не у 24 h
+similar	слично
+too hot	превруће
+too little wind	премало ветра
+too much wind	превише ветра
+very high	веома висок
+warmer	топлије
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Ведра, мирна ноћ са 3° или мање: може да се створи слана која пали осетљиве биљке.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Плава поља ИНФОРМАЦИЈА после упозорења: слана, мраз (пролеће и јесен), магла, ледена киша, јак ветар у наредна 24 сата. Рачуна их апликација из прогнозе, као обавештења NWS; нису званична.
+FREEZE	МРАЗ
+FREEZING FOG	ЛЕДЕНА МАГЛА
+FREEZING RAIN	ЛЕДЕНА КИША
+FROST	СЛАНА
+Fog for several hours: visibility can drop a lot. Drive carefully.	Магла неколико сати: видљивост може јако да опадне. Возите опрезно.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Магла која оставља иње на дрвећу, жицама и путевима: слаба видљивост и клизава места.
+INFORMATION	ИНФОРМАЦИЈА
+Information	Информација
+Information boxes	Информативна поља
+Interval: 	Интервал: 
+Lowest: 	Најнижа: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Киша или ромињање које се леди на тлу: клизави путеви и тротоари, лед на биљкама и жицама.
+STRONG WIND	ЈАК ВЕТАР
+Shown only in spring (March–May) and autumn (September–November).	Приказује се само у пролеће (март–мај) и јесен (септембар–новембар).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Јаки удари: учврстите предмете, пазите на гране које падају; није време за прскање.
+Strongest gust: 	Најјачи удар: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Температуре од −2° и ниже: незаштићени усеви, цветови и поврће могу да се смрзну.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Израчунала апликација из прогнозе Open-Meteo, као обавештења NWS у САД; није званично упозорење.
+good	добро
+high	висок
+low	низак
+until 	до 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Парцеле: мапа приказује све парцеле; додир чиоде или парцеле отвара је на главном екрану. „Сачувај GPS место” чува место где стојиш, „Изабери на мапи” ради и од куће; дугме GPS показује где си (плава тачка). Уреди (или оловка) мења име и чиоду. Остају само на овом телефону. „Статистика · PDF” (на мапи и на главном екрану парцеле) отвара њену статистику.

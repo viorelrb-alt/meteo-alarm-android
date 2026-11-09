@@ -1,5 +1,10 @@
-Version actuelle : v.3.03 · 8.11.2026
+Version actuelle : v.3.10 · 9.11.2026
 Améliorations de design / structure.
+- Mode agriculteur : nouvelles cases après Eau dans le sol : Pulvérisation, Bilan hydrique, Orages, Degrés-jours, 16 jours.
+- Aux États-Unis, en mode agriculteur : les cases NWS, Sécheresse, Incendie, Grêle.
+- Le bouton « Statistiques · PDF » sur la carte des parcelles et sur l'écran de chaque parcelle.
+- Cases INFORMATION en Europe : gelée blanche, gel, brouillard, pluie verglaçante, vent fort.
+- Mises à jour depuis trois sources : GitHub, un second serveur GitHub et Google Drive.
 - Icône de connexion à côté de l’horloge : Wi-Fi, données mobiles ou aucune.
 - Mises à jour : la connexion est vérifiée d’abord, une version déjà téléchargée s’installe aussitôt, jusqu’à 5 essais quand GitHub ne répond pas, et la raison est affichée.
 

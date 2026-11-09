@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Atjauninājumu neizdevās lejupielādēt ne no viena servera. Mēģini vēlreiz pēc dažām minūtēm.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	☰ pirmā rinda pārslēdz režīmu. Lauksaimnieka režīmā katra stunda ir viens plats lodziņš ar laikapstākļiem un lietu; guļus divi lodziņi viens zem otra, bīdāmi augšup un lejup. Izvēloties citu vietu, atgriežas parastajā režīmā.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Lietotne vispirms pārbauda internetu, tad meklē GitHub, otrā GitHub serverī un Google Drive un lejupielādē no pirmā, kas atbild. Jau lejupielādēta versija tiek uzreiz instalēta.
+ (forecast)	 (prognoze)
+ after day 7	 pēc 7. dienas
+16 DAYS	16 DIENAS
+7 days: rain − evaporation	7 dienas: lietus − iztvaikošana
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Pēc Ūdens augsnē: SMIDZINĀŠANA (vējš, lietus, karstums), ŪDENS BILANCE (lietus mīnus iztvaikošana, 7 dienas), VĒTRAS, SILTUMA SUMMA, 16 DIENAS. Pieskāriens izskaidro katru.
+By week	Pa nedēļām
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE ir enerģija, ko vētra var paņemt no gaisa: zem 300 J/kg zema, 300–1000 mērena, 1000–2500 augsta, virs tā ļoti augsta.
+Day   high / low · rain	Diena   maks / min · lietus
+Day   rain · ET0	Diena   lietus · ET0
+Farmer boxes	Zemnieka lodziņi
+Farmer boxes in the US	Zemnieka lodziņi ASV
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	ASV pilsētai vēl: NWS (oficiālā prognoze), DROUGHT (US Drought Monitor), FIRE un HAIL (ziņojumi 50 km rādiusā).
+GROWING DEGREES	SILTUMA SUMMA
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Labi: vējš 3–15 km/h, brāzmas zem 25, 2 stundas bez lietus, zem 28°, gaisa mitrums virs 40 %.
+Growing degree days	Augšanas grāddienas
+NO	NĒ
+Next 24 hours	Nākamās 24 stundas
+Next 24 hours, every 3 hours	Nākamās 24 stundas, ik pēc 3 stundām
+Rain in 24 hours: 	Lietus 24 stundās: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Lietus mīnus ūdens, ko atdod augsne un augi (evapotranspirācija ET0, FAO): zem nulles augsne izžūst.
+SPRAYING	SMIDZINĀŠANA
+STORMS	VĒTRAS
+Spraying window	Smidzināšanas logs
+Statistics of which parcel?	Kura lauka statistika?
+Statistics · PDF	Statistika · PDF
+Storm risk	Vētras risks
+The model's outlook: the second week is less certain than the first.	Modeļa skats: otrā nedēļa ir mazāk droša nekā pirmā.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Kultūru savāktais siltums: katru dienu maksimuma un minimuma vidējais (starp 10 un 30 °C) mīnus 10. Kukurūzai no sējas līdz gatavībai vajag ap 1300–1500.
+Trend for 16 days	16 dienu tendence
+WATER BALANCE	ŪDENS BILANCE
+Water balance	Ūdens bilance
+YES	JĀ
+base 	bāze 
+colder	vēsāks
+dry air	sauss gaiss
+good from 	labi no 
+highest at 	augstākais 
+last 	pēdējās 
+next 24 h	nākamās 24 h
+not in 24 h	ne 24 h laikā
+similar	līdzīgi
+too hot	pārāk karsts
+too little wind	pārāk vājš vējš
+too much wind	pārāk stiprs vējš
+very high	ļoti augsts
+warmer	siltāks
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Skaidra, bezvēja nakts ar 3° vai mazāk: var veidoties sarma, kas apdedzina jutīgos augus.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Zilie INFORMĀCIJAS lodziņi pēc brīdinājumiem: sarma, salna (pavasarī un rudenī), migla, apledojums, stiprs vējš nākamajās 24 stundās. Lietotne tos aprēķina no prognozes, kā NWS paziņojumus; tie nav oficiāli.
+FREEZE	SALNA
+FREEZING FOG	SALSTOŠA MIGLA
+FREEZING RAIN	SALSTOŠS LIETUS
+FROST	SARMA
+Fog for several hours: visibility can drop a lot. Drive carefully.	Migla vairākas stundas: redzamība var stipri samazināties. Brauciet uzmanīgi.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Migla, kas atstāj sarmu uz kokiem, vadiem un ceļiem: slikta redzamība un slidenas vietas.
+INFORMATION	INFORMĀCIJA
+Information	Informācija
+Information boxes	Informācijas lodziņi
+Interval: 	Laiks: 
+Lowest: 	Zemākā: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Lietus vai smidzināšana, kas sasalst uz zemes: slideni ceļi un ietves, ledus uz augiem un vadiem.
+STRONG WIND	STIPRS VĒJŠ
+Shown only in spring (March–May) and autumn (September–November).	Rāda tikai pavasarī (marts–maijs) un rudenī (septembris–novembris).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Stipras brāzmas: nostipriniet priekšmetus, uzmanieties no krītošiem zariem; nav laiks smidzināšanai.
+Strongest gust: 	Stiprākā brāzma: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperatūra −2° un zemāka: neapsegtas kultūras, ziedi un dārzeņi var nosalt.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Lietotnes aprēķins no Open-Meteo prognozes, kā NWS paziņojumi ASV; nav oficiāls brīdinājums.
+good	labi
+high	augsts
+low	zems
+until 	līdz 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Lauki: kartē redzami visi lauki; pieskāriens adatai vai laukam to atver galvenajā ekrānā. “Saglabāt GPS vietu” saglabā vietu, kur stāvi, “Izvēlēties kartē” darbojas arī no mājām; GPS poga rāda, kur tu esi (zilais punkts). Rediģēt (vai zīmulis) maina nosaukumu un adatu. Paliek tikai šajā tālrunī. “Statistika · PDF” (kartē un lauka galvenajā ekrānā) atver tā statistiku.

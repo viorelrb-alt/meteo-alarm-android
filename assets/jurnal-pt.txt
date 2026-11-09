@@ -1,5 +1,10 @@
-Versão atual: v.3.03 · 8.11.2026
+Versão atual: v.3.10 · 9.11.2026
 Melhorias de design / estrutura.
+- Modo agricultor: novas caixas depois de Água no solo: Pulverizar, Balanço hídrico, Tempestades, Graus-dia, 16 dias.
+- Nos EUA, em modo agricultor: as caixas NWS, Seca, Incêndio, Granizo.
+- O botão «Estatística · PDF» no mapa das parcelas e no ecrã de cada parcela.
+- Caixas INFORMAÇÃO na Europa: geada, congelação, nevoeiro, chuva gelada, vento forte.
+- Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.
 - Ícone de ligação junto ao relógio: Wi-Fi, dados móveis ou nenhuma.
 - Atualizações: primeiro verifica-se a ligação, uma versão já descarregada instala-se logo, até 5 tentativas quando o GitHub não responde, e mostra-se o motivo.
 

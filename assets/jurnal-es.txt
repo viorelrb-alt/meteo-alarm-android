@@ -1,5 +1,10 @@
-Versión actual: v.3.03 · 8.11.2026
+Versión actual: v.3.10 · 9.11.2026
 Mejoras de diseño / estructura.
+- Modo agricultor: nuevas casillas tras Agua en el suelo: Pulverizar, Balance hídrico, Tormentas, Grados-día, 16 días.
+- En EE. UU., en modo agricultor: las casillas NWS, Sequía, Incendio, Granizo.
+- El botón «Estadística · PDF» en el mapa de parcelas y en la pantalla de cada parcela.
+- Casillas INFORMACIÓN en Europa: escarcha, helada, niebla, lluvia engelante, viento fuerte.
+- Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Icono de conexión junto al reloj: Wi-Fi, datos móviles o ninguna.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.
 

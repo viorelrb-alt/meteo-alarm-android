@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v3.03";
+	static final String VERSION = "Meteo Alarm Android v3.10";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -91,6 +91,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (pageId != 0 && System.currentTimeMillis() - prefs.getLong("fetched", 0) >= interval()) fetchTownQuiet();
 			// Farmer data without the last 24 hours (saved by v2.50, or not come): asked again, at most every 5 minutes (v2.61).
 			if (s.farmer && s.w != null && Double.isNaN(s.rain24()) && System.currentTimeMillis() - lastFarmTry >= 5 * 60000L) fetchFarm();
+			usFarm();
 			// The exact position at start and then every hour, while automatic location is on.
 			if (autoLoc() && Locator.allowed(MainActivity.this) && System.currentTimeMillis() - lastLocate >= LOCATE_MS) locate(false);
 			checkNight();
@@ -293,6 +294,21 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.page = idx;
 		s.parcel = p == null ? null : p.name;
 		s.city = p == null ? town : placeOf(p);
+		usFarm();
+	}
+
+	/** v3.10: in farmer mode, in the US, the NWS grid, the drought and the storm reports of the place shown. */
+	private void usFarm() {
+		if (!s.farmer || s.city == null || !s.city.us()) {
+			s.us = null;
+			return;
+		}
+		s.us = UsFetch.get(s.city.lat, s.city.lon);
+		UsFetch.refresh(this, s.city.lat, s.city.lon, new Runnable() {
+			public void run() {
+				view.invalidate();
+			}
+		});
 	}
 
 	/** Shows main screen ID (0 the town's, else a parcel's) with what is saved, and downloads when old. */
@@ -499,6 +515,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				});
 			}
 		}).start();
+	}
+
+	/** v3.10: "Statistics · PDF" on a parcel's main screen opens its statistics. */
+	public void onStats() {
+		Parcels.Parcel p = Parcels.get(this, pageId);
+		if (p == null) return;
+		Log.i(this, "GEST", "buton statistică: " + p.name);
+		startActivityForResult(new Intent(this, FarmActivity.class).putExtra("dark", s.dark).putExtra("open", "stats").putExtra("id", p.id), REQ_PARCELS);
 	}
 
 	/** A tap on the parcel's name: its whole name, its coordinates and what can be done with it. */
@@ -1656,7 +1680,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			public void run() {
 				String json = null;
 				try {
-					json = Weather.get(ro.meteoalarm.android.core.Farm.url(c.lat, c.lon, Fetcher.tz(c), 1, 3));
+					json = Weather.get(ro.meteoalarm.android.core.Farm.url(c.lat, c.lon, Fetcher.tz(c), ro.meteoalarm.android.core.Farm.KEEP_DAYS, ro.meteoalarm.android.core.Farm.AHEAD));
 					ro.meteoalarm.android.core.Farm.parse(json);
 					Fetcher.saveFarm(ctx, c, json);
 					Log.i(ctx, "FERMIER", "prognoza pentru fermieri " + c.name + " OK");
@@ -2349,8 +2373,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Atingerea arată detaliile orei: temperatura, vântul și direcția lui, umiditatea, ploaia, solul."));
 		help.entry(mini("farm"), Tr.t("Water in the soil", "Apa în sol"), Tr.t("The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.",
 				"Apa reținută acum în stratul de sol de 3–9 cm și schimbarea ei în 24 de ore; atingerea arată orele cu precipitații. Estimare Open-Meteo."));
-		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. Kept only on this phone.",
-				"☰ › Parcele: harta arată toate parcelele; atingerea unui ac sau a unei parcele o deschide pe ecranul principal. „Salvare loc. GPS” salvează locul unde stai, „Alege pe hartă” merge și de acasă; butonul GPS arată unde ești (punctul albastru). Editare (sau creionul) schimbă numele și acul. Rămân doar în acest telefon."));
+		help.entry(mini("farm"), Tr.t("Farmer boxes", "Casetele fermierului"), Tr.t("After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.",
+				"După Apa în sol: STROPIT (vânt, ploaie, căldură), BILANȚ APĂ (ploaie minus evaporare, 7 zile), FURTUNI, GRADE-ZILE, 16 ZILE. Atingerea explică fiecare casetă."));
+		help.entry(mini("farm"), Tr.t("Farmer boxes in the US", "Casetele fermierului în SUA"), Tr.t("For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).",
+				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
+		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.",
+				"☰ › Parcele: harta arată toate parcelele; atingerea unui ac sau a unei parcele o deschide pe ecranul principal. „Salvare loc. GPS” salvează locul unde stai, „Alege pe hartă” merge și de acasă; butonul GPS arată unde ești (punctul albastru). Editare (sau creionul) schimbă numele și acul. „Statistică · PDF” (pe hartă și pe ecranul principal al unei parcele) deschide statistica. Rămân doar în acest telefon."));
 		help.entry(mini("parcel"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
 		help.entry(mini("swipe"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
@@ -2387,6 +2415,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("night"), Tr.t("Night clock", "Ceasul de noapte"), Tr.t("A big dim clock while the phone charges at night.", "Un ceas mare și estompat când telefonul se încarcă noaptea."));
 		help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("One row under the line: the earthquake, then the warnings by colour. A tap shows the details.",
 				"Un rând sub linie: cutremurul, apoi avertizările pe culori. Atingerea arată detaliile."));
+		if (!us) help.entry(mini("roll"), Tr.t("Information boxes", "Casete de informare"), Tr.t("Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.",
+				"Casetele albastre INFORMARE, după avertizări: brumă, îngheț (primăvara și toamna), ceață, polei, vânt tare în următoarele 24 de ore. Calculate de aplicație din prognoză, ca informările NWS; nu sunt oficiale."));
 		help.entry(mini("quake"), Tr.t("Earthquake box", "Caseta Cutremur"), us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
 				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));

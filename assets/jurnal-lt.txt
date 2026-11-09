@@ -1,5 +1,10 @@
-Dabartinė versija: v.3.03 · 8.11.2026
+Dabartinė versija: v.3.10 · 9.11.2026
 Dizaino / struktūros patobulinimai.
+- Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
+- JAV, ūkininko režimu: langeliai NWS, Sausra, Gaisras, Kruša.
+- Mygtukas „Statistika · PDF“ sklypų žemėlapyje ir kiekvieno sklypo ekrane.
+- INFORMACIJOS langeliai Europoje: šerkšnas, šalna, rūkas, lijundra, stiprus vėjas.
+- Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Ryšio piktograma šalia laikrodžio: Wi-Fi, mobilieji duomenys arba nėra.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
 

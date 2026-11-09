@@ -33,6 +33,9 @@ final class WeatherView extends View {
 		/** A tap on the town's name. */
 		void onTownName();
 
+		/** A tap on "Statistics · PDF" of a parcel's main screen (v3.10). */
+		void onStats();
+
 		/** Brightness 0.01–1 now (the app's own or the phone's). */
 		float brightness();
 
@@ -233,7 +236,9 @@ final class WeatherView extends View {
 	/** The top and the bottom of the moving part, in pixels. */
 	private float[] band() {
 		float[] f = Screen.fit(getWidth(), getHeight(), screen.tablet);
-		return new float[] { oy + 137 * scale, oy + (f[2] - 80) * scale };
+		// v3.10: in landscape the boxes start right under the dots (124 units), so the slide starts there.
+		float top = getWidth() > getHeight() ? 123 : 137;
+		return new float[] { oy + top * scale, oy + (f[2] - 80) * scale };
 	}
 
 	private void drawPaging(Canvas c) {
@@ -623,6 +628,7 @@ final class WeatherView extends View {
 		}
 		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
 		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
+		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y)) taps.onStats();
 		else if (in(screen.cityArea, x, y)) taps.onTownName();
 		return true;
 	}

@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Uppdateringen kunde inte hämtas från någon server. Försök igen om några minuter.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Första raden i ☰ byter läge. I lantbrukarläget är varje timme en bred ruta med väder och regn; liggande två rutor under varandra, som dras upp och ned. Väljer du en annan ort går appen tillbaka till normalläget.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Appen kontrollerar först internet, letar sedan på GitHub, på en andra GitHub-server och på Google Drive och hämtar från den första som svarar. En redan hämtad version installeras direkt.
+ (forecast)	 (prognos)
+ after day 7	 efter dag 7
+16 DAYS	16 DAGAR
+7 days: rain − evaporation	7 dagar: regn − avdunstning
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Efter Vatten i marken: BESPRUTNING (vind, regn, värme), VATTENBALANS (regn minus avdunstning, 7 dagar), ÅSKA, DYGNSGRADER, 16 DAGAR. Ett tryck förklarar var och en.
+By week	Per vecka
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE är energin ett oväder kan hämta ur luften: under 300 J/kg låg, 300–1000 måttlig, 1000–2500 hög, däröver mycket hög.
+Day   high / low · rain	Dag   max / min · regn
+Day   rain · ET0	Dag   regn · ET0
+Farmer boxes	Lantbrukarens rutor
+Farmer boxes in the US	Lantbrukarens rutor i USA
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	För en ort i USA även: NWS (officiell prognos), DROUGHT (US Drought Monitor), FIRE och HAIL (rapporter inom 50 km).
+GROWING DEGREES	DYGNSGRADER
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Bra: vind 3–15 km/h, byar under 25, inget regn på 2 timmar, under 28°, luftfuktighet över 40 %.
+Growing degree days	Tillväxtdygnsgrader
+NO	NEJ
+Next 24 hours	Nästa 24 timmar
+Next 24 hours, every 3 hours	Nästa 24 timmar, var 3:e timme
+Rain in 24 hours: 	Regn på 24 timmar: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Regn minus vattnet som marken och växterna avger (avdunstning ET0, FAO): under noll torkar marken.
+SPRAYING	BESPRUTNING
+STORMS	ÅSKA
+Spraying window	Sprutfönster
+Statistics of which parcel?	Statistik för vilket skifte?
+Statistics · PDF	Statistik · PDF
+Storm risk	Risk för åska
+The model's outlook: the second week is less certain than the first.	Modellens utsikt: den andra veckan är osäkrare än den första.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Värmen grödorna samlat: varje dag medelvärdet av max och min (mellan 10 och 30 °C) minus 10. Majs behöver cirka 1300–1500 från sådd till mognad.
+Trend for 16 days	Trend för 16 dagar
+WATER BALANCE	VATTENBALANS
+Water balance	Vattenbalans
+YES	JA
+base 	bas 
+colder	kallare
+dry air	torr luft
+good from 	bra från 
+highest at 	högst kl. 
+last 	senaste 
+next 24 h	nästa 24 h
+not in 24 h	inte inom 24 h
+similar	liknande
+too hot	för varmt
+too little wind	för lite vind
+too much wind	för mycket vind
+very high	mycket hög
+warmer	varmare
+A clear, calm night with 3° or less: frost can form and burn tender plants.	En klar, vindstilla natt med 3° eller mindre: rimfrost kan bildas och bränna känsliga växter.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Blå rutor INFORMATION efter varningarna: rimfrost, frost (vår och höst), dimma, underkylt regn, hård vind de närmaste 24 timmarna. Beräknas av appen ur prognosen, som NWS meddelanden; inte officiella.
+FREEZE	FROST
+FREEZING FOG	UNDERKYLD DIMMA
+FREEZING RAIN	UNDERKYLT REGN
+FROST	RIMFROST
+Fog for several hours: visibility can drop a lot. Drive carefully.	Dimma i flera timmar: sikten kan sjunka mycket. Kör försiktigt.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Dimma som lämnar rimfrost på träd, ledningar och vägar: dålig sikt och hala ställen.
+INFORMATION	INFORMATION
+Information	Information
+Information boxes	Informationsrutor
+Interval: 	Tidsrymd: 
+Lowest: 	Lägsta: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Regn eller duggregn som fryser på marken: hala vägar och trottoarer, is på växter och ledningar.
+STRONG WIND	HÅRD VIND
+Shown only in spring (March–May) and autumn (September–November).	Visas bara på våren (mars–maj) och hösten (september–november).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Kraftiga byar: säkra lösa föremål, se upp för fallande grenar; ingen tid för besprutning.
+Strongest gust: 	Kraftigaste by: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperaturer på −2° och lägre: oskyddade grödor, blommor och grönsaker kan frysa.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Beräknat av appen ur Open-Meteos prognos, som NWS meddelanden i USA; ingen officiell varning.
+good	bra
+high	hög
+low	låg
+until 	till 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Skiften: kartan visar alla skiften; ett tryck på en nål eller ett skifte öppnar det på huvudskärmen. ”Spara GPS-plats” sparar platsen där du står, ”Välj på kartan” fungerar även hemifrån; GPS-knappen visar var du är (blå prick). Redigera (eller pennan) ändrar namnet och nålen. Sparas bara i den här telefonen. ”Statistik · PDF” (på kartan och på ett skiftes huvudskärm) öppnar dess statistik.

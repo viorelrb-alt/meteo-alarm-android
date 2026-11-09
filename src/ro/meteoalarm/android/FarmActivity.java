@@ -520,6 +520,43 @@ public final class FarmActivity extends Activity {
 		return v;
 	}
 
+	/**
+	 * v3.10 (Viorel 2026-11-08): the statistics (and their PDF) from a button floating at the
+	 * bottom left of the map; with several parcels, a list to choose one.
+	 */
+	private void statsFloat(FrameLayout mapBox, final List<Parcels.Parcel> all, boolean tab) {
+		int fb = px(tab ? 46 : 42), mg = px(12);
+		TextView t = text("▤  " + Tr.t("Statistics · PDF", "Statistică · PDF"), tab ? 18 : 16, true, ink);
+		t.setGravity(Gravity.CENTER);
+		t.setPadding(px(14), 0, px(16), 0);
+		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, fb, Gravity.BOTTOM | Gravity.LEFT);
+		sl.setMargins(mg, 0, 0, mg + px(14));
+		mapBox.addView(floatBtn(t, new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "buton Statistică · PDF");
+				if (all.size() == 1) {
+					openStats(all.get(0).id);
+					return;
+				}
+				String[] names = new String[all.size()];
+				for (int k = 0; k < names.length; k++) names[k] = all.get(k).name;
+				dialog().setTitle(Tr.t("Statistics of which parcel?", "Statistica cărei parcele?")).setItems(names, new android.content.DialogInterface.OnClickListener() {
+					public void onClick(android.content.DialogInterface d, int which) {
+						openStats(all.get(which).id);
+					}
+				}).setNegativeButton(Tr.t("Cancel", "Renunță"), null).show();
+			}
+		}), sl);
+	}
+
+	/** The statistics of parcel ID for the last 7 days (the period can be changed there; PDF from there). */
+	private void openStats(long id) {
+		Calendar now = Calendar.getInstance();
+		from = Farm.date(now, -6);
+		to = Farm.date(now, 0);
+		showStats(id);
+	}
+
 	/** The GPS button's crosshair (drawn, blue as the dot of the phone's position). */
 	private View crosshair() {
 		return new View(this) {
@@ -685,6 +722,7 @@ public final class FarmActivity extends Activity {
 		if (!Double.isNaN(meLa)) m.setMe(meLa, meLo);
 		mapBox.addView(m, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		mapFloats(mapBox, m, Tr.t("Parcels", "Parcele"), tab);
+		if (!all.isEmpty()) statsFloat(mapBox, all, tab);
 
 		// --- The panel: the fixed buttons, then the scrolled cards.
 		LinearLayout panel = column();
@@ -763,14 +801,16 @@ public final class FarmActivity extends Activity {
 		LinearLayout.LayoutParams svl;
 		if (land || rows.isEmpty()) svl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, land ? 0 : ViewGroup.LayoutParams.WRAP_CONTENT, land ? 1 : 0);
 		else {
-			// Portrait: the cards' room is 2 cards (a phone) or 2½ rows (a tablet); the map the rest.
+			// Portrait: the cards' room is 1 card and the top of the next (a phone, v3.10: a bigger
+			// map, Viorel) or 2½ rows (a tablet); the map the rest.
 			int h = px(9);
 			int show = tab ? 3 : 2;
 			for (int k = 0; k < Math.min(show, rows.size()); k++) {
 				View r = rows.get(k);
 				r.measure(View.MeasureSpec.makeMeasureSpec(panelW - 2 * pad, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
 				int rh = r.getMeasuredHeight();
-				h += tab && k == 2 ? rh / 2 : rh + (k > 0 ? gap : 0);
+				if (!tab && k == 1) h += gap + Math.round(rh * 0.4f);
+				else h += tab && k == 2 ? rh / 2 : rh + (k > 0 ? gap : 0);
 				if (tab && k == 2) h += gap;
 			}
 			svl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, h);

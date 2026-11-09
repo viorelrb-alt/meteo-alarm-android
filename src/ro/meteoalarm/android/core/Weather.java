@@ -50,6 +50,8 @@ public final class Weather {
 	/** The chance (%) and amount (mm) of precipitation of each tile hour (farmer mode's rain boxes, v2.50). */
 	public int[] tileProb = new int[0];
 	public double[] tileAmt = new double[0];
+	/** Cloud cover %, wind and gusts km/h of each tile hour (the app's own information boxes, v3.10); NaN when missing. */
+	public double[] tileCloud = new double[0], tileWind = new double[0], tileGust = new double[0];
 
 	// Next days (tomorrow first): ISO date, code, rounded high/low, max precipitation probability.
 	public final List<String> dayDates = new ArrayList<String>();
@@ -66,7 +68,7 @@ public final class Weather {
 		return "https://api.open-meteo.com/v1/forecast?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
 				+ "&current=temperature_2m,weather_code,precipitation,is_day,cloud_cover,cloud_cover_low,"
 				+ "cloud_cover_mid,cloud_cover_high,apparent_temperature,wind_speed_10m,wind_direction_10m"
-				+ "&hourly=precipitation_probability,precipitation,weather_code,snowfall,temperature_2m,is_day"
+				+ "&hourly=precipitation_probability,precipitation,weather_code,snowfall,temperature_2m,is_day,cloud_cover,wind_speed_10m,wind_gusts_10m"
 				+ "&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max,"
 				+ "sunrise,sunset,uv_index_max"
 				+ "&forecast_days=6&forecast_hours=" + TILE_HOURS
@@ -246,7 +248,14 @@ public final class Weather {
 		w.tileDay = new boolean[nt];
 		w.tileProb = new int[nt];
 		w.tileAmt = new double[nt];
+		List<Object> hCloud = Json.arr(hourly, "cloud_cover"), hWind = Json.arr(hourly, "wind_speed_10m"), hGust = Json.arr(hourly, "wind_gusts_10m");
+		w.tileCloud = new double[nt];
+		w.tileWind = new double[nt];
+		w.tileGust = new double[nt];
 		for (int k = 0; k < nt; k++) {
+			w.tileCloud[k] = Json.num(hCloud, k);
+			w.tileWind[k] = Json.num(hWind, k);
+			w.tileGust[k] = Json.num(hGust, k);
 			String t = Json.str(hTime, k);
 			w.tileHours.add(t != null && t.length() >= 16 ? t.substring(11, 16) : "");
 			w.tileTemp[k] = Json.num(hTemp, k);

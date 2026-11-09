@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Níorbh fhéidir an nuashonrú a íoslódáil ó aon fhreastalaí. Bain triail eile as i gceann cúpla nóiméad.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Athraíonn an chéad líne de ☰ an mód. I mód an fheirmeora is bosca leathan amháin gach uair an chloig leis an aimsir agus an bháisteach; go cothrománach, dhá bhosca ceann faoin gceann eile, sleamhnaithe suas agus síos. Má roghnaíonn tú baile eile, filleann sé ar an ngnáthmhód.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Seiceálann an aip an t-idirlíon ar dtús, ansin cuardaíonn sí ar GitHub, ar an dara freastalaí GitHub agus ar Google Drive, agus íoslódálann sí ón gcéad cheann a fhreagraíonn. Suiteáiltear leagan atá íoslódáilte cheana láithreach.
+ (forecast)	 (réamhaisnéis)
+ after day 7	 tar éis lá 7
+16 DAYS	16 LÁ
+7 days: rain − evaporation	7 lá: báisteach − galú
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Tar éis Uisce san ithir: SPRÉÁIL (gaoth, báisteach, teas), COMHARDÚ UISCE (báisteach lúide galú, 7 lá), STOIRMEACHA, CÉIMLAETHANTA, 16 LÁ. Míníonn tadhall gach ceann.
+By week	De réir seachtaine
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	Is é CAPE an fuinneamh is féidir le stoirm a bhaint as an aer: faoi 300 J/kg íseal, 300–1000 measartha, 1000–2500 ard, os a chionn sin an-ard.
+Day   high / low · rain	Lá   uas / íos · báisteach
+Day   rain · ET0	Lá   báisteach · ET0
+Farmer boxes	Boscaí an fheirmeora
+Farmer boxes in the US	Boscaí an fheirmeora sna SA
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Do bhaile sna SA freisin: NWS (réamhaisnéis oifigiúil), DROUGHT (US Drought Monitor), FIRE agus HAIL (tuairiscí laistigh de 50 km).
+GROWING DEGREES	CÉIMLAETHANTA
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Maith: gaoth 3–15 km/u, siorradh faoi 25, gan bháisteach ar feadh 2 uair, faoi 28°, taise an aeir os cionn 40%.
+Growing degree days	Céimlaethanta fáis
+NO	NÍL
+Next 24 hours	Na 24 uair an chloig seo chugainn
+Next 24 hours, every 3 hours	Na 24 uair seo chugainn, gach 3 uair
+Rain in 24 hours: 	Báisteach i 24 uair: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	An bháisteach lúide an t-uisce a scaoileann an ithir agus na plandaí (galathrasú ET0, FAO): faoi nialas triomaíonn an ithir.
+SPRAYING	SPRÉÁIL
+STORMS	STOIRMEACHA
+Spraying window	Fuinneog spréála
+Statistics of which parcel?	Staitisticí cén cheapach?
+Statistics · PDF	Staitisticí · PDF
+Storm risk	Baol stoirme
+The model's outlook: the second week is less certain than the first.	Ionchas an mhúnla: tá an dara seachtain níos neamhchinnte ná an chéad cheann.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	An teas a bhailigh na barra: gach lá meán an uasteochta agus an íosteochta (idir 10 agus 30 °C) lúide 10. Teastaíonn thart ar 1300–1500 ó arbhar Indiach ón gcur go dtí an aibíocht.
+Trend for 16 days	Treocht 16 lá
+WATER BALANCE	COMHARDÚ UISCE
+Water balance	Comhardú uisce
+YES	TÁ
+base 	bonn 
+colder	níos fuaire
+dry air	aer tirim
+good from 	go maith ó 
+highest at 	is airde ag 
+last 	na 
+next 24 h	24 u seo chugainn
+not in 24 h	ní i 24 u
+similar	cosúil
+too hot	róthe
+too little wind	ró-bheagán gaoithe
+too much wind	an iomarca gaoithe
+very high	an-ard
+warmer	níos teo
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Oíche ghlan chiúin le 3° nó níos lú: is féidir le sioc bán teacht agus plandaí íogaire a dhó.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Boscaí gorma FAISNÉIS i ndiaidh na rabhadh: sioc bán, reo (earrach agus fómhar), ceo, báisteach reoite, gaoth láidir sna 24 uair seo chugainn. Ríomhann an aip iad ón réamhaisnéis, cosúil le comhairlí NWS; ní oifigiúil.
+FREEZE	REO
+FREEZING FOG	CEO REOITE
+FREEZING RAIN	BÁISTEACH REOITE
+FROST	SIOC BÁN
+Fog for several hours: visibility can drop a lot. Drive carefully.	Ceo ar feadh roinnt uaireanta: is féidir leis an léargas titim go mór. Tiomáin go cúramach.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Ceo a fhágann cuisne ar chrainn, sreanga agus bóithre: léargas lag agus áiteanna sleamhna.
+INFORMATION	FAISNÉIS
+Information	Faisnéis
+Information boxes	Boscaí faisnéise
+Interval: 	Tréimhse: 
+Lowest: 	Íosmhéid: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Báisteach nó ceobhrán a reonn ar an talamh: bóithre agus cosáin sleamhna, oighear ar phlandaí agus ar shreanga.
+STRONG WIND	GAOTH LÁIDIR
+Shown only in spring (March–May) and autumn (September–November).	Ní thaispeántar ach san earrach (Márta–Bealtaine) agus san fhómhar (Meán Fómhair–Samhain).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Siorraí láidre: daingnigh rudaí scaoilte, seachain craobhacha ag titim; ní am spréála é.
+Strongest gust: 	An siorradh is láidre: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Teochtaí −2° agus níos ísle: is féidir le barra, bláthanna agus glasraí gan chosaint reo.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Ríomhta ag an aip ó réamhaisnéis Open-Meteo, cosúil le comhairlí NWS sna SA; ní rabhadh oifigiúil é.
+good	maith
+high	ard
+low	íseal
+until 	go dtí 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Páirceanna: taispeánann an léarscáil na páirceanna go léir; osclaíonn tapáil ar bhiorán nó ar pháirc í ar an bpríomhscáileán. Sábhálann “Sábháil áit GPS” an áit ina seasann tú, oibríonn “Roghnaigh ar an léarscáil” ón mbaile freisin; taispeánann an cnaipe GPS cá bhfuil tú (ponc gorm). Athraíonn Cuir in eagar (nó an peann luaidhe) an t-ainm agus an biorán. Fanann siad ar an bhfón seo amháin. Osclaíonn “Staitisticí · PDF” (ar an léarscáil agus ar phríomhscáileán ceapaí) a staitisticí.

@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Das Update konnte von keinem Server geladen werden. Versuche es in ein paar Minuten noch einmal.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Der erste Eintrag in ☰ wechselt den Modus. Im Landwirt-Modus ist jede Stunde ein breites Feld mit Wetter und Regen; quer zwei Felder untereinander, nach oben und unten verschiebbar. Die Wahl eines anderen Orts schaltet zurück in den normalen Modus.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Die App prüft zuerst das Internet, sucht dann auf GitHub, auf einem zweiten GitHub-Server und auf Google Drive und lädt vom ersten, der antwortet. Eine bereits geladene Version wird sofort installiert.
+ (forecast)	 (Prognose)
+ after day 7	 nach Tag 7
+16 DAYS	16 TAGE
+7 days: rain − evaporation	7 Tage: Regen − Verdunstung
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Nach Wasser im Boden: SPRITZEN (Wind, Regen, Hitze), WASSERBILANZ (Regen minus Verdunstung, 7 Tage), GEWITTER, WÄRMESUMME, 16 TAGE. Ein Tippen erklärt jedes Feld.
+By week	Nach Wochen
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE ist die Energie, die ein Gewitter aus der Luft ziehen kann: unter 300 J/kg gering, 300–1000 mäßig, 1000–2500 hoch, darüber sehr hoch.
+Day   high / low · rain	Tag   max / min · Regen
+Day   rain · ET0	Tag   Regen · ET0
+Farmer boxes	Felder des Landwirts
+Farmer boxes in the US	Felder des Landwirts in den USA
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Für einen Ort in den USA zusätzlich: NWS (amtliche Vorhersage), DROUGHT (US Drought Monitor), FIRE und HAIL (Meldungen im Umkreis von 50 km).
+GROWING DEGREES	WÄRMESUMME
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Gut: Wind 3–15 km/h, Böen unter 25, 2 Stunden kein Regen, unter 28°, Luftfeuchte über 40 %.
+Growing degree days	Wachstumsgradtage
+NO	NEIN
+Next 24 hours	Die nächsten 24 Stunden
+Next 24 hours, every 3 hours	Die nächsten 24 Stunden, alle 3 Stunden
+Rain in 24 hours: 	Regen in 24 Stunden: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Regen minus das Wasser, das Boden und Pflanzen abgeben (Verdunstung ET0, FAO): unter null trocknet der Boden aus.
+SPRAYING	SPRITZEN
+STORMS	GEWITTER
+Spraying window	Spritzfenster
+Statistics of which parcel?	Statistik welcher Parzelle?
+Statistics · PDF	Statistik · PDF
+Storm risk	Gewitterrisiko
+The model's outlook: the second week is less certain than the first.	Ausblick des Modells: Die zweite Woche ist unsicherer als die erste.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Die Wärme, die die Kulturen gesammelt haben: jeden Tag der Mittelwert aus Höchst- und Tiefstwert (zwischen 10 und 30 °C gehalten) minus 10. Mais braucht etwa 1300–1500 von der Aussaat bis zur Reife.
+Trend for 16 days	Trend für 16 Tage
+WATER BALANCE	WASSERBILANZ
+Water balance	Wasserbilanz
+YES	JA
+base 	Basis 
+colder	kälter
+dry air	trockene Luft
+good from 	gut ab 
+highest at 	am höchsten um 
+last 	letzte 
+next 24 h	nächste 24 h
+not in 24 h	nicht in 24 h
+similar	ähnlich
+too hot	zu heiß
+too little wind	zu wenig Wind
+too much wind	zu viel Wind
+very high	sehr hoch
+warmer	wärmer
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Eine klare, windstille Nacht mit 3° oder weniger: Reif kann sich bilden und empfindliche Pflanzen schädigen.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Blaue Felder HINWEIS nach den Warnungen: Reif, Frost (Frühling und Herbst), Nebel, gefrierender Regen, starker Wind in den nächsten 24 Stunden. Von der App aus der Vorhersage berechnet, wie die NWS-Hinweise; nicht amtlich.
+FREEZE	FROST
+FREEZING FOG	GEFRIERENDER NEBEL
+FREEZING RAIN	GEFRIERENDER REGEN
+FROST	REIF
+Fog for several hours: visibility can drop a lot. Drive carefully.	Nebel über mehrere Stunden: Die Sicht kann stark sinken. Fahren Sie vorsichtig.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Nebel, der Raureif an Bäumen, Leitungen und Straßen hinterlässt: schlechte Sicht und glatte Stellen.
+INFORMATION	HINWEIS
+Information	Hinweis
+Information boxes	Hinweisfelder
+Interval: 	Zeitraum: 
+Lowest: 	Tiefstwert: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Regen oder Niesel, der am Boden gefriert: glatte Straßen und Gehwege, Eis an Pflanzen und Leitungen.
+STRONG WIND	STARKER WIND
+Shown only in spring (March–May) and autumn (September–November).	Nur im Frühling (März–Mai) und Herbst (September–November).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Starke Böen: lose Gegenstände sichern, auf herabfallende Äste achten; keine Zeit zum Spritzen.
+Strongest gust: 	Stärkste Böe: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperaturen von −2° und tiefer: ungeschützte Kulturen, Blüten und Gemüse können erfrieren.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Von der App aus der Open-Meteo-Vorhersage berechnet, wie die NWS-Hinweise in den USA; keine amtliche Warnung.
+good	gut
+high	hoch
+low	gering
+until 	bis 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Parzellen: Die Karte zeigt alle Parzellen; ein Tippen auf eine Nadel oder eine Parzelle öffnet sie auf dem Hauptbildschirm. „GPS-Ort speichern“ speichert den Ort, an dem du stehst, „Auf der Karte wählen“ geht auch von zu Hause; die GPS-Taste zeigt, wo du bist (blauer Punkt). Bearbeiten (oder der Stift) ändert Namen und Nadel. Sie bleiben nur auf diesem Telefon. „Statistik · PDF“ (auf der Karte und auf dem Hauptbildschirm einer Parzelle) öffnet ihre Statistik.

@@ -1,5 +1,10 @@
-Trenutna različica: v.3.03 · 8.11.2026
+Trenutna različica: v.3.10 · 9.11.2026
 Izboljšave videza / zgradbe.
+- Kmetijski način: nova polja za Vodo v tleh: Škropljenje, Vodna bilanca, Nevihte, Toplotne vsote, 16 dni.
+- V ZDA v kmetijskem načinu: polja NWS, Suša, Požar, Toča.
+- Gumb »Statistika · PDF« na zemljevidu parcel in na zaslonu vsake parcele.
+- Polja INFORMACIJA v Evropi: slana, pozeba, megla, žled, močan veter.
+- Posodobitve iz treh virov: GitHub, drugi strežnik GitHub in Google Drive.
 - Ikona povezave ob uri: Wi-Fi, mobilni podatki ali brez.
 - Posodobitve: najprej se preveri povezava, že prenesena različica se takoj namesti, do 5 poskusov, ko GitHub ne odgovori, in prikaže se razlog.
 

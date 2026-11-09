@@ -1,5 +1,10 @@
-Verżjoni attwali: v.3.03 · 8.11.2026
+Verżjoni attwali: v.3.10 · 9.11.2026
 Titjib fid-disinn / fl-istruttura.
+- Modalità tal-bidwi: kaxxi ġodda wara Ilma fil-ħamrija: Irxix, Bilanċ tal-ilma, Maltempi, Gradi-jiem, 16-il jum.
+- Fl-Istati Uniti, fil-modalità tal-bidwi: il-kaxxi NWS, Nixfa, Nar, Silġ.
+- Il-buttuna “Statistika · PDF” fuq il-mappa tal-biċċiet tal-art u fuq l-iskrin ta' kull waħda.
+- Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.
+- Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Ikona tal-konnessjoni ħdejn l-arloġġ: Wi-Fi, data mobbli jew xejn.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
 

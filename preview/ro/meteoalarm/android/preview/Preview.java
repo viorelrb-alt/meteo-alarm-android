@@ -160,6 +160,15 @@ public final class Preview {
 			s.quakes = Quakes.parseUsgs(qs, s.city.lat, s.city.lon, now, Quakes.WINDOW_MS, Quakes.US_MIN_MAG, false);
 			for (int k = 0; k < s.alertCount(); k++) for (String[] r : s.alertInfo(k)) System.out.println(k + " " + r[0] + ": " + r[1]);
 		} else
+		if (opts.contains(" own")) {
+			// v3.10: own information boxes (frost at night, fog in the morning, a windy hour).
+			for (int k = 0; k < s.w.tileTemp.length; k++) {
+				if (!s.w.tileDay[k]) s.w.tileTemp[k] = 1;
+				if (k >= 8 && k <= 11) s.w.tileCode[k] = 45;
+			}
+			s.w.tileGust = new double[s.w.tileTemp.length];
+			s.w.tileGust[14] = 72;
+		}
 		if (opts.contains(" warn")) {
 			s.warns = new ArrayList<Warnings.Warn>();
 			int n = opts.contains(" warn3") ? 4 : 2;
@@ -190,7 +199,8 @@ public final class Preview {
 				d0.add(Calendar.DAY_OF_MONTH, -1);
 				StringBuilder t = new StringBuilder(), v = new StringBuilder();
 				String[] keys = { "temperature_2m", "relative_humidity_2m", "precipitation_probability", "precipitation", "rain", "showers", "snowfall", "cloud_cover",
-						"wind_speed_10m", "wind_direction_10m", "wind_gusts_10m", "soil_temperature_0cm", "soil_moisture_3_to_9cm" };
+						"wind_speed_10m", "wind_direction_10m", "wind_gusts_10m", "soil_temperature_0cm", "soil_moisture_3_to_9cm",
+						"et0_fao_evapotranspiration", "cape" };
 				StringBuilder[] cols = new StringBuilder[keys.length];
 				for (int j = 0; j < keys.length; j++) cols[j] = new StringBuilder();
 				for (int h = 0; h < 96; h++) {
@@ -199,13 +209,25 @@ public final class Preview {
 					double p = h % 24 >= 14 && h % 24 <= 19 ? 70 : h % 24 > 19 ? 35 : 10;
 					double mm = p >= 70 ? 1.2 : p >= 30 ? 0.2 : 0;
 					double[] val = { 8 + 6 * Math.sin((h % 24 - 9) / 24.0 * 2 * Math.PI), 70 + p / 4, p, mm, mm * 0.7, mm * 0.3, 0, 40 + p / 2,
-							12 + (h % 24 > 15 ? 10 : 0), h % 24 < 17 ? 300 : 190, 25 + (h % 24 > 15 ? 18 : 0), 6 + 4 * Math.sin((h % 24 - 10) / 24.0 * 2 * Math.PI), 0.27 };
+							12 + (h % 24 > 15 ? 10 : 0), h % 24 < 17 ? 300 : 190, 25 + (h % 24 > 15 ? 18 : 0), 6 + 4 * Math.sin((h % 24 - 10) / 24.0 * 2 * Math.PI), 0.27,
+							h % 24 >= 9 && h % 24 <= 16 ? 0.12 : 0.01, h % 24 >= 14 && h % 24 <= 18 ? 850 : 120 };
 					for (int j = 0; j < keys.length; j++) cols[j].append(h > 0 ? "," : "").append(String.format(java.util.Locale.US, "%.2f", val[j]));
 				}
 				v.append("{\"hourly\":{\"time\":[").append(t).append("]");
 				for (int j = 0; j < keys.length; j++) v.append(",\"").append(keys[j]).append("\":[").append(cols[j]).append("]");
-				v.append("},\"daily\":{\"time\":[\"").append(ro.meteoalarm.android.core.Farm.date(d0, 1)).append("\",\"").append(ro.meteoalarm.android.core.Farm.date(d0, 2))
-						.append("\"],\"temperature_2m_max\":[14.2,12.1],\"temperature_2m_min\":[2.1,4.0],\"precipitation_sum\":[7.4,3.1],\"wind_speed_10m_max\":[22,18]}}");
+				// v3.10: 30 days (the 28 back for the degree days, 16 ahead for the trend), with ET0.
+				StringBuilder dt = new StringBuilder(), dx = new StringBuilder(), dn = new StringBuilder(), dr = new StringBuilder(), de = new StringBuilder();
+				Calendar dd0 = Calendar.getInstance();
+				for (int k = -20; k <= 15; k++) {
+					String sep = k > -20 ? "," : "";
+					dt.append(sep).append('"').append(ro.meteoalarm.android.core.Farm.date(dd0, k)).append('"');
+					dx.append(sep).append(String.format(java.util.Locale.US, "%.1f", 14 + 4 * Math.sin(k / 5.0) + (k > 7 ? 3 : 0)));
+					dn.append(sep).append(String.format(java.util.Locale.US, "%.1f", 4 + 3 * Math.sin(k / 5.0)));
+					dr.append(sep).append(k % 4 == 0 ? "3.2" : "0");
+					de.append(sep).append("1.1");
+				}
+				v.append("},\"daily\":{\"time\":[").append(dt).append("],\"temperature_2m_max\":[").append(dx).append("],\"temperature_2m_min\":[").append(dn)
+						.append("],\"precipitation_sum\":[").append(dr).append("],\"et0_fao_evapotranspiration\":[").append(de).append("]}}");
 				s.farm = ro.meteoalarm.android.core.Farm.parse(v.toString());
 			}
 			s.now = Calendar.getInstance();
@@ -221,6 +243,10 @@ public final class Preview {
 		}
 		if (opts.contains(" alert1")) s.alerts.scroll = 5000;
 		if (opts.contains(" page1")) s.hours.scroll = 700;
+		if (opts.contains(" info1")) {
+			s.info.scroll = 430;
+			s.grid.scroll = 470;
+		}
 		if (opts.contains(" snow")) {
 			s.w.temp = -12.4;
 			s.w.code = 73;
@@ -261,6 +287,7 @@ public final class Preview {
 		g.scale(scale, scale);
 		s.draw(new J2d(g, assets), cw, ch);
 		ImageIO.write(img, "png", new File(a[1]));
+		if (opts.contains(" boxes")) for (int k = 2; k <= 6; k++) for (String[] r : s.parcelInfo(k)) System.out.println("box" + k + " " + r[0] + ": " + r[1]);
 		System.out.println("warnings for " + s.city.county + ": " + s.warns.size() + ", pollen " + s.pollenLvl + " " + s.pollenPlant + ", code " + s.w.code);
 	}
 }

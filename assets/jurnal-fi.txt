@@ -1,5 +1,10 @@
-Nykyinen versio: v.3.03 · 8.11.2026
+Nykyinen versio: v.3.10 · 9.11.2026
 Ulkoasun / rakenteen parannuksia.
+- Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
+- Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
+- ”Tilastot · PDF” -painike lohkojen kartalla ja jokaisen lohkon näkymässä.
+- TIEDOTE-ruudut Euroopassa: kuura, halla, sumu, jäätävä sade, kova tuuli.
+- Päivitykset kolmesta lähteestä: GitHub, toinen GitHub-palvelin ja Google Drive.
 - Yhteyskuvake kellon vieressä: Wi-Fi, mobiilidata tai ei yhteyttä.
 - Päivitykset: yhteys tarkistetaan ensin, jo ladattu versio asennetaan heti, enintään 5 yritystä, kun GitHub ei vastaa, ja syy näytetään.
 

@@ -1,5 +1,10 @@
-Leagan reatha: v.3.03 · 8.11.2026
+Leagan reatha: v.3.10 · 9.11.2026
 Feabhsuithe ar dhearadh / ar struchtúr.
+- Mód feirmeora: boscaí nua i ndiaidh Uisce san ithir: Spréáil, Comhardú uisce, Stoirmeacha, Céimlaethanta, 16 lá.
+- Sna SA, i mód feirmeora: na boscaí NWS, Triomach, Dóiteán, Clocha sneachta.
+- An cnaipe “Staitisticí · PDF” ar léarscáil na gceapach agus ar scáileán gach ceapaí.
+- Boscaí FAISNÉIS san Eoraip: sioc bán, reo, ceo, báisteach reoite, gaoth láidir.
+- Nuashonruithe ó thrí fhoinse: GitHub, dara freastalaí GitHub agus Google Drive.
 - Deilbhín ceangail in aice leis an gclog: Wi-Fi, sonraí móibíleacha nó gan cheangal.
 - Nuashonruithe: seiceáiltear an ceangal ar dtús, suiteáiltear leagan atá íoslódáilte cheana láithreach, suas le 5 iarracht nuair nach bhfreagraíonn GitHub, agus taispeántar an chúis.
 

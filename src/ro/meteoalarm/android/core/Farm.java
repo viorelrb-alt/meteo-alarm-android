@@ -25,7 +25,11 @@ public final class Farm {
 	public static final double ALERT_MM = 0.5, ALERT_MM_ANY = 1.0, ALERT_GUST = 50, ALERT_WIND = 40;
 
 	private static final String HOURLY = "temperature_2m,relative_humidity_2m,precipitation_probability,precipitation,rain,showers,snowfall,"
-			+ "cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,soil_moisture_3_to_9cm";
+			+ "cloud_cover,wind_speed_10m,wind_direction_10m,wind_gusts_10m,soil_temperature_0cm,soil_moisture_3_to_9cm,"
+			// v3.10: evapotranspiration, storm energy (CAPE), lightning (where a model gives it).
+			+ "et0_fao_evapotranspiration,cape,lightning_potential";
+	/** v3.10: the forecast goes this many days ahead (the 16-day trend). */
+	public static final int AHEAD = 16;
 
 	private Farm() {
 	}
@@ -35,7 +39,7 @@ public final class Farm {
 		return "https://api.open-meteo.com/v1/forecast?latitude=" + Weather.fmt(lat) + "&longitude=" + Weather.fmt(lon)
 				+ "&current=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m,wind_direction_10m,wind_gusts_10m"
 				+ "&hourly=" + HOURLY
-				+ "&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max,wind_gusts_10m_max,precipitation_probability_max"
+				+ "&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max,wind_gusts_10m_max,precipitation_probability_max,et0_fao_evapotranspiration"
 				+ (past > 0 ? "&past_days=" + past : "") + "&forecast_days=" + days
 				+ "&timezone=" + URLEncoder.encode(tz, "UTF-8");
 	}
@@ -43,9 +47,9 @@ public final class Farm {
 	/** One answer, read. Missing values are NaN. */
 	public static final class Data {
 		public String[] time = new String[0];
-		public double[] temp, hum, prob, precip, rain, showers, snow, cloud, wind, dir, gust, soilT, soilM;
+		public double[] temp, hum, prob, precip, rain, showers, snow, cloud, wind, dir, gust, soilT, soilM, et0, cape, light;
 		public String[] dDate = new String[0];
-		public double[] dMax, dMin, dRain, dWind, dGust, dPop;
+		public double[] dMax, dMin, dRain, dWind, dGust, dPop, dEt0;
 		public double cTemp = Double.NaN, cHum = Double.NaN, cPrecip = Double.NaN, cWind = Double.NaN, cDir = Double.NaN, cGust = Double.NaN;
 		public int cCode = -1;
 
@@ -107,6 +111,9 @@ public final class Farm {
 		r.gust = nums(h, "wind_gusts_10m", n);
 		r.soilT = nums(h, "soil_temperature_0cm", n);
 		r.soilM = nums(h, "soil_moisture_3_to_9cm", n);
+		r.et0 = nums(h, "et0_fao_evapotranspiration", n);
+		r.cape = nums(h, "cape", n);
+		r.light = nums(h, "lightning_potential", n);
 		if (d != null) {
 			List<Object> dt = Json.arr(d, "time");
 			int m = dt == null ? 0 : dt.size();
@@ -118,8 +125,9 @@ public final class Farm {
 			r.dWind = nums(d, "wind_speed_10m_max", m);
 			r.dGust = nums(d, "wind_gusts_10m_max", m);
 			r.dPop = nums(d, "precipitation_probability_max", m);
+			r.dEt0 = nums(d, "et0_fao_evapotranspiration", m);
 		} else {
-			r.dMax = r.dMin = r.dRain = r.dWind = r.dGust = r.dPop = new double[0];
+			r.dMax = r.dMin = r.dRain = r.dWind = r.dGust = r.dPop = r.dEt0 = new double[0];
 		}
 		if (c != null) {
 			r.cTemp = Json.num(c, "temperature_2m");
@@ -139,6 +147,131 @@ public final class Farm {
 		List<Object> a = Json.arr(o, key);
 		for (int k = 0; k < n; k++) v[k] = a == null || k >= a.size() ? Double.NaN : Json.num(a, k);
 		return v;
+	}
+
+	// --- v3.10: the farmer's boxes (Viorel 2026-11-08), worked out from the same answer ------
+
+	/**
+	 * Whether hour I is good for spraying: 0 yes; 1 too little wind (under 3 km/h, drift and
+	 * inversion); 2 too much wind (over 15 km/h or gusts over 25); 3 rain now or in the next 2
+	 * hours; 4 too hot (over 28 °C); 5 too dry air (under 40%); -1 unknown.
+	 */
+	public static int spray(Data d, int i) {
+		if (i < 0 || i >= d.size() || Double.isNaN(d.wind[i]) || Double.isNaN(d.temp[i])) return -1;
+		for (int j = i; j <= i + 2 && j < d.size(); j++) {
+			if (!Double.isNaN(d.precip[j]) && d.precip[j] >= 0.1) return 3;
+			if (!Double.isNaN(d.prob[j]) && d.prob[j] >= 40) return 3;
+		}
+		if (d.wind[i] > 15 || (!Double.isNaN(d.gust[i]) && d.gust[i] > 25)) return 2;
+		if (d.wind[i] < 3) return 1;
+		if (d.temp[i] > 28) return 4;
+		if (!Double.isNaN(d.hum[i]) && d.hum[i] < 40) return 5;
+		return 0;
+	}
+
+	/** { first good hour from I, the first hour after it that is not } within N hours; -1 when none. */
+	public static int[] sprayWindow(Data d, int i, int n) {
+		int a = -1, b = -1;
+		for (int j = Math.max(0, i); j < Math.min(d.size(), i + n); j++) {
+			int s = spray(d, j);
+			if (a < 0 && s == 0) a = j;
+			else if (a >= 0 && s != 0) {
+				b = j;
+				break;
+			}
+		}
+		return new int[] { a, b };
+	}
+
+	/** Growing degree days (base 10 °C, the high and the low kept between 10 and 30) of day K. */
+	public static double gdd(Data d, int k) {
+		if (k < 0 || k >= d.dDate.length || Double.isNaN(d.dMax[k]) || Double.isNaN(d.dMin[k])) return Double.NaN;
+		double hi = Math.min(30, Math.max(10, d.dMax[k])), lo = Math.min(30, Math.max(10, d.dMin[k]));
+		return Math.max(0, (hi + lo) / 2 - 10);
+	}
+
+	/** { growing degree days of the DAYS days up to TODAY, the number of days counted }. */
+	public static double[] gddSum(Data d, String today, int days) {
+		double sum = 0;
+		int n = 0;
+		int t = d.dayIndex(today);
+		if (t < 0) return new double[] { Double.NaN, 0 };
+		for (int k = Math.max(0, t - days + 1); k <= t; k++) {
+			double g = gdd(d, k);
+			if (Double.isNaN(g)) continue;
+			sum += g;
+			n++;
+		}
+		return new double[] { n == 0 ? Double.NaN : sum, n };
+	}
+
+	/** { rain, evapotranspiration (ET0), rain minus ET0 } in mm over the DAYS days up to TODAY. */
+	public static double[] waterBalance(Data d, String today, int days) {
+		int t = d.dayIndex(today);
+		double[] none = { Double.NaN, Double.NaN, Double.NaN };
+		if (t < 0 || d.dEt0 == null || d.dEt0.length <= t) return none;
+		double r = 0, e = 0;
+		int n = 0;
+		for (int k = Math.max(0, t - days + 1); k <= t; k++) {
+			if (Double.isNaN(d.dEt0[k])) continue;
+			r += Double.isNaN(d.dRain[k]) ? 0 : d.dRain[k];
+			e += d.dEt0[k];
+			n++;
+		}
+		return n == 0 ? none : new double[] { r, e, r - e };
+	}
+
+	/** { the highest CAPE (J/kg) in the N hours from I, its hour index, the highest lightning potential }. */
+	public static double[] storm(Data d, int i, int n) {
+		double best = Double.NaN, li = Double.NaN;
+		int at = -1;
+		for (int j = Math.max(0, i); j < Math.min(d.size(), i + n); j++) {
+			double v = d.cape == null ? Double.NaN : d.cape[j];
+			if (!Double.isNaN(v) && (Double.isNaN(best) || v > best)) {
+				best = v;
+				at = j;
+			}
+			double l = d.light == null ? Double.NaN : d.light[j];
+			if (!Double.isNaN(l) && (Double.isNaN(li) || l > li)) li = l;
+		}
+		return new double[] { best, at, li };
+	}
+
+	/** The storm level of CAPE (J/kg): 0 low, 1 moderate, 2 high, 3 very high; -1 unknown. */
+	public static int stormLevel(double cape) {
+		if (Double.isNaN(cape)) return -1;
+		return cape < 300 ? 0 : cape < 1000 ? 1 : cape < 2500 ? 2 : 3;
+	}
+
+	/**
+	 * The 16-day trend: { mean high of the 7 days from TODAY, mean high of the days after them,
+	 * their mean low, their rain, how many they are }.
+	 */
+	public static double[] trend(Data d, String today) {
+		int t = d.dayIndex(today);
+		double[] r = { Double.NaN, Double.NaN, Double.NaN, 0, 0 };
+		if (t < 0) return r;
+		double a = 0, b = 0, lo = 0;
+		int na = 0, nb = 0;
+		for (int k = t; k < d.dDate.length; k++) {
+			if (Double.isNaN(d.dMax[k])) continue;
+			if (k - t < 7) {
+				a += d.dMax[k];
+				na++;
+			} else {
+				b += d.dMax[k];
+				lo += Double.isNaN(d.dMin[k]) ? d.dMax[k] : d.dMin[k];
+				r[3] += Double.isNaN(d.dRain[k]) ? 0 : d.dRain[k];
+				nb++;
+			}
+		}
+		if (na > 0) r[0] = a / na;
+		if (nb > 0) {
+			r[1] = b / nb;
+			r[2] = lo / nb;
+		}
+		r[4] = nb;
+		return r;
 	}
 
 	// --- Wind ---------------------------------------------------------------------------

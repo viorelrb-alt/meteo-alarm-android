@@ -1,5 +1,10 @@
-Současná verze: v.3.03 · 8.11.2026
+Současná verze: v.3.10 · 9.11.2026
 Vylepšení vzhledu / struktury.
+- Režim farmáře: nová pole za Vodou v půdě: Postřik, Vodní bilance, Bouřky, Teplotní sumy, 16 dní.
+- V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.
+- Tlačítko „Statistika · PDF“ na mapě parcel a na obrazovce každé parcely.
+- Pole INFORMACE v Evropě: jinovatka, mráz, mlha, mrznoucí déšť, silný vítr.
+- Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Ikona připojení vedle hodin: Wi-Fi, mobilní data nebo žádné.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
 

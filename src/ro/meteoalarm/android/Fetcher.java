@@ -125,7 +125,7 @@ final class Fetcher {
 		}
 		if (Parcels.farmer(ctx)) {
 			try {
-				r.farm = Weather.get(Farm.url(c.lat, c.lon, tz, 1, 3));
+				r.farm = Weather.get(Farm.url(c.lat, c.lon, tz, Farm.KEEP_DAYS, Farm.AHEAD));
 				Farm.parse(r.farm);
 				Log.i(ctx, "FERMIER", "prognoza pentru fermieri " + c.name + " OK " + r.farm.length() / 1024 + " KB");
 			} catch (Exception e) {

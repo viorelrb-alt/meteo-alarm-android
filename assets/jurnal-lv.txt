@@ -1,5 +1,10 @@
-Pašreizējā versija: v.3.03 · 8.11.2026
+Pašreizējā versija: v.3.10 · 9.11.2026
 Dizaina / struktūras uzlabojumi.
+- Zemnieka režīms: jauni lodziņi pēc Ūdens augsnē: Smidzināšana, Ūdens bilance, Vētras, Siltuma summa, 16 dienas.
+- ASV, zemnieka režīmā: lodziņi NWS, Sausums, Ugunsgrēks, Krusa.
+- Poga “Statistika · PDF” lauku kartē un katra lauka ekrānā.
+- INFORMĀCIJAS lodziņi Eiropā: sarma, salna, migla, salstošs lietus, stiprs vējš.
+- Atjauninājumi no trim avotiem: GitHub, otrs GitHub serveris un Google Drive.
 - Savienojuma ikona pie pulksteņa: Wi-Fi, mobilie dati vai nav.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.
 

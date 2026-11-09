@@ -1,5 +1,10 @@
-Nuvarande version: v.3.03 · 8.11.2026
+Nuvarande version: v.3.10 · 9.11.2026
 Förbättringar av design / struktur.
+- Lantbruksläge: nya rutor efter Vatten i marken: Besprutning, Vattenbalans, Åska, Dygnsgrader, 16 dagar.
+- I USA, i lantbruksläge: rutorna NWS, Torka, Brand, Hagel.
+- Knappen ”Statistik · PDF” på skifteskartan och på varje skiftes skärm.
+- INFORMATION-rutor i Europa: rimfrost, frost, dimma, underkylt regn, hård vind.
+- Uppdateringar från tre källor: GitHub, en andra GitHub-server och Google Drive.
 - Anslutningsikon vid klockan: Wi-Fi, mobildata eller ingen.
 - Uppdateringar: anslutningen kontrolleras först, en redan hämtad version installeras direkt, upp till 5 försök när GitHub inte svarar, och orsaken visas.
 

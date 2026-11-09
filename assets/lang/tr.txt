@@ -601,3 +601,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Güncelleme hiçbir sunucudan indirilemedi. Birkaç dakika sonra yeniden dene.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	☰ menüsünün ilk satırı modu değiştirir. Çiftçi modunda her saat, hava durumu ve yağmurla tek bir geniş kutudur; yatay konumda iki kutu alt alta, yukarı-aşağı kaydırılır. Başka bir yer seçmek normal moda döndürür.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Uygulama önce interneti kontrol eder, sonra GitHub'da, ikinci bir GitHub sunucusunda ve Google Drive'da arar ve ilk yanıt verenden indirir. Zaten indirilmiş sürüm hemen kurulur.
+ (forecast)	 (tahmin)
+ after day 7	 7. günden sonra
+16 DAYS	16 GÜN
+7 days: rain − evaporation	7 gün: yağmur − buharlaşma
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Topraktaki sudan sonra: İLAÇLAMA (rüzgâr, yağmur, sıcak), SU DENGESİ (yağmur eksi buharlaşma, 7 gün), FIRTINALAR, SICAKLIK TOPLAMI, 16 GÜN. Dokununca her biri açıklanır.
+By week	Haftalık
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE, bir fırtınanın havadan alabileceği enerjidir: 300 J/kg altı düşük, 300–1000 orta, 1000–2500 yüksek, üstü çok yüksek.
+Day   high / low · rain	Gün   en yüksek / en düşük · yağmur
+Day   rain · ET0	Gün   yağmur · ET0
+Farmer boxes	Çiftçi kutuları
+Farmer boxes in the US	ABD'de çiftçi kutuları
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	ABD'deki bir yer için ayrıca: NWS (resmî tahmin), DROUGHT (US Drought Monitor), FIRE ve HAIL (50 km içindeki raporlar).
+GROWING DEGREES	SICAKLIK TOPLAMI
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	İyi: rüzgâr 3–15 km/sa, hamle 25 altı, 2 saat yağmur yok, 28° altı, hava nemi %40 üstü.
+Growing degree days	Büyüme derece günleri
+NO	HAYIR
+Next 24 hours	Önümüzdeki 24 saat
+Next 24 hours, every 3 hours	Önümüzdeki 24 saat, 3 saatte bir
+Rain in 24 hours: 	24 saatte yağmur: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Yağmur eksi toprağın ve bitkilerin verdiği su (evapotranspirasyon ET0, FAO): sıfırın altında toprak kurur.
+SPRAYING	İLAÇLAMA
+STORMS	FIRTINALAR
+Spraying window	İlaçlama aralığı
+Statistics of which parcel?	Hangi parselin istatistiği?
+Statistics · PDF	İstatistik · PDF
+Storm risk	Fırtına riski
+The model's outlook: the second week is less certain than the first.	Modelin görünümü: ikinci hafta ilkinden daha belirsizdir.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Ürünlerin topladığı ısı: her gün en yüksek ve en düşüğün ortalaması (10 ile 30 °C arasında) eksi 10. Mısır ekimden olgunluğa yaklaşık 1300–1500 ister.
+Trend for 16 days	16 günlük eğilim
+WATER BALANCE	SU DENGESİ
+Water balance	Su dengesi
+YES	EVET
+base 	taban 
+colder	daha soğuk
+dry air	kuru hava
+good from 	iyi: 
+highest at 	en yüksek: 
+last 	son 
+next 24 h	önümüzdeki 24 sa
+not in 24 h	24 sa içinde değil
+similar	benzer
+too hot	çok sıcak
+too little wind	rüzgâr çok zayıf
+too much wind	rüzgâr çok güçlü
+very high	çok yüksek
+warmer	daha sıcak
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Açık, rüzgârsız ve 3° ya da altı bir gece: hassas bitkileri yakan kırağı oluşabilir.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Uyarılardan sonra mavi BİLGİ kutuları: kırağı, don (ilkbahar ve sonbahar), sis, donan yağmur, kuvvetli rüzgâr; önümüzdeki 24 saat. Uygulama bunları tahminden hesaplar, NWS bildirimleri gibi; resmî değildir.
+FREEZE	DON
+FREEZING FOG	DONAN SİS
+FREEZING RAIN	DONAN YAĞMUR
+FROST	KIRAĞI
+Fog for several hours: visibility can drop a lot. Drive carefully.	Birkaç saat sis: görüş çok düşebilir. Dikkatli sürün.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Ağaçlarda, tellerde ve yollarda kırağı bırakan sis: kötü görüş ve kaygan yerler.
+INFORMATION	BİLGİ
+Information	Bilgi
+Information boxes	Bilgi kutuları
+Interval: 	Aralık: 
+Lowest: 	En düşük: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Yerde donan yağmur ya da çisenti: kaygan yollar ve kaldırımlar, bitkilerde ve tellerde buz.
+STRONG WIND	KUVVETLİ RÜZGÂR
+Shown only in spring (March–May) and autumn (September–November).	Yalnızca ilkbaharda (mart–mayıs) ve sonbaharda (eylül–kasım) gösterilir.
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Kuvvetli hamleler: gevşek eşyaları sabitleyin, düşen dallara dikkat edin; ilaçlama zamanı değil.
+Strongest gust: 	En kuvvetli hamle: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	−2° ve altı sıcaklıklar: korumasız ürünler, çiçekler ve sebzeler donabilir.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Uygulama tarafından Open-Meteo tahmininden hesaplandı, ABD'deki NWS bildirimleri gibi; resmî uyarı değildir.
+good	iyi
+high	yüksek
+low	düşük
+until 	bitiş: 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Parseller: harita tüm parselleri gösterir; bir iğneye veya parsele dokunmak onu ana ekranda açar. “GPS yerini kaydet” durduğun yeri kaydeder, “Haritada seç” evden de çalışır; GPS düğmesi nerede olduğunu gösterir (mavi nokta). Düzenle (veya kalem) adı ve iğneyi değiştirir. Yalnızca bu telefonda kalır. “İstatistik · PDF” (haritada ve bir parselin ana ekranında) istatistiğini açar.

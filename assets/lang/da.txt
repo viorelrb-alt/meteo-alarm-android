@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Opdateringen kunne ikke hentes fra nogen server. Prøv igen om et par minutter.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Første punkt i ☰ skifter tilstand. I landmandstilstand er hver time én bred boks med vejr og regn; på langs to bokse under hinanden, der skubbes op og ned. Vælger du en anden by, går appen tilbage til normal tilstand.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Appen tjekker først internettet, søger derefter på GitHub, på en anden GitHub-server og på Google Drev og henter fra den første, der svarer. En allerede hentet version installeres straks.
+ (forecast)	 (prognose)
+ after day 7	 efter dag 7
+16 DAYS	16 DAGE
+7 days: rain − evaporation	7 dage: regn − fordampning
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Efter Vand i jorden: SPRØJTNING (vind, regn, varme), VANDBALANCE (regn minus fordampning, 7 dage), STORME, GRADDAGE, 16 DAGE. Et tryk forklarer hver.
+By week	Pr. uge
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE er den energi, et uvejr kan hente fra luften: under 300 J/kg lav, 300–1000 moderat, 1000–2500 høj, derover meget høj.
+Day   high / low · rain	Dag   maks / min · regn
+Day   rain · ET0	Dag   regn · ET0
+Farmer boxes	Landmandens felter
+Farmer boxes in the US	Landmandens felter i USA
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	For en by i USA også: NWS (officiel prognose), DROUGHT (US Drought Monitor), FIRE og HAIL (rapporter inden for 50 km).
+GROWING DEGREES	GRADDAGE
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Godt: vind 3–15 km/t, vindstød under 25, ingen regn i 2 timer, under 28°, luftfugtighed over 40 %.
+Growing degree days	Vækstgraddage
+NO	NEJ
+Next 24 hours	De næste 24 timer
+Next 24 hours, every 3 hours	De næste 24 timer, hver 3. time
+Rain in 24 hours: 	Regn på 24 timer: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Regn minus det vand, jorden og planterne afgiver (fordampning ET0, FAO): under nul tørrer jorden ud.
+SPRAYING	SPRØJTNING
+STORMS	STORME
+Spraying window	Sprøjtevindue
+Statistics of which parcel?	Statistik for hvilken mark?
+Statistics · PDF	Statistik · PDF
+Storm risk	Risiko for uvejr
+The model's outlook: the second week is less certain than the first.	Modellens udsigt: den anden uge er mere usikker end den første.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Den varme, afgrøderne har samlet: hver dag gennemsnittet af maks og min (holdt mellem 10 og 30 °C) minus 10. Majs kræver ca. 1300–1500 fra såning til modning.
+Trend for 16 days	Tendens for 16 dage
+WATER BALANCE	VANDBALANCE
+Water balance	Vandbalance
+YES	JA
+base 	basis 
+colder	koldere
+dry air	tør luft
+good from 	godt fra 
+highest at 	højest kl. 
+last 	sidste 
+next 24 h	næste 24 t
+not in 24 h	ikke inden for 24 t
+similar	som nu
+too hot	for varmt
+too little wind	for lidt vind
+too much wind	for meget vind
+very high	meget høj
+warmer	varmere
+A clear, calm night with 3° or less: frost can form and burn tender plants.	En klar, stille nat med 3° eller mindre: der kan dannes rimfrost, som svider følsomme planter.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Blå INFORMATION-felter efter varslerne: rimfrost, frost (forår og efterår), tåge, isslag, kraftig vind de næste 24 timer. Beregnet af appen ud fra prognosen, som NWS' meddelelser; ikke officielle.
+FREEZE	FROST
+FREEZING FOG	FRYSENDE TÅGE
+FREEZING RAIN	ISSLAG
+FROST	RIMFROST
+Fog for several hours: visibility can drop a lot. Drive carefully.	Tåge i flere timer: sigtbarheden kan falde meget. Kør forsigtigt.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Tåge, der sætter rim på træer, ledninger og veje: dårlig sigt og glatte steder.
+INFORMATION	INFORMATION
+Information	Information
+Information boxes	Informationsfelter
+Interval: 	Tidsrum: 
+Lowest: 	Laveste: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Regn eller støvregn, der fryser på jorden: glatte veje og fortove, is på planter og ledninger.
+STRONG WIND	KRAFTIG VIND
+Shown only in spring (March–May) and autumn (September–November).	Vises kun om foråret (marts–maj) og efteråret (september–november).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Kraftige vindstød: fastgør løse ting, pas på faldende grene; ikke tid til sprøjtning.
+Strongest gust: 	Kraftigste vindstød: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperaturer på −2° og lavere: udækkede afgrøder, blomster og grøntsager kan fryse.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Beregnet af appen ud fra Open-Meteo-prognosen, som NWS' meddelelser i USA; ikke et officielt varsel.
+good	godt
+high	høj
+low	lav
+until 	indtil 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Marker: kortet viser alle parceller; et tryk på en nål eller en parcel åbner den på hovedskærmen. “Gem GPS-sted” gemmer stedet, hvor du står, “Vælg på kortet” virker også hjemmefra; GPS-knappen viser, hvor du er (blå prik). Rediger (eller blyanten) ændrer navnet og nålen. Gemmes kun på denne telefon. “Statistik · PDF” (på kortet og på en marks hovedskærm) åbner dens statistik.

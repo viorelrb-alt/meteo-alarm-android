@@ -1,5 +1,10 @@
-Jelenlegi verzió: v.3.03 · 2026.11.08.
+Jelenlegi verzió: v.3.10 · 2026.11.09.
 Dizájn / szerkezet fejlesztései.
+- Gazda mód: új mezők a Víz a talajban után: Permetezés, Vízmérleg, Viharok, Hőösszeg, 16 nap.
+- Az USA-ban, gazda módban: az NWS, Aszály, Tűz, Jégeső mezők.
+- A „Statisztika · PDF” gomb a parcellák térképén és minden parcella képernyőjén.
+- TÁJÉKOZTATÁS mezők Európában: dér, fagy, köd, ónos eső, erős szél.
+- Frissítések három forrásból: GitHub, egy második GitHub-szerver és a Google Drive.
 - Kapcsolatikon az óra mellett: Wi-Fi, mobiladat vagy nincs.
 - Frissítések: először a kapcsolatot ellenőrzi, a már letöltött verzió azonnal települ, legfeljebb 5 próbálkozás, ha a GitHub nem válaszol, és kiírja az okot.
 

@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Aktualizaci se nepodařilo stáhnout z žádného serveru. Zkus to znovu za pár minut.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	První řádek v ☰ přepíná režim. V režimu farmáře je každá hodina jedno široké pole s počasím a deštěm; na šířku dvě pole pod sebou, posouvaná nahoru a dolů. Výběr jiného místa vrátí běžný režim.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Aplikace nejdřív ověří internet, pak hledá na GitHubu, na druhém serveru GitHubu a na Google Disku a stáhne z prvního, který odpoví. Již stažená verze se hned nainstaluje.
+ (forecast)	 (předpověď)
+ after day 7	 po 7. dni
+16 DAYS	16 DNÍ
+7 days: rain − evaporation	7 dní: déšť − výpar
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Za Vodou v půdě: POSTŘIK (vítr, déšť, horko), VODNÍ BILANCE (déšť minus výpar, 7 dní), BOUŘKY, TEPLOTNÍ SUMY, 16 DNÍ. Klepnutí každé vysvětlí.
+By week	Po týdnech
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE je energie, kterou bouřka může čerpat ze vzduchu: pod 300 J/kg nízká, 300–1000 střední, 1000–2500 vysoká, nad tím velmi vysoká.
+Day   high / low · rain	Den   max / min · déšť
+Day   rain · ET0	Den   déšť · ET0
+Farmer boxes	Pole farmáře
+Farmer boxes in the US	Pole farmáře v USA
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Pro město v USA navíc: NWS (oficiální předpověď), DROUGHT (US Drought Monitor), FIRE a HAIL (hlášení do 50 km).
+GROWING DEGREES	TEPLOTNÍ SUMY
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Dobré: vítr 3–15 km/h, nárazy pod 25, 2 hodiny bez deště, pod 28°, vlhkost vzduchu nad 40 %.
+Growing degree days	Sumy efektivních teplot
+NO	NE
+Next 24 hours	Příštích 24 hodin
+Next 24 hours, every 3 hours	Příštích 24 hodin, po 3 hodinách
+Rain in 24 hours: 	Déšť za 24 hodin: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Déšť minus voda, kterou vydá půda a rostliny (evapotranspirace ET0, FAO): pod nulou půda vysychá.
+SPRAYING	POSTŘIK
+STORMS	BOUŘKY
+Spraying window	Okno pro postřik
+Statistics of which parcel?	Statistika které parcely?
+Statistics · PDF	Statistika · PDF
+Storm risk	Riziko bouřky
+The model's outlook: the second week is less certain than the first.	Výhled modelu: druhý týden je méně jistý než první.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Teplo, které plodiny nasbíraly: každý den průměr maxima a minima (mezi 10 a 30 °C) minus 10. Kukuřice potřebuje asi 1300–1500 od setí po zralost.
+Trend for 16 days	Trend na 16 dní
+WATER BALANCE	VODNÍ BILANCE
+Water balance	Vodní bilance
+YES	ANO
+base 	základ 
+colder	chladněji
+dry air	suchý vzduch
+good from 	dobré od 
+highest at 	nejvyšší v 
+last 	posledních 
+next 24 h	příštích 24 h
+not in 24 h	ne do 24 h
+similar	podobně
+too hot	příliš horko
+too little wind	příliš slabý vítr
+too much wind	příliš silný vítr
+very high	velmi vysoké
+warmer	tepleji
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Jasná, klidná noc se 3° nebo méně: může se vytvořit jinovatka, která spálí citlivé rostliny.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Modrá pole INFORMACE za výstrahami: jinovatka, mráz (jaro a podzim), mlha, mrznoucí déšť, silný vítr v příštích 24 hodinách. Spočítá je aplikace z předpovědi, jako upozornění NWS; nejsou oficiální.
+FREEZE	MRÁZ
+FREEZING FOG	MRZNOUCÍ MLHA
+FREEZING RAIN	MRZNOUCÍ DÉŠŤ
+FROST	JINOVATKA
+Fog for several hours: visibility can drop a lot. Drive carefully.	Mlha několik hodin: viditelnost může hodně klesnout. Jezděte opatrně.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Mlha, která zanechává námrazu na stromech, drátech a silnicích: špatná viditelnost a kluzká místa.
+INFORMATION	INFORMACE
+Information	Informace
+Information boxes	Informační pole
+Interval: 	Interval: 
+Lowest: 	Minimum: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Déšť nebo mrholení, které na zemi mrzne: kluzké silnice a chodníky, led na rostlinách a drátech.
+STRONG WIND	SILNÝ VÍTR
+Shown only in spring (March–May) and autumn (September–November).	Zobrazuje se jen na jaře (březen–květen) a na podzim (září–listopad).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Silné nárazy: upevněte volné předměty, pozor na padající větve; není čas na postřik.
+Strongest gust: 	Nejsilnější náraz: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Teploty −2° a nižší: nechráněné plodiny, květy a zelenina mohou zmrznout.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Spočítáno aplikací z předpovědi Open-Meteo, jako upozornění NWS v USA; není to oficiální výstraha.
+good	dobré
+high	vysoké
+low	nízké
+until 	do 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Pozemky: mapa ukazuje všechny parcely; klepnutí na špendlík nebo na parcelu ji otevře na hlavní obrazovce. „Uložit místo GPS“ uloží místo, kde stojíš, „Vybrat na mapě“ funguje i z domova; tlačítko GPS ukáže, kde jsi (modrá tečka). Upravit (nebo tužka) mění název a špendlík. Zůstávají jen v tomto telefonu. „Statistika · PDF“ (na mapě a na hlavní obrazovce parcely) otevře její statistiku.

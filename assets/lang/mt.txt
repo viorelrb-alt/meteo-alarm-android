@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	L-aġġornament ma setax jitniżżel minn ebda server. Erġa’ pprova fi ftit minuti.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	L-ewwel linja ta’ ☰ tibdel il-mod. Fil-mod tal-bidwi kull siegħa hija kaxxa wiesgħa waħda bit-temp u x-xita; mimduda, żewġ kaxxi waħda taħt l-oħra, li jiżżerżqu ’l fuq u ’l isfel. L-għażla ta’ lokalità oħra terġa’ lura għall-mod normali.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	L-app l-ewwel tiċċekkja l-internet, imbagħad tfittex fuq GitHub, fuq it-tieni server ta’ GitHub u fuq Google Drive, u tniżżel mill-ewwel wieħed li jwieġeb. Verżjoni diġà mniżżla tiġi installata mill-ewwel.
+ (forecast)	 (tbassir)
+ after day 7	 wara l-jum 7
+16 DAYS	16-IL JUM
+7 days: rain − evaporation	7 ijiem: xita − evaporazzjoni
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Wara Ilma fil-ħamrija: IRŞIŞ (riħ, xita, sħana), BILANĊ TAL-ILMA (xita nieqes evaporazzjoni, 7 ijiem), MALTEMPI, GRADI-JIEM, 16-IL JUM. Mess jispjega kull waħda.
+By week	Skont il-ġimgħa
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	Is-CAPE hija l-enerġija li maltempata tista' tieħu mill-arja: taħt 300 J/kg baxxa, 300–1000 moderata, 1000–2500 għolja, aktar minn hekk għolja ħafna.
+Day   high / low · rain	Jum   mass / min · xita
+Day   rain · ET0	Jum   xita · ET0
+Farmer boxes	Il-kaxxi tal-bidwi
+Farmer boxes in the US	Il-kaxxi tal-bidwi fl-Istati Uniti
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Għal belt fl-Istati Uniti wkoll: NWS (tbassir uffiċjali), DROUGHT (US Drought Monitor), FIRE u HAIL (rapporti fi 50 km).
+GROWING DEGREES	GRADI-JIEM
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Tajjeb: riħ 3–15 km/h, raffiki taħt 25, l-ebda xita għal sagħtejn, taħt 28°, umdità tal-arja 'l fuq minn 40%.
+Growing degree days	Gradi-jiem tat-tkabbir
+NO	LE
+Next 24 hours	L-24 siegħa li ġejjin
+Next 24 hours, every 3 hours	L-24 siegħa li ġejjin, kull 3 sigħat
+Rain in 24 hours: 	Xita f'24 siegħa: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Ix-xita nieqes l-ilma li jagħtu l-ħamrija u l-pjanti (evapotraspirazzjoni ET0, FAO): taħt żero l-ħamrija tinxef.
+SPRAYING	IRŞIŞ
+STORMS	MALTEMPI
+Spraying window	Tieqa għar-rxix
+Statistics of which parcel?	L-istatistika ta' liema biċċa art?
+Statistics · PDF	Statistika · PDF
+Storm risk	Riskju ta' maltempata
+The model's outlook: the second week is less certain than the first.	Il-prospett tal-mudell: it-tieni ġimgħa hija inqas ċerta mill-ewwel.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Is-sħana li ġabru l-uċuħ: kull jum il-medja tal-massimu u l-minimu (bejn 10 u 30 °C) nieqes 10. Il-qamħirrum jeħtieġ madwar 1300–1500 miż-żriegħ sal-maturità.
+Trend for 16 days	Xejra għal 16-il jum
+WATER BALANCE	BILANĊ TAL-ILMA
+Water balance	Bilanċ tal-ilma
+YES	IVA
+base 	bażi 
+colder	aktar kiesaħ
+dry air	arja xotta
+good from 	tajjeb minn 
+highest at 	l-ogħla fil-
+last 	l-aħħar 
+next 24 h	24 siegħa li ġejjin
+not in 24 h	mhux f'24 siegħa
+similar	simili
+too hot	sħun wisq
+too little wind	ftit wisq riħ
+too much wind	riħ wisq
+very high	għoli ħafna
+warmer	aktar sħun
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Lejl ċar u kalm bi 3° jew inqas: tista' tifforma l-ġlata, li taħraq il-pjanti delikati.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Kaxxi blu INFORMAZZJONI wara t-twissijiet: ġlata, silġ (rebbiegħa u ħarifa), ċpar, xita li tiffriża, riħ qawwi fl-24 siegħa li ġejjin. L-app tikkalkulahom mit-tbassir, bħall-avviżi tal-NWS; mhumiex uffiċjali.
+FREEZE	SILĠ
+FREEZING FOG	ĊPAR LI JIFFRIŻA
+FREEZING RAIN	XITA LI TIFFRIŻA
+FROST	ĠLATA
+Fog for several hours: visibility can drop a lot. Drive carefully.	Ċpar għal diversi sigħat: il-viżibbiltà tista' tinżel ħafna. Sewqu b'attenzjoni.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Ċpar li jħalli ġlata fuq is-siġar, il-wajers u t-toroq: viżibbiltà baxxa u postijiet jiżolqu.
+INFORMATION	INFORMAZZJONI
+Information	Informazzjoni
+Information boxes	Kaxxi ta' informazzjoni
+Interval: 	Intervall: 
+Lowest: 	L-aktar baxxa: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Xita jew xiribka li tiffriża mal-art: toroq u bankini jiżolqu, silġ fuq il-pjanti u l-wajers.
+STRONG WIND	RIĦ QAWWI
+Shown only in spring (March–May) and autumn (September–November).	Jidher biss fir-rebbiegħa (Marzu–Mejju) u fil-ħarifa (Settembru–Novembru).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Raffiki qawwija: waħħlu l-oġġetti, oqogħdu attenti mill-friegħi; mhux ħin għar-rxix.
+Strongest gust: 	L-aqwa raffika: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperaturi ta' −2° u inqas: uċuħ, fjuri u ħaxix mhux protetti jistgħu jiffriżaw.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Ikkalkulat mill-app mit-tbassir ta' Open-Meteo, bħall-avviżi tal-NWS fl-Istati Uniti; mhux twissija uffiċjali.
+good	tajjeb
+high	għoli
+low	baxx
+until 	sa 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Għelieqi: il-mappa turi l-għelieqi kollha; mess fuq labra jew għalqa jiftaħha fuq l-iskrin ewlieni. “Issejvja post GPS” isejvja l-post fejn int, “Agħżel fuq il-mappa” jaħdem anke mid-dar; il-buttuna GPS turi fejn int (tikka blu). Editja (jew il-lapes) ibiddel l-isem u l-labra. Jibqgħu biss f’dan it-telefon. “Statistika · PDF” (fuq il-mappa u fuq l-iskrin ewlieni ta' biċċa art) tiftaħ l-istatistika tagħha.

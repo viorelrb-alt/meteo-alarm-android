@@ -667,3 +667,74 @@ None of the update servers answered (GitHub, the second server, Google Drive). T
 The update could not be downloaded from any server. Try again in a few minutes.	Nie udało się pobrać aktualizacji z żadnego serwera. Spróbuj ponownie za kilka minut.
 The first item of ☰ switches the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Pierwsza pozycja ☰ zmienia tryb. W trybie rolnika każda godzina to jedno szerokie pole z pogodą i deszczem; poziomo dwa pola jedno pod drugim, przesuwane w górę i w dół. Wybór innej miejscowości przywraca tryb zwykły.
 The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.	Aplikacja najpierw sprawdza internet, potem szuka na GitHubie, na drugim serwerze GitHuba i na Dysku Google i pobiera z pierwszego, który odpowie. Już pobrana wersja instaluje się od razu.
+ (forecast)	 (prognoza)
+ after day 7	 po 7. dniu
+16 DAYS	16 DNI
+7 days: rain − evaporation	7 dni: deszcz − parowanie
+After Water in the soil: SPRAYING (wind, rain, heat), WATER BALANCE (rain minus evaporation, 7 days), STORMS, GROWING DEGREES, 16 DAYS. A tap explains each one.	Po Wodzie w glebie: OPRYSK (wiatr, deszcz, upał), BILANS WODNY (deszcz minus parowanie, 7 dni), BURZE, SUMA CIEPŁA, 16 DNI. Dotknięcie wyjaśnia każde.
+By week	Tygodniami
+CAPE is the energy a storm can draw from the air: under 300 J/kg low, 300–1000 moderate, 1000–2500 high, over that very high.	CAPE to energia, którą burza może czerpać z powietrza: poniżej 300 J/kg niska, 300–1000 umiarkowana, 1000–2500 wysoka, powyżej bardzo wysoka.
+Day   high / low · rain	Dzień   maks / min · deszcz
+Day   rain · ET0	Dzień   deszcz · ET0
+Farmer boxes	Pola rolnika
+Farmer boxes in the US	Pola rolnika w USA
+For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).	Dla miejscowości w USA dodatkowo: NWS (oficjalna prognoza), DROUGHT (US Drought Monitor), FIRE i HAIL (zgłoszenia w promieniu 50 km).
+GROWING DEGREES	SUMA CIEPŁA
+Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.	Dobrze: wiatr 3–15 km/h, porywy poniżej 25, 2 godziny bez deszczu, poniżej 28°, wilgotność powietrza powyżej 40%.
+Growing degree days	Stopniodni wzrostu
+NO	NIE
+Next 24 hours	Najbliższe 24 godziny
+Next 24 hours, every 3 hours	Najbliższe 24 godziny, co 3 godziny
+Rain in 24 hours: 	Deszcz w 24 godziny: 
+Rain minus the water the soil and the plants give off (evapotranspiration ET0, FAO): below zero the soil dries.	Deszcz minus woda oddawana przez glebę i rośliny (ewapotranspiracja ET0, FAO): poniżej zera gleba wysycha.
+SPRAYING	OPRYSK
+STORMS	BURZE
+Spraying window	Okno oprysku
+Statistics of which parcel?	Statystyka której działki?
+Statistics · PDF	Statystyka · PDF
+Storm risk	Ryzyko burzy
+The model's outlook: the second week is less certain than the first.	Perspektywa modelu: drugi tydzień jest mniej pewny niż pierwszy.
+The warmth the crops gathered: each day the mean of the high and the low (kept between 10 and 30 °C) minus 10. Maize needs about 1300–1500 from sowing to ripening.	Ciepło zebrane przez uprawy: każdego dnia średnia z maksimum i minimum (między 10 a 30 °C) minus 10. Kukurydza potrzebuje ok. 1300–1500 od siewu do dojrzałości.
+Trend for 16 days	Trend na 16 dni
+WATER BALANCE	BILANS WODNY
+Water balance	Bilans wodny
+YES	TAK
+base 	baza 
+colder	chłodniej
+dry air	suche powietrze
+good from 	dobrze od 
+highest at 	najwyżej o 
+last 	ostatnie 
+next 24 h	najbliższe 24 h
+not in 24 h	nie w ciągu 24 h
+similar	podobnie
+too hot	za gorąco
+too little wind	za słaby wiatr
+too much wind	za silny wiatr
+very high	bardzo wysokie
+warmer	cieplej
+A clear, calm night with 3° or less: frost can form and burn tender plants.	Pogodna, bezwietrzna noc z 3° lub mniej: może pojawić się szron, który parzy wrażliwe rośliny.
+Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast, like the NWS advisories; not official.	Niebieskie pola INFORMACJA po ostrzeżeniach: szron, przymrozek (wiosną i jesienią), mgła, marznący deszcz, silny wiatr w ciągu najbliższych 24 godzin. Wylicza je aplikacja z prognozy, jak komunikaty NWS; nie są oficjalne.
+FREEZE	PRZYMROZEK
+FREEZING FOG	MARZNĄCA MGŁA
+FREEZING RAIN	MARZNĄCY DESZCZ
+FROST	SZRON
+Fog for several hours: visibility can drop a lot. Drive carefully.	Mgła przez kilka godzin: widoczność może mocno spaść. Jedź ostrożnie.
+Fog that leaves rime on trees, wires and roads: low visibility and slippery spots.	Mgła, która osadza szadź na drzewach, przewodach i drogach: słaba widoczność i śliskie miejsca.
+INFORMATION	INFORMACJA
+Information	Informacja
+Information boxes	Pola informacyjne
+Interval: 	Przedział: 
+Lowest: 	Najniższa: 
+Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.	Deszcz lub mżawka zamarzające na ziemi: śliskie drogi i chodniki, lód na roślinach i przewodach.
+STRONG WIND	SILNY WIATR
+Shown only in spring (March–May) and autumn (September–November).	Tylko wiosną (marzec–maj) i jesienią (wrzesień–listopad).
+Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.	Silne porywy: zabezpiecz luźne przedmioty, uważaj na spadające gałęzie; to nie pora na oprysk.
+Strongest gust: 	Najsilniejszy poryw: 
+Temperatures of −2° and lower: crops, blossoms and vegetables left uncovered can freeze.	Temperatury −2° i niższe: nieosłonięte uprawy, kwiaty i warzywa mogą przemarznąć.
+Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.	Wyliczone przez aplikację z prognozy Open-Meteo, jak komunikaty NWS w USA; to nie oficjalne ostrzeżenie.
+good	dobrze
+high	wysokie
+low	niskie
+until 	do 
+☰ › Parcels: the map shows all the parcels; a tap on a pin or on a parcel opens it on the main screen. “Save GPS place” saves where you stand, “Choose on the map” works from home; the GPS button shows where you are (blue dot). Edit (or the pencil) changes the name and the pin. “Statistics · PDF” (on the map and on a parcel's main screen) opens its statistics. Kept only on this phone.	☰ › Działki: mapa pokazuje wszystkie działki; dotknięcie pinezki lub działki otwiera ją na ekranie głównym. „Zapisz miejsce GPS” zapisuje miejsce, w którym stoisz, „Wybierz na mapie” działa też z domu; przycisk GPS pokazuje, gdzie jesteś (niebieska kropka). Edytuj (lub ołówek) zmienia nazwę i pinezkę. Zostają tylko w tym telefonie. „Statystyka · PDF” (na mapie i na ekranie głównym działki) otwiera jej statystykę.
