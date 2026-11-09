@@ -168,7 +168,7 @@ public final class Preview {
 			ro.meteoalarm.android.core.Tr.set(lg, lf.exists() ? new String(Files.readAllBytes(lf.toPath()), "UTF-8") : null);
 			s.T = new Texts(lg);
 		} else
-		s.T = new Texts(opts.contains(" en"));
+		{ if (opts.contains(" en")) ro.meteoalarm.android.core.Tr.set("en", null); s.T = new Texts(opts.contains(" en")); }
 		s.unitF = opts.contains(" F") || (usa && !opts.contains(" metric"));
 		s.clk12 = opts.contains(" 12h") || (usa && !opts.contains(" metric"));
 		s.dark = opts.contains(" dark");

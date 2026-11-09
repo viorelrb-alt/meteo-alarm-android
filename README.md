@@ -7,13 +7,13 @@ Kindle and laid out for a tall screen (made for a Samsung Galaxy A54, 1080x2340)
 Kindle: Open-Meteo (DWD ICON) forecast, MeteoAlarm warnings for the county, pollen, sun and UV.
 
 <p>
-  <img src="docs/preview-a54.png" width="45%" alt="Light theme, like the Kindle">
-  <img src="docs/preview-a54-dark.png" width="45%" alt="Dark theme, Claude app colours">
+  <img src="docs/preview-a54.png" width="45%" alt="Light theme (Sky palette), v4.00">
+  <img src="docs/preview-a54-dark.png" width="45%" alt="Dark theme (Lavender palette), v4.00">
 </p>
 
-![Landscape, dark theme](docs/preview-a54-landscape-dark.png)
+![Landscape, dark theme (Sage palette), v4.00](docs/preview-a54-landscape-dark.png)
 
-*PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
+*v4.00 screens in English, PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
 
 **Project evolution:** [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf), a diagram of what each version added, from v0.1 to v1.71.
 
