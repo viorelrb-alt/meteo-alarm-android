@@ -1,4 +1,4 @@
-Version actuelle : v.4.11 · 10.11.2026
+Version actuelle : v.4.12 · 10.11.2026
 ÉCRAN PRINCIPAL
 - Cases : un appui sur n'importe quelle case montre la valeur en haut et les explications dessous.
 - Grande boussole : la localité où vous êtes apparaît en premier (gris) ; Partager envoie aussi une image de la fenêtre, les localités proches avec leurs distances, la batterie, les températures (air, sol, à la hauteur du téléphone) et le vent.

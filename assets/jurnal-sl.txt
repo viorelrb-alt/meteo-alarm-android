@@ -1,4 +1,4 @@
-Trenutna različica: v.4.11 · 10.11.2026
+Trenutna različica: v.4.12 · 10.11.2026
 GLAVNI ZASLON
 - Okvirji: dotik katerega koli okvirja pokaže vrednost zgoraj in razlage pod njo.
 - Veliki kompas: dotik okvirja Kompas pokaže kompas, koordinate GPS in 3 najbližje kraje v barvah; Deli pošlje koordinate.

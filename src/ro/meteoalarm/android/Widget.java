@@ -770,13 +770,13 @@ public class Widget extends AppWidgetProvider {
 			return w;
 		}
 
-		/** Pin at the right, the town's name before it, its right edge at RIGHT. */
+		/** The town mark at the right (v4.12, Viorel: the compass's mark instead of the pin), the town's name before it, its right edge at RIGHT. */
 		void town(String name, float right, float base, float size, float maxw) {
-			float ps = 13.2f;
-			Bitmap pin = Widget.icon(ctx, "icons/btn-city.png", 64, black);
-			float e = ps / 14;
-			if (pin != null) cv.drawBitmap(pin, null, new RectF(right - ps - e, base - 10.9f - e, right + e, base - 10.9f + ps + e), new Paint(Paint.FILTER_BITMAP_FLAG));
-			text(name, right - ps - 1.5f, base, size, 1, 0.9f, 3, maxw);
+			float rr = 13.2f * 0.5f, cx = right - rr, cy = base - 10.9f + 6.6f;
+			Paint hp = new Paint(Paint.ANTI_ALIAS_FLAG);
+			if (!black) hp.setShadowLayer(1.5f, 0, 0.6f, 0x66000000);
+			CompassPanel.houseMark(cv, hp, cx, cy, rr, CompassPanel.TOWN_COL[0], 0xFFFFFFFF);
+			text(name, right - rr * 2 - 3f, base, size, 1, 0.9f, 3, maxw);
 		}
 
 		/** v4.10 (Viorel): the town after the compass's town mark (a coloured disc with a small house), from LEFT. */

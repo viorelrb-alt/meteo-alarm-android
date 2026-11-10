@@ -1,4 +1,4 @@
-Geçerli sürüm: v.4.11 · 10.11.2026
+Geçerli sürüm: v.4.12 · 10.11.2026
 ANA EKRAN
 - Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.

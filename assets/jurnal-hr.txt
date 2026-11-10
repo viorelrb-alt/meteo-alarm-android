@@ -1,4 +1,4 @@
-Trenutačna verzija: v.4.11 · 10.11.2026
+Trenutačna verzija: v.4.12 · 10.11.2026
 GLAVNI ZASLON
 - Ikone vremena: u bojama teme; sve se miču 3 sekunde, i nakon svakog osvježavanja i na widgetima.
 - Okviri: dodir bilo kojeg okvira prikazuje vrijednost gore i objašnjenja ispod nje.

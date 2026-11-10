@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.4.11 · 10.11.2026
+Jelenlegi verzió: v.4.12 · 10.11.2026
 FŐKÉPERNYŐ
 - Időjárás-ikonok: a téma színeiben; mind mozog 3 másodpercig, minden frissítés után és a widgeteken is.
 - Mezők: bármely mező megérintése felül az értéket, alatta a magyarázatot mutatja.

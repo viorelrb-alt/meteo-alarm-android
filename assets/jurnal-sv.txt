@@ -1,4 +1,4 @@
-Nuvarande version: v.4.11 · 10.11.2026
+Nuvarande version: v.4.12 · 10.11.2026
 HUVUDSKÄRM
 - Rutor: ett tryck på valfri ruta visar värdet överst och förklaringarna under.
 - Stor kompass: ett tryck på rutan Kompass visar kompassen, GPS-koordinaterna och de 3 närmaste orterna i färger; Dela skickar koordinaterna.

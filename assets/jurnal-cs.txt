@@ -1,4 +1,4 @@
-Současná verze: v.4.11 · 10.11.2026
+Současná verze: v.4.12 · 10.11.2026
 HLAVNÍ OBRAZOVKA
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.
 - Pole: klepnutí na kterékoli pole ukáže hodnotu nahoře a vysvětlení pod ní.

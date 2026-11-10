@@ -1,4 +1,4 @@
-Nuværende version: v.4.11 · 10.11.2026
+Nuværende version: v.4.12 · 10.11.2026
 HOVEDSKÆRM
 - Felter: et tryk på et felt viser værdien øverst og forklaringerne under den.
 - Stort kompas: byen du er i kommer først (grå); Del sender også et billede af vinduet, de nærliggende byer med afstande, batteriet, temperaturerne (luft, jord, i telefonens højde) og vinden.

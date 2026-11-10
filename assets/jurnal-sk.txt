@@ -1,4 +1,4 @@
-Súčasná verzia: v.4.11 · 10.11.2026
+Súčasná verzia: v.4.12 · 10.11.2026
 HLAVNÁ OBRAZOVKA
 - Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
 - Polia: ťuknutie na ktorékoľvek pole ukáže hodnotu hore a vysvetlenie pod ňou.
