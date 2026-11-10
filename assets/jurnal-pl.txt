@@ -1,4 +1,4 @@
-Obecna wersja: v.4.10 · 10.11.2026
+Obecna wersja: v.4.11 · 10.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
 - Duży kompas: miejscowość, w której jesteś, jest pierwsza (szara); Udostępnij wysyła też obraz okna, pobliskie miejscowości z odległościami, baterię, temperatury (powietrze, grunt, na wysokości telefonu) i wiatr.

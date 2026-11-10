@@ -1,4 +1,4 @@
-Verżjoni attwali: v.4.10 · 10.11.2026
+Verżjoni attwali: v.4.11 · 10.11.2026
 SKRIN EWLIENI
 - Boxxla kbira: il-lokalità fejn int tidher l-ewwel (griż); Aqsam jibgħat ukoll stampa tat-tieqa, il-lokalitajiet fil-qrib bid-distanzi, il-batterija, it-temperaturi (arja, art, fl-għoli tat-telefon) u r-riħ.
 - Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.

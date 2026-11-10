@@ -629,10 +629,11 @@ public class Widget extends AppWidgetProvider {
 	 */
 	private static void listLayout(Pen pen, Data d, Set st, String icon, String temp, String desc, String town) {
 		Weather w = d.w;
-		pen.at(0, 0);
-		pen.icon(icon, 12f, 10f, 58f);
+		// v4.11 (Viorel): the left part split in two, the temperature on the left, a big icon on its right.
+		pen.at(0, 0.5f);
+		pen.temp(temp, 12f, 112f, 86f, 44f, 87f, 96, false);
+		pen.icon(icon, 102f, 40f, 74f);
 		pen.at(0, 1);
-		pen.temp(temp, 13f, 124f, 76f, 40f, 102f, 150, false);
 		pen.text(desc, 15f, 145f, 13.5f, -1, 1f, 3, 150);
 		if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			pen.text("\u2191" + deg(w.tmax, d.unitF) + "° / \u2193" + deg(w.tmin, d.unitF) + "°", 15f, 162.5f, 12.5f, -1, 0.95f, 3, 150);

@@ -239,10 +239,24 @@ public final class WidgetConfig extends Activity {
 		town.setGravity(Gravity.CENTER_VERTICAL);
 		town.setBackground(round(card, 26));
 		town.setPadding((int) (22 * dp), (int) (16 * dp), (int) (22 * dp), (int) (16 * dp));
+		// v4.11 (Viorel): the compass's town mark, the name (one line), "Change" at the right.
+		town.addView(new View(this) {
+			final android.graphics.Paint hp = new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(android.graphics.Canvas c) {
+				float r = Math.min(getWidth(), getHeight()) / 2f;
+				CompassPanel.houseMark(c, hp, getWidth() / 2f, getHeight() / 2f, r, CompassPanel.TOWN_COL[0], 0xFFFFFFFF);
+			}
+		}, new LinearLayout.LayoutParams((int) (24 * dp), (int) (24 * dp)));
 		townText = text("", 19, ink, false);
+		townText.setSingleLine(true);
+		townText.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		townText.setPadding((int) (12 * dp), 0, (int) (12 * dp), 0);
 		town.addView(townText, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		TextView change = text(Tr.t("Change", "Schimbare"), 19, accent, true);
-		town.addView(change);
+		TextView change = text(Tr.t("Change", "Schimbă"), 19, accent, true);
+		change.setSingleLine(true);
+		town.addView(change, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		change.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				pickTown();
@@ -270,6 +284,8 @@ public final class WidgetConfig extends Activity {
 				rb.setTextColor(ink);
 				rb.setPadding((int) (12 * dp), (int) (14 * dp), 0, (int) (14 * dp));
 				rb.setId(1000 + i);
+				// The tick in the accent colour (on the dark page it hardly showed, v4.11).
+				if (Build.VERSION.SDK_INT >= 21) rb.setButtonTintList(new android.content.res.ColorStateList(new int[][] { { android.R.attr.state_checked }, {} }, new int[] { accent, dim }));
 				rg.addView(rb);
 				if (keys[i].equals(set.mode)) rb.setChecked(true);
 				rb.setOnClickListener(new View.OnClickListener() {
@@ -402,7 +418,7 @@ public final class WidgetConfig extends Activity {
 	private void refresh() {
 		Widget.Data d = Widget.data(this, set.town);
 		Cities.City app = Widget.data(this, "").c;
-		townText.setText("⌖  " + (d.c != null ? d.c.name : "–") + (set.town.length() == 0 ? (Tr.t("  (as in the app)", "  (ca în aplicație)")) : ""));
+		townText.setText(d.c != null ? d.c.name : "–");
 		alphaText.setText((Tr.t("Transparency: ", "Transparență: ")) + (100 - set.alpha) + "%");
 		alpha.setEnabled(set.bg);
 		alphaText.setAlpha(set.bg ? 1f : 0.4f);

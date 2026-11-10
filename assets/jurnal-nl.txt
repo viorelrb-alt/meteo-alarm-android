@@ -1,4 +1,4 @@
-Huidige versie: v.4.10 · 10.11.2026
+Huidige versie: v.4.11 · 10.11.2026
 HOOFDSCHERM
 - Groot kompas: de plaats waar u bent staat eerst (grijs); Delen stuurt ook een afbeelding van het venster, de plaatsen in de buurt met afstanden, de batterij, de temperaturen (lucht, grond, op de hoogte van de telefoon) en de wind.
 - Groot kompas: een tik op het vak Kompas toont het kompas, de GPS-coördinaten en de 3 dichtstbijzijnde plaatsen in kleuren; Delen stuurt de coördinaten.

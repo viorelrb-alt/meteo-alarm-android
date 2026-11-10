@@ -1,4 +1,4 @@
-Versiunea curentă: v.4.10 · 10.11.2026
+Versiunea curentă: v.4.11 · 10.11.2026
 ECRAN PRINCIPAL
 - Busola mare: atingerea casetei Busolă arată busola, coordonatele GPS și cele mai apropiate 3 localități colorate; Partajare trimite coordonatele.
 - Busola mare: localitatea în care ești apare prima (gri); Partajare trimite și o imagine a ferestrei, localitățile apropiate cu distanțele, bateria, temperaturile (aer, sol, la înălțimea telefonului) și vântul.

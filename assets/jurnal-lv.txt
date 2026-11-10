@@ -1,4 +1,4 @@
-Pašreizējā versija: v.4.10 · 10.11.2026
+Pašreizējā versija: v.4.11 · 10.11.2026
 GALVENAIS EKRĀNS
 - Laika ikonas: motīva krāsās; visas kustas 3 sekundes, arī pēc katras atjaunināšanas un logrīkos.
 - Lielais kompass: pieskaroties lodziņam Kompass, redzams kompass, GPS koordinātas un 3 tuvākās apdzīvotās vietas krāsās; Kopīgot nosūta koordinātas.

@@ -1,4 +1,4 @@
-Versione attuale: v.4.10 · 10.11.2026
+Versione attuale: v.4.11 · 10.11.2026
 SCHERMATA PRINCIPALE
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
 - Bussola grande: un tocco sulla casella Bussola mostra la bussola, le coordinate GPS e le 3 località più vicine a colori; Condividi invia le coordinate.

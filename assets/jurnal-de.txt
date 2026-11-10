@@ -1,4 +1,4 @@
-Aktuelle Version: v.4.10 · 10.11.2026
+Aktuelle Version: v.4.11 · 10.11.2026
 HAUPTBILDSCHIRM
 - Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.
 - Großer Kompass: der Ort, in dem Sie sind, steht zuerst (grau); Teilen sendet auch ein Bild des Fensters, die nahen Orte mit Entfernungen, den Akku, die Temperaturen (Luft, Boden, in Höhe des Telefons) und den Wind.
