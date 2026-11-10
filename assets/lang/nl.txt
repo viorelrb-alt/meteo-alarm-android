@@ -603,7 +603,6 @@ When ON, a notification for rain or strong wind forecast on the parcel.	Indien A
 Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Bodemgegevens zijn modelschattingen van Open-Meteo, geen metingen; nabije percelen kunnen dezelfde waarden tonen.
 OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: verschuif met één vinger, zoom met twee; internet nodig.
 Choose the town: favourites, then counties (or states).	Kies de plaats: favorieten, dan provincies (of staten).
-Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Zet automatische locatie aan (gevuld) of uit (leeg); toont het weer waar je bent.
 Shows the brightness bar on the left.	Toont de helderheidsbalk links.
 Over the brightness bar: switches the theme.	Boven de helderheidsbalk: wisselt het thema.
 Light theme in the light, dark in the dark (needs a light sensor).	Licht thema bij licht, donker in het donker (lichtsensor nodig).
@@ -905,3 +904,4 @@ from 	uit
 A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Een tik op het vak Kompas: een groot kompas, de GPS-coördinaten, de plaats waar u bent (grijs) en de 3 dichtstbijzijnde, elk in zijn kleur (tik op één: naam en afstand). Delen stuurt een afbeelding van het venster met de plek, richting, plaatsen, batterij, temperaturen en wind; Plaatsen toont of verbergt ze.
 Widget 4x2 · list	Widget 4x2 · lijst
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Een grote temperatuur en rechts de volgende 4 dagen (één pictogram per dag) of uren, zoals gekozen in de instellingen: Weer tonen.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Zet automatische locatie aan (gevuld) of uit (leeg); toont het weer waar u bent. Een dorp waar u doorheen komt, komt in de lijst van zijn provincie; het verdwijnt na 7 dagen zonder er langs te komen en blijft als u er vaak komt (3 dagen in 2 weken). Het kompas toont ook de dorpen.

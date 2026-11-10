@@ -1,9 +1,10 @@
-Versione attuale: v.4.12 · 10.11.2026
+Versione attuale: v.4.20 · 10.11.2026
 SCHERMATA PRINCIPALE
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
 - Bussola grande: un tocco sulla casella Bussola mostra la bussola, le coordinate GPS e le 3 località più vicine a colori; Condividi invia le coordinate.
 - Caselle: un tocco su qualsiasi casella mostra il valore in alto e le spiegazioni sotto.
 - Icone meteo: nei colori del tema; tutte si muovono 3 secondi, anche dopo ogni aggiornamento e sui widget.
+- Localizzazione: i paesi che attraversi entrano nell'elenco della loro provincia (per 7 giorni, o per sempre se ci passi spesso); la bussola mostra anche i paesi.
 WIDGET
 - Widget 4x2 · elenco: una temperatura grande e i prossimi 4 giorni (un'icona ciascuno) o le ore, a scelta nelle impostazioni; la località con il segno di località della bussola.
 - Miglioramenti del design e correzioni di errori.

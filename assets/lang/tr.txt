@@ -537,7 +537,6 @@ When ON, a notification for rain or strong wind forecast on the parcel.	AÇIK ol
 Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Toprak verileri Open-Meteo modelinin tahminleridir, ölçüm değildir; yakın parseller aynı değerleri gösterebilir.
 OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: bir parmakla kaydırın, iki parmakla yakınlaştırın; internet gerekir.
 Choose the town: favourites, then counties (or states).	Yerleşimi seçin: favoriler, sonra iller (veya eyaletler).
-Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Otomatik konumu açar (dolu) veya kapatır (boş); bulunduğunuz yerin havasını gösterir.
 Shows the brightness bar on the left.	Soldaki parlaklık çubuğunu gösterir.
 Over the brightness bar: switches the theme.	Parlaklık çubuğunun üstünde: temayı değiştirir.
 Light theme in the light, dark in the dark (needs a light sensor).	Işıkta açık tema, karanlıkta koyu tema (ışık sensörü gerekir).
@@ -839,3 +838,4 @@ from 	yönünden
 A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Pusula kutusuna dokunma: büyük bir pusula, GPS koordinatları, bulunduğunuz yerleşim yeri (gri) ve en yakın 3 yer, her biri kendi renginde (birine dokunma: ad ve mesafe). Paylaş, pencerenin görüntüsünü konum, yön, yerler, pil, sıcaklıklar ve rüzgârla birlikte gönderir; Yerler onları gösterir veya gizler.
 Widget 4x2 · list	Widget 4x2 · liste
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Büyük sıcaklık ve sağda sonraki 4 gün (her biri bir simge) veya saatler, ayarlardaki seçime göre: Havayı göster.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Otomatik konumu açar (dolu) veya kapatır (boş); bulunduğunuz yerdeki havayı gösterir. İçinden geçtiğiniz köy, ilinin listesine girer; 7 gün oradan geçmezseniz çıkar, sık geçerseniz (2 haftada 3 gün) kalır. Pusula köyleri de gösterir.

@@ -603,7 +603,6 @@ When ON, a notification for rain or strong wind forecast on the parcel.	Når TIL
 Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Jorddata er modelskøn fra Open-Meteo, ikke målinger; nærliggende marker kan vise de samme værdier.
 OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: flyt med én finger, zoom med to; kræver internet.
 Choose the town: favourites, then counties (or states).	Vælg by: favoritter, derefter regioner (eller stater).
-Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Slår automatisk placering til (udfyldt) eller fra (tom); viser vejret, hvor du er.
 Shows the brightness bar on the left.	Viser lysstyrkebjælken til venstre.
 Over the brightness bar: switches the theme.	Over lysstyrkebjælken: skifter tema.
 Light theme in the light, dark in the dark (needs a light sensor).	Lyst tema i lys, mørkt i mørke (kræver lyssensor).
@@ -905,3 +904,4 @@ from 	fra
 A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Et tryk på feltet Kompas: et stort kompas, GPS-koordinaterne, byen du er i (grå) og de 3 nærmeste byer, hver i sin farve (tryk på én: navn og afstand). Del sender et billede af vinduet med stedet, retningen, byerne, batteriet, temperaturerne og vinden; Byer viser eller skjuler dem.
 Widget 4x2 · list	Widget 4x2 · liste
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	En stor temperatur og til højre de næste 4 dage (ét ikon hver) eller timer, som valgt i indstillingerne: Vis vejret.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Slår automatisk placering til (fyldt) eller fra (tom); viser vejret, hvor du er. En landsby, du kommer igennem, kommer på amtets liste; den forsvinder efter 7 dage uden at komme forbi og bliver, hvis du ofte kommer der (3 dage på 2 uger). Kompasset viser også landsbyerne.

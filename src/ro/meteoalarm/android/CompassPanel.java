@@ -58,7 +58,7 @@ final class CompassPanel extends View {
 	private final List<Town> towns = new ArrayList<Town>();
 	/** v4.10 (Viorel): the town you are in (nearest, within HERE_KM), first in the list, grey, no mark on the rim. */
 	private Town here;
-	static final double HERE_KM = 8;
+	static final double HERE_KM = 4;
 	static final int HERE_COL = 0xFF9A9A9E;
 	/** The weather now, for Share (v4.10). */
 	private ro.meteoalarm.android.core.Weather w;
@@ -172,8 +172,20 @@ final class CompassPanel extends View {
 		towns.clear();
 		here = null;
 		if (cities == null || Double.isNaN(lat)) return;
-		for (Cities.City c : cities.nearest(lat, lon, 4)) {
+		// v4.20 (Viorel): the villages too, from the list of every locality of Romania.
+		List<Cities.City> all = new ArrayList<Cities.City>(cities.nearest(lat, lon, 4));
+		all.addAll(Places.villages(getContext()).nearest(lat, lon, 8));
+		List<Town> l = new ArrayList<Town>();
+		for (Cities.City c : all) {
 			Town t = new Town(c.name, bearing(lat, lon, c.lat, c.lon), km(lat, lon, c.lat, c.lon));
+			boolean dup = false;
+			for (Town o : l) dup |= ro.meteoalarm.android.core.Warnings.fold(o.name).equals(ro.meteoalarm.android.core.Warnings.fold(t.name)) && km(lat, lon, c.lat, c.lon) - o.km < 4;
+			if (dup) continue;
+			int i = 0;
+			while (i < l.size() && l.get(i).km <= t.km) i++;
+			l.add(i, t);
+		}
+		for (Town t : l) {
 			if (here == null && towns.isEmpty() && t.km <= HERE_KM) here = t;
 			else if (towns.size() < 3) towns.add(t);
 		}

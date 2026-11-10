@@ -537,7 +537,6 @@ When ON, a notification for rain or strong wind forecast on the parcel.	Кад �
 Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	Подаци о тлу су процене модела Open-Meteo, а не мерења; оближње парцеле могу имати исте вредности.
 OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: померајте једним прстом, увећавајте са два; потребан је интернет.
 Choose the town: favourites, then counties (or states).	Изаберите место: омиљена, па окрузи (или државе).
-Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Укључује (пуно) или искључује (празно) аутоматску локацију; приказује време тамо где сте.
 Shows the brightness bar on the left.	Приказује траку осветљености лево.
 Over the brightness bar: switches the theme.	Изнад траке осветљености: мења тему.
 Light theme in the light, dark in the dark (needs a light sensor).	Светла тема на светлу, тамна у мраку (потребан сензор светла).
@@ -839,3 +838,4 @@ from 	из правца
 A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Додир поља Компас: велики компас, GPS координате, место у ком сте (сиво) и 3 најближа, свако у својој боји (додир једног: име и удаљеност). Подели шаље слику прозора са положајем, смером, местима, батеријом, температурама и ветром; Места их приказује или скрива.
 Widget 4x2 · list	Виџет 4x2 · листа
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Велика температура и десно следећа 4 дана (по једна икона) или сати, према избору у подешавањима: Приказ времена.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Укључује (пуно) или искључује (празно) аутоматску локацију; приказује време тамо где сте. Село кроз које пролазите улази у списак округа; нестаје после 7 дана без проласка и остаје ако тамо често пролазите (3 дана у 2 недеље). Компас приказује и села.

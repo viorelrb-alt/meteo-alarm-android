@@ -1,7 +1,8 @@
-Současná verze: v.4.12 · 10.11.2026
+Současná verze: v.4.20 · 10.11.2026
 HLAVNÍ OBRAZOVKA
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.
 - Pole: klepnutí na kterékoli pole ukáže hodnotu nahoře a vysvětlení pod ní.
+- Poloha: vesnice, kterými projíždíte, se přidají do seznamu okresu (na 7 dní, nebo natrvalo, když tudy jezdíte často); kompas ukazuje i vesnice.
 - Velký kompas: klepnutí na pole Kompas ukáže kompas, souřadnice GPS a 3 nejbližší obce barevně; Sdílet pošle souřadnice.
 - Velký kompas: obec, ve které jste, je první (šedě); Sdílet pošle i obrázek okna, blízké obce se vzdálenostmi, baterii, teploty (vzduch, země, ve výšce telefonu) a vítr.
 WIDGETY

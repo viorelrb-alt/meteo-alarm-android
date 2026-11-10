@@ -1,5 +1,6 @@
-Jelenlegi verzió: v.4.12 · 10.11.2026
+Jelenlegi verzió: v.4.20 · 10.11.2026
 FŐKÉPERNYŐ
+- Helymeghatározás: a falvak, amelyeken áthaladsz, bekerülnek a megye listájába (7 napra, vagy végleg, ha gyakran jársz ott); az iránytű a falvakat is mutatja.
 - Időjárás-ikonok: a téma színeiben; mind mozog 3 másodpercig, minden frissítés után és a widgeteken is.
 - Mezők: bármely mező megérintése felül az értéket, alatta a magyarázatot mutatja.
 - Nagy iránytű: a település, ahol vagy, áll elöl (szürke); a Megosztás képet is küld az ablakról, a közeli településeket a távolságokkal, az akkumulátort, a hőmérsékleteket (levegő, talaj, a telefon magasságában) és a szelet.

@@ -1,5 +1,6 @@
-Nuvarande version: v.4.12 · 10.11.2026
+Nuvarande version: v.4.20 · 10.11.2026
 HUVUDSKÄRM
+- Plats: byar du passerar kommer med i länets lista (i 7 dagar, eller för gott om du ofta är där); kompassen visar även byarna.
 - Rutor: ett tryck på valfri ruta visar värdet överst och förklaringarna under.
 - Stor kompass: ett tryck på rutan Kompass visar kompassen, GPS-koordinaterna och de 3 närmaste orterna i färger; Dela skickar koordinaterna.
 - Stor kompass: orten du är i kommer först (grå); Dela skickar även en bild av fönstret, närliggande orter med avstånd, batteriet, temperaturerna (luft, mark, på telefonens höjd) och vinden.

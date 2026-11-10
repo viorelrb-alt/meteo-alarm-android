@@ -603,7 +603,6 @@ When ON, a notification for rain or strong wind forecast on the parcel.	BEKAPCSO
 Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.	A talajadatok az Open-Meteo modelljének becslései, nem mérések; a közeli parcellák ugyanazt mutathatják.
 OpenStreetMap: move it with one finger, zoom with two; it needs internet.	OpenStreetMap: egy ujjal mozgasd, kettővel nagyíts; internet kell hozzá.
 Choose the town: favourites, then counties (or states).	Válassz települést: kedvencek, aztán megyék (vagy államok).
-Turns automatic location on (filled) or off (empty); it shows the weather where you are.	Be- (tele) vagy kikapcsolja (üres) az automatikus helymeghatározást; az időjárást mutatja ott, ahol vagy.
 Shows the brightness bar on the left.	Megjeleníti a fényerősávot bal oldalon.
 Over the brightness bar: switches the theme.	A fényerősáv fölött: témát vált.
 Light theme in the light, dark in the dark (needs a light sensor).	Világos téma világosban, sötét sötétben (fényérzékelő kell).
@@ -905,3 +904,4 @@ from 	irányból:
 A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Koppintás az Iránytű mezőre: nagy iránytű, a GPS-koordináták, a település, ahol vagy (szürke), és a 3 legközelebbi, mindegyik a saját színében (koppintás egyre: név és távolság). A Megosztás képet küld az ablakról a hellyel, iránnyal, településekkel, akkumulátorral, hőmérsékletekkel és széllel; a Települések megjeleníti vagy elrejti őket.
 Widget 4x2 · list	4x2 · lista widget
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Nagy hőmérséklet, jobbra a következő 4 nap (egy-egy ikonnal) vagy óra, a beállításokban választva: Időjárás megjelenítése.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Bekapcsolja (teli) vagy kikapcsolja (üres) az automatikus helymeghatározást; az időjárást mutatja ott, ahol vagy. A falu, amelyen áthaladsz, bekerül a megye listájába; 7 nap után eltűnik, ha nem jársz arra, és marad, ha gyakran jársz ott (2 hét alatt 3 nap). Az iránytű a falvakat is mutatja.

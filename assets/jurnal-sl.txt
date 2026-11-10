@@ -1,5 +1,6 @@
-Trenutna različica: v.4.12 · 10.11.2026
+Trenutna različica: v.4.20 · 10.11.2026
 GLAVNI ZASLON
+- Lokacija: vasi, skozi katere greste, pridejo na seznam okrožja (za 7 dni ali za stalno, če greste tam pogosto); kompas prikazuje tudi vasi.
 - Okvirji: dotik katerega koli okvirja pokaže vrednost zgoraj in razlage pod njo.
 - Veliki kompas: dotik okvirja Kompas pokaže kompas, koordinate GPS in 3 najbližje kraje v barvah; Deli pošlje koordinate.
 - Veliki kompas: kraj, v katerem ste, je prvi (sivo); Deli pošlje tudi sliko okna, bližnje kraje z razdaljami, baterijo, temperature (zrak, tla, na višini telefona) in veter.

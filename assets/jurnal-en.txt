@@ -1,8 +1,9 @@
-Current version: v.4.12 · 10.11.2026
+Current version: v.4.20 · 10.11.2026
 MAIN SCREEN
 - Big compass: a tap on the Compass box shows the compass, the GPS coordinates and the 3 nearest towns in colours; Share sends the coordinates.
 - Big compass: the town you are in comes first (grey); Share also sends a picture of the window, the nearby towns with distances, the battery, the temperatures (air, ground, at the phone's height) and the wind.
 - Boxes: a tap on any box shows its value on top and the explanations under it.
+- Location: the villages you pass through join their county's list (for 7 days, or for good if you pass there often); the compass shows the villages too.
 - Weather icons: in the theme's colours; all of them move for 3 seconds, also after every refresh and on the widgets.
 WIDGETS
 - Widget 4x2 · list: a big temperature and the next 4 days (one icon each) or hours, chosen in its settings; the town after the compass's town mark.

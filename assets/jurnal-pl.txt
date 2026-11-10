@@ -1,8 +1,9 @@
-Obecna wersja: v.4.12 · 10.11.2026
+Obecna wersja: v.4.20 · 10.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
 - Duży kompas: miejscowość, w której jesteś, jest pierwsza (szara); Udostępnij wysyła też obraz okna, pobliskie miejscowości z odległościami, baterię, temperatury (powietrze, grunt, na wysokości telefonu) i wiatr.
 - Ikony pogody: w kolorach motywu; wszystkie poruszają się 3 sekundy, także po każdym odświeżeniu i na widżetach.
+- Lokalizacja: wsie, przez które przejeżdżasz, trafiają na listę okręgu (na 7 dni lub na stałe, jeśli bywasz tam często); kompas pokazuje też wsie.
 - Pola: dotknięcie dowolnego pola pokazuje wartość u góry i objaśnienia pod nią.
 WIDŻETY
 - Widżet 4x2 · lista: duża temperatura i następne 4 dni (po jednej ikonie) lub godziny, do wyboru w ustawieniach; miejscowość ze znakiem miejscowości z kompasu.

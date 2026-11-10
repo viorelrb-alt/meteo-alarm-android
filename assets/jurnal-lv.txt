@@ -1,5 +1,6 @@
-Pašreizējā versija: v.4.12 · 10.11.2026
+Pašreizējā versija: v.4.20 · 10.11.2026
 GALVENAIS EKRĀNS
+- Atrašanās vieta: ciemi, caur kuriem braucat, tiek pievienoti apriņķa sarakstam (uz 7 dienām vai pastāvīgi, ja tur braucat bieži); kompass rāda arī ciemus.
 - Laika ikonas: motīva krāsās; visas kustas 3 sekundes, arī pēc katras atjaunināšanas un logrīkos.
 - Lielais kompass: pieskaroties lodziņam Kompass, redzams kompass, GPS koordinātas un 3 tuvākās apdzīvotās vietas krāsās; Kopīgot nosūta koordinātas.
 - Lielais kompass: vieta, kurā esat, ir pirmā (pelēka); Kopīgot nosūta arī loga attēlu, tuvākās vietas ar attālumiem, akumulatoru, temperatūras (gaiss, zeme, telefona augstumā) un vēju.

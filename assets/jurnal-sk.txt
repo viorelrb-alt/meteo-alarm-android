@@ -1,7 +1,8 @@
-Súčasná verzia: v.4.12 · 10.11.2026
+Súčasná verzia: v.4.20 · 10.11.2026
 HLAVNÁ OBRAZOVKA
 - Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
 - Polia: ťuknutie na ktorékoľvek pole ukáže hodnotu hore a vysvetlenie pod ňou.
+- Poloha: obce, ktorými prechádzate, sa pridajú do zoznamu župy (na 7 dní alebo natrvalo, ak tadiaľ chodíte často); kompas ukazuje aj obce.
 - Veľký kompas: obec, v ktorej ste, je prvá (sivá); Zdieľať pošle aj obrázok okna, blízke obce so vzdialenosťami, batériu, teploty (vzduch, zem, vo výške telefónu) a vietor.
 - Veľký kompas: ťuknutie na pole Kompas ukáže kompas, súradnice GPS a 3 najbližšie obce farebne; Zdieľať pošle súradnice.
 MINIAPLIKÁCIE

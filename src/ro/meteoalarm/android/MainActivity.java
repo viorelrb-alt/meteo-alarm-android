@@ -37,6 +37,7 @@ import android.Manifest;
 import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Area;
 import ro.meteoalarm.android.core.Cities;
+import ro.meteoalarm.android.core.Visits;
 import ro.meteoalarm.android.core.Countries;
 import ro.meteoalarm.android.core.Screen;
 import ro.meteoalarm.android.core.Texts;
@@ -48,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v4.12";
+	static final String VERSION = "Meteo Alarm Android v4.20";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -147,8 +148,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		} catch (Exception e) {
 			countries = new Countries("");
 		}
-		// Towns found by the location, kept on the phone.
+		// Towns found by the location, kept on the phone; v4.20 (Viorel): a place not in the app's
+		// own list (a village) goes after 7 days without passing there, unless passed there often.
+		for (List<Cities.City> l : cities.byCounty.values()) for (Cities.City c : l) builtIn.add(Visits.key(c));
 		cleanNeighbourhoods();
+		expirePlaces();
 		for (String k : prefs.getString("myCities", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
 			if (c != null) cities.put(c);
@@ -1486,6 +1490,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * coordinates (choosing it from the list then gives the weather there) or joins the list.
 	 */
 	private void learn(Cities.City c) {
+		if (passing(c)) {
+			Visits v = new Visits(prefs.getString("visits", ""));
+			if (v.visit(c, Visits.today(System.currentTimeMillis()))) Log.i(this, "LOC", c.label() + ": trecut des pe aici, rămâne în lista județului");
+			prefs.edit().putString("visits", v.toString()).apply();
+		}
 		cities.put(c);
 		StringBuilder b = new StringBuilder(c.key());
 		for (String k : prefs.getString("myCities", "").split("\n")) {
@@ -1494,6 +1503,35 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			b.append('\n').append(k);
 		}
 		prefs.edit().putString("myCities", b.toString()).apply();
+	}
+
+	/** v4.20: the towns of cities.txt (always listed; not counted as places passed through). */
+	private final java.util.HashSet<String> builtIn = new java.util.HashSet<String>();
+
+	/** A place in Romania that is not in the app's own list: listed only while the phone passes there. */
+	private boolean passing(Cities.City c) {
+		return c != null && !c.abroad() && !builtIn.contains(Visits.key(c));
+	}
+
+	/** v4.20 (Viorel): drops from the learned towns the places not passed through lately (not a favourite, not the town shown). */
+	private void expirePlaces() {
+		Visits v = new Visits(prefs.getString("visits", ""));
+		long day = Visits.today(System.currentTimeMillis());
+		Cities.City cur = Cities.City.fromKey(prefs.getString("city", ""));
+		List<Cities.City> fav = favList("favs");
+		StringBuilder b = new StringBuilder();
+		for (String k : prefs.getString("myCities", "").split("\n")) {
+			Cities.City c = Cities.City.fromKey(k);
+			if (c == null) continue;
+			boolean keep = !passing(c) || c.same(cur) || v.stays(c, day);
+			if (!keep) for (Cities.City f : fav) keep |= f.same(c);
+			if (keep) b.append(b.length() > 0 ? "\n" : "").append(k);
+			else {
+				v.forget(c);
+				Log.i(this, "LOC", c.label() + ": scoasă din listă (nicio trecere în ultimele " + Visits.GONE + " zile)");
+			}
+		}
+		prefs.edit().putString("myCities", b.toString()).putString("visits", v.toString()).apply();
 	}
 
 	private java.io.File areaFile(Cities.City c) {
@@ -2576,8 +2614,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Aplicația verifică întâi internetul, apoi caută pe GitHub, pe un server secundar GitHub și pe Google Drive și descarcă de la primul care răspunde. O versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
-		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are.",
-				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești."));
+		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.",
+				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele."));
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left.", "Arată bara de luminozitate din stânga."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches the theme.", "Deasupra barei de luminozitate: schimbă tema."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));

@@ -185,6 +185,17 @@ final class Locator {
 					String in = containingArea(lat, lon);
 					if (in != null && !in.equalsIgnoreCase(town)) district = in;
 				}
+				// v4.20: no map service answered (no internet): the nearest locality of Romania, villages
+				// too, when the phone is within 4 km of it.
+				if (town == null) {
+					ro.meteoalarm.android.core.Cities.City v = Places.villages(ctx).at(lat, lon, 4);
+					if (v != null) {
+						town = v.name;
+						county = v.county;
+						country = "ro";
+						Log.i(ctx, "LOC", "fără serviciu de hartă: localitatea din lista aplicației, " + v.name + ", " + v.county);
+					}
+				}
 				if (country == null) country = "ro";
 				country = country.toLowerCase();
 				// United States (v2.30): the state stands where a Romanian town has its county.
