@@ -1,8 +1,11 @@
-Trenutačna verzija: v.4.00 · 9.11.2026
+Trenutačna verzija: v.4.10 · 10.11.2026
 GLAVNI ZASLON
 - Ikone vremena: u bojama teme; sve se miču 3 sekunde, i nakon svakog osvježavanja i na widgetima.
 - Okviri: dodir bilo kojeg okvira prikazuje vrijednost gore i objašnjenja ispod nje.
 - Veliki kompas: dodir okvira Kompas prikazuje kompas, GPS koordinate i 3 najbliža mjesta u bojama; Podijeli šalje koordinate.
+- Veliki kompas: mjesto u kojem ste prikazano je prvo (sivo); Podijeli šalje i sliku prozora, obližnja mjesta s udaljenostima, bateriju, temperature (zrak, tlo, na visini telefona) i vjetar.
+WIDGETI
+- Widget 4x2 · popis: velika temperatura i sljedeća 4 dana (po jedna ikona) ili sati, po izboru u postavkama; mjesto s oznakom mjesta s kompasa.
 - Poboljšanja dizajna i ispravci pogrešaka.
 
 Verzija 3 (v.3.00 – v.3.92)

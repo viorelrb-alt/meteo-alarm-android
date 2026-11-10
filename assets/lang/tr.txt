@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Büyüklüğü 3 veya daha fazla deprem yo
 Last 48 hours · EU, Ukraine, Moldova	Son 48 saat · AB, Ukrayna, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Kaynak: EMSC (Avrupa-Akdeniz Sismoloji Merkezi, seismicportal.eu), büyüklük 3 ve üzeri. "Hissedildi", büyüklük ve odağa uzaklıktan EMS-98 ölçeğinde bir tahmindir.
 depth 	derinlik 
-from 	uzaklık 
 Probably felt in 	Muhtemelen hissedildi: 
 Probably not felt in 	Muhtemelen hissedilmedi: 
 Updates	Güncellemeler
@@ -823,4 +822,20 @@ Share the coordinates	Koordinatları paylaş
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Temanın renklerinde; hepsi ekran açıldığında, her yenilemeden sonra veya hava değiştiğinde 3 saniye hareket eder, widget'larda da.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula. Herhangi bir kutuya (saatler ve günler dahil) dokunmak değeri üstte, açıklamaları altında gösterir.
 Big compass	Büyük pusula
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Pusula kutusuna dokunma: büyük bir pusula, GPS koordinatları ve en yakın 3 yerleşim yeri, her biri kendi renginde (birine dokunma: ad ve mesafe). Paylaş koordinatları gönderir; Yerler onları gösterir veya gizler.
+Show the weather	Havayı göster
+Daily forecast	Günlük tahmin
+Hourly forecast	Saatlik tahmin
+ · list	 · liste
+you are here	buradasınız
+GPS position	GPS konumu
+You are in	Bulunduğunuz yer
+Nearby towns	Yakındaki yerleşim yerleri
+Phone battery	Telefon pili
+Air temperature (2 m)	Hava sıcaklığı (2 m)
+At ground level (estimate)	Zemin seviyesinde (tahmin)
+At the phone's height	Telefonun yüksekliğinde
+ above the ground, estimate)	 yerden, tahmin)
+from 	yönünden 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Pusula kutusuna dokunma: büyük bir pusula, GPS koordinatları, bulunduğunuz yerleşim yeri (gri) ve en yakın 3 yer, her biri kendi renginde (birine dokunma: ad ve mesafe). Paylaş, pencerenin görüntüsünü konum, yön, yerler, pil, sıcaklıklar ve rüzgârla birlikte gönderir; Yerler onları gösterir veya gizler.
+Widget 4x2 · list	Widget 4x2 · liste
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Büyük sıcaklık ve sağda sonraki 4 gün (her biri bir simge) veya saatler, ayarlardaki seçime göre: Havayı göster.

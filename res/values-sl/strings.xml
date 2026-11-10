@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="w_4x2d">Meteo Alarm 4x2 · dnevi</string>
+    <string name="w_4x2l">Meteo Alarm 4x2 · seznam</string>
     <string name="w_any">Meteo Alarm (poljubna velikost)</string>
     <string name="w_settings">Pripomočki Meteo Alarm</string>
 </resources>

@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Geen aardbeving van magnitude 3 of meer.
 Last 48 hours · EU, Ukraine, Moldova	Laatste 48 uur · EU, Oekraïne, Moldavië
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Bron: EMSC (Euro-Mediterraan Seismologisch Centrum, seismicportal.eu), magnitude 3 en hoger. "Gevoeld" is een schatting op de EMS-98-schaal op basis van de magnitude en de afstand tot de haard.
 depth 	diepte 
-from 	van 
 Probably felt in 	Waarschijnlijk gevoeld in 
 Probably not felt in 	Waarschijnlijk niet gevoeld in 
 Updates	Updates
@@ -889,4 +888,20 @@ Share the coordinates	Coördinaten delen
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	In de kleuren van het thema; alle bewegen 3 seconden bij het openen, na elke vernieuwing of als het weer verandert, ook op de widgets.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas. Een tik op een vak (ook de uren en dagen) toont bovenaan de waarde en eronder de uitleg.
 Big compass	Groot kompas
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Een tik op het vak Kompas: een groot kompas, de GPS-coördinaten en de 3 dichtstbijzijnde plaatsen, elk in een eigen kleur (een tik op een: naam en afstand). Delen stuurt de coördinaten; Plaatsen toont of verbergt ze.
+Show the weather	Weer tonen
+Daily forecast	Dagverwachting
+Hourly forecast	Uurverwachting
+ · list	 · lijst
+you are here	u bent hier
+GPS position	GPS-positie
+You are in	U bent in
+Nearby towns	Plaatsen in de buurt
+Phone battery	Batterij van de telefoon
+Air temperature (2 m)	Luchttemperatuur (2 m)
+At ground level (estimate)	Op grondniveau (schatting)
+At the phone's height	Op de hoogte van de telefoon
+ above the ground, estimate)	 boven de grond, schatting)
+from 	uit 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Een tik op het vak Kompas: een groot kompas, de GPS-coördinaten, de plaats waar u bent (grijs) en de 3 dichtstbijzijnde, elk in zijn kleur (tik op één: naam en afstand). Delen stuurt een afbeelding van het venster met de plek, richting, plaatsen, batterij, temperaturen en wind; Plaatsen toont of verbergt ze.
+Widget 4x2 · list	Widget 4x2 · lijst
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Een grote temperatuur en rechts de volgende 4 dagen (één pictogram per dag) of uren, zoals gekozen in de instellingen: Weer tonen.

@@ -1,8 +1,11 @@
-Nuvarande version: v.4.00 · 9.11.2026
+Nuvarande version: v.4.10 · 10.11.2026
 HUVUDSKÄRM
 - Rutor: ett tryck på valfri ruta visar värdet överst och förklaringarna under.
 - Stor kompass: ett tryck på rutan Kompass visar kompassen, GPS-koordinaterna och de 3 närmaste orterna i färger; Dela skickar koordinaterna.
+- Stor kompass: orten du är i kommer först (grå); Dela skickar även en bild av fönstret, närliggande orter med avstånd, batteriet, temperaturerna (luft, mark, på telefonens höjd) och vinden.
 - Vädersymboler: i temats färger; alla rör sig i 3 sekunder, även efter varje uppdatering och på widgetarna.
+WIDGETAR
+- Widget 4x2 · lista: en stor temperatur och de kommande 4 dagarna (en ikon var) eller timmarna, valbart i inställningarna; orten med kompassens ortsmärke.
 - Designförbättringar och felrättningar.
 
 Version 3 (v.3.00 – v.3.92)

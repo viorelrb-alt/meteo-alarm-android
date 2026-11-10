@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v4.00";
+	static final String VERSION = "Meteo Alarm Android v4.10";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1826,7 +1826,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	public void onCompass() {
 		Log.i(this, "GEST", "atingere casetă busolă");
 		double la = s.city != null ? s.city.lat : Double.NaN, lo = s.city != null ? s.city.lon : Double.NaN;
-		compassPanel.show(cities, la, lo, s.heading, s.dark, s.unitF);
+		compassPanel.show(cities, la, lo, s.heading, s.dark, s.unitF, s.w);
 	}
 
 	/** v4.00 (Viorel): a tap on a box of the bottom row: its value on top, the explanations under it. */
@@ -2605,11 +2605,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));
-		if (s.hasCompass) help.entry(mini("bigcompass"), Tr.t("Big compass", "Busola mare"), Tr.t("A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.",
-				"Atingerea casetei Busolă: o busolă mare, coordonatele GPS și cele mai apropiate 3 localități, fiecare în culoarea ei (atingerea uneia: nume și distanță). Partajare trimite coordonatele; Localități le arată sau le ascunde."));
+		if (s.hasCompass) help.entry(mini("bigcompass"), Tr.t("Big compass", "Busola mare"), Tr.t("A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.",
+				"Atingerea casetei Busolă: o busolă mare, coordonatele GPS, localitatea în care ești (gri) și cele mai apropiate 3 localități, fiecare în culoarea ei (atingerea uneia: nume și distanță). Partajare trimite o imagine a ferestrei cu locul, direcția, localitățile, bateria, temperaturile și vântul; Localități le arată sau le ascunde."));
 		help.section(Tr.t("Home-screen widgets", "Widget-uri pe ecranul de pornire"));
 		help.entry(mini("widget"), Tr.t("Meteo Alarm widgets", "Widget-urile Meteo Alarm"), Tr.t("Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).",
 				"Ține apăsat pe ecranul de pornire › Widgeturi › Meteo Alarm. Trage de margini ca să schimbi modelul (2x2, 4x1, 4x2, 4x3)."));
+		help.entry(mini("widget"), Tr.t("Widget 4x2 · list", "Widget-ul 4x2 · listă"), Tr.t("A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.",
+				"Temperatura mare și, în dreapta, următoarele 4 zile (câte un icon) sau ore, după alegerea din setări: Afișare starea vremii."));
 		help.entry(mini("gear"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings, or ☰ › Widgets: town, background, colours.",
 				"Ține apăsat pe widget › Setări sau ☰ › Widget-uri: localitatea, fundalul, culorile."));
 		help.entry(mini("auto"), Tr.t("Refreshing by itself", "Reîmprospătare automată"), Tr.t("Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.",

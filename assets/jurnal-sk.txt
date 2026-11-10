@@ -1,8 +1,11 @@
-Súčasná verzia: v.4.00 · 9.11.2026
+Súčasná verzia: v.4.10 · 10.11.2026
 HLAVNÁ OBRAZOVKA
 - Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
 - Polia: ťuknutie na ktorékoľvek pole ukáže hodnotu hore a vysvetlenie pod ňou.
+- Veľký kompas: obec, v ktorej ste, je prvá (sivá); Zdieľať pošle aj obrázok okna, blízke obce so vzdialenosťami, batériu, teploty (vzduch, zem, vo výške telefónu) a vietor.
 - Veľký kompas: ťuknutie na pole Kompas ukáže kompas, súradnice GPS a 3 najbližšie obce farebne; Zdieľať pošle súradnice.
+MINIAPLIKÁCIE
+- Miniaplikácia 4x2 · zoznam: veľká teplota a ďalšie 4 dni (po jednej ikone) alebo hodiny, podľa voľby v nastaveniach; obec so značkou obce z kompasu.
 - Vylepšenia vzhľadu a opravy chýb.
 
 Verzia 3 (v.3.00 – v.3.92)

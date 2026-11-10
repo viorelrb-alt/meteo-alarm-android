@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="w_4x2d">Meteo Alarm 4x2 · laethanta</string>
+    <string name="w_4x2l">Meteo Alarm 4x2 · liosta</string>
     <string name="w_any">Meteo Alarm (méid ar bith)</string>
     <string name="w_settings">Giuirléidí Meteo Alarm</string>
 </resources>

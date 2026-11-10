@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Nema potresa magnitude 3 ili više.
 Last 48 hours · EU, Ukraine, Moldova	Zadnjih 48 sati · EU, Ukrajina, Moldavija
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Izvor: EMSC (Euro-mediteranski seizmološki centar, seismicportal.eu), magnituda 3 i više. „Osjetio se” je procjena na ljestvici EMS-98 iz magnitude i udaljenosti od žarišta.
 depth 	dubina 
-from 	od 
 Probably felt in 	Vjerojatno osjećen u: 
 Probably not felt in 	Vjerojatno nije osjećen u: 
 Updates	Ažuriranja
@@ -889,4 +888,20 @@ Share the coordinates	Podijeli koordinate
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	U bojama teme; sve se miču 3 sekunde pri otvaranju zaslona, nakon svakog osvježavanja ili kad se vrijeme promijeni, i na widgetima.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sunce / Mjesec, UV, Pelud, Vlažnost, Kakvoća zraka, Tlak, Vjetar, Vidljivost, Kompas. Dodir bilo kojeg okvira (i sati i dana) prikazuje vrijednost gore i objašnjenja ispod nje.
 Big compass	Veliki kompas
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Dodir okvira Kompas: veliki kompas, GPS koordinate i 3 najbliža mjesta, svako u svojoj boji (dodir jednog: ime i udaljenost). Podijeli šalje koordinate; Mjesta ih prikazuje ili skriva.
+Show the weather	Prikaz vremena
+Daily forecast	Dnevna prognoza
+Hourly forecast	Prognoza po satima
+ · list	 · popis
+you are here	ovdje ste
+GPS position	GPS položaj
+You are in	Nalazite se u
+Nearby towns	Obližnja mjesta
+Phone battery	Baterija telefona
+Air temperature (2 m)	Temperatura zraka (2 m)
+At ground level (estimate)	Uz tlo (procjena)
+At the phone's height	Na visini telefona
+ above the ground, estimate)	 iznad tla, procjena)
+from 	iz smjera 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Dodir polja Kompas: veliki kompas, GPS koordinate, mjesto u kojem ste (sivo) i 3 najbliža mjesta, svako u svojoj boji (dodir jednog: ime i udaljenost). Podijeli šalje sliku prozora s položajem, smjerom, mjestima, baterijom, temperaturama i vjetrom; Mjesta ih prikazuje ili skriva.
+Widget 4x2 · list	Widget 4x2 · popis
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Velika temperatura i desno sljedeća 4 dana (po jedna ikona) ili sati, prema odabiru u postavkama: Prikaz vremena.

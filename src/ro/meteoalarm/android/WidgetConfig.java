@@ -117,7 +117,7 @@ public final class WidgetConfig extends Activity {
 		int[] f = Widget.frame(this, m, wid, new StringBuilder());
 		int k = Widget.kind(this, m, wid, f[0], f[1]);
 		Widget.Data d = Widget.data(this, Widget.Set.of(this, wid).town);
-		String n = Widget.NAMES[k] + (k == 4 ? Tr.t(" · days", " · zile") : "");
+		String n = Widget.NAMES[k] + (k == 4 ? Tr.t(" · days", " · zile") : k == 6 ? Tr.t(" · list", " · listă") : "");
 		return n + (d.c != null ? " · " + d.c.name : "");
 	}
 
@@ -252,6 +252,37 @@ public final class WidgetConfig extends Activity {
 		tl.topMargin = (int) (14 * dp);
 		col.addView(town, tl);
 
+		// v4.10 (Viorel): the list widget shows the next days or the next hours.
+		if (kind == 6) {
+			TextView h = text(Tr.t("Show the weather", "Afișare starea vremii"), 17, dim, true);
+			h.setPadding((int) (8 * dp), (int) (22 * dp), 0, (int) (8 * dp));
+			col.addView(h);
+			android.widget.RadioGroup rg = new android.widget.RadioGroup(this);
+			rg.setBackground(round(card, 26));
+			rg.setPadding((int) (16 * dp), (int) (6 * dp), (int) (16 * dp), (int) (6 * dp));
+			final String[] keys = { "days", "hours" };
+			String[] names = { Tr.t("Daily forecast", "Prognoză zilnică"), Tr.t("Hourly forecast", "Prognoză orară") };
+			for (int i = 0; i < 2; i++) {
+				final int k = i;
+				android.widget.RadioButton rb = new android.widget.RadioButton(this);
+				rb.setText(names[i]);
+				rb.setTextSize(18);
+				rb.setTextColor(ink);
+				rb.setPadding((int) (12 * dp), (int) (14 * dp), 0, (int) (14 * dp));
+				rb.setId(1000 + i);
+				rg.addView(rb);
+				if (keys[i].equals(set.mode)) rb.setChecked(true);
+				rb.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						set.mode = keys[k];
+						refresh();
+					}
+				});
+				if (i == 0) rg.addView(divider());
+			}
+			col.addView(rg, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		}
+
 		// The card: background, transparency, colours, text colour.
 		LinearLayout c = new LinearLayout(this);
 		c.setOrientation(LinearLayout.VERTICAL);
@@ -334,17 +365,22 @@ public final class WidgetConfig extends Activity {
 				save();
 			}
 		});
-		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		bl.gravity = Gravity.CENTER_HORIZONTAL;
-		bl.topMargin = (int) (24 * dp);
-		col.addView(bar, bl);
-
+		// v4.10 (Viorel): the pill floats at the bottom of the screen, like the phone's own widget
+		// settings; the settings scroll under it (room left at the end so the last row clears it).
+		if (Build.VERSION.SDK_INT >= 21) bar.setElevation(8 * dp);
+		col.setPadding(pad, (int) (24 * dp), pad, (int) (110 * dp));
 		ScrollView sv = new ScrollView(this);
 		sv.setBackgroundColor(page);
 		sv.addView(col);
+		FrameLayout root = new FrameLayout(this);
+		root.setBackgroundColor(page);
+		root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
+		bl.bottomMargin = (int) (24 * dp);
+		root.addView(bar, bl);
 		getWindow().setStatusBarColor(page);
 		getWindow().setNavigationBarColor(page);
-		setContentView(sv);
+		setContentView(root);
 		refresh();
 	}
 

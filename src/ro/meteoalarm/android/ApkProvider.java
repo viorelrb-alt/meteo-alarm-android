@@ -34,8 +34,16 @@ public final class ApkProvider extends ContentProvider {
 		return Uri.parse("content://" + AUTHORITY + "/log/" + name);
 	}
 
+	/** v4.10: the compass window's picture, shared as content://…/shot/busola.png. */
+	static final String SHOT = "busola.png";
+
+	static Uri shotUri() {
+		return Uri.parse("content://" + AUTHORITY + "/shot/" + SHOT);
+	}
+
 	private File target(Uri uri) {
 		java.util.List<String> seg = uri.getPathSegments();
+		if (seg.size() == 2 && seg.get(0).equals("shot") && seg.get(1).equals(SHOT)) return new File(new File(getContext().getCacheDir(), "shot"), SHOT);
 		if (seg.size() == 2 && seg.get(0).equals("log") && seg.get(1).matches("[A-Za-z0-9._-]+\\.txt"))
 			return new File(new File(getContext().getCacheDir(), "log"), seg.get(1));
 		return file(getContext());
@@ -53,7 +61,8 @@ public final class ApkProvider extends ContentProvider {
 
 	@Override
 	public String getType(Uri uri) {
-		return target(uri).getName().endsWith(".txt") ? "text/plain" : "application/vnd.android.package-archive";
+		String n = target(uri).getName();
+		return n.endsWith(".txt") ? "text/plain" : n.endsWith(".png") ? "image/png" : "application/vnd.android.package-archive";
 	}
 
 	@Override

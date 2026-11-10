@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Gan aon chrith talún de mhéid 3 nó nío
 Last 48 hours · EU, Ukraine, Moldova	Na 48 uair deiridh · AE, an Úcráin, an Mholdóiv
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Foinse: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), méid 3 agus os a chionn. Is meastachán é "Mothaithe" ar scála EMS-98 ón méid agus ón bhfad go dtí an fócas.
 depth 	doimhneacht 
-from 	fad 
 Probably felt in 	Mothaithe is dócha i 
 Probably not felt in 	Ní mhothaithe is dócha i 
 Updates	Nuashonruithe
@@ -889,4 +888,20 @@ Share the coordinates	Comhroinn na comhordanáidí
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	I ndathanna an téama; bogann siad go léir ar feadh 3 soicind nuair a osclaítear an scáileán, tar éis gach athnuachana nó nuair a athraíonn an aimsir, ar na giuirléidí freisin.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Grian / Gealach, UV, Pailin, Bogthaise, Cáilíocht aeir, Brú, Gaoth, Infheictheacht, Compás. Taispeánann tapáil ar aon bhosca (na huaireanta agus na laethanta freisin) an luach thuas agus na mínithe faoi.
 Big compass	Compás mór
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Tapáil ar an mbosca Compás: compás mór, comhordanáidí GPS agus na 3 bhaile is gaire, gach ceann ina dhath féin (tapáil ar cheann: ainm agus fad). Seolann Comhroinn na comhordanáidí; taispeánann nó folaíonn Bailte iad.
+Show the weather	Taispeáin an aimsir
+Daily forecast	Réamhaisnéis laethúil
+Hourly forecast	Réamhaisnéis in aghaidh na huaire
+ · list	 · liosta
+you are here	tá tú anseo
+GPS position	Suíomh GPS
+You are in	Tá tú i
+Nearby towns	Bailte in aice láimhe
+Phone battery	Ceallra an fhóin
+Air temperature (2 m)	Teocht an aeir (2 m)
+At ground level (estimate)	Ag leibhéal na talún (meastachán)
+At the phone's height	Ag airde an fhóin
+ above the ground, estimate)	 os cionn na talún, meastachán)
+from 	ón 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Tadhall ar bhosca an Chompáis: compás mór, na comhordanáidí GPS, an baile ina bhfuil tú (liath) agus na 3 bhaile is gaire, gach ceann ina dhath féin (tadhall ar cheann: ainm agus fad). Seolann Comhroinn pictiúr den fhuinneog leis an áit, an treo, na bailte, an ceallra, na teochtaí agus an ghaoth; taispeánann nó folaíonn Bailte iad.
+Widget 4x2 · list	Giuirléid 4x2 · liosta
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Teocht mhór agus, ar dheis, na 4 lá eile (deilbhín amháin an ceann) nó uaireanta, de réir rogha sna socruithe: Taispeáin an aimsir.

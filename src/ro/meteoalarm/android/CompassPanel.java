@@ -56,6 +56,14 @@ final class CompassPanel extends View {
 	private boolean townOnly = true;
 	private Cities cities;
 	private final List<Town> towns = new ArrayList<Town>();
+	/** v4.10 (Viorel): the town you are in (nearest, within HERE_KM), first in the list, grey, no mark on the rim. */
+	private Town here;
+	static final double HERE_KM = 8;
+	static final int HERE_COL = 0xFF9A9A9E;
+	/** The weather now, for Share (v4.10). */
+	private ro.meteoalarm.android.core.Weather w;
+	/** The phone's height above sea level from the GPS (m; NaN without). */
+	private double alt = Double.NaN;
 	private boolean showTowns = true;
 	private int picked = -1;
 	// Where the parts are, for the taps (pixels).
@@ -104,7 +112,9 @@ final class CompassPanel extends View {
 	}
 
 	/** Opens the window at the town (LAT, LON until the phone gives its own place). */
-	void show(Cities cities, double tLat, double tLon, float head, boolean dark, boolean imperial) {
+	void show(Cities cities, double tLat, double tLon, float head, boolean dark, boolean imperial, ro.meteoalarm.android.core.Weather w) {
+		this.w = w;
+		alt = Double.NaN;
 		this.cities = cities;
 		this.dark = dark;
 		this.imperial = imperial;
@@ -151,6 +161,7 @@ final class CompassPanel extends View {
 		lat = l.getLatitude();
 		lon = l.getLongitude();
 		accuracy = l.hasAccuracy() ? l.getAccuracy() : Float.NaN;
+		alt = altitude(l);
 		townOnly = false;
 		nearby();
 		invalidate();
@@ -159,8 +170,13 @@ final class CompassPanel extends View {
 	/** The three listed towns nearest to the place shown. */
 	private void nearby() {
 		towns.clear();
+		here = null;
 		if (cities == null || Double.isNaN(lat)) return;
-		for (Cities.City c : cities.nearest(lat, lon, 3)) towns.add(new Town(c.name, bearing(lat, lon, c.lat, c.lon), km(lat, lon, c.lat, c.lon)));
+		for (Cities.City c : cities.nearest(lat, lon, 4)) {
+			Town t = new Town(c.name, bearing(lat, lon, c.lat, c.lon), km(lat, lon, c.lat, c.lon));
+			if (here == null && towns.isEmpty() && t.km <= HERE_KM) here = t;
+			else if (towns.size() < 3) towns.add(t);
+		}
 		if (picked >= towns.size()) picked = -1;
 	}
 
@@ -229,11 +245,11 @@ final class CompassPanel extends View {
 		float u = Math.min(W, H) / 1080f * (tablet ? 0.85f : 1f);
 		float m = (tablet ? 40 : 24) * u, r = 28 * u, hb = 78 * u, fs = (portrait ? 34 : 38) * u, bh = 104 * u;
 		float R, dcx, dcy, x0, rw, iy;
-		int n = Math.min(3, towns.size());
+		int n = Math.min(3, towns.size()), nl = n + (here != null ? 1 : 0);
 		if (portrait) {
 			float cw = W - 2 * m;
 			R = cw * (tablet ? 0.3f : 0.36f);
-			float ch = hb + R * 2.5f + 40 * u + fs * 1.75f * 3 + fs + 60 * u + (n > 0 ? fs * 1.75f * (n + 0.6f) + 40 * u : 0) + bh + 40 * u;
+			float ch = hb + R * 2.5f + 40 * u + fs * 1.75f * 3 + fs + 60 * u + (nl > 0 ? fs * 1.75f * (nl + 0.6f) + 40 * u : 0) + bh + 40 * u;
 			ch = Math.min(ch, H - 2 * m);
 			card.set(m, (H - ch) / 2, m + cw, (H + ch) / 2);
 			dcx = W / 2f;
@@ -284,17 +300,18 @@ final class CompassPanel extends View {
 			}
 		}
 		float ly = iy + (rows.length - 1) * fs * 1.75f + fs * 0.6f + 60 * u;
-		if (n > 0) {
+		if (nl > 0) {
 			text(c, Tr.t("NEARBY TOWNS", "LOCALITĂȚI APROPIATE"), x0, ly, fs * 0.8f, band, true, Paint.Align.LEFT);
-			for (int i = 0; i < n; i++) {
-				Town t = towns.get(i);
-				float y = ly + (i + 1) * fs * 1.75f;
-				house(c, x0 + fs * 0.4f, y, fs * 0.42f, TOWN_COL[i], box, i == picked, band, u * 0.6f);
+			for (int j = 0; j < nl; j++) {
+				int i = here != null ? j - 1 : j;
+				Town t = i < 0 ? here : towns.get(i);
+				float y = ly + (j + 1) * fs * 1.75f;
+				house(c, x0 + fs * 0.4f, y, fs * 0.42f, i < 0 ? HERE_COL : TOWN_COL[i], box, i >= 0 && i == picked, band, u * 0.6f);
 				String d = dist(t.km) + " · " + dir8(t.bearing) + " " + Math.round(t.bearing) + "°";
 				float dw = width(d, fs * 0.9f, false);
-				String nm = t.name;
+				String nm = i < 0 ? t.name + " (" + Tr.t("you are here", "ești aici") + ")" : t.name;
 				float ns = fs;
-				while (ns > fs * 0.6f && width(nm, ns, true) > rw - fs * 1.1f - dw - 20 * u) ns *= 0.94f;
+				while (ns > fs * 0.5f && width(nm, ns, true) > rw - fs * 1.1f - dw - 20 * u) ns *= 0.94f;
 				text(c, nm, x0 + fs * 1.1f, y, ns, ink, true, Paint.Align.LEFT);
 				text(c, d, x0 + rw, y, fs * 0.9f, dim, false, Paint.Align.RIGHT);
 			}
@@ -464,17 +481,24 @@ final class CompassPanel extends View {
 			p.setColor(ring);
 			c.drawCircle(x, y, rr + 5 * u, p);
 		}
-		fill(c, color);
+		houseMark(c, p, x, y, rr, color, houseCol);
+	}
+
+	/** The mark itself: a disc in COLOR with a small house in HOUSE (also the widgets' town mark, v4.10). */
+	static void houseMark(Canvas c, Paint p, float x, float y, float rr, int color, int house) {
+		p.setStyle(Paint.Style.FILL);
+		p.setColor(color);
 		c.drawCircle(x, y, rr, p);
+		p.clearShadowLayer();
 		float s = rr * 0.55f;
 		Path h = new Path();
 		h.moveTo(x - s, y);
 		h.lineTo(x, y - s * 0.95f);
 		h.lineTo(x + s, y);
 		h.close();
-		fill(c, houseCol);
+		p.setColor(house);
 		c.drawPath(h, p);
-		c.drawRect(x - s * 0.7f, y - 1, x + s * 0.7f, y + s * 0.8f, p);
+		c.drawRect(x - s * 0.7f, y - s * 0.08f, x + s * 0.7f, y + s * 0.8f, p);
 	}
 
 	private static int mix(int a, int b, float f) {
@@ -517,17 +541,118 @@ final class CompassPanel extends View {
 		return true;
 	}
 
-	/** The coordinates to other apps (WhatsApp, maps, messages…) with a map link. */
+	/**
+	 * v4.10 (Viorel): Share sends what may matter to someone else: the GPS place (with a map link),
+	 * the direction, the town you are in and the nearby ones with their distance and direction, the
+	 * phone's battery and the temperature; with a picture of the compass window when it can be made.
+	 */
 	private void share() {
 		if (Double.isNaN(lat)) return;
+		Context ctx = getContext();
 		String q = String.format(java.util.Locale.US, "%.5f,%.5f", lat, lon);
-		String body = coord(lat, true) + ", " + coord(lon, false) + "\nhttps://maps.google.com/?q=" + q;
-		Intent i = new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, body);
-		Log.i(getContext(), "GEST", "busolă: partajare coordonate");
+		StringBuilder b = new StringBuilder();
+		b.append(Tr.t("COMPASS", "BUSOLĂ")).append(" · Meteo Alarm\n");
+		b.append(Tr.t("GPS position", "Poziție GPS")).append(": ").append(coord(lat, true)).append(", ").append(coord(lon, false));
+		if (!townOnly && !Float.isNaN(accuracy)) b.append(" (±").append(Math.round(imperial ? accuracy * 3.28084 : accuracy)).append(imperial ? " ft)" : " m)");
+		if (townOnly) b.append(" (").append(Tr.t("the town (no GPS fix)", "localitatea (fără GPS)")).append(")");
+		b.append("\nhttps://maps.google.com/?q=").append(q);
+		if (!Float.isNaN(heading)) b.append("\n").append(Tr.t("Direction", "Direcție")).append(": ").append(dir8(heading)).append(" · ").append(Math.round((heading % 360 + 360) % 360) % 360).append("°");
+		if (here != null) b.append("\n").append(Tr.t("You are in", "Ești în")).append(": ").append(here.name);
+		if (!towns.isEmpty()) {
+			b.append("\n").append(Tr.t("Nearby towns", "Localități apropiate")).append(":");
+			for (Town t : towns) b.append("\n- ").append(t.name).append(": ").append(dist(t.km)).append(" · ").append(dir8(t.bearing)).append(" ").append(Math.round(t.bearing)).append("°");
+		}
+		int bat = battery(ctx);
+		if (bat >= 0) b.append("\n").append(Tr.t("Phone battery", "Bateria telefonului")).append(": ").append(bat).append("%");
+		weather(b);
+		Intent i = new Intent(Intent.ACTION_SEND).putExtra(Intent.EXTRA_TEXT, b.toString());
+		android.net.Uri shot = shot(ctx);
+		if (shot != null) {
+			i.setType("image/png").putExtra(Intent.EXTRA_STREAM, shot).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+			i.setClipData(android.content.ClipData.newRawUri("", shot));
+		} else i.setType("text/plain");
+		Log.i(ctx, "GEST", "busolă: partajare" + (shot != null ? " cu imagine" : " doar text"));
 		try {
-			getContext().startActivity(Intent.createChooser(i, Tr.t("Share the coordinates", "Partajează coordonatele")));
+			ctx.startActivity(Intent.createChooser(i, Tr.t("Share the coordinates", "Partajează coordonatele")));
 		} catch (Exception ex) {
-			Log.w(getContext(), "BUSOLA", "partajare imposibilă: " + ex);
+			Log.w(ctx, "BUSOLA", "partajare imposibilă: " + ex);
+		}
+	}
+
+	/** Above sea level: Android 14+ gives it directly; older ones the GPS height (over the ellipsoid, some 30–45 m more in Europe). */
+	private static double altitude(Location l) {
+		try {
+			if (android.os.Build.VERSION.SDK_INT >= 34 && (Boolean) Location.class.getMethod("hasMslAltitude").invoke(l))
+				return (Double) Location.class.getMethod("getMslAltitudeMeters").invoke(l);
+		} catch (Throwable t) {
+		}
+		return l.hasAltitude() ? l.getAltitude() : Double.NaN;
+	}
+
+	private String deg(double c) {
+		return Math.round(imperial ? c * 9 / 5 + 32 : c) + (imperial ? "°F" : "°C");
+	}
+
+	/** The weather lines of Share: the air (2 m), the soil surface, at the phone's height, the wind. */
+	private void weather(StringBuilder b) {
+		if (w == null) return;
+		b.append("\n").append(Tr.t("Air temperature (2 m)", "Temperatura aerului (2 m)")).append(": ").append(deg(w.temp));
+		if (!Double.isNaN(w.soil0)) b.append("\n").append(Tr.t("At ground level (estimate)", "La nivelul solului (estimare)")).append(": ").append(deg(w.soil0));
+		// The phone's height above the ground: the GPS height less the model's ground height; air
+		// cools about 0.65 °C every 100 m up (only shown from 10 m up, when the GPS has a height).
+		if (!townOnly && !Double.isNaN(alt) && !Double.isNaN(w.elevation)) {
+			double up = alt - w.elevation;
+			if (up >= 10 && up <= 3000) b.append("\n").append(Tr.t("At the phone's height", "La înălțimea telefonului")).append(" (~")
+					.append(Math.round(imperial ? up * 3.28084 : up)).append(imperial ? " ft" : " m").append(Tr.t(" above the ground, estimate)", " deasupra solului, estimare)"))
+					.append(": ").append(deg(w.temp - 0.0065 * (up - 2)));
+		}
+		if (!Double.isNaN(w.wind)) {
+			b.append("\n").append(Tr.t("Wind", "Vânt")).append(": ").append(imperial ? Math.round(w.wind / 1.609344) + " mph" : Math.round(w.wind) + " km/h");
+			if (!Double.isNaN(w.windDir)) b.append(", ").append(Tr.t("from ", "dinspre ")).append(dir8(w.windDir)).append(" (").append(Math.round(w.windDir) % 360).append("°)");
+		}
+	}
+
+	/** The battery's charge in %, or -1. */
+	private static int battery(Context ctx) {
+		try {
+			Intent b = ctx.registerReceiver(null, new android.content.IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+			int l = b.getIntExtra(android.os.BatteryManager.EXTRA_LEVEL, -1), s = b.getIntExtra(android.os.BatteryManager.EXTRA_SCALE, -1);
+			return l >= 0 && s > 0 ? Math.round(l * 100f / s) : -1;
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+
+	/** The compass window as a picture (cache/shot/busola.png), shared through ApkProvider; null if it fails. */
+	private android.net.Uri shot(Context ctx) {
+		try {
+			int W = getWidth(), H = getHeight();
+			if (W <= 0 || H <= 0 || card.width() <= 0) return null;
+			android.graphics.Bitmap full = android.graphics.Bitmap.createBitmap(W, H, android.graphics.Bitmap.Config.ARGB_8888);
+			Canvas c = new Canvas(full);
+			int keep = picked;
+			picked = -1;
+			draw(c);
+			picked = keep;
+			int pad = Math.round(8 * dp);
+			int l = Math.max(0, Math.round(card.left) - pad), t = Math.max(0, Math.round(card.top) - pad);
+			int r = Math.min(W, Math.round(card.right) + pad), btm = Math.min(H, Math.round(card.bottom) + pad);
+			android.graphics.Bitmap out = android.graphics.Bitmap.createBitmap(r - l, btm - t, android.graphics.Bitmap.Config.ARGB_8888);
+			Canvas oc = new Canvas(out);
+			oc.drawColor(col()[0]);
+			oc.drawBitmap(full, -l, -t, null);
+			full.recycle();
+			java.io.File dir = new java.io.File(ctx.getCacheDir(), "shot");
+			dir.mkdirs();
+			java.io.File f = new java.io.File(dir, ApkProvider.SHOT);
+			java.io.FileOutputStream os = new java.io.FileOutputStream(f);
+			out.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, os);
+			os.close();
+			out.recycle();
+			return ApkProvider.shotUri();
+		} catch (Throwable e) {
+			Log.w(ctx, "BUSOLA", "captura busolei a eșuat: " + e);
+			return null;
 		}
 	}
 }

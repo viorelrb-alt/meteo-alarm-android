@@ -1,8 +1,11 @@
-Geçerli sürüm: v.4.00 · 9.11.2026
+Geçerli sürüm: v.4.10 · 10.11.2026
 ANA EKRAN
+- Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
 - Hava simgeleri: temanın renklerinde; hepsi 3 saniye hareket eder, her yenilemeden sonra ve widget'larda da.
 - Kutular: herhangi bir kutuya dokunmak değeri üstte, açıklamaları altında gösterir.
+WIDGET'LAR
+- Widget 4x2 · liste: büyük sıcaklık ve sonraki 4 gün (her biri bir simge) veya saatler, ayarlardan seçilebilir; yerleşim yeri pusulanın yer işaretiyle.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 3 (v.3.00 – v.3.92)

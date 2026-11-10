@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Ingen jordskælv med styrke 3 eller mere.
 Last 48 hours · EU, Ukraine, Moldova	Sidste 48 timer · EU, Ukraine, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Kilde: EMSC (Det Euro-Middelhavske Seismologiske Center, seismicportal.eu), styrke 3 og derover. "Mærket" er et skøn på EMS-98-skalaen ud fra styrken og afstanden til hypocentret.
 depth 	dybde 
-from 	fra 
 Probably felt in 	Sandsynligvis mærket i 
 Probably not felt in 	Sandsynligvis ikke mærket i 
 Updates	Opdateringer
@@ -889,4 +888,20 @@ Share the coordinates	Del koordinaterne
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	I temaets farver; alle bevæger sig i 3 sekunder, når skærmen åbnes, efter hver opdatering eller når vejret skifter, også på widgets.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sol / Måne, UV, Pollen, Luftfugtighed, Luftkvalitet, Tryk, Vind, Sigtbarhed, Kompas. Et tryk på et felt (også timerne og dagene) viser værdien øverst og forklaringerne under den.
 Big compass	Stort kompas
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Et tryk på feltet Kompas: et stort kompas, GPS-koordinaterne og de 3 nærmeste byer, hver i sin farve (et tryk på en: navn og afstand). Del sender koordinaterne; Byer viser eller skjuler dem.
+Show the weather	Vis vejret
+Daily forecast	Daglig prognose
+Hourly forecast	Timeprognose
+ · list	 · liste
+you are here	du er her
+GPS position	GPS-position
+You are in	Du er i
+Nearby towns	Nærliggende byer
+Phone battery	Telefonens batteri
+Air temperature (2 m)	Lufttemperatur (2 m)
+At ground level (estimate)	Ved jordoverfladen (skøn)
+At the phone's height	I telefonens højde
+ above the ground, estimate)	 over jorden, skøn)
+from 	fra 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Et tryk på feltet Kompas: et stort kompas, GPS-koordinaterne, byen du er i (grå) og de 3 nærmeste byer, hver i sin farve (tryk på én: navn og afstand). Del sender et billede af vinduet med stedet, retningen, byerne, batteriet, temperaturerne og vinden; Byer viser eller skjuler dem.
+Widget 4x2 · list	Widget 4x2 · liste
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	En stor temperatur og til højre de næste 4 dage (ét ikon hver) eller timer, som valgt i indstillingerne: Vis vejret.

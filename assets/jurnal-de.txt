@@ -1,8 +1,11 @@
-Aktuelle Version: v.4.00 · 9.11.2026
+Aktuelle Version: v.4.10 · 10.11.2026
 HAUPTBILDSCHIRM
 - Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.
+- Großer Kompass: der Ort, in dem Sie sind, steht zuerst (grau); Teilen sendet auch ein Bild des Fensters, die nahen Orte mit Entfernungen, den Akku, die Temperaturen (Luft, Boden, in Höhe des Telefons) und den Wind.
 - Großer Kompass: Tippen auf das Feld Kompass zeigt den Kompass, die GPS-Koordinaten und die 3 nächsten Orte in Farben; Teilen sendet die Koordinaten.
 - Wettersymbole: in den Farben des Designs; alle bewegen sich 3 Sekunden, auch nach jeder Aktualisierung und auf den Widgets.
+WIDGETS
+- Widget 4x2 · Liste: eine große Temperatur und die nächsten 4 Tage (je ein Symbol) oder Stunden, in den Einstellungen wählbar; der Ort mit dem Ortszeichen des Kompasses.
 - Design-Verbesserungen und Fehlerbehebungen.
 
 Version 3 (v.3.00 – v.3.92)

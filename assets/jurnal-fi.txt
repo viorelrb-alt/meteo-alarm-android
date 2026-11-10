@@ -1,8 +1,11 @@
-Nykyinen versio: v.4.00 · 9.11.2026
+Nykyinen versio: v.4.10 · 10.11.2026
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus Kompassi-ruutuun näyttää kompassin, GPS-koordinaatit ja 3 lähintä paikkakuntaa väreinä; Jaa lähettää koordinaatit.
 - Ruudut: napautus mihin tahansa ruutuun näyttää arvon ylhäällä ja selitykset sen alla.
 - Sääkuvakkeet: teeman väreissä; kaikki liikkuvat 3 sekuntia, myös jokaisen päivityksen jälkeen ja widgeteissä.
+- Suuri kompassi: paikka, jossa olet, on ensimmäisenä (harmaa); Jaa lähettää myös kuvan ikkunasta, lähellä olevat paikat etäisyyksineen, akun, lämpötilat (ilma, maanpinta, puhelimen korkeudella) ja tuulen.
+WIDGETIT
+- Widget 4x2 · luettelo: suuri lämpötila ja seuraavat 4 päivää (kukin yhdellä kuvakkeella) tai tunnit, valittavissa asetuksissa; paikka kompassin paikkamerkillä.
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
 Versio 3 (v.3.00 – v.3.92)

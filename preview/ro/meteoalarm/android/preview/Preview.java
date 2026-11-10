@@ -26,12 +26,12 @@ import ro.meteoalarm.android.core.Weather;
 
 /** Desktop preview: draws the phone screen with Java2D to a PNG (java Preview ASSETS OUT.png [W H] [en] [F] [warn] [tab] [bar]). */
 public final class Preview {
-	static final class J2d implements Gfx {
+	public static final class J2d implements Gfx {
 		final Graphics2D g;
 		final File assets;
 		final Font reg, bold;
 
-		J2d(Graphics2D g, File assets) throws Exception {
+		public J2d(Graphics2D g, File assets) throws Exception {
 			this.g = g;
 			this.assets = assets;
 			reg = Font.createFont(Font.TRUETYPE_FONT, new File(assets, "fonts/LiberationSans-Regular.ttf"));

@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Ebda terremot ta' kobor 3 jew aktar.
 Last 48 hours · EU, Ukraine, Moldova	L-aħħar 48 siegħa · UE, l-Ukrajna, il-Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Sors: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), kobor 3 u aktar. "Inħass" hija stima fuq l-iskala EMS-98 mill-kobor u d-distanza mill-fokus.
 depth 	fond 
-from 	distanza 
 Probably felt in 	Probabbilment inħass f' 
 Probably not felt in 	Probabbilment ma nħassx f' 
 Updates	Aġġornamenti
@@ -889,4 +888,20 @@ Share the coordinates	Aqsam il-koordinati
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Fil-kuluri tat-tema; kollha jiċċaqilqu 3 sekondi meta jinfetaħ l-iskrin, wara kull aġġornament jew meta jinbidel it-temp, anke fuq il-widgets.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Xemx / Qamar, UV, Polline, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla. Tagħfisa fuq kwalunkwe kaxxa (anke s-sigħat u l-jiem) turi l-valur fuq u l-ispjegazzjonijiet taħtu.
 Big compass	Boxxla kbira
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Tagħfisa fuq il-kaxxa Boxxla: boxxla kbira, il-koordinati GPS u l-eqreb 3 lokalitajiet, kull waħda bil-kulur tagħha (tagħfisa fuq waħda: isem u distanza). Aqsam jibgħat il-koordinati; Lokalitajiet juruhom jew jaħbuhom.
+Show the weather	Uri t-temp
+Daily forecast	Tbassir ta' kuljum
+Hourly forecast	Tbassir kull siegħa
+ · list	 · lista
+you are here	int hawn
+GPS position	Pożizzjoni GPS
+You are in	Int f'
+Nearby towns	Lokalitajiet fil-qrib
+Phone battery	Batterija tat-telefon
+Air temperature (2 m)	Temperatura tal-arja (2 m)
+At ground level (estimate)	Fil-livell tal-art (stima)
+At the phone's height	Fl-għoli tat-telefon
+ above the ground, estimate)	 'il fuq mill-art, stima)
+from 	minn 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Mess fuq il-kaxxa Boxxla: boxxla kbira, il-koordinati GPS, il-lokalità fejn int (griż) u l-eqreb 3, kull waħda bil-kulur tagħha (mess fuq waħda: isem u distanza). Aqsam jibgħat stampa tat-tieqa bil-post, id-direzzjoni, il-lokalitajiet, il-batterija, it-temperaturi u r-riħ; Lokalitajiet jurihom jew jaħbihom.
+Widget 4x2 · list	Widget 4x2 · lista
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Temperatura kbira u, fuq il-lemin, l-4 ijiem li ġejjin (ikona waħda kull wieħed) jew sigħat, kif magħżul fis-settings: Uri t-temp.

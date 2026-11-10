@@ -5,6 +5,7 @@
     <string name="w_4x1">Meteo Alarm 4x1</string>
     <string name="w_4x2">Meteo Alarm 4x2</string>
     <string name="w_4x2d">Meteo Alarm 4x2 · days</string>
+    <string name="w_4x2l">Meteo Alarm 4x2 · list</string>
     <string name="w_any">Meteo Alarm (any size)</string>
     <string name="w_settings">Meteo Alarm widgets</string>
 </resources>

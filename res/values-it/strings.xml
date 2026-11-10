@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="w_4x2d">Meteo Alarm 4x2 · giorni</string>
+    <string name="w_4x2l">Meteo Alarm 4x2 · elenco</string>
     <string name="w_any">Meteo Alarm (qualsiasi dimensione)</string>
     <string name="w_settings">Widget Meteo Alarm</string>
 </resources>

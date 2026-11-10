@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Немає землетрусів магн
 Last 48 hours · EU, Ukraine, Moldova	Останні 48 годин · ЄС, Україна, Молдова
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Джерело: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), магнітуда 3 і більше. «Відчутний» — це оцінка за шкалою EMS-98 з магнітуди та відстані до вогнища.
 depth 	глибина 
-from 	відстань 
 Probably felt in 	Імовірно відчутний у 
 Probably not felt in 	Імовірно не відчутний у 
 Updates	Оновлення
@@ -889,4 +888,20 @@ Share the coordinates	Поділитися координатами
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	У кольорах теми; усі рухаються 3 секунди при відкритті екрана, після кожного оновлення або коли змінюється погода, і на віджетах.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Сонце / Місяць, УФ, Пилок, Вологість, Якість повітря, Тиск, Вітер, Видимість, Компас. Дотик до будь-якого поля (і годин, і днів) показує значення вгорі та пояснення під ним.
 Big compass	Великий компас
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Дотик до поля Компас: великий компас, GPS-координати та 3 найближчі населені пункти, кожен своїм кольором (дотик до одного: назва й відстань). Поділитися надсилає координати; Пункти показує або ховає їх.
+Show the weather	Показ погоди
+Daily forecast	Прогноз по днях
+Hourly forecast	Погодинний прогноз
+ · list	 · список
+you are here	ви тут
+GPS position	Положення GPS
+You are in	Ви в
+Nearby towns	Найближчі населені пункти
+Phone battery	Батарея телефона
+Air temperature (2 m)	Температура повітря (2 м)
+At ground level (estimate)	Біля поверхні землі (оцінка)
+At the phone's height	На висоті телефона
+ above the ground, estimate)	 над землею, оцінка)
+from 	з 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Дотик до поля Компас: великий компас, GPS-координати, населений пункт, де ви є (сірий), і 3 найближчі, кожен своїм кольором (дотик до одного: назва й відстань). Поділитися надсилає знімок вікна з місцем, напрямком, пунктами, батареєю, температурами та вітром; Пункти показує або ховає їх.
+Widget 4x2 · list	Віджет 4x2 · список
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Велика температура і праворуч наступні 4 дні (по одному значку) або години, за вибором у налаштуваннях: Показ погоди.

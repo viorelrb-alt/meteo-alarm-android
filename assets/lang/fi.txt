@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Ei vähintään magnitudin 3 maanjäristyk
 Last 48 hours · EU, Ukraine, Moldova	Viimeiset 48 tuntia · EU, Ukraina, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Lähde: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitudi 3 ja yli. ”Tuntui” on arvio EMS-98-asteikolla magnitudista ja etäisyydestä järistyspesäkkeeseen.
 depth 	syvyys 
-from 	etäisyys 
 Probably felt in 	Tuntui luultavasti: 
 Probably not felt in 	Ei luultavasti tuntunut: 
 Updates	Päivitykset
@@ -889,4 +888,20 @@ Share the coordinates	Jaa koordinaatit
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Teeman väreissä; kaikki liikkuvat 3 sekuntia näytön avautuessa, jokaisen päivityksen jälkeen tai sään muuttuessa, myös widgeteissä.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Paine, Tuuli, Näkyvyys, Kompassi. Napautus mihin tahansa ruutuun (myös tunteihin ja päiviin) näyttää arvon ylhäällä ja selitykset sen alla.
 Big compass	Iso kompassi
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Napautus Kompassi-ruutuun: iso kompassi, GPS-koordinaatit ja 3 lähintä paikkakuntaa, kukin omalla värillään (napautus yhteen: nimi ja etäisyys). Jaa lähettää koordinaatit; Paikkakunnat näyttää tai piilottaa ne.
+Show the weather	Näytä sää
+Daily forecast	Päiväennuste
+Hourly forecast	Tuntiennuste
+ · list	 · luettelo
+you are here	olet tässä
+GPS position	GPS-sijainti
+You are in	Olet paikassa
+Nearby towns	Lähellä olevat paikat
+Phone battery	Puhelimen akku
+Air temperature (2 m)	Ilman lämpötila (2 m)
+At ground level (estimate)	Maanpinnan tasolla (arvio)
+At the phone's height	Puhelimen korkeudella
+ above the ground, estimate)	 maan yllä, arvio)
+from 	suunnasta 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Kosketus Kompassi-ruutuun: suuri kompassi, GPS-koordinaatit, paikka, jossa olet (harmaa), ja 3 lähintä paikkaa, kukin omalla värillään (kosketus yhteen: nimi ja etäisyys). Jaa lähettää kuvan ikkunasta sekä sijainnin, suunnan, paikat, akun, lämpötilat ja tuulen; Paikat näyttää tai piilottaa ne.
+Widget 4x2 · list	Widget 4x2 · luettelo
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Suuri lämpötila ja oikealla seuraavat 4 päivää (kukin yhdellä kuvakkeella) tai tunnit, asetuksissa valitun mukaan: Näytä sää.

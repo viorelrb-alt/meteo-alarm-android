@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Brak trzęsień ziemi o magnitudzie 3 lub 
 Last 48 hours · EU, Ukraine, Moldova	Ostatnie 48 godzin · UE, Ukraina, Mołdawia
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Źródło: EMSC (Europejsko-Śródziemnomorskie Centrum Sejsmologiczne, seismicportal.eu), magnituda 3 i więcej. „Odczuwalne” to szacunek w skali EMS-98 na podstawie magnitudy i odległości od ogniska.
 depth 	głębokość 
-from 	od 
 Probably felt in 	Prawdopodobnie odczuwalne w: 
 Probably not felt in 	Prawdopodobnie nieodczuwalne w: 
 Updates	Aktualizacje
@@ -889,4 +888,20 @@ Share the coordinates	Udostępnij współrzędne
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	W kolorach motywu; wszystkie poruszają się 3 sekundy po otwarciu ekranu, po każdym odświeżeniu lub zmianie pogody, także na widżetach.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Słońce / Księżyc, UV, Pyłki, Wilgotność, Jakość powietrza, Ciśnienie, Wiatr, Widoczność, Kompas. Dotknięcie dowolnego pola (także godzin i dni) pokazuje wartość u góry i objaśnienia pod nią.
 Big compass	Duży kompas
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Dotknięcie pola Kompas: duży kompas, współrzędne GPS i 3 najbliższe miejscowości, każda w swoim kolorze (dotknięcie jednej: nazwa i odległość). Udostępnij wysyła współrzędne; Miejscowości je pokazuje lub ukrywa.
+Show the weather	Pokazywanie pogody
+Daily forecast	Prognoza dzienna
+Hourly forecast	Prognoza godzinowa
+ · list	 · lista
+you are here	jesteś tutaj
+GPS position	Pozycja GPS
+You are in	Jesteś w
+Nearby towns	Pobliskie miejscowości
+Phone battery	Bateria telefonu
+Air temperature (2 m)	Temperatura powietrza (2 m)
+At ground level (estimate)	Przy gruncie (szacunek)
+At the phone's height	Na wysokości telefonu
+ above the ground, estimate)	 nad ziemią, szacunek)
+from 	z kierunku 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Dotknięcie pola Kompas: duży kompas, współrzędne GPS, miejscowość, w której jesteś (szara), i 3 najbliższe, każda w swoim kolorze (dotknięcie jednej: nazwa i odległość). Udostępnij wysyła obraz okna z miejscem, kierunkiem, miejscowościami, baterią, temperaturami i wiatrem; Miejscowości pokazuje je lub ukrywa.
+Widget 4x2 · list	Widżet 4x2 · lista
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Duża temperatura, a po prawej następne 4 dni (po jednej ikonie) lub godziny, zgodnie z wyborem w ustawieniach: Pokazywanie pogody.

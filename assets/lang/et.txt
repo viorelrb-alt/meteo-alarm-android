@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Ühtegi vähemalt magnituudiga 3 maavärin
 Last 48 hours · EU, Ukraine, Moldova	Viimased 48 tundi · EL, Ukraina, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Allikas: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnituud 3 ja üle. „Tunti“ on hinnang EMS-98 skaalal magnituudi ja koldekauguse põhjal.
 depth 	sügavus 
-from 	kaugus 
 Probably felt in 	Tõenäoliselt tunti: 
 Probably not felt in 	Tõenäoliselt ei tuntud: 
 Updates	Uuendused
@@ -889,4 +888,20 @@ Share the coordinates	Jaga koordinaate
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Teema värvides; kõik liiguvad 3 sekundit ekraani avamisel, pärast iga värskendust või ilma muutumisel, ka vidinatel.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Rõhk, Tuul, Nähtavus, Kompass. Puudutus mis tahes kastil (ka tundidel ja päevadel) näitab ülal väärtust ja all selgitusi.
 Big compass	Suur kompass
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Puudutus kastil Kompass: suur kompass, GPS-koordinaadid ja 3 lähimat asulat, igaüks oma värviga (puudutus ühel: nimi ja kaugus). Jaga saadab koordinaadid; Asulad näitab või peidab need.
+Show the weather	Ilma kuvamine
+Daily forecast	Päevaprognoos
+Hourly forecast	Tunniprognoos
+ · list	 · loend
+you are here	oled siin
+GPS position	GPS-asukoht
+You are in	Oled kohas
+Nearby towns	Lähedal asuvad kohad
+Phone battery	Telefoni aku
+Air temperature (2 m)	Õhutemperatuur (2 m)
+At ground level (estimate)	Maapinna lähedal (hinnang)
+At the phone's height	Telefoni kõrgusel
+ above the ground, estimate)	 maapinnast, hinnang)
+from 	suunast 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Puudutus kastil Kompass: suur kompass, GPS-koordinaadid, koht, kus oled (hall), ja 3 lähimat kohta, igaüks oma värvis (puudutus ühel: nimi ja kaugus). Jaga saadab akna pildi koos asukoha, suuna, kohtade, aku, temperatuuride ja tuulega; Kohad näitab või peidab neid.
+Widget 4x2 · list	Vidin 4x2 · loend
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Suur temperatuur ja paremal järgmised 4 päeva (igaüks üks ikoon) või tunnid, nagu seadetes valitud: Ilma kuvamine.

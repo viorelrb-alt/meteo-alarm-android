@@ -57,7 +57,11 @@ public class Widget extends AppWidgetProvider {
 	public static final class W4x2d extends Widget {
 	}
 
-	static final Class<?>[] KINDS = { Widget.class, W2x2.class, W4x1.class, W4x2.class, W4x2d.class };
+	/** v4.10 (Viorel): like the phone's weather widget, a big temperature on the left and a list of the next days (one icon each) or hours on the right. */
+	public static final class W4x2l extends Widget {
+	}
+
+	static final Class<?>[] KINDS = { Widget.class, W2x2.class, W4x1.class, W4x2.class, W4x2d.class, W4x2l.class };
 
 	@Override
 	public void onUpdate(Context ctx, AppWidgetManager mgr, int[] ids) {
@@ -70,7 +74,7 @@ public class Widget extends AppWidgetProvider {
 	public void onDeleted(Context ctx, int[] ids) {
 		SharedPreferences.Editor e = prefs(ctx).edit();
 		for (int id : ids) {
-			for (String k : new String[] { "town", "bg", "alpha", "colors", "font", "seen" }) e.remove("w" + id + "_" + k);
+			for (String k : new String[] { "town", "bg", "alpha", "colors", "font", "seen", "mode", "cell" }) e.remove("w" + id + "_" + k);
 			Log.i(ctx, "WIDGET", "#" + id + " șters de pe ecran");
 		}
 		e.apply();
@@ -125,6 +129,8 @@ public class Widget extends AppWidgetProvider {
 		String colors = "weather";
 		/** "auto", "white", "black". */
 		String font = "auto";
+		/** v4.10, the list widget: "days" or "hours". */
+		String mode = "days";
 
 		static Set of(Context ctx, int id) {
 			SharedPreferences p = prefs(ctx);
@@ -137,17 +143,18 @@ public class Widget extends AppWidgetProvider {
 			s.alpha = p.getInt(k + "alpha", old > 0 ? old : 60);
 			s.colors = p.getString(k + "colors", old > 0 ? "dark" : "weather");
 			s.font = p.getString(k + "font", "auto");
+			s.mode = p.getString(k + "mode", "days");
 			return s;
 		}
 
 		void save(Context ctx, int id) {
 			String k = "w" + id + "_";
 			prefs(ctx).edit().putString(k + "town", town).putBoolean(k + "bg", bg).putInt(k + "alpha", alpha)
-					.putString(k + "colors", colors).putString(k + "font", font).apply();
+					.putString(k + "colors", colors).putString(k + "font", font).putString(k + "mode", mode).apply();
 		}
 
 		String describe() {
-			return "oraș=" + (town.length() == 0 ? "aplicație" : town) + " fundal=" + (bg ? alpha + "%" : "nu") + " culori=" + colors + " font=" + font;
+			return "oraș=" + (town.length() == 0 ? "aplicație" : town) + " fundal=" + (bg ? alpha + "%" : "nu") + " culori=" + colors + " font=" + font + " mod=" + mode;
 		}
 	}
 
@@ -283,7 +290,7 @@ public class Widget extends AppWidgetProvider {
 	 * The layouts' shapes (dp of Viorel's mockups): 2x2 = 192 x 192, 4x1 = 384 x 96, 4x2 = 384 x 192,
 	 * and the small one, 2x1 = 192 x 96 (icon and temperature only, for frames too small for the others).
 	 */
-	static final float[] RW = { 192, 384, 384, 192, 384, 384 }, RH = { 192, 96, 192, 96, 192, 280 };
+	static final float[] RW = { 192, 384, 384, 192, 384, 384, 384 }, RH = { 192, 96, 192, 96, 192, 280, 192 };
 	/** Below this zoom the texts get too small: such a layout is not used (logs of 2026-11-02: 68% was too small). */
 	static final float MIN_ZOOM = 0.8f;
 	/** The 4x3 needs at least this part of its height (v2.20). */
@@ -306,6 +313,8 @@ public class Widget extends AppWidgetProvider {
 	static int kind(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
 		SharedPreferences p = prefs(ctx);
 		learnCell(ctx, mgr, id, w, h);
+		// The list widget keeps its one layout, zoomed to the frame.
+		if (list(mgr, id)) return 6;
 		boolean days = days(mgr, id);
 		float cw = p.getFloat("cellW", 0), ch = p.getFloat("cellH", 0);
 		// A cell smaller than any home screen's (A54 v2.11: 45x90 dp, learned from an empty
@@ -333,6 +342,15 @@ public class Widget extends AppWidgetProvider {
 		}
 	}
 
+	/** The list widget (v4.10). */
+	static boolean list(AppWidgetManager mgr, int id) {
+		try {
+			return mgr.getAppWidgetInfo(id).provider.getClassName().endsWith("W4x2l");
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	/** On a widget's first frame: its cells (from its kind) give the size of one cell. */
 	private static void learnCell(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
 		SharedPreferences p = prefs(ctx);
@@ -346,7 +364,7 @@ public class Widget extends AppWidgetProvider {
 		try {
 			String cls = mgr.getAppWidgetInfo(id).provider.getClassName();
 			if (cls.endsWith("W4x1")) { cols = 4; rows = 1; }
-			else if (cls.endsWith("W4x2") || cls.endsWith("W4x2d")) { cols = 4; rows = 2; }
+			else if (cls.endsWith("W4x2") || cls.endsWith("W4x2d") || cls.endsWith("W4x2l")) { cols = 4; rows = 2; }
 			else if (!cls.endsWith("W2x2")) return; // "any size": it may start anywhere
 		} catch (Exception e) {
 			return;
@@ -378,7 +396,7 @@ public class Widget extends AppWidgetProvider {
 		return Math.min(w / RW[k], h / RH[k]);
 	}
 
-	static final String[] NAMES = { "2x2", "4x1", "4x2", "2x1", "4x2", "4x3" };
+	static final String[] NAMES = { "2x2", "4x1", "4x2", "2x1", "4x2", "4x3", "4x2" };
 
 	/** One widget, drawn as a picture of its frame. */
 	private static void draw(Context ctx, AppWidgetManager mgr, int id, Data d, Set st) {
@@ -387,7 +405,7 @@ public class Widget extends AppWidgetProvider {
 		int[] f = frame(ctx, mgr, id, why);
 		int kind = kind(ctx, mgr, id, f[0], f[1]);
 		float s = Math.min(f[0] / RW[kind], f[1] / RH[kind]);
-		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind] + (kind == 4 ? " zile" : "")
+		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind] + (kind == 4 ? " zile" : kind == 6 ? " listă " + st.mode : "")
 				+ " zoom " + Math.round(s * 100) + "% · " + (d.c != null ? d.c.name : "-") + (d.w == null ? " fără date" : "") + " · " + st.describe());
 		try {
 			send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens, kind, 0));
@@ -543,7 +561,9 @@ public class Widget extends AppWidgetProvider {
 		String town = d.c != null ? d.c.name : "";
 		String sun = w == null ? (Tr.t("Open the app", "Deschide aplicația")) : sunLine(w, d.en);
 		String desc = w == null ? "" : d.T.describe(w.code, w.isDay)[1];
-		if (kind == 0) {
+		if (kind == 6) {
+			listLayout(pen, d, st, icon, temp, desc, town);
+		} else if (kind == 0) {
 			pen.at(0, 0);
 			pen.icon(icon, 11.1f, 28.8f, 83.3f);
 			pen.at(1, 0);
@@ -600,6 +620,63 @@ public class Widget extends AppWidgetProvider {
 		}
 		pen.done();
 		return out;
+	}
+
+	/**
+	 * v4.10 (Viorel), the list widget, after the phone's weather widget: on the left the icon, a big
+	 * temperature, the weather, high / low and the town with the compass's town mark; on the right
+	 * four rows of the next days (day, one icon, high and low) or hours (hour, icon, degrees).
+	 */
+	private static void listLayout(Pen pen, Data d, Set st, String icon, String temp, String desc, String town) {
+		Weather w = d.w;
+		pen.at(0, 0);
+		pen.icon(icon, 12f, 10f, 58f);
+		pen.at(0, 1);
+		pen.temp(temp, 13f, 124f, 76f, 40f, 102f, 150, false);
+		pen.text(desc, 15f, 145f, 13.5f, -1, 1f, 3, 150);
+		if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
+			pen.text("\u2191" + deg(w.tmax, d.unitF) + "° / \u2193" + deg(w.tmin, d.unitF) + "°", 15f, 162.5f, 12.5f, -1, 0.95f, 3, 150);
+		pen.home(town, 15f, 182f, 12.5f, 140);
+		if (w == null) return;
+		boolean hours = st.mode.equals("hours");
+		float x0 = 186f, x1 = 372f, rh = 46f, y0 = 4f;
+		for (int i = 0; i < 4; i++) {
+			String label, ic;
+			String hi = null, lo = null;
+			if (hours) {
+				int h = i + 1;
+				if (h >= w.tileHours.size()) break;
+				label = Texts.clock(w.tileHours.get(h), d.clk12);
+				ic = d.T.describe(w.tileCode[h], w.tileDay[h])[0];
+				if (h < w.tileTemp.length && !Double.isNaN(w.tileTemp[h])) hi = deg(w.tileTemp[h], d.unitF) + "°";
+			} else {
+				if (i >= w.dayDates.size() || i >= w.dayCodes.size()) break;
+				label = i == 0 ? cap(d.T.day1) : cap(d.T.weekdayUp(w.dayDates.get(i), false));
+				ic = d.T.describe(w.dayCodes.get(i), true)[0];
+				if (i < w.dayHi.size() && i < w.dayLo.size()) {
+					hi = deg(w.dayHi.get(i), d.unitF) + "°";
+					lo = deg(w.dayLo.get(i), d.unitF) + "°";
+				}
+			}
+			float y = y0 + i * rh, mid = y + rh / 2;
+			pen.at(1, i / 3f);
+			pen.text(label, x0, mid + 5f, 14f, -1, 0.75f, 3, 62);
+			pen.icon(ic, (x0 + x1) / 2f - 4f - 14f, mid - 14f, 28f);
+			if (lo != null) {
+				float lw = pen.text(lo, x1, mid + 5.5f, 15f, 1, 0.7f, 3, 0);
+				pen.text(hi, x1 - lw - 7f, mid + 5.5f, 15f, 1, 1f, 3, 0);
+			} else if (hi != null) pen.text(hi, x1, mid + 5.5f, 15f, 1, 1f, 3, 0);
+			if (i < 3) {
+				pen.at(1, (i + 0.5f) / 3f);
+				pen.line(x0, y + rh, x1 - x0, 0.75f, 0.35f);
+			}
+		}
+	}
+
+	/** "MÂINE" -> "Mâine" (the list widget's quieter labels). */
+	private static String cap(String s) {
+		if (s == null || s.length() < 2) return s;
+		return s.substring(0, 1) + s.substring(1).toLowerCase();
 	}
 
 	/** The next 5 hours under the line at Y: hour, icon, temperature. */
@@ -699,6 +776,16 @@ public class Widget extends AppWidgetProvider {
 			float e = ps / 14;
 			if (pin != null) cv.drawBitmap(pin, null, new RectF(right - ps - e, base - 10.9f - e, right + e, base - 10.9f + ps + e), new Paint(Paint.FILTER_BITMAP_FLAG));
 			text(name, right - ps - 1.5f, base, size, 1, 0.9f, 3, maxw);
+		}
+
+		/** v4.10 (Viorel): the town after the compass's town mark (a coloured disc with a small house), from LEFT. */
+		void home(String name, float left, float base, float size, float maxw) {
+			if (name == null || name.length() == 0) return;
+			float rr = size * 0.55f, cx = left + rr, cy = base - size * 0.36f;
+			Paint hp = new Paint(Paint.ANTI_ALIAS_FLAG);
+			if (!black) hp.setShadowLayer(1.5f, 0, 0.6f, 0x66000000);
+			CompassPanel.houseMark(cv, hp, cx, cy, rr, CompassPanel.TOWN_COL[0], 0xFFFFFFFF);
+			text(name, left + rr * 2 + 4f, base, size, -1, 0.95f, 3, maxw - rr * 2 - 4f);
 		}
 
 		/** The moment of the icons' movement (0–1). */

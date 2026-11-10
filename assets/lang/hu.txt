@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Nincs legalább 3-as erősségű földreng
 Last 48 hours · EU, Ukraine, Moldova	Elmúlt 48 óra · EU, Ukrajna, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Forrás: EMSC (Euromediterrán Szeizmológiai Központ, seismicportal.eu), 3-as erősség felett. Az „érezhető” becslés az EMS-98 skálán az erősségből és a fészektől mért távolságból.
 depth 	mélység 
-from 	távolság: 
 Probably felt in 	Valószínűleg érezhető volt itt: 
 Probably not felt in 	Valószínűleg nem volt érezhető itt: 
 Updates	Frissítések
@@ -889,4 +888,20 @@ Share the coordinates	Koordináták megosztása
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	A téma színeiben; mind mozog 3 másodpercig a képernyő megnyitásakor, minden frissítés után vagy időváltozáskor, a widgeteken is.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű. Bármely mező megérintése (az óráké és napoké is) felül az értéket, alatta a magyarázatot mutatja.
 Big compass	Nagy iránytű
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Az Iránytű mező megérintése: nagy iránytű, a GPS-koordináták és a 3 legközelebbi település, mind a saját színével (egyre koppintva: név és távolság). A Megosztás elküldi a koordinátákat; a Települések megjeleníti vagy elrejti őket.
+Show the weather	Időjárás megjelenítése
+Daily forecast	Napi előrejelzés
+Hourly forecast	Óránkénti előrejelzés
+ · list	 · lista
+you are here	itt vagy
+GPS position	GPS-pozíció
+You are in	Itt vagy:
+Nearby towns	Közeli települések
+Phone battery	A telefon akkumulátora
+Air temperature (2 m)	Léghőmérséklet (2 m)
+At ground level (estimate)	A talaj szintjén (becslés)
+At the phone's height	A telefon magasságában
+ above the ground, estimate)	 a talaj felett, becslés)
+from 	irányból: 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Koppintás az Iránytű mezőre: nagy iránytű, a GPS-koordináták, a település, ahol vagy (szürke), és a 3 legközelebbi, mindegyik a saját színében (koppintás egyre: név és távolság). A Megosztás képet küld az ablakról a hellyel, iránnyal, településekkel, akkumulátorral, hőmérsékletekkel és széllel; a Települések megjeleníti vagy elrejti őket.
+Widget 4x2 · list	4x2 · lista widget
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Nagy hőmérséklet, jobbra a következő 4 nap (egy-egy ikonnal) vagy óra, a beállításokban választva: Időjárás megjelenítése.

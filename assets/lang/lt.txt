@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Nėra 3 ar didesnio magnitudo žemės dreb
 Last 48 hours · EU, Ukraine, Moldova	Paskutinės 48 valandos · ES, Ukraina, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Šaltinis: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitudas 3 ir daugiau. „Juntamas“ yra įvertis EMS-98 skalėje pagal magnitudą ir atstumą iki židinio.
 depth 	gylis 
-from 	atstumas 
 Probably felt in 	Tikriausiai juntamas: 
 Probably not felt in 	Tikriausiai nejuntamas: 
 Updates	Atnaujinimai
@@ -889,4 +888,20 @@ Share the coordinates	Bendrinti koordinates
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Temos spalvomis; visos juda 3 sekundes atidarius ekraną, po kiekvieno atnaujinimo ar pasikeitus orams, ir valdikliuose.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas. Palietus bet kurį langelį (ir valandų bei dienų) viršuje rodoma vertė, o po ja paaiškinimai.
 Big compass	Didelis kompasas
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Palietus langelį Kompasas: didelis kompasas, GPS koordinatės ir 3 artimiausios vietovės, kiekviena savo spalva (palietus vieną: pavadinimas ir atstumas). Bendrinti siunčia koordinates; Vietovės jas rodo arba slepia.
+Show the weather	Rodyti orus
+Daily forecast	Dienos prognozė
+Hourly forecast	Valandinė prognozė
+ · list	 · sąrašas
+you are here	esate čia
+GPS position	GPS padėtis
+You are in	Esate
+Nearby towns	Netoliese esančios vietovės
+Phone battery	Telefono baterija
+Air temperature (2 m)	Oro temperatūra (2 m)
+At ground level (estimate)	Prie žemės (įvertis)
+At the phone's height	Telefono aukštyje
+ above the ground, estimate)	 virš žemės, įvertis)
+from 	iš 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Palietus langelį Kompasas: didelis kompasas, GPS koordinatės, vietovė, kurioje esate (pilka), ir 3 artimiausios, kiekviena savo spalva (palietus vieną: pavadinimas ir atstumas). Bendrinti siunčia lango vaizdą su vieta, kryptimi, vietovėmis, baterija, temperatūromis ir vėju; Vietovės jas rodo arba slepia.
+Widget 4x2 · list	Valdiklis 4x2 · sąrašas
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Didelė temperatūra ir dešinėje kitos 4 dienos (po vieną piktogramą) arba valandos, kaip pasirinkta nustatymuose: Rodyti orus.

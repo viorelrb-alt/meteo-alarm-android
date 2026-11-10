@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Κανένας σεισμός μεγέθο
 Last 48 hours · EU, Ukraine, Moldova	Τελευταίες 48 ώρες · ΕΕ, Ουκρανία, Μολδαβία
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Πηγή: EMSC (Ευρωμεσογειακό Σεισμολογικό Κέντρο, seismicportal.eu), μέγεθος 3 και άνω. Το «αισθητός» είναι εκτίμηση στην κλίμακα EMS-98 από το μέγεθος και την απόσταση από την εστία.
 depth 	βάθος 
-from 	από 
 Probably felt in 	Πιθανώς αισθητός σε: 
 Probably not felt in 	Πιθανώς μη αισθητός σε: 
 Updates	Ενημερώσεις
@@ -889,4 +888,20 @@ Share the coordinates	Κοινοποίηση συντεταγμένων
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Στα χρώματα του θέματος· όλα κινούνται 3 δευτερόλεπτα όταν ανοίγει η οθόνη, μετά από κάθε ανανέωση ή όταν αλλάζει ο καιρός, και στα widget.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Ήλιος / Σελήνη, UV, Γύρη, Υγρασία, Ποιότητα αέρα, Πίεση, Άνεμος, Ορατότητα, Πυξίδα. Ένα άγγιγμα σε οποιοδήποτε πλαίσιο (και στις ώρες και στις ημέρες) δείχνει την τιμή επάνω και τις εξηγήσεις από κάτω.
 Big compass	Μεγάλη πυξίδα
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Άγγιγμα στο πλαίσιο Πυξίδα: μεγάλη πυξίδα, οι συντεταγμένες GPS και οι 3 πλησιέστερες τοποθεσίες, η καθεμία στο χρώμα της (άγγιγμα σε μία: όνομα και απόσταση). Η Κοινοποίηση στέλνει τις συντεταγμένες· οι Τοποθεσίες τις δείχνουν ή τις κρύβουν.
+Show the weather	Εμφάνιση καιρού
+Daily forecast	Ημερήσια πρόγνωση
+Hourly forecast	Ωριαία πρόγνωση
+ · list	 · λίστα
+you are here	είστε εδώ
+GPS position	Θέση GPS
+You are in	Βρίσκεστε σε
+Nearby towns	Κοντινές τοποθεσίες
+Phone battery	Μπαταρία τηλεφώνου
+Air temperature (2 m)	Θερμοκρασία αέρα (2 m)
+At ground level (estimate)	Στο επίπεδο του εδάφους (εκτίμηση)
+At the phone's height	Στο ύψος του τηλεφώνου
+ above the ground, estimate)	 πάνω από το έδαφος, εκτίμηση)
+from 	από 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Άγγιγμα στο πλαίσιο Πυξίδα: μεγάλη πυξίδα, οι συντεταγμένες GPS, η τοποθεσία όπου βρίσκεστε (γκρι) και οι 3 πλησιέστερες, η καθεμία στο χρώμα της (άγγιγμα σε μία: όνομα και απόσταση). Η Κοινοποίηση στέλνει εικόνα του παραθύρου με τη θέση, την κατεύθυνση, τις τοποθεσίες, την μπαταρία, τις θερμοκρασίες και τον άνεμο· οι Τοποθεσίες τις δείχνουν ή τις κρύβουν.
+Widget 4x2 · list	Widget 4x2 · λίστα
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Μεγάλη θερμοκρασία και δεξιά οι επόμενες 4 ημέρες (ένα εικονίδιο η καθεμία) ή ώρες, όπως επιλέγεται στις ρυθμίσεις: Εμφάνιση καιρού.

@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Nenhum sismo de magnitude 3 ou mais.
 Last 48 hours · EU, Ukraine, Moldova	Últimas 48 horas · UE, Ucrânia, Moldávia
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Fonte: EMSC (Centro Sismológico Euro-Mediterrânico, seismicportal.eu), magnitude 3 ou mais. «Sentido» é uma estimativa na escala EMS-98 a partir da magnitude e da distância ao foco.
 depth 	profundidade 
-from 	a 
 Probably felt in 	Provavelmente sentido em 
 Probably not felt in 	Provavelmente não sentido em 
 Updates	Atualizações
@@ -889,4 +888,20 @@ Share the coordinates	Partilhar as coordenadas
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Nas cores do tema; todos se movem 3 segundos ao abrir o ecrã, após cada atualização ou quando o tempo muda, também nos widgets.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Sol / Lua, UV, Pólen, Humidade, Qualidade do ar, Pressão, Vento, Visibilidade, Bússola. Um toque em qualquer caixa (também nas horas e nos dias) mostra o valor em cima e as explicações por baixo.
 Big compass	Bússola grande
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Um toque na caixa Bússola: uma bússola grande, as coordenadas GPS e as 3 localidades mais próximas, cada uma na sua cor (um toque numa: nome e distância). Partilhar envia as coordenadas; Localidades mostra-as ou esconde-as.
+Show the weather	Mostrar o tempo
+Daily forecast	Previsão diária
+Hourly forecast	Previsão horária
+ · list	 · lista
+you are here	está aqui
+GPS position	Posição GPS
+You are in	Está em
+Nearby towns	Localidades próximas
+Phone battery	Bateria do telemóvel
+Air temperature (2 m)	Temperatura do ar (2 m)
+At ground level (estimate)	Ao nível do solo (estimativa)
+At the phone's height	À altura do telemóvel
+ above the ground, estimate)	 acima do solo, estimativa)
+from 	de 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Um toque na caixa Bússola: uma bússola grande, as coordenadas GPS, a localidade onde está (cinzento) e as 3 mais próximas, cada uma na sua cor (toque numa: nome e distância). Partilhar envia uma imagem da janela com o local, a direção, as localidades, a bateria, as temperaturas e o vento; Localidades mostra-as ou oculta-as.
+Widget 4x2 · list	Widget 4x2 · lista
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Uma temperatura grande e, à direita, os próximos 4 dias (um ícone cada) ou horas, conforme escolhido nas definições: Mostrar o tempo.

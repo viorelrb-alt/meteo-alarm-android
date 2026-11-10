@@ -1,8 +1,11 @@
-Trenutna različica: v.4.00 · 9.11.2026
+Trenutna različica: v.4.10 · 10.11.2026
 GLAVNI ZASLON
 - Okvirji: dotik katerega koli okvirja pokaže vrednost zgoraj in razlage pod njo.
 - Veliki kompas: dotik okvirja Kompas pokaže kompas, koordinate GPS in 3 najbližje kraje v barvah; Deli pošlje koordinate.
+- Veliki kompas: kraj, v katerem ste, je prvi (sivo); Deli pošlje tudi sliko okna, bližnje kraje z razdaljami, baterijo, temperature (zrak, tla, na višini telefona) in veter.
 - Vremenske ikone: v barvah teme; vse se premikajo 3 sekunde, tudi po vsaki osvežitvi in na pripomočkih.
+PRIPOMOČKI
+- Pripomoček 4x2 · seznam: velika temperatura in naslednji 4 dnevi (po ena ikona) ali ure, po izbiri v nastavitvah; kraj z oznako kraja s kompasa.
 - Izboljšave oblikovanja in popravki napak.
 
 Različica 3 (v.3.00 – v.3.92)

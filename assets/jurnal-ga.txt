@@ -1,6 +1,9 @@
-Leagan reatha: v.4.00 · 9.11.2026
+Leagan reatha: v.4.10 · 10.11.2026
+GIUIRLÉIDÍ
+- Giuirléid 4x2 · liosta: teocht mhór agus na 4 lá eile (deilbhín amháin an ceann) nó uaireanta, le roghnú sna socruithe; an baile le marc baile an chompáis.
 PRÍOMHSCÁILEÁN
 - Boscaí: taispeánann tapáil ar aon bhosca an luach thuas agus na mínithe faoi.
+- Compás mór: tagann an baile ina bhfuil tú ar dtús (liath); seolann Comhroinn pictiúr den fhuinneog freisin, na bailte in aice láimhe lena bhfaid, an ceallra, na teochtaí (aer, talamh, ag airde an fhóin) agus an ghaoth.
 - Compás mór: taispeánann tapáil ar an mbosca Compás an compás, comhordanáidí GPS agus na 3 bhaile is gaire i ndathanna; seolann Comhroinn na comhordanáidí.
 - Deilbhíní aimsire: i ndathanna an téama; bogann siad go léir ar feadh 3 soicind, tar éis gach athnuachana freisin agus ar na giuirléidí.
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.

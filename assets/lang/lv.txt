@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Nav zemestrīču ar magnitūdu 3 vai vair�
 Last 48 hours · EU, Ukraine, Moldova	Pēdējās 48 stundas · ES, Ukraina, Moldova
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Avots: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitūda 3 un vairāk. “Jūtama” ir aplēse EMS-98 skalā pēc magnitūdas un attāluma līdz perēklim.
 depth 	dziļums 
-from 	attālums 
 Probably felt in 	Droši vien jūtama: 
 Probably not felt in 	Droši vien nav jūtama: 
 Updates	Atjauninājumi
@@ -889,4 +888,20 @@ Share the coordinates	Kopīgot koordinātas
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	Motīva krāsās; visas kustas 3 sekundes, atverot ekrānu, pēc katras atjaunināšanas vai laikam mainoties, arī logrīkos.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass. Pieskaroties jebkuram lodziņam (arī stundām un dienām), augšā redzama vērtība, zem tās skaidrojumi.
 Big compass	Lielais kompass
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Pieskaroties lodziņam Kompass: liels kompass, GPS koordinātas un 3 tuvākās apdzīvotās vietas, katra savā krāsā (pieskaroties vienai: nosaukums un attālums). Kopīgot nosūta koordinātas; Vietas tās rāda vai paslēpj.
+Show the weather	Rādīt laikapstākļus
+Daily forecast	Dienas prognoze
+Hourly forecast	Stundu prognoze
+ · list	 · saraksts
+you are here	jūs esat šeit
+GPS position	GPS pozīcija
+You are in	Jūs esat
+Nearby towns	Tuvākās apdzīvotās vietas
+Phone battery	Telefona akumulators
+Air temperature (2 m)	Gaisa temperatūra (2 m)
+At ground level (estimate)	Pie zemes (aplēse)
+At the phone's height	Telefona augstumā
+ above the ground, estimate)	 virs zemes, aplēse)
+from 	no 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Pieskaroties lodziņam Kompass: liels kompass, GPS koordinātas, vieta, kurā esat (pelēka), un 3 tuvākās, katra savā krāsā (pieskaroties vienai: nosaukums un attālums). Kopīgot nosūta loga attēlu ar vietu, virzienu, apdzīvotajām vietām, akumulatoru, temperatūrām un vēju; Vietas tās rāda vai paslēpj.
+Widget 4x2 · list	Logrīks 4x2 · saraksts
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Liela temperatūra un pa labi nākamās 4 dienas (katrai viena ikona) vai stundas, kā izvēlēts iestatījumos: Rādīt laikapstākļus.

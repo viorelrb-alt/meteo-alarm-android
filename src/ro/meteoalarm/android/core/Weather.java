@@ -22,6 +22,8 @@ public final class Weather {
 	public static final String MODEL = "icon_seamless";
 
 	public double temp, feels = Double.NaN, wind = Double.NaN, windDir = Double.NaN, precip;
+	/** v4.10: the soil surface temperature now and the model's ground height (m) at the place (NaN when not given). */
+	public double soil0 = Double.NaN, elevation = Double.NaN;
 	public int code;
 	public boolean isDay = true;
 	public double tmax = Double.NaN, tmin = Double.NaN;
@@ -67,7 +69,7 @@ public final class Weather {
 	public static String forecastUrl(double lat, double lon, String tzId, String model) throws Exception {
 		return "https://api.open-meteo.com/v1/forecast?latitude=" + fmt(lat) + "&longitude=" + fmt(lon)
 				+ "&current=temperature_2m,weather_code,precipitation,is_day,cloud_cover,cloud_cover_low,"
-				+ "cloud_cover_mid,cloud_cover_high,apparent_temperature,wind_speed_10m,wind_direction_10m"
+				+ "cloud_cover_mid,cloud_cover_high,apparent_temperature,wind_speed_10m,wind_direction_10m,soil_temperature_0cm"
 				+ "&hourly=precipitation_probability,precipitation,weather_code,snowfall,temperature_2m,is_day,cloud_cover,wind_speed_10m,wind_gusts_10m"
 				+ "&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max,"
 				+ "sunrise,sunset,uv_index_max"
@@ -194,6 +196,8 @@ public final class Weather {
 		w.feels = Json.num(cur, "apparent_temperature");
 		w.wind = Json.num(cur, "wind_speed_10m");
 		w.windDir = Json.num(cur, "wind_direction_10m");
+		w.soil0 = Json.num(cur, "soil_temperature_0cm");
+		if (root instanceof Map) w.elevation = Json.num((Map<String, Object>) root, "elevation");
 		double cloud = Json.num(cur, "cloud_cover"), low = Json.num(cur, "cloud_cover_low"), mid = Json.num(cur, "cloud_cover_mid");
 
 		// The model says "overcast" too often: for sky codes 1-3 use the low + mid cloud cover

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="w_4x2d">Meteo Alarm 4x2 · дни</string>
+    <string name="w_4x2l">Meteo Alarm 4x2 · списък</string>
     <string name="w_any">Meteo Alarm (всякакъв размер)</string>
     <string name="w_settings">Уиджети Meteo Alarm</string>
 </resources>

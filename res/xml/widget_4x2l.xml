@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Meteo Alarm list widget (v4.10): big temperature on the left, the next 4 days (one icon each) or hours on the right, after the phone's weather widget. One layout, zoomed to the frame. -->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="110dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="2"
+    android:minResizeWidth="120dp"
+    android:minResizeHeight="40dp"
+    android:updatePeriodMillis="1800000"
+    android:initialLayout="@layout/widget"
+    android:previewImage="@drawable/wprev_4x2l"
+    android:configure="ro.meteoalarm.android.WidgetConfig"
+    android:widgetFeatures="reconfigurable|configuration_optional"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen" />

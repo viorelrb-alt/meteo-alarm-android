@@ -83,7 +83,6 @@ No earthquake of magnitude 3 or more.	Žádné zemětřesení o magnitudě 3 a v
 Last 48 hours · EU, Ukraine, Moldova	Posledních 48 hodin · EU, Ukrajina, Moldavsko
 Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. "Felt" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.	Zdroj: EMSC (Evropsko-středomořské seismologické centrum, seismicportal.eu), magnituda 3 a více. „Pocítěno“ je odhad na stupnici EMS-98 z magnitudy a vzdálenosti od ohniska.
 depth 	hloubka 
-from 	od 
 Probably felt in 	Pravděpodobně pocítěno v: 
 Probably not felt in 	Pravděpodobně nepocítěno v: 
 Updates	Aktualizace
@@ -889,4 +888,20 @@ Share the coordinates	Sdílet souřadnice
 In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.	V barvách motivu; všechny se 3 sekundy pohybují při otevření obrazovky, po každém obnovení nebo při změně počasí, i na widgetech.
 Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.	Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita ovzduší, Tlak, Vítr, Viditelnost, Kompas. Klepnutí na kterékoli pole (i na hodiny a dny) ukáže hodnotu nahoře a vysvětlení pod ní.
 Big compass	Velký kompas
-A tap on the Compass box: a big compass, the GPS coordinates and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends the coordinates; Towns shows or hides them.	Klepnutí na pole Kompas: velký kompas, souřadnice GPS a 3 nejbližší obce, každá ve své barvě (klepnutí na jednu: název a vzdálenost). Sdílet pošle souřadnice; Obce je ukáže nebo skryje.
+Show the weather	Zobrazení počasí
+Daily forecast	Denní předpověď
+Hourly forecast	Hodinová předpověď
+ · list	 · seznam
+you are here	jste zde
+GPS position	Poloha GPS
+You are in	Jste v
+Nearby towns	Blízké obce
+Phone battery	Baterie telefonu
+Air temperature (2 m)	Teplota vzduchu (2 m)
+At ground level (estimate)	U země (odhad)
+At the phone's height	Ve výšce telefonu
+ above the ground, estimate)	 nad zemí, odhad)
+from 	od 
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour (a tap on one: name and distance). Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides them.	Klepnutí na pole Kompas: velký kompas, souřadnice GPS, obec, ve které jste (šedě), a 3 nejbližší obce, každá ve své barvě (klepnutí na jednu: název a vzdálenost). Sdílet pošle obrázek okna s místem, směrem, obcemi, baterií, teplotami a větrem; Obce je zobrazí nebo skryjí.
+Widget 4x2 · list	Widget 4x2 · seznam
+A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Velká teplota a vpravo další 4 dny (po jedné ikoně) nebo hodiny, podle volby v nastavení: Zobrazení počasí.
