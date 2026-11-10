@@ -2,9 +2,19 @@
 
 **Latest version:** see [Releases](https://github.com/viorelrb-alt/meteo-alarm-android/releases/latest) (test versions).
 
-The [Meteo Alarm Kindle](https://github.com/viorelrb-alt/meteo-alarm-kindle-ro) screen ported to an Android phone, kept black and white like the
-Kindle and laid out for a tall screen (made for a Samsung Galaxy A54, 1080x2340). Same data as the
-Kindle: Open-Meteo (DWD ICON) forecast, MeteoAlarm warnings for the county, pollen, sun and UV.
+The app has been updated and now includes Farmer Mode, allowing you to monitor the weather and key metrics for your land plots.
+
+The main screen shows the weather where you are: the clock, temperature, feels-like, wind, rain and snow for the next hours, the next days, sun, UV and pollen, together with the official weather warnings (MeteoAlarm in the EU, the National Weather Service in the US) and nearby earthquakes. Notifications tell you when rain, snow or a warning is coming. Home-screen widgets in several sizes, six colour themes (light and dark) and 28 languages are included.
+
+If you get lost, the compass works offline and shows nearby towns and villages. You can also send your coordinates, together with a picture of the compass, so others can locate you. The villages you pass through are added to your county's list of towns and shown on the widgets too.
+
+In Farmer Mode, the list of monitored indicators and alerts expands significantly. Whether you want to know when wind conditions are right for spraying your crops, soil-level temperature, humidity, or precipitation levels, all of these can be tracked in Farmer Mode for each land plot set up in the app, with statistics that can be saved as PDF.
+
+All this information stays strictly on your device. No one else has access to it. Each farmer only tracks the locations they are interested in.
+
+I added an option to export your app settings (towns, favourites, land plots and preferences, everything you have configured on one device) so you can easily import them onto a secondary Android device or when you switch to a new phone.
+
+The app is currently available only in the EU and the US, and only works on Android devices. It updates itself from this page (☰ › Check for updates).
 
 <p>
   <img src="docs/preview-a54.png" width="45%" alt="Light theme (Sky palette), v4.00">
@@ -16,36 +26,6 @@ Kindle: Open-Meteo (DWD ICON) forecast, MeteoAlarm warnings for the county, poll
 *v4.00 screens in English, PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
 
 **Project evolution:** [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf), a diagram of what each version added, from v0.1 to v1.71.
-
-## What it does
-
-- Portrait and landscape: it turns with the phone (unless auto-rotate is off). Landscape has
-  the weather now on the left; the next hours (or the rain chart) and the five days on the right;
-  sun, UV and pollen in the status line.
-- Full screen clock and weather, screen kept on (a ☰ menu option lets it sleep).
-- Clock, date, city with county code, up to two MeteoAlarm warnings (yellow, orange, red).
-- Big temperature and icon, feels like, high/low, wind.
-- Rain and snow chart for the next 12 hours with the "now" marker when rain or snow is due;
-  otherwise the next hours as tiles (temperature and icon), as many as the width allows:
-  10 in portrait, 14 in landscape on the A54.
-- Tomorrow, the day after and three more days; sunrise/sunset, UV index and pollen.
-- ☰ menu: refresh, choose town (the 315 towns of `cities.txt`, the last three as favourites),
-  °C/°F, 12h/24h, Romanian/English, keep the screen on, theme.
-- Themes: light (Kindle black and white), dark (the Claude app's colours: warm charcoal, ivory
-  text, terracotta for rain and "now"; warning codes in muted yellow, orange and red), or
-  automatic, following the phone's dark mode (the default).
-- Location: the app asks for location access, finds the town at start and every hour (Android's
-  location providers, then the phone's geocoder or OpenStreetMap Nominatim), and shows the
-  weather for the exact position. A town missing from `cities.txt` is added to a list kept on the
-  phone. The crosshair button next to the town button locates now; picking a town from the list
-  turns automatic location off until the crosshair is tapped again.
-- Updates: ☰ › Check for updates looks at the latest GitHub Release of this repository, downloads
-  the APK and opens the installer; it also checks once a week at start. The result shows in a
-  small window that slides up from the bottom ("Actualizează" / "Renunță"). Play Protect may warn
-  because the app installs its own updates from outside Google Play; the app explains this.
-- First start: a one-time message about the app (test version, no data collected, why location
-  and sensors are used, updates); the same text is in ☰ › Despre.
-- Weather every 15 minutes while open (hourly at night), cached for offline start.
 
 ## Build
 
