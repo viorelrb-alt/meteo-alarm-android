@@ -1,9 +1,10 @@
-Nykyinen versio: v.4.30 · 10.11.2026
+Nykyinen versio: v.4.40 · 10.11.2026
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus Kompassi-ruutuun näyttää kompassin, GPS-koordinaatit ja 3 lähintä paikkakuntaa väreinä; Jaa lähettää koordinaatit.
 - Ruudut: napautus mihin tahansa ruutuun näyttää arvon ylhäällä ja selitykset sen alla.
 - Sääkuvakkeet: teeman väreissä; kaikki liikkuvat 3 sekuntia, myös jokaisen päivityksen jälkeen ja widgeteissä.
 - Sijainti: kylät, joiden kautta kuljet, lisätään maakunnan luetteloon (7 päiväksi tai pysyvästi, jos kuljet siellä usein); kompassi näyttää myös kylät.
+- Sijainti: toisessa maassa tai Yhdysvaltain osavaltiossa pienet paikkakunnat ladataan kerran, kun olet siellä ensimmäistä kertaa internetin kanssa, kompassia ja paikkakuntaluetteloa varten.
 - Suuri kompassi: paikka, jossa olet, on ensimmäisenä (harmaa); Jaa lähettää myös kuvan ikkunasta, lähellä olevat paikat etäisyyksineen, akun, lämpötilat (ilma, maanpinta, puhelimen korkeudella) ja tuulen.
 - Vienti / Tuonti: siirtää paikkakunnat, suosikit, lohkot ja asetukset toiseen laitteeseen tiedoston avulla (Tallenna, Jaa; Tuo valinnalla Lisää tai Korvaa).
 WIDGETIT
@@ -52,6 +53,7 @@ Versio 2 (v.2.00 – v.2.91)
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
 Versio 1 (v.1.00 – v.1.93)
+- Tehty Meteo Alarm Kindlen pohjalta: sen näkymä tuotu Android-puhelimiin ja -tabletteihin.
 - Sää nyt, seuraavat tunnit, sademäärä 12 tunnille ja 5 päivälle.
 - Ruudut: Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys, Kompassi, Maanjäristys.
 - Säävaroitukset värikoodein (MeteoAlarm, noin 38 maata).

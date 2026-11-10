@@ -1,7 +1,8 @@
-Nuvarande version: v.4.30 · 10.11.2026
+Nuvarande version: v.4.40 · 10.11.2026
 HUVUDSKÄRM
 - Export / Import: flyttar dina orter, favoriter, skiften och inställningar till en annan enhet via en fil (Spara, Dela; Importera med Lägg till eller Ersätt).
 - Plats: byar du passerar kommer med i länets lista (i 7 dagar, eller för gott om du ofta är där); kompassen visar även byarna.
+- Plats: i ett annat land eller en annan amerikansk delstat laddas de små orterna ner en gång, första gången du är där med internet, för kompassen och ortslistan.
 - Rutor: ett tryck på valfri ruta visar värdet överst och förklaringarna under.
 - Stor kompass: ett tryck på rutan Kompass visar kompassen, GPS-koordinaterna och de 3 närmaste orterna i färger; Dela skickar koordinaterna.
 - Stor kompass: orten du är i kommer först (grå); Dela skickar även en bild av fönstret, närliggande orter med avstånd, batteriet, temperaturerna (luft, mark, på telefonens höjd) och vinden.
@@ -52,6 +53,7 @@ Version 2 (v.2.00 – v.2.91)
 - Designförbättringar och felrättningar.
 
 Version 1 (v.1.00 – v.1.93)
+- Gjord utifrån Meteo Alarm Kindle: dess skärm flyttad till Android-telefoner och surfplattor.
 - Vädret nu, de närmaste timmarna, nederbörd för 12 timmar och 5 dagar.
 - Rutor: Sol / Måne, UV, Pollen, Luftfuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass, Jordbävning.
 - Vädervarningar efter färgkod (MeteoAlarm, omkring 38 länder).

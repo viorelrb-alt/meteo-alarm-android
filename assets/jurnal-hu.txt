@@ -1,7 +1,8 @@
-Jelenlegi verzió: v.4.30 · 10.11.2026
+Jelenlegi verzió: v.4.40 · 10.11.2026
 FŐKÉPERNYŐ
 - Exportálás / Importálás: fájl segítségével átviszi a településeket, kedvenceket, parcellákat és beállításokat egy másik eszközre (Mentés, Megosztás; Importálás Hozzáadással vagy Cserével).
 - Helymeghatározás: a falvak, amelyeken áthaladsz, bekerülnek a megye listájába (7 napra, vagy végleg, ha gyakran jársz ott); az iránytű a falvakat is mutatja.
+- Helymeghatározás: másik országban vagy amerikai államban a kis települések egyszer letöltődnek, amikor először vagy ott internettel, az iránytűhöz és a településlistához.
 - Időjárás-ikonok: a téma színeiben; mind mozog 3 másodpercig, minden frissítés után és a widgeteken is.
 - Mezők: bármely mező megérintése felül az értéket, alatta a magyarázatot mutatja.
 - Nagy iránytű: a település, ahol vagy, áll elöl (szürke); a Megosztás képet is küld az ablakról, a közeli településeket a távolságokkal, az akkumulátort, a hőmérsékleteket (levegő, talaj, a telefon magasságában) és a szelet.
@@ -52,6 +53,7 @@ TÉMÁK
 - Dizájnjavítások és hibajavítások.
 
 1. verzió (v.1.00 – v.1.93)
+- A Meteo Alarm Kindle-ből készült: a képernyője androidos telefonokra és táblagépekre hozva.
 - Az időjárás most, a következő órák, csapadék 12 órára és 5 napra.
 - Mezők: Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű, Földrengés.
 - Figyelmeztetések színkód szerint (MeteoAlarm, kb. 38 ország).

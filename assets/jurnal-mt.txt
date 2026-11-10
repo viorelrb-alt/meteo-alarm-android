@@ -1,4 +1,4 @@
-Verżjoni attwali: v.4.30 · 10.11.2026
+Verżjoni attwali: v.4.40 · 10.11.2026
 SKRIN EWLIENI
 - Boxxla kbira: il-lokalità fejn int tidher l-ewwel (griż); Aqsam jibgħat ukoll stampa tat-tieqa, il-lokalitajiet fil-qrib bid-distanzi, il-batterija, it-temperaturi (arja, art, fl-għoli tat-telefon) u r-riħ.
 - Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.
@@ -6,6 +6,7 @@ SKRIN EWLIENI
 - Ikoni tat-temp: fil-kuluri tat-tema; kollha jiċċaqilqu 3 sekondi, anke wara kull aġġornament u fuq il-widgets.
 - Kaxxi: tagħfisa fuq kwalunkwe kaxxa turi l-valur fuq u l-ispjegazzjonijiet taħtu.
 - Lokalizzazzjoni: l-irħula li tgħaddi minnhom jidħlu fil-lista tal-kontea (għal 7 ijiem, jew għal dejjem jekk tgħaddi spiss); il-boxxla turi l-irħula wkoll.
+- Post: f'pajjiż ieħor jew stat ieħor tal-Istati Uniti, il-postijiet żgħar jitniżżlu darba, l-ewwel darba li tkun hemm bl-internet, għall-kumpass u l-lista tal-postijiet.
 WIDGETS
 - Widget 4x2 · lista: temperatura kbira u l-4 ijiem li ġejjin (ikona waħda kull wieħed) jew sigħat, magħżula fis-settings; il-lokalità bis-sinjal tal-lokalità tal-boxxla.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
@@ -52,6 +53,7 @@ Verżjoni 2 (v.2.00 – v.2.91)
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 1 (v.1.00 – v.1.93)
+- Magħmula minn Meteo Alarm Kindle: l-iskrin tiegħu miġjub fuq telefowns u tablets Android.
 - It-temp issa, is-sigħat li ġejjin, il-preċipitazzjoni għal 12-il siegħa u 5 ijiem.
 - Kaxxi: Xemx / Qamar, UV, Pollen, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla, Terremot.
 - Twissijiet tat-temp skont il-kulur (MeteoAlarm, madwar 38 pajjiż).

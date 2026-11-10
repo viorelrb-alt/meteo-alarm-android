@@ -172,9 +172,10 @@ final class CompassPanel extends View {
 		towns.clear();
 		here = null;
 		if (cities == null || Double.isNaN(lat)) return;
-		// v4.20 (Viorel): the villages too, from the list of every locality of Romania.
+		// v4.20 (Viorel): the villages too, from the list of every locality of Romania; v4.40 also
+		// from the lists of the other countries and US states on the phone.
 		List<Cities.City> all = new ArrayList<Cities.City>(cities.nearest(lat, lon, 4));
-		all.addAll(Places.villages(getContext()).nearest(lat, lon, 8));
+		all.addAll(Places.nearest(getContext(), lat, lon, 8));
 		List<Town> l = new ArrayList<Town>();
 		for (Cities.City c : all) {
 			Town t = new Town(c.name, bearing(lat, lon, c.lat, c.lon), km(lat, lon, c.lat, c.lon));

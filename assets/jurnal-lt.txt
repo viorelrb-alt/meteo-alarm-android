@@ -1,4 +1,4 @@
-Dabartinė versija: v.4.30 · 10.11.2026
+Dabartinė versija: v.4.40 · 10.11.2026
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus langelį Kompasas rodomas kompasas, GPS koordinatės ir 3 artimiausios vietovės spalvomis; Bendrinti siunčia koordinates.
 - Didelis kompasas: vietovė, kurioje esate, rodoma pirma (pilka); Bendrinti siunčia ir lango vaizdą, netolimas vietoves su atstumais, bateriją, temperatūras (oras, žemė, telefono aukštyje) ir vėją.
@@ -6,6 +6,7 @@ PAGRINDINIS EKRANAS
 - Langeliai: palietus bet kurį langelį viršuje rodoma vertė, o po ja paaiškinimai.
 - Orų piktogramos: temos spalvomis; visos juda 3 sekundes, ir po kiekvieno atnaujinimo, ir valdikliuose.
 - Vieta: kaimai, pro kuriuos važiuojate, įtraukiami į apskrities sąrašą (7 dienoms arba visam laikui, jei ten dažnai būnate); kompasas rodo ir kaimus.
+- Vieta: kitoje šalyje ar JAV valstijoje mažos gyvenvietės atsisiunčiamos vieną kartą, kai pirmą kartą ten esate su internetu, kompasui ir vietovių sąrašui.
 VALDIKLIAI
 - Valdiklis 4x2 · sąrašas: didelė temperatūra ir kitos 4 dienos (po vieną piktogramą) arba valandos, pasirenkama nustatymuose; vietovė su kompaso vietovės ženklu.
 - Dizaino patobulinimai ir klaidų taisymai.
@@ -52,6 +53,7 @@ TEMOS
 - Dizaino patobulinimai ir klaidų taisymai.
 
 1 versija (v.1.00 – v.1.93)
+- Sukurta iš Meteo Alarm Kindle: jo ekranas perkeltas į Android telefonus ir planšetes.
 - Orai dabar, artimiausios valandos, krituliai 12 valandų ir 5 dienoms.
 - Langeliai: Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas, Žemės drebėjimas.
 - Įspėjimai pagal spalvų kodą (MeteoAlarm, apie 38 šalis).

@@ -1,6 +1,7 @@
-Trenutna različica: v.4.30 · 10.11.2026
+Trenutna različica: v.4.40 · 10.11.2026
 GLAVNI ZASLON
 - Izvoz / Uvoz: prenese vaše kraje, priljubljene, parcele in nastavitve na drugo napravo prek datoteke (Shrani, Deli; Uvozi z Dodaj ali Zamenjaj).
+- Lokacija: v drugi državi ali zvezni državi ZDA se majhni kraji prenesejo enkrat, ko ste tam prvič z internetom, za kompas in seznam krajev.
 - Lokacija: vasi, skozi katere greste, pridejo na seznam okrožja (za 7 dni ali za stalno, če greste tam pogosto); kompas prikazuje tudi vasi.
 - Okvirji: dotik katerega koli okvirja pokaže vrednost zgoraj in razlage pod njo.
 - Veliki kompas: dotik okvirja Kompas pokaže kompas, koordinate GPS in 3 najbližje kraje v barvah; Deli pošlje koordinate.
@@ -52,6 +53,7 @@ Različica 2 (v.2.00 – v.2.91)
 - Izboljšave oblikovanja in popravki napak.
 
 Različica 1 (v.1.00 – v.1.93)
+- Nastala iz Meteo Alarm Kindle: njegov zaslon prenesen na telefone in tablice Android.
 - Vreme zdaj, naslednje ure, padavine za 12 ur in 5 dni.
 - Polja: Sonce / Luna, UV, Cvetni prah, Vlaga, Kakovost zraka, Tlak, Veter, Vidljivost, Kompas, Potres.
 - Vremenska opozorila po barvah (MeteoAlarm, približno 38 držav).

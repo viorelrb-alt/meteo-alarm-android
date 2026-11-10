@@ -1,4 +1,4 @@
-Versão atual: v.4.30 · 10.11.2026
+Versão atual: v.4.40 · 10.11.2026
 ECRÃ PRINCIPAL
 - Bússola grande: a localidade onde está aparece primeiro (cinzento); Partilhar envia também uma imagem da janela, as localidades próximas com as distâncias, a bateria, as temperaturas (ar, solo, à altura do telemóvel) e o vento.
 - Bússola grande: um toque na caixa Bússola mostra a bússola, as coordenadas GPS e as 3 localidades mais próximas em cores; Partilhar envia as coordenadas.
@@ -6,6 +6,7 @@ ECRÃ PRINCIPAL
 - Exportar / Importar: passa as suas localidades, favoritos, parcelas e definições para outro dispositivo através de um ficheiro (Guardar, Partilhar; Importar com Adicionar ou Substituir).
 - Ícones do tempo: nas cores do tema; todos se movem 3 segundos, também após cada atualização e nos widgets.
 - Localização: as aldeias por onde passa entram na lista do distrito (por 7 dias, ou de vez se lá passar muitas vezes); a bússola mostra também as aldeias.
+- Localização: noutro país ou estado dos EUA, as localidades pequenas são descarregadas uma vez, na primeira vez que lá está com internet, para a bússola e a lista de localidades.
 WIDGETS
 - Widget 4x2 · lista: uma temperatura grande e os próximos 4 dias (um ícone cada) ou horas, à escolha nas definições; a localidade com a marca de localidade da bússola.
 - Melhorias de design e correção de erros.
@@ -52,6 +53,7 @@ Versão 2 (v.2.00 – v.2.91)
 - Melhorias de design e correção de erros.
 
 Versão 1 (v.1.00 – v.1.93)
+- Feita a partir do Meteo Alarm Kindle: o seu ecrã levado para telemóveis e tablets Android.
 - O tempo agora, as próximas horas, a precipitação de 12 horas e 5 dias.
 - Caixas: Sol / Lua, UV, Pólen, Humidade, Qualidade do ar, Pressão, Vento, Visibilidade, Bússola, Sismo.
 - Avisos meteorológicos por código de cor (MeteoAlarm, cerca de 38 países).

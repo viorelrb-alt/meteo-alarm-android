@@ -1,7 +1,8 @@
-Nuværende version: v.4.30 · 10.11.2026
+Nuværende version: v.4.40 · 10.11.2026
 HOVEDSKÆRM
 - Eksport / Import: flytter dine byer, favoritter, marker og indstillinger til en anden enhed via en fil (Gem, Del; Import med Tilføj eller Erstat).
 - Felter: et tryk på et felt viser værdien øverst og forklaringerne under den.
+- Placering: i et andet land eller en anden amerikansk delstat hentes de små steder én gang, første gang du er der med internet, til kompasset og listen over steder.
 - Placering: landsbyer, du kommer igennem, kommer på amtets liste (i 7 dage, eller for altid hvis du ofte kommer der); kompasset viser også landsbyerne.
 - Stort kompas: byen du er i kommer først (grå); Del sender også et billede af vinduet, de nærliggende byer med afstande, batteriet, temperaturerne (luft, jord, i telefonens højde) og vinden.
 - Stort kompas: et tryk på feltet Kompas viser kompasset, GPS-koordinaterne og de 3 nærmeste byer i farver; Del sender koordinaterne.
@@ -52,6 +53,7 @@ Version 2 (v.2.00 – v.2.91)
 - Designforbedringer og fejlrettelser.
 
 Version 1 (v.1.00 – v.1.93)
+- Lavet ud fra Meteo Alarm Kindle: dens skærm bragt til Android-telefoner og -tablets.
 - Vejret nu, de næste timer, nedbør for 12 timer og 5 dage.
 - Felter: Sol / Måne, UV, Pollen, Luftfugtighed, Luftkvalitet, Lufttryk, Vind, Sigtbarhed, Kompas, Jordskælv.
 - Vejrvarsler efter farvekode (MeteoAlarm, omkring 38 lande).

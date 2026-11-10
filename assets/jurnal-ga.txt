@@ -1,4 +1,4 @@
-Leagan reatha: v.4.30 · 10.11.2026
+Leagan reatha: v.4.40 · 10.11.2026
 GIUIRLÉIDÍ
 - Giuirléid 4x2 · liosta: teocht mhór agus na 4 lá eile (deilbhín amháin an ceann) nó uaireanta, le roghnú sna socruithe; an baile le marc baile an chompáis.
 PRÍOMHSCÁILEÁN
@@ -8,6 +8,7 @@ PRÍOMHSCÁILEÁN
 - Deilbhíní aimsire: i ndathanna an téama; bogann siad go léir ar feadh 3 soicind, tar éis gach athnuachana freisin agus ar na giuirléidí.
 - Easpórtáil / Iompórtáil: aistríonn sé do bhailte, do cheanáin, do cheapacha agus do shocruithe chuig gléas eile trí chomhad (Sábháil, Comhroinn; Iompórtáil le Cuir leis nó Ionadaigh).
 - Suíomh: cuirtear na sráidbhailte a dtéann tú tríothu le liosta an chontae (ar feadh 7 lá, nó go buan má théann tú tríothu go minic); taispeánann an compás na sráidbhailte freisin.
+- Suíomh: i dtír eile nó i stát eile de chuid na SA, íoslódáiltear na háiteanna beaga uair amháin, an chéad uair a bhíonn tú ann le hidirlíon, don chompás agus do liosta na n-áiteanna.
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
 
 Leagan 3 (v.3.00 – v.3.92)
@@ -52,6 +53,7 @@ Leagan 2 (v.2.00 – v.2.91)
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
 
 Leagan 1 (v.1.00 – v.1.93)
+- Déanta ó Meteo Alarm Kindle: a scáileán tugtha chuig fóin agus táibléid Android.
 - An aimsir anois, na huaireanta romhainn, deascadh do 12 uair agus 5 lá.
 - Boscaí: Grian / Gealach, UV, Pailin, Taise, Cáilíocht aeir, Brú, Gaoth, Infheictheacht, Compás, Crith talún.
 - Rabhaidh aimsire de réir dath (MeteoAlarm, timpeall 38 tír).

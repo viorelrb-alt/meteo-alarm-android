@@ -1,9 +1,10 @@
-Geçerli sürüm: v.4.30 · 10.11.2026
+Geçerli sürüm: v.4.40 · 10.11.2026
 ANA EKRAN
 - Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
 - Dışa aktar / İçe aktar: yerlerinizi, favorilerinizi, parsellerinizi ve ayarlarınızı bir dosya ile başka bir cihaza taşır (Kaydet, Paylaş; Ekle veya Değiştir ile içe aktar).
 - Hava simgeleri: temanın renklerinde; hepsi 3 saniye hareket eder, her yenilemeden sonra ve widget'larda da.
+- Konum: başka bir ülkede veya ABD eyaletinde küçük yerleşimler, oraya internetle ilk geldiğinizde bir kez indirilir; pusula ve yer listesi için.
 - Konum: içinden geçtiğiniz köyler ilin listesine girer (7 gün, ya da sık geçiyorsanız kalıcı olarak); pusula köyleri de gösterir.
 - Kutular: herhangi bir kutuya dokunmak değeri üstte, açıklamaları altında gösterir.
 WIDGET'LAR
@@ -52,6 +53,7 @@ Sürüm 2 (v.2.00 – v.2.91)
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 1 (v.1.00 – v.1.93)
+- Meteo Alarm Kindle'dan yapıldı: ekranı Android telefon ve tabletlere taşındı.
 - Şimdiki hava, sonraki saatler, 12 saatlik ve 5 günlük yağış.
 - Kutular: Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula, Deprem.
 - Renk koduna göre hava uyarıları (MeteoAlarm, yaklaşık 38 ülke).

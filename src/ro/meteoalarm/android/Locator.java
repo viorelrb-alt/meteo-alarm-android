@@ -125,6 +125,7 @@ final class Locator {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
 				String town = null, county = null, district = null, country = null, match = "", state = null;
+				boolean offline = false;
 				// OpenStreetMap first: it names the sector or neighbourhood ("București, Sector 3").
 				try {
 					String u = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=16&addressdetails=1&accept-language="
@@ -188,11 +189,12 @@ final class Locator {
 				// v4.20: no map service answered (no internet): the nearest locality of Romania, villages
 				// too, when the phone is within 4 km of it.
 				if (town == null) {
-					ro.meteoalarm.android.core.Cities.City v = Places.villages(ctx).at(lat, lon, 4);
+					ro.meteoalarm.android.core.Cities.City v = Places.at(ctx, lat, lon, 4);
 					if (v != null) {
 						town = v.name;
 						county = v.county;
-						country = "ro";
+						country = v.country;
+						offline = true;
 						Log.i(ctx, "LOC", "fără serviciu de hartă: localitatea din lista aplicației, " + v.name + ", " + v.county);
 					}
 				}
@@ -217,9 +219,11 @@ final class Locator {
 					}
 				}
 				final String t = town, c = county, d = district, cc = country, mt = match;
+				final boolean off = offline;
 				handler.post(new Runnable() {
 					public void run() {
 						busy = false;
+						lastOffline = off;
 						if (t == null) r.failed("noplace");
 						else r.found(lat, lon, t, c == null ? "" : c, d, cc, mt);
 					}
@@ -232,6 +236,9 @@ final class Locator {
 	 * The boundary of TOWN (and DISTRICT in it) in COUNTY from OpenStreetMap, checked to hold
 	 * LAT LON; null when OpenStreetMap has no boundary for it. Blocking: call it off the main thread.
 	 */
+	/** v4.40: the last place came from the app's own lists (no map service answered). */
+	volatile boolean lastOffline;
+
 	static Area boundary(String town, String district, String county, double lat, double lon) {
 		try {
 			String q = (district != null ? district + ", " : "") + town + (county.length() > 0 && !county.equals(town) ? ", " + county : "");

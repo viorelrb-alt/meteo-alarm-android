@@ -1,4 +1,4 @@
-Versione attuale: v.4.30 · 10.11.2026
+Versione attuale: v.4.40 · 10.11.2026
 SCHERMATA PRINCIPALE
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
 - Bussola grande: un tocco sulla casella Bussola mostra la bussola, le coordinate GPS e le 3 località più vicine a colori; Condividi invia le coordinate.
@@ -6,6 +6,7 @@ SCHERMATA PRINCIPALE
 - Esporta / Importa: trasferisce località, preferiti, appezzamenti e impostazioni su un altro dispositivo tramite un file (Salva, Condividi; Importa con Aggiungi o Sostituisci).
 - Icone meteo: nei colori del tema; tutte si muovono 3 secondi, anche dopo ogni aggiornamento e sui widget.
 - Localizzazione: i paesi che attraversi entrano nell'elenco della loro provincia (per 7 giorni, o per sempre se ci passi spesso); la bussola mostra anche i paesi.
+- Posizione: in un altro paese o stato degli USA, le piccole località vengono scaricate una volta, la prima volta che sei lì con internet, per la bussola e l’elenco dei luoghi.
 WIDGET
 - Widget 4x2 · elenco: una temperatura grande e i prossimi 4 giorni (un'icona ciascuno) o le ore, a scelta nelle impostazioni; la località con il segno di località della bussola.
 - Miglioramenti del design e correzioni di errori.
@@ -52,6 +53,7 @@ Versione 2 (v.2.00 – v.2.91)
 - Miglioramenti del design e correzioni di errori.
 
 Versione 1 (v.1.00 – v.1.93)
+- Nata da Meteo Alarm Kindle: la sua schermata portata su telefoni e tablet Android.
 - Il meteo attuale, le prossime ore, le precipitazioni per 12 ore e 5 giorni.
 - Riquadri: Sole / Luna, UV, Pollini, Umidità, Qualità dell'aria, Pressione, Vento, Visibilità, Bussola, Terremoto.
 - Allerte meteo per codice colore (MeteoAlarm, circa 38 paesi).

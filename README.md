@@ -16,6 +16,8 @@ I added an option to export your app settings (towns, favourites, land plots and
 
 The app is currently available only in the EU and the US, and only works on Android devices. It updates itself from this page (☰ › Check for updates).
 
+Developed by Viorel-R. B.
+
 <p>
   <img src="docs/preview-a54.png" width="45%" alt="Light theme (Sky palette), v4.00">
   <img src="docs/preview-a54-dark.png" width="45%" alt="Dark theme (Lavender palette), v4.00">
@@ -55,6 +57,6 @@ app when asked. If Play Protect warns about an unknown developer, choose **Insta
 ## Code
 
 - `src/ro/meteoalarm/android/core/`: plain Java, no Android: data (`Weather`, `Warnings`), texts
-  and the screen drawing (`Screen`, on a 758-unit wide canvas like the Kindle's).
+  and the screen drawing (`Screen`, on a 758-unit wide canvas).
 - `src/ro/meteoalarm/android/`: the Android activity, view and canvas.
 - `preview/`: draws `Screen` with Java2D for a PNG preview.

@@ -1,8 +1,9 @@
-Trenutačna verzija: v.4.30 · 10.11.2026
+Trenutačna verzija: v.4.40 · 10.11.2026
 GLAVNI ZASLON
 - Ikone vremena: u bojama teme; sve se miču 3 sekunde, i nakon svakog osvježavanja i na widgetima.
 - Izvoz / Uvoz: prenosi vaša mjesta, favorite, parcele i postavke na drugi uređaj putem datoteke (Spremi, Podijeli; Uvoz s Dodaj ili Zamijeni).
 - Lokacija: sela kroz koja prolazite ulaze u popis županije (na 7 dana ili trajno ako ondje često prolazite); kompas prikazuje i sela.
+- Lokacija: u drugoj zemlji ili saveznoj državi SAD-a mala se mjesta preuzimaju jednom, prvi put kad ste ondje s internetom, za kompas i popis mjesta.
 - Okviri: dodir bilo kojeg okvira prikazuje vrijednost gore i objašnjenja ispod nje.
 - Veliki kompas: dodir okvira Kompas prikazuje kompas, GPS koordinate i 3 najbliža mjesta u bojama; Podijeli šalje koordinate.
 - Veliki kompas: mjesto u kojem ste prikazano je prvo (sivo); Podijeli šalje i sliku prozora, obližnja mjesta s udaljenostima, bateriju, temperature (zrak, tlo, na visini telefona) i vjetar.
@@ -52,6 +53,7 @@ Verzija 2 (v.2.00 – v.2.91)
 - Poboljšanja dizajna i ispravci pogrešaka.
 
 Verzija 1 (v.1.00 – v.1.93)
+- Nastala od Meteo Alarm Kindle: njegov zaslon prenesen na Android telefone i tablete.
 - Vrijeme sada, sljedeći sati, oborine za 12 sati i 5 dana.
 - Polja: Sunce / Mjesec, UV, Pelud, Vlaga, Kvaliteta zraka, Tlak, Vjetar, Vidljivost, Kompas, Potres.
 - Upozorenja po bojama (MeteoAlarm, oko 38 zemalja).

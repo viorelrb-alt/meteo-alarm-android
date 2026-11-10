@@ -1,9 +1,10 @@
-Obecna wersja: v.4.30 · 10.11.2026
+Obecna wersja: v.4.40 · 10.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
 - Duży kompas: miejscowość, w której jesteś, jest pierwsza (szara); Udostępnij wysyła też obraz okna, pobliskie miejscowości z odległościami, baterię, temperatury (powietrze, grunt, na wysokości telefonu) i wiatr.
 - Eksport / Import: przenosi miejscowości, ulubione, działki i ustawienia na inne urządzenie za pomocą pliku (Zapisz, Udostępnij; Importuj z opcją Dodaj lub Zastąp).
 - Ikony pogody: w kolorach motywu; wszystkie poruszają się 3 sekundy, także po każdym odświeżeniu i na widżetach.
+- Lokalizacja: w innym kraju lub stanie USA małe miejscowości pobierają się raz, gdy jesteś tam pierwszy raz z internetem, dla kompasu i listy miejscowości.
 - Lokalizacja: wsie, przez które przejeżdżasz, trafiają na listę okręgu (na 7 dni lub na stałe, jeśli bywasz tam często); kompas pokazuje też wsie.
 - Pola: dotknięcie dowolnego pola pokazuje wartość u góry i objaśnienia pod nią.
 WIDŻETY
@@ -52,6 +53,7 @@ Wersja 2 (v.2.00 – v.2.91)
 - Ulepszenia wyglądu i poprawki błędów.
 
 Wersja 1 (v.1.00 – v.1.93)
+- Powstała z Meteo Alarm Kindle: jego ekran przeniesiony na telefony i tablety z Androidem.
 - Pogoda teraz, następne godziny, opady na 12 godzin i 5 dni.
 - Pola: Słońce / Księżyc, UV, Pyłki, Wilgotność, Jakość powietrza, Ciśnienie, Wiatr, Widoczność, Kompas, Trzęsienie ziemi.
 - Ostrzeżenia pogodowe według koloru (MeteoAlarm, około 38 krajów).

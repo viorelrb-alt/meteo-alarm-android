@@ -1,10 +1,11 @@
-Versiunea curentă: v.4.30 · 10.11.2026
+Versiunea curentă: v.4.40 · 10.11.2026
 ECRAN PRINCIPAL
 - Busola mare: atingerea casetei Busolă arată busola, coordonatele GPS și cele mai apropiate 3 localități colorate; Partajare trimite coordonatele.
 - Busola mare: localitatea în care ești apare prima (gri); Partajare trimite și o imagine a ferestrei, localitățile apropiate cu distanțele, bateria, temperaturile (aer, sol, la înălțimea telefonului) și vântul.
 - Casete: atingerea oricărei casete arată valoarea sus și explicațiile dedesubt.
 - Export / Import: mută localitățile, favoritele, parcelele și setările pe alt dispozitiv printr-un fișier (Salvează, Trimite; Import cu Adaugă sau Înlocuiește).
 - Iconurile vremii: în culorile temei; toate se mișcă 3 secunde, și după fiecare reîmprospătare, și pe widget-uri.
+- Localizare: în altă țară sau alt stat din SUA, localitățile mici se descarcă o singură dată, prima dată când ești acolo cu internet, pentru busolă și lista localităților.
 - Localizare: satele prin care treci intră în lista județului (7 zile, sau mereu dacă treci des pe acolo); busola arată și satele.
 WIDGET-URI
 - Widget-ul 4x2 · listă: temperatura mare și următoarele 4 zile (câte un icon) sau ore, la alegere în setări; localitatea cu semnul de localitate al busolei.
@@ -52,6 +53,7 @@ Versiunea 2 (v.2.00 – v.2.91)
 - Îmbunătățiri de design și corectarea erorilor.
 
 Versiunea 1 (v.1.00 – v.1.93)
+- Făcută din Meteo Alarm Kindle: ecranul lui adus pe telefoanele și tabletele Android.
 - Vremea de acum, următoarele ore, precipitațiile pe 12 ore și 5 zile.
 - Casete: Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă, Cutremur.
 - Avertizări cu coduri (ANM și MeteoAlarm, circa 38 de țări).

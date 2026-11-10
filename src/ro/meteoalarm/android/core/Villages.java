@@ -12,8 +12,16 @@ public final class Villages {
 	private final String[] county, name;
 	private final float[] lat, lon;
 	public final int size;
+	/** v4.40: the country of the list ("ro", "us", "de"...) and the box its places lie in. */
+	public final String country;
+	private float minLa = 90, maxLa = -90, minLo = 180, maxLo = -180;
 
 	public Villages(String text) {
+		this(text, "ro");
+	}
+
+	public Villages(String text, String country) {
+		this.country = country;
 		List<String[]> rows = new ArrayList<String[]>();
 		for (String line : text.split("\n")) {
 			if (line.length() == 0 || line.charAt(0) == '#') continue;
@@ -31,6 +39,10 @@ public final class Villages {
 				lon[n] = Float.parseFloat(p[3]);
 				county[n] = p[0].intern();
 				name[n] = p[1];
+				minLa = Math.min(minLa, lat[n]);
+				maxLa = Math.max(maxLa, lat[n]);
+				minLo = Math.min(minLo, lon[n]);
+				maxLo = Math.max(maxLo, lon[n]);
 				n++;
 			} catch (NumberFormatException e) {
 				// a bad line
@@ -61,14 +73,19 @@ public final class Villages {
 		List<Cities.City> out = new ArrayList<Cities.City>();
 		for (int i = 0; i < have; i++) {
 			int x = best[i];
-			out.add(new Cities.City(county[x], name[x], Math.round(lat[x] * 10000) / 10000.0, Math.round(lon[x] * 10000) / 10000.0));
+			out.add(new Cities.City(country, county[x], name[x], Math.round(lat[x] * 10000) / 10000.0, Math.round(lon[x] * 10000) / 10000.0, ""));
 		}
 		return out;
 	}
 
-	/** The locality nearest to LAT, LON when it is at most KM away (null otherwise or outside Romania). */
+	/** Whether LAT, LON lies in the box of the list's places (with about 30 km around it). */
+	public boolean covers(double la, double lo) {
+		return size > 0 && la >= minLa - 0.3 && la <= maxLa + 0.3 && lo >= minLo - 0.4 && lo <= maxLo + 0.4;
+	}
+
+	/** The locality nearest to LAT, LON when it is at most KM away (null otherwise or outside the list's area). */
 	public Cities.City at(double la, double lo, double km) {
-		if (la < 43.4 || la > 48.4 || lo < 20.1 || lo > 29.9) return null;
+		if (!covers(la, lo)) return null;
 		List<Cities.City> l = nearest(la, lo, 1);
 		if (l.isEmpty()) return null;
 		Cities.City c = l.get(0);

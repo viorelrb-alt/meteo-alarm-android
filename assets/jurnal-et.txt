@@ -1,6 +1,7 @@
-Praegune versioon: v.4.30 · 10.11.2026
+Praegune versioon: v.4.40 · 10.11.2026
 PÕHIEKRAAN
 - Asukoht: külad, millest läbi sõidad, lisatakse maakonna loendisse (7 päevaks või jäädavalt, kui käid seal tihti); kompass näitab ka külasid.
+- Asukoht: teises riigis või USA osariigis laaditakse väikesed asulad alla üks kord, kui oled seal esimest korda internetiga, kompassi ja kohtade loendi jaoks.
 - Eksport / Import: viib sinu kohad, lemmikud, põllud ja seaded faili abil teise seadmesse (Salvesta, Jaga; Import valikuga Lisa või Asenda).
 - Ilmaikoonid: teema värvides; kõik liiguvad 3 sekundit, ka pärast iga värskendust ja vidinatel.
 - Kastid: puudutus mis tahes kastil näitab ülal väärtust ja all selgitusi.
@@ -52,6 +53,7 @@ Versioon 2 (v.2.00 – v.2.91)
 - Disainiparandused ja vigade parandused.
 
 Versioon 1 (v.1.00 – v.1.93)
+- Tehtud Meteo Alarm Kindle'i põhjal: selle ekraan toodud Android-telefonidele ja -tahvlitele.
 - Ilm praegu, järgmised tunnid, sademed 12 tunniks ja 5 päevaks.
 - Kastid: Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Õhurõhk, Tuul, Nähtavus, Kompass, Maavärin.
 - Ilmahoiatused värvikoodi järgi (MeteoAlarm, umbes 38 riiki).

@@ -1,6 +1,7 @@
-Pašreizējā versija: v.4.30 · 10.11.2026
+Pašreizējā versija: v.4.40 · 10.11.2026
 GALVENAIS EKRĀNS
 - Atrašanās vieta: ciemi, caur kuriem braucat, tiek pievienoti apriņķa sarakstam (uz 7 dienām vai pastāvīgi, ja tur braucat bieži); kompass rāda arī ciemus.
+- Atrašanās vieta: citā valstī vai ASV štatā mazās apdzīvotās vietas tiek lejupielādētas vienreiz, kad tur pirmo reizi esi ar internetu, kompasam un vietu sarakstam.
 - Eksports / Imports: ar faila palīdzību pārnes jūsu vietas, izlasi, laukus un iestatījumus uz citu ierīci (Saglabāt, Kopīgot; Importēt ar Pievienot vai Aizstāt).
 - Laika ikonas: motīva krāsās; visas kustas 3 sekundes, arī pēc katras atjaunināšanas un logrīkos.
 - Lielais kompass: pieskaroties lodziņam Kompass, redzams kompass, GPS koordinātas un 3 tuvākās apdzīvotās vietas krāsās; Kopīgot nosūta koordinātas.
@@ -52,6 +53,7 @@ Versija 2 (v.2.00 – v.2.91)
 - Dizaina uzlabojumi un kļūdu labojumi.
 
 Versija 1 (v.1.00 – v.1.93)
+- Veidota no Meteo Alarm Kindle: tā ekrāns pārnests uz Android tālruņiem un planšetēm.
 - Laiks tagad, nākamās stundas, nokrišņi 12 stundām un 5 dienām.
 - Lodziņi: Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass, Zemestrīce.
 - Brīdinājumi pēc krāsu koda (MeteoAlarm, ap 38 valstīm).

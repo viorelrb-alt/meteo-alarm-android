@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v4.30";
+	static final String VERSION = "Meteo Alarm Android v4.40";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -151,6 +151,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Towns found by the location, kept on the phone; v4.20 (Viorel): a place not in the app's
 		// own list (a village) goes after 7 days without passing there, unless passed there often.
 		for (List<Cities.City> l : cities.byCounty.values()) for (Cities.City c : l) builtIn.add(Visits.key(c));
+		// v4.40: abroad and in the US too (the towns of world.txt and us.txt stay).
+		for (List<Cities.City> l : cities.abroad.values()) for (Cities.City c : l) builtIn.add(Visits.key(c));
+		for (List<Cities.City> l : cities.usStates.values()) for (Cities.City c : l) builtIn.add(Visits.key(c));
+		Places.tidy(this);
 		cleanNeighbourhoods();
 		expirePlaces();
 		for (String k : prefs.getString("myCities", "").split("\n")) {
@@ -280,8 +284,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private String aboutText() {
 		boolean en = s.T.en;
 		return Updater.howTo(en) + "\n\n"
-				+ Tr.t("This is a test version of Meteo Alarm Android, made from Meteo Alarm Kindle.",
-						"Aceasta este o versiune de test a Meteo Alarm Android, făcută din Meteo Alarm Kindle.") + "\n\n"
+				+ Tr.t("This is a test version of Meteo Alarm Android.", "Aceasta este o versiune de test a Meteo Alarm Android.") + "\n\n"
 				+ Tr.t("No data collected: no account, no ads, no statistics. To get the weather, only the place's coordinates are sent to Open-Meteo (weather, pollen) and, when Open-Meteo is overloaded, to MET Norway (weather); the warnings come from MeteoAlarm, the earthquakes from EMSC (seismicportal.eu).",
 						"Nu colectăm date: fără cont, fără reclame, fără statistici. Pentru vreme se trimit doar coordonatele localității către Open-Meteo (vremea, polenul) și, când Open-Meteo e supraîncărcat, către MET Norway (vremea); avertizările vin de la MeteoAlarm (ANM), cutremurele de la EMSC (seismicportal.eu).") + "\n\n"
 				+ (Region.showUS(this) ? Tr.t("In the United States the warnings come from the National Weather Service (api.weather.gov) and the earthquakes from USGS (earthquake.usgs.gov); they get only the town's coordinates too.",
@@ -1417,6 +1420,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						: new Cities.City(country, county, name, la, lo, match);
 				boolean added = cities.find(here) == null;
 				learn(here);
+				// v4.40: the first time in another country or US state, its small localities are downloaded.
+				if (!locator.lastOffline) Places.located(MainActivity.this, here.country, here.county);
 				if (added && say) toast((Tr.t("Added to the list: ", "Adăugată în listă: ")) + here.label());
 				if (!keep) fetchArea(here, town, null, lat, lon);
 				boolean moved = cur == null || !here.same(cur) || distKm(cur.lat, cur.lon, la, lo) > 1;
@@ -1512,12 +1517,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		prefs.edit().putString("myCities", b.toString()).apply();
 	}
 
-	/** v4.20: the towns of cities.txt (always listed; not counted as places passed through). */
+	/** v4.20: the towns of cities.txt (v4.40: and of world.txt, us.txt), always listed; not counted as places passed through. */
 	private final java.util.HashSet<String> builtIn = new java.util.HashSet<String>();
 
-	/** A place in Romania that is not in the app's own list: listed only while the phone passes there. */
+	/** A place not in the app's own list (v4.40: in any country): listed only while the phone passes there. */
 	private boolean passing(Cities.City c) {
-		return c != null && !c.abroad() && !builtIn.contains(Visits.key(c));
+		return c != null && !builtIn.contains(Visits.key(c));
 	}
 
 	/** v4.20 (Viorel): drops from the learned towns the places not passed through lately (not a favourite, not the town shown). */
@@ -1526,6 +1531,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		long day = Visits.today(System.currentTimeMillis());
 		Cities.City cur = Cities.City.fromKey(prefs.getString("city", ""));
 		List<Cities.City> fav = favList("favs");
+		fav.addAll(favList("favsUS"));
 		StringBuilder b = new StringBuilder();
 		for (String k : prefs.getString("myCities", "").split("\n")) {
 			Cities.City c = Cities.City.fromKey(k);
@@ -2749,8 +2755,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Aplicația verifică întâi internetul, apoi caută pe GitHub, pe un server secundar GitHub și pe Google Drive și descarcă de la primul care răspunde. O versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
-		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.",
-				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele."));
+		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.",
+				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele. În altă țară sau alt stat din SUA, localitățile mici se descarcă o singură dată, prima dată când ești acolo cu internet."));
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left.", "Arată bara de luminozitate din stânga."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches the theme.", "Deasupra barei de luminozitate: schimbă tema."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));
@@ -2901,8 +2907,27 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 	}
 
+	/** v4.40 (Viorel 2026-11-10): the description of the app (the same as on GitHub), at the top of About. */
+	private String description() {
+		return Tr.t("The app has been updated and now includes Farmer Mode, allowing you to monitor the weather and key metrics for your land plots.",
+				"Aplicația a fost actualizată și include acum Modul Fermier, cu care urmărești vremea și indicatorii importanți pentru terenurile tale.")
+				+ "\n\n" + Tr.t("The main screen shows the weather where you are: the clock, temperature, feels-like, wind, rain and snow for the next hours, the next days, sun, UV and pollen, together with the official weather warnings (MeteoAlarm in the EU, the National Weather Service in the US) and nearby earthquakes. Notifications tell you when rain, snow or a warning is coming. Home-screen widgets in several sizes, six colour themes (light and dark) and 28 languages are included.",
+				"Ecranul principal arată vremea acolo unde ești: ceasul, temperatura, temperatura resimțită, vântul, ploaia și ninsoarea în orele următoare, zilele următoare, soarele, UV și polenul, împreună cu avertizările meteo oficiale (MeteoAlarm în UE, National Weather Service în SUA) și cutremurele din apropiere. Notificările îți spun când vine ploaia, ninsoarea sau o avertizare. Aplicația are widgeturi de mai multe mărimi, șase teme de culoare (luminoase și întunecate) și 28 de limbi.")
+				+ "\n\n" + Tr.t("If you get lost, the compass works offline and shows nearby towns and villages. You can also send your coordinates, together with a picture of the compass, so others can locate you. The villages you pass through are added to your county's list of towns and shown on the widgets too.",
+				"Dacă te rătăcești, busola funcționează fără internet și arată localitățile și satele din apropiere. Poți trimite coordonatele tale, împreună cu o imagine a busolei, ca alții să te găsească. Satele prin care treci intră în lista localităților din județul tău și apar și pe widgeturi.")
+				+ "\n\n" + Tr.t("In Farmer Mode, the list of monitored indicators and alerts expands significantly. Whether you want to know when wind conditions are right for spraying your crops, soil-level temperature, humidity, or precipitation levels, all of these can be tracked in Farmer Mode for each land plot set up in the app, with statistics that can be saved as PDF.",
+				"În Modul Fermier, lista indicatorilor și a alertelor urmărite crește mult. Fie că vrei să știi când vântul e potrivit pentru stropit, temperatura la nivelul solului, umiditatea sau cantitatea de precipitații, toate se pot urmări în Modul Fermier pentru fiecare parcelă adăugată în aplicație, cu statistici care se pot salva ca PDF.")
+				+ "\n\n" + Tr.t("All this information stays strictly on your device. No one else has access to it. Each farmer only tracks the locations they are interested in.",
+				"Toate aceste informații rămân strict pe dispozitivul tău. Nimeni altcineva nu are acces la ele. Fiecare fermier urmărește doar locurile care îl interesează.")
+				+ "\n\n" + Tr.t("You can export your app settings (towns, favourites, land plots and preferences, everything you have configured on one device) and easily import them onto a secondary Android device or when you switch to a new phone: ☰ › Export / Import.",
+				"Poți exporta setările aplicației (localitățile, favoritele, parcelele și preferințele, tot ce ai configurat pe un dispozitiv) și le poți importa ușor pe un al doilea dispozitiv Android sau când treci pe un telefon nou: ☰ › Export / Import.")
+				+ "\n\n" + Tr.t("The app is currently available only in the EU and the US, and only works on Android devices. It updates itself from GitHub: ☰ › Check for updates.",
+				"Aplicația este disponibilă deocamdată doar în UE și în SUA și funcționează doar pe dispozitive Android. Se actualizează singură de pe GitHub: ☰ › Verifică actualizări.")
+				+ "\n\n" + Tr.t("Developed by Viorel-R. B.", "Dezvoltată de Viorel-R. B.");
+	}
+
 	private void about() {
-		String msg = aboutText() + "\n\n" + (Tr.t("The dark theme uses the Claude app colours. Font: Liberation Sans.", "Tema întunecată folosește culorile aplicației Claude. Font: Liberation Sans."));
+		String msg = description() + "\n\n" + aboutText() + "\n\n" + (Tr.t("The dark theme uses the Claude app colours. Font: Liberation Sans.", "Tema întunecată folosește culorile aplicației Claude. Font: Liberation Sans."));
 		msg += "\n\n" + (Tr.t("Installed version: v", "Versiunea instalată: v")) + updater.installed()
 				+ "\n" + (Tr.t("Updates: ", "Actualizări: ")) + "github.com/" + ro.meteoalarm.android.core.Release.REPO + "/releases";
 		final String aboutMsg = msg;

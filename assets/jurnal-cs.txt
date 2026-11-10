@@ -1,8 +1,9 @@
-Současná verze: v.4.30 · 10.11.2026
+Současná verze: v.4.40 · 10.11.2026
 HLAVNÍ OBRAZOVKA
 - Export / Import: přenese místa, oblíbené, parcely a nastavení do jiného zařízení pomocí souboru (Uložit, Sdílet; Import s volbou Přidat nebo Nahradit).
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.
 - Pole: klepnutí na kterékoli pole ukáže hodnotu nahoře a vysvětlení pod ní.
+- Poloha: v jiné zemi nebo jiném státě USA se malé obce stáhnou jednou, když tam poprvé jste s internetem, pro kompas a seznam míst.
 - Poloha: vesnice, kterými projíždíte, se přidají do seznamu okresu (na 7 dní, nebo natrvalo, když tudy jezdíte často); kompas ukazuje i vesnice.
 - Velký kompas: klepnutí na pole Kompas ukáže kompas, souřadnice GPS a 3 nejbližší obce barevně; Sdílet pošle souřadnice.
 - Velký kompas: obec, ve které jste, je první (šedě); Sdílet pošle i obrázek okna, blízké obce se vzdálenostmi, baterii, teploty (vzduch, země, ve výšce telefonu) a vítr.
@@ -52,6 +53,7 @@ Verze 2 (v.2.00 – v.2.91)
 - Vylepšení vzhledu a opravy chyb.
 
 Verze 1 (v.1.00 – v.1.93)
+- Vznikla z Meteo Alarm Kindle: jeho obrazovka převedená na telefony a tablety s Androidem.
 - Počasí teď, příští hodiny, srážky na 12 hodin a 5 dní.
 - Políčka: Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita vzduchu, Tlak, Vítr, Viditelnost, Kompas, Zemětřesení.
 - Výstrahy podle barev (MeteoAlarm, asi 38 zemí).
