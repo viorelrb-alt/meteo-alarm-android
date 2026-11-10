@@ -839,3 +839,13 @@ A tap on the Compass box: a big compass, the GPS coordinates, the town you are i
 Widget 4x2 · list	Widget 4x2 · liste
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Büyük sıcaklık ve sağda sonraki 4 gün (her biri bir simge) veya saatler, ayarlardaki seçime göre: Havayı göster.
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Otomatik konumu açar (dolu) veya kapatır (boş); bulunduğunuz yerdeki havayı gösterir. İçinden geçtiğiniz köy, ilinin listesine girer; 7 gün oradan geçmezseniz çıkar, sık geçerseniz (2 haftada 3 gün) kalır. Pusula köyleri de gösterir.
+Export / Import	Dışa aktar / İçe aktar
+Moves your towns, favourites, parcels and settings to another device through a file.	Yerlerinizi, favorilerinizi, parsellerinizi ve ayarlarınızı bir dosya ile başka bir cihaza taşır.
+Import	İçe aktar
+Add	Ekle
+Replace	Değiştir
+Add keeps what you have and adds what is missing; Replace makes everything as in the file.	Ekle, sahip olduklarınızı korur ve eksik olanları ekler; Değiştir her şeyi dosyadaki gibi yapar.
+File from	Dosya tarihi
+Theme, language, units, clock, text size	Tema, dil, birimler, saat, metin boyutu
+Imported	İçe aktarıldı
+This file is not a Meteo Alarm export.	Bu dosya bir Meteo Alarm dışa aktarımı değil.

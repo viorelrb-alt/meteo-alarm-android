@@ -905,3 +905,13 @@ A tap on the Compass box: a big compass, the GPS coordinates, the town you are i
 Widget 4x2 · list	Valdiklis 4x2 · sąrašas
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Didelė temperatūra ir dešinėje kitos 4 dienos (po vieną piktogramą) arba valandos, kaip pasirinkta nustatymuose: Rodyti orus.
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Įjungia (pilnas) arba išjungia (tuščias) automatinę vietą; rodo orus ten, kur esate. Kaimas, pro kurį važiuojate, įtraukiamas į apskrities sąrašą; jis dingsta po 7 dienų be pravažiavimo ir lieka, jei ten dažnai būnate (3 dienos per 2 savaites). Kompasas rodo ir kaimus.
+Export / Import	Eksportas / Importas
+Moves your towns, favourites, parcels and settings to another device through a file.	Per failą perkelia jūsų vietoves, mėgstamas, sklypus ir nustatymus į kitą įrenginį.
+Import	Importuoti
+Add	Pridėti
+Replace	Pakeisti
+Add keeps what you have and adds what is missing; Replace makes everything as in the file.	Pridėti palieka tai, ką turite, ir prideda trūkstamą; Pakeisti viską padaro kaip faile.
+File from	Failas iš
+Theme, language, units, clock, text size	Tema, kalba, vienetai, laikrodis, teksto dydis
+Imported	Importuota
+This file is not a Meteo Alarm export.	Šis failas nėra Meteo Alarm eksportas.

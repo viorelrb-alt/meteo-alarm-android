@@ -905,3 +905,13 @@ A tap on the Compass box: a big compass, the GPS coordinates, the town you are i
 Widget 4x2 · list	Widget 4x2 · popis
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Velika temperatura i desno sljedeća 4 dana (po jedna ikona) ili sati, prema odabiru u postavkama: Prikaz vremena.
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Uključuje (puno) ili isključuje (prazno) automatsku lokaciju; prikazuje vrijeme ondje gdje ste. Selo kroz koje prolazite ulazi u popis županije; nestaje nakon 7 dana bez prolaska i ostaje ako ondje često prolazite (3 dana u 2 tjedna). Kompas prikazuje i sela.
+Export / Import	Izvoz / Uvoz
+Moves your towns, favourites, parcels and settings to another device through a file.	Prenosi vaša mjesta, favorite, parcele i postavke na drugi uređaj putem datoteke.
+Import	Uvoz
+Add	Dodaj
+Replace	Zamijeni
+Add keeps what you have and adds what is missing; Replace makes everything as in the file.	Dodaj zadržava ono što imate i dodaje ono što nedostaje; Zamijeni čini sve kao u datoteci.
+File from	Datoteka od
+Theme, language, units, clock, text size	Tema, jezik, jedinice, sat, veličina teksta
+Imported	Uvezeno
+This file is not a Meteo Alarm export.	Ova datoteka nije izvoz aplikacije Meteo Alarm.

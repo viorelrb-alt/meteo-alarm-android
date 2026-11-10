@@ -1,5 +1,6 @@
-Aktuelle Version: v.4.20 · 10.11.2026
+Aktuelle Version: v.4.30 · 10.11.2026
 HAUPTBILDSCHIRM
+- Export / Import: überträgt Ihre Orte, Favoriten, Parzellen und Einstellungen per Datei auf ein anderes Gerät (Speichern, Teilen; Import mit Hinzufügen oder Ersetzen).
 - Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.
 - Großer Kompass: der Ort, in dem Sie sind, steht zuerst (grau); Teilen sendet auch ein Bild des Fensters, die nahen Orte mit Entfernungen, den Akku, die Temperaturen (Luft, Boden, in Höhe des Telefons) und den Wind.
 - Großer Kompass: Tippen auf das Feld Kompass zeigt den Kompass, die GPS-Koordinaten und die 3 nächsten Orte in Farben; Teilen sendet die Koordinaten.

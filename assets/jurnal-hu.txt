@@ -1,5 +1,6 @@
-Jelenlegi verzió: v.4.20 · 10.11.2026
+Jelenlegi verzió: v.4.30 · 10.11.2026
 FŐKÉPERNYŐ
+- Exportálás / Importálás: fájl segítségével átviszi a településeket, kedvenceket, parcellákat és beállításokat egy másik eszközre (Mentés, Megosztás; Importálás Hozzáadással vagy Cserével).
 - Helymeghatározás: a falvak, amelyeken áthaladsz, bekerülnek a megye listájába (7 napra, vagy végleg, ha gyakran jársz ott); az iránytű a falvakat is mutatja.
 - Időjárás-ikonok: a téma színeiben; mind mozog 3 másodpercig, minden frissítés után és a widgeteken is.
 - Mezők: bármely mező megérintése felül az értéket, alatta a magyarázatot mutatja.

@@ -1,5 +1,6 @@
-Současná verze: v.4.20 · 10.11.2026
+Současná verze: v.4.30 · 10.11.2026
 HLAVNÍ OBRAZOVKA
+- Export / Import: přenese místa, oblíbené, parcely a nastavení do jiného zařízení pomocí souboru (Uložit, Sdílet; Import s volbou Přidat nebo Nahradit).
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.
 - Pole: klepnutí na kterékoli pole ukáže hodnotu nahoře a vysvětlení pod ní.
 - Poloha: vesnice, kterými projíždíte, se přidají do seznamu okresu (na 7 dní, nebo natrvalo, když tudy jezdíte často); kompas ukazuje i vesnice.

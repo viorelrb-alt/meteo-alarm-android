@@ -1,8 +1,9 @@
-Versión actual: v.4.20 · 10.11.2026
+Versión actual: v.4.30 · 10.11.2026
 PANTALLA PRINCIPAL
 - Brújula grande: la localidad en la que estás aparece primero (gris); Compartir envía también una imagen de la ventana, las localidades cercanas con sus distancias, la batería, las temperaturas (aire, suelo, a la altura del teléfono) y el viento.
 - Brújula grande: un toque en la casilla Brújula muestra la brújula, las coordenadas GPS y las 3 localidades más cercanas en colores; Compartir envía las coordenadas.
 - Casillas: un toque en cualquier casilla muestra el valor arriba y las explicaciones debajo.
+- Exportar / Importar: pasa tus localidades, favoritos, parcelas y ajustes a otro dispositivo mediante un archivo (Guardar, Compartir; Importar con Añadir o Reemplazar).
 - Iconos del tiempo: en los colores del tema; todos se mueven 3 segundos, también tras cada actualización y en los widgets.
 - Ubicación: los pueblos por los que pasas entran en la lista de su provincia (7 días, o para siempre si pasas a menudo); la brújula muestra también los pueblos.
 WIDGETS

@@ -41,11 +41,18 @@ public final class ApkProvider extends ContentProvider {
 		return Uri.parse("content://" + AUTHORITY + "/shot/" + SHOT);
 	}
 
+	/** v4.30: the exported data file NAME (in the cache), shared as content://…/data/NAME. */
+	static Uri dataUri(String name) {
+		return Uri.parse("content://" + AUTHORITY + "/data/" + name);
+	}
+
 	private File target(Uri uri) {
 		java.util.List<String> seg = uri.getPathSegments();
 		if (seg.size() == 2 && seg.get(0).equals("shot") && seg.get(1).equals(SHOT)) return new File(new File(getContext().getCacheDir(), "shot"), SHOT);
 		if (seg.size() == 2 && seg.get(0).equals("log") && seg.get(1).matches("[A-Za-z0-9._-]+\\.txt"))
 			return new File(new File(getContext().getCacheDir(), "log"), seg.get(1));
+		if (seg.size() == 2 && seg.get(0).equals("data") && seg.get(1).matches("[A-Za-z0-9._-]+\\.json"))
+			return new File(new File(getContext().getCacheDir(), "data"), seg.get(1));
 		return file(getContext());
 	}
 
@@ -62,7 +69,7 @@ public final class ApkProvider extends ContentProvider {
 	@Override
 	public String getType(Uri uri) {
 		String n = target(uri).getName();
-		return n.endsWith(".txt") ? "text/plain" : n.endsWith(".png") ? "image/png" : "application/vnd.android.package-archive";
+		return n.endsWith(".txt") ? "text/plain" : n.endsWith(".json") ? "application/json" : n.endsWith(".png") ? "image/png" : "application/vnd.android.package-archive";
 	}
 
 	@Override

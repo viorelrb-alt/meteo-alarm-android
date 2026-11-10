@@ -82,6 +82,21 @@ public final class Visits {
 		recs.remove(key(c));
 	}
 
+	/** v4.30: adds the places of O (from another device); a place in both keeps both its days. */
+	public void merge(Visits o) {
+		for (Map.Entry<String, Rec> e : o.recs.entrySet()) {
+			Rec a = recs.get(e.getKey()), b = e.getValue();
+			if (a == null) { recs.put(e.getKey(), b); continue; }
+			a.last = Math.max(a.last, b.last);
+			a.days.addAll(b.days);
+			a.kept |= b.kept;
+		}
+	}
+
+	public int size() {
+		return recs.size();
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder b = new StringBuilder();

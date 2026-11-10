@@ -1,6 +1,7 @@
-Trenutačna verzija: v.4.20 · 10.11.2026
+Trenutačna verzija: v.4.30 · 10.11.2026
 GLAVNI ZASLON
 - Ikone vremena: u bojama teme; sve se miču 3 sekunde, i nakon svakog osvježavanja i na widgetima.
+- Izvoz / Uvoz: prenosi vaša mjesta, favorite, parcele i postavke na drugi uređaj putem datoteke (Spremi, Podijeli; Uvoz s Dodaj ili Zamijeni).
 - Lokacija: sela kroz koja prolazite ulaze u popis županije (na 7 dana ili trajno ako ondje često prolazite); kompas prikazuje i sela.
 - Okviri: dodir bilo kojeg okvira prikazuje vrijednost gore i objašnjenja ispod nje.
 - Veliki kompas: dodir okvira Kompas prikazuje kompas, GPS koordinate i 3 najbliža mjesta u bojama; Podijeli šalje koordinate.

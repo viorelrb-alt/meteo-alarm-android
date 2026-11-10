@@ -1,7 +1,8 @@
-Verżjoni attwali: v.4.20 · 10.11.2026
+Verżjoni attwali: v.4.30 · 10.11.2026
 SKRIN EWLIENI
 - Boxxla kbira: il-lokalità fejn int tidher l-ewwel (griż); Aqsam jibgħat ukoll stampa tat-tieqa, il-lokalitajiet fil-qrib bid-distanzi, il-batterija, it-temperaturi (arja, art, fl-għoli tat-telefon) u r-riħ.
 - Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.
+- Esporta / Importa: jittrasferixxi l-postijiet, il-favoriti, il-biċċiet tal-art u s-settings tiegħek għal apparat ieħor permezz ta' fajl (Issejvja, Aqsam; Importa b'Żid jew Ibdel).
 - Ikoni tat-temp: fil-kuluri tat-tema; kollha jiċċaqilqu 3 sekondi, anke wara kull aġġornament u fuq il-widgets.
 - Kaxxi: tagħfisa fuq kwalunkwe kaxxa turi l-valur fuq u l-ispjegazzjonijiet taħtu.
 - Lokalizzazzjoni: l-irħula li tgħaddi minnhom jidħlu fil-lista tal-kontea (għal 7 ijiem, jew għal dejjem jekk tgħaddi spiss); il-boxxla turi l-irħula wkoll.

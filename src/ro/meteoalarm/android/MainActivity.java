@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v4.20";
+	static final String VERSION = "Meteo Alarm Android v4.30";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -67,7 +67,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Cities.City town;
 	private long pageId;
 	private boolean townFetching;
-	private static final int REQ_PARCELS = 21;
+	private static final int REQ_PARCELS = 21, REQ_SAVE_DATA = 22, REQ_OPEN_DATA = 23;
 	private long lastTry, lastLocate, lastDone;
 	static final long REPULL_MS = 10000;
 	private Locator locator;
@@ -636,6 +636,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onActivityResult(int code, int res, Intent data) {
 		super.onActivityResult(code, res, data);
+		if (code == REQ_SAVE_DATA || code == REQ_OPEN_DATA) {
+			if (res == RESULT_OK && data != null && data.getData() != null) {
+				if (code == REQ_SAVE_DATA) saveData(data.getData());
+				else openData(data.getData());
+			}
+			return;
+		}
 		if (code != REQ_PARCELS) return;
 		long sel = data != null ? data.getLongExtra("select", -1) : -1;
 		// A parcel picked in ☰ › Parcele; or back: the parcel shown may be renamed, moved or deleted.
@@ -2050,6 +2057,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (Region.showUS(this)) { ids.add("tornado"); rows.add(row(Tr.t("Tornadoes", "Tornade"), "tornado")); }
 		ids.add("notify"); rows.add(row(Tr.t("Notifications", "Notificări"), "bell").tick(Notifier.on(this)));
 		ids.add("widget"); rows.add(row(Tr.t("Widgets", "Widget-uri"), "widget"));
+		ids.add("backup"); rows.add(row(Tr.t("Export / Import", "Export / Import"), "transfer"));
 		ids.add("log"); rows.add(row(Tr.t("Log", "Jurnal"), "log"));
 		ids.add("update"); rows.add(row(Tr.t("Check for updates", "Verifică actualizări"), "update"));
 		ids.add("share"); rows.add(row(Tr.t("Send the app", "Trimite aplicația"), "share"));
@@ -2086,6 +2094,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				else if (it.equals("share")) { shareApp(); return; }
 				else if (it.equals("widget")) { startActivity(new Intent(MainActivity.this, WidgetConfig.class)); return; }
 				else if (it.equals("log")) { startActivity(new Intent(MainActivity.this, LogActivity.class)); return; }
+				else if (it.equals("backup")) { backup(); return; }
 				else if (it.equals("help")) { help(); return; }
 				else if (it.equals("quakes")) { quakesPage(); return; }
 				else if (it.equals("tornado")) { tornadoPage(); return; }
@@ -2138,6 +2147,132 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 		d.setNegativeButton(Tr.t("Keep °F", "Rămân la °F"), null);
 		show(d);
+	}
+
+	// --- Export / Import (v4.30) ---------------------------------------------------------
+
+	/** The counts {towns, favourites, parcels, settings} as lines. */
+	private String countLines(int[] n) {
+		return Tr.t("Towns", "Localități") + ": " + n[0] + "\n" + Tr.t("Favourites", "Favorite") + ": " + n[1] + "\n"
+				+ Tr.t("Parcels", "Parcele") + ": " + n[2] + "\n" + Tr.t("Settings", "Setări") + ": "
+				+ (n[3] > 0 ? Tr.t("Theme, language, units, clock, text size", "Temă, limbă, unități, ceas, mărimea textului") : "—");
+	}
+
+	/** ☰ › Export / Import (Viorel 2026-11-10): Save or Share this phone's data, or Import a file. */
+	private void backup() {
+		Log.i(this, "EXPORT", "fereastra Export / Import");
+		AlertDialog.Builder d = dialog();
+		d.setTitle(Tr.t("Export / Import", "Export / Import"));
+		d.setMessage(Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
+				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier.")
+				+ "\n\n" + countLines(Backup.counts(this, null)));
+		d.setNeutralButton(Tr.t("Import", "Import"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("*/*");
+				try {
+					startActivityForResult(i, REQ_OPEN_DATA);
+				} catch (Exception e) {
+					Log.e(MainActivity.this, "IMPORT", "alegere fișier", e);
+				}
+			}
+		});
+		d.setNegativeButton(Tr.t("Save", "Salvează"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				Intent i = new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("application/json")
+						.putExtra(Intent.EXTRA_TITLE, Backup.fileName());
+				try {
+					startActivityForResult(i, REQ_SAVE_DATA);
+				} catch (Exception e) {
+					Log.e(MainActivity.this, "EXPORT", "salvare", e);
+				}
+			}
+		});
+		d.setPositiveButton(Tr.t("Share", "Trimite"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				shareData();
+			}
+		});
+		show(d);
+	}
+
+	/** The file through the phone's share menu: WhatsApp, e-mail, Google Drive, Bluetooth… */
+	private void shareData() {
+		java.io.File f = Backup.exportFile(this);
+		if (f == null) { note(Tr.t("Could not save", "Nu s-a putut salva")); return; }
+		Log.i(this, "EXPORT", "trimis " + f.getName() + " " + f.length() + " B");
+		android.net.Uri u = ApkProvider.dataUri(f.getName());
+		Intent send = new Intent(Intent.ACTION_SEND).setType("application/json")
+				.putExtra(Intent.EXTRA_STREAM, u)
+				.putExtra(Intent.EXTRA_SUBJECT, "Meteo Alarm — " + Tr.t("Export / Import", "Export / Import"))
+				.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		send.setClipData(android.content.ClipData.newRawUri(f.getName(), u));
+		try {
+			startActivity(Intent.createChooser(send, Tr.t("Share", "Trimite")));
+		} catch (Exception e) {
+			Log.e(this, "EXPORT", "trimitere", e);
+		}
+	}
+
+	private void saveData(android.net.Uri where) {
+		try {
+			java.io.OutputStream out = getContentResolver().openOutputStream(where);
+			out.write(Backup.export(this).getBytes("UTF-8"));
+			out.close();
+			Log.i(this, "EXPORT", "salvat pe telefon");
+			note(Tr.t("Saved: ", "Salvată: ") + Backup.fileName(), 2500);
+		} catch (Exception e) {
+			Log.e(this, "EXPORT", "salvare", e);
+			note(Tr.t("Could not save", "Nu s-a putut salva"));
+		}
+	}
+
+	/** Reads the picked file and asks Add or Replace. */
+	private void openData(android.net.Uri from) {
+		org.json.JSONObject o = null;
+		try {
+			java.io.InputStream in = getContentResolver().openInputStream(from);
+			java.io.ByteArrayOutputStream b = new java.io.ByteArrayOutputStream();
+			byte[] buf = new byte[8192];
+			int n;
+			while ((n = in.read(buf)) > 0 && b.size() < 4 * 1024 * 1024) b.write(buf, 0, n);
+			in.close();
+			o = Backup.read(b.toString("UTF-8"));
+		} catch (Exception e) {
+			Log.e(this, "IMPORT", "citire", e);
+		}
+		if (o == null) {
+			Log.i(this, "IMPORT", "fișierul nu e un export Meteo Alarm");
+			note(Tr.t("This file is not a Meteo Alarm export.", "Acest fișier nu este un export Meteo Alarm."), 3000);
+			return;
+		}
+		final org.json.JSONObject data = o;
+		String when = new java.text.SimpleDateFormat("dd.MM.yyyy HH:mm", java.util.Locale.US).format(new java.util.Date(o.optLong("time")));
+		Log.i(this, "IMPORT", "fișier din " + when + ", " + o.optString("device") + ", " + o.optString("version"));
+		AlertDialog.Builder d = dialog();
+		d.setTitle(Tr.t("Import", "Import"));
+		d.setMessage(Tr.t("File from", "Fișier din") + " " + when + " · " + o.optString("device") + "\n\n" + countLines(Backup.counts(this, o)) + "\n\n"
+				+ Tr.t("Add keeps what you have and adds what is missing; Replace makes everything as in the file.",
+						"Adaugă păstrează ce ai și adaugă ce lipsește; Înlocuiește face totul ca în fișier."));
+		d.setNeutralButton(Tr.t("Cancel", "Renunță"), null);
+		d.setNegativeButton(Tr.t("Add", "Adaugă"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				imported(data, false);
+			}
+		});
+		d.setPositiveButton(Tr.t("Replace", "Înlocuiește"), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int w) {
+				imported(data, true);
+			}
+		});
+		show(d);
+	}
+
+	private void imported(org.json.JSONObject o, boolean replace) {
+		Backup.apply(this, o, replace);
+		android.widget.Toast.makeText(this, Tr.t("Imported", "Importat"), android.widget.Toast.LENGTH_SHORT).show();
+		Widget.show(this);
+		// Again from the start: the town lists, the theme and the language as in the file.
+		recreate();
 	}
 
 	/** ☰ › Parcels (farmer mode): the parcels' page, in the app's theme. */
@@ -2670,6 +2805,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceas noapte"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
 		help.entry(mini("widgetplus"), Tr.t("Widgets", "Widget-uri"), Tr.t("The settings of the widgets on the home screen.", "Setările widget-urilor de pe ecranul de pornire."));
+		help.entry(mini("transfer"), Tr.t("Export / Import", "Export / Import"), Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
+				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi."));
 		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));
 		help.entry(mini("share"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Sends the download link, e.g. on WhatsApp.", "Trimite linkul de descărcare, de exemplu pe WhatsApp."));

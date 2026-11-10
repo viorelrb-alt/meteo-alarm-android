@@ -3561,6 +3561,16 @@ public final class Screen {
 				g.poly(new float[] { x0 + nx, y0 + ny, x1 + nx, y1 + ny, x1 - nx, y1 - ny, x0 - nx, y0 - ny }, k);
 			}
 			for (float[] q : pt) g.roundRect(q[0] - 8, q[1] - 8, 16, 16, 8, k);
+		} else if (which.equals("transfer")) {
+			// Two phones with arrows between them: Export / Import (v4.30).
+			g.roundRect(2, 8, 20, 48, 4, k);
+			g.roundRect(5, 13, 14, 36, 2, c.page);
+			g.roundRect(42, 8, 20, 48, 4, k);
+			g.roundRect(45, 13, 14, 36, 2, c.page);
+			g.rect(24, 22, 10, 4, k);
+			g.poly(new float[] { 33, 17, 33, 31, 40, 24 }, k);
+			g.rect(30, 38, 10, 4, k);
+			g.poly(new float[] { 31, 33, 31, 47, 24, 40 }, k);
 		} else if (which.equals("textsize")) {
 			// A small and a large A: the text size.
 			ctext(true, 22, 30, 17, "A", k);

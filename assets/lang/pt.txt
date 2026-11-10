@@ -905,3 +905,13 @@ A tap on the Compass box: a big compass, the GPS coordinates, the town you are i
 Widget 4x2 · list	Widget 4x2 · lista
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.	Uma temperatura grande e, à direita, os próximos 4 dias (um ícone cada) ou horas, conforme escolhido nas definições: Mostrar o tempo.
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too.	Liga (cheio) ou desliga (vazio) a localização automática; mostra o tempo onde está. Uma aldeia por onde passa entra na lista do seu distrito; sai após 7 dias sem lá passar e fica se passar lá muitas vezes (3 dias em 2 semanas). A bússola mostra também as aldeias.
+Export / Import	Exportar / Importar
+Moves your towns, favourites, parcels and settings to another device through a file.	Passa as suas localidades, favoritos, parcelas e definições para outro dispositivo através de um ficheiro.
+Import	Importar
+Add	Adicionar
+Replace	Substituir
+Add keeps what you have and adds what is missing; Replace makes everything as in the file.	Adicionar mantém o que tem e acrescenta o que falta; Substituir deixa tudo como no ficheiro.
+File from	Ficheiro de
+Theme, language, units, clock, text size	Tema, idioma, unidades, relógio, tamanho do texto
+Imported	Importado
+This file is not a Meteo Alarm export.	Este ficheiro não é uma exportação do Meteo Alarm.

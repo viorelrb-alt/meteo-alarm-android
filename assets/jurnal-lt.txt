@@ -1,7 +1,8 @@
-Dabartinė versija: v.4.20 · 10.11.2026
+Dabartinė versija: v.4.30 · 10.11.2026
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus langelį Kompasas rodomas kompasas, GPS koordinatės ir 3 artimiausios vietovės spalvomis; Bendrinti siunčia koordinates.
 - Didelis kompasas: vietovė, kurioje esate, rodoma pirma (pilka); Bendrinti siunčia ir lango vaizdą, netolimas vietoves su atstumais, bateriją, temperatūras (oras, žemė, telefono aukštyje) ir vėją.
+- Eksportas / Importas: per failą perkelia jūsų vietoves, mėgstamas, sklypus ir nustatymus į kitą įrenginį (Įrašyti, Bendrinti; Importuoti su Pridėti arba Pakeisti).
 - Langeliai: palietus bet kurį langelį viršuje rodoma vertė, o po ja paaiškinimai.
 - Orų piktogramos: temos spalvomis; visos juda 3 sekundes, ir po kiekvieno atnaujinimo, ir valdikliuose.
 - Vieta: kaimai, pro kuriuos važiuojate, įtraukiami į apskrities sąrašą (7 dienoms arba visam laikui, jei ten dažnai būnate); kompasas rodo ir kaimus.

@@ -1,7 +1,8 @@
-Geçerli sürüm: v.4.20 · 10.11.2026
+Geçerli sürüm: v.4.30 · 10.11.2026
 ANA EKRAN
 - Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
+- Dışa aktar / İçe aktar: yerlerinizi, favorilerinizi, parsellerinizi ve ayarlarınızı bir dosya ile başka bir cihaza taşır (Kaydet, Paylaş; Ekle veya Değiştir ile içe aktar).
 - Hava simgeleri: temanın renklerinde; hepsi 3 saniye hareket eder, her yenilemeden sonra ve widget'larda da.
 - Konum: içinden geçtiğiniz köyler ilin listesine girer (7 gün, ya da sık geçiyorsanız kalıcı olarak); pusula köyleri de gösterir.
 - Kutular: herhangi bir kutuya dokunmak değeri üstte, açıklamaları altında gösterir.

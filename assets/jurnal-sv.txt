@@ -1,5 +1,6 @@
-Nuvarande version: v.4.20 · 10.11.2026
+Nuvarande version: v.4.30 · 10.11.2026
 HUVUDSKÄRM
+- Export / Import: flyttar dina orter, favoriter, skiften och inställningar till en annan enhet via en fil (Spara, Dela; Importera med Lägg till eller Ersätt).
 - Plats: byar du passerar kommer med i länets lista (i 7 dagar, eller för gott om du ofta är där); kompassen visar även byarna.
 - Rutor: ett tryck på valfri ruta visar värdet överst och förklaringarna under.
 - Stor kompass: ett tryck på rutan Kompass visar kompassen, GPS-koordinaterna och de 3 närmaste orterna i färger; Dela skickar koordinaterna.

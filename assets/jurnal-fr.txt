@@ -1,6 +1,7 @@
-Version actuelle : v.4.20 · 10.11.2026
+Version actuelle : v.4.30 · 10.11.2026
 ÉCRAN PRINCIPAL
 - Cases : un appui sur n'importe quelle case montre la valeur en haut et les explications dessous.
+- Exporter / Importer : transfère vos localités, favoris, parcelles et réglages vers un autre appareil grâce à un fichier (Enregistrer, Partager ; Importer avec Ajouter ou Remplacer).
 - Grande boussole : la localité où vous êtes apparaît en premier (gris) ; Partager envoie aussi une image de la fenêtre, les localités proches avec leurs distances, la batterie, les températures (air, sol, à la hauteur du téléphone) et le vent.
 - Grande boussole : un appui sur la case Boussole montre la boussole, les coordonnées GPS et les 3 localités les plus proches en couleurs ; Partager envoie les coordonnées.
 - Icônes météo : aux couleurs du thème ; toutes bougent 3 secondes, aussi après chaque actualisation et sur les widgets.
