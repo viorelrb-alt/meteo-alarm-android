@@ -1,4 +1,4 @@
-Leagan reatha: v.4.51 · 12.11.2026
+Leagan reatha: v.4.52 · 12.11.2026
 GIUIRLÉIDÍ
 - Giuirléid 4x2 · liosta: teocht mhór agus na 4 lá eile (deilbhín amháin an ceann) nó uaireanta, le roghnú sna socruithe; an baile le marc baile an chompáis.
 - Giuirléidí: línte daite na gcód ar gach giuirléid, gan an téacs RABHADH; gan chóid, líne ghorm amháin leis an gcéad fhaisnéis bhailí (m.sh. Sioc bán).

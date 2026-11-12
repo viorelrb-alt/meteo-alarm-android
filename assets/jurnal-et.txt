@@ -1,4 +1,4 @@
-Praegune versioon: v.4.51 · 12.11.2026
+Praegune versioon: v.4.52 · 12.11.2026
 PÕHIEKRAAN
 - Asukoht: külad, millest läbi sõidad, lisatakse maakonna loendisse (7 päevaks või jäädavalt, kui käid seal tihti); kompass näitab ka külasid.
 - Asukoht: teises riigis või USA osariigis laaditakse väikesed asulad alla üks kord, kui oled seal esimest korda internetiga, kompassi ja kohtade loendi jaoks.

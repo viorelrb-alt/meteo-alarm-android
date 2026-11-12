@@ -1,4 +1,4 @@
-Nykyinen versio: v.4.51 · 12.11.2026
+Nykyinen versio: v.4.52 · 12.11.2026
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus Kompassi-ruutuun näyttää kompassin, GPS-koordinaatit ja 3 lähintä paikkakuntaa väreinä; Jaa lähettää koordinaatit.
 - Ruudut: napautus mihin tahansa ruutuun näyttää arvon ylhäällä ja selitykset sen alla.

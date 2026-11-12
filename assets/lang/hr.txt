@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Kodovi na widgetima
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tri obojene crte za kodove upozorenja, na svakom widgetu. Bez kodova: jedna plava crta s prvom informacijom koja još vrijedi (npr. Mraz).
 (forecast up to 	(prognoza do 
+Values: being updated…	Vrijednosti: ažuriraju se…

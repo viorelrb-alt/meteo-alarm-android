@@ -869,3 +869,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Widget'larda kodlar
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Her widget'ta uyarı kodları için üç renkli çizgi. Kod yoksa: hâlâ geçerli olan ilk bilgiyle tek bir mavi çizgi (ör. Kiraği).
 (forecast up to 	(tahmin şu saate kadar: 
+Values: being updated…	Değerler: güncelleniyor…

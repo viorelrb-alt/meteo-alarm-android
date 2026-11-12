@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Cóid ar ghiuirléidí
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trí líne daite do chóid rabhaidh, ar gach giuirléid. Gan chóid: líne ghorm amháin leis an gcéad fhaisnéis atá i bhfeidhm fós (m.sh. Sioc bán).
 (forecast up to 	(réamhaisnéis go dtí 
+Values: being updated…	Luachanna: á nuashonrú…

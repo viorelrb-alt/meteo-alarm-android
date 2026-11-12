@@ -1,4 +1,4 @@
-Trenutna različica: v.4.51 · 12.11.2026
+Trenutna različica: v.4.52 · 12.11.2026
 GLAVNI ZASLON
 - Izvoz / Uvoz: prenese vaše kraje, priljubljene, parcele in nastavitve na drugo napravo prek datoteke (Shrani, Deli; Uvozi z Dodaj ali Zamenjaj).
 - Lokacija: v drugi državi ali zvezni državi ZDA se majhni kraji prenesejo enkrat, ko ste tam prvič z internetom, za kompas in seznam krajev.

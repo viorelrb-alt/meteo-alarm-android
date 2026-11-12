@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Kodai valdikliuose
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trys spalvotos linijos įspėjimo kodams kiekviename valdiklyje. Be kodų: viena mėlyna linija su pirmąja dar galiojančia informacija (pvz., Šerkšnas).
 (forecast up to 	(prognozė iki 
+Values: being updated…	Vertės: atnaujinamos…

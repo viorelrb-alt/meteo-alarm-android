@@ -1,4 +1,4 @@
-Versiunea curentă: v.4.51 · 12.11.2026
+Versiunea curentă: v.4.52 · 12.11.2026
 ECRAN PRINCIPAL
 - Avertizări: atingerea unei casete de cod sau de informare arată sus valorile din prognoză (rafale, cantități, temperaturi), apoi intervalul și explicațiile.
 - Busola mare: atingerea casetei Busolă arată busola, coordonatele GPS și cele mai apropiate 3 localități colorate; Partajare trimite coordonatele.

@@ -869,3 +869,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Коды на виджетах
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Три цветные линии для кодов предупреждения на каждом виджете. Без кодов: одна синяя линия с первой ещё действующей информацией (напр. Иней).
 (forecast up to 	(прогноз до 
+Values: being updated…	Значения: обновляются…

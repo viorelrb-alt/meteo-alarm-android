@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Koder på widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tre farvede linjer for varselskoderne på hver widget. Uden koder: én blå linje med den første information, der stadig gælder (f.eks. Rimfrost).
 (forecast up to 	(prognose indtil 
+Values: being updated…	Værdier: opdateres…

@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Kódy na widgetech
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tři barevné čáry pro kódy výstrah na každém widgetu. Bez kódů: jedna modrá čára s první stále platnou informací (např. Jinovatka).
 (forecast up to 	(předpověď do 
+Values: being updated…	Hodnoty: probíhá aktualizace…

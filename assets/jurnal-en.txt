@@ -1,4 +1,4 @@
-Current version: v.4.51 · 12.11.2026
+Current version: v.4.52 · 12.11.2026
 MAIN SCREEN
 - Big compass: a tap on the Compass box shows the compass, the GPS coordinates and the 3 nearest towns in colours; Share sends the coordinates.
 - Big compass: the town you are in comes first (grey); Share also sends a picture of the window, the nearby towns with distances, the battery, the temperatures (air, ground, at the phone's height) and the wind.

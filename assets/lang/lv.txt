@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Kodi logrīkos
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trīs krāsainas līnijas brīdinājuma kodiem katrā logrīkā. Bez kodiem: viena zila līnija ar pirmo vēl spēkā esošo informāciju (piem., Sarma).
 (forecast up to 	(prognoze līdz 
+Values: being updated…	Vērtības: tiek atjauninātas…

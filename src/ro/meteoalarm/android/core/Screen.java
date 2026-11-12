@@ -2411,6 +2411,8 @@ public final class Screen {
 			out.add(new String[] { "h", T.warnType(wr.type) });
 			List<String[]> v = warnValues(wr.type, wr.from, wr.until);
 			vals |= !v.isEmpty();
+			// v4.52 (Viorel): no values yet (the forecast is old or short): say they are coming.
+			if (v.isEmpty()) out.add(new String[] { "v", Tr.t("Values: being updated…", "Valori: în curs de actualizare…") });
 			out.addAll(v);
 			String st = wr.from <= nowMs ? (Tr.t("In force now, until ", "În vigoare acum, până ")) + T.weekdayTime(wr.until, clk12)
 					: (Tr.t("From ", "De ")) + T.weekdayTime(wr.from, clk12) + (Tr.t(" until ", " până ")) + T.weekdayTime(wr.until, clk12);

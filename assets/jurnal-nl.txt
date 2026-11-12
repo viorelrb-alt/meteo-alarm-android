@@ -1,4 +1,4 @@
-Huidige versie: v.4.51 · 12.11.2026
+Huidige versie: v.4.52 · 12.11.2026
 HOOFDSCHERM
 - Exporteren / Importeren: zet je plaatsen, favorieten, percelen en instellingen via een bestand over naar een ander apparaat (Opslaan, Delen; Importeren met Toevoegen of Vervangen).
 - Groot kompas: de plaats waar u bent staat eerst (grijs); Delen stuurt ook een afbeelding van het venster, de plaatsen in de buurt met afstanden, de batterij, de temperaturen (lucht, grond, op de hoogte van de telefoon) en de wind.

@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Kódok a widgeteken
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Három színes vonal a figyelmeztetési kódokhoz, minden widgeten. Kódok nélkül: egy kék vonal az első még érvényes tájékoztatással (pl. Dér).
 (forecast up to 	(előrejelzés eddig: 
+Values: being updated…	Értékek: frissítés folyamatban…

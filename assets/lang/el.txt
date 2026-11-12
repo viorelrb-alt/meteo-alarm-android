@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Κωδικοί στα widget
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Τρεις χρωματιστές γραμμές για τους κωδικούς προειδοποίησης, σε κάθε widget. Χωρίς κωδικούς: μία μπλε γραμμή με την πρώτη πληροφορία που ισχύει ακόμη (π.χ. Παχνη).
 (forecast up to 	(πρόγνωση έως 
+Values: being updated…	Τιμές: ενημερώνονται…

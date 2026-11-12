@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Kodiċijiet fuq il-widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tliet linji kkuluriti għall-kodiċijiet tat-twissija, fuq kull widget. Mingħajr kodiċijiet: linja blu waħda bl-ewwel informazzjoni li għadha valida (eż. Ġlata).
 (forecast up to 	(tbassir sa 
+Values: being updated…	Valuri: qed jiġu aġġornati…

@@ -935,3 +935,4 @@ One row under the line: the earthquake, then the warnings by colour. A tap shows
 Codes on widgets	Koodit widgeteissä
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Kolme värillistä viivaa varoituskoodeille jokaisessa widgetissä. Ilman koodeja: yksi sininen viiva ensimmäisellä yhä voimassa olevalla tiedotteella (esim. Kuura).
 (forecast up to 	(ennuste asti 
+Values: being updated…	Arvot: päivitetään…
