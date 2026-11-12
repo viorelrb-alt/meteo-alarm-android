@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Värden: Open-Meteos
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	En rad under linjen: jordbävningen, sedan varningarna efter färg. Ett tryck visar värdena (byar, mängder, temperaturer) överst, sedan detaljerna.
 Codes on widgets	Koder på widgetar
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tre färgade linjer för varningskoderna, på varje widget. Utan koder: en blå linje med den första information som fortfarande gäller (t.ex. Rimfrost).
+(forecast up to 	(prognos till 

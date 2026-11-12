@@ -1004,3 +1004,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Valores: el pronóst
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Una fila bajo la línea: el terremoto y luego los avisos por color. Al tocar se ven arriba los valores (rachas, cantidades, temperaturas) y luego los detalles.
 Codes on widgets	Códigos en los widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tres líneas de colores para los códigos de aviso, en todos los widgets. Sin códigos: una línea azul con la primera información aún vigente (p. ej. Escarcha).
+(forecast up to 	(pronóstico hasta 

@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Luachanna: réamhais
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Ró amháin faoin líne: an crith talún, ansin na rabhaidh de réir datha. Taispeánann tapáil na luachanna (siotaí, méideanna, teochtaí) ar barr, ansin na sonraí.
 Codes on widgets	Cóid ar ghiuirléidí
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trí líne daite do chóid rabhaidh, ar gach giuirléid. Gan chóid: líne ghorm amháin leis an gcéad fhaisnéis atá i bhfeidhm fós (m.sh. Sioc bán).
+(forecast up to 	(réamhaisnéis go dtí 

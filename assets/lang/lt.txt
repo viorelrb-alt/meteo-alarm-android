@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Vertės: Open-Meteo 
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Viena eilė po linija: žemės drebėjimas, tada įspėjimai pagal spalvą. Palietus viršuje rodomos vertės (gūsiai, kiekiai, temperatūros), tada išsami informacija.
 Codes on widgets	Kodai valdikliuose
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trys spalvotos linijos įspėjimo kodams kiekviename valdiklyje. Be kodų: viena mėlyna linija su pirmąja dar galiojančia informacija (pvz., Šerkšnas).
+(forecast up to 	(prognozė iki 

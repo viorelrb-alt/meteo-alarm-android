@@ -1,4 +1,4 @@
-Version actuelle : v.4.50 · 12.11.2026
+Version actuelle : v.4.51 · 12.11.2026
 ÉCRAN PRINCIPAL
 - Alertes : un appui sur une case de code ou d'information montre en haut les valeurs de la prévision (rafales, quantités, températures), puis l'intervalle et les explications.
 - Cases : un appui sur n'importe quelle case montre la valeur en haut et les explications dessous.

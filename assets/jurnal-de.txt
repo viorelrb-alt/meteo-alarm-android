@@ -1,4 +1,4 @@
-Aktuelle Version: v.4.50 · 12.11.2026
+Aktuelle Version: v.4.51 · 12.11.2026
 HAUPTBILDSCHIRM
 - Export / Import: überträgt Ihre Orte, Favoriten, Parzellen und Einstellungen per Datei auf ein anderes Gerät (Speichern, Teilen; Import mit Hinzufügen oder Ersetzen).
 - Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.

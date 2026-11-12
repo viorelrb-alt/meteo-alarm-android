@@ -1,4 +1,4 @@
-Současná verze: v.4.50 · 12.11.2026
+Současná verze: v.4.51 · 12.11.2026
 HLAVNÍ OBRAZOVKA
 - Export / Import: přenese místa, oblíbené, parcely a nastavení do jiného zařízení pomocí souboru (Uložit, Sdílet; Import s volbou Přidat nebo Nahradit).
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.

@@ -1,4 +1,4 @@
-Versión actual: v.4.50 · 12.11.2026
+Versión actual: v.4.51 · 12.11.2026
 PANTALLA PRINCIPAL
 - Avisos: al tocar un recuadro de código o de información se ven arriba los valores del pronóstico (rachas, cantidades, temperaturas), luego el intervalo y las explicaciones.
 - Brújula grande: la localidad en la que estás aparece primero (gris); Compartir envía también una imagen de la ventana, las localidades cercanas con sus distancias, la batería, las temperaturas (aire, suelo, a la altura del teléfono) y el viento.

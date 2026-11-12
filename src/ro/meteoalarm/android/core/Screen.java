@@ -2466,13 +2466,15 @@ public final class Screen {
 		if (w == null || w.t0 <= 0 || w.longTemp.length == 0) return out;
 		int a = Math.max(0, w.hourIndex(Math.max(from, now.getTimeInMillis()))), b = Math.min(w.longTemp.length - 1, w.hourIndex(until - 1));
 		if (a > b) return out;
-		double tMax = -999, tMin = 999, wind = 0, gust = 0, amt = 0, amt1 = 0, snow = 0;
+		// v4.51: a value the forecast lacks is left out (it showed as 0 km/h), and a forecast that
+		// ends before the warning says up to when the values go.
+		double tMax = Double.NaN, tMin = Double.NaN, wind = Double.NaN, gust = Double.NaN, amt = 0, amt1 = 0, snow = 0;
 		int fog = 0;
 		for (int k = a; k <= b; k++) {
 			double t = w.longTemp[k];
-			if (!Double.isNaN(t)) { tMax = Math.max(tMax, t); tMin = Math.min(tMin, t); }
-			if (!Double.isNaN(w.longWind[k])) wind = Math.max(wind, w.longWind[k]);
-			if (!Double.isNaN(w.longGust[k])) gust = Math.max(gust, w.longGust[k]);
+			if (!Double.isNaN(t)) { tMax = Double.isNaN(tMax) ? t : Math.max(tMax, t); tMin = Double.isNaN(tMin) ? t : Math.min(tMin, t); }
+			if (k < w.longWind.length && !Double.isNaN(w.longWind[k]) && w.longWind[k] > 0) wind = Double.isNaN(wind) ? w.longWind[k] : Math.max(wind, w.longWind[k]);
+			if (k < w.longGust.length && !Double.isNaN(w.longGust[k]) && w.longGust[k] > 0) gust = Double.isNaN(gust) ? w.longGust[k] : Math.max(gust, w.longGust[k]);
 			amt += w.longAmt[k];
 			amt1 = Math.max(amt1, w.longAmt[k]);
 			snow += w.longSnow[k];
@@ -2482,19 +2484,26 @@ public final class Screen {
 		String rain = Tr.t("Precipitation in total: ", "Precipitații în total: ") + mm(amt), hour = Tr.t("Most in one hour: ", "Cel mai mult într-o oră: ") + mm(amt1);
 		String hi = Tr.t("Highest: ", "Maxima: ") + deg(tMax), lo = Tr.t("Lowest: ", "Minima: ") + deg(tMin);
 		String snows = Tr.t("Snowfall in total: ", "Ninsoare în total: ") + (unitF ? String.format(java.util.Locale.US, "%.1f", snow / 2.54).replace('.', Tr.dot()) + " in" : d1(snow) + " cm");
-		String main;
-		List<String> more = new ArrayList<String>();
-		if (type.equals("wind") || type.startsWith("coastal")) { main = gusts; more.add(winds); }
-		else if (type.startsWith("thunderstorm")) { main = gusts; more.add(rain); more.add(hour); }
-		else if (type.startsWith("rain") || type.startsWith("flood")) { main = rain; more.add(hour); if (gust >= 50) more.add(gusts); }
-		else if (type.startsWith("snow") || type.startsWith("avalanche")) { main = snow > 0 ? snows : rain; more.add(lo); if (gust >= 40) more.add(gusts); }
-		else if (type.startsWith("high-temperature")) { main = hi; more.add(lo); }
-		else if (type.startsWith("low-temperature")) { main = lo; more.add(hi); }
-		else if (type.equals("fog")) { main = Tr.t("Hours of fog: ", "Ore cu ceață: ") + fog; more.add(lo); }
-		else if (type.startsWith("forest-fire")) { main = hi; more.add(gusts); }
-		else { main = gusts; more.add(rain); }
-		out.add(new String[] { "V", main });
-		for (String m : more) out.add(new String[] { "v", m });
+		if (Double.isNaN(gust)) gusts = null;
+		if (Double.isNaN(wind)) winds = null;
+		if (Double.isNaN(tMax)) { hi = null; lo = null; }
+		List<String> vs = new ArrayList<String>();
+		if (type.equals("wind") || type.startsWith("coastal")) { vs.add(gusts); vs.add(winds); }
+		else if (type.startsWith("thunderstorm")) { vs.add(gusts); vs.add(rain); vs.add(hour); }
+		else if (type.startsWith("rain") || type.startsWith("flood")) { vs.add(rain); vs.add(hour); if (gust >= 50) vs.add(gusts); }
+		else if (type.startsWith("snow") || type.startsWith("avalanche")) { vs.add(snow > 0 ? snows : rain); vs.add(lo); if (gust >= 40) vs.add(gusts); }
+		else if (type.startsWith("high-temperature")) { vs.add(hi); vs.add(lo); }
+		else if (type.startsWith("low-temperature")) { vs.add(lo); vs.add(hi); }
+		else if (type.equals("fog")) { vs.add(Tr.t("Hours of fog: ", "Ore cu ceață: ") + fog); vs.add(lo); }
+		else if (type.startsWith("forest-fire")) { vs.add(hi); vs.add(gusts); }
+		else { vs.add(gusts); vs.add(rain); }
+		while (vs.remove(null)) ;
+		if (vs.isEmpty()) return out;
+		out.add(new String[] { "V", vs.get(0) });
+		for (int i = 1; i < vs.size(); i++) out.add(new String[] { "v", vs.get(i) });
+		// The forecast ends before the warning: the values are only up to its last hour.
+		if (w.hourIndex(until - 1) > w.longTemp.length - 1)
+			out.add(new String[] { "v", Tr.t("(forecast up to ", "(prognoză până ") + T.weekdayTime(w.t0 + w.longTemp.length * 3600000L, clk12) + ")" });
 		return out;
 	}
 

@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.4.50 · 12.11.2026
+Jelenlegi verzió: v.4.51 · 12.11.2026
 FŐKÉPERNYŐ
 - Exportálás / Importálás: fájl segítségével átviszi a településeket, kedvenceket, parcellákat és beállításokat egy másik eszközre (Mentés, Megosztás; Importálás Hozzáadással vagy Cserével).
 - Figyelmeztetések: egy kód- vagy tájékoztató mezőre koppintva felül az előrejelzés értékei (széllökések, mennyiségek, hőmérsékletek), majd az időszak és a magyarázatok.

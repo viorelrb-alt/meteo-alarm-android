@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Τιμές: η πρ�
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Μία σειρά κάτω από τη γραμμή: ο σεισμός, μετά οι προειδοποιήσεις κατά χρώμα. Ένα άγγιγμα δείχνει πάνω τις τιμές (ριπές, ποσότητες, θερμοκρασίες), μετά τις λεπτομέρειες.
 Codes on widgets	Κωδικοί στα widget
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Τρεις χρωματιστές γραμμές για τους κωδικούς προειδοποίησης, σε κάθε widget. Χωρίς κωδικούς: μία μπλε γραμμή με την πρώτη πληροφορία που ισχύει ακόμη (π.χ. Παχνη).
+(forecast up to 	(πρόγνωση έως 

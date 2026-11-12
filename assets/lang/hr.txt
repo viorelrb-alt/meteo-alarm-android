@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Vrijednosti: prognoz
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Jedan red ispod crte: potres, zatim upozorenja po boji. Dodir prikazuje gore vrijednosti (udari, količine, temperature), zatim pojedinosti.
 Codes on widgets	Kodovi na widgetima
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tri obojene crte za kodove upozorenja, na svakom widgetu. Bez kodova: jedna plava crta s prvom informacijom koja još vrijedi (npr. Mraz).
+(forecast up to 	(prognoza do 

@@ -1,4 +1,4 @@
-Nuværende version: v.4.50 · 12.11.2026
+Nuværende version: v.4.51 · 12.11.2026
 HOVEDSKÆRM
 - Eksport / Import: flytter dine byer, favoritter, marker og indstillinger til en anden enhed via en fil (Gem, Del; Import med Tilføj eller Erstat).
 - Felter: et tryk på et felt viser værdien øverst og forklaringerne under den.

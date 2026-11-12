@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Értékek: az Open-M
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Egy sor a vonal alatt: a földrengés, majd a figyelmeztetések szín szerint. Koppintásra felül az értékek (széllökések, mennyiségek, hőmérsékletek), majd a részletek.
 Codes on widgets	Kódok a widgeteken
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Három színes vonal a figyelmeztetési kódokhoz, minden widgeten. Kódok nélkül: egy kék vonal az első még érvényes tájékoztatással (pl. Dér).
+(forecast up to 	(előrejelzés eddig: 

@@ -608,7 +608,7 @@ public class Widget extends AppWidgetProvider {
 			pen.at(1, 1);
 			pen.temp(temp, 184.5f, 160.5f, 87.7f, 49.5f, 132.6f, 95, true);
 			pen.at(0, 1);
-			pen.warnings(d, 12.9f, 171.4f, false);
+			pen.centred(d, 192f + pen.ex, 171.4f);
 		} else if (kind == 3) {
 			// The small one: the left part of the 4x1, the temperature pushed to the right edge.
 			boolean row = d.levels.length > 0 || d.event != null;
@@ -887,6 +887,16 @@ public class Widget extends AppWidgetProvider {
 			}
 			int[] cols = pills(d.levels);
 			for (int i = 0; i < 3; i++) pill(f, px + i * 38.4f, py, cols[i]);
+		}
+
+		/** v4.51 (Viorel): the 2x2's code lines at the bottom, centred across the widget's width W. */
+		void centred(Data d, float w, float py) {
+			if (d.levels.length > 0) { warnings(d, (w - (2 * 38.4f + 30.9f)) / 2, py, false); return; }
+			if (d.event == null) return;
+			p.setTextSize(10.5f);
+			float tw = Math.min(120, p.measureText(d.event)), x = (w - (30.9f + 5f + tw)) / 2;
+			pill(new Paint(Paint.ANTI_ALIAS_FLAG), x, py, INFO);
+			text(d.event, x + 30.9f + 5f, py + 6.6f, 10.5f, -1, 1f, 3, 120);
 		}
 
 		private void pill(Paint f, float x, float py, int col) {

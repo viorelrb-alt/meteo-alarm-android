@@ -1,4 +1,4 @@
-Versão atual: v.4.50 · 12.11.2026
+Versão atual: v.4.51 · 12.11.2026
 ECRÃ PRINCIPAL
 - Avisos: um toque numa caixa de código ou de informação mostra em cima os valores da previsão (rajadas, quantidades, temperaturas), depois o intervalo e as explicações.
 - Bússola grande: a localidade onde está aparece primeiro (cinzento); Partilhar envia também uma imagem da janela, as localidades próximas com as distâncias, a bateria, as temperaturas (ar, solo, à altura do telemóvel) e o vento.

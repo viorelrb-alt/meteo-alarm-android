@@ -1,4 +1,4 @@
-Nuvarande version: v.4.50 · 12.11.2026
+Nuvarande version: v.4.51 · 12.11.2026
 HUVUDSKÄRM
 - Export / Import: flyttar dina orter, favoriter, skiften och inställningar till en annan enhet via en fil (Spara, Dela; Importera med Lägg till eller Ersätt).
 - Plats: byar du passerar kommer med i länets lista (i 7 dagar, eller för gott om du ofta är där); kompassen visar även byarna.

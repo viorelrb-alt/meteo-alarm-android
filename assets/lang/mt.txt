@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Valuri: it-tbassir t
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Ringiela waħda taħt il-linja: it-terremot, imbagħad it-twissijiet skont il-kulur. Il-mess juri fuq il-valuri (buffuri, ammonti, temperaturi), imbagħad id-dettalji.
 Codes on widgets	Kodiċijiet fuq il-widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tliet linji kkuluriti għall-kodiċijiet tat-twissija, fuq kull widget. Mingħajr kodiċijiet: linja blu waħda bl-ewwel informazzjoni li għadha valida (eż. Ġlata).
+(forecast up to 	(tbassir sa 

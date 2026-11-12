@@ -271,7 +271,10 @@ final class Bubble extends FrameLayout {
 				continue;
 			}
 			if (r.kind == Row.BIG) {
-				TextView t = text(c, 34 * zk, true);
+				// v4.51 (Viorel): a long value ("Rafale de până la 75 km/h") smaller, on up to 2 lines, never cut.
+				TextView t = text(c, (r.text.length() > 14 ? 26 : 34) * zk, true);
+				t.setTag("text");
+				t.setMaxLines(2);
 				t.setText(nb(r.text));
 				t.setTextColor(ink);
 				t.setGravity(Gravity.CENTER);

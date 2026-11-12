@@ -1,4 +1,4 @@
-Trenutačna verzija: v.4.50 · 12.11.2026
+Trenutačna verzija: v.4.51 · 12.11.2026
 GLAVNI ZASLON
 - Ikone vremena: u bojama teme; sve se miču 3 sekunde, i nakon svakog osvježavanja i na widgetima.
 - Izvoz / Uvoz: prenosi vaša mjesta, favorite, parcele i postavke na drugi uređaj putem datoteke (Spremi, Podijeli; Uvoz s Dodaj ili Zamijeni).

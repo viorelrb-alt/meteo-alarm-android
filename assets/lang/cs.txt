@@ -934,3 +934,4 @@ Values: the Open-Meteo forecast for the warning's interval.	Hodnoty: předpově�
 One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Jeden řádek pod čarou: zemětřesení, pak výstrahy podle barev. Klepnutí ukáže nahoře hodnoty (nárazy, množství, teploty), pak podrobnosti.
 Codes on widgets	Kódy na widgetech
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tři barevné čáry pro kódy výstrah na každém widgetu. Bez kódů: jedna modrá čára s první stále platnou informací (např. Jinovatka).
+(forecast up to 	(předpověď do 

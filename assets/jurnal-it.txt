@@ -1,4 +1,4 @@
-Versione attuale: v.4.50 · 12.11.2026
+Versione attuale: v.4.51 · 12.11.2026
 SCHERMATA PRINCIPALE
 - Allerte: un tocco su un riquadro di codice o di informazione mostra in alto i valori della previsione (raffiche, quantità, temperature), poi l'intervallo e le spiegazioni.
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
