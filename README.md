@@ -27,7 +27,7 @@ Developed by Viorel-R. B.
 
 *v4.00 screens in English, PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
 
-**Project evolution:** [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf), a diagram of what each version added, from v0.1 to v1.71.
+**Project evolution:** [docs/project-diagram.png](docs/project-diagram.png) (in Romanian: [docs/project-diagram-ro.png](docs/project-diagram-ro.png)), how the app grew from Meteo Alarm Kindle, version by version, from v0.1 to v2.22. The older timeline of v0.1 to v1.71 by area: [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf).
 
 ## Build
 
