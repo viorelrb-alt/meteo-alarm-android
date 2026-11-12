@@ -1,4 +1,4 @@
-Súčasná verzia: v.4.40 · 10.11.2026
+Súčasná verzia: v.4.50 · 12.11.2026
 HLAVNÁ OBRAZOVKA
 - Export / Import: prenesie miesta, obľúbené, parcely a nastavenia do iného zariadenia pomocou súboru (Uložiť, Zdieľať; Importovať s voľbou Pridať alebo Nahradiť).
 - Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
@@ -7,8 +7,10 @@ HLAVNÁ OBRAZOVKA
 - Poloha: v inej krajine alebo inom štáte USA sa malé obce stiahnu raz, keď ste tam prvýkrát s internetom, pre kompas a zoznam miest.
 - Veľký kompas: obec, v ktorej ste, je prvá (sivá); Zdieľať pošle aj obrázok okna, blízke obce so vzdialenosťami, batériu, teploty (vzduch, zem, vo výške telefónu) a vietor.
 - Veľký kompas: ťuknutie na pole Kompas ukáže kompas, súradnice GPS a 3 najbližšie obce farebne; Zdieľať pošle súradnice.
+- Výstrahy: ťuknutie na pole kódu alebo informácie ukáže hore hodnoty z predpovede (nárazy, množstvá, teploty), potom interval a vysvetlenia.
 MINIAPLIKÁCIE
 - Miniaplikácia 4x2 · zoznam: veľká teplota a ďalšie 4 dni (po jednej ikone) alebo hodiny, podľa voľby v nastaveniach; obec so značkou obce z kompasu.
+- Widgety: farebné čiary kódov na každom widgete, bez textu VÝSTRAHA; bez kódov jedna modrá čiara s prvou platnou informáciou (napr. Srieň).
 - Vylepšenia vzhľadu a opravy chýb.
 
 Verzia 3 (v.3.00 – v.3.92)

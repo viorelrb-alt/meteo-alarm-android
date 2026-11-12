@@ -612,7 +612,6 @@ Slide up or down: text size.	Żerżaq 'il fuq jew 'l isfel: daqs tat-test.
 The Aa button on the pages shows the text-size bar.	Il-buttuna Aa fil-paġni turi l-istrixxa tad-daqs tat-test.
 Shows where the wind blows, turned with the phone.	Turi fejn qed jonfoħ ir-riħ, iddur mat-telefon.
 A big dim clock while the phone charges at night.	Arloġġ kbir u baxx meta t-telefon jiċċarġja bil-lejl.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Ringiela waħda taħt il-linja: it-terremot, imbagħad it-twissijiet skont il-kulur. Mess juri d-dettalji.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	L-iktar terremot qawwi tal-aħħar 24 siegħa f'pajjiżek u kif probabbilment inħass (EMSC).
 The rows of boxes follow the finger.	Ir-ringieli tal-kaxxi jsegwu s-saba'.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Żomm l-iskrin ewlieni › Widgets › Meteo Alarm. Iġbed it-truf biex tibdel id-disinn (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Jixgħel (mimli) jew jitfi (vojt) il-lokalizzazzjoni awtomatika; juri t-temp fejn int. Raħal li tgħaddi minnu jidħol fil-lista tal-kontea tiegħu; jitneħħa wara 7 ijiem mingħajr ma tgħaddi minn hemm u jibqa' jekk tgħaddi minn hemm spiss (3 ijiem f'ġimagħtejn). Il-boxxla turi l-irħula wkoll. F'pajjiż ieħor jew stat ieħor tal-Istati Uniti, il-postijiet żgħar jitniżżlu darba, l-ewwel darba li tkun hemm bl-internet.
 Developed by Viorel-R. B.	Żviluppata minn Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Din hija verżjoni ta' prova ta' Meteo Alarm Android.
+Gusts up to 	Buffuri sa 
+Wind up to 	Riħ sa 
+Precipitation in total: 	Preċipitazzjoni b'kollox: 
+Most in one hour: 	L-iktar f'siegħa: 
+Highest: 	L-ogħla: 
+Snowfall in total: 	Borra b'kollox: 
+Hours of fog: 	Sigħat taċ-ċpar: 
+What the code means	Xi jfisser il-kodiċi
+Values: the Open-Meteo forecast for the warning's interval.	Valuri: it-tbassir ta' Open-Meteo għall-intervall tat-twissija.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Ringiela waħda taħt il-linja: it-terremot, imbagħad it-twissijiet skont il-kulur. Il-mess juri fuq il-valuri (buffuri, ammonti, temperaturi), imbagħad id-dettalji.
+Codes on widgets	Kodiċijiet fuq il-widgets
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tliet linji kkuluriti għall-kodiċijiet tat-twissija, fuq kull widget. Mingħajr kodiċijiet: linja blu waħda bl-ewwel informazzjoni li għadha valida (eż. Ġlata).

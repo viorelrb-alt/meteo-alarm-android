@@ -185,6 +185,8 @@ public class Widget extends AppWidgetProvider {
 		boolean en, unitF, clk12;
 		Cities.City c;
 		int[] levels = new int[0];
+		/** v4.50: without codes, the app's first information still in force ("BRUMĂ"), else null. */
+		String event;
 	}
 
 	/** The data for TOWN (a key; empty = the app's town). */
@@ -228,10 +230,44 @@ public class Widget extends AppWidgetProvider {
 		} catch (Exception e) {
 			d.levels = new int[0];
 		}
+		if (d.levels.length == 0) d.event = event(ctx, d, cached);
 		return d;
 	}
 
+	/**
+	 * v4.50 (Viorel): the app's own information (frost, fog, freezing rain, wind...) still in force
+	 * or the next one, as on the main screen; null in the US, without a forecast or without any.
+	 */
+	static String event(Context ctx, Data d, Cities.City cached) {
+		try {
+			Weather w = d.w;
+			if (w == null || d.c == null || d.c.us() || w.tileTemp.length == 0) return null;
+			long now = System.currentTimeMillis();
+			String off = "";
+			if (cached != null && cached.country.equals(d.c.country))
+				for (Warnings.Warn x : Fetcher.warnings(ctx, d.c)) if (!x.nws && x.until > now) off += x.type + ",";
+			int n = Math.min(w.tileTemp.length, 25);
+			double[] code = new double[n], day = new double[n];
+			for (int k = 0; k < n; k++) {
+				code[k] = k < w.tileCode.length ? w.tileCode[k] : 0;
+				day[k] = k < w.tileDay.length && !w.tileDay[k] ? 0 : 1;
+			}
+			int month = java.util.Calendar.getInstance().get(java.util.Calendar.MONTH) + 1;
+			int at = Math.max(0, w.hourIndex(now));
+			ro.meteoalarm.android.core.Screen.OwnHit best = null;
+			for (ro.meteoalarm.android.core.Screen.OwnHit h : ro.meteoalarm.android.core.Screen.ownHits(w.tileTemp, w.tileCloud, w.tileWind, w.tileGust, code, day, 0, n, month, off))
+				if (h.b >= at && (best == null || h.a < best.a)) best = h;
+			if (best == null) return null;
+			String name = ro.meteoalarm.android.core.Screen.ownName(best.key);
+			return name.substring(0, 1) + name.substring(1).toLowerCase();
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
 	static final int RED = 0xFFFD0000, ORANGE = 0xFFFD8B00, YELLOW = 0xFFDFD51B, GRAY = 0xFFA9A9A9;
+	/** v4.50: the line of the app's own information (the blue of the INFORMARE boxes). */
+	static final int INFO = 0xFF4FA3E0;
 
 	/**
 	 * The three pills of the warnings row (Viorel's rule): yellow = gray gray yellow; orange = gray
@@ -572,13 +608,18 @@ public class Widget extends AppWidgetProvider {
 			pen.at(1, 1);
 			pen.temp(temp, 184.5f, 160.5f, 87.7f, 49.5f, 132.6f, 95, true);
 			pen.at(0, 1);
-			pen.warnings(d.levels, 12.9f, 177.7f, 75.4f + pen.ex, 171.4f, d.en);
+			pen.warnings(d, 12.9f, 171.4f, false);
 		} else if (kind == 3) {
 			// The small one: the left part of the 4x1, the temperature pushed to the right edge.
+			boolean row = d.levels.length > 0 || d.event != null;
 			pen.at(0, 0.5f);
-			pen.icon(icon, 8f, 12f, 72f);
+			if (row) pen.icon(icon, 10f, 6f, 68f);
+			else pen.icon(icon, 8f, 12f, 72f);
 			pen.at(1, 0.5f);
-			pen.temp(temp, 184f, 75.2f, 77.4f, 59.3f, 63.1f, 100, true);
+			pen.temp(temp, 184f, row ? 68f : 75.2f, 77.4f, 59.3f, row ? 56f : 63.1f, 100, true);
+			// v4.50: the code lines (or the information) under them.
+			pen.at(0, 1);
+			if (row) pen.warnings(d, 12f, 82.5f, false);
 		} else if (kind == 1) {
 			pen.at(0, 0.5f);
 			pen.icon(icon, 12.9f, 17.3f, 72f);
@@ -587,7 +628,7 @@ public class Widget extends AppWidgetProvider {
 			pen.town(town, 369.5f, 23.0f, 13, 170);
 			pen.text(desc, 370.1f, 40.6f, 13, 1, 1f, 3, 170);
 			pen.text(sun, 370.1f, 57.1f, 13, 1, 1f, 3, 170);
-			pen.warnings(d.levels, 197.8f, 76.0f, 260.3f, 69.7f, d.en);
+			pen.warnings(d, 260.3f, 69.7f, true);
 		} else {
 			// The weather now keeps to the top, the next hours to the bottom; the hours spread across.
 			pen.at(0, 0);
@@ -599,7 +640,7 @@ public class Widget extends AppWidgetProvider {
 			if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 				pen.text(d.T.hi + " " + deg(w.tmax, d.unitF) + "° · " + d.T.lo + " " + deg(w.tmin, d.unitF) + "°", 369.1f, 62.3f, 13, 1, 1f, 3, 150);
 			pen.text(sun, 369.4f, 80.2f, 13, 1, 1f, 3, 150);
-			pen.warnings(d.levels, 198.2f, 107.6f, 260.7f, 101.4f, d.en);
+			pen.warnings(d, 260.7f, 101.4f, true);
 			// 4x2: the next hours (or, "4x2 days", the next days) under a line; 4x3: both rows.
 			float lw = 359.1f + pen.ex;
 			if (kind == 5) {
@@ -638,6 +679,9 @@ public class Widget extends AppWidgetProvider {
 		if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
 			pen.text("\u2191" + deg(w.tmax, d.unitF) + "° / \u2193" + deg(w.tmin, d.unitF) + "°", 15f, 162.5f, 12.5f, -1, 0.95f, 3, 150);
 		pen.home(town, 15f, 182f, 12.5f, 140);
+		// v4.50: the code lines (or the information) between the temperature and the weather.
+		pen.at(0, 0.75f);
+		pen.warnings(d, 15f, 121f, false);
 		if (w == null) return;
 		boolean hours = st.mode.equals("hours");
 		float x0 = 186f, x1 = 372f, rh = 46f, y0 = 4f;
@@ -826,24 +870,36 @@ public class Widget extends AppWidgetProvider {
 			}
 		}
 
-		/** "AVERTIZARE!" at LX (baseline LB) and the three pills from PX at PY; nothing without warnings. */
-		void warnings(int[] levels, float lx, float lb, float px, float py, boolean en) {
-			if (levels.length == 0) return;
-			text(Tr.t("WARNING!", "AVERTIZARE!"), lx, lb, 8.9f, -1, 0.9f, 3, px - lx - 4);
-			int[] cols = pills(levels);
+		/**
+		 * The three code lines from PX at PY (v4.50: no "AVERTIZARE!" text any more; RIGHT = they end
+		 * where the three would end). Without codes, the app's information: one line of its own
+		 * colour with its name next to it. Nothing without either.
+		 */
+		void warnings(Data d, float px, float py, boolean right) {
 			Paint f = new Paint(Paint.ANTI_ALIAS_FLAG);
-			for (int i = 0; i < 3; i++) {
-				RectF r = new RectF(px + i * 38.4f, py, px + i * 38.4f + 30.9f, py + 6.4f);
-				f.setStyle(Paint.Style.FILL);
-				f.setColor(cols[i]);
-				if (!black) f.setShadowLayer(2, 0, 1, 0x66000000);
-				cv.drawRoundRect(r, 3.2f, 3.2f, f);
-				f.clearShadowLayer();
-				f.setStyle(Paint.Style.STROKE);
-				f.setStrokeWidth(0.7f);
-				f.setColor(ink(1f));
-				cv.drawRoundRect(r, 3.2f, 3.2f, f);
+			if (d.levels.length == 0) {
+				if (d.event == null) return;
+				float pw = 30.9f, end = px + 2 * 38.4f + pw, x = right ? end - pw : px;
+				pill(f, x, py, INFO);
+				if (right) text(d.event, x - 5f, py + 6.6f, 10.5f, 1, 1f, 3, 120);
+				else text(d.event, x + pw + 5f, py + 6.6f, 10.5f, -1, 1f, 3, 120);
+				return;
 			}
+			int[] cols = pills(d.levels);
+			for (int i = 0; i < 3; i++) pill(f, px + i * 38.4f, py, cols[i]);
+		}
+
+		private void pill(Paint f, float x, float py, int col) {
+			RectF r = new RectF(x, py, x + 30.9f, py + 6.4f);
+			f.setStyle(Paint.Style.FILL);
+			f.setColor(col);
+			if (!black) f.setShadowLayer(2, 0, 1, 0x66000000);
+			cv.drawRoundRect(r, 3.2f, 3.2f, f);
+			f.clearShadowLayer();
+			f.setStyle(Paint.Style.STROKE);
+			f.setStrokeWidth(0.7f);
+			f.setColor(ink(1f));
+			cv.drawRoundRect(r, 3.2f, 3.2f, f);
 		}
 
 		void line(float x, float y, float w, float h, float opacity) {

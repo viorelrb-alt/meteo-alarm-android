@@ -612,7 +612,6 @@ Slide up or down: text size.	Podrsaj gor ali dol: velikost besedila.
 The Aa button on the pages shows the text-size bar.	Gumb Aa na straneh pokaže vrstico velikosti besedila.
 Shows where the wind blows, turned with the phone.	Pokaže, kam piha veter, zasukana s telefonom.
 A big dim clock while the phone charges at night.	Velika zatemnjena ura, ko se telefon ponoči polni.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Ena vrsta pod črto: potres, nato opozorila po barvah. Dotik pokaže podrobnosti.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Najmočnejši potres zadnjih 24 ur v tvoji državi in kako so ga verjetno čutili (EMSC).
 The rows of boxes follow the finger.	Vrste polj sledijo prstu.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Pridrži začetni zaslon › Pripomočki › Meteo Alarm. Povleci robove, da spremeniš videz (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Vklopi (polno) ali izklopi (prazno) samodejno lokacijo; prikazuje vreme tam, kjer ste. Vas, skozi katero greste, pride na seznam okrožja; izgine po 7 dneh brez prehoda in ostane, če greste tam pogosto (3 dni v 2 tednih). Kompas prikazuje tudi vasi. V drugi državi ali zvezni državi ZDA se majhni kraji prenesejo enkrat, ko ste tam prvič z internetom.
 Developed by Viorel-R. B.	Razvil Viorel-R. B.
 This is a test version of Meteo Alarm Android.	To je preizkusna različica aplikacije Meteo Alarm Android.
+Gusts up to 	Sunki do 
+Wind up to 	Veter do 
+Precipitation in total: 	Padavine skupaj: 
+Most in one hour: 	Največ v eni uri: 
+Highest: 	Najvišja: 
+Snowfall in total: 	Sneg skupaj: 
+Hours of fog: 	Ure z meglo: 
+What the code means	Kaj pomeni koda
+Values: the Open-Meteo forecast for the warning's interval.	Vrednosti: napoved Open-Meteo za obdobje opozorila.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Ena vrstica pod črto: potres, nato opozorila po barvi. Dotik pokaže zgoraj vrednosti (sunki, količine, temperature), nato podrobnosti.
+Codes on widgets	Kode na pripomočkih
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tri barvne črte za kode opozoril na vsakem pripomočku. Brez kod: ena modra črta s prvo še veljavno informacijo (npr. Slana).

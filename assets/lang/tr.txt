@@ -546,7 +546,6 @@ Slide up or down: text size.	Yukarı veya aşağı kaydırın: yazı boyutu.
 The Aa button on the pages shows the text-size bar.	Sayfalardaki Aa düğmesi yazı boyutu çubuğunu gösterir.
 Shows where the wind blows, turned with the phone.	Rüzgârın nereye estiğini gösterir, telefonla döner.
 A big dim clock while the phone charges at night.	Telefon gece şarj olurken büyük, loş bir saat.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Çizginin altında bir sıra: deprem, sonra renge göre uyarılar. Dokunma ayrıntıları gösterir.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Son 24 saatte ülkenizdeki en güçlü deprem ve muhtemelen nasıl hissedildiği (EMSC).
 The rows of boxes follow the finger.	Kutu sıraları parmağı izler.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Ana ekrana basılı tutun › Widget'lar › Meteo Alarm. Düzeni değiştirmek için kenarları sürükleyin (2x2, 4x1, 4x2, 4x3).
@@ -857,3 +856,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Otomatik konumu açar (dolu) veya kapatır (boş); bulunduğunuz yerdeki havayı gösterir. İçinden geçtiğiniz köy, ilinin listesine girer; 7 gün oradan geçmezseniz çıkar, sık geçerseniz (2 haftada 3 gün) kalır. Pusula köyleri de gösterir. Başka bir ülkede veya ABD eyaletinde küçük yerleşimler, oraya internetle ilk geldiğinizde bir kez indirilir.
 Developed by Viorel-R. B.	Geliştiren: Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Bu, Meteo Alarm Android'in bir test sürümüdür.
+Gusts up to 	Hamleler en fazla 
+Wind up to 	Rüzgâr en fazla 
+Precipitation in total: 	Toplam yağış: 
+Most in one hour: 	Bir saatte en çok: 
+Highest: 	En yüksek: 
+Snowfall in total: 	Toplam kar: 
+Hours of fog: 	Sisli saatler: 
+What the code means	Kodun anlamı
+Values: the Open-Meteo forecast for the warning's interval.	Değerler: uyarı aralığı için Open-Meteo tahmini.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Çizginin altında tek sıra: deprem, ardından renklerine göre uyarılar. Dokunmak üstte değerleri (hamleler, miktarlar, sıcaklıklar), ardından ayrıntıları gösterir.
+Codes on widgets	Widget'larda kodlar
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Her widget'ta uyarı kodları için üç renkli çizgi. Kod yoksa: hâlâ geçerli olan ilk bilgiyle tek bir mavi çizgi (ör. Kiraği).

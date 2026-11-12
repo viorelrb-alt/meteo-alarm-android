@@ -612,7 +612,6 @@ Slide up or down: text size.	Veeg omhoog of omlaag: tekstgrootte.
 The Aa button on the pages shows the text-size bar.	De knop Aa op de pagina's toont de tekstgroottebalk.
 Shows where the wind blows, turned with the phone.	Toont waar de wind heen waait, meegedraaid met de telefoon.
 A big dim clock while the phone charges at night.	Een grote, gedimde klok als de telefoon 's nachts laadt.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Eén rij onder de lijn: de aardbeving, dan de waarschuwingen per kleur. Een tik toont de details.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	De sterkste aardbeving van de laatste 24 uur in je land en hoe ze waarschijnlijk gevoeld werd (EMSC).
 The rows of boxes follow the finger.	De rijen vakken volgen je vinger.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Houd het startscherm ingedrukt › Widgets › Meteo Alarm. Sleep aan de randen om de vorm te wijzigen (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Zet automatische locatie aan (gevuld) of uit (leeg); toont het weer waar u bent. Een dorp waar u doorheen komt, komt in de lijst van zijn provincie; het verdwijnt na 7 dagen zonder er langs te komen en blijft als u er vaak komt (3 dagen in 2 weken). Het kompas toont ook de dorpen. In een ander land of een andere Amerikaanse staat worden de kleine plaatsen één keer gedownload, de eerste keer dat je daar met internet bent.
 Developed by Viorel-R. B.	Ontwikkeld door Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Dit is een testversie van Meteo Alarm Android.
+Gusts up to 	Windstoten tot 
+Wind up to 	Wind tot 
+Precipitation in total: 	Neerslag totaal: 
+Most in one hour: 	Meeste in één uur: 
+Highest: 	Hoogste: 
+Snowfall in total: 	Sneeuw totaal: 
+Hours of fog: 	Uren mist: 
+What the code means	Wat de code betekent
+Values: the Open-Meteo forecast for the warning's interval.	Waarden: de Open-Meteo-verwachting voor de periode van de waarschuwing.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Eén rij onder de lijn: de aardbeving, dan de waarschuwingen per kleur. Een tik toont bovenaan de waarden (windstoten, hoeveelheden, temperaturen), dan de details.
+Codes on widgets	Codes op widgets
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Drie gekleurde lijnen voor de waarschuwingscodes, op elke widget. Zonder codes: één blauwe lijn met de eerste informatie die nog geldt (bv. Rijp).

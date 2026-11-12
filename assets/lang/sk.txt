@@ -612,7 +612,6 @@ Slide up or down: text size.	Potiahni hore alebo dole: veľkosť textu.
 The Aa button on the pages shows the text-size bar.	Tlačidlo Aa na stránkach ukáže lištu veľkosti textu.
 Shows where the wind blows, turned with the phone.	Ukazuje, kam fúka vietor, otáčaná s telefónom.
 A big dim clock while the phone charges at night.	Veľké tlmené hodiny, keď sa telefón v noci nabíja.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Jeden rad pod čiarou: zemetrasenie, potom výstrahy podľa farby. Ťuknutie ukáže podrobnosti.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Najsilnejšie zemetrasenie za posledných 24 hodín v tvojej krajine a ako bolo asi pociťované (EMSC).
 The rows of boxes follow the finger.	Rady políčok sledujú prst.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Podrž plochu › Miniaplikácie › Meteo Alarm. Ťahaním za okraje zmeníš vzhľad (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Zapne (plné) alebo vypne (prázdne) automatickú polohu; ukazuje počasie tam, kde ste. Obec, ktorou prejdete, sa pridá do zoznamu župy; zmizne po 7 dňoch bez prejazdu a zostane, ak tadiaľ chodíte často (3 dni za 2 týždne). Kompas ukazuje aj obce. V inej krajine alebo inom štáte USA sa malé obce stiahnu raz, keď ste tam prvýkrát s internetom.
 Developed by Viorel-R. B.	Vyvinul Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Toto je testovacia verzia Meteo Alarm Android.
+Gusts up to 	Nárazy do 
+Wind up to 	Vietor do 
+Precipitation in total: 	Zrážky spolu: 
+Most in one hour: 	Najviac za hodinu: 
+Highest: 	Maximum: 
+Snowfall in total: 	Sneženie spolu: 
+Hours of fog: 	Hodiny s hmlou: 
+What the code means	Čo znamená kód
+Values: the Open-Meteo forecast for the warning's interval.	Hodnoty: predpoveď Open-Meteo pre interval výstrahy.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Jeden riadok pod čiarou: zemetrasenie, potom výstrahy podľa farby. Ťuknutie ukáže hore hodnoty (nárazy, množstvá, teploty), potom podrobnosti.
+Codes on widgets	Kódy na widgetoch
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tri farebné čiary pre kódy výstrah na každom widgete. Bez kódov: jedna modrá čiara s prvou ešte platnou informáciou (napr. Srieň).

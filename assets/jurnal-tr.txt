@@ -1,4 +1,4 @@
-Geçerli sürüm: v.4.40 · 10.11.2026
+Geçerli sürüm: v.4.50 · 12.11.2026
 ANA EKRAN
 - Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
@@ -7,8 +7,10 @@ ANA EKRAN
 - Konum: başka bir ülkede veya ABD eyaletinde küçük yerleşimler, oraya internetle ilk geldiğinizde bir kez indirilir; pusula ve yer listesi için.
 - Konum: içinden geçtiğiniz köyler ilin listesine girer (7 gün, ya da sık geçiyorsanız kalıcı olarak); pusula köyleri de gösterir.
 - Kutular: herhangi bir kutuya dokunmak değeri üstte, açıklamaları altında gösterir.
+- Uyarılar: bir kod veya bilgi kutusuna dokunmak üstte tahmin değerlerini (hamleler, miktarlar, sıcaklıklar), ardından aralığı ve açıklamaları gösterir.
 WIDGET'LAR
 - Widget 4x2 · liste: büyük sıcaklık ve sonraki 4 gün (her biri bir simge) veya saatler, ayarlardan seçilebilir; yerleşim yeri pusulanın yer işaretiyle.
+- Widget'lar: her widget'ta kodların renkli çizgileri, UYARI yazısı olmadan; kod yoksa geçerli ilk bilgiyle tek bir mavi çizgi (ör. Kiraği).
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 3 (v.3.00 – v.3.92)

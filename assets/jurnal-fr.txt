@@ -1,5 +1,6 @@
-Version actuelle : v.4.40 · 10.11.2026
+Version actuelle : v.4.50 · 12.11.2026
 ÉCRAN PRINCIPAL
+- Alertes : un appui sur une case de code ou d'information montre en haut les valeurs de la prévision (rafales, quantités, températures), puis l'intervalle et les explications.
 - Cases : un appui sur n'importe quelle case montre la valeur en haut et les explications dessous.
 - Exporter / Importer : transfère vos localités, favoris, parcelles et réglages vers un autre appareil grâce à un fichier (Enregistrer, Partager ; Importer avec Ajouter ou Remplacer).
 - Grande boussole : la localité où vous êtes apparaît en premier (gris) ; Partager envoie aussi une image de la fenêtre, les localités proches avec leurs distances, la batterie, les températures (air, sol, à la hauteur du téléphone) et le vent.
@@ -9,6 +10,7 @@ Version actuelle : v.4.40 · 10.11.2026
 - Localisation : les villages que vous traversez entrent dans la liste de leur département (7 jours, ou pour de bon si vous y passez souvent) ; la boussole montre aussi les villages.
 WIDGETS
 - Widget 4x2 · liste : une grande température et les 4 prochains jours (une icône chacun) ou heures, au choix dans ses réglages ; la localité avec la marque de localité de la boussole.
+- Widgets : les lignes de couleur des codes sur chaque widget, sans le texte ALERTE ; sans code, une ligne bleue avec la première information valable (ex. Gelée blanche).
 - Améliorations du design et corrections de bugs.
 
 Version 3 (v.3.00 – v.3.92)

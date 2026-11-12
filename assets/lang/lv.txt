@@ -612,7 +612,6 @@ Slide up or down: text size.	Velc augšup vai lejup: teksta lielums.
 The Aa button on the pages shows the text-size bar.	Poga Aa lapās rāda teksta lieluma joslu.
 Shows where the wind blows, turned with the phone.	Rāda, uz kurieni pūš vējš, griežas līdz ar tālruni.
 A big dim clock while the phone charges at night.	Liels, blāvs pulkstenis, kad tālrunis naktī lādējas.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Viena rinda zem līnijas: zemestrīce, tad brīdinājumi pēc krāsas. Pieskāriens rāda informāciju.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Pēdējo 24 stundu spēcīgākā zemestrīce tavā valstī un kā tā, visticamāk, bija jūtama (EMSC).
 The rows of boxes follow the finger.	Lodziņu rindas seko pirkstam.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Turi sākuma ekrānu › Logrīki › Meteo Alarm. Velc malas, lai mainītu izkārtojumu (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Ieslēdz (pilns) vai izslēdz (tukšs) automātisko atrašanās vietu; rāda laikapstākļus tur, kur esat. Ciems, caur kuru braucat, tiek pievienots apriņķa sarakstam; tas pazūd pēc 7 dienām bez braukšanas cauri un paliek, ja tur braucat bieži (3 dienas 2 nedēļās). Kompass rāda arī ciemus. Citā valstī vai ASV štatā mazās apdzīvotās vietas tiek lejupielādētas vienreiz, kad tur pirmo reizi esi ar internetu.
 Developed by Viorel-R. B.	Izstrādājis Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Šī ir Meteo Alarm Android testa versija.
+Gusts up to 	Brāzmas līdz 
+Wind up to 	Vējš līdz 
+Precipitation in total: 	Nokrišņi kopā: 
+Most in one hour: 	Visvairāk vienā stundā: 
+Highest: 	Augstākā: 
+Snowfall in total: 	Sniegs kopā: 
+Hours of fog: 	Miglas stundas: 
+What the code means	Ko nozīmē kods
+Values: the Open-Meteo forecast for the warning's interval.	Vērtības: Open-Meteo prognoze brīdinājuma laikposmam.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Viena rinda zem līnijas: zemestrīce, tad brīdinājumi pēc krāsas. Pieskāriens augšā parāda vērtības (brāzmas, daudzumus, temperatūras), tad sīkāk.
+Codes on widgets	Kodi logrīkos
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trīs krāsainas līnijas brīdinājuma kodiem katrā logrīkā. Bez kodiem: viena zila līnija ar pirmo vēl spēkā esošo informāciju (piem., Sarma).

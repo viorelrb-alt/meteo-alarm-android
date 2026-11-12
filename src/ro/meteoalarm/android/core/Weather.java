@@ -17,6 +17,8 @@ import java.util.Map;
  */
 public final class Weather {
 	public static final int LOOKAHEAD_HOURS = 12, TILE_HOURS = 25;
+	/** v4.50: hours downloaded for the values of the warnings (a code can end the day after tomorrow); the tiles keep TILE_HOURS. */
+	public static final int LONG_HOURS = 49;
 	public static final int RAIN_PROBABILITY = 50;
 	public static final int LOW_OVERCAST = 35;
 	public static final String MODEL = "icon_seamless";
@@ -54,6 +56,14 @@ public final class Weather {
 	public double[] tileAmt = new double[0];
 	/** Cloud cover %, wind and gusts km/h of each tile hour (the app's own information boxes, v3.10); NaN when missing. */
 	public double[] tileCloud = new double[0], tileWind = new double[0], tileGust = new double[0];
+	/** The epoch ms of tile hour 0 (0 when unknown). */
+	public long t0;
+	/**
+	 * v4.50: hour by hour for up to LONG_HOURS hours from tile hour 0 (the values shown in the
+	 * warnings' bubbles): temperature, wind, gusts (km/h), precipitation (mm), snowfall (cm), code.
+	 */
+	public double[] longTemp = new double[0], longWind = new double[0], longGust = new double[0], longAmt = new double[0], longSnow = new double[0];
+	public int[] longCode = new int[0];
 
 	// Next days (tomorrow first): ISO date, code, rounded high/low, max precipitation probability.
 	public final List<String> dayDates = new ArrayList<String>();
@@ -73,7 +83,7 @@ public final class Weather {
 				+ "&hourly=precipitation_probability,precipitation,weather_code,snowfall,temperature_2m,is_day,cloud_cover,wind_speed_10m,wind_gusts_10m"
 				+ "&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max,"
 				+ "sunrise,sunset,uv_index_max"
-				+ "&forecast_days=6&forecast_hours=" + TILE_HOURS
+				+ "&forecast_days=6&forecast_hours=" + LONG_HOURS
 				+ "&timezone=" + URLEncoder.encode(tzId, "UTF-8") + (model == null || model.length() == 0 ? "" : "&models=" + model);
 	}
 
@@ -245,8 +255,29 @@ public final class Weather {
 			w.dayPop.add((int) nz(Json.num(dPop, k)));
 		}
 
-		int nt = hTime.size(), n = Math.min(nt, LOOKAHEAD_HOURS), nsn = 0, nrn = 0;
 		List<Object> hTemp = Json.arr(hourly, "temperature_2m"), hDay = Json.arr(hourly, "is_day");
+		int nl = hTime.size();
+		List<Object> lWind = Json.arr(hourly, "wind_speed_10m"), lGust = Json.arr(hourly, "wind_gusts_10m");
+		w.longTemp = new double[nl];
+		w.longWind = new double[nl];
+		w.longGust = new double[nl];
+		w.longAmt = new double[nl];
+		w.longSnow = new double[nl];
+		w.longCode = new int[nl];
+		for (int k = 0; k < nl; k++) {
+			w.longTemp[k] = Json.num(hTemp, k);
+			w.longWind[k] = Json.num(lWind, k);
+			w.longGust[k] = Json.num(lGust, k);
+			w.longAmt[k] = nz(Json.num(hAmt, k));
+			w.longSnow[k] = nz(Json.num(hSnow, k));
+			w.longCode[k] = (int) nz(Json.num(hCode, k));
+		}
+		if (nl > 0 && root instanceof Map) {
+			double off = Json.num((Map<String, Object>) root, "utc_offset_seconds");
+			long t = isoUtc(Json.str(hTime, 0));
+			if (t > 0) w.t0 = t - (long) (Double.isNaN(off) ? 0 : off) * 1000L;
+		}
+		int nt = Math.min(hTime.size(), TILE_HOURS), n = Math.min(nt, LOOKAHEAD_HOURS), nsn = 0, nrn = 0;
 		w.tileTemp = new double[nt];
 		w.tileCode = new int[nt];
 		w.tileDay = new boolean[nt];
@@ -293,6 +324,25 @@ public final class Weather {
 	}
 
 	private static double nz(double v) { return Double.isNaN(v) ? 0 : v; }
+
+	/** "2026-11-12T13:00" read as UTC, in epoch ms (0 when it cannot be read). */
+	private static long isoUtc(String s) {
+		if (s == null || s.length() < 16) return 0;
+		try {
+			java.util.Calendar c = java.util.Calendar.getInstance(java.util.TimeZone.getTimeZone("UTC"));
+			c.clear();
+			c.set(Integer.parseInt(s.substring(0, 4)), Integer.parseInt(s.substring(5, 7)) - 1, Integer.parseInt(s.substring(8, 10)),
+					Integer.parseInt(s.substring(11, 13)), Integer.parseInt(s.substring(14, 16)), 0);
+			return c.getTimeInMillis();
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+
+	/** The index of the hour holding MS in the tile / long arrays (can be negative or past the end). */
+	public int hourIndex(long ms) {
+		return t0 <= 0 ? 0 : (int) Math.floor((ms - t0) / 3600000.0);
+	}
 
 	private static String hhmm(String iso) {
 		return iso != null && iso.length() >= 16 ? iso.substring(11, 16) : "";

@@ -612,7 +612,6 @@ Slide up or down: text size.	Pyyhkäise ylös tai alas: tekstin koko.
 The Aa button on the pages shows the text-size bar.	Sivujen Aa-painike näyttää tekstikokopalkin.
 Shows where the wind blows, turned with the phone.	Näyttää, mihin tuuli puhaltaa, kääntyy puhelimen mukana.
 A big dim clock while the phone charges at night.	Suuri himmeä kello, kun puhelin latautuu yöllä.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Yksi rivi viivan alla: maanjäristys, sitten varoitukset värin mukaan. Napautus näyttää tiedot.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Viimeisen 24 tunnin voimakkain maanjäristys maassasi ja miten se luultavasti tuntui (EMSC).
 The rows of boxes follow the finger.	Ruuturivit seuraavat sormea.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Paina pitkään aloitusnäyttöä › Widgetit › Meteo Alarm. Vedä reunoista vaihtaaksesi asettelua (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Kytkee automaattisen sijainnin päälle (täytetty) tai pois (tyhjä); näyttää sään siellä, missä olet. Kylä, jonka kautta kuljet, lisätään maakunnan luetteloon; se poistuu 7 päivän jälkeen, jos et kulje sen kautta, ja jää, jos kuljet siellä usein (3 päivää 2 viikossa). Kompassi näyttää myös kylät. Toisessa maassa tai Yhdysvaltain osavaltiossa pienet paikkakunnat ladataan kerran, kun olet siellä ensimmäistä kertaa internetin kanssa.
 Developed by Viorel-R. B.	Kehittäjä: Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Tämä on Meteo Alarm Androidin testiversio.
+Gusts up to 	Puuskat enintään 
+Wind up to 	Tuuli enintään 
+Precipitation in total: 	Sadetta yhteensä: 
+Most in one hour: 	Eniten tunnissa: 
+Highest: 	Ylin: 
+Snowfall in total: 	Lunta yhteensä: 
+Hours of fog: 	Sumutunteja: 
+What the code means	Mitä koodi tarkoittaa
+Values: the Open-Meteo forecast for the warning's interval.	Arvot: Open-Meteon ennuste varoituksen ajalle.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Yksi rivi viivan alla: maanjäristys, sitten varoitukset värin mukaan. Napautus näyttää ylhäällä arvot (puuskat, määrät, lämpötilat), sitten tiedot.
+Codes on widgets	Koodit widgeteissä
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Kolme värillistä viivaa varoituskoodeille jokaisessa widgetissä. Ilman koodeja: yksi sininen viiva ensimmäisellä yhä voimassa olevalla tiedotteella (esim. Kuura).

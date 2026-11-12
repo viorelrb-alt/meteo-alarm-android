@@ -612,7 +612,6 @@ Slide up or down: text size.	Sleamhnaigh suas nó síos: méid an téacs.
 The Aa button on the pages shows the text-size bar.	Taispeánann an cnaipe Aa ar na leathanaigh barra mhéid an téacs.
 Shows where the wind blows, turned with the phone.	Taispeánann sé cá séideann an ghaoth, casta leis an bhfón.
 A big dim clock while the phone charges at night.	Clog mór lag nuair a bhíonn an fón á luchtú san oíche.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Sraith amháin faoin líne: an crith talún, ansin na rabhaidh de réir datha. Taispeánann tapáil na sonraí.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	An crith talún is láidre le 24 uair anuas i do thír agus conas a mhothaíodh é is dócha (EMSC).
 The rows of boxes follow the finger.	Leanann sraitheanna na mboscaí an mhéar.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Coinnigh an scáileán baile › Giuirléidí › Meteo Alarm. Tarraing na himill chun an leagan amach a athrú (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Casann sé suíomh uathoibríoch air (lán) nó as (folamh); taispeánann sé an aimsir san áit ina bhfuil tú. Cuirtear sráidbhaile a dtéann tú tríd le liosta an chontae; imíonn sé tar éis 7 lá gan dul tríd arís agus fanann sé má théann tú tríd go minic (3 lá in 2 sheachtain). Taispeánann an compás na sráidbhailte freisin. I dtír eile nó i stát eile de chuid na SA, íoslódáiltear na háiteanna beaga uair amháin, an chéad uair a bhíonn tú ann le hidirlíon.
 Developed by Viorel-R. B.	Forbartha ag Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Is leagan tástála de Meteo Alarm Android é seo.
+Gusts up to 	Siotaí suas le 
+Wind up to 	Gaoth suas le 
+Precipitation in total: 	Deascadh san iomlán: 
+Most in one hour: 	An méid is mó in uair: 
+Highest: 	Uasmhéid: 
+Snowfall in total: 	Sneachta san iomlán: 
+Hours of fog: 	Uaireanta ceo: 
+What the code means	Brí an chóid
+Values: the Open-Meteo forecast for the warning's interval.	Luachanna: réamhaisnéis Open-Meteo do thréimhse an rabhaidh.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Ró amháin faoin líne: an crith talún, ansin na rabhaidh de réir datha. Taispeánann tapáil na luachanna (siotaí, méideanna, teochtaí) ar barr, ansin na sonraí.
+Codes on widgets	Cóid ar ghiuirléidí
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trí líne daite do chóid rabhaidh, ar gach giuirléid. Gan chóid: líne ghorm amháin leis an gcéad fhaisnéis atá i bhfeidhm fós (m.sh. Sioc bán).

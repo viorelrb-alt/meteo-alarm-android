@@ -1,4 +1,4 @@
-Nykyinen versio: v.4.40 · 10.11.2026
+Nykyinen versio: v.4.50 · 12.11.2026
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus Kompassi-ruutuun näyttää kompassin, GPS-koordinaatit ja 3 lähintä paikkakuntaa väreinä; Jaa lähettää koordinaatit.
 - Ruudut: napautus mihin tahansa ruutuun näyttää arvon ylhäällä ja selitykset sen alla.
@@ -6,9 +6,11 @@ PÄÄNÄYTTÖ
 - Sijainti: kylät, joiden kautta kuljet, lisätään maakunnan luetteloon (7 päiväksi tai pysyvästi, jos kuljet siellä usein); kompassi näyttää myös kylät.
 - Sijainti: toisessa maassa tai Yhdysvaltain osavaltiossa pienet paikkakunnat ladataan kerran, kun olet siellä ensimmäistä kertaa internetin kanssa, kompassia ja paikkakuntaluetteloa varten.
 - Suuri kompassi: paikka, jossa olet, on ensimmäisenä (harmaa); Jaa lähettää myös kuvan ikkunasta, lähellä olevat paikat etäisyyksineen, akun, lämpötilat (ilma, maanpinta, puhelimen korkeudella) ja tuulen.
+- Varoitukset: koodi- tai tiedoteruudun napautus näyttää ylhäällä ennusteen arvot (puuskat, määrät, lämpötilat), sitten ajan ja selitykset.
 - Vienti / Tuonti: siirtää paikkakunnat, suosikit, lohkot ja asetukset toiseen laitteeseen tiedoston avulla (Tallenna, Jaa; Tuo valinnalla Lisää tai Korvaa).
 WIDGETIT
 - Widget 4x2 · luettelo: suuri lämpötila ja seuraavat 4 päivää (kukin yhdellä kuvakkeella) tai tunnit, valittavissa asetuksissa; paikka kompassin paikkamerkillä.
+- Widgetit: koodien väriviivat jokaisessa widgetissä ilman tekstiä VAROITUS; ilman koodeja yksi sininen viiva ensimmäisellä voimassa olevalla tiedotteella (esim. Kuura).
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
 Versio 3 (v.3.00 – v.3.92)

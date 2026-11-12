@@ -1,4 +1,4 @@
-Současná verze: v.4.40 · 10.11.2026
+Současná verze: v.4.50 · 12.11.2026
 HLAVNÍ OBRAZOVKA
 - Export / Import: přenese místa, oblíbené, parcely a nastavení do jiného zařízení pomocí souboru (Uložit, Sdílet; Import s volbou Přidat nebo Nahradit).
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.
@@ -7,8 +7,10 @@ HLAVNÍ OBRAZOVKA
 - Poloha: vesnice, kterými projíždíte, se přidají do seznamu okresu (na 7 dní, nebo natrvalo, když tudy jezdíte často); kompas ukazuje i vesnice.
 - Velký kompas: klepnutí na pole Kompas ukáže kompas, souřadnice GPS a 3 nejbližší obce barevně; Sdílet pošle souřadnice.
 - Velký kompas: obec, ve které jste, je první (šedě); Sdílet pošle i obrázek okna, blízké obce se vzdálenostmi, baterii, teploty (vzduch, země, ve výšce telefonu) a vítr.
+- Výstrahy: klepnutí na pole kódu nebo informace ukáže nahoře hodnoty z předpovědi (nárazy, množství, teploty), pak interval a vysvětlení.
 WIDGETY
 - Widget 4x2 · seznam: velká teplota a další 4 dny (po jedné ikoně) nebo hodiny, podle volby v nastavení; obec se značkou z kompasu.
+- Widgety: barevné čáry kódů na každém widgetu, bez textu VÝSTRAHA; bez kódů jedna modrá čára s první platnou informací (např. Jinovatka).
 - Vylepšení vzhledu a opravy chyb.
 
 Verze 3 (v.3.00 – v.3.92)

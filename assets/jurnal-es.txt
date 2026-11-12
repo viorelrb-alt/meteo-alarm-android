@@ -1,5 +1,6 @@
-Versión actual: v.4.40 · 10.11.2026
+Versión actual: v.4.50 · 12.11.2026
 PANTALLA PRINCIPAL
+- Avisos: al tocar un recuadro de código o de información se ven arriba los valores del pronóstico (rachas, cantidades, temperaturas), luego el intervalo y las explicaciones.
 - Brújula grande: la localidad en la que estás aparece primero (gris); Compartir envía también una imagen de la ventana, las localidades cercanas con sus distancias, la batería, las temperaturas (aire, suelo, a la altura del teléfono) y el viento.
 - Brújula grande: un toque en la casilla Brújula muestra la brújula, las coordenadas GPS y las 3 localidades más cercanas en colores; Compartir envía las coordenadas.
 - Casillas: un toque en cualquier casilla muestra el valor arriba y las explicaciones debajo.
@@ -9,6 +10,7 @@ PANTALLA PRINCIPAL
 - Ubicación: los pueblos por los que pasas entran en la lista de su provincia (7 días, o para siempre si pasas a menudo); la brújula muestra también los pueblos.
 WIDGETS
 - Widget 4x2 · lista: una temperatura grande y los próximos 4 días (un icono cada uno) u horas, a elegir en sus ajustes; la localidad con la marca de localidad de la brújula.
+- Widgets: las líneas de colores de los códigos en todos los widgets, sin el texto AVISO; sin códigos, una línea azul con la primera información vigente (p. ej. Escarcha).
 - Mejoras de diseño y corrección de errores.
 
 Versión 3 (v.3.00 – v.3.92)

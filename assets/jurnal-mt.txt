@@ -1,4 +1,4 @@
-Verżjoni attwali: v.4.40 · 10.11.2026
+Verżjoni attwali: v.4.50 · 12.11.2026
 SKRIN EWLIENI
 - Boxxla kbira: il-lokalità fejn int tidher l-ewwel (griż); Aqsam jibgħat ukoll stampa tat-tieqa, il-lokalitajiet fil-qrib bid-distanzi, il-batterija, it-temperaturi (arja, art, fl-għoli tat-telefon) u r-riħ.
 - Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.
@@ -7,8 +7,10 @@ SKRIN EWLIENI
 - Kaxxi: tagħfisa fuq kwalunkwe kaxxa turi l-valur fuq u l-ispjegazzjonijiet taħtu.
 - Lokalizzazzjoni: l-irħula li tgħaddi minnhom jidħlu fil-lista tal-kontea (għal 7 ijiem, jew għal dejjem jekk tgħaddi spiss); il-boxxla turi l-irħula wkoll.
 - Post: f'pajjiż ieħor jew stat ieħor tal-Istati Uniti, il-postijiet żgħar jitniżżlu darba, l-ewwel darba li tkun hemm bl-internet, għall-kumpass u l-lista tal-postijiet.
+- Twissijiet: il-mess fuq kaxxa ta' kodiċi jew informazzjoni juri fuq il-valuri tat-tbassir (buffuri, ammonti, temperaturi), imbagħad l-intervall u l-ispjegazzjonijiet.
 WIDGETS
 - Widget 4x2 · lista: temperatura kbira u l-4 ijiem li ġejjin (ikona waħda kull wieħed) jew sigħat, magħżula fis-settings; il-lokalità bis-sinjal tal-lokalità tal-boxxla.
+- Widgets: il-linji kkuluriti tal-kodiċijiet fuq kull widget, mingħajr it-test TWISSIJA; mingħajr kodiċijiet, linja blu waħda bl-ewwel informazzjoni valida (eż. Ġlata).
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 3 (v.3.00 – v.3.92)

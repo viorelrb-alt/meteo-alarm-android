@@ -612,7 +612,6 @@ Slide up or down: text size.	Svep upp eller ner: textstorlek.
 The Aa button on the pages shows the text-size bar.	Knappen Aa på sidorna visar textstorleksreglaget.
 Shows where the wind blows, turned with the phone.	Visar vart vinden blåser, vriden med telefonen.
 A big dim clock while the phone charges at night.	En stor, dämpad klocka när telefonen laddar på natten.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	En rad under linjen: jordskalvet, sedan varningarna efter färg. Ett tryck visar detaljerna.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Det kraftigaste jordskalvet de senaste 24 timmarna i ditt land och hur det troligen kändes (EMSC).
 The rows of boxes follow the finger.	Raderna med rutor följer fingret.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Håll på startskärmen › Widgetar › Meteo Alarm. Dra i kanterna för att byta layout (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Slår på (fylld) eller av (tom) automatisk plats; visar vädret där du är. En by du passerar kommer med i länets lista; den försvinner efter 7 dagar utan att du passerar och stannar om du ofta är där (3 dagar på 2 veckor). Kompassen visar även byarna. I ett annat land eller en annan amerikansk delstat laddas de små orterna ner en gång, första gången du är där med internet.
 Developed by Viorel-R. B.	Utvecklad av Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Detta är en testversion av Meteo Alarm Android.
+Gusts up to 	Byar upp till 
+Wind up to 	Vind upp till 
+Precipitation in total: 	Nederbörd totalt: 
+Most in one hour: 	Mest på en timme: 
+Highest: 	Högsta: 
+Snowfall in total: 	Snöfall totalt: 
+Hours of fog: 	Timmar med dimma: 
+What the code means	Vad koden betyder
+Values: the Open-Meteo forecast for the warning's interval.	Värden: Open-Meteos prognos för varningens period.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	En rad under linjen: jordbävningen, sedan varningarna efter färg. Ett tryck visar värdena (byar, mängder, temperaturer) överst, sedan detaljerna.
+Codes on widgets	Koder på widgetar
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tre färgade linjer för varningskoderna, på varje widget. Utan koder: en blå linje med den första information som fortfarande gäller (t.ex. Rimfrost).

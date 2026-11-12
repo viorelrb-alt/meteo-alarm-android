@@ -1,5 +1,6 @@
-Versione attuale: v.4.40 · 10.11.2026
+Versione attuale: v.4.50 · 12.11.2026
 SCHERMATA PRINCIPALE
+- Allerte: un tocco su un riquadro di codice o di informazione mostra in alto i valori della previsione (raffiche, quantità, temperature), poi l'intervallo e le spiegazioni.
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
 - Bussola grande: un tocco sulla casella Bussola mostra la bussola, le coordinate GPS e le 3 località più vicine a colori; Condividi invia le coordinate.
 - Caselle: un tocco su qualsiasi casella mostra il valore in alto e le spiegazioni sotto.
@@ -9,6 +10,7 @@ SCHERMATA PRINCIPALE
 - Posizione: in un altro paese o stato degli USA, le piccole località vengono scaricate una volta, la prima volta che sei lì con internet, per la bussola e l’elenco dei luoghi.
 WIDGET
 - Widget 4x2 · elenco: una temperatura grande e i prossimi 4 giorni (un'icona ciascuno) o le ore, a scelta nelle impostazioni; la località con il segno di località della bussola.
+- Widget: le linee colorate dei codici su ogni widget, senza il testo ALLERTA; senza codici, una linea blu con la prima informazione valida (es. Brina).
 - Miglioramenti del design e correzioni di errori.
 
 Versione 3 (v.3.00 – v.3.92)

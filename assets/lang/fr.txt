@@ -612,7 +612,6 @@ Slide up or down: text size.	Glissez vers le haut ou le bas : taille du texte.
 The Aa button on the pages shows the text-size bar.	Le bouton Aa des pages affiche la barre de taille du texte.
 Shows where the wind blows, turned with the phone.	Montre où souffle le vent, tournée avec le téléphone.
 A big dim clock while the phone charges at night.	Une grande horloge tamisée quand le téléphone charge la nuit.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Une rangée sous la ligne : le séisme, puis les alertes par couleur. Un toucher montre les détails.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Le séisme le plus fort des dernières 24 heures dans votre pays et comment il a probablement été ressenti (EMSC).
 The rows of boxes follow the finger.	Les rangées de cases suivent le doigt.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Appui long sur l'écran d'accueil › Widgets › Meteo Alarm. Tirez les bords pour changer de modèle (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Active (plein) ou désactive (vide) la localisation automatique ; montre la météo là où vous êtes. Un village que vous traversez entre dans la liste de son département ; il disparaît après 7 jours sans y repasser et reste si vous y passez souvent (3 jours en 2 semaines). La boussole montre aussi les villages. Dans un autre pays ou un autre État américain, les petites localités sont téléchargées une fois, la première fois que vous y êtes avec internet.
 Developed by Viorel-R. B.	Développée par Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Ceci est une version de test de Meteo Alarm Android.
+Gusts up to 	Rafales jusqu'à 
+Wind up to 	Vent jusqu'à 
+Precipitation in total: 	Précipitations au total : 
+Most in one hour: 	Le plus en une heure : 
+Highest: 	Maximum : 
+Snowfall in total: 	Neige au total : 
+Hours of fog: 	Heures de brouillard : 
+What the code means	Ce que signifie le code
+Values: the Open-Meteo forecast for the warning's interval.	Valeurs : la prévision Open-Meteo pour l'intervalle de l'alerte.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Une rangée sous la ligne : le séisme, puis les alertes par couleur. Un appui montre en haut les valeurs (rafales, quantités, températures), puis les détails.
+Codes on widgets	Codes sur les widgets
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trois lignes de couleur pour les codes d'alerte, sur chaque widget. Sans code : une ligne bleue avec la première information encore valable (ex. Gelée blanche).

@@ -2161,13 +2161,17 @@ public final class Screen {
 		else if (k.equals("fog")) what = Tr.t("Fog for several hours: visibility can drop a lot. Drive carefully.", "Ceață câteva ore: vizibilitatea poate scădea mult. Conduceți cu atenție.");
 		else if (k.equals("ice")) what = Tr.t("Rain or drizzle that freezes on the ground: slippery roads and pavements, ice on plants and wires.", "Ploaie sau burniță care îngheață la sol: drumuri și trotuare alunecoase, gheață pe plante și fire.");
 		else what = Tr.t("Strong gusts: secure loose objects, watch for falling branches; not a time for spraying.", "Rafale puternice: fixați obiectele, atenție la crengi; nu e momentul pentru stropit.");
-		out.add(new String[] { "t", what });
-		out.add(new String[] { "v", Tr.t("Interval: ", "Interval: ") + T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12) });
-		if (k.equals("freeze") || k.equals("frost")) {
-			out.add(new String[] { "v", Tr.t("Lowest: ", "Minima: ") + t(gr.val) + "°" });
-			out.add(new String[] { "t", Tr.t("Shown only in spring (March–May) and autumn (September–November).", "Apare doar primăvara (martie–mai) și toamna (septembrie–noiembrie).") });
+		// v4.50: the value first, then the interval and what it means.
+		if (k.equals("freeze") || k.equals("frost")) out.add(new String[] { "V", Tr.t("Lowest: ", "Minima: ") + t(gr.val) + "°" });
+		else if (k.equals("wind")) out.add(new String[] { "V", Tr.t("Strongest gust: ", "Rafala cea mai puternică: ") + kmh(gr.val) });
+		else {
+			List<String[]> v = warnValues(k.equals("ice") ? "snow-ice" : "fog", gr.from, gr.until);
+			if (!v.isEmpty()) out.add(v.get(0));
 		}
-		if (k.equals("wind")) out.add(new String[] { "v", Tr.t("Strongest gust: ", "Rafala cea mai puternică: ") + Math.round(gr.val) + " km/h" });
+		out.add(new String[] { "v", Tr.t("Interval: ", "Interval: ") + T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12) });
+		out.add(new String[] { "t", what });
+		if (k.equals("freeze") || k.equals("frost"))
+			out.add(new String[] { "t", Tr.t("Shown only in spring (March–May) and autumn (September–November).", "Apare doar primăvara (martie–mai) și toamna (septembrie–noiembrie).") });
 		out.add(new String[] { "s", Tr.t("Worked out by the app from the Open-Meteo forecast, like the NWS advisories in the US; not an official warning.", "Calculată de aplicație din prognoza Open-Meteo, ca informările NWS din SUA; nu e o avertizare oficială.") });
 		return out;
 	}
@@ -2398,19 +2402,27 @@ public final class Screen {
 				: new String[] { "Fenomene meteorologice potențial periculoase (obișnuite pentru sezon, dar local mai intense). Fiți atenți dacă sunteți afară.",
 						"Fenomene meteorologice periculoase, de intensitate mare. Fiți foarte vigilenți, urmăriți prognoza și sfaturile autorităților.",
 						"Fenomene meteorologice foarte periculoase, de intensitate foarte mare. Luați măsuri de protecție și urmați instrucțiunile autorităților." };
-		out.add(new String[] { "t", what[gr.level - 1] });
+		// v4.50 (Viorel): the values of each phenomenon first (gusts, amounts, temperatures), then
+		// its interval and advice; what the code means after them.
 		long nowMs = now.getTimeInMillis();
+		boolean vals = false;
 		for (Warnings.Warn wr : warns) {
 			if (wr.until <= nowMs || Math.min(3, Math.max(1, wr.level)) != gr.level) continue;
 			out.add(new String[] { "h", T.warnType(wr.type) });
+			List<String[]> v = warnValues(wr.type, wr.from, wr.until);
+			vals |= !v.isEmpty();
+			out.addAll(v);
 			String st = wr.from <= nowMs ? (Tr.t("In force now, until ", "În vigoare acum, până ")) + T.weekdayTime(wr.until, clk12)
 					: (Tr.t("From ", "De ")) + T.weekdayTime(wr.from, clk12) + (Tr.t(" until ", " până ")) + T.weekdayTime(wr.until, clk12);
 			out.add(new String[] { "t", st });
 			String tip = advice(wr.type);
 			if (tip.length() > 0) out.add(new String[] { "t", tip });
 		}
+		out.add(new String[] { "h", Tr.t("What the code means", "Ce înseamnă codul") });
+		out.add(new String[] { "t", what[gr.level - 1] });
 		out.add(new String[] { "s", en ? Tr.t("Source: MeteoAlarm (the national weather service), for ") + (city != null ? city.label() : "")
 				: "Sursa: MeteoAlarm (ANM), pentru " + (city != null ? city.label() : "") });
+		if (vals) out.add(new String[] { "s", Tr.t("Values: the Open-Meteo forecast for the warning's interval.", "Valori: prognoza Open-Meteo pentru intervalul avertizării.") });
 		return out;
 	}
 
@@ -2441,6 +2453,48 @@ public final class Screen {
 		}
 		out.add(new String[] { "s", Tr.t("Source: National Weather Service (weather.gov), for ", "Sursa: National Weather Service (weather.gov), pentru ") + (city != null ? city.label() : "")
 				+ ". " + Tr.t("The alert texts are in English, as NWS publishes them.", "Textele avertizărilor sunt în engleză, așa cum le publică NWS.") });
+		return out;
+	}
+
+	/**
+	 * v4.50 (Viorel): what the forecast says for a warning of TYPE between FROM and UNTIL (the
+	 * MeteoAlarm feed gives no values): { "V", main value } then { "v", more }; empty when the
+	 * forecast does not reach the interval.
+	 */
+	List<String[]> warnValues(String type, long from, long until) {
+		List<String[]> out = new ArrayList<String[]>();
+		if (w == null || w.t0 <= 0 || w.longTemp.length == 0) return out;
+		int a = Math.max(0, w.hourIndex(Math.max(from, now.getTimeInMillis()))), b = Math.min(w.longTemp.length - 1, w.hourIndex(until - 1));
+		if (a > b) return out;
+		double tMax = -999, tMin = 999, wind = 0, gust = 0, amt = 0, amt1 = 0, snow = 0;
+		int fog = 0;
+		for (int k = a; k <= b; k++) {
+			double t = w.longTemp[k];
+			if (!Double.isNaN(t)) { tMax = Math.max(tMax, t); tMin = Math.min(tMin, t); }
+			if (!Double.isNaN(w.longWind[k])) wind = Math.max(wind, w.longWind[k]);
+			if (!Double.isNaN(w.longGust[k])) gust = Math.max(gust, w.longGust[k]);
+			amt += w.longAmt[k];
+			amt1 = Math.max(amt1, w.longAmt[k]);
+			snow += w.longSnow[k];
+			if (w.longCode[k] == 45 || w.longCode[k] == 48) fog++;
+		}
+		String gusts = Tr.t("Gusts up to ", "Rafale de până la ") + kmh(gust), winds = Tr.t("Wind up to ", "Vânt de până la ") + kmh(wind);
+		String rain = Tr.t("Precipitation in total: ", "Precipitații în total: ") + mm(amt), hour = Tr.t("Most in one hour: ", "Cel mai mult într-o oră: ") + mm(amt1);
+		String hi = Tr.t("Highest: ", "Maxima: ") + deg(tMax), lo = Tr.t("Lowest: ", "Minima: ") + deg(tMin);
+		String snows = Tr.t("Snowfall in total: ", "Ninsoare în total: ") + (unitF ? String.format(java.util.Locale.US, "%.1f", snow / 2.54).replace('.', Tr.dot()) + " in" : d1(snow) + " cm");
+		String main;
+		List<String> more = new ArrayList<String>();
+		if (type.equals("wind") || type.startsWith("coastal")) { main = gusts; more.add(winds); }
+		else if (type.startsWith("thunderstorm")) { main = gusts; more.add(rain); more.add(hour); }
+		else if (type.startsWith("rain") || type.startsWith("flood")) { main = rain; more.add(hour); if (gust >= 50) more.add(gusts); }
+		else if (type.startsWith("snow") || type.startsWith("avalanche")) { main = snow > 0 ? snows : rain; more.add(lo); if (gust >= 40) more.add(gusts); }
+		else if (type.startsWith("high-temperature")) { main = hi; more.add(lo); }
+		else if (type.startsWith("low-temperature")) { main = lo; more.add(hi); }
+		else if (type.equals("fog")) { main = Tr.t("Hours of fog: ", "Ore cu ceață: ") + fog; more.add(lo); }
+		else if (type.startsWith("forest-fire")) { main = hi; more.add(gusts); }
+		else { main = gusts; more.add(rain); }
+		out.add(new String[] { "V", main });
+		for (String m : more) out.add(new String[] { "v", m });
 		return out;
 	}
 

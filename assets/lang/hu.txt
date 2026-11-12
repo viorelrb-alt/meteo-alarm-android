@@ -612,7 +612,6 @@ Slide up or down: text size.	Húzd fel vagy le: szövegméret.
 The Aa button on the pages shows the text-size bar.	Az oldalakon az Aa gomb megjeleníti a szövegméret-sávot.
 Shows where the wind blows, turned with the phone.	Megmutatja, merre fúj a szél, a telefonnal együtt fordul.
 A big dim clock while the phone charges at night.	Nagy, halvány óra, amikor a telefon éjjel töltődik.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Egy sor a vonal alatt: a földrengés, aztán a figyelmeztetések szín szerint. Koppintásra a részletek.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Az elmúlt 24 óra legerősebb földrengése az országodban, és valószínűleg hogyan érezték (EMSC).
 The rows of boxes follow the finger.	A mezősorok követik az ujjadat.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Tartsd lenyomva a kezdőképernyőt › Widgetek › Meteo Alarm. A széleket húzva váltasz elrendezést (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Bekapcsolja (teli) vagy kikapcsolja (üres) az automatikus helymeghatározást; az időjárást mutatja ott, ahol vagy. A falu, amelyen áthaladsz, bekerül a megye listájába; 7 nap után eltűnik, ha nem jársz arra, és marad, ha gyakran jársz ott (2 hét alatt 3 nap). Az iránytű a falvakat is mutatja. Másik országban vagy amerikai államban a kis települések egyszer letöltődnek, amikor először vagy ott internettel.
 Developed by Viorel-R. B.	Fejlesztette: Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Ez a Meteo Alarm Android tesztverziója.
+Gusts up to 	Széllökések legfeljebb 
+Wind up to 	Szél legfeljebb 
+Precipitation in total: 	Csapadék összesen: 
+Most in one hour: 	Legtöbb egy óra alatt: 
+Highest: 	Legmagasabb: 
+Snowfall in total: 	Havazás összesen: 
+Hours of fog: 	Ködös órák: 
+What the code means	Mit jelent a kód
+Values: the Open-Meteo forecast for the warning's interval.	Értékek: az Open-Meteo előrejelzése a figyelmeztetés időszakára.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Egy sor a vonal alatt: a földrengés, majd a figyelmeztetések szín szerint. Koppintásra felül az értékek (széllökések, mennyiségek, hőmérsékletek), majd a részletek.
+Codes on widgets	Kódok a widgeteken
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Három színes vonal a figyelmeztetési kódokhoz, minden widgeten. Kódok nélkül: egy kék vonal az első még érvényes tájékoztatással (pl. Dér).

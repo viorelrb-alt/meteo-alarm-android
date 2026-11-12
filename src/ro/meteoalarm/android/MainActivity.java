@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v4.40";
+	static final String VERSION = "Meteo Alarm Android v4.50";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2773,8 +2773,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("textsize"), Tr.t("Text size", "Mărimea textului"), Tr.t("The Aa button on the pages shows the text-size bar.", "Butonul Aa de pe pagini arată bara de mărime a textului."));
 		help.entry(mini("compass"), Tr.t("Wind arrow", "Săgeata vântului"), Tr.t("Shows where the wind blows, turned with the phone.", "Arată încotro bate vântul, rotită după telefon."));
 		help.entry(mini("sleep"), Tr.t("Night clock", "Ceasul de noapte"), Tr.t("A big dim clock while the phone charges at night.", "Un ceas mare și estompat când telefonul se încarcă noaptea."));
-		help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("One row under the line: the earthquake, then the warnings by colour. A tap shows the details.",
-				"Un rând sub linie: cutremurul, apoi avertizările pe culori. Atingerea arată detaliile."));
+		help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.",
+				"Un rând sub linie: cutremurul, apoi avertizările pe culori. Atingerea arată sus valorile (rafale, cantități, temperaturi), apoi detaliile."));
 		if (!us) help.entry(mini("info"), Tr.t("Information boxes", "Casete de informare"), Tr.t("Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.",
 				"Casetele albastre INFORMARE, după avertizări: brumă, îngheț (primăvara și toamna), ceață, polei, vânt tare în următoarele 24 de ore. Calculate de aplicație din prognoză; nu sunt oficiale. Vin și ca notificare separată."));
 		help.entry(mini("chart"), Tr.t("Precipitation chart", "Graficul de precipitații"), Tr.t("A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.",
@@ -2791,6 +2791,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Ține apăsat pe ecranul de pornire › Widgeturi › Meteo Alarm. Trage de margini ca să schimbi modelul (2x2, 4x1, 4x2, 4x3)."));
 		help.entry(mini("widget"), Tr.t("Widget 4x2 · list", "Widget-ul 4x2 · listă"), Tr.t("A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.",
 				"Temperatura mare și, în dreapta, următoarele 4 zile (câte un icon) sau ore, după alegerea din setări: Afișare starea vremii."));
+		help.entry(mini("warn"), Tr.t("Codes on widgets", "Coduri pe widget-uri"), Tr.t("Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).",
+				"Trei linii colorate pentru codurile de avertizare, pe toate widget-urile. Fără coduri: o linie albastră cu prima informare încă valabilă (ex. Brumă)."));
 		help.entry(mini("gear"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings, or ☰ › Widgets: town, background, colours.",
 				"Ține apăsat pe widget › Setări sau ☰ › Widget-uri: localitatea, fundalul, culorile."));
 		help.entry(mini("auto"), Tr.t("Refreshing by itself", "Reîmprospătare automată"), Tr.t("Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.",

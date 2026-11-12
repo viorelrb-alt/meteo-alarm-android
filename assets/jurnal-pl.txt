@@ -1,4 +1,4 @@
-Obecna wersja: v.4.40 · 10.11.2026
+Obecna wersja: v.4.50 · 12.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
 - Duży kompas: miejscowość, w której jesteś, jest pierwsza (szara); Udostępnij wysyła też obraz okna, pobliskie miejscowości z odległościami, baterię, temperatury (powietrze, grunt, na wysokości telefonu) i wiatr.
@@ -6,9 +6,11 @@ EKRAN GŁÓWNY
 - Ikony pogody: w kolorach motywu; wszystkie poruszają się 3 sekundy, także po każdym odświeżeniu i na widżetach.
 - Lokalizacja: w innym kraju lub stanie USA małe miejscowości pobierają się raz, gdy jesteś tam pierwszy raz z internetem, dla kompasu i listy miejscowości.
 - Lokalizacja: wsie, przez które przejeżdżasz, trafiają na listę okręgu (na 7 dni lub na stałe, jeśli bywasz tam często); kompas pokazuje też wsie.
+- Ostrzeżenia: dotknięcie pola kodu lub informacji pokazuje u góry wartości z prognozy (porywy, ilości, temperatury), potem okres i wyjaśnienia.
 - Pola: dotknięcie dowolnego pola pokazuje wartość u góry i objaśnienia pod nią.
 WIDŻETY
 - Widżet 4x2 · lista: duża temperatura i następne 4 dni (po jednej ikonie) lub godziny, do wyboru w ustawieniach; miejscowość ze znakiem miejscowości z kompasu.
+- Widżety: kolorowe linie kodów na każdym widżecie, bez tekstu OSTRZEŻENIE; bez kodów jedna niebieska linia z pierwszą ważną informacją (np. Szron).
 - Ulepszenia wyglądu i poprawki błędów.
 
 Wersja 3 (v.3.00 – v.3.92)

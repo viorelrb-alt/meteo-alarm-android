@@ -1,5 +1,6 @@
-Versiunea curentă: v.4.40 · 10.11.2026
+Versiunea curentă: v.4.50 · 12.11.2026
 ECRAN PRINCIPAL
+- Avertizări: atingerea unei casete de cod sau de informare arată sus valorile din prognoză (rafale, cantități, temperaturi), apoi intervalul și explicațiile.
 - Busola mare: atingerea casetei Busolă arată busola, coordonatele GPS și cele mai apropiate 3 localități colorate; Partajare trimite coordonatele.
 - Busola mare: localitatea în care ești apare prima (gri); Partajare trimite și o imagine a ferestrei, localitățile apropiate cu distanțele, bateria, temperaturile (aer, sol, la înălțimea telefonului) și vântul.
 - Casete: atingerea oricărei casete arată valoarea sus și explicațiile dedesubt.
@@ -9,6 +10,7 @@ ECRAN PRINCIPAL
 - Localizare: satele prin care treci intră în lista județului (7 zile, sau mereu dacă treci des pe acolo); busola arată și satele.
 WIDGET-URI
 - Widget-ul 4x2 · listă: temperatura mare și următoarele 4 zile (câte un icon) sau ore, la alegere în setări; localitatea cu semnul de localitate al busolei.
+- Widget-uri: liniile colorate ale codurilor pe toate widget-urile, fără textul AVERTIZARE; fără coduri, o linie albastră cu prima informare încă valabilă (ex. Brumă).
 - Îmbunătățiri de design și corectarea erorilor.
 
 Versiunea 3 (v.3.00 – v.3.92)

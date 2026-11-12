@@ -612,7 +612,6 @@ Slide up or down: text size.	Гортай угору чи вниз: розмір
 The Aa button on the pages shows the text-size bar.	Кнопка Aa на сторінках показує смугу розміру тексту.
 Shows where the wind blows, turned with the phone.	Показує, куди дме вітер, повертається разом із телефоном.
 A big dim clock while the phone charges at night.	Великий приглушений годинник, коли телефон заряджається вночі.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Один ряд під лінією: землетрус, потім попередження за кольором. Дотик показує подробиці.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Найсильніший землетрус за останні 24 години у твоїй країні і як його, імовірно, відчули (EMSC).
 The rows of boxes follow the finger.	Ряди полів рухаються за пальцем.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Утримуй головний екран › Віджети › Meteo Alarm. Тягни краї, щоб змінити вигляд (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Вмикає (заповнено) або вимикає (порожньо) автоматичне визначення місця; показує погоду там, де ви є. Село, через яке ви проїжджаєте, потрапляє до списку свого повіту; воно зникає через 7 днів без проїзду і лишається, якщо ви буваєте там часто (3 дні за 2 тижні). Компас показує й села. В іншій країні чи штаті США малі населені пункти завантажуються один раз, коли ви вперше там з інтернетом.
 Developed by Viorel-R. B.	Розробник: Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Це тестова версія Meteo Alarm Android.
+Gusts up to 	Пориви до 
+Wind up to 	Вітер до 
+Precipitation in total: 	Опади загалом: 
+Most in one hour: 	Найбільше за годину: 
+Highest: 	Максимум: 
+Snowfall in total: 	Сніг загалом: 
+Hours of fog: 	Години туману: 
+What the code means	Що означає код
+Values: the Open-Meteo forecast for the warning's interval.	Значення: прогноз Open-Meteo на період попередження.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Один ряд під лінією: землетрус, потім попередження за кольором. Дотик показує вгорі значення (пориви, кількість, температура), потім подробиці.
+Codes on widgets	Коди на віджетах
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Три кольорові лінії для кодів попередження на кожному віджеті. Без кодів: одна синя лінія з першою ще чинною інформацією (напр. Іній).

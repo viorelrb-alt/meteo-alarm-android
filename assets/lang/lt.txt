@@ -612,7 +612,6 @@ Slide up or down: text size.	Braukite aukštyn ar žemyn: teksto dydis.
 The Aa button on the pages shows the text-size bar.	Mygtukas Aa puslapiuose rodo teksto dydžio juostą.
 Shows where the wind blows, turned with the phone.	Rodo, kur pučia vėjas, sukasi kartu su telefonu.
 A big dim clock while the phone charges at night.	Didelis blankus laikrodis, kai telefonas naktį kraunamas.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Viena eilė po linija: žemės drebėjimas, tada įspėjimai pagal spalvą. Palietus rodoma informacija.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Stipriausias per paskutines 24 valandas žemės drebėjimas tavo šalyje ir kaip jis tikriausiai buvo jaučiamas (EMSC).
 The rows of boxes follow the finger.	Langelių eilės seka pirštą.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Laikyk pradžios ekraną › Valdikliai › Meteo Alarm. Tempk kraštus, kad pakeistum išdėstymą (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Įjungia (pilnas) arba išjungia (tuščias) automatinę vietą; rodo orus ten, kur esate. Kaimas, pro kurį važiuojate, įtraukiamas į apskrities sąrašą; jis dingsta po 7 dienų be pravažiavimo ir lieka, jei ten dažnai būnate (3 dienos per 2 savaites). Kompasas rodo ir kaimus. Kitoje šalyje ar JAV valstijoje mažos gyvenvietės atsisiunčiamos vieną kartą, kai pirmą kartą ten esate su internetu.
 Developed by Viorel-R. B.	Sukūrė Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Tai bandomoji Meteo Alarm Android versija.
+Gusts up to 	Gūsiai iki 
+Wind up to 	Vėjas iki 
+Precipitation in total: 	Krituliai iš viso: 
+Most in one hour: 	Daugiausia per valandą: 
+Highest: 	Aukščiausia: 
+Snowfall in total: 	Sniego iš viso: 
+Hours of fog: 	Rūko valandos: 
+What the code means	Ką reiškia kodas
+Values: the Open-Meteo forecast for the warning's interval.	Vertės: Open-Meteo prognozė įspėjimo laikotarpiui.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Viena eilė po linija: žemės drebėjimas, tada įspėjimai pagal spalvą. Palietus viršuje rodomos vertės (gūsiai, kiekiai, temperatūros), tada išsami informacija.
+Codes on widgets	Kodai valdikliuose
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trys spalvotos linijos įspėjimo kodams kiekviename valdiklyje. Be kodų: viena mėlyna linija su pirmąja dar galiojančia informacija (pvz., Šerkšnas).

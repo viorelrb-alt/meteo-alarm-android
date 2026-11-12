@@ -612,7 +612,6 @@ Slide up or down: text size.	Σύρε πάνω ή κάτω: μέγεθος κε�
 The Aa button on the pages shows the text-size bar.	Το κουμπί Aa στις σελίδες δείχνει τη μπάρα μεγέθους κειμένου.
 Shows where the wind blows, turned with the phone.	Δείχνει πού φυσά ο άνεμος, γυρίζοντας με το τηλέφωνο.
 A big dim clock while the phone charges at night.	Ένα μεγάλο αμυδρό ρολόι όταν το τηλέφωνο φορτίζει τη νύχτα.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Μία σειρά κάτω από τη γραμμή: ο σεισμός, μετά οι προειδοποιήσεις ανά χρώμα. Ένα άγγιγμα δείχνει τις λεπτομέρειες.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Ο ισχυρότερος σεισμός των τελευταίων 24 ωρών στη χώρα σου και πώς πιθανώς έγινε αισθητός (EMSC).
 The rows of boxes follow the finger.	Οι σειρές κουτιών ακολουθούν το δάχτυλο.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Κράτησε πατημένη την αρχική οθόνη › Γραφικά στοιχεία › Meteo Alarm. Σύρε τις άκρες για να αλλάξεις μορφή (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Ενεργοποιεί (γεμάτο) ή απενεργοποιεί (άδειο) τον αυτόματο εντοπισμό· δείχνει τον καιρό εκεί όπου βρίσκεστε. Ένα χωριό από το οποίο περνάτε μπαίνει στη λίστα του νομού του· φεύγει μετά από 7 ημέρες χωρίς να περάσετε ξανά και μένει αν περνάτε συχνά (3 ημέρες σε 2 εβδομάδες). Η πυξίδα δείχνει και τα χωριά. Σε άλλη χώρα ή πολιτεία των ΗΠΑ οι μικροί οικισμοί κατεβαίνουν μία φορά, την πρώτη φορά που είστε εκεί με internet.
 Developed by Viorel-R. B.	Ανάπτυξη: Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Αυτή είναι μια δοκιμαστική έκδοση του Meteo Alarm Android.
+Gusts up to 	Ριπές έως 
+Wind up to 	Άνεμος έως 
+Precipitation in total: 	Συνολικός υετός: 
+Most in one hour: 	Το περισσότερο σε μία ώρα: 
+Highest: 	Μέγιστη: 
+Snowfall in total: 	Συνολική χιονόπτωση: 
+Hours of fog: 	Ώρες με ομίχλη: 
+What the code means	Τι σημαίνει ο κωδικός
+Values: the Open-Meteo forecast for the warning's interval.	Τιμές: η πρόγνωση του Open-Meteo για το διάστημα της προειδοποίησης.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Μία σειρά κάτω από τη γραμμή: ο σεισμός, μετά οι προειδοποιήσεις κατά χρώμα. Ένα άγγιγμα δείχνει πάνω τις τιμές (ριπές, ποσότητες, θερμοκρασίες), μετά τις λεπτομέρειες.
+Codes on widgets	Κωδικοί στα widget
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Τρεις χρωματιστές γραμμές για τους κωδικούς προειδοποίησης, σε κάθε widget. Χωρίς κωδικούς: μία μπλε γραμμή με την πρώτη πληροφορία που ισχύει ακόμη (π.χ. Παχνη).

@@ -546,7 +546,6 @@ Slide up or down: text size.	Превуците горе или доле: вел
 The Aa button on the pages shows the text-size bar.	Дугме Aa на страницама приказује траку величине текста.
 Shows where the wind blows, turned with the phone.	Показује куда дува ветар, окреће се с телефоном.
 A big dim clock while the phone charges at night.	Велики пригушени сат кад се телефон ноћу пуни.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Један ред испод линије: земљотрес, па упозорења по бојама. Додир приказује детаље.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Најјачи земљотрес у последња 24 сата у вашој земљи и како се вероватно осетио (EMSC).
 The rows of boxes follow the finger.	Редови поља прате прст.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Задржите почетни екран › Виџети › Meteo Alarm. Повуците ивице да промените изглед (2x2, 4x1, 4x2, 4x3).
@@ -857,3 +856,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Укључује (пуно) или искључује (празно) аутоматску локацију; приказује време тамо где сте. Село кроз које пролазите улази у списак округа; нестаје после 7 дана без проласка и остаје ако тамо често пролазите (3 дана у 2 недеље). Компас приказује и села. У другој земљи или савезној држави САД мала места се преузимају једном, први пут када сте тамо са интернетом.
 Developed by Viorel-R. B.	Развио Viorel-R. B.
 This is a test version of Meteo Alarm Android.	Ово је пробна верзија апликације Meteo Alarm Android.
+Gusts up to 	Удари до 
+Wind up to 	Ветар до 
+Precipitation in total: 	Падавине укупно: 
+Most in one hour: 	Највише за један сат: 
+Highest: 	Највиша: 
+Snowfall in total: 	Снег укупно: 
+Hours of fog: 	Сати магле: 
+What the code means	Шта значи код
+Values: the Open-Meteo forecast for the warning's interval.	Вредности: прогноза Open-Meteo за период упозорења.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Један ред испод линије: земљотрес, затим упозорења по боји. Додир приказује горе вредности (удари, количине, температуре), затим детаље.
+Codes on widgets	Кодови на виџетима
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Три обојене линије за кодове упозорења, на сваком виџету. Без кодова: једна плава линија са првом информацијом која још важи (нпр. Слана).

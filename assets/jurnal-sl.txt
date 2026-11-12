@@ -1,14 +1,16 @@
-Trenutna različica: v.4.40 · 10.11.2026
+Trenutna različica: v.4.50 · 12.11.2026
 GLAVNI ZASLON
 - Izvoz / Uvoz: prenese vaše kraje, priljubljene, parcele in nastavitve na drugo napravo prek datoteke (Shrani, Deli; Uvozi z Dodaj ali Zamenjaj).
 - Lokacija: v drugi državi ali zvezni državi ZDA se majhni kraji prenesejo enkrat, ko ste tam prvič z internetom, za kompas in seznam krajev.
 - Lokacija: vasi, skozi katere greste, pridejo na seznam okrožja (za 7 dni ali za stalno, če greste tam pogosto); kompas prikazuje tudi vasi.
 - Okvirji: dotik katerega koli okvirja pokaže vrednost zgoraj in razlage pod njo.
+- Opozorila: dotik okvirja kode ali informacije pokaže zgoraj vrednosti napovedi (sunki, količine, temperature), nato obdobje in razlage.
 - Veliki kompas: dotik okvirja Kompas pokaže kompas, koordinate GPS in 3 najbližje kraje v barvah; Deli pošlje koordinate.
 - Veliki kompas: kraj, v katerem ste, je prvi (sivo); Deli pošlje tudi sliko okna, bližnje kraje z razdaljami, baterijo, temperature (zrak, tla, na višini telefona) in veter.
 - Vremenske ikone: v barvah teme; vse se premikajo 3 sekunde, tudi po vsaki osvežitvi in na pripomočkih.
 PRIPOMOČKI
 - Pripomoček 4x2 · seznam: velika temperatura in naslednji 4 dnevi (po ena ikona) ali ure, po izbiri v nastavitvah; kraj z oznako kraja s kompasa.
+- Pripomočki: barvne črte kod na vsakem pripomočku, brez besedila OPOZORILO; brez kod ena modra črta s prvo veljavno informacijo (npr. Slana).
 - Izboljšave oblikovanja in popravki napak.
 
 Različica 3 (v.3.00 – v.3.92)

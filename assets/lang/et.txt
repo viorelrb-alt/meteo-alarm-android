@@ -612,7 +612,6 @@ Slide up or down: text size.	Libista üles või alla: teksti suurus.
 The Aa button on the pages shows the text-size bar.	Lehtede nupp Aa näitab teksti suuruse riba.
 Shows where the wind blows, turned with the phone.	Näitab, kuhu tuul puhub, pöördub koos telefoniga.
 A big dim clock while the phone charges at night.	Suur hämar kell, kui telefon öösel laeb.
-One row under the line: the earthquake, then the warnings by colour. A tap shows the details.	Üks rida joone all: maavärin, siis hoiatused värvi järgi. Puudutus näitab üksikasju.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).	Viimase 24 tunni tugevaim maavärin sinu riigis ja kuidas seda tõenäoliselt tunti (EMSC).
 The rows of boxes follow the finger.	Kastide read järgivad sõrme.
 Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).	Hoia avakuva › Vidinad › Meteo Alarm. Lohista servi, et paigutust muuta (2x2, 4x1, 4x2, 4x3).
@@ -923,3 +922,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Lülitab automaatse asukoha sisse (täidetud) või välja (tühi); näitab ilma seal, kus oled. Küla, millest läbi sõidad, lisatakse maakonna loendisse; see kaob pärast 7 päeva ilma läbisõiduta ja jääb, kui käid seal tihti (3 päeva 2 nädala jooksul). Kompass näitab ka külasid. Teises riigis või USA osariigis laaditakse väikesed asulad alla üks kord, kui oled seal esimest korda internetiga.
 Developed by Viorel-R. B.	Arendaja: Viorel-R. B.
 This is a test version of Meteo Alarm Android.	See on Meteo Alarm Androidi testversioon.
+Gusts up to 	Puhangud kuni 
+Wind up to 	Tuul kuni 
+Precipitation in total: 	Sademeid kokku: 
+Most in one hour: 	Kõige rohkem tunnis: 
+Highest: 	Kõrgeim: 
+Snowfall in total: 	Lund kokku: 
+Hours of fog: 	Udutunde: 
+What the code means	Mida kood tähendab
+Values: the Open-Meteo forecast for the warning's interval.	Väärtused: Open-Meteo prognoos hoiatuse ajavahemikuks.
+One row under the line: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Üks rida joone all: maavärin, siis hoiatused värvi järgi. Puudutus näitab üleval väärtusi (puhangud, kogused, temperatuurid), siis üksikasju.
+Codes on widgets	Koodid vidinatel
+Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Kolm värvilist joont hoiatuskoodide jaoks igal vidinal. Koodideta: üks sinine joon esimese veel kehtiva teabega (nt Härmatis).
