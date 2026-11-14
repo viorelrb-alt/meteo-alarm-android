@@ -142,6 +142,10 @@ final class LineIcon extends Drawable {
 			h.moveTo(12, 15); h.lineTo(12, 3); h.moveTo(7, 8); h.lineTo(12, 3); h.lineTo(17, 8);
 			h.moveTo(4, 17); h.lineTo(4, 20); h.lineTo(20, 20); h.lineTo(20, 17);
 			break;
+		case "transfer": // v5.03: export / import in one icon, down and up
+			h.moveTo(8, 4); h.lineTo(8, 18); h.moveTo(4.5f, 14.5f); h.lineTo(8, 18); h.lineTo(11.5f, 14.5f);
+			h.moveTo(16, 20); h.lineTo(16, 6); h.moveTo(12.5f, 9.5f); h.lineTo(16, 6); h.lineTo(19.5f, 9.5f);
+			break;
 		case "log":
 			h.addRoundRect(new RectF(5, 3, 19, 21), 2.5f, 2.5f, Path.Direction.CW);
 			h.moveTo(8.5f, 8); h.lineTo(15.5f, 8); h.moveTo(8.5f, 12); h.lineTo(15.5f, 12); h.moveTo(8.5f, 16); h.lineTo(13, 16);

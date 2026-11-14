@@ -223,7 +223,9 @@ public final class Screen {
 		if (band > 0 && cw < ch && !tablet) drawBand();
 		else {
 			drawClock();
-			rtext(false, 26, 71, cw - 40, T.date(now), c.ink);
+			// v5.03 (Viorel): phone landscape: the date on the clock's row, left of the connection icon.
+			if (cw > ch && !tablet) rtext(false, fit(false, 26, Math.max(120, clockLeft - 40 - 560), T.date(now)), 30, clockLeft - 22, T.date(now), c.ink);
+			else rtext(false, 26, 71, cw - 40, T.date(now), c.ink);
 		}
 		// v3.10 (Viorel): in landscape "FARMER MODE" sits at the bottom left, after the buttons.
 		tagLow = cw > ch;
@@ -377,10 +379,12 @@ public final class Screen {
 		warnArea[2] = 0;
 		alerts.area[2] = 0;
 		dots((40 + leftR) / 2, 110, pages, page);
-		float wt = pages > 1 && !tagLow ? 130 : 116;
+		// v5.03 (Viorel): the warnings level with the boxes on the right (top 124).
+		float wt = pages > 1 && !tagLow ? 130 : 124;
 		float wb = drawWarnBoxes(40, wt, leftR - 40, 2, 1);
 		float nowTop = wb > 0 ? wb + 14 : wt;
-		float fy = 568;
+		// v5.03 (Viorel): the feels-like card's bottom level with the boxes on the right (fb - 14).
+		float fy = farmer && farmMerged ? 568 : fb - 90;
 		String[] d = T.describe(w.code, w.isDay);
 		drawNowSide(d[0], 40, nowTop - 60, leftR, fy + 4);
 		setNow(40, nowTop, leftR - 40, fy + 80 - nowTop);
@@ -3466,8 +3470,13 @@ public final class Screen {
 			// v3.10: landscape, right of the buttons, larger, centred on their row.
 			String s = Tr.t("FARMER MODE", "MODUL FERMIER");
 			float p = fit(true, 34, Math.max(40, dl - x), s);
-			if (dl - x > 40) ltext(true, p, fb + 32 - p * 0.56f, x, s, c.accent);
+			if (dl - x > 40) {
+				ltext(true, p, fb + 32 - p * 0.56f, x, s, c.accent);
+				x += g.width(true, p, s) + 30;
+			}
 		}
+		footX = x;
+		footR = dl;
 		drawUpdated();
 		drawNote(fb);
 	}
@@ -3885,7 +3894,14 @@ public final class Screen {
 			}
 		}
 		if (upd.length() == 0) return;
-		if (band > 0 && !updHead) {
+		if (updHead && footR - footX > 120) {
+			// v5.03 (Viorel): phone landscape: on the buttons' row, right of them.
+			float fb = btnCity[1], x = footX + 34;
+			float up = fit(bold, 24, footR - x, upd), tw = g.width(bold, up, upd), mid = fb + 32;
+			refreshIcon(x - 16, mid, up * 0.42f, bold ? c.ink : c.accent);
+			ltext(bold, up, mid - up * 0.56f, x, upd, bold ? c.ink : c.dim);
+			updArea[0] = x - 34; updArea[1] = mid - 30; updArea[2] = tw + 40; updArea[3] = 60;
+		} else if (band > 0 && !updHead) {
 			// v5.01 (Viorel): in the camera band, left of the connection icon (clear of the camera in the middle).
 			float right = clockLeft - 16, left = cw / 2f + 44, mid = lift - band / 2;
 			float up = fit(bold, Math.min(24, band * 0.36f), right - left - 30, upd), tw = g.width(bold, up, upd);
@@ -3919,4 +3935,6 @@ public final class Screen {
 
 	/** Landscape (phone): "updated" goes in the header next to the clock. */
 	private boolean updHead;
+	/** v5.03: the free part of the buttons' row (after the buttons and FARMER MODE, before the battery). */
+	private float footX, footR;
 }

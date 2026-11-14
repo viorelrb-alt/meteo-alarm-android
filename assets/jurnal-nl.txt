@@ -1,4 +1,4 @@
-Huidige versie: v.5.02 · 14.11.2026
+Huidige versie: v.5.03 · 14.11.2026
 HOOFDSCHERM
 - Groot kompas: een tik op een plaats in de lijst toont zijn teken op het kompas; plaatsen in dezelfde richting overlappen niet meer.
 INSTELLINGEN

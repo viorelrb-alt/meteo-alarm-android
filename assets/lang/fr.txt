@@ -976,3 +976,4 @@ Compass	Boussole
 works offline	fonctionne hors ligne
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	La barre en bas de la fenêtre : Widgets, Exporter / Importer, Journal, Mettre à jour, Partager, Aide, À propos. Tirée vers le haut, elle affiche les noms sous les icônes.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ ouvre les paramètres par sections ; un interrupteur active ou désactive une fonction aussitôt. Elle se ferme avec X ou en touchant à côté. Sur un téléphone, elle s'ouvre en portrait.
+Recent earthquakes	Séismes récents

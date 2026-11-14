@@ -976,3 +976,4 @@ Compass	Bussola
 works offline	funziona senza internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	La barra in fondo alla finestra: Widget, Esporta / Importa, Registro, Aggiorna, Condividi, Aiuto, Informazioni. Tirata su, mostra i nomi sotto le icone.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. Sul telefono si apre in verticale.
+Recent earthquakes	Terremoti recenti

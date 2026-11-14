@@ -1,4 +1,4 @@
-Obecna wersja: v.5.02 · 14.11.2026
+Obecna wersja: v.5.03 · 14.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie miejscowości na liście pokazuje jej znak na kompasie; miejscowości w tym samym kierunku już się nie nakładają.
 POWIADOMIENIA

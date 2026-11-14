@@ -976,3 +976,4 @@ Compass	Kompass
 works offline	töötab ilma internetita
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Riba akna allosas: Vidinad, Eksport / Import, Logi, Uuenda, Jaga, Abi, Teave. Üles tõmmatuna näitab see ikoonide all nimesid.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ avab seaded jaotiste kaupa; lüliti lülitab funktsiooni kohe sisse või välja. See sulgub X-iga või puudutusega väljaspool. Telefonis avaneb see püstpaigutuses.
+Recent earthquakes	Hiljutised maavärinad

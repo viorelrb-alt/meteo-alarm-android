@@ -976,3 +976,4 @@ Compass	Kompas
 works offline	werkt zonder internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	De balk onderaan het venster: Widgets, Exporteren / Importeren, Logboek, Bijwerken, Delen, Help, Over. Omhoog getrokken toont ze de namen onder de pictogrammen.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ opent de instellingen per onderdeel; een schakelaar zet een functie meteen aan of uit. Het sluit met X of een tik ernaast. Op een telefoon opent het staand.
+Recent earthquakes	Recente aardbevingen

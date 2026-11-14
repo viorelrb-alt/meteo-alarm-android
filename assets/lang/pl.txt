@@ -976,3 +976,4 @@ Compass	Kompas
 works offline	działa bez internetu
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Pasek na dole okna: Widżety, Eksport / Import, Dziennik, Aktualizuj, Udostępnij, Pomoc, O aplikacji. Pociągnięty w górę pokazuje nazwy pod ikonami.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ otwiera ustawienia w sekcjach; przełącznik od razu włącza lub wyłącza funkcję. Zamyka się przez X lub dotknięcie obok. Na telefonie otwiera się w pionie.
+Recent earthquakes	Ostatnie trzęsienia ziemi

@@ -1,4 +1,4 @@
-Geçerli sürüm: v.5.02 · 14.11.2026
+Geçerli sürüm: v.5.03 · 14.11.2026
 ANA EKRAN
 - Büyük pusula: listedeki bir yere dokunmak işaretini pusulada gösterir; aynı yöndeki yerler artık üst üste binmez.
 AYARLAR

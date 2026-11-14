@@ -976,3 +976,4 @@ Compass	Kompasas
 works offline	veikia be interneto
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Juosta lango apačioje: Valdikliai, Eksportas / Importas, Žurnalas, Atnaujinti, Bendrinti, Pagalba, Apie. Patraukta aukštyn, ji rodo pavadinimus po piktogramomis.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ atveria nustatymus pagal skyrius; jungiklis iškart įjungia ar išjungia funkciją. Užsidaro paspaudus X arba palietus šalia. Telefone jis atsidaro stačiai.
+Recent earthquakes	Naujausi žemės drebėjimai

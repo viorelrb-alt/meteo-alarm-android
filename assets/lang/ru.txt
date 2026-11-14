@@ -910,3 +910,4 @@ Compass	Компас
 works offline	работает без интернета
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Панель внизу окна: Виджеты, Экспорт / Импорт, Журнал, Обновить, Поделиться, Справка, О приложении. Если потянуть её вверх, под значками появятся названия.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ открывает настройки по разделам; переключатель сразу включает или выключает функцию. Закрывается крестиком X или касанием рядом. На телефоне оно открывается в портретном режиме.
+Recent earthquakes	Недавние землетрясения

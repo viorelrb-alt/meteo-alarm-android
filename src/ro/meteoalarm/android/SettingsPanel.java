@@ -55,6 +55,9 @@ final class SettingsPanel extends FrameLayout {
 	private final List<TextView> footLabels = new ArrayList<TextView>();
 	private boolean footOpen;
 	private View grab;
+	/** v5.03 (Viorel): the bar down = all its icons in one row (COMPACT); pulled up = its rows with the names. */
+	private LinearLayout compact;
+	private final List<View> footRows = new ArrayList<View>();
 
 	SettingsPanel(Context c, Typeface reg, Typeface bold) {
 		super(c);
@@ -193,7 +196,8 @@ final class SettingsPanel extends FrameLayout {
 	private void setFootOpen(boolean o) {
 		if (footOpen == o) return;
 		footOpen = o;
-		for (TextView t : footLabels) t.setVisibility(o ? VISIBLE : GONE);
+		for (View r : footRows) r.setVisibility(o ? VISIBLE : GONE);
+		if (compact != null) compact.setVisibility(o ? GONE : VISIBLE);
 		if (o) {
 			fitPending = true;
 			panel.requestLayout();
@@ -245,6 +249,8 @@ final class SettingsPanel extends FrameLayout {
 		foot.removeAllViews();
 		roles.clear();
 		footLabels.clear();
+		footRows.clear();
+		compact = null;
 		fitPending = true;
 		title.setText(head);
 		title.setTextSize(20 * zk);
@@ -608,11 +614,10 @@ final class SettingsPanel extends FrameLayout {
 		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(px(24 * zk), px(24 * zk));
 		sl.rightMargin = px(16);
 		r.addView(st, sl);
-		TextView t = text(getContext(), 16 * zk, shown);
+		// v5.03 (Viorel): the names as big as the function titles.
+		TextView t = role("head", text(getContext(), 16 * zk, true));
 		t.setText(name);
-		t.setTextColor(ink());
-		t.setSingleLine(true);
-		t.setEllipsize(TextUtils.TruncateAt.END);
+		t.setTextColor(shown ? ink() : dim());
 		r.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		r.setBackgroundResource(android.R.drawable.list_selector_background);
 		r.setOnClickListener(new OnClickListener() {
@@ -709,6 +714,10 @@ final class SettingsPanel extends FrameLayout {
 		gl.bottomMargin = px(6);
 		foot.addView(grab, gl);
 		foot.addView(footTitle);
+		compact = new LinearLayout(getContext());
+		compact.setGravity(Gravity.CENTER_VERTICAL);
+		compact.setVisibility(footOpen ? GONE : VISIBLE);
+		foot.addView(compact);
 	}
 
 	/** A row of the fixed bar: plain icons with their name under them. ICONS: one name, or "a>b" for two with › between. */
@@ -741,7 +750,6 @@ final class SettingsPanel extends FrameLayout {
 			t.setTextColor(ink());
 			t.setGravity(Gravity.CENTER);
 			t.setPadding(0, px(4), 0, 0);
-			t.setVisibility(footOpen ? VISIBLE : GONE);
 			footLabels.add(t);
 			col.setContentDescription(labels[i]);
 			col.addView(t, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -752,7 +760,27 @@ final class SettingsPanel extends FrameLayout {
 				}
 			});
 			r.addView(col, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, icons[i].contains(">") ? 1.5f : 1));
+			if (compact != null) {
+				// The same in the one row: one icon each (Export / Import: two arrows).
+				View v = new View(getContext());
+				v.setBackground(new LineIcon(icons[i].contains(">") ? "transfer" : icons[i], ink()));
+				FrameLayout cell = new FrameLayout(getContext());
+				cell.setPadding(0, px(8), 0, px(8));
+				cell.setContentDescription(labels[i]);
+				FrameLayout.LayoutParams vl = new FrameLayout.LayoutParams(is, is);
+				vl.gravity = Gravity.CENTER;
+				cell.addView(v, vl);
+				cell.setBackgroundResource(android.R.drawable.list_selector_background);
+				cell.setOnClickListener(new OnClickListener() {
+					public void onClick(View v) {
+						taps[k].run();
+					}
+				});
+				compact.addView(cell, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			}
 		}
+		r.setVisibility(footOpen ? VISIBLE : GONE);
+		footRows.add(r);
 		foot.addView(r);
 	}
 

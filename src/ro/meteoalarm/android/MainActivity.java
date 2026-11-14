@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.02";
+	static final String VERSION = "Meteo Alarm Android v5.03";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2272,7 +2272,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onMenu();
 			}
 		});
-		p.subLink("list", Tr.t("Recent earthquakes nearby", "Cutremure recente din jur"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
+		p.subLink("list", Tr.t("Recent earthquakes", "Cutremure recente"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
 			public void run() {
 				settings.hide();
 				quakesPage();

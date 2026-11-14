@@ -1,4 +1,4 @@
-Leagan reatha: v.5.02 · 14.11.2026
+Leagan reatha: v.5.03 · 14.11.2026
 FÓGRAÍ
 - Creathanna talún: fógraí ach amháin do chreathanna talún 300 km ar a mhéad ó d'áit; casann tú air nó as iad in ☰.
 - Tornádónna (SAM): casann tú fógraí tornádó do do bhaile air nó as in ☰.
