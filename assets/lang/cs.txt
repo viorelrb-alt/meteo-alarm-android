@@ -257,7 +257,6 @@ Moonrise	Východ měsíce
 Moonset	Západ měsíce
 relative humidity	relativní vlhkost
 Good	Dobrá
-Fair	Přijatelná
 Moderate	Mírná
 Poor	Špatná
 Very poor	Velmi špatná
@@ -986,3 +985,33 @@ Atmospheric	Atmosférické
 Outline	Obrysové
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 motivů ikon počasí: klepnete na tečku. Klasické a Obrysové mají barvy motivu; hýbou se 3 sekundy. Widgety mají stejné ikony.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ikony počasí: Klasické: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory. Lesklé, Ploché, Realistické, Atmosférické a Obrysové: vytvořeny pomocí Google Gemini, upraveny pro aplikaci.
+no protection needed	ochrana není potřeba
+sunglasses, hat and sunscreen at midday	brýle, klobouk a opalovací krém v poledne
+avoid the sun at midday	v poledne se vyhněte slunci
+Dry air	Suchý vzduch
+Comfortable	Příjemné
+Humid air	Vlhký vzduch
+Very humid · fog or dew likely	Velmi vlhko · pravděpodobně mlha nebo rosa
+Good · clean air	Dobrá · čistý vzduch
+Fair	Uspokojivá
+Poor · sensitive people should limit effort outdoors	Špatná · citliví lidé ať omezí námahu venku
+Very poor · unhealthy air	Velmi špatná · nezdravý vzduch
+Low pressure · unsettled weather, wind and rain likely	Nízký tlak · nestálé počasí, pravděpodobně vítr a déšť
+Slightly low pressure · changeable weather	Mírně nízký tlak · proměnlivé počasí
+Normal pressure	Normální tlak
+High pressure · settled weather	Vysoký tlak · stálé počasí
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Tlak vzduchu na hladině moře: pod 1000 hPa nízký, 1000–1013 mírně nízký, 1013–1020 normální, nad 1020 vysoký.
+Calm	Bezvětří
+Light wind	Slabý vítr
+Moderate wind	Mírný vítr
+Strong wind	Silný vítr
+Very strong wind	Velmi silný vítr
+Storm	Bouře
+New Moon	Nov
+Waxing crescent	Dorůstající srpek
+First quarter	První čtvrť
+Waxing gibbous	Dorůstající Měsíc
+Full Moon	Úplněk
+Waning gibbous	Ubývající Měsíc
+Last quarter	Poslední čtvrť
+Waning crescent	Ubývající srpek

@@ -257,7 +257,6 @@ Moonrise	Lunin vzhod
 Moonset	Lunin zahod
 relative humidity	relativna vlaga
 Good	Dobra
-Fair	Sprejemljiva
 Moderate	Zmerna
 Poor	Slaba
 Very poor	Zelo slaba
@@ -986,3 +985,33 @@ Atmospheric	Atmosferske
 Outline	Obrisne
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 tem vremenskih ikon: tapnite piko. Klasične in Obrisne prevzamejo barve teme; premikajo se 3 sekunde. Pripomočki uporabljajo iste ikone.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Vremenske ikone: Klasične: “Coloured weather icons collection”, titusurya (magnific.com), brezplačni vektorji. Sijoče, Ploske, Realistične, Atmosferske in Obrisne: ustvarjene z Google Gemini, prilagojene aplikaciji.
+no protection needed	zaščita ni potrebna
+sunglasses, hat and sunscreen at midday	opoldne očala, klobuk in krema za sončenje
+avoid the sun at midday	opoldne se izogibajte soncu
+Dry air	Suh zrak
+Comfortable	Prijetno
+Humid air	Vlažen zrak
+Very humid · fog or dew likely	Zelo vlažno · verjetna megla ali rosa
+Good · clean air	Dobra · čist zrak
+Fair	Sprejemljiva
+Poor · sensitive people should limit effort outdoors	Slaba · občutljivi naj omejijo napor zunaj
+Very poor · unhealthy air	Zelo slaba · nezdrav zrak
+Low pressure · unsettled weather, wind and rain likely	Nizek tlak · nestanovitno vreme, verjetna veter in dež
+Slightly low pressure · changeable weather	Rahlo nizek tlak · spremenljivo vreme
+Normal pressure	Normalen tlak
+High pressure · settled weather	Visok tlak · stanovitno vreme
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Zračni tlak na morski gladini: pod 1000 hPa nizek, 1000–1013 rahlo nizek, 1013–1020 normalen, nad 1020 visok.
+Calm	Brezvetrje
+Light wind	Šibek veter
+Moderate wind	Zmeren veter
+Strong wind	Močan veter
+Very strong wind	Zelo močan veter
+Storm	Nevihta
+New Moon	Mlaj
+Waxing crescent	Naraščajoči srp
+First quarter	Prvi krajec
+Waxing gibbous	Naraščajoča Luna
+Full Moon	Ščip
+Waning gibbous	Pojemajoča Luna
+Last quarter	Zadnji krajec
+Waning crescent	Pojemajoči srp

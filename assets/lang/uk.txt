@@ -257,7 +257,6 @@ Moonrise	Схід місяця
 Moonset	Захід місяця
 relative humidity	відносна вологість
 Good	Добра
-Fair	Задовільна
 Moderate	Помірна
 Poor	Погана
 Very poor	Дуже погана
@@ -986,3 +985,33 @@ Atmospheric	Атмосферна
 Outline	Контурна
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 тем значків погоди: торкніться крапки. Класична і Контурна беруть кольори теми; значки рухаються 3 секунди. Віджети беруть ті самі значки.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Значки погоди: Класична: “Coloured weather icons collection”, titusurya (magnific.com), безкоштовні вектори. Глянцева, Пласка, Реалістична, Атмосферна і Контурна: створені за допомогою Google Gemini, адаптовані для застосунку.
+no protection needed	захист не потрібен
+sunglasses, hat and sunscreen at midday	опівдні окуляри, капелюх і сонцезахисний крем
+avoid the sun at midday	опівдні уникайте сонця
+Dry air	Сухе повітря
+Comfortable	Комфортно
+Humid air	Вологе повітря
+Very humid · fog or dew likely	Дуже волого · ймовірні туман або роса
+Good · clean air	Добра · чисте повітря
+Fair	Задовільна
+Poor · sensitive people should limit effort outdoors	Погана · чутливим людям обмежити навантаження надворі
+Very poor · unhealthy air	Дуже погана · шкідливе повітря
+Low pressure · unsettled weather, wind and rain likely	Низький тиск · нестійка погода, ймовірні вітер і дощ
+Slightly low pressure · changeable weather	Трохи знижений тиск · мінлива погода
+Normal pressure	Нормальний тиск
+High pressure · settled weather	Високий тиск · стійка погода
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Тиск повітря на рівні моря: нижче 1000 гПа низький, 1000–1013 трохи знижений, 1013–1020 нормальний, вище 1020 високий.
+Calm	Штиль
+Light wind	Слабкий вітер
+Moderate wind	Помірний вітер
+Strong wind	Сильний вітер
+Very strong wind	Дуже сильний вітер
+Storm	Шторм
+New Moon	Молодик
+Waxing crescent	Молодий серп
+First quarter	Перша чверть
+Waxing gibbous	Зростаючий Місяць
+Full Moon	Повня
+Waning gibbous	Спадний Місяць
+Last quarter	Остання чверть
+Waning crescent	Старий серп

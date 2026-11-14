@@ -257,7 +257,6 @@ Moonrise	Kuutõus
 Moonset	Kuuloojang
 relative humidity	suhteline niiskus
 Good	Hea
-Fair	Rahuldav
 Moderate	Mõõdukas
 Poor	Halb
 Very poor	Väga halb
@@ -986,3 +985,33 @@ Atmospheric	Atmosfääriline
 Outline	Kontuur
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 ilmaikoonide teemat: puuduta täppi. Klassikaline ja Kontuur võtavad teema värvid; need liiguvad 3 sekundit. Vidinad kasutavad samu ikoone.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ilmaikoonid: Klassikaline: “Coloured weather icons collection”, titusurya (magnific.com), tasuta vektorid. Läikiv, Lame, Realistlik, Atmosfääriline ja Kontuur: loodud Google Geminiga, rakenduse jaoks kohandatud.
+no protection needed	kaitset pole vaja
+sunglasses, hat and sunscreen at midday	keskpäeval päikeseprillid, müts ja päikesekreem
+avoid the sun at midday	väldi keskpäeval päikest
+Dry air	Kuiv õhk
+Comfortable	Mugav
+Humid air	Niiske õhk
+Very humid · fog or dew likely	Väga niiske · udu või kaste tõenäoline
+Good · clean air	Hea · puhas õhk
+Fair	Rahuldav
+Poor · sensitive people should limit effort outdoors	Halb · tundlikud inimesed piiraku pingutust õues
+Very poor · unhealthy air	Väga halb · ebatervislik õhk
+Low pressure · unsettled weather, wind and rain likely	Madalrõhk · muutlik ilm, tuul ja vihm tõenäolised
+Slightly low pressure · changeable weather	Veidi madal rõhk · muutlik ilm
+Normal pressure	Normaalne rõhk
+High pressure · settled weather	Kõrgrõhk · püsiv ilm
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Õhurõhk merepinnal: alla 1000 hPa madal, 1000–1013 veidi madal, 1013–1020 normaalne, üle 1020 kõrge.
+Calm	Tuulevaikus
+Light wind	Nõrk tuul
+Moderate wind	Mõõdukas tuul
+Strong wind	Tugev tuul
+Very strong wind	Väga tugev tuul
+Storm	Torm
+New Moon	Noorkuu
+Waxing crescent	Kasvav sirp
+First quarter	Esimene veerand
+Waxing gibbous	Kasvav kuu
+Full Moon	Täiskuu
+Waning gibbous	Kahanev kuu
+Last quarter	Viimane veerand
+Waning crescent	Kahanev sirp

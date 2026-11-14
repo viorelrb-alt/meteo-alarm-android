@@ -257,7 +257,6 @@ Moonrise	Ανατολή σελήνης
 Moonset	Δύση σελήνης
 relative humidity	σχετική υγρασία
 Good	Καλή
-Fair	Μέτρια καλή
 Moderate	Μέτρια
 Poor	Κακή
 Very poor	Πολύ κακή
@@ -986,3 +985,33 @@ Atmospheric	Ατμοσφαιρικά
 Outline	Περίγραμμα
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 θέματα εικονιδίων καιρού: πατάτε μια κουκκίδα. Τα Κλασικά και τα Περίγραμμα παίρνουν τα χρώματα του θέματος· κινούνται 3 δευτερόλεπτα. Τα widget παίρνουν τα ίδια εικονίδια.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Εικονίδια καιρού: Κλασικά: “Coloured weather icons collection”, titusurya (magnific.com), δωρεάν διανύσματα. Γυαλιστερά, Επίπεδα, Ρεαλιστικά, Ατμοσφαιρικά και Περίγραμμα: δημιουργήθηκαν με το Google Gemini, προσαρμοσμένα για την εφαρμογή.
+no protection needed	δεν χρειάζεται προστασία
+sunglasses, hat and sunscreen at midday	γυαλιά, καπέλο και αντηλιακό το μεσημέρι
+avoid the sun at midday	αποφύγετε τον ήλιο το μεσημέρι
+Dry air	Ξηρός αέρας
+Comfortable	Άνετα
+Humid air	Υγρός αέρας
+Very humid · fog or dew likely	Πολύ υγρό · πιθανή ομίχλη ή δροσιά
+Good · clean air	Καλή · καθαρός αέρας
+Fair	Μέτρια καλή
+Poor · sensitive people should limit effort outdoors	Κακή · οι ευαίσθητοι να περιορίσουν την κόπωση έξω
+Very poor · unhealthy air	Πολύ κακή · ανθυγιεινός αέρας
+Low pressure · unsettled weather, wind and rain likely	Χαμηλή πίεση · άστατος καιρός, πιθανός άνεμος και βροχή
+Slightly low pressure · changeable weather	Ελαφρώς χαμηλή πίεση · μεταβλητός καιρός
+Normal pressure	Κανονική πίεση
+High pressure · settled weather	Υψηλή πίεση · σταθερός καιρός
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Ατμοσφαιρική πίεση στο επίπεδο της θάλασσας: κάτω από 1000 hPa χαμηλή, 1000–1013 ελαφρώς χαμηλή, 1013–1020 κανονική, πάνω από 1020 υψηλή.
+Calm	Νηνεμία
+Light wind	Ασθενής άνεμος
+Moderate wind	Μέτριος άνεμος
+Strong wind	Ισχυρός άνεμος
+Very strong wind	Πολύ ισχυρός άνεμος
+Storm	Θύελλα
+New Moon	Νέα Σελήνη
+Waxing crescent	Αύξων μηνίσκος
+First quarter	Πρώτο τέταρτο
+Waxing gibbous	Αύξουσα Σελήνη
+Full Moon	Πανσέληνος
+Waning gibbous	Φθίνουσα Σελήνη
+Last quarter	Τελευταίο τέταρτο
+Waning crescent	Φθίνων μηνίσκος

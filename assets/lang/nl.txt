@@ -257,7 +257,6 @@ Moonrise	Maanopkomst
 Moonset	Maanondergang
 relative humidity	relatieve luchtvochtigheid
 Good	Goed
-Fair	Redelijk
 Moderate	Matig
 Poor	Slecht
 Very poor	Zeer slecht
@@ -986,3 +985,33 @@ Atmospheric	Atmosferisch
 Outline	Contour
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 thema's voor weerpictogrammen: tik op een stip. Klassiek en Contour nemen de kleuren van het thema; ze bewegen 3 seconden. De widgets nemen dezelfde pictogrammen.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Weerpictogrammen: Klassiek: “Coloured weather icons collection”, titusurya (magnific.com), gratis vectoren. Glanzend, Plat, Realistisch, Atmosferisch en Contour: gemaakt met Google Gemini, aangepast voor de app.
+no protection needed	geen bescherming nodig
+sunglasses, hat and sunscreen at midday	's middags zonnebril, hoed en zonnebrandcrème
+avoid the sun at midday	vermijd 's middags de zon
+Dry air	Droge lucht
+Comfortable	Aangenaam
+Humid air	Vochtige lucht
+Very humid · fog or dew likely	Zeer vochtig · mist of dauw waarschijnlijk
+Good · clean air	Goed · schone lucht
+Fair	Redelijk
+Poor · sensitive people should limit effort outdoors	Slecht · gevoelige mensen beperken inspanning buiten
+Very poor · unhealthy air	Zeer slecht · ongezonde lucht
+Low pressure · unsettled weather, wind and rain likely	Lagedruk · wisselvallig weer, wind en regen waarschijnlijk
+Slightly low pressure · changeable weather	Iets lage druk · veranderlijk weer
+Normal pressure	Normale druk
+High pressure · settled weather	Hogedruk · bestendig weer
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Luchtdruk op zeeniveau: onder 1000 hPa laag, 1000–1013 iets laag, 1013–1020 normaal, boven 1020 hoog.
+Calm	Windstil
+Light wind	Zwakke wind
+Moderate wind	Matige wind
+Strong wind	Krachtige wind
+Very strong wind	Zeer krachtige wind
+Storm	Storm
+New Moon	Nieuwe maan
+Waxing crescent	Wassende sikkel
+First quarter	Eerste kwartier
+Waxing gibbous	Wassende maan
+Full Moon	Volle maan
+Waning gibbous	Afnemende maan
+Last quarter	Laatste kwartier
+Waning crescent	Afnemende sikkel

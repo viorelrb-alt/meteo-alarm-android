@@ -223,7 +223,6 @@ Moonrise	Ay doğuşu
 Moonset	Ay batışı
 relative humidity	bağıl nem
 Good	İyi
-Fair	Orta
 Moderate	Makul
 Poor	Kötü
 Very poor	Çok kötü
@@ -920,3 +919,33 @@ Atmospheric	Atmosferik
 Outline	Kontur
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 hava simgesi teması: bir noktaya dokunun. Klasik ve Kontur tema renklerini alır; 3 saniye hareket ederler. Widget'lar aynı simgeleri kullanır.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Hava simgeleri: Klasik: “Coloured weather icons collection”, titusurya (magnific.com), ücretsiz vektörler. Parlak, Düz, Gerçekçi, Atmosferik ve Kontur: Google Gemini ile yapıldı, uygulamaya uyarlandı.
+no protection needed	korunmaya gerek yok
+sunglasses, hat and sunscreen at midday	öğlen güneş gözlüğü, şapka ve güneş kremi
+avoid the sun at midday	öğlen güneşten kaçının
+Dry air	Kuru hava
+Comfortable	Rahat
+Humid air	Nemli hava
+Very humid · fog or dew likely	Çok nemli · sis veya çiy olası
+Good · clean air	İyi · temiz hava
+Fair	Makul
+Poor · sensitive people should limit effort outdoors	Kötü · hassas kişiler dışarıda eforu sınırlamalı
+Very poor · unhealthy air	Çok kötü · sağlıksız hava
+Low pressure · unsettled weather, wind and rain likely	Alçak basınç · kararsız hava, rüzgâr ve yağmur olası
+Slightly low pressure · changeable weather	Biraz düşük basınç · değişken hava
+Normal pressure	Normal basınç
+High pressure · settled weather	Yüksek basınç · istikrarlı hava
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Deniz seviyesinde hava basıncı: 1000 hPa altı düşük, 1000–1013 biraz düşük, 1013–1020 normal, 1020 üstü yüksek.
+Calm	Sakin
+Light wind	Hafif rüzgâr
+Moderate wind	Orta rüzgâr
+Strong wind	Kuvvetli rüzgâr
+Very strong wind	Çok kuvvetli rüzgâr
+Storm	Fırtına
+New Moon	Yeni Ay
+Waxing crescent	Büyüyen hilal
+First quarter	İlk dördün
+Waxing gibbous	Büyüyen Ay
+Full Moon	Dolunay
+Waning gibbous	Küçülen Ay
+Last quarter	Son dördün
+Waning crescent	Küçülen hilal

@@ -3040,56 +3040,89 @@ public final class Screen {
 		if (Tr.ro() && ttl.equals("LUNA")) ttl = "LUNĂ";
 		out.add(new String[] { "title", ttl + " · " + place() });
 		if (id.equals("sun")) {
-			out.add(new String[] { "V", "↑ " + Texts.clock(w.sunrise, clk12) + "   ↓ " + Texts.clock(w.sunset, clk12) });
 			int len = minutes(w.sunset) - minutes(w.sunrise);
-			if (len > 0) out.add(new String[] { "v", Tr.t("Day length: ", "Durata zilei: ") + len / 60 + " h " + len % 60 + " min" });
+			// v5.22 (Viorel): under the value what it means, the rest below.
+			out.add(new String[] { "V", "↑ " + Texts.clock(w.sunrise, clk12) + "   ↓ " + Texts.clock(w.sunset, clk12)
+					+ (len > 0 ? MEAN + Tr.t("Day length: ", "Durata zilei: ") + len / 60 + " h " + len % 60 + " min" : "") });
 			out.add(new String[] { "t", Tr.t("Sunrise and sunset at the town, local time.", "Răsăritul și apusul soarelui în localitate, ora locală.") });
 		} else if (id.equals("moon")) {
 			long ms = now.getTimeInMillis();
 			long[] rs = city != null ? Moon.riseSet(ms, city.lat, city.lon) : new long[2];
-			out.add(new String[] { "V", "↑ " + (rs[0] > 0 ? Texts.clock(hm(rs[0]), clk12) : "–") + "   ↓ " + (rs[1] > 0 ? Texts.clock(hm(rs[1]), clk12) : "–") });
+			out.add(new String[] { "V", "↑ " + (rs[0] > 0 ? Texts.clock(hm(rs[0]), clk12) : "–") + "   ↓ " + (rs[1] > 0 ? Texts.clock(hm(rs[1]), clk12) : "–")
+					+ MEAN + moonName(Moon.phase(ms)) });
 			out.add(new String[] { "v", Tr.t("Lit part of the Moon: ", "Partea luminată a Lunii: ") + Math.round(Moon.lit(ms) * 100) + "%" });
 			out.add(new String[] { "t", Tr.t("Moonrise and moonset at the town; the circle shows the lit part of the Moon.", "Răsăritul și apusul Lunii în localitate; cercul arată partea luminată a Lunii.") });
 		} else if (id.equals("uv")) {
 			int uv = w.uv, l = uv < 0 ? 0 : uv <= 2 ? 1 : uv <= 5 ? 2 : uv <= 7 ? 3 : uv <= 10 ? 4 : 5;
-			out.add(new String[] { "V", uv < 0 ? "–" : uv + " · " + T.uvLv[l - 1] });
+			String adv = l <= 1 ? Tr.t("no protection needed", "nu e nevoie de protecție") : l <= 3 ? Tr.t("sunglasses, hat and sunscreen at midday", "ochelari, pălărie și cremă la prânz")
+					: Tr.t("avoid the sun at midday", "evită soarele la prânz");
+			out.add(new String[] { "V", uv < 0 ? "–" : uv + MEAN + T.uvLv[l - 1] + " · " + adv });
 			out.add(new String[] { "t", Tr.t("UV index: how strong the sun's ultraviolet rays are at noon on a clear sky. 0–2 low, 3–5 moderate, 6–7 high, 8–10 very high, 11+ extreme.",
 					"Indicele UV: cât de puternice sunt razele ultraviolete ale soarelui la prânz, pe cer senin. 0–2 scăzut, 3–5 moderat, 6–7 ridicat, 8–10 foarte ridicat, 11+ extrem.") });
 			out.add(new String[] { "t", Tr.t("From 3 up: sunglasses, a hat and sunscreen around midday.", "De la 3 în sus: ochelari de soare, pălărie și cremă de protecție în jurul prânzului.") });
 		} else if (id.equals("pollen")) {
-			out.add(new String[] { "V", pollenLvl > 0 ? T.polLv[pollenLvl - 1] : "–" });
-			if (pollenLvl > 0 && pollenPlant.length() > 0) out.add(new String[] { "v", T.plant(pollenPlant) });
+			out.add(new String[] { "V", (pollenLvl > 0 ? T.polLv[pollenLvl - 1] : "–") + (pollenLvl > 0 && pollenPlant.length() > 0 ? MEAN + T.plant(pollenPlant) : "") });
 			out.add(new String[] { "t", Tr.t("Pollen in the air today, for the plant with the most: low, moderate, high or very high.", "Polenul din aer azi, pentru planta cu cel mai mult: scăzut, moderat, ridicat sau foarte ridicat.") });
 		} else if (id.equals("hum")) {
-			out.add(new String[] { "V", w.humidity >= 0 ? w.humidity + "%" : "–" });
+			int h = w.humidity;
+			out.add(new String[] { "V", h >= 0 ? h + "%" + MEAN + (h < 30 ? Tr.t("Dry air", "Aer uscat") : h <= 60 ? Tr.t("Comfortable", "Confortabil")
+					: h <= 90 ? Tr.t("Humid air", "Aer umed") : Tr.t("Very humid · fog or dew likely", "Foarte umed · probabil ceață sau rouă")) : "–" });
 			out.add(new String[] { "t", Tr.t("Relative humidity: how much water vapour the air holds compared with the most it could hold at this temperature. Above 90% fog or dew is likely.",
 					"Umiditatea relativă: câți vapori de apă are aerul față de cât ar putea ține la această temperatură. Peste 90% sunt probabile ceața sau roua.") });
 		} else if (id.equals("aqi")) {
 			boolean us = city != null && city.us();
-			out.add(new String[] { "V", aqi >= 0 ? Integer.toString(aqi) : "–" });
+			int q = aqi < 0 ? -1 : us ? (aqi <= 50 ? 0 : aqi <= 100 ? 2 : aqi <= 150 ? 3 : 4) : (aqi <= 20 ? 0 : aqi <= 40 ? 1 : aqi <= 60 ? 2 : aqi <= 80 ? 3 : 4);
+			String[] ql = { Tr.t("Good · clean air", "Bun · aer curat"), Tr.t("Fair", "Acceptabil"), Tr.t("Moderate", "Moderat"),
+					Tr.t("Poor · sensitive people should limit effort outdoors", "Slab · persoanele sensibile să evite efortul afară"), Tr.t("Very poor · unhealthy air", "Foarte slab · aer nesănătos") };
+			out.add(new String[] { "V", aqi >= 0 ? aqi + MEAN + ql[q] : "–" });
 			out.add(new String[] { "t", us ? Tr.t("US air quality index (EPA, 0–500): 0–50 good, 51–100 moderate, over 150 unhealthy. Lower is better.",
 					"Indicele american al calității aerului (EPA, 0–500): 0–50 bun, 51–100 moderat, peste 150 nesănătos. Mai mic e mai bine.")
 					: Tr.t("European air quality index: the worst of fine particles, ozone, nitrogen dioxide and sulphur dioxide. 0–20 good, 20–40 fair, over 60 poor. Lower is better.",
 							"Indicele european al calității aerului: cel mai rău dintre particulele fine, ozon, dioxid de azot și dioxid de sulf. 0–20 bun, 20–40 acceptabil, peste 60 slab. Mai mic e mai bine.") });
 		} else if (id.equals("press")) {
 			double pr = w.pressure;
-			out.add(new String[] { "V", Double.isNaN(pr) ? "–" : unitF ? String.format(java.util.Locale.US, "%.2f inHg", pr * 0.0295300).replace('.', Tr.dot()) : Math.round(pr) + " hPa" });
-			out.add(new String[] { "t", Tr.t("Air pressure at sea level. Rising: settled weather is coming; falling fast: wind and rain may come.",
-					"Presiunea aerului la nivelul mării. În creștere: vine vreme stabilă; în scădere rapidă: pot veni vânt și ploaie.") });
+			String pm = pr < 1000 ? Tr.t("Low pressure · unsettled weather, wind and rain likely", "Presiune joasă · vreme instabilă, posibil vânt și ploaie")
+					: pr < 1013 ? Tr.t("Slightly low pressure · changeable weather", "Presiune ușor scăzută · vreme schimbătoare")
+					: pr <= 1020 ? Tr.t("Normal pressure", "Presiune normală") : Tr.t("High pressure · settled weather", "Presiune ridicată · vreme stabilă");
+			out.add(new String[] { "V", Double.isNaN(pr) ? "–" : (unitF ? String.format(java.util.Locale.US, "%.2f inHg", pr * 0.0295300).replace('.', Tr.dot()) : Math.round(pr) + " hPa") + MEAN + pm });
+			out.add(new String[] { "t", Tr.t("Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.",
+					"Presiunea aerului la nivelul mării: sub 1000 hPa joasă, 1000–1013 ușor scăzută, 1013–1020 normală, peste 1020 ridicată.") });
 		} else if (id.equals("wind")) {
-			out.add(new String[] { "V", Double.isNaN(w.wind) ? "–" : kmh(w.wind) + (Double.isNaN(w.windDir) ? "" : " · " + dir8(w.windDir)) });
+			double ws = w.wind;
+			String wm = ws < 2 ? Tr.t("Calm", "Calm") : ws < 12 ? Tr.t("Light wind", "Vânt slab") : ws < 29 ? Tr.t("Moderate wind", "Vânt moderat")
+					: ws < 50 ? Tr.t("Strong wind", "Vânt puternic") : ws < 75 ? Tr.t("Very strong wind", "Vânt foarte puternic") : Tr.t("Storm", "Furtună");
+			out.add(new String[] { "V", Double.isNaN(ws) ? "–" : kmh(ws) + (Double.isNaN(w.windDir) ? "" : " · " + dir8(w.windDir)) + MEAN + wm });
 			out.add(new String[] { "t", Tr.t("Wind speed 10 m above the ground and the direction it blows from (the pointer on the ring).",
 					"Viteza vântului la 10 m deasupra solului și direcția din care bate (indicatorul de pe cerc).") });
 		} else if (id.equals("vis")) {
 			double v = w.visibility;
 			String val = Double.isNaN(v) ? "–" : v >= 1000 ? Math.round(v / 100) / 10.0 + " km" : Math.round(v / 10) * 10 + " m";
 			if (unitF && !Double.isNaN(v)) val = String.format(java.util.Locale.US, "%.1f mi", v / 1609.344);
-			out.add(new String[] { "V", val.replace(".0 ", " ").replace('.', Tr.dot()) });
+			int vl = Double.isNaN(v) ? 0 : v >= 10000 ? 4 : v >= 4000 ? 3 : v >= 1000 ? 2 : 1;
+			String[] vlv = T.en ? new String[] { Tr.t("Poor (fog)"), Tr.t("Moderate"), Tr.t("Good"), Tr.t("Very good") } : new String[] { "Slabă (ceață)", "Moderată", "Bună", "Foarte bună" };
+			out.add(new String[] { "V", val.replace(".0 ", " ").replace('.', Tr.dot()) + (vl > 0 ? MEAN + vlv[vl - 1] : "") });
 			out.add(new String[] { "t", Tr.t("How far one can see: under 1 km poor (fog), 1–4 km moderate, 4–10 km good, over 10 km very good.",
 					"Cât de departe se vede: sub 1 km slab (ceață), 1–4 km moderat, 4–10 km bun, peste 10 km foarte bun.") });
 		}
 		out.add(new String[] { "s", srcOM() });
 		return out;
+	}
+
+	/** v5.22: in a bubble's big value, what follows this mark is its meaning (a smaller line under it). */
+	public static final String MEAN = "\u0001";
+
+	/** v5.22: the Moon's phase (Moon.phase). */
+	private static String moonName(int k) {
+		switch (k) {
+		case 0: return Tr.t("New Moon", "Lună nouă");
+		case 1: return Tr.t("Waxing crescent", "Semilună în creștere");
+		case 2: return Tr.t("First quarter", "Primul pătrar");
+		case 3: return Tr.t("Waxing gibbous", "Lună în creștere");
+		case 4: return Tr.t("Full Moon", "Lună plină");
+		case 5: return Tr.t("Waning gibbous", "Lună în descreștere");
+		case 6: return Tr.t("Last quarter", "Ultimul pătrar");
+		default: return Tr.t("Waning crescent", "Semilună în descreștere");
+		}
 	}
 
 	/** v4.00: the bubble of hour box K outside the farmer mode: the value first, then what it means. */

@@ -1,4 +1,4 @@
-Dabartinė versija: v.5.21 · 14.11.2026
+Dabartinė versija: v.5.22 · 14.11.2026
 NUSTATYMAI
 - Nustatymai: meniu ☰ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
 - Piktogramų tema: 6 orų piktogramų temos (Klasikinė, Blizgi, Plokščia, Realistinė, Atmosferinė, Kontūrinė), pasirenkamos spalvotais taškais meniu ☰; programoje ir valdikliuose.

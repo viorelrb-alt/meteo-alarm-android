@@ -257,7 +257,6 @@ Moonrise	Tlugħ il-qamar
 Moonset	Nżul il-qamar
 relative humidity	umdità relattiva
 Good	Tajba
-Fair	Mhux ħażina
 Moderate	Moderata
 Poor	Ħażina
 Very poor	Ħażina ħafna
@@ -986,3 +985,33 @@ Atmospheric	Atmosferiku
 Outline	Kontorn
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 temi tal-ikoni tat-temp: agħfas tikka. Klassiku u Kontorn jieħdu l-kuluri tat-tema; jiċċaqilqu għal 3 sekondi. Il-widgets jieħdu l-istess ikoni.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ikoni tat-temp: Klassiku: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn. Tleqq, Ċatt, Realistiku, Atmosferiku u Kontorn: magħmula b'Google Gemini, adattati għall-app.
+no protection needed	m'hemmx bżonn protezzjoni
+sunglasses, hat and sunscreen at midday	nuċċalijiet, kappell u krema tax-xemx f'nofsinhar
+avoid the sun at midday	evita x-xemx f'nofsinhar
+Dry air	Arja niexfa
+Comfortable	Komdu
+Humid air	Arja umda
+Very humid · fog or dew likely	Umdu ħafna · probabbli ċpar jew nida
+Good · clean air	Tajba · arja nadifa
+Fair	Aċċettabbli
+Poor · sensitive people should limit effort outdoors	Ħażina · persuni sensittivi jillimitaw l-isforz barra
+Very poor · unhealthy air	Ħażina ħafna · arja ħażina għas-saħħa
+Low pressure · unsettled weather, wind and rain likely	Pressjoni baxxa · temp instabbli, probabbli riħ u xita
+Slightly low pressure · changeable weather	Pressjoni kemmxejn baxxa · temp li jinbidel
+Normal pressure	Pressjoni normali
+High pressure · settled weather	Pressjoni għolja · temp stabbli
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Pressjoni tal-arja fil-livell tal-baħar: taħt 1000 hPa baxxa, 1000–1013 kemmxejn baxxa, 1013–1020 normali, 'il fuq minn 1020 għolja.
+Calm	Kalma
+Light wind	Riħ ħafif
+Moderate wind	Riħ moderat
+Strong wind	Riħ qawwi
+Very strong wind	Riħ qawwi ħafna
+Storm	Maltempata
+New Moon	Qamar ġdid
+Waxing crescent	Nofs qamar jikber
+First quarter	L-ewwel kwart
+Waxing gibbous	Qamar jikber
+Full Moon	Qamar kwinta
+Waning gibbous	Qamar jonqos
+Last quarter	L-aħħar kwart
+Waning crescent	Nofs qamar jonqos

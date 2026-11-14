@@ -223,7 +223,6 @@ Moonrise	Восход луны
 Moonset	Заход луны
 relative humidity	относительная влажность
 Good	Хорошее
-Fair	Удовлетворительное
 Moderate	Умеренное
 Poor	Плохое
 Very poor	Очень плохое
@@ -920,3 +919,33 @@ Atmospheric	Атмосферная
 Outline	Контурная
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 тем значков погоды: нажмите на точку. Классическая и Контурная берут цвета темы; значки двигаются 3 секунды. Виджеты берут те же значки.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Значки погоды: Классическая: “Coloured weather icons collection”, titusurya (magnific.com), бесплатные векторы. Глянцевая, Плоская, Реалистичная, Атмосферная и Контурная: созданы с помощью Google Gemini, адаптированы для приложения.
+no protection needed	защита не нужна
+sunglasses, hat and sunscreen at midday	в полдень очки, шляпа и солнцезащитный крем
+avoid the sun at midday	в полдень избегайте солнца
+Dry air	Сухой воздух
+Comfortable	Комфортно
+Humid air	Влажный воздух
+Very humid · fog or dew likely	Очень влажно · вероятны туман или роса
+Good · clean air	Хорошее · чистый воздух
+Fair	Удовлетворительное
+Poor · sensitive people should limit effort outdoors	Плохое · чувствительным людям ограничить нагрузку на улице
+Very poor · unhealthy air	Очень плохое · вредный воздух
+Low pressure · unsettled weather, wind and rain likely	Низкое давление · неустойчивая погода, вероятны ветер и дождь
+Slightly low pressure · changeable weather	Слегка пониженное давление · переменчивая погода
+Normal pressure	Нормальное давление
+High pressure · settled weather	Высокое давление · устойчивая погода
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Давление воздуха на уровне моря: ниже 1000 гПа низкое, 1000–1013 слегка пониженное, 1013–1020 нормальное, выше 1020 высокое.
+Calm	Штиль
+Light wind	Слабый ветер
+Moderate wind	Умеренный ветер
+Strong wind	Сильный ветер
+Very strong wind	Очень сильный ветер
+Storm	Шторм
+New Moon	Новолуние
+Waxing crescent	Растущий серп
+First quarter	Первая четверть
+Waxing gibbous	Растущая Луна
+Full Moon	Полнолуние
+Waning gibbous	Убывающая Луна
+Last quarter	Последняя четверть
+Waning crescent	Убывающий серп

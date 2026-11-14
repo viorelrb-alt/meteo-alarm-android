@@ -46,7 +46,7 @@ final class Glass {
 
 	/** The darkening over the blurred screen. */
 	static int scrim(boolean dark) {
-		return dark ? 0x73000000 : 0x40202830;
+		return dark ? 0x40000000 : 0x1A202830; // v5.22: lighter, the frosted windows show the screen
 	}
 
 	/** The round buttons (X, Aa): a faint disc. */
@@ -166,6 +166,39 @@ final class Glass {
 
 	// --- The blurred screen behind the windows -----------------------------------------------
 
+	/** v5.22: the blurred copy of the screen while a bubble alone is open, and where the screen is. */
+	static Bitmap shot;
+	static int shotX, shotY, shotW, shotH;
+
+	/**
+	 * v5.22 (Viorel): frosted glass for view V's rectangle R: the blurred screen under it, a
+	 * see-through tint of the page, the edge. Without the copy: the matte window as before.
+	 */
+	static void drawFrost(Canvas c, Paint p, View v, RectF r, float rad, boolean dark, float dp) {
+		Bitmap b = shot;
+		if (b == null || b.isRecycled() || shotW <= 0) {
+			drawMatte(c, p, r, rad, dark, dp);
+			return;
+		}
+		int[] at = new int[2];
+		v.getLocationOnScreen(at);
+		android.graphics.Path clip = new android.graphics.Path();
+		clip.addRoundRect(r, rad, rad, android.graphics.Path.Direction.CW);
+		c.save();
+		c.clipPath(clip);
+		Paint bp = new Paint(Paint.FILTER_BITMAP_FLAG);
+		float ox = shotX - at[0], oy = shotY - at[1];
+		c.drawBitmap(b, null, new RectF(ox, oy, ox + shotW, oy + shotH), bp);
+		c.restore();
+		p.setStyle(Paint.Style.FILL);
+		p.setColor(alpha(Theme.page(dark), 0.55f));
+		c.drawRoundRect(r, rad, rad, p);
+		p.setStyle(Paint.Style.STROKE);
+		p.setStrokeWidth(Math.max(1, dp));
+		p.setColor(alpha(Theme.ink(dark), dark ? 0.22f : 0.16f));
+		c.drawRoundRect(r, rad, rad, p);
+	}
+
 	/**
 	 * Sits right over the screen and under the windows. Each frame it checks whether a window is
 	 * open; when one opens it blurs CONTENT (Android 12+) or shows a blurred copy of it, and darkens.
@@ -198,10 +231,17 @@ final class Glass {
 		void watch(View root) {
 			root.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
 				public boolean onPreDraw() {
-					boolean want = false;
-					for (View w : windows) if (w != null && w.getVisibility() == VISIBLE) want = true;
-					if (want != on) {
-						set(want);
+					boolean want = false, other = false, bub = false;
+					for (View w : windows)
+						if (w != null && w.getVisibility() == VISIBLE) {
+							want = true;
+							if (w instanceof Bubble) bub = true;
+							else other = true;
+						}
+					// v5.22 (Viorel): a bubble alone leaves the screen sharp; only the bubble is frosted glass.
+					boolean loc = bub && !other;
+					if (want != on || loc != local) {
+						set(want, loc);
 						return false;
 					}
 					return true;
@@ -209,11 +249,25 @@ final class Glass {
 			});
 		}
 
-		private void set(boolean want) {
+		private boolean local;
+
+		private void set(boolean want, boolean loc) {
 			on = want;
+			local = want && loc;
+			// v5.22: the blurred copy for a bubble's own glass (it draws the part under itself).
+			shot = local ? snapshot(6) : null;
+			if (local) {
+				int[] at = new int[2];
+				content.getLocationOnScreen(at);
+				shotX = at[0];
+				shotY = at[1];
+				shotW = content.getWidth();
+				shotH = content.getHeight();
+			}
+			boolean full = want && !local;
 			if (Build.VERSION.SDK_INT >= 31) {
 				try {
-					content.setRenderEffect(want ? android.graphics.RenderEffect.createBlurEffect(18 * dp, 18 * dp, android.graphics.Shader.TileMode.CLAMP) : null);
+					content.setRenderEffect(full ? android.graphics.RenderEffect.createBlurEffect(18 * dp, 18 * dp, android.graphics.Shader.TileMode.CLAMP) : null);
 				} catch (Throwable t) {
 				}
 			} else {
@@ -221,18 +275,18 @@ final class Glass {
 					copy.recycle();
 					copy = null;
 				}
-				if (want) copy = snapshot();
+				if (full) copy = snapshot(10);
 			}
-			setVisibility(want ? VISIBLE : GONE);
+			setVisibility(full ? VISIBLE : GONE);
 			invalidate();
 		}
 
-		/** A small copy of the screen, blurred (older Android). */
-		private Bitmap snapshot() {
+		/** A small copy of the screen (1/F), blurred. */
+		private Bitmap snapshot(int f) {
 			try {
 				int W = content.getWidth(), H = content.getHeight();
 				if (W <= 0 || H <= 0) return null;
-				int f = 10, w = Math.max(1, W / f), h = Math.max(1, H / f);
+				int w = Math.max(1, W / f), h = Math.max(1, H / f);
 				Bitmap b = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
 				Canvas c = new Canvas(b);
 				c.scale(1f / f, 1f / f);

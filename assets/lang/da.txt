@@ -257,7 +257,6 @@ Moonrise	Måneopgang
 Moonset	Månenedgang
 relative humidity	relativ luftfugtighed
 Good	God
-Fair	Rimelig
 Moderate	Moderat
 Poor	Dårlig
 Very poor	Meget dårlig
@@ -986,3 +985,33 @@ Atmospheric	Atmosfærisk
 Outline	Kontur
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 temaer for vejrikoner: tryk på en prik. Klassisk og Kontur får temaets farver; de bevæger sig i 3 sekunder. Widgets får de samme ikoner.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Vejrikoner: Klassisk: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer. Blank, Flad, Realistisk, Atmosfærisk og Kontur: lavet med Google Gemini, tilpasset til appen.
+no protection needed	ingen beskyttelse nødvendig
+sunglasses, hat and sunscreen at midday	solbriller, hat og solcreme midt på dagen
+avoid the sun at midday	undgå solen midt på dagen
+Dry air	Tør luft
+Comfortable	Behageligt
+Humid air	Fugtig luft
+Very humid · fog or dew likely	Meget fugtigt · tåge eller dug sandsynlig
+Good · clean air	God · ren luft
+Fair	Rimelig
+Poor · sensitive people should limit effort outdoors	Dårlig · følsomme personer bør begrænse anstrengelser udendørs
+Very poor · unhealthy air	Meget dårlig · usund luft
+Low pressure · unsettled weather, wind and rain likely	Lavtryk · ustadigt vejr, vind og regn sandsynlig
+Slightly low pressure · changeable weather	Let lavt tryk · skiftende vejr
+Normal pressure	Normalt tryk
+High pressure · settled weather	Højtryk · stabilt vejr
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Lufttryk ved havniveau: under 1000 hPa lavt, 1000–1013 let lavt, 1013–1020 normalt, over 1020 højt.
+Calm	Stille
+Light wind	Svag vind
+Moderate wind	Moderat vind
+Strong wind	Kraftig vind
+Very strong wind	Meget kraftig vind
+Storm	Storm
+New Moon	Nymåne
+Waxing crescent	Tiltagende segl
+First quarter	Første kvarter
+Waxing gibbous	Tiltagende måne
+Full Moon	Fuldmåne
+Waning gibbous	Aftagende måne
+Last quarter	Sidste kvarter
+Waning crescent	Aftagende segl

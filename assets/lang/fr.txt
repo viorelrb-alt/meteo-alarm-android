@@ -257,7 +257,6 @@ Moonrise	Lever de lune
 Moonset	Coucher de lune
 relative humidity	humidité relative
 Good	Bonne
-Fair	Correcte
 Moderate	Moyenne
 Poor	Mauvaise
 Very poor	Très mauvaise
@@ -986,3 +985,33 @@ Atmospheric	Atmosphérique
 Outline	Contour
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 thèmes d'icônes météo : touchez un point. Classique et Contour prennent les couleurs du thème ; elles bougent 3 secondes. Les widgets prennent les mêmes icônes.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Icônes météo : Classique : “Coloured weather icons collection”, titusurya (magnific.com), vecteurs gratuits. Brillant, Plat, Réaliste, Atmosphérique et Contour : créés avec Google Gemini, adaptés pour l'application.
+no protection needed	pas besoin de protection
+sunglasses, hat and sunscreen at midday	lunettes, chapeau et crème solaire à midi
+avoid the sun at midday	évitez le soleil à midi
+Dry air	Air sec
+Comfortable	Confortable
+Humid air	Air humide
+Very humid · fog or dew likely	Très humide · brouillard ou rosée probables
+Good · clean air	Bonne · air pur
+Fair	Correcte
+Poor · sensitive people should limit effort outdoors	Mauvaise · les personnes sensibles doivent limiter l'effort dehors
+Very poor · unhealthy air	Très mauvaise · air malsain
+Low pressure · unsettled weather, wind and rain likely	Basse pression · temps instable, vent et pluie probables
+Slightly low pressure · changeable weather	Pression un peu basse · temps changeant
+Normal pressure	Pression normale
+High pressure · settled weather	Haute pression · temps stable
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Pression de l'air au niveau de la mer : moins de 1000 hPa basse, 1000–1013 un peu basse, 1013–1020 normale, plus de 1020 haute.
+Calm	Calme
+Light wind	Vent faible
+Moderate wind	Vent modéré
+Strong wind	Vent fort
+Very strong wind	Vent très fort
+Storm	Tempête
+New Moon	Nouvelle lune
+Waxing crescent	Premier croissant
+First quarter	Premier quartier
+Waxing gibbous	Lune gibbeuse croissante
+Full Moon	Pleine lune
+Waning gibbous	Lune gibbeuse décroissante
+Last quarter	Dernier quartier
+Waning crescent	Dernier croissant

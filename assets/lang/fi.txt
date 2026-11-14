@@ -257,7 +257,6 @@ Moonrise	Kuunnousu
 Moonset	Kuunlasku
 relative humidity	suhteellinen kosteus
 Good	Hyvä
-Fair	Kohtalainen
 Moderate	Tyydyttävä
 Poor	Huono
 Very poor	Erittäin huono
@@ -986,3 +985,33 @@ Atmospheric	Ilmakehä
 Outline	Ääriviiva
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 sääkuvaketeemaa: napauta pistettä. Klassinen ja Ääriviiva käyttävät teeman värejä; ne liikkuvat 3 sekuntia. Widgetit käyttävät samoja kuvakkeita.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Sääkuvakkeet: Klassinen: “Coloured weather icons collection”, titusurya (magnific.com), ilmaiset vektorit. Kiiltävä, Litteä, Realistinen, Ilmakehä ja Ääriviiva: tehty Google Geminillä, mukautettu sovellukseen.
+no protection needed	suojausta ei tarvita
+sunglasses, hat and sunscreen at midday	aurinkolasit, hattu ja aurinkovoide keskipäivällä
+avoid the sun at midday	vältä aurinkoa keskipäivällä
+Dry air	Kuiva ilma
+Comfortable	Miellyttävä
+Humid air	Kostea ilma
+Very humid · fog or dew likely	Hyvin kostea · sumu tai kaste todennäköinen
+Good · clean air	Hyvä · puhdas ilma
+Fair	Tyydyttävä
+Poor · sensitive people should limit effort outdoors	Huono · herkkien kannattaa välttää rasitusta ulkona
+Very poor · unhealthy air	Erittäin huono · epäterveellinen ilma
+Low pressure · unsettled weather, wind and rain likely	Matalapaine · epävakaa sää, tuuli ja sade todennäköisiä
+Slightly low pressure · changeable weather	Hieman matala paine · vaihteleva sää
+Normal pressure	Normaali paine
+High pressure · settled weather	Korkeapaine · vakaa sää
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Ilmanpaine merenpinnan tasolla: alle 1000 hPa matala, 1000–1013 hieman matala, 1013–1020 normaali, yli 1020 korkea.
+Calm	Tyyntä
+Light wind	Heikko tuuli
+Moderate wind	Kohtalainen tuuli
+Strong wind	Voimakas tuuli
+Very strong wind	Erittäin voimakas tuuli
+Storm	Myrsky
+New Moon	Uusikuu
+Waxing crescent	Kasvava sirppi
+First quarter	Ensimmäinen neljännes
+Waxing gibbous	Kasvava kuu
+Full Moon	Täysikuu
+Waning gibbous	Vähenevä kuu
+Last quarter	Viimeinen neljännes
+Waning crescent	Vähenevä sirppi

@@ -1,4 +1,4 @@
-Versión actual: v.5.21 · 14.11.2026
+Versión actual: v.5.22 · 14.11.2026
 AJUSTES
 - Ajustes: el menú ☰ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
 - Tema de iconos: 6 temas de iconos del tiempo (Clásico, Brillante, Plano, Realista, Atmosférico, Contorno), se eligen con puntos de color en ☰; en la app y en los widgets.

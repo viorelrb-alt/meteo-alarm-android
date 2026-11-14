@@ -257,7 +257,6 @@ Moonrise	Mondaufgang
 Moonset	Monduntergang
 relative humidity	relative Luftfeuchte
 Good	Gut
-Fair	Ordentlich
 Moderate	Mäßig
 Poor	Schlecht
 Very poor	Sehr schlecht
@@ -986,3 +985,33 @@ Atmospheric	Atmosphärisch
 Outline	Kontur
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 Themen für Wettersymbole: Tippen auf einen Punkt. Klassisch und Kontur übernehmen die Farben des Designs; sie bewegen sich 3 Sekunden. Die Widgets übernehmen dieselben Symbole.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Wettersymbole: Klassisch: “Coloured weather icons collection”, titusurya (magnific.com), kostenlose Vektoren. Glänzend, Flach, Realistisch, Atmosphärisch und Kontur: mit Google Gemini erstellt, für die App angepasst.
+no protection needed	kein Schutz nötig
+sunglasses, hat and sunscreen at midday	mittags Sonnenbrille, Hut und Sonnencreme
+avoid the sun at midday	mittags die Sonne meiden
+Dry air	Trockene Luft
+Comfortable	Angenehm
+Humid air	Feuchte Luft
+Very humid · fog or dew likely	Sehr feucht · Nebel oder Tau wahrscheinlich
+Good · clean air	Gut · saubere Luft
+Fair	Ausreichend
+Poor · sensitive people should limit effort outdoors	Schlecht · empfindliche Menschen sollten Anstrengung im Freien einschränken
+Very poor · unhealthy air	Sehr schlecht · ungesunde Luft
+Low pressure · unsettled weather, wind and rain likely	Tiefdruck · unbeständiges Wetter, Wind und Regen wahrscheinlich
+Slightly low pressure · changeable weather	Leicht tiefer Druck · wechselhaftes Wetter
+Normal pressure	Normaler Druck
+High pressure · settled weather	Hochdruck · beständiges Wetter
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Luftdruck auf Meereshöhe: unter 1000 hPa tief, 1000–1013 leicht tief, 1013–1020 normal, über 1020 hoch.
+Calm	Windstill
+Light wind	Schwacher Wind
+Moderate wind	Mäßiger Wind
+Strong wind	Starker Wind
+Very strong wind	Sehr starker Wind
+Storm	Sturm
+New Moon	Neumond
+Waxing crescent	Zunehmende Sichel
+First quarter	Erstes Viertel
+Waxing gibbous	Zunehmender Mond
+Full Moon	Vollmond
+Waning gibbous	Abnehmender Mond
+Last quarter	Letztes Viertel
+Waning crescent	Abnehmende Sichel

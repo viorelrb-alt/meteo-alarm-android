@@ -257,7 +257,6 @@ Moonrise	Salida de la luna
 Moonset	Puesta de la luna
 relative humidity	humedad relativa
 Good	Buena
-Fair	Aceptable
 Moderate	Moderada
 Poor	Mala
 Very poor	Muy mala
@@ -1056,3 +1055,33 @@ Atmospheric	Atmosférico
 Outline	Contorno
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 temas de iconos del tiempo: toca un punto. Clásico y Contorno usan los colores del tema; se mueven 3 segundos. Los widgets usan los mismos iconos.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Iconos del tiempo: Clásico: “Coloured weather icons collection”, titusurya (magnific.com), vectores gratuitos. Brillante, Plano, Realista, Atmosférico y Contorno: creados con Google Gemini, adaptados para la app.
+no protection needed	no hace falta protección
+sunglasses, hat and sunscreen at midday	gafas, sombrero y protector solar a mediodía
+avoid the sun at midday	evita el sol a mediodía
+Dry air	Aire seco
+Comfortable	Confortable
+Humid air	Aire húmedo
+Very humid · fog or dew likely	Muy húmedo · probable niebla o rocío
+Good · clean air	Buena · aire limpio
+Fair	Aceptable
+Poor · sensitive people should limit effort outdoors	Mala · las personas sensibles deben limitar el esfuerzo al aire libre
+Very poor · unhealthy air	Muy mala · aire insalubre
+Low pressure · unsettled weather, wind and rain likely	Presión baja · tiempo inestable, probable viento y lluvia
+Slightly low pressure · changeable weather	Presión algo baja · tiempo variable
+Normal pressure	Presión normal
+High pressure · settled weather	Presión alta · tiempo estable
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Presión del aire a nivel del mar: menos de 1000 hPa baja, 1000–1013 algo baja, 1013–1020 normal, más de 1020 alta.
+Calm	Calma
+Light wind	Viento flojo
+Moderate wind	Viento moderado
+Strong wind	Viento fuerte
+Very strong wind	Viento muy fuerte
+Storm	Temporal
+New Moon	Luna nueva
+Waxing crescent	Luna creciente
+First quarter	Cuarto creciente
+Waxing gibbous	Gibosa creciente
+Full Moon	Luna llena
+Waning gibbous	Gibosa menguante
+Last quarter	Cuarto menguante
+Waning crescent	Luna menguante

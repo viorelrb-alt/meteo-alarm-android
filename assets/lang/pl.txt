@@ -257,7 +257,6 @@ Moonrise	Wschód księżyca
 Moonset	Zachód księżyca
 relative humidity	wilgotność względna
 Good	Dobra
-Fair	Umiarkowanie dobra
 Moderate	Umiarkowana
 Poor	Zła
 Very poor	Bardzo zła
@@ -986,3 +985,33 @@ Atmospheric	Atmosferyczny
 Outline	Konturowy
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 motywów ikon pogody: dotknij kropki. Klasyczny i Konturowy przyjmują kolory motywu; ruszają się 3 sekundy. Widżety mają te same ikony.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ikony pogody: Klasyczny: “Coloured weather icons collection”, titusurya (magnific.com), darmowe wektory. Błyszczący, Płaski, Realistyczny, Atmosferyczny i Konturowy: stworzone w Google Gemini, dostosowane do aplikacji.
+no protection needed	ochrona niepotrzebna
+sunglasses, hat and sunscreen at midday	w południe okulary, kapelusz i krem z filtrem
+avoid the sun at midday	unikaj słońca w południe
+Dry air	Suche powietrze
+Comfortable	Komfortowo
+Humid air	Wilgotne powietrze
+Very humid · fog or dew likely	Bardzo wilgotno · prawdopodobna mgła lub rosa
+Good · clean air	Dobra · czyste powietrze
+Fair	Umiarkowanie dobra
+Poor · sensitive people should limit effort outdoors	Zła · osoby wrażliwe niech ograniczą wysiłek na zewnątrz
+Very poor · unhealthy air	Bardzo zła · niezdrowe powietrze
+Low pressure · unsettled weather, wind and rain likely	Niskie ciśnienie · niestała pogoda, prawdopodobny wiatr i deszcz
+Slightly low pressure · changeable weather	Lekko niskie ciśnienie · zmienna pogoda
+Normal pressure	Normalne ciśnienie
+High pressure · settled weather	Wysokie ciśnienie · stała pogoda
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Ciśnienie powietrza na poziomie morza: poniżej 1000 hPa niskie, 1000–1013 lekko niskie, 1013–1020 normalne, powyżej 1020 wysokie.
+Calm	Cisza
+Light wind	Słaby wiatr
+Moderate wind	Umiarkowany wiatr
+Strong wind	Silny wiatr
+Very strong wind	Bardzo silny wiatr
+Storm	Sztorm
+New Moon	Nów
+Waxing crescent	Przybywający sierp
+First quarter	Pierwsza kwadra
+Waxing gibbous	Przybywający Księżyc
+Full Moon	Pełnia
+Waning gibbous	Ubywający Księżyc
+Last quarter	Ostatnia kwadra
+Waning crescent	Ubywający sierp

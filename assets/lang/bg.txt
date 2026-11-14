@@ -257,7 +257,6 @@ Moonrise	Изгрев на луната
 Moonset	Залез на луната
 relative humidity	относителна влажност
 Good	Добро
-Fair	Приемливо
 Moderate	Умерено
 Poor	Лошо
 Very poor	Много лошо
@@ -986,3 +985,33 @@ Atmospheric	Атмосферни
 Outline	Контурни
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 теми на иконите за времето: докосвате точка. Класически и Контурни взимат цветовете на темата; движат се 3 секунди. Уиджетите взимат същите икони.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Икони за времето: Класически: “Coloured weather icons collection”, titusurya (magnific.com), безплатни вектори. Лъскави, Плоски, Реалистични, Атмосферни и Контурни: създадени с Google Gemini, адаптирани за приложението.
+no protection needed	не е нужна защита
+sunglasses, hat and sunscreen at midday	очила, шапка и слънцезащитен крем по обед
+avoid the sun at midday	избягвайте слънцето по обед
+Dry air	Сух въздух
+Comfortable	Комфортно
+Humid air	Влажен въздух
+Very humid · fog or dew likely	Много влажно · вероятна мъгла или роса
+Good · clean air	Добро · чист въздух
+Fair	Задоволително
+Poor · sensitive people should limit effort outdoors	Лошо · чувствителните хора да ограничат усилията навън
+Very poor · unhealthy air	Много лошо · нездравословен въздух
+Low pressure · unsettled weather, wind and rain likely	Ниско налягане · нестабилно време, вероятни вятър и дъжд
+Slightly low pressure · changeable weather	Леко ниско налягане · променливо време
+Normal pressure	Нормално налягане
+High pressure · settled weather	Високо налягане · стабилно време
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Атмосферно налягане на морското равнище: под 1000 hPa ниско, 1000–1013 леко ниско, 1013–1020 нормално, над 1020 високо.
+Calm	Тихо
+Light wind	Слаб вятър
+Moderate wind	Умерен вятър
+Strong wind	Силен вятър
+Very strong wind	Много силен вятър
+Storm	Буря
+New Moon	Новолуние
+Waxing crescent	Растящ сърп
+First quarter	Първа четвърт
+Waxing gibbous	Растяща луна
+Full Moon	Пълнолуние
+Waning gibbous	Намаляваща луна
+Last quarter	Последна четвърт
+Waning crescent	Намаляващ сърп

@@ -257,7 +257,6 @@ Moonrise	Východ mesiaca
 Moonset	Západ mesiaca
 relative humidity	relatívna vlhkosť
 Good	Dobrá
-Fair	Prijateľná
 Moderate	Mierna
 Poor	Zlá
 Very poor	Veľmi zlá
@@ -986,3 +985,33 @@ Atmospheric	Atmosférické
 Outline	Obrysové
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 motívov ikon počasia: ťuknite na bodku. Klasické a Obrysové majú farby motívu; hýbu sa 3 sekundy. Widgety majú rovnaké ikony.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ikony počasia: Klasické: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory. Lesklé, Ploché, Realistické, Atmosférické a Obrysové: vytvorené pomocou Google Gemini, upravené pre aplikáciu.
+no protection needed	ochrana nie je potrebná
+sunglasses, hat and sunscreen at midday	napoludnie okuliare, klobúk a opaľovací krém
+avoid the sun at midday	napoludnie sa vyhnite slnku
+Dry air	Suchý vzduch
+Comfortable	Príjemné
+Humid air	Vlhký vzduch
+Very humid · fog or dew likely	Veľmi vlhko · pravdepodobne hmla alebo rosa
+Good · clean air	Dobrá · čistý vzduch
+Fair	Uspokojivá
+Poor · sensitive people should limit effort outdoors	Zlá · citliví ľudia nech obmedzia námahu vonku
+Very poor · unhealthy air	Veľmi zlá · nezdravý vzduch
+Low pressure · unsettled weather, wind and rain likely	Nízky tlak · nestále počasie, pravdepodobne vietor a dážď
+Slightly low pressure · changeable weather	Mierne nízky tlak · premenlivé počasie
+Normal pressure	Normálny tlak
+High pressure · settled weather	Vysoký tlak · stále počasie
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Tlak vzduchu na hladine mora: pod 1000 hPa nízky, 1000–1013 mierne nízky, 1013–1020 normálny, nad 1020 vysoký.
+Calm	Bezvetrie
+Light wind	Slabý vietor
+Moderate wind	Mierny vietor
+Strong wind	Silný vietor
+Very strong wind	Veľmi silný vietor
+Storm	Búrka
+New Moon	Nov
+Waxing crescent	Dorastajúci kosák
+First quarter	Prvá štvrť
+Waxing gibbous	Dorastajúci Mesiac
+Full Moon	Spln
+Waning gibbous	Ubúdajúci Mesiac
+Last quarter	Posledná štvrť
+Waning crescent	Ubúdajúci kosák

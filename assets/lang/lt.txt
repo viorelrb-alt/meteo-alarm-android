@@ -257,7 +257,6 @@ Moonrise	Mėnulio patekėjimas
 Moonset	Mėnulio nusileidimas
 relative humidity	santykinė drėgmė
 Good	Gera
-Fair	Patenkinama
 Moderate	Vidutinė
 Poor	Prasta
 Very poor	Labai prasta
@@ -986,3 +985,33 @@ Atmospheric	Atmosferinė
 Outline	Kontūrinė
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 orų piktogramų temos: bakstelėkite tašką. Klasikinė ir Kontūrinė naudoja temos spalvas; juda 3 sekundes. Valdikliai naudoja tas pačias piktogramas.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Orų piktogramos: Klasikinė: “Coloured weather icons collection”, titusurya (magnific.com), nemokami vektoriai. Blizgi, Plokščia, Realistinė, Atmosferinė ir Kontūrinė: sukurtos su Google Gemini, pritaikytos programai.
+no protection needed	apsauga nereikalinga
+sunglasses, hat and sunscreen at midday	vidurdienį akiniai, skrybėlė ir kremas nuo saulės
+avoid the sun at midday	vidurdienį venkite saulės
+Dry air	Sausas oras
+Comfortable	Patogu
+Humid air	Drėgnas oras
+Very humid · fog or dew likely	Labai drėgna · tikėtinas rūkas ar rasa
+Good · clean air	Gera · švarus oras
+Fair	Patenkinama
+Poor · sensitive people should limit effort outdoors	Bloga · jautrūs žmonės teriboja pastangas lauke
+Very poor · unhealthy air	Labai bloga · nesveikas oras
+Low pressure · unsettled weather, wind and rain likely	Žemas slėgis · nepastovūs orai, tikėtinas vėjas ir lietus
+Slightly low pressure · changeable weather	Šiek tiek žemas slėgis · permainingi orai
+Normal pressure	Normalus slėgis
+High pressure · settled weather	Aukštas slėgis · pastovūs orai
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Oro slėgis jūros lygyje: žemiau 1000 hPa žemas, 1000–1013 šiek tiek žemas, 1013–1020 normalus, virš 1020 aukštas.
+Calm	Ramu
+Light wind	Silpnas vėjas
+Moderate wind	Vidutinis vėjas
+Strong wind	Stiprus vėjas
+Very strong wind	Labai stiprus vėjas
+Storm	Audra
+New Moon	Jaunatis
+Waxing crescent	Augantis pjautuvas
+First quarter	Priešpilnis
+Waxing gibbous	Augantis Mėnulis
+Full Moon	Pilnatis
+Waning gibbous	Dylantis Mėnulis
+Last quarter	Delčia
+Waning crescent	Dylantis pjautuvas

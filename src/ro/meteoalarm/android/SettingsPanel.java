@@ -264,10 +264,10 @@ final class SettingsPanel extends FrameLayout {
 		closeX.setBackground(Glass.closeIcon(dark, dp));
 		headLine.setBackgroundColor(Glass.edge(dark));
 		GradientDrawable pb = Glass.panelBg(dark, 30 * dp, dp);
-		pb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.86f : 0.9f));
+		pb.setColor(Glass.alpha(Theme.page(dark), 0.55f)); // v5.22 (Viorel): frosted glass, the screen shows through
 		panel.setBackground(pb);
 		GradientDrawable fb = new GradientDrawable();
-		fb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.5f : 0.55f));
+		fb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.35f : 0.4f));
 		fb.setCornerRadii(new float[] { 0, 0, 0, 0, 30 * dp, 30 * dp, 30 * dp, 30 * dp });
 		fb.setStroke(Math.max(1, (int) dp), Glass.edge(dark));
 		foot.setBackground(fb);
@@ -766,7 +766,7 @@ final class SettingsPanel extends FrameLayout {
 					ic.addView(ch, new LinearLayout.LayoutParams(px(13 * zk), px(13 * zk)));
 				}
 				View v = new View(getContext());
-				v.setBackground(AnimIcon.of(getContext().getAssets(), parts[j], ink()));
+				v.setBackground(AnimIcon.of(getContext().getAssets(), parts[j], accent()));
 				ic.addView(v, new LinearLayout.LayoutParams(is, is));
 			}
 			col.addView(ic, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, is));
@@ -788,7 +788,7 @@ final class SettingsPanel extends FrameLayout {
 			if (compact != null) {
 				// The same in the one row: one icon each (Export / Import: two arrows).
 				View v = new View(getContext());
-				v.setBackground(AnimIcon.of(getContext().getAssets(), icons[i].contains(">") ? "transfer" : icons[i], ink()));
+				v.setBackground(AnimIcon.of(getContext().getAssets(), icons[i].contains(">") ? "transfer" : icons[i], accent()));
 				FrameLayout cell = new FrameLayout(getContext());
 				cell.setPadding(0, px(8), 0, px(8));
 				cell.setContentDescription(labels[i]);
@@ -812,8 +812,8 @@ final class SettingsPanel extends FrameLayout {
 	/** Opens (or, already open, shows the new content keeping the scroll). */
 	void show() {
 		View pv = (View) getParent();
-		int sw = pv != null && pv.getWidth() > 0 ? pv.getWidth() : getResources().getDisplayMetrics().widthPixels;
-		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() : getResources().getDisplayMetrics().heightPixels;
+		int sw = pv != null && pv.getWidth() > 0 ? pv.getWidth() - pv.getPaddingLeft() - pv.getPaddingRight() : getResources().getDisplayMetrics().widthPixels;
+		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() - pv.getPaddingTop() - pv.getPaddingBottom() : getResources().getDisplayMetrics().heightPixels;
 		int m = px(14);
 		int w = Math.min(sw - 2 * m, sw < sh ? sw : Math.round(Math.min(sw * 0.62f, 620 * dp * zk)));
 		if (sw < sh && TextSize.tablet(getContext())) w = Math.min(w, Math.round(sw * 0.78f));

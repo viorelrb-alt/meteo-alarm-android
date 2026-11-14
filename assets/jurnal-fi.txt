@@ -1,4 +1,4 @@
-Nykyinen versio: v.5.21 · 14.11.2026
+Nykyinen versio: v.5.22 · 14.11.2026
 ASETUKSET
 - Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
 - Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ☰; sovelluksessa ja widgeteissä.

@@ -287,10 +287,21 @@ final class Bubble extends FrameLayout {
 			}
 			if (r.kind == Row.BIG) {
 				// v4.51 (Viorel): a long value ("Rafale de până la 75 km/h") smaller, on up to 2 lines, never cut.
-				TextView t = text(c, (r.text.length() > 14 ? 26 : 34) * zk, true);
+				// v5.22 (Viorel): what the value means, on a smaller line under it (after Screen.MEAN).
+				int mk = r.text.indexOf(ro.meteoalarm.android.core.Screen.MEAN);
+				String val = mk >= 0 ? r.text.substring(0, mk) : r.text;
+				TextView t = text(c, (val.length() > 14 ? 26 : 34) * zk, true);
 				t.setTag("text");
-				t.setMaxLines(2);
-				t.setText(nb(r.text));
+				t.setMaxLines(mk >= 0 ? 5 : 2);
+				if (mk >= 0) {
+					String mean = r.text.substring(mk + 1);
+					android.text.SpannableStringBuilder sb = new android.text.SpannableStringBuilder(nb(val));
+					int st = sb.length();
+					sb.append("\n").append(mean);
+					sb.setSpan(new android.text.style.RelativeSizeSpan((val.length() > 14 ? 15.5f / 26 : 15.5f / 34)), st, sb.length(), 0);
+					sb.setSpan(new android.text.style.ForegroundColorSpan(ro.meteoalarm.android.core.Theme.accent(dark)), st, sb.length(), 0);
+					t.setText(sb);
+				} else t.setText(nb(r.text));
 				t.setTextColor(ink);
 				t.setGravity(Gravity.CENTER);
 				t.setPadding((int) (16 * dp), (int) (12 * dp), (int) (16 * dp), (int) (14 * dp));
@@ -409,6 +420,12 @@ final class Bubble extends FrameLayout {
 		View pv = (View) getParent();
 		int sw = pv != null && pv.getWidth() > 0 ? pv.getWidth() : getResources().getDisplayMetrics().widthPixels;
 		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() : getResources().getDisplayMetrics().heightPixels;
+		// v5.22 (Viorel: the bubble touched the right edge): the room inside the screen's padding
+		// (the camera cut-out), since the bubble is placed inside it.
+		if (pv != null && pv.getWidth() > 0) {
+			sw -= pv.getPaddingLeft() + pv.getPaddingRight();
+			sh -= pv.getPaddingTop() + pv.getPaddingBottom();
+		}
 		// v5.00 (Viorel): a window in the middle of the screen (no tip toward the button).
 		int margin = (int) (16 * dp), tip = 0;
 		// Every row on one line, all choices in the same font: the bubble grows to hold the longest
@@ -474,7 +491,8 @@ final class Bubble extends FrameLayout {
 		// neither side has room the bubble gets narrower by the arrows' width.
 		int aw = (int) (28 * dp * zk), gap = (int) (1 * dp);
 		if (scrolls && !pan) {
-			int nw = sw - gap - aw - 2 * gap;
+			// v5.22 (Viorel): the bubble and its arrows keep the 16 dp margin on both sides.
+			int nw = sw - 2 * margin - gap - aw;
 			if (nw < width) {
 				width = nw;
 				inner = width - (int) (32 * dp);
@@ -508,7 +526,10 @@ final class Bubble extends FrameLayout {
 		}
 		if (scrolls) {
 			int ax;
-			if (x + width + gap + aw <= sw - gap) ax = x + width + gap;
+			if (!pan) {
+				x = Math.max(margin, (sw - width - gap - aw) / 2);
+				ax = x + width + gap;
+			} else if (x + width + gap + aw <= sw - gap) ax = x + width + gap;
 			else if (x - gap - aw >= gap) ax = x - gap - aw;
 			else {
 				x = Math.max(gap, sw - 2 * gap - aw - width);
@@ -557,7 +578,7 @@ final class Bubble extends FrameLayout {
 		float sd = getResources().getDisplayMetrics().scaledDensity, min = text;
 		for (TextView t : values) min = Math.min(min, t.getTextSize() / sd);
 		for (Grid g : grids) min = Math.min(min, g.sp());
-		for (TextView t : srcs) t.setTextSize(min - 0.5f);
+		for (TextView t : srcs) t.setTextSize(min - 3); // v5.22 (Viorel): the source 3 points smaller than the rest
 	}
 
 	/** The height of the title's line and the place under it, at WIDTH. */
@@ -611,7 +632,7 @@ final class Bubble extends FrameLayout {
 		@Override
 		protected void onDraw(Canvas c) {
 			// v5.00 (Viorel): frosted glass, large rounded corners, a faint edge.
-			Glass.drawMatte(c, p, new RectF(dp / 2, dp / 2, getWidth() - dp / 2, getHeight() - dp / 2), 26 * dp, dark, dp);
+			Glass.drawFrost(c, p, this, new RectF(dp / 2, dp / 2, getWidth() - dp / 2, getHeight() - dp / 2), 26 * dp, dark, dp); // v5.22
 		}
 	}
 

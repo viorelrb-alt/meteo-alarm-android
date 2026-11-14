@@ -223,7 +223,6 @@ Moonrise	Излазак месеца
 Moonset	Залазак месеца
 relative humidity	релативна влажност
 Good	Добар
-Fair	Прихватљив
 Moderate	Умерен
 Poor	Лош
 Very poor	Веома лош
@@ -920,3 +919,33 @@ Atmospheric	Атмосферске
 Outline	Обрисне
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 тема икона времена: додирните тачку. Класичне и Обрисне узимају боје теме; померају се 3 секунде. Виџети узимају исте иконе.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Иконе времена: Класичне: “Coloured weather icons collection”, titusurya (magnific.com), бесплатни вектори. Сјајне, Равне, Реалистичне, Атмосферске и Обрисне: направљене помоћу Google Gemini, прилагођене апликацији.
+no protection needed	заштита није потребна
+sunglasses, hat and sunscreen at midday	у подне наочаре, шешир и крема за сунчање
+avoid the sun at midday	избегавајте сунце у подне
+Dry air	Сув ваздух
+Comfortable	Пријатно
+Humid air	Влажан ваздух
+Very humid · fog or dew likely	Веома влажно · вероватна магла или роса
+Good · clean air	Добар · чист ваздух
+Fair	Прихватљив
+Poor · sensitive people should limit effort outdoors	Лош · осетљиве особе нека ограниче напор напољу
+Very poor · unhealthy air	Веома лош · нездрав ваздух
+Low pressure · unsettled weather, wind and rain likely	Низак притисак · нестабилно време, вероватни ветар и киша
+Slightly low pressure · changeable weather	Мало снижен притисак · променљиво време
+Normal pressure	Нормалан притисак
+High pressure · settled weather	Висок притисак · стабилно време
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Притисак ваздуха на нивоу мора: испод 1000 hPa низак, 1000–1013 мало снижен, 1013–1020 нормалан, изнад 1020 висок.
+Calm	Тишина
+Light wind	Слаб ветар
+Moderate wind	Умерен ветар
+Strong wind	Јак ветар
+Very strong wind	Веома јак ветар
+Storm	Олуја
+New Moon	Млад месец
+Waxing crescent	Растући срп
+First quarter	Прва четврт
+Waxing gibbous	Растући Месец
+Full Moon	Пун месец
+Waning gibbous	Опадајући Месец
+Last quarter	Последња четврт
+Waning crescent	Опадајући срп

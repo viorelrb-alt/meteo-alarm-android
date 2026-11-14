@@ -257,7 +257,6 @@ Moonrise	Holdkelte
 Moonset	Holdnyugta
 relative humidity	relatív páratartalom
 Good	Jó
-Fair	Elfogadható
 Moderate	Közepes
 Poor	Rossz
 Very poor	Nagyon rossz
@@ -986,3 +985,33 @@ Atmospheric	Légköri
 Outline	Körvonalas
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 időjárásikon-téma: koppintson egy pöttyre. A Klasszikus és a Körvonalas a téma színeit veszi fel; 3 másodpercig mozognak. A widgetek ugyanezeket az ikonokat használják.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Időjárás-ikonok: Klasszikus: “Coloured weather icons collection”, titusurya (magnific.com), ingyenes vektorok. Fényes, Lapos, Valósághű, Légköri és Körvonalas: Google Geminivel készült, az alkalmazáshoz igazítva.
+no protection needed	nincs szükség védelemre
+sunglasses, hat and sunscreen at midday	délben napszemüveg, kalap és naptej
+avoid the sun at midday	délben kerülje a napot
+Dry air	Száraz levegő
+Comfortable	Kellemes
+Humid air	Párás levegő
+Very humid · fog or dew likely	Nagyon párás · köd vagy harmat valószínű
+Good · clean air	Jó · tiszta levegő
+Fair	Elfogadható
+Poor · sensitive people should limit effort outdoors	Rossz · az érzékenyek kerüljék a megerőltetést a szabadban
+Very poor · unhealthy air	Nagyon rossz · egészségtelen levegő
+Low pressure · unsettled weather, wind and rain likely	Alacsony légnyomás · változékony idő, szél és eső valószínű
+Slightly low pressure · changeable weather	Kissé alacsony légnyomás · változó idő
+Normal pressure	Normál légnyomás
+High pressure · settled weather	Magas légnyomás · állandó idő
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Légnyomás tengerszinten: 1000 hPa alatt alacsony, 1000–1013 kissé alacsony, 1013–1020 normál, 1020 felett magas.
+Calm	Szélcsend
+Light wind	Gyenge szél
+Moderate wind	Mérsékelt szél
+Strong wind	Erős szél
+Very strong wind	Nagyon erős szél
+Storm	Vihar
+New Moon	Újhold
+Waxing crescent	Növekvő sarló
+First quarter	Első negyed
+Waxing gibbous	Növekvő hold
+Full Moon	Telihold
+Waning gibbous	Fogyó hold
+Last quarter	Utolsó negyed
+Waning crescent	Fogyó sarló

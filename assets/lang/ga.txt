@@ -257,7 +257,6 @@ Moonrise	Éirí gealaí
 Moonset	Luí gealaí
 relative humidity	taise choibhneasta
 Good	Maith
-Fair	Measartha maith
 Moderate	Measartha
 Poor	Lag
 Very poor	An-lag
@@ -986,3 +985,33 @@ Atmospheric	Atmaisféarach
 Outline	Imlíne
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 théama deilbhíní aimsire: tapáil ponc. Úsáideann Clasaiceach agus Imlíne dathanna an téama; bogann siad ar feadh 3 soicind. Úsáideann na giuirléidí na deilbhíní céanna.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Deilbhíní aimsire: Clasaiceach: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce. Snasta, Cothrom, Réalaíoch, Atmaisféarach agus Imlíne: déanta le Google Gemini, curtha in oiriúint don aip.
+no protection needed	níl gá le cosaint
+sunglasses, hat and sunscreen at midday	spéaclaí gréine, hata agus uachtar gréine ag meánlae
+avoid the sun at midday	seachain an ghrian ag meánlae
+Dry air	Aer tirim
+Comfortable	Compordach
+Humid air	Aer tais
+Very humid · fog or dew likely	An-tais · ceo nó drúcht dócha
+Good · clean air	Maith · aer glan
+Fair	Measartha maith
+Poor · sensitive people should limit effort outdoors	Lag · ba chóir do dhaoine íogaire srian a chur ar iarracht amuigh
+Very poor · unhealthy air	An-lag · aer míshláintiúil
+Low pressure · unsettled weather, wind and rain likely	Brú íseal · aimsir éagobhsaí, gaoth agus báisteach dócha
+Slightly low pressure · changeable weather	Brú beagán íseal · aimsir athraitheach
+Normal pressure	Brú gnáth
+High pressure · settled weather	Brú ard · aimsir sheasmhach
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Brú an aeir ag leibhéal na farraige: faoi 1000 hPa íseal, 1000–1013 beagán íseal, 1013–1020 gnáth, os cionn 1020 ard.
+Calm	Ciúin
+Light wind	Gaoth éadrom
+Moderate wind	Gaoth mheasartha
+Strong wind	Gaoth láidir
+Very strong wind	Gaoth an-láidir
+Storm	Stoirm
+New Moon	Gealach nua
+Waxing crescent	Corrán ag líonadh
+First quarter	An chéad cheathrú
+Waxing gibbous	Gealach ag líonadh
+Full Moon	Gealach lán
+Waning gibbous	Gealach ag cúlú
+Last quarter	An ceathrú deireanach
+Waning crescent	Corrán ag cúlú

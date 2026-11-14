@@ -257,7 +257,6 @@ Moonrise	Månuppgång
 Moonset	Månnedgång
 relative humidity	relativ luftfuktighet
 Good	Bra
-Fair	Godtagbar
 Moderate	Måttlig
 Poor	Dålig
 Very poor	Mycket dålig
@@ -986,3 +985,33 @@ Atmospheric	Atmosfärisk
 Outline	Kontur
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 teman för väderikoner: tryck på en prick. Klassisk och Kontur får temats färger; de rör sig i 3 sekunder. Widgetarna använder samma ikoner.
 Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Väderikoner: Klassisk: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer. Blank, Platt, Realistisk, Atmosfärisk och Kontur: gjorda med Google Gemini, anpassade för appen.
+no protection needed	inget skydd behövs
+sunglasses, hat and sunscreen at midday	solglasögon, hatt och solkräm mitt på dagen
+avoid the sun at midday	undvik solen mitt på dagen
+Dry air	Torr luft
+Comfortable	Behagligt
+Humid air	Fuktig luft
+Very humid · fog or dew likely	Mycket fuktigt · dimma eller dagg trolig
+Good · clean air	God · ren luft
+Fair	Godtagbar
+Poor · sensitive people should limit effort outdoors	Dålig · känsliga personer bör begränsa ansträngning utomhus
+Very poor · unhealthy air	Mycket dålig · ohälsosam luft
+Low pressure · unsettled weather, wind and rain likely	Lågtryck · ostadigt väder, vind och regn troliga
+Slightly low pressure · changeable weather	Något lågt tryck · växlande väder
+Normal pressure	Normalt tryck
+High pressure · settled weather	Högtryck · stabilt väder
+Air pressure at sea level: under 1000 hPa low, 1000–1013 slightly low, 1013–1020 normal, over 1020 high.	Lufttryck vid havsnivå: under 1000 hPa lågt, 1000–1013 något lågt, 1013–1020 normalt, över 1020 högt.
+Calm	Stilla
+Light wind	Svag vind
+Moderate wind	Måttlig vind
+Strong wind	Hård vind
+Very strong wind	Mycket hård vind
+Storm	Storm
+New Moon	Nymåne
+Waxing crescent	Tilltagande skära
+First quarter	Första kvarteret
+Waxing gibbous	Tilltagande måne
+Full Moon	Fullmåne
+Waning gibbous	Avtagande måne
+Last quarter	Sista kvarteret
+Waning crescent	Avtagande skära
