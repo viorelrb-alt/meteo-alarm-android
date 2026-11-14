@@ -1736,9 +1736,9 @@ public final class Screen {
 		return dark ? mix(c.page, c.ink, 0.065f) : mix(c.page, Gfx.WHITE, 0.72f);
 	}
 
-	/** A card's edge (v5.20, Viorel: clearer in both themes). */
+	/** A card's soft glass edge (v5.21, Viorel: the frosted-glass look back, a little clearer than v5.10). */
 	private int edge() {
-		return dark ? mix(c.page, c.ink, 0.30f) : mix(c.page, c.ink, 0.25f);
+		return dark ? mix(c.page, c.ink, 0.21f) : mix(c.page, c.ink, 0.16f);
 	}
 
 	/** Thin lines inside the cards. */
@@ -1749,7 +1749,7 @@ public final class Screen {
 	/** A glass card X Y W H with corners R. */
 	private void card(float x, float y, float w, float h, float r) {
 		g.roundRect(x, y, w, h, r, edge());
-		g.roundRect(x + 2.2f, y + 2.2f, w - 4.4f, h - 4.4f, r - 2.2f, glass());
+		g.roundRect(x + 1.5f, y + 1.5f, w - 3, h - 3, r - 1.5f, glass());
 	}
 
 	private void ltext(boolean bold, float px, float top, float left, String s, int color) {

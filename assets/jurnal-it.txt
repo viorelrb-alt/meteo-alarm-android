@@ -1,4 +1,4 @@
-Versione attuale: v.5.20 · 14.11.2026
+Versione attuale: v.5.21 · 14.11.2026
 IMPOSTAZIONI
 - Impostazioni: il menu ☰ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
 - Tema icone: 6 temi di icone meteo (Classico, Lucido, Piatto, Realistico, Atmosferico, Contorno), si scelgono con punti colorati in ☰; nell'app e nei widget.
