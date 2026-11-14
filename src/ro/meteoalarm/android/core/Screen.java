@@ -306,7 +306,8 @@ public final class Screen {
 		// v3.50 (Viorel): the "Statistics · PDF" button under the information / warning / earthquake
 		// boxes when they show; in their place (under the top line) when they do not.
 		// v5.01 (Viorel): with "updated" in the camera band the warnings move up under the town.
-		float top = drawWarnBoxes(40, band > 0 ? (pages > 1 ? 132 : 108) : 158, 678, 2, 1), sb;
+		// v5.25 (Viorel): under "FARMER MODE" / the dots with a gap (the boxes touched them).
+		float top = drawWarnBoxes(40, band > 0 ? (pages > 1 || farmer ? 154 : 108) : 158, 678, 2, 1), sb;
 		if (top > 0) {
 			sb = statsButton(40, top + 12, 58, 400, 26) > 40 ? 70 : 0;
 			top += sb;
@@ -3495,26 +3496,35 @@ public final class Screen {
 				batLeft = rtext(true, mp, gy - 4 + (26 - mp) * 81 / 100, batLeft - 10, T.charging, c.ink);
 			}
 		}
-		float x = btnSensor[0] + btnSensor[2] + 24, dl = batLeft - 30;
+		float x = btnSensor[0] + btnSensor[2] + 24, dl = batLeft - 30, dotsR = 0;
 		if (lowPages > 1) {
 			float dw = lowPages * 22 - 10, dx = cw / 2 - dw / 2;
 			for (int k = 0; k < lowPages; k++) g.roundRect(dx + k * 22, fb + 26, 12, 12, 6, k == lowPage ? c.ink : c.dim);
 			dl = dx - 30;
+			dotsR = dx + dw + 30;
 		}
-		if (statsLow) x = statsButton(x, fb, 64, Math.max(120, dl - x - (farmer && tagLow ? 200 : 0)), 26) + 30;
-		else x += 6;
+		String ms = Tr.t("FARMER MODE", "MODUL FERMIER");
+		// v5.25 (Viorel): on a parcel's screen "FARMER MODE" keeps its usual size and "updated" its place
+		// on this row (it went over the date): Statistics · PDF, FARMER MODE, updated, before the dots;
+		// when the three do not fit there, "updated" goes right of the dots, next to the battery.
+		float modeW = farmer && tagLow ? g.width(true, 34, ms) + 30 : 0, updW = g.width(false, 24, T.updated + " 00:00") + 60;
+		boolean updAfter = false;
+		if (statsLow) {
+			float statsW = g.width(true, 26, Tr.t("Statistics · PDF", "Statistică · PDF")) + 36 + 30;
+			updAfter = parcel != null && farmer && tagLow && dotsR > 0 && x + statsW + modeW + updW > dl;
+			x = statsButton(x, fb, 64, Math.max(120, updAfter ? (dl - x) * 0.45f : dl - x - modeW - updW - 30), 26) + 30;
+		} else x += 6;
 		if (farmer && tagLow) {
 			// v3.10: landscape, right of the buttons, larger, centred on their row.
-			String s = Tr.t("FARMER MODE", "MODUL FERMIER");
 			// v5.10 (Viorel): room left for "updated" at the right, next to the battery.
-			float p = fit(true, 34, Math.max(40, (dl - x) * 0.5f), s);
+			float p = fit(true, 34, Math.max(40, updAfter ? dl - x : Math.max((dl - x) * 0.5f, dl - x - updW)), ms);
 			if (dl - x > 40) {
-				ltext(true, p, fb + 32 - p * 0.56f, x, s, c.accent);
-				x += g.width(true, p, s) + 30;
+				ltext(true, p, fb + 32 - p * 0.56f, x, ms, c.accent);
+				x += g.width(true, p, ms) + 30;
 			}
 		}
-		footX = x;
-		footR = dl;
+		footX = updAfter ? dotsR : x;
+		footR = updAfter ? batLeft - 30 : dl;
 		footRight = farmer && tagLow;
 		drawUpdated();
 		drawNote(fb);

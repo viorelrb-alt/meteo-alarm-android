@@ -499,7 +499,7 @@ public class Widget extends AppWidgetProvider {
 		RemoteViews v = new RemoteViews(ctx.getPackageName(), R.layout.widget);
 		v.setImageViewBitmap(R.id.widget_image, bm);
 		v.setContentDescription(R.id.widget_image, d.w != null ? d.T.describe(d.w.code, d.w.isDay)[1] : "Meteo Alarm");
-		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra(MainActivity.FROM_WIDGET, true);
 		v.setOnClickPendingIntent(R.id.widget_root, PendingIntent.getActivity(ctx, 0, open,
 				PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
 		mgr.updateAppWidget(id, v);

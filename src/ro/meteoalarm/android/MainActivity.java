@@ -49,7 +49,9 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.24";
+	static final String VERSION = "Meteo Alarm Android v5.25";
+	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
+	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1715,6 +1717,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (updater != null && updater.working()) return; // an update being downloaded goes on
 		Log.i(this, "APP", "închisă: ecranul a fost stins 10 s");
 		finish();
+	}
+
+	/**
+	 * v5.25 (Viorel): a tap on a widget while the app waits in the background with a window open:
+	 * every window closes and the main screen of the widget's place (the town) shows.
+	 */
+	@Override
+	protected void onNewIntent(Intent i) {
+		super.onNewIntent(i);
+		setIntent(i);
+		if (i == null || !i.getBooleanExtra(FROM_WIDGET, false)) return;
+		Log.i(this, "APP", "deschisă din widget");
+		closeWindows();
+		if (sheet != null && sheet.isOpen() && sheet.isCancelable()) sheet.hide();
+		if (s != null && s.farmer && pageId != 0) showPage(0);
+		if (view != null) view.invalidate();
 	}
 
 	/** v5.23 (Viorel): a bubble open when the screen turns off (or the app leaves) closes; it came back empty. */

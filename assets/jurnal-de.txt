@@ -1,4 +1,4 @@
-Aktuelle Version: v.5.24 · 14.11.2026
+Aktuelle Version: v.5.25 · 14.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
 - Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.

@@ -262,7 +262,7 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		// v5.00 (Viorel): each explanation in a glass card, its icon on a faint disc.
 		int cp = (int) (14 * dp);
 		row.setPadding(cp, cp, cp, cp);
-		row.setBackground(Glass.cardBg(dark, 20 * dp, dp));
+		row.setBackground(Glass.paneBg(dark, 20 * dp, dp)); // v5.25: more opaque, easier to read
 		ImageView iv = new ImageView(c);
 		iv.setImageBitmap(icon);
 		int s = (int) (44 * dp);

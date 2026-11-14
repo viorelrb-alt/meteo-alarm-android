@@ -63,6 +63,18 @@ final class Glass {
 		return g;
 	}
 
+	/**
+	 * v5.25 (Viorel): a second, more opaque sheet of frosted glass on the window (the Help texts),
+	 * so the text reads easily over what shows through.
+	 */
+	static GradientDrawable paneBg(boolean dark, float r, float dp) {
+		GradientDrawable g = new GradientDrawable();
+		g.setColor(alpha(Theme.page(dark), dark ? 0.6f : 0.68f));
+		g.setCornerRadius(r);
+		g.setStroke(Math.max(1, Math.round(dp)), edge(dark));
+		return g;
+	}
+
 	/** The window itself as a background (radius R px). */
 	static GradientDrawable panelBg(boolean dark, float r, float dp) {
 		GradientDrawable g = new GradientDrawable();
