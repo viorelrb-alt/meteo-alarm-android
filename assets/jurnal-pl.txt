@@ -1,4 +1,14 @@
-Obecna wersja: v.4.52 · 12.11.2026
+Obecna wersja: v.5.00 · 14.11.2026
+EKRAN GŁÓWNY
+- Duży kompas: dotknięcie miejscowości na liście pokazuje jej znak na kompasie; miejscowości w tym samym kierunku już się nie nakładają.
+POWIADOMIENIA
+- Tornada (USA): powiadomienia o tornadach dla twojej miejscowości włącza się lub wyłącza w ☰.
+- Trzęsienia ziemi: powiadomienia tylko o trzęsieniach ziemi najwyżej 300 km od twojego miejsca; włączane lub wyłączane w ☰.
+USTAWIENIA
+- Ustawienia: menu ☰ jest teraz oknem z sekcjami, przełącznikami, motywami kolorystycznymi i paskiem System i pomoc; odświeżanie przez pociągnięcie ekranu w dół lub dotknięcie „zaktualizowano”.
+- Ulepszenia wyglądu i poprawki błędów.
+
+Wersja 4 (v.4.00 – v.4.52)
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
 - Duży kompas: miejscowość, w której jesteś, jest pierwsza (szara); Udostępnij wysyła też obraz okna, pobliskie miejscowości z odległościami, baterię, temperatury (powietrze, grunt, na wysokości telefonu) i wiatr.
@@ -11,7 +21,6 @@ EKRAN GŁÓWNY
 WIDŻETY
 - Widżet 4x2 · lista: duża temperatura i następne 4 dni (po jednej ikonie) lub godziny, do wyboru w ustawieniach; miejscowość ze znakiem miejscowości z kompasu.
 - Widżety: kolorowe linie kodów na każdym widżecie, bez tekstu OSTRZEŻENIE; bez kodów jedna niebieska linia z pierwszą ważną informacją (np. Szron).
-- Ulepszenia wyglądu i poprawki błędów.
 
 Wersja 3 (v.3.00 – v.3.92)
 AKTUALIZACJE

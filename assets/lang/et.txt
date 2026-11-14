@@ -936,3 +936,41 @@ Codes on widgets	Koodid vidinatel
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Kolm värvilist joont hoiatuskoodide jaoks igal vidinal. Koodideta: üks sinine joon esimese veel kehtiva teabega (nt Härmatis).
 (forecast up to 	(prognoos kuni 
 Values: being updated…	Väärtused: uuendamisel…
+App settings	Rakenduse seaded
+Make it yours	Tee see enda omaks
+Location & favourites	Asukoht ja lemmikud
+Choose the state	Vali osariik
+Preferences & display	Eelistused ja kuva
+Weather for your land plots	Ilm sinu põldudele
+Your land plots, map, statistics	Sinu põllud, kaart, statistika
+Temperature	Temperatuur
+Clock	Kell
+Alerts & behaviour	Hoiatused ja käitumine
+Follows your position by GPS	Järgib sinu asukohta GPS-iga
+Notifications for your place	Teavitused sinu kohale
+Earthquake notices within 300 km of your place	Maavärina teavitused kuni 300 km sinu kohast
+No earthquake notices	Maavärina teavitusi pole
+Recent earthquakes nearby	Hiljutised maavärinad lähedal
+Time, place, magnitude, distance	Aeg, koht, magnituud, kaugus
+Rain, snow, warnings	Vihm, lumi, hoiatused
+A big dim clock while charging at night	Suur hämar kell öösel laadimise ajal
+The screen does not go off	Ekraan ei lähe kustu
+System & support	Süsteem ja tugi
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Lüliti Põllumehe režiim menüüs ☰ vahetab režiimi. Põllumehe režiimis on iga tund üks lai kast ilma ja vihmaga; rõhtsalt kaks kasti üksteise all, mida libistatakse üles-alla. Teise koha valimine viib tagasi tavarežiimi.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Aken ekraani keskel, hägustatud ekraani kohal; see sulgub X-iga või puudutusega väljaspool. Pealkirja all on koht; ▲ ja ▼ kerivad; allikas on all.
+Refreshes the weather; a tap on “updated” does the same.	Värskendab ilma; puudutus sõnal „uuendatud“ teeb sama.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Üks rida koha all: maavärin, siis hoiatused värvi järgi. Puudutus näitab üleval väärtusi (puhangud, kogused, temperatuurid), siis üksikasju.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Puudutus väljal Kompass: suur kompass, GPS-koordinaadid, asula, kus sa oled (hall), ja 3 lähimat asulat, igaüks oma värviga. Puudutus asulal loendis või selle märgil näitab nime ja kaugust sihverplaadil; samas suunas asulad on kõrvuti. Jaga saadab pildi aknast koha, suuna, asulate, aku, temperatuuride ja tuulega; Asulad näitab või peidab märgid.
+Settings (☰)	Seaded (☰)
+The Settings window	Aken Seaded
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ avab seaded jaotiste kaupa; lüliti lülitab funktsiooni kohe sisse või välja. See sulgub X-iga või puudutusega väljaspool.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Lemmikud (täht: näidatud koht); puudutus valib ühe; + Lisa ja Vali maakond avavad asulate loendi.
+Temperature and clock	Temperatuur ja kell
+°C or °F, 12 h or 24 h: a tap on the choice.	°C või °F, 12 h või 24 h: puuduta valikut.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 värviteemat: puuduta värvi; nende all Hele, Tume või Automaatne (telefoni andur).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Lüliti: teavitused maavärinatest kuni 300 km sinu kohast. Selle all hiljutiste maavärinate leht, aja, koha, magnituudi ja kaugusega.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Riba akna allosas: Vidinad, Eksport / Import, Logi, Kontrolli uuendusi, Saada rakendus, Abi, Teave.
+Rain or snow starting, new weather warnings, earthquakes around you.	Algav vihm või lumi, uued ilmahoiatused, maavärinad sinu ümber.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Teavitused on sees: vihm või lumi, ilmahoiatused ja maavärinad sinu ümber.
+Compass	Kompass
+works offline	töötab ilma internetita

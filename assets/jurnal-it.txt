@@ -1,4 +1,14 @@
-Versione attuale: v.4.52 · 12.11.2026
+Versione attuale: v.5.00 · 14.11.2026
+IMPOSTAZIONI
+- Impostazioni: il menu ☰ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
+NOTIFICHE
+- Terremoti: notifiche solo per i terremoti entro 300 km dal tuo luogo; si attivano o disattivano in ☰.
+- Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ☰.
+SCHERMATA PRINCIPALE
+- Bussola grande: toccare una località nell'elenco ne mostra il segno sulla bussola; le località nella stessa direzione non si sovrappongono più.
+- Miglioramenti del design e correzioni di errori.
+
+Versione 4 (v.4.00 – v.4.52)
 SCHERMATA PRINCIPALE
 - Allerte: un tocco su un riquadro di codice o di informazione mostra in alto i valori della previsione (raffiche, quantità, temperature), poi l'intervallo e le spiegazioni.
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
@@ -11,7 +21,6 @@ SCHERMATA PRINCIPALE
 WIDGET
 - Widget 4x2 · elenco: una temperatura grande e i prossimi 4 giorni (un'icona ciascuno) o le ore, a scelta nelle impostazioni; la località con il segno di località della bussola.
 - Widget: le linee colorate dei codici su ogni widget, senza il testo ALLERTA; senza codici, una linea blu con la prima informazione valida (es. Brina).
-- Miglioramenti del design e correzioni di errori.
 
 Versione 3 (v.3.00 – v.3.92)
 AGGIORNAMENTI

@@ -1,4 +1,14 @@
-Verżjoni attwali: v.4.52 · 12.11.2026
+Verżjoni attwali: v.5.00 · 14.11.2026
+NOTIFIKI
+- Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ☰.
+- Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ☰.
+SETTINGS
+- Settings: il-menu ☰ issa huwa tieqa b'taqsimiet, swiċċijiet, temi tal-kulur u l-bar Sistema u appoġġ; tiġġedded billi tiġbed l-iskrin 'l isfel jew tmiss “aġġornat”.
+SKRIN EWLIENI
+- Boxxla kbira: mess fuq lokalità fil-lista juri l-marka tagħha fuq il-boxxla; lokalitajiet fl-istess direzzjoni ma jirkbux aktar fuq xulxin.
+- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+
+Verżjoni 4 (v.4.00 – v.4.52)
 SKRIN EWLIENI
 - Boxxla kbira: il-lokalità fejn int tidher l-ewwel (griż); Aqsam jibgħat ukoll stampa tat-tieqa, il-lokalitajiet fil-qrib bid-distanzi, il-batterija, it-temperaturi (arja, art, fl-għoli tat-telefon) u r-riħ.
 - Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.
@@ -11,7 +21,6 @@ SKRIN EWLIENI
 WIDGETS
 - Widget 4x2 · lista: temperatura kbira u l-4 ijiem li ġejjin (ikona waħda kull wieħed) jew sigħat, magħżula fis-settings; il-lokalità bis-sinjal tal-lokalità tal-boxxla.
 - Widgets: il-linji kkuluriti tal-kodiċijiet fuq kull widget, mingħajr it-test TWISSIJA; mingħajr kodiċijiet, linja blu waħda bl-ewwel informazzjoni valida (eż. Ġlata).
-- Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 3 (v.3.00 – v.3.92)
 AĠĠORNAMENTI

@@ -936,3 +936,41 @@ Codes on widgets	Kodai valdikliuose
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trys spalvotos linijos įspėjimo kodams kiekviename valdiklyje. Be kodų: viena mėlyna linija su pirmąja dar galiojančia informacija (pvz., Šerkšnas).
 (forecast up to 	(prognozė iki 
 Values: being updated…	Vertės: atnaujinamos…
+App settings	Programos nustatymai
+Make it yours	Pritaikykite sau
+Location & favourites	Vieta ir mėgstamiausios
+Choose the state	Pasirinkite valstiją
+Preferences & display	Nuostatos ir rodymas
+Weather for your land plots	Orai jūsų sklypams
+Your land plots, map, statistics	Jūsų sklypai, žemėlapis, statistika
+Temperature	Temperatūra
+Clock	Laikrodis
+Alerts & behaviour	Įspėjimai ir elgsena
+Follows your position by GPS	Seka jūsų padėtį GPS
+Notifications for your place	Pranešimai jūsų vietai
+Earthquake notices within 300 km of your place	Pranešimai apie žemės drebėjimus iki 300 km nuo jūsų vietos
+No earthquake notices	Jokių pranešimų apie žemės drebėjimus
+Recent earthquakes nearby	Naujausi žemės drebėjimai netoliese
+Time, place, magnitude, distance	Laikas, vieta, magnitudė, atstumas
+Rain, snow, warnings	Lietus, sniegas, įspėjimai
+A big dim clock while charging at night	Didelis pritemdytas laikrodis kraunant naktį
+The screen does not go off	Ekranas neužgęsta
+System & support	Sistema ir pagalba
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Jungiklis Ūkininko režimas meniu ☰ keičia režimą. Ūkininko režime kiekviena valanda yra vienas platus langelis su orais ir lietumi; gulsčiai du langeliai vienas po kitu, slenkami aukštyn ir žemyn. Pasirinkus kitą vietovę grįžtama į įprastą režimą.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Langas ekrano viduryje, virš sulieto ekrano; užsidaro paspaudus X arba palietus šalia. Po pavadinimu vieta; ▲ ir ▼ slenka; šaltinis apačioje.
+Refreshes the weather; a tap on “updated” does the same.	Atnaujina orus; palietus „atnaujinta“ įvyksta tas pats.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Viena eilutė po vieta: žemės drebėjimas, tada įspėjimai pagal spalvą. Palietus viršuje rodomos vertės (gūsiai, kiekiai, temperatūros), tada išsami informacija.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Palietus langelį Kompasas: didelis kompasas, GPS koordinatės, vietovė, kurioje esate (pilka), ir 3 artimiausios vietovės, kiekviena savo spalva. Palietus vietovę sąraše arba jos ženklą, ciferblate rodomas pavadinimas ir atstumas; vietovės ta pačia kryptimi rodomos greta. Bendrinti siunčia lango paveikslėlį su vieta, kryptimi, vietovėmis, baterija, temperatūromis ir vėju; Vietovės rodo arba slepia ženklus.
+Settings (☰)	Nustatymai (☰)
+The Settings window	Langas Nustatymai
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ atveria nustatymus pagal skyrius; jungiklis iškart įjungia ar išjungia funkciją. Užsidaro paspaudus X arba palietus šalia.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Mėgstamiausios (žvaigždutė: rodoma vieta); palietus pasirenkama viena; + Pridėti ir Pasirinkite apskritį atveria vietovių sąrašą.
+Temperature and clock	Temperatūra ir laikrodis
+°C or °F, 12 h or 24 h: a tap on the choice.	°C ar °F, 12 val. ar 24 val.: palieskite pasirinkimą.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 spalvų temos: palieskite spalvą; po jomis Šviesi, Tamsi arba Automatinė (telefono jutiklis).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Jungiklis: pranešimai apie žemės drebėjimus iki 300 km nuo jūsų vietos. Po juo naujausių žemės drebėjimų puslapis su laiku, vieta, magnitude ir atstumu.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Juosta lango apačioje: Valdikliai, Eksportas / Importas, Žurnalas, Tikrinti atnaujinimus, Siųsti programėlę, Pagalba, Apie.
+Rain or snow starting, new weather warnings, earthquakes around you.	Prasidedantis lietus ar sniegas, nauji orų įspėjimai, žemės drebėjimai aplink jus.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Pranešimai įjungti: lietus ar sniegas, orų įspėjimai ir žemės drebėjimai aplink jus.
+Compass	Kompasas
+works offline	veikia be interneto

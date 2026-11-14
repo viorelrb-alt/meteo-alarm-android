@@ -1,4 +1,14 @@
-Versiunea curentă: v.4.52 · 12.11.2026
+Versiunea curentă: v.5.00 · 14.11.2026
+ECRAN PRINCIPAL
+- Busola mare: atingerea unei localități din listă îi arată semnul pe busolă; localitățile din aceeași direcție nu se mai suprapun.
+NOTIFICĂRI
+- Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ☰.
+- Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ☰.
+SETĂRI
+- Setări: meniul ☰ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
+- Îmbunătățiri de design și corectarea erorilor.
+
+Versiunea 4 (v.4.00 – v.4.52)
 ECRAN PRINCIPAL
 - Avertizări: atingerea unei casete de cod sau de informare arată sus valorile din prognoză (rafale, cantități, temperaturi), apoi intervalul și explicațiile.
 - Busola mare: atingerea casetei Busolă arată busola, coordonatele GPS și cele mai apropiate 3 localități colorate; Partajare trimite coordonatele.
@@ -11,7 +21,6 @@ ECRAN PRINCIPAL
 WIDGET-URI
 - Widget-ul 4x2 · listă: temperatura mare și următoarele 4 zile (câte un icon) sau ore, la alegere în setări; localitatea cu semnul de localitate al busolei.
 - Widget-uri: liniile colorate ale codurilor pe toate widget-urile, fără textul AVERTIZARE; fără coduri, o linie albastră cu prima informare încă valabilă (ex. Brumă).
-- Îmbunătățiri de design și corectarea erorilor.
 
 Versiunea 3 (v.3.00 – v.3.92)
 ACTUALIZĂRI

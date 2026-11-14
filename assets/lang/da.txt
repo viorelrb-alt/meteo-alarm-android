@@ -936,3 +936,41 @@ Codes on widgets	Koder på widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tre farvede linjer for varselskoderne på hver widget. Uden koder: én blå linje med den første information, der stadig gælder (f.eks. Rimfrost).
 (forecast up to 	(prognose indtil 
 Values: being updated…	Værdier: opdateres…
+App settings	Appindstillinger
+Make it yours	Gør den til din egen
+Location & favourites	Sted og favoritter
+Choose the state	Vælg staten
+Preferences & display	Præferencer og visning
+Weather for your land plots	Vejret for dine marker
+Your land plots, map, statistics	Dine marker, kort, statistik
+Temperature	Temperatur
+Clock	Ur
+Alerts & behaviour	Advarsler og adfærd
+Follows your position by GPS	Følger din position via GPS
+Notifications for your place	Notifikationer for dit sted
+Earthquake notices within 300 km of your place	Jordskælvsnotifikationer inden for 300 km fra dit sted
+No earthquake notices	Ingen jordskælvsnotifikationer
+Recent earthquakes nearby	Seneste jordskælv i nærheden
+Time, place, magnitude, distance	Tid, sted, styrke, afstand
+Rain, snow, warnings	Regn, sne, varsler
+A big dim clock while charging at night	Et stort dæmpet ur under opladning om natten
+The screen does not go off	Skærmen slukker ikke
+System & support	System og support
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Kontakten Landmandstilstand i ☰ skifter tilstand. I landmandstilstand er hver time én bred boks med vejr og regn; på langs to bokse under hinanden, der skubbes op og ned. Vælger du en anden by, går appen tilbage til normal tilstand.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Et vindue midt på skærmen, over den slørede skærm; det lukkes med X eller et tryk udenfor. Under titlen stedet; ▲ og ▼ ruller; kilden står nederst.
+Refreshes the weather; a tap on “updated” does the same.	Opdaterer vejret; et tryk på „opdateret“ gør det samme.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Én række under stedet: jordskælvet, derefter varslerne efter farve. Et tryk viser værdierne (vindstød, mængder, temperaturer) øverst, derefter detaljerne.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Et tryk på feltet Kompas: et stort kompas, GPS-koordinaterne, byen du er i (grå) og de 3 nærmeste byer, hver i sin farve. Et tryk på en by i listen eller på dens mærke viser navn og afstand på skiven; byer i samme retning står side om side. Del sender et billede af vinduet med sted, retning, byer, batteri, temperaturer og vind; Byer viser eller skjuler mærkerne.
+Settings (☰)	Indstillinger (☰)
+The Settings window	Vinduet Indstillinger
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ åbner indstillingerne i afsnit; en kontakt slår en funktion til eller fra med det samme. Det lukkes med X eller et tryk udenfor.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Favoritterne (stjernen: det viste sted); et tryk vælger én; + Tilføj og Vælg regionen åbner listen over byer.
+Temperature and clock	Temperatur og ur
+°C or °F, 12 h or 24 h: a tap on the choice.	°C eller °F, 12 t eller 24 t: tryk på valget.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 farvetemaer: tryk på en farve; under dem Lyst, Mørkt eller Automatisk (telefonens sensor).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Kontakten: notifikationer om jordskælv inden for 300 km fra dit sted. Under den siden med de seneste jordskælv i nærheden, med tid, sted, styrke og afstand.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Bjælken nederst i vinduet: Widgets, Eksport / Import, Log, Søg efter opdateringer, Send appen, Hjælp, Om.
+Rain or snow starting, new weather warnings, earthquakes around you.	Regn eller sne der begynder, nye vejrvarsler, jordskælv omkring dig.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Notifikationer er slået til: regn eller sne, vejrvarsler og jordskælv omkring dig.
+Compass	Kompas
+works offline	virker uden internet

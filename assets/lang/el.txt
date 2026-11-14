@@ -936,3 +936,41 @@ Codes on widgets	Κωδικοί στα widget
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Τρεις χρωματιστές γραμμές για τους κωδικούς προειδοποίησης, σε κάθε widget. Χωρίς κωδικούς: μία μπλε γραμμή με την πρώτη πληροφορία που ισχύει ακόμη (π.χ. Παχνη).
 (forecast up to 	(πρόγνωση έως 
 Values: being updated…	Τιμές: ενημερώνονται…
+App settings	Ρυθμίσεις εφαρμογής
+Make it yours	Κάντε την δική σας
+Location & favourites	Τοποθεσία και αγαπημένα
+Choose the state	Επιλέξτε πολιτεία
+Preferences & display	Προτιμήσεις και εμφάνιση
+Weather for your land plots	Ο καιρός για τα αγροτεμάχιά σας
+Your land plots, map, statistics	Τα αγροτεμάχιά σας, χάρτης, στατιστικά
+Temperature	Θερμοκρασία
+Clock	Ρολόι
+Alerts & behaviour	Ειδοποιήσεις και συμπεριφορά
+Follows your position by GPS	Ακολουθεί τη θέση σας μέσω GPS
+Notifications for your place	Ειδοποιήσεις για τον τόπο σας
+Earthquake notices within 300 km of your place	Ειδοποιήσεις σεισμών έως 300 km από τον τόπο σας
+No earthquake notices	Χωρίς ειδοποιήσεις σεισμών
+Recent earthquakes nearby	Πρόσφατοι σεισμοί κοντά
+Time, place, magnitude, distance	Ώρα, τόπος, μέγεθος, απόσταση
+Rain, snow, warnings	Βροχή, χιόνι, προειδοποιήσεις
+A big dim clock while charging at night	Ένα μεγάλο αμυδρό ρολόι κατά τη φόρτιση τη νύχτα
+The screen does not go off	Η οθόνη δεν σβήνει
+System & support	Σύστημα και υποστήριξη
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Ο διακόπτης Λειτουργία αγρότη στο ☰ αλλάζει τη λειτουργία. Στη λειτουργία αγρότη κάθε ώρα είναι ένα φαρδύ πλαίσιο με τον καιρό και τη βροχή· σε οριζόντια θέση δύο πλαίσια το ένα κάτω από το άλλο, που σύρονται πάνω-κάτω. Η επιλογή άλλης τοποθεσίας επιστρέφει στην κανονική λειτουργία.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Ένα παράθυρο στη μέση της οθόνης, πάνω από τη θολή οθόνη· κλείνει με το X ή με πάτημα έξω από αυτό. Κάτω από τον τίτλο ο τόπος· τα ▲ και ▼ κάνουν κύλιση· η πηγή είναι στο κάτω μέρος.
+Refreshes the weather; a tap on “updated” does the same.	Ανανεώνει τον καιρό· το πάτημα στο «ενημερώθηκε» κάνει το ίδιο.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Μία σειρά κάτω από τον τόπο: ο σεισμός, μετά οι προειδοποιήσεις κατά χρώμα. Ένα άγγιγμα δείχνει πάνω τις τιμές (ριπές, ποσότητες, θερμοκρασίες), μετά τις λεπτομέρειες.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Πάτημα στο πλαίσιο Πυξίδα: μια μεγάλη πυξίδα, οι συντεταγμένες GPS, η τοποθεσία όπου βρίσκεστε (γκρι) και οι 3 πλησιέστερες τοποθεσίες, η καθεμία στο χρώμα της. Πάτημα σε μια τοποθεσία της λίστας ή στο σημάδι της δείχνει το όνομα και την απόσταση στο καντράν· οι τοποθεσίες στην ίδια κατεύθυνση μπαίνουν δίπλα δίπλα. Η Κοινοποίηση στέλνει μια εικόνα του παραθύρου με τόπο, κατεύθυνση, τοποθεσίες, μπαταρία, θερμοκρασίες και άνεμο· οι Τοποθεσίες δείχνουν ή κρύβουν τα σημάδια.
+Settings (☰)	Ρυθμίσεις (☰)
+The Settings window	Το παράθυρο Ρυθμίσεις
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	Το ☰ ανοίγει τις ρυθμίσεις σε ενότητες· ένας διακόπτης ενεργοποιεί ή απενεργοποιεί μια λειτουργία αμέσως. Κλείνει με το X ή με πάτημα έξω από αυτό.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Τα αγαπημένα (το αστέρι: ο τόπος που εμφανίζεται)· ένα πάτημα επιλέγει ένα· το + Προσθήκη και το Επιλέξτε περιφέρεια ανοίγουν τη λίστα τοποθεσιών.
+Temperature and clock	Θερμοκρασία και ρολόι
+°C or °F, 12 h or 24 h: a tap on the choice.	°C ή °F, 12 ώρες ή 24 ώρες: πατήστε την επιλογή.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 χρωματικά θέματα: πατήστε ένα χρώμα· από κάτω Φωτεινό, Σκούρο ή Αυτόματο (αισθητήρας τηλεφώνου).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Ο διακόπτης: ειδοποιήσεις για σεισμούς έως 300 km από τον τόπο σας. Από κάτω, η σελίδα των πρόσφατων σεισμών γύρω, με ώρα, τόπο, μέγεθος και απόσταση.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Η μπάρα στο κάτω μέρος του παραθύρου: Γραφικά στοιχεία, Εξαγωγή / Εισαγωγή, Ημερολόγιο, Έλεγχος ενημερώσεων, Αποστολή εφαρμογής, Βοήθεια, Πληροφορίες.
+Rain or snow starting, new weather warnings, earthquakes around you.	Βροχή ή χιόνι που αρχίζει, νέες προειδοποιήσεις καιρού, σεισμοί γύρω σας.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Οι ειδοποιήσεις είναι ενεργές: βροχή ή χιόνι, προειδοποιήσεις καιρού και σεισμοί γύρω σας.
+Compass	Πυξίδα
+works offline	λειτουργεί χωρίς internet

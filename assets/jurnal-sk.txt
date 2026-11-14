@@ -1,4 +1,14 @@
-Súčasná verzia: v.4.52 · 12.11.2026
+Súčasná verzia: v.5.00 · 14.11.2026
+HLAVNÁ OBRAZOVKA
+- Veľký kompas: ťuknutie na obec v zozname ukáže jej značku na kompase; obce v rovnakom smere sa už neprekrývajú.
+NASTAVENIA
+- Nastavenia: ponuka ☰ je teraz okno s časťami, prepínačmi, farebnými motívmi a lištou Systém a podpora; obnovuje sa potiahnutím obrazovky nadol alebo ťuknutím na „aktualizované“.
+UPOZORNENIA
+- Tornáda (USA): upozornenia na tornáda pre vašu obec sa zapínajú a vypínajú v ☰.
+- Zemetrasenia: upozornenia len na zemetrasenia najviac 300 km od vášho miesta; zapínajú sa a vypínajú v ☰.
+- Vylepšenia vzhľadu a opravy chýb.
+
+Verzia 4 (v.4.00 – v.4.52)
 HLAVNÁ OBRAZOVKA
 - Export / Import: prenesie miesta, obľúbené, parcely a nastavenia do iného zariadenia pomocou súboru (Uložiť, Zdieľať; Importovať s voľbou Pridať alebo Nahradiť).
 - Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
@@ -11,7 +21,6 @@ HLAVNÁ OBRAZOVKA
 MINIAPLIKÁCIE
 - Miniaplikácia 4x2 · zoznam: veľká teplota a ďalšie 4 dni (po jednej ikone) alebo hodiny, podľa voľby v nastaveniach; obec so značkou obce z kompasu.
 - Widgety: farebné čiary kódov na každom widgete, bez textu VÝSTRAHA; bez kódov jedna modrá čiara s prvou platnou informáciou (napr. Srieň).
-- Vylepšenia vzhľadu a opravy chýb.
 
 Verzia 3 (v.3.00 – v.3.92)
 AKTUALIZÁCIE

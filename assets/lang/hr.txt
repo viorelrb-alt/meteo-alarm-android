@@ -936,3 +936,41 @@ Codes on widgets	Kodovi na widgetima
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tri obojene crte za kodove upozorenja, na svakom widgetu. Bez kodova: jedna plava crta s prvom informacijom koja još vrijedi (npr. Mraz).
 (forecast up to 	(prognoza do 
 Values: being updated…	Vrijednosti: ažuriraju se…
+App settings	Postavke aplikacije
+Make it yours	Prilagodite je sebi
+Location & favourites	Lokacija i favoriti
+Choose the state	Odaberite saveznu državu
+Preferences & display	Postavke i prikaz
+Weather for your land plots	Vrijeme za vaše parcele
+Your land plots, map, statistics	Vaše parcele, karta, statistika
+Temperature	Temperatura
+Clock	Sat
+Alerts & behaviour	Upozorenja i ponašanje
+Follows your position by GPS	Prati vaš položaj putem GPS-a
+Notifications for your place	Obavijesti za vaše mjesto
+Earthquake notices within 300 km of your place	Obavijesti o potresima do 300 km od vašeg mjesta
+No earthquake notices	Bez obavijesti o potresima
+Recent earthquakes nearby	Nedavni potresi u blizini
+Time, place, magnitude, distance	Vrijeme, mjesto, magnituda, udaljenost
+Rain, snow, warnings	Kiša, snijeg, upozorenja
+A big dim clock while charging at night	Veliki prigušeni sat tijekom punjenja noću
+The screen does not go off	Zaslon se ne gasi
+System & support	Sustav i podrška
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Prekidač Način poljoprivrednika u ☰ mijenja način. U načinu za poljoprivrednike svaki je sat jedan široki okvir s vremenom i kišom; položeno, dva okvira jedan ispod drugog, pomiču se gore-dolje. Odabir drugog mjesta vraća običan način.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Prozor na sredini zaslona, iznad zamućenog zaslona; zatvara se s X ili dodirom izvan njega. Ispod naslova je mjesto; ▲ i ▼ pomiču; izvor je na dnu.
+Refreshes the weather; a tap on “updated” does the same.	Osvježava vrijeme; dodir na „ažurirano” čini isto.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Jedan red ispod mjesta: potres, zatim upozorenja po boji. Dodir prikazuje gore vrijednosti (udari, količine, temperature), zatim pojedinosti.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Dodir na okvir Kompas: veliki kompas, GPS koordinate, mjesto u kojem ste (sivo) i 3 najbliža mjesta, svako u svojoj boji. Dodir na mjesto na popisu ili na njegovu oznaku pokazuje ime i udaljenost na brojčaniku; mjesta u istom smjeru stoje jedno uz drugo. Podijeli šalje sliku prozora s mjestom, smjerom, mjestima, baterijom, temperaturama i vjetrom; Mjesta prikazuje ili skriva oznake.
+Settings (☰)	Postavke (☰)
+The Settings window	Prozor Postavke
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ otvara postavke po odjeljcima; prekidač odmah uključuje ili isključuje funkciju. Zatvara se s X ili dodirom izvan njega.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Favoriti (zvjezdica: prikazano mjesto); dodir odabire jedan; + Dodaj i Odaberite županiju otvaraju popis mjesta.
+Temperature and clock	Temperatura i sat
+°C or °F, 12 h or 24 h: a tap on the choice.	°C ili °F, 12 h ili 24 h: dodirnite izbor.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 tema u boji: dodirnite boju; ispod njih Svijetla, Tamna ili Automatski (senzor telefona).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Prekidač: obavijesti o potresima do 300 km od vašeg mjesta. Ispod njega stranica nedavnih potresa u blizini, s vremenom, mjestom, magnitudom i udaljenošću.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Traka na dnu prozora: Widgeti, Izvoz / Uvoz, Dnevnik, Provjeri ažuriranja, Pošalji aplikaciju, Pomoć, O aplikaciji.
+Rain or snow starting, new weather warnings, earthquakes around you.	Kiša ili snijeg koji počinje, nova upozorenja o vremenu, potresi oko vas.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Obavijesti su uključene: kiša ili snijeg, upozorenja o vremenu i potresi oko vas.
+Compass	Kompas
+works offline	radi bez interneta

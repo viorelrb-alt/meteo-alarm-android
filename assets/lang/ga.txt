@@ -936,3 +936,41 @@ Codes on widgets	Cóid ar ghiuirléidí
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trí líne daite do chóid rabhaidh, ar gach giuirléid. Gan chóid: líne ghorm amháin leis an gcéad fhaisnéis atá i bhfeidhm fós (m.sh. Sioc bán).
 (forecast up to 	(réamhaisnéis go dtí 
 Values: being updated…	Luachanna: á nuashonrú…
+App settings	Socruithe na haipe
+Make it yours	Déan do chuid féin di
+Location & favourites	Suíomh agus ceanáin
+Choose the state	Roghnaigh an stát
+Preferences & display	Roghanna agus taispeáint
+Weather for your land plots	An aimsir do do ghabháltais
+Your land plots, map, statistics	Do ghabháltais, léarscáil, staitisticí
+Temperature	Teocht
+Clock	Clog
+Alerts & behaviour	Foláirimh agus iompar
+Follows your position by GPS	Leanann sé do shuíomh le GPS
+Notifications for your place	Fógraí do d'áit
+Earthquake notices within 300 km of your place	Fógraí creathanna talún laistigh de 300 km ó d'áit
+No earthquake notices	Gan fógraí creathanna talún
+Recent earthquakes nearby	Creathanna talún le déanaí in aice láimhe
+Time, place, magnitude, distance	Am, áit, méid, fad
+Rain, snow, warnings	Báisteach, sneachta, rabhaidh
+A big dim clock while charging at night	Clog mór lag agus é ag luchtú san oíche
+The screen does not go off	Ní mhúchtar an scáileán
+System & support	Córas agus tacaíocht
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Athraíonn an lasc Mód feirmeora in ☰ an mód. I mód an fheirmeora is bosca leathan amháin gach uair an chloig leis an aimsir agus an bháisteach; go cothrománach, dhá bhosca ceann faoin gceann eile, sleamhnaithe suas agus síos. Má roghnaíonn tú baile eile, filleann sé ar an ngnáthmhód.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Fuinneog i lár an scáileáin, os cionn an scáileáin dhoiléir; dúntar í le X nó le tadhall lasmuigh di. Faoin teideal, an áit; scrollaíonn ▲ agus ▼; tá an fhoinse ag an mbun.
+Refreshes the weather; a tap on “updated” does the same.	Athnuachan ar an aimsir; déanann tadhall ar “nuashonraithe” an rud céanna.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Sraith amháin faoin áit: an crith talún, ansin na rabhaidh de réir datha. Taispeánann tapáil na luachanna (siotaí, méideanna, teochtaí) ar barr, ansin na sonraí.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Tadhall ar an mbosca Compás: compás mór, na comhordanáidí GPS, an baile ina bhfuil tú (liath) agus na 3 bhaile is gaire, gach ceann ina dhath féin. Taispeánann tadhall ar bhaile sa liosta nó ar a mharc a ainm agus a fhad ar an diail; tá bailte sa treo céanna taobh le taobh. Seolann Comhroinn pictiúr den fhuinneog leis an áit, an treo, na bailte, an ceallra, na teochtaí agus an ghaoth; taispeánann nó folaíonn Bailte na marcanna.
+Settings (☰)	Socruithe (☰)
+The Settings window	Fuinneog na Socruithe
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	Osclaíonn ☰ na socruithe ina gcodanna; casann lasc feidhm air nó as láithreach. Dúntar í le X nó le tadhall lasmuigh di.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Na ceanáin (an réalta: an áit a thaispeántar); roghnaíonn tadhall ceann; osclaíonn + Cuir leis agus Roghnaigh an contae liosta na mbailte.
+Temperature and clock	Teocht agus clog
+°C or °F, 12 h or 24 h: a tap on the choice.	°C nó °F, 12 u nó 24 u: tadhaill an rogha.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 théama datha: tadhaill dath; fúthu Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	An lasc: fógraí faoi chreathanna talún laistigh de 300 km ó d'áit. Faoi, leathanach na gcreathanna talún le déanaí, leis an am, an áit, an méid agus an fad.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	An barra ag bun na fuinneoige: Giuirléidí, Easpórtáil / Iompórtáil, Logchomhad, Seiceáil le haghaidh nuashonruithe, Seol an aip, Cabhair, Faoi.
+Rain or snow starting, new weather warnings, earthquakes around you.	Báisteach nó sneachta ag tosú, rabhaidh nua aimsire, creathanna talún timpeall ort.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Tá na fógraí ar siúl: báisteach nó sneachta, rabhaidh aimsire agus creathanna talún timpeall ort.
+Compass	Compás
+works offline	oibríonn sé gan idirlíon

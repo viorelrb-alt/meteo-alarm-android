@@ -1,4 +1,14 @@
-Trenutna različica: v.4.52 · 12.11.2026
+Trenutna različica: v.5.00 · 14.11.2026
+GLAVNI ZASLON
+- Velik kompas: dotik kraja na seznamu pokaže njegovo oznako na kompasu; kraji v isti smeri se ne prekrivajo več.
+NASTAVITVE
+- Nastavitve: meni ☰ je zdaj okno z razdelki, stikali, barvnimi temami in vrstico Sistem in podpora; osveževanje s potegom zaslona navzdol ali dotikom »posodobljeno«.
+OBVESTILA
+- Potresi: obvestila samo o potresih največ 300 km od vašega kraja; vklopite ali izklopite jih v ☰.
+- Tornadi (ZDA): obvestila o tornadih za vaš kraj vklopite ali izklopite v ☰.
+- Izboljšave oblikovanja in popravki napak.
+
+Različica 4 (v.4.00 – v.4.52)
 GLAVNI ZASLON
 - Izvoz / Uvoz: prenese vaše kraje, priljubljene, parcele in nastavitve na drugo napravo prek datoteke (Shrani, Deli; Uvozi z Dodaj ali Zamenjaj).
 - Lokacija: v drugi državi ali zvezni državi ZDA se majhni kraji prenesejo enkrat, ko ste tam prvič z internetom, za kompas in seznam krajev.
@@ -11,7 +21,6 @@ GLAVNI ZASLON
 PRIPOMOČKI
 - Pripomoček 4x2 · seznam: velika temperatura in naslednji 4 dnevi (po ena ikona) ali ure, po izbiri v nastavitvah; kraj z oznako kraja s kompasa.
 - Pripomočki: barvne črte kod na vsakem pripomočku, brez besedila OPOZORILO; brez kod ena modra črta s prvo veljavno informacijo (npr. Slana).
-- Izboljšave oblikovanja in popravki napak.
 
 Različica 3 (v.3.00 – v.3.92)
 GLAVNI ZASLON

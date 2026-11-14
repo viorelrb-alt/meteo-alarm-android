@@ -1,4 +1,14 @@
-Trenutačna verzija: v.4.52 · 12.11.2026
+Trenutačna verzija: v.5.00 · 14.11.2026
+GLAVNI ZASLON
+- Veliki kompas: dodir na mjesto na popisu pokazuje njegovu oznaku na kompasu; mjesta u istom smjeru više se ne preklapaju.
+OBAVIJESTI
+- Potresi: obavijesti samo za potrese najviše 300 km od vašeg mjesta; uključuju se ili isključuju u ☰.
+- Tornada (SAD): obavijesti o tornadu za vaše mjesto uključuju se ili isključuju u ☰.
+POSTAVKE
+- Postavke: izbornik ☰ sada je prozor s odjeljcima, prekidačima, temama u boji i trakom Sustav i podrška; osvježava se povlačenjem zaslona prema dolje ili dodirom na „ažurirano”.
+- Poboljšanja dizajna i ispravci pogrešaka.
+
+Verzija 4 (v.4.00 – v.4.52)
 GLAVNI ZASLON
 - Ikone vremena: u bojama teme; sve se miču 3 sekunde, i nakon svakog osvježavanja i na widgetima.
 - Izvoz / Uvoz: prenosi vaša mjesta, favorite, parcele i postavke na drugi uređaj putem datoteke (Spremi, Podijeli; Uvoz s Dodaj ili Zamijeni).
@@ -11,7 +21,6 @@ GLAVNI ZASLON
 WIDGETI
 - Widget 4x2 · popis: velika temperatura i sljedeća 4 dana (po jedna ikona) ili sati, po izboru u postavkama; mjesto s oznakom mjesta s kompasa.
 - Widgeti: obojene crte kodova na svakom widgetu, bez teksta UPOZORENJE; bez kodova jedna plava crta s prvom važećom informacijom (npr. Mraz).
-- Poboljšanja dizajna i ispravci pogrešaka.
 
 Verzija 3 (v.3.00 – v.3.92)
 AŽURIRANJA

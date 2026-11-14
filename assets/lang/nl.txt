@@ -936,3 +936,41 @@ Codes on widgets	Codes op widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Drie gekleurde lijnen voor de waarschuwingscodes, op elke widget. Zonder codes: één blauwe lijn met de eerste informatie die nog geldt (bv. Rijp).
 (forecast up to 	(verwachting tot 
 Values: being updated…	Waarden: worden bijgewerkt…
+App settings	App-instellingen
+Make it yours	Maak hem van jou
+Location & favourites	Locatie en favorieten
+Choose the state	Kies de staat
+Preferences & display	Voorkeuren en weergave
+Weather for your land plots	Het weer voor je percelen
+Your land plots, map, statistics	Je percelen, kaart, statistiek
+Temperature	Temperatuur
+Clock	Klok
+Alerts & behaviour	Meldingen en gedrag
+Follows your position by GPS	Volgt je positie via gps
+Notifications for your place	Meldingen voor je plaats
+Earthquake notices within 300 km of your place	Aardbevingsmeldingen binnen 300 km van je plaats
+No earthquake notices	Geen aardbevingsmeldingen
+Recent earthquakes nearby	Recente aardbevingen in de buurt
+Time, place, magnitude, distance	Tijd, plaats, magnitude, afstand
+Rain, snow, warnings	Regen, sneeuw, waarschuwingen
+A big dim clock while charging at night	Een grote gedimde klok tijdens het opladen 's nachts
+The screen does not go off	Het scherm gaat niet uit
+System & support	Systeem en ondersteuning
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	De schakelaar Boerenmodus in ☰ wisselt van modus. In boerenmodus is elk uur één breed vak met het weer en de regen; liggend twee vakken onder elkaar, op en neer te schuiven. Een andere plaats kiezen gaat terug naar de normale modus.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Een venster midden op het scherm, boven het vervaagde scherm; het sluit met X of een tik ernaast. Onder de titel de plaats; ▲ en ▼ scrollen; de bron staat onderaan.
+Refreshes the weather; a tap on “updated” does the same.	Ververst het weer; een tik op „bijgewerkt” doet hetzelfde.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Eén rij onder de plaats: de aardbeving, dan de waarschuwingen per kleur. Een tik toont bovenaan de waarden (windstoten, hoeveelheden, temperaturen), dan de details.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Een tik op het vak Kompas: een groot kompas, de gps-coördinaten, de plaats waar je bent (grijs) en de 3 dichtstbijzijnde plaatsen, elk in zijn kleur. Een tik op een plaats in de lijst of op zijn teken toont naam en afstand op de wijzerplaat; plaatsen in dezelfde richting staan naast elkaar. Delen stuurt een afbeelding van het venster met plaats, richting, plaatsen, batterij, temperaturen en wind; Plaatsen toont of verbergt de tekens.
+Settings (☰)	Instellingen (☰)
+The Settings window	Het venster Instellingen
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ opent de instellingen per onderdeel; een schakelaar zet een functie meteen aan of uit. Het sluit met X of een tik ernaast.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	De favorieten (de ster: de getoonde plaats); een tik kiest er een; + Toevoegen en Kies de provincie openen de lijst met plaatsen.
+Temperature and clock	Temperatuur en klok
+°C or °F, 12 h or 24 h: a tap on the choice.	°C of °F, 12 u of 24 u: tik op de keuze.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 kleurthema's: tik op een kleur; eronder Licht, Donker of Automatisch (sensor van de telefoon).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	De schakelaar: meldingen van aardbevingen binnen 300 km van je plaats. Eronder de pagina met recente aardbevingen in de buurt, met tijd, plaats, magnitude en afstand.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	De balk onderaan het venster: Widgets, Exporteren / Importeren, Logboek, Zoeken naar updates, App versturen, Help, Over.
+Rain or snow starting, new weather warnings, earthquakes around you.	Regen of sneeuw die begint, nieuwe weerwaarschuwingen, aardbevingen om je heen.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Meldingen staan aan: regen of sneeuw, weerwaarschuwingen en aardbevingen om je heen.
+Compass	Kompas
+works offline	werkt zonder internet

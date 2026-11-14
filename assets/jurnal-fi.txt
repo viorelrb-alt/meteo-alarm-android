@@ -1,4 +1,14 @@
-Nykyinen versio: v.4.52 · 12.11.2026
+Nykyinen versio: v.5.00 · 14.11.2026
+ASETUKSET
+- Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
+ILMOITUKSET
+- Maanjäristykset: ilmoitukset vain enintään 300 km:n päässä paikastasi olevista maanjäristyksistä; päälle tai pois valikosta ☰.
+- Tornadot (USA): paikkakuntasi tornadoilmoitukset laitetaan päälle tai pois valikosta ☰.
+PÄÄNÄYTTÖ
+- Iso kompassi: napautus paikkakuntaan luettelossa näyttää sen merkin kompassissa; samassa suunnassa olevat paikkakunnat eivät enää mene päällekkäin.
+- Ulkoasun parannuksia ja virheenkorjauksia.
+
+Versio 4 (v.4.00 – v.4.52)
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus Kompassi-ruutuun näyttää kompassin, GPS-koordinaatit ja 3 lähintä paikkakuntaa väreinä; Jaa lähettää koordinaatit.
 - Ruudut: napautus mihin tahansa ruutuun näyttää arvon ylhäällä ja selitykset sen alla.
@@ -11,7 +21,6 @@ PÄÄNÄYTTÖ
 WIDGETIT
 - Widget 4x2 · luettelo: suuri lämpötila ja seuraavat 4 päivää (kukin yhdellä kuvakkeella) tai tunnit, valittavissa asetuksissa; paikka kompassin paikkamerkillä.
 - Widgetit: koodien väriviivat jokaisessa widgetissä ilman tekstiä VAROITUS; ilman koodeja yksi sininen viiva ensimmäisellä voimassa olevalla tiedotteella (esim. Kuura).
-- Ulkoasun parannuksia ja virheenkorjauksia.
 
 Versio 3 (v.3.00 – v.3.92)
 ILMOITUKSET

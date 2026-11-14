@@ -172,11 +172,12 @@ public final class FarmActivity extends Activity {
 		return t;
 	}
 
+	/** v5.00 (Viorel, "Opțiunea 3"): glass cards and pill buttons, a faint edge (no ink outline). */
 	private GradientDrawable frame(int fill, float radius) {
 		GradientDrawable g = new GradientDrawable();
-		g.setColor(fill);
-		g.setStroke(px(2), ink);
-		g.setCornerRadius(px(radius));
+		g.setColor(fill == btn ? Glass.alpha(ink, dark ? 0.12f : 0.08f) : fill == card ? Glass.alpha(ink, dark ? 0.07f : 0.05f) : fill);
+		g.setStroke(Math.max(1, px(1)), Glass.edge(dark));
+		g.setCornerRadius(px(radius * 1.8f));
 		return g;
 	}
 
@@ -490,25 +491,18 @@ public final class FarmActivity extends Activity {
 
 		@Override
 		protected void onDraw(Canvas c) {
-			float w = getWidth(), h = getHeight(), st = dp * 2, r = dp * 12, band = h / 3f;
+			float w = getWidth(), h = getHeight(), st = dp, r = dp * 20, band = h / 3f;
 			android.graphics.RectF all = new android.graphics.RectF(st / 2, st / 2, w - st / 2, h - st / 2);
+			// v5.00 (Viorel): a glass card, the title a grey label (the summary's tinted with the accent).
 			fp.setStyle(Paint.Style.FILL);
-			fp.setColor(card);
+			fp.setColor(b.sum ? Glass.alpha(accent, dark ? 0.18f : 0.12f) : Glass.alpha(ink, dark ? 0.07f : 0.05f));
 			c.drawRoundRect(all, r, r, fp);
-			// The title's band: the top third, the summary's darker.
-			c.save();
-			android.graphics.Path clip = new android.graphics.Path();
-			clip.addRoundRect(all, r, r, android.graphics.Path.Direction.CW);
-			c.clipPath(clip);
-			fp.setColor(b.sum ? (dark ? 0xFFD6C6A0 : 0xFFB8B8B8) : band());
-			c.drawRect(0, 0, w, band, fp);
-			c.restore();
 			fp.setStyle(Paint.Style.STROKE);
 			fp.setStrokeWidth(st);
-			fp.setColor(ink);
+			fp.setColor(b.sum ? Glass.alpha(accent, 0.6f) : Glass.edge(dark));
 			c.drawRoundRect(all, r, r, fp);
 			tp.setTextSize(tSize);
-			tp.setColor(b.sum ? ro.meteoalarm.android.core.Theme.page(true) : bandInk);
+			tp.setColor(b.sum ? accent : dim);
 			Paint.FontMetrics fm = tp.getFontMetrics();
 			float lh = (fm.descent - fm.ascent) * 0.92f, top = (band - lh * lines.length) / 2f;
 			for (int k = 0; k < lines.length; k++) c.drawText(lines[k], w / 2f, top + k * lh - fm.ascent * 0.96f, tp);
@@ -647,7 +641,7 @@ public final class FarmActivity extends Activity {
 		closeOverlay();
 		Log.i(this, "FERMIER", "casetă: " + title);
 		FrameLayout ov = new FrameLayout(this);
-		ov.setBackgroundColor(0x66000000);
+		ov.setBackgroundColor(Glass.scrim(dark) | 0x30000000);
 		ov.setClickable(true);
 		ov.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -655,17 +649,14 @@ public final class FarmActivity extends Activity {
 			}
 		});
 		LinearLayout c = column();
-		c.setBackground(frame(card, 16));
+		c.setBackground(Glass.panelBg(dark, px(26), dp));
+		((GradientDrawable) c.getBackground()).setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.page(dark), 0.96f));
 		c.setPadding(px(2), px(2), px(2), px(period != null ? 6 : 16));
 		c.setElevation(px(8));
-		TextView h = text(title.toUpperCase(), 19, true, bandInk);
+		// v5.00: the title in the window (no band).
+		TextView h = text(title, 20, true, ink);
 		h.setGravity(Gravity.CENTER);
-		h.setPadding(px(12), px(10), px(12), px(10));
-		GradientDrawable hb = new GradientDrawable();
-		hb.setColor(band);
-		float r = px(14);
-		hb.setCornerRadii(new float[] { r, r, r, r, 0, 0, 0, 0 });
-		h.setBackground(hb);
+		h.setPadding(px(14), px(16), px(14), px(4));
 		c.addView(h, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		int bw = Math.min(getResources().getDisplayMetrics().widthPixels - px(48), px(460));
 		// v3.50 (Viorel): under the title, the place the bubble is about.
@@ -753,16 +744,16 @@ public final class FarmActivity extends Activity {
 		int line = ro.meteoalarm.android.core.Theme.grid(dark), thin = Math.max(1, px(1));
 		LinearLayout t = column();
 		GradientDrawable outer = new GradientDrawable();
-		outer.setStroke(thin, line);
-		outer.setColor(card);
+		outer.setStroke(thin, Glass.edge(dark));
+		outer.setColor(Glass.alpha(ink, dark ? 0.05f : 0.03f));
 		t.setBackground(outer);
 		t.setPadding(thin, thin, thin, thin);
 		for (int r = -1; r < rows.size(); r++) {
 			String[] v = r < 0 ? head : rows.get(r);
 			LinearLayout row = new LinearLayout(this);
-			if (r < 0) row.setBackgroundColor(band);
+			if (r < 0) row.setBackgroundColor(Glass.alpha(ink, dark ? 0.10f : 0.07f));
 			for (int k = 0; k < nc; k++) {
-				TextView c = text(v[k], sp, r < 0, r < 0 ? bandInk : ink);
+				TextView c = text(v[k], sp, r < 0, ink);
 				c.setSingleLine(true);
 				c.setPadding(padX, px(sp * 0.42f), padX, px(sp * 0.42f));
 				c.setGravity((right[k] ? Gravity.END : Gravity.START) | Gravity.CENTER_VERTICAL);
@@ -1071,8 +1062,9 @@ public final class FarmActivity extends Activity {
 	}
 
 	/** A small square button floating over the map. */
+	/** v5.00 (Viorel): a round translucent button over the map. */
 	private View floatBtn(View v, View.OnClickListener l) {
-		v.setBackground(frame(btn, 10));
+		v.setBackground(Glass.pill(Glass.alpha(page, 0.86f), Glass.edge(dark), px(30), dp));
 		v.setOnClickListener(l);
 		v.setElevation(px(3));
 		return v;
@@ -1084,9 +1076,9 @@ public final class FarmActivity extends Activity {
 	 */
 	private void statsFloat(FrameLayout mapBox, final List<Parcels.Parcel> all, boolean tab) {
 		int fb = px(tab ? 46 : 42), mg = px(12);
-		TextView t = text("▤  " + Tr.t("Statistics · PDF", "Statistică · PDF"), tab ? 18 : 16, true, ink);
+		TextView t = text("▤  " + Tr.t("Statistics · PDF", "Statistică · PDF"), tab ? 18 : 16, true, dark ? page : 0xFFFFFFFF);
 		t.setGravity(Gravity.CENTER);
-		t.setPadding(px(14), 0, px(16), 0);
+		t.setPadding(px(18), 0, px(20), 0);
 		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, fb, Gravity.BOTTOM | Gravity.LEFT);
 		sl.setMargins(mg, 0, 0, mg + px(14));
 		mapBox.addView(floatBtn(t, new View.OnClickListener() {
@@ -1105,6 +1097,7 @@ public final class FarmActivity extends Activity {
 				}).setNegativeButton(Tr.t("Cancel", "Renunță"), null));
 			}
 		}), sl);
+		t.setBackground(Glass.pill(accent, 0, px(30), dp)); // v5.00: the blue pill of the mockup
 	}
 
 	/** The statistics of parcel ID for the last 7 days (the period can be changed there; PDF from there). */
@@ -1184,12 +1177,12 @@ public final class FarmActivity extends Activity {
 		}), zl2);
 		LinearLayout badge = new LinearLayout(this);
 		badge.setGravity(Gravity.CENTER_VERTICAL);
-		badge.setBackground(frame(btn, 12));
+		badge.setBackground(Glass.pill(Glass.alpha(page, 0.86f), Glass.edge(dark), px(30), dp));
 		badge.setElevation(px(3));
 		TextView back = text("‹", 24, true, ink);
 		back.setGravity(Gravity.CENTER);
 		back.setPadding(0, 0, 0, px(4));
-		back.setBackground(frame(btn, 12));
+		back.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
 		back.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				onBackPressed();

@@ -936,3 +936,41 @@ Codes on widgets	Koodit widgeteissä
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Kolme värillistä viivaa varoituskoodeille jokaisessa widgetissä. Ilman koodeja: yksi sininen viiva ensimmäisellä yhä voimassa olevalla tiedotteella (esim. Kuura).
 (forecast up to 	(ennuste asti 
 Values: being updated…	Arvot: päivitetään…
+App settings	Sovelluksen asetukset
+Make it yours	Tee siitä omasi
+Location & favourites	Sijainti ja suosikit
+Choose the state	Valitse osavaltio
+Preferences & display	Asetukset ja näyttö
+Weather for your land plots	Sää lohkoillesi
+Your land plots, map, statistics	Lohkosi, kartta, tilastot
+Temperature	Lämpötila
+Clock	Kello
+Alerts & behaviour	Varoitukset ja toiminta
+Follows your position by GPS	Seuraa sijaintiasi GPS:llä
+Notifications for your place	Ilmoitukset paikkakunnallesi
+Earthquake notices within 300 km of your place	Maanjäristysilmoitukset 300 km:n säteellä paikastasi
+No earthquake notices	Ei maanjäristysilmoituksia
+Recent earthquakes nearby	Viimeaikaiset maanjäristykset lähellä
+Time, place, magnitude, distance	Aika, paikka, magnitudi, etäisyys
+Rain, snow, warnings	Sade, lumi, varoitukset
+A big dim clock while charging at night	Iso himmeä kello latauksen aikana yöllä
+The screen does not go off	Näyttö ei sammu
+System & support	Järjestelmä ja tuki
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Valikon ☰ kytkin Viljelijätila vaihtaa tilan. Viljelijätilassa jokainen tunti on yksi leveä ruutu säällä ja sateella; vaakatasossa kaksi ruutua päällekkäin, joita liu'utetaan ylös ja alas. Toisen paikkakunnan valinta palauttaa normaalitilan.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Ikkuna näytön keskellä, sumennetun näytön päällä; se suljetaan X:llä tai napauttamalla sen ulkopuolelle. Otsikon alla paikka; ▲ ja ▼ vierittävät; lähde on alhaalla.
+Refreshes the weather; a tap on “updated” does the same.	Päivittää sään; napautus sanaan ”päivitetty” tekee saman.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Yksi rivi paikan alla: maanjäristys, sitten varoitukset värin mukaan. Napautus näyttää ylhäällä arvot (puuskat, määrät, lämpötilat), sitten tiedot.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Napautus Kompassi-ruutuun: iso kompassi, GPS-koordinaatit, paikkakunta, jossa olet (harmaa), ja 3 lähintä paikkakuntaa, kukin omalla värillään. Napautus paikkakuntaan luettelossa tai sen merkkiin näyttää nimen ja etäisyyden kehällä; samassa suunnassa olevat paikkakunnat ovat vierekkäin. Jaa lähettää kuvan ikkunasta paikan, suunnan, paikkakuntien, akun, lämpötilojen ja tuulen kera; Paikkakunnat näyttää tai piilottaa merkit.
+Settings (☰)	Asetukset (☰)
+The Settings window	Asetukset-ikkuna
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ avaa asetukset osioittain; kytkin laittaa toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla sen ulkopuolelle.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Suosikit (tähti: näytetty paikka); napautus valitsee yhden; + Lisää ja Valitse maakunta avaavat paikkakuntien luettelon.
+Temperature and clock	Lämpötila ja kello
+°C or °F, 12 h or 24 h: a tap on the choice.	°C tai °F, 12 h tai 24 h: napauta valintaa.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 väriteemaa: napauta väriä; niiden alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Kytkin: ilmoitukset maanjäristyksistä 300 km:n säteellä paikastasi. Sen alla viimeaikaisten maanjäristysten sivu, ajan, paikan, magnitudin ja etäisyyden kera.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Palkki ikkunan alaosassa: Widgetit, Vienti / Tuonti, Loki, Tarkista päivitykset, Lähetä sovellus, Ohje, Tietoja.
+Rain or snow starting, new weather warnings, earthquakes around you.	Alkava sade tai lumi, uudet säävaroitukset, maanjäristykset ympärilläsi.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Ilmoitukset ovat päällä: sade tai lumi, säävaroitukset ja maanjäristykset ympärilläsi.
+Compass	Kompassi
+works offline	toimii ilman verkkoa

@@ -936,3 +936,41 @@ Codes on widgets	Kody na widżetach
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trzy kolorowe linie dla kodów ostrzeżeń, na każdym widżecie. Bez kodów: jedna niebieska linia z pierwszą wciąż ważną informacją (np. Szron).
 (forecast up to 	(prognoza do 
 Values: being updated…	Wartości: trwa aktualizacja…
+App settings	Ustawienia aplikacji
+Make it yours	Dopasuj ją do siebie
+Location & favourites	Lokalizacja i ulubione
+Choose the state	Wybierz stan
+Preferences & display	Preferencje i wygląd
+Weather for your land plots	Pogoda dla twoich działek
+Your land plots, map, statistics	Twoje działki, mapa, statystyki
+Temperature	Temperatura
+Clock	Zegar
+Alerts & behaviour	Alerty i zachowanie
+Follows your position by GPS	Śledzi twoją pozycję przez GPS
+Notifications for your place	Powiadomienia dla twojego miejsca
+Earthquake notices within 300 km of your place	Powiadomienia o trzęsieniach ziemi do 300 km od twojego miejsca
+No earthquake notices	Bez powiadomień o trzęsieniach ziemi
+Recent earthquakes nearby	Ostatnie trzęsienia ziemi w pobliżu
+Time, place, magnitude, distance	Czas, miejsce, magnituda, odległość
+Rain, snow, warnings	Deszcz, śnieg, ostrzeżenia
+A big dim clock while charging at night	Duży przyciemniony zegar podczas ładowania w nocy
+The screen does not go off	Ekran się nie wyłącza
+System & support	System i pomoc
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Przełącznik Tryb rolnika w ☰ zmienia tryb. W trybie rolnika każda godzina to jedno szerokie pole z pogodą i deszczem; poziomo dwa pola jedno pod drugim, przesuwane w górę i w dół. Wybór innej miejscowości przywraca tryb zwykły.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Okno na środku ekranu, nad rozmytym ekranem; zamyka się przez X lub dotknięcie obok. Pod tytułem miejsce; ▲ i ▼ przewijają; źródło jest na dole.
+Refreshes the weather; a tap on “updated” does the same.	Odświeża pogodę; dotknięcie „zaktualizowano” robi to samo.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Jeden rząd pod miejscem: trzęsienie ziemi, potem ostrzeżenia według koloru. Dotknięcie pokazuje u góry wartości (porywy, ilości, temperatury), potem szczegóły.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Dotknięcie pola Kompas: duży kompas, współrzędne GPS, miejscowość, w której jesteś (szara), i 3 najbliższe miejscowości, każda w swoim kolorze. Dotknięcie miejscowości na liście lub jej znaku pokazuje nazwę i odległość na tarczy; miejscowości w tym samym kierunku stoją obok siebie. Udostępnij wysyła obraz okna z miejscem, kierunkiem, miejscowościami, baterią, temperaturami i wiatrem; Miejscowości pokazuje lub ukrywa znaki.
+Settings (☰)	Ustawienia (☰)
+The Settings window	Okno Ustawienia
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ otwiera ustawienia w sekcjach; przełącznik od razu włącza lub wyłącza funkcję. Zamyka się przez X lub dotknięcie obok.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Ulubione (gwiazdka: pokazywane miejsce); dotknięcie wybiera jedno; + Dodaj i Wybierz region otwierają listę miejscowości.
+Temperature and clock	Temperatura i zegar
+°C or °F, 12 h or 24 h: a tap on the choice.	°C lub °F, 12 h lub 24 h: dotknij wyboru.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 motywów kolorystycznych: dotknij koloru; pod nimi Jasny, Ciemny lub Automatyczny (czujnik telefonu).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Przełącznik: powiadomienia o trzęsieniach ziemi do 300 km od twojego miejsca. Pod nim strona ostatnich trzęsień ziemi w pobliżu, z czasem, miejscem, magnitudą i odległością.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Pasek na dole okna: Widżety, Eksport / Import, Dziennik, Sprawdź aktualizacje, Wyślij aplikację, Pomoc, O aplikacji.
+Rain or snow starting, new weather warnings, earthquakes around you.	Zaczynający się deszcz lub śnieg, nowe ostrzeżenia pogodowe, trzęsienia ziemi wokół ciebie.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Powiadomienia są włączone: deszcz lub śnieg, ostrzeżenia pogodowe i trzęsienia ziemi wokół ciebie.
+Compass	Kompas
+works offline	działa bez internetu

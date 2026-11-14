@@ -936,3 +936,41 @@ Codes on widgets	Kódok a widgeteken
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Három színes vonal a figyelmeztetési kódokhoz, minden widgeten. Kódok nélkül: egy kék vonal az első még érvényes tájékoztatással (pl. Dér).
 (forecast up to 	(előrejelzés eddig: 
 Values: being updated…	Értékek: frissítés folyamatban…
+App settings	Az alkalmazás beállításai
+Make it yours	Tedd a magadévá
+Location & favourites	Hely és kedvencek
+Choose the state	Válassz államot
+Preferences & display	Beállítások és megjelenés
+Weather for your land plots	Időjárás a parcelláidra
+Your land plots, map, statistics	Parcelláid, térkép, statisztika
+Temperature	Hőmérséklet
+Clock	Óra
+Alerts & behaviour	Riasztások és működés
+Follows your position by GPS	GPS-szel követi a helyzetedet
+Notifications for your place	Értesítések a helyedre
+Earthquake notices within 300 km of your place	Földrengés-értesítések a helyedtől 300 km-en belül
+No earthquake notices	Nincs földrengés-értesítés
+Recent earthquakes nearby	Friss földrengések a közelben
+Time, place, magnitude, distance	Idő, hely, magnitúdó, távolság
+Rain, snow, warnings	Eső, hó, figyelmeztetések
+A big dim clock while charging at night	Nagy, halvány óra éjszakai töltés közben
+The screen does not go off	A képernyő nem kapcsol ki
+System & support	Rendszer és támogatás
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	A ☰ Gazda mód kapcsolója váltja a módot. Gazda módban minden óra egy széles mező az időjárással és az esővel; fekvő helyzetben két mező egymás alatt, fel-le görgethetők. Másik település választása visszavált normál módba.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Egy ablak a képernyő közepén, az elmosott képernyő fölött; X-szel vagy mellé koppintva záródik. A cím alatt a hely; a ▲ és ▼ görget; a forrás alul van.
+Refreshes the weather; a tap on “updated” does the same.	Frissíti az időjárást; a „frissítve” megérintése ugyanezt teszi.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Egy sor a hely alatt: a földrengés, majd a figyelmeztetések szín szerint. Koppintásra felül az értékek (széllökések, mennyiségek, hőmérsékletek), majd a részletek.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Koppintás az Iránytű mezőre: nagy iránytű, a GPS-koordináták, a település, ahol vagy (szürke), és a 3 legközelebbi település, mindegyik a saját színében. Egy település megérintése a listában vagy a jelén megmutatja a nevét és távolságát a számlapon; az azonos irányú települések egymás mellett állnak. A Megosztás képet küld az ablakról a hellyel, iránnyal, településekkel, akkuval, hőmérsékletekkel és széllel; a Települések megjeleníti vagy elrejti a jeleket.
+Settings (☰)	Beállítások (☰)
+The Settings window	A Beállítások ablak
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	A ☰ szakaszonként nyitja meg a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy mellé koppintva záródik.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	A kedvencek (a csillag: a megjelenített hely); egy koppintás kiválaszt egyet; a + Hozzáadás és a Válassz megyét megnyitja a települések listáját.
+Temperature and clock	Hőmérséklet és óra
+°C or °F, 12 h or 24 h: a tap on the choice.	°C vagy °F, 12 ó vagy 24 ó: koppints a választásra.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 színtéma: koppints egy színre; alattuk Világos, Sötét vagy Automatikus (a telefon érzékelője).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	A kapcsoló: értesítések a helyedtől 300 km-en belüli földrengésekről. Alatta a közeli friss földrengések oldala idővel, hellyel, magnitúdóval és távolsággal.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Az ablak alján lévő sáv: Widgetek, Exportálás / Importálás, Napló, Frissítések keresése, Alkalmazás küldése, Súgó, Névjegy.
+Rain or snow starting, new weather warnings, earthquakes around you.	Kezdődő eső vagy hó, új időjárási figyelmeztetések, földrengések körülötted.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Az értesítések be vannak kapcsolva: eső vagy hó, időjárási figyelmeztetések és földrengések körülötted.
+Compass	Iránytű
+works offline	internet nélkül is működik

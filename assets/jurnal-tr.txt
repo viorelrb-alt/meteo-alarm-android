@@ -1,4 +1,14 @@
-Geçerli sürüm: v.4.52 · 12.11.2026
+Geçerli sürüm: v.5.00 · 14.11.2026
+ANA EKRAN
+- Büyük pusula: listedeki bir yere dokunmak işaretini pusulada gösterir; aynı yöndeki yerler artık üst üste binmez.
+AYARLAR
+- Ayarlar: ☰ menüsü artık bölümler, anahtarlar, renk temaları ve Sistem ve destek çubuğu olan bir pencere; yenileme ekranı aşağı çekerek veya “güncellendi”ye dokunarak yapılır.
+BILDIRIMLER
+- Depremler: bildirimler yalnızca yerinize en fazla 300 km uzaklıktaki depremler için; ☰ içinden açılır veya kapatılır.
+- Kasırgalar (ABD): yeriniz için kasırga bildirimleri ☰ içinden açılır veya kapatılır.
+- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+
+Sürüm 4 (v.4.00 – v.4.52)
 ANA EKRAN
 - Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
@@ -11,7 +21,6 @@ ANA EKRAN
 WIDGET'LAR
 - Widget 4x2 · liste: büyük sıcaklık ve sonraki 4 gün (her biri bir simge) veya saatler, ayarlardan seçilebilir; yerleşim yeri pusulanın yer işaretiyle.
 - Widget'lar: her widget'ta kodların renkli çizgileri, UYARI yazısı olmadan; kod yoksa geçerli ilk bilgiyle tek bir mavi çizgi (ör. Kiraği).
-- Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 3 (v.3.00 – v.3.92)
 ANA EKRAN

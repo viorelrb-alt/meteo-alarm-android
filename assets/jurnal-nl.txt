@@ -1,4 +1,14 @@
-Huidige versie: v.4.52 · 12.11.2026
+Huidige versie: v.5.00 · 14.11.2026
+HOOFDSCHERM
+- Groot kompas: een tik op een plaats in de lijst toont zijn teken op het kompas; plaatsen in dezelfde richting overlappen niet meer.
+INSTELLINGEN
+- Instellingen: het menu ☰ is nu een venster met onderdelen, schakelaars, kleurthema's en de balk Systeem en ondersteuning; verversen door het scherm omlaag te trekken of op „bijgewerkt” te tikken.
+MELDINGEN
+- Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ☰.
+- Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ☰.
+- Ontwerpverbeteringen en foutoplossingen.
+
+Versie 4 (v.4.00 – v.4.52)
 HOOFDSCHERM
 - Exporteren / Importeren: zet je plaatsen, favorieten, percelen en instellingen via een bestand over naar een ander apparaat (Opslaan, Delen; Importeren met Toevoegen of Vervangen).
 - Groot kompas: de plaats waar u bent staat eerst (grijs); Delen stuurt ook een afbeelding van het venster, de plaatsen in de buurt met afstanden, de batterij, de temperaturen (lucht, grond, op de hoogte van de telefoon) en de wind.
@@ -11,7 +21,6 @@ HOOFDSCHERM
 WIDGETS
 - Widget 4x2 · lijst: een grote temperatuur en de volgende 4 dagen (één pictogram per dag) of uren, te kiezen in de instellingen; de plaats met het plaatsteken van het kompas.
 - Widgets: de gekleurde codelijnen op elke widget, zonder de tekst WAARSCHUWING; zonder codes één blauwe lijn met de eerste geldende informatie (bv. Rijp).
-- Ontwerpverbeteringen en foutoplossingen.
 
 Versie 3 (v.3.00 – v.3.92)
 BOERENMODUS

@@ -1,4 +1,14 @@
-Pašreizējā versija: v.4.52 · 12.11.2026
+Pašreizējā versija: v.5.00 · 14.11.2026
+GALVENAIS EKRĀNS
+- Liels kompass: pieskāriens vietai sarakstā rāda tās zīmi uz kompasa; vietas vienā virzienā vairs nepārklājas.
+IESTATĪJUMI
+- Iestatījumi: izvēlne ☰ tagad ir logs ar sadaļām, slēdžiem, krāsu motīviem un joslu Sistēma un atbalsts; atsvaidzina, velkot ekrānu uz leju vai pieskaroties “atjaunināts”.
+PAZIŅOJUMI
+- Tornado (ASV): tornado paziņojumus tavai vietai ieslēdz vai izslēdz izvēlnē ☰.
+- Zemestrīces: paziņojumi tikai par zemestrīcēm ne tālāk par 300 km no tavas vietas; ieslēdz vai izslēdz izvēlnē ☰.
+- Dizaina uzlabojumi un kļūdu labojumi.
+
+Versija 4 (v.4.00 – v.4.52)
 GALVENAIS EKRĀNS
 - Atrašanās vieta: ciemi, caur kuriem braucat, tiek pievienoti apriņķa sarakstam (uz 7 dienām vai pastāvīgi, ja tur braucat bieži); kompass rāda arī ciemus.
 - Atrašanās vieta: citā valstī vai ASV štatā mazās apdzīvotās vietas tiek lejupielādētas vienreiz, kad tur pirmo reizi esi ar internetu, kompasam un vietu sarakstam.
@@ -11,7 +21,6 @@ GALVENAIS EKRĀNS
 LOGRĪKI
 - Logrīki: kodu krāsainās līnijas katrā logrīkā, bez teksta BRĪDINĀJUMS; bez kodiem viena zila līnija ar pirmo spēkā esošo informāciju (piem., Sarma).
 - Logrīks 4x2 · saraksts: liela temperatūra un nākamās 4 dienas (katrai viena ikona) vai stundas, izvēlamas iestatījumos; vieta ar kompasa vietas zīmi.
-- Dizaina uzlabojumi un kļūdu labojumi.
 
 Versija 3 (v.3.00 – v.3.92)
 ATJAUNINĀJUMI

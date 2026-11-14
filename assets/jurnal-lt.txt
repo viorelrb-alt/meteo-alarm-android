@@ -1,4 +1,14 @@
-Dabartinė versija: v.4.52 · 12.11.2026
+Dabartinė versija: v.5.00 · 14.11.2026
+NUSTATYMAI
+- Nustatymai: meniu ☰ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
+PAGRINDINIS EKRANAS
+- Didelis kompasas: palietus vietovę sąraše, jos ženklas parodomas kompase; vietovės ta pačia kryptimi nebesutampa.
+PRANEŠIMAI
+- Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ☰.
+- Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ☰.
+- Dizaino patobulinimai ir klaidų taisymai.
+
+4 versija (v.4.00 – v.4.52)
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus langelį Kompasas rodomas kompasas, GPS koordinatės ir 3 artimiausios vietovės spalvomis; Bendrinti siunčia koordinates.
 - Didelis kompasas: vietovė, kurioje esate, rodoma pirma (pilka); Bendrinti siunčia ir lango vaizdą, netolimas vietoves su atstumais, bateriją, temperatūras (oras, žemė, telefono aukštyje) ir vėją.
@@ -11,7 +21,6 @@ PAGRINDINIS EKRANAS
 VALDIKLIAI
 - Valdikliai: spalvotos kodų linijos kiekviename valdiklyje, be teksto ĮSPĖJIMAS; be kodų – viena mėlyna linija su pirmąja galiojančia informacija (pvz., Šerkšnas).
 - Valdiklis 4x2 · sąrašas: didelė temperatūra ir kitos 4 dienos (po vieną piktogramą) arba valandos, pasirenkama nustatymuose; vietovė su kompaso vietovės ženklu.
-- Dizaino patobulinimai ir klaidų taisymai.
 
 3 versija (v.3.00 – v.3.92)
 NAUJINIMAI

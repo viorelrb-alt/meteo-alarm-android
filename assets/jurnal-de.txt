@@ -1,4 +1,14 @@
-Aktuelle Version: v.4.52 · 12.11.2026
+Aktuelle Version: v.5.00 · 14.11.2026
+BENACHRICHTIGUNGEN
+- Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
+- Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.
+EINSTELLUNGEN
+- Einstellungen: das Menü ☰ ist jetzt ein Fenster mit Bereichen, Schaltern, Farbdesigns und der Leiste System & Support; aktualisieren durch Herunterziehen oder ein Tippen auf „aktualisiert“.
+HAUPTBILDSCHIRM
+- Großer Kompass: ein Tippen auf einen Ort in der Liste markiert sein Zeichen auf dem Kompass; Orte in derselben Richtung überdecken sich nicht mehr.
+- Design-Verbesserungen und Fehlerbehebungen.
+
+Version 4 (v.4.00 – v.4.52)
 HAUPTBILDSCHIRM
 - Export / Import: überträgt Ihre Orte, Favoriten, Parzellen und Einstellungen per Datei auf ein anderes Gerät (Speichern, Teilen; Import mit Hinzufügen oder Ersetzen).
 - Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.
@@ -11,7 +21,6 @@ HAUPTBILDSCHIRM
 WIDGETS
 - Widget 4x2 · Liste: eine große Temperatur und die nächsten 4 Tage (je ein Symbol) oder Stunden, in den Einstellungen wählbar; der Ort mit dem Ortszeichen des Kompasses.
 - Widgets: die farbigen Code-Linien auf jedem Widget, ohne den Text WARNUNG; ohne Codes eine blaue Linie mit der ersten gültigen Information (z. B. Reif).
-- Design-Verbesserungen und Fehlerbehebungen.
 
 Version 3 (v.3.00 – v.3.92)
 AKTUALISIERUNGEN

@@ -870,3 +870,41 @@ Codes on widgets	Widget'larda kodlar
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Her widget'ta uyarı kodları için üç renkli çizgi. Kod yoksa: hâlâ geçerli olan ilk bilgiyle tek bir mavi çizgi (ör. Kiraği).
 (forecast up to 	(tahmin şu saate kadar: 
 Values: being updated…	Değerler: güncelleniyor…
+App settings	Uygulama ayarları
+Make it yours	Kendinize göre ayarlayın
+Location & favourites	Konum ve favoriler
+Choose the state	Eyaleti seçin
+Preferences & display	Tercihler ve görünüm
+Weather for your land plots	Arazileriniz için hava durumu
+Your land plots, map, statistics	Arazileriniz, harita, istatistik
+Temperature	Sıcaklık
+Clock	Saat
+Alerts & behaviour	Uyarılar ve davranış
+Follows your position by GPS	Konumunuzu GPS ile izler
+Notifications for your place	Yeriniz için bildirimler
+Earthquake notices within 300 km of your place	Yerinize 300 km'ye kadar depremler için bildirim
+No earthquake notices	Deprem bildirimi yok
+Recent earthquakes nearby	Yakındaki son depremler
+Time, place, magnitude, distance	Saat, yer, büyüklük, uzaklık
+Rain, snow, warnings	Yağmur, kar, uyarılar
+A big dim clock while charging at night	Gece şarj olurken büyük, loş bir saat
+The screen does not go off	Ekran kapanmaz
+System & support	Sistem ve destek
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	☰ içindeki Çiftçi modu anahtarı modu değiştirir. Çiftçi modunda her saat, hava durumu ve yağmurla tek bir geniş kutudur; yatay konumda iki kutu alt alta, yukarı-aşağı kaydırılır. Başka bir yer seçmek normal moda döndürür.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Ekranın ortasında, bulanık ekranın üzerinde bir pencere; X ile ya da dışına dokunarak kapanır. Başlığın altında yer; ▲ ve ▼ kaydırır; kaynak en alttadır.
+Refreshes the weather; a tap on “updated” does the same.	Hava durumunu yeniler; “güncellendi”ye dokunmak da aynısını yapar.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Yerin altında bir sıra: deprem, ardından renklerine göre uyarılar. Dokunmak üstte değerleri (hamleler, miktarlar, sıcaklıklar), ardından ayrıntıları gösterir.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Pusula kutusuna dokunma: büyük bir pusula, GPS koordinatları, bulunduğunuz yer (gri) ve en yakın 3 yer, her biri kendi renginde. Listedeki bir yere veya işaretine dokunmak adını ve uzaklığını kadranda gösterir; aynı yöndeki yerler yan yana durur. Paylaş, pencerenin resmini yer, yön, yerler, pil, sıcaklıklar ve rüzgârla gönderir; Yerler işaretleri gösterir veya gizler.
+Settings (☰)	Ayarlar (☰)
+The Settings window	Ayarlar penceresi
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ ayarları bölümler hâlinde açar; bir anahtar bir işlevi hemen açar veya kapatır. X ile ya da dışına dokunarak kapanır.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Favoriler (yıldız: gösterilen yer); bir dokunuş birini seçer; + Ekle ve İli seçin yer listesini açar.
+Temperature and clock	Sıcaklık ve saat
+°C or °F, 12 h or 24 h: a tap on the choice.	°C veya °F, 12 sa veya 24 sa: seçime dokunun.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 renk teması: bir renge dokunun; altlarında Açık, Koyu veya Otomatik (telefon sensörü).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Anahtar: yerinize 300 km'ye kadar depremlerin bildirimleri. Altında, yakındaki son depremlerin sayfası; saat, yer, büyüklük ve uzaklıkla.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Pencerenin altındaki çubuk: Widget'lar, Dışa aktar / İçe aktar, Günlük, Güncellemeleri denetle, Uygulamayı gönder, Yardım, Hakkında.
+Rain or snow starting, new weather warnings, earthquakes around you.	Başlayan yağmur veya kar, yeni hava uyarıları, çevrenizdeki depremler.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Bildirimler açık: yağmur veya kar, hava uyarıları ve çevrenizdeki depremler.
+Compass	Pusula
+works offline	internetsiz çalışır

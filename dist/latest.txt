@@ -1,3 +1,3 @@
-versiune=4.52
-apk=MeteoAlarmAndroid-v4.52.apk
-marime=2281179
+versiune=5.00
+apk=MeteoAlarmAndroid-v5.00.apk
+marime=2342619

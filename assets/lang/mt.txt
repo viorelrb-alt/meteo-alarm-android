@@ -936,3 +936,41 @@ Codes on widgets	Kodiċijiet fuq il-widgets
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tliet linji kkuluriti għall-kodiċijiet tat-twissija, fuq kull widget. Mingħajr kodiċijiet: linja blu waħda bl-ewwel informazzjoni li għadha valida (eż. Ġlata).
 (forecast up to 	(tbassir sa 
 Values: being updated…	Valuri: qed jiġu aġġornati…
+App settings	Settings tal-app
+Make it yours	Agħmilha tiegħek
+Location & favourites	Post u favoriti
+Choose the state	Agħżel l-istat
+Preferences & display	Preferenzi u wiri
+Weather for your land plots	It-temp għall-għelieqi tiegħek
+Your land plots, map, statistics	L-għelieqi tiegħek, mappa, statistika
+Temperature	Temperatura
+Clock	Arloġġ
+Alerts & behaviour	Twissijiet u mġiba
+Follows your position by GPS	Isegwi l-pożizzjoni tiegħek bil-GPS
+Notifications for your place	Notifiki għall-post tiegħek
+Earthquake notices within 300 km of your place	Notifiki ta' terremoti sa 300 km mill-post tiegħek
+No earthquake notices	L-ebda notifika ta' terremoti
+Recent earthquakes nearby	Terremoti reċenti fil-qrib
+Time, place, magnitude, distance	Ħin, post, kobor, distanza
+Rain, snow, warnings	Xita, borra, twissijiet
+A big dim clock while charging at night	Arloġġ kbir u baxx waqt l-iċċarġjar bil-lejl
+The screen does not go off	L-iskrin ma jintfiex
+System & support	Sistema u appoġġ
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Is-swiċċ Modalità tal-bidwi f'☰ ibiddel il-modalità. Fil-mod tal-bidwi kull siegħa hija kaxxa wiesgħa waħda bit-temp u x-xita; mimduda, żewġ kaxxi waħda taħt l-oħra, li jiżżerżqu ’l fuq u ’l isfel. L-għażla ta’ lokalità oħra terġa’ lura għall-mod normali.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Tieqa f'nofs l-iskrin, fuq l-iskrin imċajpar; tingħalaq b'X jew b'mess barra minnha. Taħt it-titlu, il-post; ▲ u ▼ jiskrollaw; is-sors jinsab isfel.
+Refreshes the weather; a tap on “updated” does the same.	Jaġġorna t-temp; mess fuq “aġġornat” jagħmel l-istess.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Ringiela waħda taħt il-post: it-terremot, imbagħad it-twissijiet skont il-kulur. Il-mess juri fuq il-valuri (buffuri, ammonti, temperaturi), imbagħad id-dettalji.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Mess fuq il-kaxxa Boxxla: boxxla kbira, il-koordinati GPS, il-lokalità fejn qiegħed (griż) u t-3 lokalitajiet l-eqreb, kull waħda bil-kulur tagħha. Mess fuq lokalità fil-lista jew fuq il-marka tagħha juri isimha u d-distanza fuq id-dijal; lokalitajiet fl-istess direzzjoni jinsabu ħdejn xulxin. Aqsam jibgħat stampa tat-tieqa bil-post, id-direzzjoni, il-lokalitajiet, il-batterija, it-temperaturi u r-riħ; Lokalitajiet juri jew jaħbi l-marki.
+Settings (☰)	Settings (☰)
+The Settings window	It-tieqa Settings
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ jiftaħ is-settings f'taqsimiet; swiċċ ixgħel jew jitfi funzjoni mill-ewwel. Tingħalaq b'X jew b'mess barra minnha.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Il-favoriti (l-istilla: il-post muri); mess jagħżel wieħed; + Żid u Agħżel il-kontea jiftħu l-lista tal-lokalitajiet.
+Temperature and clock	Temperatura u arloġġ
+°C or °F, 12 h or 24 h: a tap on the choice.	°C jew °F, 12 h jew 24 h: mess fuq l-għażla.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 temi tal-kulur: mess fuq kulur; taħthom Ċara, Skura jew Awtomatika (is-sensur tat-telefon).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Is-swiċċ: notifiki ta' terremoti sa 300 km mill-post tiegħek. Taħtu, il-paġna tat-terremoti reċenti fil-qrib, bil-ħin, il-post, il-kobor u d-distanza.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Il-bar fil-qiegħ tat-tieqa: Widgets, Esporta / Importa, Log, Iċċekkja għal aġġornamenti, Ibgħat l-app, Għajnuna, Dwar.
+Rain or snow starting, new weather warnings, earthquakes around you.	Xita jew borra li tibda, twissijiet ġodda tat-temp, terremoti madwarek.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	In-notifiki huma mixgħula: xita jew borra, twissijiet tat-temp u terremoti madwarek.
+Compass	Boxxla
+works offline	taħdem mingħajr internet

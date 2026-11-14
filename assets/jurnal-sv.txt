@@ -1,4 +1,14 @@
-Nuvarande version: v.4.52 · 12.11.2026
+Nuvarande version: v.5.00 · 14.11.2026
+AVISERINGAR
+- Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
+- Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
+HUVUDSKÄRM
+- Stor kompass: ett tryck på en ort i listan visar dess märke på kompassen; orter i samma riktning överlappar inte längre.
+INSTÄLLNINGAR
+- Inställningar: menyn ☰ är nu ett fönster med avsnitt, reglage, färgteman och fältet System och support; uppdatera genom att dra skärmen nedåt eller trycka på ”uppdaterat”.
+- Designförbättringar och felrättningar.
+
+Version 4 (v.4.00 – v.4.52)
 HUVUDSKÄRM
 - Export / Import: flyttar dina orter, favoriter, skiften och inställningar till en annan enhet via en fil (Spara, Dela; Importera med Lägg till eller Ersätt).
 - Plats: byar du passerar kommer med i länets lista (i 7 dagar, eller för gott om du ofta är där); kompassen visar även byarna.
@@ -11,7 +21,6 @@ HUVUDSKÄRM
 WIDGETAR
 - Widget 4x2 · lista: en stor temperatur och de kommande 4 dagarna (en ikon var) eller timmarna, valbart i inställningarna; orten med kompassens ortsmärke.
 - Widgetar: kodernas färgade linjer på varje widget, utan texten VARNING; utan koder en blå linje med den första gällande informationen (t.ex. Rimfrost).
-- Designförbättringar och felrättningar.
 
 Version 3 (v.3.00 – v.3.92)
 AVISERINGAR

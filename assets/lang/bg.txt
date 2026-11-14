@@ -936,3 +936,41 @@ Codes on widgets	Кодове на уиджетите
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Три цветни линии за кодовете на предупреждение, на всеки уиджет. Без кодове: една синя линия с първата информация, която още е в сила (напр. Слана).
 (forecast up to 	(прогноза до 
 Values: being updated…	Стойности: актуализират се…
+App settings	Настройки на приложението
+Make it yours	Направете го свое
+Location & favourites	Местоположение и любими
+Choose the state	Изберете щата
+Preferences & display	Предпочитания и показване
+Weather for your land plots	Времето за вашите парцели
+Your land plots, map, statistics	Вашите парцели, карта, статистика
+Temperature	Температура
+Clock	Часовник
+Alerts & behaviour	Сигнали и поведение
+Follows your position by GPS	Следва позицията ви по GPS
+Notifications for your place	Известия за вашето място
+Earthquake notices within 300 km of your place	Известия за земетресения до 300 км от вашето място
+No earthquake notices	Без известия за земетресения
+Recent earthquakes nearby	Скорошни земетресения наоколо
+Time, place, magnitude, distance	Час, място, магнитуд, разстояние
+Rain, snow, warnings	Дъжд, сняг, предупреждения
+A big dim clock while charging at night	Голям приглушен часовник при зареждане през нощта
+The screen does not go off	Екранът не изгасва
+System & support	Система и поддръжка
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Превключвателят Режим фермер в ☰ сменя режима. В режим „Фермер“ всеки час е едно широко поле с времето и валежите; хоризонтално две полета едно под друго, плъзгани нагоре-надолу. Изборът на друго населено място връща нормалния режим.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Прозорец в средата на екрана, над размития екран; затваря се с X или с докосване извън него. Под заглавието е мястото; ▲ и ▼ превъртат; източникът е най-долу.
+Refreshes the weather; a tap on “updated” does the same.	Опреснява времето; докосване на „актуализирано“ прави същото.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Един ред под мястото: земетресението, после предупрежденията по цвят. Докосването показва отгоре стойностите (пориви, количества, температури), после подробностите.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Докосване на полето Компас: голям компас, GPS координатите, мястото, където сте (сиво), и 3-те най-близки места, всяко в свой цвят. Докосване на място в списъка или на знака му показва името и разстоянието на циферблата; местата в една посока са едно до друго. Сподели изпраща картина на прозореца с мястото, посоката, местата, батерията, температурите и вятъра; Места показва или скрива знаците.
+Settings (☰)	Настройки (☰)
+The Settings window	Прозорецът Настройки
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ отваря настройките по раздели; превключвател включва или изключва функция веднага. Затваря се с X или с докосване извън него.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Любимите (звездата: показаното място); докосване избира едно; + Добави и Изберете област отварят списъка с места.
+Temperature and clock	Температура и часовник
+°C or °F, 12 h or 24 h: a tap on the choice.	°C или °F, 12 ч или 24 ч: докоснете избора.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 цветни теми: докоснете цвят; под тях Светла, Тъмна или Автоматично (сензор на телефона).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Превключвателят: известия за земетресения до 300 км от вашето място. Под него страницата на скорошните земетресения наоколо, с час, място, магнитуд и разстояние.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Лентата в долната част на прозореца: Уиджети, Експорт / Импорт, Дневник, Провери за актуализации, Изпрати приложението, Помощ, Относно.
+Rain or snow starting, new weather warnings, earthquakes around you.	Започващ дъжд или сняг, нови предупреждения за времето, земетресения около вас.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Известията са включени: дъжд или сняг, предупреждения за времето и земетресения около вас.
+Compass	Компас
+works offline	работи без интернет

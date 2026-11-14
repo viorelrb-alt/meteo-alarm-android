@@ -936,3 +936,41 @@ Codes on widgets	Kodi logrīkos
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Trīs krāsainas līnijas brīdinājuma kodiem katrā logrīkā. Bez kodiem: viena zila līnija ar pirmo vēl spēkā esošo informāciju (piem., Sarma).
 (forecast up to 	(prognoze līdz 
 Values: being updated…	Vērtības: tiek atjauninātas…
+App settings	Lietotnes iestatījumi
+Make it yours	Padari to savu
+Location & favourites	Vieta un izlase
+Choose the state	Izvēlies štatu
+Preferences & display	Preferences un attēlojums
+Weather for your land plots	Laiks tavām zemes platībām
+Your land plots, map, statistics	Tavas zemes platības, karte, statistika
+Temperature	Temperatūra
+Clock	Pulkstenis
+Alerts & behaviour	Brīdinājumi un darbība
+Follows your position by GPS	Seko tavai atrašanās vietai ar GPS
+Notifications for your place	Paziņojumi tavai vietai
+Earthquake notices within 300 km of your place	Paziņojumi par zemestrīcēm līdz 300 km no tavas vietas
+No earthquake notices	Nav paziņojumu par zemestrīcēm
+Recent earthquakes nearby	Nesenās zemestrīces tuvumā
+Time, place, magnitude, distance	Laiks, vieta, magnitūda, attālums
+Rain, snow, warnings	Lietus, sniegs, brīdinājumi
+A big dim clock while charging at night	Liels, blāvs pulkstenis uzlādes laikā naktī
+The screen does not go off	Ekrāns neizslēdzas
+System & support	Sistēma un atbalsts
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Slēdzis Lauksaimnieka režīms izvēlnē ☰ maina režīmu. Lauksaimnieka režīmā katra stunda ir viens plats lodziņš ar laikapstākļiem un lietu; guļus divi lodziņi viens zem otra, bīdāmi augšup un lejup. Izvēloties citu vietu, atgriežas parastajā režīmā.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Logs ekrāna vidū virs izpludinātā ekrāna; to aizver ar X vai pieskaroties ārpus tā. Zem virsraksta ir vieta; ▲ un ▼ ritina; avots ir apakšā.
+Refreshes the weather; a tap on “updated” does the same.	Atsvaidzina laika ziņas; pieskāriens vārdam “atjaunināts” dara to pašu.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Viena rinda zem vietas: zemestrīce, tad brīdinājumi pēc krāsas. Pieskāriens augšā parāda vērtības (brāzmas, daudzumus, temperatūras), tad sīkāk.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Pieskāriens laukam Kompass: liels kompass, GPS koordinātas, vieta, kurā tu esi (pelēka), un 3 tuvākās vietas, katra savā krāsā. Pieskāriens vietai sarakstā vai tās zīmei rāda nosaukumu un attālumu uz ciparnīcas; vietas vienā virzienā ir blakus. Kopīgot nosūta loga attēlu ar vietu, virzienu, vietām, akumulatoru, temperatūrām un vēju; Vietas rāda vai paslēpj zīmes.
+Settings (☰)	Iestatījumi (☰)
+The Settings window	Logs Iestatījumi
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ atver iestatījumus pa sadaļām; slēdzis uzreiz ieslēdz vai izslēdz funkciju. To aizver ar X vai pieskaroties ārpus tā.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Izlase (zvaigzne: parādītā vieta); pieskāriens izvēlas vienu; + Pievienot un Izvēlies novadu atver vietu sarakstu.
+Temperature and clock	Temperatūra un pulkstenis
+°C or °F, 12 h or 24 h: a tap on the choice.	°C vai °F, 12 h vai 24 h: pieskaries izvēlei.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 krāsu motīvi: pieskaries krāsai; zem tiem Gaišs, Tumšs vai Automātisks (tālruņa sensors).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Slēdzis: paziņojumi par zemestrīcēm līdz 300 km no tavas vietas. Zem tā neseno zemestrīču lapa ar laiku, vietu, magnitūdu un attālumu.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Josla loga apakšā: Logrīki, Eksports / Imports, Žurnāls, Pārbaudīt atjauninājumus, Sūtīt lietotni, Palīdzība, Par.
+Rain or snow starting, new weather warnings, earthquakes around you.	Lietus vai sniega sākums, jauni laika brīdinājumi, zemestrīces tev apkārt.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Paziņojumi ir ieslēgti: lietus vai sniegs, laika brīdinājumi un zemestrīces tev apkārt.
+Compass	Kompass
+works offline	darbojas bez interneta

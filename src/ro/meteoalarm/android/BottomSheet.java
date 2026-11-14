@@ -30,6 +30,7 @@ final class BottomSheet extends FrameLayout {
 	private float downY;
 	/** The "Aa" button next to the right ones (Despre, Ce e nou): it shows the text-size bar (SizeOverlay). */
 	private final Button size;
+	private final View closeX;
 	private SizeOverlay sizer;
 	private boolean sized;
 
@@ -61,7 +62,20 @@ final class BottomSheet extends FrameLayout {
 		title = new TextView(c);
 		title.setTextSize(20);
 		title.setTypeface(Typeface.DEFAULT_BOLD);
-		sheet.addView(title);
+		// v5.00 (Viorel): X at the right of the title closes; a lone "Close" button is gone.
+		LinearLayout head = new LinearLayout(c);
+		head.setGravity(Gravity.CENTER_VERTICAL);
+		head.addView(title, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
+		closeX = new View(c);
+		closeX.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (cancelable) cancel();
+			}
+		});
+		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams((int) (40 * dp), (int) (40 * dp));
+		xl.leftMargin = (int) (10 * dp);
+		head.addView(closeX, xl);
+		sheet.addView(head);
 		// v3.61 (Viorel): with three buttons (Settings · Don't show again · Continue) the row was wider
 		// than the screen and the left button went off the left edge: the labels now get smaller
 		// (and the buttons narrower) until the whole row fits.
@@ -222,6 +236,7 @@ final class BottomSheet extends FrameLayout {
 		sheet.setBackground(sb);
 		sheet.findViewWithTag("handle").setBackground(shape(dark ? 0xFF6B6A65 : 0xFFAAAAAA, 0, 2 * dp, dp, false));
 		title.setTextColor(ink);
+		closeX.setBackground(Glass.closeIcon(dark, dp));
 		text.setTextColor(dark ? 0xFFC2C0B6 : 0xFF333333);
 		scroll.setBackgroundColor(0);
 		primary.setBackground(shape(accent, 0, 22 * dp, dp, false));
@@ -306,7 +321,10 @@ final class BottomSheet extends FrameLayout {
 		onLeft = null;
 		sizeBar(false);
 		cancelable = closeLabel != null;
-		secondary.setVisibility(closeLabel == null ? GONE : VISIBLE);
+		closeX.setContentDescription(closeLabel);
+		closeX.setVisibility(cancelable ? VISIBLE : GONE);
+		// Only "Close": the X does it (v5.00); with an action the Close button stays next to it.
+		secondary.setVisibility(closeLabel == null || primaryLabel == null ? GONE : VISIBLE);
 		if (closeLabel != null) secondary.setText(closeLabel);
 		onPrimary = action;
 		primary.setVisibility(primaryLabel == null ? GONE : VISIBLE);

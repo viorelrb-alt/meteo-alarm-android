@@ -1,4 +1,14 @@
-Praegune versioon: v.4.52 · 12.11.2026
+Praegune versioon: v.5.00 · 14.11.2026
+PÕHIEKRAAN
+- Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
+SEADED
+- Seaded: menüü ☰ on nüüd aken jaotiste, lülitite, värviteemade ja ribaga Süsteem ja tugi; värskendamiseks tõmba ekraani alla või puuduta „uuendatud“.
+TEAVITUSED
+- Maavärinad: teavitused ainult maavärinatest kuni 300 km sinu kohast; lülitatakse sisse või välja menüüs ☰.
+- Tornaadod (USA): sinu asula tornaaditeavitused lülitatakse sisse või välja menüüs ☰.
+- Disainiparandused ja vigade parandused.
+
+Versioon 4 (v.4.00 – v.4.52)
 PÕHIEKRAAN
 - Asukoht: külad, millest läbi sõidad, lisatakse maakonna loendisse (7 päevaks või jäädavalt, kui käid seal tihti); kompass näitab ka külasid.
 - Asukoht: teises riigis või USA osariigis laaditakse väikesed asulad alla üks kord, kui oled seal esimest korda internetiga, kompassi ja kohtade loendi jaoks.
@@ -11,7 +21,6 @@ PÕHIEKRAAN
 VIDINAD
 - Vidin 4x2 · loend: suur temperatuur ja järgmised 4 päeva (igaüks üks ikoon) või tunnid, valitav seadetes; koht kompassi kohamärgiga.
 - Vidinad: koodide värvilised jooned igal vidinal, ilma tekstita HOIATUS; koodideta üks sinine joon esimese kehtiva teabega (nt Härmatis).
-- Disainiparandused ja vigade parandused.
 
 Versioon 3 (v.3.00 – v.3.92)
 PÕHIEKRAAN

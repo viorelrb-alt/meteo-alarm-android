@@ -105,13 +105,53 @@ final class HelpPanel extends FrameLayout {
 		top.addView(sizeBtn, sbp);
 		top.addView(close);
 		col.addView(top);
+		// v5.00 (Viorel, mockup 5-ajutor): the sections as tabs under the title; a tap scrolls there.
+		tabsScroll = new android.widget.HorizontalScrollView(c);
+		tabsScroll.setHorizontalScrollBarEnabled(false);
+		tabs = new LinearLayout(c);
+		tabs.setPadding(pad, 0, pad, (int) (8 * dp));
+		tabsScroll.addView(tabs);
+		col.addView(tabsScroll);
 		scroll = new ScrollView(c);
 		list = new LinearLayout(c);
 		list.setOrientation(LinearLayout.VERTICAL);
 		list.setPadding(pad, 0, pad, (int) (24 * dp));
 		scroll.addView(list);
 		col.addView(scroll, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 0, 1));
-		addView(col, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+		panel = col;
+		// v5.00: a glass window over the blurred screen, a small margin around it.
+		LayoutParams cl = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		cl.leftMargin = cl.rightMargin = cl.topMargin = cl.bottomMargin = (int) (14 * dp);
+		addView(col, cl);
+	}
+
+	private final LinearLayout panel, tabs;
+	private final android.widget.HorizontalScrollView tabsScroll;
+	private final java.util.List<View> sections = new java.util.ArrayList<View>();
+
+	private void tab(final String name, final View target) {
+		TextView t = new TextView(getContext());
+		t.setTypeface(bold);
+		TextSize.size(t, 15, 1);
+		t.setText(name);
+		t.setSingleLine(true);
+		t.setTextColor(ink());
+		t.setPadding((int) (16 * dp), (int) (8 * dp), (int) (16 * dp), (int) (8 * dp));
+		t.setBackground(Glass.pill(Glass.disc(dark), 0, 20 * dp, dp));
+		t.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				for (int i = 0; i < tabs.getChildCount(); i++) {
+					TextView o = (TextView) tabs.getChildAt(i);
+					boolean on = o == v;
+					o.setTextColor(on ? (dark ? ro.meteoalarm.android.core.Theme.page(true) : 0xFFFFFFFF) : ink());
+					o.setBackground(Glass.pill(on ? ro.meteoalarm.android.core.Theme.accent(dark) : Glass.disc(dark), 0, 20 * dp, dp));
+				}
+				scroll.smoothScrollTo(0, Math.max(0, target.getTop() - (int) (4 * dp)));
+			}
+		});
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		lp.rightMargin = (int) (8 * dp);
+		tabs.addView(t, lp);
 	}
 
 	/** The text-size bar over the page (made by MainActivity, on top of every window). */
@@ -138,21 +178,25 @@ final class HelpPanel extends FrameLayout {
 	/** Starts a new help text: TITLE, the close button's label, the theme. */
 	void begin(String head, String closeLabel, boolean d) {
 		dark = d;
-		setBackgroundColor(ro.meteoalarm.android.core.Theme.page(dark));
+		setBackgroundColor(0);
+		GradientDrawable pb = Glass.panelBg(dark, 30 * dp, dp);
+		pb.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.page(dark), dark ? 0.88f : 0.92f));
+		panel.setBackground(pb);
 		title.setText(head);
 		title.setTextColor(ink());
-		close.setText(closeLabel);
-		close.setTextColor(ink());
-		GradientDrawable bg = new GradientDrawable();
-		bg.setCornerRadius(10 * dp);
-		bg.setStroke((int) (2 * dp), ink());
-		close.setBackground(bg);
+		// v5.00 (Viorel): X in a round button instead of "Închide" (its name stays for TalkBack).
+		close.setText("");
+		close.setContentDescription(closeLabel);
+		close.setBackground(Glass.closeIcon(dark, dp));
+		close.setLayoutParams(new LinearLayout.LayoutParams((int) (42 * dp), (int) (42 * dp)));
+		close.setPadding(0, 0, 0, 0);
 		sizeBtn.setTextColor(ink());
-		GradientDrawable sb = new GradientDrawable();
-		sb.setCornerRadius(10 * dp);
-		sb.setStroke((int) (2 * dp), ink());
-		sizeBtn.setBackground(sb);
+		sizeBtn.setBackground(Glass.pill(Glass.disc(dark), 0, 21 * dp, dp));
+		sizeBtn.setMinHeight((int) (42 * dp));
 		list.removeAllViews();
+		tabs.removeAllViews();
+		sections.clear();
+		tabsScroll.setVisibility(GONE);
 		ts = TextSize.get(getContext());
 		TextSize.apply(title, ts);
 	}
@@ -162,13 +206,14 @@ final class HelpPanel extends FrameLayout {
 		TextView t = new TextView(getContext());
 		t.setTypeface(bold);
 		TextSize.size(t, 14, ts);
-		t.setTextColor(dim());
+		t.setTextColor(ro.meteoalarm.android.core.Theme.accent(dark));
+		t.setLetterSpacing(0.1f);
 		t.setText(text.toUpperCase());
-		t.setPadding(0, (int) (18 * dp), 0, (int) (6 * dp));
+		t.setPadding((int) (4 * dp), (int) (18 * dp), 0, (int) (8 * dp));
 		list.addView(t);
-		View line = new View(getContext());
-		line.setBackgroundColor(ink());
-		list.addView(line, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(2, (int) (2 * dp))));
+		sections.add(t);
+		tab(text, t);
+		tabsScroll.setVisibility(sections.size() >= 3 ? VISIBLE : GONE);
 	}
 
 	/** A plain paragraph (a notice: downloading, nothing found…). */
@@ -196,10 +241,15 @@ final class HelpPanel extends FrameLayout {
 	void entry(Bitmap icon, String name, String what) {
 		Context c = getContext();
 		LinearLayout row = new LinearLayout(c);
-		row.setPadding(0, (int) (12 * dp), 0, (int) (12 * dp));
+		// v5.00 (Viorel): each explanation in a glass card, its icon on a faint disc.
+		int cp = (int) (14 * dp);
+		row.setPadding(cp, cp, cp, cp);
+		row.setBackground(Glass.cardBg(dark, 20 * dp, dp));
 		ImageView iv = new ImageView(c);
 		iv.setImageBitmap(icon);
-		int s = (int) (40 * dp);
+		int s = (int) (44 * dp);
+		iv.setPadding((int) (6 * dp), (int) (6 * dp), (int) (6 * dp), (int) (6 * dp));
+		iv.setBackground(Glass.pill(Glass.disc(dark), 0, 22 * dp, dp));
 		LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(s, s);
 		ip.rightMargin = (int) (14 * dp);
 		row.addView(iv, ip);
@@ -219,7 +269,9 @@ final class HelpPanel extends FrameLayout {
 		w.setText(what);
 		txt.addView(w);
 		row.addView(txt, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
-		list.addView(row);
+		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		rl.bottomMargin = (int) (10 * dp);
+		list.addView(row, rl);
 	}
 
 	void show() {

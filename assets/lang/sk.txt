@@ -936,3 +936,41 @@ Codes on widgets	Kódy na widgetoch
 Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).	Tri farebné čiary pre kódy výstrah na každom widgete. Bez kódov: jedna modrá čiara s prvou ešte platnou informáciou (napr. Srieň).
 (forecast up to 	(predpoveď do 
 Values: being updated…	Hodnoty: prebieha aktualizácia…
+App settings	Nastavenia aplikácie
+Make it yours	Prispôsobte si ju
+Location & favourites	Poloha a obľúbené
+Choose the state	Vyberte štát
+Preferences & display	Predvoľby a zobrazenie
+Weather for your land plots	Počasie pre vaše pozemky
+Your land plots, map, statistics	Vaše pozemky, mapa, štatistika
+Temperature	Teplota
+Clock	Hodiny
+Alerts & behaviour	Upozornenia a správanie
+Follows your position by GPS	Sleduje vašu polohu cez GPS
+Notifications for your place	Upozornenia pre vaše miesto
+Earthquake notices within 300 km of your place	Upozornenia na zemetrasenia do 300 km od vášho miesta
+No earthquake notices	Žiadne upozornenia na zemetrasenia
+Recent earthquakes nearby	Nedávne zemetrasenia v okolí
+Time, place, magnitude, distance	Čas, miesto, magnitúdo, vzdialenosť
+Rain, snow, warnings	Dážď, sneh, výstrahy
+A big dim clock while charging at night	Veľké tlmené hodiny pri nabíjaní v noci
+The screen does not go off	Obrazovka nezhasne
+System & support	Systém a podpora
+The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.	Prepínač Režim farmára v ☰ mení režim. V režime farmára je každá hodina jedno široké pole s počasím a dažďom; na šírku dve polia pod sebou, posúvané hore a dole. Výber iného miesta vráti bežný režim.
+A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Okno uprostred obrazovky, nad rozmazanou obrazovkou; zatvorí sa krížikom X alebo ťuknutím mimo neho. Pod nadpisom je miesto; ▲ a ▼ posúvajú; zdroj je dole.
+Refreshes the weather; a tap on “updated” does the same.	Obnoví počasie; ťuknutie na „aktualizované“ robí to isté.
+One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.	Jeden riadok pod miestom: zemetrasenie, potom výstrahy podľa farby. Ťuknutie ukáže hore hodnoty (nárazy, množstvá, teploty), potom podrobnosti.
+A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.	Ťuknutie na pole Kompas: veľký kompas, súradnice GPS, obec, v ktorej ste (sivá), a 3 najbližšie obce, každá vo svojej farbe. Ťuknutie na obec v zozname alebo na jej značku ukáže názov a vzdialenosť na ciferníku; obce v rovnakom smere sú vedľa seba. Zdieľať pošle obrázok okna s miestom, smerom, obcami, batériou, teplotami a vetrom; Obce zobrazia alebo skryjú značky.
+Settings (☰)	Nastavenia (☰)
+The Settings window	Okno Nastavenia
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.	☰ otvorí nastavenia po častiach; prepínač hneď zapne alebo vypne funkciu. Zatvorí sa krížikom X alebo ťuknutím mimo neho.
+The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.	Obľúbené (hviezdička: zobrazené miesto); ťuknutím jedno vyberiete; + Pridať a Vyberte kraj otvoria zoznam obcí.
+Temperature and clock	Teplota a hodiny
+°C or °F, 12 h or 24 h: a tap on the choice.	°C alebo °F, 12 h alebo 24 h: ťuknite na voľbu.
+6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).	6 farebných motívov: ťuknite na farbu; pod nimi Svetlý, Tmavý alebo Automatický (senzor telefónu).
+The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.	Prepínač: upozornenia na zemetrasenia do 300 km od vášho miesta. Pod ním stránka nedávnych zemetrasení v okolí, s časom, miestom, magnitúdom a vzdialenosťou.
+The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.	Lišta dole v okne: Miniaplikácie, Export / Import, Denník, Skontrolovať aktualizácie, Poslať aplikáciu, Pomocník, O aplikácii.
+Rain or snow starting, new weather warnings, earthquakes around you.	Začínajúci dážď alebo sneh, nové výstrahy pred počasím, zemetrasenia vo vašom okolí.
+Notifications are on: rain or snow, weather warnings and earthquakes around you.	Upozornenia sú zapnuté: dážď alebo sneh, výstrahy pred počasím a zemetrasenia vo vašom okolí.
+Compass	Kompas
+works offline	funguje bez internetu

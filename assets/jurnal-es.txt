@@ -1,4 +1,14 @@
-Versión actual: v.4.52 · 12.11.2026
+Versión actual: v.5.00 · 14.11.2026
+AJUSTES
+- Ajustes: el menú ☰ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
+NOTIFICACIONES
+- Terremotos: avisos solo de los terremotos a menos de 300 km de tu lugar; se activan o desactivan en ☰.
+- Tornados (EE. UU.): los avisos de tornado para tu localidad se activan o desactivan en ☰.
+PANTALLA PRINCIPAL
+- Brújula grande: tocar una localidad de la lista muestra su marca en la brújula; las localidades en la misma dirección ya no se superponen.
+- Mejoras de diseño y corrección de errores.
+
+Versión 4 (v.4.00 – v.4.52)
 PANTALLA PRINCIPAL
 - Avisos: al tocar un recuadro de código o de información se ven arriba los valores del pronóstico (rachas, cantidades, temperaturas), luego el intervalo y las explicaciones.
 - Brújula grande: la localidad en la que estás aparece primero (gris); Compartir envía también una imagen de la ventana, las localidades cercanas con sus distancias, la batería, las temperaturas (aire, suelo, a la altura del teléfono) y el viento.
@@ -11,7 +21,6 @@ PANTALLA PRINCIPAL
 WIDGETS
 - Widget 4x2 · lista: una temperatura grande y los próximos 4 días (un icono cada uno) u horas, a elegir en sus ajustes; la localidad con la marca de localidad de la brújula.
 - Widgets: las líneas de colores de los códigos en todos los widgets, sin el texto AVISO; sin códigos, una línea azul con la primera información vigente (p. ej. Escarcha).
-- Mejoras de diseño y corrección de errores.
 
 Versión 3 (v.3.00 – v.3.92)
 ACTUALIZACIONES

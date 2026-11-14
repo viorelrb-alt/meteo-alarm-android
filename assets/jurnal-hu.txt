@@ -1,4 +1,14 @@
-Jelenlegi verzió: v.4.52 · 12.11.2026
+Jelenlegi verzió: v.5.00 · 14.11.2026
+BEÁLLÍTÁSOK
+- Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
+ÉRTESÍTÉSEK
+- Földrengések: értesítések csak a helyedtől legfeljebb 300 km-re lévő földrengésekről; a ☰-ban kapcsolhatók be vagy ki.
+- Tornádók (USA): a településed tornádóértesítései a ☰-ban kapcsolhatók be vagy ki.
+FŐKÉPERNYŐ
+- Nagy iránytű: egy település megérintése a listában megmutatja a jelét az iránytűn; az azonos irányú települések már nem fedik egymást.
+- Dizájnjavítások és hibajavítások.
+
+4. verzió (v.4.00 – v.4.52)
 FŐKÉPERNYŐ
 - Exportálás / Importálás: fájl segítségével átviszi a településeket, kedvenceket, parcellákat és beállításokat egy másik eszközre (Mentés, Megosztás; Importálás Hozzáadással vagy Cserével).
 - Figyelmeztetések: egy kód- vagy tájékoztató mezőre koppintva felül az előrejelzés értékei (széllökések, mennyiségek, hőmérsékletek), majd az időszak és a magyarázatok.
@@ -11,7 +21,6 @@ FŐKÉPERNYŐ
 WIDGETEK
 - 4x2 · lista widget: nagy hőmérséklet és a következő 4 nap (egy-egy ikonnal) vagy óra, a beállításokban választható; a település az iránytű településjelével.
 - Widgetek: a kódok színes vonalai minden widgeten, a FIGYELMEZTETÉS szöveg nélkül; kódok nélkül egy kék vonal az első érvényes tájékoztatással (pl. Dér).
-- Dizájnjavítások és hibajavítások.
 
 3. verzió (v.3.00 – v.3.92)
 ÉRTESÍTÉSEK

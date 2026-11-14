@@ -1,4 +1,14 @@
-Leagan reatha: v.4.52 · 12.11.2026
+Leagan reatha: v.5.00 · 14.11.2026
+FÓGRAÍ
+- Creathanna talún: fógraí ach amháin do chreathanna talún 300 km ar a mhéad ó d'áit; casann tú air nó as iad in ☰.
+- Tornádónna (SAM): casann tú fógraí tornádó do do bhaile air nó as in ☰.
+PRÍOMHSCÁILEÁN
+- Compás mór: taispeánann tadhall ar bhaile sa liosta a mharc ar an gcompás; ní fhorluíonn bailte sa treo céanna a thuilleadh.
+SOCRUITHE
+- Socruithe: is fuinneog anois an roghchlár ☰ le codanna, lasca, téamaí datha agus an barra Córas agus tacaíocht; athnuachan trí an scáileán a tharraingt anuas nó tadhall ar “nuashonraithe”.
+- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+
+Leagan 4 (v.4.00 – v.4.52)
 GIUIRLÉIDÍ
 - Giuirléid 4x2 · liosta: teocht mhór agus na 4 lá eile (deilbhín amháin an ceann) nó uaireanta, le roghnú sna socruithe; an baile le marc baile an chompáis.
 - Giuirléidí: línte daite na gcód ar gach giuirléid, gan an téacs RABHADH; gan chóid, líne ghorm amháin leis an gcéad fhaisnéis bhailí (m.sh. Sioc bán).
@@ -11,7 +21,6 @@ PRÍOMHSCÁILEÁN
 - Rabhaidh: taispeánann tapáil ar bhosca cóid nó faisnéise luachanna na réamhaisnéise ar barr (siotaí, méideanna, teochtaí), ansin an tréimhse agus na mínithe.
 - Suíomh: cuirtear na sráidbhailte a dtéann tú tríothu le liosta an chontae (ar feadh 7 lá, nó go buan má théann tú tríothu go minic); taispeánann an compás na sráidbhailte freisin.
 - Suíomh: i dtír eile nó i stát eile de chuid na SA, íoslódáiltear na háiteanna beaga uair amháin, an chéad uair a bhíonn tú ann le hidirlíon, don chompás agus do liosta na n-áiteanna.
-- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
 
 Leagan 3 (v.3.00 – v.3.92)
 CEAPACHA
