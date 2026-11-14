@@ -1,4 +1,4 @@
-Nykyinen versio: v.5.03 · 14.11.2026
+Nykyinen versio: v.5.04 · 14.11.2026
 ASETUKSET
 - Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
 ILMOITUKSET

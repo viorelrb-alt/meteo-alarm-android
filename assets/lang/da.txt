@@ -977,3 +977,4 @@ works offline	virker uden internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Bjælken nederst i vinduet: Widgets, Eksport / Import, Log, Opdater, Del, Hjælp, Om. Trukket op viser den navnene under ikonerne.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ åbner indstillingerne i afsnit; en kontakt slår en funktion til eller fra med det samme. Det lukkes med X eller et tryk udenfor. På en telefon åbner det i portræt.
 Recent earthquakes	Seneste jordskælv
+Developed by Viorel-R Boancă	Udviklet af Viorel-R Boancă

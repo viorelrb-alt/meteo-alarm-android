@@ -977,3 +977,4 @@ works offline	funguje bez internetu
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Lišta dole v okne: Miniaplikácie, Export / Import, Denník, Aktualizovať, Zdieľať, Pomocník, O aplikácii. Po potiahnutí nahor ukáže názvy pod ikonami.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ otvorí nastavenia po častiach; prepínač hneď zapne alebo vypne funkciu. Zatvorí sa krížikom X alebo ťuknutím mimo neho. Na telefóne sa otvorí na výšku.
 Recent earthquakes	Nedávne zemetrasenia
+Developed by Viorel-R Boancă	Vyvinul Viorel-R Boancă

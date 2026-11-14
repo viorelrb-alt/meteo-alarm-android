@@ -60,11 +60,14 @@ public final class WidgetConfig extends Activity {
 		en = Lang.en(this);
 		dp = getResources().getDisplayMetrics().density;
 		dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
-		page = dark ? 0xFF000000 : 0xFFF4F4F6;
-		card = dark ? 0xFF1E1E21 : 0xFFFFFFFF;
-		ink = dark ? 0xFFF2F2F2 : 0xFF111111;
-		dim = dark ? 0xFF8A8A8E : 0xFF8A8A8E;
-		accent = dark ? 0xFF6FA3FF : 0xFF2F6BE0;
+		// v5.04 (Viorel): the app's new look: its theme colours, glass cards with a thin edge.
+		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(this).getInt("palette", 0);
+		page = ro.meteoalarm.android.core.Theme.page(dark);
+		card = mix(page, ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.07f : 0.05f);
+		edge = Glass.edge(dark);
+		ink = ro.meteoalarm.android.core.Theme.ink(dark);
+		dim = ro.meteoalarm.android.core.Theme.dim(dark);
+		accent = ro.meteoalarm.android.core.Theme.accent(dark);
 		Bundle ex = getIntent().getExtras();
 		if (ex != null) id = ex.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
 		if (id != AppWidgetManager.INVALID_APPWIDGET_ID) {
@@ -128,11 +131,10 @@ public final class WidgetConfig extends Activity {
 		LinearLayout row = new LinearLayout(this);
 		for (final int wid : choices) {
 			boolean on = wid == id;
-			TextView t = text(widgetName(wid), 16, on ? (dark ? 0xFF000000 : 0xFFFFFFFF) : ink, true);
+			TextView t = text(widgetName(wid), 15, on ? (dark ? page : 0xFFFFFFFF) : ink, true);
 			t.setSingleLine(true);
 			t.setPadding((int) (16 * dp), (int) (10 * dp), (int) (16 * dp), (int) (10 * dp));
 			GradientDrawable g = round(on ? accent : card, 20);
-			if (!on) g.setStroke(Math.max(1, (int) dp), dim);
 			t.setBackground(g);
 			t.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
@@ -144,6 +146,7 @@ public final class WidgetConfig extends Activity {
 			row.addView(t, lp);
 		}
 		hs.addView(row);
+		AutoScroll.attach(hs, row); // v5.04 (Viorel): several widgets: the row moves like the warnings
 		return hs;
 	}
 
@@ -164,12 +167,21 @@ public final class WidgetConfig extends Activity {
 		GradientDrawable g = new GradientDrawable();
 		g.setColor(color);
 		g.setCornerRadius(r * dp);
+		if (color == card) g.setStroke(Math.max(1, (int) dp), edge);
 		return g;
+	}
+
+	private int edge;
+
+	private static int mix(int a, int b, float f) {
+		int r = Math.round(((a >> 16) & 255) * (1 - f) + ((b >> 16) & 255) * f), g = Math.round(((a >> 8) & 255) * (1 - f) + ((b >> 8) & 255) * f),
+				bl = Math.round((a & 255) * (1 - f) + (b & 255) * f);
+		return 0xFF000000 | r << 16 | g << 8 | bl;
 	}
 
 	private View divider() {
 		View v = new View(this);
-		v.setBackgroundColor(dark ? 0xFF333336 : 0xFFE2E2E6);
+		v.setBackgroundColor(edge);
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
 		lp.leftMargin = lp.rightMargin = (int) (18 * dp);
 		v.setLayoutParams(lp);
@@ -309,6 +321,11 @@ public final class WidgetConfig extends Activity {
 		bgRow.addView(text(Tr.t("Background", "Fundal"), 18, ink, false), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		bgSwitch = new Switch(this);
 		bgSwitch.setChecked(set.bg);
+		if (Build.VERSION.SDK_INT >= 23) {
+			android.content.res.ColorStateList on = new android.content.res.ColorStateList(new int[][] { { android.R.attr.state_checked }, {} }, new int[] { accent, dim });
+			bgSwitch.setThumbTintList(on);
+			bgSwitch.setTrackTintList(on);
+		}
 		bgRow.addView(bgSwitch);
 		c.addView(bgRow);
 		alphaText = text("", 14, dim, false);
@@ -317,6 +334,10 @@ public final class WidgetConfig extends Activity {
 		alpha = new SeekBar(this);
 		alpha.setMax(100);
 		alpha.setProgress(100 - set.alpha);
+		if (Build.VERSION.SDK_INT >= 21) {
+			alpha.setProgressTintList(android.content.res.ColorStateList.valueOf(accent));
+			alpha.setThumbTintList(android.content.res.ColorStateList.valueOf(accent));
+		}
 		alpha.setPadding((int) (24 * dp), (int) (10 * dp), (int) (24 * dp), (int) (12 * dp));
 		c.addView(alpha);
 		c.addView(divider());

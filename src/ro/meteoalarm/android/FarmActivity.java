@@ -327,7 +327,8 @@ public final class FarmActivity extends Activity {
 				for (int k = -1; k <= 1; k++) c.drawCircle(cx, cy + k * d, r, pt);
 			}
 		};
-		v.setBackground(frame(btn, 12));
+		// v5.04 (Viorel): over the map it hardly showed: the same solid round button as the map's others.
+		v.setBackground(Glass.pill(Glass.alpha(page, 0.86f), Glass.edge(dark), size / 2f, dp));
 		v.setElevation(px(3));
 		v.setContentDescription(Tr.t("Menu", "Meniu"));
 		v.setMinimumWidth(size);

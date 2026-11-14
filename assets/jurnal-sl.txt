@@ -1,4 +1,4 @@
-Trenutna različica: v.5.03 · 14.11.2026
+Trenutna različica: v.5.04 · 14.11.2026
 GLAVNI ZASLON
 - Velik kompas: dotik kraja na seznamu pokaže njegovo oznako na kompasu; kraji v isti smeri se ne prekrivajo več.
 NASTAVITVE

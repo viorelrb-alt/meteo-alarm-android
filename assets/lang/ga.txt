@@ -977,3 +977,4 @@ works offline	oibríonn sé gan idirlíon
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	An barra ag bun na fuinneoige: Giuirléidí, Easpórtáil / Iompórtáil, Logchomhad, Nuashonraigh, Comhroinn, Cabhair, Faoi. Nuair a tharraingítear suas é, taispeánann sé na hainmneacha faoi na deilbhíní.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	Osclaíonn ☰ na socruithe ina gcodanna; casann lasc feidhm air nó as láithreach. Dúntar í le X nó le tadhall lasmuigh di. Ar fhón, osclaíonn sí go hingearach.
 Recent earthquakes	Creathanna talún le déanaí
+Developed by Viorel-R Boancă	Forbartha ag Viorel-R Boancă

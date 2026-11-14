@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.03";
+	static final String VERSION = "Meteo Alarm Android v5.04";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -3192,12 +3192,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Poți exporta setările aplicației (localitățile, favoritele, parcelele și preferințele, tot ce ai configurat pe un dispozitiv) și le poți importa ușor pe un al doilea dispozitiv Android sau când treci pe un telefon nou: ☰ › Export / Import.")
 				+ "\n\n" + Tr.t("The app is currently available only in the EU and the US, and only works on Android devices. It updates itself from GitHub: ☰ › Check for updates.",
 				"Aplicația este disponibilă deocamdată doar în UE și în SUA și funcționează doar pe dispozitive Android. Se actualizează singură de pe GitHub: ☰ › Verifică actualizări.")
-				+ "\n\n" + Tr.t("Developed by Viorel-R. B.", "Dezvoltată de Viorel-R. B.");
+;
 	}
 
 	private void about() {
 		String msg = description() + "\n\n" + aboutText() + "\n\n" + (Tr.t("The dark theme uses the Claude app colours. Font: Liberation Sans.", "Tema întunecată folosește culorile aplicației Claude. Font: Liberation Sans."));
-		msg += "\n\n" + (Tr.t("Installed version: v", "Versiunea instalată: v")) + updater.installed()
+		// v5.04 (Viorel): the author's full name, just above the installed version.
+		msg += "\n\n" + Tr.t("Developed by Viorel-R Boancă", "Dezvoltată de Viorel-R Boancă");
+		msg += "\n" + (Tr.t("Installed version: v", "Versiunea instalată: v")) + updater.installed()
 				+ "\n" + (Tr.t("Updates: ", "Actualizări: ")) + "github.com/" + ro.meteoalarm.android.core.Release.REPO + "/releases";
 		final String aboutMsg = msg;
 		sheet.show(VERSION, msg, null, null, Tr.t("Close", "Închide"));

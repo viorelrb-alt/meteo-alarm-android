@@ -1,4 +1,4 @@
-Version actuelle : v.5.03 · 14.11.2026
+Version actuelle : v.5.04 · 14.11.2026
 ÉCRAN PRINCIPAL
 - Grande boussole : toucher une localité de la liste affiche son repère sur la boussole ; les localités dans la même direction ne se superposent plus.
 NOTIFICATIONS

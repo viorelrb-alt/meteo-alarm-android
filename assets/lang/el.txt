@@ -977,3 +977,4 @@ works offline	λειτουργεί χωρίς internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Η μπάρα στο κάτω μέρος του παραθύρου: Γραφικά στοιχεία, Εξαγωγή / Εισαγωγή, Ημερολόγιο, Ενημέρωση, Κοινοποίηση, Βοήθεια, Πληροφορίες. Όταν τραβηχτεί προς τα πάνω, δείχνει τα ονόματα κάτω από τα εικονίδια.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	Το ☰ ανοίγει τις ρυθμίσεις σε ενότητες· ένας διακόπτης ενεργοποιεί ή απενεργοποιεί μια λειτουργία αμέσως. Κλείνει με το X ή με πάτημα έξω από αυτό. Στο τηλέφωνο ανοίγει σε κατακόρυφη θέση.
 Recent earthquakes	Πρόσφατοι σεισμοί
+Developed by Viorel-R Boancă	Ανάπτυξη: Viorel-R Boancă

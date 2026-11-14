@@ -1,4 +1,4 @@
-Versión actual: v.5.03 · 14.11.2026
+Versión actual: v.5.04 · 14.11.2026
 AJUSTES
 - Ajustes: el menú ☰ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
 NOTIFICACIONES

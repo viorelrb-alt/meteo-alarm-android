@@ -62,6 +62,24 @@ final class BottomSheet extends FrameLayout {
 		title = new TextView(c);
 		title.setTextSize(20);
 		title.setTypeface(Typeface.DEFAULT_BOLD);
+		// v5.04 (Viorel): the title on one line, smaller when it does not fit.
+		title.setSingleLine(true);
+		title.addOnLayoutChangeListener(new OnLayoutChangeListener() {
+			public void onLayoutChange(View v, int l, int t, int r, int b, int ol, int ot, int or, int ob) {
+				int room = r - l - title.getCompoundPaddingLeft() - title.getCompoundPaddingRight();
+				if (room <= 0) return;
+				float base = 20 * getResources().getDisplayMetrics().scaledDensity;
+				android.graphics.Paint p = new android.graphics.Paint(title.getPaint());
+				p.setTextSize(base);
+				float need = p.measureText(title.getText().toString()) + 2;
+				final float want = need > room ? Math.max(base * 0.5f, base * room / need) : base;
+				if (Math.abs(title.getTextSize() - want) > 0.5f) title.post(new Runnable() {
+					public void run() {
+						title.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, want);
+					}
+				});
+			}
+		});
 		// v5.00 (Viorel): X at the right of the title closes; a lone "Close" button is gone.
 		LinearLayout head = new LinearLayout(c);
 		head.setGravity(Gravity.CENTER_VERTICAL);

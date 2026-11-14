@@ -977,3 +977,4 @@ works offline	toimii ilman verkkoa
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Palkki ikkunan alaosassa: Widgetit, Vienti / Tuonti, Loki, Päivitä, Jaa, Ohje, Tietoja. Ylös vedettynä se näyttää nimet kuvakkeiden alla.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ avaa asetukset osioittain; kytkin laittaa toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla sen ulkopuolelle. Puhelimessa se avautuu pystyasennossa.
 Recent earthquakes	Viimeaikaiset maanjäristykset
+Developed by Viorel-R Boancă	Kehittäjä: Viorel-R Boancă

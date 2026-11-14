@@ -580,8 +580,15 @@ public class Widget extends AppWidgetProvider {
 			Paint bg = new Paint(Paint.ANTI_ALIAS_FLAG);
 			float k0 = s * dens, ey0 = H / k0 - rh, t0 = (ey0 - Math.min(ey0, rh * MAX_SPREAD)) / 2 * k0;
 			bg.setShader(new LinearGradient(0, t0, 0, H - t0, (a << 24) | (b[0] & 0xFFFFFF), (a << 24) | (b[1] & 0xFFFFFF), Shader.TileMode.CLAMP));
-			float r = Math.min(24 * dens, Math.min(W, H - 2 * t0) / 4f);
+			float r = Math.min(28 * dens, Math.min(W, H - 2 * t0) / 4f);
 			cv.drawRoundRect(new RectF(0, t0, W, H - t0), r, r, bg);
+			// v5.04 (Viorel): the app's glass look: a thin light edge around the widget.
+			Paint eg = new Paint(Paint.ANTI_ALIAS_FLAG);
+			eg.setStyle(Paint.Style.STROKE);
+			eg.setStrokeWidth(Math.max(1, dens));
+			eg.setColor(blackText(ctx, st, w) ? 0x22000000 : 0x38FFFFFF);
+			float h0 = eg.getStrokeWidth() / 2;
+			cv.drawRoundRect(new RectF(h0, t0 + h0, W - h0, H - t0 - h0), r, r, eg);
 		}
 		float k = s * dens;
 		// Taller than the layout needs (a 4x3 frame for the 4x2): a little of the extra height
@@ -643,18 +650,17 @@ public class Widget extends AppWidgetProvider {
 			pen.warnings(d, 260.7f, 101.4f, true);
 			// 4x2: the next hours (or, "4x2 days", the next days) under a line; 4x3: both rows.
 			float lw = 359.1f + pen.ex;
+			// v5.04 (Viorel): the rows in glass cards (as on the app's main screen) instead of a line.
 			if (kind == 5) {
 				pen.at(0, 1 / 3f);
-				pen.line(11.4f, 111.3f, lw, 0.75f, 0.45f);
+				pen.card(6f, 113f, lw + 10.8f, 75f, 12f);
 				hoursRow(pen, d, 111.3f, lw);
-				pen.at(0, 2 / 3f);
-				pen.line(11.4f, 196.5f, lw, 0.75f, 0.45f);
 				pen.at(0, 1);
+				pen.card(6f, 198.2f, lw + 10.8f, 75f, 12f);
 				daysRow(pen, d, 196.5f, lw);
 			} else {
-				pen.at(0, 0.5f);
-				pen.line(11.4f, 111.3f, lw, 0.75f, 0.45f);
 				pen.at(0, 1);
+				pen.card(6f, 113f, lw + 10.8f, 75f, 12f);
 				if (kind == 4) daysRow(pen, d, 111.3f, lw);
 				else hoursRow(pen, d, 111.3f, lw);
 			}
@@ -685,6 +691,9 @@ public class Widget extends AppWidgetProvider {
 		if (w == null) return;
 		boolean hours = st.mode.equals("hours");
 		float x0 = 186f, x1 = 372f, rh = 46f, y0 = 4f;
+		// v5.04 (Viorel): the rows in one glass card (its height follows the rows' spreading).
+		pen.at(1, 0);
+		pen.card(x0 - 8f, y0, x1 - x0 + 14f, 4 * rh + pen.ey, 12f);
 		for (int i = 0; i < 4; i++) {
 			String label, ic;
 			String hi = null, lo = null;
@@ -910,6 +919,18 @@ public class Widget extends AppWidgetProvider {
 			f.setStrokeWidth(0.7f);
 			f.setColor(ink(1f));
 			cv.drawRoundRect(r, 3.2f, 3.2f, f);
+		}
+
+		/** v5.04: a glass card: the text colour faintly, with a thin edge. */
+		void card(float x, float y, float w, float h, float r) {
+			Paint f = new Paint(Paint.ANTI_ALIAS_FLAG);
+			RectF rc = new RectF(x, y, x + w, y + h);
+			f.setColor(ink(black ? 0.06f : 0.12f));
+			cv.drawRoundRect(rc, r, r, f);
+			f.setStyle(Paint.Style.STROKE);
+			f.setStrokeWidth(0.6f);
+			f.setColor(ink(black ? 0.12f : 0.2f));
+			cv.drawRoundRect(rc, r, r, f);
 		}
 
 		void line(float x, float y, float w, float h, float opacity) {

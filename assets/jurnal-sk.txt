@@ -1,4 +1,4 @@
-Súčasná verzia: v.5.03 · 14.11.2026
+Súčasná verzia: v.5.04 · 14.11.2026
 HLAVNÁ OBRAZOVKA
 - Veľký kompas: ťuknutie na obec v zozname ukáže jej značku na kompase; obce v rovnakom smere sa už neprekrývajú.
 NASTAVENIA

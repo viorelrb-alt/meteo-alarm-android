@@ -911,3 +911,4 @@ works offline	ради без интернета
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Трака на дну прозора: Виџети, Извоз / Увоз, Записник, Ажурирај, Подели, Помоћ, О апликацији. Повучена нагоре приказује називе испод икона.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ отвара подешавања по одељцима; прекидач одмах укључује или искључује функцију. Затвара се са X или додиром изван њега. На телефону се отвара усправно.
 Recent earthquakes	Недавни земљотреси
+Developed by Viorel-R Boancă	Развио Viorel-R Boancă

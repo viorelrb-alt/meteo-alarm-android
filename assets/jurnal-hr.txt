@@ -1,4 +1,4 @@
-Trenutačna verzija: v.5.03 · 14.11.2026
+Trenutačna verzija: v.5.04 · 14.11.2026
 GLAVNI ZASLON
 - Veliki kompas: dodir na mjesto na popisu pokazuje njegovu oznaku na kompasu; mjesta u istom smjeru više se ne preklapaju.
 OBAVIJESTI

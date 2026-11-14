@@ -112,6 +112,7 @@ final class HelpPanel extends FrameLayout {
 		tabs.setPadding(pad, 0, pad, (int) (8 * dp));
 		tabsScroll.addView(tabs);
 		col.addView(tabsScroll);
+		AutoScroll.attach(tabsScroll, tabs); // v5.04: moves on by itself like the warnings
 		scroll = new ScrollView(c);
 		list = new LinearLayout(c);
 		list.setOrientation(LinearLayout.VERTICAL);

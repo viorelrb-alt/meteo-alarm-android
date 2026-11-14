@@ -977,3 +977,4 @@ works offline	taħdem mingħajr internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Il-bar fil-qiegħ tat-tieqa: Widgets, Esporta / Importa, Log, Aġġorna, Aqsam, Għajnuna, Dwar. Meta tinġibed 'il fuq, turi l-ismijiet taħt l-ikoni.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ jiftaħ is-settings f'taqsimiet; swiċċ ixgħel jew jitfi funzjoni mill-ewwel. Tingħalaq b'X jew b'mess barra minnha. Fuq telefon tiftaħ wieqfa.
 Recent earthquakes	Terremoti reċenti
+Developed by Viorel-R Boancă	Żviluppata minn Viorel-R Boancă

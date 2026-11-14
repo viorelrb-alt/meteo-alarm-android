@@ -977,3 +977,4 @@ works offline	radi bez interneta
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Traka na dnu prozora: Widgeti, Izvoz / Uvoz, Dnevnik, Ažuriraj, Podijeli, Pomoć, O aplikaciji. Povučena prema gore pokazuje nazive ispod ikona.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ otvara postavke po odjeljcima; prekidač odmah uključuje ili isključuje funkciju. Zatvara se s X ili dodirom izvan njega. Na telefonu se otvara u uspravnom položaju.
 Recent earthquakes	Nedavni potresi
+Developed by Viorel-R Boancă	Razvio Viorel-R Boancă

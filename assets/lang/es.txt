@@ -1047,3 +1047,4 @@ works offline	funciona sin internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	La barra al pie de la ventana: Widgets, Exportar / Importar, Registro, Actualizar, Compartir, Ayuda, Acerca de. Al subirla, muestra los nombres bajo los iconos.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ abre los ajustes por secciones; un interruptor activa o desactiva una función al instante. Se cierra con X o tocando fuera. En el teléfono se abre en vertical.
 Recent earthquakes	Terremotos recientes
+Developed by Viorel-R Boancă	Desarrollada por Viorel-R Boancă

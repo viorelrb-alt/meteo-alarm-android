@@ -977,3 +977,4 @@ works offline	funciona sem internet
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	A barra no fundo da janela: Widgets, Exportar / Importar, Registo, Atualizar, Partilhar, Ajuda, Acerca de. Puxada para cima, mostra os nomes sob os ícones.
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ abre as definições por secções; um interruptor liga ou desliga uma função de imediato. Fecha-se com X ou tocando fora dela. No telefone abre na vertical.
 Recent earthquakes	Sismos recentes
+Developed by Viorel-R Boancă	Desenvolvida por Viorel-R Boancă
