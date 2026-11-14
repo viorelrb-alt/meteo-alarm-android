@@ -1,4 +1,4 @@
-Nuværende version: v.5.00 · 14.11.2026
+Nuværende version: v.5.01 · 14.11.2026
 HOVEDSKÆRM
 - Stort kompas: et tryk på en by i listen viser dens mærke på kompasset; byer i samme retning overlapper ikke længere.
 INDSTILLINGER

@@ -1044,3 +1044,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Lluvia o ni
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Las notificaciones están activadas: lluvia o nieve, avisos meteorológicos y terremotos a tu alrededor.
 Compass	Brújula
 works offline	funciona sin internet
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	La barra al pie de la ventana: Widgets, Exportar / Importar, Registro, Actualizar, Compartir, Ayuda, Acerca de. Al subirla, muestra los nombres bajo los iconos.

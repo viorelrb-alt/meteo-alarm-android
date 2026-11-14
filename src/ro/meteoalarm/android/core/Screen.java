@@ -298,11 +298,13 @@ public final class Screen {
 		boolean prop = farmer && farmMerged;
 		float MH = 286, grow = prop ? 494 - MH - 18 : 0;
 		float nowBot = 663 + grow + Math.max(0, ch - BASE_H);
-		float fy = nowBot - 4;
+		// v5.01 (Viorel): the feels-like card 16 units higher, clear of the boxes under it.
+		float fy = nowBot - (prop ? 4 : 20);
 		dots(W / 2, 112, pages, page);
 		// v3.50 (Viorel): the "Statistics · PDF" button under the information / warning / earthquake
 		// boxes when they show; in their place (under the top line) when they do not.
-		float top = drawWarnBoxes(40, 158, 678, 2, 1), sb;
+		// v5.01 (Viorel): with "updated" in the camera band the warnings move up under the town.
+		float top = drawWarnBoxes(40, band > 0 ? (pages > 1 ? 132 : 108) : 158, 678, 2, 1), sb;
 		if (top > 0) {
 			sb = statsButton(40, top + 12, 58, 400, 26) > 40 ? 70 : 0;
 			top += sb;
@@ -328,7 +330,7 @@ public final class Screen {
 			ltext(false, 28, fy + 38, 64, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
 		}
 
-		float y0 = fy + 80;
+		float y0 = fy + (prop ? 80 : 96);
 		// Both lines sit 15 units from the boxes above and under them.
 		// The precipitation box takes the whole row; the hour boxes after it still show the next one's edge.
 		if (prop) {
@@ -3883,7 +3885,20 @@ public final class Screen {
 			}
 		}
 		if (upd.length() == 0) return;
-		if (updHead) {
+		if (band > 0 && !updHead) {
+			// v5.01 (Viorel): in the camera band, left of the connection icon (clear of the camera in the middle).
+			float right = clockLeft - 16, left = cw / 2f + 44, mid = lift - band / 2;
+			float up = fit(bold, Math.min(24, band * 0.36f), right - left - 30, upd), tw = g.width(bold, up, upd);
+			if (up < 13) {
+				upd = upd.substring(upd.lastIndexOf(' ') + 1);
+				up = fit(bold, Math.min(24, band * 0.36f), right - left - 30, upd);
+				tw = g.width(bold, up, upd);
+			}
+			float x = right - tw;
+			rtext(bold, up, mid - up * 0.5f, right, upd, bold ? c.ink : c.dim);
+			refreshIcon(x - 16, mid, up * 0.42f, bold ? c.ink : c.accent);
+			updArea[0] = x - 34; updArea[1] = mid - 30; updArea[2] = tw + 40; updArea[3] = 60;
+		} else if (updHead) {
 			// Landscape: in the header, left of the clock.
 			rtext(bold, fit(bold, 25, 360, upd), 30, clockLeft - 24, upd, bold ? c.ink : c.dim);
 		} else {

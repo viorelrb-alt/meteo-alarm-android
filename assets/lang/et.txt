@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Algav vihm 
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Teavitused on sees: vihm või lumi, ilmahoiatused ja maavärinad sinu ümber.
 Compass	Kompass
 works offline	töötab ilma internetita
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Riba akna allosas: Vidinad, Eksport / Import, Logi, Uuenda, Jaga, Abi, Teave. Üles tõmmatuna näitab see ikoonide all nimesid.

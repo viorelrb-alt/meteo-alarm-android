@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Alkava sade
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Ilmoitukset ovat päällä: sade tai lumi, säävaroitukset ja maanjäristykset ympärilläsi.
 Compass	Kompassi
 works offline	toimii ilman verkkoa
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Palkki ikkunan alaosassa: Widgetit, Vienti / Tuonti, Loki, Päivitä, Jaa, Ohje, Tietoja. Ylös vedettynä se näyttää nimet kuvakkeiden alla.

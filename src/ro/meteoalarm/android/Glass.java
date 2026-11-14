@@ -142,6 +142,17 @@ final class Glass {
 		c.drawRoundRect(r, rad, rad, p);
 	}
 
+	/** v5.01 (Viorel): the bubbles more matte (they often open over another window): the page colour at 95 %. */
+	static void drawMatte(Canvas c, Paint p, RectF r, float rad, boolean dark, float dp) {
+		p.setStyle(Paint.Style.FILL);
+		p.setColor(alpha(Theme.page(dark), 0.95f));
+		c.drawRoundRect(r, rad, rad, p);
+		p.setStyle(Paint.Style.STROKE);
+		p.setStrokeWidth(Math.max(1, dp));
+		p.setColor(edge(dark));
+		c.drawRoundRect(r, rad, rad, p);
+	}
+
 	/** Draws a glass card inside a window. */
 	static void drawCard(Canvas c, Paint p, RectF r, float rad, boolean dark, float dp) {
 		p.setStyle(Paint.Style.FILL);

@@ -611,7 +611,7 @@ final class Bubble extends FrameLayout {
 		@Override
 		protected void onDraw(Canvas c) {
 			// v5.00 (Viorel): frosted glass, large rounded corners, a faint edge.
-			Glass.drawPanel(c, p, new RectF(dp / 2, dp / 2, getWidth() - dp / 2, getHeight() - dp / 2), 26 * dp, dark, dp);
+			Glass.drawMatte(c, p, new RectF(dp / 2, dp / 2, getWidth() - dp / 2, getHeight() - dp / 2), 26 * dp, dark, dp);
 		}
 	}
 

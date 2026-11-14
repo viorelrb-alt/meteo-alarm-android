@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Pluie ou ne
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Les notifications sont activées : pluie ou neige, vigilances météo et séismes autour de vous.
 Compass	Boussole
 works offline	fonctionne hors ligne
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	La barre en bas de la fenêtre : Widgets, Exporter / Importer, Journal, Mettre à jour, Partager, Aide, À propos. Tirée vers le haut, elle affiche les noms sous les icônes.

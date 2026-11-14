@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.00";
+	static final String VERSION = "Meteo Alarm Android v5.01";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -2302,7 +2302,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					}
 				} });
 		p.footRow(new String[] { "sync", "plane", "help", "info" },
-				new String[] { Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Help", "Ajutor"), Tr.t("About", "Despre") },
+				new String[] { Tr.t("Update", "Actualizare"), Tr.t("Share", "Partajare"), Tr.t("Help", "Ajutor"), Tr.t("About", "Despre") },
 				new Runnable[] { new Runnable() {
 					public void run() {
 						settings.hide();
@@ -3020,8 +3020,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceas noapte"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
 		help.entry(mini("keepOn"), Tr.t("Screen on", "Ecran aprins"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));
-		help.entry(mini("widgetplus"), Tr.t("System & support", "Sistem & Suport"), Tr.t("The bar at the bottom of the window: Widgets, Export / Import, Log, Check for updates, Send the app, Help, About.",
-				"Bara de jos a ferestrei: Widget-uri, Export / Import, Jurnal, Verifică actualizări, Trimite aplicația, Ajutor, Despre."));
+		help.entry(mini("widgetplus"), Tr.t("System & support", "Sistem & Suport"), Tr.t("The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.",
+				"Bara de jos a ferestrei: Widget-uri, Export / Import, Jurnal, Actualizare, Partajare, Ajutor, Despre. Trasă în sus, arată numele de sub iconuri."));
 		help.entry(mini("transfer"), Tr.t("Export / Import", "Export / Import"), Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
 				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi."));

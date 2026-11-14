@@ -18,7 +18,10 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import ro.meteoalarm.android.core.Theme;
 
@@ -45,6 +48,13 @@ final class SettingsPanel extends FrameLayout {
 	/** The card being filled. */
 	private LinearLayout card;
 	private boolean cardFirst;
+	/** v5.01 (Viorel): texts of one kind (ROLE) on one line, all shrunk by the same factor so the longest fits. */
+	private final Map<String, List<TextView>> roles = new HashMap<String, List<TextView>>();
+	private boolean fitPending;
+	/** The bar's names under the icons (shown when the bar is pulled up). */
+	private final List<TextView> footLabels = new ArrayList<TextView>();
+	private boolean footOpen;
+	private View grab;
 
 	SettingsPanel(Context c, Typeface reg, Typeface bold) {
 		super(c);
@@ -64,12 +74,10 @@ final class SettingsPanel extends FrameLayout {
 		head.setPadding(px(24), px(20), px(18), px(16));
 		LinearLayout tt = new LinearLayout(c);
 		tt.setOrientation(LinearLayout.VERTICAL);
-		title = text(c, 24, true);
+		title = text(c, 20, true);
 		title.setSingleLine(true);
-		title.setEllipsize(TextUtils.TruncateAt.END);
-		subtitle = text(c, 15, false);
+		subtitle = text(c, 13.5f, false);
 		subtitle.setSingleLine(true);
-		subtitle.setEllipsize(TextUtils.TruncateAt.END);
 		tt.addView(title);
 		tt.addView(subtitle);
 		head.addView(tt, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
@@ -91,14 +99,105 @@ final class SettingsPanel extends FrameLayout {
 		content.setPadding(px(14), px(4), px(14), px(18));
 		scroll.addView(content);
 		panel.addView(scroll, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
-		foot = new LinearLayout(c);
+		foot = new LinearLayout(c) {
+			// v5.01 (Viorel): pulled up, the names show under the icons; pulled down, only the icons.
+			float y0;
+			boolean drag;
+
+			@Override
+			public boolean onInterceptTouchEvent(MotionEvent e) {
+				return track(e);
+			}
+
+			@Override
+			public boolean onTouchEvent(MotionEvent e) {
+				track(e);
+				return true;
+			}
+
+			private boolean track(MotionEvent e) {
+				switch (e.getActionMasked()) {
+				case MotionEvent.ACTION_DOWN:
+					y0 = e.getRawY();
+					drag = false;
+					break;
+				case MotionEvent.ACTION_MOVE:
+					float d = e.getRawY() - y0;
+					if (!drag && Math.abs(d) > px(12)) drag = true;
+					if (drag && Math.abs(d) > px(24)) {
+						setFootOpen(d < 0);
+						y0 = e.getRawY();
+					}
+					break;
+				case MotionEvent.ACTION_UP:
+					if (!drag && e.getY() < px(22)) setFootOpen(!footOpen);
+					break;
+				}
+				return drag;
+			}
+		};
 		foot.setOrientation(LinearLayout.VERTICAL);
-		foot.setPadding(px(10), px(14), px(10), px(14));
-		footTitle = text(c, 14, true);
+		foot.setPadding(px(10), px(4), px(10), px(8));
+		foot.setLayoutTransition(new android.animation.LayoutTransition());
+		footTitle = text(c, 12.5f, true);
 		footTitle.setLetterSpacing(0.12f);
-		footTitle.setPadding(px(14), 0, 0, px(8));
+		footTitle.setSingleLine(true);
+		footTitle.setPadding(px(14), 0, 0, px(2));
 		panel.addView(foot);
 		addView(panel, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		panel.getViewTreeObserver().addOnGlobalLayoutListener(new android.view.ViewTreeObserver.OnGlobalLayoutListener() {
+			public void onGlobalLayout() {
+				if (fitPending && open && panel.getWidth() > 0) {
+					fitPending = false;
+					fitAll();
+				}
+			}
+		});
+	}
+
+	/** TextView T is of kind ROLE: one line, shrunk with the others of its kind when one does not fit. */
+	private TextView role(String r, TextView t) {
+		t.setSingleLine(true);
+		t.setTag(t.getTextSize());
+		List<TextView> l = roles.get(r);
+		if (l == null) roles.put(r, l = new ArrayList<TextView>());
+		l.add(t);
+		return t;
+	}
+
+	/** For each kind, the factor that fits its longest text in its room (never under 0.55), applied to all of it. */
+	private void fitAll() {
+		boolean changed = false;
+		for (List<TextView> l : roles.values()) {
+			float f = 1;
+			for (TextView t : l) {
+				int room = t.getWidth() - t.getCompoundPaddingLeft() - t.getCompoundPaddingRight();
+				if (room <= 0 || t.getVisibility() != VISIBLE) continue;
+				Paint p = new Paint(t.getPaint());
+				p.setTextSize((Float) t.getTag());
+				float need = p.measureText(t.getText().toString()) + 2;
+				if (need > room) f = Math.min(f, room / need);
+			}
+			f = Math.max(0.55f, f);
+			for (TextView t : l) {
+				float want = (Float) t.getTag() * f;
+				if (Math.abs(t.getTextSize() - want) > 0.5f) {
+					t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, want);
+					changed = true;
+				}
+			}
+		}
+		if (changed) panel.requestLayout();
+	}
+
+	private void setFootOpen(boolean o) {
+		if (footOpen == o) return;
+		footOpen = o;
+		for (TextView t : footLabels) t.setVisibility(o ? VISIBLE : GONE);
+		if (o) {
+			fitPending = true;
+			panel.requestLayout();
+		}
 	}
 
 	private int px(float d) {
@@ -144,12 +243,17 @@ final class SettingsPanel extends FrameLayout {
 		this.zk = zk;
 		content.removeAllViews();
 		foot.removeAllViews();
+		roles.clear();
+		footLabels.clear();
+		fitPending = true;
 		title.setText(head);
-		title.setTextSize(23 * zk);
+		title.setTextSize(20 * zk);
+		role("title", title);
 		title.setTextColor(ink());
 		title.setLetterSpacing(0.04f);
 		subtitle.setText(sub);
-		subtitle.setTextSize(15 * zk);
+		subtitle.setTextSize(13.5f * zk);
+		role("subtitle", subtitle);
 		subtitle.setTextColor(dim());
 		closeX.setBackground(Glass.closeIcon(dark, dp));
 		headLine.setBackgroundColor(Glass.edge(dark));
@@ -166,11 +270,11 @@ final class SettingsPanel extends FrameLayout {
 
 	/** A section's title (accent, spaced capitals) and a new card under it; DASHED: the hidden test card. */
 	void section(String name, boolean dashed) {
-		TextView t = text(getContext(), 14 * zk, true);
+		TextView t = role("section", text(getContext(), 12.5f * zk, true));
 		t.setText(name.toUpperCase());
 		t.setTextColor(accent());
-		t.setLetterSpacing(0.12f);
-		t.setPadding(px(10), px(18), px(10), px(10));
+		t.setLetterSpacing(0.1f);
+		t.setPadding(px(10), px(16), px(10), px(8));
 		content.addView(t);
 		card = new LinearLayout(getContext());
 		card.setOrientation(LinearLayout.VERTICAL);
@@ -280,22 +384,23 @@ final class SettingsPanel extends FrameLayout {
 		Context c = getContext();
 		LinearLayout r = new LinearLayout(c);
 		r.setGravity(Gravity.CENTER_VERTICAL);
-		r.setPadding(px(indent ? 48 : 4), px(indent ? 8 : 12), px(4), px(indent ? 8 : 12));
-		r.setMinimumHeight(px((indent ? 52 : 64) * zk));
+		// v5.01 (Viorel): a row under another (Parcele, Cutremure recente) lines up with it.
+		r.setPadding(px(4), px(indent ? 4 : 10), px(4), px(10));
+		r.setMinimumHeight(px(54 * zk));
 		if (icon != null) {
-			int ts = px((indent ? 34 : 42) * zk);
+			int ts = px(38 * zk);
 			LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ts, ts);
 			tl.rightMargin = px(14);
 			r.addView(tile(icon, indent), tl);
 		}
 		LinearLayout tx = new LinearLayout(c);
 		tx.setOrientation(LinearLayout.VERTICAL);
-		TextView t = text(c, (indent ? 16 : 18) * zk, true);
+		TextView t = role("head", text(c, 16 * zk, true));
 		t.setText(head);
 		t.setTextColor(ink());
 		tx.addView(t);
 		if (sub != null && sub.length() > 0) {
-			TextView s = text(c, (indent ? 14 : 15) * zk, false);
+			TextView s = text(c, 12.5f * zk, false);
 			s.setText(sub);
 			s.setTextColor(dim());
 			tx.addView(s);
@@ -323,11 +428,11 @@ final class SettingsPanel extends FrameLayout {
 		LinearLayout l = new LinearLayout(getContext());
 		l.setGravity(Gravity.CENTER_VERTICAL);
 		if (v != null && v.length() > 0) {
-			TextView t = text(getContext(), 16 * zk, false);
+			TextView t = text(getContext(), 14.5f * zk, false);
 			t.setText(v);
 			t.setTextColor(dim());
 			t.setSingleLine(true);
-			t.setMaxWidth(px(150 * zk));
+			t.setMaxWidth(px(130 * zk));
 			t.setEllipsize(TextUtils.TruncateAt.END);
 			l.addView(t);
 		}
@@ -355,9 +460,8 @@ final class SettingsPanel extends FrameLayout {
 	void toggle(String icon, String head, String sub, boolean on, Runnable tap) {
 		sep();
 		Switch sw = new Switch(on);
-		sw.setLayoutParams(new LinearLayout.LayoutParams(px(54 * zk), px(32 * zk)));
 		LinearLayout r = row(icon, head, sub, null, false, tap);
-		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(px(54 * zk), px(32 * zk));
+		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(px(48 * zk), px(28 * zk));
 		rl.leftMargin = px(10);
 		r.addView(sw, rl);
 	}
@@ -395,11 +499,10 @@ final class SettingsPanel extends FrameLayout {
 		l.setBackground(Glass.pill(Glass.disc(dark), 0, 14 * dp, dp));
 		for (int i = 0; i < opts.length; i++) {
 			final int k = i;
-			TextView t = text(getContext(), 16 * zk, true);
+			TextView t = role(wide ? "seg" : "segs", text(getContext(), 14.5f * zk, true));
 			t.setText(opts[i]);
-			t.setSingleLine(true);
 			t.setGravity(Gravity.CENTER);
-			t.setPadding(px(14), px(7), px(14), px(7));
+			t.setPadding(px(wide ? 6 : 12), px(6), px(wide ? 6 : 12), px(6));
 			t.setTextColor(i == sel ? onAccent() : dim());
 			if (i == sel) t.setBackground(Glass.pill(accent(), 0, 11 * dp, dp));
 			t.setOnClickListener(new OnClickListener() {
@@ -425,14 +528,9 @@ final class SettingsPanel extends FrameLayout {
 			col.setOrientation(LinearLayout.VERTICAL);
 			col.setGravity(Gravity.CENTER_HORIZONTAL);
 			Dot d = new Dot(colors[i], i == sel);
-			col.addView(d, new LinearLayout.LayoutParams(px(42 * zk), px(42 * zk)));
-			TextView t = text(getContext(), 12.5f * zk, i == sel);
-			t.setText(names[i] + (i == sel ? " ✓" : ""));
-			t.setTextColor(i == sel ? ink() : dim());
-			t.setSingleLine(true);
-			t.setEllipsize(TextUtils.TruncateAt.END);
-			t.setGravity(Gravity.CENTER);
-			col.addView(t, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			// v5.01 (Viorel): no names under the colours (the chosen one is in the row above).
+			col.addView(d, new LinearLayout.LayoutParams(px(38 * zk), px(38 * zk)));
+			col.setContentDescription(names[i]);
 			col.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					pick.chose(k);
@@ -479,12 +577,13 @@ final class SettingsPanel extends FrameLayout {
 		LinearLayout r = new LinearLayout(getContext());
 		r.setGravity(Gravity.CENTER_VERTICAL);
 		r.setPadding(px(6), px(10), px(4), px(4));
-		TextView t = text(getContext(), 16 * zk, true);
+		TextView t = role("favhead", text(getContext(), 14.5f * zk, true));
 		t.setText(name);
 		t.setTextColor(dim());
 		r.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		if (add != null) {
-			TextView a = text(getContext(), 16 * zk, true);
+			TextView a = text(getContext(), 14.5f * zk, true);
+			a.setSingleLine(true);
 			a.setText("+ " + add);
 			a.setTextColor(accent());
 			a.setPadding(px(14), px(6), px(14), px(6));
@@ -509,7 +608,7 @@ final class SettingsPanel extends FrameLayout {
 		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(px(24 * zk), px(24 * zk));
 		sl.rightMargin = px(16);
 		r.addView(st, sl);
-		TextView t = text(getContext(), 18 * zk, shown);
+		TextView t = text(getContext(), 16 * zk, shown);
 		t.setText(name);
 		t.setTextColor(ink());
 		t.setSingleLine(true);
@@ -530,7 +629,7 @@ final class SettingsPanel extends FrameLayout {
 		f.setPadding(px(4), px(4), px(4), px(10));
 		for (int i = 0; i < names.size(); i++) {
 			final int k = i;
-			TextView t = text(getContext(), 16 * zk, false);
+			TextView t = text(getContext(), 14.5f * zk, false);
 			t.setText(names.get(i));
 			t.setTextColor(ink());
 			t.setSingleLine(true);
@@ -588,7 +687,7 @@ final class SettingsPanel extends FrameLayout {
 
 	/** A note in small grey letters inside the card. */
 	void note(String s) {
-		TextView t = text(getContext(), 13.5f * zk, false);
+		TextView t = text(getContext(), 12.5f * zk, false);
 		t.setText(s);
 		t.setTextColor(dim());
 		t.setPadding(px(6), px(6), px(6), px(12));
@@ -599,7 +698,16 @@ final class SettingsPanel extends FrameLayout {
 	void footTitle(String s) {
 		footTitle.setText(s.toUpperCase());
 		footTitle.setTextColor(accent());
-		footTitle.setTextSize(14 * zk);
+		footTitle.setTextSize(12.5f * zk);
+		role("foottitle", footTitle);
+		// A small handle: pull the bar up for the names, down for only the icons.
+		grab = new View(getContext());
+		grab.setBackground(Glass.pill(Glass.alpha(ink(), 0.3f), 0, 3 * dp, dp));
+		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(px(40), px(5));
+		gl.gravity = Gravity.CENTER_HORIZONTAL;
+		gl.topMargin = px(2);
+		gl.bottomMargin = px(6);
+		foot.addView(grab, gl);
 		foot.addView(footTitle);
 	}
 
@@ -612,8 +720,8 @@ final class SettingsPanel extends FrameLayout {
 			LinearLayout col = new LinearLayout(getContext());
 			col.setOrientation(LinearLayout.VERTICAL);
 			col.setGravity(Gravity.CENTER_HORIZONTAL);
-			col.setPadding(px(2), px(6), px(2), px(6));
-			int is = px(32 * zk);
+			col.setPadding(px(2), px(5), px(2), px(5));
+			int is = px(26 * zk);
 			LinearLayout ic = new LinearLayout(getContext());
 			ic.setGravity(Gravity.CENTER);
 			String[] parts = icons[i].split(">");
@@ -621,19 +729,21 @@ final class SettingsPanel extends FrameLayout {
 				if (j > 0) {
 					View ch = new View(getContext());
 					ch.setBackground(new LineIcon("chevron", dim()));
-					ic.addView(ch, new LinearLayout.LayoutParams(px(16 * zk), px(16 * zk)));
+					ic.addView(ch, new LinearLayout.LayoutParams(px(13 * zk), px(13 * zk)));
 				}
 				View v = new View(getContext());
 				v.setBackground(new LineIcon(parts[j], ink()));
 				ic.addView(v, new LinearLayout.LayoutParams(is, is));
 			}
 			col.addView(ic, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, is));
-			TextView t = text(getContext(), 15 * zk, false);
+			TextView t = role("foot", text(getContext(), 12 * zk, false));
 			t.setText(labels[i]);
 			t.setTextColor(ink());
 			t.setGravity(Gravity.CENTER);
-			t.setMaxLines(2);
-			t.setPadding(0, px(6), 0, 0);
+			t.setPadding(0, px(4), 0, 0);
+			t.setVisibility(footOpen ? VISIBLE : GONE);
+			footLabels.add(t);
+			col.setContentDescription(labels[i]);
 			col.addView(t, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			col.setBackgroundResource(android.R.drawable.list_selector_background);
 			col.setOnClickListener(new OnClickListener() {
@@ -659,8 +769,14 @@ final class SettingsPanel extends FrameLayout {
 		lp.height = sh - 2 * m;
 		lp.gravity = Gravity.CENTER;
 		panel.setLayoutParams(lp);
-		if (!open) scroll.scrollTo(0, 0);
+		if (!open) {
+			scroll.scrollTo(0, 0);
+			// v5.01: the bar opens with only its icons.
+			footOpen = true;
+			setFootOpen(false);
+		}
 		open = true;
+		fitPending = true;
 		setVisibility(VISIBLE);
 		bringToFront();
 	}

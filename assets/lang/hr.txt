@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Kiša ili s
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Obavijesti su uključene: kiša ili snijeg, upozorenja o vremenu i potresi oko vas.
 Compass	Kompas
 works offline	radi bez interneta
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Traka na dnu prozora: Widgeti, Izvoz / Uvoz, Dnevnik, Ažuriraj, Podijeli, Pomoć, O aplikaciji. Povučena prema gore pokazuje nazive ispod ikona.

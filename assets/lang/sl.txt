@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Dež ali sn
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Obvestila so vklopljena: dež ali sneg, vremenska opozorila in potresi okoli vas.
 Compass	Kompas
 works offline	deluje brez interneta
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Vrstica na dnu okna: Pripomočki, Izvoz / Uvoz, Dnevnik, Posodobi, Deli, Pomoč, O aplikaciji. Povlečena navzgor pokaže imena pod ikonami.

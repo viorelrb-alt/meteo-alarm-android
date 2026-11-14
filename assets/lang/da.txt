@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Regn eller 
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Notifikationer er slået til: regn eller sne, vejrvarsler og jordskælv omkring dig.
 Compass	Kompas
 works offline	virker uden internet
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Bjælken nederst i vinduet: Widgets, Eksport / Import, Log, Opdater, Del, Hjælp, Om. Trukket op viser den navnene under ikonerne.

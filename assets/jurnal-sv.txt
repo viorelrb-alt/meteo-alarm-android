@@ -1,4 +1,4 @@
-Nuvarande version: v.5.00 · 14.11.2026
+Nuvarande version: v.5.01 · 14.11.2026
 AVISERINGAR
 - Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
 - Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.

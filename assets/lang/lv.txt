@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Lietus vai 
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Paziņojumi ir ieslēgti: lietus vai sniegs, laika brīdinājumi un zemestrīces tev apkārt.
 Compass	Kompass
 works offline	darbojas bez interneta
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Josla loga apakšā: Logrīki, Eksports / Imports, Žurnāls, Atjaunināt, Kopīgot, Palīdzība, Par. Pavilkta uz augšu, tā rāda nosaukumus zem ikonām.

@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Pioggia o n
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Le notifiche sono attive: pioggia o neve, allerte meteo e terremoti intorno a te.
 Compass	Bussola
 works offline	funziona senza internet
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	La barra in fondo alla finestra: Widget, Esporta / Importa, Registro, Aggiorna, Condividi, Aiuto, Informazioni. Tirata su, mostra i nomi sotto le icone.

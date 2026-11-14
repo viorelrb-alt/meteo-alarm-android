@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Zaczynając
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Powiadomienia są włączone: deszcz lub śnieg, ostrzeżenia pogodowe i trzęsienia ziemi wokół ciebie.
 Compass	Kompas
 works offline	działa bez internetu
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Pasek na dole okna: Widżety, Eksport / Import, Dziennik, Aktualizuj, Udostępnij, Pomoc, O aplikacji. Pociągnięty w górę pokazuje nazwy pod ikonami.

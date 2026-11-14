@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Prasidedant
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Pranešimai įjungti: lietus ar sniegas, orų įspėjimai ir žemės drebėjimai aplink jus.
 Compass	Kompasas
 works offline	veikia be interneto
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Juosta lango apačioje: Valdikliai, Eksportas / Importas, Žurnalas, Atnaujinti, Bendrinti, Pagalba, Apie. Patraukta aukštyn, ji rodo pavadinimus po piktogramomis.

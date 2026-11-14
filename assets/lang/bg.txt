@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Започ�
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Известията са включени: дъжд или сняг, предупреждения за времето и земетресения около вас.
 Compass	Компас
 works offline	работи без интернет
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Лентата в долната част на прозореца: Уиджети, Експорт / Импорт, Дневник, Актуализирай, Сподели, Помощ, Относно. Издърпана нагоре, показва имената под иконите.

@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Beginnender
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Benachrichtigungen sind an: Regen oder Schnee, Wetterwarnungen und Erdbeben in deiner Nähe.
 Compass	Kompass
 works offline	funktioniert offline
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Die Leiste unten im Fenster: Widgets, Export / Import, Protokoll, Aktualisieren, Teilen, Hilfe, Über. Nach oben gezogen zeigt sie die Namen unter den Symbolen.

@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Βροχή 
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Οι ειδοποιήσεις είναι ενεργές: βροχή ή χιόνι, προειδοποιήσεις καιρού και σεισμοί γύρω σας.
 Compass	Πυξίδα
 works offline	λειτουργεί χωρίς internet
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Η μπάρα στο κάτω μέρος του παραθύρου: Γραφικά στοιχεία, Εξαγωγή / Εισαγωγή, Ημερολόγιο, Ενημέρωση, Κοινοποίηση, Βοήθεια, Πληροφορίες. Όταν τραβηχτεί προς τα πάνω, δείχνει τα ονόματα κάτω από τα εικονίδια.

@@ -1,4 +1,4 @@
-Pašreizējā versija: v.5.00 · 14.11.2026
+Pašreizējā versija: v.5.01 · 14.11.2026
 GALVENAIS EKRĀNS
 - Liels kompass: pieskāriens vietai sarakstā rāda tās zīmi uz kompasa; vietas vienā virzienā vairs nepārklājas.
 IESTATĪJUMI

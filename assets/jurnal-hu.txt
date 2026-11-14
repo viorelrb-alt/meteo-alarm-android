@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.5.00 · 14.11.2026
+Jelenlegi verzió: v.5.01 · 14.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 ÉRTESÍTÉSEK

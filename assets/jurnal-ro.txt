@@ -1,4 +1,4 @@
-Versiunea curentă: v.5.00 · 14.11.2026
+Versiunea curentă: v.5.01 · 14.11.2026
 ECRAN PRINCIPAL
 - Busola mare: atingerea unei localități din listă îi arată semnul pe busolă; localitățile din aceeași direcție nu se mai suprapun.
 NOTIFICĂRI

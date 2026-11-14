@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Báisteach 
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Tá na fógraí ar siúl: báisteach nó sneachta, rabhaidh aimsire agus creathanna talún timpeall ort.
 Compass	Compás
 works offline	oibríonn sé gan idirlíon
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	An barra ag bun na fuinneoige: Giuirléidí, Easpórtáil / Iompórtáil, Logchomhad, Nuashonraigh, Comhroinn, Cabhair, Faoi. Nuair a tharraingítear suas é, taispeánann sé na hainmneacha faoi na deilbhíní.

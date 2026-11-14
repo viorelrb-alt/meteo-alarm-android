@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Kezdődő e
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	Az értesítések be vannak kapcsolva: eső vagy hó, időjárási figyelmeztetések és földrengések körülötted.
 Compass	Iránytű
 works offline	internet nélkül is működik
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Az ablak alján lévő sáv: Widgetek, Exportálás / Importálás, Napló, Frissítés, Megosztás, Súgó, Névjegy. Felhúzva megmutatja a neveket az ikonok alatt.

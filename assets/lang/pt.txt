@@ -974,3 +974,4 @@ Rain or snow starting, new weather warnings, earthquakes around you.	Chuva ou ne
 Notifications are on: rain or snow, weather warnings and earthquakes around you.	As notificações estão ligadas: chuva ou neve, avisos meteorológicos e sismos à sua volta.
 Compass	Bússola
 works offline	funciona sem internet
+The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	A barra no fundo da janela: Widgets, Exportar / Importar, Registo, Atualizar, Partilhar, Ajuda, Acerca de. Puxada para cima, mostra os nomes sob os ícones.
