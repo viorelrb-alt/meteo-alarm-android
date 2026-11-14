@@ -847,7 +847,6 @@ Rose	Rose
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 farvetemaer: Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose; under linjen Lyst, Mørkt eller Automatisk (telefonens sensor).
 Camera band	Kamerabånd
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	I portræt, på telefoner med kameraet i skærmen (Android 9+), står uret, forbindelsen og datoen ved siden af kameraet; byen får hele rækken.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Vejrikoner: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Ved uret: Wi-Fi (buer) eller mobildata (streger); de fulde buer eller streger viser signalet, den lille tekst typen (6 = Wi-Fi 6, 5G…). Andet netværk: en globus; overstreget uden internet.
 What the chart shows	Hvad grafen viser
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Én søjle for hver af de næste 12 timer; højden er chancen for regn eller sne i den time (0–100 %).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Seneste jordskælv
 Developed by Viorel-R Boancă	Udviklet af Viorel-R Boancă
 Weather icons	Vejrikoner
-Classic	Klassiske
-Glossy	Blanke
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiske (i temaets farver) eller Blanke (farvede billeder); de bevæger sig i 3 sekunder. Widgets får de samme ikoner.
+Icon theme	Ikontema
+Classic	Klassisk
+Glossy	Blank
+Flat	Flad
+Realistic	Realistisk
+Atmospheric	Atmosfærisk
+Outline	Kontur
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 temaer for vejrikoner: tryk på en prik. Klassisk og Kontur får temaets farver; de bevæger sig i 3 sekunder. Widgets får de samme ikoner.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Vejrikoner: Klassisk: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer. Blank, Flad, Realistisk, Atmosfærisk og Kontur: lavet med Google Gemini, tilpasset til appen.

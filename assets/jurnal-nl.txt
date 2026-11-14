@@ -1,9 +1,9 @@
-Huidige versie: v.5.10 · 14.11.2026
+Huidige versie: v.5.20 · 14.11.2026
 HOOFDSCHERM
 - Groot kompas: een tik op een plaats in de lijst toont zijn teken op het kompas; plaatsen in dezelfde richting overlappen niet meer.
 INSTELLINGEN
 - Instellingen: het menu ☰ is nu een venster met onderdelen, schakelaars, kleurthema's en de balk Systeem en ondersteuning; verversen door het scherm omlaag te trekken of op „bijgewerkt” te tikken.
-- Weerpictogrammen: Klassiek of Glanzend, in de app en op de widgets; te kiezen in ☰.
+- Pictogramthema: 6 thema's voor weerpictogrammen (Klassiek, Glanzend, Plat, Realistisch, Atmosferisch, Contour), te kiezen met gekleurde stippen in ☰; in de app en op de widgets.
 MELDINGEN
 - Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ☰.
 - Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ☰.

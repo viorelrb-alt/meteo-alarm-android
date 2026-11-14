@@ -432,4 +432,10 @@ final class Fetcher {
 		in.close();
 		return new String(out.toByteArray(), "UTF-8");
 	}
+
+	/** v5.20: the weather icon theme from the settings (WxIcon.SETS; v5.10's luxIcons = Lucios). */
+	static int iconTheme(android.content.SharedPreferences p) {
+		int k = p.getInt("iconTheme", p.getBoolean("luxIcons", false) ? 1 : 0);
+		return k < 0 || k >= ro.meteoalarm.android.core.WxIcon.SETS.length ? 0 : k;
+	}
 }

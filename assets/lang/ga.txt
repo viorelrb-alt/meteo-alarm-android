@@ -847,7 +847,6 @@ Rose	Rós
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 théama datha: Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós; faoin líne Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
 Camera band	Banda an cheamara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Sa phortráid, ar fhóin leis an gceamara sa scáileán (Android 9+), tá an clog, an ceangal agus an dáta in aice leis an gceamara; tá an tsraith iomlán ag an mbaile.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Deilbhíní aimsire: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	In aice leis an gclog: Wi-Fi (stuanna) nó sonraí móibíleacha (barraí); taispeánann na stuanna nó na barraí lána an comhartha, an téacs beag an cineál (6 = Wi-Fi 6, 5G…). Líonra eile: cruinneog; trasnaithe gan idirlíon.
 What the chart shows	Cad a thaispeánann an chairt
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Barra amháin do gach ceann de na 12 uair an chloig eile; is é a airde an seans báistí nó sneachta san uair sin (0–100%).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Creathanna talún le déanaí
 Developed by Viorel-R Boancă	Forbartha ag Viorel-R Boancă
 Weather icons	Deilbhíní aimsire
+Icon theme	Téama deilbhíní
 Classic	Clasaiceach
 Glossy	Snasta
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Clasaiceach (i ndathanna an téama) nó Snasta (pictiúir daite); bogann siad ar feadh 3 soicind. Úsáideann na giuirléidí na deilbhíní céanna.
+Flat	Cothrom
+Realistic	Réalaíoch
+Atmospheric	Atmaisféarach
+Outline	Imlíne
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 théama deilbhíní aimsire: tapáil ponc. Úsáideann Clasaiceach agus Imlíne dathanna an téama; bogann siad ar feadh 3 soicind. Úsáideann na giuirléidí na deilbhíní céanna.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Deilbhíní aimsire: Clasaiceach: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce. Snasta, Cothrom, Réalaíoch, Atmaisféarach agus Imlíne: déanta le Google Gemini, curtha in oiriúint don aip.

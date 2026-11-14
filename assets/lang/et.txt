@@ -847,7 +847,6 @@ Rose	Roos
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 värviteemat: Ühevärviline, Salvei, Lavendel, Taevas, Virsik, Roos; joone all Hele, Tume või Automaatne (telefoni andur).
 Camera band	Kaamera riba
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Püstpaigutuses, ekraanis kaameraga telefonides (Android 9+), on kell, ühendus ja kuupäev kaamera kõrval; asulal on terve rida.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ilmaikoonid: “Coloured weather icons collection”, titusurya (magnific.com), tasuta vektorid.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Kella kõrval: Wi-Fi (kaared) või mobiilne andmeside (tulbad); täis kaared või tulbad näitavad signaali, väike tekst tüüpi (6 = Wi-Fi 6, 5G…). Muu võrk: gloobus; läbi kriipsutatud ilma internetita.
 What the chart shows	Mida graafik näitab
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Üks tulp iga järgmise 12 tunni kohta; selle kõrgus on vihma või lume tõenäosus sel tunnil (0–100%).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Hiljutised maavärinad
 Developed by Viorel-R Boancă	Arendaja: Viorel-R Boancă
 Weather icons	Ilmaikoonid
-Classic	Klassikalised
-Glossy	Läikivad
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassikalised (teema värvides) või Läikivad (värvilised pildid); need liiguvad 3 sekundit. Vidinad kasutavad samu ikoone.
+Icon theme	Ikoonide teema
+Classic	Klassikaline
+Glossy	Läikiv
+Flat	Lame
+Realistic	Realistlik
+Atmospheric	Atmosfääriline
+Outline	Kontuur
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 ilmaikoonide teemat: puuduta täppi. Klassikaline ja Kontuur võtavad teema värvid; need liiguvad 3 sekundit. Vidinad kasutavad samu ikoone.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ilmaikoonid: Klassikaline: “Coloured weather icons collection”, titusurya (magnific.com), tasuta vektorid. Läikiv, Lame, Realistlik, Atmosfääriline ja Kontuur: loodud Google Geminiga, rakenduse jaoks kohandatud.

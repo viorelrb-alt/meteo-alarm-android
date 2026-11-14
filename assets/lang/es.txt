@@ -917,7 +917,6 @@ Rose	Rosa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temas de color: Monocromo, Salvia, Lavanda, Cielo, Melocotón, Rosa; bajo la línea Claro, Oscuro o Automático (sensor del teléfono).
 Camera band	Franja de la cámara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	En vertical, en teléfonos con la cámara en la pantalla (Android 9+), el reloj, la conexión y la fecha están junto a la cámara; la localidad ocupa toda la fila.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Iconos del tiempo: “Coloured weather icons collection”, titusurya (magnific.com), vectores gratuitos.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Junto al reloj: Wi-Fi (arcos) o datos móviles (barras); los arcos o barras llenos muestran la señal, el texto pequeño el tipo (6 = Wi-Fi 6, 5G…). Otra red: un globo; tachado sin internet.
 What the chart shows	Qué muestra el gráfico
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Una barra para cada una de las próximas 12 horas; su altura es la probabilidad de lluvia o nieve en esa hora (0–100 %).
@@ -1048,6 +1047,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Terremotos recientes
 Developed by Viorel-R Boancă	Desarrollada por Viorel-R Boancă
 Weather icons	Iconos del tiempo
-Classic	Clásicos
-Glossy	Brillantes
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Clásicos (en los colores del tema) o Brillantes (imágenes en color); se mueven 3 segundos. Los widgets usan los mismos iconos.
+Icon theme	Tema de iconos
+Classic	Clásico
+Glossy	Brillante
+Flat	Plano
+Realistic	Realista
+Atmospheric	Atmosférico
+Outline	Contorno
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 temas de iconos del tiempo: toca un punto. Clásico y Contorno usan los colores del tema; se mueven 3 segundos. Los widgets usan los mismos iconos.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Iconos del tiempo: Clásico: “Coloured weather icons collection”, titusurya (magnific.com), vectores gratuitos. Brillante, Plano, Realista, Atmosférico y Contorno: creados con Google Gemini, adaptados para la app.

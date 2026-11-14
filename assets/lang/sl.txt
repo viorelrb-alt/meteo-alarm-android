@@ -847,7 +847,6 @@ Rose	Vrtnica
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 barvnih tem: Enobarvna, Žajbelj, Sivka, Nebo, Breskev, Vrtnica; pod črto Svetla, Temna ali Samodejna (senzor telefona).
 Camera band	Pas kamere
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Pokončno, na telefonih s kamero v zaslonu (Android 9+), so ura, povezava in datum ob kameri; kraj dobi celo vrstico.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Vremenske ikone: “Coloured weather icons collection”, titusurya (magnific.com), brezplačni vektorji.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Ob uri: Wi-Fi (loki) ali mobilni podatki (stolpci); polni loki ali stolpci kažejo signal, majhno besedilo vrsto (6 = Wi-Fi 6, 5G…). Drugo omrežje: globus; prečrtana brez interneta.
 What the chart shows	Kaj prikazuje graf
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	En stolpec za vsako od naslednjih 12 ur; njegova višina je verjetnost dežja ali snega v tisti uri (0–100 %).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Nedavni potresi
 Developed by Viorel-R Boancă	Razvil Viorel-R Boancă
 Weather icons	Vremenske ikone
+Icon theme	Tema ikon
 Classic	Klasične
 Glossy	Sijoče
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasične (v barvah teme) ali Sijoče (barvne slike); premikajo se 3 sekunde. Pripomočki uporabljajo iste ikone.
+Flat	Ploske
+Realistic	Realistične
+Atmospheric	Atmosferske
+Outline	Obrisne
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 tem vremenskih ikon: tapnite piko. Klasične in Obrisne prevzamejo barve teme; premikajo se 3 sekunde. Pripomočki uporabljajo iste ikone.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Vremenske ikone: Klasične: “Coloured weather icons collection”, titusurya (magnific.com), brezplačni vektorji. Sijoče, Ploske, Realistične, Atmosferske in Obrisne: ustvarjene z Google Gemini, prilagojene aplikaciji.

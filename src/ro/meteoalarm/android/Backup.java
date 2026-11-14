@@ -25,7 +25,7 @@ final class Backup {
 	static final String[] LINES = { "myCities", "favs", "favsUS" };
 	/** The settings carried over (not notifications or location: those need the phone's permission). */
 	static final String[] SETTINGS = { "theme", "palette", "lang", "textScale", "keepOn", "nightClock", "farmer", "compassTowns",
-			"imp_eu", "imp_us", "clk_eu", "clk_us", "widgetBg" };
+			"imp_eu", "imp_us", "clk_eu", "clk_us", "widgetBg", "iconTheme" };
 
 	private Backup() {
 	}

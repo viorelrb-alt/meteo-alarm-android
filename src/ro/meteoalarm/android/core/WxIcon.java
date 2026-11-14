@@ -9,9 +9,20 @@ public final class WxIcon {
 	private WxIcon() {
 	}
 
-	/** v5.10 (Viorel): the weather icons chosen in Settings: false = Clasice (these), true = Lucioase (pictures in assets/lux). */
-	public static boolean lux;
+	/**
+	 * v5.20 (Viorel): the icon theme chosen in Settings (pref "iconTheme"): 0 Clasic (drawn here,
+	 * in the theme's colours), 1 Lucios, 2 Plat, 3 Realist, 4 Atmosferic, 5 Contur (pictures in
+	 * assets: 20 frames over 3 seconds, the last one still). Contur is tinted with the theme's colours.
+	 */
+	public static int set;
+	public static final String[] SETS = { "Clasic", "Lucios", "Plat", "Realist", "Atmosferic", "Contur" };
+	public static final String[][] SET_NAMES = { { "Classic", "Clasic" }, { "Glossy", "Lucios" }, { "Flat", "Plat" },
+			{ "Realistic", "Realist" }, { "Atmospheric", "Atmosferic" }, { "Outline", "Contur" } };
+	/** The dot of each theme in Settings (Viorel: each another colour, never grey; Clasic white). */
+	public static final int[] SET_DOTS = { 0xFFFFFFFF, 0xFFF5B800, 0xFFE5484D, 0xFF14B8A6, 0xFF5B5FEF, 0xFF8BD12E };
+	private static final String[] DIRS = { null, "lux", "plat", "real", "atmo", "cont" };
 	static final int LUX_FRAMES = 20;
+
 
 	public static boolean has(String name) {
 		return index(name) >= 0;
@@ -37,15 +48,29 @@ public final class WxIcon {
 		return (float) (0.5 - 0.5 * Math.cos(Math.PI * t));
 	}
 
+	/** Contur's inside: white under a dark outline (light theme), a deep shade of it under a light one (dark theme). */
+	static int fill(int ink) {
+		int r = (ink >> 16) & 255, gg = (ink >> 8) & 255, b = ink & 255;
+		if (r * 299 + gg * 587 + b * 114 < 128000) return 0xFFFFFFFF;
+		return 0xFF000000 | (r * 22 / 100) << 16 | (gg * 22 / 100) << 8 | (b * 22 / 100);
+	}
+
 	/** The icon NAME in the square X Y S, at the moment T (0..1), in the colours COL (sun, light, dark). */
 	public static void draw(Gfx g, String name, float x, float y, float s, float t, int[] col) {
 		int i = index(name);
 		if (i < 0) return;
-		if (lux) {
-			// v5.10 (Viorel): the Lucioase icons: 20 pictures over the 3 seconds, the last one still.
+		if (set > 0 && set < DIRS.length) {
+			// v5.10 / v5.20 (Viorel): the picture themes: 20 pictures over the 3 seconds, the last one still.
 			int n = LUX_FRAMES, f = t >= 1 ? n - 1 : Math.max(0, Math.min(n - 1, (int) (Math.max(0, t) * n)));
 			int px = s >= 70 ? 256 : 96;
-			g.image("lux/" + name + "-" + px + ".webp", f * px, 0, px, px, x, y, s, s, 1);
+			String d = DIRS[set] + "/" + name;
+			g.image(d + "-" + px + ".webp", f * px, 0, px, px, x, y, s, s, 1);
+			if (set == 5) {
+				// Contur: the outline in the theme's strong colour, the inside in the page's colour.
+				int ink = col[2];
+				g.sprite(d + "-f-" + px + ".webp", f * px, 0, px, px, x, y, s, s, fill(ink), 1, 0, 0, 0);
+				g.sprite(d + "-s-" + px + ".webp", f * px, 0, px, px, x, y, s, s, ink, 1, 0, 0, 0);
+			}
 			return;
 		}
 		int[] p = WxParts.PARTS[i];

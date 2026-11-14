@@ -847,7 +847,6 @@ Rose	Warda
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temi tal-kulur: Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda; taħt il-linja Ċar, Skur jew Awtomatiku (sensur tat-telefon).
 Camera band	Faxxa tal-kamera
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	F'portrait, fuq telefowns bil-kamera fl-iskrin (Android 9+), l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera; il-lokalità għandha r-ringiela kollha.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikoni tat-temp: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Ħdejn l-arloġġ: Wi-Fi (arki) jew data mobbli (vireg); l-arki jew il-vireg mimlija juru s-sinjal, it-test żgħir it-tip (6 = Wi-Fi 6, 5G…). Netwerk ieħor: globu; maqsuma mingħajr internet.
 What the chart shows	X'turi l-graff
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Virga waħda għal kull waħda mit-12-il siegħa li ġejjin; l-għoli tagħha hu ċ-ċans ta' xita jew silġ f'dik is-siegħa (0–100%).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Terremoti reċenti
 Developed by Viorel-R Boancă	Żviluppata minn Viorel-R Boancă
 Weather icons	Ikoni tat-temp
-Classic	Klassiċi
+Icon theme	Tema tal-ikoni
+Classic	Klassiku
 Glossy	Tleqq
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiċi (bil-kuluri tat-tema) jew Tleqq (stampi bil-kulur); jiċċaqilqu għal 3 sekondi. Il-widgets jieħdu l-istess ikoni.
+Flat	Ċatt
+Realistic	Realistiku
+Atmospheric	Atmosferiku
+Outline	Kontorn
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 temi tal-ikoni tat-temp: agħfas tikka. Klassiku u Kontorn jieħdu l-kuluri tat-tema; jiċċaqilqu għal 3 sekondi. Il-widgets jieħdu l-istess ikoni.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ikoni tat-temp: Klassiku: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn. Tleqq, Ċatt, Realistiku, Atmosferiku u Kontorn: magħmula b'Google Gemini, adattati għall-app.

@@ -1,8 +1,8 @@
-Praegune versioon: v.5.10 · 14.11.2026
+Praegune versioon: v.5.20 · 14.11.2026
 PÕHIEKRAAN
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
 SEADED
-- Ilmaikoonid: Klassikalised või Läikivad, rakenduses ja vidinatel; valitakse menüüs ☰.
+- Ikoonide teema: 6 ilmaikoonide teemat (Klassikaline, Läikiv, Lame, Realistlik, Atmosfääriline, Kontuur), valitakse värviliste täppidega menüüs ☰; rakenduses ja vidinatel.
 - Seaded: menüü ☰ on nüüd aken jaotiste, lülitite, värviteemade ja ribaga Süsteem ja tugi; värskendamiseks tõmba ekraani alla või puuduta „uuendatud“.
 TEAVITUSED
 - Maavärinad: teavitused ainult maavärinatest kuni 300 km sinu kohast; lülitatakse sisse või välja menüüs ☰.

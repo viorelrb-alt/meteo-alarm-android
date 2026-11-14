@@ -1,7 +1,7 @@
-Versión actual: v.5.10 · 14.11.2026
+Versión actual: v.5.20 · 14.11.2026
 AJUSTES
 - Ajustes: el menú ☰ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
-- Iconos del tiempo: Clásicos o Brillantes, en la app y en los widgets; se eligen en ☰.
+- Tema de iconos: 6 temas de iconos del tiempo (Clásico, Brillante, Plano, Realista, Atmosférico, Contorno), se eligen con puntos de color en ☰; en la app y en los widgets.
 NOTIFICACIONES
 - Terremotos: avisos solo de los terremotos a menos de 300 km de tu lugar; se activan o desactivan en ☰.
 - Tornados (EE. UU.): los avisos de tornado para tu localidad se activan o desactivan en ☰.

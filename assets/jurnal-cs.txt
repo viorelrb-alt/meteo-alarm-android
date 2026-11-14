@@ -1,8 +1,8 @@
-Současná verze: v.5.10 · 14.11.2026
+Současná verze: v.5.20 · 14.11.2026
 HLAVNÍ OBRAZOVKA
 - Velký kompas: klepnutí na obec v seznamu ukáže její značku na kompasu; obce ve stejném směru se už nepřekrývají.
 NASTAVENÍ
-- Ikony počasí: Klasické nebo Lesklé, v aplikaci i ve widgetech; volí se v ☰.
+- Motiv ikon: 6 motivů ikon počasí (Klasické, Lesklé, Ploché, Realistické, Atmosférické, Obrysové), volba barevnými tečkami v ☰; v aplikaci i ve widgetech.
 - Nastavení: nabídka ☰ je teď okno s oddíly, přepínači, barevnými motivy a lištou Systém a podpora; obnovuje se tažením obrazovky dolů nebo klepnutím na „aktualizováno“.
 OZNÁMENÍ
 - Tornáda (USA): oznámení o tornádech pro vaši obec se zapínají a vypínají v ☰.

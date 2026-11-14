@@ -847,7 +847,6 @@ Rose	Rózsa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 színtéma: Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa; a vonal alatt Világos, Sötét vagy Automatikus (telefon érzékelője).
 Camera band	Kamerasáv
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Álló helyzetben, a kijelzőbe épített kamerás telefonokon (Android 9+) az óra, a kapcsolat és a dátum a kamera mellett van; a település az egész sort kapja.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Időjárás-ikonok: “Coloured weather icons collection”, titusurya (magnific.com), ingyenes vektorok.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Az óra mellett: Wi-Fi (ívek) vagy mobiladat (oszlopok); a teli ívek vagy oszlopok a jelet mutatják, a kis szöveg a típust (6 = Wi-Fi 6, 5G…). Más hálózat: földgömb; áthúzva, ha nincs internet.
 What the chart shows	Mit mutat a grafikon
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Egy oszlop a következő 12 óra mindegyikére; magassága az eső vagy havazás esélye abban az órában (0–100%).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Friss földrengések
 Developed by Viorel-R Boancă	Fejlesztette: Viorel-R Boancă
 Weather icons	Időjárás-ikonok
+Icon theme	Ikontéma
 Classic	Klasszikus
 Glossy	Fényes
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasszikus (a téma színeiben) vagy Fényes (színes képek); 3 másodpercig mozognak. A widgetek ugyanezeket az ikonokat használják.
+Flat	Lapos
+Realistic	Valósághű
+Atmospheric	Légköri
+Outline	Körvonalas
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 időjárásikon-téma: koppintson egy pöttyre. A Klasszikus és a Körvonalas a téma színeit veszi fel; 3 másodpercig mozognak. A widgetek ugyanezeket az ikonokat használják.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Időjárás-ikonok: Klasszikus: “Coloured weather icons collection”, titusurya (magnific.com), ingyenes vektorok. Fényes, Lapos, Valósághű, Légköri és Körvonalas: Google Geminivel készült, az alkalmazáshoz igazítva.

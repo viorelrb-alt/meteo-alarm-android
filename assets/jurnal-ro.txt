@@ -1,12 +1,12 @@
-Versiunea curentă: v.5.10 · 14.11.2026
+Versiunea curentă: v.5.20 · 14.11.2026
 ECRAN PRINCIPAL
 - Busola mare: atingerea unei localități din listă îi arată semnul pe busolă; localitățile din aceeași direcție nu se mai suprapun.
 NOTIFICĂRI
 - Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ☰.
 - Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ☰.
 SETĂRI
-- Iconuri vreme: Clasice sau Lucioase, în aplicație și pe widget-uri; se aleg din ☰.
 - Setări: meniul ☰ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
+- Temă icon: 6 teme de iconuri (Clasic, Lucios, Plat, Realist, Atmosferic, Contur), alese din ☰ cu buline colorate; în aplicație și pe widget-uri.
 - Îmbunătățiri de design și corectarea erorilor.
 
 Versiunea 4 (v.4.00 – v.4.52)

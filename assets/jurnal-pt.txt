@@ -1,7 +1,7 @@
-Versão atual: v.5.10 · 14.11.2026
+Versão atual: v.5.20 · 14.11.2026
 DEFINIÇÕES
 - Definições: o menu ☰ é agora uma janela com secções, interruptores, os temas em cores e a barra Sistema e suporte; atualiza-se puxando o ecrã para baixo ou tocando em «atualizado».
-- Ícones do tempo: Clássicos ou Brilhantes, na app e nos widgets; escolhem-se em ☰.
+- Tema de ícones: 6 temas de ícones do tempo (Clássico, Brilhante, Plano, Realista, Atmosférico, Contorno), escolhidos com pontos coloridos em ☰; na app e nos widgets.
 ECRÃ PRINCIPAL
 - Bússola grande: tocar numa localidade da lista mostra a sua marca na bússola; localidades na mesma direção já não se sobrepõem.
 NOTIFICAÇÕES

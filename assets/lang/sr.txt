@@ -781,7 +781,6 @@ Rose	Ружа
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 тема боја: Једнобојна, Жалфија, Лаванда, Небо, Бресква, Ружа; испод линије Светла, Тамна или Аутоматска (сензор телефона).
 Camera band	Трака камере
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Усправно, на телефонима са камером у екрану (Android 9+), сат, веза и датум су поред камере; место добија цео ред.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Иконе времена: “Coloured weather icons collection”, titusurya (magnific.com), бесплатни вектори.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Поред сата: Wi-Fi (лукови) или мобилни подаци (стубићи); пуни лукови или стубићи показују сигнал, мали текст врсту (6 = Wi-Fi 6, 5G…). Друга мрежа: глобус; прецртана без интернета.
 What the chart shows	Шта графикон приказује
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Један стубић за сваки од наредних 12 сати; његова висина је вероватноћа кише или снега у том сату (0–100%).
@@ -912,6 +911,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Недавни земљотреси
 Developed by Viorel-R Boancă	Развио Viorel-R Boancă
 Weather icons	Иконе времена
+Icon theme	Тема икона
 Classic	Класичне
 Glossy	Сјајне
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Класичне (у бојама теме) или Сјајне (слике у боји); померају се 3 секунде. Виџети узимају исте иконе.
+Flat	Равне
+Realistic	Реалистичне
+Atmospheric	Атмосферске
+Outline	Обрисне
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 тема икона времена: додирните тачку. Класичне и Обрисне узимају боје теме; померају се 3 секунде. Виџети узимају исте иконе.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Иконе времена: Класичне: “Coloured weather icons collection”, titusurya (magnific.com), бесплатни вектори. Сјајне, Равне, Реалистичне, Атмосферске и Обрисне: направљене помоћу Google Gemini, прилагођене апликацији.

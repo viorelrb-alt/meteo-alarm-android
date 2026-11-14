@@ -847,7 +847,6 @@ Rose	Roos
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 kleurthema's: Monochroom, Salie, Lavendel, Lucht, Perzik, Roos; onder de lijn Licht, Donker of Automatisch (telefoonsensor).
 Camera band	Camerabalk
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Staand, op telefoons met de camera in het scherm (Android 9+), staan de klok, de verbinding en de datum naast de camera; de plaats krijgt de hele rij.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Weerpictogrammen: “Coloured weather icons collection”, titusurya (magnific.com), gratis vectoren.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Naast de klok: wifi (bogen) of mobiele data (balkjes); de volle bogen of balkjes tonen het signaal, de kleine tekst het type (6 = Wi-Fi 6, 5G…). Ander netwerk: een wereldbol; doorgestreept zonder internet.
 What the chart shows	Wat de grafiek toont
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Eén balk voor elk van de komende 12 uur; de hoogte is de kans op regen of sneeuw in dat uur (0–100%).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Recente aardbevingen
 Developed by Viorel-R Boancă	Ontwikkeld door Viorel-R Boancă
 Weather icons	Weerpictogrammen
+Icon theme	Pictogramthema
 Classic	Klassiek
 Glossy	Glanzend
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiek (in de kleuren van het thema) of Glanzend (kleurenafbeeldingen); ze bewegen 3 seconden. De widgets nemen dezelfde pictogrammen.
+Flat	Plat
+Realistic	Realistisch
+Atmospheric	Atmosferisch
+Outline	Contour
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 thema's voor weerpictogrammen: tik op een stip. Klassiek en Contour nemen de kleuren van het thema; ze bewegen 3 seconden. De widgets nemen dezelfde pictogrammen.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Weerpictogrammen: Klassiek: “Coloured weather icons collection”, titusurya (magnific.com), gratis vectoren. Glanzend, Plat, Realistisch, Atmosferisch en Contour: gemaakt met Google Gemini, aangepast voor de app.

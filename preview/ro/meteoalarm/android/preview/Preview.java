@@ -85,7 +85,7 @@ public final class Preview {
 				String key = a + (c & 0xFFFFFF);
 				BufferedImage m = masks.get(key);
 				if (m == null) {
-					BufferedImage im = ImageIO.read(new File(assets, a));
+					BufferedImage im = ImageIO.read(a.endsWith(".webp") ? png(a) : new File(assets, a));
 					m = new BufferedImage(im.getWidth(), im.getHeight(), BufferedImage.TYPE_INT_ARGB);
 					for (int j = 0; j < im.getHeight(); j++)
 						for (int i = 0; i < im.getWidth(); i++) {
@@ -111,13 +111,19 @@ public final class Preview {
 
 		private final java.util.Map<String, BufferedImage> images = new java.util.HashMap<>();
 
+		/** v5.20: the PNG copy of a WebP asset (Java reads no WebP): lux = v5.10's, the rest v5.20's. */
+		private File png(String a) {
+			String dir = a.startsWith("lux/") ? System.getProperty("luxpng", "/mnt/project-files/iconuri-svg-1024/apk-png")
+					: System.getProperty("icpng", "/mnt/project-files/iconuri-teme-v520/apk-png");
+			return new File(dir, a.replace(".webp", ".png"));
+		}
+
 		/** v5.10: the Lucioase icons; Java reads no WebP, so the PNG copies (system property luxpng). */
 		public void image(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float al) {
 			try {
 				BufferedImage im = images.get(a);
 				if (im == null) {
-					String dir = System.getProperty("luxpng", "/mnt/project-files/iconuri-svg-1024/apk-png");
-					im = ImageIO.read(new File(dir, a.replace(".webp", ".png")));
+					im = ImageIO.read(png(a));
 					images.put(a, im);
 				}
 				java.awt.geom.AffineTransform old = g.getTransform();
@@ -340,7 +346,9 @@ public final class Preview {
 		if (opts.contains(" evening")) s.now.set(Calendar.HOUR_OF_DAY, 22);
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";
 		if (opts.contains(" norway")) s.source = "MET Norway";
-		ro.meteoalarm.android.core.WxIcon.lux = opts.contains(" lux");
+		ro.meteoalarm.android.core.WxIcon.set = opts.contains(" lux") ? 1 : 0;
+		java.util.regex.Matcher icm = java.util.regex.Pattern.compile(" icons=(\\d)").matcher(opts);
+		if (icm.find()) ro.meteoalarm.android.core.WxIcon.set = Integer.parseInt(icm.group(1));
 		s.brightLevel = 0.45f;
 		int bp = 0;
 		for (String o : a) if (o.startsWith("band=")) bp = Integer.parseInt(o.substring(5));

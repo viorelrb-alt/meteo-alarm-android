@@ -1,7 +1,7 @@
-Versione attuale: v.5.10 · 14.11.2026
+Versione attuale: v.5.20 · 14.11.2026
 IMPOSTAZIONI
-- Icone meteo: Classiche o Lucide, nell'app e nei widget; si scelgono in ☰.
 - Impostazioni: il menu ☰ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
+- Tema icone: 6 temi di icone meteo (Classico, Lucido, Piatto, Realistico, Atmosferico, Contorno), si scelgono con punti colorati in ☰; nell'app e nei widget.
 NOTIFICHE
 - Terremoti: notifiche solo per i terremoti entro 300 km dal tuo luogo; si attivano o disattivano in ☰.
 - Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ☰.

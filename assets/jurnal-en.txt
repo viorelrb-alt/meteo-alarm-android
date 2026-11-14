@@ -1,12 +1,12 @@
-Current version: v.5.10 · 14.11.2026
+Current version: v.5.20 · 14.11.2026
 MAIN SCREEN
 - Big compass: a tap on a town in the list shows its mark on the compass; towns in the same direction no longer overlap.
 NOTIFICATIONS
 - Earthquakes: notifications only for earthquakes at most 300 km from your place; turned on or off in ☰.
 - Tornadoes (US): the tornado notifications for your town are turned on or off in ☰.
 SETTINGS
+- Icon theme: 6 weather icon themes (Classic, Glossy, Flat, Realistic, Atmospheric, Outline), chosen with coloured dots in ☰; in the app and on the widgets.
 - Settings: the ☰ menu is now a window with sections, switches, the colour themes and the System & support bar; refresh by pulling the screen down or tapping “updated”.
-- Weather icons: Classic or Glossy, in the app and on the widgets; chosen in ☰.
 - Design improvements and bug fixes.
 
 Version 4 (v.4.00 – v.4.52)

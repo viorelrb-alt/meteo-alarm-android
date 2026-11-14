@@ -552,6 +552,30 @@ final class SettingsPanel extends FrameLayout {
 		card.addView(s, sl);
 	}
 
+	/** v5.20 (Viorel): a row with its name, the chosen one under it, and coloured dots to choose (as the theme's colours). */
+	void dots(String icon, String head, String sub, String[] names, int[] colors, int sel, final Choice pick) {
+		sep();
+		row(icon, head, sub, null, false, null);
+		LinearLayout dots = new LinearLayout(getContext());
+		dots.setPadding(0, 0, 0, px(12));
+		for (int i = 0; i < names.length; i++) {
+			final int k = i;
+			FrameLayout col = new FrameLayout(getContext());
+			Dot d = new Dot(colors[i], i == sel);
+			FrameLayout.LayoutParams dl = new FrameLayout.LayoutParams(px(38 * zk), px(38 * zk));
+			dl.gravity = Gravity.CENTER;
+			col.addView(d, dl);
+			col.setContentDescription(names[i]);
+			col.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					pick.chose(k);
+				}
+			});
+			dots.addView(col, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		}
+		card.addView(dots);
+	}
+
 	private final class Dot extends View {
 		final int color;
 		final boolean on;
@@ -733,7 +757,8 @@ final class SettingsPanel extends FrameLayout {
 			int is = px(26 * zk);
 			LinearLayout ic = new LinearLayout(getContext());
 			ic.setGravity(Gravity.CENTER);
-			String[] parts = icons[i].split(">");
+			// v5.20 (Viorel): the bar's animated icons (Export / Import: one icon with both arrows).
+			String[] parts = AnimIcon.file(icons[i]) != null ? new String[] { icons[i] } : icons[i].split(">");
 			for (int j = 0; j < parts.length; j++) {
 				if (j > 0) {
 					View ch = new View(getContext());
@@ -741,7 +766,7 @@ final class SettingsPanel extends FrameLayout {
 					ic.addView(ch, new LinearLayout.LayoutParams(px(13 * zk), px(13 * zk)));
 				}
 				View v = new View(getContext());
-				v.setBackground(new LineIcon(parts[j], ink()));
+				v.setBackground(AnimIcon.of(getContext().getAssets(), parts[j], ink()));
 				ic.addView(v, new LinearLayout.LayoutParams(is, is));
 			}
 			col.addView(ic, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, is));
@@ -763,7 +788,7 @@ final class SettingsPanel extends FrameLayout {
 			if (compact != null) {
 				// The same in the one row: one icon each (Export / Import: two arrows).
 				View v = new View(getContext());
-				v.setBackground(new LineIcon(icons[i].contains(">") ? "transfer" : icons[i], ink()));
+				v.setBackground(AnimIcon.of(getContext().getAssets(), icons[i].contains(">") ? "transfer" : icons[i], ink()));
 				FrameLayout cell = new FrameLayout(getContext());
 				cell.setPadding(0, px(8), 0, px(8));
 				cell.setContentDescription(labels[i]);
@@ -798,6 +823,7 @@ final class SettingsPanel extends FrameLayout {
 		lp.gravity = Gravity.CENTER;
 		panel.setLayoutParams(lp);
 		if (!open) {
+			AnimIcon.restart(); // v5.20: the bar's icons move for 3 seconds when the window opens
 			scroll.scrollTo(0, 0);
 			// v5.01: the bar opens with only its icons.
 			footOpen = true;

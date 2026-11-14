@@ -847,7 +847,6 @@ Rose	Троянда
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 колірних тем: Монохромна, Шавлія, Лаванда, Небо, Персик, Троянда; під лінією Світла, Темна або Автоматична (датчик телефона).
 Camera band	Смуга камери
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	У портретному режимі, на телефонах із камерою в екрані (Android 9+), годинник, зв'язок і дата розташовані поруч із камерою; населеному пункту віддано весь рядок.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Значки погоди: “Coloured weather icons collection”, titusurya (magnific.com), безкоштовні вектори.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Біля годинника: Wi-Fi (дуги) або мобільні дані (стовпчики); повні дуги чи стовпчики показують сигнал, малий текст — тип (6 = Wi-Fi 6, 5G…). Інша мережа: глобус; закреслений без інтернету.
 What the chart shows	Що показує графік
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Один стовпчик на кожну з наступних 12 годин; його висота — ймовірність дощу чи снігу в цю годину (0–100%).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Недавні землетруси
 Developed by Viorel-R Boancă	Розробник: Viorel-R Boancă
 Weather icons	Значки погоди
-Classic	Класичні
-Glossy	Глянцеві
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Класичні (у кольорах теми) або Глянцеві (кольорові зображення); рухаються 3 секунди. Віджети беруть ті самі значки.
+Icon theme	Тема значків
+Classic	Класична
+Glossy	Глянцева
+Flat	Пласка
+Realistic	Реалістична
+Atmospheric	Атмосферна
+Outline	Контурна
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 тем значків погоди: торкніться крапки. Класична і Контурна беруть кольори теми; значки рухаються 3 секунди. Віджети беруть ті самі значки.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Значки погоди: Класична: “Coloured weather icons collection”, titusurya (magnific.com), безкоштовні вектори. Глянцева, Пласка, Реалістична, Атмосферна і Контурна: створені за допомогою Google Gemini, адаптовані для застосунку.

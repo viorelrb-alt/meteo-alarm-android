@@ -1,9 +1,9 @@
-Trenutna različica: v.5.10 · 14.11.2026
+Trenutna različica: v.5.20 · 14.11.2026
 GLAVNI ZASLON
 - Velik kompas: dotik kraja na seznamu pokaže njegovo oznako na kompasu; kraji v isti smeri se ne prekrivajo več.
 NASTAVITVE
 - Nastavitve: meni ☰ je zdaj okno z razdelki, stikali, barvnimi temami in vrstico Sistem in podpora; osveževanje s potegom zaslona navzdol ali dotikom »posodobljeno«.
-- Vremenske ikone: Klasične ali Sijoče, v aplikaciji in na pripomočkih; izbira v ☰.
+- Tema ikon: 6 tem vremenskih ikon (Klasične, Sijoče, Ploske, Realistične, Atmosferske, Obrisne), izbira z barvnimi pikami v ☰; v aplikaciji in na pripomočkih.
 OBVESTILA
 - Potresi: obvestila samo o potresih največ 300 km od vašega kraja; vklopite ali izklopite jih v ☰.
 - Tornadi (ZDA): obvestila o tornadih za vaš kraj vklopite ali izklopite v ☰.

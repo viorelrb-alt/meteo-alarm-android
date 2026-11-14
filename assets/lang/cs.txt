@@ -847,7 +847,6 @@ Rose	Růže
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 barevných motivů: Monochromatický, Šalvěj, Levandule, Nebe, Broskev, Růže; pod čarou Světlý, Tmavý nebo Automatický (senzor telefonu).
 Camera band	Pás kamery
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Na výšku, u telefonů s kamerou v displeji (Android 9+), jsou hodiny, připojení a datum vedle kamery; obec má celý řádek.
-Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony počasí: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory.
 Next to the clock: Wi-Fi (arcs) or mobile data (bars); the full arcs or bars show the signal, the small text the kind (6 = Wi-Fi 6, 5G…). Another network: a globe; struck through without internet.	Vedle hodin: Wi-Fi (oblouky) nebo mobilní data (sloupce); plné oblouky nebo sloupce ukazují signál, malý text typ (6 = Wi-Fi 6, 5G…). Jiná síť: glóbus; přeškrtnutá bez internetu.
 What the chart shows	Co graf ukazuje
 One bar for each of the next 12 hours; its height is the chance of rain or snow in that hour (0–100%).	Jeden sloupec pro každou z příštích 12 hodin; jeho výška je pravděpodobnost deště nebo sněhu v té hodině (0–100 %).
@@ -978,6 +977,12 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 Recent earthquakes	Nedávná zemětřesení
 Developed by Viorel-R Boancă	Vyvinul Viorel-R Boancă
 Weather icons	Ikony počasí
+Icon theme	Motiv ikon
 Classic	Klasické
 Glossy	Lesklé
-Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasické (v barvách motivu) nebo Lesklé (barevné obrázky); hýbou se 3 sekundy. Widgety mají stejné ikony.
+Flat	Ploché
+Realistic	Realistické
+Atmospheric	Atmosférické
+Outline	Obrysové
+6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 motivů ikon počasí: klepnete na tečku. Klasické a Obrysové mají barvy motivu; hýbou se 3 sekundy. Widgety mají stejné ikony.
+Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.	Ikony počasí: Klasické: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory. Lesklé, Ploché, Realistické, Atmosférické a Obrysové: vytvořeny pomocí Google Gemini, upraveny pro aplikaci.

@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.10";
+	static final String VERSION = "Meteo Alarm Android v5.20";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -319,7 +319,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						"Notificări (doar cu acordul tău): ploaie sau ninsoare care începe, avertizări meteo noi pentru localitatea ta, cutremure cu magnitudinea 3 sau mai mare în țara ta. Fiecare eveniment o dată. Le pornești sau oprești din ☰ › Notificări.") + "\n\n"
 				+ Tr.t("Language: at the first start the phone's language (when the app has it, else English), then the one chosen in ☰ › Language.",
 						"Limba: la prima pornire limba telefonului (dacă aplicația o are, altfel engleza), apoi cea aleasă în ☰ › Limba.") + "\n\n"
-				+ Tr.t("Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.", "Iconurile vremii: “Coloured weather icons collection”, titusurya (magnific.com), vectori gratuiți.") + "\n\n"
+				+ Tr.t("Weather icons: Classic: “Coloured weather icons collection”, titusurya (magnific.com), free vectors. Glossy, Flat, Realistic, Atmospheric and Outline: made with Google Gemini, adapted for the app.", "Iconurile vremii: Clasic: “Coloured weather icons collection”, titusurya (magnific.com), vectori gratuiți. Lucios, Plat, Realist, Atmosferic și Contur: create cu Google Gemini, adaptate pentru aplicație.") + "\n\n"
 				+ Tr.t("Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.",
 						"Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după telefon. Ce nu are telefonul se dezactivează. Nimic nu pleacă de pe telefon.") + "\n\n"
 				+ Tr.t("Updates: ", "Actualizări: ") + Updater.howTo(en) + " "
@@ -358,7 +358,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Theme: "light" (Kindle), "dark" (Claude colours), "auto" (follows the phone's dark mode) or
 		// "sensor" (dark when the room is dark, from the light sensor).
 		ro.meteoalarm.android.core.Theme.pal = prefs.getInt("palette", 0);
-		ro.meteoalarm.android.core.WxIcon.lux = prefs.getBoolean("luxIcons", false); // v5.10
+		ro.meteoalarm.android.core.WxIcon.set = Fetcher.iconTheme(prefs); // v5.20
 		String theme = prefs.getString("theme", "auto");
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		s.dark = theme.equals("dark") || (theme.equals("auto") && night) || (theme.equals("sensor") && roomDark);
@@ -2250,12 +2250,16 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onMenu();
 			}
 		});
-		// v5.10 (Viorel): the weather icons: Clasice (in the theme's colours) or Lucioase; widgets too.
-		p.segmented("sun", Tr.t("Weather icons", "Iconuri vreme"), new String[] { Tr.t("Classic", "Clasice"), Tr.t("Glossy", "Lucioase") },
-				ro.meteoalarm.android.core.WxIcon.lux ? 1 : 0, new SettingsPanel.Choice() {
+		// v5.20 (Viorel): the weather icon theme: 6 coloured dots, the chosen one's name under the title; widgets too.
+		final int nIc = ro.meteoalarm.android.core.WxIcon.SETS.length;
+		String[] icn = new String[nIc];
+		for (int k = 0; k < nIc; k++) icn[k] = Tr.t(ro.meteoalarm.android.core.WxIcon.SET_NAMES[k][0], ro.meteoalarm.android.core.WxIcon.SET_NAMES[k][1]);
+		p.dots("sun", Tr.t("Icon theme", "Temă icon"), icn[ro.meteoalarm.android.core.WxIcon.set], icn, ro.meteoalarm.android.core.WxIcon.SET_DOTS,
+				ro.meteoalarm.android.core.WxIcon.set, new SettingsPanel.Choice() {
 					public void chose(int k) {
-						prefs.edit().putBoolean("luxIcons", k == 1).apply();
-						Log.i(MainActivity.this, "TEMA", "iconuri vreme: " + (k == 1 ? "Lucioase" : "Clasice"));
+						prefs.edit().putInt("iconTheme", k).apply();
+						ro.meteoalarm.android.core.WxIcon.set = k;
+						Log.i(MainActivity.this, "TEMA", "temă icon: " + ro.meteoalarm.android.core.WxIcon.SETS[k]);
 						applySettings();
 						view.replayIcon();
 						view.invalidate();
@@ -3083,7 +3087,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Favoritele (steaua: localitatea afișată); atingerea alege una; + Adaugă și Alegeți județul deschid lista localităților."));
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));
 		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).", "6 teme de culoare: atingi o culoare; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
-		help.entry(mini("wxicon"), Tr.t("Weather icons", "Iconuri vreme"), Tr.t("Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.", "Clasice (în culorile temei) sau Lucioase (imagini colorate); se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));
+		help.entry(mini("wxicon"), Tr.t("Icon theme", "Temă icon"), Tr.t("6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.", "6 teme de iconuri: atingi o bulină. Clasic și Contur iau culorile temei; se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("English, the phone's language and the country's languages; in Romania also “Other languages”.",
 				"Engleza, limba telefonului și limbile țării; în România și „Alte limbi”."));
 		help.entry(mini("autoloc"), Tr.t("Auto location", "Localizare auto"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
