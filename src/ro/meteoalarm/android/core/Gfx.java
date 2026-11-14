@@ -28,6 +28,9 @@ public interface Gfx {
 	 */
 	void sprite(String asset, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int color, float alpha, float rot, float px, float py);
 
+	/** v5.10: part SX SY SW SH of a colour picture ASSET (its own colours) into X Y W H, at ALPHA. */
+	void image(String asset, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float alpha);
+
 	void arc(float cx, float cy, float r, float startDeg, float sweepDeg, float stroke, int color);
 
 	void poly(float[] xy, int color);

@@ -1,8 +1,9 @@
-Verżjoni attwali: v.5.04 · 14.11.2026
+Verżjoni attwali: v.5.10 · 14.11.2026
 NOTIFIKI
 - Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ☰.
 - Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ☰.
 SETTINGS
+- Ikoni tat-temp: Klassiċi jew Tleqq, fl-app u fuq il-widgets; jintgħażlu f'☰.
 - Settings: il-menu ☰ issa huwa tieqa b'taqsimiet, swiċċijiet, temi tal-kulur u l-bar Sistema u appoġġ; tiġġedded billi tiġbed l-iskrin 'l isfel jew tmiss “aġġornat”.
 SKRIN EWLIENI
 - Boxxla kbira: mess fuq lokalità fil-lista juri l-marka tagħha fuq il-boxxla; lokalitajiet fl-istess direzzjoni ma jirkbux aktar fuq xulxin.

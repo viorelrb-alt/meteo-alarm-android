@@ -1,10 +1,11 @@
-Obecna wersja: v.5.04 · 14.11.2026
+Obecna wersja: v.5.10 · 14.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie miejscowości na liście pokazuje jej znak na kompasie; miejscowości w tym samym kierunku już się nie nakładają.
 POWIADOMIENIA
 - Tornada (USA): powiadomienia o tornadach dla twojej miejscowości włącza się lub wyłącza w ☰.
 - Trzęsienia ziemi: powiadomienia tylko o trzęsieniach ziemi najwyżej 300 km od twojego miejsca; włączane lub wyłączane w ☰.
 USTAWIENIA
+- Ikony pogody: Klasyczne lub Błyszczące, w aplikacji i na widżetach; wybór w ☰.
 - Ustawienia: menu ☰ jest teraz oknem z sekcjami, przełącznikami, motywami kolorystycznymi i paskiem System i pomoc; odświeżanie przez pociągnięcie ekranu w dół lub dotknięcie „zaktualizowano”.
 - Ulepszenia wyglądu i poprawki błędów.
 

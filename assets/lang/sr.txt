@@ -779,7 +779,6 @@ Sky	Небо
 Peach	Бресква
 Rose	Ружа
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 тема боја: Једнобојна, Жалфија, Лаванда, Небо, Бресква, Ружа; испод линије Светла, Тамна или Аутоматска (сензор телефона).
-Weather icons	Иконе времена
 Camera band	Трака камере
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Усправно, на телефонима са камером у екрану (Android 9+), сат, веза и датум су поред камере; место добија цео ред.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Иконе времена: “Coloured weather icons collection”, titusurya (magnific.com), бесплатни вектори.
@@ -912,3 +911,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ отвара подешавања по одељцима; прекидач одмах укључује или искључује функцију. Затвара се са X или додиром изван њега. На телефону се отвара усправно.
 Recent earthquakes	Недавни земљотреси
 Developed by Viorel-R Boancă	Развио Viorel-R Boancă
+Weather icons	Иконе времена
+Classic	Класичне
+Glossy	Сјајне
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Класичне (у бојама теме) или Сјајне (слике у боји); померају се 3 секунде. Виџети узимају исте иконе.

@@ -1,10 +1,11 @@
-Version actuelle : v.5.04 · 14.11.2026
+Version actuelle : v.5.10 · 14.11.2026
 ÉCRAN PRINCIPAL
 - Grande boussole : toucher une localité de la liste affiche son repère sur la boussole ; les localités dans la même direction ne se superposent plus.
 NOTIFICATIONS
 - Séismes : notifications seulement pour les séismes à 300 km au plus de votre lieu ; à activer ou désactiver dans ☰.
 - Tornades (États-Unis) : les notifications de tornade pour votre localité s'activent ou se désactivent dans ☰.
 PARAMÈTRES
+- Icônes météo : Classiques ou Brillantes, dans l'application et sur les widgets ; choix dans ☰.
 - Paramètres : le menu ☰ est maintenant une fenêtre avec des sections, des interrupteurs, les thèmes en couleurs et la barre Système et assistance ; on actualise en tirant l'écran vers le bas ou en touchant « actualisé ».
 - Améliorations du design et corrections de bugs.
 

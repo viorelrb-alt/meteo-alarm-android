@@ -597,6 +597,7 @@ public class Widget extends AppWidgetProvider {
 		cv.translate(0, top);
 		cv.scale(k, k);
 		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(ctx).getInt("palette", 0);
+		ro.meteoalarm.android.core.WxIcon.lux = Fetcher.prefs(ctx).getBoolean("luxIcons", false); // v5.10: as in the app
 		Pen pen = new Pen(ctx, cv, blackText(ctx, st, w), W / k - rw, keep);
 		pen.t = t;
 		String temp = w == null ? "--" : Long.toString(Math.round(d.unitF ? w.temp * 9 / 5 + 32 : w.temp));

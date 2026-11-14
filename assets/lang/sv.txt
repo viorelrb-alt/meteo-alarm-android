@@ -845,7 +845,6 @@ Sky	Himmel
 Peach	Persika
 Rose	Ros
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 färgteman: Monokrom, Salvia, Lavendel, Himmel, Persika, Ros; under linjen Ljust, Mörkt eller Automatiskt (telefonens sensor).
-Weather icons	Väderikoner
 Camera band	Kameraband
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	I stående läge, på telefoner med kameran i skärmen (Android 9+), står klockan, anslutningen och datumet bredvid kameran; orten får hela raden.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Väderikoner: “Coloured weather icons collection”, titusurya (magnific.com), gratis vektorer.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ öppnar inställningarna i avsnitt; ett reglage slår på eller av en funktion direkt. Det stängs med X eller ett tryck utanför. På en telefon öppnas det i stående läge.
 Recent earthquakes	Senaste jordbävningar
 Developed by Viorel-R Boancă	Utvecklad av Viorel-R Boancă
+Weather icons	Väderikoner
+Classic	Klassiska
+Glossy	Blanka
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiska (i temats färger) eller Blanka (färgbilder); de rör sig i 3 sekunder. Widgetarna använder samma ikoner.

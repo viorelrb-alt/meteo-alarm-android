@@ -1,8 +1,9 @@
-Nuværende version: v.5.04 · 14.11.2026
+Nuværende version: v.5.10 · 14.11.2026
 HOVEDSKÆRM
 - Stort kompas: et tryk på en by i listen viser dens mærke på kompasset; byer i samme retning overlapper ikke længere.
 INDSTILLINGER
 - Indstillinger: menuen ☰ er nu et vindue med afsnit, kontakter, farvetemaer og bjælken System og support; opdatering sker ved at trække skærmen ned eller trykke på „opdateret“.
+- Vejrikoner: Klassiske eller Blanke, i appen og i widgets; vælges i ☰.
 NOTIFIKATIONER
 - Jordskælv: notifikationer kun for jordskælv højst 300 km fra dit sted; slås til eller fra i ☰.
 - Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ☰.

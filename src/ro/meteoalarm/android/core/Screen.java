@@ -580,6 +580,10 @@ public final class Screen {
 			g.icon(a, x * s, y * s, w * s, h * s, c);
 		}
 
+		public void image(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float al) {
+			g.image(a, sx, sy, sw, sh, x * s, y * s, w * s, h * s, al);
+		}
+
 		public void sprite(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int c, float al, float rot, float px, float py) {
 			g.sprite(a, sx, sy, sw, sh, x * s, y * s, w * s, h * s, c, al, rot, px * s, py * s);
 		}
@@ -3469,7 +3473,8 @@ public final class Screen {
 		if (farmer && tagLow) {
 			// v3.10: landscape, right of the buttons, larger, centred on their row.
 			String s = Tr.t("FARMER MODE", "MODUL FERMIER");
-			float p = fit(true, 34, Math.max(40, dl - x), s);
+			// v5.10 (Viorel): room left for "updated" at the right, next to the battery.
+			float p = fit(true, 34, Math.max(40, (dl - x) * 0.5f), s);
 			if (dl - x > 40) {
 				ltext(true, p, fb + 32 - p * 0.56f, x, s, c.accent);
 				x += g.width(true, p, s) + 30;
@@ -3477,6 +3482,7 @@ public final class Screen {
 		}
 		footX = x;
 		footR = dl;
+		footRight = farmer && tagLow;
 		drawUpdated();
 		drawNote(fb);
 	}
@@ -3898,12 +3904,26 @@ public final class Screen {
 			// v5.03 (Viorel): phone landscape: on the buttons' row, right of them.
 			float fb = btnCity[1], x = footX + 34;
 			float up = fit(bold, 24, footR - x, upd), tw = g.width(bold, up, upd), mid = fb + 32;
+			if (footRight) x = footR - tw;
 			refreshIcon(x - 16, mid, up * 0.42f, bold ? c.ink : c.accent);
 			ltext(bold, up, mid - up * 0.56f, x, upd, bold ? c.ink : c.dim);
 			updArea[0] = x - 34; updArea[1] = mid - 30; updArea[2] = tw + 40; updArea[3] = 60;
 		} else if (band > 0 && !updHead) {
 			// v5.01 (Viorel): in the camera band, left of the connection icon (clear of the camera in the middle).
 			float right = clockLeft - 16, left = cw / 2f + 44, mid = lift - band / 2;
+			int dot = upd.indexOf(" · ");
+			if (dot > 0) {
+				// v5.10 (Viorel): "updated 05:46" over "MET Norway", so neither shrinks much.
+				String a = upd.substring(0, dot), b = upd.substring(dot + 3);
+				float pa = fit(bold, Math.min(22, band * 0.3f), right - left - 30, a), pb = fit(bold, Math.min(19, band * 0.26f), right - left - 30, b);
+				float wa = g.width(bold, pa, a), wb = g.width(bold, pb, b), tw = Math.max(wa, wb), gap = 2;
+				float top = mid - (pa + pb + gap) * 0.56f;
+				rtext(bold, pa, top, right, a, bold ? c.ink : c.dim);
+				rtext(bold, pb, top + pa * 1.12f + gap, right, b, bold ? c.ink : c.dim);
+				refreshIcon(right - tw - 16, mid, pa * 0.42f, bold ? c.ink : c.accent);
+				updArea[0] = right - tw - 34; updArea[1] = mid - 30; updArea[2] = tw + 40; updArea[3] = 60;
+				return;
+			}
 			float up = fit(bold, Math.min(24, band * 0.36f), right - left - 30, upd), tw = g.width(bold, up, upd);
 			if (up < 13) {
 				upd = upd.substring(upd.lastIndexOf(' ') + 1);
@@ -3937,4 +3957,6 @@ public final class Screen {
 	private boolean updHead;
 	/** v5.03: the free part of the buttons' row (after the buttons and FARMER MODE, before the battery). */
 	private float footX, footR;
+	/** v5.10: "updated" at the right of the buttons' row (farmer mode: next to the battery). */
+	private boolean footRight;
 }

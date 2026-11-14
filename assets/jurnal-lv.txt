@@ -1,8 +1,9 @@
-Pašreizējā versija: v.5.04 · 14.11.2026
+Pašreizējā versija: v.5.10 · 14.11.2026
 GALVENAIS EKRĀNS
 - Liels kompass: pieskāriens vietai sarakstā rāda tās zīmi uz kompasa; vietas vienā virzienā vairs nepārklājas.
 IESTATĪJUMI
 - Iestatījumi: izvēlne ☰ tagad ir logs ar sadaļām, slēdžiem, krāsu motīviem un joslu Sistēma un atbalsts; atsvaidzina, velkot ekrānu uz leju vai pieskaroties “atjaunināts”.
+- Laikapstākļu ikonas: Klasiskās vai Spīdīgās, lietotnē un logrīkos; izvēlas izvēlnē ☰.
 PAZIŅOJUMI
 - Tornado (ASV): tornado paziņojumus tavai vietai ieslēdz vai izslēdz izvēlnē ☰.
 - Zemestrīces: paziņojumi tikai par zemestrīcēm ne tālāk par 300 km no tavas vietas; ieslēdz vai izslēdz izvēlnē ☰.

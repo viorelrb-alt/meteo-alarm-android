@@ -845,7 +845,6 @@ Sky	Lucht
 Peach	Perzik
 Rose	Roos
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 kleurthema's: Monochroom, Salie, Lavendel, Lucht, Perzik, Roos; onder de lijn Licht, Donker of Automatisch (telefoonsensor).
-Weather icons	Weerpictogrammen
 Camera band	Camerabalk
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Staand, op telefoons met de camera in het scherm (Android 9+), staan de klok, de verbinding en de datum naast de camera; de plaats krijgt de hele rij.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Weerpictogrammen: “Coloured weather icons collection”, titusurya (magnific.com), gratis vectoren.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ opent de instellingen per onderdeel; een schakelaar zet een functie meteen aan of uit. Het sluit met X of een tik ernaast. Op een telefoon opent het staand.
 Recent earthquakes	Recente aardbevingen
 Developed by Viorel-R Boancă	Ontwikkeld door Viorel-R Boancă
+Weather icons	Weerpictogrammen
+Classic	Klassiek
+Glossy	Glanzend
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiek (in de kleuren van het thema) of Glanzend (kleurenafbeeldingen); ze bewegen 3 seconden. De widgets nemen dezelfde pictogrammen.

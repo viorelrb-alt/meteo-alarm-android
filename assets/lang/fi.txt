@@ -845,7 +845,6 @@ Sky	Taivas
 Peach	Persikka
 Rose	Ruusu
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 väriteemaa: Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu; viivan alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).
-Weather icons	Sääkuvakkeet
 Camera band	Kamerakaista
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Pystyasennossa, puhelimissa, joissa kamera on näytössä (Android 9+), kello, yhteys ja päivämäärä ovat kameran vieressä; paikkakunta saa koko rivin.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Sääkuvakkeet: “Coloured weather icons collection”, titusurya (magnific.com), ilmaiset vektorit.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ avaa asetukset osioittain; kytkin laittaa toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla sen ulkopuolelle. Puhelimessa se avautuu pystyasennossa.
 Recent earthquakes	Viimeaikaiset maanjäristykset
 Developed by Viorel-R Boancă	Kehittäjä: Viorel-R Boancă
+Weather icons	Sääkuvakkeet
+Classic	Klassiset
+Glossy	Kiiltävät
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiset (teeman väreissä) tai Kiiltävät (värikuvat); ne liikkuvat 3 sekuntia. Widgetit käyttävät samoja kuvakkeita.

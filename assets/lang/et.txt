@@ -845,7 +845,6 @@ Sky	Taevas
 Peach	Virsik
 Rose	Roos
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 värviteemat: Ühevärviline, Salvei, Lavendel, Taevas, Virsik, Roos; joone all Hele, Tume või Automaatne (telefoni andur).
-Weather icons	Ilmaikoonid
 Camera band	Kaamera riba
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Püstpaigutuses, ekraanis kaameraga telefonides (Android 9+), on kell, ühendus ja kuupäev kaamera kõrval; asulal on terve rida.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ilmaikoonid: “Coloured weather icons collection”, titusurya (magnific.com), tasuta vektorid.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ avab seaded jaotiste kaupa; lüliti lülitab funktsiooni kohe sisse või välja. See sulgub X-iga või puudutusega väljaspool. Telefonis avaneb see püstpaigutuses.
 Recent earthquakes	Hiljutised maavärinad
 Developed by Viorel-R Boancă	Arendaja: Viorel-R Boancă
+Weather icons	Ilmaikoonid
+Classic	Klassikalised
+Glossy	Läikivad
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassikalised (teema värvides) või Läikivad (värvilised pildid); need liiguvad 3 sekundit. Vidinad kasutavad samu ikoone.

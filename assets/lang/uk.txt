@@ -845,7 +845,6 @@ Sky	Небо
 Peach	Персик
 Rose	Троянда
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 колірних тем: Монохромна, Шавлія, Лаванда, Небо, Персик, Троянда; під лінією Світла, Темна або Автоматична (датчик телефона).
-Weather icons	Значки погоди
 Camera band	Смуга камери
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	У портретному режимі, на телефонах із камерою в екрані (Android 9+), годинник, зв'язок і дата розташовані поруч із камерою; населеному пункту віддано весь рядок.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Значки погоди: “Coloured weather icons collection”, titusurya (magnific.com), безкоштовні вектори.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ відкриває налаштування за розділами; перемикач одразу вмикає або вимикає функцію. Закривається хрестиком X або дотиком поруч. На телефоні воно відкривається в портретному режимі.
 Recent earthquakes	Недавні землетруси
 Developed by Viorel-R Boancă	Розробник: Viorel-R Boancă
+Weather icons	Значки погоди
+Classic	Класичні
+Glossy	Глянцеві
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Класичні (у кольорах теми) або Глянцеві (кольорові зображення); рухаються 3 секунди. Віджети беруть ті самі значки.

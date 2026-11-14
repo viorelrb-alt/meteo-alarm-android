@@ -845,7 +845,6 @@ Sky	Dangus
 Peach	Persikas
 Rose	Rožė
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 spalvų temos: Vienspalvė, Šalavijas, Levanda, Dangus, Persikas, Rožė; po linija Šviesi, Tamsi arba Automatinė (telefono jutiklis).
-Weather icons	Orų piktogramos
 Camera band	Kameros juosta
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Vertikaliai, telefonuose su kamera ekrane (Android 9+), laikrodis, ryšys ir data yra šalia kameros; vietovei lieka visa eilutė.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Orų piktogramos: “Coloured weather icons collection”, titusurya (magnific.com), nemokami vektoriai.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ atveria nustatymus pagal skyrius; jungiklis iškart įjungia ar išjungia funkciją. Užsidaro paspaudus X arba palietus šalia. Telefone jis atsidaro stačiai.
 Recent earthquakes	Naujausi žemės drebėjimai
 Developed by Viorel-R Boancă	Sukūrė Viorel-R Boancă
+Weather icons	Orų piktogramos
+Classic	Klasikinės
+Glossy	Blizgios
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasikinės (temos spalvomis) arba Blizgios (spalvoti paveikslėliai); juda 3 sekundes. Valdikliai naudoja tas pačias piktogramas.

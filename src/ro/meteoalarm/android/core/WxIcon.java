@@ -9,6 +9,10 @@ public final class WxIcon {
 	private WxIcon() {
 	}
 
+	/** v5.10 (Viorel): the weather icons chosen in Settings: false = Clasice (these), true = Lucioase (pictures in assets/lux). */
+	public static boolean lux;
+	static final int LUX_FRAMES = 20;
+
 	public static boolean has(String name) {
 		return index(name) >= 0;
 	}
@@ -37,6 +41,13 @@ public final class WxIcon {
 	public static void draw(Gfx g, String name, float x, float y, float s, float t, int[] col) {
 		int i = index(name);
 		if (i < 0) return;
+		if (lux) {
+			// v5.10 (Viorel): the Lucioase icons: 20 pictures over the 3 seconds, the last one still.
+			int n = LUX_FRAMES, f = t >= 1 ? n - 1 : Math.max(0, Math.min(n - 1, (int) (Math.max(0, t) * n)));
+			int px = s >= 70 ? 256 : 96;
+			g.image("lux/" + name + "-" + px + ".webp", f * px, 0, px, px, x, y, s, s, 1);
+			return;
+		}
 		int[] p = WxParts.PARTS[i];
 		String asset = "wx/" + name + ".png";
 		float k = s / WxParts.CELL;

@@ -845,7 +845,6 @@ Sky	Nebo
 Peach	Breskva
 Rose	Ruža
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 tema boja: Jednobojna, Kadulja, Lavanda, Nebo, Breskva, Ruža; ispod crte Svijetla, Tamna ili Automatska (senzor telefona).
-Weather icons	Ikone vremena
 Camera band	Traka kamere
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	U uspravnom položaju, na telefonima s kamerom u zaslonu (Android 9+), sat, veza i datum stoje uz kameru; mjesto dobiva cijeli redak.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikone vremena: “Coloured weather icons collection”, titusurya (magnific.com), besplatni vektori.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ otvara postavke po odjeljcima; prekidač odmah uključuje ili isključuje funkciju. Zatvara se s X ili dodirom izvan njega. Na telefonu se otvara u uspravnom položaju.
 Recent earthquakes	Nedavni potresi
 Developed by Viorel-R Boancă	Razvio Viorel-R Boancă
+Weather icons	Ikone vremena
+Classic	Klasične
+Glossy	Sjajne
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasične (u bojama teme) ili Sjajne (slike u boji); miču se 3 sekunde. Widgeti uzimaju iste ikone.

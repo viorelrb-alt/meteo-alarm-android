@@ -845,7 +845,6 @@ Sky	Sema
 Peach	Ħawħa
 Rose	Warda
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temi tal-kulur: Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda; taħt il-linja Ċar, Skur jew Awtomatiku (sensur tat-telefon).
-Weather icons	Ikoni tat-temp
 Camera band	Faxxa tal-kamera
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	F'portrait, fuq telefowns bil-kamera fl-iskrin (Android 9+), l-arloġġ, il-konnessjoni u d-data huma ħdejn il-kamera; il-lokalità għandha r-ringiela kollha.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikoni tat-temp: “Coloured weather icons collection”, titusurya (magnific.com), vetturi b'xejn.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ jiftaħ is-settings f'taqsimiet; swiċċ ixgħel jew jitfi funzjoni mill-ewwel. Tingħalaq b'X jew b'mess barra minnha. Fuq telefon tiftaħ wieqfa.
 Recent earthquakes	Terremoti reċenti
 Developed by Viorel-R Boancă	Żviluppata minn Viorel-R Boancă
+Weather icons	Ikoni tat-temp
+Classic	Klassiċi
+Glossy	Tleqq
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassiċi (bil-kuluri tat-tema) jew Tleqq (stampi bil-kulur); jiċċaqilqu għal 3 sekondi. Il-widgets jieħdu l-istess ikoni.

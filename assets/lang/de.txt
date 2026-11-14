@@ -845,7 +845,6 @@ Sky	Himmel
 Peach	Pfirsich
 Rose	Rose
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 Farbdesigns: Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose; unter der Linie Hell, Dunkel oder Automatisch (Telefonsensor).
-Weather icons	Wettersymbole
 Camera band	Kameraleiste
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Im Hochformat, auf Handys mit Kamera im Bildschirm (Android 9+), stehen Uhr, Verbindung und Datum neben der Kamera; der Ort hat die ganze Zeile.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Wettersymbole: “Coloured weather icons collection”, titusurya (magnific.com), kostenlose Vektoren.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ öffnet die Einstellungen nach Bereichen; ein Schalter schaltet eine Funktion sofort ein oder aus. Es schließt mit X oder einem Tippen daneben. Auf dem Telefon öffnet es sich im Hochformat.
 Recent earthquakes	Aktuelle Erdbeben
 Developed by Viorel-R Boancă	Entwickelt von Viorel-R Boancă
+Weather icons	Wettersymbole
+Classic	Klassisch
+Glossy	Glänzend
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klassisch (in den Farben des Designs) oder Glänzend (farbige Bilder); sie bewegen sich 3 Sekunden. Die Widgets übernehmen dieselben Symbole.

@@ -87,6 +87,29 @@ final class AndroidGfx implements Gfx {
 		if (rot != 0) c.restore();
 	}
 
+	/** v5.10: a colour picture (the Lucioase icons), kept as it is (no mask). */
+	private final java.util.HashMap<String, Bitmap> images = new java.util.HashMap<String, Bitmap>();
+	private final Paint img = new Paint(Paint.FILTER_BITMAP_FLAG | Paint.ANTI_ALIAS_FLAG);
+
+	public void image(String asset, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float alpha) {
+		Bitmap b = images.get(asset);
+		if (b == null) {
+			try {
+				InputStream in = assets.open(asset);
+				b = BitmapFactory.decodeStream(in);
+				in.close();
+			} catch (Exception e) {
+				return;
+			}
+			if (b == null) return;
+			images.put(asset, b);
+		}
+		src.set(sx, sy, sx + sw, sy + sh);
+		rf.set(x, y, x + w, y + h);
+		img.setAlpha(Math.round(255 * Math.max(0, Math.min(1, alpha))));
+		c.drawBitmap(b, src, rf, img);
+	}
+
 	private Bitmap load(String asset) {
 		Bitmap b = bitmaps.get(asset);
 		if (b == null) {

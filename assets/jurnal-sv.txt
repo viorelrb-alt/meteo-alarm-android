@@ -1,4 +1,4 @@
-Nuvarande version: v.5.04 · 14.11.2026
+Nuvarande version: v.5.10 · 14.11.2026
 AVISERINGAR
 - Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
 - Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
@@ -6,6 +6,7 @@ HUVUDSKÄRM
 - Stor kompass: ett tryck på en ort i listan visar dess märke på kompassen; orter i samma riktning överlappar inte längre.
 INSTÄLLNINGAR
 - Inställningar: menyn ☰ är nu ett fönster med avsnitt, reglage, färgteman och fältet System och support; uppdatera genom att dra skärmen nedåt eller trycka på ”uppdaterat”.
+- Väderikoner: Klassiska eller Blanka, i appen och på widgetarna; väljs i ☰.
 - Designförbättringar och felrättningar.
 
 Version 4 (v.4.00 – v.4.52)

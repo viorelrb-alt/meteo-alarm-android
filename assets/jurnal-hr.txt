@@ -1,10 +1,11 @@
-Trenutačna verzija: v.5.04 · 14.11.2026
+Trenutačna verzija: v.5.10 · 14.11.2026
 GLAVNI ZASLON
 - Veliki kompas: dodir na mjesto na popisu pokazuje njegovu oznaku na kompasu; mjesta u istom smjeru više se ne preklapaju.
 OBAVIJESTI
 - Potresi: obavijesti samo za potrese najviše 300 km od vašeg mjesta; uključuju se ili isključuju u ☰.
 - Tornada (SAD): obavijesti o tornadu za vaše mjesto uključuju se ili isključuju u ☰.
 POSTAVKE
+- Ikone vremena: Klasične ili Sjajne, u aplikaciji i na widgetima; biraju se u ☰.
 - Postavke: izbornik ☰ sada je prozor s odjeljcima, prekidačima, temama u boji i trakom Sustav i podrška; osvježava se povlačenjem zaslona prema dolje ili dodirom na „ažurirano”.
 - Poboljšanja dizajna i ispravci pogrešaka.
 

@@ -109,6 +109,31 @@ public final class Preview {
 			}
 		}
 
+		private final java.util.Map<String, BufferedImage> images = new java.util.HashMap<>();
+
+		/** v5.10: the Lucioase icons; Java reads no WebP, so the PNG copies (system property luxpng). */
+		public void image(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float al) {
+			try {
+				BufferedImage im = images.get(a);
+				if (im == null) {
+					String dir = System.getProperty("luxpng", "/mnt/project-files/iconuri-svg-1024/apk-png");
+					im = ImageIO.read(new File(dir, a.replace(".webp", ".png")));
+					images.put(a, im);
+				}
+				java.awt.geom.AffineTransform old = g.getTransform();
+				java.awt.Composite oc = g.getComposite();
+				g.setComposite(java.awt.AlphaComposite.getInstance(java.awt.AlphaComposite.SRC_OVER, Math.max(0, Math.min(1, al))));
+				g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+				g.translate(x, y);
+				g.scale(w / sw, h / sh);
+				g.drawImage(im, 0, 0, sw, sh, sx, sy, sx + sw, sy + sh, null);
+				g.setTransform(old);
+				g.setComposite(oc);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
+		}
+
 		public void arc(float cx, float cy, float r, float st, float sw, float stroke, int c) {
 			g.setColor(new Color(c, true));
 			g.setStroke(new BasicStroke(stroke));
@@ -314,6 +339,8 @@ public final class Preview {
 		if (opts.contains(" days2")) s.days.scroll = 5000;
 		if (opts.contains(" evening")) s.now.set(Calendar.HOUR_OF_DAY, 22);
 		if (opts.contains(" note")) s.note = "Actualizez vremea…";
+		if (opts.contains(" norway")) s.source = "MET Norway";
+		ro.meteoalarm.android.core.WxIcon.lux = opts.contains(" lux");
 		s.brightLevel = 0.45f;
 		int bp = 0;
 		for (String o : a) if (o.startsWith("band=")) bp = Integer.parseInt(o.substring(5));

@@ -845,7 +845,6 @@ Sky	Nebe
 Peach	Broskev
 Rose	Růže
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 barevných motivů: Monochromatický, Šalvěj, Levandule, Nebe, Broskev, Růže; pod čarou Světlý, Tmavý nebo Automatický (senzor telefonu).
-Weather icons	Ikony počasí
 Camera band	Pás kamery
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Na výšku, u telefonů s kamerou v displeji (Android 9+), jsou hodiny, připojení a datum vedle kamery; obec má celý řádek.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ikony počasí: “Coloured weather icons collection”, titusurya (magnific.com), bezplatné vektory.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ otevře nastavení po oddílech; přepínač zapne nebo vypne funkci hned. Zavře se křížkem X nebo klepnutím mimo něj. Na telefonu se otevře na výšku.
 Recent earthquakes	Nedávná zemětřesení
 Developed by Viorel-R Boancă	Vyvinul Viorel-R Boancă
+Weather icons	Ikony počasí
+Classic	Klasické
+Glossy	Lesklé
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasické (v barvách motivu) nebo Lesklé (barevné obrázky); hýbou se 3 sekundy. Widgety mají stejné ikony.

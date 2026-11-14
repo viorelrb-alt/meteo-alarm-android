@@ -845,7 +845,6 @@ Sky	Cielo
 Peach	Pesca
 Rose	Rosa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temi di colore: Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa; sotto la linea Chiaro, Scuro o Automatico (sensore del telefono).
-Weather icons	Icone meteo
 Camera band	Fascia della fotocamera
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	In verticale, sui telefoni con la fotocamera nello schermo (Android 9+), orologio, connessione e data stanno accanto alla fotocamera; la località ha tutta la riga.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Icone meteo: “Coloured weather icons collection”, titusurya (magnific.com), vettori gratuiti.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. Sul telefono si apre in verticale.
 Recent earthquakes	Terremoti recenti
 Developed by Viorel-R Boancă	Sviluppata da Viorel-R Boancă
+Weather icons	Icone meteo
+Classic	Classiche
+Glossy	Lucide
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Classiche (nei colori del tema) o Lucide (immagini a colori); si muovono per 3 secondi. I widget usano le stesse icone.

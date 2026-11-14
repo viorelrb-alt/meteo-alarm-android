@@ -90,6 +90,7 @@ public final class FarmActivity extends Activity {
 	protected void onCreate(Bundle b) {
 		dark = getIntent().getBooleanExtra("dark", false);
 		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(this).getInt("palette", 0);
+		ro.meteoalarm.android.core.WxIcon.lux = Fetcher.prefs(this).getBoolean("luxIcons", false);
 		setTheme(dark ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
 		Lang.apply(this);

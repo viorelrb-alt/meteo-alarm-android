@@ -845,7 +845,6 @@ Sky	Spéir
 Peach	Péitseog
 Rose	Rós
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 théama datha: Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós; faoin líne Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
-Weather icons	Deilbhíní aimsire
 Camera band	Banda an cheamara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Sa phortráid, ar fhóin leis an gceamara sa scáileán (Android 9+), tá an clog, an ceangal agus an dáta in aice leis an gceamara; tá an tsraith iomlán ag an mbaile.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Deilbhíní aimsire: “Coloured weather icons collection”, titusurya (magnific.com), veicteoirí saor in aisce.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	Osclaíonn ☰ na socruithe ina gcodanna; casann lasc feidhm air nó as láithreach. Dúntar í le X nó le tadhall lasmuigh di. Ar fhón, osclaíonn sí go hingearach.
 Recent earthquakes	Creathanna talún le déanaí
 Developed by Viorel-R Boancă	Forbartha ag Viorel-R Boancă
+Weather icons	Deilbhíní aimsire
+Classic	Clasaiceach
+Glossy	Snasta
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Clasaiceach (i ndathanna an téama) nó Snasta (pictiúir daite); bogann siad ar feadh 3 soicind. Úsáideann na giuirléidí na deilbhíní céanna.

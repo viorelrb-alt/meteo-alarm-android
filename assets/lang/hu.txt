@@ -845,7 +845,6 @@ Sky	Ég
 Peach	Barack
 Rose	Rózsa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 színtéma: Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa; a vonal alatt Világos, Sötét vagy Automatikus (telefon érzékelője).
-Weather icons	Időjárás-ikonok
 Camera band	Kamerasáv
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Álló helyzetben, a kijelzőbe épített kamerás telefonokon (Android 9+) az óra, a kapcsolat és a dátum a kamera mellett van; a település az egész sort kapja.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Időjárás-ikonok: “Coloured weather icons collection”, titusurya (magnific.com), ingyenes vektorok.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	A ☰ szakaszonként nyitja meg a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy mellé koppintva záródik. Telefonon álló helyzetben nyílik meg.
 Recent earthquakes	Friss földrengések
 Developed by Viorel-R Boancă	Fejlesztette: Viorel-R Boancă
+Weather icons	Időjárás-ikonok
+Classic	Klasszikus
+Glossy	Fényes
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Klasszikus (a téma színeiben) vagy Fényes (színes képek); 3 másodpercig mozognak. A widgetek ugyanezeket az ikonokat használják.

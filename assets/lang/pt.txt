@@ -845,7 +845,6 @@ Sky	Céu
 Peach	Pêssego
 Rose	Rosa
 6 colour themes: Monochrome, Sage, Lavender, Sky, Peach, Rose; under the line Light, Dark or Automatic (phone sensor).	6 temas de cor: Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa; sob a linha Claro, Escuro ou Automático (sensor do telefone).
-Weather icons	Ícones do tempo
 Camera band	Faixa da câmara
 In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.	Na vertical, em telefones com a câmara no ecrã (Android 9+), o relógio, a ligação e a data ficam junto à câmara; a localidade fica com a linha toda.
 Weather icons: “Coloured weather icons collection”, titusurya (magnific.com), free vectors.	Ícones do tempo: “Coloured weather icons collection”, titusurya (magnific.com), vetores gratuitos.
@@ -978,3 +977,7 @@ The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Shar
 ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ abre as definições por secções; um interruptor liga ou desliga uma função de imediato. Fecha-se com X ou tocando fora dela. No telefone abre na vertical.
 Recent earthquakes	Sismos recentes
 Developed by Viorel-R Boancă	Desenvolvida por Viorel-R Boancă
+Weather icons	Ícones do tempo
+Classic	Clássicos
+Glossy	Brilhantes
+Classic (in the theme's colours) or Glossy (coloured pictures); they move for 3 seconds. The widgets take the same icons.	Clássicos (nas cores do tema) ou Brilhantes (imagens a cores); mexem-se 3 segundos. Os widgets usam os mesmos ícones.

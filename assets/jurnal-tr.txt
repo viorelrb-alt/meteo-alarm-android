@@ -1,8 +1,9 @@
-Geçerli sürüm: v.5.04 · 14.11.2026
+Geçerli sürüm: v.5.10 · 14.11.2026
 ANA EKRAN
 - Büyük pusula: listedeki bir yere dokunmak işaretini pusulada gösterir; aynı yöndeki yerler artık üst üste binmez.
 AYARLAR
 - Ayarlar: ☰ menüsü artık bölümler, anahtarlar, renk temaları ve Sistem ve destek çubuğu olan bir pencere; yenileme ekranı aşağı çekerek veya “güncellendi”ye dokunarak yapılır.
+- Hava simgeleri: Klasik veya Parlak, uygulamada ve widget'larda; ☰ içinden seçilir.
 BILDIRIMLER
 - Depremler: bildirimler yalnızca yerinize en fazla 300 km uzaklıktaki depremler için; ☰ içinden açılır veya kapatılır.
 - Kasırgalar (ABD): yeriniz için kasırga bildirimleri ☰ içinden açılır veya kapatılır.
