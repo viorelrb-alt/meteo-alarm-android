@@ -1015,3 +1015,5 @@ Full Moon	Luna piena
 Waning gibbous	Gibbosa calante
 Last quarter	Ultimo quarto
 Waning crescent	Falce calante
+Screen off	Schermo spento
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Con lo schermo spento, le finestre dell'app si chiudono dopo 3 secondi e l'app dopo 10.

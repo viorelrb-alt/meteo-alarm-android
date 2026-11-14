@@ -1015,3 +1015,5 @@ Full Moon	Fuldmåne
 Waning gibbous	Aftagende måne
 Last quarter	Sidste kvarter
 Waning crescent	Aftagende segl
+Screen off	Slukket skærm
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Når skærmen er slukket, lukker appens vinduer efter 3 sekunder og appen efter 10.

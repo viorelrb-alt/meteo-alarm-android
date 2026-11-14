@@ -1015,3 +1015,5 @@ Full Moon	Pleine lune
 Waning gibbous	Lune gibbeuse décroissante
 Last quarter	Dernier quartier
 Waning crescent	Dernier croissant
+Screen off	Écran éteint
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Écran éteint, les fenêtres de l'appli se ferment après 3 secondes et l'appli après 10.

@@ -949,3 +949,5 @@ Full Moon	Полнолуние
 Waning gibbous	Убывающая Луна
 Last quarter	Последняя четверть
 Waning crescent	Убывающий серп
+Screen off	Экран выключен
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	При выключенном экране окна приложения закрываются через 3 секунды, а само приложение через 10.

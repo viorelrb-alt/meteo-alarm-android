@@ -1015,3 +1015,5 @@ Full Moon	Повня
 Waning gibbous	Спадний Місяць
 Last quarter	Остання чверть
 Waning crescent	Старий серп
+Screen off	Екран вимкнено
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Коли екран вимкнено, вікна застосунку закриваються через 3 секунди, а застосунок через 10.

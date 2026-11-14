@@ -1015,3 +1015,5 @@ Full Moon	Lua cheia
 Waning gibbous	Minguante gibosa
 Last quarter	Quarto minguante
 Waning crescent	Lua minguante
+Screen off	Ecrã desligado
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Com o ecrã desligado, as janelas da app fecham ao fim de 3 segundos e a app ao fim de 10.

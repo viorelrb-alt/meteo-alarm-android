@@ -1015,3 +1015,5 @@ Full Moon	Täiskuu
 Waning gibbous	Kahanev kuu
 Last quarter	Viimane veerand
 Waning crescent	Kahanev sirp
+Screen off	Ekraan väljas
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Kui ekraan on väljas, sulguvad rakenduse aknad 3 sekundi pärast ja rakendus 10 sekundi pärast.

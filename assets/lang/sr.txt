@@ -949,3 +949,5 @@ Full Moon	Пун месец
 Waning gibbous	Опадајући Месец
 Last quarter	Последња четврт
 Waning crescent	Опадајући срп
+Screen off	Угашен екран
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Кад је екран угашен, прозори апликације се затварају после 3 секунде, а апликација после 10.

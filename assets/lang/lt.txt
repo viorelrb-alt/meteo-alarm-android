@@ -1015,3 +1015,5 @@ Full Moon	Pilnatis
 Waning gibbous	Dylantis Mėnulis
 Last quarter	Delčia
 Waning crescent	Dylantis pjautuvas
+Screen off	Išjungtas ekranas
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Išjungus ekraną, programėlės langai užsidaro po 3 sekundžių, o programėlė – po 10.

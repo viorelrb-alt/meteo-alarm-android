@@ -199,6 +199,39 @@ final class Glass {
 		c.drawRoundRect(r, rad, rad, p);
 	}
 
+	/** v5.24: a window that draws its own frosted glass (the screen behind it stays sharp). */
+	interface Local {
+	}
+
+	/**
+	 * v5.24 (Viorel): the frosted glass of drawFrost as a view's background; TOP_ONLY: the rect
+	 * runs past the bottom so only the top corners are round (a sheet at the screen's bottom).
+	 */
+	static android.graphics.drawable.Drawable frostBg(final View v, final float rad, final boolean dark, final float dp, final boolean topOnly) {
+		return new android.graphics.drawable.Drawable() {
+			final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			public void draw(Canvas c) {
+				android.graphics.Rect b = getBounds();
+				drawFrost(c, p, v, new RectF(b.left + dp / 2, b.top + dp / 2, b.right - dp / 2, b.bottom - dp / 2 + (topOnly ? rad + dp : 0)), rad, dark, dp);
+			}
+
+			@Override
+			public void setAlpha(int a) {
+			}
+
+			@Override
+			public void setColorFilter(android.graphics.ColorFilter f) {
+			}
+
+			@Override
+			public int getOpacity() {
+				return android.graphics.PixelFormat.TRANSLUCENT;
+			}
+		};
+	}
+
 	/**
 	 * Sits right over the screen and under the windows. Each frame it checks whether a window is
 	 * open; when one opens it blurs CONTENT (Android 12+) or shows a blurred copy of it, and darkens.
@@ -235,10 +268,10 @@ final class Glass {
 					for (View w : windows)
 						if (w != null && w.getVisibility() == VISIBLE) {
 							want = true;
-							if (w instanceof Bubble) bub = true;
+							if (w instanceof Local) bub = true; // v5.24: bubble, About, Help
 							else other = true;
 						}
-					// v5.22 (Viorel): a bubble alone leaves the screen sharp; only the bubble is frosted glass.
+					// v5.22 (Viorel): a bubble alone leaves the screen sharp; only the bubble is frosted glass (v5.24: also About and Help).
 					boolean loc = bub && !other;
 					if (want != on || loc != local) {
 						set(want, loc);

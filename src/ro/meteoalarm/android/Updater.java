@@ -23,7 +23,12 @@ final class Updater {
 	private final Activity a;
 	private final BottomSheet sheet;
 	private final Handler handler = new Handler();
-	private boolean busy;
+	private boolean busy, loading;
+
+	/** v5.24: checking or downloading now (the app does not close itself with the screen off then). */
+	boolean working() {
+		return busy || loading;
+	}
 	boolean en;
 
 	/** Why Play Protect may warn when the app (or one of its updates) is installed. */
@@ -389,6 +394,7 @@ final class Updater {
 		sheet.show(t, Tr.t("Downloading…", "Se descarcă…"), null, null, Tr.t("Hide", "Ascunde"));
 		dots(Tr.t("Downloading…", "Se descarcă…"));
 		Log.i(a, "UPDATE", "descarc v" + r.version + " (" + r.size + " octeți) de la " + r.apkUrl);
+		loading = true;
 		new Thread(new Runnable() {
 			public void run() {
 				final File f = ApkProvider.file(a);
@@ -440,6 +446,7 @@ final class Updater {
 				final Exception fe = ex;
 				handler.post(new Runnable() {
 					public void run() {
+						loading = false;
 						stopDots();
 						if (ee == null) {
 							install(t);

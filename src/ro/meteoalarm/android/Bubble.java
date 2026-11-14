@@ -28,7 +28,13 @@ import java.util.List;
  * screen high (the rows scroll, with ▲ / ▼ floating outside the frame where there are more, v3.51)
  * and closes at a tap outside it.
  */
-final class Bubble extends FrameLayout {
+final class Bubble extends FrameLayout implements Glass.Local {
+	/**
+	 * v5.24 (Viorel): every source text (bubbles, Help, the other pages) in one size, the smallest
+	 * one v5.23 showed (the fog notice's), in sp before the text-size factor.
+	 */
+	static final float SRC = 11f;
+
 	/** A row: a choice, a section title, or a line between sections. */
 	static final class Row {
 		final String text;
@@ -318,7 +324,7 @@ final class Bubble extends FrameLayout {
 			if (r.kind == Row.TEXT || r.kind == Row.VALUE || r.kind == Row.SOURCE) {
 				// Information in larger letters, on as many lines as it needs (the warning details).
 				boolean src = r.kind == Row.SOURCE;
-				TextView t = text(c, (src ? 14 : 18) * zk, false); // v3.51: sources as big as the old "more"
+				TextView t = text(c, (src ? SRC : 18) * zk, false); // v5.24: sources in the one size SRC
 				t.setTag("text");
 				t.setText(nb(r.text));
 				if (r.kind == Row.VALUE) values.add(t);
@@ -570,15 +576,13 @@ final class Bubble extends FrameLayout {
 	}
 
 	/**
-	 * v3.52 (Viorel): the source / estimate texts at the bottom are 0.5 points smaller than the
-	 * smallest other text of the bubble (TEXT size, values and tables).
+	 * v3.52 (Viorel), v5.24: the source / estimate texts at the bottom, in the one size SRC (times the
+	 * bubble's text factor), whatever the bubble's other texts.
 	 */
 	private void small(List<TextView> srcs, List<TextView> values, List<Grid> grids, float text) {
-		if (srcs.isEmpty()) return;
-		float sd = getResources().getDisplayMetrics().scaledDensity, min = text;
-		for (TextView t : values) min = Math.min(min, t.getTextSize() / sd);
-		for (Grid g : grids) min = Math.min(min, g.sp());
-		for (TextView t : srcs) t.setTextSize(min - 3); // v5.22 (Viorel): the source 3 points smaller than the rest
+		// v5.24 (Viorel): the same size in every bubble (it followed the bubble's smallest text).
+		float zk = text / 18f;
+		for (TextView t : srcs) t.setTextSize(SRC * zk);
 	}
 
 	/** The height of the title's line and the place under it, at WIDTH. */

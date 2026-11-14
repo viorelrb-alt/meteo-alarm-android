@@ -17,7 +17,7 @@ import android.widget.TextView;
  * ☰ › Ajutor: the whole screen, a title with "Închide" on top and, scrolling under it, every
  * button, gesture and menu option with its icon and a short explanation.
  */
-final class HelpPanel extends FrameLayout {
+final class HelpPanel extends FrameLayout implements Glass.Local {
 	private final float dp;
 	private final Typeface reg, bold;
 	private final LinearLayout list;
@@ -104,7 +104,21 @@ final class HelpPanel extends FrameLayout {
 		sbp.rightMargin = (int) (10 * dp);
 		top.addView(sizeBtn, sbp);
 		top.addView(close);
+		// v5.24 (Viorel): the same bar on top as About; swiping it (or the title) down closes Help.
+		handle = new View(c);
+		LinearLayout.LayoutParams hp = new LinearLayout.LayoutParams((int) (40 * dp), (int) (4 * dp));
+		hp.gravity = Gravity.CENTER_HORIZONTAL;
+		hp.topMargin = (int) (10 * dp);
+		col.addView(handle, hp);
+		top.setPadding(pad, (int) (6 * dp), pad, (int) (12 * dp));
 		col.addView(top);
+		OnTouchListener drag = new OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent e) {
+				return swipe(e);
+			}
+		};
+		top.setOnTouchListener(drag);
+		handle.setOnTouchListener(drag);
 		// v5.00 (Viorel, mockup 5-ajutor): the sections as tabs under the title; a tap scrolls there.
 		tabsScroll = new android.widget.HorizontalScrollView(c);
 		tabsScroll.setHorizontalScrollBarEnabled(false);
@@ -180,9 +194,12 @@ final class HelpPanel extends FrameLayout {
 	void begin(String head, String closeLabel, boolean d) {
 		dark = d;
 		setBackgroundColor(0);
-		GradientDrawable pb = Glass.panelBg(dark, 30 * dp, dp);
-		pb.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.page(dark), dark ? 0.88f : 0.92f));
-		panel.setBackground(pb);
+		// v5.24 (Viorel): the window itself is frosted glass; the screen behind it stays sharp.
+		panel.setBackground(Glass.frostBg(panel, 30 * dp, dark, dp, false));
+		GradientDrawable hb = new GradientDrawable();
+		hb.setColor(dark ? 0xFF6B6A65 : 0xFFAAAAAA);
+		hb.setCornerRadius(2 * dp);
+		handle.setBackground(hb);
 		title.setText(head);
 		title.setTextColor(ink());
 		// v5.00 (Viorel): X in a round button instead of "Închide" (its name stays for TalkBack).
@@ -222,9 +239,9 @@ final class HelpPanel extends FrameLayout {
 		text(what, 15);
 	}
 
-	/** v3.52 (Viorel): where the data come from, 0.5 smaller than the page's texts (15). */
+	/** v5.24 (Viorel): where the data come from, in the one size of every source text (Bubble.SRC). */
 	void source(String what) {
-		text(what, 14.5f);
+		text(what, Bubble.SRC);
 	}
 
 	private void text(String what, float sp) {
@@ -277,6 +294,8 @@ final class HelpPanel extends FrameLayout {
 
 	void show() {
 		scroll.scrollTo(0, 0);
+		panel.animate().cancel();
+		panel.setTranslationY(0);
 		open = true;
 		setVisibility(VISIBLE);
 		bringToFront();
@@ -288,6 +307,41 @@ final class HelpPanel extends FrameLayout {
 		setVisibility(GONE);
 		if (sizer != null) sizer.hide();
 		if (onClose != null) onClose.run();
+	}
+
+	private final View handle;
+	private float downY;
+
+	/** v5.24: the frosted glass shows the screen under the window's place, so it is redrawn while it moves. */
+	private final android.animation.ValueAnimator.AnimatorUpdateListener redraw = new android.animation.ValueAnimator.AnimatorUpdateListener() {
+		public void onAnimationUpdate(android.animation.ValueAnimator a) {
+			panel.invalidate();
+		}
+	};
+
+	/** The window follows a downward swipe on its top; past a quarter of its height it closes, else it springs back. */
+	private boolean swipe(MotionEvent e) {
+		switch (e.getActionMasked()) {
+		case MotionEvent.ACTION_DOWN:
+			downY = e.getRawY();
+			return true;
+		case MotionEvent.ACTION_MOVE:
+			panel.setTranslationY(Math.max(0, e.getRawY() - downY));
+			panel.invalidate();
+			return true;
+		case MotionEvent.ACTION_UP:
+		case MotionEvent.ACTION_CANCEL:
+			if (panel.getTranslationY() > panel.getHeight() / 4f)
+				panel.animate().translationY(getHeight()).setDuration(200).setUpdateListener(redraw).withEndAction(new Runnable() {
+					public void run() {
+						hide();
+						panel.setTranslationY(0);
+					}
+				}).start();
+			else panel.animate().translationY(0).setDuration(150).setUpdateListener(redraw).start();
+			return true;
+		}
+		return false;
 	}
 
 	@Override

@@ -18,7 +18,7 @@ import android.widget.TextView;
  * the title and the text scrolls under them, so they stay in reach however long the text is.
  * Used for the updates, the first-start message and About.
  */
-final class BottomSheet extends FrameLayout {
+final class BottomSheet extends FrameLayout implements Glass.Local {
 	private final View scrim;
 	private final LinearLayout sheet;
 	private final TextView title, text;
@@ -241,6 +241,13 @@ final class BottomSheet extends FrameLayout {
 		return d;
 	}
 
+	/** v5.24: the frosted glass shows the screen under the sheet's place, so it is redrawn while it moves. */
+	private final android.animation.ValueAnimator.AnimatorUpdateListener redraw = new android.animation.ValueAnimator.AnimatorUpdateListener() {
+		public void onAnimationUpdate(android.animation.ValueAnimator a) {
+			sheet.invalidate();
+		}
+	};
+
 	/** Kindle black and white, or the Claude dark colours. */
 	void setDark(boolean dark) {
 		this.dark = dark;
@@ -249,9 +256,8 @@ final class BottomSheet extends FrameLayout {
 		// v5.00 (Viorel): frosted glass, rounded top, no hard outline.
 		line = Glass.edge(dark);
 		bg = Glass.disc(dark);
-		GradientDrawable sb = shape(Glass.alpha(ro.meteoalarm.android.core.Theme.page(dark), 0.9f), 0, 26 * dp, dp, true);
-		sb.setStroke(Math.max(1, (int) dp), line);
-		sheet.setBackground(sb);
+		// v5.24 (Viorel): the window itself is frosted glass; the screen behind it stays sharp.
+		sheet.setBackground(Glass.frostBg(sheet, 26 * dp, dark, dp, true));
 		sheet.findViewWithTag("handle").setBackground(shape(dark ? 0xFF6B6A65 : 0xFFAAAAAA, 0, 2 * dp, dp, false));
 		title.setTextColor(ink);
 		closeX.setBackground(Glass.closeIcon(dark, dp));
@@ -356,7 +362,7 @@ final class BottomSheet extends FrameLayout {
 		sheet.post(new Runnable() {
 			public void run() {
 				sheet.setTranslationY(sheet.getHeight());
-				sheet.animate().translationY(0).setDuration(260).start();
+				sheet.animate().translationY(0).setDuration(260).setUpdateListener(redraw).start();
 			}
 		});
 	}
@@ -387,7 +393,7 @@ final class BottomSheet extends FrameLayout {
 		Runnable r = onClose;
 		onClose = null;
 		if (r != null) {
-			sheet.animate().translationY(0).setDuration(120).start();
+			sheet.animate().translationY(0).setDuration(120).setUpdateListener(redraw).start();
 			r.run();
 		} else hide();
 	}
@@ -399,7 +405,7 @@ final class BottomSheet extends FrameLayout {
 		open = false;
 		if (sizer != null) sizer.hide();
 		scrim.animate().alpha(0).setDuration(200).start();
-		sheet.animate().translationY(sheet.getHeight()).setDuration(220).withEndAction(new Runnable() {
+		sheet.animate().translationY(sheet.getHeight()).setDuration(220).setUpdateListener(redraw).withEndAction(new Runnable() {
 			public void run() {
 				setVisibility(GONE);
 			}
@@ -414,11 +420,12 @@ final class BottomSheet extends FrameLayout {
 			return cancelable;
 		case MotionEvent.ACTION_MOVE:
 			sheet.setTranslationY(Math.max(0, e.getRawY() - downY));
+			sheet.invalidate();
 			return true;
 		case MotionEvent.ACTION_UP:
 		case MotionEvent.ACTION_CANCEL:
 			if (sheet.getTranslationY() > sheet.getHeight() / 4f) cancel();
-			else sheet.animate().translationY(0).setDuration(150).start();
+			else sheet.animate().translationY(0).setDuration(150).setUpdateListener(redraw).start();
 			return true;
 		}
 		return false;

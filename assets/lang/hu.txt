@@ -1015,3 +1015,5 @@ Full Moon	Telihold
 Waning gibbous	Fogyó hold
 Last quarter	Utolsó negyed
 Waning crescent	Fogyó sarló
+Screen off	Kikapcsolt képernyő
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Kikapcsolt képernyőnél az alkalmazás ablakai 3 másodperc, maga az alkalmazás 10 másodperc után bezárul.

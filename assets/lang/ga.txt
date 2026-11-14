@@ -1015,3 +1015,5 @@ Full Moon	Gealach lán
 Waning gibbous	Gealach ag cúlú
 Last quarter	An ceathrú deireanach
 Waning crescent	Corrán ag cúlú
+Screen off	Scáileán múchta
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Nuair a bhíonn an scáileán múchta, dúntar fuinneoga na haipe tar éis 3 soicind agus an aip tar éis 10.

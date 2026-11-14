@@ -1,4 +1,4 @@
-Verżjoni attwali: v.5.23 · 14.11.2026
+Verżjoni attwali: v.5.24 · 14.11.2026
 NOTIFIKI
 - Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ☰.
 - Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ☰.

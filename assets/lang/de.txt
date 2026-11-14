@@ -1015,3 +1015,5 @@ Full Moon	Vollmond
 Waning gibbous	Abnehmender Mond
 Last quarter	Letztes Viertel
 Waning crescent	Abnehmende Sichel
+Screen off	Bildschirm aus
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Bei ausgeschaltetem Bildschirm schließen sich die Fenster der App nach 3 Sekunden und die App nach 10.

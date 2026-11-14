@@ -1015,3 +1015,5 @@ Full Moon	Qamar kwinta
 Waning gibbous	Qamar jonqos
 Last quarter	L-aħħar kwart
 Waning crescent	Nofs qamar jonqos
+Screen off	Skrin mitfi
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Bl-iskrin mitfi, it-twieqi tal-app jingħalqu wara 3 sekondi u l-app wara 10.

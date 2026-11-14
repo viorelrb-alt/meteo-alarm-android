@@ -1015,3 +1015,5 @@ Full Moon	Pełnia
 Waning gibbous	Ubywający Księżyc
 Last quarter	Ostatnia kwadra
 Waning crescent	Ubywający sierp
+Screen off	Wyłączony ekran
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Przy wyłączonym ekranie okna aplikacji zamykają się po 3 sekundach, a aplikacja po 10.

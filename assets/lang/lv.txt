@@ -1015,3 +1015,5 @@ Full Moon	Pilnmēness
 Waning gibbous	Dilstošs mēness
 Last quarter	Pēdējais ceturksnis
 Waning crescent	Dilstošs sirpis
+Screen off	Izslēgts ekrāns
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Kad ekrāns ir izslēgts, lietotnes logi aizveras pēc 3 sekundēm, bet lietotne pēc 10.

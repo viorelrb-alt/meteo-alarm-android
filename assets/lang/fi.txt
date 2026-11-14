@@ -1015,3 +1015,5 @@ Full Moon	Täysikuu
 Waning gibbous	Vähenevä kuu
 Last quarter	Viimeinen neljännes
 Waning crescent	Vähenevä sirppi
+Screen off	Näyttö pois
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Kun näyttö on sammunut, sovelluksen ikkunat sulkeutuvat 3 sekunnin ja sovellus 10 sekunnin kuluttua.

@@ -1085,3 +1085,5 @@ Full Moon	Luna llena
 Waning gibbous	Gibosa menguante
 Last quarter	Cuarto menguante
 Waning crescent	Luna menguante
+Screen off	Pantalla apagada
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Con la pantalla apagada, las ventanas de la app se cierran a los 3 segundos y la app a los 10.

@@ -1015,3 +1015,5 @@ Full Moon	Volle maan
 Waning gibbous	Afnemende maan
 Last quarter	Laatste kwartier
 Waning crescent	Afnemende sikkel
+Screen off	Scherm uit
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Met het scherm uit sluiten de vensters van de app na 3 seconden en de app na 10.

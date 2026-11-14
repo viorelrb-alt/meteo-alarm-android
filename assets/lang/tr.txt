@@ -949,3 +949,5 @@ Full Moon	Dolunay
 Waning gibbous	Küçülen Ay
 Last quarter	Son dördün
 Waning crescent	Küçülen hilal
+Screen off	Ekran kapalı
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Ekran kapalıyken uygulamanın pencereleri 3 saniye, uygulama ise 10 saniye sonra kapanır.

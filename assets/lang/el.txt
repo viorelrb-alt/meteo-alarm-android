@@ -1015,3 +1015,5 @@ Full Moon	Πανσέληνος
 Waning gibbous	Φθίνουσα Σελήνη
 Last quarter	Τελευταίο τέταρτο
 Waning crescent	Φθίνων μηνίσκος
+Screen off	Σβηστή οθόνη
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Με σβηστή οθόνη, τα παράθυρα της εφαρμογής κλείνουν μετά από 3 δευτερόλεπτα και η εφαρμογή μετά από 10.

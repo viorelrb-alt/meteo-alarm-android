@@ -1015,3 +1015,5 @@ Full Moon	Fullmåne
 Waning gibbous	Avtagande måne
 Last quarter	Sista kvarteret
 Waning crescent	Avtagande skära
+Screen off	Skärmen av
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	När skärmen är avstängd stängs appens fönster efter 3 sekunder och appen efter 10.

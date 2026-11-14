@@ -1015,3 +1015,5 @@ Full Moon	Ščip
 Waning gibbous	Pojemajoča Luna
 Last quarter	Zadnji krajec
 Waning crescent	Pojemajoči srp
+Screen off	Ugasnjen zaslon
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Ko je zaslon ugasnjen, se okna aplikacije zaprejo po 3 sekundah, aplikacija pa po 10.

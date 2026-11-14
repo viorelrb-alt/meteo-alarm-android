@@ -1015,3 +1015,5 @@ Full Moon	Spln
 Waning gibbous	Ubúdajúci Mesiac
 Last quarter	Posledná štvrť
 Waning crescent	Ubúdajúci kosák
+Screen off	Vypnutá obrazovka
+With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Pri vypnutej obrazovke sa okná aplikácie zatvoria po 3 sekundách a aplikácia po 10.

@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.23";
+	static final String VERSION = "Meteo Alarm Android v5.24";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1087,6 +1087,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		lastTouch = System.currentTimeMillis();
 		hideBars();
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+		watchScreen(true); // v5.24: stays on until the app closes, to catch the screen turning off
 		listenNet(true);
 		view.replayIcon();
 		handler.removeCallbacks(tick);
@@ -1640,7 +1641,80 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onDestroy() {
 		Log.i(this, "APP", "închisă" + (isFinishing() ? "" : " de sistem (schimbare de configurație sau memorie)"));
+		handler.removeCallbacks(offClose);
+		handler.removeCallbacks(offQuit);
+		watchScreen(false);
 		super.onDestroy();
+	}
+
+	/**
+	 * v5.24 (Viorel): when the phone's screen turns off, every window of the app closes after 3
+	 * seconds and the app itself after 10, so the phone's home screen shows when it turns on again.
+	 * The times are checked again when the screen comes on (a sleeping phone can hold the timers back).
+	 */
+	private long screenOffAt;
+	private boolean screenWatch;
+	private final Runnable offClose = new Runnable() {
+		public void run() {
+			closeWindows();
+		}
+	};
+	private final Runnable offQuit = new Runnable() {
+		public void run() {
+			quitAfterScreenOff();
+		}
+	};
+	private final android.content.BroadcastReceiver screen = new android.content.BroadcastReceiver() {
+		@Override
+		public void onReceive(Context c, Intent i) {
+			if (Intent.ACTION_SCREEN_OFF.equals(i.getAction())) {
+				screenOffAt = android.os.SystemClock.elapsedRealtime();
+				handler.removeCallbacks(offClose);
+				handler.removeCallbacks(offQuit);
+				handler.postDelayed(offClose, 3000);
+				handler.postDelayed(offQuit, 10000);
+				Log.i(MainActivity.this, "APP", "ecran stins");
+			} else if (Intent.ACTION_SCREEN_ON.equals(i.getAction()) && screenOffAt > 0) {
+				long off = android.os.SystemClock.elapsedRealtime() - screenOffAt;
+				screenOffAt = 0;
+				handler.removeCallbacks(offClose);
+				handler.removeCallbacks(offQuit);
+				if (off >= 10000) quitAfterScreenOff();
+				else if (off >= 3000) closeWindows();
+			}
+		}
+	};
+
+	private void watchScreen(boolean on) {
+		if (on == screenWatch) return;
+		screenWatch = on;
+		try {
+			if (on) {
+				IntentFilter f = new IntentFilter(Intent.ACTION_SCREEN_OFF);
+				f.addAction(Intent.ACTION_SCREEN_ON);
+				registerReceiver(screen, f);
+			} else unregisterReceiver(screen);
+		} catch (Exception e) {
+			// already (un)registered
+		}
+	}
+
+	/** Every open window closes (not a window that must be answered, such as the first start's). */
+	private void closeWindows() {
+		if (sizer != null && sizer.isOpen()) sizer.hide();
+		if (compassPanel != null && compassPanel.isOpen()) compassPanel.hide();
+		if (bubble != null && bubble.isOpen()) bubble.hide();
+		if (settings != null && settings.isOpen()) settings.hide();
+		if (help != null && help.isOpen()) help.hide();
+		if (sheet != null && sheet.isOpen() && sheet.isCancelable()) sheet.hide();
+	}
+
+	private void quitAfterScreenOff() {
+		screenOffAt = 0;
+		closeWindows();
+		if (updater != null && updater.working()) return; // an update being downloaded goes on
+		Log.i(this, "APP", "închisă: ecranul a fost stins 10 s");
+		finish();
 	}
 
 	/** v5.23 (Viorel): a bubble open when the screen turns off (or the app leaves) closes; it came back empty. */
@@ -3063,6 +3137,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("textsize"), Tr.t("Text size", "Mărimea textului"), Tr.t("The Aa button on the pages shows the text-size bar.", "Butonul Aa de pe pagini arată bara de mărime a textului."));
 		help.entry(mini("compass"), Tr.t("Wind arrow", "Săgeata vântului"), Tr.t("Shows where the wind blows, turned with the phone.", "Arată încotro bate vântul, rotită după telefon."));
 		help.entry(mini("sleep"), Tr.t("Night clock", "Ceasul de noapte"), Tr.t("A big dim clock while the phone charges at night.", "Un ceas mare și estompat când telefonul se încarcă noaptea."));
+		help.entry(mini("sleep"), Tr.t("Screen off", "Ecran stins"), Tr.t("With the phone's screen off, the app's windows close after 3 seconds and the app after 10.", "Cu ecranul telefonului stins, ferestrele aplicației se închid după 3 secunde, iar aplicația după 10."));
 		help.entry(mini("roll"), Tr.t("Warnings and earthquake", "Avertizări și cutremur"), Tr.t("One row under the town: the earthquake, then the warnings by colour. A tap shows the values (gusts, amounts, temperatures) on top, then the details.",
 				"Un rând sub localitate: cutremurul, apoi avertizările pe culori. Atingerea arată sus valorile (rafale, cantități, temperaturi), apoi detaliile."));
 		if (!us) help.entry(mini("info"), Tr.t("Information boxes", "Casete de informare"), Tr.t("Blue INFORMATION boxes after the warnings: frost, freeze (spring and autumn), fog, freezing rain, strong wind in the next 24 hours. Worked out by the app from the forecast; not official. They also come as a notification of their own.",
