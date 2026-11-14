@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.22";
+	static final String VERSION = "Meteo Alarm Android v5.23";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -1641,6 +1641,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	protected void onDestroy() {
 		Log.i(this, "APP", "închisă" + (isFinishing() ? "" : " de sistem (schimbare de configurație sau memorie)"));
 		super.onDestroy();
+	}
+
+	/** v5.23 (Viorel): a bubble open when the screen turns off (or the app leaves) closes; it came back empty. */
+	@Override
+	protected void onStop() {
+		super.onStop();
+		if (bubble != null) bubble.hide();
 	}
 
 	@Override

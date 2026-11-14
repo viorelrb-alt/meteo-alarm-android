@@ -1,4 +1,4 @@
-Praegune versioon: v.5.22 · 14.11.2026
+Praegune versioon: v.5.23 · 14.11.2026
 PÕHIEKRAAN
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
 SEADED
