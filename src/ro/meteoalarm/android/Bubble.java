@@ -101,6 +101,7 @@ final class Bubble extends FrameLayout {
 	private final LinearLayout list;
 	private final TextView title, where, up, down;
 	private final LinearLayout top;
+	private final View closeX;
 	private boolean dark, open;
 	private Runnable onClose;
 
@@ -118,13 +119,26 @@ final class Bubble extends FrameLayout {
 		top.setOrientation(LinearLayout.HORIZONTAL);
 		top.setGravity(Gravity.CENTER_VERTICAL);
 		title = text(c, 17, true);
-		title.setPadding((int) (16 * dp), (int) (12 * dp), (int) (8 * dp), (int) (8 * dp));
+		title.setPadding((int) (20 * dp), (int) (14 * dp), (int) (8 * dp), (int) (6 * dp));
 		top.addView(title, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
+		// v5.00 (Viorel): no OK / GATA: the window closes with X or a tap outside it.
+		closeX = new View(c);
+		closeX.setContentDescription("X");
+		closeX.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				hide();
+			}
+		});
+		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams((int) (38 * dp), (int) (38 * dp));
+		xl.rightMargin = (int) (12 * dp);
+		xl.topMargin = (int) (6 * dp);
+		xl.gravity = Gravity.TOP;
+		top.addView(closeX, xl);
 		card.addView(top, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		where = text(c, 15, false);
 		where.setSingleLine(true);
 		where.setEllipsize(android.text.TextUtils.TruncateAt.END);
-		where.setPadding((int) (16 * dp), 0, (int) (16 * dp), (int) (6 * dp));
+		where.setPadding((int) (20 * dp), 0, (int) (16 * dp), (int) (8 * dp));
 		card.addView(where);
 		scroll = new ScrollView(c);
 		scroll.setVerticalScrollBarEnabled(true);
@@ -213,13 +227,14 @@ final class Bubble extends FrameLayout {
 		// 5 % less in v2.20 / v2.21), and the text size of ☰.
 		float zk = (TextSize.tablet(c) ? 1.11f : 1f) * TextSize.get(c);
 		width = (int) (width * zk);
-		title.setTextSize(17 * zk);
 		int ink = ink();
 		// v3.51 (Viorel): the place is written under the title, not in it as well.
 		if (head != null && at != null && at.length() > 0 && head.endsWith(" · " + at)) head = head.substring(0, head.length() - at.length() - 3);
 		boolean hasTitle = head != null && head.length() > 0;
-		title.setVisibility(hasTitle ? VISIBLE : INVISIBLE);
+		title.setVisibility(VISIBLE);
 		title.setText(hasTitle ? head : "");
+		title.setTextSize((hasTitle ? 19 : 4) * zk);
+		closeX.setBackground(Glass.closeIcon(dark, dp));
 		title.setTextColor(ink);
 		where.setTextSize(15 * zk);
 		where.setTextColor(ro.meteoalarm.android.core.Theme.dim(dark));
@@ -249,9 +264,9 @@ final class Bubble extends FrameLayout {
 			if (r.kind == Row.LINE) {
 				View v = new View(c);
 				boolean thin = info && !sources.isEmpty() && k > 0 && k < rows.size() - 1 && rows.get(k + 1).kind == Row.SOURCE;
-				v.setBackgroundColor(thin ? line() : ink);
-				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(thin ? 1 : 2, (int) ((thin ? 1 : 2) * dp)));
-				lp.leftMargin = lp.rightMargin = (int) (10 * dp);
+				v.setBackgroundColor(thin ? line() : Glass.edge(dark));
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
+				lp.leftMargin = lp.rightMargin = (int) (16 * dp);
 				lp.topMargin = lp.bottomMargin = (int) (4 * dp);
 				list.addView(v, lp);
 				first = true;
@@ -278,8 +293,14 @@ final class Bubble extends FrameLayout {
 				t.setText(nb(r.text));
 				t.setTextColor(ink);
 				t.setGravity(Gravity.CENTER);
-				t.setPadding((int) (16 * dp), (int) (4 * dp), (int) (16 * dp), (int) (6 * dp));
-				list.addView(t, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+				t.setPadding((int) (16 * dp), (int) (12 * dp), (int) (16 * dp), (int) (14 * dp));
+				// v5.00 (Viorel): the big value in a glass card.
+				t.setBackground(Glass.cardBg(dark, 20 * dp, dp));
+				LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+				bl.leftMargin = bl.rightMargin = (int) (16 * dp);
+				bl.topMargin = (int) (4 * dp);
+				bl.bottomMargin = (int) (8 * dp);
+				list.addView(t, bl);
 				first = true;
 				continue;
 			}
@@ -311,7 +332,7 @@ final class Bubble extends FrameLayout {
 				View sep = new View(c);
 				sep.setBackgroundColor(line());
 				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
-				lp.leftMargin = lp.rightMargin = (int) (10 * dp);
+				lp.leftMargin = lp.rightMargin = (int) (16 * dp);
 				list.addView(sep, lp);
 			}
 			first = false;
@@ -323,8 +344,8 @@ final class Bubble extends FrameLayout {
 			int ph = (int) (16 * dp);
 			if (r.kind == Row.HEADER) t.setPadding(ph, (int) ((info ? 3 : 10) * dp), ph, (int) ((info ? 2 : 4) * dp));
 			else {
-				t.setPadding(ph, 0, ph, 0);
-				t.setMinHeight((int) (46 * dp * zk));
+				t.setPadding((int) (20 * dp), 0, ph, 0);
+				t.setMinHeight((int) (50 * dp * zk));
 				t.setBackgroundResource(android.R.drawable.list_selector_background);
 			}
 			if (r.icon != null) {
@@ -343,19 +364,16 @@ final class Bubble extends FrameLayout {
 
 					@Override
 					public void draw(android.graphics.Canvas cv) {
+						// v5.00 (Viorel): a switch, as in the new Settings (accent and knob on the right when on).
 						android.graphics.Rect b = getBounds();
-						float w = dp * 2;
-						p.setColor(col);
-						p.setStyle(Paint.Style.STROKE);
-						p.setStrokeWidth(w);
-						p.setStrokeCap(Paint.Cap.ROUND);
-						android.graphics.RectF rf = new android.graphics.RectF(b.left + w, b.top + w, b.right - w, b.bottom - w);
-						cv.drawRoundRect(rf, dp * 3, dp * 3, p);
-						if (on) {
-							float in = b.width() * 0.27f;
-							cv.drawLine(b.left + in, b.top + in, b.right - in, b.bottom - in, p);
-							cv.drawLine(b.right - in, b.top + in, b.left + in, b.bottom - in, p);
-						}
+						float h = b.height() * 0.78f, w = h * 1.75f, x1 = b.right - w, y1 = b.exactCenterY() - h / 2;
+						android.graphics.RectF tr = new android.graphics.RectF(x1, y1, b.right, y1 + h);
+						p.setStyle(Paint.Style.FILL);
+						p.setColor(on ? ro.meteoalarm.android.core.Theme.accent(dark) : Glass.disc(dark) | 0x30000000);
+						cv.drawRoundRect(tr, h / 2, h / 2, p);
+						p.setColor(0xFFFFFFFF);
+						float kr = h / 2 - 3 * dp;
+						cv.drawCircle(on ? tr.right - h / 2 : tr.left + h / 2, tr.centerY(), kr, p);
 					}
 
 					@Override
@@ -371,8 +389,8 @@ final class Bubble extends FrameLayout {
 						return android.graphics.PixelFormat.TRANSLUCENT;
 					}
 				};
-				int bs = (int) (22 * dp * zk);
-				box.setBounds(0, 0, bs, bs);
+				int bs = (int) (26 * dp * zk);
+				box.setBounds(0, 0, (int) (bs * 1.45f), bs);
 				android.graphics.drawable.Drawable[] cd = t.getCompoundDrawables();
 				t.setCompoundDrawables(cd[0], null, box, null);
 				t.setContentDescription(r.text + (on ? " ✓" : ""));
@@ -391,7 +409,8 @@ final class Bubble extends FrameLayout {
 		View pv = (View) getParent();
 		int sw = pv != null && pv.getWidth() > 0 ? pv.getWidth() : getResources().getDisplayMetrics().widthPixels;
 		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() : getResources().getDisplayMetrics().heightPixels;
-		int margin = (int) (12 * dp), tip = (int) (10 * dp);
+		// v5.00 (Viorel): a window in the middle of the screen (no tip toward the button).
+		int margin = (int) (16 * dp), tip = 0;
 		// Every row on one line, all choices in the same font: the bubble grows to hold the longest
 		// one; only when even the screen is too narrow do all of them get the same smaller font.
 		float need = 0, sp = 15 * zk;
@@ -425,7 +444,8 @@ final class Bubble extends FrameLayout {
 			boolean texts = false;
 			for (Row r : rows) if (r.kind == Row.TEXT) texts = true;
 			if (TextSize.tablet(c) && choices && !texts) width = (int) Math.ceil(need + 8 * dp);
-			width = Math.min(Math.max(width, (int) Math.ceil(need)), sw - 2 * margin);
+			int minW = (int) (sw * (sw < sh ? (TextSize.tablet(c) ? 0.62f : 0.88f) : 0.5f));
+			width = Math.min(Math.max(Math.max(width, minW), (int) Math.ceil(need)), sw - 2 * margin);
 		}
 		// A value with its label on one line, smaller when needed; a table at least as wide as the bubble.
 		int inner = width - (int) (32 * dp);
@@ -448,9 +468,7 @@ final class Bubble extends FrameLayout {
 		// The same shape in both orientations: at most half the portrait height, and never past the
 		// screen's edge (in landscape the room under the button).
 		boolean below = (anchor[1] + anchor[3]) / 2 < sh / 2f;
-		int room = below ? sh - (int) anchor[3] - margin - (int) (2 * dp) : (int) anchor[1] - margin - (int) (2 * dp);
-		if (pan) tip = 0;
-		int maxH = pan ? sh - 2 * margin : Math.min((int) (Math.max(sw, sh) * (TextSize.tablet(c) ? 0.7f : 0.5f)), room - tip), rowsH = list.getMeasuredHeight();
+		int maxH = pan ? sh - 2 * margin : (int) Math.min(sh * 0.8f, sh - 2 * margin), rowsH = list.getMeasuredHeight();
 		boolean scrolls = titleH + rowsH + 2 * pad > maxH;
 		// v3.51: ▲ / ▼ outside the frame, at the right where there is room, else at the left; when
 		// neither side has room the bubble gets narrower by the arrows' width.
@@ -479,9 +497,9 @@ final class Bubble extends FrameLayout {
 		});
 		int cardH = titleH + scrollH + 2 * pad + tip;
 		// Under the button in the upper half of the screen, over it in the lower half.
-		int x = (int) Math.max(margin, Math.min(anchor[0], sw - margin - width));
-		int y = below ? (int) anchor[3] + (int) (2 * dp) : (int) anchor[1] - (int) (2 * dp) - cardH;
-		y = Math.max(margin, Math.min(y, sh - margin - cardH));
+		int x = (sw - width) / 2;
+		int y = Math.max(margin, (sh - cardH) / 2);
+		below = false;
 		if (pan) {
 			// The right side of the screen, from the top to the bottom, reaching far to the left.
 			x = sw - margin - width;
@@ -592,30 +610,8 @@ final class Bubble extends FrameLayout {
 
 		@Override
 		protected void onDraw(Canvas c) {
-			float w = getWidth(), h = getHeight(), r = 12 * dp, sw = 2 * dp, half = sw / 2;
-			float top = tipUp ? tip : 0, bot = tipUp ? h : h - tip;
-			float tx = Math.max(r + tip, Math.min(tipX, w - r - tip));
-			path.reset();
-			path.addRoundRect(new RectF(half, top + half, w - half, bot - half), r, r, Path.Direction.CW);
-			Path t = new Path();
-			if (tipUp) {
-				t.moveTo(tx - tip, top + sw);
-				t.lineTo(tx, half);
-				t.lineTo(tx + tip, top + sw);
-			} else {
-				t.moveTo(tx - tip, bot - sw);
-				t.lineTo(tx, h - half);
-				t.lineTo(tx + tip, bot - sw);
-			}
-			t.close();
-			path.op(t, Path.Op.UNION);
-			p.setStyle(Paint.Style.FILL);
-			p.setColor(page());
-			c.drawPath(path, p);
-			p.setStyle(Paint.Style.STROKE);
-			p.setStrokeWidth(sw);
-			p.setColor(ink());
-			c.drawPath(path, p);
+			// v5.00 (Viorel): frosted glass, large rounded corners, a faint edge.
+			Glass.drawPanel(c, p, new RectF(dp / 2, dp / 2, getWidth() - dp / 2, getHeight() - dp / 2), 26 * dp, dark, dp);
 		}
 	}
 
@@ -693,9 +689,9 @@ final class Bubble extends FrameLayout {
 			tp.setColor(ink);
 			hp.setColor(ink);
 			Paint band = new Paint();
-			band.setColor(ro.meteoalarm.android.core.Theme.tableBand(dark));
+			band.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.10f : 0.07f));
 			c.drawRect(0, 0, getWidth(), rowH, band);
-			lp.setColor(ro.meteoalarm.android.core.Theme.grid(dark));
+			lp.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.22f : 0.2f));
 			float x = sw / 2;
 			for (int j = 0; j <= colW.length; j++) {
 				c.drawLine(x, 0, x, h + sw / 2, lp);

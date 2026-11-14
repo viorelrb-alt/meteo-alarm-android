@@ -27,6 +27,19 @@ import ro.meteoalarm.android.core.Weather;
  */
 final class Notifier {
 	private static final String CHANNEL = "alerts";
+	/** v5.00 (Viorel): earthquake notices only within this distance of your place (km). */
+	static final double QUAKE_KM = 300;
+
+	/** ☰ › Cutremure: notices of earthquakes near your place (on unless turned off). */
+	static boolean quakes(Context ctx) {
+		return prefs(ctx).getBoolean("quakeNotify", true);
+	}
+
+	/** ☰ › Tornade (US): tornado notices for your town (on unless turned off). */
+	static boolean tornadoes(Context ctx) {
+		return prefs(ctx).getBoolean("tornadoNotify", true);
+	}
+
 	/** US tornado and other extreme warnings (v2.30): high importance, alarm sound, vibration. */
 	private static final String CHANNEL_EXTREME = "extreme";
 	/** How long a notified event is remembered (so it is not notified again). */
@@ -56,8 +69,8 @@ final class Notifier {
 		if (Build.VERSION.SDK_INT < 26) return;
 		NotificationChannel ch = new NotificationChannel(CHANNEL, Tr.t("Weather, warnings and earthquakes", "Vreme, avertizări și cutremure"),
 				NotificationManager.IMPORTANCE_DEFAULT);
-		ch.setDescription(Tr.t("Rain or snow starting, new weather warnings, earthquakes in your country.",
-				"Ploaie sau ninsoare care începe, avertizări meteo noi, cutremure în țara ta."));
+		ch.setDescription(Tr.t("Rain or snow starting, new weather warnings, earthquakes around you.",
+				"Ploaie sau ninsoare care începe, avertizări meteo noi, cutremure din jurul tău."));
 		nm.createNotificationChannel(ch);
 		// Only where the US part is shown (v2.30).
 		if (!Region.showUS(ctx)) return;
@@ -126,6 +139,8 @@ final class Notifier {
 			{
 				List<Warnings.Warn> ws = Fetcher.warnings(ctx, c);
 				for (Warnings.Warn wr : ws) {
+					// v5.00 (Viorel): ☰ › Tornade off: no tornado notices (the other NWS warnings stay).
+					if (wr.nws && !tornadoes(ctx) && wr.type.toLowerCase(java.util.Locale.US).contains("tornado")) continue;
 					String key = "nW_" + Warnings.fold(c.key() + "_" + wr.level + "_" + wr.type + "_" + wr.from).replaceAll("[^a-z0-9_]+", "");
 					if (p.getLong(key, 0) > 0) continue;
 					p.edit().putLong(key, now).apply();
@@ -147,9 +162,10 @@ final class Notifier {
 			// v3.30 (Viorel): the app's own information (frost, freeze, fog, freezing rain, strong
 			// gusts) for the town, in a notice of its own; Europe only (the US has the NWS advisories).
 			if (!c.us() && f != null) info(ctx, c, Weather.parse(f), Fetcher.warnings(ctx, c), clk12, imp);
-			// Earthquakes in the country.
-			for (Quakes.Quake q : Fetcher.quakes(ctx, c)) {
+			// Earthquakes: v5.00 (Viorel) only within QUAKE_KM of the place, and only while ☰ › Cutremure is on.
+			for (Quakes.Quake q : quakes(ctx) ? Fetcher.quakes(ctx, c) : new java.util.ArrayList<Quakes.Quake>()) {
 				if (q.time < quakesSince) continue;
+				if (q.dist > QUAKE_KM) continue;
 				// US: the box shows from 2.5, the notice comes from 3 (as in Europe).
 				if (c.us() && q.mag < Quakes.MIN_MAG) continue;
 				String key = "nQ_" + (q.id.length() > 0 ? q.id : Long.toString(q.time)).replaceAll("[^A-Za-z0-9_]+", "");
@@ -307,8 +323,8 @@ final class Notifier {
 
 	/** Test notice, after the user said yes. */
 	static void hello(Context ctx) {
-		post(ctx, 2, "Meteo Alarm", Tr.t("Notifications are on: rain or snow, weather warnings and earthquakes in your country.",
-				"Notificările sunt pornite: ploaie sau ninsoare, avertizări meteo și cutremure în țara ta."));
+		post(ctx, 2, "Meteo Alarm", Tr.t("Notifications are on: rain or snow, weather warnings and earthquakes around you.",
+				"Notificările sunt pornite: ploaie sau ninsoare, avertizări meteo și cutremure din jurul tău."));
 	}
 
 	/** Unused helper kept for the hour of day (night quiet hours may come later). */

@@ -218,7 +218,7 @@ public final class Screen {
 		}
 		g.rect(0, 0, cw, ch, c.page);
 		button(btnMenu);
-		for (int k = 0; k < 3; k++) g.rect(57, 41 + k * 13, 30, 4, c.ink);
+		for (int k = 0; k < 3; k++) g.roundRect(59, 43 + k * 12, 26, 3.5f, 1.75f, c.ink);
 		// Refreshing is in the ☰ menu and by pulling the screen down: the clock takes the corner.
 		if (band > 0 && cw < ch && !tablet) drawBand();
 		else {
@@ -276,7 +276,6 @@ public final class Screen {
 		for (Strip st : strips()) st.area[2] = 0;
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
-		g.rect(40, 102, 678, 2, c.line);
 		warnArea[2] = 0;
 		alerts.area[2] = 0;
 		// The town next to the menu button, above the line.
@@ -303,7 +302,7 @@ public final class Screen {
 		dots(W / 2, 112, pages, page);
 		// v3.50 (Viorel): the "Statistics · PDF" button under the information / warning / earthquake
 		// boxes when they show; in their place (under the top line) when they do not.
-		float top = drawWarnBoxes(40, 146, 678, 2, 1), sb;
+		float top = drawWarnBoxes(40, 158, 678, 2, 1), sb;
 		if (top > 0) {
 			sb = statsButton(40, top + 12, 58, 400, 26) > 40 ? 70 : 0;
 			top += sb;
@@ -319,12 +318,14 @@ public final class Screen {
 		if (prop) {
 			nowTexts(d[1], fy - 26, 40, 718);
 		} else {
-		float sp = skySize(39, 330, d[1]);
-		rtext(true, sp, fy, 712, d[1], c.ink);
-		windLine(30, fy + 40, 712);
-		if (!Double.isNaN(w.feels)) ltext(true, sp, fy, 40, feelsText(), c.ink);
+		// v5.00 (Viorel): feels-like, high / low, the sky and the wind in a glass card.
+		card(40, fy - 12, 678, 88, 24);
+		float sp = skySize(36, 300, d[1]);
+		rtext(true, sp, fy - 2, 694, d[1], c.ink);
+		windLine(28, fy + 38, 694);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 2, 64, feelsText(), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+			ltext(false, 28, fy + 38, 64, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
 		}
 
 		float y0 = fy + 80;
@@ -339,14 +340,12 @@ public final class Screen {
 		chartFull = true;
 		drawNextHours(40, y0, 678, 264, false);
 		chartFull = false;
-		g.rect(40, y0 + 279, 678, 2, c.line);
 		}
 		if (farmer && farmMerged) { }
 		else if (farmer) drawRainRow(40, y0 + 296, 678, 198);
 		else drawDayStrip(40, y0 + 296, 678);
 		// A line over the row of info boxes.
-		g.rect(40, y0 + 509, 678, 2, c.line);
-		drawInfoStrip(40, y0 + 526, 678, 184);
+		drawInfoStrip(40, y0 + 524, 678, 178);
 		footer(fb);
 	}
 
@@ -363,7 +362,6 @@ public final class Screen {
 		float z1 = Math.round(cw * 0.45f), z2 = Math.round(cw * 0.75f), leftR = z1 - 11;
 		float mx = z1 + 11, mw = z2 - 11 - mx, rx = z2 + 11, rw = cw - 40 - rx;
 		updHead = true;
-		g.rect(40, 102, cw - 80, 2, c.line);
 		String label = headName(cw - 124 - 380);
 		float lp = fit(true, 40, cw - 124 - 380, label);
 		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
@@ -386,16 +384,16 @@ public final class Screen {
 		setNow(40, nowTop, leftR - 40, fy + 80 - nowTop);
 		if (farmer && farmMerged) nowTexts(d[1], fy - 10, 40, leftR - 6);
 		else {
-		float sp = skySize(39, (leftR - 40) / 2, d[1]);
-		rtext(true, sp, fy, leftR - 6, d[1], c.ink);
-		windLine(30, fy + 40, leftR - 6);
-		if (!Double.isNaN(w.feels)) ltext(true, sp, fy, 40, feelsText(), c.ink);
+		card(40, fy - 12, leftR - 46, 88, 24);
+		float sp = skySize(36, (leftR - 80) / 2, d[1]);
+		rtext(true, sp, fy - 2, leftR - 26, d[1], c.ink);
+		windLine(28, fy + 38, leftR - 26);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 2, 62, feelsText(), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			ltext(false, 30, fy + 40, 40, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+			ltext(false, 28, fy + 38, 62, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
 		}
 		// Lines between the three parts, like the one under the clock.
-		g.rect(z1 - 1, 124, 2, fb - 14 - 124, c.line);
-		g.rect(z2 - 1, 124, 2, fb - 14 - 124, c.line);
+		// v5.00: no lines between the parts (cards on the page).
 
 		float bt = 124, bb = fb - 14, hh = 250;
 		peekW = 15;
@@ -456,7 +454,6 @@ public final class Screen {
 		float fb = ch - 76;
 		btnCity[1] = fb;
 		btnLocate[1] = fb;
-		g.rect(40, 102, cw - 80, 2, c.line);
 		warnArea[2] = 0;
 		alerts.area[2] = 0;
 		for (Strip st : strips()) st.area[2] = 0;
@@ -490,12 +487,13 @@ public final class Screen {
 		setNow(nl, top, nr - nl, lineY + 80 - top);
 		if (merged) nowTexts(d[1], lineY - 10, nl, nr);
 		else {
-		float sp = skySize(44, (nr - nl) / 2 - 12, d[1]);
-		rtext(true, sp, lineY, nr - 6, d[1], c.ink);
-		windLine(32, lineY + 46, nr - 6);
-		if (!Double.isNaN(w.feels)) ltext(true, sp, lineY, nl, feelsText(), c.ink);
+		card(nl, lineY - 8, nr - nl, 96, 26);
+		float sp = skySize(42, (nr - nl) / 2 - 36, d[1]);
+		rtext(true, sp, lineY - 2, nr - 22, d[1], c.ink);
+		windLine(30, lineY + 44, nr - 22);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, lineY - 2, nl + 22, feelsText(), c.ink);
 		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			ltext(false, 32, lineY + 46, nl, upper(T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°"), c.ink);
+			ltext(false, 30, lineY + 44, nl + 22, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
 		}
 
 		// The boxes, in units 1.2 times larger.
@@ -653,7 +651,7 @@ public final class Screen {
 			drawHourBox(k, bx, y, bw, bh, tp, dp);
 		}
 		g.unclip();
-		if (line) g.rect(x, y + bh + 12, wd, 2, c.line);
+		// v5.00: no lines between the rows (cards on the page).
 	}
 
 	/**
@@ -782,7 +780,7 @@ public final class Screen {
 		hourHits.add(new float[] { k, bx * hs, y * hs, bw * hs, h * hs });
 		box(bx, y, bw, h, hd);
 		head(y, hd, bx + bw / 2, bw - 12, Texts.clock(w.tileHours.get(k), clk12), 0);
-		g.rect(bx + half - 1, y + hd + 14, 2, body - 28, c.line);
+		g.rect(bx + half - 1, y + hd + 14, 2, body - 28, rule());
 		String[] d = T.describe(w.tileCode[k], w.tileDay[k]);
 		String tt = Double.isNaN(w.tileTemp[k]) ? "–" : t(w.tileTemp[k]) + "°";
 		int p = probAt(k), kind = kindAt(k);
@@ -1708,9 +1706,40 @@ public final class Screen {
 		return s.toUpperCase();
 	}
 
+	/** v5.00 (Viorel, "Opțiunea 3"): a round glass button. */
 	private void button(float[] b) {
-		g.roundRect(b[0], b[1], b[2], b[3], 10, c.line);
-		g.roundRect(b[0] + 2, b[1] + 2, b[2] - 4, b[3] - 4, 8, c.btn);
+		float r = Math.min(b[2], b[3]) / 2;
+		g.roundRect(b[0], b[1], b[2], b[3], r, edge());
+		g.roundRect(b[0] + 1.5f, b[1] + 1.5f, b[2] - 3, b[3] - 3, r - 1.5f, glass());
+	}
+
+	// --- v5.00 (Viorel, "Opțiunea 3"): frosted-glass cards on the page ---------------------
+
+	private static int mix(int a, int b, float f) {
+		int r = (int) (((a >> 16) & 255) * (1 - f) + ((b >> 16) & 255) * f), gg = (int) (((a >> 8) & 255) * (1 - f) + ((b >> 8) & 255) * f),
+				bl = (int) ((a & 255) * (1 - f) + (b & 255) * f);
+		return 0xFF000000 | (r << 16) | (gg << 8) | bl;
+	}
+
+	/** A card's fill: a little lighter than the page in the dark, nearly white in the light. */
+	private int glass() {
+		return dark ? mix(c.page, c.ink, 0.065f) : mix(c.page, Gfx.WHITE, 0.72f);
+	}
+
+	/** A card's soft edge. */
+	private int edge() {
+		return dark ? mix(c.page, c.ink, 0.15f) : mix(c.page, c.ink, 0.11f);
+	}
+
+	/** Thin lines inside the cards. */
+	private int rule() {
+		return mix(glass(), c.ink, dark ? 0.16f : 0.13f);
+	}
+
+	/** A glass card X Y W H with corners R. */
+	private void card(float x, float y, float w, float h, float r) {
+		g.roundRect(x, y, w, h, r, edge());
+		g.roundRect(x + 1.5f, y + 1.5f, w - 3, h - 3, r - 1.5f, glass());
 	}
 
 	private void ltext(boolean bold, float px, float top, float left, String s, int color) {
@@ -1736,20 +1765,16 @@ public final class Screen {
 
 	/** Box title in the header band (white on black; dark on ivory in the dark theme): capitals at about 3/4 of the band, drawn twice 1 unit apart. */
 	private void head(float top, float h, float cx, float maxw, String s, float px) {
-		float p = fit(true, px > 0 ? px : (h - 4) * 76 / 100, maxw - 1, s);
-		float x = cx - g.width(true, p, s) / 2, y = top + h / 2 - p * 485 / 1000;
-		g.text(true, p, y, x, s, c.bandInk);
-		g.text(true, p, y, x + 1, s, c.bandInk);
+		// v5.00: a small grey label in the card (no band).
+		float p = fit(true, (px > 0 ? px : (h - 4) * 76 / 100) * 0.74f, maxw - 1, s);
+		float x = cx - g.width(true, p, s) / 2, y = top + h / 2 - p * 485 / 1000 + 4;
+		g.text(true, p, y, x, s, c.dim);
 	}
 
 	/** Frame with rounded corners, a 2-unit outline and a header band HD high. */
 	private void box(float x, float y, float w, float h, float hd) {
-		float r = 14;
-		g.roundRect(x, y, w, h, r, c.line);
-		g.roundRect(x + 2, y + 2, w - 4, h - 4, r - 2, c.band);
-		g.rect(x + 2, y + hd, w - 4, h - hd - r - 2, c.card);
-		g.roundRect(x + 2, y + h - 2 * r - 2, w - 4, 2 * r, r - 2, c.card);
-		g.rect(x + 2, y + hd - 2, w - 4, 2, c.line);
+		// v5.00 (Viorel): a glass card; the title is a small label in it (head), no band.
+		card(x, y, w, h, 24);
 	}
 
 	/**
@@ -2241,19 +2266,23 @@ public final class Screen {
 
 	/** The frame of a box with its title bar in BAR and TITLE in it; returns the bar's height. */
 	private float alertFrame(float x, float y, float bw, float h, float f, int bar, String title) {
-		float hb = 44 * f, r = 14;
-		int border = c.ink, body = dark ? c.card : c.page;
-		g.roundRect(x, y, bw, h, r, border);
-		g.roundRect(x + 2, y + 2, bw - 4, h - 4, r - 2, body);
-		g.roundRect(x + 2, y + 2, bw - 4, hb, r - 2, bar);
-		g.rect(x + 2, y + r, bw - 4, hb - r + 2, bar);
-		g.rect(x + 2, y + hb, bw - 4, 2, border);
-		float hp = fit(true, 30 * f, bw - 24, title), ty = y + 2 + (hb - 2) / 2 - hp * 485 / 1000;
-		int tc = dark ? 0xFFFFFFFF : 0xFF000000;
-		float tx = x + bw / 2 - g.width(true, hp, title) / 2;
-		g.text(true, hp, ty, tx, title, tc);
-		g.text(true, hp, ty, tx + 1, title, tc);
+		// v5.00 (Viorel, mockup): a glass card with a coloured stripe at the left and the code as a label.
+		float r = 22, hb = 50 * f;
+		int strong = stripe(bar);
+		// The stripe: the card in the strong colour, the glass over it moved 7 units right (no clip: the row is clipped already).
+		g.roundRect(x, y, bw, h, r, strong);
+		card(x + 7, y, bw - 7, h, r);
+		float hp = fit(true, 22 * f, bw - 60, title), tw = g.width(true, hp, title), ph = hp * 1.45f, px = x + 22, py = y + 14 * f;
+		g.roundRect(px, py, tw + 26, ph, ph / 2, mix(glass(), strong, dark ? 0.32f : 0.24f));
+		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, dark ? mix(strong, Gfx.WHITE, 0.35f) : mix(strong, Gfx.BLACK, 0.45f));
 		return hb;
+	}
+
+	/** The strong colour of a warning box's stripe for its old title bar BAR. */
+	private int stripe(int bar) {
+		for (int i = 0; i < 3; i++) if (bar == BAR_LIGHT[i] || bar == BAR_DARK[i]) return new int[] { 0xFFE3B341, 0xFFE8873A, 0xFFD94848 }[i];
+		if (bar == QUAKE_LIGHT || bar == QUAKE_DARK) return 0xFF9A8F86;
+		return 0xFF6FAEE3;
 	}
 
 	private void drawWarnBox(WarnGroup gr, float x, float y, float bw, float h, float f) {
@@ -2261,14 +2290,14 @@ public final class Screen {
 			float hb = alertFrame(x, y, bw, h, f, dark ? 0xFF2F5F7E : 0xFFBFDDF2, Tr.t("INFORMATION", "INFORMARE"));
 			float room = bw - 30;
 			String txt = ownName(gr.types), per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
-			ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, x + 18, txt, c.ink);
-			ltext(false, fit(false, 26 * f, room, per), y + hb + 50 * f, x + 18, per, c.dim);
+			ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, x + 24, txt, c.ink);
+			ltext(false, fit(false, 26 * f, room, per), y + hb + 50 * f, x + 24, per, c.dim);
 			return;
 		}
 		String name = T.warn[gr.level - 1];
 		String title = gr.nws ? Nws.levelUp(gr.level) : T.en ? name + " " + T.warnCode : T.warnCode + " " + name;
 		float hb = alertFrame(x, y, bw, h, f, (dark ? BAR_DARK : BAR_LIGHT)[gr.level - 1], title);
-		float lx = x + 18;
+		float lx = x + 24;
 		if (gr.level >= 3) {
 			g.icon("ui/atentie.png", x + 14, y + hb + (h - hb - 46 * f) / 2, 50 * f, 46 * f, dark ? c.warnR : c.ink);
 			lx = x + 28 + 50 * f;
@@ -2288,7 +2317,7 @@ public final class Screen {
 
 	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
 		float hb = alertFrame(x, y, bw, h, f, dark ? QUAKE_DARK : QUAKE_LIGHT, Tr.t("EARTHQUAKE", "CUTREMUR"));
-		float lx = x + 18, room = bw - 30;
+		float lx = x + 24, room = bw - 36;
 		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);
 		String l2 = q.felt >= 2 ? (Tr.t("Felt here: ", "Resimțit aici: ")) + roman(q.felt) + (Tr.t(" (estimate)", " (estimat)"))
 				: (Tr.t("depth ", "adânc. ")) + dist(q.depth) + " · " + dist(q.dist);
@@ -3239,7 +3268,7 @@ public final class Screen {
 		head(top, 46, c1, hw, T.sun, p);
 		head(top, 46, c2, hw, T.uvT, p);
 		head(top, 46, c3, hw, T.pollen, p);
-		for (float dx : new float[] { x + w3 / 3, x + w3 * 2 / 3 }) g.rect(dx - 1, top + 60, 2, h - 76, c.line);
+		for (float dx : new float[] { x + w3 / 3, x + w3 * 2 / 3 }) g.rect(dx - 1, top + 60, 2, h - 76, rule());
 		ctext(false, 20, top + 54, c1, T.sunrise, c.ink);
 		ctext(true, 29, top + 78, c1, Texts.clock(this.w.sunrise, clk12), c.ink);
 		ctext(false, 20, top + 121, c1, T.sunset, c.ink);
@@ -3284,8 +3313,8 @@ public final class Screen {
 		String speed = unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h";
 		boolean dir = !Double.isNaN(w.windDir);
 		String from = dir ? Tr.dirs8()[(int) Math.round(((w.windDir % 360) + 360) % 360 / 45) % 8] + " " : "";
-		String txt = upper(T.wind + " " + from + speed);
-		float x = rtext(false, px, top, right, txt, c.ink);
+		String txt = T.wind + " " + from + speed; // v5.00: as written, grey (the mockup)
+		float x = rtext(false, px, top, right, txt, c.dim);
 		if (!dir || Math.round(w.wind) == 0) return;
 		float r = px * windRing, cx = x - r - 12, cy = top + px * 0.52f;
 		float turn = Float.isNaN(heading) ? 0 : heading;
@@ -3399,14 +3428,14 @@ public final class Screen {
 		btnLocate[1] = fb;
 		btnBright[1] = fb;
 		btnSensor[1] = fb;
+		// v5.00 (Viorel): the four buttons in a floating glass pill.
+		float pl = btnCity[0] - 12, pr = btnSensor[0] + btnSensor[2] + 12;
+		card(pl, fb - 7, pr - pl, btnCity[3] + 14, (btnCity[3] + 14) / 2);
 		footButton("city", btnCity, false);
 		footButton("locate", btnLocate, autoLoc);
 		footButton("bright", btnBright, brightBar);
 		if (hasLight) footButton("sensor", btnSensor, sensorTheme);
-		else {
-			button(btnSensor);
-			buttonIcon("sensor", btnSensor[0] + 32, btnSensor[1] + 32, c.dim);
-		}
+		else buttonIcon("sensor", btnSensor[0] + 32, btnSensor[1] + 32, c.dim);
 		float batLeft = cw - 40;
 		float gy = fb + 22;
 		if (batt >= 0) {
@@ -3446,9 +3475,9 @@ public final class Screen {
 	 * filled in ink when ON (the sun while its bar shows, the sensor theme while it is on).
 	 */
 	private void footButton(String which, float[] b, boolean on) {
-		button(b);
-		if (on) g.roundRect(b[0] + 2, b[1] + 2, b[2] - 4, b[3] - 4, 8, c.ink);
-		buttonIcon(which, b[0] + 32, b[1] + 32, on ? c.page : c.ink);
+		// v5.00: no frame; ON is a filled accent disc.
+		if (on) g.roundRect(b[0], b[1], b[2], b[3], b[3] / 2, c.accent);
+		buttonIcon(which, b[0] + 32, b[1] + 32, on ? (dark ? c.page : Gfx.WHITE) : c.ink);
 	}
 
 	private void buttonIcon(String which, float cx, float cy, int ink) {
@@ -3818,13 +3847,27 @@ public final class Screen {
 			x = 40;
 			y = 116;
 		}
-		g.roundRect(x, y, w, h, 33, c.ink);
-		g.roundRect(x + 2, y + 2, w - 4, h - 4, 31, c.page);
+		g.roundRect(x, y, w, h, 33, edge());
+		g.roundRect(x + 1.5f, y + 1.5f, w - 3, h - 3, 31.5f, mix(glass(), c.page, dark ? 0f : 0.2f));
 		ctext(true, p, y + (h - p * 1.12f) / 2, x + w / 2, note, c.ink);
+	}
+
+	/** v5.00: where the "updated" pill is (a tap refreshes); W 0 when not shown. */
+	public final float[] updArea = { 0, 0, 0, 0 };
+
+	/** Two arrows around a circle (refresh), radius R at CX CY. */
+	private void refreshIcon(float cx, float cy, float r, int col) {
+		g.arc(cx, cy, r, 200, 120, 2.6f, col);
+		g.arc(cx, cy, r, 20, 120, 2.6f, col);
+		float a1 = (float) Math.toRadians(320), a2 = (float) Math.toRadians(140);
+		float x1 = cx + r * (float) Math.cos(a1), y1 = cy + r * (float) Math.sin(a1), x2 = cx + r * (float) Math.cos(a2), y2 = cy + r * (float) Math.sin(a2);
+		g.poly(new float[] { x1 - 5, y1 - 3, x1 + 5, y1 - 4, x1 + 1, y1 + 5 }, col);
+		g.poly(new float[] { x2 + 5, y2 + 3, x2 - 5, y2 + 4, x2 - 1, y2 - 5 }, col);
 	}
 
 	/** "updated 12:34" under the line, at the right. */
 	private void drawUpdated() {
+		updArea[2] = 0;
 		String upd = "";
 		boolean bold = false;
 		if (busy) {
@@ -3846,7 +3889,12 @@ public final class Screen {
 		} else {
 			// Clear of "FARMER MODE" at the left, and of the dots in the middle when there are several screens.
 			float room = pages > 1 ? cw / 2f - (pages * 22 - 10) / 2f - 24 - 40 : cw - 80 - Math.max(40, farmTagW);
-			rtext(bold, fit(bold, 25, room, upd), 110, cw - 40, upd, bold ? c.ink : c.dim);
+			// v5.00 (Viorel): a glass pill; a tap on it refreshes.
+			float up = fit(bold, 23, room - 60, upd), tw = g.width(bold, up, upd), ph = 42, py = 104, px = cw - 40 - tw - 58;
+			card(px, py, tw + 58, ph, ph / 2);
+			refreshIcon(px + 24, py + ph / 2, 11, bold ? c.ink : c.accent);
+			ltext(bold, up, py + (ph - up * 1.12f) / 2 + 1, px + 42, upd, bold ? c.ink : c.dim);
+			updArea[0] = px; updArea[1] = py - 6; updArea[2] = tw + 58; updArea[3] = ph + 12;
 		}
 	}
 

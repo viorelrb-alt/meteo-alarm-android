@@ -54,6 +54,11 @@ public final class Theme {
 		return (dark ? DARK : LIGHT)[p];
 	}
 
+	/** v5.00: the colour that stands for theme K in the Settings (its dark accent). */
+	public static int swatch(int k) {
+		return DARK[k < 0 || k >= DARK.length ? 0 : k][10];
+	}
+
 	public static int page(boolean d) { return colors(d)[0]; }
 	public static int ink(boolean d) { return colors(d)[1]; }
 	public static int dim(boolean d) { return colors(d)[2]; }

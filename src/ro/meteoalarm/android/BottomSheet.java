@@ -38,7 +38,7 @@ final class BottomSheet extends FrameLayout {
 		dp = c.getResources().getDisplayMetrics().density;
 		setVisibility(GONE);
 		scrim = new View(c);
-		scrim.setBackgroundColor(0x66000000);
+		scrim.setBackgroundColor(0); // v5.00: the blur and darkening come from Glass.Backdrop
 		scrim.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (cancelable) cancel();
@@ -214,18 +214,23 @@ final class BottomSheet extends FrameLayout {
 		this.dark = dark;
 		int bg = ro.meteoalarm.android.core.Theme.surface(dark), ink = ro.meteoalarm.android.core.Theme.ink(dark), line = ro.meteoalarm.android.core.Theme.pal == 0 ? (dark ? 0xFF4A4944 : 0xFF000000) : ro.meteoalarm.android.core.Theme.grid(dark);
 		int accent = ro.meteoalarm.android.core.Theme.accent(dark);
-		sheet.setBackground(shape(bg, line, 18 * dp, dp, true));
+		// v5.00 (Viorel): frosted glass, rounded top, no hard outline.
+		line = Glass.edge(dark);
+		bg = Glass.disc(dark);
+		GradientDrawable sb = shape(Glass.alpha(ro.meteoalarm.android.core.Theme.page(dark), 0.9f), 0, 26 * dp, dp, true);
+		sb.setStroke(Math.max(1, (int) dp), line);
+		sheet.setBackground(sb);
 		sheet.findViewWithTag("handle").setBackground(shape(dark ? 0xFF6B6A65 : 0xFFAAAAAA, 0, 2 * dp, dp, false));
 		title.setTextColor(ink);
 		text.setTextColor(dark ? 0xFFC2C0B6 : 0xFF333333);
 		scroll.setBackgroundColor(0);
-		primary.setBackground(shape(accent, 0, 10 * dp, dp, false));
+		primary.setBackground(shape(accent, 0, 22 * dp, dp, false));
 		primary.setTextColor(ro.meteoalarm.android.core.Theme.page(dark));
-		secondary.setBackground(shape(bg, line, 10 * dp, dp, false));
+		secondary.setBackground(shape(bg, line, 22 * dp, dp, false));
 		secondary.setTextColor(ink);
-		left.setBackground(shape(bg, line, 10 * dp, dp, false));
+		left.setBackground(shape(bg, line, 22 * dp, dp, false));
 		left.setTextColor(ink);
-		size.setBackground(shape(bg, line, 10 * dp, dp, false));
+		size.setBackground(shape(bg, line, 22 * dp, dp, false));
 		size.setTextColor(ink);
 	}
 
@@ -309,6 +314,7 @@ final class BottomSheet extends FrameLayout {
 		if (open) return;
 		open = true;
 		setVisibility(VISIBLE);
+		bringToFront(); // v5.00: above the Settings window too
 		scrim.setAlpha(0);
 		scrim.animate().alpha(1).setDuration(220).start();
 		sheet.post(new Runnable() {

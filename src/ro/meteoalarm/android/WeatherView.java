@@ -728,6 +728,7 @@ final class WeatherView extends View {
 		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
 		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y)) taps.onStats();
 		else if (in(screen.cityArea, x, y)) taps.onTownName();
+		else if (screen.updArea[2] > 0 && in(screen.updArea, x, y)) taps.onRefresh(); // v5.00: the "updated" pill
 		return true;
 	}
 }

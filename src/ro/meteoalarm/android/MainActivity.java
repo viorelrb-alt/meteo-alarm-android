@@ -78,8 +78,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private HelpPanel help;
 	/** v4.00: the big compass over the screen (a tap on the Compass box). */
 	private CompassPanel compassPanel;
+	/** v5.00: the ☰ Settings window. */
+	private SettingsPanel settings;
 	/** The text-size bar over the pages (SizeOverlay, v2.12). */
 	private SizeOverlay sizer;
+	/** v5.00: the blurred, darkened screen behind every open window (Glass). */
+	private Glass.Backdrop backdrop;
 	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
 
@@ -179,6 +183,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		bubble.setOnClose(new Runnable() {
 			public void run() {
 				hideBars();
+				// v5.00: a window opened from the Settings (town, language, test state): back to the Settings, as they are now.
+				if (settings != null && settings.isOpen()) view.post(new Runnable() {
+					public void run() {
+						if (settings.isOpen() && !bubble.isOpen()) onMenu();
+					}
+				});
 			}
 		});
 		root.addView(bubble, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -198,11 +208,24 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		root.addView(compassPanel, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		settings = new SettingsPanel(this, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
+				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+		settings.setOnClose(new Runnable() {
+			public void run() {
+				reopen = null;
+				hideBars();
+			}
+		});
+		root.addView(settings, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		// The text-size bar over the pages (v2.12): above every window, on the left like the brightness bar.
 		sizer = new SizeOverlay(this, view.screen);
 		root.addView(sizer, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		help.setSizer(sizer);
 		sheet.setSizer(sizer);
+		backdrop = new Glass.Backdrop(this, view, sheet, bubble, help, compassPanel, settings);
+		backdrop.setDark(s.dark);
+		root.addView(backdrop, 1, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		backdrop.watch(root);
 		cutout(root);
 		setContentView(root);
 	}
@@ -250,7 +273,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						v.setPadding(l, pt, r, 0);
 						lastBand = band;
 						view.band(band);
-						View[] panels = { sheet, help, sizer };
+						View[] panels = { sheet, help, sizer, settings };
 						for (View p : panels) {
 							if (p == null || !(p.getLayoutParams() instanceof ViewGroup.MarginLayoutParams)) continue;
 							ViewGroup.MarginLayoutParams mp = (ViewGroup.MarginLayoutParams) p.getLayoutParams();
@@ -274,6 +297,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (sizer != null && sizer.isOpen()) sizer.hide();
 		else if (compassPanel != null && compassPanel.isOpen()) compassPanel.hide();
 		else if (bubble.isOpen()) bubble.hide();
+		else if (settings != null && settings.isOpen()) settings.hide();
 		else if (help.isOpen()) help.hide();
 		else if (sheet.isOpen()) {
 			if (sheet.isCancelable()) sheet.cancel();
@@ -349,6 +373,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		else if (!s.nightClock) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		if (sheet != null) sheet.setDark(s.dark);
 		if (bubble != null) bubble.setDark(s.dark);
+		if (backdrop != null) backdrop.setDark(s.dark);
 		if (updater != null) updater.en = s.T.en;
 	}
 
@@ -1877,6 +1902,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	public void onCompass() {
 		Log.i(this, "GEST", "atingere casetă busolă");
 		double la = s.city != null ? s.city.lat : Double.NaN, lo = s.city != null ? s.city.lon : Double.NaN;
+		compassPanel.place = s.place();
 		compassPanel.show(cities, la, lo, s.heading, s.dark, s.unitF, s.w);
 	}
 
@@ -2033,92 +2059,272 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Runnable reopen;
 
 
+	/**
+	 * v5.00 (Viorel, mockups machete-meniu-setari): ☰ opens the Settings window: the settings by
+	 * section, in cards, and the fixed bar SISTEM & SUPORT under them. Refresh left the menu (pull
+	 * the screen down, or tap the "updated" pill). Changes show at once in the open window.
+	 */
 	public void onMenu() {
-		Log.i(this, "BUTON", "meniu ☰");
+		if (!settings.isOpen()) Log.i(this, "BUTON", "meniu ☰ (setări)");
 		reopen = new Runnable() {
 			public void run() {
 				onMenu();
 			}
 		};
-		final boolean en = s.T.en;
-		boolean keepOn = prefs.getBoolean("keepOn", true), auto = autoLoc();
-		// Item ids in menu order, each with its icon; the ones that are also a button on the screen
-		// show that button. v3.32 (Viorel): a function on or off has a box at the right, X when on.
-		final List<String> ids = new ArrayList<String>();
-		List<Bubble.Row> rows = Bubble.rows();
-		// Farmer mode (v2.50): always the first item, naming the other mode; then the parcels.
-		boolean farmer = prefs.getBoolean("farmer", false);
-		ids.add("farmer"); rows.add(row(farmer ? Tr.t("Normal mode", "Mod Normal") : Tr.t("Farmer mode", "Mod Fermier"), farmer ? "normal" : "farm"));
-		if (farmer) { ids.add("parcels"); rows.add(row(Tr.t("Parcels", "Parcele"), "parcel")); }
-		ids.add("refresh"); rows.add(row(Tr.t("Refresh", "Reîmprospătare"), "refresh"));
-		ids.add("city"); rows.add(row(Tr.t("Town", "Localitate"), "city"));
-		ids.add("unit"); rows.add(row(Tr.t("Temperature °C/°F", "Temperatura °C/°F"), "unit"));
-		ids.add("clock"); rows.add(row(Tr.t("Clock 12/24", "Ceas 12/24"), "clock"));
-		ids.add("theme"); rows.add(row(Tr.t("Theme", "Temă"), "moon"));
-		ids.add("keepOn"); rows.add(row(Tr.t("Screen on", "Ecran aprins"), "keepOn").tick(keepOn));
-		ids.add("lang"); rows.add(row(Tr.t("Display language", "Limbă afișaj"), "lang-" + s.T.lang));
-		ids.add("night"); rows.add(row(Tr.t("Night clock", "Ceas noapte"), "night").tick(prefs.getBoolean("nightClock", true)));
-		ids.add("loc"); rows.add(row(Tr.t("Auto location", "Localizare auto"), "locate").tick(auto));
-		ids.add("quakes"); rows.add(row(Tr.t("Earthquakes", "Cutremure"), "quake"));
-		if (Region.showUS(this)) { ids.add("tornado"); rows.add(row(Tr.t("Tornadoes", "Tornade"), "tornado")); }
-		ids.add("notify"); rows.add(row(Tr.t("Notifications", "Notificări"), "bell").tick(Notifier.on(this)));
-		ids.add("widget"); rows.add(row(Tr.t("Widgets", "Widget-uri"), "widget"));
-		ids.add("backup"); rows.add(row(Tr.t("Export / Import", "Export / Import"), "transfer"));
-		ids.add("log"); rows.add(row(Tr.t("Log", "Jurnal"), "log"));
-		ids.add("update"); rows.add(row(Tr.t("Check for updates", "Verifică actualizări"), "update"));
-		ids.add("share"); rows.add(row(Tr.t("Send the app", "Trimite aplicația"), "share"));
-		ids.add("help"); rows.add(row(Tr.t("Help", "Ajutor"), "help"));
-		ids.add("about"); rows.add(row(Tr.t("About", "Despre"), "about"));
-		bubble.show(view.px(s.btnMenu), bubbleWidth(0.3f, 160), null, rows, en, new Bubble.Pick() {
-			public void picked(int k) {
-				SharedPreferences.Editor e = prefs.edit();
-				String it = ids.get(k);
-				Log.i(MainActivity.this, "MENIU", it);
-				String msg = null;
-				long ms = 1500;
-				if (it.equals("refresh")) { onRefresh(); return; }
-				else if (it.equals("farmer")) { toggleFarmer(); return; }
-				else if (it.equals("parcels")) { openParcels(); return; }
-				else if (it.equals("city")) { onCity(s.btnMenu); return; }
-				else if (it.equals("unit")) { toggleUnits(); return; }
-				else if (it.equals("clock")) {
-					// The clock of this kind of town (US or not, v2.30).
-					Region.setClk12(MainActivity.this, s.city, !s.clk12);
-					msg = s.clk12 ? (Tr.t("24-hour clock", "Ceas 24 de ore")) : (Tr.t("12-hour clock", "Ceas 12 ore"));
-				} else if (it.equals("lang")) { pickLang(); return; }
-				else if (it.equals("keepOn")) {
-					boolean on = !prefs.getBoolean("keepOn", true);
-					e.putBoolean("keepOn", on);
-					ms = 2000;
-					msg = on ? (Tr.t("The screen stays on while the app is open", "Ecranul rămâne aprins cât timp aplicația e deschisă"))
-							: (Tr.t("The screen goes off after the phone's timeout", "Ecranul se stinge după timpul setat în telefon"));
-				} else if (it.equals("theme")) { pickTheme(); return; }
-				else if (it.equals("loc")) {
-					onLocate();
-					return;
-				} else if (it.equals("update")) { updater.check(true); return; }
-				else if (it.equals("share")) { shareApp(); return; }
-				else if (it.equals("widget")) { startActivity(new Intent(MainActivity.this, WidgetConfig.class)); return; }
-				else if (it.equals("log")) { startActivity(new Intent(MainActivity.this, LogActivity.class)); return; }
-				else if (it.equals("backup")) { backup(); return; }
-				else if (it.equals("help")) { help(); return; }
-				else if (it.equals("quakes")) { quakesPage(); return; }
-				else if (it.equals("tornado")) { tornadoPage(); return; }
-				else if (it.equals("notify")) { toggleNotify(); return; }
-				else if (it.equals("night")) {
-					boolean on = !prefs.getBoolean("nightClock", true);
-					e.putBoolean("nightClock", on);
-					ms = 2000;
-					msg = on ? (Tr.t("While charging at night, the screen shows a big dim clock", "La încărcare, noaptea, ecranul arată un ceas mare și estompat"))
-							: (Tr.t("Night clock off", "Ceasul de noapte e oprit"));
+		final SettingsPanel p = settings;
+		float zk = (TextSize.tablet(this) ? 1.11f : 1f) * TextSize.get(this);
+		p.begin(s.dark, Tr.t("App settings", "Setări aplicație").toUpperCase(), Tr.t("Make it yours", "Personalizează-ți experiența"), zk);
+		// Location & favourites.
+		final boolean eu = Region.showEU(this), us = Region.showUS(this);
+		if (us) seedUSFavs();
+		p.section(Tr.t("Location & favourites", "Localizare & Favorite"), false);
+		final Runnable towns = new Runnable() {
+			public void run() {
+				onCity(s.btnMenu);
+			}
+		};
+		if (eu) {
+			p.favHead(us ? Tr.t("Favourites EU", "Favorite UE") : Tr.t("Favourites", "Favorite"), Tr.t("Add", "Adaugă"), towns);
+			for (final Cities.City c : favList("favs")) p.fav(c.label(), town != null && c.same(town) && pageId == 0, new Runnable() {
+				public void run() {
+					Log.i(MainActivity.this, "LOC", "aleasă din favorite (setări): " + c.label());
+					choose(c);
+					onMenu();
 				}
-				else { about(); return; }
-				e.apply();
-				applySettings();
-				view.invalidate();
-				if (msg != null) note(msg, ms);
+			});
+		}
+		if (us) {
+			List<Cities.City> fu = favList("favsUS");
+			if (eu) {
+				p.line();
+				p.favHead(Tr.t("Favourites USA", "Favorite SUA"), null, null);
+				List<String> names = new ArrayList<String>();
+				List<Runnable> taps = new ArrayList<Runnable>();
+				for (final Cities.City c : fu) {
+					names.add(c.label());
+					taps.add(new Runnable() {
+						public void run() {
+							Log.i(MainActivity.this, "LOC", "aleasă din favorite SUA (setări): " + c.label());
+							choose(c);
+							onMenu();
+						}
+					});
+				}
+				p.chips(names, taps);
+			} else {
+				p.favHead(Tr.t("Favourites", "Favorite"), Tr.t("Add", "Adaugă"), towns);
+				for (final Cities.City c : fu) p.fav(c.label(), town != null && c.same(town) && pageId == 0, new Runnable() {
+					public void run() {
+						choose(c);
+						onMenu();
+					}
+				});
+			}
+		}
+		StringBuilder some = new StringBuilder();
+		int n = 0;
+		for (String co : eu ? cities.byCounty.keySet() : cities.usStates.keySet()) {
+			if (n++ == 3) break;
+			some.append(n > 1 ? ", " : "").append(co);
+		}
+		p.link("map", eu ? Tr.t("Choose the county", "Alegeți județul") : Tr.t("Choose the state", "Alegeți statul"), some + " …", null, towns);
+		// Preferences & display.
+		p.section(Tr.t("Preferences & display", "Preferințe & Afișaj"), false);
+		final boolean farmer = prefs.getBoolean("farmer", false);
+		p.toggle("farm", Tr.t("Farmer mode", "Mod Fermier"), Tr.t("Weather for your land plots", "Vremea pentru parcelele tale"), farmer, new Runnable() {
+			public void run() {
+				toggleFarmer();
+				onMenu();
 			}
 		});
+		if (farmer) p.subLink("parcel", Tr.t("Parcels", "Parcele"), Tr.t("Your land plots, map, statistics", "Parcelele tale, hartă, statistici"), new Runnable() {
+			public void run() {
+				settings.hide();
+				openParcels();
+			}
+		});
+		p.segmented("thermo", Tr.t("Temperature", "Temperatură"), new String[] { "°C", "°F" }, s.unitF ? 1 : 0, new SettingsPanel.Choice() {
+			public void chose(int k) {
+				if ((k == 1) != s.unitF) toggleUnits();
+				onMenu();
+			}
+		});
+		p.segmented("clock", Tr.t("Clock", "Ceas"), new String[] { "12 h", "24 h" }, s.clk12 ? 0 : 1, new SettingsPanel.Choice() {
+			public void chose(int k) {
+				if ((k == 0) != s.clk12) {
+					Region.setClk12(MainActivity.this, s.city, k == 0);
+					Log.i(MainActivity.this, "MENIU", "ceas " + (k == 0 ? "12" : "24") + " ore");
+					applySettings();
+					view.invalidate();
+				}
+				onMenu();
+			}
+		});
+		final int nt = ro.meteoalarm.android.core.Theme.NAMES.length;
+		String[] tn = new String[nt];
+		int[] tc = new int[nt];
+		for (int k = 0; k < nt; k++) {
+			tn[k] = Tr.t(ro.meteoalarm.android.core.Theme.NAMES[k][0], ro.meteoalarm.android.core.Theme.NAMES[k][1]);
+			tc[k] = ro.meteoalarm.android.core.Theme.swatch(k);
+		}
+		final int pal = prefs.getInt("palette", 0);
+		String cur = prefs.getString("theme", "auto");
+		final String auto = hasLight() ? "sensor" : "auto";
+		int mode = cur.equals("light") ? 0 : cur.equals("dark") ? 1 : 2;
+		String[] modes = { Tr.t("Light", "Luminos"), Tr.t("Dark", "Întunecat"), Tr.t("Automatic", "Automat") };
+		p.theme(Tr.t("Theme", "Temă"), tn[Math.max(0, Math.min(nt - 1, pal))] + " · " + modes[mode], tn, tc, pal, new SettingsPanel.Choice() {
+			public void chose(int k) {
+				prefs.edit().putInt("palette", k).apply();
+				Log.i(MainActivity.this, "TEMA", "temă: " + ro.meteoalarm.android.core.Theme.NAMES[k][1]);
+				applySettings();
+				view.invalidate();
+				onMenu();
+			}
+		}, modes, mode, new SettingsPanel.Choice() {
+			public void chose(int k) {
+				String[] m = { "light", "dark", auto };
+				prefs.edit().putString("theme", m[k]).apply();
+				Log.i(MainActivity.this, "TEMA", "mod: " + m[k]);
+				applySettings();
+				view.invalidate();
+				onMenu();
+			}
+		});
+		p.link("globe", Tr.t("Display language", "Limbă afișaj"), null, Tr.name(s.T.lang), new Runnable() {
+			public void run() {
+				pickLang();
+			}
+		});
+		// Alerts & behaviour.
+		p.section(Tr.t("Alerts & behaviour", "Alerte & Comportament"), false);
+		p.toggle("locate", Tr.t("Auto location", "Localizare auto"), Tr.t("Follows your position by GPS", "Actualizează poziția prin GPS"), autoLoc(), new Runnable() {
+			public void run() {
+				onLocate();
+				onMenu();
+			}
+		});
+		p.toggle("quake", Tr.t("Earthquakes", "Cutremure"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.quakes(this), new Runnable() {
+			public void run() {
+				boolean on = !Notifier.quakes(MainActivity.this);
+				prefs.edit().putBoolean("quakeNotify", on).apply();
+				Log.i(MainActivity.this, "MENIU", "notificări cutremure: " + (on ? "PORNITE" : "OPRITE"));
+				note(on ? Tr.t("Earthquake notices within 300 km of your place", "Notificări de cutremur la cel mult 300 km de locul tău")
+						: Tr.t("No earthquake notices", "Fără notificări de cutremur"), 2200);
+				onMenu();
+			}
+		});
+		p.subLink("list", Tr.t("Recent earthquakes nearby", "Cutremure recente din jur"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
+			public void run() {
+				settings.hide();
+				quakesPage();
+			}
+		});
+		if (us) {
+			p.toggle("tornado", Tr.t("Tornadoes", "Tornade"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.tornadoes(this), new Runnable() {
+				public void run() {
+					boolean on = !Notifier.tornadoes(MainActivity.this);
+					prefs.edit().putBoolean("tornadoNotify", on).apply();
+					Log.i(MainActivity.this, "MENIU", "notificări tornade: " + (on ? "PORNITE" : "OPRITE"));
+					note(on ? Tr.t("Tornado warnings for your town", "Avertizări de tornadă pentru localitatea ta") : Tr.t("No tornado notices", "Fără notificări de tornadă"), 2200);
+					onMenu();
+				}
+			});
+			p.subLink("alert", Tr.t("Alerts and reports nearby", "Alerte și raportări din jur"), Tr.t("What to do in a tornado", "Ce faci la tornadă"), new Runnable() {
+				public void run() {
+					settings.hide();
+					tornadoPage();
+				}
+			});
+		}
+		p.toggle("bell", Tr.t("Notifications", "Notificări"), Tr.t("Rain, snow, warnings", "Ploaie, ninsoare, avertizări"), Notifier.on(this), new Runnable() {
+			public void run() {
+				toggleNotify();
+				onMenu();
+			}
+		});
+		p.toggle("moon", Tr.t("Night clock", "Ceas noapte"), Tr.t("A big dim clock while charging at night", "Ceas mare și estompat la încărcare, noaptea"), prefs.getBoolean("nightClock", true), new Runnable() {
+			public void run() {
+				boolean on = !prefs.getBoolean("nightClock", true);
+				prefs.edit().putBoolean("nightClock", on).apply();
+				Log.i(MainActivity.this, "MENIU", "ceas noapte " + on);
+				applySettings();
+				onMenu();
+			}
+		});
+		p.toggle("screen", Tr.t("Screen on", "Ecran aprins"), Tr.t("The screen does not go off", "Ecranul nu se stinge"), prefs.getBoolean("keepOn", true), new Runnable() {
+			public void run() {
+				boolean on = !prefs.getBoolean("keepOn", true);
+				prefs.edit().putBoolean("keepOn", on).apply();
+				Log.i(MainActivity.this, "MENIU", "ecran aprins " + on);
+				applySettings();
+				onMenu();
+			}
+		});
+		// The hidden US test mode (not in Help nor in the change log): only while it is on.
+		if (Region.test(this)) {
+			p.section(Tr.t("Hidden mode", "Mod ascuns"), true);
+			p.toggle("flask", Tr.t("Test mode · USA", "Mod de test · SUA"), Tr.t("On · the app believes it is in the US", "Pornit · aplicația se crede în SUA"), true, new Runnable() {
+				public void run() {
+					prefs.edit().putBoolean("usTest", false).apply();
+					Log.i(MainActivity.this, "US", "modul de test OPRIT (din setări)");
+					note(Tr.t("Test mode off", "Mod de test oprit"), 2000);
+					applySettings();
+					view.invalidate();
+					onMenu();
+				}
+			});
+			String st = prefs.getString("usTestState", "OK");
+			p.link("map", Tr.t("Test state", "Stat de test"), null, Cities.stateName(st) + " (" + st + ")", new Runnable() {
+				public void run() {
+					testMode();
+				}
+			});
+			p.note(Tr.t("Shown only while the test mode is on (turned on with 7 taps on the About title). Off: the app goes back to Europe and this card goes away.",
+					"Apare doar cât timp modul de test e pornit (se pornește cu 7 atingeri pe titlul Despre). Oprit = aplicația revine la Europa, iar cardul dispare."));
+		}
+		// The fixed bar.
+		p.footTitle(Tr.t("System & support", "Sistem & Suport"));
+		p.footRow(new String[] { "widget", "download>upload", "log" },
+				new String[] { Tr.t("Widgets", "Widget-uri"), Tr.t("Export / Import", "Export / Import"), Tr.t("Log", "Jurnal") }, new Runnable[] { new Runnable() {
+					public void run() {
+						settings.hide();
+						startActivity(new Intent(MainActivity.this, WidgetConfig.class));
+					}
+				}, new Runnable() {
+					public void run() {
+						settings.hide();
+						backup();
+					}
+				}, new Runnable() {
+					public void run() {
+						settings.hide();
+						startActivity(new Intent(MainActivity.this, LogActivity.class));
+					}
+				} });
+		p.footRow(new String[] { "sync", "plane", "help", "info" },
+				new String[] { Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Help", "Ajutor"), Tr.t("About", "Despre") },
+				new Runnable[] { new Runnable() {
+					public void run() {
+						settings.hide();
+						updater.check(true);
+					}
+				}, new Runnable() {
+					public void run() {
+						settings.hide();
+						shareApp();
+					}
+				}, new Runnable() {
+					public void run() {
+						settings.hide();
+						help();
+					}
+				}, new Runnable() {
+					public void run() {
+						settings.hide();
+						about();
+					}
+				} });
+		p.show();
 	}
 
 	/**

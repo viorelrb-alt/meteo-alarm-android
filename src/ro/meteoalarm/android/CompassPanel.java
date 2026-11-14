@@ -141,6 +141,7 @@ final class CompassPanel extends View {
 			}
 		}
 		nearby();
+		logTowns();
 		Log.i(getContext(), "BUSOLA", "fereastra busolei deschisă" + (Float.isNaN(heading) ? " (fără senzor)" : "") + (townOnly ? ", coordonatele localității" : ", coordonate GPS"));
 		setVisibility(VISIBLE);
 		invalidate();
@@ -191,6 +192,14 @@ final class CompassPanel extends View {
 			else if (towns.size() < 3) towns.add(t);
 		}
 		if (picked >= towns.size()) picked = -1;
+	}
+
+	/** v5.00: the listed towns in the log, to check the marks later. */
+	private void logTowns() {
+		StringBuilder b = new StringBuilder("localități:");
+		if (here != null) b.append(" aici ").append(here.name).append(";");
+		for (Town t : towns) b.append(" ").append(t.name).append(String.format(java.util.Locale.US, " %.1f km %.0f°;", t.km, t.bearing));
+		Log.i(getContext(), "BUSOLA", b.toString());
 	}
 
 	static double km(double a1, double o1, double a2, double o2) {
@@ -252,94 +261,130 @@ final class CompassPanel extends View {
 		if (!open) return;
 		int W = getWidth(), H = getHeight();
 		int[] k = col();
-		int page = k[0], ink = k[1], dim = k[2], line = k[3], band = k[4], box = k[5], accent = k[10], bandInk = k[15];
-		c.drawColor(0x99000000);
+		int page = k[0], ink = k[1], dim = k[2], line = k[3], band = k[4], box = k[5], accent = k[10];
 		boolean tablet = Math.min(W, H) / dp >= 600, portrait = H > W;
 		float u = Math.min(W, H) / 1080f * (tablet ? 0.85f : 1f);
-		float m = (tablet ? 40 : 24) * u, r = 28 * u, hb = 78 * u, fs = (portrait ? 34 : 38) * u, bh = 104 * u;
-		float R, dcx, dcy, x0, rw, iy;
 		int n = Math.min(3, towns.size()), nl = n + (here != null ? 1 : 0);
+		// v5.00 (Viorel, mockup 3-busola): a glass window, the title and X on top, the dial, the
+		// values in a 2×2 grid of cards, the nearby towns (a tap on one picks its mark) and two buttons.
+		float m = (tablet ? 40 : 40) * u, r = 44 * u, pad = 44 * u;
+		float hb = 150 * u, gh = 124 * u, gg = 20 * u, rowH = 76 * u, bh = 100 * u;
+		float R, dcx, dcy, x0, rw, iy;
 		if (portrait) {
 			float cw = W - 2 * m;
-			R = cw * (tablet ? 0.3f : 0.36f);
-			float ch = hb + R * 2.5f + 40 * u + fs * 1.75f * 3 + fs + 60 * u + (nl > 0 ? fs * 1.75f * (nl + 0.6f) + 40 * u : 0) + bh + 40 * u;
-			ch = Math.min(ch, H - 2 * m);
+			R = cw * (tablet ? 0.3f : 0.33f);
+			x0 = m + pad;
+			rw = cw - 2 * pad;
+			float rest = 2 * gh + gg + 40 * u + (nl > 0 ? 56 * u + nl * rowH : 0) + 40 * u + bh + pad;
+			float ch = hb + R * 2.42f + 30 * u + rest;
+			if (ch > H - 2 * m) {
+				// Too high: a smaller dial first.
+				R = Math.max(cw * 0.22f, (H - 2 * m - hb - 30 * u - rest) / 2.42f);
+				ch = Math.min(hb + R * 2.42f + 30 * u + rest, H - 2 * m);
+			}
 			card.set(m, (H - ch) / 2, m + cw, (H + ch) / 2);
 			dcx = W / 2f;
-			dcy = card.top + hb + R * 1.25f;
-			x0 = card.left + 44 * u;
-			rw = cw - 88 * u;
-			iy = dcy + R * 1.25f + 40 * u;
+			dcy = card.top + hb + R * 1.21f;
+			iy = dcy + R * 1.21f + 30 * u;
 		} else {
-			float ch = H - 2 * m, cw = Math.min(W - 2 * m, ch * (tablet ? 1.6f : 1.75f));
-			card.set((W - cw) / 2, m, (W + cw) / 2, m + ch);
-			R = (ch - hb) * 0.36f;
-			dcx = card.left + 60 * u + R * 1.15f;
-			dcy = card.top + hb + (ch - hb) / 2;
-			x0 = dcx + R * 1.3f + 50 * u;
-			rw = card.right - 50 * u - x0;
-			iy = card.top + hb + 70 * u;
+			float ch = H - 2 * m * 0.6f, cw = Math.min(W - 2 * m, ch * (tablet ? 1.6f : 1.9f));
+			card.set((W - cw) / 2, (H - ch) / 2, (W + cw) / 2, (H + ch) / 2);
+			R = Math.min((ch - hb - pad) / 2.5f, cw * 0.2f);
+			dcx = card.left + pad + R * 1.2f;
+			dcy = card.top + hb + (ch - hb) / 2 - pad / 2;
+			x0 = dcx + R * 1.3f + 40 * u;
+			rw = card.right - pad - x0;
+			iy = card.top + hb;
+			// The right column must hold the grid, the towns and the buttons.
+			float need = 2 * gh + gg + 30 * u + (nl > 0 ? 50 * u + nl * rowH : 0) + 30 * u + bh + pad, room = card.bottom - iy;
+			if (need > room) {
+				float f = Math.max(0.6f, room / need);
+				gh *= f;
+				gg *= f;
+				rowH *= f;
+				bh *= f;
+			}
 		}
-		// The window: a frame, the title band on top.
-		fill(c, box);
-		c.drawRoundRect(card, r, r, p);
-		Path top = new Path();
-		top.addRoundRect(new RectF(card.left, card.top, card.right, card.top + hb), new float[] { r, r, r, r, 0, 0, 0, 0 }, Path.Direction.CW);
-		fill(c, band);
-		c.drawPath(top, p);
-		p.setStyle(Paint.Style.STROKE);
-		p.setStrokeWidth(3 * u);
-		p.setColor(band);
-		c.drawRoundRect(card, r, r, p);
-		text(c, Tr.t("COMPASS", "BUSOLĂ"), card.centerX(), card.top + hb / 2, hb * 0.48f, bandInk, true, Paint.Align.CENTER);
+		Glass.drawPanel(c, p, card, r, dark, dp);
+		// Title, the place under it, X.
+		float tx = card.left + pad, ty = card.top + 62 * u;
+		text(c, Tr.t("Compass", "Busolă"), tx, ty, 50 * u, ink, true, Paint.Align.LEFT);
+		String sub = (place != null && place.length() > 0 ? place + " · " : "") + Tr.t("works offline", "funcționează fără internet");
+		float ss = 30 * u;
+		while (ss > 16 * u && width(sub, ss, false) > card.width() - 2 * pad - 110 * u) ss *= 0.95f;
+		text(c, sub, tx, ty + 56 * u, ss, dim, false, Paint.Align.LEFT);
+		float xr = 40 * u;
+		bClose.set(card.right - pad + 10 * u - 2 * xr, card.top + 36 * u, card.right - pad + 10 * u, card.top + 36 * u + 2 * xr);
+		Glass.drawClose(c, p, bClose.centerX(), bClose.centerY(), xr, dark);
 		dial(c, dcx, dcy, R, u, ink, dim, line, box, accent, band);
 		if (showTowns) marks(c, dcx, dcy, R, u, page, box, accent, band, W);
 		else for (float[] mk : marks) mk[2] = 0;
-		// The values.
+		// The values: a 2×2 grid of cards.
 		String[][] rows = { { Tr.t("Direction", "Direcție"), Float.isNaN(heading) ? "–" : dir8(heading) + " · " + Math.round((heading % 360 + 360) % 360) % 360 + "°" },
-				{ Tr.t("Latitude", "Latitudine"), Double.isNaN(lat) ? "–" : coord(lat, true) },
-				{ Tr.t("Longitude", "Longitudine"), Double.isNaN(lon) ? "–" : coord(lon, false) },
 				{ townOnly ? Tr.t("Place", "Loc") : Tr.t("GPS accuracy", "Precizie GPS"),
-						townOnly ? Tr.t("the town (no GPS fix)", "localitatea (fără GPS)") : Float.isNaN(accuracy) ? "–" : "±" + Math.round(imperial ? accuracy * 3.28084 : accuracy) + (imperial ? " ft" : " m") } };
-		for (int i = 0; i < rows.length; i++) {
-			float y = iy + i * fs * 1.75f;
-			text(c, rows[i][0], x0, y, fs * 0.85f, dim, false, Paint.Align.LEFT);
-			float vs = fs;
-			while (vs > fs * 0.6f && width(rows[i][1], vs, true) > rw - width(rows[i][0], fs * 0.85f, false) - 20 * u) vs *= 0.94f;
-			text(c, rows[i][1], x0 + rw, y, vs, ink, true, Paint.Align.RIGHT);
-			if (i < rows.length - 1) {
-				fill(c, line);
-				c.drawRect(x0, y + fs * 0.88f, x0 + rw, y + fs * 0.88f + Math.max(1, 1.2f * u), p);
-			}
+						townOnly ? Tr.t("the town (no GPS fix)", "localitatea (fără GPS)") : Float.isNaN(accuracy) ? "–" : "±" + Math.round(imperial ? accuracy * 3.28084 : accuracy) + (imperial ? " ft" : " m") },
+				{ Tr.t("Latitude", "Latitudine"), Double.isNaN(lat) ? "–" : coord(lat, true) },
+				{ Tr.t("Longitude", "Longitudine"), Double.isNaN(lon) ? "–" : coord(lon, false) } };
+		float cwid = (rw - gg) / 2;
+		for (int i = 0; i < 4; i++) {
+			float cx = x0 + (i % 2) * (cwid + gg), cy = iy + (i / 2) * (gh + gg);
+			RectF cr = new RectF(cx, cy, cx + cwid, cy + gh);
+			Glass.drawCard(c, p, cr, 26 * u, dark, dp);
+			String lb = rows[i][0].toUpperCase();
+			float ls = gh * 0.2f;
+			while (ls > 8 * u && width(lb, ls, true) > cwid - 60 * u) ls *= 0.94f;
+			text(c, lb, cx + 30 * u, cy + gh * 0.32f, ls, dim, true, Paint.Align.LEFT);
+			float vs = gh * 0.3f;
+			while (vs > 10 * u && width(rows[i][1], vs, true) > cwid - 60 * u) vs *= 0.94f;
+			text(c, rows[i][1], cx + 30 * u, cy + gh * 0.66f, vs, ink, true, Paint.Align.LEFT);
 		}
-		float ly = iy + (rows.length - 1) * fs * 1.75f + fs * 0.6f + 60 * u;
+		float ly = iy + 2 * gh + gg + (portrait ? 40 : 30) * u;
+		for (RectF rr : rowAt) rr.setEmpty();
 		if (nl > 0) {
-			text(c, Tr.t("NEARBY TOWNS", "LOCALITĂȚI APROPIATE"), x0, ly, fs * 0.8f, band, true, Paint.Align.LEFT);
+			text(c, Tr.t("NEARBY TOWNS", "LOCALITĂȚI APROPIATE"), x0, ly + 14 * u, Math.min(32 * u, rowH * 0.42f), accent, true, Paint.Align.LEFT);
+			float y0 = ly + (portrait ? 56 : 50) * u * Math.min(1, rowH / (76 * u));
+			float fs = rowH * 0.44f;
 			for (int j = 0; j < nl; j++) {
 				int i = here != null ? j - 1 : j;
 				Town t = i < 0 ? here : towns.get(i);
-				float y = ly + (j + 1) * fs * 1.75f;
-				house(c, x0 + fs * 0.4f, y, fs * 0.42f, i < 0 ? HERE_COL : TOWN_COL[i], box, i >= 0 && i == picked, band, u * 0.6f);
+				float top = y0 + j * rowH, y = top + rowH / 2;
+				boolean sel = i >= 0 && i == picked;
+				if (i >= 0) rowAt[i].set(x0 - 14 * u, top, x0 + rw + 14 * u, top + rowH);
+				if (sel) {
+					p.setStyle(Paint.Style.FILL);
+					p.setColor(Glass.alpha(TOWN_COL[i], dark ? 0.22f : 0.16f));
+					c.drawRoundRect(rowAt[i], 18 * u, 18 * u, p);
+				}
+				house(c, x0 + fs * 0.45f, y, fs * 0.45f, i < 0 ? HERE_COL : TOWN_COL[i], box, false, band, u * 0.6f);
 				String d = dist(t.km) + " · " + dir8(t.bearing) + " " + Math.round(t.bearing) + "°";
-				float dw = width(d, fs * 0.9f, false);
+				float dw = width(d, fs * 0.88f, false);
 				String nm = i < 0 ? t.name + " (" + Tr.t("you are here", "ești aici") + ")" : t.name;
 				float ns = fs;
-				while (ns > fs * 0.5f && width(nm, ns, true) > rw - fs * 1.1f - dw - 20 * u) ns *= 0.94f;
-				text(c, nm, x0 + fs * 1.1f, y, ns, ink, true, Paint.Align.LEFT);
-				text(c, d, x0 + rw, y, fs * 0.9f, dim, false, Paint.Align.RIGHT);
+				while (ns > fs * 0.5f && width(nm, ns, i < 0 || sel) > rw - fs * 1.4f - dw - 20 * u) ns *= 0.94f;
+				text(c, nm, x0 + fs * 1.4f, y, ns, ink, i < 0 || sel, Paint.Align.LEFT);
+				text(c, d, x0 + rw, y, fs * 0.88f, dim, false, Paint.Align.RIGHT);
+				if (j < nl - 1) {
+					fill(c, Glass.edge(dark));
+					c.drawRect(x0, top + rowH - Math.max(1, dp) / 2, x0 + rw, top + rowH + Math.max(1, dp) / 2, p);
+				}
 			}
 		}
-		buttons(c, x0, card.bottom - bh - (portrait ? 36 : 40) * u, rw, bh, u, ink, page, box, band);
+		buttons(c, x0, card.bottom - bh - pad * (portrait ? 0.8f : 0.6f), rw, bh, u, ink, page, box, accent);
 	}
+
+	/** The place shown in the subtitle (the town or parcel of the screen), set before show(). */
+	String place;
+	/** Where each listed town's row is (taps pick its mark, v5.00). */
+	private final RectF[] rowAt = { new RectF(), new RectF(), new RectF() };
 
 	private void dial(Canvas c, float cx, float cy, float R, float u, int ink, int dim, int line, int box, int accent, int band) {
 		boolean has = !Float.isNaN(heading);
 		float hd = has ? heading : 0;
-		fill(c, mix(box, ink, 0.07f));
+		fill(c, Glass.card(dark));
 		c.drawCircle(cx, cy, R, p);
 		p.setStyle(Paint.Style.STROKE);
-		p.setStrokeWidth(3 * u);
-		p.setColor(band);
+		p.setStrokeWidth(2 * u);
+		p.setColor(Glass.edge(dark));
 		c.drawCircle(cx, cy, R, p);
 		p.setStrokeCap(Paint.Cap.ROUND);
 		for (int b = 0; b < 360; b += 5) {
@@ -378,11 +423,11 @@ final class CompassPanel extends View {
 		c.drawPath(north, p);
 		fill(c, line);
 		c.drawPath(south, p);
-		fill(c, box);
+		fill(c, Glass.alpha(Theme.page(dark), 0.85f));
 		c.drawCircle(cx, cy, R * 0.3f, p);
 		p.setStyle(Paint.Style.STROKE);
 		p.setStrokeWidth(2 * u);
-		p.setColor(line);
+		p.setColor(Glass.edge(dark));
 		c.drawCircle(cx, cy, R * 0.3f, p);
 		if (has) {
 			text(c, dir8(heading), cx, cy - R * 0.07f, R * 0.15f, ink, true, Paint.Align.CENTER);
@@ -403,18 +448,28 @@ final class CompassPanel extends View {
 		c.drawPath(tip, p);
 	}
 
-	/** The towns as small houses on the rim; the picked one with its name and distance. */
+	/**
+	 * The towns as small houses on the rim; the picked one with its name and distance. v5.00
+	 * (Viorel: 3 towns listed, 2 marks seen): marks closer than their size are spread apart along
+	 * the rim, so two towns in the same direction both show.
+	 */
 	private void marks(Canvas c, float cx, float cy, float R, float u, int page, int box, int accent, int band, int W) {
-		float hd = Float.isNaN(heading) ? 0 : heading, rr = R * 0.075f;
+		float hd = Float.isNaN(heading) ? 0 : heading, rr = R * 0.075f, rad = R * 1.11f;
 		for (float[] mk : marks) mk[2] = 0;
-		for (int i = 0; i < Math.min(3, towns.size()); i++) {
-			double a = Math.toRadians(towns.get(i).bearing - hd);
-			float x = cx + R * 1.11f * (float) Math.sin(a), y = cy - R * 1.11f * (float) Math.cos(a);
+		int n = Math.min(3, towns.size());
+		double[] ang = new double[n];
+		for (int i = 0; i < n; i++) ang[i] = towns.get(i).bearing;
+		spread(ang, Math.toDegrees(2 * rr * 1.25f / rad));
+		for (int i = 0; i < n; i++) {
+			double a = Math.toRadians(ang[i] - hd);
+			float x = cx + rad * (float) Math.sin(a), y = cy - rad * (float) Math.cos(a);
 			marks[i][0] = x;
 			marks[i][1] = y;
 			marks[i][2] = rr * 1.8f;
-			house(c, x, y, rr, TOWN_COL[i], box, i == picked, band, u);
 		}
+		// The picked one last, on top of the others.
+		for (int i = 0; i < n; i++) if (i != picked) house(c, marks[i][0], marks[i][1], rr, TOWN_COL[i], box, false, band, u);
+		if (picked >= 0 && picked < n) house(c, marks[picked][0], marks[picked][1], rr, TOWN_COL[picked], box, true, Theme.ink(dark), u);
 		if (picked >= 0 && picked < towns.size()) {
 			Town t = towns.get(picked);
 			float x = marks[picked][0], y = marks[picked][1];
@@ -423,8 +478,9 @@ final class CompassPanel extends View {
 			float bx = Math.min(Math.max(x - bw / 2, 12 * u), W - bw - 12 * u);
 			boolean below = y < cy + R * 0.6f;
 			float by = below ? y + rr + fs * 0.7f : y - rr - fs * 0.7f - bh;
-			fill(c, band);
-			c.drawRoundRect(new RectF(bx, by, bx + bw, by + bh), fs * 0.5f, fs * 0.5f, p);
+			int bg = TOWN_COL[picked];
+			fill(c, bg);
+			c.drawRoundRect(new RectF(bx, by, bx + bw, by + bh), fs * 0.6f, fs * 0.6f, p);
 			Path tp = new Path();
 			float ty = below ? by : by + bh;
 			tp.moveTo(x - fs * 0.45f, ty);
@@ -432,57 +488,70 @@ final class CompassPanel extends View {
 			tp.lineTo(x, below ? ty - fs * 0.5f : ty + fs * 0.5f);
 			tp.close();
 			c.drawPath(tp, p);
-			text(c, t1, bx + bw / 2, by + bh * 0.33f, fs, page, true, Paint.Align.CENTER);
-			text(c, t2, bx + bw / 2, by + bh * 0.72f, fs * 0.8f, page, false, Paint.Align.CENTER);
+			text(c, t1, bx + bw / 2, by + bh * 0.33f, fs, 0xFFFFFFFF, true, Paint.Align.CENTER);
+			text(c, t2, bx + bw / 2, by + bh * 0.72f, fs * 0.8f, 0xFFFFFFFF, false, Paint.Align.CENTER);
 		}
 	}
 
-	private void buttons(Canvas c, float x, float y, float w, float h, float u, int ink, int page, int box, int band) {
-		String[] labels = { Tr.t("Share", "Partajare"), Tr.t("Towns", "Localități"), Tr.t("Close", "Închidere") };
-		RectF[] rs = { bShare, bTowns, bClose };
-		float g = h * 0.25f, bw = (w - 2 * g) / 3, fs = h * 0.3f;
-		for (String l : labels) while (fs > 8 && width(l, fs, true) + h * 0.6f > bw - 16 * u) fs *= 0.94f;
-		for (int i = 0; i < 3; i++) {
+	/** Moves the angles A (degrees) apart until any two are at least MIN degrees apart (as little as possible). */
+	static void spread(double[] a, double min) {
+		int n = a.length;
+		if (n < 2) return;
+		for (int it = 0; it < 60; it++) {
+			boolean moved = false;
+			for (int i = 0; i < n; i++)
+				for (int j = i + 1; j < n; j++) {
+					double d = ((a[j] - a[i]) % 360 + 540) % 360 - 180;
+					if (Math.abs(d) >= min - 1e-6) continue;
+					double push = (min - Math.abs(d)) / 2 + 0.01, s = d >= 0 ? 1 : -1;
+					if (d == 0) s = i < j ? 1 : -1;
+					a[i] -= s * push;
+					a[j] += s * push;
+					moved = true;
+				}
+			if (!moved) break;
+		}
+		for (int i = 0; i < n; i++) a[i] = (a[i] % 360 + 360) % 360;
+	}
+
+	/** v5.00: Share (glass) and Towns (filled while the marks show); no Close: X on top, or a tap outside. */
+	private void buttons(Canvas c, float x, float y, float w, float h, float u, int ink, int page, int box, int accent) {
+		String[] labels = { Tr.t("Share", "Partajare"), Tr.t("Towns", "Localități") };
+		RectF[] rs = { bShare, bTowns };
+		float g = 26 * u, bw = Math.min((w - g) / 2, 340 * u), fs = h * 0.34f;
+		float left = x + (w - 2 * bw - g) / 2;
+		for (String l : labels) while (fs > 8 && width(l, fs, true) + h * 0.7f > bw - 30 * u) fs *= 0.94f;
+		for (int i = 0; i < 2; i++) {
 			RectF r = rs[i];
-			r.set(x + i * (bw + g), y, x + i * (bw + g) + bw, y + h);
+			r.set(left + i * (bw + g), y, left + i * (bw + g) + bw, y + h);
 			boolean on = i == 1 && showTowns;
-			int fg = on ? page : ink;
-			fill(c, on ? band : box);
-			c.drawRoundRect(r, h * 0.18f, h * 0.18f, p);
-			p.setStyle(Paint.Style.STROKE);
-			p.setStrokeWidth(2.5f * u);
-			p.setColor(band);
-			c.drawRoundRect(r, h * 0.18f, h * 0.18f, p);
-			float tw = width(labels[i], fs, true), s = h * 0.45f, sx = r.left + (bw - tw - s * 1.15f) / 2 + s / 2, cy = r.centerY();
+			int fg = on ? 0xFFFFFFFF : ink;
+			if (on) {
+				fill(c, accent);
+				c.drawRoundRect(r, h / 2, h / 2, p);
+			} else Glass.drawCard(c, p, r, h / 2, dark, dp);
+			float tw = width(labels[i], fs, true), s = h * 0.42f, sx = r.left + (bw - tw - s * 1.25f) / 2 + s / 2, cy = r.centerY();
 			if (i == 0) {
 				p.setStyle(Paint.Style.STROKE);
 				p.setStrokeWidth(s * 0.09f);
 				p.setColor(fg);
 				c.drawLine(sx + s * 0.3f, cy - s * 0.32f, sx - s * 0.3f, cy, p);
 				c.drawLine(sx - s * 0.3f, cy, sx + s * 0.3f, cy + s * 0.32f, p);
-				fill(c, fg);
-				c.drawCircle(sx + s * 0.3f, cy - s * 0.32f, s * 0.15f, p);
-				c.drawCircle(sx - s * 0.3f, cy, s * 0.15f, p);
-				c.drawCircle(sx + s * 0.3f, cy + s * 0.32f, s * 0.15f, p);
-			} else if (i == 1) {
-				fill(c, fg);
-				c.drawCircle(sx, cy - s * 0.12f, s * 0.3f, p);
-				Path pin = new Path();
-				pin.moveTo(sx - s * 0.26f, cy - s * 0.02f);
-				pin.lineTo(sx + s * 0.26f, cy - s * 0.02f);
-				pin.lineTo(sx, cy + s * 0.42f);
-				pin.close();
-				c.drawPath(pin, p);
-				fill(c, on ? band : box);
-				c.drawCircle(sx, cy - s * 0.12f, s * 0.11f, p);
+				c.drawCircle(sx + s * 0.3f, cy - s * 0.32f, s * 0.13f, p);
+				c.drawCircle(sx - s * 0.3f, cy, s * 0.13f, p);
+				c.drawCircle(sx + s * 0.3f, cy + s * 0.32f, s * 0.13f, p);
 			} else {
 				p.setStyle(Paint.Style.STROKE);
-				p.setStrokeWidth(s * 0.1f);
+				p.setStrokeWidth(s * 0.09f);
 				p.setColor(fg);
-				c.drawLine(sx - s * 0.25f, cy - s * 0.25f, sx + s * 0.25f, cy + s * 0.25f, p);
-				c.drawLine(sx - s * 0.25f, cy + s * 0.25f, sx + s * 0.25f, cy - s * 0.25f, p);
+				Path pin = new Path();
+				pin.moveTo(sx, cy + s * 0.45f);
+				pin.cubicTo(sx - s * 0.5f, cy, sx - s * 0.36f, cy - s * 0.45f, sx, cy - s * 0.45f);
+				pin.cubicTo(sx + s * 0.36f, cy - s * 0.45f, sx + s * 0.5f, cy, sx, cy + s * 0.45f);
+				c.drawPath(pin, p);
+				c.drawCircle(sx, cy - s * 0.1f, s * 0.12f, p);
 			}
-			text(c, labels[i], sx + s * 0.62f, cy, fs, fg, true, Paint.Align.LEFT);
+			text(c, labels[i], sx + s * 0.75f, cy, fs, fg, true, Paint.Align.LEFT);
 		}
 	}
 
@@ -547,8 +616,18 @@ final class CompassPanel extends View {
 				float[] mk = marks[i];
 				if (mk[2] > 0 && Math.hypot(x - mk[0], y - mk[1]) <= mk[2]) hit = i;
 			}
+			// v5.00 (Viorel): a tap on a town's row picks its mark on the dial (the marks show again if hidden).
+			boolean row = false;
+			if (hit < 0) for (int i = 0; i < Math.min(3, towns.size()); i++) if (rowAt[i].contains(x, y)) {
+				hit = i;
+				row = true;
+			}
+			if (row && !showTowns) {
+				showTowns = true;
+				Fetcher.prefs(getContext()).edit().putBoolean("compassTowns", true).apply();
+			}
 			picked = hit >= 0 && hit != picked ? hit : -1;
-			if (hit >= 0) Log.i(getContext(), "GEST", "busolă: atingere localitate " + towns.get(hit).name);
+			if (hit >= 0) Log.i(getContext(), "GEST", "busolă: atingere localitate " + towns.get(hit).name + (row ? " (din listă)" : ""));
 			invalidate();
 		}
 		return true;
