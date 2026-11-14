@@ -1,6 +1,12 @@
-Current version: v.5.25 · 14.11.2026
+Current version: v.5.30 · 14.11.2026
+FARMER MODE
+- Farmer button: the leaf button next to the buttons turns farmer mode off; another town keeps farmer mode.
+- Operational status: on a parcel's screen, only when needed, the spraying verdict, its reason and the risks of the next 24 hours.
+- Tabs: the town and the parcels in tabs under the name (in landscape at the bottom); a parcel's screen in sections 1–4.
 MAIN SCREEN
 - Big compass: a tap on a town in the list shows its mark on the compass; towns in the same direction no longer overlap.
+- Five-day forecast: days 3–5 move on by themselves every 3 seconds until the first touch.
+- Main screen: the page scrolls up and down under the glass at the top, in sections (Next hours, Five-day forecast, Weather details); the buttons and the battery float at the bottom.
 NOTIFICATIONS
 - Earthquakes: notifications only for earthquakes at most 300 km from your place; turned on or off in ☰.
 - Tornadoes (US): the tornado notifications for your town are turned on or off in ☰.

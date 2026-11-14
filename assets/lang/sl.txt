@@ -1017,3 +1017,49 @@ Last quarter	Zadnji krajec
 Waning crescent	Pojemajoči srp
 Screen off	Ugasnjen zaslon
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Ko je zaslon ugasnjen, se okna aplikacije zaprejo po 3 sekundah, aplikacija pa po 10.
+NEXT HOURS	NASLEDNJE URE
+FIVE-DAY FORECAST	NAPOVED ZA PET DNI
+WEATHER DETAILS	PODROBNOSTI VREMENA
+HOURLY WEATHER	VREME PO URAH
+SOIL AND CROPS	TLA IN POSEVKI
+PARCEL RISKS AND REPORTS	TVEGANJA IN POROČILA PARCELE
+tap: soil details	tapni: tla
+STATISTICS · PDF	STATISTIKA · PDF
+12 hours · day by day · PDF	12 ur · dan za dnem · PDF
+OPERATIONAL STATUS	OPERATIVNO STANJE
+tap: next window	tapni: naslednje okno
+Rain until {1} ({2})	Dež do {1} ({2})
+Rain from {1} ({2})	Dež od {1} ({2})
+the treatment would be washed off the leaves	sredstvo bi se spralo z listov
+soil {1}	tla {1}
+FROST at {1} ({2})	POZEBA ob {1} ({2})
+Hoarfrost risk at {1} ({2})	Nevarnost slane ob {1} ({2})
+protect sensitive crops	zaščiti občutljive posevke
+Storm risk: {1}	Nevarnost neviht: {1}
+SPRAY NOW, UNTIL {1}	ŠKROPI ZDAJ, DO {1}
+GOOD FOR SPRAYING	PRIMERNO ZA ŠKROPLJENJE
+Wind {1}, no rain now	Veter {1}, zdaj brez dežja
+good: wind 3–15 km/h, gusts under 25, no rain	dobro: veter 3–15 km/h, sunki pod 25, brez dežja
+DON'T SPRAY NOW	ZDAJ NE ŠKROPI
+DON'T SPRAY TODAY	DANES NE ŠKROPI
+Active precipitation: rain {1}, {2}/h	Aktivne padavine: dež {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	nad pragom za škropljenje: 40 % ali 0,1 mm/h
+Wind {1}, gusts {2}	Veter {1}, sunki {2}
+over the limit: 15 km/h, gusts 25 km/h	nad pragom: 15 km/h, sunki 25 km/h
+Wind too weak: {1}	Prešibek veter: {1}
+under 3 km/h the spray drifts unevenly	pod 3 km/h se škropivo neenakomerno razporedi
+Too hot: {1}	Prevroče: {1}
+over 28 °C the solution evaporates	nad 28 °C raztopina izhlapi
+Dry air: humidity {1}	Suh zrak: vlažnost {1}
+under 40% the drops dry before they settle	pod 40 % se kapljice posušijo, preden se uležejo
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	Stikalo Kmetovalski način v ☰ ga vklopi; gumb z listom poleg gumbov ga izklopi. Vsaka ura je eno široko polje z vremenom in dežjem. Izbira drugega kraja ohrani kmetovalski način.
+Operational status	Operativno stanje
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Na zaslonu parcele, samo ko je treba: odločitev za škropljenje (rdeče, rumeno, zeleno), glavni razlog s pragom in tveganja naslednjih 24 ur. Dotik pokaže naslednje dobro okno.
+A parcel's screen	Zaslon parcele
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Vreme po urah, pet dni, 2 Tla in posevki, 3 Tveganja in poročila (s Statistiko · PDF), 4 Podrobnosti vremena.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Zavihki pod imenom (ležeče spodaj): kraj in po eden za vsako parcelo; dotik ali poteg vstran zamenja zaslon, + doda parcelo.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Okno iz motnega stekla sredi zaslona (zaslon ostane oster); zapre se z X ali z dotikom zunaj njega. Pod naslovom kraj; ▲ in ▼ pomikata; vir je spodaj.
+The main screen	Glavni zaslon
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Stran se pomika gor in dol pod steklom na vrhu; gumbi in baterija lebdijo spodaj. Razdelki: Naslednje ure, Napoved za pet dni, Podrobnosti vremena.
+Five-day forecast	Napoved za pet dni
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Jutri in pojutrišnjem zgoraj; pod njima se dnevi 3–5 sami menjajo vsake 3 sekunde, dokler se jih ne dotakneš. Vrstica Podrobnosti vremena se po 6 sekundah malo premakne.

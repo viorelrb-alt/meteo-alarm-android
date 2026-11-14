@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.25";
+	static final String VERSION = "Meteo Alarm Android v5.30";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -410,6 +410,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		s.pages = l.isEmpty() ? 1 : l.size() + 1;
 		s.page = idx;
+		// v5.30: the tabs: the town, then the parcels (a "+" follows them).
+		String[] tn = new String[l.size() + 1];
+		tn[0] = town == null ? "" : town.name;
+		for (int k = 0; k < l.size(); k++) tn[k + 1] = l.get(k).name.replace('|', '/');
+		s.tabNames = tn;
 		s.parcel = p == null ? null : p.name;
 		s.city = p == null ? town : placeOf(p);
 		usFarm();
@@ -504,6 +509,35 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.info.scroll = 0;
 		s.grid.scroll = 0;
 		s.alerts.scroll = 0;
+		s.pageS.scroll = 0;
+		s.days2.scroll = 0;
+	}
+
+	/** v5.30: a tap on a tab: that main screen; on "+": the parcels' page (to add one). */
+	public void onTab(int k) {
+		List<Parcels.Parcel> l = pageList();
+		if (k > l.size()) {
+			Log.i(this, "FERMIER", "tab +: pagina parcelelor");
+			openParcels();
+			return;
+		}
+		if (k == s.page) {
+			// The tab of the screen shown: back to its top.
+			if (s.pageS.scroll > 0) {
+				s.pageS.scroll = 0;
+				view.invalidate();
+			}
+			return;
+		}
+		bubble.hide();
+		Log.i(this, "GEST", "tab " + k);
+		showPage(k == 0 ? 0 : l.get(k - 1).id);
+	}
+
+	/** v5.30: the small farmer button next to the buttons: farmer mode off. */
+	public void onFarmButton() {
+		Log.i(this, "GEST", "butonul fermier");
+		toggleFarmer();
 	}
 
 	/** A swipe over the weather now: the next or the previous main screen, the town first. */
@@ -588,6 +622,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.failReason = "";
 			s.error = "";
 			s.source = r.source;
+			view.autoAgain();
 		} else {
 			s.failReason = Fetcher.reason(r.error, s.T.en);
 			if (s.w == null) s.error = Tr.t("The weather did not come: ", "Vremea nu a venit: ") + s.failReason;
@@ -3100,8 +3135,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			help.entry(mini("clock"), Tr.t("Local time", "Ora locală"), Tr.t("The clock and the hours show the town's local time.", "Ceasul și orele arată ora locală a localității."));
 		}
 		help.section(Tr.t("Farmer mode", "Mod Fermier"));
-		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The Farmer mode switch in ☰ changes the mode. In farmer mode each hour is one wide box with its weather and its rain; on its side, two boxes one under the other, slid up and down. Picking another town goes back to normal mode.",
-				"Comutatorul Mod Fermier din ☰ schimbă modul. În modul fermier fiecare oră e o casetă lată, cu vremea și ploaia; cu telefonul culcat, două casete una sub alta, glisate sus-jos. Alegerea altei localități revine la modul normal."));
+		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.",
+				"Comutatorul Mod Fermier din ☰ îl pornește; butonul cu frunză de lângă butoane îl oprește. Fiecare oră e o casetă lată, cu vremea și ploaia. Alegerea altei localități păstrează modul fermier."));
+		help.entry(mini("check"), Tr.t("Operational status", "Status operațional"), Tr.t("On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.",
+				"Pe ecranul parcelei, doar când e nevoie: verdictul pentru stropit (roșu, galben, verde), motivul principal cu pragul lui și riscurile următoarelor 24 de ore. Atingerea arată următoarea fereastră bună."));
+		help.entry(mini("grid4"), Tr.t("A parcel's screen", "Ecranul parcelei"), Tr.t("1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.",
+				"1 Vremea pe ore, cele cinci zile, 2 Starea solului și culturi, 3 Riscuri și rapoarte (cu Statistică · PDF), 4 Detalii meteo."));
 		help.entry(mini("hours"), Tr.t("Hour boxes", "Casetele orare"), Tr.t("A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.",
 				"Atingerea arată detaliile orei: temperatura, vântul și direcția lui, umiditatea, ploaia, solul."));
 		help.entry(mini("soil"), Tr.t("Water in the soil", "Apa în sol"), Tr.t("The water held now in the soil's 3–9 cm layer and its change in 24 hours; a tap shows the hours with precipitation. An Open-Meteo estimate.",
@@ -3114,12 +3153,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"☰ › Parcele: harta arată toate parcelele; atingerea deschide una pe ecranul principal. „Salvare loc. GPS” sau „Alege pe hartă” adaugă una; butonul GPS arată unde ești. Creionul editează numele și acul; meniul ⋮ de acolo are Statistică · PDF și Ștergere. Rămân doar în acest telefon."));
 		help.entry(mini("dots"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.",
 				"În Parcele comenzile sunt în meniul ⋮ din dreapta sus; pe pagina de editare Șterge e la stânga lui Salvează. Casetele arată doar valoarea; atingerea arată detaliile."));
-		help.entry(mini("bubble"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("A window in the middle of the screen, over the blurred screen; it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.",
-				"O fereastră în mijlocul ecranului, peste ecranul estompat; se închide cu X sau cu o atingere în afara ei. Sub titlu, locul; ▲ și ▼ derulează; sursa e jos."));
+		help.entry(mini("bubble"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.",
+				"O fereastră de sticlă mată în mijlocul ecranului (ecranul rămâne clar); se închide cu X sau cu o atingere în afara ei. Sub titlu, locul; ▲ și ▼ derulează; sursa e jos."));
 		help.entry(mini("gps"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
-		help.entry(mini("pages"), Tr.t("Main screens", "Ecrane principale"), Tr.t("One main screen for the town and one per parcel: slide sideways; the middle of the screen follows the finger and past half goes to the next one.",
-				"Un ecran principal pentru localitate și câte unul pentru fiecare parcelă: glisează în lateral; mijlocul ecranului urmează degetul și după jumătate trece la următorul."));
+		help.entry(mini("pages"), Tr.t("Main screens", "Ecrane principale"), Tr.t("Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.",
+				"Tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + adaugă o parcelă."));
 		help.entry(mini("table"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.",
 				"Statistică · PDF: sus casetele de acum și ale perioadei, pe un rând care glisează în lateral; sub ele următoarele 12 ore și zi cu zi (se derulează). ☰ de lângă zile alege perioada; butonul PDF salvează casetele și tabelele."));
 		help.entry(mini("bellp"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
@@ -3136,6 +3175,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("retry"), Tr.t("When the download fails", "Când descărcarea nu merge"), Tr.t("The app checks the internet first, then looks on GitHub, on a second GitHub server and on Google Drive, and downloads from the first that answers. A version already downloaded is installed at once.",
 				"Aplicația verifică întâi internetul, apoi caută pe GitHub, pe un server secundar GitHub și pe Google Drive și descarcă de la primul care răspunde. O versiune deja descărcată se instalează direct."));
 		help.section(Tr.t("Buttons on the screen", "Butoane pe ecran"));
+		help.entry(mini("layers"), Tr.t("The main screen", "Ecranul principal"), Tr.t("The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.",
+				"Pagina se mișcă sus-jos pe sub sticla de sus; butoanele și bateria plutesc jos. Secțiuni: Următoarele ore, Prognoza pe cinci zile, Detalii meteo."));
+		help.entry(mini("row"), Tr.t("Five-day forecast", "Prognoza pe cinci zile"), Tr.t("Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.",
+				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde."));
 		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
 		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.",
 				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele. În altă țară sau alt stat din SUA, localitățile mici se descarcă o singură dată, prima dată când ești acolo cu internet."));
@@ -3596,11 +3639,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** A town picked from the list: automatic location goes off until the locate button. */
 	private void choose(Cities.City c) {
-		// v3.03 (Viorel): another town picked by hand leaves farmer mode (the parcels belong to the old place).
-		if (prefs.getBoolean("farmer", false) && !c.same(town)) {
-			Log.i(this, "FERMIER", "localitate schimbată: ies din modul fermier");
-			toggleFarmer();
-		}
+		// v5.30 (Viorel): another town keeps farmer mode and the parcels' screens; only the town's tab changes.
 		setAutoLoc(false);
 		setCity(c, true);
 		setDistrict("");

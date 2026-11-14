@@ -1017,3 +1017,49 @@ Last quarter	Laatste kwartier
 Waning crescent	Afnemende sikkel
 Screen off	Scherm uit
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Met het scherm uit sluiten de vensters van de app na 3 seconden en de app na 10.
+NEXT HOURS	VOLGENDE UREN
+FIVE-DAY FORECAST	VIJFDAAGSE VOORSPELLING
+WEATHER DETAILS	WEERDETAILS
+HOURLY WEATHER	WEER PER UUR
+SOIL AND CROPS	BODEM EN GEWASSEN
+PARCEL RISKS AND REPORTS	RISICO'S EN RAPPORTEN VAN HET PERCEEL
+tap: soil details	tik: bodemdetails
+STATISTICS · PDF	STATISTIEK · PDF
+12 hours · day by day · PDF	12 uur · dag per dag · PDF
+OPERATIONAL STATUS	OPERATIONELE STATUS
+tap: next window	tik: volgend venster
+Rain until {1} ({2})	Regen tot {1} ({2})
+Rain from {1} ({2})	Regen vanaf {1} ({2})
+the treatment would be washed off the leaves	het middel zou van de bladeren spoelen
+soil {1}	bodem {1}
+FROST at {1} ({2})	VORST om {1} ({2})
+Hoarfrost risk at {1} ({2})	Kans op rijp om {1} ({2})
+protect sensitive crops	bescherm gevoelige gewassen
+Storm risk: {1}	Onweerskans: {1}
+SPRAY NOW, UNTIL {1}	NU SPUITEN, TOT {1}
+GOOD FOR SPRAYING	GOED OM TE SPUITEN
+Wind {1}, no rain now	Wind {1}, nu geen regen
+good: wind 3–15 km/h, gusts under 25, no rain	goed: wind 3–15 km/h, windstoten onder 25, geen regen
+DON'T SPRAY NOW	NU NIET SPUITEN
+DON'T SPRAY TODAY	VANDAAG NIET SPUITEN
+Active precipitation: rain {1}, {2}/h	Actieve neerslag: regen {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	boven de spuitgrens: 40% of 0,1 mm/h
+Wind {1}, gusts {2}	Wind {1}, windstoten {2}
+over the limit: 15 km/h, gusts 25 km/h	boven de grens: 15 km/h, windstoten 25 km/h
+Wind too weak: {1}	Wind te zwak: {1}
+under 3 km/h the spray drifts unevenly	onder 3 km/h verdeelt de spuitvloeistof zich ongelijk
+Too hot: {1}	Te warm: {1}
+over 28 °C the solution evaporates	boven 28 °C verdampt de oplossing
+Dry air: humidity {1}	Droge lucht: vochtigheid {1}
+under 40% the drops dry before they settle	onder 40% drogen de druppels voordat ze landen
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	De schakelaar Boerenmodus in ☰ zet hem aan; de bladknop naast de knoppen zet hem uit. Elk uur is één breed vak met het weer en de regen. Een andere plaats kiezen houdt de boerenmodus aan.
+Operational status	Operationele status
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Op het scherm van een perceel, alleen als het nodig is: het oordeel over spuiten (rood, geel, groen), de hoofdreden met de grens en de risico's van de komende 24 uur. Een tik toont het volgende goede venster.
+A parcel's screen	Het scherm van een perceel
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Weer per uur, de vijf dagen, 2 Bodem en gewassen, 3 Risico's en rapporten (met Statistiek · PDF), 4 Weerdetails.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Tabbladen onder de naam (liggend onderaan): de plaats en één per perceel; een tik of zijwaarts vegen wisselt van scherm, + voegt een perceel toe.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Een venster van matglas midden op het scherm (het scherm blijft scherp); het sluit met X of een tik ernaast. Onder de titel de plaats; ▲ en ▼ scrollen; de bron staat onderaan.
+The main screen	Het hoofdscherm
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	De pagina beweegt op en neer onder het glas bovenaan; de knoppen en de batterij zweven onderaan. Secties: Volgende uren, Vijfdaagse voorspelling, Weerdetails.
+Five-day forecast	Vijfdaagse voorspelling
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Morgen en overmorgen bovenaan; daaronder schuiven dag 3–5 elke 3 seconden vanzelf door tot je ze aanraakt. De rij Weerdetails beweegt na 6 seconden even.

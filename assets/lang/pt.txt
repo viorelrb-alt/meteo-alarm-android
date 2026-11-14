@@ -1017,3 +1017,49 @@ Last quarter	Quarto minguante
 Waning crescent	Lua minguante
 Screen off	Ecrã desligado
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Com o ecrã desligado, as janelas da app fecham ao fim de 3 segundos e a app ao fim de 10.
+NEXT HOURS	PRÓXIMAS HORAS
+FIVE-DAY FORECAST	PREVISÃO A CINCO DIAS
+WEATHER DETAILS	DETALHES DO TEMPO
+HOURLY WEATHER	TEMPO HORA A HORA
+SOIL AND CROPS	SOLO E CULTURAS
+PARCEL RISKS AND REPORTS	RISCOS E RELATÓRIOS DA PARCELA
+tap: soil details	toque: detalhes do solo
+STATISTICS · PDF	ESTATÍSTICAS · PDF
+12 hours · day by day · PDF	12 horas · dia a dia · PDF
+OPERATIONAL STATUS	ESTADO OPERACIONAL
+tap: next window	toque: próxima janela
+Rain until {1} ({2})	Chuva até às {1} ({2})
+Rain from {1} ({2})	Chuva a partir das {1} ({2})
+the treatment would be washed off the leaves	o tratamento seria lavado das folhas
+soil {1}	solo {1}
+FROST at {1} ({2})	GEADA NEGRA às {1} ({2})
+Hoarfrost risk at {1} ({2})	Risco de geada às {1} ({2})
+protect sensitive crops	proteja as culturas sensíveis
+Storm risk: {1}	Risco de trovoada: {1}
+SPRAY NOW, UNTIL {1}	PULVERIZE AGORA, ATÉ ÀS {1}
+GOOD FOR SPRAYING	BOM PARA PULVERIZAR
+Wind {1}, no rain now	Vento {1}, sem chuva agora
+good: wind 3–15 km/h, gusts under 25, no rain	bom: vento 3–15 km/h, rajadas abaixo de 25, sem chuva
+DON'T SPRAY NOW	NÃO PULVERIZE AGORA
+DON'T SPRAY TODAY	NÃO PULVERIZE HOJE
+Active precipitation: rain {1}, {2}/h	Precipitação ativa: chuva {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	acima do limite para pulverizar: 40% ou 0,1 mm/h
+Wind {1}, gusts {2}	Vento {1}, rajadas {2}
+over the limit: 15 km/h, gusts 25 km/h	acima do limite: 15 km/h, rajadas 25 km/h
+Wind too weak: {1}	Vento demasiado fraco: {1}
+under 3 km/h the spray drifts unevenly	abaixo de 3 km/h a calda não se distribui bem
+Too hot: {1}	Demasiado calor: {1}
+over 28 °C the solution evaporates	acima de 28 °C a solução evapora
+Dry air: humidity {1}	Ar seco: humidade {1}
+under 40% the drops dry before they settle	abaixo de 40% as gotas secam antes de assentar
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	O interruptor Modo agricultor em ☰ ativa-o; o botão da folha junto aos botões desativa-o. Cada hora é uma caixa larga com o tempo e a chuva. Escolher outra localidade mantém o modo agricultor.
+Operational status	Estado operacional
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	No ecrã de uma parcela, só quando é preciso: o veredicto para pulverizar (vermelho, amarelo, verde), o motivo principal com o seu limite e os riscos das próximas 24 horas. Um toque mostra a próxima janela boa.
+A parcel's screen	O ecrã de uma parcela
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Tempo hora a hora, os cinco dias, 2 Solo e culturas, 3 Riscos e relatórios (com Estatísticas · PDF), 4 Detalhes do tempo.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Separadores sob o nome (na horizontal, em baixo): a localidade e um por parcela; um toque ou um deslize lateral muda o ecrã, + adiciona uma parcela.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Uma janela de vidro fosco no meio do ecrã (o ecrã fica nítido); fecha com X ou um toque fora dela. Sob o título, o local; ▲ e ▼ deslocam; a fonte está em baixo.
+The main screen	O ecrã principal
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	A página sobe e desce sob o vidro de cima; os botões e a bateria flutuam em baixo. Secções: Próximas horas, Previsão a cinco dias, Detalhes do tempo.
+Five-day forecast	Previsão a cinco dias
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Amanhã e depois de amanhã em cima; por baixo, os dias 3–5 passam sozinhos a cada 3 segundos até lhes tocar. A linha Detalhes do tempo mexe-se um pouco após 6 segundos.

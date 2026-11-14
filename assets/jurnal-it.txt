@@ -1,12 +1,18 @@
-Versione attuale: v.5.25 · 14.11.2026
+Versione attuale: v.5.30 · 14.11.2026
 IMPOSTAZIONI
 - Impostazioni: il menu ☰ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
 - Tema icone: 6 temi di icone meteo (Classico, Lucido, Piatto, Realistico, Atmosferico, Contorno), si scelgono con punti colorati in ☰; nell'app e nei widget.
+MODALITÀ AGRICOLTORE
+- Pulsante agricoltore: il pulsante con la foglia accanto ai pulsanti disattiva la modalità agricoltore; un'altra località la mantiene.
+- Schede: la località e le particelle in schede sotto il nome (in orizzontale, in basso); la schermata di una particella nelle sezioni 1–4.
+- Stato operativo: sulla schermata di una particella, solo quando serve, il verdetto per trattare, il motivo e i rischi delle prossime 24 ore.
 NOTIFICHE
 - Terremoti: notifiche solo per i terremoti entro 300 km dal tuo luogo; si attivano o disattivano in ☰.
 - Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ☰.
 SCHERMATA PRINCIPALE
 - Bussola grande: toccare una località nell'elenco ne mostra il segno sulla bussola; le località nella stessa direzione non si sovrappongono più.
+- Previsioni a cinque giorni: i giorni 3–5 avanzano da soli ogni 3 secondi fino al primo tocco.
+- Schermata principale: la pagina scorre sotto il vetro in alto, per sezioni (Prossime ore, Previsioni a cinque giorni, Dettagli meteo); i pulsanti e la batteria galleggiano in basso.
 - Miglioramenti del design e correzioni di errori.
 
 Versione 4 (v.4.00 – v.4.52)

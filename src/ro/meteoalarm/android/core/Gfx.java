@@ -35,6 +35,12 @@ public interface Gfx {
 
 	void poly(float[] xy, int color);
 
+	/**
+	 * v5.30: frosted glass over the polygon XY: what is drawn under it blurred, TINT over that
+	 * and a thin EDGE line around it.
+	 */
+	void frost(float[] xy, int tint, int edge);
+
 	/** From now on draw only inside X Y W H, until unclip. */
 	void clip(float x, float y, float w, float h);
 

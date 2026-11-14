@@ -1,4 +1,4 @@
-Aktuelle Version: v.5.25 · 14.11.2026
+Aktuelle Version: v.5.30 · 14.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
 - Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.
@@ -6,7 +6,13 @@ EINSTELLUNGEN
 - Einstellungen: das Menü ☰ ist jetzt ein Fenster mit Bereichen, Schaltern, Farbdesigns und der Leiste System & Support; aktualisieren durch Herunterziehen oder ein Tippen auf „aktualisiert“.
 - Symbolthema: 6 Themen für Wettersymbole (Klassisch, Glänzend, Flach, Realistisch, Atmosphärisch, Kontur), Auswahl mit farbigen Punkten in ☰; in der App und in den Widgets.
 HAUPTBILDSCHIRM
+- 5-Tage-Vorhersage: die Tage 3–5 wechseln alle 3 Sekunden von selbst bis zur ersten Berührung.
 - Großer Kompass: ein Tippen auf einen Ort in der Liste markiert sein Zeichen auf dem Kompass; Orte in derselben Richtung überdecken sich nicht mehr.
+- Hauptbildschirm: die Seite rollt unter dem Glas oben auf und ab, in Abschnitten (Nächste Stunden, 5-Tage-Vorhersage, Wetterdetails); die Tasten und der Akku schweben unten.
+LANDWIRT-MODUS
+- Betriebsstatus: auf dem Bildschirm einer Parzelle, nur wenn nötig, das Urteil zum Spritzen, der Grund und die Risiken der nächsten 24 Stunden.
+- Landwirt-Taste: die Blatt-Taste neben den Tasten schaltet den Landwirt-Modus aus; ein anderer Ort behält ihn.
+- Reiter: der Ort und die Parzellen als Reiter unter dem Namen (quer unten); der Bildschirm einer Parzelle in den Abschnitten 1–4.
 - Design-Verbesserungen und Fehlerbehebungen.
 
 Version 4 (v.4.00 – v.4.52)

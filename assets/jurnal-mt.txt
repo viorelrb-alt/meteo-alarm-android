@@ -1,4 +1,8 @@
-Verżjoni attwali: v.5.25 · 14.11.2026
+Verżjoni attwali: v.5.30 · 14.11.2026
+MODALITÀ TAL-BIDWI
+- Buttuna tal-bidwi: il-buttuna tal-werqa ħdejn il-buttuni titfi l-modalità tal-bidwi; lokalità oħra żżommha.
+- Status operattiv: fuq l-iskrin ta' għalqa, meta jkun meħtieġ biss, is-sentenza għar-raxx, ir-raġuni u r-riskji tal-24 siegħa li ġejjin.
+- Tabs: il-lokalità u l-għelieqi f'tabs taħt l-isem (orizzontali, isfel); l-iskrin ta' għalqa f'taqsimiet 1–4.
 NOTIFIKI
 - Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ☰.
 - Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ☰.
@@ -7,6 +11,8 @@ SETTINGS
 - Tema tal-ikoni: 6 temi tal-ikoni tat-temp (Klassiku, Tleqq, Ċatt, Realistiku, Atmosferiku, Kontorn), jintgħażlu b'tikek ikkuluriti f'☰; fl-app u fuq il-widgets.
 SKRIN EWLIENI
 - Boxxla kbira: mess fuq lokalità fil-lista juri l-marka tagħha fuq il-boxxla; lokalitajiet fl-istess direzzjoni ma jirkbux aktar fuq xulxin.
+- Skrin ewlieni: il-paġna tiskrolla taħt il-ħġieġ ta' fuq, f'taqsimiet (Is-siegħat li ġejjin, Tbassir għal ħamest ijiem, Dettalji tat-temp); il-buttuni u l-batterija jżommu f'wiċċ l-ilma isfel.
+- Tbassir għal ħamest ijiem: il-jiem 3–5 jinbidlu waħedhom kull 3 sekondi sal-ewwel mess.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 4 (v.4.00 – v.4.52)

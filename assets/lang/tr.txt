@@ -951,3 +951,49 @@ Last quarter	Son dördün
 Waning crescent	Küçülen hilal
 Screen off	Ekran kapalı
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Ekran kapalıyken uygulamanın pencereleri 3 saniye, uygulama ise 10 saniye sonra kapanır.
+NEXT HOURS	SONRAKİ SAATLER
+FIVE-DAY FORECAST	BEŞ GÜNLÜK TAHMİN
+WEATHER DETAILS	HAVA AYRINTILARI
+HOURLY WEATHER	SAATLİK HAVA
+SOIL AND CROPS	TOPRAK VE ÜRÜNLER
+PARCEL RISKS AND REPORTS	PARSELİN RİSKLERİ VE RAPORLARI
+tap: soil details	dokun: toprak ayrıntıları
+STATISTICS · PDF	İSTATİSTİK · PDF
+12 hours · day by day · PDF	12 saat · gün gün · PDF
+OPERATIONAL STATUS	OPERASYONEL DURUM
+tap: next window	dokun: sonraki pencere
+Rain until {1} ({2})	Yağmur {1}'e kadar ({2})
+Rain from {1} ({2})	Yağmur {1}'den itibaren ({2})
+the treatment would be washed off the leaves	ilaç yapraklardan yıkanır
+soil {1}	toprak {1}
+FROST at {1} ({2})	DON saat {1} ({2})
+Hoarfrost risk at {1} ({2})	Kırağı riski saat {1} ({2})
+protect sensitive crops	hassas ürünleri koru
+Storm risk: {1}	Fırtına riski: {1}
+SPRAY NOW, UNTIL {1}	ŞİMDİ İLAÇLA, {1}'E KADAR
+GOOD FOR SPRAYING	İLAÇLAMAYA UYGUN
+Wind {1}, no rain now	Rüzgâr {1}, şu an yağmur yok
+good: wind 3–15 km/h, gusts under 25, no rain	iyi: rüzgâr 3–15 km/sa, hamle 25'in altında, yağmursuz
+DON'T SPRAY NOW	ŞİMDİ İLAÇLAMA
+DON'T SPRAY TODAY	BUGÜN İLAÇLAMA
+Active precipitation: rain {1}, {2}/h	Aktif yağış: yağmur {1}, {2}/sa
+over the spraying limit: 40% or 0.1 mm/h	ilaçlama sınırının üstünde: %40 veya 0,1 mm/sa
+Wind {1}, gusts {2}	Rüzgâr {1}, hamle {2}
+over the limit: 15 km/h, gusts 25 km/h	sınırın üstünde: 15 km/sa, hamle 25 km/sa
+Wind too weak: {1}	Rüzgâr çok zayıf: {1}
+under 3 km/h the spray drifts unevenly	3 km/sa altında ilaç düzgün dağılmaz
+Too hot: {1}	Çok sıcak: {1}
+over 28 °C the solution evaporates	28 °C üstünde çözelti buharlaşır
+Dry air: humidity {1}	Kuru hava: nem {1}
+under 40% the drops dry before they settle	%40'ın altında damlalar yerleşmeden kurur
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	☰ içindeki Çiftçi modu anahtarı onu açar; düğmelerin yanındaki yaprak düğmesi kapatır. Her saat, havası ve yağmuruyla tek bir geniş kutudur. Başka bir yer seçmek çiftçi modunu korur.
+Operational status	Operasyonel durum
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Bir parselin ekranında, yalnızca gerektiğinde: ilaçlama kararı (kırmızı, sarı, yeşil), sınırıyla birlikte ana neden ve sonraki 24 saatin riskleri. Dokunmak sonraki iyi pencereyi gösterir.
+A parcel's screen	Parsel ekranı
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Saatlik hava, beş gün, 2 Toprak ve ürünler, 3 Riskler ve raporlar (İstatistik · PDF ile), 4 Hava ayrıntıları.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Adın altındaki sekmeler (yatayda altta): yer ve her parsel için bir sekme; dokunma veya yana kaydırma ekranı değiştirir, + parsel ekler.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Ekranın ortasında buzlu camdan bir pencere (ekran net kalır); X ile ya da dışına dokunarak kapanır. Başlığın altında yer; ▲ ve ▼ kaydırır; kaynak alttadır.
+The main screen	Ana ekran
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Sayfa üstteki camın altında aşağı yukarı hareket eder; düğmeler ve pil altta yüzer. Bölümler: Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları.
+Five-day forecast	Beş günlük tahmin
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Yarın ve öbür gün üstte; altlarında 3–5. günler, siz dokunana kadar her 3 saniyede kendiliğinden ilerler. Hava ayrıntıları satırı 6 saniye sonra biraz kıpırdar.

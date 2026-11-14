@@ -1,5 +1,7 @@
-Geçerli sürüm: v.5.25 · 14.11.2026
+Geçerli sürüm: v.5.30 · 14.11.2026
 ANA EKRAN
+- Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
+- Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
 - Büyük pusula: listedeki bir yere dokunmak işaretini pusulada gösterir; aynı yöndeki yerler artık üst üste binmez.
 AYARLAR
 - Ayarlar: ☰ menüsü artık bölümler, anahtarlar, renk temaları ve Sistem ve destek çubuğu olan bir pencere; yenileme ekranı aşağı çekerek veya “güncellendi”ye dokunarak yapılır.
@@ -7,6 +9,10 @@ AYARLAR
 BILDIRIMLER
 - Depremler: bildirimler yalnızca yerinize en fazla 300 km uzaklıktaki depremler için; ☰ içinden açılır veya kapatılır.
 - Kasırgalar (ABD): yeriniz için kasırga bildirimleri ☰ içinden açılır veya kapatılır.
+ÇIFTÇI MODU
+- Çiftçi düğmesi: düğmelerin yanındaki yaprak düğmesi çiftçi modunu kapatır; başka bir yer onu korur.
+- Operasyonel durum: bir parselin ekranında, yalnızca gerektiğinde, ilaçlama kararı, nedeni ve sonraki 24 saatin riskleri.
+- Sekmeler: yer ve parseller adın altında sekmelerde (yatayda altta); parsel ekranı 1–4. bölümlerde.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 4 (v.4.00 – v.4.52)

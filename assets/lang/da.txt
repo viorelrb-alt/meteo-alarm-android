@@ -1017,3 +1017,49 @@ Last quarter	Sidste kvarter
 Waning crescent	Aftagende segl
 Screen off	Slukket skærm
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Når skærmen er slukket, lukker appens vinduer efter 3 sekunder og appen efter 10.
+NEXT HOURS	NÆSTE TIMER
+FIVE-DAY FORECAST	FEMDAGESPROGNOSE
+WEATHER DETAILS	VEJRDETALJER
+HOURLY WEATHER	VEJRET TIME FOR TIME
+SOIL AND CROPS	JORD OG AFGRØDER
+PARCEL RISKS AND REPORTS	MARKENS RISICI OG RAPPORTER
+tap: soil details	tryk: jorddetaljer
+STATISTICS · PDF	STATISTIK · PDF
+12 hours · day by day · PDF	12 timer · dag for dag · PDF
+OPERATIONAL STATUS	DRIFTSSTATUS
+tap: next window	tryk: næste vindue
+Rain until {1} ({2})	Regn til {1} ({2})
+Rain from {1} ({2})	Regn fra {1} ({2})
+the treatment would be washed off the leaves	midlet ville blive vasket af bladene
+soil {1}	jord {1}
+FROST at {1} ({2})	FROST kl. {1} ({2})
+Hoarfrost risk at {1} ({2})	Risiko for rimfrost kl. {1} ({2})
+protect sensitive crops	beskyt følsomme afgrøder
+Storm risk: {1}	Risiko for uvejr: {1}
+SPRAY NOW, UNTIL {1}	SPRØJT NU, TIL {1}
+GOOD FOR SPRAYING	GODT TIL SPRØJTNING
+Wind {1}, no rain now	Vind {1}, ingen regn nu
+good: wind 3–15 km/h, gusts under 25, no rain	godt: vind 3–15 km/t, vindstød under 25, ingen regn
+DON'T SPRAY NOW	SPRØJT IKKE NU
+DON'T SPRAY TODAY	SPRØJT IKKE I DAG
+Active precipitation: rain {1}, {2}/h	Aktiv nedbør: regn {1}, {2}/t
+over the spraying limit: 40% or 0.1 mm/h	over sprøjtegrænsen: 40 % eller 0,1 mm/t
+Wind {1}, gusts {2}	Vind {1}, vindstød {2}
+over the limit: 15 km/h, gusts 25 km/h	over grænsen: 15 km/t, vindstød 25 km/t
+Wind too weak: {1}	For svag vind: {1}
+under 3 km/h the spray drifts unevenly	under 3 km/t fordeles sprøjtevæsken ujævnt
+Too hot: {1}	For varmt: {1}
+over 28 °C the solution evaporates	over 28 °C fordamper opløsningen
+Dry air: humidity {1}	Tør luft: fugtighed {1}
+under 40% the drops dry before they settle	under 40 % tørrer dråberne, før de lægger sig
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	Kontakten Landmandstilstand i ☰ slår den til; bladknappen ved siden af knapperne slår den fra. Hver time er ét bredt felt med vejr og regn. Et andet sted bevarer landmandstilstanden.
+Operational status	Driftsstatus
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	På en marks skærm, kun når det er nødvendigt: dommen om sprøjtning (rød, gul, grøn), hovedårsagen med grænsen og risiciene for de næste 24 timer. Et tryk viser det næste gode vindue.
+A parcel's screen	En marks skærm
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Vejret time for time, de fem dage, 2 Jord og afgrøder, 3 Risici og rapporter (med Statistik · PDF), 4 Vejrdetaljer.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Faner under navnet (liggende nederst): stedet og én pr. mark; et tryk eller et stryg til siden skifter skærm, + tilføjer en mark.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Et vindue af matteret glas midt på skærmen (skærmen forbliver skarp); det lukkes med X eller et tryk uden for det. Under titlen stedet; ▲ og ▼ ruller; kilden står nederst.
+The main screen	Hovedskærmen
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Siden bevæger sig op og ned under glasset øverst; knapperne og batteriet svæver nederst. Afsnit: Næste timer, Femdagesprognose, Vejrdetaljer.
+Five-day forecast	Femdagesprognose
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	I morgen og i overmorgen øverst; under dem skifter dag 3–5 af sig selv hvert 3. sekund, indtil du rører dem. Rækken Vejrdetaljer flytter sig lidt efter 6 sekunder.

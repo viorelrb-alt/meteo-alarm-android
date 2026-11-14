@@ -1,6 +1,12 @@
-Versiunea curentă: v.5.25 · 14.11.2026
+Versiunea curentă: v.5.30 · 14.11.2026
 ECRAN PRINCIPAL
 - Busola mare: atingerea unei localități din listă îi arată semnul pe busolă; localitățile din aceeași direcție nu se mai suprapun.
+- Ecran principal: pagina se derulează sus-jos sub sticla de sus, pe secțiuni (Următoarele ore, Prognoza pe cinci zile, Detalii meteo); butoanele și bateria plutesc jos.
+- Prognoza pe cinci zile: zilele 3–5 trec singure la 3 secunde, până la prima atingere.
+MOD FERMIER
+- Butonul fermier: butonul cu frunză de lângă butoane oprește modul fermier; altă localitate păstrează modul fermier.
+- Status operațional: pe ecranul parcelei, doar când e nevoie, verdictul pentru stropit, motivul și riscurile următoarelor 24 de ore.
+- Tab-uri: localitatea și parcelele în tab-uri sub nume (în peisaj, jos); ecranul parcelei pe secțiunile 1–4.
 NOTIFICĂRI
 - Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ☰.
 - Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ☰.

@@ -1,9 +1,15 @@
-Súčasná verzia: v.5.25 · 14.11.2026
+Súčasná verzia: v.5.30 · 14.11.2026
 HLAVNÁ OBRAZOVKA
+- Hlavná obrazovka: stránka sa posúva pod sklom hore, po častiach (Nasledujúce hodiny, Predpoveď na päť dní, Podrobnosti počasia); tlačidlá a batéria plávajú dole.
+- Predpoveď na päť dní: dni 3–5 sa posúvajú samy každé 3 sekundy až do prvého dotyku.
 - Veľký kompas: ťuknutie na obec v zozname ukáže jej značku na kompase; obce v rovnakom smere sa už neprekrývajú.
 NASTAVENIA
 - Motív ikon: 6 motívov ikon počasia (Klasické, Lesklé, Ploché, Realistické, Atmosférické, Obrysové), voľba farebnými bodkami v ☰; v aplikácii aj vo widgetoch.
 - Nastavenia: ponuka ☰ je teraz okno s časťami, prepínačmi, farebnými motívmi a lištou Systém a podpora; obnovuje sa potiahnutím obrazovky nadol alebo ťuknutím na „aktualizované“.
+REŽIM FARMÁRA
+- Karty: obec a pozemky v kartách pod názvom (na šírku dole); obrazovka pozemku v častiach 1–4.
+- Prevádzkový stav: na obrazovke pozemku, len keď treba, verdikt pre postrek, jeho dôvod a riziká nasledujúcich 24 hodín.
+- Tlačidlo farmára: tlačidlo s listom vedľa tlačidiel vypne režim farmára; iná obec ho zachová.
 UPOZORNENIA
 - Tornáda (USA): upozornenia na tornáda pre vašu obec sa zapínajú a vypínajú v ☰.
 - Zemetrasenia: upozornenia len na zemetrasenia najviac 300 km od vášho miesta; zapínajú sa a vypínajú v ☰.

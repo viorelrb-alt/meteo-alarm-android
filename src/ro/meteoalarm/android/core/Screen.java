@@ -124,7 +124,7 @@ public final class Screen {
 			alerts = new Strip(false), rain = new Strip(false);
 
 	public Strip[] strips() {
-		return new Strip[] { hours, days, info, grid, alerts, rain };
+		return new Strip[] { hours, days, info, grid, alerts, rain, days2, tabs };
 	}
 
 	/**
@@ -217,6 +217,29 @@ public final class Screen {
 			return;
 		}
 		g.rect(0, 0, cw, ch, c.page);
+		infoIds = new ArrayList<String>();
+		neo = !tablet;
+		btnFarm[2] = 0;
+		pillArea[2] = 0;
+		battArea[2] = 0;
+		statusArea[2] = 0;
+		if (neo) {
+			// v5.30: the phones' three sheets of glass (the tablet as before).
+			tagLow = statsLow = false;
+			lowPages = 0;
+			tabs.area[2] = 0;
+			if (cw > ch) drawLandscape(ch);
+			else drawPortrait(ch);
+			barArea[2] = 0;
+			btnMoon[2] = 0;
+			if (layer == 1) return;
+			if (brightBar) drawBrightBar(ch);
+			sizeArea[2] = 0;
+			if (sizeBar) drawSizeBar(ch);
+			return;
+		}
+		pageS.area[2] = 0;
+		btnMenu[0] = 40; btnMenu[1] = 24; btnMenu[2] = 64; btnMenu[3] = 64;
 		button(btnMenu);
 		for (int k = 0; k < 3; k++) g.roundRect(59, 43 + k * 12, 26, 3.5f, 1.75f, c.ink);
 		// Refreshing is in the ☰ menu and by pulling the screen down: the clock takes the corner.
@@ -273,151 +296,798 @@ public final class Screen {
 		ctext(true, 46, by + bw / 2 - 25, x + bw / 2, "A", barIcon);
 	}
 
-	private void drawPortrait(float ch) {
-		float fb = ch - 76;
-		for (Strip st : strips()) st.area[2] = 0;
-		btnCity[1] = fb;
-		btnLocate[1] = fb;
-		warnArea[2] = 0;
-		alerts.area[2] = 0;
-		// The town next to the menu button, above the line.
-		// v3.70: with the clock and the date in the camera band the town has the whole row.
-		float lw = band > 0 ? cw - 124 - 40 : 340;
-		String label = headName(lw);
-		float lp = fit(true, 40, lw, label);
-		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
-		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
-		if (w == null) {
-			String msg = error.length() > 0 ? error : T.loading;
-			float p = fit(true, 40, 640, msg);
-			ctext(true, p, 300, W / 2, msg, c.ink);
-			footer(fb);
-			return;
+	// --- v5.30 (Viorel's mockups): phones in three sheets of frosted glass ---------------------
+	// Bottom: the page, moved up and down by the finger. Middle: the glass plate (portrait: a
+	// rounded pane at the top with the date, "updated", the connection, the clock, ☰ and the name,
+	// in farmer mode the tabs; landscape: one plate shaped like an upside-down L with the header,
+	// the warnings, the weather now and the battery). Top: the warning boxes and the floating
+	// capsules at the bottom (the buttons, the farmer button, the battery).
+
+	/** v5.30: the page (vertical), the farmer's tabs, the carousel of days 3–5. */
+	public final Strip pageS = new Strip(true), tabs = new Strip(false), days2 = new Strip(false);
+	/** v5.30: the main screens' tabs in farmer mode: the town first, then the parcels (a "+" follows). */
+	public String[] tabNames;
+	/** v5.30: one carousel step (units); the small farmer button; the status card. */
+	public float days2Step;
+	public final float[] btnFarm = { 0, 0, 0, 0 }, statusArea = { 0, 0, 0, 0 };
+	/** v5.30: 1 = only the page (for the blurred copy under the glass); 0 = all. */
+	public int layer;
+	/** v5.30: the floating capsules (taps there are not the page's). */
+	private final float[] pillArea = { 0, 0, 0, 0 }, battArea = { 0, 0, 0, 0 };
+	private final List<float[]> tabHits = new ArrayList<float[]>();
+	private int lastTabPage = -1;
+	/** v5.30: the glass and the moving page are drawn (phones); the tablet keeps its layout. */
+	private boolean neo;
+
+	/** Draws through G moved by DX, DY (the page moved by the finger). */
+	private static final class Shift implements Gfx {
+		final Gfx g;
+		final float dx, dy;
+
+		Shift(Gfx g, float dx, float dy) {
+			this.g = g;
+			this.dx = dx;
+			this.dy = dy;
 		}
 
-		// The five days are one row of boxes now (no small columns): their room goes to the weather now.
-		// Proposal (farmer, merged boxes): the boxes are lower, the weather now gets their room.
-		boolean prop = farmer && farmMerged;
-		float MH = 286, grow = prop ? 494 - MH - 18 : 0;
-		float nowBot = 663 + grow + Math.max(0, ch - BASE_H);
-		// v5.01 (Viorel): the feels-like card 16 units higher, clear of the boxes under it.
-		float fy = nowBot - (prop ? 4 : 20);
-		dots(W / 2, 112, pages, page);
-		// v3.50 (Viorel): the "Statistics · PDF" button under the information / warning / earthquake
-		// boxes when they show; in their place (under the top line) when they do not.
-		// v5.01 (Viorel): with "updated" in the camera band the warnings move up under the town.
-		// v5.25 (Viorel): under "FARMER MODE" / the dots with a gap (the boxes touched them).
-		float top = drawWarnBoxes(40, band > 0 ? (pages > 1 || farmer ? 154 : 108) : 158, 678, 2, 1), sb;
-		if (top > 0) {
-			sb = statsButton(40, top + 12, 58, 400, 26) > 40 ? 70 : 0;
-			top += sb;
-		} else sb = statsButton(40, 150, 58, 400, 26) > 40 ? 72 : 0;
-		String[] d = T.describe(w.code, w.isDay);
-		float nt = top > 0 ? top + 10 : pages > 1 ? 124 + sb : 104;
-		if (top > 0) drawNowSplit(d[0], 40, nt, 718, prop ? fy - 8 : fy + 4);
-		else if (prop) drawNowHalves(d[0], 40, nt, 718, fy - 8, fy + 4 - grow);
-		else drawNowStack(d[0], 40, nt, 718, fy + 4);
-		setNow(40, nt, 678, fy + 80 - nt);
-
-		// Description and wind on the right, "feels like" and high / low on the left.
-		if (prop) {
-			nowTexts(d[1], fy - 26, 40, 718);
-		} else {
-		// v5.00 (Viorel): feels-like, high / low, the sky and the wind in a glass card.
-		card(40, fy - 12, 678, 88, 24);
-		float sp = skySize(36, 300, d[1]);
-		rtext(true, sp, fy - 2, 694, d[1], c.ink);
-		windLine(28, fy + 38, 694);
-		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 2, 64, feelsText(), c.ink);
-		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			ltext(false, 28, fy + 38, 64, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
+		public void rect(float x, float y, float w, float h, int c) {
+			g.rect(x + dx, y + dy, w, h, c);
 		}
 
-		float y0 = fy + (prop ? 80 : 96);
-		// Both lines sit 15 units from the boxes above and under them.
-		// The precipitation box takes the whole row; the hour boxes after it still show the next one's edge.
-		if (prop) {
-			drawMergedRow(40, y0, 678, MH);
-			y0 -= 494 - MH - 0;
-			y0 += 0;
-		} else if (false) drawMergedRow(40, y0, 678, 494);
+		public void roundRect(float x, float y, float w, float h, float r, int c) {
+			g.roundRect(x + dx, y + dy, w, h, r, c);
+		}
+
+		public void text(boolean b, float px, float top, float left, String t, int c) {
+			g.text(b, px, top + dy, left + dx, t, c);
+		}
+
+		public float width(boolean b, float px, String t) {
+			return g.width(b, px, t);
+		}
+
+		public void icon(String a, float x, float y, float w, float h, int c) {
+			g.icon(a, x + dx, y + dy, w, h, c);
+		}
+
+		public void image(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float al) {
+			g.image(a, sx, sy, sw, sh, x + dx, y + dy, w, h, al);
+		}
+
+		public void sprite(String a, int sx, int sy, int sw, int sh, float x, float y, float w, float h, int c, float al, float rot, float px, float py) {
+			g.sprite(a, sx, sy, sw, sh, x + dx, y + dy, w, h, c, al, rot, px + dx, py + dy);
+		}
+
+		public void arc(float cx, float cy, float r, float st, float sw, float k, int c) {
+			g.arc(cx + dx, cy + dy, r, st, sw, k, c);
+		}
+
+		public void poly(float[] xy, int c) {
+			g.poly(move(xy), c);
+		}
+
+		public void frost(float[] xy, int tint, int edge) {
+			g.frost(move(xy), tint, edge);
+		}
+
+		private float[] move(float[] xy) {
+			float[] q = new float[xy.length];
+			for (int k = 0; k < xy.length; k += 2) {
+				q[k] = xy[k] + dx;
+				q[k + 1] = xy[k + 1] + dy;
+			}
+			return q;
+		}
+
+		public void clip(float x, float y, float w, float h) {
+			g.clip(x + dx, y + dy, w, h);
+		}
+
+		public void unclip() {
+			g.unclip();
+		}
+	}
+
+	/** The polygon XY (corners) with each corner rounded by R[k] (a quadratic curve), as points. */
+	private static float[] roundPoly(float[] xy, float[] r) {
+		int n = xy.length / 2, seg = 8;
+		float[] out = new float[n * (seg + 1) * 2];
+		int o = 0;
+		for (int k = 0; k < n; k++) {
+			float vx = xy[2 * k], vy = xy[2 * k + 1];
+			float px = xy[2 * ((k + n - 1) % n)], py = xy[2 * ((k + n - 1) % n) + 1];
+			float nx = xy[2 * ((k + 1) % n)], ny = xy[2 * ((k + 1) % n) + 1];
+			float la = (float) Math.hypot(px - vx, py - vy), lb = (float) Math.hypot(nx - vx, ny - vy);
+			float rr = Math.min(r[k], Math.min(la, lb) / 2);
+			float ax = vx + (px - vx) / la * rr, ay = vy + (py - vy) / la * rr, bx = vx + (nx - vx) / lb * rr, by = vy + (ny - vy) / lb * rr;
+			for (int s = 0; s <= seg; s++) {
+				float t = s / (float) seg, u = 1 - t;
+				out[o++] = u * u * ax + 2 * u * t * vx + t * t * bx;
+				out[o++] = u * u * ay + 2 * u * t * vy + t * t * by;
+			}
+		}
+		return out;
+	}
+
+	private static float[] roundRectPoly(float x, float y, float w, float h, float r) {
+		return roundPoly(new float[] { x, y, x + w, y, x + w, y + h, x, y + h }, new float[] { r, r, r, r });
+	}
+
+	/** The glass's see-through tint and its thin edge. */
+	private int frostTint() {
+		return dark ? (mix(c.page, c.ink, 0.04f) & 0xFFFFFF) | 0xB4000000 : (mix(c.page, Gfx.WHITE, 0.55f) & 0xFFFFFF) | 0xB0000000;
+	}
+
+	private int frostEdge() {
+		return (c.ink & 0xFFFFFF) | (dark ? 0x3A000000 : 0x2C000000);
+	}
+
+	/** A sheet of frosted glass (not in the page's own copy). */
+	private void frost(float[] xy) {
+		if (layer != 1) g.frost(xy, frostTint(), frostEdge());
+	}
+
+	private int warnCount() {
+		return warnGroups().size() + (quake() != null ? 1 : 0);
+	}
+
+	/** ☰ at X, Y. */
+	private void menuButton(float x, float y) {
+		btnMenu[0] = x; btnMenu[1] = y; btnMenu[2] = 64; btnMenu[3] = 64;
+		button(btnMenu);
+		for (int k = 0; k < 3; k++) g.roundRect(x + 19, y + 19 + k * 12, 26, 3.5f, 1.75f, c.ink);
+	}
+
+	/** The marks of the hits drawn so far (to move those of the page with it). */
+	private int[] hitMark() {
+		return new int[] { hourHits.size(), rainHits.size(), infoHits.size(), dayHits.size() };
+	}
+
+	private static void moveList(List<float[]> l, int from, float dy) {
+		for (int k = from; k < l.size(); k++) l.get(k)[2] += dy;
+	}
+
+	/** Keeps area A (x, y, w, h) between TOP and BOT; nothing left: w 0. */
+	private static void keepIn(float[] a, float top, float bot) {
+		if (a[2] <= 0) return;
+		float y0 = Math.max(a[1], top), y1 = Math.min(a[1] + a[3], bot);
+		if (y1 <= y0) a[2] = 0;
 		else {
-		chartFull = true;
-		drawNextHours(40, y0, 678, 264, false);
-		chartFull = false;
+			a[1] = y0;
+			a[3] = y1 - y0;
 		}
-		if (farmer && farmMerged) { }
-		else if (farmer) drawRainRow(40, y0 + 296, 678, 198);
-		else drawDayStrip(40, y0 + 296, 678);
-		// A line over the row of info boxes.
-		drawInfoStrip(40, y0 + 524, 678, 178);
-		footer(fb);
+	}
+
+	/** The page was drawn DY lower than it shows: its hits and rows move up with it. */
+	private void pageHits(int[] m, float dy, float top, float bot) {
+		moveList(hourHits, m[0], dy);
+		moveList(rainHits, m[1], dy);
+		moveList(infoHits, m[2], dy);
+		moveList(dayHits, m[3], dy);
+		for (Strip st : new Strip[] { hours, days, days2, info, grid, rain })
+			if (st.area[2] > 0) {
+				st.area[1] += dy;
+				keepIn(st.area, top, bot);
+			}
+		for (float[] a : new float[][] { nowArea, precipArea, btnStats, statusArea })
+			if (a[2] > 0) a[1] += dy;
+		for (int j = 0; j < parts; j++) partArea[j][1] += dy;
+		keepIn(nowArea, top, bot);
+	}
+
+	/** v5.30: a tap at X, Y is on the page (not on the glass or the capsules). */
+	public boolean inPage(float x, float y) {
+		if (!neo) return true;
+		float[] a = pageS.area;
+		if (a[2] <= 0 || x < a[0] || x > a[0] + a[2] || y < a[1] || y > a[1] + a[3]) return false;
+		for (float[] b : new float[][] { pillArea, battArea, btnFarm, tabs.area })
+			if (b[2] > 0 && x >= b[0] - 8 && x <= b[0] + b[2] + 8 && y >= b[1] - 8 && y <= b[1] + b[3] + 8) return false;
+		return true;
+	}
+
+	/** The section title: a number in a disc (parcels), the title, a line to the right and a hint at the end. */
+	private float section(float x, float y, float wd, String num, String title, String hint) {
+		float p = 23, tx = x, mid = y + 20;
+		if (num != null) {
+			g.roundRect(x, mid - 15, 30, 30, 15, mix(glass(), c.accent, dark ? 0.35f : 0.22f));
+			ctext(true, 18, mid - 10, x + 15, num, c.ink);
+			tx = x + 44;
+		}
+		float hw = hint != null ? g.width(false, 19, hint) : 0;
+		float tp = fit(true, p, wd - (tx - x) - hw - 40, title);
+		ltext(true, tp, mid - tp * 0.56f, tx, title, c.dim);
+		float lx = tx + g.width(true, tp, title) + 18, rx = x + wd - (hint != null ? hw + 16 : 0);
+		if (rx - lx > 20) g.rect(lx, mid - 1, rx - lx, 2, rule());
+		if (hint != null) rtext(false, 19, mid - 11, x + wd, hint, c.dim);
+		return y + 52;
+	}
+
+	/** The feels-like card: feels like and high / low at the left, the sky and the wind at the right. */
+	private void feelsCard(float x, float y, float wd) {
+		String[] d = T.describe(w.code, w.isDay);
+		card(x, y, wd, 88, 24);
+		float sp = skySize(36, (wd - 60) / 2, d[1]), fy = y + 12;
+		rtext(true, sp, fy - 2, x + wd - 24, d[1], c.ink);
+		windLine(28, fy + 38, x + wd - 24);
+		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 2, x + 24, feelsText(), c.ink);
+		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
+			ltext(false, 28, fy + 38, x + 24, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
+	}
+
+	/** v5.30: the parcel's boxes by section: soil and crops, risks and reports, the rest. */
+	private List<String>[] parcelGroups() {
+		List<String> all = infoBoxes(), soil = new ArrayList<String>(), risk = new ArrayList<String>(), rest = new ArrayList<String>();
+		List<String> s = java.util.Arrays.asList("r24", "fWater", "pSoilM", "pSoilT", "fGdd"),
+				r = java.util.Arrays.asList("fSpray", "fStorm", "fTrend", "uNws", "uDrought", "uFire", "uHail");
+		for (String id : s) if (all.contains(id)) soil.add(id);
+		for (String id : r) if (all.contains(id)) risk.add(id);
+		for (String id : all) if (!s.contains(id) && !r.contains(id)) rest.add(id);
+		@SuppressWarnings("unchecked")
+		List<String>[] out = new List[] { soil, risk, rest };
+		return out;
+	}
+
+	/** The page under the glass, from TOP, WD wide; NOW_H > 0: the weather now and the feels-like card first. Returns its bottom. */
+	private float pageBody(float x, float top, float wd, float nowH) {
+		float y = top;
+		boolean pc = parcel != null && farmer;
+		if (nowH > 0) {
+			String[] d = T.describe(w.code, w.isDay);
+			drawNowSplit(d[0], x, y, x + wd, y + nowH);
+			setNow(x, y, wd, nowH);
+			y += nowH + 6;
+			feelsCard(x, y, wd);
+			y += 88 + 26;
+		}
+		if (pc) {
+			float sh = drawStatus(x, y, wd);
+			if (sh > 0) y += sh + 26;
+		}
+		y = section(x, y, wd, pc ? "1" : null, pc ? Tr.t("HOURLY WEATHER", "VREMEA PE ORE") : Tr.t("NEXT HOURS", "URMĂTOARELE ORE"),
+				farmer && farmMerged ? Tr.t("tap: soil details", "atinge: detalii sol") : null);
+		if (farmer && farmMerged) {
+			drawMergedRow(x, y, wd, 286);
+			y += 286;
+		} else {
+			chartFull = true;
+			drawNextHours(x, y, wd, 264, false);
+			chartFull = false;
+			y += 264;
+			if (farmer) {
+				drawRainRow(x, y + 16, wd, 198);
+				y += 16 + 198;
+			}
+		}
+		y = section(x, y + 26, wd, null, Tr.t("FIVE-DAY FORECAST", "PROGNOZA PE CINCI ZILE"), null);
+		y = drawFiveDays(x, y, wd, nowH > 0) + 26;
+		if (pc) {
+			List<String>[] gr = parcelGroups();
+			if (!gr[0].isEmpty()) {
+				y = section(x, y, wd, "2", Tr.t("SOIL AND CROPS", "STAREA SOLULUI ȘI CULTURI"), null);
+				y = drawBoxRows(gr[0], x, y, wd) + 26;
+			}
+			y = section(x, y, wd, "3", Tr.t("PARCEL RISKS AND REPORTS", "RISCURI ȘI RAPOARTE PARCELĂ"), null);
+			if (!gr[1].isEmpty()) y = drawBoxRows(gr[1], x, y, wd) + 16;
+			y = statsCard(x, y, wd) + 26;
+			y = section(x, y, wd, "4", Tr.t("WEATHER DETAILS", "DETALII METEO"), null);
+			drawInfoStrip(gr[2], x, y, wd, 178);
+		} else {
+			y = section(x, y, wd, null, Tr.t("WEATHER DETAILS", "DETALII METEO"), null);
+			drawInfoStrip(infoBoxes(), x, y, wd, 178);
+		}
+		return y + 178;
 	}
 
 	/**
-	 * Landscape in three parts: the weather now on the left; a line; in the middle the next hours
-	 * (or the precipitation chart) on top and the five days under them, both moved sideways by the
-	 * finger; on the right the info boxes two by two, moved up and down.
+	 * v5.30: tomorrow and the day after in one row; under them days 3–5: in portrait a carousel
+	 * (it moves on by itself every 3 s, WeatherView), in landscape the three side by side.
 	 */
-	private void drawLandscape(float ch) {
-		float fb = ch - 76;
-		btnCity[1] = fb;
+	private float drawFiveDays(float x, float y, float wd, boolean carousel) {
+		int n = Math.min(5, w.dayDates.size());
+		days.area[2] = 0;
+		days2.area[2] = 0;
+		if (n == 0) return y;
+		float gap = 16, bw1 = (wd - gap) / 2, h1 = 198;
+		for (int k = 0; k < Math.min(2, n); k++) drawDayCardW(x + k * (bw1 + gap), y, bw1, h1, k, k == 0 ? T.day1 : T.day2);
+		int m = n - 2;
+		if (m <= 0) return y + h1;
+		y += h1 + gap;
+		float h2 = 176;
+		if (!carousel || m < 3) {
+			float bw = (wd - gap * 2) / 3;
+			for (int j = 0; j < m; j++) drawDayMini(x + j * (bw + gap), y, bw, h2, j + 2);
+			return y + h2;
+		}
+		float bw = (wd - 2 * gap) / 2.6f, step = bw + gap;
+		days2Step = step;
+		int reps = 120;
+		float[] starts = new float[reps];
+		for (int k = 0; k < reps; k++) starts[k] = k * step;
+		days2.set(starts, (reps - 1) * step);
+		days2.area[0] = x; days2.area[1] = y; days2.area[2] = wd; days2.area[3] = h2;
+		float sc = days2.scroll;
+		int first = (int) Math.floor(sc / step);
+		g.clip(x - 2, y - 2, wd + 4, h2 + 4);
+		for (int j = first - 1; j <= first + 3; j++) {
+			float bx = x + j * step - sc;
+			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
+			drawDayMini(bx, y, bw, h2, 2 + ((j % 3) + 3) % 3);
+		}
+		g.unclip();
+		return y + h2;
+	}
+
+	/** A smaller day box: the weekday, the icon with the high and the low, the sky. */
+	private void drawDayMini(float left, float top, float bw, float h, int k) {
+		dayHits.add(new float[] { k, left * hs, top * hs, bw * hs, h * hs });
+		box(left, top, bw, h, 46);
+		float cx = left + bw / 2;
+		head(top, 46, cx, bw - 16, T.weekdayUp(w.dayDates.get(k), true), 0);
+		String[] d = T.describe(w.dayCodes.get(k), true);
+		String hi = t(w.dayHi.get(k)) + "°", lo = " / " + t(w.dayLo.get(k)) + "°";
+		float ic = 58, hp = 50, lp, wh, wl;
+		while (true) {
+			lp = hp * 0.56f;
+			wh = g.width(true, hp, hi);
+			wl = g.width(false, lp, lo);
+			if (ic + 8 + wh + wl <= bw - 20 || hp < 26) break;
+			hp = hp * 93 / 100;
+			ic = Math.max(36, ic * 95 / 100);
+		}
+		float gx = left + (bw - ic - 8 - wh - wl) / 2, my = top + 46 + 42;
+		dayIcon(d[0], gx, my - ic / 2, ic);
+		ltext(true, hp, my - hp * 0.56f, gx + ic + 8, hi, c.ink);
+		ltext(false, lp, my - hp * 0.56f + (hp - lp) * 0.81f, gx + ic + 8 + wh, lo, c.dim);
+		ctext(false, fit(false, 25, bw - 16, d[1]), top + h - 50, cx, d[1], c.ink);
+	}
+
+	/** Boxes in rows of three (a last two or one spread across), each 184 high; returns the bottom. */
+	private float drawBoxRows(List<String> ids, float x, float y, float wd) {
+		float gap = 16, h = 184;
+		int i = 0;
+		while (i < ids.size()) {
+			int rem = ids.size() - i, per = rem == 4 || rem == 2 ? 2 : rem == 1 ? 1 : 3;
+			float bw = (wd - gap * (per - 1)) / per, tp = 31;
+			for (int j = 0; j < per; j++) {
+				String id = ids.get(i + j);
+				if (!id.equals("r24") && !xbox(id)) tp = fit(true, tp, bw - 16, infoTitle(id));
+			}
+			for (int j = 0; j < per; j++) {
+				float bx = x + j * (bw + gap);
+				int k = infoIds.size();
+				infoIds.add(ids.get(i + j));
+				// The sixth value marks a box outside the moving rows (it is always whole on the page).
+				infoHits.add(new float[] { k, bx * hs, y * hs, bw * hs, h * hs, 1 });
+				drawInfoBox(ids.get(i + j), bx, y, bw, h, tp);
+			}
+			i += per;
+			y += h + gap;
+		}
+		return y - gap;
+	}
+
+	/** v5.30: "Statistics · PDF" as a wide card (a parcel's screen); returns its bottom. */
+	private float statsCard(float x, float y, float wd) {
+		float h = 72;
+		btnStats[0] = x; btnStats[1] = y; btnStats[2] = wd; btnStats[3] = h;
+		card(x, y, wd, h, 24);
+		String s = Tr.t("STATISTICS · PDF", "STATISTICĂ · PDF"), sub = Tr.t("12 hours · day by day · PDF", "12 ore · zi cu zi · PDF");
+		float p = fit(true, 24, wd * 0.5f, s);
+		ltext(true, p, y + h / 2 - p * 0.56f, x + 24, s, c.dim);
+		float sx = x + 24 + g.width(true, p, s) + 22;
+		ltext(false, fit(false, 21, x + wd - 60 - sx, sub), y + h / 2 - 12, sx, sub, c.dim);
+		float ax = x + wd - 34, ay = y + h / 2;
+		g.poly(new float[] { ax - 6, ay - 11, ax - 1, ay - 11, ax + 7, ay, ax - 1, ay + 11, ax - 6, ay + 11, ax + 2, ay }, c.accent);
+		return y + h;
+	}
+
+	// --- v5.30: STATUS OPERAȚIONAL (a parcel's screen, only when needed) ---------------------
+
+	/** { level 0 red / 1 yellow / 2 green, verdict, factor, its threshold, then pairs of risk lines }; null: nothing to say. */
+	private List<String> statusLines() {
+		int i = farm == null ? -1 : farm.nowIndex(now);
+		if (i < 0) return null;
+		int s = Farm.spray(farm, i);
+		if (s < 0) return null;
+		List<String> risks = new ArrayList<String>();
+		// The rain of the next 24 hours: when it starts (or ends, when it rains now) and how much.
+		int a = -1, b = -1;
+		double sum = 0;
+		for (int j = i; j < Math.min(farm.size(), i + 24); j++) {
+			boolean wet = (!Double.isNaN(at(farm.precip, j)) && at(farm.precip, j) >= 0.1) || (!Double.isNaN(at(farm.prob, j)) && at(farm.prob, j) >= 40);
+			if (wet) {
+				if (a < 0) a = j;
+				sum += nz(at(farm.precip, j));
+				b = j + 1;
+			} else if (a >= 0 && j - b >= 2) break;
+		}
+		if (a >= 0) {
+			if (a == i && b > 0) risks.add(fill(Tr.t("Rain until {1} ({2})", "Ploaie până la {1} ({2})"), Texts.clock(farm.hourOf(Math.min(b, farm.size() - 1)), clk12), mm(sum)));
+			else risks.add(fill(Tr.t("Rain from {1} ({2})", "Ploaie de la {1} ({2})"), Texts.clock(farm.hourOf(a), clk12), mm(sum)));
+			risks.add(Tr.t("the treatment would be washed off the leaves", "soluția ar fi spălată de pe frunze"));
+		}
+		double lo = Double.NaN, slo = Double.NaN;
+		int lk = -1;
+		for (int j = i; j < Math.min(farm.size(), i + 24); j++) {
+			if (!Double.isNaN(at(farm.temp, j)) && (Double.isNaN(lo) || at(farm.temp, j) < lo)) {
+				lo = at(farm.temp, j);
+				lk = j;
+			}
+			if (!Double.isNaN(at(farm.soilT, j)) && (Double.isNaN(slo) || at(farm.soilT, j) < slo)) slo = at(farm.soilT, j);
+		}
+		if (!Double.isNaN(lo) && (lo <= 3 || (!Double.isNaN(slo) && slo <= 0))) {
+			boolean frost = lo <= 0;
+			String v = deg(lo) + (!Double.isNaN(slo) ? ", " + fill(Tr.t("soil {1}", "sol {1}"), deg(slo), "") : "");
+			risks.add(fill(frost ? Tr.t("FROST at {1} ({2})", "ÎNGHEȚ la {1} ({2})") : Tr.t("Hoarfrost risk at {1} ({2})", "Risc de BRUMĂ la {1} ({2})"), Texts.clock(farm.hourOf(lk), clk12), v));
+			risks.add(Tr.t("protect sensitive crops", "protejează culturile sensibile"));
+		}
+		double[] st = Farm.storm(farm, i, 24);
+		int sl = Farm.stormLevel(st[0]);
+		if (sl >= 2) {
+			risks.add(fill(Tr.t("Storm risk: {1}", "Risc de furtună: {1}"), stormWord(sl), "") + (st[1] >= 0 ? " · " + Texts.clock(farm.hourOf((int) st[1]), clk12) : ""));
+			risks.add("CAPE " + Math.round(st[0]) + " J/kg");
+		}
+		if (s == 0 && risks.isEmpty()) return null;
+		List<String> out = new ArrayList<String>();
+		int[] wdw = Farm.sprayWindow(farm, s == 0 ? i : i + 1, 24);
+		String today = Farm.date(now, 0);
+		boolean laterToday = wdw[0] > 0 && farm.hourOf(wdw[0]).length() > 0 && farm.time[wdw[0]].startsWith(today);
+		if (s == 0) {
+			out.add("2");
+			out.add(wdw[1] > 0 ? fill(Tr.t("SPRAY NOW, UNTIL {1}", "STROPEȘTE ACUM, PÂNĂ LA {1}"), Texts.clock(farm.hourOf(wdw[1]), clk12), "") : Tr.t("GOOD FOR SPRAYING", "BUN DE STROPIT"));
+			out.add(fill(Tr.t("Wind {1}, no rain now", "Vânt {1}, fără ploaie acum"), kmh(at(farm.wind, i)), ""));
+			out.add(Tr.t("good: wind 3–15 km/h, gusts under 25, no rain", "bun: vânt 3–15 km/h, rafale sub 25, fără ploaie"));
+		} else {
+			out.add(s == 2 || s == 3 ? "0" : "1");
+			out.add(laterToday ? Tr.t("DON'T SPRAY NOW", "NU STROPI ACUM") : Tr.t("DON'T SPRAY TODAY", "NU STROPI AZI"));
+			if (s == 3) {
+				int p = (int) Math.round(nz(at(farm.prob, i)));
+				out.add(fill(Tr.t("Active precipitation: rain {1}, {2}/h", "Precipitații active: ploaie {1}, {2}/h"), p + "%", mm(nz(at(farm.precip, i)))));
+				out.add(Tr.t("over the spraying limit: 40% or 0.1 mm/h", "peste pragul de stropit: 40% sau 0,1 mm/h"));
+			} else if (s == 2) {
+				out.add(fill(Tr.t("Wind {1}, gusts {2}", "Vânt {1}, rafale {2}"), kmh(at(farm.wind, i)), Double.isNaN(at(farm.gust, i)) ? "–" : kmh(at(farm.gust, i))));
+				out.add(Tr.t("over the limit: 15 km/h, gusts 25 km/h", "peste prag: 15 km/h, rafale 25 km/h"));
+			} else if (s == 1) {
+				out.add(fill(Tr.t("Wind too weak: {1}", "Vânt prea slab: {1}"), kmh(at(farm.wind, i)), ""));
+				out.add(Tr.t("under 3 km/h the spray drifts unevenly", "sub 3 km/h stropirea nu se așază uniform"));
+			} else if (s == 4) {
+				out.add(fill(Tr.t("Too hot: {1}", "Prea cald: {1}"), deg(at(farm.temp, i)), ""));
+				out.add(Tr.t("over 28 °C the solution evaporates", "peste 28 °C soluția se evaporă"));
+			} else {
+				out.add(fill(Tr.t("Dry air: humidity {1}", "Aer uscat: umiditate {1}"), Math.round(nz(at(farm.hum, i))) + "%", ""));
+				out.add(Tr.t("under 40% the drops dry before they settle", "sub 40% picăturile se usucă înainte să se așeze"));
+			}
+		}
+		out.addAll(risks);
+		return out;
+	}
+
+	private static String fill(String s, String a, String b) {
+		return s.replace("{1}", a).replace("{2}", b);
+	}
+
+	/** v5.30: the status card at X, Y; returns its height (0: not needed, nothing drawn). */
+	private float drawStatus(float x, float y, float wd) {
+		statusArea[2] = 0;
+		List<String> l = statusLines();
+		if (l == null) return 0;
+		int lvl = Integer.parseInt(l.get(0));
+		int strong = lvl == 0 ? 0xFFD94848 : lvl == 1 ? 0xFFE3B341 : 0xFF4FAE6A;
+		int nr = (l.size() - 4) / 2;
+		float h = 64 + 52 + 20 + 70 + nr * 62 + 16;
+		statusArea[0] = x; statusArea[1] = y; statusArea[2] = wd; statusArea[3] = h;
+		g.roundRect(x, y, wd, h, 24, strong);
+		card(x + 7, y, wd - 7, h, 24);
+		String title = Tr.t("OPERATIONAL STATUS", "STATUS OPERAȚIONAL"), hint = Tr.t("tap: next window", "atinge: fereastra următoare");
+		float hp = fit(true, 21, wd * 0.5f, title), tw = g.width(true, hp, title), ph = hp * 1.45f, px = x + 26, py = y + 16;
+		g.roundRect(px, py, tw + 26, ph, ph / 2, mix(glass(), strong, dark ? 0.32f : 0.24f));
+		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, dark ? mix(strong, Gfx.WHITE, 0.35f) : mix(strong, Gfx.BLACK, 0.45f));
+		rtext(false, fit(false, 19, wd - tw - 90, hint), py + 6, x + wd - 22, hint, c.dim);
+		float ty = y + 64, lx = x + 30, rw = wd - 52;
+		ltext(true, fit(true, 36, rw, l.get(1)), ty, lx, l.get(1), c.ink);
+		ty += 52;
+		g.rect(lx, ty, rw, 2, rule());
+		ty += 20;
+		statusRow(lx, ty, rw, "1", l.get(2), l.get(3));
+		ty += 70;
+		for (int k = 0; k < nr; k++) {
+			g.rect(lx, ty - 10, rw, 2, rule());
+			statusRow(lx, ty, rw, "!", l.get(4 + 2 * k), l.get(5 + 2 * k));
+			ty += 62;
+		}
+		return h;
+	}
+
+	private void statusRow(float x, float y, float wd, String mark, String a, String b) {
+		g.roundRect(x, y + 2, 30, 30, 15, mix(glass(), c.accent, dark ? 0.3f : 0.2f));
+		ctext(true, 17, y + 8, x + 15, mark, c.ink);
+		ltext(true, fit(true, 25, wd - 46, a), y, x + 46, a, c.ink);
+		ltext(false, fit(false, 20, wd - 46, b), y + 31, x + 46, b, c.dim);
+	}
+
+	/** v5.30: the status card at X, Y: the box of "fSpray" (its bubble: the next good window); -1 for none. */
+	public int statusAt(float x, float y) {
+		if (statusArea[2] <= 0 || x < statusArea[0] || x > statusArea[0] + statusArea[2] || y < statusArea[1] || y > statusArea[1] + statusArea[3]) return -1;
+		return infoIds.indexOf("fSpray");
+	}
+
+	// --- v5.30: the tabs of farmer mode -------------------------------------------------------
+
+	/** A sprout (the farmer's mark) centred at CX, CY, S high. */
+	private void leaf(float cx, float cy, float s, int col) {
+		g.rect(cx - s * 0.05f, cy - s * 0.05f, s * 0.1f, s * 0.55f, col);
+		g.poly(leafPts(cx, cy + s * 0.05f, -1, s * 0.85f), col);
+		g.poly(leafPts(cx, cy - s * 0.12f, 1, s), col);
+	}
+
+	private static float[] leafPts(float bx, float by, float dir, float s) {
+		float tx = bx + dir * s * 0.42f, ty = by - s * 0.36f;
+		float c1x = bx + dir * s * 0.02f, c1y = by - s * 0.32f, c2x = bx + dir * s * 0.42f, c2y = by - s * 0.02f;
+		int n = 10;
+		float[] o = new float[(2 * n + 2) * 2];
+		int k = 0;
+		for (int i = 0; i <= n; i++) {
+			float t = i / (float) n, u = 1 - t;
+			o[k++] = u * u * bx + 2 * u * t * c1x + t * t * tx;
+			o[k++] = u * u * by + 2 * u * t * c1y + t * t * ty;
+		}
+		for (int i = 0; i <= n; i++) {
+			float t = i / (float) n, u = 1 - t;
+			o[k++] = u * u * tx + 2 * u * t * c2x + t * t * bx;
+			o[k++] = u * u * ty + 2 * u * t * c2y + t * t * by;
+		}
+		return o;
+	}
+
+	/** The tabs (town, parcels, "+") as a row moved sideways, the current one marked. */
+	private void drawTabs(float x, float y, float wd, float h) {
+		tabs.area[2] = 0;
+		tabHits.clear();
+		if (!farmer || tabNames == null || tabNames.length == 0) return;
+		int n = tabNames.length + 1;
+		float gap = 12, p = fit(true, 24, 400, "Ag"), pad = 18, ic = 22;
+		float[] ws = new float[n], starts = new float[n];
+		float tot = 0;
+		for (int k = 0; k < n; k++) {
+			ws[k] = k == n - 1 ? h + 8 : pad + ic + 10 + g.width(k == page, p, tabNames[k]) + pad;
+			starts[k] = tot;
+			tot += ws[k] + gap;
+		}
+		tot -= gap;
+		tabs.set(starts, tot - wd);
+		if (page != lastTabPage && page < n) {
+			float sx = starts[page];
+			if (sx < tabs.scroll) tabs.scroll = sx;
+			else if (sx + ws[page] > tabs.scroll + wd) tabs.scroll = Math.min(tabs.max, sx + ws[page] - wd + 30);
+			lastTabPage = page;
+		}
+		tabs.area[0] = x; tabs.area[1] = y; tabs.area[2] = wd; tabs.area[3] = h;
+		g.clip(x - 2, y - 2, wd + 4, h + 4);
+		for (int k = 0; k < n; k++) {
+			float bx = x + starts[k] - tabs.scroll;
+			if (bx + ws[k] < x - 4 || bx > x + wd + 4) continue;
+			boolean sel = k == page;
+			g.roundRect(bx, y, ws[k], h, h / 2, sel ? c.accent : edge());
+			g.roundRect(bx + 2, y + 2, ws[k] - 4, h - 4, h / 2 - 2, sel ? mix(glass(), c.accent, dark ? 0.26f : 0.18f) : glass());
+			int ink = sel ? (dark ? mix(c.accent, Gfx.WHITE, 0.45f) : mix(c.accent, Gfx.BLACK, 0.35f)) : c.ink;
+			float mid = y + h / 2;
+			if (k == n - 1) {
+				g.rect(bx + ws[k] / 2 - 11, mid - 1.5f, 22, 3, c.ink);
+				g.rect(bx + ws[k] / 2 - 1.5f, mid - 11, 3, 22, c.ink);
+			} else {
+				if (k == 0) g.icon("icons/btn-city.png", bx + pad, mid - ic / 2, ic, ic, ink);
+				else leaf(bx + pad + ic / 2, mid + 2, ic, ink);
+				ltext(sel, p, mid - p * 0.56f, bx + pad + ic + 10, tabNames[k], ink);
+			}
+			tabHits.add(new float[] { k, bx, y, ws[k], h });
+		}
+		g.unclip();
+	}
+
+	/** v5.30: the tab at X, Y: 0 the town, 1.. the parcels, the parcels' count + 1 the "+"; -1 for none. */
+	public int tabAt(float x, float y) {
+		float[] a = tabs.area;
+		if (a[2] <= 0 || x < a[0] || x > a[0] + a[2] || y < a[1] - 8 || y > a[1] + a[3] + 8) return -1;
+		for (float[] b : tabHits) if (x >= b[1] && x <= b[1] + b[3]) return (int) b[0];
+		return -1;
+	}
+
+	// --- v5.30: the floating capsules at the bottom ------------------------------------------
+
+	/** The buttons' capsule (and the farmer button) from the left; returns where the row is free from. */
+	private float capsules(float fb) {
 		btnLocate[1] = fb;
+		btnBright[1] = fb;
+		btnSensor[1] = fb;
+		btnCity[1] = fb;
+		float pl = btnCity[0] - 12, pr = btnSensor[0] + btnSensor[2] + 12, ph = btnCity[3] + 14;
+		pillArea[0] = pl; pillArea[1] = fb - 7; pillArea[2] = pr - pl; pillArea[3] = ph;
+		frost(roundRectPoly(pl, fb - 7, pr - pl, ph, ph / 2));
+		footButton("city", btnCity, false);
+		footButton("locate", btnLocate, autoLoc);
+		footButton("bright", btnBright, brightBar);
+		if (hasLight) footButton("sensor", btnSensor, sensorTheme);
+		else buttonIcon("sensor", btnSensor[0] + 32, btnSensor[1] + 32, c.dim);
+		btnFarm[2] = 0;
+		float x = pr + 14;
+		if (farmer) {
+			btnFarm[0] = x; btnFarm[1] = fb - 3; btnFarm[2] = 70; btnFarm[3] = 70;
+			frost(roundRectPoly(x, fb - 3, 70, 70, 35));
+			g.roundRect(x + 5, fb + 2, 60, 60, 30, mix(glass(), c.accent, dark ? 0.4f : 0.3f));
+			leaf(x + 35, fb + 36, 34, dark ? mix(c.accent, Gfx.WHITE, 0.5f) : mix(c.accent, Gfx.BLACK, 0.3f));
+			x += 70 + 14;
+		}
+		return x;
+	}
+
+	/** The battery with its level (and "charging"), its right edge at RIGHT, on the row at FB; CAPSULE: in its own glass. Returns its left. */
+	private float battery(float fb, float right, boolean capsule) {
+		battArea[2] = 0;
+		if (batt < 0) return right;
+		String pc = batt + "%";
+		float tw = g.width(true, 26, pc) + (charging ? 16 : 0), bw = 44 + 7 + tw, gy = fb + 22;
+		float x0 = right - bw - (capsule ? 52 : 0);
+		if (capsule) {
+			float ph = btnCity[3] + 14;
+			battArea[0] = x0; battArea[1] = fb - 7; battArea[2] = bw + 52; battArea[3] = ph;
+			frost(roundRectPoly(x0, fb - 7, bw + 52, ph, ph / 2));
+			right -= 26;
+		}
+		float gx = right - 44;
+		g.rect(gx, gy, 40, 20, c.ink);
+		g.rect(gx + 2, gy + 2, 36, 16, dark ? c.page : mix(c.page, Gfx.WHITE, 0.6f));
+		g.rect(gx + 5, gy + 5, Math.max(2, batt * 30 / 100), 10, c.ink);
+		g.rect(gx + 40, gy + 6, 4, 8, c.ink);
+		float l = rtext(true, 26, gy - 4, gx - 7, pc.trim(), c.ink);
+		if (charging) g.icon("icons/bolt.png", l - 16, gy + 2, 11, 17, c.ink);
+		return x0;
+	}
+
+	/** "updated 12:34" with its refresh mark, its right edge at RIGHT and its middle at MID; returns its left. */
+	private float updatedAt(float right, float mid, float max) {
+		updArea[2] = 0;
+		String upd = "";
+		boolean bold = false;
+		if (busy) upd = T.updating;
+		else if (fetched > 0) {
+			Calendar cal = Zone.now();
+			cal.setTimeInMillis(fetched);
+			String when = Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12);
+			upd = T.updated + " " + when + (source.length() > 0 && !source.equals("Open-Meteo") ? " · " + source : "");
+			if (offline) {
+				upd = "! " + T.noData + " " + when + (failReason.length() > 0 ? " · " + failReason : "");
+				bold = true;
+			}
+		}
+		if (upd.length() == 0 || max < 60) return right;
+		float up = fit(bold, 24, max - 30, upd), tw = g.width(bold, up, upd), x = right - tw;
+		ltext(bold, up, mid - up * 0.56f, x, upd, bold ? c.ink : c.dim);
+		refreshIcon(x - 16, mid, up * 0.42f, bold ? c.ink : c.accent);
+		updArea[0] = x - 34; updArea[1] = mid - 30; updArea[2] = tw + 40; updArea[3] = 60;
+		return x - 32;
+	}
+
+	// --- v5.30: portrait ------------------------------------------------------------------------
+
+	private void drawPortrait(float ch) {
+		float fb = ch - 84;
 		for (Strip st : strips()) st.area[2] = 0;
-		float z1 = Math.round(cw * 0.45f), z2 = Math.round(cw * 0.75f), leftR = z1 - 11;
-		float mx = z1 + 11, mw = z2 - 11 - mx, rx = z2 + 11, rw = cw - 40 - rx;
-		updHead = true;
-		String label = headName(cw - 124 - 380);
-		float lp = fit(true, 40, cw - 124 - 380, label);
-		ltext(true, lp, 56 - lp * 0.5f, 124, label, c.ink);
-		cityArea[0] = 124; cityArea[1] = 24; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
+		pageS.area[2] = 0;
+		warnArea[2] = 0;
+		statusArea[2] = 0;
+		btnStats[2] = 0;
+		// Without a camera band the band's row is drawn at the top of the glass all the same.
+		boolean own = band <= 0;
+		float sb = band, sl = lift;
+		if (own) {
+			band = 64;
+			lift = sl + 70;
+		}
+		float hy = lift - 22, paneTop = lift - band + 2, rowY = 24 + hy;
+		float y = rowY + 64 + 14, tabsY = y;
+		boolean tabsOn = farmer && tabNames != null && tabNames.length > 0;
+		if (tabsOn) y += 54 + 14;
+		int nw = w == null ? 0 : warnCount();
+		float alertY = y;
+		float paneBot = nw > 0 ? alertY + 130 + 14 : y;
+		Gfx g0 = g;
+		if (w != null) {
+			float nowH = 330 + Math.min(150, Math.max(0, ch - BASE_H) * 0.5f);
+			float top = paneBot + 18;
+			int[] m = hitMark();
+			// Nothing of the page above the glass's rounded top.
+			g.clip(0, paneTop + 26, cw, ch + 400);
+			g = new Shift(g0, 0, -pageS.scroll);
+			float bot = pageBody(40, top, 678, nowH);
+			g = g0;
+			g.unclip();
+			pageS.set(new float[0], bot + 110 - ch);
+			pageS.area[0] = 0; pageS.area[1] = paneBot; pageS.area[2] = cw; pageS.area[3] = ch - paneBot;
+			pageHits(m, -pageS.scroll, paneBot, ch);
+		}
+		if (layer == 1) {
+			band = sb;
+			lift = sl;
+			return;
+		}
+		frost(roundRectPoly(16, paneTop, cw - 32, paneBot - paneTop, 34));
+		drawBand();
+		drawUpdated();
+		band = sb;
+		lift = sl;
+		menuButton(40, rowY);
+		float lw = cw - 124 - 40;
+		String label = headName(lw);
+		float lp = fit(true, 40, lw, label);
+		ltext(true, lp, rowY + 32 - lp * 0.5f, 124, label, c.ink);
+		cityArea[0] = 124; cityArea[1] = rowY; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
+		if (tabsOn) drawTabs(40, tabsY, 678, 54);
+		else tabs.area[2] = 0;
+		if (w == null) {
+			String msg = error.length() > 0 ? error : T.loading;
+			float p = fit(true, 40, 640, msg);
+			ctext(true, p, paneBot + 200, W / 2, msg, c.ink);
+		} else if (nw > 0) drawWarnBoxes(40, alertY, 678, 2, 1);
+		capsules(fb);
+		battery(fb, cw - 24, true);
+		drawNote(fb);
+	}
+
+	// --- v5.30: landscape --------------------------------------------------------------------------
+
+	private void drawLandscape(float ch) {
+		float fb = ch - 84;
+		for (Strip st : strips()) st.area[2] = 0;
+		pageS.area[2] = 0;
+		warnArea[2] = 0;
+		statusArea[2] = 0;
+		btnStats[2] = 0;
+		float zL = Math.round(cw * 0.52f), bandB = 104, lx = 40, lw = zL - 14 - lx;
+		Gfx g0 = g;
+		if (w != null) {
+			int[] m = hitMark();
+			g.clip(0, 30, cw, ch);
+			g = new Shift(g0, 0, -pageS.scroll);
+			float bot = pageBody(lx, bandB + 18, lw, 0);
+			g = g0;
+			g.unclip();
+			pageS.set(new float[0], bot + 100 - ch);
+			pageS.area[0] = 0; pageS.area[1] = bandB; pageS.area[2] = zL; pageS.area[3] = ch - bandB;
+			pageHits(m, -pageS.scroll, bandB, ch);
+		}
+		if (layer == 1) return;
+		float r = 32, x0 = 16, x1 = cw - 16, y0 = lift + 2, y1 = ch - 8;
+		frost(roundPoly(new float[] { x0, y0, x1, y0, x1, y1, zL, y1, zL, bandB, x0, bandB }, new float[] { r, r, r, r, 22, r }));
+		menuButton(40, 22);
+		// The right end of the header: "updated", the date, the connection, the clock.
+		drawClock();
+		float dp = 26, dr = clockLeft - 22;
+		String dt = T.date(now);
+		float dl = rtext(false, dp, 54 - dp * 0.56f, dr, dt, c.ink);
+		float ul = updatedAt(dl - 26, 54, Math.min(420, dl - 26 - 124 - 260));
+		float nw = ul - 124 - 30;
+		String label = headName(nw);
+		float lp = fit(true, 40, nw, label);
+		ltext(true, lp, 54 - lp * 0.5f, 124, label, c.ink);
+		cityArea[0] = 124; cityArea[1] = 22; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
+		float rx = zL + 18, rw = x1 - 22 - rx;
 		if (w == null) {
 			String msg = error.length() > 0 ? error : T.loading;
 			ctext(true, fit(true, 40, cw - 200, msg), 330, cw / 2, msg, c.ink);
-			footer(fb);
-			return;
+		} else {
+			float wt = bandB + 16, wb = drawWarnBoxes(rx, wt, rw, 2, 1);
+			float nowTop = wb > 0 ? wb + 10 : wt, fy = fb - 14 - 88;
+			String[] d = T.describe(w.code, w.isDay);
+			drawNowSplit(d[0], rx, nowTop, rx + rw, fy - 4);
+			setNow(rx, nowTop, rw, fy - nowTop);
+			feelsCard(rx, fy, rw);
 		}
-		warnArea[2] = 0;
-		alerts.area[2] = 0;
-		dots((40 + leftR) / 2, 110, pages, page);
-		// v5.03 (Viorel): the warnings level with the boxes on the right (top 124).
-		float wt = pages > 1 && !tagLow ? 130 : 124;
-		float wb = drawWarnBoxes(40, wt, leftR - 40, 2, 1);
-		float nowTop = wb > 0 ? wb + 14 : wt;
-		// v5.03 (Viorel): the feels-like card's bottom level with the boxes on the right (fb - 14).
-		float fy = farmer && farmMerged ? 568 : fb - 90;
-		String[] d = T.describe(w.code, w.isDay);
-		drawNowSide(d[0], 40, nowTop - 60, leftR, fy + 4);
-		setNow(40, nowTop, leftR - 40, fy + 80 - nowTop);
-		if (farmer && farmMerged) nowTexts(d[1], fy - 10, 40, leftR - 6);
-		else {
-		card(40, fy - 12, leftR - 46, 88, 24);
-		float sp = skySize(36, (leftR - 80) / 2, d[1]);
-		rtext(true, sp, fy - 2, leftR - 26, d[1], c.ink);
-		windLine(28, fy + 38, leftR - 26);
-		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 2, 62, feelsText(), c.ink);
-		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			ltext(false, 28, fy + 38, 62, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
-		}
-		// Lines between the three parts, like the one under the clock.
-		// v5.00: no lines between the parts (cards on the page).
-
-		float bt = 124, bb = fb - 14, hh = 250;
-		peekW = 15;
-		// The rain chart takes the whole width here; the hour boxes follow it when dragged.
-		if (farmer && farmMerged) drawMergedColumn(mx, bt, mw, bb - bt);
-		else {
-		chartFull = true;
-		drawNextHours(mx, bt, mw, hh, false);
-		chartFull = false;
-		}
-		if (farmer && farmMerged) { }
-		else if (farmer) drawRainRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
-		else drawDaysRow(mx, bt + hh + 14, mw, bb - (bt + hh + 14));
-		peekW = 30;
-		drawInfoGrid(rx, bt, rw, bb - bt);
-		footer(fb);
+		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
+		if (farmer && tabNames != null && tabNames.length > 0) drawTabs(free, fb + 7, bl - 24 - free, 54);
+		else tabs.area[2] = 0;
+		drawNote(fb);
 	}
+
 
 	/** Landscape: the five days as a row moved sideways (as many as fit, the next one peeking in). */
 	private void drawDaysRow(float x, float top, float wd, float h) {
@@ -601,6 +1271,12 @@ public final class Screen {
 
 		public void clip(float x, float y, float w, float h) {
 			g.clip(x * s, y * s, w * s, h * s);
+		}
+
+		public void frost(float[] xy, int tint, int edge) {
+			float[] q = new float[xy.length];
+			for (int k = 0; k < xy.length; k++) q[k] = xy[k] * s;
+			g.frost(q, tint, edge);
 		}
 
 		public void unclip() {
@@ -1025,6 +1701,8 @@ public final class Screen {
 	/** Farmer mode: the box under X, Y: { 0 hour box / 1 rain box, hour index }; null for none. */
 	public int[] farmBoxAt(float x, float y) {
 		if (!farmer || w == null) return null;
+		for (float[] b : infoHits)
+			if (b.length > 5 && farmInfo(infoId((int) b[0])) && x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return new int[] { 2, (int) b[0] };
 		for (Strip st : new Strip[] { info, grid }) {
 			if (st.area[2] <= 0 || x < st.area[0] || x > st.area[0] + st.area[2] || y < st.area[1] || y > st.area[1] + st.area[3]) continue;
 			for (float[] b : infoHits)
@@ -2722,9 +3400,14 @@ public final class Screen {
 
 	/** Tomorrow / the day after: title, icon, big high, gray "/ low", description. */
 	private void drawDayCard(float left, float top, int k, String title) {
-		dayHits.add(new float[] { k, left * hs, top * hs, 331 * hs, 198 * hs });
-		box(left, top, 331, 198, 52);
-		head(top, 52, left + 165, 290, title, 0);
+		drawDayCardW(left, top, 331, 198, k, title);
+	}
+
+	/** v5.30: the same box BW wide (H is 198). */
+	private void drawDayCardW(float left, float top, float bw, float h, int k, String title) {
+		dayHits.add(new float[] { k, left * hs, top * hs, bw * hs, h * hs });
+		box(left, top, bw, h, 52);
+		head(top, 52, left + bw / 2, bw - 41, title, 0);
 		if (k >= w.dayDates.size()) return;
 		String[] d = T.describe(w.dayCodes.get(k), true);
 		String hi = t(w.dayHi.get(k)) + "°", lo = "/ " + t(w.dayLo.get(k)) + "°";
@@ -2733,14 +3416,14 @@ public final class Screen {
 			lp = hp / 2;
 			wh = g.width(true, hp, hi);
 			wl = g.width(false, lp, lo);
-			if (84 + wh + 4 + wl <= 311 || hp < 50) break;
+			if (84 + wh + 4 + wl <= bw - 20 || hp < 50) break;
 			hp = hp * 94 / 100;
 		}
-		float gx = Math.max(left + 8, left + (331 - 84 - wh - 4 - wl) / 2);
+		float gx = Math.max(left + 8, left + (bw - 84 - wh - 4 - wl) / 2);
 		dayIcon(d[0], gx - 10, top + 67, 92);
 		ltext(true, hp, top + 51 + (93 - hp) * 81 / 100, gx + 84, hi, c.ink);
 		ltext(false, lp, top + 90 + (47 - lp) * 81 / 100, gx + 84 + wh + 4, lo, c.dim);
-		ctext(false, fit(false, 30, 310, d[1]), top + 160, left + 165, d[1], c.ink);
+		ctext(false, fit(false, 30, bw - 21, d[1]), top + 160, left + bw / 2, d[1], c.ink);
 	}
 
 	/**
@@ -2836,7 +3519,11 @@ public final class Screen {
 	 * the row sideways, box by box (the next one peeks in at the right).
 	 */
 	private void drawInfoStrip(float x, float top, float wd, float h) {
-		List<String> ids = infoBoxes();
+		drawInfoStrip(infoBoxes(), x, top, wd, h);
+	}
+
+	/** v5.30: the boxes IDS as the moving row. */
+	private void drawInfoStrip(List<String> ids, float x, float top, float wd, float h) {
 		float gap = 16, peek = 30;
 		int per = Math.max(3, Math.min(ids.size() - 1, (int) ((wd - peek) / (200 + gap))));
 		// The next box shows its edge at the right, so it is clear the row goes on.
@@ -2849,11 +3536,12 @@ public final class Screen {
 		float tp = 31;
 		for (String id : ids) if (!id.equals("r24") && !xbox(id)) tp = fit(true, tp, bw - 16, infoTitle(id));
 		g.clip(x - 2, top - 2, wd + 4, h + 4);
-		infoIds = ids;
+		int base = infoIds.size();
+		infoIds.addAll(ids);
 		for (int i = 0; i < ids.size(); i++) {
 			float bx = x + i * step - info.scroll;
 			if (bx + bw < x - 4 || bx > x + wd + 4) continue;
-			infoHits.add(new float[] { i, bx * hs, top * hs, bw * hs, h * hs });
+			infoHits.add(new float[] { base + i, bx * hs, top * hs, bw * hs, h * hs });
 			drawInfoBox(ids.get(i), bx, top, bw, h, tp);
 		}
 		g.unclip();
@@ -2876,7 +3564,7 @@ public final class Screen {
 		float tp = 31;
 		for (String id : ids) if (!id.equals("r24") && !xbox(id)) tp = fit(true, tp, bw - 16, infoTitle(id));
 		g.clip(x - 2, top - 2, wd + 4, h + 4);
-		infoIds = ids;
+		infoIds = new ArrayList<String>(ids);
 		for (int i = 0; i < ids.size(); i++) {
 			float by = top + (i / 2) * step - grid.scroll;
 			if (by + bh < top - 4 || by > top + h + 4) continue;
@@ -3013,6 +3701,8 @@ public final class Screen {
 
 	/** v4.00: the box of the bottom row under X, Y (any mode), -1 for none. */
 	public int infoAt(float x, float y) {
+		for (float[] b : infoHits)
+			if (b.length > 5 && x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) return (int) b[0];
 		Strip[] sts = { info, grid };
 		for (Strip st : sts) {
 			if (st.area[2] <= 0 || x < st.area[0] || x > st.area[0] + st.area[2] || y < st.area[1] || y > st.area[1] + st.area[3]) continue;

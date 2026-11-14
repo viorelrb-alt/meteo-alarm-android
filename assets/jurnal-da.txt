@@ -1,9 +1,15 @@
-Nuværende version: v.5.25 · 14.11.2026
+Nuværende version: v.5.30 · 14.11.2026
 HOVEDSKÆRM
+- Femdagesprognose: dag 3–5 skifter af sig selv hvert 3. sekund indtil første berøring.
+- Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.
 - Stort kompas: et tryk på en by i listen viser dens mærke på kompasset; byer i samme retning overlapper ikke længere.
 INDSTILLINGER
 - Ikontema: 6 temaer for vejrikoner (Klassisk, Blank, Flad, Realistisk, Atmosfærisk, Kontur), vælges med farvede prikker i ☰; i appen og i widgets.
 - Indstillinger: menuen ☰ er nu et vindue med afsnit, kontakter, farvetemaer og bjælken System og support; opdatering sker ved at trække skærmen ned eller trykke på „opdateret“.
+LANDMANDSTILSTAND
+- Driftsstatus: på en marks skærm, kun når det er nødvendigt, dommen om sprøjtning, årsagen og risiciene for de næste 24 timer.
+- Faner: stedet og markerne i faner under navnet (liggende nederst); en marks skærm i afsnit 1–4.
+- Landmandsknap: bladknappen ved siden af knapperne slår landmandstilstanden fra; et andet sted bevarer den.
 NOTIFIKATIONER
 - Jordskælv: notifikationer kun for jordskælv højst 300 km fra dit sted; slås til eller fra i ☰.
 - Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ☰.

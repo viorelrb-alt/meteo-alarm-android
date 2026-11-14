@@ -1,6 +1,12 @@
-Version actuelle : v.5.25 · 14.11.2026
+Version actuelle : v.5.30 · 14.11.2026
 ÉCRAN PRINCIPAL
+- Écran principal : la page défile sous le verre du haut, par sections (Prochaines heures, Prévisions sur cinq jours, Détails météo) ; les boutons et la batterie flottent en bas.
 - Grande boussole : toucher une localité de la liste affiche son repère sur la boussole ; les localités dans la même direction ne se superposent plus.
+- Prévisions sur cinq jours : les jours 3–5 défilent seuls toutes les 3 secondes jusqu'au premier toucher.
+MODE AGRICULTEUR
+- Bouton agriculteur : le bouton feuille à côté des boutons désactive le mode agriculteur ; une autre localité le garde.
+- Onglets : la localité et les parcelles en onglets sous le nom (en paysage, en bas) ; l'écran d'une parcelle en sections 1–4.
+- Statut opérationnel : sur l'écran d'une parcelle, seulement si nécessaire, le verdict pour traiter, sa raison et les risques des prochaines 24 heures.
 NOTIFICATIONS
 - Séismes : notifications seulement pour les séismes à 300 km au plus de votre lieu ; à activer ou désactiver dans ☰.
 - Tornades (États-Unis) : les notifications de tornade pour votre localité s'activent ou se désactivent dans ☰.

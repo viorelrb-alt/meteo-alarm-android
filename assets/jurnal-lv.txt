@@ -1,9 +1,15 @@
-Pašreizējā versija: v.5.25 · 14.11.2026
+Pašreizējā versija: v.5.30 · 14.11.2026
 GALVENAIS EKRĀNS
+- Galvenais ekrāns: lapa ritinās zem stikla augšā, pa sadaļām (Nākamās stundas, Piecu dienu prognoze, Laikapstākļu detaļas); pogas un akumulators peld apakšā.
 - Liels kompass: pieskāriens vietai sarakstā rāda tās zīmi uz kompasa; vietas vienā virzienā vairs nepārklājas.
+- Piecu dienu prognoze: 3.–5. diena mainās pati ik pēc 3 sekundēm līdz pirmajam pieskārienam.
 IESTATĪJUMI
 - Iestatījumi: izvēlne ☰ tagad ir logs ar sadaļām, slēdžiem, krāsu motīviem un joslu Sistēma un atbalsts; atsvaidzina, velkot ekrānu uz leju vai pieskaroties “atjaunināts”.
 - Ikonu motīvs: 6 laikapstākļu ikonu motīvi (Klasiskais, Spīdīgais, Plakanais, Reālistiskais, Atmosfēriskais, Kontūra), izvēlas ar krāsainiem punktiem izvēlnē ☰; lietotnē un logrīkos.
+LAUKSAIMNIEKA REŽĪMS
+- Cilnes: vieta un lauki cilnēs zem nosaukuma (horizontāli – apakšā); lauka ekrāns sadaļās 1–4.
+- Darba statuss: lauka ekrānā, tikai kad vajag, lēmums par miglošanu, iemesls un nākamo 24 stundu riski.
+- Lauksaimnieka poga: lapas poga blakus pogām izslēdz lauksaimnieka režīmu; cita vieta to saglabā.
 PAZIŅOJUMI
 - Tornado (ASV): tornado paziņojumus tavai vietai ieslēdz vai izslēdz izvēlnē ☰.
 - Zemestrīces: paziņojumi tikai par zemestrīcēm ne tālāk par 300 km no tavas vietas; ieslēdz vai izslēdz izvēlnē ☰.

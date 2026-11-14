@@ -1017,3 +1017,49 @@ Last quarter	Zadnja četvrt
 Waning crescent	Opadajući srp
 Screen off	Ugašen zaslon
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Kad je zaslon ugašen, prozori aplikacije zatvaraju se nakon 3 sekunde, a aplikacija nakon 10.
+NEXT HOURS	SLJEDEĆI SATI
+FIVE-DAY FORECAST	PROGNOZA ZA PET DANA
+WEATHER DETAILS	DETALJI VREMENA
+HOURLY WEATHER	VRIJEME PO SATIMA
+SOIL AND CROPS	TLO I USJEVI
+PARCEL RISKS AND REPORTS	RIZICI I IZVJEŠĆA PARCELE
+tap: soil details	dodirni: tlo
+STATISTICS · PDF	STATISTIKA · PDF
+12 hours · day by day · PDF	12 sati · dan po dan · PDF
+OPERATIONAL STATUS	OPERATIVNI STATUS
+tap: next window	dodirni: sljedeći prozor
+Rain until {1} ({2})	Kiša do {1} ({2})
+Rain from {1} ({2})	Kiša od {1} ({2})
+the treatment would be washed off the leaves	sredstvo bi se ispralo s lišća
+soil {1}	tlo {1}
+FROST at {1} ({2})	MRAZ u {1} ({2})
+Hoarfrost risk at {1} ({2})	Rizik od inja u {1} ({2})
+protect sensitive crops	zaštiti osjetljive usjeve
+Storm risk: {1}	Rizik od oluje: {1}
+SPRAY NOW, UNTIL {1}	PRSKAJ SADA, DO {1}
+GOOD FOR SPRAYING	POGODNO ZA PRSKANJE
+Wind {1}, no rain now	Vjetar {1}, sada bez kiše
+good: wind 3–15 km/h, gusts under 25, no rain	dobro: vjetar 3–15 km/h, udari ispod 25, bez kiše
+DON'T SPRAY NOW	NE PRSKAJ SADA
+DON'T SPRAY TODAY	NE PRSKAJ DANAS
+Active precipitation: rain {1}, {2}/h	Aktivne oborine: kiša {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	iznad praga za prskanje: 40 % ili 0,1 mm/h
+Wind {1}, gusts {2}	Vjetar {1}, udari {2}
+over the limit: 15 km/h, gusts 25 km/h	iznad praga: 15 km/h, udari 25 km/h
+Wind too weak: {1}	Preslab vjetar: {1}
+under 3 km/h the spray drifts unevenly	ispod 3 km/h otopina se neravnomjerno raspoređuje
+Too hot: {1}	Prevruće: {1}
+over 28 °C the solution evaporates	iznad 28 °C otopina isparava
+Dry air: humidity {1}	Suh zrak: vlažnost {1}
+under 40% the drops dry before they settle	ispod 40 % kapi se osuše prije nego što padnu
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	Prekidač Način rada za poljoprivrednike u ☰ ga uključuje; gumb s listom pokraj gumbâ ga isključuje. Svaki sat je jedno široko polje s vremenom i kišom. Odabir drugog mjesta zadržava način rada.
+Operational status	Operativni status
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Na zaslonu parcele, samo kad je potrebno: presuda za prskanje (crveno, žuto, zeleno), glavni razlog s pragom i rizici sljedeća 24 sata. Dodir pokazuje sljedeći dobar prozor.
+A parcel's screen	Zaslon parcele
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Vrijeme po satima, pet dana, 2 Tlo i usjevi, 3 Rizici i izvješća (sa Statistikom · PDF), 4 Detalji vremena.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Kartice ispod naziva (položeno dolje): mjesto i po jedna za svaku parcelu; dodir ili povlačenje u stranu mijenja zaslon, + dodaje parcelu.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Prozor od mutnog stakla na sredini zaslona (zaslon ostaje oštar); zatvara se s X ili dodirom izvan njega. Ispod naslova mjesto; ▲ i ▼ pomiču; izvor je dolje.
+The main screen	Glavni zaslon
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Stranica se pomiče gore-dolje ispod stakla na vrhu; gumbi i baterija lebde dolje. Odjeljci: Sljedeći sati, Prognoza za pet dana, Detalji vremena.
+Five-day forecast	Prognoza za pet dana
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Sutra i prekosutra gore; ispod njih dani 3–5 sami se izmjenjuju svake 3 sekunde dok ih ne dodirneš. Red Detalji vremena malo se pomakne nakon 6 sekundi.

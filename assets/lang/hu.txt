@@ -1017,3 +1017,49 @@ Last quarter	Utolsó negyed
 Waning crescent	Fogyó sarló
 Screen off	Kikapcsolt képernyő
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Kikapcsolt képernyőnél az alkalmazás ablakai 3 másodperc, maga az alkalmazás 10 másodperc után bezárul.
+NEXT HOURS	KÖVETKEZŐ ÓRÁK
+FIVE-DAY FORECAST	ÖTNAPOS ELŐREJELZÉS
+WEATHER DETAILS	IDŐJÁRÁSI RÉSZLETEK
+HOURLY WEATHER	ÓRÁNKÉNTI IDŐJÁRÁS
+SOIL AND CROPS	TALAJ ÉS NÖVÉNYEK
+PARCEL RISKS AND REPORTS	A PARCELLA KOCKÁZATAI ÉS JELENTÉSEI
+tap: soil details	koppints: talaj részletei
+STATISTICS · PDF	STATISZTIKA · PDF
+12 hours · day by day · PDF	12 óra · napról napra · PDF
+OPERATIONAL STATUS	MŰKÖDÉSI ÁLLAPOT
+tap: next window	koppints: következő ablak
+Rain until {1} ({2})	Eső {1}-ig ({2})
+Rain from {1} ({2})	Eső {1}-tól ({2})
+the treatment would be washed off the leaves	a szert lemosná a levelekről
+soil {1}	talaj {1}
+FROST at {1} ({2})	FAGY {1}-kor ({2})
+Hoarfrost risk at {1} ({2})	Dérveszély {1}-kor ({2})
+protect sensitive crops	védd az érzékeny növényeket
+Storm risk: {1}	Zivatarveszély: {1}
+SPRAY NOW, UNTIL {1}	PERMETEZZ MOST, {1}-IG
+GOOD FOR SPRAYING	JÓ PERMETEZÉSRE
+Wind {1}, no rain now	Szél {1}, most nincs eső
+good: wind 3–15 km/h, gusts under 25, no rain	jó: szél 3–15 km/h, széllökés 25 alatt, eső nélkül
+DON'T SPRAY NOW	MOST NE PERMETEZZ
+DON'T SPRAY TODAY	MA NE PERMETEZZ
+Active precipitation: rain {1}, {2}/h	Aktív csapadék: eső {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	a permetezési határ felett: 40% vagy 0,1 mm/h
+Wind {1}, gusts {2}	Szél {1}, széllökés {2}
+over the limit: 15 km/h, gusts 25 km/h	a határ felett: 15 km/h, széllökés 25 km/h
+Wind too weak: {1}	Túl gyenge szél: {1}
+under 3 km/h the spray drifts unevenly	3 km/h alatt a permetlé egyenetlenül oszlik el
+Too hot: {1}	Túl meleg: {1}
+over 28 °C the solution evaporates	28 °C felett az oldat elpárolog
+Dry air: humidity {1}	Száraz levegő: páratartalom {1}
+under 40% the drops dry before they settle	40% alatt a cseppek kiszáradnak, mielőtt leülnének
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	A Gazda mód kapcsoló a ☰-ben bekapcsolja; a gombok melletti levél gomb kikapcsolja. Minden óra egy széles mező az időjárással és az esővel. Másik település választása megtartja a gazda módot.
+Operational status	Működési állapot
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Egy parcella képernyőjén, csak ha szükséges: a permetezés ítélete (piros, sárga, zöld), a fő ok a határértékkel és a következő 24 óra kockázatai. Egy koppintás a következő jó ablakot mutatja.
+A parcel's screen	Egy parcella képernyője
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Óránkénti időjárás, az öt nap, 2 Talaj és növények, 3 Kockázatok és jelentések (Statisztika · PDF-fel), 4 Időjárási részletek.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Fülek a név alatt (fekvő nézetben lent): a település és parcellánként egy; koppintás vagy oldalra húzás vált képernyőt, a + parcellát ad hozzá.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Matt üveg ablak a képernyő közepén (a képernyő éles marad); X-szel vagy mellé koppintva záródik. A cím alatt a hely; ▲ és ▼ görget; a forrás alul van.
+The main screen	A főképernyő
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Az oldal fel-le mozog a felső üveg alatt; a gombok és az akkumulátor alul lebegnek. Részek: Következő órák, Ötnapos előrejelzés, Időjárási részletek.
+Five-day forecast	Ötnapos előrejelzés
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Holnap és holnapután felül; alattuk a 3–5. nap 3 másodpercenként magától lép tovább, amíg meg nem érinted. Az Időjárási részletek sor 6 másodperc után kicsit megmozdul.

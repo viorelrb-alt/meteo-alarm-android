@@ -1,6 +1,12 @@
-Huidige versie: v.5.25 · 14.11.2026
+Huidige versie: v.5.30 · 14.11.2026
+BOERENMODUS
+- Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
+- Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.
+- Tabbladen: de plaats en de percelen in tabbladen onder de naam (liggend onderaan); het scherm van een perceel in secties 1–4.
 HOOFDSCHERM
 - Groot kompas: een tik op een plaats in de lijst toont zijn teken op het kompas; plaatsen in dezelfde richting overlappen niet meer.
+- Hoofdscherm: de pagina scrollt op en neer onder het glas bovenaan, in secties (Volgende uren, Vijfdaagse voorspelling, Weerdetails); de knoppen en de batterij zweven onderaan.
+- Vijfdaagse voorspelling: dag 3–5 schuiven elke 3 seconden vanzelf door tot de eerste aanraking.
 INSTELLINGEN
 - Instellingen: het menu ☰ is nu een venster met onderdelen, schakelaars, kleurthema's en de balk Systeem en ondersteuning; verversen door het scherm omlaag te trekken of op „bijgewerkt” te tikken.
 - Pictogramthema: 6 thema's voor weerpictogrammen (Klassiek, Glanzend, Plat, Realistisch, Atmosferisch, Contour), te kiezen met gekleurde stippen in ☰; in de app en op de widgets.

@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.5.25 · 14.11.2026
+Jelenlegi verzió: v.5.30 · 14.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
@@ -6,7 +6,13 @@ BEÁLLÍTÁSOK
 - Földrengések: értesítések csak a helyedtől legfeljebb 300 km-re lévő földrengésekről; a ☰-ban kapcsolhatók be vagy ki.
 - Tornádók (USA): a településed tornádóértesítései a ☰-ban kapcsolhatók be vagy ki.
 FŐKÉPERNYŐ
+- Főképernyő: az oldal a felső üveg alatt görgethető, részekre bontva (Következő órák, Ötnapos előrejelzés, Időjárási részletek); a gombok és az akkumulátor alul lebegnek.
 - Nagy iránytű: egy település megérintése a listában megmutatja a jelét az iránytűn; az azonos irányú települések már nem fedik egymást.
+- Ötnapos előrejelzés: a 3–5. nap 3 másodpercenként magától lép tovább az első érintésig.
+GAZDA MÓD
+- Fülek: a település és a parcellák fülekben a név alatt (fekvő nézetben lent); a parcella képernyője 1–4. részre bontva.
+- Gazda gomb: a gombok melletti levél gomb kikapcsolja a gazda módot; másik település megtartja.
+- Működési állapot: egy parcella képernyőjén, csak ha szükséges, a permetezés ítélete, az oka és a következő 24 óra kockázatai.
 - Dizájnjavítások és hibajavítások.
 
 4. verzió (v.4.00 – v.4.52)

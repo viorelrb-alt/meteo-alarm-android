@@ -1,9 +1,15 @@
-Obecna wersja: v.5.25 · 14.11.2026
+Obecna wersja: v.5.30 · 14.11.2026
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie miejscowości na liście pokazuje jej znak na kompasie; miejscowości w tym samym kierunku już się nie nakładają.
+- Ekran główny: strona przewija się pod szkłem u góry, w sekcjach (Najbliższe godziny, Prognoza na pięć dni, Szczegóły pogody); przyciski i bateria unoszą się na dole.
+- Prognoza na pięć dni: dni 3–5 przesuwają się same co 3 sekundy aż do pierwszego dotknięcia.
 POWIADOMIENIA
 - Tornada (USA): powiadomienia o tornadach dla twojej miejscowości włącza się lub wyłącza w ☰.
 - Trzęsienia ziemi: powiadomienia tylko o trzęsieniach ziemi najwyżej 300 km od twojego miejsca; włączane lub wyłączane w ☰.
+TRYB ROLNIKA
+- Karty: miejscowość i działki w kartach pod nazwą (poziomo na dole); ekran działki w sekcjach 1–4.
+- Przycisk rolnika: przycisk z liściem obok przycisków wyłącza tryb rolnika; inna miejscowość go zachowuje.
+- Status operacyjny: na ekranie działki, tylko gdy trzeba, werdykt dla oprysku, powód i zagrożenia na najbliższe 24 godziny.
 USTAWIENIA
 - Motyw ikon: 6 motywów ikon pogody (Klasyczny, Błyszczący, Płaski, Realistyczny, Atmosferyczny, Konturowy), wybór kolorowymi kropkami w ☰; w aplikacji i na widżetach.
 - Ustawienia: menu ☰ jest teraz oknem z sekcjami, przełącznikami, motywami kolorystycznymi i paskiem System i pomoc; odświeżanie przez pociągnięcie ekranu w dół lub dotknięcie „zaktualizowano”.

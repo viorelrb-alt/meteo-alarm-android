@@ -1017,3 +1017,49 @@ Last quarter	Τελευταίο τέταρτο
 Waning crescent	Φθίνων μηνίσκος
 Screen off	Σβηστή οθόνη
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Με σβηστή οθόνη, τα παράθυρα της εφαρμογής κλείνουν μετά από 3 δευτερόλεπτα και η εφαρμογή μετά από 10.
+NEXT HOURS	ΕΠΟΜΕΝΕΣ ΩΡΕΣ
+FIVE-DAY FORECAST	ΠΡΟΓΝΩΣΗ ΠΕΝΤΕ ΗΜΕΡΩΝ
+WEATHER DETAILS	ΛΕΠΤΟΜΕΡΕΙΕΣ ΚΑΙΡΟΥ
+HOURLY WEATHER	ΚΑΙΡΟΣ ΑΝΑ ΩΡΑ
+SOIL AND CROPS	ΕΔΑΦΟΣ ΚΑΙ ΚΑΛΛΙΕΡΓΕΙΕΣ
+PARCEL RISKS AND REPORTS	ΚΙΝΔΥΝΟΙ ΚΑΙ ΑΝΑΦΟΡΕΣ ΑΓΡΟΤΕΜΑΧΙΟΥ
+tap: soil details	πάτα: έδαφος
+STATISTICS · PDF	ΣΤΑΤΙΣΤΙΚΑ · PDF
+12 hours · day by day · PDF	12 ώρες · ημέρα προς ημέρα · PDF
+OPERATIONAL STATUS	ΛΕΙΤΟΥΡΓΙΚΗ ΚΑΤΑΣΤΑΣΗ
+tap: next window	πάτα: επόμενο παράθυρο
+Rain until {1} ({2})	Βροχή έως {1} ({2})
+Rain from {1} ({2})	Βροχή από {1} ({2})
+the treatment would be washed off the leaves	το σκεύασμα θα ξεπλυθεί από τα φύλλα
+soil {1}	έδαφος {1}
+FROST at {1} ({2})	ΠΑΓΕΤΟΣ στις {1} ({2})
+Hoarfrost risk at {1} ({2})	Κίνδυνος πάχνης στις {1} ({2})
+protect sensitive crops	προστάτεψε τις ευαίσθητες καλλιέργειες
+Storm risk: {1}	Κίνδυνος καταιγίδας: {1}
+SPRAY NOW, UNTIL {1}	ΨΕΚΑΣΕ ΤΩΡΑ, ΕΩΣ {1}
+GOOD FOR SPRAYING	ΚΑΛΟ ΓΙΑ ΨΕΚΑΣΜΟ
+Wind {1}, no rain now	Άνεμος {1}, τώρα χωρίς βροχή
+good: wind 3–15 km/h, gusts under 25, no rain	καλό: άνεμος 3–15 km/h, ριπές κάτω από 25, χωρίς βροχή
+DON'T SPRAY NOW	ΜΗΝ ΨΕΚΑΣΕΙΣ ΤΩΡΑ
+DON'T SPRAY TODAY	ΜΗΝ ΨΕΚΑΣΕΙΣ ΣΗΜΕΡΑ
+Active precipitation: rain {1}, {2}/h	Ενεργός υετός: βροχή {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	πάνω από το όριο ψεκασμού: 40% ή 0,1 mm/h
+Wind {1}, gusts {2}	Άνεμος {1}, ριπές {2}
+over the limit: 15 km/h, gusts 25 km/h	πάνω από το όριο: 15 km/h, ριπές 25 km/h
+Wind too weak: {1}	Πολύ ασθενής άνεμος: {1}
+under 3 km/h the spray drifts unevenly	κάτω από 3 km/h το ψεκαστικό δεν κατανέμεται ομοιόμορφα
+Too hot: {1}	Πολλή ζέστη: {1}
+over 28 °C the solution evaporates	πάνω από 28 °C το διάλυμα εξατμίζεται
+Dry air: humidity {1}	Ξηρός αέρας: υγρασία {1}
+under 40% the drops dry before they settle	κάτω από 40% οι σταγόνες στεγνώνουν πριν κάτσουν
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	Ο διακόπτης Λειτουργία αγρότη στο ☰ την ενεργοποιεί· το κουμπί με το φύλλο δίπλα στα κουμπιά την απενεργοποιεί. Κάθε ώρα είναι ένα φαρδύ πλαίσιο με τον καιρό και τη βροχή. Άλλη τοποθεσία κρατά τη λειτουργία αγρότη.
+Operational status	Λειτουργική κατάσταση
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Στην οθόνη αγροτεμαχίου, μόνο όταν χρειάζεται: η ετυμηγορία για ψεκασμό (κόκκινο, κίτρινο, πράσινο), ο κύριος λόγος με το όριό του και οι κίνδυνοι των επόμενων 24 ωρών. Ένα πάτημα δείχνει το επόμενο καλό παράθυρο.
+A parcel's screen	Η οθόνη αγροτεμαχίου
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Καιρός ανά ώρα, οι πέντε ημέρες, 2 Έδαφος και καλλιέργειες, 3 Κίνδυνοι και αναφορές (με Στατιστικά · PDF), 4 Λεπτομέρειες καιρού.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Καρτέλες κάτω από το όνομα (οριζόντια, κάτω): η τοποθεσία και μία ανά αγροτεμάχιο· ένα πάτημα ή σύρσιμο στο πλάι αλλάζει οθόνη, το + προσθέτει αγροτεμάχιο.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Ένα παράθυρο από θαμπό γυαλί στη μέση της οθόνης (η οθόνη μένει καθαρή)· κλείνει με X ή με πάτημα έξω από αυτό. Κάτω από τον τίτλο, το μέρος· ▲ και ▼ κυλούν· η πηγή είναι κάτω.
+The main screen	Η κύρια οθόνη
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Η σελίδα κινείται πάνω-κάτω κάτω από το γυαλί στην κορυφή· τα κουμπιά και η μπαταρία επιπλέουν κάτω. Ενότητες: Επόμενες ώρες, Πρόγνωση πέντε ημερών, Λεπτομέρειες καιρού.
+Five-day forecast	Πρόγνωση πέντε ημερών
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Αύριο και μεθαύριο πάνω· από κάτω οι ημέρες 3–5 προχωρούν μόνες κάθε 3 δευτερόλεπτα μέχρι να τις αγγίξεις. Η σειρά Λεπτομέρειες καιρού κουνιέται λίγο μετά από 6 δευτερόλεπτα.

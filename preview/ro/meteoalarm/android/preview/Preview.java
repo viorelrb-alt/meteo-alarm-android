@@ -147,15 +147,72 @@ public final class Preview {
 			g.draw(new Arc2D.Float(cx - r, cy - r, 2 * r, 2 * r, -st, -sw, Arc2D.OPEN));
 		}
 
-		private java.awt.Shape oldClip;
+		private final java.util.ArrayDeque<Object> clips = new java.util.ArrayDeque<Object>();
 
 		public void clip(float x, float y, float w, float h) {
-			oldClip = g.getClip();
+			java.awt.Shape c = g.getClip();
+			clips.push(c == null ? (Object) Boolean.FALSE : c);
 			g.clip(new java.awt.geom.Rectangle2D.Float(x, y, w, h));
 		}
 
 		public void unclip() {
-			g.setClip(oldClip);
+			Object c = clips.isEmpty() ? Boolean.FALSE : clips.pop();
+			g.setClip(c instanceof java.awt.Shape ? (java.awt.Shape) c : null);
+		}
+
+		/** v5.30: the image drawn so far (for the frosted glass). */
+		BufferedImage img;
+
+		public void frost(float[] xy, int tint, int edge) {
+			Path2D.Float p = new Path2D.Float();
+			p.moveTo(xy[0], xy[1]);
+			for (int k = 2; k < xy.length; k += 2) p.lineTo(xy[k], xy[k + 1]);
+			p.closePath();
+			if (img != null) {
+				java.awt.geom.AffineTransform at = g.getTransform();
+				java.awt.Shape dev = at.createTransformedShape(p);
+				java.awt.Rectangle r = dev.getBounds().intersection(new java.awt.Rectangle(0, 0, img.getWidth(), img.getHeight()));
+				if (r.width > 4 && r.height > 4) {
+					int f = 6, w = Math.max(1, r.width / f), h = Math.max(1, r.height / f);
+					BufferedImage sm = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+					Graphics2D sg = sm.createGraphics();
+					sg.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+					sg.drawImage(img.getSubimage(r.x, r.y, r.width, r.height), 0, 0, w, h, null);
+					sg.dispose();
+					for (int pass = 0; pass < 2; pass++) sm = blur(sm, 3);
+					java.awt.Shape oc = g.getClip();
+					g.setTransform(new java.awt.geom.AffineTransform());
+					g.setClip(dev);
+					g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+					g.drawImage(sm, r.x, r.y, r.width, r.height, null);
+					g.setTransform(at);
+					g.setClip(oc);
+				}
+			}
+			g.setColor(new Color(tint, true));
+			g.fill(p);
+			g.setColor(new Color(edge, true));
+			g.setStroke(new BasicStroke(1.5f));
+			g.draw(p);
+		}
+
+		private static BufferedImage blur(BufferedImage b, int rad) {
+			int w = b.getWidth(), h = b.getHeight();
+			BufferedImage o = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB), o2 = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+			for (int pass = 0; pass < 2; pass++) {
+				BufferedImage src = pass == 0 ? b : o, dst = pass == 0 ? o : o2;
+				for (int y = 0; y < h; y++)
+					for (int x = 0; x < w; x++) {
+						int rr = 0, gg = 0, bb = 0, n = 0;
+						for (int k = -rad; k <= rad; k++) {
+							int xx = pass == 0 ? Math.max(0, Math.min(w - 1, x + k)) : x, yy = pass == 0 ? y : Math.max(0, Math.min(h - 1, y + k));
+							int v = src.getRGB(xx, yy);
+							rr += (v >> 16) & 255; gg += (v >> 8) & 255; bb += v & 255; n++;
+						}
+						dst.setRGB(x, y, (rr / n) << 16 | (gg / n) << 8 | (bb / n));
+					}
+			}
+			return o2;
 		}
 
 		public void poly(float[] xy, int c) {
@@ -312,6 +369,9 @@ public final class Preview {
 				s.page = 2;
 			}
 		}
+		for (String o : a) if (o.startsWith("pg=")) s.pageS.scroll = Float.parseFloat(o.substring(3));
+		if (s.farmer) s.tabNames = new String[] { "Călărași", "Lot Nord", "Livada Ștefan", "Sola 3" };
+		if (s.farmer && s.parcel != null) { s.parcel = opts.contains(" longname") ? s.parcel : "Lot Nord"; s.page = 1; }
 		if (opts.contains(" alert1")) s.alerts.scroll = 5000;
 		if (opts.contains(" page1")) s.hours.scroll = 700;
 		if (opts.contains(" info1")) {
@@ -368,7 +428,9 @@ public final class Preview {
 		g.fillRect(0, 0, pw, ph);
 		g.translate(ox, oy);
 		g.scale(scale, scale);
-		s.draw(new J2d(g, assets), cw, ch);
+		J2d jg = new J2d(g, assets);
+		jg.img = img;
+		s.draw(jg, cw, ch);
 		ImageIO.write(img, "png", new File(a[1]));
 		if (opts.contains(" boxes")) for (int k = 2; k <= 6; k++) for (String[] r : s.parcelInfo(k)) System.out.println("box" + k + " " + r[0] + ": " + r[1]);
 		System.out.println("warnings for " + s.city.county + ": " + s.warns.size() + ", pollen " + s.pollenLvl + " " + s.pollenPlant + ", code " + s.w.code);

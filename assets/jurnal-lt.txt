@@ -1,12 +1,18 @@
-Dabartinė versija: v.5.25 · 14.11.2026
+Dabartinė versija: v.5.30 · 14.11.2026
 NUSTATYMAI
 - Nustatymai: meniu ☰ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
 - Piktogramų tema: 6 orų piktogramų temos (Klasikinė, Blizgi, Plokščia, Realistinė, Atmosferinė, Kontūrinė), pasirenkamos spalvotais taškais meniu ☰; programoje ir valdikliuose.
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus vietovę sąraše, jos ženklas parodomas kompase; vietovės ta pačia kryptimi nebesutampa.
+- Pagrindinis ekranas: puslapis slenka po viršutiniu stiklu, skyriais (Artimiausios valandos, Penkių dienų prognozė, Orų detalės); mygtukai ir baterija plūduriuoja apačioje.
+- Penkių dienų prognozė: 3–5 dienos keičiasi pačios kas 3 sekundes iki pirmo prisilietimo.
 PRANEŠIMAI
 - Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ☰.
 - Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ☰.
+ŪKININKO REŽIMAS
+- Skirtukai: vietovė ir sklypai skirtukuose po pavadinimu (gulsčiai – apačioje); sklypo ekranas skyriuose 1–4.
+- Ūkininko mygtukas: lapo mygtukas šalia mygtukų išjungia ūkininko režimą; kita vietovė jį išlaiko.
+- Veiklos būsena: sklypo ekrane, tik kai reikia, sprendimas dėl purškimo, priežastis ir ateinančių 24 valandų rizikos.
 - Dizaino patobulinimai ir klaidų taisymai.
 
 4 versija (v.4.00 – v.4.52)

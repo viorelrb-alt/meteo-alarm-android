@@ -1,9 +1,15 @@
-Versão atual: v.5.25 · 14.11.2026
+Versão atual: v.5.30 · 14.11.2026
 DEFINIÇÕES
 - Definições: o menu ☰ é agora uma janela com secções, interruptores, os temas em cores e a barra Sistema e suporte; atualiza-se puxando o ecrã para baixo ou tocando em «atualizado».
 - Tema de ícones: 6 temas de ícones do tempo (Clássico, Brilhante, Plano, Realista, Atmosférico, Contorno), escolhidos com pontos coloridos em ☰; na app e nos widgets.
 ECRÃ PRINCIPAL
 - Bússola grande: tocar numa localidade da lista mostra a sua marca na bússola; localidades na mesma direção já não se sobrepõem.
+- Ecrã principal: a página desloca-se sob o vidro de cima, por secções (Próximas horas, Previsão a cinco dias, Detalhes do tempo); os botões e a bateria flutuam em baixo.
+- Previsão a cinco dias: os dias 3–5 passam sozinhos a cada 3 segundos até ao primeiro toque.
+MODO AGRICULTOR
+- Botão agricultor: o botão da folha junto aos botões desativa o modo agricultor; outra localidade mantém-no.
+- Estado operacional: no ecrã de uma parcela, só quando é preciso, o veredicto para pulverizar, o motivo e os riscos das próximas 24 horas.
+- Separadores: a localidade e as parcelas em separadores sob o nome (na horizontal, em baixo); o ecrã de uma parcela nas secções 1–4.
 NOTIFICAÇÕES
 - Sismos: avisos só dos sismos até 300 km do seu local; ligam-se ou desligam-se em ☰.
 - Tornados (EUA): os avisos de tornado para a sua localidade ligam-se ou desligam-se em ☰.

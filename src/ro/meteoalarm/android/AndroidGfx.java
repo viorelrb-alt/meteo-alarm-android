@@ -157,6 +157,29 @@ final class AndroidGfx implements Gfx {
 		c.drawPath(p, fill);
 	}
 
+	/** v5.30: the blurred copy of the page (WeatherView) and where it lies, in canvas units. */
+	Bitmap frostBmp;
+	final RectF frostDst = new RectF();
+	private final Paint frostPaint = new Paint(Paint.FILTER_BITMAP_FLAG);
+
+	public void frost(float[] xy, int tint, int edge) {
+		Path p = new Path();
+		p.moveTo(xy[0], xy[1]);
+		for (int k = 2; k < xy.length; k += 2) p.lineTo(xy[k], xy[k + 1]);
+		p.close();
+		if (frostBmp != null && !frostBmp.isRecycled()) {
+			c.save();
+			c.clipPath(p);
+			c.drawBitmap(frostBmp, null, frostDst, frostPaint);
+			c.restore();
+		}
+		fill.setColor(tint);
+		c.drawPath(p, fill);
+		stroke.setColor(edge);
+		stroke.setStrokeWidth(1.5f);
+		c.drawPath(p, stroke);
+	}
+
 	public void clip(float x, float y, float w, float h) {
 		c.save();
 		c.clipRect(x, y, x + w, y + h);

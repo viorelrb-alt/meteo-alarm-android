@@ -1,12 +1,18 @@
-Versión actual: v.5.25 · 14.11.2026
+Versión actual: v.5.30 · 14.11.2026
 AJUSTES
 - Ajustes: el menú ☰ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
 - Tema de iconos: 6 temas de iconos del tiempo (Clásico, Brillante, Plano, Realista, Atmosférico, Contorno), se eligen con puntos de color en ☰; en la app y en los widgets.
+MODO AGRICULTOR
+- Botón agricultor: el botón de la hoja junto a los botones desactiva el modo agricultor; otra localidad lo mantiene.
+- Estado operativo: en la pantalla de una parcela, solo cuando hace falta, el veredicto para pulverizar, su motivo y los riesgos de las próximas 24 horas.
+- Pestañas: la localidad y las parcelas en pestañas bajo el nombre (en horizontal, abajo); la pantalla de una parcela en las secciones 1–4.
 NOTIFICACIONES
 - Terremotos: avisos solo de los terremotos a menos de 300 km de tu lugar; se activan o desactivan en ☰.
 - Tornados (EE. UU.): los avisos de tornado para tu localidad se activan o desactivan en ☰.
 PANTALLA PRINCIPAL
 - Brújula grande: tocar una localidad de la lista muestra su marca en la brújula; las localidades en la misma dirección ya no se superponen.
+- Pantalla principal: la página se desplaza bajo el cristal de arriba, por secciones (Próximas horas, Previsión de cinco días, Detalles del tiempo); los botones y la batería flotan abajo.
+- Previsión de cinco días: los días 3–5 pasan solos cada 3 segundos hasta el primer toque.
 - Mejoras de diseño y corrección de errores.
 
 Versión 4 (v.4.00 – v.4.52)

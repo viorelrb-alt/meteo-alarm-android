@@ -1017,3 +1017,49 @@ Last quarter	Posledná štvrť
 Waning crescent	Ubúdajúci kosák
 Screen off	Vypnutá obrazovka
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Pri vypnutej obrazovke sa okná aplikácie zatvoria po 3 sekundách a aplikácia po 10.
+NEXT HOURS	NASLEDUJÚCE HODINY
+FIVE-DAY FORECAST	PREDPOVEĎ NA PÄŤ DNÍ
+WEATHER DETAILS	PODROBNOSTI POČASIA
+HOURLY WEATHER	POČASIE PO HODINÁCH
+SOIL AND CROPS	PÔDA A PLODINY
+PARCEL RISKS AND REPORTS	RIZIKÁ A SPRÁVY POZEMKU
+tap: soil details	ťukni: podrobnosti pôdy
+STATISTICS · PDF	ŠTATISTIKA · PDF
+12 hours · day by day · PDF	12 hodín · deň po dni · PDF
+OPERATIONAL STATUS	PREVÁDZKOVÝ STAV
+tap: next window	ťukni: ďalšie okno
+Rain until {1} ({2})	Dážď do {1} ({2})
+Rain from {1} ({2})	Dážď od {1} ({2})
+the treatment would be washed off the leaves	prípravok by sa zmyl z listov
+soil {1}	pôda {1}
+FROST at {1} ({2})	MRÁZ o {1} ({2})
+Hoarfrost risk at {1} ({2})	Riziko inovate o {1} ({2})
+protect sensitive crops	chráň citlivé plodiny
+Storm risk: {1}	Riziko búrky: {1}
+SPRAY NOW, UNTIL {1}	STRIEKAJ TERAZ, DO {1}
+GOOD FOR SPRAYING	VHODNÉ NA STRIEKANIE
+Wind {1}, no rain now	Vietor {1}, teraz bez dažďa
+good: wind 3–15 km/h, gusts under 25, no rain	vhodné: vietor 3–15 km/h, nárazy pod 25, bez dažďa
+DON'T SPRAY NOW	TERAZ NESTRIEKAJ
+DON'T SPRAY TODAY	DNES NESTRIEKAJ
+Active precipitation: rain {1}, {2}/h	Aktívne zrážky: dážď {1}, {2}/h
+over the spraying limit: 40% or 0.1 mm/h	nad limitom na postrek: 40 % alebo 0,1 mm/h
+Wind {1}, gusts {2}	Vietor {1}, nárazy {2}
+over the limit: 15 km/h, gusts 25 km/h	nad limitom: 15 km/h, nárazy 25 km/h
+Wind too weak: {1}	Príliš slabý vietor: {1}
+under 3 km/h the spray drifts unevenly	pod 3 km/h sa postrek rozkladá nerovnomerne
+Too hot: {1}	Príliš teplo: {1}
+over 28 °C the solution evaporates	nad 28 °C sa roztok odparuje
+Dry air: humidity {1}	Suchý vzduch: vlhkosť {1}
+under 40% the drops dry before they settle	pod 40 % kvapky zaschnú skôr, než dopadnú
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	Prepínač Režim farmára v ☰ ho zapne; tlačidlo s listom vedľa tlačidiel ho vypne. Každá hodina je jedno široké pole s počasím a dažďom. Výber inej obce režim farmára zachová.
+Operational status	Prevádzkový stav
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	Na obrazovke pozemku, len keď treba: verdikt pre postrek (červená, žltá, zelená), hlavný dôvod s limitom a riziká nasledujúcich 24 hodín. Ťuknutie ukáže ďalšie vhodné okno.
+A parcel's screen	Obrazovka pozemku
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Počasie po hodinách, päť dní, 2 Pôda a plodiny, 3 Riziká a správy (so Štatistikou · PDF), 4 Podrobnosti počasia.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Karty pod názvom (na šírku dole): obec a jedna pre každý pozemok; ťuknutie alebo posun do strany zmení obrazovku, + pridá pozemok.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Okno z matného skla v strede obrazovky (obrazovka zostáva ostrá); zatvorí sa X alebo ťuknutím mimo neho. Pod názvom miesto; ▲ a ▼ posúvajú; zdroj je dole.
+The main screen	Hlavná obrazovka
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Stránka sa posúva hore a dole pod sklom hore; tlačidlá a batéria plávajú dole. Časti: Nasledujúce hodiny, Predpoveď na päť dní, Podrobnosti počasia.
+Five-day forecast	Predpoveď na päť dní
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Zajtra a pozajtra hore; pod nimi sa dni 3–5 posúvajú samy každé 3 sekundy, kým sa ich nedotkneš. Riadok Podrobnosti počasia sa po 6 sekundách trochu pohne.

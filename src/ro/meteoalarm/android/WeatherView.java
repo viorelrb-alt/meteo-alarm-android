@@ -77,6 +77,12 @@ final class WeatherView extends View {
 
 		/** v2.90: the finger let the new screen stay. */
 		void pageDone();
+
+		/** v5.30: a tap on tab K (0 the town, 1.. the parcels, the parcels' count + 1: "+"). */
+		void onTab(int k);
+
+		/** v5.30: the small farmer button: farmer mode off. */
+		void onFarmButton();
 	}
 
 	/**
@@ -110,6 +116,70 @@ final class WeatherView extends View {
 		}
 	};
 
+	// --- v5.30 (Viorel): days 3–5 move on by themselves every 3 s (until a finger touches them, back
+	// at the next opening of the screen or new weather); 6 s after that the weather details row
+	// goes a little to the left and back, to show it moves.
+	private static final long CAROUSEL_MS = 3000, NUDGE_MS = 6000;
+	private boolean carouselOn = true;
+	private android.animation.ValueAnimator carousel, nudge;
+	private final Runnable carouselNext = new Runnable() {
+		public void run() {
+			postDelayed(this, CAROUSEL_MS);
+			final Strip st = screen.days2;
+			float step = screen.days2Step;
+			if (!carouselOn || st.area[2] <= 0 || step <= 0 || (dragging && drag == st) || screen.nightClock || !isShown() || pgA != null) return;
+			// Far along: back by whole rounds (the same boxes show), then on by one.
+			while (st.scroll >= 3 * step * 30) st.scroll -= 3 * step * 30;
+			float to = (Math.round(st.scroll / step) + 1) * step;
+			if (carousel != null) carousel.cancel();
+			carousel = android.animation.ValueAnimator.ofFloat(st.scroll, to);
+			carousel.setDuration(700);
+			carousel.setInterpolator(new android.view.animation.AccelerateDecelerateInterpolator());
+			carousel.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+				public void onAnimationUpdate(android.animation.ValueAnimator a) {
+					st.scroll = (Float) a.getAnimatedValue();
+					invalidate();
+				}
+			});
+			carousel.start();
+		}
+	};
+	private final Runnable nudgeRun = new Runnable() {
+		public void run() {
+			final Strip st = screen.info;
+			if (st.area[2] <= 0 || st.max <= 0 || st.scroll > 1 || dragging || !isShown()) return;
+			nudge = android.animation.ValueAnimator.ofFloat(0, Math.min(90, st.max), 0);
+			nudge.setDuration(1400);
+			nudge.setInterpolator(new android.view.animation.AccelerateDecelerateInterpolator());
+			nudge.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+				public void onAnimationUpdate(android.animation.ValueAnimator a) {
+					if (dragging && drag == st) return;
+					st.scroll = (Float) a.getAnimatedValue();
+					invalidate();
+				}
+			});
+			nudge.start();
+		}
+	};
+
+	/** v5.30: the screen opened again or new weather came: the days move on again, the details row nudges. */
+	void autoAgain() {
+		carouselOn = true;
+		removeCallbacks(carouselNext);
+		postDelayed(carouselNext, CAROUSEL_MS);
+		removeCallbacks(nudgeRun);
+		postDelayed(nudgeRun, NUDGE_MS);
+	}
+
+	private void stopAuto(Strip st) {
+		if (st == screen.days2) {
+			if (carouselOn) Log.i(getContext(), "GEST", "caruselul zilelor oprit de atingere");
+			carouselOn = false;
+			if (carousel != null) carousel.cancel();
+		}
+		if (st == screen.info && nudge != null) nudge.cancel();
+	}
+
 	private boolean slideLogged;
 
 	private String stripName(Strip st) {
@@ -127,11 +197,14 @@ final class WeatherView extends View {
 		super.onAttachedToWindow();
 		removeCallbacks(rollNext);
 		postDelayed(rollNext, ROLL_MS);
+		autoAgain();
 	}
 
 	@Override
 	protected void onDetachedFromWindow() {
 		removeCallbacks(rollNext);
+		removeCallbacks(carouselNext);
+		removeCallbacks(nudgeRun);
 		super.onDetachedFromWindow();
 	}
 
@@ -163,7 +236,7 @@ final class WeatherView extends View {
 	 * The bar goes away 3 s after the sun button if unused, 4 s after the finger lifts, or at a
 	 * touch elsewhere.
 	 */
-	private boolean edge, sliding, barDown, barDrag, moonDown;
+	private boolean edge, sliding, barDown, barDrag, moonDown, pageCand;
 	private float pos0;
 	private final Runnable hideBar = new Runnable() {
 		public void run() {
@@ -238,6 +311,7 @@ final class WeatherView extends View {
 	/** The icon moves again (the app comes back on the screen). */
 	void replayIcon() {
 		iconDone = null;
+		autoAgain();
 		invalidate();
 	}
 
@@ -314,6 +388,8 @@ final class WeatherView extends View {
 	private float[] band() {
 		float[] f = Screen.fit(getWidth(), getHeight() - bandUsed(), screen.tablet);
 		f[2] += lift();
+		// v5.30: phones: the page under the glass (portrait) or the left part (landscape).
+		if (!screen.tablet && screen.pageS.area[2] > 0) return new float[] { oy + screen.pageS.area[1] * scale, oy + (f[2] - 90) * scale };
 		// v3.10: in landscape the boxes start right under the dots (124 units), so the slide starts there.
 		float top = getWidth() > getHeight() ? 123 : 137;
 		return new float[] { oy + top * scale, oy + (f[2] - 80) * scale };
@@ -407,12 +483,86 @@ final class WeatherView extends View {
 		screen.band = bp / scale;
 		screen.bandTop = -oy / scale;
 		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
+		gfx.frostBmp = null;
+		if (!screen.tablet && !screen.nightClock) frostCopy(w, h, cw, ch);
 		c.save();
 		c.translate(ox, oy);
 		c.scale(scale, scale);
 		gfx.c = c;
 		screen.draw(gfx, cw, ch);
 		c.restore();
+	}
+
+	// --- v5.30: the blurred copy of the page that shows through the glass ----------------------
+
+	private Bitmap frost;
+	private Canvas frostC;
+	private static final int FROST_F = 6;
+
+	private void frostCopy(int w, int h, float cw, float ch) {
+		try {
+			int fw = Math.max(1, w / FROST_F), fh = Math.max(1, h / FROST_F);
+			if (frost == null || frost.getWidth() != fw || frost.getHeight() != fh) {
+				if (frost != null) frost.recycle();
+				frost = Bitmap.createBitmap(fw, fh, Bitmap.Config.ARGB_8888);
+				frostC = new Canvas(frost);
+			}
+			frostC.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
+			frostC.save();
+			frostC.scale(fw / (float) w, fh / (float) h);
+			frostC.translate(ox, oy);
+			frostC.scale(scale, scale);
+			gfx.c = frostC;
+			screen.layer = 1;
+			screen.draw(gfx, cw, ch);
+			frostC.restore();
+			blur(frost, 2);
+			blur(frost, 2);
+			gfx.frostBmp = frost;
+			gfx.frostDst.set(-ox / scale, -oy / scale, (w - ox) / scale, (h - oy) / scale);
+		} catch (Throwable t) {
+			gfx.frostBmp = null;
+		} finally {
+			screen.layer = 0;
+		}
+	}
+
+	private int[] fpx, fout;
+
+	/** A box blur of radius R, across then down. */
+	private void blur(Bitmap b, int r) {
+		int w = b.getWidth(), h = b.getHeight(), n = w * h;
+		if (fpx == null || fpx.length != n) {
+			fpx = new int[n];
+			fout = new int[n];
+		}
+		int[] px = fpx, out = fout;
+		b.getPixels(px, 0, w, 0, 0, w, h);
+		for (int pass = 0; pass < 2; pass++) {
+			boolean hor = pass == 0;
+			int len = hor ? w : h, m = hor ? h : w;
+			for (int j = 0; j < m; j++) {
+				int rr = 0, gg = 0, bb = 0, cnt = 2 * r + 1;
+				for (int k = -r; k <= r; k++) {
+					int q = Math.max(0, Math.min(len - 1, k)), v = hor ? px[j * w + q] : px[q * w + j];
+					rr += (v >> 16) & 255; gg += (v >> 8) & 255; bb += v & 255;
+				}
+				for (int i = 0; i < len; i++) {
+					int o = 0xFF000000 | (rr / cnt) << 16 | (gg / cnt) << 8 | (bb / cnt);
+					if (hor) out[j * w + i] = o;
+					else out[i * w + j] = o;
+					int qa = Math.max(0, Math.min(len - 1, i - r)), qb = Math.max(0, Math.min(len - 1, i + r + 1));
+					int va = hor ? px[j * w + qa] : px[qa * w + j], vb = hor ? px[j * w + qb] : px[qb * w + j];
+					rr += ((vb >> 16) & 255) - ((va >> 16) & 255);
+					gg += ((vb >> 8) & 255) - ((va >> 8) & 255);
+					bb += (vb & 255) - (va & 255);
+				}
+			}
+			int[] t = px;
+			px = out;
+			out = t;
+		}
+		b.setPixels(px, 0, w, 0, 0, w, h);
 	}
 
 	/** A round button with the refresh arrow that follows the finger down; full arrow = release to refresh. */
@@ -468,8 +618,10 @@ final class WeatherView extends View {
 	/** Slides ST to the box nearest to where it is (the next one in a fling, V units/s). */
 	private void settle(final Strip st, float v) {
 		float from = st.scroll, to = st.target(from, v);
+		// v5.30: the page glides on after a fling and stops where it slows down (no boxes to settle on).
+		if (st == screen.pageS) to = Math.max(0, Math.min(st.max, from + v * 0.32f));
 		settle = android.animation.ValueAnimator.ofFloat(from, to);
-		settle.setDuration((long) Math.min(320, 120 + Math.abs(to - from) * 0.8f));
+		settle.setDuration(st == screen.pageS ? (long) Math.min(900, 220 + Math.abs(to - from) * 0.5f) : (long) Math.min(320, 120 + Math.abs(to - from) * 0.8f));
 		settle.setInterpolator(new android.view.animation.DecelerateInterpolator(1.6f));
 		settle.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
 			public void onAnimationUpdate(android.animation.ValueAnimator a) {
@@ -555,15 +707,21 @@ final class WeatherView extends View {
 			dragging = false;
 			drag = null;
 			float ux = (downX - ox) / scale, uy = (downY - oy) / scale;
-			for (Strip st : screen.strips()) if (st.area[2] > 0 && st.max > 0 && in(st.area, ux, uy)) drag = st;
+			boolean onPage = screen.inPage(ux, uy);
+			for (Strip st : screen.strips())
+				if (st.area[2] > 0 && st.max > 0 && in(st.area, ux, uy) && (onPage || st == screen.alerts || st == screen.tabs)) drag = st;
 			if (drag == screen.alerts) pauseRoll();
+			if (drag != null) stopAuto(drag);
+			// v5.30: the page itself moves up and down (not from the brightness edge).
+			pageCand = onPage && !edge && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
+			if (pageCand && settle != null) settle.cancel();
 			// v2.90: farmer mode with parcels: a sideways slide between the top line and the
 			// footer, not on a row of boxes, moves the whole middle of the screen.
 			float[] bd = getWidth() > 0 ? band() : new float[] { 0, 0 };
 			paging = false;
 			// v3.03 (Viorel): also above the top line (town, clock, dots).
 			pgCand = drag == null && screen.pages > 1 && !edge && !edgeR && downY < bd[1];
-			if (pgCand) {
+			if (pgCand || pageCand) {
 				if (vt == null) vt = VelocityTracker.obtain();
 				vt.clear();
 			}
@@ -574,7 +732,7 @@ final class WeatherView extends View {
 				vt.clear();
 			}
 		}
-		if ((drag != null || pgCand) && vt != null) vt.addMovement(e);
+		if ((drag != null || pgCand || pageCand) && vt != null) vt.addMovement(e);
 		if (pgCand && !paging && act == MotionEvent.ACTION_MOVE && !pulling && Math.abs(dx) > 10 * dp && Math.abs(dx) > Math.abs(dy)) {
 			paging = true;
 			Log.i(getContext(), "GEST", "glisare între ecrane începută");
@@ -593,6 +751,14 @@ final class WeatherView extends View {
 		if (drag != null && act == MotionEvent.ACTION_MOVE && !dragging && !pulling && !sliding) {
 			float along = drag.vertical ? dy : dx, across = drag.vertical ? dx : dy;
 			if (Math.abs(along) > 10 * dp && Math.abs(along) > Math.abs(across)) dragging = true;
+		}
+		// v5.30: up and down the page moves (pulling down at its top still refreshes).
+		if (pageCand && !dragging && act == MotionEvent.ACTION_MOVE && !pulling && !sliding && Math.abs(dy) > 10 * dp && Math.abs(dy) > Math.abs(dx)
+				&& !(dy > 0 && screen.pageS.scroll <= 0.5f)) {
+			drag = screen.pageS;
+			scroll0 = drag.scroll;
+			dragging = true;
+			if (nudge != null) nudge.cancel();
 		}
 		if (dragging) {
 			float along = drag.vertical ? dy : dx;
@@ -690,8 +856,24 @@ final class WeatherView extends View {
 			}
 			return true;
 		}
+		// v5.30: the glass and the capsules first; the page's boxes only where the page shows.
+		int tk = screen.tabAt(x, y);
+		if (tk >= 0) {
+			taps.onTab(tk);
+			return true;
+		}
+		if (screen.btnFarm[2] > 0 && in(screen.btnFarm, x, y)) {
+			taps.onFarmButton();
+			return true;
+		}
+		boolean onPage = screen.inPage(x, y);
+		int sk = onPage ? screen.statusAt(x, y) : -1;
+		if (sk >= 0) {
+			taps.onFarmBox(2, sk, screen.statusArea.clone());
+			return true;
+		}
 		// A tap on a warning (or earthquake) box: its details, and the row waits 20 s.
-		int[] fb = screen.farmBoxAt(x, y);
+		int[] fb = onPage ? screen.farmBoxAt(x, y) : null;
 		if (fb != null) {
 			taps.onFarmBox(fb[0], fb[1], screen.farmBoxRect(fb[0], fb[1]));
 			return true;
@@ -702,18 +884,18 @@ final class WeatherView extends View {
 			taps.onAlert(ak, screen.alertRect(ak));
 			return true;
 		}
-		if (screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
+		if (onPage && screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
 			int j = screen.partAt(x, y);
 			taps.onPrecip(j < 0 ? screen.precipArea.clone() : screen.partArea[j].clone(), j < 0 ? -1 : screen.partIdx[j]);
 			return true;
 		}
-		int ik = screen.infoAt(x, y);
+		int ik = onPage ? screen.infoAt(x, y) : -1;
 		if (ik >= 0) {
 			if (screen.infoId(ik).equals("compass")) taps.onCompass();
 			else taps.onInfoBox(ik, screen.infoRect(ik));
 			return true;
 		}
-		int[] hb = screen.boxAt(x, y);
+		int[] hb = onPage ? screen.boxAt(x, y) : null;
 		if (hb != null) {
 			taps.onBox(hb[0], hb[1], screen.boxRect(hb[0], hb[1]));
 			return true;
@@ -726,7 +908,7 @@ final class WeatherView extends View {
 		}
 		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
 		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
-		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y)) taps.onStats();
+		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y) && (screen.tablet || onPage)) taps.onStats();
 		else if (in(screen.cityArea, x, y)) taps.onTownName();
 		else if (screen.updArea[2] > 0 && in(screen.updArea, x, y)) taps.onRefresh(); // v5.00: the "updated" pill
 		return true;

@@ -1,6 +1,12 @@
-Trenutačna verzija: v.5.25 · 14.11.2026
+Trenutačna verzija: v.5.30 · 14.11.2026
 GLAVNI ZASLON
+- Glavni zaslon: stranica se pomiče ispod stakla na vrhu, po odjeljcima (Sljedeći sati, Prognoza za pet dana, Detalji vremena); gumbi i baterija lebde dolje.
+- Prognoza za pet dana: dani 3–5 sami se izmjenjuju svake 3 sekunde do prvog dodira.
 - Veliki kompas: dodir na mjesto na popisu pokazuje njegovu oznaku na kompasu; mjesta u istom smjeru više se ne preklapaju.
+NAČIN RADA ZA POLJOPRIVREDNIKE
+- Gumb za poljoprivrednike: gumb s listom pokraj gumbâ isključuje način rada; drugo mjesto ga zadržava.
+- Kartice: mjesto i parcele u karticama ispod naziva (položeno dolje); zaslon parcele u odjeljcima 1–4.
+- Operativni status: na zaslonu parcele, samo kad je potrebno, presuda za prskanje, razlog i rizici sljedeća 24 sata.
 OBAVIJESTI
 - Potresi: obavijesti samo za potrese najviše 300 km od vašeg mjesta; uključuju se ili isključuju u ☰.
 - Tornada (SAD): obavijesti o tornadu za vaše mjesto uključuju se ili isključuju u ☰.

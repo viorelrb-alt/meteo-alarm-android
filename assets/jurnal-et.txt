@@ -1,6 +1,12 @@
-Praegune versioon: v.5.25 · 14.11.2026
+Praegune versioon: v.5.30 · 14.11.2026
 PÕHIEKRAAN
+- Põhiekraan: leht kerib ülemise klaasi all jaotiste kaupa (Järgmised tunnid, Viie päeva prognoos, Ilma üksikasjad); nupud ja aku hõljuvad all.
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
+- Viie päeva prognoos: päevad 3–5 vahetuvad ise iga 3 sekundi järel kuni esimese puudutuseni.
+PÕLLUMEHE REŽIIM
+- Põllumehe nupp: nuppude kõrval olev lehenupp lülitab põllumehe režiimi välja; teine koht jätab selle alles.
+- Tööolek: põllulapi ekraanil, ainult vajadusel, pritsimise otsus, põhjus ja järgmise 24 tunni riskid.
+- Vahelehed: koht ja põllulapid vahelehtedena nime all (rõhtpaigutuses all); põllulapi ekraan jaotistes 1–4.
 SEADED
 - Ikoonide teema: 6 ilmaikoonide teemat (Klassikaline, Läikiv, Lame, Realistlik, Atmosfääriline, Kontuur), valitakse värviliste täppidega menüüs ☰; rakenduses ja vidinatel.
 - Seaded: menüü ☰ on nüüd aken jaotiste, lülitite, värviteemade ja ribaga Süsteem ja tugi; värskendamiseks tõmba ekraani alla või puuduta „uuendatud“.

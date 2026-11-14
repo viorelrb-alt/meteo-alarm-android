@@ -1017,3 +1017,49 @@ Last quarter	Остання чверть
 Waning crescent	Старий серп
 Screen off	Екран вимкнено
 With the phone's screen off, the app's windows close after 3 seconds and the app after 10.	Коли екран вимкнено, вікна застосунку закриваються через 3 секунди, а застосунок через 10.
+NEXT HOURS	НАЙБЛИЖЧІ ГОДИНИ
+FIVE-DAY FORECAST	ПРОГНОЗ НА П'ЯТЬ ДНІВ
+WEATHER DETAILS	ПОДРОБИЦІ ПОГОДИ
+HOURLY WEATHER	ПОГОДА ПОГОДИННО
+SOIL AND CROPS	ҐРУНТ І КУЛЬТУРИ
+PARCEL RISKS AND REPORTS	РИЗИКИ Й ЗВІТИ ДІЛЯНКИ
+tap: soil details	торкнися: ґрунт
+STATISTICS · PDF	СТАТИСТИКА · PDF
+12 hours · day by day · PDF	12 годин · по днях · PDF
+OPERATIONAL STATUS	ОПЕРАТИВНИЙ СТАТУС
+tap: next window	торкнися: наступне вікно
+Rain until {1} ({2})	Дощ до {1} ({2})
+Rain from {1} ({2})	Дощ з {1} ({2})
+the treatment would be washed off the leaves	препарат змиє з листя
+soil {1}	ґрунт {1}
+FROST at {1} ({2})	МОРОЗ о {1} ({2})
+Hoarfrost risk at {1} ({2})	Ризик інею о {1} ({2})
+protect sensitive crops	захисти чутливі культури
+Storm risk: {1}	Ризик грози: {1}
+SPRAY NOW, UNTIL {1}	ОБПРИСКУЙ ЗАРАЗ, ДО {1}
+GOOD FOR SPRAYING	МОЖНА ОБПРИСКУВАТИ
+Wind {1}, no rain now	Вітер {1}, зараз без дощу
+good: wind 3–15 km/h, gusts under 25, no rain	добре: вітер 3–15 км/год, пориви до 25, без дощу
+DON'T SPRAY NOW	НЕ ОБПРИСКУЙ ЗАРАЗ
+DON'T SPRAY TODAY	НЕ ОБПРИСКУЙ СЬОГОДНІ
+Active precipitation: rain {1}, {2}/h	Активні опади: дощ {1}, {2}/год
+over the spraying limit: 40% or 0.1 mm/h	вище порогу для обприскування: 40% або 0,1 мм/год
+Wind {1}, gusts {2}	Вітер {1}, пориви {2}
+over the limit: 15 km/h, gusts 25 km/h	вище порогу: 15 км/год, пориви 25 км/год
+Wind too weak: {1}	Надто слабкий вітер: {1}
+under 3 km/h the spray drifts unevenly	нижче 3 км/год розчин лягає нерівномірно
+Too hot: {1}	Надто спекотно: {1}
+over 28 °C the solution evaporates	вище 28 °C розчин випаровується
+Dry air: humidity {1}	Сухе повітря: вологість {1}
+under 40% the drops dry before they settle	нижче 40% краплі висихають, не встигнувши осісти
+The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.	Перемикач Режим фермера в ☰ вмикає його; кнопка з листком поруч із кнопками вимикає. Кожна година — одна широка клітинка з погодою і дощем. Вибір іншого населеного пункту зберігає режим фермера.
+Operational status	Оперативний статус
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.	На екрані ділянки, лише коли треба: вердикт щодо обприскування (червоний, жовтий, зелений), головна причина з порогом і ризики на найближчі 24 години. Дотик показує наступне добре вікно.
+A parcel's screen	Екран ділянки
+1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.	1 Погода погодинно, п'ять днів, 2 Ґрунт і культури, 3 Ризики й звіти (зі Статистикою · PDF), 4 Подробиці погоди.
+Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + adds a parcel.	Вкладки під назвою (в альбомній орієнтації — внизу): населений пункт і по одній на ділянку; дотик або зсув убік змінює екран, + додає ділянку.
+A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.	Вікно з матового скла посеред екрана (екран лишається чітким); закривається X або дотиком поза ним. Під заголовком — місце; ▲ і ▼ прокручують; джерело внизу.
+The main screen	Головний екран
+The page moves up and down under the glass at the top; the buttons and the battery float at the bottom. Sections: Next hours, Five-day forecast, Weather details.	Сторінка рухається вгору й униз під склом угорі; кнопки та батарея плавають унизу. Розділи: Найближчі години, Прогноз на п'ять днів, Подробиці погоди.
+Five-day forecast	Прогноз на п'ять днів
+Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds.	Завтра й післязавтра вгорі; під ними дні 3–5 змінюються самі кожні 3 секунди, доки ти їх не торкнешся. Ряд Подробиці погоди трохи зсувається через 6 секунд.
