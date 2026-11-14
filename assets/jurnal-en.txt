@@ -1,4 +1,4 @@
-Current version: v.5.01 · 14.11.2026
+Current version: v.5.02 · 14.11.2026
 MAIN SCREEN
 - Big compass: a tap on a town in the list shows its mark on the compass; towns in the same direction no longer overlap.
 NOTIFICATIONS

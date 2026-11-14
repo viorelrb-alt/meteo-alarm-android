@@ -975,3 +975,4 @@ Notifications are on: rain or snow, weather warnings and earthquakes around you.
 Compass	Kompass
 works offline	funktioniert offline
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Die Leiste unten im Fenster: Widgets, Export / Import, Protokoll, Aktualisieren, Teilen, Hilfe, Über. Nach oben gezogen zeigt sie die Namen unter den Symbolen.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ öffnet die Einstellungen nach Bereichen; ein Schalter schaltet eine Funktion sofort ein oder aus. Es schließt mit X oder einem Tippen daneben. Auf dem Telefon öffnet es sich im Hochformat.

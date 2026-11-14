@@ -975,3 +975,4 @@ Notifications are on: rain or snow, weather warnings and earthquakes around you.
 Compass	Kompas
 works offline	deluje brez interneta
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Vrstica na dnu okna: Pripomočki, Izvoz / Uvoz, Dnevnik, Posodobi, Deli, Pomoč, O aplikaciji. Povlečena navzgor pokaže imena pod ikonami.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ odpre nastavitve po razdelkih; stikalo takoj vklopi ali izklopi funkcijo. Zapre se z X ali dotikom zunaj njega. Na telefonu se odpre pokončno.

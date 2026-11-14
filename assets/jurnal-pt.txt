@@ -1,4 +1,4 @@
-Versão atual: v.5.01 · 14.11.2026
+Versão atual: v.5.02 · 14.11.2026
 DEFINIÇÕES
 - Definições: o menu ☰ é agora uma janela com secções, interruptores, os temas em cores e a barra Sistema e suporte; atualiza-se puxando o ecrã para baixo ou tocando em «atualizado».
 ECRÃ PRINCIPAL

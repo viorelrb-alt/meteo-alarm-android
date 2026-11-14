@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.01";
+	static final String VERSION = "Meteo Alarm Android v5.02";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -695,6 +695,19 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		super.onConfigurationChanged(cfg);
 		applySettings();
 		view.invalidate();
+		if (menuAfterTurn && cfg.orientation == Configuration.ORIENTATION_PORTRAIT) {
+			menuAfterTurn = false;
+			view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+				public void onLayoutChange(View v, int l, int t, int ri, int b, int ol, int ot, int or, int ob) {
+					view.removeOnLayoutChangeListener(this);
+					handler.postDelayed(new Runnable() {
+						public void run() {
+							onMenu();
+						}
+					}, 150);
+				}
+			});
+		}
 		// A bubble open while the phone turns is opened again for the new screen.
 		if (bubble.isOpen() && reopen != null) {
 			final Runnable r = reopen;
@@ -2058,6 +2071,51 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** Opens the bubble that is open now again (after the phone turns). */
 	private Runnable reopen;
 
+	/**
+	 * v5.02 (Viorel): on a phone the Settings open in portrait (in landscape they do not fit): ☰ in
+	 * landscape turns the screen first, then opens them. The screen stays in portrait while they or a
+	 * window opened from them is open, and follows the phone again when all are closed.
+	 * Returns false when the menu opens later (after the turn).
+	 */
+	private boolean menuLock, menuAfterTurn;
+
+	private boolean lockPortrait() {
+		if (TextSize.tablet(this)) return true;
+		boolean land = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+		setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		if (!menuLock) {
+			menuLock = true;
+			handler.postDelayed(unlockCheck, 800);
+		}
+		if (land) {
+			menuAfterTurn = true;
+			handler.postDelayed(new Runnable() {
+				public void run() {
+					// The screen did not turn (in time): open them anyway.
+					if (menuAfterTurn) {
+						menuAfterTurn = false;
+						onMenu();
+					}
+				}
+			}, 1500);
+			return false;
+		}
+		return true;
+	}
+
+	/** Lets the screen turn again once the Settings and the windows over them are closed. */
+	private final Runnable unlockCheck = new Runnable() {
+		public void run() {
+			if (!menuLock) return;
+			if (menuAfterTurn || settings.isOpen() || bubble.isOpen() || help.isOpen() || sheet.isOpen()) {
+				handler.postDelayed(this, 500);
+				return;
+			}
+			menuLock = false;
+			setRequestedOrientation(android.content.pm.ActivityInfo.SCREEN_ORIENTATION_FULL_USER);
+		}
+	};
+
 
 	/**
 	 * v5.00 (Viorel, mockups machete-meniu-setari): ☰ opens the Settings window: the settings by
@@ -2065,6 +2123,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * the screen down, or tap the "updated" pill). Changes show at once in the open window.
 	 */
 	public void onMenu() {
+		if (!settings.isOpen() && !lockPortrait()) return; // v5.02: opens after the turn to portrait
 		if (!settings.isOpen()) Log.i(this, "BUTON", "meniu ☰ (setări)");
 		reopen = new Runnable() {
 			public void run() {
@@ -3004,8 +3063,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("auto"), Tr.t("Refreshing by itself", "Reîmprospătare automată"), Tr.t("Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.",
 				"La 15 minute cu ecranul aprins, la 30 cu el stins; MET Norway când Open-Meteo e ocupat."));
 		help.section(Tr.t("Settings (☰)", "Setări (☰)"));
-		help.entry(mini("gear"), Tr.t("The Settings window", "Fereastra Setări"), Tr.t("☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it.",
-				"☰ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei."));
+		help.entry(mini("gear"), Tr.t("The Settings window", "Fereastra Setări"), Tr.t("☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.",
+				"☰ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei. Pe telefon se deschide în portret."));
 		help.entry(mini("city"), Tr.t("Location & favourites", "Localizare & Favorite"), Tr.t("The favourites (the star: the town shown); a tap picks one; + Add and Choose the county open the list of towns.",
 				"Favoritele (steaua: localitatea afișată); atingerea alege una; + Adaugă și Alegeți județul deschid lista localităților."));
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));

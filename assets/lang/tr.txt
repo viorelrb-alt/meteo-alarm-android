@@ -909,3 +909,4 @@ Notifications are on: rain or snow, weather warnings and earthquakes around you.
 Compass	Pusula
 works offline	internetsiz çalışır
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Pencerenin altındaki çubuk: Widget'lar, Dışa aktar / İçe aktar, Günlük, Güncelle, Paylaş, Yardım, Hakkında. Yukarı çekilince simgelerin altındaki adları gösterir.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	☰ ayarları bölümler hâlinde açar; bir anahtar bir işlevi hemen açar veya kapatır. X ile ya da dışına dokunarak kapanır. Telefonda dikey açılır.

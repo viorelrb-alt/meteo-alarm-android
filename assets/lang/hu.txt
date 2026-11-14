@@ -975,3 +975,4 @@ Notifications are on: rain or snow, weather warnings and earthquakes around you.
 Compass	Iránytű
 works offline	internet nélkül is működik
 The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.	Az ablak alján lévő sáv: Widgetek, Exportálás / Importálás, Napló, Frissítés, Megosztás, Súgó, Névjegy. Felhúzva megmutatja a neveket az ikonok alatt.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. On a phone it opens in portrait.	A ☰ szakaszonként nyitja meg a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy mellé koppintva záródik. Telefonon álló helyzetben nyílik meg.
