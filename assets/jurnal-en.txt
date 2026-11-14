@@ -1,4 +1,4 @@
-Current version: v.5.30 · 14.11.2026
+Current version: v.5.31 · 14.11.2026
 FARMER MODE
 - Farmer button: the leaf button next to the buttons turns farmer mode off; another town keeps farmer mode.
 - Operational status: on a parcel's screen, only when needed, the spraying verdict, its reason and the risks of the next 24 hours.
@@ -13,6 +13,8 @@ NOTIFICATIONS
 SETTINGS
 - Icon theme: 6 weather icon themes (Classic, Glossy, Flat, Realistic, Atmospheric, Outline), chosen with coloured dots in ☰; in the app and on the widgets.
 - Settings: the ☰ menu is now a window with sections, switches, the colour themes and the System & support bar; refresh by pulling the screen down or tapping “updated”.
+UPDATES
+- Updates: the app no longer looks for updates by itself, only when you tap ☰ › Check for updates; the new version downloads in the browser and you install it from the downloaded file.
 - Design improvements and bug fixes.
 
 Version 4 (v.4.00 – v.4.52)

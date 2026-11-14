@@ -1,4 +1,4 @@
-Huidige versie: v.5.30 · 14.11.2026
+Huidige versie: v.5.31 · 14.11.2026
 BOERENMODUS
 - Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
 - Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.
@@ -13,6 +13,8 @@ INSTELLINGEN
 MELDINGEN
 - Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ☰.
 - Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ☰.
+UPDATES
+- Updates: de app zoekt niet meer zelf naar updates, alleen als je op ☰ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
 - Ontwerpverbeteringen en foutoplossingen.
 
 Versie 4 (v.4.00 – v.4.52)

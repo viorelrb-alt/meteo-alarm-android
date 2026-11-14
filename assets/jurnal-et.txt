@@ -1,4 +1,4 @@
-Praegune versioon: v.5.30 · 14.11.2026
+Praegune versioon: v.5.31 · 14.11.2026
 PÕHIEKRAAN
 - Põhiekraan: leht kerib ülemise klaasi all jaotiste kaupa (Järgmised tunnid, Viie päeva prognoos, Ilma üksikasjad); nupud ja aku hõljuvad all.
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
@@ -13,6 +13,8 @@ SEADED
 TEAVITUSED
 - Maavärinad: teavitused ainult maavärinatest kuni 300 km sinu kohast; lülitatakse sisse või välja menüüs ☰.
 - Tornaadod (USA): sinu asula tornaaditeavitused lülitatakse sisse või välja menüüs ☰.
+UUENDUSED
+- Uuendused: rakendus ei otsi enam ise uuendusi, ainult siis, kui puudutad ☰ › Kontrolli uuendusi; uus versioon laaditakse alla brauseris ja sina paigaldad selle allalaaditud failist.
 - Disainiparandused ja vigade parandused.
 
 Versioon 4 (v.4.00 – v.4.52)

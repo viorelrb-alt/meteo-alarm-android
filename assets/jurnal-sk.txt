@@ -1,4 +1,6 @@
-Súčasná verzia: v.5.30 · 14.11.2026
+Súčasná verzia: v.5.31 · 14.11.2026
+AKTUALIZÁCIE
+- Aktualizácie: aplikácia už sama nehľadá aktualizácie, len keď ťuknete na ☰ › Skontrolovať aktualizácie; nová verzia sa stiahne v prehliadači a nainštalujete ju zo stiahnutého súboru.
 HLAVNÁ OBRAZOVKA
 - Hlavná obrazovka: stránka sa posúva pod sklom hore, po častiach (Nasledujúce hodiny, Predpoveď na päť dní, Podrobnosti počasia); tlačidlá a batéria plávajú dole.
 - Predpoveď na päť dní: dni 3–5 sa posúvajú samy každé 3 sekundy až do prvého dotyku.

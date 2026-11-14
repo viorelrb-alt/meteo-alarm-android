@@ -1,4 +1,6 @@
-Versiunea curentă: v.5.30 · 14.11.2026
+Versiunea curentă: v.5.31 · 14.11.2026
+ACTUALIZĂRI
+- Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL
 - Busola mare: atingerea unei localități din listă îi arată semnul pe busolă; localitățile din aceeași direcție nu se mai suprapun.
 - Ecran principal: pagina se derulează sus-jos sub sticla de sus, pe secțiuni (Următoarele ore, Prognoza pe cinci zile, Detalii meteo); butoanele și bateria plutesc jos.

@@ -1,4 +1,4 @@
-Nuvarande version: v.5.30 · 14.11.2026
+Nuvarande version: v.5.31 · 14.11.2026
 AVISERINGAR
 - Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
 - Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
@@ -13,6 +13,8 @@ LANTBRUKARLÄGE
 - Driftstatus: på ett skiftes skärm, bara när det behövs, domen om sprutning, orsaken och riskerna för de kommande 24 timmarna.
 - Flikar: orten och skiftena i flikar under namnet (liggande nederst); ett skiftes skärm i avsnitt 1–4.
 - Lantbrukarknapp: bladknappen bredvid knapparna slår av lantbrukarläget; en annan ort behåller det.
+UPPDATERINGAR
+- Uppdateringar: appen söker inte längre själv efter uppdateringar, bara när du trycker på ☰ › Sök efter uppdateringar; den nya versionen laddas ned i webbläsaren och du installerar den från den nedladdade filen.
 - Designförbättringar och felrättningar.
 
 Version 4 (v.4.00 – v.4.52)

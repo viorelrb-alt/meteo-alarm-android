@@ -1,4 +1,6 @@
-Obecna wersja: v.5.30 · 14.11.2026
+Obecna wersja: v.5.31 · 14.11.2026
+AKTUALIZACJE
+- Aktualizacje: aplikacja nie szuka już sama aktualizacji, tylko po dotknięciu ☰ › Sprawdź aktualizacje; nowa wersja pobiera się w przeglądarce, a Ty instalujesz ją z pobranego pliku.
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie miejscowości na liście pokazuje jej znak na kompasie; miejscowości w tym samym kierunku już się nie nakładają.
 - Ekran główny: strona przewija się pod szkłem u góry, w sekcjach (Najbliższe godziny, Prognoza na pięć dni, Szczegóły pogody); przyciski i bateria unoszą się na dole.

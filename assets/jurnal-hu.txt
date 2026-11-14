@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.5.30 · 14.11.2026
+Jelenlegi verzió: v.5.31 · 14.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
@@ -9,6 +9,8 @@ FŐKÉPERNYŐ
 - Főképernyő: az oldal a felső üveg alatt görgethető, részekre bontva (Következő órák, Ötnapos előrejelzés, Időjárási részletek); a gombok és az akkumulátor alul lebegnek.
 - Nagy iránytű: egy település megérintése a listában megmutatja a jelét az iránytűn; az azonos irányú települések már nem fedik egymást.
 - Ötnapos előrejelzés: a 3–5. nap 3 másodpercenként magától lép tovább az első érintésig.
+FRISSÍTÉSEK
+- Frissítések: az alkalmazás már nem keres magától frissítéseket, csak ha a ☰ › Frissítések keresése gombra koppintasz; az új verzió a böngészőben töltődik le, és a letöltött fájlból telepíted.
 GAZDA MÓD
 - Fülek: a település és a parcellák fülekben a név alatt (fekvő nézetben lent); a parcella képernyője 1–4. részre bontva.
 - Gazda gomb: a gombok melletti levél gomb kikapcsolja a gazda módot; másik település megtartja.

@@ -1,4 +1,4 @@
-Nykyinen versio: v.5.30 · 14.11.2026
+Nykyinen versio: v.5.31 · 14.11.2026
 ASETUKSET
 - Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
 - Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ☰; sovelluksessa ja widgeteissä.
@@ -9,6 +9,8 @@ PÄÄNÄYTTÖ
 - Iso kompassi: napautus paikkakuntaan luettelossa näyttää sen merkin kompassissa; samassa suunnassa olevat paikkakunnat eivät enää mene päällekkäin.
 - Päänäyttö: sivu vierii ylälasin alla osioittain (Seuraavat tunnit, Viiden päivän ennuste, Sään tiedot); painikkeet ja akku leijuvat alhaalla.
 - Viiden päivän ennuste: päivät 3–5 vaihtuvat itsestään 3 sekunnin välein ensimmäiseen kosketukseen asti.
+PÄIVITYKSET
+- Päivitykset: sovellus ei enää etsi päivityksiä itse, vain kun napautat ☰ › Tarkista päivitykset; uusi versio ladataan selaimessa ja asennat sen ladatusta tiedostosta.
 VILJELIJÄTILA
 - Toimintatila: lohkon näytöllä, vain kun tarpeen, ruiskutuksen tuomio, syy ja seuraavan 24 tunnin riskit.
 - Välilehdet: paikkakunta ja lohkot välilehdinä nimen alla (vaakatasossa alhaalla); lohkon näyttö osioissa 1–4.

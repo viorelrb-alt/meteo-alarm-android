@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.30";
+	static final String VERSION = "Meteo Alarm Android v5.31";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -86,7 +86,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private SizeOverlay sizer;
 	/** v5.00: the blurred, darkened screen behind every open window (Glass). */
 	private Glass.Backdrop backdrop;
-	private static final long UPDATE_CHECK_MS = 7 * 24 * 3600000L;
 	private static final long LOCATE_MS = 60 * 60000L;
 
 	private final Runnable tick = new Runnable() {
@@ -325,8 +324,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ Tr.t("Sensors: the app reads the battery state (night clock while charging), the phone's light sensor with ☰ › Theme › Automatic (phone sensor), and the compass, which turns the wind arrow with the phone. What the phone does not have is turned off. Nothing leaves the phone.",
 						"Senzori: aplicația citește starea bateriei (ceasul de noapte la încărcare), senzorul de lumină al telefonului cu ☰ › Temă › Automat (senzor telefon) și busola, care rotește săgeata vântului după telefon. Ce nu are telefonul se dezactivează. Nimic nu pleacă de pe telefon.") + "\n\n"
 				+ Tr.t("Updates: ", "Actualizări: ") + Updater.howTo(en) + " "
-				+ Tr.t("After that, once a week the app checks GitHub for a new version and asks before downloading it.",
-						"După aceea, o dată pe săptămână aplicația caută pe GitHub o versiune nouă și te întreabă înainte s-o descarce.") + "\n\n"
+				+ Tr.t("The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.",
+						"Aplicația verifică doar când apeși Verifică actualizări; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat.") + "\n\n"
 				+ Updater.protectNote(en) + "\n\n" + Updater.autoBlocker();
 	}
 
@@ -1150,13 +1149,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			consents();
 			return;
 		}
-		// Look for a newer version once a week (the bottom window opens only when there is one).
-		long now = System.currentTimeMillis();
-		// Only with the user's consent, given in ☰ › Check for updates (Viorel 2026-11-02).
-		if (updater.agreed() && now - prefs.getLong("updateChecked", 0) >= UPDATE_CHECK_MS) {
-			prefs.edit().putLong("updateChecked", now).apply();
-			updater.check(false);
-		}
+		// v5.31 (Viorel 2026-11-14): no automatic update check; only ☰ › Check for updates.
 	}
 
 	// --- Location ----------------------------------------------------------------------
@@ -3168,7 +3161,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("OpenStreetMap: move it with one finger, zoom with two; it needs internet.",
 				"OpenStreetMap: o muți cu un deget, o mărești cu două; are nevoie de internet."));
 		help.section(Tr.t("Updates", "Actualizări"));
-		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en));
+		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + " " + Tr.t("The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.", "Aplicația verifică doar când apeși Verifică actualizări; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat."));
 		help.entry(mini("shield"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
 		help.entry(mini("check"), Tr.t("Before an update", "Înainte de actualizare"), Tr.t("The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.",
 				"Aplicația verifică întâi dacă are voie să instaleze actualizări (altfel deschide setarea). Pe Samsung amintește să oprești Auto Blocker; Setări îi deschide pagina."));

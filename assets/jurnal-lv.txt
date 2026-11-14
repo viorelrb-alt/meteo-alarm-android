@@ -1,4 +1,6 @@
-Pašreizējā versija: v.5.30 · 14.11.2026
+Pašreizējā versija: v.5.31 · 14.11.2026
+ATJAUNINĀJUMI
+- Atjauninājumi: lietotne vairs pati nemeklē atjauninājumus, tikai kad pieskaraties ☰ › Pārbaudīt atjauninājumus; jaunā versija tiek lejupielādēta pārlūkā, un jūs to instalējat no lejupielādētā faila.
 GALVENAIS EKRĀNS
 - Galvenais ekrāns: lapa ritinās zem stikla augšā, pa sadaļām (Nākamās stundas, Piecu dienu prognoze, Laikapstākļu detaļas); pogas un akumulators peld apakšā.
 - Liels kompass: pieskāriens vietai sarakstā rāda tās zīmi uz kompasa; vietas vienā virzienā vairs nepārklājas.

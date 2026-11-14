@@ -14,35 +14,30 @@ import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Release;
 
 /**
- * In-app updates: the newest GitHub Release of the app is compared with the installed version and
- * shown in the bottom window. "Actualizează" downloads the APK to the app's cache and hands it to
- * the system installer, which asks the user to confirm (and, the first time, to allow installs
- * from this app). Play Protect may warn about it; protectNote() explains why.
+ * Updates, only from ☰ › Check for updates (v5.31: no automatic checks): the newest GitHub Release
+ * is compared with the installed version and shown in the bottom window; "Descarcă" opens the APK
+ * in the browser (the app installs nothing itself, no REQUEST_INSTALL_PACKAGES).
  */
 final class Updater {
 	private final Activity a;
 	private final BottomSheet sheet;
 	private final Handler handler = new Handler();
-	private boolean busy, loading;
+	private boolean busy;
 
-	/** v5.24: checking or downloading now (the app does not close itself with the screen off then). */
+	/** v5.24: checking now (the app does not close itself with the screen off then). */
 	boolean working() {
-		return busy || loading;
+		return busy;
 	}
 	boolean en;
 
 	/** Why Play Protect may warn when the app (or one of its updates) is installed. */
 	static String protectNote(boolean en) {
-		return Tr.t("About the Play Protect warning: Google may say the app \"may be harmful\". It does so because the app "
-						+ "does not come from Google Play, its developer is not registered with Google, and it can install its "
-						+ "own updates (from github.com/viorelrb-alt/meteo-alarm-android). The app does nothing else. When the Play "
-						+ "Protect window appears, tap \"More details\" (if shown), then \"Install without scanning\" "
-						+ "(or \"Install anyway\").", "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare”. O face pentru că "
-						+ "aplicația nu vine din Google Play, dezvoltatorul nu e înregistrat la Google și aplicația își poate "
-						+ "instala singură actualizările (de pe github.com/viorelrb-alt/meteo-alarm-android). Aplicația nu face "
-						+ "nimic altceva. Când apare fereastra Play Protect, apasă „Mai multe” (dacă apare), apoi "
-						+ "„Instalează fără verificare” (sau „Instalează oricum”).");
+		return Tr.t(PROTECT_EN, PROTECT_RO);
 	}
+
+	/** v5.31 (Viorel 2026-11-14): the app no longer installs anything; the browser downloads the new version. */
+	static final String PROTECT_EN = "About the Play Protect warning: Google may say the app \"may be harmful\" because it does not come from Google Play and its developer is not registered with Google. The app does not look for updates by itself and does not install anything. When the Play Protect window appears, tap \"More details\" (if shown), then \"Install without scanning\" (or \"Install anyway\").",
+			PROTECT_RO = "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare” pentru că nu vine din Google Play și dezvoltatorul nu e înregistrat la Google. Aplicația nu caută singură actualizări și nu instalează nimic. Când apare fereastra Play Protect, apasă „Mai multe” (dacă apare), apoi „Instalează fără verificare” (sau „Instalează oricum”).";
 
 	/**
 	 * Samsung's Auto Blocker stops apps from outside Galaxy Store / Google Play from installing
@@ -93,17 +88,8 @@ final class Updater {
 	 * time while refused. Without it nothing is checked or downloaded. THEN runs after "I agree".
 	 */
 	private void askConsent(final Runnable then) {
-		String msg = Tr.t("Meteo Alarm does not come from Google Play. Its new versions are published on GitHub "
-						+ "(github.com/viorelrb-alt/meteo-alarm-android), and the app updates itself from there: it checks "
-						+ "about once a week (or when you choose Check for updates), shows what is new, and only when you "
-						+ "tap Update downloads the new version and opens the phone's installer, where you confirm again.\n\n"
-						+ "Do you allow the app to update this way? Without your consent the app does not look for updates "
-						+ "and does not download anything; you can agree later from ☰ › Check for updates.", "Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub "
-						+ "(github.com/viorelrb-alt/meteo-alarm-android), iar aplicația se actualizează de acolo: verifică "
-						+ "cam o dată pe săptămână (sau când alegi Verifică actualizări), arată ce e nou și abia când apeși "
-						+ "Actualizează descarcă versiunea nouă și deschide programul de instalare al telefonului, unde confirmi din nou.\n\n"
-						+ "Ești de acord ca aplicația să se actualizeze așa? Fără acordul tău aplicația nu caută actualizări "
-						+ "și nu descarcă nimic; îți poți da acordul mai târziu din ☰ › Verifică actualizări.");
+		String msg = Tr.t("Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android). The app looks for a new version only when you choose Check for updates; it shows what is new and, when you tap Download, opens the download in the browser. You install it yourself from the downloaded file.\n\nDo you allow the app to check GitHub for updates? Without your consent it checks nothing; you can agree later from ☰ › Check for updates.",
+				"Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub (github.com/viorelrb-alt/meteo-alarm-android). Aplicația caută o versiune nouă doar când alegi Verifică actualizări; arată ce e nou și, când apeși Descarcă, deschide descărcarea în browser. O instalezi tu din fișierul descărcat.\n\nEști de acord ca aplicația să verifice actualizările pe GitHub? Fără acordul tău nu verifică nimic; îți poți da acordul mai târziu din ☰ › Verifică actualizări.");
 		Log.i(a, "UPDATE", "informare actualizare din GitHub afișată");
 		sheet.show(Tr.t("Updates from GitHub", "Actualizări din GitHub"), msg, Tr.t("I agree", "Sunt de acord"), new Runnable() {
 			public void run() {
@@ -295,9 +281,9 @@ final class Updater {
 		String msg = (Tr.t("Installed: v", "Instalată: v")) + cur + "    " + (Tr.t("New: v", "Nouă: v")) + r.version;
 		if (r.notes.length() > 0) msg += "\n\n" + r.notes;
 		msg += "\n\n" + protectNote(en) + "\n\n" + autoBlocker();
-		sheet.show(Tr.t("New version: v", "Versiune nouă: v") + r.version, msg, Tr.t("Update", "Actualizează"), new Runnable() {
+		sheet.show(Tr.t("New version: v", "Versiune nouă: v") + r.version, msg, Tr.t("Download", "Descarcă"), new Runnable() {
 			public void run() {
-				download(r);
+				browse(r);
 			}
 		}, close());
 		if (!autoBlockerPhone()) sheet.setLeft(Tr.t("Security", "Securitate"), new Runnable() {
@@ -307,243 +293,29 @@ final class Updater {
 		});
 	}
 
-	private static final int TRIES = 5;
-
 	private static String noNet() {
 		return Tr.t("No internet connection. Turn on Wi-Fi or mobile data and try again.", "Nu ai conexiune la internet. Pornește Wi-Fi-ul sau datele mobile și încearcă din nou.");
 	}
 
 	/** An answer of a busy server (5xx, 429): worth trying again. */
-	private static boolean busyServer(String err) {
-		return err != null && (err.startsWith("HTTP 5") || err.startsWith("HTTP 429"));
-	}
-
-	private static void sleep(long ms) {
-		try {
-			Thread.sleep(ms);
-		} catch (InterruptedException e) {
-			// go on
-		}
-	}
-
-	/** Why the download stopped, in words, for the window (v3.00). */
-	private static String why(Exception e, String err) {
-		if (busyServer(err)) {
-			String code = err.length() >= 8 ? err.substring(5, 8) : "";
-			return Tr.t("GitHub is not answering now (error ", "GitHub nu răspunde acum (eroare ") + code
-					+ Tr.t("). Try again in a few minutes.", "). Încearcă din nou peste câteva minute.");
-		}
-		if (err != null && err.startsWith("drive")) return Tr.t("The update could not be downloaded from any server. Try again in a few minutes.", "Actualizarea nu a putut fi descărcată de pe niciun server. Încearcă din nou peste câteva minute.");
-		if (err != null && err.startsWith("size ")) return Tr.t("The downloaded file is incomplete. Try again.", "Fișierul descărcat e incomplet. Încearcă din nou.");
-		return Tr.t("The download failed: ", "Descărcarea a eșuat: ") + Fetcher.reason(e, !Tr.ro()) + ".";
-	}
-
 	/**
-	 * Downloads the new version (v3.00, Viorel 2026-11-08: GitHub answered 504 to about two tries
-	 * in three): up to 5 tries a few seconds apart, each step in the log, the reason on the screen.
+	 * v5.31 (Viorel 2026-11-14, Play Protect): the app no longer downloads or installs the new
+	 * version itself; the browser downloads it and the user installs it from the downloaded file.
 	 */
-	private void download(final Release r) {
-		final String t = "v" + r.version;
-		// v3.50 (Viorel): before an update, what would stop the phone from installing it.
-		if (!canInstall()) {
-			Log.i(a, "UPDATE", "aplicația nu are voie să instaleze aplicații: deschid setarea");
-			sheet.show(t, Tr.t("Meteo Alarm is not allowed to install updates. Tap Open settings, turn on Allow from this source, then come back and tap Update again.",
-					"Meteo Alarm nu are voie să instaleze actualizări. Apasă Deschide setările, pornește Permite din această sursă, apoi revino și apasă din nou Actualizează."),
-					Tr.t("Open settings", "Deschide setările"), new Runnable() {
-						public void run() {
-							sheet.hide();
-							openInstallSetting();
-						}
-					}, close());
-			return;
-		}
-		if (autoBlockerPhone() && !prefs().getBoolean("abSkip", false) && !r.version.equals(abSeen)) {
-			abSeen = r.version;
-			Log.i(a, "UPDATE", "telefon Samsung cu Auto Blocker: arăt nota înainte de descărcare");
-			sheet.show(t, Tr.t("Samsung: Auto Blocker must be off, otherwise the phone refuses the update. The app cannot see whether it is on. Tap Settings to open its page, turn it off, then come back and tap Continue. You can turn it back on after the update.",
-					"Samsung: Auto Blocker trebuie să fie oprit, altfel telefonul refuză actualizarea. Aplicația nu poate vedea dacă e pornit. Apasă Setări ca să-i deschizi pagina, oprește-l, apoi revino și apasă Continuă. Îl poți porni din nou după actualizare."),
-					Tr.t("Continue", "Continuă"), new Runnable() {
-						public void run() {
-							download(r);
-						}
-					}, Tr.t("Don't show again", "Nu mai afișa"), new Runnable() {
-						public void run() {
-							prefs().edit().putBoolean("abSkip", true).apply();
-							Log.i(a, "UPDATE", "nota Auto Blocker: nu mai afișa");
-							download(r);
-						}
-					});
-			sheet.setLeft(Tr.t("Settings", "Setări"), new Runnable() {
-				public void run() {
-					openAutoBlocker(a);
-				}
-			});
-			return;
-		}
-		if (NetJob.kind(a) == 0) {
-			Log.i(a, "UPDATE", "descărcare oprită: fără conexiune la internet");
-			sheet.show(t, noNet(), null, null, Tr.t("Close", "Închide"));
-			return;
-		}
-		// v3.00 (Viorel): the same version already downloaded whole: straight to the installer.
-		if (downloaded(r)) {
-			Log.i(a, "UPDATE", "v" + r.version + " e deja descărcată (" + ApkProvider.file(a).length() + " octeți): pornesc instalarea");
-			install(t);
-			return;
-		}
-		sheet.show(t, Tr.t("Downloading…", "Se descarcă…"), null, null, Tr.t("Hide", "Ascunde"));
-		dots(Tr.t("Downloading…", "Se descarcă…"));
-		Log.i(a, "UPDATE", "descarc v" + r.version + " (" + r.size + " octeți) de la " + r.apkUrl);
-		loading = true;
-		new Thread(new Runnable() {
-			public void run() {
-				final File f = ApkProvider.file(a);
-				String err = null;
-				Exception ex = null;
-				for (int k = 1; k <= TRIES; k++) {
-					err = null;
-					ex = null;
-					try {
-						fetch(r, f, k);
-						Log.i(a, "UPDATE", "descărcat: " + f.length() + " octeți, încercarea " + k);
-						break;
-					} catch (Exception e) {
-						ex = e;
-						err = String.valueOf(e.getMessage());
-						f.delete();
-						Log.e(a, "UPDATE", "descărcarea, încercarea " + k + "/" + TRIES + ": " + err + " (" + Fetcher.reason(e, false) + ")");
-						boolean again = k < TRIES && (busyServer(err) || e instanceof java.io.IOException || err.startsWith("size ")) && NetJob.kind(a) != 0;
-						if (!again) break;
-						// v3.03 (Viorel): after a failed try, the next source that has the same version.
-						boolean moved = false;
-						for (int n = r.src + 1; n < 3 && !moved; n++) {
-							try {
-								Release d = source(n);
-								if (d.version.equals(r.version) && d.apkUrl.length() > 0) {
-									r.apkUrl = d.apkUrl;
-									if (d.size > 0) r.size = d.size;
-									r.src = n;
-									moved = true;
-									Log.i(a, "UPDATE", "descarc de pe " + SRC[n]);
-								} else Log.i(a, "UPDATE", SRC[n] + " are v" + d.version + ", nu v" + r.version);
-							} catch (Exception de) {
-								Log.i(a, "UPDATE", SRC[n] + ": " + de.getMessage() + " (" + Fetcher.reason(de, false) + ")");
-							}
-						}
-						final int next = k + 1;
-						final int sr = r.src;
-						handler.post(new Runnable() {
-							public void run() {
-								dots(sr == 2 ? Tr.t("Downloading from Google Drive…", "Se descarcă de pe Google Drive…")
-										: sr == 1 ? Tr.t("Downloading from the second server…", "Se descarcă de pe serverul secundar…")
-										: Tr.t("GitHub did not answer, trying again (", "GitHub nu a răspuns, reîncerc (") + next + "/" + TRIES + ")…");
-							}
-						});
-						if (!moved) sleep(3000L * k);
-					}
-				}
-				final String ee = err;
-				final Exception fe = ex;
-				handler.post(new Runnable() {
-					public void run() {
-						loading = false;
-						stopDots();
-						if (ee == null) {
-							install(t);
-							return;
-						}
-						String m = NetJob.kind(a) == 0 ? noNet() : why(fe, ee);
-						Log.e(a, "UPDATE", "actualizarea a eșuat: " + m);
-						sheet.show(t, m, Tr.t("Try again", "Încearcă din nou"), new Runnable() {
-							public void run() {
-								download(r);
-							}
-						}, Tr.t("Close", "Închide"));
-					}
-				});
-			}
-		}).start();
-	}
-
-	/** The APK kept from an earlier download is this version, whole (its size and its version name). */
-	private boolean downloaded(Release r) {
-		try {
-			File f = ApkProvider.file(a);
-			if (!f.exists() || f.length() == 0 || (r.size > 0 && f.length() != r.size)) return false;
-			android.content.pm.PackageInfo pi = a.getPackageManager().getPackageArchiveInfo(f.getPath(), 0);
-			return pi != null && r.version.equals(pi.versionName);
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
-	/** One try (K) of the download into F; throws on a bad answer or a short file. */
-	private void fetch(Release r, File f, int k) throws Exception {
-		f.delete();
-		HttpURLConnection c = (HttpURLConnection) new URL(r.apkUrl).openConnection();
-		c.setConnectTimeout(20000);
-		c.setReadTimeout(60000);
-		c.setInstanceFollowRedirects(true);
-		c.setRequestProperty("User-Agent", "MeteoAlarmAndroid");
-		try {
-			int code = c.getResponseCode();
-			Log.i(a, "UPDATE", "încercarea " + k + ": răspuns HTTP " + code + (c.getURL() != null ? " de la " + c.getURL().getHost() : ""));
-			if (code / 100 != 2) throw new Exception("HTTP " + code);
-			// A Google Drive file that is not shared answers with a sign-in page.
-			String ct = c.getContentType();
-			if (ct != null && ct.startsWith("text/html")) throw new Exception("drive html (not shared?)");
-			long total = r.size > 0 ? r.size : c.getContentLength();
-			InputStream in = c.getInputStream();
-			FileOutputStream out = new FileOutputStream(f);
-			try {
-				byte[] buf = new byte[32768];
-				long got = 0;
-				int n, last = -1;
-				while ((n = in.read(buf)) > 0) {
-					out.write(buf, 0, n);
-					got += n;
-					final int pct = total > 0 ? (int) (got * 100 / total) : -1;
-					if (pct != last) {
-						last = pct;
-						handler.post(new Runnable() {
-							public void run() {
-								dots((Tr.t("Downloading… ", "Se descarcă… ")) + (pct >= 0 ? pct + "%" : ""));
-							}
-						});
-					}
-				}
-			} finally {
-				out.close();
-				in.close();
-			}
-			if (r.size > 0 && f.length() != r.size) throw new Exception("size " + f.length() + " != " + r.size);
-		} finally {
-			c.disconnect();
-		}
-	}
-
-	/** The version whose Auto Blocker note was shown in this window (shown once per update). */
-	private String abSeen;
-
-	/** v3.50: may the app install packages (Android 8+: "Install unknown apps" for this app)? */
-	private boolean canInstall() {
-		if (android.os.Build.VERSION.SDK_INT < 26) return true;
-		try {
-			Object ok = a.getPackageManager().getClass().getMethod("canRequestPackageInstalls").invoke(a.getPackageManager());
-			return !(ok instanceof Boolean) || (Boolean) ok;
-		} catch (Exception e) {
-			return true;
-		}
-	}
-
-	/** The phone's "Install unknown apps" page for this app. */
-	private void openInstallSetting() {
-		Intent i = new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", android.net.Uri.parse("package:" + a.getPackageName()));
+	private void browse(Release r) {
+		String t = "v" + r.version;
+		String url = r.apkUrl.length() > 0 ? r.apkUrl : r.page.length() > 0 ? r.page : "https://github.com/" + Release.REPO + "/releases/latest";
+		Intent i = new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(url));
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		try {
 			a.startActivity(i);
+			Log.i(a, "UPDATE", "descărcarea v" + r.version + " deschisă în browser: " + url);
+			sheet.show(t, Tr.t("The download opens in the browser. When it is done, open the file from the notification or from Downloads and confirm the install. The first time, the phone asks you to allow installs from the browser.",
+					"Descărcarea se deschide în browser. Când se termină, deschide fișierul din notificare sau din Descărcări și confirmă instalarea. Prima dată, telefonul îți cere să permiți instalarea din browser."), null, null, Tr.t("Close", "Închide"));
 		} catch (Exception e) {
-			open(a, new Intent(android.provider.Settings.ACTION_SECURITY_SETTINGS), "securitate");
+			Log.e(a, "UPDATE", "browserul nu a putut fi deschis: " + e);
+			sheet.show(t, Tr.t("No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-alarm-android/releases.",
+					"Nu s-a putut deschide niciun browser. Versiunea nouă e la github.com/viorelrb-alt/meteo-alarm-android/releases."), null, null, Tr.t("Close", "Închide"));
 		}
 	}
 
@@ -585,21 +357,6 @@ final class Updater {
 		} catch (Exception e) {
 			Log.i(a, "UPDATE", "setări: " + what + " nu s-a putut deschide (" + e + ")");
 			return false;
-		}
-	}
-
-	/** Opens the system installer on the downloaded APK; the window closes, the installer takes over. */
-	private void install(String t) {
-		Intent i = new Intent(Intent.ACTION_VIEW);
-		i.setDataAndType(ApkProvider.uri(), "application/vnd.android.package-archive");
-		i.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_ACTIVITY_NEW_TASK);
-		try {
-			a.startActivity(i);
-			Log.i(a, "UPDATE", "programul de instalare al telefonului a fost deschis");
-			sheet.hide();
-		} catch (Exception e) {
-			Log.e(a, "UPDATE", "programul de instalare nu a putut fi deschis: " + e);
-			sheet.show(t, Tr.t("The installer could not be opened.", "Instalarea nu a putut fi pornită."), null, null, Tr.t("Close", "Închide"));
 		}
 	}
 }

@@ -1,4 +1,4 @@
-Leagan reatha: v.5.30 · 14.11.2026
+Leagan reatha: v.5.31 · 14.11.2026
 FÓGRAÍ
 - Creathanna talún: fógraí ach amháin do chreathanna talún 300 km ar a mhéad ó d'áit; casann tú air nó as iad in ☰.
 - Tornádónna (SAM): casann tú fógraí tornádó do do bhaile air nó as in ☰.
@@ -6,6 +6,8 @@ MÓD FEIRMEORA
 - Cluaisíní: an baile agus na ceapacha i gcluaisíní faoin ainm (go cothrománach, thíos); scáileán ceapaigh i gcodanna 1–4.
 - Cnaipe feirmeora: múchann an cnaipe duille in aice leis na cnaipí an mód feirmeora; coinníonn baile eile é.
 - Stádas oibríochta: ar scáileán ceapaigh, nuair is gá amháin, an breithiúnas ar spré, an chúis agus rioscaí na 24 uair an chloig seo chugainn.
+NUASHONRUITHE
+- Nuashonruithe: ní lorgaíonn an aip nuashonruithe léi féin a thuilleadh, ach amháin nuair a thapálann tú ☰ › Seiceáil le haghaidh nuashonruithe; íoslódáiltear an leagan nua sa bhrabhsálaí agus suiteálann tú é ón gcomhad a íoslódáladh.
 PRÍOMHSCÁILEÁN
 - Compás mór: taispeánann tadhall ar bhaile sa liosta a mharc ar an gcompás; ní fhorluíonn bailte sa treo céanna a thuilleadh.
 - Príomhscáileán: scrollaíonn an leathanach faoin ngloine thuas, ina gcodanna (Na huaireanta seo chugainn, Réamhaisnéis cúig lá, Mionsonraí aimsire); snámhann na cnaipí agus an ceallra thíos.

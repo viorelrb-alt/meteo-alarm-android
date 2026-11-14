@@ -1,4 +1,4 @@
-Trenutna različica: v.5.30 · 14.11.2026
+Trenutna različica: v.5.31 · 14.11.2026
 GLAVNI ZASLON
 - Glavni zaslon: stran se pomika pod steklom na vrhu, po razdelkih (Naslednje ure, Napoved za pet dni, Podrobnosti vremena); gumbi in baterija lebdijo spodaj.
 - Napoved za pet dni: dnevi 3–5 se sami menjajo vsake 3 sekunde do prvega dotika.
@@ -13,6 +13,8 @@ NASTAVITVE
 OBVESTILA
 - Potresi: obvestila samo o potresih največ 300 km od vašega kraja; vklopite ali izklopite jih v ☰.
 - Tornadi (ZDA): obvestila o tornadih za vaš kraj vklopite ali izklopite v ☰.
+POSODOBITVE
+- Posodobitve: aplikacija sama ne išče več posodobitev, le ko tapnete ☰ › Preveri posodobitve; nova različica se prenese v brskalniku, vi pa jo namestite iz prenesene datoteke.
 - Izboljšave oblikovanja in popravki napak.
 
 Različica 4 (v.4.00 – v.4.52)

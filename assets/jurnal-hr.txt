@@ -1,4 +1,6 @@
-Trenutačna verzija: v.5.30 · 14.11.2026
+Trenutačna verzija: v.5.31 · 14.11.2026
+AŽURIRANJA
+- Ažuriranja: aplikacija više sama ne traži ažuriranja, samo kada dodirnete ☰ › Provjeri ažuriranja; nova verzija preuzima se u pregledniku, a vi je instalirate iz preuzete datoteke.
 GLAVNI ZASLON
 - Glavni zaslon: stranica se pomiče ispod stakla na vrhu, po odjeljcima (Sljedeći sati, Prognoza za pet dana, Detalji vremena); gumbi i baterija lebde dolje.
 - Prognoza za pet dana: dani 3–5 sami se izmjenjuju svake 3 sekunde do prvog dodira.

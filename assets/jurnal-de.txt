@@ -1,4 +1,4 @@
-Aktuelle Version: v.5.30 · 14.11.2026
+Aktuelle Version: v.5.31 · 14.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
 - Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.
@@ -13,6 +13,8 @@ LANDWIRT-MODUS
 - Betriebsstatus: auf dem Bildschirm einer Parzelle, nur wenn nötig, das Urteil zum Spritzen, der Grund und die Risiken der nächsten 24 Stunden.
 - Landwirt-Taste: die Blatt-Taste neben den Tasten schaltet den Landwirt-Modus aus; ein anderer Ort behält ihn.
 - Reiter: der Ort und die Parzellen als Reiter unter dem Namen (quer unten); der Bildschirm einer Parzelle in den Abschnitten 1–4.
+UPDATES
+- Updates: Die App sucht nicht mehr selbst nach Updates, nur wenn du auf ☰ › Nach Updates suchen tippst; die neue Version wird im Browser heruntergeladen und du installierst sie aus der heruntergeladenen Datei.
 - Design-Verbesserungen und Fehlerbehebungen.
 
 Version 4 (v.4.00 – v.4.52)

@@ -1,4 +1,4 @@
-Nuværende version: v.5.30 · 14.11.2026
+Nuværende version: v.5.31 · 14.11.2026
 HOVEDSKÆRM
 - Femdagesprognose: dag 3–5 skifter af sig selv hvert 3. sekund indtil første berøring.
 - Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.
@@ -13,6 +13,8 @@ LANDMANDSTILSTAND
 NOTIFIKATIONER
 - Jordskælv: notifikationer kun for jordskælv højst 300 km fra dit sted; slås til eller fra i ☰.
 - Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ☰.
+OPDATERINGER
+- Opdateringer: appen søger ikke længere selv efter opdateringer, kun når du trykker på ☰ › Søg efter opdateringer; den nye version downloades i browseren, og du installerer den fra den downloadede fil.
 - Designforbedringer og fejlrettelser.
 
 Version 4 (v.4.00 – v.4.52)

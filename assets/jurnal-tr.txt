@@ -1,4 +1,4 @@
-Geçerli sürüm: v.5.30 · 14.11.2026
+Geçerli sürüm: v.5.31 · 14.11.2026
 ANA EKRAN
 - Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
@@ -13,6 +13,8 @@ BILDIRIMLER
 - Çiftçi düğmesi: düğmelerin yanındaki yaprak düğmesi çiftçi modunu kapatır; başka bir yer onu korur.
 - Operasyonel durum: bir parselin ekranında, yalnızca gerektiğinde, ilaçlama kararı, nedeni ve sonraki 24 saatin riskleri.
 - Sekmeler: yer ve parseller adın altında sekmelerde (yatayda altta); parsel ekranı 1–4. bölümlerde.
+GÜNCELLEMELER
+- Güncellemeler: uygulama artık kendi başına güncelleme aramıyor, yalnızca ☰ › Güncellemeleri denetle'ye dokunduğunuzda; yeni sürüm tarayıcıda iner ve siz onu indirilen dosyadan yüklersiniz.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 4 (v.4.00 – v.4.52)

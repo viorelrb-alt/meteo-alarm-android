@@ -1,4 +1,6 @@
-Dabartinė versija: v.5.30 · 14.11.2026
+Dabartinė versija: v.5.31 · 14.11.2026
+ATNAUJINIMAI
+- Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI
 - Nustatymai: meniu ☰ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
 - Piktogramų tema: 6 orų piktogramų temos (Klasikinė, Blizgi, Plokščia, Realistinė, Atmosferinė, Kontūrinė), pasirenkamos spalvotais taškais meniu ☰; programoje ir valdikliuose.
