@@ -1,4 +1,4 @@
-Súčasná verzia: v.5.31 · 14.11.2026
+Súčasná verzia: v.5.32 · 16.11.2026
 AKTUALIZÁCIE
 - Aktualizácie: aplikácia už sama nehľadá aktualizácie, len keď ťuknete na ☰ › Skontrolovať aktualizácie; nová verzia sa stiahne v prehliadači a nainštalujete ju zo stiahnutého súboru.
 HLAVNÁ OBRAZOVKA

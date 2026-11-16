@@ -349,10 +349,15 @@ public class Widget extends AppWidgetProvider {
 	static int kind(Context ctx, AppWidgetManager mgr, int id, float w, float h) {
 		SharedPreferences p = prefs(ctx);
 		learnCell(ctx, mgr, id, w, h);
-		// The list widget keeps its one layout, zoomed to the frame.
-		if (list(mgr, id)) return 6;
-		boolean days = days(mgr, id);
 		float cw = p.getFloat("cellW", 0), ch = p.getFloat("cellH", 0);
+		// The list widget keeps its one layout, zoomed to the frame; v5.32 (Viorel, A52s / A54
+		// logs: one row drew it at 57 %): on one row, or when it would be too small, the plain 4x1.
+		if (list(mgr, id)) {
+			boolean oneRow = ch >= 60 && Math.round(h / ch) <= 1;
+			if (!oneRow && zoom(6, w, h) >= MIN_ZOOM) return 6;
+			return kind(w, h, false);
+		}
+		boolean days = days(mgr, id);
 		// A cell smaller than any home screen's (A54 v2.11: 45x90 dp, learned from an empty
 		// first frame) is wrong: forgotten, the plain rule until a widget teaches the right one.
 		if ((cw > 0 && cw < 60) || (ch > 0 && ch < 60)) {
@@ -608,15 +613,7 @@ public class Widget extends AppWidgetProvider {
 		if (kind == 6) {
 			listLayout(pen, d, st, icon, temp, desc, town);
 		} else if (kind == 0) {
-			pen.at(0, 0);
-			pen.icon(icon, 11.1f, 28.8f, 83.3f);
-			pen.at(1, 0);
-			pen.town(town, 183.5f, 28.0f, 12.4f, 120);
-			pen.text(sun, 183.5f, 40.4f, 8.9f, 1, 1f, 3, 115);
-			pen.at(1, 1);
-			pen.temp(temp, 184.5f, 160.5f, 87.7f, 49.5f, 132.6f, 95, true);
-			pen.at(0, 1);
-			pen.centred(d, 192f + pen.ex, 171.4f);
+			rows2x2(pen, d, icon, temp, town, sun);
 		} else if (kind == 3) {
 			// The small one: the left part of the 4x1, the temperature pushed to the right edge.
 			boolean row = d.levels.length > 0 || d.event != null;
@@ -629,26 +626,15 @@ public class Widget extends AppWidgetProvider {
 			pen.at(0, 1);
 			if (row) pen.warnings(d, 12f, 82.5f, false);
 		} else if (kind == 1) {
-			pen.at(0, 0.5f);
-			pen.icon(icon, 12.9f, 17.3f, 72f);
-			pen.temp(temp, 79.9f, 75.2f, 77.4f, 59.3f, 63.1f, 110, false);
-			pen.at(1, 0.5f);
-			pen.town(town, 369.5f, 23.0f, 13, 170);
-			pen.text(desc, 370.1f, 40.6f, 13, 1, 1f, 3, 170);
-			pen.text(sun, 370.1f, 57.1f, 13, 1, 1f, 3, 170);
-			pen.warnings(d, 260.3f, 69.7f, true);
+			pen.at(0, 0);
+			columns(pen, d, icon, temp, rw + pen.ex, rh + pen.ey, new String[] { desc, sun }, town);
 		} else {
 			// The weather now keeps to the top, the next hours to the bottom; the hours spread across.
+			// v5.32 (Viorel): the part above the card(s) in three equal columns.
 			pen.at(0, 0);
-			pen.icon(icon, 10.3f, 17.1f, 84.4f);
-			pen.temp(temp, 89f, 95.4f, 102f, 53.6f, 67.2f, 125, false);
-			pen.at(1, 0);
-			pen.town(town, 369.5f, 27.5f, 13, 150);
-			pen.text(desc, 370.1f, 45.5f, 13, 1, 1f, 3, 150);
-			if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-				pen.text(d.T.hi + " " + deg(w.tmax, d.unitF) + "° · " + d.T.lo + " " + deg(w.tmin, d.unitF) + "°", 369.1f, 62.3f, 13, 1, 1f, 3, 150);
-			pen.text(sun, 369.4f, 80.2f, 13, 1, 1f, 3, 150);
-			pen.warnings(d, 260.7f, 101.4f, true);
+			String hl = w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin)
+					? d.T.hi + " " + deg(w.tmax, d.unitF) + "° · " + d.T.lo + " " + deg(w.tmin, d.unitF) + "°" : null;
+			columns(pen, d, icon, temp, rw + pen.ex, 110f + (kind == 5 ? pen.ey / 3 : pen.ey), new String[] { desc, hl, sun }, town);
 			// 4x2: the next hours (or, "4x2 days", the next days) under a line; 4x3: both rows.
 			float lw = 359.1f + pen.ex;
 			// v5.04 (Viorel): the rows in glass cards (as on the app's main screen) instead of a line.
@@ -668,6 +654,68 @@ public class Widget extends AppWidgetProvider {
 		}
 		pen.done();
 		return out;
+	}
+
+	/** Padding inside the widget's frame (layout dp). */
+	private static final float PAD = 9f;
+
+	/**
+	 * v5.32 (Viorel): the 4x1 and the top of the 4x2 (above the card) in three equal columns, W x H
+	 * (layout dp): 1, the temperature as large as its column allows, right-aligned in it, centred
+	 * top to bottom; 2, the weather icon fitted to its column, in its middle; 3, the town and the
+	 * LINES (null ones left out), right-aligned, as large as fits, the code lines under them.
+	 */
+	private static void columns(Pen pen, Data d, String icon, String temp, float w, float h, String[] lines, String town) {
+		float cw = (w - 2 * PAD) / 3, x1 = PAD + cw, x2 = PAD + 2 * cw, x3 = w - PAD, cy = h / 2;
+		// 1: the temperature
+		pen.tempFit(temp, x1 - 4f, cy, cw - 8f, h - 2 * PAD - 6f, false);
+		// 2: the icon
+		pen.iconFit(icon, x1 + cw / 2, cy, cw - 8f, h - 2 * PAD);
+		// 3: the texts and, under them, the code lines (or the information)
+		java.util.ArrayList<String> ls = new java.util.ArrayList<String>();
+		for (String l : lines) if (l != null && l.length() > 0) ls.add(l);
+		boolean warn = d.levels.length > 0 || d.event != null;
+		int n = ls.size() + 1;
+		float room = h - 2 * PAD - (warn ? 13f : 0), size = Math.max(9f, Math.min(19f, room / (n * 1.28f))), lh = size * 1.28f;
+		float top = cy - (n * lh + (warn ? 13f : 0)) / 2, maxw = cw - 2f;
+		pen.town(town, x3, top + size, size, maxw - 16f);
+		for (int i = 0; i < ls.size(); i++) pen.text(ls.get(i), x3, top + lh * (i + 1) + size, size, 1, 1f, 3, maxw);
+		if (warn) pen.warnings(d, x3 - (2 * 38.4f + 30.9f), top + n * lh + 4f, true);
+	}
+
+	/**
+	 * v5.32 (Viorel): the 2x2 in rows: the top fifth the town and the sun line, left-aligned, as
+	 * large as fit; the next two fifths the icon at the left edge; the bottom three fifths the
+	 * temperature at the right edge (the code lines under it, as before). The two lower zones share a
+	 * fifth: the icon gets smaller when it would run into the temperature.
+	 */
+	private static void rows2x2(Pen pen, Data d, String icon, String temp, String town, String sun) {
+		pen.at(0, 0);
+		float w = RW[0] + pen.ex, h = RH[0] + pen.ey, f = h / 5;
+		boolean warn = d.levels.length > 0 || d.event != null;
+		// Zone 1: two lines in the top fifth.
+		float size = Math.max(9f, Math.min(15f, (f - 4f) / 2.35f)), lh = size * 1.22f, base = PAD - 2f + size;
+		pen.home(town, PAD, base, size, w - 2 * PAD);
+		pen.text(sun, PAD, base + lh, size * 0.85f, -1, 0.95f, 3, w - 2 * PAD);
+		// Zone 3: the temperature, from 2/5 down to the bottom (above the code lines), sitting on its bottom.
+		float tTop = 2 * f, tBot = h - PAD - (warn ? 16f : 0);
+		float[] tb = pen.tempFit(temp, w - PAD, tBot, w - 2 * PAD, (tBot - tTop) * 0.78f, true);
+		// Zone 2: the icon, its drawing in the 2nd and 3rd fifth at the left edge, smaller if it meets the temperature.
+		float[] bx = box(icon);
+		float zt = f + 4f, zh = 2 * f - 8f, sz = Math.min(zh * 200 / (bx[3] - bx[1]), (w / 2) * 200 / (bx[2] - bx[0]));
+		for (int k = 0; k < 40; k++) {
+			float r = PAD + sz * (bx[2] - bx[0]) / 200, b = zt + sz * (bx[3] - bx[1]) / 200;
+			if (r + 4f <= tb[0] || b + 4f <= tb[1] || sz < 24f) break;
+			sz *= 0.95f;
+		}
+		pen.icon(icon, PAD - sz * bx[0] / 200, zt - sz * bx[1] / 200, sz);
+		if (warn) pen.centred(d, w, h - PAD - 6.4f);
+	}
+
+	/** Where the drawing of ICON is in its 200 x 200 square (the app's measures; the whole square for the old pictures). */
+	static float[] box(String icon) {
+		float[] b = icon == null ? null : ro.meteoalarm.android.core.WxIcon.has(icon) ? ro.meteoalarm.android.core.WxIcon.box(icon) : null;
+		return b != null ? b : new float[] { 14, 14, 186, 186 };
 	}
 
 	/**
@@ -878,6 +926,30 @@ public class Widget extends AppWidgetProvider {
 				text(t, x, base, sz, -1, 1f, 4, 0);
 				text("°", x + tw + 1.5f * f, db, ds, -1, 1f, 4, 0);
 			}
+		}
+
+		/**
+		 * v5.32: the temperature as large as fits MAXW wide and its digits MAXH tall, the "°" ending
+		 * at RIGHT, the digits' middle at CY (BOTTOM: their baseline at CY). Returns { left, top } of what was drawn.
+		 */
+		float[] tempFit(String t, float right, float cy, float maxw, float maxh, boolean bottom) {
+			float sz = maxh / 0.72f;
+			p.setTextSize(sz);
+			float tw = p.measureText(t);
+			p.setTextSize(sz * 0.55f);
+			float dw = p.measureText("°"), all = tw + dw + 1.3f;
+			if (all > maxw) sz = sz * maxw / all;
+			float base = bottom ? cy : cy + sz * 0.36f;
+			temp(t, right, base, sz, sz * 0.55f, base - sz * 0.29f, 100000, true);
+			return new float[] { right - Math.min(all, maxw), base - sz * 0.72f };
+		}
+
+		/** v5.32: the icon's drawing as large as fits MAXW x MAXH, its middle at CX CY. */
+		void iconFit(String name, float cx, float cy, float maxw, float maxh) {
+			if (name == null) return;
+			float[] b = box(name);
+			float sz = Math.min(maxw * 200 / (b[2] - b[0]), maxh * 200 / (b[3] - b[1]));
+			icon(name, cx - sz * (b[0] + b[2]) / 400, cy - sz * (b[1] + b[3]) / 400, sz);
 		}
 
 		/**

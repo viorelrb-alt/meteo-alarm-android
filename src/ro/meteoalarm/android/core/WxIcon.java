@@ -35,8 +35,20 @@ public final class WxIcon {
 	}
 
 	/** Where the drawing is in a 200 x 200 square: x0 y0 x1 y1, or null. */
+	/**
+	 * v5.32: where the drawing is in the 200 x 200 square for the picture themes (lux, plat, real,
+	 * atmo, cont), measured on their still (last) frame, so they are centred like the classic ones.
+	 */
+	private static final String[][] THEME_BOX = { null,
+			{ "clear-day 34 34 166 166", "clear-night 55 38 162 155", "cloudy 21 32 163 142", "partly-day 23 23 166 138", "partly-night 32 20 166 139", "rain 26 30 170 175", "drizzle 24 30 157 169", "snow 26 31 170 168", "thunder 26 30 170 173", "fog 22 57 178 144" },
+			{ "clear-day 15 15 185 185", "clear-night 48 40 164 159", "cloudy 19 44 180 146", "partly-day 34 36 170 148", "partly-night 38 38 172 146", "rain 28 23 173 160", "drizzle 28 23 173 160", "snow 28 16 173 170", "thunder 26 16 176 174", "fog 38 17 166 169" },
+			{ "clear-day 8 8 192 192", "clear-night 46 34 163 162", "cloudy 11 34 180 153", "partly-day 23 29 174 147", "partly-night 26 30 178 152", "rain 23 23 176 176", "drizzle 23 23 176 176", "snow 23 19 176 165", "thunder 26 21 177 183", "fog 16 35 182 162" },
+			{ "clear-day 27 29 173 171", "clear-night 44 33 162 163", "cloudy 9 60 187 143", "partly-day 14 17 190 138", "partly-night 16 30 189 139", "rain 15 57 187 155", "drizzle 15 57 187 155", "snow 16 56 186 162", "thunder 15 55 185 182", "fog 18 34 180 162" },
+			{ "clear-day 24 24 176 176", "clear-night 45 31 168 164", "cloudy 16 35 195 162", "partly-day 16 35 195 162", "partly-night 16 35 195 162", "rain 30 24 162 175", "drizzle 30 24 162 175", "snow 30 24 162 182", "thunder 30 24 162 184", "fog 10 39 181 164" } };
+
 	public static float[] box(String name) {
-		for (String c : WxParts.CENTRE) {
+		String[] tb = set > 0 && set < THEME_BOX.length ? THEME_BOX[set] : WxParts.CENTRE;
+		for (String c : tb) {
 			String[] p = c.split(" ");
 			if (p[0].equals(name)) return new float[] { Float.parseFloat(p[1]), Float.parseFloat(p[2]), Float.parseFloat(p[3]), Float.parseFloat(p[4]) };
 		}

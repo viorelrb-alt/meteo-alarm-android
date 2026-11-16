@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.31";
+	static final String VERSION = "Meteo Alarm Android v5.32";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -3208,8 +3208,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("Home-screen widgets", "Widget-uri pe ecranul de pornire"));
 		help.entry(mini("widget"), Tr.t("Meteo Alarm widgets", "Widget-urile Meteo Alarm"), Tr.t("Hold the home screen › Widgets › Meteo Alarm. Drag the edges to change the layout (2x2, 4x1, 4x2, 4x3).",
 				"Ține apăsat pe ecranul de pornire › Widgeturi › Meteo Alarm. Trage de margini ca să schimbi modelul (2x2, 4x1, 4x2, 4x3)."));
-		help.entry(mini("widget"), Tr.t("Widget 4x2 · list", "Widget-ul 4x2 · listă"), Tr.t("A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather.",
-				"Temperatura mare și, în dreapta, următoarele 4 zile (câte un icon) sau ore, după alegerea din setări: Afișare starea vremii."));
+		help.entry(mini("widget"), Tr.t("Widget 4x2 · list", "Widget-ul 4x2 · listă"), Tr.t("A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.",
+				"Temperatura mare și, în dreapta, următoarele 4 zile (câte un icon) sau ore, după alegerea din setări: Afișare starea vremii. Pe un singur rând devine widgetul 4x1."));
 		help.entry(mini("warn"), Tr.t("Codes on widgets", "Coduri pe widget-uri"), Tr.t("Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).",
 				"Trei linii colorate pentru codurile de avertizare, pe toate widget-urile. Fără coduri: o linie albastră cu prima informare încă valabilă (ex. Brumă)."));
 		help.entry(mini("gear"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings, or ☰ › Widgets: town, background, colours.",

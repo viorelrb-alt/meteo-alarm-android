@@ -1152,15 +1152,13 @@ public final class Screen {
 		if (merged && !land) nb = Math.max(nb, fb - 14 - (MH + 14 + ih + 24) * bs);
 		dots((nl + nr) / 2, 112, pages, page);
 		float wf = 1.25f, wb = drawWarnBoxes(nl, nt, nr - nl, 3, wf);
-		float top = Math.max(wb, nt + 130 * wf) + 16;
+		// v5.32 (Viorel): no room kept empty for warnings that are not there; the weather now in
+		// two halves, centred top to bottom (as on the phone).
+		float top = (wb > 0 ? wb : nt) + 16;
 		float lineY = nb - 76;
 		String[] d = T.describe(w.code, w.isDay);
-		float mid = nl + (nr - nl) * 0.55f, cy = (top + lineY) / 2, hw = nr - mid;
-		icLeft = mid + 2; icRight = nr; icPct = 100;
-		drawIconC(d[0], mid + hw / 2, cy, 520, (lineY - top) / 2 - 10, hw - 20);
+		drawNowSplit(d[0], nl, top, nr, lineY - 16);
 		icLeft = 0; icRight = W;
-		tempSize(420, mid - nl - 30);
-		drawTempAt(mid - 12 - tW, cy + tp * 32 / 100);
 		setNow(nl, top, nr - nl, lineY + 80 - top);
 		if (merged) nowTexts(d[1], lineY - 10, nl, nr);
 		else {
@@ -2689,23 +2687,22 @@ public final class Screen {
 	}
 
 	/**
-	 * v3.80 (Viorel): with information, code or warning boxes the room left is split in two: the
-	 * temperature centred in the left half, the icon centred in the right half.
+	 * v3.80 (Viorel): the room split in two: the temperature centred in the left half, the icon
+	 * centred in the right half. v5.32 (Viorel): on phone and tablet, portrait and landscape, each
+	 * one smaller than its half, so the gap from the outer edge to it equals the gap from it to the
+	 * middle (no more touching in the middle), and both centred top to bottom.
 	 */
 	private void drawNowSplit(String icon, float l, float top, float r, float bot) {
-		float mid = (l + r) / 2, hw = (r - l) / 2, cy = (top + bot) / 2, room = bot - top - 30;
+		float mid = (l + r) / 2, hw = (r - l) / 2, cy = (top + bot) / 2, room = bot - top;
+		float maxW = hw * 0.74f, maxH = room * 0.78f;
 		uPct = 34;
 		dPct = 27;
-		float px = 300;
-		while (true) {
-			tempSize(px, hw - 24);
-			if (tp * 64 / 100 <= room * 0.8f || px < 80) break;
-			px = px * 94 / 100;
-		}
+		tempSize(maxH * 100 / 64, maxW);
 		float dh = tp * 64 / 100;
-		drawTempAt(l + hw / 2 - tW / 2, cy + dh / 2);
-		icLeft = mid + 2; icRight = r; icPct = 100; icTop = top;
-		drawIconC(icon, mid + hw / 2, cy, 360, room / 2, hw - 24);
+		drawTempAt(l + (hw - tW) / 2, cy + dh / 2);
+		// The drawing (not its file's square) fits the room: no clamp on the square's top.
+		icLeft = mid + 2; icRight = r; icPct = 100; icTop = -100000;
+		drawIconC(icon, mid + hw / 2, cy, 2000, Math.min(maxH / 2, dh * 0.75f), maxW);
 		icTop = 0;
 		uPct = 43;
 		dPct = 43;

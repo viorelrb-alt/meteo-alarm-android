@@ -1,4 +1,4 @@
-Verżjoni attwali: v.5.31 · 14.11.2026
+Verżjoni attwali: v.5.32 · 16.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ☰ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
 MODALITÀ TAL-BIDWI
