@@ -388,8 +388,8 @@ final class WeatherView extends View {
 	private float[] band() {
 		float[] f = Screen.fit(getWidth(), getHeight() - bandUsed(), screen.tablet);
 		f[2] += lift();
-		// v5.30: phones: the page under the glass (portrait) or the left part (landscape).
-		if (!screen.tablet && screen.pageS.area[2] > 0) return new float[] { oy + screen.pageS.area[1] * scale, oy + (f[2] - 90) * scale };
+		// v5.30 phones, v5.33 tablets too: the page under the glass (portrait) or the left part (landscape).
+		if (screen.pageS.area[2] > 0) return new float[] { oy + screen.pageS.area[1] * scale, oy + (f[2] - 90) * scale };
 		// v3.10: in landscape the boxes start right under the dots (124 units), so the slide starts there.
 		float top = getWidth() > getHeight() ? 123 : 137;
 		return new float[] { oy + top * scale, oy + (f[2] - 80) * scale };
@@ -484,7 +484,7 @@ final class WeatherView extends View {
 		screen.bandTop = -oy / scale;
 		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
 		gfx.frostBmp = null;
-		if (!screen.tablet && !screen.nightClock) frostCopy(w, h, cw, ch);
+		if (!screen.nightClock) frostCopy(w, h, cw, ch);
 		c.save();
 		c.translate(ox, oy);
 		c.scale(scale, scale);

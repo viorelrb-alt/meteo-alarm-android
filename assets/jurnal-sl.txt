@@ -1,4 +1,4 @@
-Trenutna različica: v.5.32 · 16.11.2026
+Trenutna različica: v.5.33 · 16.11.2026
 GLAVNI ZASLON
 - Glavni zaslon: stran se pomika pod steklom na vrhu, po razdelkih (Naslednje ure, Napoved za pet dni, Podrobnosti vremena); gumbi in baterija lebdijo spodaj.
 - Napoved za pet dni: dnevi 3–5 se sami menjajo vsake 3 sekunde do prvega dotika.

@@ -719,30 +719,50 @@ public class Widget extends AppWidgetProvider {
 	}
 
 	/**
-	 * v4.10 (Viorel), the list widget, after the phone's weather widget: on the left the icon, a big
-	 * temperature, the weather, high / low and the town with the compass's town mark; on the right
-	 * four rows of the next days (day, one icon, high and low) or hours (hour, icon, degrees).
+	 * v4.10 (Viorel), the list widget, after the phone's weather widget. v5.33 (Viorel): in five
+	 * equal columns: the right two the list of the next 4 days (each day's short name, also for
+	 * tomorrow) or hours; the left three in six rows: the icon in rows 1–2 at the top right, the
+	 * temperature in rows 2–4 at the left (the icon gets smaller rather than touch it; the code
+	 * lines under it, the temperature smaller to make room), row 5 the weather at the right, row 6
+	 * the town at the left and high / low at the right (smaller to leave the town room, or none).
 	 */
 	private static void listLayout(Pen pen, Data d, Set st, String icon, String temp, String desc, String town) {
 		Weather w = d.w;
-		// v4.11 (Viorel): the left part split in two, the temperature on the left, a big icon on its right.
-		pen.at(0, 0.5f);
-		pen.temp(temp, 12f, 112f, 86f, 44f, 87f, 96, false);
-		pen.icon(icon, 102f, 40f, 74f);
-		pen.at(0, 1);
-		pen.text(desc, 15f, 145f, 13.5f, -1, 1f, 3, 150);
-		if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			pen.text("\u2191" + deg(w.tmax, d.unitF) + "° / \u2193" + deg(w.tmin, d.unitF) + "°", 15f, 162.5f, 12.5f, -1, 0.95f, 3, 150);
-		pen.home(town, 15f, 182f, 12.5f, 140);
-		// v4.50: the code lines (or the information) between the temperature and the weather.
-		pen.at(0, 0.75f);
-		pen.warnings(d, 15f, 121f, false);
+		pen.at(0, 0);
+		float tw = RW[6] + pen.ex, th = RH[6] + pen.ey, c5 = (tw - 2 * PAD) / 5, lw = 3 * c5 - 8f;
+		float L = PAD, R = PAD + lw, r6 = (th - 2 * PAD) / 6, y0 = PAD;
+		boolean warn = d.levels.length > 0 || d.event != null;
+		// Rows 2–4: the temperature (and the code lines under it).
+		float wh = warn ? 13f : 0, tTop = y0 + r6, tBot = y0 + 4 * r6 - wh;
+		float[] tb = pen.tempFitLeft(temp, L, (tTop + tBot) / 2, lw - 4f, (tBot - tTop) * 0.86f);
+		if (warn) pen.warnings(d, L + 2f, tb[2] + 5f, false);
+		// Rows 1–2: the icon at the top right, smaller when it would touch the temperature.
+		if (icon != null) {
+			float[] bx = box(icon);
+			float sz = Math.min(2 * r6 * 200 / (bx[3] - bx[1]), (lw / 2) * 200 / (bx[2] - bx[0]));
+			for (int k = 0; k < 40; k++) {
+				float left = R - sz * (bx[2] - bx[0]) / 200, bot = y0 + sz * (bx[3] - bx[1]) / 200;
+				if (left >= tb[0] + 3f || bot <= tb[1] - 3f || sz < 20f) break;
+				sz *= 0.95f;
+			}
+			pen.icon(icon, R - sz * bx[2] / 200, y0 - sz * bx[1] / 200, sz);
+		}
+		// Rows 5–6: the weather; the town and high / low.
+		float ts = Math.max(9f, Math.min(15f, r6 * 0.62f)), b5 = y0 + 5 * r6 - r6 * 0.28f, b6 = y0 + 6 * r6 - r6 * 0.28f;
+		pen.text(desc, R, b5, ts, 1, 1f, 3, lw);
+		float town0 = pen.homeWidth(town, ts, lw - 4f);
+		pen.home(town, L, b6, ts, lw - 4f);
+		if (w != null && !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin)) {
+			String hl = "\u2191" + deg(w.tmax, d.unitF) + "° / \u2193" + deg(w.tmin, d.unitF) + "°";
+			float room = lw - town0 - 10f, need = pen.measure(ts * 0.95f, hl);
+			if (room >= need * 0.6f) pen.text(hl, R, b6, ts * 0.95f, 1, 0.95f, 3, room);
+		}
 		if (w == null) return;
 		boolean hours = st.mode.equals("hours");
-		float x0 = 186f, x1 = 372f, rh = 46f, y0 = 4f;
-		// v5.04 (Viorel): the rows in one glass card (its height follows the rows' spreading).
-		pen.at(1, 0);
-		pen.card(x0 - 8f, y0, x1 - x0 + 14f, 4 * rh + pen.ey, 12f);
+		float x0 = PAD + 3 * c5 + 8f, x1 = tw - PAD - 13f, rh = (th - 8f) / 4, ry = 4f;
+		// v5.04 (Viorel): the rows in one glass card.
+		pen.card(x0 - 8f, ry, tw - PAD + 3f - x0, th - 8f, 12f);
+		float lsz = Math.min(14f, rh * 0.32f), vsz = Math.min(15f, rh * 0.34f), isz = Math.min(28f, rh * 0.62f);
 		for (int i = 0; i < 4; i++) {
 			String label, ic;
 			String hi = null, lo = null;
@@ -754,25 +774,22 @@ public class Widget extends AppWidgetProvider {
 				if (h < w.tileTemp.length && !Double.isNaN(w.tileTemp[h])) hi = deg(w.tileTemp[h], d.unitF) + "°";
 			} else {
 				if (i >= w.dayDates.size() || i >= w.dayCodes.size()) break;
-				label = i == 0 ? cap(d.T.day1) : cap(d.T.weekdayUp(w.dayDates.get(i), false));
+				// v5.33 (Viorel): every row the day's short name, tomorrow too.
+				label = cap(d.T.weekdayUp(w.dayDates.get(i), false));
 				ic = d.T.describe(w.dayCodes.get(i), true)[0];
 				if (i < w.dayHi.size() && i < w.dayLo.size()) {
 					hi = deg(w.dayHi.get(i), d.unitF) + "°";
 					lo = deg(w.dayLo.get(i), d.unitF) + "°";
 				}
 			}
-			float y = y0 + i * rh, mid = y + rh / 2;
-			pen.at(1, i / 3f);
-			pen.text(label, x0, mid + 5f, 14f, -1, 0.75f, 3, 62);
-			pen.icon(ic, (x0 + x1) / 2f - 4f - 14f, mid - 14f, 28f);
+			float y = ry + i * rh, mid = y + rh / 2;
+			pen.text(label, x0, mid + lsz * 0.36f, lsz, -1, 0.75f, 3, (x1 - x0) * 0.32f);
+			pen.icon(ic, x0 + (x1 - x0) * 0.42f - isz / 2, mid - isz / 2, isz);
 			if (lo != null) {
-				float lw = pen.text(lo, x1, mid + 5.5f, 15f, 1, 0.7f, 3, 0);
-				pen.text(hi, x1 - lw - 7f, mid + 5.5f, 15f, 1, 1f, 3, 0);
-			} else if (hi != null) pen.text(hi, x1, mid + 5.5f, 15f, 1, 1f, 3, 0);
-			if (i < 3) {
-				pen.at(1, (i + 0.5f) / 3f);
-				pen.line(x0, y + rh, x1 - x0, 0.75f, 0.35f);
-			}
+				float lw2 = pen.text(lo, x1, mid + vsz * 0.36f, vsz, 1, 0.7f, 3, 0);
+				pen.text(hi, x1 - lw2 - 7f, mid + vsz * 0.36f, vsz, 1, 1f, 3, 0);
+			} else if (hi != null) pen.text(hi, x1, mid + vsz * 0.36f, vsz, 1, 1f, 3, 0);
+			if (i < 3) pen.line(x0, y + rh, x1 - x0, 0.75f, 0.35f);
 		}
 	}
 
@@ -942,6 +959,29 @@ public class Widget extends AppWidgetProvider {
 			float base = bottom ? cy : cy + sz * 0.36f;
 			temp(t, right, base, sz, sz * 0.55f, base - sz * 0.29f, 100000, true);
 			return new float[] { right - Math.min(all, maxw), base - sz * 0.72f };
+		}
+
+		float measure(float size, String s) {
+			if (s == null) return 0;
+			p.setTextSize(size);
+			return p.measureText(s);
+		}
+
+		/** v5.33: the width home() takes for NAME at SIZE (at most MAXW). */
+		float homeWidth(String name, float size, float maxw) {
+			if (name == null || name.length() == 0) return 0;
+			float rr = size * 0.55f;
+			return rr * 2 + 4f + Math.min(measure(size, name), maxw - rr * 2 - 4f);
+		}
+
+		/** v5.33: the temperature as large as fits MAXW x MAXH, starting at LEFT, the digits' middle at CY. Returns { right, top, bottom }. */
+		float[] tempFitLeft(String t, float left, float cy, float maxw, float maxh) {
+			float sz = maxh / 0.72f;
+			float tw = measure(sz, t), dw = measure(sz * 0.55f, "°"), all = tw + dw + 1.5f;
+			if (all > maxw) sz = sz * maxw / all;
+			float base = cy + sz * 0.36f;
+			temp(t, left, base, sz, sz * 0.55f, base - sz * 0.29f, 100000, false);
+			return new float[] { left + Math.min(all, maxw), base - sz * 0.72f, base };
 		}
 
 		/** v5.32: the icon's drawing as large as fits MAXW x MAXH, its middle at CX CY. */

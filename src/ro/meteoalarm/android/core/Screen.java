@@ -218,7 +218,8 @@ public final class Screen {
 		}
 		g.rect(0, 0, cw, ch, c.page);
 		infoIds = new ArrayList<String>();
-		neo = !tablet;
+		// v5.33 (Viorel): the tablet in landscape takes the phone's landscape glass screen too.
+		neo = true;
 		btnFarm[2] = 0;
 		pillArea[2] = 0;
 		battArea[2] = 0;
@@ -502,16 +503,27 @@ public final class Screen {
 		return y + 52;
 	}
 
-	/** The feels-like card: feels like and high / low at the left, the sky and the wind at the right. */
+	/** v5.33 (Viorel): the feels-like card on the tablet is taller, its texts larger. */
+	private float feelsH() {
+		return tablet ? 120 : 88;
+	}
+
+	/**
+	 * The feels-like card: feels like and high / low at the left, the sky and the wind at the right.
+	 * v5.33: on the tablet larger; each text keeps to its half, so left and right never meet.
+	 */
 	private void feelsCard(float x, float y, float wd) {
 		String[] d = T.describe(w.code, w.isDay);
-		card(x, y, wd, 88, 24);
-		float sp = skySize(36, (wd - 60) / 2, d[1]), fy = y + 12;
+		float k = feelsH() / 88, half = (wd - 60) / 2;
+		card(x, y, wd, feelsH(), 24);
+		float sp = skySize(36 * k, half, d[1]), fy = y + 12 * k;
+		String hl = !Double.isNaN(w.tmax) && !Double.isNaN(w.tmin) ? T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°" : "";
+		String wt = Double.isNaN(w.wind) ? "" : T.wind + " " + (Double.isNaN(w.windDir) ? "" : "NNE ") + (unitF ? Math.round(w.wind * 0.621371) + " mph" : Math.round(w.wind) + " km/h");
+		float p2 = Math.min(fit(false, 28 * k, half, hl), fit(false, 28 * k, half - 28 * k * windRing * 2 - 16, wt));
 		rtext(true, sp, fy - 2, x + wd - 24, d[1], c.ink);
-		windLine(28, fy + 38, x + wd - 24);
+		windLine(p2, fy + 38 * k, x + wd - 24);
 		if (!Double.isNaN(w.feels)) ltext(true, sp, fy - 2, x + 24, feelsText(), c.ink);
-		if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin))
-			ltext(false, 28, fy + 38, x + 24, T.hi + " " + t(w.tmax) + "° / " + T.lo + " " + t(w.tmin) + "°", c.dim);
+		if (hl.length() > 0) ltext(false, p2, fy + 38 * k, x + 24, hl, c.dim);
 	}
 
 	/** v5.30: the parcel's boxes by section: soil and crops, risks and reports, the rest. */
@@ -537,7 +549,7 @@ public final class Screen {
 			setNow(x, y, wd, nowH);
 			y += nowH + 6;
 			feelsCard(x, y, wd);
-			y += 88 + 26;
+			y += feelsH() + 26;
 		}
 		if (pc) {
 			float sh = drawStatus(x, y, wd);
@@ -992,13 +1004,14 @@ public final class Screen {
 		float paneBot = nw > 0 ? alertY + 130 + 14 : y;
 		Gfx g0 = g;
 		if (w != null) {
-			float nowH = 330 + Math.min(150, Math.max(0, ch - BASE_H) * 0.5f);
+			// v5.33: the tablet (wider page) gets a taller weather now.
+			float nowH = tablet ? 470 : 330 + Math.min(150, Math.max(0, ch - BASE_H) * 0.5f);
 			float top = paneBot + 18;
 			int[] m = hitMark();
 			// Nothing of the page above the glass's rounded top.
 			g.clip(0, paneTop + 26, cw, ch + 400);
 			g = new Shift(g0, 0, -pageS.scroll);
-			float bot = pageBody(40, top, 678, nowH);
+			float bot = pageBody(40, top, cw - 80, nowH);
 			g = g0;
 			g.unclip();
 			pageS.set(new float[0], bot + 110 - ch);
@@ -1021,13 +1034,13 @@ public final class Screen {
 		float lp = fit(true, 40, lw, label);
 		ltext(true, lp, rowY + 32 - lp * 0.5f, 124, label, c.ink);
 		cityArea[0] = 124; cityArea[1] = rowY; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
-		if (tabsOn) drawTabs(40, tabsY, 678, 54);
+		if (tabsOn) drawTabs(40, tabsY, cw - 80, 54);
 		else tabs.area[2] = 0;
 		if (w == null) {
 			String msg = error.length() > 0 ? error : T.loading;
-			float p = fit(true, 40, 640, msg);
-			ctext(true, p, paneBot + 200, W / 2, msg, c.ink);
-		} else if (nw > 0) drawWarnBoxes(40, alertY, 678, 2, 1);
+			float p = fit(true, 40, cw - 118, msg);
+			ctext(true, p, paneBot + 200, cw / 2, msg, c.ink);
+		} else if (nw > 0) drawWarnBoxes(40, alertY, cw - 80, tablet ? 3 : 2, 1);
 		capsules(fb);
 		battery(fb, cw - 24, true);
 		drawNote(fb);
@@ -1042,7 +1055,8 @@ public final class Screen {
 		warnArea[2] = 0;
 		statusArea[2] = 0;
 		btnStats[2] = 0;
-		float zL = Math.round(cw * 0.52f), bandB = 104, lx = 40, lw = zL - 14 - lx;
+		// v5.33 (Viorel): on the tablet the screen in 5 columns: the sheet with the weather now the right 2.
+		float zL = Math.round(cw * (tablet ? 0.6f : 0.52f)), bandB = 104, lx = 40, lw = zL - 14 - lx;
 		Gfx g0 = g;
 		if (w != null) {
 			int[] m = hitMark();
@@ -1076,9 +1090,10 @@ public final class Screen {
 			ctext(true, fit(true, 40, cw - 200, msg), 330, cw / 2, msg, c.ink);
 		} else {
 			float wt = bandB + 16, wb = drawWarnBoxes(rx, wt, rw, 2, 1);
-			float nowTop = wb > 0 ? wb + 10 : wt, fy = fb - 14 - 88;
+			float nowTop = wb > 0 ? wb + 10 : wt, fy = fb - 14 - feelsH();
 			String[] d = T.describe(w.code, w.isDay);
-			drawNowSplit(d[0], rx, nowTop, rx + rw, fy - 4);
+			if (tablet) drawNowRows(d[0], rx, nowTop, rx + rw, fy - 4);
+			else drawNowSplit(d[0], rx, nowTop, rx + rw, fy - 4);
 			setNow(rx, nowTop, rw, fy - nowTop);
 			feelsCard(rx, fy, rw);
 		}
@@ -2708,6 +2723,21 @@ public final class Screen {
 		dPct = 43;
 	}
 
+	/** v5.33 (Viorel): tablet landscape: the room in two rows, the icon centred in the upper one, the temperature centred in the lower one. */
+	private void drawNowRows(String icon, float l, float top, float r, float bot) {
+		float cx = (l + r) / 2, hh = (bot - top) / 2, maxW = (r - l) * 0.74f, maxH = hh * 0.78f;
+		uPct = 34;
+		dPct = 27;
+		tempSize(maxH * 100 / 64, maxW);
+		float dh = tp * 64 / 100;
+		drawTempAt(cx - tW / 2, top + hh * 1.5f + dh / 2);
+		icLeft = l; icRight = r; icPct = 100; icTop = -100000;
+		drawIconC(icon, cx, top + hh / 2, 2000, maxH / 2, maxW);
+		icTop = 0;
+		uPct = 43;
+		dPct = 43;
+	}
+
 	/** No warnings: the temperature right-aligned on the middle, the icon centred in the right half. */
 	private void drawNowSide(String icon, float l, float top, float r, float bot) {
 		float mid = (l + r) / 2, cy = (top + bot) / 2 + 20, hw = (r - l) / 2;
@@ -3844,6 +3874,10 @@ public final class Screen {
 		int k = hitAt(hourHits, hours, x, y);
 		if (k >= 1) return new int[] { 0, k };
 		k = hitAt(dayHits, days, x, y);
+		// v5.33 (Viorel): on the glass page (phone and tablet) the Tomorrow and Day after boxes open their bubble too.
+		if (k < 0 && neo && (pageS.area[2] <= 0 || y >= pageS.area[1] && x <= pageS.area[0] + pageS.area[2]))
+			for (float[] b : dayHits)
+				if (b[0] <= 1 && x >= b[1] && x <= b[1] + b[3] && y >= b[2] && y <= b[2] + b[4]) k = (int) b[0];
 		return k >= 0 ? new int[] { 1, k } : null;
 	}
 
