@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Marker: kortet med markernes kort (stående en række nederst, liggende en kolonne til højre); et tryk åbner en på hovedskærmen. ＋ tilføjer en: hvor du er (GPS) eller et tryk på kortet, derefter navnet. På et kort: blyanten redigerer, søjlerne åbner Statistik · PDF, klokken slår notifikationerne til eller fra, papirkurven sletter den. Gemmes kun på denne telefon.
 Other languages (minorities)	Andre sprog (mindretal)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Knapper i ☰, 2 pr. række: engelsk og landets sprog (i USA engelsk og spansk); i Rumænien viser „Andre sprog (mindretal)“ resten.
+The parcel's corners (GPS)	Markens hjørner (GPS)
+North-west	Nordvest
+North-east	Nordøst
+South-east	Sydøst
+South-west	Sydvest
+The parcel's place (GPS); no corners yet.	Markens sted (GPS); ingen hjørner endnu.
+Show	Vis
+For the parcel's corners choose the satellite view (the globe button).	Vælg satellitvisningen (globus-knappen) for markens hjørner.
+Looking for the parcel's edges…	Leder efter markens kanter…
+The parcel's corners: move them with a finger if needed.	Markens hjørner: flyt dem med en finger, hvis det er nødvendigt.
+The edges do not stand out: move the corners with a finger.	Kanterne træder ikke tydeligt frem: flyt hjørnerne med en finger.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Marker: kortet med markernes kort (stående en række nederst, liggende en kolonne til højre); et tryk på et kort viser dets hjørner, Vis åbner det på hovedskærmen. ＋ tilføjer en: hvor du er (GPS) eller et tryk på kortet, så navnet; i satellitvisningen findes de 4 hjørner fra billedet og flyttes med en finger. På et kort: blyanten redigerer, søjlerne åbner Statistik · PDF, klokken slår notifikationer til eller fra, papirkurven sletter det. Gemmes kun på denne telefon.

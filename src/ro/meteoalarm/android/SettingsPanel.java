@@ -575,13 +575,14 @@ final class SettingsPanel extends FrameLayout {
 		LinearLayout b = new LinearLayout(getContext());
 		b.setGravity(Gravity.CENTER_VERTICAL);
 		b.setPadding(px(16), 0, px(12), 0);
-		b.setBackground(Glass.pill(Glass.disc(dark), marked ? accent() : Glass.edge(dark), 22 * dp * zk, dp));
+		// v6.00 (Viorel): a minorities' language chosen: the button stays selected (filled).
+		b.setBackground(marked ? Glass.pill(accent(), 0, 22 * dp * zk, dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp * zk, dp));
 		TextView t = role("wide", text(getContext(), 15 * zk, marked));
 		t.setText(label);
-		t.setTextColor(ink());
+		t.setTextColor(marked ? onAccent() : ink());
 		b.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		View ch = new View(getContext());
-		ch.setBackground(new LineIcon("chevron", dim()));
+		ch.setBackground(new LineIcon("chevron", marked ? onAccent() : dim()));
 		ch.setRotation(open ? -90 : 90);
 		b.addView(ch, new LinearLayout.LayoutParams(px(22), px(22)));
 		b.setOnClickListener(new OnClickListener() {
@@ -595,13 +596,17 @@ final class SettingsPanel extends FrameLayout {
 		card.addView(b, rl);
 	}
 
-	/** v5.53: a row with only its icon, name and a value at the right (no tap). */
-	void info(String icon, String head, String value) {
+	/** v5.53: a row with only its icon, name and (v6.00) a picture at the right, as the current language's icon (no tap). */
+	void info(String icon, String head, android.graphics.Bitmap pic) {
 		sep();
-		TextView v = text(getContext(), 14.5f * zk, false);
-		v.setText(value);
-		v.setTextColor(dim());
-		v.setSingleLine(true);
+		android.widget.ImageView v = new android.widget.ImageView(getContext());
+		v.setImageBitmap(pic);
+		int s = px(30 * zk);
+		v.setMinimumWidth(s);
+		v.setMinimumHeight(s);
+		v.setAdjustViewBounds(true);
+		v.setMaxWidth(s);
+		v.setMaxHeight(s);
 		row(icon, head, null, v, false, null);
 	}
 

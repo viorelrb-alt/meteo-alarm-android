@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelas: o mapa com os cartões das parcelas (na vertical uma fila em baixo, na horizontal uma coluna à direita); um toque abre uma no ecrã principal. ＋ adiciona uma: onde estás (GPS) ou um toque no mapa, depois o nome. Num cartão: o lápis edita, as barras abrem Estatísticas · PDF, o sino liga ou desliga as notificações, o lixo apaga-a. Guardadas só neste telemóvel.
 Other languages (minorities)	Outras línguas (minorias)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Botões em ☰, 2 por linha: inglês e as línguas do país (nos EUA inglês e espanhol); na Roménia «Outras línguas (minorias)» mostra as restantes.
+The parcel's corners (GPS)	Cantos da parcela (GPS)
+North-west	Noroeste
+North-east	Nordeste
+South-east	Sudeste
+South-west	Sudoeste
+The parcel's place (GPS); no corners yet.	Local da parcela (GPS); ainda sem cantos.
+Show	Mostrar
+For the parcel's corners choose the satellite view (the globe button).	Para os cantos da parcela escolhe a vista de satélite (botão do globo).
+Looking for the parcel's edges…	A procurar os limites da parcela…
+The parcel's corners: move them with a finger if needed.	Cantos da parcela: move-os com o dedo se for preciso.
+The edges do not stand out: move the corners with a finger.	Os limites não se destacam: move os cantos com o dedo.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelas: o mapa com os cartões das parcelas (na vertical uma linha em baixo, na horizontal uma coluna à direita); um toque num cartão mostra os seus cantos, Mostrar abre-a no ecrã principal. ＋ adiciona uma: onde estás (GPS) ou um toque no mapa, depois o nome; na vista de satélite os 4 cantos são encontrados na imagem e movem-se com o dedo. Num cartão: o lápis edita, as barras abrem Estatística · PDF, o sino liga ou desliga as notificações, o lixo apaga-a. Guardadas só neste telemóvel.

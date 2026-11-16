@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Pozemky: mapa s kartami pozemků (na výšku řada dole, na šířku sloupec vpravo); klepnutí otevře pozemek na hlavní obrazovce. ＋ přidá pozemek: kde jsi (GPS) nebo klepnutí na mapu, pak název. Na kartě: tužka upravuje, sloupce otevřou Statistiku · PDF, zvonek zapíná či vypíná upozornění, koš ho smaže. Uloženo jen v tomto telefonu.
 Other languages (minorities)	Další jazyky (menšiny)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Tlačítka v ☰, po 2 v řadě: angličtina a jazyky země (v USA angličtina a španělština); v Rumunsku „Další jazyky (menšiny)“ ukáže ostatní.
+The parcel's corners (GPS)	Rohy pozemku (GPS)
+North-west	Severozápad
+North-east	Severovýchod
+South-east	Jihovýchod
+South-west	Jihozápad
+The parcel's place (GPS); no corners yet.	Místo pozemku (GPS); rohy nejsou určeny.
+Show	Zobrazit
+For the parcel's corners choose the satellite view (the globe button).	Pro rohy pozemku zvol satelitní zobrazení (tlačítko glóbus).
+Looking for the parcel's edges…	Hledám okraje pozemku…
+The parcel's corners: move them with a finger if needed.	Rohy pozemku: v případě potřeby je posuň prstem.
+The edges do not stand out: move the corners with a finger.	Okraje nejsou zřetelné: posuň rohy prstem.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Pozemky: mapa s kartami pozemků (na výšku řada dole, na šířku sloupec vpravo); klepnutí na kartu ukáže její rohy, Zobrazit ji otevře na hlavní obrazovce. ＋ přidá pozemek: kde jsi (GPS) nebo klepnutím do mapy, pak název; v satelitním zobrazení se 4 rohy najdou z obrázku a posouvají se prstem. Na kartě: tužka upravuje, sloupce otevřou Statistiku · PDF, zvonek zapíná nebo vypíná upozornění, koš ho smaže. Uloženo jen v tomto telefonu.

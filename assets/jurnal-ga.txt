@@ -1,6 +1,7 @@
-Leagan reatha: v.5.53 · 16.11.2026
+Leagan reatha: v.6.00 · 16.11.2026
 CEAPACHA
 - Bosca bruscair: téann ceapach scriosta go dtí an bosca bruscair faoin gcnaipe GPS ar feadh 15 lá agus is féidir í a athchóiriú as.
+- Coirnéil na ceapaí: sa radharc satailíte aimsítear na 4 choirnéal ón bpictiúr agus bogtar le méar iad; taispeánann tapáil ar an gcárta na coirnéil, osclaíonn Taispeáin an cheapach.
 - Leathanach na gCeapach: snámhann cártaí na gceapach (ainm, comhordanáidí, peann luaidhe, Staitisticí · PDF, cloigín, bosca bruscair) os cionn na léarscáile, i ró thíos nó i gcolún ar dheis; osclaíonn ＋, an cluaisín ＋ freisin, bosca ceapaí nua.
 - Radhairc léarscáile: aistríonn cnaipí cruinne faoi ＋/− idir satailít agus léarscáil agus taispeánann siad radar báistí an 2 uair an chloig deiridh.
 FÓGRAÍ

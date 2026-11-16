@@ -24,9 +24,32 @@ final class Parcels {
 		String name;
 		double lat, lon;
 		boolean alerts;
+		/** v6.00: the parcel's 4 corners (lat, lon × 4), or null. */
+		double[] corners;
 
 		String line() {
-			return id + "\t" + name.replace('\t', ' ').replace('\n', ' ') + "\t" + lat + "\t" + lon + "\t" + (alerts ? 1 : 0);
+			String c = "";
+			if (corners != null) {
+				StringBuilder b = new StringBuilder("\t");
+				for (int k = 0; k < 4; k++) b.append(k > 0 ? ";" : "").append(corners[2 * k]).append(',').append(corners[2 * k + 1]);
+				c = b.toString();
+			}
+			return id + "\t" + name.replace('\t', ' ').replace('\n', ' ') + "\t" + lat + "\t" + lon + "\t" + (alerts ? 1 : 0) + c;
+		}
+
+		/** v6.00: the north-west corner (the top left on the map), or null without corners. */
+		double[] nw() {
+			if (corners == null) return null;
+			int best = 0;
+			double bs = Double.MAX_VALUE, cos = Math.cos(Math.toRadians(lat));
+			for (int k = 0; k < 4; k++) {
+				double s = corners[2 * k + 1] * cos - corners[2 * k];
+				if (s < bs) {
+					bs = s;
+					best = k;
+				}
+			}
+			return new double[] { corners[2 * best], corners[2 * best + 1] };
 		}
 
 		static Parcel of(String l) {
@@ -39,6 +62,18 @@ final class Parcels {
 				x.lat = Double.parseDouble(p[2]);
 				x.lon = Double.parseDouble(p[3]);
 				x.alerts = p.length > 4 && p[4].equals("1");
+				if (p.length > 5) {
+					String[] cs = p[5].split(";");
+					if (cs.length == 4) {
+						double[] c = new double[8];
+						for (int k = 0; k < 4; k++) {
+							String[] ll = cs[k].split(",");
+							c[2 * k] = Double.parseDouble(ll[0]);
+							c[2 * k + 1] = Double.parseDouble(ll[1]);
+						}
+						x.corners = c;
+					}
+				}
 				return x;
 			} catch (Exception e) {
 				return null;

@@ -1,4 +1,4 @@
-Dabartinė versija: v.5.53 · 16.11.2026
+Dabartinė versija: v.6.00 · 16.11.2026
 ATNAUJINIMAI
 - Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI
@@ -13,6 +13,7 @@ PRANEŠIMAI
 - Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ☰.
 - Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ☰.
 SKLYPAI
+- Lauko kampai: palydovo vaizde 4 kampai randami iš nuotraukos ir stumiami pirštu; kortelės palietimas parodo kampus, Rodyti atveria lauką.
 - Puslapis Laukai: laukų kortelės (pavadinimas, koordinatės, pieštukas, Statistika · PDF, varpelis, šiukšlinė) plūduriuoja virš žemėlapio, eilėje apačioje arba stulpelyje dešinėje; ＋, ir skirtukas ＋, atveria naujo lauko langelį.
 - Šiukšlinė: ištrintas laukas 15 dienų patenka į šiukšlinę po GPS mygtuku ir iš ten gali būti atkurtas.
 - Žemėlapio vaizdai: apvalūs mygtukai po ＋/− perjungia palydovą ir žemėlapį bei rodo paskutinių 2 valandų kritulių radarą.

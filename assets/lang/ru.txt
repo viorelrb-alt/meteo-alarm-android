@@ -1033,3 +1033,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Участки: карта с карточками участков (в портрете ряд внизу, в альбоме столбец справа); нажатие открывает участок на главном экране. ＋ добавляет участок: где ты (GPS) или нажатие на карту, затем имя. На карточке: карандаш редактирует, столбики открывают Статистику · PDF, колокольчик включает или выключает уведомления, корзина удаляет. Хранятся только на этом телефоне.
 Other languages (minorities)	Другие языки (меньшинства)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Кнопки в ☰, по 2 в ряд: английский и языки страны (в США английский и испанский); в Румынии «Другие языки (меньшинства)» показывает остальные.
+The parcel's corners (GPS)	Углы участка (GPS)
+North-west	Северо-запад
+North-east	Северо-восток
+South-east	Юго-восток
+South-west	Юго-запад
+The parcel's place (GPS); no corners yet.	Место участка (GPS); углы пока не заданы.
+Show	Показать
+For the parcel's corners choose the satellite view (the globe button).	Для углов участка выбери спутниковый вид (кнопка глобуса).
+Looking for the parcel's edges…	Ищу границы участка…
+The parcel's corners: move them with a finger if needed.	Углы участка: при необходимости сдвинь их пальцем.
+The edges do not stand out: move the corners with a finger.	Границы не видны чётко: сдвинь углы пальцем.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Участки: карта с карточками участков (вертикально — ряд внизу, горизонтально — столбец справа); касание карточки показывает её углы, «Показать» открывает участок на главном экране. ＋ добавляет участок: где ты (GPS) или касание карты, затем название; в спутниковом виде 4 угла находятся по снимку и сдвигаются пальцем. На карточке: карандаш изменяет, столбики открывают Статистику · PDF, колокольчик включает или выключает уведомления, корзина удаляет. Хранятся только на этом телефоне.

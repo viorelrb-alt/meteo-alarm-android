@@ -52,6 +52,8 @@ final class MapView extends View {
 		final long id;
 		final double lat, lon;
 		final String name;
+		/** v6.00: the parcel's 4 corners (lat, lon × 4), or null. */
+		double[] poly;
 
 		Pin(long id, double lat, double lon, String name) {
 			this.id = id;
@@ -215,6 +217,53 @@ final class MapView extends View {
 	/** v5.40: the new parcel's pin (NaN: none). */
 	private double markLat = Double.NaN, markLon = Double.NaN;
 
+	/** v6.00: the new parcel's 4 corners (lat, lon × 4; null: none), moved with a finger. */
+	interface CornersMoved {
+		void moved(double[] corners);
+	}
+
+	private double[] corners;
+	private CornersMoved cornersMoved;
+	private int drag = -1;
+
+	void setCorners(double[] c, CornersMoved cb) {
+		corners = c == null ? null : c.clone();
+		cornersMoved = cb;
+		invalidate();
+	}
+
+	/** The lat, lon at the view's pixel X, Y. */
+	double[] latLonAt(float x, float y) {
+		double world = tile * Math.pow(2, zoom);
+		double left = wx(lon, world) - getWidth() / 2.0, top = wy(lat, world) - getHeight() / 2.0;
+		double cy = Math.max(0, Math.min(world, top + y));
+		return new double[] { latOf(cy, world), lonOf((((left + x) % world) + world) % world, world) };
+	}
+
+	/** The view's pixel of LA, LO. */
+	float[] pixelOf(double la, double lo) {
+		double world = tile * Math.pow(2, zoom);
+		double left = wx(lon, world) - getWidth() / 2.0, top = wy(lat, world) - getHeight() / 2.0;
+		return new float[] { (float) (wx(lo, world) - left), (float) (wy(la, world) - top) };
+	}
+
+	/**
+	 * v6.00: the map's tiles only (no pins, radar, labels) at SCALE of the view's size, or null
+	 * while a tile of the screen is still missing.
+	 */
+	Bitmap bareShot(float scale) {
+		int w = getWidth(), h = getHeight();
+		if (w == 0 || h == 0) return null;
+		Bitmap b = Bitmap.createBitmap(Math.max(1, Math.round(w * scale)), Math.max(1, Math.round(h * scale)), Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(b);
+		c.scale(scale, scale);
+		if (!drawTiles(c, w, h, true)) {
+			b.recycle();
+			return null;
+		}
+		return b;
+	}
+
 	/** v5.40: taps on the map go to T (null: the pins get them again). */
 	void setOnMapTap(MapTap t) {
 		mapTap = t;
@@ -295,6 +344,32 @@ final class MapView extends View {
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
 		getParent().requestDisallowInterceptTouchEvent(true);
+		// v6.00: a finger on a corner of the new parcel moves that corner.
+		int am = e.getActionMasked();
+		if (am == MotionEvent.ACTION_DOWN && corners != null) {
+			drag = -1;
+			float bd = 30 * dp;
+			for (int k = 0; k < 4; k++) {
+				float[] p = pixelOf(corners[2 * k], corners[2 * k + 1]);
+				float d = (float) Math.hypot(p[0] - e.getX(), p[1] - e.getY());
+				if (d < bd) {
+					bd = d;
+					drag = k;
+				}
+			}
+		}
+		if (drag >= 0) {
+			if (am == MotionEvent.ACTION_MOVE && e.getPointerCount() == 1) {
+				double[] ll = latLonAt(e.getX(), e.getY());
+				corners[2 * drag] = ll[0];
+				corners[2 * drag + 1] = ll[1];
+				invalidate();
+			} else if (am == MotionEvent.ACTION_UP || am == MotionEvent.ACTION_CANCEL || am == MotionEvent.ACTION_POINTER_DOWN) {
+				if (cornersMoved != null) cornersMoved.moved(corners.clone());
+				drag = -1;
+			}
+			return true;
+		}
 		pinch.onTouchEvent(e);
 		taps.onTouchEvent(e);
 		int act = e.getActionMasked();
@@ -334,9 +409,9 @@ final class MapView extends View {
 		return true;
 	}
 
-	@Override
-	protected void onDraw(Canvas c) {
-		int w = getWidth(), h = getHeight();
+	/** The tiles of the screen; BARE: only loaded ones (no enlarged stand-ins). True when all were there. */
+	private boolean drawTiles(Canvas c, int w, int h, boolean bare) {
+		boolean all = true;
 		c.drawColor(dark ? 0xFF3A3A38 : 0xFFE8E4DC);
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
 		float ts = (float) (tile * Math.pow(2, zoom - z));
@@ -359,6 +434,8 @@ final class MapView extends View {
 					c.drawBitmap(b, src, dst, paint);
 					continue;
 				}
+				all = false;
+				if (bare) continue;
 				// Meanwhile the tile one level up, enlarged.
 				if (z > MIN_Z) {
 					Bitmap up = mem.get(pre() + (z - 1) + "/" + (x / 2) + "/" + (ty / 2));
@@ -369,6 +446,18 @@ final class MapView extends View {
 				}
 			}
 		}
+		return all;
+	}
+
+	@Override
+	protected void onDraw(Canvas c) {
+		int w = getWidth(), h = getHeight();
+		drawTiles(c, w, h, false);
+		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
+		float ts = (float) (tile * Math.pow(2, zoom - z));
+		double world = ts * Math.pow(2, z);
+		double cx = wx(lon, world), cy = wy(lat, world);
+		double left = cx - w / 2.0, top = cy - h / 2.0;
 		// The phone's position.
 		if (!Double.isNaN(meLat)) {
 			float mx = (float) (wx(meLon, world) - left), my = (float) (wy(meLat, world) - top);
@@ -384,6 +473,7 @@ final class MapView extends View {
 		else {
 			paint.setTextSize(13 * dp);
 			paint.setFakeBoldText(true);
+			for (Pin p : pins) if (p.poly != null) drawPoly(c, p.poly, world, left, top, false);
 			for (Pin p : pins) {
 				float px = (float) (wx(p.lon, world) - left), py = (float) (wy(p.lat, world) - top);
 				if (px < -60 * dp || px > w + 60 * dp || py < -10 * dp || py > h + 50 * dp) continue;
@@ -398,6 +488,7 @@ final class MapView extends View {
 			}
 			paint.setFakeBoldText(false);
 		}
+		if (corners != null) drawPoly(c, corners, world, left, top, true);
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
 		drawRadar(c, w, h, world, left, top);
@@ -408,6 +499,35 @@ final class MapView extends View {
 		c.drawRect(w - aw - 10 * dp, h - 18 * dp, w, h, paint);
 		paint.setColor(0xFF333333);
 		c.drawText(att, w - aw - 5 * dp, h - 5 * dp, paint);
+	}
+
+	/** v6.00: a parcel's outline (4 corners); HANDLES: the new parcel's, with round handles to move. */
+	private void drawPoly(Canvas c, double[] q, double world, double left, double top, boolean handles) {
+		android.graphics.Path p = new android.graphics.Path();
+		for (int k = 0; k < 4; k++) {
+			float x = (float) (wx(q[2 * k + 1], world) - left), y = (float) (wy(q[2 * k], world) - top);
+			if (k == 0) p.moveTo(x, y);
+			else p.lineTo(x, y);
+		}
+		p.close();
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(handles ? 0x40FFD54F : 0x30FFD54F);
+		c.drawPath(p, paint);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(2.5f * dp);
+		paint.setColor(0xFFFFD54F);
+		c.drawPath(p, paint);
+		if (handles) for (int k = 0; k < 4; k++) {
+			float x = (float) (wx(q[2 * k + 1], world) - left), y = (float) (wy(q[2 * k], world) - top);
+			paint.setStyle(Paint.Style.FILL);
+			paint.setColor(0xFFFFFFFF);
+			c.drawCircle(x, y, 10 * dp, paint);
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeWidth(3 * dp);
+			paint.setColor(0xFFE0A800);
+			c.drawCircle(x, y, 10 * dp, paint);
+		}
+		paint.setStyle(Paint.Style.FILL);
 	}
 
 	/** The pin with its tip at X, Y: the terracotta of the app with a white middle. */

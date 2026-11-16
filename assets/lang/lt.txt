@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Laukai: žemėlapis su laukų kortelėmis (stačiai eilė apačioje, gulsčiai stulpelis dešinėje); palietus laukas atsidaro pagrindiniame ekrane. ＋ prideda lauką: kur esi (GPS) arba palietus žemėlapį, tada pavadinimas. Kortelėje: pieštukas redaguoja, stulpeliai atveria Statistiką · PDF, varpelis įjungia ar išjungia pranešimus, šiukšlinė jį ištrina. Saugoma tik šiame telefone.
 Other languages (minorities)	Kitos kalbos (mažumos)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Mygtukai ☰ meniu, po 2 eilutėje: anglų ir šalies kalbos (JAV anglų ir ispanų); Rumunijoje „Kitos kalbos (mažumos)“ parodo kitas.
+The parcel's corners (GPS)	Lauko kampai (GPS)
+North-west	Šiaurės vakarai
+North-east	Šiaurės rytai
+South-east	Pietryčiai
+South-west	Pietvakariai
+The parcel's place (GPS); no corners yet.	Lauko vieta (GPS); kampų dar nėra.
+Show	Rodyti
+For the parcel's corners choose the satellite view (the globe button).	Lauko kampams pasirink palydovo vaizdą (gaublio mygtukas).
+Looking for the parcel's edges…	Ieškau lauko kraštų…
+The parcel's corners: move them with a finger if needed.	Lauko kampai: jei reikia, pastumk juos pirštu.
+The edges do not stand out: move the corners with a finger.	Kraštai neišsiskiria: pastumk kampus pirštu.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Laukai: žemėlapis su laukų kortelėmis (stačiai eilė apačioje, gulsčiai stulpelis dešinėje); kortelės palietimas parodo jos kampus, Rodyti atveria ją pagrindiniame ekrane. ＋ prideda lauką: kur esi (GPS) arba žemėlapio palietimas, tada pavadinimas; palydovo vaizde 4 kampai randami iš nuotraukos ir stumiami pirštu. Kortelėje: pieštukas redaguoja, stulpeliai atveria Statistika · PDF, varpelis įjungia ar išjungia pranešimus, šiukšlinė ištrina. Saugoma tik šiame telefone.

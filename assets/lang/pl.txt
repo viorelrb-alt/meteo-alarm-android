@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Działki: mapa z kartami działek (w pionie rząd na dole, w poziomie kolumna po prawej); dotknięcie otwiera działkę na ekranie głównym. ＋ dodaje działkę: tam, gdzie jesteś (GPS), lub dotknięcie mapy, potem nazwa. Na karcie: ołówek edytuje, słupki otwierają Statystyki · PDF, dzwonek włącza lub wyłącza powiadomienia, kosz ją usuwa. Zapisane tylko w tym telefonie.
 Other languages (minorities)	Inne języki (mniejszości)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Przyciski w ☰, po 2 w rzędzie: angielski i języki kraju (w USA angielski i hiszpański); w Rumunii „Inne języki (mniejszości)” pokazuje pozostałe.
+The parcel's corners (GPS)	Narożniki działki (GPS)
+North-west	Północny zachód
+North-east	Północny wschód
+South-east	Południowy wschód
+South-west	Południowy zachód
+The parcel's place (GPS); no corners yet.	Miejsce działki (GPS); narożniki nie są jeszcze określone.
+Show	Pokaż
+For the parcel's corners choose the satellite view (the globe button).	Aby wyznaczyć narożniki działki, wybierz widok satelitarny (przycisk globu).
+Looking for the parcel's edges…	Szukam granic działki…
+The parcel's corners: move them with a finger if needed.	Narożniki działki: w razie potrzeby przesuń je palcem.
+The edges do not stand out: move the corners with a finger.	Granice nie są wyraźne: przesuń narożniki palcem.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Działki: mapa z kartami działek (pionowo rząd na dole, poziomo kolumna po prawej); dotknięcie karty pokazuje jej narożniki, Pokaż otwiera ją na ekranie głównym. ＋ dodaje działkę: tam, gdzie jesteś (GPS), lub dotknięcie mapy, potem nazwa; w widoku satelitarnym 4 narożniki są wyznaczane ze zdjęcia i przesuwane palcem. Na karcie: ołówek edytuje, słupki otwierają Statystykę · PDF, dzwonek włącza lub wyłącza powiadomienia, kosz ją usuwa. Przechowywane tylko w tym telefonie.

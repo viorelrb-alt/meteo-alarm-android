@@ -1,4 +1,4 @@
-Version actuelle : v.5.53 · 16.11.2026
+Version actuelle : v.6.00 · 16.11.2026
 ÉCRAN PRINCIPAL
 - Écran principal : la page défile sous le verre du haut, par sections (Prochaines heures, Prévisions sur cinq jours, Détails météo) ; les boutons et la batterie flottent en bas.
 - Grande boussole : toucher une localité de la liste affiche son repère sur la boussole ; les localités dans la même direction ne se superposent plus.
@@ -17,6 +17,7 @@ PARAMÈTRES
 - Paramètres : le menu ☰ est maintenant une fenêtre avec des sections, des interrupteurs, les thèmes en couleurs et la barre Système et assistance ; on actualise en tirant l'écran vers le bas ou en touchant « actualisé ».
 - Thème d'icônes : 6 thèmes d'icônes météo (Classique, Brillant, Plat, Réaliste, Atmosphérique, Contour), choisis avec des points de couleur dans ☰ ; dans l'application et sur les widgets.
 PARCELLES
+- Coins de la parcelle : en vue satellite les 4 coins sont trouvés dans l'image et se déplacent du doigt ; un appui sur la carte montre les coins, Afficher ouvre la parcelle.
 - Corbeille : une parcelle supprimée va 15 jours dans la corbeille sous le bouton GPS et peut y être restaurée.
 - Page Parcelles : les cartes des parcelles (nom, coordonnées, crayon, Statistiques · PDF, cloche, corbeille) flottent sur la carte, en ligne en bas ou en colonne à droite ; ＋, aussi l'onglet ＋, ouvre la case d'une nouvelle parcelle.
 - Vues de la carte : des boutons ronds sous ＋/− passent du satellite à la carte et montrent le radar de pluie des 2 dernières heures.

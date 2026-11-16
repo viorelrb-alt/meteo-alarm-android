@@ -1,4 +1,4 @@
-Versão atual: v.5.53 · 16.11.2026
+Versão atual: v.6.00 · 16.11.2026
 ATUALIZAÇÕES
 - Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES
@@ -17,6 +17,7 @@ NOTIFICAÇÕES
 - Sismos: avisos só dos sismos até 300 km do seu local; ligam-se ou desligam-se em ☰.
 - Tornados (EUA): os avisos de tornado para a sua localidade ligam-se ou desligam-se em ☰.
 PARCELAS
+- Cantos da parcela: na vista de satélite os 4 cantos são encontrados na imagem e movem-se com o dedo; um toque no cartão mostra os cantos, Mostrar abre a parcela.
 - Lixo: uma parcela apagada vai 15 dias para o lixo sob o botão GPS e pode ser restaurada a partir daí.
 - Página Parcelas: os cartões das parcelas (nome, coordenadas, lápis, Estatística · PDF, sino, lixo) flutuam sobre o mapa, numa linha em baixo ou numa coluna à direita; ＋, também o separador ＋, abre a caixa de uma parcela nova.
 - Vistas do mapa: botões redondos sob ＋/− alternam entre satélite e mapa e mostram o radar de chuva das últimas 2 horas.

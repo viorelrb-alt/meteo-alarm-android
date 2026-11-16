@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.53";
+	static final String VERSION = "Meteo Alarm Android v6.00";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -2416,7 +2416,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// v5.53 (Viorel): the languages as buttons in the menu, 2 on a row; the minorities' under
 		// "Other languages", shown on a tap and hidden again once one is chosen.
 		final List<String> lc = Lang.offered(this), lm = Lang.minorities(this);
-		p.info("globe", Tr.t("Display language", "Limbă afișaj"), Tr.name(s.T.lang));
+		p.info("globe", Tr.t("Display language", "Limbă afișaj"), mini("lang-" + s.T.lang));
 		p.langButtons(lc.toArray(new String[0]), langNames(lc), lc.indexOf(s.T.lang), new SettingsPanel.Choice() {
 			public void chose(int k) {
 				langMore = false;
@@ -3193,8 +3193,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"După Apa în sol: STROPIT (vânt, ploaie, căldură), BILANȚ APĂ (ploaie minus evaporare, 7 zile), FURTUNI, GRADE-ZILE, 16 ZILE. Atingerea explică fiecare casetă."));
 		help.entry(mini("us"), Tr.t("Farmer boxes in the US", "Casetele fermierului în SUA"), Tr.t("For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).",
 				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
-		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.",
-				"☰ › Parcele: harta cu casetele parcelelor (în portret un rând jos, în peisaj o coloană la dreapta); atingerea deschide una pe ecranul principal. ＋ adaugă una: unde ești (GPS) sau unde atingi harta, apoi numele. Pe casetă: creionul editează, barele deschid Statistică · PDF, clopoțelul pornește sau oprește notificările ei, coșul o șterge. Rămân doar în acest telefon."));
+		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.",
+				"☰ › Parcele: harta cu casetele parcelelor (în portret un rând jos, în peisaj o coloană la dreapta); atingerea unei casete arată colțurile ei, Afișare o deschide pe ecranul principal. ＋ adaugă una: unde ești (GPS) sau unde atingi harta, apoi numele; în vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul. Pe casetă: creionul editează, barele deschid Statistică · PDF, clopoțelul pornește sau oprește notificările ei, coșul o șterge. Rămân doar în acest telefon."));
 		help.entry(mini("map"), Tr.t("Map views", "Vederile hărții"), Tr.t("Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the radar (the rain of the last 2 hours, moving; RainViewer).",
 				"Sub ＋ și − pe harta Parcele: vederea din satelit (Esri), harta și radarul (precipitațiile din ultimele 2 ore, în mișcare; RainViewer)."));
 		help.entry(mini("parcel"), Tr.t("Bin", "Coș de gunoi"), Tr.t("A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).",

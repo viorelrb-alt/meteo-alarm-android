@@ -1,4 +1,4 @@
-Trenutačna verzija: v.5.53 · 16.11.2026
+Trenutačna verzija: v.6.00 · 16.11.2026
 AŽURIRANJA
 - Ažuriranja: aplikacija više sama ne traži ažuriranja, samo kada dodirnete ☰ › Provjeri ažuriranja; nova verzija preuzima se u pregledniku, a vi je instalirate iz preuzete datoteke.
 GLAVNI ZASLON
@@ -14,6 +14,7 @@ OBAVIJESTI
 - Tornada (SAD): obavijesti o tornadu za vaše mjesto uključuju se ili isključuju u ☰.
 PARCELE
 - Koš: obrisana parcela ide na 15 dana u koš ispod gumba GPS i odande se može vratiti.
+- Kutovi parcele: u satelitskom prikazu 4 kuta pronalaze se sa slike i pomiču prstom; dodir kartice pokazuje kutove, Prikaži otvara parcelu.
 - Prikazi karte: okrugli gumbi ispod ＋/− mijenjaju satelit i kartu i prikazuju radar oborina zadnja 2 sata.
 - Stranica Parcele: kartice parcela (ime, koordinate, olovka, Statistika · PDF, zvono, koš) lebde iznad karte, u redu dolje ili u stupcu desno; ＋, i kartica ＋, otvara okvir nove parcele.
 POSTAVKE

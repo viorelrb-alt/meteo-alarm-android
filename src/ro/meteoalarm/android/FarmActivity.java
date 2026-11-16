@@ -1292,7 +1292,11 @@ public final class FarmActivity extends Activity {
 		m.setStyle(pr.getInt("mapStyle", 0));
 		m.setRadar(pr.getBoolean("mapRadar", false));
 		List<MapView.Pin> pins = new java.util.ArrayList<MapView.Pin>();
-		for (Parcels.Parcel p : all) pins.add(new MapView.Pin(p.id, p.lat, p.lon, p.name));
+		for (Parcels.Parcel p : all) {
+			MapView.Pin pin = new MapView.Pin(p.id, p.lat, p.lon, p.name);
+			pin.poly = p.corners;
+			pins.add(pin);
+		}
 		m.setPins(pins, new MapView.PinTap() {
 			public void tapped(long id) {
 				Parcels.Parcel p = Parcels.get(FarmActivity.this, id);
@@ -1457,6 +1461,7 @@ public final class FarmActivity extends Activity {
 					} else {
 						m.setStyle(kind == 0 ? 1 : 0);
 						e.putInt("mapStyle", m.style());
+						if (newBox != null && newFind != null) newFind.run();
 						Log.i(FarmActivity.this, "FERMIER", "harta: " + (kind == 0 ? "satelit" : "hartă"));
 					}
 					e.apply();
@@ -1707,7 +1712,9 @@ public final class FarmActivity extends Activity {
 			name.setHyphenationFrequency(android.text.Layout.HYPHENATION_FREQUENCY_NONE);
 		}
 		card.addView(name, new FrameLayout.LayoutParams(room, 3 * rowH, Gravity.TOP | Gravity.LEFT));
-		String[] co = coords(p.lat, p.lon).split(",\\s*");
+		// v6.00 (Viorel): with corners, the north-west one.
+		double[] nw = p.nw();
+		String[] co = (nw != null ? coords(nw[0], nw[1]) : coords(p.lat, p.lon)).split(",\\s*");
 		for (int k = 0; k < co.length && k < 2; k++) {
 			TextView ct = text(co[k].trim(), 12, false, dim);
 			ct.setSingleLine(true);
@@ -1739,10 +1746,10 @@ public final class FarmActivity extends Activity {
 			l.topMargin = Math.round(k * (ic + g));
 			card.addView(bs[k], l);
 		}
+		// v6.00 (Viorel): a tap on the card (away from its buttons): the bubble with the corners.
 		card.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
-				select(p.id);
+				showCorners(p);
 			}
 		});
 		return card;
@@ -1781,7 +1788,7 @@ public final class FarmActivity extends Activity {
 			if (pc.getFontSpacing() > rowH) continue;
 			boolean ok = true;
 			for (Parcels.Parcel p : all)
-				for (String s : coords(p.lat, p.lon).split(",\\s*"))
+				for (String s : (p.nw() != null ? coords(p.nw()[0], p.nw()[1]) : coords(p.lat, p.lon)).split(",\\s*"))
 					if (pc.measureText(s.trim()) > w) ok = false;
 			if (ok) break;
 		}
@@ -1936,6 +1943,8 @@ public final class FarmActivity extends Activity {
 		final TextView where = text(Tr.t("Looking for the position (GPS)…", "Caut poziția (GPS)…"), 15, true, ink);
 		box.addView(where, wide(8));
 		box.addView(text(Tr.t("Tap the map to move the pin.", "Atinge harta ca să muți acul."), 13, false, dim), wide(2));
+		final TextView cornInfo = text("", 13, false, dim);
+		box.addView(cornInfo, wide(4));
 		final EditText nameIn = new EditText(this);
 		nameIn.setSingleLine(true);
 		nameIn.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
@@ -1970,6 +1979,13 @@ public final class FarmActivity extends Activity {
 				newLo = at[1];
 				m.setMark(at[0], at[1]);
 				where.setText(coords(at[0], at[1]));
+				newCorners = null;
+				findCorners(m, at, cornInfo);
+			}
+		};
+		newFind = new Runnable() {
+			public void run() {
+				if (!Double.isNaN(at[0])) findCorners(m, at, cornInfo);
 			}
 		};
 		m.setOnMapTap(new MapView.MapTap() {
@@ -1982,7 +1998,19 @@ public final class FarmActivity extends Activity {
 			}
 		});
 		// The phone's position: at once the last one known, then GPS when it answers (unless the map was tapped).
-		if (!Double.isNaN(at[0])) put.run();
+		if (!Double.isNaN(at[0])) {
+			// Turned screen: the corners found (or moved) stay.
+			double[] kept = newCorners;
+			newLa = at[0];
+			newLo = at[1];
+			m.setMark(at[0], at[1]);
+			where.setText(coords(at[0], at[1]));
+			if (kept != null) {
+				newCorners = kept;
+				m.setCorners(kept, cornersCb());
+				cornInfo.setText(Tr.t("The parcel's corners: move them with a finger if needed.", "Colțurile parcelei: mută-le cu degetul dacă e nevoie."));
+			} else findCorners(m, at, cornInfo);
+		}
 		else if (!Double.isNaN(meLa)) {
 			at[0] = meLa;
 			at[1] = meLo;
@@ -2022,6 +2050,7 @@ public final class FarmActivity extends Activity {
 				p.name = n;
 				p.lat = at[0];
 				p.lon = at[1];
+				p.corners = newCorners;
 				Parcels.put(FarmActivity.this, p);
 				Log.i(FarmActivity.this, "FERMIER", "parcelă salvată: " + n + " " + coords(p.lat, p.lon));
 				hideKeys(nameIn);
@@ -2048,7 +2077,107 @@ public final class FarmActivity extends Activity {
 		return true;
 	}
 
+	/** v6.00: the new parcel's corners (kept when the screen turns) and the look for them again. */
+	private double[] newCorners;
+	private Runnable newFind;
+	private int findRun;
+
+	private MapView.CornersMoved cornersCb() {
+		return new MapView.CornersMoved() {
+			public void moved(double[] c) {
+				newCorners = c;
+				Log.i(FarmActivity.this, "FERMIER", "colț mutat");
+			}
+		};
+	}
+
+	/**
+	 * v6.00 (Viorel): in the satellite view, the corners of the field around the pin, guessed from
+	 * the picture (FieldFind); when nothing stands out, a square around the pin; the farmer moves
+	 * them with a finger. In the map view no corners.
+	 */
+	private void findCorners(final MapView m, final double[] at, final TextView info) {
+		final int run = ++findRun;
+		if (m.style() != 1) {
+			newCorners = null;
+			m.setCorners(null, null);
+			info.setText(Tr.t("For the parcel's corners choose the satellite view (the globe button).", "Pentru colțurile parcelei alege vederea din satelit (butonul glob)."));
+			return;
+		}
+		info.setText(Tr.t("Looking for the parcel's edges…", "Caut marginile parcelei…"));
+		m.setCorners(null, null);
+		if (m.zoom() < 16) m.setZoom(16);
+		m.center(at[0], at[1]);
+		final int[] tries = { 0 };
+		final boolean[] zoomedOut = { false };
+		ui.postDelayed(new Runnable() {
+			public void run() {
+				if (run != findRun || newBox == null) return;
+				final float sc = 0.5f;
+				final android.graphics.Bitmap b = m.bareShot(sc);
+				if (b == null && ++tries[0] < 20) {
+					ui.postDelayed(this, 400);
+					return;
+				}
+				final Runnable again = this;
+				final float[] pin = m.pixelOf(at[0], at[1]);
+				final int bw = b != null ? b.getWidth() : 0, bh = b != null ? b.getHeight() : 0;
+				final int[] px = new int[bw * bh];
+				if (b != null) {
+					b.getPixels(px, 0, bw, 0, 0, bw, bh);
+					b.recycle();
+				}
+				new Thread() {
+					public void run() {
+						float[] found = null;
+						try {
+							if (bw > 0) found = ro.meteoalarm.android.core.FieldFind.find(px, bw, bh, Math.round(pin[0] * sc), Math.round(pin[1] * sc));
+						} catch (Throwable e) {
+							found = null;
+						}
+						final float[] q = found;
+						ui.post(new Runnable() {
+							public void run() {
+								if (run != findRun || newBox == null) return;
+								if (q == null && !zoomedOut[0] && m.zoom() > 14) {
+									// Maybe larger than the screen: once more, one step out.
+									zoomedOut[0] = true;
+									tries[0] = 0;
+									m.setZoom(m.zoom() - 1);
+									m.center(at[0], at[1]);
+									ui.postDelayed(again, 600);
+									return;
+								}
+								double[] c = new double[8];
+								if (q != null) {
+									for (int k = 0; k < 4; k++) {
+										double[] ll = m.latLonAt(q[2 * k] / sc, q[2 * k + 1] / sc);
+										c[2 * k] = ll[0];
+										c[2 * k + 1] = ll[1];
+									}
+									info.setText(Tr.t("The parcel's corners: move them with a finger if needed.", "Colțurile parcelei: mută-le cu degetul dacă e nevoie."));
+									Log.i(FarmActivity.this, "FERMIER", "colțuri găsite din satelit");
+								} else {
+									// About 40 m around the pin.
+									double dla = 40 / 111320.0, dlo = dla / Math.cos(Math.toRadians(at[0]));
+									c = new double[] { at[0] + dla, at[1] - dlo, at[0] + dla, at[1] + dlo, at[0] - dla, at[1] + dlo, at[0] - dla, at[1] - dlo };
+									info.setText(Tr.t("The edges do not stand out: move the corners with a finger.", "Marginile nu se văd clar: mută colțurile cu degetul."));
+									Log.i(FarmActivity.this, "FERMIER", "colțurile nu s-au găsit; pătrat în jurul acului");
+								}
+								newCorners = c;
+								m.setCorners(c, cornersCb());
+							}
+						});
+					}
+				}.start();
+			}
+		}, 500);
+	}
+
 	private void newReset() {
+		newCorners = null;
+		newFind = null;
+		findRun++;
 		newOpen = false;
 		newTapped = false;
 		newLa = newLo = Double.NaN;
@@ -2140,6 +2269,71 @@ public final class FarmActivity extends Activity {
 		};
 		x.setOnClickListener(close);
 		scrim.setOnClickListener(close);
+		root.addView(scrim, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		overlay = scrim;
+	}
+
+	/**
+	 * v6.00 (Viorel): a parcel's bubble of frosted glass: its name, the GPS coordinates of its 4
+	 * corners (or of its pin, without corners) and "Show", which opens it on the main screen.
+	 */
+	private void showCorners(final Parcels.Parcel p) {
+		Log.i(this, "FERMIER", "bula parcelei " + p.name);
+		final boolean tab = TextSize.tablet(this);
+		final FrameLayout scrim = new FrameLayout(this);
+		scrim.setBackgroundColor(0x22000000);
+		scrim.setClickable(true);
+		LinearLayout win = column();
+		win.setBackground(glass(px(22), 0.94f));
+		win.setElevation(px(8));
+		win.setPadding(px(18), px(14), px(18), px(16));
+		win.setClickable(true);
+		LinearLayout head = new LinearLayout(this);
+		head.setGravity(Gravity.CENTER_VERTICAL);
+		TextView nm = text(p.name, tab ? 20 : 18, true, ink);
+		nm.setMaxLines(3);
+		head.addView(nm, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		TextView x = text("✕", 18, true, ink);
+		x.setGravity(Gravity.CENTER);
+		x.setBackground(Glass.pill(Glass.disc(dark), 0, px(18), dp));
+		head.addView(x, new LinearLayout.LayoutParams(px(36), px(36)));
+		win.addView(head);
+		if (p.corners != null) {
+			win.addView(text(Tr.t("The parcel's corners (GPS)", "Colțurile parcelei (GPS)"), 13, false, dim), wide(6));
+			String[] names = { Tr.t("North-west", "Nord-vest"), Tr.t("North-east", "Nord-est"), Tr.t("South-east", "Sud-est"), Tr.t("South-west", "Sud-vest") };
+			double[] c = p.corners;
+			// Each corner named after where it stands from the middle.
+			double mla = (c[0] + c[2] + c[4] + c[6]) / 4, mlo = (c[1] + c[3] + c[5] + c[7]) / 4;
+			for (int k = 0; k < 4; k++) {
+				int q = c[2 * k] >= mla ? (c[2 * k + 1] < mlo ? 0 : 1) : (c[2 * k + 1] >= mlo ? 2 : 3);
+				LinearLayout r = new LinearLayout(this);
+				r.setGravity(Gravity.CENTER_VERTICAL);
+				r.addView(text(names[q], 13, false, dim), new LinearLayout.LayoutParams(px(tab ? 110 : 90), ViewGroup.LayoutParams.WRAP_CONTENT));
+				r.addView(text(coords(c[2 * k], c[2 * k + 1]), tab ? 17 : 15, true, ink));
+				win.addView(r, wide(4));
+			}
+		} else {
+			win.addView(text(Tr.t("The parcel's place (GPS); no corners yet.", "Locul parcelei (GPS); colțurile nu sunt definite."), 13, false, dim), wide(6));
+			win.addView(text(coords(p.lat, p.lon), tab ? 17 : 15, true, ink), wide(4));
+		}
+		TextView show = button(Tr.t("Show", "Afișare"), new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
+				select(p.id);
+			}
+		});
+		win.addView(show, wide(12));
+		int w = Math.min(px(tab ? 460 : 380), getResources().getDisplayMetrics().widthPixels - px(32));
+		scrim.addView(win, new FrameLayout.LayoutParams(w, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+		View.OnClickListener close = new View.OnClickListener() {
+			public void onClick(View v) {
+				root.removeView(scrim);
+				if (overlay == scrim) overlay = null;
+			}
+		};
+		x.setOnClickListener(close);
+		scrim.setOnClickListener(close);
+		closeOverlay();
 		root.addView(scrim, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		overlay = scrim;
 	}

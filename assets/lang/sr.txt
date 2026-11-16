@@ -1033,3 +1033,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Парцеле: мапа са картицама парцела (усправно ред доле, положено колона десно); додир отвара парцелу на главном екрану. ＋ додаје парцелу: где се налазиш (GPS) или додир на мапи, па назив. На картици: оловка уређује, стубићи отварају Статистику · PDF, звонце укључује или искључује обавештења, корпа је брише. Чува се само на овом телефону.
 Other languages (minorities)	Остали језици (мањине)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Дугмад у ☰, по 2 у реду: енглески и језици земље (у САД енглески и шпански); у Румунији „Остали језици (мањине)” приказује остале.
+The parcel's corners (GPS)	Углови парцеле (GPS)
+North-west	Северозапад
+North-east	Североисток
+South-east	Југоисток
+South-west	Југозапад
+The parcel's place (GPS); no corners yet.	Место парцеле (GPS); углови још нису одређени.
+Show	Прикажи
+For the parcel's corners choose the satellite view (the globe button).	За углове парцеле изабери сателитски приказ (дугме глобус).
+Looking for the parcel's edges…	Тражим ивице парцеле…
+The parcel's corners: move them with a finger if needed.	Углови парцеле: по потреби их помери прстом.
+The edges do not stand out: move the corners with a finger.	Ивице се не истичу: помери углове прстом.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Парцеле: мапа са картицама парцела (усправно ред доле, положено колона десно); додир картице показује њене углове, Прикажи је отвара на главном екрану. ＋ додаје парцелу: где си (GPS) или додир мапе, затим име; у сателитском приказу 4 угла се налазе са слике и померају прстом. На картици: оловка уређује, стубићи отварају Статистику · PDF, звонце укључује или искључује обавештења, корпа је брише. Чувају се само на овом телефону.

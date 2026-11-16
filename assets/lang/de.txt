@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parzellen: die Karte mit den Karten der Parzellen (hochkant eine Reihe unten, quer eine Spalte rechts); ein Tippen öffnet eine auf dem Hauptbildschirm. ＋ fügt eine hinzu: wo du bist (GPS) oder ein Tippen auf die Karte, dann der Name. Auf einer Karte: der Stift bearbeitet, die Balken öffnen Statistik · PDF, die Glocke schaltet die Benachrichtigungen ein oder aus, der Papierkorb löscht sie. Nur auf diesem Telefon gespeichert.
 Other languages (minorities)	Weitere Sprachen (Minderheiten)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Tasten in ☰, 2 pro Reihe: Englisch und die Sprachen des Landes (in den USA Englisch und Spanisch); in Rumänien zeigt „Weitere Sprachen (Minderheiten)“ den Rest.
+The parcel's corners (GPS)	Ecken der Parzelle (GPS)
+North-west	Nordwest
+North-east	Nordost
+South-east	Südost
+South-west	Südwest
+The parcel's place (GPS); no corners yet.	Ort der Parzelle (GPS); noch keine Ecken.
+Show	Anzeigen
+For the parcel's corners choose the satellite view (the globe button).	Für die Ecken der Parzelle die Satellitenansicht wählen (Globus-Taste).
+Looking for the parcel's edges…	Suche die Ränder der Parzelle…
+The parcel's corners: move them with a finger if needed.	Ecken der Parzelle: bei Bedarf mit dem Finger verschieben.
+The edges do not stand out: move the corners with a finger.	Die Ränder heben sich nicht ab: die Ecken mit dem Finger verschieben.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parzellen: die Karte mit den Karten der Parzellen (hochkant eine Reihe unten, quer eine Spalte rechts); ein Tippen auf eine Karte zeigt ihre Ecken, Anzeigen öffnet sie auf dem Hauptbildschirm. ＋ fügt eine hinzu: wo du bist (GPS) oder ein Tippen auf die Karte, dann der Name; in der Satellitenansicht werden die 4 Ecken aus dem Bild gefunden und mit dem Finger verschoben. Auf einer Karte: der Stift bearbeitet, die Balken öffnen Statistik · PDF, die Glocke schaltet die Benachrichtigungen ein oder aus, der Papierkorb löscht sie. Nur auf diesem Telefon gespeichert.

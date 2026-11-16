@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Biċċiet tal-art: il-mappa bil-karti tal-biċċiet tal-art (wieqfa ringiela isfel, mimduda kolonna fuq il-lemin); għafsa tiftaħ waħda fuq l-iskrin ewlieni. ＋ iżżid waħda: fejn qiegħed (GPS) jew għafsa fuq il-mappa, imbagħad l-isem. Fuq karta: il-lapes jeditja, il-vireg jiftħu l-Istatistika · PDF, il-qanpiena tixgħel jew titfi n-notifiki, il-landa tħassarha. Jinżammu biss f'dan it-telefon.
 Other languages (minorities)	Lingwi oħra (minoranzi)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Buttuni f'☰, 2 f'kull ringiela: Ingliż u l-lingwi tal-pajjiż (fl-Istati Uniti Ingliż u Spanjol); fir-Rumanija “Lingwi oħra (minoranzi)” turi l-bqija.
+The parcel's corners (GPS)	Il-kantunieri tal-biċċa art (GPS)
+North-west	Majjistral
+North-east	Grigal
+South-east	Xlokk
+South-west	Lbiċ
+The parcel's place (GPS); no corners yet.	Il-post tal-biċċa art (GPS); għad m'hemmx kantunieri.
+Show	Uri
+For the parcel's corners choose the satellite view (the globe button).	Għall-kantunieri tal-biċċa art agħżel il-veduta tas-satellita (il-buttuna tal-globu).
+Looking for the parcel's edges…	Qed infittex it-truf tal-biċċa art…
+The parcel's corners: move them with a finger if needed.	Il-kantunieri tal-biċċa art: ċaqlaqhom b'subgħajk jekk hemm bżonn.
+The edges do not stand out: move the corners with a finger.	It-truf ma jidhrux ċar: ċaqlaq il-kantunieri b'subgħajk.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Biċċiet tal-art: il-mappa bil-karti tal-biċċiet tal-art (wieqfa ringiela isfel, mimduda kolonna fuq il-lemin); għafsa fuq karta turi l-kantunieri tagħha, Uri tiftaħha fuq l-iskrin ewlieni. ＋ iżżid waħda: fejn qiegħed (GPS) jew għafsa fuq il-mappa, imbagħad l-isem; fil-veduta tas-satellita l-4 kantunieri jinstabu mill-istampa u jiċċaqilqu b'subgħajk. Fuq karta: il-lapes jeditja, il-vireg jiftħu Statistika · PDF, il-qanpiena tixgħel jew titfi n-notifiki, il-landa tħassarha. Jinżammu biss f'dan it-telefon.

@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Ceapacha: an léarscáil le cártaí na gceapach (ina seasamh sraith thíos, ina luí colún ar dheis); osclaíonn tapáil ceann ar an bpríomhscáileán. Cuireann ＋ ceann leis: an áit ina bhfuil tú (GPS) nó tapáil ar an léarscáil, ansin an t-ainm. Ar chárta: cuireann an peann luaidhe in eagar, osclaíonn na barraí Staitisticí · PDF, casann an cloigín na fógraí air nó as, scriosann an bosca bruscair í. Coinnítear ar an bhfón seo amháin.
 Other languages (minorities)	Teangacha eile (mionlaigh)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Cnaipí in ☰, 2 sa ró: Béarla agus teangacha na tíre (sna SA Béarla agus Spáinnis); sa Rómáin taispeánann „Teangacha eile (mionlaigh)” an chuid eile.
+The parcel's corners (GPS)	Coirnéil na ceapaí (GPS)
+North-west	Iarthuaisceart
+North-east	Oirthuaisceart
+South-east	Oirdheisceart
+South-west	Iardheisceart
+The parcel's place (GPS); no corners yet.	Áit na ceapaí (GPS); gan choirnéil fós.
+Show	Taispeáin
+For the parcel's corners choose the satellite view (the globe button).	Do choirnéil na ceapaí roghnaigh an radharc satailíte (cnaipe an chruinne).
+Looking for the parcel's edges…	Ag cuardach imill na ceapaí…
+The parcel's corners: move them with a finger if needed.	Coirnéil na ceapaí: bog le méar iad más gá.
+The edges do not stand out: move the corners with a finger.	Ní sheasann na himill amach: bog na coirnéil le méar.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Ceapacha: an léarscáil le cártaí na gceapach (ina seasamh ró thíos, ar a taobh colún ar dheis); taispeánann tapáil ar chárta a coirnéil, osclaíonn Taispeáin í ar an bpríomhscáileán. Cuireann ＋ ceann leis: an áit ina bhfuil tú (GPS) nó tapáil ar an léarscáil, ansin an t-ainm; sa radharc satailíte aimsítear na 4 choirnéal ón bpictiúr agus bogtar le méar iad. Ar chárta: cuireann an peann luaidhe in eagar, osclaíonn na barraí Staitisticí · PDF, cuireann an cloigín na fógraí ar siúl nó as, scriosann an bosca bruscair í. Ar an bhfón seo amháin.

@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Percelen: de kaart met de kaartjes van de percelen (staand een rij onderaan, liggend een kolom rechts); een tik opent er een op het hoofdscherm. ＋ voegt er een toe: waar je bent (GPS) of een tik op de kaart, dan de naam. Op een kaartje: het potlood bewerkt, de staafjes openen Statistiek · PDF, de bel zet de meldingen aan of uit, de prullenbak verwijdert het. Alleen op deze telefoon bewaard.
 Other languages (minorities)	Andere talen (minderheden)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Knoppen in ☰, 2 per rij: Engels en de talen van het land (in de VS Engels en Spaans); in Roemenië toont „Andere talen (minderheden)” de rest.
+The parcel's corners (GPS)	Hoeken van het perceel (GPS)
+North-west	Noordwest
+North-east	Noordoost
+South-east	Zuidoost
+South-west	Zuidwest
+The parcel's place (GPS); no corners yet.	Plaats van het perceel (GPS); nog geen hoeken.
+Show	Tonen
+For the parcel's corners choose the satellite view (the globe button).	Kies voor de hoeken van het perceel de satellietweergave (globeknop).
+Looking for the parcel's edges…	Ik zoek de randen van het perceel…
+The parcel's corners: move them with a finger if needed.	Hoeken van het perceel: verschuif ze zo nodig met een vinger.
+The edges do not stand out: move the corners with a finger.	De randen springen er niet uit: verschuif de hoeken met een vinger.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Percelen: de kaart met de kaartjes van de percelen (staand een rij onderaan, liggend een kolom rechts); een tik op een kaartje toont de hoeken, Tonen opent het op het hoofdscherm. ＋ voegt er een toe: waar je bent (GPS) of een tik op de kaart, dan de naam; in de satellietweergave worden de 4 hoeken uit het beeld gevonden en met een vinger verschoven. Op een kaartje: het potlood bewerkt, de staafjes openen Statistiek · PDF, de bel zet de meldingen aan of uit, de prullenbak verwijdert het. Alleen op deze telefoon bewaard.

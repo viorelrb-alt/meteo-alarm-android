@@ -1099,3 +1099,15 @@ Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelles : la carte avec les cartes des parcelles (en portrait une rangée en bas, en paysage une colonne à droite) ; un appui en ouvre une sur l'écran principal. ＋ en ajoute une : là où tu es (GPS) ou un appui sur la carte, puis le nom. Sur une carte : le crayon modifie, les barres ouvrent Statistiques · PDF, la cloche active ou désactive ses notifications, la corbeille la supprime. Gardées seulement sur ce téléphone.
 Other languages (minorities)	Autres langues (minorités)
 Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.	Boutons dans ☰, 2 par ligne : anglais et les langues du pays (aux États-Unis anglais et espagnol) ; en Roumanie « Autres langues (minorités) » montre les autres.
+The parcel's corners (GPS)	Coins de la parcelle (GPS)
+North-west	Nord-ouest
+North-east	Nord-est
+South-east	Sud-est
+South-west	Sud-ouest
+The parcel's place (GPS); no corners yet.	Emplacement de la parcelle (GPS) ; pas encore de coins.
+Show	Afficher
+For the parcel's corners choose the satellite view (the globe button).	Pour les coins de la parcelle, choisis la vue satellite (bouton globe).
+Looking for the parcel's edges…	Je cherche les bords de la parcelle…
+The parcel's corners: move them with a finger if needed.	Coins de la parcelle : déplace-les du doigt si besoin.
+The edges do not stand out: move the corners with a finger.	Les bords ne ressortent pas : déplace les coins du doigt.
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its corners, Show opens it on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelles : la carte avec les cartes des parcelles (en portrait une ligne en bas, en paysage une colonne à droite) ; un appui sur une carte montre ses coins, Afficher l'ouvre sur l'écran principal. ＋ en ajoute une : où tu es (GPS) ou un appui sur la carte, puis le nom ; en vue satellite ses 4 coins sont trouvés dans l'image et se déplacent du doigt. Sur une carte : le crayon modifie, les barres ouvrent Statistiques · PDF, la cloche active ou coupe ses notifications, la corbeille la supprime. Gardées seulement sur ce téléphone.
