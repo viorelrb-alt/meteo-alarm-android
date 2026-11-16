@@ -1005,3 +1005,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Апликација проверава само када додирнете Провери ажурирања; Преузми отвара нову верзију у прегледачу, а ви је инсталирате из преузете датотеке.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Велика температура и десно следећа 4 дана (по једна икона) или сати, према избору у подешавањима: Приказ времена. У једном реду постаје 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Сутра и прекосутра горе; испод њих дани 3–5 се сами смењују на 3 секунде док их не додирнеш. Ред Детаљи времена се мало помери после 6 секунди. Додир на Сутра или Прекосутра приказује његов облачић.
+ days left	 дана преостало
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Обрисана парцела иде у корпу испод дугмета GPS и чува се 15 дана; округло дугме је враћа (ако сачувана парцела има исти назив: нови назив или замени).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Парцела са тим називом већ постоји. Унеси нови назив или замени сачувану парцелу.
+Bin	Корпа
+Deleted parcels are kept 15 days.	Обрисане парцеле чувају се 15 дана.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим пољопривредника: звонце на картици парцеле укључује (пуно) или искључује њена обавештења; тада парцела добија сва: киша или снег у наредном сату, после 20 х киша или снег сутра, ветар, снег, слана, мраз, магла, поледица, суша (суво тло, 7 дана без кише).
+Looking for the position (GPS)…	Тражим положај (GPS)…
+New name	Нови назив
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Још нема сачуване парцеле. Додирни ＋ да додаш једну: место је где се налазиш (GPS), или додирни мапу.
+No place yet: wait for the GPS or tap the map.	Још нема места: сачекај GPS или додирни мапу.
+Restore	Врати
+Restored: 	Враћена: 
+Tap the map to move the pin.	Додирни мапу да померите чиоду.
+The bin is empty.	Корпа је празна.
+The parcel goes to the bin, where it is kept 15 days.	Парцела иде у корпу, где се чува 15 дана.
+deleted 	обрисана 
+notifications OFF	обавештења ИСКЉУЧЕНА
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	обавештења УКЉУЧЕНА (киша, ветар, снег, слана, мраз, магла, поледица, суша).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Парцеле: мапа са картицама парцела (усправно доле, положено десно); додир отвара парцелу на главном екрану. ＋ додаје парцелу: где се налазиш (GPS) или додир на мапи, па назив. На картици оловка уређује, звонце укључује или искључује обавештења, корпа је брише. Чува се само на овом телефону.

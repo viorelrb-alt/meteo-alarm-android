@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.33";
+	static final String VERSION = "Meteo Alarm Android v5.40";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -3142,10 +3142,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"După Apa în sol: STROPIT (vânt, ploaie, căldură), BILANȚ APĂ (ploaie minus evaporare, 7 zile), FURTUNI, GRADE-ZILE, 16 ZILE. Atingerea explică fiecare casetă."));
 		help.entry(mini("us"), Tr.t("Farmer boxes in the US", "Casetele fermierului în SUA"), Tr.t("For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).",
 				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
-		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map shows all the parcels; a tap opens one on the main screen. “Save GPS place” or “Choose on the map” adds one; the GPS button shows where you are. The pencil edits the name and the pin; its ⋮ has Statistics · PDF and Delete. Kept only on this phone.",
-				"☰ › Parcele: harta arată toate parcelele; atingerea deschide una pe ecranul principal. „Salvare loc. GPS” sau „Alege pe hartă” adaugă una; butonul GPS arată unde ești. Creionul editează numele și acul; meniul ⋮ de acolo are Statistică · PDF și Ștergere. Rămân doar în acest telefon."));
-		help.entry(mini("dots"), Tr.t("The ⋮ menu", "Meniul ⋮"), Tr.t("In Parcels the commands are in the ⋮ menu at the top right; on the edit page Delete is left of Save. The boxes show only the value; a tap shows the details.",
-				"În Parcele comenzile sunt în meniul ⋮ din dreapta sus; pe pagina de editare Șterge e la stânga lui Salvează. Casetele arată doar valoarea; atingerea arată detaliile."));
+		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.",
+				"☰ › Parcele: harta cu casetele parcelelor (în portret jos, în peisaj la dreapta); atingerea deschide una pe ecranul principal. ＋ adaugă una: unde ești (GPS) sau unde atingi harta, apoi numele. Pe casetă creionul editează, clopoțelul pornește sau oprește notificările ei, coșul o șterge. Rămân doar în acest telefon."));
+		help.entry(mini("parcel"), Tr.t("Bin", "Coș de gunoi"), Tr.t("A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).",
+				"O parcelă ștearsă trece în coșul de sub butonul GPS și se păstrează 15 zile; butonul rotund o restaurează (dacă o parcelă salvată are același nume: nume nou sau înlocuire)."));
 		help.entry(mini("bubble"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.",
 				"O fereastră de sticlă mată în mijlocul ecranului (ecranul rămâne clar); se închide cu X sau cu o atingere în afara ei. Sub titlu, locul; ▲ și ▼ derulează; sursa e jos."));
 		help.entry(mini("gps"), Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), Tr.t("On the parcel maps the blue dot shows where you are: the GPS starts with the page; the GPS button takes the map there.",
@@ -3154,8 +3154,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + adaugă o parcelă."));
 		help.entry(mini("table"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.",
 				"Statistică · PDF: sus casetele de acum și ale perioadei, pe un rând care glisează în lateral; sub ele următoarele 12 ore și zi cu zi (se derulează). ☰ de lângă zile alege perioada; butonul PDF salvează casetele și tabelele."));
-		help.entry(mini("bellp"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell under the GPS button on the Parcels map opens Select notification; a parcel with X gets all its notifications: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
-				"Mod fermier: clopoțelul de sub butonul GPS de pe harta Parcele deschide Selectare notificare; o parcelă cu X primește toate notificările ei: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
+		help.entry(mini("bellp"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
+				"Mod fermier: clopoțelul de pe caseta parcelei îi pornește (plin) sau oprește notificările; atunci parcela le primește pe toate: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("layers"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
 		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("OpenStreetMap: move it with one finger, zoom with two; it needs internet.",

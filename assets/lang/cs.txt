@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Aplikace kontroluje jen tehdy, když klepnete na Zkontrolovat aktualizace; Stáhnout otevře novou verzi v prohlížeči a vy ji nainstalujete ze staženého souboru.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Velká teplota a vpravo další 4 dny (po jedné ikoně) nebo hodiny, podle volby v nastavení: Zobrazení počasí. Na jednom řádku se z něj stane 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Zítra a pozítří nahoře; pod nimi se dny 3–5 posouvají samy každé 3 sekundy, dokud se jich nedotkneš. Řádek Podrobnosti počasí se po 6 sekundách trochu pohne. Klepnutí na Zítra nebo Pozítří ukáže jeho bublinu.
+ days left	 dní zbývá
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Smazaný pozemek jde do koše pod tlačítkem GPS a zůstane 15 dní; kulaté tlačítko ho obnoví (má-li uložený pozemek stejný název: nový název nebo nahradit).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Pozemek s tímto názvem už existuje. Zadej nový název, nebo nahraď uložený pozemek.
+Bin	Koš
+Deleted parcels are kept 15 days.	Smazané pozemky zůstávají 15 dní.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Režim farmáře: zvonek na kartě pozemku zapne (plný) nebo vypne jeho upozornění; pozemek pak dostává všechna: déšť nebo sníh do hodiny, po 20. hodině déšť nebo sníh zítra, vítr, sníh, jinovatka, mráz, mlha, náledí, sucho (suchá půda, 7 dní bez deště).
+Looking for the position (GPS)…	Hledám polohu (GPS)…
+New name	Nový název
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Zatím žádný uložený pozemek. Klepni na ＋ a přidej ho: místo je tam, kde jsi (GPS), nebo klepni na mapu.
+No place yet: wait for the GPS or tap the map.	Zatím žádné místo: počkej na GPS nebo klepni na mapu.
+Restore	Obnovit
+Restored: 	Obnoveno: 
+Tap the map to move the pin.	Klepnutím na mapu přesuneš špendlík.
+The bin is empty.	Koš je prázdný.
+The parcel goes to the bin, where it is kept 15 days.	Pozemek jde do koše, kde zůstane 15 dní.
+deleted 	smazáno 
+notifications OFF	upozornění VYPNUTA
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	upozornění ZAPNUTA (déšť, vítr, sníh, jinovatka, mráz, mlha, náledí, sucho).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Pozemky: mapa s kartami pozemků (na výšku dole, na šířku vpravo); klepnutí otevře pozemek na hlavní obrazovce. ＋ přidá pozemek: kde jsi (GPS) nebo klepnutí na mapu, pak název. Na kartě tužka upravuje, zvonek zapíná či vypíná upozornění, koš ho smaže. Uloženo jen v tomto telefonu.

@@ -510,8 +510,7 @@ final class Bubble extends FrameLayout implements Glass.Local {
 			}
 		}
 		int scrollH = scrolls ? maxH - titleH - 2 * pad : rowsH;
-		// The panel keeps its full height whatever it holds.
-		if (pan && !scrolls) scrollH = maxH - titleH - 2 * pad;
+		// v5.40 (Viorel): on a tablet too the bubble is only as tall as its text.
 		scroll.getLayoutParams().height = scrollH;
 		scroll.scrollTo(0, 0);
 		if (scrolls) post(new Runnable() {

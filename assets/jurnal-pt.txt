@@ -1,4 +1,4 @@
-Versão atual: v.5.33 · 16.11.2026
+Versão atual: v.5.40 · 16.11.2026
 ATUALIZAÇÕES
 - Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES
@@ -15,6 +15,9 @@ MODO AGRICULTOR
 NOTIFICAÇÕES
 - Sismos: avisos só dos sismos até 300 km do seu local; ligam-se ou desligam-se em ☰.
 - Tornados (EUA): os avisos de tornado para a sua localidade ligam-se ou desligam-se em ☰.
+PARCELAS
+- Lixo: uma parcela apagada vai 15 dias para o lixo sob o botão GPS e pode ser restaurada a partir daí.
+- Página Parcelas: o mapa ocupa o ecrã; os cartões das parcelas flutuam por cima, com o lápis, o sino das notificações da parcela e o lixo; ＋ adiciona uma parcela.
 - Melhorias de design e correção de erros.
 
 Versão 4 (v.4.00 – v.4.52)

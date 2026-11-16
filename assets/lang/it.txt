@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	L'app controlla solo quando tocchi Cerca aggiornamenti; Scarica apre la nuova versione nel browser e la installi dal file scaricato.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Una temperatura grande e, a destra, i prossimi 4 giorni (un'icona ciascuno) o le ore, come scelto nelle impostazioni: Mostra il meteo. Su una sola riga diventa il 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Domani e dopodomani in alto; sotto, i giorni 3–5 avanzano da soli ogni 3 secondi finché non li tocchi. La riga Dettagli meteo si muove un po' dopo 6 secondi. Un tocco su Domani o Dopodomani mostra la sua bolla.
+ days left	 giorni rimasti
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Una particella eliminata va nel cestino sotto il pulsante GPS e resta 15 giorni; il pulsante rotondo la ripristina (se una particella salvata ha lo stesso nome: nuovo nome o sostituisci).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Esiste già una particella con questo nome. Dai un nuovo nome o sostituisci la particella salvata.
+Bin	Cestino
+Deleted parcels are kept 15 days.	Le particelle eliminate restano 15 giorni.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità agricoltore: la campana sulla scheda di una particella attiva (piena) o disattiva le sue notifiche; allora la particella le riceve tutte: pioggia o neve entro l'ora, dopo le 20 pioggia o neve domani, vento, neve, brina, gelo, nebbia, gelicidio, siccità (suolo secco, niente pioggia da 7 giorni).
+Looking for the position (GPS)…	Ricerca della posizione (GPS)…
+New name	Nuovo nome
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Nessuna particella salvata. Tocca ＋ per aggiungerne una: il luogo è dove sei (GPS), oppure tocca la mappa.
+No place yet: wait for the GPS or tap the map.	Ancora nessun luogo: aspetta il GPS o tocca la mappa.
+Restore	Ripristina
+Restored: 	Ripristinata: 
+Tap the map to move the pin.	Tocca la mappa per spostare lo spillo.
+The bin is empty.	Il cestino è vuoto.
+The parcel goes to the bin, where it is kept 15 days.	La particella va nel cestino, dove resta 15 giorni.
+deleted 	eliminata 
+notifications OFF	notifiche DISATTIVATE
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	notifiche ATTIVATE (pioggia, vento, neve, brina, gelo, nebbia, gelicidio, siccità).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Particelle: la mappa con le schede delle particelle (in verticale in basso, in orizzontale a destra); un tocco ne apre una nella schermata principale. ＋ ne aggiunge una: dove sei (GPS) o un tocco sulla mappa, poi il nome. Su una scheda la matita modifica, la campana attiva o disattiva le notifiche, il cestino la elimina. Salvate solo su questo telefono.

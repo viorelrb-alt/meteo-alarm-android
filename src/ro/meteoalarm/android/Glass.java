@@ -284,7 +284,8 @@ final class Glass {
 							else other = true;
 						}
 					// v5.22 (Viorel): a bubble alone leaves the screen sharp; only the bubble is frosted glass (v5.24: also About and Help).
-					boolean loc = bub && !other;
+					// v5.40 (Viorel): on a tablet the screen never blurs; only the ☰ menu is frosted glass.
+					boolean loc = bub && !other || want && TextSize.tablet(getContext());
 					if (want != on || loc != local) {
 						set(want, loc);
 						return false;

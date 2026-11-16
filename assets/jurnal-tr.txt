@@ -1,4 +1,4 @@
-Geçerli sürüm: v.5.33 · 16.11.2026
+Geçerli sürüm: v.5.40 · 16.11.2026
 ANA EKRAN
 - Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
@@ -15,6 +15,9 @@ BILDIRIMLER
 - Sekmeler: yer ve parseller adın altında sekmelerde (yatayda altta); parsel ekranı 1–4. bölümlerde.
 GÜNCELLEMELER
 - Güncellemeler: uygulama artık kendi başına güncelleme aramıyor, yalnızca ☰ › Güncellemeleri denetle'ye dokunduğunuzda; yeni sürüm tarayıcıda iner ve siz onu indirilen dosyadan yüklersiniz.
+PARSELLER
+- Çöp kutusu: silinen parsel 15 gün boyunca GPS düğmesinin altındaki çöp kutusuna gider ve oradan geri yüklenebilir.
+- Parseller sayfası: harita ekranı doldurur; parsellerin kartları kalem, parsel bildirimleri zili ve çöp kutusuyla üzerinde yüzer; ＋ parsel ekler.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
 Sürüm 4 (v.4.00 – v.4.52)

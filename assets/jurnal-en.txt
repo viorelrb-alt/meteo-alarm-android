@@ -1,4 +1,4 @@
-Current version: v.5.33 · 16.11.2026
+Current version: v.5.40 · 16.11.2026
 FARMER MODE
 - Farmer button: the leaf button next to the buttons turns farmer mode off; another town keeps farmer mode.
 - Operational status: on a parcel's screen, only when needed, the spraying verdict, its reason and the risks of the next 24 hours.
@@ -10,6 +10,9 @@ MAIN SCREEN
 NOTIFICATIONS
 - Earthquakes: notifications only for earthquakes at most 300 km from your place; turned on or off in ☰.
 - Tornadoes (US): the tornado notifications for your town are turned on or off in ☰.
+PARCELS
+- Bin: a deleted parcel goes to the bin under the GPS button for 15 days and can be restored from there.
+- Parcels page: the map fills the screen; the parcels' cards float over it with the pencil, the bell for that parcel's notifications and the bin; ＋ adds a parcel.
 SETTINGS
 - Icon theme: 6 weather icon themes (Classic, Glossy, Flat, Realistic, Atmospheric, Outline), chosen with coloured dots in ☰; in the app and on the widgets.
 - Settings: the ☰ menu is now a window with sections, switches, the colour themes and the System & support bar; refresh by pulling the screen down or tapping “updated”.

@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Programėlė tikrina tik palietus Tikrinti atnaujinimus; Atsisiųsti atveria naują versiją naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Didelė temperatūra ir dešinėje kitos 4 dienos (po vieną piktogramą) arba valandos, kaip pasirinkta nustatymuose: Rodyti orus. Vienoje eilutėje tampa 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Rytoj ir poryt viršuje; po jomis 3–5 dienos keičiasi pačios kas 3 sekundes, kol jas paliesi. Eilutė Orų detalės po 6 sekundžių šiek tiek pajuda. Palietus Rytoj arba Poryt rodomas jo burbulas.
+ days left	 d. liko
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Ištrintas laukas patenka į šiukšlinę po GPS mygtuku ir saugomas 15 dienų; apvalus mygtukas jį atkuria (jei išsaugotas laukas turi tą patį pavadinimą: naujas pavadinimas arba pakeisti).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Laukas tokiu pavadinimu jau yra. Duok naują pavadinimą arba pakeisk išsaugotą lauką.
+Bin	Šiukšlinė
+Deleted parcels are kept 15 days.	Ištrinti laukai saugomi 15 dienų.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Ūkininko režimas: varpelis lauko kortelėje įjungia (pilnas) arba išjungia jo pranešimus; tada laukas gauna visus: lietus ar sniegas per valandą, po 20 val. lietus ar sniegas rytoj, vėjas, sniegas, šerkšnas, šalna, rūkas, lijundra, sausra (sausas dirvožemis, 7 dienos be lietaus).
+Looking for the position (GPS)…	Ieškoma vietos (GPS)…
+New name	Naujas pavadinimas
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Dar nėra išsaugotų laukų. Paliesk ＋, kad pridėtum: vieta ten, kur esi (GPS), arba paliesk žemėlapį.
+No place yet: wait for the GPS or tap the map.	Vietos dar nėra: palauk GPS arba paliesk žemėlapį.
+Restore	Atkurti
+Restored: 	Atkurta: 
+Tap the map to move the pin.	Paliesk žemėlapį, kad perkeltum smeigtuką.
+The bin is empty.	Šiukšlinė tuščia.
+The parcel goes to the bin, where it is kept 15 days.	Laukas patenka į šiukšlinę, kur saugomas 15 dienų.
+deleted 	ištrinta 
+notifications OFF	pranešimai IŠJUNGTI
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	pranešimai ĮJUNGTI (lietus, vėjas, sniegas, šerkšnas, šalna, rūkas, lijundra, sausra).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Laukai: žemėlapis su laukų kortelėmis (stačiai apačioje, gulsčiai dešinėje); palietus laukas atsidaro pagrindiniame ekrane. ＋ prideda lauką: kur esi (GPS) arba palietus žemėlapį, tada pavadinimas. Kortelėje pieštukas redaguoja, varpelis įjungia ar išjungia pranešimus, šiukšlinė jį ištrina. Saugoma tik šiame telefone.

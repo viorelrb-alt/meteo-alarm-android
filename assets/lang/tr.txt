@@ -1005,3 +1005,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Uygulama yalnızca Güncellemeleri denetle'ye dokunduğunuzda denetler; İndir yeni sürümü tarayıcıda açar ve siz onu indirilen dosyadan yüklersiniz.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Büyük sıcaklık ve sağda sonraki 4 gün (her biri bir simge) veya saatler, ayarlardaki seçime göre: Havayı göster. Tek satırda 4x1 olur.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Yarın ve öbür gün üstte; altlarında 3–5. günler, siz dokunana kadar her 3 saniyede kendiliğinden ilerler. Hava ayrıntıları satırı 6 saniye sonra biraz kıpırdar. Yarın veya Öbür gün kutusuna dokunmak balonunu gösterir.
+ days left	 gün kaldı
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Silinen parsel GPS düğmesinin altındaki çöp kutusuna gider ve 15 gün saklanır; yuvarlak düğme onu geri yükler (kayıtlı bir parselin adı aynıysa: yeni ad veya değiştir).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Bu adla bir parsel zaten var. Yeni bir ad ver ya da kayıtlı parselin yerine koy.
+Bin	Çöp kutusu
+Deleted parcels are kept 15 days.	Silinen parseller 15 gün saklanır.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Çiftçi modu: parsel kartındaki zil bildirimlerini açar (dolu) veya kapatır; o zaman parsel hepsini alır: bir saat içinde yağmur veya kar, saat 20'den sonra yarın yağmur veya kar, rüzgâr, kar, kırağı, don, sis, dondurucu yağmur, kuraklık (kuru toprak, 7 gün yağmursuz).
+Looking for the position (GPS)…	Konum aranıyor (GPS)…
+New name	Yeni ad
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Henüz kayıtlı parsel yok. Eklemek için ＋'ya dokun: yer, bulunduğun yerdir (GPS) ya da haritaya dokun.
+No place yet: wait for the GPS or tap the map.	Henüz yer yok: GPS'i bekle ya da haritaya dokun.
+Restore	Geri yükle
+Restored: 	Geri yüklendi: 
+Tap the map to move the pin.	İğneyi taşımak için haritaya dokun.
+The bin is empty.	Çöp kutusu boş.
+The parcel goes to the bin, where it is kept 15 days.	Parsel çöp kutusuna gider ve orada 15 gün saklanır.
+deleted 	silindi 
+notifications OFF	bildirimler KAPALI
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	bildirimler AÇIK (yağmur, rüzgâr, kar, kırağı, don, sis, dondurucu yağmur, kuraklık).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parseller: parsellerin kartlarıyla harita (dikeyde altta, yatayda sağda); dokunmak bir parseli ana ekranda açar. ＋ bir parsel ekler: bulunduğun yer (GPS) veya haritaya dokunma, sonra ad. Kartta kalem düzenler, zil bildirimleri açar veya kapatır, çöp kutusu siler. Yalnızca bu telefonda saklanır.

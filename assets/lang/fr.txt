@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	L'appli vérifie seulement quand vous touchez Rechercher des mises à jour ; Télécharger ouvre la nouvelle version dans le navigateur et vous l'installez depuis le fichier téléchargé.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Une grande température et, à droite, les 4 prochains jours (une icône chacun) ou heures, selon le choix dans ses réglages : Affichage de la météo. Sur une seule rangée, il devient le 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Demain et après-demain en haut ; en dessous, les jours 3–5 défilent seuls toutes les 3 secondes jusqu'à ce que vous les touchiez. La rangée Détails météo bouge un peu après 6 secondes. Un appui sur Demain ou Après-demain affiche sa bulle.
+ days left	 jours restants
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Une parcelle supprimée va dans la corbeille sous le bouton GPS et y reste 15 jours ; le bouton rond la restaure (si une parcelle enregistrée porte son nom : nouveau nom ou remplacer).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Une parcelle porte déjà ce nom. Donne un nouveau nom ou remplace la parcelle enregistrée.
+Bin	Corbeille
+Deleted parcels are kept 15 days.	Les parcelles supprimées sont gardées 15 jours.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Mode agriculteur : la cloche sur la carte d'une parcelle active (pleine) ou désactive ses notifications ; la parcelle les reçoit alors toutes : pluie ou neige dans l'heure, après 20 h pluie ou neige demain, vent, neige, gelée blanche, gel, brouillard, verglas, sécheresse (sol sec, pas de pluie depuis 7 jours).
+Looking for the position (GPS)…	Recherche de la position (GPS)…
+New name	Nouveau nom
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Aucune parcelle enregistrée. Touche ＋ pour en ajouter une : l'endroit est là où tu es (GPS), ou touche la carte.
+No place yet: wait for the GPS or tap the map.	Pas encore d'endroit : attends le GPS ou touche la carte.
+Restore	Restaurer
+Restored: 	Restaurée : 
+Tap the map to move the pin.	Touche la carte pour déplacer l'épingle.
+The bin is empty.	La corbeille est vide.
+The parcel goes to the bin, where it is kept 15 days.	La parcelle va dans la corbeille, où elle reste 15 jours.
+deleted 	supprimée 
+notifications OFF	notifications DÉSACTIVÉES
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	notifications ACTIVÉES (pluie, vent, neige, gelée blanche, gel, brouillard, verglas, sécheresse).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelles : la carte avec les cartes des parcelles (en portrait en bas, en paysage à droite) ; un appui en ouvre une sur l'écran principal. ＋ en ajoute une : là où tu es (GPS) ou un appui sur la carte, puis le nom. Sur une carte, le crayon modifie, la cloche active ou désactive ses notifications, la corbeille la supprime. Gardées seulement sur ce téléphone.

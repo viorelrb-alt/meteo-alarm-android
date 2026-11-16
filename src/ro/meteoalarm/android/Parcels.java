@@ -145,6 +145,99 @@ final class Parcels {
 		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pt_" + id).remove("pp_" + id).apply();
 	}
 
+	// --- v5.40 (Viorel): the bin: a deleted parcel is kept 15 days and can be restored ----------
+
+	static final long BIN_MS = 15 * 86400000L;
+
+	/** A parcel in the bin and when it was put there. */
+	static final class Binned {
+		Parcel p;
+		long at;
+	}
+
+	/** The bin, the newest first; parcels older than 15 days are deleted for good. */
+	static synchronized List<Binned> bin(Context ctx) {
+		List<Binned> out = new ArrayList<Binned>();
+		boolean gone = false;
+		long now = System.currentTimeMillis();
+		for (String l : prefs(ctx).getString("parcelBin", "").split("\n")) {
+			int t = l.indexOf('\t');
+			if (t <= 0) continue;
+			try {
+				Binned b = new Binned();
+				b.at = Long.parseLong(l.substring(0, t));
+				b.p = Parcel.of(l.substring(t + 1));
+				if (b.p == null) continue;
+				if (now - b.at > BIN_MS) {
+					forget(ctx, b.p.id);
+					gone = true;
+					continue;
+				}
+				out.add(b);
+			} catch (Exception e) {
+				// a broken line
+			}
+		}
+		java.util.Collections.sort(out, new java.util.Comparator<Binned>() {
+			public int compare(Binned a, Binned b) {
+				return Long.compare(b.at, a.at);
+			}
+		});
+		if (gone) saveBin(ctx, out);
+		return out;
+	}
+
+	private static synchronized void saveBin(Context ctx, List<Binned> l) {
+		StringBuilder b = new StringBuilder();
+		for (Binned x : l) b.append(x.at).append('\t').append(x.p.line()).append('\n');
+		prefs(ctx).edit().putString("parcelBin", b.toString()).commit();
+	}
+
+	/** Moves the parcel to the bin (its statistics are kept; the forecasts are downloaded again on restoring). */
+	static synchronized void trash(Context ctx, long id) {
+		Parcel p = get(ctx, id);
+		if (p == null) return;
+		List<Parcel> l = all(ctx);
+		for (int k = l.size() - 1; k >= 0; k--) if (l.get(k).id == id) l.remove(k);
+		saveAll(ctx, l);
+		List<Binned> b = bin(ctx);
+		Binned x = new Binned();
+		x.p = p;
+		x.at = System.currentTimeMillis();
+		b.add(0, x);
+		saveBin(ctx, b);
+		ctx.deleteFile(dataFile(id));
+		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
+		prefs(ctx).edit().remove("pmf_" + id).remove("pf_" + id).apply();
+	}
+
+	/** The saved parcel with NAME (letters' case aside), null when none. */
+	static Parcel named(Context ctx, String name) {
+		for (Parcel p : all(ctx)) if (p.name.trim().equalsIgnoreCase(name.trim())) return p;
+		return null;
+	}
+
+	/** Brings parcel ID back from the bin as NAME; the parcel REPLACED (if any) goes to the bin. */
+	static synchronized Parcel restore(Context ctx, long id, String name, Parcel replaced) {
+		List<Binned> b = bin(ctx);
+		Parcel back = null;
+		for (int k = b.size() - 1; k >= 0; k--) if (b.get(k).p.id == id) back = b.remove(k).p;
+		if (back == null) return null;
+		saveBin(ctx, b);
+		if (replaced != null) trash(ctx, replaced.id);
+		back.name = name;
+		put(ctx, back);
+		return back;
+	}
+
+	/** Everything kept for parcel ID goes (out of the bin after 15 days). */
+	private static void forget(Context ctx, long id) {
+		ctx.deleteFile(dataFile(id));
+		ctx.deleteFile(statsFile(id));
+		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
+		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pt_" + id).remove("pp_" + id).apply();
+	}
+
 	static String dataFile(long id) {
 		return "parcel-" + id + ".json";
 	}

@@ -783,12 +783,15 @@ public class Widget extends AppWidgetProvider {
 				}
 			}
 			float y = ry + i * rh, mid = y + rh / 2;
-			pen.text(label, x0, mid + lsz * 0.36f, lsz, -1, 0.75f, 3, (x1 - x0) * 0.32f);
-			pen.icon(ic, x0 + (x1 - x0) * 0.42f - isz / 2, mid - isz / 2, isz);
+			float la = pen.text(label, x0, mid + lsz * 0.36f, lsz, -1, 0.75f, 3, (x1 - x0) * 0.32f);
+			float vl = x1;
 			if (lo != null) {
 				float lw2 = pen.text(lo, x1, mid + vsz * 0.36f, vsz, 1, 0.7f, 3, 0);
-				pen.text(hi, x1 - lw2 - 7f, mid + vsz * 0.36f, vsz, 1, 1f, 3, 0);
-			} else if (hi != null) pen.text(hi, x1, mid + vsz * 0.36f, vsz, 1, 1f, 3, 0);
+				vl = x1 - lw2 - 7f - pen.text(hi, x1 - lw2 - 7f, mid + vsz * 0.36f, vsz, 1, 1f, 3, 0);
+			} else if (hi != null) vl = x1 - pen.text(hi, x1, mid + vsz * 0.36f, vsz, 1, 1f, 3, 0);
+			// v5.40 (Viorel): the icon in the middle between the label and the temperature.
+			float is = Math.min(isz, Math.max(12f, vl - (x0 + la) - 6f));
+			pen.icon(ic, (x0 + la + vl) / 2 - is / 2, mid - is / 2, is);
 			if (i < 3) pen.line(x0, y + rh, x1 - x0, 0.75f, 0.35f);
 		}
 	}

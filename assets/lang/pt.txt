@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	A app só verifica quando toca em Procurar atualizações; Transferir abre a nova versão no navegador e você instala-a a partir do ficheiro transferido.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Uma temperatura grande e, à direita, os próximos 4 dias (um ícone cada) ou horas, conforme escolhido nas definições: Mostrar o tempo. Numa só fila passa a ser o 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Amanhã e depois de amanhã em cima; por baixo, os dias 3–5 passam sozinhos a cada 3 segundos até lhes tocar. A linha Detalhes do tempo mexe-se um pouco após 6 segundos. Um toque em Amanhã ou Depois de amanhã mostra a sua bolha.
+ days left	 dias restantes
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Uma parcela apagada vai para o lixo sob o botão GPS e fica 15 dias; o botão redondo restaura-a (se uma parcela guardada tiver o mesmo nome: novo nome ou substituir).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Já existe uma parcela com este nome. Dá um novo nome ou substitui a parcela guardada.
+Bin	Lixo
+Deleted parcels are kept 15 days.	As parcelas apagadas ficam 15 dias.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modo agricultor: o sino no cartão de uma parcela liga (cheio) ou desliga as suas notificações; a parcela recebe então todas: chuva ou neve na próxima hora, depois das 20 h chuva ou neve amanhã, vento, neve, geada, gelo, nevoeiro, chuva gelada, seca (solo seco, sem chuva há 7 dias).
+Looking for the position (GPS)…	A procurar a posição (GPS)…
+New name	Novo nome
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Ainda não há parcelas guardadas. Toca em ＋ para adicionar uma: o local é onde estás (GPS), ou toca no mapa.
+No place yet: wait for the GPS or tap the map.	Ainda sem local: espera pelo GPS ou toca no mapa.
+Restore	Restaurar
+Restored: 	Restaurada: 
+Tap the map to move the pin.	Toca no mapa para mover o alfinete.
+The bin is empty.	O lixo está vazio.
+The parcel goes to the bin, where it is kept 15 days.	A parcela vai para o lixo, onde fica 15 dias.
+deleted 	apagada 
+notifications OFF	notificações DESLIGADAS
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	notificações LIGADAS (chuva, vento, neve, geada, gelo, nevoeiro, chuva gelada, seca).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelas: o mapa com os cartões das parcelas (na vertical em baixo, na horizontal à direita); um toque abre uma no ecrã principal. ＋ adiciona uma: onde estás (GPS) ou um toque no mapa, depois o nome. Num cartão o lápis edita, o sino liga ou desliga as notificações, o lixo apaga-a. Guardadas só neste telemóvel.

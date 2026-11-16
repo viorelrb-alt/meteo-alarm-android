@@ -1,4 +1,4 @@
-Trenutačna verzija: v.5.33 · 16.11.2026
+Trenutačna verzija: v.5.40 · 16.11.2026
 AŽURIRANJA
 - Ažuriranja: aplikacija više sama ne traži ažuriranja, samo kada dodirnete ☰ › Provjeri ažuriranja; nova verzija preuzima se u pregledniku, a vi je instalirate iz preuzete datoteke.
 GLAVNI ZASLON
@@ -12,6 +12,9 @@ NAČIN RADA ZA POLJOPRIVREDNIKE
 OBAVIJESTI
 - Potresi: obavijesti samo za potrese najviše 300 km od vašeg mjesta; uključuju se ili isključuju u ☰.
 - Tornada (SAD): obavijesti o tornadu za vaše mjesto uključuju se ili isključuju u ☰.
+PARCELE
+- Koš: obrisana parcela ide na 15 dana u koš ispod gumba GPS i odande se može vratiti.
+- Stranica Parcele: karta ispunjava zaslon; kartice parcela lebde iznad nje, s olovkom, zvonom za obavijesti parcele i košem; ＋ dodaje parcelu.
 POSTAVKE
 - Postavke: izbornik ☰ sada je prozor s odjeljcima, prekidačima, temama u boji i trakom Sustav i podrška; osvježava se povlačenjem zaslona prema dolje ili dodirom na „ažurirano”.
 - Tema ikona: 6 tema ikona vremena (Klasične, Sjajne, Ravne, Realistične, Atmosferske, Obrisne), biraju se obojenim točkama u ☰; u aplikaciji i na widgetima.

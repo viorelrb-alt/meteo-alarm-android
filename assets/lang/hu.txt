@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Az alkalmazás csak akkor ellenőriz, ha a Frissítések keresése gombra koppintasz; a Letöltés megnyitja az új verziót a böngészőben, te pedig a letöltött fájlból telepíted.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Nagy hőmérséklet, jobbra a következő 4 nap (egy-egy ikonnal) vagy óra, a beállításokban választva: Időjárás megjelenítése. Egy sorban 4x1-es lesz.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Holnap és holnapután felül; alattuk a 3–5. nap 3 másodpercenként magától lép tovább, amíg meg nem érinted. Az Időjárási részletek sor 6 másodperc után kicsit megmozdul. A Holnap vagy Holnapután megérintése megmutatja a buborékát.
+ days left	 nap van hátra
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	A törölt parcella a GPS-gomb alatti kukába kerül, és 15 napig megmarad; a kerek gomb visszaállítja (ha egy mentett parcellának ugyanez a neve: új név vagy csere).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Már van ilyen nevű parcella. Adj új nevet, vagy cseréld le a mentett parcellát.
+Bin	Kuka
+Deleted parcels are kept 15 days.	A törölt parcellák 15 napig megmaradnak.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Gazda mód: a parcella kártyáján lévő csengő be- (teli) vagy kikapcsolja az értesítéseit; ekkor a parcella mindet megkapja: eső vagy hó egy órán belül, 20 óra után eső vagy hó holnap, szél, hó, dér, fagy, köd, ónos eső, aszály (száraz talaj, 7 napja nincs eső).
+Looking for the position (GPS)…	Pozíció keresése (GPS)…
+New name	Új név
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Még nincs mentett parcella. Koppints a ＋ gombra a hozzáadáshoz: a hely ott van, ahol vagy (GPS), vagy koppints a térképre.
+No place yet: wait for the GPS or tap the map.	Még nincs hely: várd meg a GPS-t, vagy koppints a térképre.
+Restore	Visszaállítás
+Restored: 	Visszaállítva: 
+Tap the map to move the pin.	Koppints a térképre a gombostű áthelyezéséhez.
+The bin is empty.	A kuka üres.
+The parcel goes to the bin, where it is kept 15 days.	A parcella a kukába kerül, ahol 15 napig megmarad.
+deleted 	törölve 
+notifications OFF	értesítések KI
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	értesítések BE (eső, szél, hó, dér, fagy, köd, ónos eső, aszály).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcellák: a térkép a parcellák kártyáival (állóban lent, fekvőben jobbra); egy koppintás megnyitja a parcellát a főképernyőn. A ＋ hozzáad egyet: ahol vagy (GPS) vagy egy koppintás a térképen, aztán a név. A kártyán a ceruza szerkeszt, a csengő be- vagy kikapcsolja az értesítéseket, a kuka törli. Csak ezen a telefonon tárolódnak.

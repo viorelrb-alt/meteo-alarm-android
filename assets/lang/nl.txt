@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	De app controleert alleen als je op Zoeken naar updates tikt; Downloaden opent de nieuwe versie in de browser en jij installeert hem vanuit het gedownloade bestand.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Een grote temperatuur en rechts de volgende 4 dagen (één pictogram per dag) of uren, zoals gekozen in de instellingen: Weer tonen. Op één rij wordt het de 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Morgen en overmorgen bovenaan; daaronder schuiven dag 3–5 elke 3 seconden vanzelf door tot je ze aanraakt. De rij Weerdetails beweegt na 6 seconden even. Een tik op Morgen of Overmorgen toont de ballon.
+ days left	 dagen over
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Een verwijderd perceel gaat naar de prullenbak onder de GPS-knop en blijft 15 dagen; de ronde knop zet het terug (heeft een opgeslagen perceel dezelfde naam: nieuwe naam of vervangen).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Er bestaat al een perceel met deze naam. Geef een nieuwe naam of vervang het opgeslagen perceel.
+Bin	Prullenbak
+Deleted parcels are kept 15 days.	Verwijderde percelen blijven 15 dagen bewaard.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Boerenmodus: de bel op de kaart van een perceel zet zijn meldingen aan (gevuld) of uit; dan krijgt het perceel ze allemaal: regen of sneeuw binnen het uur, na 20 uur regen of sneeuw morgen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte (droge grond, 7 dagen geen regen).
+Looking for the position (GPS)…	Positie zoeken (GPS)…
+New name	Nieuwe naam
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Nog geen perceel opgeslagen. Tik op ＋ om er een toe te voegen: de plek is waar je bent (GPS), of tik op de kaart.
+No place yet: wait for the GPS or tap the map.	Nog geen plek: wacht op de GPS of tik op de kaart.
+Restore	Terugzetten
+Restored: 	Teruggezet: 
+Tap the map to move the pin.	Tik op de kaart om de speld te verplaatsen.
+The bin is empty.	De prullenbak is leeg.
+The parcel goes to the bin, where it is kept 15 days.	Het perceel gaat naar de prullenbak en blijft daar 15 dagen.
+deleted 	verwijderd 
+notifications OFF	meldingen UIT
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	meldingen AAN (regen, wind, sneeuw, rijp, vorst, mist, ijzel, droogte).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Percelen: de kaart met de kaartjes van de percelen (staand onderaan, liggend rechts); een tik opent er een op het hoofdscherm. ＋ voegt er een toe: waar je bent (GPS) of een tik op de kaart, dan de naam. Op een kaartje bewerkt het potlood, zet de bel de meldingen aan of uit, verwijdert de prullenbak het. Alleen op deze telefoon bewaard.

@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Η εφαρμογή ελέγχει μόνο όταν πατάτε Έλεγχος ενημερώσεων· η Λήψη ανοίγει τη νέα έκδοση στο πρόγραμμα περιήγησης και την εγκαθιστάτε από το αρχείο που κατέβηκε.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Μεγάλη θερμοκρασία και δεξιά οι επόμενες 4 ημέρες (ένα εικονίδιο η καθεμία) ή ώρες, όπως επιλέγεται στις ρυθμίσεις: Εμφάνιση καιρού. Σε μία σειρά γίνεται 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Αύριο και μεθαύριο πάνω· από κάτω οι ημέρες 3–5 προχωρούν μόνες κάθε 3 δευτερόλεπτα μέχρι να τις αγγίξεις. Η σειρά Λεπτομέρειες καιρού κουνιέται λίγο μετά από 6 δευτερόλεπτα. Ένα πάτημα στο Αύριο ή στο Μεθαύριο δείχνει τη φούσκα του.
+ days left	 ημέρες απομένουν
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Ένα διαγραμμένο αγροτεμάχιο πηγαίνει στον κάδο κάτω από το κουμπί GPS και κρατιέται 15 ημέρες· το στρογγυλό κουμπί το επαναφέρει (αν αποθηκευμένο αγροτεμάχιο έχει το ίδιο όνομα: νέο όνομα ή αντικατάσταση).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Υπάρχει ήδη αγροτεμάχιο με αυτό το όνομα. Δώσε νέο όνομα ή αντικατάστησε το αποθηκευμένο.
+Bin	Κάδος
+Deleted parcels are kept 15 days.	Τα διαγραμμένα αγροτεμάχια κρατιούνται 15 ημέρες.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Λειτουργία αγρότη: το καμπανάκι στην κάρτα ενός αγροτεμαχίου ενεργοποιεί (γεμάτο) ή απενεργοποιεί τις ειδοποιήσεις του· τότε λαμβάνει όλες: βροχή ή χιόνι μέσα στην ώρα, μετά τις 20:00 βροχή ή χιόνι αύριο, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία (ξερό έδαφος, 7 ημέρες χωρίς βροχή).
+Looking for the position (GPS)…	Αναζήτηση θέσης (GPS)…
+New name	Νέο όνομα
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Δεν υπάρχει ακόμη αποθηκευμένο αγροτεμάχιο. Πάτησε ＋ για να προσθέσεις: το σημείο είναι εκεί που βρίσκεσαι (GPS) ή πάτησε τον χάρτη.
+No place yet: wait for the GPS or tap the map.	Δεν υπάρχει ακόμη σημείο: περίμενε το GPS ή πάτησε τον χάρτη.
+Restore	Επαναφορά
+Restored: 	Επανήλθε: 
+Tap the map to move the pin.	Πάτησε τον χάρτη για να μετακινήσεις την καρφίτσα.
+The bin is empty.	Ο κάδος είναι άδειος.
+The parcel goes to the bin, where it is kept 15 days.	Το αγροτεμάχιο πηγαίνει στον κάδο, όπου κρατιέται 15 ημέρες.
+deleted 	διαγράφηκε 
+notifications OFF	ειδοποιήσεις ΑΝΕΝΕΡΓΕΣ
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	ειδοποιήσεις ΕΝΕΡΓΕΣ (βροχή, άνεμος, χιόνι, πάχνη, παγετός, ομίχλη, παγωμένη βροχή, ξηρασία).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης με τις κάρτες των αγροτεμαχίων (κάθετα κάτω, οριζόντια δεξιά)· ένα πάτημα ανοίγει ένα στην κύρια οθόνη. Το ＋ προσθέτει ένα: εκεί που βρίσκεσαι (GPS) ή ένα πάτημα στον χάρτη, μετά το όνομα. Στην κάρτα το μολύβι επεξεργάζεται, το καμπανάκι ανοίγει ή κλείνει τις ειδοποιήσεις, ο κάδος το διαγράφει. Κρατιούνται μόνο σε αυτό το τηλέφωνο.

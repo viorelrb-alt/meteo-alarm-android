@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Appen søger kun, når du trykker på Søg efter opdateringer; Download åbner den nye version i browseren, og du installerer den fra den downloadede fil.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	En stor temperatur og til højre de næste 4 dage (ét ikon hver) eller timer, som valgt i indstillingerne: Vis vejret. På én række bliver den til 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	I morgen og i overmorgen øverst; under dem skifter dag 3–5 af sig selv hvert 3. sekund, indtil du rører dem. Rækken Vejrdetaljer flytter sig lidt efter 6 sekunder. Et tryk på I morgen eller I overmorgen viser dens boble.
+ days left	 dage tilbage
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	En slettet mark havner i papirkurven under GPS-knappen og gemmes 15 dage; den runde knap gendanner den (har en gemt mark samme navn: nyt navn eller erstat).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Der findes allerede en mark med dette navn. Giv et nyt navn, eller erstat den gemte mark.
+Bin	Papirkurv
+Deleted parcels are kept 15 days.	Slettede marker gemmes 15 dage.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Landmandstilstand: klokken på en marks kort slår dens notifikationer til (udfyldt) eller fra; så får marken dem alle: regn eller sne inden for en time, efter kl. 20 regn eller sne i morgen, vind, sne, rimfrost, frost, tåge, isslag, tørke (tør jord, 7 dage uden regn).
+Looking for the position (GPS)…	Søger position (GPS)…
+New name	Nyt navn
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Ingen mark gemt endnu. Tryk på ＋ for at tilføje en: stedet er hvor du er (GPS), eller tryk på kortet.
+No place yet: wait for the GPS or tap the map.	Intet sted endnu: vent på GPS eller tryk på kortet.
+Restore	Gendan
+Restored: 	Gendannet: 
+Tap the map to move the pin.	Tryk på kortet for at flytte nålen.
+The bin is empty.	Papirkurven er tom.
+The parcel goes to the bin, where it is kept 15 days.	Marken havner i papirkurven, hvor den gemmes 15 dage.
+deleted 	slettet 
+notifications OFF	notifikationer FRA
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	notifikationer TIL (regn, vind, sne, rimfrost, frost, tåge, isslag, tørke).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Marker: kortet med markernes kort (stående nederst, liggende til højre); et tryk åbner en på hovedskærmen. ＋ tilføjer en: hvor du er (GPS) eller et tryk på kortet, derefter navnet. På et kort redigerer blyanten, klokken slår notifikationerne til eller fra, papirkurven sletter den. Gemmes kun på denne telefon.

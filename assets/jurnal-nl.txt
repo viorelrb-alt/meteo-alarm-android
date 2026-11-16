@@ -1,4 +1,4 @@
-Huidige versie: v.5.33 · 16.11.2026
+Huidige versie: v.5.40 · 16.11.2026
 BOERENMODUS
 - Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
 - Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.
@@ -13,6 +13,9 @@ INSTELLINGEN
 MELDINGEN
 - Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ☰.
 - Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ☰.
+PERCELEN
+- Pagina Percelen: de kaart vult het scherm; de kaartjes van de percelen zweven erover, met potlood, bel voor de meldingen van het perceel en prullenbak; ＋ voegt een perceel toe.
+- Prullenbak: een verwijderd perceel gaat 15 dagen naar de prullenbak onder de GPS-knop en kan daar worden teruggezet.
 UPDATES
 - Updates: de app zoekt niet meer zelf naar updates, alleen als je op ☰ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
 - Ontwerpverbeteringen en foutoplossingen.

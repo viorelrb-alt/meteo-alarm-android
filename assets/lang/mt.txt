@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	L-app tiċċekkja biss meta tagħfas Iċċekkja għal aġġornamenti; Niżżel tiftaħ il-verżjoni l-ġdida fil-browser u int tinstallaha mill-fajl imniżżel.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Temperatura kbira u, fuq il-lemin, l-4 ijiem li ġejjin (ikona waħda kull wieħed) jew sigħat, kif magħżul fis-settings: Uri t-temp. F'ringiela waħda jsir l-4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Għada u pitgħada fuq; taħthom il-jiem 3–5 jinbidlu waħedhom kull 3 sekondi sakemm tmisshom. Ir-ringiela Dettalji tat-temp tiċċaqlaq ftit wara 6 sekondi. Taptapa fuq Għada jew Pitgħada turi l-bużżieqa tiegħu.
+ days left	 jiem fadal
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Biċċa art imħassra tmur fil-landa taħt il-buttuna GPS u tinżamm 15-il jum; il-buttuna tonda terġa' ġġibha (jekk biċċa art salvata għandha l-istess isem: isem ġdid jew ibdel).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Diġà teżisti biċċa art b'dan l-isem. Agħti isem ġdid jew ibdel il-biċċa art salvata.
+Bin	Landa tal-iskart
+Deleted parcels are kept 15 days.	Il-biċċiet tal-art imħassra jinżammu 15-il jum.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Modalità tal-bidwi: il-qanpiena fuq il-karta ta' biċċa art tixgħel (mimlija) jew titfi n-notifiki tagħha; imbagħad tirċievihom kollha: xita jew silġ fi żmien siegħa, wara t-8 ta' filgħaxija xita jew silġ għada, riħ, silġ, ġlata bajda, ġlata, ċpar, xita ffriżata, nixfa (ħamrija niexfa, 7 ijiem bla xita).
+Looking for the position (GPS)…	Qed infittex il-pożizzjoni (GPS)…
+New name	Isem ġdid
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Għad m'hemm l-ebda biċċa art salvata. Agħfas ＋ biex iżżid waħda: il-post huwa fejn qiegħed (GPS), jew agħfas fuq il-mappa.
+No place yet: wait for the GPS or tap the map.	Għad m'hemmx post: stenna l-GPS jew agħfas fuq il-mappa.
+Restore	Irkupra
+Restored: 	Irkuprata: 
+Tap the map to move the pin.	Agħfas fuq il-mappa biex iċċaqlaq il-labra.
+The bin is empty.	Il-landa hija vojta.
+The parcel goes to the bin, where it is kept 15 days.	Il-biċċa art tmur fil-landa, fejn tinżamm 15-il jum.
+deleted 	imħassra 
+notifications OFF	notifiki MITFIJA
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	notifiki MIXGĦULA (xita, riħ, silġ, ġlata bajda, ġlata, ċpar, xita ffriżata, nixfa).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Biċċiet tal-art: il-mappa bil-karti tal-biċċiet tal-art (wieqfa isfel, mimduda fuq il-lemin); għafsa tiftaħ waħda fuq l-iskrin ewlieni. ＋ iżżid waħda: fejn qiegħed (GPS) jew għafsa fuq il-mappa, imbagħad l-isem. Fuq karta l-lapes jeditja, il-qanpiena tixgħel jew titfi n-notifiki, il-landa tħassarha. Jinżammu biss f'dan it-telefon.

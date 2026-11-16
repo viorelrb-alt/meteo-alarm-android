@@ -1,4 +1,4 @@
-Dabartinė versija: v.5.33 · 16.11.2026
+Dabartinė versija: v.5.40 · 16.11.2026
 ATNAUJINIMAI
 - Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI
@@ -11,6 +11,9 @@ PAGRINDINIS EKRANAS
 PRANEŠIMAI
 - Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ☰.
 - Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ☰.
+SKLYPAI
+- Puslapis Laukai: žemėlapis užpildo ekraną; laukų kortelės plūduriuoja virš jo su pieštuku, lauko pranešimų varpeliu ir šiukšline; ＋ prideda lauką.
+- Šiukšlinė: ištrintas laukas 15 dienų patenka į šiukšlinę po GPS mygtuku ir iš ten gali būti atkurtas.
 ŪKININKO REŽIMAS
 - Skirtukai: vietovė ir sklypai skirtukuose po pavadinimu (gulsčiai – apačioje); sklypo ekranas skyriuose 1–4.
 - Ūkininko mygtukas: lapo mygtukas šalia mygtukų išjungia ūkininko režimą; kita vietovė jį išlaiko.

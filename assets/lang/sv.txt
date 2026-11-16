@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Appen kontrollerar bara när du trycker på Sök efter uppdateringar; Ladda ned öppnar den nya versionen i webbläsaren och du installerar den från den nedladdade filen.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	En stor temperatur och till höger de kommande 4 dagarna (en ikon var) eller timmarna, enligt valet i inställningarna: Visa vädret. På en rad blir den 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	I morgon och i övermorgon överst; under dem byts dag 3–5 av sig själva var 3:e sekund tills du rör dem. Raden Väderdetaljer rör sig lite efter 6 sekunder. Ett tryck på I morgon eller I övermorgon visar dess bubbla.
+ days left	 dagar kvar
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Ett raderat skifte hamnar i papperskorgen under GPS-knappen och sparas 15 dagar; den runda knappen återställer det (har ett sparat skifte samma namn: nytt namn eller ersätt).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Det finns redan ett skifte med det namnet. Ge ett nytt namn eller ersätt det sparade skiftet.
+Bin	Papperskorg
+Deleted parcels are kept 15 days.	Raderade skiften sparas 15 dagar.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Lantbruksläge: klockan på ett skiftes kort slår på (fylld) eller av dess aviseringar; då får skiftet alla: regn eller snö inom en timme, efter kl. 20 regn eller snö i morgon, vind, snö, rimfrost, frost, dimma, underkylt regn, torka (torr jord, 7 dagar utan regn).
+Looking for the position (GPS)…	Söker position (GPS)…
+New name	Nytt namn
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Inget skifte sparat än. Tryck på ＋ för att lägga till ett: platsen är där du är (GPS), eller tryck på kartan.
+No place yet: wait for the GPS or tap the map.	Ingen plats än: vänta på GPS eller tryck på kartan.
+Restore	Återställ
+Restored: 	Återställt: 
+Tap the map to move the pin.	Tryck på kartan för att flytta nålen.
+The bin is empty.	Papperskorgen är tom.
+The parcel goes to the bin, where it is kept 15 days.	Skiftet hamnar i papperskorgen, där det sparas 15 dagar.
+deleted 	raderat 
+notifications OFF	aviseringar AV
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	aviseringar PÅ (regn, vind, snö, rimfrost, frost, dimma, underkylt regn, torka).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Skiften: kartan med skiftenas kort (stående nederst, liggande till höger); ett tryck öppnar ett på huvudskärmen. ＋ lägger till ett: där du är (GPS) eller ett tryck på kartan, sedan namnet. På ett kort redigerar pennan, klockan slår på eller av aviseringarna, papperskorgen raderar det. Sparas bara på den här telefonen.

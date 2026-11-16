@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.5.33 · 16.11.2026
+Jelenlegi verzió: v.5.40 · 16.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
@@ -15,6 +15,9 @@ GAZDA MÓD
 - Fülek: a település és a parcellák fülekben a név alatt (fekvő nézetben lent); a parcella képernyője 1–4. részre bontva.
 - Gazda gomb: a gombok melletti levél gomb kikapcsolja a gazda módot; másik település megtartja.
 - Működési állapot: egy parcella képernyőjén, csak ha szükséges, a permetezés ítélete, az oka és a következő 24 óra kockázatai.
+PARCELLÁK
+- Kuka: a törölt parcella 15 napra a GPS-gomb alatti kukába kerül, és onnan visszaállítható.
+- Parcellák oldal: a térkép kitölti a képernyőt; a parcellák kártyái fölötte lebegnek, ceruzával, a parcella értesítéseinek csengőjével és kukával; a ＋ új parcellát ad hozzá.
 - Dizájnjavítások és hibajavítások.
 
 4. verzió (v.4.00 – v.4.52)

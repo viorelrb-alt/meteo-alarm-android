@@ -1,4 +1,4 @@
-Nuværende version: v.5.33 · 16.11.2026
+Nuværende version: v.5.40 · 16.11.2026
 HOVEDSKÆRM
 - Femdagesprognose: dag 3–5 skifter af sig selv hvert 3. sekund indtil første berøring.
 - Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.
@@ -10,6 +10,9 @@ LANDMANDSTILSTAND
 - Driftsstatus: på en marks skærm, kun når det er nødvendigt, dommen om sprøjtning, årsagen og risiciene for de næste 24 timer.
 - Faner: stedet og markerne i faner under navnet (liggende nederst); en marks skærm i afsnit 1–4.
 - Landmandsknap: bladknappen ved siden af knapperne slår landmandstilstanden fra; et andet sted bevarer den.
+MARKER
+- Papirkurv: en slettet mark havner i 15 dage i papirkurven under GPS-knappen og kan gendannes derfra.
+- Siden Marker: kortet fylder skærmen; markernes kort svæver over det med blyant, klokke til markens notifikationer og papirkurv; ＋ tilføjer en mark.
 NOTIFIKATIONER
 - Jordskælv: notifikationer kun for jordskælv højst 300 km fra dit sted; slås til eller fra i ☰.
 - Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ☰.

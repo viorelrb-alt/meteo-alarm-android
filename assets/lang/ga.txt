@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Ní sheiceálann an aip ach nuair a thapálann tú Seiceáil le haghaidh nuashonruithe; osclaíonn Íoslódáil an leagan nua sa bhrabhsálaí agus suiteálann tú é ón gcomhad a íoslódáladh.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Teocht mhór agus, ar dheis, na 4 lá eile (deilbhín amháin an ceann) nó uaireanta, de réir rogha sna socruithe: Taispeáin an aimsir. Ar shraith amháin, déantar an 4x1 de.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Amárach agus arú amárach thuas; fúthu athraíonn laethanta 3–5 leo féin gach 3 soicind go dtí go mbaineann tú leo. Bogann an tsraith Mionsonraí aimsire beagán tar éis 6 soicind. Taispeánann tapáil ar Amárach nó Arú amárach a bholgán.
+ days left	 lá fágtha
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Téann ceapach scriosta go dtí an bosca bruscair faoin gcnaipe GPS agus coinnítear é 15 lá; athchóiríonn an cnaipe cruinn é (má tá an t-ainm céanna ar cheapach shábháilte: ainm nua nó ionadú).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Tá ceapach leis an ainm seo ann cheana. Tabhair ainm nua nó cuir í in ionad na ceapaí sábháilte.
+Bin	Bosca bruscair
+Deleted parcels are kept 15 days.	Coinnítear ceapacha scriosta 15 lá.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Mód feirmeora: casann an cloigín ar chárta ceapaí a fógraí air (líonta) nó as; ansin faigheann an cheapach iad go léir: báisteach nó sneachta laistigh den uair, tar éis 20:00 báisteach nó sneachta amárach, gaoth, sneachta, sioc liath, sioc, ceo, fearthainn reoite, triomach (ithir thirim, 7 lá gan bháisteach).
+Looking for the position (GPS)…	Ag lorg an tsuímh (GPS)…
+New name	Ainm nua
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Níl aon cheapach sábháilte fós. Tapáil ＋ chun ceann a chur leis: is é an áit an áit ina bhfuil tú (GPS), nó tapáil an léarscáil.
+No place yet: wait for the GPS or tap the map.	Níl áit fós ann: fan leis an GPS nó tapáil an léarscáil.
+Restore	Athchóirigh
+Restored: 	Athchóirithe: 
+Tap the map to move the pin.	Tapáil an léarscáil chun an biorán a bhogadh.
+The bin is empty.	Tá an bosca bruscair folamh.
+The parcel goes to the bin, where it is kept 15 days.	Téann an cheapach go dtí an bosca bruscair, áit a gcoinnítear í 15 lá.
+deleted 	scriosta 
+notifications OFF	fógraí AS
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	fógraí AIR (báisteach, gaoth, sneachta, sioc liath, sioc, ceo, fearthainn reoite, triomach).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Ceapacha: an léarscáil le cártaí na gceapach (ina seasamh thíos, ina luí ar dheis); osclaíonn tapáil ceann ar an bpríomhscáileán. Cuireann ＋ ceann leis: an áit ina bhfuil tú (GPS) nó tapáil ar an léarscáil, ansin an t-ainm. Ar chárta cuireann an peann luaidhe in eagar, casann an cloigín na fógraí air nó as, scriosann an bosca bruscair í. Coinnítear ar an bhfón seo amháin.

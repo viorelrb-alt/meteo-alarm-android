@@ -1,4 +1,4 @@
-Versiunea curentă: v.5.33 · 16.11.2026
+Versiunea curentă: v.5.40 · 16.11.2026
 ACTUALIZĂRI
 - Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL
@@ -12,6 +12,9 @@ MOD FERMIER
 NOTIFICĂRI
 - Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ☰.
 - Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ☰.
+PARCELE
+- Coș de gunoi: o parcelă ștearsă trece în coșul de sub butonul GPS pentru 15 zile și se poate restaura de acolo.
+- Pagina Parcele: harta ocupă tot ecranul; casetele parcelelor plutesc peste ea, cu creionul, clopoțelul pentru notificările parcelei și coșul; ＋ adaugă o parcelă.
 SETĂRI
 - Setări: meniul ☰ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
 - Temă icon: 6 teme de iconuri (Clasic, Lucios, Plat, Realist, Atmosferic, Contur), alese din ☰ cu buline colorate; în aplicație și pe widget-uri.

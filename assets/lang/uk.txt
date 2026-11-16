@@ -1071,3 +1071,22 @@ No browser could be opened. The new version is at github.com/viorelrb-alt/meteo-
 The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.	Застосунок перевіряє лише тоді, коли ви натискаєте «Перевірити оновлення»; «Завантажити» відкриває нову версію в браузері, а ви встановлюєте її із завантаженого файлу.
 A big temperature and, on the right, the next 4 days (one icon each) or hours, as chosen in its settings: Show the weather. On one row it becomes the 4x1.	Велика температура і праворуч наступні 4 дні (по одному значку) або години, за вибором у налаштуваннях: Показ погоди. В один ряд він стає віджетом 4x1.
 Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.	Завтра й післязавтра вгорі; під ними дні 3–5 змінюються самі кожні 3 секунди, доки ти їх не торкнешся. Ряд Подробиці погоди трохи зсувається через 6 секунд. Дотик до «Завтра» або «Післязавтра» показує його підказку.
+ days left	 дн. залишилось
+A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).	Видалена ділянка потрапляє до кошика під кнопкою GPS і зберігається 15 днів; кругла кнопка відновлює її (якщо збережена ділянка має таку саму назву: нова назва або замінити).
+A parcel with this name already exists. Give a new name, or replace the parcel saved now.	Ділянка з такою назвою вже існує. Дай нову назву або заміни збережену ділянку.
+Bin	Кошик
+Deleted parcels are kept 15 days.	Видалені ділянки зберігаються 15 днів.
+Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).	Режим фермера: дзвіночок на картці ділянки вмикає (заповнений) або вимикає її сповіщення; тоді ділянка отримує всі: дощ або сніг протягом години, після 20:00 дощ або сніг завтра, вітер, сніг, іній, заморозок, туман, ожеледь, посуха (сухий ґрунт, 7 днів без дощу).
+Looking for the position (GPS)…	Пошук позиції (GPS)…
+New name	Нова назва
+No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.	Ще немає збережених ділянок. Натисни ＋, щоб додати: місце там, де ти (GPS), або натисни на мапу.
+No place yet: wait for the GPS or tap the map.	Місця ще немає: зачекай на GPS або натисни на мапу.
+Restore	Відновити
+Restored: 	Відновлено: 
+Tap the map to move the pin.	Натисни на мапу, щоб перемістити шпильку.
+The bin is empty.	Кошик порожній.
+The parcel goes to the bin, where it is kept 15 days.	Ділянка потрапляє до кошика й зберігається там 15 днів.
+deleted 	видалена 
+notifications OFF	сповіщення ВИМКНЕНО
+notifications ON (rain, wind, snow, frost, freeze, fog, freezing rain, drought).	сповіщення УВІМКНЕНО (дощ, вітер, сніг, іній, заморозок, туман, ожеледь, посуха).
+☰ › Parcels: the map with the parcels' cards (portrait at the bottom, landscape at the right); a tap opens one on the main screen. ＋ adds one: where you are (GPS) or a tap on the map, then the name. On a card the pencil edits, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Ділянки: мапа з картками ділянок (у портреті внизу, в альбомі праворуч); натискання відкриває ділянку на головному екрані. ＋ додає ділянку: де ти (GPS) або натискання на мапу, потім назва. На картці олівець редагує, дзвіночок вмикає або вимикає сповіщення, кошик видаляє. Зберігаються лише на цьому телефоні.

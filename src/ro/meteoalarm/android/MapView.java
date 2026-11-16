@@ -42,6 +42,11 @@ final class MapView extends View {
 		void tapped(long id);
 	}
 
+	/** v5.40: a tap on the map away from the pins (the new parcel's place). */
+	interface MapTap {
+		void at(double lat, double lon);
+	}
+
 	/** v2.90: a parcel pin with its name, drawn where it is (the list map). */
 	static final class Pin {
 		final long id;
@@ -105,7 +110,12 @@ final class MapView extends View {
 			@Override
 			public boolean onSingleTapConfirmed(MotionEvent e) {
 				long id = pinAt(e.getX(), e.getY());
-				if (id != Long.MIN_VALUE && pinTap != null) pinTap.tapped(id);
+				if (mapTap != null) {
+					double world = tile * Math.pow(2, zoom);
+					double left = wx(lon, world) - getWidth() / 2.0, top = wy(lat, world) - getHeight() / 2.0;
+					double cy = Math.max(0, Math.min(world, top + e.getY()));
+					mapTap.at(latOf(cy, world), lonOf((((left + e.getX()) % world) + world) % world, world));
+				} else if (id != Long.MIN_VALUE && pinTap != null) pinTap.tapped(id);
 				return true;
 			}
 		});
@@ -192,6 +202,22 @@ final class MapView extends View {
 			}
 		}
 		return best;
+	}
+
+	private MapTap mapTap;
+	/** v5.40: the new parcel's pin (NaN: none). */
+	private double markLat = Double.NaN, markLon = Double.NaN;
+
+	/** v5.40: taps on the map go to T (null: the pins get them again). */
+	void setOnMapTap(MapTap t) {
+		mapTap = t;
+	}
+
+	/** v5.40: the new parcel's pin at LA, LO (NaN: none). */
+	void setMark(double la, double lo) {
+		markLat = la;
+		markLon = lo;
+		invalidate();
 	}
 
 	void setOnMoved(Moved m) {
@@ -365,6 +391,7 @@ final class MapView extends View {
 			}
 			paint.setFakeBoldText(false);
 		}
+		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
 		String att = "© OpenStreetMap contributors";
 		paint.setTextSize(11 * dp);
