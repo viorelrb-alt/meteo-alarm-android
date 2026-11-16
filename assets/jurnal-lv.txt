@@ -1,4 +1,4 @@
-Pašreizējā versija: v.5.51 · 16.11.2026
+Pašreizējā versija: v.5.52 · 16.11.2026
 ATJAUNINĀJUMI
 - Atjauninājumi: lietotne vairs pati nemeklē atjauninājumus, tikai kad pieskaraties ☰ › Pārbaudīt atjauninājumus; jaunā versija tiek lejupielādēta pārlūkā, un jūs to instalējat no lejupielādētā faila.
 GALVENAIS EKRĀNS

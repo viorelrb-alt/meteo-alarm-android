@@ -1316,6 +1316,7 @@ public final class FarmActivity extends Activity {
 		final int fb = px(tab ? 46 : 42), mg = px(12), gap = px(10);
 		// The height the top sheet takes in landscape (its row), so the cards start under it.
 		final int bandH = fb + 2 * px(6);
+		m.setRadarTop(land ? mg : mg + bandH + px(8));
 		int sw = getResources().getDisplayMetrics().widthPixels, sh = getResources().getDisplayMetrics().heightPixels;
 		// v5.51 (Viorel): the card's width comes from the portrait width: 2 cards on a phone, 3 or 4
 		// on a tablet; in landscape the same size.
@@ -1337,6 +1338,7 @@ public final class FarmActivity extends Activity {
 		} else {
 			final View strip;
 			final LinearLayout inner;
+			final float[] fonts = cardFonts(all, side, tab);
 			if (land) {
 				// One column at the right edge; it scrolls under the top sheet.
 				ScrollView sv = new ScrollView(this);
@@ -1347,7 +1349,7 @@ public final class FarmActivity extends Activity {
 				for (int k = 0; k < all.size(); k++) {
 					LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
 					if (k > 0) cl.topMargin = gap;
-					inner.addView(squareCard(all.get(k), side, tab), cl);
+					inner.addView(squareCard(all.get(k), side, tab, fonts), cl);
 				}
 				sv.addView(inner);
 				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(side, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.RIGHT);
@@ -1364,7 +1366,7 @@ public final class FarmActivity extends Activity {
 				for (int k = 0; k < all.size(); k++) {
 					LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
 					if (k > 0) cl.leftMargin = gap;
-					inner.addView(squareCard(all.get(k), side, tab), cl);
+					inner.addView(squareCard(all.get(k), side, tab, fonts), cl);
 				}
 				hv.addView(inner);
 				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, side, Gravity.BOTTOM);
@@ -1397,6 +1399,9 @@ public final class FarmActivity extends Activity {
 		topSheet(mapBox, tab, land);
 		if (newOpen) newParcel(mapBox, m, tab);
 	}
+
+	/** v5.52: the top sheet's ＋, Parcels and (portrait) row, hidden while the new parcel's box is open. */
+	private View sheetPlus, sheetBadge, sheetRow, sheetView;
 
 	/** The cards (or the note) over the list map and the new parcel's box. */
 	private View cardsView, newBox;
@@ -1569,7 +1574,11 @@ public final class FarmActivity extends Activity {
 		View bin = binIcon(ink, false);
 		bin.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
 		bin.setContentDescription(Tr.t("Bin", "Coș de gunoi"));
-		bin.setOnClickListener(new View.OnClickListener() {
+		// v5.52 (Viorel): the bin works only when there are parcels or deleted ones in it.
+		boolean binOn = !Parcels.sorted(this).isEmpty() || !Parcels.bin(this).isEmpty();
+		bin.setEnabled(binOn);
+		bin.setAlpha(binOn ? 1f : 0.35f);
+		if (binOn) bin.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				showBin();
 			}
@@ -1597,7 +1606,7 @@ public final class FarmActivity extends Activity {
 		} else {
 			sheet.setOrientation(LinearLayout.VERTICAL);
 			sheet.setGravity(Gravity.RIGHT);
-			sheet.addView(row);
+			sheet.addView(row, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			col = column();
 			col.setGravity(Gravity.CENTER_HORIZONTAL);
 			LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(fb, fb);
@@ -1615,12 +1624,15 @@ public final class FarmActivity extends Activity {
 				@Override
 				public void draw(Canvas c) {
 					android.graphics.Path a = new android.graphics.Path(), b = new android.graphics.Path();
-					a.addRoundRect(new android.graphics.RectF(row.getLeft() - pad, row.getTop() - pad, row.getRight() + pad, row.getBottom() + pad), rad, rad,
+					boolean rowOn = row.getVisibility() == View.VISIBLE;
+					b.addRoundRect(new android.graphics.RectF(col.getLeft() - pad, rowOn ? row.getTop() - pad : col.getTop() + g, col.getRight() + pad, col.getBottom() + pad), rad, rad,
 							android.graphics.Path.Direction.CW);
-					b.addRoundRect(new android.graphics.RectF(col.getLeft() - pad, row.getTop() - pad, col.getRight() + pad, col.getBottom() + pad), rad, rad,
-							android.graphics.Path.Direction.CW);
-					if (Build.VERSION.SDK_INT >= 19) a.op(b, android.graphics.Path.Op.UNION);
-					else a.addPath(b);
+					if (rowOn) {
+						a.addRoundRect(new android.graphics.RectF(row.getLeft() - pad, row.getTop() - pad, row.getRight() + pad, row.getBottom() + pad), rad, rad,
+								android.graphics.Path.Direction.CW);
+						if (Build.VERSION.SDK_INT >= 19) a.op(b, android.graphics.Path.Op.UNION);
+						else a.addPath(b);
+					} else a = b;
 					p.setStyle(Paint.Style.FILL);
 					p.setColor(Glass.alpha(page, 0.78f));
 					c.drawPath(a, p);
@@ -1645,6 +1657,10 @@ public final class FarmActivity extends Activity {
 			});
 		}
 		sheet.setElevation(px(4));
+		sheetPlus = plus;
+		sheetBadge = badge;
+		sheetRow = land ? null : row;
+		sheetView = sheet;
 		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
 		sl.setMargins(0, mg, mg, 0);
 		mapBox.addView(sheet, sl);
@@ -1669,60 +1685,39 @@ public final class FarmActivity extends Activity {
 	 * the card's height: the pencil, the statistics (PDF), the bell, the bin. A tap shows the parcel
 	 * on the main screen.
 	 */
-	private View squareCard(final Parcels.Parcel p, int side, boolean tab) {
+	private View squareCard(final Parcels.Parcel p, int side, boolean tab, float[] fonts) {
 		FrameLayout card = new FrameLayout(this);
 		card.setBackground(glass(px(18), 0.92f));
 		card.setElevation(px(3));
 		int pad = px(10);
 		card.setPadding(pad, pad, pad, pad);
 		int inside = side - 2 * pad;
-		int ic = Math.min(px(tab ? 40 : 34), (inside - 3 * px(5)) / 4);
+		int ic = cardIcon(inside, tab);
 		float g = (inside - 4f * ic) / 3f;
-		int room = inside - ic - px(8);
-		LinearLayout col = column();
+		int room = inside - ic - px(8), rowH = inside / 5;
+		// v5.52 (Viorel): the card in 5 rows: the name in the first 3 (one size on every card), the
+		// coordinates in the last 2, as large as they fit.
 		TextView name = text(p.name, 16, true, ink);
-		String[] co = coords(p.lat, p.lon).split(",\\s*");
-		TextView[] ct = new TextView[co.length];
-		for (int k = 0; k < co.length; k++) ct[k] = text(co[k].trim(), 12, false, dim);
-		// v5.51 (Viorel): no word broken, the name on at most 2 lines and the coordinates on 2, all
-		// of it inside the card: the sizes go down together until the whole text fits.
-		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
-		Paint pn = new Paint(name.getPaint()), pc = new Paint(ct[0].getPaint());
-		int w = room - px(2), gapT = px(4);
-		float sn = tab ? 22 : 19, sc = 6;
-		int lines = 2;
-		for (; sn > 6; sn -= 0.5f) {
-			pn.setTextSize(sn * scale);
-			lines = lineCount(pn, p.name, w);
-			if (lines > 2) continue;
-			for (sc = Math.min(sn * 0.8f, tab ? 16 : 14); sc > 6; sc -= 0.5f) {
-				pc.setTextSize(sc * scale);
-				float cw = 0;
-				for (String s : co) cw = Math.max(cw, pc.measureText(s.trim()));
-				if (cw <= w) break;
-			}
-			pc.setTextSize(sc * scale);
-			if (lines * pn.getFontSpacing() + co.length * pc.getFontSpacing() + gapT <= inside) break;
-		}
-		sn = Math.max(6, sn);
-		name.setTextSize(sn * TextSize.get(this));
+		name.setTextSize(fonts[0] * TextSize.get(this));
 		name.setIncludeFontPadding(false);
-		name.setMaxLines(2);
+		name.setMaxLines(3);
 		name.setEllipsize(android.text.TextUtils.TruncateAt.END);
 		if (Build.VERSION.SDK_INT >= 23) {
 			name.setBreakStrategy(android.text.Layout.BREAK_STRATEGY_SIMPLE);
 			name.setHyphenationFrequency(android.text.Layout.HYPHENATION_FREQUENCY_NONE);
 		}
-		col.addView(name);
-		for (int k = 0; k < ct.length; k++) {
-			ct[k].setSingleLine(true);
-			ct[k].setIncludeFontPadding(false);
-			ct[k].setTextSize(sc * TextSize.get(this));
-			LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-			if (k == 0) ll.topMargin = gapT;
-			col.addView(ct[k], ll);
+		card.addView(name, new FrameLayout.LayoutParams(room, 3 * rowH, Gravity.TOP | Gravity.LEFT));
+		String[] co = coords(p.lat, p.lon).split(",\\s*");
+		for (int k = 0; k < co.length && k < 2; k++) {
+			TextView ct = text(co[k].trim(), 12, false, dim);
+			ct.setSingleLine(true);
+			ct.setIncludeFontPadding(false);
+			ct.setGravity(Gravity.CENTER_VERTICAL);
+			ct.setTextSize(fonts[1] * TextSize.get(this));
+			FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(room, rowH, Gravity.TOP | Gravity.LEFT);
+			cl.topMargin = (3 + k) * rowH;
+			card.addView(ct, cl);
 		}
-		card.addView(col, new FrameLayout.LayoutParams(room, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.LEFT));
 		View stats = statsIcon();
 		stats.setContentDescription(Tr.t("Statistics · PDF", "Statistică · PDF"));
 		stats.setOnClickListener(new View.OnClickListener() {
@@ -1751,6 +1746,46 @@ public final class FarmActivity extends Activity {
 			}
 		});
 		return card;
+	}
+
+	/** The size of a card's buttons for INSIDE pixels of card. */
+	private int cardIcon(int inside, boolean tab) {
+		return Math.min(px(tab ? 40 : 34), (inside - 3 * px(5)) / 4);
+	}
+
+	/**
+	 * v5.52 (Viorel): one name size for all the cards (the largest at which every name fits 3 rows
+	 * without broken words) and the coordinates' size (as large as fits a row and the width).
+	 */
+	private float[] cardFonts(List<Parcels.Parcel> all, int side, boolean tab) {
+		int inside = side - 2 * px(10), room = inside - cardIcon(inside, tab) - px(8), w = room - px(2);
+		float rowH = inside / 5;
+		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+		TextView probe = text("", 16, true, ink), probe2 = text("", 12, false, dim);
+		Paint pn = new Paint(probe.getPaint()), pc = new Paint(probe2.getPaint());
+		float sn = 40;
+		for (; sn > 6; sn -= 0.5f) {
+			pn.setTextSize(sn * scale);
+			if (pn.getFontSpacing() > rowH) continue;
+			boolean ok = true;
+			for (Parcels.Parcel p : all)
+				if (lineCount(pn, p.name, w) > 3) {
+					ok = false;
+					break;
+				}
+			if (ok) break;
+		}
+		float sc = 40;
+		for (; sc > 6; sc -= 0.5f) {
+			pc.setTextSize(sc * scale);
+			if (pc.getFontSpacing() > rowH) continue;
+			boolean ok = true;
+			for (Parcels.Parcel p : all)
+				for (String s : coords(p.lat, p.lon).split(",\\s*"))
+					if (pc.measureText(s.trim()) > w) ok = false;
+			if (ok) break;
+		}
+		return new float[] { Math.max(6, sn), Math.max(6, sc) };
 	}
 
 	/** v5.50: the statistics button: three bars in the framed square of the pencil. */
@@ -1879,6 +1914,11 @@ public final class FarmActivity extends Activity {
 		final boolean land = land();
 		newOpen = true;
 		if (cardsView != null) cardsView.setVisibility(View.GONE);
+		// v5.52 (Viorel): ＋ and Parcels leave the top sheet; the box's ✕ closes it.
+		if (sheetPlus != null) sheetPlus.setVisibility(View.GONE);
+		if (sheetBadge != null) sheetBadge.setVisibility(View.GONE);
+		if (sheetRow != null) sheetRow.setVisibility(View.GONE);
+		if (sheetView != null) sheetView.invalidate();
 		// v5.50: kept when the phone turns: the place (tapped or found) and the name.
 		final double[] at = { newLa, newLo };
 		LinearLayout box = column();

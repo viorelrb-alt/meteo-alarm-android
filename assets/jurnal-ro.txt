@@ -1,4 +1,4 @@
-Versiunea curentă: v.5.51 · 16.11.2026
+Versiunea curentă: v.5.52 · 16.11.2026
 ACTUALIZĂRI
 - Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL

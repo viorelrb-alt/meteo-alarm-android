@@ -139,6 +139,13 @@ final class MapView extends View {
 		topPad = px;
 	}
 
+	/** v5.52: where the radar's time pill stands (its top, in pixels). */
+	private float radarTop = -1;
+
+	void setRadarTop(float px) {
+		radarTop = px;
+	}
+
 	/**
 	 * v2.90: centre and zoom so every pin is seen (one pin: zoom 15). Needs the size: before the
 	 * first layout it is done right after it.
@@ -572,15 +579,22 @@ final class MapView extends View {
 		// The frame's time.
 		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("HH:mm", java.util.Locale.US);
 		String t = "Radar " + f.format(new java.util.Date(rTimes.get(Math.min(rFrame, rTimes.size() - 1))[0] * 1000L));
-		paint.setTextSize(14 * dp);
+		// v5.52 (Viorel): at the top, in a pill of frosted glass, larger.
+		paint.setTextSize(20 * dp);
 		paint.setFakeBoldText(true);
-		float tw = paint.measureText(t);
+		float tw = paint.measureText(t), pt0 = radarTop >= 0 ? radarTop : 12 * dp, ph = 40 * dp;
+		RectF r = new RectF(w / 2f - tw / 2 - 16 * dp, pt0, w / 2f + tw / 2 + 16 * dp, pt0 + ph);
 		paint.setStyle(Paint.Style.FILL);
-		paint.setColor(0xCC1A1A1A);
-		RectF r = new RectF(w / 2f - tw / 2 - 10 * dp, h - 48 * dp, w / 2f + tw / 2 + 10 * dp, h - 24 * dp);
-		c.drawRoundRect(r, 12 * dp, 12 * dp, paint);
-		paint.setColor(0xFFFFFFFF);
-		c.drawText(t, w / 2f - tw / 2, h - 31 * dp, paint);
+		paint.setColor(dark ? 0xD6262624 : 0xD6FAF9F5);
+		c.drawRoundRect(r, ph / 2, ph / 2, paint);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(Math.max(1, dp));
+		paint.setColor(dark ? 0x40FFFFFF : 0x30000000);
+		c.drawRoundRect(r, ph / 2, ph / 2, paint);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
+		Paint.FontMetrics fm = paint.getFontMetrics();
+		c.drawText(t, w / 2f - tw / 2, pt0 + ph / 2 - (fm.ascent + fm.descent) / 2, paint);
 		paint.setFakeBoldText(false);
 	}
 

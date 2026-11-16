@@ -1,4 +1,4 @@
-Huidige versie: v.5.51 · 16.11.2026
+Huidige versie: v.5.52 · 16.11.2026
 BOERENMODUS
 - Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
 - Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.

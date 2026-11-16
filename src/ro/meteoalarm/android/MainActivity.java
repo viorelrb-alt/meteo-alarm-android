@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.51";
+	static final String VERSION = "Meteo Alarm Android v5.52";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -710,6 +710,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			return;
 		}
 		if (code != REQ_PARCELS) return;
+		// v5.52 (Viorel): back from the Parcels: the main screen, never the ☰ window again.
+		menuAfterTurn = false;
+		reopen = null;
+		if (settings != null && settings.isOpen()) settings.hide();
 		long sel = data != null ? data.getLongExtra("select", -1) : -1;
 		// A parcel picked in ☰ › Parcele; or back: the parcel shown may be renamed, moved or deleted.
 		showPage(sel >= 0 ? sel : pageId);
