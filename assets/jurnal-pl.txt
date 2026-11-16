@@ -1,4 +1,4 @@
-Obecna wersja: v.5.50 · 16.11.2026
+Obecna wersja: v.5.51 · 16.11.2026
 AKTUALIZACJE
 - Aktualizacje: aplikacja nie szuka już sama aktualizacji, tylko po dotknięciu ☰ › Sprawdź aktualizacje; nowa wersja pobiera się w przeglądarce, a Ty instalujesz ją z pobranego pliku.
 DZIAŁKI

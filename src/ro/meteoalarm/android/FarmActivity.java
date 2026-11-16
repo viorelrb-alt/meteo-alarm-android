@@ -1317,9 +1317,10 @@ public final class FarmActivity extends Activity {
 		// The height the top sheet takes in landscape (its row), so the cards start under it.
 		final int bandH = fb + 2 * px(6);
 		int sw = getResources().getDisplayMetrics().widthPixels, sh = getResources().getDisplayMetrics().heightPixels;
-		int side = px(tab ? 190 : 150);
-		if (land) side = Math.min(side, (sh - 2 * mg - bandH) / 2);
-		else side = Math.min(side, (sw - 2 * mg - gap) / 2);
+		// v5.51 (Viorel): the card's width comes from the portrait width: 2 cards on a phone, 3 or 4
+		// on a tablet; in landscape the same size.
+		int pw = Math.min(sw, sh), per = tab ? (pw / dp >= 720 ? 4 : 3) : 2;
+		int side = (pw - 2 * mg - (per - 1) * gap) / per;
 		status = text("", 15, false, ink);
 		status.setVisibility(View.GONE);
 
@@ -1341,7 +1342,7 @@ public final class FarmActivity extends Activity {
 				ScrollView sv = new ScrollView(this);
 				sv.setVerticalScrollBarEnabled(false);
 				sv.setClipToPadding(false);
-				sv.setPadding(0, mg + bandH + gap, 0, mg);
+				sv.setPadding(0, mg + bandH + px(16), 0, mg);
 				inner = column();
 				for (int k = 0; k < all.size(); k++) {
 					LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
@@ -1350,7 +1351,7 @@ public final class FarmActivity extends Activity {
 				}
 				sv.addView(inner);
 				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(side, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.RIGHT);
-				sl.setMargins(0, 0, mg, 0);
+				sl.setMargins(0, 0, px(4), 0);
 				mapBox.addView(sv, sl);
 				strip = sv;
 			} else {
@@ -1410,8 +1411,8 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * The top left of the map: ＋ and −, under them in one row the satellite view, the map and the
-	 * radar (v5.50, Viorel); the one in use has a ring in the theme's colour.
+	 * The top left of the map: ＋ and −, under them in one column (v5.51, Viorel) the satellite view,
+	 * the map and the radar; the one in use has a ring in the theme's colour.
 	 */
 	private void leftFloats(FrameLayout mapBox, final MapView m, boolean tab) {
 		int fb = px(tab ? 46 : 42), mg = px(12);
@@ -1439,7 +1440,7 @@ public final class FarmActivity extends Activity {
 			b[k] = mapIcon(kind, m);
 			b[k].setContentDescription(names[k]);
 			FrameLayout.LayoutParams l = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-			l.setMargins(mg + k * (fb + px(8)), mg + 2 * fb + px(16), 0, 0);
+			l.setMargins(mg, mg + (k + 2) * (fb + px(8)), 0, 0);
 			mapBox.addView(floatBtn(b[k], new View.OnClickListener() {
 				public void onClick(View v) {
 					android.content.SharedPreferences.Editor e = Fetcher.prefs(FarmActivity.this).edit();
@@ -1605,7 +1606,7 @@ public final class FarmActivity extends Activity {
 			LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(fb, fb);
 			nl.topMargin = g;
 			col.addView(bin, nl);
-			sheet.addView(col);
+			sheet.addView(col, new LinearLayout.LayoutParams(fb, ViewGroup.LayoutParams.WRAP_CONTENT));
 			// The L: the row and the column joined, every outer corner round.
 			final float rad = fb / 2f + pad;
 			sheet.setBackground(new android.graphics.drawable.Drawable() {
@@ -1663,14 +1664,14 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * v5.50 (Viorel): a parcel's square card of frosted glass: the name (2–3 lines) and under it the
-	 * coordinates on 2 lines, as large as fit; at the right edge 4 buttons of one size spread over
+	 * v5.50 (Viorel): a parcel's square card of frosted glass: the name (at most 2 lines, v5.51) and
+	 * under it the coordinates on 2 lines, as large as fit; at the right edge 4 buttons of one size spread over
 	 * the card's height: the pencil, the statistics (PDF), the bell, the bin. A tap shows the parcel
 	 * on the main screen.
 	 */
 	private View squareCard(final Parcels.Parcel p, int side, boolean tab) {
 		FrameLayout card = new FrameLayout(this);
-		card.setBackground(glass(px(18), 0.8f));
+		card.setBackground(glass(px(18), 0.92f));
 		card.setElevation(px(3));
 		int pad = px(10);
 		card.setPadding(pad, pad, pad, pad);
@@ -1680,14 +1681,46 @@ public final class FarmActivity extends Activity {
 		int room = inside - ic - px(8);
 		LinearLayout col = column();
 		TextView name = text(p.name, 16, true, ink);
-		fitLines(name, room, tab ? 19 : 16, 9, 3);
-		col.addView(name);
 		String[] co = coords(p.lat, p.lon).split(",\\s*");
-		for (String l : co) {
-			TextView t = text(l.trim(), 12, false, dim);
-			t.setSingleLine(true);
-			fitWidth(t, room, tab ? 14 : 12, 8);
-			col.addView(t);
+		TextView[] ct = new TextView[co.length];
+		for (int k = 0; k < co.length; k++) ct[k] = text(co[k].trim(), 12, false, dim);
+		// v5.51 (Viorel): no word broken, the name on at most 2 lines and the coordinates on 2, all
+		// of it inside the card: the sizes go down together until the whole text fits.
+		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
+		Paint pn = new Paint(name.getPaint()), pc = new Paint(ct[0].getPaint());
+		int w = room - px(2), gapT = px(4);
+		float sn = tab ? 22 : 19, sc = 6;
+		int lines = 2;
+		for (; sn > 6; sn -= 0.5f) {
+			pn.setTextSize(sn * scale);
+			lines = lineCount(pn, p.name, w);
+			if (lines > 2) continue;
+			for (sc = Math.min(sn * 0.8f, tab ? 16 : 14); sc > 6; sc -= 0.5f) {
+				pc.setTextSize(sc * scale);
+				float cw = 0;
+				for (String s : co) cw = Math.max(cw, pc.measureText(s.trim()));
+				if (cw <= w) break;
+			}
+			pc.setTextSize(sc * scale);
+			if (lines * pn.getFontSpacing() + co.length * pc.getFontSpacing() + gapT <= inside) break;
+		}
+		sn = Math.max(6, sn);
+		name.setTextSize(sn * TextSize.get(this));
+		name.setIncludeFontPadding(false);
+		name.setMaxLines(2);
+		name.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		if (Build.VERSION.SDK_INT >= 23) {
+			name.setBreakStrategy(android.text.Layout.BREAK_STRATEGY_SIMPLE);
+			name.setHyphenationFrequency(android.text.Layout.HYPHENATION_FREQUENCY_NONE);
+		}
+		col.addView(name);
+		for (int k = 0; k < ct.length; k++) {
+			ct[k].setSingleLine(true);
+			ct[k].setIncludeFontPadding(false);
+			ct[k].setTextSize(sc * TextSize.get(this));
+			LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			if (k == 0) ll.topMargin = gapT;
+			col.addView(ct[k], ll);
 		}
 		card.addView(col, new FrameLayout.LayoutParams(room, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.LEFT));
 		View stats = statsIcon();

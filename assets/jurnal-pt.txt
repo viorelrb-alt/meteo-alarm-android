@@ -1,4 +1,4 @@
-Versão atual: v.5.50 · 16.11.2026
+Versão atual: v.5.51 · 16.11.2026
 ATUALIZAÇÕES
 - Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES
