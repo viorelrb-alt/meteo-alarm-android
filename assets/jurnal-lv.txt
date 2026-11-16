@@ -1,4 +1,4 @@
-Pašreizējā versija: v.5.52 · 16.11.2026
+Pašreizējā versija: v.5.53 · 16.11.2026
 ATJAUNINĀJUMI
 - Atjauninājumi: lietotne vairs pati nemeklē atjauninājumus, tikai kad pieskaraties ☰ › Pārbaudīt atjauninājumus; jaunā versija tiek lejupielādēta pārlūkā, un jūs to instalējat no lejupielādētā faila.
 GALVENAIS EKRĀNS
@@ -6,6 +6,7 @@ GALVENAIS EKRĀNS
 - Liels kompass: pieskāriens vietai sarakstā rāda tās zīmi uz kompasa; vietas vienā virzienā vairs nepārklājas.
 - Piecu dienu prognoze: 3.–5. diena mainās pati ik pēc 3 sekundēm līdz pirmajam pieskārienam.
 IESTATĪJUMI
+- Displeja valoda: pogas ☰ izvēlnē, pa 2 rindā: angļu un valsts valodas (ASV angļu un spāņu); Rumānijā “Citas valodas (minoritātes)” parāda pārējās.
 - Iestatījumi: izvēlne ☰ tagad ir logs ar sadaļām, slēdžiem, krāsu motīviem un joslu Sistēma un atbalsts; atsvaidzina, velkot ekrānu uz leju vai pieskaroties “atjaunināts”.
 - Ikonu motīvs: 6 laikapstākļu ikonu motīvi (Klasiskais, Spīdīgais, Plakanais, Reālistiskais, Atmosfēriskais, Kontūra), izvēlas ar krāsainiem punktiem izvēlnē ☰; lietotnē un logrīkos.
 LAUKI

@@ -1,4 +1,4 @@
-Versiunea curentă: v.5.52 · 16.11.2026
+Versiunea curentă: v.5.53 · 16.11.2026
 ACTUALIZĂRI
 - Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL
@@ -17,6 +17,7 @@ PARCELE
 - Pagina Parcele: casetele parcelelor (nume, coordonate, creion, Statistică · PDF, clopoțel, coș) plutesc peste hartă, pe un rând jos sau pe o coloană în dreapta; ＋, și tab-ul ＋, deschide caseta unei parcele noi.
 - Vederile hărții: butoanele rotunde de sub ＋/− schimbă între satelit și hartă și arată radarul de ploaie din ultimele 2 ore.
 SETĂRI
+- Limbă afișaj: butoane în ☰, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte.
 - Setări: meniul ☰ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
 - Temă icon: 6 teme de iconuri (Clasic, Lucios, Plat, Realist, Atmosferic, Contur), alese din ☰ cu buline colorate; în aplicație și pe widget-uri.
 - Îmbunătățiri de design și corectarea erorilor.

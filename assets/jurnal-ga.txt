@@ -1,4 +1,4 @@
-Leagan reatha: v.5.52 · 16.11.2026
+Leagan reatha: v.5.53 · 16.11.2026
 CEAPACHA
 - Bosca bruscair: téann ceapach scriosta go dtí an bosca bruscair faoin gcnaipe GPS ar feadh 15 lá agus is féidir í a athchóiriú as.
 - Leathanach na gCeapach: snámhann cártaí na gceapach (ainm, comhordanáidí, peann luaidhe, Staitisticí · PDF, cloigín, bosca bruscair) os cionn na léarscáile, i ró thíos nó i gcolún ar dheis; osclaíonn ＋, an cluaisín ＋ freisin, bosca ceapaí nua.
@@ -18,6 +18,7 @@ PRÍOMHSCÁILEÁN
 - Réamhaisnéis cúig lá: athraíonn laethanta 3–5 leo féin gach 3 soicind go dtí an chéad teagmháil.
 SOCRUITHE
 - Socruithe: is fuinneog anois an roghchlár ☰ le codanna, lasca, téamaí datha agus an barra Córas agus tacaíocht; athnuachan trí an scáileán a tharraingt anuas nó tadhall ar “nuashonraithe”.
+- Teanga taispeána: cnaipí in ☰, 2 sa ró: Béarla agus teangacha na tíre (sna SA Béarla agus Spáinnis); sa Rómáin taispeánann „Teangacha eile (mionlaigh)” an chuid eile.
 - Téama deilbhíní: 6 théama deilbhíní aimsire (Clasaiceach, Snasta, Cothrom, Réalaíoch, Atmaisféarach, Imlíne), roghnaítear le poncanna daite in ☰ iad; san aip agus ar na giuirléidí.
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
 

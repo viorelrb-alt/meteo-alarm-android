@@ -1,4 +1,4 @@
-Verżjoni attwali: v.5.52 · 16.11.2026
+Verżjoni attwali: v.5.53 · 16.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ☰ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
 GĦELIEQI
@@ -13,6 +13,7 @@ NOTIFIKI
 - Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ☰.
 - Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ☰.
 SETTINGS
+- Lingwa tal-wiri: buttuni f'☰, 2 f'kull ringiela: Ingliż u l-lingwi tal-pajjiż (fl-Istati Uniti Ingliż u Spanjol); fir-Rumanija “Lingwi oħra (minoranzi)” turi l-bqija.
 - Settings: il-menu ☰ issa huwa tieqa b'taqsimiet, swiċċijiet, temi tal-kulur u l-bar Sistema u appoġġ; tiġġedded billi tiġbed l-iskrin 'l isfel jew tmiss “aġġornat”.
 - Tema tal-ikoni: 6 temi tal-ikoni tat-temp (Klassiku, Tleqq, Ċatt, Realistiku, Atmosferiku, Kontorn), jintgħażlu b'tikek ikkuluriti f'☰; fl-app u fuq il-widgets.
 SKRIN EWLIENI

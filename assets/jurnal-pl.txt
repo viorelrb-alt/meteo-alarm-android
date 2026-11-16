@@ -1,4 +1,4 @@
-Obecna wersja: v.5.52 · 16.11.2026
+Obecna wersja: v.5.53 · 16.11.2026
 AKTUALIZACJE
 - Aktualizacje: aplikacja nie szuka już sama aktualizacji, tylko po dotknięciu ☰ › Sprawdź aktualizacje; nowa wersja pobiera się w przeglądarce, a Ty instalujesz ją z pobranego pliku.
 DZIAŁKI
@@ -17,6 +17,7 @@ TRYB ROLNIKA
 - Przycisk rolnika: przycisk z liściem obok przycisków wyłącza tryb rolnika; inna miejscowość go zachowuje.
 - Status operacyjny: na ekranie działki, tylko gdy trzeba, werdykt dla oprysku, powód i zagrożenia na najbliższe 24 godziny.
 USTAWIENIA
+- Język wyświetlania: przyciski w ☰, po 2 w rzędzie: angielski i języki kraju (w USA angielski i hiszpański); w Rumunii „Inne języki (mniejszości)” pokazuje pozostałe.
 - Motyw ikon: 6 motywów ikon pogody (Klasyczny, Błyszczący, Płaski, Realistyczny, Atmosferyczny, Konturowy), wybór kolorowymi kropkami w ☰; w aplikacji i na widżetach.
 - Ustawienia: menu ☰ jest teraz oknem z sekcjami, przełącznikami, motywami kolorystycznymi i paskiem System i pomoc; odświeżanie przez pociągnięcie ekranu w dół lub dotknięcie „zaktualizowano”.
 - Ulepszenia wyglądu i poprawki błędów.

@@ -1,8 +1,9 @@
-Versão atual: v.5.52 · 16.11.2026
+Versão atual: v.5.53 · 16.11.2026
 ATUALIZAÇÕES
 - Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES
 - Definições: o menu ☰ é agora uma janela com secções, interruptores, os temas em cores e a barra Sistema e suporte; atualiza-se puxando o ecrã para baixo ou tocando em «atualizado».
+- Idioma de apresentação: botões em ☰, 2 por linha: inglês e as línguas do país (nos EUA inglês e espanhol); na Roménia «Outras línguas (minorias)» mostra as restantes.
 - Tema de ícones: 6 temas de ícones do tempo (Clássico, Brilhante, Plano, Realista, Atmosférico, Contorno), escolhidos com pontos coloridos em ☰; na app e nos widgets.
 ECRÃ PRINCIPAL
 - Bússola grande: tocar numa localidade da lista mostra a sua marca na bússola; localidades na mesma direção já não se sobrepõem.

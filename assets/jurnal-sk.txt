@@ -1,4 +1,4 @@
-Súčasná verzia: v.5.52 · 16.11.2026
+Súčasná verzia: v.5.53 · 16.11.2026
 AKTUALIZÁCIE
 - Aktualizácie: aplikácia už sama nehľadá aktualizácie, len keď ťuknete na ☰ › Skontrolovať aktualizácie; nová verzia sa stiahne v prehliadači a nainštalujete ju zo stiahnutého súboru.
 HLAVNÁ OBRAZOVKA
@@ -6,6 +6,7 @@ HLAVNÁ OBRAZOVKA
 - Predpoveď na päť dní: dni 3–5 sa posúvajú samy každé 3 sekundy až do prvého dotyku.
 - Veľký kompas: ťuknutie na obec v zozname ukáže jej značku na kompase; obce v rovnakom smere sa už neprekrývajú.
 NASTAVENIA
+- Jazyk zobrazenia: tlačidlá v ☰, po 2 v rade: angličtina a jazyky krajiny (v USA angličtina a španielčina); v Rumunsku „Ďalšie jazyky (menšiny)“ ukáže ostatné.
 - Motív ikon: 6 motívov ikon počasia (Klasické, Lesklé, Ploché, Realistické, Atmosférické, Obrysové), voľba farebnými bodkami v ☰; v aplikácii aj vo widgetoch.
 - Nastavenia: ponuka ☰ je teraz okno s časťami, prepínačmi, farebnými motívmi a lištou Systém a podpora; obnovuje sa potiahnutím obrazovky nadol alebo ťuknutím na „aktualizované“.
 POZEMKY

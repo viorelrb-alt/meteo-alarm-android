@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v5.52";
+	static final String VERSION = "Meteo Alarm Android v5.53";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -214,6 +214,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		settings.setOnClose(new Runnable() {
 			public void run() {
 				reopen = null;
+				langMore = false;
 				hideBars();
 			}
 		});
@@ -745,6 +746,19 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					handler.postDelayed(new Runnable() {
 						public void run() {
 							onMenu();
+						}
+					}, 150);
+				}
+			});
+		}
+		// v5.53 (Viorel): on a tablet the ☰ window is drawn again for the turned screen.
+		if (settings != null && settings.isOpen() && TextSize.tablet(this)) {
+			view.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+				public void onLayoutChange(View v, int l, int t, int ri, int b, int ol, int ot, int or, int ob) {
+					view.removeOnLayoutChangeListener(this);
+					handler.postDelayed(new Runnable() {
+						public void run() {
+							if (settings.isOpen()) onMenu();
 						}
 					}, 150);
 				}
@@ -2399,11 +2413,34 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						onMenu();
 					}
 				});
-		p.link("globe", Tr.t("Display language", "Limbă afișaj"), null, Tr.name(s.T.lang), new Runnable() {
-			public void run() {
-				pickLang();
+		// v5.53 (Viorel): the languages as buttons in the menu, 2 on a row; the minorities' under
+		// "Other languages", shown on a tap and hidden again once one is chosen.
+		final List<String> lc = Lang.offered(this), lm = Lang.minorities(this);
+		p.info("globe", Tr.t("Display language", "Limbă afișaj"), Tr.name(s.T.lang));
+		p.langButtons(lc.toArray(new String[0]), langNames(lc), lc.indexOf(s.T.lang), new SettingsPanel.Choice() {
+			public void chose(int k) {
+				langMore = false;
+				setLang(lc.get(k));
+				onMenu();
 			}
 		});
+		if (!lm.isEmpty()) {
+			boolean mine = lm.contains(s.T.lang);
+			p.wideButton(Tr.t("Other languages (minorities)", "Alte limbi (minorități)") + (mine ? " · " + Tr.name(s.T.lang) : ""), mine, langMore, new Runnable() {
+				public void run() {
+					langMore = !langMore;
+					Log.i(MainActivity.this, "LIMBA", "alte limbi: " + (langMore ? "deschise " + lm : "închise"));
+					onMenu();
+				}
+			});
+			if (langMore) p.langButtons(lm.toArray(new String[0]), langNames(lm), lm.indexOf(s.T.lang), new SettingsPanel.Choice() {
+				public void chose(int k) {
+					langMore = false;
+					setLang(lm.get(k));
+					onMenu();
+				}
+			});
+		}
 		// Alerts & behaviour.
 		p.section(Tr.t("Alerts & behaviour", "Alerte & Comportament"), false);
 		p.toggle("locate", Tr.t("Auto location", "Localizare auto"), Tr.t("Follows your position by GPS", "Actualizează poziția prin GPS"), autoLoc(), new Runnable() {
@@ -2748,6 +2785,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				setLang(codes.get(k));
 			}
 		});
+	}
+
+	/** v5.53: the minorities' languages open under the language buttons in ☰. */
+	private boolean langMore;
+
+	private static String[] langNames(List<String> codes) {
+		String[] n = new String[codes.size()];
+		for (int i = 0; i < n.length; i++) n[i] = Tr.name(codes.get(i));
+		return n;
 	}
 
 	private void setLang(String c) {
@@ -3231,8 +3277,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));
 		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).", "6 teme de culoare: atingi o culoare; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("wxicon"), Tr.t("Icon theme", "Temă icon"), Tr.t("6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.", "6 teme de iconuri: atingi o bulină. Clasic și Contur iau culorile temei; se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));
-		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("English, the phone's language and the country's languages; in Romania also “Other languages”.",
-				"Engleza, limba telefonului și limbile țării; în România și „Alte limbi”."));
+		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.",
+				"Butoane în ☰, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte."));
 		help.entry(mini("autoloc"), Tr.t("Auto location", "Localizare auto"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.",
 				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău. Sub el, pagina cutremurelor recente din jur, cu ora, locul, magnitudinea și distanța."));

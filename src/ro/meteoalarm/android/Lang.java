@@ -102,15 +102,17 @@ final class Lang {
 	/** The languages offered: English, the phone's own, the country's own, and the one in use (Romanian only as one of them). */
 	static List<String> offered(Context ctx) {
 		List<String> l = new ArrayList<String>();
+		// v5.53 (Viorel): in the US only English and Spanish; elsewhere English and the country's
+		// languages (no longer the phone's own language).
+		if ("US".equalsIgnoreCase(country(ctx))) {
+			l.add("us");
+			l.add("es");
+			return l;
+		}
 		l.add("en");
-		// The phone's own language, when the app has it (Viorel 2026-11-04).
-		String sys = system();
-		if (Tr.known(sys) && !l.contains(sys)) l.add(sys);
 		for (String c : Tr.ofCountry(country(ctx))) if (!l.contains(c)) l.add(c);
-		// In the US (or the test mode): American English and Spanish (v2.30).
+		// The US test mode: American English and Spanish too (v2.30).
 		if (Region.showUS(ctx)) for (String c : new String[] { "us", "es" }) if (!l.contains(c)) l.add(c);
-		String cur = apply(ctx);
-		if (!l.contains(cur)) l.add(cur);
 		return l;
 	}
 }

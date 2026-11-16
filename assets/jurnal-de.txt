@@ -1,8 +1,9 @@
-Aktuelle Version: v.5.52 · 16.11.2026
+Aktuelle Version: v.5.53 · 16.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
 - Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.
 EINSTELLUNGEN
+- Anzeigesprache: Tasten in ☰, 2 pro Reihe: Englisch und die Sprachen des Landes (in den USA Englisch und Spanisch); in Rumänien zeigt „Weitere Sprachen (Minderheiten)“ den Rest.
 - Einstellungen: das Menü ☰ ist jetzt ein Fenster mit Bereichen, Schaltern, Farbdesigns und der Leiste System & Support; aktualisieren durch Herunterziehen oder ein Tippen auf „aktualisiert“.
 - Symbolthema: 6 Themen für Wettersymbole (Klassisch, Glänzend, Flach, Realistisch, Atmosphärisch, Kontur), Auswahl mit farbigen Punkten in ☰; in der App und in den Widgets.
 HAUPTBILDSCHIRM

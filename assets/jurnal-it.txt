@@ -1,8 +1,9 @@
-Versione attuale: v.5.52 · 16.11.2026
+Versione attuale: v.5.53 · 16.11.2026
 AGGIORNAMENTI
 - Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ☰ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
 IMPOSTAZIONI
 - Impostazioni: il menu ☰ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
+- Lingua di visualizzazione: pulsanti in ☰, 2 per riga: inglese e le lingue del paese (negli USA inglese e spagnolo); in Romania «Altre lingue (minoranze)» mostra le altre.
 - Tema icone: 6 temi di icone meteo (Classico, Lucido, Piatto, Realistico, Atmosferico, Contorno), si scelgono con punti colorati in ☰; nell'app e nei widget.
 MODALITÀ AGRICOLTORE
 - Pulsante agricoltore: il pulsante con la foglia accanto ai pulsanti disattiva la modalità agricoltore; un'altra località la mantiene.

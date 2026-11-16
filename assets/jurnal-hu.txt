@@ -1,7 +1,8 @@
-Jelenlegi verzió: v.5.52 · 16.11.2026
+Jelenlegi verzió: v.5.53 · 16.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
+- Megjelenítés nyelve: gombok a ☰ menüben, soronként 2: angol és az ország nyelvei (az USA-ban angol és spanyol); Romániában a „Más nyelvek (kisebbségek)” mutatja a többit.
 ÉRTESÍTÉSEK
 - Földrengések: értesítések csak a helyedtől legfeljebb 300 km-re lévő földrengésekről; a ☰-ban kapcsolhatók be vagy ki.
 - Tornádók (USA): a településed tornádóértesítései a ☰-ban kapcsolhatók be vagy ki.

@@ -523,6 +523,88 @@ final class SettingsPanel extends FrameLayout {
 		return l;
 	}
 
+	/**
+	 * v5.53 (Viorel): the languages as buttons, 2 on a row: the language's code in a frame and its
+	 * name; the chosen one filled in the theme's colour.
+	 */
+	void langButtons(String[] codes, String[] names, int sel, final Choice pick) {
+		for (int i = 0; i < codes.length; i += 2) {
+			LinearLayout r = new LinearLayout(getContext());
+			for (int j = i; j < i + 2; j++) {
+				LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(0, px(44 * zk), 1);
+				if (j > i) bl.leftMargin = px(10);
+				if (j >= codes.length) {
+					r.addView(new View(getContext()), bl);
+					continue;
+				}
+				final int k = j;
+				boolean on = j == sel;
+				LinearLayout b = new LinearLayout(getContext());
+				b.setGravity(Gravity.CENTER);
+				b.setPadding(px(8), 0, px(8), 0);
+				b.setBackground(on ? Glass.pill(accent(), 0, 22 * dp * zk, dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp * zk, dp));
+				TextView code = text(getContext(), 10 * zk, true);
+				code.setText(codes[j].toUpperCase(java.util.Locale.ROOT));
+				code.setTextColor(on ? onAccent() : dim());
+				code.setPadding(px(4), 0, px(4), 0);
+				code.setBackground(Glass.pill(0, on ? onAccent() : dim(), 4 * dp, dp));
+				b.addView(code);
+				TextView name = role("lang", text(getContext(), 15 * zk, on));
+				name.setText(names[j]);
+				name.setTextColor(on ? onAccent() : ink());
+				LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+				nl.leftMargin = px(8);
+				b.addView(name, nl);
+				b.setContentDescription(names[j]);
+				b.setOnClickListener(new OnClickListener() {
+					public void onClick(View v) {
+						pick.chose(k);
+					}
+				});
+				r.addView(b, bl);
+			}
+			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			rl.bottomMargin = px(10);
+			rl.leftMargin = rl.rightMargin = px(4);
+			card.addView(r, rl);
+		}
+	}
+
+	/** v5.53: a wide button (Other languages): MARKED in the theme's colour, its arrow down or (OPEN) up. */
+	void wideButton(String label, boolean marked, boolean open, final Runnable tap) {
+		LinearLayout b = new LinearLayout(getContext());
+		b.setGravity(Gravity.CENTER_VERTICAL);
+		b.setPadding(px(16), 0, px(12), 0);
+		b.setBackground(Glass.pill(Glass.disc(dark), marked ? accent() : Glass.edge(dark), 22 * dp * zk, dp));
+		TextView t = role("wide", text(getContext(), 15 * zk, marked));
+		t.setText(label);
+		t.setTextColor(ink());
+		b.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		View ch = new View(getContext());
+		ch.setBackground(new LineIcon("chevron", dim()));
+		ch.setRotation(open ? -90 : 90);
+		b.addView(ch, new LinearLayout.LayoutParams(px(22), px(22)));
+		b.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				tap.run();
+			}
+		});
+		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(44 * zk));
+		rl.bottomMargin = px(10);
+		rl.leftMargin = rl.rightMargin = px(4);
+		card.addView(b, rl);
+	}
+
+	/** v5.53: a row with only its icon, name and a value at the right (no tap). */
+	void info(String icon, String head, String value) {
+		sep();
+		TextView v = text(getContext(), 14.5f * zk, false);
+		v.setText(value);
+		v.setTextColor(dim());
+		v.setSingleLine(true);
+		row(icon, head, null, v, false, null);
+	}
+
 	/** The theme row: its name, the 6 colours (tap: that theme) and Light / Dark / Automatic. */
 	void theme(String head, String sub, String[] names, int[] colors, int sel, final Choice pick, String[] modes, int mode, Choice modePick) {
 		sep();
@@ -817,11 +899,14 @@ final class SettingsPanel extends FrameLayout {
 		int sh = pv != null && pv.getHeight() > 0 ? pv.getHeight() - pv.getPaddingTop() - pv.getPaddingBottom() : getResources().getDisplayMetrics().heightPixels;
 		int m = px(14);
 		int w = Math.min(sw - 2 * m, sw < sh ? sw : Math.round(Math.min(sw * 0.62f, 620 * dp * zk)));
-		if (sw < sh && TextSize.tablet(getContext())) w = Math.min(w, Math.round(sw * 0.78f));
+		// v5.53 (Viorel): on a tablet only as wide as needed, at the left edge.
+		boolean tab = TextSize.tablet(getContext());
+		if (tab) w = Math.min(sw - 2 * m, Math.round(430 * dp * zk));
 		LayoutParams lp = (LayoutParams) panel.getLayoutParams();
 		lp.width = w;
 		lp.height = sh - 2 * m;
-		lp.gravity = Gravity.CENTER;
+		lp.gravity = tab ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.CENTER;
+		lp.leftMargin = tab ? m : 0;
 		panel.setLayoutParams(lp);
 		if (!open) {
 			AnimIcon.restart(); // v5.20: the bar's icons move for 3 seconds when the window opens

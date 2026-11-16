@@ -1,4 +1,4 @@
-Trenutna različica: v.5.52 · 16.11.2026
+Trenutna različica: v.5.53 · 16.11.2026
 GLAVNI ZASLON
 - Glavni zaslon: stran se pomika pod steklom na vrhu, po razdelkih (Naslednje ure, Napoved za pet dni, Podrobnosti vremena); gumbi in baterija lebdijo spodaj.
 - Napoved za pet dni: dnevi 3–5 se sami menjajo vsake 3 sekunde do prvega dotika.
@@ -8,6 +8,7 @@ KMETOVALSKI NAČIN
 - Operativno stanje: na zaslonu parcele, samo ko je treba, odločitev za škropljenje, razlog in tveganja naslednjih 24 ur.
 - Zavihki: kraj in parcele v zavihkih pod imenom (ležeče spodaj); zaslon parcele v razdelkih 1–4.
 NASTAVITVE
+- Jezik prikaza: gumbi v ☰, po 2 v vrsti: angleščina in jeziki države (v ZDA angleščina in španščina); v Romuniji »Drugi jeziki (manjšine)« pokaže ostale.
 - Nastavitve: meni ☰ je zdaj okno z razdelki, stikali, barvnimi temami in vrstico Sistem in podpora; osveževanje s potegom zaslona navzdol ali dotikom »posodobljeno«.
 - Tema ikon: 6 tem vremenskih ikon (Klasične, Sijoče, Ploske, Realistične, Atmosferske, Obrisne), izbira z barvnimi pikami v ☰; v aplikaciji in na pripomočkih.
 OBVESTILA

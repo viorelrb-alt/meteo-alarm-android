@@ -1,4 +1,4 @@
-Nuvarande version: v.5.52 · 16.11.2026
+Nuvarande version: v.5.53 · 16.11.2026
 AVISERINGAR
 - Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
 - Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
@@ -9,6 +9,7 @@ HUVUDSKÄRM
 INSTÄLLNINGAR
 - Ikontema: 6 teman för väderikoner (Klassisk, Blank, Platt, Realistisk, Atmosfärisk, Kontur), väljs med färgade prickar i ☰; i appen och på widgetarna.
 - Inställningar: menyn ☰ är nu ett fönster med avsnitt, reglage, färgteman och fältet System och support; uppdatera genom att dra skärmen nedåt eller trycka på ”uppdaterat”.
+- Visningsspråk: knappar i ☰, 2 per rad: engelska och landets språk (i USA engelska och spanska); i Rumänien visar ”Andra språk (minoriteter)” resten.
 LANTBRUKARLÄGE
 - Driftstatus: på ett skiftes skärm, bara när det behövs, domen om sprutning, orsaken och riskerna för de kommande 24 timmarna.
 - Flikar: orten och skiftena i flikar under namnet (liggande nederst); ett skiftes skärm i avsnitt 1–4.

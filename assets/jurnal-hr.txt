@@ -1,4 +1,4 @@
-Trenutačna verzija: v.5.52 · 16.11.2026
+Trenutačna verzija: v.5.53 · 16.11.2026
 AŽURIRANJA
 - Ažuriranja: aplikacija više sama ne traži ažuriranja, samo kada dodirnete ☰ › Provjeri ažuriranja; nova verzija preuzima se u pregledniku, a vi je instalirate iz preuzete datoteke.
 GLAVNI ZASLON
@@ -17,6 +17,7 @@ PARCELE
 - Prikazi karte: okrugli gumbi ispod ＋/− mijenjaju satelit i kartu i prikazuju radar oborina zadnja 2 sata.
 - Stranica Parcele: kartice parcela (ime, koordinate, olovka, Statistika · PDF, zvono, koš) lebde iznad karte, u redu dolje ili u stupcu desno; ＋, i kartica ＋, otvara okvir nove parcele.
 POSTAVKE
+- Jezik prikaza: gumbi u ☰, po 2 u redu: engleski i jezici zemlje (u SAD-u engleski i španjolski); u Rumunjskoj „Ostali jezici (manjine)” prikazuje ostale.
 - Postavke: izbornik ☰ sada je prozor s odjeljcima, prekidačima, temama u boji i trakom Sustav i podrška; osvježava se povlačenjem zaslona prema dolje ili dodirom na „ažurirano”.
 - Tema ikona: 6 tema ikona vremena (Klasične, Sjajne, Ravne, Realistične, Atmosferske, Obrisne), biraju se obojenim točkama u ☰; u aplikaciji i na widgetima.
 - Poboljšanja dizajna i ispravci pogrešaka.

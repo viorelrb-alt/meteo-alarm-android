@@ -1,9 +1,10 @@
-Dabartinė versija: v.5.52 · 16.11.2026
+Dabartinė versija: v.5.53 · 16.11.2026
 ATNAUJINIMAI
 - Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI
 - Nustatymai: meniu ☰ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
 - Piktogramų tema: 6 orų piktogramų temos (Klasikinė, Blizgi, Plokščia, Realistinė, Atmosferinė, Kontūrinė), pasirenkamos spalvotais taškais meniu ☰; programoje ir valdikliuose.
+- Rodymo kalba: mygtukai ☰ meniu, po 2 eilutėje: anglų ir šalies kalbos (JAV anglų ir ispanų); Rumunijoje „Kitos kalbos (mažumos)“ parodo kitas.
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus vietovę sąraše, jos ženklas parodomas kompase; vietovės ta pačia kryptimi nebesutampa.
 - Pagrindinis ekranas: puslapis slenka po viršutiniu stiklu, skyriais (Artimiausios valandos, Penkių dienų prognozė, Orų detalės); mygtukai ir baterija plūduriuoja apačioje.

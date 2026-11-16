@@ -1,10 +1,11 @@
-Geçerli sürüm: v.5.52 · 16.11.2026
+Geçerli sürüm: v.5.53 · 16.11.2026
 ANA EKRAN
 - Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
 - Büyük pusula: listedeki bir yere dokunmak işaretini pusulada gösterir; aynı yöndeki yerler artık üst üste binmez.
 AYARLAR
 - Ayarlar: ☰ menüsü artık bölümler, anahtarlar, renk temaları ve Sistem ve destek çubuğu olan bir pencere; yenileme ekranı aşağı çekerek veya “güncellendi”ye dokunarak yapılır.
+- Görüntüleme dili: ☰ içinde her satırda 2 düğme: İngilizce ve ülkenin dilleri (ABD'de İngilizce ve İspanyolca); Romanya'da “Diğer diller (azınlıklar)” diğerlerini gösterir.
 - Simge teması: 6 hava simgesi teması (Klasik, Parlak, Düz, Gerçekçi, Atmosferik, Kontur), ☰ içinde renkli noktalarla seçilir; uygulamada ve widget'larda.
 BILDIRIMLER
 - Depremler: bildirimler yalnızca yerinize en fazla 300 km uzaklıktaki depremler için; ☰ içinden açılır veya kapatılır.

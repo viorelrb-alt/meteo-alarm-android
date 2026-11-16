@@ -1,4 +1,4 @@
-Praegune versioon: v.5.52 · 16.11.2026
+Praegune versioon: v.5.53 · 16.11.2026
 PÕHIEKRAAN
 - Põhiekraan: leht kerib ülemise klaasi all jaotiste kaupa (Järgmised tunnid, Viie päeva prognoos, Ilma üksikasjad); nupud ja aku hõljuvad all.
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
@@ -13,6 +13,7 @@ PÕLLUMEHE REŽIIM
 - Vahelehed: koht ja põllulapid vahelehtedena nime all (rõhtpaigutuses all); põllulapi ekraan jaotistes 1–4.
 SEADED
 - Ikoonide teema: 6 ilmaikoonide teemat (Klassikaline, Läikiv, Lame, Realistlik, Atmosfääriline, Kontuur), valitakse värviliste täppidega menüüs ☰; rakenduses ja vidinatel.
+- Kuvakeel: nupud ☰ menüüs, 2 reas: inglise ja riigi keeled (USA-s inglise ja hispaania); Rumeenias näitab „Muud keeled (vähemused)” ülejäänuid.
 - Seaded: menüü ☰ on nüüd aken jaotiste, lülitite, värviteemade ja ribaga Süsteem ja tugi; värskendamiseks tõmba ekraani alla või puuduta „uuendatud“.
 TEAVITUSED
 - Maavärinad: teavitused ainult maavärinatest kuni 300 km sinu kohast; lülitatakse sisse või välja menüüs ☰.
