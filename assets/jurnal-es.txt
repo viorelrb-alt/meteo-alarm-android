@@ -1,4 +1,4 @@
-Versión actual: v.6.10 · 16.11.2026
+Versión actual: v.1.520 · 16.11.2026
 ACTUALIZACIONES
 - Actualizaciones: la app ya no busca actualizaciones por sí sola, solo cuando tocas ☰ › Buscar actualizaciones; la versión nueva se descarga en el navegador y la instalas desde el archivo descargado.
 AJUSTES
@@ -18,14 +18,15 @@ PANTALLA PRINCIPAL
 - Previsión de cinco días: los días 3–5 pasan solos cada 3 segundos hasta el primer toque.
 PARCELAS
 - Alfileres en el mapa: tocar un alfiler acerca el mapa a la parcela y muestra su nombre; un segundo toque muestra sus puntos.
-- Esquinas de la parcela: en la vista satélite las 4 esquinas se encuentran en la imagen y se mueven con el dedo; un toque en la tarjeta muestra las esquinas, Mostrar abre la parcela.
+- Esquinas de la parcela: en la vista de satélite las 4 esquinas se encuentran en la imagen y se mueven con el dedo; tocar la tarjeta acerca el mapa a la parcela y muestra las esquinas, Estadística abre su estadística.
 - Papelera: una parcela borrada va 15 días a la papelera bajo el botón GPS y se puede restaurar desde allí.
+- Parcela nueva: el alfiler empieza en el centro del mapa visible; el botón GPS lo lleva a donde estás.
 - Página Parcelas: las tarjetas de las parcelas (nombre, coordenadas, lápiz, Estadística · PDF, campana, papelera) flotan sobre el mapa, en una fila abajo o una columna a la derecha; ＋, también la pestaña ＋, abre la ficha de una parcela nueva.
 - Puntos de la parcela: + Punto añade hasta 3 puntos más (como máximo 7), Círculo los reparte por igual en un círculo, una pulsación larga sobre un punto lo borra.
 - Vistas del mapa: botones redondos bajo ＋/− cambian entre satélite y mapa y muestran el radar de lluvia de las últimas 2 horas.
 - Mejoras de diseño y corrección de errores.
 
-Versión 4 (v.4.00 – v.4.52)
+Versión 1.3 (v.1.300 – v.1.352)
 PANTALLA PRINCIPAL
 - Avisos: al tocar un recuadro de código o de información se ven arriba los valores del pronóstico (rachas, cantidades, temperaturas), luego el intervalo y las explicaciones.
 - Brújula grande: la localidad en la que estás aparece primero (gris); Compartir envía también una imagen de la ventana, las localidades cercanas con sus distancias, la batería, las temperaturas (aire, suelo, a la altura del teléfono) y el viento.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · lista: una temperatura grande y los próximos 4 días (un icono cada uno) u horas, a elegir en sus ajustes; la localidad con la marca de localidad de la brújula.
 - Widgets: las líneas de colores de los códigos en todos los widgets, sin el texto AVISO; sin códigos, una línea azul con la primera información vigente (p. ej. Escarcha).
 
-Versión 3 (v.3.00 – v.3.92)
+Versión 1.2 (v.1.200 – v.1.292)
 ACTUALIZACIONES
 - Actualizaciones de tres fuentes: GitHub, un segundo servidor de GitHub y Google Drive.
 - Actualizaciones: primero se comprueba la conexión, una versión ya descargada se instala al momento, hasta 5 intentos si GitHub no responde, y se muestra el motivo.
@@ -65,7 +66,7 @@ TEMAS
 - 6 temas de color (Monocromo, Salvia, Lavanda, Cielo, Melocotón, Rosa), cada uno claro y oscuro: ☰ › Tema.
 - Mejoras de diseño y corrección de errores.
 
-Versión 2 (v.2.00 – v.2.91)
+Versión 1.1 (v.1.100 – v.1.191)
 - Todos los idiomas oficiales de la UE y el ucraniano.
 - Página Terremotos.
 - Notificaciones con tu permiso: lluvia o nieve, avisos, terremotos.
@@ -80,7 +81,7 @@ Versión 2 (v.2.00 – v.2.91)
 - Modo agricultor: las pantallas principales se deslizan con el dedo.
 - Mejoras de diseño y corrección de errores.
 
-Versión 1 (v.1.00 – v.1.93)
+Versión 1.0 (v.1.000 – v.1.093)
 - Hecha a partir de Meteo Alarm Kindle: su pantalla llevada a teléfonos y tabletas Android.
 - El tiempo actual, las próximas horas, la precipitación de 12 horas y 5 días.
 - Casillas: Sol / Luna, UV, Polen, Humedad, Calidad del aire, Presión, Viento, Visibilidad, Brújula, Terremoto.

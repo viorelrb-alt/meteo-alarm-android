@@ -1,4 +1,4 @@
-Trenutna različica: v.6.10 · 16.11.2026
+Trenutna različica: v.1.520 · 16.11.2026
 GLAVNI ZASLON
 - Glavni zaslon: stran se pomika pod steklom na vrhu, po razdelkih (Naslednje ure, Napoved za pet dni, Podrobnosti vremena); gumbi in baterija lebdijo spodaj.
 - Napoved za pet dni: dnevi 3–5 se sami menjajo vsake 3 sekunde do prvega dotika.
@@ -17,15 +17,16 @@ OBVESTILA
 PARCELE
 - Bucike na zemljevidu: dotik bucike približa zemljevid na parcelo in pokaže njeno ime; drugi dotik pokaže njene točke.
 - Koš: izbrisana parcela gre za 15 dni v koš pod gumbom GPS in jo je mogoče od tam obnoviti.
-- Koti parcele: v satelitskem pogledu se 4 koti najdejo iz slike in premikajo s prstom; dotik kartice pokaže kote, Prikaži odpre parcelo.
+- Nova parcela: bucika začne na sredini vidnega zemljevida; gumb GPS jo premakne tja, kjer si.
 - Pogledi zemljevida: okrogli gumbi pod ＋/− preklapljajo med satelitom in zemljevidom ter kažejo radar padavin zadnjih 2 ur.
 - Stran Parcele: kartice parcel (ime, koordinate, svinčnik, Statistika · PDF, zvonec, koš) plavajo nad zemljevidom, v vrsti spodaj ali v stolpcu desno; ＋, tudi zavihek ＋, odpre okno nove parcele.
 - Točke parcele: + Točka doda do 3 dodatne točke (največ 7), Krog jih enakomerno razporedi po krogu, dolg pritisk na točko jo izbriše.
+- Vogali parcele: v satelitskem pogledu se 4 vogali najdejo na sliki in se premikajo s prstom; dotik kartice približa zemljevid na parcelo in pokaže vogale, Statistika odpre njeno statistiko.
 POSODOBITVE
 - Posodobitve: aplikacija sama ne išče več posodobitev, le ko tapnete ☰ › Preveri posodobitve; nova različica se prenese v brskalniku, vi pa jo namestite iz prenesene datoteke.
 - Izboljšave oblikovanja in popravki napak.
 
-Različica 4 (v.4.00 – v.4.52)
+Različica 1.3 (v.1.300 – v.1.352)
 GLAVNI ZASLON
 - Izvoz / Uvoz: prenese vaše kraje, priljubljene, parcele in nastavitve na drugo napravo prek datoteke (Shrani, Deli; Uvozi z Dodaj ali Zamenjaj).
 - Lokacija: v drugi državi ali zvezni državi ZDA se majhni kraji prenesejo enkrat, ko ste tam prvič z internetom, za kompas in seznam krajev.
@@ -39,7 +40,7 @@ PRIPOMOČKI
 - Pripomoček 4x2 · seznam: velika temperatura in naslednji 4 dnevi (po ena ikona) ali ure, po izbiri v nastavitvah; kraj z oznako kraja s kompasa.
 - Pripomočki: barvne črte kod na vsakem pripomočku, brez besedila OPOZORILO; brez kod ena modra črta s prvo veljavno informacijo (npr. Slana).
 
-Različica 3 (v.3.00 – v.3.92)
+Različica 1.2 (v.1.200 – v.1.292)
 GLAVNI ZASLON
 - Graf padavin in polja 4 ur: dotik pokaže verjetnost in količino za vsako uro, nato razloži graf.
 - Ikona povezave ob uri: Wi-Fi ali mobilni podatki z močjo signala in vrsto (Wi-Fi 6, 5G…) ali brez interneta.
@@ -65,7 +66,7 @@ TEME
 - 6 barvnih tem (Enobarvna, Žajbelj, Sivka, Nebo, Breskev, Vrtnica), vsaka svetla in temna: ☰ › Tema.
 - Izboljšave oblikovanja in popravki napak.
 
-Različica 2 (v.2.00 – v.2.91)
+Različica 1.1 (v.1.100 – v.1.191)
 - Vsi uradni jeziki EU in ukrajinščina.
 - Stran Potresi.
 - Obvestila z tvojim soglasjem: dež ali sneg, opozorila, potresi.
@@ -80,7 +81,7 @@ Različica 2 (v.2.00 – v.2.91)
 - Način kmeta: glavni zasloni drsijo s prstom.
 - Izboljšave oblikovanja in popravki napak.
 
-Različica 1 (v.1.00 – v.1.93)
+Različica 1.0 (v.1.000 – v.1.093)
 - Nastala iz Meteo Alarm Kindle: njegov zaslon prenesen na telefone in tablice Android.
 - Vreme zdaj, naslednje ure, padavine za 12 ur in 5 dni.
 - Polja: Sonce / Luna, UV, Cvetni prah, Vlaga, Kakovost zraka, Tlak, Veter, Vidljivost, Kompas, Potres.

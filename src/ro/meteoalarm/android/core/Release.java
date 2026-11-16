@@ -8,6 +8,34 @@ public final class Release {
 	public static final String LATEST = "https://api.github.com/repos/" + REPO + "/releases/latest";
 
 	public String version = "", apkUrl = "", notes = "", page = "";
+	/**
+	 * v1.520 (Viorel, new numbering): the tag starts with the app's build number (versionCode),
+	 * e.g. v118.1.520, so the apps of the old numbering (6.10) see it as newer; -1 for old tags.
+	 */
+	public int code = -1;
+	/** The tag as published (the build number and the version), for links. */
+	public String tag = "";
+
+	/** Splits a "118.1.520" version into the build number and "1.520". */
+	private void split() {
+		tag = version;
+		String[] p = version.split("\\.");
+		if (p.length >= 3 && p[0].length() >= 3) {
+			try {
+				code = Integer.parseInt(p[0]);
+				version = version.substring(p[0].length() + 1);
+			} catch (NumberFormatException e) {
+				code = -1;
+			}
+		}
+	}
+
+	/** v1.520: a version in the new numbering: X.YZ (old, X >= 1) becomes 1.(X-1)YZ. */
+	public static String display(String v) {
+		java.util.regex.Matcher m = java.util.regex.Pattern.compile("([1-9])\\.(\\d\\d)").matcher(v);
+		if (m.matches()) return "1." + (Integer.parseInt(m.group(1)) - 1) + m.group(2);
+		return v;
+	}
 	public long size = -1;
 	/** v3.03: where it was found: 0 GitHub Releases, 1 the second GitHub server, 2 Google Drive. */
 	public int src;
@@ -45,6 +73,7 @@ public final class Release {
 			}
 		}
 		if (!r.version.matches("[0-9]+(\\.[0-9]+)*")) throw new IllegalArgumentException("source " + src + ": no version");
+		r.split();
 		if (src == 1) {
 			if (!apk.matches("[A-Za-z0-9._-]+\\.apk")) throw new IllegalArgumentException("source 1: no apk");
 			r.apkUrl = RAW + apk;
@@ -62,6 +91,7 @@ public final class Release {
 		Release r = new Release();
 		Object tag = o.get("tag_name");
 		r.version = tag instanceof String ? ((String) tag).replaceFirst("^[vV]", "") : "";
+		r.split();
 		Object body = o.get("body"), url = o.get("html_url");
 		r.notes = body instanceof String ? ((String) body).trim() : "";
 		r.page = url instanceof String ? (String) url : "";
@@ -84,8 +114,9 @@ public final class Release {
 		Release r = new Release();
 		r.version = tag.trim().replaceFirst("^[vV]", "");
 		if (!r.version.matches("[0-9]+(\\.[0-9]+)*")) throw new IllegalArgumentException("tag " + tag);
-		r.apkUrl = "https://github.com/" + REPO + "/releases/download/v" + r.version + "/MeteoAlarmAndroid-v" + r.version + ".apk";
-		r.page = "https://github.com/" + REPO + "/releases/tag/v" + r.version;
+		r.split();
+		r.apkUrl = "https://github.com/" + REPO + "/releases/download/v" + r.tag + "/MeteoAlarmAndroid-v" + r.version + ".apk";
+		r.page = "https://github.com/" + REPO + "/releases/tag/v" + r.tag;
 		return r;
 	}
 
@@ -100,8 +131,11 @@ public final class Release {
 		return 0;
 	}
 
-	public boolean newerThan(String installed) {
-		return version.length() > 0 && apkUrl.length() > 0 && compare(installed, version) < 0;
+	/** v1.520: by the build numbers when the tag has one, else by the versions (new numbering). */
+	public boolean newerThan(String installed, int installedCode) {
+		if (version.length() == 0 || apkUrl.length() == 0) return false;
+		if (code > 0 && installedCode > 0) return code > installedCode;
+		return compare(display(installed), display(version)) < 0;
 	}
 
 }

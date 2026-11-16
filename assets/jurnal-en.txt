@@ -1,4 +1,4 @@
-Current version: v.6.10 · 16.11.2026
+Current version: v.1.520 · 16.11.2026
 FARMER MODE
 - Farmer button: the leaf button next to the buttons turns farmer mode off; another town keeps farmer mode.
 - Operational status: on a parcel's screen, only when needed, the spraying verdict, its reason and the risks of the next 24 hours.
@@ -13,7 +13,8 @@ NOTIFICATIONS
 PARCELS
 - Bin: a deleted parcel goes to the bin under the GPS button for 15 days and can be restored from there.
 - Map views: round buttons under ＋/− switch between satellite and map and show the rain radar of the last 2 hours.
-- Parcel corners: in the satellite view the 4 corners are found from the picture and move with a finger; a tap on the card shows the corners, Show opens the parcel.
+- New parcel: the pin starts in the middle of the map in sight; the GPS button moves it where you are.
+- Parcel corners: in the satellite view the 4 corners are found from the picture and move with a finger; a tap on the card zooms the map on the parcel and shows the corners, Statistics opens its statistics.
 - Parcel points: + Point adds up to 3 more points (at most 7), Circle puts them evenly on a circle, a long press on a point deletes it.
 - Parcels page: the parcels' cards (name, coordinates, pencil, Statistics · PDF, bell, bin) float over the map, in a row at the bottom or a column on the right; ＋, also the ＋ tab, opens a new parcel's box.
 - Pins on the map: a tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points.
@@ -25,7 +26,7 @@ UPDATES
 - Updates: the app no longer looks for updates by itself, only when you tap ☰ › Check for updates; the new version downloads in the browser and you install it from the downloaded file.
 - Design improvements and bug fixes.
 
-Version 4 (v.4.00 – v.4.52)
+Version 1.3 (v.1.300 – v.1.352)
 MAIN SCREEN
 - Big compass: a tap on the Compass box shows the compass, the GPS coordinates and the 3 nearest towns in colours; Share sends the coordinates.
 - Big compass: the town you are in comes first (grey); Share also sends a picture of the window, the nearby towns with distances, the battery, the temperatures (air, ground, at the phone's height) and the wind.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · list: a big temperature and the next 4 days (one icon each) or hours, chosen in its settings; the town after the compass's town mark.
 - Widgets: the coloured code lines on every widget, without the WARNING text; without codes, one blue line with the first information still in force (e.g. Frost).
 
-Version 3 (v.3.00 – v.3.92)
+Version 1.2 (v.1.200 – v.1.292)
 FARMER MODE
 - Farmer mode: new boxes after Water in the soil: Spraying, Water balance, Storms, Growing degrees, 16 days.
 - In the US, in farmer mode: the NWS, Drought, Fire and Hail boxes.
@@ -65,7 +66,7 @@ UPDATES
 - Updates: the connection is checked first, a version already downloaded installs at once, up to 5 tries when GitHub does not answer, and the reason is shown.
 - Design improvements and bug fixes.
 
-Version 2 (v.2.00 – v.2.91)
+Version 1.1 (v.1.100 – v.1.191)
 - All official EU languages and Ukrainian.
 - Earthquakes page.
 - Notifications with your consent: rain or snow, warnings, earthquakes.
@@ -80,7 +81,7 @@ Version 2 (v.2.00 – v.2.91)
 - Farmer mode: the main screens slide with the finger.
 - Design improvements and bug fixes.
 
-Version 1 (v.1.00 – v.1.93)
+Version 1.0 (v.1.000 – v.1.093)
 - Made from Meteo Alarm Kindle: its screen brought to Android phones and tablets.
 - The weather now, the next hours, precipitation for 12 hours and 5 days.
 - Boxes: Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass, Earthquake.

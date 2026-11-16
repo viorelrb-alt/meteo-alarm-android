@@ -1,4 +1,4 @@
-Nuvarande version: v.6.10 · 16.11.2026
+Nuvarande version: v.1.520 · 16.11.2026
 AVISERINGAR
 - Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
 - Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
@@ -17,15 +17,16 @@ LANTBRUKARLÄGE
 SKIFTEN
 - Kartvyer: runda knappar under ＋/− växlar mellan satellit och karta och visar regnradarn för de senaste 2 timmarna.
 - Nålar på kartan: ett tryck på en nål zoomar kartan till skiftet och visar dess namn; ett andra tryck visar dess punkter.
+- Nytt skifte: nålen börjar mitt på den synliga kartan; GPS-knappen flyttar den dit du är.
 - Papperskorg: ett raderat skifte hamnar i 15 dagar i papperskorgen under GPS-knappen och kan återställas därifrån.
 - Sidan Skiften: skiftenas kort (namn, koordinater, penna, Statistik · PDF, klocka, papperskorg) svävar över kartan, i en rad nederst eller en kolumn till höger; ＋, även fliken ＋, öppnar rutan för ett nytt skifte.
-- Skiftets hörn: i satellitvyn hittas de 4 hörnen i bilden och flyttas med fingret; ett tryck på kortet visar hörnen, Visa öppnar skiftet.
+- Skiftets hörn: i satellitvyn hittas de 4 hörnen i bilden och flyttas med fingret; ett tryck på kortet zoomar till skiftet och visar hörnen, Statistik öppnar dess statistik.
 - Skiftets punkter: + Punkt lägger till upp till 3 punkter till (högst 7), Cirkel fördelar dem jämnt på en cirkel, ett långt tryck på en punkt tar bort den.
 UPPDATERINGAR
 - Uppdateringar: appen söker inte längre själv efter uppdateringar, bara när du trycker på ☰ › Sök efter uppdateringar; den nya versionen laddas ned i webbläsaren och du installerar den från den nedladdade filen.
 - Designförbättringar och felrättningar.
 
-Version 4 (v.4.00 – v.4.52)
+Version 1.3 (v.1.300 – v.1.352)
 HUVUDSKÄRM
 - Export / Import: flyttar dina orter, favoriter, skiften och inställningar till en annan enhet via en fil (Spara, Dela; Importera med Lägg till eller Ersätt).
 - Plats: byar du passerar kommer med i länets lista (i 7 dagar, eller för gott om du ofta är där); kompassen visar även byarna.
@@ -39,7 +40,7 @@ WIDGETAR
 - Widget 4x2 · lista: en stor temperatur och de kommande 4 dagarna (en ikon var) eller timmarna, valbart i inställningarna; orten med kompassens ortsmärke.
 - Widgetar: kodernas färgade linjer på varje widget, utan texten VARNING; utan koder en blå linje med den första gällande informationen (t.ex. Rimfrost).
 
-Version 3 (v.3.00 – v.3.92)
+Version 1.2 (v.1.200 – v.1.292)
 AVISERINGAR
 - Aviseringar som telefonens Väder-app (”Plats | Regn”): regn eller snö inom en timme och efter kl. 20 för i morgon, för orten och skiftena; ingen avisering när Open-Meteo svarar igen.
 - En egen INFORMATION-avisering även för orten.
@@ -65,7 +66,7 @@ UPPDATERINGAR
 - Uppdateringar: anslutningen kontrolleras först, en redan hämtad version installeras direkt, upp till 5 försök när GitHub inte svarar, och orsaken visas.
 - Designförbättringar och felrättningar.
 
-Version 2 (v.2.00 – v.2.91)
+Version 1.1 (v.1.100 – v.1.191)
 - Alla EU:s officiella språk och ukrainska.
 - Sidan Jordbävningar.
 - Aviseringar med ditt samtycke: regn eller snö, varningar, jordbävningar.
@@ -80,7 +81,7 @@ Version 2 (v.2.00 – v.2.91)
 - Lantbruksläge: huvudskärmarna glider med fingret.
 - Designförbättringar och felrättningar.
 
-Version 1 (v.1.00 – v.1.93)
+Version 1.0 (v.1.000 – v.1.093)
 - Gjord utifrån Meteo Alarm Kindle: dess skärm flyttad till Android-telefoner och surfplattor.
 - Vädret nu, de närmaste timmarna, nederbörd för 12 timmar och 5 dagar.
 - Rutor: Sol / Måne, UV, Pollen, Luftfuktighet, Luftkvalitet, Lufttryck, Vind, Sikt, Kompass, Jordbävning.

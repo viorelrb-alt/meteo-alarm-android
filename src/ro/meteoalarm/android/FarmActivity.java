@@ -2000,12 +2000,28 @@ public final class FarmActivity extends Activity {
 		sc.setVerticalScrollBarEnabled(true);
 		sc.setScrollbarFadingEnabled(false);
 		LinearLayout body = column();
-		body.addView(text(Tr.t("New parcel", "Parcelă nouă"), tab ? 19 : 17, true, ink));
-		final TextView where = text(Tr.t("Looking for the position (GPS)…", "Caut poziția (GPS)…"), 15, true, ink);
-		body.addView(where, wide(8));
-		body.addView(text(Tr.t("Tap the map to move the pin.", "Atinge harta ca să muți acul."), 13, false, dim), wide(2));
-		final TextView cornInfo = text("", 13, false, dim);
-		body.addView(cornInfo, wide(4));
+		// v1.520 (Viorel): the name on top (no title), then + Point and Circle, then the texts.
+		final EditText nameIn = new EditText(this);
+		nameIn.setSingleLine(true);
+		nameIn.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+		nameIn.setHint(Tr.t("Name, e.g. parcel 96/5", "Nume, ex. parcela 96/5"));
+		nameIn.setTextColor(ink);
+		nameIn.setHintTextColor(dim);
+		nameIn.setTextSize(tab ? 19 : 18);
+		nameIn.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+		nameIn.setText(newName);
+		nameIn.addTextChangedListener(new android.text.TextWatcher() {
+			public void beforeTextChanged(CharSequence c, int a, int b, int d) {
+			}
+
+			public void onTextChanged(CharSequence c, int a, int b, int d) {
+			}
+
+			public void afterTextChanged(android.text.Editable e) {
+				newName = e.toString();
+			}
+		});
+		body.addView(nameIn);
 		// v6.10 (Viorel): up to 3 more points, or the points evenly on a circle.
 		LinearLayout tools = new LinearLayout(this);
 		tools.setGravity(Gravity.CENTER_VERTICAL);
@@ -2019,30 +2035,15 @@ public final class FarmActivity extends Activity {
 			tl.rightMargin = px(8);
 			tools.addView(t, tl);
 		}
-		body.addView(tools, wide(8));
+		body.addView(tools, wide(6));
+		final TextView where = text(Tr.t("Looking for the position (GPS)…", "Caut poziția (GPS)…"), 15, true, ink);
+		body.addView(where, wide(10));
+		body.addView(text(Tr.t("Tap the map to move the pin.", "Atinge harta ca să muți acul."), 13, false, dim), wide(2));
+		final TextView cornInfo = text("", 13, false, dim);
+		body.addView(cornInfo, wide(4));
 		final TextView toolHint = text(Tr.t("A long press on a point deletes it (4 to 7 points).", "Apăsarea lungă pe un punct îl șterge (între 4 și 7 puncte)."), 12, false, dim);
 		body.addView(toolHint, wide(4));
 		newTools = new View[] { tools, toolHint };
-		final EditText nameIn = new EditText(this);
-		nameIn.setSingleLine(true);
-		nameIn.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
-		nameIn.setHint(Tr.t("Name, e.g. parcel 96/5", "Nume, ex. parcela 96/5"));
-		nameIn.setTextColor(ink);
-		nameIn.setHintTextColor(dim);
-		nameIn.setTextSize(16);
-		nameIn.setText(newName);
-		nameIn.addTextChangedListener(new android.text.TextWatcher() {
-			public void beforeTextChanged(CharSequence c, int a, int b, int d) {
-			}
-
-			public void onTextChanged(CharSequence c, int a, int b, int d) {
-			}
-
-			public void afterTextChanged(android.text.Editable e) {
-				newName = e.toString();
-			}
-		});
-		body.addView(nameIn, wide(6));
 		sc.addView(body);
 		box.addView(sc, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		wrap.addView(box, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -2107,13 +2108,13 @@ public final class FarmActivity extends Activity {
 				cornInfo.setText(Tr.t("The parcel's corners: move them with a finger if needed.", "Colțurile parcelei: mută-le cu degetul dacă e nevoie."));
 			} else findCorners(m, at, cornInfo);
 		}
-		else if (!Double.isNaN(meLa)) {
-			at[0] = meLa;
-			at[1] = meLo;
+		else {
+			// v1.520 (Viorel): the pin in the middle of the map in sight; GPS only on its button.
+			at[0] = m.lat();
+			at[1] = m.lon();
 			put.run();
-			m.center(meLa, meLo);
 		}
-		newGps = newTapped ? null : new Runnable() {
+		newGps = new Runnable() {
 			public void run() {
 				if (Double.isNaN(meLa)) return;
 				at[0] = meLa;
@@ -2123,7 +2124,6 @@ public final class FarmActivity extends Activity {
 			}
 		};
 		centerMe = false;
-		locate();
 		x.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				closeNew();
@@ -2489,9 +2489,9 @@ public final class FarmActivity extends Activity {
 	 */
 	private void showCorners(final Parcels.Parcel p) {
 		Log.i(this, "FERMIER", "bula parcelei " + p.name);
-		final boolean tab = TextSize.tablet(this);
+		final boolean tab = TextSize.tablet(this), land = land();
 		final FrameLayout scrim = new FrameLayout(this);
-		scrim.setBackgroundColor(0x22000000);
+		scrim.setBackgroundColor(0x14000000);
 		scrim.setClickable(true);
 		LinearLayout win = column();
 		win.setBackground(glass(px(22), 0.94f));
@@ -2552,15 +2552,38 @@ public final class FarmActivity extends Activity {
 			win.addView(text(Tr.t("The parcel's place (GPS); no corners yet.", "Locul parcelei (GPS); colțurile nu sunt definite."), 13, false, dim), wide(6));
 			win.addView(text(coords(p.lat, p.lon), tab ? 17 : 15, true, ink), wide(4));
 		}
-		TextView show = button(Tr.t("Show", "Afișare"), new View.OnClickListener() {
+		// v1.520 (Viorel): Statistics instead of Show.
+		TextView show = button(Tr.t("Statistics", "Statistică"), new View.OnClickListener() {
 			public void onClick(View v) {
-				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
-				select(p.id);
+				Log.i(FarmActivity.this, "FERMIER", "statistica parcelei (din bulă) " + p.name);
+				closeOverlay();
+				openStats(p.id);
 			}
 		});
 		win.addView(show, wide(12));
-		int w = Math.min(px(tab ? 460 : 380), getResources().getDisplayMetrics().widthPixels - px(32));
-		scrim.addView(win, new FrameLayout.LayoutParams(w, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+		int sw = getResources().getDisplayMetrics().widthPixels;
+		int w = Math.min(px(tab ? 460 : 380), (land ? sw / 2 : sw) - px(24));
+		// v1.520: the bubble at the top (portrait) or at the left (landscape), the map zoomed on
+		// the parcel in the room left free.
+		FrameLayout.LayoutParams wl = new FrameLayout.LayoutParams(w, ViewGroup.LayoutParams.WRAP_CONTENT, land ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+		wl.setMargins(px(12), px(12), px(12), px(12));
+		scrim.addView(win, wl);
+		final LinearLayout winF = win;
+		if (listMap != null && screen.equals("list")) win.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+			boolean done;
+
+			public void onLayoutChange(View v, int l, int t, int r, int b, int ol, int ot, int or, int ob) {
+				if (done || winF.getHeight() == 0) return;
+				done = true;
+				final MapView m = listMap;
+				final float left = land ? winF.getRight() : 0, top = land ? 0 : winF.getBottom();
+				m.post(new Runnable() {
+					public void run() {
+						m.focusIn(p.id, left, top);
+					}
+				});
+			}
+		});
 		View.OnClickListener close = new View.OnClickListener() {
 			public void onClick(View v) {
 				root.removeView(scrim);
@@ -2981,7 +3004,8 @@ public final class FarmActivity extends Activity {
 				meLa = l.getLatitude();
 				meLo = l.getLongitude();
 			}
-			if (l != null && newGps != null) newGps.run();
+			// v1.520 (Viorel): the new parcel's pin follows GPS only after the GPS button.
+			if (l != null && newGps != null && go) newGps.run();
 			if (l != null && map != null) {
 				map.setMe(l.getLatitude(), l.getLongitude());
 				// v2.91: the GPS button takes the map there; when the Parcels page opens, the

@@ -1,4 +1,4 @@
-Versão atual: v.6.10 · 16.11.2026
+Versão atual: v.1.520 · 16.11.2026
 ATUALIZAÇÕES
 - Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES
@@ -18,14 +18,15 @@ NOTIFICAÇÕES
 - Tornados (EUA): os avisos de tornado para a sua localidade ligam-se ou desligam-se em ☰.
 PARCELAS
 - Alfinetes no mapa: um toque num alfinete aproxima o mapa da parcela e mostra o seu nome; um segundo toque mostra os seus pontos.
-- Cantos da parcela: na vista de satélite os 4 cantos são encontrados na imagem e movem-se com o dedo; um toque no cartão mostra os cantos, Mostrar abre a parcela.
+- Cantos da parcela: na vista de satélite os 4 cantos são encontrados na imagem e movem-se com o dedo; um toque no cartão aproxima o mapa da parcela e mostra os cantos, Estatística abre a sua estatística.
 - Lixo: uma parcela apagada vai 15 dias para o lixo sob o botão GPS e pode ser restaurada a partir daí.
+- Parcela nova: o alfinete começa no centro do mapa visível; o botão GPS leva-o para onde está.
 - Página Parcelas: os cartões das parcelas (nome, coordenadas, lápis, Estatística · PDF, sino, lixo) flutuam sobre o mapa, numa linha em baixo ou numa coluna à direita; ＋, também o separador ＋, abre a caixa de uma parcela nova.
 - Pontos da parcela: + Ponto adiciona até 3 pontos a mais (no máximo 7), Círculo distribui-os por igual num círculo, um toque longo num ponto apaga-o.
 - Vistas do mapa: botões redondos sob ＋/− alternam entre satélite e mapa e mostram o radar de chuva das últimas 2 horas.
 - Melhorias de design e correção de erros.
 
-Versão 4 (v.4.00 – v.4.52)
+Versão 1.3 (v.1.300 – v.1.352)
 ECRÃ PRINCIPAL
 - Avisos: um toque numa caixa de código ou de informação mostra em cima os valores da previsão (rajadas, quantidades, temperaturas), depois o intervalo e as explicações.
 - Bússola grande: a localidade onde está aparece primeiro (cinzento); Partilhar envia também uma imagem da janela, as localidades próximas com as distâncias, a bateria, as temperaturas (ar, solo, à altura do telemóvel) e o vento.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · lista: uma temperatura grande e os próximos 4 dias (um ícone cada) ou horas, à escolha nas definições; a localidade com a marca de localidade da bússola.
 - Widgets: as linhas coloridas dos códigos em todos os widgets, sem o texto AVISO; sem códigos, uma linha azul com a primeira informação válida (ex. Geada).
 
-Versão 3 (v.3.00 – v.3.92)
+Versão 1.2 (v.1.200 – v.1.292)
 ATUALIZAÇÕES
 - Antes de uma atualização, verificação da permissão de instalação e nota sobre o Auto Blocker (Samsung) com botão para as definições.
 - Atualizações de três fontes: GitHub, um segundo servidor GitHub e Google Drive.
@@ -65,7 +66,7 @@ TEMAS
 - 6 temas de cor (Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa), cada um claro e escuro: ☰ › Tema.
 - Melhorias de design e correção de erros.
 
-Versão 2 (v.2.00 – v.2.91)
+Versão 1.1 (v.1.100 – v.1.191)
 - Todas as línguas oficiais da UE e o ucraniano.
 - Página Sismos.
 - Notificações com o teu consentimento: chuva ou neve, avisos, sismos.
@@ -80,7 +81,7 @@ Versão 2 (v.2.00 – v.2.91)
 - Modo agricultor: os ecrãs principais deslizam com o dedo.
 - Melhorias de design e correção de erros.
 
-Versão 1 (v.1.00 – v.1.93)
+Versão 1.0 (v.1.000 – v.1.093)
 - Feita a partir do Meteo Alarm Kindle: o seu ecrã levado para telemóveis e tablets Android.
 - O tempo agora, as próximas horas, a precipitação de 12 horas e 5 dias.
 - Caixas: Sol / Lua, UV, Pólen, Humidade, Qualidade do ar, Pressão, Vento, Visibilidade, Bússola, Sismo.

@@ -1,4 +1,4 @@
-Versione attuale: v.6.10 · 16.11.2026
+Versione attuale: v.1.520 · 16.11.2026
 AGGIORNAMENTI
 - Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ☰ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
 IMPOSTAZIONI
@@ -13,8 +13,9 @@ NOTIFICHE
 - Terremoti: notifiche solo per i terremoti entro 300 km dal tuo luogo; si attivano o disattivano in ☰.
 - Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ☰.
 PARTICELLE
-- Angoli della particella: nella vista satellite i 4 angoli sono trovati dall'immagine e si spostano col dito; un tocco sulla scheda mostra gli angoli, Mostra apre la particella.
+- Angoli della particella: nella vista satellite i 4 angoli vengono trovati dall'immagine e si spostano con il dito; un tocco sulla scheda ingrandisce la mappa sulla particella e mostra gli angoli, Statistica apre la sua statistica.
 - Cestino: una particella eliminata va per 15 giorni nel cestino sotto il pulsante GPS e si può ripristinare da lì.
+- Nuova particella: lo spillo parte dal centro della mappa visibile; il pulsante GPS lo porta dove sei.
 - Pagina Particelle: le schede delle particelle (nome, coordinate, matita, Statistica · PDF, campana, cestino) galleggiano sulla mappa, in una riga in basso o una colonna a destra; ＋, anche la scheda ＋, apre il riquadro di una nuova particella.
 - Punti della particella: + Punto aggiunge fino a 3 punti in più (al massimo 7), Cerchio li dispone a distanze uguali su un cerchio, una pressione lunga su un punto lo elimina.
 - Spilli sulla mappa: un tocco su uno spillo ingrandisce la mappa sulla particella e ne mostra il nome; un secondo tocco mostra i suoi punti.
@@ -25,7 +26,7 @@ SCHERMATA PRINCIPALE
 - Schermata principale: la pagina scorre sotto il vetro in alto, per sezioni (Prossime ore, Previsioni a cinque giorni, Dettagli meteo); i pulsanti e la batteria galleggiano in basso.
 - Miglioramenti del design e correzioni di errori.
 
-Versione 4 (v.4.00 – v.4.52)
+Versione 1.3 (v.1.300 – v.1.352)
 SCHERMATA PRINCIPALE
 - Allerte: un tocco su un riquadro di codice o di informazione mostra in alto i valori della previsione (raffiche, quantità, temperature), poi l'intervallo e le spiegazioni.
 - Bussola grande: la località in cui sei compare per prima (grigio); Condividi invia anche un'immagine della finestra, le località vicine con le distanze, la batteria, le temperature (aria, suolo, all'altezza del telefono) e il vento.
@@ -39,7 +40,7 @@ WIDGET
 - Widget 4x2 · elenco: una temperatura grande e i prossimi 4 giorni (un'icona ciascuno) o le ore, a scelta nelle impostazioni; la località con il segno di località della bussola.
 - Widget: le linee colorate dei codici su ogni widget, senza il testo ALLERTA; senza codici, una linea blu con la prima informazione valida (es. Brina).
 
-Versione 3 (v.3.00 – v.3.92)
+Versione 1.2 (v.1.200 – v.1.292)
 AGGIORNAMENTI
 - Aggiornamenti da tre fonti: GitHub, un secondo server GitHub e Google Drive.
 - Aggiornamenti: prima si controlla la connessione, una versione già scaricata si installa subito, fino a 5 tentativi quando GitHub non risponde, e viene mostrato il motivo.
@@ -65,7 +66,7 @@ TEMI
 - 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ☰ › Tema.
 - Miglioramenti del design e correzioni di errori.
 
-Versione 2 (v.2.00 – v.2.91)
+Versione 1.1 (v.1.100 – v.1.191)
 - Tutte le lingue ufficiali dell'UE e l'ucraino.
 - Pagina Terremoti.
 - Notifiche con il tuo consenso: pioggia o neve, allerte, terremoti.
@@ -80,7 +81,7 @@ Versione 2 (v.2.00 – v.2.91)
 - Modalità agricoltore: le schermate principali scorrono con il dito.
 - Miglioramenti del design e correzioni di errori.
 
-Versione 1 (v.1.00 – v.1.93)
+Versione 1.0 (v.1.000 – v.1.093)
 - Nata da Meteo Alarm Kindle: la sua schermata portata su telefoni e tablet Android.
 - Il meteo attuale, le prossime ore, le precipitazioni per 12 ore e 5 giorni.
 - Riquadri: Sole / Luna, UV, Pollini, Umidità, Qualità dell'aria, Pressione, Vento, Visibilità, Bussola, Terremoto.

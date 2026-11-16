@@ -1,4 +1,4 @@
-Pašreizējā versija: v.6.10 · 16.11.2026
+Pašreizējā versija: v.1.520 · 16.11.2026
 ATJAUNINĀJUMI
 - Atjauninājumi: lietotne vairs pati nemeklē atjauninājumus, tikai kad pieskaraties ☰ › Pārbaudīt atjauninājumus; jaunā versija tiek lejupielādēta pārlūkā, un jūs to instalējat no lejupielādētā faila.
 GALVENAIS EKRĀNS
@@ -10,10 +10,11 @@ IESTATĪJUMI
 - Iestatījumi: izvēlne ☰ tagad ir logs ar sadaļām, slēdžiem, krāsu motīviem un joslu Sistēma un atbalsts; atsvaidzina, velkot ekrānu uz leju vai pieskaroties “atjaunināts”.
 - Ikonu motīvs: 6 laikapstākļu ikonu motīvi (Klasiskais, Spīdīgais, Plakanais, Reālistiskais, Atmosfēriskais, Kontūra), izvēlas ar krāsainiem punktiem izvēlnē ☰; lietotnē un logrīkos.
 LAUKI
+- Jauns lauks: piesprauze sāk redzamās kartes vidū; GPS poga to pārceļ, kur tu esi.
 - Kartes skati: apaļās pogas zem ＋/− pārslēdz satelītu un karti un rāda pēdējo 2 stundu nokrišņu radaru.
 - Lapa Lauki: lauku kartītes (nosaukums, koordinātas, zīmulis, Statistika · PDF, zvaniņš, miskaste) peld virs kartes, rindā apakšā vai kolonnā labajā pusē; ＋, arī cilne ＋, atver jauna lauka lodziņu.
 - Lauka punkti: + Punkts pievieno līdz 3 punktiem vairāk (ne vairāk kā 7), Aplis tos izkārto vienmērīgi uz apļa, ilgs spiediens uz punkta to izdzēš.
-- Lauka stūri: satelīta skatā 4 stūri tiek atrasti attēlā un pārvietoti ar pirkstu; pieskāriens kartītei parāda stūrus, Rādīt atver lauku.
+- Lauka stūri: satelīta skatā 4 stūri tiek atrasti attēlā un pārvietoti ar pirkstu; kartītes pieskāriens pietuvina karti laukam un rāda stūrus, Statistika atver tā statistiku.
 - Miskaste: dzēsts lauks uz 15 dienām nonāk miskastē zem GPS pogas, un to var atjaunot no turienes.
 - Piespraudes kartē: piespraudes pieskāriens pietuvina karti laukam un rāda tā nosaukumu; otrs pieskāriens rāda tā punktus.
 LAUKSAIMNIEKA REŽĪMS
@@ -25,7 +26,7 @@ PAZIŅOJUMI
 - Zemestrīces: paziņojumi tikai par zemestrīcēm ne tālāk par 300 km no tavas vietas; ieslēdz vai izslēdz izvēlnē ☰.
 - Dizaina uzlabojumi un kļūdu labojumi.
 
-Versija 4 (v.4.00 – v.4.52)
+Versija 1.3 (v.1.300 – v.1.352)
 GALVENAIS EKRĀNS
 - Atrašanās vieta: ciemi, caur kuriem braucat, tiek pievienoti apriņķa sarakstam (uz 7 dienām vai pastāvīgi, ja tur braucat bieži); kompass rāda arī ciemus.
 - Atrašanās vieta: citā valstī vai ASV štatā mazās apdzīvotās vietas tiek lejupielādētas vienreiz, kad tur pirmo reizi esi ar internetu, kompasam un vietu sarakstam.
@@ -39,7 +40,7 @@ LOGRĪKI
 - Logrīki: kodu krāsainās līnijas katrā logrīkā, bez teksta BRĪDINĀJUMS; bez kodiem viena zila līnija ar pirmo spēkā esošo informāciju (piem., Sarma).
 - Logrīks 4x2 · saraksts: liela temperatūra un nākamās 4 dienas (katrai viena ikona) vai stundas, izvēlamas iestatījumos; vieta ar kompasa vietas zīmi.
 
-Versija 3 (v.3.00 – v.3.92)
+Versija 1.2 (v.1.200 – v.1.292)
 ATJAUNINĀJUMI
 - Atjauninājumi no trim avotiem: GitHub, otrs GitHub serveris un Google Drive.
 - Atjauninājumi: vispirms pārbauda savienojumu, jau lejupielādēta versija tiek uzreiz instalēta, līdz 5 mēģinājumiem, ja GitHub neatbild, un tiek parādīts iemesls.
@@ -65,7 +66,7 @@ PAZIŅOJUMI
 - Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
 - Dizaina uzlabojumi un kļūdu labojumi.
 
-Versija 2 (v.2.00 – v.2.91)
+Versija 1.1 (v.1.100 – v.1.191)
 - Visas ES oficiālās valodas un ukraiņu valoda.
 - Lapa Zemestrīces.
 - Paziņojumi ar tavu piekrišanu: lietus vai sniegs, brīdinājumi, zemestrīces.
@@ -80,7 +81,7 @@ Versija 2 (v.2.00 – v.2.91)
 - Lauksaimnieka režīms: galvenie ekrāni slīd līdzi pirkstam.
 - Dizaina uzlabojumi un kļūdu labojumi.
 
-Versija 1 (v.1.00 – v.1.93)
+Versija 1.0 (v.1.000 – v.1.093)
 - Veidota no Meteo Alarm Kindle: tā ekrāns pārnests uz Android tālruņiem un planšetēm.
 - Laiks tagad, nākamās stundas, nokrišņi 12 stundām un 5 dienām.
 - Lodziņi: Saule / Mēness, UV, Ziedputekšņi, Mitrums, Gaisa kvalitāte, Spiediens, Vējš, Redzamība, Kompass, Zemestrīce.

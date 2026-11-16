@@ -1,4 +1,4 @@
-Nykyinen versio: v.6.10 · 16.11.2026
+Nykyinen versio: v.1.520 · 16.11.2026
 ASETUKSET
 - Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
 - Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ☰; sovelluksessa ja widgeteissä.
@@ -14,18 +14,19 @@ PÄIVITYKSET
 - Päivitykset: sovellus ei enää etsi päivityksiä itse, vain kun napautat ☰ › Tarkista päivitykset; uusi versio ladataan selaimessa ja asennat sen ladatusta tiedostosta.
 PELTOLOHKOT
 - Karttanäkymät: ＋/−-painikkeiden alla olevat pyöreät painikkeet vaihtavat satelliitin ja kartan ja näyttävät sadetutkan 2 viime tunnilta.
-- Lohkon kulmat: satelliittinäkymässä 4 kulmaa löydetään kuvasta ja niitä siirretään sormella; kortin napautus näyttää kulmat, Näytä avaa lohkon.
+- Lohkon kulmat: satelliittinäkymässä 4 kulmaa löydetään kuvasta ja siirretään sormella; kortin napautus lähentää kartan lohkoon ja näyttää kulmat, Tilastot avaa sen tilastot.
 - Lohkon pisteet: + Piste lisää enintään 3 pistettä lisää (enintään 7), Ympyrä asettaa ne tasavälein ympyrälle, pitkä painallus pisteeseen poistaa sen.
 - Lohkot-sivu: lohkojen kortit (nimi, koordinaatit, kynä, Tilastot · PDF, kello, roskakori) leijuvat kartan päällä, rivinä alhaalla tai sarakkeena oikealla; ＋, myös ＋-välilehti, avaa uuden lohkon ruudun.
 - Neulat kartalla: neulan napautus lähentää kartan lohkoon ja näyttää sen nimen; toinen napautus näyttää sen pisteet.
 - Roskakori: poistettu lohko siirtyy 15 päiväksi GPS-painikkeen alla olevaan roskakoriin ja sen voi palauttaa sieltä.
+- Uusi lohko: neula alkaa näkyvän kartan keskeltä; GPS-painike siirtää sen sinne, missä olet.
 VILJELIJÄTILA
 - Toimintatila: lohkon näytöllä, vain kun tarpeen, ruiskutuksen tuomio, syy ja seuraavan 24 tunnin riskit.
 - Välilehdet: paikkakunta ja lohkot välilehdinä nimen alla (vaakatasossa alhaalla); lohkon näyttö osioissa 1–4.
 - Viljelijäpainike: painikkeiden vieressä oleva lehtipainike poistaa viljelijätilan; toinen paikkakunta säilyttää sen.
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
-Versio 4 (v.4.00 – v.4.52)
+Versio 1.3 (v.1.300 – v.1.352)
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus Kompassi-ruutuun näyttää kompassin, GPS-koordinaatit ja 3 lähintä paikkakuntaa väreinä; Jaa lähettää koordinaatit.
 - Ruudut: napautus mihin tahansa ruutuun näyttää arvon ylhäällä ja selitykset sen alla.
@@ -39,7 +40,7 @@ WIDGETIT
 - Widget 4x2 · luettelo: suuri lämpötila ja seuraavat 4 päivää (kukin yhdellä kuvakkeella) tai tunnit, valittavissa asetuksissa; paikka kompassin paikkamerkillä.
 - Widgetit: koodien väriviivat jokaisessa widgetissä ilman tekstiä VAROITUS; ilman koodeja yksi sininen viiva ensimmäisellä voimassa olevalla tiedotteella (esim. Kuura).
 
-Versio 3 (v.3.00 – v.3.92)
+Versio 1.2 (v.1.200 – v.1.292)
 ILMOITUKSET
 - Erillinen TIEDOTE-ilmoitus myös paikkakunnalle.
 - Erilliset TIEDOTE-ilmoitukset jokaiselle lohkolle: kuura, pakkanen, sumu, jäätävä sade, kovat puuskat.
@@ -65,7 +66,7 @@ VILJELIJÄTILA
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
-Versio 2 (v.2.00 – v.2.91)
+Versio 1.1 (v.1.100 – v.1.191)
 - Kaikki EU:n viralliset kielet ja ukraina.
 - Maanjäristykset-sivu.
 - Ilmoitukset suostumuksellasi: sade tai lumi, varoitukset, maanjäristykset.
@@ -80,7 +81,7 @@ Versio 2 (v.2.00 – v.2.91)
 - Viljelijätila: päänäytöt liukuvat sormen mukana.
 - Ulkoasun parannuksia ja virheenkorjauksia.
 
-Versio 1 (v.1.00 – v.1.93)
+Versio 1.0 (v.1.000 – v.1.093)
 - Tehty Meteo Alarm Kindlen pohjalta: sen näkymä tuotu Android-puhelimiin ja -tabletteihin.
 - Sää nyt, seuraavat tunnit, sademäärä 12 tunnille ja 5 päivälle.
 - Ruudut: Aurinko / Kuu, UV, Siitepöly, Kosteus, Ilmanlaatu, Ilmanpaine, Tuuli, Näkyvyys, Kompassi, Maanjäristys.

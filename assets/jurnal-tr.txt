@@ -1,4 +1,4 @@
-Geçerli sürüm: v.6.10 · 16.11.2026
+Geçerli sürüm: v.1.520 · 16.11.2026
 ANA EKRAN
 - Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
@@ -20,12 +20,13 @@ PARSELLER
 - Çöp kutusu: silinen parsel 15 gün boyunca GPS düğmesinin altındaki çöp kutusuna gider ve oradan geri yüklenebilir.
 - Harita görünümleri: ＋/− altındaki yuvarlak düğmeler uydu ile harita arasında geçer ve son 2 saatin yağış radarını gösterir.
 - Haritadaki iğneler: bir iğneye dokunmak haritayı parsele yaklaştırır ve adını gösterir; ikinci dokunuş noktalarını gösterir.
-- Parsel köşeleri: uydu görünümünde 4 köşe görüntüden bulunur ve parmakla taşınır; karta dokunmak köşeleri gösterir, Göster parseli açar.
+- Parsel köşeleri: uydu görünümünde 4 köşe resimden bulunur ve parmakla taşınır; karta dokunmak haritayı parsele yaklaştırır ve köşeleri gösterir, İstatistik onun istatistiğini açar.
 - Parsel noktaları: + Nokta en fazla 3 nokta daha ekler (en fazla 7), Daire onları bir daireye eşit dağıtır, bir noktaya uzun basmak onu siler.
 - Parseller sayfası: parsellerin kartları (ad, koordinatlar, kalem, İstatistik · PDF, zil, çöp kutusu) haritanın üzerinde, altta bir sırada veya sağda bir sütunda yüzer; ＋, ＋ sekmesi de, yeni parsel kutusunu açar.
+- Yeni parsel: iğne görünen haritanın ortasından başlar; GPS düğmesi onu bulunduğun yere taşır.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
-Sürüm 4 (v.4.00 – v.4.52)
+Sürüm 1.3 (v.1.300 – v.1.352)
 ANA EKRAN
 - Büyük pusula: bulunduğunuz yer ilk sırada (gri); Paylaş ayrıca pencerenin görüntüsünü, yakındaki yerleri mesafeleriyle, pili, sıcaklıkları (hava, zemin, telefonun yüksekliğinde) ve rüzgârı gönderir.
 - Büyük pusula: Pusula kutusuna dokunmak pusulayı, GPS koordinatlarını ve en yakın 3 yerleşim yerini renkli gösterir; Paylaş koordinatları gönderir.
@@ -39,7 +40,7 @@ WIDGET'LAR
 - Widget 4x2 · liste: büyük sıcaklık ve sonraki 4 gün (her biri bir simge) veya saatler, ayarlardan seçilebilir; yerleşim yeri pusulanın yer işaretiyle.
 - Widget'lar: her widget'ta kodların renkli çizgileri, UYARI yazısı olmadan; kod yoksa geçerli ilk bilgiyle tek bir mavi çizgi (ör. Kiraği).
 
-Sürüm 3 (v.3.00 – v.3.92)
+Sürüm 1.2 (v.1.200 – v.1.292)
 ANA EKRAN
 - Avrupa'da BİLGİ kutuları: kırağı, don, sis, donan yağmur, kuvvetli rüzgâr.
 - Hava simgeleri: temanın renklerinde; büyük olan ve günlerinkiler 3 saniye hareket eder, her yenilemeden sonra da.
@@ -65,7 +66,7 @@ TEMALAR
 - 6 renk teması (Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül), her biri açık ve koyu: ☰ › Tema.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
-Sürüm 2 (v.2.00 – v.2.91)
+Sürüm 1.1 (v.1.100 – v.1.191)
 - AB'nin tüm resmî dilleri ve Ukraynaca.
 - Depremler sayfası.
 - İzninle bildirimler: yağmur veya kar, uyarılar, depremler.
@@ -80,7 +81,7 @@ Sürüm 2 (v.2.00 – v.2.91)
 - Çiftçi modu: ana ekranlar parmakla birlikte kayar.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 
-Sürüm 1 (v.1.00 – v.1.93)
+Sürüm 1.0 (v.1.000 – v.1.093)
 - Meteo Alarm Kindle'dan yapıldı: ekranı Android telefon ve tabletlere taşındı.
 - Şimdiki hava, sonraki saatler, 12 saatlik ve 5 günlük yağış.
 - Kutular: Güneş / Ay, UV, Polen, Nem, Hava kalitesi, Basınç, Rüzgâr, Görüş, Pusula, Deprem.

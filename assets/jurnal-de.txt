@@ -1,4 +1,4 @@
-Aktuelle Version: v.6.10 · 16.11.2026
+Aktuelle Version: v.1.520 · 16.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
 - Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.
@@ -15,9 +15,10 @@ LANDWIRT-MODUS
 - Landwirt-Taste: die Blatt-Taste neben den Tasten schaltet den Landwirt-Modus aus; ein anderer Ort behält ihn.
 - Reiter: der Ort und die Parzellen als Reiter unter dem Namen (quer unten); der Bildschirm einer Parzelle in den Abschnitten 1–4.
 PARZELLEN
-- Ecken der Parzelle: in der Satellitenansicht werden die 4 Ecken aus dem Bild gefunden und mit dem Finger verschoben; ein Tippen auf die Karte zeigt die Ecken, Anzeigen öffnet die Parzelle.
+- Ecken der Parzelle: in der Satellitenansicht werden die 4 Ecken aus dem Bild gefunden und mit dem Finger verschoben; ein Tippen auf die Karte zoomt auf die Parzelle und zeigt die Ecken, Statistik öffnet ihre Statistik.
 - Kartenansichten: runde Tasten unter ＋/− wechseln zwischen Satellit und Karte und zeigen das Regenradar der letzten 2 Stunden.
 - Nadeln auf der Karte: ein Tippen auf eine Nadel zoomt die Karte auf die Parzelle und zeigt ihren Namen; ein zweites Tippen zeigt ihre Punkte.
+- Neue Parzelle: die Nadel beginnt in der Mitte der sichtbaren Karte; die GPS-Taste setzt sie dorthin, wo du bist.
 - Papierkorb: eine gelöschte Parzelle kommt für 15 Tage in den Papierkorb unter der GPS-Taste und kann dort wiederhergestellt werden.
 - Punkte der Parzelle: + Punkt fügt bis zu 3 weitere Punkte hinzu (höchstens 7), Kreis verteilt sie gleichmäßig auf einem Kreis, langes Drücken auf einen Punkt löscht ihn.
 - Seite Parzellen: die Karten der Parzellen (Name, Koordinaten, Stift, Statistik · PDF, Glocke, Papierkorb) schweben über der Karte, in einer Reihe unten oder einer Spalte rechts; ＋, auch der Tab ＋, öffnet das Feld einer neuen Parzelle.
@@ -25,7 +26,7 @@ UPDATES
 - Updates: Die App sucht nicht mehr selbst nach Updates, nur wenn du auf ☰ › Nach Updates suchen tippst; die neue Version wird im Browser heruntergeladen und du installierst sie aus der heruntergeladenen Datei.
 - Design-Verbesserungen und Fehlerbehebungen.
 
-Version 4 (v.4.00 – v.4.52)
+Version 1.3 (v.1.300 – v.1.352)
 HAUPTBILDSCHIRM
 - Export / Import: überträgt Ihre Orte, Favoriten, Parzellen und Einstellungen per Datei auf ein anderes Gerät (Speichern, Teilen; Import mit Hinzufügen oder Ersetzen).
 - Felder: Tippen auf ein Feld zeigt oben den Wert und darunter die Erklärungen.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · Liste: eine große Temperatur und die nächsten 4 Tage (je ein Symbol) oder Stunden, in den Einstellungen wählbar; der Ort mit dem Ortszeichen des Kompasses.
 - Widgets: die farbigen Code-Linien auf jedem Widget, ohne den Text WARNUNG; ohne Codes eine blaue Linie mit der ersten gültigen Information (z. B. Reif).
 
-Version 3 (v.3.00 – v.3.92)
+Version 1.2 (v.1.200 – v.1.292)
 AKTUALISIERUNGEN
 - Updates aus drei Quellen: GitHub, ein zweiter GitHub-Server und Google Drive.
 - Updates: Zuerst wird die Verbindung geprüft, eine bereits geladene Version wird sofort installiert, bis zu 5 Versuche, wenn GitHub nicht antwortet, und der Grund wird angezeigt.
@@ -65,7 +66,7 @@ PARZELLEN
 - Benachrichtigungen für Parzellen, gewählt mit der Glocken-Taste auf der Karte: Regen, Wind, Schnee, Dürre.
 - Design-Verbesserungen und Fehlerbehebungen.
 
-Version 2 (v.2.00 – v.2.91)
+Version 1.1 (v.1.100 – v.1.191)
 - Alle EU-Amtssprachen und Ukrainisch.
 - Seite Erdbeben.
 - Benachrichtigungen mit deiner Zustimmung: Regen oder Schnee, Warnungen, Erdbeben.
@@ -80,7 +81,7 @@ Version 2 (v.2.00 – v.2.91)
 - Landwirt-Modus: Die Hauptbildschirme gleiten mit dem Finger.
 - Design-Verbesserungen und Fehlerbehebungen.
 
-Version 1 (v.1.00 – v.1.93)
+Version 1.0 (v.1.000 – v.1.093)
 - Entstanden aus Meteo Alarm Kindle: sein Bildschirm auf Android-Handys und -Tablets gebracht.
 - Das Wetter jetzt, die nächsten Stunden, Niederschlag für 12 Stunden und 5 Tage.
 - Kästchen: Sonne / Mond, UV, Pollen, Feuchte, Luftqualität, Luftdruck, Wind, Sicht, Kompass, Erdbeben.

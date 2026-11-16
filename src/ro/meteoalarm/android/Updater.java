@@ -53,6 +53,15 @@ final class Updater {
 		this.sheet = sheet;
 	}
 
+	/** v1.520: the app's build number (versionCode). */
+	int installedCode() {
+		try {
+			return a.getPackageManager().getPackageInfo(a.getPackageName(), 0).versionCode;
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+
 	String installed() {
 		try {
 			return a.getPackageManager().getPackageInfo(a.getPackageName(), 0).versionName;
@@ -274,7 +283,7 @@ final class Updater {
 			}
 			return;
 		}
-		if (!r.newerThan(cur)) {
+		if (!r.newerThan(cur, installedCode())) {
 			if (manual) sheet.show(t, (Tr.t("You have the latest version, v", "Ai ultima versiune, v")) + cur + ".", null, null, Tr.t("Close", "Închide"));
 			return;
 		}

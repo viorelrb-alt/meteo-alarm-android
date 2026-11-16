@@ -1,4 +1,4 @@
-Súčasná verzia: v.6.10 · 16.11.2026
+Súčasná verzia: v.1.520 · 16.11.2026
 AKTUALIZÁCIE
 - Aktualizácie: aplikácia už sama nehľadá aktualizácie, len keď ťuknete na ☰ › Skontrolovať aktualizácie; nová verzia sa stiahne v prehliadači a nainštalujete ju zo stiahnutého súboru.
 HLAVNÁ OBRAZOVKA
@@ -12,7 +12,8 @@ NASTAVENIA
 POZEMKY
 - Body pozemku: + Bod pridá až 3 ďalšie body (najviac 7), Kruh ich rozmiestni rovnomerne na kruhu, dlhé podržanie bodu ho vymaže.
 - Kôš: zmazaný pozemok ide na 15 dní do koša pod tlačidlom GPS a odtiaľ ho možno obnoviť.
-- Rohy pozemku: v satelitnom zobrazení sa 4 rohy nájdu z obrázka a posúvajú sa prstom; ťuknutie na kartu ukáže rohy, Zobraziť otvorí pozemok.
+- Nový pozemok: špendlík začína v strede viditeľnej mapy; tlačidlo GPS ho presunie tam, kde si.
+- Rohy pozemku: v satelitnom zobrazení sa 4 rohy nájdu na obrázku a posúvajú sa prstom; ťuknutie na kartu priblíži mapu na pozemok a ukáže rohy, Štatistika otvorí jeho štatistiku.
 - Stránka Pozemky: karty pozemkov (názov, súradnice, ceruzka, Štatistika · PDF, zvonček, kôš) plávajú nad mapou, v rade dole alebo v stĺpci vpravo; ＋, aj karta ＋, otvorí okno nového pozemku.
 - Špendlíky na mape: ťuknutie na špendlík priblíži mapu na pozemok a ukáže jeho názov; druhé ťuknutie ukáže jeho body.
 - Zobrazenia mapy: okrúhle tlačidlá pod ＋/− prepínajú satelit a mapu a ukazujú zrážkový radar za posledné 2 hodiny.
@@ -25,7 +26,7 @@ UPOZORNENIA
 - Zemetrasenia: upozornenia len na zemetrasenia najviac 300 km od vášho miesta; zapínajú sa a vypínajú v ☰.
 - Vylepšenia vzhľadu a opravy chýb.
 
-Verzia 4 (v.4.00 – v.4.52)
+Verzia 1.3 (v.1.300 – v.1.352)
 HLAVNÁ OBRAZOVKA
 - Export / Import: prenesie miesta, obľúbené, parcely a nastavenia do iného zariadenia pomocou súboru (Uložiť, Zdieľať; Importovať s voľbou Pridať alebo Nahradiť).
 - Ikony počasia: vo farbách motívu; všetky sa 3 sekundy hýbu, aj po každom obnovení a na miniaplikáciách.
@@ -39,7 +40,7 @@ MINIAPLIKÁCIE
 - Miniaplikácia 4x2 · zoznam: veľká teplota a ďalšie 4 dni (po jednej ikone) alebo hodiny, podľa voľby v nastaveniach; obec so značkou obce z kompasu.
 - Widgety: farebné čiary kódov na každom widgete, bez textu VÝSTRAHA; bez kódov jedna modrá čiara s prvou platnou informáciou (napr. Srieň).
 
-Verzia 3 (v.3.00 – v.3.92)
+Verzia 1.2 (v.1.200 – v.1.292)
 AKTUALIZÁCIE
 - Aktualizácie z troch zdrojov: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizácie: najprv sa overí pripojenie, už stiahnutá verzia sa hneď nainštaluje, až 5 pokusov, keď GitHub neodpovedá, a zobrazí sa dôvod.
@@ -65,7 +66,7 @@ UPOZORNENIA
 - Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
 - Vylepšenia vzhľadu a opravy chýb.
 
-Verzia 2 (v.2.00 – v.2.91)
+Verzia 1.1 (v.1.100 – v.1.191)
 - Všetky úradné jazyky EÚ a ukrajinčina.
 - Stránka Zemetrasenia.
 - Oznámenia s tvojím súhlasom: dážď alebo sneh, výstrahy, zemetrasenia.
@@ -80,7 +81,7 @@ Verzia 2 (v.2.00 – v.2.91)
 - Režim farmára: hlavné obrazovky sa posúvajú s prstom.
 - Vylepšenia vzhľadu a opravy chýb.
 
-Verzia 1 (v.1.00 – v.1.93)
+Verzia 1.0 (v.1.000 – v.1.093)
 - Vznikla z Meteo Alarm Kindle: jeho obrazovka prenesená na telefóny a tablety s Androidom.
 - Počasie teraz, nasledujúce hodiny, zrážky na 12 hodín a 5 dní.
 - Políčka: Slnko / Mesiac, UV, Peľ, Vlhkosť, Kvalita vzduchu, Tlak, Vietor, Viditeľnosť, Kompas, Zemetrasenie.

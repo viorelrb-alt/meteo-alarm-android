@@ -19,15 +19,15 @@ The app is currently available only in the EU and the US, and only works on Andr
 Developed by Viorel-R. B.
 
 <p>
-  <img src="docs/preview-a54.png" width="45%" alt="Light theme (Sky palette), v4.00">
-  <img src="docs/preview-a54-dark.png" width="45%" alt="Dark theme (Lavender palette), v4.00">
+  <img src="docs/preview-a54.png" width="45%" alt="Light theme (Sky palette), v1.300">
+  <img src="docs/preview-a54-dark.png" width="45%" alt="Dark theme (Lavender palette), v1.300">
 </p>
 
-![Landscape, dark theme (Sage palette), v4.00](docs/preview-a54-landscape-dark.png)
+![Landscape, dark theme (Sage palette), v1.300](docs/preview-a54-landscape-dark.png)
 
-*v4.00 screens in English, PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
+*v1.300 screens in English, PC previews drawn by the same code with sample data (`./build.sh preview [dark] [land] [dry] [warn]`).*
 
-**Project evolution:** [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf), a diagram of what each version added, from v0.1 to v1.71.
+**Project evolution:** [docs/MeteoAlarmAndroid-evolution.pdf](docs/MeteoAlarmAndroid-evolution.pdf), a diagram of what each version added, from v0.1 to v1.071.
 
 ## Build
 

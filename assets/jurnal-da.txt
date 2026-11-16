@@ -1,4 +1,4 @@
-Nuværende version: v.6.10 · 16.11.2026
+Nuværende version: v.1.520 · 16.11.2026
 HOVEDSKÆRM
 - Femdagesprognose: dag 3–5 skifter af sig selv hvert 3. sekund indtil første berøring.
 - Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.
@@ -13,9 +13,10 @@ LANDMANDSTILSTAND
 - Landmandsknap: bladknappen ved siden af knapperne slår landmandstilstanden fra; et andet sted bevarer den.
 MARKER
 - Kortvisninger: runde knapper under ＋/− skifter mellem satellit og kort og viser regnradaren for de sidste 2 timer.
-- Markens hjørner: i satellitvisningen findes de 4 hjørner fra billedet og flyttes med en finger; et tryk på kortet viser hjørnerne, Vis åbner marken.
+- Markens hjørner: i satellitvisningen findes de 4 hjørner i billedet og flyttes med fingeren; et tryk på kortet zoomer ind på marken og viser hjørnerne, Statistik åbner dens statistik.
 - Markens punkter: + Punkt tilføjer op til 3 punkter mere (højst 7), Cirkel fordeler dem jævnt på en cirkel, et langt tryk på et punkt sletter det.
 - Nåle på kortet: et tryk på en nål zoomer kortet ind på marken og viser dens navn; et andet tryk viser dens punkter.
+- Ny mark: nålen starter midt på det synlige kort; GPS-knappen flytter den hen, hvor du er.
 - Papirkurv: en slettet mark havner i 15 dage i papirkurven under GPS-knappen og kan gendannes derfra.
 - Siden Marker: markernes kort (navn, koordinater, blyant, Statistik · PDF, klokke, papirkurv) svæver over kortet, i en række nederst eller en kolonne til højre; ＋, også fanen ＋, åbner boksen for en ny mark.
 NOTIFIKATIONER
@@ -25,7 +26,7 @@ OPDATERINGER
 - Opdateringer: appen søger ikke længere selv efter opdateringer, kun når du trykker på ☰ › Søg efter opdateringer; den nye version downloades i browseren, og du installerer den fra den downloadede fil.
 - Designforbedringer og fejlrettelser.
 
-Version 4 (v.4.00 – v.4.52)
+Version 1.3 (v.1.300 – v.1.352)
 HOVEDSKÆRM
 - Eksport / Import: flytter dine byer, favoritter, marker og indstillinger til en anden enhed via en fil (Gem, Del; Import med Tilføj eller Erstat).
 - Felter: et tryk på et felt viser værdien øverst og forklaringerne under den.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · liste: en stor temperatur og de næste 4 dage (ét ikon hver) eller timer, valgt i indstillingerne; byen med kompassets bymærke.
 - Widgets: de farvede kodelinjer på hver widget, uden teksten VARSEL; uden koder én blå linje med den første gældende information (f.eks. Rimfrost).
 
-Version 3 (v.3.00 – v.3.92)
+Version 1.2 (v.1.200 – v.1.292)
 HOVEDSKÆRM
 - Forbindelsesikon ved uret: Wi-Fi eller mobildata med signalstyrke og type (Wi-Fi 6, 5G…), eller intet internet.
 - INFORMATION-felter i Europa: rimfrost, frost, tåge, isslag, kraftig vind.
@@ -65,7 +66,7 @@ TEMAER
 - 6 farvetemaer (Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose), hvert lyst og mørkt: ☰ › Tema.
 - Designforbedringer og fejlrettelser.
 
-Version 2 (v.2.00 – v.2.91)
+Version 1.1 (v.1.100 – v.1.191)
 - Alle EU's officielle sprog og ukrainsk.
 - Siden Jordskælv.
 - Notifikationer med dit samtykke: regn eller sne, varsler, jordskælv.
@@ -80,7 +81,7 @@ Version 2 (v.2.00 – v.2.91)
 - Landmandstilstand: hovedskærmene glider med fingeren.
 - Designforbedringer og fejlrettelser.
 
-Version 1 (v.1.00 – v.1.93)
+Version 1.0 (v.1.000 – v.1.093)
 - Lavet ud fra Meteo Alarm Kindle: dens skærm bragt til Android-telefoner og -tablets.
 - Vejret nu, de næste timer, nedbør for 12 timer og 5 dage.
 - Felter: Sol / Måne, UV, Pollen, Luftfugtighed, Luftkvalitet, Lufttryk, Vind, Sigtbarhed, Kompas, Jordskælv.

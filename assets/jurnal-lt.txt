@@ -1,4 +1,4 @@
-Dabartinė versija: v.6.10 · 16.11.2026
+Dabartinė versija: v.1.520 · 16.11.2026
 ATNAUJINIMAI
 - Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI
@@ -13,8 +13,9 @@ PRANEŠIMAI
 - Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ☰.
 - Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ☰.
 SKLYPAI
-- Lauko kampai: palydovo vaizde 4 kampai randami iš nuotraukos ir stumiami pirštu; kortelės palietimas parodo kampus, Rodyti atveria lauką.
+- Lauko kampai: palydovo vaizde 4 kampai randami paveikslėlyje ir perkeliami pirštu; kortelės palietimas priartina žemėlapį prie lauko ir rodo kampus, Statistika atveria jo statistiką.
 - Lauko taškai: + Taškas prideda iki 3 papildomų taškų (ne daugiau kaip 7), Apskritimas išdėsto juos tolygiai apskritime, ilgas taško paspaudimas jį ištrina.
+- Naujas laukas: smeigtukas pradeda matomo žemėlapio viduryje; GPS mygtukas jį perkelia ten, kur esi.
 - Puslapis Laukai: laukų kortelės (pavadinimas, koordinatės, pieštukas, Statistika · PDF, varpelis, šiukšlinė) plūduriuoja virš žemėlapio, eilėje apačioje arba stulpelyje dešinėje; ＋, ir skirtukas ＋, atveria naujo lauko langelį.
 - Smeigtukai žemėlapyje: smeigtuko palietimas priartina žemėlapį prie lauko ir rodo jo pavadinimą; antras palietimas rodo jo taškus.
 - Šiukšlinė: ištrintas laukas 15 dienų patenka į šiukšlinę po GPS mygtuku ir iš ten gali būti atkurtas.
@@ -25,7 +26,7 @@ SKLYPAI
 - Veiklos būsena: sklypo ekrane, tik kai reikia, sprendimas dėl purškimo, priežastis ir ateinančių 24 valandų rizikos.
 - Dizaino patobulinimai ir klaidų taisymai.
 
-4 versija (v.4.00 – v.4.52)
+4 versija (v.1.300 – v.1.352)
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus langelį Kompasas rodomas kompasas, GPS koordinatės ir 3 artimiausios vietovės spalvomis; Bendrinti siunčia koordinates.
 - Didelis kompasas: vietovė, kurioje esate, rodoma pirma (pilka); Bendrinti siunčia ir lango vaizdą, netolimas vietoves su atstumais, bateriją, temperatūras (oras, žemė, telefono aukštyje) ir vėją.
@@ -39,7 +40,7 @@ VALDIKLIAI
 - Valdikliai: spalvotos kodų linijos kiekviename valdiklyje, be teksto ĮSPĖJIMAS; be kodų – viena mėlyna linija su pirmąja galiojančia informacija (pvz., Šerkšnas).
 - Valdiklis 4x2 · sąrašas: didelė temperatūra ir kitos 4 dienos (po vieną piktogramą) arba valandos, pasirenkama nustatymuose; vietovė su kompaso vietovės ženklu.
 
-3 versija (v.3.00 – v.3.92)
+3 versija (v.1.200 – v.1.292)
 NAUJINIMAI
 - Atnaujinimai iš trijų šaltinių: GitHub, antrasis GitHub serveris ir Google Drive.
 - Atnaujinimai: pirmiausia tikrinamas ryšys, jau atsisiųsta versija įdiegiama iš karto, iki 5 bandymų, kai GitHub neatsako, ir parodoma priežastis.
@@ -65,7 +66,7 @@ TEMOS
 - Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
 - Dizaino patobulinimai ir klaidų taisymai.
 
-2 versija (v.2.00 – v.2.91)
+2 versija (v.1.100 – v.1.191)
 - Visos oficialiosios ES kalbos ir ukrainiečių.
 - Puslapis Žemės drebėjimai.
 - Pranešimai su tavo sutikimu: lietus ar sniegas, įspėjimai, žemės drebėjimai.
@@ -80,7 +81,7 @@ TEMOS
 - Ūkininko režimas: pagrindiniai ekranai slenka su pirštu.
 - Dizaino patobulinimai ir klaidų taisymai.
 
-1 versija (v.1.00 – v.1.93)
+1 versija (v.1.000 – v.1.093)
 - Sukurta iš Meteo Alarm Kindle: jo ekranas perkeltas į Android telefonus ir planšetes.
 - Orai dabar, artimiausios valandos, krituliai 12 valandų ir 5 dienoms.
 - Langeliai: Saulė / Mėnulis, UV, Žiedadulkės, Drėgmė, Oro kokybė, Slėgis, Vėjas, Matomumas, Kompasas, Žemės drebėjimas.

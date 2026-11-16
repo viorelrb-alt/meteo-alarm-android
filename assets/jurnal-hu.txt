@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.6.10 · 16.11.2026
+Jelenlegi verzió: v.1.520 · 16.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
@@ -18,14 +18,15 @@ GAZDA MÓD
 - Működési állapot: egy parcella képernyőjén, csak ha szükséges, a permetezés ítélete, az oka és a következő 24 óra kockázatai.
 PARCELLÁK
 - A parcella pontjai: a + Pont legfeljebb 3 további pontot ad hozzá (legfeljebb 7), a Kör egyenletesen elosztja őket egy körön, egy pont hosszú nyomása törli azt.
+- A parcella sarkai: műholdnézetben a 4 sarkot a kép alapján megtalálja, és ujjal mozgathatók; a kártya érintése ráközelít a parcellára és megmutatja a sarkokat, a Statisztika megnyitja a statisztikáját.
 - Kuka: a törölt parcella 15 napra a GPS-gomb alatti kukába kerül, és onnan visszaállítható.
-- Parcella sarkai: műholdas nézetben a 4 sarok a képből adódik és ujjal mozgatható; a kártya érintése mutatja a sarkokat, a Megjelenítés megnyitja a parcellát.
 - Parcellák oldal: a parcellák kártyái (név, koordináták, ceruza, Statisztika · PDF, csengő, kuka) a térkép fölött lebegnek, alul egy sorban vagy jobbra egy oszlopban; a ＋, a ＋ fül is, megnyitja egy új parcella ablakát.
 - Térképnézetek: a ＋/− alatti kerek gombok váltanak műhold és térkép között, és mutatják az utolsó 2 óra csapadékradarját.
 - Tűk a térképen: egy tű érintése ráközelít a parcellára és megmutatja a nevét; a második érintés a pontjait mutatja.
+- Új parcella: a tű a látható térkép közepéről indul; a GPS gomb oda teszi, ahol vagy.
 - Dizájnjavítások és hibajavítások.
 
-4. verzió (v.4.00 – v.4.52)
+4. verzió (v.1.300 – v.1.352)
 FŐKÉPERNYŐ
 - Exportálás / Importálás: fájl segítségével átviszi a településeket, kedvenceket, parcellákat és beállításokat egy másik eszközre (Mentés, Megosztás; Importálás Hozzáadással vagy Cserével).
 - Figyelmeztetések: egy kód- vagy tájékoztató mezőre koppintva felül az előrejelzés értékei (széllökések, mennyiségek, hőmérsékletek), majd az időszak és a magyarázatok.
@@ -39,7 +40,7 @@ WIDGETEK
 - 4x2 · lista widget: nagy hőmérséklet és a következő 4 nap (egy-egy ikonnal) vagy óra, a beállításokban választható; a település az iránytű településjelével.
 - Widgetek: a kódok színes vonalai minden widgeten, a FIGYELMEZTETÉS szöveg nélkül; kódok nélkül egy kék vonal az első érvényes tájékoztatással (pl. Dér).
 
-3. verzió (v.3.00 – v.3.92)
+3. verzió (v.1.200 – v.1.292)
 ÉRTESÍTÉSEK
 - Értesítések, mint a telefon Időjárás alkalmazásában („Hely | Eső”): eső vagy hó a következő órában és 20 óra után holnapra, a településre és a parcellákra; nincs értesítés, amikor az Open-Meteo újra válaszol.
 - Külön TÁJÉKOZTATÁS értesítés a településre is.
@@ -65,7 +66,7 @@ TÉMÁK
 - 6 színtéma (Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa), mindegyik világos és sötét: ☰ › Téma.
 - Dizájnjavítások és hibajavítások.
 
-2. verzió (v.2.00 – v.2.91)
+2. verzió (v.1.100 – v.1.191)
 - Az EU összes hivatalos nyelve és az ukrán.
 - Földrengések oldal.
 - Értesítések a hozzájárulásoddal: eső vagy hó, figyelmeztetések, földrengések.
@@ -80,7 +81,7 @@ TÉMÁK
 - Gazda mód: a főképernyők az ujjal együtt csúsznak.
 - Dizájnjavítások és hibajavítások.
 
-1. verzió (v.1.00 – v.1.93)
+1. verzió (v.1.000 – v.1.093)
 - A Meteo Alarm Kindle-ből készült: a képernyője androidos telefonokra és táblagépekre hozva.
 - Az időjárás most, a következő órák, csapadék 12 órára és 5 napra.
 - Mezők: Nap / Hold, UV, Pollen, Páratartalom, Levegőminőség, Légnyomás, Szél, Látótávolság, Iránytű, Földrengés.

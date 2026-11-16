@@ -1,9 +1,10 @@
-Obecna wersja: v.6.10 · 16.11.2026
+Obecna wersja: v.1.520 · 16.11.2026
 AKTUALIZACJE
 - Aktualizacje: aplikacja nie szuka już sama aktualizacji, tylko po dotknięciu ☰ › Sprawdź aktualizacje; nowa wersja pobiera się w przeglądarce, a Ty instalujesz ją z pobranego pliku.
 DZIAŁKI
 - Kosz: usunięta działka trafia na 15 dni do kosza pod przyciskiem GPS i można ją stamtąd przywrócić.
-- Narożniki działki: w widoku satelitarnym 4 narożniki są wyznaczane ze zdjęcia i przesuwane palcem; dotknięcie karty pokazuje narożniki, Pokaż otwiera działkę.
+- Narożniki działki: w widoku satelitarnym 4 narożniki są znajdowane na obrazie i przesuwane palcem; dotknięcie karty przybliża mapę do działki i pokazuje narożniki, Statystyka otwiera jej statystykę.
+- Nowa działka: pinezka zaczyna na środku widocznej mapy; przycisk GPS przenosi ją tam, gdzie jesteś.
 - Pinezki na mapie: dotknięcie pinezki przybliża mapę do działki i pokazuje jej nazwę; drugie dotknięcie pokazuje jej punkty.
 - Punkty działki: + Punkt dodaje do 3 dodatkowych punktów (najwyżej 7), Okrąg rozkłada je równo na okręgu, długie przytrzymanie punktu usuwa go.
 - Strona Działki: karty działek (nazwa, współrzędne, ołówek, Statystyka · PDF, dzwonek, kosz) unoszą się nad mapą, w rzędzie na dole lub w kolumnie po prawej; ＋, także karta ＋, otwiera okno nowej działki.
@@ -25,7 +26,7 @@ USTAWIENIA
 - Ustawienia: menu ☰ jest teraz oknem z sekcjami, przełącznikami, motywami kolorystycznymi i paskiem System i pomoc; odświeżanie przez pociągnięcie ekranu w dół lub dotknięcie „zaktualizowano”.
 - Ulepszenia wyglądu i poprawki błędów.
 
-Wersja 4 (v.4.00 – v.4.52)
+Wersja 1.3 (v.1.300 – v.1.352)
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie pola Kompas pokazuje kompas, współrzędne GPS i 3 najbliższe miejscowości w kolorach; Udostępnij wysyła współrzędne.
 - Duży kompas: miejscowość, w której jesteś, jest pierwsza (szara); Udostępnij wysyła też obraz okna, pobliskie miejscowości z odległościami, baterię, temperatury (powietrze, grunt, na wysokości telefonu) i wiatr.
@@ -39,7 +40,7 @@ WIDŻETY
 - Widżet 4x2 · lista: duża temperatura i następne 4 dni (po jednej ikonie) lub godziny, do wyboru w ustawieniach; miejscowość ze znakiem miejscowości z kompasu.
 - Widżety: kolorowe linie kodów na każdym widżecie, bez tekstu OSTRZEŻENIE; bez kodów jedna niebieska linia z pierwszą ważną informacją (np. Szron).
 
-Wersja 3 (v.3.00 – v.3.92)
+Wersja 1.2 (v.1.200 – v.1.292)
 AKTUALIZACJE
 - Aktualizacje z trzech źródeł: GitHub, drugi serwer GitHub i Google Drive.
 - Aktualizacje: najpierw sprawdzane jest połączenie, już pobrana wersja instaluje się od razu, do 5 prób, gdy GitHub nie odpowiada, i pokazywany jest powód.
@@ -65,7 +66,7 @@ TRYB ROLNIKA
 - W USA, w trybie rolnika: pola NWS, Susza, Pożar, Grad.
 - Ulepszenia wyglądu i poprawki błędów.
 
-Wersja 2 (v.2.00 – v.2.91)
+Wersja 1.1 (v.1.100 – v.1.191)
 - Wszystkie języki urzędowe UE i ukraiński.
 - Strona Trzęsienia ziemi.
 - Powiadomienia za twoją zgodą: deszcz lub śnieg, ostrzeżenia, trzęsienia ziemi.
@@ -80,7 +81,7 @@ Wersja 2 (v.2.00 – v.2.91)
 - Tryb rolnika: ekrany główne przesuwają się z palcem.
 - Ulepszenia wyglądu i poprawki błędów.
 
-Wersja 1 (v.1.00 – v.1.93)
+Wersja 1.0 (v.1.000 – v.1.093)
 - Powstała z Meteo Alarm Kindle: jego ekran przeniesiony na telefony i tablety z Androidem.
 - Pogoda teraz, następne godziny, opady na 12 godzin i 5 dni.
 - Pola: Słońce / Księżyc, UV, Pyłki, Wilgotność, Jakość powietrza, Ciśnienie, Wiatr, Widoczność, Kompas, Trzęsienie ziemi.

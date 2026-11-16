@@ -1,4 +1,4 @@
-Huidige versie: v.6.10 · 16.11.2026
+Huidige versie: v.1.520 · 16.11.2026
 BOERENMODUS
 - Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
 - Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.
@@ -15,8 +15,9 @@ MELDINGEN
 - Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ☰.
 - Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ☰.
 PERCELEN
-- Hoeken van het perceel: in de satellietweergave worden de 4 hoeken uit het beeld gevonden en met een vinger verschoven; een tik op het kaartje toont de hoeken, Tonen opent het perceel.
+- Hoeken van het perceel: in de satellietweergave worden de 4 hoeken in het beeld gevonden en met je vinger verplaatst; een tik op het kaartje zoomt in op het perceel en toont de hoeken, Statistiek opent de statistiek.
 - Kaartweergaven: ronde knoppen onder ＋/− wisselen tussen satelliet en kaart en tonen de regenradar van de laatste 2 uur.
+- Nieuw perceel: de speld begint in het midden van de zichtbare kaart; de GPS-knop zet hem waar je bent.
 - Pagina Percelen: de kaartjes van de percelen (naam, coördinaten, potlood, Statistiek · PDF, bel, prullenbak) zweven over de kaart, in een rij onderaan of een kolom rechts; ＋, ook het tabblad ＋, opent het vak van een nieuw perceel.
 - Prullenbak: een verwijderd perceel gaat 15 dagen naar de prullenbak onder de GPS-knop en kan daar worden teruggezet.
 - Punten van het perceel: + Punt voegt tot 3 extra punten toe (hoogstens 7), Cirkel zet ze gelijkmatig op een cirkel, lang drukken op een punt verwijdert het.
@@ -25,7 +26,7 @@ UPDATES
 - Updates: de app zoekt niet meer zelf naar updates, alleen als je op ☰ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
 - Ontwerpverbeteringen en foutoplossingen.
 
-Versie 4 (v.4.00 – v.4.52)
+Versie 1.3 (v.1.300 – v.1.352)
 HOOFDSCHERM
 - Exporteren / Importeren: zet je plaatsen, favorieten, percelen en instellingen via een bestand over naar een ander apparaat (Opslaan, Delen; Importeren met Toevoegen of Vervangen).
 - Groot kompas: de plaats waar u bent staat eerst (grijs); Delen stuurt ook een afbeelding van het venster, de plaatsen in de buurt met afstanden, de batterij, de temperaturen (lucht, grond, op de hoogte van de telefoon) en de wind.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · lijst: een grote temperatuur en de volgende 4 dagen (één pictogram per dag) of uren, te kiezen in de instellingen; de plaats met het plaatsteken van het kompas.
 - Widgets: de gekleurde codelijnen op elke widget, zonder de tekst WAARSCHUWING; zonder codes één blauwe lijn met de eerste geldende informatie (bv. Rijp).
 
-Versie 3 (v.3.00 – v.3.92)
+Versie 1.2 (v.1.200 – v.1.292)
 BOERENMODUS
 - Boerenmodus: nieuwe vakken na Water in de bodem: Spuiten, Waterbalans, Onweer, Graaddagen, 16 dagen.
 - In de VS, in boerenmodus: de vakken NWS, Droogte, Brand, Hagel.
@@ -65,7 +66,7 @@ UPDATES
 - Voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
 - Ontwerpverbeteringen en foutoplossingen.
 
-Versie 2 (v.2.00 – v.2.91)
+Versie 1.1 (v.1.100 – v.1.191)
 - Alle officiële EU-talen en Oekraïens.
 - Pagina Aardbevingen.
 - Meldingen met je toestemming: regen of sneeuw, waarschuwingen, aardbevingen.
@@ -80,7 +81,7 @@ Versie 2 (v.2.00 – v.2.91)
 - Boerenmodus: de hoofdschermen schuiven mee met je vinger.
 - Ontwerpverbeteringen en foutoplossingen.
 
-Versie 1 (v.1.00 – v.1.93)
+Versie 1.0 (v.1.000 – v.1.093)
 - Gemaakt op basis van Meteo Alarm Kindle: het scherm ervan naar Android-telefoons en -tablets gebracht.
 - Het weer nu, de komende uren, neerslag voor 12 uur en 5 dagen.
 - Vakken: Zon / Maan, UV, Pollen, Vochtigheid, Luchtkwaliteit, Luchtdruk, Wind, Zicht, Kompas, Aardbeving.

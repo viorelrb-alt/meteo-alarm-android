@@ -1,4 +1,4 @@
-Praegune versioon: v.6.10 · 16.11.2026
+Praegune versioon: v.1.520 · 16.11.2026
 PÕHIEKRAAN
 - Põhiekraan: leht kerib ülemise klaasi all jaotiste kaupa (Järgmised tunnid, Viie päeva prognoos, Ilma üksikasjad); nupud ja aku hõljuvad all.
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
@@ -7,9 +7,10 @@ PÕLLULAPID
 - Kaardivaated: ＋/− all olevad ümarad nupud vahetavad satelliiti ja kaarti ning näitavad viimase 2 tunni sajuradarit.
 - Leht Põllud: põldude kaardid (nimi, koordinaadid, pliiats, Statistika · PDF, kell, prügikast) hõljuvad kaardi kohal, reas all või veerus paremal; ＋, ka vahekaart ＋, avab uue põllu kasti.
 - Nööpnõelad kaardil: nööpnõela puudutus suumib kaardi põllule ja näitab selle nime; teine puudutus näitab selle punkte.
-- Põllu nurgad: satelliidivaates leitakse 4 nurka pildilt ja neid liigutatakse sõrmega; kaardi puudutus näitab nurki, Näita avab põllu.
+- Põllu nurgad: satelliidivaates leitakse 4 nurka pildilt ja neid liigutatakse sõrmega; kaardi puudutus suumib kaardi põllule ja näitab nurki, Statistika avab selle statistika.
 - Põllu punktid: + Punkt lisab kuni 3 punkti juurde (kõige rohkem 7), Ring paigutab need ühtlaselt ringile, pikk vajutus punktil kustutab selle.
 - Prügikast: kustutatud põld läheb 15 päevaks GPS-nupu all olevasse prügikasti ja selle saab sealt taastada.
+- Uus põld: nööpnõel alustab nähtava kaardi keskelt; GPS-nupp viib selle sinna, kus sa oled.
 PÕLLUMEHE REŽIIM
 - Põllumehe nupp: nuppude kõrval olev lehenupp lülitab põllumehe režiimi välja; teine koht jätab selle alles.
 - Tööolek: põllulapi ekraanil, ainult vajadusel, pritsimise otsus, põhjus ja järgmise 24 tunni riskid.
@@ -25,7 +26,7 @@ UUENDUSED
 - Uuendused: rakendus ei otsi enam ise uuendusi, ainult siis, kui puudutad ☰ › Kontrolli uuendusi; uus versioon laaditakse alla brauseris ja sina paigaldad selle allalaaditud failist.
 - Disainiparandused ja vigade parandused.
 
-Versioon 4 (v.4.00 – v.4.52)
+Versioon 1.3 (v.1.300 – v.1.352)
 PÕHIEKRAAN
 - Asukoht: külad, millest läbi sõidad, lisatakse maakonna loendisse (7 päevaks või jäädavalt, kui käid seal tihti); kompass näitab ka külasid.
 - Asukoht: teises riigis või USA osariigis laaditakse väikesed asulad alla üks kord, kui oled seal esimest korda internetiga, kompassi ja kohtade loendi jaoks.
@@ -39,7 +40,7 @@ VIDINAD
 - Vidin 4x2 · loend: suur temperatuur ja järgmised 4 päeva (igaüks üks ikoon) või tunnid, valitav seadetes; koht kompassi kohamärgiga.
 - Vidinad: koodide värvilised jooned igal vidinal, ilma tekstita HOIATUS; koodideta üks sinine joon esimese kehtiva teabega (nt Härmatis).
 
-Versioon 3 (v.3.00 – v.3.92)
+Versioon 1.2 (v.1.200 – v.1.292)
 PÕHIEKRAAN
 - Ilmaikoonid: teema värvides; suur ja päevade omad liiguvad 3 sekundit, ka pärast iga värskendust.
 - Kaamera riba: püstpaigutuses on kell, ühendus ja kuupäev kaamera kõrval (Android 9+).
@@ -65,7 +66,7 @@ VÄRSKENDUSED
 - Uuendused: esmalt kontrollitakse ühendust, juba alla laaditud versioon paigaldatakse kohe, kuni 5 katset, kui GitHub ei vasta, ja põhjus kuvatakse.
 - Disainiparandused ja vigade parandused.
 
-Versioon 2 (v.2.00 – v.2.91)
+Versioon 1.1 (v.1.100 – v.1.191)
 - Kõik ELi ametlikud keeled ja ukraina keel.
 - Leht Maavärinad.
 - Teavitused sinu nõusolekul: vihm või lumi, hoiatused, maavärinad.
@@ -80,7 +81,7 @@ Versioon 2 (v.2.00 – v.2.91)
 - Põllumehe režiim: põhiekraanid liiguvad koos sõrmega.
 - Disainiparandused ja vigade parandused.
 
-Versioon 1 (v.1.00 – v.1.93)
+Versioon 1.0 (v.1.000 – v.1.093)
 - Tehtud Meteo Alarm Kindle'i põhjal: selle ekraan toodud Android-telefonidele ja -tahvlitele.
 - Ilm praegu, järgmised tunnid, sademed 12 tunniks ja 5 päevaks.
 - Kastid: Päike / Kuu, UV, Õietolm, Niiskus, Õhukvaliteet, Õhurõhk, Tuul, Nähtavus, Kompass, Maavärin.

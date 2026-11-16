@@ -1,4 +1,4 @@
-Současná verze: v.6.10 · 16.11.2026
+Současná verze: v.1.520 · 16.11.2026
 AKTUALIZACE
 - Aktualizace: aplikace už sama aktualizace nehledá, jen když klepnete na ☰ › Zkontrolovat aktualizace; nová verze se stáhne v prohlížeči a nainstalujete ji ze staženého souboru.
 HLAVNÍ OBRAZOVKA
@@ -15,7 +15,8 @@ OZNÁMENÍ
 POZEMKY
 - Body pozemku: + Bod přidá až 3 další body (nejvýše 7), Kruh je rozmístí rovnoměrně na kruhu, dlouhé podržení bodu ho smaže.
 - Koš: smazaný pozemek jde na 15 dní do koše pod tlačítkem GPS a odtud ho lze obnovit.
-- Rohy pozemku: v satelitním zobrazení se 4 rohy najdou z obrázku a posouvají se prstem; klepnutí na kartu ukáže rohy, Zobrazit otevře pozemek.
+- Nový pozemek: špendlík začíná uprostřed viditelné mapy; tlačítko GPS ho přesune tam, kde jsi.
+- Rohy pozemku: v satelitním zobrazení se 4 rohy najdou v obrázku a posouvají se prstem; klepnutí na kartu přiblíží mapu na pozemek a ukáže rohy, Statistika otevře jeho statistiku.
 - Stránka Pozemky: karty pozemků (název, souřadnice, tužka, Statistika · PDF, zvonek, koš) plují nad mapou, v řadě dole nebo ve sloupci vpravo; ＋, i karta ＋, otevře okno nového pozemku.
 - Špendlíky na mapě: klepnutí na špendlík přiblíží mapu na pozemek a ukáže jeho název; druhé klepnutí ukáže jeho body.
 - Zobrazení mapy: kulatá tlačítka pod ＋/− přepínají satelit a mapu a ukazují srážkový radar za poslední 2 hodiny.
@@ -25,7 +26,7 @@ REŽIM FARMÁŘE
 - Tlačítko farmáře: tlačítko s listem vedle tlačítek vypne režim farmáře; jiná obec ho zachová.
 - Vylepšení vzhledu a opravy chyb.
 
-Verze 4 (v.4.00 – v.4.52)
+Verze 1.3 (v.1.300 – v.1.352)
 HLAVNÍ OBRAZOVKA
 - Export / Import: přenese místa, oblíbené, parcely a nastavení do jiného zařízení pomocí souboru (Uložit, Sdílet; Import s volbou Přidat nebo Nahradit).
 - Ikony počasí: v barvách motivu; všechny se 3 sekundy pohybují, i po každém obnovení a na widgetech.
@@ -39,7 +40,7 @@ WIDGETY
 - Widget 4x2 · seznam: velká teplota a další 4 dny (po jedné ikoně) nebo hodiny, podle volby v nastavení; obec se značkou z kompasu.
 - Widgety: barevné čáry kódů na každém widgetu, bez textu VÝSTRAHA; bez kódů jedna modrá čára s první platnou informací (např. Jinovatka).
 
-Verze 3 (v.3.00 – v.3.92)
+Verze 1.2 (v.1.200 – v.1.292)
 AKTUALIZACE
 - Aktualizace ze tří zdrojů: GitHub, druhý server GitHubu a Google Drive.
 - Aktualizace: nejdřív se ověří připojení, již stažená verze se hned nainstaluje, až 5 pokusů, když GitHub neodpovídá, a zobrazí se důvod.
@@ -65,7 +66,7 @@ REŽIM FARMÁŘE
 - V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.
 - Vylepšení vzhledu a opravy chyb.
 
-Verze 2 (v.2.00 – v.2.91)
+Verze 1.1 (v.1.100 – v.1.191)
 - Všechny úřední jazyky EU a ukrajinština.
 - Stránka Zemětřesení.
 - Oznámení s tvým souhlasem: déšť nebo sníh, výstrahy, zemětřesení.
@@ -80,7 +81,7 @@ Verze 2 (v.2.00 – v.2.91)
 - Režim zemědělce: hlavní obrazovky se posouvají prstem.
 - Vylepšení vzhledu a opravy chyb.
 
-Verze 1 (v.1.00 – v.1.93)
+Verze 1.0 (v.1.000 – v.1.093)
 - Vznikla z Meteo Alarm Kindle: jeho obrazovka převedená na telefony a tablety s Androidem.
 - Počasí teď, příští hodiny, srážky na 12 hodin a 5 dní.
 - Políčka: Slunce / Měsíc, UV, Pyl, Vlhkost, Kvalita vzduchu, Tlak, Vítr, Viditelnost, Kompas, Zemětřesení.

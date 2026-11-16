@@ -1,8 +1,9 @@
-Verżjoni attwali: v.6.10 · 16.11.2026
+Verżjoni attwali: v.1.520 · 16.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ☰ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
 GĦELIEQI
-- Kantunieri tal-biċċa art: fil-veduta tas-satellita l-4 kantunieri jinstabu mill-istampa u jiċċaqilqu b'subgħajk; għafsa fuq il-karta turi l-kantunieri, Uri tiftaħ il-biċċa art.
+- Biċċa art ġdida: il-labra tibda f'nofs il-mappa li tara; il-buttuna GPS iġġibha fejn int.
+- Kantunieri tal-biċċa art: fil-veduta tas-satellita l-4 kantunieri jinstabu mill-istampa u jiċċaqilqu bis-saba'; mess fuq il-karta jkabbar il-mappa fuq il-biċċa art u juri l-kantunieri, Statistika tiftaħ l-istatistika tagħha.
 - Labar fuq il-mappa: mess fuq labra jkabbar il-mappa fuq il-biċċa art u juri isimha; it-tieni mess juri l-punti tagħha.
 - Landa tal-iskart: biċċa art imħassra tmur għal 15-il jum fil-landa taħt il-buttuna GPS u tista' terġa' tinġieb minn hemm.
 - Paġna Biċċiet tal-art: il-karti tal-biċċiet tal-art (isem, koordinati, lapes, Statistika · PDF, qanpiena, landa) jżommu fil-wiċċ fuq il-mappa, f'ringiela isfel jew f'kolonna fuq il-lemin; ＋, anke t-tab ＋, jiftaħ il-kaxxa ta' biċċa art ġdida.
@@ -25,7 +26,7 @@ SKRIN EWLIENI
 - Tbassir għal ħamest ijiem: il-jiem 3–5 jinbidlu waħedhom kull 3 sekondi sal-ewwel mess.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
-Verżjoni 4 (v.4.00 – v.4.52)
+Verżjoni 1.3 (v.1.300 – v.1.352)
 SKRIN EWLIENI
 - Boxxla kbira: il-lokalità fejn int tidher l-ewwel (griż); Aqsam jibgħat ukoll stampa tat-tieqa, il-lokalitajiet fil-qrib bid-distanzi, il-batterija, it-temperaturi (arja, art, fl-għoli tat-telefon) u r-riħ.
 - Boxxla kbira: tagħfisa fuq il-kaxxa Boxxla turi l-boxxla, il-koordinati GPS u l-eqreb 3 lokalitajiet bil-kuluri; Aqsam jibgħat il-koordinati.
@@ -39,7 +40,7 @@ WIDGETS
 - Widget 4x2 · lista: temperatura kbira u l-4 ijiem li ġejjin (ikona waħda kull wieħed) jew sigħat, magħżula fis-settings; il-lokalità bis-sinjal tal-lokalità tal-boxxla.
 - Widgets: il-linji kkuluriti tal-kodiċijiet fuq kull widget, mingħajr it-test TWISSIJA; mingħajr kodiċijiet, linja blu waħda bl-ewwel informazzjoni valida (eż. Ġlata).
 
-Verżjoni 3 (v.3.00 – v.3.92)
+Verżjoni 1.2 (v.1.200 – v.1.292)
 AĠĠORNAMENTI
 - Aġġornamenti minn tliet sorsi: GitHub, it-tieni server ta' GitHub u Google Drive.
 - Aġġornamenti: l-ewwel tiġi ċċekkjata l-konnessjoni, verżjoni diġà mniżżla tiġi installata mill-ewwel, sa 5 tentattivi meta GitHub ma jwieġibx, u tintwera r-raġuni.
@@ -65,7 +66,7 @@ TEMI
 - 6 temi tal-kulur (Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda), kull wieħed ċar u skur: ☰ › Tema.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
-Verżjoni 2 (v.2.00 – v.2.91)
+Verżjoni 1.1 (v.1.100 – v.1.191)
 - Il-lingwi uffiċjali kollha tal-UE u l-Ukren.
 - Il-paġna Terremoti.
 - Notifiki bil-kunsens tiegħek: xita jew silġ, twissijiet, terremoti.
@@ -80,7 +81,7 @@ Verżjoni 2 (v.2.00 – v.2.91)
 - Modalità tal-bidwi: l-iskrins ewlenin jiżżerżqu mas-saba’.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
-Verżjoni 1 (v.1.00 – v.1.93)
+Verżjoni 1.0 (v.1.000 – v.1.093)
 - Magħmula minn Meteo Alarm Kindle: l-iskrin tiegħu miġjub fuq telefowns u tablets Android.
 - It-temp issa, is-sigħat li ġejjin, il-preċipitazzjoni għal 12-il siegħa u 5 ijiem.
 - Kaxxi: Xemx / Qamar, UV, Pollen, Umdità, Kwalità tal-arja, Pressjoni, Riħ, Viżibbiltà, Boxxla, Terremot.

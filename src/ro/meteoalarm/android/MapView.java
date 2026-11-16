@@ -215,6 +215,12 @@ final class MapView extends View {
 	}
 
 	void focus(long id) {
+		focusIn(id, 0, topPad);
+	}
+
+	/** v1.520: the same with the free room starting at LEFT and TOP (a bubble over the map). */
+	void focusIn(long id, float left, float top) {
+		top = Math.max(top, 0);
 		Pin f = null;
 		if (pins != null) for (Pin p : pins) if (p.id == id) f = p;
 		if (f == null || getWidth() == 0) return;
@@ -229,7 +235,9 @@ final class MapView extends View {
 		}
 		// The free part of the screen: under the top sheet, left of / above the cards; the pin
 		// and its bubble need about 80 dp above the parcel.
-		float fw = getWidth() - rightPad - 80 * dp, fh = getHeight() - topPad - bottomPad - 110 * dp;
+		float fw = getWidth() - left - rightPad - 80 * dp, fh = getHeight() - top - bottomPad - 110 * dp;
+		fw = Math.max(fw, 60 * dp);
+		fh = Math.max(fh, 60 * dp);
 		double z = 18;
 		for (; z > MIN_Z; z -= 0.25) {
 			double world = tile * Math.pow(2, z);
@@ -240,7 +248,7 @@ final class MapView extends View {
 		double bx = (wx(lo0, world) + wx(lo1, world)) / 2, by = (wy(la0, world) + wy(la1, world)) / 2;
 		// Where the parcel's middle should stand on the screen (the free part's middle, a bit
 		// lower for the pin), and so the map's middle.
-		float sx = (getWidth() - rightPad) / 2f, sy = topPad + (getHeight() - topPad - bottomPad) / 2f + 35 * dp;
+		float sx = left + (getWidth() - left - rightPad) / 2f, sy = top + (getHeight() - top - bottomPad) / 2f + 35 * dp;
 		double cx = bx - (sx - getWidth() / 2.0), cy = by - (sy - getHeight() / 2.0);
 		cy = Math.max(0, Math.min(world, cy));
 		lon = lonOf(((cx % world) + world) % world, world);
