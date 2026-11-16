@@ -125,6 +125,8 @@ public final class FarmActivity extends Activity {
 		}
 		entry = null;
 		Log.i(this, "FERMIER", "pagina Parcele deschisă (" + Parcels.all(this).size() + " parcele)");
+		// v5.50 (Viorel): the farmer's "+" tab opens the new parcel's box at once.
+		newOpen = getIntent().getBooleanExtra("add", false);
 		showList();
 		// v2.91 (Viorel): the GPS starts with the page, the blue dot shows where the farmer is.
 		centerMe = false;
@@ -1084,7 +1086,6 @@ public final class FarmActivity extends Activity {
 		t.setPadding(px(18), 0, px(20), 0);
 		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, fb, Gravity.BOTTOM | Gravity.LEFT);
 		sl.setMargins(mg, 0, 0, mg + px(14));
-		statsBtn = t;
 		mapBox.addView(floatBtn(t, new View.OnClickListener() {
 			public void onClick(View v) {
 				Log.i(FarmActivity.this, "FERMIER", "buton Statistică · PDF");
@@ -1262,12 +1263,12 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * v5.40 (Viorel 2026-11-16): the Parcels page is the whole map; over it float ＋ (a new parcel),
-	 * the title (back), GPS, the bin under GPS, Statistics · PDF at the bottom left and the parcels'
-	 * square cards: portrait at the bottom, from right to left; landscape at the right, 2 per row.
-	 * When some cards are out of sight they move a little after 3 s. Without parcels a floating
-	 * note at the bottom. ＋ hides the cards and opens the new parcel's box (GPS place, a tap on
-	 * the map moves it, the name).
+	 * v5.50 (Viorel 2026-11-16): the Parcels page in three layers. At the bottom the map, with ＋ / −
+	 * and the satellite, map and radar buttons at the top left; in the middle the parcels' frosted
+	 * cards (portrait: one row at the bottom, scrolled sideways; landscape: one column at the right,
+	 * passing under the top sheet) and the new parcel's box; on top the frosted sheet with ＋,
+	 * Parcels (back), GPS and the bin (portrait: an L; landscape: one row). The cards move a little
+	 * after 4 s when some are out of sight.
 	 */
 	private void showList() {
 		screen = "list";
@@ -1287,6 +1288,9 @@ public final class FarmActivity extends Activity {
 		m.setDark(dark);
 		m.clean();
 		m.setTopPad(px(tab ? 130 : 120));
+		android.content.SharedPreferences pr = Fetcher.prefs(this);
+		m.setStyle(pr.getInt("mapStyle", 0));
+		m.setRadar(pr.getBoolean("mapRadar", false));
 		List<MapView.Pin> pins = new java.util.ArrayList<MapView.Pin>();
 		for (Parcels.Parcel p : all) pins.add(new MapView.Pin(p.id, p.lat, p.lon, p.name));
 		m.setPins(pins, new MapView.PinTap() {
@@ -1307,185 +1311,393 @@ public final class FarmActivity extends Activity {
 		if (!Double.isNaN(meLa)) m.setMe(meLa, meLo);
 		mapBox.addView(m, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		root.addView(mapBox, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		leftFloats(mapBox, m, tab);
 
 		final int fb = px(tab ? 46 : 42), mg = px(12), gap = px(10);
+		// The height the top sheet takes in landscape (its row), so the cards start under it.
+		final int bandH = fb + 2 * px(6);
 		int sw = getResources().getDisplayMetrics().widthPixels, sh = getResources().getDisplayMetrics().heightPixels;
-		// The cards' side: a phone 160 dp, a tablet 200 dp; in landscape 2 of them in at most 45 % of the width.
-		int side = px(tab ? 200 : 160);
-		if (land) side = Math.min(side, (int) ((sw * 0.45f - gap) / 2));
-		final int colW = 2 * side + gap;
-		// Landscape: the GPS and the bin left of the cards' column.
-		floatRight = land && !all.isEmpty() ? colW + gap : 0;
-		mapPlus = new View.OnClickListener() {
-			public void onClick(View v) {
-				Log.i(FarmActivity.this, "FERMIER", "buton ＋ parcelă nouă");
-				newParcel(mapBox, m, tab);
-			}
-		};
-		mapFloats(mapBox, m, Tr.t("Parcels", "Parcele"), tab, null);
-		mapPlus = null;
-		// The bin under the GPS button.
-		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(fb + px(4), fb + px(4), Gravity.TOP | Gravity.RIGHT);
-		bl.setMargins(0, mg + 2 * fb + px(28), mg + floatRight, 0);
-		View bb = floatBtn(binIcon(ink, false), new View.OnClickListener() {
-			public void onClick(View v) {
-				showBin();
-			}
-		});
-		bb.setContentDescription(Tr.t("Bin", "Coș de gunoi"));
-		mapBox.addView(bb, bl);
-		floatRight = 0;
+		int side = px(tab ? 190 : 150);
+		if (land) side = Math.min(side, (sh - 2 * mg - bandH) / 2);
+		else side = Math.min(side, (sw - 2 * mg - gap) / 2);
 		status = text("", 15, false, ink);
 		status.setVisibility(View.GONE);
-		status.setPadding(px(16), px(10), px(16), px(10));
-		status.setBackground(Glass.pill(Glass.alpha(page, 0.92f), Glass.edge(dark), px(16), dp));
-		FrameLayout.LayoutParams stl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
-		stl.setMargins(mg, 0, mg, mg + px(70));
-		mapBox.addView(status, stl);
 
 		if (all.isEmpty()) {
-			// v5.40 (Viorel): no window; the note floats at the bottom.
 			TextView note = text(Tr.t("No parcel saved yet. Tap ＋ to add one: the place is where you are (GPS), or tap the map.",
 					"Nicio parcelă salvată încă. Atinge ＋ ca să adaugi una: locul e unde ești (GPS), sau atinge harta."), tab ? 17 : 15, false, ink);
 			note.setPadding(px(18), px(14), px(18), px(14));
-			note.setBackground(Glass.pill(Glass.alpha(page, 0.92f), Glass.edge(dark), px(18), dp));
+			note.setBackground(glass(px(18), 0.86f));
 			note.setElevation(px(3));
 			FrameLayout.LayoutParams nl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM);
 			nl.setMargins(mg, 0, mg, mg + px(14));
 			mapBox.addView(note, nl);
 			cardsView = note;
-			return;
-		}
-
-		// The cards, newest layout of v5.40.
-		final View strip;
-		final LinearLayout inner;
-		if (land) {
-			ScrollView sv = new ScrollView(this);
-			sv.setVerticalScrollBarEnabled(false);
-			sv.setClipToPadding(false);
-			inner = column();
-			for (int k = 0; k < all.size(); k += 2) {
-				LinearLayout row = new LinearLayout(this);
-				row.addView(squareCard(all.get(k), side, tab), new LinearLayout.LayoutParams(side, side));
-				if (k + 1 < all.size()) {
-					LinearLayout.LayoutParams l2 = new LinearLayout.LayoutParams(side, side);
-					l2.leftMargin = gap;
-					row.addView(squareCard(all.get(k + 1), side, tab), l2);
-				}
-				LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-				if (k > 0) rl.topMargin = gap;
-				inner.addView(row, rl);
-			}
-			sv.addView(inner);
-			FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(colW, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.RIGHT);
-			sl.setMargins(0, mg + fb + px(14), mg, mg);
-			mapBox.addView(sv, sl);
-			strip = sv;
 		} else {
-			final android.widget.HorizontalScrollView hv = new android.widget.HorizontalScrollView(this);
-			hv.setHorizontalScrollBarEnabled(false);
-			inner = new LinearLayout(this);
-			// From right to left: the first parcel at the right edge.
-			for (int k = all.size() - 1; k >= 0; k--) {
-				LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
-				if (k < all.size() - 1) cl.leftMargin = gap;
-				inner.addView(squareCard(all.get(k), side, tab), cl);
-			}
-			hv.addView(inner);
-			FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, side, Gravity.BOTTOM | Gravity.RIGHT);
-			sl.setMargins(mg, 0, mg, mg + px(14));
-			mapBox.addView(hv, sl);
-			hv.post(new Runnable() {
-				public void run() {
-					hv.fullScroll(View.FOCUS_RIGHT);
+			final View strip;
+			final LinearLayout inner;
+			if (land) {
+				// One column at the right edge; it scrolls under the top sheet.
+				ScrollView sv = new ScrollView(this);
+				sv.setVerticalScrollBarEnabled(false);
+				sv.setClipToPadding(false);
+				sv.setPadding(0, mg + bandH + gap, 0, mg);
+				inner = column();
+				for (int k = 0; k < all.size(); k++) {
+					LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
+					if (k > 0) cl.topMargin = gap;
+					inner.addView(squareCard(all.get(k), side, tab), cl);
 				}
-			});
-			strip = hv;
-		}
-		cardsView = strip;
-		statsFloat(mapBox, all, tab);
-		if (!land && statsBtn != null) {
-			// Portrait: Statistics · PDF right above the cards.
-			FrameLayout.LayoutParams sl = (FrameLayout.LayoutParams) statsBtn.getLayoutParams();
-			sl.bottomMargin = mg + px(14) + side + gap;
-			statsBtn.setLayoutParams(sl);
-		}
-		// v5.40 (Viorel): after 3 s the cards move a little when some are out of sight.
-		ui.postDelayed(new Runnable() {
-			public void run() {
-				if (!screen.equals("list") || cardsView != strip || newBox != null || !strip.isShown()) return;
-				boolean more = land ? inner.getHeight() > strip.getHeight() + 2 : inner.getWidth() > strip.getWidth() + 2;
-				if (!more) return;
-				float d = -px(36);
-				if (land) inner.animate().translationY(d).setDuration(450).withEndAction(new Runnable() {
-					public void run() {
-						inner.animate().translationY(0).setDuration(450).start();
-					}
-				}).start();
-				else inner.animate().translationX(d).setDuration(450).withEndAction(new Runnable() {
-					public void run() {
-						inner.animate().translationX(0).setDuration(450).start();
-					}
-				}).start();
+				sv.addView(inner);
+				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(side, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.RIGHT);
+				sl.setMargins(0, 0, mg, 0);
+				mapBox.addView(sv, sl);
+				strip = sv;
+			} else {
+				// One row at the bottom, the first parcel at the left.
+				android.widget.HorizontalScrollView hv = new android.widget.HorizontalScrollView(this);
+				hv.setHorizontalScrollBarEnabled(false);
+				hv.setClipToPadding(false);
+				hv.setPadding(mg, 0, mg, 0);
+				inner = new LinearLayout(this);
+				for (int k = 0; k < all.size(); k++) {
+					LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
+					if (k > 0) cl.leftMargin = gap;
+					inner.addView(squareCard(all.get(k), side, tab), cl);
+				}
+				hv.addView(inner);
+				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, side, Gravity.BOTTOM);
+				sl.setMargins(0, 0, 0, mg + px(14));
+				mapBox.addView(hv, sl);
+				strip = hv;
 			}
-		}, 3000);
+			cardsView = strip;
+			// v5.50 (Viorel): after 4 s the cards move a little when some are out of sight.
+			ui.postDelayed(new Runnable() {
+				public void run() {
+					if (!screen.equals("list") || cardsView != strip || newBox != null || !strip.isShown()) return;
+					int pad = land ? strip.getPaddingTop() + strip.getPaddingBottom() : strip.getPaddingLeft() + strip.getPaddingRight();
+					boolean more = land ? inner.getHeight() + pad > strip.getHeight() + 2 : inner.getWidth() + pad > strip.getWidth() + 2;
+					if (!more) return;
+					float d = -px(40);
+					if (land) inner.animate().translationY(d).setDuration(450).withEndAction(new Runnable() {
+						public void run() {
+							inner.animate().translationY(0).setDuration(450).start();
+						}
+					}).start();
+					else inner.animate().translationX(d).setDuration(450).withEndAction(new Runnable() {
+						public void run() {
+							inner.animate().translationX(0).setDuration(450).start();
+						}
+					}).start();
+				}
+			}, 4000);
+		}
+		topSheet(mapBox, tab, land);
+		if (newOpen) newParcel(mapBox, m, tab);
 	}
 
-	/** The cards (or the note) over the list map, the Statistics button and the new parcel's box (v5.40). */
-	private View cardsView, statsBtn, newBox;
+	/** The cards (or the note) over the list map and the new parcel's box. */
+	private View cardsView, newBox;
+	/** v5.50: the new parcel's box is open (kept when the phone turns), its place and its name. */
+	private boolean newOpen, newTapped;
+	private double newLa = Double.NaN, newLo = Double.NaN;
+	private String newName = "";
+
+	/** Frosted glass: the page's colour see-through, a faint edge, corners of radius R. */
+	private GradientDrawable glass(float r, float a) {
+		return Glass.pill(Glass.alpha(page, a), Glass.edge(dark), r, dp);
+	}
 
 	/**
-	 * v5.40 (Viorel): a parcel's square card: the name, the coordinates and the weather now; at the
-	 * right the pencil, the bell under it (this parcel's notifications) and the bin at the bottom.
-	 * A tap shows the parcel on the main screen.
+	 * The top left of the map: ＋ and −, under them in one row the satellite view, the map and the
+	 * radar (v5.50, Viorel); the one in use has a ring in the theme's colour.
+	 */
+	private void leftFloats(FrameLayout mapBox, final MapView m, boolean tab) {
+		int fb = px(tab ? 46 : 42), mg = px(12);
+		TextView zin = text("＋", 22, true, ink), zout = text("−", 22, true, ink);
+		zin.setGravity(Gravity.CENTER);
+		zout.setGravity(Gravity.CENTER);
+		FrameLayout.LayoutParams zl = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+		zl.setMargins(mg, mg, 0, 0);
+		mapBox.addView(floatBtn(zin, new View.OnClickListener() {
+			public void onClick(View v) {
+				m.zoomBy(1);
+			}
+		}), zl);
+		FrameLayout.LayoutParams zl2 = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+		zl2.setMargins(mg, mg + fb + px(8), 0, 0);
+		mapBox.addView(floatBtn(zout, new View.OnClickListener() {
+			public void onClick(View v) {
+				m.zoomBy(-1);
+			}
+		}), zl2);
+		final View[] b = new View[3];
+		final String[] names = { Tr.t("Satellite view", "Vedere din satelit"), Tr.t("Map view", "Vedere hartă"), "Radar" };
+		for (int k = 0; k < 3; k++) {
+			final int kind = k;
+			b[k] = mapIcon(kind, m);
+			b[k].setContentDescription(names[k]);
+			FrameLayout.LayoutParams l = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
+			l.setMargins(mg + k * (fb + px(8)), mg + 2 * fb + px(16), 0, 0);
+			mapBox.addView(floatBtn(b[k], new View.OnClickListener() {
+				public void onClick(View v) {
+					android.content.SharedPreferences.Editor e = Fetcher.prefs(FarmActivity.this).edit();
+					if (kind == 2) {
+						m.setRadar(!m.radar());
+						e.putBoolean("mapRadar", m.radar());
+						Log.i(FarmActivity.this, "FERMIER", "harta: radar " + (m.radar() ? "pornit" : "oprit"));
+						if (m.radar()) toast(Tr.t("Radar: the rain of the last 2 hours", "Radar: precipitațiile din ultimele 2 ore"));
+					} else {
+						m.setStyle(kind == 0 ? 1 : 0);
+						e.putInt("mapStyle", m.style());
+						Log.i(FarmActivity.this, "FERMIER", "harta: " + (kind == 0 ? "satelit" : "hartă"));
+					}
+					e.apply();
+					for (View x : b) x.invalidate();
+				}
+			}), l);
+		}
+	}
+
+	/** v5.50: the drawn icons of the satellite (0), map (1) and radar (2) buttons. */
+	private View mapIcon(final int kind, final MapView m) {
+		return new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float s = Math.min(getWidth(), getHeight()), cx = s / 2f, cy = s / 2f, r = s * 0.24f;
+				boolean on = kind == 0 ? m.style() == 1 : kind == 1 ? m.style() == 0 : m.radar();
+				if (on) {
+					pt.setStyle(Paint.Style.STROKE);
+					pt.setStrokeWidth(dp * 2.2f);
+					pt.setColor(accent);
+					c.drawCircle(cx, cy, s / 2f - dp * 1.6f, pt);
+				}
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(dp * 1.6f);
+				pt.setStrokeCap(Paint.Cap.ROUND);
+				pt.setColor(on ? accent : ink);
+				if (kind == 0) {
+					// The globe seen from space: a circle, its meridian and two parallels.
+					c.drawCircle(cx, cy, r, pt);
+					c.drawOval(new android.graphics.RectF(cx - r * 0.45f, cy - r, cx + r * 0.45f, cy + r), pt);
+					c.drawLine(cx - r, cy, cx + r, cy, pt);
+					c.drawLine(cx - r * 0.85f, cy - r * 0.5f, cx + r * 0.85f, cy - r * 0.5f, pt);
+					c.drawLine(cx - r * 0.85f, cy + r * 0.5f, cx + r * 0.85f, cy + r * 0.5f, pt);
+				} else if (kind == 1) {
+					// A folded map in three panels.
+					android.graphics.Path p = new android.graphics.Path();
+					float w = r * 2.1f, h = r * 1.7f, x0 = cx - w / 2, y0 = cy - h / 2, t = w / 3;
+					p.moveTo(x0, y0 + h * 0.12f);
+					p.lineTo(x0 + t, y0);
+					p.lineTo(x0 + 2 * t, y0 + h * 0.12f);
+					p.lineTo(x0 + w, y0);
+					p.lineTo(x0 + w, y0 + h * 0.88f);
+					p.lineTo(x0 + 2 * t, y0 + h);
+					p.lineTo(x0 + t, y0 + h * 0.88f);
+					p.lineTo(x0, y0 + h);
+					p.close();
+					c.drawPath(p, pt);
+					c.drawLine(x0 + t, y0, x0 + t, y0 + h * 0.88f, pt);
+					c.drawLine(x0 + 2 * t, y0 + h * 0.12f, x0 + 2 * t, y0 + h, pt);
+				} else {
+					// The radar: three arcs and the sweep from the middle.
+					for (int i = 1; i <= 3; i++) {
+						float rr = r * i / 3f * 1.15f;
+						c.drawArc(new android.graphics.RectF(cx - rr, cy - rr, cx + rr, cy + rr), 200, 140, false, pt);
+					}
+					c.drawLine(cx, cy, cx + r * 0.95f, cy - r * 0.7f, pt);
+					pt.setStyle(Paint.Style.FILL);
+					c.drawCircle(cx, cy, dp * 2.2f, pt);
+					c.drawCircle(cx - r * 0.5f, cy - r * 0.35f, dp * 1.6f, pt);
+				}
+			}
+		};
+	}
+
+	/**
+	 * v5.50 (Viorel): the top sheet of frosted glass with rounded corners: ＋, Parcels (back), GPS
+	 * and the bin; landscape one row; portrait an L: ＋ and Parcels on top, GPS and the bin under the
+	 * right end.
+	 */
+	private void topSheet(final FrameLayout mapBox, final boolean tab, final boolean land) {
+		final int fb = px(tab ? 46 : 42), mg = px(12), pad = px(6), g = px(8);
+		TextView plus = text("＋", 24, true, ink);
+		plus.setGravity(Gravity.CENTER);
+		plus.setContentDescription(Tr.t("New parcel", "Parcelă nouă"));
+		plus.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
+		plus.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "buton ＋ parcelă nouă");
+				if (listMap != null) newParcel(mapBox, listMap, tab);
+			}
+		});
+		LinearLayout badge = new LinearLayout(this);
+		badge.setGravity(Gravity.CENTER_VERTICAL);
+		badge.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
+		TextView back = text("‹", 24, true, ink);
+		back.setGravity(Gravity.CENTER);
+		back.setPadding(0, 0, 0, px(4));
+		badge.addView(back, new LinearLayout.LayoutParams(fb, fb));
+		TextView tt = text(Tr.t("Parcels", "Parcele"), tab ? 22 : 20, true, ink);
+		tt.setPadding(px(4), 0, px(16), 0);
+		tt.setSingleLine(true);
+		badge.addView(tt);
+		badge.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				onBackPressed();
+			}
+		});
+		View gps = crosshair();
+		gps.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
+		gps.setContentDescription(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"));
+		gps.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "harta: localizare precisă (GPS)");
+				if (gpsBubble != null) {
+					gpsBubble.setVisibility(View.VISIBLE);
+					ui.removeCallbacks(hideGps);
+					ui.postDelayed(hideGps, 1500);
+				}
+				centerMe = true;
+				locate();
+			}
+		});
+		View bin = binIcon(ink, false);
+		bin.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
+		bin.setContentDescription(Tr.t("Bin", "Coș de gunoi"));
+		bin.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				showBin();
+			}
+		});
+		final LinearLayout row = new LinearLayout(this);
+		row.setGravity(Gravity.CENTER_VERTICAL);
+		LinearLayout.LayoutParams pl = new LinearLayout.LayoutParams(fb, fb);
+		row.addView(plus, pl);
+		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, fb);
+		bl.leftMargin = g;
+		row.addView(badge, bl);
+		final LinearLayout sheet = new LinearLayout(this);
+		sheet.setPadding(pad, pad, pad, pad);
+		final LinearLayout col;
+		if (land) {
+			LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(fb, fb);
+			gl.leftMargin = g;
+			row.addView(gps, gl);
+			LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(fb, fb);
+			nl.leftMargin = g;
+			row.addView(bin, nl);
+			sheet.addView(row);
+			col = null;
+			sheet.setBackground(glass(fb / 2f + pad, 0.78f));
+		} else {
+			sheet.setOrientation(LinearLayout.VERTICAL);
+			sheet.setGravity(Gravity.RIGHT);
+			sheet.addView(row);
+			col = column();
+			col.setGravity(Gravity.CENTER_HORIZONTAL);
+			LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(fb, fb);
+			gl.topMargin = g + pad;
+			col.addView(gps, gl);
+			LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(fb, fb);
+			nl.topMargin = g;
+			col.addView(bin, nl);
+			sheet.addView(col);
+			// The L: the row and the column joined, every outer corner round.
+			final float rad = fb / 2f + pad;
+			sheet.setBackground(new android.graphics.drawable.Drawable() {
+				final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+				@Override
+				public void draw(Canvas c) {
+					android.graphics.Path a = new android.graphics.Path(), b = new android.graphics.Path();
+					a.addRoundRect(new android.graphics.RectF(row.getLeft() - pad, row.getTop() - pad, row.getRight() + pad, row.getBottom() + pad), rad, rad,
+							android.graphics.Path.Direction.CW);
+					b.addRoundRect(new android.graphics.RectF(col.getLeft() - pad, row.getTop() - pad, col.getRight() + pad, col.getBottom() + pad), rad, rad,
+							android.graphics.Path.Direction.CW);
+					if (Build.VERSION.SDK_INT >= 19) a.op(b, android.graphics.Path.Op.UNION);
+					else a.addPath(b);
+					p.setStyle(Paint.Style.FILL);
+					p.setColor(Glass.alpha(page, 0.78f));
+					c.drawPath(a, p);
+					p.setStyle(Paint.Style.STROKE);
+					p.setStrokeWidth(Math.max(1, dp));
+					p.setColor(Glass.edge(dark));
+					c.drawPath(a, p);
+				}
+
+				@Override
+				public void setAlpha(int x) {
+				}
+
+				@Override
+				public void setColorFilter(android.graphics.ColorFilter f) {
+				}
+
+				@Override
+				public int getOpacity() {
+					return android.graphics.PixelFormat.TRANSLUCENT;
+				}
+			});
+		}
+		sheet.setElevation(px(4));
+		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		sl.setMargins(0, mg, mg, 0);
+		mapBox.addView(sheet, sl);
+		// The bubble while GPS looks for the position, under the sheet.
+		LinearLayout bub = column();
+		bub.setBackground(glass(px(16), 0.94f));
+		bub.setPadding(px(14), px(10), px(14), px(12));
+		bub.setElevation(px(6));
+		bub.addView(text(Tr.t("Precise location (GPS)", "Localizare precisă (GPS)"), 16, true, ink));
+		bub.addView(text(Tr.t("Locating by GPS…", "Se efectuează localizarea GPS…"), 15, false, ink), wide(4));
+		bub.setVisibility(View.GONE);
+		ui.removeCallbacks(hideGps);
+		gpsBubble = bub;
+		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		ql.setMargins(0, mg + (land ? fb + 2 * pad : 3 * fb + 2 * g + 3 * pad) + px(8), mg, 0);
+		mapBox.addView(bub, ql);
+	}
+
+	/**
+	 * v5.50 (Viorel): a parcel's square card of frosted glass: the name (2–3 lines) and under it the
+	 * coordinates on 2 lines, as large as fit; at the right edge 4 buttons of one size spread over
+	 * the card's height: the pencil, the statistics (PDF), the bell, the bin. A tap shows the parcel
+	 * on the main screen.
 	 */
 	private View squareCard(final Parcels.Parcel p, int side, boolean tab) {
 		FrameLayout card = new FrameLayout(this);
-		card.setBackground(Glass.pill(Glass.alpha(page, 0.92f), Glass.edge(dark), px(18), dp));
+		card.setBackground(glass(px(18), 0.8f));
 		card.setElevation(px(3));
-		int pad = px(10), ic = px(tab ? 34 : 30);
+		int pad = px(10);
 		card.setPadding(pad, pad, pad, pad);
+		int inside = side - 2 * pad;
+		int ic = Math.min(px(tab ? 40 : 34), (inside - 3 * px(5)) / 4);
+		float g = (inside - 4f * ic) / 3f;
+		int room = inside - ic - px(8);
 		LinearLayout col = column();
-		int room = side - 2 * pad - ic - px(6);
-		float k = tab ? 1.15f : 1f;
-		TextView name = text(p.name, 13 * k, true, ink);
-		name.setMaxLines(2);
-		name.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		TextView name = text(p.name, 16, true, ink);
+		fitLines(name, room, tab ? 19 : 16, 9, 3);
 		col.addView(name);
-		TextView co = text(coords(p.lat, p.lon), 10 * k, false, dim);
-		co.setSingleLine(true);
-		fitWidth(co, room, 10 * k, 7);
-		col.addView(co);
-		Farm.Data d = Parcels.data(this, p.id);
-		long f = Parcels.fetched(this, p.id);
-		if (d != null) {
-			int i = d.nowIndex(Calendar.getInstance());
-			if (i >= 0) {
-				String[] lines = { deg(d.temp[i]), Tr.t("wind ", "vânt ") + dir8(d.dir[i]) + " " + kmh(d.wind[i]), Tr.t("rain ", "ploaie ") + pct(d.prob[i]),
-						Tr.t("soil ", "sol ") + soil(d.soilM[i]) };
-				for (int j = 0; j < lines.length; j++) {
-					TextView tv = text(lines[j], (j == 0 ? 18 : 11) * k, j == 0, ink);
-					tv.setSingleLine(true);
-					fitWidth(tv, room, (j == 0 ? 18 : 11) * k, 8);
-					LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-					if (j == 0) ll.topMargin = px(2);
-					col.addView(tv, ll);
-				}
-			}
-		}
-		if (d != null && f > 0) {
-			TextView up = text(Tr.t("updated ", "actualizat ") + time(f), 9 * k, false, dim);
-			up.setSingleLine(true);
-			col.addView(up);
+		String[] co = coords(p.lat, p.lon).split(",\\s*");
+		for (String l : co) {
+			TextView t = text(l.trim(), 12, false, dim);
+			t.setSingleLine(true);
+			fitWidth(t, room, tab ? 14 : 12, 8);
+			col.addView(t);
 		}
 		card.addView(col, new FrameLayout.LayoutParams(room, ViewGroup.LayoutParams.MATCH_PARENT, Gravity.TOP | Gravity.LEFT));
-		View pen = pencil(p);
-		card.addView(pen, new FrameLayout.LayoutParams(ic, ic, Gravity.TOP | Gravity.RIGHT));
-		final View bellV = bellToggle(p);
-		FrameLayout.LayoutParams bel = new FrameLayout.LayoutParams(ic, ic, Gravity.TOP | Gravity.RIGHT);
-		bel.topMargin = ic + px(8);
-		card.addView(bellV, bel);
+		View stats = statsIcon();
+		stats.setContentDescription(Tr.t("Statistics · PDF", "Statistică · PDF"));
+		stats.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "statistica parcelei " + p.name);
+				openStats(p.id);
+			}
+		});
 		View bin = binIcon(ink, true);
 		bin.setContentDescription(Tr.t("Delete", "Șterge"));
 		bin.setOnClickListener(new View.OnClickListener() {
@@ -1493,7 +1705,12 @@ public final class FarmActivity extends Activity {
 				askDelete(p);
 			}
 		});
-		card.addView(bin, new FrameLayout.LayoutParams(ic, ic, Gravity.BOTTOM | Gravity.RIGHT));
+		View[] bs = { pencil(p), stats, bellToggle(p), bin };
+		for (int k = 0; k < bs.length; k++) {
+			FrameLayout.LayoutParams l = new FrameLayout.LayoutParams(ic, ic, Gravity.TOP | Gravity.RIGHT);
+			l.topMargin = Math.round(k * (ic + g));
+			card.addView(bs[k], l);
+		}
 		card.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pentru ecranul principal: " + p.name);
@@ -1501,6 +1718,31 @@ public final class FarmActivity extends Activity {
 			}
 		});
 		return card;
+	}
+
+	/** v5.50: the statistics button: three bars in the framed square of the pencil. */
+	private View statsIcon() {
+		return new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float s = Math.min(getWidth(), getHeight());
+				pt.setColor(ink);
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(dp * 1.5f);
+				c.drawRoundRect(new android.graphics.RectF(dp, dp, s - dp, s - dp), dp * 8, dp * 8, pt);
+				pt.setStyle(Paint.Style.FILL);
+				float base = s * 0.72f, bw = s * 0.12f, x0 = s * 0.27f;
+				float[] hs = { 0.22f, 0.4f, 0.3f };
+				for (int i = 0; i < 3; i++) {
+					float x = x0 + i * bw * 1.6f;
+					c.drawRect(x, base - s * hs[i], x + bw, base, pt);
+				}
+				pt.setStyle(Paint.Style.STROKE);
+				c.drawLine(s * 0.22f, base + dp, s * 0.78f, base + dp, pt);
+			}
+		};
 	}
 
 	/** T's text one line in WIDTH pixels: from MAX sp down to MIN sp. */
@@ -1602,11 +1844,12 @@ public final class FarmActivity extends Activity {
 	private void newParcel(final FrameLayout mapBox, final MapView m, boolean tab) {
 		if (newBox != null) return;
 		final boolean land = land();
+		newOpen = true;
 		if (cardsView != null) cardsView.setVisibility(View.GONE);
-		if (statsBtn != null) statsBtn.setVisibility(View.GONE);
-		final double[] at = { Double.NaN, Double.NaN };
+		// v5.50: kept when the phone turns: the place (tapped or found) and the name.
+		final double[] at = { newLa, newLo };
 		LinearLayout box = column();
-		box.setBackground(Glass.pill(Glass.alpha(page, 0.95f), Glass.edge(dark), px(20), dp));
+		box.setBackground(glass(px(20), 0.88f));
 		box.setElevation(px(5));
 		box.setPadding(px(16), px(12), px(16), px(14));
 		LinearLayout head = new LinearLayout(this);
@@ -1627,17 +1870,31 @@ public final class FarmActivity extends Activity {
 		nameIn.setTextColor(ink);
 		nameIn.setHintTextColor(dim);
 		nameIn.setTextSize(16);
+		nameIn.setText(newName);
+		nameIn.addTextChangedListener(new android.text.TextWatcher() {
+			public void beforeTextChanged(CharSequence c, int a, int b, int d) {
+			}
+
+			public void onTextChanged(CharSequence c, int a, int b, int d) {
+			}
+
+			public void afterTextChanged(android.text.Editable e) {
+				newName = e.toString();
+			}
+		});
 		box.addView(nameIn, wide(6));
 		TextView save = button(Tr.t("Save", "Salvează"), null);
 		box.addView(save, wide(8));
 		int side = Math.min(px(tab ? 360 : 300), getResources().getDisplayMetrics().widthPixels - px(24));
 		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(side, ViewGroup.LayoutParams.WRAP_CONTENT, land ? Gravity.TOP | Gravity.RIGHT : Gravity.BOTTOM | Gravity.RIGHT);
 		int mg = px(12), fb = px(tab ? 46 : 42);
-		bl.setMargins(mg, land ? mg + fb + px(14) : 0, mg, land ? mg : mg + px(14));
+		bl.setMargins(mg, land ? mg + fb + 2 * px(6) + px(10) : 0, mg, land ? mg : mg + px(14));
 		mapBox.addView(box, bl);
 		newBox = box;
 		final Runnable put = new Runnable() {
 			public void run() {
+				newLa = at[0];
+				newLo = at[1];
 				m.setMark(at[0], at[1]);
 				where.setText(coords(at[0], at[1]));
 			}
@@ -1647,17 +1904,19 @@ public final class FarmActivity extends Activity {
 				at[0] = la;
 				at[1] = lo;
 				newGps = null;
+				newTapped = true;
 				put.run();
 			}
 		});
 		// The phone's position: at once the last one known, then GPS when it answers (unless the map was tapped).
-		if (!Double.isNaN(meLa)) {
+		if (!Double.isNaN(at[0])) put.run();
+		else if (!Double.isNaN(meLa)) {
 			at[0] = meLa;
 			at[1] = meLo;
 			put.run();
 			m.center(meLa, meLo);
 		}
-		newGps = new Runnable() {
+		newGps = newTapped ? null : new Runnable() {
 			public void run() {
 				if (Double.isNaN(meLa)) return;
 				at[0] = meLa;
@@ -1697,6 +1956,7 @@ public final class FarmActivity extends Activity {
 				fetchNow(p);
 				listLat = Double.NaN;
 				newGps = null;
+				newReset();
 				showList();
 			}
 		});
@@ -1709,9 +1969,17 @@ public final class FarmActivity extends Activity {
 	private boolean closeNew() {
 		if (newBox == null) return false;
 		newGps = null;
+		newReset();
 		hideKeys(newBox);
 		showList();
 		return true;
+	}
+
+	private void newReset() {
+		newOpen = false;
+		newTapped = false;
+		newLa = newLo = Double.NaN;
+		newName = "";
 	}
 
 	private void hideKeys(View v) {

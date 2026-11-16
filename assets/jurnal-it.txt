@@ -1,4 +1,4 @@
-Versione attuale: v.5.40 · 16.11.2026
+Versione attuale: v.5.50 · 16.11.2026
 AGGIORNAMENTI
 - Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ☰ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
 IMPOSTAZIONI
@@ -13,7 +13,8 @@ NOTIFICHE
 - Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ☰.
 PARTICELLE
 - Cestino: una particella eliminata va per 15 giorni nel cestino sotto il pulsante GPS e si può ripristinare da lì.
-- Pagina Particelle: la mappa riempie lo schermo; le schede delle particelle galleggiano sopra, con la matita, la campana delle notifiche della particella e il cestino; ＋ aggiunge una particella.
+- Pagina Particelle: le schede delle particelle (nome, coordinate, matita, Statistica · PDF, campana, cestino) galleggiano sulla mappa, in una riga in basso o una colonna a destra; ＋, anche la scheda ＋, apre il riquadro di una nuova particella.
+- Viste della mappa: pulsanti rotondi sotto ＋/− passano tra satellite e mappa e mostrano il radar della pioggia delle ultime 2 ore.
 SCHERMATA PRINCIPALE
 - Bussola grande: toccare una località nell'elenco ne mostra il segno sulla bussola; le località nella stessa direzione non si sovrappongono più.
 - Previsioni a cinque giorni: i giorni 3–5 avanzano da soli ogni 3 secondi fino al primo tocco.

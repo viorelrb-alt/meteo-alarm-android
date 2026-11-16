@@ -459,7 +459,9 @@ final class Bubble extends FrameLayout implements Glass.Local {
 			sp -= 0.5f;
 		}
 		// On a tablet just as wide as the longest row (Viorel v2.21: it was too wide there).
-		pan = pan && sw > sh;
+		// v5.50 (Viorel): on a tablet no side panel; at most half the portrait width, in landscape too.
+		final boolean tabB = TextSize.tablet(c);
+		pan = pan && sw > sh && !tabB;
 		if (pan) width = (int) (sw * 0.62f);
 		else {
 			// v2.90: only a bubble of choices shrinks to its longest row; one of info rows (only
@@ -469,6 +471,10 @@ final class Bubble extends FrameLayout implements Glass.Local {
 			if (TextSize.tablet(c) && choices && !texts) width = (int) Math.ceil(need + 8 * dp);
 			int minW = (int) (sw * (sw < sh ? (TextSize.tablet(c) ? 0.62f : 0.88f) : 0.5f));
 			width = Math.min(Math.max(Math.max(width, minW), (int) Math.ceil(need)), sw - 2 * margin);
+		}
+		if (tabB) {
+			android.util.DisplayMetrics dm = getResources().getDisplayMetrics();
+			width = Math.min(width, (int) (0.5f * Math.min(dm.widthPixels, dm.heightPixels)));
 		}
 		// A value with its label on one line, smaller when needed; a table at least as wide as the bubble.
 		int inner = width - (int) (32 * dp);
@@ -529,9 +535,23 @@ final class Bubble extends FrameLayout implements Glass.Local {
 			y = margin;
 			below = false;
 		}
+		// v5.50 (Viorel): on a tablet over the box it is about, centred on it, when there is room; else in the middle.
+		if (tabB && !pan) {
+			int ext = scrolls ? gap + aw : 0;
+			float acx = (anchor[0] + anchor[2]) / 2f;
+			int ay = (int) anchor[1] - cardH - (int) (8 * dp);
+			if (ay >= margin) {
+				x = Math.max(margin, Math.min(sw - margin - width - ext, Math.round(acx - width / 2f)));
+				y = ay;
+			} else {
+				x = Math.max(margin, (sw - width - ext) / 2);
+				y = Math.max(margin, (sh - cardH) / 2);
+			}
+		}
 		if (scrolls) {
 			int ax;
-			if (!pan) {
+			if (!pan && tabB) ax = x + width + gap;
+			else if (!pan) {
 				x = Math.max(margin, (sw - width - gap - aw) / 2);
 				ax = x + width + gap;
 			} else if (x + width + gap + aw <= sw - gap) ax = x + width + gap;

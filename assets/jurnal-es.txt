@@ -1,4 +1,4 @@
-Versión actual: v.5.40 · 16.11.2026
+Versión actual: v.5.50 · 16.11.2026
 ACTUALIZACIONES
 - Actualizaciones: la app ya no busca actualizaciones por sí sola, solo cuando tocas ☰ › Buscar actualizaciones; la versión nueva se descarga en el navegador y la instalas desde el archivo descargado.
 AJUSTES
@@ -17,7 +17,8 @@ PANTALLA PRINCIPAL
 - Previsión de cinco días: los días 3–5 pasan solos cada 3 segundos hasta el primer toque.
 PARCELAS
 - Papelera: una parcela borrada va 15 días a la papelera bajo el botón GPS y se puede restaurar desde allí.
-- Página Parcelas: el mapa llena la pantalla; las tarjetas de las parcelas flotan encima, con el lápiz, la campana de los avisos de la parcela y la papelera; ＋ añade una parcela.
+- Página Parcelas: las tarjetas de las parcelas (nombre, coordenadas, lápiz, Estadística · PDF, campana, papelera) flotan sobre el mapa, en una fila abajo o una columna a la derecha; ＋, también la pestaña ＋, abre la ficha de una parcela nueva.
+- Vistas del mapa: botones redondos bajo ＋/− cambian entre satélite y mapa y muestran el radar de lluvia de las últimas 2 horas.
 - Mejoras de diseño y corrección de errores.
 
 Versión 4 (v.4.00 – v.4.52)

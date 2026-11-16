@@ -1,4 +1,4 @@
-Současná verze: v.5.40 · 16.11.2026
+Současná verze: v.5.50 · 16.11.2026
 AKTUALIZACE
 - Aktualizace: aplikace už sama aktualizace nehledá, jen když klepnete na ☰ › Zkontrolovat aktualizace; nová verze se stáhne v prohlížeči a nainstalujete ji ze staženého souboru.
 HLAVNÍ OBRAZOVKA
@@ -13,7 +13,8 @@ OZNÁMENÍ
 - Zemětřesení: oznámení jen o zemětřeseních nejvýše 300 km od vašeho místa; zapínají a vypínají se v ☰.
 POZEMKY
 - Koš: smazaný pozemek jde na 15 dní do koše pod tlačítkem GPS a odtud ho lze obnovit.
-- Stránka Pozemky: mapa vyplní obrazovku; karty pozemků nad ní plují, s tužkou, zvonkem pro upozornění pozemku a košem; ＋ přidá pozemek.
+- Stránka Pozemky: karty pozemků (název, souřadnice, tužka, Statistika · PDF, zvonek, koš) plují nad mapou, v řadě dole nebo ve sloupci vpravo; ＋, i karta ＋, otevře okno nového pozemku.
+- Zobrazení mapy: kulatá tlačítka pod ＋/− přepínají satelit a mapu a ukazují srážkový radar za poslední 2 hodiny.
 REŽIM FARMÁŘE
 - Karty: obec a pozemky v kartách pod názvem (na šířku dole); obrazovka pozemku v částech 1–4.
 - Provozní stav: na obrazovce pozemku, jen když je třeba, verdikt pro postřik, jeho důvod a rizika příštích 24 hodin.

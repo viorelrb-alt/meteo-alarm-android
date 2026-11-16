@@ -1,4 +1,4 @@
-Trenutačna verzija: v.5.40 · 16.11.2026
+Trenutačna verzija: v.5.50 · 16.11.2026
 AŽURIRANJA
 - Ažuriranja: aplikacija više sama ne traži ažuriranja, samo kada dodirnete ☰ › Provjeri ažuriranja; nova verzija preuzima se u pregledniku, a vi je instalirate iz preuzete datoteke.
 GLAVNI ZASLON
@@ -14,7 +14,8 @@ OBAVIJESTI
 - Tornada (SAD): obavijesti o tornadu za vaše mjesto uključuju se ili isključuju u ☰.
 PARCELE
 - Koš: obrisana parcela ide na 15 dana u koš ispod gumba GPS i odande se može vratiti.
-- Stranica Parcele: karta ispunjava zaslon; kartice parcela lebde iznad nje, s olovkom, zvonom za obavijesti parcele i košem; ＋ dodaje parcelu.
+- Prikazi karte: okrugli gumbi ispod ＋/− mijenjaju satelit i kartu i prikazuju radar oborina zadnja 2 sata.
+- Stranica Parcele: kartice parcela (ime, koordinate, olovka, Statistika · PDF, zvono, koš) lebde iznad karte, u redu dolje ili u stupcu desno; ＋, i kartica ＋, otvara okvir nove parcele.
 POSTAVKE
 - Postavke: izbornik ☰ sada je prozor s odjeljcima, prekidačima, temama u boji i trakom Sustav i podrška; osvježava se povlačenjem zaslona prema dolje ili dodirom na „ažurirano”.
 - Tema ikona: 6 tema ikona vremena (Klasične, Sjajne, Ravne, Realistične, Atmosferske, Obrisne), biraju se obojenim točkama u ☰; u aplikaciji i na widgetima.

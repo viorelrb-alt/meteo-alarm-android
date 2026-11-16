@@ -1,10 +1,11 @@
-Praegune versioon: v.5.40 · 16.11.2026
+Praegune versioon: v.5.50 · 16.11.2026
 PÕHIEKRAAN
 - Põhiekraan: leht kerib ülemise klaasi all jaotiste kaupa (Järgmised tunnid, Viie päeva prognoos, Ilma üksikasjad); nupud ja aku hõljuvad all.
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.
 - Viie päeva prognoos: päevad 3–5 vahetuvad ise iga 3 sekundi järel kuni esimese puudutuseni.
 PÕLLULAPID
-- Leht Põllud: kaart täidab ekraani; põldude kaardid hõljuvad selle kohal pliiatsi, põllu teavituste kella ja prügikastiga; ＋ lisab põllu.
+- Kaardivaated: ＋/− all olevad ümarad nupud vahetavad satelliiti ja kaarti ning näitavad viimase 2 tunni sajuradarit.
+- Leht Põllud: põldude kaardid (nimi, koordinaadid, pliiats, Statistika · PDF, kell, prügikast) hõljuvad kaardi kohal, reas all või veerus paremal; ＋, ka vahekaart ＋, avab uue põllu kasti.
 - Prügikast: kustutatud põld läheb 15 päevaks GPS-nupu all olevasse prügikasti ja selle saab sealt taastada.
 PÕLLUMEHE REŽIIM
 - Põllumehe nupp: nuppude kõrval olev lehenupp lülitab põllumehe režiimi välja; teine koht jätab selle alles.

@@ -1,9 +1,10 @@
-Obecna wersja: v.5.40 · 16.11.2026
+Obecna wersja: v.5.50 · 16.11.2026
 AKTUALIZACJE
 - Aktualizacje: aplikacja nie szuka już sama aktualizacji, tylko po dotknięciu ☰ › Sprawdź aktualizacje; nowa wersja pobiera się w przeglądarce, a Ty instalujesz ją z pobranego pliku.
 DZIAŁKI
 - Kosz: usunięta działka trafia na 15 dni do kosza pod przyciskiem GPS i można ją stamtąd przywrócić.
-- Strona Działki: mapa wypełnia ekran; karty działek unoszą się nad nią, z ołówkiem, dzwonkiem powiadomień działki i koszem; ＋ dodaje działkę.
+- Strona Działki: karty działek (nazwa, współrzędne, ołówek, Statystyka · PDF, dzwonek, kosz) unoszą się nad mapą, w rzędzie na dole lub w kolumnie po prawej; ＋, także karta ＋, otwiera okno nowej działki.
+- Widoki mapy: okrągłe przyciski pod ＋/− przełączają satelitę i mapę oraz pokazują radar opadów z ostatnich 2 godzin.
 EKRAN GŁÓWNY
 - Duży kompas: dotknięcie miejscowości na liście pokazuje jej znak na kompasie; miejscowości w tym samym kierunku już się nie nakładają.
 - Ekran główny: strona przewija się pod szkłem u góry, w sekcjach (Najbliższe godziny, Prognoza na pięć dni, Szczegóły pogody); przyciski i bateria unoszą się na dole.

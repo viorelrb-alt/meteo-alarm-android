@@ -1,4 +1,4 @@
-Súčasná verzia: v.5.40 · 16.11.2026
+Súčasná verzia: v.5.50 · 16.11.2026
 AKTUALIZÁCIE
 - Aktualizácie: aplikácia už sama nehľadá aktualizácie, len keď ťuknete na ☰ › Skontrolovať aktualizácie; nová verzia sa stiahne v prehliadači a nainštalujete ju zo stiahnutého súboru.
 HLAVNÁ OBRAZOVKA
@@ -10,7 +10,8 @@ NASTAVENIA
 - Nastavenia: ponuka ☰ je teraz okno s časťami, prepínačmi, farebnými motívmi a lištou Systém a podpora; obnovuje sa potiahnutím obrazovky nadol alebo ťuknutím na „aktualizované“.
 POZEMKY
 - Kôš: zmazaný pozemok ide na 15 dní do koša pod tlačidlom GPS a odtiaľ ho možno obnoviť.
-- Stránka Pozemky: mapa vyplní obrazovku; karty pozemkov nad ňou plávajú, s ceruzkou, zvončekom pre upozornenia pozemku a košom; ＋ pridá pozemok.
+- Stránka Pozemky: karty pozemkov (názov, súradnice, ceruzka, Štatistika · PDF, zvonček, kôš) plávajú nad mapou, v rade dole alebo v stĺpci vpravo; ＋, aj karta ＋, otvorí okno nového pozemku.
+- Zobrazenia mapy: okrúhle tlačidlá pod ＋/− prepínajú satelit a mapu a ukazujú zrážkový radar za posledné 2 hodiny.
 REŽIM FARMÁRA
 - Karty: obec a pozemky v kartách pod názvom (na šírku dole); obrazovka pozemku v častiach 1–4.
 - Prevádzkový stav: na obrazovke pozemku, len keď treba, verdikt pre postrek, jeho dôvod a riziká nasledujúcich 24 hodín.

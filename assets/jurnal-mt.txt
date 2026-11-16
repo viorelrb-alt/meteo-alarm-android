@@ -1,9 +1,10 @@
-Verżjoni attwali: v.5.40 · 16.11.2026
+Verżjoni attwali: v.5.50 · 16.11.2026
 AĠĠORNAMENTI
 - Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ☰ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
 GĦELIEQI
 - Landa tal-iskart: biċċa art imħassra tmur għal 15-il jum fil-landa taħt il-buttuna GPS u tista' terġa' tinġieb minn hemm.
-- Paġna Biċċiet tal-art: il-mappa timla l-iskrin; il-karti tal-biċċiet tal-art jżommu fil-wiċċ fuqha, bil-lapes, il-qanpiena tan-notifiki u l-landa; ＋ iżżid biċċa art.
+- Paġna Biċċiet tal-art: il-karti tal-biċċiet tal-art (isem, koordinati, lapes, Statistika · PDF, qanpiena, landa) jżommu fil-wiċċ fuq il-mappa, f'ringiela isfel jew f'kolonna fuq il-lemin; ＋, anke t-tab ＋, jiftaħ il-kaxxa ta' biċċa art ġdida.
+- Veduti tal-mappa: buttuni tondi taħt ＋/− jaqilbu bejn satellita u mappa u juru r-radar tax-xita tal-aħħar sagħtejn.
 MODALITÀ TAL-BIDWI
 - Buttuna tal-bidwi: il-buttuna tal-werqa ħdejn il-buttuni titfi l-modalità tal-bidwi; lokalità oħra żżommha.
 - Status operattiv: fuq l-iskrin ta' għalqa, meta jkun meħtieġ biss, is-sentenza għar-raxx, ir-raġuni u r-riskji tal-24 siegħa li ġejjin.

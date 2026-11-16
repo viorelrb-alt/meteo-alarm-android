@@ -347,14 +347,14 @@ final class MapView extends View {
 				int x = ((tx % n) + n) % n;
 				float px = (float) (tx * ts - left), py = (float) (ty * ts - top);
 				dst.set(px, py, px + ts + 0.5f, py + ts + 0.5f);
-				Bitmap b = get(z, x, ty);
+				Bitmap b = get(pre() + z + "/" + x + "/" + ty);
 				if (b != null) {
 					c.drawBitmap(b, src, dst, paint);
 					continue;
 				}
 				// Meanwhile the tile one level up, enlarged.
 				if (z > MIN_Z) {
-					Bitmap up = mem.get((z - 1) + "/" + (x / 2) + "/" + (ty / 2));
+					Bitmap up = mem.get(pre() + (z - 1) + "/" + (x / 2) + "/" + (ty / 2));
 					if (up != null) {
 						Rect half = new Rect((x % 2) * 128, (ty % 2) * 128, (x % 2) * 128 + 128, (ty % 2) * 128 + 128);
 						c.drawBitmap(up, half, dst, paint);
@@ -393,7 +393,8 @@ final class MapView extends View {
 		}
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
-		String att = "© OpenStreetMap contributors";
+		drawRadar(c, w, h, world, left, top);
+		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : "© OpenStreetMap contributors") + (radarOn ? " · Radar © RainViewer" : "");
 		paint.setTextSize(11 * dp);
 		float aw = paint.measureText(att);
 		paint.setColor(0xCCFFFFFF);
@@ -425,9 +426,228 @@ final class MapView extends View {
 		paint.setStyle(Paint.Style.FILL);
 	}
 
+	// --- v5.50 (Viorel): satellite view and the rain radar of the last 2 hours -----------------------
+
+	/** 0 the map (OpenStreetMap), 1 the satellite view (Esri). */
+	private int style;
+	private boolean radarOn;
+	/** The radar frames (times in seconds, paths), the oldest first; the one shown. */
+	private final java.util.List<long[]> rTimes = new java.util.ArrayList<long[]>();
+	private final java.util.List<String> rPaths = new java.util.ArrayList<String>();
+	private String rHost = "https://tilecache.rainviewer.com";
+	private int rFrame;
+	private long rFetched;
+	private final LruCache<String, Bitmap> rMem = new LruCache<String, Bitmap>(220);
+	private final Set<String> rLoading = new HashSet<String>();
+	private final LinkedList<String> rQueue = new LinkedList<String>();
+	private int rRunning;
+	/** The radar's tiles are asked for at most at this zoom (the free service stops there), then enlarged. */
+	private static final int R_MAX_Z = 7;
+
+	private String pre() {
+		return style == 1 ? "s/" : "";
+	}
+
+	void setStyle(int s) {
+		if (style == s) return;
+		style = s;
+		invalidate();
+	}
+
+	int style() {
+		return style;
+	}
+
+	void setRadar(boolean on) {
+		radarOn = on;
+		ui.removeCallbacks(rTick);
+		if (on) {
+			if (rPaths.isEmpty() || System.currentTimeMillis() - rFetched > 10 * 60000L) frames();
+			ui.postDelayed(rTick, 700);
+		}
+		invalidate();
+	}
+
+	boolean radar() {
+		return radarOn;
+	}
+
+	/** The frames shown in turn: 0.7 s each, 2 s on the newest; the list again every 10 minutes. */
+	private final Runnable rTick = new Runnable() {
+		public void run() {
+			if (!radarOn) return;
+			if (!isShown()) {
+				ui.postDelayed(this, 1500);
+				return;
+			}
+			if (System.currentTimeMillis() - rFetched > 10 * 60000L) frames();
+			int n = rPaths.size();
+			if (n > 0) rFrame = (rFrame + 1) % n;
+			invalidate();
+			ui.postDelayed(this, n > 0 && rFrame == n - 1 ? 2000 : 700);
+		}
+	};
+
+	/** Off the main thread: the list of the radar frames of the last 2 hours (RainViewer). */
+	private void frames() {
+		rFetched = System.currentTimeMillis();
+		new Thread(new Runnable() {
+			public void run() {
+				try {
+					HttpURLConnection c = (HttpURLConnection) new URL("https://api.rainviewer.com/public/weather-maps.json").openConnection();
+					c.setConnectTimeout(15000);
+					c.setReadTimeout(20000);
+					c.setRequestProperty("User-Agent", UA);
+					InputStream in = c.getInputStream();
+					ByteArrayOutputStream out = new ByteArrayOutputStream();
+					byte[] buf = new byte[8192];
+					int n;
+					while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
+					in.close();
+					c.disconnect();
+					org.json.JSONObject o = new org.json.JSONObject(out.toString("UTF-8"));
+					final String host = o.optString("host", "https://tilecache.rainviewer.com");
+					org.json.JSONArray past = o.getJSONObject("radar").getJSONArray("past");
+					final java.util.List<long[]> t = new java.util.ArrayList<long[]>();
+					final java.util.List<String> p = new java.util.ArrayList<String>();
+					long newest = past.length() > 0 ? past.getJSONObject(past.length() - 1).getLong("time") : 0;
+					for (int i = 0; i < past.length(); i++) {
+						org.json.JSONObject f = past.getJSONObject(i);
+						if (newest - f.getLong("time") > 2 * 3600) continue;
+						t.add(new long[] { f.getLong("time") });
+						p.add(f.getString("path"));
+					}
+					ui.post(new Runnable() {
+						public void run() {
+							rHost = host;
+							rTimes.clear();
+							rTimes.addAll(t);
+							rPaths.clear();
+							rPaths.addAll(p);
+							rFrame = Math.max(0, p.size() - 1);
+							synchronized (rQueue) {
+								rQueue.clear();
+								rLoading.clear();
+							}
+							invalidate();
+						}
+					});
+				} catch (Exception e) {
+					rFetched = System.currentTimeMillis() - 9 * 60000L; // again in a minute
+				}
+			}
+		}).start();
+	}
+
+	/** The radar frame shown over the map, half see-through, with its time at the bottom left. */
+	private void drawRadar(Canvas c, int w, int h, double world, double left, double top) {
+		if (!radarOn || rPaths.isEmpty()) return;
+		int rz = Math.max(MIN_Z, Math.min(R_MAX_Z, (int) Math.floor(zoom)));
+		double scale = world / (tile * Math.pow(2, rz));
+		float ts = (float) (tile * scale);
+		int n = 1 << rz;
+		int tx0 = (int) Math.floor(left / ts), ty0 = (int) Math.floor(top / ts);
+		int tx1 = (int) Math.floor((left + w) / ts), ty1 = (int) Math.floor((top + h) / ts);
+		Paint rp = new Paint(Paint.FILTER_BITMAP_FLAG);
+		rp.setAlpha(190);
+		RectF dst = new RectF();
+		// Every frame of the view is asked for (the animation), the one shown first.
+		for (int k = 0; k <= rPaths.size(); k++) {
+			int fi = k == 0 ? rFrame : k - 1;
+			if (k > 0 && fi == rFrame) continue;
+			for (int ty = ty0; ty <= ty1; ty++) {
+				if (ty < 0 || ty >= n) continue;
+				for (int tx = tx0; tx <= tx1; tx++) {
+					int x = ((tx % n) + n) % n;
+					String key = rPaths.get(fi) + "/256/" + rz + "/" + x + "/" + ty;
+					Bitmap b = rGet(key);
+					if (k == 0 && b != null) {
+						float px = (float) (tx * ts - left), py = (float) (ty * ts - top);
+						dst.set(px, py, px + ts + 0.5f, py + ts + 0.5f);
+						c.drawBitmap(b, null, dst, rp);
+					}
+				}
+			}
+		}
+		// The frame's time.
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("HH:mm", java.util.Locale.US);
+		String t = "Radar " + f.format(new java.util.Date(rTimes.get(Math.min(rFrame, rTimes.size() - 1))[0] * 1000L));
+		paint.setTextSize(14 * dp);
+		paint.setFakeBoldText(true);
+		float tw = paint.measureText(t);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(0xCC1A1A1A);
+		RectF r = new RectF(w / 2f - tw / 2 - 10 * dp, h - 48 * dp, w / 2f + tw / 2 + 10 * dp, h - 24 * dp);
+		c.drawRoundRect(r, 12 * dp, 12 * dp, paint);
+		paint.setColor(0xFFFFFFFF);
+		c.drawText(t, w / 2f - tw / 2, h - 31 * dp, paint);
+		paint.setFakeBoldText(false);
+	}
+
+	private Bitmap rGet(String key) {
+		Bitmap b = rMem.get(key);
+		if (b != null) return b;
+		synchronized (rQueue) {
+			if (rLoading.contains(key)) return null;
+			rLoading.add(key);
+			rQueue.addLast(key);
+		}
+		rPump();
+		return null;
+	}
+
+	private void rPump() {
+		synchronized (rQueue) {
+			while (rRunning < 3 && !rQueue.isEmpty()) {
+				final String key = rQueue.removeFirst();
+				final String url = rHost + key + "/2/1_1.png";
+				rRunning++;
+				new Thread(new Runnable() {
+					public void run() {
+						Bitmap b = null;
+						try {
+							HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
+							c.setConnectTimeout(15000);
+							c.setReadTimeout(20000);
+							c.setRequestProperty("User-Agent", UA);
+							if (c.getResponseCode() == 200) {
+								BitmapFactory.Options o = new BitmapFactory.Options();
+								o.inSampleSize = 2;
+								b = BitmapFactory.decodeStream(c.getInputStream(), null, o);
+							}
+							c.disconnect();
+						} catch (Exception e) {
+							// none this time
+						}
+						final Bitmap fb = b;
+						synchronized (rQueue) {
+							rRunning--;
+							// a failed tile is not asked for again until the next list of frames
+						}
+						if (fb != null) ui.post(new Runnable() {
+							public void run() {
+								rMem.put(key, fb);
+								synchronized (rQueue) {
+									rLoading.remove(key);
+								}
+								invalidate();
+							}
+						});
+						rPump();
+					}
+				}).start();
+			}
+		}
+	}
+
+	@Override
+	protected void onDetachedFromWindow() {
+		super.onDetachedFromWindow();
+		ui.removeCallbacks(rTick);
+	}
+
 	/** Tile Z/X/Y from memory, else from the phone (then shown), else asked for (null meanwhile). */
-	private Bitmap get(int z, int x, int y) {
-		String key = z + "/" + x + "/" + y;
+	private Bitmap get(String key) {
 		Bitmap b = mem.get(key);
 		if (b != null) return b;
 		synchronized (queue) {
@@ -472,12 +692,19 @@ final class MapView extends View {
 	/** Off the main thread: the tile from the phone's cache (a week), else from OpenStreetMap. */
 	private Bitmap load(String key) {
 		File f = new File(dir, key.replace('/', '_') + ".png");
+		boolean sat = key.startsWith("s/");
 		try {
 			if (f.exists() && System.currentTimeMillis() - f.lastModified() < KEEP_MS) {
 				Bitmap b = BitmapFactory.decodeFile(f.getPath());
 				if (b != null) return b;
 			}
-			HttpURLConnection c = (HttpURLConnection) new URL("https://tile.openstreetmap.org/" + key + ".png").openConnection();
+			String url;
+			if (sat) {
+				// v5.50 (Viorel): the satellite view, Esri World Imagery (z/y/x).
+				String[] k = key.substring(2).split("/");
+				url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
+			} else url = "https://tile.openstreetmap.org/" + key + ".png";
+			HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
 			c.setConnectTimeout(15000);
 			c.setReadTimeout(20000);
 			c.setRequestProperty("User-Agent", UA);
