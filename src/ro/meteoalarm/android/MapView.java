@@ -118,6 +118,10 @@ final class MapView extends View {
 					double cy = Math.max(0, Math.min(world, top + e.getY()));
 					mapTap.at(latOf(cy, world), lonOf((((left + e.getX()) % world) + world) % world, world));
 				} else if (id != Long.MIN_VALUE && pinTap != null) pinTap.tapped(id);
+				else if (focusId != Long.MIN_VALUE) {
+					focusId = Long.MIN_VALUE;
+					invalidate();
+				}
 				return true;
 			}
 		});
@@ -195,6 +199,56 @@ final class MapView extends View {
 		invalidate();
 	}
 
+	/** v6.10: room covered by the cards at the right (landscape) and at the bottom (portrait). */
+	private float rightPad, bottomPad;
+
+	void setPads(float right, float bottom) {
+		rightPad = right;
+		bottomPad = bottom;
+	}
+
+	/** v6.10 (Viorel): the pin tapped: the map zooms on its parcel and a bubble shows its name. */
+	private long focusId = Long.MIN_VALUE;
+
+	long focused() {
+		return focusId;
+	}
+
+	void focus(long id) {
+		Pin f = null;
+		if (pins != null) for (Pin p : pins) if (p.id == id) f = p;
+		if (f == null || getWidth() == 0) return;
+		focusId = id;
+		touched = true;
+		double la0 = f.lat, la1 = f.lat, lo0 = f.lon, lo1 = f.lon;
+		if (f.poly != null) for (int k = 0; k < f.poly.length / 2; k++) {
+			la0 = Math.min(la0, f.poly[2 * k]);
+			la1 = Math.max(la1, f.poly[2 * k]);
+			lo0 = Math.min(lo0, f.poly[2 * k + 1]);
+			lo1 = Math.max(lo1, f.poly[2 * k + 1]);
+		}
+		// The free part of the screen: under the top sheet, left of / above the cards; the pin
+		// and its bubble need about 80 dp above the parcel.
+		float fw = getWidth() - rightPad - 80 * dp, fh = getHeight() - topPad - bottomPad - 110 * dp;
+		double z = 18;
+		for (; z > MIN_Z; z -= 0.25) {
+			double world = tile * Math.pow(2, z);
+			if (Math.abs(wx(lo1, world) - wx(lo0, world)) <= fw && Math.abs(wy(la0, world) - wy(la1, world)) <= fh) break;
+		}
+		setZoom(z);
+		double world = tile * Math.pow(2, zoom);
+		double bx = (wx(lo0, world) + wx(lo1, world)) / 2, by = (wy(la0, world) + wy(la1, world)) / 2;
+		// Where the parcel's middle should stand on the screen (the free part's middle, a bit
+		// lower for the pin), and so the map's middle.
+		float sx = (getWidth() - rightPad) / 2f, sy = topPad + (getHeight() - topPad - bottomPad) / 2f + 35 * dp;
+		double cx = bx - (sx - getWidth() / 2.0), cy = by - (sy - getHeight() / 2.0);
+		cy = Math.max(0, Math.min(world, cy));
+		lon = lonOf(((cx % world) + world) % world, world);
+		lat = latOf(cy, world);
+		invalidate();
+		if (moved != null) moved.moved(lat, lon);
+	}
+
 	/** The id of the pin under X, Y (the head of the pin or its name), else Long.MIN_VALUE. */
 	private long pinAt(float x, float y) {
 		if (pins == null) return Long.MIN_VALUE;
@@ -204,6 +258,8 @@ final class MapView extends View {
 		double bd = 30 * dp;
 		for (Pin p : pins) {
 			double px = wx(p.lon, world) - left, py = wy(p.lat, world) - top - 22 * dp;
+			// v6.10: the focused pin's name bubble counts as the pin.
+			if (p.id == focusId && y > py - 70 * dp && y < py - 10 * dp && Math.abs(x - px) < 140 * dp) return p.id;
 			double d = Math.hypot(px - x, py - y);
 			if (d < bd) {
 				bd = d;
@@ -220,11 +276,28 @@ final class MapView extends View {
 	/** v6.00: the new parcel's 4 corners (lat, lon × 4; null: none), moved with a finger. */
 	interface CornersMoved {
 		void moved(double[] corners);
+
+		/** v6.10: a long press on point K. */
+		void longPressed(int k);
 	}
 
 	private double[] corners;
 	private CornersMoved cornersMoved;
 	private int drag = -1;
+	/** v6.10: a long press on a point (no move): its index, run after 550 ms. */
+	private float downX, downY;
+	private final Runnable longPress = new Runnable() {
+		public void run() {
+			if (drag >= 0 && cornersMoved != null) {
+				int k = drag;
+				drag = -1;
+				lastX = downX;
+				lastY = downY;
+				performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS);
+				cornersMoved.longPressed(k);
+			}
+		}
+	};
 
 	void setCorners(double[] c, CornersMoved cb) {
 		corners = c == null ? null : c.clone();
@@ -349,7 +422,7 @@ final class MapView extends View {
 		if (am == MotionEvent.ACTION_DOWN && corners != null) {
 			drag = -1;
 			float bd = 30 * dp;
-			for (int k = 0; k < 4; k++) {
+			for (int k = 0; k < corners.length / 2; k++) {
 				float[] p = pixelOf(corners[2 * k], corners[2 * k + 1]);
 				float d = (float) Math.hypot(p[0] - e.getX(), p[1] - e.getY());
 				if (d < bd) {
@@ -358,13 +431,22 @@ final class MapView extends View {
 				}
 			}
 		}
+		if (am == MotionEvent.ACTION_DOWN && drag >= 0) {
+			downX = e.getX();
+			downY = e.getY();
+			removeCallbacks(longPress);
+			postDelayed(longPress, 550);
+		}
+		if (drag < 0 && am != MotionEvent.ACTION_DOWN) removeCallbacks(longPress);
 		if (drag >= 0) {
-			if (am == MotionEvent.ACTION_MOVE && e.getPointerCount() == 1) {
+			if (am == MotionEvent.ACTION_MOVE && Math.hypot(e.getX() - downX, e.getY() - downY) > 8 * dp) removeCallbacks(longPress);
+			if (am == MotionEvent.ACTION_MOVE && e.getPointerCount() == 1 && Math.hypot(e.getX() - downX, e.getY() - downY) > 4 * dp) {
 				double[] ll = latLonAt(e.getX(), e.getY());
 				corners[2 * drag] = ll[0];
 				corners[2 * drag + 1] = ll[1];
 				invalidate();
 			} else if (am == MotionEvent.ACTION_UP || am == MotionEvent.ACTION_CANCEL || am == MotionEvent.ACTION_POINTER_DOWN) {
+				removeCallbacks(longPress);
 				if (cornersMoved != null) cornersMoved.moved(corners.clone());
 				drag = -1;
 			}
@@ -478,6 +560,12 @@ final class MapView extends View {
 				float px = (float) (wx(p.lon, world) - left), py = (float) (wy(p.lat, world) - top);
 				if (px < -60 * dp || px > w + 60 * dp || py < -10 * dp || py > h + 50 * dp) continue;
 				drawPin(c, px, py);
+				if (p.id == focusId) {
+					drawFocus(c, p.name, px, py - 42 * dp);
+					paint.setTextSize(13 * dp);
+					paint.setFakeBoldText(true);
+					continue;
+				}
 				// The name under the pin, on a white label.
 				String nm = p.name.length() > 18 ? p.name.substring(0, 17) + "…" : p.name;
 				float tw = paint.measureText(nm);
@@ -501,10 +589,40 @@ final class MapView extends View {
 		c.drawText(att, w - aw - 5 * dp, h - 5 * dp, paint);
 	}
 
+	/** v6.10: the focused pin's bubble with its name, its tip at X, Y (above the pin's head). */
+	private void drawFocus(Canvas c, String name, float x, float y) {
+		paint.setTextSize(16 * dp);
+		paint.setFakeBoldText(true);
+		String nm = name.length() > 28 ? name.substring(0, 27) + "…" : name;
+		float tw = paint.measureText(nm), h = 34 * dp, r = 14 * dp;
+		float l = Math.max(6 * dp, Math.min(getWidth() - rightPad - tw - 34 * dp, x - tw / 2 - 14 * dp));
+		RectF b = new RectF(l, y - 8 * dp - h, l + tw + 28 * dp, y - 8 * dp);
+		Path tip = new Path();
+		tip.moveTo(x - 8 * dp, b.bottom - 1);
+		tip.lineTo(x, y);
+		tip.lineTo(x + 8 * dp, b.bottom - 1);
+		tip.close();
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(0x33000000);
+		c.drawRoundRect(new RectF(b.left, b.top + 2 * dp, b.right, b.bottom + 2 * dp), r, r, paint);
+		paint.setColor(dark ? 0xEE2E2E2C : 0xF2FFFFFF);
+		c.drawRoundRect(b, r, r, paint);
+		c.drawPath(tip, paint);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(1 * dp);
+		paint.setColor(dark ? 0x55FFFFFF : 0x22000000);
+		c.drawRoundRect(b, r, r, paint);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(dark ? 0xFFF2F0EA : 0xFF1A1A1A);
+		Paint.FontMetrics fm = paint.getFontMetrics();
+		c.drawText(nm, b.left + 14 * dp, b.centerY() - (fm.ascent + fm.descent) / 2, paint);
+		paint.setFakeBoldText(false);
+	}
+
 	/** v6.00: a parcel's outline (4 corners); HANDLES: the new parcel's, with round handles to move. */
 	private void drawPoly(Canvas c, double[] q, double world, double left, double top, boolean handles) {
 		android.graphics.Path p = new android.graphics.Path();
-		for (int k = 0; k < 4; k++) {
+		for (int k = 0; k < q.length / 2; k++) {
 			float x = (float) (wx(q[2 * k + 1], world) - left), y = (float) (wy(q[2 * k], world) - top);
 			if (k == 0) p.moveTo(x, y);
 			else p.lineTo(x, y);
@@ -517,7 +635,7 @@ final class MapView extends View {
 		paint.setStrokeWidth(2.5f * dp);
 		paint.setColor(0xFFFFD54F);
 		c.drawPath(p, paint);
-		if (handles) for (int k = 0; k < 4; k++) {
+		if (handles) for (int k = 0; k < q.length / 2; k++) {
 			float x = (float) (wx(q[2 * k + 1], world) - left), y = (float) (wy(q[2 * k], world) - top);
 			paint.setStyle(Paint.Style.FILL);
 			paint.setColor(0xFFFFFFFF);

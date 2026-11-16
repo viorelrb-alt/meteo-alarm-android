@@ -1,4 +1,4 @@
-Súčasná verzia: v.6.00 · 16.11.2026
+Súčasná verzia: v.6.10 · 16.11.2026
 AKTUALIZÁCIE
 - Aktualizácie: aplikácia už sama nehľadá aktualizácie, len keď ťuknete na ☰ › Skontrolovať aktualizácie; nová verzia sa stiahne v prehliadači a nainštalujete ju zo stiahnutého súboru.
 HLAVNÁ OBRAZOVKA
@@ -10,9 +10,11 @@ NASTAVENIA
 - Motív ikon: 6 motívov ikon počasia (Klasické, Lesklé, Ploché, Realistické, Atmosférické, Obrysové), voľba farebnými bodkami v ☰; v aplikácii aj vo widgetoch.
 - Nastavenia: ponuka ☰ je teraz okno s časťami, prepínačmi, farebnými motívmi a lištou Systém a podpora; obnovuje sa potiahnutím obrazovky nadol alebo ťuknutím na „aktualizované“.
 POZEMKY
+- Body pozemku: + Bod pridá až 3 ďalšie body (najviac 7), Kruh ich rozmiestni rovnomerne na kruhu, dlhé podržanie bodu ho vymaže.
 - Kôš: zmazaný pozemok ide na 15 dní do koša pod tlačidlom GPS a odtiaľ ho možno obnoviť.
 - Rohy pozemku: v satelitnom zobrazení sa 4 rohy nájdu z obrázka a posúvajú sa prstom; ťuknutie na kartu ukáže rohy, Zobraziť otvorí pozemok.
 - Stránka Pozemky: karty pozemkov (názov, súradnice, ceruzka, Štatistika · PDF, zvonček, kôš) plávajú nad mapou, v rade dole alebo v stĺpci vpravo; ＋, aj karta ＋, otvorí okno nového pozemku.
+- Špendlíky na mape: ťuknutie na špendlík priblíži mapu na pozemok a ukáže jeho názov; druhé ťuknutie ukáže jeho body.
 - Zobrazenia mapy: okrúhle tlačidlá pod ＋/− prepínajú satelit a mapu a ukazujú zrážkový radar za posledné 2 hodiny.
 REŽIM FARMÁRA
 - Karty: obec a pozemky v kartách pod názvom (na šírku dole); obrazovka pozemku v častiach 1–4.

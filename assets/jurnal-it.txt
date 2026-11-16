@@ -1,4 +1,4 @@
-Versione attuale: v.6.00 · 16.11.2026
+Versione attuale: v.6.10 · 16.11.2026
 AGGIORNAMENTI
 - Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ☰ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
 IMPOSTAZIONI
@@ -16,6 +16,8 @@ PARTICELLE
 - Angoli della particella: nella vista satellite i 4 angoli sono trovati dall'immagine e si spostano col dito; un tocco sulla scheda mostra gli angoli, Mostra apre la particella.
 - Cestino: una particella eliminata va per 15 giorni nel cestino sotto il pulsante GPS e si può ripristinare da lì.
 - Pagina Particelle: le schede delle particelle (nome, coordinate, matita, Statistica · PDF, campana, cestino) galleggiano sulla mappa, in una riga in basso o una colonna a destra; ＋, anche la scheda ＋, apre il riquadro di una nuova particella.
+- Punti della particella: + Punto aggiunge fino a 3 punti in più (al massimo 7), Cerchio li dispone a distanze uguali su un cerchio, una pressione lunga su un punto lo elimina.
+- Spilli sulla mappa: un tocco su uno spillo ingrandisce la mappa sulla particella e ne mostra il nome; un secondo tocco mostra i suoi punti.
 - Viste della mappa: pulsanti rotondi sotto ＋/− passano tra satellite e mappa e mostrano il radar della pioggia delle ultime 2 ore.
 SCHERMATA PRINCIPALE
 - Bussola grande: toccare una località nell'elenco ne mostra il segno sulla bussola; le località nella stessa direzione non si sovrappongono più.

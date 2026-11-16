@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.6.00 · 16.11.2026
+Jelenlegi verzió: v.6.10 · 16.11.2026
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
@@ -17,10 +17,12 @@ GAZDA MÓD
 - Gazda gomb: a gombok melletti levél gomb kikapcsolja a gazda módot; másik település megtartja.
 - Működési állapot: egy parcella képernyőjén, csak ha szükséges, a permetezés ítélete, az oka és a következő 24 óra kockázatai.
 PARCELLÁK
+- A parcella pontjai: a + Pont legfeljebb 3 további pontot ad hozzá (legfeljebb 7), a Kör egyenletesen elosztja őket egy körön, egy pont hosszú nyomása törli azt.
 - Kuka: a törölt parcella 15 napra a GPS-gomb alatti kukába kerül, és onnan visszaállítható.
 - Parcella sarkai: műholdas nézetben a 4 sarok a képből adódik és ujjal mozgatható; a kártya érintése mutatja a sarkokat, a Megjelenítés megnyitja a parcellát.
 - Parcellák oldal: a parcellák kártyái (név, koordináták, ceruza, Statisztika · PDF, csengő, kuka) a térkép fölött lebegnek, alul egy sorban vagy jobbra egy oszlopban; a ＋, a ＋ fül is, megnyitja egy új parcella ablakát.
 - Térképnézetek: a ＋/− alatti kerek gombok váltanak műhold és térkép között, és mutatják az utolsó 2 óra csapadékradarját.
+- Tűk a térképen: egy tű érintése ráközelít a parcellára és megmutatja a nevét; a második érintés a pontjait mutatja.
 - Dizájnjavítások és hibajavítások.
 
 4. verzió (v.4.00 – v.4.52)

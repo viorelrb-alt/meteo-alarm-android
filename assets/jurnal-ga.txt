@@ -1,8 +1,10 @@
-Leagan reatha: v.6.00 · 16.11.2026
+Leagan reatha: v.6.10 · 16.11.2026
 CEAPACHA
+- Bioráin ar an léarscáil: zúmálann tadhall ar bhiorán an léarscáil ar an gceapach agus taispeánann sé a hainm; taispeánann an dara tadhall a pointí.
 - Bosca bruscair: téann ceapach scriosta go dtí an bosca bruscair faoin gcnaipe GPS ar feadh 15 lá agus is féidir í a athchóiriú as.
 - Coirnéil na ceapaí: sa radharc satailíte aimsítear na 4 choirnéal ón bpictiúr agus bogtar le méar iad; taispeánann tapáil ar an gcárta na coirnéil, osclaíonn Taispeáin an cheapach.
 - Leathanach na gCeapach: snámhann cártaí na gceapach (ainm, comhordanáidí, peann luaidhe, Staitisticí · PDF, cloigín, bosca bruscair) os cionn na léarscáile, i ró thíos nó i gcolún ar dheis; osclaíonn ＋, an cluaisín ＋ freisin, bosca ceapaí nua.
+- Pointí na ceapaí: cuireann + Pointe suas le 3 phointe eile leis (7 ar a mhéad), cuireann Ciorcal go cothrom ar chiorcal iad, scriosann brú fada ar phointe é.
 - Radhairc léarscáile: aistríonn cnaipí cruinne faoi ＋/− idir satailít agus léarscáil agus taispeánann siad radar báistí an 2 uair an chloig deiridh.
 FÓGRAÍ
 - Creathanna talún: fógraí ach amháin do chreathanna talún 300 km ar a mhéad ó d'áit; casann tú air nó as iad in ☰.

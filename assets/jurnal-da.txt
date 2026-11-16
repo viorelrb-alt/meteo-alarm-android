@@ -1,4 +1,4 @@
-Nuværende version: v.6.00 · 16.11.2026
+Nuværende version: v.6.10 · 16.11.2026
 HOVEDSKÆRM
 - Femdagesprognose: dag 3–5 skifter af sig selv hvert 3. sekund indtil første berøring.
 - Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.
@@ -14,6 +14,8 @@ LANDMANDSTILSTAND
 MARKER
 - Kortvisninger: runde knapper under ＋/− skifter mellem satellit og kort og viser regnradaren for de sidste 2 timer.
 - Markens hjørner: i satellitvisningen findes de 4 hjørner fra billedet og flyttes med en finger; et tryk på kortet viser hjørnerne, Vis åbner marken.
+- Markens punkter: + Punkt tilføjer op til 3 punkter mere (højst 7), Cirkel fordeler dem jævnt på en cirkel, et langt tryk på et punkt sletter det.
+- Nåle på kortet: et tryk på en nål zoomer kortet ind på marken og viser dens navn; et andet tryk viser dens punkter.
 - Papirkurv: en slettet mark havner i 15 dage i papirkurven under GPS-knappen og kan gendannes derfra.
 - Siden Marker: markernes kort (navn, koordinater, blyant, Statistik · PDF, klokke, papirkurv) svæver over kortet, i en række nederst eller en kolonne til højre; ＋, også fanen ＋, åbner boksen for en ny mark.
 NOTIFIKATIONER

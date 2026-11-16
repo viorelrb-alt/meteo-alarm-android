@@ -1,4 +1,4 @@
-Pašreizējā versija: v.6.00 · 16.11.2026
+Pašreizējā versija: v.6.10 · 16.11.2026
 ATJAUNINĀJUMI
 - Atjauninājumi: lietotne vairs pati nemeklē atjauninājumus, tikai kad pieskaraties ☰ › Pārbaudīt atjauninājumus; jaunā versija tiek lejupielādēta pārlūkā, un jūs to instalējat no lejupielādētā faila.
 GALVENAIS EKRĀNS
@@ -12,8 +12,10 @@ IESTATĪJUMI
 LAUKI
 - Kartes skati: apaļās pogas zem ＋/− pārslēdz satelītu un karti un rāda pēdējo 2 stundu nokrišņu radaru.
 - Lapa Lauki: lauku kartītes (nosaukums, koordinātas, zīmulis, Statistika · PDF, zvaniņš, miskaste) peld virs kartes, rindā apakšā vai kolonnā labajā pusē; ＋, arī cilne ＋, atver jauna lauka lodziņu.
+- Lauka punkti: + Punkts pievieno līdz 3 punktiem vairāk (ne vairāk kā 7), Aplis tos izkārto vienmērīgi uz apļa, ilgs spiediens uz punkta to izdzēš.
 - Lauka stūri: satelīta skatā 4 stūri tiek atrasti attēlā un pārvietoti ar pirkstu; pieskāriens kartītei parāda stūrus, Rādīt atver lauku.
 - Miskaste: dzēsts lauks uz 15 dienām nonāk miskastē zem GPS pogas, un to var atjaunot no turienes.
+- Piespraudes kartē: piespraudes pieskāriens pietuvina karti laukam un rāda tā nosaukumu; otrs pieskāriens rāda tā punktus.
 LAUKSAIMNIEKA REŽĪMS
 - Cilnes: vieta un lauki cilnēs zem nosaukuma (horizontāli – apakšā); lauka ekrāns sadaļās 1–4.
 - Darba statuss: lauka ekrānā, tikai kad vajag, lēmums par miglošanu, iemesls un nākamo 24 stundu riski.

@@ -1300,8 +1300,15 @@ public final class FarmActivity extends Activity {
 		m.setPins(pins, new MapView.PinTap() {
 			public void tapped(long id) {
 				Parcels.Parcel p = Parcels.get(FarmActivity.this, id);
-				Log.i(FarmActivity.this, "FERMIER", "parcelă aleasă pe hartă: " + (p != null ? p.name : id));
-				select(id);
+				if (p == null) return;
+				// v6.10 (Viorel): the map zooms on the parcel with a bubble of its name; a second tap
+				// on it shows its corners and Show.
+				if (m.focused() == id) {
+					showCorners(p);
+					return;
+				}
+				Log.i(FarmActivity.this, "FERMIER", "parcelă arătată pe hartă: " + p.name);
+				m.focus(id);
 			}
 		});
 		if (!Double.isNaN(listLat)) {
@@ -1326,6 +1333,9 @@ public final class FarmActivity extends Activity {
 		// on a tablet; in landscape the same size.
 		int pw = Math.min(sw, sh), per = tab ? (pw / dp >= 720 ? 4 : 3) : 2;
 		int side = (pw - 2 * mg - (per - 1) * gap) / per;
+		if (all.isEmpty()) m.setPads(0, px(110));
+		else if (land) m.setPads(side + px(4), 0);
+		else m.setPads(0, side + mg + px(14));
 		status = text("", 15, false, ink);
 		status.setVisibility(View.GONE);
 
@@ -1795,6 +1805,37 @@ public final class FarmActivity extends Activity {
 		return new float[] { Math.max(6, sn), Math.max(6, sc) };
 	}
 
+	/** v6.10 (Viorel): the Save button's icon: a floppy disk in the accent colour. */
+	private View saveIcon() {
+		return new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float s = Math.min(getWidth(), getHeight()), a = s * 0.27f, b = s - a, cut = s * 0.1f;
+				float ox = (getWidth() - s) / 2f, oy = (getHeight() - s) / 2f;
+				c.translate(ox, oy);
+				pt.setColor(accent);
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(dp * 2f);
+				pt.setStrokeJoin(Paint.Join.ROUND);
+				android.graphics.Path p = new android.graphics.Path();
+				p.moveTo(a, a);
+				p.lineTo(b - cut, a);
+				p.lineTo(b, a + cut);
+				p.lineTo(b, b);
+				p.lineTo(a, b);
+				p.close();
+				c.drawPath(p, pt);
+				// The shutter at the top and the label at the bottom.
+				float w = b - a;
+				c.drawRect(a + w * 0.22f, a, b - w * 0.3f, a + w * 0.3f, pt);
+				pt.setStyle(Paint.Style.FILL);
+				c.drawRoundRect(new android.graphics.RectF(a + w * 0.18f, a + w * 0.56f, b - w * 0.18f, b - w * 0.02f), dp, dp, pt);
+			}
+		};
+	}
+
 	/** v5.50: the statistics button: three bars in the framed square of the pencil. */
 	private View statsIcon() {
 		return new View(this) {
@@ -1928,23 +1969,60 @@ public final class FarmActivity extends Activity {
 		if (sheetView != null) sheetView.invalidate();
 		// v5.50: kept when the phone turns: the place (tapped or found) and the name.
 		final double[] at = { newLa, newLo };
+		// v6.10 (Viorel): Save (an icon) and ✕ in a floating capsule over the box's top edge, at the
+		// right, the same in portrait and landscape; the box's text scrolls inside it.
+		LinearLayout wrap = column();
+		wrap.setGravity(Gravity.RIGHT);
+		LinearLayout caps = new LinearLayout(this);
+		caps.setGravity(Gravity.CENTER_VERTICAL);
+		caps.setBackground(glass(px(28), 0.9f));
+		caps.setElevation(px(5));
+		caps.setPadding(px(6), px(6), px(6), px(6));
+		int bs = px(tab ? 48 : 44);
+		View save = saveIcon();
+		save.setBackground(Glass.pill(Glass.disc(dark), 0, bs / 2, dp));
+		save.setContentDescription(Tr.t("Save", "Salvează"));
+		caps.addView(save, new LinearLayout.LayoutParams(bs, bs));
+		TextView x = text("✕", 19, true, ink);
+		x.setGravity(Gravity.CENTER);
+		x.setBackground(Glass.pill(Glass.disc(dark), 0, bs / 2, dp));
+		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams(bs, bs);
+		xl.leftMargin = px(8);
+		caps.addView(x, xl);
+		LinearLayout.LayoutParams capl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		capl.bottomMargin = px(8);
+		wrap.addView(caps, capl);
 		LinearLayout box = column();
 		box.setBackground(glass(px(20), 0.88f));
 		box.setElevation(px(5));
-		box.setPadding(px(16), px(12), px(16), px(14));
-		LinearLayout head = new LinearLayout(this);
-		head.setGravity(Gravity.CENTER_VERTICAL);
-		head.addView(text(Tr.t("New parcel", "Parcelă nouă"), tab ? 19 : 17, true, ink), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		TextView x = text("✕", 18, true, ink);
-		x.setGravity(Gravity.CENTER);
-		x.setBackground(Glass.pill(Glass.disc(dark), 0, px(18), dp));
-		head.addView(x, new LinearLayout.LayoutParams(px(36), px(36)));
-		box.addView(head);
+		box.setPadding(px(16), px(12), px(16), px(12));
+		ScrollView sc = new ScrollView(this);
+		sc.setVerticalScrollBarEnabled(true);
+		sc.setScrollbarFadingEnabled(false);
+		LinearLayout body = column();
+		body.addView(text(Tr.t("New parcel", "Parcelă nouă"), tab ? 19 : 17, true, ink));
 		final TextView where = text(Tr.t("Looking for the position (GPS)…", "Caut poziția (GPS)…"), 15, true, ink);
-		box.addView(where, wide(8));
-		box.addView(text(Tr.t("Tap the map to move the pin.", "Atinge harta ca să muți acul."), 13, false, dim), wide(2));
+		body.addView(where, wide(8));
+		body.addView(text(Tr.t("Tap the map to move the pin.", "Atinge harta ca să muți acul."), 13, false, dim), wide(2));
 		final TextView cornInfo = text("", 13, false, dim);
-		box.addView(cornInfo, wide(4));
+		body.addView(cornInfo, wide(4));
+		// v6.10 (Viorel): up to 3 more points, or the points evenly on a circle.
+		LinearLayout tools = new LinearLayout(this);
+		tools.setGravity(Gravity.CENTER_VERTICAL);
+		TextView addPt = text(Tr.t("+ Point", "+ Punct"), 14, true, ink);
+		TextView circ = text(Tr.t("Circle", "Cerc"), 14, true, ink);
+		for (TextView t : new TextView[] { addPt, circ }) {
+			t.setGravity(Gravity.CENTER);
+			t.setPadding(px(14), 0, px(14), 0);
+			t.setBackground(Glass.pill(Glass.disc(dark), 0, px(17), dp));
+			LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, px(34));
+			tl.rightMargin = px(8);
+			tools.addView(t, tl);
+		}
+		body.addView(tools, wide(8));
+		final TextView toolHint = text(Tr.t("A long press on a point deletes it (4 to 7 points).", "Apăsarea lungă pe un punct îl șterge (între 4 și 7 puncte)."), 12, false, dim);
+		body.addView(toolHint, wide(4));
+		newTools = new View[] { tools, toolHint };
 		final EditText nameIn = new EditText(this);
 		nameIn.setSingleLine(true);
 		nameIn.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
@@ -1964,15 +2042,33 @@ public final class FarmActivity extends Activity {
 				newName = e.toString();
 			}
 		});
-		box.addView(nameIn, wide(6));
-		TextView save = button(Tr.t("Save", "Salvează"), null);
-		box.addView(save, wide(8));
+		body.addView(nameIn, wide(6));
+		sc.addView(body);
+		box.addView(sc, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		wrap.addView(box, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		int side = Math.min(px(tab ? 360 : 300), getResources().getDisplayMetrics().widthPixels - px(24));
 		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(side, ViewGroup.LayoutParams.WRAP_CONTENT, land ? Gravity.TOP | Gravity.RIGHT : Gravity.BOTTOM | Gravity.RIGHT);
 		int mg = px(12), fb = px(tab ? 46 : 42);
-		bl.setMargins(mg, land ? mg + fb + 2 * px(6) + px(10) : 0, mg, land ? mg : mg + px(14));
-		mapBox.addView(box, bl);
-		newBox = box;
+		// Landscape: under the top sheet; portrait: at the bottom, never under the top sheet.
+		bl.setMargins(mg, land ? mg + fb + 2 * px(6) + px(8) : px(tab ? 130 : 120), mg, land ? mg : mg + px(14));
+		mapBox.addView(wrap, bl);
+		newBox = wrap;
+		toolsShow();
+		addPt.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				addPoint(m, cornInfo);
+			}
+		});
+		circ.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				if (newCorners == null) return;
+				newCircle = true;
+				newCorners = circle(newCorners, Math.max(5, newCorners.length / 2));
+				m.setCorners(newCorners, cornersCb(m, cornInfo));
+				cornInfo.setText(Tr.t("The points stand evenly on a circle; move them with a finger if needed.", "Punctele stau la distanțe egale pe un cerc; mută-le cu degetul dacă e nevoie."));
+				Log.i(FarmActivity.this, "FERMIER", "cerc cu " + newCorners.length / 2 + " puncte");
+			}
+		});
 		final Runnable put = new Runnable() {
 			public void run() {
 				newLa = at[0];
@@ -2007,7 +2103,7 @@ public final class FarmActivity extends Activity {
 			where.setText(coords(at[0], at[1]));
 			if (kept != null) {
 				newCorners = kept;
-				m.setCorners(kept, cornersCb());
+				m.setCorners(kept, cornersCb(m, cornInfo));
 				cornInfo.setText(Tr.t("The parcel's corners: move them with a finger if needed.", "Colțurile parcelei: mută-le cu degetul dacă e nevoie."));
 			} else findCorners(m, at, cornInfo);
 		}
@@ -2082,13 +2178,112 @@ public final class FarmActivity extends Activity {
 	private Runnable newFind;
 	private int findRun;
 
-	private MapView.CornersMoved cornersCb() {
+	/** v6.10: the points made evenly on a circle (until one is moved by hand). */
+	private boolean newCircle;
+	/** v6.10: "+ Point", "Circle" and their hint, shown only with corners. */
+	private View[] newTools;
+
+	private void toolsShow() {
+		if (newTools == null) return;
+		for (View v : newTools) v.setVisibility(newCorners != null ? View.VISIBLE : View.GONE);
+	}
+
+	private MapView.CornersMoved cornersCb(final MapView m, final TextView info) {
+		toolsShow();
 		return new MapView.CornersMoved() {
 			public void moved(double[] c) {
 				newCorners = c;
+				newCircle = false;
 				Log.i(FarmActivity.this, "FERMIER", "colț mutat");
 			}
+
+			public void longPressed(int k) {
+				if (newCorners == null) return;
+				int n = newCorners.length / 2;
+				if (n <= 4) {
+					toast(Tr.t("A parcel keeps at least 4 points.", "O parcelă păstrează cel puțin 4 puncte."));
+					return;
+				}
+				double[] c = new double[2 * (n - 1)];
+				for (int i = 0, j = 0; i < n; i++) if (i != k) {
+					c[2 * j] = newCorners[2 * i];
+					c[2 * j + 1] = newCorners[2 * i + 1];
+					j++;
+				}
+				newCorners = newCircle ? circle(c, n - 1) : c;
+				m.setCorners(newCorners, this);
+				Log.i(FarmActivity.this, "FERMIER", "punct șters (" + (n - 1) + " puncte)");
+			}
 		};
+	}
+
+	/**
+	 * v6.10 (Viorel): one more point (at most 7): in the middle of the longest side, or, on a
+	 * circle, all of them again evenly on it.
+	 */
+	private void addPoint(MapView m, TextView info) {
+		double[] c = newCorners;
+		if (c == null) return;
+		int n = c.length / 2;
+		if (n >= 7) {
+			toast(Tr.t("At most 7 points.", "Cel mult 7 puncte."));
+			return;
+		}
+		if (newCircle) newCorners = circle(c, n + 1);
+		else {
+			double cos = Math.cos(Math.toRadians(c[0]));
+			int best = 0;
+			double bl = -1;
+			for (int k = 0; k < n; k++) {
+				int q = (k + 1) % n;
+				double d = Math.hypot(c[2 * q] - c[2 * k], (c[2 * q + 1] - c[2 * k + 1]) * cos);
+				if (d > bl) {
+					bl = d;
+					best = k;
+				}
+			}
+			int q = (best + 1) % n;
+			double[] r = new double[2 * (n + 1)];
+			for (int k = 0, j = 0; k < n; k++) {
+				r[2 * j] = c[2 * k];
+				r[2 * j + 1] = c[2 * k + 1];
+				j++;
+				if (k == best) {
+					r[2 * j] = (c[2 * k] + c[2 * q]) / 2;
+					r[2 * j + 1] = (c[2 * k + 1] + c[2 * q + 1]) / 2;
+					j++;
+				}
+			}
+			newCorners = r;
+		}
+		m.setCorners(newCorners, cornersCb(m, info));
+		Log.i(FarmActivity.this, "FERMIER", "punct adăugat (" + newCorners.length / 2 + " puncte)");
+	}
+
+	/**
+	 * v6.10: N points evenly on the circle round the middle of C (its radius the points' mean
+	 * distance), the first where C's first point is, clockwise like the corners.
+	 */
+	static double[] circle(double[] c, int n) {
+		int m = c.length / 2;
+		double la = 0, lo = 0;
+		for (int k = 0; k < m; k++) {
+			la += c[2 * k];
+			lo += c[2 * k + 1];
+		}
+		la /= m;
+		lo /= m;
+		double cos = Math.cos(Math.toRadians(la)), r = 0;
+		for (int k = 0; k < m; k++) r += Math.hypot(c[2 * k] - la, (c[2 * k + 1] - lo) * cos);
+		r /= m;
+		double a0 = Math.atan2(c[0] - la, (c[1] - lo) * cos);
+		double[] o = new double[2 * n];
+		for (int k = 0; k < n; k++) {
+			double a = a0 - 2 * Math.PI * k / n;
+			o[2 * k] = la + r * Math.sin(a);
+			o[2 * k + 1] = lo + r * Math.cos(a) / cos;
+		}
+		return o;
 	}
 
 	/**
@@ -2101,11 +2296,14 @@ public final class FarmActivity extends Activity {
 		if (m.style() != 1) {
 			newCorners = null;
 			m.setCorners(null, null);
+			toolsShow();
 			info.setText(Tr.t("For the parcel's corners choose the satellite view (the globe button).", "Pentru colțurile parcelei alege vederea din satelit (butonul glob)."));
 			return;
 		}
 		info.setText(Tr.t("Looking for the parcel's edges…", "Caut marginile parcelei…"));
 		m.setCorners(null, null);
+		newCorners = null;
+		toolsShow();
 		if (m.zoom() < 16) m.setZoom(16);
 		m.center(at[0], at[1]);
 		final int[] tries = { 0 };
@@ -2158,14 +2356,24 @@ public final class FarmActivity extends Activity {
 									info.setText(Tr.t("The parcel's corners: move them with a finger if needed.", "Colțurile parcelei: mută-le cu degetul dacă e nevoie."));
 									Log.i(FarmActivity.this, "FERMIER", "colțuri găsite din satelit");
 								} else {
-									// About 40 m around the pin.
+									// At least 40 m around the pin; v6.10: and at least a sixth of the screen, so
+									// the 4 handles stand apart (Viorel: they were one yellow knot).
 									double dla = 40 / 111320.0, dlo = dla / Math.cos(Math.toRadians(at[0]));
-									c = new double[] { at[0] + dla, at[1] - dlo, at[0] + dla, at[1] + dlo, at[0] - dla, at[1] + dlo, at[0] - dla, at[1] - dlo };
+									float[] p0 = m.pixelOf(at[0], at[1]), p1 = m.pixelOf(at[0] + dla, at[1]);
+									float half = Math.max(Math.abs(p1[1] - p0[1]), Math.min(m.getWidth(), m.getHeight()) / 6f);
+									c = new double[8];
+									float[][] sq = { { -half, -half }, { half, -half }, { half, half }, { -half, half } };
+									for (int k = 0; k < 4; k++) {
+										double[] ll = m.latLonAt(p0[0] + sq[k][0], p0[1] + sq[k][1]);
+										c[2 * k] = ll[0];
+										c[2 * k + 1] = ll[1];
+									}
 									info.setText(Tr.t("The edges do not stand out: move the corners with a finger.", "Marginile nu se văd clar: mută colțurile cu degetul."));
 									Log.i(FarmActivity.this, "FERMIER", "colțurile nu s-au găsit; pătrat în jurul acului");
 								}
 								newCorners = c;
-								m.setCorners(c, cornersCb());
+								newCircle = false;
+								m.setCorners(c, cornersCb(m, info));
 							}
 						});
 					}
@@ -2176,6 +2384,8 @@ public final class FarmActivity extends Activity {
 
 	private void newReset() {
 		newCorners = null;
+		newCircle = false;
+		newTools = null;
 		newFind = null;
 		findRun++;
 		newOpen = false;
@@ -2300,18 +2510,44 @@ public final class FarmActivity extends Activity {
 		win.addView(head);
 		if (p.corners != null) {
 			win.addView(text(Tr.t("The parcel's corners (GPS)", "Colțurile parcelei (GPS)"), 13, false, dim), wide(6));
-			String[] names = { Tr.t("North-west", "Nord-vest"), Tr.t("North-east", "Nord-est"), Tr.t("South-east", "Sud-est"), Tr.t("South-west", "Sud-vest") };
 			double[] c = p.corners;
-			// Each corner named after where it stands from the middle.
-			double mla = (c[0] + c[2] + c[4] + c[6]) / 4, mlo = (c[1] + c[3] + c[5] + c[7]) / 4;
-			for (int k = 0; k < 4; k++) {
-				int q = c[2 * k] >= mla ? (c[2 * k + 1] < mlo ? 0 : 1) : (c[2 * k + 1] >= mlo ? 2 : 3);
+			int n = c.length / 2;
+			double mla = 0, mlo = 0;
+			for (int k = 0; k < n; k++) {
+				mla += c[2 * k] / n;
+				mlo += c[2 * k + 1] / n;
+			}
+			String[] names = { Tr.t("North-west", "Nord-vest"), Tr.t("North-east", "Nord-est"), Tr.t("South-east", "Sud-est"), Tr.t("South-west", "Sud-vest") };
+			// v6.10: with more points, 8 directions and the points' numbers.
+			String[] eight = { Tr.t("North", "Nord"), names[1], Tr.t("East", "Est"), names[2], Tr.t("South", "Sud"), names[3], Tr.t("West", "Vest"), names[0] };
+			double cos = Math.cos(Math.toRadians(mla));
+			// In a scroll when it does not fit (7 points on a small phone in landscape).
+			LinearLayout rows = column();
+			for (int k = 0; k < n; k++) {
+				String nm4;
+				if (n == 4) {
+					// Each corner named after where it stands from the middle.
+					int q = c[2 * k] >= mla ? (c[2 * k + 1] < mlo ? 0 : 1) : (c[2 * k + 1] >= mlo ? 2 : 3);
+					nm4 = names[q];
+				} else {
+					double ang = Math.toDegrees(Math.atan2((c[2 * k + 1] - mlo) * cos, c[2 * k] - mla));
+					int q = (int) Math.floor(((ang + 360 + 22.5) % 360) / 45) % 8;
+					nm4 = (k + 1) + " · " + eight[q];
+				}
 				LinearLayout r = new LinearLayout(this);
 				r.setGravity(Gravity.CENTER_VERTICAL);
-				r.addView(text(names[q], 13, false, dim), new LinearLayout.LayoutParams(px(tab ? 110 : 90), ViewGroup.LayoutParams.WRAP_CONTENT));
+				r.addView(text(nm4, 13, false, dim), new LinearLayout.LayoutParams(px(tab ? 120 : 100), ViewGroup.LayoutParams.WRAP_CONTENT));
 				r.addView(text(coords(c[2 * k], c[2 * k + 1]), tab ? 17 : 15, true, ink));
-				win.addView(r, wide(4));
+				rows.addView(r, wide(4));
 			}
+			ScrollView rs = new ScrollView(this) {
+				@Override
+				protected void onMeasure(int w, int h) {
+					super.onMeasure(w, MeasureSpec.makeMeasureSpec(Math.max(px(120), getResources().getDisplayMetrics().heightPixels - px(260)), MeasureSpec.AT_MOST));
+				}
+			};
+			rs.addView(rows);
+			win.addView(rs, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		} else {
 			win.addView(text(Tr.t("The parcel's place (GPS); no corners yet.", "Locul parcelei (GPS); colțurile nu sunt definite."), 13, false, dim), wide(6));
 			win.addView(text(coords(p.lat, p.lon), tab ? 17 : 15, true, ink), wide(4));

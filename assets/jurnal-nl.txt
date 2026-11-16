@@ -1,4 +1,4 @@
-Huidige versie: v.6.00 · 16.11.2026
+Huidige versie: v.6.10 · 16.11.2026
 BOERENMODUS
 - Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
 - Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.
@@ -19,6 +19,8 @@ PERCELEN
 - Kaartweergaven: ronde knoppen onder ＋/− wisselen tussen satelliet en kaart en tonen de regenradar van de laatste 2 uur.
 - Pagina Percelen: de kaartjes van de percelen (naam, coördinaten, potlood, Statistiek · PDF, bel, prullenbak) zweven over de kaart, in een rij onderaan of een kolom rechts; ＋, ook het tabblad ＋, opent het vak van een nieuw perceel.
 - Prullenbak: een verwijderd perceel gaat 15 dagen naar de prullenbak onder de GPS-knop en kan daar worden teruggezet.
+- Punten van het perceel: + Punt voegt tot 3 extra punten toe (hoogstens 7), Cirkel zet ze gelijkmatig op een cirkel, lang drukken op een punt verwijdert het.
+- Spelden op de kaart: een tik op een speld zoomt de kaart in op het perceel en toont de naam; een tweede tik toont de punten.
 UPDATES
 - Updates: de app zoekt niet meer zelf naar updates, alleen als je op ☰ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
 - Ontwerpverbeteringen en foutoplossingen.

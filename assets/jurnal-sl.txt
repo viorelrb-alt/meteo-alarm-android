@@ -1,4 +1,4 @@
-Trenutna različica: v.6.00 · 16.11.2026
+Trenutna različica: v.6.10 · 16.11.2026
 GLAVNI ZASLON
 - Glavni zaslon: stran se pomika pod steklom na vrhu, po razdelkih (Naslednje ure, Napoved za pet dni, Podrobnosti vremena); gumbi in baterija lebdijo spodaj.
 - Napoved za pet dni: dnevi 3–5 se sami menjajo vsake 3 sekunde do prvega dotika.
@@ -15,10 +15,12 @@ OBVESTILA
 - Potresi: obvestila samo o potresih največ 300 km od vašega kraja; vklopite ali izklopite jih v ☰.
 - Tornadi (ZDA): obvestila o tornadih za vaš kraj vklopite ali izklopite v ☰.
 PARCELE
+- Bucike na zemljevidu: dotik bucike približa zemljevid na parcelo in pokaže njeno ime; drugi dotik pokaže njene točke.
 - Koš: izbrisana parcela gre za 15 dni v koš pod gumbom GPS in jo je mogoče od tam obnoviti.
 - Koti parcele: v satelitskem pogledu se 4 koti najdejo iz slike in premikajo s prstom; dotik kartice pokaže kote, Prikaži odpre parcelo.
 - Pogledi zemljevida: okrogli gumbi pod ＋/− preklapljajo med satelitom in zemljevidom ter kažejo radar padavin zadnjih 2 ur.
 - Stran Parcele: kartice parcel (ime, koordinate, svinčnik, Statistika · PDF, zvonec, koš) plavajo nad zemljevidom, v vrsti spodaj ali v stolpcu desno; ＋, tudi zavihek ＋, odpre okno nove parcele.
+- Točke parcele: + Točka doda do 3 dodatne točke (največ 7), Krog jih enakomerno razporedi po krogu, dolg pritisk na točko jo izbriše.
 POSODOBITVE
 - Posodobitve: aplikacija sama ne išče več posodobitev, le ko tapnete ☰ › Preveri posodobitve; nova različica se prenese v brskalniku, vi pa jo namestite iz prenesene datoteke.
 - Izboljšave oblikovanja in popravki napak.

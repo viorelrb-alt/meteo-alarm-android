@@ -1,4 +1,4 @@
-Současná verze: v.6.00 · 16.11.2026
+Současná verze: v.6.10 · 16.11.2026
 AKTUALIZACE
 - Aktualizace: aplikace už sama aktualizace nehledá, jen když klepnete na ☰ › Zkontrolovat aktualizace; nová verze se stáhne v prohlížeči a nainstalujete ji ze staženého souboru.
 HLAVNÍ OBRAZOVKA
@@ -13,9 +13,11 @@ OZNÁMENÍ
 - Tornáda (USA): oznámení o tornádech pro vaši obec se zapínají a vypínají v ☰.
 - Zemětřesení: oznámení jen o zemětřeseních nejvýše 300 km od vašeho místa; zapínají a vypínají se v ☰.
 POZEMKY
+- Body pozemku: + Bod přidá až 3 další body (nejvýše 7), Kruh je rozmístí rovnoměrně na kruhu, dlouhé podržení bodu ho smaže.
 - Koš: smazaný pozemek jde na 15 dní do koše pod tlačítkem GPS a odtud ho lze obnovit.
 - Rohy pozemku: v satelitním zobrazení se 4 rohy najdou z obrázku a posouvají se prstem; klepnutí na kartu ukáže rohy, Zobrazit otevře pozemek.
 - Stránka Pozemky: karty pozemků (název, souřadnice, tužka, Statistika · PDF, zvonek, koš) plují nad mapou, v řadě dole nebo ve sloupci vpravo; ＋, i karta ＋, otevře okno nového pozemku.
+- Špendlíky na mapě: klepnutí na špendlík přiblíží mapu na pozemek a ukáže jeho název; druhé klepnutí ukáže jeho body.
 - Zobrazení mapy: kulatá tlačítka pod ＋/− přepínají satelit a mapu a ukazují srážkový radar za poslední 2 hodiny.
 REŽIM FARMÁŘE
 - Karty: obec a pozemky v kartách pod názvem (na šířku dole); obrazovka pozemku v částech 1–4.

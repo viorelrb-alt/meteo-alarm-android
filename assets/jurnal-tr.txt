@@ -1,4 +1,4 @@
-Geçerli sürüm: v.6.00 · 16.11.2026
+Geçerli sürüm: v.6.10 · 16.11.2026
 ANA EKRAN
 - Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
@@ -19,7 +19,9 @@ GÜNCELLEMELER
 PARSELLER
 - Çöp kutusu: silinen parsel 15 gün boyunca GPS düğmesinin altındaki çöp kutusuna gider ve oradan geri yüklenebilir.
 - Harita görünümleri: ＋/− altındaki yuvarlak düğmeler uydu ile harita arasında geçer ve son 2 saatin yağış radarını gösterir.
+- Haritadaki iğneler: bir iğneye dokunmak haritayı parsele yaklaştırır ve adını gösterir; ikinci dokunuş noktalarını gösterir.
 - Parsel köşeleri: uydu görünümünde 4 köşe görüntüden bulunur ve parmakla taşınır; karta dokunmak köşeleri gösterir, Göster parseli açar.
+- Parsel noktaları: + Nokta en fazla 3 nokta daha ekler (en fazla 7), Daire onları bir daireye eşit dağıtır, bir noktaya uzun basmak onu siler.
 - Parseller sayfası: parsellerin kartları (ad, koordinatlar, kalem, İstatistik · PDF, zil, çöp kutusu) haritanın üzerinde, altta bir sırada veya sağda bir sütunda yüzer; ＋, ＋ sekmesi de, yeni parsel kutusunu açar.
 - Tasarım iyileştirmeleri ve hata düzeltmeleri.
 

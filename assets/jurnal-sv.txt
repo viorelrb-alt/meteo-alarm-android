@@ -1,4 +1,4 @@
-Nuvarande version: v.6.00 · 16.11.2026
+Nuvarande version: v.6.10 · 16.11.2026
 AVISERINGAR
 - Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
 - Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
@@ -16,9 +16,11 @@ LANTBRUKARLÄGE
 - Lantbrukarknapp: bladknappen bredvid knapparna slår av lantbrukarläget; en annan ort behåller det.
 SKIFTEN
 - Kartvyer: runda knappar under ＋/− växlar mellan satellit och karta och visar regnradarn för de senaste 2 timmarna.
+- Nålar på kartan: ett tryck på en nål zoomar kartan till skiftet och visar dess namn; ett andra tryck visar dess punkter.
 - Papperskorg: ett raderat skifte hamnar i 15 dagar i papperskorgen under GPS-knappen och kan återställas därifrån.
 - Sidan Skiften: skiftenas kort (namn, koordinater, penna, Statistik · PDF, klocka, papperskorg) svävar över kartan, i en rad nederst eller en kolumn till höger; ＋, även fliken ＋, öppnar rutan för ett nytt skifte.
 - Skiftets hörn: i satellitvyn hittas de 4 hörnen i bilden och flyttas med fingret; ett tryck på kortet visar hörnen, Visa öppnar skiftet.
+- Skiftets punkter: + Punkt lägger till upp till 3 punkter till (högst 7), Cirkel fördelar dem jämnt på en cirkel, ett långt tryck på en punkt tar bort den.
 UPPDATERINGAR
 - Uppdateringar: appen söker inte längre själv efter uppdateringar, bara när du trycker på ☰ › Sök efter uppdateringar; den nya versionen laddas ned i webbläsaren och du installerar den från den nedladdade filen.
 - Designförbättringar och felrättningar.

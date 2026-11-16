@@ -24,14 +24,14 @@ final class Parcels {
 		String name;
 		double lat, lon;
 		boolean alerts;
-		/** v6.00: the parcel's 4 corners (lat, lon × 4), or null. */
+		/** v6.00: the parcel's corners (lat, lon × 4; v6.10: 4 to 7 points), or null. */
 		double[] corners;
 
 		String line() {
 			String c = "";
 			if (corners != null) {
 				StringBuilder b = new StringBuilder("\t");
-				for (int k = 0; k < 4; k++) b.append(k > 0 ? ";" : "").append(corners[2 * k]).append(',').append(corners[2 * k + 1]);
+				for (int k = 0; k < corners.length / 2; k++) b.append(k > 0 ? ";" : "").append(corners[2 * k]).append(',').append(corners[2 * k + 1]);
 				c = b.toString();
 			}
 			return id + "\t" + name.replace('\t', ' ').replace('\n', ' ') + "\t" + lat + "\t" + lon + "\t" + (alerts ? 1 : 0) + c;
@@ -42,7 +42,7 @@ final class Parcels {
 			if (corners == null) return null;
 			int best = 0;
 			double bs = Double.MAX_VALUE, cos = Math.cos(Math.toRadians(lat));
-			for (int k = 0; k < 4; k++) {
+			for (int k = 0; k < corners.length / 2; k++) {
 				double s = corners[2 * k + 1] * cos - corners[2 * k];
 				if (s < bs) {
 					bs = s;
@@ -64,9 +64,9 @@ final class Parcels {
 				x.alerts = p.length > 4 && p[4].equals("1");
 				if (p.length > 5) {
 					String[] cs = p[5].split(";");
-					if (cs.length == 4) {
-						double[] c = new double[8];
-						for (int k = 0; k < 4; k++) {
+					if (cs.length >= 3 && cs.length <= 12) {
+						double[] c = new double[2 * cs.length];
+						for (int k = 0; k < cs.length; k++) {
 							String[] ll = cs[k].split(",");
 							c[2 * k] = Double.parseDouble(ll[0]);
 							c[2 * k + 1] = Double.parseDouble(ll[1]);

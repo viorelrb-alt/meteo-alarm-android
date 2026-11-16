@@ -1,4 +1,4 @@
-Nykyinen versio: v.6.00 · 16.11.2026
+Nykyinen versio: v.6.10 · 16.11.2026
 ASETUKSET
 - Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
 - Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ☰; sovelluksessa ja widgeteissä.
@@ -15,7 +15,9 @@ PÄIVITYKSET
 PELTOLOHKOT
 - Karttanäkymät: ＋/−-painikkeiden alla olevat pyöreät painikkeet vaihtavat satelliitin ja kartan ja näyttävät sadetutkan 2 viime tunnilta.
 - Lohkon kulmat: satelliittinäkymässä 4 kulmaa löydetään kuvasta ja niitä siirretään sormella; kortin napautus näyttää kulmat, Näytä avaa lohkon.
+- Lohkon pisteet: + Piste lisää enintään 3 pistettä lisää (enintään 7), Ympyrä asettaa ne tasavälein ympyrälle, pitkä painallus pisteeseen poistaa sen.
 - Lohkot-sivu: lohkojen kortit (nimi, koordinaatit, kynä, Tilastot · PDF, kello, roskakori) leijuvat kartan päällä, rivinä alhaalla tai sarakkeena oikealla; ＋, myös ＋-välilehti, avaa uuden lohkon ruudun.
+- Neulat kartalla: neulan napautus lähentää kartan lohkoon ja näyttää sen nimen; toinen napautus näyttää sen pisteet.
 - Roskakori: poistettu lohko siirtyy 15 päiväksi GPS-painikkeen alla olevaan roskakoriin ja sen voi palauttaa sieltä.
 VILJELIJÄTILA
 - Toimintatila: lohkon näytöllä, vain kun tarpeen, ruiskutuksen tuomio, syy ja seuraavan 24 tunnin riskit.

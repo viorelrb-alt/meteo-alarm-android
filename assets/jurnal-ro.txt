@@ -1,4 +1,4 @@
-Versiunea curentă: v.6.00 · 16.11.2026
+Versiunea curentă: v.6.10 · 16.11.2026
 ACTUALIZĂRI
 - Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL
@@ -13,9 +13,11 @@ NOTIFICĂRI
 - Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ☰.
 - Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ☰.
 PARCELE
+- Acele de pe hartă: atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele ei.
 - Colțurile parcelei: în vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; atingerea casetei arată colțurile, Afișare deschide parcela.
 - Coș de gunoi: o parcelă ștearsă trece în coșul de sub butonul GPS pentru 15 zile și se poate restaura de acolo.
 - Pagina Parcele: casetele parcelelor (nume, coordonate, creion, Statistică · PDF, clopoțel, coș) plutesc peste hartă, pe un rând jos sau pe o coloană în dreapta; ＋, și tab-ul ＋, deschide caseta unei parcele noi.
+- Punctele parcelei: + Punct adaugă până la 3 puncte în plus (cel mult 7), Cerc le așază la distanțe egale pe un cerc, apăsarea lungă pe un punct îl șterge.
 - Vederile hărții: butoanele rotunde de sub ＋/− schimbă între satelit și hartă și arată radarul de ploaie din ultimele 2 ore.
 SETĂRI
 - Limbă afișaj: butoane în ☰, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte.
