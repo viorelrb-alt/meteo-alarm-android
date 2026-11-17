@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.012 · 17.11.2026
+Pašreizējā versija: v.2.013 · 17.11.2026
 IESTATĪJUMI
 - Displeja valoda: ☰ angļu un valsts valoda; Citas valodas: pārējās valsts valodas, lielās ES valodas, rumāņu un tālruņa valoda (ASV tikai angļu un spāņu).
 LAUKI

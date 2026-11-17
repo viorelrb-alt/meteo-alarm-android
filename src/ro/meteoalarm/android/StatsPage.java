@@ -1305,7 +1305,9 @@ final class StatsPage {
 		String[] mw = { Tr.t("dry", "uscat"), Tr.t("moderate", "potrivit"), Tr.t("moist", "umed"), Tr.t("near saturation", "aproape de saturație") };
 		int ml = Farm.soilLevel(m1);
 		two.addView(half(Tr.t("Surface moisture", "Umiditate suprafață"), Double.isNaN(m1) ? "–" : Math.round(m1 * 100) + " %", "0–1 cm" + (ml >= 0 ? " · " + mw[ml] : ""), ink),
-				new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+				// v2.013: both halves MATCH_PARENT, so the row takes the taller one (a WRAP and a
+				// MATCH half cut the right one to the left one's height).
+				new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
 		double rain3 = t >= 0 ? sum(d.dRain, t - 2, t) : Double.NaN;
 		int ac = Agro.access(rain3, d.soilM[cur]);
 		String[] aw = { Tr.t("Good", "Bună"), Tr.t("Care", "Atenție"), Tr.t("Wait", "Așteaptă") };
