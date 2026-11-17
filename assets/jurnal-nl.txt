@@ -1,4 +1,4 @@
-Huidige versie: v.2.013 · 17.11.2026
+Huidige versie: v.2.014 · 17.11.2026
 INSTELLINGEN
 - Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
 PERCELEN

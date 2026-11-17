@@ -1299,21 +1299,21 @@ final class StatsPage {
 		s.addView(line, lp);
 		LinearLayout two = new LinearLayout(a);
 		two.setBaselineAligned(false);
-		// v2.012 (Viorel): no baseline shift, the second column's last lines were cut off.
-		two.setBaselineAligned(false);
 		double m1 = d.soilM1[cur];
 		String[] mw = { Tr.t("dry", "uscat"), Tr.t("moderate", "potrivit"), Tr.t("moist", "umed"), Tr.t("near saturation", "aproape de saturație") };
 		int ml = Farm.soilLevel(m1);
 		two.addView(half(Tr.t("Surface moisture", "Umiditate suprafață"), Double.isNaN(m1) ? "–" : Math.round(m1 * 100) + " %", "0–1 cm" + (ml >= 0 ? " · " + mw[ml] : ""), ink),
-				// v2.013: both halves MATCH_PARENT, so the row takes the taller one (a WRAP and a
-				// MATCH half cut the right one to the left one's height).
-				new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+				// v2.014 (Viorel): both halves WRAP_CONTENT, the row as tall as the taller one.
+				new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		double rain3 = t >= 0 ? sum(d.dRain, t - 2, t) : Double.NaN;
 		int ac = Agro.access(rain3, d.soilM[cur]);
 		String[] aw = { Tr.t("Good", "Bună"), Tr.t("Care", "Atenție"), Tr.t("Wait", "Așteaptă") };
 		String[] as = { Tr.t("firm ground", "teren portant"), Tr.t("risk of compaction", "risc de compactare"), Tr.t("the soil compacts", "solul se compactează") };
-		two.addView(half(Tr.t("Machinery on the field", "Intrare cu utilaje"), ac >= 0 ? aw[ac] : "–", (ac >= 0 ? as[ac] + " · " : "") + Tr.t("rain 3 days ", "ploaie 3 zile ") + mm(rain3),
-				levelColor(ac)), weight(12));
+		// v2.014 (Viorel): the risk on its own row, the rain of 3 days on the next.
+		LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		hl.leftMargin = px(12);
+		two.addView(half(Tr.t("Machinery on the field", "Intrare cu utilaje"), ac >= 0 ? aw[ac] : "–", ac >= 0 ? as[ac] : "", levelColor(ac),
+				Tr.t("rain 3 days ", "ploaie 3 zile ") + mm(rain3)), hl);
 		s.addView(two, wide(10));
 		body.addView(s);
 	}
@@ -1335,11 +1335,23 @@ final class StatsPage {
 		return c;
 	}
 
-	private View half(String label, String value, String sub, int color) {
+	/** A half: LABEL, VALUE and one row per line of SUB (each on one row, smaller if need be). */
+	private View half(String label, String value, String sub, int color, String... more) {
 		LinearLayout c = col();
 		c.addView(caps(label, dim));
-		c.addView(tv(value, 20, true, color), wide(5));
-		c.addView(tv(sub, 12.5f, false, dim), wide(3));
+		FitText v = tv(value, 20, true, color);
+		v.one(0.6f);
+		c.addView(v, wide(5));
+		if (sub.length() > 0) {
+			FitText t = tv(sub, 12.5f, false, dim);
+			t.one(0.6f);
+			c.addView(t, wide(3));
+		}
+		for (String m : more) {
+			FitText t = tv(m, 12.5f, false, dim);
+			t.one(0.6f);
+			c.addView(t, wide(2));
+		}
 		return c;
 	}
 

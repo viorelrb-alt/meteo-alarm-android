@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.013 · 17.11.2026
+Versiunea curentă: v.2.014 · 17.11.2026
 PARCELE
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Editare parcelă: creionul deschide pagina parcelei: nume, cultură (listă după sezonul datei de semănat sau Altă cultură…), data semănatului, suprafață; colțurile se mută pe hartă.

@@ -1,4 +1,4 @@
-Praegune versioon: v.2.013 · 17.11.2026
+Praegune versioon: v.2.014 · 17.11.2026
 PÕLLULAPID
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.
 - Muuda põldu: pliiats avab põllu lehe: nimi, kultuur (loend külvikuupäeva hooaja järgi või Muu kultuur…), külvikuupäev, pindala; nurgad liiguvad kaardil.

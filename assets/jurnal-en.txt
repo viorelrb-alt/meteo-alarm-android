@@ -1,4 +1,4 @@
-Current version: v.2.013 · 17.11.2026
+Current version: v.2.014 · 17.11.2026
 PARCELS
 - Edit parcel: the pencil opens the parcel's page: name, crop (a list by the sowing date's season, or Another crop…), sowing date, area; the corners move on the map.
 - Operational status: the crop and its sowing date on top; with a crop the verdict also takes drop drying (ΔT) and its disease into account.

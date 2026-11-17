@@ -1,4 +1,4 @@
-Leagan reatha: v.2.013 · 17.11.2026
+Leagan reatha: v.2.014 · 17.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Cuir an pháirc in eagar: osclaíonn an peann luaidhe leathanach na páirce: ainm, barr (liosta de réir shéasúr an dáta curtha nó Barr eile…), dáta curtha, achar; bogtar na cúinní ar an léarscáil.
