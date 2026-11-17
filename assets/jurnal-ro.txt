@@ -1,7 +1,10 @@
-Versiunea curentă: v.2.014 · 17.11.2026
+Versiunea curentă: v.2.020 · 17.11.2026
 PARCELE
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
+- Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.
 - Editare parcelă: creionul deschide pagina parcelei: nume, cultură (listă după sezonul datei de semănat sau Altă cultură…), data semănatului, suprafață; colțurile se mută pe hartă.
+- Istoric și prognoză: indicatorul se trage pe o zi din trecut; valorile ei apar într-o casetă sub grafic, iar după 10 s revine la azi.
+- Statistici în ecranul principal: se deschid sub Status operațional (în peisaj în stânga); ‹ le închide, iar tab-ul altei parcele le păstrează.
 - Statistici: pentru fiecare parcelă, Acțiunea zilei și 4 file: Operațional (fereastra de stropit oră cu oră, uscare picături (ΔT), vânt, frunză udă), Apă & Sol (ploaie, evaporare, sol la 6 și 18 cm), Sezon (grade-zile față de anul trecut, faza estimată) și Riscuri 72 h (boli fungice, brumă, arșiță, vânt și grindină); salvare PDF sau CSV.
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.
 SETĂRI

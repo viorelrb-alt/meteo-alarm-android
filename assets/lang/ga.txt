@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	faoi 5 °C ní oibríonn an chóireáil
 {1} h of wet leaves from {2}	{1} h de dhuilleoga fliucha ó {2}
 {1} risk: {2}	Riosca {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = teocht an aeir lúide teocht an bholgáin fhliuch: cé chomh tapa a thriomaíonn braon. 2–8 °C is fearr. Faoi 2 °C fanann na braonta agus séideann siad, os cionn 10 °C triomaíonn siad san aer.
+# v2.020
+Forecast	Réamhaisnéis
+Measured (model)	Tomhaiste (samhail)
+No app to open it	Níl aip ann chun é a oscailt
+Parcel coordinates	Comhordanáidí an cheapacha
+Parcel information	Eolas faoin gceapach
+Tap a value and type another; the map follows.	Tapáil luach agus clóscríobh ceann eile; leanann an léarscáil.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Cuireann an peann luaidhe an ceapach in eagar: ainm, dáta curtha, achar, barr; clóscríobhtar comhordanáidí GPS gach pointe nó bogtar iad ar an léarscáil; taispeánann an radharc satailíte an ceapach.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Osclaíonn siad sa phríomhscáileán: ina seasamh faoin stádas oibríochtúil, ina luí ar chlé. Dúnann ‹ iad; coinníonn cluaisín ceapaigh eile iad, lena shonraí. Ag an mbarr: 4 chluaisín agus PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Uisce & Ithir: báisteach agus galú (ET₀) 7 lá agus an chothromaíocht; cairt an ama atá thart agus na 7 lá atá romhainn: tarraing an táscaire go lá, taispeántar a luachanna faoin gcairt, tar éis 10 s filleann sé ar inniu; ithir ag 6 agus 18 cm, taise an dromchla, innealra ar an ngort.
+in the order on the map	in ord na léarscáile
+in {1} days	i gceann {1} lá
+satellite · tap to change	satailít · tapáil chun athrú
+tomorrow	amárach
+yesterday	inné
+{1} days ago	{1} lá ó shin

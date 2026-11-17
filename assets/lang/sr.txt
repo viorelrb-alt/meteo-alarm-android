@@ -1409,3 +1409,19 @@ under 5 °C the treatment does not work	испод 5 °C третман не д�
 {1} h of wet leaves from {2}	{1} h мокрог лишћа од {2}
 {1} risk: {2}	Ризик – {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = температура ваздуха минус температура влажног термометра: колико брзо се капљица суши. 2–8 °C оптимално. Испод 2 °C капљице остају и заносе се, изнад 10 °C суше се у ваздуху.
+# v2.020
+Forecast	Прогноза
+Measured (model)	Измерено (модел)
+No app to open it	Нема апликације за отварање
+Parcel coordinates	Координате парцеле
+Parcel information	Подаци о парцели
+Tap a value and type another; the map follows.	Додирните вредност и упишите другу; мапа се ажурира.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Оловка уређује парцелу: назив, датум сетве, површину, културу; GPS координате сваке тачке се уписују или померају на мапи; сателитски приказ показује парцелу.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Отварају се на главном екрану: усправно испод оперативног статуса, положено лево. ‹ их затвара; картица друге парцеле их задржава, са њеним подацима. Горе: 4 картице и PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Вода и земљиште: киша и испаравање (ET₀) за 7 дана и биланс; графикон прошлости и наредних 7 дана: превуците показивач на дан, његове вредности се појављују испод графикона, после 10 s враћа се на данас; земљиште на 6 и 18 cm, влажност површине, улазак машина.
+in the order on the map	редоследом на мапи
+in {1} days	за {1} дана
+satellite · tap to change	сателит · додирните за измену
+tomorrow	сутра
+yesterday	јуче
+{1} days ago	пре {1} дана

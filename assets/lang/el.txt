@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	κάτω από 5 °C ο ψεκασμό�
 {1} h of wet leaves from {2}	{1} h βρεγμένα φύλλα από {2}
 {1} risk: {2}	Κίνδυνος {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = θερμοκρασία αέρα μείον θερμοκρασία υγρού θερμομέτρου: πόσο γρήγορα στεγνώνει μια σταγόνα. 2–8 °C βέλτιστο. Κάτω από 2 °C οι σταγόνες μένουν και παρασύρονται, πάνω από 10 °C στεγνώνουν στον αέρα.
+# v2.020
+Forecast	Πρόγνωση
+Measured (model)	Μετρημένο (μοντέλο)
+No app to open it	Καμία εφαρμογή για άνοιγμα
+Parcel coordinates	Συντεταγμένες αγροτεμαχίου
+Parcel information	Πληροφορίες αγροτεμαχίου
+Tap a value and type another; the map follows.	Αγγίξτε μια τιμή και γράψτε άλλη· ο χάρτης ακολουθεί.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Το μολύβι επεξεργάζεται το αγροτεμάχιο: όνομα, ημερομηνία σποράς, έκταση, καλλιέργεια· οι συντεταγμένες GPS κάθε σημείου πληκτρολογούνται ή μετακινούνται στον χάρτη· η δορυφορική προβολή δείχνει το αγροτεμάχιο.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Ανοίγουν στην κύρια οθόνη: σε κατακόρυφη θέση κάτω από την επιχειρησιακή κατάσταση, σε οριζόντια αριστερά. Το ‹ τα κλείνει· η καρτέλα άλλου αγροτεμαχίου τα κρατά, με τα δεδομένα του. Επάνω: 4 καρτέλες και PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Νερό & Έδαφος: βροχή και εξάτμιση (ET₀) 7 ημερών και το ισοζύγιο· το γράφημα του παρελθόντος και των επόμενων 7 ημερών: σύρετε τον δείκτη σε μια μέρα, οι τιμές της εμφανίζονται κάτω από το γράφημα, μετά από 10 s επιστρέφει στο σήμερα· έδαφος στα 6 και 18 cm, υγρασία επιφάνειας, είσοδος μηχανημάτων.
+in the order on the map	με τη σειρά του χάρτη
+in {1} days	σε {1} ημέρες
+satellite · tap to change	δορυφόρος · αγγίξτε για αλλαγή
+tomorrow	αύριο
+yesterday	χθες
+{1} days ago	πριν από {1} ημέρες

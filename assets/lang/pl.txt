@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	poniżej 5 °C zabieg nie działa
 {1} h of wet leaves from {2}	{1} h mokrych liści od {2}
 {1} risk: {2}	Ryzyko: {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura powietrza minus temperatura termometru zwilżonego: jak szybko schnie kropla. 2–8 °C optymalnie. Poniżej 2 °C krople pozostają i znoszą się, powyżej 10 °C wysychają w powietrzu.
+# v2.020
+Forecast	Prognoza
+Measured (model)	Zmierzone (model)
+No app to open it	Brak aplikacji do otwarcia
+Parcel coordinates	Współrzędne działki
+Parcel information	Informacje o działce
+Tap a value and type another; the map follows.	Dotknij wartości i wpisz inną; mapa się zaktualizuje.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Ołówek edytuje działkę: nazwa, data siewu, powierzchnia, uprawa; współrzędne GPS każdego punktu wpisuje się lub przesuwa na mapie; widok satelitarny pokazuje działkę.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Otwierają się na ekranie głównym: w pionie pod statusem operacyjnym, w poziomie po lewej. ‹ je zamyka; karta innej działki je zachowuje, z jej danymi. U góry: 4 zakładki i PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Woda i Gleba: deszcz i parowanie (ET₀) z 7 dni oraz bilans; wykres przeszłości i następnych 7 dni: przeciągnij wskaźnik na dzień, jego wartości pojawią się pod wykresem, po 10 s wraca do dziś; gleba na 6 i 18 cm, wilgotność powierzchni, wjazd maszyn.
+in the order on the map	w kolejności na mapie
+in {1} days	za {1} dni
+satellite · tap to change	satelita · dotknij, aby zmienić
+tomorrow	jutro
+yesterday	wczoraj
+{1} days ago	{1} dni temu

@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	unter 5 °C wirkt die Behandlung nicht
 {1} h of wet leaves from {2}	{1} h nasse Blätter ab {2}
 {1} risk: {2}	{1}-Risiko: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = Lufttemperatur minus Feuchttemperatur: wie schnell ein Tropfen trocknet. 2–8 °C optimal. Unter 2 °C bleiben die Tropfen und driften, über 10 °C trocknen sie in der Luft.
+# v2.020
+Forecast	Prognose
+Measured (model)	Gemessen (Modell)
+No app to open it	Keine App zum Öffnen
+Parcel coordinates	Koordinaten der Parzelle
+Parcel information	Informationen zur Parzelle
+Tap a value and type another; the map follows.	Tippe auf einen Wert und gib einen anderen ein; die Karte folgt.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Der Stift bearbeitet die Parzelle: Name, Aussaatdatum, Fläche, Kultur; die GPS-Koordinaten jedes Punkts werden eingetippt oder auf der Karte verschoben; die Satellitenansicht zeigt die Parzelle.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Sie öffnen sich im Hauptbildschirm: hochkant unter dem Betriebsstatus, quer links. ‹ schließt sie; der Tab einer anderen Parzelle behält sie, mit deren Daten. Oben: 4 Reiter und PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Wasser & Boden: Regen und Verdunstung (ET₀) über 7 Tage und die Bilanz; das Diagramm der Vergangenheit und der nächsten 7 Tage: ziehe den Anzeiger auf einen Tag, seine Werte erscheinen unter dem Diagramm, nach 10 s kehrt er zu heute zurück; Boden in 6 und 18 cm, Oberflächenfeuchte, Befahrbarkeit.
+in the order on the map	in der Reihenfolge auf der Karte
+in {1} days	in {1} Tagen
+satellite · tap to change	Satellit · tippen zum Ändern
+tomorrow	morgen
+yesterday	gestern
+{1} days ago	vor {1} Tagen

@@ -1,9 +1,12 @@
-Současná verze: v.2.014 · 17.11.2026
+Současná verze: v.2.020 · 17.11.2026
 NASTAVENÍ
 - Jazyk zobrazení: v ☰ angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu (v USA jen angličtina a španělština).
 POZEMKY
 - Bubliny ve Statistice: klepnutí na hodinu v okně postřiku, den v grafech nebo řádek půdy otevře bublinu s vysvětlením; okno postřiku se posouvá samo.
+- Historie a předpověď: přetáhněte ukazatel na den v minulosti; jeho hodnoty se zobrazí v rámečku pod grafem a po 10 s se vrátí na dnešek.
 - Provozní stav: nahoře plodina a datum setí; s plodinou verdikt zohledňuje i vysychání kapek (ΔT) a její chorobu.
+- Souřadnice pozemku: na stránce úprav se zapisují souřadnice GPS každého bodu a pod nimi satelitní pohled ukazuje pozemek.
+- Statistika na hlavní obrazovce: otevírá se pod provozním stavem (na šířku vlevo); ‹ ji zavře a karta jiného pozemku ji ponechá.
 - Statistika: pro každý pozemek Úkol dne a 4 karty: Provoz (okno postřiku hodinu po hodině, vysychání kapek (ΔT), vítr, mokrý list), Voda a půda (déšť, výpar, půda v 6 a 18 cm), Sezóna (denní stupně oproti loňsku, odhadovaná fáze) a Rizika 72 h (houbové choroby, přízemní mráz, horko, vítr a kroupy); uložení do PDF nebo CSV.
 - Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
 - Vylepšení vzhledu a opravy chyb.

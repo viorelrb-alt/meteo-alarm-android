@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	ispod 5 °C tretman ne djeluje
 {1} h of wet leaves from {2}	{1} h mokrog lišća od {2}
 {1} risk: {2}	Rizik – {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura zraka minus temperatura mokrog termometra: koliko se brzo kapljica suši. 2–8 °C optimalno. Ispod 2 °C kapljice ostaju i zanose se, iznad 10 °C suše se u zraku.
+# v2.020
+Forecast	Prognoza
+Measured (model)	Izmjereno (model)
+No app to open it	Nema aplikacije za otvaranje
+Parcel coordinates	Koordinate parcele
+Parcel information	Podaci o parceli
+Tap a value and type another; the map follows.	Dodirnite vrijednost i upišite drugu; karta se ažurira.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Olovka uređuje parcelu: naziv, datum sjetve, površinu, kulturu; GPS koordinate svake točke upisuju se ili pomiču na karti; satelitski prikaz pokazuje parcelu.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Otvaraju se na glavnom zaslonu: uspravno ispod operativnog statusa, položeno lijevo. ‹ ih zatvara; kartica druge parcele ih zadržava, s njezinim podacima. Gore: 4 kartice i PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Voda i tlo: kiša i isparavanje (ET₀) za 7 dana i bilanca; graf prošlosti i sljedećih 7 dana: povucite pokazivač na dan, njegove vrijednosti pojavljuju se ispod grafa, nakon 10 s vraća se na danas; tlo na 6 i 18 cm, vlažnost površine, ulazak strojeva.
+in the order on the map	redoslijedom na karti
+in {1} days	za {1} dana
+satellite · tap to change	satelit · dodirnite za izmjenu
+tomorrow	sutra
+yesterday	jučer
+{1} days ago	prije {1} dana

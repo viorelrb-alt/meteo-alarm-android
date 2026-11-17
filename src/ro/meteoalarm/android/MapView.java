@@ -199,6 +199,34 @@ final class MapView extends View {
 		invalidate();
 	}
 
+	/** v2.020: zoomed and centred on corners C (or on LA, LO without them), with some room round them. */
+	void fitCorners(double[] c, double la, double lo) {
+		if (getWidth() == 0) return;
+		double la0 = la, la1 = la, lo0 = lo, lo1 = lo;
+		if (c != null && c.length >= 2) {
+			la0 = la1 = c[0];
+			lo0 = lo1 = c[1];
+			for (int k = 0; k < c.length / 2; k++) {
+				la0 = Math.min(la0, c[2 * k]);
+				la1 = Math.max(la1, c[2 * k]);
+				lo0 = Math.min(lo0, c[2 * k + 1]);
+				lo1 = Math.max(lo1, c[2 * k + 1]);
+			}
+		}
+		float fw = Math.max(getWidth() - 48 * dp, 40 * dp), fh = Math.max(getHeight() - 56 * dp, 40 * dp);
+		double z = 18;
+		for (; z > MIN_Z; z -= 0.25) {
+			double world = tile * Math.pow(2, z);
+			if (Math.abs(wx(lo1, world) - wx(lo0, world)) <= fw && Math.abs(wy(la0, world) - wy(la1, world)) <= fh) break;
+		}
+		setZoom(z);
+		double world = tile * Math.pow(2, zoom);
+		double cy = (wy(la0, world) + wy(la1, world)) / 2 + 8 * dp;
+		lat = latOf(Math.max(0, Math.min(world, cy)), world);
+		lon = (lo0 + lo1) / 2;
+		invalidate();
+	}
+
 	/** v6.10: room covered by the cards at the right (landscape) and at the bottom (portrait). */
 	private float rightPad, bottomPad;
 

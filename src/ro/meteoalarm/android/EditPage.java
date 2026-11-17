@@ -54,6 +54,9 @@ final class EditPage {
 	/** The parcel as edited (saved only with Save). */
 	Parcels.Parcel p;
 	private EditText name;
+	/** v2.020: the texts that follow the typed coordinates, and the satellite view. */
+	private FitText areaV, outlineT;
+	private MapView mini;
 
 	EditPage(Activity a, Host host, StatsPage fmt, boolean dark) {
 		this.a = a;
@@ -190,46 +193,24 @@ final class EditPage {
 
 		LinearLayout body = col();
 		body.setPadding(px(14), px(12), px(14), px(24));
-		// The name.
+		// The name: v2.020 (Viorel) only the name, on 2 rows when long.
 		LinearLayout nc = card();
-		LinearLayout nr = row();
-		nr.addView(caps(Tr.t("Name", "Nume"), dim));
 		name = new EditText(a);
 		name.setText(p.name);
-		name.setSingleLine(true);
+		name.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+		name.setHorizontallyScrolling(false);
+		name.setMaxLines(2);
 		name.setTextColor(ink);
-		name.setTextSize(17 * fs);
+		name.setTextSize(18 * fs * wk);
 		name.setTypeface(Typeface.DEFAULT_BOLD);
 		name.setBackground(null);
-		name.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
-		name.setPadding(px(10), px(4), px(4), px(4));
-		nr.addView(name, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		nc.addView(nr);
-		nc.addView(tv(String.format(Locale.US, "%.5f, %.5f", p.lat, p.lon), 12.5f, false, dim), wide(2));
+		name.setPadding(px(2), px(2), px(2), px(2));
+		name.setContentDescription(Tr.t("Name", "Nume"));
+		nc.addView(name);
 		body.addView(nc);
 
-		// The outline.
-		body.addView(section(Tr.t("Outline on the map", "Conturul pe hartă"), null));
-		LinearLayout oc = card();
-		double per = p.perimeter();
-		int n = p.corners == null ? 0 : p.corners.length / 2;
-		oc.addView(tv(n == 0 ? Tr.t("No corners yet: only the pin.", "Încă fără colțuri: doar acul.")
-				: n + Tr.t(" corners · perimeter ", " colțuri · perimetru ") + fmt.km(per), 15, true, ink));
-		oc.addView(tv(Tr.t("On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.",
-				"Pe hartă colțurile se mută cu degetul; + Punct, Cerc și apăsarea lungă merg tot acolo. Vremea vine din centrul parcelei."), 13, false, dim), wide(4));
-		TextView mapB = pill(Tr.t("Change on the map", "Modifică pe hartă"), false, new View.OnClickListener() {
-			public void onClick(View v) {
-				String nn = name.getText().toString().trim();
-				if (nn.length() > 0) p.name = nn;
-				host.map(p);
-			}
-		});
-		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		ml.topMargin = px(10);
-		oc.addView(mapB, ml);
-		body.addView(oc);
-
-		// The sowing date and the area.
+		// v2.020 (Viorel): the parcel's information first: sowing date, area, crop, thresholds.
+		body.addView(section(Tr.t("Parcel information", "Informații parcelă"), null));
 		LinearLayout two = new LinearLayout(a);
 		two.setBaselineAligned(false);
 		LinearLayout dc = card();
@@ -246,16 +227,16 @@ final class EditPage {
 		LinearLayout ac = card();
 		ac.addView(caps(Tr.t("Area", "Suprafață"), dim));
 		// v2.010: the value on one row, under it where it comes from.
-		FitText av = tv(fmt.hectares(p.hectares()), 17, true, ink);
-		av.one(0.6f);
-		ac.addView(av, wide(6));
+		areaV = tv(fmt.hectares(p.hectares()), 17, true, ink);
+		areaV.one(0.6f);
+		ac.addView(areaV, wide(6));
 		FitText as = tv(Tr.t("from the corners", "din colțuri"), 12.5f, false, dim);
 		as.one(0.7f);
 		ac.addView(as, wide(3));
 		LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 2);
 		al.leftMargin = px(10);
 		two.addView(ac, al);
-		body.addView(two, wide(12));
+		body.addView(two);
 
 		// The crop.
 		Agro.Crop c = p.crop();
@@ -295,6 +276,26 @@ final class EditPage {
 					+ c.heatStage() + " (> 32 °C) · " + Tr.t("sowing soil ", "sol pentru semănat ") + Math.round(c.soilMin) + " °C", 13.5f, false, dim), wide(6));
 			body.addView(th, wide(12));
 		}
+
+		// v2.020 (Viorel): the parcel's coordinates: the outline, each point's GPS, the satellite view.
+		body.addView(section(Tr.t("Parcel coordinates", "Coordonatele parcelei"), null));
+		LinearLayout oc = card();
+		int n = p.corners == null ? 0 : p.corners.length / 2;
+		outlineT = tv(outline(), 15, true, ink);
+		oc.addView(outlineT);
+		oc.addView(tv(Tr.t("On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.",
+				"Pe hartă colțurile se mută cu degetul; + Punct, Cerc și apăsarea lungă merg tot acolo. Vremea vine din centrul parcelei."), 13, false, dim), wide(4));
+		TextView mapB = pill(Tr.t("Change on the map", "Modifică pe hartă"), false, new View.OnClickListener() {
+			public void onClick(View v) {
+				toMap();
+			}
+		});
+		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		ml.topMargin = px(10);
+		oc.addView(mapB, ml);
+		body.addView(oc);
+		if (n > 0) body.addView(points(), wide(12));
+		body.addView(miniMap(), wide(12));
 		ScrollView sv = new ScrollView(a);
 		int w = a.getResources().getDisplayMetrics().widthPixels;
 		FrameLayout f = new FrameLayout(a);
@@ -302,6 +303,211 @@ final class EditPage {
 		sv.addView(f);
 		page.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 		root.addView(page, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+	}
+
+	/** "5 corners · perimeter 2.61 km", or no corners yet. */
+	private String outline() {
+		int n = p.corners == null ? 0 : p.corners.length / 2;
+		return n == 0 ? Tr.t("No corners yet: only the pin.", "Încă fără colțuri: doar acul.")
+				: n + Tr.t(" corners · perimeter ", " colțuri · perimetru ") + fmt.km(p.perimeter());
+	}
+
+	private void toMap() {
+		keepName();
+		host.map(p);
+	}
+
+	/** Each point's name: on 4 corners where it stands from the middle (NV…), else its number and its direction. */
+	private String[] pointNames() {
+		double[] c = p.corners;
+		int n = c.length / 2;
+		double mla = 0, mlo = 0;
+		for (int k = 0; k < n; k++) {
+			mla += c[2 * k] / n;
+			mlo += c[2 * k + 1] / n;
+		}
+		String[] eight = Tr.dirs8(), out = new String[n];
+		double cos = Math.cos(Math.toRadians(mla));
+		for (int k = 0; k < n; k++) {
+			if (n == 4) {
+				int q = c[2 * k] >= mla ? (c[2 * k + 1] < mlo ? 7 : 1) : (c[2 * k + 1] >= mlo ? 3 : 5);
+				out[k] = eight[q];
+			} else {
+				double ang = Math.toDegrees(Math.atan2((c[2 * k + 1] - mlo) * cos, c[2 * k] - mla));
+				out[k] = (k + 1) + " · " + eight[(int) Math.floor(((ang + 360 + 22.5) % 360) / 45) % 8];
+			}
+		}
+		return out;
+	}
+
+	/** v2.020 (Viorel): the GPS of each point, typed in; the area, the outline and the map follow. */
+	private View points() {
+		LinearLayout box = card();
+		box.addView(tv(Tr.t("Tap a value and type another; the map follows.", "Atinge o valoare și scrie alta; harta se actualizează."), 13, false, dim));
+		LinearLayout head = row();
+		head.addView(new View(a), new LinearLayout.LayoutParams(px(58), 1));
+		TextView la = caps(Tr.t("Latitude", "Latitudine"), dim);
+		head.addView(la, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		TextView lo = caps(Tr.t("Longitude", "Longitudine"), dim);
+		LinearLayout.LayoutParams lol = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		lol.leftMargin = px(8);
+		head.addView(lo, lol);
+		box.addView(head, wide(10));
+		String[] names = pointNames();
+		for (int k = 0; k < names.length; k++) {
+			LinearLayout r = row();
+			FitText nm = tv(names[k], 14, false, dim);
+			nm.one(0.6f);
+			r.addView(nm, new LinearLayout.LayoutParams(px(58), ViewGroup.LayoutParams.WRAP_CONTENT));
+			r.addView(field(2 * k, -90, 90), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			LinearLayout.LayoutParams fl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			fl.leftMargin = px(8);
+			r.addView(field(2 * k + 1, -180, 180), fl);
+			box.addView(r, wide(8));
+		}
+		LinearLayout foot = row();
+		TextView add = pill(Tr.t("+ Point", "+ Punct"), false, new View.OnClickListener() {
+			public void onClick(View v) {
+				addPoint();
+			}
+		});
+		foot.addView(add);
+		FitText ord = tv(Tr.t("in the order on the map", "în ordinea de pe hartă"), 12.5f, false, dim);
+		ord.one(0.6f);
+		ord.setGravity(Gravity.RIGHT);
+		LinearLayout.LayoutParams ol = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		ol.leftMargin = px(10);
+		foot.addView(ord, ol);
+		box.addView(foot, wide(12));
+		return box;
+	}
+
+	/** The field of value I of the corners (MIN…MAX). */
+	private EditText field(final int i, final double min, final double max) {
+		final EditText e = new EditText(a);
+		e.setText(String.format(Locale.US, "%.5f", p.corners[i]));
+		e.setSingleLine(true);
+		e.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
+		e.setTextColor(ink);
+		e.setTextSize(16 * fs * wk);
+		e.setTypeface(Typeface.DEFAULT_BOLD);
+		e.setPadding(px(10), px(8), px(8), px(8));
+		e.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), px(10), dp));
+		e.addTextChangedListener(new android.text.TextWatcher() {
+			public void beforeTextChanged(CharSequence s, int st, int c, int af) {
+			}
+
+			public void onTextChanged(CharSequence s, int st, int b, int c) {
+			}
+
+			public void afterTextChanged(android.text.Editable s) {
+				double v;
+				try {
+					v = Double.parseDouble(s.toString().replace(',', '.'));
+				} catch (Exception x) {
+					v = Double.NaN;
+				}
+				boolean ok = !Double.isNaN(v) && v >= min && v <= max;
+				e.setTextColor(ok ? ink : 0xFFEF4444);
+				if (!ok || p.corners == null || i >= p.corners.length) return;
+				p.corners[i] = v;
+				if (areaV != null) areaV.setText(fmt.hectares(p.hectares()));
+				if (outlineT != null) outlineT.setText(outline());
+				if (mini != null) mini.setCorners(p.corners, null);
+			}
+		});
+		return e;
+	}
+
+	/** One more point (at most 12), in the middle of the longest side. */
+	private void addPoint() {
+		keepName();
+		double[] c = p.corners;
+		if (c == null) return;
+		int n = c.length / 2;
+		if (n >= 12) return;
+		double cos = Math.cos(Math.toRadians(c[0]));
+		int best = 0;
+		double bl = -1;
+		for (int k = 0; k < n; k++) {
+			int q = (k + 1) % n;
+			double d = Math.hypot(c[2 * q] - c[2 * k], (c[2 * q + 1] - c[2 * k + 1]) * cos);
+			if (d > bl) {
+				bl = d;
+				best = k;
+			}
+		}
+		int q = (best + 1) % n;
+		double[] r = new double[2 * (n + 1)];
+		for (int k = 0, j = 0; k < n; k++) {
+			r[2 * j] = c[2 * k];
+			r[2 * j + 1] = c[2 * k + 1];
+			j++;
+			if (k == best) {
+				r[2 * j] = (c[2 * k] + c[2 * q]) / 2;
+				r[2 * j + 1] = (c[2 * k + 1] + c[2 * q + 1]) / 2;
+				j++;
+			}
+		}
+		p.corners = r;
+		Log.i(a, "FERMIER", "editare: punct adăugat (" + (n + 1) + " puncte)");
+		draw();
+	}
+
+	/** v2.020 (Viorel): the parcel on the satellite map, zoomed on it; a tap opens the map to change it. */
+	private View miniMap() {
+		mini = new MapView(a);
+		mini.setDark(dark);
+		mini.setStyle(1);
+		if (p.corners != null) mini.setCorners(p.corners, null);
+		else mini.setMark(p.lat, p.lon);
+		mini.center(p.lat, p.lon);
+		mini.setZoom(16);
+		final MapView m = mini;
+		FrameLayout f = new FrameLayout(a) {
+			float x0, y0;
+
+			@Override
+			public boolean onInterceptTouchEvent(android.view.MotionEvent e) {
+				return true;
+			}
+
+			@Override
+			public boolean onTouchEvent(android.view.MotionEvent e) {
+				if (e.getActionMasked() == android.view.MotionEvent.ACTION_DOWN) {
+					x0 = e.getX();
+					y0 = e.getY();
+				} else if (e.getActionMasked() == android.view.MotionEvent.ACTION_UP && Math.abs(e.getX() - x0) < px(10) && Math.abs(e.getY() - y0) < px(10)) toMap();
+				return true;
+			}
+
+			@Override
+			protected void onLayout(boolean ch, int l, int t, int r, int b) {
+				super.onLayout(ch, l, t, r, b);
+				if (ch) m.post(new Runnable() {
+					public void run() {
+						m.fitCorners(p.corners, p.lat, p.lon);
+					}
+				});
+			}
+		};
+		f.setClipToOutline(true);
+		f.setOutlineProvider(new android.view.ViewOutlineProvider() {
+			public void getOutline(View v, android.graphics.Outline o) {
+				o.setRoundRect(0, 0, v.getWidth(), v.getHeight(), px(16));
+			}
+		});
+		f.addView(m, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		TextView tag = tv(Tr.t("satellite · tap to change", "satelit · atinge pentru modificare"), 12, true, 0xFFFFFFFF);
+		tag.setPadding(px(10), px(5), px(10), px(5));
+		tag.setBackground(Glass.pill(0xB0101418, 0, px(12), dp));
+		FrameLayout.LayoutParams tl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT);
+		tl.setMargins(px(10), px(10), 0, 0);
+		f.addView(tag, tl);
+		f.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(TextSize.tablet(a) ? 300 : 230)));
+		LinearLayout wrap = col();
+		wrap.addView(f, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(TextSize.tablet(a) ? 300 : 230)));
+		return wrap;
 	}
 
 	private static int month(String iso) {

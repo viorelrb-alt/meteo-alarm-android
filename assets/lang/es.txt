@@ -1545,3 +1545,19 @@ under 5 °C the treatment does not work	por debajo de 5 °C el tratamiento no ac
 {1} h of wet leaves from {2}	{1} h de hojas mojadas desde las {2}
 {1} risk: {2}	Riesgo de {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura del aire menos temperatura de bulbo húmedo: lo rápido que se seca una gota. 2–8 °C óptimo. Por debajo de 2 °C las gotas quedan y derivan, por encima de 10 °C se secan en el aire.
+# v2.020
+Forecast	Pronóstico
+Measured (model)	Medido (modelo)
+No app to open it	No hay app para abrirlo
+Parcel coordinates	Coordenadas de la parcela
+Parcel information	Información de la parcela
+Tap a value and type another; the map follows.	Toca un valor y escribe otro; el mapa se actualiza.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	El lápiz edita la parcela: nombre, fecha de siembra, superficie, cultivo; las coordenadas GPS de cada punto se escriben o se mueven en el mapa; la vista de satélite muestra la parcela.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Se abren en la pantalla principal: en vertical bajo el estado operativo, en horizontal a la izquierda. ‹ las cierra; la pestaña de otra parcela las mantiene, con sus datos. Arriba: 4 pestañas y PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Agua y Suelo: lluvia y evaporación (ET₀) de 7 días y el balance; el gráfico del pasado y de los próximos 7 días: arrastra el indicador a un día, sus valores aparecen bajo el gráfico, a los 10 s vuelve a hoy; suelo a 6 y 18 cm, humedad superficial, entrada de maquinaria.
+in the order on the map	en el orden del mapa
+in {1} days	en {1} días
+satellite · tap to change	satélite · toca para cambiar
+tomorrow	mañana
+yesterday	ayer
+{1} days ago	hace {1} días

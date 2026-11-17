@@ -1,11 +1,14 @@
-Versão atual: v.2.014 · 17.11.2026
+Versão atual: v.2.020 · 17.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 PARCELAS
 - Bolhas nas Estatísticas: tocar numa hora da janela de pulverização, num dia dos gráficos ou numa linha do solo abre uma bolha com a explicação; a janela de pulverização move-se sozinha.
+- Coordenadas da parcela: na página de edição escrevem-se as coordenadas GPS de cada ponto, e por baixo a vista de satélite mostra a parcela.
 - Editar parcela: o lápis abre a página da parcela: nome, cultura (lista pela época da data de sementeira ou Outra cultura…), data de sementeira, área; os cantos movem-se no mapa.
 - Estado operacional: em cima, a cultura e a data de sementeira; com uma cultura o veredicto também tem em conta a secagem das gotas (ΔT) e a sua doença.
 - Estatística: para cada parcela, a Ação do dia e 4 separadores: Operacional (janela de pulverização hora a hora, secagem das gotas (ΔT), vento, folha molhada), Água e Solo (chuva, evaporação, solo a 6 e 18 cm), Época (graus-dia face ao ano passado, fase estimada) e Riscos 72 h (doenças fúngicas, geada no solo, calor, vento e granizo); guarda em PDF ou CSV.
+- Estatísticas no ecrã principal: abrem-se sob o estado operacional (na horizontal à esquerda); ‹ fecha-as e o separador de outra parcela mantém-nas.
+- Histórico e previsão: arraste o indicador para um dia passado; os seus valores aparecem numa caixa sob o gráfico e após 10 s volta a hoje.
 - Melhorias de design e correção de erros.
 
 Versão 1.4 (v.1.400 – v.1.520)

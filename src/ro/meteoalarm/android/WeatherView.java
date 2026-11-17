@@ -36,6 +36,9 @@ final class WeatherView extends View {
 		/** A tap on "Statistics · PDF" of a parcel's main screen (v3.10). */
 		void onStats();
 
+		/** v2.020: where the Statistics go on the screen (pixels: left, top, right, bottom, the room above them that scrolls away); null: nowhere. */
+		void statsFrame(int[] r);
+
 		/** Brightness 0.01–1 now (the app's own or the phone's). */
 		float brightness();
 
@@ -296,6 +299,7 @@ final class WeatherView extends View {
 			return;
 		}
 		drawScreen(c);
+		statsReport();
 		if (pull > 0) drawPull(c);
 		String big = screen.bigIcon;
 		if (big != null && !big.equals(iconDone)) startIcon(big);
@@ -491,6 +495,31 @@ final class WeatherView extends View {
 		gfx.c = c;
 		screen.draw(gfx, cw, ch);
 		c.restore();
+	}
+
+	private int[] statsLast;
+
+	/** v2.020: tells the activity where the Statistics go when that changed. */
+	private void statsReport() {
+		float[] a = screen.statsArea;
+		final int[] r = screen.statsOn && a[2] > 0 ? new int[] { Math.round(ox + a[0] * scale), Math.round(oy + a[1] * scale), Math.round(ox + (a[0] + a[2]) * scale),
+				Math.round(oy + a[3] * scale), Math.round(a[4] * scale) } : null;
+		if (r == null ? statsLast == null : statsLast != null && java.util.Arrays.equals(r, statsLast)) return;
+		statsLast = r;
+		post(new Runnable() {
+			public void run() {
+				taps.statsFrame(r);
+			}
+		});
+	}
+
+	/** v2.020: the Statistics moved up by Y pixels: the page above them follows. */
+	void statsScrolled(int y) {
+		if (scale <= 0) return;
+		float v = Math.max(0, Math.min(screen.pageS.max, y / scale));
+		if (Math.abs(v - screen.pageS.scroll) < 0.01f) return;
+		screen.pageS.scroll = v;
+		invalidate();
 	}
 
 	// --- v5.30: the blurred copy of the page that shows through the glass ----------------------
@@ -713,7 +742,7 @@ final class WeatherView extends View {
 			if (drag == screen.alerts) pauseRoll();
 			if (drag != null) stopAuto(drag);
 			// v5.30: the page itself moves up and down (not from the brightness edge).
-			pageCand = onPage && !edge && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
+			pageCand = onPage && !edge && !screen.statsOn && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
 			if (pageCand && settle != null) settle.cancel();
 			// v2.90: farmer mode with parcels: a sideways slide between the top line and the
 			// footer, not on a row of boxes, moves the whole middle of the screen.

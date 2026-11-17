@@ -1,10 +1,13 @@
-Version actuelle : v.2.014 · 17.11.2026
+Version actuelle : v.2.020 · 17.11.2026
 PARAMÈTRES
 - Langue d'affichage : dans ☰ l'anglais et la langue du pays ; Autres langues : les autres langues du pays, les grandes langues de l'UE, le roumain et celle du téléphone (aux États-Unis seulement l'anglais et l'espagnol).
 PARCELLES
 - Bulles des Statistiques : toucher une heure de la fenêtre de pulvérisation, un jour des graphiques ou une ligne du sol ouvre une bulle avec son explication ; la fenêtre de pulvérisation défile toute seule.
+- Coordonnées de la parcelle : sur la page de modification, les coordonnées GPS de chaque point se saisissent, et dessous la vue satellite montre la parcelle.
+- Historique et prévision : faites glisser l'indicateur sur un jour passé ; ses valeurs s'affichent dans un cadre sous le graphique et après 10 s il revient à aujourd'hui.
 - Modifier la parcelle : le crayon ouvre la page de la parcelle : nom, culture (liste selon la saison de la date de semis ou Autre culture…), date de semis, surface ; les coins se déplacent sur la carte.
 - Statistiques : pour chaque parcelle, l'Action du jour et 4 onglets : Opérationnel (fenêtre de pulvérisation heure par heure, séchage des gouttes (ΔT), vent, feuille mouillée), Eau & Sol (pluie, évaporation, sol à 6 et 18 cm), Saison (degrés-jours face à l'an dernier, stade estimé) et Risques 72 h (maladies fongiques, gelée au sol, chaleur, vent et grêle) ; enregistrement en PDF ou CSV.
+- Statistiques dans l'écran principal : elles s'ouvrent sous le statut opérationnel (en paysage à gauche) ; ‹ les ferme et l'onglet d'une autre parcelle les garde.
 - Statut opérationnel : en haut, la culture et sa date de semis ; avec une culture, le verdict tient aussi compte du séchage des gouttes (ΔT) et de sa maladie.
 - Améliorations du design et corrections de bugs.
 

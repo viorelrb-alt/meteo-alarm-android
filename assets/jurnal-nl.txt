@@ -1,11 +1,14 @@
-Huidige versie: v.2.014 · 17.11.2026
+Huidige versie: v.2.020 · 17.11.2026
 INSTELLINGEN
 - Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
 PERCELEN
 - Ballonnen in Statistieken: een tik op een uur van het spuitvenster, een dag in de grafieken of een bodemregel opent een ballon met uitleg; het spuitvenster schuift vanzelf.
+- Coördinaten van het perceel: op de bewerkpagina worden de gps-coördinaten van elk punt getypt, en daaronder toont het satellietbeeld het perceel.
 - Operationele status: bovenaan het gewas en de zaaidatum; met een gewas houdt het oordeel ook rekening met de druppeldroging (ΔT) en zijn ziekte.
 - Perceel bewerken: het potlood opent de pagina van het perceel: naam, gewas (lijst volgens het seizoen van de zaaidatum of Ander gewas…), zaaidatum, oppervlakte; de hoeken verschuiven op de kaart.
+- Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
+- Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
 - Ontwerpverbeteringen en foutoplossingen.
 
 Versie 1.4 (v.1.400 – v.1.520)

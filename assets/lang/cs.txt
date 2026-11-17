@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	pod 5 °C ošetření nepůsobí
 {1} h of wet leaves from {2}	{1} h mokrých listů od {2}
 {1} risk: {2}	Riziko – {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = teplota vzduchu minus teplota vlhkého teploměru: jak rychle kapka schne. 2–8 °C optimum. Pod 2 °C kapky zůstávají a jsou unášeny, nad 10 °C vysychají ve vzduchu.
+# v2.020
+Forecast	Předpověď
+Measured (model)	Naměřeno (model)
+No app to open it	Žádná aplikace k otevření
+Parcel coordinates	Souřadnice pozemku
+Parcel information	Informace o pozemku
+Tap a value and type another; the map follows.	Klepněte na hodnotu a napište jinou; mapa se přizpůsobí.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Tužka upravuje pozemek: název, datum setí, plochu, plodinu; souřadnice GPS každého bodu se zapisují nebo posouvají na mapě; satelitní pohled ukazuje pozemek.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Otevírají se na hlavní obrazovce: na výšku pod provozním stavem, na šířku vlevo. ‹ je zavře; karta jiného pozemku je ponechá, s jeho daty. Nahoře: 4 karty a PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Voda a půda: déšť a výpar (ET₀) za 7 dní a bilance; graf minulosti a dalších 7 dní: přetáhněte ukazatel na den, jeho hodnoty se zobrazí pod grafem, po 10 s se vrátí na dnešek; půda v 6 a 18 cm, vlhkost povrchu, vjezd techniky.
+in the order on the map	v pořadí na mapě
+in {1} days	za {1} dní
+satellite · tap to change	satelit · klepnutím změníte
+tomorrow	zítra
+yesterday	včera
+{1} days ago	před {1} dny

@@ -1,11 +1,14 @@
-Versione attuale: v.2.014 · 17.11.2026
+Versione attuale: v.2.020 · 17.11.2026
 IMPOSTAZIONI
 - Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
 PARTICELLE
 - Bolle nelle Statistiche: toccare un'ora della finestra di trattamento, un giorno dei grafici o una riga del suolo apre una bolla con la spiegazione; la finestra di trattamento scorre da sola.
+- Coordinate della particella: nella pagina di modifica si scrivono le coordinate GPS di ogni punto, e sotto la vista satellitare mostra la particella.
 - Modifica particella: la matita apre la pagina della particella: nome, coltura (elenco secondo la stagione della data di semina o Altra coltura…), data di semina, superficie; gli angoli si spostano sulla mappa.
+- Statistiche nella schermata principale: si aprono sotto lo stato operativo (in orizzontale a sinistra); ‹ le chiude e la scheda di un'altra particella le mantiene.
 - Statistiche: per ogni particella, l'Azione del giorno e 4 schede: Operativo (finestra di irrorazione ora per ora, asciugatura gocce (ΔT), vento, foglia bagnata), Acqua e Suolo (pioggia, evaporazione, suolo a 6 e 18 cm), Stagione (gradi-giorno rispetto all'anno scorso, fase stimata) e Rischi 72 h (malattie fungine, gelata al suolo, caldo, vento e grandine); salvataggio in PDF o CSV.
 - Stato operativo: in alto la coltura e la data di semina; con una coltura il verdetto tiene conto anche dell'asciugatura delle gocce (ΔT) e della sua malattia.
+- Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
 - Miglioramenti del design e correzioni di errori.
 
 Versione 1.4 (v.1.400 – v.1.520)

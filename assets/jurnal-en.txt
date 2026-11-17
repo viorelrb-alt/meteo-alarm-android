@@ -1,8 +1,11 @@
-Current version: v.2.014 · 17.11.2026
+Current version: v.2.020 · 17.11.2026
 PARCELS
 - Edit parcel: the pencil opens the parcel's page: name, crop (a list by the sowing date's season, or Another crop…), sowing date, area; the corners move on the map.
+- History and forecast: drag the indicator to a past day; its values show in a box under the chart and after 10 s it goes back to today.
 - Operational status: the crop and its sowing date on top; with a crop the verdict also takes drop drying (ΔT) and its disease into account.
+- Parcel coordinates: on the edit page the GPS of each point can be typed in, and under it the satellite view shows the parcel.
 - Statistics bubbles: a tap on an hour of the spray window, a day of the charts or a soil row opens a bubble with its explanation; the spray window moves by itself.
+- Statistics in the main screen: they open under the operational status (in landscape at the left); ‹ closes them and another parcel's tab keeps them.
 - Statistics: for each parcel, the Action of the day and 4 tabs: Operational (the spray window hour by hour, drop drying (ΔT), wind, wet leaf), Water & Soil (rain, evaporation, soil at 6 and 18 cm), Season (degree days against last year, the estimated stage) and Risks 72 h (fungal diseases, ground frost, heat, wind and hail); saved as PDF or CSV.
 SETTINGS
 - Display language: in ☰ English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's (in the US only English and Spanish).

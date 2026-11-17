@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	zem 5 °C apstrāde nedarbojas
 {1} h of wet leaves from {2}	{1} h slapjas lapas no {2}
 {1} risk: {2}	{1} – risks: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = gaisa temperatūra mīnus mitrā termometra temperatūra: cik ātri piliens izžūst. 2–8 °C optimāli. Zem 2 °C pilieni paliek un tiek aiznesti, virs 10 °C izžūst gaisā.
+# v2.020
+Forecast	Prognoze
+Measured (model)	Izmērīts (modelis)
+No app to open it	Nav lietotnes atvēršanai
+Parcel coordinates	Lauka koordinātas
+Parcel information	Informācija par lauku
+Tap a value and type another; the map follows.	Pieskarieties vērtībai un ierakstiet citu; karte seko.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Zīmulis rediģē lauku: nosaukums, sējas datums, platība, kultūra; katra punkta GPS koordinātas ieraksta vai pārvieto kartē; satelīta skats rāda lauku.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Tās atveras galvenajā ekrānā: portretā zem darbības statusa, ainavā pa kreisi. ‹ tās aizver; cita lauka cilne tās saglabā, ar tā datiem. Augšā: 4 cilnes un PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Ūdens un augsne: 7 dienu lietus un iztvaikošana (ET₀) un bilance; pagātnes un nākamo 7 dienu grafiks: velciet rādītāju uz dienu, tās vērtības parādās zem grafika, pēc 10 s tas atgriežas uz šodienu; augsne 6 un 18 cm dziļumā, virsmas mitrums, iebraukšana ar tehniku.
+in the order on the map	kartes secībā
+in {1} days	pēc {1} dienām
+satellite · tap to change	satelīts · pieskarieties, lai mainītu
+tomorrow	rīt
+yesterday	vakar
+{1} days ago	pirms {1} dienām

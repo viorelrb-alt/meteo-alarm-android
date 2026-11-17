@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	onder 5 °C werkt de behandeling niet
 {1} h of wet leaves from {2}	{1} u nat blad vanaf {2}
 {1} risk: {2}	Risico op {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = luchttemperatuur min natteboltemperatuur: hoe snel een druppel droogt. 2–8 °C optimaal. Onder 2 °C blijven de druppels en drijven af, boven 10 °C drogen ze in de lucht.
+# v2.020
+Forecast	Verwachting
+Measured (model)	Gemeten (model)
+No app to open it	Geen app om het te openen
+Parcel coordinates	Coördinaten van het perceel
+Parcel information	Gegevens van het perceel
+Tap a value and type another; the map follows.	Tik op een waarde en typ een andere; de kaart volgt.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Het potlood bewerkt het perceel: naam, zaaidatum, oppervlakte, gewas; de gps-coördinaten van elk punt worden getypt of op de kaart verschoven; het satellietbeeld toont het perceel.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Ze openen in het hoofdscherm: staand onder de operationele status, liggend links. ‹ sluit ze; het tabblad van een ander perceel houdt ze open, met zijn gegevens. Bovenaan: 4 tabbladen en PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Water & Bodem: regen en verdamping (ET₀) over 7 dagen en de balans; de grafiek van het verleden en de komende 7 dagen: sleep de aanwijzer naar een dag, de waarden verschijnen onder de grafiek, na 10 s keert hij terug naar vandaag; bodem op 6 en 18 cm, oppervlaktevocht, berijdbaarheid.
+in the order on the map	in de volgorde op de kaart
+in {1} days	over {1} dagen
+satellite · tap to change	satelliet · tik om te wijzigen
+tomorrow	morgen
+yesterday	gisteren
+{1} days ago	{1} dagen geleden

@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	abaixo de 5 °C o tratamento não atua
 {1} h of wet leaves from {2}	{1} h de folhas molhadas desde as {2}
 {1} risk: {2}	Risco de {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura do ar menos temperatura de bolbo húmido: a rapidez com que uma gota seca. 2–8 °C ótimo. Abaixo de 2 °C as gotas ficam e derivam, acima de 10 °C secam no ar.
+# v2.020
+Forecast	Previsão
+Measured (model)	Medido (modelo)
+No app to open it	Nenhuma app para o abrir
+Parcel coordinates	Coordenadas da parcela
+Parcel information	Informações da parcela
+Tap a value and type another; the map follows.	Toque num valor e escreva outro; o mapa acompanha.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	O lápis edita a parcela: nome, data de sementeira, área, cultura; as coordenadas GPS de cada ponto escrevem-se ou movem-se no mapa; a vista de satélite mostra a parcela.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Abrem-se no ecrã principal: na vertical sob o estado operacional, na horizontal à esquerda. ‹ fecha-as; o separador de outra parcela mantém-nas, com os seus dados. Em cima: 4 separadores e PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Água e Solo: chuva e evaporação (ET₀) de 7 dias e o balanço; o gráfico do passado e dos próximos 7 dias: arraste o indicador para um dia, os seus valores aparecem sob o gráfico, após 10 s volta a hoje; solo a 6 e 18 cm, humidade da superfície, entrada de máquinas.
+in the order on the map	pela ordem do mapa
+in {1} days	daqui a {1} dias
+satellite · tap to change	satélite · toque para alterar
+tomorrow	amanhã
+yesterday	ontem
+{1} days ago	há {1} dias

@@ -160,6 +160,13 @@ public final class Screen {
 	 */
 	public Agro.Crop crop;
 	public String cropLine = "";
+	/**
+	 * v2.020 (Viorel): the parcel's Statistics shown inside the main screen (portrait: under the
+	 * status card, the boxes below hidden; landscape: in the left part, the glass narrower).
+	 */
+	public boolean statsOn;
+	/** v2.020: where the Statistics go (canvas units): x, top, width, bottom, the room above them that scrolls away (portrait). */
+	public final float[] statsArea = new float[5];
 	/** The hour and rain boxes drawn: { hour index, x, y, w, h } in canvas units; set by draw. */
 	private final List<float[]> hourHits = new java.util.ArrayList<float[]>(), rainHits = new java.util.ArrayList<float[]>();
 	/** The scale of the boxes being drawn (tablet: 1.2). */
@@ -215,6 +222,7 @@ public final class Screen {
 		mergedShown = false;
 		bigIcon = null;
 		precipArea[2] = 0;
+		statsArea[2] = 0;
 		parts = 0;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
@@ -510,6 +518,9 @@ public final class Screen {
 		return y + 52;
 	}
 
+	/** v2.020: where the Statistics start on the page (canvas units, before scrolling). */
+	private float statsY;
+
 	/** v5.33 (Viorel): the feels-like card on the tablet is taller, its texts larger. */
 	private float feelsH() {
 		return tablet ? 120 : 88;
@@ -561,6 +572,11 @@ public final class Screen {
 		if (pc) {
 			float sh = drawStatus(x, y, wd);
 			if (sh > 0) y += sh + 26;
+		}
+		if (pc && statsOn) {
+			// v2.020: the Statistics follow (a view of the app over the page); nothing else under the status.
+			statsY = y - 8;
+			return y;
 		}
 		y = section(x, y, wd, pc ? "1" : null, pc ? Tr.t("HOURLY WEATHER", "VREMEA PE ORE") : Tr.t("NEXT HOURS", "URMĂTOARELE ORE"),
 				farmer && farmMerged ? Tr.t("tap: soil details", "atinge: detalii sol") : null);
@@ -1006,6 +1022,7 @@ public final class Screen {
 
 	private void drawPortrait(float ch) {
 		float fb = ch - 84;
+		statsArea[2] = 0;
 		for (Strip st : strips()) st.area[2] = 0;
 		pageS.area[2] = 0;
 		warnArea[2] = 0;
@@ -1034,10 +1051,15 @@ public final class Screen {
 			// Nothing of the page above the glass's rounded top.
 			g.clip(0, paneTop + 26, cw, ch + 400);
 			g = new Shift(g0, 0, -pageS.scroll);
+			statsY = -1;
 			float bot = pageBody(40, top, cw - 80, nowH);
 			g = g0;
 			g.unclip();
-			pageS.set(new float[0], bot + 110 - ch);
+			if (statsOn && statsY > 0) {
+				// v2.020: the page moves up as the Statistics scroll, until they reach the glass.
+				pageS.set(new float[0], Math.max(0, statsY - paneBot));
+				statsArea[0] = 40; statsArea[1] = paneBot; statsArea[2] = cw - 80; statsArea[3] = fb - 16; statsArea[4] = Math.max(0, statsY - paneBot);
+			} else pageS.set(new float[0], bot + 110 - ch);
 			pageS.area[0] = 0; pageS.area[1] = paneBot; pageS.area[2] = cw; pageS.area[3] = ch - paneBot;
 			pageHits(m, -pageS.scroll, paneBot, ch);
 		}
@@ -1080,8 +1102,16 @@ public final class Screen {
 		btnStats[2] = 0;
 		// v5.33 (Viorel): on the tablet the screen in 5 columns: the sheet with the weather now the right 2.
 		float zL = Math.round(cw * (tablet ? 0.6f : 0.52f)), bandB = 104, lx = 40, lw = zL - 14 - lx;
+		// v2.020 (Viorel): with the Statistics in the left part the glass is narrower (about a third).
+		boolean st = statsOn && parcel != null && farmer;
+		statsArea[2] = 0;
+		if (st) {
+			zL = Math.round(cw * (tablet ? 0.70f : 0.68f));
+			lw = zL - 14 - lx;
+			statsArea[0] = lx; statsArea[1] = bandB + 14; statsArea[2] = lw; statsArea[3] = fb - 16; statsArea[4] = 0;
+		}
 		Gfx g0 = g;
-		if (w != null) {
+		if (w != null && !st) {
 			int[] m = hitMark();
 			g.clip(0, 30, cw, ch);
 			g = new Shift(g0, 0, -pageS.scroll);
@@ -1115,7 +1145,7 @@ public final class Screen {
 			float wt = bandB + 16, wb = drawWarnBoxes(rx, wt, rw, 2, 1);
 			float nowTop = wb > 0 ? wb + 10 : wt, fy = fb - 14 - feelsH();
 			String[] d = T.describe(w.code, w.isDay);
-			if (tablet) drawNowRows(d[0], rx, nowTop, rx + rw, fy - 4);
+			if (tablet || st) drawNowRows(d[0], rx, nowTop, rx + rw, fy - 4);
 			else drawNowSplit(d[0], rx, nowTop, rx + rw, fy - 4);
 			setNow(rx, nowTop, rw, fy - nowTop);
 			feelsCard(rx, fy, rw);

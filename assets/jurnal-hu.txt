@@ -1,10 +1,13 @@
-Jelenlegi verzió: v.2.014 · 17.11.2026
+Jelenlegi verzió: v.2.020 · 17.11.2026
 BEÁLLÍTÁSOK
 - Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
 PARCELLÁK
+- A parcella koordinátái: a szerkesztő oldalon minden pont GPS-koordinátája beírható, alatta a műholdas nézet mutatja a parcellát.
 - Buborékok a Statisztikában: a permetezési ablak egy órájának, a grafikonok egy napjának vagy egy talajsornak az érintése magyarázó buborékot nyit; a permetezési ablak magától mozog.
+- Múlt és előrejelzés: húzd a jelzőt egy elmúlt napra; értékei a grafikon alatti mezőben jelennek meg, 10 mp után pedig visszatér a mai naphoz.
 - Operatív állapot: fent a kultúra és a vetés dátuma; kultúrával az ítélet a cseppszáradást (ΔT) és a betegségét is figyelembe veszi.
 - Parcella szerkesztése: a ceruza megnyitja a parcella oldalát: név, kultúra (lista a vetési dátum szezonja szerint vagy Más kultúra…), vetési dátum, terület; a sarkok a térképen mozognak.
+- Statisztika a főképernyőn: az operatív állapot alatt nyílik meg (fekvő helyzetben balra); a ‹ bezárja, egy másik parcella füle megtartja.
 - Statisztika: minden parcellához A nap teendője és 4 fül: Operatív (permetezési ablak óránként, cseppszáradás (ΔT), szél, nedves levél), Víz és talaj (eső, párolgás, talaj 6 és 18 cm-en), Szezon (hőösszeg a tavalyihoz képest, becsült fázis) és Kockázatok 72 h (gombás betegségek, talajmenti fagy, hőség, szél és jégeső); mentés PDF-be vagy CSV-be.
 - Dizájnjavítások és hibajavítások.
 

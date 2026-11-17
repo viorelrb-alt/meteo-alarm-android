@@ -1,10 +1,13 @@
-Nuværende version: v.2.014 · 17.11.2026
+Nuværende version: v.2.020 · 17.11.2026
 INDSTILLINGER
 - Visningssprog: i ☰ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
 MARKER
 - Bobler i Statistik: et tryk på en time i sprøjtevinduet, en dag i graferne eller en jordrække åbner en boble med forklaring; sprøjtevinduet bevæger sig af sig selv.
 - Driftsstatus: øverst afgrøden og sådatoen; med en afgrøde tager dommen også hensyn til dråbetørring (ΔT) og dens sygdom.
+- Historik og prognose: træk indikatoren til en tidligere dag; dens værdier vises i en boks under grafen, og efter 10 s vender den tilbage til i dag.
+- Markens koordinater: på redigeringssiden skrives GPS-koordinaterne for hvert punkt ind, og under dem viser satellitvisningen marken.
 - Rediger mark: blyanten åbner markens side: navn, afgrøde (liste efter såningsdatoens sæson eller Anden afgrøde…), såningsdato, areal; hjørnerne flyttes på kortet.
+- Statistik på hovedskærmen: den åbner under driftsstatus (vandret til venstre); ‹ lukker den, og en anden marks fane beholder den.
 - Statistik: for hver mark Dagens handling og 4 faner: Drift (sprøjtevinduet time for time, dråbetørring (ΔT), vind, våde blade), Vand & jord (regn, fordampning, jord i 6 og 18 cm), Sæson (graddage mod sidste år, anslået stadie) og Risici 72 t (svampesygdomme, jordfrost, varme, vind og hagl); gemmes som PDF eller CSV.
 - Designforbedringer og fejlrettelser.
 

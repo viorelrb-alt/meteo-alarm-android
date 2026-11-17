@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	нижче 5 °C обробка не д�
 {1} h of wet leaves from {2}	{1} h мокрого листя з {2}
 {1} risk: {2}	Ризик: {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = температура повітря мінус температура вологого термометра: як швидко висихає крапля. 2–8 °C оптимально. Нижче 2 °C краплі лишаються і зносяться, понад 10 °C висихають у повітрі.
+# v2.020
+Forecast	Прогноз
+Measured (model)	Виміряно (модель)
+No app to open it	Немає застосунку для відкриття
+Parcel coordinates	Координати ділянки
+Parcel information	Відомості про ділянку
+Tap a value and type another; the map follows.	Торкніться значення і введіть інше; мапа оновиться.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	Олівець редагує ділянку: назва, дата сівби, площа, культура; GPS-координати кожної точки вводяться або переміщуються на мапі; супутниковий вигляд показує ділянку.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Відкриваються на головному екрані: у портретному режимі під оперативним статусом, в альбомному ліворуч. ‹ закриває їх; вкладка іншої ділянки зберігає їх, з її даними. Угорі: 4 вкладки і PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Вода і ґрунт: дощ і випаровування (ET₀) за 7 днів і баланс; графік минулого і наступних 7 днів: перетягніть покажчик на день, його значення з'являться під графіком, через 10 с він повернеться до сьогодні; ґрунт на 6 і 18 см, вологість поверхні, заїзд техніки.
+in the order on the map	у порядку на мапі
+in {1} days	через {1} дн.
+satellite · tap to change	супутник · торкніться, щоб змінити
+tomorrow	завтра
+yesterday	учора
+{1} days ago	{1} дн. тому

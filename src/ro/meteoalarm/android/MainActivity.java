@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.014";
+	static final String VERSION = "Meteo Alarm Android v2.020";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -76,6 +76,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Updater updater;
 	private BottomSheet sheet;
 	private Bubble bubble;
+	/** v2.020 (Viorel): the parcel's Statistics inside the main screen. */
+	private android.widget.FrameLayout statsBox;
+	private StatsPage stats;
+	/** The season downloads tried in this run (once a day per parcel and sowing date). */
+	private final java.util.Set<String> seasonTried = new java.util.HashSet<String>();
+	private long seasonLoading = -1;
 	private Countries countries;
 	private HelpPanel help;
 	/** v4.00: the big compass over the screen (a tap on the Compass box). */
@@ -177,6 +183,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		loadPage();
 		android.widget.FrameLayout root = new android.widget.FrameLayout(this);
 		root.addView(view);
+		statsBox = new android.widget.FrameLayout(this);
+		statsBox.setVisibility(View.GONE);
+		root.addView(statsBox, new android.widget.FrameLayout.LayoutParams(0, 0));
 		root.addView(sheet);
 		bubble = new Bubble(this, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
 				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
@@ -226,7 +235,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		sheet.setSizer(sizer);
 		backdrop = new Glass.Backdrop(this, view, sheet, bubble, help, compassPanel, settings);
 		backdrop.setDark(s.dark);
-		root.addView(backdrop, 1, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		root.addView(backdrop, 2, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		backdrop.watch(root);
 		cutout(root);
 		setContentView(root);
@@ -303,6 +312,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		else if (help.isOpen()) help.hide();
 		else if (sheet.isOpen()) {
 			if (sheet.isCancelable()) sheet.cancel();
+		} else if (s.statsOn) {
+			if (stats == null || !stats.closeSheet()) closeStats();
 		} else super.onBackPressed();
 	}
 
@@ -459,6 +470,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		clearPage();
 		loadPage();
 		view.invalidate();
+		// v2.020 (Viorel): another parcel keeps the Statistics open, with its own data; the town closes them.
+		if (s.statsOn) {
+			if (pageId == 0 || !s.farmer) closeStats();
+			else refreshStats();
+		}
 		if (System.currentTimeMillis() - s.fetched >= interval()) {
 			lastTry = 0;
 			fetch();
@@ -668,6 +684,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (resumed) note(Tr.t("Farmer's data: Open-Meteo is not answering; they are downloaded when it answers again", "Date fermier: Open-Meteo nu răspunde; se descarcă atunci când răspunde din nou"), 3500);
 		}
 		view.invalidate();
+		if (s.statsOn) refreshStats();
 	}
 
 	/** The town's weather while a parcel is shown: saved for the widgets and the notices only. */
@@ -696,7 +713,179 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Parcels.Parcel p = Parcels.get(this, pageId);
 		if (p == null) return;
 		Log.i(this, "GEST", "buton statistică: " + p.name);
-		startActivityForResult(new Intent(this, FarmActivity.class).putExtra("dark", s.dark).putExtra("open", "stats").putExtra("id", p.id), REQ_PARCELS);
+		openStats();
+	}
+
+	// --- v2.020 (Viorel): the Statistics inside the main screen -------------------------------------
+
+	/** Opens the Statistics of the parcel shown (portrait: under its status card; landscape: at the left). */
+	private void openStats() {
+		bubble.hide();
+		s.statsOn = true;
+		s.pageS.scroll = 0;
+		view.invalidate();
+	}
+
+	/** Closes them: the boxes of the main screen come back. */
+	private void closeStats() {
+		if (!s.statsOn) return;
+		Log.i(this, "FERMIER", "statistici închise");
+		s.statsOn = false;
+		s.pageS.scroll = 0;
+		statsBox.removeAllViews();
+		statsBox.setTag(null);
+		statsBox.setVisibility(View.GONE);
+		stats = null;
+		view.invalidate();
+	}
+
+	/** Where the Statistics go (from the main screen's drawing); null: nowhere (no parcel). */
+	public void statsFrame(int[] r) {
+		if (!s.statsOn) return;
+		if (r == null) {
+			statsBox.setVisibility(View.GONE);
+			return;
+		}
+		android.widget.FrameLayout.LayoutParams lp = new android.widget.FrameLayout.LayoutParams(r[2] - r[0], r[3] - r[1]);
+		lp.leftMargin = r[0];
+		lp.topMargin = r[1];
+		statsBox.setLayoutParams(lp);
+		statsBox.setVisibility(View.VISIBLE);
+		boolean again = stats == null || stats.spacer != r[4] || stats.embedW != r[2] - r[0];
+		if (again) showStats(r[4], r[2] - r[0]);
+	}
+
+	/** The Statistics of the parcel shown, drawn again (new data, another parcel, turned). */
+	private void showStats(int spacer, int width) {
+		final Parcels.Parcel p = Parcels.get(this, pageId);
+		if (p == null) {
+			closeStats();
+			return;
+		}
+		if (stats == null) {
+			Log.i(this, "FERMIER", "statistici în ecranul principal: " + p.name);
+			stats = new StatsPage(this, new StatsPage.Host() {
+				public void back() {
+					closeStats();
+				}
+
+				public void edit(Parcels.Parcel q) {
+					startActivityForResult(new Intent(MainActivity.this, FarmActivity.class).putExtra("dark", s.dark).putExtra("open", "edit").putExtra("id", q.id), REQ_PARCELS);
+				}
+
+				public void open(long id) {
+				}
+
+				public void export(Parcels.Parcel q, boolean pdf) {
+					exportStats(q, pdf);
+				}
+
+				public void redraw() {
+					refreshStats();
+				}
+
+				public void scrolled(int y) {
+					view.statsScrolled(y);
+				}
+
+				public void forward(android.view.MotionEvent e, View from) {
+					int[] a = new int[2], b = new int[2];
+					from.getLocationOnScreen(a);
+					view.getLocationOnScreen(b);
+					android.view.MotionEvent m = android.view.MotionEvent.obtain(e);
+					m.offsetLocation(a[0] - b[0], a[1] - b[1]);
+					view.dispatchTouchEvent(m);
+					m.recycle();
+				}
+			}, s.dark, Region.imperial(this, s.city), s.clk12);
+			stats.embed = true;
+		}
+		stats.spacer = spacer;
+		stats.embedW = width;
+		refreshStats();
+	}
+
+	/** The Statistics with the parcel's saved data; the season's archive downloaded once a day. */
+	private void refreshStats() {
+		if (stats == null || !s.statsOn) return;
+		final Parcels.Parcel p = Parcels.get(this, pageId);
+		if (p == null) {
+			closeStats();
+			return;
+		}
+		long f = Parcels.fetched(this, p.id);
+		stats.set(p, Parcels.data(this, p.id), Parcels.season(this, p, false));
+		stats.show(statsBox, f, f > 0 ? Tr.t("Updated ", "Actualizat ") + android.text.format.DateFormat.getTimeFormat(this).format(new java.util.Date(f)) + "." : "");
+		final String today = ro.meteoalarm.android.core.Farm.date(java.util.Calendar.getInstance(), 0);
+		final String start = Parcels.seasonStart(p, today);
+		String key = p.id + start + today;
+		if (start.length() > 0 && seasonLoading != p.id && !seasonTried.contains(key)
+				&& !(start + "|" + today + "|" + p.lat + "|" + p.lon).equals(Fetcher.prefs(this).getString("ps_" + p.id, ""))) {
+			seasonTried.add(key);
+			seasonLoading = p.id;
+			final Context app = getApplicationContext();
+			new Thread(new Runnable() {
+				public void run() {
+					final String got = Parcels.season(app, p, true);
+					handler.post(new Runnable() {
+						public void run() {
+							seasonLoading = -1;
+							if (got != null && !isFinishing() && s.statsOn && pageId == p.id) refreshStats();
+						}
+					});
+				}
+			}).start();
+		}
+	}
+
+	/** The Statistics as a PDF report or a CSV table, in Downloads. */
+	private byte[] saveBytes;
+	private String saveName = "", saveMime = "";
+	private static final int REQ_SAVE_STATS = 24;
+
+	private void exportStats(Parcels.Parcel p, boolean asPdf) {
+		try {
+			StatsExport ex = new StatsExport(this, stats, s.dark);
+			String base = "MeteoAlarm-" + Tr.t("Statistics", "Statistici") + "-" + p.name.replaceAll("[^A-Za-z0-9ĂÂÎȘȚăâîșț_-]+", "-") + "-"
+					+ ro.meteoalarm.android.core.Farm.date(java.util.Calendar.getInstance(), 0);
+			saveBytes = asPdf ? ex.pdf() : ex.csv().getBytes("UTF-8");
+			saveName = base + (asPdf ? ".pdf" : ".csv");
+			saveMime = asPdf ? "application/pdf" : "text/csv";
+			Log.i(this, "FERMIER", "fișier " + saveName + " " + saveBytes.length / 1024 + " KB");
+			if (android.os.Build.VERSION.SDK_INT >= 29) {
+				android.content.ContentValues v = new android.content.ContentValues();
+				v.put(android.provider.MediaStore.MediaColumns.DISPLAY_NAME, saveName);
+				v.put(android.provider.MediaStore.MediaColumns.MIME_TYPE, saveMime);
+				v.put(android.provider.MediaStore.MediaColumns.RELATIVE_PATH, android.os.Environment.DIRECTORY_DOWNLOADS);
+				android.net.Uri u = getContentResolver().insert(android.provider.MediaStore.Downloads.EXTERNAL_CONTENT_URI, v);
+				if (u == null) throw new Exception("MediaStore");
+				java.io.OutputStream out = getContentResolver().openOutputStream(u);
+				out.write(saveBytes);
+				out.close();
+				statsSaved(u);
+			} else startActivityForResult(new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType(saveMime).putExtra(Intent.EXTRA_TITLE, saveName), REQ_SAVE_STATS);
+		} catch (Exception e) {
+			Log.e(this, "FERMIER", "export statistici", e);
+			note(Tr.t("The file could not be saved: ", "Fișierul nu a putut fi salvat: ") + e.getClass().getSimpleName(), 3000);
+		}
+	}
+
+	private void statsSaved(final android.net.Uri u) {
+		final boolean csv = !"application/pdf".equals(saveMime);
+		AlertDialog.Builder d = new AlertDialog.Builder(this, s.dark ? android.R.style.Theme_DeviceDefault_Dialog_Alert : android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);
+		d.setTitle(csv ? Tr.t("CSV saved", "CSV salvat") : Tr.t("PDF saved", "PDF salvat"));
+		d.setMessage(Tr.t("In Downloads: ", "În Descărcări: ") + saveName);
+		d.setPositiveButton(Tr.t("Open", "Deschide"), new android.content.DialogInterface.OnClickListener() {
+			public void onClick(android.content.DialogInterface di, int w) {
+				try {
+					startActivity(new Intent(Intent.ACTION_VIEW).setDataAndType(u, saveMime).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
+				} catch (Exception e) {
+					note(Tr.t("No app to open it", "Nicio aplicație care să-l deschidă"), 2500);
+				}
+			}
+		});
+		d.setNegativeButton("OK", null);
+		Dlg.show(d);
 	}
 
 	/**
@@ -723,6 +912,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onActivityResult(int code, int res, Intent data) {
 		super.onActivityResult(code, res, data);
+		if (code == REQ_SAVE_STATS) {
+			if (res == RESULT_OK && data != null && data.getData() != null && saveBytes != null) try {
+				java.io.OutputStream out = getContentResolver().openOutputStream(data.getData());
+				out.write(saveBytes);
+				out.close();
+				statsSaved(data.getData());
+			} catch (Exception e) {
+				Log.e(this, "FERMIER", "export statistici", e);
+			}
+			return;
+		}
 		if (code == REQ_SAVE_DATA || code == REQ_OPEN_DATA) {
 			if (res == RESULT_OK && data != null && data.getData() != null) {
 				if (code == REQ_SAVE_DATA) saveData(data.getData());
@@ -3328,7 +3528,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						Tr.t("In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.", "În vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; + Punct adaugă unul (până la 7), apăsarea lungă șterge unul."),
 						Tr.t("Circle puts the points evenly on a circle.", "Cerc așază punctele la distanțe egale pe un cerc."),
 						Tr.t("Save and ✕, above the new parcel's box, keep it or close the box.", "Salvează și ✕, deasupra casetei parcelei noi, o păstrează sau închid caseta."),
-						Tr.t("The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.", "Creionul editează parcela: numele, cultura, data semănatului, suprafața; colțurile se mută pe hartă."),
+						Tr.t("The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.", "Creionul editează parcela: numele, data semănatului, suprafața, cultura; coordonatele GPS ale fiecărui punct se scriu sau se mută pe hartă; vederea din satelit arată parcela."),
 						Tr.t("The bars open its Statistics.", "Barele deschid Statisticile ei."),
 						Tr.t("The bell turns its notifications on or off.", "Clopoțelul pornește sau oprește notificările ei."),
 						Tr.t("The bin deletes it; it stays 15 days in the bin under the GPS button.", "Coșul o șterge; stă 15 zile în coșul de sub butonul GPS.") });
@@ -3343,13 +3543,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("pages"), Tr.t("Main screens", "Ecrane principale"), Tr.t("Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + opens a new parcel's box.",
 				"Tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + deschide caseta unei parcele noi."));
 		// v2.001 (Viorel): the farmer's Statistics, a paragraph per part with its icon.
-		help.steps(mini("table"), Tr.t("Statistics", "Statistici"), Tr.t("The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.",
-				"Barele de pe caseta parcelei sau Statistică din bula ei. Sus: numele parcelei, 4 file și PDF · CSV."),
+		help.steps(mini("table"), Tr.t("Statistics", "Statistici"), Tr.t("They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.",
+				"Se deschid în ecranul principal: în portret sub Status operațional, în peisaj în stânga. ‹ le închide; tab-ul altei parcele le păstrează, cu datele ei. Sus: 4 file și PDF · CSV."),
 				new android.graphics.Bitmap[] { mini("check"), mini("hours"), mini("soil"), mini("chart"), mini("warn"), glyph("pencil"), glyph("save") },
 				new String[] {
 						Tr.t("Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.", "Acțiunea zilei: ce faci azi, cu scorul de stropit (0–100) și cel mai mare risc din următoarele 48 de ore."),
 						Tr.t("Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.", "Operațional: fereastra de stropit oră cu oră (verde, galben, roșu; cifra e ΔT), se mișcă singură; atingerea unei ore deschide bula ei. Uscare picături (ΔT, optim 2–8 °C), vânt și rafale, frunză umedă."),
-						Tr.t("Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.", "Apă & Sol: ploaia și evaporarea (ET₀) pe 7 zile și bilanțul; graficul trecut și următoarele 7 zile; solul la 6 și 18 cm, umiditatea la suprafață, intrarea cu utilaje. Atingerea unei zile sau a unui rând de sol o explică."),
+						Tr.t("Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.", "Apă & Sol: ploaia și evaporarea (ET₀) pe 7 zile și bilanțul; graficul trecut și următoarele 7 zile: trage indicatorul pe o zi, valorile ei apar sub grafic, după 10 s revine la azi; solul la 6 și 18 cm, umiditatea la suprafață, intrarea cu utilaje."),
 						Tr.t("Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.", "Sezon: gradele-zile (GDD) de la semănat față de anul trecut, stadiul estimat, stresul termic și zilele de ger. Are nevoie de cultură și de data semănatului. Atingerea graficului arată ziua aceea."),
 						Tr.t("Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.", "Riscuri 72 h: boli fungice, îngheț la sol, stres termic, vânt și grindină; atingerea unui card îl explică și spune ce poți face. Dedesubt: ce urmează."),
 						Tr.t("The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.", "Cultura se alege dintr-o listă ordonată după sezonul datei de semănat; Altă cultură… primește un nume și un tip; în afara sezonului aplicația întreabă din nou."),

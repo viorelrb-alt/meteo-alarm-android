@@ -1475,3 +1475,19 @@ under 5 °C the treatment does not work	sotto 5 °C il trattamento non agisce
 {1} h of wet leaves from {2}	{1} h di foglie bagnate dalle {2}
 {1} risk: {2}	Rischio di {1}: {2}
 ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura dell'aria meno temperatura di bulbo umido: quanto in fretta si asciuga una goccia. 2–8 °C ottimale. Sotto 2 °C le gocce restano e derivano, sopra 10 °C si asciugano nell'aria.
+# v2.020
+Forecast	Previsione
+Measured (model)	Misurato (modello)
+No app to open it	Nessuna app per aprirlo
+Parcel coordinates	Coordinate della particella
+Parcel information	Informazioni sulla particella
+Tap a value and type another; the map follows.	Tocca un valore e scrivine un altro; la mappa segue.
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.	La matita modifica la particella: nome, data di semina, superficie, coltura; le coordinate GPS di ogni punto si scrivono o si spostano sulla mappa; la vista satellitare mostra la particella.
+They open in the main screen: in portrait under the status card, in landscape at the left. ‹ closes them; another parcel's tab keeps them, with its data. On top: 4 tabs and PDF · CSV.	Si aprono nella schermata principale: in verticale sotto lo stato operativo, in orizzontale a sinistra. ‹ le chiude; la scheda di un'altra particella le mantiene, con i suoi dati. In alto: 4 schede e PDF · CSV.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days: drag the indicator to a day, its values show under the chart, after 10 s it goes back to today; soil at 6 and 18 cm, surface moisture, machinery on the field.	Acqua & Suolo: pioggia ed evaporazione (ET₀) su 7 giorni e il bilancio; il grafico del passato e dei prossimi 7 giorni: trascina l'indicatore su un giorno, i suoi valori appaiono sotto il grafico, dopo 10 s torna a oggi; suolo a 6 e 18 cm, umidità superficiale, ingresso dei mezzi.
+in the order on the map	nell'ordine della mappa
+in {1} days	tra {1} giorni
+satellite · tap to change	satellite · tocca per modificare
+tomorrow	domani
+yesterday	ieri
+{1} days ago	{1} giorni fa

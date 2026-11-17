@@ -1,9 +1,12 @@
-Dabartinė versija: v.2.014 · 17.11.2026
+Dabartinė versija: v.2.020 · 17.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 SKLYPAI
 - Burbulai statistikoje: purškimo lango valandos, grafikų dienos ar dirvos eilutės palietimas atveria burbulą su paaiškinimu; purškimo langas juda pats.
+- Istorija ir prognozė: vilkite rodyklę ant praėjusios dienos; jos reikšmės rodomos langelyje po grafiku, o po 10 s ji grįžta į šiandieną.
+- Sklypo koordinatės: redagavimo puslapyje galima įvesti kiekvieno taško GPS koordinates, o po jomis palydovinis vaizdas rodo sklypą.
 - Redaguoti lauką: pieštukas atveria lauko puslapį: pavadinimas, kultūra (sąrašas pagal sėjos datos sezoną arba Kita kultūra…), sėjos data, plotas; kampai stumiami žemėlapyje.
+- Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
 - Dizaino patobulinimai ir klaidų taisymai.

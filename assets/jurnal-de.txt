@@ -1,11 +1,14 @@
-Aktuelle Version: v.2.014 · 17.11.2026
+Aktuelle Version: v.2.020 · 17.11.2026
 EINSTELLUNGEN
 - Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
 PARZELLEN
 - Blasen in der Statistik: Antippen einer Stunde im Spritzfenster, eines Tages in den Diagrammen oder einer Bodenzeile öffnet eine Blase mit der Erklärung; das Spritzfenster bewegt sich von selbst.
+- Koordinaten der Parzelle: Auf der Bearbeitungsseite lassen sich die GPS-Koordinaten jedes Punkts eintippen, darunter zeigt die Satellitenansicht die Parzelle.
 - Operativer Status: oben die Kultur und ihr Aussaatdatum; mit einer Kultur berücksichtigt das Urteil auch die Tropfentrocknung (ΔT) und ihre Krankheit.
 - Parzelle bearbeiten: der Stift öffnet die Seite der Parzelle: Name, Kultur (Liste nach der Saison des Aussaatdatums oder Andere Kultur…), Aussaatdatum, Fläche; die Ecken werden auf der Karte verschoben.
+- Statistik im Hauptbildschirm: Sie öffnet sich unter dem Betriebsstatus (quer links); ‹ schließt sie, der Tab einer anderen Parzelle behält sie.
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
+- Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
 - Design-Verbesserungen und Fehlerbehebungen.
 
 Version 1.4 (v.1.400 – v.1.520)

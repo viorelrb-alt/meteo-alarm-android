@@ -120,7 +120,11 @@ public final class FarmActivity extends Activity {
 			Log.i(this, "FERMIER", "parcela " + p.name + ": " + entry);
 			curId = id;
 			if (entry.equals("map")) showMap(id, p.name, p.lat, p.lon, 17, "finish");
-			else showStats(id);
+			else if (entry.equals("edit")) {
+				// v2.020: from the Statistics of the main screen; back or Save return there.
+				editBack = 2;
+				showEdit(p);
+			} else showStats(id);
 			return;
 		}
 		entry = null;
@@ -146,7 +150,8 @@ public final class FarmActivity extends Activity {
 		if (screen.equals("pedit")) {
 			if (editor != null && editor.closeSheet()) return;
 			editor = null;
-			if (editBack == 1) showStats(curId);
+			if (editBack == 2) finish();
+			else if (editBack == 1) showStats(curId);
 			else showList();
 			return;
 		}
@@ -3558,6 +3563,12 @@ public final class FarmActivity extends Activity {
 			public void redraw() {
 				showStats(curId);
 			}
+
+			public void scrolled(int y) {
+			}
+
+			public void forward(android.view.MotionEvent e, View from) {
+			}
 		}, dark, imp, clk12);
 		return stats;
 	}
@@ -3630,6 +3641,8 @@ public final class FarmActivity extends Activity {
 					old.crop = q.crop;
 					old.ctype = q.ctype;
 					old.sow = q.sow;
+					// v2.020: the corners typed on the edit page.
+					old.corners = q.corners;
 					q = old;
 				}
 				Parcels.put(FarmActivity.this, q);
@@ -3637,7 +3650,8 @@ public final class FarmActivity extends Activity {
 				toast(Tr.t("Saved: ", "Salvată: ") + q.name);
 				editor = null;
 				listLat = Double.NaN;
-				if (editBack == 1) showStats(q.id);
+				if (editBack == 2) finish();
+				else if (editBack == 1) showStats(q.id);
 				else showList();
 			}
 
@@ -3648,6 +3662,7 @@ public final class FarmActivity extends Activity {
 					old.crop = q.crop;
 					old.ctype = q.ctype;
 					old.sow = q.sow;
+					old.corners = q.corners;
 					Parcels.put(FarmActivity.this, old);
 					q = old;
 				}

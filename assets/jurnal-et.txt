@@ -1,7 +1,10 @@
-Praegune versioon: v.2.014 · 17.11.2026
+Praegune versioon: v.2.020 · 17.11.2026
 PÕLLULAPID
+- Ajalugu ja prognoos: lohista näidik möödunud päevale; selle väärtused ilmuvad graafiku all olevasse kasti ja 10 s pärast naaseb see tänasele.
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.
 - Muuda põldu: pliiats avab põllu lehe: nimi, kultuur (loend külvikuupäeva hooaja järgi või Muu kultuur…), külvikuupäev, pindala; nurgad liiguvad kaardil.
+- Põllu koordinaadid: muutmislehel saab iga punkti GPS-koordinaadid sisse kirjutada ja nende all näitab satelliidivaade põldu.
+- Statistika põhiekraanil: see avaneb tööoleku all (rõhtpaigutuses vasakul); ‹ sulgeb selle ja teise põllu vahekaart hoiab selle alles.
 - Statistika: igale põllule Päeva tegevus ja 4 vahekaarti: Tegevus (pritsimisaken tund tunnilt, tilkade kuivamine (ΔT), tuul, märg leht), Vesi ja muld (vihm, aurumine, muld 6 ja 18 cm sügavusel), Hooaeg (kraadipäevad võrreldes mullusega, hinnanguline faas) ja Riskid 72 h (seenhaigused, maapinnaöökülm, kuumus, tuul ja rahe); salvestamine PDF- või CSV-failina.
 - Tööolek: üleval kultuur ja külvikuupäev; kultuuriga arvestab otsus ka tilkade kuivamist (ΔT) ja selle haigust.
 SEADED

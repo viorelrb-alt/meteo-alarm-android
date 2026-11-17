@@ -51,6 +51,12 @@ final class StatsPage {
 		void export(Parcels.Parcel p, boolean pdf);
 
 		void redraw();
+
+		/** v2.020: the page (inside the main screen) scrolled to Y pixels. */
+		void scrolled(int y);
+
+		/** v2.020: a touch on the room above the Statistics, for the main screen under it. */
+		void forward(MotionEvent e, View from);
 	}
 
 	private final Activity a;
@@ -73,6 +79,13 @@ final class StatsPage {
 	String today, seasonStart = "";
 	boolean seasonMissing;
 	private FrameLayout root;
+	/**
+	 * v2.020 (Viorel): inside the main screen: no picker card (the parcel's name is at the top),
+	 * the header and the tabs scroll with the page; SPACER pixels of room above them (portrait:
+	 * the weather now and the status card show through), EMBED_W the width.
+	 */
+	boolean embed;
+	int spacer, embedW;
 
 	StatsPage(Activity a, Host host, boolean dark, boolean imp, boolean clk12) {
 		this.a = a;
@@ -97,7 +110,10 @@ final class StatsPage {
 
 	/** Takes parcel P with its answer D and its season's archive SEASON (null when none yet). */
 	void set(Parcels.Parcel p, Farm.Data d, String season) {
-		if (this.p == null || this.p.id != p.id) sel = -1;
+		if (this.p == null || this.p.id != p.id) {
+			sel = -1;
+			chartPick = -1;
+		}
 		this.p = p;
 		this.d = d;
 		crop = p.crop();
@@ -119,7 +135,7 @@ final class StatsPage {
 
 	private void widthK() {
 		android.content.res.Configuration c = a.getResources().getConfiguration();
-		float w = Math.min(c.screenWidthDp, TextSize.tablet(a) ? 720 : 600);
+		float w = Math.min(embed && embedW > 0 ? embedW / dp : c.screenWidthDp, TextSize.tablet(a) ? 720 : 600);
 		wk = Math.max(0.82f, Math.min(1f, w / 412f));
 	}
 
@@ -352,6 +368,10 @@ final class StatsPage {
 		bubble = null;
 		Glass.grab(null);
 		root.setTag(p.id * 10 + tab);
+		if (embed) {
+			showEmbedded(root, status, old != null ? Math.min(old.getScrollY(), spacer) : 0);
+			return;
+		}
 		boolean tablet = TextSize.tablet(a);
 		int maxW = px(tablet ? 720 : 600);
 
@@ -401,6 +421,55 @@ final class StatsPage {
 		});
 	}
 
+	/** v2.020: the page inside the main screen, scrolled to Y0. */
+	private void showEmbedded(FrameLayout root, String status, final int y0) {
+		LinearLayout all = col();
+		if (spacer > 0) {
+			View room = new View(a) {
+				@Override
+				public boolean onTouchEvent(MotionEvent e) {
+					host.forward(e, this);
+					return true;
+				}
+			};
+			all.addView(room, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, spacer));
+		}
+		all.addView(header());
+		all.addView(tabs(), wide(12));
+		LinearLayout body = col();
+		body.setPadding(0, px(12), 0, px(18));
+		if (d == null) {
+			body.addView(tv(Tr.t("No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.",
+					"Încă nu sunt date pentru această parcelă. Deschide-o o dată cu internet: aplicația descarcă datele de la Open-Meteo."), 15, false, ink));
+		} else {
+			body.addView(actionCard());
+			if (tab == 0) operational(body);
+			else if (tab == 1) water(body);
+			else if (tab == 2) season(body);
+			else risks(body);
+		}
+		body.addView(tv(Tr.t("Source: Open-Meteo (models; the soil and the risks are estimates). ", "Sursa: Open-Meteo (modele; solul și riscurile sunt estimări). ")
+				+ (status != null ? status : ""), 11.5f, false, dim), wide(16));
+		all.addView(body);
+		final ScrollView sv = new ScrollView(a);
+		sv.setVerticalScrollBarEnabled(false);
+		sv.setOverScrollMode(View.OVER_SCROLL_NEVER);
+		sv.addView(all);
+		sv.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+			public void onScrollChange(View v, int x, int y, int ox, int oy) {
+				host.scrolled(y);
+			}
+		});
+		root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		host.scrolled(y0);
+		if (y0 > 0) sv.post(new Runnable() {
+			public void run() {
+				sv.scrollTo(0, y0);
+				host.scrolled(sv.getScrollY());
+			}
+		});
+	}
+
 	private static ScrollView findScroll(View v) {
 		if (v instanceof ScrollView) return (ScrollView) v;
 		if (v instanceof ViewGroup) for (int k = 0; k < ((ViewGroup) v).getChildCount(); k++) {
@@ -446,11 +515,30 @@ final class StatsPage {
 			}
 		});
 		r.addView(back, new LinearLayout.LayoutParams(px(40), px(40)));
-		FitText t = tv(Tr.t("Statistics", "Statistici"), 22, true, ink);
-		t.one(0.6f);
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		tl.leftMargin = px(12);
-		r.addView(t, tl);
+		if (embed) {
+			// v2.020 (Viorel): no parcel name (it is at the top): the crop (landscape) or "Statistics", the days and the area.
+			LinearLayout tc = col();
+			String title = spacer <= 0 && crop != null ? crop.name() + (p.sow.length() == 10 ? " · " + Tr.t("sown ", "semănat ") + dayMonth(p.sow) : "") : Tr.t("Statistics", "Statistici");
+			FitText t = tv(title, spacer > 0 ? 20 : 16, true, ink);
+			t.one(0.6f);
+			tc.addView(t);
+			StringBuilder sb = new StringBuilder();
+			double ha = p.hectares();
+			if (!Double.isNaN(ha)) sb.append(hectares(ha));
+			if (p.sow.length() == 10) sb.append(sb.length() > 0 ? " · " : "").append(Agro.between(p.sow, today)).append(Tr.t(" days", " zile"));
+			if (sb.length() > 0) {
+				FitText sub = tv(sb.toString(), 13, false, dim);
+				sub.one(0.6f);
+				tc.addView(sub, wide(2));
+			}
+			r.addView(tc, tl);
+		} else {
+			FitText t = tv(Tr.t("Statistics", "Statistici"), 22, true, ink);
+			t.one(0.6f);
+			r.addView(t, tl);
+		}
 		LinearLayout ex = row();
 		ex.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), px(20), dp));
 		ex.setPadding(px(12), px(8), px(14), px(8));
@@ -1038,22 +1126,6 @@ final class StatsPage {
 		return r;
 	}
 
-	/** v2.010 (Viorel): the bubble of a day of the rain and evaporation chart. */
-	private void dayBubble(int k, int t) {
-		if (k < 0 || k >= d.dDate.length) return;
-		String date = d.dDate[k];
-		double rn = nz(d.dRain[k]), et = Agro.et0(d, k, p.lat), bal = rn - nz(et);
-		LinearLayout box = col();
-		box.addView(pair(Tr.t("Rain", "Ploaie"), mm(rn), B));
-		box.addView(pair(Tr.t("Evaporation (ET₀)", "Evaporare (ET₀)"), Double.isNaN(et) ? "–" : mm(et), O), wide(6));
-		box.addView(pair(Tr.t("Balance of the day", "Bilanțul zilei"), Double.isNaN(et) ? "–" : (bal >= 0 ? "+" : "−") + mm(Math.abs(bal)), bal >= 0 ? B : AMB), wide(6));
-		box.addView(pair(Tr.t("Temperature", "Temperatura"), deg(d.dMax[k]) + " / " + deg(d.dMin[k]), ink), wide(6));
-		box.addView(tv((k <= t ? Tr.t("Measured (model), ", "Măsurat (model), ") : Tr.t("Forecast, ", "Prognoză, "))
-				+ Tr.t("ET₀ = how much water the soil and the plants lose in a day.", "ET₀ = câtă apă pierd solul și plantele într-o zi."), 12.5f, false, dim), wide(10));
-		String when = date.equals(today) ? Tr.t("Today", "Azi") : weekday(date);
-		bubble(when + " · " + dayMonth(date), box, null);
-	}
-
 	/** v2.010 (Viorel): the bubble of day Q of the degree-days chart. */
 	private void gddBubble(int q, List<double[]> now, List<double[]> last, int xt) {
 		double s1 = Double.NaN, s0 = Double.NaN, l1 = Double.NaN;
@@ -1276,12 +1348,18 @@ final class StatsPage {
 					}
 				})));
 		LinearLayout c = card();
-		c.addView(rainChart(t), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(190)));
+		// v2.020 (Viorel): the day's values in a box under the chart, following the moved indicator.
+		LinearLayout info = col();
+		c.addView(rainChart(t, info), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(190)));
 		LinearLayout lg = row();
 		lg.setPadding(0, px(6), 0, 0);
 		lg.addView(dot(B, Tr.t("rain mm/day", "ploaie mm/zi")));
 		lg.addView(dot(O, Tr.t("evaporation (ET₀)", "evaporare (ET₀)")));
 		c.addView(lg);
+		info.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), px(14), dp));
+		info.setPadding(px(12), px(10), px(12), px(12));
+		dayInfo(info, chartPick >= 0 ? chartPick : t, t);
+		c.addView(info, wide(10));
 		body.addView(c);
 
 		body.addView(section(Tr.t("The soil", "Solul"), null));
@@ -1399,8 +1477,45 @@ final class StatsPage {
 		return r;
 	}
 
-	/** The rain bars and the ET0 line from SPAN days back to 7 ahead, with "TODAY" between. */
-	private View rainChart(final int t) {
+	/** v2.020: the day picked on the chart (an index of the data's days), -1: today. */
+	private int chartPick = -1;
+	private Runnable chartBack;
+
+	/** v2.020 (Viorel): day K's rain, evaporation, balance and temperatures in BOX (T: today). */
+	private void dayInfo(LinearLayout box, int k, int t) {
+		box.removeAllViews();
+		if (k < 0 || k >= d.dDate.length) return;
+		String date = d.dDate[k];
+		double rn = nz(d.dRain[k]), et = Agro.et0(d, k, p.lat), bal = rn - nz(et);
+		LinearLayout head = row();
+		String when = date.equals(today) ? Tr.t("Today", "Azi") : weekday(date);
+		FitText ht = tv(when + " · " + dayMonth(date), 15.5f, true, ink);
+		ht.one(0.6f);
+		head.addView(ht, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		int off = k - t;
+		String ago = off == 0 ? Tr.t("today", "azi") : off < 0 ? (off == -1 ? Tr.t("yesterday", "ieri") : Tr.t("{1} days ago", "acum {1} zile").replace("{1}", String.valueOf(-off)))
+				: (off == 1 ? Tr.t("tomorrow", "mâine") : Tr.t("in {1} days", "peste {1} zile").replace("{1}", String.valueOf(off)));
+		head.addView(badge(ago, off == 0 ? accent : off < 0 ? dim : O));
+		box.addView(head);
+		LinearLayout r1 = new LinearLayout(a), r2 = new LinearLayout(a);
+		r1.setBaselineAligned(false);
+		r2.setBaselineAligned(false);
+		r1.addView(half(Tr.t("Rain", "Ploaie"), mm(rn), "", B), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		hl.leftMargin = px(12);
+		r1.addView(half("ET₀", Double.isNaN(et) ? "–" : mm(et), "", O), hl);
+		r2.addView(half(Tr.t("Balance", "Bilanț"), Double.isNaN(et) ? "–" : (bal >= 0 ? "+" : "−") + mm(Math.abs(bal)), "", bal >= 0 ? B : AMB),
+				new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		LinearLayout.LayoutParams hl2 = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		hl2.leftMargin = px(12);
+		r2.addView(half(Tr.t("Temperature", "Temperatura"), deg(d.dMax[k]) + " / " + deg(d.dMin[k]), "", ink), hl2);
+		box.addView(r1, wide(10));
+		box.addView(r2, wide(8));
+		box.addView(tv(k <= t ? Tr.t("Measured (model)", "Măsurat (model)") : Tr.t("Forecast", "Prognoză"), 12, false, dim), wide(8));
+	}
+
+	/** The rain bars and the ET0 line from SPAN days back to 7 ahead, with "TODAY" between; INFO shows the day picked. */
+	private View rainChart(final int t, final LinearLayout info) {
 		final int from = Math.max(0, t - span), to = Math.min(d.dDate.length - 1, t + 7);
 		final int n = to - from + 1;
 		final double[] rain = new double[n], et = new double[n];
@@ -1465,21 +1580,34 @@ final class StatsPage {
 				c.drawPath(past, pt);
 				pt.setPathEffect(new DashPathEffect(new float[] { px(5), px(4) }, 0));
 				c.drawPath(next, pt);
-				// Today.
-				pt.setColor(ink);
+				// Today (dashed); v2.020: the indicator, moved with a finger to another day.
+				int pk = chartPick >= from && chartPick <= to ? chartPick : t;
+				float xp = l + (pk - from + 0.5f) * cw;
+				pt.setColor(pk == t ? ink : Glass.alpha(accent, 0.7f));
 				pt.setStrokeWidth(1.4f * dp);
 				pt.setPathEffect(new DashPathEffect(new float[] { px(3), px(3) }, 0));
 				c.drawLine(xt, tp - px(4), xt, bt, pt);
 				pt.setPathEffect(null);
-				String tl = Tr.t("TODAY", "AZI");
+				if (pk != t) {
+					pt.setStyle(Paint.Style.FILL);
+					pt.setColor(Glass.alpha(accent, 0.16f));
+					c.drawRect(xp - cw / 2, tp, xp + cw / 2, bt, pt);
+					pt.setStyle(Paint.Style.STROKE);
+					pt.setColor(accent);
+					pt.setStrokeWidth(2.4f * dp);
+					c.drawLine(xp, tp - px(4), xp, bt, pt);
+				}
 				pt.setStyle(Paint.Style.FILL);
+				pt.setColor(accent);
+				c.drawCircle(xp, bt, px(5), pt);
+				String tl = pk == t ? Tr.t("TODAY", "AZI") : dayMonth(d.dDate[pk]) + " ⇆";
 				pt.setTypeface(Typeface.DEFAULT_BOLD);
 				float tw = pt.measureText(tl) + px(14);
-				pt.setColor(accent);
-				c.drawRoundRect(new RectF(xt - tw / 2, tp - px(24), xt + tw / 2, tp - px(6)), px(9), px(9), pt);
+				float tx = Math.max(tw / 2, Math.min(w - tw / 2, xp));
+				c.drawRoundRect(new RectF(tx - tw / 2, tp - px(24), tx + tw / 2, tp - px(6)), px(9), px(9), pt);
 				pt.setColor(0xFFFFFFFF);
 				pt.setTextAlign(Paint.Align.CENTER);
-				c.drawText(tl, xt, tp - px(10.5f), pt);
+				c.drawText(tl, tx, tp - px(10.5f), pt);
 				pt.setTypeface(Typeface.DEFAULT);
 				pt.setColor(dim);
 				pt.setTextAlign(Paint.Align.LEFT);
@@ -1496,13 +1624,60 @@ final class StatsPage {
 				}
 			}
 		};
-		onTap(ch, new TapAt() {
-			public void at(float x, float y) {
+		// v2.020 (Viorel): the indicator follows the finger (a tap picks a day too); 10 s after the
+		// last touch it goes back to today, and the box under the chart with it.
+		if (chartBack != null) ch.removeCallbacks(chartBack);
+		chartBack = new Runnable() {
+			public void run() {
+				if (chartPick < 0) return;
+				chartPick = -1;
+				dayInfo(info, t, t);
+				ch.invalidate();
+			}
+		};
+		final Runnable back = chartBack;
+		ch.setOnTouchListener(new View.OnTouchListener() {
+			float x0, y0;
+			boolean side;
+
+			private void pick(float x) {
 				float l = px(24), r = px(6), cw = (ch.getWidth() - l - r) / n;
-				int k = (int) Math.floor((x - l) / cw);
-				if (t >= 0 && k >= 0 && k < n) dayBubble(from + k, t);
+				int k = Math.max(0, Math.min(n - 1, (int) Math.floor((x - l) / cw)));
+				int day = from + k;
+				if (day == (chartPick < 0 ? t : chartPick)) return;
+				chartPick = day == t ? -1 : day;
+				dayInfo(info, day, t);
+				ch.invalidate();
+			}
+
+			public boolean onTouch(View w, MotionEvent e) {
+				if (t < 0 || n <= 1) return false;
+				switch (e.getActionMasked()) {
+				case MotionEvent.ACTION_DOWN:
+					x0 = e.getX();
+					y0 = e.getY();
+					side = false;
+					ch.removeCallbacks(back);
+					return true;
+				case MotionEvent.ACTION_MOVE:
+					if (!side && Math.abs(e.getX() - x0) > px(8) && Math.abs(e.getX() - x0) > Math.abs(e.getY() - y0)) {
+						side = true;
+						if (ch.getParent() != null) ch.getParent().requestDisallowInterceptTouchEvent(true);
+					}
+					if (side) pick(e.getX());
+					return true;
+				case MotionEvent.ACTION_UP:
+					if (!side && Math.abs(e.getX() - x0) < px(10) && Math.abs(e.getY() - y0) < px(10)) pick(e.getX());
+					ch.postDelayed(back, 10000);
+					return true;
+				case MotionEvent.ACTION_CANCEL:
+					ch.postDelayed(back, 10000);
+					return true;
+				}
+				return true;
 			}
 		});
+		if (chartPick >= 0) ch.postDelayed(back, 10000);
 		return ch;
 	}
 
