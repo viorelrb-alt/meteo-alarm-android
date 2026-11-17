@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.021";
+	static final String VERSION = "Meteo Alarm Android v2.022";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -3525,7 +3525,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						Tr.t("In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.", "În vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; + Punct adaugă unul (până la 7), apăsarea lungă șterge unul."),
 						Tr.t("Circle puts the points evenly on a circle.", "Cerc așază punctele la distanțe egale pe un cerc."),
 						Tr.t("Save and ✕, above the new parcel's box, keep it or close the box.", "Salvează și ✕, deasupra casetei parcelei noi, o păstrează sau închid caseta."),
-						Tr.t("The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in or moved on the map; the satellite view shows the parcel.", "Creionul editează parcela: numele, data semănatului, suprafața, cultura; coordonatele GPS ale fiecărui punct se scriu sau se mută pe hartă; vederea din satelit arată parcela."),
+						Tr.t("The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.", "Creionul editează parcela: numele, data semănatului, suprafața, cultura; coordonatele GPS ale fiecărui punct se scriu; atingerea vederii din satelit deschide parcela pe hartă, unde punctele se mută, iar discheta le salvează."),
 						Tr.t("The bars open its Statistics.", "Barele deschid Statisticile ei."),
 						Tr.t("The bell turns its notifications on or off.", "Clopoțelul pornește sau oprește notificările ei."),
 						Tr.t("The bin deletes it; it stays 15 days in the bin under the GPS button.", "Coșul o șterge; stă 15 zile în coșul de sub butonul GPS.") });

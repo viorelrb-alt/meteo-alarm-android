@@ -1,4 +1,4 @@
-Nuværende version: v.2.021 · 17.11.2026
+Nuværende version: v.2.022 · 17.11.2026
 INDSTILLINGER
 - Visningssprog: i ☰ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
 MARKER

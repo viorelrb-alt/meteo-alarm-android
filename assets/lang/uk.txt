@@ -1499,3 +1499,5 @@ Now: only with care	Зараз: лише обережно
 Anti-drift nozzles.	Форсунки проти знесення.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Статистика · PDF під статусом, 1 Погода погодинно, п'ять днів, 2 Ґрунт і культури, 3 Ризики й звіти, 4 Подробиці погоди.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Завдання дня: найкраще вікно для обприскування в наступні 24 години (сьогодні або завтра), чому не зараз, оцінка обприскування (0–100) і найбільший ризик наступних 48 годин.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Олівець редагує ділянку: назву, дату сівби, площу, культуру; GPS кожної точки вводиться; дотик до супутникового вигляду відкриває ділянку на мапі, де точки переміщуються, а дискета їх зберігає.

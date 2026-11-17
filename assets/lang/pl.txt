@@ -1499,3 +1499,5 @@ Now: only with care	Teraz: tylko ostrożnie
 Anti-drift nozzles.	Dysze antyznoszeniowe.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statystyka · PDF pod statusem, 1 Pogoda godzinowa, pięć dni, 2 Gleba i uprawy, 3 Zagrożenia i raporty, 4 Szczegóły pogody.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Działanie dnia: najlepsze okno oprysku w ciągu 24 godzin (dziś lub jutro), dlaczego nie teraz, ocena oprysku (0–100) i największe ryzyko w ciągu 48 godzin.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Ołówek edytuje działkę: nazwę, datę siewu, powierzchnię, uprawę; GPS każdego punktu się wpisuje; dotknięcie widoku satelitarnego otwiera działkę na mapie, gdzie punkty się przesuwa, a dyskietka je zapisuje.

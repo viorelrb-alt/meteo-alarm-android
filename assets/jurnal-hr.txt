@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.021 · 17.11.2026
+Trenutačna verzija: v.2.022 · 17.11.2026
 PARCELE
 - Koordinate parcele: na stranici uređivanja upisuju se GPS koordinate svake točke, a ispod satelitski prikaz pokazuje parcelu.
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.

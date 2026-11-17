@@ -1499,3 +1499,5 @@ Now: only with care	Сега: само внимателно
 Anti-drift nozzles.	Дюзи против отвяване.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Статистика · PDF под статуса, 1 Времето по часове, петте дни, 2 Почва и култури, 3 Рискове и доклади, 4 Подробности за времето.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Задача на деня: най-добрият прозорец за пръскане през следващите 24 часа (днес или утре), защо не сега, оценката за пръскане (0–100) и най-големият риск през следващите 48 часа.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Моливът редактира парцела: име, дата на сеитба, площ, култура; GPS координатите на всяка точка се въвеждат; докосването на сателитния изглед отваря парцела на картата, където точките се местят, а дискетата ги запазва.

@@ -1499,3 +1499,5 @@ Now: only with care	Sada: samo oprezno
 Anti-drift nozzles.	Mlaznice protiv zanošenja.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF ispod statusa, 1 Vrijeme po satima, pet dana, 2 Tlo i usjevi, 3 Rizici i izvješća, 4 Detalji vremena.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Zadatak dana: najbolji prozor za prskanje u sljedećih 24 sata (danas ili sutra), zašto ne sada, ocjena prskanja (0–100) i najveći rizik sljedećih 48 sati.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Olovka uređuje parcelu: naziv, datum sjetve, površinu, usjev; GPS svake točke se upisuje; dodir satelitskog prikaza otvara parcelu na karti, gdje se točke pomiču, a disketa ih sprema.

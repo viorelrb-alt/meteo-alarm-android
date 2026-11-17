@@ -1499,3 +1499,5 @@ Now: only with care	Maintenant : seulement avec prudence
 Anti-drift nozzles.	Buses anti-dérive.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistiques · PDF sous le statut, 1 Météo heure par heure, les cinq jours, 2 Sol et cultures, 3 Risques et rapports, 4 Détails météo.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Action du jour : la meilleure fenêtre de pulvérisation des 24 prochaines heures (aujourd'hui ou demain), pourquoi pas maintenant, le score de pulvérisation (0–100) et le plus grand risque des 48 prochaines heures.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Le crayon modifie la parcelle : nom, date de semis, surface, culture ; le GPS de chaque point se saisit ; un appui sur la vue satellite ouvre la parcelle sur la carte, où les points se déplacent et la disquette les enregistre.

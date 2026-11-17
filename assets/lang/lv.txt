@@ -1499,3 +1499,5 @@ Now: only with care	Tagad: tikai uzmanīgi
 Anti-drift nozzles.	Pretnoneses sprauslas.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF zem statusa, 1 Laiks pa stundām, piecas dienas, 2 Augsne un kultūras, 3 Riski un ziņojumi, 4 Laikapstākļu detaļas.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Dienas darbība: labākais smidzināšanas logs nākamajās 24 stundās (šodien vai rīt), kāpēc ne tagad, smidzināšanas vērtējums (0–100) un lielākais nākamo 48 stundu risks.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Zīmulis rediģē lauku: nosaukumu, sējas datumu, platību, kultūru; katra punkta GPS ieraksta; pieskāriens satelīta skatam atver lauku kartē, kur punktus var pārvietot, un diskete tos saglabā.

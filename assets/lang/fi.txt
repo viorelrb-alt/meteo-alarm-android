@@ -1499,3 +1499,5 @@ Now: only with care	Nyt: vain varoen
 Anti-drift nozzles.	Tihkusuuttimet.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Tilastot · PDF tilan alla, 1 Sää tunneittain, viisi päivää, 2 Maaperä ja viljelykset, 3 Riskit ja raportit, 4 Sään tiedot.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Päivän toimi: seuraavien 24 tunnin paras ruiskutusikkuna (tänään tai huomenna), miksi ei nyt, ruiskutuspisteet (0–100) ja seuraavien 48 tunnin suurin riski.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Kynä muokkaa lohkoa: nimi, kylvöpäivä, pinta-ala, viljelykasvi; jokaisen pisteen GPS kirjoitetaan; satelliittinäkymän napautus avaa lohkon kartalle, jossa pisteitä siirretään ja levyke tallentaa ne.

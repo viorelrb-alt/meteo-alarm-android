@@ -1499,3 +1499,5 @@ Now: only with care	Issa: b'attenzjoni biss
 Anti-drift nozzles.	Żennuni kontra t-tixrid.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF taħt l-istatus, 1 It-temp siegħa b'siegħa, il-ħamest ijiem, 2 Ħamrija u wiċċ, 3 Riskji u rapporti, 4 Dettalji tat-temp.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Azzjoni tal-ġurnata: l-aħjar tieqa tal-isprejjar fl-24 siegħa li ġejjin (illum jew għada), għaliex mhux issa, il-punteġġ tal-isprejjar (0–100) u l-akbar riskju tat-48 siegħa li ġejjin.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Il-lapes jeditja l-parċella: isem, data taż-żriegħ, erja, wiċċ; il-GPS ta' kull punt jinkiteb; mess fuq il-veduta satellitari jiftaħ il-parċella fuq il-mappa, fejn il-punti jiċċaqilqu u d-diska tissejvjahom.

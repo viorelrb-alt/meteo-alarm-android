@@ -1499,3 +1499,5 @@ Now: only with care	Most: csak óvatosan
 Anti-drift nozzles.	Elsodródásgátló fúvókák.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statisztika · PDF az állapot alatt, 1 Óránkénti időjárás, az öt nap, 2 Talaj és növények, 3 Kockázatok és jelentések, 4 Időjárási részletek.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	A nap teendője: a következő 24 óra legjobb permetezési ablaka (ma vagy holnap), miért nem most, a permetezési pontszám (0–100) és a következő 48 óra legnagyobb kockázata.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	A ceruza a parcellát szerkeszti: név, vetés dátuma, terület, növény; minden pont GPS-e beírható; a műholdas nézet megérintése megnyitja a parcellát a térképen, ahol a pontok mozgathatók, és a floppy menti őket.

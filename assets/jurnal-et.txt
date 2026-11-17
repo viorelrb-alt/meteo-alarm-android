@@ -1,4 +1,4 @@
-Praegune versioon: v.2.021 · 17.11.2026
+Praegune versioon: v.2.022 · 17.11.2026
 PÕLLULAPID
 - Ajalugu ja prognoos: lohista näidik möödunud päevale; selle väärtused ilmuvad graafiku all olevasse kasti ja 10 s pärast naaseb see tänasele.
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.

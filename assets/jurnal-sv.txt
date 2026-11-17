@@ -1,4 +1,4 @@
-Nuvarande version: v.2.021 · 17.11.2026
+Nuvarande version: v.2.022 · 17.11.2026
 INSTÄLLNINGAR
 - Visningsspråk: i ☰ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
 SKIFTEN

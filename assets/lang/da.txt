@@ -1499,3 +1499,5 @@ Now: only with care	Nu: kun forsigtigt
 Anti-drift nozzles.	Afdriftsreducerende dyser.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistik · PDF under status, 1 Vejret time for time, de fem dage, 2 Jord og afgrøder, 3 Risici og rapporter, 4 Vejrdetaljer.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Dagens handling: det bedste sprøjtevindue i de næste 24 timer (i dag eller i morgen), hvorfor ikke nu, sprøjtescoren (0–100) og den største risiko i de næste 48 timer.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Blyanten redigerer marken: navn, sådato, areal, afgrøde; hvert punkts GPS skrives ind; et tryk på satellitvisningen åbner marken på kortet, hvor punkterne flyttes, og disketten gemmer dem.

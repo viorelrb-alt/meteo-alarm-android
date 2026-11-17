@@ -285,14 +285,7 @@ final class EditPage {
 		oc.addView(outlineT);
 		oc.addView(tv(Tr.t("On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.",
 				"Pe hartă colțurile se mută cu degetul; + Punct, Cerc și apăsarea lungă merg tot acolo. Vremea vine din centrul parcelei."), 13, false, dim), wide(4));
-		TextView mapB = pill(Tr.t("Change on the map", "Modifică pe hartă"), false, new View.OnClickListener() {
-			public void onClick(View v) {
-				toMap();
-			}
-		});
-		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		ml.topMargin = px(10);
-		oc.addView(mapB, ml);
+		// v2.022 (Viorel): no "Change on the map" button: a tap on the satellite view does it.
 		body.addView(oc);
 		if (n > 0) body.addView(points(), wide(12));
 		body.addView(miniMap(), wide(12));
@@ -486,7 +479,8 @@ final class EditPage {
 				super.onLayout(ch, l, t, r, b);
 				if (ch) m.post(new Runnable() {
 					public void run() {
-						m.fitCorners(p.corners, p.lat, p.lon);
+						// v2.022: the whole parcel under the "satellite" label.
+						m.fitCorners(p.corners, p.lat, p.lon, px(20), px(56), px(20), px(20));
 					}
 				});
 			}

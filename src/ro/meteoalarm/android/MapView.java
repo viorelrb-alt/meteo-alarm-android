@@ -201,6 +201,11 @@ final class MapView extends View {
 
 	/** v2.020: zoomed and centred on corners C (or on LA, LO without them), with some room round them. */
 	void fitCorners(double[] c, double la, double lo) {
+		fitCorners(c, la, lo, 24 * dp, 28 * dp, 24 * dp, 28 * dp);
+	}
+
+	/** v2.022: the same, inside the map less L, T, R, B pixels (a label, a box over the map). */
+	void fitCorners(double[] c, double la, double lo, float l, float t, float r, float b) {
 		if (getWidth() == 0) return;
 		double la0 = la, la1 = la, lo0 = lo, lo1 = lo;
 		if (c != null && c.length >= 2) {
@@ -213,7 +218,7 @@ final class MapView extends View {
 				lo1 = Math.max(lo1, c[2 * k + 1]);
 			}
 		}
-		float fw = Math.max(getWidth() - 48 * dp, 40 * dp), fh = Math.max(getHeight() - 56 * dp, 40 * dp);
+		float fw = Math.max(getWidth() - l - r, 40 * dp), fh = Math.max(getHeight() - t - b, 40 * dp);
 		double z = 18;
 		for (; z > MIN_Z; z -= 0.25) {
 			double world = tile * Math.pow(2, z);
@@ -221,9 +226,10 @@ final class MapView extends View {
 		}
 		setZoom(z);
 		double world = tile * Math.pow(2, zoom);
-		double cy = (wy(la0, world) + wy(la1, world)) / 2 + 8 * dp;
+		// The parcel in the middle of the free area (not of the whole map).
+		double cy = (wy(la0, world) + wy(la1, world)) / 2 - (t - b) / 2, cx = (wx(lo0, world) + wx(lo1, world)) / 2 - (l - r) / 2;
 		lat = latOf(Math.max(0, Math.min(world, cy)), world);
-		lon = (lo0 + lo1) / 2;
+		lon = lonOf(cx, world);
 		invalidate();
 	}
 

@@ -2115,6 +2115,14 @@ public final class FarmActivity extends Activity {
 				at[1] = lo;
 				newGps = null;
 				newTapped = true;
+				if (newEditId >= 0) {
+					// v2.022: an existing parcel: only the pin (the weather's place) moves, the points stay.
+					newLa = la;
+					newLo = lo;
+					m.setMark(la, lo);
+					where.setText(coords(la, lo));
+					return;
+				}
 				put.run();
 			}
 		});
@@ -2138,7 +2146,17 @@ public final class FarmActivity extends Activity {
 			at[1] = m.lon();
 			put.run();
 		}
-		newGps = new Runnable() {
+		if (newEditId >= 0) {
+			final View bx = wrap;
+			bx.post(new Runnable() {
+				public void run() {
+					// v2.022: the whole parcel in the part of the map the box leaves free.
+					if (land) m.fitCorners(newCorners, at[0], at[1], px(70), px(80), bx.getWidth() + px(36), px(24));
+					else m.fitCorners(newCorners, at[0], at[1], px(70), px(tab ? 140 : 130), px(24), bx.getHeight() + px(30));
+				}
+			});
+		}
+		newGps = newEditId >= 0 ? null : new Runnable() {
 			public void run() {
 				if (Double.isNaN(meLa)) return;
 				at[0] = meLa;
@@ -2165,6 +2183,26 @@ public final class FarmActivity extends Activity {
 					nameIn.requestFocus();
 					return;
 				}
+				if (newEditId >= 0) {
+					Parcels.Parcel q = Parcels.get(FarmActivity.this, newEditId);
+					if (q != null) {
+						boolean moved = Math.abs(q.lat - at[0]) > 0.003 || Math.abs(q.lon - at[1]) > 0.003;
+						q.name = n;
+						q.lat = at[0];
+						q.lon = at[1];
+						if (newCorners != null) q.corners = newCorners.clone();
+						Parcels.put(FarmActivity.this, q);
+						Log.i(FarmActivity.this, "FERMIER", "colțuri salvate: " + n + " " + coords(q.lat, q.lon));
+						toast(Tr.t("Saved: ", "Salvată: ") + n);
+						if (moved) {
+							Fetcher.prefs(FarmActivity.this).edit().putLong("pf_" + q.id, 0).putLong("pmf_" + q.id, 0).apply();
+							fetchNow(q);
+						}
+						listLat = Double.NaN;
+					}
+					editAgain();
+					return;
+				}
 				Parcels.Parcel p = new Parcels.Parcel();
 				p.id = System.currentTimeMillis();
 				p.name = n;
@@ -2184,12 +2222,30 @@ public final class FarmActivity extends Activity {
 		});
 	}
 
+	/** v2.022: the parcel whose points the box changes (from its edit page); -1: a new parcel. */
+	private long newEditId = -1;
+
+	/** v2.022: back to the edit page of the parcel the box was changing. */
+	private void editAgain() {
+		long id = newEditId;
+		newEditId = -1;
+		newGps = null;
+		newReset();
+		hideKeys(root);
+		editor = null;
+		showEdit(Parcels.get(this, id));
+	}
+
 	/** While the new parcel's box is open: what to do when GPS finds the position (null: nothing). */
 	private Runnable newGps;
 
 	/** Closes the new parcel's box: the cards come back. */
 	private boolean closeNew() {
 		if (newBox == null) return false;
+		if (newEditId >= 0) {
+			editAgain();
+			return true;
+		}
 		newGps = null;
 		newReset();
 		hideKeys(newBox);
@@ -3667,8 +3723,17 @@ public final class FarmActivity extends Activity {
 					q = old;
 				}
 				editor = null;
-				mapCornersId = -1;
-				showMap(q.id, q.name, q.lat, q.lon, 17, "pedit");
+				// v2.022 (Viorel): the same box as a new parcel, with this parcel: its points move,
+				// the floppy saves them here and goes back to the edit page; back / ✕ go back without saving.
+				Log.i(FarmActivity.this, "FERMIER", "colțuri pe hartă: " + q.name);
+				newReset();
+				newEditId = q.id;
+				newName = q.name;
+				newLa = q.lat;
+				newLo = q.lon;
+				newCorners = q.corners != null ? q.corners.clone() : null;
+				newOpen = true;
+				showList();
 			}
 		}, statsPage(), dark);
 		editor.show(root, p);

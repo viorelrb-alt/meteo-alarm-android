@@ -1433,3 +1433,5 @@ Now: only with care	Şimdi: yalnızca dikkatle
 Anti-drift nozzles.	Sürüklenme önleyici memeler.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	İstatistik · PDF durumun altında, 1 Saatlik hava, beş gün, 2 Toprak ve ürünler, 3 Riskler ve raporlar, 4 Hava ayrıntıları.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Günün işi: önümüzdeki 24 saatin en iyi ilaçlama aralığı (bugün veya yarın), neden şimdi değil, ilaçlama puanı (0–100) ve önümüzdeki 48 saatin en büyük riski.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Kalem parseli düzenler: ad, ekim tarihi, alan, ürün; her noktanın GPS'i yazılır; uydu görünümüne dokunmak parseli haritada açar, noktalar orada taşınır ve disket onları kaydeder.

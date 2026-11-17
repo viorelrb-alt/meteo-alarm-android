@@ -1499,3 +1499,5 @@ Now: only with care	Nu: alleen voorzichtig
 Anti-drift nozzles.	Antidriftdoppen.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistiek · PDF onder de status, 1 Weer per uur, de vijf dagen, 2 Bodem en gewassen, 3 Risico's en rapporten, 4 Weerdetails.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Actie van de dag: het beste spuitvenster van de komende 24 uur (vandaag of morgen), waarom niet nu, de spuitscore (0–100) en het grootste risico van de komende 48 uur.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Het potlood bewerkt het perceel: naam, zaaidatum, oppervlakte, gewas; de GPS van elk punt wordt ingetypt; een tik op de satellietweergave opent het perceel op de kaart, waar de punten verschuiven en de diskette ze opslaat.

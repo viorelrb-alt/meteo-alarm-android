@@ -1499,3 +1499,5 @@ Now: only with care	Anois: go cúramach amháin
 Anti-drift nozzles.	Soic in aghaidh síobadh.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Staitisticí · PDF faoin stádas, 1 An aimsir in aghaidh na huaire, na cúig lá, 2 Úir agus barraí, 3 Rioscaí agus tuairiscí, 4 Mionsonraí aimsire.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Gníomh an lae: an fhuinneog spraeála is fearr sna 24 uair an chloig atá romhainn (inniu nó amárach), cén fáth nach anois, an scór spraeála (0–100) agus an riosca is mó sna 48 uair an chloig atá romhainn.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Cuireann an peann luaidhe an gort in eagar: ainm, dáta cuir, achar, barr; clóscríobhtar GPS gach pointe; osclaíonn tadhall ar an amharc satailíte an gort ar an léarscáil, áit a mbogtar na pointí agus sábhálann an diosca iad.

@@ -1499,3 +1499,5 @@ Now: only with care	Dabar: tik atsargiai
 Anti-drift nozzles.	Dreifą mažinantys purkštukai.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF po būsena, 1 Orai kas valandą, penkios dienos, 2 Dirva ir pasėliai, 3 Rizikos ir ataskaitos, 4 Orų detalės.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Dienos veiksmas: geriausias purškimo langas per kitas 24 valandas (šiandien arba rytoj), kodėl ne dabar, purškimo balas (0–100) ir didžiausia kitų 48 valandų rizika.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Pieštukas redaguoja sklypą: pavadinimą, sėjos datą, plotą, kultūrą; kiekvieno taško GPS įrašomas; palietus palydovinį vaizdą sklypas atsidaro žemėlapyje, kur taškai perkeliami, o diskelis juos išsaugo.

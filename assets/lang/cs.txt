@@ -1499,3 +1499,5 @@ Now: only with care	Teď: jen opatrně
 Anti-drift nozzles.	Antidriftové trysky.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF pod stavem, 1 Počasí po hodinách, pět dní, 2 Půda a plodiny, 3 Rizika a zprávy, 4 Podrobnosti počasí.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Úkol dne: nejlepší okno pro postřik v příštích 24 hodinách (dnes nebo zítra), proč ne teď, skóre postřiku (0–100) a největší riziko příštích 48 hodin.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Tužka upravuje pozemek: název, datum setí, plochu, plodinu; GPS každého bodu se zapíše; klepnutí na satelitní pohled otevře pozemek na mapě, kde se body posouvají a disketa je uloží.

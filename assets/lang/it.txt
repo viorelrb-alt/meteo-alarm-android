@@ -1499,3 +1499,5 @@ Now: only with care	Ora: solo con cautela
 Anti-drift nozzles.	Ugelli antideriva.
 Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistiche · PDF sotto lo stato, 1 Meteo ora per ora, i cinque giorni, 2 Suolo e colture, 3 Rischi e rapporti, 4 Dettagli meteo.
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Azione del giorno: la migliore finestra di irrorazione delle prossime 24 ore (oggi o domani), perché non ora, il punteggio di irrorazione (0–100) e il rischio maggiore delle prossime 48 ore.
+# v2.020
+The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	La matita modifica la particella: nome, data di semina, superficie, coltura; il GPS di ogni punto si digita; un tocco sulla vista satellitare apre la particella sulla mappa, dove i punti si spostano e il floppy li salva.
