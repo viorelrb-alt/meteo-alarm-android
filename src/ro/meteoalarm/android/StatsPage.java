@@ -140,12 +140,14 @@ final class StatsPage {
 
 	private LinearLayout col() {
 		LinearLayout l = new LinearLayout(a);
+		l.setBaselineAligned(false);
 		l.setOrientation(LinearLayout.VERTICAL);
 		return l;
 	}
 
 	private LinearLayout row() {
 		LinearLayout l = new LinearLayout(a);
+		l.setBaselineAligned(false);
 		l.setOrientation(LinearLayout.HORIZONTAL);
 		l.setGravity(Gravity.CENTER_VERTICAL);
 		return l;
@@ -894,6 +896,7 @@ final class StatsPage {
 		body.addView(deltaCard(), wide(12));
 
 		LinearLayout two = new LinearLayout(a);
+		two.setBaselineAligned(false);
 		two.addView(windCard(), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
 		two.addView(wetCard(), weight(10));
 		body.addView(two, wide(12));
@@ -932,6 +935,7 @@ final class StatsPage {
 				: lv > 0 ? Tr.t("Wind, drop drying (ΔT) or temperature outside the ideal range.", "Vânt, uscarea picăturilor (ΔT) sau temperatură în afara intervalului ideal.") : "";
 		if (why.length() > 0) box.addView(tv(why, 13, false, dim), wide(8));
 		LinearLayout r = new LinearLayout(a);
+		r.setBaselineAligned(false);
 		double dt = Agro.deltaT(d, i);
 		int dl = Agro.dtLevel(dt);
 		r.addView(stat(Tr.t("Wind", "Vânt"), kmh(d.wind[i]), Tr.t("gusts ", "rafale ") + kmh(d.gust[i])), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
@@ -1257,6 +1261,7 @@ final class StatsPage {
 		else e7 = Double.NaN;
 		double bal = r7 - e7;
 		LinearLayout kp = new LinearLayout(a);
+		kp.setBaselineAligned(false);
 		kp.addView(kpi(Tr.t("Rain 7 days", "Ploi 7 zile"), mm(r7), Tr.t("28 days: ", "28 zile: ") + mm(r28), ink), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
 		kp.addView(kpi(Tr.t("Evaporation", "Evaporare"), "−" + mm(e7), "ET₀ " + Tr.t("7 days", "7 zile"), ink), weight(8));
 		String bw = Double.isNaN(bal) ? "" : bal > 0 ? Tr.t("surplus", "excedent") : bal < -15 ? Tr.t("deficit, irrigate", "deficit, irigă") : Tr.t("slight deficit", "deficit ușor");
@@ -1284,7 +1289,7 @@ final class StatsPage {
 		s.addView(caps(Tr.t("Soil temperature", "Temperatura solului"), dim));
 		final double lo = crop != null ? crop.soilMin : 8;
 		String who = crop != null ? crop.name().toLowerCase(locale()) : Tr.t("maize", "porumb");
-		s.addView(tv(Tr.t("green zone = sowing threshold for ", "zona verde = prag semănat ") + who + " " + Math.round(lo) + "–" + Math.round(lo + 2) + " °C", 12, false, dim), wide(3));
+		s.addView(tv(Tr.t("green zone = sowing threshold for ", "zona verde = prag semănat ") + who + " " + Math.round(lo) + "–" + Math.round(lo + 2) + "\u00A0°C", 12, false, dim), wide(3));
 		s.addView(soilRow("6 cm", d.soilT6[cur], lo), wide(8));
 		s.addView(soilRow("18 cm", d.soilT18[cur], lo), wide(6));
 		View line = new View(a);
@@ -1293,6 +1298,9 @@ final class StatsPage {
 		lp.topMargin = px(12);
 		s.addView(line, lp);
 		LinearLayout two = new LinearLayout(a);
+		two.setBaselineAligned(false);
+		// v2.012 (Viorel): no baseline shift, the second column's last lines were cut off.
+		two.setBaselineAligned(false);
 		double m1 = d.soilM1[cur];
 		String[] mw = { Tr.t("dry", "uscat"), Tr.t("moderate", "potrivit"), Tr.t("moist", "umed"), Tr.t("near saturation", "aproape de saturație") };
 		int ml = Farm.soilLevel(m1);
@@ -1335,7 +1343,9 @@ final class StatsPage {
 
 	private View soilRow(String label, final double v, final double lo) {
 		LinearLayout r = row();
-		r.addView(tv(label, 14, true, ink), new LinearLayout.LayoutParams(px(52), ViewGroup.LayoutParams.WRAP_CONTENT));
+		FitText lb = tv(label.replace(' ', '\u00A0'), 14, true, ink);
+		lb.one(0.6f);
+		r.addView(lb, new LinearLayout.LayoutParams(px(52), ViewGroup.LayoutParams.WRAP_CONTENT));
 		View bar = new View(a) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -1762,6 +1772,7 @@ final class StatsPage {
 			if (days.v.get(k)[1] < -5) frost++;
 		}
 		LinearLayout three = new LinearLayout(a);
+		three.setBaselineAligned(false);
 		three.addView(kpi(Tr.t("Heat stress", "Stres termic"), heat + Tr.t(" days", " zile"), Tr.t("over 32 °C", "peste 32 °C"), heat > 0 ? O : ink),
 				new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
 		double dl = sumT - lastT;
@@ -1811,6 +1822,7 @@ final class StatsPage {
 		Object[][] rk = risks();
 		for (int row0 = 0; row0 < 2; row0++) {
 			LinearLayout r = new LinearLayout(a);
+			r.setBaselineAligned(false);
 			for (int k = 0; k < 2; k++) {
 				final int i = row0 * 2 + k;
 				View c = ring(Tr.t(RISK_EN[i], RISK_RO[i]), (Integer) rk[i][0], (String) rk[i][1], (String) rk[i][2]);
@@ -2041,6 +2053,7 @@ final class StatsPage {
 		sh.addView(tv(title, 21, true, ink), wide(8));
 		sh.addView(tv(text, 14.5f, false, dim), wide(8));
 		LinearLayout two = new LinearLayout(a);
+		two.setBaselineAligned(false);
 		two.addView(box(b1l, b1), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
 		two.addView(box(b2l, b2), weight(10));
 		sh.addView(two, wide(12));

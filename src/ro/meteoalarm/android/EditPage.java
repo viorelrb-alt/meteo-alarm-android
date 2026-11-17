@@ -99,12 +99,14 @@ final class EditPage {
 
 	private LinearLayout col() {
 		LinearLayout l = new LinearLayout(a);
+		l.setBaselineAligned(false);
 		l.setOrientation(LinearLayout.VERTICAL);
 		return l;
 	}
 
 	private LinearLayout row() {
 		LinearLayout l = new LinearLayout(a);
+		l.setBaselineAligned(false);
 		l.setGravity(Gravity.CENTER_VERTICAL);
 		return l;
 	}
@@ -229,6 +231,7 @@ final class EditPage {
 
 		// The sowing date and the area.
 		LinearLayout two = new LinearLayout(a);
+		two.setBaselineAligned(false);
 		LinearLayout dc = card();
 		dc.addView(caps(Tr.t("Sowing date", "Data semănatului"), dim));
 		FitText dt = tv(p.sow.length() == 10 ? fmt.longDate(p.sow) : Tr.t("choose…", "alege…"), 17, true, p.sow.length() == 10 ? ink : accent);
@@ -553,6 +556,7 @@ final class EditPage {
 			box.addView(nb, wide(12));
 		}
 		LinearLayout btns = new LinearLayout(a);
+		btns.setBaselineAligned(false);
 		btns.addView(pill(Tr.t("Choose another crop", "Alege altă cultură"), true, new View.OnClickListener() {
 			public void onClick(View v) {
 				root.removeView(scrim);
