@@ -1432,3 +1432,46 @@ root growth	Rübenwachstum
 tuber forming	Knollenbildung
 regrowth	Wiederaustrieb
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	An der Schwelle: Aussaat möglich, wenn die nächsten Tage warm bleiben.
+Balance of the day	Bilanz des Tages
+Clock while charging	Uhr beim Laden
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Gradtage summieren die Wärme über der Basistemperatur der Kultur; die Stadien folgen ihnen.
+Drop drying (ΔT) now	Tropfentrocknung (ΔT) jetzt
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Tropfentrocknung (ΔT) über 10,5 °C: die Tropfen trocknen in der Luft.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Tropfentrocknung (ΔT) unter 1,5 °C: die Tropfen trocknen zu langsam und driften.
+Drop drying (ΔT): {1}	Tropfentrocknung (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = wie viel Wasser Boden und Pflanzen an einem Tag verlieren.
+Evaporation (ET₀)	Verdunstung (ET₀)
+Forecast, 	Vorhersage, 
+Forecast. 	Vorhersage. 
+Gained that day	An dem Tag gewonnen
+Last year	Letztes Jahr
+Measured (model), 	Gemessen (Modell), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Auf dem Bildschirm einer Parzelle, nur wenn nötig: das Urteil zum Spritzen (rot, gelb, grün), der Hauptgrund mit seiner Grenze und die Risiken der nächsten 24 Stunden. Oben die Kultur und ihr Aussaatdatum; mit einer Kultur berücksichtigt das Urteil auch die Tropfentrocknung (ΔT) und ihre Krankheit. Antippen zeigt das nächste gute Fenster.
+Open-Meteo model estimate, not a measurement.	Schätzung des Open-Meteo-Modells, keine Messung.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operativ: das Spritzfenster Stunde für Stunde (grün, gelb, rot; die Zahl ist ΔT), es bewegt sich von selbst; Antippen einer Stunde öffnet ihre Blase. Tropfentrocknung (ΔT, optimal 2–8 °C), Wind und Böen, nasses Blatt.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Saison: Gradtage (GDD) ab der Aussaat im Vergleich zum Vorjahr, das geschätzte Stadium, Hitzestress und Frosttage. Braucht die Kultur und das Aussaatdatum. Antippen des Diagramms zeigt diesen Tag.
+Soil at 	Boden in 
+Sowing threshold	Aussaatschwelle
+Stage	Stadium
+Tap an hour for its explanation.	Tippe auf eine Stunde für ihre Erklärung.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Die Balken auf der Karte einer Parzelle oder Statistik in ihrer Blase. Oben: der Name der Parzelle, 4 Reiter und PDF · CSV.
+This season	Diese Saison
+Too cold for sowing: the seeds come up slowly and unevenly.	Zu kalt zum Säen: die Samen laufen langsam und ungleichmäßig auf.
+Too cold: {1}	Zu kalt: {1}
+Warm enough for sowing.	Warm genug zum Säen.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Wasser & Boden: 7 Tage Regen und Verdunstung (ET₀) und die Bilanz; das Diagramm der Vergangenheit und der nächsten 7 Tage; Boden in 6 und 18 cm, Oberflächenfeuchte, Befahrbarkeit mit Maschinen. Antippen eines Tages oder einer Bodenzeile erklärt sie.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Wind, Tropfentrocknung (ΔT) und Temperatur liegen alle im guten Bereich.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Wind, Tropfentrocknung (ΔT) oder Temperatur außerhalb des idealen Bereichs.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Mit einer Kultur auch: über 5 °C, Tropfentrocknung (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	Tropfen trocknen zu schnell (ΔT)
+drops dry too slowly (ΔT)	Tropfen trocknen zu langsam (ΔT)
+from the corners	aus den Ecken
+over 10.5 °C the drops dry in the air	über 10,5 °C trocknen die Tropfen in der Luft
+too cold	zu kalt
+under 1.5 °C the drops stay wet and drift	unter 1,5 °C bleiben die Tropfen nass und driften
+under 5 °C the treatment does not work	unter 5 °C wirkt die Behandlung nicht
+{1} h of wet leaves from {2}	{1} h nasse Blätter ab {2}
+{1} risk: {2}	{1}-Risiko: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = Lufttemperatur minus Feuchttemperatur: wie schnell ein Tropfen trocknet. 2–8 °C optimal. Unter 2 °C bleiben die Tropfen und driften, über 10 °C trocknen sie in der Luft.

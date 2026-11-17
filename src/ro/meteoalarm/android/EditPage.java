@@ -47,6 +47,8 @@ final class EditPage {
 	private final StatsPage fmt;
 	private final boolean dark;
 	private final float dp, fs;
+	/** v2.010: the texts' factor for the page's width (412 dp = 1; smaller phones a little less). */
+	private float wk = 1;
 	private final int ink, dim, accent, G, Y;
 	private FrameLayout root;
 	/** The parcel as edited (saved only with Save). */
@@ -67,14 +69,21 @@ final class EditPage {
 		Y = dark ? 0xFFF59E0B : 0xFFD97706;
 	}
 
+	private void widthK() {
+		android.content.res.Configuration c = a.getResources().getConfiguration();
+		float w = Math.min(c.screenWidthDp, TextSize.tablet(a) ? 720 : 600);
+		wk = Math.max(0.82f, Math.min(1f, w / 412f));
+	}
+
 	private int px(float v) {
 		return Math.round(v * dp);
 	}
 
-	private TextView tv(String s, float sp, boolean bold, int color) {
-		TextView t = new TextView(a);
+	/** v2.010: a text that never breaks a word (its size goes down instead), sized for the page's width. */
+	private FitText tv(String s, float sp, boolean bold, int color) {
+		FitText t = new FitText(a, 1000, 0.7f);
 		t.setText(s);
-		t.setTextSize(sp * fs);
+		t.setTextSize(sp * fs * wk);
 		t.setTypeface(bold ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		t.setTextColor(color);
 		t.setIncludeFontPadding(false);
@@ -82,8 +91,9 @@ final class EditPage {
 	}
 
 	private TextView caps(String s, int color) {
-		TextView t = tv(s.toUpperCase(Locale.getDefault()), 12.5f, true, color);
+		FitText t = tv(s.toUpperCase(Locale.getDefault()), 12.5f, true, color);
 		t.setLetterSpacing(0.06f);
+		t.one(0.6f);
 		return t;
 	}
 
@@ -113,7 +123,7 @@ final class EditPage {
 	}
 
 	private TextView pill(String s, boolean main, View.OnClickListener l) {
-		TextView t = tv(s, 15, true, main ? 0xFFFFFFFF : ink);
+		FitText t = tv(s, 15, true, main ? 0xFFFFFFFF : ink);
 		t.setGravity(Gravity.CENTER);
 		t.setPadding(px(16), px(10), px(16), px(10));
 		t.setBackground(main ? Glass.pill(accent, 0, px(22), dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), px(22), dp));
@@ -137,6 +147,7 @@ final class EditPage {
 
 	/** The page of parcel P (a copy is edited) in ROOT. */
 	void show(FrameLayout root, Parcels.Parcel src) {
+		widthK();
 		this.root = root;
 		if (p != null && p.id == src.id) keepName();
 		if (p == null || p.id != src.id) {
@@ -161,9 +172,8 @@ final class EditPage {
 			}
 		});
 		top.addView(x, new LinearLayout.LayoutParams(px(40), px(40)));
-		TextView t = tv(Tr.t("Edit parcel", "Editează parcela"), 21, true, ink);
-		t.setSingleLine(true);
-		t.setEllipsize(TextUtils.TruncateAt.END);
+		FitText t = tv(Tr.t("Edit parcel", "Editează parcela"), 21, true, ink);
+		t.one(0.6f);
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		tl.leftMargin = px(12);
 		top.addView(t, tl);
@@ -221,7 +231,8 @@ final class EditPage {
 		LinearLayout two = new LinearLayout(a);
 		LinearLayout dc = card();
 		dc.addView(caps(Tr.t("Sowing date", "Data semănatului"), dim));
-		TextView dt = tv(p.sow.length() == 10 ? fmt.longDate(p.sow) : Tr.t("choose…", "alege…"), 17, true, p.sow.length() == 10 ? ink : accent);
+		FitText dt = tv(p.sow.length() == 10 ? fmt.longDate(p.sow) : Tr.t("choose…", "alege…"), 17, true, p.sow.length() == 10 ? ink : accent);
+		dt.one(0.6f);
 		dc.addView(dt, wide(6));
 		dc.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -231,11 +242,13 @@ final class EditPage {
 		two.addView(dc, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 3));
 		LinearLayout ac = card();
 		ac.addView(caps(Tr.t("Area", "Suprafață"), dim));
-		LinearLayout ar = row();
-		ar.setGravity(Gravity.BOTTOM);
-		ar.addView(tv(fmt.hectares(p.hectares()), 17, true, ink));
-		ar.addView(tv("  auto", 12.5f, false, dim));
-		ac.addView(ar, wide(6));
+		// v2.010: the value on one row, under it where it comes from.
+		FitText av = tv(fmt.hectares(p.hectares()), 17, true, ink);
+		av.one(0.6f);
+		ac.addView(av, wide(6));
+		FitText as = tv(Tr.t("from the corners", "din colțuri"), 12.5f, false, dim);
+		as.one(0.7f);
+		ac.addView(as, wide(3));
 		LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 2);
 		al.leftMargin = px(10);
 		two.addView(ac, al);
@@ -248,8 +261,8 @@ final class EditPage {
 		cr.addView(fmt.sprout(accent), new LinearLayout.LayoutParams(px(36), px(36)));
 		LinearLayout ct = col();
 		ct.addView(caps(Tr.t("Crop", "Cultura"), dim));
-		TextView cn = tv(c == null ? Tr.t("choose…", "alege…") : c.name() + "  ·  " + Agro.typeName(c.type), 16, true, c == null ? accent : ink);
-		cn.setMaxLines(2);
+		FitText cn = tv(c == null ? Tr.t("choose…", "alege…") : c.name() + "  ·  " + Agro.typeName(c.type), 16, true, c == null ? accent : ink);
+		cn.rows(2);
 		ct.addView(cn, wide(4));
 		LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		cl.leftMargin = px(12);

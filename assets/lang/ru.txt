@@ -1366,3 +1366,46 @@ root growth	рост корнеплода
 tuber forming	клубнеобразование
 regrowth	отрастание
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	На пороге: сеять можно, если ближайшие дни останутся тёплыми.
+Balance of the day	Баланс дня
+Clock while charging	Часы при зарядке
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Градусо-дни суммируют тепло выше базовой температуры культуры; фазы следуют за ними.
+Drop drying (ΔT) now	Высыхание капель (ΔT) сейчас
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Высыхание капель (ΔT) выше 10,5 °C: капли высыхают в воздухе.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Высыхание капель (ΔT) ниже 1,5 °C: капли сохнут слишком медленно и сносятся.
+Drop drying (ΔT): {1}	Высыхание капель (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = сколько воды почва и растения теряют за день.
+Evaporation (ET₀)	Испарение (ET₀)
+Forecast, 	Прогноз, 
+Forecast. 	Прогноз. 
+Gained that day	Прирост за этот день
+Last year	Прошлый год
+Measured (model), 	Измерено (модель), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	На экране участка, только когда нужно: вердикт для опрыскивания (красный, жёлтый, зелёный), главная причина с её порогом и риски на ближайшие 24 часа. Вверху культура и дата посева; с культурой вердикт учитывает также высыхание капель (ΔT) и её болезнь. Касание показывает следующее хорошее окно.
+Open-Meteo model estimate, not a measurement.	Оценка модели Open-Meteo, а не измерение.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Оперативно: окно опрыскивания по часам (зелёный, жёлтый, красный; число — это ΔT), оно движется само; касание часа открывает его подсказку. Высыхание капель (ΔT, оптимально 2–8 °C), ветер и порывы, мокрый лист.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Сезон: градусо-дни (GDD) с посева по сравнению с прошлым годом, оценочная фаза, тепловой стресс и дни с морозом. Нужны культура и дата посева. Касание графика показывает этот день.
+Soil at 	Почва на 
+Sowing threshold	Порог посева
+Stage	Фаза
+Tap an hour for its explanation.	Коснитесь часа, чтобы увидеть пояснение.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Столбики на карточке участка или Статистика в его подсказке. Вверху: название участка, 4 вкладки и PDF · CSV.
+This season	Этот сезон
+Too cold for sowing: the seeds come up slowly and unevenly.	Слишком холодно для посева: семена всходят медленно и неравномерно.
+Too cold: {1}	Слишком холодно: {1}
+Warm enough for sowing.	Достаточно тепло для посева.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Вода и почва: 7 дней осадков и испарения (ET₀) и баланс; график прошлого и ближайших 7 дней; почва на 6 и 18 см, влажность поверхности, заезд техники. Касание дня или строки почвы поясняет его.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Ветер, высыхание капель (ΔT) и температура — всё в хорошем диапазоне.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Ветер, высыхание капель (ΔT) или температура вне идеального диапазона.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	С культурой также: выше 5 °C, высыхание капель (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	капли сохнут слишком быстро (ΔT)
+drops dry too slowly (ΔT)	капли сохнут слишком медленно (ΔT)
+from the corners	по углам
+over 10.5 °C the drops dry in the air	выше 10,5 °C капли высыхают в воздухе
+too cold	слишком холодно
+under 1.5 °C the drops stay wet and drift	ниже 1,5 °C капли остаются мокрыми и сносятся
+under 5 °C the treatment does not work	ниже 5 °C обработка не действует
+{1} h of wet leaves from {2}	{1} h мокрых листьев с {2}
+{1} risk: {2}	Риск: {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = температура воздуха минус температура смоченного термометра: как быстро высыхает капля. 2–8 °C оптимально. Ниже 2 °C капли остаются и сносятся, выше 10 °C высыхают в воздухе.

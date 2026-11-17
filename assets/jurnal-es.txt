@@ -1,9 +1,11 @@
-Versión actual: v.2.001 · 17.11.2026
+Versión actual: v.2.010 · 17.11.2026
 AJUSTES
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
 PARCELAS
+- Burbujas en Estadísticas: tocar una hora de la ventana de pulverización, un día de los gráficos o una fila del suelo abre una burbuja con su explicación; la ventana de pulverización se mueve sola.
 - Editar parcela: el lápiz abre la página de la parcela: nombre, cultivo (lista según la temporada de la fecha de siembra u Otro cultivo…), fecha de siembra, superficie; las esquinas se mueven en el mapa.
-- Estadísticas: para cada parcela, la Acción del día y 4 pestañas: Operativo (ventana de pulverización hora a hora, Delta-T, viento, hoja mojada), Agua y Suelo (lluvia, evaporación, suelo a 6 y 18 cm), Temporada (grados-día frente al año pasado, fase estimada) y Riesgos 72 h (enfermedades fúngicas, helada en el suelo, calor, viento y granizo); se guardan en PDF o CSV.
+- Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
+- Estadísticas: para cada parcela, la Acción del día y 4 pestañas: Operativo (ventana de pulverización hora a hora, secado de gotas (ΔT), viento, hoja mojada), Agua y Suelo (lluvia, evaporación, suelo a 6 y 18 cm), Temporada (grados-día frente al año pasado, fase estimada) y Riesgos 72 h (enfermedades fúngicas, helada en el suelo, calor, viento y granizo); se guardan en PDF o CSV.
 - Mejoras de diseño y corrección de errores.
 
 Versión 1.4 (v.1.400 – v.1.520)

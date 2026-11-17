@@ -1502,3 +1502,46 @@ root growth	crecimiento de la raíz
 tuber forming	formación de tubérculos
 regrowth	rebrote
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	En el umbral: se puede sembrar si los próximos días siguen cálidos.
+Balance of the day	Balance del día
+Clock while charging	Reloj al cargar
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Los grados-día suman el calor por encima de la temperatura base del cultivo; las etapas los siguen.
+Drop drying (ΔT) now	Secado de gotas (ΔT) ahora
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Secado de gotas (ΔT) por encima de 10,5 °C: las gotas se secan en el aire.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Secado de gotas (ΔT) por debajo de 1,5 °C: las gotas se secan demasiado despacio y derivan.
+Drop drying (ΔT): {1}	Secado de gotas (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = cuánta agua pierden el suelo y las plantas en un día.
+Evaporation (ET₀)	Evaporación (ET₀)
+Forecast, 	Previsión, 
+Forecast. 	Previsión. 
+Gained that day	Ganado ese día
+Last year	El año pasado
+Measured (model), 	Medido (modelo), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	En la pantalla de una parcela, solo cuando hace falta: el veredicto para pulverizar (rojo, amarillo, verde), el motivo principal con su umbral y los riesgos de las próximas 24 horas. Arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad. Un toque muestra la próxima ventana buena.
+Open-Meteo model estimate, not a measurement.	Estimación del modelo Open-Meteo, no una medición.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operativo: la ventana de pulverización hora a hora (verde, amarillo, rojo; el número es ΔT), se mueve sola; tocar una hora abre su burbuja. Secado de gotas (ΔT, óptimo 2–8 °C), viento y rachas, hoja mojada.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Temporada: grados-día (GDD) desde la siembra frente al año pasado, la etapa estimada, el estrés térmico y los días de helada. Necesita el cultivo y la fecha de siembra. Tocar el gráfico muestra ese día.
+Soil at 	Suelo a 
+Sowing threshold	Umbral de siembra
+Stage	Etapa
+Tap an hour for its explanation.	Toca una hora para su explicación.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Las barras en la tarjeta de una parcela o Estadísticas en su burbuja. Arriba: el nombre de la parcela, 4 pestañas y PDF · CSV.
+This season	Esta temporada
+Too cold for sowing: the seeds come up slowly and unevenly.	Demasiado frío para sembrar: las semillas nacen despacio y de forma desigual.
+Too cold: {1}	Demasiado frío: {1}
+Warm enough for sowing.	Suficiente calor para sembrar.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Agua & Suelo: 7 días de lluvia y evaporación (ET₀) y el balance; el gráfico del pasado y de los próximos 7 días; suelo a 6 y 18 cm, humedad superficial, entrada de maquinaria. Tocar un día o una fila del suelo lo explica.
+Wind, drop drying (ΔT) and temperature are all in the good range.	El viento, el secado de gotas (ΔT) y la temperatura están todos en el rango bueno.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Viento, secado de gotas (ΔT) o temperatura fuera del rango ideal.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Con un cultivo también: por encima de 5 °C, secado de gotas (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	gotas que se secan muy rápido (ΔT)
+drops dry too slowly (ΔT)	gotas que se secan muy despacio (ΔT)
+from the corners	desde las esquinas
+over 10.5 °C the drops dry in the air	por encima de 10,5 °C las gotas se secan en el aire
+too cold	demasiado frío
+under 1.5 °C the drops stay wet and drift	por debajo de 1,5 °C las gotas siguen mojadas y derivan
+under 5 °C the treatment does not work	por debajo de 5 °C el tratamiento no actúa
+{1} h of wet leaves from {2}	{1} h de hojas mojadas desde las {2}
+{1} risk: {2}	Riesgo de {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura del aire menos temperatura de bulbo húmedo: lo rápido que se seca una gota. 2–8 °C óptimo. Por debajo de 2 °C las gotas quedan y derivan, por encima de 10 °C se secan en el aire.

@@ -1432,3 +1432,46 @@ root growth	wzrost korzenia
 tuber forming	tworzenie bulw
 regrowth	odrost
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Na progu: można siać, jeśli najbliższe dni będą ciepłe.
+Balance of the day	Bilans dnia
+Clock while charging	Zegar podczas ładowania
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Stopniodni sumują ciepło powyżej temperatury bazowej uprawy; fazy podążają za nimi.
+Drop drying (ΔT) now	Schnięcie kropel (ΔT) teraz
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Schnięcie kropel (ΔT) powyżej 10,5 °C: krople wysychają w powietrzu.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Schnięcie kropel (ΔT) poniżej 1,5 °C: krople schną zbyt wolno i znoszą się.
+Drop drying (ΔT): {1}	Schnięcie kropel (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = ile wody gleba i rośliny tracą w ciągu dnia.
+Evaporation (ET₀)	Parowanie (ET₀)
+Forecast, 	Prognoza, 
+Forecast. 	Prognoza. 
+Gained that day	Przyrost tego dnia
+Last year	Rok temu
+Measured (model), 	Zmierzone (model), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Na ekranie działki, tylko gdy trzeba: werdykt dla oprysku (czerwony, żółty, zielony), główny powód z jego progiem i ryzyka najbliższych 24 godzin. U góry uprawa i data siewu; z uprawą werdykt uwzględnia też schnięcie kropel (ΔT) i jej chorobę. Dotknięcie pokazuje następne dobre okno.
+Open-Meteo model estimate, not a measurement.	Szacunek modelu Open-Meteo, nie pomiar.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operacyjne: okno oprysku godzina po godzinie (zielony, żółty, czerwony; liczba to ΔT), przesuwa się samo; dotknięcie godziny otwiera jej dymek. Schnięcie kropel (ΔT, optymalnie 2–8 °C), wiatr i porywy, mokry liść.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Sezon: stopniodni (GDD) od siewu w porównaniu z zeszłym rokiem, szacowana faza, stres cieplny i dni mrozu. Potrzebna uprawa i data siewu. Dotknięcie wykresu pokazuje ten dzień.
+Soil at 	Gleba na 
+Sowing threshold	Próg siewu
+Stage	Faza
+Tap an hour for its explanation.	Dotknij godziny, aby zobaczyć wyjaśnienie.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Słupki na karcie działki lub Statystyki w jej dymku. U góry: nazwa działki, 4 karty i PDF · CSV.
+This season	Ten sezon
+Too cold for sowing: the seeds come up slowly and unevenly.	Za zimno na siew: nasiona wschodzą wolno i nierówno.
+Too cold: {1}	Za zimno: {1}
+Warm enough for sowing.	Wystarczająco ciepło na siew.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Woda i gleba: 7 dni deszczu i parowania (ET₀) oraz bilans; wykres przeszłości i najbliższych 7 dni; gleba na 6 i 18 cm, wilgotność powierzchni, wjazd maszyn. Dotknięcie dnia lub wiersza gleby wyjaśnia go.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Wiatr, schnięcie kropel (ΔT) i temperatura są w dobrym zakresie.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Wiatr, schnięcie kropel (ΔT) lub temperatura poza idealnym zakresem.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Z uprawą także: powyżej 5 °C, schnięcie kropel (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	krople schną za szybko (ΔT)
+drops dry too slowly (ΔT)	krople schną za wolno (ΔT)
+from the corners	z narożników
+over 10.5 °C the drops dry in the air	powyżej 10,5 °C krople wysychają w powietrzu
+too cold	za zimno
+under 1.5 °C the drops stay wet and drift	poniżej 1,5 °C krople pozostają mokre i znoszą się
+under 5 °C the treatment does not work	poniżej 5 °C zabieg nie działa
+{1} h of wet leaves from {2}	{1} h mokrych liści od {2}
+{1} risk: {2}	Ryzyko: {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura powietrza minus temperatura termometru zwilżonego: jak szybko schnie kropla. 2–8 °C optymalnie. Poniżej 2 °C krople pozostają i znoszą się, powyżej 10 °C wysychają w powietrzu.

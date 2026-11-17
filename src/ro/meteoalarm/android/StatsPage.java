@@ -57,6 +57,8 @@ final class StatsPage {
 	private final Host host;
 	private final boolean dark, imp, clk12;
 	private final float dp, fs;
+	/** v2.010: the texts' factor for the page's width (412 dp = 1; smaller phones a little less). */
+	private float wk = 1;
 	private final int ink, dim, page, accent, G, AMB, R, B, O;
 
 	/** What is shown: the tab (0–3), the spray band's hours (24 / 72), the chart's days back, the hour picked. */
@@ -115,14 +117,21 @@ final class StatsPage {
 
 	// --- Building blocks ------------------------------------------------------------------------
 
+	private void widthK() {
+		android.content.res.Configuration c = a.getResources().getConfiguration();
+		float w = Math.min(c.screenWidthDp, TextSize.tablet(a) ? 720 : 600);
+		wk = Math.max(0.82f, Math.min(1f, w / 412f));
+	}
+
 	private int px(float v) {
 		return Math.round(v * dp);
 	}
 
-	private TextView tv(String s, float sp, boolean bold, int color) {
-		TextView t = new TextView(a);
+	/** v2.010: a text that never breaks a word (its size goes down instead), sized for the page's width. */
+	private FitText tv(String s, float sp, boolean bold, int color) {
+		FitText t = new FitText(a, 1000, 0.7f);
 		t.setText(s);
-		t.setTextSize(sp * fs);
+		t.setTextSize(sp * fs * wk);
 		t.setTypeface(bold ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
 		t.setTextColor(color);
 		t.setIncludeFontPadding(false);
@@ -163,8 +172,9 @@ final class StatsPage {
 
 	/** A small title in capitals. */
 	private TextView caps(String s, int color) {
-		TextView t = tv(s.toUpperCase(locale()), 12.5f, true, color);
+		FitText t = tv(s.toUpperCase(locale()), 12.5f, true, color);
 		t.setLetterSpacing(0.06f);
+		t.one(0.6f);
 		return t;
 	}
 
@@ -172,19 +182,25 @@ final class StatsPage {
 	private View section(String title, View right) {
 		LinearLayout r = row();
 		r.setPadding(0, px(18), 0, px(8));
+		// v2.010: with something at the end, the title takes the room left by it (smaller if need be).
+		if (right != null) {
+			LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			tl.rightMargin = px(10);
+			r.addView(caps(title, dim), tl);
+			r.addView(right);
+			return r;
+		}
 		r.addView(caps(title, dim));
 		View line = new View(a);
 		line.setBackgroundColor(Glass.edge(dark));
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, Math.max(1, px(1)), 1);
 		lp.leftMargin = px(10);
-		lp.rightMargin = right != null ? px(10) : 0;
 		r.addView(line, lp);
-		if (right != null) r.addView(right);
 		return r;
 	}
 
 	private TextView hint(String s) {
-		TextView t = tv(s, 12.5f, false, dim);
+		FitText t = tv(s, 12.5f, false, dim);
 		t.setTypeface(Typeface.DEFAULT, Typeface.ITALIC);
 		return t;
 	}
@@ -196,7 +212,7 @@ final class StatsPage {
 		r.setPadding(px(3), px(3), px(3), px(3));
 		for (int k = 0; k < labels.length; k++) {
 			final int i = k;
-			TextView t = tv(labels[k], 12.5f, true, k == on ? ink : dim);
+			FitText t = tv(labels[k], 12.5f, true, k == on ? ink : dim);
 			t.setPadding(px(9), px(5), px(9), px(5));
 			if (k == on) t.setBackground(Glass.pill(Glass.alpha(page, 0.9f), 0, px(11), dp));
 			t.setOnClickListener(new View.OnClickListener() {
@@ -214,7 +230,7 @@ final class StatsPage {
 	}
 
 	private TextView badge(String s, int color) {
-		TextView t = tv(s, 12, true, color);
+		FitText t = tv(s, 12, true, color);
 		t.setPadding(px(8), px(3), px(8), px(3));
 		t.setBackground(Glass.pill(Glass.alpha(color, 0.18f), 0, px(10), dp));
 		return t;
@@ -325,11 +341,14 @@ final class StatsPage {
 
 	/** The page in ROOT (all over again). */
 	void show(FrameLayout root, long fetched, String status) {
+		widthK();
 		this.root = root;
 		final List<int[]> keep = new ArrayList<int[]>();
 		ScrollView old = findScroll(root);
 		final int oldY = old != null && root.getTag() instanceof Long && (Long) root.getTag() == p.id * 10 + tab ? old.getScrollY() : 0;
 		root.removeAllViews();
+		bubble = null;
+		Glass.grab(null);
 		root.setTag(p.id * 10 + tab);
 		boolean tablet = TextSize.tablet(a);
 		int maxW = px(tablet ? 720 : 600);
@@ -425,9 +444,8 @@ final class StatsPage {
 			}
 		});
 		r.addView(back, new LinearLayout.LayoutParams(px(40), px(40)));
-		TextView t = tv(Tr.t("Statistics", "Statistici"), 22, true, ink);
-		t.setSingleLine(true);
-		t.setEllipsize(TextUtils.TruncateAt.END);
+		FitText t = tv(Tr.t("Statistics", "Statistici"), 22, true, ink);
+		t.one(0.6f);
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		tl.leftMargin = px(12);
 		r.addView(t, tl);
@@ -487,53 +505,28 @@ final class StatsPage {
 		Dlg.show(b);
 	}
 
-	/** The parcel's name with its crop, the sowing date and the area; a tap picks another parcel. */
+	/** The parcel's name with its crop, the sowing date and the area. */
 	private View picker() {
 		LinearLayout r = row();
 		r.setBackground(Glass.cardBg(dark, px(16), dp));
 		r.setPadding(px(10), px(9), px(12), px(9));
 		r.addView(sprout(accent), new LinearLayout.LayoutParams(px(34), px(34)));
 		LinearLayout t = col();
-		TextView n = tv(p.name + (crop != null ? " · " + crop.name() : ""), 17, true, ink);
-		n.setSingleLine(true);
-		n.setEllipsize(TextUtils.TruncateAt.END);
+		FitText n = tv(p.name + (crop != null ? " · " + crop.name() : ""), 17, true, ink);
+		n.one(0.6f);
 		t.addView(n);
 		StringBuilder s = new StringBuilder();
 		if (p.sow.length() == 10) s.append(Tr.t("sown ", "semănat ")).append(dayMonth(p.sow)).append(" · ").append(Agro.between(p.sow, today)).append(Tr.t(" days", " zile"));
 		else s.append(Tr.t("no crop or sowing date yet", "fără cultură sau dată de semănat"));
 		double ha = p.hectares();
 		if (!Double.isNaN(ha)) s.append(" · ").append(hectares(ha));
-		TextView sub = tv(s.toString(), 13.5f, false, dim);
-		sub.setSingleLine(true);
-		sub.setEllipsize(TextUtils.TruncateAt.END);
+		FitText sub = tv(s.toString(), 13.5f, false, dim);
+		sub.one(0.6f);
 		t.addView(sub, wide(3));
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		tl.leftMargin = px(10);
 		r.addView(t, tl);
-		final List<Parcels.Parcel> all = Parcels.sorted(a);
-		if (all.size() > 1) {
-			TextView more = tv(all.size() + Tr.t(" parcels ▾", " parcele ▾"), 12.5f, false, dim);
-			more.setPadding(px(8), 0, 0, 0);
-			r.addView(more);
-			r.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					String[] names = new String[all.size()];
-					for (int k = 0; k < names.length; k++) {
-						Agro.Crop c = all.get(k).crop();
-						names[k] = all.get(k).name + (c != null ? " · " + c.name() : "");
-					}
-					android.app.AlertDialog.Builder b = new android.app.AlertDialog.Builder(a,
-							dark ? android.R.style.Theme_DeviceDefault_Dialog_Alert : android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);
-					b.setTitle(Tr.t("Parcels", "Parcele"));
-					b.setItems(names, new android.content.DialogInterface.OnClickListener() {
-						public void onClick(android.content.DialogInterface di, int w) {
-							host.open(all.get(w).id);
-						}
-					});
-					Dlg.show(b);
-				}
-			});
-		}
+		// v2.010 (Viorel): no picking of another parcel here for now.
 		return r;
 	}
 
@@ -577,9 +570,9 @@ final class StatsPage {
 		final List<TextView> all = new ArrayList<TextView>();
 		for (int k = 0; k < n.length; k++) {
 			final int i = k;
-			TextView t = tv(n[k], 14.5f, true, k == tab ? 0xFFFFFFFF : dim);
+			FitText t = tv(n[k], 14.5f, true, k == tab ? 0xFFFFFFFF : dim);
 			t.setGravity(Gravity.CENTER);
-			t.setSingleLine(true);
+			t.one(0.6f);
 			t.setPadding(px(2), px(8), px(2), px(8));
 			if (k == tab) t.setBackground(Glass.pill(accent, 0, px(18), dp));
 			t.setOnClickListener(new View.OnClickListener() {
@@ -677,9 +670,9 @@ final class StatsPage {
 		case 4:
 			return Tr.t("Too hot (over 28 °C).", "Prea cald (peste 28 °C).");
 		case 5:
-			return Tr.t("Delta-T under 2 °C: the drops do not dry and drift.", "Delta-T sub 2 °C: picăturile nu se usucă și derivă.");
+			return Tr.t("Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.", "Uscare picături (ΔT) sub 1,5 °C: picăturile se usucă greu și derivă.");
 		case 6:
-			return Tr.t("Delta-T over 10 °C: the drops dry in the air.", "Delta-T peste 10 °C: picăturile se usucă în aer.");
+			return Tr.t("Drop drying (ΔT) over 10.5 °C: the drops dry in the air.", "Uscare picături (ΔT) peste 10,5 °C: picăturile se usucă în aer.");
 		default:
 			return Tr.t("No good hours in the next 24 hours.", "Nicio oră bună în următoarele 24 de ore.");
 		}
@@ -770,9 +763,8 @@ final class StatsPage {
 			return;
 		}
 		final int n = Math.min(hours, d.size() - cur);
-		if (sel < cur || sel >= cur + n) sel = cur;
-		final LinearLayout detail = col();
-		HorizontalScrollView hs = new HorizontalScrollView(a);
+		if (sel >= cur + n) sel = -1;
+		final HorizontalScrollView hs = new HorizontalScrollView(a);
 		hs.setHorizontalScrollBarEnabled(false);
 		View band = new View(a) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -869,7 +861,7 @@ final class StatsPage {
 					if (k >= 0 && k < n) {
 						sel = cur + k;
 						invalidate();
-						hourDetail(detail);
+						hourBubble(sel, this);
 					}
 				}
 				return true;
@@ -877,6 +869,7 @@ final class StatsPage {
 		};
 		hs.addView(band);
 		c.addView(hs);
+		autoScroll(hs);
 		LinearLayout legend = row();
 		legend.setPadding(px(2), px(8), px(2), 0);
 		legend.addView(dot(G, Tr.t("Optimal", "Optim")));
@@ -884,15 +877,14 @@ final class StatsPage {
 		legend.addView(dot(R, Tr.t("No", "Interzis")));
 		View sp = new View(a);
 		legend.addView(sp, new LinearLayout.LayoutParams(0, 1, 1));
-		legend.addView(tv(Tr.t("number = ΔT", "cifra = ΔT"), 12, false, dim));
+		FitText num = tv(Tr.t("number = ΔT", "cifra = ΔT"), 12, false, dim);
+		num.one(0.6f);
+		legend.addView(num);
 		c.addView(legend);
-		View line = new View(a);
-		line.setBackgroundColor(Glass.edge(dark));
-		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, px(1)));
-		lp.topMargin = px(10);
-		c.addView(line, lp);
-		c.addView(detail, wide(10));
-		hourDetail(detail);
+		// v2.010 (Viorel): a tap on an hour opens its bubble.
+		FitText hint = tv(Tr.t("Tap an hour for its explanation.", "Atinge o oră pentru explicație."), 12, false, dim);
+		hint.one(0.6f);
+		c.addView(hint, wide(6));
 		body.addView(c);
 
 		body.addView(deltaCard(), wide(12));
@@ -909,32 +901,232 @@ final class StatsPage {
 		View d0 = new View(a);
 		d0.setBackground(Glass.pill(color, 0, px(5), dp));
 		r.addView(d0, new LinearLayout.LayoutParams(px(10), px(10)));
-		TextView t = tv(label, 12.5f, false, dim);
+		FitText t = tv(label, 12.5f, false, dim);
 		t.setPadding(px(5), 0, 0, 0);
 		r.addView(t);
 		return r;
 	}
 
-	/** The picked hour's values under the band. */
-	private void hourDetail(LinearLayout box) {
-		box.removeAllViews();
-		int i = sel;
+	/**
+	 * v2.010 (Viorel): the bubble of an hour of the spray window: the verdict, the score, why,
+	 * and the wind, ΔT, temperature and rain of that hour.
+	 */
+	private void hourBubble(int i, final View band) {
 		if (!d.has(i)) return;
 		int s = Agro.score(d, i), lv = Agro.level(s);
 		String[] words = { Tr.t("optimal", "optim"), Tr.t("care", "atenție"), Tr.t("no", "interzis") };
-		TextView t = tv(Tr.t("Hour ", "Ora ") + dayHour(i) + " · " + Tr.t("score ", "scor ") + Math.max(0, s) + " · " + (lv >= 0 ? words[lv] : "–"), 14, true, ink);
-		box.addView(t);
-		if (lv > 0) box.addView(tv(Agro.block(d, i) > 0 ? reason(Agro.block(d, i)) : Tr.t("Wind, ΔT or temperature outside the ideal range.",
-				"Vânt, ΔT sau temperatură în afara intervalului ideal."), 12.5f, false, dim), wide(2));
+		LinearLayout box = col();
+		LinearLayout vr = row();
+		if (lv >= 0) vr.addView(badge(words[lv].toUpperCase(locale()), levelColor(lv)));
+		FitText sc = tv(Tr.t("score ", "scor ") + Math.max(0, s) + " / 100", 15, true, ink);
+		sc.one(0.6f);
+		sc.setPadding(px(lv >= 0 ? 10 : 0), 0, 0, 0);
+		vr.addView(sc, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		box.addView(vr);
+		int b = Agro.block(d, i);
+		String why = b > 0 ? reason(b) : lv == 0 ? Tr.t("Wind, drop drying (ΔT) and temperature are all in the good range.", "Vântul, uscarea picăturilor (ΔT) și temperatura sunt toate în intervalul bun.")
+				: lv > 0 ? Tr.t("Wind, drop drying (ΔT) or temperature outside the ideal range.", "Vânt, uscarea picăturilor (ΔT) sau temperatură în afara intervalului ideal.") : "";
+		if (why.length() > 0) box.addView(tv(why, 13, false, dim), wide(8));
 		LinearLayout r = new LinearLayout(a);
 		double dt = Agro.deltaT(d, i);
 		int dl = Agro.dtLevel(dt);
-		String[] dw = { Tr.t("optimal", "optim"), Tr.t("care", "atenție"), Tr.t("no", "interzis") };
 		r.addView(stat(Tr.t("Wind", "Vânt"), kmh(d.wind[i]), Tr.t("gusts ", "rafale ") + kmh(d.gust[i])), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		r.addView(stat("ΔT", degDelta(dt), dl >= 0 ? dw[dl] : ""), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		r.addView(stat("ΔT", degDelta(dt), dl >= 0 ? words[dl] : ""), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		r.addView(stat(Tr.t("Temp.", "Temp."), deg(d.temp[i]), Tr.t("RH ", "UR ") + Math.round(nz(d.hum[i])) + "%"), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		r.addView(stat(Tr.t("Rain", "Ploaie"), Math.round(nz(d.prob[i])) + "%", mm(nz(d.precip[i]))), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		box.addView(r, wide(10));
+		box.addView(r, wide(12));
+		bubble(Tr.t("Hour ", "Ora ") + dayHour(i), box, new Runnable() {
+			public void run() {
+				sel = -1;
+				band.invalidate();
+			}
+		});
+	}
+
+	// --- v2.010: the bubbles and the moving band ------------------------------------------------
+
+	private FrameLayout bubble;
+
+	private void closeBubble() {
+		if (bubble != null && root != null) root.removeView(bubble);
+		bubble = null;
+		Glass.grab(null);
+	}
+
+	/**
+	 * v2.010 (Viorel): a bubble over the page: TITLE, BODY and a round ✕ at the top right; a tap
+	 * outside it also closes it. Only the bubble is frosted glass, the page stays sharp.
+	 */
+	private void bubble(String title, View body, final Runnable onClose) {
+		if (root == null) return;
+		closeBubble();
+		Glass.grab(root);
+		final FrameLayout scrim = new FrameLayout(a);
+		scrim.setClickable(true);
+		final LinearLayout card = col();
+		card.setClickable(true);
+		card.setBackground(Glass.frostBg(card, px(20), dark, dp, false));
+		card.setElevation(px(8));
+		card.setPadding(px(16), px(12), px(12), px(16));
+		LinearLayout head = row();
+		FitText t = tv(title, 16, true, ink);
+		t.one(0.6f);
+		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		tl.rightMargin = px(8);
+		head.addView(t, tl);
+		View x = new View(a);
+		x.setBackground(Glass.closeIcon(dark, dp));
+		head.addView(x, new LinearLayout.LayoutParams(px(34), px(34)));
+		card.addView(head);
+		LinearLayout.LayoutParams bl = wide(6);
+		bl.rightMargin = px(4);
+		card.addView(body, bl);
+		View.OnClickListener close = new View.OnClickListener() {
+			public void onClick(View v) {
+				if (bubble != scrim) return;
+				closeBubble();
+				if (onClose != null) onClose.run();
+			}
+		};
+		x.setOnClickListener(close);
+		scrim.setOnClickListener(close);
+		int w = Math.min(root.getWidth() > 0 ? root.getWidth() - px(32) : px(340), px(TextSize.tablet(a) ? 460 : 380));
+		scrim.addView(card, new FrameLayout.LayoutParams(w, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+		root.addView(scrim, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		bubble = scrim;
+	}
+
+	interface TapAt {
+		void at(float x, float y);
+	}
+
+	/** v2.010: a tap (not a slide) on V gives its place. */
+	private void onTap(final View v, final TapAt t) {
+		v.setOnTouchListener(new View.OnTouchListener() {
+			float x0, y0;
+
+			public boolean onTouch(View w, MotionEvent e) {
+				if (e.getAction() == MotionEvent.ACTION_DOWN) {
+					x0 = e.getX();
+					y0 = e.getY();
+					return true;
+				}
+				if (e.getAction() == MotionEvent.ACTION_UP && Math.abs(e.getX() - x0) < px(10) && Math.abs(e.getY() - y0) < px(10)) t.at(e.getX(), e.getY());
+				return true;
+			}
+		});
+	}
+
+	/** A row of a bubble: LABEL at the left, VALUE at the right. */
+	private View pair(String label, String value, int color) {
+		LinearLayout r = row();
+		FitText l = tv(label, 14, false, dim);
+		l.one(0.6f);
+		r.addView(l, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		FitText v = tv(value, 15, true, color);
+		v.one(0.6f);
+		v.setPadding(px(8), 0, 0, 0);
+		r.addView(v);
+		return r;
+	}
+
+	/** v2.010 (Viorel): the bubble of a day of the rain and evaporation chart. */
+	private void dayBubble(int k, int t) {
+		if (k < 0 || k >= d.dDate.length) return;
+		String date = d.dDate[k];
+		double rn = nz(d.dRain[k]), et = Agro.et0(d, k, p.lat), bal = rn - nz(et);
+		LinearLayout box = col();
+		box.addView(pair(Tr.t("Rain", "Ploaie"), mm(rn), B));
+		box.addView(pair(Tr.t("Evaporation (ET₀)", "Evaporare (ET₀)"), Double.isNaN(et) ? "–" : mm(et), O), wide(6));
+		box.addView(pair(Tr.t("Balance of the day", "Bilanțul zilei"), Double.isNaN(et) ? "–" : (bal >= 0 ? "+" : "−") + mm(Math.abs(bal)), bal >= 0 ? B : AMB), wide(6));
+		box.addView(pair(Tr.t("Temperature", "Temperatura"), deg(d.dMax[k]) + " / " + deg(d.dMin[k]), ink), wide(6));
+		box.addView(tv((k <= t ? Tr.t("Measured (model), ", "Măsurat (model), ") : Tr.t("Forecast, ", "Prognoză, "))
+				+ Tr.t("ET₀ = how much water the soil and the plants lose in a day.", "ET₀ = câtă apă pierd solul și plantele într-o zi."), 12.5f, false, dim), wide(10));
+		String when = date.equals(today) ? Tr.t("Today", "Azi") : weekday(date);
+		bubble(when + " · " + dayMonth(date), box, null);
+	}
+
+	/** v2.010 (Viorel): the bubble of day Q of the degree-days chart. */
+	private void gddBubble(int q, List<double[]> now, List<double[]> last, int xt) {
+		double s1 = Double.NaN, s0 = Double.NaN, l1 = Double.NaN;
+		for (double[] v : now) {
+			if (v[0] == q - 1) s0 = v[1];
+			if (v[0] == q) s1 = v[1];
+		}
+		for (double[] v : last) if (v[0] <= q) l1 = v[1];
+		String date = Agro.plus(seasonStart, q);
+		LinearLayout box = col();
+		box.addView(pair(Tr.t("This season", "Sezonul acesta"), Double.isNaN(s1) ? "–" : Math.round(s1) + " °C·" + Tr.t("days", "zile"), G));
+		box.addView(pair(Tr.t("Last year", "Anul trecut"), Double.isNaN(l1) ? "–" : Math.round(l1) + " °C·" + Tr.t("days", "zile"), dim), wide(6));
+		if (!Double.isNaN(s1) && !Double.isNaN(s0)) box.addView(pair(Tr.t("Gained that day", "Câștigat în ziua aceea"), "+" + Math.round(s1 - s0), ink), wide(6));
+		if (!Double.isNaN(s1)) {
+			int st = Agro.stage(crop.type, s1);
+			String[] nm = Agro.stageNames(crop.type);
+			if (st >= 0 && st < nm.length) box.addView(pair(Tr.t("Stage", "Stadiu"), nm[st], ink), wide(6));
+		}
+		box.addView(tv((q > xt ? Tr.t("Forecast. ", "Prognoză. ") : "") + Tr.t("Degree days add up the warmth above the crop's base temperature; the stages follow them.",
+				"Gradele-zile adună căldura de peste temperatura de bază a culturii; stadiile le urmează."), 12.5f, false, dim), wide(10));
+		bubble(dayMonth(date), box, null);
+	}
+
+	/** v2.010 (Viorel): the bubble of a soil depth. */
+	private void soilBubble(String depth, double v, double lo) {
+		LinearLayout box = col();
+		box.addView(pair(Tr.t("Now", "Acum"), degU(v), ink));
+		box.addView(pair(Tr.t("Sowing threshold", "Prag semănat"), Math.round(lo) + "–" + Math.round(lo + 2) + " °C", G), wide(6));
+		String verdict = Double.isNaN(v) ? "" : v < lo ? Tr.t("Too cold for sowing: the seeds come up slowly and unevenly.", "Prea rece pentru semănat: semințele răsar greu și neuniform.")
+				: v <= lo + 2 ? Tr.t("At the threshold: sowing can start if the next days stay warm.", "La prag: se poate semăna dacă zilele următoare rămân calde.")
+				: Tr.t("Warm enough for sowing.", "Destul de cald pentru semănat.");
+		if (verdict.length() > 0) box.addView(tv(verdict, 13.5f, false, ink), wide(10));
+		box.addView(tv(Tr.t("Open-Meteo model estimate, not a measurement.", "Estimare a modelului Open-Meteo, nu măsurătoare."), 12, false, dim), wide(8));
+		bubble(Tr.t("Soil at ", "Solul la ") + depth, box, null);
+	}
+
+	/**
+	 * v2.010 (Viorel): after 4 s the band moves to the right by itself and back when it reaches
+	 * the end; a finger on it stops it.
+	 */
+	private void autoScroll(final HorizontalScrollView hs) {
+		final android.animation.ValueAnimator[] an = new android.animation.ValueAnimator[1];
+		final Runnable start = new Runnable() {
+			public void run() {
+				if (!hs.isAttachedToWindow() || hs.getChildCount() == 0) return;
+				int max = hs.getChildAt(0).getWidth() - hs.getWidth();
+				if (max <= px(8)) return;
+				android.animation.ValueAnimator v = android.animation.ValueAnimator.ofInt(hs.getScrollX(), max);
+				v.setDuration(Math.max(2500, Math.round(max / dp * 22)));
+				v.setInterpolator(new android.view.animation.AccelerateDecelerateInterpolator());
+				v.setRepeatCount(android.animation.ValueAnimator.INFINITE);
+				v.setRepeatMode(android.animation.ValueAnimator.REVERSE);
+				v.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+					public void onAnimationUpdate(android.animation.ValueAnimator x) {
+						hs.scrollTo((Integer) x.getAnimatedValue(), 0);
+					}
+				});
+				an[0] = v;
+				v.start();
+			}
+		};
+		hs.postDelayed(start, 4000);
+		hs.setOnTouchListener(new View.OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent e) {
+				hs.removeCallbacks(start);
+				if (an[0] != null) {
+					an[0].cancel();
+					an[0] = null;
+				}
+				return false;
+			}
+		});
+		hs.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+			public void onViewAttachedToWindow(View v) {
+			}
+
+			public void onViewDetachedFromWindow(View v) {
+				hs.removeCallbacks(start);
+				if (an[0] != null) an[0].cancel();
+			}
+		});
 	}
 
 	private View stat(String label, String value, String sub) {
@@ -943,14 +1135,13 @@ final class StatsPage {
 		TextView l = tv(label, 12.5f, true, dim);
 		l.setGravity(Gravity.CENTER);
 		c.addView(l);
-		TextView v = tv(value, 18, true, ink);
-		v.setSingleLine(true);
+		FitText v = tv(value, 18, true, ink);
+		v.one(0.6f);
 		v.setGravity(Gravity.CENTER);
 		c.addView(v, wide(3));
-		TextView s = tv(sub, 12, false, dim);
+		FitText s = tv(sub, 12, false, dim);
 		s.setGravity(Gravity.CENTER);
-		s.setSingleLine(true);
-		s.setEllipsize(TextUtils.TruncateAt.END);
+		s.one(0.6f);
 		c.addView(s, wide(2));
 		return c;
 	}
@@ -960,7 +1151,7 @@ final class StatsPage {
 		final double dt = Agro.deltaT(d, cur);
 		int lv = Agro.dtLevel(dt);
 		LinearLayout top = row();
-		top.addView(caps(Tr.t("Delta-T (ΔT) now", "Delta-T (ΔT) acum"), dim), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		top.addView(caps(Tr.t("Drop drying (ΔT) now", "Uscare picături (ΔT) acum"), dim), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		top.addView(tv(degDelta(dt), 22, true, ink));
 		String[] w = { Tr.t("OPTIMAL", "OPTIM"), Tr.t("CARE", "ATENȚIE"), Tr.t("NO", "INTERZIS") };
 		if (lv >= 0) {
@@ -976,20 +1167,21 @@ final class StatsPage {
 			@Override
 			protected void onDraw(Canvas cv) {
 				float w0 = getWidth(), pad = px(10), bw = w0 - 2 * pad, y = px(18), th = px(8);
-				float[] stops = { 0, 2, 8, 10, 14 };
-				int[] cols = { R, G, AMB, R };
+				// v2.010: the zones as in Agro.dtLevel (1.5 and 10.5 the hard limits).
+				float[] stops = { 0, 1.5f, 2, 8, 10.5f, 14 };
+				int[] cols = { R, AMB, G, AMB, R };
 				pt.setStyle(Paint.Style.FILL);
-				for (int k = 0; k < 4; k++) {
+				for (int k = 0; k < 5; k++) {
 					pt.setColor(cols[k]);
 					float x1 = pad + bw * stops[k] / 14, x2 = pad + bw * stops[k + 1] / 14;
 					RectF r = new RectF(x1, y - th / 2, x2, y + th / 2);
-					if (k == 0 || k == 3) cv.drawRoundRect(r, th / 2, th / 2, pt);
-					cv.drawRect(k == 0 ? x1 + th / 2 : x1, y - th / 2, k == 3 ? x2 - th / 2 : x2, y + th / 2, pt);
+					if (k == 0 || k == 4) cv.drawRoundRect(r, th / 2, th / 2, pt);
+					cv.drawRect(k == 0 ? x1 + th / 2 : x1, y - th / 2, k == 4 ? x2 - th / 2 : x2, y + th / 2, pt);
 				}
 				pt.setColor(dim);
-				pt.setTextSize(12 * dp * fs);
+				pt.setTextSize(12 * dp * fs * wk);
 				pt.setTextAlign(Paint.Align.CENTER);
-				for (float s : stops) cv.drawText(String.valueOf((int) s), pad + bw * s / 14, y + px(24), pt);
+				for (float s : new float[] { 0, 2, 8, 14 }) cv.drawText(String.valueOf((int) s), pad + bw * s / 14, y + px(24), pt);
 				if (!Double.isNaN(dt)) {
 					float x = pad + bw * (float) Math.min(14, Math.max(0, dt)) / 14;
 					pt.setColor(0xFFFFFFFF);
@@ -1002,8 +1194,8 @@ final class StatsPage {
 			}
 		};
 		c.addView(g, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(48)));
-		c.addView(tv(Tr.t("2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.",
-				"2–8 °C: picăturile se evaporă controlat. Sub 2 °C risc de derivă, peste 10 °C picăturile se usucă în aer."), 13, false, dim), wide(4));
+		c.addView(tv(Tr.t("ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.",
+				"ΔT = temperatura aerului minus temperatura umedă: cât de repede se usucă o picătură. 2–8 °C optim. Sub 2 °C picăturile rămân și derivă, peste 10 °C se usucă în aer."), 13, false, dim), wide(4));
 		return c;
 	}
 
@@ -1119,11 +1311,11 @@ final class StatsPage {
 		TextView l = caps(label, dim);
 		l.setGravity(Gravity.CENTER);
 		c.addView(l);
-		TextView v = tv(value, 20, true, color);
-		v.setSingleLine(true);
+		FitText v = tv(value, 20, true, color);
+		v.one(0.6f);
 		v.setGravity(Gravity.CENTER);
 		c.addView(v, wide(6));
-		TextView s = tv(sub, 12, false, dim);
+		FitText s = tv(sub, 12, false, dim);
 		s.setGravity(Gravity.CENTER);
 		c.addView(s, wide(4));
 		return c;
@@ -1170,6 +1362,12 @@ final class StatsPage {
 		TextView val = tv(degU(v), 16, true, ink);
 		val.setGravity(Gravity.RIGHT);
 		r.addView(val, new LinearLayout.LayoutParams(px(70), ViewGroup.LayoutParams.WRAP_CONTENT));
+		final String depth = label;
+		r.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View w) {
+				soilBubble(depth, v, lo);
+			}
+		});
 		return r;
 	}
 
@@ -1185,7 +1383,7 @@ final class StatsPage {
 			mx = Math.max(mx, Math.max(rain[k], nz(et[k])));
 		}
 		final double top = Math.ceil(mx / 5) * 5;
-		return new View(a) {
+		final View ch = new View(a) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
 
 			@Override
@@ -1270,6 +1468,14 @@ final class StatsPage {
 				}
 			}
 		};
+		onTap(ch, new TapAt() {
+			public void at(float x, float y) {
+				float l = px(24), r = px(6), cw = (ch.getWidth() - l - r) / n;
+				int k = (int) Math.floor((x - l) / cw);
+				if (t >= 0 && k >= 0 && k < n) dayBubble(from + k, t);
+			}
+		});
+		return ch;
 	}
 
 	// --- Season ---------------------------------------------------------------------------------
@@ -1441,6 +1647,16 @@ final class StatsPage {
 				cv.drawText(dayMonth(Agro.plus(seasonStart, (int) xmax)), w - r, h - px(5), pt);
 			}
 		};
+		final View chartF = chart;
+		onTap(chart, new TapAt() {
+			public void at(float x, float y) {
+				float l = px(34), r = px(8);
+				double xmax = Math.max(1, now.get(now.size() - 1)[0]);
+				int q = (int) Math.round((x - l) / ((chartF.getWidth() - l - r) / xmax));
+				if (q < 0 || q > xmax) return;
+				gddBubble(q, now, last, xt);
+			}
+		});
 		c.addView(chart, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(200)));
 		LinearLayout lg = row();
 		lg.setPadding(0, px(6), 0, 0);
@@ -1715,7 +1931,7 @@ final class StatsPage {
 		TextView m = tv(main, 16, true, color);
 		m.setGravity(Gravity.CENTER);
 		c.addView(m, wide(4));
-		TextView s = tv(sub, 12, false, dim);
+		FitText s = tv(sub, 12, false, dim);
 		s.setGravity(Gravity.CENTER);
 		c.addView(s, wide(2));
 		return c;

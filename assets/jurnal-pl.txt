@@ -1,7 +1,9 @@
-Obecna wersja: v.2.001 · 17.11.2026
+Obecna wersja: v.2.010 · 17.11.2026
 DZIAŁKI
+- Dymki w Statystykach: dotknięcie godziny w oknie oprysku, dnia na wykresach lub wiersza gleby otwiera dymek z wyjaśnieniem; okno oprysku przesuwa się samo.
 - Edycja działki: ołówek otwiera stronę działki: nazwa, uprawa (lista według sezonu daty siewu lub Inna uprawa…), data siewu, powierzchnia; narożniki przesuwa się na mapie.
-- Statystyki: dla każdej działki Działanie dnia i 4 karty: Operacyjne (okno oprysku godzina po godzinie, Delta-T, wiatr, mokry liść), Woda i gleba (deszcz, parowanie, gleba na 6 i 18 cm), Sezon (stopniodni wobec zeszłego roku, szacowana faza) i Ryzyka 72 h (choroby grzybowe, przymrozek przy gruncie, upał, wiatr i grad); zapis do PDF lub CSV.
+- Status operacyjny: u góry uprawa i data siewu; z uprawą werdykt uwzględnia też schnięcie kropel (ΔT) i jej chorobę.
+- Statystyki: dla każdej działki Działanie dnia i 4 karty: Operacyjne (okno oprysku godzina po godzinie, schnięcie kropel (ΔT), wiatr, mokry liść), Woda i gleba (deszcz, parowanie, gleba na 6 i 18 cm), Sezon (stopniodni wobec zeszłego roku, szacowana faza) i Ryzyka 72 h (choroby grzybowe, przymrozek przy gruncie, upał, wiatr i grad); zapis do PDF lub CSV.
 USTAWIENIA
 - Język wyświetlania: w ☰ angielski i język kraju; Inne języki: pozostałe języki kraju, duże języki UE, rumuński i język telefonu (w USA tylko angielski i hiszpański).
 - Ulepszenia wyglądu i poprawki błędów.

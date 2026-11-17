@@ -214,7 +214,10 @@ public final class Agro {
 		double pv = v >= 3 && v <= 10 ? 0 : Math.abs(v - 6.5) * 4;
 		double pd = Double.isNaN(dt) || (dt >= 3 && dt <= 7) ? 0 : Math.abs(dt - 5) * 8;
 		double pt = t >= 12 && t <= 22 ? 0 : Math.abs(t - 17) * 2.5;
-		return (int) Math.max(0, Math.min(100, Math.round(100 - pv - pd - pt)));
+		int sc = (int) Math.max(0, Math.min(100, Math.round(100 - pv - pd - pt)));
+		// v2.010 (Viorel): the verdict never better than the ΔT's own zone.
+		if (dtLevel(dt) == 1) sc = Math.min(sc, 69);
+		return sc;
 	}
 
 	/** The colour level of a score: 0 good (70+), 1 care (30–69), 2 no; -1 unknown. */
@@ -222,9 +225,12 @@ public final class Agro {
 		return score < 0 ? -1 : score >= 70 ? 0 : score >= 30 ? 1 : 2;
 	}
 
-	/** The Delta-T zone: 0 good (2–8), 1 care (8–10), 2 no; -1 unknown. */
+	/**
+	 * The Delta-T zone: 0 good (2–8), 1 care (1.5–2 and 8–10.5), 2 no (under 1.5, over 10.5); -1 unknown.
+	 * v2.010 (Viorel): the same limits as block(), so the hour's verdict and its ΔT agree.
+	 */
 	public static int dtLevel(double dt) {
-		return Double.isNaN(dt) ? -1 : dt < 2 ? 2 : dt <= 8 ? 0 : dt <= 10 ? 1 : 2;
+		return Double.isNaN(dt) ? -1 : dt < 1.5 ? 2 : dt < 2 ? 1 : dt <= 8 ? 0 : dt <= 10.5 ? 1 : 2;
 	}
 
 	/** The best spray window in the N hours from I: { first hour, the hour after the last, best score }, or null. */

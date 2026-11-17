@@ -1,7 +1,9 @@
-Verżjoni attwali: v.2.001 · 17.11.2026
+Verżjoni attwali: v.2.010 · 17.11.2026
 GĦELIEQI
+- Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
-- Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, Delta-T, riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
+- Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, tnixxif tal-qtar (ΔT), riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
+- Status operazzjonali: fuq, il-wiċċ u d-data taż-żriegħ; b'wiċċ, is-sentenza tqis ukoll it-tnixxif tal-qtar (ΔT) u l-marda tiegħu.
 SETTINGS
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.

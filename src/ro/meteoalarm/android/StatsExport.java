@@ -42,7 +42,7 @@ final class StatsExport {
 		if (cur < 0) return out;
 		out.add(new String[] { Tr.t("Operational", "Operațional") });
 		double dt = Agro.deltaT(d, cur);
-		out.add(new String[] { Tr.t("Delta-T now", "Delta-T acum"), s.degDelta(dt) });
+		out.add(new String[] { Tr.t("Drop drying (ΔT) now", "Uscare picături (ΔT) acum"), s.degDelta(dt) });
 		out.add(new String[] { Tr.t("Wind / gusts now", "Vânt / rafale acum"), s.kmh(d.wind[cur]) + " / " + s.kmh(d.gust[cur]) });
 		int[] w = Agro.wetNow(d, cur);
 		out.add(new String[] { Tr.t("Wet leaf now", "Frunză umedă acum"), w[0] + " h" });

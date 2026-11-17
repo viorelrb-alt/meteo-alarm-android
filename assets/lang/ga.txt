@@ -1432,3 +1432,46 @@ root growth	fás fréimhe
 tuber forming	foirmiú tiúbar
 regrowth	athfhás
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Ag an tairseach: is féidir cur má fhanann na laethanta romhainn te.
+Balance of the day	Cothromaíocht an lae
+Clock while charging	Clog le linn luchtaithe
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Suimíonn céimlaethanta an teas os cionn bhunteocht an bharra; leanann na céimeanna fáis iad.
+Drop drying (ΔT) now	Triomú braonta (ΔT) anois
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Triomú braonta (ΔT) os cionn 10.5 °C: triomaíonn na braonta san aer.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Triomú braonta (ΔT) faoi 1.5 °C: triomaíonn na braonta ró-mhall agus séideann siad.
+Drop drying (ΔT): {1}	Triomú braonta (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = an méid uisce a chailleann an ithir agus na plandaí in aon lá.
+Evaporation (ET₀)	Galú (ET₀)
+Forecast, 	Réamhaisnéis, 
+Forecast. 	Réamhaisnéis. 
+Gained that day	Gnóthaithe an lá sin
+Last year	Anuraidh
+Measured (model), 	Tomhaiste (samhail), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Ar scáileán ceapaí, nuair is gá amháin: an breithiúnas don spraeáil (dearg, buí, glas), an phríomhchúis lena teorainn agus rioscaí na 24 uair an chloig romhainn. Ag an mbarr, an barr agus dáta a churtha; le barr, cuireann an breithiúnas triomú braonta (ΔT) agus a ghalar san áireamh freisin. Taispeánann tadhall an chéad fhuinneog mhaith eile.
+Open-Meteo model estimate, not a measurement.	Meastachán ó shamhail Open-Meteo, ní tomhas.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Oibríochtúil: an fhuinneog spraeála uair ar uair (glas, buí, dearg; is é ΔT an uimhir), bogann sí léi féin; osclaíonn tadhall ar uair a bolgán. Triomú braonta (ΔT, 2–8 °C is fearr), gaoth agus séideáin, duilleog fhliuch.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Séasúr: céimlaethanta (GDD) ón gcur i gcomparáid le hanuraidh, an chéim mheasta, strus teasa agus laethanta seaca. Teastaíonn an barr agus an dáta curtha. Taispeánann tadhall ar an gcairt an lá sin.
+Soil at 	Ithir ag 
+Sowing threshold	Tairseach curtha
+Stage	Céim
+Tap an hour for its explanation.	Tadhaill uair chun a míniú a fheiceáil.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Na barraí ar chárta ceapaí nó Staitisticí ina bolgán. Ag an mbarr: ainm na ceapaí, 4 chluaisín agus PDF · CSV.
+This season	An séasúr seo
+Too cold for sowing: the seeds come up slowly and unevenly.	Ró-fhuar le cur: eascraíonn na síolta go mall agus go míchothrom.
+Too cold: {1}	Ró-fhuar: {1}
+Warm enough for sowing.	Te go leor le cur.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Uisce & Ithir: 7 lá báistí agus galaithe (ET₀) agus an chothromaíocht; cairt an ama atá caite agus na 7 lá romhainn; ithir ag 6 agus 18 cm, taise an dromchla, innealra ar an ngort. Míníonn tadhall ar lá nó ar shraith ithreach é.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Tá an ghaoth, triomú braonta (ΔT) agus an teocht ar fad sa raon maith.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Gaoth, triomú braonta (ΔT) nó teocht lasmuigh den raon idéalach.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Le barr freisin: os cionn 5 °C, triomú braonta (ΔT) 1.5–10.5 °C.
+drops dry too fast (ΔT)	braonta ag triomú ró-thapa (ΔT)
+drops dry too slowly (ΔT)	braonta ag triomú ró-mhall (ΔT)
+from the corners	ó na coirnéil
+over 10.5 °C the drops dry in the air	os cionn 10.5 °C triomaíonn na braonta san aer
+too cold	ró-fhuar
+under 1.5 °C the drops stay wet and drift	faoi 1.5 °C fanann na braonta fliuch agus séideann siad
+under 5 °C the treatment does not work	faoi 5 °C ní oibríonn an chóireáil
+{1} h of wet leaves from {2}	{1} h de dhuilleoga fliucha ó {2}
+{1} risk: {2}	Riosca {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = teocht an aeir lúide teocht an bholgáin fhliuch: cé chomh tapa a thriomaíonn braon. 2–8 °C is fearr. Faoi 2 °C fanann na braonta agus séideann siad, os cionn 10 °C triomaíonn siad san aer.

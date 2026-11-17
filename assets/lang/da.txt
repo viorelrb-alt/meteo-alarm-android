@@ -1432,3 +1432,46 @@ root growth	roevækst
 tuber forming	knoldsætning
 regrowth	genvækst
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Ved tærsklen: du kan så, hvis de næste dage forbliver varme.
+Balance of the day	Dagens balance
+Clock while charging	Ur under opladning
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Graddage lægger varmen over afgrødens basistemperatur sammen; stadierne følger dem.
+Drop drying (ΔT) now	Dråbetørring (ΔT) nu
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Dråbetørring (ΔT) over 10,5 °C: dråberne tørrer i luften.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Dråbetørring (ΔT) under 1,5 °C: dråberne tørrer for langsomt og driver.
+Drop drying (ΔT): {1}	Dråbetørring (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = hvor meget vand jorden og planterne mister på en dag.
+Evaporation (ET₀)	Fordampning (ET₀)
+Forecast, 	Prognose, 
+Forecast. 	Prognose. 
+Gained that day	Tilvækst den dag
+Last year	Sidste år
+Measured (model), 	Målt (model), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	På en marks skærm, kun når der er brug for det: dommen for sprøjtning (rød, gul, grøn), hovedårsagen med dens grænse og risiciene for de næste 24 timer. Øverst afgrøden og sådatoen; med en afgrøde tager dommen også hensyn til dråbetørring (ΔT) og dens sygdom. Et tryk viser det næste gode vindue.
+Open-Meteo model estimate, not a measurement.	Skøn fra Open-Meteo-modellen, ikke en måling.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operativt: sprøjtevinduet time for time (grøn, gul, rød; tallet er ΔT), det bevæger sig af sig selv; et tryk på en time åbner dens boble. Dråbetørring (ΔT, optimalt 2–8 °C), vind og vindstød, vådt blad.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Sæson: graddage (GDD) fra såningen sammenlignet med sidste år, det anslåede stadie, varmestress og frostdage. Kræver afgrøden og sådatoen. Et tryk på grafen viser den dag.
+Soil at 	Jord i 
+Sowing threshold	Såtærskel
+Stage	Stadie
+Tap an hour for its explanation.	Tryk på en time for forklaring.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Søjlerne på en marks kort eller Statistik i dens boble. Øverst: markens navn, 4 faner og PDF · CSV.
+This season	Denne sæson
+Too cold for sowing: the seeds come up slowly and unevenly.	For koldt til såning: frøene spirer langsomt og ujævnt.
+Too cold: {1}	For koldt: {1}
+Warm enough for sowing.	Varmt nok til såning.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Vand & jord: 7 dages regn og fordampning (ET₀) og balancen; grafen over fortiden og de næste 7 dage; jord i 6 og 18 cm, overfladefugt, kørsel med maskiner. Et tryk på en dag eller en jordrække forklarer den.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Vind, dråbetørring (ΔT) og temperatur er alle i det gode område.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Vind, dråbetørring (ΔT) eller temperatur uden for det ideelle område.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Med en afgrøde også: over 5 °C, dråbetørring (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	dråber tørrer for hurtigt (ΔT)
+drops dry too slowly (ΔT)	dråber tørrer for langsomt (ΔT)
+from the corners	fra hjørnerne
+over 10.5 °C the drops dry in the air	over 10,5 °C tørrer dråberne i luften
+too cold	for koldt
+under 1.5 °C the drops stay wet and drift	under 1,5 °C forbliver dråberne våde og driver
+under 5 °C the treatment does not work	under 5 °C virker behandlingen ikke
+{1} h of wet leaves from {2}	{1} t våde blade fra {2}
+{1} risk: {2}	Risiko for {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = lufttemperatur minus vådtemperatur: hvor hurtigt en dråbe tørrer. 2–8 °C optimalt. Under 2 °C bliver dråberne og driver, over 10 °C tørrer de i luften.

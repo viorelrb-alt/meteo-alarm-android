@@ -1,9 +1,11 @@
-Nuvarande version: v.2.001 · 17.11.2026
+Nuvarande version: v.2.010 · 17.11.2026
 INSTÄLLNINGAR
 - Visningsspråk: i ☰ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
 SKIFTEN
+- Bubblor i Statistik: ett tryck på en timme i sprutfönstret, en dag i diagrammen eller en markrad öppnar en bubbla med förklaring; sprutfönstret rör sig av sig självt.
+- Driftstatus: överst grödan och sådatumet; med en gröda tar domen också hänsyn till dropptorkning (ΔT) och dess sjukdom.
 - Redigera skifte: pennan öppnar skiftets sida: namn, gröda (lista efter sådatumets säsong eller Annan gröda…), sådatum, areal; hörnen flyttas på kartan.
-- Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, Delta-T, vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
+- Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
 - Designförbättringar och felrättningar.
 
 Version 1.4 (v.1.400 – v.1.520)

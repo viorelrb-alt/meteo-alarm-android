@@ -1432,3 +1432,46 @@ root growth	biešu augšana
 tuber forming	bumbuļu veidošanās
 regrowth	ataugšana
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Uz sliekšņa: sēt var, ja nākamās dienas paliks siltas.
+Balance of the day	Dienas bilance
+Clock while charging	Pulkstenis uzlādes laikā
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Grāddienas summē siltumu virs kultūras bāzes temperatūras; attīstības fāzes seko tām.
+Drop drying (ΔT) now	Pilienu žūšana (ΔT) tagad
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Pilienu žūšana (ΔT) virs 10,5 °C: pilieni izžūst gaisā.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Pilienu žūšana (ΔT) zem 1,5 °C: pilieni žūst pārāk lēni un tiek aiznesti.
+Drop drying (ΔT): {1}	Pilienu žūšana (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = cik daudz ūdens augsne un augi zaudē dienā.
+Evaporation (ET₀)	Iztvaikošana (ET₀)
+Forecast, 	Prognoze, 
+Forecast. 	Prognoze. 
+Gained that day	Iegūts tajā dienā
+Last year	Pagājušajā gadā
+Measured (model), 	Izmērīts (modelis), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Lauka ekrānā, tikai kad vajag: smidzināšanas spriedums (sarkans, dzeltens, zaļš), galvenais iemesls ar tā robežu un nākamo 24 stundu riski. Augšā kultūra un sējas datums; ar kultūru spriedums ņem vērā arī pilienu žūšanu (ΔT) un tās slimību. Pieskāriens parāda nākamo labo logu.
+Open-Meteo model estimate, not a measurement.	Open-Meteo modeļa novērtējums, nevis mērījums.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operatīvi: smidzināšanas logs stundu pa stundai (zaļš, dzeltens, sarkans; skaitlis ir ΔT), tas kustas pats; pieskāriens stundai atver tās burbuli. Pilienu žūšana (ΔT, optimāli 2–8 °C), vējš un brāzmas, slapja lapa.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Sezona: grāddienas (GDD) no sējas salīdzinājumā ar pagājušo gadu, aplēstā fāze, karstuma stress un sala dienas. Vajadzīga kultūra un sējas datums. Pieskāriens grafikam parāda to dienu.
+Soil at 	Augsne 
+Sowing threshold	Sējas slieksnis
+Stage	Fāze
+Tap an hour for its explanation.	Pieskarieties stundai, lai redzētu skaidrojumu.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Joslas lauka kartītē vai Statistika tā burbulī. Augšā: lauka nosaukums, 4 cilnes un PDF · CSV.
+This season	Šī sezona
+Too cold for sowing: the seeds come up slowly and unevenly.	Sējai par aukstu: sēklas dīgst lēni un nevienmērīgi.
+Too cold: {1}	Par aukstu: {1}
+Warm enough for sowing.	Sējai pietiekami silts.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Ūdens un augsne: 7 dienu nokrišņi un iztvaikošana (ET₀) un bilance; pagātnes un nākamo 7 dienu grafiks; augsne 6 un 18 cm dziļumā, virsmas mitrums, iebraukšana ar tehniku. Pieskāriens dienai vai augsnes rindai to izskaidro.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Vējš, pilienu žūšana (ΔT) un temperatūra ir labajā diapazonā.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Vējš, pilienu žūšana (ΔT) vai temperatūra ārpus ideālā diapazona.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Ar kultūru arī: virs 5 °C, pilienu žūšana (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	pilieni žūst pārāk ātri (ΔT)
+drops dry too slowly (ΔT)	pilieni žūst pārāk lēni (ΔT)
+from the corners	no stūriem
+over 10.5 °C the drops dry in the air	virs 10,5 °C pilieni izžūst gaisā
+too cold	par aukstu
+under 1.5 °C the drops stay wet and drift	zem 1,5 °C pilieni paliek slapji un tiek aiznesti
+under 5 °C the treatment does not work	zem 5 °C apstrāde nedarbojas
+{1} h of wet leaves from {2}	{1} h slapjas lapas no {2}
+{1} risk: {2}	{1} – risks: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = gaisa temperatūra mīnus mitrā termometra temperatūra: cik ātri piliens izžūst. 2–8 °C optimāli. Zem 2 °C pilieni paliek un tiek aiznesti, virs 10 °C izžūst gaisā.

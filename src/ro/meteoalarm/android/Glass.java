@@ -211,6 +211,27 @@ final class Glass {
 		c.drawRoundRect(r, rad, rad, p);
 	}
 
+	/**
+	 * v2.010 (Viorel): a bubble opened inside a page (Statistics): the blurred copy of CONTENT
+	 * for its own frosted glass, the page itself stays sharp. Null CONTENT drops the copy.
+	 */
+	static void grab(View content) {
+		if (content == null) {
+			shot = null;
+			shotW = 0;
+			return;
+		}
+		Bitmap b = Backdrop.snap(content, 6);
+		if (b == null) return;
+		int[] at = new int[2];
+		content.getLocationOnScreen(at);
+		shot = b;
+		shotX = at[0];
+		shotY = at[1];
+		shotW = content.getWidth();
+		shotH = content.getHeight();
+	}
+
 	/** v5.24: a window that draws its own frosted glass (the screen behind it stays sharp). */
 	interface Local {
 	}
@@ -327,8 +348,12 @@ final class Glass {
 			invalidate();
 		}
 
-		/** A small copy of the screen (1/F), blurred. */
 		private Bitmap snapshot(int f) {
+			return snap(content, f);
+		}
+
+		/** A small copy of CONTENT (1/F), blurred. */
+		static Bitmap snap(View content, int f) {
 			try {
 				int W = content.getWidth(), H = content.getHeight();
 				if (W <= 0 || H <= 0) return null;

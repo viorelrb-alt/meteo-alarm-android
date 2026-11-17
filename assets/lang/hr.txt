@@ -1432,3 +1432,46 @@ root growth	rast korijena
 tuber forming	stvaranje gomolja
 regrowth	ponovni rast
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Na pragu: može se sijati ako sljedeći dani ostanu topli.
+Balance of the day	Bilanca dana
+Clock while charging	Sat tijekom punjenja
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Stupanj-dani zbrajaju toplinu iznad bazne temperature kulture; faze ih prate.
+Drop drying (ΔT) now	Sušenje kapljica (ΔT) sada
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Sušenje kapljica (ΔT) iznad 10,5 °C: kapljice se suše u zraku.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Sušenje kapljica (ΔT) ispod 1,5 °C: kapljice se suše presporo i zanose se.
+Drop drying (ΔT): {1}	Sušenje kapljica (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = koliko vode tlo i biljke izgube u jednom danu.
+Evaporation (ET₀)	Isparavanje (ET₀)
+Forecast, 	Prognoza, 
+Forecast. 	Prognoza. 
+Gained that day	Dobiveno tog dana
+Last year	Prošle godine
+Measured (model), 	Izmjereno (model), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Na zaslonu parcele, samo kad je potrebno: ocjena za prskanje (crveno, žuto, zeleno), glavni razlog s pragom i rizici sljedeća 24 sata. Gore kultura i datum sjetve; s kulturom ocjena uzima u obzir i sušenje kapljica (ΔT) i njezinu bolest. Dodir pokazuje sljedeći dobar prozor.
+Open-Meteo model estimate, not a measurement.	Procjena modela Open-Meteo, ne mjerenje.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operativno: prozor prskanja sat po sat (zeleno, žuto, crveno; broj je ΔT), pomiče se sam; dodir sata otvara njegov oblačić. Sušenje kapljica (ΔT, optimalno 2–8 °C), vjetar i udari, mokar list.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Sezona: stupanj-dani (GDD) od sjetve u usporedbi s prošlom godinom, procijenjena faza, toplinski stres i dani mraza. Potrebni su kultura i datum sjetve. Dodir grafa pokazuje taj dan.
+Soil at 	Tlo na 
+Sowing threshold	Prag sjetve
+Stage	Faza
+Tap an hour for its explanation.	Dodirni sat za objašnjenje.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Stupci na kartici parcele ili Statistika u njezinu oblačiću. Gore: naziv parcele, 4 kartice i PDF · CSV.
+This season	Ova sezona
+Too cold for sowing: the seeds come up slowly and unevenly.	Prehladno za sjetvu: sjeme niče sporo i neujednačeno.
+Too cold: {1}	Prehladno: {1}
+Warm enough for sowing.	Dovoljno toplo za sjetvu.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Voda i tlo: 7 dana kiše i isparavanja (ET₀) i bilanca; graf prošlosti i sljedećih 7 dana; tlo na 6 i 18 cm, vlaga površine, ulazak strojeva. Dodir dana ili retka tla ga objašnjava.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Vjetar, sušenje kapljica (ΔT) i temperatura su svi u dobrom rasponu.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Vjetar, sušenje kapljica (ΔT) ili temperatura izvan idealnog raspona.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	S kulturom i: iznad 5 °C, sušenje kapljica (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	kapljice se suše prebrzo (ΔT)
+drops dry too slowly (ΔT)	kapljice se suše presporo (ΔT)
+from the corners	iz kutova
+over 10.5 °C the drops dry in the air	iznad 10,5 °C kapljice se suše u zraku
+too cold	prehladno
+under 1.5 °C the drops stay wet and drift	ispod 1,5 °C kapljice ostaju mokre i zanose se
+under 5 °C the treatment does not work	ispod 5 °C tretman ne djeluje
+{1} h of wet leaves from {2}	{1} h mokrog lišća od {2}
+{1} risk: {2}	Rizik – {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura zraka minus temperatura mokrog termometra: koliko se brzo kapljica suši. 2–8 °C optimalno. Ispod 2 °C kapljice ostaju i zanose se, iznad 10 °C suše se u zraku.

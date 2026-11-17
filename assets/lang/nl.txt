@@ -1432,3 +1432,46 @@ root growth	wortelgroei
 tuber forming	knolvorming
 regrowth	hergroei
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Op de drempel: zaaien kan als de komende dagen warm blijven.
+Balance of the day	Balans van de dag
+Clock while charging	Klok tijdens opladen
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Graaddagen tellen de warmte boven de basistemperatuur van het gewas op; de stadia volgen ze.
+Drop drying (ΔT) now	Druppeldroging (ΔT) nu
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Druppeldroging (ΔT) boven 10,5 °C: de druppels drogen in de lucht.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Druppeldroging (ΔT) onder 1,5 °C: de druppels drogen te traag en drijven af.
+Drop drying (ΔT): {1}	Druppeldroging (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = hoeveel water de bodem en de planten op een dag verliezen.
+Evaporation (ET₀)	Verdamping (ET₀)
+Forecast, 	Verwachting, 
+Forecast. 	Verwachting. 
+Gained that day	Gewonnen die dag
+Last year	Vorig jaar
+Measured (model), 	Gemeten (model), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Op het scherm van een perceel, alleen als het nodig is: het oordeel voor spuiten (rood, geel, groen), de hoofdreden met haar grens en de risico's van de komende 24 uur. Bovenaan het gewas en de zaaidatum; met een gewas houdt het oordeel ook rekening met de druppeldroging (ΔT) en zijn ziekte. Een tik toont het volgende goede venster.
+Open-Meteo model estimate, not a measurement.	Schatting van het Open-Meteo-model, geen meting.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operationeel: het spuitvenster uur per uur (groen, geel, rood; het getal is ΔT), het schuift vanzelf; een tik op een uur opent zijn ballon. Druppeldroging (ΔT, optimaal 2–8 °C), wind en windstoten, nat blad.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Seizoen: graaddagen (GDD) sinds het zaaien tegenover vorig jaar, het geschatte stadium, hittestress en vorstdagen. Het gewas en de zaaidatum zijn nodig. Een tik op de grafiek toont die dag.
+Soil at 	Bodem op 
+Sowing threshold	Zaaidrempel
+Stage	Stadium
+Tap an hour for its explanation.	Tik op een uur voor uitleg.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	De balkjes op de kaart van een perceel of Statistieken in zijn ballon. Bovenaan: de naam van het perceel, 4 tabbladen en PDF · CSV.
+This season	Dit seizoen
+Too cold for sowing: the seeds come up slowly and unevenly.	Te koud om te zaaien: de zaden komen traag en ongelijk op.
+Too cold: {1}	Te koud: {1}
+Warm enough for sowing.	Warm genoeg om te zaaien.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Water & Bodem: 7 dagen regen en verdamping (ET₀) en de balans; de grafiek van het verleden en de komende 7 dagen; bodem op 6 en 18 cm, oppervlaktevocht, berijdbaarheid voor machines. Een tik op een dag of een bodemregel legt het uit.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Wind, druppeldroging (ΔT) en temperatuur zitten allemaal in het goede bereik.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Wind, druppeldroging (ΔT) of temperatuur buiten het ideale bereik.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Met een gewas ook: boven 5 °C, druppeldroging (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	druppels drogen te snel (ΔT)
+drops dry too slowly (ΔT)	druppels drogen te traag (ΔT)
+from the corners	uit de hoeken
+over 10.5 °C the drops dry in the air	boven 10,5 °C drogen de druppels in de lucht
+too cold	te koud
+under 1.5 °C the drops stay wet and drift	onder 1,5 °C blijven de druppels nat en drijven af
+under 5 °C the treatment does not work	onder 5 °C werkt de behandeling niet
+{1} h of wet leaves from {2}	{1} u nat blad vanaf {2}
+{1} risk: {2}	Risico op {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = luchttemperatuur min natteboltemperatuur: hoe snel een druppel droogt. 2–8 °C optimaal. Onder 2 °C blijven de druppels en drijven af, boven 10 °C drogen ze in de lucht.

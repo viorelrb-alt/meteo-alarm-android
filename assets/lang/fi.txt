@@ -1432,3 +1432,46 @@ root growth	juurikkaan kasvu
 tuber forming	mukulanmuodostus
 regrowth	uusi kasvu
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Kynnyksellä: kylvää voi, jos seuraavat päivät pysyvät lämpiminä.
+Balance of the day	Päivän tase
+Clock while charging	Kello latauksen aikana
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Lämpösumma laskee yhteen lämmön viljelykasvin peruslämpötilan yläpuolella; kasvuvaiheet seuraavat sitä.
+Drop drying (ΔT) now	Pisaroiden kuivuminen (ΔT) nyt
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Pisaroiden kuivuminen (ΔT) yli 10,5 °C: pisarat kuivuvat ilmassa.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Pisaroiden kuivuminen (ΔT) alle 1,5 °C: pisarat kuivuvat liian hitaasti ja kulkeutuvat.
+Drop drying (ΔT): {1}	Pisaroiden kuivuminen (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = kuinka paljon vettä maa ja kasvit menettävät päivässä.
+Evaporation (ET₀)	Haihdunta (ET₀)
+Forecast, 	Ennuste, 
+Forecast. 	Ennuste. 
+Gained that day	Kertymä sinä päivänä
+Last year	Viime vuonna
+Measured (model), 	Mitattu (malli), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Lohkon näytöllä, vain tarvittaessa: ruiskutuksen arvio (punainen, keltainen, vihreä), pääsyy rajoineen ja seuraavan 24 tunnin riskit. Ylhäällä viljelykasvi ja kylvöpäivä; viljelykasvin kanssa arvio huomioi myös pisaroiden kuivumisen (ΔT) ja sen taudin. Napautus näyttää seuraavan hyvän ikkunan.
+Open-Meteo model estimate, not a measurement.	Open-Meteo-mallin arvio, ei mittaus.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Toiminta: ruiskutusikkuna tunti tunnilta (vihreä, keltainen, punainen; luku on ΔT), se liikkuu itsestään; tunnin napautus avaa sen kuplan. Pisaroiden kuivuminen (ΔT, paras 2–8 °C), tuuli ja puuskat, märkä lehti.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Kausi: lämpösumma (GDD) kylvöstä verrattuna viime vuoteen, arvioitu kasvuvaihe, lämpöstressi ja pakkaspäivät. Tarvitsee viljelykasvin ja kylvöpäivän. Kaavion napautus näyttää sen päivän.
+Soil at 	Maa 
+Sowing threshold	Kylvökynnys
+Stage	Kasvuvaihe
+Tap an hour for its explanation.	Napauta tuntia nähdäksesi selityksen.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Palkit lohkon kortissa tai Tilastot sen kuplassa. Ylhäällä: lohkon nimi, 4 välilehteä ja PDF · CSV.
+This season	Tämä kausi
+Too cold for sowing: the seeds come up slowly and unevenly.	Liian kylmä kylvölle: siemenet itävät hitaasti ja epätasaisesti.
+Too cold: {1}	Liian kylmä: {1}
+Warm enough for sowing.	Riittävän lämmin kylvölle.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Vesi & maa: 7 päivän sade ja haihdunta (ET₀) sekä tase; kaavio menneestä ja seuraavasta 7 päivästä; maa 6 ja 18 cm:ssä, pintakosteus, koneilla ajo. Päivän tai maarivin napautus selittää sen.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Tuuli, pisaroiden kuivuminen (ΔT) ja lämpötila ovat kaikki hyvällä alueella.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Tuuli, pisaroiden kuivuminen (ΔT) tai lämpötila ihannealueen ulkopuolella.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Viljelykasvin kanssa myös: yli 5 °C, pisaroiden kuivuminen (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	pisarat kuivuvat liian nopeasti (ΔT)
+drops dry too slowly (ΔT)	pisarat kuivuvat liian hitaasti (ΔT)
+from the corners	kulmista
+over 10.5 °C the drops dry in the air	yli 10,5 °C pisarat kuivuvat ilmassa
+too cold	liian kylmä
+under 1.5 °C the drops stay wet and drift	alle 1,5 °C pisarat pysyvät märkinä ja kulkeutuvat
+under 5 °C the treatment does not work	alle 5 °C käsittely ei tehoa
+{1} h of wet leaves from {2}	{1} h märkiä lehtiä klo {2} alkaen
+{1} risk: {2}	{1} – riski: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = ilman lämpötila miinus märkälämpötila: kuinka nopeasti pisara kuivuu. 2–8 °C paras. Alle 2 °C pisarat jäävät ja kulkeutuvat, yli 10 °C ne kuivuvat ilmassa.

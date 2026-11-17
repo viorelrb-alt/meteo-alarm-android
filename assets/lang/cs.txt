@@ -1432,3 +1432,46 @@ root growth	růst bulvy
 tuber forming	tvorba hlíz
 regrowth	obrůstání
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Na prahu: lze sít, pokud příští dny zůstanou teplé.
+Balance of the day	Bilance dne
+Clock while charging	Hodiny při nabíjení
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Denní stupně sčítají teplo nad základní teplotou plodiny; fáze se jimi řídí.
+Drop drying (ΔT) now	Vysychání kapek (ΔT) nyní
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Vysychání kapek (ΔT) nad 10,5 °C: kapky vysychají ve vzduchu.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Vysychání kapek (ΔT) pod 1,5 °C: kapky schnou příliš pomalu a jsou unášeny.
+Drop drying (ΔT): {1}	Vysychání kapek (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = kolik vody půda a rostliny ztratí za den.
+Evaporation (ET₀)	Výpar (ET₀)
+Forecast, 	Předpověď, 
+Forecast. 	Předpověď. 
+Gained that day	Přírůstek toho dne
+Last year	Loni
+Measured (model), 	Naměřeno (model), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Na obrazovce pozemku, jen když je třeba: verdikt pro postřik (červená, žlutá, zelená), hlavní důvod s jeho limitem a rizika příštích 24 hodin. Nahoře plodina a datum setí; s plodinou verdikt zohledňuje i vysychání kapek (ΔT) a její chorobu. Klepnutí ukáže další dobré okno.
+Open-Meteo model estimate, not a measurement.	Odhad modelu Open-Meteo, ne měření.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Provozní: okno postřiku hodinu po hodině (zelená, žlutá, červená; číslo je ΔT), posouvá se samo; klepnutí na hodinu otevře její bublinu. Vysychání kapek (ΔT, optimum 2–8 °C), vítr a nárazy, mokrý list.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Sezóna: denní stupně (GDD) od setí ve srovnání s loňskem, odhadovaná fáze, tepelný stres a mrazové dny. Potřebuje plodinu a datum setí. Klepnutí na graf ukáže ten den.
+Soil at 	Půda v 
+Sowing threshold	Práh setí
+Stage	Fáze
+Tap an hour for its explanation.	Klepni na hodinu pro vysvětlení.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Sloupce na kartě pozemku nebo Statistika v jeho bublině. Nahoře: název pozemku, 4 karty a PDF · CSV.
+This season	Tato sezóna
+Too cold for sowing: the seeds come up slowly and unevenly.	Na setí příliš zima: semena vzcházejí pomalu a nerovnoměrně.
+Too cold: {1}	Příliš zima: {1}
+Warm enough for sowing.	Dost teplo na setí.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Voda a půda: 7 dní srážek a výparu (ET₀) a bilance; graf minulosti a příštích 7 dní; půda v 6 a 18 cm, vlhkost povrchu, vjezd techniky. Klepnutí na den nebo řádek půdy ho vysvětlí.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Vítr, vysychání kapek (ΔT) i teplota jsou v dobrém rozmezí.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Vítr, vysychání kapek (ΔT) nebo teplota mimo ideální rozmezí.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	S plodinou také: nad 5 °C, vysychání kapek (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	kapky schnou příliš rychle (ΔT)
+drops dry too slowly (ΔT)	kapky schnou příliš pomalu (ΔT)
+from the corners	z rohů
+over 10.5 °C the drops dry in the air	nad 10,5 °C kapky vysychají ve vzduchu
+too cold	příliš zima
+under 1.5 °C the drops stay wet and drift	pod 1,5 °C kapky zůstávají mokré a jsou unášeny
+under 5 °C the treatment does not work	pod 5 °C ošetření nepůsobí
+{1} h of wet leaves from {2}	{1} h mokrých listů od {2}
+{1} risk: {2}	Riziko – {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = teplota vzduchu minus teplota vlhkého teploměru: jak rychle kapka schne. 2–8 °C optimum. Pod 2 °C kapky zůstávají a jsou unášeny, nad 10 °C vysychají ve vzduchu.

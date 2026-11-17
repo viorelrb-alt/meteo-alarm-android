@@ -1432,3 +1432,46 @@ root growth	juurvilja kasv
 tuber forming	mugulate moodustumine
 regrowth	taaskasv
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Lävel: külvata võib, kui järgmised päevad jäävad soojaks.
+Balance of the day	Päeva bilanss
+Clock while charging	Kell laadimise ajal
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Kraadpäevad liidavad soojuse üle kultuuri baastemperatuuri; arengufaasid järgivad neid.
+Drop drying (ΔT) now	Tilkade kuivamine (ΔT) praegu
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Tilkade kuivamine (ΔT) üle 10,5 °C: tilgad kuivavad õhus.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Tilkade kuivamine (ΔT) alla 1,5 °C: tilgad kuivavad liiga aeglaselt ja kanduvad.
+Drop drying (ΔT): {1}	Tilkade kuivamine (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = kui palju vett muld ja taimed päevas kaotavad.
+Evaporation (ET₀)	Aurumine (ET₀)
+Forecast, 	Prognoos, 
+Forecast. 	Prognoos. 
+Gained that day	Juurdekasv sel päeval
+Last year	Eelmisel aastal
+Measured (model), 	Mõõdetud (mudel), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Põllulapi ekraanil, ainult vajaduse korral: pritsimise otsus (punane, kollane, roheline), peamine põhjus koos piiriga ja järgmise 24 tunni riskid. Üleval kultuur ja külvikuupäev; kultuuriga arvestab otsus ka tilkade kuivamist (ΔT) ja selle haigust. Puudutus näitab järgmist head akent.
+Open-Meteo model estimate, not a measurement.	Open-Meteo mudeli hinnang, mitte mõõtmine.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operatiivne: pritsimisaken tund tunnilt (roheline, kollane, punane; arv on ΔT), liigub ise; tunni puudutus avab selle mulli. Tilkade kuivamine (ΔT, optimaalne 2–8 °C), tuul ja puhangud, märg leht.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Hooaeg: kraadpäevad (GDD) külvist võrreldes eelmise aastaga, hinnanguline faas, kuumastress ja külmapäevad. Vajab kultuuri ja külvikuupäeva. Graafiku puudutus näitab seda päeva.
+Soil at 	Muld 
+Sowing threshold	Külvilävi
+Stage	Faas
+Tap an hour for its explanation.	Puuduta tundi selgituse nägemiseks.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Tulbad põllulapi kaardil või Statistika selle mullis. Üleval: põllulapi nimi, 4 vahekaarti ja PDF · CSV.
+This season	See hooaeg
+Too cold for sowing: the seeds come up slowly and unevenly.	Külviks liiga külm: seemned tärkavad aeglaselt ja ebaühtlaselt.
+Too cold: {1}	Liiga külm: {1}
+Warm enough for sowing.	Külviks piisavalt soe.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Vesi ja muld: 7 päeva sademed ja aurumine (ET₀) ning bilanss; mineviku ja järgmise 7 päeva graafik; muld 6 ja 18 cm sügavusel, pinna niiskus, masinatega sisenemine. Päeva või mullarea puudutus selgitab seda.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Tuul, tilkade kuivamine (ΔT) ja temperatuur on kõik heas vahemikus.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Tuul, tilkade kuivamine (ΔT) või temperatuur väljaspool ideaalset vahemikku.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Kultuuriga ka: üle 5 °C, tilkade kuivamine (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	tilgad kuivavad liiga kiiresti (ΔT)
+drops dry too slowly (ΔT)	tilgad kuivavad liiga aeglaselt (ΔT)
+from the corners	nurkade järgi
+over 10.5 °C the drops dry in the air	üle 10,5 °C kuivavad tilgad õhus
+too cold	liiga külm
+under 1.5 °C the drops stay wet and drift	alla 1,5 °C jäävad tilgad märjaks ja kanduvad
+under 5 °C the treatment does not work	alla 5 °C töötlus ei toimi
+{1} h of wet leaves from {2}	{1} h märgi lehti alates {2}
+{1} risk: {2}	{1} – risk: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = õhutemperatuur miinus märja termomeetri temperatuur: kui kiiresti tilk kuivab. 2–8 °C optimaalne. Alla 2 °C tilgad jäävad ja kanduvad, üle 10 °C kuivavad õhus.

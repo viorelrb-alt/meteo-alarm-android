@@ -1432,3 +1432,46 @@ root growth	ανάπτυξη ρίζας
 tuber forming	σχηματισμός κονδύλων
 regrowth	αναβλάστηση
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Στο όριο: μπορείς να σπείρεις αν οι επόμενες μέρες μείνουν ζεστές.
+Balance of the day	Ισοζύγιο της ημέρας
+Clock while charging	Ρολόι κατά τη φόρτιση
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Οι βαθμοημέρες αθροίζουν τη ζέστη πάνω από τη θερμοκρασία βάσης της καλλιέργειας· τα στάδια τις ακολουθούν.
+Drop drying (ΔT) now	Στέγνωμα σταγόνων (ΔT) τώρα
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Στέγνωμα σταγόνων (ΔT) πάνω από 10,5 °C: οι σταγόνες στεγνώνουν στον αέρα.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Στέγνωμα σταγόνων (ΔT) κάτω από 1,5 °C: οι σταγόνες στεγνώνουν πολύ αργά και παρασύρονται.
+Drop drying (ΔT): {1}	Στέγνωμα σταγόνων (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = πόσο νερό χάνουν το έδαφος και τα φυτά σε μια μέρα.
+Evaporation (ET₀)	Εξάτμιση (ET₀)
+Forecast, 	Πρόγνωση, 
+Forecast. 	Πρόγνωση. 
+Gained that day	Κέρδος εκείνη τη μέρα
+Last year	Πέρυσι
+Measured (model), 	Μετρημένο (μοντέλο), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Στην οθόνη ενός αγροτεμαχίου, μόνο όταν χρειάζεται: η ετυμηγορία για ψεκασμό (κόκκινο, κίτρινο, πράσινο), ο κύριος λόγος με το όριό του και οι κίνδυνοι των επόμενων 24 ωρών. Επάνω η καλλιέργεια και η ημερομηνία σποράς· με καλλιέργεια η ετυμηγορία λαμβάνει υπόψη και το στέγνωμα σταγόνων (ΔT) και την ασθένειά της. Ένα άγγιγμα δείχνει το επόμενο καλό παράθυρο.
+Open-Meteo model estimate, not a measurement.	Εκτίμηση του μοντέλου Open-Meteo, όχι μέτρηση.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Επιχειρησιακά: το παράθυρο ψεκασμού ώρα προς ώρα (πράσινο, κίτρινο, κόκκινο· ο αριθμός είναι το ΔT), κινείται μόνο του· το άγγιγμα μιας ώρας ανοίγει τη φούσκα της. Στέγνωμα σταγόνων (ΔT, βέλτιστο 2–8 °C), άνεμος και ριπές, βρεγμένο φύλλο.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Σεζόν: βαθμοημέρες (GDD) από τη σπορά σε σύγκριση με πέρυσι, το εκτιμώμενο στάδιο, το θερμικό στρες και οι μέρες παγετού. Χρειάζεται την καλλιέργεια και την ημερομηνία σποράς. Το άγγιγμα του γραφήματος δείχνει εκείνη τη μέρα.
+Soil at 	Έδαφος στα 
+Sowing threshold	Όριο σποράς
+Stage	Στάδιο
+Tap an hour for its explanation.	Άγγιξε μια ώρα για την εξήγησή της.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Οι μπάρες στην κάρτα ενός αγροτεμαχίου ή Στατιστικά στη φούσκα του. Επάνω: το όνομα του αγροτεμαχίου, 4 καρτέλες και PDF · CSV.
+This season	Αυτή η σεζόν
+Too cold for sowing: the seeds come up slowly and unevenly.	Πολύ κρύο για σπορά: οι σπόροι φυτρώνουν αργά και άνισα.
+Too cold: {1}	Πολύ κρύο: {1}
+Warm enough for sowing.	Αρκετά ζεστό για σπορά.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Νερό & Έδαφος: 7 ημέρες βροχής και εξάτμισης (ET₀) και το ισοζύγιο· το γράφημα του παρελθόντος και των επόμενων 7 ημερών· έδαφος στα 6 και 18 cm, υγρασία επιφάνειας, είσοδος μηχανημάτων. Το άγγιγμα μιας μέρας ή μιας γραμμής εδάφους την εξηγεί.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Ο άνεμος, το στέγνωμα σταγόνων (ΔT) και η θερμοκρασία είναι όλα στο καλό εύρος.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Άνεμος, στέγνωμα σταγόνων (ΔT) ή θερμοκρασία εκτός του ιδανικού εύρους.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Με καλλιέργεια επίσης: πάνω από 5 °C, στέγνωμα σταγόνων (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	σταγόνες στεγνώνουν πολύ γρήγορα (ΔT)
+drops dry too slowly (ΔT)	σταγόνες στεγνώνουν πολύ αργά (ΔT)
+from the corners	από τις γωνίες
+over 10.5 °C the drops dry in the air	πάνω από 10,5 °C οι σταγόνες στεγνώνουν στον αέρα
+too cold	πολύ κρύο
+under 1.5 °C the drops stay wet and drift	κάτω από 1,5 °C οι σταγόνες μένουν βρεγμένες και παρασύρονται
+under 5 °C the treatment does not work	κάτω από 5 °C ο ψεκασμός δεν δρα
+{1} h of wet leaves from {2}	{1} h βρεγμένα φύλλα από {2}
+{1} risk: {2}	Κίνδυνος {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = θερμοκρασία αέρα μείον θερμοκρασία υγρού θερμομέτρου: πόσο γρήγορα στεγνώνει μια σταγόνα. 2–8 °C βέλτιστο. Κάτω από 2 °C οι σταγόνες μένουν και παρασύρονται, πάνω από 10 °C στεγνώνουν στον αέρα.

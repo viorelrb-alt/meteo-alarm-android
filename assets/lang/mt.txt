@@ -1432,3 +1432,46 @@ root growth	tkabbir tal-għerq
 tuber forming	formazzjoni tat-tuberi
 regrowth	tkabbir mill-ġdid
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Fil-limitu: tista' tiżra' jekk il-jiem li ġejjin jibqgħu sħan.
+Balance of the day	Bilanċ tal-ġurnata
+Clock while charging	Arloġġ waqt l-iċċarġjar
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Il-gradi-jiem jgħoddu s-sħana 'l fuq mit-temperatura bażi tal-wiċċ; l-istadji jimxu warajhom.
+Drop drying (ΔT) now	Tnixxif tal-qtar (ΔT) issa
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Tnixxif tal-qtar (ΔT) 'il fuq minn 10.5 °C: il-qtar jinxfu fl-arja.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Tnixxif tal-qtar (ΔT) taħt 1.5 °C: il-qtar jinxfu bil-mod wisq u jinġarru.
+Drop drying (ΔT): {1}	Tnixxif tal-qtar (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = kemm ilma jitilfu l-ħamrija u l-pjanti f'ġurnata.
+Evaporation (ET₀)	Evaporazzjoni (ET₀)
+Forecast, 	Tbassir, 
+Forecast. 	Tbassir. 
+Gained that day	Miksub dakinhar
+Last year	Is-sena l-oħra
+Measured (model), 	Imkejjel (mudell), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Fuq l-iskrin ta' biċċa art, biss meta jkun meħtieġ: is-sentenza għall-isprejjar (aħmar, isfar, aħdar), ir-raġuni ewlenija bil-limitu tagħha u r-riskji tal-24 siegħa li ġejjin. Fuq, il-wiċċ u d-data taż-żriegħ; b'wiċċ, is-sentenza tqis ukoll it-tnixxif tal-qtar (ΔT) u l-marda tiegħu. Mess juri t-tieqa tajba li jmiss.
+Open-Meteo model estimate, not a measurement.	Stima tal-mudell Open-Meteo, mhux kejl.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operazzjonali: it-tieqa tal-isprejjar siegħa b'siegħa (aħdar, isfar, aħmar; in-numru huwa ΔT), timxi waħedha; mess fuq siegħa jiftaħ il-bużżieqa tagħha. Tnixxif tal-qtar (ΔT, l-aħjar 2–8 °C), riħ u buffuri, werqa mxarba.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Staġun: gradi-jiem (GDD) miż-żriegħ meta mqabbla mas-sena l-oħra, l-istadju stmat, l-istress tas-sħana u l-jiem tal-ġlata. Jeħtieġ il-wiċċ u d-data taż-żriegħ. Mess fuq il-grafika juri dak il-jum.
+Soil at 	Ħamrija f' 
+Sowing threshold	Limitu taż-żriegħ
+Stage	Stadju
+Tap an hour for its explanation.	Mess siegħa għall-ispjegazzjoni tagħha.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Il-vireg fuq il-karta ta' biċċa art jew Statistika fil-bużżieqa tagħha. Fuq: l-isem tal-art, 4 tabs u PDF · CSV.
+This season	Dan l-istaġun
+Too cold for sowing: the seeds come up slowly and unevenly.	Kiesaħ wisq għaż-żriegħ: iż-żerriegħa tinbet bil-mod u mhux indaqs.
+Too cold: {1}	Kiesaħ wisq: {1}
+Warm enough for sowing.	Sħun biżżejjed għaż-żriegħ.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Ilma & Ħamrija: 7 ijiem ta' xita u evaporazzjoni (ET₀) u l-bilanċ; il-grafika tal-imgħoddi u tas-7 ijiem li ġejjin; ħamrija f'6 u 18 cm, umdità tal-wiċċ, dħul tal-makkinarju. Mess fuq jum jew ringiela tal-ħamrija jispjegah.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Ir-riħ, it-tnixxif tal-qtar (ΔT) u t-temperatura huma kollha fil-firxa t-tajba.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Riħ, tnixxif tal-qtar (ΔT) jew temperatura barra l-firxa ideali.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	B'wiċċ ukoll: 'il fuq minn 5 °C, tnixxif tal-qtar (ΔT) 1.5–10.5 °C.
+drops dry too fast (ΔT)	qtar jinxfu malajr wisq (ΔT)
+drops dry too slowly (ΔT)	qtar jinxfu bil-mod wisq (ΔT)
+from the corners	mill-kantunieri
+over 10.5 °C the drops dry in the air	'il fuq minn 10.5 °C il-qtar jinxfu fl-arja
+too cold	kiesaħ wisq
+under 1.5 °C the drops stay wet and drift	taħt 1.5 °C il-qtar jibqgħu mxarbin u jinġarru
+under 5 °C the treatment does not work	taħt 5 °C it-trattament ma jaħdimx
+{1} h of wet leaves from {2}	{1} h ta' weraq imxarrab minn {2}
+{1} risk: {2}	Riskju ta' {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = temperatura tal-arja nieqes it-temperatura tal-bozza mxarba: kemm malajr tinxef qatra. 2–8 °C l-aħjar. Taħt 2 °C il-qtar jibqgħu u jinġarru, 'il fuq minn 10 °C jinxfu fl-arja.

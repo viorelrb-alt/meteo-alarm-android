@@ -1432,3 +1432,46 @@ root growth	betans tillväxt
 tuber forming	knölbildning
 regrowth	återväxt
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Vid tröskeln: du kan så om de närmaste dagarna förblir varma.
+Balance of the day	Dagens balans
+Clock while charging	Klocka vid laddning
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Graddagar summerar värmen över grödans bastemperatur; utvecklingsstadierna följer dem.
+Drop drying (ΔT) now	Dropptorkning (ΔT) nu
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Dropptorkning (ΔT) över 10,5 °C: dropparna torkar i luften.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Dropptorkning (ΔT) under 1,5 °C: dropparna torkar för långsamt och driver.
+Drop drying (ΔT): {1}	Dropptorkning (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = hur mycket vatten marken och växterna förlorar på en dag.
+Evaporation (ET₀)	Avdunstning (ET₀)
+Forecast, 	Prognos, 
+Forecast. 	Prognos. 
+Gained that day	Tillskott den dagen
+Last year	Förra året
+Measured (model), 	Uppmätt (modell), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	På ett skiftes skärm, bara när det behövs: domen för besprutning (röd, gul, grön), huvudorsaken med sin gräns och riskerna för de närmaste 24 timmarna. Överst grödan och sådatumet; med en gröda tar domen också hänsyn till dropptorkning (ΔT) och dess sjukdom. Ett tryck visar nästa bra fönster.
+Open-Meteo model estimate, not a measurement.	Uppskattning från Open-Meteo-modellen, inte en mätning.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operativt: sprutfönstret timme för timme (grön, gul, röd; talet är ΔT), det rör sig av sig självt; ett tryck på en timme öppnar dess bubbla. Dropptorkning (ΔT, optimalt 2–8 °C), vind och byar, vått blad.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Säsong: graddagar (GDD) från sådden jämfört med förra året, beräknat stadium, värmestress och frostdagar. Kräver grödan och sådatumet. Ett tryck på diagrammet visar den dagen.
+Soil at 	Mark på 
+Sowing threshold	Sådtröskel
+Stage	Stadium
+Tap an hour for its explanation.	Tryck på en timme för förklaring.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Staplarna på ett skiftes kort eller Statistik i dess bubbla. Överst: skiftets namn, 4 flikar och PDF · CSV.
+This season	Den här säsongen
+Too cold for sowing: the seeds come up slowly and unevenly.	För kallt för sådd: fröna gror långsamt och ojämnt.
+Too cold: {1}	För kallt: {1}
+Warm enough for sowing.	Tillräckligt varmt för sådd.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Vatten & mark: 7 dagars regn och avdunstning (ET₀) och balansen; diagrammet över det förflutna och de närmaste 7 dagarna; mark på 6 och 18 cm, ytfuktighet, körning med maskiner. Ett tryck på en dag eller en markrad förklarar den.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Vind, dropptorkning (ΔT) och temperatur ligger alla i det goda intervallet.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Vind, dropptorkning (ΔT) eller temperatur utanför det ideala intervallet.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Med en gröda också: över 5 °C, dropptorkning (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	dropparna torkar för snabbt (ΔT)
+drops dry too slowly (ΔT)	dropparna torkar för långsamt (ΔT)
+from the corners	från hörnen
+over 10.5 °C the drops dry in the air	över 10,5 °C torkar dropparna i luften
+too cold	för kallt
+under 1.5 °C the drops stay wet and drift	under 1,5 °C förblir dropparna våta och driver
+under 5 °C the treatment does not work	under 5 °C verkar behandlingen inte
+{1} h of wet leaves from {2}	{1} h våta blad från {2}
+{1} risk: {2}	Risk för {1}: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = lufttemperatur minus våttemperatur: hur snabbt en droppe torkar. 2–8 °C optimalt. Under 2 °C stannar dropparna och driver, över 10 °C torkar de i luften.

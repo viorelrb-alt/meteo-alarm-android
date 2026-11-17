@@ -1,6 +1,8 @@
-Trenutačna verzija: v.2.001 · 17.11.2026
+Trenutačna verzija: v.2.010 · 17.11.2026
 PARCELE
-- Statistika: za svaku parcelu Zadatak dana i 4 kartice: Operativno (prozor prskanja sat po sat, Delta-T, vjetar, mokar list), Voda i tlo (kiša, isparavanje, tlo na 6 i 18 cm), Sezona (stupanj-dani u odnosu na prošlu godinu, procijenjena faza) i Rizici 72 h (gljivične bolesti, prizemni mraz, vrućina, vjetar i tuča); spremanje u PDF ili CSV.
+- Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.
+- Operativni status: gore kultura i datum sjetve; s kulturom ocjena uzima u obzir i sušenje kapljica (ΔT) i njezinu bolest.
+- Statistika: za svaku parcelu Zadatak dana i 4 kartice: Operativno (prozor prskanja sat po sat, sušenje kapljica (ΔT), vjetar, mokar list), Voda i tlo (kiša, isparavanje, tlo na 6 i 18 cm), Sezona (stupanj-dani u odnosu na prošlu godinu, procijenjena faza) i Rizici 72 h (gljivične bolesti, prizemni mraz, vrućina, vjetar i tuča); spremanje u PDF ili CSV.
 - Uredi parcelu: olovka otvara stranicu parcele: ime, kultura (popis po sezoni datuma sjetve ili Druga kultura…), datum sjetve, površina; kutovi se pomiču na karti.
 POSTAVKE
 - Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).

@@ -1366,3 +1366,46 @@ root growth	kök gelişimi
 tuber forming	yumru oluşumu
 regrowth	yeniden büyüme
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Eşikte: önümüzdeki günler ılık kalırsa ekim yapılabilir.
+Balance of the day	Günün dengesi
+Clock while charging	Şarj sırasında saat
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Gün-dereceler ürünün taban sıcaklığının üzerindeki ısıyı toplar; gelişme evreleri onları izler.
+Drop drying (ΔT) now	Damla kuruması (ΔT) şimdi
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Damla kuruması (ΔT) 10,5 °C üzerinde: damlalar havada kurur.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Damla kuruması (ΔT) 1,5 °C altında: damlalar çok yavaş kurur ve sürüklenir.
+Drop drying (ΔT): {1}	Damla kuruması (ΔT): {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = toprağın ve bitkilerin bir günde kaybettiği su miktarı.
+Evaporation (ET₀)	Buharlaşma (ET₀)
+Forecast, 	Tahmin, 
+Forecast. 	Tahmin. 
+Gained that day	O gün kazanılan
+Last year	Geçen yıl
+Measured (model), 	Ölçülen (model), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Bir parselin ekranında, yalnızca gerektiğinde: ilaçlama kararı (kırmızı, sarı, yeşil), sınırıyla birlikte ana neden ve önümüzdeki 24 saatin riskleri. Üstte ürün ve ekim tarihi; ürün varsa karar damla kurumasını (ΔT) ve ürünün hastalığını da hesaba katar. Dokunma bir sonraki iyi pencereyi gösterir.
+Open-Meteo model estimate, not a measurement.	Open-Meteo modelinin tahmini, ölçüm değil.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Operasyonel: saat saat ilaçlama penceresi (yeşil, sarı, kırmızı; sayı ΔT'dir), kendiliğinden kayar; bir saate dokunmak balonunu açar. Damla kuruması (ΔT, en iyi 2–8 °C), rüzgâr ve hamleler, ıslak yaprak.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Sezon: ekimden itibaren gün-dereceler (GDD) geçen yılla karşılaştırmalı, tahmini evre, sıcaklık stresi ve don günleri. Ürün ve ekim tarihi gerekir. Grafiğe dokunmak o günü gösterir.
+Soil at 	Toprak 
+Sowing threshold	Ekim eşiği
+Stage	Evre
+Tap an hour for its explanation.	Açıklaması için bir saate dokunun.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Parsel kartındaki çubuklar veya balonundaki İstatistik. Üstte: parselin adı, 4 sekme ve PDF · CSV.
+This season	Bu sezon
+Too cold for sowing: the seeds come up slowly and unevenly.	Ekim için çok soğuk: tohumlar yavaş ve düzensiz çıkar.
+Too cold: {1}	Çok soğuk: {1}
+Warm enough for sowing.	Ekim için yeterince sıcak.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Su ve toprak: 7 günlük yağış ve buharlaşma (ET₀) ve denge; geçmişin ve önümüzdeki 7 günün grafiği; 6 ve 18 cm'de toprak, yüzey nemi, makineyle tarlaya giriş. Bir güne veya toprak satırına dokunmak onu açıklar.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Rüzgâr, damla kuruması (ΔT) ve sıcaklık iyi aralıkta.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Rüzgâr, damla kuruması (ΔT) veya sıcaklık ideal aralığın dışında.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Ürün varsa ayrıca: 5 °C üzerinde, damla kuruması (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	damlalar çok hızlı kuruyor (ΔT)
+drops dry too slowly (ΔT)	damlalar çok yavaş kuruyor (ΔT)
+from the corners	köşelerden
+over 10.5 °C the drops dry in the air	10,5 °C üzerinde damlalar havada kurur
+too cold	çok soğuk
+under 1.5 °C the drops stay wet and drift	1,5 °C altında damlalar ıslak kalır ve sürüklenir
+under 5 °C the treatment does not work	5 °C altında uygulama etki etmez
+{1} h of wet leaves from {2}	{2}'den itibaren {1} h ıslak yaprak
+{1} risk: {2}	{1} riski: {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = hava sıcaklığı eksi ıslak termometre sıcaklığı: bir damlanın ne kadar hızlı kuruduğu. 2–8 °C en iyi. 2 °C altında damlalar kalır ve sürüklenir, 10 °C üzerinde havada kurur.

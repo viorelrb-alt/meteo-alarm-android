@@ -2562,12 +2562,27 @@ public final class FarmActivity extends Activity {
 				r.addView(text(coords(c[2 * k], c[2 * k + 1]), tab ? 17 : 15, true, ink));
 				rows.addView(r, wide(4));
 			}
+			// v2.010 (Viorel): the first 3 points shown, the others by scrolling up.
+			final LinearLayout rowsF = rows;
 			ScrollView rs = new ScrollView(this) {
 				@Override
 				protected void onMeasure(int w, int h) {
-					super.onMeasure(w, MeasureSpec.makeMeasureSpec(Math.max(px(120), getResources().getDisplayMetrics().heightPixels - px(260)), MeasureSpec.AT_MOST));
+					int cap = Math.max(px(120), getResources().getDisplayMetrics().heightPixels - px(260));
+					rowsF.measure(MeasureSpec.makeMeasureSpec(Math.max(0, MeasureSpec.getSize(w) - getPaddingLeft() - getPaddingRight()), MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+					if (rowsF.getChildCount() > 3) {
+						int three = 0;
+						for (int k = 0; k < 3; k++) {
+							View ch = rowsF.getChildAt(k);
+							LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) ch.getLayoutParams();
+							three += ch.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
+						}
+						cap = Math.min(cap, three + px(6));
+					}
+					super.onMeasure(w, MeasureSpec.makeMeasureSpec(cap, MeasureSpec.AT_MOST));
 				}
 			};
+			rs.setVerticalScrollBarEnabled(true);
+			rs.setScrollbarFadingEnabled(false);
 			rs.addView(rows);
 			win.addView(rs, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		} else {
@@ -2584,7 +2599,8 @@ public final class FarmActivity extends Activity {
 		});
 		win.addView(show, wide(12));
 		int sw = getResources().getDisplayMetrics().widthPixels;
-		int w = Math.min(px(tab ? 460 : 380), (land ? sw / 2 : sw) - px(24));
+		// v2.010 (Viorel): narrower, just the room of the coordinates.
+		int w = Math.min(px(tab ? 340 : 290), (land ? sw / 2 : sw) - px(24));
 		// v1.520: the bubble at the top (portrait) or at the left (landscape), the map zoomed on
 		// the parcel in the room left free.
 		FrameLayout.LayoutParams wl = new FrameLayout.LayoutParams(w, ViewGroup.LayoutParams.WRAP_CONTENT, land ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.TOP | Gravity.CENTER_HORIZONTAL);

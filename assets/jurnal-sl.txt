@@ -1,8 +1,10 @@
-Trenutna različica: v.2.001 · 17.11.2026
+Trenutna različica: v.2.010 · 17.11.2026
 NASTAVITVE
 - Jezik prikaza: v ☰ angleščina in jezik države; Drugi jeziki: drugi jeziki države, veliki jeziki EU, romunščina in jezik telefona (v ZDA samo angleščina in španščina).
 PARCELE
-- Statistika: za vsako parcelo Opravilo dneva in 4 zavihki: Operativno (okno škropljenja uro za uro, Delta-T, veter, moker list), Voda in tla (dež, izhlapevanje, tla na 6 in 18 cm), Sezona (stopinjski dnevi v primerjavi z lani, ocenjena faza) in Tveganja 72 h (glivične bolezni, talna pozeba, vročina, veter in toča); shranjevanje v PDF ali CSV.
+- Oblački v Statistiki: dotik ure v oknu škropljenja, dneva v grafih ali vrstice tal odpre oblaček z razlago; okno škropljenja se premika samo.
+- Operativni status: zgoraj posevek in datum setve; s posevkom ocena upošteva tudi sušenje kapljic (ΔT) in njegovo bolezen.
+- Statistika: za vsako parcelo Opravilo dneva in 4 zavihki: Operativno (okno škropljenja uro za uro, sušenje kapljic (ΔT), veter, moker list), Voda in tla (dež, izhlapevanje, tla na 6 in 18 cm), Sezona (stopinjski dnevi v primerjavi z lani, ocenjena faza) in Tveganja 72 h (glivične bolezni, talna pozeba, vročina, veter in toča); shranjevanje v PDF ali CSV.
 - Uredi parcelo: svinčnik odpre stran parcele: ime, kultura (seznam po sezoni datuma setve ali Druga kultura…), datum setve, površina; oglišča se premikajo na zemljevidu.
 - Izboljšave oblikovanja in popravki napak.
 

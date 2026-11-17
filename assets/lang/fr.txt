@@ -1432,3 +1432,46 @@ root growth	croissance de la racine
 tuber forming	tubérisation
 regrowth	repousse
 .	.
+# v2.010
+At the threshold: sowing can start if the next days stay warm.	Au seuil : on peut semer si les prochains jours restent chauds.
+Balance of the day	Bilan du jour
+Clock while charging	Horloge en charge
+Degree days add up the warmth above the crop's base temperature; the stages follow them.	Les degrés-jours additionnent la chaleur au-dessus de la température de base de la culture ; les stades les suivent.
+Drop drying (ΔT) now	Séchage des gouttes (ΔT) maintenant
+Drop drying (ΔT) over 10.5 °C: the drops dry in the air.	Séchage des gouttes (ΔT) au-dessus de 10,5 °C : les gouttes sèchent dans l'air.
+Drop drying (ΔT) under 1.5 °C: the drops dry too slowly and drift.	Séchage des gouttes (ΔT) sous 1,5 °C : les gouttes sèchent trop lentement et dérivent.
+Drop drying (ΔT): {1}	Séchage des gouttes (ΔT) : {1}
+ET₀ = how much water the soil and the plants lose in a day.	ET₀ = l'eau que le sol et les plantes perdent en un jour.
+Evaporation (ET₀)	Évaporation (ET₀)
+Forecast, 	Prévision, 
+Forecast. 	Prévision. 
+Gained that day	Gagné ce jour-là
+Last year	L'an dernier
+Measured (model), 	Mesuré (modèle), 
+On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.	Sur l'écran d'une parcelle, seulement si nécessaire : le verdict pour la pulvérisation (rouge, jaune, vert), la raison principale avec son seuil et les risques des prochaines 24 heures. En haut, la culture et sa date de semis ; avec une culture, le verdict tient aussi compte du séchage des gouttes (ΔT) et de sa maladie. Un toucher montre la prochaine bonne fenêtre.
+Open-Meteo model estimate, not a measurement.	Estimation du modèle Open-Meteo, pas une mesure.
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.	Opérationnel : la fenêtre de pulvérisation heure par heure (vert, jaune, rouge ; le chiffre est ΔT), elle défile toute seule ; toucher une heure ouvre sa bulle. Séchage des gouttes (ΔT, optimal 2–8 °C), vent et rafales, feuille mouillée.
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.	Saison : degrés-jours (GDD) depuis le semis comparés à l'an dernier, le stade estimé, le stress thermique et les jours de gel. Il faut la culture et la date de semis. Toucher le graphique montre ce jour-là.
+Soil at 	Sol à 
+Sowing threshold	Seuil de semis
+Stage	Stade
+Tap an hour for its explanation.	Touche une heure pour son explication.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.	Les barres sur la carte d'une parcelle ou Statistiques dans sa bulle. En haut : le nom de la parcelle, 4 onglets et PDF · CSV.
+This season	Cette saison
+Too cold for sowing: the seeds come up slowly and unevenly.	Trop froid pour semer : les graines lèvent lentement et de façon inégale.
+Too cold: {1}	Trop froid : {1}
+Warm enough for sowing.	Assez chaud pour semer.
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.	Eau & Sol : 7 jours de pluie et d'évaporation (ET₀) et le bilan ; le graphique du passé et des 7 prochains jours ; sol à 6 et 18 cm, humidité en surface, passage des machines. Toucher un jour ou une ligne du sol l'explique.
+Wind, drop drying (ΔT) and temperature are all in the good range.	Le vent, le séchage des gouttes (ΔT) et la température sont tous dans la bonne plage.
+Wind, drop drying (ΔT) or temperature outside the ideal range.	Vent, séchage des gouttes (ΔT) ou température hors de la plage idéale.
+With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.	Avec une culture aussi : au-dessus de 5 °C, séchage des gouttes (ΔT) 1,5–10,5 °C.
+drops dry too fast (ΔT)	gouttes séchant trop vite (ΔT)
+drops dry too slowly (ΔT)	gouttes séchant trop lentement (ΔT)
+from the corners	d'après les coins
+over 10.5 °C the drops dry in the air	au-dessus de 10,5 °C les gouttes sèchent dans l'air
+too cold	trop froid
+under 1.5 °C the drops stay wet and drift	sous 1,5 °C les gouttes restent mouillées et dérivent
+under 5 °C the treatment does not work	sous 5 °C le traitement n'agit pas
+{1} h of wet leaves from {2}	{1} h de feuilles mouillées dès {2}
+{1} risk: {2}	Risque de {1} : {2}
+ΔT = air temperature minus wet-bulb temperature: how fast a drop dries. 2–8 °C optimal. Under 2 °C the drops stay and drift, over 10 °C they dry in the air.	ΔT = température de l'air moins température humide : la vitesse à laquelle une goutte sèche. 2–8 °C optimal. Sous 2 °C les gouttes restent et dérivent, au-dessus de 10 °C elles sèchent dans l'air.

@@ -1,9 +1,11 @@
-Súčasná verzia: v.2.001 · 17.11.2026
+Súčasná verzia: v.2.010 · 17.11.2026
 NASTAVENIA
 - Jazyk zobrazenia: v ☰ angličtina a jazyk krajiny; Ďalšie jazyky: ostatné jazyky krajiny, veľké jazyky EÚ, rumunčina a jazyk telefónu (v USA len angličtina a španielčina).
 POZEMKY
+- Bubliny v Štatistike: ťuknutie na hodinu v okne postreku, deň v grafoch alebo riadok pôdy otvorí bublinu s vysvetlením; okno postreku sa posúva samo.
+- Prevádzkový stav: hore plodina a dátum sejby; s plodinou verdikt zohľadňuje aj vysychanie kvapiek (ΔT) a jej chorobu.
 - Upraviť pozemok: ceruzka otvorí stránku pozemku: názov, plodina (zoznam podľa sezóny dátumu sejby alebo Iná plodina…), dátum sejby, výmera; rohy sa posúvajú na mape.
-- Štatistika: pre každý pozemok Úloha dňa a 4 karty: Prevádzka (okno postreku hodinu po hodine, Delta-T, vietor, mokrý list), Voda a pôda (dážď, výpar, pôda v 6 a 18 cm), Sezóna (stupňodni oproti minulému roku, odhadovaná fáza) a Riziká 72 h (hubové choroby, prízemný mráz, horúčava, vietor a krupobitie); uloženie do PDF alebo CSV.
+- Štatistika: pre každý pozemok Úloha dňa a 4 karty: Prevádzka (okno postreku hodinu po hodine, vysychanie kvapiek (ΔT), vietor, mokrý list), Voda a pôda (dážď, výpar, pôda v 6 a 18 cm), Sezóna (stupňodni oproti minulému roku, odhadovaná fáza) a Riziká 72 h (hubové choroby, prízemný mráz, horúčava, vietor a krupobitie); uloženie do PDF alebo CSV.
 - Vylepšenia vzhľadu a opravy chýb.
 
 Verzia 1.4 (v.1.400 – v.1.520)

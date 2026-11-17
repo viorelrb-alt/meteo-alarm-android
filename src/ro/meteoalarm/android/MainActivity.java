@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.001";
+	static final String VERSION = "Meteo Alarm Android v2.010";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -492,7 +492,25 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/** Forgets the data of the screen shown (before another's are loaded). */
+	/** v2.010 (Viorel): "Rapiță · semănat 10 sept" for the status card ("" without a crop). */
+	private String cropLine(Parcels.Parcel p) {
+		ro.meteoalarm.android.core.Agro.Crop c = p.crop();
+		if (c == null) return "";
+		String t = c.name();
+		if (p.sow.length() == 10) try {
+			int m = Integer.parseInt(p.sow.substring(5, 7)) - 1, day = Integer.parseInt(p.sow.substring(8, 10));
+			String l = Tr.lang();
+			String mo = new java.text.DateFormatSymbols(new java.util.Locale(l.equals("us") ? "en" : l)).getShortMonths()[m].replace(".", "");
+			t += " · " + Tr.t("sown ", "semănat ") + (l.equals("us") ? mo + " " + day : day + " " + mo);
+		} catch (Exception e) {
+			// a broken date: the crop alone
+		}
+		return t;
+	}
+
 	private void clearPage() {
+		s.crop = null;
+		s.cropLine = "";
 		s.w = null;
 		s.warns = null;
 		s.quakes = null;
@@ -574,6 +592,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.warns = Fetcher.parcelWarnings(this, p.id, s.city);
 			s.quakes = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			s.farm = Parcels.data(this, p.id);
+			s.crop = p.crop();
+			s.cropLine = cropLine(p);
 		} catch (Exception e) {
 			s.w = null;
 			Log.e(this, "FERMIER", "datele salvate ale parcelei nu au putut fi citite", e);
@@ -2591,7 +2611,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onMenu();
 			}
 		});
-		p.toggle("moon", Tr.t("Night clock", "Ceas noapte"), Tr.t("A big dim clock while charging at night", "Ceas mare și estompat la încărcare, noaptea"), prefs.getBoolean("nightClock", true), new Runnable() {
+		p.toggle("moon", Tr.t("Night clock", "Ceas noapte"), Tr.t("Clock while charging", "Afișare ceas la încărcare"), prefs.getBoolean("nightClock", true), new Runnable() {
 			public void run() {
 				boolean on = !prefs.getBoolean("nightClock", true);
 				prefs.edit().putBoolean("nightClock", on).apply();
@@ -3284,8 +3304,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.section(Tr.t("Farmer mode", "Mod Fermier"));
 		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.",
 				"Comutatorul Mod Fermier din ☰ îl pornește; butonul cu frunză de lângă butoane îl oprește. Fiecare oră e o casetă lată, cu vremea și ploaia. Alegerea altei localități păstrează modul fermier."));
-		help.entry(mini("check"), Tr.t("Operational status", "Status operațional"), Tr.t("On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. A tap shows the next good window.",
-				"Pe ecranul parcelei, doar când e nevoie: verdictul pentru stropit (roșu, galben, verde), motivul principal cu pragul lui și riscurile următoarelor 24 de ore. Atingerea arată următoarea fereastră bună."));
+		help.entry(mini("check"), Tr.t("Operational status", "Status operațional"), Tr.t("On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.",
+				"Pe ecranul parcelei, doar când e nevoie: verdictul pentru stropit (roșu, galben, verde), motivul principal cu pragul lui și riscurile următoarelor 24 de ore. Sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei. Atingerea arată următoarea fereastră bună."));
 		help.entry(mini("grid4"), Tr.t("A parcel's screen", "Ecranul parcelei"), Tr.t("1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports (with Statistics · PDF), 4 Weather details.",
 				"1 Vremea pe ore, cele cinci zile, 2 Starea solului și culturi, 3 Riscuri și rapoarte (cu Statistică · PDF), 4 Detalii meteo."));
 		help.entry(mini("hours"), Tr.t("Hour boxes", "Casetele orare"), Tr.t("A tap shows the hour's details: temperature, wind and its direction, humidity, rain, soil.",
@@ -3323,14 +3343,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("pages"), Tr.t("Main screens", "Ecrane principale"), Tr.t("Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + opens a new parcel's box.",
 				"Tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + deschide caseta unei parcele noi."));
 		// v2.001 (Viorel): the farmer's Statistics, a paragraph per part with its icon.
-		help.steps(mini("table"), Tr.t("Statistics", "Statistici"), Tr.t("The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.",
-				"Barele de pe caseta parcelei sau Statistică din bula ei. Sus: parcela (atingerea alege alta), 4 file și PDF · CSV."),
+		help.steps(mini("table"), Tr.t("Statistics", "Statistici"), Tr.t("The bars on a parcel's card or Statistics in its bubble. On top: the parcel's name, 4 tabs and PDF · CSV.",
+				"Barele de pe caseta parcelei sau Statistică din bula ei. Sus: numele parcelei, 4 file și PDF · CSV."),
 				new android.graphics.Bitmap[] { mini("check"), mini("hours"), mini("soil"), mini("chart"), mini("warn"), glyph("pencil"), glyph("save") },
 				new String[] {
 						Tr.t("Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.", "Acțiunea zilei: ce faci azi, cu scorul de stropit (0–100) și cel mai mare risc din următoarele 48 de ore."),
-						Tr.t("Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.", "Operațional: fereastra de stropit oră cu oră (verde, galben, roșu; cifra e ΔT); atingerea unei ore îi arată valorile. Delta-T, vânt și rafale, frunză umedă."),
-						Tr.t("Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.", "Apă & Sol: ploaia și evaporarea (ET₀) pe 7 zile și bilanțul; graficul trecut și următoarele 7 zile; solul la 6 și 18 cm, umiditatea la suprafață, intrarea cu utilaje."),
-						Tr.t("Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.", "Sezon: gradele-zile (GDD) de la semănat față de anul trecut, stadiul estimat, stresul termic și zilele de ger. Are nevoie de cultură și de data semănatului."),
+						Tr.t("Operational: the spray window hour by hour (green, yellow, red; the number is ΔT), it moves by itself; a tap on an hour opens its bubble. Drop drying (ΔT, 2–8 °C optimal), wind and gusts, wet leaf.", "Operațional: fereastra de stropit oră cu oră (verde, galben, roșu; cifra e ΔT), se mișcă singură; atingerea unei ore deschide bula ei. Uscare picături (ΔT, optim 2–8 °C), vânt și rafale, frunză umedă."),
+						Tr.t("Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field. A tap on a day or a soil row explains it.", "Apă & Sol: ploaia și evaporarea (ET₀) pe 7 zile și bilanțul; graficul trecut și următoarele 7 zile; solul la 6 și 18 cm, umiditatea la suprafață, intrarea cu utilaje. Atingerea unei zile sau a unui rând de sol o explică."),
+						Tr.t("Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date. A tap on the chart shows that day.", "Sezon: gradele-zile (GDD) de la semănat față de anul trecut, stadiul estimat, stresul termic și zilele de ger. Are nevoie de cultură și de data semănatului. Atingerea graficului arată ziua aceea."),
 						Tr.t("Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.", "Riscuri 72 h: boli fungice, îngheț la sol, stres termic, vânt și grindină; atingerea unui card îl explică și spune ce poți face. Dedesubt: ce urmează."),
 						Tr.t("The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.", "Cultura se alege dintr-o listă ordonată după sezonul datei de semănat; Altă cultură… primește un nume și un tip; în afara sezonului aplicația întreabă din nou."),
 						Tr.t("PDF · CSV saves the summary, the next 72 hours and the days in Downloads.", "PDF · CSV salvează rezumatul, următoarele 72 de ore și zilele în Descărcări.") });

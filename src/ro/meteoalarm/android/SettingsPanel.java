@@ -407,7 +407,11 @@ final class SettingsPanel extends FrameLayout {
 		t.setTextColor(ink());
 		tx.addView(t);
 		if (sub != null && sub.length() > 0) {
-			TextView s = text(c, 12.5f * zk, false);
+			// v2.010 (Viorel): the grey line on 2 rows at most, smaller when it does not fit.
+			FitText s = new FitText(c, 2, 0.75f);
+			s.setTextSize(12.5f * zk);
+			s.setTypeface(reg);
+			s.setIncludeFontPadding(true);
 			s.setText(sub);
 			s.setTextColor(dim());
 			tx.addView(s);

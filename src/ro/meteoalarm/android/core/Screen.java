@@ -153,6 +153,13 @@ public final class Screen {
 	private final List<float[]> dayHits = new java.util.ArrayList<float[]>();
 	private List<String> infoIds = new java.util.ArrayList<String>();
 	public Farm.Data farm;
+	/**
+	 * v2.010 (Viorel): the parcel's crop (null: none chosen) and its line under the status title,
+	 * e.g. "Rapiță · semănat 10 sept" ("" when none). With a crop the spray verdict also takes
+	 * Delta-T and the cold into account, and the status adds the crop's disease.
+	 */
+	public Agro.Crop crop;
+	public String cropLine = "";
 	/** The hour and rain boxes drawn: { hour index, x, y, w, h } in canvas units; set by draw. */
 	private final List<float[]> hourHits = new java.util.ArrayList<float[]>(), rainHits = new java.util.ArrayList<float[]>();
 	/** The scale of the boxes being drawn (tablet: 1.2). */
@@ -699,7 +706,7 @@ public final class Screen {
 	private List<String> statusLines() {
 		int i = farm == null ? -1 : farm.nowIndex(now);
 		if (i < 0) return null;
-		int s = Farm.spray(farm, i);
+		int s = spray(i);
 		if (s < 0) return null;
 		List<String> risks = new ArrayList<String>();
 		// The rain of the next 24 hours: when it starts (or ends, when it rains now) and how much.
@@ -739,9 +746,18 @@ public final class Screen {
 			risks.add(fill(Tr.t("Storm risk: {1}", "Risc de furtună: {1}"), stormWord(sl), "") + (st[1] >= 0 ? " · " + Texts.clock(farm.hourOf((int) st[1]), clk12) : ""));
 			risks.add("CAPE " + Math.round(st[0]) + " J/kg");
 		}
+		// v2.010 (Viorel): with a crop, its disease when the leaves stay wet and warm long enough.
+		if (crop != null) {
+			int[] fr = Agro.fungalRun(farm, i, 48);
+			int pc = Agro.fungalPct(fr[0]);
+			if (pc >= 50 && fr[1] >= 0) {
+				risks.add(fill(Tr.t("{1} risk: {2}", "Risc de {1}: {2}"), crop.disease(), pc + "%"));
+				risks.add(fill(Tr.t("{1} h of wet leaves from {2}", "{1} h de frunză udă de la {2}"), Integer.toString(fr[0]), Texts.clock(farm.hourOf(fr[1]), clk12)));
+			}
+		}
 		if (s == 0 && risks.isEmpty()) return null;
 		List<String> out = new ArrayList<String>();
-		int[] wdw = Farm.sprayWindow(farm, s == 0 ? i : i + 1, 24);
+		int[] wdw = sprayWindow(s == 0 ? i : i + 1, 24);
 		String today = Farm.date(now, 0);
 		boolean laterToday = wdw[0] > 0 && farm.hourOf(wdw[0]).length() > 0 && farm.time[wdw[0]].startsWith(today);
 		if (s == 0) {
@@ -750,7 +766,7 @@ public final class Screen {
 			out.add(fill(Tr.t("Wind {1}, no rain now", "Vânt {1}, fără ploaie acum"), kmh(at(farm.wind, i)), ""));
 			out.add(Tr.t("good: wind 3–15 km/h, gusts under 25, no rain", "bun: vânt 3–15 km/h, rafale sub 25, fără ploaie"));
 		} else {
-			out.add(s == 2 || s == 3 ? "0" : "1");
+			out.add(s == 2 || s == 3 || s >= 6 ? "0" : "1");
 			out.add(laterToday ? Tr.t("DON'T SPRAY NOW", "NU STROPI ACUM") : Tr.t("DON'T SPRAY TODAY", "NU STROPI AZI"));
 			if (s == 3) {
 				int p = (int) Math.round(nz(at(farm.prob, i)));
@@ -762,6 +778,13 @@ public final class Screen {
 			} else if (s == 1) {
 				out.add(fill(Tr.t("Wind too weak: {1}", "Vânt prea slab: {1}"), kmh(at(farm.wind, i)), ""));
 				out.add(Tr.t("under 3 km/h the spray drifts unevenly", "sub 3 km/h stropirea nu se așază uniform"));
+			} else if (s == 6) {
+				out.add(fill(Tr.t("Too cold: {1}", "Prea frig: {1}"), deg(at(farm.temp, i)), ""));
+				out.add(Tr.t("under 5 °C the treatment does not work", "sub 5 °C tratamentul nu acționează"));
+			} else if (s == 7 || s == 8) {
+				out.add(fill(Tr.t("Drop drying (ΔT): {1}", "Uscare picături (ΔT): {1}"), String.format(java.util.Locale.US, "%.1f", unitF ? Agro.deltaT(farm, i) * 9 / 5 : Agro.deltaT(farm, i)).replace('.', Tr.dot()) + "°", ""));
+				out.add(s == 7 ? Tr.t("under 1.5 °C the drops stay wet and drift", "sub 1,5 °C picăturile rămân ude și derivă")
+						: Tr.t("over 10.5 °C the drops dry in the air", "peste 10,5 °C picăturile se usucă în aer"));
 			} else if (s == 4) {
 				out.add(fill(Tr.t("Too hot: {1}", "Prea cald: {1}"), deg(at(farm.temp, i)), ""));
 				out.add(Tr.t("over 28 °C the solution evaporates", "peste 28 °C soluția se evaporă"));
@@ -790,7 +813,7 @@ public final class Screen {
 		statusArea[0] = x; statusArea[1] = y; statusArea[2] = wd; statusArea[3] = h;
 		g.roundRect(x, y, wd, h, 24, strong);
 		card(x + 7, y, wd - 7, h, 24);
-		String title = Tr.t("OPERATIONAL STATUS", "STATUS OPERAȚIONAL"), hint = Tr.t("tap: next window", "atinge: fereastra următoare");
+		String title = Tr.t("OPERATIONAL STATUS", "STATUS OPERAȚIONAL"), hint = cropLine == null ? "" : cropLine;
 		float hp = fit(true, 21, wd * 0.5f, title), tw = g.width(true, hp, title), ph = hp * 1.45f, px = x + 26, py = y + 16;
 		g.roundRect(px, py, tw + 26, ph, ph / 2, mix(glass(), strong, dark ? 0.32f : 0.24f));
 		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, dark ? mix(strong, Gfx.WHITE, 0.35f) : mix(strong, Gfx.BLACK, 0.45f));
@@ -1916,6 +1939,32 @@ public final class Screen {
 		return Tr.t("Hail and wind reports", "Rapoarte de grindină și vânt");
 	}
 
+	/** v2.010: Farm.spray, and with a crop also 6 too cold, 7 drop drying (ΔT) too low, 8 too high. */
+	private int spray(int j) {
+		int s = Farm.spray(farm, j);
+		if (s == 0 && crop != null) {
+			int b = Agro.block(farm, j);
+			if (b == 3) return 6;
+			if (b == 5) return 7;
+			if (b == 6) return 8;
+		}
+		return s;
+	}
+
+	/** Farm.sprayWindow with the verdict above. */
+	private int[] sprayWindow(int i, int n) {
+		int a = -1, b = -1;
+		for (int j = Math.max(0, i); j < Math.min(farm.size(), i + n); j++) {
+			int s = spray(j);
+			if (a < 0 && s == 0) a = j;
+			else if (a >= 0 && s != 0) {
+				b = j;
+				break;
+			}
+		}
+		return new int[] { a, b };
+	}
+
 	private String sprayWhy(int s) {
 		if (s == 0) return Tr.t("good", "bun");
 		if (s == 1) return Tr.t("too little wind", "vânt prea slab");
@@ -1923,6 +1972,9 @@ public final class Screen {
 		if (s == 3) return Tr.t("rain", "ploaie");
 		if (s == 4) return Tr.t("too hot", "prea cald");
 		if (s == 5) return Tr.t("dry air", "aer uscat");
+		if (s == 6) return Tr.t("too cold", "prea frig");
+		if (s == 7) return Tr.t("drops dry too slowly (ΔT)", "picături uscate greu (ΔT)");
+		if (s == 8) return Tr.t("drops dry too fast (ΔT)", "picături uscate prea repede (ΔT)");
 		return "–";
 	}
 
@@ -2001,12 +2053,12 @@ public final class Screen {
 		if (i < 0) return none;
 		String today = Farm.date(now, 0);
 		if (id.equals("fSpray")) {
-			int s = Farm.spray(farm, i);
+			int s = spray(i);
 			if (s == 0) {
-				int[] wdw = Farm.sprayWindow(farm, i, 24);
+				int[] wdw = sprayWindow(i, 24);
 				return new String[] { Tr.t("YES", "DA"), wdw[1] > 0 ? Tr.t("until ", "până la ") + Texts.clock(farm.hourOf(wdw[1]), clk12) : Tr.t("next 24 h", "următoarele 24 h"), "" };
 			}
-			int[] wdw = Farm.sprayWindow(farm, i + 1, 24);
+			int[] wdw = sprayWindow(i + 1, 24);
 			return new String[] { Tr.t("NO", "NU"), sprayWhy(s), wdw[0] > 0 ? Tr.t("good from ", "bun de la ") + Texts.clock(farm.hourOf(wdw[0]), clk12) : Tr.t("not in 24 h", "nu în 24 h") };
 		}
 		if (id.equals("fWater")) {
@@ -2102,14 +2154,15 @@ public final class Screen {
 		String today = Farm.date(now, 0);
 		if (id.equals("fSpray")) {
 			out.add(new String[] { "t", Tr.t("Good: wind 3–15 km/h, gusts under 25, no rain for 2 hours, under 28°, air humidity over 40%.",
-					"Bun: vânt 3–15 km/h, rafale sub 25, fără ploaie 2 ore, sub 28°, umiditatea aerului peste 40%.") });
+					"Bun: vânt 3–15 km/h, rafale sub 25, fără ploaie 2 ore, sub 28°, umiditatea aerului peste 40%.")
+					+ (crop != null ? " " + Tr.t("With a crop also: over 5 °C, drop drying (ΔT) 1.5–10.5 °C.", "Cu o cultură și: peste 5 °C, uscare picături (ΔT) 1,5–10,5 °C.") : "") });
 			out.add(new String[] { "h", Tr.t("Next 24 hours", "Următoarele 24 de ore") });
 			// The hours grouped while the verdict stays the same (short, Viorel).
 			int end = Math.min(farm.size(), i + 24);
 			List<String[]> tb = new java.util.ArrayList<String[]>();
 			for (int j = i; j < end;) {
-				int st = Farm.spray(farm, j), k = j;
-				while (k + 1 < end && Farm.spray(farm, k + 1) == st) k++;
+				int st = spray(j), k = j;
+				while (k + 1 < end && spray(k + 1) == st) k++;
 				String span = Texts.clock(farm.hourOf(j), clk12) + (k > j ? " – " + Texts.clock(farm.hourOf(k), clk12) : "");
 				tb.add(new String[] { span, (st == 0 ? "✓ " : "✗ ") + sprayWhy(st) });
 				j = k + 1;

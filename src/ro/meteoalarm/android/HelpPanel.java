@@ -261,9 +261,20 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 	 */
 	void steps(Bitmap icon, String name, String intro, Bitmap[] icons, String[] whats) {
 		entry(icon, name, intro);
-		LinearLayout card = (LinearLayout) list.getChildAt(list.getChildCount() - 1);
-		LinearLayout txt = (LinearLayout) card.getChildAt(1);
+		// v2.010 (Viorel): the steps under the card's head, their icons in the same column as the
+		// section's icon (the card's left edge), the text in the rest of the width.
+		int at = list.getChildCount() - 1;
+		LinearLayout head = (LinearLayout) list.getChildAt(at);
+		android.view.ViewGroup.LayoutParams hl = head.getLayoutParams();
+		list.removeViewAt(at);
 		Context c = getContext();
+		LinearLayout card = new LinearLayout(c);
+		card.setOrientation(LinearLayout.VERTICAL);
+		card.setPadding(head.getPaddingLeft(), head.getPaddingTop(), head.getPaddingRight(), head.getPaddingBottom());
+		card.setBackground(head.getBackground());
+		head.setBackground(null);
+		head.setPadding(0, 0, 0, 0);
+		card.addView(head, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		for (int k = 0; k < whats.length; k++) {
 			LinearLayout r = new LinearLayout(c);
 			r.setGravity(android.view.Gravity.CENTER_VERTICAL);
@@ -273,7 +284,7 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 			iv.setPadding((int) (5 * dp), (int) (5 * dp), (int) (5 * dp), (int) (5 * dp));
 			iv.setBackground(Glass.pill(Glass.disc(dark), 0, 17 * dp, dp));
 			LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(s, s);
-			ip.rightMargin = (int) (10 * dp);
+			ip.rightMargin = (int) (24 * dp);
 			r.addView(iv, ip);
 			TextView w = new TextView(c);
 			w.setTypeface(reg);
@@ -283,9 +294,10 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 			w.setText(whats[k]);
 			r.addView(w, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
 			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-			rl.topMargin = (int) (10 * dp);
-			txt.addView(r, rl);
+			rl.topMargin = (int) (12 * dp);
+			card.addView(r, rl);
 		}
+		list.addView(card, at, hl);
 	}
 
 	/** One entry: the icon, its name and what it does. */

@@ -1,9 +1,11 @@
-Pašreizējā versija: v.2.001 · 17.11.2026
+Pašreizējā versija: v.2.010 · 17.11.2026
 IESTATĪJUMI
 - Displeja valoda: ☰ angļu un valsts valoda; Citas valodas: pārējās valsts valodas, lielās ES valodas, rumāņu un tālruņa valoda (ASV tikai angļu un spāņu).
 LAUKI
+- Burbuļi statistikā: pieskāriens stundai smidzināšanas logā, dienai grafikos vai augsnes rindai atver burbuli ar skaidrojumu; smidzināšanas logs kustas pats.
+- Darbības statuss: augšā kultūra un sējas datums; ar kultūru spriedums ņem vērā arī pilienu žūšanu (ΔT) un tās slimību.
 - Rediģēt lauku: zīmulis atver lauka lapu: nosaukums, kultūra (saraksts pēc sējas datuma sezonas vai Cita kultūra…), sējas datums, platība; stūri pārvietojas kartē.
-- Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, Delta-T, vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
+- Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, pilienu žūšana (ΔT), vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
 - Dizaina uzlabojumi un kļūdu labojumi.
 
 Versija 1.4 (v.1.400 – v.1.520)
