@@ -1,4 +1,12 @@
-Geçerli sürüm: v.1.520 · 16.11.2026
+Geçerli sürüm: v.2.001 · 17.11.2026
+AYARLAR
+- Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
+PARSELLER
+- Parseli düzenle: kalem parselin sayfasını açar: ad, bitki (ekim tarihinin sezonuna göre liste veya Başka bitki…), ekim tarihi, alan; köşeler haritada taşınır.
+- İstatistik: her parsel için Günün işi ve 4 sekme: Operasyonel (saat saat ilaçlama penceresi, Delta-T, rüzgâr, ıslak yaprak), Su ve Toprak (yağmur, buharlaşma, 6 ve 18 cm'de toprak), Sezon (geçen yıla göre gün-derecesi, tahmini evre) ve Riskler 72 h (mantar hastalıkları, yer donu, sıcak, rüzgâr ve dolu); PDF veya CSV olarak kaydetme.
+- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+
+Sürüm 1.4 (v.1.400 – v.1.520)
 ANA EKRAN
 - Ana ekran: sayfa üstteki camın altında bölümler halinde kayar (Sonraki saatler, Beş günlük tahmin, Hava ayrıntıları); düğmeler ve pil altta yüzer.
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.

@@ -1058,3 +1058,311 @@ West	Запад
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Участки: карта с карточками участков (вертикально ряд внизу, горизонтально столбец справа); касание карточки показывает его точки, Показать открывает его на главном экране. Касание булавки приближает карту к участку и показывает его название; второе касание показывает его точки. ＋ добавляет участок: где ты (GPS) или касание карты, затем название; в виде со спутника его 4 угла находятся по снимку и двигаются пальцем; + Точка добавляет одну (до 7), Круг расставляет их равномерно по кругу, долгое нажатие удаляет одну; Сохранить и ✕ стоят над окном. На карточке: карандаш правит, столбики открывают его Статистику · PDF, колокольчик включает или выключает его уведомления, корзина его удаляет. Хранятся только в этом телефоне.
 Statistics	Статистика
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Участки: карта с карточками участков (вертикально ряд внизу, горизонтально столбец справа); касание карточки приближает карту к участку и показывает его точки, Статистика открывает его статистику. Касание булавки приближает карту к участку и показывает его название; второе касание показывает его точки. ＋ добавляет участок: булавка начинает в середине карты (кнопка GPS переносит её туда, где ты), а касание карты её передвигает; название вверху; в виде со спутника его 4 угла находятся по снимку и двигаются пальцем; + Точка добавляет одну (до 7), Круг расставляет их равномерно по кругу, долгое нажатие удаляет одну; Сохранить и ✕ стоят над окном. На карточке: карандаш правит, столбики открывают его Статистику · PDF, колокольчик включает или выключает его уведомления, корзина его удаляет. Хранятся только в этом телефоне.
+# v2.001
+ Anti-drift nozzles.	 Форсунки против сноса.
+ Rain from 	 Дождь с 
+ and 	 и 
+ at 	 в 
+ corners · perimeter 	 углов · периметр 
+ days ahead	 дн. опережения
+ days behind	 дн. отставания
+ h in the last 12	 h за последние 12
+ h wet leaf	 h мокрый лист
+ hours in a row, at 	 часов подряд, при 
+ in 48 h.	 в течение 48 h.
+ in 7 days	 за 7 дней
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 в воздухе минимум. Почва может быть на 2–4 °C холоднее воздуха.
+ is usually sown in 	 обычно сеют в период 
+ on 	 на 
+ or after the winter rest	 или после зимнего покоя
+ parcels ▾	 участков ▾
+ sown on 	 посеяно 
+ starts at ≈ 	 начинается при ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · источник Open-Meteo (модели; почва и риски — оценки) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	«Оставить» подходит для тепличных культур или неверной даты, которую вы исправите позже.
+, ceiling 	, потолок 
+, critically at 	, критично в фазе 
+, from 	, с 
+, when the soil has 	, когда почва имеет 
+, with 	, с 
+. Over 32 °C the crop suffers	. Выше 32 °C культура страдает
+14 d	14 д
+28 d	28 д
+28 days: 	28 дней: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: капли испаряются контролируемо. Ниже 2 °C риск сноса, выше 10 °C капли высыхают в воздухе.
+3 leaves	3 листа
+4–6 leaves	4–6 листьев
+7 d	7 д
+7 days	7 дней
+8–10 leaves	8–10 листьев
+: base temperature 	: базовая температура 
+; storm energy (CAPE) up to 	; энергия грозы (CAPE) до 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Касание карточки приближает карту к участку и показывает его точки; Статистика открывает его статистику.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Касание булавки приближает участок и показывает его название; второе касание показывает его точки.
+Action of the day	Задача дня
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Задача дня: что делать сегодня, с оценкой опрыскивания (0–100) и главным риском следующих 48 часов.
+Another crop…	Другая культура…
+Area	Площадь
+At the soil surface it can be 	На поверхности почвы может быть 
+Back	Назад
+Balance 7 days	Баланс 7 дней
+Branching	Ветвление
+Bud break	Распускание почек
+Budding	Бутонизация
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Кнопки в ☰, по 2 в ряд: английский и язык страны; Другие языки: другие языки страны, крупные языки ЕС, румынский и язык телефона. В США только английский и испанский.
+C. That is how the fungus takes hold on the leaves.	C. Так гриб поселяется на листьях.
+CARE	ВНИМАНИЕ
+CSV saved	CSV сохранён
+CSV table (Excel)	Таблица CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Расчёт: учитываются порывы от 20 km/h и CAPE выше 300 J/kg; 75 km/h или 2500 J/kg = наверняка.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Расчёт: самая высокая температура воздуха; 28 °C без риска, 34 °C и выше наверняка.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Расчёт: температура поверхности почвы от Open-Meteo (оценка); +4 °C без риска, −2 °C и ниже наверняка.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Расчёт: мокрый лист = дождь, роса или влажность ≥ 90 %, при 12–26 °C; 12 h подряд или больше = высокий риск.
+Care	Внимание
+Change on the map	Изменить на карте
+Choose another crop	Выбрать другую культуру
+Choose the crop	Выберите культуру
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Выберите культуру и дату сева участка: от них считаются градусо-дни сезона, фаза и сравнения.
+Circle puts the points evenly on a circle.	Круг расставляет точки равномерно по кругу.
+Coldest hour	Самый холодный час
+Coming up	Далее
+Critical interval	Критический интервал
+Crop	Культура
+Crop type · for the thresholds	Тип культуры · для порогов
+Days (* = forecast)	Дни (* = прогноз)
+Delta-T (ΔT) now	Delta-T (ΔT) сейчас
+Delta-T now	Delta-T сейчас
+Delta-T over 10 °C: the drops dry in the air.	Delta-T выше 10 °C: капли высыхают в воздухе.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T ниже 2 °C: капли не высыхают и сносятся.
+Earthquake	Землетрясение
+Edit parcel	Изменить участок
+Emergence	Всходы
+Estimated stage	Ожидаемая фаза
+Evaporation	Испарение
+Evaporation (ET₀) 7 days	Испарение (ET₀) 7 дней
+Flowering	Цветение
+Forage	Кормовые
+Frost	Мороз
+Fruit set	Завязывание плодов
+Fungal diseases	Грибковые болезни
+GDD base 	База GDD 
+GDD on the same date	GDD на ту же дату
+GDD since 	GDD с 
+Good spray hours in 72 h	Хорошие часы для опрыскивания за 72 h
+Ground frost	Заморозок на почве
+Ground frost 	Заморозок на почве 
+Growing degree days (GDD)	Сумма активных температур (GDD)
+Growth	Рост
+Gusts 	Порывы 
+HIGH RISK	ВЫСОКИЙ РИСК
+Hard frost days	Дни сильного мороза
+Harvest	Уборка
+Heading	Колошение
+Heat 	Жара 
+Heat stress	Тепловой стресс
+High risk of 	Высокий риск: 
+History and forecast	История и прогноз
+Hoarfrost	Иней
+Hottest hour	Самый тёплый час
+Hour 	Час 
+Hours over 32 °C	Часы выше 32 °C
+IN SEASON	В СЕЗОН
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	На спутниковом виде 4 угла находятся по снимку и двигаются пальцем; + Точка добавляет одну (до 7), долгое нажатие удаляет одну.
+Infection: 	Заражение: 
+Irrigate if you can and avoid treatments in the hot hours.	Поливайте, если можете, и избегайте обработок в жаркие часы.
+Keep	Оставить
+LOW RISK	НИЗКИЙ РИСК
+Last year on the same date	В прошлом году на ту же дату
+Light wind 	Слабый ветер 
+MODERATE RISK	УМЕРЕННЫЙ РИСК
+Machinery on the field	Техника в поле
+Moderate risk of 	Умеренный риск: 
+NOT THE SEASON	НЕ СЕЗОН
+Name	Название
+Next 72 hours	Следующие 72 часа
+No app on the phone opens CSV files.	Ни одно приложение на телефоне не открывает файлы CSV.
+No corners yet: only the pin.	Углов ещё нет: только булавка.
+No data for the season yet.	Данных за сезон пока нет.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Данных для этого участка пока нет. Откройте его один раз с интернетом: приложение загрузит данные с Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	В этом месяце полевые культуры не сеют; сады, виноградники и прочее ниже.
+No good hours in the next 24 hours.	Нет хороших часов в следующие 24 часа.
+No long wet spell in the next 72 hours.	Нет долгого влажного периода в следующие 72 часа.
+No risk	Без риска
+No spraying today	Сегодня не опрыскивать
+No treatment needed for now.	Пока обработка не нужна.
+Nothing special in the next 72 hours.	Ничего особенного в следующие 72 часа.
+Nothing to do.	Делать нечего.
+OPTIMAL	ОПТИМАЛЬНО
+OUT OF SEASON	НЕ В СЕЗОН
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	На карте углы двигаются пальцем; + Точка, Круг и долгое нажатие работают и там. Погода берётся из центра участка.
+Operational	Оперативно
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Оперативно: окно опрыскивания по часам (зелёный, жёлтый, красный; число — ΔT); касание часа показывает его значения. Delta-T, ветер и порывы, мокрый лист.
+Optimal	Оптимально
+Orchard / vine	Сад / виноградник
+Other crops · in another season	Другие культуры · в другой сезон
+Outline on the map	Контур на карте
+PDF report	Отчёт PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV сохраняет сводку, следующие 72 часа и дни в Загрузки.
+Preventive treatment before the wet spell, in a green window	Профилактическая обработка до влажного периода, в зелёном окне
+Protect young plants and sensitive crops; no treatments in the cold hours.	Защитите молодые растения и чувствительные культуры; без обработок в холодные часы.
+RH	ОВ
+RH 	ОВ 
+Rain 	Дождь 
+Rain 7 days	Дождь 7 дней
+Rain 7 days / 28 days	Дождь 7 дней / 28 дней
+Rain now or soon: it washes the treatment off.	Дождь сейчас или скоро: смоет обработку.
+Right for 	Подходят для 
+Right now	Подходят сейчас
+Ripening	Созревание
+Risks	Риски
+Risks 72 h	Риски 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Риски 72 h: грибковые болезни, заморозок на почве, тепловой стресс, ветер и град; касание карточки объясняет риск и говорит, что делать. Под ними: что впереди.
+Save and ✕, above the new parcel's box, keep it or close the box.	Сохранить и ✕ над окном нового участка сохраняют его или закрывают окно.
+Save as PDF or CSV	Сохранить как PDF или CSV
+Save the statistics	Сохранить статистику
+Score	Оценка
+Season	Сезон
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Сезон: градусо-дни (GDD) от сева в сравнении с прошлым годом, ожидаемая фаза, тепловой стресс и дни сильного мороза. Нужны культура и дата сева.
+Secure what the wind can take; no spraying in the gusts.	Закрепите то, что может унести ветер; не опрыскивайте при порывах.
+Soil / air	Почва / воздух
+Soil temperature 6 / 18 cm	Температура почвы 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Источник: Open-Meteo (модели; почва и риски — оценки). 
+Sowing date	Дата сева
+Spray between 	Опрыскивайте с 
+Spray window	Окно опрыскивания
+Spray with care between 	Опрыскивайте осторожно с 
+Spring row crops	Весенние пропашные
+Stem elongation	Выход в трубку
+Storm energy	Энергия грозы
+Strongest gust	Сильнейший порыв
+Surface moisture	Влажность поверхности
+Surface moisture 0–1 cm	Влажность поверхности 0–1 cm
+TODAY	СЕГОДНЯ
+The GPS button takes the map, and the new parcel's pin, where you are.	Кнопка GPS переносит карту, и булавку нового участка, туда, где вы находитесь.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Столбики на карточке участка или Статистика в его пузыре. Вверху: участок (касание выбирает другой), 4 вкладки и PDF · CSV.
+The bars open its Statistics.	Столбики открывают его Статистику.
+The bell turns its notifications on or off.	Колокольчик включает или выключает его уведомления.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Корзина удаляет его; он остаётся 15 дней в корзине под кнопкой GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Культура выбирается из списка по сезону даты сева; Другая культура… получает название и тип; вне сезона приложение спросит снова.
+The file could not be saved: 	Не удалось сохранить файл: 
+The highest temperature of the next 7 days: 	Самая высокая температура следующих 7 дней: 
+The hours are missing from the data.	В данных нет часов.
+The last stage is reached.	Последняя фаза достигнута.
+The leaves stay wet 	Листья останутся мокрыми 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Карандаш изменяет участок: название, культура, дата сева, площадь; углы двигаются на карте.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Первые дни сезона берутся из архива Open-Meteo; загружаются при наличии интернета.
+The soil	Почва
+The strongest gust of the next 72 hours: 	Сильнейший порыв следующих 72 часов: 
+Thresholds for 	Пороги для 
+Tillering	Кущение
+Today	Сегодня
+Too cold (under 5 °C).	Слишком холодно (ниже 5 °C).
+Too hot (over 28 °C).	Слишком жарко (выше 28 °C).
+Too much wind (drift).	Слишком сильный ветер (снос).
+Updated 	Обновлено 
+Vegetables	Овощи
+Veraison	Начало созревания ягод
+Vs. last year	По сравнению с прошлым годом
+Wait	Подождать
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Следите за участком; обработка может понадобиться, если влажность сохранится.
+Water & Soil	Вода и почва
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Вода и почва: дождь и испарение (ET₀) за 7 дней и баланс; график прошлого и следующих 7 дней; почва на 6 и 18 cm, влажность поверхности, техника в поле.
+Wet leaf	Мокрый лист
+Wet leaf hours	Часы мокрого листа
+Wet leaf now	Мокрый лист сейчас
+What you can do	Что можно сделать
+Wind 	Ветер 
+Wind / gusts now	Ветер / порывы сейчас
+Wind and gusts	Ветер и порывы
+Wind · hail	Ветер · град
+Wind, ΔT or temperature outside the ideal range.	Ветер, ΔT или температура вне идеального диапазона.
+Winter cereals	Озимые зерновые
+With this date the degree days and the risks can come out wrong.	С этой датой градусо-дни и риски могут получиться неверными.
+Write the crop's name	Введите название культуры
+air 	воздух 
+as last year	как в прошлом году
+care	внимание
+choose…	выбрать…
+critical heat at 	критическая жара в фазе 
+days	дней
+deficit, irrigate	дефицит, поливайте
+disease watched: 	отслеживаемая болезнь: 
+drag a corner to move it; a long press deletes it	перетащите угол, чтобы сдвинуть; долгое нажатие удаляет его
+dried at 	высохло в 
+estimated on 	оценка на 
+evaporation (ET₀)	испарение (ET₀)
+firm ground	твёрдая почва
+forecast	прогноз
+from GDD	по GDD
+fungal diseases	грибковые болезни
+fungi	грибы
+green zone = sowing threshold for 	зелёная зона = порог сева для 
+gusts max 	порывы макс. 
+last year	в прошлом году
+last year 	в прошлом году 
+maize	кукуруза
+max 	макс. 
+measured	измерено
+near saturation	почти насыщена
+no	запрещено
+no crop or sowing date yet	ещё нет культуры и даты сева
+no dew or rain lately	в последнее время без росы и дождя
+no spraying, secure what can fly	не опрыскивайте, закрепите то, что может улететь
+no treatments in the hot hours	без обработок в жаркие часы
+not to be estimated now (cold)	сейчас не оценить (холодно)
+number = ΔT	число = ΔT
+optimal	оптимально
+ordered by the sowing date: 	по дате сева: 
+ordered by this month	по этому месяцу
+over 32 °C	выше 32 °C
+planted	посажено
+rain 3 days 	дождь 3 дня 
+rain mm/day	дождь mm/день
+risk of compaction	риск уплотнения
+score 	оценка 
+slight deficit	небольшой дефицит
+sowing soil 	почва для сева 
+sown 	посеяно 
+surplus	избыток
+tap a card	коснитесь карточки
+the field is hard to work	поле трудно обрабатывать
+the leaves are wet now	листья сейчас мокрые
+the soil compacts	почва уплотняется
+the sowing date	дата сева
+this season	этот сезон
+threshold 12 h	порог 12 h
+today	сегодня
+under −5 °C	ниже −5 °C
+wet	мокро
+write the name	введите название
+yes	да
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Участки: карта с карточками участков (вертикально ряд внизу, горизонтально столбец справа). Хранится только на этом телефоне.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ добавляет участок: булавка появляется в центре карты, касание карты двигает её; название вверху.
+Wheat	Пшеница
+Barley	Ячмень
+Triticale	Тритикале
+Rapeseed	Рапс
+Maize	Кукуруза
+Sunflower	Подсолнечник
+Soybean	Соя
+Sugar beet	Сахарная свёкла
+Potato	Картофель
+Vineyard	Виноградник
+Orchard	Сад
+Alfalfa	Люцерна
+Septoria	Септориоз
+Net blotch	Сетчатая пятнистость
+Phoma	Фомоз
+Fusarium	Фузариоз
+Downy mildew	Милдью
+Cercospora	Церкоспороз
+Late blight	Фитофтороз
+Scab	Парша
+Anthracnose	Антракноз
+grain filling	налив зерна
+flowering	цветение
+pollination	опыление
+root growth	рост корнеплода
+tuber forming	клубнеобразование
+regrowth	отрастание
+.	.

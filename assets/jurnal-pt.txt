@@ -1,4 +1,12 @@
-Versão atual: v.1.520 · 16.11.2026
+Versão atual: v.2.001 · 17.11.2026
+DEFINIÇÕES
+- Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
+PARCELAS
+- Editar parcela: o lápis abre a página da parcela: nome, cultura (lista pela época da data de sementeira ou Outra cultura…), data de sementeira, área; os cantos movem-se no mapa.
+- Estatística: para cada parcela, a Ação do dia e 4 separadores: Operacional (janela de pulverização hora a hora, Delta-T, vento, folha molhada), Água e Solo (chuva, evaporação, solo a 6 e 18 cm), Época (graus-dia face ao ano passado, fase estimada) e Riscos 72 h (doenças fúngicas, geada no solo, calor, vento e granizo); guarda em PDF ou CSV.
+- Melhorias de design e correção de erros.
+
+Versão 1.4 (v.1.400 – v.1.520)
 ATUALIZAÇÕES
 - Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES

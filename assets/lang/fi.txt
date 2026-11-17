@@ -1124,3 +1124,311 @@ West	Länsi
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Lohkot: kartta lohkojen korteilla (pystyssä rivi alhaalla, vaakatasossa sarake oikealla); kortin napautus näyttää sen pisteet, Näytä avaa sen päänäytölle. Neulan napautus lähentää kartan lohkoon ja näyttää sen nimen; toinen napautus näyttää sen pisteet. ＋ lisää lohkon: missä olet (GPS) tai napautus kartalla, sitten nimi; satelliittinäkymässä sen 4 kulmaa löydetään kuvasta ja siirretään sormella; + Piste lisää yhden (enintään 7), Ympyrä asettaa ne tasavälein ympyrälle, pitkä painallus poistaa yhden; Tallenna ja ✕ ovat ruudun yläpuolella. Kortilla: kynä muokkaa, palkit avaavat sen Tilastot · PDF:n, kello kytkee sen ilmoitukset päälle tai pois, roskakori poistaa sen. Tallessa vain tässä puhelimessa.
 Statistics	Tilastot
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Lohkot: kartta lohkojen korteilla (pystyssä rivi alhaalla, vaakatasossa sarake oikealla); kortin napautus lähentää kartan lohkoon ja näyttää sen pisteet, Tilastot avaa sen tilastot. Neulan napautus lähentää kartan lohkoon ja näyttää sen nimen; toinen napautus näyttää sen pisteet. ＋ lisää lohkon: neula alkaa kartan keskeltä (GPS-painike siirtää sen sinne, missä olet) ja napautus kartalla siirtää sitä; nimi on ylhäällä; satelliittinäkymässä sen 4 kulmaa löydetään kuvasta ja siirretään sormella; + Piste lisää yhden (enintään 7), Ympyrä asettaa ne tasavälein ympyrälle, pitkä painallus poistaa yhden; Tallenna ja ✕ ovat ruudun yläpuolella. Kortilla: kynä muokkaa, palkit avaavat sen Tilastot · PDF:n, kello kytkee sen ilmoitukset päälle tai pois, roskakori poistaa sen. Tallessa vain tässä puhelimessa.
+# v2.001
+ Anti-drift nozzles.	 Tihkusuuttimet.
+ Rain from 	 Sadetta klo 
+ and 	 ja 
+ at 	 klo 
+ corners · perimeter 	 kulmaa · piiri 
+ days ahead	 päivää edellä
+ days behind	 päivää jäljessä
+ h in the last 12	 h viimeisten 12 aikana
+ h wet leaf	 h märkä lehti
+ hours in a row, at 	 tuntia peräkkäin, 
+ in 48 h.	 48 h:n sisällä.
+ in 7 days	 7 päivässä
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 ilmassa alimmillaan. Maa voi olla 2–4 °C ilmaa kylmempi.
+ is usually sown in 	 kylvetään yleensä 
+ on 	 – 
+ or after the winter rest	 tai talvilevon jälkeen
+ parcels ▾	 lohkoa ▾
+ sown on 	 kylvetty 
+ starts at ≈ 	 alkaa ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · lähde Open-Meteo (mallit; maa ja riskit ovat arvioita) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	”Säilytä” sopii kasvihuoneviljelyyn tai väärään päivään, jonka korjaat myöhemmin.
+, ceiling 	, katto 
+, critically at 	, kriittisesti vaiheessa 
+, from 	, alkaen 
+, when the soil has 	, kun maassa on 
+, with 	, 
+. Over 32 °C the crop suffers	. Yli 32 °C:ssa kasvusto kärsii
+14 d	14 pv
+28 d	28 pv
+28 days: 	28 päivää: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: pisarat haihtuvat hallitusti. Alle 2 °C kulkeutumisriski, yli 10 °C pisarat kuivuvat ilmassa.
+3 leaves	3 lehteä
+4–6 leaves	4–6 lehteä
+7 d	7 pv
+7 days	7 päivää
+8–10 leaves	8–10 lehteä
+: base temperature 	: peruslämpötila 
+; storm energy (CAPE) up to 	; ukkosenergia (CAPE) enintään 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Kortin napautus zoomaa kartan lohkoon ja näyttää sen pisteet; Tilastot avaa sen tilastot.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Neulan napautus zoomaa lohkoon ja näyttää sen nimen; toinen napautus näyttää sen pisteet.
+Action of the day	Päivän toimi
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Päivän toimi: mitä tehdä tänään, ruiskutuspisteet (0–100) ja seuraavien 48 tunnin suurin riski.
+Another crop…	Muu kasvi…
+Area	Pinta-ala
+At the soil surface it can be 	Maan pinnalla voi olla 
+Back	Takaisin
+Balance 7 days	Tase 7 päivää
+Branching	Haarautuminen
+Bud break	Silmujen puhkeaminen
+Budding	Nuppuvaihe
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Painikkeet ☰:ssa, 2 rivillä: englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli. Yhdysvalloissa vain englanti ja espanja.
+C. That is how the fungus takes hold on the leaves.	C. Näin sieni tarttuu lehtiin.
+CARE	HUOMIO
+CSV saved	CSV tallennettu
+CSV table (Excel)	CSV-taulukko (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Laskenta: puuskat 20 km/h:sta ja CAPE yli 300 J/kg lasketaan; 75 km/h tai 2500 J/kg = varma.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Laskenta: korkein ilman lämpötila; 28 °C ei riskiä, 34 °C ja yli varma.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Laskenta: maanpinnan lämpötila Open-Meteosta (arvio); +4 °C ei riskiä, −2 °C ja alle varma.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Laskenta: märkä lehti = sade, kaste tai kosteus ≥ 90 %, 12–26 °C:ssa; 12 h peräkkäin tai enemmän = korkea riski.
+Care	Huomio
+Change on the map	Muuta kartalla
+Choose another crop	Valitse toinen kasvi
+Choose the crop	Valitse kasvi
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Valitse lohkon kasvi ja kylvöpäivä: kauden lämpösumma, kasvuvaihe ja vertailut lasketaan niistä.
+Circle puts the points evenly on a circle.	Ympyrä asettaa pisteet tasaisesti ympyrälle.
+Coldest hour	Kylmin tunti
+Coming up	Tulossa
+Critical interval	Kriittinen jakso
+Crop	Kasvi
+Crop type · for the thresholds	Kasvityyppi · raja-arvoja varten
+Days (* = forecast)	Päivät (* = ennuste)
+Delta-T (ΔT) now	Delta-T (ΔT) nyt
+Delta-T now	Delta-T nyt
+Delta-T over 10 °C: the drops dry in the air.	Delta-T yli 10 °C: pisarat kuivuvat ilmassa.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T alle 2 °C: pisarat eivät kuivu ja kulkeutuvat.
+Earthquake	Maanjäristys
+Edit parcel	Muokkaa lohkoa
+Emergence	Orastuminen
+Estimated stage	Arvioitu vaihe
+Evaporation	Haihdunta
+Evaporation (ET₀) 7 days	Haihdunta (ET₀) 7 päivää
+Flowering	Kukinta
+Forage	Rehukasvit
+Frost	Pakkanen
+Fruit set	Hedelmien kiinnittyminen
+Fungal diseases	Sienitaudit
+GDD base 	GDD-perusta 
+GDD on the same date	GDD samana päivänä
+GDD since 	GDD alkaen 
+Good spray hours in 72 h	Hyvät ruiskutustunnit 72 h:ssa
+Ground frost	Maanpintahalla
+Ground frost 	Maanpintahalla 
+Growing degree days (GDD)	Lämpösumma (GDD)
+Growth	Kasvu
+Gusts 	Puuskat 
+HIGH RISK	KORKEA RISKI
+Hard frost days	Kovan pakkasen päivät
+Harvest	Sadonkorjuu
+Heading	Tähkälle tulo
+Heat 	Helle 
+Heat stress	Lämpöstressi
+High risk of 	Korkea riski: 
+History and forecast	Historia ja ennuste
+Hoarfrost	Kuura
+Hottest hour	Lämpimin tunti
+Hour 	Tunti 
+Hours over 32 °C	Tunnit yli 32 °C
+IN SEASON	KAUDELLA
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Satelliittinäkymässä 4 kulmaa haetaan kuvasta ja niitä siirretään sormella; + Piste lisää yhden (enintään 7), pitkä painallus poistaa yhden.
+Infection: 	Tartunta: 
+Irrigate if you can and avoid treatments in the hot hours.	Kastele, jos voit, ja vältä käsittelyjä kuumina tunteina.
+Keep	Säilytä
+LOW RISK	MATALA RISKI
+Last year on the same date	Viime vuonna samana päivänä
+Light wind 	Heikko tuuli 
+MODERATE RISK	KOHTALAINEN RISKI
+Machinery on the field	Koneet pellolla
+Moderate risk of 	Kohtalainen riski: 
+NOT THE SEASON	EI KAUSI
+Name	Nimi
+Next 72 hours	Seuraavat 72 tuntia
+No app on the phone opens CSV files.	Mikään puhelimen sovellus ei avaa CSV-tiedostoja.
+No corners yet: only the pin.	Ei vielä kulmia: vain neula.
+No data for the season yet.	Kaudelta ei vielä ole tietoja.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Tälle lohkolle ei vielä ole tietoja. Avaa se kerran internetyhteydellä: sovellus lataa sen tiedot Open-Meteosta.
+No field crop is sown in this month; orchards, vines and the others are below.	Tässä kuussa ei kylvetä peltokasveja; hedelmätarhat, viinitarhat ja muut ovat alla.
+No good hours in the next 24 hours.	Ei hyviä tunteja seuraavan 24 tunnin aikana.
+No long wet spell in the next 72 hours.	Ei pitkää märkää jaksoa seuraavan 72 tunnin aikana.
+No risk	Ei riskiä
+No spraying today	Ei ruiskutusta tänään
+No treatment needed for now.	Käsittelyä ei tarvita toistaiseksi.
+Nothing special in the next 72 hours.	Ei mitään erityistä seuraavan 72 tunnin aikana.
+Nothing to do.	Ei tehtävää.
+OPTIMAL	OPTIMAALINEN
+OUT OF SEASON	KAUDEN ULKOPUOLELLA
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Kartalla kulmia siirretään sormella; + Piste, Ympyrä ja pitkä painallus toimivat siellä myös. Sää haetaan lohkon keskeltä.
+Operational	Toiminta
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Toiminta: ruiskutusikkuna tunti tunnilta (vihreä, keltainen, punainen; luku on ΔT); tunnin napautus näyttää sen arvot. Delta-T, tuuli ja puuskat, märkä lehti.
+Optimal	Optimaalinen
+Orchard / vine	Hedelmätarha / viinitarha
+Other crops · in another season	Muut kasvit · muulla kaudella
+Outline on the map	Ääriviiva kartalla
+PDF report	PDF-raportti
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV tallentaa yhteenvedon, seuraavat 72 tuntia ja päivät Latauksiin.
+Preventive treatment before the wet spell, in a green window	Ennaltaehkäisevä käsittely ennen märkää jaksoa, vihreässä ikkunassa
+Protect young plants and sensitive crops; no treatments in the cold hours.	Suojaa nuoret kasvit ja herkät kasvustot; ei käsittelyjä kylminä tunteina.
+RH	RH
+RH 	RH 
+Rain 	Sade 
+Rain 7 days	Sade 7 päivää
+Rain 7 days / 28 days	Sade 7 päivää / 28 päivää
+Rain now or soon: it washes the treatment off.	Sadetta nyt tai pian: se huuhtoo käsittelyn pois.
+Right for 	Sopivat kuukaudelle: 
+Right now	Sopivat nyt
+Ripening	Tuleentuminen
+Risks	Riskit
+Risks 72 h	Riskit 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Riskit 72 h: sienitaudit, maanpintahalla, lämpöstressi, tuuli ja rakeet; kortin napautus selittää sen ja kertoo, mitä tehdä. Niiden alla: mitä on tulossa.
+Save and ✕, above the new parcel's box, keep it or close the box.	Tallenna ja ✕ uuden lohkon ruudun yläpuolella tallentavat sen tai sulkevat ruudun.
+Save as PDF or CSV	Tallenna PDF- tai CSV-muodossa
+Save the statistics	Tallenna tilastot
+Score	Pisteet
+Season	Kausi
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Kausi: lämpösumma (GDD) kylvöstä verrattuna viime vuoteen, arvioitu vaihe, lämpöstressi ja kovan pakkasen päivät. Vaatii kasvin ja kylvöpäivän.
+Secure what the wind can take; no spraying in the gusts.	Kiinnitä, mitä tuuli voi viedä; ei ruiskutusta puuskissa.
+Soil / air	Maa / ilma
+Soil temperature 6 / 18 cm	Maan lämpötila 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Lähde: Open-Meteo (mallit; maa ja riskit ovat arvioita). 
+Sowing date	Kylvöpäivä
+Spray between 	Ruiskuta klo 
+Spray window	Ruiskutusikkuna
+Spray with care between 	Ruiskuta varoen klo 
+Spring row crops	Kevään rivikasvit
+Stem elongation	Korrenkasvu
+Storm energy	Ukkosenergia
+Strongest gust	Voimakkain puuska
+Surface moisture	Pintakosteus
+Surface moisture 0–1 cm	Pintakosteus 0–1 cm
+TODAY	TÄNÄÄN
+The GPS button takes the map, and the new parcel's pin, where you are.	GPS-painike siirtää kartan, ja uuden lohkon neulan, sinne missä olet.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Lohkon kortin pylväät tai Tilastot sen kuplassa. Ylhäällä: lohko (napautus valitsee toisen), 4 välilehteä ja PDF · CSV.
+The bars open its Statistics.	Pylväät avaavat sen Tilastot.
+The bell turns its notifications on or off.	Kello kytkee sen ilmoitukset päälle tai pois.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Roskakori poistaa sen; se säilyy 15 päivää roskakorissa GPS-painikkeen alla.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Kasvi valitaan listalta, joka on järjestetty kylvöpäivän kauden mukaan; Muu kasvi… saa nimen ja tyypin; kauden ulkopuolella sovellus kysyy uudelleen.
+The file could not be saved: 	Tiedostoa ei voitu tallentaa: 
+The highest temperature of the next 7 days: 	Seuraavien 7 päivän korkein lämpötila: 
+The hours are missing from the data.	Tunnit puuttuvat tiedoista.
+The last stage is reached.	Viimeinen vaihe on saavutettu.
+The leaves stay wet 	Lehdet pysyvät märkinä 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Kynä muokkaa lohkoa: nimi, kasvi, kylvöpäivä, pinta-ala; kulmia siirretään kartalla.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Kauden ensimmäiset päivät tulevat Open-Meteon arkistosta; ne ladataan internetyhteydellä.
+The soil	Maa
+The strongest gust of the next 72 hours: 	Seuraavien 72 tunnin voimakkain puuska: 
+Thresholds for 	Raja-arvot: 
+Tillering	Versonta
+Today	Tänään
+Too cold (under 5 °C).	Liian kylmä (alle 5 °C).
+Too hot (over 28 °C).	Liian kuuma (yli 28 °C).
+Too much wind (drift).	Liikaa tuulta (kulkeutuminen).
+Updated 	Päivitetty 
+Vegetables	Vihannekset
+Veraison	Värinmuutos
+Vs. last year	Vs. viime vuosi
+Wait	Odota
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Seuraa lohkoa; käsittely voi olla tarpeen, jos kosteus jatkuu.
+Water & Soil	Vesi & maa
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Vesi & maa: 7 päivän sade ja haihdunta (ET₀) sekä tase; kaavio menneestä ja seuraavista 7 päivästä; maa 6 ja 18 cm:ssä, pintakosteus, koneet pellolla.
+Wet leaf	Märkä lehti
+Wet leaf hours	Märän lehden tunnit
+Wet leaf now	Märkä lehti nyt
+What you can do	Mitä voit tehdä
+Wind 	Tuuli 
+Wind / gusts now	Tuuli / puuskat nyt
+Wind and gusts	Tuuli ja puuskat
+Wind · hail	Tuuli · rakeet
+Wind, ΔT or temperature outside the ideal range.	Tuuli, ΔT tai lämpötila ihannealueen ulkopuolella.
+Winter cereals	Syysviljat
+With this date the degree days and the risks can come out wrong.	Tällä päivällä lämpösumma ja riskit voivat mennä väärin.
+Write the crop's name	Kirjoita kasvin nimi
+air 	ilma 
+as last year	kuten viime vuonna
+care	huomio
+choose…	valitse…
+critical heat at 	kriittinen helle vaiheessa 
+days	päivää
+deficit, irrigate	vajaus, kastele
+disease watched: 	seurattu tauti: 
+drag a corner to move it; a long press deletes it	vedä kulmaa siirtääksesi sitä; pitkä painallus poistaa sen
+dried at 	kuivunut klo 
+estimated on 	arvioitu 
+evaporation (ET₀)	haihdunta (ET₀)
+firm ground	kantava maa
+forecast	ennuste
+from GDD	GDD:n mukaan
+fungal diseases	sienitaudit
+fungi	sienet
+green zone = sowing threshold for 	vihreä alue = kylvöraja: 
+gusts max 	puuskat enint. 
+last year	viime vuonna
+last year 	viime vuonna 
+maize	maissi
+max 	enint. 
+measured	mitattu
+near saturation	lähes kyllästynyt
+no	kielletty
+no crop or sowing date yet	ei vielä kasvia eikä kylvöpäivää
+no dew or rain lately	ei kastetta eikä sadetta viime aikoina
+no spraying, secure what can fly	ei ruiskutusta, kiinnitä mikä voi lentää
+no treatments in the hot hours	ei käsittelyjä kuumina tunteina
+not to be estimated now (cold)	ei arvioitavissa nyt (kylmä)
+number = ΔT	luku = ΔT
+optimal	optimaalinen
+ordered by the sowing date: 	järjestetty kylvöpäivän mukaan: 
+ordered by this month	järjestetty tämän kuun mukaan
+over 32 °C	yli 32 °C
+planted	istutettu
+rain 3 days 	sade 3 päivää 
+rain mm/day	sade mm/päivä
+risk of compaction	tiivistymisriski
+score 	pisteet 
+slight deficit	lievä vajaus
+sowing soil 	kylvömaa 
+sown 	kylvetty 
+surplus	ylijäämä
+tap a card	napauta korttia
+the field is hard to work	peltoa on vaikea muokata
+the leaves are wet now	lehdet ovat nyt märkiä
+the soil compacts	maa tiivistyy
+the sowing date	kylvöpäivä
+this season	tämä kausi
+threshold 12 h	raja 12 h
+today	tänään
+under −5 °C	alle −5 °C
+wet	märkä
+write the name	kirjoita nimi
+yes	kyllä
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Lohkot: kartta lohkojen korteilla (pystyssä rivi alhaalla, vaakatasossa sarake oikealla). Tallennetaan vain tähän puhelimeen.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ lisää lohkon: neula alkaa kartan keskeltä, kartan napautus siirtää sitä; nimi on ylhäällä.
+Wheat	Vehnä
+Barley	Ohra
+Triticale	Ruisvehnä
+Rapeseed	Rypsi / rapsi
+Maize	Maissi
+Sunflower	Auringonkukka
+Soybean	Soijapapu
+Sugar beet	Sokerijuurikas
+Potato	Peruna
+Vineyard	Viinitarha
+Orchard	Hedelmätarha
+Alfalfa	Sinimailanen
+Septoria	Septoria
+Net blotch	Verkkolaikku
+Phoma	Phoma
+Fusarium	Fusarium
+Downy mildew	Lehtihome (Peronospora)
+Cercospora	Cercospora
+Late blight	Perunarutto
+Scab	Rupi
+Anthracnose	Antraknoosi
+grain filling	jyvän täyttyminen
+flowering	kukinta
+pollination	pölytys
+root growth	juurikkaan kasvu
+tuber forming	mukulanmuodostus
+regrowth	uusi kasvu
+.	.

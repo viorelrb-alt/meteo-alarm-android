@@ -1,4 +1,12 @@
-Nykyinen versio: v.1.520 · 16.11.2026
+Nykyinen versio: v.2.001 · 17.11.2026
+ASETUKSET
+- Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
+PELTOLOHKOT
+- Muokkaa lohkoa: kynä avaa lohkon sivun: nimi, kasvi (lista kylvöpäivän kauden mukaan tai Muu kasvi…), kylvöpäivä, pinta-ala; kulmia siirretään kartalla.
+- Tilastot: jokaiselle lohkolle Päivän toimi ja 4 välilehteä: Toiminta (ruiskutusikkuna tunti tunnilta, Delta-T, tuuli, märkä lehti), Vesi & maa (sade, haihdunta, maa 6 ja 18 cm:ssä), Kausi (lämpösumma verrattuna viime vuoteen, arvioitu vaihe) ja Riskit 72 h (sienitaudit, maanpintahalla, helle, tuuli ja rakeet); tallennus PDF- tai CSV-muodossa.
+- Ulkoasun parannuksia ja virheenkorjauksia.
+
+Versio 1.4 (v.1.400 – v.1.520)
 ASETUKSET
 - Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
 - Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ☰; sovelluksessa ja widgeteissä.

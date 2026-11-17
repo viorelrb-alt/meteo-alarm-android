@@ -1124,3 +1124,311 @@ West	Δύση
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης με τις κάρτες των αγροτεμαχίων (κάθετα μια σειρά κάτω, οριζόντια μια στήλη δεξιά)· ένα άγγιγμα σε κάρτα δείχνει τα σημεία του, το Εμφάνιση το ανοίγει στην κύρια οθόνη. Ένα άγγιγμα σε καρφίτσα μεγεθύνει τον χάρτη στο αγροτεμάχιο και δείχνει το όνομά του· δεύτερο άγγιγμα δείχνει τα σημεία του. Το ＋ προσθέτει ένα: όπου είσαι (GPS) ή ένα άγγιγμα στον χάρτη, μετά το όνομα· στη δορυφορική προβολή οι 4 γωνίες του βρίσκονται από την εικόνα και μετακινούνται με το δάχτυλο· το + Σημείο προσθέτει ένα (έως 7), το Κύκλος τα βάζει ισαπέχοντα σε κύκλο, παρατεταμένο πάτημα διαγράφει ένα· Αποθήκευση και ✕ βρίσκονται πάνω από το πλαίσιο. Σε κάρτα: το μολύβι επεξεργάζεται, οι μπάρες ανοίγουν τα Στατιστικά · PDF, το καμπανάκι ανοίγει ή κλείνει τις ειδοποιήσεις του, ο κάδος το διαγράφει. Φυλάσσονται μόνο σε αυτό το τηλέφωνο.
 Statistics	Στατιστικά
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης με τις κάρτες των αγροτεμαχίων (κάθετα μια σειρά κάτω, οριζόντια μια στήλη δεξιά)· ένα άγγιγμα σε κάρτα μεγεθύνει τον χάρτη στο αγροτεμάχιο και δείχνει τα σημεία του, το Στατιστικά ανοίγει τα στατιστικά του. Ένα άγγιγμα σε καρφίτσα μεγεθύνει στο αγροτεμάχιο και δείχνει το όνομά του· δεύτερο άγγιγμα δείχνει τα σημεία του. Το ＋ προσθέτει ένα: η καρφίτσα ξεκινά από τη μέση του χάρτη (το κουμπί GPS τη μεταφέρει εκεί που είσαι) και ένα άγγιγμα στον χάρτη τη μετακινεί· το όνομα είναι πάνω· στη δορυφορική προβολή οι 4 γωνίες του βρίσκονται από την εικόνα και μετακινούνται με το δάχτυλο· το + Σημείο προσθέτει ένα (έως 7), το Κύκλος τα βάζει ισαπέχοντα σε κύκλο, παρατεταμένο πάτημα διαγράφει ένα· Αποθήκευση και ✕ βρίσκονται πάνω από το πλαίσιο. Σε κάρτα: το μολύβι επεξεργάζεται, οι μπάρες ανοίγουν τα Στατιστικά · PDF, το καμπανάκι ανοίγει ή κλείνει τις ειδοποιήσεις του, ο κάδος το διαγράφει. Φυλάσσονται μόνο σε αυτό το τηλέφωνο.
+# v2.001
+ Anti-drift nozzles.	 Μπεκ κατά της διασποράς.
+ Rain from 	 Βροχή από 
+ and 	 και 
+ at 	 στις 
+ corners · perimeter 	 γωνίες · περίμετρος 
+ days ahead	 ημέρες μπροστά
+ days behind	 ημέρες πίσω
+ h in the last 12	 h στις τελευταίες 12
+ h wet leaf	 h υγρό φύλλο
+ hours in a row, at 	 ώρες συνεχόμενα, στους 
+ in 48 h.	 σε 48 h.
+ in 7 days	 σε 7 ημέρες
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 στον αέρα το ελάχιστο. Το έδαφος μπορεί να είναι 2–4 °C ψυχρότερο από τον αέρα.
+ is usually sown in 	 σπέρνεται συνήθως την περίοδο 
+ on 	 σε 
+ or after the winter rest	 ή μετά τον χειμερινό λήθαργο
+ parcels ▾	 αγροτεμάχια ▾
+ sown on 	 σπάρθηκε στις 
+ starts at ≈ 	 ξεκινά στους ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · πηγή Open-Meteo (μοντέλα· το έδαφος και οι κίνδυνοι είναι εκτιμήσεις) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	Το «Διατήρηση» βοηθά για καλλιέργειες θερμοκηπίου ή λάθος ημερομηνία που θα διορθώσεις αργότερα.
+, ceiling 	, ανώτατο 
+, critically at 	, κρίσιμα στην 
+, from 	, από 
+, when the soil has 	, όταν το έδαφος έχει 
+, with 	, με 
+. Over 32 °C the crop suffers	. Πάνω από 32 °C η καλλιέργεια υποφέρει
+14 d	14 ημ.
+28 d	28 ημ.
+28 days: 	28 ημέρες: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: οι σταγόνες εξατμίζονται ελεγχόμενα. Κάτω από 2 °C κίνδυνος διασποράς, πάνω από 10 °C οι σταγόνες στεγνώνουν στον αέρα.
+3 leaves	3 φύλλα
+4–6 leaves	4–6 φύλλα
+7 d	7 ημ.
+7 days	7 ημέρες
+8–10 leaves	8–10 φύλλα
+: base temperature 	: θερμοκρασία βάσης 
+; storm energy (CAPE) up to 	; ενέργεια καταιγίδας (CAPE) έως 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Ένα πάτημα σε κάρτα εστιάζει τον χάρτη στο αγροτεμάχιο και δείχνει τα σημεία του· το Στατιστικά ανοίγει τα στατιστικά του.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Ένα πάτημα σε πινέζα εστιάζει στο αγροτεμάχιο και δείχνει το όνομά του· δεύτερο πάτημα δείχνει τα σημεία του.
+Action of the day	Ενέργεια της ημέρας
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Ενέργεια της ημέρας: τι να κάνεις σήμερα, με τη βαθμολογία ψεκασμού (0–100) και τον μεγαλύτερο κίνδυνο των επόμενων 48 ωρών.
+Another crop…	Άλλη καλλιέργεια…
+Area	Έκταση
+At the soil surface it can be 	Στην επιφάνεια του εδάφους μπορεί να είναι 
+Back	Πίσω
+Balance 7 days	Ισοζύγιο 7 ημερών
+Branching	Διακλάδωση
+Bud break	Έκπτυξη οφθαλμών
+Budding	Σχηματισμός μπουμπουκιών
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Κουμπιά στο ☰, 2 ανά σειρά: τα αγγλικά και η γλώσσα της χώρας· Άλλες γλώσσες: οι άλλες γλώσσες της χώρας, οι μεγάλες γλώσσες της ΕΕ, τα ρουμανικά και η γλώσσα του τηλεφώνου. Στις ΗΠΑ μόνο αγγλικά και ισπανικά.
+C. That is how the fungus takes hold on the leaves.	C. Έτσι εγκαθίσταται ο μύκητας στα φύλλα.
+CARE	ΠΡΟΣΟΧΗ
+CSV saved	Το CSV αποθηκεύτηκε
+CSV table (Excel)	Πίνακας CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Υπολογισμός: μετρούν οι ριπές από 20 km/h και CAPE πάνω από 300 J/kg· 75 km/h ή 2500 J/kg = βέβαιο.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Υπολογισμός: η υψηλότερη θερμοκρασία αέρα· 28 °C χωρίς κίνδυνο, 34 °C και πάνω βέβαιο.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Υπολογισμός: η θερμοκρασία επιφάνειας εδάφους από το Open-Meteo (εκτίμηση)· +4 °C χωρίς κίνδυνο, −2 °C και κάτω βέβαιο.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Υπολογισμός: υγρό φύλλο = βροχή, δροσιά ή υγρασία ≥ 90 %, στους 12–26 °C· 12 h συνεχόμενα ή περισσότερο = υψηλός κίνδυνος.
+Care	Προσοχή
+Change on the map	Αλλαγή στον χάρτη
+Choose another crop	Επίλεξε άλλη καλλιέργεια
+Choose the crop	Επίλεξε καλλιέργεια
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Επίλεξε την καλλιέργεια και την ημερομηνία σποράς του αγροτεμαχίου: από αυτές ξεκινούν οι βαθμοημέρες της σεζόν, το στάδιο και οι συγκρίσεις.
+Circle puts the points evenly on a circle.	Ο Κύκλος μοιράζει τα σημεία ομοιόμορφα σε κύκλο.
+Coldest hour	Ψυχρότερη ώρα
+Coming up	Ακολουθεί
+Critical interval	Κρίσιμο διάστημα
+Crop	Καλλιέργεια
+Crop type · for the thresholds	Τύπος καλλιέργειας · για τα όρια
+Days (* = forecast)	Ημέρες (* = πρόγνωση)
+Delta-T (ΔT) now	Delta-T (ΔT) τώρα
+Delta-T now	Delta-T τώρα
+Delta-T over 10 °C: the drops dry in the air.	Delta-T πάνω από 10 °C: οι σταγόνες στεγνώνουν στον αέρα.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T κάτω από 2 °C: οι σταγόνες δεν στεγνώνουν και παρασύρονται.
+Earthquake	Σεισμός
+Edit parcel	Επεξεργασία αγροτεμαχίου
+Emergence	Φύτρωμα
+Estimated stage	Εκτιμώμενο στάδιο
+Evaporation	Εξάτμιση
+Evaporation (ET₀) 7 days	Εξάτμιση (ET₀) 7 ημερών
+Flowering	Ανθοφορία
+Forage	Κτηνοτροφικά
+Frost	Παγετός
+Fruit set	Καρπόδεση
+Fungal diseases	Μυκητολογικές ασθένειες
+GDD base 	Βάση GDD 
+GDD on the same date	GDD την ίδια ημερομηνία
+GDD since 	GDD από 
+Good spray hours in 72 h	Καλές ώρες ψεκασμού σε 72 h
+Ground frost	Παγετός εδάφους
+Ground frost 	Παγετός εδάφους 
+Growing degree days (GDD)	Βαθμοημέρες ανάπτυξης (GDD)
+Growth	Ανάπτυξη
+Gusts 	Ριπές 
+HIGH RISK	ΥΨΗΛΟΣ ΚΙΝΔΥΝΟΣ
+Hard frost days	Ημέρες ισχυρού παγετού
+Harvest	Συγκομιδή
+Heading	Ξεστάχυασμα
+Heat 	Καύσωνας 
+Heat stress	Θερμικό στρες
+High risk of 	Υψηλός κίνδυνος: 
+History and forecast	Ιστορικό και πρόγνωση
+Hoarfrost	Πάχνη
+Hottest hour	Θερμότερη ώρα
+Hour 	Ώρα 
+Hours over 32 °C	Ώρες πάνω από 32 °C
+IN SEASON	ΣΤΗ ΣΕΖΟΝ
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Στη δορυφορική προβολή οι 4 γωνίες βρίσκονται από την εικόνα και μετακινούνται με το δάχτυλο· το + Σημείο προσθέτει ένα (έως 7), ένα παρατεταμένο πάτημα σβήνει ένα.
+Infection: 	Μόλυνση: 
+Irrigate if you can and avoid treatments in the hot hours.	Πότισε αν μπορείς και απόφυγε επεμβάσεις τις ζεστές ώρες.
+Keep	Διατήρηση
+LOW RISK	ΧΑΜΗΛΟΣ ΚΙΝΔΥΝΟΣ
+Last year on the same date	Πέρσι την ίδια ημερομηνία
+Light wind 	Ασθενής άνεμος 
+MODERATE RISK	ΜΕΤΡΙΟΣ ΚΙΝΔΥΝΟΣ
+Machinery on the field	Μηχανήματα στο χωράφι
+Moderate risk of 	Μέτριος κίνδυνος: 
+NOT THE SEASON	ΔΕΝ ΕΙΝΑΙ ΕΠΟΧΗ
+Name	Όνομα
+Next 72 hours	Επόμενες 72 ώρες
+No app on the phone opens CSV files.	Καμία εφαρμογή στο τηλέφωνο δεν ανοίγει αρχεία CSV.
+No corners yet: only the pin.	Χωρίς γωνίες ακόμη: μόνο η πινέζα.
+No data for the season yet.	Δεν υπάρχουν ακόμη δεδομένα για τη σεζόν.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Δεν υπάρχουν ακόμη δεδομένα για αυτό το αγροτεμάχιο. Άνοιξέ το μία φορά με ίντερνετ: η εφαρμογή κατεβάζει τα δεδομένα από το Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Αυτόν τον μήνα δεν σπέρνεται καμία αροτραία καλλιέργεια· οπωρώνες, αμπέλια και τα υπόλοιπα είναι παρακάτω.
+No good hours in the next 24 hours.	Καμία καλή ώρα τις επόμενες 24 ώρες.
+No long wet spell in the next 72 hours.	Καμία μεγάλη υγρή περίοδος τις επόμενες 72 ώρες.
+No risk	Χωρίς κίνδυνο
+No spraying today	Σήμερα όχι ψεκασμός
+No treatment needed for now.	Δεν χρειάζεται επέμβαση προς το παρόν.
+Nothing special in the next 72 hours.	Τίποτα ιδιαίτερο τις επόμενες 72 ώρες.
+Nothing to do.	Τίποτα να γίνει.
+OPTIMAL	ΒΕΛΤΙΣΤΟ
+OUT OF SEASON	ΕΚΤΟΣ ΕΠΟΧΗΣ
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Στον χάρτη οι γωνίες μετακινούνται με το δάχτυλο· το + Σημείο, ο Κύκλος και το παρατεταμένο πάτημα λειτουργούν κι εκεί. Ο καιρός λαμβάνεται από το κέντρο του αγροτεμαχίου.
+Operational	Λειτουργικά
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Λειτουργικά: το παράθυρο ψεκασμού ώρα προς ώρα (πράσινο, κίτρινο, κόκκινο· ο αριθμός είναι το ΔT)· ένα πάτημα σε ώρα δείχνει τις τιμές της. Delta-T, άνεμος και ριπές, υγρό φύλλο.
+Optimal	Βέλτιστο
+Orchard / vine	Οπωρώνας / αμπέλι
+Other crops · in another season	Άλλες καλλιέργειες · σε άλλη εποχή
+Outline on the map	Περίγραμμα στον χάρτη
+PDF report	Αναφορά PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	Το PDF · CSV αποθηκεύει τη σύνοψη, τις επόμενες 72 ώρες και τις ημέρες στις Λήψεις.
+Preventive treatment before the wet spell, in a green window	Προληπτική επέμβαση πριν από την υγρή περίοδο, σε πράσινο παράθυρο
+Protect young plants and sensitive crops; no treatments in the cold hours.	Προστάτεψε τα νεαρά φυτά και τις ευαίσθητες καλλιέργειες· όχι επεμβάσεις τις κρύες ώρες.
+RH	ΣΥ
+RH 	ΣΥ 
+Rain 	Βροχή 
+Rain 7 days	Βροχή 7 ημερών
+Rain 7 days / 28 days	Βροχή 7 ημερών / 28 ημερών
+Rain now or soon: it washes the treatment off.	Βροχή τώρα ή σύντομα: ξεπλένει την επέμβαση.
+Right for 	Κατάλληλες για 
+Right now	Κατάλληλες τώρα
+Ripening	Ωρίμανση
+Risks	Κίνδυνοι
+Risks 72 h	Κίνδυνοι 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Κίνδυνοι 72 h: μυκητολογικές ασθένειες, παγετός εδάφους, θερμικό στρες, άνεμος και χαλάζι· ένα πάτημα σε κάρτα την εξηγεί και λέει τι να κάνεις. Από κάτω: τι ακολουθεί.
+Save and ✕, above the new parcel's box, keep it or close the box.	Το Αποθήκευση και το ✕, πάνω από το πλαίσιο του νέου αγροτεμαχίου, το αποθηκεύουν ή κλείνουν το πλαίσιο.
+Save as PDF or CSV	Αποθήκευση ως PDF ή CSV
+Save the statistics	Αποθήκευση στατιστικών
+Score	Βαθμολογία
+Season	Σεζόν
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Σεζόν: βαθμοημέρες (GDD) από τη σπορά σε σχέση με πέρσι, το εκτιμώμενο στάδιο, το θερμικό στρες και οι ημέρες ισχυρού παγετού. Χρειάζεται καλλιέργεια και ημερομηνία σποράς.
+Secure what the wind can take; no spraying in the gusts.	Ασφάλισε ό,τι μπορεί να πάρει ο άνεμος· όχι ψεκασμός με ριπές.
+Soil / air	Έδαφος / αέρας
+Soil temperature 6 / 18 cm	Θερμοκρασία εδάφους 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Πηγή: Open-Meteo (μοντέλα· το έδαφος και οι κίνδυνοι είναι εκτιμήσεις). 
+Sowing date	Ημερομηνία σποράς
+Spray between 	Ψέκασε μεταξύ 
+Spray window	Παράθυρο ψεκασμού
+Spray with care between 	Ψέκασε με προσοχή μεταξύ 
+Spring row crops	Ανοιξιάτικα σκαλιστικά
+Stem elongation	Καλάμωμα
+Storm energy	Ενέργεια καταιγίδας
+Strongest gust	Ισχυρότερη ριπή
+Surface moisture	Υγρασία επιφάνειας
+Surface moisture 0–1 cm	Υγρασία επιφάνειας 0–1 cm
+TODAY	ΣΗΜΕΡΑ
+The GPS button takes the map, and the new parcel's pin, where you are.	Το κουμπί GPS πηγαίνει τον χάρτη, και την πινέζα του νέου αγροτεμαχίου, εκεί που βρίσκεσαι.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Οι μπάρες στην κάρτα ενός αγροτεμαχίου ή το Στατιστικά στη φούσκα του. Πάνω: το αγροτεμάχιο (ένα πάτημα επιλέγει άλλο), 4 καρτέλες και PDF · CSV.
+The bars open its Statistics.	Οι μπάρες ανοίγουν τα Στατιστικά του.
+The bell turns its notifications on or off.	Το καμπανάκι ανοίγει ή κλείνει τις ειδοποιήσεις του.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Ο κάδος το διαγράφει· μένει 15 ημέρες στον κάδο κάτω από το κουμπί GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Η καλλιέργεια επιλέγεται από λίστα ταξινομημένη κατά την εποχή της ημερομηνίας σποράς· το Άλλη καλλιέργεια… παίρνει όνομα και τύπο· εκτός εποχής η εφαρμογή ρωτά ξανά.
+The file could not be saved: 	Το αρχείο δεν αποθηκεύτηκε: 
+The highest temperature of the next 7 days: 	Η υψηλότερη θερμοκρασία των επόμενων 7 ημερών: 
+The hours are missing from the data.	Λείπουν οι ώρες από τα δεδομένα.
+The last stage is reached.	Το τελευταίο στάδιο έχει επιτευχθεί.
+The leaves stay wet 	Τα φύλλα μένουν υγρά 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Το μολύβι επεξεργάζεται το αγροτεμάχιο: όνομα, καλλιέργεια, ημερομηνία σποράς, έκταση· οι γωνίες μετακινούνται στον χάρτη.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Οι πρώτες ημέρες της σεζόν έρχονται από το αρχείο του Open-Meteo· κατεβαίνουν με ίντερνετ.
+The soil	Το έδαφος
+The strongest gust of the next 72 hours: 	Η ισχυρότερη ριπή των επόμενων 72 ωρών: 
+Thresholds for 	Όρια για 
+Tillering	Αδέλφωμα
+Today	Σήμερα
+Too cold (under 5 °C).	Πολύ κρύο (κάτω από 5 °C).
+Too hot (over 28 °C).	Πολύ ζέστη (πάνω από 28 °C).
+Too much wind (drift).	Πολύς άνεμος (διασπορά).
+Updated 	Ενημέρωση 
+Vegetables	Λαχανικά
+Veraison	Περκασμός
+Vs. last year	Σε σχέση με πέρσι
+Wait	Περίμενε
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Παρακολούθησε το αγροτεμάχιο· ίσως χρειαστεί επέμβαση αν η υγρασία διαρκέσει.
+Water & Soil	Νερό & Έδαφος
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Νερό & Έδαφος: βροχή και εξάτμιση (ET₀) 7 ημερών και το ισοζύγιο· το γράφημα του παρελθόντος και των επόμενων 7 ημερών· έδαφος στα 6 και 18 cm, υγρασία επιφάνειας, μηχανήματα στο χωράφι.
+Wet leaf	Υγρό φύλλο
+Wet leaf hours	Ώρες υγρού φύλλου
+Wet leaf now	Υγρό φύλλο τώρα
+What you can do	Τι μπορείς να κάνεις
+Wind 	Άνεμος 
+Wind / gusts now	Άνεμος / ριπές τώρα
+Wind and gusts	Άνεμος και ριπές
+Wind · hail	Άνεμος · χαλάζι
+Wind, ΔT or temperature outside the ideal range.	Άνεμος, ΔT ή θερμοκρασία εκτός ιδανικού εύρους.
+Winter cereals	Χειμερινά σιτηρά
+With this date the degree days and the risks can come out wrong.	Με αυτή την ημερομηνία οι βαθμοημέρες και οι κίνδυνοι μπορεί να βγουν λάθος.
+Write the crop's name	Γράψε το όνομα της καλλιέργειας
+air 	αέρας 
+as last year	όπως πέρσι
+care	προσοχή
+choose…	επίλεξε…
+critical heat at 	κρίσιμη ζέστη στην 
+days	ημέρες
+deficit, irrigate	έλλειμμα, πότισε
+disease watched: 	ασθένεια υπό παρακολούθηση: 
+drag a corner to move it; a long press deletes it	σύρε μια γωνία για να τη μετακινήσεις· παρατεταμένο πάτημα τη σβήνει
+dried at 	στέγνωσε στις 
+estimated on 	εκτίμηση στις 
+evaporation (ET₀)	εξάτμιση (ET₀)
+firm ground	σταθερό έδαφος
+forecast	πρόγνωση
+from GDD	κατά GDD
+fungal diseases	μυκητολογικές ασθένειες
+fungi	μύκητες
+green zone = sowing threshold for 	πράσινη ζώνη = όριο σποράς για 
+gusts max 	ριπές μέγ. 
+last year	πέρσι
+last year 	πέρσι 
+maize	καλαμπόκι
+max 	μέγ. 
+measured	μετρημένο
+near saturation	σχεδόν κορεσμένο
+no	απαγορεύεται
+no crop or sowing date yet	ακόμη χωρίς καλλιέργεια και ημερομηνία σποράς
+no dew or rain lately	χωρίς δροσιά και βροχή τελευταία
+no spraying, secure what can fly	όχι ψεκασμός, ασφάλισε ό,τι μπορεί να πετάξει
+no treatments in the hot hours	όχι επεμβάσεις τις ζεστές ώρες
+not to be estimated now (cold)	δεν εκτιμάται τώρα (κρύο)
+number = ΔT	αριθμός = ΔT
+optimal	βέλτιστο
+ordered by the sowing date: 	ταξινόμηση κατά ημερομηνία σποράς: 
+ordered by this month	ταξινόμηση κατά αυτόν τον μήνα
+over 32 °C	πάνω από 32 °C
+planted	φυτεύτηκε
+rain 3 days 	βροχή 3 ημερών 
+rain mm/day	βροχή mm/ημέρα
+risk of compaction	κίνδυνος συμπίεσης
+score 	βαθμολογία 
+slight deficit	μικρό έλλειμμα
+sowing soil 	έδαφος σποράς 
+sown 	σπάρθηκε 
+surplus	πλεόνασμα
+tap a card	πάτησε μια κάρτα
+the field is hard to work	το χωράφι δουλεύεται δύσκολα
+the leaves are wet now	τα φύλλα είναι υγρά τώρα
+the soil compacts	το έδαφος συμπιέζεται
+the sowing date	η ημερομηνία σποράς
+this season	αυτή η σεζόν
+threshold 12 h	όριο 12 h
+today	σήμερα
+under −5 °C	κάτω από −5 °C
+wet	υγρό
+write the name	γράψε το όνομα
+yes	ναι
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Αγροτεμάχια: ο χάρτης με τις κάρτες των αγροτεμαχίων (κάθετα μια σειρά κάτω, οριζόντια μια στήλη δεξιά). Αποθηκεύονται μόνο σε αυτό το τηλέφωνο.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	Το ＋ προσθέτει αγροτεμάχιο: η πινέζα ξεκινά στη μέση του χάρτη, ένα πάτημα στον χάρτη τη μετακινεί· το όνομα είναι πάνω.
+Wheat	Σιτάρι
+Barley	Κριθάρι
+Triticale	Τριτικάλε
+Rapeseed	Ελαιοκράμβη
+Maize	Καλαμπόκι
+Sunflower	Ηλίανθος
+Soybean	Σόγια
+Sugar beet	Ζαχαρότευτλα
+Potato	Πατάτα
+Vineyard	Αμπέλι
+Orchard	Οπωρώνας
+Alfalfa	Μηδική
+Septoria	Σεπτορίωση
+Net blotch	Δικτυωτή κηλίδωση
+Phoma	Φόμα
+Fusarium	Φουζαρίωση
+Downy mildew	Περονόσπορος
+Cercospora	Κερκοσπορίωση
+Late blight	Περονόσπορος πατάτας
+Scab	Φουζικλάδιο
+Anthracnose	Ανθράκωση
+grain filling	γέμισμα σπόρου
+flowering	ανθοφορία
+pollination	επικονίαση
+root growth	ανάπτυξη ρίζας
+tuber forming	σχηματισμός κονδύλων
+regrowth	αναβλάστηση
+.	.

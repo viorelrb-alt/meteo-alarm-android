@@ -1,4 +1,12 @@
-Verżjoni attwali: v.1.520 · 16.11.2026
+Verżjoni attwali: v.2.001 · 17.11.2026
+GĦELIEQI
+- Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
+- Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, Delta-T, riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
+SETTINGS
+- Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
+- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+
+Verżjoni 1.4 (v.1.400 – v.1.520)
 AĠĠORNAMENTI
 - Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ☰ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
 GĦELIEQI

@@ -1,4 +1,12 @@
-Současná verze: v.1.520 · 16.11.2026
+Současná verze: v.2.001 · 17.11.2026
+NASTAVENÍ
+- Jazyk zobrazení: v ☰ angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu (v USA jen angličtina a španělština).
+POZEMKY
+- Statistika: pro každý pozemek Úkol dne a 4 karty: Provoz (okno postřiku hodinu po hodině, Delta-T, vítr, mokrý list), Voda a půda (déšť, výpar, půda v 6 a 18 cm), Sezóna (denní stupně oproti loňsku, odhadovaná fáze) a Rizika 72 h (houbové choroby, přízemní mráz, horko, vítr a kroupy); uložení do PDF nebo CSV.
+- Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
+- Vylepšení vzhledu a opravy chyb.
+
+Verze 1.4 (v.1.400 – v.1.520)
 AKTUALIZACE
 - Aktualizace: aplikace už sama aktualizace nehledá, jen když klepnete na ☰ › Zkontrolovat aktualizace; nová verze se stáhne v prohlížeči a nainstalujete ji ze staženého souboru.
 HLAVNÍ OBRAZOVKA

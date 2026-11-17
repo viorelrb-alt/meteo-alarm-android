@@ -1,4 +1,12 @@
-Praegune versioon: v.1.520 · 16.11.2026
+Praegune versioon: v.2.001 · 17.11.2026
+PÕLLULAPID
+- Muuda põldu: pliiats avab põllu lehe: nimi, kultuur (loend külvikuupäeva hooaja järgi või Muu kultuur…), külvikuupäev, pindala; nurgad liiguvad kaardil.
+- Statistika: igale põllule Päeva tegevus ja 4 vahekaarti: Tegevus (pritsimisaken tund tunnilt, Delta-T, tuul, märg leht), Vesi ja muld (vihm, aurumine, muld 6 ja 18 cm sügavusel), Hooaeg (kraadipäevad võrreldes mullusega, hinnanguline faas) ja Riskid 72 h (seenhaigused, maapinnaöökülm, kuumus, tuul ja rahe); salvestamine PDF- või CSV-failina.
+SEADED
+- Kuvakeel: ☰ all inglise keel ja riigi keel; Muud keeled: riigi teised keeled, suured ELi keeled, rumeenia keel ja telefoni keel (USAs ainult inglise ja hispaania keel).
+- Disainiparandused ja vigade parandused.
+
+Versioon 1.4 (v.1.400 – v.1.520)
 PÕHIEKRAAN
 - Põhiekraan: leht kerib ülemise klaasi all jaotiste kaupa (Järgmised tunnid, Viie päeva prognoos, Ilma üksikasjad); nupud ja aku hõljuvad all.
 - Suur kompass: puudutus asulal loendis näitab selle märki kompassil; samas suunas asulad ei kattu enam.

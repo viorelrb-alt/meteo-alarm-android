@@ -1124,3 +1124,311 @@ West	Iarthar
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Ceapacha: an léarscáil le cártaí na gceapach (ina seasamh ró thíos, ar a taobh colún ar dheis); taispeánann tadhall ar chárta a phointí, osclaíonn Taispeáin í ar an bpríomhscáileán. Zúmálann tadhall ar bhiorán an léarscáil ar an gceapach agus taispeánann sé a hainm; taispeánann an dara tadhall a pointí. Cuireann ＋ ceann leis: an áit ina bhfuil tú (GPS) nó tadhall ar an léarscáil, ansin an t-ainm; san amharc satailíte aimsítear a 4 chúinne ón bpictiúr agus bogtar le méar iad; cuireann + Pointe ceann leis (suas le 7), cuireann Ciorcal go cothrom ar chiorcal iad, scriosann brú fada ceann; tá Sábháil agus ✕ os cionn an bhosca. Ar chárta: cuireann an peann luaidhe in eagar, osclaíonn na barraí a Staitisticí · PDF, casann an cloigín a fógraí air nó as, scriosann an bosca bruscair í. Coinnithe ar an bhfón seo amháin.
 Statistics	Staitisticí
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Ceapacha: an léarscáil le cártaí na gceapach (ina seasamh ró thíos, ar a taobh colún ar dheis); zúmálann tadhall ar chárta ar an gceapach agus taispeánann sé a pointí, osclaíonn Staitisticí a staitisticí. Zúmálann tadhall ar bhiorán ar an gceapach agus taispeánann sé a hainm; taispeánann an dara tadhall a pointí. Cuireann ＋ ceann leis: tosaíonn an biorán i lár na léarscáile (bogann an cnaipe GPS é chuig an áit ina bhfuil tú) agus bogann tadhall ar an léarscáil é; tá an t-ainm thuas; san amharc satailíte aimsítear a 4 chúinne ón bpictiúr agus bogtar le méar iad; cuireann + Pointe ceann leis (suas le 7), cuireann Ciorcal go cothrom ar chiorcal iad, scriosann brú fada ceann; tá Sábháil agus ✕ os cionn an bhosca. Ar chárta: cuireann an peann luaidhe in eagar, osclaíonn na barraí a Staitisticí · PDF, casann an cloigín a fógraí air nó as, scriosann an bosca bruscair í. Coinnithe ar an bhfón seo amháin.
+# v2.001
+ Anti-drift nozzles.	 Soic in aghaidh síobadh.
+ Rain from 	 Báisteach ó 
+ and 	 agus 
+ at 	 ag 
+ corners · perimeter 	 cúinne · imlíne 
+ days ahead	 lá chun tosaigh
+ days behind	 lá ar gcúl
+ h in the last 12	 h sna 12 dheireanacha
+ h wet leaf	 h duilleog fhliuch
+ hours in a row, at 	 uair an chloig as a chéile, ag 
+ in 48 h.	 laistigh de 48 h.
+ in 7 days	 i 7 lá
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 san aer ag an íosmhéid. Is féidir leis an ithir a bheith 2–4 °C níos fuaire ná an t-aer.
+ is usually sown in 	 cuirtear de ghnáth i 
+ on 	 ar 
+ or after the winter rest	 nó tar éis scíth an gheimhridh
+ parcels ▾	 páirc ▾
+ sown on 	 curtha ar 
+ starts at ≈ 	 tosaíonn ag ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · foinse Open-Meteo (samhlacha; meastacháin is ea an ithir agus na rioscaí) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	Tá “Coinnigh” úsáideach do bharra ceaptha teasa nó dáta mícheart a cheartóidh tú ar ball.
+, ceiling 	, uasteorainn 
+, critically at 	, go criticiúil ag 
+, from 	, ó 
+, when the soil has 	, nuair atá 
+, with 	, le 
+. Over 32 °C the crop suffers	. Os cionn 32 °C fulaingíonn an barr
+14 d	14 l
+28 d	28 l
+28 days: 	28 lá: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: galaíonn na braonta go rialaithe. Faoi 2 °C baol síobtha, os cionn 10 °C triomaíonn na braonta san aer.
+3 leaves	3 dhuilleog
+4–6 leaves	4–6 dhuilleog
+7 d	7 l
+7 days	7 lá
+8–10 leaves	8–10 nduilleog
+: base temperature 	: teocht bhonn 
+; storm energy (CAPE) up to 	; fuinneamh stoirme (CAPE) suas le 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Le tapáil ar chárta zúmálann an léarscáil ar an bpáirc agus taispeántar a pointí; osclaíonn Staitisticí a staitisticí.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Le tapáil ar biorán zúmáiltear ar an bpáirc agus taispeántar a hainm; taispeánann an dara tapáil a pointí.
+Action of the day	Gníomh an lae
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Gníomh an lae: cad atá le déanamh inniu, leis an scór spraeála (0–100) agus an riosca is mó sna 48 uair an chloig atá romhainn.
+Another crop…	Barr eile…
+Area	Achar
+At the soil surface it can be 	Ag dromchla na hithreach d'fhéadfadh sé a bheith 
+Back	Siar
+Balance 7 days	Cothromaíocht 7 lá
+Branching	Craobhú
+Bud break	Briseadh bachlóg
+Budding	Bachlógú
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Cnaipí i ☰, 2 sa ró: an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin. Sna SA Béarla agus Spáinnis amháin.
+C. That is how the fungus takes hold on the leaves.	C. Sin mar a ghreamaíonn an fungas ar na duilleoga.
+CARE	AIRE
+CSV saved	CSV sábháilte
+CSV table (Excel)	Tábla CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Ríomh: comhairtear séideáin ó 20 km/h agus CAPE os cionn 300 J/kg; 75 km/h nó 2500 J/kg = cinnte.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Ríomh: an teocht aeir is airde; 28 °C gan riosca, 34 °C agus os a chionn cinnte.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Ríomh: teocht dhromchla na hithreach ó Open-Meteo (meastachán); +4 °C gan riosca, −2 °C agus faoina bhun cinnte.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Ríomh: duilleog fhliuch = báisteach, drúcht nó taise ≥ 90 %, ag 12–26 °C; 12 h as a chéile nó níos mó = riosca ard.
+Care	Aire
+Change on the map	Athraigh ar an léarscáil
+Choose another crop	Roghnaigh barr eile
+Choose the crop	Roghnaigh an barr
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Roghnaigh barr agus dáta curtha na páirce: is uathu a thosaíonn céimeanna-lae an tséasúir, an chéim agus na comparáidí.
+Circle puts the points evenly on a circle.	Leagann Ciorcal na pointí go cothrom ar chiorcal.
+Coldest hour	An uair is fuaire
+Coming up	Le teacht
+Critical interval	Eatramh criticiúil
+Crop	Barr
+Crop type · for the thresholds	Cineál barr · do na tairseacha
+Days (* = forecast)	Laethanta (* = réamhaisnéis)
+Delta-T (ΔT) now	Delta-T (ΔT) anois
+Delta-T now	Delta-T anois
+Delta-T over 10 °C: the drops dry in the air.	Delta-T os cionn 10 °C: triomaíonn na braonta san aer.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T faoi 2 °C: ní thriomaíonn na braonta agus síobtar iad.
+Earthquake	Crith talún
+Edit parcel	Cuir an pháirc in eagar
+Emergence	Péacadh
+Estimated stage	Céim mheasta
+Evaporation	Galú
+Evaporation (ET₀) 7 days	Galú (ET₀) 7 lá
+Flowering	Bláthú
+Forage	Barra foráiste
+Frost	Sioc
+Fruit set	Socrú torthaí
+Fungal diseases	Galair fhungacha
+GDD base 	Bonn GDD 
+GDD on the same date	GDD ar an dáta céanna
+GDD since 	GDD ó 
+Good spray hours in 72 h	Uaireanta maithe spraeála i 72 h
+Ground frost	Sioc talún
+Ground frost 	Sioc talún 
+Growing degree days (GDD)	Céimeanna-lae fáis (GDD)
+Growth	Fás
+Gusts 	Séideáin 
+HIGH RISK	RIOSCA ARD
+Hard frost days	Laethanta seaca chrua
+Harvest	Fómhar
+Heading	Diasadh
+Heat 	Teas 
+Heat stress	Strus teasa
+High risk of 	Riosca ard: 
+History and forecast	Stair agus réamhaisnéis
+Hoarfrost	Sioc bán
+Hottest hour	An uair is teo
+Hour 	Uair 
+Hours over 32 °C	Uaireanta os cionn 32 °C
+IN SEASON	SA SÉASÚR
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	San amharc satailíte aimsítear na 4 chúinne ón íomhá agus bogtar le méar iad; cuireann + Pointe ceann leis (suas le 7), scriosann brú fada ceann.
+Infection: 	Ionfhabhtú: 
+Irrigate if you can and avoid treatments in the hot hours.	Uisceáil más féidir leat agus seachain cóireálacha sna huaireanta te.
+Keep	Coinnigh
+LOW RISK	RIOSCA ÍSEAL
+Last year on the same date	Anuraidh ar an dáta céanna
+Light wind 	Gaoth éadrom 
+MODERATE RISK	RIOSCA MEASARTHA
+Machinery on the field	Innealra sa pháirc
+Moderate risk of 	Riosca measartha: 
+NOT THE SEASON	NÍ HÉ AN SÉASÚR
+Name	Ainm
+Next 72 hours	Na 72 uair an chloig atá romhainn
+No app on the phone opens CSV files.	Ní osclaíonn aon aip ar an bhfón comhaid CSV.
+No corners yet: only the pin.	Gan chúinní fós: an biorán amháin.
+No data for the season yet.	Níl sonraí don séasúr fós.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Níl sonraí don pháirc seo fós. Oscail í uair amháin le hidirlíon: íoslódálann an aip a sonraí ó Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Ní chuirtear aon bharr páirce an mhí seo; tá úlloird, fíonghoirt agus an chuid eile thíos.
+No good hours in the next 24 hours.	Gan uaireanta maithe sna 24 uair an chloig atá romhainn.
+No long wet spell in the next 72 hours.	Gan tréimhse fhada fhliuch sna 72 uair an chloig atá romhainn.
+No risk	Gan riosca
+No spraying today	Ná spraeáil inniu
+No treatment needed for now.	Níl gá le cóireáil faoi láthair.
+Nothing special in the next 72 hours.	Faic speisialta sna 72 uair an chloig atá romhainn.
+Nothing to do.	Faic le déanamh.
+OPTIMAL	BARRMHAITH
+OUT OF SEASON	AS SÉASÚR
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Ar an léarscáil bogtar na cúinní le méar; oibríonn + Pointe, Ciorcal agus an brú fada ansin freisin. Tógtar an aimsir ó lár na páirce.
+Operational	Oibríochtúil
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Oibríochtúil: fuinneog na spraeála uair ar uair (glas, buí, dearg; is é an uimhir ΔT); taispeánann tapáil ar uair a luachanna. Delta-T, gaoth agus séideáin, duilleog fhliuch.
+Optimal	Barrmhaith
+Orchard / vine	Úllord / fíonghort
+Other crops · in another season	Barra eile · i séasúr eile
+Outline on the map	Imlíne ar an léarscáil
+PDF report	Tuarascáil PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	Sábhálann PDF · CSV an achoimre, na 72 uair an chloig atá romhainn agus na laethanta in Íoslódálacha.
+Preventive treatment before the wet spell, in a green window	Cóireáil choisctheach roimh an tréimhse fhliuch, i bhfuinneog ghlas
+Protect young plants and sensitive crops; no treatments in the cold hours.	Cosain plandaí óga agus barra íogaire; gan cóireálacha sna huaireanta fuara.
+RH	TC
+RH 	TC 
+Rain 	Báisteach 
+Rain 7 days	Báisteach 7 lá
+Rain 7 days / 28 days	Báisteach 7 lá / 28 lá
+Rain now or soon: it washes the treatment off.	Báisteach anois nó go luath: níonn sí an chóireáil.
+Right for 	Oiriúnach do 
+Right now	Oiriúnach anois
+Ripening	Aibiú
+Risks	Rioscaí
+Risks 72 h	Rioscaí 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Rioscaí 72 h: galair fhungacha, sioc talún, strus teasa, gaoth agus clocha sneachta; míníonn tapáil ar chárta é agus deir cad atá le déanamh. Fúthu: an méid atá le teacht.
+Save and ✕, above the new parcel's box, keep it or close the box.	Coinníonn Sábháil agus ✕, os cionn bhosca na páirce nua, í nó dúnann siad an bosca.
+Save as PDF or CSV	Sábháil mar PDF nó CSV
+Save the statistics	Sábháil na staitisticí
+Score	Scór
+Season	Séasúr
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Séasúr: céimeanna-lae (GDD) ón gcur i gcomparáid le hanuraidh, an chéim mheasta, strus teasa agus laethanta seaca chrua. Teastaíonn an barr agus an dáta curtha.
+Secure what the wind can take; no spraying in the gusts.	Daingnigh a bhféadfadh an ghaoth a thógáil; ná spraeáil sna séideáin.
+Soil / air	Ithir / aer
+Soil temperature 6 / 18 cm	Teocht na hithreach 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Foinse: Open-Meteo (samhlacha; meastacháin is ea an ithir agus na rioscaí). 
+Sowing date	Dáta curtha
+Spray between 	Spraeáil idir 
+Spray window	Fuinneog spraeála
+Spray with care between 	Spraeáil go cúramach idir 
+Spring row crops	Barra sraithe earraigh
+Stem elongation	Fadú gas
+Storm energy	Fuinneamh stoirme
+Strongest gust	An séideán is láidre
+Surface moisture	Taise dromchla
+Surface moisture 0–1 cm	Taise dromchla 0–1 cm
+TODAY	INNIU
+The GPS button takes the map, and the new parcel's pin, where you are.	Tugann an cnaipe GPS an léarscáil, agus biorán na páirce nua, chuig an áit ina bhfuil tú.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Na barraí ar chárta páirce nó Staitisticí ina bolgán. Ag an mbarr: an pháirc (roghnaíonn tapáil ceann eile), 4 chluaisín agus PDF · CSV.
+The bars open its Statistics.	Osclaíonn na barraí a Staitisticí.
+The bell turns its notifications on or off.	Casann an clog a fógraí air nó as.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Scriosann an bosca bruscair í; fanann sí 15 lá sa bhosca bruscair faoin gcnaipe GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Roghnaítear an barr ó liosta in ord shéasúr an dáta curtha; faigheann Barr eile… ainm agus cineál; as séasúr fiafraíonn an aip arís.
+The file could not be saved: 	Níorbh fhéidir an comhad a shábháil: 
+The highest temperature of the next 7 days: 	An teocht is airde sna 7 lá atá romhainn: 
+The hours are missing from the data.	Tá na huaireanta in easnamh ó na sonraí.
+The last stage is reached.	Sroicheadh an chéim dheireanach.
+The leaves stay wet 	Fanann na duilleoga fliuch 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Cuireann an peann luaidhe an pháirc in eagar: ainm, barr, dáta curtha, achar; bogtar na cúinní ar an léarscáil.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Tagann chéad laethanta an tséasúir ó chartlann Open-Meteo; íoslódáiltear le hidirlíon iad.
+The soil	An ithir
+The strongest gust of the next 72 hours: 	An séideán is láidre sna 72 uair an chloig atá romhainn: 
+Thresholds for 	Tairseacha do 
+Tillering	Brainseáil
+Today	Inniu
+Too cold (under 5 °C).	Ró-fhuar (faoi 5 °C).
+Too hot (over 28 °C).	Ró-the (os cionn 28 °C).
+Too much wind (drift).	An iomarca gaoithe (síobadh).
+Updated 	Nuashonraithe 
+Vegetables	Glasraí
+Veraison	Athrú datha
+Vs. last year	I gcomparáid le hanuraidh
+Wait	Fan
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Coinnigh súil ar an bpáirc; d'fhéadfadh go mbeadh gá le cóireáil má mhaireann an fhliuchras.
+Water & Soil	Uisce & Ithir
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Uisce & Ithir: báisteach agus galú (ET₀) 7 lá agus an chothromaíocht; graf an ama atá caite agus na 7 lá atá romhainn; ithir ag 6 agus 18 cm, taise dromchla, innealra sa pháirc.
+Wet leaf	Duilleog fhliuch
+Wet leaf hours	Uaireanta duilleoige fliche
+Wet leaf now	Duilleog fhliuch anois
+What you can do	Cad is féidir leat a dhéanamh
+Wind 	Gaoth 
+Wind / gusts now	Gaoth / séideáin anois
+Wind and gusts	Gaoth agus séideáin
+Wind · hail	Gaoth · clocha sneachta
+Wind, ΔT or temperature outside the ideal range.	Gaoth, ΔT nó teocht lasmuigh den raon idéalach.
+Winter cereals	Gránaigh gheimhridh
+With this date the degree days and the risks can come out wrong.	Leis an dáta seo d'fhéadfadh na céimeanna-lae agus na rioscaí a bheith mícheart.
+Write the crop's name	Scríobh ainm an bharr
+air 	aer 
+as last year	mar a bhí anuraidh
+care	aire
+choose…	roghnaigh…
+critical heat at 	teas criticiúil ag 
+days	lá
+deficit, irrigate	easnamh, uisceáil
+disease watched: 	galar faoi fhaire: 
+drag a corner to move it; a long press deletes it	tarraing cúinne chun é a bhogadh; scriosann brú fada é
+dried at 	triomaithe ag 
+estimated on 	measta ar 
+evaporation (ET₀)	galú (ET₀)
+firm ground	talamh daingean
+forecast	réamhaisnéis
+from GDD	de réir GDD
+fungal diseases	galair fhungacha
+fungi	fungais
+green zone = sowing threshold for 	crios glas = tairseach curtha do 
+gusts max 	séideáin uas. 
+last year	anuraidh
+last year 	anuraidh 
+maize	arbhar Indiach
+max 	uas. 
+measured	tomhaiste
+near saturation	beagnach sáithithe
+no	toirmiscthe
+no crop or sowing date yet	gan barr ná dáta curtha fós
+no dew or rain lately	gan drúcht ná báisteach le déanaí
+no spraying, secure what can fly	ná spraeáil, daingnigh a bhféadfadh eitilt
+no treatments in the hot hours	gan cóireálacha sna huaireanta te
+not to be estimated now (cold)	ní féidir a mheas anois (fuar)
+number = ΔT	uimhir = ΔT
+optimal	barrmhaith
+ordered by the sowing date: 	in ord an dáta curtha: 
+ordered by this month	in ord na míosa seo
+over 32 °C	os cionn 32 °C
+planted	plandáilte
+rain 3 days 	báisteach 3 lá 
+rain mm/day	báisteach mm/lá
+risk of compaction	baol comhdhlúthaithe
+score 	scór 
+slight deficit	easnamh beag
+sowing soil 	ithir chuir 
+sown 	curtha 
+surplus	barrachas
+tap a card	tapáil cárta
+the field is hard to work	is deacair an pháirc a oibriú
+the leaves are wet now	tá na duilleoga fliuch anois
+the soil compacts	comhdhlúthaíonn an ithir
+the sowing date	an dáta curtha
+this season	an séasúr seo
+threshold 12 h	tairseach 12 h
+today	inniu
+under −5 °C	faoi −5 °C
+wet	fliuch
+write the name	scríobh an t-ainm
+yes	tá
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Páirceanna: an léarscáil le cártaí na bpáirceanna (ina seasamh ró ag an mbun, ina luí colún ar dheis). Coinnítear ar an bhfón seo amháin iad.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	Cuireann ＋ páirc leis: tosaíonn an biorán i lár na léarscáile, bogann tapáil ar an léarscáil é; tá an t-ainm ag an mbarr.
+Wheat	Cruithneacht
+Barley	Eorna
+Triticale	Tritiocáil
+Rapeseed	Ráibe
+Maize	Arbhar Indiach
+Sunflower	Lus na gréine
+Soybean	Pónaire shoighe
+Sugar beet	Biatas siúcra
+Potato	Práta
+Vineyard	Fíonghort
+Orchard	Úllord
+Alfalfa	Alfalfa
+Septoria	Septoria
+Net blotch	Spota líonta
+Phoma	Phoma
+Fusarium	Fusarium
+Downy mildew	Coincleach clúmhach
+Cercospora	Cercospora
+Late blight	Dúchan prátaí
+Scab	Gearb
+Anthracnose	Antrachnós
+grain filling	líonadh gráin
+flowering	bláthú
+pollination	pailniú
+root growth	fás fréimhe
+tuber forming	foirmiú tiúbar
+regrowth	athfhás
+.	.

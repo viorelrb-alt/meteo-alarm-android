@@ -1124,3 +1124,311 @@ West	Zapad
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcele: karta s karticama parcela (uspravno red dolje, položeno stupac desno); dodir kartice pokazuje njezine točke, Prikaži je otvara na glavnom zaslonu. Dodir pribadače zumira kartu na parcelu i pokazuje njezino ime; drugi dodir pokazuje njezine točke. ＋ dodaje parcelu: gdje jesi (GPS) ili dodir karte, zatim ime; u satelitskom prikazu njezina 4 kuta nalaze se na slici i pomiču prstom; + Točka dodaje jednu (do 7), Krug ih ravnomjerno raspoređuje po krugu, dugi pritisak briše jednu; Spremi i ✕ stoje iznad okvira. Na kartici: olovka uređuje, stupci otvaraju njezinu Statistiku · PDF, zvono uključuje ili isključuje njezine obavijesti, koš je briše. Spremljeno samo na ovom telefonu.
 Statistics	Statistika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcele: karta s karticama parcela (uspravno red dolje, položeno stupac desno); dodir kartice zumira kartu na parcelu i pokazuje njezine točke, Statistika otvara njezinu statistiku. Dodir pribadače zumira kartu na parcelu i pokazuje njezino ime; drugi dodir pokazuje njezine točke. ＋ dodaje parcelu: pribadača počinje u sredini karte (gumb GPS je premješta gdje jesi), a dodir karte je pomiče; ime je gore; u satelitskom prikazu njezina 4 kuta nalaze se na slici i pomiču prstom; + Točka dodaje jednu (do 7), Krug ih ravnomjerno raspoređuje po krugu, dugi pritisak briše jednu; Spremi i ✕ stoje iznad okvira. Na kartici: olovka uređuje, stupci otvaraju njezinu Statistiku · PDF, zvono uključuje ili isključuje njezine obavijesti, koš je briše. Spremljeno samo na ovom telefonu.
+# v2.001
+ Anti-drift nozzles.	 Mlaznice protiv zanošenja.
+ Rain from 	 Kiša od 
+ and 	 i 
+ at 	 u 
+ corners · perimeter 	 kutova · opseg 
+ days ahead	 dana prednosti
+ days behind	 dana zaostatka
+ h in the last 12	 h u zadnjih 12
+ h wet leaf	 h mokar list
+ hours in a row, at 	 sati zaredom, pri 
+ in 48 h.	 u 48 h.
+ in 7 days	 u 7 dana
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 u zraku najmanje. Tlo može biti 2–4 °C hladnije od zraka.
+ is usually sown in 	 obično se sije u razdoblju 
+ on 	 na 
+ or after the winter rest	 ili nakon zimskog mirovanja
+ parcels ▾	 parcela ▾
+ sown on 	 posijano 
+ starts at ≈ 	 počinje pri ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · izvor Open-Meteo (modeli; tlo i rizici su procjene) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	„Zadrži” je korisno za plasteničke kulture ili pogrešan datum koji ćeš kasnije ispraviti.
+, ceiling 	, gornja granica 
+, critically at 	, kritično u 
+, from 	, od 
+, when the soil has 	, kad tlo ima 
+, with 	, s 
+. Over 32 °C the crop suffers	. Iznad 32 °C kultura trpi
+14 d	14 d
+28 d	28 d
+28 days: 	28 dana: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: kapljice isparavaju kontrolirano. Ispod 2 °C rizik zanošenja, iznad 10 °C kapljice se suše u zraku.
+3 leaves	3 lista
+4–6 leaves	4–6 listova
+7 d	7 d
+7 days	7 dana
+8–10 leaves	8–10 listova
+: base temperature 	: bazna temperatura 
+; storm energy (CAPE) up to 	; energija oluje (CAPE) do 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Dodir kartice približi kartu na parcelu i pokaže njezine točke; Statistika otvara njezinu statistiku.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Dodir pribadače približi parcelu i pokaže njezino ime; drugi dodir pokaže njezine točke.
+Action of the day	Zadatak dana
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Zadatak dana: što danas raditi, s ocjenom prskanja (0–100) i najvećim rizikom sljedećih 48 sati.
+Another crop…	Druga kultura…
+Area	Površina
+At the soil surface it can be 	Na površini tla može biti 
+Back	Natrag
+Balance 7 days	Bilanca 7 dana
+Branching	Grananje
+Bud break	Pupanje
+Budding	Formiranje pupova
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Gumbi u ☰, 2 u retku: engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona. U SAD-u samo engleski i španjolski.
+C. That is how the fungus takes hold on the leaves.	C. Tako se gljivica nastani na listovima.
+CARE	PAŽNJA
+CSV saved	CSV spremljen
+CSV table (Excel)	Tablica CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Izračun: broje se udari od 20 km/h i CAPE iznad 300 J/kg; 75 km/h ili 2500 J/kg = sigurno.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Izračun: najviša temperatura zraka; 28 °C bez rizika, 34 °C i više sigurno.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Izračun: temperatura površine tla iz Open-Meteo (procjena); +4 °C bez rizika, −2 °C i niže sigurno.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Izračun: mokar list = kiša, rosa ili vlaga ≥ 90 %, pri 12–26 °C; 12 h zaredom ili više = visok rizik.
+Care	Pažnja
+Change on the map	Promijeni na karti
+Choose another crop	Odaberi drugu kulturu
+Choose the crop	Odaberi kulturu
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Odaberi kulturu i datum sjetve parcele: od njih se računaju stupanj-dani sezone, faza i usporedbe.
+Circle puts the points evenly on a circle.	Krug raspoređuje točke ravnomjerno po krugu.
+Coldest hour	Najhladniji sat
+Coming up	Slijedi
+Critical interval	Kritični interval
+Crop	Kultura
+Crop type · for the thresholds	Vrsta kulture · za pragove
+Days (* = forecast)	Dani (* = prognoza)
+Delta-T (ΔT) now	Delta-T (ΔT) sada
+Delta-T now	Delta-T sada
+Delta-T over 10 °C: the drops dry in the air.	Delta-T iznad 10 °C: kapljice se suše u zraku.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T ispod 2 °C: kapljice se ne suše i zanose se.
+Earthquake	Potres
+Edit parcel	Uredi parcelu
+Emergence	Nicanje
+Estimated stage	Procijenjena faza
+Evaporation	Isparavanje
+Evaporation (ET₀) 7 days	Isparavanje (ET₀) 7 dana
+Flowering	Cvatnja
+Forage	Krmno bilje
+Frost	Mraz
+Fruit set	Zametanje plodova
+Fungal diseases	Gljivične bolesti
+GDD base 	Baza GDD 
+GDD on the same date	GDD na isti datum
+GDD since 	GDD od 
+Good spray hours in 72 h	Dobri sati za prskanje u 72 h
+Ground frost	Prizemni mraz
+Ground frost 	Prizemni mraz 
+Growing degree days (GDD)	Stupanj-dani rasta (GDD)
+Growth	Rast
+Gusts 	Udari 
+HIGH RISK	VISOK RIZIK
+Hard frost days	Dani jakog mraza
+Harvest	Žetva
+Heading	Klasanje
+Heat 	Vrućina 
+Heat stress	Toplinski stres
+High risk of 	Visok rizik: 
+History and forecast	Povijest i prognoza
+Hoarfrost	Inje
+Hottest hour	Najtopliji sat
+Hour 	Sat 
+Hours over 32 °C	Sati iznad 32 °C
+IN SEASON	U SEZONI
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	U satelitskom prikazu 4 kuta pronalaze se na slici i pomiču prstom; + Točka dodaje jednu (do 7), dugi pritisak briše jednu.
+Infection: 	Infekcija: 
+Irrigate if you can and avoid treatments in the hot hours.	Navodnjavaj ako možeš i izbjegavaj tretiranja u vrućim satima.
+Keep	Zadrži
+LOW RISK	NIZAK RIZIK
+Last year on the same date	Prošle godine na isti datum
+Light wind 	Slab vjetar 
+MODERATE RISK	UMJEREN RIZIK
+Machinery on the field	Strojevi na polju
+Moderate risk of 	Umjeren rizik: 
+NOT THE SEASON	NIJE SEZONA
+Name	Ime
+Next 72 hours	Sljedeća 72 sata
+No app on the phone opens CSV files.	Nijedna aplikacija na telefonu ne otvara CSV datoteke.
+No corners yet: only the pin.	Još bez kutova: samo pribadača.
+No data for the season yet.	Još nema podataka za sezonu.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Još nema podataka za ovu parcelu. Otvori je jednom s internetom: aplikacija preuzima podatke s Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Ovaj mjesec ne sije se nijedna ratarska kultura; voćnjaci, vinogradi i ostalo su ispod.
+No good hours in the next 24 hours.	Nema dobrih sati u sljedeća 24 sata.
+No long wet spell in the next 72 hours.	Nema dugog vlažnog razdoblja u sljedeća 72 sata.
+No risk	Bez rizika
+No spraying today	Danas ne prskaj
+No treatment needed for now.	Zasad nije potrebno tretiranje.
+Nothing special in the next 72 hours.	Ništa posebno u sljedeća 72 sata.
+Nothing to do.	Nema posla.
+OPTIMAL	OPTIMALNO
+OUT OF SEASON	IZVAN SEZONE
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Na karti se kutovi pomiču prstom; + Točka, Krug i dugi pritisak rade i tamo. Vrijeme se uzima iz središta parcele.
+Operational	Operativno
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Operativno: prozor prskanja sat po sat (zeleno, žuto, crveno; broj je ΔT); dodir sata pokazuje njegove vrijednosti. Delta-T, vjetar i udari, mokar list.
+Optimal	Optimalno
+Orchard / vine	Voćnjak / vinograd
+Other crops · in another season	Ostale kulture · u drugoj sezoni
+Outline on the map	Obris na karti
+PDF report	Izvješće PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV sprema sažetak, sljedeća 72 sata i dane u Preuzimanja.
+Preventive treatment before the wet spell, in a green window	Preventivno tretiranje prije vlažnog razdoblja, u zelenom prozoru
+Protect young plants and sensitive crops; no treatments in the cold hours.	Zaštiti mlade biljke i osjetljive kulture; bez tretiranja u hladnim satima.
+RH	RV
+RH 	RV 
+Rain 	Kiša 
+Rain 7 days	Kiša 7 dana
+Rain 7 days / 28 days	Kiša 7 dana / 28 dana
+Rain now or soon: it washes the treatment off.	Kiša sada ili uskoro: ispire tretiranje.
+Right for 	Prikladno za 
+Right now	Prikladno sada
+Ripening	Dozrijevanje
+Risks	Rizici
+Risks 72 h	Rizici 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Rizici 72 h: gljivične bolesti, prizemni mraz, toplinski stres, vjetar i tuča; dodir kartice objašnjava ga i kaže što učiniti. Ispod njih: što slijedi.
+Save and ✕, above the new parcel's box, keep it or close the box.	Spremi i ✕ iznad okvira nove parcele spremaju je ili zatvaraju okvir.
+Save as PDF or CSV	Spremi kao PDF ili CSV
+Save the statistics	Spremi statistiku
+Score	Ocjena
+Season	Sezona
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Sezona: stupanj-dani (GDD) od sjetve u odnosu na prošlu godinu, procijenjena faza, toplinski stres i dani jakog mraza. Potrebni su kultura i datum sjetve.
+Secure what the wind can take; no spraying in the gusts.	Učvrsti što vjetar može odnijeti; ne prskaj pri udarima.
+Soil / air	Tlo / zrak
+Soil temperature 6 / 18 cm	Temperatura tla 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Izvor: Open-Meteo (modeli; tlo i rizici su procjene). 
+Sowing date	Datum sjetve
+Spray between 	Prskaj između 
+Spray window	Prozor prskanja
+Spray with care between 	Prskaj oprezno između 
+Spring row crops	Proljetne okopavine
+Stem elongation	Vlatanje
+Storm energy	Energija oluje
+Strongest gust	Najjači udar
+Surface moisture	Vlaga površine
+Surface moisture 0–1 cm	Vlaga površine 0–1 cm
+TODAY	DANAS
+The GPS button takes the map, and the new parcel's pin, where you are.	Gumb GPS pomiče kartu, i pribadaču nove parcele, tamo gdje si.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Stupci na kartici parcele ili Statistika u njezinom oblačiću. Gore: parcela (dodir bira drugu), 4 kartice i PDF · CSV.
+The bars open its Statistics.	Stupci otvaraju njezinu Statistiku.
+The bell turns its notifications on or off.	Zvono uključuje ili isključuje njezine obavijesti.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Kanta je briše; ostaje 15 dana u kanti ispod gumba GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Kultura se bira s popisa poredanog po sezoni datuma sjetve; Druga kultura… dobiva ime i vrstu; izvan sezone aplikacija pita ponovno.
+The file could not be saved: 	Datoteku nije bilo moguće spremiti: 
+The highest temperature of the next 7 days: 	Najviša temperatura sljedećih 7 dana: 
+The hours are missing from the data.	U podacima nedostaju sati.
+The last stage is reached.	Posljednja faza je dosegnuta.
+The leaves stay wet 	Listovi ostaju mokri 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Olovka uređuje parcelu: ime, kultura, datum sjetve, površina; kutovi se pomiču na karti.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Prvi dani sezone dolaze iz arhiva Open-Meteo; preuzimaju se s internetom.
+The soil	Tlo
+The strongest gust of the next 72 hours: 	Najjači udar sljedeća 72 sata: 
+Thresholds for 	Pragovi za 
+Tillering	Busanje
+Today	Danas
+Too cold (under 5 °C).	Prehladno (ispod 5 °C).
+Too hot (over 28 °C).	Prevruće (iznad 28 °C).
+Too much wind (drift).	Previše vjetra (zanošenje).
+Updated 	Ažurirano 
+Vegetables	Povrće
+Veraison	Šara
+Vs. last year	U odnosu na prošlu godinu
+Wait	Čekaj
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Prati parcelu; tretiranje može biti potrebno ako vlaga potraje.
+Water & Soil	Voda i tlo
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Voda i tlo: kiša i isparavanje (ET₀) za 7 dana i bilanca; grafikon prošlosti i sljedećih 7 dana; tlo na 6 i 18 cm, vlaga površine, strojevi na polju.
+Wet leaf	Mokar list
+Wet leaf hours	Sati mokrog lista
+Wet leaf now	Mokar list sada
+What you can do	Što možeš učiniti
+Wind 	Vjetar 
+Wind / gusts now	Vjetar / udari sada
+Wind and gusts	Vjetar i udari
+Wind · hail	Vjetar · tuča
+Wind, ΔT or temperature outside the ideal range.	Vjetar, ΔT ili temperatura izvan idealnog raspona.
+Winter cereals	Ozime žitarice
+With this date the degree days and the risks can come out wrong.	S ovim datumom stupanj-dani i rizici mogu ispasti pogrešni.
+Write the crop's name	Napiši ime kulture
+air 	zrak 
+as last year	kao prošle godine
+care	pažnja
+choose…	odaberi…
+critical heat at 	kritična vrućina u 
+days	dana
+deficit, irrigate	manjak, navodnjavaj
+disease watched: 	praćena bolest: 
+drag a corner to move it; a long press deletes it	povuci kut da ga pomakneš; dugi pritisak ga briše
+dried at 	osušeno u 
+estimated on 	procijenjeno 
+evaporation (ET₀)	isparavanje (ET₀)
+firm ground	čvrsto tlo
+forecast	prognoza
+from GDD	prema GDD
+fungal diseases	gljivične bolesti
+fungi	gljive
+green zone = sowing threshold for 	zelena zona = prag sjetve za 
+gusts max 	udari najviše 
+last year	prošle godine
+last year 	prošle godine 
+maize	kukuruz
+max 	najviše 
+measured	izmjereno
+near saturation	gotovo zasićeno
+no	zabranjeno
+no crop or sowing date yet	još bez kulture i datuma sjetve
+no dew or rain lately	u posljednje vrijeme bez rose i kiše
+no spraying, secure what can fly	ne prskaj, učvrsti što može odletjeti
+no treatments in the hot hours	bez tretiranja u vrućim satima
+not to be estimated now (cold)	sada se ne može procijeniti (hladno)
+number = ΔT	broj = ΔT
+optimal	optimalno
+ordered by the sowing date: 	poredano po datumu sjetve: 
+ordered by this month	poredano po ovom mjesecu
+over 32 °C	iznad 32 °C
+planted	posađeno
+rain 3 days 	kiša 3 dana 
+rain mm/day	kiša mm/dan
+risk of compaction	rizik zbijanja
+score 	ocjena 
+slight deficit	blagi manjak
+sowing soil 	tlo za sjetvu 
+sown 	posijano 
+surplus	višak
+tap a card	dodirni karticu
+the field is hard to work	polje se teško obrađuje
+the leaves are wet now	listovi su sada mokri
+the soil compacts	tlo se zbija
+the sowing date	datum sjetve
+this season	ova sezona
+threshold 12 h	prag 12 h
+today	danas
+under −5 °C	ispod −5 °C
+wet	mokro
+write the name	napiši ime
+yes	da
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Parcele: karta s karticama parcela (uspravno red dolje, položeno stupac desno). Spremljeno samo na ovom telefonu.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ dodaje parcelu: pribadača počinje u sredini karte, dodir karte je pomiče; ime je gore.
+Wheat	Pšenica
+Barley	Ječam
+Triticale	Pšenoraž
+Rapeseed	Uljana repica
+Maize	Kukuruz
+Sunflower	Suncokret
+Soybean	Soja
+Sugar beet	Šećerna repa
+Potato	Krumpir
+Vineyard	Vinograd
+Orchard	Voćnjak
+Alfalfa	Lucerna
+Septoria	Septorioza
+Net blotch	Mrežasta pjegavost
+Phoma	Suha trulež (Phoma)
+Fusarium	Fuzarioza
+Downy mildew	Plamenjača
+Cercospora	Cerkospora
+Late blight	Plamenjača krumpira
+Scab	Krastavost
+Anthracnose	Antraknoza
+grain filling	nalijevanje zrna
+flowering	cvatnja
+pollination	oprašivanje
+root growth	rast korijena
+tuber forming	stvaranje gomolja
+regrowth	ponovni rast
+.	.

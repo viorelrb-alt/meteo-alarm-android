@@ -1,4 +1,12 @@
-Dabartinė versija: v.1.520 · 16.11.2026
+Dabartinė versija: v.2.001 · 17.11.2026
+NUSTATYMAI
+- Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
+SKLYPAI
+- Redaguoti lauką: pieštukas atveria lauko puslapį: pavadinimas, kultūra (sąrašas pagal sėjos datos sezoną arba Kita kultūra…), sėjos data, plotas; kampai stumiami žemėlapyje.
+- Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, Delta-T, vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
+- Dizaino patobulinimai ir klaidų taisymai.
+
+1.4 versija (v.1.400 – v.1.520)
 ATNAUJINIMAI
 - Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI

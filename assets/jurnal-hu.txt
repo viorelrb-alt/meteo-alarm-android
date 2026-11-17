@@ -1,4 +1,12 @@
-Jelenlegi verzió: v.1.520 · 16.11.2026
+Jelenlegi verzió: v.2.001 · 17.11.2026
+BEÁLLÍTÁSOK
+- Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
+PARCELLÁK
+- Parcella szerkesztése: a ceruza megnyitja a parcella oldalát: név, kultúra (lista a vetési dátum szezonja szerint vagy Más kultúra…), vetési dátum, terület; a sarkok a térképen mozognak.
+- Statisztika: minden parcellához A nap teendője és 4 fül: Operatív (permetezési ablak óránként, Delta-T, szél, nedves levél), Víz és talaj (eső, párolgás, talaj 6 és 18 cm-en), Szezon (hőösszeg a tavalyihoz képest, becsült fázis) és Kockázatok 72 h (gombás betegségek, talajmenti fagy, hőség, szél és jégeső); mentés PDF-be vagy CSV-be.
+- Dizájnjavítások és hibajavítások.
+
+1.4. verzió (v.1.400 – v.1.520)
 BEÁLLÍTÁSOK
 - Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
 - Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.

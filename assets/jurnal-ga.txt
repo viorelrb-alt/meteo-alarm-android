@@ -1,4 +1,12 @@
-Leagan reatha: v.1.520 · 16.11.2026
+Leagan reatha: v.2.001 · 17.11.2026
+CEAPACHA
+- Cuir an pháirc in eagar: osclaíonn an peann luaidhe leathanach na páirce: ainm, barr (liosta de réir shéasúr an dáta curtha nó Barr eile…), dáta curtha, achar; bogtar na cúinní ar an léarscáil.
+- Staitisticí: do gach páirc, Gníomh an lae agus 4 chluaisín: Oibríochtúil (fuinneog na spraeála uair ar uair, Delta-T, gaoth, duilleog fhliuch), Uisce & Ithir (báisteach, galú, ithir ag 6 agus 18 cm), Séasúr (céimeanna-lae i gcomparáid le hanuraidh, céim mheasta) agus Rioscaí 72 h (galair fhungacha, sioc talún, teas, gaoth agus clocha sneachta); sábháil mar PDF nó CSV.
+SOCRUITHE
+- Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
+- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+
+Leagan 1.4 (v.1.400 – v.1.520)
 CEAPACHA
 - Bioráin ar an léarscáil: zúmálann tadhall ar bhiorán an léarscáil ar an gceapach agus taispeánann sé a hainm; taispeánann an dara tadhall a pointí.
 - Bosca bruscair: téann ceapach scriosta go dtí an bosca bruscair faoin gcnaipe GPS ar feadh 15 lá agus is féidir í a athchóiriú as.

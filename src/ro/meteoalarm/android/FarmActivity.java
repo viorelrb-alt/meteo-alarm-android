@@ -120,7 +120,7 @@ public final class FarmActivity extends Activity {
 			Log.i(this, "FERMIER", "parcela " + p.name + ": " + entry);
 			curId = id;
 			if (entry.equals("map")) showMap(id, p.name, p.lat, p.lon, 17, "finish");
-			else showParcel(id);
+			else showStats(id);
 			return;
 		}
 		entry = null;
@@ -136,11 +136,26 @@ public final class FarmActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		if (closeOverlay()) return;
+		// v2.001: the Statistics and the parcel's edit page.
+		if (screen.equals("stats")) {
+			if (stats != null && stats.closeSheet()) return;
+			if (entry != null) finish();
+			else showList();
+			return;
+		}
+		if (screen.equals("pedit")) {
+			if (editor != null && editor.closeSheet()) return;
+			editor = null;
+			if (editBack == 1) showStats(curId);
+			else showList();
+			return;
+		}
 		if (screen.equals("list") && closeNew()) return;
 		if (screen.equals("map")) {
 			stopLoc();
 			if (mapBack.equals("finish")) finish();
-			else if (mapBack.equals("parcel")) showParcel(curId);
+			else if (mapBack.equals("parcel")) showStats(curId);
+			else if (mapBack.equals("pedit")) showEdit(Parcels.get(this, curId));
 			else showList();
 		} else if (screen.equals("parcel")) {
 			if (entry != null) finish();
@@ -895,6 +910,8 @@ public final class FarmActivity extends Activity {
 		else if (screen.equals("edit")) showEditList();
 		// v3.11: the square boxes and the tables take the new width.
 		else if (screen.equals("parcel")) showParcel(curId);
+		else if (screen.equals("stats")) showStats(curId);
+		else if (screen.equals("pedit") && editor != null) editor.show(root, editor.p);
 		else if (screen.equals("map") && map != null && mapNameIn != null)
 			showMap(mapId, mapNameIn.getText().toString(), map.lat(), map.lon(), map.zoom(), mapBack);
 	}
@@ -971,7 +988,9 @@ public final class FarmActivity extends Activity {
 	/** Parcel P's name and position, on the map page (v2.80: "Edit"); back goes to the list. */
 	private void edit(Parcels.Parcel p) {
 		Log.i(this, "FERMIER", "editare parcelă: " + p.name);
-		showMap(p.id, p.name, p.lat, p.lon, 17, "list");
+		editBack = screen.equals("stats") ? 1 : 0;
+		editor = null;
+		showEdit(p);
 	}
 
 	/**
@@ -1110,7 +1129,7 @@ public final class FarmActivity extends Activity {
 		Calendar now = Calendar.getInstance();
 		from = Farm.date(now, -6);
 		to = Farm.date(now, 0);
-		showParcel(id);
+		showStats(id);
 	}
 
 	/** The GPS button's crosshair (drawn, blue as the dot of the phone's position). */
@@ -2175,6 +2194,9 @@ public final class FarmActivity extends Activity {
 
 	/** v6.00: the new parcel's corners (kept when the screen turns) and the look for them again. */
 	private double[] newCorners;
+	/** v2.001: the map page moves an existing parcel's corners (in newCorners), of parcel mapCornersId. */
+	private boolean mapCorners;
+	private long mapCornersId = -1;
 	private Runnable newFind;
 	private int findRun;
 
@@ -2517,9 +2539,9 @@ public final class FarmActivity extends Activity {
 				mla += c[2 * k] / n;
 				mlo += c[2 * k + 1] / n;
 			}
-			String[] names = { Tr.t("North-west", "Nord-vest"), Tr.t("North-east", "Nord-est"), Tr.t("South-east", "Sud-est"), Tr.t("South-west", "Sud-vest") };
-			// v6.10: with more points, 8 directions and the points' numbers.
-			String[] eight = { Tr.t("North", "Nord"), names[1], Tr.t("East", "Est"), names[2], Tr.t("South", "Sud"), names[3], Tr.t("West", "Vest"), names[0] };
+			// v2.001 (Viorel): the directions shortened (NV, NE…), as on the wind box.
+			String[] eight = ro.meteoalarm.android.core.Tr.dirs8();
+			String[] names = { eight[7], eight[1], eight[3], eight[5] };
 			double cos = Math.cos(Math.toRadians(mla));
 			// In a scroll when it does not fit (7 points on a small phone in landscape).
 			LinearLayout rows = column();
@@ -2536,7 +2558,7 @@ public final class FarmActivity extends Activity {
 				}
 				LinearLayout r = new LinearLayout(this);
 				r.setGravity(Gravity.CENTER_VERTICAL);
-				r.addView(text(nm4, 13, false, dim), new LinearLayout.LayoutParams(px(tab ? 120 : 100), ViewGroup.LayoutParams.WRAP_CONTENT));
+				r.addView(text(nm4, 14, false, dim), new LinearLayout.LayoutParams(px(tab ? 76 : 64), ViewGroup.LayoutParams.WRAP_CONTENT));
 				r.addView(text(coords(c[2 * k], c[2 * k + 1]), tab ? 17 : 15, true, ink));
 				rows.addView(r, wide(4));
 			}
@@ -3076,6 +3098,22 @@ public final class FarmActivity extends Activity {
 		mapBox.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		// v3.51 (Viorel): no ⋮ on the edit page; "Delete" left of "Save".
 		final Parcels.Parcel ed = id >= 0 ? Parcels.get(this, id) : null;
+		// v2.001 (Viorel, mockup 6): an existing parcel's corners move with a finger here too; + Point adds one.
+		mapCorners = ed != null && ed.corners != null;
+		if (mapCorners) {
+			if (newCorners == null || newCorners.length < 6 || mapCornersId != id) newCorners = ed.corners.clone();
+			mapCornersId = id;
+			newCircle = false;
+			newTools = null;
+			map.setCorners(newCorners, cornersCb(map, where));
+			TextView pt = button(Tr.t("+ Point", "+ Punct"), new View.OnClickListener() {
+				public void onClick(View v) {
+					addPoint(map, where);
+				}
+			});
+			col.addView(pt, wide(8));
+			col.addView(text(Tr.t("drag a corner to move it; a long press deletes it", "trage un colț ca să-l muți; apăsarea lungă îl șterge"), 14, false, dim), wide(4));
+		}
 		mapFloats(mapBox, map, id < 0 ? Tr.t("New parcel", "Parcelă nouă") : Tr.t("Edit", "Editare"), tab, null);
 		if (land) {
 			// Save at the bottom of the right third.
@@ -3095,6 +3133,8 @@ public final class FarmActivity extends Activity {
 					p.id = System.currentTimeMillis();
 				}
 				boolean moved = id < 0 || Math.abs(p.lat - map.lat()) > 1e-6 || Math.abs(p.lon - map.lon()) > 1e-6;
+				// v2.001: the corners moved on this page.
+				if (id >= 0 && mapCorners && newCorners != null) p.corners = newCorners.clone();
 				p.name = n;
 				p.lat = map.lat();
 				p.lon = map.lon();
@@ -3109,7 +3149,11 @@ public final class FarmActivity extends Activity {
 				// v2.90: the list map shows all the parcels again, the new or moved one among them.
 				if (moved) listLat = Double.NaN;
 				if (mapBack.equals("finish")) finish();
-				else if (id >= 0 && mapBack.equals("parcel")) showParcel(p.id);
+				else if (id >= 0 && mapBack.equals("parcel")) showStats(p.id);
+				else if (id >= 0 && mapBack.equals("pedit")) {
+					editor = null;
+					showEdit(p);
+				}
 				else if (id >= 0) {
 					toast(Tr.t("Saved: ", "Salvată: ") + n);
 					showList();
@@ -3454,6 +3498,153 @@ public final class FarmActivity extends Activity {
 		if (d == null || System.currentTimeMillis() - f > FRESH_MS) download(p);
 	}
 
+	// --- v2.001: the Statistics and the parcel's edit page -----------------------------------------
+
+	private StatsPage stats;
+	private EditPage editor;
+	/** Where the edit page goes back to: 0 the parcels, 1 the Statistics. */
+	private int editBack;
+	/** The season's archive is being downloaded for this parcel (-1 none). */
+	private long seasonLoading = -1;
+	/** The season downloads tried in this window (once a day per parcel and start, also when they fail). */
+	private final java.util.Set<String> seasonTried = new java.util.HashSet<String>();
+
+	private StatsPage statsPage() {
+		if (stats == null) stats = new StatsPage(this, new StatsPage.Host() {
+			public void back() {
+				onBackPressed();
+			}
+
+			public void edit(Parcels.Parcel p) {
+				FarmActivity.this.edit(p);
+			}
+
+			public void open(long id) {
+				showStats(id);
+			}
+
+			public void export(Parcels.Parcel p, boolean pdf) {
+				exportStats(p, pdf);
+			}
+
+			public void redraw() {
+				showStats(curId);
+			}
+		}, dark, imp, clk12);
+		return stats;
+	}
+
+	/** v2.001 (Viorel, mockups 1–5): parcel ID's Statistics. */
+	private void showStats(final long id) {
+		final Parcels.Parcel p = Parcels.get(this, id);
+		if (p == null) {
+			showList();
+			return;
+		}
+		if (!"stats".equals(screen) || curId != id) Log.i(this, "FERMIER", "statistici: " + p.name);
+		screen = "stats";
+		curId = id;
+		overlay = null;
+		Farm.Data d = Parcels.data(this, id);
+		long f = Parcels.fetched(this, id);
+		String season = Parcels.season(this, p, false);
+		StatsPage sp = statsPage();
+		sp.set(p, d, season);
+		String st = f > 0 ? Tr.t("Updated ", "Actualizat ") + time(f) + "." : "";
+		sp.show(root, f, st);
+		if (d == null || System.currentTimeMillis() - f > FRESH_MS) download(p);
+		// The season's first days, from the archive, once a day.
+		final String start = Parcels.seasonStart(p, Farm.date(Calendar.getInstance(), 0));
+		if (start.length() > 0 && seasonLoading != id && seasonStale(p) && !seasonTried.contains(p.id + start + Farm.date(Calendar.getInstance(), 0))) {
+			seasonTried.add(p.id + start + Farm.date(Calendar.getInstance(), 0));
+			seasonLoading = id;
+			final android.content.Context app = getApplicationContext();
+			new Thread(new Runnable() {
+				public void run() {
+					final String got = Parcels.season(app, p, true);
+					ui.post(new Runnable() {
+						public void run() {
+							seasonLoading = -1;
+							if (got != null && !isFinishing() && screen.equals("stats") && curId == p.id) showStats(p.id);
+						}
+					});
+				}
+			}).start();
+		}
+	}
+
+	/** The season's archive is missing or from another day / sowing date. */
+	private boolean seasonStale(Parcels.Parcel p) {
+		String today = Farm.date(Calendar.getInstance(), 0), start = Parcels.seasonStart(p, today);
+		String key = start + "|" + today + "|" + p.lat + "|" + p.lon;
+		return !key.equals(Fetcher.prefs(this).getString("ps_" + p.id, ""));
+	}
+
+	/** v2.001 (Viorel, mockups 6–8): the parcel's edit page (crop, sowing date, area). */
+	private void showEdit(Parcels.Parcel p) {
+		if (p == null) {
+			showList();
+			return;
+		}
+		screen = "pedit";
+		curId = p.id;
+		overlay = null;
+		if (editor == null) editor = new EditPage(this, new EditPage.Host() {
+			public void close() {
+				onBackPressed();
+			}
+
+			public void save(Parcels.Parcel q) {
+				Parcels.Parcel old = Parcels.get(FarmActivity.this, q.id);
+				if (old != null) {
+					// The rest as stored (the map page may have changed it).
+					old.name = q.name;
+					old.crop = q.crop;
+					old.ctype = q.ctype;
+					old.sow = q.sow;
+					q = old;
+				}
+				Parcels.put(FarmActivity.this, q);
+				Log.i(FarmActivity.this, "FERMIER", "parcelă salvată: " + q.name + " · " + q.crop + " · " + q.sow);
+				toast(Tr.t("Saved: ", "Salvată: ") + q.name);
+				editor = null;
+				listLat = Double.NaN;
+				if (editBack == 1) showStats(q.id);
+				else showList();
+			}
+
+			public void map(Parcels.Parcel q) {
+				Parcels.Parcel old = Parcels.get(FarmActivity.this, q.id);
+				if (old != null) {
+					old.name = q.name;
+					old.crop = q.crop;
+					old.ctype = q.ctype;
+					old.sow = q.sow;
+					Parcels.put(FarmActivity.this, old);
+					q = old;
+				}
+				editor = null;
+				mapCornersId = -1;
+				showMap(q.id, q.name, q.lat, q.lon, 17, "pedit");
+			}
+		}, statsPage(), dark);
+		editor.show(root, p);
+	}
+
+	/** v2.001: the Statistics as a PDF report or a CSV table, in Downloads. */
+	private void exportStats(Parcels.Parcel p, boolean asPdf) {
+		try {
+			StatsExport ex = new StatsExport(this, statsPage(), dark);
+			String base = "MeteoAlarm-" + Tr.t("Statistics", "Statistici") + "-" + p.name.replaceAll("[^A-Za-z0-9ĂÂÎȘȚăâîșț_-]+", "-") + "-" + Farm.date(Calendar.getInstance(), 0);
+			if (asPdf) save(ex.pdf(), base + ".pdf", "application/pdf");
+			else save(ex.csv().getBytes("UTF-8"), base + ".csv", "text/csv");
+			Log.i(this, "FERMIER", "statistici salvate: " + pdfName);
+		} catch (Exception e) {
+			Log.e(this, "FERMIER", "export statistici", e);
+			toast(Tr.t("The file could not be saved: ", "Fișierul nu a putut fi salvat: ") + e.getClass().getSimpleName());
+		}
+	}
+
 	/** The scroll positions of the scrolling views under V, in order. */
 	private static void scrolls(View v, List<int[]> out) {
 		List<View> views = new java.util.ArrayList<View>();
@@ -3609,9 +3800,10 @@ public final class FarmActivity extends Activity {
 				final Exception fe = err;
 				ui.post(new Runnable() {
 					public void run() {
-						if (isFinishing() || !screen.equals("parcel") || curId != p.id) return;
+						if (isFinishing() || !(screen.equals("parcel") || screen.equals("stats")) || curId != p.id) return;
 						if (fe == null) {
-							showParcel(p.id);
+							if (screen.equals("stats")) showStats(p.id);
+							else showParcel(p.id);
 							return;
 						}
 						// Viorel: say that the data come later and are notified.
@@ -3678,13 +3870,27 @@ public final class FarmActivity extends Activity {
 	/** The page as an A4 PDF (v3.31: the boxes and both tables), saved in Downloads (Android 10+), else where the user picks. */
 	private void pdf(Parcels.Parcel p, PdfData pd) {
 		try {
-			pdfBytes = makePdf(p, pd);
-			pdfName = "MeteoAlarm-" + p.name.replaceAll("[^A-Za-z0-9ĂÂÎȘȚăâîșț_-]+", "-") + "-" + from + "_" + to + ".pdf";
-			Log.i(this, "FERMIER", "PDF " + pdfName + " " + pdfBytes.length / 1024 + " KB");
+			save(makePdf(p, pd), "MeteoAlarm-" + p.name.replaceAll("[^A-Za-z0-9ĂÂÎȘȚăâîșț_-]+", "-") + "-" + from + "_" + to + ".pdf", "application/pdf");
+		} catch (Exception e) {
+			Log.e(this, "FERMIER", "PDF", e);
+			toast(Tr.t("The PDF could not be saved: ", "PDF-ul nu a putut fi salvat: ") + e.getClass().getSimpleName());
+		}
+	}
+
+	/** The type of the file being saved (v2.001: PDF or CSV). */
+	private String pdfMime = "application/pdf";
+
+	/** Saves BYTES as NAME in Downloads (Android 10+), else where the user picks. */
+	private void save(byte[] bytes, String name, String mime) throws Exception {
+		pdfBytes = bytes;
+		pdfName = name;
+		pdfMime = mime;
+		{
+			Log.i(this, "FERMIER", "fișier " + pdfName + " " + pdfBytes.length / 1024 + " KB");
 			if (Build.VERSION.SDK_INT >= 29) {
 				ContentValues v = new ContentValues();
 				v.put(android.provider.MediaStore.MediaColumns.DISPLAY_NAME, pdfName);
-				v.put(android.provider.MediaStore.MediaColumns.MIME_TYPE, "application/pdf");
+				v.put(android.provider.MediaStore.MediaColumns.MIME_TYPE, mime);
 				v.put(android.provider.MediaStore.MediaColumns.RELATIVE_PATH, android.os.Environment.DIRECTORY_DOWNLOADS);
 				Uri u = getContentResolver().insert(android.provider.MediaStore.Downloads.EXTERNAL_CONTENT_URI, v);
 				if (u == null) throw new Exception("MediaStore");
@@ -3693,13 +3899,10 @@ public final class FarmActivity extends Activity {
 				out.close();
 				saved(u);
 			} else {
-				Intent i = new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("application/pdf")
+				Intent i = new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType(mime)
 						.putExtra(Intent.EXTRA_TITLE, pdfName);
 				startActivityForResult(i, SAVE_PDF);
 			}
-		} catch (Exception e) {
-			Log.e(this, "FERMIER", "PDF", e);
-			toast(Tr.t("The PDF could not be saved: ", "PDF-ul nu a putut fi salvat: ") + e.getClass().getSimpleName());
 		}
 	}
 
@@ -3719,14 +3922,16 @@ public final class FarmActivity extends Activity {
 
 	private void saved(final Uri u) {
 		AlertDialog.Builder d = dialog();
-		d.setTitle(Tr.t("PDF saved", "PDF salvat"));
+		final boolean csv = !"application/pdf".equals(pdfMime);
+		d.setTitle(csv ? Tr.t("CSV saved", "CSV salvat") : Tr.t("PDF saved", "PDF salvat"));
 		d.setMessage(Tr.t("In Downloads: ", "În Descărcări: ") + pdfName);
 		d.setPositiveButton(Tr.t("Open", "Deschide"), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface di, int w) {
 				try {
-					startActivity(new Intent(Intent.ACTION_VIEW).setDataAndType(u, "application/pdf").addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
+					startActivity(new Intent(Intent.ACTION_VIEW).setDataAndType(u, pdfMime).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
 				} catch (Exception e) {
-					toast(Tr.t("No app on the phone opens PDF files.", "Nicio aplicație din telefon nu deschide fișiere PDF."));
+					toast(csv ? Tr.t("No app on the phone opens CSV files.", "Nicio aplicație din telefon nu deschide fișiere CSV.")
+							: Tr.t("No app on the phone opens PDF files.", "Nicio aplicație din telefon nu deschide fișiere PDF."));
 				}
 			}
 		});

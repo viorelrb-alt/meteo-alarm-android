@@ -1,4 +1,12 @@
-Versiunea curentă: v.1.520 · 16.11.2026
+Versiunea curentă: v.2.001 · 17.11.2026
+PARCELE
+- Editare parcelă: creionul deschide pagina parcelei: nume, cultură (listă după sezonul datei de semănat sau Altă cultură…), data semănatului, suprafață; colțurile se mută pe hartă.
+- Statistici: pentru fiecare parcelă, Acțiunea zilei și 4 file: Operațional (fereastra de stropit oră cu oră, Delta-T, vânt, frunză udă), Apă & Sol (ploaie, evaporare, sol la 6 și 18 cm), Sezon (grade-zile față de anul trecut, faza estimată) și Riscuri 72 h (boli fungice, brumă, arșiță, vânt și grindină); salvare PDF sau CSV.
+SETĂRI
+- Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
+- Îmbunătățiri de design și corectarea erorilor.
+
+Versiunea 1.4 (v.1.400 – v.1.520)
 ACTUALIZĂRI
 - Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL

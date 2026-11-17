@@ -1124,3 +1124,311 @@ West	Západ
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Pozemky: mapa s kartami pozemků (na výšku řada dole, na šířku sloupec vpravo); klepnutí na kartu ukáže jeho body, Zobrazit ho otevře na hlavní obrazovce. Klepnutí na špendlík přiblíží mapu na pozemek a ukáže jeho název; druhé klepnutí ukáže jeho body. ＋ přidá pozemek: kde jsi (GPS) nebo klepnutí na mapu, pak název; v satelitním zobrazení se jeho 4 rohy najdou v obrázku a posouvají se prstem; + Bod přidá jeden (až 7), Kruh je rozmístí rovnoměrně na kruhu, dlouhé podržení jeden smaže; Uložit a ✕ jsou nad oknem. Na kartě: tužka upravuje, sloupce otevřou jeho Statistiku · PDF, zvonek zapne nebo vypne jeho oznámení, koš ho smaže. Uloženo jen v tomto telefonu.
 Statistics	Statistika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Pozemky: mapa s kartami pozemků (na výšku řada dole, na šířku sloupec vpravo); klepnutí na kartu přiblíží mapu na pozemek a ukáže jeho body, Statistika otevře jeho statistiku. Klepnutí na špendlík přiblíží mapu na pozemek a ukáže jeho název; druhé klepnutí ukáže jeho body. ＋ přidá pozemek: špendlík začíná uprostřed mapy (tlačítko GPS ho přesune tam, kde jsi) a klepnutí na mapu ho posune; název je nahoře; v satelitním zobrazení se jeho 4 rohy najdou v obrázku a posouvají se prstem; + Bod přidá jeden (až 7), Kruh je rozmístí rovnoměrně na kruhu, dlouhé podržení jeden smaže; Uložit a ✕ jsou nad oknem. Na kartě: tužka upravuje, sloupce otevřou jeho Statistiku · PDF, zvonek zapne nebo vypne jeho oznámení, koš ho smaže. Uloženo jen v tomto telefonu.
+# v2.001
+ Anti-drift nozzles.	 Antidriftové trysky.
+ Rain from 	 Déšť od 
+ and 	 a 
+ at 	 v 
+ corners · perimeter 	 rohů · obvod 
+ days ahead	 dní náskok
+ days behind	 dní zpoždění
+ h in the last 12	 h za posledních 12
+ h wet leaf	 h mokrý list
+ hours in a row, at 	 hodin v kuse, při 
+ in 48 h.	 do 48 h.
+ in 7 days	 za 7 dní
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 ve vzduchu nejnižší. Půda může být o 2–4 °C chladnější než vzduch.
+ is usually sown in 	 se obvykle seje v období 
+ on 	 na 
+ or after the winter rest	 nebo po zimním klidu
+ parcels ▾	 pozemky ▾
+ sown on 	 setý 
+ starts at ≈ 	 začíná při ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · zdroj Open-Meteo (modely; půda a rizika jsou odhady) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	„Ponechat“ se hodí pro skleníkové plodiny nebo chybné datum, které opravíš později.
+, ceiling 	, strop 
+, critically at 	, kriticky při 
+, from 	, od 
+, when the soil has 	, když má půda 
+, with 	, s 
+. Over 32 °C the crop suffers	. Nad 32 °C plodina trpí
+14 d	14 d
+28 d	28 d
+28 days: 	28 dní: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: kapky se odpařují řízeně. Pod 2 °C riziko úletu, nad 10 °C kapky vysychají ve vzduchu.
+3 leaves	3 listy
+4–6 leaves	4–6 listů
+7 d	7 d
+7 days	7 dní
+8–10 leaves	8–10 listů
+: base temperature 	: základní teplota 
+; storm energy (CAPE) up to 	; bouřková energie (CAPE) až 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Klepnutí na kartu přiblíží mapu na pozemek a ukáže jeho body; Statistika otevře jeho statistiku.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Klepnutí na špendlík přiblíží mapu na pozemek a ukáže jeho název; druhé klepnutí ukáže jeho body.
+Action of the day	Úkol dne
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Úkol dne: co dnes dělat, se skóre postřiku (0–100) a největším rizikem příštích 48 hodin.
+Another crop…	Jiná plodina…
+Area	Plocha
+At the soil surface it can be 	Na povrchu půdy až 
+Back	Zpět
+Balance 7 days	Bilance 7 dní
+Branching	Větvení
+Bud break	Rašení
+Budding	Tvorba poupat
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Tlačítka v ☰, 2 na řádek: angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu. V USA jen angličtina a španělština.
+C. That is how the fungus takes hold on the leaves.	C. Tak se houba usadí na listech.
+CARE	POZOR
+CSV saved	CSV uloženo
+CSV table (Excel)	Tabulka CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Výpočet: počítají se nárazy od 20 km/h a CAPE nad 300 J/kg; 75 km/h nebo 2500 J/kg = jisté.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Výpočet: nejvyšší teplota vzduchu; 28 °C bez rizika, 34 °C a víc jisté.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Výpočet: teplota povrchu půdy z Open-Meteo (odhad); +4 °C bez rizika, −2 °C a méně jisté.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Výpočet: mokrý list = déšť, rosa nebo vlhkost ≥ 90 %, při 12–26 °C; 12 h v kuse nebo víc = vysoké riziko.
+Care	Pozor
+Change on the map	Změnit na mapě
+Choose another crop	Vybrat jinou plodinu
+Choose the crop	Vyber plodinu
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Vyber plodinu a datum setí pozemku: od nich se počítají denní stupně sezóny, fáze a srovnání.
+Circle puts the points evenly on a circle.	Kruh rozmístí body rovnoměrně na kruhu.
+Coldest hour	Nejchladnější hodina
+Coming up	Brzy
+Critical interval	Kritický interval
+Crop	Plodina
+Crop type · for the thresholds	Typ plodiny · pro prahy
+Days (* = forecast)	Dny (* = předpověď)
+Delta-T (ΔT) now	Delta-T (ΔT) teď
+Delta-T now	Delta-T teď
+Delta-T over 10 °C: the drops dry in the air.	Delta-T nad 10 °C: kapky vysychají ve vzduchu.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T pod 2 °C: kapky neschnou a ulétají.
+Earthquake	Zemětřesení
+Edit parcel	Upravit pozemek
+Emergence	Vzcházení
+Estimated stage	Odhadovaná fáze
+Evaporation	Výpar
+Evaporation (ET₀) 7 days	Výpar (ET₀) 7 dní
+Flowering	Kvetení
+Forage	Pícniny
+Frost	Mráz
+Fruit set	Nasazení plodů
+Fungal diseases	Houbové choroby
+GDD base 	Základ GDD 
+GDD on the same date	GDD ke stejnému datu
+GDD since 	GDD od 
+Good spray hours in 72 h	Dobré hodiny pro postřik za 72 h
+Ground frost	Přízemní mráz
+Ground frost 	Přízemní mráz 
+Growing degree days (GDD)	Denní stupně růstu (GDD)
+Growth	Růst
+Gusts 	Nárazy 
+HIGH RISK	VYSOKÉ RIZIKO
+Hard frost days	Dny silného mrazu
+Harvest	Sklizeň
+Heading	Metání
+Heat 	Horko 
+Heat stress	Tepelný stres
+High risk of 	Vysoké riziko: 
+History and forecast	Historie a předpověď
+Hoarfrost	Jinovatka
+Hottest hour	Nejteplejší hodina
+Hour 	Hodina 
+Hours over 32 °C	Hodiny nad 32 °C
+IN SEASON	V SEZÓNĚ
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	V satelitním zobrazení se 4 rohy najdou v obrázku a posouvají se prstem; + Bod přidá jeden (až 7), dlouhé podržení jeden smaže.
+Infection: 	Infekce: 
+Irrigate if you can and avoid treatments in the hot hours.	Zavlažuj, pokud můžeš, a vyhni se ošetření v horkých hodinách.
+Keep	Ponechat
+LOW RISK	NÍZKÉ RIZIKO
+Last year on the same date	Loni ke stejnému datu
+Light wind 	Slabý vítr 
+MODERATE RISK	STŘEDNÍ RIZIKO
+Machinery on the field	Stroje na poli
+Moderate risk of 	Střední riziko: 
+NOT THE SEASON	NENÍ SEZÓNA
+Name	Název
+Next 72 hours	Příštích 72 hodin
+No app on the phone opens CSV files.	Žádná aplikace v telefonu neotevře soubory CSV.
+No corners yet: only the pin.	Zatím bez rohů: jen špendlík.
+No data for the season yet.	Zatím žádná data pro sezónu.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Zatím žádná data pro tento pozemek. Otevři ho jednou s internetem: aplikace stáhne data z Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	V tomto měsíci se nesejí žádné polní plodiny; sady, vinice a ostatní jsou níže.
+No good hours in the next 24 hours.	Žádné dobré hodiny v příštích 24 hodinách.
+No long wet spell in the next 72 hours.	Žádné dlouhé vlhké období v příštích 72 hodinách.
+No risk	Bez rizika
+No spraying today	Dnes nestříkat
+No treatment needed for now.	Zatím není třeba ošetření.
+Nothing special in the next 72 hours.	Nic zvláštního v příštích 72 hodinách.
+Nothing to do.	Nic k dělání.
+OPTIMAL	OPTIMÁLNÍ
+OUT OF SEASON	MIMO SEZÓNU
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Na mapě se rohy posouvají prstem; + Bod, Kruh a dlouhé podržení tam fungují také. Počasí se bere ze středu pozemku.
+Operational	Provoz
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Provoz: okno postřiku hodinu po hodině (zelená, žlutá, červená; číslo je ΔT); klepnutí na hodinu ukáže její hodnoty. Delta-T, vítr a nárazy, mokrý list.
+Optimal	Optimální
+Orchard / vine	Sad / vinice
+Other crops · in another season	Jiné plodiny · v jiné sezóně
+Outline on the map	Obrys na mapě
+PDF report	Zpráva PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV uloží souhrn, příštích 72 hodin a dny do Stažených.
+Preventive treatment before the wet spell, in a green window	Preventivní ošetření před vlhkým obdobím, v zeleném okně
+Protect young plants and sensitive crops; no treatments in the cold hours.	Chraň mladé rostliny a citlivé plodiny; žádné ošetření v chladných hodinách.
+RH	RV
+RH 	RV 
+Rain 	Déšť 
+Rain 7 days	Déšť 7 dní
+Rain 7 days / 28 days	Déšť 7 dní / 28 dní
+Rain now or soon: it washes the treatment off.	Prší nebo brzy bude: smyje ošetření.
+Right for 	Vhodné pro 
+Right now	Vhodné teď
+Ripening	Zrání
+Risks	Rizika
+Risks 72 h	Rizika 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Rizika 72 h: houbové choroby, přízemní mráz, tepelný stres, vítr a kroupy; klepnutí na kartu je vysvětlí a řekne, co dělat. Pod nimi: co přijde.
+Save and ✕, above the new parcel's box, keep it or close the box.	Uložit a ✕ nad oknem nového pozemku ho uloží nebo okno zavřou.
+Save as PDF or CSV	Uložit jako PDF nebo CSV
+Save the statistics	Uložit statistiku
+Score	Skóre
+Season	Sezóna
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Sezóna: denní stupně (GDD) od setí oproti loňsku, odhadovaná fáze, tepelný stres a dny mrazu. Potřebuje plodinu a datum setí.
+Secure what the wind can take; no spraying in the gusts.	Zajisti, co může vítr odnést; nestříkej při nárazech.
+Soil / air	Půda / vzduch
+Soil temperature 6 / 18 cm	Teplota půdy 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Zdroj: Open-Meteo (modely; půda a rizika jsou odhady). 
+Sowing date	Datum setí
+Spray between 	Stříkej mezi 
+Spray window	Okno postřiku
+Spray with care between 	Stříkej opatrně mezi 
+Spring row crops	Jarní okopaniny
+Stem elongation	Sloupkování
+Storm energy	Bouřková energie
+Strongest gust	Nejsilnější náraz
+Surface moisture	Vlhkost povrchu
+Surface moisture 0–1 cm	Vlhkost povrchu 0–1 cm
+TODAY	DNES
+The GPS button takes the map, and the new parcel's pin, where you are.	Tlačítko GPS přesune mapu, i špendlík nového pozemku, tam, kde jsi.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Sloupce na kartě pozemku nebo Statistika v jeho bublině. Nahoře: pozemek (klepnutí vybere jiný), 4 karty a PDF · CSV.
+The bars open its Statistics.	Sloupce otevřou jeho Statistiku.
+The bell turns its notifications on or off.	Zvonek zapne nebo vypne jeho oznámení.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Koš ho smaže; zůstane 15 dní v koši pod tlačítkem GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Plodina se vybírá ze seznamu seřazeného podle sezóny data setí; Jiná plodina… dostane název a typ; mimo sezónu se aplikace zeptá znovu.
+The file could not be saved: 	Soubor se nepodařilo uložit: 
+The highest temperature of the next 7 days: 	Nejvyšší teplota příštích 7 dní: 
+The hours are missing from the data.	V datech chybí hodiny.
+The last stage is reached.	Poslední fáze je dosažena.
+The leaves stay wet 	Listy zůstanou mokré: 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Tužka upravuje pozemek: název, plodina, datum setí, plocha; rohy se posouvají na mapě.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	První dny sezóny pocházejí z archivu Open-Meteo; stahují se s internetem.
+The soil	Půda
+The strongest gust of the next 72 hours: 	Nejsilnější náraz příštích 72 hodin: 
+Thresholds for 	Prahy pro 
+Tillering	Odnožování
+Today	Dnes
+Too cold (under 5 °C).	Příliš zima (pod 5 °C).
+Too hot (over 28 °C).	Příliš horko (nad 28 °C).
+Too much wind (drift).	Příliš silný vítr (úlet).
+Updated 	Aktualizováno 
+Vegetables	Zelenina
+Veraison	Zaměkání
+Vs. last year	Vs. loni
+Wait	Počkej
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Sleduj pozemek; ošetření může být nutné, pokud vlhkost vydrží.
+Water & Soil	Voda a půda
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Voda a půda: déšť a výpar (ET₀) za 7 dní a bilance; graf minulosti a příštích 7 dní; půda v 6 a 18 cm, vlhkost povrchu, stroje na poli.
+Wet leaf	Mokrý list
+Wet leaf hours	Hodiny mokrého listu
+Wet leaf now	Mokrý list teď
+What you can do	Co můžeš udělat
+Wind 	Vítr 
+Wind / gusts now	Vítr / nárazy teď
+Wind and gusts	Vítr a nárazy
+Wind · hail	Vítr · kroupy
+Wind, ΔT or temperature outside the ideal range.	Vítr, ΔT nebo teplota mimo ideální rozsah.
+Winter cereals	Ozimé obiloviny
+With this date the degree days and the risks can come out wrong.	S tímto datem mohou denní stupně a rizika vyjít špatně.
+Write the crop's name	Napiš název plodiny
+air 	vzduch 
+as last year	jako loni
+care	pozor
+choose…	vybrat…
+critical heat at 	kritické horko při 
+days	dní
+deficit, irrigate	deficit, zavlažuj
+disease watched: 	sledovaná choroba: 
+drag a corner to move it; a long press deletes it	táhni roh, abys ho posunul; dlouhé podržení ho smaže
+dried at 	oschlo v 
+estimated on 	odhad 
+evaporation (ET₀)	výpar (ET₀)
+firm ground	únosná půda
+forecast	předpověď
+from GDD	podle GDD
+fungal diseases	houbové choroby
+fungi	houby
+green zone = sowing threshold for 	zelená zóna = práh setí pro: 
+gusts max 	nárazy max. 
+last year	loni
+last year 	loni 
+maize	kukuřice
+max 	max. 
+measured	měřeno
+near saturation	téměř nasycená
+no	zakázáno
+no crop or sowing date yet	zatím bez plodiny a data setí
+no dew or rain lately	v poslední době bez rosy a deště
+no spraying, secure what can fly	nestříkej, zajisti, co může odletět
+no treatments in the hot hours	žádné ošetření v horkých hodinách
+not to be estimated now (cold)	teď nelze odhadnout (zima)
+number = ΔT	číslo = ΔT
+optimal	optimální
+ordered by the sowing date: 	seřazeno podle data setí: 
+ordered by this month	seřazeno podle tohoto měsíce
+over 32 °C	nad 32 °C
+planted	výsadba
+rain 3 days 	déšť 3 dny 
+rain mm/day	déšť mm/den
+risk of compaction	riziko utužení
+score 	skóre 
+slight deficit	mírný deficit
+sowing soil 	půda k setí 
+sown 	setý 
+surplus	přebytek
+tap a card	klepni na kartu
+the field is hard to work	pole se špatně obdělává
+the leaves are wet now	listy jsou teď mokré
+the soil compacts	půda se utužuje
+the sowing date	data setí
+this season	tato sezóna
+threshold 12 h	práh 12 h
+today	dnes
+under −5 °C	pod −5 °C
+wet	mokrý
+write the name	napiš název
+yes	ano
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Pozemky: mapa s kartami pozemků (na výšku řada dole, na šířku sloupec vpravo). Uloženo jen v tomto telefonu.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ přidá pozemek: špendlík začíná uprostřed mapy, klepnutí na mapu ho posune; název je nahoře.
+Wheat	Pšenice
+Barley	Ječmen
+Triticale	Tritikale
+Rapeseed	Řepka
+Maize	Kukuřice
+Sunflower	Slunečnice
+Soybean	Sója
+Sugar beet	Cukrová řepa
+Potato	Brambory
+Vineyard	Vinice
+Orchard	Sad
+Alfalfa	Vojtěška
+Septoria	Septorióza
+Net blotch	Hnědá skvrnitost
+Phoma	Fomová hniloba
+Fusarium	Fuzarióza
+Downy mildew	Plíseň
+Cercospora	Cerkosporióza
+Late blight	Plíseň bramborová
+Scab	Strupovitost
+Anthracnose	Antraknóza
+grain filling	plnění zrna
+flowering	kvetení
+pollination	opylení
+root growth	růst bulvy
+tuber forming	tvorba hlíz
+regrowth	obrůstání
+.	.

@@ -1,4 +1,12 @@
-Nuværende version: v.1.520 · 16.11.2026
+Nuværende version: v.2.001 · 17.11.2026
+INDSTILLINGER
+- Visningssprog: i ☰ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
+MARKER
+- Rediger mark: blyanten åbner markens side: navn, afgrøde (liste efter såningsdatoens sæson eller Anden afgrøde…), såningsdato, areal; hjørnerne flyttes på kortet.
+- Statistik: for hver mark Dagens handling og 4 faner: Drift (sprøjtevinduet time for time, Delta-T, vind, våde blade), Vand & jord (regn, fordampning, jord i 6 og 18 cm), Sæson (graddage mod sidste år, anslået stadie) og Risici 72 t (svampesygdomme, jordfrost, varme, vind og hagl); gemmes som PDF eller CSV.
+- Designforbedringer og fejlrettelser.
+
+Version 1.4 (v.1.400 – v.1.520)
 HOVEDSKÆRM
 - Femdagesprognose: dag 3–5 skifter af sig selv hvert 3. sekund indtil første berøring.
 - Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.

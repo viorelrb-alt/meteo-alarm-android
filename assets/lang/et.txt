@@ -1124,3 +1124,311 @@ West	Lääs
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Põllud: kaart põldude kaartidega (püsti rida all, pikali veerg paremal); kaardi puudutus näitab selle punkte, Näita avab selle avaekraanil. Nööpnõela puudutus suumib kaardi põllule ja näitab selle nime; teine puudutus näitab selle punkte. ＋ lisab põllu: kus sa oled (GPS) või puudutus kaardil, siis nimi; satelliidivaates leitakse selle 4 nurka pildilt ja neid liigutatakse sõrmega; + Punkt lisab ühe (kuni 7), Ring paigutab need ühtlaselt ringile, pikk vajutus kustutab ühe; Salvesta ja ✕ on kasti kohal. Kaardil: pliiats muudab, tulbad avavad selle Statistika · PDF-i, kell lülitab selle teavitused sisse või välja, prügikast kustutab selle. Hoitakse ainult selles telefonis.
 Statistics	Statistika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Põllud: kaart põldude kaartidega (püsti rida all, pikali veerg paremal); kaardi puudutus suumib kaardi põllule ja näitab selle punkte, Statistika avab selle statistika. Nööpnõela puudutus suumib kaardi põllule ja näitab selle nime; teine puudutus näitab selle punkte. ＋ lisab põllu: nööpnõel alustab kaardi keskelt (GPS-nupp viib selle sinna, kus sa oled) ja puudutus kaardil liigutab seda; nimi on üleval; satelliidivaates leitakse selle 4 nurka pildilt ja neid liigutatakse sõrmega; + Punkt lisab ühe (kuni 7), Ring paigutab need ühtlaselt ringile, pikk vajutus kustutab ühe; Salvesta ja ✕ on kasti kohal. Kaardil: pliiats muudab, tulbad avavad selle Statistika · PDF-i, kell lülitab selle teavitused sisse või välja, prügikast kustutab selle. Hoitakse ainult selles telefonis.
+# v2.001
+ Anti-drift nozzles.	 Triivi vähendavad pihustid.
+ Rain from 	 Vihm alates 
+ and 	 ja 
+ at 	 kell 
+ corners · perimeter 	 nurka · ümbermõõt 
+ days ahead	 päeva ees
+ days behind	 päeva maas
+ h in the last 12	 h viimase 12 jooksul
+ h wet leaf	 h märg leht
+ hours in a row, at 	 tundi järjest, temperatuuril 
+ in 48 h.	 48 h jooksul.
+ in 7 days	 7 päevaga
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 õhus kõige madalam. Muld võib olla õhust 2–4 °C külmem.
+ is usually sown in 	 külvatakse tavaliselt 
+ on 	 – 
+ or after the winter rest	 või pärast talvist puhkeperioodi
+ parcels ▾	 põldu ▾
+ sown on 	 külvatud 
+ starts at ≈ 	 algab ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · allikas Open-Meteo (mudelid; muld ja riskid on hinnangud) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	„Jäta alles” sobib kasvuhoonekultuuridele või valele kuupäevale, mille hiljem parandad.
+, ceiling 	, lagi 
+, critically at 	, kriitiline faasis 
+, from 	, alates 
+, when the soil has 	, kui mullal on 
+, with 	, 
+. Over 32 °C the crop suffers	. Üle 32 °C kultuur kannatab
+14 d	14 p
+28 d	28 p
+28 days: 	28 päeva: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: tilgad aurustuvad kontrollitult. Alla 2 °C triiviohtu, üle 10 °C kuivavad tilgad õhus.
+3 leaves	3 lehte
+4–6 leaves	4–6 lehte
+7 d	7 p
+7 days	7 päeva
+8–10 leaves	8–10 lehte
+: base temperature 	: baastemperatuur 
+; storm energy (CAPE) up to 	; äikeseenergia (CAPE) kuni 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Kaardi puudutus suumib kaardi põllule ja näitab selle punkte; Statistika avab selle statistika.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Nõela puudutus suumib põllule ja näitab selle nime; teine puudutus näitab selle punkte.
+Action of the day	Päeva tegevus
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Päeva tegevus: mida täna teha, pritsimise skoori (0–100) ja järgmise 48 tunni suurima riskiga.
+Another crop…	Muu kultuur…
+Area	Pindala
+At the soil surface it can be 	Mullapinnal võib olla 
+Back	Tagasi
+Balance 7 days	Bilanss 7 päeva
+Branching	Harunemine
+Bud break	Pungade puhkemine
+Budding	Pungumine
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Nupud ☰ all, 2 reas: inglise keel ja riigi keel; Muud keeled: riigi teised keeled, suured ELi keeled, rumeenia keel ja telefoni keel. USAs ainult inglise ja hispaania keel.
+C. That is how the fungus takes hold on the leaves.	C. Nii kinnitub seen lehtedele.
+CARE	TÄHELEPANU
+CSV saved	CSV salvestatud
+CSV table (Excel)	CSV-tabel (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Arvutus: arvestatakse puhanguid alates 20 km/h ja CAPE üle 300 J/kg; 75 km/h või 2500 J/kg = kindel.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Arvutus: kõrgeim õhutemperatuur; 28 °C riskita, 34 °C ja rohkem kindel.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Arvutus: mullapinna temperatuur Open-Meteost (hinnang); +4 °C riskita, −2 °C ja vähem kindel.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Arvutus: märg leht = vihm, kaste või niiskus ≥ 90 %, temperatuuril 12–26 °C; 12 h järjest või rohkem = kõrge risk.
+Care	Tähelepanu
+Change on the map	Muuda kaardil
+Choose another crop	Vali muu kultuur
+Choose the crop	Vali kultuur
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Vali põllu kultuur ja külvikuupäev: neist arvutatakse hooaja kraadipäevad, faas ja võrdlused.
+Circle puts the points evenly on a circle.	Ring paigutab punktid ühtlaselt ringile.
+Coldest hour	Külmim tund
+Coming up	Tulekul
+Critical interval	Kriitiline vahemik
+Crop	Kultuur
+Crop type · for the thresholds	Kultuuri tüüp · lävendite jaoks
+Days (* = forecast)	Päevad (* = prognoos)
+Delta-T (ΔT) now	Delta-T (ΔT) praegu
+Delta-T now	Delta-T praegu
+Delta-T over 10 °C: the drops dry in the air.	Delta-T üle 10 °C: tilgad kuivavad õhus.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T alla 2 °C: tilgad ei kuiva ja triivivad.
+Earthquake	Maavärin
+Edit parcel	Muuda põldu
+Emergence	Tärkamine
+Estimated stage	Hinnanguline faas
+Evaporation	Aurumine
+Evaporation (ET₀) 7 days	Aurumine (ET₀) 7 päeva
+Flowering	Õitsemine
+Forage	Söödakultuurid
+Frost	Pakane
+Fruit set	Viljade moodustumine
+Fungal diseases	Seenhaigused
+GDD base 	GDD baas 
+GDD on the same date	GDD samal kuupäeval
+GDD since 	GDD alates 
+Good spray hours in 72 h	Head pritsimistunnid 72 h jooksul
+Ground frost	Maapinnaöökülm
+Ground frost 	Maapinnaöökülm 
+Growing degree days (GDD)	Kasvukraadipäevad (GDD)
+Growth	Kasv
+Gusts 	Puhangud 
+HIGH RISK	KÕRGE RISK
+Hard frost days	Tugeva pakase päevad
+Harvest	Koristus
+Heading	Loomine
+Heat 	Kuumus 
+Heat stress	Kuumastress
+High risk of 	Kõrge risk: 
+History and forecast	Ajalugu ja prognoos
+Hoarfrost	Hall
+Hottest hour	Soojeim tund
+Hour 	Tund 
+Hours over 32 °C	Tunnid üle 32 °C
+IN SEASON	HOOAJAL
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Satelliidivaates leitakse 4 nurka pildilt ja neid liigutatakse sõrmega; + Punkt lisab ühe (kuni 7), pikk vajutus kustutab ühe.
+Infection: 	Nakkus: 
+Irrigate if you can and avoid treatments in the hot hours.	Kasta, kui saad, ja väldi töötlusi kuumadel tundidel.
+Keep	Jäta alles
+LOW RISK	MADAL RISK
+Last year on the same date	Mullu samal kuupäeval
+Light wind 	Nõrk tuul 
+MODERATE RISK	MÕÕDUKAS RISK
+Machinery on the field	Masinad põllul
+Moderate risk of 	Mõõdukas risk: 
+NOT THE SEASON	POLE HOOAEG
+Name	Nimi
+Next 72 hours	Järgmised 72 tundi
+No app on the phone opens CSV files.	Ükski telefoni rakendus ei ava CSV-faile.
+No corners yet: only the pin.	Nurki veel pole: ainult nõel.
+No data for the season yet.	Hooaja kohta pole veel andmeid.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Selle põllu kohta pole veel andmeid. Ava see üks kord internetiga: rakendus laadib selle andmed Open-Meteost.
+No field crop is sown in this month; orchards, vines and the others are below.	Sel kuul ei külvata ühtegi põllukultuuri; viljaaiad, viinamarjaistandused ja muu on allpool.
+No good hours in the next 24 hours.	Järgmise 24 tunni jooksul pole häid tunde.
+No long wet spell in the next 72 hours.	Järgmise 72 tunni jooksul pole pikka märga perioodi.
+No risk	Riskita
+No spraying today	Täna ära pritsi
+No treatment needed for now.	Praegu pole töötlust vaja.
+Nothing special in the next 72 hours.	Järgmise 72 tunni jooksul pole midagi erilist.
+Nothing to do.	Pole midagi teha.
+OPTIMAL	OPTIMAALNE
+OUT OF SEASON	VÄLJASPOOL HOOAEGA
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Kaardil liigutatakse nurki sõrmega; + Punkt, Ring ja pikk vajutus töötavad seal samuti. Ilm võetakse põllu keskelt.
+Operational	Tegevus
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Tegevus: pritsimisaken tund tunnilt (roheline, kollane, punane; number on ΔT); tunni puudutus näitab selle väärtusi. Delta-T, tuul ja puhangud, märg leht.
+Optimal	Optimaalne
+Orchard / vine	Viljaaed / viinamarjaistandus
+Other crops · in another season	Muud kultuurid · teisel hooajal
+Outline on the map	Kontuur kaardil
+PDF report	PDF-aruanne
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV salvestab kokkuvõtte, järgmised 72 tundi ja päevad kausta Allalaadimised.
+Preventive treatment before the wet spell, in a green window	Ennetav töötlus enne märga perioodi, rohelises aknas
+Protect young plants and sensitive crops; no treatments in the cold hours.	Kaitse noori taimi ja tundlikke kultuure; ära töötle külmadel tundidel.
+RH	RN
+RH 	RN 
+Rain 	Vihm 
+Rain 7 days	Vihm 7 päeva
+Rain 7 days / 28 days	Vihm 7 päeva / 28 päeva
+Rain now or soon: it washes the treatment off.	Vihm praegu või varsti: uhub töötluse maha.
+Right for 	Sobivad kuul: 
+Right now	Sobivad praegu
+Ripening	Valmimine
+Risks	Riskid
+Risks 72 h	Riskid 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Riskid 72 h: seenhaigused, maapinnaöökülm, kuumastress, tuul ja rahe; kaardi puudutus selgitab seda ja ütleb, mida teha. Nende all: mis tuleb.
+Save and ✕, above the new parcel's box, keep it or close the box.	Salvesta ja ✕ uue põllu kasti kohal salvestavad selle või sulgevad kasti.
+Save as PDF or CSV	Salvesta PDF- või CSV-failina
+Save the statistics	Salvesta statistika
+Score	Skoor
+Season	Hooaeg
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Hooaeg: kraadipäevad (GDD) külvist võrreldes mullusega, hinnanguline faas, kuumastress ja tugeva pakase päevad. Vaja on kultuuri ja külvikuupäeva.
+Secure what the wind can take; no spraying in the gusts.	Kinnita, mida tuul võib viia; ära pritsi puhangutes.
+Soil / air	Muld / õhk
+Soil temperature 6 / 18 cm	Mulla temperatuur 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Allikas: Open-Meteo (mudelid; muld ja riskid on hinnangud). 
+Sowing date	Külvikuupäev
+Spray between 	Pritsi vahemikus 
+Spray window	Pritsimisaken
+Spray with care between 	Pritsi ettevaatlikult vahemikus 
+Spring row crops	Kevadised reakultuurid
+Stem elongation	Kõrsumine
+Storm energy	Äikeseenergia
+Strongest gust	Tugevaim puhang
+Surface moisture	Pinnaniiskus
+Surface moisture 0–1 cm	Pinnaniiskus 0–1 cm
+TODAY	TÄNA
+The GPS button takes the map, and the new parcel's pin, where you are.	GPS-nupp viib kaardi, ja uue põllu nõela, sinna, kus sa oled.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Põllu kaardil tulbad või selle mullis Statistika. Üleval: põld (puudutus valib teise), 4 vahekaarti ja PDF · CSV.
+The bars open its Statistics.	Tulbad avavad selle Statistika.
+The bell turns its notifications on or off.	Kell lülitab selle teavitused sisse või välja.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Prügikast kustutab selle; see jääb 15 päevaks prügikasti GPS-nupu alla.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Kultuur valitakse loendist, mis on järjestatud külvikuupäeva hooaja järgi; Muu kultuur… saab nime ja tüübi; väljaspool hooaega küsib rakendus uuesti.
+The file could not be saved: 	Faili ei õnnestunud salvestada: 
+The highest temperature of the next 7 days: 	Järgmise 7 päeva kõrgeim temperatuur: 
+The hours are missing from the data.	Andmetes puuduvad tunnid.
+The last stage is reached.	Viimane faas on saavutatud.
+The leaves stay wet 	Lehed jäävad märjaks 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Pliiats muudab põldu: nimi, kultuur, külvikuupäev, pindala; nurgad liiguvad kaardil.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Hooaja esimesed päevad tulevad Open-Meteo arhiivist; need laaditakse internetiga.
+The soil	Muld
+The strongest gust of the next 72 hours: 	Järgmise 72 tunni tugevaim puhang: 
+Thresholds for 	Lävendid: 
+Tillering	Võrsumine
+Today	Täna
+Too cold (under 5 °C).	Liiga külm (alla 5 °C).
+Too hot (over 28 °C).	Liiga kuum (üle 28 °C).
+Too much wind (drift).	Liiga palju tuult (triiv).
+Updated 	Uuendatud 
+Vegetables	Köögiviljad
+Veraison	Värvumine
+Vs. last year	Võrreldes mullusega
+Wait	Oota
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Jälgi põldu; töötlus võib olla vajalik, kui niiskus püsib.
+Water & Soil	Vesi ja muld
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Vesi ja muld: 7 päeva vihm ja aurumine (ET₀) ning bilanss; mineviku ja järgmise 7 päeva graafik; muld 6 ja 18 cm sügavusel, pinnaniiskus, masinad põllul.
+Wet leaf	Märg leht
+Wet leaf hours	Märja lehe tunnid
+Wet leaf now	Märg leht praegu
+What you can do	Mida saad teha
+Wind 	Tuul 
+Wind / gusts now	Tuul / puhangud praegu
+Wind and gusts	Tuul ja puhangud
+Wind · hail	Tuul · rahe
+Wind, ΔT or temperature outside the ideal range.	Tuul, ΔT või temperatuur väljaspool ideaalset vahemikku.
+Winter cereals	Talivili
+With this date the degree days and the risks can come out wrong.	Selle kuupäevaga võivad kraadipäevad ja riskid tulla valed.
+Write the crop's name	Kirjuta kultuuri nimi
+air 	õhk 
+as last year	nagu mullu
+care	tähelepanu
+choose…	vali…
+critical heat at 	kriitiline kuumus faasis 
+days	päeva
+deficit, irrigate	puudujääk, kasta
+disease watched: 	jälgitav haigus: 
+drag a corner to move it; a long press deletes it	lohista nurka selle liigutamiseks; pikk vajutus kustutab selle
+dried at 	kuivas kell 
+estimated on 	hinnatud 
+evaporation (ET₀)	aurumine (ET₀)
+firm ground	kandev muld
+forecast	prognoos
+from GDD	GDD järgi
+fungal diseases	seenhaigused
+fungi	seened
+green zone = sowing threshold for 	roheline ala = külvilävi: 
+gusts max 	puhangud max 
+last year	mullu
+last year 	mullu 
+maize	mais
+max 	max 
+measured	mõõdetud
+near saturation	peaaegu küllastunud
+no	keelatud
+no crop or sowing date yet	veel pole kultuuri ega külvikuupäeva
+no dew or rain lately	viimasel ajal ei kastet ega vihma
+no spraying, secure what can fly	ära pritsi, kinnita, mis võib lennata
+no treatments in the hot hours	ära töötle kuumadel tundidel
+not to be estimated now (cold)	praegu ei saa hinnata (külm)
+number = ΔT	number = ΔT
+optimal	optimaalne
+ordered by the sowing date: 	järjestatud külvikuupäeva järgi: 
+ordered by this month	järjestatud selle kuu järgi
+over 32 °C	üle 32 °C
+planted	istutatud
+rain 3 days 	vihm 3 päeva 
+rain mm/day	vihm mm/päev
+risk of compaction	tihenemise oht
+score 	skoor 
+slight deficit	väike puudujääk
+sowing soil 	külvimuld 
+sown 	külvatud 
+surplus	ülejääk
+tap a card	puuduta kaarti
+the field is hard to work	põldu on raske harida
+the leaves are wet now	lehed on praegu märjad
+the soil compacts	muld tiheneb
+the sowing date	külvikuupäev
+this season	see hooaeg
+threshold 12 h	lävi 12 h
+today	täna
+under −5 °C	alla −5 °C
+wet	märg
+write the name	kirjuta nimi
+yes	jah
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Põllud: kaart põldude kaartidega (püstises rida all, rõhtsas veerg paremal). Hoitakse ainult selles telefonis.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ lisab põllu: nõel algab kaardi keskelt, kaardi puudutus liigutab seda; nimi on üleval.
+Wheat	Nisu
+Barley	Oder
+Triticale	Tritikale
+Rapeseed	Raps
+Maize	Mais
+Sunflower	Päevalill
+Soybean	Sojauba
+Sugar beet	Suhkrupeet
+Potato	Kartul
+Vineyard	Viinamarjaistandus
+Orchard	Viljaaed
+Alfalfa	Lutsern
+Septoria	Septorioos
+Net blotch	Võrklaiksus
+Phoma	Phoma
+Fusarium	Fusarioos
+Downy mildew	Ebajahukaste
+Cercospora	Cercospora
+Late blight	Kartuli-lehemädanik
+Scab	Kärntõbi
+Anthracnose	Antraknoos
+grain filling	terade täitumine
+flowering	õitsemine
+pollination	tolmlemine
+root growth	juurvilja kasv
+tuber forming	mugulate moodustumine
+regrowth	taaskasv
+.	.

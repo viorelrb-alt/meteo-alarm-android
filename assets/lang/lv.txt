@@ -1124,3 +1124,311 @@ West	Rietumi
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Lauki: karte ar lauku kartītēm (vertikāli rinda apakšā, horizontāli kolonna labajā pusē); kartītes pieskāriens rāda tā punktus, Rādīt to atver galvenajā ekrānā. Piespraudes pieskāriens pietuvina karti laukam un rāda tā nosaukumu; otrs pieskāriens rāda tā punktus. ＋ pievieno lauku: kur tu esi (GPS) vai pieskāriens kartei, tad nosaukums; satelīta skatā tā 4 stūri tiek atrasti attēlā un pārvietoti ar pirkstu; + Punkts pievieno vienu (līdz 7), Aplis tos izkārto vienmērīgi uz apļa, ilgs spiediens vienu izdzēš; Saglabāt un ✕ ir virs lodziņa. Kartītē: zīmulis rediģē, stabiņi atver tā Statistiku · PDF, zvaniņš ieslēdz vai izslēdz tā paziņojumus, miskaste to izdzēš. Glabājas tikai šajā tālrunī.
 Statistics	Statistika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Lauki: karte ar lauku kartītēm (vertikāli rinda apakšā, horizontāli kolonna labajā pusē); kartītes pieskāriens pietuvina karti laukam un rāda tā punktus, Statistika atver tā statistiku. Piespraudes pieskāriens pietuvina karti laukam un rāda tā nosaukumu; otrs pieskāriens rāda tā punktus. ＋ pievieno lauku: piesprauze sāk kartes vidū (GPS poga to pārceļ, kur tu esi), un pieskāriens kartei to pārvieto; nosaukums ir augšā; satelīta skatā tā 4 stūri tiek atrasti attēlā un pārvietoti ar pirkstu; + Punkts pievieno vienu (līdz 7), Aplis tos izkārto vienmērīgi uz apļa, ilgs spiediens vienu izdzēš; Saglabāt un ✕ ir virs lodziņa. Kartītē: zīmulis rediģē, stabiņi atver tā Statistiku · PDF, zvaniņš ieslēdz vai izslēdz tā paziņojumus, miskaste to izdzēš. Glabājas tikai šajā tālrunī.
+# v2.001
+ Anti-drift nozzles.	 Pretnoneses sprauslas.
+ Rain from 	 Lietus no 
+ and 	 un 
+ at 	 plkst. 
+ corners · perimeter 	 stūri · perimetrs 
+ days ahead	 dienas priekšā
+ days behind	 dienas atpalicība
+ h in the last 12	 h pēdējās 12
+ h wet leaf	 h slapja lapa
+ hours in a row, at 	 stundas pēc kārtas, pie 
+ in 48 h.	 48 h laikā.
+ in 7 days	 7 dienās
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 gaisā zemākā. Augsne var būt par 2–4 °C aukstāka nekā gaiss.
+ is usually sown in 	 parasti sēj 
+ on 	 uz 
+ or after the winter rest	 vai pēc ziemas miera
+ parcels ▾	 lauki ▾
+ sown on 	 iesēts 
+ starts at ≈ 	 sākas pie ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · avots Open-Meteo (modeļi; augsne un riski ir aplēses) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	“Paturēt” noder siltumnīcu kultūrām vai nepareizam datumam, ko izlabosiet vēlāk.
+, ceiling 	, griesti 
+, critically at 	, kritiski fāzē 
+, from 	, no 
+, when the soil has 	, kad augsnē ir 
+, with 	, ar 
+. Over 32 °C the crop suffers	. Virs 32 °C kultūra cieš
+14 d	14 d
+28 d	28 d
+28 days: 	28 dienas: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: pilieni iztvaiko kontrolēti. Zem 2 °C noneses risks, virs 10 °C pilieni izžūst gaisā.
+3 leaves	3 lapas
+4–6 leaves	4–6 lapas
+7 d	7 d
+7 days	7 dienas
+8–10 leaves	8–10 lapas
+: base temperature 	: bāzes temperatūra 
+; storm energy (CAPE) up to 	; negaisa enerģija (CAPE) līdz 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Pieskāriens kartītei pietuvina karti laukam un parāda tā punktus; Statistika atver tā statistiku.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Pieskāriens adatai pietuvina lauku un parāda tā nosaukumu; otrs pieskāriens parāda tā punktus.
+Action of the day	Dienas darbība
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Dienas darbība: ko darīt šodien, ar smidzināšanas vērtējumu (0–100) un lielāko nākamo 48 stundu risku.
+Another crop…	Cita kultūra…
+Area	Platība
+At the soil surface it can be 	Augsnes virspusē var būt 
+Back	Atpakaļ
+Balance 7 days	Bilance 7 dienas
+Branching	Zarošanās
+Bud break	Pumpuru plaukšana
+Budding	Pumpurošanās
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Pogas ☰, 2 rindā: angļu un valsts valoda; Citas valodas: pārējās valsts valodas, lielās ES valodas, rumāņu un tālruņa valoda. ASV tikai angļu un spāņu.
+C. That is how the fungus takes hold on the leaves.	C. Tā sēne nostiprinās uz lapām.
+CARE	UZMANĪBU
+CSV saved	CSV saglabāts
+CSV table (Excel)	CSV tabula (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Aprēķins: tiek skaitītas brāzmas no 20 km/h un CAPE virs 300 J/kg; 75 km/h vai 2500 J/kg = noteikti.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Aprēķins: augstākā gaisa temperatūra; 28 °C bez riska, 34 °C un vairāk noteikti.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Aprēķins: augsnes virsmas temperatūra no Open-Meteo (aplēse); +4 °C bez riska, −2 °C un zemāk noteikti.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Aprēķins: slapja lapa = lietus, rasa vai mitrums ≥ 90 %, pie 12–26 °C; 12 h pēc kārtas vai vairāk = augsts risks.
+Care	Uzmanību
+Change on the map	Mainīt kartē
+Choose another crop	Izvēlēties citu kultūru
+Choose the crop	Izvēlieties kultūru
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Izvēlieties lauka kultūru un sējas datumu: no tiem skaita sezonas grāddienas, fāzi un salīdzinājumus.
+Circle puts the points evenly on a circle.	Aplis izvieto punktus vienmērīgi pa apli.
+Coldest hour	Aukstākā stunda
+Coming up	Gaidāms
+Critical interval	Kritiskais intervāls
+Crop	Kultūra
+Crop type · for the thresholds	Kultūras tips · sliekšņiem
+Days (* = forecast)	Dienas (* = prognoze)
+Delta-T (ΔT) now	Delta-T (ΔT) tagad
+Delta-T now	Delta-T tagad
+Delta-T over 10 °C: the drops dry in the air.	Delta-T virs 10 °C: pilieni izžūst gaisā.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T zem 2 °C: pilieni neizžūst un tiek nonesti.
+Earthquake	Zemestrīce
+Edit parcel	Rediģēt lauku
+Emergence	Sadīgšana
+Estimated stage	Aplēstā fāze
+Evaporation	Iztvaikošana
+Evaporation (ET₀) 7 days	Iztvaikošana (ET₀) 7 dienas
+Flowering	Ziedēšana
+Forage	Lopbarības kultūras
+Frost	Sals
+Fruit set	Augļu aizmešanās
+Fungal diseases	Sēņu slimības
+GDD base 	GDD bāze 
+GDD on the same date	GDD tajā pašā datumā
+GDD since 	GDD kopš 
+Good spray hours in 72 h	Labas smidzināšanas stundas 72 h laikā
+Ground frost	Salna uz augsnes
+Ground frost 	Salna uz augsnes 
+Growing degree days (GDD)	Augšanas grāddienas (GDD)
+Growth	Augšana
+Gusts 	Brāzmas 
+HIGH RISK	AUGSTS RISKS
+Hard frost days	Stipra sala dienas
+Harvest	Raža
+Heading	Vārpošana
+Heat 	Karstums 
+Heat stress	Karstuma stress
+High risk of 	Augsts risks: 
+History and forecast	Vēsture un prognoze
+Hoarfrost	Sarma
+Hottest hour	Siltākā stunda
+Hour 	Stunda 
+Hours over 32 °C	Stundas virs 32 °C
+IN SEASON	SEZONĀ
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Satelīta skatā 4 stūri tiek atrasti attēlā un pārvietoti ar pirkstu; + Punkts pievieno vienu (līdz 7), ilgs spiediens izdzēš vienu.
+Infection: 	Infekcija: 
+Irrigate if you can and avoid treatments in the hot hours.	Laistiet, ja varat, un izvairieties no apstrādes karstajās stundās.
+Keep	Paturēt
+LOW RISK	ZEMS RISKS
+Last year on the same date	Pērn tajā pašā datumā
+Light wind 	Vājš vējš 
+MODERATE RISK	MĒRENS RISKS
+Machinery on the field	Tehnika uz lauka
+Moderate risk of 	Mērens risks: 
+NOT THE SEASON	NAV SEZONA
+Name	Nosaukums
+Next 72 hours	Nākamās 72 stundas
+No app on the phone opens CSV files.	Neviena tālruņa lietotne neatver CSV failus.
+No corners yet: only the pin.	Vēl nav stūru: tikai adata.
+No data for the season yet.	Sezonai vēl nav datu.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Šim laukam vēl nav datu. Atveriet to vienreiz ar internetu: lietotne lejupielādēs datus no Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Šajā mēnesī nesēj nevienu laukaugu; augļudārzi, vīnogulāji un pārējie ir zemāk.
+No good hours in the next 24 hours.	Nākamajās 24 stundās nav labu stundu.
+No long wet spell in the next 72 hours.	Nākamajās 72 stundās nav ilga mitra perioda.
+No risk	Bez riska
+No spraying today	Šodien nesmidzināt
+No treatment needed for now.	Pagaidām apstrāde nav vajadzīga.
+Nothing special in the next 72 hours.	Nākamajās 72 stundās nekas īpašs.
+Nothing to do.	Nav ko darīt.
+OPTIMAL	OPTIMĀLI
+OUT OF SEASON	ĀRPUS SEZONAS
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Kartē stūri pārvietojas ar pirkstu; + Punkts, Aplis un ilgais spiediens darbojas arī tur. Laikapstākļi tiek ņemti no lauka centra.
+Operational	Darbība
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Darbība: smidzināšanas logs pa stundām (zaļš, dzeltens, sarkans; skaitlis ir ΔT); pieskāriens stundai parāda tās vērtības. Delta-T, vējš un brāzmas, slapja lapa.
+Optimal	Optimāli
+Orchard / vine	Augļudārzs / vīnogulāji
+Other crops · in another season	Citas kultūras · citā sezonā
+Outline on the map	Kontūra kartē
+PDF report	PDF pārskats
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV saglabā kopsavilkumu, nākamās 72 stundas un dienas mapē Lejupielādes.
+Preventive treatment before the wet spell, in a green window	Profilaktiska apstrāde pirms mitrā perioda, zaļajā logā
+Protect young plants and sensitive crops; no treatments in the cold hours.	Sargājiet jaunos augus un jutīgās kultūras; bez apstrādes aukstajās stundās.
+RH	RM
+RH 	RM 
+Rain 	Lietus 
+Rain 7 days	Lietus 7 dienas
+Rain 7 days / 28 days	Lietus 7 dienas / 28 dienas
+Rain now or soon: it washes the treatment off.	Lietus tagad vai drīz: tas noskalo apstrādi.
+Right for 	Piemērotas mēnesim: 
+Right now	Piemērotas tagad
+Ripening	Nogatavošanās
+Risks	Riski
+Risks 72 h	Riski 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Riski 72 h: sēņu slimības, salna uz augsnes, karstuma stress, vējš un krusa; pieskāriens kartītei to izskaidro un pasaka, ko darīt. Zem tām: kas gaidāms.
+Save and ✕, above the new parcel's box, keep it or close the box.	Saglabāt un ✕ virs jaunā lauka loga to saglabā vai aizver logu.
+Save as PDF or CSV	Saglabāt kā PDF vai CSV
+Save the statistics	Saglabāt statistiku
+Score	Vērtējums
+Season	Sezona
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Sezona: grāddienas (GDD) kopš sējas salīdzinājumā ar pērno gadu, aplēstā fāze, karstuma stress un stipra sala dienas. Vajag kultūru un sējas datumu.
+Secure what the wind can take; no spraying in the gusts.	Nostipriniet, ko vējš var aiznest; nesmidziniet brāzmās.
+Soil / air	Augsne / gaiss
+Soil temperature 6 / 18 cm	Augsnes temperatūra 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Avots: Open-Meteo (modeļi; augsne un riski ir aplēses). 
+Sowing date	Sējas datums
+Spray between 	Smidziniet starp 
+Spray window	Smidzināšanas logs
+Spray with care between 	Smidziniet uzmanīgi starp 
+Spring row crops	Pavasara rindu kultūras
+Stem elongation	Stiebrošana
+Storm energy	Negaisa enerģija
+Strongest gust	Spēcīgākā brāzma
+Surface moisture	Virsmas mitrums
+Surface moisture 0–1 cm	Virsmas mitrums 0–1 cm
+TODAY	ŠODIEN
+The GPS button takes the map, and the new parcel's pin, where you are.	GPS poga pārvieto karti, un jaunā lauka adatu, uz vietu, kur atrodaties.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Stabiņi lauka kartītē vai Statistika tā burbulī. Augšā: lauks (pieskāriens izvēlas citu), 4 cilnes un PDF · CSV.
+The bars open its Statistics.	Stabiņi atver tā Statistiku.
+The bell turns its notifications on or off.	Zvaniņš ieslēdz vai izslēdz tā paziņojumus.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Miskaste to izdzēš; tas paliek 15 dienas miskastē zem GPS pogas.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Kultūru izvēlas no saraksta, kas sakārtots pēc sējas datuma sezonas; Cita kultūra… saņem nosaukumu un tipu; ārpus sezonas lietotne jautā vēlreiz.
+The file could not be saved: 	Failu neizdevās saglabāt: 
+The highest temperature of the next 7 days: 	Augstākā temperatūra nākamajās 7 dienās: 
+The hours are missing from the data.	Datos trūkst stundu.
+The last stage is reached.	Pēdējā fāze ir sasniegta.
+The leaves stay wet 	Lapas paliek slapjas 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Zīmulis rediģē lauku: nosaukums, kultūra, sējas datums, platība; stūri pārvietojas kartē.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Sezonas pirmās dienas nāk no Open-Meteo arhīva; tās lejupielādē ar internetu.
+The soil	Augsne
+The strongest gust of the next 72 hours: 	Spēcīgākā brāzma nākamajās 72 stundās: 
+Thresholds for 	Sliekšņi: 
+Tillering	Cerošana
+Today	Šodien
+Too cold (under 5 °C).	Pārāk auksts (zem 5 °C).
+Too hot (over 28 °C).	Pārāk karsts (virs 28 °C).
+Too much wind (drift).	Pārāk daudz vēja (nonese).
+Updated 	Atjaunināts 
+Vegetables	Dārzeņi
+Veraison	Ogu krāsošanās
+Vs. last year	Salīdzinājumā ar pērno gadu
+Wait	Gaidīt
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Vērojiet lauku; apstrāde var būt nepieciešama, ja mitrums saglabājas.
+Water & Soil	Ūdens un augsne
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Ūdens un augsne: 7 dienu lietus un iztvaikošana (ET₀) un bilance; pagātnes un nākamo 7 dienu grafiks; augsne 6 un 18 cm dziļumā, virsmas mitrums, tehnika uz lauka.
+Wet leaf	Slapja lapa
+Wet leaf hours	Slapjas lapas stundas
+Wet leaf now	Slapja lapa tagad
+What you can do	Ko varat darīt
+Wind 	Vējš 
+Wind / gusts now	Vējš / brāzmas tagad
+Wind and gusts	Vējš un brāzmas
+Wind · hail	Vējš · krusa
+Wind, ΔT or temperature outside the ideal range.	Vējš, ΔT vai temperatūra ārpus ideālā diapazona.
+Winter cereals	Ziemāju graudaugi
+With this date the degree days and the risks can come out wrong.	Ar šo datumu grāddienas un riski var iznākt nepareizi.
+Write the crop's name	Ierakstiet kultūras nosaukumu
+air 	gaiss 
+as last year	kā pērn
+care	uzmanību
+choose…	izvēlēties…
+critical heat at 	kritisks karstums fāzē 
+days	dienas
+deficit, irrigate	deficīts, laistiet
+disease watched: 	uzraudzītā slimība: 
+drag a corner to move it; a long press deletes it	velciet stūri, lai to pārvietotu; ilgs spiediens to izdzēš
+dried at 	nožuvis plkst. 
+estimated on 	aplēsts 
+evaporation (ET₀)	iztvaikošana (ET₀)
+firm ground	nestspējīga augsne
+forecast	prognoze
+from GDD	pēc GDD
+fungal diseases	sēņu slimības
+fungi	sēnes
+green zone = sowing threshold for 	zaļā zona = sējas slieksnis: 
+gusts max 	brāzmas maks. 
+last year	pērn
+last year 	pērn 
+maize	kukurūza
+max 	maks. 
+measured	izmērīts
+near saturation	gandrīz piesātināta
+no	aizliegts
+no crop or sowing date yet	vēl nav kultūras un sējas datuma
+no dew or rain lately	pēdējā laikā bez rasas un lietus
+no spraying, secure what can fly	nesmidziniet, nostipriniet, kas var aizlidot
+no treatments in the hot hours	bez apstrādes karstajās stundās
+not to be estimated now (cold)	tagad nav aplēšams (auksts)
+number = ΔT	skaitlis = ΔT
+optimal	optimāli
+ordered by the sowing date: 	sakārtots pēc sējas datuma: 
+ordered by this month	sakārtots pēc šī mēneša
+over 32 °C	virs 32 °C
+planted	iestādīts
+rain 3 days 	lietus 3 dienas 
+rain mm/day	lietus mm/dienā
+risk of compaction	sablīvēšanās risks
+score 	vērtējums 
+slight deficit	neliels deficīts
+sowing soil 	sējas augsne 
+sown 	iesēts 
+surplus	pārpalikums
+tap a card	pieskarieties kartītei
+the field is hard to work	lauku grūti apstrādāt
+the leaves are wet now	lapas tagad ir slapjas
+the soil compacts	augsne sablīvējas
+the sowing date	sējas datums
+this season	šī sezona
+threshold 12 h	slieksnis 12 h
+today	šodien
+under −5 °C	zem −5 °C
+wet	slapjš
+write the name	ierakstiet nosaukumu
+yes	jā
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Lauki: karte ar lauku kartītēm (vertikāli rinda apakšā, horizontāli kolonna pa labi). Glabājas tikai šajā tālrunī.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ pievieno lauku: adata sākas kartes vidū, pieskāriens kartei to pārvieto; nosaukums ir augšā.
+Wheat	Kvieši
+Barley	Mieži
+Triticale	Tritikāle
+Rapeseed	Rapsis
+Maize	Kukurūza
+Sunflower	Saulgrieze
+Soybean	Soja
+Sugar beet	Cukurbiete
+Potato	Kartupeļi
+Vineyard	Vīnogulāji
+Orchard	Augļudārzs
+Alfalfa	Lucerna
+Septoria	Septorioze
+Net blotch	Tīklplankumainība
+Phoma	Fomoze
+Fusarium	Fuzarioze
+Downy mildew	Neīstā miltrasa
+Cercospora	Cerkosporoze
+Late blight	Kartupeļu lakstu puve
+Scab	Kraupis
+Anthracnose	Antraknoze
+grain filling	graudu pildīšanās
+flowering	ziedēšana
+pollination	apputeksnēšana
+root growth	biešu augšana
+tuber forming	bumbuļu veidošanās
+regrowth	ataugšana
+.	.

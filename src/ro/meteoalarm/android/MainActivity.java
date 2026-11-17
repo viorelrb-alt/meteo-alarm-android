@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v1.520";
+	static final String VERSION = "Meteo Alarm Android v2.001";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
@@ -2197,6 +2197,109 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/** A menu / help icon (Screen.menuIcon) as a bitmap. */
+	/** v2.001: the small icons of the Parcels page's buttons, for Help (drawn like on the page). */
+	private android.graphics.Bitmap glyph(String k) {
+		float d = getResources().getDisplayMetrics().density;
+		int px = Math.round(40 * d);
+		android.graphics.Bitmap b = android.graphics.Bitmap.createBitmap(px, px, android.graphics.Bitmap.Config.ARGB_8888);
+		android.graphics.Canvas c = new android.graphics.Canvas(b);
+		c.scale(px / 64f, px / 64f);
+		android.graphics.Paint p = new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+		int ink = ro.meteoalarm.android.core.Theme.ink(s.dark);
+		p.setColor(ink);
+		p.setStyle(android.graphics.Paint.Style.STROKE);
+		p.setStrokeWidth(4.5f);
+		p.setStrokeCap(android.graphics.Paint.Cap.ROUND);
+		p.setStrokeJoin(android.graphics.Paint.Join.ROUND);
+		android.graphics.Path q = new android.graphics.Path();
+		switch (k) {
+		case "plus":
+			c.drawLine(32, 14, 32, 50, p);
+			c.drawLine(14, 32, 50, 32, p);
+			break;
+		case "pin":
+			p.setStyle(android.graphics.Paint.Style.FILL);
+			p.setColor(0xFFD97757);
+			q.moveTo(32, 56);
+			q.lineTo(21, 30);
+			q.lineTo(43, 30);
+			q.close();
+			c.drawPath(q, p);
+			c.drawCircle(32, 24, 14, p);
+			p.setColor(0xFFFFFFFF);
+			c.drawCircle(32, 24, 6, p);
+			break;
+		case "point":
+		case "circle":
+			p.setColor(0xFFE0A800);
+			if (k.equals("circle")) c.drawCircle(32, 32, 20, p);
+			else {
+				q.moveTo(12, 20);
+				q.lineTo(50, 14);
+				q.lineTo(54, 48);
+				q.lineTo(16, 52);
+				q.close();
+				c.drawPath(q, p);
+			}
+			float[][] pts = k.equals("circle") ? new float[][] { { 32, 12 }, { 51, 26 }, { 44, 48 }, { 20, 48 }, { 13, 26 } } : new float[][] { { 12, 20 }, { 50, 14 }, { 54, 48 }, { 16, 52 } };
+			for (float[] t : pts) {
+				p.setStyle(android.graphics.Paint.Style.FILL);
+				p.setColor(0xFFFFFFFF);
+				c.drawCircle(t[0], t[1], 6, p);
+				p.setStyle(android.graphics.Paint.Style.STROKE);
+				p.setStrokeWidth(3);
+				p.setColor(0xFFE0A800);
+				c.drawCircle(t[0], t[1], 6, p);
+			}
+			break;
+		case "save":
+			p.setColor(ro.meteoalarm.android.core.Theme.accent(s.dark));
+			q.moveTo(14, 14);
+			q.lineTo(42, 14);
+			q.lineTo(50, 22);
+			q.lineTo(50, 50);
+			q.lineTo(14, 50);
+			q.close();
+			c.drawPath(q, p);
+			c.drawRect(22, 14, 40, 25, p);
+			p.setStyle(android.graphics.Paint.Style.FILL);
+			c.drawRoundRect(new android.graphics.RectF(20, 34, 44, 49), 2, 2, p);
+			break;
+		case "pencil":
+			p.setStyle(android.graphics.Paint.Style.FILL);
+			q.moveTo(14, 50);
+			q.lineTo(18, 38);
+			q.lineTo(42, 14);
+			q.lineTo(50, 22);
+			q.lineTo(26, 46);
+			q.close();
+			c.drawPath(q, p);
+			break;
+		case "bars":
+			p.setStyle(android.graphics.Paint.Style.FILL);
+			c.drawRect(17, 34, 24, 46, p);
+			c.drawRect(28.5f, 22, 35.5f, 46, p);
+			c.drawRect(40, 28, 47, 46, p);
+			p.setStyle(android.graphics.Paint.Style.STROKE);
+			c.drawLine(13, 50, 51, 50, p);
+			break;
+		case "bin":
+			c.drawLine(16, 20, 48, 20, p);
+			c.drawLine(26, 20, 28, 13, p);
+			c.drawLine(28, 13, 36, 13, p);
+			c.drawLine(36, 13, 38, 20, p);
+			q.moveTo(20, 24);
+			q.lineTo(23, 52);
+			q.lineTo(41, 52);
+			q.lineTo(44, 24);
+			c.drawPath(q, p);
+			c.drawLine(28, 30, 29, 46, p);
+			c.drawLine(36, 30, 35, 46, p);
+			break;
+		}
+		return b;
+	}
+
 	private android.graphics.Bitmap mini(String which) {
 		int px = Math.round(40 * getResources().getDisplayMetrics().density);
 		android.graphics.Bitmap b = android.graphics.Bitmap.createBitmap(px, px, android.graphics.Bitmap.Config.ARGB_8888);
@@ -2415,7 +2518,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				});
 		// v5.53 (Viorel): the languages as buttons in the menu, 2 on a row; the minorities' under
 		// "Other languages", shown on a tap and hidden again once one is chosen.
-		final List<String> lc = Lang.offered(this), lm = Lang.minorities(this);
+		final List<String> lc = Lang.offered(this), lm = Lang.more(this);
 		p.info("globe", Tr.t("Display language", "Limbă afișaj"), mini("lang-" + s.T.lang));
 		p.langButtons(lc.toArray(new String[0]), langNames(lc), lc.indexOf(s.T.lang), new SettingsPanel.Choice() {
 			public void chose(int k) {
@@ -2426,7 +2529,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 		if (!lm.isEmpty()) {
 			boolean mine = lm.contains(s.T.lang);
-			p.wideButton(Tr.t("Other languages (minorities)", "Alte limbi (minorități)") + (mine ? " · " + Tr.name(s.T.lang) : ""), mine, langMore, new Runnable() {
+			p.wideButton(Tr.t("Other languages", "Alte limbi") + (mine ? " · " + Tr.name(s.T.lang) : ""), mine, langMore, new Runnable() {
 				public void run() {
 					langMore = !langMore;
 					Log.i(MainActivity.this, "LIMBA", "alte limbi: " + (langMore ? "deschise " + lm : "închise"));
@@ -2449,7 +2552,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onMenu();
 			}
 		});
-		p.toggle("quake", Tr.t("Earthquakes", "Cutremure"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.quakes(this), new Runnable() {
+		p.toggle("quake", Tr.t("Earthquake", "Cutremur"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.quakes(this), new Runnable() {
 			public void run() {
 				boolean on = !Notifier.quakes(MainActivity.this);
 				prefs.edit().putBoolean("quakeNotify", on).apply();
@@ -2459,7 +2562,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onMenu();
 			}
 		});
-		p.subLink("list", Tr.t("Recent earthquakes", "Cutremure recente"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
+		p.subLink("list", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
 			public void run() {
 				settings.hide();
 				quakesPage();
@@ -2753,7 +2856,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		};
 		final List<String> codes = Lang.offered(this);
-		final List<String> more = Lang.minorities(this);
+		final List<String> more = Lang.more(this);
 		List<Bubble.Row> rows = Bubble.rows();
 		for (String c : codes) rows.add(new Bubble.Row(Tr.name(c), mini("lang-" + c), Bubble.Row.ITEM, c.equals(s.T.lang)));
 		// Romania: the minorities' languages in a submenu of their own (Viorel 2026-11-07).
@@ -3193,8 +3296,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"După Apa în sol: STROPIT (vânt, ploaie, căldură), BILANȚ APĂ (ploaie minus evaporare, 7 zile), FURTUNI, GRADE-ZILE, 16 ZILE. Atingerea explică fiecare casetă."));
 		help.entry(mini("us"), Tr.t("Farmer boxes in the US", "Casetele fermierului în SUA"), Tr.t("For a US town also: NWS (official forecast), DROUGHT (US Drought Monitor), FIRE and HAIL (reports within 50 km).",
 				"Pentru o localitate din SUA în plus: NWS (prognoza oficială), SECETĂ (US Drought Monitor), INCENDIU și GRINDINĂ (rapoarte pe 50 km)."));
-		help.entry(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.",
-				"☰ › Parcele: harta cu casetele parcelelor (în portret un rând jos, în peisaj o coloană la dreapta); atingerea unei casete mărește harta pe parcelă și arată punctele ei, Statistică deschide statistica. Atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele. ＋ adaugă una: acul pornește din mijlocul hărții (butonul GPS îl mută unde ești), iar o atingere pe hartă îl mută; numele se scrie sus; în vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; + Punct adaugă unul (până la 7), Cerc le așază la distanțe egale pe un cerc, apăsarea lungă șterge unul; Salvează și ✕ stau deasupra casetei. Pe casetă: creionul editează, barele deschid Statistică · PDF, clopoțelul pornește sau oprește notificările ei, coșul o șterge. Rămân doar în acest telefon."));
+		// v2.001 (Viorel): Parcels in short paragraphs, each button with its icon.
+		help.steps(mini("parcel"), Tr.t("Parcels", "Parcele"), Tr.t("☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.",
+				"☰ › Parcele: harta cu casetele parcelelor (în portret un rând jos, în peisaj o coloană la dreapta). Rămân doar în acest telefon."),
+				new android.graphics.Bitmap[] { glyph("plus"), mini("gps"), mini("tap"), glyph("pin"), glyph("point"), glyph("circle"), glyph("save"), glyph("pencil"), glyph("bars"), mini("bell"), glyph("bin") },
+				new String[] {
+						Tr.t("＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.", "＋ adaugă o parcelă: acul pornește din mijlocul hărții, o atingere pe hartă îl mută; numele se scrie sus."),
+						Tr.t("The GPS button takes the map, and the new parcel's pin, where you are.", "Butonul GPS duce harta, și acul parcelei noi, unde ești."),
+						Tr.t("A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.", "Atingerea unei casete mărește harta pe parcelă și arată punctele ei; Statistică deschide statistica."),
+						Tr.t("A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.", "Atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele."),
+						Tr.t("In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.", "În vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; + Punct adaugă unul (până la 7), apăsarea lungă șterge unul."),
+						Tr.t("Circle puts the points evenly on a circle.", "Cerc așază punctele la distanțe egale pe un cerc."),
+						Tr.t("Save and ✕, above the new parcel's box, keep it or close the box.", "Salvează și ✕, deasupra casetei parcelei noi, o păstrează sau închid caseta."),
+						Tr.t("The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.", "Creionul editează parcela: numele, cultura, data semănatului, suprafața; colțurile se mută pe hartă."),
+						Tr.t("The bars open its Statistics.", "Barele deschid Statisticile ei."),
+						Tr.t("The bell turns its notifications on or off.", "Clopoțelul pornește sau oprește notificările ei."),
+						Tr.t("The bin deletes it; it stays 15 days in the bin under the GPS button.", "Coșul o șterge; stă 15 zile în coșul de sub butonul GPS.") });
 		help.entry(mini("map"), Tr.t("Map views", "Vederile hărții"), Tr.t("Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the radar (the rain of the last 2 hours, moving; RainViewer).",
 				"Sub ＋ și − pe harta Parcele: vederea din satelit (Esri), harta și radarul (precipitațiile din ultimele 2 ore, în mișcare; RainViewer)."));
 		help.entry(mini("parcel"), Tr.t("Bin", "Coș de gunoi"), Tr.t("A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).",
@@ -3205,8 +3322,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pe hărțile parcelelor punctul albastru arată unde ești: GPS-ul pornește odată cu pagina; butonul GPS duce harta acolo."));
 		help.entry(mini("pages"), Tr.t("Main screens", "Ecrane principale"), Tr.t("Tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + opens a new parcel's box.",
 				"Tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + deschide caseta unei parcele noi."));
-		help.entry(mini("table"), Tr.t("A parcel's page", "Pagina unei parcele"), Tr.t("Statistics · PDF: on top the boxes of now and of the period in one row that slides sideways; under them the next 12 hours and day by day (they scroll). The ☰ next to the days picks the period; the PDF button saves the boxes and the tables.",
-				"Statistică · PDF: sus casetele de acum și ale perioadei, pe un rând care glisează în lateral; sub ele următoarele 12 ore și zi cu zi (se derulează). ☰ de lângă zile alege perioada; butonul PDF salvează casetele și tabelele."));
+		// v2.001 (Viorel): the farmer's Statistics, a paragraph per part with its icon.
+		help.steps(mini("table"), Tr.t("Statistics", "Statistici"), Tr.t("The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.",
+				"Barele de pe caseta parcelei sau Statistică din bula ei. Sus: parcela (atingerea alege alta), 4 file și PDF · CSV."),
+				new android.graphics.Bitmap[] { mini("check"), mini("hours"), mini("soil"), mini("chart"), mini("warn"), glyph("pencil"), glyph("save") },
+				new String[] {
+						Tr.t("Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.", "Acțiunea zilei: ce faci azi, cu scorul de stropit (0–100) și cel mai mare risc din următoarele 48 de ore."),
+						Tr.t("Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.", "Operațional: fereastra de stropit oră cu oră (verde, galben, roșu; cifra e ΔT); atingerea unei ore îi arată valorile. Delta-T, vânt și rafale, frunză umedă."),
+						Tr.t("Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.", "Apă & Sol: ploaia și evaporarea (ET₀) pe 7 zile și bilanțul; graficul trecut și următoarele 7 zile; solul la 6 și 18 cm, umiditatea la suprafață, intrarea cu utilaje."),
+						Tr.t("Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.", "Sezon: gradele-zile (GDD) de la semănat față de anul trecut, stadiul estimat, stresul termic și zilele de ger. Are nevoie de cultură și de data semănatului."),
+						Tr.t("Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.", "Riscuri 72 h: boli fungice, îngheț la sol, stres termic, vânt și grindină; atingerea unui card îl explică și spune ce poți face. Dedesubt: ce urmează."),
+						Tr.t("The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.", "Cultura se alege dintr-o listă ordonată după sezonul datei de semănat; Altă cultură… primește un nume și un tip; în afara sezonului aplicația întreabă din nou."),
+						Tr.t("PDF · CSV saves the summary, the next 72 hours and the days in Downloads.", "PDF · CSV salvează rezumatul, următoarele 72 de ore și zilele în Descărcări.") });
 		help.entry(mini("bellp"), Tr.t("Parcel notifications", "Notificări parcele"), Tr.t("Farmer mode: the bell on a parcel's card turns its notifications on (filled) or off; then the parcel gets all of them: rain or snow within the hour, after 8 pm rain or snow tomorrow, wind, snow, frost, freeze, fog, freezing rain, drought (dry soil, no rain for 7 days).",
 				"Mod fermier: clopoțelul de pe caseta parcelei îi pornește (plin) sau oprește notificările; atunci parcela le primește pe toate: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("layers"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
@@ -3277,8 +3404,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));
 		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).", "6 teme de culoare: atingi o culoare; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("wxicon"), Tr.t("Icon theme", "Temă icon"), Tr.t("6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.", "6 teme de iconuri: atingi o bulină. Clasic și Contur iau culorile temei; se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));
-		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("Buttons in ☰, 2 on a row: English and the country's languages (in the US English and Spanish); in Romania “Other languages (minorities)” shows the rest.",
-				"Butoane în ☰, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte."));
+		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.",
+				"Butoane în ☰, câte 2 pe rând: engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi din UE, româna și limba telefonului. În SUA doar engleza și spaniola."));
 		help.entry(mini("autoloc"), Tr.t("Auto location", "Localizare auto"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.",
 				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău. Sub el, pagina cutremurelor recente din jur, cu ora, locul, magnitudinea și distanța."));

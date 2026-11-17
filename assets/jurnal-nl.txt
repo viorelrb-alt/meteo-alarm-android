@@ -1,4 +1,12 @@
-Huidige versie: v.1.520 · 16.11.2026
+Huidige versie: v.2.001 · 17.11.2026
+INSTELLINGEN
+- Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
+PERCELEN
+- Perceel bewerken: het potlood opent de pagina van het perceel: naam, gewas (lijst volgens het seizoen van de zaaidatum of Ander gewas…), zaaidatum, oppervlakte; de hoeken verschuiven op de kaart.
+- Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, Delta-T, wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
+- Ontwerpverbeteringen en foutoplossingen.
+
+Versie 1.4 (v.1.400 – v.1.520)
 BOERENMODUS
 - Boerenknop: de bladknop naast de knoppen zet de boerenmodus uit; een andere plaats houdt hem aan.
 - Operationele status: op het scherm van een perceel, alleen als het nodig is, het oordeel over spuiten, de reden en de risico's van de komende 24 uur.

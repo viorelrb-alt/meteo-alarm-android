@@ -1124,3 +1124,311 @@ West	Ouest
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelles : la carte avec les cartes des parcelles (en portrait une ligne en bas, en paysage une colonne à droite) ; toucher une carte montre ses points, Afficher l'ouvre sur l'écran principal. Toucher une épingle zoome la carte sur la parcelle et montre son nom ; un second toucher montre ses points. ＋ en ajoute une : là où vous êtes (GPS) ou un toucher sur la carte, puis le nom ; en vue satellite ses 4 coins sont trouvés dans l'image et se déplacent du doigt ; + Point en ajoute un (jusqu'à 7), Cercle les répartit également sur un cercle, un appui long en supprime un ; Enregistrer et ✕ sont au-dessus de la case. Sur une carte : le crayon modifie, les barres ouvrent ses Statistiques · PDF, la cloche active ou coupe ses notifications, la corbeille la supprime. Gardées seulement sur ce téléphone.
 Statistics	Statistiques
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcelles : la carte avec les cartes des parcelles (en portrait une ligne en bas, en paysage une colonne à droite) ; toucher une carte zoome sur la parcelle et montre ses points, Statistiques ouvre ses statistiques. Toucher une épingle zoome sur la parcelle et montre son nom ; un second toucher montre ses points. ＋ en ajoute une : l'épingle part du milieu de la carte (le bouton GPS la place là où vous êtes) et un toucher sur la carte la déplace ; le nom est en haut ; en vue satellite ses 4 coins sont trouvés dans l'image et se déplacent du doigt ; + Point en ajoute un (jusqu'à 7), Cercle les répartit également sur un cercle, un appui long en supprime un ; Enregistrer et ✕ sont au-dessus de la case. Sur une carte : le crayon modifie, les barres ouvrent ses Statistiques · PDF, la cloche active ou coupe ses notifications, la corbeille la supprime. Gardées seulement sur ce téléphone.
+# v2.001
+ Anti-drift nozzles.	 Buses anti-dérive.
+ Rain from 	 Pluie dès 
+ and 	 et 
+ at 	 à 
+ corners · perimeter 	 coins · périmètre 
+ days ahead	 jours d'avance
+ days behind	 jours de retard
+ h in the last 12	 h sur les 12 dernières
+ h wet leaf	 h feuille mouillée
+ hours in a row, at 	 heures d'affilée, à 
+ in 48 h.	 dans 48 h.
+ in 7 days	 en 7 jours
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 dans l'air au plus froid. Le sol peut être de 2 à 4 °C plus froid que l'air.
+ is usually sown in 	 se sème d'habitude en 
+ on 	 sur 
+ or after the winter rest	 ou après le repos hivernal
+ parcels ▾	 parcelles ▾
+ sown on 	 semé le 
+ starts at ≈ 	 commence à ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · source Open-Meteo (modèles ; le sol et les risques sont des estimations) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	« Garder » est utile pour les cultures sous serre ou une date erronée que vous corrigerez ensuite.
+, ceiling 	, plafond 
+, critically at 	, critique à 
+, from 	, depuis 
+, when the soil has 	, quand le sol a 
+, with 	, avec 
+. Over 32 °C the crop suffers	. Au-dessus de 32 °C la culture souffre
+14 d	14 j
+28 d	28 j
+28 days: 	28 jours : 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C : les gouttes s'évaporent de façon contrôlée. Sous 2 °C risque de dérive, au-dessus de 10 °C les gouttes sèchent dans l'air.
+3 leaves	3 feuilles
+4–6 leaves	4–6 feuilles
+7 d	7 j
+7 days	7 jours
+8–10 leaves	8–10 feuilles
+: base temperature 	: température de base 
+; storm energy (CAPE) up to 	; énergie orageuse (CAPE) jusqu'à 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Toucher une carte zoome sur la parcelle et montre ses points ; Statistiques ouvre ses statistiques.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Toucher une épingle zoome sur la parcelle et montre son nom ; un second toucher montre ses points.
+Action of the day	Action du jour
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Action du jour : quoi faire aujourd'hui, avec le score de pulvérisation (0–100) et le plus grand risque des 48 prochaines heures.
+Another crop…	Autre culture…
+Area	Surface
+At the soil surface it can be 	À la surface du sol jusqu'à 
+Back	Retour
+Balance 7 days	Bilan 7 jours
+Branching	Ramification
+Bud break	Débourrement
+Budding	Bourgeonnement
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Boutons dans ☰, 2 par ligne : l'anglais et la langue du pays ; Autres langues : les autres langues du pays, les grandes langues de l'UE, le roumain et celle du téléphone. Aux États-Unis seulement l'anglais et l'espagnol.
+C. That is how the fungus takes hold on the leaves.	C. C'est ainsi que le champignon s'installe sur les feuilles.
+CARE	ATTENTION
+CSV saved	CSV enregistré
+CSV table (Excel)	Tableau CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Calcul : comptent les rafales dès 20 km/h et la CAPE au-dessus de 300 J/kg ; 75 km/h ou 2500 J/kg = certain.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Calcul : la température maximale de l'air ; 28 °C aucun risque, 34 °C et plus certain.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Calcul : la température de surface du sol d'Open-Meteo (estimation) ; +4 °C aucun risque, −2 °C et moins certain.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Calcul : feuille mouillée = pluie, rosée ou humidité ≥ 90 %, à 12–26 °C ; 12 h d'affilée ou plus = risque élevé.
+Care	Attention
+Change on the map	Modifier sur la carte
+Choose another crop	Choisir une autre culture
+Choose the crop	Choisir la culture
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Choisissez la culture et la date de semis de la parcelle : les degrés-jours de la saison, le stade et les comparaisons en partent.
+Circle puts the points evenly on a circle.	Cercle répartit les points également sur un cercle.
+Coldest hour	Heure la plus froide
+Coming up	À venir
+Critical interval	Intervalle critique
+Crop	Culture
+Crop type · for the thresholds	Type de culture · pour les seuils
+Days (* = forecast)	Jours (* = prévision)
+Delta-T (ΔT) now	Delta-T (ΔT) maintenant
+Delta-T now	Delta-T maintenant
+Delta-T over 10 °C: the drops dry in the air.	Delta-T au-dessus de 10 °C : les gouttes sèchent dans l'air.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T sous 2 °C : les gouttes ne sèchent pas et dérivent.
+Earthquake	Séisme
+Edit parcel	Modifier la parcelle
+Emergence	Levée
+Estimated stage	Stade estimé
+Evaporation	Évaporation
+Evaporation (ET₀) 7 days	Évaporation (ET₀) 7 jours
+Flowering	Floraison
+Forage	Fourrages
+Frost	Gel
+Fruit set	Nouaison
+Fungal diseases	Maladies fongiques
+GDD base 	Base GDD 
+GDD on the same date	GDD à la même date
+GDD since 	GDD depuis 
+Good spray hours in 72 h	Bonnes heures de pulvérisation en 72 h
+Ground frost	Gel au sol
+Ground frost 	Gel au sol 
+Growing degree days (GDD)	Degrés-jours de croissance (GDD)
+Growth	Croissance
+Gusts 	Rafales 
+HIGH RISK	RISQUE ÉLEVÉ
+Hard frost days	Jours de fort gel
+Harvest	Récolte
+Heading	Épiaison
+Heat 	Chaleur 
+Heat stress	Stress thermique
+High risk of 	Risque élevé de 
+History and forecast	Historique et prévision
+Hoarfrost	Gelée blanche
+Hottest hour	Heure la plus chaude
+Hour 	Heure 
+Hours over 32 °C	Heures au-dessus de 32 °C
+IN SEASON	DE SAISON
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	En vue satellite les 4 coins sont trouvés dans l'image et se déplacent du doigt ; + Point en ajoute un (jusqu'à 7), un appui long en supprime un.
+Infection: 	Infection : 
+Irrigate if you can and avoid treatments in the hot hours.	Irriguez si possible et évitez les traitements aux heures chaudes.
+Keep	Garder
+LOW RISK	RISQUE FAIBLE
+Last year on the same date	L'an dernier à la même date
+Light wind 	Vent faible 
+MODERATE RISK	RISQUE MODÉRÉ
+Machinery on the field	Engins sur le champ
+Moderate risk of 	Risque modéré de 
+NOT THE SEASON	HORS SAISON
+Name	Nom
+Next 72 hours	72 prochaines heures
+No app on the phone opens CSV files.	Aucune application du téléphone n'ouvre les fichiers CSV.
+No corners yet: only the pin.	Pas encore de coins : seulement l'épingle.
+No data for the season yet.	Pas encore de données pour la saison.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Pas encore de données pour cette parcelle. Ouvrez-la une fois avec internet : l'application télécharge ses données d'Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Aucune grande culture ne se sème ce mois-ci ; vergers, vignes et les autres sont plus bas.
+No good hours in the next 24 hours.	Aucune bonne heure dans les 24 prochaines heures.
+No long wet spell in the next 72 hours.	Pas de longue période humide dans les 72 prochaines heures.
+No risk	Aucun risque
+No spraying today	Pas de pulvérisation aujourd'hui
+No treatment needed for now.	Pas de traitement nécessaire pour l'instant.
+Nothing special in the next 72 hours.	Rien de particulier dans les 72 prochaines heures.
+Nothing to do.	Rien à faire.
+OPTIMAL	OPTIMAL
+OUT OF SEASON	HORS SAISON
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Sur la carte les coins se déplacent du doigt ; + Point, Cercle et l'appui long y fonctionnent aussi. La météo vient du centre de la parcelle.
+Operational	Opérationnel
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Opérationnel : la fenêtre de pulvérisation heure par heure (vert, jaune, rouge ; le chiffre est le ΔT) ; toucher une heure montre ses valeurs. Delta-T, vent et rafales, feuille mouillée.
+Optimal	Optimal
+Orchard / vine	Verger / vigne
+Other crops · in another season	Autres cultures · autre saison
+Outline on the map	Contour sur la carte
+PDF report	Rapport PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV enregistre le résumé, les 72 prochaines heures et les jours dans Téléchargements.
+Preventive treatment before the wet spell, in a green window	Traitement préventif avant la période humide, dans une fenêtre verte
+Protect young plants and sensitive crops; no treatments in the cold hours.	Protégez les jeunes plantes et les cultures sensibles ; pas de traitements aux heures froides.
+RH	HR
+RH 	HR 
+Rain 	Pluie 
+Rain 7 days	Pluie 7 jours
+Rain 7 days / 28 days	Pluie 7 jours / 28 jours
+Rain now or soon: it washes the treatment off.	Pluie maintenant ou bientôt : elle lessive le traitement.
+Right for 	Adaptées à 
+Right now	Adaptées maintenant
+Ripening	Maturation
+Risks	Risques
+Risks 72 h	Risques 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Risques 72 h : maladies fongiques, gel au sol, stress thermique, vent et grêle ; toucher une carte l'explique et dit quoi faire. Dessous : ce qui vient.
+Save and ✕, above the new parcel's box, keep it or close the box.	Enregistrer et ✕, au-dessus de la case de la nouvelle parcelle, la gardent ou ferment la case.
+Save as PDF or CSV	Enregistrer en PDF ou CSV
+Save the statistics	Enregistrer les statistiques
+Score	Score
+Season	Saison
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Saison : degrés-jours (GDD) depuis le semis comparés à l'an dernier, le stade estimé, le stress thermique et les jours de gel. Il faut la culture et la date de semis.
+Secure what the wind can take; no spraying in the gusts.	Sécurisez ce que le vent peut emporter ; pas de pulvérisation dans les rafales.
+Soil / air	Sol / air
+Soil temperature 6 / 18 cm	Température du sol 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Source : Open-Meteo (modèles ; le sol et les risques sont des estimations). 
+Sowing date	Date de semis
+Spray between 	Pulvérisez entre 
+Spray window	Fenêtre de pulvérisation
+Spray with care between 	Pulvérisez avec prudence entre 
+Spring row crops	Cultures sarclées de printemps
+Stem elongation	Montaison
+Storm energy	Énergie orageuse
+Strongest gust	Rafale la plus forte
+Surface moisture	Humidité de surface
+Surface moisture 0–1 cm	Humidité de surface 0–1 cm
+TODAY	AUJ.
+The GPS button takes the map, and the new parcel's pin, where you are.	Le bouton GPS amène la carte, et l'épingle de la nouvelle parcelle, là où vous êtes.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Les barres sur la carte d'une parcelle ou Statistiques dans sa bulle. En haut : la parcelle (un toucher en choisit une autre), 4 onglets et PDF · CSV.
+The bars open its Statistics.	Les barres ouvrent ses Statistiques.
+The bell turns its notifications on or off.	La cloche active ou coupe ses notifications.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	La corbeille la supprime ; elle reste 15 jours dans la corbeille sous le bouton GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	La culture se choisit dans une liste ordonnée selon la saison de la date de semis ; Autre culture… prend un nom et un type ; hors saison l'application redemande.
+The file could not be saved: 	Le fichier n'a pas pu être enregistré : 
+The highest temperature of the next 7 days: 	La température la plus haute des 7 prochains jours : 
+The hours are missing from the data.	Les heures manquent dans les données.
+The last stage is reached.	Le dernier stade est atteint.
+The leaves stay wet 	Les feuilles restent mouillées 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Le crayon modifie la parcelle : nom, culture, date de semis, surface ; les coins se déplacent sur la carte.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Les premiers jours de la saison viennent de l'archive d'Open-Meteo ; ils se téléchargent avec internet.
+The soil	Le sol
+The strongest gust of the next 72 hours: 	La rafale la plus forte des 72 prochaines heures : 
+Thresholds for 	Seuils pour 
+Tillering	Tallage
+Today	Aujourd'hui
+Too cold (under 5 °C).	Trop froid (sous 5 °C).
+Too hot (over 28 °C).	Trop chaud (au-dessus de 28 °C).
+Too much wind (drift).	Trop de vent (dérive).
+Updated 	Mis à jour 
+Vegetables	Légumes
+Veraison	Véraison
+Vs. last year	Vs. l'an dernier
+Wait	Attendre
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Surveillez la parcelle ; un traitement peut être nécessaire si l'humidité dure.
+Water & Soil	Eau & Sol
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Eau & Sol : pluie et évaporation (ET₀) sur 7 jours et le bilan ; le graphique du passé et des 7 prochains jours ; sol à 6 et 18 cm, humidité de surface, engins sur le champ.
+Wet leaf	Feuille mouillée
+Wet leaf hours	Heures de feuille mouillée
+Wet leaf now	Feuille mouillée maintenant
+What you can do	Ce que vous pouvez faire
+Wind 	Vent 
+Wind / gusts now	Vent / rafales maintenant
+Wind and gusts	Vent et rafales
+Wind · hail	Vent · grêle
+Wind, ΔT or temperature outside the ideal range.	Vent, ΔT ou température hors de la plage idéale.
+Winter cereals	Céréales d'hiver
+With this date the degree days and the risks can come out wrong.	Avec cette date, les degrés-jours et les risques peuvent être faux.
+Write the crop's name	Écrivez le nom de la culture
+air 	air 
+as last year	comme l'an dernier
+care	attention
+choose…	choisir…
+critical heat at 	chaleur critique à 
+days	jours
+deficit, irrigate	déficit, irriguez
+disease watched: 	maladie suivie : 
+drag a corner to move it; a long press deletes it	faites glisser un coin pour le déplacer ; un appui long le supprime
+dried at 	séchée à 
+estimated on 	estimé le 
+evaporation (ET₀)	évaporation (ET₀)
+firm ground	sol portant
+forecast	prévision
+from GDD	selon les GDD
+fungal diseases	maladies fongiques
+fungi	champignons
+green zone = sowing threshold for 	zone verte = seuil de semis pour 
+gusts max 	rafales max 
+last year	l'an dernier
+last year 	l'an dernier 
+maize	maïs
+max 	max 
+measured	mesuré
+near saturation	presque saturé
+no	interdit
+no crop or sowing date yet	pas encore de culture ni de date de semis
+no dew or rain lately	pas de rosée ni de pluie récemment
+no spraying, secure what can fly	pas de pulvérisation, sécurisez ce qui peut s'envoler
+no treatments in the hot hours	pas de traitements aux heures chaudes
+not to be estimated now (cold)	impossible à estimer maintenant (froid)
+number = ΔT	chiffre = ΔT
+optimal	optimal
+ordered by the sowing date: 	ordonnée selon la date de semis : 
+ordered by this month	ordonnée selon ce mois
+over 32 °C	au-dessus de 32 °C
+planted	plantation
+rain 3 days 	pluie 3 jours 
+rain mm/day	pluie mm/jour
+risk of compaction	risque de tassement
+score 	score 
+slight deficit	léger déficit
+sowing soil 	sol pour semer 
+sown 	semé 
+surplus	excédent
+tap a card	touchez une carte
+the field is hard to work	le champ est difficile à travailler
+the leaves are wet now	les feuilles sont mouillées maintenant
+the soil compacts	le sol se tasse
+the sowing date	la date de semis
+this season	cette saison
+threshold 12 h	seuil 12 h
+today	aujourd'hui
+under −5 °C	sous −5 °C
+wet	mouillée
+write the name	écrivez le nom
+yes	oui
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Parcelles : la carte avec les cartes des parcelles (en portrait une ligne en bas, en paysage une colonne à droite). Gardées seulement sur ce téléphone.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ ajoute une parcelle : l'épingle part du milieu de la carte, un toucher sur la carte la déplace ; le nom se met en haut.
+Wheat	Blé
+Barley	Orge
+Triticale	Triticale
+Rapeseed	Colza
+Maize	Maïs
+Sunflower	Tournesol
+Soybean	Soja
+Sugar beet	Betterave sucrière
+Potato	Pomme de terre
+Vineyard	Vigne
+Orchard	Verger
+Alfalfa	Luzerne
+Septoria	Septoriose
+Net blotch	Helminthosporiose
+Phoma	Phoma
+Fusarium	Fusariose
+Downy mildew	Mildiou
+Cercospora	Cercosporiose
+Late blight	Mildiou
+Scab	Tavelure
+Anthracnose	Anthracnose
+grain filling	remplissage du grain
+flowering	floraison
+pollination	pollinisation
+root growth	croissance de la racine
+tuber forming	tubérisation
+regrowth	repousse
+.	.

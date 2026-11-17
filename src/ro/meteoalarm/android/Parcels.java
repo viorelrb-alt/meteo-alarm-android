@@ -26,15 +26,55 @@ final class Parcels {
 		boolean alerts;
 		/** v6.00: the parcel's corners (lat, lon × 4; v6.10: 4 to 7 points), or null. */
 		double[] corners;
+		/**
+		 * v2.001 (Viorel): the crop (a key of Agro.CROPS, or the farmer's own name), its type for
+		 * the thresholds (Agro.WINTER…, -1 unknown) and the sowing date ("yyyy-MM-dd", "" none).
+		 */
+		String crop = "", sow = "";
+		int ctype = -1;
 
 		String line() {
 			String c = "";
-			if (corners != null) {
+			if (corners != null || crop.length() > 0 || sow.length() > 0) {
 				StringBuilder b = new StringBuilder("\t");
-				for (int k = 0; k < corners.length / 2; k++) b.append(k > 0 ? ";" : "").append(corners[2 * k]).append(',').append(corners[2 * k + 1]);
+				if (corners != null) for (int k = 0; k < corners.length / 2; k++) b.append(k > 0 ? ";" : "").append(corners[2 * k]).append(',').append(corners[2 * k + 1]);
+				if (crop.length() > 0 || sow.length() > 0) b.append('\t').append(crop.replace('\t', ' ').replace('\n', ' ')).append('\t').append(ctype).append('\t').append(sow);
 				c = b.toString();
 			}
 			return id + "\t" + name.replace('\t', ' ').replace('\n', ' ') + "\t" + lat + "\t" + lon + "\t" + (alerts ? 1 : 0) + c;
+		}
+
+		/** v2.001: the crop with its thresholds (null when none chosen). */
+		ro.meteoalarm.android.core.Agro.Crop crop() {
+			if (crop.length() == 0) return null;
+			ro.meteoalarm.android.core.Agro.Crop c = ro.meteoalarm.android.core.Agro.crop(crop);
+			return c != null ? c : ro.meteoalarm.android.core.Agro.own(crop, ctype);
+		}
+
+		/** v2.001: the area (ha) inside the corners, NaN without them. */
+		double hectares() {
+			if (corners == null || corners.length < 6) return Double.NaN;
+			int n = corners.length / 2;
+			double cos = Math.cos(Math.toRadians(lat)), m = 111320, s = 0;
+			for (int k = 0; k < n; k++) {
+				int j = (k + 1) % n;
+				double x1 = corners[2 * k + 1] * m * cos, y1 = corners[2 * k] * m, x2 = corners[2 * j + 1] * m * cos, y2 = corners[2 * j] * m;
+				s += x1 * y2 - x2 * y1;
+			}
+			return Math.abs(s) / 2 / 10000;
+		}
+
+		/** v2.001: the perimeter (km), NaN without corners. */
+		double perimeter() {
+			if (corners == null || corners.length < 6) return Double.NaN;
+			int n = corners.length / 2;
+			double cos = Math.cos(Math.toRadians(lat)), m = 111320, s = 0;
+			for (int k = 0; k < n; k++) {
+				int j = (k + 1) % n;
+				double dx = (corners[2 * j + 1] - corners[2 * k + 1]) * m * cos, dy = (corners[2 * j] - corners[2 * k]) * m;
+				s += Math.sqrt(dx * dx + dy * dy);
+			}
+			return s / 1000;
 		}
 
 		/** v6.00: the north-west corner (the top left on the map), or null without corners. */
@@ -53,7 +93,7 @@ final class Parcels {
 		}
 
 		static Parcel of(String l) {
-			String[] p = l.split("\t");
+			String[] p = l.split("\t", -1);
 			if (p.length < 4) return null;
 			try {
 				Parcel x = new Parcel();
@@ -73,6 +113,15 @@ final class Parcels {
 						}
 						x.corners = c;
 					}
+				}
+				if (p.length > 8) {
+					x.crop = p[6];
+					try {
+						x.ctype = Integer.parseInt(p[7]);
+					} catch (Exception e) {
+						x.ctype = -1;
+					}
+					x.sow = p[8].length() == 10 ? p[8] : "";
 				}
 				return x;
 			} catch (Exception e) {
@@ -176,6 +225,7 @@ final class Parcels {
 		saveAll(ctx, l);
 		ctx.deleteFile(dataFile(id));
 		ctx.deleteFile(statsFile(id));
+		ctx.deleteFile(seasonFile(id));
 		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
 		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pt_" + id).remove("pp_" + id).apply();
 	}
@@ -269,6 +319,7 @@ final class Parcels {
 	private static void forget(Context ctx, long id) {
 		ctx.deleteFile(dataFile(id));
 		ctx.deleteFile(statsFile(id));
+		ctx.deleteFile(seasonFile(id));
 		for (String part : new String[] { "forecast.json", "uv.json", "air.json", "warn.xml" }) ctx.deleteFile(Fetcher.parcelFile(id, part));
 		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).remove("pf_" + id).remove("pa_" + id).remove("pn_" + id + "_r").remove("pn_" + id + "_w").remove("pn_" + id + "_s").remove("pd_" + id).remove("pt_" + id).remove("pp_" + id).apply();
 	}
@@ -294,6 +345,49 @@ final class Parcels {
 	/** When the parcel's data came (0 never). */
 	static long fetched(Context ctx, long id) {
 		return prefs(ctx).getLong("pf_" + id, 0);
+	}
+
+	static String seasonFile(long id) {
+		return "parcel-" + id + "-season.json";
+	}
+
+	/**
+	 * v2.001: the day the season's growing degree days start: the sowing date (orchard / vine: the
+	 * 1st of January, when planted before), at most a year back; "" without a sowing date.
+	 */
+	static String seasonStart(Parcel p, String today) {
+		if (p.sow.length() != 10) return "";
+		String s = p.sow;
+		ro.meteoalarm.android.core.Agro.Crop c = p.crop();
+		if (c != null && c.type == ro.meteoalarm.android.core.Agro.TREES && s.compareTo(today.substring(0, 4) + "-01-01") < 0) s = today.substring(0, 4) + "-01-01";
+		String min = ro.meteoalarm.android.core.Agro.plus(today, -365);
+		return s.compareTo(min) < 0 ? min : s;
+	}
+
+	/**
+	 * v2.001: off the main thread, the season's days from the archive of Open-Meteo (ERA5): from
+	 * a year before the season's start to a few days ago, once a day. Returns the answer (or the
+	 * kept one, null when none).
+	 */
+	static String season(Context ctx, Parcel p, boolean download) {
+		Calendar now = Calendar.getInstance();
+		String today = Farm.date(now, 0), start = seasonStart(p, today);
+		if (start.length() == 0) return null;
+		String key = start + "|" + today + "|" + p.lat + "|" + p.lon, kept = Fetcher.read(ctx, seasonFile(p.id));
+		if (kept != null && key.equals(prefs(ctx).getString("ps_" + p.id, ""))) return kept;
+		if (!download) return kept;
+		try {
+			String from = ro.meteoalarm.android.core.Agro.plus(start, -365), to = Farm.date(now, -2);
+			if (from.compareTo(to) > 0) return kept;
+			String json = Weather.get(ro.meteoalarm.android.core.Agro.archiveUrl(p.lat, p.lon, from, to, tz()));
+			Fetcher.write(ctx, seasonFile(p.id), json);
+			prefs(ctx).edit().putString("ps_" + p.id, key).apply();
+			Log.i(ctx, "FERMIER", "sezonul parcelei " + p.name + " descărcat: " + from + " – " + to);
+			return json;
+		} catch (Exception e) {
+			Log.e(ctx, "FERMIER", "sezonul parcelei " + p.name + ": " + e.getMessage());
+			return kept;
+		}
 	}
 
 	static String stats(Context ctx, long id) {

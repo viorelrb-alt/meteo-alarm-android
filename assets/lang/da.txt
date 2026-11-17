@@ -1124,3 +1124,311 @@ West	Vest
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Marker: kortet med markernes kort (stående en række nederst, liggende en kolonne til højre); et tryk på et kort viser dets punkter, Vis åbner den på hovedskærmen. Et tryk på en nål zoomer kortet ind på marken og viser dens navn; et andet tryk viser dens punkter. ＋ tilføjer en: hvor du er (GPS) eller et tryk på kortet, så navnet; i satellitvisningen findes de 4 hjørner i billedet og flyttes med fingeren; + Punkt tilføjer et (op til 7), Cirkel fordeler dem jævnt på en cirkel, et langt tryk sletter et; Gem og ✕ står over boksen. På et kort: blyanten redigerer, søjlerne åbner dens Statistik · PDF, klokken slår dens notifikationer til eller fra, papirkurven sletter den. Gemmes kun på denne telefon.
 Statistics	Statistik
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Marker: kortet med markernes kort (stående en række nederst, liggende en kolonne til højre); et tryk på et kort zoomer ind på marken og viser dens punkter, Statistik åbner dens statistik. Et tryk på en nål zoomer ind på marken og viser dens navn; et andet tryk viser dens punkter. ＋ tilføjer en: nålen starter midt på kortet (GPS-knappen flytter den hen, hvor du er), og et tryk på kortet flytter den; navnet står øverst; i satellitvisningen findes de 4 hjørner i billedet og flyttes med fingeren; + Punkt tilføjer et (op til 7), Cirkel fordeler dem jævnt på en cirkel, et langt tryk sletter et; Gem og ✕ står over boksen. På et kort: blyanten redigerer, søjlerne åbner dens Statistik · PDF, klokken slår dens notifikationer til eller fra, papirkurven sletter den. Gemmes kun på denne telefon.
+# v2.001
+ Anti-drift nozzles.	 Afdriftsreducerende dyser.
+ Rain from 	 Regn fra kl. 
+ and 	 og 
+ at 	 kl. 
+ corners · perimeter 	 hjørner · omkreds 
+ days ahead	 dage foran
+ days behind	 dage bagud
+ h in the last 12	 t i de sidste 12
+ h wet leaf	 t våde blade
+ hours in a row, at 	 timer i træk, ved 
+ in 48 h.	 inden for 48 t.
+ in 7 days	 på 7 dage
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 i luften som det laveste. Jorden kan være 2–4 °C koldere end luften.
+ is usually sown in 	 sås normalt i 
+ on 	 på 
+ or after the winter rest	 eller efter vinterhvilen
+ parcels ▾	 marker ▾
+ sown on 	 sået den 
+ starts at ≈ 	 starter ved ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · kilde Open-Meteo (modeller; jorden og risiciene er skøn) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	»Behold« er nyttigt til drivhusafgrøder eller en forkert dato, som du retter senere.
+, ceiling 	, loft 
+, critically at 	, kritisk ved 
+, from 	, fra 
+, when the soil has 	, når jorden har 
+, with 	, med 
+. Over 32 °C the crop suffers	. Over 32 °C lider afgrøden
+14 d	14 d
+28 d	28 d
+28 days: 	28 dage: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: dråberne fordamper kontrolleret. Under 2 °C risiko for afdrift, over 10 °C tørrer dråberne i luften.
+3 leaves	3 blade
+4–6 leaves	4–6 blade
+7 d	7 d
+7 days	7 dage
+8–10 leaves	8–10 blade
+: base temperature 	: basistemperatur 
+; storm energy (CAPE) up to 	; tordenenergi (CAPE) op til 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Et tryk på et kort zoomer kortet ind på marken og viser dens punkter; Statistik åbner dens statistik.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Et tryk på en nål zoomer ind på marken og viser dens navn; et andet tryk viser dens punkter.
+Action of the day	Dagens handling
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Dagens handling: hvad du skal gøre i dag, med sprøjtescoren (0–100) og den største risiko i de næste 48 timer.
+Another crop…	Anden afgrøde…
+Area	Areal
+At the soil surface it can be 	Ved jordoverfladen kan det blive 
+Back	Tilbage
+Balance 7 days	Balance 7 dage
+Branching	Forgrening
+Bud break	Knopbrud
+Budding	Knopdannelse
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Knapper i ☰, 2 pr. række: engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens. I USA kun engelsk og spansk.
+C. That is how the fungus takes hold on the leaves.	C. Sådan får svampen fat på bladene.
+CARE	PAS PÅ
+CSV saved	CSV gemt
+CSV table (Excel)	CSV-tabel (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Beregning: vindstød fra 20 km/h og CAPE over 300 J/kg tæller; 75 km/h eller 2500 J/kg = sikkert.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Beregning: den højeste lufttemperatur; 28 °C ingen risiko, 34 °C og derover sikkert.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Beregning: jordoverfladens temperatur fra Open-Meteo (skøn); +4 °C ingen risiko, −2 °C og lavere sikkert.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Beregning: våde blade = regn, dug eller fugt ≥ 90 %, ved 12–26 °C; 12 t i træk eller mere = høj risiko.
+Care	Pas på
+Change on the map	Ret på kortet
+Choose another crop	Vælg en anden afgrøde
+Choose the crop	Vælg afgrøde
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Vælg markens afgrøde og såningsdato: sæsonens graddage, stadiet og sammenligningerne regnes fra dem.
+Circle puts the points evenly on a circle.	Cirkel fordeler punkterne jævnt på en cirkel.
+Coldest hour	Koldeste time
+Coming up	Kommende
+Critical interval	Kritisk interval
+Crop	Afgrøde
+Crop type · for the thresholds	Afgrødetype · til tærsklerne
+Days (* = forecast)	Dage (* = prognose)
+Delta-T (ΔT) now	Delta-T (ΔT) nu
+Delta-T now	Delta-T nu
+Delta-T over 10 °C: the drops dry in the air.	Delta-T over 10 °C: dråberne tørrer i luften.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T under 2 °C: dråberne tørrer ikke og driver.
+Earthquake	Jordskælv
+Edit parcel	Rediger mark
+Emergence	Fremspiring
+Estimated stage	Anslået stadie
+Evaporation	Fordampning
+Evaporation (ET₀) 7 days	Fordampning (ET₀) 7 dage
+Flowering	Blomstring
+Forage	Foderafgrøder
+Frost	Frost
+Fruit set	Frugtsætning
+Fungal diseases	Svampesygdomme
+GDD base 	GDD-basis 
+GDD on the same date	GDD på samme dato
+GDD since 	GDD siden 
+Good spray hours in 72 h	Gode sprøjtetimer inden for 72 t
+Ground frost	Jordfrost
+Ground frost 	Jordfrost 
+Growing degree days (GDD)	Graddage (GDD)
+Growth	Vækst
+Gusts 	Vindstød 
+HIGH RISK	HØJ RISIKO
+Hard frost days	Dage med hård frost
+Harvest	Høst
+Heading	Skridning
+Heat 	Varme 
+Heat stress	Varmestress
+High risk of 	Høj risiko for 
+History and forecast	Historik og prognose
+Hoarfrost	Rimfrost
+Hottest hour	Varmeste time
+Hour 	Time 
+Hours over 32 °C	Timer over 32 °C
+IN SEASON	I SÆSON
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	I satellitvisningen findes de 4 hjørner ud fra billedet og flyttes med fingeren; + Punkt tilføjer et (op til 7), et langt tryk sletter et.
+Infection: 	Infektion: 
+Irrigate if you can and avoid treatments in the hot hours.	Vand, hvis du kan, og undgå behandlinger i de varme timer.
+Keep	Behold
+LOW RISK	LAV RISIKO
+Last year on the same date	Sidste år på samme dato
+Light wind 	Svag vind 
+MODERATE RISK	MODERAT RISIKO
+Machinery on the field	Maskiner på marken
+Moderate risk of 	Moderat risiko for 
+NOT THE SEASON	IKKE SÆSON
+Name	Navn
+Next 72 hours	De næste 72 timer
+No app on the phone opens CSV files.	Ingen app på telefonen kan åbne CSV-filer.
+No corners yet: only the pin.	Ingen hjørner endnu: kun nålen.
+No data for the season yet.	Ingen data for sæsonen endnu.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Ingen data for denne mark endnu. Åbn den én gang med internet: appen henter dens data fra Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Ingen markafgrøde sås i denne måned; frugtplantager, vinmarker og de øvrige står nedenfor.
+No good hours in the next 24 hours.	Ingen gode timer i de næste 24 timer.
+No long wet spell in the next 72 hours.	Ingen lang våd periode i de næste 72 timer.
+No risk	Ingen risiko
+No spraying today	Ingen sprøjtning i dag
+No treatment needed for now.	Ingen behandling nødvendig lige nu.
+Nothing special in the next 72 hours.	Intet særligt i de næste 72 timer.
+Nothing to do.	Intet at gøre.
+OPTIMAL	OPTIMALT
+OUT OF SEASON	UDEN FOR SÆSON
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	På kortet flyttes hjørnerne med fingeren; + Punkt, Cirkel og det lange tryk virker også der. Vejret hentes fra markens midte.
+Operational	Drift
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Drift: sprøjtevinduet time for time (grøn, gul, rød; tallet er ΔT); et tryk på en time viser dens værdier. Delta-T, vind og vindstød, våde blade.
+Optimal	Optimalt
+Orchard / vine	Frugtplantage / vinmark
+Other crops · in another season	Andre afgrøder · i en anden sæson
+Outline on the map	Omrids på kortet
+PDF report	PDF-rapport
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV gemmer oversigten, de næste 72 timer og dagene i Overførsler.
+Preventive treatment before the wet spell, in a green window	Forebyggende behandling før den våde periode, i et grønt vindue
+Protect young plants and sensitive crops; no treatments in the cold hours.	Beskyt unge planter og følsomme afgrøder; ingen behandlinger i de kolde timer.
+RH	RF
+RH 	RF 
+Rain 	Regn 
+Rain 7 days	Regn 7 dage
+Rain 7 days / 28 days	Regn 7 dage / 28 dage
+Rain now or soon: it washes the treatment off.	Regn nu eller snart: den skyller behandlingen af.
+Right for 	Egnede til 
+Right now	Egnede nu
+Ripening	Modning
+Risks	Risici
+Risks 72 h	Risici 72 t
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Risici 72 t: svampesygdomme, jordfrost, varmestress, vind og hagl; et tryk på et kort forklarer det og siger, hvad du skal gøre. Under dem: hvad der kommer.
+Save and ✕, above the new parcel's box, keep it or close the box.	Gem og ✕ over den nye marks boks gemmer den eller lukker boksen.
+Save as PDF or CSV	Gem som PDF eller CSV
+Save the statistics	Gem statistikken
+Score	Score
+Season	Sæson
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Sæson: graddage (GDD) fra såningen sammenlignet med sidste år, det anslåede stadie, varmestress og dage med hård frost. Kræver afgrøde og såningsdato.
+Secure what the wind can take; no spraying in the gusts.	Sikr det, vinden kan tage; ingen sprøjtning i vindstød.
+Soil / air	Jord / luft
+Soil temperature 6 / 18 cm	Jordtemperatur 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Kilde: Open-Meteo (modeller; jorden og risiciene er skøn). 
+Sowing date	Såningsdato
+Spray between 	Sprøjt mellem kl. 
+Spray window	Sprøjtevindue
+Spray with care between 	Sprøjt forsigtigt mellem kl. 
+Spring row crops	Forårsrækkeafgrøder
+Stem elongation	Strækning
+Storm energy	Tordenenergi
+Strongest gust	Kraftigste vindstød
+Surface moisture	Overfladefugt
+Surface moisture 0–1 cm	Overfladefugt 0–1 cm
+TODAY	I DAG
+The GPS button takes the map, and the new parcel's pin, where you are.	GPS-knappen flytter kortet, og den nye marks nål, derhen hvor du er.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Søjlerne på en marks kort eller Statistik i dens boble. Øverst: marken (et tryk vælger en anden), 4 faner og PDF · CSV.
+The bars open its Statistics.	Søjlerne åbner dens Statistik.
+The bell turns its notifications on or off.	Klokken slår dens notifikationer til eller fra.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Skraldespanden sletter den; den bliver 15 dage i skraldespanden under GPS-knappen.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Afgrøden vælges fra en liste ordnet efter såningsdatoens sæson; Anden afgrøde… får et navn og en type; uden for sæson spørger appen igen.
+The file could not be saved: 	Filen kunne ikke gemmes: 
+The highest temperature of the next 7 days: 	Den højeste temperatur i de næste 7 dage: 
+The hours are missing from the data.	Timerne mangler i dataene.
+The last stage is reached.	Det sidste stadie er nået.
+The leaves stay wet 	Bladene forbliver våde 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Blyanten redigerer marken: navn, afgrøde, såningsdato, areal; hjørnerne flyttes på kortet.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Sæsonens første dage kommer fra Open-Meteos arkiv; de hentes med internet.
+The soil	Jorden
+The strongest gust of the next 72 hours: 	Det kraftigste vindstød i de næste 72 timer: 
+Thresholds for 	Tærskler for 
+Tillering	Buskning
+Today	I dag
+Too cold (under 5 °C).	For koldt (under 5 °C).
+Too hot (over 28 °C).	For varmt (over 28 °C).
+Too much wind (drift).	For meget vind (afdrift).
+Updated 	Opdateret 
+Vegetables	Grøntsager
+Veraison	Farveskift
+Vs. last year	Mod sidste år
+Wait	Vent
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Hold øje med marken; en behandling kan blive nødvendig, hvis fugten varer ved.
+Water & Soil	Vand & jord
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Vand & jord: 7 dages regn og fordampning (ET₀) og balancen; diagram over fortiden og de næste 7 dage; jord i 6 og 18 cm, overfladefugt, maskiner på marken.
+Wet leaf	Våde blade
+Wet leaf hours	Timer med våde blade
+Wet leaf now	Våde blade nu
+What you can do	Hvad du kan gøre
+Wind 	Vind 
+Wind / gusts now	Vind / vindstød nu
+Wind and gusts	Vind og vindstød
+Wind · hail	Vind · hagl
+Wind, ΔT or temperature outside the ideal range.	Vind, ΔT eller temperatur uden for det ideelle interval.
+Winter cereals	Vintersæd
+With this date the degree days and the risks can come out wrong.	Med denne dato kan graddagene og risiciene blive forkerte.
+Write the crop's name	Skriv afgrødens navn
+air 	luft 
+as last year	som sidste år
+care	pas på
+choose…	vælg…
+critical heat at 	kritisk varme ved 
+days	dage
+deficit, irrigate	underskud, vand
+disease watched: 	overvåget sygdom: 
+drag a corner to move it; a long press deletes it	træk et hjørne for at flytte det; et langt tryk sletter det
+dried at 	tørt kl. 
+estimated on 	anslået den 
+evaporation (ET₀)	fordampning (ET₀)
+firm ground	bæredygtig jord
+forecast	prognose
+from GDD	ifølge GDD
+fungal diseases	svampesygdomme
+fungi	svampe
+green zone = sowing threshold for 	grøn zone = såtærskel for 
+gusts max 	vindstød maks. 
+last year	sidste år
+last year 	sidste år 
+maize	majs
+max 	maks. 
+measured	målt
+near saturation	næsten mættet
+no	forbudt
+no crop or sowing date yet	endnu ingen afgrøde eller såningsdato
+no dew or rain lately	ingen dug eller regn for nylig
+no spraying, secure what can fly	ingen sprøjtning, sikr det, der kan flyve
+no treatments in the hot hours	ingen behandlinger i de varme timer
+not to be estimated now (cold)	kan ikke anslås nu (koldt)
+number = ΔT	tal = ΔT
+optimal	optimalt
+ordered by the sowing date: 	ordnet efter såningsdato: 
+ordered by this month	ordnet efter denne måned
+over 32 °C	over 32 °C
+planted	plantet
+rain 3 days 	regn 3 dage 
+rain mm/day	regn mm/dag
+risk of compaction	risiko for jordpakning
+score 	score 
+slight deficit	let underskud
+sowing soil 	såjord 
+sown 	sået 
+surplus	overskud
+tap a card	tryk på et kort
+the field is hard to work	marken er svær at bearbejde
+the leaves are wet now	bladene er våde nu
+the soil compacts	jorden pakkes
+the sowing date	såningsdatoen
+this season	denne sæson
+threshold 12 h	tærskel 12 t
+today	i dag
+under −5 °C	under −5 °C
+wet	våd
+write the name	skriv navnet
+yes	ja
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Marker: kortet med markernes kort (stående en række nederst, liggende en kolonne til højre). Gemmes kun på denne telefon.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ tilføjer en mark: nålen starter midt på kortet, et tryk på kortet flytter den; navnet står øverst.
+Wheat	Hvede
+Barley	Byg
+Triticale	Triticale
+Rapeseed	Raps
+Maize	Majs
+Sunflower	Solsikke
+Soybean	Sojabønne
+Sugar beet	Sukkerroe
+Potato	Kartoffel
+Vineyard	Vinmark
+Orchard	Frugtplantage
+Alfalfa	Lucerne
+Septoria	Septoria
+Net blotch	Bygbladplet
+Phoma	Phoma
+Fusarium	Fusarium
+Downy mildew	Skimmel
+Cercospora	Cercospora
+Late blight	Kartoffelskimmel
+Scab	Skurv
+Anthracnose	Antraknose
+grain filling	kernefyldning
+flowering	blomstring
+pollination	bestøvning
+root growth	roevækst
+tuber forming	knoldsætning
+regrowth	genvækst
+.	.

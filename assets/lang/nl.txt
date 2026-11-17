@@ -1124,3 +1124,311 @@ West	West
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Percelen: de kaart met de kaartjes van de percelen (staand een rij onderaan, liggend een kolom rechts); een tik op een kaartje toont de punten, Tonen opent het op het hoofdscherm. Een tik op een speld zoomt de kaart in op het perceel en toont de naam; een tweede tik toont de punten. ＋ voegt er een toe: waar je bent (GPS) of een tik op de kaart, dan de naam; in de satellietweergave worden de 4 hoeken in het beeld gevonden en met je vinger verplaatst; + Punt voegt er een toe (tot 7), Cirkel zet ze gelijkmatig op een cirkel, lang drukken verwijdert er een; Opslaan en ✕ staan boven het vak. Op een kaartje: het potlood bewerkt, de balken openen de Statistiek · PDF, de bel zet de meldingen aan of uit, de prullenbak verwijdert het. Alleen op deze telefoon bewaard.
 Statistics	Statistiek
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Percelen: de kaart met de kaartjes van de percelen (staand een rij onderaan, liggend een kolom rechts); een tik op een kaartje zoomt de kaart in op het perceel en toont de punten, Statistiek opent de statistiek. Een tik op een speld zoomt in op het perceel en toont de naam; een tweede tik toont de punten. ＋ voegt er een toe: de speld begint in het midden van de kaart (de GPS-knop zet hem waar je bent) en een tik op de kaart verplaatst hem; de naam staat bovenaan; in de satellietweergave worden de 4 hoeken in het beeld gevonden en met je vinger verplaatst; + Punt voegt er een toe (tot 7), Cirkel zet ze gelijkmatig op een cirkel, lang drukken verwijdert er een; Opslaan en ✕ staan boven het vak. Op een kaartje: het potlood bewerkt, de balken openen de Statistiek · PDF, de bel zet de meldingen aan of uit, de prullenbak verwijdert het. Alleen op deze telefoon bewaard.
+# v2.001
+ Anti-drift nozzles.	 Antidriftdoppen.
+ Rain from 	 Regen vanaf 
+ and 	 en 
+ at 	 om 
+ corners · perimeter 	 hoeken · omtrek 
+ days ahead	 dagen voorsprong
+ days behind	 dagen achter
+ h in the last 12	 u in de laatste 12
+ h wet leaf	 u nat blad
+ hours in a row, at 	 uur achter elkaar, bij 
+ in 48 h.	 binnen 48 u.
+ in 7 days	 in 7 dagen
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 in de lucht op het koudst. De bodem kan 2–4 °C kouder zijn dan de lucht.
+ is usually sown in 	 wordt meestal gezaaid in 
+ on 	 op 
+ or after the winter rest	 of na de winterrust
+ parcels ▾	 percelen ▾
+ sown on 	 gezaaid op 
+ starts at ≈ 	 begint bij ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · bron Open-Meteo (modellen; bodem en risico's zijn schattingen) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	"Houden" is handig voor kasteelten of een verkeerde datum die je later verbetert.
+, ceiling 	, plafond 
+, critically at 	, kritiek bij 
+, from 	, vanaf 
+, when the soil has 	, als de bodem 
+, with 	, met 
+. Over 32 °C the crop suffers	. Boven 32 °C lijdt het gewas
+14 d	14 d
+28 d	28 d
+28 days: 	28 dagen: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: de druppels verdampen gecontroleerd. Onder 2 °C driftgevaar, boven 10 °C drogen de druppels in de lucht.
+3 leaves	3 bladeren
+4–6 leaves	4–6 bladeren
+7 d	7 d
+7 days	7 dagen
+8–10 leaves	8–10 bladeren
+: base temperature 	: basistemperatuur 
+; storm energy (CAPE) up to 	; onweersenergie (CAPE) tot 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Een tik op een kaartje zoomt in op het perceel en toont de punten; Statistiek opent de statistiek.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Een tik op een speld zoomt in op het perceel en toont de naam; een tweede tik toont de punten.
+Action of the day	Actie van de dag
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Actie van de dag: wat vandaag te doen, met de spuitscore (0–100) en het grootste risico van de komende 48 uur.
+Another crop…	Ander gewas…
+Area	Oppervlakte
+At the soil surface it can be 	Aan het bodemoppervlak tot 
+Back	Terug
+Balance 7 days	Balans 7 dagen
+Branching	Vertakking
+Bud break	Knopuitloop
+Budding	Knopvorming
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Knoppen in ☰, 2 per rij: Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon. In de VS alleen Engels en Spaans.
+C. That is how the fungus takes hold on the leaves.	C. Zo nestelt de schimmel zich op de bladeren.
+CARE	OPGELET
+CSV saved	CSV opgeslagen
+CSV table (Excel)	CSV-tabel (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Berekening: windstoten vanaf 20 km/u en CAPE boven 300 J/kg tellen; 75 km/u of 2500 J/kg = zeker.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Berekening: de hoogste luchttemperatuur; 28 °C geen risico, 34 °C en meer zeker.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Berekening: de temperatuur van het bodemoppervlak van Open-Meteo (schatting); +4 °C geen risico, −2 °C en lager zeker.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Berekening: nat blad = regen, dauw of vochtigheid ≥ 90 %, bij 12–26 °C; 12 u achter elkaar of meer = hoog risico.
+Care	Opgelet
+Change on the map	Wijzigen op de kaart
+Choose another crop	Ander gewas kiezen
+Choose the crop	Kies het gewas
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Kies het gewas en de zaaidatum van het perceel: de graaddagen van het seizoen, het stadium en de vergelijkingen gaan daarvan uit.
+Circle puts the points evenly on a circle.	Cirkel zet de punten gelijkmatig op een cirkel.
+Coldest hour	Koudste uur
+Coming up	Komt eraan
+Critical interval	Kritieke periode
+Crop	Gewas
+Crop type · for the thresholds	Soort gewas · voor de drempels
+Days (* = forecast)	Dagen (* = verwachting)
+Delta-T (ΔT) now	Delta-T (ΔT) nu
+Delta-T now	Delta-T nu
+Delta-T over 10 °C: the drops dry in the air.	Delta-T boven 10 °C: de druppels drogen in de lucht.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T onder 2 °C: de druppels drogen niet en driften.
+Earthquake	Aardbeving
+Edit parcel	Perceel bewerken
+Emergence	Opkomst
+Estimated stage	Geschat stadium
+Evaporation	Verdamping
+Evaporation (ET₀) 7 days	Verdamping (ET₀) 7 dagen
+Flowering	Bloei
+Forage	Voedergewassen
+Frost	Vorst
+Fruit set	Vruchtzetting
+Fungal diseases	Schimmelziekten
+GDD base 	GDD-basis 
+GDD on the same date	GDD op dezelfde datum
+GDD since 	GDD sinds 
+Good spray hours in 72 h	Goede spuituren in 72 u
+Ground frost	Grondvorst
+Ground frost 	Grondvorst 
+Growing degree days (GDD)	Groeigraaddagen (GDD)
+Growth	Groei
+Gusts 	Windstoten 
+HIGH RISK	HOOG RISICO
+Hard frost days	Dagen met strenge vorst
+Harvest	Oogst
+Heading	Aarvorming
+Heat 	Hitte 
+Heat stress	Hittestress
+High risk of 	Hoog risico op 
+History and forecast	Verleden en verwachting
+Hoarfrost	Rijp
+Hottest hour	Warmste uur
+Hour 	Uur 
+Hours over 32 °C	Uren boven 32 °C
+IN SEASON	IN HET SEIZOEN
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	In de satellietweergave worden de 4 hoeken in het beeld gevonden en met je vinger verplaatst; + Punt voegt er een toe (tot 7), lang drukken verwijdert er een.
+Infection: 	Infectie: 
+Irrigate if you can and avoid treatments in the hot hours.	Beregen als het kan en vermijd behandelingen in de hete uren.
+Keep	Houden
+LOW RISK	LAAG RISICO
+Last year on the same date	Vorig jaar op dezelfde datum
+Light wind 	Zwakke wind 
+MODERATE RISK	MATIG RISICO
+Machinery on the field	Machines op het veld
+Moderate risk of 	Matig risico op 
+NOT THE SEASON	NIET HET SEIZOEN
+Name	Naam
+Next 72 hours	Komende 72 uur
+No app on the phone opens CSV files.	Geen app op de telefoon opent CSV-bestanden.
+No corners yet: only the pin.	Nog geen hoeken: alleen de speld.
+No data for the season yet.	Nog geen gegevens voor het seizoen.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Nog geen gegevens voor dit perceel. Open het één keer met internet: de app downloadt de gegevens van Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Deze maand wordt geen akkergewas gezaaid; boomgaarden, wijngaarden en de andere staan hieronder.
+No good hours in the next 24 hours.	Geen goede uren in de komende 24 uur.
+No long wet spell in the next 72 hours.	Geen lange natte periode in de komende 72 uur.
+No risk	Geen risico
+No spraying today	Vandaag niet spuiten
+No treatment needed for now.	Voorlopig geen behandeling nodig.
+Nothing special in the next 72 hours.	Niets bijzonders in de komende 72 uur.
+Nothing to do.	Niets te doen.
+OPTIMAL	OPTIMAAL
+OUT OF SEASON	BUITEN HET SEIZOEN
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Op de kaart verplaats je de hoeken met je vinger; + Punt, Cirkel en lang drukken werken daar ook. Het weer komt uit het midden van het perceel.
+Operational	Operationeel
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Operationeel: het spuitvenster per uur (groen, geel, rood; het getal is ΔT); een tik op een uur toont de waarden. Delta-T, wind en windstoten, nat blad.
+Optimal	Optimaal
+Orchard / vine	Boomgaard / wijngaard
+Other crops · in another season	Andere gewassen · ander seizoen
+Outline on the map	Omtrek op de kaart
+PDF report	PDF-rapport
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV slaat de samenvatting, de komende 72 uur en de dagen op in Downloads.
+Preventive treatment before the wet spell, in a green window	Preventieve behandeling vóór de natte periode, in een groen venster
+Protect young plants and sensitive crops; no treatments in the cold hours.	Bescherm jonge planten en gevoelige gewassen; geen behandelingen in de koude uren.
+RH	RV
+RH 	RV 
+Rain 	Regen 
+Rain 7 days	Regen 7 dagen
+Rain 7 days / 28 days	Regen 7 dagen / 28 dagen
+Rain now or soon: it washes the treatment off.	Regen nu of straks: die spoelt de behandeling weg.
+Right for 	Geschikt voor 
+Right now	Nu geschikt
+Ripening	Rijping
+Risks	Risico's
+Risks 72 h	Risico's 72 u
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Risico's 72 u: schimmelziekten, grondvorst, hittestress, wind en hagel; een tik op een kaartje legt het uit en zegt wat je kunt doen. Eronder: wat er komt.
+Save and ✕, above the new parcel's box, keep it or close the box.	Opslaan en ✕, boven het vak van het nieuwe perceel, bewaren het of sluiten het vak.
+Save as PDF or CSV	Opslaan als PDF of CSV
+Save the statistics	Statistiek opslaan
+Score	Score
+Season	Seizoen
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Seizoen: graaddagen (GDD) sinds het zaaien tegenover vorig jaar, het geschatte stadium, hittestress en vorstdagen. Het gewas en de zaaidatum zijn nodig.
+Secure what the wind can take; no spraying in the gusts.	Zet vast wat de wind kan meenemen; niet spuiten bij windstoten.
+Soil / air	Bodem / lucht
+Soil temperature 6 / 18 cm	Bodemtemperatuur 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Bron: Open-Meteo (modellen; bodem en risico's zijn schattingen). 
+Sowing date	Zaaidatum
+Spray between 	Spuit tussen 
+Spray window	Spuitvenster
+Spray with care between 	Spuit voorzichtig tussen 
+Spring row crops	Voorjaarsrijgewassen
+Stem elongation	Schieten
+Storm energy	Onweersenergie
+Strongest gust	Sterkste windstoot
+Surface moisture	Vocht aan het oppervlak
+Surface moisture 0–1 cm	Vocht aan het oppervlak 0–1 cm
+TODAY	VANDAAG
+The GPS button takes the map, and the new parcel's pin, where you are.	De GPS-knop brengt de kaart, en de speld van het nieuwe perceel, naar waar je bent.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	De balken op het kaartje van een perceel of Statistiek in de bel. Bovenaan: het perceel (een tik kiest een ander), 4 tabbladen en PDF · CSV.
+The bars open its Statistics.	De balken openen de Statistiek.
+The bell turns its notifications on or off.	De bel zet de meldingen aan of uit.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	De prullenbak verwijdert het; het blijft 15 dagen in de prullenbak onder de GPS-knop.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Het gewas kies je uit een lijst geordend op het seizoen van de zaaidatum; Ander gewas… krijgt een naam en een soort; buiten het seizoen vraagt de app het opnieuw.
+The file could not be saved: 	Het bestand kon niet worden opgeslagen: 
+The highest temperature of the next 7 days: 	De hoogste temperatuur van de komende 7 dagen: 
+The hours are missing from the data.	De uren ontbreken in de gegevens.
+The last stage is reached.	Het laatste stadium is bereikt.
+The leaves stay wet 	De bladeren blijven nat: 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Het potlood bewerkt het perceel: naam, gewas, zaaidatum, oppervlakte; de hoeken verplaats je op de kaart.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	De eerste dagen van het seizoen komen uit het archief van Open-Meteo; ze worden gedownload met internet.
+The soil	De bodem
+The strongest gust of the next 72 hours: 	De sterkste windstoot van de komende 72 uur: 
+Thresholds for 	Drempels voor 
+Tillering	Uitstoeling
+Today	Vandaag
+Too cold (under 5 °C).	Te koud (onder 5 °C).
+Too hot (over 28 °C).	Te heet (boven 28 °C).
+Too much wind (drift).	Te veel wind (drift).
+Updated 	Bijgewerkt 
+Vegetables	Groenten
+Veraison	Kleuring
+Vs. last year	Vs. vorig jaar
+Wait	Wachten
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Houd het perceel in de gaten; een behandeling kan nodig zijn als het nat blijft.
+Water & Soil	Water & Bodem
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Water & Bodem: regen en verdamping (ET₀) over 7 dagen en de balans; de grafiek van het verleden en de komende 7 dagen; bodem op 6 en 18 cm, vocht aan het oppervlak, machines op het veld.
+Wet leaf	Nat blad
+Wet leaf hours	Uren nat blad
+Wet leaf now	Nat blad nu
+What you can do	Wat je kunt doen
+Wind 	Wind 
+Wind / gusts now	Wind / windstoten nu
+Wind and gusts	Wind en windstoten
+Wind · hail	Wind · hagel
+Wind, ΔT or temperature outside the ideal range.	Wind, ΔT of temperatuur buiten het ideale bereik.
+Winter cereals	Wintergranen
+With this date the degree days and the risks can come out wrong.	Met deze datum kunnen de graaddagen en de risico's verkeerd uitvallen.
+Write the crop's name	Schrijf de naam van het gewas
+air 	lucht 
+as last year	zoals vorig jaar
+care	opgelet
+choose…	kiezen…
+critical heat at 	kritieke hitte bij 
+days	dagen
+deficit, irrigate	tekort, beregenen
+disease watched: 	gevolgde ziekte: 
+drag a corner to move it; a long press deletes it	sleep een hoek om hem te verplaatsen; lang drukken verwijdert hem
+dried at 	opgedroogd om 
+estimated on 	geschat op 
+evaporation (ET₀)	verdamping (ET₀)
+firm ground	draagkrachtige bodem
+forecast	verwachting
+from GDD	volgens GDD
+fungal diseases	schimmelziekten
+fungi	schimmels
+green zone = sowing threshold for 	groene zone = zaaidrempel voor 
+gusts max 	windstoten max 
+last year	vorig jaar
+last year 	vorig jaar 
+maize	maïs
+max 	max 
+measured	gemeten
+near saturation	bijna verzadigd
+no	verboden
+no crop or sowing date yet	nog geen gewas of zaaidatum
+no dew or rain lately	de laatste tijd geen dauw of regen
+no spraying, secure what can fly	niet spuiten, zet vast wat kan wegvliegen
+no treatments in the hot hours	geen behandelingen in de hete uren
+not to be estimated now (cold)	nu niet te schatten (kou)
+number = ΔT	getal = ΔT
+optimal	optimaal
+ordered by the sowing date: 	geordend op zaaidatum: 
+ordered by this month	geordend op deze maand
+over 32 °C	boven 32 °C
+planted	aangeplant
+rain 3 days 	regen 3 dagen 
+rain mm/day	regen mm/dag
+risk of compaction	gevaar voor verdichting
+score 	score 
+slight deficit	licht tekort
+sowing soil 	bodem om te zaaien 
+sown 	gezaaid 
+surplus	overschot
+tap a card	tik op een kaartje
+the field is hard to work	het veld is moeilijk te bewerken
+the leaves are wet now	de bladeren zijn nu nat
+the soil compacts	de bodem verdicht
+the sowing date	de zaaidatum
+this season	dit seizoen
+threshold 12 h	drempel 12 u
+today	vandaag
+under −5 °C	onder −5 °C
+wet	nat
+write the name	schrijf de naam
+yes	ja
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Percelen: de kaart met de kaartjes van de percelen (staand een rij onderaan, liggend een kolom rechts). Alleen op deze telefoon bewaard.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ voegt een perceel toe: de speld begint in het midden van de kaart, een tik op de kaart verplaatst hem; de naam staat bovenaan.
+Wheat	Tarwe
+Barley	Gerst
+Triticale	Triticale
+Rapeseed	Koolzaad
+Maize	Maïs
+Sunflower	Zonnebloem
+Soybean	Soja
+Sugar beet	Suikerbiet
+Potato	Aardappel
+Vineyard	Wijngaard
+Orchard	Boomgaard
+Alfalfa	Luzerne
+Septoria	Septoria
+Net blotch	Netvlekkenziekte
+Phoma	Phoma
+Fusarium	Fusarium
+Downy mildew	Valse meeldauw
+Cercospora	Cercospora
+Late blight	Phytophthora
+Scab	Schurft
+Anthracnose	Antracnose
+grain filling	korrelvulling
+flowering	bloei
+pollination	bestuiving
+root growth	wortelgroei
+tuber forming	knolvorming
+regrowth	hergroei
+.	.

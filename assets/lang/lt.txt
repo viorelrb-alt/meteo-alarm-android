@@ -1124,3 +1124,311 @@ West	Vakarai
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Laukai: žemėlapis su laukų kortelėmis (vertikaliai eilė apačioje, horizontaliai stulpelis dešinėje); kortelės palietimas rodo jo taškus, Rodyti atveria jį pagrindiniame ekrane. Smeigtuko palietimas priartina žemėlapį prie lauko ir rodo jo pavadinimą; antras palietimas rodo jo taškus. ＋ prideda lauką: kur esi (GPS) arba žemėlapio palietimas, tada pavadinimas; palydovo vaizde jo 4 kampai randami paveikslėlyje ir perkeliami pirštu; + Taškas prideda vieną (iki 7), Apskritimas išdėsto juos tolygiai apskritime, ilgas paspaudimas vieną ištrina; Išsaugoti ir ✕ yra virš langelio. Kortelėje: pieštukas redaguoja, stulpeliai atveria jo Statistiką · PDF, varpelis įjungia ar išjungia jo pranešimus, šiukšlinė jį ištrina. Laikomi tik šiame telefone.
 Statistics	Statistika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Laukai: žemėlapis su laukų kortelėmis (vertikaliai eilė apačioje, horizontaliai stulpelis dešinėje); kortelės palietimas priartina žemėlapį prie lauko ir rodo jo taškus, Statistika atveria jo statistiką. Smeigtuko palietimas priartina žemėlapį prie lauko ir rodo jo pavadinimą; antras palietimas rodo jo taškus. ＋ prideda lauką: smeigtukas pradeda žemėlapio viduryje (GPS mygtukas jį perkelia ten, kur esi), o žemėlapio palietimas jį perkelia; pavadinimas viršuje; palydovo vaizde jo 4 kampai randami paveikslėlyje ir perkeliami pirštu; + Taškas prideda vieną (iki 7), Apskritimas išdėsto juos tolygiai apskritime, ilgas paspaudimas vieną ištrina; Išsaugoti ir ✕ yra virš langelio. Kortelėje: pieštukas redaguoja, stulpeliai atveria jo Statistiką · PDF, varpelis įjungia ar išjungia jo pranešimus, šiukšlinė jį ištrina. Laikomi tik šiame telefone.
+# v2.001
+ Anti-drift nozzles.	 Dreifą mažinantys purkštukai.
+ Rain from 	 Lietus nuo 
+ and 	 ir 
+ at 	 apie 
+ corners · perimeter 	 kampai · perimetras 
+ days ahead	 d. anksčiau
+ days behind	 d. vėliau
+ h in the last 12	 h per paskutines 12
+ h wet leaf	 h šlapias lapas
+ hours in a row, at 	 valandas iš eilės, esant 
+ in 48 h.	 per 48 h.
+ in 7 days	 per 7 dienas
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 ore žemiausia. Dirva gali būti 2–4 °C šaltesnė už orą.
+ is usually sown in 	 paprastai sėjama 
+ on 	 ant 
+ or after the winter rest	 arba po žiemos ramybės
+ parcels ▾	 laukai ▾
+ sown on 	 pasėta 
+ starts at ≈ 	 prasideda nuo ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · šaltinis Open-Meteo (modeliai; dirva ir rizikos yra įverčiai) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	„Palikti“ tinka šiltnamių kultūroms arba klaidingai datai, kurią pataisysite vėliau.
+, ceiling 	, viršutinė riba 
+, critically at 	, kritiškai tarpsnyje 
+, from 	, nuo 
+, when the soil has 	, kai dirvoje yra 
+, with 	, su 
+. Over 32 °C the crop suffers	. Virš 32 °C pasėlis kenčia
+14 d	14 d.
+28 d	28 d.
+28 days: 	28 dienos: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: lašai garuoja kontroliuojamai. Žemiau 2 °C dreifo rizika, virš 10 °C lašai išdžiūsta ore.
+3 leaves	3 lapai
+4–6 leaves	4–6 lapai
+7 d	7 d.
+7 days	7 dienos
+8–10 leaves	8–10 lapų
+: base temperature 	: bazinė temperatūra 
+; storm energy (CAPE) up to 	; audros energija (CAPE) iki 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Bakstelėjus kortelę, žemėlapis priartinamas prie lauko ir rodomi jo taškai; Statistika atveria jo statistiką.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Bakstelėjus smeigtuką, priartinamas laukas ir rodomas jo pavadinimas; antras bakstelėjimas rodo jo taškus.
+Action of the day	Dienos veiksmas
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Dienos veiksmas: ką daryti šiandien, su purškimo balu (0–100) ir didžiausia kitų 48 valandų rizika.
+Another crop…	Kita kultūra…
+Area	Plotas
+At the soil surface it can be 	Dirvos paviršiuje gali būti 
+Back	Atgal
+Balance 7 days	Balansas 7 dienos
+Branching	Šakojimasis
+Bud break	Pumpurų sprogimas
+Budding	Butonizacija
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Mygtukai ☰, po 2 eilutėje: anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba. JAV tik anglų ir ispanų.
+C. That is how the fungus takes hold on the leaves.	C. Taip grybas įsitvirtina ant lapų.
+CARE	DĖMESIO
+CSV saved	CSV išsaugotas
+CSV table (Excel)	CSV lentelė (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Skaičiavimas: skaičiuojami gūsiai nuo 20 km/h ir CAPE virš 300 J/kg; 75 km/h arba 2500 J/kg = tikra.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Skaičiavimas: aukščiausia oro temperatūra; 28 °C be rizikos, 34 °C ir daugiau tikra.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Skaičiavimas: dirvos paviršiaus temperatūra iš Open-Meteo (įvertis); +4 °C be rizikos, −2 °C ir žemiau tikra.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Skaičiavimas: šlapias lapas = lietus, rasa arba drėgmė ≥ 90 %, esant 12–26 °C; 12 h iš eilės ar daugiau = didelė rizika.
+Care	Dėmesio
+Change on the map	Keisti žemėlapyje
+Choose another crop	Pasirinkti kitą kultūrą
+Choose the crop	Pasirinkite kultūrą
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Pasirinkite lauko kultūrą ir sėjos datą: nuo jų skaičiuojamos sezono laipsnių dienos, tarpsnis ir palyginimai.
+Circle puts the points evenly on a circle.	Apskritimas išdėsto taškus tolygiai apskritime.
+Coldest hour	Šalčiausia valanda
+Coming up	Netrukus
+Critical interval	Kritinis intervalas
+Crop	Kultūra
+Crop type · for the thresholds	Kultūros tipas · slenksčiams
+Days (* = forecast)	Dienos (* = prognozė)
+Delta-T (ΔT) now	Delta-T (ΔT) dabar
+Delta-T now	Delta-T dabar
+Delta-T over 10 °C: the drops dry in the air.	Delta-T virš 10 °C: lašai išdžiūsta ore.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T žemiau 2 °C: lašai neišdžiūsta ir dreifuoja.
+Earthquake	Žemės drebėjimas
+Edit parcel	Redaguoti lauką
+Emergence	Sudygimas
+Estimated stage	Numatomas tarpsnis
+Evaporation	Garavimas
+Evaporation (ET₀) 7 days	Garavimas (ET₀) 7 dienos
+Flowering	Žydėjimas
+Forage	Pašarinės kultūros
+Frost	Šaltis
+Fruit set	Vaisių mezgimas
+Fungal diseases	Grybinės ligos
+GDD base 	GDD bazė 
+GDD on the same date	GDD tą pačią datą
+GDD since 	GDD nuo 
+Good spray hours in 72 h	Geros purškimo valandos per 72 h
+Ground frost	Dirvos šalna
+Ground frost 	Dirvos šalna 
+Growing degree days (GDD)	Augimo laipsnių dienos (GDD)
+Growth	Augimas
+Gusts 	Gūsiai 
+HIGH RISK	DIDELĖ RIZIKA
+Hard frost days	Stipraus šalčio dienos
+Harvest	Derliaus nuėmimas
+Heading	Plaukėjimas
+Heat 	Karštis 
+Heat stress	Karščio stresas
+High risk of 	Didelė rizika: 
+History and forecast	Istorija ir prognozė
+Hoarfrost	Šerkšnas
+Hottest hour	Šilčiausia valanda
+Hour 	Valanda 
+Hours over 32 °C	Valandos virš 32 °C
+IN SEASON	SEZONE
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Palydoviniame vaizde 4 kampai randami nuotraukoje ir stumiami pirštu; + Taškas prideda vieną (iki 7), ilgas paspaudimas ištrina vieną.
+Infection: 	Infekcija: 
+Irrigate if you can and avoid treatments in the hot hours.	Laistykite, jei galite, ir venkite purškimų karštomis valandomis.
+Keep	Palikti
+LOW RISK	MAŽA RIZIKA
+Last year on the same date	Pernai tą pačią datą
+Light wind 	Silpnas vėjas 
+MODERATE RISK	VIDUTINĖ RIZIKA
+Machinery on the field	Technika lauke
+Moderate risk of 	Vidutinė rizika: 
+NOT THE SEASON	NE SEZONAS
+Name	Pavadinimas
+Next 72 hours	Kitos 72 valandos
+No app on the phone opens CSV files.	Jokia telefono programa neatidaro CSV failų.
+No corners yet: only the pin.	Kampų dar nėra: tik smeigtukas.
+No data for the season yet.	Sezono duomenų dar nėra.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Šiam laukui duomenų dar nėra. Vieną kartą atidarykite jį su internetu: programa atsisiųs duomenis iš Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	Šį mėnesį nesėjama jokia lauko kultūra; sodai, vynuogynai ir kiti yra žemiau.
+No good hours in the next 24 hours.	Per kitas 24 valandas gerų valandų nėra.
+No long wet spell in the next 72 hours.	Per kitas 72 valandas ilgo drėgno laikotarpio nėra.
+No risk	Be rizikos
+No spraying today	Šiandien nepurkšti
+No treatment needed for now.	Kol kas purškimo nereikia.
+Nothing special in the next 72 hours.	Per kitas 72 valandas nieko ypatingo.
+Nothing to do.	Nėra ką daryti.
+OPTIMAL	OPTIMALU
+OUT OF SEASON	NE SEZONO METU
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Žemėlapyje kampai stumiami pirštu; + Taškas, Apskritimas ir ilgas paspaudimas veikia ir ten. Orai imami iš lauko centro.
+Operational	Darbai
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Darbai: purškimo langas kas valandą (žalia, geltona, raudona; skaičius yra ΔT); bakstelėjus valandą rodomos jos reikšmės. Delta-T, vėjas ir gūsiai, šlapias lapas.
+Optimal	Optimalu
+Orchard / vine	Sodas / vynuogynas
+Other crops · in another season	Kitos kultūros · kitu sezonu
+Outline on the map	Kontūras žemėlapyje
+PDF report	PDF ataskaita
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV išsaugo santrauką, kitas 72 valandas ir dienas aplanke Atsisiuntimai.
+Preventive treatment before the wet spell, in a green window	Prevencinis purškimas prieš drėgną laikotarpį, žaliame lange
+Protect young plants and sensitive crops; no treatments in the cold hours.	Saugokite jaunus augalus ir jautrias kultūras; nepurkškite šaltomis valandomis.
+RH	SD
+RH 	SD 
+Rain 	Lietus 
+Rain 7 days	Lietus 7 dienos
+Rain 7 days / 28 days	Lietus 7 dienos / 28 dienos
+Rain now or soon: it washes the treatment off.	Lietus dabar ar netrukus: nuplaus purškimą.
+Right for 	Tinka mėnesiui: 
+Right now	Tinka dabar
+Ripening	Brendimas
+Risks	Rizikos
+Risks 72 h	Rizikos 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Rizikos 72 h: grybinės ligos, dirvos šalna, karščio stresas, vėjas ir kruša; bakstelėjus kortelę ji paaiškinama ir pasakoma, ką daryti. Po jomis: kas laukia.
+Save and ✕, above the new parcel's box, keep it or close the box.	Išsaugoti ir ✕ virš naujo lauko lango jį išsaugo arba uždaro langą.
+Save as PDF or CSV	Išsaugoti kaip PDF arba CSV
+Save the statistics	Išsaugoti statistiką
+Score	Balas
+Season	Sezonas
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Sezonas: laipsnių dienos (GDD) nuo sėjos, palyginti su pernai, numatomas tarpsnis, karščio stresas ir stipraus šalčio dienos. Reikia kultūros ir sėjos datos.
+Secure what the wind can take; no spraying in the gusts.	Pritvirtinkite, ką vėjas gali nunešti; nepurkškite per gūsius.
+Soil / air	Dirva / oras
+Soil temperature 6 / 18 cm	Dirvos temperatūra 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Šaltinis: Open-Meteo (modeliai; dirva ir rizikos yra įverčiai). 
+Sowing date	Sėjos data
+Spray between 	Purkškite tarp 
+Spray window	Purškimo langas
+Spray with care between 	Purkškite atsargiai tarp 
+Spring row crops	Pavasarinės kaupiamosios
+Stem elongation	Bamblėjimas
+Storm energy	Audros energija
+Strongest gust	Stipriausias gūsis
+Surface moisture	Paviršiaus drėgmė
+Surface moisture 0–1 cm	Paviršiaus drėgmė 0–1 cm
+TODAY	ŠIANDIEN
+The GPS button takes the map, and the new parcel's pin, where you are.	GPS mygtukas perkelia žemėlapį, ir naujo lauko smeigtuką, ten, kur esate.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Stulpeliai lauko kortelėje arba Statistika jo burbule. Viršuje: laukas (bakstelėjimas parenka kitą), 4 skirtukai ir PDF · CSV.
+The bars open its Statistics.	Stulpeliai atveria jo Statistiką.
+The bell turns its notifications on or off.	Varpelis įjungia arba išjungia jo pranešimus.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Šiukšlinė jį ištrina; jis lieka 15 dienų šiukšlinėje po GPS mygtuku.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Kultūra pasirenkama iš sąrašo, surikiuoto pagal sėjos datos sezoną; Kita kultūra… gauna pavadinimą ir tipą; ne sezono metu programa klausia dar kartą.
+The file could not be saved: 	Failo išsaugoti nepavyko: 
+The highest temperature of the next 7 days: 	Aukščiausia kitų 7 dienų temperatūra: 
+The hours are missing from the data.	Duomenyse trūksta valandų.
+The last stage is reached.	Paskutinis tarpsnis pasiektas.
+The leaves stay wet 	Lapai liks šlapi 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Pieštukas redaguoja lauką: pavadinimas, kultūra, sėjos data, plotas; kampai stumiami žemėlapyje.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Pirmosios sezono dienos imamos iš Open-Meteo archyvo; jos atsisiunčiamos su internetu.
+The soil	Dirva
+The strongest gust of the next 72 hours: 	Stipriausias kitų 72 valandų gūsis: 
+Thresholds for 	Slenksčiai: 
+Tillering	Krūmijimasis
+Today	Šiandien
+Too cold (under 5 °C).	Per šalta (žemiau 5 °C).
+Too hot (over 28 °C).	Per karšta (virš 28 °C).
+Too much wind (drift).	Per daug vėjo (dreifas).
+Updated 	Atnaujinta 
+Vegetables	Daržovės
+Veraison	Uogų minkštėjimas
+Vs. last year	Palyginti su pernai
+Wait	Palaukti
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Stebėkite lauką; purškimo gali prireikti, jei drėgmė išsilaikys.
+Water & Soil	Vanduo ir dirva
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Vanduo ir dirva: 7 dienų lietus ir garavimas (ET₀) bei balansas; praeities ir kitų 7 dienų grafikas; dirva 6 ir 18 cm gylyje, paviršiaus drėgmė, technika lauke.
+Wet leaf	Šlapias lapas
+Wet leaf hours	Šlapio lapo valandos
+Wet leaf now	Šlapias lapas dabar
+What you can do	Ką galite daryti
+Wind 	Vėjas 
+Wind / gusts now	Vėjas / gūsiai dabar
+Wind and gusts	Vėjas ir gūsiai
+Wind · hail	Vėjas · kruša
+Wind, ΔT or temperature outside the ideal range.	Vėjas, ΔT arba temperatūra už idealaus intervalo ribų.
+Winter cereals	Žiemkenčiai javai
+With this date the degree days and the risks can come out wrong.	Su šia data laipsnių dienos ir rizikos gali būti klaidingos.
+Write the crop's name	Įrašykite kultūros pavadinimą
+air 	oras 
+as last year	kaip pernai
+care	dėmesio
+choose…	pasirinkti…
+critical heat at 	kritinis karštis tarpsnyje 
+days	dienos
+deficit, irrigate	trūkumas, laistykite
+disease watched: 	stebima liga: 
+drag a corner to move it; a long press deletes it	vilkite kampą, kad jį perkeltumėte; ilgas paspaudimas jį ištrina
+dried at 	išdžiūvo apie 
+estimated on 	įvertinta 
+evaporation (ET₀)	garavimas (ET₀)
+firm ground	tvirta dirva
+forecast	prognozė
+from GDD	pagal GDD
+fungal diseases	grybinės ligos
+fungi	grybai
+green zone = sowing threshold for 	žalia zona = sėjos slenkstis: 
+gusts max 	gūsiai maks. 
+last year	pernai
+last year 	pernai 
+maize	kukurūzai
+max 	maks. 
+measured	išmatuota
+near saturation	beveik prisotinta
+no	draudžiama
+no crop or sowing date yet	dar nėra kultūros ir sėjos datos
+no dew or rain lately	pastaruoju metu be rasos ir lietaus
+no spraying, secure what can fly	nepurkškite, pritvirtinkite, kas gali nuskristi
+no treatments in the hot hours	nepurkškite karštomis valandomis
+not to be estimated now (cold)	dabar neįvertinama (šalta)
+number = ΔT	skaičius = ΔT
+optimal	optimalu
+ordered by the sowing date: 	surikiuota pagal sėjos datą: 
+ordered by this month	surikiuota pagal šį mėnesį
+over 32 °C	virš 32 °C
+planted	pasodinta
+rain 3 days 	lietus 3 dienos 
+rain mm/day	lietus mm/d.
+risk of compaction	suslėgimo rizika
+score 	balas 
+slight deficit	nedidelis trūkumas
+sowing soil 	sėjos dirva 
+sown 	pasėta 
+surplus	perteklius
+tap a card	bakstelėkite kortelę
+the field is hard to work	laukas sunkiai dirbamas
+the leaves are wet now	lapai dabar šlapi
+the soil compacts	dirva suslegiama
+the sowing date	sėjos data
+this season	šis sezonas
+threshold 12 h	slenkstis 12 h
+today	šiandien
+under −5 °C	žemiau −5 °C
+wet	šlapia
+write the name	įrašykite pavadinimą
+yes	taip
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Laukai: žemėlapis su laukų kortelėmis (vertikaliai eilė apačioje, horizontaliai stulpelis dešinėje). Saugoma tik šiame telefone.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ prideda lauką: smeigtukas atsiranda žemėlapio viduryje, bakstelėjimas žemėlapyje jį perkelia; pavadinimas viršuje.
+Wheat	Kviečiai
+Barley	Miežiai
+Triticale	Kvietrugiai
+Rapeseed	Rapsai
+Maize	Kukurūzai
+Sunflower	Saulėgrąžos
+Soybean	Sojos
+Sugar beet	Cukriniai runkeliai
+Potato	Bulvės
+Vineyard	Vynuogynas
+Orchard	Sodas
+Alfalfa	Liucerna
+Septoria	Septoriozė
+Net blotch	Tinkliška dėmėtligė
+Phoma	Fomozė
+Fusarium	Fuzariozė
+Downy mildew	Netikroji miltligė
+Cercospora	Cerkosporozė
+Late blight	Bulvių maras
+Scab	Rauplės
+Anthracnose	Antraknozė
+grain filling	grūdų pildymasis
+flowering	žydėjimas
+pollination	apdulkinimas
+root growth	šakniavaisio augimas
+tuber forming	gumbų formavimasis
+regrowth	atžėlimas
+.	.

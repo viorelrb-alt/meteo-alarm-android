@@ -1058,3 +1058,311 @@ West	Batı
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parseller: parsellerin kartlarıyla harita (dikeyde altta bir sıra, yatayda sağda bir sütun); bir karta dokunmak noktalarını gösterir, Göster onu ana ekranda açar. Bir iğneye dokunmak haritayı parsele yaklaştırır ve adını gösterir; ikinci dokunuş noktalarını gösterir. ＋ bir tane ekler: bulunduğun yer (GPS) veya haritaya bir dokunuş, sonra ad; uydu görünümünde 4 köşesi resimden bulunur ve parmakla taşınır; + Nokta bir tane ekler (7'ye kadar), Daire onları bir daireye eşit dağıtır, uzun basmak birini siler; Kaydet ve ✕ kutunun üstünde durur. Kartta: kalem düzenler, çubuklar İstatistik · PDF'sini açar, zil bildirimlerini açar veya kapatır, çöp kutusu onu siler. Yalnızca bu telefonda tutulur.
 Statistics	İstatistik
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parseller: parsellerin kartlarıyla harita (dikeyde altta bir sıra, yatayda sağda bir sütun); bir karta dokunmak haritayı parsele yaklaştırır ve noktalarını gösterir, İstatistik onun istatistiğini açar. Bir iğneye dokunmak haritayı parsele yaklaştırır ve adını gösterir; ikinci dokunuş noktalarını gösterir. ＋ bir tane ekler: iğne haritanın ortasından başlar (GPS düğmesi onu bulunduğun yere taşır) ve haritaya bir dokunuş onu taşır; ad üstte durur; uydu görünümünde 4 köşesi resimden bulunur ve parmakla taşınır; + Nokta bir tane ekler (7'ye kadar), Daire onları bir daireye eşit dağıtır, uzun basmak birini siler; Kaydet ve ✕ kutunun üstünde durur. Kartta: kalem düzenler, çubuklar İstatistik · PDF'sini açar, zil bildirimlerini açar veya kapatır, çöp kutusu onu siler. Yalnızca bu telefonda tutulur.
+# v2.001
+ Anti-drift nozzles.	 Sürüklenme önleyici memeler.
+ Rain from 	 Yağmur başlangıcı: 
+ and 	 ve 
+ at 	 saat 
+ corners · perimeter 	 köşe · çevre 
+ days ahead	 gün önde
+ days behind	 gün geride
+ h in the last 12	 h son 12 saatte
+ h wet leaf	 h ıslak yaprak
+ hours in a row, at 	 saat üst üste, sıcaklık 
+ in 48 h.	 48 saat içinde.
+ in 7 days	 7 günde
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 havada en düşük. Toprak havadan 2–4 °C daha soğuk olabilir.
+ is usually sown in 	 genellikle şu dönemde ekilir: 
+ on 	 – 
+ or after the winter rest	 veya kış dinlenmesinden sonra
+ parcels ▾	 parsel ▾
+ sown on 	 ekim tarihi 
+ starts at ≈ 	 başlangıç ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · kaynak Open-Meteo (modeller; toprak ve riskler tahmindir) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	“Koru”, sera bitkileri veya daha sonra düzelteceğiniz yanlış bir tarih için kullanışlıdır.
+, ceiling 	, tavan 
+, critically at 	, kritik evre: 
+, from 	, başlangıç: 
+, when the soil has 	, toprak sıcaklığı 
+, with 	, 
+. Over 32 °C the crop suffers	. 32 °C üzerinde bitki zarar görür
+14 d	14 g
+28 d	28 g
+28 days: 	28 gün: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: damlalar kontrollü buharlaşır. 2 °C altında sürüklenme riski, 10 °C üzerinde damlalar havada kurur.
+3 leaves	3 yaprak
+4–6 leaves	4–6 yaprak
+7 d	7 g
+7 days	7 gün
+8–10 leaves	8–10 yaprak
+: base temperature 	: taban sıcaklık 
+; storm energy (CAPE) up to 	; fırtına enerjisi (CAPE) en çok 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Bir karta dokunmak haritayı parsele yaklaştırır ve noktalarını gösterir; İstatistik onun istatistiklerini açar.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Bir iğneye dokunmak parsele yaklaştırır ve adını gösterir; ikinci dokunuş noktalarını gösterir.
+Action of the day	Günün işi
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Günün işi: bugün ne yapılacağı, ilaçlama puanı (0–100) ve önümüzdeki 48 saatin en büyük riski ile.
+Another crop…	Başka bitki…
+Area	Alan
+At the soil surface it can be 	Toprak yüzeyinde şu olabilir: 
+Back	Geri
+Balance 7 days	Denge 7 gün
+Branching	Dallanma
+Bud break	Tomurcuk patlaması
+Budding	Tomurcuklanma
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	☰ içindeki düğmeler, satırda 2: İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili. ABD'de yalnızca İngilizce ve İspanyolca.
+C. That is how the fungus takes hold on the leaves.	C. Mantar yapraklara böyle yerleşir.
+CARE	DİKKAT
+CSV saved	CSV kaydedildi
+CSV table (Excel)	CSV tablosu (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Hesap: 20 km/h üzerindeki hamleler ve 300 J/kg üzerindeki CAPE sayılır; 75 km/h veya 2500 J/kg = kesin.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Hesap: en yüksek hava sıcaklığı; 28 °C risksiz, 34 °C ve üzeri kesin.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Hesap: Open-Meteo'dan toprak yüzeyi sıcaklığı (tahmin); +4 °C risksiz, −2 °C ve altı kesin.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Hesap: ıslak yaprak = yağmur, çiy veya ≥ %90 nem, 12–26 °C'de; üst üste 12 h veya daha fazla = yüksek risk.
+Care	Dikkat
+Change on the map	Haritada değiştir
+Choose another crop	Başka bitki seç
+Choose the crop	Bitkiyi seçin
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Parselin bitkisini ve ekim tarihini seçin: sezonun gün-derecesi, evresi ve karşılaştırmalar bunlardan hesaplanır.
+Circle puts the points evenly on a circle.	Daire noktaları bir daireye eşit dağıtır.
+Coldest hour	En soğuk saat
+Coming up	Sırada
+Critical interval	Kritik aralık
+Crop	Bitki
+Crop type · for the thresholds	Bitki türü · eşikler için
+Days (* = forecast)	Günler (* = tahmin)
+Delta-T (ΔT) now	Delta-T (ΔT) şimdi
+Delta-T now	Delta-T şimdi
+Delta-T over 10 °C: the drops dry in the air.	Delta-T 10 °C üzerinde: damlalar havada kurur.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T 2 °C altında: damlalar kurumaz ve sürüklenir.
+Earthquake	Deprem
+Edit parcel	Parseli düzenle
+Emergence	Çıkış
+Estimated stage	Tahmini evre
+Evaporation	Buharlaşma
+Evaporation (ET₀) 7 days	Buharlaşma (ET₀) 7 gün
+Flowering	Çiçeklenme
+Forage	Yem bitkileri
+Frost	Don
+Fruit set	Meyve tutumu
+Fungal diseases	Mantar hastalıkları
+GDD base 	GDD tabanı 
+GDD on the same date	Aynı tarihte GDD
+GDD since 	GDD başlangıç: 
+Good spray hours in 72 h	72 saatte iyi ilaçlama saatleri
+Ground frost	Yer donu
+Ground frost 	Yer donu 
+Growing degree days (GDD)	Büyüme gün-derecesi (GDD)
+Growth	Büyüme
+Gusts 	Hamleler 
+HIGH RISK	YÜKSEK RİSK
+Hard frost days	Sert don günleri
+Harvest	Hasat
+Heading	Başaklanma
+Heat 	Sıcak 
+Heat stress	Sıcaklık stresi
+High risk of 	Yüksek risk: 
+History and forecast	Geçmiş ve tahmin
+Hoarfrost	Kırağı
+Hottest hour	En sıcak saat
+Hour 	Saat 
+Hours over 32 °C	32 °C üzerindeki saatler
+IN SEASON	SEZONDA
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Uydu görünümünde 4 köşe görüntüden bulunur ve parmakla taşınır; + Nokta bir tane ekler (en çok 7), uzun basış bir tane siler.
+Infection: 	Enfeksiyon: 
+Irrigate if you can and avoid treatments in the hot hours.	Yapabiliyorsanız sulayın ve sıcak saatlerde ilaçlamadan kaçının.
+Keep	Koru
+LOW RISK	DÜŞÜK RİSK
+Last year on the same date	Geçen yıl aynı tarihte
+Light wind 	Hafif rüzgâr 
+MODERATE RISK	ORTA RİSK
+Machinery on the field	Tarlada makineler
+Moderate risk of 	Orta risk: 
+NOT THE SEASON	SEZON DEĞİL
+Name	Ad
+Next 72 hours	Önümüzdeki 72 saat
+No app on the phone opens CSV files.	Telefondaki hiçbir uygulama CSV dosyalarını açmıyor.
+No corners yet: only the pin.	Henüz köşe yok: yalnızca iğne.
+No data for the season yet.	Sezon için henüz veri yok.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Bu parsel için henüz veri yok. İnternetle bir kez açın: uygulama verilerini Open-Meteo'dan indirir.
+No field crop is sown in this month; orchards, vines and the others are below.	Bu ay hiçbir tarla bitkisi ekilmez; meyve bahçeleri, bağlar ve diğerleri aşağıda.
+No good hours in the next 24 hours.	Önümüzdeki 24 saatte iyi saat yok.
+No long wet spell in the next 72 hours.	Önümüzdeki 72 saatte uzun ıslak dönem yok.
+No risk	Risk yok
+No spraying today	Bugün ilaçlama yok
+No treatment needed for now.	Şimdilik ilaçlama gerekmiyor.
+Nothing special in the next 72 hours.	Önümüzdeki 72 saatte özel bir şey yok.
+Nothing to do.	Yapılacak bir şey yok.
+OPTIMAL	İDEAL
+OUT OF SEASON	SEZON DIŞI
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Haritada köşeler parmakla taşınır; + Nokta, Daire ve uzun basış orada da çalışır. Hava durumu parselin merkezinden alınır.
+Operational	Operasyonel
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Operasyonel: saat saat ilaçlama penceresi (yeşil, sarı, kırmızı; sayı ΔT'dir); bir saate dokunmak değerlerini gösterir. Delta-T, rüzgâr ve hamleler, ıslak yaprak.
+Optimal	İdeal
+Orchard / vine	Meyve bahçesi / bağ
+Other crops · in another season	Diğer bitkiler · başka sezonda
+Outline on the map	Haritada sınır
+PDF report	PDF raporu
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV özeti, önümüzdeki 72 saati ve günleri İndirilenler'e kaydeder.
+Preventive treatment before the wet spell, in a green window	Islak dönemden önce, yeşil pencerede koruyucu ilaçlama
+Protect young plants and sensitive crops; no treatments in the cold hours.	Genç bitkileri ve hassas ürünleri koruyun; soğuk saatlerde ilaçlama yok.
+RH	BN
+RH 	BN 
+Rain 	Yağmur 
+Rain 7 days	Yağmur 7 gün
+Rain 7 days / 28 days	Yağmur 7 gün / 28 gün
+Rain now or soon: it washes the treatment off.	Yağmur şimdi veya yakında: ilacı yıkar.
+Right for 	Bu aya uygun: 
+Right now	Şimdi uygun
+Ripening	Olgunlaşma
+Risks	Riskler
+Risks 72 h	Riskler 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Riskler 72 h: mantar hastalıkları, yer donu, sıcaklık stresi, rüzgâr ve dolu; bir karta dokunmak onu açıklar ve ne yapılacağını söyler. Altlarında: sırada ne var.
+Save and ✕, above the new parcel's box, keep it or close the box.	Yeni parselin kutusunun üstündeki Kaydet ve ✕ onu kaydeder veya kutuyu kapatır.
+Save as PDF or CSV	PDF veya CSV olarak kaydet
+Save the statistics	İstatistikleri kaydet
+Score	Puan
+Season	Sezon
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Sezon: ekimden bu yana gün-derecesi (GDD) geçen yıla göre, tahmini evre, sıcaklık stresi ve sert don günleri. Bitki ve ekim tarihi gerekir.
+Secure what the wind can take; no spraying in the gusts.	Rüzgârın götürebileceklerini sabitleyin; hamlelerde ilaçlama yapmayın.
+Soil / air	Toprak / hava
+Soil temperature 6 / 18 cm	Toprak sıcaklığı 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Kaynak: Open-Meteo (modeller; toprak ve riskler tahmindir). 
+Sowing date	Ekim tarihi
+Spray between 	İlaçlama aralığı: 
+Spray window	İlaçlama penceresi
+Spray with care between 	Dikkatli ilaçlama aralığı: 
+Spring row crops	İlkbahar çapa bitkileri
+Stem elongation	Sapa kalkma
+Storm energy	Fırtına enerjisi
+Strongest gust	En güçlü hamle
+Surface moisture	Yüzey nemi
+Surface moisture 0–1 cm	Yüzey nemi 0–1 cm
+TODAY	BUGÜN
+The GPS button takes the map, and the new parcel's pin, where you are.	GPS düğmesi haritayı, ve yeni parselin iğnesini, bulunduğunuz yere götürür.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Parsel kartındaki çubuklar veya balonundaki İstatistik. Üstte: parsel (dokunuş başkasını seçer), 4 sekme ve PDF · CSV.
+The bars open its Statistics.	Çubuklar onun İstatistiklerini açar.
+The bell turns its notifications on or off.	Zil bildirimlerini açar veya kapatır.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Çöp kutusu onu siler; GPS düğmesinin altındaki çöp kutusunda 15 gün kalır.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	Bitki, ekim tarihinin sezonuna göre sıralanmış bir listeden seçilir; Başka bitki… bir ad ve tür alır; sezon dışında uygulama yeniden sorar.
+The file could not be saved: 	Dosya kaydedilemedi: 
+The highest temperature of the next 7 days: 	Önümüzdeki 7 günün en yüksek sıcaklığı: 
+The hours are missing from the data.	Verilerde saatler eksik.
+The last stage is reached.	Son evreye ulaşıldı.
+The leaves stay wet 	Yapraklar ıslak kalır 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Kalem parseli düzenler: ad, bitki, ekim tarihi, alan; köşeler haritada taşınır.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	Sezonun ilk günleri Open-Meteo arşivinden gelir; internetle indirilir.
+The soil	Toprak
+The strongest gust of the next 72 hours: 	Önümüzdeki 72 saatin en güçlü hamlesi: 
+Thresholds for 	Eşikler: 
+Tillering	Kardeşlenme
+Today	Bugün
+Too cold (under 5 °C).	Çok soğuk (5 °C altında).
+Too hot (over 28 °C).	Çok sıcak (28 °C üzerinde).
+Too much wind (drift).	Çok fazla rüzgâr (sürüklenme).
+Updated 	Güncellendi 
+Vegetables	Sebzeler
+Veraison	Ben düşme
+Vs. last year	Geçen yıla göre
+Wait	Bekle
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Parseli izleyin; ıslaklık sürerse ilaçlama gerekebilir.
+Water & Soil	Su ve Toprak
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Su ve Toprak: 7 günlük yağmur ve buharlaşma (ET₀) ve denge; geçmişin ve önümüzdeki 7 günün grafiği; 6 ve 18 cm'de toprak, yüzey nemi, tarlada makineler.
+Wet leaf	Islak yaprak
+Wet leaf hours	Islak yaprak saatleri
+Wet leaf now	Şimdi ıslak yaprak
+What you can do	Neler yapabilirsiniz
+Wind 	Rüzgâr 
+Wind / gusts now	Rüzgâr / hamleler şimdi
+Wind and gusts	Rüzgâr ve hamleler
+Wind · hail	Rüzgâr · dolu
+Wind, ΔT or temperature outside the ideal range.	Rüzgâr, ΔT veya sıcaklık ideal aralığın dışında.
+Winter cereals	Kışlık tahıllar
+With this date the degree days and the risks can come out wrong.	Bu tarihle gün-derecesi ve riskler yanlış çıkabilir.
+Write the crop's name	Bitkinin adını yazın
+air 	hava 
+as last year	geçen yıl gibi
+care	dikkat
+choose…	seçin…
+critical heat at 	kritik sıcaklık evresi: 
+days	gün
+deficit, irrigate	açık, sulayın
+disease watched: 	izlenen hastalık: 
+drag a corner to move it; a long press deletes it	taşımak için bir köşeyi sürükleyin; uzun basış onu siler
+dried at 	kuruma saati 
+estimated on 	tahmini tarih 
+evaporation (ET₀)	buharlaşma (ET₀)
+firm ground	sağlam zemin
+forecast	tahmin
+from GDD	GDD'ye göre
+fungal diseases	mantar hastalıkları
+fungi	mantarlar
+green zone = sowing threshold for 	yeşil bölge = ekim eşiği: 
+gusts max 	hamle en çok 
+last year	geçen yıl
+last year 	geçen yıl 
+maize	mısır
+max 	en çok 
+measured	ölçülen
+near saturation	doygunluğa yakın
+no	yasak
+no crop or sowing date yet	henüz bitki veya ekim tarihi yok
+no dew or rain lately	son zamanlarda çiy veya yağmur yok
+no spraying, secure what can fly	ilaçlama yok, uçabilecekleri sabitleyin
+no treatments in the hot hours	sıcak saatlerde ilaçlama yok
+not to be estimated now (cold)	şimdi tahmin edilemez (soğuk)
+number = ΔT	sayı = ΔT
+optimal	ideal
+ordered by the sowing date: 	ekim tarihine göre sıralı: 
+ordered by this month	bu aya göre sıralı
+over 32 °C	32 °C üzerinde
+planted	dikildi
+rain 3 days 	yağmur 3 gün 
+rain mm/day	yağmur mm/gün
+risk of compaction	sıkışma riski
+score 	puan 
+slight deficit	hafif açık
+sowing soil 	ekim toprağı 
+sown 	ekildi 
+surplus	fazla
+tap a card	bir karta dokunun
+the field is hard to work	tarla zor işlenir
+the leaves are wet now	yapraklar şimdi ıslak
+the soil compacts	toprak sıkışır
+the sowing date	ekim tarihi
+this season	bu sezon
+threshold 12 h	eşik 12 h
+today	bugün
+under −5 °C	−5 °C altında
+wet	ıslak
+write the name	adı yazın
+yes	evet
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Parseller: parsel kartlarıyla harita (dikeyde altta bir sıra, yatayda sağda bir sütun). Yalnızca bu telefonda saklanır.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ parsel ekler: iğne haritanın ortasında başlar, haritaya dokunmak onu taşır; ad üstte yer alır.
+Wheat	Buğday
+Barley	Arpa
+Triticale	Tritikale
+Rapeseed	Kolza
+Maize	Mısır
+Sunflower	Ayçiçeği
+Soybean	Soya
+Sugar beet	Şeker pancarı
+Potato	Patates
+Vineyard	Bağ
+Orchard	Meyve bahçesi
+Alfalfa	Yonca
+Septoria	Septorya
+Net blotch	Ağ leke
+Phoma	Phoma
+Fusarium	Fusarium
+Downy mildew	Mildiyö
+Cercospora	Cercospora yaprak lekesi
+Late blight	Patates mildiyösü
+Scab	Kara leke
+Anthracnose	Antraknoz
+grain filling	dane dolumu
+flowering	çiçeklenme
+pollination	tozlanma
+root growth	kök gelişimi
+tuber forming	yumru oluşumu
+regrowth	yeniden büyüme
+.	.

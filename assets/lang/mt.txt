@@ -1124,3 +1124,311 @@ West	Punent
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Biċċiet tal-art: il-mappa bil-karti tal-biċċiet tal-art (wieqfa ringiela isfel, mimduda kolonna fuq il-lemin); mess fuq karta juri l-punti tagħha, Uri tiftaħha fuq l-iskrin ewlieni. Mess fuq labra jkabbar il-mappa fuq il-biċċa art u juri isimha; it-tieni mess juri l-punti tagħha. ＋ iżżid waħda: fejn int (GPS) jew mess fuq il-mappa, imbagħad l-isem; fil-veduta tas-satellita l-4 kantunieri tagħha jinstabu mill-istampa u jiċċaqilqu bis-saba'; + Punt iżżid wieħed (sa 7), Ċirku jqassamhom indaqs fuq ċirku, għafsa twila tħassar wieħed; Issejvja u ✕ joqogħdu fuq il-kaxxa. Fuq karta: il-lapes jeditja, il-vireg jiftħu l-Istatistika · PDF tagħha, il-qanpiena tixgħel jew titfi n-notifiki tagħha, il-landa tħassarha. Miżmuma biss f'dan it-telefon.
 Statistics	Statistika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Biċċiet tal-art: il-mappa bil-karti tal-biċċiet tal-art (wieqfa ringiela isfel, mimduda kolonna fuq il-lemin); mess fuq karta jkabbar il-mappa fuq il-biċċa art u juri l-punti tagħha, Statistika tiftaħ l-istatistika tagħha. Mess fuq labra jkabbar il-mappa fuq il-biċċa art u juri isimha; it-tieni mess juri l-punti tagħha. ＋ iżżid waħda: il-labra tibda f'nofs il-mappa (il-buttuna GPS iġġibha fejn int) u mess fuq il-mappa jċaqlaqha; l-isem jinsab fuq; fil-veduta tas-satellita l-4 kantunieri tagħha jinstabu mill-istampa u jiċċaqilqu bis-saba'; + Punt iżżid wieħed (sa 7), Ċirku jqassamhom indaqs fuq ċirku, għafsa twila tħassar wieħed; Issejvja u ✕ joqogħdu fuq il-kaxxa. Fuq karta: il-lapes jeditja, il-vireg jiftħu l-Istatistika · PDF tagħha, il-qanpiena tixgħel jew titfi n-notifiki tagħha, il-landa tħassarha. Miżmuma biss f'dan it-telefon.
+# v2.001
+ Anti-drift nozzles.	 Żennuni kontra t-tixrid.
+ Rain from 	 Xita mill- 
+ and 	 u 
+ at 	 fil- 
+ corners · perimeter 	 kantunieri · perimetru 
+ days ahead	 jiem qabel
+ days behind	 jiem wara
+ h in the last 12	 h fl-aħħar 12
+ h wet leaf	 h werqa mxarrba
+ hours in a row, at 	 sigħat wara xulxin, b' 
+ in 48 h.	 f'48 h.
+ in 7 days	 f'7 ijiem
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 fl-arja l-aktar baxx. Il-ħamrija tista' tkun 2–4 °C iktar kiesħa mill-arja.
+ is usually sown in 	 normalment jinżera' f' 
+ on 	 fuq 
+ or after the winter rest	 jew wara l-mistrieħ tax-xitwa
+ parcels ▾	 għelieqi ▾
+ sown on 	 miżrugħ fl- 
+ starts at ≈ 	 jibda b'≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · sors Open-Meteo (mudelli; il-ħamrija u r-riskji huma stimi) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	"Żomm" jgħin għal uċuħ tas-serer jew data ħażina li se tikkoreġi wara.
+, ceiling 	, limitu 
+, critically at 	, kritiku fil- 
+, from 	, mill- 
+, when the soil has 	, meta l-ħamrija jkollha 
+, with 	, b' 
+. Over 32 °C the crop suffers	. 'Il fuq minn 32 °C l-għelejjel ibati
+14 d	14 j
+28 d	28 j
+28 days: 	28 jum: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: il-qtar jevapora b'mod ikkontrollat. Taħt 2 °C riskju ta' tixrid, 'il fuq minn 10 °C il-qtar jinxef fl-arja.
+3 leaves	3 weraq
+4–6 leaves	4–6 weraq
+7 d	7 j
+7 days	7 ijiem
+8–10 leaves	8–10 weraq
+: base temperature 	: temperatura bażi 
+; storm energy (CAPE) up to 	; enerġija tal-maltempata (CAPE) sa 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Mess fuq kard jersaq il-mappa fuq l-għalqa u juri l-punti tagħha; Statistika tiftaħ l-istatistika tagħha.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Mess fuq labra jersaq fuq l-għalqa u juri isimha; it-tieni mess juri l-punti tagħha.
+Action of the day	Azzjoni tal-ġurnata
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	Azzjoni tal-ġurnata: x'tagħmel illum, bil-punteġġ tal-isprejjar (0–100) u l-akbar riskju tat-48 siegħa li ġejjin.
+Another crop…	Għelejjel ieħor…
+Area	Erja
+At the soil surface it can be 	Fil-wiċċ tal-ħamrija jista' jkun 
+Back	Lura
+Balance 7 days	Bilanċ 7 ijiem
+Branching	Tferigħ
+Bud break	Fetqa tal-blanzuni
+Budding	Tibżil
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Buttuni f'☰, 2 f'ringiela: l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon. Fl-Istati Uniti l-Ingliż u l-Ispanjol biss.
+C. That is how the fungus takes hold on the leaves.	C. Hekk il-fungu jaqbad fuq il-weraq.
+CARE	ATTENZJONI
+CSV saved	CSV issejvjat
+CSV table (Excel)	Tabella CSV (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Kalkolu: jgħoddu r-raffiki minn 20 km/h u CAPE 'il fuq minn 300 J/kg; 75 km/h jew 2500 J/kg = ċert.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Kalkolu: l-ogħla temperatura tal-arja; 28 °C ebda riskju, 34 °C u 'l fuq ċert.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Kalkolu: it-temperatura tal-wiċċ tal-ħamrija minn Open-Meteo (stima); +4 °C ebda riskju, −2 °C u inqas ċert.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Kalkolu: werqa mxarrba = xita, nida jew umdità ≥ 90 %, f'12–26 °C; 12 h wara xulxin jew aktar = riskju għoli.
+Care	Attenzjoni
+Change on the map	Ibdel fuq il-mappa
+Choose another crop	Agħżel għelejjel ieħor
+Choose the crop	Agħżel l-għelejjel
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Agħżel l-għelejjel u d-data taż-żriegħ tal-għalqa: minnhom jibdew il-gradi-jum tal-istaġun, l-istadju u t-tqabbil.
+Circle puts the points evenly on a circle.	Ċirku jqassam il-punti b'mod ugwali fuq ċirku.
+Coldest hour	L-iktar siegħa kiesħa
+Coming up	Ġej
+Critical interval	Intervall kritiku
+Crop	Għelejjel
+Crop type · for the thresholds	Tip ta' għelejjel · għal-limiti
+Days (* = forecast)	Jiem (* = tbassir)
+Delta-T (ΔT) now	Delta-T (ΔT) issa
+Delta-T now	Delta-T issa
+Delta-T over 10 °C: the drops dry in the air.	Delta-T 'il fuq minn 10 °C: il-qtar jinxef fl-arja.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T taħt 2 °C: il-qtar ma jinxifx u jinġarr.
+Earthquake	Terremot
+Edit parcel	Editja l-għalqa
+Emergence	Nibta
+Estimated stage	Stadju stmat
+Evaporation	Evaporazzjoni
+Evaporation (ET₀) 7 days	Evaporazzjoni (ET₀) 7 ijiem
+Flowering	Fjoritura
+Forage	Għalf
+Frost	Ġlata
+Fruit set	Għaqda tal-frott
+Fungal diseases	Mard fungali
+GDD base 	Bażi GDD 
+GDD on the same date	GDD fl-istess data
+GDD since 	GDD mill- 
+Good spray hours in 72 h	Sigħat tajbin għall-isprejjar f'72 h
+Ground frost	Ġlata fl-art
+Ground frost 	Ġlata fl-art 
+Growing degree days (GDD)	Gradi-jum tat-tkabbir (GDD)
+Growth	Tkabbir
+Gusts 	Raffiki 
+HIGH RISK	RISKJU GĦOLI
+Hard frost days	Jiem ta' ġlata qawwija
+Harvest	Ħsad
+Heading	Sbul
+Heat 	Sħana 
+Heat stress	Stress tas-sħana
+High risk of 	Riskju għoli ta' 
+History and forecast	Storja u tbassir
+Hoarfrost	Silġ tal-għodwa
+Hottest hour	L-iktar siegħa sħuna
+Hour 	Siegħa 
+Hours over 32 °C	Sigħat 'il fuq minn 32 °C
+IN SEASON	FL-ISTAĠUN
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Fil-veduta satellitari l-4 kantunieri jinstabu mill-istampa u jitħarrku bis-saba'; + Punt iżid wieħed (sa 7), għafsa twila tħassar wieħed.
+Infection: 	Infezzjoni: 
+Irrigate if you can and avoid treatments in the hot hours.	Saqqi jekk tista' u evita t-trattamenti fis-sigħat sħan.
+Keep	Żomm
+LOW RISK	RISKJU BAXX
+Last year on the same date	Is-sena l-oħra fl-istess data
+Light wind 	Riħ ħafif 
+MODERATE RISK	RISKJU MODERAT
+Machinery on the field	Makkinarju fl-għalqa
+Moderate risk of 	Riskju moderat ta' 
+NOT THE SEASON	MHUX L-ISTAĠUN
+Name	Isem
+Next 72 hours	Il-72 siegħa li ġejjin
+No app on the phone opens CSV files.	Ebda app fuq it-telefon ma tiftaħ fajls CSV.
+No corners yet: only the pin.	Għad m'hemmx kantunieri: il-labra biss.
+No data for the season yet.	Għad m'hemmx dejta għall-istaġun.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Għad m'hemmx dejta għal din l-għalqa. Iftaħha darba bl-internet: l-app tniżżel id-dejta tagħha minn Open-Meteo.
+No field crop is sown in this month; orchards, vines and the others are below.	F'dan ix-xahar ma jinżera' l-ebda għelejjel tal-għelieqi; il-ġonna tal-frott, id-dwieli u l-oħrajn huma hawn taħt.
+No good hours in the next 24 hours.	Ebda siegħa tajba fl-24 siegħa li ġejjin.
+No long wet spell in the next 72 hours.	Ebda perjodu twil imxarrab fit-72 siegħa li ġejjin.
+No risk	Ebda riskju
+No spraying today	Tisprejjax illum
+No treatment needed for now.	L-ebda trattament meħtieġ għalissa.
+Nothing special in the next 72 hours.	Xejn speċjali fit-72 siegħa li ġejjin.
+Nothing to do.	Xejn x'tagħmel.
+OPTIMAL	OTTIMALI
+OUT OF SEASON	BARRA L-ISTAĠUN
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	Fuq il-mappa l-kantunieri jitħarrku bis-saba'; + Punt, Ċirku u l-għafsa twila jaħdmu hemm ukoll. It-temp jittieħed miċ-ċentru tal-għalqa.
+Operational	Operazzjonali
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Operazzjonali: it-tieqa tal-isprejjar siegħa b'siegħa (aħdar, isfar, aħmar; in-numru huwa ΔT); mess fuq siegħa juri l-valuri tagħha. Delta-T, riħ u raffiki, werqa mxarrba.
+Optimal	Ottimali
+Orchard / vine	Ġnien tal-frott / dwieli
+Other crops · in another season	Għelejjel oħra · fi staġun ieħor
+Outline on the map	Kontorn fuq il-mappa
+PDF report	Rapport PDF
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	PDF · CSV jissejvja s-sommarju, it-72 siegħa li ġejjin u l-jiem f'Downloads.
+Preventive treatment before the wet spell, in a green window	Trattament preventiv qabel il-perjodu mxarrab, f'tieqa ħadra
+Protect young plants and sensitive crops; no treatments in the cold hours.	Ipproteġi l-pjanti żgħar u l-uċuħ sensittivi; ebda trattament fis-sigħat kesħin.
+RH	UR
+RH 	UR 
+Rain 	Xita 
+Rain 7 days	Xita 7 ijiem
+Rain 7 days / 28 days	Xita 7 ijiem / 28 jum
+Rain now or soon: it washes the treatment off.	Xita issa jew dalwaqt: taħsel it-trattament.
+Right for 	Tajbin għal 
+Right now	Tajbin issa
+Ripening	Maturazzjoni
+Risks	Riskji
+Risks 72 h	Riskji 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Riskji 72 h: mard fungali, ġlata fl-art, stress tas-sħana, riħ u silġ; mess fuq kard jispjegah u jgħid x'tagħmel. Taħthom: x'inhu ġej.
+Save and ✕, above the new parcel's box, keep it or close the box.	Issejvja u ✕, fuq il-kaxxa tal-għalqa l-ġdida, iżommuha jew jagħlqu l-kaxxa.
+Save as PDF or CSV	Issejvja bħala PDF jew CSV
+Save the statistics	Issejvja l-istatistika
+Score	Punteġġ
+Season	Staġun
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Staġun: gradi-jum (GDD) miż-żriegħ meta mqabbel mas-sena l-oħra, l-istadju stmat, l-istress tas-sħana u l-jiem ta' ġlata qawwija. Jeħtieġ l-għelejjel u d-data taż-żriegħ.
+Secure what the wind can take; no spraying in the gusts.	Waħħal dak li jista' jieħu r-riħ; tisprejjax fir-raffiki.
+Soil / air	Ħamrija / arja
+Soil temperature 6 / 18 cm	Temperatura tal-ħamrija 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Sors: Open-Meteo (mudelli; il-ħamrija u r-riskji huma stimi). 
+Sowing date	Data taż-żriegħ
+Spray between 	Isprejja bejn 
+Spray window	Tieqa tal-isprejjar
+Spray with care between 	Isprejja b'attenzjoni bejn 
+Spring row crops	Uċuħ tar-rebbiegħa f'ringieli
+Stem elongation	Titwil taz-zokk
+Storm energy	Enerġija tal-maltempata
+Strongest gust	L-aqwa raffika
+Surface moisture	Umdità tal-wiċċ
+Surface moisture 0–1 cm	Umdità tal-wiċċ 0–1 cm
+TODAY	ILLUM
+The GPS button takes the map, and the new parcel's pin, where you are.	Il-buttuna GPS tieħu l-mappa, u l-labra tal-għalqa l-ġdida, fejn int.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	Il-vireg fuq il-kard ta' għalqa jew Statistika fil-bużżieqa tagħha. Fuq nett: l-għalqa (mess jagħżel oħra), 4 tabs u PDF · CSV.
+The bars open its Statistics.	Il-vireg jiftħu l-Istatistika tagħha.
+The bell turns its notifications on or off.	Il-qanpiena tixgħel jew titfi n-notifiki tagħha.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	Il-barmil iħassarha; tibqa' 15-il jum fil-barmil taħt il-buttuna GPS.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	L-għelejjel jintgħażel minn lista ordnata skont l-istaġun tad-data taż-żriegħ; Għelejjel ieħor… jieħu isem u tip; barra l-istaġun l-app terġa' tistaqsi.
+The file could not be saved: 	Il-fajl ma setax jiġi ssejvjat: 
+The highest temperature of the next 7 days: 	L-ogħla temperatura tas-7 ijiem li ġejjin: 
+The hours are missing from the data.	Is-sigħat huma neqsin mid-dejta.
+The last stage is reached.	L-aħħar stadju intlaħaq.
+The leaves stay wet 	Il-weraq jibqa' mxarrab 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	Il-lapes jeditja l-għalqa: isem, għelejjel, data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	L-ewwel jiem tal-istaġun ġejjin mill-arkivju ta' Open-Meteo; jitniżżlu bl-internet.
+The soil	Il-ħamrija
+The strongest gust of the next 72 hours: 	L-aqwa raffika tat-72 siegħa li ġejjin: 
+Thresholds for 	Limiti għal 
+Tillering	Tferigħ tal-qamħ
+Today	Illum
+Too cold (under 5 °C).	Kiesaħ wisq (taħt 5 °C).
+Too hot (over 28 °C).	Sħun wisq ('il fuq minn 28 °C).
+Too much wind (drift).	Riħ wisq (tixrid).
+Updated 	Aġġornat 
+Vegetables	Ħaxix
+Veraison	Bidla fil-kulur tal-għeneb
+Vs. last year	Kontra s-sena l-oħra
+Wait	Stenna
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Osserva l-għalqa; jista' jkun meħtieġ trattament jekk l-imxarrab idum.
+Water & Soil	Ilma u Ħamrija
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Ilma u Ħamrija: 7 ijiem xita u evaporazzjoni (ET₀) u l-bilanċ; il-grafika tal-imgħoddi u tas-7 ijiem li ġejjin; ħamrija f'6 u 18 cm, umdità tal-wiċċ, makkinarju fl-għalqa.
+Wet leaf	Werqa mxarrba
+Wet leaf hours	Sigħat ta' werqa mxarrba
+Wet leaf now	Werqa mxarrba issa
+What you can do	X'tista' tagħmel
+Wind 	Riħ 
+Wind / gusts now	Riħ / raffiki issa
+Wind and gusts	Riħ u raffiki
+Wind · hail	Riħ · silġ
+Wind, ΔT or temperature outside the ideal range.	Riħ, ΔT jew temperatura barra l-firxa ideali.
+Winter cereals	Ċereali tax-xitwa
+With this date the degree days and the risks can come out wrong.	B'din id-data l-gradi-jum u r-riskji jistgħu joħorġu ħżiena.
+Write the crop's name	Ikteb l-isem tal-għelejjel
+air 	arja 
+as last year	bħas-sena l-oħra
+care	attenzjoni
+choose…	agħżel…
+critical heat at 	sħana kritika fil- 
+days	jiem
+deficit, irrigate	defiċit, saqqi
+disease watched: 	marda osservata: 
+drag a corner to move it; a long press deletes it	kaxkar kantuniera biex tiċċaqlaqha; għafsa twila tħassarha
+dried at 	nixef fil- 
+estimated on 	stmat fl- 
+evaporation (ET₀)	evaporazzjoni (ET₀)
+firm ground	art soda
+forecast	tbassir
+from GDD	skont il-GDD
+fungal diseases	mard fungali
+fungi	fungi
+green zone = sowing threshold for 	żona ħadra = limitu taż-żriegħ għal 
+gusts max 	raffiki mass. 
+last year	is-sena l-oħra
+last year 	is-sena l-oħra 
+maize	qamħirrum
+max 	mass. 
+measured	imkejjel
+near saturation	kważi saturat
+no	projbit
+no crop or sowing date yet	għad m'hemmx għelejjel jew data taż-żriegħ
+no dew or rain lately	ebda nida jew xita dan l-aħħar
+no spraying, secure what can fly	tisprejjax, waħħal dak li jista' jtir
+no treatments in the hot hours	ebda trattament fis-sigħat sħan
+not to be estimated now (cold)	ma jistax jiġi stmat issa (kiesaħ)
+number = ΔT	numru = ΔT
+optimal	ottimali
+ordered by the sowing date: 	ordnati skont id-data taż-żriegħ: 
+ordered by this month	ordnati skont dan ix-xahar
+over 32 °C	'il fuq minn 32 °C
+planted	imħawwel
+rain 3 days 	xita 3 ijiem 
+rain mm/day	xita mm/jum
+risk of compaction	riskju ta' kompattazzjoni
+score 	punteġġ 
+slight deficit	defiċit żgħir
+sowing soil 	ħamrija għaż-żriegħ 
+sown 	miżrugħ 
+surplus	żejjed
+tap a card	messi kard
+the field is hard to work	l-għalqa diffiċli tinħadem
+the leaves are wet now	il-weraq huwa mxarrab issa
+the soil compacts	il-ħamrija tikkompatta
+the sowing date	id-data taż-żriegħ
+this season	dan l-istaġun
+threshold 12 h	limitu 12 h
+today	illum
+under −5 °C	taħt −5 °C
+wet	imxarrab
+write the name	ikteb l-isem
+yes	iva
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Għelieqi: il-mappa bil-kards tal-għelieqi (vertikali ringiela isfel, orizzontali kolonna fuq il-lemin). Miżmuma biss fuq dan it-telefon.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	＋ iżid għalqa: il-labra tibda f'nofs il-mappa, mess fuq il-mappa jċaqlaqha; l-isem jinsab fuq.
+Wheat	Qamħ
+Barley	Xgħir
+Triticale	Tritikal
+Rapeseed	Kolza
+Maize	Qamħirrum
+Sunflower	Ġirasol
+Soybean	Sojja
+Sugar beet	Pitravi taz-zokkor
+Potato	Patata
+Vineyard	Għalqa tad-dwieli
+Orchard	Ġnien tal-frott
+Alfalfa	Alfalfa
+Septoria	Septorja
+Net blotch	Tbajja' tax-xibka
+Phoma	Phoma
+Fusarium	Fusarium
+Downy mildew	Mildew
+Cercospora	Cercospora
+Late blight	Mildew tal-patata
+Scab	Scab
+Anthracnose	Antraknożi
+grain filling	mili tal-qamħ
+flowering	fjoritura
+pollination	pollinazzjoni
+root growth	tkabbir tal-għerq
+tuber forming	formazzjoni tat-tuberi
+regrowth	tkabbir mill-ġdid
+.	.

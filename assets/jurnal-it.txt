@@ -1,4 +1,12 @@
-Versione attuale: v.1.520 · 16.11.2026
+Versione attuale: v.2.001 · 17.11.2026
+IMPOSTAZIONI
+- Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
+PARTICELLE
+- Modifica particella: la matita apre la pagina della particella: nome, coltura (elenco secondo la stagione della data di semina o Altra coltura…), data di semina, superficie; gli angoli si spostano sulla mappa.
+- Statistiche: per ogni particella, l'Azione del giorno e 4 schede: Operativo (finestra di irrorazione ora per ora, Delta-T, vento, foglia bagnata), Acqua e Suolo (pioggia, evaporazione, suolo a 6 e 18 cm), Stagione (gradi-giorno rispetto all'anno scorso, fase stimata) e Rischi 72 h (malattie fungine, gelata al suolo, caldo, vento e grandine); salvataggio in PDF o CSV.
+- Miglioramenti del design e correzioni di errori.
+
+Versione 1.4 (v.1.400 – v.1.520)
 AGGIORNAMENTI
 - Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ☰ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
 IMPOSTAZIONI

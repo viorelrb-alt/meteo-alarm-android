@@ -1,4 +1,12 @@
-Aktuelle Version: v.1.520 · 16.11.2026
+Aktuelle Version: v.2.001 · 17.11.2026
+EINSTELLUNGEN
+- Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
+PARZELLEN
+- Parzelle bearbeiten: der Stift öffnet die Seite der Parzelle: Name, Kultur (Liste nach der Saison des Aussaatdatums oder Andere Kultur…), Aussaatdatum, Fläche; die Ecken werden auf der Karte verschoben.
+- Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Delta-T, Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
+- Design-Verbesserungen und Fehlerbehebungen.
+
+Version 1.4 (v.1.400 – v.1.520)
 BENACHRICHTIGUNGEN
 - Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
 - Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.

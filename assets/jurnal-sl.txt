@@ -1,4 +1,12 @@
-Trenutna različica: v.1.520 · 16.11.2026
+Trenutna različica: v.2.001 · 17.11.2026
+NASTAVITVE
+- Jezik prikaza: v ☰ angleščina in jezik države; Drugi jeziki: drugi jeziki države, veliki jeziki EU, romunščina in jezik telefona (v ZDA samo angleščina in španščina).
+PARCELE
+- Statistika: za vsako parcelo Opravilo dneva in 4 zavihki: Operativno (okno škropljenja uro za uro, Delta-T, veter, moker list), Voda in tla (dež, izhlapevanje, tla na 6 in 18 cm), Sezona (stopinjski dnevi v primerjavi z lani, ocenjena faza) in Tveganja 72 h (glivične bolezni, talna pozeba, vročina, veter in toča); shranjevanje v PDF ali CSV.
+- Uredi parcelo: svinčnik odpre stran parcele: ime, kultura (seznam po sezoni datuma setve ali Druga kultura…), datum setve, površina; oglišča se premikajo na zemljevidu.
+- Izboljšave oblikovanja in popravki napak.
+
+Različica 1.4 (v.1.400 – v.1.520)
 GLAVNI ZASLON
 - Glavni zaslon: stran se pomika pod steklom na vrhu, po razdelkih (Naslednje ure, Napoved za pet dni, Podrobnosti vremena); gumbi in baterija lebdijo spodaj.
 - Napoved za pet dni: dnevi 3–5 se sami menjajo vsake 3 sekunde do prvega dotika.

@@ -1124,3 +1124,311 @@ West	Nyugat
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card shows its points, Show opens it on the main screen. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: where you are (GPS) or a tap on the map, then the name; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcellák: a térkép a parcellák kártyáival (állóban egy sor alul, fekvőben egy oszlop jobbra); egy kártya érintése megmutatja a pontjait, a Megjelenítés megnyitja a főképernyőn. Egy tű érintése ráközelít a parcellára és megmutatja a nevét; a második érintés a pontjait mutatja. A ＋ újat ad hozzá: ahol vagy (GPS) vagy egy érintés a térképen, majd a név; műholdnézetben a 4 sarkát a kép alapján megtalálja, és ujjal mozgathatók; a + Pont hozzáad egyet (legfeljebb 7), a Kör egyenletesen elosztja őket egy körön, hosszú nyomás töröl egyet; a Mentés és a ✕ az ablak fölött áll. A kártyán: a ceruza szerkeszt, az oszlopok megnyitják a Statisztika · PDF-et, a csengő be- vagy kikapcsolja az értesítéseit, a kuka törli. Csak ezen a telefonon tárolódnak.
 Statistics	Statisztika
 ☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right); a tap on a card zooms the map on the parcel and shows its points, Statistics opens its statistics. A tap on a pin zooms the map on the parcel and shows its name; a second tap shows its points. ＋ adds one: the pin starts in the middle of the map (the GPS button moves it where you are) and a tap on the map moves it; the name goes on top; in the satellite view its 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), Circle puts them evenly on a circle, a long press deletes one; Save and ✕ sit above the box. On a card: the pencil edits, the bars open its Statistics · PDF, the bell turns its notifications on or off, the bin deletes it. Kept only on this phone.	☰ › Parcellák: a térkép a parcellák kártyáival (állóban egy sor alul, fekvőben egy oszlop jobbra); egy kártya érintése ráközelít a parcellára és megmutatja a pontjait, a Statisztika megnyitja a statisztikáját. Egy tű érintése ráközelít a parcellára és megmutatja a nevét; a második érintés a pontjait mutatja. A ＋ újat ad hozzá: a tű a térkép közepéről indul (a GPS gomb oda teszi, ahol vagy), a térkép érintése elmozdítja; a név felül áll; műholdnézetben a 4 sarkát a kép alapján megtalálja, és ujjal mozgathatók; a + Pont hozzáad egyet (legfeljebb 7), a Kör egyenletesen elosztja őket egy körön, hosszú nyomás töröl egyet; a Mentés és a ✕ az ablak fölött áll. A kártyán: a ceruza szerkeszt, az oszlopok megnyitják a Statisztika · PDF-et, a csengő be- vagy kikapcsolja az értesítéseit, a kuka törli. Csak ezen a telefonon tárolódnak.
+# v2.001
+ Anti-drift nozzles.	 Elsodródásgátló fúvókák.
+ Rain from 	 Eső kezdete: 
+ and 	 és 
+ at 	 ekkor: 
+ corners · perimeter 	 sarok · kerület 
+ days ahead	 nap előny
+ days behind	 nap lemaradás
+ h in the last 12	 h az elmúlt 12-ben
+ h wet leaf	 h nedves levél
+ hours in a row, at 	 óra egymás után, ekkor: 
+ in 48 h.	 48 órán belül.
+ in 7 days	 7 nap alatt
+ in the air at the lowest. The soil can be 2–4 °C colder than the air.	 a levegőben a legalacsonyabb. A talaj 2–4 °C-kal hidegebb lehet a levegőnél.
+ is usually sown in 	 vetése általában: 
+ on 	 – 
+ or after the winter rest	 vagy a téli nyugalom után
+ parcels ▾	 parcella ▾
+ sown on 	 vetve: 
+ starts at ≈ 	 kezdete ≈ 
+ · source Open-Meteo (models; the soil and the risks are estimates) · Meteo Alarm Android	 · forrás Open-Meteo (modellek; a talaj és a kockázatok becslések) · Meteo Alarm Android
+"Keep" is useful for greenhouse crops or a wrong date you will correct later.	A „Megtartás” üvegházi kultúrákhoz vagy később javítandó hibás dátumhoz hasznos.
+, ceiling 	, plafon 
+, critically at 	, kritikus: 
+, from 	, ettől: 
+, when the soil has 	, amikor a talaj 
+, with 	, ezzel: 
+. Over 32 °C the crop suffers	. 32 °C fölött a növény szenved
+14 d	14 n
+28 d	28 n
+28 days: 	28 nap: 
+2–8 °C: the drops evaporate in a controlled way. Under 2 °C drift risk, over 10 °C the drops dry in the air.	2–8 °C: a cseppek szabályozottan párolognak. 2 °C alatt elsodródás veszélye, 10 °C fölött a cseppek a levegőben kiszáradnak.
+3 leaves	3 levél
+4–6 leaves	4–6 levél
+7 d	7 n
+7 days	7 nap
+8–10 leaves	8–10 levél
+: base temperature 	: alaphőmérséklet 
+; storm energy (CAPE) up to 	; zivatarenergia (CAPE) legfeljebb 
+A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.	Egy kártya érintése a parcellára nagyít és megmutatja a pontjait; a Statisztika megnyitja a statisztikáját.
+A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.	Egy tű érintése a parcellára nagyít és megmutatja a nevét; a második érintés a pontjait mutatja.
+Action of the day	A nap teendője
+Action of the day: what to do today, with the spray score (0–100) and the biggest risk of the next 48 hours.	A nap teendője: mit tegyél ma, a permetezési pontszámmal (0–100) és a következő 48 óra legnagyobb kockázatával.
+Another crop…	Más kultúra…
+Area	Terület
+At the soil surface it can be 	A talaj felszínén lehet 
+Back	Vissza
+Balance 7 days	Mérleg 7 nap
+Branching	Elágazás
+Bud break	Rügyfakadás
+Budding	Bimbózás
+Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.	Gombok a ☰-ben, soronként 2: angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve. Az USA-ban csak angol és spanyol.
+C. That is how the fungus takes hold on the leaves.	C. Így telepszik meg a gomba a leveleken.
+CARE	FIGYELEM
+CSV saved	CSV mentve
+CSV table (Excel)	CSV-táblázat (Excel)
+Calculation: gusts from 20 km/h and CAPE over 300 J/kg count; 75 km/h or 2500 J/kg = certain.	Számítás: a 20 km/h feletti széllökések és a 300 J/kg feletti CAPE számít; 75 km/h vagy 2500 J/kg = biztos.
+Calculation: the highest air temperature; 28 °C no risk, 34 °C and over certain.	Számítás: a legmagasabb léghőmérséklet; 28 °C kockázat nélkül, 34 °C és felette biztos.
+Calculation: the soil-surface temperature from Open-Meteo (estimate); +4 °C no risk, −2 °C and lower certain.	Számítás: a talajfelszín hőmérséklete az Open-Meteo alapján (becslés); +4 °C kockázat nélkül, −2 °C és alatta biztos.
+Calculation: wet leaf = rain, dew or humidity ≥ 90 %, at 12–26 °C; 12 h in a row or more = high risk.	Számítás: nedves levél = eső, harmat vagy ≥ 90 % páratartalom, 12–26 °C-on; 12 h egymás után vagy több = magas kockázat.
+Care	Figyelem
+Change on the map	Módosítás a térképen
+Choose another crop	Másik kultúra választása
+Choose the crop	Válaszd ki a kultúrát
+Choose the parcel's crop and sowing date: the season's degree days, its stage and the comparisons start from them.	Válaszd ki a parcella kultúráját és vetési dátumát: ezekből indul a szezon hőösszege, a fenológiai fázis és az összehasonlítások.
+Circle puts the points evenly on a circle.	A Kör egyenletesen elosztja a pontokat egy körön.
+Coldest hour	Leghidegebb óra
+Coming up	Következik
+Critical interval	Kritikus időszak
+Crop	Kultúra
+Crop type · for the thresholds	Kultúra típusa · a küszöbökhöz
+Days (* = forecast)	Napok (* = előrejelzés)
+Delta-T (ΔT) now	Delta-T (ΔT) most
+Delta-T now	Delta-T most
+Delta-T over 10 °C: the drops dry in the air.	Delta-T 10 °C fölött: a cseppek a levegőben kiszáradnak.
+Delta-T under 2 °C: the drops do not dry and drift.	Delta-T 2 °C alatt: a cseppek nem száradnak és elsodródnak.
+Earthquake	Földrengés
+Edit parcel	Parcella szerkesztése
+Emergence	Kelés
+Estimated stage	Becsült fázis
+Evaporation	Párolgás
+Evaporation (ET₀) 7 days	Párolgás (ET₀) 7 nap
+Flowering	Virágzás
+Forage	Takarmánynövények
+Frost	Fagy
+Fruit set	Terméskötődés
+Fungal diseases	Gombás betegségek
+GDD base 	GDD alap 
+GDD on the same date	GDD ugyanazon a napon
+GDD since 	GDD ettől: 
+Good spray hours in 72 h	Jó permetezési órák 72 h alatt
+Ground frost	Talajmenti fagy
+Ground frost 	Talajmenti fagy 
+Growing degree days (GDD)	Hőösszeg (GDD)
+Growth	Növekedés
+Gusts 	Széllökések 
+HIGH RISK	MAGAS KOCKÁZAT
+Hard frost days	Erős fagyos napok
+Harvest	Betakarítás
+Heading	Kalászolás
+Heat 	Hőség 
+Heat stress	Hőstressz
+High risk of 	Magas kockázat: 
+History and forecast	Előzmények és előrejelzés
+Hoarfrost	Dér
+Hottest hour	Legmelegebb óra
+Hour 	Óra 
+Hours over 32 °C	Órák 32 °C fölött
+IN SEASON	SZEZONBAN
+In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.	Műholdas nézetben a 4 sarok a képből adódik és ujjal mozgatható; a + Pont hozzáad egyet (legfeljebb 7), a hosszú nyomás töröl egyet.
+Infection: 	Fertőzés: 
+Irrigate if you can and avoid treatments in the hot hours.	Öntözz, ha tudsz, és kerüld a kezeléseket a meleg órákban.
+Keep	Megtartás
+LOW RISK	ALACSONY KOCKÁZAT
+Last year on the same date	Tavaly ugyanazon a napon
+Light wind 	Gyenge szél 
+MODERATE RISK	KÖZEPES KOCKÁZAT
+Machinery on the field	Gépek a táblán
+Moderate risk of 	Közepes kockázat: 
+NOT THE SEASON	NEM SZEZON
+Name	Név
+Next 72 hours	Következő 72 óra
+No app on the phone opens CSV files.	A telefonon egy alkalmazás sem nyit meg CSV-fájlt.
+No corners yet: only the pin.	Még nincsenek sarkok: csak a tű.
+No data for the season yet.	Még nincs adat a szezonra.
+No data for this parcel yet. Open it once with internet: the app downloads its data from Open-Meteo.	Ehhez a parcellához még nincs adat. Nyisd meg egyszer internettel: az alkalmazás letölti az adatait az Open-Meteóról.
+No field crop is sown in this month; orchards, vines and the others are below.	Ebben a hónapban nem vetnek szántóföldi kultúrát; a gyümölcsös, a szőlő és a többi lent található.
+No good hours in the next 24 hours.	Nincs jó óra a következő 24 órában.
+No long wet spell in the next 72 hours.	Nincs hosszú nedves időszak a következő 72 órában.
+No risk	Nincs kockázat
+No spraying today	Ma ne permetezz
+No treatment needed for now.	Egyelőre nincs szükség kezelésre.
+Nothing special in the next 72 hours.	Semmi különös a következő 72 órában.
+Nothing to do.	Nincs teendő.
+OPTIMAL	OPTIMÁLIS
+OUT OF SEASON	SZEZONON KÍVÜL
+On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	A térképen a sarkok ujjal mozognak; a + Pont, a Kör és a hosszú nyomás ott is működik. Az időjárás a parcella közepéről jön.
+Operational	Operatív
+Operational: the spray window hour by hour (green, yellow, red; the number is ΔT); a tap on an hour shows its values. Delta-T, wind and gusts, wet leaf.	Operatív: a permetezési ablak óránként (zöld, sárga, piros; a szám a ΔT); egy óra érintése megmutatja az értékeit. Delta-T, szél és széllökések, nedves levél.
+Optimal	Optimális
+Orchard / vine	Gyümölcsös / szőlő
+Other crops · in another season	Más kultúrák · más szezonban
+Outline on the map	Körvonal a térképen
+PDF report	PDF-jelentés
+PDF · CSV saves the summary, the next 72 hours and the days in Downloads.	A PDF · CSV a Letöltések mappába menti az összegzést, a következő 72 órát és a napokat.
+Preventive treatment before the wet spell, in a green window	Megelőző kezelés a nedves időszak előtt, zöld ablakban
+Protect young plants and sensitive crops; no treatments in the cold hours.	Védd a fiatal növényeket és az érzékeny kultúrákat; ne kezelj a hideg órákban.
+RH	RP
+RH 	RP 
+Rain 	Eső 
+Rain 7 days	Eső 7 nap
+Rain 7 days / 28 days	Eső 7 nap / 28 nap
+Rain now or soon: it washes the treatment off.	Eső most vagy hamarosan: lemossa a kezelést.
+Right for 	Megfelelő ekkor: 
+Right now	Most megfelelő
+Ripening	Érés
+Risks	Kockázatok
+Risks 72 h	Kockázatok 72 h
+Risks 72 h: fungal diseases, ground frost, heat stress, wind and hail; a tap on a card explains it and says what to do. Under them: what comes next.	Kockázatok 72 h: gombás betegségek, talajmenti fagy, hőstressz, szél és jégeső; egy kártya érintése elmagyarázza és megmondja, mit tegyél. Alattuk: ami jön.
+Save and ✕, above the new parcel's box, keep it or close the box.	A Mentés és a ✕ az új parcella doboza fölött elmenti azt vagy bezárja a dobozt.
+Save as PDF or CSV	Mentés PDF-ként vagy CSV-ként
+Save the statistics	Statisztika mentése
+Score	Pontszám
+Season	Szezon
+Season: degree days (GDD) from the sowing date against last year, the estimated stage, heat stress and hard frost days. It needs the crop and the sowing date.	Szezon: hőösszeg (GDD) a vetéstől a tavalyihoz képest, a becsült fázis, a hőstressz és az erős fagyos napok. Kell hozzá a kultúra és a vetési dátum.
+Secure what the wind can take; no spraying in the gusts.	Rögzítsd, amit a szél elvihet; széllökésben ne permetezz.
+Soil / air	Talaj / levegő
+Soil temperature 6 / 18 cm	Talajhőmérséklet 6 / 18 cm
+Source: Open-Meteo (models; the soil and the risks are estimates). 	Forrás: Open-Meteo (modellek; a talaj és a kockázatok becslések). 
+Sowing date	Vetési dátum
+Spray between 	Permetezz ekkor: 
+Spray window	Permetezési ablak
+Spray with care between 	Óvatosan permetezz ekkor: 
+Spring row crops	Tavaszi kapások
+Stem elongation	Szárba indulás
+Storm energy	Zivatarenergia
+Strongest gust	Legerősebb lökés
+Surface moisture	Felszíni nedvesség
+Surface moisture 0–1 cm	Felszíni nedvesség 0–1 cm
+TODAY	MA
+The GPS button takes the map, and the new parcel's pin, where you are.	A GPS-gomb a térképet, és az új parcella tűjét, oda viszi, ahol vagy.
+The bars on a parcel's card or Statistics in its bubble. On top: the parcel (a tap picks another), 4 tabs and PDF · CSV.	A parcella kártyáján az oszlopok vagy a buborékjában a Statisztika. Fent: a parcella (érintéssel másik választható), 4 fül és PDF · CSV.
+The bars open its Statistics.	Az oszlopok megnyitják a Statisztikáját.
+The bell turns its notifications on or off.	A csengő be- vagy kikapcsolja az értesítéseit.
+The bin deletes it; it stays 15 days in the bin under the GPS button.	A kuka törli; 15 napig a kukában marad a GPS-gomb alatt.
+The crop is picked from a list ordered by the sowing date's season; Another crop… takes a name and a type; out of season the app asks again.	A kultúra a vetési dátum szezonja szerint rendezett listából választható; a Más kultúra… nevet és típust kap; szezonon kívül az alkalmazás újra kérdez.
+The file could not be saved: 	A fájlt nem sikerült menteni: 
+The highest temperature of the next 7 days: 	A következő 7 nap legmagasabb hőmérséklete: 
+The hours are missing from the data.	Az órák hiányoznak az adatokból.
+The last stage is reached.	Az utolsó fázis elérve.
+The leaves stay wet 	A levelek nedvesek maradnak 
+The pencil edits the parcel: name, crop, sowing date, area; the corners move on the map.	A ceruza szerkeszti a parcellát: név, kultúra, vetési dátum, terület; a sarkok a térképen mozognak.
+The season's first days come from Open-Meteo's archive; they are downloaded with internet.	A szezon első napjai az Open-Meteo archívumából jönnek; internettel töltődnek le.
+The soil	A talaj
+The strongest gust of the next 72 hours: 	A következő 72 óra legerősebb lökése: 
+Thresholds for 	Küszöbök: 
+Tillering	Bokrosodás
+Today	Ma
+Too cold (under 5 °C).	Túl hideg (5 °C alatt).
+Too hot (over 28 °C).	Túl meleg (28 °C fölött).
+Too much wind (drift).	Túl erős szél (elsodródás).
+Updated 	Frissítve 
+Vegetables	Zöldségek
+Veraison	Zsendülés
+Vs. last year	Tavalyhoz képest
+Wait	Várj
+Watch the parcel; a treatment may be needed if the wet spell lasts.	Figyeld a parcellát; kezelés kellhet, ha a nedvesség tartós.
+Water & Soil	Víz és talaj
+Water & Soil: 7 days of rain and evaporation (ET₀) and the balance; the chart of the past and the next 7 days; soil at 6 and 18 cm, surface moisture, machinery on the field.	Víz és talaj: 7 nap eső és párolgás (ET₀) és a mérleg; a múlt és a következő 7 nap grafikonja; talaj 6 és 18 cm-en, felszíni nedvesség, gépek a táblán.
+Wet leaf	Nedves levél
+Wet leaf hours	Nedves levél órái
+Wet leaf now	Nedves levél most
+What you can do	Mit tehetsz
+Wind 	Szél 
+Wind / gusts now	Szél / lökések most
+Wind and gusts	Szél és lökések
+Wind · hail	Szél · jégeső
+Wind, ΔT or temperature outside the ideal range.	Szél, ΔT vagy hőmérséklet az ideális tartományon kívül.
+Winter cereals	Őszi gabonák
+With this date the degree days and the risks can come out wrong.	Ezzel a dátummal a hőösszeg és a kockázatok hibásak lehetnek.
+Write the crop's name	Írd be a kultúra nevét
+air 	levegő 
+as last year	mint tavaly
+care	figyelem
+choose…	válassz…
+critical heat at 	kritikus hőség: 
+days	nap
+deficit, irrigate	hiány, öntözz
+disease watched: 	figyelt betegség: 
+drag a corner to move it; a long press deletes it	húzz egy sarkot az áthelyezéshez; hosszú nyomás törli
+dried at 	megszáradt: 
+estimated on 	becsült: 
+evaporation (ET₀)	párolgás (ET₀)
+firm ground	járható talaj
+forecast	előrejelzés
+from GDD	GDD alapján
+fungal diseases	gombás betegségek
+fungi	gombák
+green zone = sowing threshold for 	zöld sáv = vetési küszöb: 
+gusts max 	lökések max. 
+last year	tavaly
+last year 	tavaly 
+maize	kukorica
+max 	max. 
+measured	mért
+near saturation	majdnem telített
+no	tilos
+no crop or sowing date yet	még nincs kultúra és vetési dátum
+no dew or rain lately	mostanában se harmat, se eső
+no spraying, secure what can fly	ne permetezz, rögzítsd, ami elrepülhet
+no treatments in the hot hours	ne kezelj a meleg órákban
+not to be estimated now (cold)	most nem becsülhető (hideg)
+number = ΔT	szám = ΔT
+optimal	optimális
+ordered by the sowing date: 	vetési dátum szerint rendezve: 
+ordered by this month	e hónap szerint rendezve
+over 32 °C	32 °C fölött
+planted	ültetve
+rain 3 days 	eső 3 nap 
+rain mm/day	eső mm/nap
+risk of compaction	tömörödés veszélye
+score 	pontszám 
+slight deficit	enyhe hiány
+sowing soil 	vetési talaj 
+sown 	vetve 
+surplus	többlet
+tap a card	érints meg egy kártyát
+the field is hard to work	a tábla nehezen művelhető
+the leaves are wet now	a levelek most nedvesek
+the soil compacts	a talaj tömörödik
+the sowing date	a vetési dátum
+this season	ez a szezon
+threshold 12 h	küszöb 12 h
+today	ma
+under −5 °C	−5 °C alatt
+wet	nedves
+write the name	írd be a nevet
+yes	igen
+☰ › Parcels: the map with the parcels' cards (portrait a row at the bottom, landscape a column at the right). Kept only on this phone.	☰ › Parcellák: a térkép a parcellák kártyáival (állóban egy sor alul, fekvőben egy oszlop jobbra). Csak ezen a telefonon tárolódik.
+＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.	A ＋ parcellát ad hozzá: a tű a térkép közepén indul, a térkép érintése mozgatja; a név fent van.
+Wheat	Búza
+Barley	Árpa
+Triticale	Tritikálé
+Rapeseed	Repce
+Maize	Kukorica
+Sunflower	Napraforgó
+Soybean	Szója
+Sugar beet	Cukorrépa
+Potato	Burgonya
+Vineyard	Szőlő
+Orchard	Gyümölcsös
+Alfalfa	Lucerna
+Septoria	Szeptóriás levélfoltosság
+Net blotch	Hálózatos levélfoltosság
+Phoma	Fómás betegség
+Fusarium	Fuzáriózis
+Downy mildew	Peronoszpóra
+Cercospora	Cerkospórás levélfoltosság
+Late blight	Burgonyavész
+Scab	Varasodás
+Anthracnose	Antraknózis
+grain filling	szemtelítődés
+flowering	virágzás
+pollination	beporzás
+root growth	répatest növekedése
+tuber forming	gumóképződés
+regrowth	újrasarjadás
+.	.

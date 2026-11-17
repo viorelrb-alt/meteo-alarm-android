@@ -255,6 +255,39 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		list.addView(w);
 	}
 
+	/**
+	 * v2.001 (Viorel): an entry in short paragraphs: the icon, the name and INTRO, then one row per
+	 * button with its own small icon and what it does.
+	 */
+	void steps(Bitmap icon, String name, String intro, Bitmap[] icons, String[] whats) {
+		entry(icon, name, intro);
+		LinearLayout card = (LinearLayout) list.getChildAt(list.getChildCount() - 1);
+		LinearLayout txt = (LinearLayout) card.getChildAt(1);
+		Context c = getContext();
+		for (int k = 0; k < whats.length; k++) {
+			LinearLayout r = new LinearLayout(c);
+			r.setGravity(android.view.Gravity.CENTER_VERTICAL);
+			ImageView iv = new ImageView(c);
+			iv.setImageBitmap(icons[k]);
+			int s = (int) (34 * dp);
+			iv.setPadding((int) (5 * dp), (int) (5 * dp), (int) (5 * dp), (int) (5 * dp));
+			iv.setBackground(Glass.pill(Glass.disc(dark), 0, 17 * dp, dp));
+			LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(s, s);
+			ip.rightMargin = (int) (10 * dp);
+			r.addView(iv, ip);
+			TextView w = new TextView(c);
+			w.setTypeface(reg);
+			TextSize.size(w, 15, ts);
+			w.setTextColor(dim());
+			w.setLineSpacing(0, 1.1f);
+			w.setText(whats[k]);
+			r.addView(w, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
+			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+			rl.topMargin = (int) (10 * dp);
+			txt.addView(r, rl);
+		}
+	}
+
 	/** One entry: the icon, its name and what it does. */
 	void entry(Bitmap icon, String name, String what) {
 		Context c = getContext();

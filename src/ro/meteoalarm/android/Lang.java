@@ -99,6 +99,33 @@ final class Lang {
 		return l;
 	}
 
+	/**
+	 * v2.001 (Viorel): "Other languages". Romania: its minorities' languages, as before. The US:
+	 * none. Elsewhere: the country's other official languages, 5 big EU languages (German, French,
+	 * Italian, Spanish, Dutch; Polish for one already shown), Romanian always 6th (the developer is
+	 * Romanian, for the Romanians in Europe), then the phone's language when not shown yet.
+	 */
+	static List<String> more(Context ctx) {
+		String cc = country(ctx);
+		if ("ro".equals(cc)) return minorities(ctx);
+		List<String> l = new ArrayList<String>();
+		if ("us".equals(cc)) return l;
+		List<String> main = offered(ctx);
+		String[] own = Tr.ofCountry(cc);
+		for (int k = 1; k < own.length; k++) if (Tr.known(own[k]) && !main.contains(own[k]) && !l.contains(own[k])) l.add(own[k]);
+		int big = 0;
+		for (String c : new String[] { "de", "fr", "it", "es", "nl", "pl", "pt", "sv" }) {
+			if (big == 5) break;
+			if (c.equals("ro") || main.contains(c) || l.contains(c) || !Tr.known(c)) continue;
+			l.add(c);
+			big++;
+		}
+		if (!main.contains("ro") && !l.contains("ro")) l.add("ro");
+		String sys = system();
+		if (Tr.known(sys) && !main.contains(sys) && !l.contains(sys) && !sys.equals("en")) l.add(sys);
+		return l;
+	}
+
 	/** The languages offered: English, the phone's own, the country's own, and the one in use (Romanian only as one of them). */
 	static List<String> offered(Context ctx) {
 		List<String> l = new ArrayList<String>();
@@ -110,7 +137,10 @@ final class Lang {
 			return l;
 		}
 		l.add("en");
-		for (String c : Tr.ofCountry(country(ctx))) if (!l.contains(c)) l.add(c);
+		// v2.001 (Viorel): only the country's first language next to English; its other official
+		// languages go under "Other languages" (as Romania's minorities).
+		String[] own = Tr.ofCountry(country(ctx));
+		if (own.length > 0 && !l.contains(own[0])) l.add(own[0]);
 		// The US test mode: American English and Spanish too (v2.30).
 		if (Region.showUS(ctx)) for (String c : new String[] { "us", "es" }) if (!l.contains(c)) l.add(c);
 		return l;
