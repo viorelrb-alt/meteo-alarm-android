@@ -573,7 +573,7 @@ final class StatsPage {
 			FitText t = tv(n[k], 14.5f, true, k == tab ? 0xFFFFFFFF : dim);
 			t.setGravity(Gravity.CENTER);
 			t.one(0.6f);
-			t.setPadding(px(2), px(8), px(2), px(8));
+			t.setPadding(px(6), px(8), px(6), px(8));
 			if (k == tab) t.setBackground(Glass.pill(accent, 0, px(18), dp));
 			t.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
@@ -708,10 +708,14 @@ final class StatsPage {
 		int code = cur >= 0 && !Double.isNaN(d.code[cur]) ? (int) d.code[cur] : d.cCode;
 		boolean day = cur < 0 || Double.isNaN(d.isDay[cur]) || d.isDay[cur] > 0.5;
 		left.addView(icon(code < 0 ? null : Weather.iconOf(code, day)), new LinearLayout.LayoutParams(px(48), px(48)));
-		TextView sc = tv(ac[2] + "/100", 12.5f, true, 0xFFFFFFFF);
+		// v2.011 (Viorel): "82/100" on one row, never cut.
+		FitText sc = tv(ac[2] + "/100", 12.5f, true, 0xFFFFFFFF);
+		sc.one(0.7f);
 		sc.setPadding(px(7), px(2), px(7), px(2));
 		sc.setBackground(Glass.pill(color, 0, px(9), dp));
-		left.addView(sc, wide(4));
+		LinearLayout.LayoutParams scl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		scl.topMargin = px(4);
+		left.addView(sc, scl);
 		LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		ll.leftMargin = px(10);
 		ll.topMargin = px(12);

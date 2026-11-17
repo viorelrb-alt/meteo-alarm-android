@@ -2509,7 +2509,13 @@ public final class FarmActivity extends Activity {
 	 * v6.00 (Viorel): a parcel's bubble of frosted glass: its name, the GPS coordinates of its 4
 	 * corners (or of its pin, without corners) and "Show", which opens it on the main screen.
 	 */
+	/** v2.011: the widest coordinates row and the label column of the corners bubble. */
+	private float coordW;
+	private int labelW;
+
 	private void showCorners(final Parcels.Parcel p) {
+		coordW = 0;
+		labelW = 0;
 		Log.i(this, "FERMIER", "bula parcelei " + p.name);
 		final boolean tab = TextSize.tablet(this), land = land();
 		final FrameLayout scrim = new FrameLayout(this);
@@ -2545,6 +2551,7 @@ public final class FarmActivity extends Activity {
 			double cos = Math.cos(Math.toRadians(mla));
 			// In a scroll when it does not fit (7 points on a small phone in landscape).
 			LinearLayout rows = column();
+			labelW = px(tab ? 76 : 64);
 			for (int k = 0; k < n; k++) {
 				String nm4;
 				if (n == 4) {
@@ -2559,7 +2566,11 @@ public final class FarmActivity extends Activity {
 				LinearLayout r = new LinearLayout(this);
 				r.setGravity(Gravity.CENTER_VERTICAL);
 				r.addView(text(nm4, 14, false, dim), new LinearLayout.LayoutParams(px(tab ? 76 : 64), ViewGroup.LayoutParams.WRAP_CONTENT));
-				r.addView(text(coords(c[2 * k], c[2 * k + 1]), tab ? 17 : 15, true, ink));
+				// v2.011 (Viorel): the coordinates on one row; the bubble as wide as they need.
+				TextView ct = text(coords(c[2 * k], c[2 * k + 1]), tab ? 17 : 15, true, ink);
+				ct.setSingleLine(true);
+				coordW = Math.max(coordW, ct.getPaint().measureText(ct.getText().toString()));
+				r.addView(ct);
 				rows.addView(r, wide(4));
 			}
 			// v2.010 (Viorel): the first 3 points shown, the others by scrolling up.
@@ -2600,7 +2611,8 @@ public final class FarmActivity extends Activity {
 		win.addView(show, wide(12));
 		int sw = getResources().getDisplayMetrics().widthPixels;
 		// v2.010 (Viorel): narrower, just the room of the coordinates.
-		int w = Math.min(px(tab ? 340 : 290), (land ? sw / 2 : sw) - px(24));
+		int need = coordW > 0 ? Math.round(labelW + coordW + px(36 + 14)) : px(tab ? 340 : 290);
+		int w = Math.min(Math.max(need, px(tab ? 300 : 260)), (land ? sw / 2 : sw) - px(24));
 		// v1.520: the bubble at the top (portrait) or at the left (landscape), the map zoomed on
 		// the parcel in the room left free.
 		FrameLayout.LayoutParams wl = new FrameLayout.LayoutParams(w, ViewGroup.LayoutParams.WRAP_CONTENT, land ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.TOP | Gravity.CENTER_HORIZONTAL);

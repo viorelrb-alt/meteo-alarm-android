@@ -1,4 +1,4 @@
-Version actuelle : v.2.010 · 17.11.2026
+Version actuelle : v.2.011 · 17.11.2026
 PARAMÈTRES
 - Langue d'affichage : dans ☰ l'anglais et la langue du pays ; Autres langues : les autres langues du pays, les grandes langues de l'UE, le roumain et celle du téléphone (aux États-Unis seulement l'anglais et l'espagnol).
 PARCELLES

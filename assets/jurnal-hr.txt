@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.010 · 17.11.2026
+Trenutačna verzija: v.2.011 · 17.11.2026
 PARCELE
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.
 - Operativni status: gore kultura i datum sjetve; s kulturom ocjena uzima u obzir i sušenje kapljica (ΔT) i njezinu bolest.
