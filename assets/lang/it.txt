@@ -1491,3 +1491,11 @@ satellite · tap to change	satellite · tocca per modificare
 tomorrow	domani
 yesterday	ieri
 {1} days ago	{1} giorni fa
+# v2.020
+Spray {1} between {2} and {3}	Irrora {1} tra le {2} e le {3}
+Spray with care {1} between {2} and {3}	Irrora con cautela {1} tra le {2} e le {3}
+Now: don't spray ({1})	Ora: non irrorare ({1})
+Now: only with care	Ora: solo con cautela
+Anti-drift nozzles.	Ugelli antideriva.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistiche · PDF sotto lo stato, 1 Meteo ora per ora, i cinque giorni, 2 Suolo e colture, 3 Rischi e rapporti, 4 Dettagli meteo.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Azione del giorno: la migliore finestra di irrorazione delle prossime 24 ore (oggi o domani), perché non ora, il punteggio di irrorazione (0–100) e il rischio maggiore delle prossime 48 ore.

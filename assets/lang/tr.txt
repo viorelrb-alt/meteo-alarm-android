@@ -1425,3 +1425,11 @@ satellite · tap to change	uydu · değiştirmek için dokunun
 tomorrow	yarın
 yesterday	dün
 {1} days ago	{1} gün önce
+# v2.020
+Spray {1} between {2} and {3}	İlaçlama: {1} {2}–{3}
+Spray with care {1} between {2} and {3}	Dikkatli ilaçlama: {1} {2}–{3}
+Now: don't spray ({1})	Şimdi: ilaçlama ({1})
+Now: only with care	Şimdi: yalnızca dikkatle
+Anti-drift nozzles.	Sürüklenme önleyici memeler.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	İstatistik · PDF durumun altında, 1 Saatlik hava, beş gün, 2 Toprak ve ürünler, 3 Riskler ve raporlar, 4 Hava ayrıntıları.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Günün işi: önümüzdeki 24 saatin en iyi ilaçlama aralığı (bugün veya yarın), neden şimdi değil, ilaçlama puanı (0–100) ve önümüzdeki 48 saatin en büyük riski.

@@ -1491,3 +1491,11 @@ satellite · tap to change	palydovas · palieskite, kad pakeistumėte
 tomorrow	rytoj
 yesterday	vakar
 {1} days ago	prieš {1} d.
+# v2.020
+Spray {1} between {2} and {3}	Purkškite {1} tarp {2} ir {3}
+Spray with care {1} between {2} and {3}	Purkškite atsargiai {1} tarp {2} ir {3}
+Now: don't spray ({1})	Dabar: nepurkškite ({1})
+Now: only with care	Dabar: tik atsargiai
+Anti-drift nozzles.	Dreifą mažinantys purkštukai.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF po būsena, 1 Orai kas valandą, penkios dienos, 2 Dirva ir pasėliai, 3 Rizikos ir ataskaitos, 4 Orų detalės.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Dienos veiksmas: geriausias purškimo langas per kitas 24 valandas (šiandien arba rytoj), kodėl ne dabar, purškimo balas (0–100) ir didžiausia kitų 48 valandų rizika.

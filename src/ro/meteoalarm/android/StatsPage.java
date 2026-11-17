@@ -76,7 +76,7 @@ final class StatsPage {
 	Agro.Days days;
 	Agro.Crop crop;
 	int cur = -1;
-	String today, seasonStart = "";
+	String today, tomorrow = "", seasonStart = "";
 	boolean seasonMissing;
 	private FrameLayout root;
 	/**
@@ -119,6 +119,7 @@ final class StatsPage {
 		crop = p.crop();
 		Calendar now = Calendar.getInstance();
 		today = Farm.date(now, 0);
+		tomorrow = Farm.date(now, 1);
 		cur = d == null ? -1 : d.nowIndex(now);
 		days = new Agro.Days();
 		if (season != null) try {
@@ -425,10 +426,21 @@ final class StatsPage {
 	private void showEmbedded(FrameLayout root, String status, final int y0) {
 		LinearLayout all = col();
 		if (spacer > 0) {
+			// v2.021: a tap on the room (the status above shows through) goes to the main screen as a tap.
 			View room = new View(a) {
+				float x0, y0;
+				boolean far;
+
 				@Override
 				public boolean onTouchEvent(MotionEvent e) {
-					host.forward(e, this);
+					int act = e.getActionMasked();
+					if (act == MotionEvent.ACTION_DOWN) {
+						x0 = e.getRawX();
+						y0 = e.getRawY();
+						far = false;
+					} else if (act == MotionEvent.ACTION_MOVE) {
+						if (Math.abs(e.getRawX() - x0) > px(10) || Math.abs(e.getRawY() - y0) > px(10)) far = true;
+					} else if (act == MotionEvent.ACTION_UP && !far) host.forward(e, this);
 					return true;
 				}
 			};
@@ -702,24 +714,31 @@ final class StatsPage {
 
 	// --- The action of the day --------------------------------------------------------------------
 
-	/** { title, the line under it, the score (0–100), its level }. */
+	/**
+	 * { title, the line under it (one row), the score (0–100), its level, more ("" or sentences), now ("" or why not now) }.
+	 * v2.021 (Viorel): the day of the window in the title (today / tomorrow), and when the window does not
+	 * start now, why not now, so it agrees with the operational status above.
+	 */
 	Object[] action() {
 		int[] w = cur >= 0 ? Agro.window(d, cur, 24) : null;
-		String title, sub;
+		String title, sub, more = "", nowLine = "";
 		int score = 0, lv = 2;
 		if (w != null) {
 			score = w[2];
 			lv = Agro.level(score);
 			int best = w[0];
 			for (int k = w[0]; k < w[1]; k++) if (Agro.score(d, k) > Agro.score(d, best)) best = k;
-			title = (lv == 0 ? Tr.t("Spray between ", "Stropește între ") : Tr.t("Spray with care between ", "Stropește cu grijă între ")) + clock(w[0])
-					+ Tr.t(" and ", " și ") + Texts.clock(d.hourOf(Math.min(d.size() - 1, w[1])), clk12);
+			String day = d.dateOf(w[0]).equals(today) ? Tr.t("today", "azi") : d.dateOf(w[0]).equals(tomorrow) ? Tr.t("tomorrow", "mâine") : weekday(d.dateOf(w[0]));
+			title = (lv == 0 ? Tr.t("Spray {1} between {2} and {3}", "Stropește {1} între {2} și {3}") : Tr.t("Spray with care {1} between {2} and {3}", "Stropește cu grijă {1} între {2} și {3}"))
+					.replace("{1}", day).replace("{2}", clock(w[0])).replace("{3}", Texts.clock(d.hourOf(Math.min(d.size() - 1, w[1])), clk12));
 			double v = d.wind[best];
-			sub = (v < 10 ? Tr.t("Light wind ", "Vânt slab ") : Tr.t("Wind ", "Vânt ")) + kmh(v) + ", ΔT " + degDelta(Agro.deltaT(d, best)) + ".";
-			if (lv == 1) sub += Tr.t(" Anti-drift nozzles.", " Duze anti-derivă.");
+			sub = (v < 10 ? Tr.t("Light wind ", "Vânt slab ") : Tr.t("Wind ", "Vânt ")) + kmh(v) + ", ΔT " + degDelta(Agro.deltaT(d, best));
+			if (lv == 1) more = Tr.t("Anti-drift nozzles.", "Duze anti-derivă.");
+			if (w[0] > cur) nowLine = nowWhy(cur);
 		} else {
 			title = Tr.t("No spraying today", "Azi nu stropi");
-			sub = reason(mostBlock());
+			sub = "";
+			more = reason(mostBlock());
 		}
 		int rainAt = -1;
 		if (cur >= 0) for (int k = w != null ? w[0] : cur; k < Math.min(d.size(), cur + 24); k++)
@@ -727,10 +746,40 @@ final class StatsPage {
 				rainAt = k;
 				break;
 			}
-		if (rainAt >= 0 && w != null && rainAt >= w[1]) sub += Tr.t(" Rain from ", " De la ") + clock(rainAt) + Tr.t(".", " ploaie.");
-		String risk = riskLine();
-		if (risk.length() > 0) sub += " " + risk;
-		return new Object[] { title, sub, score, lv };
+		if (rainAt >= 0 && w != null && rainAt >= w[1]) more = join(more, Tr.t("Rain from ", "De la ") + dayHour(rainAt) + Tr.t(".", " ploaie."));
+		more = join(more, riskLine());
+		return new Object[] { title, sub, score, lv, more, nowLine };
+	}
+
+	private static String join(String a, String b) {
+		return a.length() == 0 ? b : b.length() == 0 ? a : a + " " + b;
+	}
+
+	/** v2.021: "Now: don't spray (wind 21 km/h)" for hour I, or "Now: only with care". */
+	String nowWhy(int i) {
+		int b = Agro.block(d, i);
+		String why;
+		switch (b) {
+		case 1:
+			why = Tr.t("rain", "ploaie");
+			break;
+		case 2:
+			why = Tr.t("wind ", "vânt ") + kmh(d.wind[i]);
+			break;
+		case 3:
+			why = Tr.t("too cold", "prea frig");
+			break;
+		case 4:
+			why = Tr.t("too hot", "prea cald");
+			break;
+		case 5:
+		case 6:
+			why = "ΔT " + degDelta(Agro.deltaT(d, i));
+			break;
+		default:
+			return b == 0 && Agro.level(Agro.score(d, i)) == 1 ? Tr.t("Now: only with care", "Acum: doar cu grijă") : "";
+		}
+		return Tr.t("Now: don't spray ({1})", "Acum: nu stropi ({1})").replace("{1}", why);
 	}
 
 	String degDelta(double dt) {
@@ -814,7 +863,18 @@ final class StatsPage {
 		LinearLayout txt = col();
 		txt.addView(caps(Tr.t("Action of the day", "Acțiunea zilei"), color));
 		txt.addView(tv((String) ac[0], 17, true, ink), wide(4));
-		txt.addView(tv((String) ac[1], 14, false, dim), wide(4));
+		// v2.021 (Viorel): the wind and ΔT on one row.
+		if (((String) ac[1]).length() > 0) {
+			FitText sub = tv((String) ac[1], 14, false, dim);
+			sub.one(0.6f);
+			txt.addView(sub, wide(4));
+		}
+		if (((String) ac[5]).length() > 0) {
+			FitText nw = tv((String) ac[5], 13.5f, true, levelColor(2));
+			nw.one(0.6f);
+			txt.addView(nw, wide(4));
+		}
+		if (((String) ac[4]).length() > 0) txt.addView(tv((String) ac[4], 13, false, dim), wide(4));
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		tl.leftMargin = px(12);
 		tl.rightMargin = px(12);

@@ -1491,3 +1491,11 @@ satellite · tap to change	satelīts · pieskarieties, lai mainītu
 tomorrow	rīt
 yesterday	vakar
 {1} days ago	pirms {1} dienām
+# v2.020
+Spray {1} between {2} and {3}	Smidziniet {1} starp {2} un {3}
+Spray with care {1} between {2} and {3}	Smidziniet uzmanīgi {1} starp {2} un {3}
+Now: don't spray ({1})	Tagad: nesmidziniet ({1})
+Now: only with care	Tagad: tikai uzmanīgi
+Anti-drift nozzles.	Pretnoneses sprauslas.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF zem statusa, 1 Laiks pa stundām, piecas dienas, 2 Augsne un kultūras, 3 Riski un ziņojumi, 4 Laikapstākļu detaļas.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Dienas darbība: labākais smidzināšanas logs nākamajās 24 stundās (šodien vai rīt), kāpēc ne tagad, smidzināšanas vērtējums (0–100) un lielākais nākamo 48 stundu risks.

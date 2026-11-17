@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.020 · 17.11.2026
+Versiunea curentă: v.2.021 · 17.11.2026
 PARCELE
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.

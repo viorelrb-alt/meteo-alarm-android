@@ -195,8 +195,10 @@ public final class Agro {
 		if (!d.has(i) || Double.isNaN(d.temp[i]) || Double.isNaN(d.wind[i])) return -1;
 		double sum = 0;
 		for (int j = i + 1; j <= i + 3 && j < d.size(); j++) sum += nz(d.precip[j]);
-		if (nz(d.precip[i]) > 0.2 || sum > 1.0) return 1;
-		if (d.wind[i] > 18 || nz(d.gust[i]) > 25) return 2;
+		// v2.021: the same rain and wind limits as the operational status (Farm.spray), so the two agree.
+		int fs = Farm.spray(d, i);
+		if (nz(d.precip[i]) > 0.2 || sum > 1.0 || fs == 3) return 1;
+		if (fs == 2 || d.wind[i] > 15 || nz(d.gust[i]) > 25) return 2;
 		if (d.temp[i] < 5) return 3;
 		if (d.temp[i] > 28) return 4;
 		double dt = deltaT(d, i);

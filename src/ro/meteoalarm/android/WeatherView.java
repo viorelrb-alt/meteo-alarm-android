@@ -661,6 +661,18 @@ final class WeatherView extends View {
 		settle.start();
 	}
 
+	/** v2.021: a tap at X, Y (this view's pixels), from the Statistics over the page. */
+	void tapAt(float x, float y) {
+		long t = android.os.SystemClock.uptimeMillis();
+		MotionEvent d = MotionEvent.obtain(t, t, MotionEvent.ACTION_DOWN, x, y, 0);
+		MotionEvent u = MotionEvent.obtain(t, t + 50, MotionEvent.ACTION_UP, x, y, 0);
+		Log.i(getContext(), "GEST", "atingere prin statistici");
+		onTouchEvent(d);
+		onTouchEvent(u);
+		d.recycle();
+		u.recycle();
+	}
+
 	@Override
 	public boolean onTouchEvent(MotionEvent e) {
 		int act = e.getActionMasked();

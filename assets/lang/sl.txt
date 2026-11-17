@@ -1491,3 +1491,11 @@ satellite · tap to change	satelit · dotaknite se za spremembo
 tomorrow	jutri
 yesterday	včeraj
 {1} days ago	pred {1} dnevi
+# v2.020
+Spray {1} between {2} and {3}	Škropi {1} med {2} in {3}
+Spray with care {1} between {2} and {3}	Previdno škropi {1} med {2} in {3}
+Now: don't spray ({1})	Zdaj: ne škropi ({1})
+Now: only with care	Zdaj: le previdno
+Anti-drift nozzles.	Šobe proti zanašanju.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF pod stanjem, 1 Vreme po urah, pet dni, 2 Tla in posevki, 3 Tveganja in poročila, 4 Podrobnosti vremena.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Opravilo dneva: najboljše okno za škropljenje v naslednjih 24 urah (danes ali jutri), zakaj ne zdaj, ocena škropljenja (0–100) in največje tveganje naslednjih 48 ur.

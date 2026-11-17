@@ -1491,3 +1491,11 @@ satellite · tap to change	satelit · ťuknutím zmeníte
 tomorrow	zajtra
 yesterday	včera
 {1} days ago	pred {1} dňami
+# v2.020
+Spray {1} between {2} and {3}	Striekaj {1} medzi {2} a {3}
+Spray with care {1} between {2} and {3}	Striekaj opatrne {1} medzi {2} a {3}
+Now: don't spray ({1})	Teraz: nestriekaj ({1})
+Now: only with care	Teraz: len opatrne
+Anti-drift nozzles.	Antidriftové trysky.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Štatistika · PDF pod stavom, 1 Počasie po hodinách, päť dní, 2 Pôda a plodiny, 3 Riziká a správy, 4 Podrobnosti počasia.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Úloha dňa: najlepšie okno na postrek v nasledujúcich 24 hodinách (dnes alebo zajtra), prečo nie teraz, skóre postreku (0–100) a najväčšie riziko nasledujúcich 48 hodín.

@@ -1491,3 +1491,11 @@ satellite · tap to change	satelliit · puuduta muutmiseks
 tomorrow	homme
 yesterday	eile
 {1} days ago	{1} päeva tagasi
+# v2.020
+Spray {1} between {2} and {3}	Pritsi {1} vahemikus {2}–{3}
+Spray with care {1} between {2} and {3}	Pritsi ettevaatlikult {1} vahemikus {2}–{3}
+Now: don't spray ({1})	Praegu: ära pritsi ({1})
+Now: only with care	Praegu: ainult ettevaatlikult
+Anti-drift nozzles.	Triivi vähendavad pihustid.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF oleku all, 1 Ilm tunni kaupa, viis päeva, 2 Muld ja kultuurid, 3 Riskid ja aruanded, 4 Ilma üksikasjad.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Päeva tegevus: järgmise 24 tunni parim pritsimisaken (täna või homme), miks mitte praegu, pritsimise skoor (0–100) ja järgmise 48 tunni suurim risk.

@@ -1425,3 +1425,11 @@ satellite · tap to change	сателит · додирните за измен�
 tomorrow	сутра
 yesterday	јуче
 {1} days ago	пре {1} дана
+# v2.020
+Spray {1} between {2} and {3}	Прскајте {1} између {2} и {3}
+Spray with care {1} between {2} and {3}	Прскајте опрезно {1} између {2} и {3}
+Now: don't spray ({1})	Сада: не прскајте ({1})
+Now: only with care	Сада: само опрезно
+Anti-drift nozzles.	Млазнице против заношења.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Статистика · PDF испод статуса, 1 Време по сатима, пет дана, 2 Земљиште и усеви, 3 Ризици и извештаји, 4 Детаљи времена.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Задатак дана: најбољи прозор за прскање у наредних 24 сата (данас или сутра), зашто не сада, оцена прскања (0–100) и највећи ризик наредних 48 сати.

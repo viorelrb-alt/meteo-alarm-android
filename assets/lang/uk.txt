@@ -1491,3 +1491,11 @@ satellite · tap to change	супутник · торкніться, щоб зм
 tomorrow	завтра
 yesterday	учора
 {1} days ago	{1} дн. тому
+# v2.020
+Spray {1} between {2} and {3}	Обприскуй {1} з {2} до {3}
+Spray with care {1} between {2} and {3}	Обприскуй обережно {1} з {2} до {3}
+Now: don't spray ({1})	Зараз: не обприскуй ({1})
+Now: only with care	Зараз: лише обережно
+Anti-drift nozzles.	Форсунки проти знесення.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Статистика · PDF під статусом, 1 Погода погодинно, п'ять днів, 2 Ґрунт і культури, 3 Ризики й звіти, 4 Подробиці погоди.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Завдання дня: найкраще вікно для обприскування в наступні 24 години (сьогодні або завтра), чому не зараз, оцінка обприскування (0–100) і найбільший ризик наступних 48 годин.

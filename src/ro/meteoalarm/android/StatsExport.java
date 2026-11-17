@@ -38,7 +38,9 @@ final class StatsExport {
 		Object[] ac = s.action();
 		out.add(new String[] { Tr.t("Action of the day", "Acțiunea zilei") });
 		out.add(new String[] { (String) ac[0], ac[2] + "/100" });
-		out.add(new String[] { (String) ac[1], "" });
+		if (((String) ac[1]).length() > 0) out.add(new String[] { (String) ac[1], "" });
+		if (((String) ac[5]).length() > 0) out.add(new String[] { (String) ac[5], "" });
+		if (((String) ac[4]).length() > 0) out.add(new String[] { (String) ac[4], "" });
 		if (cur < 0) return out;
 		out.add(new String[] { Tr.t("Operational", "Operațional") });
 		double dt = Agro.deltaT(d, cur);

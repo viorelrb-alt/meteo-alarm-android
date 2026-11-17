@@ -1561,3 +1561,11 @@ satellite · tap to change	satélite · toca para cambiar
 tomorrow	mañana
 yesterday	ayer
 {1} days ago	hace {1} días
+# v2.020
+Spray {1} between {2} and {3}	Pulveriza {1} entre las {2} y las {3}
+Spray with care {1} between {2} and {3}	Pulveriza con cuidado {1} entre las {2} y las {3}
+Now: don't spray ({1})	Ahora: no pulverices ({1})
+Now: only with care	Ahora: solo con cuidado
+Anti-drift nozzles.	Boquillas antideriva.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Estadísticas · PDF bajo el estado, 1 Tiempo por horas, los cinco días, 2 Suelo y cultivos, 3 Riesgos e informes, 4 Detalles del tiempo.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Acción del día: la mejor ventana de pulverización de las próximas 24 horas (hoy o mañana), por qué no ahora, la puntuación de pulverización (0–100) y el mayor riesgo de las próximas 48 horas.

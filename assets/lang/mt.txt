@@ -1491,3 +1491,11 @@ satellite · tap to change	satellita · agħfas biex tbiddel
 tomorrow	għada
 yesterday	ilbieraħ
 {1} days ago	{1} ijiem ilu
+# v2.020
+Spray {1} between {2} and {3}	Isprejja {1} bejn {2} u {3}
+Spray with care {1} between {2} and {3}	Isprejja b'attenzjoni {1} bejn {2} u {3}
+Now: don't spray ({1})	Issa: tisprejjax ({1})
+Now: only with care	Issa: b'attenzjoni biss
+Anti-drift nozzles.	Żennuni kontra t-tixrid.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statistika · PDF taħt l-istatus, 1 It-temp siegħa b'siegħa, il-ħamest ijiem, 2 Ħamrija u wiċċ, 3 Riskji u rapporti, 4 Dettalji tat-temp.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Azzjoni tal-ġurnata: l-aħjar tieqa tal-isprejjar fl-24 siegħa li ġejjin (illum jew għada), għaliex mhux issa, il-punteġġ tal-isprejjar (0–100) u l-akbar riskju tat-48 siegħa li ġejjin.

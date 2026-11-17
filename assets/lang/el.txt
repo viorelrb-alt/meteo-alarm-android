@@ -1491,3 +1491,11 @@ satellite · tap to change	δορυφόρος · αγγίξτε για αλλα�
 tomorrow	αύριο
 yesterday	χθες
 {1} days ago	πριν από {1} ημέρες
+# v2.020
+Spray {1} between {2} and {3}	Ψέκασε {1} μεταξύ {2} και {3}
+Spray with care {1} between {2} and {3}	Ψέκασε με προσοχή {1} μεταξύ {2} και {3}
+Now: don't spray ({1})	Τώρα: μην ψεκάζεις ({1})
+Now: only with care	Τώρα: μόνο με προσοχή
+Anti-drift nozzles.	Μπεκ κατά της διασποράς.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Στατιστικά · PDF κάτω από την κατάσταση, 1 Καιρός ανά ώρα, οι πέντε ημέρες, 2 Έδαφος και καλλιέργειες, 3 Κίνδυνοι και αναφορές, 4 Λεπτομέρειες καιρού.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Ενέργεια της ημέρας: το καλύτερο παράθυρο ψεκασμού των επόμενων 24 ωρών (σήμερα ή αύριο), γιατί όχι τώρα, η βαθμολογία ψεκασμού (0–100) και ο μεγαλύτερος κίνδυνος των επόμενων 48 ωρών.

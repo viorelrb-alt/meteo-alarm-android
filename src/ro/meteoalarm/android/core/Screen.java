@@ -578,6 +578,7 @@ public final class Screen {
 			statsY = y - 8;
 			return y;
 		}
+		if (pc) y = statsCard(x, y, wd) + 26; // v2.021: right under the status
 		y = section(x, y, wd, pc ? "1" : null, pc ? Tr.t("HOURLY WEATHER", "VREMEA PE ORE") : Tr.t("NEXT HOURS", "URMĂTOARELE ORE"),
 				farmer && farmMerged ? Tr.t("tap: soil details", "atinge: detalii sol") : null);
 		if (farmer && farmMerged) {
@@ -601,9 +602,10 @@ public final class Screen {
 				y = section(x, y, wd, "2", Tr.t("SOIL AND CROPS", "STAREA SOLULUI ȘI CULTURI"), null);
 				y = drawBoxRows(gr[0], x, y, wd) + 26;
 			}
-			y = section(x, y, wd, "3", Tr.t("PARCEL RISKS AND REPORTS", "RISCURI ȘI RAPOARTE PARCELĂ"), null);
-			if (!gr[1].isEmpty()) y = drawBoxRows(gr[1], x, y, wd) + 16;
-			y = statsCard(x, y, wd) + 26;
+			if (!gr[1].isEmpty()) {
+				y = section(x, y, wd, "3", Tr.t("PARCEL RISKS AND REPORTS", "RISCURI ȘI RAPOARTE PARCELĂ"), null);
+				y = drawBoxRows(gr[1], x, y, wd) + 26;
+			}
 			y = section(x, y, wd, "4", Tr.t("WEATHER DETAILS", "DETALII METEO"), null);
 			drawInfoStrip(gr[2], x, y, wd, 178);
 		} else {

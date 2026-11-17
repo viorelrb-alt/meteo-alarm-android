@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.020 · 17.11.2026
+Aktuelle Version: v.2.021 · 17.11.2026
 EINSTELLUNGEN
 - Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
 PARZELLEN

@@ -1491,3 +1491,11 @@ satellite · tap to change	műhold · érintsd meg a módosításhoz
 tomorrow	holnap
 yesterday	tegnap
 {1} days ago	{1} napja
+# v2.020
+Spray {1} between {2} and {3}	Permetezz {1} {2} és {3} között
+Spray with care {1} between {2} and {3}	Óvatosan permetezz {1} {2} és {3} között
+Now: don't spray ({1})	Most: ne permetezz ({1})
+Now: only with care	Most: csak óvatosan
+Anti-drift nozzles.	Elsodródásgátló fúvókák.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Statisztika · PDF az állapot alatt, 1 Óránkénti időjárás, az öt nap, 2 Talaj és növények, 3 Kockázatok és jelentések, 4 Időjárási részletek.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	A nap teendője: a következő 24 óra legjobb permetezési ablaka (ma vagy holnap), miért nem most, a permetezési pontszám (0–100) és a következő 48 óra legnagyobb kockázata.

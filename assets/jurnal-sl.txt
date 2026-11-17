@@ -1,4 +1,4 @@
-Trenutna različica: v.2.020 · 17.11.2026
+Trenutna različica: v.2.021 · 17.11.2026
 NASTAVITVE
 - Jezik prikaza: v ☰ angleščina in jezik države; Drugi jeziki: drugi jeziki države, veliki jeziki EU, romunščina in jezik telefona (v ZDA samo angleščina in španščina).
 PARCELE

@@ -1491,3 +1491,11 @@ satellite · tap to change	satelliitti · napauta muuttaaksesi
 tomorrow	huomenna
 yesterday	eilen
 {1} days ago	{1} päivää sitten
+# v2.020
+Spray {1} between {2} and {3}	Ruiskuta {1} klo {2}–{3}
+Spray with care {1} between {2} and {3}	Ruiskuta varoen {1} klo {2}–{3}
+Now: don't spray ({1})	Nyt: älä ruiskuta ({1})
+Now: only with care	Nyt: vain varoen
+Anti-drift nozzles.	Tihkusuuttimet.
+Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.	Tilastot · PDF tilan alla, 1 Sää tunneittain, viisi päivää, 2 Maaperä ja viljelykset, 3 Riskit ja raportit, 4 Sään tiedot.
+Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Päivän toimi: seuraavien 24 tunnin paras ruiskutusikkuna (tänään tai huomenna), miksi ei nyt, ruiskutuspisteet (0–100) ja seuraavien 48 tunnin suurin riski.

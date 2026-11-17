@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.020 · 17.11.2026
+Geçerli sürüm: v.2.021 · 17.11.2026
 AYARLAR
 - Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
 PARSELLER
