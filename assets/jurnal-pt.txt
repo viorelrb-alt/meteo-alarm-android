@@ -1,8 +1,8 @@
-Versão atual: v.2.047 · 18.11.2026
+Versão atual: v.2.050 · 18.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 ECRÃ PRINCIPAL
-- Mapa do sismo: um toque na caixa Sismo mostra um mapa com o epicentro, a tua localidade, a distância e as zonas onde foi sentido; um toque no mapa amplia-o, com o histórico do valor. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC.
+- Mapa do sismo: um toque na caixa Sismo mostra um mapa com o epicentro, a tua localidade, a distância e as zonas onde foi sentido; um toque no mapa amplia-o, com o histórico do valor. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
 NOTIFICAÇÕES
 - Sismos: verificados a cada 10 minutos, também à noite com o ecrã desligado; uma magnitude revista atualiza a notificação e um toque nela abre o mapa.
 PARCELAS

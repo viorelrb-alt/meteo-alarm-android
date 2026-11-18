@@ -1563,3 +1563,6 @@ The orange square opens it too.	Den orange rutan öppnar den också.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Randen till vänster har färgen på den kartzon där din ort ligger; brun utanför zonerna.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).

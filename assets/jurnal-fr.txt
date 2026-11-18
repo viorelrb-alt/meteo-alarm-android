@@ -1,6 +1,6 @@
-Version actuelle : v.2.047 · 18.11.2026
+Version actuelle : v.2.050 · 18.11.2026
 ÉCRAN PRINCIPAL
-- Carte du séisme : un appui sur la case Séisme montre une carte avec l'épicentre, ta ville, la distance et les zones de ressenti ; un appui sur la carte l'agrandit, avec l'historique de la valeur. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC.
+- Carte du séisme : un appui sur la case Séisme montre une carte avec l'épicentre, ta ville, la distance et les zones de ressenti ; un appui sur la carte l'agrandit, avec l'historique de la valeur. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC. En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).
 NOTIFICATIONS
 - Séismes : vérifiés toutes les 10 minutes, aussi la nuit écran éteint ; une magnitude révisée met à jour la notification, et un appui dessus ouvre la carte.
 PARAMÈTRES

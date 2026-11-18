@@ -1563,3 +1563,6 @@ The orange square opens it too.	Le carré orange l’ouvre aussi.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	La bande à gauche a la couleur de la zone de la carte où se trouve ta localité ; marron hors des zones.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).

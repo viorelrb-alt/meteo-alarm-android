@@ -1563,3 +1563,6 @@ The orange square opens it too.	Osclaíonn an chearnóg oráiste é freisin.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Tá dath an stráice ar chlé ar dhath an chreasa ar an léarscáil ina bhfuil do bhaile; donn lasmuigh de na criosanna.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).

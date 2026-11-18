@@ -44,6 +44,8 @@ public final class Quakes {
 	public static final class Official {
 		public final String code, name, full, site, url;
 		public final boolean json;
+		/** v2.050: a second list (INFP's home page: the quakes around Romania and the world's big ones), or null. */
+		public String web;
 
 		Official(String code, String name, String full, String site, String url, boolean json) {
 			this.code = code;
@@ -57,7 +59,11 @@ public final class Quakes {
 
 	public static Official official(String country) {
 		String c = country == null ? "" : country.toLowerCase(Locale.US);
-		if (c.equals("ro")) return new Official(c, "INFP", "Institutul Național de Fizica Pământului", "infp.ro", "https://fastapi.infp.ro/v1/?product=shakemap4", true);
+		if (c.equals("ro")) {
+			Official o = new Official(c, "INFP", "Institutul Național de Fizica Pământului", "infp.ro", "https://fastapi.infp.ro/v1/?product=shakemap4", true);
+			o.web = "https://www.infp.ro/";
+			return o;
+		}
 		if (c.equals("it")) return new Official(c, "INGV", "Istituto Nazionale di Geofisica e Vulcanologia", "ingv.it",
 				"https://webservices.ingv.it/fdsnws/event/1/query?minmag=-1&format=text&timezone=UTC&limit=300&orderby=time", false);
 		if (c.equals("fr")) return new Official(c, "BCSF", "BCSF-Rénass", "franceseisme.fr",
@@ -74,7 +80,38 @@ public final class Quakes {
 	/** The institute's answer RAW as the text lines mergeOfficial reads (null when unreadable). */
 	public static String officialText(Official o, String raw, List<Quake> emsc) {
 		if (o == null || raw == null) return null;
-		if (o.json) return infpFromApi(raw, emsc);
+		if (o.json) {
+			// v2.050: the JSON list, then (after WEB_SEP) INFP's home page; the page adds the quakes the list has not got.
+			int k = raw.indexOf(WEB_SEP);
+			String api = infpFromApi(k < 0 ? raw : raw.substring(0, k), emsc);
+			if (k < 0) return api;
+			String web = infpFromWeb(raw.substring(k + WEB_SEP.length()));
+			if (api == null) return web;
+			if (web == null) return api;
+			List<Long> have = new ArrayList<Long>();
+			for (String line : api.split("\n")) {
+				String[] c = line.split("\\|", -1);
+				if (c.length > 1 && !line.startsWith("#")) try {
+					have.add(Warnings.epoch(c[1]));
+				} catch (Exception e) {
+				}
+			}
+			StringBuilder b = new StringBuilder(api);
+			for (String line : web.split("\n")) {
+				String[] c = line.split("\\|", -1);
+				if (line.startsWith("#") || c.length < 11) continue;
+				long t;
+				try {
+					t = Warnings.epoch(c[1]);
+				} catch (Exception e) {
+					continue;
+				}
+				boolean dup = false;
+				for (long h : have) if (Math.abs(h - t) < 90000L) dup = true;
+				if (!dup) b.append(line).append('\n');
+			}
+			return b.toString();
+		}
 		return raw.indexOf('|') >= 0 || raw.trim().length() == 0 ? raw : null;
 	}
 
@@ -141,6 +178,89 @@ public final class Quakes {
 					.append(e[3]).append("|INFP||||ML|").append(e[4]).append("|INFP|").append(region.replace('|', ' ')).append('\n');
 		}
 		return b.toString();
+	}
+
+	/** v2.050: between the JSON list and the home page in one raw answer. */
+	public static final String WEB_SEP = "\n<!--meteoalarm-infp-web-->\n";
+
+	/**
+	 * v2.050 (Viorel: INFP reported a quake at the Greece–Bulgaria border the app did not show as
+	 * INFP's): INFP's home page lists its latest located quakes, each in a small table (ID
+	 * Eveniment, Data şi ora evenimentului in Romania's time, Magnitudine "ml 3.9", Adâncime,
+	 * Regiune, Latitudine, Longitudine). Turned into the text lines mergeOfficial reads; null when
+	 * nothing could be read.
+	 */
+	public static String infpFromWeb(String html) {
+		if (html == null) return null;
+		String t = html.replaceAll("(?is)<(script|style)[^>]*>.*?</\\1>", " ").replaceAll("<[^>]+>", "|");
+		t = unescape(t).replace('\u00a0', ' ');
+		t = t.replaceAll("[ \\t\\r\\n]*\\|[ \\t\\r\\n|]*", "|");
+		java.util.regex.Matcher m = java.util.regex.Pattern.compile("(?i)ora evenimentului\\|?\\s*(\\d{1,2})\\.(\\d{1,2})\\.(\\d{4}),?\\s*(\\d{1,2}):(\\d{2}):(\\d{2})").matcher(t);
+		List<int[]> at = new ArrayList<int[]>();
+		while (m.find()) at.add(new int[] { m.start(), m.end() });
+		if (at.isEmpty()) return null;
+		java.util.TimeZone ro = java.util.TimeZone.getTimeZone("Europe/Bucharest");
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
+		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+		StringBuilder b = new StringBuilder("#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName\n");
+		int n = 0;
+		for (int i = 0; i < at.size(); i++) {
+			// The event's table: from a little before its date (its ID) to the next event's.
+			int from = Math.max(i > 0 ? at.get(i - 1)[1] : 0, at.get(i)[0] - 200), to = i + 1 < at.size() ? at.get(i + 1)[0] - 1 : Math.min(t.length(), at.get(i)[1] + 1500);
+			String blk = t.substring(from, Math.max(from, to));
+			m.reset();
+			java.util.regex.Matcher d = java.util.regex.Pattern.compile("(?i)ora evenimentului\\|?\\s*(\\d{1,2})\\.(\\d{1,2})\\.(\\d{4}),?\\s*(\\d{1,2}):(\\d{2}):(\\d{2})").matcher(blk);
+			if (!d.find()) continue;
+			java.util.Calendar k = java.util.Calendar.getInstance(ro, Locale.US);
+			k.clear();
+			k.set(Integer.parseInt(d.group(3)), Integer.parseInt(d.group(2)) - 1, Integer.parseInt(d.group(1)), Integer.parseInt(d.group(4)), Integer.parseInt(d.group(5)), Integer.parseInt(d.group(6)));
+			String rest = blk.substring(d.end());
+			String[] mag = grab(rest, "(?i)\\|Magnitudine\\|\\s*([A-Za-z]{1,4})\\s*(\\d+(?:[.,]\\d+)?)");
+			String[] lat = grab(rest, "(?i)\\|Latitudine\\|\\s*(-?\\d+(?:[.,]\\d+)?)\\s*°?\\s*([NS]?)");
+			String[] lon = grab(rest, "(?i)\\|Longitudine\\|\\s*(-?\\d+(?:[.,]\\d+)?)\\s*°?\\s*([EVWO]?)");
+			if (mag == null || lat == null || lon == null) continue;
+			String[] dep = grab(rest, "(?i)\\|Ad.ncime\\|\\s*(\\d+(?:[.,]\\d+)?)");
+			String[] reg = grab(rest, "(?i)\\|Regiune\\|\\s*([^|]+)");
+			String[] id = grab(blk.substring(0, d.start()), "(?i)ID Eveniment\\|\\s*(\\d+)");
+			double la = Math.abs(dbl(lat[0].replace(',', '.'))), lo = Math.abs(dbl(lon[0].replace(',', '.')));
+			if (lat[0].startsWith("-") || "S".equalsIgnoreCase(lat[1])) la = -la;
+			if (lon[0].startsWith("-") || "W".equalsIgnoreCase(lon[1]) || "V".equalsIgnoreCase(lon[1])) lo = -lo;
+			double mg = dbl(mag[1].replace(',', '.'));
+			if (Double.isNaN(la) || Double.isNaN(lo) || Double.isNaN(mg)) continue;
+			String type = mag[0].length() == 0 ? "ML" : mag[0].toUpperCase(Locale.US);
+			b.append("w").append(id != null ? id[0] : String.valueOf(k.getTimeInMillis() / 1000)).append('|').append(f.format(k.getTime())).append('|').append(la).append('|').append(lo).append('|')
+					.append(dep != null ? dep[0].replace(',', '.') : "10").append("|INFPW||||").append(type).append('|').append(mg).append("|INFP|")
+					.append(reg != null ? reg[0].trim().replace('|', ' ') : "").append('\n');
+			n++;
+		}
+		return n == 0 ? null : b.toString();
+	}
+
+	/** The groups of the first match of RE in S (null when none). */
+	private static String[] grab(String s, String re) {
+		java.util.regex.Matcher m = java.util.regex.Pattern.compile(re).matcher(s);
+		if (!m.find()) return null;
+		String[] g = new String[m.groupCount()];
+		for (int i = 0; i < g.length; i++) g[i] = m.group(i + 1) == null ? "" : m.group(i + 1);
+		return g;
+	}
+
+	/** The HTML entities a page may use for Romanian letters and signs. */
+	private static String unescape(String s) {
+		java.util.regex.Matcher m = java.util.regex.Pattern.compile("&#(x?)([0-9a-fA-F]+);").matcher(s);
+		StringBuffer b = new StringBuffer();
+		while (m.find()) {
+			int c;
+			try {
+				c = Integer.parseInt(m.group(2), m.group(1).length() > 0 ? 16 : 10);
+			} catch (Exception e) {
+				c = ' ';
+			}
+			m.appendReplacement(b, java.util.regex.Matcher.quoteReplacement(String.valueOf((char) c)));
+		}
+		m.appendTail(b);
+		return b.toString().replace("&deg;", "°").replace("&acirc;", "â").replace("&Acirc;", "Â").replace("&icirc;", "î").replace("&abreve;", "ă").replace("&nbsp;", " ")
+				.replace("&amp;", "&").replace("&scedil;", "ş").replace("&tcedil;", "ţ");
 	}
 
 	private static String val(Map<String, Object> m, String k) {

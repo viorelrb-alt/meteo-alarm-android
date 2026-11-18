@@ -180,7 +180,7 @@ final class Fetcher {
 		String offRaw = null;
 		Exception offErr = null;
 		if (o != null) try {
-			offRaw = Weather.get(o.url);
+			offRaw = officialRaw(ctx, o);
 		} catch (Exception e) {
 			offErr = e;
 		}
@@ -221,6 +221,24 @@ final class Fetcher {
 	}
 
 	/** v2.040: the town's country's seismological institute (null: none, or a US town, which has USGS). */
+	/**
+	 * v2.050: the institute's answer; for INFP also its home page after Quakes.WEB_SEP (the quakes
+	 * around Romania its JSON list leaves out). The page failing leaves the list alone.
+	 */
+	static String officialRaw(Context ctx, Quakes.Official o) throws Exception {
+		String raw = Weather.get(o.url);
+		if (o.web != null) try {
+			String w = Weather.get(o.web);
+			String t = Quakes.infpFromWeb(w);
+			int n = t == null ? 0 : t.split("\n").length - 1;
+			Log.i(ctx, "DATE", "cutremure " + o.name + " de pe " + o.site + ": " + n + " în pagină" + (n > 0 ? ", ultimul " + t.split("\n")[1].replaceAll("^[^|]*\\|([^|]*)\\|.*\\|INFP\\|", "$1 UTC ") : ""));
+			if (n > 0) raw = raw + Quakes.WEB_SEP + w;
+		} catch (Exception e) {
+			Log.e(ctx, "DATE", "pagina " + o.site + " a eșuat: " + reason(e, false));
+		}
+		return raw;
+	}
+
 	static Quakes.Official officialOf(Cities.City c) {
 		return c == null || c.us() ? null : Quakes.official(c.country);
 	}

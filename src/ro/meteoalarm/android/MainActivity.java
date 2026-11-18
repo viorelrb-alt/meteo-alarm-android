@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.047";
+	static final String VERSION = "Meteo Alarm Android v2.050";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3348,7 +3348,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				String ci = null;
 				// v2.035 (Viorel): in Romania INFP's official values first, then EMSC.
 				if (Fetcher.infpFor(c)) try {
-					ci = Weather.get(Fetcher.officialOf(c).url);
+					ci = Fetcher.officialRaw(ctx, Fetcher.officialOf(c));
 				} catch (Exception e) {
 					Log.e(ctx, "CUTREMUR", "lista " + Fetcher.officialOf(c).name + " a eșuat: " + Fetcher.reason(e, false));
 				}
@@ -3817,7 +3817,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ " " + Tr.t("The orange square opens it too.", "La fel și pătratul portocaliu.")
 				+ " " + Tr.t("On the big map, drag the window at the bottom up to see the felt zones.", "Pe harta mare, trage fereastra de jos în sus pentru zonele resimțite.")
 				+ " " + Tr.t("In Romania, ↻ INFP in the bubble asks for the official value again.", "În România, ↻ INFP din bulă cere din nou valoarea oficială.")
-				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC."));
+				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC.") + " " + Tr.t("In Romania, the quakes around the country also get INFP's value (from infp.ro).", "În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));

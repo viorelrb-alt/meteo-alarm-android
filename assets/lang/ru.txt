@@ -1497,3 +1497,6 @@ The orange square opens it too.	Её открывает и оранжевый к
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Полоса слева окрашена в цвет зоны на карте, где находится твой населённый пункт; вне зон коричневая.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	В Румынии и землетрясения вокруг страны получают значение INFP (с infp.ro).

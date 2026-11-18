@@ -1563,3 +1563,6 @@ The orange square opens it too.	Ανοίγει και με το πορτοκαλ
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Η λωρίδα αριστερά έχει το χρώμα της ζώνης του χάρτη όπου βρίσκεται ο τόπος σου· καφέ εκτός ζωνών.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	Στη Ρουμανία και οι σεισμοί γύρω από τη χώρα παίρνουν την τιμή του INFP (από το infp.ro).

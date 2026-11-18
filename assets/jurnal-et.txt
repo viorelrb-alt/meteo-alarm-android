@@ -1,6 +1,6 @@
-Praegune versioon: v.2.047 · 18.11.2026
+Praegune versioon: v.2.050 · 18.11.2026
 PÕHIEKRAAN
-- Maavärina kaart: kasti Maavärin puudutus näitab kaarti epitsentri, sinu asula, kauguse ja tuntavuse tsoonidega; kaardi puudutus suurendab seda koos väärtuse ajalooga. Rumeenias, Prantsusmaal, Itaalias, Hollandis, Šveitsis ja Kreekas tulevad ametlikud väärtused esmalt riigi instituudilt (INFP, BCSF, INGV, KNMI, SED, NOA), seejärel EMSC-lt.
+- Maavärina kaart: kasti Maavärin puudutus näitab kaarti epitsentri, sinu asula, kauguse ja tuntavuse tsoonidega; kaardi puudutus suurendab seda koos väärtuse ajalooga. Rumeenias, Prantsusmaal, Itaalias, Hollandis, Šveitsis ja Kreekas tulevad ametlikud väärtused esmalt riigi instituudilt (INFP, BCSF, INGV, KNMI, SED, NOA), seejärel EMSC-lt. Rumeenias saavad ka riigi ümbruse maavärinad INFP väärtuse (infp.ro-st).
 PÕLLULAPID
 - Ajalugu ja prognoos: lohista näidik möödunud päevale; selle väärtused ilmuvad graafiku all olevasse kasti ja 10 s pärast naaseb see tänasele.
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.

@@ -1497,3 +1497,6 @@ The orange square opens it too.	Turuncu kare de onu açar.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Soldaki şerit, yerleşim yerinin bulunduğu harita bölgesinin rengindedir; bölgelerin dışında kahverengidir.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).

@@ -1563,3 +1563,6 @@ The orange square opens it too.	To atver arī oranžais kvadrāts.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Kreisā josla ir tās kartes zonas krāsā, kurā ir tava apdzīvotā vieta; ārpus zonām brūna.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).

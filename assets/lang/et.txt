@@ -1563,3 +1563,6 @@ The orange square opens it too.	Ka oranž ruut avab selle.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Vasakpoolne riba on selle kaardivööndi värvi, kus su asula asub; väljaspool vööndeid pruun.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	Rumeenias saavad ka riigi ümbruse maavärinad INFP väärtuse (infp.ro-st).

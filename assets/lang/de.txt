@@ -1563,3 +1563,6 @@ The orange square opens it too.	Das orange Quadrat öffnet sie auch.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Der Streifen links hat die Farbe der Kartenzone, in der dein Ort liegt; braun außerhalb der Zonen.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	In Rumänien erhalten auch die Beben rund um das Land den INFP-Wert (von infp.ro).

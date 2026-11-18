@@ -1,8 +1,8 @@
-Nuvarande version: v.2.047 · 18.11.2026
+Nuvarande version: v.2.050 · 18.11.2026
 AVISERINGAR
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
 HUVUDSKÄRM
-- Karta över jordbävningen: ett tryck på rutan Jordbävning visar en karta med epicentrum, din ort, avståndet och zonerna där den kändes; ett tryck på kartan förstorar den, med värdets historik. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC.
+- Karta över jordbävningen: ett tryck på rutan Jordbävning visar en karta med epicentrum, din ort, avståndet och zonerna där den kändes; ett tryck på kartan förstorar den, med värdets historik. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
 INSTÄLLNINGAR
 - Visningsspråk: i ☰ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
 SKIFTEN

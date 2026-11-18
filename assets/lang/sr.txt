@@ -1497,3 +1497,6 @@ The orange square opens it too.	Отвара је и наранџасти ква
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Трака лево има боју зоне на мапи у којој је твоје место; смеђа ван зона.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	У Румунији и земљотреси око земље добијају вредност INFP-а (са infp.ro).

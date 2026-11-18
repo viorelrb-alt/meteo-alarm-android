@@ -1,6 +1,6 @@
-Trenutačna verzija: v.2.047 · 18.11.2026
+Trenutačna verzija: v.2.050 · 18.11.2026
 GLAVNI ZASLON
-- Karta potresa: dodir polja Potres prikazuje kartu s epicentrom, tvojim mjestom, udaljenošću i zonama osjetnosti; dodir karte je povećava, s poviješću vrijednosti. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a.
+- Karta potresa: dodir polja Potres prikazuje kartu s epicentrom, tvojim mjestom, udaljenošću i zonama osjetnosti; dodir karte je povećava, s poviješću vrijednosti. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 OBAVIJESTI
 - Potresi: provjeravaju se svakih 10 minuta, i noću s ugašenim zaslonom; revidirana magnituda ažurira obavijest, a dodir na nju otvara kartu.
 PARCELE

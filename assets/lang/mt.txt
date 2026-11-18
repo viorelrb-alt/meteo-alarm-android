@@ -1563,3 +1563,6 @@ The orange square opens it too.	Il-kwadru oranġjo jiftaħha wkoll.
 
 # v2.046
 The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	L-istrixxa fuq ix-xellug għandha l-kulur taż-żona tal-mappa fejn qiegħed il-post tiegħek; kannella barra ż-żoni.
+
+# v2.050
+In Romania, the quakes around the country also get INFP's value (from infp.ro).	Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
