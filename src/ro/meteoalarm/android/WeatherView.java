@@ -300,6 +300,7 @@ final class WeatherView extends View {
 		}
 		drawScreen(c);
 		statsReport();
+		if (foot != null) foot.invalidate();
 		if (pull > 0) drawPull(c);
 		String big = screen.bigIcon;
 		if (big != null && !big.equals(iconDone)) startIcon(big);
@@ -498,6 +499,24 @@ final class WeatherView extends View {
 	}
 
 	private int[] statsLast;
+	/** v2.111: the layer over the earthquake's information with the floating buttons. */
+	View foot;
+
+	/** v2.111: the floating buttons on C (the layer over the information), as on the screen. */
+	void drawFoot(Canvas c) {
+		if (!screen.quakeOn || scale <= 0) return;
+		c.save();
+		c.translate(ox, oy);
+		c.scale(scale, scale);
+		gfx.c = c;
+		screen.drawFoot(gfx);
+		c.restore();
+	}
+
+	/** v2.111: is the point X Y (pixels of this view) on a floating button? */
+	boolean onFoot(float x, float y) {
+		return screen.quakeOn && scale > 0 && screen.onFoot((x - ox) / scale, (y - oy) / scale);
+	}
 
 	/** v2.020: tells the activity where the Statistics go when that changed. */
 	private void statsReport() {

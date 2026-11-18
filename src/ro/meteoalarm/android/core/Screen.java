@@ -962,6 +962,29 @@ public final class Screen {
 
 	// --- v5.30: the floating capsules at the bottom ------------------------------------------
 
+	private float footFb = -1, footBattR;
+	private boolean footBatt;
+
+	/**
+	 * v2.111 (Viorel): the floating buttons drawn again on GFX (a layer over the earthquake's
+	 * information, which scrolls under them): the capsule, and in portrait the battery.
+	 */
+	public void drawFoot(Gfx gfx) {
+		if (footFb < 0 || !quakeOn || statsOn || nightClock) return;
+		Gfx keep = g;
+		g = gfx;
+		capsules(footFb);
+		if (footBatt) battery(footFb, footBattR, true);
+		g = keep;
+	}
+
+	/** v2.111: is X Y (canvas units) on a floating button (capsule, farmer button, battery)? */
+	public boolean onFoot(float x, float y) {
+		for (float[] b : new float[][] { pillArea, battArea, btnFarm })
+			if (b[2] > 0 && x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3]) return true;
+		return false;
+	}
+
 	/** The buttons' capsule (and the farmer button) from the left; returns where the row is free from. */
 	private float capsules(float fb) {
 		btnLocate[1] = fb;
@@ -1075,7 +1098,8 @@ public final class Screen {
 			if ((statsOn || quakeOn) && statsY > 0) {
 				// v2.020: the page moves up as the Statistics scroll, until they reach the glass.
 				pageS.set(new float[0], Math.max(0, statsY - paneBot));
-				statsArea[0] = 40; statsArea[1] = paneBot; statsArea[2] = cw - 80; statsArea[3] = fb - 16; statsArea[4] = Math.max(0, statsY - paneBot);
+				// v2.111 (Viorel): the earthquake's information goes down to the bottom, under the floating buttons.
+				statsArea[0] = 40; statsArea[1] = paneBot; statsArea[2] = cw - 80; statsArea[3] = quakeOn && !statsOn ? ch : fb - 16; statsArea[4] = Math.max(0, statsY - paneBot);
 			} else pageS.set(new float[0], bot + 110 - ch);
 			pageS.area[0] = 0; pageS.area[1] = paneBot; pageS.area[2] = cw; pageS.area[3] = ch - paneBot;
 			pageHits(m, -pageS.scroll, paneBot, ch);
@@ -1105,6 +1129,9 @@ public final class Screen {
 		} else if (nw > 0) drawWarnBoxes(40, alertY, cw - 80, tablet ? 3 : 2, 1);
 		capsules(fb);
 		battery(fb, cw - 24, true);
+		footFb = fb;
+		footBattR = cw - 24;
+		footBatt = true;
 		drawNote(fb);
 	}
 
@@ -1129,7 +1156,7 @@ public final class Screen {
 		// v2.100: the earthquake's information in the left part, the glass as it is.
 		boolean qk = quakeOn && !st;
 		if (st || qk) {
-			statsArea[0] = lx; statsArea[1] = bandB + 14; statsArea[2] = lw; statsArea[3] = fb - 16; statsArea[4] = 0;
+			statsArea[0] = lx; statsArea[1] = bandB + 14; statsArea[2] = lw; statsArea[3] = qk ? ch : fb - 16; statsArea[4] = 0;
 		}
 		Gfx g0 = g;
 		if (w != null && !st && !qk) {
@@ -1172,6 +1199,8 @@ public final class Screen {
 			feelsCard(rx, fy, rw);
 		}
 		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
+		footFb = fb;
+		footBatt = false;
 		if (farmer && tabNames != null && tabNames.length > 0) drawTabs(free, fb + 7, bl - 24 - free, 54);
 		else tabs.area[2] = 0;
 		drawNote(fb);

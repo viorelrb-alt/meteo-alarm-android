@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.110";
+	static final String VERSION = "Meteo Alarm Android v2.111";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -193,6 +193,26 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		statsBox = new android.widget.FrameLayout(this);
 		statsBox.setVisibility(View.GONE);
 		root.addView(statsBox, new android.widget.FrameLayout.LayoutParams(0, 0));
+		// v2.111 (Viorel): the floating buttons over the earthquake's information (it scrolls under them).
+		View foot = new View(this) {
+			boolean mine;
+
+			@Override
+			protected void onDraw(android.graphics.Canvas c) {
+				if (s != null && s.quakeOn && statsBox.getVisibility() == View.VISIBLE) view.drawFoot(c);
+			}
+
+			@Override
+			public boolean onTouchEvent(android.view.MotionEvent e) {
+				if (e.getActionMasked() == android.view.MotionEvent.ACTION_DOWN)
+					mine = s != null && s.quakeOn && statsBox.getVisibility() == View.VISIBLE && view.onFoot(e.getX(), e.getY());
+				if (!mine) return false;
+				view.dispatchTouchEvent(e);
+				return true;
+			}
+		};
+		view.foot = foot;
+		root.addView(foot, new android.widget.FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		root.addView(sheet);
 		quakeWanted = getIntent() != null && getIntent().getBooleanExtra(OPEN_QUAKE, false);
 		if (getIntent() != null && getIntent().getBooleanExtra(OPEN_UPDATE, false)) {
@@ -1849,6 +1869,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			all.addView(room, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, spacer));
 		}
 		all.addView(QuakeCard.info(this, q, town, s, t, s.dark, fReg, fBold, zk, width, k));
+		// v2.111: room at the end, so the last box comes up above the floating buttons.
+		all.setPadding(0, 0, 0, Math.round(96 * view.scale()));
 		// v2.106 (Viorel): pulling down at the top still refreshes, as on the main screen.
 		final android.widget.ScrollView sv = new PullScroll(this, view);
 		sv.setVerticalScrollBarEnabled(false);
