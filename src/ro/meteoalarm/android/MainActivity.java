@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.050";
+	static final String VERSION = "Meteo Alarm Android v2.051";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3715,7 +3715,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		help.section(Tr.t("Farmer mode", "Mod Fermier"));
 		help.entry(mini("farm"), Tr.t("Farmer mode / Normal mode", "Mod Fermier / Mod Normal"), Tr.t("The Farmer mode switch in ☰ turns it on; the leaf button next to the buttons turns it off. Each hour is one wide box with its weather and its rain. Picking another town keeps farmer mode.",
-				"Comutatorul Mod Fermier din ☰ îl pornește; butonul cu frunză de lângă butoane îl oprește. Fiecare oră e o casetă lată, cu vremea și ploaia. Alegerea altei localități păstrează modul fermier."));
+				"Comutatorul Mod Fermier din ☰ îl pornește; butonul cu frunză de lângă butoane îl oprește. Fiecare oră e o casetă lată, cu vremea și ploaia. Alegerea altei localități păstrează modul fermier.") + " " + Tr.t("The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.", "Casetele late doar pe ecranul parcelei; ecranul localității rămâne ca în modul normal."));
 		help.entry(mini("check"), Tr.t("Operational status", "Status operațional"), Tr.t("On a parcel's screen, only when needed: the verdict for spraying (red, yellow, green), the main reason with its limit and the risks of the next 24 hours. On top, the crop and its sowing date; with a crop the verdict also takes drop drying (ΔT) and its disease into account. A tap shows the next good window.",
 				"Pe ecranul parcelei, doar când e nevoie: verdictul pentru stropit (roșu, galben, verde), motivul principal cu pragul lui și riscurile următoarelor 24 de ore. Sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei. Atingerea arată următoarea fereastră bună."));
 		help.entry(mini("grid4"), Tr.t("A parcel's screen", "Ecranul parcelei"), Tr.t("Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and crops, 3 Risks and reports, 4 Weather details.",

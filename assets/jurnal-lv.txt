@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.050 · 18.11.2026
+Pašreizējā versija: v.2.051 · 18.11.2026
 GALVENAIS EKRĀNS
 - Zemestrīces karte: pieskāriens lodziņam Zemestrīce parāda karti ar epicentru, tavu vietu, attālumu un jūtamības zonām; pieskāriens kartei to palielina, ar vērtības vēsturi. Rumānijā, Francijā, Itālijā, Nīderlandē, Šveicē un Grieķijā oficiālās vērtības vispirms nāk no valsts institūta (INFP, BCSF, INGV, KNMI, SED, NOA), pēc tam no EMSC. Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).
 IESTATĪJUMI

@@ -1566,3 +1566,6 @@ The stripe at the left has the colour of the map zone your town is in; brown out
 
 # v2.050
 In Romania, the quakes around the country also get INFP's value (from infp.ro).	Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
+
+# v2.051
+The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Il-kaxxi wesgħin biss fuq l-iskrin ta’ biċċa art; l-iskrin tal-post jibqa’ bħal fil-modalità normali.

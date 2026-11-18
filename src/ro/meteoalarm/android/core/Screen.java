@@ -580,8 +580,9 @@ public final class Screen {
 		}
 		if (pc) y = statsCard(x, y, wd) + 26; // v2.021: right under the status
 		y = section(x, y, wd, pc ? "1" : null, pc ? Tr.t("HOURLY WEATHER", "VREMEA PE ORE") : Tr.t("NEXT HOURS", "URMĂTOARELE ORE"),
-				farmer && farmMerged ? Tr.t("tap: soil details", "atinge: detalii sol") : null);
-		if (farmer && farmMerged) {
+				pc && farmMerged ? Tr.t("tap: soil details", "atinge: detalii sol") : null);
+		// v2.051 (Viorel): the merged boxes only on a parcel's page; the town's page as in normal mode.
+		if (pc && farmMerged) {
 			drawMergedRow(x, y, wd, 286);
 			y += 286;
 		} else {
@@ -1216,7 +1217,7 @@ public final class Screen {
 		}
 		// Farmer mode, merged boxes (v2.81, as on the phone): portrait keeps one row of wide boxes
 		// under the weather now, which gets the room of the second row.
-		boolean merged = farmer && farmMerged;
+		boolean merged = farmer && farmMerged && parcel != null; // v2.051: only on a parcel's page
 		float bs = 1.2f, MH = 330, ih = 190;
 		float nl = 40, nr = land ? cw / 2 - 20 : cw - 40, nt = land ? (pages > 1 && !tagLow ? 132 : 116) : 146, nb = land ? fb - 20 : ch * 0.42f;
 		if (merged && !land) nb = Math.max(nb, fb - 14 - (MH + 14 + ih + 24) * bs);
