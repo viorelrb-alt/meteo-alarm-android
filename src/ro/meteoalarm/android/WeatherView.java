@@ -538,6 +538,34 @@ final class WeatherView extends View {
 		c.restore();
 	}
 
+	/**
+	 * v2.114 (Viorel): the earthquake window's own floating buttons on C at scale K: the capsule
+	 * (sun, theme) from LEFT, the battery up to RIGHT, buttons' top FB (all in canvas units);
+	 * with BAR the brightness bar at BX, BY, BW, BH. Returns the battery's capsule.
+	 */
+	float[] drawQuakeFoot(Canvas c, float k, float left, float fb, float right, boolean barOn, float[] bar, float level) {
+		c.save();
+		c.scale(k, k);
+		gfx.c = c;
+		screen.drawQuakeCaps(gfx, left, fb, barOn);
+		float[] b = screen.drawQuakeBattery(gfx, fb, right);
+		if (bar != null) screen.drawQuakeBar(gfx, bar[0], bar[1], bar[2], bar[3], level);
+		c.restore();
+		return b;
+	}
+
+	float[] quakeSun() {
+		return screen.qBright;
+	}
+
+	float[] quakeTheme() {
+		return screen.qTheme;
+	}
+
+	float[] quakeCaps() {
+		return screen.qCaps;
+	}
+
 	/** v2.113: the brightness bar is shown. */
 	boolean barOpen() {
 		return screen.brightBar;

@@ -1000,6 +1000,40 @@ public final class Screen {
 		g = keep;
 	}
 
+	/** v2.114 (Viorel): the earthquake window's own buttons: the sun (its brightness bar) and the theme. */
+	public final float[] qBright = { 0, 0, 64, 64 }, qTheme = { 0, 0, 64, 64 }, qCaps = { 0, 0, 0, 0 };
+
+	/** v2.114: the capsule with the sun and the theme (◐) from LEFT, its buttons' top at FB (canvas units). */
+	public void drawQuakeCaps(Gfx gfx, float left, float fb, boolean barOn) {
+		Gfx keep = g;
+		g = gfx;
+		qBright[0] = left + 12; qBright[1] = fb;
+		qTheme[0] = left + 12 + 84; qTheme[1] = fb;
+		float pl = left, pr = qTheme[0] + 64 + 12, ph = 64 + 14;
+		qCaps[0] = pl; qCaps[1] = fb - 7; qCaps[2] = pr - pl; qCaps[3] = ph;
+		frost(roundRectPoly(pl, fb - 7, pr - pl, ph, ph / 2));
+		footButton("bright", qBright, barOn);
+		footButton("theme", qTheme, false);
+		g = keep;
+	}
+
+	/** v2.114: the battery in its capsule, its right edge at RIGHT; returns the capsule (x, y, w, h). */
+	public float[] drawQuakeBattery(Gfx gfx, float fb, float right) {
+		Gfx keep = g;
+		g = gfx;
+		battery(fb, right, true);
+		g = keep;
+		return battArea.clone();
+	}
+
+	/** v2.114: the earthquake window's brightness bar (no moon: the theme has its own button). */
+	public void drawQuakeBar(Gfx gfx, float x, float y, float w, float h, float level) {
+		Gfx keep = g;
+		g = gfx;
+		pill(x, y, w, h, true, level);
+		g = keep;
+	}
+
 	/** v2.113: is X Y (canvas units) on the round moon button over the brightness bar? */
 	public boolean onMoon(float x, float y) {
 		float[] b = btnMoon;

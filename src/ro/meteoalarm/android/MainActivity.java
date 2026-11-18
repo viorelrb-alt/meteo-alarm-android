@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.113";
+	static final String VERSION = "Meteo Alarm Android v2.114";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -297,7 +297,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		try {
 			WindowManager.LayoutParams lp = getWindow().getAttributes();
 			// LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES = 1
-			WindowManager.LayoutParams.class.getField("layoutInDisplayCutoutMode").setInt(lp, 1);
+			// v2.114 (Viorel): ALWAYS (3) on Android 11+, so the camera's side in landscape is the app's too.
+			WindowManager.LayoutParams.class.getField("layoutInDisplayCutoutMode").setInt(lp, Build.VERSION.SDK_INT >= 30 ? 3 : 1);
 			getWindow().setAttributes(lp);
 			root.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
 				public android.view.WindowInsets onApplyWindowInsets(View v, android.view.WindowInsets in) {
@@ -337,6 +338,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 							}
 						}
 						Log.i(MainActivity.this, "APP", "decupaj cameră: stânga " + l + ", sus " + t + ", dreapta " + r + " px" + (band > 0 ? "; ceas, rețea și dată în banda camerei" : ""));
+						android.util.DisplayMetrics real = new android.util.DisplayMetrics();
+						getWindowManager().getDefaultDisplay().getRealMetrics(real);
+						Log.i(MainActivity.this, "APP", "fereastra " + getWindow().getDecorView().getWidth() + "x" + getWindow().getDecorView().getHeight() + " px, ecranul " + real.widthPixels + "x" + real.heightPixels + " px");
 					}
 					return in;
 				}
@@ -1958,108 +1962,132 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/**
-	 * v2.112 (Viorel): the main screen's floating buttons and battery over the earthquake's whole
-	 * screen. v2.113 (Viorel): the sun shows the brightness bar right there (the screen stays);
-	 * the moon on the bar changes the theme and opens the screen again in the new colours; the
-	 * other buttons close the whole screen and do what they do on the main one.
+	 * v2.114 (Viorel): the earthquake's whole screen has its own floating buttons, drawn like the
+	 * main screen's but larger: ☀ shows its own brightness bar at the left, ◐ switches between the
+	 * light and the dark theme (the screen opens again in the new colours); the battery at the
+	 * right. Nothing reaches the main screen under it any more.
 	 */
 	private View fullFoot(final Runnable close, final android.view.Window w, final Runnable again) {
-		final View f = new View(this) {
-			boolean mine, bar, moon;
-			float tx, ty;
+		final float dp = getResources().getDisplayMetrics().density;
+		return new View(this) {
+			float k = 1, fb, left, right, level;
+			boolean bar, onBar, onSun, onTheme, out;
+			float y0, pos0;
+			final float[] barR = new float[4];
+			final Runnable hide = new Runnable() {
+				public void run() {
+					bar = false;
+					invalidate();
+				}
+			};
 
-			private float[] shift() {
-				int[] a = new int[2], b = new int[2];
-				view.getLocationOnScreen(a);
-				getLocationOnScreen(b);
-				return new float[] { a[0] - b[0], a[1] - b[1] };
+			/** Where everything goes: units of the main screen, times 1.3. */
+			private void place() {
+				int W = getWidth(), H = getHeight();
+				k = Math.max(0.5f, view.scale() * 1.3f);
+				int nb = 0, cl = 0, cr = 0;
+				android.view.WindowInsets in = getRootWindowInsets();
+				if (in != null) {
+					nb = in.getSystemWindowInsetBottom();
+					if (android.os.Build.VERSION.SDK_INT >= 28 && in.getDisplayCutout() != null) {
+						cl = in.getDisplayCutout().getSafeInsetLeft();
+						cr = in.getDisplayCutout().getSafeInsetRight();
+					}
+				}
+				left = (16 * dp + cl) / k;
+				right = (W - 16 * dp - cr) / k;
+				fb = (H - nb - 14 * dp) / k - 71;
+				float ch = H / k, bw = 84, bh = ch * (W > H ? 0.55f : 0.42f);
+				barR[0] = left + 8; barR[1] = (ch - bh) / 2 - 20; barR[2] = bw; barR[3] = bh;
 			}
 
 			@Override
 			protected void onDraw(android.graphics.Canvas c) {
-				float[] d = shift();
-				view.drawFootAll(c, d[0], d[1]);
-				view.drawBarAll(c, d[0], d[1]);
+				place();
+				view.drawQuakeFoot(c, k, left, fb, right, bar, bar ? barR : null, level);
 				postInvalidateDelayed(30000);
 			}
 
-			/** The main screen's view gets the touch, moved into its own place. */
-			private void pass(android.view.MotionEvent e, float[] d) {
-				android.view.MotionEvent m = android.view.MotionEvent.obtain(e);
-				m.offsetLocation(-d[0], -d[1]);
-				view.onTouchEvent(m);
-				m.recycle();
-				brightness();
+			private boolean in(float[] r, float x, float y) {
+				return r[2] > 0 && x >= r[0] && x <= r[0] + r[2] && y >= r[1] && y <= r[1] + r[3];
+			}
+
+			private void setLevel(float lv, boolean save) {
+				level = Math.max(0, Math.min(1, lv));
+				setBrightness(WeatherView.toLevel(level), save);
+				if (w != null) {
+					WindowManager.LayoutParams a = w.getAttributes();
+					a.screenBrightness = getWindow().getAttributes().screenBrightness;
+					w.setAttributes(a);
+				}
 				invalidate();
 			}
 
 			@Override
 			public boolean onTouchEvent(android.view.MotionEvent e) {
-				float[] d = shift();
-				float x = e.getX() - d[0], y = e.getY() - d[1];
+				float x = e.getX() / k, y = e.getY() / k;
 				int act = e.getActionMasked();
 				if (act == android.view.MotionEvent.ACTION_DOWN) {
-					bar = view.barOpen();
-					moon = bar && view.onMoon(x, y);
-					mine = bar || view.onFootAny(x, y);
-					tx = x;
-					ty = y;
+					onSun = in(view.quakeSun(), x, y);
+					onTheme = in(view.quakeTheme(), x, y);
+					onBar = bar && in(barR, x, y);
+					out = bar && !onBar && !onSun;
+					y0 = e.getY();
+					pos0 = level;
+					if (onBar || onSun || onTheme || out) removeCallbacks(hide);
+					// The capsule itself takes the touch too (no tap through it).
+					return onSun || onTheme || onBar || out || in(view.quakeCaps(), x, y);
 				}
-				if (!mine) return false;
-				if (bar) {
-					// The bar: sliding, the moon, or a tap elsewhere that hides it.
-					pass(e, d);
-					if (act == android.view.MotionEvent.ACTION_UP && moon && view.onMoon(x, y)) {
-						Log.i(MainActivity.this, "CUTREMUR", "tema schimbată din ecranul întreg");
-						close.run();
-						handler.postDelayed(again, 200);
+				if (onBar) {
+					if (act == android.view.MotionEvent.ACTION_MOVE) setLevel(pos0 - (e.getY() - y0) / (barR[3] * k), false);
+					else if (act == android.view.MotionEvent.ACTION_UP || act == android.view.MotionEvent.ACTION_CANCEL) {
+						setLevel(pos0 - (e.getY() - y0) / (barR[3] * k), true);
+						postDelayed(hide, 4000);
 					}
 					return true;
 				}
-				if (act == android.view.MotionEvent.ACTION_UP && view.onButtons(tx, ty)) {
-					if (view.onSun(tx, ty)) {
-						Log.i(MainActivity.this, "CUTREMUR", "luminozitate din ecranul întreg");
-						view.tapAt(tx, ty);
+				if (act != android.view.MotionEvent.ACTION_UP) return true;
+				if (out) {
+					hide.run();
+					return true;
+				}
+				if (onSun && in(view.quakeSun(), x, y)) {
+					Log.i(MainActivity.this, "CUTREMUR", "ecran întreg: bara de luminozitate " + (bar ? "închisă" : "deschisă"));
+					if (bar) hide.run();
+					else {
+						level = WeatherView.toPos(brightness());
+						bar = true;
+						postDelayed(hide, 3000);
 						invalidate();
-						return true;
 					}
-					Log.i(MainActivity.this, "CUTREMUR", "buton plutitor din ecranul întreg");
+				} else if (onTheme && in(view.quakeTheme(), x, y)) {
+					Log.i(MainActivity.this, "CUTREMUR", "ecran întreg: temă schimbată");
+					toggleTheme();
 					close.run();
-					final float fx = tx, fy = ty;
-					handler.postDelayed(new Runnable() {
-						public void run() {
-							view.tapAt(fx, fy);
-						}
-					}, 150);
+					handler.postDelayed(again, 150);
 				}
 				return true;
-			}
-
-			/** The whole screen is its own window: it takes the app's brightness too (else the phone's shows). */
-			private void brightness() {
-				if (w == null) return;
-				WindowManager.LayoutParams a = w.getAttributes();
-				float b = getWindow().getAttributes().screenBrightness;
-				if (a.screenBrightness != b) {
-					a.screenBrightness = b;
-					w.setAttributes(a);
-				}
 			}
 
 			@Override
 			protected void onAttachedToWindow() {
 				super.onAttachedToWindow();
-				brightness();
+				// The whole screen is its own window: it takes the app's brightness too.
+				if (w != null) {
+					WindowManager.LayoutParams a = w.getAttributes();
+					a.screenBrightness = getWindow().getAttributes().screenBrightness;
+					w.setAttributes(a);
+				}
 				view.footFull = this;
 			}
 
 			@Override
 			protected void onDetachedFromWindow() {
+				removeCallbacks(hide);
 				if (view.footFull == this) view.footFull = null;
 				super.onDetachedFromWindow();
 			}
 		};
-		return f;
 	}
 
 	/** v2.030: a tap on an earthquake notice: the town's screen and the earthquake's bubble, once the data are there. */
@@ -4218,6 +4246,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Atingerea casetei Cutremur deschide informațiile în ecranul principal (în portret sub Resimțit, în peisaj în stânga): harta, sub ea zonele resimțite și istoricul valorii, apoi detaliile; ‹ le închide.")
 				+ " " + Tr.t("The coloured square or the map opens it on the whole screen.", "Pătratul colorat sau harta le deschid pe tot ecranul.")
 				+ " " + Tr.t("☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.", "☰ › Cutremure: atingerea pătratului sau a titlului unui cutremur îl deschide pe tot ecranul; în peisaj harta în stânga, informațiile în dreapta.")
+				+ " " + Tr.t("On the whole screen: ☀ shows the brightness bar, ◐ switches between light and dark.", "Pe tot ecranul: ☀ arată bara de luminozitate, ◐ comută între luminos și întunecat.")
 				+ " " + Tr.t("The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.", "Culoarea pătratului arată magnitudinea: verde sub 3, galben, chihlimbar, portocaliu spre roșu de la 5.")
 				+ " " + Tr.t("In Romania, ↻ INFP asks for the official value again.", "În România, ↻ INFP cere din nou valoarea oficială.")
 				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC.") + " " + Tr.t("In Romania, the quakes around the country also get INFP's value (from infp.ro).", "În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro)."));

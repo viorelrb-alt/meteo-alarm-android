@@ -705,20 +705,7 @@ final class QuakeCard {
 		r.setOrientation(LinearLayout.HORIZONTAL);
 		r.setGravity(Gravity.CENTER_VERTICAL);
 		int bs = (int) (size * dp * zk);
-		if (back != null) {
-			TextView k = text(ctx, "‹", size * 0.62f * zk, bold, Theme.ink(dark));
-			k.setGravity(Gravity.CENTER);
-			k.setIncludeFontPadding(false);
-			k.setPadding((int) (2 * dp), 0, (int) (4 * dp), (int) (4 * dp));
-			k.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), size * dp, dp));
-			k.setContentDescription(ro.meteoalarm.android.core.Tr.t("Back", "Înapoi"));
-			k.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					back.run();
-				}
-			});
-			r.addView(k, new LinearLayout.LayoutParams(bs, bs));
-		}
+		if (back != null) r.addView(backButton(ctx, dark, bold, zk, size, back), new LinearLayout.LayoutParams(bs, bs));
 		LinearLayout tx = new LinearLayout(ctx);
 		tx.setOrientation(LinearLayout.VERTICAL);
 		tx.setGravity(Gravity.END);
@@ -757,6 +744,26 @@ final class QuakeCard {
 		}
 		r.addView(b, new LinearLayout.LayoutParams(bs, bs));
 		return r;
+	}
+
+	/** v2.114 (Viorel): ‹ the same size everywhere (the largest one). */
+	static final float BACK = 56;
+
+	/** The round ‹ (SIZE dp at text size ZK). */
+	static TextView backButton(Context ctx, boolean dark, Typeface bold, float zk, float size, final Runnable back) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		TextView k = text(ctx, "‹", size * 0.62f * zk, bold, Theme.ink(dark));
+		k.setGravity(Gravity.CENTER);
+		k.setIncludeFontPadding(false);
+		k.setPadding((int) (2 * dp), 0, (int) (4 * dp), (int) (4 * dp));
+		k.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), size * dp, dp));
+		k.setContentDescription(ro.meteoalarm.android.core.Tr.t("Back", "Înapoi"));
+		k.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				back.run();
+			}
+		});
+		return k;
 	}
 
 	/** The big map (the one of "Big map"): TAP non-null puts a tap on it (the map does not move then). */
@@ -1033,7 +1040,7 @@ final class QuakeCard {
 		col.setOrientation(LinearLayout.VERTICAL);
 		col.setPadding(0, (int) (4 * dp), 0, (int) (24 * dp));
 		col.addView(head(ctx, dark, bold, zk, 34, null, k.titlePx));
-		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 54, k.full, k.back), wide(12, dp));
+		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, BACK, k.full, k.back), wide(12, dp));
 		final FrameLayout map = mapBox(ctx, q, town, t, dark, k.full, 16 * dp);
 		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(300 * dp, width * 0.62f));
 		ml.topMargin = (int) (8 * dp);
@@ -1083,7 +1090,7 @@ final class QuakeCard {
 				final LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
 				final int bh = Band.height(ctx, root);
-				final int bottom = (int) ((k.foot != null ? 96 : 28) * dp);
+				final int bottom = (int) ((k.foot != null ? 116 : 28) * dp);
 				col.setPadding(pad, bh + (int) (150 * dp), pad, bottom);
 				// v2.113 (Viorel): the top (the band, the header, the title) stays in place on a sheet of
 				// matte glass with round corners; the map and the boxes pass under it.
@@ -1093,7 +1100,7 @@ final class QuakeCard {
 				top.setBackground(new Sheet(dark, dp));
 				top.setClickable(true);
 				top.addView(head(ctx, dark, bold, zk, 36, null, k.titlePx));
-				top.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null, close), wide(8, dp));
+				top.addView(titleRow(ctx, q, t, dark, reg, bold, zk, BACK, null, close), wide(8, dp));
 				top.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
 					public void onLayoutChange(View v, int l, int tp, int r, int b, int ol, int ot, int or, int ob) {
 						final int want = b - tp + (int) (8 * dp);
@@ -1126,42 +1133,58 @@ final class QuakeCard {
 			}
 
 			private void landscape(FrameLayout root, int W, int H) {
-				// The map under everything.
+				// The map under everything (the camera's side too).
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 0);
 				root.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-				int m = (int) (10 * dp), band = (int) (44 * dp * Math.max(1, zk * 0.9f)), half = W / 2;
-				int bh = Band.height(ctx, root);
-				// v2.113 (Viorel): the L of matte glass takes in the band with the day too and runs to the
-				// screen's right edge and bottom; its top side stays thin (the band and the header only).
+				int bh = Band.height(ctx, root), m = (int) (12 * dp);
+				// v2.114 (Viorel, mockup m3): a narrower L of matte glass: the thin band with the day on
+				// top, the right column (about 38 %) to the screen's right edge and bottom.
+				int col0 = (int) (W * 0.62f);
 				View glass = new View(ctx);
-				glass.setBackground(new LGlass(dark, dp, bh + band, half));
+				glass.setBackground(new LGlass(dark, dp, bh, col0));
 				root.addView(glass, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-				// v2.104 (Viorel): ‹ in the left corner of the L sheet, before the title.
-				View hd = head(ctx, dark, bold, zk * 0.9f, 34, close, k.titlePx);
-				FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, band, Gravity.TOP);
-				hl.leftMargin = Band.left(root, (int) (16 * dp));
-				// v2.105 (Viorel): the title and its line only over the narrow part, above the map.
-				hl.rightMargin = W - half + (int) (12 * dp);
-				hl.topMargin = bh;
-				root.addView(hd, hl);
-				// The right half: the information, scrolling up.
+				// The right column: the information scrolls up under the title's capsule.
 				ScrollView sv = new ScrollView(ctx);
 				sv.setVerticalScrollBarEnabled(false);
-				LinearLayout col = new LinearLayout(ctx);
+				final LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				col.setPadding((int) (16 * dp), (int) (8 * dp), (int) (16 * dp), (int) ((k.foot != null ? 90 : 20) * dp));
-				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, null));
+				final int bottom = (int) ((k.foot != null ? 110 : 20) * dp);
+				col.setPadding(m, (int) (130 * dp), m, bottom);
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
-				// v2.105 (Viorel): the whole right part of the L scrolls, from the top.
-				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half, H - bh);
-				sl.leftMargin = half;
+				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - col0, H - bh);
+				sl.leftMargin = col0;
 				sl.topMargin = bh;
 				root.addView(sv, sl);
+				// v2.114 (Viorel): the title in its own fixed capsule of matte glass (the fourth one).
+				final View cap = titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, null);
+				cap.setPadding(m + m / 2, m, m, m);
+				cap.setBackground(new Capsule(dark, dp));
+				cap.setClickable(true);
+				FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(W - col0 - 2 * m, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT);
+				cl.leftMargin = col0 + m;
+				cl.topMargin = bh + m / 2;
+				root.addView(cap, cl);
+				cap.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+					public void onLayoutChange(View v, int l, int tp, int r, int b, int ol, int ot, int or, int ob) {
+						final int want = b - tp + (int) (14 * dp);
+						if (b > tp && col.getPaddingTop() != want) col.post(new Runnable() {
+							public void run() {
+								col.setPadding(col.getPaddingLeft(), want, col.getPaddingRight(), bottom);
+							}
+						});
+					}
+				});
+				// v2.114 (Viorel): ‹ floats over the map, under the band, at the left edge.
+				int bs = (int) (BACK * dp * zk);
+				FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(bs, bs, Gravity.TOP | Gravity.LEFT);
+				bl.leftMargin = Band.left(root, (int) (16 * dp));
+				bl.topMargin = bh + (int) (10 * dp);
+				root.addView(backButton(ctx, dark, bold, zk, BACK, close), bl);
 				root.addView(new Band(ctx, s, dark, reg, bold, 0, Band.left(root, (int) (16 * dp))), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 				foot(root);
-				// The largest circle in the left half, under the L's top.
-				fit(map, 16 * dp, bh + band + 12 * dp, W - half + 12 * dp, 16 * dp);
+				// The largest circle in the map's part, under the band and right of ‹.
+				fit(map, Band.left(root, (int) (16 * dp)) + bs + 12 * dp, bh + 16 * dp, W - col0 + 12 * dp, 16 * dp);
 			}
 		};
 		root.build.run();
@@ -1170,7 +1193,13 @@ final class QuakeCard {
 		if (w != null) {
 			w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
 			// v2.101: the whole screen, the camera's band too (else the main screen's band showed above it).
-			if (android.os.Build.VERSION.SDK_INT >= 28) w.getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+			// v2.114 (Viorel): also the camera's side in landscape (ALWAYS, Android 11+), and no status bar.
+			if (android.os.Build.VERSION.SDK_INT >= 28) w.getAttributes().layoutInDisplayCutoutMode = android.os.Build.VERSION.SDK_INT >= 30 ? 3
+					: WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+			w.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+			w.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+					| View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | (dark ? 0 : 0x10));
+			if (android.os.Build.VERSION.SDK_INT >= 30) w.setDecorFitsSystemWindows(false);
 		}
 		d.show();
 		return d;
@@ -1213,11 +1242,10 @@ final class QuakeCard {
 		/** The band's height: the camera's band (the status bar), at least 30 dp. */
 		static int height(Context ctx, View root) {
 			float dp = ctx.getResources().getDisplayMetrics().density;
+			// v2.114 (Viorel): the status bar is hidden: the band is the camera's strip (at least 30 dp).
 			int h = 0;
-			int id = ctx.getResources().getIdentifier("status_bar_height", "dimen", "android");
-			if (id > 0) h = ctx.getResources().getDimensionPixelSize(id);
 			if (android.os.Build.VERSION.SDK_INT >= 28 && root.getRootWindowInsets() != null && root.getRootWindowInsets().getDisplayCutout() != null)
-				h = Math.max(h, root.getRootWindowInsets().getDisplayCutout().getSafeInsetTop());
+				h = root.getRootWindowInsets().getDisplayCutout().getSafeInsetTop();
 			return Math.max(h, (int) (30 * dp));
 		}
 
@@ -1362,6 +1390,41 @@ final class QuakeCard {
 			p.op(in, android.graphics.Path.Op.UNION);
 			c.drawPath(p, fill);
 			c.drawPath(p, edge);
+		}
+
+		@Override
+		public void setAlpha(int a) {
+		}
+
+		@Override
+		public void setColorFilter(android.graphics.ColorFilter f) {
+		}
+
+		@Override
+		public int getOpacity() {
+			return android.graphics.PixelFormat.TRANSLUCENT;
+		}
+	}
+
+	/** v2.114 (Viorel): the landscape title's capsule: matte glass, all corners round, a soft shadow line. */
+	private static class Capsule extends android.graphics.drawable.Drawable {
+		final Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG), edge = new Paint(Paint.ANTI_ALIAS_FLAG);
+		final float dp;
+
+		Capsule(boolean dark, float dp) {
+			this.dp = dp;
+			fill.setColor(Glass.alpha(Theme.page(dark), dark ? 0.94f : 0.96f));
+			edge.setStyle(Paint.Style.STROKE);
+			edge.setStrokeWidth(Math.max(1, dp));
+			edge.setColor(Glass.edge(dark));
+		}
+
+		@Override
+		public void draw(Canvas c) {
+			android.graphics.Rect b = getBounds();
+			RectF f = new RectF(b.left + dp / 2, b.top + dp / 2, b.right - dp / 2, b.bottom - dp / 2);
+			c.drawRoundRect(f, 22 * dp, 22 * dp, fill);
+			c.drawRoundRect(f, 22 * dp, 22 * dp, edge);
 		}
 
 		@Override

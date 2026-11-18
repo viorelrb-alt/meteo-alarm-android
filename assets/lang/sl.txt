@@ -1587,3 +1587,4 @@ New version: 	Nova različica:
 Tap to see what is new and download it.	Tapni, da vidiš novosti in jo preneseš.
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Eno polje za vsak potres v zadnjih 24 urah v polmeru 300 milj (USGS), najnovejši prvi.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Eno polje za vsak potres v zadnjih 24 urah v tvoji državi, najnovejši prvi, in kako so ga verjetno čutili (EMSC in državni inštitut).
+On the whole screen: ☀ shows the brightness bar, ◐ switches between light and dark.	Na celem zaslonu: ☀ pokaže drsnik svetlosti, ◐ preklaplja med svetlim in temnim.
