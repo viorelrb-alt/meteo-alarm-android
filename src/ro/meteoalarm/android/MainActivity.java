@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.101";
+	static final String VERSION = "Meteo Alarm Android v2.102";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1862,6 +1862,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * the square / the map of the information); ‹ or Back return where it was opened from.
 	 */
 	private void openQuakeFull(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean withMore) {
+		// v2.102 (Viorel): the value's history the same everywhere: the list's quake is the town's
+		// quake (with its first value and revisions) when it is the same event.
+		if (s.quakes != null) for (ro.meteoalarm.android.core.Quakes.Quake m : s.quakes)
+			if (m != q && Math.abs(m.time - q.time) < 120000L && Math.abs(m.lat - q.lat) < 1 && Math.abs(m.lon - q.lon) < 1) {
+				q = m;
+				break;
+			}
 		QuakeCard.Hooks k = new QuakeCard.Hooks();
 		if (withMore) k.more = quakeMore(Fetcher.officialOf(c));
 		k.titlePx = 23 * view.scale();

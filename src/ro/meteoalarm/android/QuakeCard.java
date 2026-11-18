@@ -650,7 +650,8 @@ final class QuakeCard {
 			}
 		});
 		int bs = (int) (size * dp * zk);
-		h.addView(b, new LinearLayout.LayoutParams(bs, bs));
+		// v2.102 (Viorel): ‹ moved to the title row (bigger); the header is only the title and its line.
+		if (back != null) h.addView(b, new LinearLayout.LayoutParams(bs, bs));
 		TextView t = text(ctx, ro.meteoalarm.android.core.Tr.t("EARTHQUAKE INFORMATION", "INFORMAȚII CUTREMUR"), 13 * zk, bold, Theme.dim(dark));
 		if (tpx > 0) {
 			t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, tpx);
@@ -658,7 +659,7 @@ final class QuakeCard {
 		} else t.setLetterSpacing(0.06f);
 		t.setSingleLine(true);
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		tl.leftMargin = (int) (12 * dp);
+		tl.leftMargin = back != null ? (int) (12 * dp) : 0;
 		h.addView(t, tl);
 		View line = new View(ctx);
 		line.setBackgroundColor(Glass.edge(dark));
@@ -670,12 +671,47 @@ final class QuakeCard {
 
 	/** The coloured square with the magnitude, "Earthquake in …" and the date with the depth. */
 	static View titleRow(Context ctx, Quakes.Quake q, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, float size, final Runnable tap) {
+		return titleRow(ctx, q, t, dark, reg, bold, zk, size, tap, null);
+	}
+
+	/**
+	 * v2.102 (Viorel): a big ‹ at the left (BACK), the title and the date aligned to the right,
+	 * the coloured square at the right end (a tap on it: TAP).
+	 */
+	static View titleRow(Context ctx, Quakes.Quake q, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, float size, final Runnable tap, final Runnable back) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		LinearLayout r = new LinearLayout(ctx);
 		r.setOrientation(LinearLayout.HORIZONTAL);
 		r.setGravity(Gravity.CENTER_VERTICAL);
-		android.widget.ImageView b = new android.widget.ImageView(ctx);
 		int bs = (int) (size * dp * zk);
+		if (back != null) {
+			TextView k = text(ctx, "‹", size * 0.62f * zk, bold, Theme.ink(dark));
+			k.setGravity(Gravity.CENTER);
+			k.setIncludeFontPadding(false);
+			k.setPadding((int) (2 * dp), 0, (int) (4 * dp), (int) (4 * dp));
+			k.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), size * dp, dp));
+			k.setContentDescription(ro.meteoalarm.android.core.Tr.t("Back", "Înapoi"));
+			k.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					back.run();
+				}
+			});
+			r.addView(k, new LinearLayout.LayoutParams(bs, bs));
+		}
+		LinearLayout tx = new LinearLayout(ctx);
+		tx.setOrientation(LinearLayout.VERTICAL);
+		tx.setGravity(Gravity.END);
+		TextView t0 = text(ctx, t[0], 19 * zk, bold, Theme.ink(dark));
+		t0.setGravity(Gravity.END);
+		tx.addView(t0);
+		TextView t1 = text(ctx, t[1], 12.5f * zk, reg, Theme.dim(dark));
+		t1.setGravity(Gravity.END);
+		tx.addView(t1);
+		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		xl.leftMargin = (int) (12 * dp);
+		xl.rightMargin = (int) (12 * dp);
+		r.addView(tx, xl);
+		android.widget.ImageView b = new android.widget.ImageView(ctx);
 		b.setImageBitmap(badge(t[2], t[3], bs, bold));
 		if (tap != null) {
 			b.setContentDescription(t[17]);
@@ -686,13 +722,6 @@ final class QuakeCard {
 			});
 		}
 		r.addView(b, new LinearLayout.LayoutParams(bs, bs));
-		LinearLayout tx = new LinearLayout(ctx);
-		tx.setOrientation(LinearLayout.VERTICAL);
-		tx.addView(text(ctx, t[0], 19 * zk, bold, Theme.ink(dark)));
-		tx.addView(text(ctx, t[1], 12.5f * zk, reg, Theme.dim(dark)));
-		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
-		xl.leftMargin = (int) (12 * dp);
-		r.addView(tx, xl);
 		return r;
 	}
 
@@ -866,10 +895,10 @@ final class QuakeCard {
 		LinearLayout col = new LinearLayout(ctx);
 		col.setOrientation(LinearLayout.VERTICAL);
 		col.setPadding(0, (int) (4 * dp), 0, (int) (24 * dp));
-		col.addView(head(ctx, dark, bold, zk, 34, k.back, k.titlePx));
+		col.addView(head(ctx, dark, bold, zk, 34, null, k.titlePx));
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		tl.topMargin = (int) (12 * dp);
-		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 54, k.full), tl);
+		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 54, k.full, k.back), tl);
 		final FrameLayout map = mapBox(ctx, q, town, t, dark, k.full, 16 * dp);
 		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(300 * dp, width * 0.62f));
 		ml.topMargin = (int) (12 * dp);
@@ -915,10 +944,10 @@ final class QuakeCard {
 			LinearLayout col = new LinearLayout(ctx);
 			col.setOrientation(LinearLayout.VERTICAL);
 			col.setPadding(pad, (int) (36 * dp), pad, (int) (28 * dp));
-			col.addView(head(ctx, dark, bold, zk, 36, close, k.titlePx));
+			col.addView(head(ctx, dark, bold, zk, 36, null, k.titlePx));
 			LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			tl.topMargin = (int) (12 * dp);
-			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null), tl);
+			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null, close), tl);
 			FrameLayout map = mapBox(ctx, q, town, t, dark, null, 16 * dp);
 			int inner = dm.widthPixels - 2 * pad;
 			LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(dm.heightPixels * 0.5f, inner * 1.05f));
@@ -954,8 +983,8 @@ final class QuakeCard {
 			lc.addView(bx, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			ls.addView(lc);
 			left.addView(ls, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-			final View hd = head(ctx, dark, bold, zk * 0.9f, 34, close, k.titlePx);
-			hd.setPadding((int) (8 * dp), (int) (6 * dp), (int) (14 * dp), (int) (6 * dp));
+			final View hd = head(ctx, dark, bold, zk * 0.9f, 34, null, k.titlePx);
+			hd.setPadding((int) (14 * dp), (int) (10 * dp), (int) (14 * dp), (int) (10 * dp));
 			hd.setBackground(Glass.panelBg(dark, 18 * dp, dp));
 			FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP);
 			hl.leftMargin = hl.rightMargin = hl.topMargin = (int) (10 * dp);
@@ -967,7 +996,7 @@ final class QuakeCard {
 			LinearLayout col = new LinearLayout(ctx);
 			col.setOrientation(LinearLayout.VERTICAL);
 			col.setPadding((int) (18 * dp), (int) (14 * dp), (int) (22 * dp), (int) (20 * dp));
-			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null));
+			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, close));
 			LinearLayout dd = new LinearLayout(ctx);
 			dd.setOrientation(LinearLayout.VERTICAL);
 			LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);

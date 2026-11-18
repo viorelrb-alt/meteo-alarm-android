@@ -403,7 +403,8 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 					open.run();
 				}
 			};
-			top.setOnClickListener(go);
+			// v2.102 (Viorel): a tap anywhere on the card, its text too.
+			card.setOnClickListener(go);
 		}
 		card.addView(top);
 		TextView w = new TextView(c);
