@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.035";
+	static final String VERSION = "Meteo Alarm Android v2.036";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3397,8 +3397,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			} catch (Exception e) {
 				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			}
+			// v2.036 (Viorel): INFP's value here too (Romania and the neighbours INFP locates).
+			java.util.Map<String, double[]> emsc = new java.util.HashMap<String, double[]>();
+			if (quakesInfp != null && Fetcher.infpFor(c)) {
+				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
+				try {
+					String it = ro.meteoalarm.android.core.Quakes.infpFromApi(quakesInfp, l);
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeInfp(l, it, c.lat, c.lon, now, 2 * 86400000L);
+				} catch (Exception e) {
+					Log.e(this, "CUTREMUR", "valorile INFP (UE): " + e);
+				}
+			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
-			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false, Double.NaN);
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) {
+				double[] em = emsc.get(q.id);
+				quakeEntry(q, c, false, em == null ? Double.NaN : em[0]);
+			}
 			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size());
 		}
 		if (Fetcher.infpFor(c)) help.source(Tr.t("Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.", "România: lângă valoarea EMSC, cea oficială a INFP (infp.ro), când INFP o are."));
@@ -3435,8 +3449,22 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			} catch (Exception e) {
 				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			}
+			// v2.036 (Viorel): INFP's value here too (Romania and the neighbours INFP locates).
+			java.util.Map<String, double[]> emsc = new java.util.HashMap<String, double[]>();
+			if (quakesInfp != null && Fetcher.infpFor(c)) {
+				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
+				try {
+					String it = ro.meteoalarm.android.core.Quakes.infpFromApi(quakesInfp, l);
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeInfp(l, it, c.lat, c.lon, now, 2 * 86400000L);
+				} catch (Exception e) {
+					Log.e(this, "CUTREMUR", "valorile INFP (UE): " + e);
+				}
+			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
-			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false, Double.NaN);
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) {
+				double[] em = emsc.get(q.id);
+				quakeEntry(q, c, false, em == null ? Double.NaN : em[0]);
+			}
 			Log.i(this, "CUTREMUR", "USGS SUA, 48 h: " + l.size());
 		}
 		help.source(Tr.t("Source: USGS (U.S. Geological Survey, earthquake.usgs.gov): magnitude 2.5 and over around your town, 3 and over in the whole country. \"Felt\" is an estimate from the magnitude and the distance to the focus, on a scale like the Modified Mercalli one.",

@@ -242,11 +242,17 @@ final class QuakeCard {
 		c.setOrientation(LinearLayout.VERTICAL);
 		c.setPadding((int) (10 * dp), (int) (8 * dp), (int) (10 * dp), (int) (8 * dp));
 		c.setBackground(Glass.cardBg(dark, 12 * dp, dp));
+		// v2.036 (Viorel): centred, like the value history's boxes.
+		c.setGravity(Gravity.CENTER_HORIZONTAL);
 		TextView l = text(ctx, label.toUpperCase(), 10.5f * zk, bold, Theme.dim(dark));
 		l.setLetterSpacing(0.05f);
+		l.setGravity(Gravity.CENTER);
 		c.addView(l);
-		c.addView(text(ctx, value, 16 * zk, bold, Theme.ink(dark)));
+		TextView v = text(ctx, value, 16 * zk, bold, Theme.ink(dark));
+		v.setGravity(Gravity.CENTER);
+		c.addView(v);
 		TextView s = text(ctx, sub, 11.5f * zk, reg, Theme.dim(dark));
+		s.setGravity(Gravity.CENTER);
 		s.setMaxLines(2);
 		c.addView(s);
 		return c;

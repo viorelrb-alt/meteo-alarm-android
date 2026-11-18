@@ -1,4 +1,4 @@
-Nuværende version: v.2.035 · 18.11.2026
+Nuværende version: v.2.036 · 18.11.2026
 HOVEDSKÆRM
 - Kort over jordskælvet: et tryk på feltet Jordskælv viser et kort med epicentret, din by, afstanden og zonerne, hvor det blev mærket; et tryk på kortet forstørrer det, med værdiens historik. I Rumænien kommer de officielle værdier fra INFP.
 INDSTILLINGER
