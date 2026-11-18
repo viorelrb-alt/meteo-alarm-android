@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.040 · 18.11.2026
+Súčasná verzia: v.2.041 · 18.11.2026
 HLAVNÁ OBRAZOVKA
 - Mapa zemetrasenia: ťuknutie na pole Zemetrasenie ukáže mapu s epicentrom, tvojou obcou, vzdialenosťou a zónami pocítenia; ťuknutie na mapu ju zväčší, s históriou hodnoty. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC.
 NASTAVENIA

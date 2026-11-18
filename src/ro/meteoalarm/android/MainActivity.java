@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.040";
+	static final String VERSION = "Meteo Alarm Android v2.041";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3361,7 +3361,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		String country = countries.shown(c.country);
 		long now = System.currentTimeMillis();
-		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + country);
+		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + country, true);
 		if (quakesCountry == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
 		else if (quakesCountry.length() == 0 && quakesInfp == null) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
 		else {
@@ -3391,7 +3391,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 			Log.i(this, "CUTREMUR", country + ", 7 zile: " + l.size() + (quakesInfp != null && Fetcher.infpFor(c) ? " (" + matched + " cu valoarea " + Fetcher.officialOf(c).name + ")" : ""));
 		}
-		help.section(Tr.t("Last 48 hours · EU, Ukraine, Moldova", "Ultimele 48 de ore · UE, Ucraina, Moldova"));
+		help.section(Tr.t("Last 48 hours · EU, Ukraine, Moldova", "Ultimele 48 de ore · UE, Ucraina, Moldova"), true);
 		if (quakesEurope == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
 		else if (quakesEurope.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
 		else {
@@ -3432,7 +3432,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void showQuakesUS(Cities.City c) {
 		long now = System.currentTimeMillis();
 		String radius = s.unitF ? Tr.t("within 300 miles", "pe o rază de 300 de mile") : Tr.t("within 480 km", "pe o rază de 480 km");
-		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + radius);
+		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + radius, true);
 		if (quakesCountry == null) help.text(Tr.t("Downloading from USGS…", "Se descarcă de la USGS…"));
 		else if (quakesCountry.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
 		else {
@@ -3446,7 +3446,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, true, Double.NaN);
 			Log.i(this, "CUTREMUR", "USGS în jurul " + c.name + ", 7 zile: " + l.size());
 		}
-		help.section(Tr.t("Last 48 hours · United States", "Ultimele 48 de ore · Statele Unite"));
+		help.section(Tr.t("Last 48 hours · United States", "Ultimele 48 de ore · Statele Unite"), true);
 		if (quakesEurope == null) help.text(Tr.t("Downloading from USGS…", "Se descarcă de la USGS…"));
 		else if (quakesEurope.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
 		else {

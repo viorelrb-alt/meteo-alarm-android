@@ -221,13 +221,22 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 
 	/** A section title. */
 	void section(String text) {
-		TextView t = new TextView(getContext());
+		section(text, false);
+	}
+
+	/**
+	 * v2.041 (Viorel): TWO = the title on 2 rows (split at its " · ", or at its last ", " when it is
+	 * the country list), centred, smaller when a row is too long.
+	 */
+	void section(String text, boolean two) {
+		TextView t = two ? new FitText(getContext(), 2, 0.7f) : new TextView(getContext());
 		t.setTypeface(bold);
 		TextSize.size(t, 14, ts);
 		t.setTextColor(ro.meteoalarm.android.core.Theme.accent(dark));
 		t.setLetterSpacing(0.1f);
-		t.setText(text.toUpperCase());
-		t.setPadding((int) (4 * dp), (int) (18 * dp), 0, (int) (8 * dp));
+		t.setText(two ? text.toUpperCase().replaceFirst(" · ", "\n") : text.toUpperCase());
+		if (two) t.setGravity(android.view.Gravity.CENTER_HORIZONTAL);
+		t.setPadding((int) (4 * dp), (int) (18 * dp), two ? (int) (4 * dp) : 0, (int) (8 * dp));
 		list.addView(t);
 		sections.add(t);
 		tab(text, t);

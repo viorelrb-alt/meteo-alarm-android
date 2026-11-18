@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.040 · 18.11.2026
+Trenutačna verzija: v.2.041 · 18.11.2026
 GLAVNI ZASLON
 - Karta potresa: dodir polja Potres prikazuje kartu s epicentrom, tvojim mjestom, udaljenošću i zonama osjetnosti; dodir karte je povećava, s poviješću vrijednosti. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a.
 OBAVIJESTI

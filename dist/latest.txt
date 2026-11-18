@@ -1,3 +1,3 @@
-versiune=135.2.040
-apk=MeteoAlarmAndroid-v2.040.apk
+versiune=136.2.041
+apk=MeteoAlarmAndroid-v2.041.apk
 marime=11610999
