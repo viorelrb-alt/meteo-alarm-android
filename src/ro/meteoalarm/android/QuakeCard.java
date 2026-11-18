@@ -229,7 +229,7 @@ final class QuakeCard {
 			sr.addView(chip, chl);
 		}
 		LinearLayout.LayoutParams srl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		srl.topMargin = (int) (10 * dp);
+		srl.topMargin = (int) (8 * dp);
 		col.addView(sr, srl);
 		TextView first = text(ctx, t[13], 12 * zk, reg, dim);
 		col.addView(first);
@@ -941,10 +941,11 @@ final class QuakeCard {
 	private static void rest(LinearLayout col, Context ctx, Quakes.Quake q, Screen s, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, Hooks k) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		View[] bx = boxPair(ctx, q, s, t, dark, reg, bold, zk);
-		col.addView(bx[1], wide(10, dp));
+		// v2.105 (Viorel): the same 8 dp between all the boxes.
+		col.addView(bx[1], wide(8, dp));
 		LinearLayout d = new LinearLayout(ctx);
 		d.setOrientation(LinearLayout.VERTICAL);
-		col.addView(d, wide(12, dp));
+		col.addView(d, wide(8, dp));
 		details(d, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName, bx[0]);
 		more(col, ctx, k.more, dark, reg, bold, zk);
 	}
@@ -962,7 +963,7 @@ final class QuakeCard {
 		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 54, k.full, k.back), wide(12, dp));
 		final FrameLayout map = mapBox(ctx, q, town, t, dark, k.full, 16 * dp);
 		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(300 * dp, width * 0.62f));
-		ml.topMargin = (int) (12 * dp);
+		ml.topMargin = (int) (8 * dp);
 		col.addView(map, ml);
 		fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
 		rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
@@ -1014,7 +1015,7 @@ final class QuakeCard {
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 16 * dp);
 				int inner = W - 2 * pad;
 				LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(H * 0.5f, inner * 1.05f));
-				ml.topMargin = (int) (12 * dp);
+				ml.topMargin = (int) (8 * dp);
 				col.addView(map, ml);
 				fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
@@ -1035,7 +1036,8 @@ final class QuakeCard {
 				View hd = head(ctx, dark, bold, zk * 0.9f, 38, close, k.titlePx);
 				FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, band, Gravity.TOP);
 				hl.leftMargin = m + (int) (12 * dp);
-				hl.rightMargin = m + (int) (22 * dp);
+				// v2.105 (Viorel): the title and its line only over the narrow part, above the map.
+				hl.rightMargin = W - half + (int) (12 * dp);
 				hl.topMargin = m;
 				root.addView(hd, hl);
 				// The right half: the information, scrolling up.
@@ -1043,13 +1045,14 @@ final class QuakeCard {
 				sv.setVerticalScrollBarEnabled(false);
 				LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				col.setPadding((int) (16 * dp), (int) (8 * dp), (int) (16 * dp), (int) (20 * dp));
+				col.setPadding((int) (16 * dp), (int) (16 * dp), (int) (16 * dp), (int) (20 * dp));
 				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, null));
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
-				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half - m, H - m - band - m);
+				// v2.105 (Viorel): the whole right part of the L scrolls, from the top.
+				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half - m, H - m - m);
 				sl.leftMargin = half;
-				sl.topMargin = m + band;
+				sl.topMargin = m;
 				root.addView(sv, sl);
 				// The largest circle in the left half, under the band.
 				fit(map, 16 * dp, m + band + 12 * dp, W - half + 12 * dp, 16 * dp);
