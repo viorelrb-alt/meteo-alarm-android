@@ -829,19 +829,32 @@ final class QuakeCard {
 		vals.setGravity(Gravity.CENTER);
 		vals.setBaselineAligned(false);
 		long nowMs = q.changedAt > 0 ? q.changedAt : q.updated > 0 ? q.updated : q.time;
-		if (!Double.isNaN(q.firstMag)) {
+		// v2.104 (Viorel): the box split in two by a line. One value: the value on the left, its
+		// meaning on the right. Two values (EMSC and INFP): the line between them, the meaning below.
+		boolean two = !Double.isNaN(q.firstMag);
+		TextView what = text(ctx, magWhat(q.magType), 10.5f * zk, reg, dim);
+		what.setGravity(Gravity.CENTER);
+		if (two) {
 			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
 			vals.addView(histVal(ctx, fm, q.firstSrc, s.qhm(q.firstAt), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-			vals.addView(text(ctx, "→", 16 * zk, bold, dim));
 		}
-		vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		View sep = new View(ctx);
+		sep.setBackgroundColor(Glass.edge(dark));
+		LinearLayout.LayoutParams sp = new LinearLayout.LayoutParams(Math.max(1, (int) dp), ViewGroup.LayoutParams.MATCH_PARENT);
+		sp.leftMargin = sp.rightMargin = (int) (8 * dp);
+		if (two) {
+			vals.addView(sep, sp);
+			vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		} else {
+			vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			vals.addView(sep, sp);
+			vals.addView(what, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		}
 		LinearLayout.LayoutParams vl = stack ? new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 				: new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
 		vl.topMargin = (int) (4 * dp);
 		hs.addView(vals, vl);
-		TextView what = text(ctx, magWhat(q.magType), 10.5f * zk, reg, dim);
-		what.setGravity(Gravity.CENTER);
-		hs.addView(what, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		if (two) hs.addView(what, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		if (stack) {
 			row.addView(lg, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -931,7 +944,7 @@ final class QuakeCard {
 		col.addView(bx[1], wide(10, dp));
 		LinearLayout d = new LinearLayout(ctx);
 		d.setOrientation(LinearLayout.VERTICAL);
-		col.addView(d, wide(2, dp));
+		col.addView(d, wide(12, dp));
 		details(d, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName, bx[0]);
 		more(col, ctx, k.more, dark, reg, bold, zk);
 	}
@@ -1018,9 +1031,10 @@ final class QuakeCard {
 				View glass = new View(ctx);
 				glass.setBackground(new LGlass(dark, dp, m, band, half));
 				root.addView(glass, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-				View hd = head(ctx, dark, bold, zk * 0.9f, 34, null, k.titlePx);
+				// v2.104 (Viorel): ‹ in the left corner of the L sheet, before the title.
+				View hd = head(ctx, dark, bold, zk * 0.9f, 38, close, k.titlePx);
 				FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, band, Gravity.TOP);
-				hl.leftMargin = m + (int) (22 * dp);
+				hl.leftMargin = m + (int) (12 * dp);
 				hl.rightMargin = m + (int) (22 * dp);
 				hl.topMargin = m;
 				root.addView(hd, hl);
@@ -1030,7 +1044,7 @@ final class QuakeCard {
 				LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
 				col.setPadding((int) (16 * dp), (int) (8 * dp), (int) (16 * dp), (int) (20 * dp));
-				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, close));
+				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, null));
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
 				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half - m, H - m - band - m);

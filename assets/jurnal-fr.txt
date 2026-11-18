@@ -1,4 +1,4 @@
-Version actuelle : v.2.103 · 18.11.2026
+Version actuelle : v.2.104 · 18.11.2026
 ÉCRAN PRINCIPAL
 - Informations sur le séisme : un appui sur la case Séisme les ouvre dans l'écran principal : la carte, en dessous les zones de ressenti et l'historique de la valeur ; le carré coloré ou la carte les ouvre en plein écran, comme un séisme de ☰ › Séismes. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC. En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).
 NOTIFICATIONS

@@ -1,4 +1,4 @@
-Versão atual: v.2.103 · 18.11.2026
+Versão atual: v.2.104 · 18.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 ECRÃ PRINCIPAL
