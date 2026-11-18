@@ -1543,3 +1543,5 @@ local magnitude (Richter)	τοπικό μέγεθος (Richter)
 moment magnitude (energy)	μέγεθος ροπής (ενέργεια)
 body-wave magnitude	μέγεθος χωρικών κυμάτων
 magnitude	μέγεθος
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Ρουμανία: δίπλα στην τιμή του EMSC, η επίσημη του INFP (infp.ro), όταν υπάρχει.

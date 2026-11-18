@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.034";
+	static final String VERSION = "Meteo Alarm Android v2.035";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3279,6 +3279,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The last lists of the earthquakes page: { country 7 days, Europe 48 h } (EMSC answers). */
 	private String quakesCountry, quakesEurope, quakesKey;
+	/** v2.035: INFP's JSON list for a town in Romania (null = not asked / not come). */
+	private String quakesInfp;
 	private long quakesAt;
 
 	/**
@@ -3292,6 +3294,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (!town.key().equals(quakesKey)) {
 			quakesCountry = null;
 			quakesEurope = null;
+			quakesInfp = null;
 			quakesKey = town.key();
 		}
 		showQuakes();
@@ -3302,6 +3305,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			public void run() {
 				long now = System.currentTimeMillis();
 				String a = null, b = null;
+				String ci = null;
+				// v2.035 (Viorel): in Romania INFP's official values first, then EMSC.
+				if (Fetcher.infpFor(c)) try {
+					ci = Weather.get(ro.meteoalarm.android.core.Quakes.infpUrl(now));
+				} catch (Exception e) {
+					Log.e(ctx, "CUTREMUR", "lista INFP a eșuat: " + Fetcher.reason(e, false));
+				}
 				try {
 					a = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usgsUrl(c.lat, c.lon, now - 7 * 86400000L)
 							: ro.meteoalarm.android.core.Quakes.url(c.lat, c.lon, now - 7 * 86400000L));
@@ -3313,12 +3323,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				} catch (Exception e) {
 					Log.e(ctx, "CUTREMUR", "lista Europei (48 h) a eșuat: " + Fetcher.reason(e, false));
 				}
-				final String fa = a, fb = b;
+				final String fa = a, fb = b, fi = ci;
 				handler.post(new Runnable() {
 					public void run() {
 						if (!c.key().equals(quakesKey)) return;
 						quakesCountry = fa == null ? "" : fa;
 						quakesEurope = fb == null ? "" : fb;
+						quakesInfp = fi;
 						quakesAt = System.currentTimeMillis();
 						if (help.isOpen() && quakesOpen) showQuakes();
 					}
@@ -3348,7 +3359,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		long now = System.currentTimeMillis();
 		help.section(Tr.t("Last 7 days · ", "Ultimele 7 zile · ") + country);
 		if (quakesCountry == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
-		else if (quakesCountry.length() == 0) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
+		else if (quakesCountry.length() == 0 && quakesInfp == null) help.text(Tr.t("The list could not be downloaded. Is the internet on?", "Lista nu a putut fi descărcată. Ai internet?"));
 		else {
 			List<ro.meteoalarm.android.core.Quakes.Quake> l;
 			try {
@@ -3356,9 +3367,25 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			} catch (Exception e) {
 				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			}
+			// v2.035 (Viorel): INFP's value next to EMSC's (and INFP's own quakes EMSC has not got).
+			java.util.Map<String, double[]> emsc = new java.util.HashMap<String, double[]>();
+			int matched = 0;
+			if (quakesInfp != null && Fetcher.infpFor(c)) {
+				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
+				try {
+					String it = ro.meteoalarm.android.core.Quakes.infpFromApi(quakesInfp, l);
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeInfp(l, it, c.lat, c.lon, now, 7 * 86400000L);
+				} catch (Exception e) {
+					Log.e(this, "CUTREMUR", "valorile INFP: " + e);
+				}
+			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
-			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, true);
-			Log.i(this, "CUTREMUR", country + ", 7 zile: " + l.size());
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) {
+				double[] em = emsc.get(q.id);
+				if (em != null && "INFP".equals(q.src)) matched++;
+				quakeEntry(q, c, true, em == null ? Double.NaN : em[0]);
+			}
+			Log.i(this, "CUTREMUR", country + ", 7 zile: " + l.size() + (quakesInfp != null && Fetcher.infpFor(c) ? " (INFP: " + matched + " cu valoarea INFP)" : ""));
 		}
 		help.section(Tr.t("Last 48 hours · EU, Ukraine, Moldova", "Ultimele 48 de ore · UE, Ucraina, Moldova"));
 		if (quakesEurope == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
@@ -3371,9 +3398,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
-			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false);
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false, Double.NaN);
 			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size());
 		}
+		if (Fetcher.infpFor(c)) help.source(Tr.t("Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.", "România: lângă valoarea EMSC, cea oficială a INFP (infp.ro), când INFP o are."));
 		help.source(Tr.t("Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. \"Felt\" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.",
 				"Sursa: EMSC (Centrul Seismologic European-Mediteranean, seismicportal.eu), magnitudine 3 și peste. „Resimțit” e o estimare pe scara EMS-98, după magnitudine și distanța până la focar."));
 		help.show();
@@ -3394,7 +3422,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 2.5 or more.", "Niciun cutremur cu magnitudinea 2,5 sau mai mare."));
-			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, true);
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, true, Double.NaN);
 			Log.i(this, "CUTREMUR", "USGS în jurul " + c.name + ", 7 zile: " + l.size());
 		}
 		help.section(Tr.t("Last 48 hours · United States", "Ultimele 48 de ore · Statele Unite"));
@@ -3408,7 +3436,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				l = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
 			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
-			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false);
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) quakeEntry(q, c, false, Double.NaN);
 			Log.i(this, "CUTREMUR", "USGS SUA, 48 h: " + l.size());
 		}
 		help.source(Tr.t("Source: USGS (U.S. Geological Survey, earthquake.usgs.gov): magnitude 2.5 and over around your town, 3 and over in the whole country. \"Felt\" is an estimate from the magnitude and the distance to the focus, on a scale like the Modified Mercalli one.",
@@ -3582,9 +3610,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return b.toString();
 	}
 
-	private void quakeEntry(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean felt) {
+	private void quakeEntry(ro.meteoalarm.android.core.Quakes.Quake q, Cities.City c, boolean felt, double emscMag) {
 		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot()) + " · " + Screen.place(q.region, s.unitF);
-		String what = s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat(s.unitF ? "M/d" : "dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
+		// v2.035: with INFP's value, both: "INFP ML 5,7 · EMSC 5,3".
+		String vals = "";
+		if ("INFP".equals(q.src)) vals = "INFP " + (q.magType.length() > 0 ? q.magType + " " : "") + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot())
+				+ (Double.isNaN(emscMag) ? "" : " · EMSC " + String.format(java.util.Locale.US, "%.1f", emscMag).replace('.', Tr.dot())) + "\n";
+		String what = vals + s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat(s.unitF ? "M/d" : "dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
 				+ " · " + Tr.t("depth ", "adâncime ") + s.dist(q.depth) + " · " + s.dist(q.dist) + " " + Tr.t("from ", "de ") + c.name;
 		if (felt || q.dist < 300) what += "\n" + (q.felt >= 2 ? Tr.t("Probably felt in ", "Probabil resimțit în ") + c.name + ": " + Screen.roman(q.felt) + ", " + s.feltWords(q.felt)
 				: Tr.t("Probably not felt in ", "Probabil nu s-a simțit în ") + c.name);

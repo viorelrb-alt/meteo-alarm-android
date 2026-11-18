@@ -1543,3 +1543,5 @@ local magnitude (Richter)	lokaalne magnituud (Richter)
 moment magnitude (energy)	momendimagnituud (energia)
 body-wave magnitude	ruumilainete magnituud
 magnitude	magnituud
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumeenia: EMSC väärtuse kõrval INFP ametlik väärtus (infp.ro), kui INFP-l see on.

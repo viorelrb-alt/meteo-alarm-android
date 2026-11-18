@@ -1543,3 +1543,5 @@ local magnitude (Richter)	méid áitiúil (Richter)
 moment magnitude (energy)	méid mómaint (fuinneamh)
 body-wave magnitude	méid tonnta coirp
 magnitude	méid
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	An Rómáin: in aice le luach EMSC, luach oifigiúil INFP (infp.ro), nuair atá sé ag INFP.

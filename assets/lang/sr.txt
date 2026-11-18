@@ -1477,3 +1477,5 @@ local magnitude (Richter)	lokalna magnituda (Rihter)
 moment magnitude (energy)	momentna magnituda (energija)
 body-wave magnitude	magnituda prostornih talasa
 magnitude	magnituda
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunija: pored vrednosti EMSC-a zvanična vrednost INFP-a (infp.ro), kad je INFP ima.

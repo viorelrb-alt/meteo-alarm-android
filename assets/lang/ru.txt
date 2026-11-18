@@ -1477,3 +1477,5 @@ local magnitude (Richter)	локальная магнитуда (Рихтер)
 moment magnitude (energy)	моментная магнитуда (энергия)
 body-wave magnitude	магнитуда по объёмным волнам
 magnitude	магнитуда
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Румыния: рядом со значением EMSC — официальное значение INFP (infp.ro), если оно есть.

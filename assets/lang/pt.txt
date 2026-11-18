@@ -1543,3 +1543,5 @@ local magnitude (Richter)	magnitude local (Richter)
 moment magnitude (energy)	magnitude de momento (energia)
 body-wave magnitude	magnitude de ondas de volume
 magnitude	magnitude
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Roménia: ao lado do valor do EMSC, o oficial do INFP (infp.ro), quando o INFP o tem.

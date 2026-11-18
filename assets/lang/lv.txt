@@ -1543,3 +1543,5 @@ local magnitude (Richter)	lokālais magnitūds (Rihters)
 moment magnitude (energy)	momenta magnitūds (enerģija)
 body-wave magnitude	tilpuma viļņu magnitūds
 magnitude	magnitūds
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumānija: blakus EMSC vērtībai INFP oficiālā vērtība (infp.ro), ja INFP tā ir.

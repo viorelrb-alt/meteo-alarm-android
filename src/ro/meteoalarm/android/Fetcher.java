@@ -174,6 +174,15 @@ final class Fetcher {
 	 * whose values are the official ones (EMSC stays when INFP does not answer).
 	 */
 	static void quakesInto(Context ctx, Cities.City c, Result r) {
+		// v2.035 (Viorel): in Romania INFP is asked first, then EMSC (whose list also tells
+		// whether INFP's times are UTC or local).
+		String infpJs = null;
+		Exception infpErr = null;
+		if (infpFor(c)) try {
+			infpJs = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
+		} catch (Exception e) {
+			infpErr = e;
+		}
 		try {
 			r.quake = Weather.get(Quakes.url(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
 			Log.i(ctx, "DATE", "cutremure EMSC OK: " + Quakes.parse(r.quake, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis()).size() + " în țară în 24 h");
@@ -183,7 +192,8 @@ final class Fetcher {
 		}
 		if (!infpFor(c)) return;
 		try {
-			String js = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
+			if (infpErr != null) throw infpErr;
+			String js = infpJs;
 			List<Quakes.Quake> em = r.quake != null ? Quakes.parse(r.quake, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis()) : null;
 			r.infp = Quakes.infpFromApi(js, em);
 			if (r.infp == null) throw new Exception("răspuns necunoscut (" + (js == null ? 0 : js.length()) + " B)");

@@ -1543,3 +1543,5 @@ local magnitude (Richter)	vietinis magnitudas (Richteris)
 moment magnitude (energy)	momento magnitudas (energija)
 body-wave magnitude	tūrinių bangų magnitudas
 magnitude	magnitudas
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunija: šalia EMSC vertės – oficiali INFP vertė (infp.ro), kai INFP ją turi.

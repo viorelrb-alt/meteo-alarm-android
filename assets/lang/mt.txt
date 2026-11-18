@@ -1543,3 +1543,5 @@ local magnitude (Richter)	manjitudni lokali (Richter)
 moment magnitude (energy)	manjitudni tal-mument (enerġija)
 body-wave magnitude	manjitudni tal-mewġ tal-ġisem
 magnitude	manjitudni
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Ir-Rumanija: ħdejn il-valur tal-EMSC, dak uffiċjali tal-INFP (infp.ro), meta l-INFP ikollu.

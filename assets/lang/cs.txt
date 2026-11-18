@@ -1543,3 +1543,5 @@ local magnitude (Richter)	lokální magnitudo (Richter)
 moment magnitude (energy)	momentové magnitudo (energie)
 body-wave magnitude	magnitudo z objemových vln
 magnitude	magnitudo
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunsko: vedle hodnoty EMSC oficiální hodnota INFP (infp.ro), pokud ji INFP má.

@@ -1477,3 +1477,5 @@ local magnitude (Richter)	yerel büyüklük (Richter)
 moment magnitude (energy)	moment büyüklüğü (enerji)
 body-wave magnitude	cisim dalgası büyüklüğü
 magnitude	büyüklük
+# v2.035
+Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Romanya: EMSC değerinin yanında INFP’nin resmi değeri (infp.ro), INFP’de varsa.
