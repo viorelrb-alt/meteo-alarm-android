@@ -453,7 +453,7 @@ public final class Screen {
 	}
 
 	private int warnCount() {
-		return warnGroups().size() + (quake() != null ? 1 : 0);
+		return warnGroups().size() + quakeBoxes().size();
 	}
 
 	/** ☰ at X, Y. */
@@ -976,6 +976,22 @@ public final class Screen {
 		capsules(footFb);
 		if (footBatt) battery(footFb, footBattR, true);
 		g = keep;
+	}
+
+	/** v2.112: the same over the earthquake's whole screen: the capsule and the battery in its own glass. */
+	public void drawFootAll(Gfx gfx) {
+		if (footFb < 0 || nightClock) return;
+		Gfx keep = g;
+		g = gfx;
+		capsules(footFb);
+		battery(footFb, cw - 24, true);
+		g = keep;
+	}
+
+	/** v2.112: is X Y (canvas units) on the battery? */
+	public boolean onBattery(float x, float y) {
+		float[] b = battArea;
+		return b[2] > 0 && x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
 	}
 
 	/** v2.111: is X Y (canvas units) on a floating button (capsule, farmer button, battery)? */
@@ -3053,7 +3069,34 @@ public final class Screen {
 
 	/** v2.030: the earthquake of the row's first box (null when none), for its bubble with the map. */
 	public Quakes.Quake mainQuake() {
-		return quake();
+		List<Quakes.Quake> l = quakeBoxes();
+		if (l.isEmpty()) return null;
+		return l.get(Math.max(0, Math.min(quakeSel, l.size() - 1)));
+	}
+
+	/** v2.112: which earthquake box the information shows (0: the newest). */
+	public int quakeSel;
+
+	/** v2.112: how many earthquake boxes the warnings' row starts with. */
+	public int quakeCount() {
+		return quakeBoxes().size();
+	}
+
+	/**
+	 * v2.112 (Viorel, a M3.1 after the M5.7 of the same day was not shown): one box for each
+	 * earthquake of the last 24 hours, the newest first.
+	 */
+	private List<Quakes.Quake> quakeBoxes() {
+		List<Quakes.Quake> l = new ArrayList<Quakes.Quake>();
+		if (quakes == null) return l;
+		long t = now.getTimeInMillis();
+		for (Quakes.Quake q : quakes) if (t - q.time <= Quakes.WINDOW_MS) l.add(q);
+		java.util.Collections.sort(l, new java.util.Comparator<Quakes.Quake>() {
+			public int compare(Quakes.Quake a, Quakes.Quake b) {
+				return a.time > b.time ? -1 : a.time < b.time ? 1 : 0;
+			}
+		});
+		return l;
 	}
 
 	/** v2.030: HH:MM of MS in the town's time. */
@@ -3124,14 +3167,10 @@ public final class Screen {
 	}
 
 	/** The earthquake shown first in the row, or null (the strongest of the last 24 h in the country). */
-	private Quakes.Quake quake() {
-		Quakes.Quake q = Quakes.main(quakes);
-		return q != null && now.getTimeInMillis() - q.time <= Quakes.WINDOW_MS ? q : null;
-	}
 
 	/** How many boxes the row of warnings has (the earthquake counts). */
 	public int alertCount() {
-		return warnGroups().size() + (quake() != null ? 1 : 0);
+		return warnGroups().size() + quakeBoxes().size();
 	}
 
 	/** The box of the row at X Y (canvas units), -1 when none. */
@@ -3162,8 +3201,9 @@ public final class Screen {
 	 */
 	private float drawWarnBoxes(float x0, float y, float wd, int cols, float f) {
 		List<WarnGroup> gs = warnGroups();
-		Quakes.Quake q = quake();
-		int n = gs.size() + (q != null ? 1 : 0), vis = Math.min(cols, n);
+		List<Quakes.Quake> qs = quakeBoxes();
+		int nq = qs.size();
+		int n = gs.size() + nq, vis = Math.min(cols, n);
 		warnBoxes = n;
 		alerts.area[2] = 0;
 		if (n == 0) return 0;
@@ -3180,8 +3220,8 @@ public final class Screen {
 		for (int i = 0; i < n; i++) {
 			float x = x0 + i * step - alerts.scroll;
 			if (x + bw < x0 - 4 || x > x0 + wd + 4) continue;
-			if (q != null && i == 0) drawQuakeBox(q, x, y, bw, h, f);
-			else drawWarnBox(gs.get(i - (q != null ? 1 : 0)), x, y, bw, h, f);
+			if (i < nq) drawQuakeBox(qs.get(i), x, y, bw, h, f);
+			else drawWarnBox(gs.get(i - nq), x, y, bw, h, f);
 		}
 		g.unclip();
 		return y + h;
@@ -3320,10 +3360,11 @@ public final class Screen {
 	 */
 	public List<String[]> alertInfo(int k) {
 		List<String[]> out = new ArrayList<String[]>();
-		Quakes.Quake q = quake();
+		List<Quakes.Quake> qs = quakeBoxes();
+		Quakes.Quake q = k >= 0 && k < qs.size() ? qs.get(k) : null;
 		boolean en = T.en;
 		String town = city != null ? city.name : "";
-		if (q != null && k == 0) {
+		if (q != null) {
 			out.add(new String[] { "title", (Tr.t("Earthquake M", "Cutremur M")) + dec(q.mag) });
 			out.add(new String[] { "t", (Tr.t("Magnitude: ", "Magnitudine: ")) + dec(q.mag) + (q.magType.length() > 0 ? " (" + q.magType.toUpperCase() + ")" : "") });
 			out.add(new String[] { "t", (Tr.t("Time: ", "Ora: ")) + dateTime(q.time) });
@@ -3348,7 +3389,7 @@ public final class Screen {
 			return out;
 		}
 		List<WarnGroup> gs = warnGroups();
-		int gi = k - (q != null ? 1 : 0);
+		int gi = k - qs.size();
 		if (gi < 0 || gi >= gs.size()) return out;
 		WarnGroup gr = gs.get(gi);
 		if (gr.nws) return nwsInfo(gr, out);

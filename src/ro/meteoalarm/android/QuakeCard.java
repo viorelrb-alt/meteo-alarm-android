@@ -636,6 +636,13 @@ final class QuakeCard {
 		float titlePx;
 		/** The other earthquakes and the sources (rows as from Screen.alertInfo). */
 		java.util.List<String[]> more;
+		/** v2.112: the floating buttons over the whole screen (null: none); CLOSE closes it. */
+		Foot foot;
+	}
+
+	/** v2.112 (Viorel): makes the layer with the main screen's floating buttons and battery. */
+	interface Foot {
+		View make(Runnable close);
 	}
 
 	/** ‹ in a round button, "EARTHQUAKE INFORMATION" and a thin line to the right edge. */
@@ -1062,7 +1069,7 @@ final class QuakeCard {
 				LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
 				int bh = Band.height(ctx, root);
-				col.setPadding(pad, (int) (12 * dp), pad, (int) (28 * dp));
+				col.setPadding(pad, (int) (12 * dp), pad, (int) ((k.foot != null ? 96 : 28) * dp));
 				col.addView(head(ctx, dark, bold, zk, 36, null, k.titlePx));
 				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null, close), wide(12, dp));
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 16 * dp);
@@ -1078,6 +1085,14 @@ final class QuakeCard {
 				root.addView(sv, pl);
 				// v2.109 (Viorel): the band with the day, the network and the clock always on top.
 				root.addView(new Band(ctx, s, dark, reg, bold, Theme.page(dark), Band.left(root, pad)), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
+				foot(root);
+			}
+
+			/** v2.112: the floating buttons and the battery over everything, as on the main screen. */
+			private void foot(FrameLayout root) {
+				if (k.foot == null) return;
+				View f = k.foot.make(close);
+				if (f != null) root.addView(f, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 			}
 
 			private void landscape(FrameLayout root, int W, int H) {
@@ -1107,7 +1122,7 @@ final class QuakeCard {
 				sv.setVerticalScrollBarEnabled(false);
 				LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				col.setPadding((int) (16 * dp), (int) (16 * dp), (int) (16 * dp), (int) (20 * dp));
+				col.setPadding((int) (16 * dp), (int) (16 * dp), (int) (16 * dp), (int) ((k.foot != null ? 90 : 20) * dp));
 				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, null));
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
@@ -1117,6 +1132,7 @@ final class QuakeCard {
 				sl.topMargin = bh + m;
 				root.addView(sv, sl);
 				root.addView(new Band(ctx, s, dark, reg, bold, Glass.alpha(Theme.page(dark), 0.85f), Band.left(root, (int) (16 * dp))), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
+				foot(root);
 				// The largest circle in the left half, under the band.
 				fit(map, 16 * dp, bh + m + band + 12 * dp, W - half + 12 * dp, 16 * dp);
 			}

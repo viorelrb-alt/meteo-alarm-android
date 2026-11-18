@@ -73,7 +73,8 @@ public final class Quakes {
 		if (c.equals("ch")) return new Official(c, "SED", "Schweizerischer Erdbebendienst (ETH Zürich)", "seismo.ethz.ch",
 				"https://arclink.ethz.ch/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time", false);
 		if (c.equals("gr")) return new Official(c, "NOA", "National Observatory of Athens", "noa.gr",
-				"https://eida.gein.noa.gr/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time", false);
+				// v2.112: NOA answered HTTP 400 without a start time (A54 log 18.11): the last 3 days asked.
+				"https://eida.gein.noa.gr/fdsnws/event/1/query?format=text&orderby=time&starttime={start}", false);
 		return null;
 	}
 

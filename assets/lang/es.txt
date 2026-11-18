@@ -1655,3 +1655,5 @@ Rain, snow, warnings, updates	Lluvia, nieve, avisos, actualizaciones
 Once a week also a new version of the app, if there is one.	Una vez por semana también una nueva versión de la app, si la hay.
 New version: 	Nueva versión: 
 Tap to see what is new and download it.	Toca para ver las novedades y descargarla.
+One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Una casilla por cada terremoto de las últimas 24 horas en un radio de 300 millas (USGS), el más reciente primero.
+One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Una casilla por cada terremoto de las últimas 24 horas en tu país, el más reciente primero, y cómo se sintió probablemente (EMSC y el instituto del país).

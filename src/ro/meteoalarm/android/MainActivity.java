@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.111";
+	static final String VERSION = "Meteo Alarm Android v2.112";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1689,10 +1689,19 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (k < s.alertCount()) onAlert(k, s.alertRect(k));
 			}
 		};
-		if (k == 0 && s.mainQuake() != null) {
-			// v2.100 (Viorel): the earthquake's information inside the main screen, not a bubble.
+		if (k < s.quakeCount()) {
+			// v2.100 (Viorel): the earthquake's information inside the main screen, not a bubble;
+			// v2.112: each earthquake has its own box.
 			reopen = null;
-			openQuakeInfo();
+			boolean other = s.quakeOn && s.quakeSel != k;
+			s.quakeSel = k;
+			if (other && quakeSpacer >= 0) {
+				Log.i(this, "CUTREMUR", "informații: alt cutremur, caseta " + (k + 1));
+				int sp = quakeSpacer;
+				quakeSpacer = -2; // built again from its top
+				showQuakeInfo(sp, quakeW);
+				view.invalidate();
+			} else openQuakeInfo();
 			return;
 		}
 		List<String[]> info = s.alertInfo(k);
@@ -1907,6 +1916,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		QuakeCard.Hooks k = new QuakeCard.Hooks();
 		if (withMore) k.more = quakeMore(Fetcher.officialOf(c));
 		k.titlePx = 23 * view.scale();
+		k.foot = new QuakeCard.Foot() {
+			public View make(final Runnable close) {
+				return fullFoot(close);
+			}
+		};
 		QuakeCard.full(this, q, c, s, s.dark, fReg, fBold, quakeZk(), k);
 	}
 
@@ -1927,6 +1941,55 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				});
 			}
 		}).start();
+	}
+
+	/**
+	 * v2.112 (Viorel): the main screen's floating buttons and battery over the earthquake's whole
+	 * screen. A tap on a button closes the whole screen and does what the button does on the main one.
+	 */
+	private View fullFoot(final Runnable close) {
+		return new View(this) {
+			boolean mine;
+			float tx, ty;
+
+			private float[] shift() {
+				int[] a = new int[2], b = new int[2];
+				view.getLocationOnScreen(a);
+				getLocationOnScreen(b);
+				return new float[] { a[0] - b[0], a[1] - b[1] };
+			}
+
+			@Override
+			protected void onDraw(android.graphics.Canvas c) {
+				float[] d = shift();
+				view.drawFootAll(c, d[0], d[1]);
+				postInvalidateDelayed(30000);
+			}
+
+			@Override
+			public boolean onTouchEvent(android.view.MotionEvent e) {
+				float[] d = shift();
+				float x = e.getX() - d[0], y = e.getY() - d[1];
+				int act = e.getActionMasked();
+				if (act == android.view.MotionEvent.ACTION_DOWN) {
+					mine = view.onFootAny(x, y);
+					tx = x;
+					ty = y;
+				}
+				if (!mine) return false;
+				if (act == android.view.MotionEvent.ACTION_UP && view.onButtons(tx, ty)) {
+					Log.i(MainActivity.this, "CUTREMUR", "buton plutitor din ecranul întreg");
+					close.run();
+					final float fx = tx, fy = ty;
+					handler.postDelayed(new Runnable() {
+						public void run() {
+							view.tapAt(fx, fy);
+						}
+					}, 150);
+				}
+				return true;
+			}
+		};
 	}
 
 	/** v2.030: a tap on an earthquake notice: the town's screen and the earthquake's bubble, once the data are there. */
@@ -4079,8 +4142,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Casetele albastre INFORMARE, după avertizări: brumă, îngheț (primăvara și toamna), ceață, polei, vânt tare în următoarele 24 de ore. Calculate de aplicație din prognoză; nu sunt oficiale. Vin și ca notificare separată."));
 		help.entry(mini("chart"), Tr.t("Precipitation chart", "Graficul de precipitații"), Tr.t("A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.",
 				"Atingerea graficului de precipitații sau a unei casete de 4 ore arată probabilitatea și cantitatea (mm) pentru fiecare oră, apoi explică graficul."));
-		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), (us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
-				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP).")) + " " + Tr.t("The stripe at the left has the colour of the map zone your town is in; brown outside the zones.", "Banda din stânga are culoarea zonei de pe hartă în care e localitatea ta; maro în afara zonelor."));
+		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), (us ? Tr.t("One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.", "Câte o casetă pentru fiecare cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS), cel mai nou primul.")
+				: Tr.t("One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).", "Câte o casetă pentru fiecare cutremur din ultimele 24 de ore din țara ta, cel mai nou primul, și cum s-a simțit probabil (EMSC și institutul țării).")) + " " + Tr.t("The stripe at the left has the colour of the map zone your town is in; brown outside the zones.", "Banda din stânga are culoarea zonei de pe hartă în care e localitatea ta; maro în afara zonelor."));
 		help.entry(mini("quake"), Tr.t("Earthquake information", "Informații cutremur"), Tr.t("A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.",
 				"Atingerea casetei Cutremur deschide informațiile în ecranul principal (în portret sub Resimțit, în peisaj în stânga): harta, sub ea zonele resimțite și istoricul valorii, apoi detaliile; ‹ le închide.")
 				+ " " + Tr.t("The coloured square or the map opens it on the whole screen.", "Pătratul colorat sau harta le deschid pe tot ecranul.")

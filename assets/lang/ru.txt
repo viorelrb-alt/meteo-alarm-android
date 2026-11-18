@@ -1519,3 +1519,5 @@ Rain, snow, warnings, updates	Дождь, снег, предупреждения
 Once a week also a new version of the app, if there is one.	Раз в неделю также новая версия приложения, если она есть.
 New version: 	Новая версия: 
 Tap to see what is new and download it.	Нажмите, чтобы увидеть новое и скачать её.
+One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Отдельное поле для каждого землетрясения за последние 24 часа в радиусе 300 миль (USGS), самое новое первым.
+One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Отдельное поле для каждого землетрясения за последние 24 часа в твоей стране, самое новое первым, и как оно, вероятно, ощущалось (EMSC и институт страны).

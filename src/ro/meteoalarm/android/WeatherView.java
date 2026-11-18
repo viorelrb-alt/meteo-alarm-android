@@ -513,6 +513,27 @@ final class WeatherView extends View {
 		c.restore();
 	}
 
+	/** v2.112: the floating buttons and the battery on C, moved by DX DY pixels (another window). */
+	void drawFootAll(Canvas c, float dx, float dy) {
+		if (scale <= 0) return;
+		c.save();
+		c.translate(ox + dx, oy + dy);
+		c.scale(scale, scale);
+		gfx.c = c;
+		screen.drawFootAll(gfx);
+		c.restore();
+	}
+
+	/** v2.112: is X Y (pixels of this view) on the capsule of buttons (not the battery)? */
+	boolean onButtons(float x, float y) {
+		return onFootAny(x, y) && !screen.onBattery((x - ox) / scale, (y - oy) / scale);
+	}
+
+	/** v2.112: on the capsule, the farmer button or the battery (whatever is open). */
+	boolean onFootAny(float x, float y) {
+		return scale > 0 && screen.onFoot((x - ox) / scale, (y - oy) / scale);
+	}
+
 	/** v2.111: is the point X Y (pixels of this view) on a floating button? */
 	boolean onFoot(float x, float y) {
 		return screen.quakeOn && scale > 0 && screen.onFoot((x - ox) / scale, (y - oy) / scale);

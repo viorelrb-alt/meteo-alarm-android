@@ -226,7 +226,13 @@ final class Fetcher {
 	 * around Romania its JSON list leaves out). The page failing leaves the list alone.
 	 */
 	static String officialRaw(Context ctx, Quakes.Official o) throws Exception {
-		String raw = Weather.get(o.url);
+		String url = o.url;
+		if (url.contains("{start}")) {
+			java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", java.util.Locale.US);
+			f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+			url = url.replace("{start}", f.format(new java.util.Date(System.currentTimeMillis() - 3 * 86400000L)));
+		}
+		String raw = Weather.get(url);
 		if (o.web != null) try {
 			String w = Weather.get(o.web);
 			String t = Quakes.infpFromWeb(w);
