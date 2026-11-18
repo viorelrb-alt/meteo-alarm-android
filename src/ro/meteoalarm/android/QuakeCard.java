@@ -48,12 +48,18 @@ final class QuakeCard {
 		p.setTypeface(bold);
 		p.setColor(0xFF1A0F00);
 		p.setTextAlign(Paint.Align.CENTER);
-		float ts = s * (mag.length() > 3 ? 0.36f : 0.42f);
+		// v2.044 (Viorel): the value larger and more prominent, the type smaller under it.
+		p.setColor(0xFF000000);
+		p.setFakeBoldText(true);
+		float ts = s * (mag.length() > 3 ? 0.46f : 0.54f);
 		p.setTextSize(ts);
-		c.drawText(mag, s / 2, s * 0.56f, p);
-		p.setTextSize(s * 0.17f);
-		p.setAlpha(200);
-		c.drawText(type, s / 2, s * 0.84f, p);
+		float tw = p.measureText(mag);
+		if (tw > s * 0.9f) p.setTextSize(ts * s * 0.9f / tw);
+		c.drawText(mag, s / 2, s * 0.60f, p);
+		p.setFakeBoldText(false);
+		p.setTextSize(s * 0.15f);
+		p.setAlpha(190);
+		c.drawText(type, s / 2, s * 0.86f, p);
 		return b;
 	}
 
@@ -247,12 +253,16 @@ final class QuakeCard {
 		TextView l = text(ctx, label.toUpperCase(), 10.5f * zk, bold, Theme.dim(dark));
 		l.setLetterSpacing(0.05f);
 		l.setGravity(Gravity.CENTER);
+		l.setSingleLine(true);
 		c.addView(l);
 		TextView v = text(ctx, value, 16 * zk, bold, Theme.ink(dark));
 		v.setGravity(Gravity.CENTER);
+		v.setSingleLine(true);
 		c.addView(v);
+		// v2.044 (Viorel): both boxes as tall, even when one has less text (two rows under the value).
 		TextView s = text(ctx, sub, 11.5f * zk, reg, Theme.dim(dark));
 		s.setGravity(Gravity.CENTER);
+		s.setMinLines(2);
 		s.setMaxLines(2);
 		c.addView(s);
 		return c;

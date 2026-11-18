@@ -236,6 +236,8 @@ final class Bubble extends FrameLayout implements Glass.Local {
 
 	/** v2.030: set before show(): a picture at the left of the title (the earthquake's magnitude). */
 	Bitmap titleIcon;
+	/** v2.044: set before show(): what a tap on the title's picture does (the big map). */
+	Runnable titleIconTap;
 
 	void show(float[] anchor, int width, String head, List<Row> rows, boolean en, final Pick pick) {
 		boolean pan = panel;
@@ -244,6 +246,8 @@ final class Bubble extends FrameLayout implements Glass.Local {
 		place = null;
 		Bitmap tIcon = titleIcon;
 		titleIcon = null;
+		final Runnable tTap = titleIconTap;
+		titleIconTap = null;
 		Context c = getContext();
 		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there; +30 %, then 10 % and
 		// 5 % less in v2.20 / v2.21), and the text size of ☰.
@@ -264,6 +268,16 @@ final class Bubble extends FrameLayout implements Glass.Local {
 			title.setCompoundDrawables(td, null, null, null);
 			title.setCompoundDrawablePadding((int) (12 * dp));
 		} else title.setCompoundDrawables(null, null, null, null);
+		if (tIcon != null && tTap != null) {
+			final int edge = title.getPaddingLeft() + tIcon.getWidth() + (int) (6 * dp);
+			title.setOnTouchListener(new OnTouchListener() {
+				public boolean onTouch(View v, android.view.MotionEvent e) {
+					if (e.getX() > edge) return false;
+					if (e.getActionMasked() == android.view.MotionEvent.ACTION_UP) tTap.run();
+					return true;
+				}
+			});
+		} else title.setOnTouchListener(null);
 		where.setTextSize(15 * zk);
 		where.setTextColor(ro.meteoalarm.android.core.Theme.dim(dark));
 		where.setText(at == null ? "" : at);

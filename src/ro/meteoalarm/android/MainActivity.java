@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.043";
+	static final String VERSION = "Meteo Alarm Android v2.044";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1687,12 +1687,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		infpMiss = null;
 		final ro.meteoalarm.android.core.Quakes.Official off = Fetcher.officialOf(town);
 		final String on = off == null ? "" : off.name;
-		View body = QuakeCard.body(this, q, town, t, s.dark, fReg, fBold, zk, w, new Runnable() {
+		final Runnable bigOpen = new Runnable() {
 			public void run() {
 				Log.i(MainActivity.this, "CUTREMUR", "harta mare deschisă");
 				QuakeCard.bigMap(MainActivity.this, q, town, s, s.dark, fReg, fBold, zk);
 			}
-		}, off != null && !q.official ? new Runnable() {
+		};
+		View body = QuakeCard.body(this, q, town, t, s.dark, fReg, fBold, zk, w, bigOpen, off != null && !q.official ? new Runnable() {
 			// v2.032 (Viorel): ask INFP now; the bubble opens again with what came (v2.040: any institute).
 			public void run() {
 				Log.i(MainActivity.this, "CUTREMUR", "verificare " + on + " cerută din bulă");
@@ -1736,7 +1737,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		rows.addAll(Bubble.info(more));
 		Log.i(this, "CUTREMUR", "bula cu hartă: M" + t[2] + " " + q.src + ", " + t[4]);
 		bubble.place = t[1];
-		bubble.titleIcon = QuakeCard.badge(t[2], t[3], 54 * dp * zk, fBold);
+		bubble.titleIcon = QuakeCard.badge(t[2], t[3], 62 * dp * zk, fBold);
+		// v2.044 (Viorel): a tap on the orange square opens the big map, like the "Big map" pill.
+		bubble.titleIconTap = bigOpen;
 		bubble.show(view.px(b), w, t[0], rows, s.T.en, new Bubble.Pick() {
 			public void picked(int i) {
 			}
@@ -3778,6 +3781,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP)."));
 		help.entry(mini("quake"), Tr.t("Earthquake map", "Harta cutremurului"), Tr.t("A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.",
 				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește.")
+				+ " " + Tr.t("The orange square opens it too.", "La fel și pătratul portocaliu.")
 				+ " " + Tr.t("On the big map, drag the window at the bottom up to see the felt zones.", "Pe harta mare, trage fereastra de jos în sus pentru zonele resimțite.")
 				+ " " + Tr.t("In Romania, ↻ INFP in the bubble asks for the official value again.", "În România, ↻ INFP din bulă cere din nou valoarea oficială.")
 				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC."));

@@ -1468,26 +1468,29 @@ updates by itself	ажурира се сама
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Na velikoj mapi povucite donji prozor nagore da vidite zone osećaja.
 # v2.032
-Checking INFP…	Provera kod INFP-a…
+Checking INFP…	Провера код INFP-a…
 INFP has no value for it yet · try again	INFP još nema vrednost · pokušajte ponovo
 Refresh from INFP (Romania)	Osveži sa INFP-a (Rumunija)
 In Romania, ↻ INFP in the bubble asks for the official value again.	U Rumuniji ↻ INFP u oblačiću ponovo traži zvaničnu vrednost.
 # v2.033
-local magnitude (Richter)	lokalna magnituda (Rihter)
-moment magnitude (energy)	momentna magnituda (energija)
-body-wave magnitude	magnituda prostornih talasa
-magnitude	magnituda
+local magnitude (Richter)	локална магнитуда (Рихтер)
+moment magnitude (energy)	моментна магнитуда (енергија)
+body-wave magnitude	магнитуда просторних таласа
+magnitude	магнитуда
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunija: pored vrednosti EMSC-a zvanična vrednost INFP-a (infp.ro), kad je INFP ima.
 # v2.040
-Checking 	Provera kod 
+Checking 	Провера код 
 Refresh from 	Osveži sa 
  has no value for it yet · try again	 još nema vrednost · pokušajte ponovo
 The official values come from 	Zvanične vrednosti dolaze od 
-; EMSC when it does not answer.	; EMSC kad ne odgovara.
+; EMSC when it does not answer.	; EMSC кад не одговара.
 Next to EMSC's value, the official one of 	Pored vrednosti EMSC-a zvanična vrednost 
-, when it has it.	, kad je ima.
+, when it has it.	, кад је има.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumunija, Francuska, Italija, Holandija, Švajcarska, Grčka: najpre nacionalni institut, zatim EMSC.
 # v2.042
-Current	Trenutna
-reported 	prijavljena 
+Current	Тренутна
+reported 	пријављена 
+
+# v2.044
+The orange square opens it too.	Отвара је и наранџасти квадрат.

@@ -1557,3 +1557,6 @@ Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's inst
 # v2.042
 Current	Dabartinė
 reported 	pranešta 
+
+# v2.044
+The orange square opens it too.	Jį atveria ir oranžinis kvadratas.

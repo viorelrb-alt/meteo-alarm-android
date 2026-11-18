@@ -1557,3 +1557,6 @@ Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's inst
 # v2.042
 Current	Praegune
 reported 	teatatud 
+
+# v2.044
+The orange square opens it too.	Ka oranž ruut avab selle.

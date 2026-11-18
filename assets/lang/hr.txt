@@ -1557,3 +1557,6 @@ Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's inst
 # v2.042
 Current	Trenutna
 reported 	prijavljena 
+
+# v2.044
+The orange square opens it too.	Otvara je i narančasti kvadrat.

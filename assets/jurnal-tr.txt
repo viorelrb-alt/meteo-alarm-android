@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.043 · 18.11.2026
+Geçerli sürüm: v.2.044 · 18.11.2026
 ANA EKRAN
 - Deprem haritası: Deprem kutusuna dokunmak merkez üssü, yerin, mesafe ve hissedilme bölgeleriyle bir harita gösterir; haritaya dokunmak onu değerin geçmişiyle birlikte büyütür. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir.
 AYARLAR
