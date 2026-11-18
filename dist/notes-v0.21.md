@@ -1,3 +1,5 @@
-Ce e nou în v0.21:
-- Butonul de localizare e gri când localizarea e oprită; o apăsare o pornește direct.
-- Îmbunătățiri de design și corectarea erorilor.
+## Română
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+
+## English
+- Design improvements and fixes for reported bugs.

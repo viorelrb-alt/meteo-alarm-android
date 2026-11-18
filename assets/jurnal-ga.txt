@@ -1,4 +1,4 @@
-Leagan reatha: v.2.116 · 19.11.2026
+Leagan reatha: v.2.117 · 19.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
@@ -14,7 +14,7 @@ PRÍOMHSCÁILEÁN
 - Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ☰ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
 SOCRUITHE
 - Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
-- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+- Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.4 (v.1.400 – v.1.520)
 CEAPACHA
@@ -42,7 +42,7 @@ SOCRUITHE
 - Socruithe: is fuinneog anois an roghchlár ☰ le codanna, lasca, téamaí datha agus an barra Córas agus tacaíocht; athnuachan trí an scáileán a tharraingt anuas nó tadhall ar “nuashonraithe”.
 - Teanga taispeána: cnaipí in ☰, 2 sa ró: Béarla agus teangacha na tíre (sna SA Béarla agus Spáinnis); sa Rómáin taispeánann „Teangacha eile (mionlaigh)” an chuid eile.
 - Téama deilbhíní: 6 théama deilbhíní aimsire (Clasaiceach, Snasta, Cothrom, Réalaíoch, Atmaisféarach, Imlíne), roghnaítear le poncanna daite in ☰ iad; san aip agus ar na giuirléidí.
-- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+- Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.3 (v.1.300 – v.1.352)
 GIUIRLÉIDÍ
@@ -82,7 +82,7 @@ PRÍOMHSCÁILEÁN
 - Graf frasaíochta agus boscaí 4 uair: taispeánann tapáil an seans agus an méid do gach uair, agus míníonn sé an graf ansin.
 TÉAMAÍ
 - 6 théama datha (Aondathach, Sáiste, Labhandar, Spéir, Péitseog, Rós), gach ceann geal agus dorcha: ☰ › Téama.
-- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+- Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.1 (v.1.100 – v.1.191)
 - Teangacha oifigiúla uile an AE agus Úcráinis.
@@ -97,7 +97,7 @@ Leagan 1.1 (v.1.100 – v.1.191)
 - Teangacha eile: teangacha mionlaigh na Rómáine.
 - Páirceanna: léarscáil leis na páirceanna go léir, an cnaipe GPS (ponc gorm) agus “Sábháil áit GPS”.
 - Mód feirmeora: sleamhnaíonn na príomhscáileáin le do mhéar.
-- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+- Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.0 (v.1.000 – v.1.093)
 - Déanta ó Meteo Alarm Kindle: a scáileán tugtha chuig fóin agus táibléid Android.
@@ -110,4 +110,4 @@ Leagan 1.0 (v.1.000 – v.1.093)
 - Giuirléidí 2x2, 4x1, 4x2, le socruithe.
 - Athnuachan uaithi féin; MET Norway mar réamhaisnéis chúltaca.
 - Nuashonruithe ón aip, Cabhair, Logáil.
-- Feabhsuithe dearaidh agus ceartúcháin fabhtanna.
+- Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.

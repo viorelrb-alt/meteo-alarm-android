@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.116 · 19.11.2026
+Pašreizējā versija: v.2.117 · 19.11.2026
 GALVENAIS EKRĀNS
 - Zemestrīces informācija: pieskāriens laukam Zemestrīce to atver galvenajā ekrānā: karte, zem tās sajūtamības zonas un vērtības vēsture; krāsainais kvadrāts vai karte to atver visā ekrānā, kā zemestrīci no ☰ › Zemestrīces. Rumānijā, Francijā, Itālijā, Nīderlandē, Šveicē un Grieķijā oficiālās vērtības vispirms nāk no valsts institūta (INFP, BCSF, INGV, KNMI, SED, NOA), pēc tam no EMSC. Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).
 IESTATĪJUMI
@@ -14,7 +14,7 @@ LAUKI
 PAZIŅOJUMI
 - Zemestrīces: pārbaudītas ik pēc 10 minūtēm, arī naktī ar izslēgtu ekrānu; precizēta magnitūda atjaunina paziņojumu, un pieskāriens tam atver karti.
 - Jauna versija: ar ieslēgtiem paziņojumiem lietotne reizi nedēļā pārbauda GitHub un paziņo par jaunu versiju Android paziņojumos; pieskāriens atver Pārbaudīt atjauninājumus.
-- Dizaina uzlabojumi un kļūdu labojumi.
+- Dizaina uzlabojumi un ziņoto kļūdu labojumi.
 
 Versija 1.4 (v.1.400 – v.1.520)
 ATJAUNINĀJUMI
@@ -42,7 +42,7 @@ LAUKSAIMNIEKA REŽĪMS
 PAZIŅOJUMI
 - Tornado (ASV): tornado paziņojumus tavai vietai ieslēdz vai izslēdz izvēlnē ☰.
 - Zemestrīces: paziņojumi tikai par zemestrīcēm ne tālāk par 300 km no tavas vietas; ieslēdz vai izslēdz izvēlnē ☰.
-- Dizaina uzlabojumi un kļūdu labojumi.
+- Dizaina uzlabojumi un ziņoto kļūdu labojumi.
 
 Versija 1.3 (v.1.300 – v.1.352)
 GALVENAIS EKRĀNS
@@ -82,7 +82,7 @@ PAZIŅOJUMI
 - Atsevišķs INFORMĀCIJAS paziņojums arī apdzīvotai vietai.
 - Mainot apdzīvoto vietu, vecās vietas paziņojumi tiek noņemti.
 - Paziņojumi kā tālruņa lietotnē Laikapstākļi („Vieta | Lietus”): lietus vai sniegs nākamās stundas laikā un pēc plkst. 20 rītdienai, apdzīvotai vietai un laukiem; nav paziņojuma, kad Open-Meteo atkal atbild.
-- Dizaina uzlabojumi un kļūdu labojumi.
+- Dizaina uzlabojumi un ziņoto kļūdu labojumi.
 
 Versija 1.1 (v.1.100 – v.1.191)
 - Visas ES oficiālās valodas un ukraiņu valoda.
@@ -97,7 +97,7 @@ Versija 1.1 (v.1.100 – v.1.191)
 - Citas valodas: Rumānijas minoritāšu valodas.
 - Lauki: karte ar visiem laukiem, GPS poga (zilais punkts) un “Saglabāt GPS vietu”.
 - Lauksaimnieka režīms: galvenie ekrāni slīd līdzi pirkstam.
-- Dizaina uzlabojumi un kļūdu labojumi.
+- Dizaina uzlabojumi un ziņoto kļūdu labojumi.
 
 Versija 1.0 (v.1.000 – v.1.093)
 - Veidota no Meteo Alarm Kindle: tā ekrāns pārnests uz Android tālruņiem un planšetēm.
@@ -110,4 +110,4 @@ Versija 1.0 (v.1.000 – v.1.093)
 - Logrīki 2x2, 4x1, 4x2, ar iestatījumiem.
 - Atjaunojas pati; MET Norway kā rezerves prognoze.
 - Atjauninājumi no lietotnes, Palīdzība, Žurnāls.
-- Dizaina uzlabojumi un kļūdu labojumi.
+- Dizaina uzlabojumi un ziņoto kļūdu labojumi.

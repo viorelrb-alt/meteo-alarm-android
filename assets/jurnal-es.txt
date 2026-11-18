@@ -1,4 +1,4 @@
-Versión actual: v.2.116 · 19.11.2026
+Versión actual: v.2.117 · 19.11.2026
 AJUSTES
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
 NOTIFICACIONES
@@ -14,7 +14,7 @@ PARCELAS
 - Estadísticas: para cada parcela, la Acción del día y 4 pestañas: Operativo (ventana de pulverización hora a hora, secado de gotas (ΔT), viento, hoja mojada), Agua y Suelo (lluvia, evaporación, suelo a 6 y 18 cm), Temporada (grados-día frente al año pasado, fase estimada) y Riesgos 72 h (enfermedades fúngicas, helada en el suelo, calor, viento y granizo); se guardan en PDF o CSV.
 - Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
 - Historial y pronóstico: arrastra el indicador a un día pasado; sus valores aparecen en un recuadro bajo el gráfico y a los 10 s vuelve a hoy.
-- Mejoras de diseño y corrección de errores.
+- Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.4 (v.1.400 – v.1.520)
 ACTUALIZACIONES
@@ -42,7 +42,7 @@ PARCELAS
 - Página Parcelas: las tarjetas de las parcelas (nombre, coordenadas, lápiz, Estadística · PDF, campana, papelera) flotan sobre el mapa, en una fila abajo o una columna a la derecha; ＋, también la pestaña ＋, abre la ficha de una parcela nueva.
 - Puntos de la parcela: + Punto añade hasta 3 puntos más (como máximo 7), Círculo los reparte por igual en un círculo, una pulsación larga sobre un punto lo borra.
 - Vistas del mapa: botones redondos bajo ＋/− cambian entre satélite y mapa y muestran el radar de lluvia de las últimas 2 horas.
-- Mejoras de diseño y corrección de errores.
+- Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.3 (v.1.300 – v.1.352)
 PANTALLA PRINCIPAL
@@ -82,7 +82,7 @@ PARCELAS
 - Notificaciones de parcelas, elegidas con el botón de campana del mapa: lluvia, viento, nieve, sequía.
 TEMAS
 - 6 temas de color (Monocromo, Salvia, Lavanda, Cielo, Melocotón, Rosa), cada uno claro y oscuro: ☰ › Tema.
-- Mejoras de diseño y corrección de errores.
+- Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.1 (v.1.100 – v.1.191)
 - Todos los idiomas oficiales de la UE y el ucraniano.
@@ -97,7 +97,7 @@ Versión 1.1 (v.1.100 – v.1.191)
 - Otros idiomas: los idiomas de las minorías de Rumanía.
 - Parcelas: un mapa con todas las parcelas, el botón GPS (punto azul) y «Guardar lugar GPS».
 - Modo agricultor: las pantallas principales se deslizan con el dedo.
-- Mejoras de diseño y corrección de errores.
+- Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.0 (v.1.000 – v.1.093)
 - Hecha a partir de Meteo Alarm Kindle: su pantalla llevada a teléfonos y tabletas Android.
@@ -110,4 +110,4 @@ Versión 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, con ajustes.
 - Actualización automática; previsión de reserva MET Norway.
 - Actualizaciones desde la app, Ayuda, Registro.
-- Mejoras de diseño y corrección de errores.
+- Mejoras de diseño y corrección de los errores comunicados.

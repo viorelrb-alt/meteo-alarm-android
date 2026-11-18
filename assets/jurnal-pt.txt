@@ -1,4 +1,4 @@
-Versão atual: v.2.116 · 19.11.2026
+Versão atual: v.2.117 · 19.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 ECRÃ PRINCIPAL
@@ -14,7 +14,7 @@ PARCELAS
 - Estatística: para cada parcela, a Ação do dia e 4 separadores: Operacional (janela de pulverização hora a hora, secagem das gotas (ΔT), vento, folha molhada), Água e Solo (chuva, evaporação, solo a 6 e 18 cm), Época (graus-dia face ao ano passado, fase estimada) e Riscos 72 h (doenças fúngicas, geada no solo, calor, vento e granizo); guarda em PDF ou CSV.
 - Estatísticas no ecrã principal: abrem-se sob o estado operacional (na horizontal à esquerda); ‹ fecha-as e o separador de outra parcela mantém-nas.
 - Histórico e previsão: arraste o indicador para um dia passado; os seus valores aparecem numa caixa sob o gráfico e após 10 s volta a hoje.
-- Melhorias de design e correção de erros.
+- Melhorias de design e correção dos erros comunicados.
 
 Versão 1.4 (v.1.400 – v.1.520)
 ATUALIZAÇÕES
@@ -42,7 +42,7 @@ PARCELAS
 - Página Parcelas: os cartões das parcelas (nome, coordenadas, lápis, Estatística · PDF, sino, lixo) flutuam sobre o mapa, numa linha em baixo ou numa coluna à direita; ＋, também o separador ＋, abre a caixa de uma parcela nova.
 - Pontos da parcela: + Ponto adiciona até 3 pontos a mais (no máximo 7), Círculo distribui-os por igual num círculo, um toque longo num ponto apaga-o.
 - Vistas do mapa: botões redondos sob ＋/− alternam entre satélite e mapa e mostram o radar de chuva das últimas 2 horas.
-- Melhorias de design e correção de erros.
+- Melhorias de design e correção dos erros comunicados.
 
 Versão 1.3 (v.1.300 – v.1.352)
 ECRÃ PRINCIPAL
@@ -82,7 +82,7 @@ PARCELAS
 - Notificações das parcelas, escolhidas com o botão do sino no mapa: chuva, vento, neve, seca.
 TEMAS
 - 6 temas de cor (Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa), cada um claro e escuro: ☰ › Tema.
-- Melhorias de design e correção de erros.
+- Melhorias de design e correção dos erros comunicados.
 
 Versão 1.1 (v.1.100 – v.1.191)
 - Todas as línguas oficiais da UE e o ucraniano.
@@ -97,7 +97,7 @@ Versão 1.1 (v.1.100 – v.1.191)
 - Outras línguas: as línguas das minorias da Roménia.
 - Parcelas: um mapa com todas as parcelas, o botão GPS (ponto azul) e «Guardar local GPS».
 - Modo agricultor: os ecrãs principais deslizam com o dedo.
-- Melhorias de design e correção de erros.
+- Melhorias de design e correção dos erros comunicados.
 
 Versão 1.0 (v.1.000 – v.1.093)
 - Feita a partir do Meteo Alarm Kindle: o seu ecrã levado para telemóveis e tablets Android.
@@ -110,4 +110,4 @@ Versão 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, com definições.
 - Atualização automática; previsão de reserva MET Norway.
 - Atualizações a partir da app, Ajuda, Registo.
-- Melhorias de design e correção de erros.
+- Melhorias de design e correção dos erros comunicados.

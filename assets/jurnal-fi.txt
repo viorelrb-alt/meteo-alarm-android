@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.116 · 19.11.2026
+Nykyinen versio: v.2.117 · 19.11.2026
 ASETUKSET
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 ILMOITUKSET
@@ -14,7 +14,7 @@ PELTOLOHKOT
 - Tilastot päänäytöllä: ne avautuvat toimintatilan alle (vaakatasossa vasemmalle); ‹ sulkee ne ja toisen lohkon välilehti pitää ne auki.
 - Tilastot: jokaiselle lohkolle Päivän toimi ja 4 välilehteä: Toiminta (ruiskutusikkuna tunti tunnilta, pisaroiden kuivuminen (ΔT), tuuli, märkä lehti), Vesi & maa (sade, haihdunta, maa 6 ja 18 cm:ssä), Kausi (lämpösumma verrattuna viime vuoteen, arvioitu vaihe) ja Riskit 72 h (sienitaudit, maanpintahalla, helle, tuuli ja rakeet); tallennus PDF- tai CSV-muodossa.
 - Toimintatila: ylhäällä viljelykasvi ja kylvöpäivä; viljelykasvin kanssa arvio huomioi myös pisaroiden kuivumisen (ΔT) ja sen taudin.
-- Ulkoasun parannuksia ja virheenkorjauksia.
+- Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.4 (v.1.400 – v.1.520)
 ASETUKSET
@@ -42,7 +42,7 @@ VILJELIJÄTILA
 - Toimintatila: lohkon näytöllä, vain kun tarpeen, ruiskutuksen tuomio, syy ja seuraavan 24 tunnin riskit.
 - Välilehdet: paikkakunta ja lohkot välilehdinä nimen alla (vaakatasossa alhaalla); lohkon näyttö osioissa 1–4.
 - Viljelijäpainike: painikkeiden vieressä oleva lehtipainike poistaa viljelijätilan; toinen paikkakunta säilyttää sen.
-- Ulkoasun parannuksia ja virheenkorjauksia.
+- Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.3 (v.1.300 – v.1.352)
 PÄÄNÄYTTÖ
@@ -82,7 +82,7 @@ TEEMAT
 VILJELIJÄTILA
 - Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
-- Ulkoasun parannuksia ja virheenkorjauksia.
+- Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.1 (v.1.100 – v.1.191)
 - Kaikki EU:n viralliset kielet ja ukraina.
@@ -97,7 +97,7 @@ Versio 1.1 (v.1.100 – v.1.191)
 - Muut kielet: Romanian vähemmistökielet.
 - Lohkot: kartta kaikista lohkoista, GPS-painike (sininen piste) ja ”Tallenna GPS-paikka”.
 - Viljelijätila: päänäytöt liukuvat sormen mukana.
-- Ulkoasun parannuksia ja virheenkorjauksia.
+- Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.0 (v.1.000 – v.1.093)
 - Tehty Meteo Alarm Kindlen pohjalta: sen näkymä tuotu Android-puhelimiin ja -tabletteihin.
@@ -110,4 +110,4 @@ Versio 1.0 (v.1.000 – v.1.093)
 - Widgetit 2x2, 4x1, 4x2, asetuksineen.
 - Päivittyy itsestään; MET Norway varaennusteena.
 - Päivitykset sovelluksesta, Ohje, Loki.
-- Ulkoasun parannuksia ja virheenkorjauksia.
+- Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.

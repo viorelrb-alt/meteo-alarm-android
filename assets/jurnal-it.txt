@@ -1,4 +1,4 @@
-Versione attuale: v.2.116 · 19.11.2026
+Versione attuale: v.2.117 · 19.11.2026
 IMPOSTAZIONI
 - Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
 NOTIFICHE
@@ -14,7 +14,7 @@ PARTICELLE
 - Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
 SCHERMATA PRINCIPALE
 - Informazioni sul terremoto: un tocco sul riquadro Terremoto le apre nella schermata principale: la mappa, sotto le zone di avvertibilità e la cronologia del valore; il quadrato colorato o la mappa le aprono a schermo intero, come un terremoto da ☰ › Terremoti. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
-- Miglioramenti del design e correzioni di errori.
+- Miglioramenti del design e correzioni degli errori segnalati.
 
 Versione 1.4 (v.1.400 – v.1.520)
 AGGIORNAMENTI
@@ -42,7 +42,7 @@ SCHERMATA PRINCIPALE
 - Bussola grande: toccare una località nell'elenco ne mostra il segno sulla bussola; le località nella stessa direzione non si sovrappongono più.
 - Previsioni a cinque giorni: i giorni 3–5 avanzano da soli ogni 3 secondi fino al primo tocco.
 - Schermata principale: la pagina scorre sotto il vetro in alto, per sezioni (Prossime ore, Previsioni a cinque giorni, Dettagli meteo); i pulsanti e la batteria galleggiano in basso.
-- Miglioramenti del design e correzioni di errori.
+- Miglioramenti del design e correzioni degli errori segnalati.
 
 Versione 1.3 (v.1.300 – v.1.352)
 SCHERMATA PRINCIPALE
@@ -82,7 +82,7 @@ SCHERMATA PRINCIPALE
 - Precipitazioni 12 ore: quando piove o nevica solo per parte del tempo, caselle di 4 ore (Piogge o Nevicate, con gli orari) al posto del grafico.
 TEMI
 - 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ☰ › Tema.
-- Miglioramenti del design e correzioni di errori.
+- Miglioramenti del design e correzioni degli errori segnalati.
 
 Versione 1.1 (v.1.100 – v.1.191)
 - Tutte le lingue ufficiali dell'UE e l'ucraino.
@@ -97,7 +97,7 @@ Versione 1.1 (v.1.100 – v.1.191)
 - Altre lingue: le lingue delle minoranze della Romania.
 - Appezzamenti: una mappa con tutte le parcelle, il pulsante GPS (punto blu) e «Salva luogo GPS».
 - Modalità agricoltore: le schermate principali scorrono con il dito.
-- Miglioramenti del design e correzioni di errori.
+- Miglioramenti del design e correzioni degli errori segnalati.
 
 Versione 1.0 (v.1.000 – v.1.093)
 - Nata da Meteo Alarm Kindle: la sua schermata portata su telefoni e tablet Android.
@@ -110,4 +110,4 @@ Versione 1.0 (v.1.000 – v.1.093)
 - Widget 2x2, 4x1, 4x2, con impostazioni.
 - Aggiornamento automatico; previsione di riserva MET Norway.
 - Aggiornamenti dall'app, Aiuto, Registro.
-- Miglioramenti del design e correzioni di errori.
+- Miglioramenti del design e correzioni degli errori segnalati.

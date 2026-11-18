@@ -1,4 +1,4 @@
-Praegune versioon: v.2.116 · 19.11.2026
+Praegune versioon: v.2.117 · 19.11.2026
 PÕHIEKRAAN
 - Maavärina teave: puudutus väljal Maavärin avab selle põhiekraanil: kaart, selle all tuntavuse tsoonid ja väärtuse ajalugu; värviline ruut või kaart avab selle täisekraanil, nagu värina menüüst ☰ › Maavärinad. Rumeenias, Prantsusmaal, Itaalias, Hollandis, Šveitsis ja Kreekas tulevad ametlikud väärtused esmalt riigi instituudilt (INFP, BCSF, INGV, KNMI, SED, NOA), seejärel EMSC-lt. Rumeenias saavad ka riigi ümbruse maavärinad INFP väärtuse (infp.ro-st).
 PÕLLULAPID
@@ -14,7 +14,7 @@ SEADED
 TEAVITUSED
 - Maavärinad: kontrollitakse iga 10 minuti järel, ka öösel kustunud ekraaniga; täpsustatud magnituud uuendab teadet ja selle puudutus avab kaardi.
 - Uus versioon: sisselülitatud teavitustega kontrollib rakendus kord nädalas GitHubi ja teatab uuest versioonist Androidi teavitustes; puudutus avab Otsi uuendusi.
-- Disainiparandused ja vigade parandused.
+- Disainiparandused ja teatatud vigade parandused.
 
 Versioon 1.4 (v.1.400 – v.1.520)
 PÕHIEKRAAN
@@ -42,7 +42,7 @@ TEAVITUSED
 - Tornaadod (USA): sinu asula tornaaditeavitused lülitatakse sisse või välja menüüs ☰.
 UUENDUSED
 - Uuendused: rakendus ei otsi enam ise uuendusi, ainult siis, kui puudutad ☰ › Kontrolli uuendusi; uus versioon laaditakse alla brauseris ja sina paigaldad selle allalaaditud failist.
-- Disainiparandused ja vigade parandused.
+- Disainiparandused ja teatatud vigade parandused.
 
 Versioon 1.3 (v.1.300 – v.1.352)
 PÕHIEKRAAN
@@ -82,7 +82,7 @@ VÄRSKENDUSED
 - Enne värskendust installiloa kontroll ja Auto Blockeri (Samsung) märkus nupuga seadetesse.
 - Uuendused kolmest allikast: GitHub, teine GitHubi server ja Google Drive.
 - Uuendused: esmalt kontrollitakse ühendust, juba alla laaditud versioon paigaldatakse kohe, kuni 5 katset, kui GitHub ei vasta, ja põhjus kuvatakse.
-- Disainiparandused ja vigade parandused.
+- Disainiparandused ja teatatud vigade parandused.
 
 Versioon 1.1 (v.1.100 – v.1.191)
 - Kõik ELi ametlikud keeled ja ukraina keel.
@@ -97,7 +97,7 @@ Versioon 1.1 (v.1.100 – v.1.191)
 - Teised keeled: Rumeenia vähemuste keeled.
 - Põllud: kaart kõigi maatükkidega, GPS-nupp (sinine täpp) ja „Salvesta GPS-koht“.
 - Põllumehe režiim: põhiekraanid liiguvad koos sõrmega.
-- Disainiparandused ja vigade parandused.
+- Disainiparandused ja teatatud vigade parandused.
 
 Versioon 1.0 (v.1.000 – v.1.093)
 - Tehtud Meteo Alarm Kindle'i põhjal: selle ekraan toodud Android-telefonidele ja -tahvlitele.
@@ -110,4 +110,4 @@ Versioon 1.0 (v.1.000 – v.1.093)
 - Vidinad 2x2, 4x1, 4x2, seadetega.
 - Värskendab ise; MET Norway varuprognoosina.
 - Uuendused rakendusest, Abi, Logi.
-- Disainiparandused ja vigade parandused.
+- Disainiparandused ja teatatud vigade parandused.

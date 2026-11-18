@@ -322,7 +322,8 @@ final class Updater {
 			return;
 		}
 		String msg = (Tr.t("Installed: v", "Instalată: v")) + cur + "    " + (Tr.t("New: v", "Nouă: v")) + r.version;
-		if (r.notes.length() > 0) msg += "\n\n" + r.notes;
+		String what = Release.summary(r.notes, "ro".equals(Tr.lang()));
+		if (what.length() > 0) msg += "\n\n" + what;
 		msg += "\n\n" + protectNote(en) + "\n\n" + autoBlocker();
 		sheet.show(Tr.t("New version: v", "Versiune nouă: v") + r.version, msg, Tr.t("Download", "Descarcă"), new Runnable() {
 			public void run() {

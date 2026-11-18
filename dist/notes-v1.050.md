@@ -1,4 +1,7 @@
-# Meteo Alarm Android v1.050
+## Română
+- Widget pentru ecranul de pornire.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
-- Widget nou pentru ecranul de pornire, în stilul celui de la Samsung: icon mic al vremii, temperatura mare, următorul apus sau răsărit și localitatea, direct pe imaginea de fundal. Se adaugă ținând apăsat pe ecranul de pornire › Widgeturi › Meteo Alarm. Se reîmprospătează singur la 30 de minute și când aplicația descarcă vremea; o atingere deschide aplicația.
-- Îmbunătățiri de design și corectarea erorilor.
+## English
+- A home screen widget.
+- Design improvements and fixes for reported bugs.

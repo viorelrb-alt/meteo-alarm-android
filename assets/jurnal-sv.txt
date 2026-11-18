@@ -1,4 +1,4 @@
-Nuvarande version: v.2.116 · 19.11.2026
+Nuvarande version: v.2.117 · 19.11.2026
 AVISERINGAR
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
 - Ny version: med aviseringar på kollar appen GitHub en gång i veckan och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.
@@ -14,7 +14,7 @@ SKIFTEN
 - Skiftets koordinater: på redigeringssidan skrivs GPS-koordinaterna för varje punkt in, och under dem visar satellitvyn skiftet.
 - Statistik på huvudskärmen: den öppnas under driftstatusen (liggande till vänster); ‹ stänger den och ett annat skiftes flik behåller den.
 - Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
-- Designförbättringar och felrättningar.
+- Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.4 (v.1.400 – v.1.520)
 AVISERINGAR
@@ -42,7 +42,7 @@ SKIFTEN
 - Skiftets punkter: + Punkt lägger till upp till 3 punkter till (högst 7), Cirkel fördelar dem jämnt på en cirkel, ett långt tryck på en punkt tar bort den.
 UPPDATERINGAR
 - Uppdateringar: appen söker inte längre själv efter uppdateringar, bara när du trycker på ☰ › Sök efter uppdateringar; den nya versionen laddas ned i webbläsaren och du installerar den från den nedladdade filen.
-- Designförbättringar och felrättningar.
+- Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.3 (v.1.300 – v.1.352)
 HUVUDSKÄRM
@@ -82,7 +82,7 @@ UPPDATERINGAR
 - Före en uppdatering kontroll av installationsbehörigheten och en notis om Auto Blocker (Samsung) med knapp till inställningarna.
 - Uppdateringar från tre källor: GitHub, en andra GitHub-server och Google Drive.
 - Uppdateringar: anslutningen kontrolleras först, en redan hämtad version installeras direkt, upp till 5 försök när GitHub inte svarar, och orsaken visas.
-- Designförbättringar och felrättningar.
+- Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.1 (v.1.100 – v.1.191)
 - Alla EU:s officiella språk och ukrainska.
@@ -97,7 +97,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Andra språk: Rumäniens minoritetsspråk.
 - Skiften: en karta med alla skiften, GPS-knappen (blå prick) och ”Spara GPS-plats”.
 - Lantbruksläge: huvudskärmarna glider med fingret.
-- Designförbättringar och felrättningar.
+- Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.0 (v.1.000 – v.1.093)
 - Gjord utifrån Meteo Alarm Kindle: dess skärm flyttad till Android-telefoner och surfplattor.
@@ -110,4 +110,4 @@ Version 1.0 (v.1.000 – v.1.093)
 - Widgetar 2x2, 4x1, 4x2, med inställningar.
 - Uppdaterar sig själv; MET Norway som reservprognos.
 - Uppdateringar från appen, Hjälp, Logg.
-- Designförbättringar och felrättningar.
+- Designförbättringar och rättningar av rapporterade fel.

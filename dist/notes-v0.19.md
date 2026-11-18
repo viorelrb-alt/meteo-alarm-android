@@ -1,4 +1,7 @@
-Ce e nou în v0.19:
-- Meniu nou „Ce e nou”: jurnalul tuturor versiunilor.
+## Română
 - După o actualizare, aplicația arată o dată ce s-a schimbat.
-- Îmbunătățiri de design și corectarea erorilor.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+
+## English
+- After an update, the app shows once what changed.
+- Design improvements and fixes for reported bugs.

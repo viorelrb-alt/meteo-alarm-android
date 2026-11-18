@@ -1,3 +1,5 @@
-Ce e nou în v1.030:
-- Cartierul: dacă geocoderul telefonului nu-l știe, se ia cel mai apropiat cartier marcat în OpenStreetMap (nu cea mai apropiată zonă mare).
-- Îmbunătățiri de design și corectarea erorilor.
+## Română
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+
+## English
+- Design improvements and fixes for reported bugs.

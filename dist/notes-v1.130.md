@@ -1,9 +1,7 @@
-# Meteo Alarm Android v1.130
-
-- Elemente pentru folosirea aplicației în Statele Unite.
-- ☰ › Temperatura °C/°F: la ieșirea din °F aplicația întreabă dacă treci la sistemul metric; cu °F presiunea e în inHg, iar distanțele în mile.
+## Română
+- Folosirea în Statele Unite: °F, inHg, mile.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 ## English
-
-- Elements for using the app in the United States.
-- ☰ › Temperature °C/°F: leaving °F asks whether to switch to the metric system; with °F the pressure is in inHg and distances in miles.
+- Use in the United States: °F, inHg, miles.
+- Design improvements and fixes for reported bugs.

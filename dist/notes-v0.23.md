@@ -1,4 +1,7 @@
-Ce e nou în v0.23:
-- Vremea pe următoarele ore apare în casete separate, câte una pe oră, ca zilele: ora, iconul, temperatura și cerul.
-- Trage ecranul în jos ca să actualizezi vremea (butonul de actualizare rămâne).
-- Îmbunătățiri de design și corectarea erorilor.
+## Română
+- Tragerea ecranului în jos actualizează vremea.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+
+## English
+- Pulling the screen down updates the weather.
+- Design improvements and fixes for reported bugs.

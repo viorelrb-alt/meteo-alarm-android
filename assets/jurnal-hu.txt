@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.116 · 19.11.2026
+Jelenlegi verzió: v.2.117 · 19.11.2026
 BEÁLLÍTÁSOK
 - Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
 ÉRTESÍTÉSEK
@@ -14,7 +14,7 @@ PARCELLÁK
 - Parcella szerkesztése: a ceruza megnyitja a parcella oldalát: név, kultúra (lista a vetési dátum szezonja szerint vagy Más kultúra…), vetési dátum, terület; a sarkok a térképen mozognak.
 - Statisztika a főképernyőn: az operatív állapot alatt nyílik meg (fekvő helyzetben balra); a ‹ bezárja, egy másik parcella füle megtartja.
 - Statisztika: minden parcellához A nap teendője és 4 fül: Operatív (permetezési ablak óránként, cseppszáradás (ΔT), szél, nedves levél), Víz és talaj (eső, párolgás, talaj 6 és 18 cm-en), Szezon (hőösszeg a tavalyihoz képest, becsült fázis) és Kockázatok 72 h (gombás betegségek, talajmenti fagy, hőség, szél és jégeső); mentés PDF-be vagy CSV-be.
-- Dizájnjavítások és hibajavítások.
+- Dizájnjavítások és a jelentett hibák javítása.
 
 1.4. verzió (v.1.400 – v.1.520)
 BEÁLLÍTÁSOK
@@ -42,7 +42,7 @@ PARCELLÁK
 - Térképnézetek: a ＋/− alatti kerek gombok váltanak műhold és térkép között, és mutatják az utolsó 2 óra csapadékradarját.
 - Tűk a térképen: egy tű érintése ráközelít a parcellára és megmutatja a nevét; a második érintés a pontjait mutatja.
 - Új parcella: a tű a látható térkép közepéről indul; a GPS gomb oda teszi, ahol vagy.
-- Dizájnjavítások és hibajavítások.
+- Dizájnjavítások és a jelentett hibák javítása.
 
 4. verzió (v.1.300 – v.1.352)
 FŐKÉPERNYŐ
@@ -82,7 +82,7 @@ PARCELLÁK
 - Parcellaértesítések a térkép csengő gombjával: eső, szél, hó, aszály.
 TÉMÁK
 - 6 színtéma (Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa), mindegyik világos és sötét: ☰ › Téma.
-- Dizájnjavítások és hibajavítások.
+- Dizájnjavítások és a jelentett hibák javítása.
 
 2. verzió (v.1.100 – v.1.191)
 - Az EU összes hivatalos nyelve és az ukrán.
@@ -97,7 +97,7 @@ TÉMÁK
 - Egyéb nyelvek: a romániai kisebbségek nyelvei.
 - Parcellák: térkép az összes parcellával, GPS gomb (kék pont) és „GPS-hely mentése”.
 - Gazda mód: a főképernyők az ujjal együtt csúsznak.
-- Dizájnjavítások és hibajavítások.
+- Dizájnjavítások és a jelentett hibák javítása.
 
 1. verzió (v.1.000 – v.1.093)
 - A Meteo Alarm Kindle-ből készült: a képernyője androidos telefonokra és táblagépekre hozva.
@@ -110,4 +110,4 @@ TÉMÁK
 - Widgetek 2x2, 4x1, 4x2, beállításokkal.
 - Önálló frissítés; tartalék előrejelzés: MET Norway.
 - Frissítések az alkalmazásból, Súgó, Napló.
-- Dizájnjavítások és hibajavítások.
+- Dizájnjavítások és a jelentett hibák javítása.

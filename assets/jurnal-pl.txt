@@ -1,4 +1,4 @@
-Obecna wersja: v.2.116 · 19.11.2026
+Obecna wersja: v.2.117 · 19.11.2026
 DZIAŁKI
 - Dymki w Statystykach: dotknięcie godziny w oknie oprysku, dnia na wykresach lub wiersza gleby otwiera dymek z wyjaśnieniem; okno oprysku przesuwa się samo.
 - Edycja działki: ołówek otwiera stronę działki: nazwa, uprawa (lista według sezonu daty siewu lub Inna uprawa…), data siewu, powierzchnia; narożniki przesuwa się na mapie.
@@ -14,7 +14,7 @@ POWIADOMIENIA
 - Nowa wersja: przy włączonych powiadomieniach aplikacja raz w tygodniu sprawdza GitHub i ogłasza nową wersję w powiadomieniach Androida; dotknięcie otwiera Sprawdź aktualizacje.
 USTAWIENIA
 - Język wyświetlania: w ☰ angielski i język kraju; Inne języki: pozostałe języki kraju, duże języki UE, rumuński i język telefonu (w USA tylko angielski i hiszpański).
-- Ulepszenia wyglądu i poprawki błędów.
+- Ulepszenia wyglądu i poprawki zgłoszonych błędów.
 
 Wersja 1.4 (v.1.400 – v.1.520)
 AKTUALIZACJE
@@ -42,7 +42,7 @@ USTAWIENIA
 - Język wyświetlania: przyciski w ☰, po 2 w rzędzie: angielski i języki kraju (w USA angielski i hiszpański); w Rumunii „Inne języki (mniejszości)” pokazuje pozostałe.
 - Motyw ikon: 6 motywów ikon pogody (Klasyczny, Błyszczący, Płaski, Realistyczny, Atmosferyczny, Konturowy), wybór kolorowymi kropkami w ☰; w aplikacji i na widżetach.
 - Ustawienia: menu ☰ jest teraz oknem z sekcjami, przełącznikami, motywami kolorystycznymi i paskiem System i pomoc; odświeżanie przez pociągnięcie ekranu w dół lub dotknięcie „zaktualizowano”.
-- Ulepszenia wyglądu i poprawki błędów.
+- Ulepszenia wyglądu i poprawki zgłoszonych błędów.
 
 Wersja 1.3 (v.1.300 – v.1.352)
 EKRAN GŁÓWNY
@@ -82,7 +82,7 @@ POWIADOMIENIA
 TRYB ROLNIKA
 - Tryb rolnika: nowe pola po Wodzie w glebie: Oprysk, Bilans wodny, Burze, Suma ciepła, 16 dni.
 - W USA, w trybie rolnika: pola NWS, Susza, Pożar, Grad.
-- Ulepszenia wyglądu i poprawki błędów.
+- Ulepszenia wyglądu i poprawki zgłoszonych błędów.
 
 Wersja 1.1 (v.1.100 – v.1.191)
 - Wszystkie języki urzędowe UE i ukraiński.
@@ -97,7 +97,7 @@ Wersja 1.1 (v.1.100 – v.1.191)
 - Inne języki: języki mniejszości Rumunii.
 - Działki: mapa ze wszystkimi działkami, przycisk GPS (niebieska kropka) i „Zapisz miejsce GPS”.
 - Tryb rolnika: ekrany główne przesuwają się z palcem.
-- Ulepszenia wyglądu i poprawki błędów.
+- Ulepszenia wyglądu i poprawki zgłoszonych błędów.
 
 Wersja 1.0 (v.1.000 – v.1.093)
 - Powstała z Meteo Alarm Kindle: jego ekran przeniesiony na telefony i tablety z Androidem.
@@ -110,4 +110,4 @@ Wersja 1.0 (v.1.000 – v.1.093)
 - Widżety 2x2, 4x1, 4x2, z ustawieniami.
 - Samoczynne odświeżanie; zapasowa prognoza MET Norway.
 - Aktualizacje z aplikacji, Pomoc, Dziennik.
-- Ulepszenia wyglądu i poprawki błędów.
+- Ulepszenia wyglądu i poprawki zgłoszonych błędów.

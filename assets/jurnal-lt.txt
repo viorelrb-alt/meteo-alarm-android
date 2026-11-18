@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.116 · 19.11.2026
+Dabartinė versija: v.2.117 · 19.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 PAGRINDINIS EKRANAS
@@ -14,7 +14,7 @@ SKLYPAI
 - Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
-- Dizaino patobulinimai ir klaidų taisymai.
+- Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 1.4 versija (v.1.400 – v.1.520)
 ATNAUJINIMAI
@@ -42,7 +42,7 @@ SKLYPAI
 - Skirtukai: vietovė ir sklypai skirtukuose po pavadinimu (gulsčiai – apačioje); sklypo ekranas skyriuose 1–4.
 - Ūkininko mygtukas: lapo mygtukas šalia mygtukų išjungia ūkininko režimą; kita vietovė jį išlaiko.
 - Veiklos būsena: sklypo ekrane, tik kai reikia, sprendimas dėl purškimo, priežastis ir ateinančių 24 valandų rizikos.
-- Dizaino patobulinimai ir klaidų taisymai.
+- Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 4 versija (v.1.300 – v.1.352)
 PAGRINDINIS EKRANAS
@@ -82,7 +82,7 @@ TEMOS
 ŪKININKO REŽIMAS
 - JAV, ūkininko režimu: langeliai NWS, Sausra, Gaisras, Kruša.
 - Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
-- Dizaino patobulinimai ir klaidų taisymai.
+- Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 2 versija (v.1.100 – v.1.191)
 - Visos oficialiosios ES kalbos ir ukrainiečių.
@@ -97,7 +97,7 @@ TEMOS
 - Kitos kalbos: Rumunijos mažumų kalbos.
 - Laukai: žemėlapis su visais sklypais, GPS mygtukas (mėlynas taškas) ir „Išsaugoti GPS vietą“.
 - Ūkininko režimas: pagrindiniai ekranai slenka su pirštu.
-- Dizaino patobulinimai ir klaidų taisymai.
+- Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 1 versija (v.1.000 – v.1.093)
 - Sukurta iš Meteo Alarm Kindle: jo ekranas perkeltas į Android telefonus ir planšetes.
@@ -110,4 +110,4 @@ TEMOS
 - Valdikliai 2x2, 4x1, 4x2, su nustatymais.
 - Atsinaujina pati; MET Norway kaip atsarginė prognozė.
 - Atnaujinimai iš programėlės, Pagalba, Žurnalas.
-- Dizaino patobulinimai ir klaidų taisymai.
+- Dizaino patobulinimai ir praneštų klaidų taisymai.

@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.116 · 19.11.2026
+Aktuelle Version: v.2.117 · 19.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
 - Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App einmal pro Woche GitHub und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.
@@ -14,7 +14,7 @@ PARZELLEN
 - Statistik im Hauptbildschirm: Sie öffnet sich unter dem Betriebsstatus (quer links); ‹ schließt sie, der Tab einer anderen Parzelle behält sie.
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
-- Design-Verbesserungen und Fehlerbehebungen.
+- Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.4 (v.1.400 – v.1.520)
 BENACHRICHTIGUNGEN
@@ -42,7 +42,7 @@ PARZELLEN
 - Seite Parzellen: die Karten der Parzellen (Name, Koordinaten, Stift, Statistik · PDF, Glocke, Papierkorb) schweben über der Karte, in einer Reihe unten oder einer Spalte rechts; ＋, auch der Tab ＋, öffnet das Feld einer neuen Parzelle.
 UPDATES
 - Updates: Die App sucht nicht mehr selbst nach Updates, nur wenn du auf ☰ › Nach Updates suchen tippst; die neue Version wird im Browser heruntergeladen und du installierst sie aus der heruntergeladenen Datei.
-- Design-Verbesserungen und Fehlerbehebungen.
+- Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.3 (v.1.300 – v.1.352)
 HAUPTBILDSCHIRM
@@ -82,7 +82,7 @@ LANDWIRT-MODUS
 - Landwirt-Modus: neue Felder nach Wasser im Boden: Spritzen, Wasserbilanz, Gewitter, Wärmesumme, 16 Tage.
 PARZELLEN
 - Benachrichtigungen für Parzellen, gewählt mit der Glocken-Taste auf der Karte: Regen, Wind, Schnee, Dürre.
-- Design-Verbesserungen und Fehlerbehebungen.
+- Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.1 (v.1.100 – v.1.191)
 - Alle EU-Amtssprachen und Ukrainisch.
@@ -97,7 +97,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Weitere Sprachen: die Sprachen der Minderheiten Rumäniens.
 - Parzellen: eine Karte mit allen Parzellen, die GPS-Taste (blauer Punkt) und „GPS-Ort speichern“.
 - Landwirt-Modus: Die Hauptbildschirme gleiten mit dem Finger.
-- Design-Verbesserungen und Fehlerbehebungen.
+- Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.0 (v.1.000 – v.1.093)
 - Entstanden aus Meteo Alarm Kindle: sein Bildschirm auf Android-Handys und -Tablets gebracht.
@@ -110,4 +110,4 @@ Version 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, mit Einstellungen.
 - Automatische Aktualisierung; MET Norway als Ersatzvorhersage.
 - Updates aus der App, Hilfe, Protokoll.
-- Design-Verbesserungen und Fehlerbehebungen.
+- Design-Verbesserungen und Behebung gemeldeter Fehler.

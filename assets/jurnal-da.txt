@@ -1,4 +1,4 @@
-Nuværende version: v.2.116 · 19.11.2026
+Nuværende version: v.2.117 · 19.11.2026
 HOVEDSKÆRM
 - Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ☰ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
 INDSTILLINGER
@@ -14,7 +14,7 @@ MARKER
 NOTIFIKATIONER
 - Jordskælv: tjekket hvert 10. minut, også om natten med skærmen slukket; en revideret magnitude opdaterer meddelelsen, og et tryk på den åbner kortet.
 - Ny version: med notifikationer slået til tjekker appen GitHub en gang om ugen og melder en ny version i Androids notifikationer; et tryk åbner Søg efter opdateringer.
-- Designforbedringer og fejlrettelser.
+- Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.4 (v.1.400 – v.1.520)
 HOVEDSKÆRM
@@ -42,7 +42,7 @@ NOTIFIKATIONER
 - Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ☰.
 OPDATERINGER
 - Opdateringer: appen søger ikke længere selv efter opdateringer, kun når du trykker på ☰ › Søg efter opdateringer; den nye version downloades i browseren, og du installerer den fra den downloadede fil.
-- Designforbedringer og fejlrettelser.
+- Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.3 (v.1.300 – v.1.352)
 HOVEDSKÆRM
@@ -82,7 +82,7 @@ OPDATERINGER
 - Opdateringer: forbindelsen tjekkes først, en allerede hentet version installeres straks, op til 5 forsøg, når GitHub ikke svarer, og årsagen vises.
 TEMAER
 - 6 farvetemaer (Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose), hvert lyst og mørkt: ☰ › Tema.
-- Designforbedringer og fejlrettelser.
+- Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.1 (v.1.100 – v.1.191)
 - Alle EU's officielle sprog og ukrainsk.
@@ -97,7 +97,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Andre sprog: Rumæniens mindretalssprog.
 - Marker: et kort med alle parceller, GPS-knappen (blå prik) og “Gem GPS-sted”.
 - Landmandstilstand: hovedskærmene glider med fingeren.
-- Designforbedringer og fejlrettelser.
+- Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.0 (v.1.000 – v.1.093)
 - Lavet ud fra Meteo Alarm Kindle: dens skærm bragt til Android-telefoner og -tablets.
@@ -110,4 +110,4 @@ Version 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, med indstillinger.
 - Opdaterer af sig selv; MET Norway som reserveudsigt.
 - Opdateringer fra appen, Hjælp, Log.
-- Designforbedringer og fejlrettelser.
+- Designforbedringer og rettelser af indrapporterede fejl.

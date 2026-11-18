@@ -1,4 +1,4 @@
-Současná verze: v.2.116 · 19.11.2026
+Současná verze: v.2.117 · 19.11.2026
 HLAVNÍ OBRAZOVKA
 - Informace o zemětřesení: klepnutí na pole Zemětřesení je otevře na hlavní obrazovce: mapa, pod ní zóny pocitu a historie hodnoty; barevný čtverec nebo mapa je otevře na celé obrazovce, jako zemětřesení z ☰ › Zemětřesení. V Rumunsku, Francii, Itálii, Nizozemsku, Švýcarsku a Řecku pocházejí oficiální hodnoty nejprve z národního ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), pak z EMSC. V Rumunsku dostávají hodnotu INFP (z infp.ro) i zemětřesení v okolí země.
 NASTAVENÍ
@@ -14,7 +14,7 @@ POZEMKY
 - Statistika na hlavní obrazovce: otevírá se pod provozním stavem (na šířku vlevo); ‹ ji zavře a karta jiného pozemku ji ponechá.
 - Statistika: pro každý pozemek Úkol dne a 4 karty: Provoz (okno postřiku hodinu po hodině, vysychání kapek (ΔT), vítr, mokrý list), Voda a půda (déšť, výpar, půda v 6 a 18 cm), Sezóna (denní stupně oproti loňsku, odhadovaná fáze) a Rizika 72 h (houbové choroby, přízemní mráz, horko, vítr a kroupy); uložení do PDF nebo CSV.
 - Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
-- Vylepšení vzhledu a opravy chyb.
+- Vylepšení vzhledu a opravy nahlášených chyb.
 
 Verze 1.4 (v.1.400 – v.1.520)
 AKTUALIZACE
@@ -42,7 +42,7 @@ REŽIM FARMÁŘE
 - Karty: obec a pozemky v kartách pod názvem (na šířku dole); obrazovka pozemku v částech 1–4.
 - Provozní stav: na obrazovce pozemku, jen když je třeba, verdikt pro postřik, jeho důvod a rizika příštích 24 hodin.
 - Tlačítko farmáře: tlačítko s listem vedle tlačítek vypne režim farmáře; jiná obec ho zachová.
-- Vylepšení vzhledu a opravy chyb.
+- Vylepšení vzhledu a opravy nahlášených chyb.
 
 Verze 1.3 (v.1.300 – v.1.352)
 HLAVNÍ OBRAZOVKA
@@ -82,7 +82,7 @@ POZEMKY
 REŽIM FARMÁŘE
 - Režim farmáře: nová pole za Vodou v půdě: Postřik, Vodní bilance, Bouřky, Teplotní sumy, 16 dní.
 - V USA v režimu farmáře: pole NWS, Sucho, Požár, Kroupy.
-- Vylepšení vzhledu a opravy chyb.
+- Vylepšení vzhledu a opravy nahlášených chyb.
 
 Verze 1.1 (v.1.100 – v.1.191)
 - Všechny úřední jazyky EU a ukrajinština.
@@ -97,7 +97,7 @@ Verze 1.1 (v.1.100 – v.1.191)
 - Další jazyky: jazyky menšin Rumunska.
 - Pozemky: mapa se všemi parcelami, tlačítko GPS (modrá tečka) a „Uložit místo GPS“.
 - Režim zemědělce: hlavní obrazovky se posouvají prstem.
-- Vylepšení vzhledu a opravy chyb.
+- Vylepšení vzhledu a opravy nahlášených chyb.
 
 Verze 1.0 (v.1.000 – v.1.093)
 - Vznikla z Meteo Alarm Kindle: jeho obrazovka převedená na telefony a tablety s Androidem.
@@ -110,4 +110,4 @@ Verze 1.0 (v.1.000 – v.1.093)
 - Widgety 2x2, 4x1, 4x2, s nastavením.
 - Samočinné obnovování; záložní předpověď MET Norway.
 - Aktualizace z aplikace, Nápověda, Deník.
-- Vylepšení vzhledu a opravy chyb.
+- Vylepšení vzhledu a opravy nahlášených chyb.

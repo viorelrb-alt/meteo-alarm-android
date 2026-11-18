@@ -1,7 +1,5 @@
-# Meteo Alarm Android v1.112
-
-- Îmbunătățiri de design și corectarea erorilor.
+## Română
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 ## English
-
-- Design improvements and bug fixes.
+- Design improvements and fixes for reported bugs.

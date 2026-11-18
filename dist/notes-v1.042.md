@@ -1,4 +1,7 @@
-# Meteo Alarm Android v1.042
+## Română
+- Atingerea numelui localității caută o dată poziția cu GPS-ul.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
-- Atingerea numelui localității caută o dată poziția cu GPS-ul, fără să pornească sau să oprească localizarea automată. Notificarea apare sub linia de sub localitate.
-- Îmbunătățiri de design și corectarea erorilor.
+## English
+- A tap on the town name looks once for the GPS position.
+- Design improvements and fixes for reported bugs.

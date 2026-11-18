@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.116 · 19.11.2026
+Versiunea curentă: v.2.117 · 19.11.2026
 ECRAN PRINCIPAL
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
 NOTIFICĂRI
@@ -14,7 +14,7 @@ PARCELE
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.
 SETĂRI
 - Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
-- Îmbunătățiri de design și corectarea erorilor.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.4 (v.1.400 – v.1.520)
 ACTUALIZĂRI
@@ -42,7 +42,7 @@ SETĂRI
 - Limbă afișaj: butoane în ☰, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte.
 - Setări: meniul ☰ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
 - Temă icon: 6 teme de iconuri (Clasic, Lucios, Plat, Realist, Atmosferic, Contur), alese din ☰ cu buline colorate; în aplicație și pe widget-uri.
-- Îmbunătățiri de design și corectarea erorilor.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.3 (v.1.300 – v.1.352)
 ECRAN PRINCIPAL
@@ -82,7 +82,7 @@ PARCELE
 - Notificări pentru parcele, alese din butonul clopoțel de pe hartă: ploaie, vânt, ninsoare, secetă.
 TEME
 - 6 teme de culoare (Monocrom, Salvie, Lavandă, Cer, Piersică, Trandafir), fiecare luminoasă și întunecată: ☰ › Temă.
-- Îmbunătățiri de design și corectarea erorilor.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.1 (v.1.100 – v.1.191)
 - Toate limbile oficiale ale UE și ucraineana.
@@ -97,7 +97,7 @@ Versiunea 1.1 (v.1.100 – v.1.191)
 - Alte limbi: limbile minorităților din România.
 - Parcele: harta cu toate parcelele, butonul GPS (punctul albastru) și „Salvare loc. GPS”.
 - Mod Fermier: ecranele principale glisează cu degetul.
-- Îmbunătățiri de design și corectarea erorilor.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.0 (v.1.000 – v.1.093)
 - Făcută din Meteo Alarm Kindle: ecranul lui adus pe telefoanele și tabletele Android.
@@ -110,4 +110,4 @@ Versiunea 1.0 (v.1.000 – v.1.093)
 - Widget-uri 2x2, 4x1, 4x2, cu setări.
 - Reîmprospătare automată; prognoză de rezervă MET Norway.
 - Actualizări din aplicație, Ajutor, Jurnal.
-- Îmbunătățiri de design și corectarea erorilor.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.

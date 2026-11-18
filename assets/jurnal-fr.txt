@@ -1,4 +1,4 @@
-Version actuelle : v.2.116 · 19.11.2026
+Version actuelle : v.2.117 · 19.11.2026
 ÉCRAN PRINCIPAL
 - Informations sur le séisme : un appui sur la case Séisme les ouvre dans l'écran principal : la carte, en dessous les zones de ressenti et l'historique de la valeur ; le carré coloré ou la carte les ouvre en plein écran, comme un séisme de ☰ › Séismes. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC. En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).
 NOTIFICATIONS
@@ -14,7 +14,7 @@ PARCELLES
 - Statistiques : pour chaque parcelle, l'Action du jour et 4 onglets : Opérationnel (fenêtre de pulvérisation heure par heure, séchage des gouttes (ΔT), vent, feuille mouillée), Eau & Sol (pluie, évaporation, sol à 6 et 18 cm), Saison (degrés-jours face à l'an dernier, stade estimé) et Risques 72 h (maladies fongiques, gelée au sol, chaleur, vent et grêle) ; enregistrement en PDF ou CSV.
 - Statistiques dans l'écran principal : elles s'ouvrent sous le statut opérationnel (en paysage à gauche) ; ‹ les ferme et l'onglet d'une autre parcelle les garde.
 - Statut opérationnel : en haut, la culture et sa date de semis ; avec une culture, le verdict tient aussi compte du séchage des gouttes (ΔT) et de sa maladie.
-- Améliorations du design et corrections de bugs.
+- Améliorations du design et corrections des bugs signalés.
 
 Version 1.4 (v.1.400 – v.1.520)
 ÉCRAN PRINCIPAL
@@ -42,7 +42,7 @@ PARCELLES
 - Page Parcelles : les cartes des parcelles (nom, coordonnées, crayon, Statistiques · PDF, cloche, corbeille) flottent sur la carte, en ligne en bas ou en colonne à droite ; ＋, aussi l'onglet ＋, ouvre la case d'une nouvelle parcelle.
 - Points de la parcelle : + Point ajoute jusqu'à 3 points de plus (7 au plus), Cercle les répartit également sur un cercle, un appui long sur un point le supprime.
 - Vues de la carte : des boutons ronds sous ＋/− passent du satellite à la carte et montrent le radar de pluie des 2 dernières heures.
-- Améliorations du design et corrections de bugs.
+- Améliorations du design et corrections des bugs signalés.
 
 Version 1.3 (v.1.300 – v.1.352)
 ÉCRAN PRINCIPAL
@@ -82,7 +82,7 @@ PARCELLES
 - Notifications des parcelles, choisies avec le bouton cloche de la carte : pluie, vent, neige, sécheresse.
 THÈMES
 - 6 thèmes de couleur (Monochrome, Sauge, Lavande, Ciel, Pêche, Rose), chacun clair et sombre : ☰ › Thème.
-- Améliorations du design et corrections de bugs.
+- Améliorations du design et corrections des bugs signalés.
 
 Version 1.1 (v.1.100 – v.1.191)
 - Toutes les langues officielles de l'UE et l'ukrainien.
@@ -97,7 +97,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Autres langues : les langues des minorités de Roumanie.
 - Parcelles : une carte avec toutes les parcelles, le bouton GPS (point bleu) et « Enregistrer lieu GPS ».
 - Mode agriculteur : les écrans principaux glissent avec le doigt.
-- Améliorations du design et corrections de bugs.
+- Améliorations du design et corrections des bugs signalés.
 
 Version 1.0 (v.1.000 – v.1.093)
 - Issue de Meteo Alarm Kindle : son écran porté sur les téléphones et tablettes Android.
@@ -110,4 +110,4 @@ Version 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, avec réglages.
 - Actualisation automatique ; prévision de secours MET Norway.
 - Mises à jour depuis l'application, Aide, Journal.
-- Améliorations du design et corrections de bugs.
+- Améliorations du design et corrections des bugs signalés.

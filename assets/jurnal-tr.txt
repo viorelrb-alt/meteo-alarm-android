@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.116 · 19.11.2026
+Geçerli sürüm: v.2.117 · 19.11.2026
 ANA EKRAN
 - Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ☰ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
 AYARLAR
@@ -14,7 +14,7 @@ PARSELLER
 - Operasyonel durum: üstte ürün ve ekim tarihi; ürün varsa karar damla kurumasını (ΔT) ve ürünün hastalığını da hesaba katar.
 - Parsel koordinatları: düzenleme sayfasında her noktanın GPS koordinatları yazılabilir, altında uydu görünümü parseli gösterir.
 - Parseli düzenle: kalem parselin sayfasını açar: ad, bitki (ekim tarihinin sezonuna göre liste veya Başka bitki…), ekim tarihi, alan; köşeler haritada taşınır.
-- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+- Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.4 (v.1.400 – v.1.520)
 ANA EKRAN
@@ -42,7 +42,7 @@ PARSELLER
 - Parsel noktaları: + Nokta en fazla 3 nokta daha ekler (en fazla 7), Daire onları bir daireye eşit dağıtır, bir noktaya uzun basmak onu siler.
 - Parseller sayfası: parsellerin kartları (ad, koordinatlar, kalem, İstatistik · PDF, zil, çöp kutusu) haritanın üzerinde, altta bir sırada veya sağda bir sütunda yüzer; ＋, ＋ sekmesi de, yeni parsel kutusunu açar.
 - Yeni parsel: iğne görünen haritanın ortasından başlar; GPS düğmesi onu bulunduğun yere taşır.
-- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+- Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.3 (v.1.300 – v.1.352)
 ANA EKRAN
@@ -82,7 +82,7 @@ PARSELLER
 - Parsel bildirimleri, haritadaki zil düğmesiyle seçilir: yağmur, rüzgâr, kar, kuraklık.
 TEMALAR
 - 6 renk teması (Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül), her biri açık ve koyu: ☰ › Tema.
-- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+- Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.1 (v.1.100 – v.1.191)
 - AB'nin tüm resmî dilleri ve Ukraynaca.
@@ -97,7 +97,7 @@ Sürüm 1.1 (v.1.100 – v.1.191)
 - Diğer diller: Romanya'daki azınlık dilleri.
 - Parseller: tüm parselleri gösteren harita, GPS düğmesi (mavi nokta) ve “GPS yerini kaydet”.
 - Çiftçi modu: ana ekranlar parmakla birlikte kayar.
-- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+- Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.0 (v.1.000 – v.1.093)
 - Meteo Alarm Kindle'dan yapıldı: ekranı Android telefon ve tabletlere taşındı.
@@ -110,4 +110,4 @@ Sürüm 1.0 (v.1.000 – v.1.093)
 - Ayarlı 2x2, 4x1, 4x2 widget'lar.
 - Kendiliğinden yenileme; yedek tahmin olarak MET Norway.
 - Uygulamadan güncellemeler, Yardım, Günlük.
-- Tasarım iyileştirmeleri ve hata düzeltmeleri.
+- Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.

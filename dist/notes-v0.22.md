@@ -1,2 +1,5 @@
-Ce e nou în v0.22:
-- Îmbunătățiri de design și corectarea erorilor.
+## Română
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+
+## English
+- Design improvements and fixes for reported bugs.

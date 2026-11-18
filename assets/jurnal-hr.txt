@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.116 · 19.11.2026
+Trenutačna verzija: v.2.117 · 19.11.2026
 GLAVNI ZASLON
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 OBAVIJESTI
@@ -14,7 +14,7 @@ PARCELE
 - Uredi parcelu: olovka otvara stranicu parcele: ime, kultura (popis po sezoni datuma sjetve ili Druga kultura…), datum sjetve, površina; kutovi se pomiču na karti.
 POSTAVKE
 - Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
-- Poboljšanja dizajna i ispravci pogrešaka.
+- Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 
 Verzija 1.4 (v.1.400 – v.1.520)
 AŽURIRANJA
@@ -42,7 +42,7 @@ POSTAVKE
 - Jezik prikaza: gumbi u ☰, po 2 u redu: engleski i jezici zemlje (u SAD-u engleski i španjolski); u Rumunjskoj „Ostali jezici (manjine)” prikazuje ostale.
 - Postavke: izbornik ☰ sada je prozor s odjeljcima, prekidačima, temama u boji i trakom Sustav i podrška; osvježava se povlačenjem zaslona prema dolje ili dodirom na „ažurirano”.
 - Tema ikona: 6 tema ikona vremena (Klasične, Sjajne, Ravne, Realistične, Atmosferske, Obrisne), biraju se obojenim točkama u ☰; u aplikaciji i na widgetima.
-- Poboljšanja dizajna i ispravci pogrešaka.
+- Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 
 Verzija 1.3 (v.1.300 – v.1.352)
 GLAVNI ZASLON
@@ -82,7 +82,7 @@ PARCELE
 - Obavijesti za parcele, odabrane gumbom zvona na karti: kiša, vjetar, snijeg, suša.
 TEME
 - 6 tema boja (Jednobojna, Kadulja, Lavanda, Nebo, Breskva, Ruža), svaka svijetla i tamna: ☰ › Tema.
-- Poboljšanja dizajna i ispravci pogrešaka.
+- Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 
 Verzija 1.1 (v.1.100 – v.1.191)
 - Svi službeni jezici EU-a i ukrajinski.
@@ -97,7 +97,7 @@ Verzija 1.1 (v.1.100 – v.1.191)
 - Ostali jezici: jezici manjina u Rumunjskoj.
 - Parcele: karta sa svim parcelama, gumb GPS (plava točka) i „Spremi GPS mjesto”.
 - Način poljoprivrednika: glavni zasloni klize s prstom.
-- Poboljšanja dizajna i ispravci pogrešaka.
+- Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 
 Verzija 1.0 (v.1.000 – v.1.093)
 - Nastala od Meteo Alarm Kindle: njegov zaslon prenesen na Android telefone i tablete.
@@ -110,4 +110,4 @@ Verzija 1.0 (v.1.000 – v.1.093)
 - Widgeti 2x2, 4x1, 4x2, s postavkama.
 - Samostalno osvježavanje; rezervna prognoza MET Norway.
 - Ažuriranja iz aplikacije, Pomoć, Dnevnik.
-- Poboljšanja dizajna i ispravci pogrešaka.
+- Poboljšanja dizajna i ispravci prijavljenih pogrešaka.

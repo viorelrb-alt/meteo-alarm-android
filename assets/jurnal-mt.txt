@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.116 · 19.11.2026
+Verżjoni attwali: v.2.117 · 19.11.2026
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
@@ -14,7 +14,7 @@ SETTINGS
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
 SKRIN EWLIENI
 - Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
-- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+- Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)
 AĠĠORNAMENTI
@@ -42,7 +42,7 @@ SKRIN EWLIENI
 - Boxxla kbira: mess fuq lokalità fil-lista juri l-marka tagħha fuq il-boxxla; lokalitajiet fl-istess direzzjoni ma jirkbux aktar fuq xulxin.
 - Skrin ewlieni: il-paġna tiskrolla taħt il-ħġieġ ta' fuq, f'taqsimiet (Is-siegħat li ġejjin, Tbassir għal ħamest ijiem, Dettalji tat-temp); il-buttuni u l-batterija jżommu f'wiċċ l-ilma isfel.
 - Tbassir għal ħamest ijiem: il-jiem 3–5 jinbidlu waħedhom kull 3 sekondi sal-ewwel mess.
-- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+- Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.3 (v.1.300 – v.1.352)
 SKRIN EWLIENI
@@ -82,7 +82,7 @@ SKRIN EWLIENI
 - Preċipitazzjoni 12-il siegħa: meta tagħmel xita jew borra għal parti biss mill-ħin, kaxxi ta' 4 sigħat (Xita jew Borra, bil-ħinijiet) minflok il-grafika.
 TEMI
 - 6 temi tal-kulur (Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda), kull wieħed ċar u skur: ☰ › Tema.
-- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+- Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.1 (v.1.100 – v.1.191)
 - Il-lingwi uffiċjali kollha tal-UE u l-Ukren.
@@ -97,7 +97,7 @@ Verżjoni 1.1 (v.1.100 – v.1.191)
 - Lingwi oħra: il-lingwi tal-minoranzi tar-Rumanija.
 - Għelieqi: mappa bl-għelieqi kollha, il-buttuna GPS (tikka blu) u “Issejvja post GPS”.
 - Modalità tal-bidwi: l-iskrins ewlenin jiżżerżqu mas-saba’.
-- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+- Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.0 (v.1.000 – v.1.093)
 - Magħmula minn Meteo Alarm Kindle: l-iskrin tiegħu miġjub fuq telefowns u tablets Android.
@@ -110,4 +110,4 @@ Verżjoni 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, bl-issettjar.
 - Aġġornament waħdu; MET Norway bħala tbassir ta' riżerva.
 - Aġġornamenti mill-app, Għajnuna, Reġistru.
-- Titjib fid-disinn u korrezzjoni ta’ żbalji.
+- Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.

@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.116 · 19.11.2026
+Súčasná verzia: v.2.117 · 19.11.2026
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
 NASTAVENIA
@@ -14,7 +14,7 @@ POZEMKY
 UPOZORNENIA
 - Zemetrasenia: kontrolované každých 10 minút, aj v noci s vypnutou obrazovkou; revidovaná magnitúda aktualizuje oznámenie a ťuknutie naň otvorí mapu.
 - Nová verzia: so zapnutými oznámeniami aplikácia raz týždenne skontroluje GitHub a ohlási novú verziu v oznámeniach Androidu; ťuknutie otvorí Skontrolovať aktualizácie.
-- Vylepšenia vzhľadu a opravy chýb.
+- Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.4 (v.1.400 – v.1.520)
 AKTUALIZÁCIE
@@ -42,7 +42,7 @@ REŽIM FARMÁRA
 UPOZORNENIA
 - Tornáda (USA): upozornenia na tornáda pre vašu obec sa zapínajú a vypínajú v ☰.
 - Zemetrasenia: upozornenia len na zemetrasenia najviac 300 km od vášho miesta; zapínajú sa a vypínajú v ☰.
-- Vylepšenia vzhľadu a opravy chýb.
+- Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.3 (v.1.300 – v.1.352)
 HLAVNÁ OBRAZOVKA
@@ -82,7 +82,7 @@ UPOZORNENIA
 - Pri zmene obce sa upozornenia starej obce odstránia.
 - Samostatné oznámenie INFORMÁCIA aj pre obec.
 - Samostatné upozornenia INFORMÁCIA pre každú parcelu: inovať, mráz, hmla, mrznúci dážď, silné nárazy.
-- Vylepšenia vzhľadu a opravy chýb.
+- Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.1 (v.1.100 – v.1.191)
 - Všetky úradné jazyky EÚ a ukrajinčina.
@@ -97,7 +97,7 @@ Verzia 1.1 (v.1.100 – v.1.191)
 - Ďalšie jazyky: jazyky menšín Rumunska.
 - Pozemky: mapa so všetkými parcelami, tlačidlo GPS (modrá bodka) a „Uložiť miesto GPS“.
 - Režim farmára: hlavné obrazovky sa posúvajú s prstom.
-- Vylepšenia vzhľadu a opravy chýb.
+- Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.0 (v.1.000 – v.1.093)
 - Vznikla z Meteo Alarm Kindle: jeho obrazovka prenesená na telefóny a tablety s Androidom.
@@ -110,4 +110,4 @@ Verzia 1.0 (v.1.000 – v.1.093)
 - Miniaplikácie 2x2, 4x1, 4x2, s nastaveniami.
 - Samočinné obnovovanie; záložná predpoveď MET Norway.
 - Aktualizácie z aplikácie, Pomocník, Denník.
-- Vylepšenia vzhľadu a opravy chýb.
+- Vylepšenia vzhľadu a opravy nahlásených chýb.

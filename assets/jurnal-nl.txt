@@ -1,4 +1,4 @@
-Huidige versie: v.2.116 · 19.11.2026
+Huidige versie: v.2.117 · 19.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 INSTELLINGEN
@@ -14,7 +14,7 @@ PERCELEN
 - Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
 - Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
-- Ontwerpverbeteringen en foutoplossingen.
+- Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.4 (v.1.400 – v.1.520)
 BOERENMODUS
@@ -42,7 +42,7 @@ PERCELEN
 - Spelden op de kaart: een tik op een speld zoomt de kaart in op het perceel en toont de naam; een tweede tik toont de punten.
 UPDATES
 - Updates: de app zoekt niet meer zelf naar updates, alleen als je op ☰ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
-- Ontwerpverbeteringen en foutoplossingen.
+- Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.3 (v.1.300 – v.1.352)
 HOOFDSCHERM
@@ -82,7 +82,7 @@ UPDATES
 - Updates uit drie bronnen: GitHub, een tweede GitHub-server en Google Drive.
 - Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.
 - Voor een update controle van de installatietoestemming en een notitie over Auto Blocker (Samsung) met knop naar de instellingen.
-- Ontwerpverbeteringen en foutoplossingen.
+- Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.1 (v.1.100 – v.1.191)
 - Alle officiële EU-talen en Oekraïens.
@@ -97,7 +97,7 @@ Versie 1.1 (v.1.100 – v.1.191)
 - Andere talen: de talen van de minderheden in Roemenië.
 - Percelen: een kaart met alle percelen, de GPS-knop (blauwe stip) en „GPS-plek opslaan”.
 - Boerenmodus: de hoofdschermen schuiven mee met je vinger.
-- Ontwerpverbeteringen en foutoplossingen.
+- Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.0 (v.1.000 – v.1.093)
 - Gemaakt op basis van Meteo Alarm Kindle: het scherm ervan naar Android-telefoons en -tablets gebracht.
@@ -110,4 +110,4 @@ Versie 1.0 (v.1.000 – v.1.093)
 - Widgets 2x2, 4x1, 4x2, met instellingen.
 - Vanzelf vernieuwen; MET Norway als reserveverwachting.
 - Updates vanuit de app, Help, Logboek.
-- Ontwerpverbeteringen en foutoplossingen.
+- Ontwerpverbeteringen en oplossingen voor gemelde fouten.

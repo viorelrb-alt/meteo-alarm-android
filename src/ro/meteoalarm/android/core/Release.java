@@ -84,6 +84,25 @@ public final class Release {
 		return r;
 	}
 
+	/** v2.117 (Viorel): the update window shows only the short description of the version in the app's
+	 *  language: the "## Română" part in Romanian, the "## English" part otherwise; "- " items become "• ".
+	 *  Notes in an older layout give "" (the window then shows no description, never the whole text). */
+	public static String summary(String notes, boolean ro) {
+		if (notes == null) return "";
+		String want = ro ? "## Română" : "## English";
+		StringBuilder b = new StringBuilder();
+		boolean in = false;
+		for (String l : notes.replace("\r", "").split("\n")) {
+			String t = l.trim();
+			if (t.startsWith("## ")) { in = t.equals(want); continue; }
+			if (!in || t.length() == 0) continue;
+			if (t.startsWith("#")) break;
+			if (b.length() > 0) b.append('\n');
+			b.append(t.startsWith("- ") ? "• " + t.substring(2) : t);
+		}
+		return b.toString();
+	}
+
 	/** The release JSON of the GitHub API: tag "v0.14", the first .apk asset, the notes. */
 	@SuppressWarnings("unchecked")
 	public static Release parse(String json) {

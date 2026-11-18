@@ -1,4 +1,9 @@
-Ce e nou în v0.15:
-- La prima pornire: un mesaj despre aplicație (versiune de test, nu colectăm date, de ce cerem locația și senzorii, actualizări).
-- Actualizările apar într-o fereastră mică, de jos, cu „Actualizează” și „Renunță”; verificarea automată e acum o dată pe săptămână.
-- Explicație pentru avertizarea Play Protect: apare pentru că aplicația nu e din Google Play și își instalează singură actualizările. Apasă „Mai multe detalii” › „Instalează oricum”.
+## Română
+- Actualizările apar într-o fereastră cu „Actualizează” și „Renunță”.
+- Explicație pentru avertizarea Play Protect.
+- Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+
+## English
+- Updates appear in a window with “Update” and “Cancel”.
+- An explanation for the Play Protect warning.
+- Design improvements and fixes for reported bugs.
