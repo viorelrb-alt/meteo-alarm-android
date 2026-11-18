@@ -63,6 +63,12 @@ public final class Refresher extends BroadcastReceiver {
 		new Thread(new Runnable() {
 			public void run() {
 				try {
+					if (act.endsWith("REPLACED")) {
+						SharedPreferences p = Fetcher.prefs(app);
+						Cities.City c = Cities.City.fromKey(p.getString("city", ""));
+						if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
+						Fetcher.quakesAfterUpdate(app, c);
+					}
 					refresh(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith(".NET") ? "rețea revenită" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
 				} catch (Exception e) {
 					Log.e(app, "FUNDAL", "reîmprospătare", e);

@@ -846,15 +846,30 @@ final class QuakeCard {
 			vals.addView(sep, sp);
 			vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		} else {
-			vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-			vals.addView(sep, sp);
-			vals.addView(what, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			// v2.107 (Viorel): one value: the value in the middle, no line, and under it on one row
+			// "EMSC 09:44 · its meaning", made smaller when it does not fit.
+			TextView one = text(ctx, t[2], 20 * zk, bold, Theme.ink(dark));
+			one.setGravity(Gravity.CENTER);
+			vals.addView(one, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			String src = (q.src == null ? "" : q.src) + " " + s.qhm(nowMs);
+			boolean inf = q.src != null && q.src.length() > 0 && !"EMSC".equals(q.src) && !"USGS".equals(q.src);
+			String mw = magWhat(q.magType);
+			android.text.SpannableStringBuilder sb = new android.text.SpannableStringBuilder(src + (mw.length() > 0 ? " · " + mw : ""));
+			sb.setSpan(new android.text.style.ForegroundColorSpan(inf ? (dark ? 0xFF86EFAC : 0xFF15803D) : Theme.dim(dark)), 0, src.length(), 0);
+			sb.setSpan(new android.text.style.StyleSpan(Typeface.BOLD), 0, src.length(), 0);
+			FitText line = new FitText(ctx, 1, 0.55f);
+			line.setTypeface(reg);
+			line.setTextColor(dim);
+			line.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 10.5f * zk);
+			line.setGravity(Gravity.CENTER);
+			line.setText(sb);
+			what = line;
 		}
 		LinearLayout.LayoutParams vl = stack ? new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 				: new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
 		vl.topMargin = (int) (4 * dp);
 		hs.addView(vals, vl);
-		if (two) hs.addView(what, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		hs.addView(what, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		if (stack) {
 			row.addView(lg, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);

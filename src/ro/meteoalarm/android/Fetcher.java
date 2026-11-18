@@ -260,6 +260,22 @@ final class Fetcher {
 		if (r.quake != null || r.infp != null) Notifier.checkQuakes(ctx, c);
 	}
 
+	/**
+	 * v2.107 (Viorel): after the app is installed or updated, in a country with its own institute
+	 * (INFP…), the earthquakes are downloaded at once (the institute first, then EMSC), even when the
+	 * weather saved by the older version is still fresh. Once per version; true when it downloaded.
+	 */
+	static synchronized boolean quakesAfterUpdate(Context ctx, Cities.City c) {
+		if (c == null || officialOf(c) == null) return false;
+		SharedPreferences p = prefs(ctx);
+		if (MainActivity.VERSION.equals(p.getString("quakeVer", ""))) return false;
+		if (!NetJob.online(ctx)) return false;
+		Log.i(ctx, "DATE", "cutremure după instalare: " + officialOf(c).name + ", apoi EMSC");
+		quakesOnly(ctx, c);
+		p.edit().putString("quakeVer", MainActivity.VERSION).apply();
+		return true;
+	}
+
 	/** The earthquake answers of R for town C, and each quake's first value (to show revisions). */
 	static void saveQuakes(Context ctx, Cities.City c, Result r) {
 		long now = System.currentTimeMillis();

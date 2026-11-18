@@ -1,4 +1,4 @@
-Nuværende version: v.2.106 · 18.11.2026
+Nuværende version: v.2.107 · 18.11.2026
 HOVEDSKÆRM
 - Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ☰ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
 INDSTILLINGER

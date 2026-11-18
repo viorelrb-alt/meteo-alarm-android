@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.106";
+	static final String VERSION = "Meteo Alarm Android v2.107";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1393,6 +1393,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		// Back from the phone's settings, where the user went to allow location or notifications.
 		backFromSettings();
+		quakesAfterUpdate();
 		// Just updated: what is new in this version, once (instead of the update check this time).
 		String cur = updater.installed();
 		if (!cur.equals(prefs.getString("seenVersion", ""))) {
@@ -1874,6 +1875,25 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (withMore) k.more = quakeMore(Fetcher.officialOf(c));
 		k.titlePx = 23 * view.scale();
 		QuakeCard.full(this, q, c, s, s.dark, fReg, fBold, quakeZk(), k);
+	}
+
+	/** v2.107 (Viorel): just installed or updated: the institute's earthquakes at once (Fetcher.quakesAfterUpdate). */
+	private void quakesAfterUpdate() {
+		final Cities.City town = s == null ? null : s.city;
+		if (town == null || Fetcher.officialOf(town) == null || VERSION.equals(prefs.getString("quakeVer", ""))) return;
+		new Thread(new Runnable() {
+			public void run() {
+				if (!Fetcher.quakesAfterUpdate(MainActivity.this, town)) return;
+				runOnUiThread(new Runnable() {
+					public void run() {
+						if (isFinishing() || s == null || town != s.city) return;
+						s.quakes = Fetcher.quakes(MainActivity.this, town);
+						refreshQuakeInfo();
+						view.invalidate();
+					}
+				});
+			}
+		}).start();
 	}
 
 	/** v2.030: a tap on an earthquake notice: the town's screen and the earthquake's bubble, once the data are there. */
