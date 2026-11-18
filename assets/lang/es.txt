@@ -1624,3 +1624,6 @@ The official values come from 	Los valores oficiales vienen de
 Next to EMSC's value, the official one of 	Junto al valor de EMSC, el oficial de 
 , when it has it.	, cuando lo tiene.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumanía, Francia, Italia, Países Bajos, Suiza, Grecia: primero el instituto del país, luego EMSC.
+# v2.042
+Current	Actual
+reported 	informado 

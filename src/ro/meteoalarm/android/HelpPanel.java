@@ -229,9 +229,11 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 	 * the country list), centred, smaller when a row is too long.
 	 */
 	void section(String text, boolean two) {
-		TextView t = two ? new FitText(getContext(), 2, 0.7f) : new TextView(getContext());
+		TextView t = two ? new FitText(getContext(), 2, 0.3f) : new TextView(getContext());
 		t.setTypeface(bold);
-		TextSize.size(t, 14, ts);
+		// v2.042 (Viorel): the 2-row titles as large as the width allows, whatever the Aa size.
+		if (two) t.setTextSize(26);
+		else TextSize.size(t, 14, ts);
 		t.setTextColor(ro.meteoalarm.android.core.Theme.accent(dark));
 		t.setLetterSpacing(0.1f);
 		t.setText(two ? text.toUpperCase().replaceFirst(" · ", "\n") : text.toUpperCase());

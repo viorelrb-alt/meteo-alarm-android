@@ -268,7 +268,13 @@ final class QuakeCard {
 		return ro.meteoalarm.android.core.Tr.t("magnitude", "magnitudine");
 	}
 
-	private static View histCell(Context ctx, String when, String value, String src, String what, boolean dark, Typeface reg, Typeface bold, float zk) {
+	/** v2.042: the history's boxes share the row's width and height. */
+	private static LinearLayout.LayoutParams histLp() {
+		return new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+	}
+
+	private static View histCell(Context ctx, String label, String at, String value, String src, String what, boolean dark, Typeface reg, Typeface bold, float zk) {
+		String when = label;
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		LinearLayout c = new LinearLayout(ctx);
 		c.setOrientation(LinearLayout.VERTICAL);
@@ -278,13 +284,19 @@ final class QuakeCard {
 		TextView w = text(ctx, when.toUpperCase(), 11.5f * zk, bold, Theme.dim(dark));
 		w.setLetterSpacing(0.05f);
 		w.setGravity(Gravity.CENTER);
+		w.setSingleLine(true);
 		c.addView(w);
+		TextView a = text(ctx, ro.meteoalarm.android.core.Tr.t("reported ", "raportată ") + at, 11.5f * zk, reg, Theme.dim(dark));
+		a.setGravity(Gravity.CENTER);
+		a.setSingleLine(true);
+		c.addView(a);
 		TextView v = text(ctx, value, 26 * zk, bold, Theme.ink(dark));
 		v.setGravity(Gravity.CENTER);
 		c.addView(v);
 		TextView wh = text(ctx, what, 11 * zk, reg, Theme.dim(dark));
 		wh.setGravity(Gravity.CENTER);
 		wh.setMaxLines(2);
+		wh.setMinLines(2);
 		c.addView(wh);
 		boolean infp = src != null && src.length() > 0 && !"EMSC".equals(src) && !"USGS".equals(src);
 		int col = infp ? 0xFF22C55E : "USGS".equals(src) ? 0xFF94A3B8 : 0xFF60A5FA;
@@ -426,16 +438,20 @@ final class QuakeCard {
 		hist.setOrientation(LinearLayout.HORIZONTAL);
 		hist.setBaselineAligned(false);
 		hist.setGravity(Gravity.CENTER_VERTICAL);
-		String nowAt = t[23].contains(" · ") ? t[23].substring(0, t[23].indexOf(" · ")) : t[23];
+		// v2.042 (Viorel): both boxes alike: same size, same rows (what, when it was reported, the
+		// value, what the number is, the source), the texts on the same lines.
+		long nowMs = q.changedAt > 0 ? q.changedAt : q.updated > 0 ? q.updated : q.time;
+		hist.setGravity(Gravity.CENTER_VERTICAL);
 		if (!Double.isNaN(q.firstMag)) {
 			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
-			hist.addView(histCell(ctx, first(t[13]), fm, q.firstSrc, magWhat(""), dark, reg, bold, zk), cellLp(0, dp));
+			hist.addView(histCell(ctx, first(t[13]), s.qhm(q.firstAt), fm, q.firstSrc, magWhat(""), dark, reg, bold, zk), histLp());
 			TextView arrow = text(ctx, "→", 20 * zk, bold, dim);
 			LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			al.gravity = Gravity.CENTER_VERTICAL;
 			al.leftMargin = al.rightMargin = (int) (6 * dp);
 			hist.addView(arrow, al);
 		}
-		hist.addView(histCell(ctx, nowAt, t[2], q.src, magWhat(q.magType), dark, reg, bold, zk), cellLp(0, dp));
+		hist.addView(histCell(ctx, ro.meteoalarm.android.core.Tr.t("Current", "Actuală"), s.qhm(nowMs), t[2], q.src, magWhat(q.magType), dark, reg, bold, zk), histLp());
 		LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		hl.topMargin = (int) (6 * dp);
 		sheet.addView(hist, hl);

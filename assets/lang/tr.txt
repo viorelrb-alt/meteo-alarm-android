@@ -1488,3 +1488,6 @@ The official values come from 	Resmi değerlerin kaynağı:
 Next to EMSC's value, the official one of 	EMSC değerinin yanında resmi değer: 
 , when it has it.	, varsa.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Romanya, Fransa, İtalya, Hollanda, İsviçre, Yunanistan: önce ülkenin enstitüsü, sonra EMSC.
+# v2.042
+Current	Güncel
+reported 	bildirildi 

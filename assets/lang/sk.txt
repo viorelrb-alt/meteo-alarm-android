@@ -1554,3 +1554,6 @@ The official values come from 	Oficiálne hodnoty pochádzajú z
 Next to EMSC's value, the official one of 	Vedľa hodnoty EMSC oficiálna hodnota 
 , when it has it.	, ak ju má.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumunsko, Francúzsko, Taliansko, Holandsko, Švajčiarsko, Grécko: najprv národný ústav, potom EMSC.
+# v2.042
+Current	Aktuálna
+reported 	hlásená 

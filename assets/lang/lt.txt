@@ -1554,3 +1554,6 @@ The official values come from 	Oficialios vertės gaunamos iš
 Next to EMSC's value, the official one of 	Šalia EMSC vertės – oficiali vertė: 
 , when it has it.	, kai ji yra.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumunija, Prancūzija, Italija, Nyderlandai, Šveicarija, Graikija: pirmiausia šalies institutas, paskui EMSC.
+# v2.042
+Current	Dabartinė
+reported 	pranešta 

@@ -1554,3 +1554,6 @@ The official values come from 	Официалните стойности идв�
 Next to EMSC's value, the official one of 	До стойността на EMSC — официалната на 
 , when it has it.	, когато я има.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Румъния, Франция, Италия, Нидерландия, Швейцария, Гърция: първо националният институт, после EMSC.
+# v2.042
+Current	Текуща
+reported 	отчетена 

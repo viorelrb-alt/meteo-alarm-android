@@ -1554,3 +1554,6 @@ The official values come from 	Il-valuri uffiċjali jiġu minn
 Next to EMSC's value, the official one of 	Ħdejn il-valur tal-EMSC, dak uffiċjali ta’ 
 , when it has it.	, meta jkollu.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Ir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera, il-Greċja: l-ewwel l-istitut tal-pajjiż, imbagħad l-EMSC.
+# v2.042
+Current	Attwali
+reported 	irrapportat 

@@ -1554,3 +1554,6 @@ The official values come from 	Tagann na luachanna oifigiúla ó
 Next to EMSC's value, the official one of 	In aice le luach EMSC, luach oifigiúil 
 , when it has it.	, nuair atá sé aige.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	An Rómáin, an Fhrainc, an Iodáil, an Ísiltír, an Eilvéis, an Ghréig: institiúid na tíre ar dtús, ansin EMSC.
+# v2.042
+Current	Reatha
+reported 	tuairiscithe 

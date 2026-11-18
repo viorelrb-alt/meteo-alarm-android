@@ -1488,3 +1488,6 @@ The official values come from 	Официальные значения прих�
 Next to EMSC's value, the official one of 	Рядом со значением EMSC — официальное значение 
 , when it has it.	, если оно есть.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Румыния, Франция, Италия, Нидерланды, Швейцария, Греция: сначала национальный институт, затем EMSC.
+# v2.042
+Current	Текущая
+reported 	сообщено 

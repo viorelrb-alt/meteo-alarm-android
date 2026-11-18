@@ -3008,7 +3008,7 @@ public final class Screen {
 	}
 
 	/** v2.030: HH:MM of MS in the town's time. */
-	private String qhm(long ms) {
+	public String qhm(long ms) {
 		Calendar k = Zone.now();
 		k.setTimeInMillis(ms);
 		return Texts.clock(String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE)), clk12);

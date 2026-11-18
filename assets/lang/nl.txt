@@ -1554,3 +1554,6 @@ The official values come from 	De officiële waarden komen van
 Next to EMSC's value, the official one of 	Naast de EMSC-waarde de officiële van 
 , when it has it.	, als die er is.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Roemenië, Frankrijk, Italië, Nederland, Zwitserland, Griekenland: eerst het instituut van het land, dan EMSC.
+# v2.042
+Current	Huidig
+reported 	gemeld 

@@ -1554,3 +1554,6 @@ The official values come from 	Ametlikud väärtused tulevad:
 Next to EMSC's value, the official one of 	EMSC väärtuse kõrval ametlik väärtus: 
 , when it has it.	, kui see on olemas.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumeenia, Prantsusmaa, Itaalia, Holland, Šveits, Kreeka: esmalt riigi instituut, siis EMSC.
+# v2.042
+Current	Praegune
+reported 	teatatud 

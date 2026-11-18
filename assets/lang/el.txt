@@ -1554,3 +1554,6 @@ The official values come from 	Οι επίσημες τιμές έρχονται
 Next to EMSC's value, the official one of 	Δίπλα στην τιμή του EMSC, η επίσημη του 
 , when it has it.	, όταν υπάρχει.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Ρουμανία, Γαλλία, Ιταλία, Ολλανδία, Ελβετία, Ελλάδα: πρώτα το εθνικό ινστιτούτο, μετά το EMSC.
+# v2.042
+Current	Τρέχουσα
+reported 	αναφέρθηκε 

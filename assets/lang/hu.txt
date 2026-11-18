@@ -1554,3 +1554,6 @@ The official values come from 	A hivatalos értékek forrása:
 Next to EMSC's value, the official one of 	Az EMSC értéke mellett a hivatalos érték: 
 , when it has it.	, ha van.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Románia, Franciaország, Olaszország, Hollandia, Svájc, Görögország: először az ország intézete, aztán az EMSC.
+# v2.042
+Current	Jelenlegi
+reported 	jelentve 

@@ -1554,3 +1554,6 @@ The official values come from 	Oficiālās vērtības nāk no
 Next to EMSC's value, the official one of 	Blakus EMSC vērtībai oficiālā vērtība: 
 , when it has it.	, ja tā ir.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumānija, Francija, Itālija, Nīderlande, Šveice, Grieķija: vispirms valsts institūts, tad EMSC.
+# v2.042
+Current	Pašreizējā
+reported 	ziņots 

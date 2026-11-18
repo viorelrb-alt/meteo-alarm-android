@@ -1554,3 +1554,6 @@ The official values come from 	De officiella värdena kommer från
 Next to EMSC's value, the official one of 	Bredvid EMSC:s värde det officiella från 
 , when it has it.	, när det finns.
 Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumänien, Frankrike, Italien, Nederländerna, Schweiz, Grekland: först landets institut, sedan EMSC.
+# v2.042
+Current	Aktuell
+reported 	rapporterad 
