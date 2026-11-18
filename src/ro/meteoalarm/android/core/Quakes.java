@@ -308,6 +308,26 @@ public final class Quakes {
 
 	/** v2.040: the same for any country's institute SRC (outside Romania its own quakes within 400 km of the town are added). */
 	public static boolean mergeOfficial(List<Quake> qs, String text, String src, double lat, double lon, long now, long window) {
+		return mergeOfficial(qs, text, src, lat, lon, now, window, true);
+	}
+
+	/**
+	 * v2.109 (Viorel): the country of a quake by EMSC's region name, as the code of its institute
+	 * (official()); "" when none.
+	 */
+	public static String instituteOf(String region) {
+		String r = Warnings.fold(region == null ? "" : region).toUpperCase(Locale.US);
+		if (r.contains("ROMANIA")) return "ro";
+		if (r.contains("ITALY") || r.contains("SICILY") || r.contains("SARDINIA")) return "it";
+		if (r.contains("SWITZERLAND")) return "ch";
+		if (r.contains("FRANCE") || r.contains("CORSICA")) return "fr";
+		if (r.contains("NETHERLANDS")) return "nl";
+		if (r.contains("GREECE") || r.contains("CRETE") || r.contains("DODECANESE") || r.contains("AEGEAN") || r.contains("IONIAN")) return "gr";
+		return "";
+	}
+
+	/** ADD false (v2.109): only the quakes of QS take the institute's values; none of its own are added. */
+	public static boolean mergeOfficial(List<Quake> qs, String text, String src, double lat, double lon, long now, long window, boolean add) {
 		boolean ro = "INFP".equals(src);
 		String pre = src.toLowerCase(Locale.US);
 		if (text == null || text.trim().length() == 0) return false;
@@ -341,6 +361,7 @@ public final class Quakes {
 		// Each EMSC quake takes the closest INFP one (in time, then place); each INFP one is used once.
 		boolean[] used = new boolean[inf.size()];
 		for (Quake q : qs) {
+			if (!add && q.official) continue;
 			int best = -1;
 			double bs = Double.MAX_VALUE;
 			for (int k = 0; k < inf.size(); k++) {
@@ -377,7 +398,7 @@ public final class Quakes {
 			q.dist = km(lat, lon, q.lat, q.lon);
 			q.felt = intensity(q.mag, Math.sqrt(q.dist * q.dist + q.depth * q.depth));
 		}
-		for (int k = 0; k < inf.size(); k++) {
+		for (int k = 0; add && k < inf.size(); k++) {
 			Quake n = inf.get(k);
 			if (used[k] || n.mag < MIN_MAG) continue;
 			n.dist = km(lat, lon, n.lat, n.lon);

@@ -160,12 +160,12 @@ final class QuakeCard {
 	/** v2.100: distance and depth, how it was felt here, the source with its revision, the INFP button and the Android note, into COL. */
 	static void details(LinearLayout col, final Context ctx, Quakes.Quake q, String[] t, boolean dark, Typeface reg, Typeface bold, float zk,
 			final Runnable refresh, String refreshText, final String refreshName) {
-		details(col, ctx, q, t, dark, reg, bold, zk, refresh, refreshText, refreshName, null);
+		details(col, ctx, q, t, dark, reg, bold, zk, refresh, refreshText, refreshName, null, null);
 	}
 
 	/** v2.103: the same, with AFTER_FELT (the zones' box, Viorel) between the felt card and the source. */
 	static void details(LinearLayout col, final Context ctx, Quakes.Quake q, String[] t, boolean dark, Typeface reg, Typeface bold, float zk,
-			final Runnable refresh, String refreshText, final String refreshName, View afterFelt) {
+			final Runnable refresh, String refreshText, final String refreshName, View afterFelt, LinearLayout srcOut) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		int ink = Theme.ink(dark), dim = Theme.dim(dark);
 		// Distance and depth, side by side.
@@ -219,7 +219,7 @@ final class QuakeCard {
 		// v2.034 (Viorel): a long source line used to take the whole row and squeeze the "official"
 		// chip into a thin green column of letters; now the line wraps and the chip keeps its word.
 		sr.addView(sl, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		if (t[12].length() > 0) {
+		if (t[12].length() > 0 && srcOut == null) {
 			TextView chip = text(ctx, t[12], 11 * zk, bold, dark ? 0xFF86EFAC : 0xFF15803D);
 			chip.setSingleLine(true);
 			chip.setPadding((int) (8 * dp), (int) (1 * dp), (int) (8 * dp), (int) (2 * dp));
@@ -230,9 +230,12 @@ final class QuakeCard {
 		}
 		LinearLayout.LayoutParams srl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		srl.topMargin = (int) (8 * dp);
-		col.addView(sr, srl);
+		// v2.109 (Viorel): SRC_OUT: the source and the first value go lower (after EMSC's source line),
+		// "official" into the value history; under the zones they looked as if EMSC were the official one.
+		LinearLayout sc = srcOut != null ? srcOut : col;
+		sc.addView(sr, srl);
 		TextView first = text(ctx, t[13], 12 * zk, reg, dim);
-		col.addView(first);
+		sc.addView(first);
 		// v2.032 (Viorel): in Romania, ask INFP again now (its official value may come later than EMSC's).
 		if (refresh != null) {
 			final TextView rb = text(ctx, refreshText, 13 * zk, bold, dark ? 0xFF86EFAC : 0xFF15803D);
@@ -723,9 +726,14 @@ final class QuakeCard {
 		// v2.103 (Viorel): the date on the first row, "· depth …" always on the second.
 		int sep = t[1].lastIndexOf(" · ");
 		String when = sep > 0 ? t[1].substring(0, sep) + "\n" + t[1].substring(sep + 1) : t[1];
-		TextView t1 = text(ctx, when, 12.5f * zk, reg, Theme.dim(dark));
+		// v2.109 (Viorel, A52s): always exactly these two rows, smaller when a row does not fit.
+		FitText t1 = new FitText(ctx, 2, 0.5f);
+		t1.setTypeface(reg);
+		t1.setTextColor(Theme.dim(dark));
+		t1.setTextSize(12.5f * zk);
+		t1.setText(when);
 		t1.setGravity(Gravity.END);
-		tx.addView(t1);
+		tx.addView(t1, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		xl.leftMargin = (int) (12 * dp);
 		xl.rightMargin = (int) (12 * dp);
@@ -823,7 +831,19 @@ final class QuakeCard {
 		hs.setBackground(card != 0 ? Glass.pill(card, Glass.edge(dark), 14 * dp, dp) : Glass.cardBg(dark, 14 * dp, dp));
 		TextView h2 = text(ctx, t[21].toUpperCase(), 10.5f * zk, bold, dim);
 		h2.setLetterSpacing(0.05f);
-		hs.addView(h2);
+		// v2.109 (Viorel): "official" in the top right corner (over the institute's value).
+		if (t[12].length() > 0) {
+			LinearLayout hr = new LinearLayout(ctx);
+			hr.setOrientation(LinearLayout.HORIZONTAL);
+			hr.setGravity(Gravity.CENTER_VERTICAL);
+			hr.addView(h2, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			TextView chip = text(ctx, t[12], 10.5f * zk, bold, dark ? 0xFF86EFAC : 0xFF15803D);
+			chip.setSingleLine(true);
+			chip.setPadding((int) (8 * dp), (int) (1 * dp), (int) (8 * dp), (int) (2 * dp));
+			chip.setBackground(Glass.pill(0x2E22C55E, 0x6622C55E, 10 * dp, dp));
+			hr.addView(chip);
+			hs.addView(hr);
+		} else hs.addView(h2);
 		LinearLayout vals = new LinearLayout(ctx);
 		vals.setOrientation(LinearLayout.HORIZONTAL);
 		vals.setGravity(Gravity.CENTER);
@@ -961,8 +981,25 @@ final class QuakeCard {
 		LinearLayout d = new LinearLayout(ctx);
 		d.setOrientation(LinearLayout.VERTICAL);
 		col.addView(d, wide(8, dp));
-		details(d, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName, bx[0]);
+		LinearLayout src = new LinearLayout(ctx);
+		src.setOrientation(LinearLayout.VERTICAL);
+		details(d, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName, bx[0], src);
+		int at = col.getChildCount();
 		more(col, ctx, k.more, dark, reg, bold, zk);
+		// After the first source line of the rows (EMSC's), else at the end.
+		int put = col.getChildCount();
+		if (k.more != null) {
+			int i = at;
+			for (String[] r : k.more) {
+				if (r.length < 2 || r[0].equals("title")) continue;
+				i++;
+				if (r[0].equals("s")) {
+					put = i;
+					break;
+				}
+			}
+		}
+		col.addView(src, Math.min(put, col.getChildCount()), wide(4, ctx.getResources().getDisplayMetrics().density));
 	}
 
 	/**
@@ -1024,7 +1061,8 @@ final class QuakeCard {
 				sv.setVerticalScrollBarEnabled(false);
 				LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				col.setPadding(pad, (int) (36 * dp), pad, (int) (28 * dp));
+				int bh = Band.height(ctx, root);
+				col.setPadding(pad, (int) (12 * dp), pad, (int) (28 * dp));
 				col.addView(head(ctx, dark, bold, zk, 36, null, k.titlePx));
 				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null, close), wide(12, dp));
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 16 * dp);
@@ -1035,7 +1073,11 @@ final class QuakeCard {
 				fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
-				root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+				FrameLayout.LayoutParams pl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+				pl.topMargin = bh;
+				root.addView(sv, pl);
+				// v2.109 (Viorel): the band with the day, the network and the clock always on top.
+				root.addView(new Band(ctx, s, dark, reg, bold, Theme.page(dark), Band.left(root, pad)), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 			}
 
 			private void landscape(FrameLayout root, int W, int H) {
@@ -1043,17 +1085,22 @@ final class QuakeCard {
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 0);
 				root.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 				int m = (int) (10 * dp), band = (int) (54 * dp * Math.max(1, zk * 0.9f)), half = W / 2;
+				// v2.109 (Viorel): the band with the day, the network and the clock above the L.
+				int bh = Band.height(ctx, root);
+				H -= bh;
 				// The L of glass: the band across the top and the right half under it.
 				View glass = new View(ctx);
 				glass.setBackground(new LGlass(dark, dp, m, band, half));
-				root.addView(glass, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+				FrameLayout.LayoutParams gl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, H);
+				gl.topMargin = bh;
+				root.addView(glass, gl);
 				// v2.104 (Viorel): ‹ in the left corner of the L sheet, before the title.
 				View hd = head(ctx, dark, bold, zk * 0.9f, 38, close, k.titlePx);
 				FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, band, Gravity.TOP);
 				hl.leftMargin = m + (int) (12 * dp);
 				// v2.105 (Viorel): the title and its line only over the narrow part, above the map.
 				hl.rightMargin = W - half + (int) (12 * dp);
-				hl.topMargin = m;
+				hl.topMargin = bh + m;
 				root.addView(hd, hl);
 				// The right half: the information, scrolling up.
 				ScrollView sv = new ScrollView(ctx);
@@ -1067,10 +1114,11 @@ final class QuakeCard {
 				// v2.105 (Viorel): the whole right part of the L scrolls, from the top.
 				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half - m, H - m - m);
 				sl.leftMargin = half;
-				sl.topMargin = m;
+				sl.topMargin = bh + m;
 				root.addView(sv, sl);
+				root.addView(new Band(ctx, s, dark, reg, bold, Glass.alpha(Theme.page(dark), 0.85f), Band.left(root, (int) (16 * dp))), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 				// The largest circle in the left half, under the band.
-				fit(map, 16 * dp, m + band + 12 * dp, W - half + 12 * dp, 16 * dp);
+				fit(map, 16 * dp, bh + m + band + 12 * dp, W - half + 12 * dp, 16 * dp);
 			}
 		};
 		root.build.run();
@@ -1083,6 +1131,131 @@ final class QuakeCard {
 		}
 		d.show();
 		return d;
+	}
+
+	/**
+	 * v2.109 (Viorel): the band on top of the whole-screen earthquake, as on the main screen: the day
+	 * at the left, the network and the clock at the right (kept up to date every 20 s).
+	 */
+	private static class Band extends View {
+		private final Screen s;
+		private final boolean dark;
+		private final android.graphics.Paint pd, pc, pn;
+		private final int left;
+		private final float dp;
+		private final Runnable tick = new Runnable() {
+			public void run() {
+				invalidate();
+				postDelayed(this, 20000);
+			}
+		};
+
+		Band(Context ctx, Screen s, boolean dark, Typeface reg, Typeface bold, int bg, int left) {
+			super(ctx);
+			this.s = s;
+			this.dark = dark;
+			this.left = left;
+			dp = ctx.getResources().getDisplayMetrics().density;
+			setBackgroundColor(bg);
+			pd = new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+			pd.setTypeface(reg);
+			pd.setColor(Theme.ink(dark));
+			pc = new android.graphics.Paint(pd);
+			pc.setTypeface(bold);
+			pn = new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+			pn.setStyle(android.graphics.Paint.Style.STROKE);
+			pn.setStrokeCap(android.graphics.Paint.Cap.ROUND);
+		}
+
+		/** The band's height: the camera's band (the status bar), at least 30 dp. */
+		static int height(Context ctx, View root) {
+			float dp = ctx.getResources().getDisplayMetrics().density;
+			int h = 0;
+			int id = ctx.getResources().getIdentifier("status_bar_height", "dimen", "android");
+			if (id > 0) h = ctx.getResources().getDimensionPixelSize(id);
+			if (android.os.Build.VERSION.SDK_INT >= 28 && root.getRootWindowInsets() != null && root.getRootWindowInsets().getDisplayCutout() != null)
+				h = Math.max(h, root.getRootWindowInsets().getDisplayCutout().getSafeInsetTop());
+			return Math.max(h, (int) (30 * dp));
+		}
+
+		/** The left room: PAD, or more beside a camera at the left (landscape). */
+		static int left(View root, int pad) {
+			if (android.os.Build.VERSION.SDK_INT >= 28 && root.getRootWindowInsets() != null && root.getRootWindowInsets().getDisplayCutout() != null)
+				return pad + root.getRootWindowInsets().getDisplayCutout().getSafeInsetLeft();
+			return pad;
+		}
+
+		@Override
+		protected void onAttachedToWindow() {
+			super.onAttachedToWindow();
+			post(tick);
+		}
+
+		@Override
+		protected void onDetachedFromWindow() {
+			removeCallbacks(tick);
+			super.onDetachedFromWindow();
+		}
+
+		@Override
+		protected void onDraw(Canvas c) {
+			float h = getHeight(), mid = h / 2;
+			float sz = Math.min(h * 0.5f, 17 * dp);
+			java.util.Calendar now = ro.meteoalarm.android.core.Zone.now();
+			pc.setTextSize(sz * 1.05f);
+			int hr = now.get(java.util.Calendar.HOUR_OF_DAY), mn = now.get(java.util.Calendar.MINUTE);
+			String hm = s.clk12 ? (hr % 12 == 0 ? 12 : hr % 12) + String.format(java.util.Locale.US, ":%02d", mn) + (hr < 12 ? " AM" : " PM")
+					: String.format(java.util.Locale.US, "%02d:%02d", hr, mn);
+			float right = getWidth() - 16 * dp;
+			pc.setTextAlign(android.graphics.Paint.Align.RIGHT);
+			c.drawText(hm, right, mid + sz * 0.36f, pc);
+			right -= pc.measureText(hm) + 10 * dp;
+			// The network: Wi-Fi arcs, mobile bars, none (struck through).
+			int ink = Theme.ink(dark), faint = (ink & 0xFFFFFF) | 0x48000000;
+			float ih = sz * 0.95f, iw = ih * 1.15f, x = right - iw, y = mid - ih / 2;
+			pn.setStrokeWidth(ih * 0.12f);
+			if (s.net == 1 || s.net == 0) {
+				int lit = s.net == 0 || s.netLevel < 0 ? 3 : new int[] { 0, 1, 1, 2, 3 }[Math.max(0, Math.min(4, s.netLevel))];
+				float cx = x + iw / 2, cy = y + ih;
+				for (int k = 1; k <= 3; k++) {
+					pn.setColor(s.net == 0 ? faint : k <= lit ? ink : faint);
+					float r = k * ih * 0.3f;
+					c.drawArc(new android.graphics.RectF(cx - r, cy - r, cx + r, cy + r), 225, 90, false, pn);
+				}
+				pd.setColor(s.net == 0 ? faint : ink);
+				c.drawCircle(cx, cy - ih * 0.06f, ih * 0.1f, pd);
+				pd.setColor(ink);
+				if (s.net == 0) {
+					pn.setColor(ink);
+					c.drawLine(x, y + ih, x + iw, y, pn);
+				}
+			} else if (s.net == 2) {
+				float bw = iw / 6, gap = (iw - 4 * bw) / 3;
+				pd.setColor(ink);
+				for (int k = 0; k < 4; k++) {
+					float bh = ih * (k + 1) / 4f;
+					pd.setColor(s.netLevel < 0 || k < s.netLevel ? ink : faint);
+					c.drawRect(x + k * (bw + gap), y + ih - bh, x + k * (bw + gap) + bw, y + ih, pd);
+				}
+				pd.setColor(ink);
+			}
+			if (s.net >= 0) {
+				right = x - 4 * dp;
+				if ((s.net == 1 || s.net == 2) && s.netTag.length() > 0) {
+					pc.setTextSize(sz * 0.7f);
+					c.drawText(s.netTag, right, mid + sz * 0.3f, pc);
+					right -= pc.measureText(s.netTag) + 4 * dp;
+				}
+			}
+			// The day at the left, smaller when it would reach the clock.
+			String d = s.T.date(now);
+			float ds = sz * 0.95f;
+			pd.setTextSize(ds);
+			float room = right - left - 12 * dp;
+			if (room > 0 && pd.measureText(d) > room) pd.setTextSize(Math.max(ds * 0.6f, ds * room / pd.measureText(d)));
+			pd.setTextAlign(android.graphics.Paint.Align.LEFT);
+			c.drawText(d, left, mid + sz * 0.33f, pd);
+		}
 	}
 
 	/** v2.103 (Viorel): the full screen built again when the phone turns (portrait <-> landscape). */
@@ -1100,8 +1273,10 @@ final class QuakeCard {
 			int now = w > h ? 1 : 0;
 			android.util.DisplayMetrics dm = getResources().getDisplayMetrics();
 			int built = side >= 0 ? side : (dm.widthPixels > dm.heightPixels ? 1 : 0);
+			boolean first = side < 0;
 			side = now;
-			if (now != built && build != null) post(build);
+			// v2.109: also once at the start, when the camera's cut-out is known (the band's height).
+			if ((now != built || first) && build != null) post(build);
 		}
 	}
 

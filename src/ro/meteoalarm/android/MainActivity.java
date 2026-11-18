@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.108";
+	static final String VERSION = "Meteo Alarm Android v2.109";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3475,6 +3475,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private String quakesInfp;
 	private long quakesAt;
 	private boolean quakesBusy;
+	/** v2.109: the other institutes' lists for the EU list (country code -> answer). */
+	private java.util.Map<String, String> quakesForeign = new java.util.HashMap<String, String>();
 
 	/** v2.108 (Viorel): ↻ and when the lists were last updated, above the first title. */
 	private void quakesRefreshRow() {
@@ -3506,6 +3508,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			quakesCountry = null;
 			quakesEurope = null;
 			quakesInfp = null;
+			quakesForeign = new java.util.HashMap<String, String>();
 			quakesKey = town.key();
 		}
 		if (force) quakesBusy = true;
@@ -3535,6 +3538,29 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				} catch (Exception e) {
 					Log.e(ctx, "CUTREMUR", "lista Europei (48 h) a eșuat: " + Fetcher.reason(e, false));
 				}
+				// v2.109 (Viorel): the quakes of the EU list in a country with its own institute take
+				// its value too, whatever the phone's country.
+				final java.util.Map<String, String> fo = new java.util.HashMap<String, String>();
+				if (b != null && !c.us()) {
+					java.util.Set<String> codes = new java.util.LinkedHashSet<String>();
+					try {
+						for (ro.meteoalarm.android.core.Quakes.Quake q : ro.meteoalarm.android.core.Quakes.parse(b, ro.meteoalarm.android.core.Quakes.EUROPE, c.lat, c.lon, now, 2 * 86400000L))
+							codes.add(ro.meteoalarm.android.core.Quakes.instituteOf(q.region));
+					} catch (Exception e) {
+						// no list
+					}
+					ro.meteoalarm.android.core.Quakes.Official own = Fetcher.officialOf(c);
+					for (String code : codes) {
+						if (code.length() == 0 || own != null && own.code.equals(code)) continue;
+						ro.meteoalarm.android.core.Quakes.Official o = ro.meteoalarm.android.core.Quakes.official(code);
+						if (o == null) continue;
+						try {
+							fo.put(code, Fetcher.officialRaw(ctx, o));
+						} catch (Exception e) {
+							Log.e(ctx, "CUTREMUR", "lista " + o.name + " a eșuat: " + Fetcher.reason(e, false));
+						}
+					}
+				}
 				final String fa = a, fb = b, fi = ci;
 				handler.post(new Runnable() {
 					public void run() {
@@ -3542,6 +3568,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						quakesCountry = fa == null ? "" : fa;
 						quakesEurope = fb == null ? "" : fb;
 						quakesInfp = fi;
+						quakesForeign = fo;
 						quakesAt = System.currentTimeMillis();
 						quakesBusy = false;
 						if (help.isOpen() && quakesOpen) showQuakes();
@@ -3613,8 +3640,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 			// v2.036 (Viorel): INFP's value here too (Romania and the neighbours INFP locates).
 			java.util.Map<String, double[]> emsc = new java.util.HashMap<String, double[]>();
+			for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
 			if (quakesInfp != null && Fetcher.infpFor(c)) {
-				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
 				try {
 					String it = ro.meteoalarm.android.core.Quakes.officialText(Fetcher.officialOf(c), quakesInfp, l);
 					if (it != null) ro.meteoalarm.android.core.Quakes.mergeOfficial(l, it, Fetcher.officialOf(c).name, c.lat, c.lon, now, 2 * 86400000L);
@@ -3622,12 +3649,28 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					Log.e(this, "CUTREMUR", "valorile INFP (UE): " + e);
 				}
 			}
+			// v2.109 (Viorel): the other countries' institutes, for their own quakes.
+			StringBuilder offs = new StringBuilder();
+			for (java.util.Map.Entry<String, String> en : quakesForeign.entrySet()) {
+				ro.meteoalarm.android.core.Quakes.Official o = ro.meteoalarm.android.core.Quakes.official(en.getKey());
+				if (o == null || en.getValue() == null) continue;
+				try {
+					String it = ro.meteoalarm.android.core.Quakes.officialText(o, en.getValue(), l);
+					int before = 0, after = 0;
+					for (ro.meteoalarm.android.core.Quakes.Quake q : l) if (q.official) before++;
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeOfficial(l, it, o.name, c.lat, c.lon, now, 2 * 86400000L, false);
+					for (ro.meteoalarm.android.core.Quakes.Quake q : l) if (q.official) after++;
+					offs.append(offs.length() > 0 ? ", " : "").append(o.name).append(' ').append(after - before);
+				} catch (Exception e) {
+					Log.e(this, "CUTREMUR", "valorile " + o.name + " (UE): " + e);
+				}
+			}
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
 			for (ro.meteoalarm.android.core.Quakes.Quake q : l) {
 				double[] em = emsc.get(q.id);
 				quakeEntry(q, c, false, em == null ? Double.NaN : em[0]);
 			}
-			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size());
+			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size() + (offs.length() > 0 ? " · valori oficiale: " + offs : ""));
 		}
 		ro.meteoalarm.android.core.Quakes.Official off = Fetcher.officialOf(c);
 		if (off != null && off.code.equals("ro")) help.source(Tr.t("Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.", "România: lângă valoarea EMSC, cea oficială a INFP (infp.ro), când INFP o are."));
