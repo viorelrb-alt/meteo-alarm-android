@@ -1560,3 +1560,6 @@ reported 	jelentve
 
 # v2.044
 The orange square opens it too.	A narancssárga négyzet is megnyitja.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	A bal oldali sáv színe azt mutatja, milyen erősen érezték itt.

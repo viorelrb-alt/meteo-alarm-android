@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.045 · 18.11.2026
+Versiunea curentă: v.2.046 · 18.11.2026
 ECRAN PRINCIPAL
 - Harta cutremurului: atingerea casetei Cutremur arată harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește, cu istoricul valorii. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC.
 NOTIFICĂRI

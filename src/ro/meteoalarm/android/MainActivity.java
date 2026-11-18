@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.045";
+	static final String VERSION = "Meteo Alarm Android v2.046";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -2907,7 +2907,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						onMenu();
 					}
 				});
-				p.subLink("list", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
+				p.subLink("quakes", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
 					public void run() {
 						settings.hide();
 						quakesPage();
@@ -3810,8 +3810,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Casetele albastre INFORMARE, după avertizări: brumă, îngheț (primăvara și toamna), ceață, polei, vânt tare în următoarele 24 de ore. Calculate de aplicație din prognoză; nu sunt oficiale. Vin și ca notificare separată."));
 		help.entry(mini("chart"), Tr.t("Precipitation chart", "Graficul de precipitații"), Tr.t("A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.",
 				"Atingerea graficului de precipitații sau a unei casete de 4 ore arată probabilitatea și cantitatea (mm) pentru fiecare oră, apoi explică graficul."));
-		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
-				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP)."));
+		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), (us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
+				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP).")) + " " + Tr.t("The stripe at the left has the colour of how it was felt here.", "Banda din stânga are culoarea intensității resimțite aici."));
 		help.entry(mini("quake"), Tr.t("Earthquake map", "Harta cutremurului"), Tr.t("A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.",
 				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește.")
 				+ " " + Tr.t("The orange square opens it too.", "La fel și pătratul portocaliu.")

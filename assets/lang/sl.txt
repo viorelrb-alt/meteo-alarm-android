@@ -1560,3 +1560,6 @@ reported 	sporočena
 
 # v2.044
 The orange square opens it too.	Odpre jo tudi oranžni kvadrat.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Trak na levi ima barvo moči, kot je bil potres čuten tukaj.

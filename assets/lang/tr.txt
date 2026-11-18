@@ -1494,3 +1494,6 @@ reported 	bildirildi
 
 # v2.044
 The orange square opens it too.	Turuncu kare de onu açar.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Soldaki şerit, burada ne kadar güçlü hissedildiğinin rengindedir.

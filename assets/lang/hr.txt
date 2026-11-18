@@ -1560,3 +1560,6 @@ reported 	prijavljena
 
 # v2.044
 The orange square opens it too.	Otvara je i narančasti kvadrat.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Traka lijevo ima boju jačine osjećene ovdje.

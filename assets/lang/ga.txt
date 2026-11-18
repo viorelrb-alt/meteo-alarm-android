@@ -1560,3 +1560,6 @@ reported 	tuairiscithe
 
 # v2.044
 The orange square opens it too.	Osclaíonn an chearnóg oráiste é freisin.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Tá dath an stráice ar chlé de réir chomh láidir is a mothaíodh anseo é.

@@ -1560,3 +1560,6 @@ reported 	segnalata
 
 # v2.044
 The orange square opens it too.	Anche il quadrato arancione la apre.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	La striscia a sinistra ha il colore dell’intensità avvertita qui.

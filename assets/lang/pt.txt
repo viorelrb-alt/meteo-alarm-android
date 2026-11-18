@@ -1560,3 +1560,6 @@ reported 	comunicado
 
 # v2.044
 The orange square opens it too.	O quadrado laranja também o abre.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	A faixa à esquerda tem a cor da intensidade sentida aqui.

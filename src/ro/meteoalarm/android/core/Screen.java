@@ -3139,9 +3139,13 @@ public final class Screen {
 
 	/** The frame of a box with its title bar in BAR and TITLE in it; returns the bar's height. */
 	private float alertFrame(float x, float y, float bw, float h, float f, int bar, String title) {
+		return alertFrame(x, y, bw, h, f, stripe(bar), title, true);
+	}
+
+	/** The same with the stripe's colour STRONG given (ANY: just to tell the overloads apart). */
+	private float alertFrame(float x, float y, float bw, float h, float f, int strong, String title, boolean any) {
 		// v5.00 (Viorel, mockup): a glass card with a coloured stripe at the left and the code as a label.
 		float r = 22, hb = 50 * f;
-		int strong = stripe(bar);
 		// The stripe: the card in the strong colour, the glass over it moved 7 units right (no clip: the row is clipped already).
 		g.roundRect(x, y, bw, h, r, strong);
 		card(x + 7, y, bw - 7, h, r);
@@ -3189,7 +3193,9 @@ public final class Screen {
 	}
 
 	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
-		float hb = alertFrame(x, y, bw, h, f, dark ? QUAKE_DARK : QUAKE_LIGHT, Tr.t("EARTHQUAKE", "CUTREMUR"));
+		// v2.046 (Viorel): the stripe in the colour of how it was felt here (as in the bubble and on the map), not brown.
+		int strong = q.felt >= 2 ? levelColor((int) Math.round(q.felt)) : 0xFF94A3B8;
+		float hb = alertFrame(x, y, bw, h, f, strong, Tr.t("EARTHQUAKE", "CUTREMUR"), true);
 		float lx = x + 24, room = bw - 36;
 		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);
 		String l2 = q.felt >= 2 ? (Tr.t("Felt here: ", "Resimțit aici: ")) + roman(q.felt) + (Tr.t(" (estimate)", " (estimat)"))

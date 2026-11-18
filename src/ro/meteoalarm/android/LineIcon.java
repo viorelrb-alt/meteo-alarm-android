@@ -91,6 +91,14 @@ final class LineIcon extends Drawable {
 		case "quake":
 			h.moveTo(2, 12); h.lineTo(6, 12); h.lineTo(8, 8); h.lineTo(11, 17); h.lineTo(14, 5); h.lineTo(16.5f, 14); h.lineTo(18, 12); h.lineTo(22, 12);
 			break;
+		case "quakes":
+			// v2.046 (Viorel): something typical of earthquakes: a cracked house on shaking ground.
+			h.moveTo(4.5f, 10.5f); h.lineTo(12, 4); h.lineTo(19.5f, 10.5f);
+			h.moveTo(6.5f, 9); h.lineTo(6.5f, 17.5f); h.lineTo(17.5f, 17.5f); h.lineTo(17.5f, 9);
+			h.moveTo(12.5f, 6.5f); h.lineTo(10.5f, 10); h.lineTo(13.5f, 12.5f); h.lineTo(11, 17.5f);
+			h.moveTo(2, 21); h.lineTo(7, 21); h.lineTo(9, 19.5f); h.lineTo(11, 22); h.lineTo(13, 19.5f); h.lineTo(15, 22); h.lineTo(17, 21); h.lineTo(22, 21);
+			h.moveTo(2.5f, 11.5f); h.lineTo(2.5f, 16); h.moveTo(21.5f, 11.5f); h.lineTo(21.5f, 16);
+			break;
 		case "list":
 			for (int i = 0; i < 3; i++) {
 				float y = 7 + i * 5;

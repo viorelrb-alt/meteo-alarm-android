@@ -1560,3 +1560,6 @@ reported 	ziņots
 
 # v2.044
 The orange square opens it too.	To atver arī oranžais kvadrāts.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Kreisās joslas krāsa rāda, cik spēcīgi tā tika jūtama šeit.

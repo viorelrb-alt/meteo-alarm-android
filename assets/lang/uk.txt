@@ -1560,3 +1560,6 @@ reported 	повідомлено
 
 # v2.044
 The orange square opens it too.	Її відкриває й помаранчевий квадрат.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Смуга ліворуч має колір сили, відчутої тут.

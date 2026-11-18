@@ -1560,3 +1560,6 @@ reported 	rapporterad
 
 # v2.044
 The orange square opens it too.	Den orange rutan öppnar den också.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Randen till vänster har färgen för hur starkt det kändes här.

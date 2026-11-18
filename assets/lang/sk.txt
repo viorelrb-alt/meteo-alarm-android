@@ -1560,3 +1560,6 @@ reported 	hlásená
 
 # v2.044
 The orange square opens it too.	Otvorí ju aj oranžový štvorec.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Pás vľavo má farbu toho, ako silno ho tu pocítili.

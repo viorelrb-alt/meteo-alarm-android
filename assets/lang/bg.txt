@@ -1560,3 +1560,6 @@ reported 	отчетена
 
 # v2.044
 The orange square opens it too.	Отваря се и с оранжевия квадрат.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	Лентата вляво е в цвета на усетената тук сила.

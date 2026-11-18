@@ -1560,3 +1560,6 @@ reported 	irrapportat
 
 # v2.044
 The orange square opens it too.	Il-kwadru oranġjo jiftaħha wkoll.
+
+# v2.046
+The stripe at the left has the colour of how it was felt here.	L-istrixxa fuq ix-xellug għandha l-kulur ta’ kemm inħass hawn.

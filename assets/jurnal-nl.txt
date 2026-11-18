@@ -1,4 +1,4 @@
-Huidige versie: v.2.045 · 18.11.2026
+Huidige versie: v.2.046 · 18.11.2026
 HOOFDSCHERM
 - Kaart van de aardbeving: een tik op het vak Aardbeving toont een kaart met het epicentrum, je plaats, de afstand en de zones waar hij gevoeld werd; een tik op de kaart vergroot hem, met de geschiedenis van de waarde. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC.
 INSTELLINGEN
