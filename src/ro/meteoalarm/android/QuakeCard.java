@@ -250,7 +250,16 @@ final class QuakeCard {
 	}
 
 	/** One box of the value's history: WHEN on top, the value large, the source as a coloured chip, all centred. */
-	private static View histCell(Context ctx, String when, String value, String src, boolean dark, Typeface bold, float zk) {
+	/** v2.033 (Viorel): what the number is, in small letters under it. */
+	static String magWhat(String type) {
+		String t = type == null ? "" : type.trim().toLowerCase(java.util.Locale.US);
+		if (t.startsWith("ml")) return ro.meteoalarm.android.core.Tr.t("local magnitude (Richter)", "magnitudine locală (Richter)");
+		if (t.startsWith("mw")) return ro.meteoalarm.android.core.Tr.t("moment magnitude (energy)", "magnitudine de moment (energie)");
+		if (t.startsWith("mb")) return ro.meteoalarm.android.core.Tr.t("body-wave magnitude", "magnitudine din unde de volum");
+		return ro.meteoalarm.android.core.Tr.t("magnitude", "magnitudine");
+	}
+
+	private static View histCell(Context ctx, String when, String value, String src, String what, boolean dark, Typeface reg, Typeface bold, float zk) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		LinearLayout c = new LinearLayout(ctx);
 		c.setOrientation(LinearLayout.VERTICAL);
@@ -264,6 +273,10 @@ final class QuakeCard {
 		TextView v = text(ctx, value, 26 * zk, bold, Theme.ink(dark));
 		v.setGravity(Gravity.CENTER);
 		c.addView(v);
+		TextView wh = text(ctx, what, 11 * zk, reg, Theme.dim(dark));
+		wh.setGravity(Gravity.CENTER);
+		wh.setMaxLines(2);
+		c.addView(wh);
 		boolean infp = "INFP".equals(src);
 		int col = infp ? 0xFF22C55E : "USGS".equals(src) ? 0xFF94A3B8 : 0xFF60A5FA;
 		TextView ch = text(ctx, src == null ? "" : src, 11 * zk, bold, dark ? (infp ? 0xFF86EFAC : 0xFFBFDBFE) : (infp ? 0xFF15803D : 0xFF1D4ED8));
@@ -407,13 +420,13 @@ final class QuakeCard {
 		String nowAt = t[23].contains(" · ") ? t[23].substring(0, t[23].indexOf(" · ")) : t[23];
 		if (!Double.isNaN(q.firstMag)) {
 			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
-			hist.addView(histCell(ctx, first(t[13]), fm, q.firstSrc, dark, bold, zk), cellLp(0, dp));
+			hist.addView(histCell(ctx, first(t[13]), fm, q.firstSrc, magWhat("INFP".equals(q.firstSrc) ? "ML" : ""), dark, reg, bold, zk), cellLp(0, dp));
 			TextView arrow = text(ctx, "→", 20 * zk, bold, dim);
 			LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			al.leftMargin = al.rightMargin = (int) (6 * dp);
 			hist.addView(arrow, al);
 		}
-		hist.addView(histCell(ctx, nowAt, t[2], q.src, dark, bold, zk), cellLp(0, dp));
+		hist.addView(histCell(ctx, nowAt, t[2], q.src, magWhat(q.magType), dark, reg, bold, zk), cellLp(0, dp));
 		LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		hl.topMargin = (int) (6 * dp);
 		sheet.addView(hist, hl);

@@ -1,4 +1,4 @@
-Praegune versioon: v.2.032 · 18.11.2026
+Praegune versioon: v.2.033 · 18.11.2026
 PÕHIEKRAAN
 - Maavärina kaart: kasti Maavärin puudutus näitab kaarti epitsentri, sinu asula, kauguse ja tuntavuse tsoonidega; kaardi puudutus suurendab seda koos väärtuse ajalooga. Rumeenias tulevad ametlikud väärtused INFP-lt.
 PÕLLULAPID

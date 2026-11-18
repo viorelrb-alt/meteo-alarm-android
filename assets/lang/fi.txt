@@ -1517,7 +1517,7 @@ Epicentre	Episentrumi
 Estimated felt zones	Arvioidut tuntumisalueet
 Estimated from the magnitude and the distance.	Arvioitu magnitudista ja etäisyydestä.
 First: 	Ensin: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Romania: viralliset arvot tulevat INFP:ltä (Kansallinen maan fysiikan instituutti, eida-sc3.infp.ro); EMSC, kun INFP ei vastaa.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Romania: viralliset arvot tulevat INFP:ltä (Kansallinen maan fysiikan instituutti, infp.ro); EMSC, kun INFP ei vastaa.
 Source: 	Lähde: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Se on nopea arvio, tehty muutamassa sekunnissa puhelinten antureista; syvissä maanjäristyksissä, kuten Vrancean, se on usein suurempi. Tämä arvo tulee seismologeilta.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Maasi voimakkain maanjäristys viimeisen 24 tunnin ajalta ja miten se todennäköisesti tuntui (EMSC; Romaniassa INFP:n viralliset arvot).
@@ -1538,3 +1538,8 @@ Checking INFP…	Tarkistetaan INFP:stä…
 INFP has no value for it yet · try again	INFP:llä ei ole vielä arvoa · yritä uudelleen
 Refresh from INFP (Romania)	Päivitä INFP:stä (Romania)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Romaniassa kuplan ↻ INFP kysyy virallista arvoa uudelleen.
+# v2.033
+local magnitude (Richter)	paikallinen magnitudi (Richter)
+moment magnitude (energy)	momenttimagnitudi (energia)
+body-wave magnitude	tilavuusaaltojen magnitudi
+magnitude	magnitudi

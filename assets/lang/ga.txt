@@ -1517,7 +1517,7 @@ Epicentre	Lárphointe
 Estimated felt zones	Criosanna measta mothúcháin
 Estimated from the magnitude and the distance.	Measta ón méid agus ón bhfad.
 First: 	An chéad cheann: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	An Rómáin: tagann na luachanna oifigiúla ó INFP (Institiúid Náisiúnta Fisice an Domhain, eida-sc3.infp.ro); EMSC nuair nach bhfreagraíonn INFP.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	An Rómáin: tagann na luachanna oifigiúla ó INFP (Institiúid Náisiúnta Fisice an Domhain, infp.ro); EMSC nuair nach bhfreagraíonn INFP.
 Source: 	Foinse: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Meastachán tapa é sin, déanta i gceann cúpla soicind ó bhraiteoirí na bhfón; i gcás creathanna doimhne, mar iad siúd i Vrancea, is minic a bhíonn sé níos airde. Tagann an luach anseo ó sheismeolaithe.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	An crith talún is láidre le 24 uair an chloig i do thír agus conas is dócha a mothaíodh é (EMSC; sa Rómáin luachanna oifigiúla INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	Ag seiceáil INFP…
 INFP has no value for it yet · try again	Níl luach ag INFP fós · bain triail eile as
 Refresh from INFP (Romania)	Athnuaigh ó INFP (an Rómáin)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Sa Rómáin, iarrann ↻ INFP sa bholgán an luach oifigiúil arís.
+# v2.033
+local magnitude (Richter)	méid áitiúil (Richter)
+moment magnitude (energy)	méid mómaint (fuinneamh)
+body-wave magnitude	méid tonnta coirp
+magnitude	méid

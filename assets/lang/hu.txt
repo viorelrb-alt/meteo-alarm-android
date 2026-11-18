@@ -1517,7 +1517,7 @@ Epicentre	Epicentrum
 Estimated felt zones	Becsült érezhetőségi zónák
 Estimated from the magnitude and the distance.	Becslés a magnitúdóból és a távolságból.
 First: 	Első: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Románia: a hivatalos értékek az INFP-től jönnek (Országos Földfizikai Intézet, eida-sc3.infp.ro); EMSC, ha az INFP nem válaszol.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Románia: a hivatalos értékek az INFP-től jönnek (Országos Földfizikai Intézet, infp.ro); EMSC, ha az INFP nem válaszol.
 Source: 	Forrás: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Ez egy gyors becslés, néhány másodperc alatt a telefonok érzékelőiből; a mélyfészkű rengéseknél, mint a vrancseaiak, gyakran magasabb lesz. Az itteni érték szeizmológusoktól származik.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Az elmúlt 24 óra legerősebb földrengése az országodban, és hogyan volt valószínűleg érezhető (EMSC; Romániában az INFP hivatalos értékei).
@@ -1538,3 +1538,8 @@ Checking INFP…	INFP lekérdezése…
 INFP has no value for it yet · try again	Az INFP-nek még nincs értéke · próbálja újra
 Refresh from INFP (Romania)	Frissítés az INFP-től (Románia)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Romániában a buborék ↻ INFP gombja újra lekéri a hivatalos értéket.
+# v2.033
+local magnitude (Richter)	helyi magnitúdó (Richter)
+moment magnitude (energy)	momentum-magnitúdó (energia)
+body-wave magnitude	térhullám-magnitúdó
+magnitude	magnitúdó

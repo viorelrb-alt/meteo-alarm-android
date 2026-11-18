@@ -1517,7 +1517,7 @@ Epicentre	Epicentrum
 Estimated felt zones	Szacowane strefy odczuwalności
 Estimated from the magnitude and the distance.	Szacunek na podstawie magnitudy i odległości.
 First: 	Pierwsza: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumunia: oficjalne wartości pochodzą z INFP (Narodowy Instytut Fizyki Ziemi, eida-sc3.infp.ro); EMSC, gdy INFP nie odpowiada.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Rumunia: oficjalne wartości pochodzą z INFP (Narodowy Instytut Fizyki Ziemi, infp.ro); EMSC, gdy INFP nie odpowiada.
 Source: 	Źródło: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	To szybki szacunek, zrobiony w kilka sekund z czujników telefonów; przy głębokich trzęsieniach, jak te z Vrancei, często wychodzi wyższy. Wartość tutaj pochodzi od sejsmologów.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Najsilniejsze trzęsienie ziemi ostatnich 24 godzin w twoim kraju i jak prawdopodobnie było odczuwalne (EMSC; w Rumunii oficjalne wartości INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	Sprawdzanie w INFP…
 INFP has no value for it yet · try again	INFP nie ma jeszcze wartości · spróbuj ponownie
 Refresh from INFP (Romania)	Odśwież z INFP (Rumunia)
 In Romania, ↻ INFP in the bubble asks for the official value again.	W Rumunii ↻ INFP w dymku ponownie pobiera oficjalną wartość.
+# v2.033
+local magnitude (Richter)	magnituda lokalna (Richter)
+moment magnitude (energy)	magnituda momentowa (energia)
+body-wave magnitude	magnituda fal objętościowych
+magnitude	magnituda

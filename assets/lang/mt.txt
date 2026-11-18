@@ -1517,7 +1517,7 @@ Epicentre	Epiċentru
 Estimated felt zones	Żoni stmati fejn inħass
 Estimated from the magnitude and the distance.	Stima mill-kobor u d-distanza.
 First: 	L-ewwel: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Ir-Rumanija: il-valuri uffiċjali jiġu mill-INFP (Istitut Nazzjonali tal-Fiżika tad-Dinja, eida-sc3.infp.ro); EMSC meta l-INFP ma jwieġibx.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Ir-Rumanija: il-valuri uffiċjali jiġu mill-INFP (Istitut Nazzjonali tal-Fiżika tad-Dinja, infp.ro); EMSC meta l-INFP ma jwieġibx.
 Source: 	Sors: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Dik hija stima mgħaġġla, magħmula f'ftit sekondi mis-sensuri tat-telefowns; fit-terremoti fondi, bħal dawk ta' Vrancea, spiss toħroġ ogħla. Il-valur hawn jiġi mis-sismoloġi.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	L-iktar terremot qawwi tal-aħħar 24 siegħa f'pajjiżek u kif probabbilment inħass (EMSC; fir-Rumanija l-valuri uffiċjali tal-INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	Qed niċċekkja l-INFP…
 INFP has no value for it yet · try again	L-INFP għad m’għandux valur · erġa’ pprova
 Refresh from INFP (Romania)	Aġġorna mill-INFP (ir-Rumanija)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Fir-Rumanija, ↻ INFP fil-bużżieqa jerġa’ jitlob il-valur uffiċjali.
+# v2.033
+local magnitude (Richter)	manjitudni lokali (Richter)
+moment magnitude (energy)	manjitudni tal-mument (enerġija)
+body-wave magnitude	manjitudni tal-mewġ tal-ġisem
+magnitude	manjitudni

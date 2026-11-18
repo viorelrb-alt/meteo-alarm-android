@@ -38,10 +38,83 @@ public final class Quakes {
 
 	/** INFP's FDSN event service (SeisComP), text format: the quakes since SINCE, magnitude 2.5 and over. */
 	public static String infpUrl(long since) {
-		// v2.032: the plain query (as other INFP readers use it): the newest 300 events, no start time
-		// nor magnitude limit (v2.031 asked with both and INFP answered with nothing); the last
-		// 24 h are kept by mergeInfp.
-		return "https://eida-sc3.infp.ro/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time";
+		// v2.033 (Viorel: infp.ro had M5.7 while the app had nothing): INFP's FDSN catalog stopped
+		// on 2026-10-13, so the app reads the list infp.ro itself shows (its shakemap product):
+		// [{"id","time","locstring","lat","lon","mag","depth","event_type",...}].
+		return "https://fastapi.infp.ro/v1/?product=shakemap4";
+	}
+
+	/**
+	 * v2.033: INFP's JSON list turned into the text lines mergeInfp reads
+	 * (EventID|Time UTC|Lat|Lon|Depth|||||MagType|Mag||Region). Its "time" carries no zone: UTC is
+	 * taken, unless the events match EMSC's quakes (EMSC_UTC) only when read as Romania's local time.
+	 * Returns null for an unreadable answer.
+	 */
+	public static String infpFromApi(String json, List<Quake> emsc) {
+		if (json == null) return null;
+		Object root;
+		try {
+			root = Json.parse(json);
+		} catch (Exception e) {
+			return null;
+		}
+		if (!(root instanceof List)) return null;
+		@SuppressWarnings("unchecked")
+		List<Object> a = (List<Object>) root;
+		java.util.TimeZone ro = java.util.TimeZone.getTimeZone("Europe/Bucharest");
+		List<String[]> ev = new ArrayList<String[]>();
+		List<long[]> times = new ArrayList<long[]>();
+		int utcHits = 0, localHits = 0;
+		for (Object o : a) {
+			if (!(o instanceof Map)) continue;
+			@SuppressWarnings("unchecked")
+			Map<String, Object> m = (Map<String, Object>) o;
+			String type = val(m, "event_type");
+			if (type.length() > 0 && !type.equalsIgnoreCase("ACTUAL")) continue;
+			String t = val(m, "time").replace(' ', 'T');
+			long u = infpTime(t);
+			if (u <= 0) continue;
+			long l = u - ro.getOffset(u);
+			double la = dbl(val(m, "lat")), lo = dbl(val(m, "lon")), mg = dbl(val(m, "mag"));
+			if (Double.isNaN(la) || Double.isNaN(lo) || Double.isNaN(mg)) continue;
+			if (emsc != null) for (Quake q : emsc) {
+				double dk = km(la, lo, q.lat, q.lon);
+				if (dk > 150) continue;
+				if (Math.abs(q.time - u) <= 90000L) utcHits++;
+				if (Math.abs(q.time - l) <= 90000L) localHits++;
+			}
+			ev.add(new String[] { val(m, "id"), val(m, "lat"), val(m, "lon"), val(m, "depth"), val(m, "mag"), val(m, "locstring") });
+			times.add(new long[] { u, l });
+		}
+		boolean local = localHits > utcHits;
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
+		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+		StringBuilder b = new StringBuilder("#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName" + (local ? "|local" : "") + "\n");
+		for (int i = 0; i < ev.size(); i++) {
+			String[] e = ev.get(i);
+			String region = e[5];
+			b.append(e[0]).append('|').append(f.format(new java.util.Date(times.get(i)[local ? 1 : 0]))).append('|').append(e[1]).append('|').append(e[2]).append('|')
+					.append(e[3]).append("|INFP||||ML|").append(e[4]).append("|INFP|").append(region.replace('|', ' ')).append('\n');
+		}
+		return b.toString();
+	}
+
+	private static String val(Map<String, Object> m, String k) {
+		Object v = m.get(k);
+		if (v == null) return "";
+		if (v instanceof Double) {
+			double d = (Double) v;
+			return d == Math.rint(d) && Math.abs(d) < 1e15 ? String.valueOf((long) d) : String.valueOf(d);
+		}
+		return v.toString().trim();
+	}
+
+	private static double dbl(String s) {
+		try {
+			return Double.parseDouble(s);
+		} catch (Exception e) {
+			return Double.NaN;
+		}
 	}
 
 	/** INFP's time (UTC, no zone) in ms, 0 when unreadable. */
@@ -88,6 +161,8 @@ public final class Quakes {
 			if (Double.isNaN(n.mag) || n.time <= 0 || now - n.time > window || n.time - now > 600000L) continue;
 			n.region = c.length > 12 && c[12].trim().length() > 0 ? c[12].trim() : "ROMANIA";
 			n.src = "INFP";
+			// v2.033: INFP's own list (author INFP) is the Romanian network's: its places need no country name.
+			n.firstSrc = c.length > 5 && "INFP".equals(c[5].trim()) ? "api" : "";
 			inf.add(n);
 		}
 		if (inf.isEmpty()) return false;
@@ -126,7 +201,8 @@ public final class Quakes {
 			Quake n = inf.get(k);
 			if (used[k] || n.mag < MIN_MAG || !inRomania(n.lat, n.lon)) continue;
 			// INFP names the country: a quake just over the border stays out (as with EMSC).
-			if (!Warnings.fold(n.region).toUpperCase(Locale.US).contains("ROMANIA")) continue;
+			if (!"api".equals(n.firstSrc) && !Warnings.fold(n.region).toUpperCase(Locale.US).contains("ROMANIA")) continue;
+			n.firstSrc = "";
 			n.dist = km(lat, lon, n.lat, n.lon);
 			n.felt = intensity(n.mag, Math.sqrt(n.dist * n.dist + n.depth * n.depth));
 			qs.add(n);

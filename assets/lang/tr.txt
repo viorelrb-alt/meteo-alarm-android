@@ -1451,7 +1451,7 @@ Epicentre	Merkez üssü
 Estimated felt zones	Tahmini hissedilme bölgeleri
 Estimated from the magnitude and the distance.	Büyüklük ve mesafeden tahmin.
 First: 	İlk: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Romanya: resmi değerler INFP'den gelir (Ulusal Yer Fiziği Enstitüsü, eida-sc3.infp.ro); INFP yanıt vermezse EMSC.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Romanya: resmi değerler INFP'den gelir (Ulusal Yer Fiziği Enstitüsü, infp.ro); INFP yanıt vermezse EMSC.
 Source: 	Kaynak: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Bu, telefonların sensörlerinden birkaç saniyede yapılan hızlı bir tahmindir; Vrancea'dakiler gibi derin depremlerde çoğu zaman daha yüksek çıkar. Buradaki değer sismologlardan gelir.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Ülkende son 24 saatin en güçlü depremi ve muhtemelen nasıl hissedildiği (EMSC; Romanya'da INFP'nin resmi değerleri).
@@ -1472,3 +1472,8 @@ Checking INFP…	INFP kontrol ediliyor…
 INFP has no value for it yet · try again	INFP’de henüz değer yok · tekrar deneyin
 Refresh from INFP (Romania)	INFP’den yenile (Romanya)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Romanya’da balondaki ↻ INFP resmi değeri yeniden sorar.
+# v2.033
+local magnitude (Richter)	yerel büyüklük (Richter)
+moment magnitude (energy)	moment büyüklüğü (enerji)
+body-wave magnitude	cisim dalgası büyüklüğü
+magnitude	büyüklük

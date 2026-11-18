@@ -1517,7 +1517,7 @@ Epicentre	Epicentro
 Estimated felt zones	Zone stimate di risentimento
 Estimated from the magnitude and the distance.	Stima da magnitudo e distanza.
 First: 	Primo: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Romania: i valori ufficiali vengono dall'INFP (Istituto nazionale di fisica della Terra, eida-sc3.infp.ro); EMSC quando l'INFP non risponde.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Romania: i valori ufficiali vengono dall'INFP (Istituto nazionale di fisica della Terra, infp.ro); EMSC quando l'INFP non risponde.
 Source: 	Fonte: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	È una stima rapida, fatta in pochi secondi dai sensori dei telefoni; per i terremoti profondi, come quelli della Vrancea, risulta spesso più alta. Il valore qui viene dai sismologi.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Il terremoto più forte delle ultime 24 ore nel tuo paese e come è stato probabilmente avvertito (EMSC; in Romania i valori ufficiali dell'INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	Verifica presso INFP…
 INFP has no value for it yet · try again	INFP non ha ancora un valore · riprova
 Refresh from INFP (Romania)	Aggiorna da INFP (Romania)
 In Romania, ↻ INFP in the bubble asks for the official value again.	In Romania, ↻ INFP nella bolla richiede di nuovo il valore ufficiale.
+# v2.033
+local magnitude (Richter)	magnitudo locale (Richter)
+moment magnitude (energy)	magnitudo momento (energia)
+body-wave magnitude	magnitudo delle onde di volume
+magnitude	magnitudo

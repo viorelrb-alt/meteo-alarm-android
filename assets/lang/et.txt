@@ -1517,7 +1517,7 @@ Epicentre	Epitsenter
 Estimated felt zones	Hinnangulised tuntavuse tsoonid
 Estimated from the magnitude and the distance.	Hinnang magnituudi ja kauguse põhjal.
 First: 	Esimene: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumeenia: ametlikud väärtused tulevad INFP-lt (Riiklik Maa Füüsika Instituut, eida-sc3.infp.ro); EMSC, kui INFP ei vasta.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Rumeenia: ametlikud väärtused tulevad INFP-lt (Riiklik Maa Füüsika Instituut, infp.ro); EMSC, kui INFP ei vasta.
 Source: 	Allikas: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	See on kiire hinnang, tehtud mõne sekundiga telefonide anduritest; sügavate maavärinate puhul, nagu Vrancea omad, tuleb see sageli suurem. Siinne väärtus tuleb seismoloogidelt.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Viimase 24 tunni tugevaim maavärin sinu riigis ja kuidas seda tõenäoliselt tunti (EMSC; Rumeenias INFP ametlikud väärtused).
@@ -1538,3 +1538,8 @@ Checking INFP…	Kontrollin INFP-st…
 INFP has no value for it yet · try again	INFP-l pole veel väärtust · proovi uuesti
 Refresh from INFP (Romania)	Värskenda INFP-st (Rumeenia)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Rumeenias küsib mullis ↻ INFP ametlikku väärtust uuesti.
+# v2.033
+local magnitude (Richter)	lokaalne magnituud (Richter)
+moment magnitude (energy)	momendimagnituud (energia)
+body-wave magnitude	ruumilainete magnituud
+magnitude	magnituud

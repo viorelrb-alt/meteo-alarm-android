@@ -183,7 +183,10 @@ final class Fetcher {
 		}
 		if (!infpFor(c)) return;
 		try {
-			r.infp = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
+			String js = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
+			List<Quakes.Quake> em = r.quake != null ? Quakes.parse(r.quake, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis()) : null;
+			r.infp = Quakes.infpFromApi(js, em);
+			if (r.infp == null) throw new Exception("răspuns necunoscut (" + (js == null ? 0 : js.length()) + " B)");
 			int n = 0, all = 0;
 			long now = System.currentTimeMillis();
 			String newest = "";
@@ -195,7 +198,7 @@ final class Fetcher {
 				long tm = f.length > 1 ? Quakes.infpTime(f[1].trim()) : 0;
 				if (tm > 0 && now - tm <= Quakes.WINDOW_MS) n++;
 			}
-			Log.i(ctx, "DATE", "cutremure INFP OK: " + n + " în 24 h (" + all + " în răspuns, " + r.infp.length() + " B" + (newest.length() > 0 ? ", ultimul " + newest : "") + ")");
+			Log.i(ctx, "DATE", "cutremure INFP OK: " + n + " în 24 h (" + all + " în listă" + (r.infp.contains("|local\n") ? ", ora locală" : "") + (newest.length() > 0 ? ", ultimul " + newest : "") + ")");
 		} catch (Exception e) {
 			r.infp = null;
 			Log.e(ctx, "DATE", "cutremure INFP a eșuat: " + reason(e, false) + " (rămân valorile EMSC)");

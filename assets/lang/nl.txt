@@ -1517,7 +1517,7 @@ Epicentre	Epicentrum
 Estimated felt zones	Geschatte zones waar hij gevoeld werd
 Estimated from the magnitude and the distance.	Geschat uit de magnitude en de afstand.
 First: 	Eerst: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Roemenië: de officiële waarden komen van het INFP (Nationaal Instituut voor Aardfysica, eida-sc3.infp.ro); EMSC als het INFP niet antwoordt.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Roemenië: de officiële waarden komen van het INFP (Nationaal Instituut voor Aardfysica, infp.ro); EMSC als het INFP niet antwoordt.
 Source: 	Bron: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Dat is een snelle schatting, binnen enkele seconden gemaakt met de sensoren van telefoons; bij diepe bevingen, zoals die van Vrancea, valt ze vaak hoger uit. De waarde hier komt van seismologen.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	De sterkste aardbeving van de laatste 24 uur in je land en hoe hij waarschijnlijk gevoeld werd (EMSC; in Roemenië de officiële waarden van het INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	INFP controleren…
 INFP has no value for it yet · try again	INFP heeft nog geen waarde · probeer opnieuw
 Refresh from INFP (Romania)	Vernieuwen via INFP (Roemenië)
 In Romania, ↻ INFP in the bubble asks for the official value again.	In Roemenië vraagt ↻ INFP in de ballon de officiële waarde opnieuw op.
+# v2.033
+local magnitude (Richter)	lokale magnitude (Richter)
+moment magnitude (energy)	momentmagnitude (energie)
+body-wave magnitude	ruimtegolfmagnitude
+magnitude	magnitude

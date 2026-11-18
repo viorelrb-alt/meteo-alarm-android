@@ -1517,7 +1517,7 @@ Epicentre	Епіцентр
 Estimated felt zones	Орієнтовні зони відчутності
 Estimated from the magnitude and the distance.	Оцінка за магнітудою та відстанню.
 First: 	Перше: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Румунія: офіційні значення надходять від INFP (Національний інститут фізики Землі, eida-sc3.infp.ro); EMSC, коли INFP не відповідає.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Румунія: офіційні значення надходять від INFP (Національний інститут фізики Землі, infp.ro); EMSC, коли INFP не відповідає.
 Source: 	Джерело: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Це швидка оцінка, зроблена за секунди з датчиків телефонів; для глибоких землетрусів, як у Вранчі, вона часто виходить вищою. Значення тут надходить від сейсмологів.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Найсильніший землетрус за останні 24 години у твоїй країні і як він, ймовірно, відчувався (EMSC; у Румунії офіційні значення INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	Перевірка в INFP…
 INFP has no value for it yet · try again	В INFP ще немає значення · спробуйте знову
 Refresh from INFP (Romania)	Оновити з INFP (Румунія)
 In Romania, ↻ INFP in the bubble asks for the official value again.	У Румунії ↻ INFP у бульбашці знову запитує офіційне значення.
+# v2.033
+local magnitude (Richter)	локальна магнітуда (Ріхтер)
+moment magnitude (energy)	моментна магнітуда (енергія)
+body-wave magnitude	магнітуда за об’ємними хвилями
+magnitude	магнітуда

@@ -1517,7 +1517,7 @@ Epicentre	Epicenter
 Estimated felt zones	Ocenjena območja čutenja
 Estimated from the magnitude and the distance.	Ocena iz magnitude in razdalje.
 First: 	Prva: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Romunija: uradne vrednosti prihajajo od INFP (Nacionalni inštitut za fiziko Zemlje, eida-sc3.infp.ro); EMSC, ko INFP ne odgovori.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Romunija: uradne vrednosti prihajajo od INFP (Nacionalni inštitut za fiziko Zemlje, infp.ro); EMSC, ko INFP ne odgovori.
 Source: 	Vir: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	To je hitra ocena, narejena v nekaj sekundah iz senzorjev telefonov; pri globokih potresih, kot so tisti v Vrancei, je pogosto višja. Vrednost tukaj prihaja od seizmologov.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Najmočnejši potres zadnjih 24 ur v tvoji državi in kako je bil verjetno čuten (EMSC; v Romuniji uradne vrednosti INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	Preverjam pri INFP…
 INFP has no value for it yet · try again	INFP še nima vrednosti · poskusite znova
 Refresh from INFP (Romania)	Osveži iz INFP (Romunija)
 In Romania, ↻ INFP in the bubble asks for the official value again.	V Romuniji ↻ INFP v oblačku znova zahteva uradno vrednost.
+# v2.033
+local magnitude (Richter)	lokalna magnituda (Richter)
+moment magnitude (energy)	momentna magnituda (energija)
+body-wave magnitude	magnituda prostorskih valov
+magnitude	magnituda

@@ -1517,7 +1517,7 @@ Epicentre	Epizentrum
 Estimated felt zones	Geschätzte Zonen der Spürbarkeit
 Estimated from the magnitude and the distance.	Geschätzt aus Magnitude und Entfernung.
 First: 	Zuerst: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumänien: die offiziellen Werte kommen vom INFP (Nationales Institut für Erdphysik, eida-sc3.infp.ro); EMSC, wenn das INFP nicht antwortet.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Rumänien: die offiziellen Werte kommen vom INFP (Nationales Institut für Erdphysik, infp.ro); EMSC, wenn das INFP nicht antwortet.
 Source: 	Quelle: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Das ist eine schnelle Schätzung, in wenigen Sekunden aus den Sensoren der Telefone gemacht; bei tiefen Beben wie denen in Vrancea fällt sie oft höher aus. Der Wert hier kommt von Seismologen.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Das stärkste Erdbeben der letzten 24 Stunden in deinem Land und wie es wahrscheinlich gespürt wurde (EMSC; in Rumänien die offiziellen Werte des INFP).
@@ -1538,3 +1538,8 @@ Checking INFP…	INFP wird abgefragt…
 INFP has no value for it yet · try again	INFP hat noch keinen Wert · erneut versuchen
 Refresh from INFP (Romania)	Von INFP aktualisieren (Rumänien)
 In Romania, ↻ INFP in the bubble asks for the official value again.	In Rumänien fragt ↻ INFP in der Blase den amtlichen Wert erneut ab.
+# v2.033
+local magnitude (Richter)	Lokalmagnitude (Richter)
+moment magnitude (energy)	Momentmagnitude (Energie)
+body-wave magnitude	Raumwellenmagnitude
+magnitude	Magnitude

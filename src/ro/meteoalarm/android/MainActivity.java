@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.032";
+	static final String VERSION = "Meteo Alarm Android v2.033";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1727,8 +1727,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (r[0].equals("h") && r[1].equals(Tr.t("All in the last 24 h", "Toate în ultimele 24 h"))) rest = true;
 			if (rest || r[0].equals("s")) more.add(r);
 		}
-		if (Fetcher.infpFor(town)) more.add(new String[] { "s", Tr.t("Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.",
-				"România: valorile oficiale vin de la INFP (Institutul Național de Fizica Pământului, eida-sc3.infp.ro); EMSC când INFP nu răspunde.") });
+		if (Fetcher.infpFor(town)) more.add(new String[] { "s", Tr.t("Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.",
+				"România: valorile oficiale vin de la INFP (Institutul Național de Fizica Pământului, infp.ro); EMSC când INFP nu răspunde.") });
 		rows.addAll(Bubble.info(more));
 		Log.i(this, "CUTREMUR", "bula cu hartă: M" + t[2] + " " + q.src + ", " + t[4]);
 		bubble.place = t[1];

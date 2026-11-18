@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.032 · 18.11.2026
+Dabartinė versija: v.2.033 · 18.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 PAGRINDINIS EKRANAS

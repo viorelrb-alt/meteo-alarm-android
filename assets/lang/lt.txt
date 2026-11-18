@@ -1517,7 +1517,7 @@ Epicentre	Epicentras
 Estimated felt zones	Apskaičiuotos juntamumo zonos
 Estimated from the magnitude and the distance.	Įvertinta pagal magnitudę ir atstumą.
 First: 	Pirmoji: 
-Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumunija: oficialios vertės gaunamos iš INFP (Nacionalinis Žemės fizikos institutas, eida-sc3.infp.ro); EMSC, kai INFP neatsako.
+Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.	Rumunija: oficialios vertės gaunamos iš INFP (Nacionalinis Žemės fizikos institutas, infp.ro); EMSC, kai INFP neatsako.
 Source: 	Šaltinis: 
 That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Tai greitas įvertis, padarytas per kelias sekundes iš telefonų jutiklių; giliems žemės drebėjimams, kaip Vrančos, jis dažnai būna didesnis. Vertė čia gaunama iš seismologų.
 The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Stipriausias pastarųjų 24 valandų žemės drebėjimas tavo šalyje ir kaip jis tikriausiai buvo jaustas (EMSC; Rumunijoje oficialios INFP vertės).
@@ -1538,3 +1538,8 @@ Checking INFP…	Tikrinama INFP…
 INFP has no value for it yet · try again	INFP dar neturi vertės · bandykite dar kartą
 Refresh from INFP (Romania)	Atnaujinti iš INFP (Rumunija)
 In Romania, ↻ INFP in the bubble asks for the official value again.	Rumunijoje ↻ INFP burbule iš naujo paklausia oficialios vertės.
+# v2.033
+local magnitude (Richter)	vietinis magnitudas (Richteris)
+moment magnitude (energy)	momento magnitudas (energija)
+body-wave magnitude	tūrinių bangų magnitudas
+magnitude	magnitudas
