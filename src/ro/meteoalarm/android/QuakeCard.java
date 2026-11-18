@@ -618,12 +618,22 @@ final class QuakeCard {
 		/** Ask the official institute again (null: no button). */
 		Runnable refresh;
 		String refreshText = "", refreshName = "";
+		/** v2.101: the title's size in pixels, as the main screen's section titles (0: its own). */
+		float titlePx;
 		/** The other earthquakes and the sources (rows as from Screen.alertInfo). */
 		java.util.List<String[]> more;
 	}
 
 	/** ‹ in a round button, "EARTHQUAKE INFORMATION" and a thin line to the right edge. */
 	static View head(Context ctx, boolean dark, Typeface bold, float zk, float size, final Runnable back) {
+		return head(ctx, dark, bold, zk, size, back, 0);
+	}
+
+	/**
+	 * v2.101 (Viorel): the title written as the main screen's section titles (NEXT HOURS): TPX
+	 * pixels, bold, dim, with the same thin line.
+	 */
+	static View head(Context ctx, boolean dark, Typeface bold, float zk, float size, final Runnable back, float tpx) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		LinearLayout h = new LinearLayout(ctx);
 		h.setOrientation(LinearLayout.HORIZONTAL);
@@ -642,14 +652,17 @@ final class QuakeCard {
 		int bs = (int) (size * dp * zk);
 		h.addView(b, new LinearLayout.LayoutParams(bs, bs));
 		TextView t = text(ctx, ro.meteoalarm.android.core.Tr.t("EARTHQUAKE INFORMATION", "INFORMAȚII CUTREMUR"), 13 * zk, bold, Theme.dim(dark));
-		t.setLetterSpacing(0.06f);
+		if (tpx > 0) {
+			t.setTextSize(android.util.TypedValue.COMPLEX_UNIT_PX, tpx);
+			t.setIncludeFontPadding(false);
+		} else t.setLetterSpacing(0.06f);
 		t.setSingleLine(true);
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		tl.leftMargin = (int) (12 * dp);
 		h.addView(t, tl);
 		View line = new View(ctx);
 		line.setBackgroundColor(Glass.edge(dark));
-		LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(0, Math.max(1, (int) dp), 1);
+		LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(0, Math.max(1, tpx > 0 ? Math.round(tpx / 11.5f) : (int) dp), 1);
 		ll.leftMargin = (int) (12 * dp);
 		h.addView(line, ll);
 		return h;
@@ -774,7 +787,8 @@ final class QuakeCard {
 			vals.addView(text(ctx, "→", 16 * zk, bold, dim));
 		}
 		vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
-		LinearLayout.LayoutParams vl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
+		LinearLayout.LayoutParams vl = stack ? new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+				: new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
 		vl.topMargin = (int) (4 * dp);
 		hs.addView(vals, vl);
 		TextView what = text(ctx, magWhat(q.magType), 10.5f * zk, reg, dim);
@@ -852,7 +866,7 @@ final class QuakeCard {
 		LinearLayout col = new LinearLayout(ctx);
 		col.setOrientation(LinearLayout.VERTICAL);
 		col.setPadding(0, (int) (4 * dp), 0, (int) (24 * dp));
-		col.addView(head(ctx, dark, bold, zk, 38, k.back));
+		col.addView(head(ctx, dark, bold, zk, 34, k.back, k.titlePx));
 		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		tl.topMargin = (int) (12 * dp);
 		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 54, k.full), tl);
@@ -863,7 +877,7 @@ final class QuakeCard {
 		fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
 		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		bl.topMargin = (int) (8 * dp);
-		col.addView(boxes(ctx, q, s, t, dark, reg, bold, zk, width < 330 * dp * zk, 0), bl);
+		col.addView(boxes(ctx, q, s, t, dark, reg, bold, zk, true, 0), bl);
 		LinearLayout d = new LinearLayout(ctx);
 		d.setOrientation(LinearLayout.VERTICAL);
 		LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -901,7 +915,7 @@ final class QuakeCard {
 			LinearLayout col = new LinearLayout(ctx);
 			col.setOrientation(LinearLayout.VERTICAL);
 			col.setPadding(pad, (int) (36 * dp), pad, (int) (28 * dp));
-			col.addView(head(ctx, dark, bold, zk, 40, close));
+			col.addView(head(ctx, dark, bold, zk, 36, close, k.titlePx));
 			LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			tl.topMargin = (int) (12 * dp);
 			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null), tl);
@@ -913,7 +927,7 @@ final class QuakeCard {
 			fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
 			LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			bl.topMargin = (int) (8 * dp);
-			col.addView(boxes(ctx, q, s, t, dark, reg, bold, zk, inner < 330 * dp * zk, 0), bl);
+			col.addView(boxes(ctx, q, s, t, dark, reg, bold, zk, true, 0), bl);
 			LinearLayout dd = new LinearLayout(ctx);
 			dd.setOrientation(LinearLayout.VERTICAL);
 			LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -926,22 +940,26 @@ final class QuakeCard {
 		} else {
 			LinearLayout split = new LinearLayout(ctx);
 			split.setOrientation(LinearLayout.HORIZONTAL);
-			// The left half: the map with ‹ and the title floating on it, the two boxes under it.
-			LinearLayout left = new LinearLayout(ctx);
-			left.setOrientation(LinearLayout.VERTICAL);
-			FrameLayout mf = new FrameLayout(ctx);
+			// The left half: the map with ‹ and the title floating on it, the two boxes one under the
+			// other below it (v2.101); the half scrolls, the title stays on top.
+			FrameLayout left = new FrameLayout(ctx);
+			ScrollView ls = new ScrollView(ctx);
+			ls.setVerticalScrollBarEnabled(false);
+			LinearLayout lc = new LinearLayout(ctx);
+			lc.setOrientation(LinearLayout.VERTICAL);
 			final FrameLayout map = mapBox(ctx, q, town, t, dark, null, 0);
-			mf.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-			final View hd = head(ctx, dark, bold, zk * 0.9f, 36, close);
+			lc.addView(map, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) (Math.min(dm.widthPixels, dm.heightPixels) * 0.8f)));
+			View bx = boxes(ctx, q, s, t, dark, reg, bold, zk * 0.9f, true, 0);
+			bx.setPadding((int) (10 * dp), (int) (8 * dp), (int) (10 * dp), (int) (12 * dp));
+			lc.addView(bx, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			ls.addView(lc);
+			left.addView(ls, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+			final View hd = head(ctx, dark, bold, zk * 0.9f, 34, close, k.titlePx);
 			hd.setPadding((int) (8 * dp), (int) (6 * dp), (int) (14 * dp), (int) (6 * dp));
 			hd.setBackground(Glass.panelBg(dark, 18 * dp, dp));
 			FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP);
 			hl.leftMargin = hl.rightMargin = hl.topMargin = (int) (10 * dp);
-			mf.addView(hd, hl);
-			left.addView(mf, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
-			View bx = boxes(ctx, q, s, t, dark, reg, bold, zk * 0.9f, false, 0);
-			bx.setPadding((int) (8 * dp), (int) (8 * dp), (int) (8 * dp), (int) (8 * dp));
-			left.addView(bx, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			left.addView(hd, hl);
 			split.addView(left, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
 			// The right half: the information, scrolling when it does not fit.
 			ScrollView sv = new ScrollView(ctx);
@@ -968,7 +986,11 @@ final class QuakeCard {
 		}
 		d.setContentView(root);
 		Window w = d.getWindow();
-		if (w != null) w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+		if (w != null) {
+			w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+			// v2.101: the whole screen, the camera's band too (else the main screen's band showed above it).
+			if (android.os.Build.VERSION.SDK_INT >= 28) w.getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+		}
 		d.show();
 		return d;
 	}
