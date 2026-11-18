@@ -1496,4 +1496,4 @@ reported 	сообщено
 The orange square opens it too.	Её открывает и оранжевый квадрат.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Полоса слева окрашена по силе, ощутимой здесь.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Полоса слева окрашена в цвет зоны на карте, где находится твой населённый пункт; вне зон коричневая.

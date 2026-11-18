@@ -1562,4 +1562,4 @@ reported 	signalée
 The orange square opens it too.	Le carré orange l’ouvre aussi.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	La bande à gauche a la couleur de l’intensité ressentie ici.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	La bande à gauche a la couleur de la zone de la carte où se trouve ta localité ; marron hors des zones.

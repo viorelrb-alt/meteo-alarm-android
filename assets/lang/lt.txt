@@ -1562,4 +1562,4 @@ reported 	pranešta
 The orange square opens it too.	Jį atveria ir oranžinis kvadratas.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Kairėje juostos spalva rodo, kaip stipriai jis buvo jaustas čia.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Kairėje esanti juosta yra žemėlapio zonos, kurioje yra tavo vietovė, spalvos; už zonų ribų ruda.

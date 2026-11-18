@@ -1562,4 +1562,4 @@ reported 	segnalata
 The orange square opens it too.	Anche il quadrato arancione la apre.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	La striscia a sinistra ha il colore dell’intensità avvertita qui.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	La striscia a sinistra ha il colore della zona della mappa in cui si trova la tua località; marrone fuori dalle zone.

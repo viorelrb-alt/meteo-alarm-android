@@ -1632,4 +1632,4 @@ reported 	informado
 The orange square opens it too.	El cuadrado naranja también lo abre.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	La franja de la izquierda tiene el color de cómo se sintió aquí.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	La franja de la izquierda tiene el color de la zona del mapa en la que está tu localidad; marrón fuera de las zonas.

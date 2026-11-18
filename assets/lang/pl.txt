@@ -1562,4 +1562,4 @@ reported 	zgłoszona
 The orange square opens it too.	Otwiera ją też pomarańczowy kwadrat.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Pasek po lewej ma kolor odczuwalnej tu siły.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Pasek po lewej ma kolor strefy na mapie, w której jest twoja miejscowość; brązowy poza strefami.

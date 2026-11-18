@@ -422,6 +422,9 @@ final class QuakeCard {
 			row.setGravity(Gravity.CENTER_VERTICAL);
 			TextView chip = text(ctx, Screen.roman(lv), 11.5f * zk, bold, 0xFF111111);
 			chip.setGravity(Gravity.CENTER);
+			// v2.047 (Viorel): the numeral centred in the pill (the font's padding pushed it down).
+			chip.setIncludeFontPadding(false);
+			chip.setPadding(0, 0, 0, 0);
 			chip.setBackground(Glass.pill(Screen.levelColor(lv), 0, 10 * dp, dp));
 			row.addView(chip, new LinearLayout.LayoutParams((int) (34 * dp * zk), (int) (20 * dp * zk)));
 			TextView w = text(ctx, s.feltCap(lv) + " · " + t[22] + s.dist(Quakes.ringKm(q.mag, q.depth, lv)), 12.5f * zk, reg, ink);

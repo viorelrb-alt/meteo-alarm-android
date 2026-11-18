@@ -1562,4 +1562,4 @@ reported 	отчетена
 The orange square opens it too.	Отваря се и с оранжевия квадрат.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Лентата вляво е в цвета на усетената тук сила.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Лентата вляво е в цвета на зоната от картата, в която е твоето населено място; кафява извън зоните.

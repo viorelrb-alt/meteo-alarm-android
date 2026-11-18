@@ -1562,4 +1562,4 @@ reported 	повідомлено
 The orange square opens it too.	Її відкриває й помаранчевий квадрат.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Смуга ліворуч має колір сили, відчутої тут.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Смуга ліворуч має колір зони на мапі, де твій населений пункт; поза зонами коричнева.

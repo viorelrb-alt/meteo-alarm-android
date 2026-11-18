@@ -16,6 +16,8 @@ class FitText extends TextView {
 	private int lines;
 	private float min;
 	private float base;
+	/** v2.047: at most this size in pixels (0: none), so titles of one page come out the same size. */
+	float cap;
 
 	FitText(Context c, int lines, float min) {
 		super(c);
@@ -63,7 +65,7 @@ class FitText extends TextView {
 
 	/** The size the text gets in AVAIL pixels. */
 	float sizeFor(int avail) {
-		float sz = base;
+		float sz = cap > 0 ? Math.min(base, cap) : base;
 		while (sz > base * min && !fits(sz, avail)) sz *= 0.95f;
 		return Math.max(sz, base * min);
 	}

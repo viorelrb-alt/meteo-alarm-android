@@ -1562,4 +1562,4 @@ reported 	hlášena
 The orange square opens it too.	Otevře ji i oranžový čtverec.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Pruh vlevo má barvu toho, jak silně byl pocítěn zde.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Pruh vlevo má barvu zóny na mapě, ve které je tvoje obec; mimo zóny hnědý.

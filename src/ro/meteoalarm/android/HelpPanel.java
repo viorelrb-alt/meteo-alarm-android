@@ -143,6 +143,22 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 	private final LinearLayout panel, tabs;
 	private final android.widget.HorizontalScrollView tabsScroll;
 	private final java.util.List<View> sections = new java.util.ArrayList<View>();
+	/** v2.047 (Viorel): the 2-row titles of the page, all in the size of the smallest. */
+	private final java.util.List<FitText> twos = new java.util.ArrayList<FitText>();
+	private final Runnable sameSize = new Runnable() {
+		public void run() {
+			float m = 0;
+			for (FitText f : twos) {
+				f.cap = 0;
+				float z = f.getWidth() > 0 ? f.sizeFor(f.getWidth() - f.getCompoundPaddingLeft() - f.getCompoundPaddingRight()) : 0;
+				if (z > 0 && (m == 0 || z < m)) m = z;
+			}
+			if (m > 0) for (FitText f : twos) {
+				f.cap = m;
+				f.requestLayout();
+			}
+		}
+	};
 
 	private void tab(final String name, final View target) {
 		TextView t = new TextView(getContext());
@@ -214,6 +230,7 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		list.removeAllViews();
 		tabs.removeAllViews();
 		sections.clear();
+		twos.clear();
 		tabsScroll.setVisibility(GONE);
 		ts = TextSize.get(getContext());
 		TextSize.apply(title, ts);
@@ -241,6 +258,11 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		t.setPadding((int) (4 * dp), (int) (18 * dp), two ? (int) (4 * dp) : 0, (int) (8 * dp));
 		list.addView(t);
 		sections.add(t);
+		if (two) {
+			twos.add((FitText) t);
+			list.removeCallbacks(sameSize);
+			list.post(sameSize);
+		}
 		tab(text, t);
 		tabsScroll.setVisibility(sections.size() >= 3 ? VISIBLE : GONE);
 	}

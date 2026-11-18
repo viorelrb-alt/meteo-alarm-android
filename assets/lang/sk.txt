@@ -1562,4 +1562,4 @@ reported 	hlásená
 The orange square opens it too.	Otvorí ju aj oranžový štvorec.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Pás vľavo má farbu toho, ako silno ho tu pocítili.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Pás vľavo má farbu zóny na mape, v ktorej je tvoja obec; mimo zón hnedý.

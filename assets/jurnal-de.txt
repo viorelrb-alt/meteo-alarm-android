@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.046 · 18.11.2026
+Aktuelle Version: v.2.047 · 18.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
 EINSTELLUNGEN

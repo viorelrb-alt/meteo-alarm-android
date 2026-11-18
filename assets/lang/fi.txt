@@ -1562,4 +1562,4 @@ reported 	ilmoitettu
 The orange square opens it too.	Myös oranssi neliö avaa sen.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Vasemman reunan raidan väri kertoo, miten voimakkaana se tuntui täällä.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Vasemman reunan raita on sen karttavyöhykkeen värinen, jossa paikkakuntasi on; vyöhykkeiden ulkopuolella ruskea.

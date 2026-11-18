@@ -1562,4 +1562,4 @@ reported 	rapporteret
 The orange square opens it too.	Den orange firkant åbner det også.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Stribens farve til venstre viser, hvor kraftigt det mærkedes her.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Striben til venstre har farven på den zone på kortet, din by ligger i; brun uden for zonerne.

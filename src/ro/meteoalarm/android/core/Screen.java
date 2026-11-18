@@ -3070,7 +3070,7 @@ public final class Screen {
 						"Aceea e o estimare rapidă, făcută în câteva secunde din senzorii telefoanelor; la cutremurele adânci, ca cele din Vrancea, iese de obicei mai mare. Valoarea de aici vine de la seismologi."),
 				Tr.t("Epicentre", "Epicentru") + (Quakes.vrancea(q) ? " · Vrancea" : ""), Tr.t("Big map", "Hartă mare"),
 				"M" + dec(q.mag) + " · " + where + " · " + qhm(q.time), dist(q.dist) + " " + Tr.t("from ", "de ") + town + " · " + Tr.t("depth ", "adâncime ") + dist(q.depth),
-				Tr.t("Estimated felt zones", "Zone estimate de resimțire"), Tr.t("Value history", "Istoricul valorii"), Tr.t("up to ~", "până la ~"),
+				Tr.t("Estimated felt zones", "Intensitatea estimată pe zone"), Tr.t("Value history", "Istoricul valorii"), Tr.t("up to ~", "până la ~"),
 				qhm(q.changedAt > 0 ? q.changedAt : q.firstAt > 0 ? q.firstAt : q.time) + " · " + src };
 	}
 
@@ -3193,8 +3193,9 @@ public final class Screen {
 	}
 
 	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
-		// v2.046 (Viorel): the stripe in the colour of how it was felt here (as in the bubble and on the map), not brown.
-		int strong = q.felt >= 2 ? levelColor((int) Math.round(q.felt)) : 0xFF94A3B8;
+		// v2.046 (Viorel): the stripe in the colour of the map's zone the town is in; v2.047: brown outside zone III.
+		int fl = (int) Math.round(q.felt);
+		int strong = fl >= 3 ? levelColor(fl) : 0xFF9A8F86;
 		float hb = alertFrame(x, y, bw, h, f, strong, Tr.t("EARTHQUAKE", "CUTREMUR"), true);
 		float lx = x + 24, room = bw - 36;
 		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);

@@ -1,4 +1,4 @@
-Nuvarande version: v.2.046 · 18.11.2026
+Nuvarande version: v.2.047 · 18.11.2026
 AVISERINGAR
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
 HUVUDSKÄRM

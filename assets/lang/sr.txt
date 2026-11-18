@@ -1496,4 +1496,4 @@ reported 	пријављена
 The orange square opens it too.	Отвара је и наранџасти квадрат.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Трака лево има боју јачине осећене овде.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Трака лево има боју зоне на мапи у којој је твоје место; смеђа ван зона.

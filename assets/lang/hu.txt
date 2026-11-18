@@ -1562,4 +1562,4 @@ reported 	jelentve
 The orange square opens it too.	A narancssárga négyzet is megnyitja.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	A bal oldali sáv színe azt mutatja, milyen erősen érezték itt.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	A bal oldali sáv annak a térképzónának a színe, ahol a településed van; a zónákon kívül barna.

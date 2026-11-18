@@ -1562,4 +1562,4 @@ reported 	ziņots
 The orange square opens it too.	To atver arī oranžais kvadrāts.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	Kreisās joslas krāsa rāda, cik spēcīgi tā tika jūtama šeit.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	Kreisā josla ir tās kartes zonas krāsā, kurā ir tava apdzīvotā vieta; ārpus zonām brūna.

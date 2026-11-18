@@ -1562,4 +1562,4 @@ reported 	comunicado
 The orange square opens it too.	O quadrado laranja também o abre.
 
 # v2.046
-The stripe at the left has the colour of how it was felt here.	A faixa à esquerda tem a cor da intensidade sentida aqui.
+The stripe at the left has the colour of the map zone your town is in; brown outside the zones.	A faixa à esquerda tem a cor da zona do mapa em que está a tua localidade; castanha fora das zonas.
