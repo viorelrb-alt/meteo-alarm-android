@@ -1,6 +1,10 @@
-Huidige versie: v.2.022 · 17.11.2026
+Huidige versie: v.2.030 · 18.11.2026
+HOOFDSCHERM
+- Kaart van de aardbeving: een tik op het vak Aardbeving toont een kaart met het epicentrum, je plaats, de afstand en de zones waar hij gevoeld werd; een tik op de kaart vergroot hem, met de geschiedenis van de waarde. In Roemenië komen de officiële waarden van het INFP.
 INSTELLINGEN
 - Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
+MELDINGEN
+- Aardbevingen: elke 10 minuten gecontroleerd, ook 's nachts met het scherm uit; een herziene magnitude werkt de melding bij en een tik erop opent de kaart.
 PERCELEN
 - Ballonnen in Statistieken: een tik op een uur van het spuitvenster, een dag in de grafieken of een bodemregel opent een ballon met uitleg; het spuitvenster schuift vanzelf.
 - Coördinaten van het perceel: op de bewerkpagina worden de gps-coördinaten van elk punt getypt, en daaronder toont het satellietbeeld het perceel.

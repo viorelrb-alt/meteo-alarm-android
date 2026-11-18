@@ -1,6 +1,8 @@
-Versione attuale: v.2.022 · 17.11.2026
+Versione attuale: v.2.030 · 18.11.2026
 IMPOSTAZIONI
 - Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
+NOTIFICHE
+- Terremoti: controllati ogni 10 minuti, anche di notte a schermo spento; una magnitudo rivista aggiorna la notifica e un tocco su di essa apre la mappa.
 PARTICELLE
 - Bolle nelle Statistiche: toccare un'ora della finestra di trattamento, un giorno dei grafici o una riga del suolo apre una bolla con la spiegazione; la finestra di trattamento scorre da sola.
 - Coordinate della particella: nella pagina di modifica si scrivono le coordinate GPS di ogni punto, e sotto la vista satellitare mostra la particella.
@@ -9,6 +11,8 @@ PARTICELLE
 - Statistiche: per ogni particella, l'Azione del giorno e 4 schede: Operativo (finestra di irrorazione ora per ora, asciugatura gocce (ΔT), vento, foglia bagnata), Acqua e Suolo (pioggia, evaporazione, suolo a 6 e 18 cm), Stagione (gradi-giorno rispetto all'anno scorso, fase stimata) e Rischi 72 h (malattie fungine, gelata al suolo, caldo, vento e grandine); salvataggio in PDF o CSV.
 - Stato operativo: in alto la coltura e la data di semina; con una coltura il verdetto tiene conto anche dell'asciugatura delle gocce (ΔT) e della sua malattia.
 - Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
+SCHERMATA PRINCIPALE
+- Mappa del terremoto: un tocco sulla casella Terremoto mostra una mappa con l'epicentro, la tua località, la distanza e le zone di risentimento; un tocco sulla mappa la ingrandisce, con lo storico del valore. In Romania i valori ufficiali vengono dall'INFP.
 - Miglioramenti del design e correzioni di errori.
 
 Versione 1.4 (v.1.400 – v.1.520)

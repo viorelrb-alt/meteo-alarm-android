@@ -1,6 +1,10 @@
-Jelenlegi verzió: v.2.022 · 17.11.2026
+Jelenlegi verzió: v.2.030 · 18.11.2026
 BEÁLLÍTÁSOK
 - Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
+ÉRTESÍTÉSEK
+- Földrengések: 10 percenként ellenőrizve, éjjel kikapcsolt képernyővel is; a felülvizsgált magnitúdó frissíti az értesítést, és arra koppintva megnyílik a térkép.
+FŐKÉPERNYŐ
+- A földrengés térképe: a Földrengés mezőre koppintva térkép jelenik meg az epicentrummal, a településeddel, a távolsággal és az érezhetőségi zónákkal; a térképre koppintva felnagyítja, az érték történetével. Romániában a hivatalos értékek az INFP-től jönnek.
 PARCELLÁK
 - A parcella koordinátái: a szerkesztő oldalon minden pont GPS-koordinátája beírható, alatta a műholdas nézet mutatja a parcellát.
 - Buborékok a Statisztikában: a permetezési ablak egy órájának, a grafikonok egy napjának vagy egy talajsornak az érintése magyarázó buborékot nyit; a permetezési ablak magától mozog.

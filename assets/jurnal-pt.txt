@@ -1,6 +1,10 @@
-Versão atual: v.2.022 · 17.11.2026
+Versão atual: v.2.030 · 18.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
+ECRÃ PRINCIPAL
+- Mapa do sismo: um toque na caixa Sismo mostra um mapa com o epicentro, a tua localidade, a distância e as zonas onde foi sentido; um toque no mapa amplia-o, com o histórico do valor. Na Roménia os valores oficiais vêm do INFP.
+NOTIFICAÇÕES
+- Sismos: verificados a cada 10 minutos, também à noite com o ecrã desligado; uma magnitude revista atualiza a notificação e um toque nela abre o mapa.
 PARCELAS
 - Bolhas nas Estatísticas: tocar numa hora da janela de pulverização, num dia dos gráficos ou numa linha do solo abre uma bolha com a explicação; a janela de pulverização move-se sozinha.
 - Coordenadas da parcela: na página de edição escrevem-se as coordenadas GPS de cada ponto, e por baixo a vista de satélite mostra a parcela.

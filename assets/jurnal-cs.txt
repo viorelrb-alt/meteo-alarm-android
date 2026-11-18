@@ -1,6 +1,10 @@
-Současná verze: v.2.022 · 17.11.2026
+Současná verze: v.2.030 · 18.11.2026
+HLAVNÍ OBRAZOVKA
+- Mapa zemětřesení: klepnutí na pole Zemětřesení ukáže mapu s epicentrem, tvou obcí, vzdáleností a zónami pocítění; klepnutí na mapu ji zvětší, s historií hodnoty. V Rumunsku pocházejí oficiální hodnoty z INFP.
 NASTAVENÍ
 - Jazyk zobrazení: v ☰ angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu (v USA jen angličtina a španělština).
+OZNÁMENÍ
+- Zemětřesení: kontrolována každých 10 minut, i v noci s vypnutou obrazovkou; revidovaná magnituda aktualizuje oznámení a klepnutí na něj otevře mapu.
 POZEMKY
 - Bubliny ve Statistice: klepnutí na hodinu v okně postřiku, den v grafech nebo řádek půdy otevře bublinu s vysvětlením; okno postřiku se posouvá samo.
 - Historie a předpověď: přetáhněte ukazatel na den v minulosti; jeho hodnoty se zobrazí v rámečku pod grafem a po 10 s se vrátí na dnešek.

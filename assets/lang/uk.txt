@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Завдання дня: найкраще вікно для обприскування в наступні 24 години (сьогодні або завтра), чому не зараз, оцінка обприскування (0–100) і найбільший ризик наступних 48 годин.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Олівець редагує ділянку: назву, дату сівби, площу, культуру; GPS кожної точки вводиться; дотик до супутникового вигляду відкриває ділянку на мапі, де точки переміщуються, а дискета їх зберігає.
+# v2.030
+ · revised 	 · уточнено 
+ · updated 	 · оновлено 
+: probably felt	: ймовірно відчувався
+: probably not felt	: ймовірно не відчувався
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Дотик до поля Землетрус: мапа з епіцентром, твоїм містом, відстанню та зонами, де він відчувався; дотик до мапи збільшує її.
+Big map	Велика мапа
+Depth	Глибина
+Did the Android alert show another value?	Сповіщення Android показало інше значення?
+Distance	Відстань
+Earthquake in 	Землетрус: 
+Earthquake map	Мапа землетрусу
+Epicentre	Епіцентр
+Estimated felt zones	Орієнтовні зони відчутності
+Estimated from the magnitude and the distance.	Оцінка за магнітудою та відстанню.
+First: 	Перше: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Румунія: офіційні значення надходять від INFP (Національний інститут фізики Землі, eida-sc3.infp.ro); EMSC, коли INFP не відповідає.
+Source: 	Джерело: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Це швидка оцінка, зроблена за секунди з датчиків телефонів; для глибоких землетрусів, як у Вранчі, вона часто виходить вищою. Значення тут надходить від сейсмологів.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Найсильніший землетрус за останні 24 години у твоїй країні і як він, ймовірно, відчувався (EMSC; у Румунії офіційні значення INFP).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	Перемикач: сповіщення про землетруси в межах 300 km від твого місця, перевірка кожні 10 хвилин, і вночі з вимкненим екраном; уточнена магнітуда оновлює сповіщення. Під ним сторінка недавніх землетрусів поблизу.
+Updates by itself when the seismologists revise it.	Оновлюється само, коли сейсмологи його уточнюють.
+Value history	Історія значення
+deep earthquake	глибокий землетрус
+intermediate-depth earthquake	проміжний землетрус
+official	офіційно
+revised	уточнено
+shallow earthquake	неглибокий землетрус
+up to ~	до ~
+updates by itself	оновлюється само

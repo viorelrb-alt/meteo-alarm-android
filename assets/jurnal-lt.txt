@@ -1,11 +1,15 @@
-Dabartinė versija: v.2.022 · 17.11.2026
+Dabartinė versija: v.2.030 · 18.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
+PAGRINDINIS EKRANAS
+- Žemės drebėjimo žemėlapis: bakstelėjus langelį Žemės drebėjimas rodomas žemėlapis su epicentru, tavo vietove, atstumu ir juntamumo zonomis; bakstelėjus žemėlapį jis padidinamas, su vertės istorija. Rumunijoje oficialios vertės gaunamos iš INFP.
+PRANEŠIMAI
+- Žemės drebėjimai: tikrinami kas 10 minučių, ir naktį išjungus ekraną; patikslinta magnitudė atnaujina pranešimą, o jį bakstelėjus atsidaro žemėlapis.
 SKLYPAI
 - Burbulai statistikoje: purškimo lango valandos, grafikų dienos ar dirvos eilutės palietimas atveria burbulą su paaiškinimu; purškimo langas juda pats.
 - Istorija ir prognozė: vilkite rodyklę ant praėjusios dienos; jos reikšmės rodomos langelyje po grafiku, o po 10 s ji grįžta į šiandieną.
-- Sklypo koordinatės: redagavimo puslapyje galima įvesti kiekvieno taško GPS koordinates, o po jomis palydovinis vaizdas rodo sklypą.
 - Redaguoti lauką: pieštukas atveria lauko puslapį: pavadinimas, kultūra (sąrašas pagal sėjos datos sezoną arba Kita kultūra…), sėjos data, plotas; kampai stumiami žemėlapyje.
+- Sklypo koordinatės: redagavimo puslapyje galima įvesti kiekvieno taško GPS koordinates, o po jomis palydovinis vaizdas rodo sklypą.
 - Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.

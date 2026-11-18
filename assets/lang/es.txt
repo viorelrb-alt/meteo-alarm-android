@@ -1571,3 +1571,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Acción del día: la mejor ventana de pulverización de las próximas 24 horas (hoy o mañana), por qué no ahora, la puntuación de pulverización (0–100) y el mayor riesgo de las próximas 48 horas.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	El lápiz edita la parcela: nombre, fecha de siembra, superficie, cultivo; el GPS de cada punto se escribe; un toque en la vista de satélite abre la parcela en el mapa, donde los puntos se mueven y el disquete los guarda.
+# v2.030
+ · revised 	 · revisado 
+ · updated 	 · actualizado 
+: probably felt	: probablemente sentido
+: probably not felt	: probablemente no sentido
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Un toque en la casilla Terremoto: un mapa con el epicentro, tu localidad, la distancia y las zonas donde se sintió; un toque en el mapa lo amplía.
+Big map	Mapa grande
+Depth	Profundidad
+Did the Android alert show another value?	¿La alerta de Android mostró otro valor?
+Distance	Distancia
+Earthquake in 	Terremoto en 
+Earthquake map	Mapa del terremoto
+Epicentre	Epicentro
+Estimated felt zones	Zonas estimadas donde se sintió
+Estimated from the magnitude and the distance.	Estimado a partir de la magnitud y la distancia.
+First: 	Primero: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumanía: los valores oficiales vienen del INFP (Instituto Nacional de Física de la Tierra, eida-sc3.infp.ro); EMSC cuando el INFP no responde.
+Source: 	Fuente: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Esa es una estimación rápida, hecha en pocos segundos con los sensores de los teléfonos; en los terremotos profundos, como los de Vrancea, suele salir más alta. El valor de aquí viene de los sismólogos.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	El terremoto más fuerte de las últimas 24 horas en tu país y cómo se sintió probablemente (EMSC; en Rumanía los valores oficiales del INFP).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	El interruptor: avisos de terremotos a menos de 300 km de tu lugar, comprobados cada 10 minutos, también de noche con la pantalla apagada; una magnitud revisada actualiza el aviso. Debajo, la página de los terremotos recientes cercanos.
+Updates by itself when the seismologists revise it.	Se actualiza solo cuando los sismólogos lo revisan.
+Value history	Historial del valor
+deep earthquake	terremoto profundo
+intermediate-depth earthquake	terremoto intermedio
+official	oficial
+revised	revisado
+shallow earthquake	terremoto superficial
+up to ~	hasta ~
+updates by itself	se actualiza solo

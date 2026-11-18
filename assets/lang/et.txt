@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Päeva tegevus: järgmise 24 tunni parim pritsimisaken (täna või homme), miks mitte praegu, pritsimise skoor (0–100) ja järgmise 48 tunni suurim risk.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Pliiats muudab põldu: nimi, külvikuupäev, pindala, kultuur; iga punkti GPS kirjutatakse sisse; satelliidivaate puudutus avab põllu kaardil, kus punkte saab liigutada ja diskett need salvestab.
+# v2.030
+ · revised 	 · täpsustatud 
+ · updated 	 · uuendatud 
+: probably felt	: tõenäoliselt tunda
+: probably not felt	: tõenäoliselt ei olnud tunda
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Puudutus kastil Maavärin: kaart epitsentri, sinu asula, kauguse ja tsoonidega, kus seda tunti; kaardi puudutus suurendab seda.
+Big map	Suur kaart
+Depth	Sügavus
+Did the Android alert show another value?	Kas Androidi hoiatus näitas teist väärtust?
+Distance	Kaugus
+Earthquake in 	Maavärin: 
+Earthquake map	Maavärina kaart
+Epicentre	Epitsenter
+Estimated felt zones	Hinnangulised tuntavuse tsoonid
+Estimated from the magnitude and the distance.	Hinnang magnituudi ja kauguse põhjal.
+First: 	Esimene: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumeenia: ametlikud väärtused tulevad INFP-lt (Riiklik Maa Füüsika Instituut, eida-sc3.infp.ro); EMSC, kui INFP ei vasta.
+Source: 	Allikas: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	See on kiire hinnang, tehtud mõne sekundiga telefonide anduritest; sügavate maavärinate puhul, nagu Vrancea omad, tuleb see sageli suurem. Siinne väärtus tuleb seismoloogidelt.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Viimase 24 tunni tugevaim maavärin sinu riigis ja kuidas seda tõenäoliselt tunti (EMSC; Rumeenias INFP ametlikud väärtused).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	Lüliti: teated maavärinatest kuni 300 km kaugusel sinu asukohast, kontrollitakse iga 10 minuti järel, ka öösel kustunud ekraaniga; täpsustatud magnituud uuendab teadet. Selle all lähiümbruse hiljutiste maavärinate leht.
+Updates by itself when the seismologists revise it.	Uueneb ise, kui seismoloogid seda täpsustavad.
+Value history	Väärtuse ajalugu
+deep earthquake	sügav maavärin
+intermediate-depth earthquake	keskmise sügavusega maavärin
+official	ametlik
+revised	täpsustatud
+shallow earthquake	madal maavärin
+up to ~	kuni ~
+updates by itself	uueneb ise

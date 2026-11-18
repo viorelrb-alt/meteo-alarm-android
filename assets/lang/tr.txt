@@ -1435,3 +1435,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Günün işi: önümüzdeki 24 saatin en iyi ilaçlama aralığı (bugün veya yarın), neden şimdi değil, ilaçlama puanı (0–100) ve önümüzdeki 48 saatin en büyük riski.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Kalem parseli düzenler: ad, ekim tarihi, alan, ürün; her noktanın GPS'i yazılır; uydu görünümüne dokunmak parseli haritada açar, noktalar orada taşınır ve disket onları kaydeder.
+# v2.030
+ · revised 	 · revize edildi 
+ · updated 	 · güncellendi 
+: probably felt	: muhtemelen hissedildi
+: probably not felt	: muhtemelen hissedilmedi
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Deprem kutusuna dokunma: merkez üssü, yerin, mesafe ve hissedildiği bölgelerle bir harita; haritaya dokunmak onu büyütür.
+Big map	Büyük harita
+Depth	Derinlik
+Did the Android alert show another value?	Android uyarısı başka bir değer mi gösterdi?
+Distance	Mesafe
+Earthquake in 	Deprem: 
+Earthquake map	Deprem haritası
+Epicentre	Merkez üssü
+Estimated felt zones	Tahmini hissedilme bölgeleri
+Estimated from the magnitude and the distance.	Büyüklük ve mesafeden tahmin.
+First: 	İlk: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Romanya: resmi değerler INFP'den gelir (Ulusal Yer Fiziği Enstitüsü, eida-sc3.infp.ro); INFP yanıt vermezse EMSC.
+Source: 	Kaynak: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Bu, telefonların sensörlerinden birkaç saniyede yapılan hızlı bir tahmindir; Vrancea'dakiler gibi derin depremlerde çoğu zaman daha yüksek çıkar. Buradaki değer sismologlardan gelir.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Ülkende son 24 saatin en güçlü depremi ve muhtemelen nasıl hissedildiği (EMSC; Romanya'da INFP'nin resmi değerleri).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	Anahtar: bulunduğun yere 300 km'ye kadar depremlerin bildirimleri, her 10 dakikada bir, gece ekran kapalıyken de kontrol edilir; revize edilen büyüklük bildirimi günceller. Altında, çevredeki son depremlerin sayfası.
+Updates by itself when the seismologists revise it.	Sismologlar revize edince kendiliğinden güncellenir.
+Value history	Değerin geçmişi
+deep earthquake	derin deprem
+intermediate-depth earthquake	orta derinlikte deprem
+official	resmi
+revised	revize edildi
+shallow earthquake	sığ deprem
+up to ~	~
+updates by itself	kendiliğinden güncellenir

@@ -3002,6 +3002,78 @@ public final class Screen {
 		return out;
 	}
 
+	/** v2.030: the earthquake of the row's first box (null when none), for its bubble with the map. */
+	public Quakes.Quake mainQuake() {
+		return quake();
+	}
+
+	/** v2.030: HH:MM of MS in the town's time. */
+	private String qhm(long ms) {
+		Calendar k = Zone.now();
+		k.setTimeInMillis(ms);
+		return Texts.clock(String.format("%02d:%02d", k.get(Calendar.HOUR_OF_DAY), k.get(Calendar.MINUTE)), clk12);
+	}
+
+	/** v2.030: the intensity levels drawn as circles on the earthquake's map (at most 3, the strongest first). */
+	public static int[] quakeLevels(Quakes.Quake q) {
+		int top = (int) Math.round(Quakes.intensity(q.mag, Math.max(5, q.depth)));
+		java.util.List<Integer> l = new java.util.ArrayList<Integer>();
+		for (int lv = Math.min(12, top); lv >= 2 && l.size() < 3; lv--) if (Quakes.ringKm(q.mag, q.depth, lv) > 1 && (lv >= 3 || l.size() < 2)) l.add(lv);
+		int[] a = new int[l.size()];
+		for (int i = 0; i < a.length; i++) a[i] = l.get(i);
+		return a;
+	}
+
+	/** v2.030: the colour of intensity LV on the map and in its legend. */
+	public static int levelColor(int lv) {
+		return lv >= 7 ? 0xFFDC2626 : lv == 6 ? 0xFFEF4444 : lv == 5 ? 0xFFF97316 : lv == 4 ? 0xFFFACC15 : lv == 3 ? 0xFF60A5FA : 0xFF94A3B8;
+	}
+
+	/** v2.030: what intensity LV means, with a capital. */
+	public String feltCap(int lv) {
+		String w = feltWords(lv);
+		return w.length() == 0 ? w : Character.toUpperCase(w.charAt(0)) + w.substring(1);
+	}
+
+	/**
+	 * v2.030 (Viorel, the quake of 2026-11-18): the texts of the earthquake's bubble with the map:
+	 * { title, when and depth, magnitude, its type, distance, from where, depth, its kind, felt
+	 * (roman), felt title, felt words, source, "official", first value, note title, note, epicentre,
+	 * big map, map header, map sub-header, felt zones, value history, "up to ~", current value }.
+	 */
+	public String[] quakeTexts(Quakes.Quake q) {
+		String town = city != null ? city.name : "";
+		String where = Quakes.vrancea(q) ? "Vrancea" : place(q.region, unitF);
+		double br = Double.NaN;
+		if (city != null) {
+			double f1 = Math.toRadians(city.lat), f2 = Math.toRadians(q.lat), dl = Math.toRadians(q.lon - city.lon);
+			br = (Math.toDegrees(Math.atan2(Math.sin(dl) * Math.cos(f2), Math.cos(f1) * Math.sin(f2) - Math.sin(f1) * Math.cos(f2) * Math.cos(dl))) + 360) % 360;
+		}
+		String src = q.src;
+		String when = dateTime(q.time);
+		String mt = q.magType == null || q.magType.length() == 0 ? "M" : q.magType.substring(0, 1).toUpperCase() + q.magType.substring(1).toLowerCase();
+		String kind = q.depth < 70 ? Tr.t("shallow earthquake", "cutremur de suprafață") : q.depth < 300 ? Tr.t("intermediate-depth earthquake", "cutremur intermediar")
+				: Tr.t("deep earthquake", "cutremur adânc");
+		String felt = q.felt >= 2 ? roman(q.felt) : "–";
+		String feltHead = (Tr.t("In ", "În ")) + town + (q.felt >= 2 ? Tr.t(": probably felt", ": probabil resimțit") : Tr.t(": probably not felt", ": probabil nu s-a simțit"));
+		String feltText = (q.felt >= 2 ? feltCap((int) Math.round(q.felt)) + ". " : "") + Tr.t("Estimated from the magnitude and the distance.", "Estimare din magnitudine și distanță.");
+		String source = Tr.t("Source: ", "Sursă: ") + src
+				+ (q.changedAt > 0 ? Tr.t(" · revised ", " · revizuit ") + qhm(q.changedAt) : q.updated > 0 ? Tr.t(" · updated ", " · actualizat ") + qhm(q.updated) : "");
+		String first = !Double.isNaN(q.firstMag)
+				? Tr.t("First: ", "Prima: ") + dec(q.firstMag) + " (" + q.firstSrc + ", " + qhm(q.firstAt) + ") · " + Tr.t("updates by itself", "se actualizează singur")
+				: Tr.t("Updates by itself when the seismologists revise it.", "Se actualizează singur când seismologii revizuiesc valoarea.");
+		return new String[] { Tr.t("Earthquake in ", "Cutremur în ") + where, when + " · " + Tr.t("depth ", "adâncime ") + dist(q.depth), dec(q.mag), mt,
+				dist(q.dist), Tr.t("from ", "de ") + town + (Double.isNaN(br) ? "" : " (" + dir8(br) + ")"), dist(q.depth), kind, felt, feltHead, feltText,
+				source, src.equals("INFP") ? Tr.t("official", "oficial") : "", first,
+				Tr.t("Did the Android alert show another value?", "Alerta Android a arătat altă valoare?"),
+				Tr.t("That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.",
+						"Aceea e o estimare rapidă, făcută în câteva secunde din senzorii telefoanelor; la cutremurele adânci, ca cele din Vrancea, iese de obicei mai mare. Valoarea de aici vine de la seismologi."),
+				Tr.t("Epicentre", "Epicentru") + (Quakes.vrancea(q) ? " · Vrancea" : ""), Tr.t("Big map", "Hartă mare"),
+				"M" + dec(q.mag) + " · " + where + " · " + qhm(q.time), dist(q.dist) + " " + Tr.t("from ", "de ") + town + " · " + Tr.t("depth ", "adâncime ") + dist(q.depth),
+				Tr.t("Estimated felt zones", "Zone estimate de resimțire"), Tr.t("Value history", "Istoricul valorii"), Tr.t("up to ~", "până la ~"),
+				qhm(q.changedAt > 0 ? q.changedAt : q.firstAt > 0 ? q.firstAt : q.time) + " · " + src };
+	}
+
 	/** The earthquake shown first in the row, or null (the strongest of the last 24 h in the country). */
 	private Quakes.Quake quake() {
 		Quakes.Quake q = Quakes.main(quakes);

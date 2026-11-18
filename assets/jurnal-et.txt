@@ -1,4 +1,6 @@
-Praegune versioon: v.2.022 · 17.11.2026
+Praegune versioon: v.2.030 · 18.11.2026
+PÕHIEKRAAN
+- Maavärina kaart: kasti Maavärin puudutus näitab kaarti epitsentri, sinu asula, kauguse ja tuntavuse tsoonidega; kaardi puudutus suurendab seda koos väärtuse ajalooga. Rumeenias tulevad ametlikud väärtused INFP-lt.
 PÕLLULAPID
 - Ajalugu ja prognoos: lohista näidik möödunud päevale; selle väärtused ilmuvad graafiku all olevasse kasti ja 10 s pärast naaseb see tänasele.
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.
@@ -9,6 +11,8 @@ PÕLLULAPID
 - Tööolek: üleval kultuur ja külvikuupäev; kultuuriga arvestab otsus ka tilkade kuivamist (ΔT) ja selle haigust.
 SEADED
 - Kuvakeel: ☰ all inglise keel ja riigi keel; Muud keeled: riigi teised keeled, suured ELi keeled, rumeenia keel ja telefoni keel (USAs ainult inglise ja hispaania keel).
+TEAVITUSED
+- Maavärinad: kontrollitakse iga 10 minuti järel, ka öösel kustunud ekraaniga; täpsustatud magnituud uuendab teadet ja selle puudutus avab kaardi.
 - Disainiparandused ja vigade parandused.
 
 Versioon 1.4 (v.1.400 – v.1.520)

@@ -1,12 +1,16 @@
-Leagan reatha: v.2.022 · 17.11.2026
+Leagan reatha: v.2.030 · 18.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
 - Cuir an pháirc in eagar: osclaíonn an peann luaidhe leathanach na páirce: ainm, barr (liosta de réir shéasúr an dáta curtha nó Barr eile…), dáta curtha, achar; bogtar na cúinní ar an léarscáil.
+- Stádas oibríochtúil: ag an mbarr, an barr agus dáta a churtha; le barr, cuireann an breithiúnas triomú braonta (ΔT) agus a ghalar san áireamh freisin.
 - Stair agus réamhaisnéis: tarraing an táscaire go lá atá thart; taispeántar a luachanna i mbosca faoin gcairt agus tar éis 10 s filleann sé ar inniu.
 - Staitisticí sa phríomhscáileán: osclaíonn siad faoin stádas oibríochtúil (ina luí ar chlé); dúnann ‹ iad agus coinníonn cluaisín ceapaigh eile iad.
 - Staitisticí: do gach páirc, Gníomh an lae agus 4 chluaisín: Oibríochtúil (fuinneog na spraeála uair ar uair, triomú braonta (ΔT), gaoth, duilleog fhliuch), Uisce & Ithir (báisteach, galú, ithir ag 6 agus 18 cm), Séasúr (céimeanna-lae i gcomparáid le hanuraidh, céim mheasta) agus Rioscaí 72 h (galair fhungacha, sioc talún, teas, gaoth agus clocha sneachta); sábháil mar PDF nó CSV.
-- Stádas oibríochtúil: ag an mbarr, an barr agus dáta a churtha; le barr, cuireann an breithiúnas triomú braonta (ΔT) agus a ghalar san áireamh freisin.
+FÓGRAÍ
+- Creathanna talún: seiceáilte gach 10 nóiméad, istoíche freisin leis an scáileán múchta; nuashonraíonn méid athbhreithnithe an fógra, agus osclaíonn tapáil air an léarscáil.
+PRÍOMHSCÁILEÁN
+- Léarscáil an chreatha: taispeánann tapáil ar an mbosca Crith talún léarscáil leis an lárphointe, do bhaile, an fad agus na criosanna mothúcháin; méadaíonn tapáil ar an léarscáil í, le stair an luacha. Sa Rómáin tagann na luachanna oifigiúla ó INFP.
 SOCRUITHE
 - Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.

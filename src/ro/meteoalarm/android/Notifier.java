@@ -162,24 +162,64 @@ final class Notifier {
 			// v3.30 (Viorel): the app's own information (frost, freeze, fog, freezing rain, strong
 			// gusts) for the town, in a notice of its own; Europe only (the US has the NWS advisories).
 			if (!c.us() && f != null) info(ctx, c, Weather.parse(f), Fetcher.warnings(ctx, c), clk12, imp);
-			// Earthquakes: v5.00 (Viorel) only within QUAKE_KM of the place, and only while ☰ › Cutremure is on.
-			for (Quakes.Quake q : quakes(ctx) ? Fetcher.quakes(ctx, c) : new java.util.ArrayList<Quakes.Quake>()) {
-				if (q.time < quakesSince) continue;
-				if (q.dist > QUAKE_KM) continue;
-				// US: the box shows from 2.5, the notice comes from 3 (as in Europe).
-				if (c.us() && q.mag < Quakes.MIN_MAG) continue;
-				String key = "nQ_" + (q.id.length() > 0 ? q.id : Long.toString(q.time)).replaceAll("[^A-Za-z0-9_]+", "");
-				if (p.getLong(key, 0) > 0) continue;
-				p.edit().putLong(key, now).apply();
-				String title = Tr.t("Earthquake M", "Cutremur M") + String.format(java.util.Locale.US, "%.1f", q.mag) + " · " + ro.meteoalarm.android.core.Screen.place(q.region, imp);
-				String body = T.weekdayTime(q.time, clk12) + " · " + (imp ? Math.round(q.dist * 0.621371) + " mi " : Math.round(q.dist) + " km ") + Tr.t("from ", "de ") + c.name
-						+ (q.felt >= 2 ? " · " + Tr.t("probably felt: ", "probabil resimțit: ") + ro.meteoalarm.android.core.Screen.roman(q.felt) : "");
-				post(ctx, 1000 + (key.hashCode() & 0xFFFF), title, body);
-				Log.i(ctx, "NOTIF", "cutremur: " + title + " · " + body);
-			}
+			quakeNotices(ctx, c, p, T, clk12, imp, quakesSince, now);
 			clean(p, now);
 		} catch (Exception e) {
 			Log.e(ctx, "NOTIF", "verificarea notificărilor", e);
+		}
+	}
+
+	/**
+	 * v2.030 (Viorel): after the light earthquake check in the background (also at night with the
+	 * screen off): only the earthquake notices, with the same rules as check().
+	 */
+	static void checkQuakes(Context ctx, Cities.City c) {
+		try {
+			Lang.apply(ctx);
+			if (!on(ctx) || c == null || !quakes(ctx)) return;
+			ro.meteoalarm.android.core.Zone.set(Fetcher.tz(c));
+			SharedPreferences p = prefs(ctx);
+			long now = System.currentTimeMillis();
+			Cities.City sel = Cities.City.fromKey(p.getString("city", ""));
+			if (sel != null && !sel.same(c)) return;
+			if (c.us() ? !Region.showUS(ctx) : !Region.showEU(ctx)) return;
+			if (!c.key().equals(p.getString("nCity", ""))) p.edit().putString("nCity", c.key()).putLong("nCityAt", now).apply();
+			long quakesSince = Math.max(p.getLong("notifySince", now), p.getLong("nCityAt", now));
+			quakeNotices(ctx, c, p, new Texts(Tr.lang()), Region.clk12(ctx, c), Region.imperial(ctx, c), quakesSince, now);
+		} catch (Exception e) {
+			Log.e(ctx, "NOTIF", "verificarea cutremurelor", e);
+		}
+	}
+
+	/**
+	 * Earthquakes: v5.00 (Viorel) only within QUAKE_KM of the place, and only while ☰ › Cutremure is
+	 * on. v2.030: a notice already given is updated (silently) when the magnitude is revised, and a
+	 * quake INFP had first is not told again when EMSC has it too.
+	 */
+	private static void quakeNotices(Context ctx, Cities.City c, SharedPreferences p, Texts T, boolean clk12, boolean imp, long quakesSince, long now) {
+		for (Quakes.Quake q : quakes(ctx) ? Fetcher.quakes(ctx, c) : new java.util.ArrayList<Quakes.Quake>()) {
+			if (q.time < quakesSince) continue;
+			if (q.dist > QUAKE_KM) continue;
+			// US: the box shows from 2.5, the notice comes from 3 (as in Europe).
+			if (c.us() && q.mag < Quakes.MIN_MAG) continue;
+			String key = "nQ_" + (q.id.length() > 0 ? q.id : Long.toString(q.time)).replaceAll("[^A-Za-z0-9_]+", "");
+			String alt = q.altId.length() > 0 ? "nQ_" + q.altId.replaceAll("[^A-Za-z0-9_]+", "") : null;
+			if (p.getLong(key, 0) == 0 && alt != null && p.getLong(alt, 0) > 0) {
+				// Told under INFP's id: the same notice from now on under this one.
+				p.edit().putLong(key, p.getLong(alt, 0)).putInt("m" + key, p.getInt("m" + alt, -1)).putInt("i" + key, p.getInt("i" + alt, 0)).apply();
+			}
+			int m10 = (int) Math.round(q.mag * 10);
+			boolean told = p.getLong(key, 0) > 0, revised = told && p.getInt("m" + key, m10) != m10;
+			if (told && !revised) continue;
+			int id = told ? p.getInt("i" + key, 1000 + (key.hashCode() & 0xFFFF)) : 1000 + (key.hashCode() & 0xFFFF);
+			p.edit().putLong(key, told ? p.getLong(key, now) : now).putInt("m" + key, m10).putInt("i" + key, id).apply();
+			String title = Tr.t("Earthquake M", "Cutremur M") + String.format(java.util.Locale.US, "%.1f", q.mag) + " · " + ro.meteoalarm.android.core.Screen.place(q.region, imp)
+					+ (revised ? " · " + Tr.t("revised", "revizuit") : "");
+			String body = T.weekdayTime(q.time, clk12) + " · " + (imp ? Math.round(q.dist * 0.621371) + " mi " : Math.round(q.dist) + " km ") + Tr.t("from ", "de ") + c.name
+					+ (q.felt >= 2 ? " · " + Tr.t("probably felt: ", "probabil resimțit: ") + ro.meteoalarm.android.core.Screen.roman(q.felt) : "")
+					+ (q.src.equals("INFP") ? " · INFP" : "");
+			post(ctx, id, title, body, false, revised, true);
+			Log.i(ctx, "NOTIF", "cutremur" + (revised ? " (revizuit)" : "") + ": " + title + " · " + body);
 		}
 	}
 
@@ -263,6 +303,11 @@ final class Notifier {
 		SharedPreferences.Editor e = null;
 		for (java.util.Map.Entry<String, ?> en : p.getAll().entrySet()) {
 			String k = en.getKey();
+			if ((k.startsWith("mnQ_") || k.startsWith("inQ_")) && !p.contains(k.substring(1))) {
+				if (e == null) e = p.edit();
+				e.remove(k);
+				continue;
+			}
 			if (!(k.startsWith("nW_") || k.startsWith("nQ_")) || !(en.getValue() instanceof Long)) continue;
 			if (now - (Long) en.getValue() < KEEP_MS) continue;
 			if (e == null) e = p.edit();
@@ -300,13 +345,19 @@ final class Notifier {
 		post(ctx, id, title, body, false);
 	}
 
-	@SuppressWarnings("deprecation")
 	private static void post(Context ctx, int id, String title, String body, boolean loud) {
+		post(ctx, id, title, body, loud, false, false);
+	}
+
+	/** v2.030: QUIET updates a notice without sound; QUAKE opens the earthquake's bubble at a tap. */
+	@SuppressWarnings("deprecation")
+	private static void post(Context ctx, int id, String title, String body, boolean loud, boolean quiet, boolean quake) {
 		NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 		if (nm == null) return;
 		channel(ctx, nm);
 		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		PendingIntent pi = PendingIntent.getActivity(ctx, 3, open, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		if (quake) open.putExtra(MainActivity.OPEN_QUAKE, true).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+		PendingIntent pi = PendingIntent.getActivity(ctx, quake ? 4 : 3, open, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, loud ? CHANNEL_EXTREME : CHANNEL) : new Notification.Builder(ctx);
 		if (loud) {
 			b.setPriority(Notification.PRIORITY_MAX).setCategory(Notification.CATEGORY_ALARM).setVisibility(Notification.VISIBILITY_PUBLIC);
@@ -314,6 +365,7 @@ final class Notifier {
 		}
 		b.setSmallIcon(R.drawable.ic_notify).setContentTitle(title).setContentText(body).setContentIntent(pi).setAutoCancel(true)
 				.setStyle(new Notification.BigTextStyle().bigText(body)).setWhen(System.currentTimeMillis()).setShowWhen(true);
+		if (quiet) b.setOnlyAlertOnce(true);
 		try {
 			nm.notify(id, b.build());
 		} catch (SecurityException e) {

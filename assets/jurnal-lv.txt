@@ -1,4 +1,6 @@
-Pašreizējā versija: v.2.022 · 17.11.2026
+Pašreizējā versija: v.2.030 · 18.11.2026
+GALVENAIS EKRĀNS
+- Zemestrīces karte: pieskāriens lodziņam Zemestrīce parāda karti ar epicentru, tavu vietu, attālumu un jūtamības zonām; pieskāriens kartei to palielina, ar vērtības vēsturi. Rumānijā oficiālās vērtības nāk no INFP.
 IESTATĪJUMI
 - Displeja valoda: ☰ angļu un valsts valoda; Citas valodas: pārējās valsts valodas, lielās ES valodas, rumāņu un tālruņa valoda (ASV tikai angļu un spāņu).
 LAUKI
@@ -9,6 +11,8 @@ LAUKI
 - Statistika galvenajā ekrānā: tā atveras zem darbības statusa (ainavā pa kreisi); ‹ to aizver, bet cita lauka cilne to saglabā.
 - Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, pilienu žūšana (ΔT), vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
 - Vēsture un prognoze: velciet rādītāju uz pagājušu dienu; tās vērtības parādās lodziņā zem grafika, un pēc 10 s tas atgriežas uz šodienu.
+PAZIŅOJUMI
+- Zemestrīces: pārbaudītas ik pēc 10 minūtēm, arī naktī ar izslēgtu ekrānu; precizēta magnitūda atjaunina paziņojumu, un pieskāriens tam atver karti.
 - Dizaina uzlabojumi un kļūdu labojumi.
 
 Versija 1.4 (v.1.400 – v.1.520)

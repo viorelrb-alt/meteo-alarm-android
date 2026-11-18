@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Dienos veiksmas: geriausias purškimo langas per kitas 24 valandas (šiandien arba rytoj), kodėl ne dabar, purškimo balas (0–100) ir didžiausia kitų 48 valandų rizika.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Pieštukas redaguoja sklypą: pavadinimą, sėjos datą, plotą, kultūrą; kiekvieno taško GPS įrašomas; palietus palydovinį vaizdą sklypas atsidaro žemėlapyje, kur taškai perkeliami, o diskelis juos išsaugo.
+# v2.030
+ · revised 	 · patikslinta 
+ · updated 	 · atnaujinta 
+: probably felt	: tikriausiai jaustas
+: probably not felt	: tikriausiai nejaustas
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Bakstelėjimas į langelį Žemės drebėjimas: žemėlapis su epicentru, tavo vietove, atstumu ir zonomis, kur jis buvo jaustas; bakstelėjimas į žemėlapį jį padidina.
+Big map	Didelis žemėlapis
+Depth	Gylis
+Did the Android alert show another value?	Ar Android įspėjimas rodė kitą vertę?
+Distance	Atstumas
+Earthquake in 	Žemės drebėjimas: 
+Earthquake map	Žemės drebėjimo žemėlapis
+Epicentre	Epicentras
+Estimated felt zones	Apskaičiuotos juntamumo zonos
+Estimated from the magnitude and the distance.	Įvertinta pagal magnitudę ir atstumą.
+First: 	Pirmoji: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Rumunija: oficialios vertės gaunamos iš INFP (Nacionalinis Žemės fizikos institutas, eida-sc3.infp.ro); EMSC, kai INFP neatsako.
+Source: 	Šaltinis: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Tai greitas įvertis, padarytas per kelias sekundes iš telefonų jutiklių; giliems žemės drebėjimams, kaip Vrančos, jis dažnai būna didesnis. Vertė čia gaunama iš seismologų.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Stipriausias pastarųjų 24 valandų žemės drebėjimas tavo šalyje ir kaip jis tikriausiai buvo jaustas (EMSC; Rumunijoje oficialios INFP vertės).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	Jungiklis: pranešimai apie žemės drebėjimus iki 300 km nuo tavo vietos, tikrinami kas 10 minučių, ir naktį išjungus ekraną; patikslinta magnitudė atnaujina pranešimą. Po juo – netolimų naujausių žemės drebėjimų puslapis.
+Updates by itself when the seismologists revise it.	Atsinaujina pati, kai seismologai ją patikslina.
+Value history	Vertės istorija
+deep earthquake	gilus žemės drebėjimas
+intermediate-depth earthquake	vidutinio gylio žemės drebėjimas
+official	oficiali
+revised	patikslinta
+shallow earthquake	seklus žemės drebėjimas
+up to ~	iki ~
+updates by itself	atsinaujina pati

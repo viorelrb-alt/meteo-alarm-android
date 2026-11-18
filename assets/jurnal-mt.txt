@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.022 · 17.11.2026
+Verżjoni attwali: v.2.030 · 18.11.2026
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
@@ -7,8 +7,12 @@ GĦELIEQI
 - Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, tnixxif tal-qtar (ΔT), riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
 - Status operazzjonali: fuq, il-wiċċ u d-data taż-żriegħ; b'wiċċ, is-sentenza tqis ukoll it-tnixxif tal-qtar (ΔT) u l-marda tiegħu.
 - Storja u tbassir: kaxkar l-indikatur fuq jum li għadda; il-valuri tiegħu jidhru f'kaxxa taħt il-grafika u wara 10 s jerġa' lura għal-lum.
+NOTIFIKI
+- Terremoti: iċċekkjati kull 10 minuti, anki bil-lejl bl-iskrin mitfi; kobor rivedut jaġġorna n-notifika, u tektika fuqha tiftaħ il-mappa.
 SETTINGS
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
+SKRIN EWLIENI
+- Mappa tat-terremot: tektika fuq il-kaxxa Terremot turi mappa bl-epiċentru, il-post tiegħek, id-distanza u ż-żoni fejn inħass; tektika fuq il-mappa tkabbarha, bl-istorja tal-valur. Fir-Rumanija l-valuri uffiċjali jiġu mill-INFP.
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)

@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Azzjoni tal-ġurnata: l-aħjar tieqa tal-isprejjar fl-24 siegħa li ġejjin (illum jew għada), għaliex mhux issa, il-punteġġ tal-isprejjar (0–100) u l-akbar riskju tat-48 siegħa li ġejjin.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Il-lapes jeditja l-parċella: isem, data taż-żriegħ, erja, wiċċ; il-GPS ta' kull punt jinkiteb; mess fuq il-veduta satellitari jiftaħ il-parċella fuq il-mappa, fejn il-punti jiċċaqilqu u d-diska tissejvjahom.
+# v2.030
+ · revised 	 · rivedut 
+ · updated 	 · aġġornat 
+: probably felt	: probabbilment inħass
+: probably not felt	: probabbilment ma nħassx
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Tektika fuq il-kaxxa Terremot: mappa bl-epiċentru, il-post tiegħek, id-distanza u ż-żoni fejn inħass; tektika fuq il-mappa tkabbarha.
+Big map	Mappa kbira
+Depth	Fond
+Did the Android alert show another value?	L-allarm ta' Android wera valur ieħor?
+Distance	Distanza
+Earthquake in 	Terremot: 
+Earthquake map	Mappa tat-terremot
+Epicentre	Epiċentru
+Estimated felt zones	Żoni stmati fejn inħass
+Estimated from the magnitude and the distance.	Stima mill-kobor u d-distanza.
+First: 	L-ewwel: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Ir-Rumanija: il-valuri uffiċjali jiġu mill-INFP (Istitut Nazzjonali tal-Fiżika tad-Dinja, eida-sc3.infp.ro); EMSC meta l-INFP ma jwieġibx.
+Source: 	Sors: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Dik hija stima mgħaġġla, magħmula f'ftit sekondi mis-sensuri tat-telefowns; fit-terremoti fondi, bħal dawk ta' Vrancea, spiss toħroġ ogħla. Il-valur hawn jiġi mis-sismoloġi.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	L-iktar terremot qawwi tal-aħħar 24 siegħa f'pajjiżek u kif probabbilment inħass (EMSC; fir-Rumanija l-valuri uffiċjali tal-INFP).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	L-iswiċċ: notifiki ta' terremoti sa 300 km mill-post tiegħek, iċċekkjati kull 10 minuti, anki bil-lejl bl-iskrin mitfi; kobor rivedut jaġġorna n-notifika. Taħtu, il-paġna tat-terremoti riċenti madwar.
+Updates by itself when the seismologists revise it.	Jaġġorna waħdu meta s-sismoloġi jirrevedu.
+Value history	Storja tal-valur
+deep earthquake	terremot fond
+intermediate-depth earthquake	terremot ta' fond intermedju
+official	uffiċjali
+revised	rivedut
+shallow earthquake	terremot baxx
+up to ~	sa ~
+updates by itself	jaġġorna waħdu

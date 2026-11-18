@@ -1,6 +1,10 @@
-Aktuelle Version: v.2.022 · 17.11.2026
+Aktuelle Version: v.2.030 · 18.11.2026
+BENACHRICHTIGUNGEN
+- Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
 EINSTELLUNGEN
 - Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
+HAUPTBILDSCHIRM
+- Erdbebenkarte: ein Tippen auf das Feld Erdbeben zeigt eine Karte mit dem Epizentrum, deinem Ort, der Entfernung und den Zonen der Spürbarkeit; ein Tippen auf die Karte vergrößert sie, mit dem Verlauf des Werts. In Rumänien kommen die offiziellen Werte vom INFP.
 PARZELLEN
 - Blasen in der Statistik: Antippen einer Stunde im Spritzfenster, eines Tages in den Diagrammen oder einer Bodenzeile öffnet eine Blase mit der Erklärung; das Spritzfenster bewegt sich von selbst.
 - Koordinaten der Parzelle: Auf der Bearbeitungsseite lassen sich die GPS-Koordinaten jedes Punkts eintippen, darunter zeigt die Satellitenansicht die Parzelle.

@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Gníomh an lae: an fhuinneog spraeála is fearr sna 24 uair an chloig atá romhainn (inniu nó amárach), cén fáth nach anois, an scór spraeála (0–100) agus an riosca is mó sna 48 uair an chloig atá romhainn.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Cuireann an peann luaidhe an gort in eagar: ainm, dáta cuir, achar, barr; clóscríobhtar GPS gach pointe; osclaíonn tadhall ar an amharc satailíte an gort ar an léarscáil, áit a mbogtar na pointí agus sábhálann an diosca iad.
+# v2.030
+ · revised 	 · athbhreithnithe 
+ · updated 	 · nuashonraithe 
+: probably felt	: is dócha gur mothaíodh é
+: probably not felt	: is dócha nár mothaíodh é
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Tapáil ar an mbosca Crith talún: léarscáil leis an lárphointe, do bhaile, an fad agus na criosanna inar mothaíodh é; méadaíonn tapáil ar an léarscáil í.
+Big map	Léarscáil mhór
+Depth	Doimhneacht
+Did the Android alert show another value?	Ar thaispeáin foláireamh Android luach eile?
+Distance	Fad
+Earthquake in 	Crith talún: 
+Earthquake map	Léarscáil an chreatha
+Epicentre	Lárphointe
+Estimated felt zones	Criosanna measta mothúcháin
+Estimated from the magnitude and the distance.	Measta ón méid agus ón bhfad.
+First: 	An chéad cheann: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	An Rómáin: tagann na luachanna oifigiúla ó INFP (Institiúid Náisiúnta Fisice an Domhain, eida-sc3.infp.ro); EMSC nuair nach bhfreagraíonn INFP.
+Source: 	Foinse: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Meastachán tapa é sin, déanta i gceann cúpla soicind ó bhraiteoirí na bhfón; i gcás creathanna doimhne, mar iad siúd i Vrancea, is minic a bhíonn sé níos airde. Tagann an luach anseo ó sheismeolaithe.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	An crith talún is láidre le 24 uair an chloig i do thír agus conas is dócha a mothaíodh é (EMSC; sa Rómáin luachanna oifigiúla INFP).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	An lasc: fógraí faoi chreathanna talún laistigh de 300 km ó d'áit, seiceáilte gach 10 nóiméad, istoíche freisin leis an scáileán múchta; nuashonraíonn méid athbhreithnithe an fógra. Faoi, leathanach na gcreathanna le déanaí timpeall.
+Updates by itself when the seismologists revise it.	Nuashonraíonn sé féin nuair a athbhreithníonn na seismeolaithe é.
+Value history	Stair an luacha
+deep earthquake	crith talún domhain
+intermediate-depth earthquake	crith talún meándoimhneachta
+official	oifigiúil
+revised	athbhreithnithe
+shallow earthquake	crith talún éadomhain
+up to ~	suas le ~
+updates by itself	nuashonraíonn sé féin

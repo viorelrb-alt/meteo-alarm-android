@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	A nap teendője: a következő 24 óra legjobb permetezési ablaka (ma vagy holnap), miért nem most, a permetezési pontszám (0–100) és a következő 48 óra legnagyobb kockázata.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	A ceruza a parcellát szerkeszti: név, vetés dátuma, terület, növény; minden pont GPS-e beírható; a műholdas nézet megérintése megnyitja a parcellát a térképen, ahol a pontok mozgathatók, és a floppy menti őket.
+# v2.030
+ · revised 	 · felülvizsgálva 
+ · updated 	 · frissítve 
+: probably felt	: valószínűleg érezhető volt
+: probably not felt	: valószínűleg nem volt érezhető
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	A Földrengés mezőre koppintva: térkép az epicentrummal, a településeddel, a távolsággal és azokkal a zónákkal, ahol érezhető volt; a térképre koppintva felnagyítja.
+Big map	Nagy térkép
+Depth	Mélység
+Did the Android alert show another value?	Az Android riasztása más értéket mutatott?
+Distance	Távolság
+Earthquake in 	Földrengés: 
+Earthquake map	A földrengés térképe
+Epicentre	Epicentrum
+Estimated felt zones	Becsült érezhetőségi zónák
+Estimated from the magnitude and the distance.	Becslés a magnitúdóból és a távolságból.
+First: 	Első: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Románia: a hivatalos értékek az INFP-től jönnek (Országos Földfizikai Intézet, eida-sc3.infp.ro); EMSC, ha az INFP nem válaszol.
+Source: 	Forrás: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Ez egy gyors becslés, néhány másodperc alatt a telefonok érzékelőiből; a mélyfészkű rengéseknél, mint a vrancseaiak, gyakran magasabb lesz. Az itteni érték szeizmológusoktól származik.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Az elmúlt 24 óra legerősebb földrengése az országodban, és hogyan volt valószínűleg érezhető (EMSC; Romániában az INFP hivatalos értékei).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	A kapcsoló: értesítések a helyedtől 300 km-en belüli földrengésekről, 10 percenként ellenőrizve, éjjel kikapcsolt képernyővel is; a felülvizsgált magnitúdó frissíti az értesítést. Alatta a környék friss földrengéseinek oldala.
+Updates by itself when the seismologists revise it.	Magától frissül, amikor a szeizmológusok felülvizsgálják.
+Value history	Az érték története
+deep earthquake	mélyfészkű földrengés
+intermediate-depth earthquake	közepes mélységű földrengés
+official	hivatalos
+revised	felülvizsgálva
+shallow earthquake	sekély földrengés
+up to ~	~
+updates by itself	magától frissül

@@ -1,6 +1,10 @@
-Geçerli sürüm: v.2.022 · 17.11.2026
+Geçerli sürüm: v.2.030 · 18.11.2026
+ANA EKRAN
+- Deprem haritası: Deprem kutusuna dokunmak merkez üssü, yerin, mesafe ve hissedilme bölgeleriyle bir harita gösterir; haritaya dokunmak onu değerin geçmişiyle birlikte büyütür. Romanya'da resmi değerler INFP'den gelir.
 AYARLAR
 - Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
+BILDIRIMLER
+- Depremler: her 10 dakikada bir, gece ekran kapalıyken de kontrol edilir; revize edilen büyüklük bildirimi günceller, bildirime dokunmak haritayı açar.
 PARSELLER
 - Ana ekranda istatistikler: operasyonel durumun altında açılır (yatayda solda); ‹ kapatır, başka bir parselin sekmesi açık tutar.
 - Geçmiş ve tahmin: göstergeyi geçmiş bir güne sürükleyin; değerleri grafiğin altındaki kutuda görünür ve 10 sn sonra bugüne döner.

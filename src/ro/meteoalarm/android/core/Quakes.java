@@ -22,6 +22,126 @@ public final class Quakes {
 		public long time;
 		/** Estimated intensity in the town (EMS-98, 1–12), below 2: not felt. */
 		public double felt;
+		/**
+		 * v2.030 (Viorel, quake of 2026-11-18): who gave the values (EMSC, INFP, USGS), when the
+		 * source last changed them (ms, 0 unknown), another id the same quake had (INFP before EMSC
+		 * had it), and the first value the app saw (NaN when it never changed).
+		 */
+		public String src = "EMSC", altId = "";
+		public long updated;
+		public double firstMag = Double.NaN;
+		public String firstSrc = "";
+		public long firstAt, changedAt;
+	}
+
+	// --- v2.030: INFP (Institutul Național de Fizica Pământului), the official values for Romania ---
+
+	/** INFP's FDSN event service (SeisComP), text format: the quakes since SINCE, magnitude 2.5 and over. */
+	public static String infpUrl(long since) {
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
+		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
+		return "https://eida-sc3.infp.ro/fdsnws/event/1/query?format=text&orderby=time&limit=300&minmagnitude=2.5&starttime="
+				+ f.format(new java.util.Date(since));
+	}
+
+	/** Romania with a little room (INFP's own quakes there count even before EMSC has them). */
+	static boolean inRomania(double la, double lo) {
+		return la > 43.6 && la < 48.3 && lo > 20.2 && lo < 29.8;
+	}
+
+	/**
+	 * INFP's text answer (EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|
+	 * ContributorID|MagType|Magnitude|MagAuthor|EventLocationName) merged into QS: a quake both have
+	 * (within 90 s and 150 km) takes INFP's magnitude, place and depth; one only INFP has, in
+	 * Romania, of magnitude 3 or more in the last WINDOW ms, is added. Distances and felt intensity
+	 * are worked out again for the town at LAT LON. True when INFP had anything usable.
+	 */
+	public static boolean mergeInfp(List<Quake> qs, String text, double lat, double lon, long now, long window) {
+		if (text == null || text.trim().length() == 0) return false;
+		List<Quake> inf = new ArrayList<Quake>();
+		for (String line : text.split("\n")) {
+			if (line.startsWith("#") || line.trim().length() == 0) continue;
+			String[] c = line.split("\\|", -1);
+			if (c.length < 11) continue;
+			Quake n = new Quake();
+			try {
+				String id = c[0].trim().replaceAll("[^A-Za-z0-9]+", "");
+				n.id = id.startsWith("infp") ? id : "infp" + id;
+				n.time = Warnings.epoch(c[1].trim());
+				n.lat = Double.parseDouble(c[2].trim());
+				n.lon = Double.parseDouble(c[3].trim());
+				n.depth = c[4].trim().length() > 0 ? Math.abs(Double.parseDouble(c[4].trim())) : 10;
+				n.magType = c[9].trim();
+				n.mag = Double.parseDouble(c[10].trim());
+			} catch (Exception e) {
+				continue;
+			}
+			if (Double.isNaN(n.mag) || n.time <= 0 || now - n.time > window || n.time - now > 600000L) continue;
+			n.region = c.length > 12 && c[12].trim().length() > 0 ? c[12].trim() : "ROMANIA";
+			n.src = "INFP";
+			inf.add(n);
+		}
+		if (inf.isEmpty()) return false;
+		// Each EMSC quake takes the closest INFP one (in time, then place); each INFP one is used once.
+		boolean[] used = new boolean[inf.size()];
+		for (Quake q : qs) {
+			int best = -1;
+			double bs = Double.MAX_VALUE;
+			for (int k = 0; k < inf.size(); k++) {
+				if (used[k]) continue;
+				Quake n = inf.get(k);
+				double dt = Math.abs(q.time - n.time) / 1000.0, dk = km(q.lat, q.lon, n.lat, n.lon);
+				if (dt > 90 || dk > 150) continue;
+				double sc = dt + dk / 5 + Math.abs(q.mag - n.mag) * 20;
+				if (sc < bs) {
+					bs = sc;
+					best = k;
+				}
+			}
+			if (best < 0) continue;
+			used[best] = true;
+			Quake n = inf.get(best);
+			q.mag = n.mag;
+			q.magType = n.magType;
+			q.lat = n.lat;
+			q.lon = n.lon;
+			q.depth = n.depth;
+			q.time = n.time;
+			q.src = "INFP";
+			q.altId = n.id;
+			q.updated = 0;
+			q.dist = km(lat, lon, q.lat, q.lon);
+			q.felt = intensity(q.mag, Math.sqrt(q.dist * q.dist + q.depth * q.depth));
+		}
+		for (int k = 0; k < inf.size(); k++) {
+			Quake n = inf.get(k);
+			if (used[k] || n.mag < MIN_MAG || !inRomania(n.lat, n.lon)) continue;
+			// INFP names the country: a quake just over the border stays out (as with EMSC).
+			if (!Warnings.fold(n.region).toUpperCase(Locale.US).contains("ROMANIA")) continue;
+			n.dist = km(lat, lon, n.lat, n.lon);
+			n.felt = intensity(n.mag, Math.sqrt(n.dist * n.dist + n.depth * n.depth));
+			qs.add(n);
+		}
+		java.util.Collections.sort(qs, new java.util.Comparator<Quake>() {
+			public int compare(Quake a, Quake b) {
+				return a.time > b.time ? -1 : a.time < b.time ? 1 : 0;
+			}
+		});
+		return true;
+	}
+
+	/**
+	 * v2.030: how far (km from the epicentre) the estimated intensity is LEVEL or more for magnitude
+	 * M at DEPTH km (intensity() rounded, so its border is LEVEL − 0.5); 0 when nowhere.
+	 */
+	public static double ringKm(double m, double depth, int level) {
+		double r = Math.pow(10, (1.5 * m + 3 - (level - 0.5)) / 3);
+		return r <= depth ? 0 : Math.sqrt(r * r - depth * depth);
+	}
+
+	/** v2.030: the Vrancea seismic zone (deep quakes under the bend of the Carpathians). */
+	public static boolean vrancea(Quake q) {
+		return q.lat > 45.3 && q.lat < 46.2 && q.lon > 26.0 && q.lon < 27.2 && q.depth >= 50;
 	}
 
 	/** The query for quakes since SINCE (epoch ms) within about 9° of LAT LON. */
@@ -77,7 +197,8 @@ public final class Quakes {
 			q.lat = Json.num(p, "lat");
 			q.lon = Json.num(p, "lon");
 			q.depth = Math.abs(Json.num(p, "depth"));
-			Object rg = p.get("flynn_region"), mt = p.get("magtype"), t = p.get("time"), id = p.get("unid");
+			Object rg = p.get("flynn_region"), mt = p.get("magtype"), t = p.get("time"), id = p.get("unid"), up = p.get("lastupdate");
+			q.updated = up instanceof String ? Warnings.epoch((String) up) : 0;
 			q.region = rg instanceof String ? (String) rg : "";
 			q.magType = mt instanceof String ? (String) mt : "";
 			q.id = id instanceof String ? (String) id : "";
@@ -169,6 +290,9 @@ public final class Quakes {
 			q.magType = mt instanceof String ? (String) mt : "";
 			q.id = id instanceof String ? (String) id : "";
 			q.time = t instanceof Number ? ((Number) t).longValue() : 0;
+			Object up = p.get("updated");
+			q.updated = up instanceof Number ? ((Number) up).longValue() : 0;
+			q.src = "USGS";
 			if (Double.isNaN(q.mag) || Double.isNaN(q.lat) || Double.isNaN(q.lon) || q.mag < min) continue;
 			if (q.time <= 0 || now - q.time > window || q.time - now > 600000L) continue;
 			if (usOnly && !namesState(q.region)) continue;

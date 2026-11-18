@@ -29,6 +29,8 @@ import ro.meteoalarm.android.core.Weather;
 final class Fetcher {
 	static final class Result {
 		String forecast, uv, pollen, warn, quake;
+		/** v2.030: INFP's answer (text) for a town in Romania, null when not asked or not come. */
+		String infp;
 		/** Farmer mode (v2.50): the farmer's forecast (Open-Meteo only), null when it did not come or is not wanted. */
 		String farm;
 		/** Where the forecast came from: "Open-Meteo" or MetNo.NAME. */
@@ -163,6 +165,15 @@ final class Fetcher {
 		r.warn = warningsFeed(ctx, c.country);
 		if (r.warn == null) Log.e(ctx, "DATE", "avertizările MeteoAlarm (" + c.country + ") nu au venit");
 		else Log.i(ctx, "DATE", "avertizări MeteoAlarm OK " + r.warn.length() / 1024 + " KB");
+		quakesInto(ctx, c, r);
+		return r;
+	}
+
+	/**
+	 * The earthquakes for a town outside the US: EMSC, and for Romania (v2.030, Viorel) also INFP,
+	 * whose values are the official ones (EMSC stays when INFP does not answer).
+	 */
+	static void quakesInto(Context ctx, Cities.City c, Result r) {
 		try {
 			r.quake = Weather.get(Quakes.url(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
 			Log.i(ctx, "DATE", "cutremure EMSC OK: " + Quakes.parse(r.quake, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis()).size() + " în țară în 24 h");
@@ -170,7 +181,77 @@ final class Fetcher {
 			r.quake = null;
 			Log.e(ctx, "DATE", "cutremure EMSC a eșuat: " + reason(e, false));
 		}
-		return r;
+		if (!infpFor(c)) return;
+		try {
+			r.infp = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
+			int n = 0;
+			for (String l : r.infp.split("\n")) if (l.length() > 0 && !l.startsWith("#")) n++;
+			Log.i(ctx, "DATE", "cutremure INFP OK: " + n + " în 24 h");
+		} catch (Exception e) {
+			r.infp = null;
+			Log.e(ctx, "DATE", "cutremure INFP a eșuat: " + reason(e, false) + " (rămân valorile EMSC)");
+		}
+	}
+
+	/** v2.030: towns in Romania get INFP's values. */
+	static boolean infpFor(Cities.City c) {
+		return c != null && !c.us() && "ro".equalsIgnoreCase(c.country);
+	}
+
+	/**
+	 * v2.030 (Viorel): the light check of the earthquakes in the background, also at night with the
+	 * screen off: only EMSC (and INFP for Romania), a few KB, then their notices.
+	 */
+	static void quakesOnly(Context ctx, Cities.City c) {
+		Result r = new Result();
+		if (c.us()) {
+			try {
+				r.quake = Weather.get(Quakes.usgsUrl(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
+			} catch (Exception e) {
+				Log.e(ctx, "US", "cutremure USGS a eșuat: " + reason(e, false));
+			}
+		} else quakesInto(ctx, c, r);
+		saveQuakes(ctx, c, r);
+		if (r.quake != null || r.infp != null) Notifier.checkQuakes(ctx, c);
+	}
+
+	/** The earthquake answers of R for town C, and each quake's first value (to show revisions). */
+	static void saveQuakes(Context ctx, Cities.City c, Result r) {
+		long now = System.currentTimeMillis();
+		if (r.quake != null) {
+			write(ctx, "quake.json", r.quake);
+			prefs(ctx).edit().putString("quakeCity", c.key()).putLong("quakeAt", now).apply();
+		}
+		if (r.infp != null) {
+			write(ctx, "infp.txt", r.infp);
+			prefs(ctx).edit().putString("infpCity", c.key()).apply();
+		}
+		if (r.quake == null && r.infp == null) return;
+		// v2.030: "qh_<id>" = first magnitude | its source | when seen | last magnitude | its source | when it changed | last seen.
+		SharedPreferences p = prefs(ctx);
+		SharedPreferences.Editor e = p.edit();
+		for (Quakes.Quake q : quakes(ctx, c)) {
+			String key = "qh_" + q.id.replaceAll("[^A-Za-z0-9]+", "");
+			String old = p.getString(key, null);
+			if (old == null && q.altId.length() > 0) old = p.getString("qh_" + q.altId.replaceAll("[^A-Za-z0-9]+", ""), null);
+			String m = String.format(java.util.Locale.US, "%.1f", q.mag);
+			String[] h = old == null ? null : old.split("\\|", -1);
+			if (h == null || h.length < 7) e.putString(key, m + "|" + q.src + "|" + now + "|" + m + "|" + q.src + "|0|" + now);
+			else if (!h[3].equals(m) || !h[4].equals(q.src)) {
+				e.putString(key, h[0] + "|" + h[1] + "|" + h[2] + "|" + m + "|" + q.src + "|" + now + "|" + now);
+				Log.i(ctx, "CUTREMUR", "valoare revizuită: M" + h[3] + " (" + h[4] + ") -> M" + m + " (" + q.src + ")");
+			} else e.putString(key, old.substring(0, old.lastIndexOf('|') + 1) + now);
+		}
+		for (java.util.Map.Entry<String, ?> en : p.getAll().entrySet()) {
+			if (!en.getKey().startsWith("qh_") || !(en.getValue() instanceof String)) continue;
+			String v = (String) en.getValue();
+			try {
+				if (now - Long.parseLong(v.substring(v.lastIndexOf('|') + 1)) > 3 * 86400000L) e.remove(en.getKey());
+			} catch (Exception x) {
+				e.remove(en.getKey());
+			}
+		}
+		e.apply();
 	}
 
 	/**
@@ -330,12 +411,9 @@ final class Fetcher {
 			write(ctx, "warn.xml", r.warn);
 			prefs(ctx).edit().putString("warnCity", c.key()).apply();
 		}
-		if (r.quake != null) {
-			write(ctx, "quake.json", r.quake);
-			prefs(ctx).edit().putString("quakeCity", c.key()).apply();
-		}
+		saveQuakes(ctx, c, r);
 		// Rain or snow starting, new warnings, earthquakes: notified once (when the user agreed).
-		if (r.forecast != null || r.warn != null || r.quake != null) Notifier.check(ctx, c);
+		if (r.forecast != null || r.warn != null || r.quake != null || r.infp != null) Notifier.check(ctx, c);
 	}
 
 	/** The time zone of town C: a US town's own (v2.50, its local time), else the phone's. */
@@ -376,10 +454,40 @@ final class Fetcher {
 	static List<Quakes.Quake> quakes(Context ctx, Cities.City c) {
 		String q = c != null && c.key().equals(prefs(ctx).getString("quakeCity", "")) ? read(ctx, "quake.json") : null;
 		try {
-			if (c != null && c.us()) return quakesOf(q, c);
-			return Quakes.parse(q, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis());
+			List<Quakes.Quake> l;
+			if (c != null && c.us()) l = quakesOf(q, c);
+			else {
+				long now = System.currentTimeMillis();
+				l = Quakes.parse(q, countryEn(ctx, c), c.lat, c.lon, now);
+				// v2.030: INFP's official values for a town in Romania.
+				if (infpFor(c) && c.key().equals(prefs(ctx).getString("infpCity", ""))) Quakes.mergeInfp(l, read(ctx, "infp.txt"), c.lat, c.lon, now, Quakes.WINDOW_MS);
+			}
+			history(ctx, l);
+			return l;
 		} catch (Exception e) {
 			return new java.util.ArrayList<Quakes.Quake>();
+		}
+	}
+
+	/** v2.030: each quake's first value seen and when its value last changed (saveQuakes()). */
+	private static void history(Context ctx, List<Quakes.Quake> l) {
+		SharedPreferences p = prefs(ctx);
+		for (Quakes.Quake q : l) {
+			String v = p.getString("qh_" + q.id.replaceAll("[^A-Za-z0-9]+", ""), null);
+			if (v == null && q.altId.length() > 0) v = p.getString("qh_" + q.altId.replaceAll("[^A-Za-z0-9]+", ""), null);
+			if (v == null) continue;
+			String[] h = v.split("\\|", -1);
+			if (h.length < 7) continue;
+			try {
+				q.firstAt = Long.parseLong(h[2]);
+				q.changedAt = Long.parseLong(h[5]);
+				if (q.changedAt > 0 && !h[0].equals(String.format(java.util.Locale.US, "%.1f", q.mag))) {
+					q.firstMag = Double.parseDouble(h[0]);
+					q.firstSrc = h[1];
+				}
+			} catch (Exception e) {
+				// no history
+			}
 		}
 	}
 

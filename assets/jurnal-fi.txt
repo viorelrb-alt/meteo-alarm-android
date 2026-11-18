@@ -1,6 +1,10 @@
-Nykyinen versio: v.2.022 · 17.11.2026
+Nykyinen versio: v.2.030 · 18.11.2026
 ASETUKSET
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
+ILMOITUKSET
+- Maanjäristykset: tarkistetaan 10 minuutin välein, myös yöllä näyttö pois päältä; tarkistettu magnitudi päivittää ilmoituksen, ja napautus siihen avaa kartan.
+PÄÄNÄYTTÖ
+- Maanjäristyksen kartta: napautus Maanjäristys-ruutuun näyttää kartan, jossa episentrumi, paikkakuntasi, etäisyys ja tuntumisalueet; napautus karttaan suurentaa sen ja näyttää arvon historian. Romaniassa viralliset arvot tulevat INFP:ltä.
 PELTOLOHKOT
 - Historia ja ennuste: vedä osoitin menneelle päivälle; sen arvot näkyvät ruudussa kaavion alla ja 10 s jälkeen se palaa tähän päivään.
 - Kuplat tilastoissa: ruiskutusikkunan tunnin, kaavioiden päivän tai maarivin napautus avaa kuplan selityksineen; ruiskutusikkuna liikkuu itsestään.

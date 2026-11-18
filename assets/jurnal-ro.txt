@@ -1,4 +1,8 @@
-Versiunea curentă: v.2.022 · 17.11.2026
+Versiunea curentă: v.2.030 · 18.11.2026
+ECRAN PRINCIPAL
+- Harta cutremurului: atingerea casetei Cutremur arată harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește, cu istoricul valorii. În România valorile oficiale vin de la INFP.
+NOTIFICĂRI
+- Cutremure: verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea, iar atingerea ei deschide harta.
 PARCELE
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.

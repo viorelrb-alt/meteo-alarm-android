@@ -1,4 +1,8 @@
-Trenutačna verzija: v.2.022 · 17.11.2026
+Trenutačna verzija: v.2.030 · 18.11.2026
+GLAVNI ZASLON
+- Karta potresa: dodir polja Potres prikazuje kartu s epicentrom, tvojim mjestom, udaljenošću i zonama osjetnosti; dodir karte je povećava, s poviješću vrijednosti. U Rumunjskoj službene vrijednosti dolaze od INFP-a.
+OBAVIJESTI
+- Potresi: provjeravaju se svakih 10 minuta, i noću s ugašenim zaslonom; revidirana magnituda ažurira obavijest, a dodir na nju otvara kartu.
 PARCELE
 - Koordinate parcele: na stranici uređivanja upisuju se GPS koordinate svake točke, a ispod satelitski prikaz pokazuje parcelu.
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.

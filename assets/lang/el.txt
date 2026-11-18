@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Ενέργεια της ημέρας: το καλύτερο παράθυρο ψεκασμού των επόμενων 24 ωρών (σήμερα ή αύριο), γιατί όχι τώρα, η βαθμολογία ψεκασμού (0–100) και ο μεγαλύτερος κίνδυνος των επόμενων 48 ωρών.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Το μολύβι επεξεργάζεται το αγροτεμάχιο: όνομα, ημερομηνία σποράς, έκταση, καλλιέργεια· το GPS κάθε σημείου πληκτρολογείται· ένα άγγιγμα στη δορυφορική προβολή ανοίγει το αγροτεμάχιο στον χάρτη, όπου τα σημεία μετακινούνται και η δισκέτα τα αποθηκεύει.
+# v2.030
+ · revised 	 · αναθεωρήθηκε 
+ · updated 	 · ενημερώθηκε 
+: probably felt	: πιθανώς έγινε αισθητός
+: probably not felt	: πιθανώς δεν έγινε αισθητός
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Ένα πάτημα στο πλαίσιο Σεισμός: χάρτης με το επίκεντρο, τον τόπο σου, την απόσταση και τις ζώνες όπου έγινε αισθητός· ένα πάτημα στον χάρτη τον μεγεθύνει.
+Big map	Μεγάλος χάρτης
+Depth	Βάθος
+Did the Android alert show another value?	Η ειδοποίηση του Android έδειξε άλλη τιμή;
+Distance	Απόσταση
+Earthquake in 	Σεισμός: 
+Earthquake map	Χάρτης του σεισμού
+Epicentre	Επίκεντρο
+Estimated felt zones	Εκτιμώμενες ζώνες αισθητότητας
+Estimated from the magnitude and the distance.	Εκτίμηση από το μέγεθος και την απόσταση.
+First: 	Πρώτη: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Ρουμανία: οι επίσημες τιμές έρχονται από το INFP (Εθνικό Ινστιτούτο Φυσικής της Γης, eida-sc3.infp.ro)· EMSC όταν το INFP δεν απαντά.
+Source: 	Πηγή: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	Αυτή είναι μια γρήγορη εκτίμηση, σε λίγα δευτερόλεπτα από τους αισθητήρες των τηλεφώνων· στους βαθιούς σεισμούς, όπως της Βράντσεα, βγαίνει συχνά μεγαλύτερη. Η τιμή εδώ έρχεται από σεισμολόγους.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Ο ισχυρότερος σεισμός των τελευταίων 24 ωρών στη χώρα σου και πώς πιθανώς έγινε αισθητός (EMSC· στη Ρουμανία οι επίσημες τιμές του INFP).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	Ο διακόπτης: ειδοποιήσεις για σεισμούς σε απόσταση έως 300 km από τον τόπο σου, με έλεγχο κάθε 10 λεπτά, και τη νύχτα με σβηστή οθόνη· ένα αναθεωρημένο μέγεθος ενημερώνει την ειδοποίηση. Από κάτω, η σελίδα των πρόσφατων σεισμών γύρω.
+Updates by itself when the seismologists revise it.	Ενημερώνεται μόνο του όταν οι σεισμολόγοι το αναθεωρούν.
+Value history	Ιστορικό της τιμής
+deep earthquake	βαθύς σεισμός
+intermediate-depth earthquake	σεισμός ενδιάμεσου βάθους
+official	επίσημο
+revised	αναθεωρήθηκε
+shallow earthquake	επιφανειακός σεισμός
+up to ~	έως ~
+updates by itself	ενημερώνεται μόνο του

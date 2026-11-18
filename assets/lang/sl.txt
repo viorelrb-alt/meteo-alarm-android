@@ -1501,3 +1501,33 @@ Statistics · PDF under the status, 1 Hourly weather, the five days, 2 Soil and 
 Action of the day: the best spray window of the next 24 hours (today or tomorrow), why not now, the spray score (0–100) and the biggest risk of the next 48 hours.	Opravilo dneva: najboljše okno za škropljenje v naslednjih 24 urah (danes ali jutri), zakaj ne zdaj, ocena škropljenja (0–100) in največje tveganje naslednjih 48 ur.
 # v2.020
 The pencil edits the parcel: name, sowing date, area, crop; the GPS of each point is typed in; a tap on the satellite view opens the parcel on the map, where its points move and the floppy saves them.	Svinčnik ureja parcelo: ime, datum setve, površino, posevek; GPS vsake točke se vpiše; dotik satelitskega pogleda odpre parcelo na zemljevidu, kjer se točke premikajo, disketa pa jih shrani.
+# v2.030
+ · revised 	 · popravljeno 
+ · updated 	 · posodobljeno 
+: probably felt	: verjetno čuten
+: probably not felt	: verjetno ni bil čuten
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	Dotik polja Potres: zemljevid z epicentrom, tvojim krajem, razdaljo in območji, kjer je bil čuten; dotik zemljevida ga poveča.
+Big map	Velik zemljevid
+Depth	Globina
+Did the Android alert show another value?	Je opozorilo Androida pokazalo drugo vrednost?
+Distance	Razdalja
+Earthquake in 	Potres: 
+Earthquake map	Zemljevid potresa
+Epicentre	Epicenter
+Estimated felt zones	Ocenjena območja čutenja
+Estimated from the magnitude and the distance.	Ocena iz magnitude in razdalje.
+First: 	Prva: 
+Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.	Romunija: uradne vrednosti prihajajo od INFP (Nacionalni inštitut za fiziko Zemlje, eida-sc3.infp.ro); EMSC, ko INFP ne odgovori.
+Source: 	Vir: 
+That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.	To je hitra ocena, narejena v nekaj sekundah iz senzorjev telefonov; pri globokih potresih, kot so tisti v Vrancei, je pogosto višja. Vrednost tukaj prihaja od seizmologov.
+The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).	Najmočnejši potres zadnjih 24 ur v tvoji državi in kako je bil verjetno čuten (EMSC; v Romuniji uradne vrednosti INFP).
+The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.	Stikalo: obvestila o potresih do 300 km od tvojega kraja, preverjena vsakih 10 minut, tudi ponoči z ugasnjenim zaslonom; popravljena magnituda posodobi obvestilo. Pod njim stran nedavnih potresov v okolici.
+Updates by itself when the seismologists revise it.	Se posodobi sama, ko jo seizmologi popravijo.
+Value history	Zgodovina vrednosti
+deep earthquake	globok potres
+intermediate-depth earthquake	srednje globok potres
+official	uradno
+revised	popravljeno
+shallow earthquake	plitek potres
+up to ~	do ~
+updates by itself	se posodobi sama

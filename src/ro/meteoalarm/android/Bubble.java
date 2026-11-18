@@ -50,6 +50,15 @@ final class Bubble extends FrameLayout implements Glass.Local {
 		static final int ITEM = 0, HEADER = 1, LINE = 2, TEXT = 3, VALUE = 4, TABLE = 5, SOURCE = 6;
 		/** v4.00 (Viorel): the box's value, big, at the top of its bubble; the explanations follow. */
 		static final int BIG = 7;
+		/** v2.030: a ready view (the earthquake's map and cards), as wide as the bubble. */
+		static final int VIEW = 8;
+		View view;
+
+		static Row view(View v) {
+			Row r = new Row("", null, VIEW, false);
+			r.view = v;
+			return r;
+		}
 
 		Row(String text, Bitmap icon, int kind, boolean checked) {
 			this.text = text;
@@ -223,11 +232,16 @@ final class Bubble extends FrameLayout implements Glass.Local {
 	/** v3.50 (Viorel): set before show(): the place an information bubble is about, under its title. */
 	String place;
 
+	/** v2.030: set before show(): a picture at the left of the title (the earthquake's magnitude). */
+	Bitmap titleIcon;
+
 	void show(float[] anchor, int width, String head, List<Row> rows, boolean en, final Pick pick) {
 		boolean pan = panel;
 		panel = false;
 		String at = place;
 		place = null;
+		Bitmap tIcon = titleIcon;
+		titleIcon = null;
 		Context c = getContext();
 		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there; +30 %, then 10 % and
 		// 5 % less in v2.20 / v2.21), and the text size of ☰.
@@ -242,6 +256,12 @@ final class Bubble extends FrameLayout implements Glass.Local {
 		title.setTextSize((hasTitle ? 19 : 4) * zk);
 		closeX.setBackground(Glass.closeIcon(dark, dp));
 		title.setTextColor(ink);
+		if (tIcon != null) {
+			BitmapDrawable td = new BitmapDrawable(getResources(), tIcon);
+			td.setBounds(0, 0, tIcon.getWidth(), tIcon.getHeight());
+			title.setCompoundDrawables(td, null, null, null);
+			title.setCompoundDrawablePadding((int) (12 * dp));
+		} else title.setCompoundDrawables(null, null, null, null);
 		where.setTextSize(15 * zk);
 		where.setTextColor(ro.meteoalarm.android.core.Theme.dim(dark));
 		where.setText(at == null ? "" : at);
@@ -275,6 +295,12 @@ final class Bubble extends FrameLayout implements Glass.Local {
 				lp.leftMargin = lp.rightMargin = (int) (16 * dp);
 				lp.topMargin = lp.bottomMargin = (int) (4 * dp);
 				list.addView(v, lp);
+				first = true;
+				continue;
+			}
+			if (r.kind == Row.VIEW) {
+				if (r.view.getParent() instanceof android.view.ViewGroup) ((android.view.ViewGroup) r.view.getParent()).removeView(r.view);
+				list.addView(r.view, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 				first = true;
 				continue;
 			}

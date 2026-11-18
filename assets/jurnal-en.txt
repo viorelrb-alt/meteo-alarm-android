@@ -1,4 +1,8 @@
-Current version: v.2.022 · 17.11.2026
+Current version: v.2.030 · 18.11.2026
+MAIN SCREEN
+- Earthquake map: a tap on the Earthquake box shows a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it, with the value's history. In Romania the official values come from INFP.
+NOTIFICATIONS
+- Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.
 PARCELS
 - Edit parcel: the pencil opens the parcel's page: name, crop (a list by the sowing date's season, or Another crop…), sowing date, area; the corners move on the map.
 - History and forecast: drag the indicator to a past day; its values show in a box under the chart and after 10 s it goes back to today.

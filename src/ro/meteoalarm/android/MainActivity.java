@@ -49,9 +49,14 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.022";
+	static final String VERSION = "Meteo Alarm Android v2.030";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
+	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
+	static final String OPEN_QUAKE = "openQuake";
+	private android.graphics.Typeface fReg, fBold;
+	/** v2.030: the earthquake's bubble is waiting to be opened (a tap on its notice). */
+	private boolean quakeWanted;
 	private static final long WEATHER_MS = Refresher.SCREEN_ON_MS, LOW_BATTERY_MS = Refresher.LOW_BATTERY_MS;
 	/** The app is on the screen (the refresh in the background then leaves the work to it). */
 	static volatile boolean onScreen;
@@ -187,8 +192,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		statsBox.setVisibility(View.GONE);
 		root.addView(statsBox, new android.widget.FrameLayout.LayoutParams(0, 0));
 		root.addView(sheet);
-		bubble = new Bubble(this, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
-				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+		quakeWanted = getIntent() != null && getIntent().getBooleanExtra(OPEN_QUAKE, false);
+		fReg = android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf");
+		fBold = android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf");
+		bubble = new Bubble(this, fReg, fBold);
 		bubble.setDark(s.dark);
 		bubble.setOnClose(new Runnable() {
 			public void run() {
@@ -1362,6 +1369,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		watchScreen(true); // v5.24: stays on until the app closes, to catch the screen turning off
 		listenNet(true);
 		view.replayIcon();
+		if (quakeWanted) handler.postDelayed(new Runnable() {
+			public void run() {
+				openQuakeIfWanted();
+			}
+		}, 700);
 		handler.removeCallbacks(tick);
 		handler.post(tick);
 		if (!prefs.getBoolean("welcomed", false)) {
@@ -1637,6 +1649,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (k < s.alertCount()) onAlert(k, s.alertRect(k));
 			}
 		};
+		if (k == 0 && s.mainQuake() != null) {
+			quakeBubble(b);
+			return;
+		}
 		List<String[]> info = s.alertInfo(k);
 		if (info.isEmpty()) return;
 		String head = info.get(0)[1];
@@ -1646,6 +1662,65 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			public void picked(int i) {
 			}
 		});
+	}
+
+	/**
+	 * v2.030 (Viorel, after the quake of 2026-11-18): the earthquake's bubble: its magnitude by the
+	 * title, a map with the epicentre, the town and the felt circles (a tap opens it on the whole
+	 * screen), distance and depth, how it was felt here, the source with its revision and why the
+	 * Android alert may differ; then the other earthquakes of the day and the sources.
+	 */
+	private void quakeBubble(float[] b) {
+		final ro.meteoalarm.android.core.Quakes.Quake q = s.mainQuake();
+		if (q == null) return;
+		final String[] t = s.quakeTexts(q);
+		float dp = getResources().getDisplayMetrics().density;
+		final float zk = (TextSize.tablet(this) ? 1.11f : 1f) * TextSize.get(this);
+		int sw = view.getWidth(), sh = view.getHeight(), w;
+		if (TextSize.tablet(this)) w = (int) Math.min(sw - 32 * dp, 0.5f * Math.min(sw, sh));
+		else w = (int) Math.min(sw - 32 * dp, sw > sh ? 900 * dp : sw);
+		final Cities.City town = s.city;
+		View body = QuakeCard.body(this, q, town, t, s.dark, fReg, fBold, zk, w, new Runnable() {
+			public void run() {
+				Log.i(MainActivity.this, "CUTREMUR", "harta mare deschisă");
+				QuakeCard.bigMap(MainActivity.this, q, town, s, s.dark, fReg, fBold, zk);
+			}
+		});
+		List<Bubble.Row> rows = new ArrayList<Bubble.Row>();
+		rows.add(Bubble.Row.view(body));
+		// The other earthquakes of the day and the sources, as before.
+		List<String[]> info = s.alertInfo(0);
+		boolean rest = false;
+		List<String[]> more = new ArrayList<String[]>();
+		more.add(new String[] { "title", "" });
+		for (int i = 1; i < info.size(); i++) {
+			String[] r = info.get(i);
+			if (r[0].equals("h") && r[1].equals(Tr.t("All in the last 24 h", "Toate în ultimele 24 h"))) rest = true;
+			if (rest || r[0].equals("s")) more.add(r);
+		}
+		if (Fetcher.infpFor(town)) more.add(new String[] { "s", Tr.t("Romania: the official values come from INFP (National Institute for Earth Physics, eida-sc3.infp.ro); EMSC when INFP does not answer.",
+				"România: valorile oficiale vin de la INFP (Institutul Național de Fizica Pământului, eida-sc3.infp.ro); EMSC când INFP nu răspunde.") });
+		rows.addAll(Bubble.info(more));
+		Log.i(this, "CUTREMUR", "bula cu hartă: M" + t[2] + " " + q.src + ", " + t[4]);
+		bubble.place = t[1];
+		bubble.titleIcon = QuakeCard.badge(t[2], t[3], 54 * dp * zk, fBold);
+		bubble.show(view.px(b), w, t[0], rows, s.T.en, new Bubble.Pick() {
+			public void picked(int i) {
+			}
+		});
+	}
+
+	/** v2.030: a tap on an earthquake notice: the town's screen and the earthquake's bubble, once the data are there. */
+	private void openQuakeIfWanted() {
+		if (!quakeWanted || view == null || s == null) return;
+		if (s.mainQuake() == null || view.getWidth() == 0) return;
+		quakeWanted = false;
+		if (s.farmer && pageId != 0) showPage(0);
+		handler.postDelayed(new Runnable() {
+			public void run() {
+				if (s.mainQuake() != null) onAlert(0, s.alertRect(0));
+			}
+		}, 500);
 	}
 
 	/**
@@ -1991,6 +2066,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	protected void onNewIntent(Intent i) {
 		super.onNewIntent(i);
 		setIntent(i);
+		if (i != null && i.getBooleanExtra(OPEN_QUAKE, false)) {
+			Log.i(this, "APP", "deschisă din notificarea de cutremur");
+			closeWindows();
+			quakeWanted = true;
+			openQuakeIfWanted();
+			return;
+		}
 		if (i == null || !i.getBooleanExtra(FROM_WIDGET, false)) return;
 		Log.i(this, "APP", "deschisă din widget");
 		closeWindows();
@@ -2177,7 +2259,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		}
 		if (r.warn != null) s.warns = Fetcher.warnings(this, c);
-		if (r.quake != null) s.quakes = Fetcher.quakes(this, c);
+		if (r.quake != null || r.infp != null) s.quakes = Fetcher.quakes(this, c);
+		if (r.quake != null || r.infp != null) openQuakeIfWanted();
 		if (r.farm != null) {
 			try {
 				s.farm = ro.meteoalarm.android.core.Farm.parse(r.farm);
@@ -3596,7 +3679,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("chart"), Tr.t("Precipitation chart", "Graficul de precipitații"), Tr.t("A tap on the precipitation chart or on a 4-hour box shows each hour's chance and amount (mm), then explains the chart.",
 				"Atingerea graficului de precipitații sau a unei casete de 4 ore arată probabilitatea și cantitatea (mm) pentru fiecare oră, apoi explică graficul."));
 		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
-				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC)."));
+				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP)."));
+		help.entry(mini("quake"), Tr.t("Earthquake map", "Harta cutremurului"), Tr.t("A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.",
+				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));
@@ -3624,8 +3709,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.",
 				"Butoane în ☰, câte 2 pe rând: engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi din UE, româna și limba telefonului. În SUA doar engleza și spaniola."));
 		help.entry(mini("autoloc"), Tr.t("Auto location", "Localizare auto"), Tr.t("Turns automatic location on or off (the same as the location button).", "Pornește sau oprește localizarea automată (la fel ca butonul de localizare)."));
-		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The switch: notifications of earthquakes within 300 km of your place. Under it, the page of the recent earthquakes around, with time, place, magnitude and distance.",
-				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău. Sub el, pagina cutremurelor recente din jur, cu ora, locul, magnitudinea și distanța."));
+		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.",
+				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău, verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea. Sub el, pagina cutremurelor recente din jur."));
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("The switch: notifications of the tornado warnings for your town (NWS). Under it, the alerts and reports around and what to do.",
 				"Comutatorul: notificări pentru avertizările de tornadă ale localității tale (NWS). Sub el, alertele și raportările din jur și ce faci."));
 		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată."));

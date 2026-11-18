@@ -536,7 +536,8 @@ final class MapView extends View {
 	/** The tiles of the screen; BARE: only loaded ones (no enlarged stand-ins). True when all were there. */
 	private boolean drawTiles(Canvas c, int w, int h, boolean bare) {
 		boolean all = true;
-		c.drawColor(dark ? 0xFF3A3A38 : 0xFFE8E4DC);
+		c.drawColor(night ? 0xFF1B2430 : dark ? 0xFF3A3A38 : 0xFFE8E4DC);
+		if (night && style == 0) paint.setColorFilter(NIGHT);
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
 		float ts = (float) (tile * Math.pow(2, zoom - z));
 		double world = ts * Math.pow(2, z);
@@ -570,6 +571,7 @@ final class MapView extends View {
 				}
 			}
 		}
+		paint.setColorFilter(null);
 		return all;
 	}
 
@@ -593,7 +595,8 @@ final class MapView extends View {
 			paint.setColor(0xFF2F6BEA);
 			c.drawCircle(mx, my, 5 * dp, paint);
 		}
-		if (pins == null) drawPin(c, w / 2f, h / 2f);
+		if (quake != null) drawQuake(c, world, left, top);
+		else if (pins == null) drawPin(c, w / 2f, h / 2f);
 		else {
 			paint.setTextSize(13 * dp);
 			paint.setFakeBoldText(true);
@@ -629,6 +632,232 @@ final class MapView extends View {
 		c.drawRect(w - aw - 10 * dp, h - 18 * dp, w, h, paint);
 		paint.setColor(0xFF333333);
 		c.drawText(att, w - aw - 5 * dp, h - 5 * dp, paint);
+	}
+
+	// --- v2.030 (Viorel, the quake of 2026-11-18): an earthquake on the map -------------------------
+
+	/** The OpenStreetMap tiles darkened for the dark theme: inverted, the colours turned back, a bit dimmer. */
+	private static final android.graphics.ColorMatrixColorFilter NIGHT = new android.graphics.ColorMatrixColorFilter(new float[] {
+			0.574f * 0.85f, -1.430f * 0.85f, -0.144f * 0.85f, 0, 255 * 0.85f,
+			-0.426f * 0.85f, -0.430f * 0.85f, -0.144f * 0.85f, 0, 255 * 0.85f,
+			-0.426f * 0.85f, -1.430f * 0.85f, 0.856f * 0.85f, 0, 255 * 0.85f,
+			0, 0, 0, 1, 0 });
+	private boolean night;
+
+	/** v2.030: dark tiles (the earthquake's map in the dark theme). */
+	void setNight(boolean on) {
+		night = on;
+		invalidate();
+	}
+
+	/**
+	 * What the earthquake's map shows: the epicentre, the town with the dashed line and the
+	 * distance between them, and the circles where the estimated intensity is LAB[i] or more (KM[i]
+	 * from the epicentre, colour COL[i]).
+	 */
+	static final class QuakeMark {
+		double lat, lon, tLat = Double.NaN, tLon = Double.NaN;
+		String town = "", dist = "", epi = "";
+		double[] km = new double[0];
+		String[] lab = new String[0];
+		int[] col = new int[0];
+	}
+
+	private QuakeMark quake;
+
+	void setQuake(QuakeMark q) {
+		quake = q;
+		pins = new java.util.ArrayList<Pin>();
+		invalidate();
+	}
+
+	/**
+	 * Zoomed on the earthquake inside the map less L, T, R, B pixels: WIDE shows its largest circle
+	 * (up to 700 km), else the epicentre and the town with some room round them.
+	 */
+	void fitQuake(boolean wide, float l, float t, float r, float b) {
+		if (quake == null) return;
+		if (getWidth() == 0) {
+			final boolean w2 = wide;
+			final float l2 = l, t2 = t, r2 = r, b2 = b;
+			post(new Runnable() {
+				public void run() {
+					if (getWidth() > 0) fitQuake(w2, l2, t2, r2, b2);
+				}
+			});
+			return;
+		}
+		QuakeMark q = quake;
+		double la0 = q.lat, la1 = q.lat, lo0 = q.lon, lo1 = q.lon;
+		boolean town = !Double.isNaN(q.tLat);
+		if (town) {
+			la0 = Math.min(la0, q.tLat);
+			la1 = Math.max(la1, q.tLat);
+			lo0 = Math.min(lo0, q.tLon);
+			lo1 = Math.max(lo1, q.tLon);
+		}
+		double rk = 60;
+		if (wide) for (double k : q.km) if (k <= 700) rk = Math.max(rk, k);
+		double cos = Math.max(0.2, Math.cos(Math.toRadians(q.lat)));
+		double dla = rk / 111.2, dlo = rk / (111.2 * cos);
+		if (wide) {
+			la0 = Math.min(la0, q.lat - dla);
+			la1 = Math.max(la1, q.lat + dla);
+			lo0 = Math.min(lo0, q.lon - dlo);
+			lo1 = Math.max(lo1, q.lon + dlo);
+		} else {
+			// The two points with a quarter more round them (at least 40 km).
+			double ma = Math.max((la1 - la0) * 0.25, 40 / 111.2), mo = Math.max((lo1 - lo0) * 0.25, 40 / (111.2 * cos));
+			la0 -= ma;
+			la1 += ma;
+			lo0 -= mo;
+			lo1 += mo;
+		}
+		touched = false;
+		fitCorners(new double[] { la0, lo0, la1, lo1 }, q.lat, q.lon, l, t, r, b);
+	}
+
+	private void drawQuake(Canvas c, double world, double left, double top) {
+		QuakeMark q = quake;
+		float ex = (float) (wx(q.lon, world) - left), ey = (float) (wy(q.lat, world) - top);
+		// Pixels per km at the epicentre's latitude.
+		double pk = world / (40075.0 * Math.cos(Math.toRadians(q.lat)));
+		Paint p = paint;
+		p.setStyle(Paint.Style.FILL);
+		android.graphics.DashPathEffect dash = new android.graphics.DashPathEffect(new float[] { 6 * dp, 5 * dp }, 0);
+		// The circles, the largest first.
+		for (int i = q.km.length - 1; i >= 0; i--) {
+			float r = (float) (q.km[i] * pk);
+			if (r < 4 * dp) continue;
+			p.setStyle(Paint.Style.FILL);
+			p.setColor((q.col[i] & 0x00FFFFFF) | 0x16000000);
+			c.drawCircle(ex, ey, r, p);
+			p.setStyle(Paint.Style.STROKE);
+			p.setStrokeWidth(1.8f * dp);
+			p.setPathEffect(dash);
+			p.setColor((q.col[i] & 0x00FFFFFF) | 0xD0000000);
+			c.drawCircle(ex, ey, r, p);
+			p.setPathEffect(null);
+		}
+		// Their labels, up and to the right on each circle, where they are on the map.
+		p.setStyle(Paint.Style.FILL);
+		p.setTextSize(11 * dp);
+		p.setFakeBoldText(true);
+		for (int i = 0; i < q.km.length; i++) {
+			float r = (float) (q.km[i] * pk);
+			if (r < 14 * dp) continue;
+			float lx = ex + r * 0.819f, ly = ey - r * 0.574f;
+			if (lx < 12 * dp || lx > getWidth() - 12 * dp || ly < 10 * dp || ly > getHeight() - 10 * dp) {
+				lx = ex;
+				ly = ey - r;
+				if (ly < 10 * dp) continue;
+			}
+			float tw = p.measureText(q.lab[i]), hw = Math.max(11 * dp, tw / 2 + 6 * dp);
+			p.setColor(0x66000000);
+			c.drawRoundRect(new RectF(lx - hw, ly - 8 * dp + 1.5f * dp, lx + hw, ly + 8 * dp + 1.5f * dp), 8 * dp, 8 * dp, p);
+			p.setColor(q.col[i]);
+			c.drawRoundRect(new RectF(lx - hw, ly - 8 * dp, lx + hw, ly + 8 * dp), 8 * dp, 8 * dp, p);
+			p.setColor(0xFF111111);
+			c.drawText(q.lab[i], lx - tw / 2, ly + 4 * dp, p);
+		}
+		float tx = Float.NaN, ty = Float.NaN;
+		if (!Double.isNaN(q.tLat)) {
+			tx = (float) (wx(q.tLon, world) - left);
+			ty = (float) (wy(q.tLat, world) - top);
+			// The dashed line to the town and the distance in a pill in its middle.
+			p.setStyle(Paint.Style.STROKE);
+			p.setStrokeWidth(2 * dp);
+			p.setPathEffect(new android.graphics.DashPathEffect(new float[] { 5 * dp, 5 * dp }, 0));
+			p.setColor(0x80000000);
+			c.drawLine(ex + dp, ey + dp, tx + dp, ty + dp, p);
+			p.setColor(0xF0FFFFFF);
+			c.drawLine(ex, ey, tx, ty, p);
+			p.setPathEffect(null);
+			p.setStyle(Paint.Style.FILL);
+			if (q.dist.length() > 0 && Math.hypot(tx - ex, ty - ey) > 60 * dp) {
+				p.setTextSize(13 * dp);
+				p.setFakeBoldText(true);
+				float tw = p.measureText(q.dist), mx = (ex + tx) / 2 + tw / 2 + 12 * dp, my = (ey + ty) / 2;
+				RectF pill = new RectF(mx - tw / 2 - 10 * dp, my - 12 * dp, mx + tw / 2 + 10 * dp, my + 12 * dp);
+				p.setColor(0xEE0F172A);
+				c.drawRoundRect(pill, 12 * dp, 12 * dp, p);
+				p.setStyle(Paint.Style.STROKE);
+				p.setStrokeWidth(dp);
+				p.setColor(0x80FFFFFF);
+				c.drawRoundRect(pill, 12 * dp, 12 * dp, p);
+				p.setStyle(Paint.Style.FILL);
+				p.setColor(0xFFFFFFFF);
+				c.drawText(q.dist, mx - tw / 2, my + 4.5f * dp, p);
+			}
+		}
+		// The epicentre: a soft red glow, a ring and a red disc with a seismograph's line.
+		p.setStyle(Paint.Style.FILL);
+		p.setShader(new android.graphics.RadialGradient(ex, ey, 30 * dp, 0x88EF4444, 0x00EF4444, android.graphics.Shader.TileMode.CLAMP));
+		c.drawCircle(ex, ey, 30 * dp, p);
+		p.setShader(null);
+		p.setStyle(Paint.Style.STROKE);
+		p.setStrokeWidth(2 * dp);
+		p.setColor(0x99EF4444);
+		c.drawCircle(ex, ey, 15 * dp, p);
+		p.setStyle(Paint.Style.FILL);
+		p.setColor(0xFFEF4444);
+		c.drawCircle(ex, ey, 10 * dp, p);
+		p.setStyle(Paint.Style.STROKE);
+		p.setColor(0xFFFFFFFF);
+		p.setStrokeWidth(2 * dp);
+		c.drawCircle(ex, ey, 10 * dp, p);
+		Path zz = new Path();
+		zz.moveTo(ex - 6 * dp, ey);
+		zz.lineTo(ex - 3.5f * dp, ey);
+		zz.lineTo(ex - 2 * dp, ey - 4 * dp);
+		zz.lineTo(ex + 0.5f * dp, ey + 4 * dp);
+		zz.lineTo(ex + 2.5f * dp, ey - 1.5f * dp);
+		zz.lineTo(ex + 3.5f * dp, ey);
+		zz.lineTo(ex + 6 * dp, ey);
+		p.setStrokeWidth(1.5f * dp);
+		p.setStrokeJoin(Paint.Join.ROUND);
+		c.drawPath(zz, p);
+		p.setStyle(Paint.Style.FILL);
+		p.setTextSize(12 * dp);
+		p.setFakeBoldText(true);
+		if (q.epi.length() > 0) {
+			float tw = p.measureText(q.epi);
+			float lx = ex - 16 * dp - tw, ly = ey - 14 * dp;
+			if (lx < 4 * dp) lx = ex + 16 * dp;
+			p.setColor(0xB0000000);
+			c.drawText(q.epi, lx + dp, ly + dp, p);
+			p.setColor(0xFFFECACA);
+			c.drawText(q.epi, lx, ly, p);
+		}
+		// The town: a blue pin with its name.
+		if (!Float.isNaN(tx)) {
+			float r = 8.5f * dp, cy = ty - 15 * dp;
+			Path pin = new Path();
+			pin.moveTo(tx, ty);
+			pin.lineTo(tx - r * 0.75f, cy + r * 0.55f);
+			pin.lineTo(tx + r * 0.75f, cy + r * 0.55f);
+			pin.close();
+			p.setColor(0x55000000);
+			c.drawOval(new RectF(tx - 5 * dp, ty - 2 * dp, tx + 5 * dp, ty + 2 * dp), p);
+			p.setColor(0xFF60A5FA);
+			c.drawPath(pin, p);
+			c.drawCircle(tx, cy, r, p);
+			p.setStyle(Paint.Style.STROKE);
+			p.setColor(0xFFFFFFFF);
+			p.setStrokeWidth(1.6f * dp);
+			c.drawCircle(tx, cy, r, p);
+			p.setStyle(Paint.Style.FILL);
+			c.drawCircle(tx, cy, 3 * dp, p);
+			p.setTextSize(13 * dp);
+			float tw = p.measureText(q.town), lx = tx + 12 * dp;
+			if (lx + tw > getWidth() - 4 * dp) lx = tx - 12 * dp - tw;
+			p.setColor(0xB0000000);
+			c.drawText(q.town, lx + dp, cy + 5 * dp + dp, p);
+			p.setColor(night || dark ? 0xFFFFFFFF : 0xFF0F172A);
+			c.drawText(q.town, lx, cy + 5 * dp, p);
+		}
+		p.setFakeBoldText(false);
+		p.setStrokeJoin(Paint.Join.MITER);
 	}
 
 	/** v6.10: the focused pin's bubble with its name, its tip at X, Y (above the pin's head). */

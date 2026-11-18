@@ -29,3 +29,5 @@ One row under the town: the earthquake, then the warnings by colour. A tap shows
 6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.	6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colors; they move for 3 seconds. The widgets take the same icons.
 # v2.001
 On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's centre.	On the map the corners move with a finger; + Point, Circle and the long press work there too. The weather comes from the parcel's center.
+A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.	A tap on the Earthquake box: a map with the epicenter, your town, the distance and the felt zones; a tap on the map enlarges it.
+Epicentre	Epicenter

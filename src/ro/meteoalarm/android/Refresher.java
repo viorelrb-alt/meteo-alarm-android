@@ -25,6 +25,9 @@ public final class Refresher extends BroadcastReceiver {
 	static final long SCREEN_ON_MS = 15 * 60000L, SCREEN_OFF_MS = 30 * 60000L, LOW_BATTERY_MS = 60 * 60000L;
 	static final int LOW_BATTERY = 25;
 	private static final String ACTION = "ro.meteoalarm.android.REFRESH";
+	/** v2.030 (Viorel): the light earthquake check, every 10 minutes, also at night with the screen off. */
+	private static final String QUAKE = "ro.meteoalarm.android.QUAKE";
+	static final long QUAKE_MS = 10 * 60000L;
 
 	@Override
 	public void onReceive(final Context ctx, Intent intent) {
@@ -40,6 +43,22 @@ public final class Refresher extends BroadcastReceiver {
 			Log.i(app, "APP", "aplicația a fost actualizată la " + MainActivity.VERSION);
 		}
 		if (Intent.ACTION_BOOT_COMPLETED.equals(act)) Log.i(app, "APP", "telefonul a pornit");
+		if (QUAKE.equals(act)) {
+			final PendingResult qd = goAsync();
+			new Thread(new Runnable() {
+				public void run() {
+					try {
+						quakeCheck(app);
+					} catch (Exception e) {
+						Log.e(app, "FUNDAL", "verificarea cutremurelor", e);
+					} finally {
+						scheduleQuake(app);
+						qd.finish();
+					}
+				}
+			}).start();
+			return;
+		}
 		final PendingResult done = goAsync();
 		new Thread(new Runnable() {
 			public void run() {
@@ -168,6 +187,42 @@ public final class Refresher extends BroadcastReceiver {
 	}
 
 	/**
+	 * v2.030 (Viorel, the quake of 2026-11-18 was learned 5 minutes late, the phone being asleep):
+	 * only the earthquakes (EMSC, and INFP in Romania; a few KB), when their notices are on, the app
+	 * is closed and they are older than 9 minutes.
+	 */
+	private static void quakeCheck(Context ctx) {
+		if (!Notifier.on(ctx) || !Notifier.quakes(ctx)) return;
+		if (MainActivity.onScreen) return;
+		SharedPreferences p = Fetcher.prefs(ctx);
+		if (System.currentTimeMillis() - p.getLong("quakeAt", 0) < QUAKE_MS - 60000L) return;
+		if (!NetJob.online(ctx)) return;
+		Cities.City c = Cities.City.fromKey(p.getString("city", ""));
+		if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
+		if (c == null) return;
+		boolean[] st = state(ctx);
+		Log.i(ctx, "FUNDAL", "cutremure · verificare ușoară · " + (st[0] ? "ecran aprins" : "ecran stins") + (st[2] ? ", noapte" : ", zi"));
+		Fetcher.quakesOnly(ctx, c);
+	}
+
+	/** v2.030: the next light earthquake check in 10 minutes (none while their notices are off). */
+	static void scheduleQuake(Context ctx) {
+		AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
+		if (am == null) return;
+		Intent i = new Intent(ctx, Refresher.class).setAction(QUAKE);
+		PendingIntent pi = PendingIntent.getBroadcast(ctx, 8, i, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		try {
+			if (!Notifier.on(ctx) || !Notifier.quakes(ctx)) {
+				am.cancel(pi);
+				return;
+			}
+			am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + QUAKE_MS, pi);
+		} catch (Exception e) {
+			Log.e(ctx, "FUNDAL", "alarma pentru cutremure nu a putut fi pusă", e);
+		}
+	}
+
+	/**
 	 * The next look. Paused (night, screen off): an alarm that does not wake the phone, so it comes
 	 * as soon as the phone is woken (the screen on), then it fetches if the weather is old.
 	 */
@@ -176,6 +231,7 @@ public final class Refresher extends BroadcastReceiver {
 		if (am == null) return;
 		Intent i = new Intent(ctx, Refresher.class).setAction(ACTION);
 		PendingIntent pi = PendingIntent.getBroadcast(ctx, 7, i, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		scheduleQuake(ctx);
 		boolean[] st = state(ctx);
 		long every = every(st), at = System.currentTimeMillis();
 		try {
