@@ -226,6 +226,7 @@ public final class Screen {
 		parts = 0;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
+		rain.area[2] = 0; // v2.052: no rain row hits left from a parcel's page
 		hs = 1;
 		if (nightClock) {
 			drawNightClock(ch);
@@ -590,7 +591,8 @@ public final class Screen {
 			drawNextHours(x, y, wd, 264, false);
 			chartFull = false;
 			y += 264;
-			if (farmer) {
+			// v2.052 (Viorel): the rain row only on a parcel's page; a town's page as in normal mode.
+			if (pc) {
 				drawRainRow(x, y + 16, wd, 198);
 				y += 16 + 198;
 			}
@@ -1261,15 +1263,16 @@ public final class Screen {
 			footer(fb);
 			return;
 		}
-		float avail = (fb - 14) / bs - by, hh = farmer ? Math.min(420, (avail - ih - 28) / 2) : Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
+		boolean fp = farmer && parcel != null; // v2.052: a town's page as in normal mode
+		float avail = (fb - 14) / bs - by, hh = fp ? Math.min(420, (avail - ih - 28) / 2) : Math.min(300, (avail - ih - 28) / 2), dh = avail - ih - 28 - hh;
 		drawNextHours(bx, by, bw, hh, true);
 		for (int k = 0; k < 4; k++) hours.area[k] *= bs;
 		float dy = by + hh + 14, dw = (bw - 4 * 12) / 5;
-		if (farmer) {
+		if (fp) {
 			drawRainRow(bx, dy, bw, dh);
 			for (int k = 0; k < 4; k++) rain.area[k] *= bs;
 		}
-		for (int k = 0; k < (farmer ? 0 : 5); k++) {
+		for (int k = 0; k < (fp ? 0 : 5); k++) {
 			float x = bx + k * (dw + 12), cx = x + dw / 2;
 			box(x, dy, dw, dh, 44);
 			if (k >= w.dayDates.size()) continue;
