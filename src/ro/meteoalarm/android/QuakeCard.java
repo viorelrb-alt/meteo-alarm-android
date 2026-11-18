@@ -18,6 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import ro.meteoalarm.android.core.Cities;
@@ -296,15 +297,30 @@ final class QuakeCard {
 		barL.leftMargin = barL.rightMargin = (int) (12 * dp);
 		barL.topMargin = (int) (36 * dp);
 		root.addView(bar, barL);
-		// At the bottom: the circles' legend and the value's history.
-		LinearLayout sheet = new LinearLayout(ctx);
+		// At the bottom: the circles' legend and the value's history. v2.031 (Viorel): the sheet
+		// opens small, down to the history's box; dragging its handle up (or a tap) shows the legend
+		// too (scrolling when it is taller than the room), dragging it down makes it small again.
+		final Pull sheet = new Pull(ctx, dp);
 		sheet.setOrientation(LinearLayout.VERTICAL);
-		sheet.setPadding((int) (14 * dp), (int) (12 * dp), (int) (14 * dp), (int) (12 * dp));
+		android.animation.LayoutTransition lt = new android.animation.LayoutTransition();
+		lt.enableTransitionType(android.animation.LayoutTransition.CHANGING);
+		sheet.setLayoutTransition(lt);
+		sheet.setPadding((int) (14 * dp), (int) (6 * dp), (int) (14 * dp), (int) (12 * dp));
 		sheet.setBackground(Glass.panelBg(dark, 22 * dp, dp));
 		sheet.setClickable(true);
+		// The same handle as the ☰ menu's Sistem & Suport bar.
+		View grip = new View(ctx);
+		grip.setBackground(Glass.pill(Glass.alpha(ink, 0.3f), 0, 3 * dp, dp));
+		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(Math.round(40 * dp), Math.round(5 * dp));
+		gl.gravity = Gravity.CENTER_HORIZONTAL;
+		gl.topMargin = Math.round(2 * dp);
+		gl.bottomMargin = Math.round(6 * dp);
+		sheet.addView(grip, gl);
+		LinearLayout legend = new LinearLayout(ctx);
+		legend.setOrientation(LinearLayout.VERTICAL);
 		TextView h1 = text(ctx, t[20].toUpperCase(), 11 * zk, bold, dim);
 		h1.setLetterSpacing(0.06f);
-		sheet.addView(h1);
+		legend.addView(h1);
 		int[] lvs = Screen.quakeLevels(q);
 		for (int lv : lvs) {
 			LinearLayout row = new LinearLayout(ctx);
@@ -320,13 +336,19 @@ final class QuakeCard {
 			row.addView(w, wl);
 			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			rl.topMargin = (int) (6 * dp);
-			sheet.addView(row, rl);
+			legend.addView(row, rl);
 		}
 		View line = new View(ctx);
 		line.setBackgroundColor(Glass.edge(dark));
 		LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, (int) dp));
 		ll.topMargin = ll.bottomMargin = (int) (10 * dp);
-		sheet.addView(line, ll);
+		legend.addView(line, ll);
+		final MaxScroll ls = new MaxScroll(ctx);
+		ls.setVerticalScrollBarEnabled(false);
+		ls.setOverScrollMode(View.OVER_SCROLL_NEVER);
+		ls.addView(legend);
+		ls.setVisibility(View.GONE);
+		sheet.addView(ls, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		TextView h2 = text(ctx, t[21].toUpperCase(), 11 * zk, bold, dim);
 		h2.setLetterSpacing(0.06f);
 		sheet.addView(h2);
@@ -345,16 +367,109 @@ final class QuakeCard {
 		shL.leftMargin = shL.rightMargin = (int) (12 * dp);
 		shL.bottomMargin = (int) (26 * dp);
 		root.addView(sheet, shL);
+		final FrameLayout rootF = root;
+		final View barV = bar;
+		final View histV = hist, h2V = h2;
+		// Pulled up the legend shows, pulled down only the history (as the ☰ menu's Sistem & Suport bar).
+		sheet.legend = ls;
+		sheet.toggle = new Runnable() {
+			public void run() {
+				boolean want = sheet.open;
+				if (want) ls.max = rootF.getHeight() - barV.getBottom() - (int) (12 * dp) - shL.bottomMargin - sheet.getPaddingTop() - sheet.getPaddingBottom()
+						- (int) (24 * dp) - h2V.getHeight() - histV.getHeight();
+				ls.scrollTo(0, 0);
+				ls.setVisibility(want ? View.VISIBLE : View.GONE);
+			}
+		};
 		d.setContentView(root);
 		Window w = d.getWindow();
 		if (w != null) w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
 		d.show();
-		// The largest circle in sight, between the bar and the sheet (measured once laid out).
+		// The largest circle in sight, between the bar and the small sheet (measured once laid out).
 		root.post(new Runnable() {
 			public void run() {
-				mv.fitQuake(true, 20 * dp, 36 * dp + 70 * dp, 20 * dp, 230 * dp);
+				float top = barV.getBottom() > 0 ? barV.getBottom() + 10 * dp : 106 * dp;
+				float bottom = sheet.getHeight() > 0 ? rootF.getHeight() - sheet.getTop() + 10 * dp : 230 * dp;
+				mv.fitQuake(true, 20 * dp, top, 20 * dp, bottom);
 			}
 		});
+	}
+
+	/**
+	 * v2.031 (Viorel): the big map's sheet moves like the ☰ menu's Sistem & Suport bar: a drag of
+	 * 24 dp up opens it (the legend shows), down closes it, a tap on its handle switches it.
+	 */
+	private static class Pull extends LinearLayout {
+		final float dp;
+		float y0;
+		boolean drag, open;
+		ScrollView legend;
+		Runnable toggle;
+
+		Pull(Context c, float dp) {
+			super(c);
+			this.dp = dp;
+		}
+
+		void setOpen(boolean o) {
+			if (open == o) return;
+			open = o;
+			if (toggle != null) toggle.run();
+		}
+
+		@Override
+		public boolean onInterceptTouchEvent(MotionEvent e) {
+			// The legend's own scrolling wins while it is open and can scroll.
+			if (e.getActionMasked() == MotionEvent.ACTION_DOWN && open && legend != null && legend.getVisibility() == VISIBLE
+					&& e.getY() >= legend.getTop() && e.getY() < legend.getBottom() && legend.canScrollVertically(1) | legend.canScrollVertically(-1)) {
+				y0 = Float.NaN;
+				return false;
+			}
+			return track(e);
+		}
+
+		@Override
+		public boolean onTouchEvent(MotionEvent e) {
+			track(e);
+			return true;
+		}
+
+		private boolean track(MotionEvent e) {
+			switch (e.getActionMasked()) {
+			case MotionEvent.ACTION_DOWN:
+				y0 = e.getRawY();
+				drag = false;
+				break;
+			case MotionEvent.ACTION_MOVE:
+				if (Float.isNaN(y0)) return false;
+				float d = e.getRawY() - y0;
+				if (!drag && Math.abs(d) > 12 * dp) drag = true;
+				if (drag && Math.abs(d) > 24 * dp) {
+					setOpen(d < 0);
+					y0 = e.getRawY();
+				}
+				break;
+			case MotionEvent.ACTION_UP:
+				if (!drag && !Float.isNaN(y0) && e.getY() < 22 * dp) setOpen(!open);
+				break;
+			}
+			return drag;
+		}
+	}
+
+	/** A scroll view no taller than MAX pixels (0 = as tall as its content). */
+	private static class MaxScroll extends ScrollView {
+		int max;
+
+		MaxScroll(Context c) {
+			super(c);
+		}
+
+		@Override
+		protected void onMeasure(int wSpec, int hSpec) {
+			if (max > 0) hSpec = MeasureSpec.makeMeasureSpec(max, MeasureSpec.AT_MOST);
+			super.onMeasure(wSpec, hSpec);
+		}
 	}
 
 	/** "First: 5,1 (EMSC, 02:51) · …" -> "First" (the history cell's label). */

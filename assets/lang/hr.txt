@@ -1531,3 +1531,5 @@ revised	revidirano
 shallow earthquake	plitki potres
 up to ~	do ~
 updates by itself	ažurira se sama
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Na velikoj karti povucite donji prozor prema gore da vidite zone osjeta.

@@ -1531,3 +1531,5 @@ revised	ревизирано
 shallow earthquake	плитко земетресение
 up to ~	до ~
 updates by itself	обновява се сама
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	На голямата карта издърпайте долния прозорец нагоре, за да видите зоните на усещане.

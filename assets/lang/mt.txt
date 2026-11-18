@@ -1531,3 +1531,5 @@ revised	rivedut
 shallow earthquake	terremot baxx
 up to ~	sa ~
 updates by itself	jaġġorna waħdu
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Fuq il-mappa l-kbira, kaxkar it-tieqa t’isfel ’il fuq biex tara ż-żoni fejn inħass.

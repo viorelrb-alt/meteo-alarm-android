@@ -1,4 +1,4 @@
-Current version: v.2.030 · 18.11.2026
+Current version: v.2.031 · 18.11.2026
 MAIN SCREEN
 - Earthquake map: a tap on the Earthquake box shows a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it, with the value's history. In Romania the official values come from INFP.
 NOTIFICATIONS

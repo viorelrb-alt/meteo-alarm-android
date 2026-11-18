@@ -1531,3 +1531,5 @@ revised	revidiert
 shallow earthquake	Flachbeben
 up to ~	bis ~
 updates by itself	aktualisiert sich selbst
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Auf der großen Karte das untere Fenster nach oben ziehen, um die Spürbarkeitszonen zu sehen.

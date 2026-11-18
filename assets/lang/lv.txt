@@ -1531,3 +1531,5 @@ revised	precizēts
 shallow earthquake	sekla zemestrīce
 up to ~	līdz ~
 updates by itself	atjauninās pati
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Lielajā kartē velciet apakšējo logu uz augšu, lai redzētu sajūtamības zonas.

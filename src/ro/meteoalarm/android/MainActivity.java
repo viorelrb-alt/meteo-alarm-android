@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.030";
+	static final String VERSION = "Meteo Alarm Android v2.031";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3681,7 +3681,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), us ? Tr.t("The strongest earthquake of the last 24 hours within 300 miles (USGS).", "Cel mai puternic cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS).")
 				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP)."));
 		help.entry(mini("quake"), Tr.t("Earthquake map", "Harta cutremurului"), Tr.t("A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.",
-				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește."));
+				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește.")
+				+ " " + Tr.t("On the big map, drag the window at the bottom up to see the felt zones.", "Pe harta mare, trage fereastra de jos în sus pentru zonele resimțite."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));

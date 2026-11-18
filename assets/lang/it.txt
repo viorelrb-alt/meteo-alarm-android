@@ -1531,3 +1531,5 @@ revised	rivisto
 shallow earthquake	terremoto superficiale
 up to ~	fino a ~
 updates by itself	si aggiorna da solo
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Sulla mappa grande, trascina in su la finestra in basso per vedere le zone di avvertimento.

@@ -1531,3 +1531,5 @@ revised	zrewidowano
 shallow earthquake	płytkie trzęsienie
 up to ~	do ~
 updates by itself	aktualizuje się samo
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Na dużej mapie przeciągnij dolne okno w górę, aby zobaczyć strefy odczuwalności.

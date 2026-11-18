@@ -150,9 +150,11 @@ final class Bubble extends FrameLayout implements Glass.Local {
 		xl.gravity = Gravity.TOP;
 		top.addView(closeX, xl);
 		card.addView(top, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-		where = text(c, 15, false);
-		where.setSingleLine(true);
-		where.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		// v2.031 (Viorel): the place line keeps to the bubble's width: up to 2 rows, whole words,
+		// smaller when even 2 rows are not enough (the earthquake's date and time were cut).
+		where = new FitText(c, 2, 0.7f);
+		where.setTextSize(15);
+		where.setTypeface(reg);
 		where.setPadding((int) (20 * dp), 0, (int) (16 * dp), (int) (8 * dp));
 		card.addView(where);
 		scroll = new ScrollView(c);

@@ -1465,3 +1465,5 @@ revised	revize edildi
 shallow earthquake	sığ deprem
 up to ~	~
 updates by itself	kendiliğinden güncellenir
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Büyük haritada, hissedilme bölgelerini görmek için alttaki pencereyi yukarı çekin.

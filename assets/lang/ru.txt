@@ -1465,3 +1465,5 @@ revised	уточнено
 shallow earthquake	мелкофокусное землетрясение
 up to ~	до ~
 updates by itself	обновляется само
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	На большой карте потяните нижнее окно вверх, чтобы увидеть зоны ощутимости.

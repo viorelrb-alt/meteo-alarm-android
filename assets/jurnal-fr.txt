@@ -1,4 +1,4 @@
-Version actuelle : v.2.030 · 18.11.2026
+Version actuelle : v.2.031 · 18.11.2026
 ÉCRAN PRINCIPAL
 - Carte du séisme : un appui sur la case Séisme montre une carte avec l'épicentre, ta ville, la distance et les zones de ressenti ; un appui sur la carte l'agrandit, avec l'historique de la valeur. En Roumanie, les valeurs officielles viennent de l'INFP.
 NOTIFICATIONS

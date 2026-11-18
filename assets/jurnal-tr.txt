@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.030 · 18.11.2026
+Geçerli sürüm: v.2.031 · 18.11.2026
 ANA EKRAN
 - Deprem haritası: Deprem kutusuna dokunmak merkez üssü, yerin, mesafe ve hissedilme bölgeleriyle bir harita gösterir; haritaya dokunmak onu değerin geçmişiyle birlikte büyütür. Romanya'da resmi değerler INFP'den gelir.
 AYARLAR

@@ -1531,3 +1531,5 @@ revised	reviderad
 shallow earthquake	grund jordbävning
 up to ~	upp till ~
 updates by itself	uppdateras av sig själv
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	På den stora kartan drar du upp fönstret längst ner för att se kännbarhetszonerna.

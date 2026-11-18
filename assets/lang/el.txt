@@ -1531,3 +1531,5 @@ revised	αναθεωρήθηκε
 shallow earthquake	επιφανειακός σεισμός
 up to ~	έως ~
 updates by itself	ενημερώνεται μόνο του
+# v2.031
+On the big map, drag the window at the bottom up to see the felt zones.	Στον μεγάλο χάρτη σύρετε το κάτω παράθυρο προς τα πάνω για να δείτε τις ζώνες αίσθησης.
