@@ -1,4 +1,4 @@
-Versión actual: v.2.102 · 18.11.2026
+Versión actual: v.2.103 · 18.11.2026
 AJUSTES
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
 NOTIFICACIONES
