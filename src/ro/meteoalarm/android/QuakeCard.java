@@ -642,7 +642,7 @@ final class QuakeCard {
 
 	/** v2.112 (Viorel): makes the layer with the main screen's floating buttons and battery. */
 	interface Foot {
-		View make(Runnable close);
+		View make(Runnable close, Window w);
 	}
 
 	/** ‹ in a round button, "EARTHQUAKE INFORMATION" and a thin line to the right edge. */
@@ -861,9 +861,18 @@ final class QuakeCard {
 		boolean two = !Double.isNaN(q.firstMag);
 		TextView what = text(ctx, magWhat(q.magType), 10.5f * zk, reg, dim);
 		what.setGravity(Gravity.CENTER);
+		// v2.113 (Viorel): EMSC always on the left, the institute always on the right.
+		String lv = null, ls = null, la = null, rv = t[2], rs = q.src, ra = s.qhm(nowMs);
 		if (two) {
-			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
-			vals.addView(histVal(ctx, fm, q.firstSrc, s.qhm(q.firstAt), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			lv = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
+			ls = q.firstSrc;
+			la = s.qhm(q.firstAt);
+			if (inst(ls) && !inst(rs)) {
+				String a = lv; lv = rv; rv = a;
+				a = ls; ls = rs; rs = a;
+				a = la; la = ra; ra = a;
+			}
+			vals.addView(histVal(ctx, lv, ls, la, dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		}
 		View sep = new View(ctx);
 		sep.setBackgroundColor(Glass.edge(dark));
@@ -871,7 +880,7 @@ final class QuakeCard {
 		sp.leftMargin = sp.rightMargin = (int) (8 * dp);
 		if (two) {
 			vals.addView(sep, sp);
-			vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			vals.addView(histVal(ctx, rv, rs, ra, dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		} else {
 			// v2.107 (Viorel): one value: the value in the middle, no line, and under it on one row
 			// "EMSC 09:44 · its meaning", made smaller when it does not fit.
@@ -909,6 +918,11 @@ final class QuakeCard {
 			row.addView(hs, hl);
 		}
 		return row;
+	}
+
+	/** An institute's source (not EMSC/USGS). */
+	private static boolean inst(String src) {
+		return src != null && src.length() > 0 && !"EMSC".equals(src) && !"USGS".equals(src);
 	}
 
 	private static View histVal(Context ctx, String v, String src, String at, boolean dark, Typeface bold, float zk) {
@@ -1066,32 +1080,48 @@ final class QuakeCard {
 				int pad = (int) (16 * dp);
 				ScrollView sv = new ScrollView(ctx);
 				sv.setVerticalScrollBarEnabled(false);
-				LinearLayout col = new LinearLayout(ctx);
+				final LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				int bh = Band.height(ctx, root);
-				col.setPadding(pad, (int) (12 * dp), pad, (int) ((k.foot != null ? 96 : 28) * dp));
-				col.addView(head(ctx, dark, bold, zk, 36, null, k.titlePx));
-				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null, close), wide(12, dp));
+				final int bh = Band.height(ctx, root);
+				final int bottom = (int) ((k.foot != null ? 96 : 28) * dp);
+				col.setPadding(pad, bh + (int) (150 * dp), pad, bottom);
+				// v2.113 (Viorel): the top (the band, the header, the title) stays in place on a sheet of
+				// matte glass with round corners; the map and the boxes pass under it.
+				final LinearLayout top = new LinearLayout(ctx);
+				top.setOrientation(LinearLayout.VERTICAL);
+				top.setPadding(pad, bh + (int) (6 * dp), pad, (int) (12 * dp));
+				top.setBackground(new Sheet(dark, dp));
+				top.setClickable(true);
+				top.addView(head(ctx, dark, bold, zk, 36, null, k.titlePx));
+				top.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null, close), wide(8, dp));
+				top.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+					public void onLayoutChange(View v, int l, int tp, int r, int b, int ol, int ot, int or, int ob) {
+						final int want = b - tp + (int) (8 * dp);
+						if (b > tp && col.getPaddingTop() != want) col.post(new Runnable() {
+							public void run() {
+								col.setPadding(col.getPaddingLeft(), want, col.getPaddingRight(), bottom);
+							}
+						});
+					}
+				});
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 16 * dp);
 				int inner = W - 2 * pad;
 				LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(H * 0.5f, inner * 1.05f));
-				ml.topMargin = (int) (8 * dp);
 				col.addView(map, ml);
 				fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
-				FrameLayout.LayoutParams pl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-				pl.topMargin = bh;
-				root.addView(sv, pl);
-				// v2.109 (Viorel): the band with the day, the network and the clock always on top.
-				root.addView(new Band(ctx, s, dark, reg, bold, Theme.page(dark), Band.left(root, pad)), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
+				root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+				root.addView(top, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP));
+				// v2.109 (Viorel): the band with the day, the network and the clock always on top (on the sheet).
+				root.addView(new Band(ctx, s, dark, reg, bold, 0, Band.left(root, pad)), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 				foot(root);
 			}
 
 			/** v2.112: the floating buttons and the battery over everything, as on the main screen. */
 			private void foot(FrameLayout root) {
 				if (k.foot == null) return;
-				View f = k.foot.make(close);
+				View f = k.foot.make(close, d.getWindow());
 				if (f != null) root.addView(f, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 			}
 
@@ -1099,42 +1129,39 @@ final class QuakeCard {
 				// The map under everything.
 				FrameLayout map = mapBox(ctx, q, town, t, dark, null, 0);
 				root.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-				int m = (int) (10 * dp), band = (int) (54 * dp * Math.max(1, zk * 0.9f)), half = W / 2;
-				// v2.109 (Viorel): the band with the day, the network and the clock above the L.
+				int m = (int) (10 * dp), band = (int) (44 * dp * Math.max(1, zk * 0.9f)), half = W / 2;
 				int bh = Band.height(ctx, root);
-				H -= bh;
-				// The L of glass: the band across the top and the right half under it.
+				// v2.113 (Viorel): the L of matte glass takes in the band with the day too and runs to the
+				// screen's right edge and bottom; its top side stays thin (the band and the header only).
 				View glass = new View(ctx);
-				glass.setBackground(new LGlass(dark, dp, m, band, half));
-				FrameLayout.LayoutParams gl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, H);
-				gl.topMargin = bh;
-				root.addView(glass, gl);
+				glass.setBackground(new LGlass(dark, dp, bh + band, half));
+				root.addView(glass, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 				// v2.104 (Viorel): ‹ in the left corner of the L sheet, before the title.
-				View hd = head(ctx, dark, bold, zk * 0.9f, 38, close, k.titlePx);
+				View hd = head(ctx, dark, bold, zk * 0.9f, 34, close, k.titlePx);
 				FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, band, Gravity.TOP);
-				hl.leftMargin = m + (int) (12 * dp);
+				hl.leftMargin = Band.left(root, (int) (16 * dp));
 				// v2.105 (Viorel): the title and its line only over the narrow part, above the map.
 				hl.rightMargin = W - half + (int) (12 * dp);
-				hl.topMargin = bh + m;
+				hl.topMargin = bh;
 				root.addView(hd, hl);
 				// The right half: the information, scrolling up.
 				ScrollView sv = new ScrollView(ctx);
 				sv.setVerticalScrollBarEnabled(false);
 				LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				col.setPadding((int) (16 * dp), (int) (16 * dp), (int) (16 * dp), (int) ((k.foot != null ? 90 : 20) * dp));
+				col.setPadding((int) (16 * dp), (int) (8 * dp), (int) (16 * dp), (int) ((k.foot != null ? 90 : 20) * dp));
 				col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null, null));
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);
 				// v2.105 (Viorel): the whole right part of the L scrolls, from the top.
-				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half - m, H - m - m);
+				FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(W - half, H - bh);
 				sl.leftMargin = half;
-				sl.topMargin = bh + m;
+				sl.topMargin = bh;
 				root.addView(sv, sl);
-				root.addView(new Band(ctx, s, dark, reg, bold, Glass.alpha(Theme.page(dark), 0.85f), Band.left(root, (int) (16 * dp))), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
+				root.addView(new Band(ctx, s, dark, reg, bold, 0, Band.left(root, (int) (16 * dp))), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 				foot(root);
-				// The largest circle in the left half, under the band.
-				fit(map, 16 * dp, bh + m + band + 12 * dp, W - half + 12 * dp, 16 * dp);
+				// The largest circle in the left half, under the L's top.
+				fit(map, 16 * dp, bh + band + 12 * dp, W - half + 12 * dp, 16 * dp);
 			}
 		};
 		root.build.run();
@@ -1296,15 +1323,18 @@ final class QuakeCard {
 		}
 	}
 
-	/** v2.103: the inverted L of frosted glass (as the main screen's landscape plate). */
+	/**
+	 * v2.103: the inverted L of matte glass (as the main screen's landscape plate). v2.113
+	 * (Viorel): from the screen's top (the band with the day) to its right edge and bottom; round
+	 * corners where it meets the map.
+	 */
 	private static class LGlass extends android.graphics.drawable.Drawable {
 		final Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG), edge = new Paint(Paint.ANTI_ALIAS_FLAG);
-		final float dp, m, band, half;
+		final float dp, top, half;
 
-		LGlass(boolean dark, float dp, float m, float band, float half) {
+		LGlass(boolean dark, float dp, float top, float half) {
 			this.dp = dp;
-			this.m = m;
-			this.band = band;
+			this.top = top;
 			this.half = half;
 			fill.setColor(Glass.alpha(Theme.page(dark), dark ? 0.90f : 0.92f));
 			edge.setStyle(Paint.Style.STROKE);
@@ -1315,13 +1345,59 @@ final class QuakeCard {
 		@Override
 		public void draw(Canvas c) {
 			android.graphics.Rect b = getBounds();
-			float r = 22 * dp;
-			android.graphics.Path top = new android.graphics.Path(), right = new android.graphics.Path();
-			top.addRoundRect(new RectF(b.left + m, b.top + m, b.right - m, b.top + m + band), r, r, android.graphics.Path.Direction.CW);
-			right.addRoundRect(new RectF(b.left + half - 4 * dp, b.top + m, b.right - m, b.bottom - m), r, r, android.graphics.Path.Direction.CW);
-			top.op(right, android.graphics.Path.Op.UNION);
-			c.drawPath(top, fill);
-			c.drawPath(top, edge);
+			float r = 22 * dp, o = 2 * dp;
+			// The sides on the screen's edges run just past them (their corners and edge out of sight).
+			android.graphics.Path p = new android.graphics.Path(), right = new android.graphics.Path();
+			p.addRoundRect(new RectF(b.left - r - o, b.top - r - o, b.right + r + o, b.top + top), r, r, android.graphics.Path.Direction.CW);
+			right.addRoundRect(new RectF(b.left + half - 4 * dp, b.top - r - o, b.right + r + o, b.bottom + r + o), r, r, android.graphics.Path.Direction.CW);
+			p.op(right, android.graphics.Path.Op.UNION);
+			// The inside corner (where the top meets the right side) round too.
+			android.graphics.Path in = new android.graphics.Path();
+			float ix = b.left + half - 4 * dp, iy = b.top + top;
+			in.moveTo(ix - r, iy);
+			in.lineTo(ix, iy);
+			in.lineTo(ix, iy + r);
+			in.quadTo(ix, iy, ix - r, iy);
+			in.close();
+			p.op(in, android.graphics.Path.Op.UNION);
+			c.drawPath(p, fill);
+			c.drawPath(p, edge);
+		}
+
+		@Override
+		public void setAlpha(int a) {
+		}
+
+		@Override
+		public void setColorFilter(android.graphics.ColorFilter f) {
+		}
+
+		@Override
+		public int getOpacity() {
+			return android.graphics.PixelFormat.TRANSLUCENT;
+		}
+	}
+
+	/** v2.113 (Viorel): the portrait whole screen's top: a sheet of matte glass, its lower corners round. */
+	private static class Sheet extends android.graphics.drawable.Drawable {
+		final Paint fill = new Paint(Paint.ANTI_ALIAS_FLAG), edge = new Paint(Paint.ANTI_ALIAS_FLAG);
+		final float dp;
+
+		Sheet(boolean dark, float dp) {
+			this.dp = dp;
+			fill.setColor(Glass.alpha(Theme.page(dark), dark ? 0.90f : 0.92f));
+			edge.setStyle(Paint.Style.STROKE);
+			edge.setStrokeWidth(Math.max(1, dp));
+			edge.setColor(Glass.edge(dark));
+		}
+
+		@Override
+		public void draw(Canvas c) {
+			android.graphics.Rect b = getBounds();
+			float r = 22 * dp, o = 2 * dp;
+			RectF f = new RectF(b.left - o, b.top - r - o, b.right + o, b.bottom - dp / 2);
+			c.drawRoundRect(f, r, r, fill);
+			c.drawRoundRect(f, r, r, edge);
 		}
 
 		@Override

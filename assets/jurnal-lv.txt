@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.112 · 18.11.2026
+Pašreizējā versija: v.2.113 · 18.11.2026
 GALVENAIS EKRĀNS
 - Zemestrīces informācija: pieskāriens laukam Zemestrīce to atver galvenajā ekrānā: karte, zem tās sajūtamības zonas un vērtības vēsture; krāsainais kvadrāts vai karte to atver visā ekrānā, kā zemestrīci no ☰ › Zemestrīces. Rumānijā, Francijā, Itālijā, Nīderlandē, Šveicē un Grieķijā oficiālās vērtības vispirms nāk no valsts institūta (INFP, BCSF, INGV, KNMI, SED, NOA), pēc tam no EMSC. Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).
 IESTATĪJUMI

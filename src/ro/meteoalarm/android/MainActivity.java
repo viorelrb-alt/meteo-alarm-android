@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.112";
+	static final String VERSION = "Meteo Alarm Android v2.113";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -199,13 +199,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 			@Override
 			protected void onDraw(android.graphics.Canvas c) {
-				if (s != null && s.quakeOn && statsBox.getVisibility() == View.VISIBLE) view.drawFoot(c);
+				if (s != null && s.quakeOn && statsBox.getVisibility() == View.VISIBLE) {
+					view.drawFoot(c);
+					// v2.113 (Viorel): the brightness bar over the information too (it was under it).
+					view.drawBarAll(c, 0, 0);
+				}
 			}
 
 			@Override
 			public boolean onTouchEvent(android.view.MotionEvent e) {
+				// v2.113: with the bar shown, every touch goes to it (slide, moon, or a tap elsewhere hides it).
 				if (e.getActionMasked() == android.view.MotionEvent.ACTION_DOWN)
-					mine = s != null && s.quakeOn && statsBox.getVisibility() == View.VISIBLE && view.onFoot(e.getX(), e.getY());
+					mine = s != null && s.quakeOn && statsBox.getVisibility() == View.VISIBLE && (view.barOpen() || view.onFoot(e.getX(), e.getY()));
 				if (!mine) return false;
 				view.dispatchTouchEvent(e);
 				return true;
@@ -1916,9 +1921,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		QuakeCard.Hooks k = new QuakeCard.Hooks();
 		if (withMore) k.more = quakeMore(Fetcher.officialOf(c));
 		k.titlePx = 23 * view.scale();
+		// v2.113: the moon (theme) opens the same whole screen again, in the new colours.
+		final ro.meteoalarm.android.core.Quakes.Quake fq = q;
+		final Cities.City fc = c;
+		final boolean fm = withMore;
+		final Runnable again = new Runnable() {
+			public void run() {
+				openQuakeFull(fq, fc, fm);
+			}
+		};
 		k.foot = new QuakeCard.Foot() {
-			public View make(final Runnable close) {
-				return fullFoot(close);
+			public View make(final Runnable close, android.view.Window w) {
+				return fullFoot(close, w, again);
 			}
 		};
 		QuakeCard.full(this, q, c, s, s.dark, fReg, fBold, quakeZk(), k);
@@ -1945,11 +1959,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/**
 	 * v2.112 (Viorel): the main screen's floating buttons and battery over the earthquake's whole
-	 * screen. A tap on a button closes the whole screen and does what the button does on the main one.
+	 * screen. v2.113 (Viorel): the sun shows the brightness bar right there (the screen stays);
+	 * the moon on the bar changes the theme and opens the screen again in the new colours; the
+	 * other buttons close the whole screen and do what they do on the main one.
 	 */
-	private View fullFoot(final Runnable close) {
-		return new View(this) {
-			boolean mine;
+	private View fullFoot(final Runnable close, final android.view.Window w, final Runnable again) {
+		final View f = new View(this) {
+			boolean mine, bar, moon;
 			float tx, ty;
 
 			private float[] shift() {
@@ -1963,7 +1979,18 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			protected void onDraw(android.graphics.Canvas c) {
 				float[] d = shift();
 				view.drawFootAll(c, d[0], d[1]);
+				view.drawBarAll(c, d[0], d[1]);
 				postInvalidateDelayed(30000);
+			}
+
+			/** The main screen's view gets the touch, moved into its own place. */
+			private void pass(android.view.MotionEvent e, float[] d) {
+				android.view.MotionEvent m = android.view.MotionEvent.obtain(e);
+				m.offsetLocation(-d[0], -d[1]);
+				view.onTouchEvent(m);
+				m.recycle();
+				brightness();
+				invalidate();
 			}
 
 			@Override
@@ -1972,12 +1999,30 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				float x = e.getX() - d[0], y = e.getY() - d[1];
 				int act = e.getActionMasked();
 				if (act == android.view.MotionEvent.ACTION_DOWN) {
-					mine = view.onFootAny(x, y);
+					bar = view.barOpen();
+					moon = bar && view.onMoon(x, y);
+					mine = bar || view.onFootAny(x, y);
 					tx = x;
 					ty = y;
 				}
 				if (!mine) return false;
+				if (bar) {
+					// The bar: sliding, the moon, or a tap elsewhere that hides it.
+					pass(e, d);
+					if (act == android.view.MotionEvent.ACTION_UP && moon && view.onMoon(x, y)) {
+						Log.i(MainActivity.this, "CUTREMUR", "tema schimbată din ecranul întreg");
+						close.run();
+						handler.postDelayed(again, 200);
+					}
+					return true;
+				}
 				if (act == android.view.MotionEvent.ACTION_UP && view.onButtons(tx, ty)) {
+					if (view.onSun(tx, ty)) {
+						Log.i(MainActivity.this, "CUTREMUR", "luminozitate din ecranul întreg");
+						view.tapAt(tx, ty);
+						invalidate();
+						return true;
+					}
 					Log.i(MainActivity.this, "CUTREMUR", "buton plutitor din ecranul întreg");
 					close.run();
 					final float fx = tx, fy = ty;
@@ -1989,7 +2034,32 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				}
 				return true;
 			}
+
+			/** The whole screen is its own window: it takes the app's brightness too (else the phone's shows). */
+			private void brightness() {
+				if (w == null) return;
+				WindowManager.LayoutParams a = w.getAttributes();
+				float b = getWindow().getAttributes().screenBrightness;
+				if (a.screenBrightness != b) {
+					a.screenBrightness = b;
+					w.setAttributes(a);
+				}
+			}
+
+			@Override
+			protected void onAttachedToWindow() {
+				super.onAttachedToWindow();
+				brightness();
+				view.footFull = this;
+			}
+
+			@Override
+			protected void onDetachedFromWindow() {
+				if (view.footFull == this) view.footFull = null;
+				super.onDetachedFromWindow();
+			}
 		};
+		return f;
 	}
 
 	/** v2.030: a tap on an earthquake notice: the town's screen and the earthquake's bubble, once the data are there. */

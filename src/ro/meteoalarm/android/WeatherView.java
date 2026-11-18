@@ -301,6 +301,7 @@ final class WeatherView extends View {
 		drawScreen(c);
 		statsReport();
 		if (foot != null) foot.invalidate();
+		if (footFull != null) footFull.invalidate();
 		if (pull > 0) drawPull(c);
 		String big = screen.bigIcon;
 		if (big != null && !big.equals(iconDone)) startIcon(big);
@@ -501,6 +502,8 @@ final class WeatherView extends View {
 	private int[] statsLast;
 	/** v2.111: the layer over the earthquake's information with the floating buttons. */
 	View foot;
+	/** v2.113: the same layer over the earthquake's whole screen (redrawn with the screen). */
+	View footFull;
 
 	/** v2.111: the floating buttons on C (the layer over the information), as on the screen. */
 	void drawFoot(Canvas c) {
@@ -522,6 +525,31 @@ final class WeatherView extends View {
 		gfx.c = c;
 		screen.drawFootAll(gfx);
 		c.restore();
+	}
+
+	/** v2.113: the brightness bar on C, moved by DX DY pixels (another layer or window). */
+	void drawBarAll(Canvas c, float dx, float dy) {
+		if (scale <= 0 || !screen.brightBar) return;
+		c.save();
+		c.translate(ox + dx, oy + dy);
+		c.scale(scale, scale);
+		gfx.c = c;
+		screen.drawBarAll(gfx);
+		c.restore();
+	}
+
+	/** v2.113: the brightness bar is shown. */
+	boolean barOpen() {
+		return screen.brightBar;
+	}
+
+	/** v2.113: on the sun button / on the moon over the bar (pixels of this view). */
+	boolean onSun(float x, float y) {
+		return scale > 0 && screen.onSun((x - ox) / scale, (y - oy) / scale);
+	}
+
+	boolean onMoon(float x, float y) {
+		return scale > 0 && screen.onMoon((x - ox) / scale, (y - oy) / scale);
 	}
 
 	/** v2.112: is X Y (pixels of this view) on the capsule of buttons (not the battery)? */

@@ -988,6 +988,30 @@ public final class Screen {
 		g = keep;
 	}
 
+	/** v2.113: the height the brightness bar was last drawn for. */
+	private float barCh;
+
+	/** v2.113 (Viorel): the brightness bar over another layer (the earthquake's information or whole screen). */
+	public void drawBarAll(Gfx gfx) {
+		if (!brightBar || barCh <= 0 || nightClock) return;
+		Gfx keep = g;
+		g = gfx;
+		drawBrightBar(barCh);
+		g = keep;
+	}
+
+	/** v2.113: is X Y (canvas units) on the round moon button over the brightness bar? */
+	public boolean onMoon(float x, float y) {
+		float[] b = btnMoon;
+		return brightBar && b[2] > 0 && x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
+	}
+
+	/** v2.113: is X Y (canvas units) on the sun button? */
+	public boolean onSun(float x, float y) {
+		float[] b = btnBright;
+		return b[2] > 0 && x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
+	}
+
 	/** v2.112: is X Y (canvas units) on the battery? */
 	public boolean onBattery(float x, float y) {
 		float[] b = battArea;
@@ -4435,6 +4459,7 @@ public final class Screen {
 	 * over it a round button with a moon that switches between the dark and the light theme.
 	 */
 	private void drawBrightBar(float ch) {
+		barCh = ch;
 		float x = 50, bw = 84, bh = ch * 0.42f, gap = 24, top = (ch - bw - gap - bh) / 2, by = top + bw + gap;
 		btnMoon[0] = x; btnMoon[1] = top; btnMoon[2] = bw; btnMoon[3] = bw;
 		moonButton(x, top, bw);
