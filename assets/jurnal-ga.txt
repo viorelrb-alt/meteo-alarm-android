@@ -1,4 +1,4 @@
-Leagan reatha: v.2.105 · 18.11.2026
+Leagan reatha: v.2.106 · 18.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.

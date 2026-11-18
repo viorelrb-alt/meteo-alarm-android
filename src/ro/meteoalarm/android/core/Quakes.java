@@ -357,6 +357,13 @@ public final class Quakes {
 			if (best < 0) continue;
 			used[best] = true;
 			Quake n = inf.get(best);
+			// v2.106 (Viorel, Motorola): EMSC's value kept as the first one, so the history shows both
+			// even on a phone that never saw EMSC's value alone (no saved history).
+			if (Double.isNaN(q.firstMag) && Math.abs(q.mag - n.mag) >= 0.05 && !q.official) {
+				q.firstMag = q.mag;
+				q.firstSrc = q.src;
+				q.firstAt = q.updated > 0 ? q.updated : q.time;
+			}
 			q.mag = n.mag;
 			q.magType = n.magType;
 			q.lat = n.lat;

@@ -524,12 +524,12 @@ final class Fetcher {
 			String[] h = v.split("\\|", -1);
 			if (h.length < 7) continue;
 			try {
-				q.firstAt = Long.parseLong(h[2]);
 				q.changedAt = Long.parseLong(h[5]);
 				if (q.changedAt > 0 && !h[0].equals(String.format(java.util.Locale.US, "%.1f", q.mag))) {
+					q.firstAt = Long.parseLong(h[2]);
 					q.firstMag = Double.parseDouble(h[0]);
 					q.firstSrc = h[1];
-				}
+				} else if (Double.isNaN(q.firstMag)) q.firstAt = Long.parseLong(h[2]);
 			} catch (Exception e) {
 				// no history
 			}

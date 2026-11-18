@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.105 · 18.11.2026
+Geçerli sürüm: v.2.106 · 18.11.2026
 ANA EKRAN
 - Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ☰ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
 AYARLAR

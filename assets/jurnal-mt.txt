@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.105 · 18.11.2026
+Verżjoni attwali: v.2.106 · 18.11.2026
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.

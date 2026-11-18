@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.105";
+	static final String VERSION = "Meteo Alarm Android v2.106";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1837,7 +1837,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			all.addView(room, new android.widget.LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, spacer));
 		}
 		all.addView(QuakeCard.info(this, q, town, s, t, s.dark, fReg, fBold, zk, width, k));
-		final android.widget.ScrollView sv = new android.widget.ScrollView(this);
+		// v2.106 (Viorel): pulling down at the top still refreshes, as on the main screen.
+		final android.widget.ScrollView sv = new PullScroll(this, view);
 		sv.setVerticalScrollBarEnabled(false);
 		sv.setOverScrollMode(View.OVER_SCROLL_NEVER);
 		sv.addView(all);
