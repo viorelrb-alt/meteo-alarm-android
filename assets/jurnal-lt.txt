@@ -1,8 +1,8 @@
-Dabartinė versija: v.2.036 · 18.11.2026
+Dabartinė versija: v.2.040 · 18.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 PAGRINDINIS EKRANAS
-- Žemės drebėjimo žemėlapis: bakstelėjus langelį Žemės drebėjimas rodomas žemėlapis su epicentru, tavo vietove, atstumu ir juntamumo zonomis; bakstelėjus žemėlapį jis padidinamas, su vertės istorija. Rumunijoje oficialios vertės gaunamos iš INFP.
+- Žemės drebėjimo žemėlapis: bakstelėjus langelį Žemės drebėjimas rodomas žemėlapis su epicentru, tavo vietove, atstumu ir juntamumo zonomis; bakstelėjus žemėlapį jis padidinamas, su vertės istorija. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC.
 PRANEŠIMAI
 - Žemės drebėjimai: tikrinami kas 10 minučių, ir naktį išjungus ekraną; patikslinta magnitudė atnaujina pranešimą, o jį bakstelėjus atsidaro žemėlapis.
 SKLYPAI

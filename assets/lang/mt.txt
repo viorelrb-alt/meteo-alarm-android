@@ -1545,3 +1545,12 @@ body-wave magnitude	manjitudni tal-mewġ tal-ġisem
 magnitude	manjitudni
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Ir-Rumanija: ħdejn il-valur tal-EMSC, dak uffiċjali tal-INFP (infp.ro), meta l-INFP ikollu.
+# v2.040
+Checking 	Qed niċċekkja 
+Refresh from 	Aġġorna minn 
+ has no value for it yet · try again	 għad m’għandux valur · erġa’ pprova
+The official values come from 	Il-valuri uffiċjali jiġu minn 
+; EMSC when it does not answer.	; EMSC meta ma jwieġibx.
+Next to EMSC's value, the official one of 	Ħdejn il-valur tal-EMSC, dak uffiċjali ta’ 
+, when it has it.	, meta jkollu.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Ir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera, il-Greċja: l-ewwel l-istitut tal-pajjiż, imbagħad l-EMSC.

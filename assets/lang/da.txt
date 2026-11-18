@@ -1545,3 +1545,12 @@ body-wave magnitude	rumbølgemagnitude
 magnitude	magnitude
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumænien: ved siden af EMSC’s værdi INFP’s officielle (infp.ro), når INFP har den.
+# v2.040
+Checking 	Tjekker 
+Refresh from 	Opdater fra 
+ has no value for it yet · try again	 har endnu ingen værdi · prøv igen
+The official values come from 	De officielle værdier kommer fra 
+; EMSC when it does not answer.	; EMSC, når den ikke svarer.
+Next to EMSC's value, the official one of 	Ved siden af EMSC’s værdi den officielle fra 
+, when it has it.	, når den har den.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumænien, Frankrig, Italien, Nederlandene, Schweiz, Grækenland: først landets institut, derefter EMSC.

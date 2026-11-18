@@ -217,7 +217,7 @@ final class Notifier {
 					+ (revised ? " · " + Tr.t("revised", "revizuit") : "");
 			String body = T.weekdayTime(q.time, clk12) + " · " + (imp ? Math.round(q.dist * 0.621371) + " mi " : Math.round(q.dist) + " km ") + Tr.t("from ", "de ") + c.name
 					+ (q.felt >= 2 ? " · " + Tr.t("probably felt: ", "probabil resimțit: ") + ro.meteoalarm.android.core.Screen.roman(q.felt) : "")
-					+ (q.src.equals("INFP") ? " · INFP" : "");
+					+ (q.official ? " · " + q.src : "");
 			post(ctx, id, title, body, false, revised, true);
 			Log.i(ctx, "NOTIF", "cutremur" + (revised ? " (revizuit)" : "") + ": " + title + " · " + body);
 		}

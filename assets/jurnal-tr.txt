@@ -1,6 +1,6 @@
-Geçerli sürüm: v.2.036 · 18.11.2026
+Geçerli sürüm: v.2.040 · 18.11.2026
 ANA EKRAN
-- Deprem haritası: Deprem kutusuna dokunmak merkez üssü, yerin, mesafe ve hissedilme bölgeleriyle bir harita gösterir; haritaya dokunmak onu değerin geçmişiyle birlikte büyütür. Romanya'da resmi değerler INFP'den gelir.
+- Deprem haritası: Deprem kutusuna dokunmak merkez üssü, yerin, mesafe ve hissedilme bölgeleriyle bir harita gösterir; haritaya dokunmak onu değerin geçmişiyle birlikte büyütür. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir.
 AYARLAR
 - Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
 BILDIRIMLER

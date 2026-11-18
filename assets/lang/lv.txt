@@ -1545,3 +1545,12 @@ body-wave magnitude	tilpuma viļņu magnitūds
 magnitude	magnitūds
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumānija: blakus EMSC vērtībai INFP oficiālā vērtība (infp.ro), ja INFP tā ir.
+# v2.040
+Checking 	Pārbauda: 
+Refresh from 	Atjaunot no 
+ has no value for it yet · try again	 vēl nav vērtības · mēģiniet vēlreiz
+The official values come from 	Oficiālās vērtības nāk no 
+; EMSC when it does not answer.	; EMSC, ja tas neatbild.
+Next to EMSC's value, the official one of 	Blakus EMSC vērtībai oficiālā vērtība: 
+, when it has it.	, ja tā ir.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumānija, Francija, Itālija, Nīderlande, Šveice, Grieķija: vispirms valsts institūts, tad EMSC.

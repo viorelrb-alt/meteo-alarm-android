@@ -1545,3 +1545,12 @@ body-wave magnitude	magnitude des ondes de volume
 magnitude	magnitude
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Roumanie : à côté de la valeur EMSC, la valeur officielle de l’INFP (infp.ro), quand l’INFP l’a.
+# v2.040
+Checking 	Vérification auprès de 
+Refresh from 	Actualiser depuis 
+ has no value for it yet · try again	 n’a pas encore de valeur · réessayez
+The official values come from 	Les valeurs officielles viennent de 
+; EMSC when it does not answer.	; EMSC quand il ne répond pas.
+Next to EMSC's value, the official one of 	À côté de la valeur EMSC, la valeur officielle de 
+, when it has it.	, quand il l’a.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Roumanie, France, Italie, Pays-Bas, Suisse, Grèce : d’abord l’institut du pays, puis EMSC.

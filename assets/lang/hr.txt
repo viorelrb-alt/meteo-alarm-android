@@ -1545,3 +1545,12 @@ body-wave magnitude	magnituda prostornih valova
 magnitude	magnituda
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunjska: uz vrijednost EMSC-a službena vrijednost INFP-a (infp.ro), kad je INFP ima.
+# v2.040
+Checking 	Provjera kod 
+Refresh from 	Osvježi s 
+ has no value for it yet · try again	 još nema vrijednost · pokušajte ponovno
+The official values come from 	Službene vrijednosti dolaze od 
+; EMSC when it does not answer.	; EMSC kad ne odgovara.
+Next to EMSC's value, the official one of 	Uz vrijednost EMSC-a službena vrijednost 
+, when it has it.	, kad je ima.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumunjska, Francuska, Italija, Nizozemska, Švicarska, Grčka: najprije nacionalni institut, zatim EMSC.

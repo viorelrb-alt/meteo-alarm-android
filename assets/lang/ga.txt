@@ -1545,3 +1545,12 @@ body-wave magnitude	méid tonnta coirp
 magnitude	méid
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	An Rómáin: in aice le luach EMSC, luach oifigiúil INFP (infp.ro), nuair atá sé ag INFP.
+# v2.040
+Checking 	Ag seiceáil 
+Refresh from 	Athnuaigh ó 
+ has no value for it yet · try again	 gan luach fós · bain triail eile as
+The official values come from 	Tagann na luachanna oifigiúla ó 
+; EMSC when it does not answer.	; EMSC nuair nach bhfreagraíonn sé.
+Next to EMSC's value, the official one of 	In aice le luach EMSC, luach oifigiúil 
+, when it has it.	, nuair atá sé aige.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	An Rómáin, an Fhrainc, an Iodáil, an Ísiltír, an Eilvéis, an Ghréig: institiúid na tíre ar dtús, ansin EMSC.

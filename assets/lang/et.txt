@@ -1545,3 +1545,12 @@ body-wave magnitude	ruumilainete magnituud
 magnitude	magnituud
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumeenia: EMSC väärtuse kõrval INFP ametlik väärtus (infp.ro), kui INFP-l see on.
+# v2.040
+Checking 	Kontrollin: 
+Refresh from 	Värskenda: 
+ has no value for it yet · try again	 ei ole veel väärtust · proovi uuesti
+The official values come from 	Ametlikud väärtused tulevad: 
+; EMSC when it does not answer.	; EMSC, kui see ei vasta.
+Next to EMSC's value, the official one of 	EMSC väärtuse kõrval ametlik väärtus: 
+, when it has it.	, kui see on olemas.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumeenia, Prantsusmaa, Itaalia, Holland, Šveits, Kreeka: esmalt riigi instituut, siis EMSC.

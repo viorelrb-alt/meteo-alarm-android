@@ -1545,3 +1545,12 @@ body-wave magnitude	tūrinių bangų magnitudas
 magnitude	magnitudas
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunija: šalia EMSC vertės – oficiali INFP vertė (infp.ro), kai INFP ją turi.
+# v2.040
+Checking 	Tikrinama: 
+Refresh from 	Atnaujinti iš 
+ has no value for it yet · try again	 dar neturi vertės · bandykite dar kartą
+The official values come from 	Oficialios vertės gaunamos iš 
+; EMSC when it does not answer.	; EMSC, kai šis neatsako.
+Next to EMSC's value, the official one of 	Šalia EMSC vertės – oficiali vertė: 
+, when it has it.	, kai ji yra.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumunija, Prancūzija, Italija, Nyderlandai, Šveicarija, Graikija: pirmiausia šalies institutas, paskui EMSC.

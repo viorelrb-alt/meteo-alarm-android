@@ -1545,3 +1545,12 @@ body-wave magnitude	ruimtegolfmagnitude
 magnitude	magnitude
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Roemenië: naast de EMSC-waarde de officiële waarde van INFP (infp.ro), als INFP die heeft.
+# v2.040
+Checking 	Controleren bij 
+Refresh from 	Vernieuwen via 
+ has no value for it yet · try again	 heeft nog geen waarde · probeer opnieuw
+The official values come from 	De officiële waarden komen van 
+; EMSC when it does not answer.	; EMSC als die niet antwoordt.
+Next to EMSC's value, the official one of 	Naast de EMSC-waarde de officiële van 
+, when it has it.	, als die er is.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Roemenië, Frankrijk, Italië, Nederland, Zwitserland, Griekenland: eerst het instituut van het land, dan EMSC.

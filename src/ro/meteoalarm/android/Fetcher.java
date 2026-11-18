@@ -174,14 +174,15 @@ final class Fetcher {
 	 * whose values are the official ones (EMSC stays when INFP does not answer).
 	 */
 	static void quakesInto(Context ctx, Cities.City c, Result r) {
-		// v2.035 (Viorel): in Romania INFP is asked first, then EMSC (whose list also tells
-		// whether INFP's times are UTC or local).
-		String infpJs = null;
-		Exception infpErr = null;
-		if (infpFor(c)) try {
-			infpJs = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
+		// v2.035 (Viorel): in Romania INFP is asked first, then EMSC (whose list also tells whether
+		// INFP's times are UTC or local); v2.040: the same in every country with its own institute.
+		Quakes.Official o = officialOf(c);
+		String offRaw = null;
+		Exception offErr = null;
+		if (o != null) try {
+			offRaw = Weather.get(o.url);
 		} catch (Exception e) {
-			infpErr = e;
+			offErr = e;
 		}
 		try {
 			r.quake = Weather.get(Quakes.url(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
@@ -190,13 +191,12 @@ final class Fetcher {
 			r.quake = null;
 			Log.e(ctx, "DATE", "cutremure EMSC a eșuat: " + reason(e, false));
 		}
-		if (!infpFor(c)) return;
+		if (o == null) return;
 		try {
-			if (infpErr != null) throw infpErr;
-			String js = infpJs;
+			if (offErr != null) throw offErr;
 			List<Quakes.Quake> em = r.quake != null ? Quakes.parse(r.quake, countryEn(ctx, c), c.lat, c.lon, System.currentTimeMillis()) : null;
-			r.infp = Quakes.infpFromApi(js, em);
-			if (r.infp == null) throw new Exception("răspuns necunoscut (" + (js == null ? 0 : js.length()) + " B)");
+			r.infp = Quakes.officialText(o, offRaw, em);
+			if (r.infp == null) throw new Exception("răspuns necunoscut (" + (offRaw == null ? 0 : offRaw.length()) + " B)");
 			int n = 0, all = 0;
 			long now = System.currentTimeMillis();
 			String newest = "";
@@ -208,16 +208,21 @@ final class Fetcher {
 				long tm = f.length > 1 ? Quakes.infpTime(f[1].trim()) : 0;
 				if (tm > 0 && now - tm <= Quakes.WINDOW_MS) n++;
 			}
-			Log.i(ctx, "DATE", "cutremure INFP OK: " + n + " în 24 h (" + all + " în listă" + (r.infp.contains("|local\n") ? ", ora locală" : "") + (newest.length() > 0 ? ", ultimul " + newest : "") + ")");
+			Log.i(ctx, "DATE", "cutremure " + o.name + " OK: " + n + " în 24 h (" + all + " în listă" + (r.infp.contains("|local\n") ? ", ora locală" : "") + (newest.length() > 0 ? ", ultimul " + newest : "") + ")");
 		} catch (Exception e) {
 			r.infp = null;
-			Log.e(ctx, "DATE", "cutremure INFP a eșuat: " + reason(e, false) + " (rămân valorile EMSC)");
+			Log.e(ctx, "DATE", "cutremure " + o.name + " a eșuat: " + reason(e, false) + " (rămân valorile EMSC)");
 		}
 	}
 
-	/** v2.030: towns in Romania get INFP's values. */
+	/** v2.030: towns in Romania get INFP's values; v2.040: every country with its own institute. */
 	static boolean infpFor(Cities.City c) {
-		return c != null && !c.us() && "ro".equalsIgnoreCase(c.country);
+		return officialOf(c) != null;
+	}
+
+	/** v2.040: the town's country's seismological institute (null: none, or a US town, which has USGS). */
+	static Quakes.Official officialOf(Cities.City c) {
+		return c == null || c.us() ? null : Quakes.official(c.country);
 	}
 
 	/**
@@ -482,7 +487,7 @@ final class Fetcher {
 				long now = System.currentTimeMillis();
 				l = Quakes.parse(q, countryEn(ctx, c), c.lat, c.lon, now);
 				// v2.030: INFP's official values for a town in Romania.
-				if (infpFor(c) && c.key().equals(prefs(ctx).getString("infpCity", ""))) Quakes.mergeInfp(l, read(ctx, "infp.txt"), c.lat, c.lon, now, Quakes.WINDOW_MS);
+				if (infpFor(c) && c.key().equals(prefs(ctx).getString("infpCity", ""))) Quakes.mergeOfficial(l, read(ctx, "infp.txt"), officialOf(c).name, c.lat, c.lon, now, Quakes.WINDOW_MS);
 			}
 			history(ctx, l);
 			return l;

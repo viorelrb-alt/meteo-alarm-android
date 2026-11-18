@@ -1,4 +1,4 @@
-Obecna wersja: v.2.036 · 18.11.2026
+Obecna wersja: v.2.040 · 18.11.2026
 DZIAŁKI
 - Dymki w Statystykach: dotknięcie godziny w oknie oprysku, dnia na wykresach lub wiersza gleby otwiera dymek z wyjaśnieniem; okno oprysku przesuwa się samo.
 - Edycja działki: ołówek otwiera stronę działki: nazwa, uprawa (lista według sezonu daty siewu lub Inna uprawa…), data siewu, powierzchnia; narożniki przesuwa się na mapie.
@@ -8,7 +8,7 @@ DZIAŁKI
 - Statystyki: dla każdej działki Działanie dnia i 4 karty: Operacyjne (okno oprysku godzina po godzinie, schnięcie kropel (ΔT), wiatr, mokry liść), Woda i gleba (deszcz, parowanie, gleba na 6 i 18 cm), Sezon (stopniodni wobec zeszłego roku, szacowana faza) i Ryzyka 72 h (choroby grzybowe, przymrozek przy gruncie, upał, wiatr i grad); zapis do PDF lub CSV.
 - Współrzędne działki: na stronie edycji wpisuje się współrzędne GPS każdego punktu, a pod nimi widok satelitarny pokazuje działkę.
 EKRAN GŁÓWNY
-- Mapa trzęsienia: dotknięcie pola Trzęsienie ziemi pokazuje mapę z epicentrum, twoją miejscowością, odległością i strefami odczuwalności; dotknięcie mapy ją powiększa, z historią wartości. W Rumunii oficjalne wartości pochodzą z INFP.
+- Mapa trzęsienia: dotknięcie pola Trzęsienie ziemi pokazuje mapę z epicentrum, twoją miejscowością, odległością i strefami odczuwalności; dotknięcie mapy ją powiększa, z historią wartości. W Rumunii, Francji, Włoszech, Holandii, Szwajcarii i Grecji oficjalne wartości pochodzą najpierw z krajowego instytutu (INFP, BCSF, INGV, KNMI, SED, NOA), potem z EMSC.
 POWIADOMIENIA
 - Trzęsienia ziemi: sprawdzane co 10 minut, także w nocy przy wyłączonym ekranie; zrewidowana magnituda aktualizuje powiadomienie, a jego dotknięcie otwiera mapę.
 USTAWIENIA

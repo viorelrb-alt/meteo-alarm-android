@@ -1545,3 +1545,12 @@ body-wave magnitude	térhullám-magnitúdó
 magnitude	magnitúdó
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Románia: az EMSC értéke mellett az INFP hivatalos értéke (infp.ro), ha az INFP-nek van.
+# v2.040
+Checking 	Lekérdezés: 
+Refresh from 	Frissítés innen: 
+ has no value for it yet · try again	 még nem ad értéket · próbálja újra
+The official values come from 	A hivatalos értékek forrása: 
+; EMSC when it does not answer.	; EMSC, ha nem válaszol.
+Next to EMSC's value, the official one of 	Az EMSC értéke mellett a hivatalos érték: 
+, when it has it.	, ha van.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Románia, Franciaország, Olaszország, Hollandia, Svájc, Görögország: először az ország intézete, aztán az EMSC.

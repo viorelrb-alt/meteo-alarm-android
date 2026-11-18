@@ -1545,3 +1545,12 @@ body-wave magnitude	magnitudo z objemových vln
 magnitude	magnitudo
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumunsko: vedle hodnoty EMSC oficiální hodnota INFP (infp.ro), pokud ji INFP má.
+# v2.040
+Checking 	Ověřuji u 
+Refresh from 	Obnovit z 
+ has no value for it yet · try again	 zatím nemá hodnotu · zkuste znovu
+The official values come from 	Oficiální hodnoty pocházejí z 
+; EMSC when it does not answer.	; EMSC, když neodpovídá.
+Next to EMSC's value, the official one of 	Vedle hodnoty EMSC oficiální hodnota 
+, when it has it.	, pokud ji má.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumunsko, Francie, Itálie, Nizozemsko, Švýcarsko, Řecko: nejprve národní ústav, pak EMSC.

@@ -1479,3 +1479,12 @@ body-wave magnitude	магнитуда по объёмным волнам
 magnitude	магнитуда
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Румыния: рядом со значением EMSC — официальное значение INFP (infp.ro), если оно есть.
+# v2.040
+Checking 	Проверка в 
+Refresh from 	Обновить из 
+ has no value for it yet · try again	 пока не имеет значения · попробуйте снова
+The official values come from 	Официальные значения приходят от 
+; EMSC when it does not answer.	; EMSC, когда он не отвечает.
+Next to EMSC's value, the official one of 	Рядом со значением EMSC — официальное значение 
+, when it has it.	, если оно есть.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Румыния, Франция, Италия, Нидерланды, Швейцария, Греция: сначала национальный институт, затем EMSC.

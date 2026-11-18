@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.036";
+	static final String VERSION = "Meteo Alarm Android v2.040";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1685,15 +1685,17 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final Cities.City town = s.city;
 		String miss = infpMiss;
 		infpMiss = null;
+		final ro.meteoalarm.android.core.Quakes.Official off = Fetcher.officialOf(town);
+		final String on = off == null ? "" : off.name;
 		View body = QuakeCard.body(this, q, town, t, s.dark, fReg, fBold, zk, w, new Runnable() {
 			public void run() {
 				Log.i(MainActivity.this, "CUTREMUR", "harta mare deschisă");
 				QuakeCard.bigMap(MainActivity.this, q, town, s, s.dark, fReg, fBold, zk);
 			}
-		}, Fetcher.infpFor(town) && !"INFP".equals(q.src) ? new Runnable() {
-			// v2.032 (Viorel): ask INFP now; the bubble opens again with what came.
+		}, off != null && !q.official ? new Runnable() {
+			// v2.032 (Viorel): ask INFP now; the bubble opens again with what came (v2.040: any institute).
 			public void run() {
-				Log.i(MainActivity.this, "CUTREMUR", "verificare INFP cerută din bulă");
+				Log.i(MainActivity.this, "CUTREMUR", "verificare " + on + " cerută din bulă");
 				new Thread(new Runnable() {
 					public void run() {
 						Fetcher.quakesOnly(MainActivity.this, town);
@@ -1702,8 +1704,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 								if (isFinishing() || s == null || town != s.city) return;
 								s.quakes = Fetcher.quakes(MainActivity.this, town);
 								ro.meteoalarm.android.core.Quakes.Quake nq = s.mainQuake();
-								infpMiss = nq != null && "INFP".equals(nq.src) ? null
-										: Tr.t("INFP has no value for it yet · try again", "INFP nu are încă o valoare · încearcă din nou");
+								infpMiss = nq != null && nq.official ? null
+										: on + Tr.t(" has no value for it yet · try again", " nu are încă o valoare · încearcă din nou");
 								if (bubble.isOpen()) {
 									bubble.hide();
 									quakeBubble(b);
@@ -1714,7 +1716,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					}
 				}).start();
 			}
-		} : null, miss != null ? miss : "↻ " + Tr.t("Refresh from INFP (Romania)", "Reîmprospătează de la INFP (România)"));
+		} : null, miss != null ? miss : "↻ " + Tr.t("Refresh from ", "Reîmprospătează de la ") + on, on);
 		List<Bubble.Row> rows = new ArrayList<Bubble.Row>();
 		rows.add(Bubble.Row.view(body));
 		// The other earthquakes of the day and the sources, as before.
@@ -1727,8 +1729,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (r[0].equals("h") && r[1].equals(Tr.t("All in the last 24 h", "Toate în ultimele 24 h"))) rest = true;
 			if (rest || r[0].equals("s")) more.add(r);
 		}
-		if (Fetcher.infpFor(town)) more.add(new String[] { "s", Tr.t("Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.",
+		if (off != null && off.code.equals("ro")) more.add(new String[] { "s", Tr.t("Romania: the official values come from INFP (National Institute for Earth Physics, infp.ro); EMSC when INFP does not answer.",
 				"România: valorile oficiale vin de la INFP (Institutul Național de Fizica Pământului, infp.ro); EMSC când INFP nu răspunde.") });
+		else if (off != null) more.add(new String[] { "s", Tr.t("The official values come from ", "Valorile oficiale vin de la ") + off.name + " (" + off.full + ", " + off.site + ")"
+				+ Tr.t("; EMSC when it does not answer.", "; EMSC când nu răspunde.") });
 		rows.addAll(Bubble.info(more));
 		Log.i(this, "CUTREMUR", "bula cu hartă: M" + t[2] + " " + q.src + ", " + t[4]);
 		bubble.place = t[1];
@@ -3308,9 +3312,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				String ci = null;
 				// v2.035 (Viorel): in Romania INFP's official values first, then EMSC.
 				if (Fetcher.infpFor(c)) try {
-					ci = Weather.get(ro.meteoalarm.android.core.Quakes.infpUrl(now));
+					ci = Weather.get(Fetcher.officialOf(c).url);
 				} catch (Exception e) {
-					Log.e(ctx, "CUTREMUR", "lista INFP a eșuat: " + Fetcher.reason(e, false));
+					Log.e(ctx, "CUTREMUR", "lista " + Fetcher.officialOf(c).name + " a eșuat: " + Fetcher.reason(e, false));
 				}
 				try {
 					a = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usgsUrl(c.lat, c.lon, now - 7 * 86400000L)
@@ -3373,8 +3377,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (quakesInfp != null && Fetcher.infpFor(c)) {
 				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
 				try {
-					String it = ro.meteoalarm.android.core.Quakes.infpFromApi(quakesInfp, l);
-					if (it != null) ro.meteoalarm.android.core.Quakes.mergeInfp(l, it, c.lat, c.lon, now, 7 * 86400000L);
+					String it = ro.meteoalarm.android.core.Quakes.officialText(Fetcher.officialOf(c), quakesInfp, l);
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeOfficial(l, it, Fetcher.officialOf(c).name, c.lat, c.lon, now, 7 * 86400000L);
 				} catch (Exception e) {
 					Log.e(this, "CUTREMUR", "valorile INFP: " + e);
 				}
@@ -3382,10 +3386,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (l.isEmpty()) help.text(Tr.t("No earthquake of magnitude 3 or more.", "Niciun cutremur cu magnitudinea 3 sau mai mare."));
 			for (ro.meteoalarm.android.core.Quakes.Quake q : l) {
 				double[] em = emsc.get(q.id);
-				if (em != null && "INFP".equals(q.src)) matched++;
+				if (em != null && q.official) matched++;
 				quakeEntry(q, c, true, em == null ? Double.NaN : em[0]);
 			}
-			Log.i(this, "CUTREMUR", country + ", 7 zile: " + l.size() + (quakesInfp != null && Fetcher.infpFor(c) ? " (INFP: " + matched + " cu valoarea INFP)" : ""));
+			Log.i(this, "CUTREMUR", country + ", 7 zile: " + l.size() + (quakesInfp != null && Fetcher.infpFor(c) ? " (" + matched + " cu valoarea " + Fetcher.officialOf(c).name + ")" : ""));
 		}
 		help.section(Tr.t("Last 48 hours · EU, Ukraine, Moldova", "Ultimele 48 de ore · UE, Ucraina, Moldova"));
 		if (quakesEurope == null) help.text(Tr.t("Downloading from EMSC…", "Se descarcă de la EMSC…"));
@@ -3402,8 +3406,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (quakesInfp != null && Fetcher.infpFor(c)) {
 				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
 				try {
-					String it = ro.meteoalarm.android.core.Quakes.infpFromApi(quakesInfp, l);
-					if (it != null) ro.meteoalarm.android.core.Quakes.mergeInfp(l, it, c.lat, c.lon, now, 2 * 86400000L);
+					String it = ro.meteoalarm.android.core.Quakes.officialText(Fetcher.officialOf(c), quakesInfp, l);
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeOfficial(l, it, Fetcher.officialOf(c).name, c.lat, c.lon, now, 2 * 86400000L);
 				} catch (Exception e) {
 					Log.e(this, "CUTREMUR", "valorile INFP (UE): " + e);
 				}
@@ -3415,7 +3419,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 			Log.i(this, "CUTREMUR", "UE + UA + MD, 48 h: " + l.size());
 		}
-		if (Fetcher.infpFor(c)) help.source(Tr.t("Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.", "România: lângă valoarea EMSC, cea oficială a INFP (infp.ro), când INFP o are."));
+		ro.meteoalarm.android.core.Quakes.Official off = Fetcher.officialOf(c);
+		if (off != null && off.code.equals("ro")) help.source(Tr.t("Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.", "România: lângă valoarea EMSC, cea oficială a INFP (infp.ro), când INFP o are."));
+		else if (off != null) help.source(Tr.t("Next to EMSC's value, the official one of ", "Lângă valoarea EMSC, cea oficială a ") + off.name + " (" + off.full + ", " + off.site + ")"
+				+ Tr.t(", when it has it.", ", când o are."));
 		help.source(Tr.t("Source: EMSC (European-Mediterranean Seismological Centre, seismicportal.eu), magnitude 3 and over. \"Felt\" is an estimate on the EMS-98 scale from the magnitude and the distance to the focus.",
 				"Sursa: EMSC (Centrul Seismologic European-Mediteranean, seismicportal.eu), magnitudine 3 și peste. „Resimțit” e o estimare pe scara EMS-98, după magnitudine și distanța până la focar."));
 		help.show();
@@ -3454,8 +3461,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (quakesInfp != null && Fetcher.infpFor(c)) {
 				for (ro.meteoalarm.android.core.Quakes.Quake q : l) emsc.put(q.id, new double[] { q.mag });
 				try {
-					String it = ro.meteoalarm.android.core.Quakes.infpFromApi(quakesInfp, l);
-					if (it != null) ro.meteoalarm.android.core.Quakes.mergeInfp(l, it, c.lat, c.lon, now, 2 * 86400000L);
+					String it = ro.meteoalarm.android.core.Quakes.officialText(Fetcher.officialOf(c), quakesInfp, l);
+					if (it != null) ro.meteoalarm.android.core.Quakes.mergeOfficial(l, it, Fetcher.officialOf(c).name, c.lat, c.lon, now, 2 * 86400000L);
 				} catch (Exception e) {
 					Log.e(this, "CUTREMUR", "valorile INFP (UE): " + e);
 				}
@@ -3642,7 +3649,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String name = "M " + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot()) + " · " + Screen.place(q.region, s.unitF);
 		// v2.035: with INFP's value, both: "INFP ML 5,7 · EMSC 5,3".
 		String vals = "";
-		if ("INFP".equals(q.src)) vals = "INFP " + (q.magType.length() > 0 ? q.magType + " " : "") + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot())
+		if (q.official) vals = q.src + " " + (q.magType.length() > 0 ? q.magType + " " : "") + String.format(java.util.Locale.US, "%.1f", q.mag).replace('.', Tr.dot())
 				+ (Double.isNaN(emscMag) ? "" : " · EMSC " + String.format(java.util.Locale.US, "%.1f", emscMag).replace('.', Tr.dot())) + "\n";
 		String what = vals + s.T.weekdayTime(q.time, s.clk12) + " " + new java.text.SimpleDateFormat(s.unitF ? "M/d" : "dd.MM", java.util.Locale.US).format(new java.util.Date(q.time))
 				+ " · " + Tr.t("depth ", "adâncime ") + s.dist(q.depth) + " · " + s.dist(q.dist) + " " + Tr.t("from ", "de ") + c.name;
@@ -3772,7 +3779,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("quake"), Tr.t("Earthquake map", "Harta cutremurului"), Tr.t("A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.",
 				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește.")
 				+ " " + Tr.t("On the big map, drag the window at the bottom up to see the felt zones.", "Pe harta mare, trage fereastra de jos în sus pentru zonele resimțite.")
-				+ " " + Tr.t("In Romania, ↻ INFP in the bubble asks for the official value again.", "În România, ↻ INFP din bulă cere din nou valoarea oficială."));
+				+ " " + Tr.t("In Romania, ↻ INFP in the bubble asks for the official value again.", "În România, ↻ INFP din bulă cere din nou valoarea oficială.")
+				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));

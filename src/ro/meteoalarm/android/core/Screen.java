@@ -3064,7 +3064,7 @@ public final class Screen {
 				: Tr.t("Updates by itself when the seismologists revise it.", "Se actualizează singur când seismologii revizuiesc valoarea.");
 		return new String[] { Tr.t("Earthquake in ", "Cutremur în ") + where, when + " · " + Tr.t("depth ", "adâncime ") + dist(q.depth), dec(q.mag), mt,
 				dist(q.dist), Tr.t("from ", "de ") + town + (Double.isNaN(br) ? "" : " (" + dir8(br) + ")"), dist(q.depth), kind, felt, feltHead, feltText,
-				source, src.equals("INFP") ? Tr.t("official", "oficial") : "", first,
+				source, q.official ? Tr.t("official", "oficial") : "", first,
 				Tr.t("Did the Android alert show another value?", "Alerta Android a arătat altă valoare?"),
 				Tr.t("That is a quick estimate made within seconds from the phones' sensors; for deep earthquakes, like those of Vrancea, it often comes out higher. The value here comes from seismologists.",
 						"Aceea e o estimare rapidă, făcută în câteva secunde din senzorii telefoanelor; la cutremurele adânci, ca cele din Vrancea, iese de obicei mai mare. Valoarea de aici vine de la seismologi."),

@@ -1545,3 +1545,12 @@ body-wave magnitude	rymdvågsmagnitud
 magnitude	magnitud
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Rumänien: bredvid EMSC:s värde INFP:s officiella (infp.ro), när INFP har det.
+# v2.040
+Checking 	Kontrollerar 
+Refresh from 	Uppdatera från 
+ has no value for it yet · try again	 har inget värde än · försök igen
+The official values come from 	De officiella värdena kommer från 
+; EMSC when it does not answer.	; EMSC när den inte svarar.
+Next to EMSC's value, the official one of 	Bredvid EMSC:s värde det officiella från 
+, when it has it.	, när det finns.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Rumänien, Frankrike, Italien, Nederländerna, Schweiz, Grekland: först landets institut, sedan EMSC.

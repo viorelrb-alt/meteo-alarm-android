@@ -1479,3 +1479,12 @@ body-wave magnitude	cisim dalgası büyüklüğü
 magnitude	büyüklük
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Romanya: EMSC değerinin yanında INFP’nin resmi değeri (infp.ro), INFP’de varsa.
+# v2.040
+Checking 	Kontrol ediliyor: 
+Refresh from 	Yenile: 
+ has no value for it yet · try again	 henüz değer vermedi · tekrar deneyin
+The official values come from 	Resmi değerlerin kaynağı: 
+; EMSC when it does not answer.	; yanıt vermezse EMSC.
+Next to EMSC's value, the official one of 	EMSC değerinin yanında resmi değer: 
+, when it has it.	, varsa.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Romanya, Fransa, İtalya, Hollanda, İsviçre, Yunanistan: önce ülkenin enstitüsü, sonra EMSC.

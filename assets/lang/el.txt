@@ -1545,3 +1545,12 @@ body-wave magnitude	μέγεθος χωρικών κυμάτων
 magnitude	μέγεθος
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Ρουμανία: δίπλα στην τιμή του EMSC, η επίσημη του INFP (infp.ro), όταν υπάρχει.
+# v2.040
+Checking 	Έλεγχος στο 
+Refresh from 	Ανανέωση από 
+ has no value for it yet · try again	 δεν έχει ακόμη τιμή · δοκιμάστε ξανά
+The official values come from 	Οι επίσημες τιμές έρχονται από 
+; EMSC when it does not answer.	· EMSC όταν δεν απαντά.
+Next to EMSC's value, the official one of 	Δίπλα στην τιμή του EMSC, η επίσημη του 
+, when it has it.	, όταν υπάρχει.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Ρουμανία, Γαλλία, Ιταλία, Ολλανδία, Ελβετία, Ελλάδα: πρώτα το εθνικό ινστιτούτο, μετά το EMSC.

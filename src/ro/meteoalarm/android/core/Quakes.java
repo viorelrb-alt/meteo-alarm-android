@@ -32,6 +32,50 @@ public final class Quakes {
 		public double firstMag = Double.NaN;
 		public String firstSrc = "";
 		public long firstAt, changedAt;
+		/** v2.040: the values are the country's seismological institute's (INFP, INGV, BCSF…). */
+		public boolean official;
+	}
+
+	/**
+	 * v2.040 (Viorel): the country's own seismological institute, asked before EMSC: its short name
+	 * (shown as the source), full name, site and list. Romania: INFP's JSON list; the others: their
+	 * FDSN event service (text, times in UTC). Null for a country without a public list.
+	 */
+	public static final class Official {
+		public final String code, name, full, site, url;
+		public final boolean json;
+
+		Official(String code, String name, String full, String site, String url, boolean json) {
+			this.code = code;
+			this.name = name;
+			this.full = full;
+			this.site = site;
+			this.url = url;
+			this.json = json;
+		}
+	}
+
+	public static Official official(String country) {
+		String c = country == null ? "" : country.toLowerCase(Locale.US);
+		if (c.equals("ro")) return new Official(c, "INFP", "Institutul Național de Fizica Pământului", "infp.ro", "https://fastapi.infp.ro/v1/?product=shakemap4", true);
+		if (c.equals("it")) return new Official(c, "INGV", "Istituto Nazionale di Geofisica e Vulcanologia", "ingv.it",
+				"https://webservices.ingv.it/fdsnws/event/1/query?minmag=-1&format=text&timezone=UTC&limit=300&orderby=time", false);
+		if (c.equals("fr")) return new Official(c, "BCSF", "BCSF-Rénass", "franceseisme.fr",
+				"https://api.franceseisme.fr/fdsnws/event/1/query?minmag=-1&format=text&timezone=UTC&limit=300&orderby=time", false);
+		if (c.equals("nl")) return new Official(c, "KNMI", "Koninklijk Nederlands Meteorologisch Instituut", "knmi.nl",
+				"https://rdsa.knmi.nl/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time", false);
+		if (c.equals("ch")) return new Official(c, "SED", "Schweizerischer Erdbebendienst (ETH Zürich)", "seismo.ethz.ch",
+				"https://arclink.ethz.ch/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time", false);
+		if (c.equals("gr")) return new Official(c, "NOA", "National Observatory of Athens", "noa.gr",
+				"https://eida.gein.noa.gr/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time", false);
+		return null;
+	}
+
+	/** The institute's answer RAW as the text lines mergeOfficial reads (null when unreadable). */
+	public static String officialText(Official o, String raw, List<Quake> emsc) {
+		if (o == null || raw == null) return null;
+		if (o.json) return infpFromApi(raw, emsc);
+		return raw.indexOf('|') >= 0 || raw.trim().length() == 0 ? raw : null;
 	}
 
 	// --- v2.030: INFP (Institutul Național de Fizica Pământului), the official values for Romania ---
@@ -139,6 +183,13 @@ public final class Quakes {
 	 * are worked out again for the town at LAT LON. True when INFP had anything usable.
 	 */
 	public static boolean mergeInfp(List<Quake> qs, String text, double lat, double lon, long now, long window) {
+		return mergeOfficial(qs, text, "INFP", lat, lon, now, window);
+	}
+
+	/** v2.040: the same for any country's institute SRC (outside Romania its own quakes within 400 km of the town are added). */
+	public static boolean mergeOfficial(List<Quake> qs, String text, String src, double lat, double lon, long now, long window) {
+		boolean ro = "INFP".equals(src);
+		String pre = src.toLowerCase(Locale.US);
 		if (text == null || text.trim().length() == 0) return false;
 		List<Quake> inf = new ArrayList<Quake>();
 		for (String line : text.split("\n")) {
@@ -148,7 +199,7 @@ public final class Quakes {
 			Quake n = new Quake();
 			try {
 				String id = c[0].trim().replaceAll("[^A-Za-z0-9]+", "");
-				n.id = id.startsWith("infp") ? id : "infp" + id;
+				n.id = id.startsWith(pre) ? id : pre + id;
 				n.time = Warnings.epoch(c[1].trim());
 				n.lat = Double.parseDouble(c[2].trim());
 				n.lon = Double.parseDouble(c[3].trim());
@@ -159,8 +210,9 @@ public final class Quakes {
 				continue;
 			}
 			if (Double.isNaN(n.mag) || n.time <= 0 || now - n.time > window || n.time - now > 600000L) continue;
-			n.region = c.length > 12 && c[12].trim().length() > 0 ? c[12].trim() : "ROMANIA";
-			n.src = "INFP";
+			n.region = c.length > 12 && c[12].trim().length() > 0 ? c[12].trim() : ro ? "ROMANIA" : "";
+			n.src = src;
+			n.official = true;
 			// v2.033: INFP's own list (author INFP) is the Romanian network's: its places need no country name.
 			n.firstSrc = c.length > 5 && "INFP".equals(c[5].trim()) ? "api" : "";
 			inf.add(n);
@@ -191,7 +243,8 @@ public final class Quakes {
 			q.lon = n.lon;
 			q.depth = n.depth;
 			q.time = n.time;
-			q.src = "INFP";
+			q.src = src;
+			q.official = true;
 			q.altId = n.id;
 			q.updated = 0;
 			q.dist = km(lat, lon, q.lat, q.lon);
@@ -199,11 +252,14 @@ public final class Quakes {
 		}
 		for (int k = 0; k < inf.size(); k++) {
 			Quake n = inf.get(k);
-			if (used[k] || n.mag < MIN_MAG || !inRomania(n.lat, n.lon)) continue;
-			// INFP names the country: a quake just over the border stays out (as with EMSC).
-			if (!"api".equals(n.firstSrc) && !Warnings.fold(n.region).toUpperCase(Locale.US).contains("ROMANIA")) continue;
-			n.firstSrc = "";
+			if (used[k] || n.mag < MIN_MAG) continue;
 			n.dist = km(lat, lon, n.lat, n.lon);
+			if (ro) {
+				if (!inRomania(n.lat, n.lon)) continue;
+				// INFP names the country: a quake just over the border stays out (as with EMSC).
+				if (!"api".equals(n.firstSrc) && !Warnings.fold(n.region).toUpperCase(Locale.US).contains("ROMANIA")) continue;
+			} else if (n.dist > 400) continue;
+			n.firstSrc = "";
 			n.felt = intensity(n.mag, Math.sqrt(n.dist * n.dist + n.depth * n.depth));
 			qs.add(n);
 		}

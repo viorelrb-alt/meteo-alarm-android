@@ -1545,3 +1545,12 @@ body-wave magnitude	tilavuusaaltojen magnitudi
 magnitude	magnitudi
 # v2.035
 Romania: next to EMSC's value, INFP's official one (infp.ro), when INFP has it.	Romania: EMSC:n arvon vieressä INFP:n virallinen arvo (infp.ro), kun INFP:llä se on.
+# v2.040
+Checking 	Tarkistetaan: 
+Refresh from 	Päivitä: 
+ has no value for it yet · try again	 ei vielä ole arvoa · yritä uudelleen
+The official values come from 	Viralliset arvot tulevat: 
+; EMSC when it does not answer.	; EMSC, kun se ei vastaa.
+Next to EMSC's value, the official one of 	EMSC:n arvon vieressä virallinen arvo: 
+, when it has it.	, kun se on saatavilla.
+Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.	Romania, Ranska, Italia, Alankomaat, Sveitsi, Kreikka: ensin maan laitos, sitten EMSC.

@@ -86,7 +86,7 @@ final class QuakeCard {
 	 * in landscape (wide) the map at the left and the rest at the right. BIG opens the whole map.
 	 */
 	static View body(final Context ctx, Quakes.Quake q, Cities.City town, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, int width,
-			final Runnable big, final Runnable refresh, String refreshText) {
+			final Runnable big, final Runnable refresh, String refreshText, final String refreshName) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		boolean wide = width > 560 * dp;
 		LinearLayout root = new LinearLayout(ctx);
@@ -205,7 +205,7 @@ final class QuakeCard {
 				public void onClick(View v) {
 					rb.setEnabled(false);
 					rb.setAlpha(0.6f);
-					rb.setText(Bubble.nb(ro.meteoalarm.android.core.Tr.t("Checking INFP…", "Se verifică la INFP…")));
+					rb.setText(Bubble.nb(ro.meteoalarm.android.core.Tr.t("Checking ", "Se verifică la ") + refreshName + "…"));
 					refresh.run();
 				}
 			});
@@ -286,7 +286,7 @@ final class QuakeCard {
 		wh.setGravity(Gravity.CENTER);
 		wh.setMaxLines(2);
 		c.addView(wh);
-		boolean infp = "INFP".equals(src);
+		boolean infp = src != null && src.length() > 0 && !"EMSC".equals(src) && !"USGS".equals(src);
 		int col = infp ? 0xFF22C55E : "USGS".equals(src) ? 0xFF94A3B8 : 0xFF60A5FA;
 		TextView ch = text(ctx, src == null ? "" : src, 11 * zk, bold, dark ? (infp ? 0xFF86EFAC : 0xFFBFDBFE) : (infp ? 0xFF15803D : 0xFF1D4ED8));
 		ch.setGravity(Gravity.CENTER);
@@ -429,7 +429,7 @@ final class QuakeCard {
 		String nowAt = t[23].contains(" · ") ? t[23].substring(0, t[23].indexOf(" · ")) : t[23];
 		if (!Double.isNaN(q.firstMag)) {
 			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
-			hist.addView(histCell(ctx, first(t[13]), fm, q.firstSrc, magWhat("INFP".equals(q.firstSrc) ? "ML" : ""), dark, reg, bold, zk), cellLp(0, dp));
+			hist.addView(histCell(ctx, first(t[13]), fm, q.firstSrc, magWhat(""), dark, reg, bold, zk), cellLp(0, dp));
 			TextView arrow = text(ctx, "→", 20 * zk, bold, dim);
 			LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			al.leftMargin = al.rightMargin = (int) (6 * dp);

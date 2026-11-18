@@ -1,6 +1,6 @@
-Súčasná verzia: v.2.036 · 18.11.2026
+Súčasná verzia: v.2.040 · 18.11.2026
 HLAVNÁ OBRAZOVKA
-- Mapa zemetrasenia: ťuknutie na pole Zemetrasenie ukáže mapu s epicentrom, tvojou obcou, vzdialenosťou a zónami pocítenia; ťuknutie na mapu ju zväčší, s históriou hodnoty. V Rumunsku pochádzajú oficiálne hodnoty z INFP.
+- Mapa zemetrasenia: ťuknutie na pole Zemetrasenie ukáže mapu s epicentrom, tvojou obcou, vzdialenosťou a zónami pocítenia; ťuknutie na mapu ju zväčší, s históriou hodnoty. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC.
 NASTAVENIA
 - Jazyk zobrazenia: v ☰ angličtina a jazyk krajiny; Ďalšie jazyky: ostatné jazyky krajiny, veľké jazyky EÚ, rumunčina a jazyk telefónu (v USA len angličtina a španielčina).
 POZEMKY
