@@ -38,10 +38,19 @@ public final class Quakes {
 
 	/** INFP's FDSN event service (SeisComP), text format: the quakes since SINCE, magnitude 2.5 and over. */
 	public static String infpUrl(long since) {
-		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US);
-		f.setTimeZone(java.util.TimeZone.getTimeZone("UTC"));
-		return "https://eida-sc3.infp.ro/fdsnws/event/1/query?format=text&orderby=time&limit=300&minmagnitude=2.5&starttime="
-				+ f.format(new java.util.Date(since));
+		// v2.032: the plain query (as other INFP readers use it): the newest 300 events, no start time
+		// nor magnitude limit (v2.031 asked with both and INFP answered with nothing); the last
+		// 24 h are kept by mergeInfp.
+		return "https://eida-sc3.infp.ro/fdsnws/event/1/query?minmag=-1&format=text&limit=300&orderby=time";
+	}
+
+	/** INFP's time (UTC, no zone) in ms, 0 when unreadable. */
+	public static long infpTime(String s) {
+		try {
+			return Warnings.epoch(s);
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	/** Romania with a little room (INFP's own quakes there count even before EMSC has them). */

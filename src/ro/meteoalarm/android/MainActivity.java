@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.031";
+	static final String VERSION = "Meteo Alarm Android v2.032";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1670,7 +1670,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * screen), distance and depth, how it was felt here, the source with its revision and why the
 	 * Android alert may differ; then the other earthquakes of the day and the sources.
 	 */
-	private void quakeBubble(float[] b) {
+	/** v2.032: the INFP button's text after a check that brought no INFP value (null = as at first). */
+	private String infpMiss;
+
+	private void quakeBubble(final float[] b) {
 		final ro.meteoalarm.android.core.Quakes.Quake q = s.mainQuake();
 		if (q == null) return;
 		final String[] t = s.quakeTexts(q);
@@ -1680,12 +1683,38 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (TextSize.tablet(this)) w = (int) Math.min(sw - 32 * dp, 0.5f * Math.min(sw, sh));
 		else w = (int) Math.min(sw - 32 * dp, sw > sh ? 900 * dp : sw);
 		final Cities.City town = s.city;
+		String miss = infpMiss;
+		infpMiss = null;
 		View body = QuakeCard.body(this, q, town, t, s.dark, fReg, fBold, zk, w, new Runnable() {
 			public void run() {
 				Log.i(MainActivity.this, "CUTREMUR", "harta mare deschisă");
 				QuakeCard.bigMap(MainActivity.this, q, town, s, s.dark, fReg, fBold, zk);
 			}
-		});
+		}, Fetcher.infpFor(town) && !"INFP".equals(q.src) ? new Runnable() {
+			// v2.032 (Viorel): ask INFP now; the bubble opens again with what came.
+			public void run() {
+				Log.i(MainActivity.this, "CUTREMUR", "verificare INFP cerută din bulă");
+				new Thread(new Runnable() {
+					public void run() {
+						Fetcher.quakesOnly(MainActivity.this, town);
+						runOnUiThread(new Runnable() {
+							public void run() {
+								if (isFinishing() || s == null || town != s.city) return;
+								s.quakes = Fetcher.quakes(MainActivity.this, town);
+								ro.meteoalarm.android.core.Quakes.Quake nq = s.mainQuake();
+								infpMiss = nq != null && "INFP".equals(nq.src) ? null
+										: Tr.t("INFP has no value for it yet · try again", "INFP nu are încă o valoare · încearcă din nou");
+								if (bubble.isOpen()) {
+									bubble.hide();
+									quakeBubble(b);
+								}
+								view.invalidate();
+							}
+						});
+					}
+				}).start();
+			}
+		} : null, miss != null ? miss : "↻ " + Tr.t("Refresh from INFP (Romania)", "Reîmprospătează de la INFP (România)"));
 		List<Bubble.Row> rows = new ArrayList<Bubble.Row>();
 		rows.add(Bubble.Row.view(body));
 		// The other earthquakes of the day and the sources, as before.
@@ -3682,7 +3711,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: Tr.t("The strongest earthquake of the last 24 hours in your country and how it was likely felt (EMSC; in Romania INFP's official values).", "Cel mai puternic cutremur din ultimele 24 de ore din țara ta și cum s-a simțit probabil (EMSC; în România valorile oficiale INFP)."));
 		help.entry(mini("quake"), Tr.t("Earthquake map", "Harta cutremurului"), Tr.t("A tap on the Earthquake box: a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it.",
 				"Atingerea casetei Cutremur: harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește.")
-				+ " " + Tr.t("On the big map, drag the window at the bottom up to see the felt zones.", "Pe harta mare, trage fereastra de jos în sus pentru zonele resimțite."));
+				+ " " + Tr.t("On the big map, drag the window at the bottom up to see the felt zones.", "Pe harta mare, trage fereastra de jos în sus pentru zonele resimțite.")
+				+ " " + Tr.t("In Romania, ↻ INFP in the bubble asks for the official value again.", "În România, ↻ INFP din bulă cere din nou valoarea oficială."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));

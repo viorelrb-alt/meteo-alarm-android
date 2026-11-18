@@ -1533,3 +1533,8 @@ up to ~	έως ~
 updates by itself	ενημερώνεται μόνο του
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Στον μεγάλο χάρτη σύρετε το κάτω παράθυρο προς τα πάνω για να δείτε τις ζώνες αίσθησης.
+# v2.032
+Checking INFP…	Έλεγχος στο INFP…
+INFP has no value for it yet · try again	Το INFP δεν έχει ακόμη τιμή · δοκιμάστε ξανά
+Refresh from INFP (Romania)	Ανανέωση από INFP (Ρουμανία)
+In Romania, ↻ INFP in the bubble asks for the official value again.	Στη Ρουμανία, το ↻ INFP στο συννεφάκι ζητά ξανά την επίσημη τιμή.

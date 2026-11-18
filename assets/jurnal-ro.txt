@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.031 · 18.11.2026
+Versiunea curentă: v.2.032 · 18.11.2026
 ECRAN PRINCIPAL
 - Harta cutremurului: atingerea casetei Cutremur arată harta cu epicentrul, localitatea ta, distanța și zonele resimțite; atingerea hărții o mărește, cu istoricul valorii. În România valorile oficiale vin de la INFP.
 NOTIFICĂRI

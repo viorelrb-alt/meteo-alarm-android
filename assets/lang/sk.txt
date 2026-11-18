@@ -1533,3 +1533,8 @@ up to ~	až ~
 updates by itself	aktualizuje sa sama
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Na veľkej mape potiahnite spodné okno nahor a uvidíte zóny pocítenia.
+# v2.032
+Checking INFP…	Overujem v INFP…
+INFP has no value for it yet · try again	INFP zatiaľ nemá hodnotu · skúste znova
+Refresh from INFP (Romania)	Obnoviť z INFP (Rumunsko)
+In Romania, ↻ INFP in the bubble asks for the official value again.	V Rumunsku ↻ INFP v bubline znova zistí oficiálnu hodnotu.

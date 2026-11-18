@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.031 · 18.11.2026
+Pašreizējā versija: v.2.032 · 18.11.2026
 GALVENAIS EKRĀNS
 - Zemestrīces karte: pieskāriens lodziņam Zemestrīce parāda karti ar epicentru, tavu vietu, attālumu un jūtamības zonām; pieskāriens kartei to palielina, ar vērtības vēsturi. Rumānijā oficiālās vērtības nāk no INFP.
 IESTATĪJUMI

@@ -1533,3 +1533,8 @@ up to ~	kuni ~
 updates by itself	uueneb ise
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Suurel kaardil lohista alumine aken üles, et näha tajumise tsoone.
+# v2.032
+Checking INFP…	Kontrollin INFP-st…
+INFP has no value for it yet · try again	INFP-l pole veel väärtust · proovi uuesti
+Refresh from INFP (Romania)	Värskenda INFP-st (Rumeenia)
+In Romania, ↻ INFP in the bubble asks for the official value again.	Rumeenias küsib mullis ↻ INFP ametlikku väärtust uuesti.

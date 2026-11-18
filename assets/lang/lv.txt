@@ -1533,3 +1533,8 @@ up to ~	līdz ~
 updates by itself	atjauninās pati
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Lielajā kartē velciet apakšējo logu uz augšu, lai redzētu sajūtamības zonas.
+# v2.032
+Checking INFP…	Pārbauda INFP…
+INFP has no value for it yet · try again	INFP vēl nav vērtības · mēģiniet vēlreiz
+Refresh from INFP (Romania)	Atjaunot no INFP (Rumānija)
+In Romania, ↻ INFP in the bubble asks for the official value again.	Rumānijā ↻ INFP burbulī vēlreiz pieprasa oficiālo vērtību.

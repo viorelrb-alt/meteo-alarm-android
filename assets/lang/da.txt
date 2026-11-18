@@ -1533,3 +1533,8 @@ up to ~	op til ~
 updates by itself	opdaterer sig selv
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	På det store kort trækker du vinduet nederst op for at se zonerne, hvor det mærkes.
+# v2.032
+Checking INFP…	Tjekker INFP…
+INFP has no value for it yet · try again	INFP har endnu ingen værdi · prøv igen
+Refresh from INFP (Romania)	Opdater fra INFP (Rumænien)
+In Romania, ↻ INFP in the bubble asks for the official value again.	I Rumænien spørger ↻ INFP i boblen igen efter den officielle værdi.

@@ -1533,3 +1533,8 @@ up to ~	tot ~
 updates by itself	werkt zichzelf bij
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Sleep op de grote kaart het onderste venster omhoog om de voelbare zones te zien.
+# v2.032
+Checking INFP…	INFP controleren…
+INFP has no value for it yet · try again	INFP heeft nog geen waarde · probeer opnieuw
+Refresh from INFP (Romania)	Vernieuwen via INFP (Roemenië)
+In Romania, ↻ INFP in the bubble asks for the official value again.	In Roemenië vraagt ↻ INFP in de ballon de officiële waarde opnieuw op.

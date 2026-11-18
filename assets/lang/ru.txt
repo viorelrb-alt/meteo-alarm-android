@@ -1467,3 +1467,8 @@ up to ~	до ~
 updates by itself	обновляется само
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	На большой карте потяните нижнее окно вверх, чтобы увидеть зоны ощутимости.
+# v2.032
+Checking INFP…	Проверка в INFP…
+INFP has no value for it yet · try again	У INFP пока нет значения · попробуйте снова
+Refresh from INFP (Romania)	Обновить из INFP (Румыния)
+In Romania, ↻ INFP in the bubble asks for the official value again.	В Румынии ↻ INFP в пузыре снова запрашивает официальное значение.

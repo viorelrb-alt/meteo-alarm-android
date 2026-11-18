@@ -1533,3 +1533,8 @@ up to ~	do ~
 updates by itself	ažurira se sama
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Na velikoj karti povucite donji prozor prema gore da vidite zone osjeta.
+# v2.032
+Checking INFP…	Provjera kod INFP-a…
+INFP has no value for it yet · try again	INFP još nema vrijednost · pokušajte ponovno
+Refresh from INFP (Romania)	Osvježi s INFP-a (Rumunjska)
+In Romania, ↻ INFP in the bubble asks for the official value again.	U Rumunjskoj ↻ INFP u oblačiću ponovno traži službenu vrijednost.

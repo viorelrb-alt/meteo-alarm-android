@@ -86,7 +86,7 @@ final class QuakeCard {
 	 * in landscape (wide) the map at the left and the rest at the right. BIG opens the whole map.
 	 */
 	static View body(final Context ctx, Quakes.Quake q, Cities.City town, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, int width,
-			final Runnable big) {
+			final Runnable big, final Runnable refresh, String refreshText) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
 		boolean wide = width > 560 * dp;
 		LinearLayout root = new LinearLayout(ctx);
@@ -192,6 +192,25 @@ final class QuakeCard {
 		col.addView(sr, srl);
 		TextView first = text(ctx, t[13], 12 * zk, reg, dim);
 		col.addView(first);
+		// v2.032 (Viorel): in Romania, ask INFP again now (its official value may come later than EMSC's).
+		if (refresh != null) {
+			final TextView rb = text(ctx, refreshText, 13 * zk, bold, dark ? 0xFF86EFAC : 0xFF15803D);
+			rb.setGravity(Gravity.CENTER);
+			rb.setPadding((int) (14 * dp), (int) (8 * dp), (int) (14 * dp), (int) (8 * dp));
+			rb.setBackground(Glass.pill(0x2622C55E, 0x6622C55E, 18 * dp, dp));
+			rb.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					rb.setEnabled(false);
+					rb.setAlpha(0.6f);
+					rb.setText(Bubble.nb(ro.meteoalarm.android.core.Tr.t("Checking INFP…", "Se verifică la INFP…")));
+					refresh.run();
+				}
+			});
+			LinearLayout.LayoutParams rbl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			rbl.topMargin = (int) (8 * dp);
+			rbl.gravity = Gravity.CENTER_HORIZONTAL;
+			col.addView(rb, rbl);
+		}
 		// Why the Android alert may show another value.
 		TextView note = text(ctx, "", 12.5f * zk, reg, ink);
 		android.text.SpannableStringBuilder nb = new android.text.SpannableStringBuilder(t[14]);
@@ -227,6 +246,33 @@ final class QuakeCard {
 		TextView s = text(ctx, sub, 11.5f * zk, reg, Theme.dim(dark));
 		s.setMaxLines(2);
 		c.addView(s);
+		return c;
+	}
+
+	/** One box of the value's history: WHEN on top, the value large, the source as a coloured chip, all centred. */
+	private static View histCell(Context ctx, String when, String value, String src, boolean dark, Typeface bold, float zk) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		LinearLayout c = new LinearLayout(ctx);
+		c.setOrientation(LinearLayout.VERTICAL);
+		c.setGravity(Gravity.CENTER_HORIZONTAL);
+		c.setPadding((int) (10 * dp), (int) (10 * dp), (int) (10 * dp), (int) (12 * dp));
+		c.setBackground(Glass.cardBg(dark, 14 * dp, dp));
+		TextView w = text(ctx, when.toUpperCase(), 11.5f * zk, bold, Theme.dim(dark));
+		w.setLetterSpacing(0.05f);
+		w.setGravity(Gravity.CENTER);
+		c.addView(w);
+		TextView v = text(ctx, value, 26 * zk, bold, Theme.ink(dark));
+		v.setGravity(Gravity.CENTER);
+		c.addView(v);
+		boolean infp = "INFP".equals(src);
+		int col = infp ? 0xFF22C55E : "USGS".equals(src) ? 0xFF94A3B8 : 0xFF60A5FA;
+		TextView ch = text(ctx, src == null ? "" : src, 11 * zk, bold, dark ? (infp ? 0xFF86EFAC : 0xFFBFDBFE) : (infp ? 0xFF15803D : 0xFF1D4ED8));
+		ch.setGravity(Gravity.CENTER);
+		ch.setPadding((int) (10 * dp), (int) (1 * dp), (int) (10 * dp), (int) (2 * dp));
+		ch.setBackground(Glass.pill((col & 0x00FFFFFF) | 0x2E000000, (col & 0x00FFFFFF) | 0x66000000, 10 * dp, dp));
+		LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		cl.topMargin = (int) (4 * dp);
+		c.addView(ch, cl);
 		return c;
 	}
 
@@ -352,14 +398,22 @@ final class QuakeCard {
 		TextView h2 = text(ctx, t[21].toUpperCase(), 11 * zk, bold, dim);
 		h2.setLetterSpacing(0.06f);
 		sheet.addView(h2);
+		// v2.032 (Viorel): the history's boxes centred: when, the value large, the source as a chip;
+		// the first value and the current one with an arrow between them.
 		LinearLayout hist = new LinearLayout(ctx);
 		hist.setOrientation(LinearLayout.HORIZONTAL);
 		hist.setBaselineAligned(false);
+		hist.setGravity(Gravity.CENTER_VERTICAL);
+		String nowAt = t[23].contains(" · ") ? t[23].substring(0, t[23].indexOf(" · ")) : t[23];
 		if (!Double.isNaN(q.firstMag)) {
 			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
-			hist.addView(cell(ctx, first(t[13]), fm, q.firstSrc, dark, reg, bold, zk), cellLp(0, dp));
+			hist.addView(histCell(ctx, first(t[13]), fm, q.firstSrc, dark, bold, zk), cellLp(0, dp));
+			TextView arrow = text(ctx, "→", 20 * zk, bold, dim);
+			LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			al.leftMargin = al.rightMargin = (int) (6 * dp);
+			hist.addView(arrow, al);
 		}
-		hist.addView(cell(ctx, t[23], t[2], t[12].length() > 0 ? t[12] : q.src, dark, reg, bold, zk), cellLp(Double.isNaN(q.firstMag) ? 0 : 8, dp));
+		hist.addView(histCell(ctx, nowAt, t[2], q.src, dark, bold, zk), cellLp(0, dp));
 		LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		hl.topMargin = (int) (6 * dp);
 		sheet.addView(hist, hl);

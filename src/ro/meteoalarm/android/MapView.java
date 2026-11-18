@@ -675,18 +675,34 @@ final class MapView extends View {
 	 * Zoomed on the earthquake inside the map less L, T, R, B pixels: WIDE shows its largest circle
 	 * (up to 700 km), else the epicentre and the town with some room round them.
 	 */
+	/** v2.032: the earthquake's fit waiting for the map's size. */
+	private Runnable fitLater;
+
+	@Override
+	protected void onSizeChanged(int w, int h, int ow, int oh) {
+		super.onSizeChanged(w, h, ow, oh);
+		if (w > 0 && h > 0 && fitLater != null) {
+			final Runnable f = fitLater;
+			fitLater = null;
+			post(f);
+		}
+	}
+
 	void fitQuake(boolean wide, float l, float t, float r, float b) {
 		if (quake == null) return;
-		if (getWidth() == 0) {
+		if (getWidth() == 0 || getHeight() == 0) {
+			// v2.032 (Viorel: the first bubble showed the town, not the quake): fit once the map
+			// has its size (onSizeChanged), however long the bubble takes to be laid out.
 			final boolean w2 = wide;
 			final float l2 = l, t2 = t, r2 = r, b2 = b;
-			post(new Runnable() {
+			fitLater = new Runnable() {
 				public void run() {
-					if (getWidth() > 0) fitQuake(w2, l2, t2, r2, b2);
+					fitQuake(w2, l2, t2, r2, b2);
 				}
-			});
+			};
 			return;
 		}
+		fitLater = null;
 		QuakeMark q = quake;
 		double la0 = q.lat, la1 = q.lat, lo0 = q.lon, lo1 = q.lon;
 		boolean town = !Double.isNaN(q.tLat);

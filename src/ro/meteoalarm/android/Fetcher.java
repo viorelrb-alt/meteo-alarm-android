@@ -184,9 +184,18 @@ final class Fetcher {
 		if (!infpFor(c)) return;
 		try {
 			r.infp = Weather.get(Quakes.infpUrl(System.currentTimeMillis() - Quakes.WINDOW_MS));
-			int n = 0;
-			for (String l : r.infp.split("\n")) if (l.length() > 0 && !l.startsWith("#")) n++;
-			Log.i(ctx, "DATE", "cutremure INFP OK: " + n + " în 24 h");
+			int n = 0, all = 0;
+			long now = System.currentTimeMillis();
+			String newest = "";
+			for (String l : r.infp.split("\n")) {
+				if (l.length() == 0 || l.startsWith("#")) continue;
+				all++;
+				String[] f = l.split("\\|", -1);
+				if (newest.length() == 0 && f.length > 10) newest = f[1].trim() + " UTC M" + f[10].trim() + (f.length > 12 ? " " + f[12].trim() : "");
+				long tm = f.length > 1 ? Quakes.infpTime(f[1].trim()) : 0;
+				if (tm > 0 && now - tm <= Quakes.WINDOW_MS) n++;
+			}
+			Log.i(ctx, "DATE", "cutremure INFP OK: " + n + " în 24 h (" + all + " în răspuns, " + r.infp.length() + " B" + (newest.length() > 0 ? ", ultimul " + newest : "") + ")");
 		} catch (Exception e) {
 			r.infp = null;
 			Log.e(ctx, "DATE", "cutremure INFP a eșuat: " + reason(e, false) + " (rămân valorile EMSC)");

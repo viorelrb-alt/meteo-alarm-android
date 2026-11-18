@@ -1533,3 +1533,8 @@ up to ~	do ~
 updates by itself	aktualizuje się samo
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Na dużej mapie przeciągnij dolne okno w górę, aby zobaczyć strefy odczuwalności.
+# v2.032
+Checking INFP…	Sprawdzanie w INFP…
+INFP has no value for it yet · try again	INFP nie ma jeszcze wartości · spróbuj ponownie
+Refresh from INFP (Romania)	Odśwież z INFP (Rumunia)
+In Romania, ↻ INFP in the bubble asks for the official value again.	W Rumunii ↻ INFP w dymku ponownie pobiera oficjalną wartość.

@@ -1533,3 +1533,8 @@ up to ~	sa ~
 updates by itself	jaġġorna waħdu
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	Fuq il-mappa l-kbira, kaxkar it-tieqa t’isfel ’il fuq biex tara ż-żoni fejn inħass.
+# v2.032
+Checking INFP…	Qed niċċekkja l-INFP…
+INFP has no value for it yet · try again	L-INFP għad m’għandux valur · erġa’ pprova
+Refresh from INFP (Romania)	Aġġorna mill-INFP (ir-Rumanija)
+In Romania, ↻ INFP in the bubble asks for the official value again.	Fir-Rumanija, ↻ INFP fil-bużżieqa jerġa’ jitlob il-valur uffiċjali.

@@ -1533,3 +1533,8 @@ up to ~	~
 updates by itself	magától frissül
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	A nagy térképen húzza felfelé az alsó ablakot az érzékelési zónákhoz.
+# v2.032
+Checking INFP…	INFP lekérdezése…
+INFP has no value for it yet · try again	Az INFP-nek még nincs értéke · próbálja újra
+Refresh from INFP (Romania)	Frissítés az INFP-től (Románia)
+In Romania, ↻ INFP in the bubble asks for the official value again.	Romániában a buborék ↻ INFP gombja újra lekéri a hivatalos értéket.

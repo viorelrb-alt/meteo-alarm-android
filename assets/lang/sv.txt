@@ -1533,3 +1533,8 @@ up to ~	upp till ~
 updates by itself	uppdateras av sig själv
 # v2.031
 On the big map, drag the window at the bottom up to see the felt zones.	På den stora kartan drar du upp fönstret längst ner för att se kännbarhetszonerna.
+# v2.032
+Checking INFP…	Kontrollerar INFP…
+INFP has no value for it yet · try again	INFP har inget värde än · försök igen
+Refresh from INFP (Romania)	Uppdatera från INFP (Rumänien)
+In Romania, ↻ INFP in the bubble asks for the official value again.	I Rumänien frågar ↻ INFP i bubblan efter det officiella värdet igen.
