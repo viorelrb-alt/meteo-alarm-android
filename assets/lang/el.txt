@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Τα πλατιά πλαίσια μόνο στην οθόνη του αγροτεμαχίου· η οθόνη του τόπου μένει όπως στην κανονική λειτουργία.
+
+# v2.100
+EARTHQUAKE INFORMATION	ΠΛΗΡΟΦΟΡΙΕΣ ΣΕΙΣΜΟΥ
+Earthquake information	Πληροφορίες σεισμού
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Ένα πάτημα στο πλαίσιο Σεισμός ανοίγει τις πληροφορίες στην κύρια οθόνη (κάθετα κάτω από το Αίσθηση, οριζόντια αριστερά): ο χάρτης, από κάτω οι ζώνες αίσθησης και το ιστορικό της τιμής, μετά οι λεπτομέρειες· το ‹ τις κλείνει.
+The coloured square or the map opens it on the whole screen.	Το χρωματιστό τετράγωνο ή ο χάρτης τις ανοίγει σε όλη την οθόνη.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Σεισμοί: ένα πάτημα στο τετράγωνο ή στον τίτλο ενός σεισμού τον ανοίγει σε όλη την οθόνη· οριζόντια ο χάρτης αριστερά, οι πληροφορίες δεξιά.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Το χρώμα του τετραγώνου δείχνει το μέγεθος: πράσινο κάτω από 3, κίτρινο, κεχριμπαρί, πορτοκαλί έως κόκκινο από 5.
+In Romania, ↻ INFP asks for the official value again.	Στη Ρουμανία, το ↻ INFP ζητά ξανά την επίσημη τιμή.
+In landscape each warning box takes half the row.	Οριζόντια κάθε πλαίσιο προειδοποίησης πιάνει μισή σειρά.

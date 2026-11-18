@@ -1639,3 +1639,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Las casillas anchas solo en la pantalla de una parcela; la pantalla de la localidad queda como en el modo normal.
+
+# v2.100
+EARTHQUAKE INFORMATION	INFORMACIÓN DEL TERREMOTO
+Earthquake information	Información del terremoto
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Un toque en la casilla Terremoto abre su información en la pantalla principal (vertical bajo Sensación, horizontal a la izquierda): el mapa, debajo las zonas de percepción y el historial del valor, luego los detalles; ‹ la cierra.
+The coloured square or the map opens it on the whole screen.	El cuadrado de color o el mapa la abren en pantalla completa.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Terremotos: un toque en el cuadrado o el título de un terremoto lo abre en pantalla completa; en horizontal el mapa a la izquierda y la información a la derecha.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	El color del cuadrado indica la magnitud: verde por debajo de 3, amarillo, ámbar, naranja a rojo desde 5.
+In Romania, ↻ INFP asks for the official value again.	En Rumanía, ↻ INFP vuelve a pedir el valor oficial.
+In landscape each warning box takes half the row.	En horizontal cada casilla de aviso ocupa media fila.

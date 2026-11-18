@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Na boscaí leathana ar scáileán ceapaí amháin; fanann scáileán an bhaile mar atá sa ghnáthmhód.
+
+# v2.100
+EARTHQUAKE INFORMATION	EOLAS AR CHRITH TALÚN
+Earthquake information	Eolas ar chrith talún
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Brú ar an mbosca Crith talún a osclaíonn an t-eolas ar an bpríomhscáileán (ina sheasamh faoi Mothaítear, ina luí ar chlé): an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha, ansin na sonraí; dúnann ‹ é.
+The coloured square or the map opens it on the whole screen.	Osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Creathanna talún: osclaíonn brú ar chearnóg nó ar theideal creatha é ar an scáileán iomlán; ina luí an léarscáil ar chlé, an t-eolas ar dheis.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Taispeánann dath na cearnóige an méid: glas faoi 3, buí, ómra, oráiste go dearg ó 5.
+In Romania, ↻ INFP asks for the official value again.	Sa Rómáin, iarrann ↻ INFP an luach oifigiúil arís.
+In landscape each warning box takes half the row.	Ina luí tógann gach bosca rabhaidh leath an ró.

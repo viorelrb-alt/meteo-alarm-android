@@ -370,6 +370,56 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		list.addView(row, rl);
 	}
 
+	/**
+	 * v2.100 (Viorel): an earthquake of ☰ › Earthquakes: its coloured magnitude square instead of
+	 * the icon, the title by it and the text under both, the whole width; a tap on the square or
+	 * on the title opens its information screen.
+	 */
+	void quakeEntry(Bitmap badge, String name, String what, final Runnable open) {
+		Context c = getContext();
+		LinearLayout card = new LinearLayout(c);
+		card.setOrientation(LinearLayout.VERTICAL);
+		int cp = (int) (14 * dp);
+		card.setPadding(cp, (int) (12 * dp), cp, cp);
+		card.setBackground(Glass.paneBg(dark, 20 * dp, dp));
+		LinearLayout top = new LinearLayout(c);
+		top.setOrientation(LinearLayout.HORIZONTAL);
+		top.setGravity(android.view.Gravity.CENTER_VERTICAL);
+		ImageView iv = new ImageView(c);
+		iv.setImageBitmap(badge);
+		int s = (int) (48 * dp);
+		top.addView(iv, new LinearLayout.LayoutParams(s, s));
+		TextView n = new TextView(c);
+		n.setTypeface(bold);
+		TextSize.size(n, 18, ts);
+		n.setTextColor(ink());
+		n.setText(name);
+		LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1);
+		nl.leftMargin = (int) (12 * dp);
+		top.addView(n, nl);
+		if (open != null) {
+			OnClickListener go = new OnClickListener() {
+				public void onClick(View v) {
+					open.run();
+				}
+			};
+			top.setOnClickListener(go);
+		}
+		card.addView(top);
+		TextView w = new TextView(c);
+		w.setTypeface(reg);
+		TextSize.size(w, 15, ts);
+		w.setTextColor(dim());
+		w.setLineSpacing(0, 1.1f);
+		w.setText(what);
+		LinearLayout.LayoutParams wl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		wl.topMargin = (int) (8 * dp);
+		card.addView(w, wl);
+		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+		rl.bottomMargin = (int) (10 * dp);
+		list.addView(card, rl);
+	}
+
 	void show() {
 		scroll.scrollTo(0, 0);
 		panel.animate().cancel();

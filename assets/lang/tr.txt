@@ -1503,3 +1503,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Geniş kutular yalnızca parsel ekranında; yerleşim yerinin ekranı normal moddaki gibi kalır.
+
+# v2.100
+EARTHQUAKE INFORMATION	DEPREM BİLGİLERİ
+Earthquake information	Deprem bilgileri
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Deprem kutusuna dokunmak bilgileri ana ekranda açar (dikeyde Hissedilen'in altında, yatayda solda): harita, altında hissedilme bölgeleri ve değerin geçmişi, sonra ayrıntılar; ‹ kapatır.
+The coloured square or the map opens it on the whole screen.	Renkli kare veya harita onları tam ekranda açar.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Depremler: bir depremin karesine veya başlığına dokunmak onu tam ekranda açar; yatayda harita solda, bilgiler sağda.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Karenin rengi büyüklüğü gösterir: 3'ün altı yeşil, sarı, kehribar, 5'ten itibaren turuncudan kırmızıya.
+In Romania, ↻ INFP asks for the official value again.	Romanya'da ↻ INFP resmi değeri yeniden ister.
+In landscape each warning box takes half the row.	Yatayda her uyarı kutusu sıranın yarısını kaplar.

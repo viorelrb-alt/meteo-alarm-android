@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	De brede vakken alleen op het scherm van een perceel; het scherm van de plaats blijft als in de normale modus.
+
+# v2.100
+EARTHQUAKE INFORMATION	AARDBEVINGSINFORMATIE
+Earthquake information	Aardbevingsinformatie
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Een tik op het vak Aardbeving opent de informatie in het hoofdscherm (staand onder Gevoel, liggend links): de kaart, daaronder de voelbare zones en de geschiedenis van de waarde, dan de details; ‹ sluit ze.
+The coloured square or the map opens it on the whole screen.	Het gekleurde vierkant of de kaart opent ze op het hele scherm.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Aardbevingen: een tik op het vierkant of de titel van een beving opent die op het hele scherm; liggend de kaart links, de informatie rechts.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	De kleur van het vierkant toont de magnitude: groen onder 3, geel, amber, oranje tot rood vanaf 5.
+In Romania, ↻ INFP asks for the official value again.	In Roemenië vraagt ↻ INFP de officiële waarde opnieuw op.
+In landscape each warning box takes half the row.	Liggend neemt elk waarschuwingsvak de halve rij in.

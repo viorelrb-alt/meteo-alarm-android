@@ -502,7 +502,7 @@ final class WeatherView extends View {
 	/** v2.020: tells the activity where the Statistics go when that changed. */
 	private void statsReport() {
 		float[] a = screen.statsArea;
-		final int[] r = screen.statsOn && a[2] > 0 ? new int[] { Math.round(ox + a[0] * scale), Math.round(oy + a[1] * scale), Math.round(ox + (a[0] + a[2]) * scale),
+		final int[] r = (screen.statsOn || screen.quakeOn) && a[2] > 0 ? new int[] { Math.round(ox + a[0] * scale), Math.round(oy + a[1] * scale), Math.round(ox + (a[0] + a[2]) * scale),
 				Math.round(oy + a[3] * scale), Math.round(a[4] * scale) } : null;
 		if (r == null ? statsLast == null : statsLast != null && java.util.Arrays.equals(r, statsLast)) return;
 		statsLast = r;
@@ -511,6 +511,11 @@ final class WeatherView extends View {
 				taps.statsFrame(r);
 			}
 		});
+	}
+
+	/** v2.100: the place is reported again (the earthquake's information and the Statistics share it). */
+	void statsReset() {
+		statsLast = null;
 	}
 
 	/** v2.020: the Statistics moved up by Y pixels: the page above them follows. */
@@ -754,7 +759,7 @@ final class WeatherView extends View {
 			if (drag == screen.alerts) pauseRoll();
 			if (drag != null) stopAuto(drag);
 			// v5.30: the page itself moves up and down (not from the brightness edge).
-			pageCand = onPage && !edge && !screen.statsOn && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
+			pageCand = onPage && !edge && !screen.statsOn && !screen.quakeOn && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
 			if (pageCand && settle != null) settle.cancel();
 			// v2.90: farmer mode with parcels: a sideways slide between the top line and the
 			// footer, not on a row of boxes, moves the whole middle of the screen.

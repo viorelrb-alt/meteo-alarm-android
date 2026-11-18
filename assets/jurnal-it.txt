@@ -1,4 +1,4 @@
-Versione attuale: v.2.052 · 18.11.2026
+Versione attuale: v.2.100 · 18.11.2026
 IMPOSTAZIONI
 - Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
 NOTIFICHE
@@ -12,7 +12,7 @@ PARTICELLE
 - Stato operativo: in alto la coltura e la data di semina; con una coltura il verdetto tiene conto anche dell'asciugatura delle gocce (ΔT) e della sua malattia.
 - Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
 SCHERMATA PRINCIPALE
-- Mappa del terremoto: un tocco sulla casella Terremoto mostra una mappa con l'epicentro, la tua località, la distanza e le zone di risentimento; un tocco sulla mappa la ingrandisce, con lo storico del valore. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
+- Informazioni sul terremoto: un tocco sul riquadro Terremoto le apre nella schermata principale: la mappa, sotto le zone di avvertibilità e la cronologia del valore; il quadrato colorato o la mappa le aprono a schermo intero, come un terremoto da ☰ › Terremoti. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
 - Miglioramenti del design e correzioni di errori.
 
 Versione 1.4 (v.1.400 – v.1.520)

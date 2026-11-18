@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Platie lodziņi tikai zemes gabala ekrānā; apdzīvotās vietas ekrāns paliek kā parastajā režīmā.
+
+# v2.100
+EARTHQUAKE INFORMATION	ZEMESTRĪCES INFORMĀCIJA
+Earthquake information	Zemestrīces informācija
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Pieskāriens laukam Zemestrīce atver informāciju galvenajā ekrānā (portretā zem Jūtama kā, ainavā pa kreisi): karte, zem tās sajūtamības zonas un vērtības vēsture, tad sīkāka informācija; ‹ to aizver.
+The coloured square or the map opens it on the whole screen.	Krāsainais kvadrāts vai karte to atver visā ekrānā.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Zemestrīces: pieskāriens zemestrīces kvadrātam vai virsrakstam to atver visā ekrānā; ainavā karte pa kreisi, informācija pa labi.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Kvadrāta krāsa rāda magnitūdu: zaļa zem 3, dzeltena, dzintara, oranža līdz sarkanai no 5.
+In Romania, ↻ INFP asks for the official value again.	Rumānijā ↻ INFP vēlreiz pieprasa oficiālo vērtību.
+In landscape each warning box takes half the row.	Ainavā katrs brīdinājuma lauks aizņem pusi rindas.

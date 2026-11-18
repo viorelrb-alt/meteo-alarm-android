@@ -1,4 +1,4 @@
-Leagan reatha: v.2.052 · 18.11.2026
+Leagan reatha: v.2.100 · 18.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
@@ -10,7 +10,7 @@ CEAPACHA
 FÓGRAÍ
 - Creathanna talún: seiceáilte gach 10 nóiméad, istoíche freisin leis an scáileán múchta; nuashonraíonn méid athbhreithnithe an fógra, agus osclaíonn tapáil air an léarscáil.
 PRÍOMHSCÁILEÁN
-- Léarscáil an chreatha: taispeánann tapáil ar an mbosca Crith talún léarscáil leis an lárphointe, do bhaile, an fad agus na criosanna mothúcháin; méadaíonn tapáil ar an léarscáil í, le stair an luacha. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
+- Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ☰ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
 SOCRUITHE
 - Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
 - Feabhsuithe dearaidh agus ceartúcháin fabhtanna.

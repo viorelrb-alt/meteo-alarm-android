@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Laiad kastid ainult maatüki ekraanil; asula ekraan jääb nagu tavarežiimis.
+
+# v2.100
+EARTHQUAKE INFORMATION	MAAVÄRINA TEAVE
+Earthquake information	Maavärina teave
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Puudutus väljal Maavärin avab teabe põhiekraanil (püstpaigutuses Tundub all, rõhtpaigutuses vasakul): kaart, selle all tuntavuse tsoonid ja väärtuse ajalugu, siis üksikasjad; ‹ sulgeb selle.
+The coloured square or the map opens it on the whole screen.	Värviline ruut või kaart avab selle täisekraanil.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Maavärinad: puudutus värina ruudul või pealkirjal avab selle täisekraanil; rõhtpaigutuses kaart vasakul, teave paremal.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Ruudu värv näitab magnituudi: roheline alla 3, kollane, merevaik, oranžist punaseni alates 5-st.
+In Romania, ↻ INFP asks for the official value again.	Rumeenias küsib ↻ INFP ametlikku väärtust uuesti.
+In landscape each warning box takes half the row.	Rõhtpaigutuses võtab iga hoiatuse väli poole reast.

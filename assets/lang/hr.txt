@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Široki okviri samo na zaslonu parcele; zaslon mjesta ostaje kao u normalnom načinu.
+
+# v2.100
+EARTHQUAKE INFORMATION	PODACI O POTRESU
+Earthquake information	Podaci o potresu
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Dodir polja Potres otvara podatke na glavnom zaslonu (uspravno ispod Osjećaj, položeno lijevo): karta, ispod nje zone osjeta i povijest vrijednosti, zatim pojedinosti; ‹ ih zatvara.
+The coloured square or the map opens it on the whole screen.	Obojeni kvadrat ili karta otvara ih preko cijelog zaslona.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Potresi: dodir kvadrata ili naslova potresa otvara ga preko cijelog zaslona; položeno karta lijevo, podaci desno.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Boja kvadrata pokazuje magnitudu: zelena ispod 3, žuta, jantarna, narančasta do crvene od 5.
+In Romania, ↻ INFP asks for the official value again.	U Rumunjskoj ↻ INFP ponovno traži službenu vrijednost.
+In landscape each warning box takes half the row.	Položeno svako polje upozorenja zauzima pola reda.

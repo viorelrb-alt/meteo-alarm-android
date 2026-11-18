@@ -42,7 +42,20 @@ final class QuakeCard {
 		Bitmap b = Bitmap.createBitmap(Math.max(1, (int) s), Math.max(1, (int) s), Bitmap.Config.ARGB_8888);
 		Canvas c = new Canvas(b);
 		Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
-		p.setShader(new LinearGradient(0, 0, s * 0.4f, s, 0xFFF59E0B, 0xFFEA580C, Shader.TileMode.CLAMP));
+		// v2.100 (Viorel): the square's colour by the magnitude: green, yellow, amber, orange to red.
+		double m = Double.NaN;
+		try {
+			m = Double.parseDouble(mag.replace(',', '.').replaceAll("[^0-9.\\-]", ""));
+		} catch (Exception e) {
+		}
+		int c0 = 0xFFF59E0B, c1 = 0xFFEA580C;
+		if (!Double.isNaN(m)) {
+			if (m >= 5) { c0 = 0xFFF97316; c1 = 0xFFDC2626; }
+			else if (m >= 4) { c0 = 0xFFF59E0B; c1 = 0xFFEA580C; }
+			else if (m >= 3) { c0 = 0xFFFDE047; c1 = 0xFFF59E0B; }
+			else { c0 = 0xFF86EFAC; c1 = 0xFF22C55E; }
+		}
+		p.setShader(new LinearGradient(0, 0, s * 0.4f, s, c0, c1, Shader.TileMode.CLAMP));
 		c.drawRoundRect(new RectF(0, 0, s, s), s * 0.27f, s * 0.27f, p);
 		p.setShader(null);
 		p.setTypeface(bold);
@@ -140,6 +153,14 @@ final class QuakeCard {
 		if (wide) cl.leftMargin = (int) (14 * dp);
 		else cl.topMargin = (int) (10 * dp);
 		root.addView(col, cl);
+		details(col, ctx, q, t, dark, reg, bold, zk, refresh, refreshText, refreshName);
+		return root;
+	}
+
+	/** v2.100: distance and depth, how it was felt here, the source with its revision, the INFP button and the Android note, into COL. */
+	static void details(LinearLayout col, final Context ctx, Quakes.Quake q, String[] t, boolean dark, Typeface reg, Typeface bold, float zk,
+			final Runnable refresh, String refreshText, final String refreshName) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
 		int ink = Theme.ink(dark), dim = Theme.dim(dark);
 		// Distance and depth, side by side.
 		LinearLayout cells = new LinearLayout(ctx);
@@ -233,7 +254,6 @@ final class QuakeCard {
 		LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 		nl.topMargin = (int) (10 * dp);
 		col.addView(note, nl);
-		return root;
 	}
 
 	private static LinearLayout.LayoutParams cellLp(int left, float dp) {
@@ -585,5 +605,371 @@ final class QuakeCard {
 	private static String first(String line) {
 		int k = line.indexOf(':');
 		return k > 0 ? line.substring(0, k) : line;
+	}
+
+	// --- v2.100 (Viorel, mockups m8–m11): the earthquake's information screens ---------------------
+
+	/** What the information screen needs besides the earthquake. */
+	static final class Hooks {
+		/** ‹: back (closes the embedded view, or the full screen back to the list). */
+		Runnable back;
+		/** The square or the map: the whole screen (null: the map moves and zooms itself). */
+		Runnable full;
+		/** Ask the official institute again (null: no button). */
+		Runnable refresh;
+		String refreshText = "", refreshName = "";
+		/** The other earthquakes and the sources (rows as from Screen.alertInfo). */
+		java.util.List<String[]> more;
+	}
+
+	/** ‹ in a round button, "EARTHQUAKE INFORMATION" and a thin line to the right edge. */
+	static View head(Context ctx, boolean dark, Typeface bold, float zk, float size, final Runnable back) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		LinearLayout h = new LinearLayout(ctx);
+		h.setOrientation(LinearLayout.HORIZONTAL);
+		h.setGravity(Gravity.CENTER_VERTICAL);
+		TextView b = text(ctx, "‹", size * 0.6f * zk, bold, Theme.ink(dark));
+		b.setGravity(Gravity.CENTER);
+		b.setIncludeFontPadding(false);
+		b.setPadding(0, 0, 0, (int) (2 * dp));
+		b.setBackground(Glass.pill(Glass.disc(dark), 0, size * dp, dp));
+		b.setContentDescription(ro.meteoalarm.android.core.Tr.t("Back", "Înapoi"));
+		b.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				if (back != null) back.run();
+			}
+		});
+		int bs = (int) (size * dp * zk);
+		h.addView(b, new LinearLayout.LayoutParams(bs, bs));
+		TextView t = text(ctx, ro.meteoalarm.android.core.Tr.t("EARTHQUAKE INFORMATION", "INFORMAȚII CUTREMUR"), 13 * zk, bold, Theme.dim(dark));
+		t.setLetterSpacing(0.06f);
+		t.setSingleLine(true);
+		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		tl.leftMargin = (int) (12 * dp);
+		h.addView(t, tl);
+		View line = new View(ctx);
+		line.setBackgroundColor(Glass.edge(dark));
+		LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(0, Math.max(1, (int) dp), 1);
+		ll.leftMargin = (int) (12 * dp);
+		h.addView(line, ll);
+		return h;
+	}
+
+	/** The coloured square with the magnitude, "Earthquake in …" and the date with the depth. */
+	static View titleRow(Context ctx, Quakes.Quake q, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, float size, final Runnable tap) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		LinearLayout r = new LinearLayout(ctx);
+		r.setOrientation(LinearLayout.HORIZONTAL);
+		r.setGravity(Gravity.CENTER_VERTICAL);
+		android.widget.ImageView b = new android.widget.ImageView(ctx);
+		int bs = (int) (size * dp * zk);
+		b.setImageBitmap(badge(t[2], t[3], bs, bold));
+		if (tap != null) {
+			b.setContentDescription(t[17]);
+			b.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					tap.run();
+				}
+			});
+		}
+		r.addView(b, new LinearLayout.LayoutParams(bs, bs));
+		LinearLayout tx = new LinearLayout(ctx);
+		tx.setOrientation(LinearLayout.VERTICAL);
+		tx.addView(text(ctx, t[0], 19 * zk, bold, Theme.ink(dark)));
+		tx.addView(text(ctx, t[1], 12.5f * zk, reg, Theme.dim(dark)));
+		LinearLayout.LayoutParams xl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		xl.leftMargin = (int) (12 * dp);
+		r.addView(tx, xl);
+		return r;
+	}
+
+	/** The big map (the one of "Big map"): TAP non-null puts a tap on it (the map does not move then). */
+	static FrameLayout mapBox(Context ctx, Quakes.Quake q, Cities.City town, String[] t, boolean dark, final Runnable tap, float radius) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		FrameLayout map = new FrameLayout(ctx);
+		MapView mv = new MapView(ctx);
+		mv.setDark(dark);
+		mv.setNight(dark);
+		mv.setQuake(mark(q, town, t));
+		map.addView(mv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		if (tap != null) {
+			View v = new View(ctx);
+			v.setContentDescription(t[17]);
+			v.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View x) {
+					tap.run();
+				}
+			});
+			map.addView(v, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		}
+		GradientDrawable mb = new GradientDrawable();
+		mb.setCornerRadius(radius);
+		mb.setColor(0xFF1B2430);
+		map.setBackground(mb);
+		if (radius > 0) {
+			map.setClipToOutline(true);
+			map.setOutlineProvider(android.view.ViewOutlineProvider.BACKGROUND);
+		}
+		map.setTag(mv);
+		return map;
+	}
+
+	/** Fits the map of MAPBOX on the largest circle, less the margins (pixels) at its edges. */
+	static void fit(FrameLayout mapBox, float l, float t, float r, float b) {
+		((MapView) mapBox.getTag()).fitQuake(true, l, t, r, b);
+	}
+
+	/**
+	 * The two boxes that go under the map (Viorel): the estimated intensity by zones and the
+	 * value's history; side by side, one under the other when STACK.
+	 */
+	static View boxes(Context ctx, Quakes.Quake q, Screen s, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, boolean stack, int card) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		int ink = Theme.ink(dark), dim = Theme.dim(dark);
+		LinearLayout row = new LinearLayout(ctx);
+		row.setOrientation(stack ? LinearLayout.VERTICAL : LinearLayout.HORIZONTAL);
+		row.setBaselineAligned(false);
+		// The zones.
+		LinearLayout lg = new LinearLayout(ctx);
+		lg.setOrientation(LinearLayout.VERTICAL);
+		lg.setPadding((int) (10 * dp), (int) (8 * dp), (int) (10 * dp), (int) (9 * dp));
+		lg.setBackground(card != 0 ? Glass.pill(card, Glass.edge(dark), 14 * dp, dp) : Glass.cardBg(dark, 14 * dp, dp));
+		TextView h1 = text(ctx, t[20].toUpperCase(), 10.5f * zk, bold, dim);
+		h1.setLetterSpacing(0.05f);
+		lg.addView(h1);
+		for (int lv : Screen.quakeLevels(q)) {
+			LinearLayout r = new LinearLayout(ctx);
+			r.setOrientation(LinearLayout.HORIZONTAL);
+			r.setGravity(Gravity.CENTER_VERTICAL);
+			TextView chip = text(ctx, Screen.roman(lv), 10.5f * zk, bold, 0xFF111111);
+			chip.setGravity(Gravity.CENTER);
+			chip.setIncludeFontPadding(false);
+			chip.setPadding(0, 0, 0, 0);
+			chip.setBackground(Glass.pill(Screen.levelColor(lv), 0, 9 * dp, dp));
+			r.addView(chip, new LinearLayout.LayoutParams((int) (30 * dp * zk), (int) (18 * dp * zk)));
+			TextView w = text(ctx, s.feltCap(lv) + " · ~" + s.dist(Quakes.ringKm(q.mag, q.depth, lv)), 12 * zk, reg, ink);
+			LinearLayout.LayoutParams wl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			wl.leftMargin = (int) (7 * dp);
+			r.addView(w, wl);
+			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			rl.topMargin = (int) (5 * dp);
+			lg.addView(r, rl);
+		}
+		// The value's history: the first value, an arrow, the current one.
+		LinearLayout hs = new LinearLayout(ctx);
+		hs.setOrientation(LinearLayout.VERTICAL);
+		hs.setPadding((int) (10 * dp), (int) (8 * dp), (int) (10 * dp), (int) (9 * dp));
+		hs.setBackground(card != 0 ? Glass.pill(card, Glass.edge(dark), 14 * dp, dp) : Glass.cardBg(dark, 14 * dp, dp));
+		TextView h2 = text(ctx, t[21].toUpperCase(), 10.5f * zk, bold, dim);
+		h2.setLetterSpacing(0.05f);
+		hs.addView(h2);
+		LinearLayout vals = new LinearLayout(ctx);
+		vals.setOrientation(LinearLayout.HORIZONTAL);
+		vals.setGravity(Gravity.CENTER);
+		vals.setBaselineAligned(false);
+		long nowMs = q.changedAt > 0 ? q.changedAt : q.updated > 0 ? q.updated : q.time;
+		if (!Double.isNaN(q.firstMag)) {
+			String fm = String.format(java.util.Locale.US, "%.1f", q.firstMag).replace('.', ro.meteoalarm.android.core.Tr.dot());
+			vals.addView(histVal(ctx, fm, q.firstSrc, s.qhm(q.firstAt), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			vals.addView(text(ctx, "→", 16 * zk, bold, dim));
+		}
+		vals.addView(histVal(ctx, t[2], q.src, s.qhm(nowMs), dark, bold, zk), new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		LinearLayout.LayoutParams vl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
+		vl.topMargin = (int) (4 * dp);
+		hs.addView(vals, vl);
+		TextView what = text(ctx, magWhat(q.magType), 10.5f * zk, reg, dim);
+		what.setGravity(Gravity.CENTER);
+		hs.addView(what, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		if (stack) {
+			row.addView(lg, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			hl.topMargin = (int) (8 * dp);
+			row.addView(hs, hl);
+		} else {
+			row.addView(lg, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1.15f));
+			LinearLayout.LayoutParams hl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+			hl.leftMargin = (int) (8 * dp);
+			row.addView(hs, hl);
+		}
+		return row;
+	}
+
+	private static View histVal(Context ctx, String v, String src, String at, boolean dark, Typeface bold, float zk) {
+		LinearLayout c = new LinearLayout(ctx);
+		c.setOrientation(LinearLayout.VERTICAL);
+		c.setGravity(Gravity.CENTER_HORIZONTAL);
+		TextView a = text(ctx, v, 20 * zk, bold, Theme.ink(dark));
+		a.setGravity(Gravity.CENTER);
+		c.addView(a);
+		boolean infp = src != null && src.length() > 0 && !"EMSC".equals(src) && !"USGS".equals(src);
+		TextView b = text(ctx, (src == null ? "" : src) + " " + at, 10.5f * zk, bold, infp ? (dark ? 0xFF86EFAC : 0xFF15803D) : Theme.dim(dark));
+		b.setGravity(Gravity.CENTER);
+		b.setSingleLine(true);
+		c.addView(b);
+		return c;
+	}
+
+	/** The other earthquakes and the sources, as plain rows (headers in small capitals). */
+	static void more(LinearLayout col, Context ctx, java.util.List<String[]> rows, boolean dark, Typeface reg, Typeface bold, float zk) {
+		if (rows == null) return;
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		int ink = Theme.ink(dark), dim = Theme.dim(dark);
+		for (String[] r : rows) {
+			if (r.length < 2 || r[0].equals("title")) continue;
+			TextView v;
+			LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			if (r[0].equals("h")) {
+				v = text(ctx, r[1].toUpperCase(), 11 * zk, bold, dim);
+				v.setLetterSpacing(0.05f);
+				l.topMargin = (int) (14 * dp);
+			} else if (r[0].equals("T")) {
+				StringBuilder b = new StringBuilder();
+				for (int j = 1; j < r.length; j++) {
+					if (b.length() > 0) b.append('\n');
+					b.append(r[j].replace("\t", " · "));
+				}
+				v = text(ctx, b.toString(), 12.5f * zk, reg, ink);
+				l.topMargin = (int) (4 * dp);
+			} else if (r[0].equals("s")) {
+				v = text(ctx, r[1], 11.5f * zk, reg, dim);
+				l.topMargin = (int) (8 * dp);
+			} else {
+				v = text(ctx, r[1], 13 * zk, r[0].equals("V") ? bold : reg, ink);
+				l.topMargin = (int) (4 * dp);
+			}
+			v.setLineSpacing(1.5f * dp, 1);
+			col.addView(v, l);
+		}
+	}
+
+	/**
+	 * Method 1 (a tap on the Earthquake box): the information inside the main screen, WIDTH pixels
+	 * wide: ‹ with the title, the square with what happened, the map, the two boxes under it, the
+	 * details and the other earthquakes.
+	 */
+	static LinearLayout info(Context ctx, Quakes.Quake q, Cities.City town, Screen s, String[] t, boolean dark, Typeface reg, Typeface bold, float zk, int width, Hooks k) {
+		float dp = ctx.getResources().getDisplayMetrics().density;
+		LinearLayout col = new LinearLayout(ctx);
+		col.setOrientation(LinearLayout.VERTICAL);
+		col.setPadding(0, (int) (4 * dp), 0, (int) (24 * dp));
+		col.addView(head(ctx, dark, bold, zk, 38, k.back));
+		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		tl.topMargin = (int) (12 * dp);
+		col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 54, k.full), tl);
+		final FrameLayout map = mapBox(ctx, q, town, t, dark, k.full, 16 * dp);
+		LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(300 * dp, width * 0.62f));
+		ml.topMargin = (int) (12 * dp);
+		col.addView(map, ml);
+		fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
+		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		bl.topMargin = (int) (8 * dp);
+		col.addView(boxes(ctx, q, s, t, dark, reg, bold, zk, width < 330 * dp * zk, 0), bl);
+		LinearLayout d = new LinearLayout(ctx);
+		d.setOrientation(LinearLayout.VERTICAL);
+		LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		dl.topMargin = (int) (10 * dp);
+		col.addView(d, dl);
+		details(d, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName);
+		more(col, ctx, k.more, dark, reg, bold, zk);
+		return col;
+	}
+
+	/**
+	 * Method 2 (☰ › Earthquakes, a tap on an earthquake): the whole screen. Portrait: ‹ with the
+	 * title, the square, the map, the two boxes under it, the details, all scrolling. Landscape:
+	 * the map always at the left (‹ and the title floating on it, the two boxes under it), the
+	 * information at the right. ‹ or Back return to the list.
+	 */
+	static Dialog full(Context ctx, Quakes.Quake q, Cities.City town, Screen s, boolean dark, Typeface reg, Typeface bold, float zk, Hooks k) {
+		final float dp = ctx.getResources().getDisplayMetrics().density;
+		String[] t = s.quakeTexts(q);
+		final Dialog d = new Dialog(ctx, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+		d.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		Runnable close = new Runnable() {
+			public void run() {
+				d.dismiss();
+			}
+		};
+		android.util.DisplayMetrics dm = ctx.getResources().getDisplayMetrics();
+		boolean land = dm.widthPixels > dm.heightPixels;
+		int pad = (int) (16 * dp);
+		FrameLayout root = new FrameLayout(ctx);
+		root.setBackgroundColor(Theme.page(dark));
+		if (!land) {
+			ScrollView sv = new ScrollView(ctx);
+			sv.setVerticalScrollBarEnabled(false);
+			LinearLayout col = new LinearLayout(ctx);
+			col.setOrientation(LinearLayout.VERTICAL);
+			col.setPadding(pad, (int) (36 * dp), pad, (int) (28 * dp));
+			col.addView(head(ctx, dark, bold, zk, 40, close));
+			LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			tl.topMargin = (int) (12 * dp);
+			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 56, null), tl);
+			FrameLayout map = mapBox(ctx, q, town, t, dark, null, 16 * dp);
+			int inner = dm.widthPixels - 2 * pad;
+			LinearLayout.LayoutParams ml = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) Math.min(dm.heightPixels * 0.5f, inner * 1.05f));
+			ml.topMargin = (int) (12 * dp);
+			col.addView(map, ml);
+			fit(map, 12 * dp, 12 * dp, 12 * dp, 12 * dp);
+			LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			bl.topMargin = (int) (8 * dp);
+			col.addView(boxes(ctx, q, s, t, dark, reg, bold, zk, inner < 330 * dp * zk, 0), bl);
+			LinearLayout dd = new LinearLayout(ctx);
+			dd.setOrientation(LinearLayout.VERTICAL);
+			LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			dl.topMargin = (int) (10 * dp);
+			col.addView(dd, dl);
+			details(dd, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName);
+			more(col, ctx, k.more, dark, reg, bold, zk);
+			sv.addView(col);
+			root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		} else {
+			LinearLayout split = new LinearLayout(ctx);
+			split.setOrientation(LinearLayout.HORIZONTAL);
+			// The left half: the map with ‹ and the title floating on it, the two boxes under it.
+			LinearLayout left = new LinearLayout(ctx);
+			left.setOrientation(LinearLayout.VERTICAL);
+			FrameLayout mf = new FrameLayout(ctx);
+			final FrameLayout map = mapBox(ctx, q, town, t, dark, null, 0);
+			mf.addView(map, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+			final View hd = head(ctx, dark, bold, zk * 0.9f, 36, close);
+			hd.setPadding((int) (8 * dp), (int) (6 * dp), (int) (14 * dp), (int) (6 * dp));
+			hd.setBackground(Glass.panelBg(dark, 18 * dp, dp));
+			FrameLayout.LayoutParams hl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP);
+			hl.leftMargin = hl.rightMargin = hl.topMargin = (int) (10 * dp);
+			mf.addView(hd, hl);
+			left.addView(mf, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+			View bx = boxes(ctx, q, s, t, dark, reg, bold, zk * 0.9f, false, 0);
+			bx.setPadding((int) (8 * dp), (int) (8 * dp), (int) (8 * dp), (int) (8 * dp));
+			left.addView(bx, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			split.addView(left, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+			// The right half: the information, scrolling when it does not fit.
+			ScrollView sv = new ScrollView(ctx);
+			sv.setVerticalScrollBarEnabled(false);
+			LinearLayout col = new LinearLayout(ctx);
+			col.setOrientation(LinearLayout.VERTICAL);
+			col.setPadding((int) (18 * dp), (int) (14 * dp), (int) (22 * dp), (int) (20 * dp));
+			col.addView(titleRow(ctx, q, t, dark, reg, bold, zk, 50, null));
+			LinearLayout dd = new LinearLayout(ctx);
+			dd.setOrientation(LinearLayout.VERTICAL);
+			LinearLayout.LayoutParams dl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			dl.topMargin = (int) (10 * dp);
+			col.addView(dd, dl);
+			details(dd, ctx, q, t, dark, reg, bold, zk, k.refresh, k.refreshText, k.refreshName);
+			more(col, ctx, k.more, dark, reg, bold, zk);
+			sv.addView(col);
+			split.addView(sv, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1));
+			root.addView(split, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+			root.post(new Runnable() {
+				public void run() {
+					fit(map, 16 * dp, hd.getBottom() + 8 * dp, 16 * dp, 12 * dp);
+				}
+			});
+		}
+		d.setContentView(root);
+		Window w = d.getWindow();
+		if (w != null) w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+		d.show();
+		return d;
 	}
 }

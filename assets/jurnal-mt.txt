@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.052 · 18.11.2026
+Verżjoni attwali: v.2.100 · 18.11.2026
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
@@ -12,7 +12,7 @@ NOTIFIKI
 SETTINGS
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
 SKRIN EWLIENI
-- Mappa tat-terremot: tektika fuq il-kaxxa Terremot turi mappa bl-epiċentru, il-post tiegħek, id-distanza u ż-żoni fejn inħass; tektika fuq il-mappa tkabbarha, bl-istorja tal-valur. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
+- Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Titjib fid-disinn u korrezzjoni ta’ żbalji.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)

@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	Die breiten Felder nur auf dem Bildschirm einer Parzelle; der Bildschirm des Orts bleibt wie im normalen Modus.
+
+# v2.100
+EARTHQUAKE INFORMATION	ERDBEBENINFORMATIONEN
+Earthquake information	Erdbebeninformationen
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	Ein Tippen auf das Feld Erdbeben öffnet die Informationen im Hauptbildschirm (Hochformat unter Gefühlt, Querformat links): die Karte, darunter die Zonen der Spürbarkeit und der Verlauf des Werts, dann die Details; ‹ schließt sie.
+The coloured square or the map opens it on the whole screen.	Das farbige Quadrat oder die Karte öffnet sie im ganzen Bildschirm.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Erdbeben: ein Tippen auf das Quadrat oder den Titel eines Bebens öffnet es im ganzen Bildschirm; im Querformat die Karte links, die Informationen rechts.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Die Farbe des Quadrats zeigt die Magnitude: grün unter 3, gelb, bernstein, orange bis rot ab 5.
+In Romania, ↻ INFP asks for the official value again.	In Rumänien fragt ↻ INFP den offiziellen Wert erneut ab.
+In landscape each warning box takes half the row.	Im Querformat nimmt jedes Warnfeld die halbe Reihe ein.

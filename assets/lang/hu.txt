@@ -1569,3 +1569,13 @@ In Romania, the quakes around the country also get INFP's value (from infp.ro).	
 
 # v2.051
 The wide boxes only on a parcel's screen; the town's screen stays as in normal mode.	A széles mezők csak a parcella képernyőjén; a település képernyője a normál módhoz hasonló marad.
+
+# v2.100
+EARTHQUAKE INFORMATION	FÖLDRENGÉS ADATAI
+Earthquake information	Földrengés adatai
+A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.	A Földrengés mezőre koppintva az adatok a főképernyőn nyílnak meg (állóban az Érzett alatt, fekvőben balra): a térkép, alatta az érezhetőségi zónák és az érték története, majd a részletek; a ‹ bezárja.
+The coloured square or the map opens it on the whole screen.	A színes négyzet vagy a térkép teljes képernyőn nyitja meg.
+☰ › Earthquakes: a tap on a quake's square or title opens it on the whole screen; in landscape the map at the left, the information at the right.	☰ › Földrengések: egy rengés négyzetére vagy címére koppintva teljes képernyőn nyílik meg; fekvőben a térkép balra, az adatok jobbra.
+The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	A négyzet színe a magnitúdót mutatja: zöld 3 alatt, sárga, borostyán, narancs-piros 5-től.
+In Romania, ↻ INFP asks for the official value again.	Romániában a ↻ INFP újra lekéri a hivatalos értéket.
+In landscape each warning box takes half the row.	Fekvőben minden figyelmeztető mező a sor felét foglalja el.

@@ -165,6 +165,11 @@ public final class Screen {
 	 * status card, the boxes below hidden; landscape: in the left part, the glass narrower).
 	 */
 	public boolean statsOn;
+	/**
+	 * v2.100 (Viorel): the earthquake's information inside the main screen, in the same place as the
+	 * Statistics (portrait: under the Feels like card, the boxes below hidden; landscape: at the left).
+	 */
+	public boolean quakeOn;
 	/** v2.020: where the Statistics go (canvas units): x, top, width, bottom, the room above them that scrolls away (portrait). */
 	public final float[] statsArea = new float[5];
 	/** The hour and rain boxes drawn: { hour index, x, y, w, h } in canvas units; set by draw. */
@@ -174,6 +179,8 @@ public final class Screen {
 
 	/** Canvas width: 758 in portrait, wider in landscape. */
 	private float cw = W;
+	/** v2.100: the canvas height of the frame being drawn. */
+	private float ch0;
 
 	private Gfx g;
 	private Palette c = Palette.LIGHT;
@@ -214,6 +221,7 @@ public final class Screen {
 		g = gfx;
 		c = pal();
 		this.cw = cw;
+		ch0 = ch;
 		updHead = false;
 		hourHits.clear();
 		rainHits.clear();
@@ -569,6 +577,10 @@ public final class Screen {
 			y += nowH + 6;
 			feelsCard(x, y, wd);
 			y += feelsH() + 26;
+		}
+		if (quakeOn && nowH > 0) {
+			statsY = y - 8;
+			return y;
 		}
 		if (pc) {
 			float sh = drawStatus(x, y, wd);
@@ -1060,7 +1072,7 @@ public final class Screen {
 			float bot = pageBody(40, top, cw - 80, nowH);
 			g = g0;
 			g.unclip();
-			if (statsOn && statsY > 0) {
+			if ((statsOn || quakeOn) && statsY > 0) {
 				// v2.020: the page moves up as the Statistics scroll, until they reach the glass.
 				pageS.set(new float[0], Math.max(0, statsY - paneBot));
 				statsArea[0] = 40; statsArea[1] = paneBot; statsArea[2] = cw - 80; statsArea[3] = fb - 16; statsArea[4] = Math.max(0, statsY - paneBot);
@@ -1113,10 +1125,14 @@ public final class Screen {
 		if (st) {
 			zL = Math.round(cw * (tablet ? 0.70f : 0.68f));
 			lw = zL - 14 - lx;
+		}
+		// v2.100: the earthquake's information in the left part, the glass as it is.
+		boolean qk = quakeOn && !st;
+		if (st || qk) {
 			statsArea[0] = lx; statsArea[1] = bandB + 14; statsArea[2] = lw; statsArea[3] = fb - 16; statsArea[4] = 0;
 		}
 		Gfx g0 = g;
-		if (w != null && !st) {
+		if (w != null && !st && !qk) {
 			int[] m = hitMark();
 			g.clip(0, 30, cw, ch);
 			g = new Shift(g0, 0, -pageS.scroll);
@@ -3122,7 +3138,8 @@ public final class Screen {
 		warnBoxes = n;
 		alerts.area[2] = 0;
 		if (n == 0) return 0;
-		int across = cols > 2 ? cols : vis;
+		// v2.100 (Viorel): landscape: one box takes half the row, not all of it.
+		int across = cols > 2 || cw > ch0 ? cols : vis;
 		float gap = 16, bw = (wd - gap * (across - 1)) / across, h = 130 * f, step = bw + gap;
 		alertStep = step;
 		float[] starts = new float[n];
