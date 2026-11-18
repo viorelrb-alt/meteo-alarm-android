@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.115";
+	static final String VERSION = "Meteo Alarm Android v2.116";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -411,6 +411,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return s.batt >= 0 && s.batt < Refresher.LOW_BATTERY && !s.charging ? LOW_BATTERY_MS : WEATHER_MS;
 	}
 
+	/** v2.116: the theme the views of their own were built in. */
+	private Boolean themeShown;
+
 	private void applySettings() {
 		s.T = new Texts(Lang.apply(this));
 		Cities.City c = Cities.City.fromKey(prefs.getString("city", ""));
@@ -438,6 +441,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		view.setBackgroundColor(ro.meteoalarm.android.core.Theme.page(s.dark));
 		hideBars();
 		getWindow().getDecorView().setBackgroundColor(ro.meteoalarm.android.core.Theme.page(s.dark));
+		// v2.116 (Viorel): another theme: the earthquake's information (and the Statistics) built
+		// again in the new colours (they are views of their own, not drawn by the screen).
+		if (themeShown != null && themeShown != s.dark) {
+			if (s.quakeOn) refreshQuakeInfo();
+			if (s.statsOn) refreshStats();
+		}
+		themeShown = s.dark;
 		if (prefs.getBoolean("keepOn", true)) getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		else if (!s.nightClock) getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		if (sheet != null) sheet.setDark(s.dark);
