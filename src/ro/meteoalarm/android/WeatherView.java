@@ -554,6 +554,32 @@ final class WeatherView extends View {
 		return b;
 	}
 
+	/** v2.115: the sun icon in a SIZE px round button centred at CX CY on C. */
+	void drawSun(Canvas c, float cx, float cy, float size, int ink) {
+		c.save();
+		c.translate(cx, cy);
+		float k = size / 64f;
+		c.scale(k, k);
+		gfx.c = c;
+		screen.drawSunIcon(gfx, 0, 0, ink);
+		c.restore();
+	}
+
+	int accent() {
+		return screen.accent();
+	}
+
+	/** v2.115: the battery's capsule and the brightness bar on C at scale K (canvas units). */
+	float[] drawBattBar(Canvas c, float k, float fb, float right, float[] bar, float level) {
+		c.save();
+		c.scale(k, k);
+		gfx.c = c;
+		float[] b = screen.drawQuakeBattery(gfx, fb, right);
+		if (bar != null) screen.drawQuakeBar(gfx, bar[0], bar[1], bar[2], bar[3], level);
+		c.restore();
+		return b;
+	}
+
 	float[] quakeSun() {
 		return screen.qBright;
 	}

@@ -749,6 +749,14 @@ final class QuakeCard {
 	/** v2.114 (Viorel): ‹ the same size everywhere (the largest one). */
 	static final float BACK = 56;
 
+	/** v2.115: the round buttons' fill: the page with a touch of ink, nearly opaque. */
+	static int disc(boolean dark) {
+		int p = Theme.page(dark), i = Theme.ink(dark);
+		float f = dark ? 0.14f : 0.07f;
+		int r = (int) (((p >> 16) & 255) * (1 - f) + ((i >> 16) & 255) * f), g = (int) (((p >> 8) & 255) * (1 - f) + ((i >> 8) & 255) * f), b = (int) ((p & 255) * (1 - f) + (i & 255) * f);
+		return 0xF2000000 | (r << 16) | (g << 8) | b;
+	}
+
 	/** The round ‹ (SIZE dp at text size ZK). */
 	static TextView backButton(Context ctx, boolean dark, Typeface bold, float zk, float size, final Runnable back) {
 		float dp = ctx.getResources().getDisplayMetrics().density;
@@ -756,7 +764,8 @@ final class QuakeCard {
 		k.setGravity(Gravity.CENTER);
 		k.setIncludeFontPadding(false);
 		k.setPadding((int) (2 * dp), 0, (int) (4 * dp), (int) (4 * dp));
-		k.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), size * dp, dp));
+		// v2.115 (Viorel): nearly opaque, so it shows over the map.
+		k.setBackground(Glass.pill(disc(dark), Glass.alpha(Theme.ink(dark), 0.22f), size * dp, dp));
 		k.setContentDescription(ro.meteoalarm.android.core.Tr.t("Back", "Înapoi"));
 		k.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -1090,7 +1099,7 @@ final class QuakeCard {
 				final LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
 				final int bh = Band.height(ctx, root);
-				final int bottom = (int) ((k.foot != null ? 116 : 28) * dp);
+				final int bottom = (int) ((k.foot != null ? 100 : 28) * dp);
 				col.setPadding(pad, bh + (int) (150 * dp), pad, bottom);
 				// v2.113 (Viorel): the top (the band, the header, the title) stays in place on a sheet of
 				// matte glass with round corners; the map and the boxes pass under it.
@@ -1148,7 +1157,7 @@ final class QuakeCard {
 				sv.setVerticalScrollBarEnabled(false);
 				final LinearLayout col = new LinearLayout(ctx);
 				col.setOrientation(LinearLayout.VERTICAL);
-				final int bottom = (int) ((k.foot != null ? 110 : 20) * dp);
+				final int bottom = (int) ((k.foot != null ? 90 : 20) * dp);
 				col.setPadding(m, (int) (130 * dp), m, bottom);
 				rest(col, ctx, q, s, t, dark, reg, bold, zk, k);
 				sv.addView(col);

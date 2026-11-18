@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.114 · 18.11.2026
+Aktuelle Version: v.2.115 · 18.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
 - Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App einmal pro Woche GitHub und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.

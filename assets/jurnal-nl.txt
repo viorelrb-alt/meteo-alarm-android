@@ -1,4 +1,4 @@
-Huidige versie: v.2.114 · 18.11.2026
+Huidige versie: v.2.115 · 18.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 INSTELLINGEN

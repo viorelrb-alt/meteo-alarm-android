@@ -1521,4 +1521,4 @@ New version: 	Новая версия:
 Tap to see what is new and download it.	Нажмите, чтобы увидеть новое и скачать её.
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Отдельное поле для каждого землетрясения за последние 24 часа в радиусе 300 миль (USGS), самое новое первым.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Отдельное поле для каждого землетрясения за последние 24 часа в твоей стране, самое новое первым, и как оно, вероятно, ощущалось (EMSC и институт страны).
-On the whole screen: ☀ shows the brightness bar, ◐ switches between light and dark.	На весь экран: ☀ показывает полосу яркости, ◐ переключает светлую и тёмную тему.
+On the whole screen: ☀ shows the brightness bar.	На весь экран: ☀ показывает полосу яркости.

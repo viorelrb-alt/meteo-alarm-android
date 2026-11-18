@@ -1017,6 +1017,18 @@ public final class Screen {
 		g = keep;
 	}
 
+	/** v2.115: the sun icon (as on the sun button) at CX CY, R across 22 units, in INK. */
+	public void drawSunIcon(Gfx gfx, float cx, float cy, int ink) {
+		Gfx keep = g;
+		g = gfx;
+		sun(cx, cy, 22, ink);
+		g = keep;
+	}
+
+	public int accent() {
+		return c.accent;
+	}
+
 	/** v2.114: the battery in its capsule, its right edge at RIGHT; returns the capsule (x, y, w, h). */
 	public float[] drawQuakeBattery(Gfx gfx, float fb, float right) {
 		Gfx keep = g;

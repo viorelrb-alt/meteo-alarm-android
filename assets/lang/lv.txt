@@ -1587,4 +1587,4 @@ New version: 	Jauna versija:
 Tap to see what is new and download it.	Pieskaries, lai redzētu jaunumus un lejupielādētu.
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Viens lodziņš katrai pēdējo 24 stundu zemestrīcei 300 jūdžu rādiusā (USGS), jaunākā pirmā.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Viens lodziņš katrai pēdējo 24 stundu zemestrīcei tavā valstī, jaunākā pirmā, un kā tā, visticamāk, bija jūtama (EMSC un valsts institūts).
-On the whole screen: ☀ shows the brightness bar, ◐ switches between light and dark.	Pilnekrānā: ☀ parāda spilgtuma joslu, ◐ pārslēdz gaišo un tumšo.
+On the whole screen: ☀ shows the brightness bar.	Pilnekrānā: ☀ parāda spilgtuma joslu.
