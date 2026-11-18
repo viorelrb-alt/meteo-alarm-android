@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	Romániában a ↻ INFP 
 In landscape each warning box takes half the row.	Fekvőben minden figyelmeztető mező a sor felét foglalja el.
 Updated at 	Frissítve: 
 Updating…	Frissítés…
+Rain, snow, warnings, updates	Eső, hó, figyelmeztetések, frissítések
+Once a week also a new version of the app, if there is one.	Hetente egyszer az alkalmazás új verziója is, ha van.
+New version: 	Új verzió: 
+Tap to see what is new and download it.	Koppints az újdonságokért és a letöltéshez.

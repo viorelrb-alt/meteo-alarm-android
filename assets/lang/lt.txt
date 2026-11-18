@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	Rumunijoje ↻ INFP iš 
 In landscape each warning box takes half the row.	Horizontaliai kiekvienas įspėjimo laukelis užima pusę eilės.
 Updated at 	Atnaujinta 
 Updating…	Atnaujinama…
+Rain, snow, warnings, updates	Lietus, sniegas, įspėjimai, atnaujinimai
+Once a week also a new version of the app, if there is one.	Kartą per savaitę ir nauja programėlės versija, jei yra.
+New version: 	Nauja versija: 
+Tap to see what is new and download it.	Paliesk, kad pamatytum naujoves ir atsisiųstum.

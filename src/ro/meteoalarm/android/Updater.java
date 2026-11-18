@@ -1,7 +1,9 @@
 package ro.meteoalarm.android;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 
 import java.io.File;
@@ -190,6 +192,38 @@ final class Updater {
 				});
 			}
 		}).start();
+	}
+
+	/**
+	 * v2.110 (Viorel): with ☰ › Notifications on, once in 7 days the app asks GitHub for the newest
+	 * version and, when there is a newer one, puts a notice in Android's notifications; a tap on it
+	 * opens ☰ › Check for updates. Each version is announced once. Runs in the background.
+	 */
+	static void weekly(Context ctx) {
+		if (!Notifier.on(ctx)) return;
+		SharedPreferences p = Fetcher.prefs(ctx);
+		long now = System.currentTimeMillis();
+		if (now - p.getLong("updWeek", 0) < 7 * 86400000L) return;
+		if (!NetJob.online(ctx)) return;
+		p.edit().putLong("updWeek", now).apply();
+		try {
+			Release r = source(0);
+			android.content.pm.PackageInfo pi = ctx.getPackageManager().getPackageInfo(ctx.getPackageName(), 0);
+			String cur = pi.versionName;
+			@SuppressWarnings("deprecation")
+			int code = pi.versionCode;
+			if (!r.newerThan(cur, code)) {
+				Log.i(ctx, "UPDATE", "verificare săptămânală: nicio versiune nouă (pe GitHub " + Release.display(r.version) + ")");
+				return;
+			}
+			if (r.version.equals(p.getString("updNotified", ""))) return;
+			p.edit().putString("updNotified", r.version).apply();
+			Log.i(ctx, "UPDATE", "verificare săptămânală: versiune nouă " + Release.display(r.version) + ", notificare");
+			Notifier.update(ctx, Tr.t("New version: ", "Versiune nouă: ") + Release.display(r.version),
+					Tr.t("Tap to see what is new and download it.", "Atinge ca să vezi ce e nou și s-o descarci."));
+		} catch (Exception e) {
+			Log.e(ctx, "UPDATE", "verificarea săptămânală a eșuat: " + e.getMessage());
+		}
 	}
 
 	/** The names of the sources, for the log. */

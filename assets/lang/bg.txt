@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	В Румъния ↻ IN
 In landscape each warning box takes half the row.	Хоризонтално всяко поле за предупреждение заема половин ред.
 Updated at 	Обновено в 
 Updating…	Обновяване…
+Rain, snow, warnings, updates	Дъжд, сняг, предупреждения, обновления
+Once a week also a new version of the app, if there is one.	Веднъж седмично и нова версия на приложението, ако има.
+New version: 	Нова версия: 
+Tap to see what is new and download it.	Докосни, за да видиш какво е ново и да я изтеглиш.

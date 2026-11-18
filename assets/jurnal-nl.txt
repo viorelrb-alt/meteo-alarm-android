@@ -1,10 +1,11 @@
-Huidige versie: v.2.109 · 18.11.2026
+Huidige versie: v.2.110 · 18.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 INSTELLINGEN
 - Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
 MELDINGEN
 - Aardbevingen: elke 10 minuten gecontroleerd, ook 's nachts met het scherm uit; een herziene magnitude werkt de melding bij en een tik erop opent de kaart.
+- Nieuwe versie: met meldingen aan controleert de app eens per week GitHub en meldt een nieuwe versie in de Android-meldingen; een tik opent Zoeken naar updates.
 PERCELEN
 - Ballonnen in Statistieken: een tik op een uur van het spuitvenster, een dag in de grafieken of een bodemregel opent een ballon met uitleg; het spuitvenster schuift vanzelf.
 - Coördinaten van het perceel: op de bewerkpagina worden de gps-coördinaten van elk punt getypt, en daaronder toont het satellietbeeld het perceel.

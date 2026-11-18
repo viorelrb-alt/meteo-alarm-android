@@ -1,10 +1,11 @@
-Dabartinė versija: v.2.109 · 18.11.2026
+Dabartinė versija: v.2.110 · 18.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 PAGRINDINIS EKRANAS
 - Žemės drebėjimo informacija: palietus laukelį Žemės drebėjimas, ji atsidaro pagrindiniame ekrane: žemėlapis, po juo juntamumo zonos ir vertės istorija; spalvotas kvadratas arba žemėlapis ją atveria visame ekrane, kaip drebėjimą iš ☰ › Žemės drebėjimai. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC. Rumunijoje ir aplink šalį vykę žemės drebėjimai gauna INFP vertę (iš infp.ro).
 PRANEŠIMAI
 - Žemės drebėjimai: tikrinami kas 10 minučių, ir naktį išjungus ekraną; patikslinta magnitudė atnaujina pranešimą, o jį bakstelėjus atsidaro žemėlapis.
+- Nauja versija: įjungus pranešimus programėlė kartą per savaitę patikrina GitHub ir praneša apie naują versiją Android pranešimuose; palietus atsidaro Tikrinti naujinius.
 SKLYPAI
 - Burbulai statistikoje: purškimo lango valandos, grafikų dienos ar dirvos eilutės palietimas atveria burbulą su paaiškinimu; purškimo langas juda pats.
 - Istorija ir prognozė: vilkite rodyklę ant praėjusios dienos; jos reikšmės rodomos langelyje po grafiku, o po 10 s ji grįžta į šiandieną.

@@ -1,8 +1,9 @@
-Nykyinen versio: v.2.109 · 18.11.2026
+Nykyinen versio: v.2.110 · 18.11.2026
 ASETUKSET
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 ILMOITUKSET
 - Maanjäristykset: tarkistetaan 10 minuutin välein, myös yöllä näyttö pois päältä; tarkistettu magnitudi päivittää ilmoituksen, ja napautus siihen avaa kartan.
+- Uusi versio: ilmoitusten ollessa päällä sovellus tarkistaa GitHubin kerran viikossa ja ilmoittaa uudesta versiosta Androidin ilmoituksissa; napautus avaa Tarkista päivitykset.
 PÄÄNÄYTTÖ
 - Maanjäristyksen tiedot: Maanjäristys-ruudun napautus avaa ne päänäytölle: kartta, sen alla tuntuvuusvyöhykkeet ja arvon historia; värillinen neliö tai kartta avaa ne koko näytölle, kuten järistyksen kohdasta ☰ › Maanjäristykset. Romaniassa, Ranskassa, Italiassa, Alankomaissa, Sveitsissä ja Kreikassa viralliset arvot tulevat ensin maan laitokselta (INFP, BCSF, INGV, KNMI, SED, NOA), sitten EMSC:ltä. Romaniassa myös maan ympäristön maanjäristykset saavat INFP:n arvon (infp.ro:sta).
 PELTOLOHKOT

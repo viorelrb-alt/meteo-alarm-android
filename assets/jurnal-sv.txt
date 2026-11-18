@@ -1,6 +1,7 @@
-Nuvarande version: v.2.109 · 18.11.2026
+Nuvarande version: v.2.110 · 18.11.2026
 AVISERINGAR
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
+- Ny version: med aviseringar på kollar appen GitHub en gång i veckan och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.
 HUVUDSKÄRM
 - Jordbävningsinformation: ett tryck på rutan Jordbävning öppnar den på huvudskärmen: kartan, under den zonerna där den kändes och värdets historik; den färgade kvadraten eller kartan öppnar den på hela skärmen, som en jordbävning från ☰ › Jordbävningar. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
 INSTÄLLNINGAR

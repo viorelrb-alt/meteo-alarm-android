@@ -1,4 +1,4 @@
-Obecna wersja: v.2.109 · 18.11.2026
+Obecna wersja: v.2.110 · 18.11.2026
 DZIAŁKI
 - Dymki w Statystykach: dotknięcie godziny w oknie oprysku, dnia na wykresach lub wiersza gleby otwiera dymek z wyjaśnieniem; okno oprysku przesuwa się samo.
 - Edycja działki: ołówek otwiera stronę działki: nazwa, uprawa (lista według sezonu daty siewu lub Inna uprawa…), data siewu, powierzchnia; narożniki przesuwa się na mapie.
@@ -11,6 +11,7 @@ EKRAN GŁÓWNY
 - Informacje o trzęsieniu: dotknięcie pola Trzęsienie ziemi otwiera je na ekranie głównym: mapa, pod nią strefy odczuwalności i historia wartości; kolorowy kwadrat lub mapa otwiera je na całym ekranie, jak trzęsienie z ☰ › Trzęsienia ziemi. W Rumunii, Francji, Włoszech, Holandii, Szwajcarii i Grecji oficjalne wartości pochodzą najpierw z krajowego instytutu (INFP, BCSF, INGV, KNMI, SED, NOA), potem z EMSC. W Rumunii także trzęsienia wokół kraju dostają wartość INFP (z infp.ro).
 POWIADOMIENIA
 - Trzęsienia ziemi: sprawdzane co 10 minut, także w nocy przy wyłączonym ekranie; zrewidowana magnituda aktualizuje powiadomienie, a jego dotknięcie otwiera mapę.
+- Nowa wersja: przy włączonych powiadomieniach aplikacja raz w tygodniu sprawdza GitHub i ogłasza nową wersję w powiadomieniach Androida; dotknięcie otwiera Sprawdź aktualizacje.
 USTAWIENIA
 - Język wyświetlania: w ☰ angielski i język kraju; Inne języki: pozostałe języki kraju, duże języki UE, rumuński i język telefonu (w USA tylko angielski i hiszpański).
 - Ulepszenia wyglądu i poprawki błędów.

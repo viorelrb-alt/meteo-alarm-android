@@ -49,11 +49,13 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.109";
+	static final String VERSION = "Meteo Alarm Android v2.110";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
 	static final String OPEN_QUAKE = "openQuake";
+	/** v2.110: opened from the new-version notice: ☰ › Check for updates. */
+	static final String OPEN_UPDATE = "openUpdate";
 	private android.graphics.Typeface fReg, fBold;
 	/** v2.030: the earthquake's bubble is waiting to be opened (a tap on its notice). */
 	private boolean quakeWanted;
@@ -193,6 +195,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		root.addView(statsBox, new android.widget.FrameLayout.LayoutParams(0, 0));
 		root.addView(sheet);
 		quakeWanted = getIntent() != null && getIntent().getBooleanExtra(OPEN_QUAKE, false);
+		if (getIntent() != null && getIntent().getBooleanExtra(OPEN_UPDATE, false)) {
+			getIntent().removeExtra(OPEN_UPDATE);
+			Log.i(this, "APP", "deschisă din notificarea de versiune nouă");
+			handler.postDelayed(new Runnable() {
+				public void run() {
+					if (!isFinishing()) updater.check(true);
+				}
+			}, 900);
+		}
 		fReg = android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf");
 		fBold = android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf");
 		bubble = new Bubble(this, fReg, fBold);
@@ -2253,6 +2264,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	protected void onNewIntent(Intent i) {
 		super.onNewIntent(i);
 		setIntent(i);
+		if (i != null && i.getBooleanExtra(OPEN_UPDATE, false)) {
+			Log.i(this, "APP", "deschisă din notificarea de versiune nouă");
+			i.removeExtra(OPEN_UPDATE);
+			closeWindows();
+			updater.check(true);
+			return;
+		}
 		if (i != null && i.getBooleanExtra(OPEN_QUAKE, false)) {
 			Log.i(this, "APP", "deschisă din notificarea de cutremur");
 			closeWindows();
@@ -3088,7 +3106,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		} });
 		al.add(new Object[] { Tr.t("Notifications", "Notificări"), new Runnable() {
 			public void run() {
-				p.toggle("bell", Tr.t("Notifications", "Notificări"), Tr.t("Rain, snow, warnings", "Ploaie, ninsoare, avertizări"), Notifier.on(MainActivity.this), new Runnable() {
+				p.toggle("bell", Tr.t("Notifications", "Notificări"), Tr.t("Rain, snow, warnings, updates", "Ploaie, ninsoare, avertizări, actualizări"), Notifier.on(MainActivity.this), new Runnable() {
 					public void run() {
 						toggleNotify();
 						onMenu();
@@ -4079,7 +4097,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău, verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea. Sub el, pagina cutremurelor recente din jur."));
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("The switch: notifications of the tornado warnings for your town (NWS). Under it, the alerts and reports around and what to do.",
 				"Comutatorul: notificări pentru avertizările de tornadă ale localității tale (NWS). Sub el, alertele și raportările din jur și ce faci."));
-		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată."));
+		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată.")
+				+ " " + Tr.t("Once a week also a new version of the app, if there is one.", "O dată pe săptămână și o versiune nouă a aplicației, dacă există."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceas noapte"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
 		help.entry(mini("keepOn"), Tr.t("Screen on", "Ecran aprins"), Tr.t("Keeps the screen on while the app is open.", "Ține ecranul aprins cât aplicația e deschisă."));
 		help.entry(mini("widgetplus"), Tr.t("System & support", "Sistem & Suport"), Tr.t("The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.",

@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	In Rumänien fragt ↻ I
 In landscape each warning box takes half the row.	Im Querformat nimmt jedes Warnfeld die halbe Reihe ein.
 Updated at 	Aktualisiert um 
 Updating…	Wird aktualisiert…
+Rain, snow, warnings, updates	Regen, Schnee, Warnungen, Updates
+Once a week also a new version of the app, if there is one.	Einmal pro Woche auch eine neue Version der App, falls es eine gibt.
+New version: 	Neue Version: 
+Tap to see what is new and download it.	Tippen, um die Neuerungen zu sehen und sie herunterzuladen.

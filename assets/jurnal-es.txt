@@ -1,8 +1,9 @@
-Versión actual: v.2.109 · 18.11.2026
+Versión actual: v.2.110 · 18.11.2026
 AJUSTES
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
 NOTIFICACIONES
 - Terremotos: comprobados cada 10 minutos, también de noche con la pantalla apagada; una magnitud revisada actualiza el aviso y un toque en él abre el mapa.
+- Nueva versión: con las notificaciones activadas, la app revisa GitHub una vez por semana y avisa de una nueva versión en las notificaciones de Android; un toque abre Buscar actualizaciones.
 PANTALLA PRINCIPAL
 - Información del terremoto: un toque en la casilla Terremoto la abre en la pantalla principal: el mapa, debajo las zonas de percepción y el historial del valor; el cuadrado de color o el mapa la abren en pantalla completa, como un terremoto de ☰ › Terremotos. En Rumanía, Francia, Italia, Países Bajos, Suiza y Grecia los valores oficiales vienen primero del instituto del país (INFP, BCSF, INGV, KNMI, SED, NOA) y luego de EMSC. En Rumanía, los terremotos alrededor del país también reciben el valor del INFP (de infp.ro).
 PARCELAS

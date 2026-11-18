@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	Fir-Rumanija, ↻ INFP j
 In landscape each warning box takes half the row.	Mimdud kull kaxxa ta' twissija tieħu nofs ir-ringiela.
 Updated at 	Aġġornat fil-
 Updating…	Qed jaġġorna…
+Rain, snow, warnings, updates	Xita, silġ, twissijiet, aġġornamenti
+Once a week also a new version of the app, if there is one.	Darba fil-ġimgħa wkoll verżjoni ġdida tal-app, jekk hemm.
+New version: 	Verżjoni ġdida: 
+Tap to see what is new and download it.	Agħfas biex tara x'hemm ġdid u tniżżilha.

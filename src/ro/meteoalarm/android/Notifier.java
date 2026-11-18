@@ -373,6 +373,24 @@ final class Notifier {
 		}
 	}
 
+	/** v2.110: a new version of the app; a tap opens ☰ › Check for updates. */
+	@SuppressWarnings("deprecation")
+	static void update(Context ctx, String title, String body) {
+		NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+		if (nm == null) return;
+		channel(ctx, nm);
+		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra(MainActivity.OPEN_UPDATE, true);
+		PendingIntent pi = PendingIntent.getActivity(ctx, 5, open, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, CHANNEL) : new Notification.Builder(ctx);
+		b.setSmallIcon(R.drawable.ic_notify).setContentTitle(title).setContentText(body).setContentIntent(pi).setAutoCancel(true)
+				.setStyle(new Notification.BigTextStyle().bigText(body)).setWhen(System.currentTimeMillis()).setShowWhen(true);
+		try {
+			nm.notify(9, b.build());
+		} catch (SecurityException e) {
+			Log.e(ctx, "NOTIF", "telefonul nu permite notificarea", e);
+		}
+	}
+
 	/** Test notice, after the user said yes. */
 	static void hello(Context ctx) {
 		post(ctx, 2, "Meteo Alarm", Tr.t("Notifications are on: rain or snow, weather warnings and earthquakes around you.",

@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.109 · 18.11.2026
+Verżjoni attwali: v.2.110 · 18.11.2026
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
@@ -9,6 +9,7 @@ GĦELIEQI
 - Storja u tbassir: kaxkar l-indikatur fuq jum li għadda; il-valuri tiegħu jidhru f'kaxxa taħt il-grafika u wara 10 s jerġa' lura għal-lum.
 NOTIFIKI
 - Terremoti: iċċekkjati kull 10 minuti, anki bil-lejl bl-iskrin mitfi; kobor rivedut jaġġorna n-notifika, u tektika fuqha tiftaħ il-mappa.
+- Verżjoni ġdida: bin-notifiki mixgħula, l-app tiċċekkja GitHub darba fil-ġimgħa u tħabbar verżjoni ġdida fin-notifiki ta' Android; tagħfisa tiftaħ Iċċekkja għal aġġornamenti.
 SETTINGS
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
 SKRIN EWLIENI

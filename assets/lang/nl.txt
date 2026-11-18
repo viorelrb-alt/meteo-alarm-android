@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	In Roemenië vraagt ↻ 
 In landscape each warning box takes half the row.	Liggend neemt elk waarschuwingsvak de halve rij in.
 Updated at 	Bijgewerkt om 
 Updating…	Bijwerken…
+Rain, snow, warnings, updates	Regen, sneeuw, waarschuwingen, updates
+Once a week also a new version of the app, if there is one.	Eens per week ook een nieuwe versie van de app, als die er is.
+New version: 	Nieuwe versie: 
+Tap to see what is new and download it.	Tik om te zien wat er nieuw is en haar te downloaden.

@@ -1,8 +1,9 @@
-Trenutačna verzija: v.2.109 · 18.11.2026
+Trenutačna verzija: v.2.110 · 18.11.2026
 GLAVNI ZASLON
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 OBAVIJESTI
 - Potresi: provjeravaju se svakih 10 minuta, i noću s ugašenim zaslonom; revidirana magnituda ažurira obavijest, a dodir na nju otvara kartu.
+- Nova verzija: s uključenim obavijestima aplikacija jednom tjedno provjerava GitHub i javlja novu verziju u Android obavijestima; dodir otvara Provjeri ažuriranja.
 PARCELE
 - Koordinate parcele: na stranici uređivanja upisuju se GPS koordinate svake točke, a ispod satelitski prikaz pokazuje parcelu.
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.

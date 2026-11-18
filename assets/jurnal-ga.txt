@@ -1,4 +1,4 @@
-Leagan reatha: v.2.109 · 18.11.2026
+Leagan reatha: v.2.110 · 18.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
@@ -9,6 +9,7 @@ CEAPACHA
 - Staitisticí: do gach páirc, Gníomh an lae agus 4 chluaisín: Oibríochtúil (fuinneog na spraeála uair ar uair, triomú braonta (ΔT), gaoth, duilleog fhliuch), Uisce & Ithir (báisteach, galú, ithir ag 6 agus 18 cm), Séasúr (céimeanna-lae i gcomparáid le hanuraidh, céim mheasta) agus Rioscaí 72 h (galair fhungacha, sioc talún, teas, gaoth agus clocha sneachta); sábháil mar PDF nó CSV.
 FÓGRAÍ
 - Creathanna talún: seiceáilte gach 10 nóiméad, istoíche freisin leis an scáileán múchta; nuashonraíonn méid athbhreithnithe an fógra, agus osclaíonn tapáil air an léarscáil.
+- Leagan nua: le fógraí ar siúl, seiceálann an aip GitHub uair sa tseachtain agus fógraíonn sí leagan nua i bhfógraí Android; osclaíonn tapáil Seiceáil le haghaidh nuashonruithe.
 PRÍOMHSCÁILEÁN
 - Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ☰ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
 SOCRUITHE

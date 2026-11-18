@@ -1,10 +1,11 @@
-Versão atual: v.2.109 · 18.11.2026
+Versão atual: v.2.110 · 18.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 ECRÃ PRINCIPAL
 - Informações do sismo: um toque na caixa Sismo abre-as no ecrã principal: o mapa, por baixo as zonas sentidas e o histórico do valor; o quadrado colorido ou o mapa abrem-nas em ecrã inteiro, como um sismo de ☰ › Sismos. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
 NOTIFICAÇÕES
 - Sismos: verificados a cada 10 minutos, também à noite com o ecrã desligado; uma magnitude revista atualiza a notificação e um toque nela abre o mapa.
+- Nova versão: com as notificações ligadas, a app verifica o GitHub uma vez por semana e anuncia uma nova versão nas notificações do Android; um toque abre Procurar atualizações.
 PARCELAS
 - Bolhas nas Estatísticas: tocar numa hora da janela de pulverização, num dia dos gráficos ou numa linha do solo abre uma bolha com a explicação; a janela de pulverização move-se sozinha.
 - Coordenadas da parcela: na página de edição escrevem-se as coordenadas GPS de cada ponto, e por baixo a vista de satélite mostra a parcela.

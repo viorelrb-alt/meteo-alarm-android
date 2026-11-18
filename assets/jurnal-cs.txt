@@ -1,10 +1,11 @@
-Současná verze: v.2.109 · 18.11.2026
+Současná verze: v.2.110 · 18.11.2026
 HLAVNÍ OBRAZOVKA
 - Informace o zemětřesení: klepnutí na pole Zemětřesení je otevře na hlavní obrazovce: mapa, pod ní zóny pocitu a historie hodnoty; barevný čtverec nebo mapa je otevře na celé obrazovce, jako zemětřesení z ☰ › Zemětřesení. V Rumunsku, Francii, Itálii, Nizozemsku, Švýcarsku a Řecku pocházejí oficiální hodnoty nejprve z národního ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), pak z EMSC. V Rumunsku dostávají hodnotu INFP (z infp.ro) i zemětřesení v okolí země.
 NASTAVENÍ
 - Jazyk zobrazení: v ☰ angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu (v USA jen angličtina a španělština).
 OZNÁMENÍ
 - Zemětřesení: kontrolována každých 10 minut, i v noci s vypnutou obrazovkou; revidovaná magnituda aktualizuje oznámení a klepnutí na něj otevře mapu.
+- Nová verze: se zapnutými oznámeními aplikace jednou týdně zkontroluje GitHub a ohlásí novou verzi v oznámeních Androidu; klepnutí otevře Zkontrolovat aktualizace.
 POZEMKY
 - Bubliny ve Statistice: klepnutí na hodinu v okně postřiku, den v grafech nebo řádek půdy otevře bublinu s vysvětlením; okno postřiku se posouvá samo.
 - Historie a předpověď: přetáhněte ukazatel na den v minulosti; jeho hodnoty se zobrazí v rámečku pod grafem a po 10 s se vrátí na dnešek.

@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	In Romania, ↻ INFP ric
 In landscape each warning box takes half the row.	In orizzontale ogni riquadro di allerta occupa metà della riga.
 Updated at 	Aggiornato alle 
 Updating…	Aggiornamento…
+Rain, snow, warnings, updates	Pioggia, neve, allerte, aggiornamenti
+Once a week also a new version of the app, if there is one.	Una volta a settimana anche una nuova versione dell'app, se c'è.
+New version: 	Nuova versione: 
+Tap to see what is new and download it.	Tocca per vedere le novità e scaricarla.

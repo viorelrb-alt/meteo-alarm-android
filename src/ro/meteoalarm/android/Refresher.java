@@ -69,6 +69,7 @@ public final class Refresher extends BroadcastReceiver {
 						if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
 						Fetcher.quakesAfterUpdate(app, c);
 					}
+					Updater.weekly(app);
 					refresh(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith(".NET") ? "rețea revenită" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
 				} catch (Exception e) {
 					Log.e(app, "FUNDAL", "reîmprospătare", e);

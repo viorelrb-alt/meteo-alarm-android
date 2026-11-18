@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	I Rumænien beder ↻ IN
 In landscape each warning box takes half the row.	Liggende fylder hvert varslingsfelt en halv række.
 Updated at 	Opdateret kl. 
 Updating…	Opdaterer…
+Rain, snow, warnings, updates	Regn, sne, varsler, opdateringer
+Once a week also a new version of the app, if there is one.	En gang om ugen også en ny version af appen, hvis der er en.
+New version: 	Ny version: 
+Tap to see what is new and download it.	Tryk for at se, hvad der er nyt, og hente den.

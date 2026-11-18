@@ -1,8 +1,9 @@
-Current version: v.2.109 · 18.11.2026
+Current version: v.2.110 · 18.11.2026
 MAIN SCREEN
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 NOTIFICATIONS
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.
+- New version: with Notifications on, the app checks GitHub once a week and announces a new version in Android's notifications; a tap opens Check for updates.
 PARCELS
 - Edit parcel: the pencil opens the parcel's page: name, crop (a list by the sowing date's season, or Another crop…), sowing date, area; the corners move on the map.
 - History and forecast: drag the indicator to a past day; its values show in a box under the chart and after 10 s it goes back to today.

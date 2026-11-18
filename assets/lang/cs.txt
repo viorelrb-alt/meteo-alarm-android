@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	V Rumunsku ↻ INFP znov
 In landscape each warning box takes half the row.	Na šířku zabírá každé pole výstrahy polovinu řady.
 Updated at 	Aktualizováno v 
 Updating…	Aktualizuje se…
+Rain, snow, warnings, updates	Déšť, sníh, výstrahy, aktualizace
+Once a week also a new version of the app, if there is one.	Jednou týdně také nová verze aplikace, pokud existuje.
+New version: 	Nová verze: 
+Tap to see what is new and download it.	Klepni a uvidíš, co je nového, a stáhneš ji.

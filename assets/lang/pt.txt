@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	Na Roménia, ↻ INFP vo
 In landscape each warning box takes half the row.	Na horizontal cada caixa de aviso ocupa meia fila.
 Updated at 	Atualizado às 
 Updating…	A atualizar…
+Rain, snow, warnings, updates	Chuva, neve, avisos, atualizações
+Once a week also a new version of the app, if there is one.	Uma vez por semana também uma nova versão da app, se houver.
+New version: 	Nova versão: 
+Tap to see what is new and download it.	Toque para ver as novidades e descarregá-la.

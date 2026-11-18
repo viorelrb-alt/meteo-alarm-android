@@ -1515,3 +1515,7 @@ In Romania, ↻ INFP asks for the official value again.	Romanya'da ↻ INFP resm
 In landscape each warning box takes half the row.	Yatayda her uyarı kutusu sıranın yarısını kaplar.
 Updated at 	Güncelleme saati: 
 Updating…	Güncelleniyor…
+Rain, snow, warnings, updates	Yağmur, kar, uyarılar, güncellemeler
+Once a week also a new version of the app, if there is one.	Haftada bir de, varsa uygulamanın yeni sürümü.
+New version: 	Yeni sürüm: 
+Tap to see what is new and download it.	Yenilikleri görmek ve indirmek için dokun.

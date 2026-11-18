@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	W Rumunii ↻ INFP ponow
 In landscape each warning box takes half the row.	Poziomo każde pole ostrzeżenia zajmuje pół rzędu.
 Updated at 	Zaktualizowano o 
 Updating…	Aktualizacja…
+Rain, snow, warnings, updates	Deszcz, śnieg, ostrzeżenia, aktualizacje
+Once a week also a new version of the app, if there is one.	Raz w tygodniu także nowa wersja aplikacji, jeśli jest.
+New version: 	Nowa wersja: 
+Tap to see what is new and download it.	Dotknij, aby zobaczyć nowości i ją pobrać.

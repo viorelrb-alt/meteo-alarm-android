@@ -1581,3 +1581,7 @@ In Romania, ↻ INFP asks for the official value again.	V Romuniji ↻ INFP znov
 In landscape each warning box takes half the row.	Ležeče vsako polje opozorila zavzame pol vrste.
 Updated at 	Posodobljeno ob 
 Updating…	Posodabljanje…
+Rain, snow, warnings, updates	Dež, sneg, opozorila, posodobitve
+Once a week also a new version of the app, if there is one.	Enkrat na teden tudi nova različica aplikacije, če obstaja.
+New version: 	Nova različica: 
+Tap to see what is new and download it.	Tapni, da vidiš novosti in jo preneseš.
