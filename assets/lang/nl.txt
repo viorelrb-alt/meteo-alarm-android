@@ -1579,3 +1579,5 @@ The coloured square or the map opens it on the whole screen.	Het gekleurde vierk
 The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	De kleur van het vierkant toont de magnitude: groen onder 3, geel, amber, oranje tot rood vanaf 5.
 In Romania, ↻ INFP asks for the official value again.	In Roemenië vraagt ↻ INFP de officiële waarde opnieuw op.
 In landscape each warning box takes half the row.	Liggend neemt elk waarschuwingsvak de halve rij in.
+Updated at 	Bijgewerkt om 
+Updating…	Bijwerken…

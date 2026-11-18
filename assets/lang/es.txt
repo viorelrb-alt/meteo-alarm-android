@@ -1649,3 +1649,5 @@ The coloured square or the map opens it on the whole screen.	El cuadrado de colo
 The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	El color del cuadrado indica la magnitud: verde por debajo de 3, amarillo, ámbar, naranja a rojo desde 5.
 In Romania, ↻ INFP asks for the official value again.	En Rumanía, ↻ INFP vuelve a pedir el valor oficial.
 In landscape each warning box takes half the row.	En horizontal cada casilla de aviso ocupa media fila.
+Updated at 	Actualizado a las 
+Updating…	Actualizando…

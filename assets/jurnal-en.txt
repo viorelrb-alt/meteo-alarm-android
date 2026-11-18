@@ -1,4 +1,4 @@
-Current version: v.2.107 · 18.11.2026
+Current version: v.2.108 · 18.11.2026
 MAIN SCREEN
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 NOTIFICATIONS

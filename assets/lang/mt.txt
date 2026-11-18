@@ -1579,3 +1579,5 @@ The coloured square or the map opens it on the whole screen.	Il-kwadru kkulurit 
 The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Il-kulur tal-kwadru juri l-kobor: aħdar taħt 3, isfar, ambra, oranġjo sa aħmar minn 5.
 In Romania, ↻ INFP asks for the official value again.	Fir-Rumanija, ↻ INFP jerġa' jitlob il-valur uffiċjali.
 In landscape each warning box takes half the row.	Mimdud kull kaxxa ta' twissija tieħu nofs ir-ringiela.
+Updated at 	Aġġornat fil-
+Updating…	Qed jaġġorna…

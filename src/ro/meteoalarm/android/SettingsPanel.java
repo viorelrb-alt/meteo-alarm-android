@@ -264,11 +264,11 @@ final class SettingsPanel extends FrameLayout {
 		closeX.setBackground(Glass.closeIcon(dark, dp));
 		headLine.setBackgroundColor(Glass.edge(dark));
 		GradientDrawable pb = Glass.panelBg(dark, 30 * dp, dp);
-		pb.setColor(Glass.alpha(Theme.page(dark), 0.55f)); // v5.22 (Viorel): frosted glass, the screen shows through
+		pb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.86f : 0.92f)); // v2.108 (Viorel): more matte, readable over the earthquake page; v5.22 (Viorel): frosted glass, the screen shows through
 		// v5.40 (Viorel): on a tablet the screen around stays sharp, the panel draws its own frosted glass.
 		panel.setBackground(TextSize.tablet(getContext()) ? Glass.frostBg(panel, 30 * dp, dark, dp, false) : pb);
 		GradientDrawable fb = new GradientDrawable();
-		fb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.35f : 0.4f));
+		fb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.8f : 0.86f));
 		fb.setCornerRadii(new float[] { 0, 0, 0, 0, 30 * dp, 30 * dp, 30 * dp, 30 * dp });
 		fb.setStroke(Math.max(1, (int) dp), Glass.edge(dark));
 		foot.setBackground(fb);

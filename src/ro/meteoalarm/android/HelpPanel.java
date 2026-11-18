@@ -267,6 +267,43 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		tabsScroll.setVisibility(sections.size() >= 3 ? VISIBLE : GONE);
 	}
 
+	/** v2.108 (Viorel): a row with a round ↻ button and WHAT (when the list was last updated). */
+	void refreshRow(String what, final Runnable tap) {
+		LinearLayout r = new LinearLayout(getContext());
+		r.setOrientation(LinearLayout.HORIZONTAL);
+		r.setGravity(android.view.Gravity.CENTER_VERTICAL);
+		r.setPadding(0, (int) (10 * dp), 0, 0);
+		TextView b = new TextView(getContext());
+		b.setText("↻");
+		b.setTypeface(bold);
+		b.setTextSize(20);
+		b.setTextColor(ro.meteoalarm.android.core.Theme.accent(dark));
+		b.setGravity(android.view.Gravity.CENTER);
+		b.setIncludeFontPadding(false);
+		b.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), 21 * dp, dp));
+		b.setContentDescription(ro.meteoalarm.android.core.Tr.t("Refresh", "Actualizează"));
+		r.addView(b, new LinearLayout.LayoutParams((int) (42 * dp), (int) (42 * dp)));
+		TextView w = new TextView(getContext());
+		w.setTypeface(reg);
+		TextSize.size(w, 14, ts);
+		w.setTextColor(dim());
+		w.setText(what);
+		LinearLayout.LayoutParams wl = new LinearLayout.LayoutParams(0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		wl.leftMargin = (int) (12 * dp);
+		r.addView(w, wl);
+		r.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (tap != null) tap.run();
+			}
+		});
+		b.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (tap != null) tap.run();
+			}
+		});
+		list.addView(r);
+	}
+
 	/** A plain paragraph (a notice: downloading, nothing found…). */
 	void text(String what) {
 		text(what, 15);

@@ -1579,3 +1579,5 @@ The coloured square or the map opens it on the whole screen.	Spalvotas kvadratas
 The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	Kvadrato spalva rodo magnitudę: žalia žemiau 3, geltona, gintarinė, oranžinė iki raudonos nuo 5.
 In Romania, ↻ INFP asks for the official value again.	Rumunijoje ↻ INFP iš naujo prašo oficialios vertės.
 In landscape each warning box takes half the row.	Horizontaliai kiekvienas įspėjimo laukelis užima pusę eilės.
+Updated at 	Atnaujinta 
+Updating…	Atnaujinama…

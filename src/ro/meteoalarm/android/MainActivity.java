@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.107";
+	static final String VERSION = "Meteo Alarm Android v2.108";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3474,6 +3474,20 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** v2.035: INFP's JSON list for a town in Romania (null = not asked / not come). */
 	private String quakesInfp;
 	private long quakesAt;
+	private boolean quakesBusy;
+
+	/** v2.108 (Viorel): ↻ and when the lists were last updated, above the first title. */
+	private void quakesRefreshRow() {
+		String w = quakesBusy || quakesCountry == null ? Tr.t("Updating…", "Se actualizează…")
+				: quakesAt > 0 ? Tr.t("Updated at ", "Actualizat la ") + s.qhm(quakesAt) : "";
+		help.refreshRow(w, new Runnable() {
+			public void run() {
+				if (quakesBusy) return;
+				Log.i(MainActivity.this, "CUTREMUR", "actualizare cerută din pagina de cutremure");
+				quakesPage(true);
+			}
+		});
+	}
 
 	/**
 	 * ☰ › Cutremure (Viorel 2026-11-04): a whole page like Help. On top the earthquakes of the
@@ -3482,6 +3496,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 */
 	private void quakesPage() {
 		Log.i(this, "CUTREMUR", "pagina de cutremure deschisă");
+		quakesPage(false);
+	}
+
+	/** v2.108: FORCE = the ↻ button: downloaded again whatever the age of the lists. */
+	private void quakesPage(boolean force) {
 		// The lists are of the town they were downloaded for (EMSC or USGS, v2.30).
 		if (!town.key().equals(quakesKey)) {
 			quakesCountry = null;
@@ -3489,8 +3508,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			quakesInfp = null;
 			quakesKey = town.key();
 		}
+		if (force) quakesBusy = true;
 		showQuakes();
-		if (quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L) return;
+		if (!force && quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L) return;
 		final Cities.City c = town;
 		final Context ctx = getApplicationContext();
 		new Thread(new Runnable() {
@@ -3523,6 +3543,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						quakesEurope = fb == null ? "" : fb;
 						quakesInfp = fi;
 						quakesAt = System.currentTimeMillis();
+						quakesBusy = false;
 						if (help.isOpen() && quakesOpen) showQuakes();
 					}
 				});
@@ -3543,6 +3564,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		Cities.City c = town;
+		quakesRefreshRow();
 		if (c.us()) {
 			showQuakesUS(c);
 			return;
