@@ -268,9 +268,13 @@ final class QuakeCard {
 		return ro.meteoalarm.android.core.Tr.t("magnitude", "magnitudine");
 	}
 
-	/** v2.042: the history's boxes share the row's width and height. */
+	/**
+	 * v2.042: the history's boxes share the row's width; v2.043: their own height (MATCH_PARENT in
+	 * the sheet squeezed them to the arrow's height). Their rows are the same (one-row label and
+	 * time, two-row meaning), so both come out as tall.
+	 */
 	private static LinearLayout.LayoutParams histLp() {
-		return new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT, 1);
+		return new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 	}
 
 	private static View histCell(Context ctx, String label, String at, String value, String src, String what, boolean dark, Typeface reg, Typeface bold, float zk) {

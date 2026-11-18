@@ -1,4 +1,4 @@
-Trenutna različica: v.2.042 · 18.11.2026
+Trenutna različica: v.2.043 · 18.11.2026
 GLAVNI ZASLON
 - Zemljevid potresa: dotik polja Potres pokaže zemljevid z epicentrom, tvojim krajem, razdaljo in območji čutenja; dotik zemljevida ga poveča, z zgodovino vrednosti. V Romuniji, Franciji, Italiji, na Nizozemskem, v Švici in Grčiji uradne vrednosti najprej prihajajo od državnega inštituta (INFP, BCSF, INGV, KNMI, SED, NOA), nato od EMSC.
 NASTAVITVE
