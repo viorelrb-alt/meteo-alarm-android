@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.044";
+	static final String VERSION = "Meteo Alarm Android v2.045";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -2805,6 +2805,35 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				onMenu();
 			}
 		});
+		// v2.045 (Viorel): the language right after the clock.
+		// v5.53 (Viorel): the languages as buttons in the menu, 2 on a row; the minorities' under
+		// "Other languages", shown on a tap and hidden again once one is chosen.
+		final List<String> lc = Lang.offered(this), lm = Lang.more(this);
+		p.info("globe", Tr.t("Display language", "Limbă afișaj"), mini("lang-" + s.T.lang));
+		p.langButtons(lc.toArray(new String[0]), langNames(lc), lc.indexOf(s.T.lang), new SettingsPanel.Choice() {
+			public void chose(int k) {
+				langMore = false;
+				setLang(lc.get(k));
+				onMenu();
+			}
+		});
+		if (!lm.isEmpty()) {
+			boolean mine = lm.contains(s.T.lang);
+			p.wideButton(Tr.t("Other languages", "Alte limbi") + (mine ? " · " + Tr.name(s.T.lang) : ""), mine, langMore, new Runnable() {
+				public void run() {
+					langMore = !langMore;
+					Log.i(MainActivity.this, "LIMBA", "alte limbi: " + (langMore ? "deschise " + lm : "închise"));
+					onMenu();
+				}
+			});
+			if (langMore) p.langButtons(lm.toArray(new String[0]), langNames(lm), lm.indexOf(s.T.lang), new SettingsPanel.Choice() {
+				public void chose(int k) {
+					langMore = false;
+					setLang(lm.get(k));
+					onMenu();
+				}
+			});
+		}
 		final int nt = ro.meteoalarm.android.core.Theme.NAMES.length;
 		String[] tn = new String[nt];
 		int[] tc = new int[nt];
@@ -2852,99 +2881,103 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						onMenu();
 					}
 				});
-		// v5.53 (Viorel): the languages as buttons in the menu, 2 on a row; the minorities' under
-		// "Other languages", shown on a tap and hidden again once one is chosen.
-		final List<String> lc = Lang.offered(this), lm = Lang.more(this);
-		p.info("globe", Tr.t("Display language", "Limbă afișaj"), mini("lang-" + s.T.lang));
-		p.langButtons(lc.toArray(new String[0]), langNames(lc), lc.indexOf(s.T.lang), new SettingsPanel.Choice() {
-			public void chose(int k) {
-				langMore = false;
-				setLang(lc.get(k));
-				onMenu();
-			}
-		});
-		if (!lm.isEmpty()) {
-			boolean mine = lm.contains(s.T.lang);
-			p.wideButton(Tr.t("Other languages", "Alte limbi") + (mine ? " · " + Tr.name(s.T.lang) : ""), mine, langMore, new Runnable() {
-				public void run() {
-					langMore = !langMore;
-					Log.i(MainActivity.this, "LIMBA", "alte limbi: " + (langMore ? "deschise " + lm : "închise"));
-					onMenu();
-				}
-			});
-			if (langMore) p.langButtons(lm.toArray(new String[0]), langNames(lm), lm.indexOf(s.T.lang), new SettingsPanel.Choice() {
-				public void chose(int k) {
-					langMore = false;
-					setLang(lm.get(k));
-					onMenu();
-				}
-			});
-		}
 		// Alerts & behaviour.
 		p.section(Tr.t("Alerts & behaviour", "Alerte & Comportament"), false);
-		p.toggle("locate", Tr.t("Auto location", "Localizare auto"), Tr.t("Follows your position by GPS", "Actualizează poziția prin GPS"), autoLoc(), new Runnable() {
+		// v2.045 (Viorel): the rows sorted alphabetically by their title in the shown language (a link stays under its switch).
+		final List<Object[]> al = new ArrayList<Object[]>();
+		al.add(new Object[] { Tr.t("Auto location", "Localizare auto"), new Runnable() {
 			public void run() {
-				onLocate();
-				onMenu();
+				p.toggle("locate", Tr.t("Auto location", "Localizare auto"), Tr.t("Follows your position by GPS", "Actualizează poziția prin GPS"), autoLoc(), new Runnable() {
+					public void run() {
+						onLocate();
+						onMenu();
+					}
+				});
+			}
+		} });
+		al.add(new Object[] { Tr.t("Earthquake", "Cutremur"), new Runnable() {
+			public void run() {
+				p.toggle("quake", Tr.t("Earthquake", "Cutremur"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.quakes(MainActivity.this), new Runnable() {
+					public void run() {
+						boolean on = !Notifier.quakes(MainActivity.this);
+						prefs.edit().putBoolean("quakeNotify", on).apply();
+						Log.i(MainActivity.this, "MENIU", "notificări cutremure: " + (on ? "PORNITE" : "OPRITE"));
+						note(on ? Tr.t("Earthquake notices within 300 km of your place", "Notificări de cutremur la cel mult 300 km de locul tău")
+								: Tr.t("No earthquake notices", "Fără notificări de cutremur"), 2200);
+						onMenu();
+					}
+				});
+				p.subLink("list", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
+					public void run() {
+						settings.hide();
+						quakesPage();
+					}
+				});
+			}
+		} });
+		if (us) al.add(new Object[] { Tr.t("Tornadoes", "Tornade"), new Runnable() {
+			public void run() {
+				p.toggle("tornado", Tr.t("Tornadoes", "Tornade"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.tornadoes(MainActivity.this), new Runnable() {
+					public void run() {
+						boolean on = !Notifier.tornadoes(MainActivity.this);
+						prefs.edit().putBoolean("tornadoNotify", on).apply();
+						Log.i(MainActivity.this, "MENIU", "notificări tornade: " + (on ? "PORNITE" : "OPRITE"));
+						note(on ? Tr.t("Tornado warnings for your town", "Avertizări de tornadă pentru localitatea ta") : Tr.t("No tornado notices", "Fără notificări de tornadă"), 2200);
+						onMenu();
+					}
+				});
+				p.subLink("alert", Tr.t("Alerts and reports nearby", "Alerte și raportări din jur"), Tr.t("What to do in a tornado", "Ce faci la tornadă"), new Runnable() {
+					public void run() {
+						settings.hide();
+						tornadoPage();
+					}
+				});
+			}
+		} });
+		al.add(new Object[] { Tr.t("Notifications", "Notificări"), new Runnable() {
+			public void run() {
+				p.toggle("bell", Tr.t("Notifications", "Notificări"), Tr.t("Rain, snow, warnings", "Ploaie, ninsoare, avertizări"), Notifier.on(MainActivity.this), new Runnable() {
+					public void run() {
+						toggleNotify();
+						onMenu();
+					}
+				});
+			}
+		} });
+		al.add(new Object[] { Tr.t("Night clock", "Ceas noapte"), new Runnable() {
+			public void run() {
+				p.toggle("moon", Tr.t("Night clock", "Ceas noapte"), Tr.t("Clock while charging", "Afișare ceas la încărcare"), prefs.getBoolean("nightClock", true), new Runnable() {
+					public void run() {
+						boolean on = !prefs.getBoolean("nightClock", true);
+						prefs.edit().putBoolean("nightClock", on).apply();
+						Log.i(MainActivity.this, "MENIU", "ceas noapte " + on);
+						applySettings();
+						onMenu();
+					}
+				});
+			}
+		} });
+		al.add(new Object[] { Tr.t("Screen on", "Ecran aprins"), new Runnable() {
+			public void run() {
+				p.toggle("screen", Tr.t("Screen on", "Ecran aprins"), Tr.t("The screen does not go off", "Ecranul nu se stinge"), prefs.getBoolean("keepOn", true), new Runnable() {
+					public void run() {
+						boolean on = !prefs.getBoolean("keepOn", true);
+						prefs.edit().putBoolean("keepOn", on).apply();
+						Log.i(MainActivity.this, "MENIU", "ecran aprins " + on);
+						applySettings();
+						onMenu();
+					}
+				});
+			}
+		} });
+		final java.text.Collator coll = java.text.Collator.getInstance(new java.util.Locale(s.T.lang));
+		java.util.Collections.sort(al, new java.util.Comparator<Object[]>() {
+			public int compare(Object[] x, Object[] y) {
+				return coll.compare((String) x[0], (String) y[0]);
 			}
 		});
-		p.toggle("quake", Tr.t("Earthquake", "Cutremur"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.quakes(this), new Runnable() {
-			public void run() {
-				boolean on = !Notifier.quakes(MainActivity.this);
-				prefs.edit().putBoolean("quakeNotify", on).apply();
-				Log.i(MainActivity.this, "MENIU", "notificări cutremure: " + (on ? "PORNITE" : "OPRITE"));
-				note(on ? Tr.t("Earthquake notices within 300 km of your place", "Notificări de cutremur la cel mult 300 km de locul tău")
-						: Tr.t("No earthquake notices", "Fără notificări de cutremur"), 2200);
-				onMenu();
-			}
-		});
-		p.subLink("list", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
-			public void run() {
-				settings.hide();
-				quakesPage();
-			}
-		});
-		if (us) {
-			p.toggle("tornado", Tr.t("Tornadoes", "Tornade"), Tr.t("Notifications for your place", "Notificări pentru locul tău"), Notifier.tornadoes(this), new Runnable() {
-				public void run() {
-					boolean on = !Notifier.tornadoes(MainActivity.this);
-					prefs.edit().putBoolean("tornadoNotify", on).apply();
-					Log.i(MainActivity.this, "MENIU", "notificări tornade: " + (on ? "PORNITE" : "OPRITE"));
-					note(on ? Tr.t("Tornado warnings for your town", "Avertizări de tornadă pentru localitatea ta") : Tr.t("No tornado notices", "Fără notificări de tornadă"), 2200);
-					onMenu();
-				}
-			});
-			p.subLink("alert", Tr.t("Alerts and reports nearby", "Alerte și raportări din jur"), Tr.t("What to do in a tornado", "Ce faci la tornadă"), new Runnable() {
-				public void run() {
-					settings.hide();
-					tornadoPage();
-				}
-			});
-		}
-		p.toggle("bell", Tr.t("Notifications", "Notificări"), Tr.t("Rain, snow, warnings", "Ploaie, ninsoare, avertizări"), Notifier.on(this), new Runnable() {
-			public void run() {
-				toggleNotify();
-				onMenu();
-			}
-		});
-		p.toggle("moon", Tr.t("Night clock", "Ceas noapte"), Tr.t("Clock while charging", "Afișare ceas la încărcare"), prefs.getBoolean("nightClock", true), new Runnable() {
-			public void run() {
-				boolean on = !prefs.getBoolean("nightClock", true);
-				prefs.edit().putBoolean("nightClock", on).apply();
-				Log.i(MainActivity.this, "MENIU", "ceas noapte " + on);
-				applySettings();
-				onMenu();
-			}
-		});
-		p.toggle("screen", Tr.t("Screen on", "Ecran aprins"), Tr.t("The screen does not go off", "Ecranul nu se stinge"), prefs.getBoolean("keepOn", true), new Runnable() {
-			public void run() {
-				boolean on = !prefs.getBoolean("keepOn", true);
-				prefs.edit().putBoolean("keepOn", on).apply();
-				Log.i(MainActivity.this, "MENIU", "ecran aprins " + on);
-				applySettings();
-				onMenu();
-			}
-		});
+		for (Object[] r : al) ((Runnable) r[1]).run();
+
 		// The hidden US test mode (not in Help nor in the change log): only while it is on.
 		if (Region.test(this)) {
 			p.section(Tr.t("Hidden mode", "Mod ascuns"), true);

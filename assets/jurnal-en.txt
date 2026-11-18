@@ -1,4 +1,4 @@
-Current version: v.2.044 · 18.11.2026
+Current version: v.2.045 · 18.11.2026
 MAIN SCREEN
 - Earthquake map: a tap on the Earthquake box shows a map with the epicentre, your town, the distance and the felt zones; a tap on the map enlarges it, with the value's history. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC.
 NOTIFICATIONS
