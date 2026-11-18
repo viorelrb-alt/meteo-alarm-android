@@ -178,9 +178,12 @@ final class QuakeCard {
 		sr.setOrientation(LinearLayout.HORIZONTAL);
 		sr.setGravity(Gravity.CENTER_VERTICAL);
 		TextView sl = text(ctx, t[11], 12.5f * zk, bold, ink);
-		sr.addView(sl, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		// v2.034 (Viorel): a long source line used to take the whole row and squeeze the "official"
+		// chip into a thin green column of letters; now the line wraps and the chip keeps its word.
+		sr.addView(sl, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		if (t[12].length() > 0) {
 			TextView chip = text(ctx, t[12], 11 * zk, bold, dark ? 0xFF86EFAC : 0xFF15803D);
+			chip.setSingleLine(true);
 			chip.setPadding((int) (8 * dp), (int) (1 * dp), (int) (8 * dp), (int) (2 * dp));
 			chip.setBackground(Glass.pill(0x2E22C55E, 0x6622C55E, 10 * dp, dp));
 			LinearLayout.LayoutParams chl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
