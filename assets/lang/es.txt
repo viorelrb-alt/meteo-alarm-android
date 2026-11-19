@@ -1710,3 +1710,14 @@ When something does not work, tap Share or Save and send it to the author.	Cuand
 crop, sowing date, area, thresholds	cultivo, fecha de siembra, superficie, umbrales
 name, corners, points	nombre, esquinas, puntos
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, encima del GPS, pregunta primero y luego añade una parcela: la chincheta empieza en el centro del mapa, un toque en el mapa la mueve; el nombre se escribe arriba. ‹ vuelve atrás.
+See the log	Ver el registro
+Size	Tamaño
+Lines	Líneas
+Errors	Errores
+Yesterday	Ayer
+The log's lines	Las líneas del registro
+Long touch on a line: copy it	Pulsación larga en una línea: copiarla
+Line copied	Línea copiada
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	La misma banda aparece sobre Parcelas y la pantalla del terremoto; las ventanas Exportar, Importar y Registro dejan a la vista la banda de la pantalla principal.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Lo que hizo la app, con la hora: su tamaño, líneas y errores. Ver el registro abre las líneas (Todas, Errores, Hoy, Ayer; una pulsación larga copia una línea); Compartir y Guardar están abajo.
+The ＋ tab of the main screen asks first too.	La pestaña ＋ de la pantalla principal también pregunta primero.

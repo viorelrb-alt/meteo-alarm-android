@@ -132,7 +132,13 @@ public final class FarmActivity extends Activity {
 				if (topBand.getVisibility() == View.VISIBLE) {
 					android.graphics.Insets nav = in.getInsets(android.view.WindowInsets.Type.navigationBars()), ime = in.getInsets(android.view.WindowInsets.Type.ime()),
 							cut = in.getInsets(android.view.WindowInsets.Type.displayCutout());
-					root.setPadding(Math.max(nav.left, cut.left), 0, Math.max(nav.right, cut.right), Math.max(nav.bottom, ime.bottom));
+					sideL = Math.max(nav.left, cut.left);
+					sideR = Math.max(nav.right, cut.right);
+					// v2.140 (Viorel): on the Parcels page the map goes under the camera; only the buttons and the cards move.
+					if ("list".equals(screen)) {
+						root.setPadding(0, 0, 0, Math.max(nav.bottom, ime.bottom));
+						applySides();
+					} else root.setPadding(sideL, 0, sideR, Math.max(nav.bottom, ime.bottom));
 					topBand.setPadding(Math.max(nav.left, cut.left), 0, Math.max(nav.right, cut.right), 0);
 				}
 				return in;
@@ -1322,6 +1328,19 @@ public final class FarmActivity extends Activity {
 	/** v2.130: the floating band (the Parcels page) and the height it takes at the top. */
 	private TopBand topBand;
 	private int topIn;
+	/** v2.140: the camera's (or the navigation bar's) room at the left and the right, and the Parcels page's map box. */
+	private int sideL, sideR;
+	private FrameLayout listBox;
+
+	/** v2.140 (Viorel): the map of the Parcels page to the screen's edges (under the camera), the buttons and the cards beside it. */
+	private void applySides() {
+		if (listBox == null || listMap == null || !(listMap.getLayoutParams() instanceof FrameLayout.LayoutParams)) return;
+		listBox.setClipToPadding(false);
+		listBox.setPadding(sideL, 0, sideR, 0);
+		FrameLayout.LayoutParams l = (FrameLayout.LayoutParams) listMap.getLayoutParams();
+		l.setMargins(-sideL, 0, -sideR, 0);
+		listMap.requestLayout();
+	}
 
 	/** ON: the Parcels page without the status bar, the band over the map; else the phone's status bar. */
 	private void bandOn(boolean on) {
@@ -1401,6 +1420,11 @@ public final class FarmActivity extends Activity {
 		if (!Double.isNaN(meLa)) m.setMe(meLa, meLo);
 		mapBox.addView(m, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		root.addView(mapBox, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		listBox = mapBox;
+		if (topBand.getVisibility() == View.VISIBLE) {
+			root.setPadding(0, 0, 0, root.getPaddingBottom());
+			applySides();
+		}
 		leftFloats(mapBox, m, tab);
 
 		final int fb = px(tab ? 46 : 42), mg = px(12), gap = px(10);
@@ -1631,18 +1655,12 @@ public final class FarmActivity extends Activity {
 		plus.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Log.i(FarmActivity.this, "FERMIER", "buton ＋ parcelă nouă: întrebare");
-				AlertDialog.Builder d = dialog();
-				d.setTitle(Tr.t("New parcel", "Parcelă nouă"));
-				d.setMessage(Tr.t("Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.",
-						"Adaugi o parcelă nouă? Acul pornește din mijlocul hărții, iar butonul GPS îl mută unde ești."));
-				d.setNegativeButton(Tr.t("Cancel", "Renunță"), null);
-				d.setPositiveButton(Tr.t("Add", "Adaugă"), new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface di, int w) {
+				MainActivity.askNewParcel(FarmActivity.this, dark, topIn, new Runnable() {
+					public void run() {
 						Log.i(FarmActivity.this, "FERMIER", "parcelă nouă: adaugă");
 						if (listMap != null) newParcel(mapBox, listMap, tab);
 					}
 				});
-				Dlg.show(d);
 			}
 		});
 		TextView back = text("‹", 26, true, ink);

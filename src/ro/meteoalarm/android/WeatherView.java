@@ -486,6 +486,7 @@ final class WeatherView extends View {
 		ox = f[3];
 		oy = f[4] + bp - lift * scale;
 		screen.lift = lift;
+		screen.unitPx = scale;
 		screen.band = bp / scale;
 		screen.bandTop = -oy / scale;
 		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));

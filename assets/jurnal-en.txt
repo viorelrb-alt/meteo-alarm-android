@@ -1,4 +1,4 @@
-Current version: v.2.131 · 19.11.2026
+Current version: v.2.140 · 19.11.2026
 MAIN SCREEN
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 NOTIFICATIONS
@@ -16,7 +16,7 @@ SETTINGS
 - Display language: in ☰ English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's (in the US only English and Spanish).
 - Earthquakes page: opens at once with the last lists saved on the phone and updates them in the background.
 - Export / Import: switches for what goes into the file (also the crops and growing data, parcel notifications, parcel bin, notifications, map, widgets, earthquake history, log); in Export and Import the towns and parcels are ticked one by one; the Aa button sets the text size.
-- Log: the Aa button sets the text size.
+- Log: size, lines and errors on a card; See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save at the bottom of the screen.
 - Design improvements and fixes for reported bugs.
 
 Version 1.4 (v.1.400 – v.1.520)

@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Ja ka
 crop, sowing date, area, thresholds	kultūra, sējas datums, platība, sliekšņi
 name, corners, points	nosaukums, stūri, punkti
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, virs GPS, vispirms jautā un tad pievieno lauku: adata sākas kartes vidū, pieskāriens kartei to pārvieto; nosaukums rakstāms augšā. ‹ atgriežas atpakaļ.
+See the log	Skatīt žurnālu
+Size	Izmērs
+Lines	Rindas
+Errors	Kļūdas
+Yesterday	Vakar
+The log's lines	Žurnāla rindas
+Long touch on a line: copy it	Ilgs pieskāriens rindai: nokopēt
+Line copied	Rinda nokopēta
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Tā pati josla redzama virs Laukiem un zemestrīces ekrāna; logi Eksports, Imports un Žurnāls atstāj redzamu galvenā ekrāna joslu.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Ko lietotne darīja, ar laiku: izmērs, rindas un kļūdas. Skatīt žurnālu atver rindas (Visas, Kļūdas, Šodien, Vakar; ilgs pieskāriens nokopē rindu); Kopīgot un Saglabāt ir apakšā.
+The ＋ tab of the main screen asks first too.	Arī galvenā ekrāna cilne ＋ vispirms jautā.

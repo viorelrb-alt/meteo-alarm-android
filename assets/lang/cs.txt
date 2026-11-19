@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Když
 crop, sowing date, area, thresholds	plodina, datum setí, výměra, prahy
 name, corners, points	název, rohy, body
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, nad GPS, se nejdřív zeptá a pak přidá pozemek: špendlík začíná uprostřed mapy, klepnutí na mapu ho posune; název se píše nahoře. ‹ jde zpět.
+See the log	Zobrazit protokol
+Size	Velikost
+Lines	Řádky
+Errors	Chyby
+Yesterday	Včera
+The log's lines	Řádky protokolu
+Long touch on a line: copy it	Dlouhé klepnutí na řádek: zkopíruje ho
+Line copied	Řádek zkopírován
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Stejný pruh je nad Parcelami a obrazovkou zemětřesení; okna Export, Import a Protokol nechávají pruh hlavní obrazovky viditelný.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Co aplikace dělala, s časem: velikost, řádky a chyby. Zobrazit protokol otevře řádky (Vše, Chyby, Dnes, Včera; dlouhé klepnutí zkopíruje řádek); Sdílet a Uložit jsou dole.
+The ＋ tab of the main screen asks first too.	I karta ＋ hlavní obrazovky se nejdřív zeptá.

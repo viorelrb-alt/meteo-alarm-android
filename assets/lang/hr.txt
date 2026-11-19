@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Kad n
 crop, sowing date, area, thresholds	kultura, datum sjetve, površina, pragovi
 name, corners, points	naziv, kutovi, točke
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, iznad GPS-a, najprije pita, a zatim dodaje parcelu: pribadača kreće iz sredine karte, dodir na karti je pomiče; naziv se piše gore. ‹ vraća natrag.
+See the log	Pogledaj zapisnik
+Size	Veličina
+Lines	Retci
+Errors	Pogreške
+Yesterday	Jučer
+The log's lines	Retci zapisnika
+Long touch on a line: copy it	Dugi dodir na redak: kopiraj ga
+Line copied	Redak kopiran
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ista traka prikazuje se iznad Parcela i zaslona potresa; prozori Izvoz, Uvoz i Zapisnik ostavljaju vidljivu traku glavnog zaslona.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Što je aplikacija radila, s vremenom: veličina, retci i pogreške. Pogledaj zapisnik otvara retke (Sve, Pogreške, Danas, Jučer; dugi dodir kopira redak); Dijeli i Spremi su dolje.
+The ＋ tab of the main screen asks first too.	I kartica ＋ glavnog zaslona prvo pita.

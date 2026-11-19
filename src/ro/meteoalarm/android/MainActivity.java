@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.131";
+	static final String VERSION = "Meteo Alarm Android v2.140";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -617,9 +617,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	public void onTab(int k) {
 		List<Parcels.Parcel> l = pageList();
 		if (k > l.size()) {
-			// v5.50 (Viorel): straight to the new parcel's box.
-			Log.i(this, "FERMIER", "tab +: parcelă nouă");
-			startActivityForResult(new Intent(this, FarmActivity.class).putExtra("dark", s.dark).putExtra("add", true), REQ_PARCELS);
+			// v5.50 (Viorel): straight to the new parcel's box. v2.140 (Viorel): it asks first.
+			Log.i(this, "FERMIER", "tab +: întrebare parcelă nouă");
+			askNewParcel(this, s.dark, -1, new Runnable() {
+				public void run() {
+					Log.i(MainActivity.this, "FERMIER", "tab +: parcelă nouă");
+					startActivityForResult(new Intent(MainActivity.this, FarmActivity.class).putExtra("dark", s.dark).putExtra("add", true), REQ_PARCELS);
+				}
+			});
 			return;
 		}
 		if (k == s.page) {
@@ -3481,27 +3486,37 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** ☰ › Export / Import (Viorel 2026-11-10): Save or Share this phone's data, or Import a file. */
 	private void backup() {
 		Log.i(this, "EXPORT", "fereastra Export / Import");
-		AlertDialog.Builder d = dialog();
-		d.setTitle(Tr.t("Export / Import", "Export / Import"));
-		d.setMessage(Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
-				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier.")
-				+ "\n\n" + countLines(Backup.counts(this, null)));
-		d.setNeutralButton(Tr.t("Import", "Import"), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface di, int w) {
-				Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("*/*");
-				try {
-					startActivityForResult(i, REQ_OPEN_DATA);
-				} catch (Exception e) {
-					Log.e(MainActivity.this, "IMPORT", "alegere fișier", e);
-				}
-			}
-		});
-		d.setPositiveButton(Tr.t("Export", "Export"), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface di, int w) {
-				exportPanel();
-			}
-		});
-		show(d);
+		// v2.140 (Viorel): the app's own matte window, not the phone's dialog.
+		int[] n = Backup.counts(this, null);
+		String[][] rows = { { Tr.t("Towns", "Localități"), String.valueOf(n[0]) }, { Tr.t("Favourites", "Favorite"), String.valueOf(n[1]) },
+				{ Tr.t("Parcels", "Parcele"), String.valueOf(n[2]) }, { Tr.t("Settings", "Setări"), n[3] > 0 ? "✓" : "—" } };
+		Ask.show(this, s.dark, Tr.t("Export / Import", "Export / Import"), Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
+				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier."), rows, Tr.t("Export", "Export"), Tr.t("Import", "Import"), true, -1,
+				new Ask.Pick() {
+					public void pick(int b) {
+						if (b == 1) {
+							exportPanel();
+							return;
+						}
+						Intent i = new Intent(Intent.ACTION_OPEN_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("*/*");
+						try {
+							startActivityForResult(i, REQ_OPEN_DATA);
+						} catch (Exception e) {
+							Log.e(MainActivity.this, "IMPORT", "alegere fișier", e);
+						}
+					}
+				});
+	}
+
+	/** v2.140 (Viorel): "New parcel?" in the app's matte window (the main screen's + and the Parcels page's +). */
+	static void askNewParcel(android.content.Context ctx, boolean dark, int top, final Runnable add) {
+		Ask.show(ctx, dark, Tr.t("New parcel", "Parcelă nouă"), Tr.t("Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.",
+				"Adaugi o parcelă nouă? Acul pornește din mijlocul hărții, iar butonul GPS îl mută unde ești."), null, Tr.t("Add", "Adaugă"), Tr.t("Cancel", "Renunță"), false, top,
+				new Ask.Pick() {
+					public void pick(int b) {
+						if (b == 1) add.run();
+					}
+				});
 	}
 
 	/** v2.120: what the next Save writes (chosen in the Export window). */
@@ -4367,7 +4382,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"☰ › Parcele: harta cu casetele parcelelor (în portret un rând jos, în peisaj o coloană la dreapta). Rămân doar în acest telefon."),
 				new android.graphics.Bitmap[] { glyph("plus"), mini("gps"), mini("tap"), glyph("pin"), glyph("point"), glyph("circle"), glyph("save"), glyph("pencil"), glyph("bars"), mini("bell"), glyph("bin") },
 				new String[] {
-						Tr.t("＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.", "＋, deasupra butonului GPS, întreabă întâi, apoi adaugă o parcelă: acul pornește din mijlocul hărții, o atingere pe hartă îl mută; numele se scrie sus. ‹ revine înapoi."),
+						Tr.t("＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.", "＋, deasupra butonului GPS, întreabă întâi, apoi adaugă o parcelă: acul pornește din mijlocul hărții, o atingere pe hartă îl mută; numele se scrie sus. ‹ revine înapoi.") + " "
+								+ Tr.t("The ＋ tab of the main screen asks first too.", "Și tab-ul ＋ din ecranul principal întreabă întâi."),
 						Tr.t("The GPS button takes the map, and the new parcel's pin, where you are.", "Butonul GPS duce harta, și acul parcelei noi, unde ești."),
 						Tr.t("A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.", "Atingerea unei casete mărește harta pe parcelă și arată punctele ei; Statistică deschide statistica."),
 						Tr.t("A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.", "Atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele."),
@@ -4430,8 +4446,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"În culorile temei; toate se mișcă 3 secunde când se deschide ecranul, după fiecare reîmprospătare sau când se schimbă vremea, și pe widget-uri."));
 		help.entry(mini("camera"), Tr.t("Camera band", "Banda camerei"), Tr.t("In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.",
 				"În portret, pe telefoanele cu camera în ecran (Android 9+), ceasul, conexiunea și data stau lângă cameră; localitatea are tot rândul.")
-				+ " " + Tr.t("The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.",
-						"Aceeași bandă apare și peste Parcele, ecranul cutremurului și ferestrele Export, Import și Jurnal."));
+				+ " " + Tr.t("The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.",
+						"Aceeași bandă apare și peste Parcele și ecranul cutremurului; ferestrele Export, Import și Jurnal lasă banda ecranului principal la vedere."));
 		help.section(Tr.t("Gestures", "Gesturi"));
 		help.entry(mini("tap"), Tr.t("Tap on the town's name", "Atingerea numelui localității"), Tr.t("Looks once with the GPS.", "Caută o dată poziția cu GPS-ul."));
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Refreshes the weather; a tap on “updated” does the same.", "Reîmprospătează vremea; la fel și atingerea capsulei „actualizat”."));
@@ -4499,7 +4515,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier.")
 				+ " " + Tr.t("Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.",
 						"Export și Import: comutatoarele aleg ce intră; ▾ deschide localitățile și parcelele, ca să le bifezi pe rând. Culturile și datele de cultivare au comutatorul lor. Aa schimbă mărimea textului."));
-		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi.") + " "
+		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.",
+				"Ce a făcut aplicația, cu ora: mărimea, liniile și erorile. Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează sunt jos.") + " "
 				+ Tr.t("Aa sets the text size.", "Aa schimbă mărimea textului."));
 		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));
 		help.entry(mini("share"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Sends the download link, e.g. on WhatsApp.", "Trimite linkul de descărcare, de exemplu pe WhatsApp."));

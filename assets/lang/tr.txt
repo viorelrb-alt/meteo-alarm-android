@@ -1574,3 +1574,14 @@ When something does not work, tap Share or Save and send it to the author.	Bir �
 crop, sowing date, area, thresholds	ürün, ekim tarihi, alan, eşikler
 name, corners, points	ad, köşeler, noktalar
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, GPS'in üstünde, önce sorar, sonra parsel ekler: iğne haritanın ortasından başlar, haritaya dokunmak onu taşır; ad üstte yazılır. ‹ geri döner.
+See the log	Günlüğü gör
+Size	Boyut
+Lines	Satırlar
+Errors	Hatalar
+Yesterday	Dün
+The log's lines	Günlüğün satırları
+Long touch on a line: copy it	Satıra uzun dokunma: kopyalar
+Line copied	Satır kopyalandı
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Aynı şerit Parseller ve deprem ekranının üstünde görünür; Dışa aktar, İçe aktar ve Günlük pencereleri ana ekranın şeridini görünür bırakır.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Uygulamanın yaptıkları, saatiyle: boyut, satırlar ve hatalar. Günlüğü gör satırları açar (Tümü, Hatalar, Bugün, Dün; uzun dokunma bir satırı kopyalar); Paylaş ve Kaydet alttadır.
+The ＋ tab of the main screen asks first too.	Ana ekranın ＋ sekmesi de önce sorar.

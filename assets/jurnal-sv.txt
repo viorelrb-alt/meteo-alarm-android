@@ -1,4 +1,4 @@
-Nuvarande version: v.2.131 · 19.11.2026
+Nuvarande version: v.2.140 · 19.11.2026
 AVISERINGAR
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
 - Ny version: med aviseringar på kollar appen GitHub en gång i veckan och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.
@@ -16,7 +16,7 @@ SKIFTEN
 - Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
 - Sidan Jordbävningar: öppnas direkt med de senast sparade listorna i telefonen och uppdaterar dem i bakgrunden.
 - Export / Import: reglage för vad som hamnar i filen (även grödor och odlingsdata, skiftenas aviseringar, skiftenas papperskorg, aviseringar, karta, widgetar, jordbävningshistorik, logg); vid Export och Import bockas orter och skiften för ett i taget; knappen Aa ändrar textstorleken.
-- Logg: knappen Aa ändrar textstorleken.
+- Logg: storlek, rader och fel på ett kort; Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara längst ner på skärmen.
 - Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.4 (v.1.400 – v.1.520)

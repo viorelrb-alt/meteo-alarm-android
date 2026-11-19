@@ -59,6 +59,25 @@ final class TopBand extends View {
 		pn.setStrokeCap(Paint.Cap.ROUND);
 		pg = new Paint(Paint.ANTI_ALIAS_FLAG);
 		if (s == null) readNet();
+		android.content.SharedPreferences pr = ctx.getSharedPreferences("band", 0);
+		if (Screen.bandClockPx > 0) {
+			mainCk = Screen.bandClockPx;
+			mainDs = Screen.bandDatePx;
+			if (pr.getFloat("ck", 0) != mainCk || pr.getFloat("ds", 0) != mainDs) pr.edit().putFloat("ck", mainCk).putFloat("ds", mainDs).apply();
+		} else {
+			mainCk = pr.getFloat("ck", 0);
+			mainDs = pr.getFloat("ds", 0);
+		}
+	}
+
+	/** v2.140: the main screen's clock and date, in pixels (0: not known yet). */
+	private final float mainCk, mainDs;
+
+	/** v2.140 (Viorel): where a window's shade starts: under the main screen's camera band (portrait phone), else 0. */
+	static int shadeTop(Context ctx, View root) {
+		android.util.DisplayMetrics m = ctx.getResources().getDisplayMetrics();
+		if (m.widthPixels >= m.heightPixels || TextSize.tablet(ctx)) return 0;
+		return height(ctx, root);
 	}
 
 	private void readNet() {
@@ -124,7 +143,13 @@ final class TopBand extends View {
 		// The main screen's units (portrait), whatever way the phone is turned.
 		float u = Screen.fit(Math.min(m.widthPixels, m.heightPixels), Math.max(m.widthPixels, m.heightPixels), TextSize.tablet(getContext()))[0];
 		float units = h / u;
-		float ck = Math.min(44, units * 0.62f) * u, ds = Math.min(28, units * 0.42f) * u, edge = Math.max(Math.max(40 * u, left), getPaddingLeft() > 0 ? getPaddingLeft() + 16 * u : 0);
+		float ck = Math.min(44, units * 0.62f) * u, ds = Math.min(28, units * 0.42f) * u;
+		// v2.140 (Viorel): the clock and the date exactly as large as on the main screen.
+		if (mainCk > 0) {
+			ck = Math.min(mainCk, h * 0.9f);
+			ds = Math.min(mainDs, h * 0.7f);
+		}
+		float edge = Math.max(Math.max(40 * u, left), getPaddingLeft() > 0 ? getPaddingLeft() + 16 * u : 0);
 		int ink = Theme.ink(dark), faint = (ink & 0xFFFFFF) | 0x48000000;
 		Calendar now = ro.meteoalarm.android.core.Zone.now();
 		int hr = now.get(Calendar.HOUR_OF_DAY), mn = now.get(Calendar.MINUTE);

@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Ко�
 crop, sowing date, area, thresholds	культура, дата сівби, площа, пороги
 name, corners, points	назва, кути, точки
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, над GPS, спершу питає, а потім додає ділянку: шпилька починає з середини карти, дотик до карти пересуває її; назва пишеться вгорі. ‹ повертає назад.
+See the log	Переглянути журнал
+Size	Розмір
+Lines	Рядки
+Errors	Помилки
+Yesterday	Учора
+The log's lines	Рядки журналу
+Long touch on a line: copy it	Довгий дотик до рядка: копіювати
+Line copied	Рядок скопійовано
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Та сама смуга показується над Ділянками та екраном землетрусу; вікна Експорт, Імпорт і Журнал залишають видимою смугу головного екрана.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Що робив застосунок, із часом: розмір, рядки й помилки. Переглянути журнал відкриває рядки (Усі, Помилки, Сьогодні, Учора; довгий дотик копіює рядок); Поділитися й Зберегти внизу.
+The ＋ tab of the main screen asks first too.	Вкладка ＋ головного екрана теж спершу питає.

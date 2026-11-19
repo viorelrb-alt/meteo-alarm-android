@@ -2707,6 +2707,9 @@ public final class Screen {
 	public float band, bandTop;
 	/** v3.91: the page is drawn this many units higher (WeatherView); the camera band stays above it. */
 	public float lift;
+	/** v2.140 (Viorel): pixels per unit (WeatherView), and the band's clock and date as last drawn, in pixels, for TopBand (the same size everywhere). */
+	public float unitPx;
+	public static float bandClockPx, bandDatePx;
 
 	private void drawBand() {
 		float top = lift - band, mid = top + band / 2;
@@ -2729,6 +2732,10 @@ public final class Screen {
 		String d = T.date(now);
 		float dp = fit(false, Math.min(28, band * 0.42f), Math.max(120, cw / 2 - 90 - 40), d);
 		ltext(false, dp, mid - dp * 0.5f, 40, d, c.ink);
+		if (unitPx > 0) {
+			bandClockPx = px * unitPx;
+			bandDatePx = Math.min(28, band * 0.42f) * unitPx;
+		}
 	}
 
 	private void drawClock() {

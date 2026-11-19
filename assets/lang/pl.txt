@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Gdy c
 crop, sowing date, area, thresholds	uprawa, data siewu, powierzchnia, progi
 name, corners, points	nazwa, narożniki, punkty
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, nad GPS, najpierw pyta, a potem dodaje działkę: pinezka startuje ze środka mapy, dotknięcie mapy ją przesuwa; nazwę wpisuje się u góry. ‹ wraca.
+See the log	Zobacz dziennik
+Size	Rozmiar
+Lines	Wiersze
+Errors	Błędy
+Yesterday	Wczoraj
+The log's lines	Wiersze dziennika
+Long touch on a line: copy it	Długie dotknięcie wiersza: kopiuj
+Line copied	Wiersz skopiowany
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ten sam pasek jest nad Działkami i ekranem trzęsienia ziemi; okna Eksport, Import i Dziennik zostawiają widoczny pasek ekranu głównego.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Co zrobiła aplikacja, z godziną: rozmiar, wiersze i błędy. Zobacz dziennik otwiera wiersze (Wszystkie, Błędy, Dziś, Wczoraj; długie dotknięcie kopiuje wiersz); Udostępnij i Zapisz są na dole.
+The ＋ tab of the main screen asks first too.	Karta ＋ ekranu głównego też najpierw pyta.

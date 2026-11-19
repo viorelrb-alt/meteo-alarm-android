@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Si qu
 crop, sowing date, area, thresholds	culture, date de semis, surface, seuils
 name, corners, points	nom, coins, points
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, au-dessus du GPS, demande d'abord puis ajoute une parcelle : l'épingle part du milieu de la carte, un toucher sur la carte la déplace ; le nom s'écrit en haut. ‹ revient en arrière.
+See the log	Voir le journal
+Size	Taille
+Lines	Lignes
+Errors	Erreurs
+Yesterday	Hier
+The log's lines	Les lignes du journal
+Long touch on a line: copy it	Appui long sur une ligne : la copier
+Line copied	Ligne copiée
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	La même bande apparaît sur Parcelles et l'écran du séisme ; les fenêtres Export, Import et Journal laissent voir la bande de l'écran principal.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Ce que l'application a fait, avec l'heure : sa taille, ses lignes et ses erreurs. Voir le journal ouvre les lignes (Toutes, Erreurs, Aujourd'hui, Hier ; un appui long copie une ligne) ; Partager et Enregistrer sont en bas.
+The ＋ tab of the main screen asks first too.	L'onglet ＋ de l'écran principal demande d'abord, lui aussi.

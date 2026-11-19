@@ -1,4 +1,4 @@
-Nuværende version: v.2.131 · 19.11.2026
+Nuværende version: v.2.140 · 19.11.2026
 HOVEDSKÆRM
 - Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ☰ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
 INDSTILLINGER
@@ -16,7 +16,7 @@ NOTIFIKATIONER
 - Ny version: med notifikationer slået til tjekker appen GitHub en gang om ugen og melder en ny version i Androids notifikationer; et tryk åbner Søg efter opdateringer.
 - Siden Jordskælv: åbner straks med de senest gemte lister på telefonen og opdaterer dem i baggrunden.
 - Eksport / Import: kontakter for, hvad der kommer i filen (også afgrøder og dyrkningsdata, markernes notifikationer, markernes papirkurv, notifikationer, kort, widgets, jordskælvshistorik, log); ved Eksport og Import afkrydses byer og marker én ad gangen; knappen Aa ændrer tekststørrelsen.
-- Log: knappen Aa ændrer tekststørrelsen.
+- Log: størrelse, linjer og fejl på et kort; Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem nederst på skærmen.
 - Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.4 (v.1.400 – v.1.520)

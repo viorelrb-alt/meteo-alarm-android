@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Nuair
 crop, sowing date, area, thresholds	barr, dáta curtha, achar, tairseacha
 name, corners, points	ainm, coirnéil, pointí
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	Fiafraíonn ＋, os cionn GPS, ar dtús agus ansin cuireann sé ceapach leis: tosaíonn an biorán i lár an léarscáil, bogann tapáil ar an léarscáil é; scríobhtar an t-ainm ag an mbarr. Téann ‹ siar.
+See the log	Féach ar an loga
+Size	Méid
+Lines	Línte
+Errors	Earráidí
+Yesterday	Inné
+The log's lines	Línte an loga
+Long touch on a line: copy it	Brú fada ar líne: cóipeáil í
+Line copied	Líne cóipeáilte
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Taispeántar an banda céanna os cionn Ceapacha agus scáileán an chrith talún; fágann na fuinneoga Easpórtáil, Iompórtáil agus Loga banda an phríomhscáileáin le feiceáil.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	An méid a rinne an aip, leis an am: a mhéid, a línte agus a earráidí. Osclaíonn Féach ar an loga na línte (Gach, Earráidí, Inniu, Inné; cóipeálann brú fada líne); tá Comhroinn agus Sábháil thíos.
+The ＋ tab of the main screen asks first too.	Fiafraíonn cluaisín ＋ an phríomhscáileáin ar dtús freisin.

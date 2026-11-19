@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Kun j
 crop, sowing date, area, thresholds	viljelykasvi, kylvöpäivä, pinta-ala, raja-arvot
 name, corners, points	nimi, kulmat, pisteet
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, GPS:n yläpuolella, kysyy ensin ja lisää sitten lohkon: neula alkaa kartan keskeltä, napautus kartalla siirtää sitä; nimi kirjoitetaan ylös. ‹ palaa takaisin.
+See the log	Näytä loki
+Size	Koko
+Lines	Rivit
+Errors	Virheet
+Yesterday	Eilen
+The log's lines	Lokin rivit
+Long touch on a line: copy it	Pitkä painallus rivillä: kopioi se
+Line copied	Rivi kopioitu
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Sama palkki näkyy Peltojen ja maanjäristysnäytön päällä; Vienti-, Tuonti- ja Loki-ikkunat jättävät päänäytön palkin näkyviin.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Mitä sovellus teki, kellonaikoineen: koko, rivit ja virheet. Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna ovat alhaalla.
+The ＋ tab of the main screen asks first too.	Myös päänäytön ＋-välilehti kysyy ensin.

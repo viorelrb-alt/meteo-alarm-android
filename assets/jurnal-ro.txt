@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.131 · 19.11.2026
+Versiunea curentă: v.2.140 · 19.11.2026
 ECRAN PRINCIPAL
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
 NOTIFICĂRI
@@ -14,7 +14,7 @@ PARCELE
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.
 SETĂRI
 - Export / Import: comutatoare pentru ce intră în fișier (și culturile și datele de cultivare, notificările parcelelor, coșul de parcele, notificările, harta, widget-urile, istoricul cutremurelor, jurnalul); la Export și Import localitățile și parcelele se bifează pe rând; butonul Aa schimbă mărimea textului.
-- Jurnal: butonul Aa schimbă mărimea textului.
+- Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran.
 - Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.

@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Ко�
 crop, sowing date, area, thresholds	култура, дата на сеитба, площ, прагове
 name, corners, points	име, ъгли, точки
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, над GPS, първо пита, после добавя парцел: карфицата започва от средата на картата, докосване на картата я мести; името се пише горе. ‹ връща назад.
+See the log	Виж дневника
+Size	Размер
+Lines	Редове
+Errors	Грешки
+Yesterday	Вчера
+The log's lines	Редовете на дневника
+Long touch on a line: copy it	Продължително докосване на ред: копира го
+Line copied	Редът е копиран
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Същата лента се показва над Парцели и екрана за земетресение; прозорците Експорт, Импорт и Дневник оставят видима лентата на главния екран.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Какво е правило приложението, с часа: размер, редове и грешки. Виж дневника отваря редовете (Всички, Грешки, Днес, Вчера; продължително докосване копира ред); Сподели и Запази са долу.
+The ＋ tab of the main screen asks first too.	Разделът ＋ на главния екран също пита първо.

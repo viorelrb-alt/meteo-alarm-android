@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Kui m
 crop, sowing date, area, thresholds	kultuur, külvikuupäev, pindala, piirid
 name, corners, points	nimi, nurgad, punktid
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, GPS-i kohal, küsib enne ja lisab siis põllu: nõel algab kaardi keskelt, puudutus kaardil liigutab seda; nimi kirjutatakse üles. ‹ läheb tagasi.
+See the log	Vaata logi
+Size	Suurus
+Lines	Read
+Errors	Vead
+Yesterday	Eile
+The log's lines	Logi read
+Long touch on a line: copy it	Pikk puudutus real: kopeeri see
+Line copied	Rida kopeeritud
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Sama riba on Põldude ja maavärina ekraani kohal; aknad Eksport, Import ja Logi jätavad avaekraani riba nähtavaks.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Mida rakendus tegi, kellaajaga: suurus, read ja vead. Vaata logi avab read (Kõik, Vead, Täna, Eile; pikk puudutus kopeerib rea); Jaga ja Salvesta on all.
+The ＋ tab of the main screen asks first too.	Ka avaekraani ＋ vahekaart küsib enne.

@@ -37,6 +37,8 @@ final class BackupPanel {
 	private final ro.meteoalarm.android.core.Screen screen;
 	private Dialog d;
 	private LinearLayout rows, body, col;
+	/** v2.140: ‹ at the left of the title instead of ✕ (the log's lines, back to the Log). */
+	private boolean backStyle;
 	/** v2.130 (Viorel): the text size of the window (the Aa button, as on Help). */
 	private float ts;
 
@@ -103,26 +105,46 @@ final class BackupPanel {
 		pb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.9f : 0.94f));
 		col.setBackground(pb);
 		final android.util.DisplayMetrics m = ctx.getResources().getDisplayMetrics();
+		// v2.140 (Viorel): no band of its own; the shade starts under the main screen's band,
+		// which stays as it is (the same clock everywhere).
+		final View shade = new View(ctx);
+		shade.setBackgroundColor(dark ? 0x73000000 : 0x4D141E28);
+		final FrameLayout.LayoutParams shl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+		shl.topMargin = TopBand.shadeTop(ctx, null);
+		root.addView(shade, shl);
 		final FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(Math.min(m.widthPixels - px(24), px(560)), ViewGroup.LayoutParams.MATCH_PARENT,
 				Gravity.CENTER_HORIZONTAL);
-		cl.topMargin = TopBand.height(ctx, null) + px(8);
+		cl.topMargin = Math.max(shl.topMargin, px(12)) + px(8);
 		cl.bottomMargin = px(14);
 		root.addView(col, cl);
-		// The camera's band, over everything (Viorel: the same band on every screen).
-		final TopBand band = new TopBand(ctx, screen, new ro.meteoalarm.android.core.Texts(Tr.lang()), false, dark, reg, bold, 0, 0, false);
-		root.addView(band, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, TopBand.height(ctx, null), Gravity.TOP));
 		root.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
 			public android.view.WindowInsets onApplyWindowInsets(View v, android.view.WindowInsets in) {
-				int bh = TopBand.height(ctx, root);
-				band.getLayoutParams().height = bh;
-				cl.topMargin = bh + px(8);
-				band.requestLayout();
+				int bh = TopBand.shadeTop(ctx, root);
+				shl.topMargin = bh;
+				cl.topMargin = Math.max(bh, px(12)) + px(8);
+				shade.requestLayout();
 				col.requestLayout();
 				return in;
 			}
 		});
 		LinearLayout head = new LinearLayout(ctx);
 		head.setGravity(Gravity.CENTER_VERTICAL);
+		if (backStyle) {
+			TextView bk = text(26, true, ink());
+			bk.setText("‹");
+			bk.setGravity(Gravity.CENTER);
+			bk.setPadding(0, 0, 0, px(4));
+			bk.setContentDescription(Tr.t("Back", "Înapoi"));
+			bk.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp, dp));
+			bk.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					d.dismiss();
+				}
+			});
+			LinearLayout.LayoutParams kl = new LinearLayout.LayoutParams(px(44), px(44));
+			kl.rightMargin = px(12);
+			head.addView(bk, kl);
+		}
 		FitText t = new FitText(ctx, 1, 0.5f);
 		t.setTypeface(bold);
 		t.setTextColor(ink());
@@ -163,7 +185,7 @@ final class BackupPanel {
 				d.dismiss();
 			}
 		});
-		head.addView(x, new LinearLayout.LayoutParams(px(44), px(44)));
+		if (!backStyle) head.addView(x, new LinearLayout.LayoutParams(px(44), px(44)));
 		col.addView(head);
 		if (line != null) {
 			TextView l = text(13, false, dim());
@@ -184,7 +206,7 @@ final class BackupPanel {
 		}
 		LinearLayout bs = new LinearLayout(ctx);
 		bs.setPadding(0, px(14), 0, 0);
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; b1 != null && i < 2; i++) {
 			final int k = i + 1;
 			FitText b = new FitText(ctx, 1, 0.5f);
 			b.setTypeface(bold);
@@ -205,7 +227,7 @@ final class BackupPanel {
 			if (i > 0) bl.leftMargin = px(12);
 			bs.addView(b, bl);
 		}
-		col.addView(bs);
+		if (b1 != null) col.addView(bs);
 		if (foot != null) {
 			TextView f = text(12, false, dim());
 			f.setText(foot);
@@ -219,10 +241,7 @@ final class BackupPanel {
 		TopBand.fullScreen(w, dark);
 		if (android.os.Build.VERSION.SDK_INT >= 30) w.setDecorFitsSystemWindows(false);
 		w.getDecorView().setPadding(0, 0, 0, 0);
-		WindowManager.LayoutParams lp = w.getAttributes();
-		lp.dimAmount = dark ? 0.45f : 0.3f;
-		w.setAttributes(lp);
-		w.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+		w.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 	}
 
 	private TextView text(float sp, boolean b, int color) {
@@ -577,15 +596,16 @@ final class BackupPanel {
 	}
 
 	/**
-	 * v2.130 (Viorel): the Log in the same matte window: what it is (a short note on a card), then
-	 * the log's lines on a card that scrolls (the newest at the end); 1 = Share, 2 = Save.
+	 * v2.130 (Viorel): the Log in the same matte window. v2.140 (Viorel): no lines here any more (Aa
+	 * was slow with them): what the log is, its size, lines and errors, and at the bottom of the
+	 * screen the buttons See the log (its lines in a window of their own), Share (1) and Save (2).
 	 */
-	void log(String text, Done done) {
-		frame(Tr.t("Log", "Jurnal"), null, Tr.t("Share", "Trimite"), Tr.t("Save", "Salvează"), done, null, null, true);
+	void log(final String text, final Done done) {
+		frame(Tr.t("Log", "Jurnal"), null, null, null, done, null, null, true);
 		LinearLayout info = new LinearLayout(ctx);
 		info.setOrientation(LinearLayout.VERTICAL);
 		info.setBackground(Glass.cardBg(dark, 18 * dp, dp));
-		info.setPadding(px(14), px(12), px(14), px(12));
+		info.setPadding(px(14), px(12), px(14), px(14));
 		TextView h = text(15, true, ink());
 		h.setText(Tr.t("What the log is", "Ce este jurnalul"));
 		info.addView(h);
@@ -599,27 +619,185 @@ final class BackupPanel {
 				"Când ceva nu merge, apasă Trimite sau Salvează și trimite-l autorului."));
 		b.setPadding(0, px(6), 0, 0);
 		info.addView(b);
-		body.addView(info);
-		// The lines: the newest at the end; a long log from its last 400 KB (the file has it all).
-		if (text.length() > 400000) text = "…\n" + text.substring(text.length() - 400000);
-		TextView lines = text(11, false, ink());
-		lines.setTypeface(Typeface.MONOSPACE);
-		lines.setText(text);
-		lines.setTextIsSelectable(true);
-		lines.setIncludeFontPadding(true);
-		final ScrollView sv = new ScrollView(ctx);
-		sv.setBackground(Glass.cardBg(dark, 18 * dp, dp));
-		sv.setPadding(px(12), px(10), px(12), px(10));
-		sv.setClipToPadding(false);
-		sv.addView(lines);
-		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
-		sl.topMargin = px(10);
-		body.addView(sv, sl);
-		sv.post(new Runnable() {
-			public void run() {
-				sv.fullScroll(View.FOCUS_DOWN);
+		// Size, lines, errors.
+		int lines = 0, errs = 0;
+		for (String l : text.split("\n")) {
+			if (l.startsWith("=====")) continue;
+			if (l.length() > 13 && l.charAt(2) == ':') {
+				lines++;
+				if (l.startsWith(" E ", 12)) errs++;
+			} else if (l.length() > 24 && l.charAt(4) == '-' && l.startsWith(" E ", 23)) {
+				lines++;
+				errs++;
+			}
+		}
+		long bytes;
+		try {
+			bytes = text.getBytes("UTF-8").length;
+		} catch (Exception e) {
+			bytes = text.length();
+		}
+		String size = bytes >= 1024 * 1024 ? String.format(java.util.Locale.ROOT, "%.1f MB", bytes / 1048576f).replace('.', Tr.lang().equals("en") ? '.' : ',')
+				: Math.max(1, bytes / 1024) + " KB";
+		LinearLayout st = new LinearLayout(ctx);
+		st.setPadding(0, px(12), 0, 0);
+		String[][] cells = { { Tr.t("Size", "Mărime"), size }, { Tr.t("Lines", "Linii"), String.format(java.util.Locale.FRANCE, "%,d", lines).replace('\u202f', ' ').replace('\u00a0', ' ') },
+				{ Tr.t("Errors", "Erori"), String.valueOf(errs) } };
+		for (int i = 0; i < 3; i++) {
+			LinearLayout c = new LinearLayout(ctx);
+			c.setOrientation(LinearLayout.VERTICAL);
+			c.setBackground(Glass.pill(Glass.disc(dark), 0, 12 * dp, dp));
+			c.setPadding(px(10), px(8), px(10), px(8));
+			TextView k = text(12, false, dim());
+			k.setText(cells[i][0]);
+			c.addView(k);
+			FitText v = new FitText(ctx, 1, 0.5f);
+			v.setTypeface(bold);
+			v.setTextColor(i == 2 && errs > 0 ? 0xFFE0603F : ink());
+			TextSize.size(v, 18, ts);
+			v.setText(cells[i][1]);
+			c.addView(v);
+			LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			if (i > 0) cl.leftMargin = px(8);
+			st.addView(c, cl);
+		}
+		info.addView(st);
+		ScrollView sv = new ScrollView(ctx);
+		sv.addView(info);
+		body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		// The buttons at the bottom of the screen (Viorel): See the log, Share, Save.
+		String[] names = { Tr.t("See the log", "Vezi jurnalul"), Tr.t("Share", "Trimite"), Tr.t("Save", "Salvează") };
+		String[] icons = { "☰", "➚", "⤓" };
+		for (int i = 0; i < 3; i++) {
+			final int k = i;
+			FitText bt = new FitText(ctx, 1, 0.5f);
+			bt.setTypeface(bold);
+			bt.setTextColor(i == 1 ? 0xFFFFFFFF : ink());
+			bt.setIncludeFontPadding(false);
+			TextSize.size(bt, 17, ts);
+			bt.setText(icons[i] + "   " + names[i]);
+			bt.setGravity(Gravity.CENTER);
+			bt.setPadding(px(12), 0, px(12), 0);
+			bt.setBackground(Glass.pill(i == 1 ? accent() : Glass.disc(dark), i == 1 ? 0 : Glass.edge(dark), 24 * dp, dp));
+			bt.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					if (k == 0) {
+						Log.i(ctx, "JURNAL", "vezi jurnalul");
+						new BackupPanel(ctx, dark, reg, bold, screen).lines(text);
+					} else done.run(null, k);
+				}
+			});
+			LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(50));
+			bl.topMargin = px(10);
+			col.addView(bt, bl);
+		}
+		show();
+	}
+
+	/**
+	 * v2.140 (Viorel): the log's lines in a window of their own (‹ back to the Log): Toate, Erori,
+	 * Azi, Ieri; a list that makes only the lines in sight (fast, also with Aa); the newest at the
+	 * end; a long touch copies the line.
+	 */
+	void lines(String text) {
+		backStyle = true;
+		frame(Tr.t("The log's lines", "Liniile jurnalului"), null, null, null, null, null,
+				Tr.t("Long touch on a line: copy it", "Atingere lungă pe o linie: o copiază"), true);
+		final java.util.List<String> all = new java.util.ArrayList<String>(), day = new java.util.ArrayList<String>();
+		String cur = "";
+		for (String l : text.split("\n")) {
+			if (l.startsWith("===== ")) cur = l.replace("=", "").trim();
+			all.add(l);
+			day.add(cur);
+		}
+		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.ROOT);
+		java.util.Calendar cal = java.util.Calendar.getInstance();
+		final String today = f.format(cal.getTime());
+		cal.add(java.util.Calendar.DAY_OF_YEAR, -1);
+		final String yest = f.format(cal.getTime());
+		final java.util.List<String> shown = new java.util.ArrayList<String>();
+		final android.widget.ListView lv = new android.widget.ListView(ctx);
+		lv.setDivider(null);
+		lv.setFastScrollEnabled(true);
+		lv.setBackground(Glass.cardBg(dark, 18 * dp, dp));
+		lv.setPadding(px(10), px(8), px(10), px(8));
+		lv.setClipToPadding(false);
+		final android.widget.BaseAdapter ad = new android.widget.BaseAdapter() {
+			public int getCount() {
+				return shown.size();
+			}
+
+			public Object getItem(int i) {
+				return shown.get(i);
+			}
+
+			public long getItemId(int i) {
+				return i;
+			}
+
+			public View getView(int i, View v, ViewGroup g) {
+				TextView t = v instanceof TextView ? (TextView) v : new TextView(ctx);
+				String l = shown.get(i);
+				boolean h = l.startsWith("=====");
+				t.setTypeface(h ? bold : Typeface.MONOSPACE);
+				t.setTextColor(h ? accent() : l.startsWith(" E ", 12) || l.startsWith(" E ", 23) ? 0xFFE0603F : ink());
+				TextSize.size(t, h ? 12 : 11, ts);
+				t.setPadding(0, px(h ? 10 : 3), 0, px(3));
+				t.setText(h ? l.replace("=", "").trim() : l);
+				return t;
+			}
+		};
+		lv.setAdapter(ad);
+		lv.setOnItemLongClickListener(new android.widget.AdapterView.OnItemLongClickListener() {
+			public boolean onItemLongClick(android.widget.AdapterView<?> p, View v, int i, long id) {
+				android.content.ClipboardManager cm = (android.content.ClipboardManager) ctx.getSystemService(Context.CLIPBOARD_SERVICE);
+				if (cm != null) cm.setPrimaryClip(android.content.ClipData.newPlainText("log", shown.get(i)));
+				android.widget.Toast.makeText(ctx, Tr.t("Line copied", "Linie copiată"), android.widget.Toast.LENGTH_SHORT).show();
+				return true;
 			}
 		});
+		// The filters.
+		final String[] names = { Tr.t("All", "Toate"), Tr.t("Errors", "Erori"), Tr.t("Today", "Azi"), Tr.t("Yesterday", "Ieri") };
+		final TextView[] chips = new TextView[4];
+		LinearLayout fr = new LinearLayout(ctx);
+		fr.setPadding(0, 0, 0, px(10));
+		final Runnable[] pick = new Runnable[4];
+		for (int i = 0; i < 4; i++) {
+			final int k = i;
+			chips[i] = text(14, false, ink());
+			chips[i].setText(names[i]);
+			chips[i].setGravity(Gravity.CENTER);
+			chips[i].setPadding(px(14), px(7), px(14), px(7));
+			pick[i] = new Runnable() {
+				public void run() {
+					shown.clear();
+					for (int j = 0; j < all.size(); j++) {
+						String l = all.get(j);
+						boolean ok = k == 0 || (k == 1 ? !l.startsWith("=====") && (l.startsWith(" E ", 12) || l.startsWith(" E ", 23))
+								: day.get(j).equals(k == 2 ? today : yest));
+						if (ok) shown.add(l);
+					}
+					for (int c = 0; c < 4; c++) {
+						chips[c].setTextColor(c == k ? 0xFFFFFFFF : ink());
+						chips[c].setBackground(Glass.pill(c == k ? accent() : Glass.disc(dark), c == k ? 0 : Glass.edge(dark), 16 * dp, dp));
+					}
+					ad.notifyDataSetChanged();
+					lv.setSelection(Math.max(0, shown.size() - 1));
+				}
+			};
+			chips[i].setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					Log.i(ctx, "JURNAL", "filtru " + names[k]);
+					pick[k].run();
+				}
+			});
+			LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			if (i > 0) cl.leftMargin = px(8);
+			fr.addView(chips[i], cl);
+		}
+		body.addView(fr);
+		body.addView(lv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+		pick[0].run();
 		show();
 	}
 

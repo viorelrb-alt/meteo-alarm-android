@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Werkt
 crop, sowing date, area, thresholds	gewas, zaaidatum, oppervlakte, drempels
 name, corners, points	naam, hoeken, punten
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, boven GPS, vraagt eerst en voegt dan een perceel toe: de speld begint in het midden van de kaart, een tik op de kaart verplaatst hem; de naam staat bovenaan. ‹ gaat terug.
+See the log	Logboek bekijken
+Size	Grootte
+Lines	Regels
+Errors	Fouten
+Yesterday	Gisteren
+The log's lines	De regels van het logboek
+Long touch on a line: copy it	Lang tikken op een regel: kopiëren
+Line copied	Regel gekopieerd
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Dezelfde balk staat boven Percelen en het aardbevingsscherm; de vensters Export, Import en Logboek laten de balk van het hoofdscherm zichtbaar.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Wat de app deed, met de tijd: grootte, regels en fouten. Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan staan onderaan.
+The ＋ tab of the main screen asks first too.	Ook het ＋-tabblad van het hoofdscherm vraagt eerst.

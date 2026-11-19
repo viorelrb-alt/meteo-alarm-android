@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Meta 
 crop, sowing date, area, thresholds	wiċċ tar-raba', data taż-żriegħ, erja, limiti
 name, corners, points	isem, kantunieri, punti
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, fuq il-GPS, l-ewwel jistaqsi u mbagħad iżid biċċa art: il-labra tibda min-nofs tal-mappa, messa fuq il-mappa tmexxiha; l-isem jinkiteb fuq. ‹ imur lura.
+See the log	Ara r-reġistru
+Size	Daqs
+Lines	Linji
+Errors	Żbalji
+Yesterday	Ilbieraħ
+The log's lines	Il-linji tar-reġistru
+Long touch on a line: copy it	Messa twila fuq linja: ikkopjaha
+Line copied	Linja kkopjata
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	L-istess strixxa tidher fuq Biċċiet tal-art u l-iskrin tat-terremot; it-twieqi Esporta, Importa u Reġistru jħallu l-istrixxa tal-iskrin prinċipali tidher.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	X'għamlet l-app, bil-ħin: id-daqs, il-linji u l-iżbalji. Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja huma isfel.
+The ＋ tab of the main screen asks first too.	It-tab ＋ tal-iskrin prinċipali wkoll jistaqsi l-ewwel.

@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Kai k
 crop, sowing date, area, thresholds	kultūra, sėjos data, plotas, ribos
 name, corners, points	pavadinimas, kampai, taškai
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, virš GPS, pirmiausia paklausia, o tada prideda sklypą: smeigtukas pradeda nuo žemėlapio vidurio, palietimas žemėlapyje jį perkelia; pavadinimas rašomas viršuje. ‹ grįžta atgal.
+See the log	Žiūrėti žurnalą
+Size	Dydis
+Lines	Eilutės
+Errors	Klaidos
+Yesterday	Vakar
+The log's lines	Žurnalo eilutės
+Long touch on a line: copy it	Ilgas palietimas ant eilutės: nukopijuoti
+Line copied	Eilutė nukopijuota
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ta pati juosta rodoma virš Sklypų ir žemės drebėjimo ekrano; langai Eksportas, Importas ir Žurnalas palieka matomą pagrindinio ekrano juostą.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Ką darė programa, su laiku: dydis, eilutės ir klaidos. Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti yra apačioje.
+The ＋ tab of the main screen asks first too.	Ir pagrindinio ekrano skirtukas ＋ pirmiausia klausia.

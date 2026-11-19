@@ -1,4 +1,4 @@
-Obecna wersja: v.2.131 · 19.11.2026
+Obecna wersja: v.2.140 · 19.11.2026
 DZIAŁKI
 - Dymki w Statystykach: dotknięcie godziny w oknie oprysku, dnia na wykresach lub wiersza gleby otwiera dymek z wyjaśnieniem; okno oprysku przesuwa się samo.
 - Edycja działki: ołówek otwiera stronę działki: nazwa, uprawa (lista według sezonu daty siewu lub Inna uprawa…), data siewu, powierzchnia; narożniki przesuwa się na mapie.
@@ -16,7 +16,7 @@ USTAWIENIA
 - Język wyświetlania: w ☰ angielski i język kraju; Inne języki: pozostałe języki kraju, duże języki UE, rumuński i język telefonu (w USA tylko angielski i hiszpański).
 - Strona Trzęsienia ziemi: otwiera się od razu z ostatnimi listami zapisanymi w telefonie i aktualizuje je w tle.
 - Eksport / Import: przełączniki tego, co trafia do pliku (także uprawy i dane uprawowe, powiadomienia działek, kosz działek, powiadomienia, mapa, widżety, historia trzęsień ziemi, dziennik); w Eksporcie i Imporcie miejscowości i działki zaznacza się po kolei; przycisk Aa zmienia rozmiar tekstu.
-- Dziennik: przycisk Aa zmienia rozmiar tekstu.
+- Dziennik: rozmiar, wiersze i błędy na karcie; Zobacz dziennik otwiera wiersze (Wszystkie, Błędy, Dziś, Wczoraj; długie dotknięcie kopiuje wiersz); Udostępnij i Zapisz na dole ekranu.
 - Ulepszenia wyglądu i poprawki zgłoszonych błędów.
 
 Wersja 1.4 (v.1.400 – v.1.520)

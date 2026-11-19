@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Når 
 crop, sowing date, area, thresholds	afgrøde, såningsdato, areal, grænser
 name, corners, points	navn, hjørner, punkter
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, over GPS, spørger først og tilføjer så en mark: nålen starter midt på kortet, et tryk på kortet flytter den; navnet skrives øverst. ‹ går tilbage.
+See the log	Se loggen
+Size	Størrelse
+Lines	Linjer
+Errors	Fejl
+Yesterday	I går
+The log's lines	Loggens linjer
+Long touch on a line: copy it	Langt tryk på en linje: kopiér den
+Line copied	Linje kopieret
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Den samme bjælke vises over Marker og jordskælvsskærmen; vinduerne Eksport, Import og Log lader hovedskærmens bjælke være synlig.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Hvad appen gjorde, med klokkeslæt: størrelse, linjer og fejl. Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem er nederst.
+The ＋ tab of the main screen asks first too.	Også hovedskærmens ＋-fane spørger først.

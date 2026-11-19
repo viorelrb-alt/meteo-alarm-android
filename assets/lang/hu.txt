@@ -1640,3 +1640,14 @@ When something does not work, tap Share or Save and send it to the author.	Ha va
 crop, sowing date, area, thresholds	növény, vetés dátuma, terület, küszöbök
 name, corners, points	név, sarkok, pontok
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	A ＋, a GPS fölött, előbb kérdez, majd parcellát ad hozzá: a tű a térkép közepéről indul, egy koppintás a térképen áthelyezi; a név felülre kerül. A ‹ visszalép.
+See the log	Napló megtekintése
+Size	Méret
+Lines	Sorok
+Errors	Hibák
+Yesterday	Tegnap
+The log's lines	A napló sorai
+Long touch on a line: copy it	Hosszú érintés egy soron: másolás
+Line copied	Sor másolva
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ugyanez a sáv látszik a Parcellák és a földrengés képernyő fölött; az Export, Import és Napló ablak láthatóan hagyja a főképernyő sávját.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Mit csinált az alkalmazás, időponttal: méret, sorok és hibák. A Napló megtekintése megnyitja a sorokat (Mind, Hibák, Ma, Tegnap; hosszú érintés másol egy sort); a Megosztás és a Mentés lent van.
+The ＋ tab of the main screen asks first too.	A főképernyő ＋ füle is először kérdez.

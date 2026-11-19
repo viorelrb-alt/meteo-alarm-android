@@ -1574,3 +1574,14 @@ When something does not work, tap Share or Save and send it to the author.	Kada 
 crop, sowing date, area, thresholds	kultura, datum setve, površina, pragovi
 name, corners, points	naziv, uglovi, tačke
 ＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, iznad GPS-a, prvo pita, a zatim dodaje parcelu: čioda kreće iz sredine mape, dodir na mapi je pomera; naziv se piše gore. ‹ vraća nazad.
+See the log	Погледај дневник
+Size	Величина
+Lines	Редови
+Errors	Грешке
+Yesterday	Јуче
+The log's lines	Редови дневника
+Long touch on a line: copy it	Дуги додир на ред: копирај га
+Line copied	Ред копиран
+The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Иста трака се приказује изнад Парцела и екрана земљотреса; прозори Извоз, Увоз и Дневник остављају видљиву траку главног екрана.
+What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Шта је апликација радила, са временом: величина, редови и грешке. Погледај дневник отвара редове (Све, Грешке, Данас, Јуче; дуги додир копира ред); Подели и Сачувај су доле.
+The ＋ tab of the main screen asks first too.	И картица ＋ главног екрана прво пита.
