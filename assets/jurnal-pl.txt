@@ -1,4 +1,4 @@
-Obecna wersja: v.2.130 · 19.11.2026
+Obecna wersja: v.2.131 · 19.11.2026
 DZIAŁKI
 - Dymki w Statystykach: dotknięcie godziny w oknie oprysku, dnia na wykresach lub wiersza gleby otwiera dymek z wyjaśnieniem; okno oprysku przesuwa się samo.
 - Edycja działki: ołówek otwiera stronę działki: nazwa, uprawa (lista według sezonu daty siewu lub Inna uprawa…), data siewu, powierzchnia; narożniki przesuwa się na mapie.

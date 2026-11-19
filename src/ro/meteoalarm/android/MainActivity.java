@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.130";
+	static final String VERSION = "Meteo Alarm Android v2.131";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -76,7 +76,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Cities.City town;
 	private long pageId;
 	private boolean townFetching;
-	private static final int REQ_PARCELS = 21, REQ_SAVE_DATA = 22, REQ_OPEN_DATA = 23, REQ_SAVE_LOG = 24;
+	private static final int REQ_PARCELS = 21, REQ_SAVE_DATA = 22, REQ_OPEN_DATA = 23, REQ_SAVE_LOG = 25; // v2.131: 24 was also REQ_SAVE_STATS (the saved log came out empty)
 	private long lastTry, lastLocate, lastDone;
 	static final long REPULL_MS = 10000;
 	private Locator locator;
