@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.117 · 19.11.2026
+Trenutačna verzija: v.2.120 · 19.11.2026
 GLAVNI ZASLON
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 OBAVIJESTI
@@ -14,6 +14,8 @@ PARCELE
 - Uredi parcelu: olovka otvara stranicu parcele: ime, kultura (popis po sezoni datuma sjetve ili Druga kultura…), datum sjetve, površina; kutovi se pomiču na karti.
 POSTAVKE
 - Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
+- Stranica Potresi: otvara se odmah s posljednjim popisima spremljenima u telefonu i ažurira ih u pozadini.
+- Izvoz / Uvoz: prekidači za sadržaj datoteke (i obavijesti parcela, koš parcela, obavijesti, karta, widgeti, povijest potresa, dnevnik); mjesta i parcele mogu se označiti jedno po jedno.
 - Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 
 Verzija 1.4 (v.1.400 – v.1.520)

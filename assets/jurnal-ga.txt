@@ -1,4 +1,4 @@
-Leagan reatha: v.2.117 · 19.11.2026
+Leagan reatha: v.2.120 · 19.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
@@ -14,6 +14,8 @@ PRÍOMHSCÁILEÁN
 - Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ☰ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
 SOCRUITHE
 - Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
+- Leathanach Crith talún: osclaíonn sé láithreach leis na liostaí is déanaí a sábháladh ar an bhfón agus nuashonraíonn sé iad sa chúlra.
+- Easpórtáil / Iompórtáil: lasca d'ábhar an chomhaid (fógraí na gceapach, an bosca bruscair, fógraí, léarscáil, giuirléidí, stair na gcrith talún, an loga freisin); is féidir bailte agus ceapacha a thiceáil ceann ar cheann.
 - Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.4 (v.1.400 – v.1.520)

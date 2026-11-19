@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Торкніться, щоб побач�
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Окреме поле для кожного землетрусу за останні 24 години в радіусі 300 миль (USGS), найновіший першим.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Окреме поле для кожного землетрусу за останні 24 години у твоїй країні, найновіший першим, і як його, ймовірно, відчули (EMSC та інститут країни).
 On the whole screen: ☀ shows the brightness bar.	На весь екран: ☀ показує смугу яскравості.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Додати зберігає те, що є; Замінити робить усе як у файлі, лише для увімкнених рядків.
+All	Усі
+App log	Журнал застосунку
+Choose what goes into the file · ▾ opens the list	Вибери, що піде у файл · ▾ відкриває список
+Could not update	Не вдалося оновити
+EMSC and institute values	Значення EMSC та інститутів
+Earthquake history	Історія землетрусів
+Export	Експорт
+Look and language	Вигляд і мова
+Map	Мапа
+My towns and favourites	Мої населені пункти й улюблені
+None	Жодного
+Notifications and alerts	Сповіщення й попередження
+Parcel bin	Кошик ділянок
+Places visited (villages)	Відвідані місця (села)
+Saved list: 	Збережений список: 
+The choice is kept	Вибір запам'ятовується
+Updated: 	Оновлено: 
+background, colours, days or hours	тло, кольори, дні або години
+chosen	вибрано
+corners, crop, sowing date	кути, культура, дата сівби
+favourite	улюблене
+in the file: 	у файлі: 
+last 5 days, for troubleshooting	останні 5 днів, для пошуку несправностей
+my town	мій пункт
+not in the file	немає у файлі
+nothing to save	нічого зберігати
+of	з
+only for the chosen parcels	лише для вибраних ділянок
+parcels	ділянки
+parcels deleted in the last 15 days	ділянки, видалені за останні 15 днів
+rain, warnings, earthquakes, tornadoes	дощ, попередження, землетруси, торнадо
+satellite or map, rain radar	супутник або мапа, радар опадів
+settings	налаштування
+theme, colours, icons, language, text size, units	тема, кольори, значки, мова, розмір тексту, одиниці
+today, 	сьогодні, 
+towns	пункти
+widgets	віджети
+yesterday, 	учора, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Експорт: перемикачі вибирають, що піде у файл; ▾ відкриває пункти й ділянки, щоб позначити їх по одному. Імпорт показує, що є у файлі.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Сторінка Землетруси відкривається одразу з останніми збереженими списками; ↻ обертається, поки вони оновлюються.

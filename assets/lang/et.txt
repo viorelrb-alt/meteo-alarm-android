@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Puuduta, et näha uut ja see alla laadid
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Üks kast iga maavärina kohta viimase 24 tunni jooksul 300 miili raadiuses (USGS), uusim esimesena.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Üks kast iga maavärina kohta viimase 24 tunni jooksul sinu riigis, uusim esimesena, ja kuidas seda tõenäoliselt tunti (EMSC ja riigi instituut).
 On the whole screen: ☀ shows the brightness bar.	Täisekraanil: ☀ näitab heleduse riba.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Lisa säilitab selle, mis sul on; Asenda teeb kõik nagu failis, ainult sisse lülitatud ridade jaoks.
+All	Kõik
+App log	Rakenduse logi
+Choose what goes into the file · ▾ opens the list	Vali, mis faili läheb · ▾ avab loendi
+Could not update	Uuendamine ebaõnnestus
+EMSC and institute values	EMSC ja instituutide väärtused
+Earthquake history	Maavärinate ajalugu
+Export	Eksport
+Look and language	Välimus ja keel
+Map	Kaart
+My towns and favourites	Minu kohad ja lemmikud
+None	Mitte ühtegi
+Notifications and alerts	Teavitused ja hoiatused
+Parcel bin	Põldude prügikast
+Places visited (villages)	Külastatud kohad (külad)
+Saved list: 	Salvestatud loend: 
+The choice is kept	Valik jäetakse meelde
+Updated: 	Uuendatud: 
+background, colours, days or hours	taust, värvid, päevad või tunnid
+chosen	valitud
+corners, crop, sowing date	nurgad, kultuur, külvikuupäev
+favourite	lemmik
+in the file: 	failis: 
+last 5 days, for troubleshooting	viimased 5 päeva, tõrkeotsinguks
+my town	minu koht
+not in the file	pole failis
+nothing to save	pole midagi salvestada
+of	/
+only for the chosen parcels	ainult valitud põldudele
+parcels	põllud
+parcels deleted in the last 15 days	viimase 15 päeva jooksul kustutatud põllud
+rain, warnings, earthquakes, tornadoes	vihm, hoiatused, maavärinad, tornaadod
+satellite or map, rain radar	satelliit või kaart, sajuradar
+settings	seaded
+theme, colours, icons, language, text size, units	teema, värvid, ikoonid, keel, teksti suurus, ühikud
+today, 	täna, 
+towns	kohad
+widgets	vidinad
+yesterday, 	eile, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksport: lülitid valivad, mis faili läheb; ▾ avab kohad ja põllud, et need ükshaaval märkida. Import näitab, mis failis on.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Leht Maavärinad avaneb kohe viimati salvestatud loenditega; ↻ pöörleb, kuni neid uuendatakse.

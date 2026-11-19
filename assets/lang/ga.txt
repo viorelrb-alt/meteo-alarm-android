@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Tapáil chun an rud nua a fheiceáil agu
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Bosca amháin do gach crith talún sna 24 uair an chloig seo caite laistigh de 300 míle (USGS), an ceann is nuaí ar dtús.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Bosca amháin do gach crith talún sna 24 uair an chloig seo caite i do thír, an ceann is nuaí ar dtús, agus conas a mothaíodh é is dócha (EMSC agus institiúid na tíre).
 On the whole screen: ☀ shows the brightness bar.	Ar an scáileán iomlán: taispeánann ☀ barra na gile.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Coinníonn Cuir leis a bhfuil agat; déanann Ionadaigh gach rud mar atá sa chomhad, do na sraitheanna atá ar siúl amháin.
+All	Gach ceann
+App log	Loga na haipe
+Choose what goes into the file · ▾ opens the list	Roghnaigh cad a théann sa chomhad · osclaíonn ▾ an liosta
+Could not update	Níorbh fhéidir nuashonrú
+EMSC and institute values	Luachanna EMSC agus na n-institiúidí
+Earthquake history	Stair na gcrith talún
+Export	Easpórtáil
+Look and language	Cuma agus teanga
+Map	Léarscáil
+My towns and favourites	Mo bhailte agus ceanáin
+None	Dada
+Notifications and alerts	Fógraí agus foláirimh
+Parcel bin	Bosca bruscair na gceapach
+Places visited (villages)	Áiteanna ar tugadh cuairt orthu (sráidbhailte)
+Saved list: 	Liosta sábháilte: 
+The choice is kept	Coinnítear an rogha
+Updated: 	Nuashonraithe: 
+background, colours, days or hours	cúlra, dathanna, laethanta nó uaireanta
+chosen	roghnaithe
+corners, crop, sowing date	coirnéil, barr, dáta curtha
+favourite	ceanán
+in the file: 	sa chomhad: 
+last 5 days, for troubleshooting	na 5 lá deiridh, le haghaidh fabhtcheartaithe
+my town	mo bhaile
+not in the file	níl sa chomhad
+nothing to save	dada le sábháil
+of	as
+only for the chosen parcels	do na ceapacha roghnaithe amháin
+parcels	ceapacha
+parcels deleted in the last 15 days	ceapacha a scriosadh sna 15 lá deiridh
+rain, warnings, earthquakes, tornadoes	báisteach, rabhaidh, crith talún, tornádónna
+satellite or map, rain radar	satailít nó léarscáil, radar báistí
+settings	socruithe
+theme, colours, icons, language, text size, units	téama, dathanna, deilbhíní, teanga, méid an téacs, aonaid
+today, 	inniu, 
+towns	bailte
+widgets	giuirléidí
+yesterday, 	inné, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Easpórtáil: roghnaíonn lasca cad a théann sa chomhad; osclaíonn ▾ na bailte agus na ceapacha chun iad a thiceáil ceann ar cheann. Taispeánann Iompórtáil cad atá sa chomhad.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Osclaíonn an leathanach Crith talún láithreach leis na liostaí is déanaí a sábháladh; casann ↻ fad a nuashonraítear iad.

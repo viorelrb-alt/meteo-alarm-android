@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Tocca per vedere le novità e scaricarla
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Una casella per ogni terremoto delle ultime 24 ore entro 300 miglia (USGS), il più recente per primo.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Una casella per ogni terremoto delle ultime 24 ore nel tuo paese, il più recente per primo, e come è stato probabilmente avvertito (EMSC e l'istituto del paese).
 On the whole screen: ☀ shows the brightness bar.	A schermo intero: ☀ mostra la barra della luminosità.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Aggiungi mantiene ciò che hai; Sostituisci rende tutto come nel file, solo per le righe attive.
+All	Tutte
+App log	Registro dell'app
+Choose what goes into the file · ▾ opens the list	Scegli cosa va nel file · ▾ apre l'elenco
+Could not update	Aggiornamento non riuscito
+EMSC and institute values	Valori EMSC e degli istituti
+Earthquake history	Storico dei terremoti
+Export	Esporta
+Look and language	Aspetto e lingua
+Map	Mappa
+My towns and favourites	Le mie località e i preferiti
+None	Nessuna
+Notifications and alerts	Notifiche e allerte
+Parcel bin	Cestino degli appezzamenti
+Places visited (villages)	Luoghi visitati (paesi)
+Saved list: 	Elenco salvato: 
+The choice is kept	La scelta resta memorizzata
+Updated: 	Aggiornato: 
+background, colours, days or hours	sfondo, colori, giorni o ore
+chosen	scelte
+corners, crop, sowing date	angoli, coltura, data di semina
+favourite	preferito
+in the file: 	nel file: 
+last 5 days, for troubleshooting	ultimi 5 giorni, per la diagnosi
+my town	la mia località
+not in the file	non è nel file
+nothing to save	niente da salvare
+of	di
+only for the chosen parcels	solo per gli appezzamenti scelti
+parcels	appezzamenti
+parcels deleted in the last 15 days	appezzamenti eliminati negli ultimi 15 giorni
+rain, warnings, earthquakes, tornadoes	pioggia, allerte, terremoti, tornado
+satellite or map, rain radar	satellite o mappa, radar della pioggia
+settings	impostazioni
+theme, colours, icons, language, text size, units	tema, colori, icone, lingua, dimensione del testo, unità
+today, 	oggi, 
+towns	località
+widgets	widget
+yesterday, 	ieri, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Esporta: gli interruttori scelgono cosa va nel file; ▾ apre località e appezzamenti per spuntarli uno per uno. Importa mostra cosa contiene il file.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	La pagina Terremoti si apre subito con gli ultimi elenchi salvati; ↻ gira mentre si aggiornano.

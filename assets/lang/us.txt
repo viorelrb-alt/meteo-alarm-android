@@ -33,3 +33,7 @@ A tap on the Earthquake box: a map with the epicentre, your town, the distance a
 Epicentre	Epicenter
 The coloured square or the map opens it on the whole screen.	The colored square or the map opens it on the whole screen.
 The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.	The square's color shows the magnitude: green under 3, yellow, amber, orange to red from 5.
+My towns and favourites	My towns and favorites
+favourite	favorite
+background, colours, days or hours	background, colors, days or hours
+theme, colours, icons, language, text size, units	theme, colors, icons, language, text size, units

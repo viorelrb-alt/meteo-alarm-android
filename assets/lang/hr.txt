@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Dodirni da vidiš novosti i preuzmeš je
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Po jedno polje za svaki potres u posljednja 24 sata u krugu od 300 milja (USGS), najnoviji prvi.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Po jedno polje za svaki potres u posljednja 24 sata u tvojoj zemlji, najnoviji prvi, i kako se vjerojatno osjetio (EMSC i institut zemlje).
 On the whole screen: ☀ shows the brightness bar.	Na cijelom zaslonu: ☀ prikazuje traku svjetline.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Dodaj zadržava ono što imaš; Zamijeni postavlja sve kao u datoteci, samo za uključene retke.
+All	Sve
+App log	Dnevnik aplikacije
+Choose what goes into the file · ▾ opens the list	Odaberi što ide u datoteku · ▾ otvara popis
+Could not update	Ažuriranje nije uspjelo
+EMSC and institute values	Vrijednosti EMSC-a i instituta
+Earthquake history	Povijest potresa
+Export	Izvoz
+Look and language	Izgled i jezik
+Map	Karta
+My towns and favourites	Moja mjesta i favoriti
+None	Ništa
+Notifications and alerts	Obavijesti i upozorenja
+Parcel bin	Koš parcela
+Places visited (villages)	Posjećena mjesta (sela)
+Saved list: 	Spremljeni popis: 
+The choice is kept	Odabir ostaje zapamćen
+Updated: 	Ažurirano: 
+background, colours, days or hours	pozadina, boje, dani ili sati
+chosen	odabrano
+corners, crop, sowing date	kutovi, kultura, datum sjetve
+favourite	favorit
+in the file: 	u datoteci: 
+last 5 days, for troubleshooting	zadnjih 5 dana, za rješavanje problema
+my town	moje mjesto
+not in the file	nije u datoteci
+nothing to save	nema ništa za spremiti
+of	od
+only for the chosen parcels	samo za odabrane parcele
+parcels	parcele
+parcels deleted in the last 15 days	parcele obrisane u zadnjih 15 dana
+rain, warnings, earthquakes, tornadoes	kiša, upozorenja, potresi, tornada
+satellite or map, rain radar	satelit ili karta, radar oborina
+settings	postavke
+theme, colours, icons, language, text size, units	tema, boje, ikone, jezik, veličina teksta, jedinice
+today, 	danas, 
+towns	mjesta
+widgets	widgeti
+yesterday, 	jučer, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Izvoz: prekidači biraju što ide u datoteku; ▾ otvara mjesta i parcele da ih označiš jedno po jedno. Uvoz pokazuje što datoteka sadrži.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Stranica Potresi otvara se odmah s posljednjim spremljenim popisima; ↻ se vrti dok se ažuriraju.

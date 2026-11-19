@@ -1,0 +1,500 @@
+package ro.meteoalarm.android;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
+import java.util.List;
+
+import ro.meteoalarm.android.core.Theme;
+import ro.meteoalarm.android.core.Tr;
+
+/**
+ * v2.120 (Viorel 2026-11-19): the Export and Import windows. A switch for each kind of data; in
+ * Export the towns and the parcels also open (▾) a list to tick them one by one. The choice is kept.
+ */
+final class BackupPanel {
+	interface Done {
+		void run(Backup.Sel sel, int button);
+	}
+
+	private final Context ctx;
+	private final boolean dark;
+	private final Typeface reg, bold;
+	private final float dp;
+	private Dialog d;
+	private LinearLayout rows;
+
+	BackupPanel(Context ctx, boolean dark, Typeface reg, Typeface bold) {
+		this.ctx = ctx;
+		this.dark = dark;
+		this.reg = reg;
+		this.bold = bold;
+		this.dp = ctx.getResources().getDisplayMetrics().density;
+	}
+
+	private int px(float v) {
+		return Math.round(v * dp);
+	}
+
+	private int ink() {
+		return Theme.ink(dark);
+	}
+
+	private int dim() {
+		return Theme.dim(dark);
+	}
+
+	private int accent() {
+		return Theme.accent(dark);
+	}
+
+	static String[] titles() {
+		return new String[] { Tr.t("My towns and favourites", "Localitățile mele și favoritele"), Tr.t("Parcels", "Parcele"),
+				Tr.t("Parcel notifications", "Notificările parcelelor"), Tr.t("Parcel bin", "Coșul de parcele"),
+				Tr.t("Places visited (villages)", "Locuri vizitate (sate)"), Tr.t("Look and language", "Aspect și limbă"),
+				Tr.t("Notifications and alerts", "Notificări și alerte"), Tr.t("Map", "Hartă"), Tr.t("Widget settings", "Setările widget-urilor"),
+				Tr.t("Earthquake history", "Istoricul cutremurelor"), Tr.t("App log", "Jurnalul aplicației") };
+	}
+
+	static String[] subs() {
+		return new String[] { "", Tr.t("corners, crop, sowing date", "colțuri, cultură, semănat"),
+				Tr.t("only for the chosen parcels", "doar pentru parcelele alese"), Tr.t("parcels deleted in the last 15 days", "parcelele șterse în ultimele 15 zile"),
+				"", Tr.t("theme, colours, icons, language, text size, units", "temă, culori, iconuri, limbă, mărimea textului, unități"),
+				Tr.t("rain, warnings, earthquakes, tornadoes", "ploaie, avertizări, cutremure, tornade"), Tr.t("satellite or map, rain radar", "satelit sau hartă, radarul de ploaie"),
+				Tr.t("background, colours, days or hours", "fundal, culori, zile sau ore"), Tr.t("EMSC and institute values", "valorile EMSC și ale institutelor"),
+				Tr.t("last 5 days, for troubleshooting", "ultimele 5 zile, pentru depanare") };
+	}
+
+	/** The window: TITLE, a line under it, the rows, and the 2 buttons B1 (filled) and B2. */
+	private void frame(String title, String line, String b1, String b2, final Done done, final Backup.Sel sel, String foot) {
+		d = new Dialog(ctx, android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
+		Window w = d.getWindow();
+		w.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(0));
+		FrameLayout root = new FrameLayout(ctx);
+		LinearLayout col = new LinearLayout(ctx);
+		col.setOrientation(LinearLayout.VERTICAL);
+		col.setPadding(px(18), px(14), px(18), px(16));
+		col.setBackground(Glass.panelBg(dark, 26 * dp, dp));
+		root.addView(col);
+		LinearLayout head = new LinearLayout(ctx);
+		head.setGravity(Gravity.CENTER_VERTICAL);
+		TextView t = text(26, true, ink());
+		t.setText(title);
+		head.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		View x = new View(ctx);
+		x.setBackground(Glass.closeIcon(dark, dp));
+		x.setContentDescription(Tr.t("Close", "Închide"));
+		x.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				d.dismiss();
+			}
+		});
+		head.addView(x, new LinearLayout.LayoutParams(px(44), px(44)));
+		col.addView(head);
+		if (line != null) {
+			TextView l = text(13, false, dim());
+			l.setText(line);
+			l.setPadding(0, px(4), 0, px(10));
+			col.addView(l);
+		}
+		ScrollView sv = new ScrollView(ctx);
+		rows = new LinearLayout(ctx);
+		rows.setOrientation(LinearLayout.VERTICAL);
+		rows.setBackground(Glass.cardBg(dark, 18 * dp, dp));
+		sv.addView(rows);
+		col.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+		LinearLayout bs = new LinearLayout(ctx);
+		bs.setPadding(0, px(14), 0, 0);
+		for (int i = 0; i < 2; i++) {
+			final int k = i + 1;
+			TextView b = text(17, true, i == 0 ? 0xFFFFFFFF : ink());
+			b.setText(i == 0 ? b1 : b2);
+			b.setGravity(Gravity.CENTER);
+			b.setBackground(Glass.pill(i == 0 ? accent() : Glass.disc(dark), i == 0 ? 0 : Glass.edge(dark), 24 * dp, dp));
+			b.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					d.dismiss();
+					done.run(sel, k);
+				}
+			});
+			LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(0, px(48), 1);
+			if (i > 0) bl.leftMargin = px(12);
+			bs.addView(b, bl);
+		}
+		col.addView(bs);
+		if (foot != null) {
+			TextView f = text(12, false, dim());
+			f.setText(foot);
+			f.setGravity(Gravity.CENTER);
+			f.setPadding(0, px(8), 0, 0);
+			col.addView(f);
+		}
+		d.setContentView(root);
+		android.util.DisplayMetrics m = ctx.getResources().getDisplayMetrics();
+		WindowManager.LayoutParams lp = w.getAttributes();
+		lp.width = Math.min(m.widthPixels - px(16), px(560));
+		lp.height = Math.min(m.heightPixels - px(60), px(760));
+		lp.dimAmount = 0.5f;
+		w.setAttributes(lp);
+		w.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+	}
+
+	private TextView text(float sp, boolean b, int color) {
+		TextView t = new TextView(ctx);
+		t.setTypeface(b ? bold : reg);
+		t.setTextSize(sp);
+		t.setTextColor(color);
+		t.setIncludeFontPadding(false);
+		return t;
+	}
+
+	private void sep() {
+		if (rows.getChildCount() == 0) return;
+		View v = new View(ctx);
+		v.setBackgroundColor(Glass.edge(dark));
+		rows.addView(v, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, Math.max(1, Math.round(dp))));
+	}
+
+	/** One row: title, sub line, switch (and ▾ when OPENS is given). Returns the sub line's view. */
+	private TextView row(String title, String sub, final boolean[] on, final int k, boolean enabled, final View list) {
+		sep();
+		LinearLayout r = new LinearLayout(ctx);
+		r.setGravity(Gravity.CENTER_VERTICAL);
+		r.setPadding(px(14), px(12), px(12), px(12));
+		LinearLayout tx = new LinearLayout(ctx);
+		tx.setOrientation(LinearLayout.VERTICAL);
+		TextView t = text(16, false, ink());
+		t.setText(title);
+		tx.addView(t);
+		TextView s = text(12.5f, false, dim());
+		s.setText(sub);
+		s.setPadding(0, px(3), 0, 0);
+		if (sub.length() > 0) tx.addView(s);
+		r.addView(tx, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		final Switch sw = new Switch(on[k] && enabled);
+		r.addView(sw, new LinearLayout.LayoutParams(px(46), px(26)));
+		if (!enabled) {
+			r.setAlpha(0.4f);
+			on[k] = false;
+		} else {
+			View.OnClickListener tap = new View.OnClickListener() {
+				public void onClick(View v) {
+					on[k] = !on[k];
+					sw.on = on[k];
+					sw.invalidate();
+				}
+			};
+			r.setOnClickListener(tap);
+		}
+		if (list != null) {
+			final TextView ch = text(15, true, ink());
+			ch.setText("▾");
+			ch.setGravity(Gravity.CENTER);
+			ch.setBackground(Glass.pill(Glass.disc(dark), 0, 15 * dp, dp));
+			ch.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					boolean open = list.getVisibility() != View.VISIBLE;
+					list.setVisibility(open ? View.VISIBLE : View.GONE);
+					ch.setText(open ? "▴" : "▾");
+				}
+			});
+			LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(px(30), px(30));
+			cl.leftMargin = px(10);
+			r.addView(ch, cl);
+		}
+		rows.addView(r);
+		if (list != null) {
+			list.setVisibility(View.GONE);
+			rows.addView(list);
+		}
+		return s;
+	}
+
+	/** A list of tick boxes in a box of at most ~5 rows that scrolls inside; COUNT shows "n din m". */
+	private View ticks(final String[] names, final String[] details, final boolean[] ticked, final TextView count, final String tail, final Runnable changed) {
+		LinearLayout box = new LinearLayout(ctx);
+		box.setOrientation(LinearLayout.VERTICAL);
+		box.setBackground(Glass.pill(Glass.alpha(0xFF000000, dark ? 0.18f : 0.05f), Glass.edge(dark), 14 * dp, dp));
+		LinearLayout bar = new LinearLayout(ctx);
+		bar.setGravity(Gravity.CENTER_VERTICAL);
+		bar.setPadding(px(10), px(8), px(10), px(8));
+		final TextView n = text(13, false, dim());
+		final Box[] boxes = new Box[names.length];
+		final Runnable recount = new Runnable() {
+			public void run() {
+				int c = 0;
+				for (boolean b : ticked) if (b) c++;
+				String s = c + " " + Tr.t("of", "din") + " " + ticked.length;
+				n.setText(s);
+				count.setText(s + " " + Tr.t("chosen", "alese") + tail);
+				changed.run();
+			}
+		};
+		for (int i = 0; i < 2; i++) {
+			final boolean all = i == 0;
+			TextView p = text(13, true, ink());
+			p.setText(all ? Tr.t("All", "Toate") : Tr.t("None", "Niciuna"));
+			p.setPadding(px(12), px(5), px(12), px(5));
+			p.setBackground(Glass.pill(Glass.disc(dark), 0, 13 * dp, dp));
+			p.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					for (int k = 0; k < ticked.length; k++) {
+						ticked[k] = all;
+						boxes[k].on = all;
+						boxes[k].invalidate();
+					}
+					recount.run();
+				}
+			});
+			LinearLayout.LayoutParams pl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			if (i > 0) pl.leftMargin = px(8);
+			bar.addView(p, pl);
+		}
+		bar.addView(new View(ctx), new LinearLayout.LayoutParams(0, 1, 1));
+		bar.addView(n);
+		box.addView(bar);
+		LinearLayout items = new LinearLayout(ctx);
+		items.setOrientation(LinearLayout.VERTICAL);
+		for (int i = 0; i < names.length; i++) {
+			final int k = i;
+			LinearLayout r = new LinearLayout(ctx);
+			r.setGravity(Gravity.CENTER_VERTICAL);
+			r.setPadding(px(10), px(7), px(10), px(7));
+			final Box b = new Box(ticked[i]);
+			boxes[i] = b;
+			r.addView(b, new LinearLayout.LayoutParams(px(22), px(22)));
+			LinearLayout tx = new LinearLayout(ctx);
+			tx.setOrientation(LinearLayout.VERTICAL);
+			tx.setPadding(px(10), 0, 0, 0);
+			TextView a = text(15, false, ink());
+			a.setText(names[i]);
+			a.setSingleLine(true);
+			a.setEllipsize(android.text.TextUtils.TruncateAt.END);
+			tx.addView(a);
+			if (details[i].length() > 0) {
+				TextView dd = text(11.5f, false, dim());
+				dd.setText(details[i]);
+				dd.setSingleLine(true);
+				dd.setEllipsize(android.text.TextUtils.TruncateAt.END);
+				dd.setPadding(0, px(2), 0, 0);
+				tx.addView(dd);
+			}
+			r.addView(tx, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+			r.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					ticked[k] = !ticked[k];
+					b.on = ticked[k];
+					b.invalidate();
+					recount.run();
+				}
+			});
+			items.addView(r);
+		}
+		// The list scrolls inside its box (the window scrolls around it).
+		ScrollView sv = new ScrollView(ctx) {
+			@Override
+			public boolean onInterceptTouchEvent(android.view.MotionEvent e) {
+				getParent().requestDisallowInterceptTouchEvent(true);
+				return super.onInterceptTouchEvent(e);
+			}
+		};
+		sv.setVerticalScrollBarEnabled(true);
+		sv.setScrollbarFadingEnabled(false);
+		sv.addView(items);
+		box.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, names.length > 5 ? px(5 * 46) : ViewGroup.LayoutParams.WRAP_CONTENT));
+		LinearLayout wrap = new LinearLayout(ctx);
+		wrap.setPadding(px(10), 0, px(10), px(10));
+		wrap.addView(box, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		recount.run();
+		return wrap;
+	}
+
+	/** "Călărași" and "Călărași · România" from a town line (county|name|… or cc|state|name|…). */
+	static String[] townOf(String line, String kind) {
+		String[] p = line.split("\\|");
+		if (p.length >= 3 && p[0].matches("[a-z]{2}")) return new String[] { p[2], kind + " · " + p[1] + ", " + p[0].toUpperCase(java.util.Locale.ROOT) };
+		return new String[] { p.length > 1 ? p[1] : line, kind + (p.length > 0 && p[0].length() > 0 ? " · " + p[0] : "") };
+	}
+
+	/** The Export window; DONE gets button 1 = Save, 2 = Share. */
+	void export(final Done done) {
+		final Backup.Sel sel = Backup.Sel.load(ctx);
+		frame(Tr.t("Export", "Export"), Tr.t("Choose what goes into the file · ▾ opens the list", "Alege ce intră în fișier · ▾ deschide lista"),
+				Tr.t("Save", "Salvează"), Tr.t("Share", "Trimite"), new Done() {
+					public void run(Backup.Sel s, int b) {
+						s.save(ctx);
+						done.run(s, b);
+					}
+				}, sel, Tr.t("The choice is kept", "Alegerea rămâne ținută minte"));
+		final int[] n = Backup.what(ctx, null);
+		String[] ti = titles(), su = subs();
+		android.content.SharedPreferences p = Fetcher.prefs(ctx);
+		// Towns
+		final java.util.List<String> tl = new java.util.ArrayList<String>();
+		java.util.List<String[]> td = new java.util.ArrayList<String[]>();
+		for (String l : Backup.lines(p, "myCities")) { tl.add(l); td.add(townOf(l, Tr.t("my town", "localitatea mea"))); }
+		for (String l : Backup.lines(p, "favs")) { tl.add(l); td.add(townOf(l, Tr.t("favourite", "favorită"))); }
+		for (String l : Backup.lines(p, "favsUS")) { tl.add(l); td.add(townOf(l, Tr.t("favourite", "favorită"))); }
+		final boolean[] tt = new boolean[tl.size()];
+		String[] tn = new String[tl.size()], tdd = new String[tl.size()];
+		for (int i = 0; i < tl.size(); i++) {
+			tt[i] = !sel.offTowns.contains(tl.get(i));
+			tn[i] = td.get(i)[0];
+			tdd[i] = td.get(i)[1];
+		}
+		TextView[] cnt = new TextView[1];
+		cnt[0] = text(12, false, dim());
+		View tlist = tl.isEmpty() ? null : ticks(tn, tdd, tt, cnt[0], "", new Runnable() {
+			public void run() {
+				sel.offTowns.clear();
+				for (int i = 0; i < tt.length; i++) if (!tt[i]) sel.offTowns.add(tl.get(i));
+			}
+		});
+		TextView s0 = row(ti[0], tl.isEmpty() ? Tr.t("nothing to save", "nimic de salvat") : cnt[0].getText().toString(), sel.on, Backup.TOWNS, !tl.isEmpty(), tlist);
+		link(s0, cnt[0]);
+		// Parcels
+		final List<Parcels.Parcel> pl = Parcels.all(ctx);
+		final boolean[] pt = new boolean[pl.size()];
+		String[] pn = new String[pl.size()], pd = new String[pl.size()];
+		for (int i = 0; i < pl.size(); i++) {
+			Parcels.Parcel x = pl.get(i);
+			pt[i] = !sel.offParcels.contains(x.id);
+			pn[i] = x.name;
+			ro.meteoalarm.android.core.Agro.Crop c = x.crop();
+			StringBuilder b = new StringBuilder();
+			if (c != null) b.append(c.name());
+			if (x.sow.length() >= 10) b.append(b.length() > 0 ? " · " : "").append(Tr.t("sown ", "semănat ")).append(x.sow.substring(8, 10)).append('.').append(x.sow.substring(5, 7));
+			b.append(b.length() > 0 ? " · " : "").append(String.format(java.util.Locale.ROOT, "%.4f, %.4f", x.lat, x.lon));
+			pd[i] = b.toString();
+		}
+		final TextView pc = text(12, false, dim());
+		View plist = pl.isEmpty() ? null : ticks(pn, pd, pt, pc, " · " + su[1], new Runnable() {
+			public void run() {
+				sel.offParcels.clear();
+				for (int i = 0; i < pt.length; i++) if (!pt[i]) sel.offParcels.add(pl.get(i).id);
+			}
+		});
+		TextView s1 = row(ti[1], pl.isEmpty() ? Tr.t("nothing to save", "nimic de salvat") : pc.getText().toString(), sel.on, Backup.PARCELS, !pl.isEmpty(), plist);
+		link(s1, pc);
+		for (int k = Backup.BELLS; k < Backup.N; k++) {
+			boolean has = n[k] > 0 || k == Backup.LOOK || k == Backup.LOG;
+			String sub = has ? su[k] : Tr.t("nothing to save", "nimic de salvat");
+			if (k == Backup.WIDGETS && has) sub = n[k] + " " + Tr.t("widgets", "widget-uri") + ": " + su[k];
+			row(ti[k], sub, sel.on, k, has, null);
+		}
+		show();
+	}
+
+	/** The count line under a row follows the list's count. */
+	private void link(final TextView sub, final TextView count) {
+		count.addTextChangedListener(new android.text.TextWatcher() {
+			public void beforeTextChanged(CharSequence s, int a, int b, int c) {
+			}
+
+			public void onTextChanged(CharSequence s, int a, int b, int c) {
+				sub.setText(s);
+			}
+
+			public void afterTextChanged(android.text.Editable s) {
+			}
+		});
+	}
+
+	/** The Import window for file O; DONE gets the switches and button 1 = Add, 2 = Replace. */
+	void imports(org.json.JSONObject o, String line, Done done) {
+		final Backup.Sel sel = new Backup.Sel();
+		frame(Tr.t("Import", "Import"), line, Tr.t("Add", "Adaugă"), Tr.t("Replace", "Înlocuiește"), done, sel,
+				Tr.t("Add keeps what you have; Replace makes it as in the file, only for the rows switched on.",
+						"Adaugă păstrează ce ai pe telefon; Înlocuiește face totul ca în fișier, doar pentru rândurile pornite."));
+		int[] n = Backup.what(ctx, o);
+		String[] ti = titles();
+		String in = Tr.t("in the file: ", "în fișier: ");
+		for (int k = 0; k < Backup.LOG; k++) {
+			boolean has = n[k] > 0;
+			sel.on[k] = has;
+			String sub;
+			if (!has) sub = Tr.t("not in the file", "nu e în fișier");
+			else if (k == Backup.TOWNS) sub = in + n[k] + " " + Tr.t("towns", "localități");
+			else if (k == Backup.PARCELS) sub = in + n[k] + " " + Tr.t("parcels", "parcele");
+			else if (k == Backup.WIDGETS) sub = in + n[k] + " " + Tr.t("widgets", "widget-uri");
+			else if (k == Backup.LOOK || k == Backup.ALERT || k == Backup.MAPS) sub = in + n[k] + " " + Tr.t("settings", "setări");
+			else sub = in + n[k];
+			row(ti[k], sub, sel.on, k, has, null);
+		}
+		show();
+	}
+
+	private void show() {
+		d.show();
+	}
+
+	/** A switch like the ☰ ones. */
+	private final class Switch extends View {
+		boolean on;
+		final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		Switch(boolean on) {
+			super(ctx);
+			this.on = on;
+		}
+
+		@Override
+		protected void onDraw(Canvas c) {
+			float w = getWidth(), h = getHeight();
+			p.setColor(on ? accent() : Glass.alpha(Theme.ink(dark), dark ? 0.2f : 0.16f));
+			c.drawRoundRect(new RectF(0, 0, w, h), h / 2, h / 2, p);
+			p.setColor(dark ? Theme.page(true) : 0xFFFFFFFF);
+			c.drawCircle(on ? w - h / 2 : h / 2, h / 2, h / 2 - 3 * dp, p);
+		}
+	}
+
+	/** A tick box. */
+	private final class Box extends View {
+		boolean on;
+		final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+		Box(boolean on) {
+			super(ctx);
+			this.on = on;
+		}
+
+		@Override
+		protected void onDraw(Canvas c) {
+			float w = getWidth(), h = getHeight(), r = 5 * dp;
+			RectF o = new RectF(dp, dp, w - dp, h - dp);
+			if (on) {
+				p.setStyle(Paint.Style.FILL);
+				p.setColor(accent());
+				c.drawRoundRect(o, r, r, p);
+				p.setStyle(Paint.Style.STROKE);
+				p.setStrokeWidth(2.4f * dp);
+				p.setStrokeCap(Paint.Cap.ROUND);
+				p.setStrokeJoin(Paint.Join.ROUND);
+				p.setColor(0xFFFFFFFF);
+				android.graphics.Path k = new android.graphics.Path();
+				k.moveTo(w * 0.27f, h * 0.52f);
+				k.lineTo(w * 0.44f, h * 0.68f);
+				k.lineTo(w * 0.74f, h * 0.34f);
+				c.drawPath(k, p);
+			} else {
+				p.setStyle(Paint.Style.STROKE);
+				p.setStrokeWidth(1.8f * dp);
+				p.setColor(dim());
+				c.drawRoundRect(o, r, r, p);
+			}
+		}
+	}
+}

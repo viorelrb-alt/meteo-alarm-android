@@ -1,4 +1,4 @@
-Huidige versie: v.2.117 · 19.11.2026
+Huidige versie: v.2.120 · 19.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 INSTELLINGEN
@@ -14,6 +14,8 @@ PERCELEN
 - Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
 - Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
+- Pagina Aardbevingen: opent meteen met de laatst op de telefoon opgeslagen lijsten en werkt ze op de achtergrond bij.
+- Exporteren / Importeren: schakelaars voor wat in het bestand komt (ook perceelmeldingen, prullenbak, meldingen, kaart, widgets, aardbevingsgeschiedenis, logboek); plaatsen en percelen zijn een voor een aan te vinken.
 - Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.4 (v.1.400 – v.1.520)

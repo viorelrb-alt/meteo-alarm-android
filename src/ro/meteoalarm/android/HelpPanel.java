@@ -269,28 +269,43 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 
 	/** v2.108 (Viorel): a row with a round ↻ button and WHAT (when the list was last updated). */
 	void refreshRow(String what, final Runnable tap) {
+		refreshRow(what, null, 0, tap);
+	}
+
+	/**
+	 * v2.120 (Viorel): the ↻ button is drawn (centred, not a text glyph). STATE 1 = updating: the
+	 * arrow turns and an arc runs round the circle; 2 = just done: a green tick for 1 s, then ↻;
+	 * 3 = failed: a red ! for 2 s. SUB = a second, smaller line (the saved list's time).
+	 */
+	void refreshRow(String what, String sub, int state, final Runnable tap) {
 		LinearLayout r = new LinearLayout(getContext());
 		r.setOrientation(LinearLayout.HORIZONTAL);
 		r.setGravity(android.view.Gravity.CENTER_VERTICAL);
 		r.setPadding(0, (int) (10 * dp), 0, 0);
-		TextView b = new TextView(getContext());
-		b.setText("↻");
-		b.setTypeface(bold);
-		b.setTextSize(20);
-		b.setTextColor(ro.meteoalarm.android.core.Theme.accent(dark));
-		b.setGravity(android.view.Gravity.CENTER);
-		b.setIncludeFontPadding(false);
+		Spin b = new Spin(getContext(), dark, dp, state);
 		b.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), 21 * dp, dp));
 		b.setContentDescription(ro.meteoalarm.android.core.Tr.t("Refresh", "Actualizează"));
 		r.addView(b, new LinearLayout.LayoutParams((int) (42 * dp), (int) (42 * dp)));
+		LinearLayout col = new LinearLayout(getContext());
+		col.setOrientation(LinearLayout.VERTICAL);
 		TextView w = new TextView(getContext());
 		w.setTypeface(reg);
 		TextSize.size(w, 14, ts);
 		w.setTextColor(dim());
 		w.setText(what);
+		col.addView(w);
+		if (sub != null && sub.length() > 0) {
+			TextView t = new TextView(getContext());
+			t.setTypeface(reg);
+			TextSize.size(t, 11, ts);
+			t.setTextColor(dim());
+			t.setAlpha(0.8f);
+			t.setText(sub);
+			col.addView(t);
+		}
 		LinearLayout.LayoutParams wl = new LinearLayout.LayoutParams(0, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 1);
 		wl.leftMargin = (int) (12 * dp);
-		r.addView(w, wl);
+		r.addView(col, wl);
 		r.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				if (tap != null) tap.run();
@@ -302,6 +317,93 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 			}
 		});
 		list.addView(r);
+	}
+
+	/** v2.120: the drawn refresh mark of refreshRow, with its animation. */
+	static class Spin extends View {
+		final android.graphics.Paint p = new android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG);
+		final boolean dark;
+		final float dp;
+		int state;
+		final long t0 = android.os.SystemClock.uptimeMillis();
+
+		Spin(Context c, boolean dark, float dp, int state) {
+			super(c);
+			this.dark = dark;
+			this.dp = dp;
+			this.state = state;
+			if (state == 2 || state == 3) postDelayed(new Runnable() {
+				public void run() {
+					Spin.this.state = 0;
+					invalidate();
+				}
+			}, state == 2 ? 1000 : 2000);
+		}
+
+		@Override
+		protected void onDraw(android.graphics.Canvas c) {
+			float w = getWidth(), h = getHeight(), cx = w / 2, cy = h / 2, s = Math.min(w, h);
+			int acc = ro.meteoalarm.android.core.Theme.accent(dark);
+			p.setStrokeCap(android.graphics.Paint.Cap.ROUND);
+			p.setStrokeJoin(android.graphics.Paint.Join.ROUND);
+			if (state == 2) {
+				p.setStyle(android.graphics.Paint.Style.STROKE);
+				p.setStrokeWidth(s * 0.1f);
+				p.setColor(0xFF4FBF7F);
+				android.graphics.Path k = new android.graphics.Path();
+				k.moveTo(cx - s * 0.2f, cy + s * 0.01f);
+				k.lineTo(cx - s * 0.05f, cy + s * 0.16f);
+				k.lineTo(cx + s * 0.22f, cy - s * 0.14f);
+				c.drawPath(k, p);
+				return;
+			}
+			if (state == 3) {
+				p.setStyle(android.graphics.Paint.Style.FILL);
+				p.setColor(0xFFE0524A);
+				p.setTextAlign(android.graphics.Paint.Align.CENTER);
+				p.setTextSize(s * 0.55f);
+				p.setFakeBoldText(true);
+				android.graphics.Paint.FontMetrics fm = p.getFontMetrics();
+				c.drawText("!", cx, cy - (fm.ascent + fm.descent) / 2, p);
+				return;
+			}
+			long t = android.os.SystemClock.uptimeMillis() - t0;
+			float rot = state == 1 ? (t % 900) * 360f / 900 : 0;
+			if (state == 1) {
+				// the arc that runs round the circle
+				float R = s / 2 - 2.5f * dp;
+				p.setStyle(android.graphics.Paint.Style.STROKE);
+				p.setStrokeWidth(2.5f * dp);
+				p.setColor(acc);
+				p.setAlpha(50);
+				c.drawCircle(cx, cy, R, p);
+				p.setAlpha(255);
+				android.graphics.RectF o = new android.graphics.RectF(cx - R, cy - R, cx + R, cy + R);
+				c.drawArc(o, (t % 1400) * 360f / 1400 - 90, 100, false, p);
+			}
+			c.save();
+			c.rotate(rot, cx, cy);
+			float r = s * 0.2f, sw = s * 0.075f;
+			p.setStyle(android.graphics.Paint.Style.STROKE);
+			p.setStrokeWidth(sw);
+			p.setColor(acc);
+			android.graphics.RectF o = new android.graphics.RectF(cx - r, cy - r, cx + r, cy + r);
+			float a0 = -60, sweep = 300;
+			c.drawArc(o, a0, sweep, false, p);
+			double a1 = Math.toRadians(a0 + sweep);
+			float ex = cx + (float) (r * Math.cos(a1)), ey = cy + (float) (r * Math.sin(a1));
+			float tx = (float) -Math.sin(a1), ty = (float) Math.cos(a1), nx = (float) Math.cos(a1), ny = (float) Math.sin(a1);
+			float hl = s * 0.13f;
+			android.graphics.Path a = new android.graphics.Path();
+			a.moveTo(ex + tx * hl * 0.9f, ey + ty * hl * 0.9f);
+			a.lineTo(ex + nx * hl * 0.75f - tx * hl * 0.25f, ey + ny * hl * 0.75f - ty * hl * 0.25f);
+			a.lineTo(ex - nx * hl * 0.75f - tx * hl * 0.25f, ey - ny * hl * 0.75f - ty * hl * 0.25f);
+			a.close();
+			p.setStyle(android.graphics.Paint.Style.FILL);
+			c.drawPath(a, p);
+			c.restore();
+			if (state == 1) postInvalidateOnAnimation();
+		}
 	}
 
 	/** A plain paragraph (a notice: downloading, nothing found…). */

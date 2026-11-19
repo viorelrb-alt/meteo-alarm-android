@@ -1522,3 +1522,44 @@ Tap to see what is new and download it.	Додирни да видиш ново�
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	По једно поље за сваки земљотрес у последња 24 сата у кругу од 300 миља (USGS), најновији први.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	По једно поље за сваки земљотрес у последња 24 сата у твојој земљи, најновији први, и како се вероватно осетио (EMSC и институт земље).
 On the whole screen: ☀ shows the brightness bar.	Na celom ekranu: ☀ prikazuje traku osvetljenja.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Додај задржава оно што имаш; Замени поставља све као у датотеци, само за укључене редове.
+All	Све
+App log	Дневник апликације
+Choose what goes into the file · ▾ opens the list	Изабери шта иде у датотеку · ▾ отвара листу
+Could not update	Ажурирање није успело
+EMSC and institute values	Вредности EMSC-а и института
+Earthquake history	Историја земљотреса
+Export	Извоз
+Look and language	Изглед и језик
+Map	Мапа
+My towns and favourites	Моја места и омиљена
+None	Ништа
+Notifications and alerts	Обавештења и упозорења
+Parcel bin	Корпа парцела
+Places visited (villages)	Посећена места (села)
+Saved list: 	Сачувана листа: 
+The choice is kept	Избор остаје запамћен
+Updated: 	Ажурирано: 
+background, colours, days or hours	позадина, боје, дани или сати
+chosen	изабрано
+corners, crop, sowing date	углови, усев, датум сетве
+favourite	омиљено
+in the file: 	у датотеци: 
+last 5 days, for troubleshooting	последњих 5 дана, за решавање проблема
+my town	моје место
+not in the file	није у датотеци
+nothing to save	нема ничега за чување
+of	од
+only for the chosen parcels	само за изабране парцеле
+parcels	парцеле
+parcels deleted in the last 15 days	парцеле обрисане у последњих 15 дана
+rain, warnings, earthquakes, tornadoes	киша, упозорења, земљотреси, торнада
+satellite or map, rain radar	сателит или мапа, радар падавина
+settings	подешавања
+theme, colours, icons, language, text size, units	тема, боје, иконе, језик, величина текста, јединице
+today, 	данас, 
+towns	места
+widgets	виџети
+yesterday, 	јуче, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Извоз: прекидачи бирају шта иде у датотеку; ▾ отвара места и парцеле да их означиш једно по једно. Увоз показује шта датотека садржи.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Страница Земљотреси се отвара одмах са последњим сачуваним листама; ↻ се окреће док се ажурирају.

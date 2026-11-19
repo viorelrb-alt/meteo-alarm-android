@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Paliesk, kad pamatytum naujoves ir atsis
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Po langelį kiekvienam paskutinių 24 valandų žemės drebėjimui 300 mylių spinduliu (USGS), naujausias pirmas.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Po langelį kiekvienam paskutinių 24 valandų žemės drebėjimui tavo šalyje, naujausias pirmas, ir kaip jis tikriausiai buvo jaučiamas (EMSC ir šalies institutas).
 On the whole screen: ☀ shows the brightness bar.	Visame ekrane: ☀ rodo ryškumo juostą.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Pridėti išlaiko tai, ką turi; Pakeisti viską nustato kaip faile, tik įjungtoms eilutėms.
+All	Visi
+App log	Programos žurnalas
+Choose what goes into the file · ▾ opens the list	Pasirink, kas pateks į failą · ▾ atveria sąrašą
+Could not update	Nepavyko atnaujinti
+EMSC and institute values	EMSC ir institutų vertės
+Earthquake history	Žemės drebėjimų istorija
+Export	Eksportas
+Look and language	Išvaizda ir kalba
+Map	Žemėlapis
+My towns and favourites	Mano vietovės ir mėgstamos
+None	Nė vieno
+Notifications and alerts	Pranešimai ir įspėjimai
+Parcel bin	Sklypų šiukšlinė
+Places visited (villages)	Aplankytos vietos (kaimai)
+Saved list: 	Išsaugotas sąrašas: 
+The choice is kept	Pasirinkimas įsimenamas
+Updated: 	Atnaujinta: 
+background, colours, days or hours	fonas, spalvos, dienos ar valandos
+chosen	pasirinkta
+corners, crop, sowing date	kampai, kultūra, sėjos data
+favourite	mėgstama
+in the file: 	faile: 
+last 5 days, for troubleshooting	paskutinės 5 dienos, trikčių šalinimui
+my town	mano vietovė
+not in the file	nėra faile
+nothing to save	nėra ką išsaugoti
+of	iš
+only for the chosen parcels	tik pasirinktiems sklypams
+parcels	sklypai
+parcels deleted in the last 15 days	per paskutines 15 dienų ištrinti sklypai
+rain, warnings, earthquakes, tornadoes	lietus, įspėjimai, žemės drebėjimai, tornadai
+satellite or map, rain radar	palydovas ar žemėlapis, kritulių radaras
+settings	nustatymai
+theme, colours, icons, language, text size, units	tema, spalvos, piktogramos, kalba, teksto dydis, vienetai
+today, 	šiandien, 
+towns	vietovės
+widgets	valdikliai
+yesterday, 	vakar, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksportas: jungikliai renka, kas pateks į failą; ▾ atveria vietoves ir sklypus, kad pažymėtum juos po vieną. Importas parodo, kas yra faile.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Puslapis Žemės drebėjimai atsidaro iškart su paskutiniais išsaugotais sąrašais; ↻ sukasi, kol jie atnaujinami.

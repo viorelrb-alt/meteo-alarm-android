@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.117 · 19.11.2026
+Dabartinė versija: v.2.120 · 19.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 PAGRINDINIS EKRANAS
@@ -14,6 +14,8 @@ SKLYPAI
 - Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
+- Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
+- Eksportas / Importas: jungikliai failo turiniui (taip pat sklypų pranešimai, sklypų šiukšlinė, pranešimai, žemėlapis, valdikliai, žemės drebėjimų istorija, žurnalas); vietoves ir sklypus galima žymėti po vieną.
 - Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 1.4 versija (v.1.400 – v.1.520)

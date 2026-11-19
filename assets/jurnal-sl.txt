@@ -1,4 +1,4 @@
-Trenutna različica: v.2.117 · 19.11.2026
+Trenutna različica: v.2.120 · 19.11.2026
 GLAVNI ZASLON
 - Podatki o potresu: dotik polja Potres jih odpre na glavnem zaslonu: zemljevid, pod njim cone zaznavanja in zgodovina vrednosti; barvni kvadrat ali zemljevid jih odpre na celem zaslonu, kot potres iz ☰ › Potresi. V Romuniji, Franciji, Italiji, na Nizozemskem, v Švici in Grčiji uradne vrednosti najprej prihajajo od državnega inštituta (INFP, BCSF, INGV, KNMI, SED, NOA), nato od EMSC. V Romuniji tudi potresi okoli države dobijo vrednost INFP (z infp.ro).
 NASTAVITVE
@@ -14,6 +14,8 @@ PARCELE
 - Statistika: za vsako parcelo Opravilo dneva in 4 zavihki: Operativno (okno škropljenja uro za uro, sušenje kapljic (ΔT), veter, moker list), Voda in tla (dež, izhlapevanje, tla na 6 in 18 cm), Sezona (stopinjski dnevi v primerjavi z lani, ocenjena faza) in Tveganja 72 h (glivične bolezni, talna pozeba, vročina, veter in toča); shranjevanje v PDF ali CSV.
 - Uredi parcelo: svinčnik odpre stran parcele: ime, kultura (seznam po sezoni datuma setve ali Druga kultura…), datum setve, površina; oglišča se premikajo na zemljevidu.
 - Zgodovina in napoved: povlecite kazalnik na pretekli dan; njegove vrednosti se prikažejo v okvirju pod grafom, po 10 s pa se vrne na danes.
+- Stran Potresi: takoj se odpre z zadnjimi seznami, shranjenimi v telefonu, in jih posodobi v ozadju.
+- Izvoz / Uvoz: stikala za vsebino datoteke (tudi obvestila parcel, koš parcel, obvestila, zemljevid, pripomočki, zgodovina potresov, dnevnik); kraje in parcele lahko označiš posamično.
 - Izboljšave oblikovanja in popravki prijavljenih napak.
 
 Različica 1.4 (v.1.400 – v.1.520)

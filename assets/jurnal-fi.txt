@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.117 · 19.11.2026
+Nykyinen versio: v.2.120 · 19.11.2026
 ASETUKSET
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 ILMOITUKSET
@@ -14,6 +14,8 @@ PELTOLOHKOT
 - Tilastot päänäytöllä: ne avautuvat toimintatilan alle (vaakatasossa vasemmalle); ‹ sulkee ne ja toisen lohkon välilehti pitää ne auki.
 - Tilastot: jokaiselle lohkolle Päivän toimi ja 4 välilehteä: Toiminta (ruiskutusikkuna tunti tunnilta, pisaroiden kuivuminen (ΔT), tuuli, märkä lehti), Vesi & maa (sade, haihdunta, maa 6 ja 18 cm:ssä), Kausi (lämpösumma verrattuna viime vuoteen, arvioitu vaihe) ja Riskit 72 h (sienitaudit, maanpintahalla, helle, tuuli ja rakeet); tallennus PDF- tai CSV-muodossa.
 - Toimintatila: ylhäällä viljelykasvi ja kylvöpäivä; viljelykasvin kanssa arvio huomioi myös pisaroiden kuivumisen (ΔT) ja sen taudin.
+- Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
+- Vienti / Tuonti: kytkimet tiedoston sisällölle (myös lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); paikkakunnat ja lohkot voi valita yksitellen.
 - Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.4 (v.1.400 – v.1.520)

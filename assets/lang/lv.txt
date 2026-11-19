@@ -1588,3 +1588,44 @@ Tap to see what is new and download it.	Pieskaries, lai redzētu jaunumus un lej
 One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.	Viens lodziņš katrai pēdējo 24 stundu zemestrīcei 300 jūdžu rādiusā (USGS), jaunākā pirmā.
 One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).	Viens lodziņš katrai pēdējo 24 stundu zemestrīcei tavā valstī, jaunākā pirmā, un kā tā, visticamāk, bija jūtama (EMSC un valsts institūts).
 On the whole screen: ☀ shows the brightness bar.	Pilnekrānā: ☀ parāda spilgtuma joslu.
+Add keeps what you have; Replace makes it as in the file, only for the rows switched on.	Pievienot saglabā to, kas tev ir; Aizstāt visu iestata kā failā, tikai ieslēgtajām rindām.
+All	Visas
+App log	Lietotnes žurnāls
+Choose what goes into the file · ▾ opens the list	Izvēlies, kas nonāks failā · ▾ atver sarakstu
+Could not update	Neizdevās atjaunināt
+EMSC and institute values	EMSC un institūtu vērtības
+Earthquake history	Zemestrīču vēsture
+Export	Eksports
+Look and language	Izskats un valoda
+Map	Karte
+My towns and favourites	Manas vietas un izlase
+None	Neviena
+Notifications and alerts	Paziņojumi un brīdinājumi
+Parcel bin	Zemes gabalu miskaste
+Places visited (villages)	Apmeklētās vietas (ciemi)
+Saved list: 	Saglabātais saraksts: 
+The choice is kept	Izvēle tiek atcerēta
+Updated: 	Atjaunināts: 
+background, colours, days or hours	fons, krāsas, dienas vai stundas
+chosen	izvēlētas
+corners, crop, sowing date	stūri, kultūra, sējas datums
+favourite	izlasē
+in the file: 	failā: 
+last 5 days, for troubleshooting	pēdējās 5 dienas, problēmu novēršanai
+my town	mana vieta
+not in the file	nav failā
+nothing to save	nav ko saglabāt
+of	no
+only for the chosen parcels	tikai izvēlētajiem zemes gabaliem
+parcels	zemes gabali
+parcels deleted in the last 15 days	pēdējās 15 dienās dzēstie zemes gabali
+rain, warnings, earthquakes, tornadoes	lietus, brīdinājumi, zemestrīces, viesuļvētras
+satellite or map, rain radar	satelīts vai karte, nokrišņu radars
+settings	iestatījumi
+theme, colours, icons, language, text size, units	motīvs, krāsas, ikonas, valoda, teksta lielums, mērvienības
+today, 	šodien, 
+towns	vietas
+widgets	logrīki
+yesterday, 	vakar, 
+Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksports: slēdži izvēlas, kas nonāk failā; ▾ atver vietas un zemes gabalus, lai tos atzīmētu pa vienam. Imports parāda, kas ir failā.
+The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Lapa Zemestrīces atveras uzreiz ar pēdējiem saglabātajiem sarakstiem; ↻ griežas, kamēr tie tiek atjaunināti.

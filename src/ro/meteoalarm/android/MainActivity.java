@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.117";
+	static final String VERSION = "Meteo Alarm Android v2.120";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -3483,8 +3483,35 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				}
 			}
 		});
-		d.setNegativeButton(Tr.t("Save", "Salvează"), new DialogInterface.OnClickListener() {
+		d.setPositiveButton(Tr.t("Export", "Export"), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface di, int w) {
+				exportPanel();
+			}
+		});
+		show(d);
+	}
+
+	/** v2.120: what the next Save writes (chosen in the Export window). */
+	private Backup.Sel exportSel = Backup.Sel.all();
+
+	private BackupPanel backupPanel() {
+		return new BackupPanel(this, s.dark, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
+				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+	}
+
+	/** v2.120 (Viorel): the Export window with a switch for each kind of data. */
+	private void exportPanel() {
+		Log.i(this, "EXPORT", "fereastra Export");
+		backupPanel().export(new BackupPanel.Done() {
+			public void run(Backup.Sel sel, int b) {
+				exportSel = sel;
+				StringBuilder on = new StringBuilder();
+				for (boolean x : sel.on) on.append(x ? '1' : '0');
+				Log.i(MainActivity.this, "EXPORT", "ales " + on + ", fără " + sel.offTowns.size() + " localități și " + sel.offParcels.size() + " parcele");
+				if (b == 2) {
+					shareData();
+					return;
+				}
 				Intent i = new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("application/json")
 						.putExtra(Intent.EXTRA_TITLE, Backup.fileName());
 				try {
@@ -3494,17 +3521,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				}
 			}
 		});
-		d.setPositiveButton(Tr.t("Share", "Trimite"), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface di, int w) {
-				shareData();
-			}
-		});
-		show(d);
 	}
 
 	/** The file through the phone's share menu: WhatsApp, e-mail, Google Drive, Bluetooth… */
 	private void shareData() {
-		java.io.File f = Backup.exportFile(this);
+		java.io.File f = Backup.exportFile(this, exportSel);
 		if (f == null) { note(Tr.t("Could not save", "Nu s-a putut salva")); return; }
 		Log.i(this, "EXPORT", "trimis " + f.getName() + " " + f.length() + " B");
 		android.net.Uri u = ApkProvider.dataUri(f.getName());
@@ -3523,7 +3544,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void saveData(android.net.Uri where) {
 		try {
 			java.io.OutputStream out = getContentResolver().openOutputStream(where);
-			out.write(Backup.export(this).getBytes("UTF-8"));
+			out.write(Backup.export(this, exportSel).getBytes("UTF-8"));
 			out.close();
 			Log.i(this, "EXPORT", "salvat pe telefon");
 			note(Tr.t("Saved: ", "Salvată: ") + Backup.fileName(), 2500);
@@ -3555,27 +3576,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final org.json.JSONObject data = o;
 		String when = new java.text.SimpleDateFormat("dd.MM.yyyy HH:mm", java.util.Locale.US).format(new java.util.Date(o.optLong("time")));
 		Log.i(this, "IMPORT", "fișier din " + when + ", " + o.optString("device") + ", " + o.optString("version"));
-		AlertDialog.Builder d = dialog();
-		d.setTitle(Tr.t("Import", "Import"));
-		d.setMessage(Tr.t("File from", "Fișier din") + " " + when + " · " + o.optString("device") + "\n\n" + countLines(Backup.counts(this, o)) + "\n\n"
-				+ Tr.t("Add keeps what you have and adds what is missing; Replace makes everything as in the file.",
-						"Adaugă păstrează ce ai și adaugă ce lipsește; Înlocuiește face totul ca în fișier."));
-		d.setNeutralButton(Tr.t("Cancel", "Renunță"), null);
-		d.setNegativeButton(Tr.t("Add", "Adaugă"), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface di, int w) {
-				imported(data, false);
+		backupPanel().imports(o, when + " · " + o.optString("device") + " · " + o.optString("version").replace("Meteo Alarm Android ", ""), new BackupPanel.Done() {
+			public void run(Backup.Sel sel, int b) {
+				imported(data, b == 2, sel.on);
 			}
 		});
-		d.setPositiveButton(Tr.t("Replace", "Înlocuiește"), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface di, int w) {
-				imported(data, true);
-			}
-		});
-		show(d);
 	}
 
-	private void imported(org.json.JSONObject o, boolean replace) {
-		Backup.apply(this, o, replace);
+	private void imported(org.json.JSONObject o, boolean replace, boolean[] on) {
+		Backup.apply(this, o, replace, on);
 		android.widget.Toast.makeText(this, Tr.t("Imported", "Importat"), android.widget.Toast.LENGTH_SHORT).show();
 		Widget.show(this);
 		// Again from the start: the town lists, the theme and the language as in the file.
@@ -3703,17 +3712,93 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** v2.109: the other institutes' lists for the EU list (country code -> answer). */
 	private java.util.Map<String, String> quakesForeign = new java.util.HashMap<String, String>();
 
+	/** v2.120: 2 = the lists just came (tick), 3 = the last try failed (!), else 0. */
+	private int quakesEnd;
+
 	/** v2.108 (Viorel): ↻ and when the lists were last updated, above the first title. */
 	private void quakesRefreshRow() {
-		String w = quakesBusy || quakesCountry == null ? Tr.t("Updating…", "Se actualizează…")
-				: quakesAt > 0 ? Tr.t("Updated at ", "Actualizat la ") + s.qhm(quakesAt) : "";
-		help.refreshRow(w, new Runnable() {
+		String w, sub = null;
+		int st = quakesEnd;
+		quakesEnd = 0;
+		if (quakesBusy) {
+			w = Tr.t("Updating…", "Se actualizează…");
+			if (quakesAt > 0) sub = Tr.t("Saved list: ", "Lista salvată: ") + quakesWhen(quakesAt);
+			st = 1;
+		} else if (st == 3) {
+			w = Tr.t("Could not update", "Nu s-a putut actualiza");
+			if (quakesAt > 0) sub = Tr.t("Saved list: ", "Lista salvată: ") + quakesWhen(quakesAt);
+		} else w = quakesAt > 0 ? Tr.t("Updated: ", "Actualizat: ") + quakesWhen(quakesAt) : "";
+		help.refreshRow(w, sub, st, new Runnable() {
 			public void run() {
 				if (quakesBusy) return;
 				Log.i(MainActivity.this, "CUTREMUR", "actualizare cerută din pagina de cutremure");
 				quakesPage(true);
 			}
 		});
+	}
+
+	/** "azi, 14:47", "ieri, 22:10" or "17.11, 08:05". */
+	private String quakesWhen(long t) {
+		java.util.Calendar a = java.util.Calendar.getInstance(), b = java.util.Calendar.getInstance();
+		b.setTimeInMillis(t);
+		String hm = s.qhm(t);
+		int d = (a.get(java.util.Calendar.YEAR) - b.get(java.util.Calendar.YEAR)) * 400 + a.get(java.util.Calendar.DAY_OF_YEAR) - b.get(java.util.Calendar.DAY_OF_YEAR);
+		if (d == 0) return Tr.t("today, ", "azi, ") + hm;
+		if (d == 1) return Tr.t("yesterday, ", "ieri, ") + hm;
+		return new java.text.SimpleDateFormat("dd.MM", java.util.Locale.US).format(new java.util.Date(t)) + ", " + hm;
+	}
+
+	/** v2.120 (Viorel): the page's lists are kept on the phone, so the page opens at once. */
+	private java.io.File quakesFile() {
+		return new java.io.File(getFilesDir(), "quakes-page.json");
+	}
+
+	private void quakesSave() {
+		try {
+			org.json.JSONObject o = new org.json.JSONObject();
+			o.put("key", quakesKey);
+			o.put("at", quakesAt);
+			o.put("country", quakesCountry);
+			o.put("europe", quakesEurope);
+			if (quakesInfp != null) o.put("official", quakesInfp);
+			org.json.JSONObject f = new org.json.JSONObject();
+			for (java.util.Map.Entry<String, String> en : quakesForeign.entrySet()) f.put(en.getKey(), en.getValue());
+			o.put("foreign", f);
+			java.io.FileOutputStream out = new java.io.FileOutputStream(quakesFile());
+			out.write(o.toString().getBytes("UTF-8"));
+			out.close();
+		} catch (Exception e) {
+			Log.e(this, "CUTREMUR", "salvarea listelor", e);
+		}
+	}
+
+	/** Reads the saved lists of town KEY (false when none or of another town). */
+	private boolean quakesLoad(String key) {
+		try {
+			java.io.File f = quakesFile();
+			if (!f.exists()) return false;
+			byte[] buf = new byte[(int) f.length()];
+			java.io.DataInputStream in = new java.io.DataInputStream(new java.io.FileInputStream(f));
+			in.readFully(buf);
+			in.close();
+			org.json.JSONObject o = new org.json.JSONObject(new String(buf, "UTF-8"));
+			if (!key.equals(o.optString("key"))) return false;
+			quakesCountry = o.optString("country", "");
+			quakesEurope = o.optString("europe", "");
+			quakesInfp = o.has("official") ? o.optString("official") : null;
+			quakesAt = o.optLong("at", 0);
+			quakesForeign = new java.util.HashMap<String, String>();
+			org.json.JSONObject fo = o.optJSONObject("foreign");
+			if (fo != null) for (java.util.Iterator<String> it = fo.keys(); it.hasNext();) {
+				String k = it.next();
+				quakesForeign.put(k, fo.optString(k));
+			}
+			Log.i(this, "CUTREMUR", "liste salvate citite din telefon (" + quakesWhen(quakesAt) + ")");
+			return true;
+		} catch (Exception e) {
+			Log.e(this, "CUTREMUR", "citirea listelor salvate", e);
+			return false;
+		}
 	}
 
 	/**
@@ -3726,6 +3811,21 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		quakesPage(false);
 	}
 
+	/** Runs R in a new thread, returned started. */
+	private static Thread quakeJob(Runnable r) {
+		Thread t = new Thread(r);
+		t.start();
+		return t;
+	}
+
+	private static void join(Thread t) {
+		try {
+			t.join();
+		} catch (InterruptedException e) {
+			// go on
+		}
+	}
+
 	/** v2.108: FORCE = the ↻ button: downloaded again whatever the age of the lists. */
 	private void quakesPage(boolean force) {
 		// The lists are of the town they were downloaded for (EMSC or USGS, v2.30).
@@ -3733,39 +3833,61 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			quakesCountry = null;
 			quakesEurope = null;
 			quakesInfp = null;
+			quakesAt = 0;
 			quakesForeign = new java.util.HashMap<String, String>();
 			quakesKey = town.key();
+			quakesLoad(quakesKey);
 		}
-		if (force) quakesBusy = true;
+		boolean fresh = quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L;
+		if (quakesBusy || !force && fresh) {
+			showQuakes();
+			return;
+		}
+		quakesBusy = true;
 		showQuakes();
-		if (!force && quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L) return;
 		final Cities.City c = town;
 		final Context ctx = getApplicationContext();
+		final long t0 = System.currentTimeMillis();
 		new Thread(new Runnable() {
 			public void run() {
-				long now = System.currentTimeMillis();
-				String a = null, b = null;
-				String ci = null;
-				// v2.035 (Viorel): in Romania INFP's official values first, then EMSC.
-				if (Fetcher.infpFor(c)) try {
-					ci = Fetcher.officialRaw(ctx, Fetcher.officialOf(c));
-				} catch (Exception e) {
-					Log.e(ctx, "CUTREMUR", "lista " + Fetcher.officialOf(c).name + " a eșuat: " + Fetcher.reason(e, false));
-				}
-				try {
-					a = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usgsUrl(c.lat, c.lon, now - 7 * 86400000L)
-							: ro.meteoalarm.android.core.Quakes.url(c.lat, c.lon, now - 7 * 86400000L));
-				} catch (Exception e) {
-					Log.e(ctx, "CUTREMUR", "lista țării (7 zile) a eșuat: " + Fetcher.reason(e, false));
-				}
-				try {
-					b = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usUrl(now - 2 * 86400000L) : ro.meteoalarm.android.core.Quakes.europeUrl(now - 2 * 86400000L));
-				} catch (Exception e) {
-					Log.e(ctx, "CUTREMUR", "lista Europei (48 h) a eșuat: " + Fetcher.reason(e, false));
-				}
+				final long now = System.currentTimeMillis();
+				final String[] r = new String[3];
+				// v2.120 (Viorel): the lists are asked all at once (one after another took ~12 s).
+				// v2.035 (Viorel): in Romania INFP's official values, next to EMSC's.
+				Thread ti = quakeJob(new Runnable() {
+					public void run() {
+						if (Fetcher.infpFor(c)) try {
+							r[0] = Fetcher.officialRaw(ctx, Fetcher.officialOf(c));
+						} catch (Exception e) {
+							Log.e(ctx, "CUTREMUR", "lista " + Fetcher.officialOf(c).name + " a eșuat: " + Fetcher.reason(e, false));
+						}
+					}
+				});
+				Thread ta = quakeJob(new Runnable() {
+					public void run() {
+						try {
+							r[1] = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usgsUrl(c.lat, c.lon, now - 7 * 86400000L)
+									: ro.meteoalarm.android.core.Quakes.url(c.lat, c.lon, now - 7 * 86400000L));
+						} catch (Exception e) {
+							Log.e(ctx, "CUTREMUR", "lista țării (7 zile) a eșuat: " + Fetcher.reason(e, false));
+						}
+					}
+				});
+				Thread tb = quakeJob(new Runnable() {
+					public void run() {
+						try {
+							r[2] = Weather.get(c.us() ? ro.meteoalarm.android.core.Quakes.usUrl(now - 2 * 86400000L) : ro.meteoalarm.android.core.Quakes.europeUrl(now - 2 * 86400000L));
+						} catch (Exception e) {
+							Log.e(ctx, "CUTREMUR", "lista Europei (48 h) a eșuat: " + Fetcher.reason(e, false));
+						}
+					}
+				});
+				join(tb);
+				String b = r[2];
 				// v2.109 (Viorel): the quakes of the EU list in a country with its own institute take
 				// its value too, whatever the phone's country.
-				final java.util.Map<String, String> fo = new java.util.HashMap<String, String>();
+				final java.util.Map<String, String> fo = java.util.Collections.synchronizedMap(new java.util.HashMap<String, String>());
+				java.util.List<Thread> more = new java.util.ArrayList<Thread>();
 				if (b != null && !c.us()) {
 					java.util.Set<String> codes = new java.util.LinkedHashSet<String>();
 					try {
@@ -3775,28 +3897,45 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						// no list
 					}
 					ro.meteoalarm.android.core.Quakes.Official own = Fetcher.officialOf(c);
-					for (String code : codes) {
+					for (final String code : codes) {
 						if (code.length() == 0 || own != null && own.code.equals(code)) continue;
-						ro.meteoalarm.android.core.Quakes.Official o = ro.meteoalarm.android.core.Quakes.official(code);
+						final ro.meteoalarm.android.core.Quakes.Official o = ro.meteoalarm.android.core.Quakes.official(code);
 						if (o == null) continue;
-						try {
-							fo.put(code, Fetcher.officialRaw(ctx, o));
-						} catch (Exception e) {
-							Log.e(ctx, "CUTREMUR", "lista " + o.name + " a eșuat: " + Fetcher.reason(e, false));
-						}
+						more.add(quakeJob(new Runnable() {
+							public void run() {
+								try {
+									fo.put(code, Fetcher.officialRaw(ctx, o));
+								} catch (Exception e) {
+									Log.e(ctx, "CUTREMUR", "lista " + o.name + " a eșuat: " + Fetcher.reason(e, false));
+								}
+							}
+						}));
 					}
 				}
-				final String fa = a, fb = b, fi = ci;
+				join(ti);
+				join(ta);
+				for (Thread t : more) join(t);
+				final String fa = r[1], fb = b, fi = r[0];
+				final java.util.Map<String, String> ff = new java.util.HashMap<String, String>(fo);
 				handler.post(new Runnable() {
 					public void run() {
-						if (!c.key().equals(quakesKey)) return;
-						quakesCountry = fa == null ? "" : fa;
-						quakesEurope = fb == null ? "" : fb;
-						quakesInfp = fi;
-						quakesForeign = fo;
-						quakesAt = System.currentTimeMillis();
 						quakesBusy = false;
+						if (!c.key().equals(quakesKey)) return;
+						boolean ok = fa != null || fb != null;
+						Log.i(MainActivity.this, "CUTREMUR", "liste " + (ok ? "descărcate" : "nedescărcate") + " în " + (System.currentTimeMillis() - t0) / 100 / 10.0 + " s");
+						if (ok || quakesCountry == null) {
+							quakesCountry = fa == null ? "" : fa;
+							quakesEurope = fb == null ? "" : fb;
+							quakesInfp = fi;
+							quakesForeign = ff;
+							if (ok) {
+								quakesAt = System.currentTimeMillis();
+								quakesSave();
+							}
+						}
+						quakesEnd = ok ? 2 : 3;
 						if (help.isOpen() && quakesOpen) showQuakes();
+						else quakesEnd = 0;
 					}
 				});
 			}
@@ -4273,6 +4412,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ " " + Tr.t("On the whole screen: ☀ shows the brightness bar.", "Pe tot ecranul: ☀ arată bara de luminozitate.")
 				+ " " + Tr.t("The square's colour shows the magnitude: green under 3, yellow, amber, orange to red from 5.", "Culoarea pătratului arată magnitudinea: verde sub 3, galben, chihlimbar, portocaliu spre roșu de la 5.")
 				+ " " + Tr.t("In Romania, ↻ INFP asks for the official value again.", "În România, ↻ INFP cere din nou valoarea oficială.")
+				+ " " + Tr.t("The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.", "Pagina Cutremure se deschide imediat cu ultimele liste salvate; ↻ se rotește cât timp se actualizează.")
 				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC.") + " " + Tr.t("In Romania, the quakes around the country also get INFP's value (from infp.ro).", "În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
@@ -4312,7 +4452,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("widgetplus"), Tr.t("System & support", "Sistem & Suport"), Tr.t("The bar at the bottom of the window: Widgets, Export / Import, Log, Update, Share, Help, About. Pulled up, it shows the names under the icons.",
 				"Bara de jos a ferestrei: Widget-uri, Export / Import, Jurnal, Actualizare, Partajare, Ajutor, Despre. Trasă în sus, arată numele de sub iconuri."));
 		help.entry(mini("transfer"), Tr.t("Export / Import", "Export / Import"), Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
-				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier."));
+				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier.")
+				+ " " + Tr.t("Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.",
+						"Export: comutatoarele aleg ce intră în fișier; ▾ deschide localitățile și parcelele, ca să le bifezi pe rând. Import arată ce conține fișierul."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi."));
 		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));
 		help.entry(mini("share"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Sends the download link, e.g. on WhatsApp.", "Trimite linkul de descărcare, de exemplu pe WhatsApp."));

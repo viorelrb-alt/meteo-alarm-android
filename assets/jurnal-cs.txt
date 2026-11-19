@@ -1,4 +1,4 @@
-Současná verze: v.2.117 · 19.11.2026
+Současná verze: v.2.120 · 19.11.2026
 HLAVNÍ OBRAZOVKA
 - Informace o zemětřesení: klepnutí na pole Zemětřesení je otevře na hlavní obrazovce: mapa, pod ní zóny pocitu a historie hodnoty; barevný čtverec nebo mapa je otevře na celé obrazovce, jako zemětřesení z ☰ › Zemětřesení. V Rumunsku, Francii, Itálii, Nizozemsku, Švýcarsku a Řecku pocházejí oficiální hodnoty nejprve z národního ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), pak z EMSC. V Rumunsku dostávají hodnotu INFP (z infp.ro) i zemětřesení v okolí země.
 NASTAVENÍ
@@ -14,6 +14,8 @@ POZEMKY
 - Statistika na hlavní obrazovce: otevírá se pod provozním stavem (na šířku vlevo); ‹ ji zavře a karta jiného pozemku ji ponechá.
 - Statistika: pro každý pozemek Úkol dne a 4 karty: Provoz (okno postřiku hodinu po hodině, vysychání kapek (ΔT), vítr, mokrý list), Voda a půda (déšť, výpar, půda v 6 a 18 cm), Sezóna (denní stupně oproti loňsku, odhadovaná fáze) a Rizika 72 h (houbové choroby, přízemní mráz, horko, vítr a kroupy); uložení do PDF nebo CSV.
 - Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
+- Stránka Zemětřesení: otevře se hned s naposledy uloženými seznamy v telefonu a aktualizuje je na pozadí.
+- Export / Import: přepínače pro obsah souboru (i oznámení pozemků, koš pozemků, oznámení, mapa, widgety, historie zemětřesení, deník); obce a pozemky lze zaškrtnout jednotlivě.
 - Vylepšení vzhledu a opravy nahlášených chyb.
 
 Verze 1.4 (v.1.400 – v.1.520)

@@ -1,4 +1,4 @@
-Praegune versioon: v.2.117 · 19.11.2026
+Praegune versioon: v.2.120 · 19.11.2026
 PÕHIEKRAAN
 - Maavärina teave: puudutus väljal Maavärin avab selle põhiekraanil: kaart, selle all tuntavuse tsoonid ja väärtuse ajalugu; värviline ruut või kaart avab selle täisekraanil, nagu värina menüüst ☰ › Maavärinad. Rumeenias, Prantsusmaal, Itaalias, Hollandis, Šveitsis ja Kreekas tulevad ametlikud väärtused esmalt riigi instituudilt (INFP, BCSF, INGV, KNMI, SED, NOA), seejärel EMSC-lt. Rumeenias saavad ka riigi ümbruse maavärinad INFP väärtuse (infp.ro-st).
 PÕLLULAPID
@@ -14,6 +14,8 @@ SEADED
 TEAVITUSED
 - Maavärinad: kontrollitakse iga 10 minuti järel, ka öösel kustunud ekraaniga; täpsustatud magnituud uuendab teadet ja selle puudutus avab kaardi.
 - Uus versioon: sisselülitatud teavitustega kontrollib rakendus kord nädalas GitHubi ja teatab uuest versioonist Androidi teavitustes; puudutus avab Otsi uuendusi.
+- Leht Maavärinad: avaneb kohe telefoni viimati salvestatud loenditega ja uuendab neid taustal.
+- Eksport / Import: lülitid faili sisu jaoks (ka põldude teavitused, põldude prügikast, teavitused, kaart, vidinad, maavärinate ajalugu, logi); kohti ja põlde saab märkida ükshaaval.
 - Disainiparandused ja teatatud vigade parandused.
 
 Versioon 1.4 (v.1.400 – v.1.520)

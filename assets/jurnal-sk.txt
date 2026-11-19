@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.117 · 19.11.2026
+Súčasná verzia: v.2.120 · 19.11.2026
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
 NASTAVENIA
@@ -14,6 +14,8 @@ POZEMKY
 UPOZORNENIA
 - Zemetrasenia: kontrolované každých 10 minút, aj v noci s vypnutou obrazovkou; revidovaná magnitúda aktualizuje oznámenie a ťuknutie naň otvorí mapu.
 - Nová verzia: so zapnutými oznámeniami aplikácia raz týždenne skontroluje GitHub a ohlási novú verziu v oznámeniach Androidu; ťuknutie otvorí Skontrolovať aktualizácie.
+- Stránka Zemetrasenia: otvorí sa hneď s naposledy uloženými zoznamami v telefóne a aktualizuje ich na pozadí.
+- Export / Import: prepínače pre obsah súboru (aj upozornenia pozemkov, kôš pozemkov, upozornenia, mapa, widgety, história zemetrasení, denník); obce a pozemky sa dajú zaškrtnúť po jednom.
 - Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.4 (v.1.400 – v.1.520)
