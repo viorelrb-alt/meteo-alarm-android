@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.141 · 19.11.2026
+Trenutačna verzija: v.2.142 · 19.11.2026
 GLAVNI ZASLON
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 OBAVIJESTI

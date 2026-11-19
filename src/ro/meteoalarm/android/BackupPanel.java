@@ -108,7 +108,7 @@ final class BackupPanel {
 		// v2.140 (Viorel): no band of its own; the shade starts under the main screen's band,
 		// which stays as it is (the same clock everywhere).
 		final View shade = new View(ctx);
-		shade.setBackgroundColor(dark ? 0x73000000 : 0x4D141E28);
+		shade.setBackgroundColor(0); // v2.142 (Viorel): no shade, the screen behind stays as it is
 		final FrameLayout.LayoutParams shl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 		shl.topMargin = TopBand.shadeTop(ctx, null);
 		root.addView(shade, shl);
@@ -638,21 +638,23 @@ final class BackupPanel {
 			// v2.141 (Viorel): the boxes keep their size; Aa does not change them, the text fits inside.
 			LinearLayout c = new LinearLayout(ctx);
 			c.setOrientation(LinearLayout.VERTICAL);
-			c.setGravity(Gravity.CENTER_VERTICAL);
+			c.setGravity(Gravity.CENTER);
 			c.setBackground(Glass.pill(Glass.disc(dark), 0, 12 * dp, dp));
 			c.setPadding(px(10), px(6), px(10), px(6));
 			FitText k = new FitText(ctx, 1, 0.5f);
 			k.setTypeface(reg);
 			k.setTextColor(dim());
 			k.setIncludeFontPadding(false);
-			k.setTextSize(12);
+			k.setTextSize(android.util.TypedValue.COMPLEX_UNIT_DIP, 12);
+			k.setGravity(Gravity.CENTER);
 			k.setText(cells[i][0]);
 			c.addView(k, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			FitText v = new FitText(ctx, 1, 0.4f);
 			v.setTypeface(bold);
 			v.setTextColor(i == 2 && errs > 0 ? 0xFFE0603F : ink());
 			v.setIncludeFontPadding(false);
-			v.setTextSize(18);
+			v.setTextSize(android.util.TypedValue.COMPLEX_UNIT_DIP, 18);
+			v.setGravity(Gravity.CENTER);
 			v.setText(cells[i][1]);
 			LinearLayout.LayoutParams vl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 			vl.topMargin = px(4);
@@ -663,10 +665,20 @@ final class BackupPanel {
 		}
 		info.addView(st);
 		if (warns > 0) {
-			TextView wn = text(13, false, dim());
+			// v2.142 (Viorel): in a box of its own, on one row.
+			FitText wn = new FitText(ctx, 1, 0.4f);
+			wn.setTypeface(reg);
+			wn.setTextColor(ink());
+			wn.setIncludeFontPadding(false);
+			wn.setTextSize(android.util.TypedValue.COMPLEX_UNIT_DIP, 14);
+			wn.setGravity(Gravity.CENTER);
 			wn.setText(warns == 1 ? Tr.t("There is 1 warning to look into.", "Este 1 avertizare de analizat.")
 					: String.format(Tr.t("There are %d warnings to look into.", "Sunt %d avertizări de analizat."), warns));
-			wn.setPadding(0, px(10), 0, 0);
+			wn.setBackground(Glass.pill(Glass.disc(dark), 0, 12 * dp, dp));
+			wn.setPadding(px(10), 0, px(10), 0);
+			LinearLayout.LayoutParams wl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, px(40));
+			wl.topMargin = px(8);
+			wn.setLayoutParams(wl);
 			info.addView(wn);
 		}
 		ScrollView sv = new ScrollView(ctx);

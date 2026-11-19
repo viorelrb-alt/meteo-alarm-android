@@ -42,7 +42,7 @@ final class Ask {
 		w.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(0));
 		final FrameLayout root = new FrameLayout(ctx);
 		final View shade = new View(ctx);
-		shade.setBackgroundColor(dark ? 0x73000000 : 0x4D141E28);
+		shade.setBackgroundColor(0); // v2.142 (Viorel): no shade, the screen behind stays as it is
 		shade.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				d.dismiss();
