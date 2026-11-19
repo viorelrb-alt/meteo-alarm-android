@@ -66,7 +66,6 @@ final class Ask {
 		android.graphics.drawable.GradientDrawable pb = Glass.panelBg(dark, 24 * dp, dp);
 		pb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.92f : 0.95f));
 		col.setBackground(pb);
-		col.setElevation(8 * dp);
 		LinearLayout head = new LinearLayout(ctx);
 		head.setGravity(Gravity.CENTER_VERTICAL);
 		FitText t = new FitText(ctx, 1, 0.5f);

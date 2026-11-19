@@ -1651,3 +1651,6 @@ Line copied	Riadok skopírovaný
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Rovnaký pás je nad Parcelami a obrazovkou zemetrasenia; okná Export, Import a Denník nechávajú pás hlavnej obrazovky viditeľný.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Čo aplikácia robila, s časom: veľkosť, riadky a chyby. Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť sú dole.
 The ＋ tab of the main screen asks first too.	Aj karta ＋ hlavnej obrazovky sa najprv opýta.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Chyby počíta len skutočné, zatiaľ neopravené chyby; opravené idú do vlastnej časti na konci denníka a problémy siete sú upozornenia.
+There is 1 warning to look into.	Je 1 upozornenie na preverenie.
+There are %d warnings to look into.	Upozornenia na preverenie: %d.

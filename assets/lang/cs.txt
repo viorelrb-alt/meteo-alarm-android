@@ -1651,3 +1651,6 @@ Line copied	Řádek zkopírován
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Stejný pruh je nad Parcelami a obrazovkou zemětřesení; okna Export, Import a Protokol nechávají pruh hlavní obrazovky viditelný.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Co aplikace dělala, s časem: velikost, řádky a chyby. Zobrazit protokol otevře řádky (Vše, Chyby, Dnes, Včera; dlouhé klepnutí zkopíruje řádek); Sdílet a Uložit jsou dole.
 The ＋ tab of the main screen asks first too.	I karta ＋ hlavní obrazovky se nejdřív zeptá.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Chyby počítá jen skutečné, dosud neopravené chyby; opravené jdou do vlastního oddílu na konci protokolu a problémy sítě jsou varování.
+There is 1 warning to look into.	Je 1 varování k prověření.
+There are %d warnings to look into.	Varování k prověření: %d.

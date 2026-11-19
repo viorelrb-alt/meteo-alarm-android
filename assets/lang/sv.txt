@@ -1651,3 +1651,6 @@ Line copied	Rad kopierad
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Samma list visas över Skiften och jordbävningsskärmen; fönstren Export, Import och Logg låter huvudskärmens list synas.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Vad appen gjorde, med tid: storlek, rader och fel. Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara finns längst ner.
 The ＋ tab of the main screen asks first too.	Även huvudskärmens ＋-flik frågar först.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Fel räknar bara verkliga fel som ännu inte är åtgärdade; åtgärdade hamnar i ett eget avsnitt i slutet av loggen, och nätverksproblem är varningar.
+There is 1 warning to look into.	Det finns 1 varning att titta på.
+There are %d warnings to look into.	Det finns %d varningar att titta på.

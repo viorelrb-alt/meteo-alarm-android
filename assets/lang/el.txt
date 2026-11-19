@@ -1651,3 +1651,6 @@ Line copied	Η γραμμή αντιγράφηκε
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Η ίδια λωρίδα εμφανίζεται πάνω από τα Αγροτεμάχια και την οθόνη σεισμού· τα παράθυρα Εξαγωγή, Εισαγωγή και Ημερολόγιο αφήνουν ορατή τη λωρίδα της κύριας οθόνης.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Τι έκανε η εφαρμογή, με την ώρα: μέγεθος, γραμμές και σφάλματα. Το Δες το ημερολόγιο ανοίγει τις γραμμές (Όλες, Σφάλματα, Σήμερα, Χθες· παρατεταμένο άγγιγμα αντιγράφει μια γραμμή)· η Κοινοποίηση και η Αποθήκευση είναι κάτω.
 The ＋ tab of the main screen asks first too.	Και η καρτέλα ＋ της κύριας οθόνης ρωτά πρώτα.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Τα Σφάλματα μετρούν μόνο τα πραγματικά σφάλματα που δεν έχουν διορθωθεί· τα διορθωμένα πηγαίνουν σε δική τους ενότητα στο τέλος του ημερολογίου, και τα προβλήματα δικτύου είναι προειδοποιήσεις.
+There is 1 warning to look into.	Υπάρχει 1 προειδοποίηση για έλεγχο.
+There are %d warnings to look into.	Υπάρχουν %d προειδοποιήσεις για έλεγχο.

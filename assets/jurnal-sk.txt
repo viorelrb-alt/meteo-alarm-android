@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.140 · 19.11.2026
+Súčasná verzia: v.2.141 · 19.11.2026
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
 NASTAVENIA
@@ -16,7 +16,7 @@ UPOZORNENIA
 - Nová verzia: so zapnutými oznámeniami aplikácia raz týždenne skontroluje GitHub a ohlási novú verziu v oznámeniach Androidu; ťuknutie otvorí Skontrolovať aktualizácie.
 - Stránka Zemetrasenia: otvorí sa hneď s naposledy uloženými zoznamami v telefóne a aktualizuje ich na pozadí.
 - Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.
-- Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke.
+- Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke. Opravené chyby sú na konci denníka a nepočítajú sa; problémy siete sú upozornenia.
 - Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.4 (v.1.400 – v.1.520)

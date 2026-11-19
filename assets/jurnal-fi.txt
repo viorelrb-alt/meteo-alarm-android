@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.140 · 19.11.2026
+Nykyinen versio: v.2.141 · 19.11.2026
 ASETUKSET
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 ILMOITUKSET
@@ -16,7 +16,7 @@ PELTOLOHKOT
 - Toimintatila: ylhäällä viljelykasvi ja kylvöpäivä; viljelykasvin kanssa arvio huomioi myös pisaroiden kuivumisen (ΔT) ja sen taudin.
 - Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
 - Vienti / Tuonti: kytkimet tiedoston sisällölle (myös viljelykasvit ja viljelytiedot, lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); Viennissä ja Tuonnissa paikkakunnat ja lohkot valitaan yksitellen; Aa-painike muuttaa tekstin kokoa.
-- Loki: koko, rivit ja virheet kortilla; Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna näytön alareunassa.
+- Loki: koko, rivit ja virheet kortilla; Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna näytön alareunassa. Korjatut virheet ovat lokin lopussa eikä niitä lasketa; verkon ongelmat ovat varoituksia.
 - Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.4 (v.1.400 – v.1.520)

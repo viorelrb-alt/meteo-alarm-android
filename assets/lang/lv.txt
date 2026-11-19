@@ -1651,3 +1651,6 @@ Line copied	Rinda nokopēta
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Tā pati josla redzama virs Laukiem un zemestrīces ekrāna; logi Eksports, Imports un Žurnāls atstāj redzamu galvenā ekrāna joslu.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Ko lietotne darīja, ar laiku: izmērs, rindas un kļūdas. Skatīt žurnālu atver rindas (Visas, Kļūdas, Šodien, Vakar; ilgs pieskāriens nokopē rindu); Kopīgot un Saglabāt ir apakšā.
 The ＋ tab of the main screen asks first too.	Arī galvenā ekrāna cilne ＋ vispirms jautā.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Kļūdas skaita tikai īstās, vēl nenovērstās kļūdas; novērstās nonāk atsevišķā sadaļā žurnāla beigās, un tīkla problēmas ir brīdinājumi.
+There is 1 warning to look into.	Ir 1 brīdinājums, ko izskatīt.
+There are %d warnings to look into.	Brīdinājumi, ko izskatīt: %d.

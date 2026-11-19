@@ -1585,3 +1585,6 @@ Line copied	Satır kopyalandı
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Aynı şerit Parseller ve deprem ekranının üstünde görünür; Dışa aktar, İçe aktar ve Günlük pencereleri ana ekranın şeridini görünür bırakır.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Uygulamanın yaptıkları, saatiyle: boyut, satırlar ve hatalar. Günlüğü gör satırları açar (Tümü, Hatalar, Bugün, Dün; uzun dokunma bir satırı kopyalar); Paylaş ve Kaydet alttadır.
 The ＋ tab of the main screen asks first too.	Ana ekranın ＋ sekmesi de önce sorar.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Hatalar yalnızca henüz düzeltilmemiş gerçek hataları sayar; düzeltilenler günlüğün sonunda ayrı bir bölüme gider, ağ sorunları ise uyarıdır.
+There is 1 warning to look into.	İncelenecek 1 uyarı var.
+There are %d warnings to look into.	İncelenecek %d uyarı var.

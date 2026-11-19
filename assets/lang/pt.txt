@@ -1651,3 +1651,6 @@ Line copied	Linha copiada
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	A mesma faixa aparece sobre Parcelas e o ecrã do sismo; as janelas Exportar, Importar e Registo deixam à vista a faixa do ecrã principal.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	O que a app fez, com a hora: tamanho, linhas e erros. Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar estão em baixo.
 The ＋ tab of the main screen asks first too.	O separador ＋ do ecrã principal também pergunta primeiro.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Erros conta só os erros reais ainda não resolvidos; os resolvidos vão para uma secção própria no fim do registo, e os problemas de rede são avisos.
+There is 1 warning to look into.	Há 1 aviso para analisar.
+There are %d warnings to look into.	Há %d avisos para analisar.

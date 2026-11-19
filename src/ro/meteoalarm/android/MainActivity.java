@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.140";
+	static final String VERSION = "Meteo Alarm Android v2.141";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -4517,6 +4517,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						"Export și Import: comutatoarele aleg ce intră; ▾ deschide localitățile și parcelele, ca să le bifezi pe rând. Culturile și datele de cultivare au comutatorul lor. Aa schimbă mărimea textului."));
 		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.",
 				"Ce a făcut aplicația, cu ora: mărimea, liniile și erorile. Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează sunt jos.") + " "
+				+ Tr.t("Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.",
+						"Erori numără doar erorile reale încă nerezolvate; cele rezolvate trec într-o zonă separată, la sfârșitul jurnalului, iar problemele rețelei sunt avertizări.") + " "
 				+ Tr.t("Aa sets the text size.", "Aa schimbă mărimea textului."));
 		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));
 		help.entry(mini("share"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Sends the download link, e.g. on WhatsApp.", "Trimite linkul de descărcare, de exemplu pe WhatsApp."));

@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.140 · 19.11.2026
+Dabartinė versija: v.2.141 · 19.11.2026
 NUSTATYMAI
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 PAGRINDINIS EKRANAS
@@ -16,7 +16,7 @@ SKLYPAI
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
 - Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
 - Eksportas / Importas: jungikliai failo turiniui (taip pat kultūros ir auginimo duomenys, sklypų pranešimai, sklypų šiukšlinė, pranešimai, žemėlapis, valdikliai, žemės drebėjimų istorija, žurnalas); Eksporte ir Importe vietovės ir sklypai pažymimi po vieną; mygtukas Aa keičia teksto dydį.
-- Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje.
+- Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje. Ištaisytos klaidos yra žurnalo pabaigoje ir neskaičiuojamos; tinklo problemos yra įspėjimai.
 - Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 1.4 versija (v.1.400 – v.1.520)

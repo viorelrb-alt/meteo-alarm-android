@@ -1651,3 +1651,6 @@ Line copied	Zeile kopiert
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Dieselbe Leiste erscheint über Parzellen und dem Erdbebenbildschirm; die Fenster Export, Import und Protokoll lassen die Leiste des Hauptbildschirms sichtbar.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Was die App getan hat, mit Uhrzeit: Größe, Zeilen und Fehler. Protokoll ansehen öffnet die Zeilen (Alle, Fehler, Heute, Gestern; langes Tippen kopiert eine Zeile); Teilen und Speichern sind unten.
 The ＋ tab of the main screen asks first too.	Auch der ＋-Tab des Hauptbildschirms fragt zuerst.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Fehler zählt nur echte, noch nicht behobene Fehler; behobene stehen in einem eigenen Abschnitt am Ende des Protokolls, Netzwerkprobleme sind Warnungen.
+There is 1 warning to look into.	Es gibt 1 Warnung zu prüfen.
+There are %d warnings to look into.	Es gibt %d Warnungen zu prüfen.

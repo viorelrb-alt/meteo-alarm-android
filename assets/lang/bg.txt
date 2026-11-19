@@ -1651,3 +1651,6 @@ Line copied	Редът е копиран
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Същата лента се показва над Парцели и екрана за земетресение; прозорците Експорт, Импорт и Дневник оставят видима лентата на главния екран.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Какво е правило приложението, с часа: размер, редове и грешки. Виж дневника отваря редовете (Всички, Грешки, Днес, Вчера; продължително докосване копира ред); Сподели и Запази са долу.
 The ＋ tab of the main screen asks first too.	Разделът ＋ на главния екран също пита първо.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Грешки брои само истинските, още неотстранени грешки; отстранените отиват в отделен раздел в края на дневника, а проблемите с мрежата са предупреждения.
+There is 1 warning to look into.	Има 1 предупреждение за преглед.
+There are %d warnings to look into.	Има %d предупреждения за преглед.

@@ -1651,3 +1651,6 @@ Line copied	Рядок скопійовано
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Та сама смуга показується над Ділянками та екраном землетрусу; вікна Експорт, Імпорт і Журнал залишають видимою смугу головного екрана.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Що робив застосунок, із часом: розмір, рядки й помилки. Переглянути журнал відкриває рядки (Усі, Помилки, Сьогодні, Учора; довгий дотик копіює рядок); Поділитися й Зберегти внизу.
 The ＋ tab of the main screen asks first too.	Вкладка ＋ головного екрана теж спершу питає.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Помилки рахує лише справжні, ще не виправлені помилки; виправлені йдуть до окремого розділу в кінці журналу, а проблеми мережі — це попередження.
+There is 1 warning to look into.	Є 1 попередження для перевірки.
+There are %d warnings to look into.	Попереджень для перевірки: %d.

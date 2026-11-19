@@ -1651,3 +1651,6 @@ Line copied	Eilutė nukopijuota
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ta pati juosta rodoma virš Sklypų ir žemės drebėjimo ekrano; langai Eksportas, Importas ir Žurnalas palieka matomą pagrindinio ekrano juostą.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Ką darė programa, su laiku: dydis, eilutės ir klaidos. Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti yra apačioje.
 The ＋ tab of the main screen asks first too.	Ir pagrindinio ekrano skirtukas ＋ pirmiausia klausia.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Klaidos skaičiuoja tik tikras, dar neištaisytas klaidas; ištaisytos keliauja į atskirą skyrių žurnalo pabaigoje, o tinklo problemos yra įspėjimai.
+There is 1 warning to look into.	Yra 1 įspėjimas peržiūrėti.
+There are %d warnings to look into.	Įspėjimų peržiūrėti: %d.

@@ -1651,3 +1651,6 @@ Line copied	Líne cóipeáilte
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Taispeántar an banda céanna os cionn Ceapacha agus scáileán an chrith talún; fágann na fuinneoga Easpórtáil, Iompórtáil agus Loga banda an phríomhscáileáin le feiceáil.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	An méid a rinne an aip, leis an am: a mhéid, a línte agus a earráidí. Osclaíonn Féach ar an loga na línte (Gach, Earráidí, Inniu, Inné; cóipeálann brú fada líne); tá Comhroinn agus Sábháil thíos.
 The ＋ tab of the main screen asks first too.	Fiafraíonn cluaisín ＋ an phríomhscáileáin ar dtús freisin.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Ní chomhaireann Earráidí ach na fíor-earráidí nár socraíodh fós; téann na cinn socraithe chuig a gcuid féin ag deireadh an loga, agus is rabhaidh iad fadhbanna líonra.
+There is 1 warning to look into.	Tá 1 rabhadh le scrúdú.
+There are %d warnings to look into.	Tá %d rabhadh le scrúdú.

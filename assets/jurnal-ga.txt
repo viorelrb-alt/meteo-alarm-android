@@ -1,4 +1,4 @@
-Leagan reatha: v.2.140 · 19.11.2026
+Leagan reatha: v.2.141 · 19.11.2026
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
@@ -16,7 +16,7 @@ SOCRUITHE
 - Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
 - Leathanach Crith talún: osclaíonn sé láithreach leis na liostaí is déanaí a sábháladh ar an bhfón agus nuashonraíonn sé iad sa chúlra.
 - Easpórtáil / Iompórtáil: lasca don ábhar sa chomhad (barra agus sonraí saothraithe freisin, fógraí ceapach, bosca bruscair na gceapach, fógraí, léarscáil, giuirléidí, stair na gcrith talún, loga); in Easpórtáil agus Iompórtáil ticeáiltear bailte agus ceapacha ceann ar cheann; athraíonn an cnaipe Aa méid an téacs.
-- Loga: méid, línte agus earráidí ar chárta; osclaíonn Féach ar an loga na línte (Gach, Earráidí, Inniu, Inné; cóipeálann brú fada líne); Comhroinn agus Sábháil ag bun an scáileáin.
+- Loga: méid, línte agus earráidí ar chárta; osclaíonn Féach ar an loga na línte (Gach, Earráidí, Inniu, Inné; cóipeálann brú fada líne); Comhroinn agus Sábháil ag bun an scáileáin. Tá earráidí socraithe ag deireadh an loga agus ní chomhairtear iad; is rabhaidh iad fadhbanna líonra.
 - Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.4 (v.1.400 – v.1.520)

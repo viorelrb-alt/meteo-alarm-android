@@ -162,18 +162,95 @@ final class Log {
 				+ "Exportat: " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(new Date()) + "\n";
 	}
 
-	/** The whole diary in one text: the header, the errors section (10 days), then the 5 days. */
+	/**
+	 * v2.141 (Viorel): errors fixed in a version: a piece of the line and that version. Such an
+	 * error, written by an older version, goes to the section ERORI REZOLVATE and is not counted.
+	 */
+	private static final String[][] FIXED = { { "lista NOA a eșuat: eroare server HTTP 400", "2.112" }, { "cutremure NOA a eșuat: eroare server HTTP 400", "2.112" } };
+	static final String RESOLVED = "===== ERORI REZOLVATE (nu sunt numărate) =====";
+
+	/** A version as a number: 2.112 -> 2112; the old numbering (v5.31, 2 decimals) comes before 2.000. */
+	private static int verKey(String v) {
+		try {
+			int d = v.indexOf('.');
+			int major = Integer.parseInt(v.substring(0, d));
+			String f = v.substring(d + 1);
+			return f.length() >= 3 ? major * 1000 + Integer.parseInt(f.substring(0, 3)) : 1000 + major * 100 + Integer.parseInt(f);
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+
+	/** The version that fixed this error line, or null; VER: the app's version when it was written (null: not known, older). */
+	private static String fixedIn(String line, String ver) {
+		for (String[] f : FIXED)
+			if (line.contains(f[0]) && (ver == null || verKey(ver) < verKey(f[1]))) return f[1];
+		return null;
+	}
+
+	/** The level of a line (I, W, E) or a space: "HH:mm:ss.SSS L" or "yyyy-MM-dd HH:mm:ss.SSS L". */
+	static char level(String l) {
+		if (l.length() > 14 && l.charAt(2) == ':' && l.charAt(12) == ' ' && l.charAt(14) == ' ') return l.charAt(13);
+		if (l.length() > 25 && l.charAt(4) == '-' && l.charAt(23) == ' ' && l.charAt(25) == ' ') return l.charAt(24);
+		return ' ';
+	}
+
+	/** v2.141 (Viorel): an error of the network (no answer in time, no internet): a warning, not an error of the app. */
+	static boolean network(String l) {
+		return l.contains("nu a răspuns la timp") || l.contains("fără internet") || l.contains("fără conexiune") || l.contains("eroare rețea:");
+	}
+
+	/** {lines, errors, warnings} of an export: errors = the real ones not yet fixed; the fixed ones are not counted. */
+	static int[] tally(String text) {
+		int[] n = new int[3];
+		boolean fixed = false;
+		for (String l : text.split("\n")) {
+			if (l.startsWith("=====")) {
+				fixed = l.equals(RESOLVED);
+				continue;
+			}
+			char v = level(l);
+			if (v == ' ') continue;
+			n[0]++;
+			if (fixed) continue;
+			if (v == 'W' || v == 'E' && network(l)) n[2]++;
+			else if (v == 'E') n[1]++;
+		}
+		return n;
+	}
+
+	/** The whole diary in one text: the header, the errors section (10 days), the 5 days, then the fixed errors. */
 	static synchronized String export(Context c) {
 		init(c);
-		StringBuilder b = new StringBuilder(header(c));
+		StringBuilder b = new StringBuilder(header(c)), fixed = new StringBuilder();
 		File d = dir(c);
-		String err = read(new File(d, "erori.txt"));
-		b.append("\n===== ERORI (zilele mai vechi, păstrate 10 zile) =====\n").append(err.length() > 0 ? err : "(niciuna)\n");
+		StringBuilder old = new StringBuilder();
+		for (String l : read(new File(d, "erori.txt")).split("\n")) {
+			if (l.length() == 0) continue;
+			String f = fixedIn(l, null);
+			if (f != null) fixed.append(l).append("  → rezolvată în v").append(f).append('\n');
+			else old.append(l).append('\n');
+		}
+		b.append("\n===== ERORI (zilele mai vechi, păstrate 10 zile) =====\n").append(old.length() > 0 ? old : "(niciuna)\n");
 		String[] names = d.list();
 		List<String> days = new ArrayList<String>();
 		if (names != null) for (String n : names) if (n.matches("\\d{4}-\\d{2}-\\d{2}\\.txt")) days.add(n);
 		java.util.Collections.sort(days);
-		for (String n : days) b.append("\n===== ").append(n.substring(0, 10)).append(" =====\n").append(read(new File(d, n)));
+		java.util.regex.Pattern vp = java.util.regex.Pattern.compile("pornită Meteo Alarm Android v(\\d+\\.\\d+)");
+		String ver = null;
+		for (String n : days) {
+			String day = n.substring(0, 10);
+			b.append("\n===== ").append(day).append(" =====\n");
+			for (String l : read(new File(d, n)).split("\n")) {
+				if (l.length() == 0) continue;
+				java.util.regex.Matcher m = vp.matcher(l);
+				if (m.find()) ver = m.group(1);
+				String f = level(l) == 'E' ? fixedIn(l, ver) : null;
+				if (f != null) fixed.append(day).append(' ').append(l).append("  → rezolvată în v").append(f).append('\n');
+				else b.append(l).append('\n');
+			}
+		}
+		if (fixed.length() > 0) b.append('\n').append(RESOLVED).append('\n').append(fixed);
 		return b.toString();
 	}
 

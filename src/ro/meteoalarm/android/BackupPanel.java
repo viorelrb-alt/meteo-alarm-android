@@ -149,7 +149,7 @@ final class BackupPanel {
 		t.setTypeface(bold);
 		t.setTextColor(ink());
 		t.setIncludeFontPadding(false);
-		TextSize.size(t, 26, ts);
+		t.setTextSize(26);
 		t.setText(title);
 		head.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 		// Aa: the text-size bar, as on Help.
@@ -212,7 +212,7 @@ final class BackupPanel {
 			b.setTypeface(bold);
 			b.setTextColor(i == 0 ? 0xFFFFFFFF : ink());
 			b.setIncludeFontPadding(false);
-			TextSize.size(b, 17, ts);
+			b.setTextSize(17);
 			b.setText(i == 0 ? b1 : b2);
 			b.setGravity(Gravity.CENTER);
 			b.setPadding(px(8), 0, px(8), 0);
@@ -619,18 +619,9 @@ final class BackupPanel {
 				"Când ceva nu merge, apasă Trimite sau Salvează și trimite-l autorului."));
 		b.setPadding(0, px(6), 0, 0);
 		info.addView(b);
-		// Size, lines, errors.
-		int lines = 0, errs = 0;
-		for (String l : text.split("\n")) {
-			if (l.startsWith("=====")) continue;
-			if (l.length() > 13 && l.charAt(2) == ':') {
-				lines++;
-				if (l.startsWith(" E ", 12)) errs++;
-			} else if (l.length() > 24 && l.charAt(4) == '-' && l.startsWith(" E ", 23)) {
-				lines++;
-				errs++;
-			}
-		}
+		// Size, lines, errors (v2.141: only the real errors not yet fixed; the network's are warnings).
+		int[] n = Log.tally(text);
+		int lines = n[0], errs = n[1], warns = n[2];
 		long bytes;
 		try {
 			bytes = text.getBytes("UTF-8").length;
@@ -644,24 +635,40 @@ final class BackupPanel {
 		String[][] cells = { { Tr.t("Size", "Mărime"), size }, { Tr.t("Lines", "Linii"), String.format(java.util.Locale.FRANCE, "%,d", lines).replace('\u202f', ' ').replace('\u00a0', ' ') },
 				{ Tr.t("Errors", "Erori"), String.valueOf(errs) } };
 		for (int i = 0; i < 3; i++) {
+			// v2.141 (Viorel): the boxes keep their size; Aa does not change them, the text fits inside.
 			LinearLayout c = new LinearLayout(ctx);
 			c.setOrientation(LinearLayout.VERTICAL);
+			c.setGravity(Gravity.CENTER_VERTICAL);
 			c.setBackground(Glass.pill(Glass.disc(dark), 0, 12 * dp, dp));
-			c.setPadding(px(10), px(8), px(10), px(8));
-			TextView k = text(12, false, dim());
+			c.setPadding(px(10), px(6), px(10), px(6));
+			FitText k = new FitText(ctx, 1, 0.5f);
+			k.setTypeface(reg);
+			k.setTextColor(dim());
+			k.setIncludeFontPadding(false);
+			k.setTextSize(12);
 			k.setText(cells[i][0]);
-			c.addView(k);
-			FitText v = new FitText(ctx, 1, 0.5f);
+			c.addView(k, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			FitText v = new FitText(ctx, 1, 0.4f);
 			v.setTypeface(bold);
 			v.setTextColor(i == 2 && errs > 0 ? 0xFFE0603F : ink());
-			TextSize.size(v, 18, ts);
+			v.setIncludeFontPadding(false);
+			v.setTextSize(18);
 			v.setText(cells[i][1]);
-			c.addView(v);
-			LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			LinearLayout.LayoutParams vl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			vl.topMargin = px(4);
+			c.addView(v, vl);
+			LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(0, px(58), 1);
 			if (i > 0) cl.leftMargin = px(8);
 			st.addView(c, cl);
 		}
 		info.addView(st);
+		if (warns > 0) {
+			TextView wn = text(13, false, dim());
+			wn.setText(warns == 1 ? Tr.t("There is 1 warning to look into.", "Este 1 avertizare de analizat.")
+					: String.format(Tr.t("There are %d warnings to look into.", "Sunt %d avertizări de analizat."), warns));
+			wn.setPadding(0, px(10), 0, 0);
+			info.addView(wn);
+		}
 		ScrollView sv = new ScrollView(ctx);
 		sv.addView(info);
 		body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -674,7 +681,7 @@ final class BackupPanel {
 			bt.setTypeface(bold);
 			bt.setTextColor(i == 1 ? 0xFFFFFFFF : ink());
 			bt.setIncludeFontPadding(false);
-			TextSize.size(bt, 17, ts);
+			bt.setTextSize(17);
 			bt.setText(icons[i] + "   " + names[i]);
 			bt.setGravity(Gravity.CENTER);
 			bt.setPadding(px(12), 0, px(12), 0);
@@ -699,6 +706,14 @@ final class BackupPanel {
 	 * Azi, Ieri; a list that makes only the lines in sight (fast, also with Aa); the newest at the
 	 * end; a long touch copies the line.
 	 */
+	private java.util.List<String> shownDay;
+	private static final String fixedDay = Log.RESOLVED.replace("=", "").trim();
+
+	/** Whether the row I shown is in the section of the fixed errors. */
+	private boolean fixedRow(int i) {
+		return shownDay != null && i < shownDay.size() && shownDay.get(i).equals(fixedDay);
+	}
+
 	void lines(String text) {
 		backStyle = true;
 		frame(Tr.t("The log's lines", "Liniile jurnalului"), null, null, null, null, null,
@@ -716,6 +731,8 @@ final class BackupPanel {
 		cal.add(java.util.Calendar.DAY_OF_YEAR, -1);
 		final String yest = f.format(cal.getTime());
 		final java.util.List<String> shown = new java.util.ArrayList<String>();
+		shownDay = new java.util.ArrayList<String>();
+		final java.util.List<String> sd = shownDay;
 		final android.widget.ListView lv = new android.widget.ListView(ctx);
 		lv.setDivider(null);
 		lv.setFastScrollEnabled(true);
@@ -740,7 +757,8 @@ final class BackupPanel {
 				String l = shown.get(i);
 				boolean h = l.startsWith("=====");
 				t.setTypeface(h ? bold : Typeface.MONOSPACE);
-				t.setTextColor(h ? accent() : l.startsWith(" E ", 12) || l.startsWith(" E ", 23) ? 0xFFE0603F : ink());
+				char lv = Log.level(l);
+				t.setTextColor(h ? accent() : lv == 'E' && !Log.network(l) && !fixedRow(i) ? 0xFFE0603F : lv == 'W' || lv == 'E' ? 0xFFD9A030 : ink());
 				TextSize.size(t, h ? 12 : 11, ts);
 				t.setPadding(0, px(h ? 10 : 3), 0, px(3));
 				t.setText(h ? l.replace("=", "").trim() : l);
@@ -771,11 +789,15 @@ final class BackupPanel {
 			pick[i] = new Runnable() {
 				public void run() {
 					shown.clear();
+					sd.clear();
 					for (int j = 0; j < all.size(); j++) {
 						String l = all.get(j);
-						boolean ok = k == 0 || (k == 1 ? !l.startsWith("=====") && (l.startsWith(" E ", 12) || l.startsWith(" E ", 23))
+						boolean ok = k == 0 || (k == 1 ? Log.level(l) == 'E' && !Log.network(l) && !day.get(j).equals(fixedDay)
 								: day.get(j).equals(k == 2 ? today : yest));
-						if (ok) shown.add(l);
+						if (ok) {
+							shown.add(l);
+							sd.add(day.get(j));
+						}
 					}
 					for (int c = 0; c < 4; c++) {
 						chips[c].setTextColor(c == k ? 0xFFFFFFFF : ink());

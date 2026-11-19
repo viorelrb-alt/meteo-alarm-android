@@ -1651,3 +1651,6 @@ Line copied	Rida kopeeritud
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Sama riba on Põldude ja maavärina ekraani kohal; aknad Eksport, Import ja Logi jätavad avaekraani riba nähtavaks.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Mida rakendus tegi, kellaajaga: suurus, read ja vead. Vaata logi avab read (Kõik, Vead, Täna, Eile; pikk puudutus kopeerib rea); Jaga ja Salvesta on all.
 The ＋ tab of the main screen asks first too.	Ka avaekraani ＋ vahekaart küsib enne.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Vead loeb ainult päris vigu, mis pole veel parandatud; parandatud lähevad logi lõppu eraldi jaotisse ja võrguprobleemid on hoiatused.
+There is 1 warning to look into.	On 1 hoiatus, mida uurida.
+There are %d warnings to look into.	On %d hoiatust, mida uurida.

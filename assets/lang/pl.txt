@@ -1651,3 +1651,6 @@ Line copied	Wiersz skopiowany
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ten sam pasek jest nad Działkami i ekranem trzęsienia ziemi; okna Eksport, Import i Dziennik zostawiają widoczny pasek ekranu głównego.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Co zrobiła aplikacja, z godziną: rozmiar, wiersze i błędy. Zobacz dziennik otwiera wiersze (Wszystkie, Błędy, Dziś, Wczoraj; długie dotknięcie kopiuje wiersz); Udostępnij i Zapisz są na dole.
 The ＋ tab of the main screen asks first too.	Karta ＋ ekranu głównego też najpierw pyta.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Błędy liczy tylko prawdziwe, jeszcze nienaprawione błędy; naprawione trafiają do osobnej sekcji na końcu dziennika, a problemy z siecią są ostrzeżeniami.
+There is 1 warning to look into.	Jest 1 ostrzeżenie do sprawdzenia.
+There are %d warnings to look into.	Ostrzeżenia do sprawdzenia: %d.

@@ -1651,3 +1651,6 @@ Line copied	Regel gekopieerd
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Dezelfde balk staat boven Percelen en het aardbevingsscherm; de vensters Export, Import en Logboek laten de balk van het hoofdscherm zichtbaar.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Wat de app deed, met de tijd: grootte, regels en fouten. Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan staan onderaan.
 The ＋ tab of the main screen asks first too.	Ook het ＋-tabblad van het hoofdscherm vraagt eerst.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Fouten telt alleen echte fouten die nog niet zijn opgelost; opgeloste staan in een eigen deel aan het eind van het logboek, en netwerkproblemen zijn waarschuwingen.
+There is 1 warning to look into.	Er is 1 waarschuwing om te bekijken.
+There are %d warnings to look into.	Er zijn %d waarschuwingen om te bekijken.

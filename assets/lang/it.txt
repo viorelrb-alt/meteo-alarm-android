@@ -1651,3 +1651,6 @@ Line copied	Riga copiata
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	La stessa banda appare su Appezzamenti e sulla schermata del terremoto; le finestre Esporta, Importa e Registro lasciano visibile la banda della schermata principale.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Cosa ha fatto l'app, con l'ora: dimensione, righe ed errori. Vedi il registro apre le righe (Tutte, Errori, Oggi, Ieri; un tocco lungo copia una riga); Condividi e Salva sono in basso.
 The ＋ tab of the main screen asks first too.	Anche la scheda ＋ della schermata principale chiede prima.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Errori conta solo gli errori reali non ancora risolti; quelli risolti vanno in una sezione a parte alla fine del registro, e i problemi di rete sono avvisi.
+There is 1 warning to look into.	C'è 1 avviso da esaminare.
+There are %d warnings to look into.	Ci sono %d avvisi da esaminare.

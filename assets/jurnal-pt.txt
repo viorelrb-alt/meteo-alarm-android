@@ -1,4 +1,4 @@
-Versão atual: v.2.140 · 19.11.2026
+Versão atual: v.2.141 · 19.11.2026
 DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 ECRÃ PRINCIPAL
@@ -16,7 +16,7 @@ PARCELAS
 - Histórico e previsão: arraste o indicador para um dia passado; os seus valores aparecem numa caixa sob o gráfico e após 10 s volta a hoje.
 - Página Sismos: abre logo com as últimas listas guardadas no telefone e atualiza-as em segundo plano.
 - Exportar / Importar: interruptores para o que entra no ficheiro (também culturas e dados de cultivo, notificações das parcelas, reciclagem de parcelas, notificações, mapa, widgets, histórico de sismos, registo); em Exportar e Importar as localidades e parcelas marcam-se uma a uma; o botão Aa muda o tamanho do texto.
-- Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã.
+- Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã. Os erros resolvidos ficam no fim do registo e não são contados; os problemas de rede são avisos.
 - Melhorias de design e correção dos erros comunicados.
 
 Versão 1.4 (v.1.400 – v.1.520)

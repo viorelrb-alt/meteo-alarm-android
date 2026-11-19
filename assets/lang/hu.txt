@@ -1651,3 +1651,6 @@ Line copied	Sor másolva
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Ugyanez a sáv látszik a Parcellák és a földrengés képernyő fölött; az Export, Import és Napló ablak láthatóan hagyja a főképernyő sávját.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Mit csinált az alkalmazás, időponttal: méret, sorok és hibák. A Napló megtekintése megnyitja a sorokat (Mind, Hibák, Ma, Tegnap; hosszú érintés másol egy sort); a Megosztás és a Mentés lent van.
 The ＋ tab of the main screen asks first too.	A főképernyő ＋ füle is először kérdez.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	A Hibák csak a valódi, még nem javított hibákat számolja; a javítottak a napló végén külön részbe kerülnek, a hálózati gondok figyelmeztetések.
+There is 1 warning to look into.	1 figyelmeztetést kell megnézni.
+There are %d warnings to look into.	%d figyelmeztetést kell megnézni.

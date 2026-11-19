@@ -1651,3 +1651,6 @@ Line copied	Vrstica kopirana
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	Isti trak je nad Parcelami in zaslonom potresa; okna Izvoz, Uvoz in Dnevnik pustijo trak glavnega zaslona viden.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	Kaj je aplikacija počela, s časom: velikost, vrstice in napake. Poglej dnevnik odpre vrstice (Vse, Napake, Danes, Včeraj; dolg dotik kopira vrstico); Deli in Shrani sta spodaj.
 The ＋ tab of the main screen asks first too.	Tudi zavihek ＋ glavnega zaslona najprej vpraša.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Napake šteje le prave, še neodpravljene napake; odpravljene gredo v svoj razdelek na koncu dnevnika, težave omrežja pa so opozorila.
+There is 1 warning to look into.	Je 1 opozorilo za pregled.
+There are %d warnings to look into.	Opozorila za pregled: %d.

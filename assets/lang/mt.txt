@@ -1651,3 +1651,6 @@ Line copied	Linja kkopjata
 The same band shows over Parcels and the earthquake screen; the Export, Import and Log windows leave the main screen's band in sight.	L-istess strixxa tidher fuq Biċċiet tal-art u l-iskrin tat-terremot; it-twieqi Esporta, Importa u Reġistru jħallu l-istrixxa tal-iskrin prinċipali tidher.
 What the app did, with the time: its size, lines and errors. See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save are at the bottom.	X'għamlet l-app, bil-ħin: id-daqs, il-linji u l-iżbalji. Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja huma isfel.
 The ＋ tab of the main screen asks first too.	It-tab ＋ tal-iskrin prinċipali wkoll jistaqsi l-ewwel.
+Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Żbalji jgħodd biss l-iżbalji veri li għadhom ma ssolvewx; dawk solvuti jmorru f'taqsima tagħhom fl-aħħar tar-reġistru, u l-problemi tan-netwerk huma twissijiet.
+There is 1 warning to look into.	Hemm twissija 1 x'tanalizza.
+There are %d warnings to look into.	Hemm %d twissijiet x'tanalizza.
