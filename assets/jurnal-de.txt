@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.120 · 19.11.2026
+Aktuelle Version: v.2.130 · 19.11.2026
 BENACHRICHTIGUNGEN
 - Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
 - Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App einmal pro Woche GitHub und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.
@@ -15,7 +15,8 @@ PARZELLEN
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
 - Erdbeben-Seite: öffnet sich sofort mit den zuletzt auf dem Telefon gespeicherten Listen und aktualisiert sie im Hintergrund.
-- Export / Import: Schalter für den Inhalt der Datei (auch Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); Orte und Parzellen lassen sich einzeln ankreuzen.
+- Export / Import: Schalter für den Inhalt der Datei (auch Kulturen und Anbaudaten, Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); bei Export und Import werden Orte und Parzellen einzeln angekreuzt; die Taste Aa ändert die Textgröße.
+- Protokoll: Die Taste Aa ändert die Textgröße.
 - Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.4 (v.1.400 – v.1.520)

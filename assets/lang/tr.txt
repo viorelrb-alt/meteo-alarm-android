@@ -1563,3 +1563,14 @@ widgets	widget'lar
 yesterday, 	dün, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Dışa aktar: anahtarlar dosyaya ne gireceğini seçer; ▾ yerleri ve tarlaları açar, tek tek işaretlemen için. İçe aktar dosyada ne olduğunu gösterir.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Depremler sayfası son kaydedilen listelerle hemen açılır; ↻ güncellenirken döner.
+Aa sets the text size.	Aa metin boyutunu değiştirir.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Yeni bir parsel eklensin mi? İğne haritanın ortasından başlar; GPS onu bulunduğun yere taşır.
+Crops and growing data	Ürünler ve yetiştirme verileri
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Uygulamanın yaptığı her şey, saatiyle: hava durumu, uyarı ve deprem indirmeleri, bildirimler, dokunmalar ve hareketler, sensörler, widget'lar ve hatalar, nedenleriyle. Son 5 günü tutar; hatalar 10 gün kalır.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Dışa ve İçe aktarma: anahtarlar neyin gireceğini seçer; ▾ yerleşimleri ve parselleri tek tek işaretlemek için açar. Ürünlerin ve yetiştirme verilerinin kendi anahtarı var. Aa metin boyutunu değiştirir.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Aynı şerit Parseller, deprem ekranı ve Dışa aktar, İçe aktar ve Günlük pencerelerinin üstünde de görünür.
+What the log is	Günlük nedir
+When something does not work, tap Share or Save and send it to the author.	Bir şey çalışmadığında Paylaş veya Kaydet'e dokun ve yazara gönder.
+crop, sowing date, area, thresholds	ürün, ekim tarihi, alan, eşikler
+name, corners, points	ad, köşeler, noktalar
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, GPS'in üstünde, önce sorar, sonra parsel ekler: iğne haritanın ortasından başlar, haritaya dokunmak onu taşır; ad üstte yazılır. ‹ geri döner.

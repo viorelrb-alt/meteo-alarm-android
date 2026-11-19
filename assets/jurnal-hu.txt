@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.120 · 19.11.2026
+Jelenlegi verzió: v.2.130 · 19.11.2026
 BEÁLLÍTÁSOK
 - Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
 ÉRTESÍTÉSEK
@@ -15,7 +15,8 @@ PARCELLÁK
 - Statisztika a főképernyőn: az operatív állapot alatt nyílik meg (fekvő helyzetben balra); a ‹ bezárja, egy másik parcella füle megtartja.
 - Statisztika: minden parcellához A nap teendője és 4 fül: Operatív (permetezési ablak óránként, cseppszáradás (ΔT), szél, nedves levél), Víz és talaj (eső, párolgás, talaj 6 és 18 cm-en), Szezon (hőösszeg a tavalyihoz képest, becsült fázis) és Kockázatok 72 h (gombás betegségek, talajmenti fagy, hőség, szél és jégeső); mentés PDF-be vagy CSV-be.
 - Földrengések oldal: azonnal megnyílik a telefonon utoljára mentett listákkal, és a háttérben frissíti őket.
-- Exportálás / Importálás: kapcsolók a fájl tartalmához (a parcellák értesítései, a parcellák kukája, az értesítések, a térkép, a widgetek, a földrengés-előzmények, a napló is); a települések és parcellák egyenként jelölhetők be.
+- Exportálás / Importálás: kapcsolók a fájl tartalmához (a növények és termesztési adatok, parcella-értesítések, parcellakuka, értesítések, térkép, widgetek, földrengés-előzmények, napló is); Exportálásnál és Importálásnál a települések és parcellák egyenként jelölhetők; az Aa gomb a szöveg méretét állítja.
+- Napló: az Aa gomb a szöveg méretét állítja.
 - Dizájnjavítások és a jelentett hibák javítása.
 
 1.4. verzió (v.1.400 – v.1.520)

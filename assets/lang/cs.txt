@@ -1629,3 +1629,14 @@ widgets	widgety
 yesterday, 	včera, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Export: přepínače vybírají, co půjde do souboru; ▾ otevře obce a pozemky, abys je zaškrtl jednotlivě. Import ukáže, co soubor obsahuje.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Stránka Zemětřesení se otevře hned s naposledy uloženými seznamy; ↻ se točí, dokud se aktualizují.
+Aa sets the text size.	Aa mění velikost textu.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Přidat nový pozemek? Špendlík začíná uprostřed mapy; GPS ho přesune tam, kde jsi.
+Crops and growing data	Plodiny a údaje o pěstování
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Vše, co aplikace dělá, s časem: stahování počasí, výstrah a zemětřesení, oznámení, klepnutí a gesta, senzory, widgety a chyby s jejich důvodem. Uchovává posledních 5 dní; chyby zůstávají 10 dní.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Export a Import: přepínače volí, co se zahrne; ▾ otevře obce a pozemky k zaškrtnutí jednoho po druhém. Plodiny a údaje o pěstování mají vlastní přepínač. Aa mění velikost textu.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Stejný pruh se zobrazuje i nad Pozemky, obrazovkou zemětřesení a okny Export, Import a Deník.
+What the log is	Co je deník
+When something does not work, tap Share or Save and send it to the author.	Když něco nefunguje, klepni na Sdílet nebo Uložit a pošli ho autorovi.
+crop, sowing date, area, thresholds	plodina, datum setí, výměra, prahy
+name, corners, points	název, rohy, body
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, nad GPS, se nejdřív zeptá a pak přidá pozemek: špendlík začíná uprostřed mapy, klepnutí na mapu ho posune; název se píše nahoře. ‹ jde zpět.

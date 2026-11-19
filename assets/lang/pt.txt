@@ -1629,3 +1629,14 @@ widgets	widgets
 yesterday, 	ontem, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Exportar: os interruptores escolhem o que vai para o ficheiro; ▾ abre as localidades e as parcelas para as marcar uma a uma. Importar mostra o que o ficheiro contém.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	A página Sismos abre logo com as últimas listas guardadas; ↻ roda enquanto se atualizam.
+Aa sets the text size.	Aa muda o tamanho do texto.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Adicionar uma nova parcela? O alfinete começa no centro do mapa; o GPS leva-o para onde estás.
+Crops and growing data	Culturas e dados de cultivo
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Tudo o que a aplicação faz, com a hora: transferências de meteorologia, avisos e sismos, notificações, toques e gestos, sensores, widgets e erros, com o seu motivo. Guarda os últimos 5 dias; os erros ficam 10 dias.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Exportar e Importar: os interruptores escolhem o que entra; ▾ abre as localidades e as parcelas para as marcar uma a uma. As culturas e dados de cultivo têm interruptor próprio. Aa muda o tamanho do texto.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	A mesma faixa aparece também sobre Parcelas, o ecrã do sismo e as janelas Exportar, Importar e Registo.
+What the log is	O que é o registo
+When something does not work, tap Share or Save and send it to the author.	Quando algo não funcionar, toca em Enviar ou Guardar e envia-o ao autor.
+crop, sowing date, area, thresholds	cultura, data de sementeira, área, limiares
+name, corners, points	nome, cantos, pontos
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, acima do GPS, pergunta primeiro e depois adiciona uma parcela: o alfinete começa no centro do mapa, um toque no mapa move-o; o nome escreve-se em cima. ‹ volta atrás.

@@ -1629,3 +1629,14 @@ widgets	pripomočki
 yesterday, 	včeraj, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Izvoz: stikala izberejo, kaj gre v datoteko; ▾ odpre kraje in parcele, da jih označiš posamično. Uvoz pokaže, kaj vsebuje datoteka.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Stran Potresi se takoj odpre z zadnjimi shranjenimi seznami; ↻ se vrti, dokler se posodabljajo.
+Aa sets the text size.	Aa spremeni velikost besedila.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Dodam novo parcelo? Bucika začne na sredini zemljevida; GPS jo premakne tja, kjer si.
+Crops and growing data	Posevki in podatki o gojenju
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Vse, kar aplikacija naredi, s časom: prenosi vremena, opozoril in potresov, obvestila, dotiki in kretnje, senzorji, pripomočki in napake z razlogom. Hrani zadnjih 5 dni; napake ostanejo 10 dni.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Izvoz in Uvoz: stikala izberejo, kaj gre noter; ▾ odpre kraje in parcele, da jih označiš enega za drugim. Posevki in podatki o gojenju imajo svoje stikalo. Aa spremeni velikost besedila.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Isti trak je tudi nad Parcelami, zaslonom potresa ter okni Izvoz, Uvoz in Dnevnik.
+What the log is	Kaj je dnevnik
+When something does not work, tap Share or Save and send it to the author.	Ko kaj ne deluje, se dotakni Pošlji ali Shrani in ga pošlji avtorju.
+crop, sowing date, area, thresholds	posevek, datum setve, površina, pragovi
+name, corners, points	ime, vogali, točke
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, nad GPS, najprej vpraša in nato doda parcelo: bucika začne na sredini zemljevida, dotik zemljevida jo premakne; ime se napiše zgoraj. ‹ gre nazaj.

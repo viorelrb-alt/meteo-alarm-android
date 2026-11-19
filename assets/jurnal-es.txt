@@ -1,4 +1,4 @@
-Versión actual: v.2.120 · 19.11.2026
+Versión actual: v.2.130 · 19.11.2026
 AJUSTES
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
 NOTIFICACIONES
@@ -15,7 +15,8 @@ PARCELAS
 - Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
 - Historial y pronóstico: arrastra el indicador a un día pasado; sus valores aparecen en un recuadro bajo el gráfico y a los 10 s vuelve a hoy.
 - Página Terremotos: se abre al instante con las últimas listas guardadas en el teléfono y las actualiza en segundo plano.
-- Exportar / Importar: interruptores para lo que va en el archivo (también notificaciones de parcelas, papelera de parcelas, notificaciones, mapa, widgets, historial de terremotos, registro); localidades y parcelas se marcan una a una.
+- Exportar / Importar: interruptores para lo que entra en el archivo (también cultivos y datos de cultivo, notificaciones de parcelas, papelera de parcelas, notificaciones, mapa, widgets, historial de terremotos, registro); en Exportar e Importar las localidades y parcelas se marcan una a una; el botón Aa cambia el tamaño del texto.
+- Registro: el botón Aa cambia el tamaño del texto.
 - Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.4 (v.1.400 – v.1.520)

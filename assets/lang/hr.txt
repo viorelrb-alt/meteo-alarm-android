@@ -1629,3 +1629,14 @@ widgets	widgeti
 yesterday, 	jučer, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Izvoz: prekidači biraju što ide u datoteku; ▾ otvara mjesta i parcele da ih označiš jedno po jedno. Uvoz pokazuje što datoteka sadrži.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Stranica Potresi otvara se odmah s posljednjim spremljenim popisima; ↻ se vrti dok se ažuriraju.
+Aa sets the text size.	Aa mijenja veličinu teksta.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Dodati novu parcelu? Pribadača kreće iz sredine karte; GPS je premješta tamo gdje jesi.
+Crops and growing data	Kulture i podaci o uzgoju
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Sve što aplikacija radi, s vremenom: preuzimanja vremena, upozorenja i potresa, obavijesti, dodiri i pokreti, senzori, widgeti i pogreške s razlogom. Čuva zadnjih 5 dana; pogreške ostaju 10 dana.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Izvoz i Uvoz: prekidači biraju što ulazi; ▾ otvara mjesta i parcele da ih označiš jedno po jedno. Kulture i podaci o uzgoju imaju svoj prekidač. Aa mijenja veličinu teksta.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Ista traka prikazuje se i iznad Parcela, zaslona potresa i prozora Izvoz, Uvoz i Dnevnik.
+What the log is	Što je dnevnik
+When something does not work, tap Share or Save and send it to the author.	Kad nešto ne radi, dodirni Pošalji ili Spremi i pošalji ga autoru.
+crop, sowing date, area, thresholds	kultura, datum sjetve, površina, pragovi
+name, corners, points	naziv, kutovi, točke
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, iznad GPS-a, najprije pita, a zatim dodaje parcelu: pribadača kreće iz sredine karte, dodir na karti je pomiče; naziv se piše gore. ‹ vraća natrag.

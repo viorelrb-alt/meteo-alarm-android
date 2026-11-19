@@ -1629,3 +1629,14 @@ widgets	уиджети
 yesterday, 	вчера, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Експорт: превключвателите избират какво влиза във файла; ▾ отваря местата и парцелите, за да ги отметнеш поотделно. Импорт показва какво съдържа файлът.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Страницата Земетресения се отваря веднага с последните запазени списъци; ↻ се върти, докато се обновяват.
+Aa sets the text size.	Aa променя размера на текста.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Да се добави ли нов парцел? Карфицата започва от средата на картата; GPS я премества там, където си.
+Crops and growing data	Култури и данни за отглеждане
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Всичко, което прави приложението, с часа: изтегляне на времето, предупрежденията и земетресенията, известията, докосванията и жестовете, сензорите, уиджетите и грешките с причината им. Пази последните 5 дни; грешките остават 10 дни.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Експорт и Импорт: превключвателите избират какво влиза; ▾ отваря населените места и парцелите, за да ги отметнеш един по един. Културите и данните за отглеждане имат свой превключвател. Aa променя размера на текста.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Същата лента се показва и над Парцели, екрана на земетресението и прозорците Експорт, Импорт и Дневник.
+What the log is	Какво е дневникът
+When something does not work, tap Share or Save and send it to the author.	Когато нещо не работи, докосни Изпрати или Запази и го изпрати на автора.
+crop, sowing date, area, thresholds	култура, дата на сеитба, площ, прагове
+name, corners, points	име, ъгли, точки
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, над GPS, първо пита, после добавя парцел: карфицата започва от средата на картата, докосване на картата я мести; името се пише горе. ‹ връща назад.

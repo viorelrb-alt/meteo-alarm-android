@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.120 · 19.11.2026
+Pašreizējā versija: v.2.130 · 19.11.2026
 GALVENAIS EKRĀNS
 - Zemestrīces informācija: pieskāriens laukam Zemestrīce to atver galvenajā ekrānā: karte, zem tās sajūtamības zonas un vērtības vēsture; krāsainais kvadrāts vai karte to atver visā ekrānā, kā zemestrīci no ☰ › Zemestrīces. Rumānijā, Francijā, Itālijā, Nīderlandē, Šveicē un Grieķijā oficiālās vērtības vispirms nāk no valsts institūta (INFP, BCSF, INGV, KNMI, SED, NOA), pēc tam no EMSC. Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).
 IESTATĪJUMI
@@ -15,7 +15,8 @@ PAZIŅOJUMI
 - Zemestrīces: pārbaudītas ik pēc 10 minūtēm, arī naktī ar izslēgtu ekrānu; precizēta magnitūda atjaunina paziņojumu, un pieskāriens tam atver karti.
 - Jauna versija: ar ieslēgtiem paziņojumiem lietotne reizi nedēļā pārbauda GitHub un paziņo par jaunu versiju Android paziņojumos; pieskāriens atver Pārbaudīt atjauninājumus.
 - Lapa Zemestrīces: atveras uzreiz ar pēdējiem tālrunī saglabātajiem sarakstiem un atjaunina tos fonā.
-- Eksports / Imports: slēdži faila saturam (arī zemes gabalu paziņojumi, miskaste, paziņojumi, karte, logrīki, zemestrīču vēsture, žurnāls); vietas un zemes gabalus var atzīmēt pa vienam.
+- Eksports / Imports: slēdži faila saturam (arī kultūras un audzēšanas dati, lauku paziņojumi, lauku miskaste, paziņojumi, karte, logrīki, zemestrīču vēsture, žurnāls); Eksportā un Importā apdzīvotās vietas un lauki tiek atzīmēti pa vienam; poga Aa maina teksta lielumu.
+- Žurnāls: poga Aa maina teksta lielumu.
 - Dizaina uzlabojumi un ziņoto kļūdu labojumi.
 
 Versija 1.4 (v.1.400 – v.1.520)

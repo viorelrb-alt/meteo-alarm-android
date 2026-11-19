@@ -1563,3 +1563,14 @@ widgets	виджеты
 yesterday, 	вчера, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Экспорт: переключатели выбирают, что попадёт в файл; ▾ открывает пункты и участки, чтобы отметить их по одному. Импорт показывает, что есть в файле.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Страница Землетрясения открывается сразу с последними сохранёнными списками; ↻ вращается, пока они обновляются.
+Aa sets the text size.	Aa меняет размер текста.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Добавить новый участок? Булавка начинает с середины карты; GPS переносит её туда, где вы.
+Crops and growing data	Культуры и данные выращивания
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Всё, что делает приложение, со временем: загрузки погоды, предупреждений и землетрясений, уведомления, касания и жесты, датчики, виджеты и ошибки с их причиной. Хранит последние 5 дней; ошибки остаются 10 дней.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Экспорт и Импорт: переключатели выбирают, что войдёт; ▾ открывает населённые пункты и участки, чтобы отметить их по одному. У культур и данных выращивания свой переключатель. Aa меняет размер текста.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Та же полоса показывается и над Участками, экраном землетрясения и окнами Экспорт, Импорт и Журнал.
+What the log is	Что такое журнал
+When something does not work, tap Share or Save and send it to the author.	Если что-то не работает, нажмите Отправить или Сохранить и пришлите его автору.
+crop, sowing date, area, thresholds	культура, дата посева, площадь, пороги
+name, corners, points	название, углы, точки
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, над GPS, сначала спрашивает, а затем добавляет участок: булавка начинает с середины карты, касание карты передвигает её; название пишется вверху. ‹ возвращает назад.

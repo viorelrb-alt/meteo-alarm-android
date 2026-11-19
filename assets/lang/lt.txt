@@ -1629,3 +1629,14 @@ widgets	valdikliai
 yesterday, 	vakar, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksportas: jungikliai renka, kas pateks į failą; ▾ atveria vietoves ir sklypus, kad pažymėtum juos po vieną. Importas parodo, kas yra faile.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Puslapis Žemės drebėjimai atsidaro iškart su paskutiniais išsaugotais sąrašais; ↻ sukasi, kol jie atnaujinami.
+Aa sets the text size.	Aa keičia teksto dydį.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Pridėti naują sklypą? Smeigtukas pradeda nuo žemėlapio vidurio; GPS perkelia jį ten, kur esi.
+Crops and growing data	Kultūros ir auginimo duomenys
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Viskas, ką daro programėlė, su laiku: orų, įspėjimų ir žemės drebėjimų atsisiuntimai, pranešimai, palietimai ir gestai, jutikliai, valdikliai ir klaidos su priežastimi. Saugo paskutines 5 dienas; klaidos lieka 10 dienų.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Eksportas ir Importas: jungikliai parenka, kas įtraukiama; ▾ atveria vietoves ir sklypus, kad pažymėtum juos po vieną. Kultūros ir auginimo duomenys turi savo jungiklį. Aa keičia teksto dydį.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Ta pati juosta rodoma ir virš Sklypų, žemės drebėjimo ekrano bei langų Eksportas, Importas ir Žurnalas.
+What the log is	Kas yra žurnalas
+When something does not work, tap Share or Save and send it to the author.	Kai kas nors neveikia, paliesk Siųsti arba Išsaugoti ir nusiųsk jį autoriui.
+crop, sowing date, area, thresholds	kultūra, sėjos data, plotas, ribos
+name, corners, points	pavadinimas, kampai, taškai
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, virš GPS, pirmiausia paklausia, o tada prideda sklypą: smeigtukas pradeda nuo žemėlapio vidurio, palietimas žemėlapyje jį perkelia; pavadinimas rašomas viršuje. ‹ grįžta atgal.

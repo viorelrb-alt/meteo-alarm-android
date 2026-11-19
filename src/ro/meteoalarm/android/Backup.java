@@ -32,7 +32,9 @@ final class Backup {
 	static final String[] MAP = { "mapStyle", "mapRadar" };
 
 	/** v2.120 (Viorel): what goes into the file, chosen with switches in the Export window. */
-	static final int TOWNS = 0, PARCELS = 1, BELLS = 2, BIN = 3, VISITS = 4, LOOK = 5, ALERT = 6, MAPS = 7, WIDGETS = 8, QUAKES = 9, LOG = 10, N = 11;
+	static final int TOWNS = 0, PARCELS = 1, BELLS = 2, BIN = 3, VISITS = 4, LOOK = 5, ALERT = 6, MAPS = 7, WIDGETS = 8, QUAKES = 9, LOG = 10, CROPS = 11, N = 12;
+	/** v2.130: the order of the rows in the windows (the crops right under the parcels). */
+	static final int[] ORDER = { TOWNS, PARCELS, CROPS, BELLS, BIN, VISITS, LOOK, ALERT, MAPS, WIDGETS, QUAKES, LOG };
 
 	static final class Sel {
 		final boolean[] on = new boolean[N];
@@ -44,8 +46,9 @@ final class Backup {
 		static Sel load(Context ctx) {
 			SharedPreferences p = Fetcher.prefs(ctx);
 			Sel s = new Sel();
-			String f = p.getString("expSel", "11101111100");
+			String f = p.getString("expSel", "111011111001");
 			for (int i = 0; i < N; i++) s.on[i] = i < f.length() ? f.charAt(i) == '1' : false;
+			if (f.length() <= CROPS) s.on[CROPS] = s.on[PARCELS]; // v2.130: a choice saved before the crops' row
 			for (String l : p.getString("expOffTowns", "").split("\n")) if (l.length() > 0) s.offTowns.add(l);
 			for (String l : p.getString("expOffParcels", "").split(",")) try {
 				if (l.length() > 0) s.offParcels.add(Long.parseLong(l));
@@ -132,10 +135,17 @@ final class Backup {
 			StringBuilder b = new StringBuilder();
 			for (Parcels.Parcel x : Parcels.all(ctx)) {
 				if (sel.offParcels.contains(x.id)) continue;
-				b.append(x.line()).append('\n');
+				b.append((sel.on[CROPS] ? x : bare(x)).line()).append('\n');
 				ids.add(x.id);
 			}
 			o.put("parcels", b.toString());
+		}
+		// v2.130 (Viorel): the crops and their dates also on their own (they reach parcels of the same id).
+		if (sel.on[CROPS]) {
+			JSONObject cr = new JSONObject();
+			for (Parcels.Parcel x : Parcels.all(ctx))
+				if (!sel.offParcels.contains(x.id) && hasCrop(x)) cr.put(String.valueOf(x.id), x.crop + "\t" + x.ctype + "\t" + x.sow);
+			o.put("crops", cr);
 		}
 		if (sel.on[BELLS] && ids.size() > 0) {
 			JSONObject pp = new JSONObject();
@@ -176,6 +186,21 @@ final class Backup {
 		return o.toString(1);
 	}
 
+	/** v2.130: a parcel has a crop or a sowing date. */
+	static boolean hasCrop(Parcels.Parcel x) {
+		return x.crop.length() > 0 || x.sow.length() > 0;
+	}
+
+	/** A copy of X without its crop and sowing date. */
+	static Parcels.Parcel bare(Parcels.Parcel x) {
+		Parcels.Parcel y = Parcels.Parcel.of(x.line());
+		if (y == null) return x;
+		y.crop = "";
+		y.sow = "";
+		y.ctype = -1;
+		return y;
+	}
+
 	/** v2.120: a parcel's notification switches: pn_ID_r/_w/_s and pp_ID. */
 	static boolean parcelKey(String k) {
 		return k.matches("pn_\\d+_[a-z]+|pp_\\d+");
@@ -189,6 +214,7 @@ final class Backup {
 			Map<String, ?> all = p.getAll();
 			n[TOWNS] = lines(p, "myCities").size() + lines(p, "favs").size() + lines(p, "favsUS").size();
 			n[PARCELS] = Parcels.all(ctx).size();
+			for (Parcels.Parcel x : Parcels.all(ctx)) if (hasCrop(x)) n[CROPS]++;
 			for (String k : all.keySet()) if (parcelKey(k)) n[BELLS]++;
 			n[BIN] = lines(p, "parcelBin").size();
 			n[VISITS] = new Visits(p.getString("visits", "")).size();
@@ -203,6 +229,8 @@ final class Backup {
 		java.util.Arrays.fill(n, -1);
 		if (o.has("myCities") || o.has("favs")) n[TOWNS] = lines(o.optString("myCities")) + lines(o.optString("favs")) + lines(o.optString("favsUS"));
 		if (o.has("parcels")) n[PARCELS] = lines(o.optString("parcels"));
+		if (o.optJSONObject("crops") != null) n[CROPS] = o.optJSONObject("crops").length();
+		else for (Parcels.Parcel x : fileParcels(o)) if (hasCrop(x)) n[CROPS] = Math.max(0, n[CROPS]) + 1;
 		if (o.optJSONObject("parcelPrefs") != null) n[BELLS] = o.optJSONObject("parcelPrefs").length();
 		if (o.has("parcelBin")) n[BIN] = lines(o.optString("parcelBin"));
 		if (o.has("visits")) n[VISITS] = new Visits(o.optString("visits")).size();
@@ -248,6 +276,16 @@ final class Backup {
 		}
 	}
 
+	/** v2.130: the parcels in file O. */
+	static List<Parcels.Parcel> fileParcels(JSONObject o) {
+		List<Parcels.Parcel> l = new ArrayList<Parcels.Parcel>();
+		for (String x : o.optString("parcels", "").split("\n")) {
+			Parcels.Parcel p = Parcels.Parcel.of(x);
+			if (p != null) l.add(p);
+		}
+		return l;
+	}
+
 	static int lines(String s) {
 		int n = 0;
 		if (s != null) for (String l : s.split("\n")) if (l.trim().length() > 0) n++;
@@ -277,11 +315,21 @@ final class Backup {
 
 	/** v2.120: only the kinds switched ON in the Import window. */
 	static void apply(Context ctx, JSONObject o, boolean replace, boolean[] on) {
+		Sel s = new Sel();
+		System.arraycopy(on, 0, s.on, 0, Math.min(on.length, N));
+		if (on.length <= CROPS) s.on[CROPS] = s.on[PARCELS];
+		apply(ctx, o, replace, s);
+	}
+
+	/** v2.130: also without the towns and parcels left unticked in the Import window. */
+	static void apply(Context ctx, JSONObject o, boolean replace, Sel sel) {
+		boolean[] on = sel.on;
 		SharedPreferences p = Fetcher.prefs(ctx);
 		SharedPreferences.Editor e = p.edit();
 		if (on[TOWNS] && (o.has("myCities") || o.has("favs"))) {
 			for (String k : LINES) {
-				String in = o.optString(k, "");
+				String in = "";
+				for (String l : o.optString(k, "").split("\n")) if (l.trim().length() > 0 && !sel.offTowns.contains(l)) in += l + "\n";
 				if (replace) { e.putString(k, in); continue; }
 				LinkedHashSet<String> set = new LinkedHashSet<String>();
 				for (String l : (p.getString(k, "") + "\n" + in).split("\n")) if (l.trim().length() > 0) set.add(l);
@@ -306,7 +354,8 @@ final class Backup {
 			List<Parcels.Parcel> mine = replace ? new ArrayList<Parcels.Parcel>() : Parcels.all(ctx);
 			for (String l : o.optString("parcels", "").split("\n")) {
 				Parcels.Parcel x = Parcels.Parcel.of(l);
-				if (x == null) continue;
+				if (x == null || sel.offParcels.contains(x.id)) continue;
+				if (!on[CROPS]) x = bare(x);
 				boolean have = false;
 				for (Parcels.Parcel m : mine) if (m.id == x.id) have = true;
 				if (!have) mine.add(x);
@@ -314,6 +363,47 @@ final class Backup {
 			StringBuilder b = new StringBuilder();
 			for (Parcels.Parcel x : mine) b.append(x.line()).append('\n');
 			e.putString("parcels", b.toString());
+		}
+		// v2.130: the crops reach the parcels of the same id (Add: only those without a crop).
+		if (on[CROPS]) {
+			java.util.Map<Long, String[]> cr = new java.util.HashMap<Long, String[]>();
+			JSONObject co = o.optJSONObject("crops");
+			if (co != null) for (Iterator<String> it = co.keys(); it.hasNext();) {
+				String k = it.next();
+				try {
+					cr.put(Long.parseLong(k), co.optString(k).split("\t", -1));
+				} catch (NumberFormatException x) {
+					// skip
+				}
+			}
+			for (Parcels.Parcel x : fileParcels(o)) if (hasCrop(x) && !cr.containsKey(x.id)) cr.put(x.id, new String[] { x.crop, String.valueOf(x.ctype), x.sow });
+			String cur = on[PARCELS] && o.has("parcels") ? null : p.getString("parcels", "");
+			List<Parcels.Parcel> list = new ArrayList<Parcels.Parcel>();
+			if (cur == null) {
+				e.commit();
+				cur = p.getString("parcels", "");
+			}
+			int n = 0;
+			for (String l : cur.split("\n")) {
+				Parcels.Parcel x = Parcels.Parcel.of(l);
+				if (x == null) continue;
+				String[] c = cr.get(x.id);
+				if (c != null && c.length >= 3 && !sel.offParcels.contains(x.id) && (replace || !hasCrop(x))) {
+					x.crop = c[0];
+					try {
+						x.ctype = Integer.parseInt(c[1]);
+					} catch (NumberFormatException y) {
+						x.ctype = -1;
+					}
+					x.sow = c[2].length() == 10 ? c[2] : "";
+					n++;
+				}
+				list.add(x);
+			}
+			StringBuilder b = new StringBuilder();
+			for (Parcels.Parcel x : list) b.append(x.line()).append('\n');
+			e.putString("parcels", b.toString());
+			Log.i(ctx, "IMPORT", "culturi puse pe " + n + " parcele");
 		}
 		if (on[BELLS]) put(e, p, o.optJSONObject("parcelPrefs"), null, replace);
 		if (on[BIN] && o.has("parcelBin")) {

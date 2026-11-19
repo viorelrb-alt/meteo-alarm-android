@@ -1629,3 +1629,14 @@ widgets	Widgets
 yesterday, 	gestern, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Export: Schalter wählen, was in die Datei kommt; ▾ öffnet die Orte und Parzellen, um sie einzeln anzukreuzen. Import zeigt, was die Datei enthält.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Die Erdbeben-Seite öffnet sich sofort mit den zuletzt gespeicherten Listen; ↻ dreht sich, während sie aktualisiert werden.
+Aa sets the text size.	Aa ändert die Textgröße.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Neue Parzelle hinzufügen? Die Nadel startet in der Kartenmitte; GPS setzt sie dorthin, wo du bist.
+Crops and growing data	Kulturen und Anbaudaten
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Alles, was die App tut, mit Uhrzeit: Downloads von Wetter, Warnungen und Erdbeben, Benachrichtigungen, Tippen und Gesten, Sensoren, Widgets und Fehler mit ihrem Grund. Sie behält die letzten 5 Tage; Fehler bleiben 10 Tage.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Export und Import: Schalter wählen, was hineinkommt; ▾ öffnet die Orte und Parzellen, um sie einzeln anzukreuzen. Kulturen und Anbaudaten haben einen eigenen Schalter. Aa ändert die Textgröße.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Dieselbe Leiste erscheint auch über Parzellen, dem Erdbebenbildschirm und den Fenstern Export, Import und Protokoll.
+What the log is	Was das Protokoll ist
+When something does not work, tap Share or Save and send it to the author.	Wenn etwas nicht funktioniert, tippe auf Senden oder Speichern und schicke es dem Autor.
+crop, sowing date, area, thresholds	Kultur, Aussaatdatum, Fläche, Schwellen
+name, corners, points	Name, Ecken, Punkte
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, über GPS, fragt zuerst und fügt dann eine Parzelle hinzu: Die Nadel startet in der Kartenmitte, ein Tippen auf die Karte verschiebt sie; der Name steht oben. ‹ geht zurück.

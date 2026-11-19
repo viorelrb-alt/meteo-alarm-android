@@ -1629,3 +1629,14 @@ widgets	giuirléidí
 yesterday, 	inné, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Easpórtáil: roghnaíonn lasca cad a théann sa chomhad; osclaíonn ▾ na bailte agus na ceapacha chun iad a thiceáil ceann ar cheann. Taispeánann Iompórtáil cad atá sa chomhad.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Osclaíonn an leathanach Crith talún láithreach leis na liostaí is déanaí a sábháladh; casann ↻ fad a nuashonraítear iad.
+Aa sets the text size.	Athraíonn Aa méid an téacs.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Ceapach nua a chur leis? Tosaíonn an biorán i lár an léarscáil; bogann GPS é go dtí an áit ina bhfuil tú.
+Crops and growing data	Barra agus sonraí saothraithe
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Gach rud a dhéanann an aip, leis an am: íoslódálacha aimsire, rabhadh agus crith talún, fógraí, tapáil agus gothaí, braiteoirí, giuirléidí agus earráidí, lena gcúis. Coinníonn sí na 5 lá deiridh; fanann earráidí 10 lá.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Easpórtáil agus Iompórtáil: roghnaíonn na lasca cad a théann isteach; osclaíonn ▾ na bailte agus na ceapacha chun iad a thiceáil ceann ar cheann. Tá a lasc féin ag na barra agus na sonraí saothraithe. Athraíonn Aa méid an téacs.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Taispeántar an banda céanna freisin os cionn Ceapacha, scáileán an chrith talún agus na bhfuinneog Easpórtáil, Iompórtáil agus Loga.
+What the log is	Cad é an loga
+When something does not work, tap Share or Save and send it to the author.	Nuair nach n-oibríonn rud éigin, tapáil Comhroinn nó Sábháil agus seol chuig an údar é.
+crop, sowing date, area, thresholds	barr, dáta curtha, achar, tairseacha
+name, corners, points	ainm, coirnéil, pointí
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	Fiafraíonn ＋, os cionn GPS, ar dtús agus ansin cuireann sé ceapach leis: tosaíonn an biorán i lár an léarscáil, bogann tapáil ar an léarscáil é; scríobhtar an t-ainm ag an mbarr. Téann ‹ siar.

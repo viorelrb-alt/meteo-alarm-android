@@ -1629,3 +1629,14 @@ widgets	widget
 yesterday, 	χθες, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Εξαγωγή: οι διακόπτες διαλέγουν τι μπαίνει στο αρχείο· το ▾ ανοίγει τις τοποθεσίες και τα αγροτεμάχια για να τα τσεκάρεις ένα-ένα. Η Εισαγωγή δείχνει τι περιέχει το αρχείο.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Η σελίδα Σεισμοί ανοίγει αμέσως με τις τελευταίες αποθηκευμένες λίστες· το ↻ γυρίζει όσο ενημερώνονται.
+Aa sets the text size.	Το Aa αλλάζει το μέγεθος του κειμένου.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Προσθήκη νέου αγροτεμαχίου; Η πινέζα ξεκινά από τη μέση του χάρτη· το GPS τη μεταφέρει εκεί που είσαι.
+Crops and growing data	Καλλιέργειες και στοιχεία καλλιέργειας
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Ό,τι κάνει η εφαρμογή, με την ώρα: λήψεις καιρού, προειδοποιήσεων και σεισμών, ειδοποιήσεις, αγγίγματα και χειρονομίες, αισθητήρες, widget και σφάλματα, με την αιτία τους. Κρατά τις τελευταίες 5 ημέρες· τα σφάλματα μένουν 10 ημέρες.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Εξαγωγή και Εισαγωγή: οι διακόπτες επιλέγουν τι μπαίνει· το ▾ ανοίγει τις τοποθεσίες και τα αγροτεμάχια για να τα επιλέξεις ένα ένα. Οι καλλιέργειες και τα στοιχεία καλλιέργειας έχουν δικό τους διακόπτη. Το Aa αλλάζει το μέγεθος του κειμένου.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Η ίδια λωρίδα εμφανίζεται και πάνω από τα Αγροτεμάχια, την οθόνη του σεισμού και τα παράθυρα Εξαγωγή, Εισαγωγή και Ημερολόγιο.
+What the log is	Τι είναι το ημερολόγιο
+When something does not work, tap Share or Save and send it to the author.	Όταν κάτι δεν λειτουργεί, πάτησε Αποστολή ή Αποθήκευση και στείλ' το στον δημιουργό.
+crop, sowing date, area, thresholds	καλλιέργεια, ημερομηνία σποράς, έκταση, όρια
+name, corners, points	όνομα, γωνίες, σημεία
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	Το ＋, πάνω από το GPS, ρωτά πρώτα και μετά προσθέτει αγροτεμάχιο: η πινέζα ξεκινά από τη μέση του χάρτη, ένα άγγιγμα στον χάρτη τη μετακινεί· το όνομα γράφεται πάνω. Το ‹ επιστρέφει.

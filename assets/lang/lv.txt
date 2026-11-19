@@ -1629,3 +1629,14 @@ widgets	logrīki
 yesterday, 	vakar, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksports: slēdži izvēlas, kas nonāk failā; ▾ atver vietas un zemes gabalus, lai tos atzīmētu pa vienam. Imports parāda, kas ir failā.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Lapa Zemestrīces atveras uzreiz ar pēdējiem saglabātajiem sarakstiem; ↻ griežas, kamēr tie tiek atjaunināti.
+Aa sets the text size.	Aa maina teksta lielumu.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Pievienot jaunu lauku? Adata sākas kartes vidū; GPS to pārvieto uz vietu, kur tu esi.
+Crops and growing data	Kultūras un audzēšanas dati
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Viss, ko dara lietotne, ar laiku: laika apstākļu, brīdinājumu un zemestrīču lejupielādes, paziņojumi, pieskārieni un žesti, sensori, logrīki un kļūdas ar iemeslu. Tā glabā pēdējās 5 dienas; kļūdas paliek 10 dienas.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Eksports un Imports: slēdži izvēlas, kas tiek iekļauts; ▾ atver apdzīvotās vietas un laukus, lai tos atzīmētu pa vienam. Kultūrām un audzēšanas datiem ir savs slēdzis. Aa maina teksta lielumu.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Tā pati josla redzama arī virs Laukiem, zemestrīces ekrāna un logiem Eksports, Imports un Žurnāls.
+What the log is	Kas ir žurnāls
+When something does not work, tap Share or Save and send it to the author.	Ja kaut kas nedarbojas, pieskaries Kopīgot vai Saglabāt un nosūti to autoram.
+crop, sowing date, area, thresholds	kultūra, sējas datums, platība, sliekšņi
+name, corners, points	nosaukums, stūri, punkti
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, virs GPS, vispirms jautā un tad pievieno lauku: adata sākas kartes vidū, pieskāriens kartei to pārvieto; nosaukums rakstāms augšā. ‹ atgriežas atpakaļ.

@@ -1629,3 +1629,14 @@ widgets	widgetar
 yesterday, 	i går, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Exportera: reglage väljer vad som ska med i filen; ▾ öppnar orterna och skiftena så att du kan bocka för dem en och en. Importera visar vad filen innehåller.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Sidan Jordbävningar öppnas direkt med de senast sparade listorna; ↻ snurrar medan de uppdateras.
+Aa sets the text size.	Aa ändrar textstorleken.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Lägga till ett nytt skifte? Nålen börjar mitt på kartan; GPS flyttar den dit du är.
+Crops and growing data	Grödor och odlingsdata
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Allt appen gör, med klockslag: hämtning av väder, varningar och jordbävningar, aviseringar, tryck och gester, sensorer, widgetar och fel med deras orsak. Den sparar de senaste 5 dagarna; fel stannar i 10 dagar.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Export och Import: reglagen väljer vad som tas med; ▾ öppnar orterna och skiftena så att du kan bocka för dem ett i taget. Grödor och odlingsdata har ett eget reglage. Aa ändrar textstorleken.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Samma band visas också över Skiften, jordbävningsskärmen och fönstren Export, Import och Logg.
+What the log is	Vad loggen är
+When something does not work, tap Share or Save and send it to the author.	När något inte fungerar, tryck på Dela eller Spara och skicka den till upphovspersonen.
+crop, sowing date, area, thresholds	gröda, sådatum, areal, gränsvärden
+name, corners, points	namn, hörn, punkter
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, ovanför GPS, frågar först och lägger sedan till ett skifte: nålen börjar mitt på kartan, ett tryck på kartan flyttar den; namnet skrivs överst. ‹ går tillbaka.

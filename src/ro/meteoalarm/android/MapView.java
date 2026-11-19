@@ -184,16 +184,22 @@ final class MapView extends View {
 		double z = 15;
 		if (pins.size() > 1 || me) {
 			// Room for the pins and their names: 50 dp on the sides, the pin height at the top.
-			float w = getWidth() - 100 * dp, h = getHeight() - topPad - 90 * dp;
+			// v2.130 (Viorel): in the middle of the screen, so the same room above and below (the
+			// buttons at the top, the cards at the bottom or at the right).
+			float vp = Math.max(topPad, bottomPad), hp = rightPad;
+			float w = getWidth() - 2 * hp - 100 * dp, h = getHeight() - 2 * vp - 90 * dp;
+			if (w < getWidth() * 0.3f) w = getWidth() - hp - 100 * dp;
+			if (h < getHeight() * 0.25f) h = getHeight() - topPad - bottomPad - 90 * dp;
 			for (z = 17; z > MIN_Z; z -= 0.25) {
 				double world = tile * Math.pow(2, z);
 				if (Math.abs(wx(lo1, world) - wx(lo0, world)) <= w && Math.abs(wy(la0, world) - wy(la1, world)) <= h) break;
 			}
 		}
 		setZoom(z);
-		// The middle of the pins a bit lower, under the floating buttons at the top.
+		// v2.130 (Viorel): the middle of the pins in the middle of the screen (the pin's head a little
+		// above its point, so 15 dp lower).
 		double world = tile * Math.pow(2, zoom);
-		double cy = (wy(la0, world) + wy(la1, world)) / 2 - (topPad / 2 + 15 * dp);
+		double cy = (wy(la0, world) + wy(la1, world)) / 2 - 15 * dp;
 		lat = latOf(Math.max(0, Math.min(world, cy)), world);
 		lon = (lo0 + lo1) / 2;
 		invalidate();

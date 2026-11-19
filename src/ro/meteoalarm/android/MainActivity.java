@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.120";
+	static final String VERSION = "Meteo Alarm Android v2.130";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -76,7 +76,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private Cities.City town;
 	private long pageId;
 	private boolean townFetching;
-	private static final int REQ_PARCELS = 21, REQ_SAVE_DATA = 22, REQ_OPEN_DATA = 23;
+	private static final int REQ_PARCELS = 21, REQ_SAVE_DATA = 22, REQ_OPEN_DATA = 23, REQ_SAVE_LOG = 24;
 	private long lastTry, lastLocate, lastDone;
 	static final long REPULL_MS = 10000;
 	private Locator locator;
@@ -989,6 +989,19 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				statsSaved(data.getData());
 			} catch (Exception e) {
 				Log.e(this, "FERMIER", "export statistici", e);
+			}
+			return;
+		}
+		if (code == REQ_SAVE_LOG) {
+			if (res == RESULT_OK && data != null && data.getData() != null) try {
+				java.io.OutputStream out = getContentResolver().openOutputStream(data.getData());
+				out.write(Log.export(this).getBytes("UTF-8"));
+				out.close();
+				Log.i(this, "JURNAL", "salvat pe telefon");
+				note(Tr.t("Log saved", "Jurnal salvat"), 2000);
+			} catch (Exception e) {
+				Log.e(this, "JURNAL", "salvare", e);
+				note(Tr.t("Could not save", "Nu s-a putut salva"));
 			}
 			return;
 		}
@@ -3393,7 +3406,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				}, new Runnable() {
 					public void run() {
 						settings.hide();
-						startActivity(new Intent(MainActivity.this, LogActivity.class));
+						logPanel();
 					}
 				} });
 		p.footRow(new String[] { "sync", "plane", "help", "info" },
@@ -3496,7 +3509,36 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	private BackupPanel backupPanel() {
 		return new BackupPanel(this, s.dark, android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"),
-				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"));
+				android.graphics.Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf"), view.screen);
+	}
+
+	/** v2.130 (Viorel): the Log in a matte glass window over the screen (was a page of its own). */
+	private void logPanel() {
+		Log.i(this, "JURNAL", "deschis");
+		backupPanel().log(Log.export(this), new BackupPanel.Done() {
+			public void run(Backup.Sel sel, int b) {
+				if (b == 1) {
+					java.io.File f = Log.exportFile(MainActivity.this);
+					Log.i(MainActivity.this, "JURNAL", "trimis " + f.getName() + " " + f.length() / 1024 + " KB");
+					android.net.Uri u = ApkProvider.logUri(f.getName());
+					Intent send = new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_STREAM, u)
+							.putExtra(Intent.EXTRA_SUBJECT, "Meteo Alarm — " + Tr.t("log ", "jurnal ") + Log.device()).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+					send.setClipData(android.content.ClipData.newRawUri(f.getName(), u));
+					try {
+						startActivity(Intent.createChooser(send, Tr.t("Send the log", "Trimite jurnalul")));
+					} catch (Exception e) {
+						Log.e(MainActivity.this, "JURNAL", "trimitere", e);
+					}
+					return;
+				}
+				Intent i = new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("text/plain").putExtra(Intent.EXTRA_TITLE, Log.exportName());
+				try {
+					startActivityForResult(i, REQ_SAVE_LOG);
+				} catch (Exception e) {
+					Log.e(MainActivity.this, "JURNAL", "salvare", e);
+				}
+			}
+		});
 	}
 
 	/** v2.120 (Viorel): the Export window with a switch for each kind of data. */
@@ -3578,13 +3620,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Log.i(this, "IMPORT", "fișier din " + when + ", " + o.optString("device") + ", " + o.optString("version"));
 		backupPanel().imports(o, when + " · " + o.optString("device") + " · " + o.optString("version").replace("Meteo Alarm Android ", ""), new BackupPanel.Done() {
 			public void run(Backup.Sel sel, int b) {
-				imported(data, b == 2, sel.on);
+				imported(data, b == 2, sel);
 			}
 		});
 	}
 
-	private void imported(org.json.JSONObject o, boolean replace, boolean[] on) {
-		Backup.apply(this, o, replace, on);
+	private void imported(org.json.JSONObject o, boolean replace, Backup.Sel sel) {
+		Backup.apply(this, o, replace, sel);
 		android.widget.Toast.makeText(this, Tr.t("Imported", "Importat"), android.widget.Toast.LENGTH_SHORT).show();
 		Widget.show(this);
 		// Again from the start: the town lists, the theme and the language as in the file.
@@ -4325,7 +4367,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"☰ › Parcele: harta cu casetele parcelelor (în portret un rând jos, în peisaj o coloană la dreapta). Rămân doar în acest telefon."),
 				new android.graphics.Bitmap[] { glyph("plus"), mini("gps"), mini("tap"), glyph("pin"), glyph("point"), glyph("circle"), glyph("save"), glyph("pencil"), glyph("bars"), mini("bell"), glyph("bin") },
 				new String[] {
-						Tr.t("＋ adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top.", "＋ adaugă o parcelă: acul pornește din mijlocul hărții, o atingere pe hartă îl mută; numele se scrie sus."),
+						Tr.t("＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.", "＋, deasupra butonului GPS, întreabă întâi, apoi adaugă o parcelă: acul pornește din mijlocul hărții, o atingere pe hartă îl mută; numele se scrie sus. ‹ revine înapoi."),
 						Tr.t("The GPS button takes the map, and the new parcel's pin, where you are.", "Butonul GPS duce harta, și acul parcelei noi, unde ești."),
 						Tr.t("A tap on a card zooms the map on the parcel and shows its points; Statistics opens its statistics.", "Atingerea unei casete mărește harta pe parcelă și arată punctele ei; Statistică deschide statistica."),
 						Tr.t("A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.", "Atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele."),
@@ -4387,7 +4429,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("wxicon"), Tr.t("Weather icons", "Iconurile vremii"), Tr.t("In the theme's colours; all of them move for 3 seconds when the screen opens, after every refresh or when the weather changes, on the widgets too.",
 				"În culorile temei; toate se mișcă 3 secunde când se deschide ecranul, după fiecare reîmprospătare sau când se schimbă vremea, și pe widget-uri."));
 		help.entry(mini("camera"), Tr.t("Camera band", "Banda camerei"), Tr.t("In portrait, on phones with the camera in the screen (Android 9+), the clock, the connection and the date sit next to the camera; the town gets the whole row.",
-				"În portret, pe telefoanele cu camera în ecran (Android 9+), ceasul, conexiunea și data stau lângă cameră; localitatea are tot rândul."));
+				"În portret, pe telefoanele cu camera în ecran (Android 9+), ceasul, conexiunea și data stau lângă cameră; localitatea are tot rândul.")
+				+ " " + Tr.t("The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.",
+						"Aceeași bandă apare și peste Parcele, ecranul cutremurului și ferestrele Export, Import și Jurnal."));
 		help.section(Tr.t("Gestures", "Gesturi"));
 		help.entry(mini("tap"), Tr.t("Tap on the town's name", "Atingerea numelui localității"), Tr.t("Looks once with the GPS.", "Caută o dată poziția cu GPS-ul."));
 		help.entry(mini("pull"), Tr.t("Pull down", "Trage în jos"), Tr.t("Refreshes the weather; a tap on “updated” does the same.", "Reîmprospătează vremea; la fel și atingerea capsulei „actualizat”."));
@@ -4453,9 +4497,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Bara de jos a ferestrei: Widget-uri, Export / Import, Jurnal, Actualizare, Partajare, Ajutor, Despre. Trasă în sus, arată numele de sub iconuri."));
 		help.entry(mini("transfer"), Tr.t("Export / Import", "Export / Import"), Tr.t("Moves your towns, favourites, parcels and settings to another device through a file.",
 				"Mută localitățile, favoritele, parcelele și setările pe alt dispozitiv, printr-un fișier.")
-				+ " " + Tr.t("Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.",
-						"Export: comutatoarele aleg ce intră în fișier; ▾ deschide localitățile și parcelele, ca să le bifezi pe rând. Import arată ce conține fișierul."));
-		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi."));
+				+ " " + Tr.t("Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.",
+						"Export și Import: comutatoarele aleg ce intră; ▾ deschide localitățile și parcelele, ca să le bifezi pe rând. Culturile și datele de cultivare au comutatorul lor. Aa schimbă mărimea textului."));
+		help.entry(mini("log"), Tr.t("Log", "Jurnal"), Tr.t("What the app did, with the time; read, share or save it.", "Ce a făcut aplicația, cu ora; îl citești, îl trimiți sau îl salvezi.") + " "
+				+ Tr.t("Aa sets the text size.", "Aa schimbă mărimea textului."));
 		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));
 		help.entry(mini("share"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Sends the download link, e.g. on WhatsApp.", "Trimite linkul de descărcare, de exemplu pe WhatsApp."));
 		help.entry(mini("about"), Tr.t("About", "Despre"), Tr.t("About the app, its data and what's new.", "Despre aplicație, datele ei și ce e nou."));

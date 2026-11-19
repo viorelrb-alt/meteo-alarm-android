@@ -1629,3 +1629,14 @@ widgets	widgetit
 yesterday, 	eilen, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Vienti: kytkimet valitsevat, mitä tiedostoon tulee; ▾ avaa paikkakunnat ja lohkot, jotta voit valita ne yksitellen. Tuonti näyttää, mitä tiedostossa on.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Maanjäristykset-sivu avautuu heti viimeksi tallennetuilla luetteloilla; ↻ pyörii, kun niitä päivitetään.
+Aa sets the text size.	Aa muuttaa tekstin kokoa.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Lisätäänkö uusi lohko? Neula alkaa kartan keskeltä; GPS siirtää sen sinne, missä olet.
+Crops and growing data	Viljelykasvit ja viljelytiedot
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Kaikki, mitä sovellus tekee, kellonajan kanssa: sään, varoitusten ja maanjäristysten lataukset, ilmoitukset, napautukset ja eleet, anturit, widgetit ja virheet syineen. Se säilyttää viimeiset 5 päivää; virheet pysyvät 10 päivää.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Vienti ja Tuonti: kytkimet valitsevat, mitä mukaan tulee; ▾ avaa paikkakunnat ja lohkot, jotta ne voi valita yksitellen. Viljelykasveilla ja viljelytiedoilla on oma kytkimensä. Aa muuttaa tekstin kokoa.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Sama palkki näkyy myös Lohkojen, maanjäristysnäkymän sekä Vienti-, Tuonti- ja Loki-ikkunoiden päällä.
+What the log is	Mikä loki on
+When something does not work, tap Share or Save and send it to the author.	Kun jokin ei toimi, napauta Jaa tai Tallenna ja lähetä se tekijälle.
+crop, sowing date, area, thresholds	viljelykasvi, kylvöpäivä, pinta-ala, raja-arvot
+name, corners, points	nimi, kulmat, pisteet
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, GPS:n yläpuolella, kysyy ensin ja lisää sitten lohkon: neula alkaa kartan keskeltä, napautus kartalla siirtää sitä; nimi kirjoitetaan ylös. ‹ palaa takaisin.

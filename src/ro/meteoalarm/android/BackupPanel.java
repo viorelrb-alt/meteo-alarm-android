@@ -34,15 +34,20 @@ final class BackupPanel {
 	private final boolean dark;
 	private final Typeface reg, bold;
 	private final float dp;
+	private final ro.meteoalarm.android.core.Screen screen;
 	private Dialog d;
-	private LinearLayout rows;
+	private LinearLayout rows, body, col;
+	/** v2.130 (Viorel): the text size of the window (the Aa button, as on Help). */
+	private float ts;
 
-	BackupPanel(Context ctx, boolean dark, Typeface reg, Typeface bold) {
+	BackupPanel(Context ctx, boolean dark, Typeface reg, Typeface bold, ro.meteoalarm.android.core.Screen screen) {
 		this.ctx = ctx;
 		this.dark = dark;
 		this.reg = reg;
 		this.bold = bold;
+		this.screen = screen;
 		this.dp = ctx.getResources().getDisplayMetrics().density;
+		this.ts = TextSize.get(ctx);
 	}
 
 	private int px(float v) {
@@ -66,34 +71,90 @@ final class BackupPanel {
 				Tr.t("Parcel notifications", "Notificările parcelelor"), Tr.t("Parcel bin", "Coșul de parcele"),
 				Tr.t("Places visited (villages)", "Locuri vizitate (sate)"), Tr.t("Look and language", "Aspect și limbă"),
 				Tr.t("Notifications and alerts", "Notificări și alerte"), Tr.t("Map", "Hartă"), Tr.t("Widget settings", "Setările widget-urilor"),
-				Tr.t("Earthquake history", "Istoricul cutremurelor"), Tr.t("App log", "Jurnalul aplicației") };
+				Tr.t("Earthquake history", "Istoricul cutremurelor"), Tr.t("App log", "Jurnalul aplicației"),
+				Tr.t("Crops and growing data", "Culturi și date de cultivare") };
 	}
 
 	static String[] subs() {
-		return new String[] { "", Tr.t("corners, crop, sowing date", "colțuri, cultură, semănat"),
+		return new String[] { "", Tr.t("name, corners, points", "nume, colțuri, puncte"),
 				Tr.t("only for the chosen parcels", "doar pentru parcelele alese"), Tr.t("parcels deleted in the last 15 days", "parcelele șterse în ultimele 15 zile"),
 				"", Tr.t("theme, colours, icons, language, text size, units", "temă, culori, iconuri, limbă, mărimea textului, unități"),
 				Tr.t("rain, warnings, earthquakes, tornadoes", "ploaie, avertizări, cutremure, tornade"), Tr.t("satellite or map, rain radar", "satelit sau hartă, radarul de ploaie"),
 				Tr.t("background, colours, days or hours", "fundal, culori, zile sau ore"), Tr.t("EMSC and institute values", "valorile EMSC și ale institutelor"),
-				Tr.t("last 5 days, for troubleshooting", "ultimele 5 zile, pentru depanare") };
+				Tr.t("last 5 days, for troubleshooting", "ultimele 5 zile, pentru depanare"),
+				Tr.t("crop, sowing date, area, thresholds", "cultura, data semănatului, suprafața, pragurile") };
 	}
 
-	/** The window: TITLE, a line under it, the rows, and the 2 buttons B1 (filled) and B2. */
-	private void frame(String title, String line, String b1, String b2, final Done done, final Backup.Sel sel, String foot) {
+	/**
+	 * The window: TITLE with Aa and ✕, a line under it, the BODY (for Export and Import the rows, which
+	 * scroll), and the 2 buttons B1 (filled) and B2. v2.130 (Viorel): a sheet of matte glass like the
+	 * ☰ menu (readable on the light theme too), the camera's band above it, the Aa button for the
+	 * text size. KEEP: the buttons do not close the window (the Log).
+	 */
+	private void frame(String title, String line, String b1, String b2, final Done done, final Backup.Sel sel, String foot, final boolean keep) {
 		d = new Dialog(ctx, android.R.style.Theme_DeviceDefault_Dialog_NoActionBar);
-		Window w = d.getWindow();
+		final Window w = d.getWindow();
 		w.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(0));
-		FrameLayout root = new FrameLayout(ctx);
-		LinearLayout col = new LinearLayout(ctx);
+		final FrameLayout root = new FrameLayout(ctx);
+		col = new LinearLayout(ctx);
 		col.setOrientation(LinearLayout.VERTICAL);
-		col.setPadding(px(18), px(14), px(18), px(16));
-		col.setBackground(Glass.panelBg(dark, 26 * dp, dp));
-		root.addView(col);
+		col.setPadding(px(18), px(12), px(18), px(16));
+		android.graphics.drawable.GradientDrawable pb = Glass.panelBg(dark, 26 * dp, dp);
+		pb.setColor(Glass.alpha(Theme.page(dark), dark ? 0.9f : 0.94f));
+		col.setBackground(pb);
+		final android.util.DisplayMetrics m = ctx.getResources().getDisplayMetrics();
+		final FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(Math.min(m.widthPixels - px(24), px(560)), ViewGroup.LayoutParams.MATCH_PARENT,
+				Gravity.CENTER_HORIZONTAL);
+		cl.topMargin = TopBand.height(ctx, null) + px(8);
+		cl.bottomMargin = px(14);
+		root.addView(col, cl);
+		// The camera's band, over everything (Viorel: the same band on every screen).
+		final TopBand band = new TopBand(ctx, screen, new ro.meteoalarm.android.core.Texts(Tr.lang()), false, dark, reg, bold, 0, 0, false);
+		root.addView(band, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, TopBand.height(ctx, null), Gravity.TOP));
+		root.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+			public android.view.WindowInsets onApplyWindowInsets(View v, android.view.WindowInsets in) {
+				int bh = TopBand.height(ctx, root);
+				band.getLayoutParams().height = bh;
+				cl.topMargin = bh + px(8);
+				band.requestLayout();
+				col.requestLayout();
+				return in;
+			}
+		});
 		LinearLayout head = new LinearLayout(ctx);
 		head.setGravity(Gravity.CENTER_VERTICAL);
-		TextView t = text(26, true, ink());
+		FitText t = new FitText(ctx, 1, 0.5f);
+		t.setTypeface(bold);
+		t.setTextColor(ink());
+		t.setIncludeFontPadding(false);
+		TextSize.size(t, 26, ts);
 		t.setText(title);
 		head.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		// Aa: the text-size bar, as on Help.
+		final SizeOverlay sizer = screen != null ? new SizeOverlay(ctx, screen) : null;
+		if (sizer != null) {
+			TextView aa = text(17, true, ink());
+			aa.setText("Aa");
+			aa.setTag(R.id.widget_root, null);
+			aa.setTextSize(17);
+			aa.setGravity(Gravity.CENTER);
+			aa.setContentDescription(Tr.t("Text size", "Mărimea textului"));
+			aa.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp, dp));
+			aa.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					sizer.show(new SizeOverlay.Listener() {
+						public void sized(float s, boolean save) {
+							ts = s;
+							TextSize.apply(col, ts);
+						}
+					});
+				}
+			});
+			LinearLayout.LayoutParams al = new LinearLayout.LayoutParams(px(56), px(44));
+			al.rightMargin = px(10);
+			al.leftMargin = px(8);
+			head.addView(aa, al);
+		}
 		View x = new View(ctx);
 		x.setBackground(Glass.closeIcon(dark, dp));
 		x.setContentDescription(Tr.t("Close", "Închide"));
@@ -107,26 +168,36 @@ final class BackupPanel {
 		if (line != null) {
 			TextView l = text(13, false, dim());
 			l.setText(line);
-			l.setPadding(0, px(4), 0, px(10));
+			l.setPadding(0, px(6), 0, px(10));
 			col.addView(l);
+		} else col.addView(new View(ctx), new LinearLayout.LayoutParams(1, px(10)));
+		body = new LinearLayout(ctx);
+		body.setOrientation(LinearLayout.VERTICAL);
+		col.addView(body, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
+		if (sel != null) {
+			ScrollView sv = new ScrollView(ctx);
+			rows = new LinearLayout(ctx);
+			rows.setOrientation(LinearLayout.VERTICAL);
+			rows.setBackground(Glass.cardBg(dark, 18 * dp, dp));
+			sv.addView(rows);
+			body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		}
-		ScrollView sv = new ScrollView(ctx);
-		rows = new LinearLayout(ctx);
-		rows.setOrientation(LinearLayout.VERTICAL);
-		rows.setBackground(Glass.cardBg(dark, 18 * dp, dp));
-		sv.addView(rows);
-		col.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1));
 		LinearLayout bs = new LinearLayout(ctx);
 		bs.setPadding(0, px(14), 0, 0);
 		for (int i = 0; i < 2; i++) {
 			final int k = i + 1;
-			TextView b = text(17, true, i == 0 ? 0xFFFFFFFF : ink());
+			FitText b = new FitText(ctx, 1, 0.5f);
+			b.setTypeface(bold);
+			b.setTextColor(i == 0 ? 0xFFFFFFFF : ink());
+			b.setIncludeFontPadding(false);
+			TextSize.size(b, 17, ts);
 			b.setText(i == 0 ? b1 : b2);
 			b.setGravity(Gravity.CENTER);
+			b.setPadding(px(8), 0, px(8), 0);
 			b.setBackground(Glass.pill(i == 0 ? accent() : Glass.disc(dark), i == 0 ? 0 : Glass.edge(dark), 24 * dp, dp));
 			b.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
-					d.dismiss();
+					if (!keep) d.dismiss();
 					done.run(sel, k);
 				}
 			});
@@ -142,12 +213,14 @@ final class BackupPanel {
 			f.setPadding(0, px(8), 0, 0);
 			col.addView(f);
 		}
+		if (sizer != null) root.addView(sizer, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 		d.setContentView(root);
-		android.util.DisplayMetrics m = ctx.getResources().getDisplayMetrics();
+		w.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+		TopBand.fullScreen(w, dark);
+		if (android.os.Build.VERSION.SDK_INT >= 30) w.setDecorFitsSystemWindows(false);
+		w.getDecorView().setPadding(0, 0, 0, 0);
 		WindowManager.LayoutParams lp = w.getAttributes();
-		lp.width = Math.min(m.widthPixels - px(16), px(560));
-		lp.height = Math.min(m.heightPixels - px(60), px(760));
-		lp.dimAmount = 0.5f;
+		lp.dimAmount = dark ? 0.45f : 0.3f;
 		w.setAttributes(lp);
 		w.addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 	}
@@ -155,7 +228,7 @@ final class BackupPanel {
 	private TextView text(float sp, boolean b, int color) {
 		TextView t = new TextView(ctx);
 		t.setTypeface(b ? bold : reg);
-		t.setTextSize(sp);
+		TextSize.size(t, sp, ts);
 		t.setTextColor(color);
 		t.setIncludeFontPadding(false);
 		return t;
@@ -176,9 +249,14 @@ final class BackupPanel {
 		r.setPadding(px(14), px(12), px(12), px(12));
 		LinearLayout tx = new LinearLayout(ctx);
 		tx.setOrientation(LinearLayout.VERTICAL);
-		TextView t = text(16, false, ink());
+		// v2.130 (Viorel): the title on one row, as large as the room up to the switch allows.
+		FitText t = new FitText(ctx, 1, 0.45f);
+		t.setTypeface(reg);
+		t.setTextColor(ink());
+		t.setIncludeFontPadding(false);
+		TextSize.size(t, 16, ts);
 		t.setText(title);
-		tx.addView(t);
+		tx.addView(t, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		TextView s = text(12.5f, false, dim());
 		s.setText(sub);
 		s.setPadding(0, px(3), 0, 0);
@@ -338,7 +416,7 @@ final class BackupPanel {
 						s.save(ctx);
 						done.run(s, b);
 					}
-				}, sel, Tr.t("The choice is kept", "Alegerea rămâne ținută minte"));
+				}, sel, Tr.t("The choice is kept", "Alegerea rămâne ținută minte"), false);
 		final int[] n = Backup.what(ctx, null);
 		String[] ti = titles(), su = subs();
 		android.content.SharedPreferences p = Fetcher.prefs(ctx);
@@ -373,15 +451,10 @@ final class BackupPanel {
 			Parcels.Parcel x = pl.get(i);
 			pt[i] = !sel.offParcels.contains(x.id);
 			pn[i] = x.name;
-			ro.meteoalarm.android.core.Agro.Crop c = x.crop();
-			StringBuilder b = new StringBuilder();
-			if (c != null) b.append(c.name());
-			if (x.sow.length() >= 10) b.append(b.length() > 0 ? " · " : "").append(Tr.t("sown ", "semănat ")).append(x.sow.substring(8, 10)).append('.').append(x.sow.substring(5, 7));
-			b.append(b.length() > 0 ? " · " : "").append(String.format(java.util.Locale.ROOT, "%.4f, %.4f", x.lat, x.lon));
-			pd[i] = b.toString();
+			pd[i] = parcelLine(x);
 		}
 		final TextView pc = text(12, false, dim());
-		View plist = pl.isEmpty() ? null : ticks(pn, pd, pt, pc, " · " + su[1], new Runnable() {
+		View plist = pl.isEmpty() ? null : ticks(pn, pd, pt, pc, " · " + su[Backup.PARCELS], new Runnable() {
 			public void run() {
 				sel.offParcels.clear();
 				for (int i = 0; i < pt.length; i++) if (!pt[i]) sel.offParcels.add(pl.get(i).id);
@@ -389,10 +462,12 @@ final class BackupPanel {
 		});
 		TextView s1 = row(ti[1], pl.isEmpty() ? Tr.t("nothing to save", "nimic de salvat") : pc.getText().toString(), sel.on, Backup.PARCELS, !pl.isEmpty(), plist);
 		link(s1, pc);
-		for (int k = Backup.BELLS; k < Backup.N; k++) {
+		for (int k : Backup.ORDER) {
+			if (k == Backup.TOWNS || k == Backup.PARCELS) continue;
 			boolean has = n[k] > 0 || k == Backup.LOOK || k == Backup.LOG;
 			String sub = has ? su[k] : Tr.t("nothing to save", "nimic de salvat");
 			if (k == Backup.WIDGETS && has) sub = n[k] + " " + Tr.t("widgets", "widget-uri") + ": " + su[k];
+			if (k == Backup.CROPS && has) sub = n[k] + " " + Tr.t("parcels", "parcele") + ": " + su[k];
 			row(ti[k], sub, sel.on, k, has, null);
 		}
 		show();
@@ -400,12 +475,16 @@ final class BackupPanel {
 
 	/** The count line under a row follows the list's count. */
 	private void link(final TextView sub, final TextView count) {
+		link(sub, count, "");
+	}
+
+	private void link(final TextView sub, final TextView count, final String pre) {
 		count.addTextChangedListener(new android.text.TextWatcher() {
 			public void beforeTextChanged(CharSequence s, int a, int b, int c) {
 			}
 
 			public void onTextChanged(CharSequence s, int a, int b, int c) {
-				sub.setText(s);
+				sub.setText(pre + s);
 			}
 
 			public void afterTextChanged(android.text.Editable s) {
@@ -413,27 +492,134 @@ final class BackupPanel {
 		});
 	}
 
-	/** The Import window for file O; DONE gets the switches and button 1 = Add, 2 = Replace. */
+	/**
+	 * The Import window for file O; DONE gets the switches and button 1 = Add, 2 = Replace. v2.130
+	 * (Viorel): like Export, the towns and the parcels of the file in lists to tick one by one.
+	 */
 	void imports(org.json.JSONObject o, String line, Done done) {
 		final Backup.Sel sel = new Backup.Sel();
 		frame(Tr.t("Import", "Import"), line, Tr.t("Add", "Adaugă"), Tr.t("Replace", "Înlocuiește"), done, sel,
 				Tr.t("Add keeps what you have; Replace makes it as in the file, only for the rows switched on.",
-						"Adaugă păstrează ce ai pe telefon; Înlocuiește face totul ca în fișier, doar pentru rândurile pornite."));
+						"Adaugă păstrează ce ai pe telefon; Înlocuiește face totul ca în fișier, doar pentru rândurile pornite."), false);
 		int[] n = Backup.what(ctx, o);
-		String[] ti = titles();
+		String[] ti = titles(), su = subs();
 		String in = Tr.t("in the file: ", "în fișier: ");
-		for (int k = 0; k < Backup.LOG; k++) {
+		for (int k : Backup.ORDER) {
+			if (k == Backup.LOG) continue;
 			boolean has = n[k] > 0;
 			sel.on[k] = has;
 			String sub;
+			View list = null;
 			if (!has) sub = Tr.t("not in the file", "nu e în fișier");
-			else if (k == Backup.TOWNS) sub = in + n[k] + " " + Tr.t("towns", "localități");
-			else if (k == Backup.PARCELS) sub = in + n[k] + " " + Tr.t("parcels", "parcele");
-			else if (k == Backup.WIDGETS) sub = in + n[k] + " " + Tr.t("widgets", "widget-uri");
+			else if (k == Backup.TOWNS) {
+				final java.util.List<String> tl = new java.util.ArrayList<String>();
+				java.util.List<String[]> td = new java.util.ArrayList<String[]>();
+				String[] keys = { "myCities", "favs", "favsUS" };
+				for (int i = 0; i < 3; i++)
+					for (String l : o.optString(keys[i], "").split("\n")) if (l.trim().length() > 0) {
+						tl.add(l);
+						td.add(townOf(l, i == 0 ? Tr.t("my town", "localitatea mea") : Tr.t("favourite", "favorită")));
+					}
+				final boolean[] tt = new boolean[tl.size()];
+				String[] tn = new String[tl.size()], tdd = new String[tl.size()];
+				for (int i = 0; i < tl.size(); i++) {
+					tt[i] = true;
+					tn[i] = td.get(i)[0];
+					tdd[i] = td.get(i)[1];
+				}
+				final TextView cnt = text(12, false, dim());
+				list = tl.isEmpty() ? null : ticks(tn, tdd, tt, cnt, "", new Runnable() {
+					public void run() {
+						sel.offTowns.clear();
+						for (int i = 0; i < tt.length; i++) if (!tt[i]) sel.offTowns.add(tl.get(i));
+					}
+				});
+				sub = in + cnt.getText();
+				TextView s0 = row(ti[k], sub, sel.on, k, true, list);
+				link(s0, cnt, in);
+				continue;
+			} else if (k == Backup.PARCELS) {
+				final List<Parcels.Parcel> pl = Backup.fileParcels(o);
+				final boolean[] pt = new boolean[pl.size()];
+				String[] pn = new String[pl.size()], pd = new String[pl.size()];
+				for (int i = 0; i < pl.size(); i++) {
+					pt[i] = true;
+					pn[i] = pl.get(i).name;
+					pd[i] = parcelLine(pl.get(i));
+				}
+				final TextView cnt = text(12, false, dim());
+				list = pl.isEmpty() ? null : ticks(pn, pd, pt, cnt, "", new Runnable() {
+					public void run() {
+						sel.offParcels.clear();
+						for (int i = 0; i < pt.length; i++) if (!pt[i]) sel.offParcels.add(pl.get(i).id);
+					}
+				});
+				TextView s1 = row(ti[k], in + cnt.getText(), sel.on, k, true, list);
+				link(s1, cnt, in);
+				continue;
+			} else if (k == Backup.WIDGETS) sub = in + n[k] + " " + Tr.t("widgets", "widget-uri");
+			else if (k == Backup.CROPS) sub = in + n[k] + " " + Tr.t("parcels", "parcele") + ": " + su[k];
 			else if (k == Backup.LOOK || k == Backup.ALERT || k == Backup.MAPS) sub = in + n[k] + " " + Tr.t("settings", "setări");
 			else sub = in + n[k];
 			row(ti[k], sub, sel.on, k, has, null);
 		}
+		show();
+	}
+
+	/** "orz · semănat 11.09 · 44.2307, 27.1578" for a parcel's line in a list. */
+	static String parcelLine(Parcels.Parcel x) {
+		ro.meteoalarm.android.core.Agro.Crop c = x.crop();
+		StringBuilder b = new StringBuilder();
+		if (c != null) b.append(c.name());
+		if (x.sow.length() >= 10) b.append(b.length() > 0 ? " · " : "").append(Tr.t("sown ", "semănat ")).append(x.sow.substring(8, 10)).append('.').append(x.sow.substring(5, 7));
+		b.append(b.length() > 0 ? " · " : "").append(String.format(java.util.Locale.ROOT, "%.4f, %.4f", x.lat, x.lon));
+		return b.toString();
+	}
+
+	/**
+	 * v2.130 (Viorel): the Log in the same matte window: what it is (a short note on a card), then
+	 * the log's lines on a card that scrolls (the newest at the end); 1 = Share, 2 = Save.
+	 */
+	void log(String text, Done done) {
+		frame(Tr.t("Log", "Jurnal"), null, Tr.t("Share", "Trimite"), Tr.t("Save", "Salvează"), done, null, null, true);
+		LinearLayout info = new LinearLayout(ctx);
+		info.setOrientation(LinearLayout.VERTICAL);
+		info.setBackground(Glass.cardBg(dark, 18 * dp, dp));
+		info.setPadding(px(14), px(12), px(14), px(12));
+		TextView h = text(15, true, ink());
+		h.setText(Tr.t("What the log is", "Ce este jurnalul"));
+		info.addView(h);
+		TextView a = text(13, false, dim());
+		a.setText(Tr.t("Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.",
+				"Tot ce face aplicația, cu ora: descărcările de vreme, avertizări și cutremure, notificările, atingerile și gesturile, senzorii, widget-urile și erorile, cu motivul lor. Păstrează ultimele 5 zile; erorile rămân 10 zile."));
+		a.setPadding(0, px(6), 0, 0);
+		info.addView(a);
+		TextView b = text(13, false, dim());
+		b.setText(Tr.t("When something does not work, tap Share or Save and send it to the author.",
+				"Când ceva nu merge, apasă Trimite sau Salvează și trimite-l autorului."));
+		b.setPadding(0, px(6), 0, 0);
+		info.addView(b);
+		body.addView(info);
+		// The lines: the newest at the end; a long log from its last 400 KB (the file has it all).
+		if (text.length() > 400000) text = "…\n" + text.substring(text.length() - 400000);
+		TextView lines = text(11, false, ink());
+		lines.setTypeface(Typeface.MONOSPACE);
+		lines.setText(text);
+		lines.setTextIsSelectable(true);
+		lines.setIncludeFontPadding(true);
+		final ScrollView sv = new ScrollView(ctx);
+		sv.setBackground(Glass.cardBg(dark, 18 * dp, dp));
+		sv.setPadding(px(12), px(10), px(12), px(10));
+		sv.setClipToPadding(false);
+		sv.addView(lines);
+		LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1);
+		sl.topMargin = px(10);
+		body.addView(sv, sl);
+		sv.post(new Runnable() {
+			public void run() {
+				sv.fullScroll(View.FOCUS_DOWN);
+			}
+		});
 		show();
 	}
 

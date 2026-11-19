@@ -1629,3 +1629,14 @@ widgets	widget
 yesterday, 	ieri, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Esporta: gli interruttori scelgono cosa va nel file; ▾ apre località e appezzamenti per spuntarli uno per uno. Importa mostra cosa contiene il file.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	La pagina Terremoti si apre subito con gli ultimi elenchi salvati; ↻ gira mentre si aggiornano.
+Aa sets the text size.	Aa cambia la dimensione del testo.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Aggiungere una nuova particella? Lo spillo parte dal centro della mappa; il GPS lo sposta dove sei.
+Crops and growing data	Colture e dati di coltivazione
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Tutto ciò che fa l'app, con l'ora: download di meteo, allerte e terremoti, notifiche, tocchi e gesti, sensori, widget ed errori, con il loro motivo. Conserva gli ultimi 5 giorni; gli errori restano 10 giorni.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Esporta e Importa: gli interruttori scelgono cosa entra; ▾ apre le località e le particelle per spuntarle una a una. Colture e dati di coltivazione hanno un interruttore proprio. Aa cambia la dimensione del testo.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	La stessa banda appare anche su Particelle, sulla schermata del terremoto e nelle finestre Esporta, Importa e Registro.
+What the log is	Cos'è il registro
+When something does not work, tap Share or Save and send it to the author.	Quando qualcosa non funziona, tocca Invia o Salva e mandalo all'autore.
+crop, sowing date, area, thresholds	coltura, data di semina, superficie, soglie
+name, corners, points	nome, angoli, punti
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, sopra il GPS, chiede prima e poi aggiunge una particella: lo spillo parte dal centro della mappa, un tocco sulla mappa lo sposta; il nome si scrive in alto. ‹ torna indietro.

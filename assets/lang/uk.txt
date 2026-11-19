@@ -1629,3 +1629,14 @@ widgets	віджети
 yesterday, 	учора, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Експорт: перемикачі вибирають, що піде у файл; ▾ відкриває пункти й ділянки, щоб позначити їх по одному. Імпорт показує, що є у файлі.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Сторінка Землетруси відкривається одразу з останніми збереженими списками; ↻ обертається, поки вони оновлюються.
+Aa sets the text size.	Aa змінює розмір тексту.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Додати нову ділянку? Шпилька починає з середини карти; GPS переносить її туди, де ви.
+Crops and growing data	Культури та дані вирощування
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Усе, що робить застосунок, з часом: завантаження погоди, попереджень і землетрусів, сповіщення, дотики та жести, датчики, віджети й помилки з їхньою причиною. Зберігає останні 5 днів; помилки лишаються 10 днів.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Експорт та Імпорт: перемикачі вибирають, що увійде; ▾ відкриває населені пункти й ділянки, щоб позначити їх по одному. Культури та дані вирощування мають свій перемикач. Aa змінює розмір тексту.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Та сама смуга показується й над Ділянками, екраном землетрусу та вікнами Експорт, Імпорт і Журнал.
+What the log is	Що таке журнал
+When something does not work, tap Share or Save and send it to the author.	Коли щось не працює, торкніться Надіслати або Зберегти й надішліть його авторові.
+crop, sowing date, area, thresholds	культура, дата сівби, площа, пороги
+name, corners, points	назва, кути, точки
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, над GPS, спершу питає, а потім додає ділянку: шпилька починає з середини карти, дотик до карти пересуває її; назва пишеться вгорі. ‹ повертає назад.

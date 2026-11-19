@@ -1629,3 +1629,14 @@ widgets	widgets
 yesterday, 	gisteren, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Exporteren: schakelaars kiezen wat in het bestand komt; ▾ opent de plaatsen en percelen om ze een voor een aan te vinken. Importeren toont wat het bestand bevat.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	De pagina Aardbevingen opent meteen met de laatst opgeslagen lijsten; ↻ draait tijdens het bijwerken.
+Aa sets the text size.	Aa verandert de tekstgrootte.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Een nieuw perceel toevoegen? De speld begint in het midden van de kaart; GPS zet hem waar je bent.
+Crops and growing data	Gewassen en teeltgegevens
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Alles wat de app doet, met de tijd: downloads van weer, waarschuwingen en aardbevingen, meldingen, tikken en gebaren, sensoren, widgets en fouten, met hun reden. De laatste 5 dagen blijven bewaard; fouten 10 dagen.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Exporteren en Importeren: schakelaars kiezen wat erin gaat; ▾ opent de plaatsen en percelen om ze één voor één aan te vinken. Gewassen en teeltgegevens hebben een eigen schakelaar. Aa verandert de tekstgrootte.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Dezelfde balk staat ook boven Percelen, het aardbevingsscherm en de vensters Exporteren, Importeren en Logboek.
+What the log is	Wat het logboek is
+When something does not work, tap Share or Save and send it to the author.	Werkt iets niet, tik dan op Delen of Opslaan en stuur het naar de maker.
+crop, sowing date, area, thresholds	gewas, zaaidatum, oppervlakte, drempels
+name, corners, points	naam, hoeken, punten
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, boven GPS, vraagt eerst en voegt dan een perceel toe: de speld begint in het midden van de kaart, een tik op de kaart verplaatst hem; de naam staat bovenaan. ‹ gaat terug.

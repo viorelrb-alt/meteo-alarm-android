@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.120 · 19.11.2026
+Geçerli sürüm: v.2.130 · 19.11.2026
 ANA EKRAN
 - Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ☰ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
 AYARLAR
@@ -15,7 +15,8 @@ PARSELLER
 - Parsel koordinatları: düzenleme sayfasında her noktanın GPS koordinatları yazılabilir, altında uydu görünümü parseli gösterir.
 - Parseli düzenle: kalem parselin sayfasını açar: ad, bitki (ekim tarihinin sezonuna göre liste veya Başka bitki…), ekim tarihi, alan; köşeler haritada taşınır.
 - Depremler sayfası: telefonda son kaydedilen listelerle hemen açılır ve onları arka planda günceller.
-- Dışa / İçe aktar: dosyanın içeriği için anahtarlar (tarla bildirimleri, tarla çöp kutusu, bildirimler, harita, widget'lar, deprem geçmişi, günlük de); yerler ve tarlalar tek tek işaretlenebilir.
+- Dışa / İçe aktarma: dosyaya girecekler için anahtarlar (ürünler ve yetiştirme verileri, parsel bildirimleri, parsel çöp kutusu, bildirimler, harita, widget'lar, deprem geçmişi, günlük de); Dışa ve İçe aktarmada yerleşimler ve parseller tek tek işaretlenir; Aa düğmesi metin boyutunu değiştirir.
+- Günlük: Aa düğmesi metin boyutunu değiştirir.
 - Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.4 (v.1.400 – v.1.520)

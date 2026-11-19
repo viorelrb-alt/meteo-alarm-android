@@ -1629,3 +1629,14 @@ widgets	widgets
 yesterday, 	ilbieraħ, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Esporta: is-swiċċijiet jagħżlu x'jidħol fil-fajl; ▾ tiftaħ il-postijiet u l-biċċiet tal-art biex timmarkahom wieħed wieħed. Importa turi x'fih il-fajl.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Il-paġna Terremoti tiftaħ mill-ewwel bl-aħħar listi ssejvjati; ↻ iddur waqt li jiġu aġġornati.
+Aa sets the text size.	Aa jibdel id-daqs tat-test.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Iżżid biċċa art ġdida? Il-labra tibda min-nofs tal-mappa; il-GPS iġibha fejn int.
+Crops and growing data	Uċuħ tar-raba' u dejta tal-kultivazzjoni
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Kull ma tagħmel l-app, bil-ħin: it-tniżżil tat-temp, tat-twissijiet u tat-terremoti, in-notifiki, il-messiet u l-ġesti, is-sensuri, il-widgets u l-iżbalji, bir-raġuni tagħhom. Iżżomm l-aħħar 5 ijiem; l-iżbalji jibqgħu 10 ijiem.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Esportazzjoni u Importazzjoni: is-swiċċijiet jagħżlu x'jidħol; ▾ jiftaħ l-postijiet u l-biċċiet tal-art biex timmarkahom wieħed wieħed. L-uċuħ tar-raba' u d-dejta tal-kultivazzjoni għandhom swiċċ tagħhom. Aa jibdel id-daqs tat-test.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	L-istess faxxa tidher ukoll fuq Biċċiet tal-art, l-iskrin tat-terremot u t-twieqi Esportazzjoni, Importazzjoni u Reġistru.
+What the log is	X'inhu r-reġistru
+When something does not work, tap Share or Save and send it to the author.	Meta xi ħaġa ma taħdimx, agħfas Ibgħat jew Issejvja u ibagħtu lill-awtur.
+crop, sowing date, area, thresholds	wiċċ tar-raba', data taż-żriegħ, erja, limiti
+name, corners, points	isem, kantunieri, punti
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, fuq il-GPS, l-ewwel jistaqsi u mbagħad iżid biċċa art: il-labra tibda min-nofs tal-mappa, messa fuq il-mappa tmexxiha; l-isem jinkiteb fuq. ‹ imur lura.

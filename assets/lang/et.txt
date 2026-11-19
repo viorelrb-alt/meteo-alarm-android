@@ -1629,3 +1629,14 @@ widgets	vidinad
 yesterday, 	eile, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksport: lülitid valivad, mis faili läheb; ▾ avab kohad ja põllud, et need ükshaaval märkida. Import näitab, mis failis on.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Leht Maavärinad avaneb kohe viimati salvestatud loenditega; ↻ pöörleb, kuni neid uuendatakse.
+Aa sets the text size.	Aa muudab teksti suurust.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Lisada uus põld? Nõel algab kaardi keskelt; GPS viib selle sinna, kus sa oled.
+Crops and growing data	Kultuurid ja kasvatusandmed
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Kõik, mida rakendus teeb, kellaajaga: ilma, hoiatuste ja maavärinate allalaadimised, teavitused, puudutused ja žestid, andurid, vidinad ja vead koos põhjusega. Hoiab viimased 5 päeva; vead jäävad 10 päevaks.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Eksport ja Import: lülitid valivad, mis sisse läheb; ▾ avab kohad ja põllud, et neid ükshaaval märkida. Kultuuridel ja kasvatusandmetel on oma lüliti. Aa muudab teksti suurust.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Sama riba on ka Põldude, maavärina ekraani ning Ekspordi, Impordi ja Logi akende kohal.
+What the log is	Mis on logi
+When something does not work, tap Share or Save and send it to the author.	Kui midagi ei tööta, puuduta Jaga või Salvesta ja saada see autorile.
+crop, sowing date, area, thresholds	kultuur, külvikuupäev, pindala, piirid
+name, corners, points	nimi, nurgad, punktid
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, GPS-i kohal, küsib enne ja lisab siis põllu: nõel algab kaardi keskelt, puudutus kaardil liigutab seda; nimi kirjutatakse üles. ‹ läheb tagasi.

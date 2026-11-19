@@ -1629,3 +1629,14 @@ widgets	widgetek
 yesterday, 	tegnap, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Exportálás: kapcsolókkal választod ki, mi kerüljön a fájlba; a ▾ megnyitja a településeket és parcellákat, hogy egyenként bejelöld őket. Az Importálás megmutatja, mi van a fájlban.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	A Földrengések oldal azonnal megnyílik az utoljára mentett listákkal; a ↻ forog, amíg frissülnek.
+Aa sets the text size.	Az Aa a szöveg méretét állítja.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Új parcellát adsz hozzá? A tű a térkép közepéről indul; a GPS oda viszi, ahol vagy.
+Crops and growing data	Növények és termesztési adatok
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Minden, amit az alkalmazás tesz, időponttal: időjárás-, figyelmeztetés- és földrengés-letöltések, értesítések, érintések és mozdulatok, érzékelők, widgetek és hibák az okukkal. Az utolsó 5 napot őrzi meg; a hibák 10 napig maradnak.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Exportálás és Importálás: a kapcsolók választják ki, mi kerül bele; a ▾ megnyitja a településeket és parcellákat, hogy egyenként jelöld be őket. A növényeknek és termesztési adatoknak saját kapcsolójuk van. Az Aa a szöveg méretét állítja.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Ugyanez a sáv megjelenik a Parcellák, a földrengés-képernyő és az Exportálás, Importálás és Napló ablakok fölött is.
+What the log is	Mi a napló
+When something does not work, tap Share or Save and send it to the author.	Ha valami nem működik, koppints a Küldés vagy a Mentés gombra, és küldd el a szerzőnek.
+crop, sowing date, area, thresholds	növény, vetés dátuma, terület, küszöbök
+name, corners, points	név, sarkok, pontok
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	A ＋, a GPS fölött, előbb kérdez, majd parcellát ad hozzá: a tű a térkép közepéről indul, egy koppintás a térképen áthelyezi; a név felülre kerül. A ‹ visszalép.

@@ -112,7 +112,32 @@ public final class FarmActivity extends Activity {
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 		root = new FrameLayout(this);
 		root.setBackgroundColor(page);
-		setContentView(root);
+		// v2.130 (Viorel): the camera's band of the main screen, floating over the Parcels page.
+		FrameLayout outer = new FrameLayout(this);
+		outer.addView(root, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		Typeface fr = Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Regular.ttf"), fbd = Typeface.createFromAsset(getAssets(), "fonts/LiberationSans-Bold.ttf");
+		topBand = new TopBand(this, null, new ro.meteoalarm.android.core.Texts(Tr.lang()), clk12, dark, fr, fbd, 0, 0, true);
+		topBand.setVisibility(View.GONE);
+		outer.addView(topBand, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, TopBand.height(this, null), Gravity.TOP));
+		if (Build.VERSION.SDK_INT >= 28) {
+			WindowManager.LayoutParams wl = getWindow().getAttributes();
+			wl.layoutInDisplayCutoutMode = Build.VERSION.SDK_INT >= 30 ? 3 : WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+			getWindow().setAttributes(wl);
+		}
+		setContentView(outer);
+		// v2.130: with the band (the page under the camera) the navigation bar and the keyboard are
+		// kept free by hand: the page ends above them.
+		if (Build.VERSION.SDK_INT >= 30) outer.setOnApplyWindowInsetsListener(new View.OnApplyWindowInsetsListener() {
+			public android.view.WindowInsets onApplyWindowInsets(View v, android.view.WindowInsets in) {
+				if (topBand.getVisibility() == View.VISIBLE) {
+					android.graphics.Insets nav = in.getInsets(android.view.WindowInsets.Type.navigationBars()), ime = in.getInsets(android.view.WindowInsets.Type.ime()),
+							cut = in.getInsets(android.view.WindowInsets.Type.displayCutout());
+					root.setPadding(Math.max(nav.left, cut.left), 0, Math.max(nav.right, cut.right), Math.max(nav.bottom, ime.bottom));
+					topBand.setPadding(Math.max(nav.left, cut.left), 0, Math.max(nav.right, cut.right), 0);
+				}
+				return in;
+			}
+		});
 		entry = getIntent().getStringExtra("open");
 		long id = getIntent().getLongExtra("id", -1);
 		Parcels.Parcel p = id >= 0 ? Parcels.get(this, id) : null;
@@ -1294,8 +1319,38 @@ public final class FarmActivity extends Activity {
 	 * Parcels (back), GPS and the bin (portrait: an L; landscape: one row). The cards move a little
 	 * after 4 s when some are out of sight.
 	 */
+	/** v2.130: the floating band (the Parcels page) and the height it takes at the top. */
+	private TopBand topBand;
+	private int topIn;
+
+	/** ON: the Parcels page without the status bar, the band over the map; else the phone's status bar. */
+	private void bandOn(boolean on) {
+		// Android 11+ (the window's insets by kind); before, the phone's status bar stays.
+		if (topBand == null || Build.VERSION.SDK_INT < 30) return;
+		View dv = getWindow().getDecorView();
+		getWindow().setDecorFitsSystemWindows(!on);
+		android.view.WindowInsetsController wc = getWindow().getInsetsController();
+		if (on) {
+			topIn = TopBand.height(this, dv);
+			topBand.getLayoutParams().height = topIn;
+			topBand.setVisibility(View.VISIBLE);
+			topBand.requestLayout();
+			if (wc != null) {
+				wc.setSystemBarsBehavior(android.view.WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+				wc.hide(android.view.WindowInsets.Type.statusBars());
+			}
+			dv.requestApplyInsets();
+		} else {
+			topIn = 0;
+			topBand.setVisibility(View.GONE);
+			root.setPadding(0, 0, 0, 0);
+			if (wc != null) wc.show(android.view.WindowInsets.Type.statusBars());
+		}
+	}
+
 	private void showList() {
 		screen = "list";
+		bandOn(true);
 		if (listMap != null && listMap.getWidth() > 0) {
 			listLat = listMap.lat();
 			listLon = listMap.lon();
@@ -1311,7 +1366,7 @@ public final class FarmActivity extends Activity {
 		map = listMap = m;
 		m.setDark(dark);
 		m.clean();
-		m.setTopPad(px(tab ? 130 : 120));
+		m.setTopPad(topIn + px(tab ? 130 : 120));
 		android.content.SharedPreferences pr = Fetcher.prefs(this);
 		m.setStyle(pr.getInt("mapStyle", 0));
 		m.setRadar(pr.getBoolean("mapRadar", false));
@@ -1351,7 +1406,7 @@ public final class FarmActivity extends Activity {
 		final int fb = px(tab ? 46 : 42), mg = px(12), gap = px(10);
 		// The height the top sheet takes in landscape (its row), so the cards start under it.
 		final int bandH = fb + 2 * px(6);
-		m.setRadarTop(land ? mg : mg + bandH + px(8));
+		m.setRadarTop(topIn + (land ? mg : mg + 3 * fb + 2 * px(8) + 2 * px(6) + px(8)));
 		int sw = getResources().getDisplayMetrics().widthPixels, sh = getResources().getDisplayMetrics().heightPixels;
 		// v5.51 (Viorel): the card's width comes from the portrait width: 2 cards on a phone, 3 or 4
 		// on a tablet; in landscape the same size.
@@ -1382,7 +1437,7 @@ public final class FarmActivity extends Activity {
 				ScrollView sv = new ScrollView(this);
 				sv.setVerticalScrollBarEnabled(false);
 				sv.setClipToPadding(false);
-				sv.setPadding(0, mg + bandH + px(16), 0, mg);
+				sv.setPadding(0, topIn + mg + bandH + px(16), 0, mg);
 				inner = column();
 				for (int k = 0; k < all.size(); k++) {
 					LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(side, side);
@@ -1463,14 +1518,14 @@ public final class FarmActivity extends Activity {
 		zin.setGravity(Gravity.CENTER);
 		zout.setGravity(Gravity.CENTER);
 		FrameLayout.LayoutParams zl = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-		zl.setMargins(mg, mg, 0, 0);
+		zl.setMargins(mg, topIn + mg, 0, 0);
 		mapBox.addView(floatBtn(zin, new View.OnClickListener() {
 			public void onClick(View v) {
 				m.zoomBy(1);
 			}
 		}), zl);
 		FrameLayout.LayoutParams zl2 = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-		zl2.setMargins(mg, mg + fb + px(8), 0, 0);
+		zl2.setMargins(mg, topIn + mg + fb + px(8), 0, 0);
 		mapBox.addView(floatBtn(zout, new View.OnClickListener() {
 			public void onClick(View v) {
 				m.zoomBy(-1);
@@ -1483,7 +1538,7 @@ public final class FarmActivity extends Activity {
 			b[k] = mapIcon(kind, m);
 			b[k].setContentDescription(names[k]);
 			FrameLayout.LayoutParams l = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-			l.setMargins(mg, mg + (k + 2) * (fb + px(8)), 0, 0);
+			l.setMargins(mg, topIn + mg + (k + 2) * (fb + px(8)), 0, 0);
 			mapBox.addView(floatBtn(b[k], new View.OnClickListener() {
 				public void onClick(View v) {
 					android.content.SharedPreferences.Editor e = Fetcher.prefs(FarmActivity.this).edit();
@@ -1563,9 +1618,9 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * v5.50 (Viorel): the top sheet of frosted glass with rounded corners: ＋, Parcels (back), GPS
-	 * and the bin; landscape one row; portrait an L: ＋ and Parcels on top, GPS and the bin under the
-	 * right end.
+	 * v5.50 (Viorel): the top sheet of frosted glass with rounded corners. v2.130 (Viorel): ＋ above
+	 * GPS and the bin (portrait a column, landscape a row); ＋ first asks, then the new parcel's box;
+	 * no "Parcels" title any more; ‹ (back) floats on its own, left of ＋, outside the sheet.
 	 */
 	private void topSheet(final FrameLayout mapBox, final boolean tab, final boolean land) {
 		final int fb = px(tab ? 46 : 42), mg = px(12), pad = px(6), g = px(8);
@@ -1575,22 +1630,28 @@ public final class FarmActivity extends Activity {
 		plus.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
 		plus.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Log.i(FarmActivity.this, "FERMIER", "buton ＋ parcelă nouă");
-				if (listMap != null) newParcel(mapBox, listMap, tab);
+				Log.i(FarmActivity.this, "FERMIER", "buton ＋ parcelă nouă: întrebare");
+				AlertDialog.Builder d = dialog();
+				d.setTitle(Tr.t("New parcel", "Parcelă nouă"));
+				d.setMessage(Tr.t("Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.",
+						"Adaugi o parcelă nouă? Acul pornește din mijlocul hărții, iar butonul GPS îl mută unde ești."));
+				d.setNegativeButton(Tr.t("Cancel", "Renunță"), null);
+				d.setPositiveButton(Tr.t("Add", "Adaugă"), new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface di, int w) {
+						Log.i(FarmActivity.this, "FERMIER", "parcelă nouă: adaugă");
+						if (listMap != null) newParcel(mapBox, listMap, tab);
+					}
+				});
+				Dlg.show(d);
 			}
 		});
-		LinearLayout badge = new LinearLayout(this);
-		badge.setGravity(Gravity.CENTER_VERTICAL);
-		badge.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
-		TextView back = text("‹", 24, true, ink);
+		TextView back = text("‹", 26, true, ink);
 		back.setGravity(Gravity.CENTER);
 		back.setPadding(0, 0, 0, px(4));
-		badge.addView(back, new LinearLayout.LayoutParams(fb, fb));
-		TextView tt = text(Tr.t("Parcels", "Parcele"), tab ? 22 : 20, true, ink);
-		tt.setPadding(px(4), 0, px(16), 0);
-		tt.setSingleLine(true);
-		badge.addView(tt);
-		badge.setOnClickListener(new View.OnClickListener() {
+		back.setContentDescription(Tr.t("Back", "Înapoi"));
+		back.setBackground(glass(fb / 2f + pad, 0.78f));
+		back.setElevation(px(4));
+		back.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				onBackPressed();
 			}
@@ -1622,86 +1683,32 @@ public final class FarmActivity extends Activity {
 				showBin();
 			}
 		});
-		final LinearLayout row = new LinearLayout(this);
-		row.setGravity(Gravity.CENTER_VERTICAL);
-		LinearLayout.LayoutParams pl = new LinearLayout.LayoutParams(fb, fb);
-		row.addView(plus, pl);
-		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, fb);
-		bl.leftMargin = g;
-		row.addView(badge, bl);
 		final LinearLayout sheet = new LinearLayout(this);
 		sheet.setPadding(pad, pad, pad, pad);
-		final LinearLayout col;
-		if (land) {
-			LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(fb, fb);
-			gl.leftMargin = g;
-			row.addView(gps, gl);
-			LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(fb, fb);
-			nl.leftMargin = g;
-			row.addView(bin, nl);
-			sheet.addView(row);
-			col = null;
-			sheet.setBackground(glass(fb / 2f + pad, 0.78f));
-		} else {
-			sheet.setOrientation(LinearLayout.VERTICAL);
-			sheet.setGravity(Gravity.RIGHT);
-			sheet.addView(row, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-			col = column();
-			col.setGravity(Gravity.CENTER_HORIZONTAL);
-			LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(fb, fb);
-			gl.topMargin = g + pad;
-			col.addView(gps, gl);
-			LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(fb, fb);
-			nl.topMargin = g;
-			col.addView(bin, nl);
-			sheet.addView(col, new LinearLayout.LayoutParams(fb, ViewGroup.LayoutParams.WRAP_CONTENT));
-			// The L: the row and the column joined, every outer corner round.
-			final float rad = fb / 2f + pad;
-			sheet.setBackground(new android.graphics.drawable.Drawable() {
-				final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);
-
-				@Override
-				public void draw(Canvas c) {
-					android.graphics.Path a = new android.graphics.Path(), b = new android.graphics.Path();
-					boolean rowOn = row.getVisibility() == View.VISIBLE;
-					b.addRoundRect(new android.graphics.RectF(col.getLeft() - pad, rowOn ? row.getTop() - pad : col.getTop() + g, col.getRight() + pad, col.getBottom() + pad), rad, rad,
-							android.graphics.Path.Direction.CW);
-					if (rowOn) {
-						a.addRoundRect(new android.graphics.RectF(row.getLeft() - pad, row.getTop() - pad, row.getRight() + pad, row.getBottom() + pad), rad, rad,
-								android.graphics.Path.Direction.CW);
-						if (Build.VERSION.SDK_INT >= 19) a.op(b, android.graphics.Path.Op.UNION);
-						else a.addPath(b);
-					} else a = b;
-					p.setStyle(Paint.Style.FILL);
-					p.setColor(Glass.alpha(page, 0.78f));
-					c.drawPath(a, p);
-					p.setStyle(Paint.Style.STROKE);
-					p.setStrokeWidth(Math.max(1, dp));
-					p.setColor(Glass.edge(dark));
-					c.drawPath(a, p);
-				}
-
-				@Override
-				public void setAlpha(int x) {
-				}
-
-				@Override
-				public void setColorFilter(android.graphics.ColorFilter f) {
-				}
-
-				@Override
-				public int getOpacity() {
-					return android.graphics.PixelFormat.TRANSLUCENT;
-				}
-			});
+		sheet.setOrientation(land ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+		sheet.setGravity(Gravity.CENTER);
+		View[] three = { plus, gps, bin };
+		for (int k = 0; k < 3; k++) {
+			LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(fb, fb);
+			if (k > 0) {
+				if (land) l.leftMargin = g;
+				else l.topMargin = g;
+			}
+			sheet.addView(three[k], l);
 		}
+		sheet.setBackground(glass(fb / 2f + pad, 0.78f));
+		// The back button: as large as the sheet is wide, left of ＋.
+		int bs = fb + 2 * pad;
+		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(bs, bs, Gravity.TOP | Gravity.RIGHT);
+		bl.setMargins(0, topIn + mg, mg + (land ? 3 * fb + 2 * g + 2 * pad : bs) + g, 0);
+		mapBox.addView(back, bl);
 		sheet.setElevation(px(4));
 		sheetPlus = plus;
-		sheetBadge = badge;
-		sheetRow = land ? null : row;
+		sheetBadge = back;
+		sheetRow = null;
 		sheetView = sheet;
 		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		sl.setMargins(0, mg, mg, 0);
+		sl.setMargins(0, topIn + mg, mg, 0);
 		mapBox.addView(sheet, sl);
 		// The bubble while GPS looks for the position, under the sheet.
 		LinearLayout bub = column();
@@ -1714,7 +1721,7 @@ public final class FarmActivity extends Activity {
 		ui.removeCallbacks(hideGps);
 		gpsBubble = bub;
 		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		ql.setMargins(0, mg + (land ? fb + 2 * pad : 3 * fb + 2 * g + 3 * pad) + px(8), mg, 0);
+		ql.setMargins(0, topIn + mg + (land ? fb + 2 * pad : 3 * fb + 2 * g + 2 * pad) + px(8), mg, 0);
 		mapBox.addView(bub, ql);
 	}
 
@@ -2979,6 +2986,7 @@ public final class FarmActivity extends Activity {
 	/** "Edit" (v2.80): the parcels; a tap opens one for editing its name and its place. */
 	private void showEditList() {
 		screen = "edit";
+		bandOn(false);
 		LinearLayout col = pageOf(Tr.t("Edit", "Editare"));
 		col.addView(text(Tr.t("Tap the parcel to edit: its name and the pin on the map.", "Atinge parcela de editat: numele și acul pe hartă."), 15, false, dim), wide(8));
 		List<View> cards = new java.util.ArrayList<View>();
@@ -3147,6 +3155,7 @@ public final class FarmActivity extends Activity {
 	/** The map with the pin at LAT, LON: a new parcel (ID -1, with NAME to give) or one to move. */
 	private void showMap(final long id, String name, double lat, double lon, double zoom, String back) {
 		screen = "map";
+		bandOn(false);
 		mapId = id;
 		mapBack = back;
 		root.removeAllViews();
@@ -3296,6 +3305,7 @@ public final class FarmActivity extends Activity {
 	 */
 	private void showDelete() {
 		screen = "delete";
+		bandOn(false);
 		LinearLayout col = pageOf(Tr.t("Delete parcels", "Șterge parcele"));
 		col.addView(text(Tr.t("Tick the parcels to delete, then tap Delete.", "Bifează parcelele de șters, apoi atinge Șterge."), 15, false, dim), wide(8));
 		final TextView go = button("", null);
@@ -3381,6 +3391,7 @@ public final class FarmActivity extends Activity {
 		// v3.50 (Viorel): the same page again (another period, new data): it stays where it was scrolled.
 		boolean again = "parcel".equals(screen) && curId == id;
 		screen = "parcel";
+		bandOn(false);
 		curId = id;
 		final Calendar now = Calendar.getInstance();
 		final String oldest = Farm.date(now, -(Farm.KEEP_DAYS - 1)), today = Farm.date(now, 0);
@@ -3638,6 +3649,7 @@ public final class FarmActivity extends Activity {
 		}
 		if (!"stats".equals(screen) || curId != id) Log.i(this, "FERMIER", "statistici: " + p.name);
 		screen = "stats";
+		bandOn(false);
 		curId = id;
 		overlay = null;
 		Farm.Data d = Parcels.data(this, id);
@@ -3682,6 +3694,7 @@ public final class FarmActivity extends Activity {
 			return;
 		}
 		screen = "pedit";
+		bandOn(false);
 		curId = p.id;
 		overlay = null;
 		if (editor == null) editor = new EditPage(this, new EditPage.Host() {

@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.120 · 19.11.2026
+Verżjoni attwali: v.2.130 · 19.11.2026
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
@@ -15,7 +15,8 @@ SETTINGS
 SKRIN EWLIENI
 - Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
-- Esporta / Importa: swiċċijiet għal x'jidħol fil-fajl (ukoll notifiki tal-biċċiet tal-art, il-kontenitur, notifiki, mappa, widgets, storja tat-terremoti, ir-reġistru); il-postijiet u l-biċċiet tal-art jistgħu jiġu mmarkati wieħed wieħed.
+- Esportazzjoni / Importazzjoni: swiċċijiet għal x'jidħol fil-fajl (ukoll l-uċuħ tar-raba' u d-dejta tal-kultivazzjoni, in-notifiki tal-biċċiet tal-art, il-landa tal-biċċiet tal-art, in-notifiki, il-mappa, il-widgets, l-istorja tat-terremoti, ir-reġistru); fl-Esportazzjoni u l-Importazzjoni l-postijiet u l-biċċiet tal-art jiġu mmarkati wieħed wieħed; il-buttuna Aa tibdel id-daqs tat-test.
+- Reġistru: il-buttuna Aa tibdel id-daqs tat-test.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)

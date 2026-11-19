@@ -1629,3 +1629,14 @@ widgets	widgets
 yesterday, 	i går, 
 Export: switches choose what goes into the file; ▾ opens the towns and the parcels to tick them one by one. Import shows what the file holds.	Eksport: kontakter vælger, hvad der kommer i filen; ▾ åbner steder og marker, så du kan sætte flueben ved dem enkeltvis. Import viser, hvad filen indeholder.
 The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.	Siden Jordskælv åbner straks med de senest gemte lister; ↻ drejer, mens de opdateres.
+Aa sets the text size.	Aa ændrer tekststørrelsen.
+Add a new parcel? The pin starts in the middle of the map; GPS moves it to where you are.	Tilføje en ny mark? Nålen starter midt på kortet; GPS flytter den hen, hvor du er.
+Crops and growing data	Afgrøder og dyrkningsdata
+Everything the app does, with the time: the weather, warnings and earthquake downloads, the notifications, the taps and gestures, the sensors, the widgets and the errors, with their reason. It keeps the last 5 days; errors stay 10 days.	Alt, hvad appen gør, med klokkeslæt: hentning af vejr, varsler og jordskælv, notifikationer, tryk og bevægelser, sensorer, widgets og fejl med deres årsag. Den gemmer de sidste 5 dage; fejl bliver i 10 dage.
+Export and Import: switches choose what goes in; ▾ opens the towns and the parcels to tick them one by one. Crops and growing data have their own switch. Aa sets the text size.	Eksport og Import: kontakterne vælger, hvad der kommer med; ▾ åbner byerne og markerne, så de kan afkrydses én ad gangen. Afgrøder og dyrkningsdata har deres egen kontakt. Aa ændrer tekststørrelsen.
+The same band shows over Parcels, the earthquake screen and the Export, Import and Log windows.	Den samme bjælke vises også over Marker, jordskælvsskærmen og vinduerne Eksport, Import og Log.
+What the log is	Hvad loggen er
+When something does not work, tap Share or Save and send it to the author.	Når noget ikke virker, tryk på Del eller Gem og send den til forfatteren.
+crop, sowing date, area, thresholds	afgrøde, såningsdato, areal, grænser
+name, corners, points	navn, hjørner, punkter
+＋, above GPS, asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋, over GPS, spørger først og tilføjer så en mark: nålen starter midt på kortet, et tryk på kortet flytter den; navnet skrives øverst. ‹ går tilbage.

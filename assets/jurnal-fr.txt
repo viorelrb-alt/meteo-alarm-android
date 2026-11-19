@@ -1,4 +1,4 @@
-Version actuelle : v.2.120 · 19.11.2026
+Version actuelle : v.2.130 · 19.11.2026
 ÉCRAN PRINCIPAL
 - Informations sur le séisme : un appui sur la case Séisme les ouvre dans l'écran principal : la carte, en dessous les zones de ressenti et l'historique de la valeur ; le carré coloré ou la carte les ouvre en plein écran, comme un séisme de ☰ › Séismes. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC. En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).
 NOTIFICATIONS
@@ -15,7 +15,8 @@ PARCELLES
 - Statistiques dans l'écran principal : elles s'ouvrent sous le statut opérationnel (en paysage à gauche) ; ‹ les ferme et l'onglet d'une autre parcelle les garde.
 - Statut opérationnel : en haut, la culture et sa date de semis ; avec une culture, le verdict tient aussi compte du séchage des gouttes (ΔT) et de sa maladie.
 - Page Séismes : s'ouvre tout de suite avec les dernières listes enregistrées sur le téléphone et les met à jour en arrière-plan.
-- Export / Import : des interrupteurs pour ce qui va dans le fichier (aussi les notifications des parcelles, la corbeille des parcelles, les notifications, la carte, les widgets, l'historique des séismes, le journal) ; localités et parcelles se cochent une par une.
+- Export / Import : interrupteurs pour le contenu du fichier (aussi les cultures et données de culture, les notifications des parcelles, la corbeille des parcelles, les notifications, la carte, les widgets, l'historique des séismes, le journal) ; à l'Export et à l'Import, les localités et les parcelles se cochent une à une ; le bouton Aa change la taille du texte.
+- Journal : le bouton Aa change la taille du texte.
 - Améliorations du design et corrections des bugs signalés.
 
 Version 1.4 (v.1.400 – v.1.520)

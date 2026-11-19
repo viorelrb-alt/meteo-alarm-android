@@ -1130,7 +1130,7 @@ final class QuakeCard {
 				root.addView(sv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 				root.addView(top, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP));
 				// v2.109 (Viorel): the band with the day, the network and the clock always on top (on the sheet).
-				root.addView(new Band(ctx, s, dark, reg, bold, 0, Band.left(root, pad)), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
+				root.addView(new TopBand(ctx, s, null, false, dark, reg, bold, 0, Band.left(root, pad), false), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 				foot(root);
 			}
 
@@ -1190,7 +1190,7 @@ final class QuakeCard {
 				bl.leftMargin = Band.left(root, (int) (16 * dp));
 				bl.topMargin = bh + (int) (10 * dp);
 				root.addView(backButton(ctx, dark, bold, zk, BACK, close), bl);
-				root.addView(new Band(ctx, s, dark, reg, bold, 0, Band.left(root, (int) (16 * dp))), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
+				root.addView(new TopBand(ctx, s, null, false, dark, reg, bold, 0, Band.left(root, (int) (16 * dp)), false), new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh, Gravity.TOP));
 				foot(root);
 				// The largest circle in the map's part, under the band and right of ‹.
 				fit(map, Band.left(root, (int) (16 * dp)) + bs + 12 * dp, bh + 16 * dp, W - col0 + 12 * dp, 16 * dp);
