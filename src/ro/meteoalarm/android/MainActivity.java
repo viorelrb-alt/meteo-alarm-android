@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.142";
+	static final String VERSION = "Meteo Alarm Android v2.143";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -100,6 +100,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** v5.00: the blurred, darkened screen behind every open window (Glass). */
 	private Glass.Backdrop backdrop;
 	private static final long LOCATE_MS = 60 * 60000L;
+	/** v2.143: why the last look started, for the log. */
+	private String locWhy = "";
 
 	private final Runnable tick = new Runnable() {
 		public void run() {
@@ -116,7 +118,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (s.farmer && s.w != null && (Double.isNaN(s.rain24()) || oldFarm) && System.currentTimeMillis() - lastFarmTry >= 5 * 60000L) fetchFarm();
 			usFarm();
 			// The exact position at start and then every hour, while automatic location is on.
-			if (autoLoc() && Locator.allowed(MainActivity.this) && System.currentTimeMillis() - lastLocate >= LOCATE_MS) locate(false);
+			if (autoLoc() && Locator.allowed(MainActivity.this) && System.currentTimeMillis() - lastLocate >= LOCATE_MS) {
+				locWhy = lastLocate == 0 ? "la pornire" : "verificare automată";
+				locate(false);
+			}
 			checkNight();
 			view.invalidate();
 			// Next tick at the start of the next minute, for the clock.
@@ -2188,15 +2193,21 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 */
 	private void locate(final boolean say) {
 		// Already looking: the answer of that look comes (no second wait that would never end).
-		if (s.locating) return;
-		lastLocate = System.currentTimeMillis();
+		if (s.locating) {
+			Log.i(this, "LOC", "verificare sărită: o căutare e deja în curs");
+			return;
+		}
+		final String reason = say ? "la cerere" : locWhy.length() > 0 ? locWhy : "automată";
+		locWhy = "";
+		final long started = System.currentTimeMillis();
+		lastLocate = started;
+		Log.i(this, "LOC", "caut poziția (" + reason + ")");
 		s.locating = true;
 		view.invalidate();
 		if (say) note(Tr.t("Looking for the exact position…", "Caut poziția exactă…"));
 		locator.locate(new Locator.Result() {
 			public void found(double lat, double lon, String town, String rawCounty, String district, String country, String match) {
 				s.locating = false;
-				Log.i(MainActivity.this, "LOC", "poziție găsită: " + town + ", " + rawCounty + ", " + country + " (" + Math.round(lat * 1000) / 1000.0 + ", " + Math.round(lon * 1000) / 1000.0 + ")");
 				boolean home = country.equals("ro");
 				String county = home ? cities.county(rawCounty) : rawCounty.trim();
 				// United States (v2.30): the state, in English (OpenStreetMap's local names come first in MATCH).
@@ -2223,6 +2234,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						: new Cities.City(country, county, name, la, lo, match);
 				boolean added = cities.find(here) == null;
 				learn(here);
+				if (added) Log.i(MainActivity.this, "LOC", here.name + ": adăugată în lista " + (here.country.equals("ro") ? "județului " : "regiunii ") + here.county);
 				// v4.40: the first time in another country or US state, its small localities are downloaded.
 				if (!locator.lastOffline) Places.located(MainActivity.this, here.country, here.county);
 				if (added && say) toast((Tr.t("Added to the list: ", "Adăugată în listă: ")) + here.label());
@@ -2231,6 +2243,15 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				// The first town found (first install): it becomes the town shown and a favourite,
 				// even when it is the town shown by default (Viorel 2026-11-04, tablet log).
 				boolean first = !prefs.getBoolean("firstFound", false) || prefs.getString(Region.favsKey(here), "").length() == 0;
+				// v2.143 (Viorel, a drive through several towns): one line per look, old -> new town, source, accuracy, distance.
+				String was = cur == null ? "(niciuna)" : cur.name + (cur.county.length() > 0 && !cur.county.equals(cur.name) ? ", " + cur.county : "");
+				String now = here.name + (here.county.length() > 0 && !here.county.equals(here.name) ? ", " + here.county : "");
+				String dist = cur == null || (cur.lat == 0 && cur.lon == 0) ? "" : ", la " + String.format(java.util.Locale.US, "%.1f", distKm(cur.lat, cur.lon, la, lo)) + " km de punctul anterior";
+				String tail = " (" + reason + "; " + locator.lastHow + dist + "; " + (System.currentTimeMillis() - started) / 1000 + " s; " + la + ", " + lo + ")";
+				if (moved && cur != null && !here.same(cur)) Log.i(MainActivity.this, "LOC", "LOCALITATE SCHIMBATĂ: " + was + " -> " + now + tail);
+				else if (keep && !found.same(cur)) Log.i(MainActivity.this, "LOC", "rămâne " + was + ": încă în limitele ei (+" + Math.round(EDGE_M) + " m), deși harta spune " + town + tail);
+				else if (moved || first) Log.i(MainActivity.this, "LOC", "localitate setată: " + now + tail);
+				else Log.i(MainActivity.this, "LOC", "fără schimbare: " + now + tail);
 				if (moved || first) {
 					setCity(here, false);
 					if (first) {
@@ -2248,8 +2269,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 			public void failed(String why) {
 				s.locating = false;
+				String what = why.equals("off") ? "localizarea e oprită pe telefon" : why.equals("nofix") ? "niciun semnal GPS/rețea în 30 s și nicio poziție cunoscută"
+						: why.equals("noplace") ? "poziția e găsită, dar numele localității nu (fără internet?)" : why;
+				String tag = " (" + reason + "; " + (System.currentTimeMillis() - started) / 1000 + " s" + (locator.lastHow.length() > 0 && why.equals("noplace") ? "; " + locator.lastHow : "") + ")";
 				if (why.equals("busy")) Log.i(MainActivity.this, "LOC", "căutare deja în curs");
-				else Log.e(MainActivity.this, "LOC", "poziția nu a fost găsită: " + why);
+				else Log.w(MainActivity.this, "LOC", "verificarea localității a eșuat: " + what + tag);
 				noteTop = false;
 				view.invalidate();
 				if (!say || why.equals("busy")) return;

@@ -78,7 +78,7 @@ final class Locator {
 			}
 		}
 		if (last != null && System.currentTimeMillis() - last.getTime() < FRESH_MS) {
-			place(last, r);
+			place(last, r, "ultima cunoscută");
 			return;
 		}
 		// A fresh fix: the fused provider (Android 12+), else the network, else GPS.
@@ -91,7 +91,7 @@ final class Locator {
 				handler.removeCallbacksAndMessages(null);
 				lm.removeUpdates(this);
 				busy = false;
-				place(l, r);
+				place(l, r, "nouă");
 			}
 
 			public void onStatusChanged(String p, int status, Bundle extras) {}
@@ -104,7 +104,7 @@ final class Locator {
 			lm.requestSingleUpdate(provider, listener, Looper.getMainLooper());
 		} catch (Exception e) {
 			busy = false;
-			if (fallback != null) place(fallback, r);
+			if (fallback != null) place(fallback, r, "ultima cunoscută (cererea a eșuat)");
 			else r.failed("nofix");
 			return;
 		}
@@ -112,15 +112,21 @@ final class Locator {
 			public void run() {
 				lm.removeUpdates(listener);
 				busy = false;
-				if (fallback != null) place(fallback, r);
+				if (fallback != null) place(fallback, r, "ultima cunoscută (fără semnal în 30 s)");
 				else r.failed("nofix");
 			}
 		}, TIMEOUT_MS);
 	}
 
 	/** Town and county of a fix, looked up off the main thread. */
-	private void place(final Location l, final Result r) {
+	private void place(final Location l, final Result r, String kind) {
 		busy = true;
+		// v2.143: where the fix came from, for the log (provider, accuracy, age).
+		String pv = l.getProvider() == null ? "?" : l.getProvider();
+		String src = pv.equals(LocationManager.GPS_PROVIDER) ? "GPS" : pv.equals(LocationManager.NETWORK_PROVIDER) ? "rețea" : pv.equals("fused") ? "combinată (GPS/rețea)" : pv;
+		long age = Math.max(0, (System.currentTimeMillis() - l.getTime()) / 1000);
+		lastHow = "sursa " + src + ", poziție " + kind + (age >= 5 ? " de acum " + (age < 120 ? age + " s" : age / 60 + " min") : "")
+				+ (l.hasAccuracy() ? ", precizie " + Math.round(l.getAccuracy()) + " m" : "");
 		new Thread(new Runnable() {
 			public void run() {
 				final double lat = l.getLatitude(), lon = l.getLongitude();
@@ -224,6 +230,7 @@ final class Locator {
 					public void run() {
 						busy = false;
 						lastOffline = off;
+						if (off) lastHow += ", nume din lista aplicației (fără internet)";
 						if (t == null) r.failed("noplace");
 						else r.found(lat, lon, t, c == null ? "" : c, d, cc, mt);
 					}
@@ -238,6 +245,8 @@ final class Locator {
 	 */
 	/** v4.40: the last place came from the app's own lists (no map service answered). */
 	volatile boolean lastOffline;
+	/** v2.143: the source, kind, age and accuracy of the last fix, for the log. */
+	volatile String lastHow = "";
 
 	static Area boundary(String town, String district, String county, double lat, double lon) {
 		try {
