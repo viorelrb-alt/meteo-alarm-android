@@ -61,7 +61,7 @@ final class BottomSheet extends FrameLayout implements Glass.Local {
 		sheet.addView(handle, hp);
 		title = new TextView(c);
 		title.setTextSize(20);
-		title.setTypeface(Typeface.DEFAULT_BOLD);
+		title.setTypeface(Fonts.bold(title.getContext()));
 		// v5.04 (Viorel): the title on one line, smaller when it does not fit.
 		title.setSingleLine(true);
 		title.addOnLayoutChangeListener(new OnLayoutChangeListener() {
@@ -131,6 +131,7 @@ final class BottomSheet extends FrameLayout implements Glass.Local {
 		rp.topMargin = (int) (12 * dp);
 		rp.bottomMargin = 0;
 		text = new TextView(c);
+		text.setTypeface(Fonts.reg(c));
 		text.setTextSize(16);
 		text.setLineSpacing(0, 1.15f);
 		// The text scrolls; at most about two thirds of the screen high.
@@ -224,9 +225,10 @@ final class BottomSheet extends FrameLayout implements Glass.Local {
 
 	private Button button(Context c) {
 		Button b = new Button(c);
+		b.setTypeface(Fonts.bold(c));
 		b.setAllCaps(false);
 		b.setTextSize(16);
-		b.setTypeface(Typeface.DEFAULT_BOLD);
+		b.setTypeface(Fonts.bold(b.getContext()));
 		b.setMinHeight((int) (44 * dp));
 		b.setPadding((int) (18 * dp), 0, (int) (18 * dp), 0);
 		return b;

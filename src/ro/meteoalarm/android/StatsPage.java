@@ -149,7 +149,7 @@ final class StatsPage {
 		FitText t = new FitText(a, 1000, 0.7f);
 		t.setText(s);
 		t.setTextSize(sp * fs * wk);
-		t.setTypeface(bold ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		t.setTypeface(Fonts.of(t.getContext(), bold));
 		t.setTextColor(color);
 		t.setIncludeFontPadding(false);
 		return t;
@@ -220,7 +220,7 @@ final class StatsPage {
 
 	private TextView hint(String s) {
 		FitText t = tv(s, 12.5f, false, dim);
-		t.setTypeface(Typeface.DEFAULT, Typeface.ITALIC);
+		t.setTypeface(Typeface.create(Fonts.reg(t.getContext()), Typeface.ITALIC));
 		return t;
 	}
 
@@ -945,7 +945,7 @@ final class StatsPage {
 						pt.setStyle(Paint.Style.FILL);
 						pt.setColor(dim);
 						pt.setTextAlign(Paint.Align.LEFT);
-						pt.setTypeface(Typeface.DEFAULT_BOLD);
+						pt.setTypeface(Fonts.bold());
 						pt.setTextSize(11 * dp * fs);
 						cv.drawText(d.dateOf(i).equals(today) ? Tr.t("Today", "Azi") : weekday(d.dateOf(i)), x + px(2), px(11), pt);
 						pt.setTextAlign(Paint.Align.CENTER);
@@ -964,7 +964,7 @@ final class StatsPage {
 					}
 					pt.setStyle(Paint.Style.FILL);
 					pt.setColor(0xFFFFFFFF);
-					pt.setTypeface(Typeface.DEFAULT_BOLD);
+					pt.setTypeface(Fonts.bold());
 					pt.setTextSize(12.5f * dp);
 					String hh = d.hourOf(i);
 					hh = hh.length() >= 2 ? hh.substring(0, 2) : "";
@@ -977,7 +977,7 @@ final class StatsPage {
 					if (b == 1) drop(cv, x + w / 2, cy, px(7));
 					else if (b == 2) gusts(cv, x + w / 2, cy, px(8));
 					else {
-						pt.setTypeface(Typeface.DEFAULT);
+						pt.setTypeface(Fonts.reg());
 						pt.setTextSize(12 * dp);
 						cv.drawText(f1(Agro.deltaT(d, i)), x + w / 2, cy + px(4), pt);
 					}
@@ -1661,14 +1661,14 @@ final class StatsPage {
 				pt.setColor(accent);
 				c.drawCircle(xp, bt, px(5), pt);
 				String tl = pk == t ? Tr.t("TODAY", "AZI") : dayMonth(d.dDate[pk]) + " ⇆";
-				pt.setTypeface(Typeface.DEFAULT_BOLD);
+				pt.setTypeface(Fonts.bold());
 				float tw = pt.measureText(tl) + px(14);
 				float tx = Math.max(tw / 2, Math.min(w - tw / 2, xp));
 				c.drawRoundRect(new RectF(tx - tw / 2, tp - px(24), tx + tw / 2, tp - px(6)), px(9), px(9), pt);
 				pt.setColor(0xFFFFFFFF);
 				pt.setTextAlign(Paint.Align.CENTER);
 				c.drawText(tl, tx, tp - px(10.5f), pt);
-				pt.setTypeface(Typeface.DEFAULT);
+				pt.setTypeface(Fonts.reg());
 				pt.setColor(dim);
 				pt.setTextAlign(Paint.Align.LEFT);
 				c.drawText(Tr.t("measured", "măsurat"), l + px(4), tp + px(12), pt);
@@ -1972,7 +1972,7 @@ final class StatsPage {
 					}
 					pt.setStyle(Paint.Style.FILL);
 					pt.setTextSize(11.5f * dp * fs);
-					pt.setTypeface(k == st ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+					pt.setTypeface(k == st ? Fonts.bold() : Fonts.reg());
 					pt.setColor(k == st ? ink : dim);
 					String s = names[k];
 					while (pt.measureText(s) > cw - px(2) && s.length() > 3) s = s.substring(0, s.length() - 2) + "…";
@@ -2186,7 +2186,7 @@ final class StatsPage {
 				else cv.drawPoint(w / 2, h / 2 - rr, pt);
 				pt.setStyle(Paint.Style.FILL);
 				pt.setColor(ink);
-				pt.setTypeface(Typeface.DEFAULT_BOLD);
+				pt.setTypeface(Fonts.bold());
 				pt.setTextSize(19 * dp * fs);
 				pt.setTextAlign(Paint.Align.CENTER);
 				cv.drawText(pct < 0 ? "–" : pct + "%", w / 2, h / 2 + px(7), pt);

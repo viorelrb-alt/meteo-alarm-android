@@ -34,6 +34,7 @@ public final class LogActivity extends Activity {
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		setTheme(night ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
+		Fonts.init(this);
 		en = Lang.en(this);
 		boolean dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		int bg = dark ? 0xFF1C1C1E : 0xFFFFFFFF, ink = dark ? 0xFFEDEDED : 0xFF111111;
@@ -48,10 +49,11 @@ public final class LogActivity extends Activity {
 		TextView title = new TextView(this);
 		title.setText(Tr.t("Diary (log)", "Jurnal"));
 		title.setTextSize(22);
-		title.setTypeface(Typeface.DEFAULT_BOLD);
+		title.setTypeface(Fonts.bold(title.getContext()));
 		title.setTextColor(ink);
 		col.addView(title);
 		TextView sub = new TextView(this);
+		sub.setTypeface(Fonts.reg(this));
 		sub.setText(Tr.t("Everything the app did in the last 5 days; older errors kept 10 days.", "Tot ce a făcut aplicația în ultimele 5 zile; erorile mai vechi rămân 10 zile."));
 		sub.setTextSize(13);
 		sub.setTextColor(dark ? 0xFFA0A0A0 : 0xFF666666);
@@ -110,6 +112,7 @@ public final class LogActivity extends Activity {
 
 	private Button button(String t, View.OnClickListener l) {
 		Button b = new Button(this);
+		b.setTypeface(Fonts.bold(this));
 		b.setText(t);
 		b.setAllCaps(false);
 		b.setSingleLine(true);

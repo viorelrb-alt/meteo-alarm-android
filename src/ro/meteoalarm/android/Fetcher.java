@@ -367,6 +367,72 @@ final class Fetcher {
 		return r;
 	}
 
+	/**
+	 * v2.150 (Viorel): another town of the list shown as a main screen of its own: the forecast, the
+	 * extra boxes, the air, the warnings and the farmer's data, kept in its own files (id &lt; 0, see
+	 * parcelFile). Nothing here is notified or goes to the widgets (they follow the first town).
+	 */
+	static Result downloadPlace(Context ctx, Cities.City c) {
+		Result r = new Result();
+		String tz = tz(c);
+		try {
+			String[] f = forecast(ctx, c, tz);
+			r.forecast = f[0];
+			r.uv = f[1];
+			r.source = f[2];
+			Log.i(ctx, "LOC", "prognoza pentru ecranul " + c.label() + " OK · " + r.source);
+		} catch (Exception e) {
+			r.error = e;
+			Log.e(ctx, "LOC", "prognoza pentru ecranul " + c.label() + " a eșuat: " + reason(e, false));
+		}
+		try {
+			if (r.forecast != null && r.uv == null) r.uv = Weather.get(Weather.uvUrl(c.lat, c.lon, tz));
+		} catch (Exception e) {
+			r.uv = null;
+		}
+		try {
+			r.pollen = Weather.get(Weather.pollenUrl(c.lat, c.lon));
+		} catch (Exception e) {
+			r.pollen = null;
+		}
+		try {
+			r.farm = Weather.get(Farm.url(c.lat, c.lon, tz, Farm.KEEP_DAYS, Farm.AHEAD));
+		} catch (Exception e) {
+			r.farm = null;
+		}
+		if (c.us()) {
+			try {
+				r.warn = Weather.get(Nws.url(c.lat, c.lon));
+			} catch (Exception e) {
+				r.warn = null;
+			}
+		} else r.warn = warningsFeed(ctx, c.country);
+		return r;
+	}
+
+	/** v2.150: the id of the screen of town C of the list (negative, the same for the same town). */
+	static long placeId(Cities.City c) {
+		return -1L - (c.key().hashCode() & 0x7fffffffL);
+	}
+
+	/** v2.150: keeps what came for the town of screen ID. */
+	static void savePlace(Context ctx, long id, Result r) {
+		if (r.forecast != null) {
+			if (r.uv != null) write(ctx, parcelFile(id, "uv.json"), r.uv);
+			write(ctx, parcelFile(id, "forecast.json"), r.forecast);
+			prefs(ctx).edit().putLong("pmf_" + id, System.currentTimeMillis()).putString("pms_" + id, r.source).apply();
+		}
+		if (r.pollen != null) write(ctx, parcelFile(id, "air.json"), r.pollen);
+		if (r.warn != null) write(ctx, parcelFile(id, "warn.xml"), r.warn);
+		if (r.farm != null) write(ctx, parcelFile(id, "farm.json"), r.farm);
+	}
+
+	/** v2.150: forgets the files of the screen of a town taken out of the list. */
+	static void dropPlace(Context ctx, long id) {
+		for (String part : new String[] { "uv.json", "forecast.json", "air.json", "warn.xml", "farm.json" }) ctx.deleteFile(parcelFile(id, part));
+		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).apply();
+	}
+
 	/** The files of parcel ID shown as a main screen: "pm-ID-forecast.json" and so on. */
 	static String parcelFile(long id, String part) {
 		return "pm-" + id + "-" + part;

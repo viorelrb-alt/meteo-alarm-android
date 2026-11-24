@@ -39,6 +39,9 @@ final class AnimIcon extends Drawable {
 		return null;
 	}
 
+	/** Design audit (2026-11-23): set by the app from Motion.off: the icons stand still. */
+	static boolean still;
+
 	static void restart() {
 		start = SystemClock.uptimeMillis();
 	}
@@ -86,7 +89,7 @@ final class AnimIcon extends Drawable {
 
 	@Override
 	public void draw(Canvas c) {
-		float t = (SystemClock.uptimeMillis() - start) / 3000f;
+		float t = still ? 1 : (SystemClock.uptimeMillis() - start) / 3000f;
 		int f = t >= 1 ? FRAMES - 1 : Math.max(0, Math.min(FRAMES - 1, (int) (t * FRAMES)));
 		src.set(f * PX, 0, f * PX + PX, PX);
 		Rect b = getBounds();

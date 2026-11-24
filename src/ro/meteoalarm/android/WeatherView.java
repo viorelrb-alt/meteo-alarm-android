@@ -299,6 +299,7 @@ final class WeatherView extends View {
 			return;
 		}
 		drawScreen(c);
+		talkAfterDraw();
 		statsReport();
 		if (foot != null) foot.invalidate();
 		if (footFull != null) footFull.invalidate();
@@ -341,6 +342,12 @@ final class WeatherView extends View {
 		boolean first = iconDone == null;
 		iconDone = big;
 		if (iconRunning) return;
+		// Design audit (2026-11-23): "Remove animations" on: the icon stands still.
+		if (Motion.off(getContext())) {
+			screen.iconT = 1;
+			invalidate();
+			return;
+		}
 		iconRunning = true;
 		iconStart = android.os.SystemClock.uptimeMillis();
 		screen.iconT = 0;
@@ -487,6 +494,8 @@ final class WeatherView extends View {
 		oy = f[4] + bp - lift * scale;
 		screen.lift = lift;
 		screen.unitPx = scale;
+		// Design audit (2026-11-23): the small text follows the phone's font size and the app's Aa.
+		screen.textBoost = getResources().getConfiguration().fontScale * TextSize.get(getContext());
 		screen.band = bp / scale;
 		screen.bandTop = -oy / scale;
 		c.drawColor(ro.meteoalarm.android.core.Theme.page(screen.dark));
@@ -752,6 +761,12 @@ final class WeatherView extends View {
 	/** Canvas units to pixels. */
 	float scale() {
 		return scale;
+	}
+
+	/** Design audit (2026-11-23): a round button's touch target, at least Screen.TARGET across (48 dp on a small phone). */
+	static boolean inBtn(float[] b, float x, float y) {
+		float mx = Math.max(12, (Screen.TARGET - b[2]) / 2), my = Math.max(12, (Screen.TARGET - b[3]) / 2);
+		return x >= b[0] - mx && x <= b[0] + b[2] + mx && y >= b[1] - my && y <= b[1] + b[3] + my;
 	}
 
 	private static boolean in(float[] b, float x, float y) {
@@ -1031,7 +1046,7 @@ final class WeatherView extends View {
 			taps.onTab(tk);
 			return true;
 		}
-		if (screen.btnFarm[2] > 0 && in(screen.btnFarm, x, y)) {
+		if (screen.btnFarm[2] > 0 && inBtn(screen.btnFarm, x, y)) {
 			taps.onFarmButton();
 			return true;
 		}
@@ -1069,17 +1084,161 @@ final class WeatherView extends View {
 			taps.onBox(hb[0], hb[1], screen.boxRect(hb[0], hb[1]));
 			return true;
 		}
-		if (in(screen.btnMenu, x, y)) taps.onMenu();
-		else if (in(screen.btnLocate, x, y)) taps.onLocate();
-		else if (in(screen.btnBright, x, y)) {
+		if (inBtn(screen.btnMenu, x, y)) taps.onMenu();
+		else if (inBtn(screen.btnLocate, x, y)) taps.onLocate();
+		else if (inBtn(screen.btnBright, x, y)) {
 			showBar(3000);
 			taps.onBright();
 		}
-		else if (in(screen.btnSensor, x, y)) taps.toggleSensor();
-		else if (in(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
+		else if (inBtn(screen.btnSensor, x, y)) taps.toggleSensor();
+		else if (inBtn(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
 		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y) && (screen.tablet || onPage)) taps.onStats();
 		else if (in(screen.cityArea, x, y)) taps.onTownName();
 		else if (screen.updArea[2] > 0 && in(screen.updArea, x, y)) taps.onRefresh(); // v5.00: the "updated" pill
 		return true;
+	}
+
+	// --- Design audit (2026-11-23): TalkBack on the canvas ------------------------------------------
+	// The screen is drawn, not made of Views, so each part a finger can use (Screen.speakNodes) is a
+	// virtual node with its text: TalkBack reads it, a swipe moves to the next, a double tap taps it.
+	// Plain android.view.accessibility (no AndroidX).
+
+	private java.util.List<Object[]> talk = new java.util.ArrayList<Object[]>();
+	private String talkSig = "";
+	private int talkFocus = -1, talkHover = -1;
+
+	private boolean talking() {
+		android.view.accessibility.AccessibilityManager am = (android.view.accessibility.AccessibilityManager) getContext()
+				.getSystemService(Context.ACCESSIBILITY_SERVICE);
+		return am != null && am.isEnabled() && am.isTouchExplorationEnabled();
+	}
+
+	/** After a draw with TalkBack on: the nodes again; a changed screen is announced as changed. */
+	private void talkAfterDraw() {
+		if (!talking()) return;
+		java.util.List<Object[]> n = screen.speakNodes();
+		StringBuilder b = new StringBuilder();
+		for (Object[] o : n) b.append((String) o[1]).append('|');
+		talk = n;
+		String sig = b.toString();
+		if (!sig.equals(talkSig)) {
+			talkSig = sig;
+			post(new Runnable() {
+				public void run() {
+					android.view.accessibility.AccessibilityEvent e = android.view.accessibility.AccessibilityEvent
+							.obtain(android.view.accessibility.AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
+					e.setSource(WeatherView.this);
+					if (getParent() != null) getParent().requestSendAccessibilityEvent(WeatherView.this, e);
+				}
+			});
+		}
+	}
+
+	private java.util.List<Object[]> nodes() {
+		if (talk.isEmpty() && scale > 0) talk = screen.speakNodes();
+		return talk;
+	}
+
+	private android.graphics.Rect nodeRect(int id) {
+		float[] r = px((float[]) nodes().get(id)[0]);
+		android.graphics.Rect b = new android.graphics.Rect(Math.round(r[0]), Math.round(r[1]), Math.round(r[2]), Math.round(r[3]));
+		b.intersect(0, 0, getWidth(), getHeight());
+		return b;
+	}
+
+	private int nodeAt(float x, float y) {
+		java.util.List<Object[]> n = nodes();
+		for (int i = n.size() - 1; i >= 0; i--) if (nodeRect(i).contains(Math.round(x), Math.round(y))) return i;
+		return -1;
+	}
+
+	private void sendNode(int id, int type) {
+		if (id < 0 || id >= nodes().size() || getParent() == null) return;
+		android.view.accessibility.AccessibilityEvent e = android.view.accessibility.AccessibilityEvent.obtain(type);
+		e.setPackageName(getContext().getPackageName());
+		e.setClassName(android.widget.Button.class.getName());
+		e.setSource(this, id);
+		e.setEnabled(true);
+		e.getText().add((String) nodes().get(id)[1]);
+		getParent().requestSendAccessibilityEvent(this, e);
+	}
+
+	@Override
+	public boolean dispatchHoverEvent(MotionEvent e) {
+		if (!talking()) return super.dispatchHoverEvent(e);
+		int id = e.getAction() == MotionEvent.ACTION_HOVER_EXIT ? -1 : nodeAt(e.getX(), e.getY());
+		if (id != talkHover) {
+			int old = talkHover;
+			talkHover = id;
+			if (id >= 0) sendNode(id, android.view.accessibility.AccessibilityEvent.TYPE_VIEW_HOVER_ENTER);
+			if (old >= 0) sendNode(old, android.view.accessibility.AccessibilityEvent.TYPE_VIEW_HOVER_EXIT);
+		}
+		return id >= 0 || super.dispatchHoverEvent(e);
+	}
+
+	private final android.view.accessibility.AccessibilityNodeProvider talkProvider = new android.view.accessibility.AccessibilityNodeProvider() {
+		@Override
+		public android.view.accessibility.AccessibilityNodeInfo createAccessibilityNodeInfo(int id) {
+			android.view.accessibility.AccessibilityNodeInfo i;
+			if (id == View.NO_ID) {
+				i = android.view.accessibility.AccessibilityNodeInfo.obtain(WeatherView.this);
+				onInitializeAccessibilityNodeInfo(i);
+				for (int k = 0; k < nodes().size(); k++) i.addChild(WeatherView.this, k);
+				return i;
+			}
+			if (id < 0 || id >= nodes().size()) return null;
+			i = android.view.accessibility.AccessibilityNodeInfo.obtain(WeatherView.this, id);
+			i.setPackageName(getContext().getPackageName());
+			i.setClassName(android.widget.Button.class.getName());
+			i.setParent(WeatherView.this);
+			i.setContentDescription((String) nodes().get(id)[1]);
+			android.graphics.Rect b = nodeRect(id);
+			i.setBoundsInParent(b);
+			int[] loc = new int[2];
+			getLocationOnScreen(loc);
+			b.offset(loc[0], loc[1]);
+			i.setBoundsInScreen(b);
+			i.setEnabled(true);
+			i.setVisibleToUser(true);
+			i.setClickable(true);
+			i.setFocusable(true);
+			i.addAction(android.view.accessibility.AccessibilityNodeInfo.ACTION_CLICK);
+			i.addAction(talkFocus == id ? android.view.accessibility.AccessibilityNodeInfo.ACTION_CLEAR_ACCESSIBILITY_FOCUS
+					: android.view.accessibility.AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS);
+			i.setAccessibilityFocused(talkFocus == id);
+			return i;
+		}
+
+		@Override
+		public boolean performAction(int id, int action, android.os.Bundle args) {
+			if (id == View.NO_ID) return performAccessibilityAction(action, args);
+			if (id < 0 || id >= nodes().size()) return false;
+			switch (action) {
+			case android.view.accessibility.AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS:
+				if (talkFocus == id) return false;
+				talkFocus = id;
+				invalidate();
+				sendNode(id, android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED);
+				return true;
+			case android.view.accessibility.AccessibilityNodeInfo.ACTION_CLEAR_ACCESSIBILITY_FOCUS:
+				if (talkFocus != id) return false;
+				talkFocus = -1;
+				invalidate();
+				sendNode(id, android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED);
+				return true;
+			case android.view.accessibility.AccessibilityNodeInfo.ACTION_CLICK:
+				android.graphics.Rect b = nodeRect(id);
+				Log.i(getContext(), "GEST", "TalkBack: " + nodes().get(id)[1]);
+				tapAt(b.exactCenterX(), b.exactCenterY());
+				sendNode(id, android.view.accessibility.AccessibilityEvent.TYPE_VIEW_CLICKED);
+				return true;
+			}
+			return false;
+		}
+	};
+
+	@Override
+	public android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider() {
+		return talkProvider;
 	}
 }

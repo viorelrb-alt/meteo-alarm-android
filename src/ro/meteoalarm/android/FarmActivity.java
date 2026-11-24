@@ -93,6 +93,7 @@ public final class FarmActivity extends Activity {
 		ro.meteoalarm.android.core.WxIcon.set = Fetcher.iconTheme(Fetcher.prefs(this));
 		setTheme(dark ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
+		Fonts.init(this);
 		Lang.apply(this);
 		dp = getResources().getDisplayMetrics().density;
 		// The app's colours: the Kindle's black and white, or Claude's dark ones.
@@ -222,7 +223,7 @@ public final class FarmActivity extends Activity {
 		TextView t = new TextView(this);
 		t.setText(s);
 		t.setTextSize(sp * TextSize.get(this));
-		t.setTypeface(bold ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		t.setTypeface(Fonts.of(t.getContext(), bold));
 		t.setTextColor(color);
 		return t;
 	}
@@ -533,8 +534,8 @@ public final class FarmActivity extends Activity {
 		BoxView(final BoxSpec b) {
 			super(FarmActivity.this);
 			this.b = b;
-			tp.setTypeface(Typeface.DEFAULT_BOLD);
-			vp.setTypeface(Typeface.DEFAULT_BOLD);
+			tp.setTypeface(Fonts.bold());
+			vp.setTypeface(Fonts.bold());
 			tp.setTextAlign(Paint.Align.CENTER);
 			vp.setTextAlign(Paint.Align.CENTER);
 			setContentDescription(b.full + " " + b.value);
@@ -582,7 +583,7 @@ public final class FarmActivity extends Activity {
 	 */
 	private float[] titleFit(String title, int bw) {
 		Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
-		pt.setTypeface(Typeface.DEFAULT_BOLD);
+		pt.setTypeface(Fonts.bold());
 		pt.setTextSize(100);
 		Paint.FontMetrics fm = pt.getFontMetrics();
 		float lh = (fm.descent - fm.ascent) * 0.92f;
@@ -611,7 +612,7 @@ public final class FarmActivity extends Activity {
 	/** The biggest bold size (pixels) at which VALUE fills at most 90% of a box's lower two thirds. */
 	private float valueFit(String value, int bw) {
 		Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
-		pt.setTypeface(Typeface.DEFAULT_BOLD);
+		pt.setTypeface(Fonts.bold());
 		pt.setTextSize(100);
 		android.graphics.Rect bd = new android.graphics.Rect();
 		pt.getTextBounds(value, 0, value.length(), bd);
@@ -756,10 +757,10 @@ public final class FarmActivity extends Activity {
 		int nc = head.length;
 		int[] cw = new int[nc];
 		for (int k = 0; k < nc; k++) {
-			pt.setTypeface(Typeface.DEFAULT_BOLD);
+			pt.setTypeface(Fonts.bold());
 			pt.setTextSize(sp * scale);
 			cw[k] = Math.round(pt.measureText(head[k]));
-			pt.setTypeface(Typeface.DEFAULT);
+			pt.setTypeface(Fonts.reg());
 			for (String[] r : rows) cw[k] = Math.max(cw[k], Math.round(pt.measureText(r[k])));
 			cw[k] += 2 * px(sp * 0.6f) + px(2);
 		}
@@ -975,7 +976,7 @@ public final class FarmActivity extends Activity {
 	/** The biggest text size (sp, 11 to 16; v3.30 font rule) at which every line of LINES fits WIDTH pixels. */
 	private float fitSp(int width, String... lines) {
 		Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
-		pt.setTypeface(Typeface.DEFAULT);
+		pt.setTypeface(Fonts.reg());
 		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
 		for (float sp = 16; sp > 11; sp -= 0.5f) {
 			pt.setTextSize(sp * scale);
@@ -2057,7 +2058,7 @@ public final class FarmActivity extends Activity {
 		nameIn.setTextColor(ink);
 		nameIn.setHintTextColor(dim);
 		nameIn.setTextSize(tab ? 19 : 18);
-		nameIn.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+		nameIn.setTypeface(Fonts.bold(nameIn.getContext()));
 		nameIn.setText(newName);
 		nameIn.addTextChangedListener(new android.text.TextWatcher() {
 			public void beforeTextChanged(CharSequence c, int a, int b, int d) {
@@ -4085,7 +4086,7 @@ public final class FarmActivity extends Activity {
 		Paint t = new Paint(Paint.ANTI_ALIAS_FLAG), b = new Paint(Paint.ANTI_ALIAS_FLAG), l = new Paint(Paint.ANTI_ALIAS_FLAG), f = new Paint(Paint.ANTI_ALIAS_FLAG);
 		t.setColor(0xFF000000);
 		b.setColor(0xFF000000);
-		b.setTypeface(Typeface.DEFAULT_BOLD);
+		b.setTypeface(Fonts.bold());
 		l.setColor(0xFF000000);
 		l.setStrokeWidth(0.8f);
 		l.setStyle(Paint.Style.STROKE);

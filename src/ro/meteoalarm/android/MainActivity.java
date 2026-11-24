@@ -146,6 +146,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onCreate(Bundle b) {
 		super.onCreate(b);
+		Fonts.init(this);
 		Intent st = getIntent();
 		Log.i(this, "APP", "pornită " + VERSION + " · " + Log.device() + " · Android " + android.os.Build.VERSION.RELEASE
 				+ (b != null ? " · recreată de sistem" : "") + " · de la: " + (st == null || st.getAction() == null ? "?" : st.getAction().replace("android.intent.action.", ""))

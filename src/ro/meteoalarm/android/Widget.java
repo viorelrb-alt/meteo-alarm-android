@@ -265,9 +265,11 @@ public class Widget extends AppWidgetProvider {
 		}
 	}
 
-	static final int RED = 0xFFFD0000, ORANGE = 0xFFFD8B00, YELLOW = 0xFFDFD51B, GRAY = 0xFFA9A9A9;
+	// Design audit (2026-11-23): the codes' colours and INFORMARE's blue from Theme, as in the app.
+	static final int RED = ro.meteoalarm.android.core.Theme.warnStrong(3), ORANGE = ro.meteoalarm.android.core.Theme.warnStrong(2),
+			YELLOW = ro.meteoalarm.android.core.Theme.warnStrong(1), GRAY = 0xFFA9A9A9;
 	/** v4.50: the line of the app's own information (the blue of the INFORMARE boxes). */
-	static final int INFO = 0xFF4FA3E0;
+	static final int INFO = ro.meteoalarm.android.core.Theme.INFO;
 
 	/**
 	 * The three pills of the warnings row (Viorel's rule): yellow = gray gray yellow; orange = gray
@@ -480,7 +482,7 @@ public class Widget extends AppWidgetProvider {
 		} catch (Throwable t) {
 		}
 		if (d.w == null) return;
-		final int[] k = { on ? 1 : FRAMES };
+		final int[] k = { on && !Motion.off(ctx) ? 1 : FRAMES };
 		Runnable r = new Runnable() {
 			public void run() {
 				try {
@@ -500,10 +502,28 @@ public class Widget extends AppWidgetProvider {
 		UI.postDelayed(r, on ? 3000 / FRAMES : 0);
 	}
 
+	/**
+	 * Design audit (2026-11-23): what TalkBack says for the widget: the town, the temperature, the
+	 * weather and the codes in force (it said only the weather before).
+	 */
+	static String speak(Data d) {
+		if (d.w == null) return "Meteo Alarm";
+		StringBuilder b = new StringBuilder();
+		if (d.c != null) b.append(d.c.name).append(". ");
+		long t = Math.round(d.unitF ? d.w.temp * 9 / 5 + 32 : d.w.temp);
+		b.append(Tr.t("Temperature now ", "Temperatura acum ")).append(t).append(d.unitF ? " °F" : Tr.t(" degrees", " grade")).append(", ")
+				.append(d.T.describe(d.w.code, d.w.isDay)[1]).append(". ");
+		String[] code = { "", Tr.t("Yellow code", "Cod galben"), Tr.t("Orange code", "Cod portocaliu"), Tr.t("Red code", "Cod roșu") };
+		for (int l : d.levels) if (l >= 1 && l <= 3) b.append(code[l]).append(". ");
+		if (d.levels.length == 0 && d.event != null) b.append(Tr.t("Information: ", "Informare: ")).append(d.event).append(". ");
+		b.append(Tr.t("Tap to open the app.", "Atinge pentru a deschide aplicația."));
+		return b.toString();
+	}
+
 	private static void send(Context ctx, AppWidgetManager mgr, int id, Data d, Bitmap bm) {
 		RemoteViews v = new RemoteViews(ctx.getPackageName(), R.layout.widget);
 		v.setImageViewBitmap(R.id.widget_image, bm);
-		v.setContentDescription(R.id.widget_image, d.w != null ? d.T.describe(d.w.code, d.w.isDay)[1] : "Meteo Alarm");
+		v.setContentDescription(R.id.widget_image, speak(d));
 		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).putExtra(MainActivity.FROM_WIDGET, true);
 		v.setOnClickPendingIntent(R.id.widget_root, PendingIntent.getActivity(ctx, 0, open,
 				PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE));
@@ -855,7 +875,7 @@ public class Widget extends AppWidgetProvider {
 			this.black = black;
 			this.ex = Math.max(0, ex);
 			this.ey = Math.max(0, ey);
-			p.setTypeface(android.graphics.Typeface.DEFAULT);
+			p.setTypeface(Fonts.reg(ctx));
 		}
 
 		void at(float ax, float ay) {

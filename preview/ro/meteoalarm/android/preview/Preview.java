@@ -410,6 +410,8 @@ public final class Preview {
 		java.util.regex.Matcher icm = java.util.regex.Pattern.compile(" icons=(\\d)").matcher(opts);
 		if (icm.find()) ro.meteoalarm.android.core.WxIcon.set = Integer.parseInt(icm.group(1));
 		s.brightLevel = 0.45f;
+		// Design audit (2026-11-23): font=K = the phone's font size × the app's Aa (the small text grows).
+		for (String o : a) if (o.startsWith("font=")) s.textBoost = Float.parseFloat(o.substring(5));
 		int bp = 0;
 		for (String o : a) if (o.startsWith("band=")) bp = Integer.parseInt(o.substring(5));
 		float[] f = Screen.fit(pw, ph - bp, s.tablet);
@@ -432,6 +434,8 @@ public final class Preview {
 		jg.img = img;
 		s.draw(jg, cw, ch);
 		ImageIO.write(img, "png", new File(a[1]));
+		// Design audit: " speak" lists what TalkBack reads, in order.
+		if (opts.contains(" speak")) for (Object[] n : s.speakNodes()) System.out.println("TalkBack: " + n[1]);
 		if (opts.contains(" boxes")) for (int k = 2; k <= 6; k++) for (String[] r : s.parcelInfo(k)) System.out.println("box" + k + " " + r[0] + ": " + r[1]);
 		System.out.println("warnings for " + s.city.county + ": " + s.warns.size() + ", pollen " + s.pollenLvl + " " + s.pollenPlant + ", code " + s.w.code);
 	}

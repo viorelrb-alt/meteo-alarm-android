@@ -918,6 +918,7 @@ final class SettingsPanel extends FrameLayout {
 		lp.leftMargin = tab ? m : 0;
 		panel.setLayoutParams(lp);
 		if (!open) {
+			AnimIcon.still = Motion.off(panel.getContext()); // design audit: "Remove animations"
 			AnimIcon.restart(); // v5.20: the bar's icons move for 3 seconds when the window opens
 			scroll.scrollTo(0, 0);
 			// v5.01: the bar opens with only its icons.

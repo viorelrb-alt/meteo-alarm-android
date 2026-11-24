@@ -111,9 +111,16 @@ public final class Screen {
 	/** The bar and the theme button (x, y, w, h); set by draw. */
 	public final float[] barArea = { 0, 0, 0, 0 }, btnMoon = { 0, 0, 0, 0 };
 
+	/**
+	 * Design audit (2026-11-23): a button's touch target, 104 canvas units across (48 dp on a phone
+	 * 360 dp wide; the canvas is 758 units across the phone's short side). The round buttons of the
+	 * bottom row stay 64 across but stand 104 apart (centre to centre), so each has its own target.
+	 */
+	public static final float TARGET = 104;
+
 	// Buttons (x, y, w, h in canvas units), set by draw.
 	public final float[] btnMenu = { 40, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
-			btnLocate = { 124, 0, 64, 64 }, btnBright = { 208, 0, 64, 64 }, btnSensor = { 292, 0, 64, 64 },
+			btnLocate = { 40 + TARGET, 0, 64, 64 }, btnBright = { 40 + 2 * TARGET, 0, 64, 64 }, btnSensor = { 40 + 3 * TARGET, 0, 64, 64 },
 			cityArea = { 40, 104, 380, 56 };
 	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
 	public final float[] warnArea = { 0, 0, 0, 0 };
@@ -217,8 +224,14 @@ public final class Screen {
 			"rain 26 17 174 179", "snow 26 17 174 182", "thunder 26 17 174 197" };
 
 	/** Draws the screen on a canvas CW x CH: landscape when it is wider than high. */
+	/**
+	 * Design audit (2026-11-23): the phone's font size × the app's Aa (1 = as drawn); above 1 the
+	 * small text of the screen grows (BoostGfx).
+	 */
+	public float textBoost = 1;
+
 	public void draw(Gfx gfx, float cw, float ch) {
-		g = gfx;
+		g = textBoost > 1.01f ? new BoostGfx(gfx, Math.min(2.5f, textBoost)) : gfx;
 		c = pal();
 		this.cw = cw;
 		ch0 = ch;
@@ -848,8 +861,10 @@ public final class Screen {
 		card(x + 7, y, wd - 7, h, 24);
 		String title = Tr.t("OPERATIONAL STATUS", "STATUS OPERAȚIONAL"), hint = cropLine == null ? "" : cropLine;
 		float hp = fit(true, 21, wd * 0.5f, title), tw = g.width(true, hp, title), ph = hp * 1.45f, px = x + 26, py = y + 16;
-		g.roundRect(px, py, tw + 26, ph, ph / 2, mix(glass(), strong, dark ? 0.32f : 0.24f));
-		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, dark ? mix(strong, Gfx.WHITE, 0.35f) : mix(strong, Gfx.BLACK, 0.45f));
+		int chip = mix(glass(), strong, dark ? 0.32f : 0.24f);
+		g.roundRect(px, py, tw + 26, ph, ph / 2, chip);
+		// Design audit (2026-11-23): the label at least 4.5:1 on its chip (COD ROȘU was 3.7 in the dark).
+		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, chipInk(strong, chip));
 		rtext(false, fit(false, 19, wd - tw - 90, hint), py + 6, x + wd - 22, hint, c.dim);
 		float ty = y + 64, lx = x + 30, rw = wd - 52;
 		ltext(true, fit(true, 36, rw, l.get(1)), ty, lx, l.get(1), c.ink);
@@ -1008,7 +1023,7 @@ public final class Screen {
 		Gfx keep = g;
 		g = gfx;
 		qBright[0] = left + 12; qBright[1] = fb;
-		qTheme[0] = left + 12 + 84; qTheme[1] = fb;
+		qTheme[0] = left + 12 + TARGET; qTheme[1] = fb;
 		float pl = left, pr = qTheme[0] + 64 + 12, ph = 64 + 14;
 		qCaps[0] = pl; qCaps[1] = fb - 7; qCaps[2] = pr - pl; qCaps[3] = ph;
 		frost(roundRectPoly(pl, fb - 7, pr - pl, ph, ph / 2));
@@ -1086,7 +1101,7 @@ public final class Screen {
 		if (hasLight) footButton("sensor", btnSensor, sensorTheme);
 		else buttonIcon("sensor", btnSensor[0] + 32, btnSensor[1] + 32, c.dim);
 		btnFarm[2] = 0;
-		float x = pr + 14;
+		float x = pr + 24;
 		if (farmer) {
 			btnFarm[0] = x; btnFarm[1] = fb - 3; btnFarm[2] = 70; btnFarm[3] = 70;
 			frost(roundRectPoly(x, fb - 3, 70, 70, 35));
@@ -3317,21 +3332,24 @@ public final class Screen {
 		g.roundRect(x, y, bw, h, r, strong);
 		card(x + 7, y, bw - 7, h, r);
 		float hp = fit(true, 22 * f, bw - 60, title), tw = g.width(true, hp, title), ph = hp * 1.45f, px = x + 22, py = y + 14 * f;
-		g.roundRect(px, py, tw + 26, ph, ph / 2, mix(glass(), strong, dark ? 0.32f : 0.24f));
-		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, dark ? mix(strong, Gfx.WHITE, 0.35f) : mix(strong, Gfx.BLACK, 0.45f));
+		int chip = mix(glass(), strong, dark ? 0.32f : 0.24f);
+		g.roundRect(px, py, tw + 26, ph, ph / 2, chip);
+		// Design audit (2026-11-23): the label at least 4.5:1 on its chip (COD ROȘU was 3.7 in the dark).
+		g.text(true, hp, py + (ph - hp * 1.12f) / 2 + 1, px + 13, title, chipInk(strong, chip));
 		return hb;
 	}
 
 	/** The strong colour of a warning box's stripe for its old title bar BAR. */
 	private int stripe(int bar) {
-		for (int i = 0; i < 3; i++) if (bar == BAR_LIGHT[i] || bar == BAR_DARK[i]) return new int[] { 0xFFE3B341, 0xFFE8873A, 0xFFD94848 }[i];
+		// Design audit (2026-11-23): the codes' colours and INFORMARE's blue from Theme (one token each).
+		for (int i = 0; i < 3; i++) if (bar == BAR_LIGHT[i] || bar == BAR_DARK[i]) return Theme.warnStrong(i + 1);
 		if (bar == QUAKE_LIGHT || bar == QUAKE_DARK) return 0xFF9A8F86;
-		return 0xFF6FAEE3;
+		return Theme.INFO;
 	}
 
 	private void drawWarnBox(WarnGroup gr, float x, float y, float bw, float h, float f) {
 		if (gr.own) {
-			float hb = alertFrame(x, y, bw, h, f, dark ? 0xFF2F5F7E : 0xFFBFDDF2, Tr.t("INFORMATION", "INFORMARE"));
+			float hb = alertFrame(x, y, bw, h, f, Theme.infoTint(dark), Tr.t("INFORMATION", "INFORMARE"));
 			float room = bw - 30;
 			String txt = ownName(gr.types), per = T.weekdayTime(gr.from, clk12) + " – " + T.weekdayTime(gr.until, clk12);
 			ltext(true, fit(true, 30 * f, room, txt), y + hb + 12 * f, x + 24, txt, c.ink);
@@ -3643,8 +3661,18 @@ public final class Screen {
 		}
 	}
 
+	/** Design audit (2026-11-23): the bars of the dry hours at least 3:1 on the page (they were 1.4–2.3). */
+	private int dryBar() {
+		return Theme.atLeast(c.dry, c.page, c.ink, 3.0);
+	}
+
+	/** Design audit: a chip's label in STRONG's shade, at least 4.5:1 on the chip CHIP. */
+	private int chipInk(int strong, int chip) {
+		return Theme.atLeast(dark ? mix(strong, Gfx.WHITE, 0.35f) : mix(strong, Gfx.BLACK, 0.45f), chip, dark ? Gfx.WHITE : Gfx.BLACK, 4.5);
+	}
+
 	private void drawLegend(float x, float y) {
-		int[] cs = { c.snow, c.rain, c.dry };
+		int[] cs = { c.snow, c.rain, dryBar() };
 		String[] ls = { T.legSnow, T.legRain, T.legDry };
 		for (int k = 0; k < 3; k++) {
 			g.rect(x, y, 16, 16, cs[k]);
@@ -3722,7 +3750,7 @@ public final class Screen {
 		for (float d = cl; d < cl + cw2; d += 10) g.rect(d, ty, 5, 2, c.dim);
 		for (int k = from; k < to; k++) {
 			float bh = Math.max(4, w.probs[k] * ch / 100), bx = cl + (k - from) * pitch + (pitch - bw) / 2;
-			g.rect(bx, ct + ch - bh, bw, bh, !w.wet[k] ? c.dry : w.snowy[k] ? c.snow : c.rain);
+			g.rect(bx, ct + ch - bh, bw, bh, !w.wet[k] ? dryBar() : w.snowy[k] ? c.snow : c.rain);
 			String hr = w.hours.get(k);
 			String lab = clk12 ? Texts.clock(hr, true).replace(":00", "") : hr.length() >= 2 ? hr.substring(0, 2) : hr;
 			ctext(false, fit(false, 22, pitch, lab), ct + ch + 8, bx + bw / 2, lab, c.dim);
@@ -3738,7 +3766,7 @@ public final class Screen {
 		for (float x = cl; x < cl + cw; x += 10) g.rect(x, ty, 5, 2, c.dim);
 		for (int k = 0; k < n; k++) {
 			float bh = Math.max(4, w.probs[k] * ch / 100);
-			int color = !w.wet[k] ? c.dry : w.snowy[k] ? c.snow : c.rain;
+			int color = !w.wet[k] ? dryBar() : w.snowy[k] ? c.snow : c.rain;
 			float x = cl + k * pitch + (pitch - bw) / 2;
 			g.rect(x, ct + ch - bh, bw, bh, color);
 			if (k % 3 == 0) ltext(false, 23, ct + ch + 8, x, Texts.clock(w.hours.get(k), clk12), c.dim);
@@ -4591,7 +4619,15 @@ public final class Screen {
 	private void footButton(String which, float[] b, boolean on) {
 		// v5.00: no frame; ON is a filled accent disc.
 		if (on) g.roundRect(b[0], b[1], b[2], b[3], b[3] / 2, c.accent);
-		buttonIcon(which, b[0] + 32, b[1] + 32, on ? (dark ? c.page : Gfx.WHITE) : c.ink);
+		buttonIcon(which, b[0] + 32, b[1] + 32, on ? onAccent() : c.ink);
+	}
+
+	/** Design audit (2026-11-23): the icon on an accent disc, at least 3:1 (white, else the page or the ink). */
+	private int onAccent() {
+		int a = dark ? c.page : Gfx.WHITE;
+		if (Theme.contrast(a, c.accent) >= 3) return a;
+		int b = dark ? Gfx.WHITE : c.ink;
+		return Theme.contrast(b, c.accent) > Theme.contrast(a, c.accent) ? b : a;
 	}
 
 	private void buttonIcon(String which, float cx, float cy, int ink) {
@@ -5056,4 +5092,96 @@ public final class Screen {
 	private float footX, footR;
 	/** v5.10: "updated" at the right of the buttons' row (farmer mode: next to the battery). */
 	private boolean footRight;
+
+	// --- Design audit (2026-11-23): what TalkBack reads on the canvas -----------------------------
+
+	/**
+	 * The parts of the screen a finger can use, in reading order (top to bottom, left to right):
+	 * { float[] rect (x, y, w, h, canvas units), String text }. Set after draw; only what shows.
+	 */
+	public List<Object[]> speakNodes() {
+		List<Object[]> out = new ArrayList<Object[]>();
+		if (cw <= 0) return out;
+		say(out, btnMenu, Tr.t("Menu: settings", "Meniu: setări"));
+		if (city != null || parcel != null) say(out, cityArea, (parcel != null ? Tr.t("Parcel: ", "Parcela: ") : Tr.t("Town: ", "Localitatea: ")) + place());
+		if (updArea[2] > 0 && fetched > 0) {
+			Calendar cal = Zone.now();
+			cal.setTimeInMillis(fetched);
+			say(out, updArea, T.updated + " " + Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12)
+					+ ". " + Tr.t("Tap to refresh.", "Atinge pentru reîmprospătare."));
+		}
+		boolean page = !statsOn && !quakeOn;
+		if (page && alerts.area[2] > 0)
+			for (int k = 0; k < alertCount(); k++) {
+				float[] r = alertRect(k);
+				if (!visible(r, alerts)) continue;
+				say(out, r, words(alertInfo(k), 2));
+			}
+		if (page && w != null && nowArea[2] > 0) {
+			StringBuilder b = new StringBuilder();
+			b.append(Tr.t("Temperature now ", "Temperatura acum ")).append(t(w.temp)).append(unitF ? " °F" : Tr.t(" degrees", " grade"));
+			b.append(", ").append(T.describe(w.code, w.isDay)[1]);
+			if (!Double.isNaN(w.feels)) b.append(". ").append(feelsText());
+			if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin)) b.append(". ").append(T.hi).append(" ").append(t(w.tmax)).append("°, ").append(T.lo).append(" ").append(t(w.tmin)).append("°");
+			say(out, nowArea, b.toString());
+		}
+		if (page && w != null) {
+			if (precipArea[2] > 0 && visible(precipArea, hours))
+				say(out, precipArea, Tr.t("Rain chance by hour. Tap for the details.", "Probabilitatea de ploaie pe ore. Atinge pentru detalii."));
+			if (!farmer || parcel == null)
+				for (float[] b : hourHits) if ((int) b[0] >= 1) {
+					float[] r = { b[1], b[2], b[3], b[4] };
+					if (visible(r, hours)) say(out, r, words(townHourInfo((int) b[0]), 1));
+				}
+			for (float[] b : dayHits) {
+				float[] r = { b[1], b[2], b[3], b[4] };
+				if (visible(r, days)) say(out, r, words(dayInfo((int) b[0]), 0));
+			}
+			for (float[] b : infoHits) {
+				float[] r = { b[1], b[2], b[3], b[4] };
+				if (b.length > 5 || visible(r, info) || visible(r, grid)) say(out, r, words(boxInfo((int) b[0]), 1));
+			}
+		}
+		say(out, btnCity, Tr.t("Choose the town", "Alege localitatea"));
+		say(out, btnLocate, (autoLoc ? Tr.t("Location on", "Localizare pornită") : Tr.t("Location off", "Localizare oprită")) + ". " + Tr.t("Tap to change.", "Atinge pentru a schimba."));
+		say(out, btnBright, Tr.t("Brightness", "Luminozitate"));
+		if (hasLight) say(out, btnSensor, (sensorTheme ? Tr.t("Automatic theme on", "Temă automată pornită") : Tr.t("Automatic theme off", "Temă automată oprită")) + ". " + Tr.t("Tap to change.", "Atinge pentru a schimba."));
+		if (btnFarm[2] > 0) say(out, btnFarm, Tr.t("Farmer mode", "Mod Fermier"));
+		if (batt >= 0 && battArea[2] > 0) say(out, battArea, Tr.t("Battery ", "Baterie ") + batt + "%" + (charging ? ", " + T.charging : ""));
+		return out;
+	}
+
+	/** Adds R with TEXT when R is on the screen. */
+	private void say(List<Object[]> out, float[] r, String text) {
+		if (r == null || r.length < 4 || r[2] <= 0 || r[3] <= 0 || text == null || text.trim().length() == 0) return;
+		float cx = r[0] + r[2] / 2, cy = r[1] + r[3] / 2;
+		if (cx < 0 || cx > cw || cy < 0 || cy > ch0) return;
+		out.add(new Object[] { new float[] { r[0], r[1], r[2], r[3] }, text.trim() });
+	}
+
+	/** Is R's middle inside the row ST (when the row is drawn)? */
+	private static boolean visible(float[] r, Strip st) {
+		if (st.area[2] <= 0) return true;
+		float cx = r[0] + r[2] / 2, cy = r[1] + r[3] / 2;
+		return cx >= st.area[0] && cx <= st.area[0] + st.area[2] && cy >= st.area[1] - 4 && cy <= st.area[1] + st.area[3] + 4;
+	}
+
+	/** The title, the value and up to MORE lines of a bubble's rows, as one sentence. */
+	private String words(List<String[]> rows, int more) {
+		StringBuilder b = new StringBuilder();
+		String pl = " · " + place();
+		int head = 0;
+		for (String[] r : rows) {
+			if (r.length < 2 || r[1] == null || r[1].length() == 0) continue;
+			String k = r[0], v = r[1].replace("\n", ". ").trim();
+			if (k.equals("title") && v.endsWith(pl)) v = v.substring(0, v.length() - pl.length());
+			if (k.equals("s") || k.equals("img") || k.equals("map") || (k.equals("h") && head++ > 0)) continue;
+			if (v.startsWith(Tr.t("Values: being updated", "Valori: în curs de actualizare"))) continue;
+			// The long explanations stay in the bubble (a double tap opens it).
+			if (!k.equals("title") && !k.equals("V") && !k.equals("v") && !k.equals("h") && (v.length() > 90 || more-- <= 0)) continue;
+			if (b.length() > 0) b.append(". ");
+			b.append(v);
+		}
+		return b.toString().replace(" · ", ", ").replace("..", ".");
+	}
 }

@@ -87,7 +87,7 @@ final class EditPage {
 		FitText t = new FitText(a, 1000, 0.7f);
 		t.setText(s);
 		t.setTextSize(sp * fs * wk);
-		t.setTypeface(bold ? Typeface.DEFAULT_BOLD : Typeface.DEFAULT);
+		t.setTypeface(Fonts.of(t.getContext(), bold));
 		t.setTextColor(color);
 		t.setIncludeFontPadding(false);
 		return t;
@@ -202,7 +202,7 @@ final class EditPage {
 		name.setMaxLines(2);
 		name.setTextColor(ink);
 		name.setTextSize(18 * fs * wk);
-		name.setTypeface(Typeface.DEFAULT_BOLD);
+		name.setTypeface(Fonts.bold(name.getContext()));
 		name.setBackground(null);
 		name.setPadding(px(2), px(2), px(2), px(2));
 		name.setContentDescription(Tr.t("Name", "Nume"));
@@ -383,7 +383,7 @@ final class EditPage {
 		e.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_NUMBER_FLAG_SIGNED);
 		e.setTextColor(ink);
 		e.setTextSize(16 * fs * wk);
-		e.setTypeface(Typeface.DEFAULT_BOLD);
+		e.setTypeface(Fonts.bold(e.getContext()));
 		e.setPadding(px(10), px(8), px(8), px(8));
 		e.setBackground(Glass.pill(Glass.disc(dark), Glass.edge(dark), px(10), dp));
 		e.addTextChangedListener(new android.text.TextWatcher() {
@@ -634,6 +634,7 @@ final class EditPage {
 		own.setBackground(Glass.cardBg(dark, px(14), dp));
 		own.setPadding(px(12), px(10), px(12), px(12));
 		final EditText et = new EditText(a);
+		et.setTypeface(Fonts.reg(a));
 		et.setHint(Tr.t("write the name", "scrie numele"));
 		et.setSingleLine(true);
 		et.setTextColor(ink);
@@ -686,6 +687,7 @@ final class EditPage {
 
 	private TextView chip(String name, String sub, boolean on) {
 		TextView t = new TextView(a);
+		t.setTypeface(Fonts.reg(a));
 		String s = sub == null ? name : name + "  " + sub;
 		android.text.SpannableString sp = new android.text.SpannableString(s);
 		sp.setSpan(new android.text.style.StyleSpan(Typeface.BOLD), 0, name.length(), 0);

@@ -56,6 +56,7 @@ public final class WidgetConfig extends Activity {
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		setTheme(night ? android.R.style.Theme_DeviceDefault_NoActionBar : android.R.style.Theme_DeviceDefault_Light_NoActionBar);
 		super.onCreate(b);
+		Fonts.init(this);
 		prefs = Widget.prefs(this);
 		en = Lang.en(this);
 		dp = getResources().getDisplayMetrics().density;
@@ -159,7 +160,7 @@ public final class WidgetConfig extends Activity {
 		t.setText(s);
 		t.setTextSize(sp);
 		t.setTextColor(color);
-		if (bold) t.setTypeface(Typeface.DEFAULT_BOLD);
+		t.setTypeface(Fonts.of(t.getContext(), bold));
 		return t;
 	}
 

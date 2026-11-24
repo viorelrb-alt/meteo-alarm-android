@@ -226,7 +226,7 @@ final class StatsExport {
 		page = null;
 		t.setColor(0xFF000000);
 		b.setColor(0xFF000000);
-		b.setTypeface(Typeface.DEFAULT_BOLD);
+		b.setTypeface(Fonts.bold());
 		l.setColor(0xFF999999);
 		l.setStrokeWidth(0.6f);
 		newPage();

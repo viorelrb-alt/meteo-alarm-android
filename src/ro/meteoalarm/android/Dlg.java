@@ -32,6 +32,8 @@ final class Dlg {
 	}
 
 	static void fit(final AlertDialog d) {
+		// Design audit (2026-11-23): the system dialog's title, text and buttons in Liberation Sans too.
+		if (d.getWindow() != null) Fonts.tree(d.getWindow().getDecorView());
 		final int[] ids = { DialogInterface.BUTTON_NEGATIVE, DialogInterface.BUTTON_NEUTRAL, DialogInterface.BUTTON_POSITIVE };
 		int n = 0;
 		for (int id : ids) {
