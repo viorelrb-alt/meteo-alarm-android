@@ -60,6 +60,10 @@
             android:exported="false"
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar" />
         <service
+            android:name=".RefreshJob"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
             android:name=".NetJob"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />

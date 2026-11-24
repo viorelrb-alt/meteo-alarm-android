@@ -59,26 +59,25 @@ public final class Refresher extends BroadcastReceiver {
 			}).start();
 			return;
 		}
-		final PendingResult done = goAsync();
-		new Thread(new Runnable() {
-			public void run() {
-				try {
-					if (act.endsWith("REPLACED")) {
-						SharedPreferences p = Fetcher.prefs(app);
-						Cities.City c = Cities.City.fromKey(p.getString("city", ""));
-						if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
-						Fetcher.quakesAfterUpdate(app, c);
-					}
-					Updater.weekly(app);
-					refresh(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith(".NET") ? "rețea revenită" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
-				} catch (Exception e) {
-					Log.e(app, "FUNDAL", "reîmprospătare", e);
-				} finally {
-					schedule(app);
-					done.finish();
-				}
+		// v2.151: the work runs in RefreshJob (a broadcast is stopped by Android after a short while).
+		schedule(app);
+		RefreshJob.start(app, act.endsWith("REFRESH") ? "alarmă" : act.endsWith(".NET") ? "rețea revenită" : act.endsWith("REPLACED") ? "actualizare" : act.endsWith("COMPLETED") ? "pornire" : act);
+	}
+
+	/** v2.151: the background work, run by RefreshJob. */
+	static void work(Context app, String why) {
+		try {
+			if (why.equals("actualizare")) {
+				SharedPreferences p = Fetcher.prefs(app);
+				Cities.City c = Cities.City.fromKey(p.getString("city", ""));
+				if (c == null) c = Cities.City.fromKey(p.getString("cacheCity", ""));
+				Fetcher.quakesAfterUpdate(app, c);
 			}
-		}).start();
+			Updater.weekly(app);
+			refresh(app, why);
+		} finally {
+			schedule(app);
+		}
 	}
 
 	/** The phone's state: { screen on, battery low, night (sunset to sunrise) }. */

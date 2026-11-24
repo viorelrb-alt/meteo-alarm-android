@@ -441,6 +441,9 @@ public class Widget extends AppWidgetProvider {
 
 	static final String[] NAMES = { "2x2", "4x1", "4x2", "2x1", "4x2", "4x3", "4x2" };
 
+	/** The last Log line of each widget. */
+	private static final java.util.Map<Integer, String> LOGGED = new java.util.HashMap<Integer, String>();
+
 	/** One widget, drawn as a picture of its frame. */
 	private static void draw(Context ctx, AppWidgetManager mgr, int id, Data d, Set st) {
 		float dens = ctx.getResources().getDisplayMetrics().density;
@@ -448,8 +451,13 @@ public class Widget extends AppWidgetProvider {
 		int[] f = frame(ctx, mgr, id, why);
 		int kind = kind(ctx, mgr, id, f[0], f[1]);
 		float s = Math.min(f[0] / RW[kind], f[1] / RH[kind]);
-		Log.i(ctx, "WIDGET", "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind] + (kind == 4 ? " zile" : kind == 6 ? " listă " + st.mode : "")
-				+ " zoom " + Math.round(s * 100) + "% · " + (d.c != null ? d.c.name : "-") + (d.w == null ? " fără date" : "") + " · " + st.describe());
+		String line = "#" + id + " " + why + " -> cadru " + f[0] + "x" + f[1] + " dp, model " + NAMES[kind] + (kind == 4 ? " zile" : kind == 6 ? " listă " + st.mode : "")
+				+ " zoom " + Math.round(s * 100) + "% · " + (d.c != null ? d.c.name : "-") + (d.w == null ? " fără date" : "") + " · " + st.describe();
+		// v2.151 (Viorel): the Log gets a widget's line only when something of it changed (it was 40% of the Log).
+		if (!line.equals(LOGGED.get(id))) {
+			LOGGED.put(id, line);
+			Log.i(ctx, "WIDGET", line);
+		}
 		try {
 			send(ctx, mgr, id, d, render(ctx, d, st, f[0], f[1], dens, kind, 0));
 			animate(ctx, mgr, id, d, st, f, dens, kind);
