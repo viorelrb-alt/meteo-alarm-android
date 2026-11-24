@@ -1,4 +1,4 @@
-Versione attuale: v.2.152 · 24.11.2026
+Versione attuale: v.2.153 · 24.11.2026
 IMPOSTAZIONI
 - Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
 NOTIFICHE

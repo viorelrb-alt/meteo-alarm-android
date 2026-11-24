@@ -1,9 +1,9 @@
-Current version: v.2.152 · 24.11.2026
+Current version: v.2.153 · 24.11.2026
 MAIN SCREEN
 - Button names: a round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 - More towns: each town in the list has its own main screen; a left or right swipe on the weather now goes to the next one, in the list's order.
-- Towns button: the round button with the town icon (in portrait at the right of the name, in landscape at the end of the top band) opens the list of towns.
+- Towns button: the round button with the houses icon (in portrait at the right of the name, in landscape at the end of the top band) opens the list of towns.
 NOTIFICATIONS
 - Channels of their own: weather warnings, rain and snow, earthquakes, parcels and updates each have their own channel in the phone's settings; you can turn one off and keep the others.
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.

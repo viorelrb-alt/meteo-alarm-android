@@ -1,4 +1,4 @@
-Nuvarande version: v.2.152 · 24.11.2026
+Nuvarande version: v.2.153 · 24.11.2026
 AVISERINGAR
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
 - Ny version: med aviseringar på kollar appen GitHub en gång i veckan och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.

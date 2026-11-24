@@ -301,12 +301,13 @@ public final class PlacesActivity extends Activity {
 			inner.addView(rows, new LinearLayout.LayoutParams(flow ? -2 : -1, -2));
 			for (int k = 0; k < list.size(); k++) rows.addView(new Row(k), lp(-1, -2, 0, 12));
 		}
+		// v2.153 (Viorel): the explanation at the bottom of the screen, small like the source line.
 		if (mode.equals("list")) {
-			inner.addView(small(Tr.t("The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.",
-					"Ordinea din listă este ordinea ecranelor principale: prima localitate e primul ecran (widget-urile și notificările o urmează). Glisează stânga-dreapta peste vremea de acum ca să treci de la una la alta."), 14), lp(-1, -2, 4, 8));
+			col.addView(note(Tr.t("The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.",
+					"Ordinea din listă este ordinea ecranelor principale: prima localitate e primul ecran (widget-urile și notificările o urmează). Glisează stânga-dreapta peste vremea de acum ca să treci de la una la alta.")), new LinearLayout.LayoutParams(-1, -2));
 		} else if (sel) {
-			inner.addView(small(Tr.t("Tap a town to tick it. The screens of the deleted towns go; the others keep their order.",
-					"Atinge o localitate ca s-o bifezi. Ecranele celor șterse dispar; celelalte își păstrează ordinea."), 14), lp(-1, -2, 4, 8));
+			col.addView(note(Tr.t("Tap a town to tick it. The screens of the deleted towns go; the others keep their order.",
+					"Atinge o localitate ca s-o bifezi. Ecranele celor șterse dispar; celelalte își păstrează ordinea.")), new LinearLayout.LayoutParams(-1, -2));
 		}
 		if (sel) {
 			LinearLayout bottom = new LinearLayout(this);
@@ -1308,6 +1309,13 @@ public final class PlacesActivity extends Activity {
 		v.setTextColor(color);
 		v.setTypeface(Fonts.of(this, bold));
 		TextSize.size(v, sp, ts);
+		return v;
+	}
+
+	/** The small explanation at the bottom of the screen. */
+	private TextView note(String t) {
+		TextView v = small(t, 12);
+		v.setPadding(px(20), px(6), px(20), px(14));
 		return v;
 	}
 

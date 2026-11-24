@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.152";
+	static final String VERSION = "Meteo Alarm Android v2.153";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -4604,8 +4604,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mod fermier: clopoțelul de pe caseta parcelei îi pornește (plin) sau oprește notificările; atunci parcela le primește pe toate: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("layers"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
-		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("CARTO Voyager (OpenStreetMap data): mostly the towns' names, big and clear; in the dark theme only a little dimmer. Move it with one finger, zoom with two; it needs internet.",
-				"CARTO Voyager (date OpenStreetMap): mai ales numele localităților, mari și clare; în tema întunecată doar puțin mai întunecată. O muți cu un deget, o mărești cu două; are nevoie de internet."));
+		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("Towns and earthquakes: Esri Light Gray with the towns' names (few other details), in the dark theme only a little dimmer; parcels: OpenStreetMap with all the details. Move it with one finger, zoom with two; it needs internet.",
+				"Localități și cutremure: Esri Gri deschis cu numele localităților (puține alte detalii), în tema întunecată doar puțin mai întunecată; parcele: OpenStreetMap cu toate detaliile. O muți cu un deget, o mărești cu două; are nevoie de internet."));
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + " " + Tr.t("Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.", "Verifică actualizări sau caseta de sus din ☰ când s-a găsit o versiune nouă; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat."));
 		help.entry(mini("shield"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
@@ -4618,8 +4618,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pagina se mișcă sus-jos pe sub sticla de sus; butoanele și bateria plutesc jos. Secțiuni: Următoarele ore, Prognoza pe cinci zile, Detalii meteo."));
 		help.entry(mini("row"), Tr.t("Five-day forecast", "Prognoza pe cinci zile"), Tr.t("Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.",
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
-		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the town icon: in portrait at the right of the town's name, in landscape at the end of the top band. It opens the list of towns.",
-				"Butonul rotund cu iconul de localitate: în portret în dreapta numelui localității, în peisaj la capătul benzii de sus. Deschide lista localităților."));
+		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the houses icon: in portrait at the right of the town's name, in landscape at the end of the top band. It opens the list of towns.",
+				"Butonul rotund cu iconul cu case: în portret în dreapta numelui localității, în peisaj la capătul benzii de sus. Deschide lista localităților."));
 		help.entry(mini("bubble"), Tr.t("Button names", "Numele butoanelor"), Tr.t("A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.",
 				"Un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde."));
 		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.",

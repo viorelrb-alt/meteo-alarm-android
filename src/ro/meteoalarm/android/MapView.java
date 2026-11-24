@@ -545,9 +545,6 @@ final class MapView extends View {
 		c.drawColor(night ? 0xFF4A4F55 : dark ? 0xFF3A3A38 : 0xFFE8E4DC);
 		if (night && style == 0) paint.setColorFilter(NIGHT);
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
-		// v2.152 (Viorel): the map (CARTO Voyager, 512 px tiles) one level lower drawn twice as large:
-		// the towns' names big and clear, the other details few.
-		if (style == 0 && names && z > MIN_Z) z--;
 		float ts = (float) (tile * Math.pow(2, zoom - z));
 		double world = ts * Math.pow(2, z);
 		double cx = wx(lon, world), cy = wy(lat, world);
@@ -634,7 +631,7 @@ final class MapView extends View {
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
 		drawRadar(c, w, h, world, left, top);
-		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "© OpenStreetMap contributors © CARTO" : "© OpenStreetMap contributors") + (radarOn ? " · Radar © RainViewer" : "");
+		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "Esri, HERE, Garmin, © OpenStreetMap contributors" : "© OpenStreetMap contributors") + (radarOn ? " · Radar © RainViewer" : "");
 		paint.setTextSize(11 * dp);
 		float aw = paint.measureText(att);
 		paint.setColor(0xCCFFFFFF);
@@ -986,7 +983,7 @@ final class MapView extends View {
 	private static final int R_MAX_Z = 7;
 
 	private String pre() {
-		return style == 1 ? "s/" : names ? "v/" : "";
+		return style == 1 ? "s/" : names ? "e/" : "";
 	}
 
 	/** v2.152 (Viorel): the towns' map (search, earthquakes): mostly the names; the parcels keep the detailed OpenStreetMap. */
@@ -1248,7 +1245,7 @@ final class MapView extends View {
 	/** Off the main thread: the tile from the phone's cache (a week), else from OpenStreetMap. */
 	private Bitmap load(String key) {
 		File f = new File(dir, key.replace('/', '_') + ".png");
-		boolean sat = key.startsWith("s/"), voy = key.startsWith("v/");
+		boolean sat = key.startsWith("s/"), voy = key.startsWith("e/");
 		try {
 			if (f.exists() && System.currentTimeMillis() - f.lastModified() < KEEP_MS) {
 				Bitmap b = BitmapFactory.decodeFile(f.getPath());
@@ -1260,9 +1257,20 @@ final class MapView extends View {
 				String[] k = key.substring(2).split("/");
 				url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
 			} else if (voy) {
-				// v2.152 (Viorel): CARTO Voyager (OpenStreetMap data): mostly the towns' names; 512 px tiles.
+				// v2.153 (Viorel): no API key: Esri Light Gray (few details) with its names layer on top.
 				String[] k = key.substring(2).split("/");
-				url = "https://" + "abcd".charAt((Integer.parseInt(k[1]) + Integer.parseInt(k[2])) & 3) + ".basemaps.cartocdn.com/rastertiles/voyager/" + k[0] + "/" + k[1] + "/" + k[2] + "@2x.png";
+				String zyx = k[0] + "/" + k[2] + "/" + k[1];
+				byte[] bb = fetch(ESRI + "Canvas/World_Light_Gray_Base/MapServer/tile/" + zyx), rb = fetch(ESRI + "Canvas/World_Light_Gray_Reference/MapServer/tile/" + zyx);
+				if (bb == null) return f.exists() ? BitmapFactory.decodeFile(f.getPath()) : null;
+				Bitmap base = BitmapFactory.decodeByteArray(bb, 0, bb.length);
+				if (base == null) return null;
+				Bitmap b = base.copy(Bitmap.Config.ARGB_8888, true);
+				Bitmap ref = rb == null ? null : BitmapFactory.decodeByteArray(rb, 0, rb.length);
+				if (ref != null) new Canvas(b).drawBitmap(ref, null, new Rect(0, 0, b.getWidth(), b.getHeight()), new Paint(Paint.FILTER_BITMAP_FLAG));
+				FileOutputStream fo = new FileOutputStream(f);
+				b.compress(Bitmap.CompressFormat.PNG, 100, fo);
+				fo.close();
+				return b;
 			} else url = "https://tile.openstreetmap.org/" + key + ".png";
 			HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
 			c.setConnectTimeout(15000);
@@ -1289,6 +1297,32 @@ final class MapView extends View {
 			}
 		} catch (Exception e) {
 			return f.exists() ? BitmapFactory.decodeFile(f.getPath()) : null;
+		}
+	}
+
+	private static final String ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
+
+	/** The bytes at URL (200 only), else null. */
+	private static byte[] fetch(String url) {
+		try {
+			HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
+			c.setConnectTimeout(15000);
+			c.setReadTimeout(20000);
+			c.setRequestProperty("User-Agent", UA);
+			try {
+				if (c.getResponseCode() != 200) return null;
+				InputStream in = c.getInputStream();
+				ByteArrayOutputStream out = new ByteArrayOutputStream();
+				byte[] buf = new byte[16384];
+				int n;
+				while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
+				in.close();
+				return out.toByteArray();
+			} finally {
+				c.disconnect();
+			}
+		} catch (Exception e) {
+			return null;
 		}
 	}
 

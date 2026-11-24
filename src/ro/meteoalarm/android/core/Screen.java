@@ -482,7 +482,23 @@ public final class Screen {
 	private void townsButton(float x, float y) {
 		btnTowns[0] = x; btnTowns[1] = y; btnTowns[2] = 64; btnTowns[3] = 64;
 		button(btnTowns);
-		g.icon("icons/btn-city.png", x + 16, y + 16, 32, 32, c.ink);
+		// v2.153 (Viorel): a locality, not a pin: two houses, a small one behind a bigger one.
+		float cx = x + 32, cy = y + 32;
+		house(cx - 9, cy + 9, 15, c.ink, 0);
+		house(cx + 3, cy + 12, 20, c.ink, glass());
+	}
+
+	/** A house W wide standing on BASE at its middle CX: a roof and the walls with a door; GAP: an edge of that colour round it (0: none). */
+	private void house(float cx, float base, float w, int ink, int gap) {
+		float h = w * 0.55f, rh = w * 0.5f, top = base - h - rh;
+		if (gap != 0) {
+			float e = 2.2f;
+			g.poly(new float[] { cx - w * 0.62f - e, top + rh + e * 0.4f, cx, top - e * 1.2f, cx + w * 0.62f + e, top + rh + e * 0.4f }, gap);
+			g.rect(cx - w / 2 - e, top + rh - 0.5f, w + 2 * e, h + e + 0.5f, gap);
+		}
+		g.poly(new float[] { cx - w * 0.62f, top + rh, cx, top, cx + w * 0.62f, top + rh }, ink);
+		g.rect(cx - w / 2 + w * 0.06f, top + rh - 0.5f, w * 0.88f, h + 0.5f, ink);
+		g.rect(cx - w * 0.12f, base - h * 0.58f, w * 0.24f, h * 0.58f, glass());
 	}
 
 	/** The marks of the hits drawn so far (to move those of the page with it). */
