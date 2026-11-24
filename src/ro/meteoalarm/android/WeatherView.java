@@ -10,6 +10,7 @@ import android.view.VelocityTracker;
 import android.view.View;
 
 import ro.meteoalarm.android.core.Screen;
+import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Strip;
 
 /** Draws the Screen scaled to the phone (full width, the extra height going to the current weather) or the tablet. */
@@ -758,6 +759,15 @@ final class WeatherView extends View {
 		return new float[] { ox + b[0] * scale, oy + b[1] * scale, ox + (b[0] + b[2]) * scale, oy + (b[1] + b[3]) * scale };
 	}
 
+	/** v2.152 (Viorel): the name of the round button at B (canvas units) in a small bubble. */
+	private void nameTip(float[] b, String name) {
+		if (!(getContext() instanceof android.app.Activity)) return;
+		float[] p = px(b);
+		int[] at = new int[2];
+		getLocationInWindow(at);
+		NameTip.show((android.app.Activity) getContext(), at[0] + p[0], at[1] + p[1], at[0] + p[2], at[1] + p[3], name, screen.dark);
+	}
+
 	/** Canvas units to pixels. */
 	float scale() {
 		return scale;
@@ -1085,13 +1095,20 @@ final class WeatherView extends View {
 			return true;
 		}
 		if (inBtn(screen.btnMenu, x, y)) taps.onMenu();
-		else if (inBtn(screen.btnLocate, x, y)) taps.onLocate();
-		else if (inBtn(screen.btnBright, x, y)) {
+		else if (inBtn(screen.btnLocate, x, y)) {
+			taps.onLocate();
+			nameTip(screen.btnLocate, Tr.t("Location", "Localizare"));
+		} else if (inBtn(screen.btnBright, x, y)) {
 			showBar(3000);
 			taps.onBright();
+			nameTip(screen.btnBright, Tr.t("Brightness", "Luminozitate"));
 		}
-		else if (inBtn(screen.btnSensor, x, y)) taps.toggleSensor();
+		else if (inBtn(screen.btnSensor, x, y)) {
+			taps.toggleSensor();
+			nameTip(screen.btnSensor, Tr.t("Automatic theme", "Temă automată"));
+		}
 		else if (inBtn(screen.btnCity, x, y)) taps.onCity(screen.btnCity);
+		else if (screen.btnTowns[2] > 0 && inBtn(screen.btnTowns, x, y)) taps.onCity(screen.btnTowns);
 		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y) && (screen.tablet || onPage)) taps.onStats();
 		else if (in(screen.cityArea, x, y)) taps.onTownName();
 		else if (screen.updArea[2] > 0 && in(screen.updArea, x, y)) taps.onRefresh(); // v5.00: the "updated" pill

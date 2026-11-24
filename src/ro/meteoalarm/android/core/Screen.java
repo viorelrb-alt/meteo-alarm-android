@@ -119,7 +119,7 @@ public final class Screen {
 	public static final float TARGET = 104;
 
 	// Buttons (x, y, w, h in canvas units), set by draw.
-	public final float[] btnMenu = { 40, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 },
+	public final float[] btnMenu = { 40, 24, 64, 64 }, btnCity = { 40, 0, 64, 64 }, btnTowns = { 0, 0, 0, 0 },
 			btnLocate = { 40 + TARGET, 0, 64, 64 }, btnBright = { 40 + 2 * TARGET, 0, 64, 64 }, btnSensor = { 40 + 3 * TARGET, 0, 64, 64 },
 			cityArea = { 40, 104, 380, 56 };
 	/** Where the warning boxes are (for the swipe) and the first one shown; set by draw. */
@@ -476,6 +476,13 @@ public final class Screen {
 		btnMenu[0] = x; btnMenu[1] = y; btnMenu[2] = 64; btnMenu[3] = 64;
 		button(btnMenu);
 		for (int k = 0; k < 3; k++) g.roundRect(x + 19, y + 19 + k * 12, 26, 3.5f, 1.75f, c.ink);
+	}
+
+	/** v2.152 (Viorel): the round Localități button (the town icon), opens the towns screen. */
+	private void townsButton(float x, float y) {
+		btnTowns[0] = x; btnTowns[1] = y; btnTowns[2] = 64; btnTowns[3] = 64;
+		button(btnTowns);
+		g.icon("icons/btn-city.png", x + 16, y + 16, 32, 32, c.ink);
 	}
 
 	/** The marks of the hits drawn so far (to move those of the page with it). */
@@ -1226,7 +1233,8 @@ public final class Screen {
 		band = sb;
 		lift = sl;
 		menuButton(40, rowY);
-		float lw = cw - 124 - 40;
+		townsButton(cw - 40 - 64, rowY);
+		float lw = cw - 124 - 40 - 64 - 16;
 		String label = headName(lw);
 		float lp = fit(true, 40, lw, label);
 		ltext(true, lp, rowY + 32 - lp * 0.5f, 124, label, c.ink);
@@ -1291,7 +1299,10 @@ public final class Screen {
 		String dt = T.date(now);
 		float dl = rtext(false, dp, 54 - dp * 0.56f, dr, dt, c.ink);
 		float ul = updatedAt(dl - 26, 54, Math.min(420, dl - 26 - 124 - 260));
-		float nw = ul - 124 - 30;
+		// v2.152 (Viorel): the Localități button at the band's right end, before the L corner.
+		float tx = Math.min(zL - 14 - 64, ul - 30 - 64);
+		townsButton(tx, 22);
+		float nw = tx - 16 - 124;
 		String label = headName(nw);
 		float lp = fit(true, 40, nw, label);
 		ltext(true, lp, 54 - lp * 0.5f, 124, label, c.ink);
@@ -5113,6 +5124,7 @@ public final class Screen {
 		List<Object[]> out = new ArrayList<Object[]>();
 		if (cw <= 0) return out;
 		say(out, btnMenu, Tr.t("Menu: settings", "Meniu: setări"));
+		if (btnTowns[2] > 0) say(out, btnTowns, Tr.t("Towns, opens the list", "Localități, deschide lista"));
 		if (city != null || parcel != null) say(out, cityArea, (parcel != null ? Tr.t("Parcel: ", "Parcela: ") : Tr.t("Town: ", "Localitatea: ")) + place());
 		if (updArea[2] > 0 && fetched > 0) {
 			Calendar cal = Zone.now();

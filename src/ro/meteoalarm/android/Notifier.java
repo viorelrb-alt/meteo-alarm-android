@@ -26,7 +26,10 @@ import ro.meteoalarm.android.core.Weather;
  * magnitude 3 or more in the town's country. Each event is notified once.
  */
 final class Notifier {
-	private static final String CHANNEL = "alerts";
+	/** v2.152 (design audit): one channel per kind, so each can be turned off in the phone's settings. */
+	private static final String CH_WARN = "warnings", CH_WEATHER = "weather", CH_QUAKE = "quakes", CH_FARM = "farm", CH_APP = "app";
+	/** The single channel before v2.152 (deleted). */
+	private static final String OLD = "alerts";
 	/** v5.00 (Viorel): earthquake notices only within this distance of your place (km). */
 	static final double QUAKE_KM = 300;
 
@@ -67,11 +70,15 @@ final class Notifier {
 
 	private static void channel(Context ctx, NotificationManager nm) {
 		if (Build.VERSION.SDK_INT < 26) return;
-		NotificationChannel ch = new NotificationChannel(CHANNEL, Tr.t("Weather, warnings and earthquakes", "Vreme, avertizări și cutremure"),
-				NotificationManager.IMPORTANCE_DEFAULT);
-		ch.setDescription(Tr.t("Rain or snow starting, new weather warnings, earthquakes around you.",
-				"Ploaie sau ninsoare care începe, avertizări meteo noi, cutremure din jurul tău."));
-		nm.createNotificationChannel(ch);
+		nm.deleteNotificationChannel(OLD);
+		make(nm, CH_WARN, Tr.t("Weather warnings", "Avertizări meteo"), Tr.t("New weather warnings for your towns.", "Avertizări meteo noi pentru localitățile tale."));
+		make(nm, CH_WEATHER, Tr.t("Rain, snow and information", "Ploaie, ninsoare și informări"),
+				Tr.t("Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).",
+						"Ploaie sau ninsoare care începe, ploaia sau ninsoarea de mâine, informările aplicației (îngheț, caniculă, vânt)."));
+		make(nm, CH_QUAKE, Tr.t("Earthquakes", "Cutremure"), Tr.t("Earthquakes around you.", "Cutremure din jurul tău."));
+		make(nm, CH_FARM, Tr.t("Farmer mode: parcels", "Mod Fermier: parcele"), Tr.t("Rain, snow, wind, drought and information for your parcels.",
+				"Ploaie, ninsoare, vânt, secetă și informări pentru parcelele tale."));
+		make(nm, CH_APP, Tr.t("App updates", "Actualizări aplicație"), Tr.t("A new version of the app and the test notice.", "O versiune nouă a aplicației și notificarea de probă."));
 		// Only where the US part is shown (v2.30).
 		if (!Region.showUS(ctx)) return;
 		NotificationChannel ex = new NotificationChannel(CHANNEL_EXTREME, Tr.t("Tornado and extreme warnings", "Tornade și avertizări extreme"),
@@ -85,6 +92,13 @@ final class Notifier {
 		if (alarm != null) ex.setSound(alarm, new android.media.AudioAttributes.Builder().setUsage(android.media.AudioAttributes.USAGE_ALARM)
 				.setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION).build());
 		nm.createNotificationChannel(ex);
+	}
+
+	@android.annotation.TargetApi(26)
+	private static void make(NotificationManager nm, String id, String name, String desc) {
+		NotificationChannel ch = new NotificationChannel(id, name, NotificationManager.IMPORTANCE_DEFAULT);
+		ch.setDescription(desc);
+		nm.createNotificationChannel(ch);
 	}
 
 	/** After a download for the app's town C: the new events, notified once each. */
@@ -128,7 +142,7 @@ final class Notifier {
 								: (snow ? Tr.t("Snow possible within the hour", "Ninsoare posibilă în următoarea oră") : Tr.t("Rain possible within the hour", "Ploaie posibilă în următoarea oră"))
 										+ (w.probs.length > 1 && w.probs[1] > 0 ? " · " + w.probs[1] + "%" : ""))
 								+ (w.rainEnd.length() > 0 ? " · " + T.until + " " + Texts.clock(w.rainEnd, clk12) : "");
-						post(ctx, 1, title, body);
+						post(ctx, 1, title, body, CH_WEATHER, false);
 						Log.i(ctx, "NOTIF", "precipitații: " + body);
 					}
 					p.edit().putLong("nPrecipLast", now).apply();
@@ -155,7 +169,7 @@ final class Notifier {
 						body = T.weekdayTime(wr.from, clk12) + " – " + T.weekdayTime(wr.until, clk12)
 								+ (wr.headline.length() > 0 ? "\n" + wr.headline : "") + (wr.instr.length() > 0 ? "\n" + wr.instr : "");
 					}
-					post(ctx, 100 + (key.hashCode() & 0xFFFF), title, body, loud);
+					post(ctx, 100 + (key.hashCode() & 0xFFFF), title, body, loud ? CHANNEL_EXTREME : CH_WARN, false);
 					Log.i(ctx, "NOTIF", "avertizare: " + title + " · " + body);
 				}
 			}
@@ -218,7 +232,7 @@ final class Notifier {
 			String body = T.weekdayTime(q.time, clk12) + " · " + (imp ? Math.round(q.dist * 0.621371) + " mi " : Math.round(q.dist) + " km ") + Tr.t("from ", "de ") + c.name
 					+ (q.felt >= 2 ? " · " + Tr.t("probably felt: ", "probabil resimțit: ") + ro.meteoalarm.android.core.Screen.roman(q.felt) : "")
 					+ (q.official ? " · " + q.src : "");
-			post(ctx, id, title, body, false, revised, true);
+			post(ctx, id, title, body, CH_QUAKE, revised);
 			Log.i(ctx, "NOTIF", "cutremur" + (revised ? " (revizuit)" : "") + ": " + title + " · " + body);
 		}
 	}
@@ -244,7 +258,7 @@ final class Notifier {
 		}
 		boolean snow = Weather.snowCode(code);
 		String body = (snow ? Tr.t("Snow possible tomorrow", "Ninsoare posibilă mâine") : Tr.t("Rain possible tomorrow", "Ploaie posibilă mâine")) + " · " + pop + "%";
-		post(ctx, 1600, c.name + " | " + (snow ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie")), body);
+		post(ctx, 1600, c.name + " | " + (snow ? Tr.t("Snow", "Ninsoare") : Tr.t("Rain", "Ploaie")), body, CH_WEATHER, false);
 		Log.i(ctx, "NOTIF", "mâine: " + body);
 	}
 
@@ -294,7 +308,7 @@ final class Notifier {
 		}
 		ed.apply();
 		if (body.length() == 0) return;
-		post(ctx, 1500, Parcels.title(c.name, Tr.t("Information · ", "Informare · ")), body.toString());
+		post(ctx, 1500, Parcels.title(c.name, Tr.t("Information · ", "Informare · ")), body.toString(), CH_WEATHER, false);
 		Log.i(ctx, "NOTIF", "informare " + c.name + ": " + body.toString().replace('\n', ';'));
 	}
 
@@ -341,24 +355,22 @@ final class Notifier {
 		}
 	}
 
+	/** A parcel's notice (Farmer mode). */
 	static void post(Context ctx, int id, String title, String body) {
-		post(ctx, id, title, body, false);
+		post(ctx, id, title, body, CH_FARM, false);
 	}
 
-	private static void post(Context ctx, int id, String title, String body, boolean loud) {
-		post(ctx, id, title, body, loud, false, false);
-	}
-
-	/** v2.030: QUIET updates a notice without sound; QUAKE opens the earthquake's bubble at a tap. */
+	/** v2.030: QUIET updates a notice without sound; an earthquake's notice opens its bubble at a tap. v2.152: on channel CH. */
 	@SuppressWarnings("deprecation")
-	private static void post(Context ctx, int id, String title, String body, boolean loud, boolean quiet, boolean quake) {
+	private static void post(Context ctx, int id, String title, String body, String ch, boolean quiet) {
+		boolean loud = CHANNEL_EXTREME.equals(ch), quake = CH_QUAKE.equals(ch);
 		NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 		if (nm == null) return;
 		channel(ctx, nm);
 		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		if (quake) open.putExtra(MainActivity.OPEN_QUAKE, true).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		PendingIntent pi = PendingIntent.getActivity(ctx, quake ? 4 : 3, open, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, loud ? CHANNEL_EXTREME : CHANNEL) : new Notification.Builder(ctx);
+		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, ch) : new Notification.Builder(ctx);
 		if (loud) {
 			b.setPriority(Notification.PRIORITY_MAX).setCategory(Notification.CATEGORY_ALARM).setVisibility(Notification.VISIBILITY_PUBLIC);
 			if (Build.VERSION.SDK_INT < 26) b.setDefaults(Notification.DEFAULT_ALL);
@@ -381,7 +393,7 @@ final class Notifier {
 		channel(ctx, nm);
 		Intent open = new Intent(ctx, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra(MainActivity.OPEN_UPDATE, true);
 		PendingIntent pi = PendingIntent.getActivity(ctx, 5, open, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, CHANNEL) : new Notification.Builder(ctx);
+		Notification.Builder b = Build.VERSION.SDK_INT >= 26 ? new Notification.Builder(ctx, CH_APP) : new Notification.Builder(ctx);
 		b.setSmallIcon(R.drawable.ic_notify).setContentTitle(title).setContentText(body).setContentIntent(pi).setAutoCancel(true)
 				.setStyle(new Notification.BigTextStyle().bigText(body)).setWhen(System.currentTimeMillis()).setShowWhen(true);
 		try {
@@ -393,8 +405,8 @@ final class Notifier {
 
 	/** Test notice, after the user said yes. */
 	static void hello(Context ctx) {
-		post(ctx, 2, "Meteo Alarm", Tr.t("Notifications are on: rain or snow, weather warnings and earthquakes around you.",
-				"Notificările sunt pornite: ploaie sau ninsoare, avertizări meteo și cutremure din jurul tău."));
+		post(ctx, 2, "Meteo Alarm", Tr.t("Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.",
+				"Notificările sunt pornite: ploaie sau ninsoare, avertizări meteo și cutremure din jurul tău. Fiecare fel se poate opri din setările telefonului."), CH_APP, false);
 	}
 
 	/** Unused helper kept for the hour of day (night quiet hours may come later). */

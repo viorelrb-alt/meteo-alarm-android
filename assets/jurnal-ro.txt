@@ -1,11 +1,15 @@
-Versiunea curentă: v.2.151 · 24.11.2026
+Versiunea curentă: v.2.152 · 24.11.2026
 ECRAN PRINCIPAL
+- Butonul Localități: butonul rotund cu iconul de localitate (în portret în dreapta numelui, în peisaj la capătul benzii de sus) deschide lista localităților.
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
 - Mai multe localități: fiecare localitate din listă are ecranul ei principal; glisarea stânga-dreapta pe vremea de acum trece la următoarea, în ordinea din listă.
+- Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
 LOCALITĂȚI
-- Căutare pe hartă: lupa deschide harta cu căutarea jos; atingerea unui loc arată temperatura, Detalii (zilele următoare) și Adaugă.
-- Lista de localități: butonul de localitate deschide lista, pe culoarea temei; Selectează șterge una sau mai multe (ultima rămâne), iar semnul ⌃⌄ ținut apăsat și tras în sus sau în jos schimbă ordinea.
+- Casetele localităților: pe tabletă și în peisaj au lățimea textului și stau pe rânduri și coloane; în portret pe telefon, un nume prea lung se scrie cu litere mai mici; în peisaj căutarea are mărimea din portret.
+- Căutare pe hartă: lupa deschide harta cu căutarea jos; atingerea unui loc arată temperatura, Detalii (zilele următoare) și Adaugă. Alte localități apar doar dacă încep ca numele scris (minim 6 litere sau 60% din el).
+- Lista de localități: butonul de localitate deschide lista, pe culoarea temei; Selectează șterge una sau mai multe (ultima rămâne), iar semnul ⌃⌄ ținut apăsat și tras în sus sau în jos schimbă ordinea; fiecare localitate își păstrează vremea salvată.
 NOTIFICĂRI
+- Canale separate: avertizări meteo, ploaie și ninsoare, cutremure, parcele și actualizări au fiecare canalul lor în setările telefonului; poți opri unul și le păstrezi pe celelalte.
 - Cutremure: verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea, iar atingerea ei deschide harta.
 - Versiune nouă: cu Notificări pornite, aplicația verifică o dată pe săptămână pe GitHub și anunță o versiune nouă în notificările Android; atingerea deschide Verifică actualizări.
 PARCELE
@@ -18,6 +22,7 @@ PARCELE
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.
 SETĂRI
 - Export / Import: comutatoare pentru ce intră în fișier (și culturile și datele de cultivare, notificările parcelelor, coșul de parcele, notificările, harta, widget-urile, istoricul cutremurelor, jurnalul); la Export și Import localitățile și parcelele se bifează pe rând; butonul Aa schimbă mărimea textului.
+- Favorite în ☰: trei rânduri, întâi localitățile cu stea plină (au ecran principal), apoi celelalte; prima își păstrează mereu steaua; o stea goală atinsă dă localității ecran principal, al doilea; debifarea îi scoate ecranul.
 - Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran. Erorile rezolvate stau la sfârșitul jurnalului și nu sunt numărate; problemele rețelei sunt avertizări.
 - Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
