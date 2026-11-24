@@ -427,6 +427,40 @@ final class Fetcher {
 		if (r.farm != null) write(ctx, parcelFile(id, "farm.json"), r.farm);
 	}
 
+	/**
+	 * v2.152 (Viorel: after a reorder the first town showed "Se descarcă vremea…"): the first
+	 * town keeps its data in the main files, the others in their screen's files. When another
+	 * town becomes the first, the old first's data go to its screen's files and the new first's
+	 * come into the main files, so nothing is downloaded again.
+	 */
+	static synchronized void swapFirst(Context ctx, Cities.City was, Cities.City now) {
+		SharedPreferences p = prefs(ctx);
+		SharedPreferences.Editor e = p.edit();
+		String[][] parts = { { "forecast.json", "forecast.json" }, { "uv.json", "uv.json" }, { "pollen.json", "air.json" }, { "warn.xml", "warn.xml" }, { "farm.json", "farm.json" } };
+		// The new first's saved screen, read before anything is overwritten.
+		long nid = placeId(now);
+		String[] in = new String[parts.length];
+		for (int k = 0; k < parts.length; k++) in[k] = read(ctx, parcelFile(nid, parts[k][1]));
+		long nFetched = p.getLong("pmf_" + nid, 0);
+		String nSource = p.getString("pms_" + nid, "");
+		if (was != null && was.key().equals(p.getString("cacheCity", "")) && read(ctx, "forecast.json") != null) {
+			long wid = placeId(was);
+			for (String[] pt : parts) {
+				String x = read(ctx, pt[0]);
+				if (x != null && (!pt[0].equals("warn.xml") || was.key().equals(p.getString("warnCity", was.key()))) && (!pt[0].equals("farm.json") || was.key().equals(p.getString("farmCity", ""))))
+					write(ctx, parcelFile(wid, pt[1]), x);
+			}
+			e.putLong("pmf_" + wid, p.getLong("fetched", 0)).putString("pms_" + wid, p.getString("source", ""));
+		}
+		if (in[0] != null) {
+			for (int k = 0; k < parts.length; k++) if (in[k] != null) write(ctx, parts[k][0], in[k]);
+			e.putString("cacheCity", now.key()).putLong("fetched", nFetched).putString("source", nSource).putString("warnCity", now.key());
+			if (in[4] != null) e.putString("farmCity", now.key()).putLong("farmFetched", nFetched);
+			Log.i(ctx, "LOC", "prima localitate " + now.label() + ": datele ei salvate trec în ecranul principal, fără descărcare");
+		}
+		e.apply();
+	}
+
 	/** v2.150: forgets the files of the screen of a town taken out of the list. */
 	static void dropPlace(Context ctx, long id) {
 		for (String part : new String[] { "uv.json", "forecast.json", "air.json", "warn.xml", "farm.json" }) ctx.deleteFile(parcelFile(id, part));

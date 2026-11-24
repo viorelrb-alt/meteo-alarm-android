@@ -75,7 +75,9 @@ public final class PlacesActivity extends Activity {
 	/** "list", "select", "sort", "map". */
 	private String mode = "list";
 	private final Set<Integer> ticked = new HashSet<Integer>();
-	private LinearLayout rows;
+	private android.view.ViewGroup rows;
+	/** v2.152 (Viorel): wide screens (tablet, phone in landscape): cards as wide as their text, in rows that wrap. */
+	private boolean flow;
 	private String highlight;
 	private Texts texts;
 
@@ -161,6 +163,8 @@ public final class PlacesActivity extends Activity {
 		SharedPreferences.Editor e = prefs.edit().putString("screens", sb.toString());
 		String was = prefs.getString("city", "");
 		if (!list.get(0).key().equals(was)) {
+			// v2.152 (Viorel): the saved weather follows the towns; nothing is downloaded again.
+			Fetcher.swapFirst(this, Cities.City.fromKey(was), list.get(0));
 			e.putString("city", list.get(0).key());
 			// Another first town: the GPS no longer replaces it (as a town picked from the list).
 			e.putBoolean("autoLoc", false);
@@ -284,10 +288,19 @@ public final class PlacesActivity extends Activity {
 		sv.addView(inner);
 		if (sort) inner.addView(hint("✋", Tr.t("Press the move sign at the right and drag up or down. The number is the screen the town will have.",
 				"Apasă pe semnul de mutare din dreapta și trage în sus sau în jos. Numărul este ecranul pe care îl va avea localitatea.")), lp(-1, -2, 0, 12));
-		rows = new LinearLayout(this);
-		rows.setOrientation(LinearLayout.VERTICAL);
-		inner.addView(rows);
-		for (int k = 0; k < list.size(); k++) rows.addView(new Row(k), lp(-1, -2, 0, 12));
+		android.util.DisplayMetrics dm = getResources().getDisplayMetrics();
+		flow = (dm.widthPixels - px(32)) / dm.density >= 560;
+		if (flow && !sort) {
+			rows = new Flow();
+			inner.addView(rows, new LinearLayout.LayoutParams(-1, -2));
+			for (int k = 0; k < list.size(); k++) rows.addView(new Row(k), new android.view.ViewGroup.LayoutParams(-2, -2));
+		} else {
+			LinearLayout l = new LinearLayout(this);
+			l.setOrientation(LinearLayout.VERTICAL);
+			rows = l;
+			inner.addView(rows, new LinearLayout.LayoutParams(flow ? -2 : -1, -2));
+			for (int k = 0; k < list.size(); k++) rows.addView(new Row(k), lp(-1, -2, 0, 12));
+		}
 		if (mode.equals("list")) {
 			inner.addView(small(Tr.t("The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.",
 					"Ordinea din listă este ordinea ecranelor principale: prima localitate e primul ecran (widget-urile și notificările o urmează). Glisează stânga-dreapta peste vremea de acum ca să treci de la una la alta."), 14), lp(-1, -2, 4, 8));
@@ -372,7 +385,7 @@ public final class PlacesActivity extends Activity {
 			String f, u;
 			long at;
 			List<Warnings.Warn> ws;
-			if (idx == 0 && c.key().equals(prefs.getString("cacheCity", ""))) {
+			if (c.key().equals(prefs.getString("cacheCity", ""))) {
 				f = Fetcher.read(this, "forecast.json");
 				u = Fetcher.read(this, "uv.json");
 				at = prefs.getLong("fetched", 0);
@@ -495,8 +508,48 @@ public final class PlacesActivity extends Activity {
 		@Override
 		protected void onMeasure(int wm, int hm) {
 			int w = MeasureSpec.getSize(wm);
+			// v2.152: on wide screens a card is as wide as its text needs (never wider than the screen).
+			if (flow) {
+				int n = natural();
+				if (MeasureSpec.getMode(wm) == MeasureSpec.UNSPECIFIED) w = n;
+				else if (!mode.equals("sort") || MeasureSpec.getMode(wm) == MeasureSpec.AT_MOST) w = Math.min(w, n);
+			}
 			float h = px(14) * 2 + sp(21) * 1.25f + sp(14) * 1.3f * 2;
 			setMeasuredDimension(w, (int) Math.max(px(mode.equals("sort") ? 80 : 96), h));
+		}
+
+		/** The width the card's texts need: the marks at the left, the name or place line, the weather at the right. */
+		int natural() {
+			float left = px(18);
+			if (mode.equals("select") || mode.equals("sort")) left += px(28) + px(12);
+			Cities.City c = list.get(idx);
+			p.setTypeface(Fonts.bold(PlacesActivity.this));
+			p.setTextSize(sp(21));
+			float name = p.measureText(c.name) + (idx == 0 && autoLoc ? sp(22) : 0);
+			p.setTypeface(Fonts.reg(PlacesActivity.this));
+			p.setTextSize(sp(14));
+			float line = Math.max(name, p.measureText(place(c)));
+			p.setTextSize(sp(13));
+			if (o.when.length() > 0 && !mode.equals("sort")) line = Math.max(line, p.measureText(o.when));
+			if (o.warn.length() > 0) {
+				p.setTypeface(Fonts.bold(PlacesActivity.this));
+				p.setTextSize(sp(11.5f));
+				line = Math.max(line, p.measureText(o.warn) + px(16));
+			}
+			float right = px(16);
+			if (mode.equals("sort")) right = px(64);
+			else if (o.temp.length() > 0) {
+				float tsz = sp(mode.equals("select") ? 28 : 34);
+				p.setTypeface(Fonts.bold(PlacesActivity.this));
+				p.setTextSize(tsz);
+				float tw = p.measureText(o.temp);
+				if (!mode.equals("select") && o.icon.length() > 0) tw += tsz * 1.15f + px(4);
+				p.setTypeface(Fonts.reg(PlacesActivity.this));
+				p.setTextSize(sp(14));
+				if (!mode.equals("select")) tw = Math.max(tw, p.measureText(o.minmax));
+				right += tw + px(10);
+			}
+			return (int) Math.ceil(Math.max(px(240), left + line + right + px(8)));
 		}
 
 		private boolean onHandle(float x) {
@@ -625,7 +678,13 @@ public final class PlacesActivity extends Activity {
 				icon(c, "pin", nx + sp(9), y - sp(7.5f), sp(18), accent);
 				nx += sp(22);
 			}
-			text(c, true, sp(21), fitText(list.get(idx).name, right - nx, true, sp(21)), nx, y, ink, Paint.Align.LEFT);
+			// v2.152 (Viorel): a long name gets a smaller font so that it shows whole (down to 13 sp, then "…").
+			float ns = sp(21);
+			p.setTypeface(Fonts.bold(PlacesActivity.this));
+			p.setTextSize(ns);
+			float nw = p.measureText(list.get(idx).name);
+			if (nw > right - nx && nw > 0) ns = Math.max(sp(13), ns * (right - nx) / nw);
+			text(c, true, ns, fitText(list.get(idx).name, right - nx, true, ns), nx, y, ink, Paint.Align.LEFT);
 			y += sp(14) * 1.35f;
 			text(c, false, sp(14), fitText(place(list.get(idx)), right - x, false, sp(14)), x, y, dim, Paint.Align.LEFT);
 			y += sp(14) * 1.35f;
@@ -664,6 +723,47 @@ public final class PlacesActivity extends Activity {
 		}
 	}
 
+	/** v2.152: the cards side by side, as many as fit on a line, then on the next line. */
+	private final class Flow extends android.view.ViewGroup {
+		Flow() {
+			super(PlacesActivity.this);
+		}
+
+		@Override
+		protected void onMeasure(int wm, int hm) {
+			int max = MeasureSpec.getSize(wm), gap = px(12), x = 0, y = 0, lineH = 0;
+			for (int k = 0; k < getChildCount(); k++) {
+				View v = getChildAt(k);
+				v.measure(MeasureSpec.makeMeasureSpec(max, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+				if (x > 0 && x + v.getMeasuredWidth() > max) {
+					x = 0;
+					y += lineH + gap;
+					lineH = 0;
+				}
+				x += v.getMeasuredWidth() + gap;
+				lineH = Math.max(lineH, v.getMeasuredHeight());
+			}
+			setMeasuredDimension(max, y + lineH + gap);
+		}
+
+		@Override
+		protected void onLayout(boolean changed, int l, int t, int r, int b) {
+			int max = r - l, gap = px(12), x = 0, y = 0, lineH = 0;
+			for (int k = 0; k < getChildCount(); k++) {
+				View v = getChildAt(k);
+				int w = v.getMeasuredWidth(), h = v.getMeasuredHeight();
+				if (x > 0 && x + w > max) {
+					x = 0;
+					y += lineH + gap;
+					lineH = 0;
+				}
+				v.layout(x, y, x + w, y + h);
+				x += w + gap;
+				lineH = Math.max(lineH, h);
+			}
+		}
+	}
+
 	/** "Călărași, România"; abroad the region and the country. */
 	private String place(Cities.City c) {
 		String country = new java.util.Locale("", c.country.toUpperCase()).getDisplayCountry(new java.util.Locale(Tr.lang().equals("us") ? "en" : Tr.lang()));
@@ -675,6 +775,24 @@ public final class PlacesActivity extends Activity {
 	// --- the map with the search at the bottom ---------------------------------------------------
 
 	private MapView map;
+	private View mapBottom;
+
+	/** v2.152 (Viorel): the search box keeps its portrait width in landscape (centred at the bottom). */
+	private FrameLayout.LayoutParams bottomLp() {
+		android.util.DisplayMetrics dm = getResources().getDisplayMetrics();
+		int w = Math.min(dm.widthPixels, dm.heightPixels);
+		boolean wide = dm.widthPixels > w + px(40);
+		return new FrameLayout.LayoutParams(wide ? w : -1, -2, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
+	}
+
+	@Override
+	public void onConfigurationChanged(android.content.res.Configuration nc) {
+		super.onConfigurationChanged(nc);
+		// The screen turned: the list is laid out again, the map keeps its place and search.
+		if ("map".equals(mode)) {
+			if (mapBottom != null) mapBottom.setLayoutParams(bottomLp());
+		} else showList();
+	}
 	private EditText q;
 	private LinearLayout results, card;
 	private Cities.City found;
@@ -737,8 +855,8 @@ public final class PlacesActivity extends Activity {
 		LinearLayout bottom = new LinearLayout(this);
 		bottom.setOrientation(LinearLayout.VERTICAL);
 		bottom.setPadding(px(16), 0, px(16), px(20));
-		FrameLayout.LayoutParams bp = new FrameLayout.LayoutParams(-1, -2, Gravity.BOTTOM);
-		root.addView(bottom, bp);
+		mapBottom = bottom;
+		root.addView(bottom, bottomLp());
 		results = new LinearLayout(this);
 		results.setOrientation(LinearLayout.VERTICAL);
 		results.setBackground(round(Glass.alpha(page, 0.97f), px(20), edge));
@@ -822,7 +940,7 @@ public final class PlacesActivity extends Activity {
 			return;
 		}
 		final List<Cities.City> local = new ArrayList<Cities.City>();
-		String f = Warnings.fold(t);
+		final String f = stem(Warnings.fold(t));
 		List<List<Cities.City>> all = new ArrayList<List<Cities.City>>();
 		all.addAll(cities.byCounty.values());
 		all.addAll(cities.abroad.values());
@@ -866,6 +984,8 @@ public final class PlacesActivity extends Activity {
 						if (!(cls.equals("city") || cls.equals("town") || cls.equals("village") || cls.equals("hamlet") || cls.equals("municipality") || cls.equals("suburb")
 								|| cls.equals("administrative") || cls.equals("locality") || cls.equals("neighbourhood") || cls.equals("quarter"))) continue;
 						Cities.City c = fromOsm(o);
+						// v2.152 (Viorel): other places only when their name starts like the one searched.
+						if (c != null && !Warnings.fold(c.name).startsWith(f)) continue;
 						if (c != null && !contains(got, c)) {
 							got.add(c);
 							subs.add(o.optString("display_name", ""));
@@ -904,6 +1024,15 @@ public final class PlacesActivity extends Activity {
 				});
 			}
 		}).start();
+	}
+
+	/**
+	 * v2.152 (Viorel): how much of the searched name a place must start with: all of it under 6
+	 * letters, else at least 6 letters and 60% of it ("bucuresti" -> "bucure").
+	 */
+	static String stem(String q) {
+		if (q.length() < 6) return q;
+		return q.substring(0, Math.max(6, (int) Math.ceil(q.length() * 0.6)));
 	}
 
 	/** The countries of Europe (ISO codes as OpenStreetMap gives them). */

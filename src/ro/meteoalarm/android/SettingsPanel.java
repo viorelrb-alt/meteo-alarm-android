@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import ro.meteoalarm.android.core.Theme;
+import ro.meteoalarm.android.core.Tr;
 
 /**
  * v5.00 (Viorel, "Opțiunea 3 Overlay Elegant", mockups machete-meniu-setari): the ☰ menu as a
@@ -711,7 +712,7 @@ final class SettingsPanel extends FrameLayout {
 		if (add != null) {
 			TextView a = text(getContext(), 14.5f * zk, true);
 			a.setSingleLine(true);
-			a.setText("+ " + add);
+			a.setText(add.endsWith("›") ? add : "+ " + add);
 			a.setTextColor(accentText());
 			a.setPadding(px(14), px(6), px(14), px(6));
 			a.setBackground(Glass.pill(0, accent(), 18 * dp, 1.5f * dp));
@@ -744,6 +745,48 @@ final class SettingsPanel extends FrameLayout {
 		r.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				tap.run();
+			}
+		});
+		card.addView(r);
+	}
+
+	/**
+	 * v2.152 (Viorel): a favourite with its star: filled = it has a main screen. The star turns it
+	 * on or off (never for the first town); the name opens its screen. CURRENT: the screen shown.
+	 */
+	void favStar(String name, final boolean starred, boolean first, boolean current, final Runnable tapName, final Runnable tapStar) {
+		LinearLayout r = new LinearLayout(getContext());
+		r.setGravity(Gravity.CENTER_VERTICAL);
+		r.setMinimumHeight(px(52));
+		r.setPadding(0, px(2), px(4), px(2));
+		View st = new View(getContext());
+		st.setBackground(new LineIcon(starred ? "star" : "star-off", starred ? accent() : dim()));
+		FrameLayout hit = new FrameLayout(getContext());
+		FrameLayout.LayoutParams il = new FrameLayout.LayoutParams(px(24 * zk), px(24 * zk), Gravity.CENTER);
+		hit.addView(st, il);
+		hit.setContentDescription(name + ", " + (starred ? Tr.t("has a main screen", "are ecran principal") : Tr.t("no main screen", "fără ecran principal"))
+				+ (first ? ". " + Tr.t("The first town cannot be unticked.", "Prima localitate nu se poate debifa.") : ""));
+		if (!first) {
+			hit.setBackgroundResource(android.R.drawable.list_selector_background);
+			hit.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					tapStar.run();
+				}
+			});
+		}
+		r.addView(hit, new LinearLayout.LayoutParams(px(48), px(48)));
+		TextView t = role("head", text(getContext(), 16 * zk, true));
+		t.setText(name);
+		t.setTextColor(starred ? ink() : dim());
+		if (current) t.setTypeface(Fonts.bold(getContext()));
+		LinearLayout.LayoutParams tl = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+		tl.leftMargin = px(6);
+		r.addView(t, tl);
+		r.setBackgroundResource(android.R.drawable.list_selector_background);
+		r.setContentDescription(name + (current ? ", " + Tr.t("shown now", "afișată acum") : ""));
+		r.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				tapName.run();
 			}
 		});
 		card.addView(r);

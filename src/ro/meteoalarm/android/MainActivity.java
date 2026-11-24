@@ -3311,14 +3311,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		};
 		if (eu) {
-			p.favHead(us ? Tr.t("Favourites EU", "Favorite UE") : Tr.t("Favourites", "Favorite"), Tr.t("Add", "Adaugă"), towns);
-			for (final Cities.City c : favList("favs")) p.fav(c.label(), town != null && c.same(town) && pageId == 0, new Runnable() {
-				public void run() {
-					Log.i(MainActivity.this, "LOC", "aleasă din favorite (setări): " + c.label());
-					choose(c);
-					onMenu();
-				}
-			});
+			p.favHead(us ? Tr.t("Favourites EU", "Favorite UE") : Tr.t("Favourites", "Favorite"), Tr.t("Towns ›", "Localități ›"), towns);
+			favStars(p, "favs");
 		}
 		if (us) {
 			List<Cities.City> fu = favList("favsUS");
@@ -3339,13 +3333,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				}
 				p.chips(names, taps);
 			} else {
-				p.favHead(Tr.t("Favourites", "Favorite"), Tr.t("Add", "Adaugă"), towns);
-				for (final Cities.City c : fu) p.fav(c.label(), town != null && c.same(town) && pageId == 0, new Runnable() {
-					public void run() {
-						choose(c);
-						onMenu();
-					}
-				});
+				p.favHead(Tr.t("Favourites", "Favorite"), Tr.t("Towns ›", "Localități ›"), towns);
+				favStars(p, "favsUS");
 			}
 		}
 		StringBuilder some = new StringBuilder();
@@ -4881,11 +4870,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			id = c == null || (town != null && c.same(town)) ? 0 : Fetcher.placeId(c);
 		}
 		pageState();
-		showPage(id);
-		if (firstChanged && pageId == 0) {
-			lastTry = 0;
-			fetch();
-		}
+		showPage(id); // loads the saved data; downloads only when they are old
 	}
 
 	private void countyPicker(final float[] b) {
@@ -5024,6 +5009,75 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	}
 
 	/** The favourites kept under KEY ("favs" or "favsUS"). */
+	/**
+	 * v2.152 (Viorel): ☰ › Favourites: 3 rows, first the towns with a main screen (filled star, in
+	 * the screens' order; the first one always), then the other favourites (empty star). A star
+	 * gives a town its main screen as screen 2, or takes it away (the town stays a favourite, right
+	 * after the starred ones).
+	 */
+	private void favStars(final SettingsPanel p, final String key) {
+		final List<Cities.City> scr = new ArrayList<Cities.City>();
+		if (town != null) scr.add(town);
+		scr.addAll(places());
+		List<Cities.City> rows = new ArrayList<Cities.City>(scr);
+		for (Cities.City f : favList(key)) {
+			boolean dup = false;
+			for (Cities.City o : rows) dup |= o.same(f);
+			if (!dup) rows.add(f);
+		}
+		for (int k = 0; k < Math.min(3, rows.size()); k++) {
+			final Cities.City c = rows.get(k);
+			final int at = k;
+			final boolean starred = k < scr.size();
+			final long id = k == 0 ? 0 : Fetcher.placeId(c);
+			p.favStar(c.label(), starred, k == 0, starred && pageId == id, new Runnable() {
+				public void run() {
+					if (starred) {
+						Log.i(MainActivity.this, "LOC", "favorite (☰): ecranul " + (at + 1) + " " + c.label());
+						showPage(id);
+					} else starOn(c);
+					settings.hide();
+				}
+			}, new Runnable() {
+				public void run() {
+					if (starred) starOff(c, key);
+					else {
+						starOn(c);
+						settings.hide();
+						return;
+					}
+					onMenu();
+				}
+			});
+		}
+	}
+
+	/** v2.152: town C gets a main screen, as screen 2, and it is shown. */
+	private void starOn(Cities.City c) {
+		List<Cities.City> pl = places();
+		StringBuilder b = new StringBuilder(c.key());
+		for (Cities.City o : pl) if (!o.same(c)) b.append('\n').append(o.key());
+		prefs.edit().putString("screens", b.toString()).apply();
+		Log.i(this, "LOC", "favorite (☰): " + c.label() + " primește ecran principal (ecranul 2)");
+		pageState();
+		showPage(Fetcher.placeId(c));
+	}
+
+	/** v2.152: town C loses its main screen; it stays a favourite, right after the starred ones. */
+	private void starOff(Cities.City c, String key) {
+		StringBuilder b = new StringBuilder();
+		for (Cities.City o : places()) if (!o.same(c)) b.append(b.length() > 0 ? "\n" : "").append(o.key());
+		StringBuilder f = new StringBuilder(c.key());
+		for (Cities.City o : favList(key)) if (!o.same(c)) f.append('\n').append(o.key());
+		prefs.edit().putString("screens", b.toString()).putString(key, f.toString()).apply();
+		Log.i(this, "LOC", "favorite (☰): " + c.label() + " fără ecran principal (rămâne la favorite)");
+		if (pageId == Fetcher.placeId(c)) showPage(0);
+		else {
+			pageState();
+			view.invalidate();
+		}
+	}
+
 	private List<Cities.City> favList(String key) {
 		List<Cities.City> l = new ArrayList<Cities.City>();
 		for (String k : prefs.getString(key, "").split("\n")) {
