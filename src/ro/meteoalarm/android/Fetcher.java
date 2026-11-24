@@ -163,7 +163,7 @@ final class Fetcher {
 			return r;
 		}
 		r.warn = warningsFeed(ctx, c.country);
-		if (r.warn == null) Log.e(ctx, "DATE", "avertizările MeteoAlarm (" + c.country + ") nu au venit");
+		if (r.warn == null) Log.e(ctx, "DATE", "avertizările MeteoAlarm (" + c.country + ") nu au venit" + (feedFail.length() > 0 ? ": " + feedFail : ""));
 		else Log.i(ctx, "DATE", "avertizări MeteoAlarm OK " + r.warn.length() / 1024 + " KB");
 		quakesInto(ctx, c, r);
 		return r;
@@ -508,6 +508,9 @@ final class Fetcher {
 	 * The country's MeteoAlarm warnings: the feed that worked last time first, then the others
 	 * listed for the country; the one that answers is kept on the phone.
 	 */
+	/** v2.151: why the last warnings feed did not come (for the Log). */
+	static volatile String feedFail = "";
+
 	static String warningsFeed(Context ctx, String cc) {
 		SharedPreferences prefs = prefs(ctx);
 		List<String> urls = countries(ctx).feeds(cc);
@@ -516,13 +519,14 @@ final class Fetcher {
 			urls.remove(known);
 			urls.add(0, known);
 		}
+		feedFail = "";
 		for (String u : urls) {
 			try {
 				String x = Weather.get(u);
 				if (!u.equals(known)) prefs.edit().putString("feed_" + cc, u).apply();
 				return x;
 			} catch (Exception e) {
-				// try the next one
+				feedFail = reason(e, false); // try the next one
 			}
 		}
 		return null;

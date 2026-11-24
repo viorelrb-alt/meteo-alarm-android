@@ -57,6 +57,8 @@ final class Log {
 	}
 
 	private static synchronized void write(Context ctx, char lvl, String cat, String msg) {
+		// v2.151 (Viorel): a failure of the network is written as a warning, never as an error of the app.
+		if (lvl == 'E' && msg != null && network(msg)) lvl = 'W';
 		init(ctx);
 		if (app == null) return;
 		try {
@@ -197,7 +199,8 @@ final class Log {
 
 	/** v2.141 (Viorel): an error of the network (no answer in time, no internet): a warning, not an error of the app. */
 	static boolean network(String l) {
-		return l.contains("nu a răspuns la timp") || l.contains("fără internet") || l.contains("fără conexiune") || l.contains("eroare rețea:");
+		return l.contains("nu a răspuns la timp") || l.contains("fără internet") || l.contains("fără conexiune") || l.contains("eroare rețea:")
+				|| l.contains("Unable to resolve host") || l.contains("nu au venit");
 	}
 
 	/** {lines, errors, warnings} of an export: errors = the real ones not yet fixed; the fixed ones are not counted. */

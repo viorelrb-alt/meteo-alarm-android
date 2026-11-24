@@ -924,17 +924,25 @@ public final class Screen {
 		return o;
 	}
 
+	/**
+	 * v2.151 (Viorel): the tabs show in farmer mode (towns, parcels, "+"), and in the normal mode
+	 * too when there are 2 or more towns (only the towns).
+	 */
+	public boolean tabsShown() {
+		return tabNames != null && (farmer ? tabNames.length > 0 : tabNames.length >= 2);
+	}
+
 	/** The tabs (town, parcels, "+") as a row moved sideways, the current one marked. */
 	private void drawTabs(float x, float y, float wd, float h) {
 		tabs.area[2] = 0;
 		tabHits.clear();
-		if (!farmer || tabNames == null || tabNames.length == 0) return;
-		int n = tabNames.length + 1;
+		if (!tabsShown()) return;
+		int n = tabNames.length + (farmer ? 1 : 0); // the "+" (new parcel) only in farmer mode
 		float gap = 12, p = fit(true, 24, 400, "Ag"), pad = 18, ic = 22;
 		float[] ws = new float[n], starts = new float[n];
 		float tot = 0;
 		for (int k = 0; k < n; k++) {
-			ws[k] = k == n - 1 ? h + 8 : pad + ic + 10 + g.width(k == page, p, tabNames[k]) + pad;
+			ws[k] = k == tabNames.length ? h + 8 : pad + ic + 10 + g.width(k == page, p, tabNames[k]) + pad;
 			starts[k] = tot;
 			tot += ws[k] + gap;
 		}
@@ -956,7 +964,7 @@ public final class Screen {
 			g.roundRect(bx + 2, y + 2, ws[k] - 4, h - 4, h / 2 - 2, sel ? mix(glass(), c.accent, dark ? 0.26f : 0.18f) : glass());
 			int ink = sel ? (dark ? mix(c.accent, Gfx.WHITE, 0.45f) : mix(c.accent, Gfx.BLACK, 0.35f)) : c.ink;
 			float mid = y + h / 2;
-			if (k == n - 1) {
+			if (k == tabNames.length) {
 				g.rect(bx + ws[k] / 2 - 11, mid - 1.5f, 22, 3, c.ink);
 				g.rect(bx + ws[k] / 2 - 1.5f, mid - 11, 3, 22, c.ink);
 			} else {
@@ -1180,7 +1188,7 @@ public final class Screen {
 		}
 		float hy = lift - 22, paneTop = lift - band + 2, rowY = 24 + hy;
 		float y = rowY + 64 + 14, tabsY = y;
-		boolean tabsOn = farmer && tabNames != null && tabNames.length > 0;
+		boolean tabsOn = tabsShown();
 		if (tabsOn) y += 54 + 14;
 		int nw = w == null ? 0 : warnCount();
 		float alertY = y;
@@ -1304,7 +1312,7 @@ public final class Screen {
 		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
 		footFb = fb;
 		footBatt = false;
-		if (farmer && tabNames != null && tabNames.length > 0) drawTabs(free, fb + 7, bl - 24 - free, 54);
+		if (tabsShown()) drawTabs(free, fb + 7, bl - 24 - free, 54);
 		else tabs.area[2] = 0;
 		drawNote(fb);
 	}

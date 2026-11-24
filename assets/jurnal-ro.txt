@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.150 · 24.11.2026
+Versiunea curentă: v.2.151 · 24.11.2026
 ECRAN PRINCIPAL
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
 - Mai multe localități: fiecare localitate din listă are ecranul ei principal; glisarea stânga-dreapta pe vremea de acum trece la următoarea, în ordinea din listă.

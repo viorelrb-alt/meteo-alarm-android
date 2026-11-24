@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.150";
+	static final String VERSION = "Meteo Alarm Android v2.151";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -4618,8 +4618,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ " " + Tr.t("The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.", "Pagina Cutremure se deschide imediat cu ultimele liste salvate; ↻ se rotește cât timp se actualizează.")
 				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC.") + " " + Tr.t("In Romania, the quakes around the country also get INFP's value (from infp.ro).", "În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
-		help.entry(mini("swipe"), Tr.t("Left / right on the weather now", "Stânga / dreapta pe vremea de acum"), Tr.t("The next or the previous town of the list (then the parcels); the dots show where you are. On another town, a tap on its name opens the list.",
-				"Localitatea următoare sau anterioară din listă (apoi parcelele); punctele arată unde ești. Pe altă localitate, atingerea numelui deschide lista."));
+		help.entry(mini("swipe"), Tr.t("Left / right on the weather now", "Stânga / dreapta pe vremea de acum"), Tr.t("The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.",
+				"Localitatea următoare sau anterioară din listă (apoi parcelele); punctele arată unde ești. Cu 2 sau mai multe localități, filele lor apar sub nume (în modul fermier și parcelele). Pe altă localitate, atingerea numelui deschide lista."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));
 		if (s.hasCompass) help.entry(mini("bigcompass"), Tr.t("Big compass", "Busola mare"), Tr.t("A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.",
