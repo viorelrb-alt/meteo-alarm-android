@@ -174,8 +174,8 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 				for (int i = 0; i < tabs.getChildCount(); i++) {
 					TextView o = (TextView) tabs.getChildAt(i);
 					boolean on = o == v;
-					o.setTextColor(on ? (dark ? ro.meteoalarm.android.core.Theme.page(true) : 0xFFFFFFFF) : ink());
-					o.setBackground(Glass.pill(on ? ro.meteoalarm.android.core.Theme.accent(dark) : Glass.disc(dark), 0, 20 * dp, dp));
+					o.setTextColor(on ? ro.meteoalarm.android.core.Theme.onPastel(dark) : ink());
+					o.setBackground(Glass.pill(on ? ro.meteoalarm.android.core.Theme.pastel(dark) : Glass.disc(dark), 0, 20 * dp, dp));
 				}
 				scroll.smoothScrollTo(0, Math.max(0, target.getTop() - (int) (4 * dp)));
 			}

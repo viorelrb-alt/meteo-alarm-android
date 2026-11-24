@@ -210,13 +210,13 @@ final class BackupPanel {
 			final int k = i + 1;
 			FitText b = new FitText(ctx, 1, 0.5f);
 			b.setTypeface(bold);
-			b.setTextColor(i == 0 ? 0xFFFFFFFF : ink());
+			b.setTextColor(i == 0 ? Theme.onPastel(dark) : ink());
 			b.setIncludeFontPadding(false);
 			b.setTextSize(17);
 			b.setText(i == 0 ? b1 : b2);
 			b.setGravity(Gravity.CENTER);
 			b.setPadding(px(8), 0, px(8), 0);
-			b.setBackground(Glass.pill(i == 0 ? accent() : Glass.disc(dark), i == 0 ? 0 : Glass.edge(dark), 24 * dp, dp));
+			b.setBackground(Glass.pill(i == 0 ? Theme.pastel(dark) : Glass.disc(dark), i == 0 ? 0 : Glass.edge(dark), 24 * dp, dp));
 			b.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					if (!keep) d.dismiss();
@@ -691,13 +691,13 @@ final class BackupPanel {
 			final int k = i;
 			FitText bt = new FitText(ctx, 1, 0.5f);
 			bt.setTypeface(bold);
-			bt.setTextColor(i == 1 ? 0xFFFFFFFF : ink());
+			bt.setTextColor(i == 1 ? Theme.onPastel(dark) : ink());
 			bt.setIncludeFontPadding(false);
 			bt.setTextSize(17);
 			bt.setText(icons[i] + "   " + names[i]);
 			bt.setGravity(Gravity.CENTER);
 			bt.setPadding(px(12), 0, px(12), 0);
-			bt.setBackground(Glass.pill(i == 1 ? accent() : Glass.disc(dark), i == 1 ? 0 : Glass.edge(dark), 24 * dp, dp));
+			bt.setBackground(Glass.pill(i == 1 ? Theme.pastel(dark) : Glass.disc(dark), i == 1 ? 0 : Glass.edge(dark), 24 * dp, dp));
 			bt.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					if (k == 0) {
@@ -812,8 +812,8 @@ final class BackupPanel {
 						}
 					}
 					for (int c = 0; c < 4; c++) {
-						chips[c].setTextColor(c == k ? 0xFFFFFFFF : ink());
-						chips[c].setBackground(Glass.pill(c == k ? accent() : Glass.disc(dark), c == k ? 0 : Glass.edge(dark), 16 * dp, dp));
+						chips[c].setTextColor(c == k ? Theme.onPastel(dark) : ink());
+						chips[c].setBackground(Glass.pill(c == k ? Theme.pastel(dark) : Glass.disc(dark), c == k ? 0 : Glass.edge(dark), 16 * dp, dp));
 					}
 					ad.notifyDataSetChanged();
 					lv.setSelection(Math.max(0, shown.size() - 1));

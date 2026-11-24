@@ -133,13 +133,13 @@ final class Ask {
 			if (s == null) continue;
 			FitText b = new FitText(ctx, 1, 0.5f);
 			b.setTypeface(bold);
-			b.setTextColor(k == 1 ? 0xFFFFFFFF : ink);
+			b.setTextColor(k == 1 ? Theme.onPastel(dark) : ink);
 			b.setIncludeFontPadding(false);
 			TextSize.size(b, 17, ts);
 			b.setText(s);
 			b.setGravity(Gravity.CENTER);
 			b.setPadding(Math.round(8 * dp), 0, Math.round(8 * dp), 0);
-			b.setBackground(Glass.pill(k == 1 ? Theme.accent(dark) : Glass.disc(dark), k == 1 ? 0 : Glass.edge(dark), 24 * dp, dp));
+			b.setBackground(Glass.pill(k == 1 ? Theme.pastel(dark) : Glass.disc(dark), k == 1 ? 0 : Glass.edge(dark), 24 * dp, dp));
 			b.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					d.dismiss();

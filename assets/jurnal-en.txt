@@ -1,6 +1,7 @@
-Current version: v.2.143 · 20.11.2026
+Current version: v.2.150 · 24.11.2026
 MAIN SCREEN
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
+- More towns: each town in the list has its own main screen; a left or right swipe on the weather now goes to the next one, in the list's order.
 NOTIFICATIONS
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.
 - New version: with Notifications on, the app checks GitHub once a week and announces a new version in Android's notifications; a tap opens Check for updates.
@@ -17,6 +18,9 @@ SETTINGS
 - Earthquakes page: opens at once with the last lists saved on the phone and updates them in the background.
 - Export / Import: switches for what goes into the file (also the crops and growing data, parcel notifications, parcel bin, notifications, map, widgets, earthquake history, log); in Export and Import the towns and parcels are ticked one by one; the Aa button sets the text size.
 - Log: size, lines and errors on a card; See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save at the bottom of the screen. Fixed errors stay at the end of the log and are not counted; network problems are warnings.
+TOWNS
+- Map search: the magnifier opens the map with the search at the bottom; a tap on a place shows its temperature, Details (the next days) and Add.
+- Towns list: the town button opens the list, in the theme's colour; Select deletes one or more (the last one stays), and the ⌃⌄ sign held and dragged up or down changes the order.
 - Design improvements and fixes for reported bugs.
 
 Version 1.4 (v.1.400 – v.1.520)

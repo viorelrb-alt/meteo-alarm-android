@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.143";
+	static final String VERSION = "Meteo Alarm Android v2.150";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -477,28 +477,58 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return prefs.getBoolean("farmer", false) ? Parcels.sorted(this) : new ArrayList<Parcels.Parcel>();
 	}
 
+	/** v2.150 (Viorel): the other towns of the list, each with a main screen after the first town's. */
+	List<Cities.City> places() {
+		List<Cities.City> l = new ArrayList<Cities.City>();
+		for (String k : prefs.getString("screens", "").split("\n")) {
+			Cities.City c = Cities.City.fromKey(k);
+			if (c != null && (town == null || !c.same(town))) l.add(c);
+		}
+		return l;
+	}
+
+	/** v2.150: the ids of all main screens in order: 0 the first town, the other towns (&lt; 0), the parcels (&gt; 0). */
+	private long[] pageIds() {
+		List<Cities.City> pl = places();
+		List<Parcels.Parcel> l = pageList();
+		long[] ids = new long[1 + pl.size() + l.size()];
+		for (int k = 0; k < pl.size(); k++) ids[1 + k] = Fetcher.placeId(pl.get(k));
+		for (int k = 0; k < l.size(); k++) ids[1 + pl.size() + k] = l.get(k).id;
+		return ids;
+	}
+
 	/** The place, the name and the dots of the main screen PAGE_ID (the town's when it is gone). */
 	private void pageState() {
+		List<Cities.City> pl = places();
 		List<Parcels.Parcel> l = pageList();
 		Parcels.Parcel p = null;
-		int idx = 0;
+		Cities.City pc = null;
+		int idx = -1;
+		if (pageId == 0) idx = 0;
+		for (int k = 0; k < pl.size(); k++) if (Fetcher.placeId(pl.get(k)) == pageId) {
+			pc = pl.get(k);
+			idx = 1 + k;
+		}
 		for (int k = 0; k < l.size(); k++) if (l.get(k).id == pageId) {
 			p = l.get(k);
-			idx = k + 1;
+			idx = 1 + pl.size() + k;
 		}
-		if (p == null && pageId != 0) {
+		if (idx < 0) {
 			pageId = 0;
+			idx = 0;
 			prefs.edit().putLong("farmPage", 0).apply();
 		}
-		s.pages = l.isEmpty() ? 1 : l.size() + 1;
+		s.pages = 1 + pl.size() + l.size();
 		s.page = idx;
-		// v5.30: the tabs: the town, then the parcels (a "+" follows them).
-		String[] tn = new String[l.size() + 1];
+		s.townPages = 1 + pl.size();
+		// v5.30: the tabs: the towns, then the parcels (a "+" follows them).
+		String[] tn = new String[s.pages];
 		tn[0] = town == null ? "" : town.name;
-		for (int k = 0; k < l.size(); k++) tn[k + 1] = l.get(k).name.replace('|', '/');
+		for (int k = 0; k < pl.size(); k++) tn[1 + k] = pl.get(k).name;
+		for (int k = 0; k < l.size(); k++) tn[1 + pl.size() + k] = l.get(k).name.replace('|', '/');
 		s.tabNames = tn;
 		s.parcel = p == null ? null : p.name;
-		s.city = p == null ? town : placeOf(p);
+		s.city = p != null ? placeOf(p) : pc != null ? pc : town;
 		usFarm();
 	}
 
@@ -537,13 +567,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			view.invalidate();
 			return;
 		}
-		if (other) Log.i(this, "FERMIER", "ecran principal: " + (s.parcel == null ? town.label() : "parcela " + s.parcel));
+		if (other) Log.i(this, "FERMIER", "ecran principal: " + (s.parcel == null ? s.city.label() : "parcela " + s.parcel));
 		clearPage();
 		loadPage();
 		view.invalidate();
 		// v2.020 (Viorel): another parcel keeps the Statistics open, with its own data; the town closes them.
 		if (s.statsOn) {
-			if (pageId == 0 || !s.farmer) closeStats();
+			if (pageId <= 0 || !s.farmer) closeStats();
 			else refreshStats();
 		}
 		if (other) closeQuakeInfo();
@@ -558,12 +588,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** v2.90: the finger slides toward the next (+1) or previous (-1) screen: shows it quietly. */
 	public boolean pagePeek(int step) {
-		List<Parcels.Parcel> l = pageList();
+		long[] ids = pageIds();
 		int to = s.page + step;
-		if (l.isEmpty() || to < 0 || to > l.size()) return false;
+		if (ids.length < 2 || to < 0 || to >= ids.length) return false;
 		bubble.hide();
 		pagePrev = pageId;
-		showPage(to == 0 ? 0 : l.get(to - 1).id, true);
+		showPage(ids[to], true);
 		return true;
 	}
 
@@ -621,8 +651,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** v5.30: a tap on a tab: that main screen; on "+": the parcels' page (to add one). */
 	public void onTab(int k) {
-		List<Parcels.Parcel> l = pageList();
-		if (k > l.size()) {
+		long[] ids = pageIds();
+		if (k >= ids.length) {
 			// v5.50 (Viorel): straight to the new parcel's box. v2.140 (Viorel): it asks first.
 			Log.i(this, "FERMIER", "tab +: întrebare parcelă nouă");
 			askNewParcel(this, s.dark, -1, new Runnable() {
@@ -643,7 +673,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		bubble.hide();
 		Log.i(this, "GEST", "tab " + k);
-		showPage(k == 0 ? 0 : l.get(k - 1).id);
+		showPage(ids[k]);
 	}
 
 	/** v5.30: the small farmer button next to the buttons: farmer mode off. */
@@ -654,21 +684,25 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** A swipe over the weather now: the next or the previous main screen, the town first. */
 	public void onPage(int step) {
-		List<Parcels.Parcel> l = pageList();
-		if (l.isEmpty()) return;
+		long[] ids = pageIds();
+		if (ids.length < 2) return;
 		int to = s.page + step;
-		if (to < 0 || to > l.size()) {
+		if (to < 0 || to >= ids.length) {
 			note(to < 0 ? Tr.t("This is the first screen", "Acesta e primul ecran") : Tr.t("This is the last screen", "Acesta e ultimul ecran"), 1500);
 			return;
 		}
 		bubble.hide();
-		showPage(to == 0 ? 0 : l.get(to - 1).id);
+		showPage(ids[to]);
 	}
 
 	/** What is saved for the main screen shown. */
 	private void loadPage() {
 		if (pageId == 0) {
 			loadCache();
+			return;
+		}
+		if (pageId < 0) {
+			loadPlace();
 			return;
 		}
 		Parcels.Parcel p = Parcels.get(this, pageId);
@@ -691,6 +725,73 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.w = null;
 			Log.e(this, "FERMIER", "datele salvate ale parcelei nu au putut fi citite", e);
 		}
+	}
+
+	/** v2.150: what is saved for the screen of another town of the list. */
+	private void loadPlace() {
+		long id = pageId;
+		try {
+			String f = readCache(Fetcher.parcelFile(id, "forecast.json"));
+			if (f != null) s.w = Weather.parse(f);
+			String u = readCache(Fetcher.parcelFile(id, "uv.json"));
+			if (s.w != null && u != null) Weather.addExtra(s.w, u);
+			s.fetched = s.w == null ? 0 : prefs.getLong("pmf_" + id, 0);
+			s.source = prefs.getString("pms_" + id, "");
+			String a = readCache(Fetcher.parcelFile(id, "air.json"));
+			if (a != null) {
+				Object[] r = Weather.parsePollen(a);
+				s.pollenLvl = (Integer) r[0];
+				s.pollenPlant = (String) r[1];
+				s.aqi = Weather.parseAqi(a, s.city.us());
+			}
+			s.warns = Fetcher.parcelWarnings(this, id, s.city);
+			s.quakes = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			String fm = readCache(Fetcher.parcelFile(id, "farm.json"));
+			if (fm != null) s.farm = ro.meteoalarm.android.core.Farm.parse(fm);
+		} catch (Exception e) {
+			s.w = null;
+			Log.e(this, "LOC", "datele salvate ale ecranului " + s.city.label() + " nu au putut fi citite", e);
+		}
+	}
+
+	/** v2.150: downloads the town of the list shown on its own screen (the first town's files stay). */
+	private void fetchPlace() {
+		final long id = pageId;
+		final Cities.City c = s.city;
+		fetching = true;
+		lastTry = System.currentTimeMillis();
+		Log.i(this, "LOC", "descarc vremea pentru ecranul " + c.label());
+		s.busy = true;
+		view.invalidate();
+		final Context ctx = getApplicationContext();
+		new Thread(new Runnable() {
+			public void run() {
+				final Fetcher.Result r = Fetcher.downloadPlace(ctx, c);
+				Fetcher.savePlace(ctx, id, r);
+				handler.post(new Runnable() {
+					public void run() {
+						fetching = false;
+						lastDone = System.currentTimeMillis();
+						s.busy = false;
+						if (pageId != id) {
+							fetch();
+							return;
+						}
+						clearPage();
+						loadPage();
+						if (r.forecast == null) {
+							s.failReason = Fetcher.reason(r.error, s.T.en);
+							if (s.w == null) s.error = Tr.t("The weather did not come: ", "Vremea nu a venit: ") + s.failReason;
+							else if (resumed) note(Tr.t("The weather did not come: ", "Vremea nu a venit: ") + s.failReason, 3000);
+						} else {
+							s.offline = false;
+							view.replayIcon();
+						}
+						view.invalidate();
+					}
+				});
+			}
+		}).start();
 	}
 
 	/** Downloads the parcel shown (its own files; nothing for the widgets or the notices). */
@@ -921,7 +1022,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	/** The Statistics as a PDF report or a CSV table, in Downloads. */
 	private byte[] saveBytes;
 	private String saveName = "", saveMime = "";
-	private static final int REQ_SAVE_STATS = 24;
+	private static final int REQ_SAVE_STATS = 24, REQ_PLACES = 26;
 
 	private void exportStats(Parcels.Parcel p, boolean asPdf) {
 		try {
@@ -1021,6 +1122,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (code == REQ_SAVE_DATA) saveData(data.getData());
 				else openData(data.getData());
 			}
+			return;
+		}
+		if (code == REQ_PLACES) {
+			menuAfterTurn = false;
+			reopen = null;
+			if (settings != null && settings.isOpen()) settings.hide();
+			placesBack(data);
 			return;
 		}
 		if (code != REQ_PARCELS) return;
@@ -2143,7 +2251,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (!quakeWanted || view == null || s == null) return;
 		if (s.mainQuake() == null || view.getWidth() == 0) return;
 		quakeWanted = false;
-		if (s.farmer && pageId != 0) showPage(0);
+		if (pageId != 0) showPage(0);
 		handler.postDelayed(new Runnable() {
 			public void run() {
 				if (s.mainQuake() != null) onAlert(0, s.alertRect(0));
@@ -2156,8 +2264,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * stays as it is.
 	 */
 	public void onTownName() {
-		if (pageId != 0) {
+		if (pageId > 0) {
 			parcelBubble();
+			return;
+		}
+		if (pageId < 0) {
+			// v2.150: another town of the list: its name opens the list (the way back without swiping).
+			openPlaces();
 			return;
 		}
 		Log.i(this, "GEST", "atingere nume localitate (o căutare GPS)");
@@ -2532,7 +2645,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		Log.i(this, "APP", "deschisă din widget");
 		closeWindows();
 		if (sheet != null && sheet.isOpen() && sheet.isCancelable()) sheet.hide();
-		if (s != null && s.farmer && pageId != 0) showPage(0);
+		if (s != null && pageId != 0) showPage(0);
 		if (view != null) view.invalidate();
 	}
 
@@ -2648,6 +2761,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	private void fetch() {
 		if (fetching) return;
+		if (pageId < 0) {
+			fetchPlace();
+			return;
+		}
 		if (pageId != 0) {
 			fetchParcel();
 			return;
@@ -2740,7 +2857,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.hours.scroll = 0;
 		s.rain.scroll = 0;
 		// Back to the town's screen when leaving farmer mode; the dots when coming in (v2.60).
-		if (!on && pageId != 0) showPage(0);
+		if (!on && pageId > 0) showPage(0);
 		pageState();
 		view.invalidate();
 		note(on ? Tr.t("Farmer mode: tap an hour or a rain box for details", "Mod Fermier: atinge o oră sau o casetă de ploaie pentru detalii")
@@ -2801,8 +2918,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				: s.r24At(k) ? Double.isNaN(s.rain24()) : s.farm == null || s.farm.nowIndex(s.now) < 0;
 		if (missing) {
 			// Told that the data come later: they are fetched and notified (Viorel 2026-11-07).
-			if (pageId != 0) Parcels.pending(this, pageId);
-			else Parcels.pendingMain(this);
+			if (pageId > 0) Parcels.pending(this, pageId);
+			else if (pageId == 0) Parcels.pendingMain(this);
 			fetchFarm();
 		}
 		List<Bubble.Row> rows = Bubble.info(info);
@@ -4459,7 +4576,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pagina se mișcă sus-jos pe sub sticla de sus; butoanele și bateria plutesc jos. Secțiuni: Următoarele ore, Prognoza pe cinci zile, Detalii meteo."));
 		help.entry(mini("row"), Tr.t("Five-day forecast", "Prognoza pe cinci zile"), Tr.t("Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.",
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
-		help.entry(mini("city"), Tr.t("Town", "Localitate"), Tr.t("Choose the town: favourites, then counties (or states).", "Alegi localitatea: favorite, apoi județe (sau state)."));
+		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map with the search at the bottom, Details and Add. Select: delete towns (never the last). Reorder: drag the move sign.",
+				"Deschide lista localităților; fiecare are ecranul ei principal, în ordinea din listă (prima: widget-uri și notificări). Lupa: harta cu căutarea jos, Detalii și Adaugă. Selectare: ștergi localități (niciodată ultima). Reordonare: tragi de semnul de mutare."));
 		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.",
 				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele. În altă țară sau alt stat din SUA, localitățile mici se descarcă o singură dată, prima dată când ești acolo cu internet."));
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left.", "Arată bara de luminozitate din stânga."));
@@ -4500,6 +4618,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ " " + Tr.t("The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.", "Pagina Cutremure se deschide imediat cu ultimele liste salvate; ↻ se rotește cât timp se actualizează.")
 				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC.") + " " + Tr.t("In Romania, the quakes around the country also get INFP's value (from infp.ro).", "În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro)."));
 		help.entry(mini("swipe"), Tr.t("Left / right on the boxes", "Stânga / dreapta pe casete"), Tr.t("The rows of boxes follow the finger.", "Rândurile de casete urmează degetul."));
+		help.entry(mini("swipe"), Tr.t("Left / right on the weather now", "Stânga / dreapta pe vremea de acum"), Tr.t("The next or the previous town of the list (then the parcels); the dots show where you are. On another town, a tap on its name opens the list.",
+				"Localitatea următoare sau anterioară din listă (apoi parcelele); punctele arată unde ești. Pe altă localitate, atingerea numelui deschide lista."));
 		help.entry(mini("row"), Tr.t("The row of boxes at the bottom", "Rândul de casete de jos"), Tr.t("Sun / Moon, UV, Pollen, Humidity, Air quality, Pressure, Wind, Visibility, Compass. A tap on any box (also the hours and the days) shows its value on top and the explanations under it.",
 				"Soare / Lună, UV, Polen, Umiditate, Calitatea aerului, Presiune, Vânt, Vizibilitate, Busolă. Atingerea oricărei casete (și a orelor și zilelor) arată valoarea sus și explicațiile dedesubt."));
 		if (s.hasCompass) help.entry(mini("bigcompass"), Tr.t("Big compass", "Busola mare"), Tr.t("A tap on the Compass box: a big compass, the GPS coordinates, the town you are in (grey) and the 3 nearest towns, each in its colour. A tap on a town in the list or on its mark shows its name and distance on the dial; towns in the same direction are drawn side by side. Share sends a picture of the window with the place, direction, towns, battery, temperatures and wind; Towns shows or hides the marks.",
@@ -4689,11 +4809,45 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * a line, then "Choose the county" and the counties; a county opens its towns. At most half the
 	 * screen high; the rows scroll.
 	 */
+	/** v2.150 (Viorel): the location button opens the list of the towns that have a main screen. */
 	public void onCity(final float[] b) {
+		Log.i(this, "BUTON", "localitate: lista localităților");
+		openPlaces();
+	}
+
+	private void openPlaces() {
+		bubble.hide();
+		startActivityForResult(new Intent(this, PlacesActivity.class).putExtra("dark", s.dark), REQ_PLACES);
+	}
+
+	/** v2.150: back from the list: the first town may be another, towns added, deleted or moved; the screen picked. */
+	private void placesBack(Intent data) {
+		Cities.City first = Cities.City.fromKey(prefs.getString("city", ""));
+		boolean firstChanged = first != null && (town == null || !first.same(town));
+		if (firstChanged) {
+			s.autoLoc = autoLoc();
+			setCity(first, true);
+			setDistrict("");
+		}
+		String show = data == null ? null : data.getStringExtra("show");
+		long id = pageId;
+		if (show != null) {
+			Cities.City c = Cities.City.fromKey(show);
+			id = c == null || (town != null && c.same(town)) ? 0 : Fetcher.placeId(c);
+		}
+		pageState();
+		showPage(id);
+		if (firstChanged && pageId == 0) {
+			lastTry = 0;
+			fetch();
+		}
+	}
+
+	private void countyPicker(final float[] b) {
 		Log.i(this, "BUTON", "localitate");
 		reopen = new Runnable() {
 			public void run() {
-				onCity(b);
+				countyPicker(b);
 			}
 		};
 		// Europe, the United States, or both in the test mode (v2.30): never mixed.
@@ -4849,7 +5003,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
 		bubble.show(view.px(b), bubbleWidth(0.9f, 300), st, rows, s.T.en, new Bubble.Pick() {
 			public void picked(int k) {
-				if (k == 0) onCity(b);
+				if (k == 0) countyPicker(b);
 				else if (k - 1 < l.size()) {
 					Log.i(MainActivity.this, "LOC", "aleasă din listă (" + st + "): " + l.get(k - 1).label());
 					choose(l.get(k - 1));
@@ -4905,7 +5059,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
 		bubble.show(view.px(b), bubbleWidth(0.9f, 300), countries.shown(cc), rows, en, new Bubble.Pick() {
 			public void picked(int k) {
-				if (k == 0) onCity(b);
+				if (k == 0) countyPicker(b);
 				else {
 					Log.i(MainActivity.this, "LOC", "aleasă din listă (" + cc + "): " + l.get(k - 1).label());
 					choose(l.get(k - 1));
@@ -4927,7 +5081,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		for (Cities.City c : l) rows.add(Bubble.Row.item(c.name));
 		bubble.show(view.px(b), bubbleWidth(0.9f, 300), county, rows, en, new Bubble.Pick() {
 			public void picked(int k) {
-				if (k == 0) onCity(b);
+				if (k == 0) countyPicker(b);
 				else {
 					Log.i(MainActivity.this, "LOC", "aleasă din listă (" + county + "): " + l.get(k - 1).label());
 					choose(l.get(k - 1));

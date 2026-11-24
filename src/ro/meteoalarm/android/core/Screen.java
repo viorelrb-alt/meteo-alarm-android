@@ -151,6 +151,8 @@ public final class Screen {
 	 */
 	public String parcel;
 	public int page, pages;
+	/** v2.150: how many of the main screens are towns (the first ones); the parcels follow. */
+	public int townPages = 1;
 	public final float[] nowArea = { 0, 0, 0, 0 };
 	/** The "rain in the last 24 hours" box next to the sun button (x, y, w, h); set by draw. */
 	public final float[] btnRain24 = { 0, 0, 0, 0 };
@@ -958,7 +960,7 @@ public final class Screen {
 				g.rect(bx + ws[k] / 2 - 11, mid - 1.5f, 22, 3, c.ink);
 				g.rect(bx + ws[k] / 2 - 1.5f, mid - 11, 3, 22, c.ink);
 			} else {
-				if (k == 0) g.icon("icons/btn-city.png", bx + pad, mid - ic / 2, ic, ic, ink);
+				if (k < townPages) g.icon("icons/btn-city.png", bx + pad, mid - ic / 2, ic, ic, ink);
 				else leaf(bx + pad + ic / 2, mid + 2, ic, ink);
 				ltext(sel, p, mid - p * 0.56f, bx + pad + ic + 10, tabNames[k], ink);
 			}

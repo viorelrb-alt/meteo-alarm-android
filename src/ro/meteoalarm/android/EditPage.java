@@ -128,10 +128,10 @@ final class EditPage {
 	}
 
 	private TextView pill(String s, boolean main, View.OnClickListener l) {
-		FitText t = tv(s, 15, true, main ? 0xFFFFFFFF : ink);
+		FitText t = tv(s, 15, true, main ? Theme.onPastel(dark) : ink);
 		t.setGravity(Gravity.CENTER);
 		t.setPadding(px(16), px(10), px(16), px(10));
-		t.setBackground(main ? Glass.pill(accent, 0, px(22), dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), px(22), dp));
+		t.setBackground(main ? Glass.pill(Theme.pastel(dark), 0, px(22), dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), px(22), dp));
 		t.setOnClickListener(l);
 		return t;
 	}

@@ -230,7 +230,12 @@ final class SettingsPanel extends FrameLayout {
 
 	/** The text on the accent colour. */
 	private int onAccent() {
-		return dark ? Theme.page(true) : 0xFFFFFFFF;
+		return Theme.onPastel(dark); // v2.150 (Viorel): chosen buttons are pastel
+	}
+
+	/** v2.150: accent text, darkened just enough to read on the tinted page. */
+	private int accentText() {
+		return Theme.atLeast(accent(), Theme.page(dark), Theme.ink(dark), 4.5);
 	}
 
 	boolean isOpen() {
@@ -279,7 +284,7 @@ final class SettingsPanel extends FrameLayout {
 	void section(String name, boolean dashed) {
 		TextView t = role("section", text(getContext(), 12.5f * zk, true));
 		t.setText(name.toUpperCase());
-		t.setTextColor(accent());
+		t.setTextColor(accentText());
 		t.setLetterSpacing(0.1f);
 		t.setPadding(px(10), px(16), px(10), px(8));
 		content.addView(t);
@@ -515,7 +520,7 @@ final class SettingsPanel extends FrameLayout {
 			t.setGravity(Gravity.CENTER);
 			t.setPadding(px(wide ? 6 : 12), px(6), px(wide ? 6 : 12), px(6));
 			t.setTextColor(i == sel ? onAccent() : dim());
-			if (i == sel) t.setBackground(Glass.pill(accent(), 0, 11 * dp, dp));
+			if (i == sel) t.setBackground(Glass.pill(Theme.pastel(dark), 0, 11 * dp, dp));
 			t.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					ch.chose(k);
@@ -546,7 +551,7 @@ final class SettingsPanel extends FrameLayout {
 				LinearLayout b = new LinearLayout(getContext());
 				b.setGravity(Gravity.CENTER);
 				b.setPadding(px(8), 0, px(8), 0);
-				b.setBackground(on ? Glass.pill(accent(), 0, 22 * dp * zk, dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp * zk, dp));
+				b.setBackground(on ? Glass.pill(Theme.pastel(dark), 0, 22 * dp * zk, dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp * zk, dp));
 				TextView code = text(getContext(), 10 * zk, true);
 				code.setText(codes[j].toUpperCase(java.util.Locale.ROOT));
 				code.setTextColor(on ? onAccent() : dim());
@@ -580,7 +585,7 @@ final class SettingsPanel extends FrameLayout {
 		b.setGravity(Gravity.CENTER_VERTICAL);
 		b.setPadding(px(16), 0, px(12), 0);
 		// v6.00 (Viorel): a minorities' language chosen: the button stays selected (filled).
-		b.setBackground(marked ? Glass.pill(accent(), 0, 22 * dp * zk, dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp * zk, dp));
+		b.setBackground(marked ? Glass.pill(Theme.pastel(dark), 0, 22 * dp * zk, dp) : Glass.pill(Glass.disc(dark), Glass.edge(dark), 22 * dp * zk, dp));
 		TextView t = role("wide", text(getContext(), 15 * zk, marked));
 		t.setText(label);
 		t.setTextColor(marked ? onAccent() : ink());
@@ -707,7 +712,7 @@ final class SettingsPanel extends FrameLayout {
 			TextView a = text(getContext(), 14.5f * zk, true);
 			a.setSingleLine(true);
 			a.setText("+ " + add);
-			a.setTextColor(accent());
+			a.setTextColor(accentText());
 			a.setPadding(px(14), px(6), px(14), px(6));
 			a.setBackground(Glass.pill(0, accent(), 18 * dp, 1.5f * dp));
 			a.setOnClickListener(new OnClickListener() {
@@ -818,7 +823,7 @@ final class SettingsPanel extends FrameLayout {
 	/** The fixed bar's title. */
 	void footTitle(String s) {
 		footTitle.setText(s.toUpperCase());
-		footTitle.setTextColor(accent());
+		footTitle.setTextColor(accentText());
 		footTitle.setTextSize(12.5f * zk);
 		role("foottitle", footTitle);
 		// A small handle: pull the bar up for the names, down for only the icons.

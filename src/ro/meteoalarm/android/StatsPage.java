@@ -672,11 +672,11 @@ final class StatsPage {
 		final List<TextView> all = new ArrayList<TextView>();
 		for (int k = 0; k < n.length; k++) {
 			final int i = k;
-			FitText t = tv(n[k], 14.5f, true, k == tab ? 0xFFFFFFFF : dim);
+			FitText t = tv(n[k], 14.5f, true, k == tab ? Theme.onPastel(dark) : dim);
 			t.setGravity(Gravity.CENTER);
 			t.one(0.6f);
 			t.setPadding(px(6), px(8), px(6), px(8));
-			if (k == tab) t.setBackground(Glass.pill(accent, 0, px(18), dp));
+			if (k == tab) t.setBackground(Glass.pill(Theme.pastel(dark), 0, px(18), dp));
 			t.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
 					if (tab == i) return;

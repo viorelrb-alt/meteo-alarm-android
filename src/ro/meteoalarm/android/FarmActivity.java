@@ -1137,7 +1137,7 @@ public final class FarmActivity extends Activity {
 	 */
 	private void statsFloat(FrameLayout mapBox, final List<Parcels.Parcel> all, boolean tab) {
 		int fb = px(tab ? 46 : 42), mg = px(12);
-		TextView t = text("▤  " + Tr.t("Statistics · PDF", "Statistică · PDF"), tab ? 18 : 16, true, dark ? page : 0xFFFFFFFF);
+		TextView t = text("▤  " + Tr.t("Statistics · PDF", "Statistică · PDF"), tab ? 18 : 16, true, ro.meteoalarm.android.core.Theme.onPastel(dark));
 		t.setGravity(Gravity.CENTER);
 		t.setPadding(px(18), 0, px(20), 0);
 		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, fb, Gravity.BOTTOM | Gravity.LEFT);
@@ -1158,7 +1158,7 @@ public final class FarmActivity extends Activity {
 				}).setNegativeButton(Tr.t("Cancel", "Renunță"), null));
 			}
 		}), sl);
-		t.setBackground(Glass.pill(accent, 0, px(30), dp)); // v5.00: the blue pill of the mockup
+		t.setBackground(Glass.pill(ro.meteoalarm.android.core.Theme.pastel(dark), 0, px(30), dp)); // v2.150 (Viorel): pastel in the theme's hue
 	}
 
 	/** The statistics of parcel ID for the last 7 days (the period can be changed there; PDF from there). */

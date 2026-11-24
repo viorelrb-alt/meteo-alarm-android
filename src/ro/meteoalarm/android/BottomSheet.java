@@ -265,8 +265,8 @@ final class BottomSheet extends FrameLayout implements Glass.Local {
 		closeX.setBackground(Glass.closeIcon(dark, dp));
 		text.setTextColor(dark ? 0xFFC2C0B6 : 0xFF333333);
 		scroll.setBackgroundColor(0);
-		primary.setBackground(shape(accent, 0, 22 * dp, dp, false));
-		primary.setTextColor(ro.meteoalarm.android.core.Theme.page(dark));
+		primary.setBackground(shape(ro.meteoalarm.android.core.Theme.pastel(dark), 0, 22 * dp, dp, false)); // v2.150 (Viorel): pastel
+		primary.setTextColor(ro.meteoalarm.android.core.Theme.onPastel(dark));
 		secondary.setBackground(shape(bg, line, 22 * dp, dp, false));
 		secondary.setTextColor(ink);
 		left.setBackground(shape(bg, line, 22 * dp, dp, false));

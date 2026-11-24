@@ -20,19 +20,19 @@ public final class Theme {
 
 	private static final int[][] LIGHT = {
 			{ 0xFFFFFFFF, 0xFF000000, 0xFF555555, 0xFF000000, 0xFF000000, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFAAAAAA, 0xFF555555, 0xFF000000, 0xFF000000, 0xFFDDDDDD, 0xFFAAAAAA, 0xFFAAAAAA, 0xFF000000, 0xFFFFFFFF },
-			{ 0xFFF3F6F1, 0xFF1F2A24, 0xFF5E6B63, 0xFF2F4A3C, 0xFF3E6B55, 0xFFFFFFFF, 0xFFE6EEE8, 0xFFB9C9BE, 0xFF6E8A7A, 0xFF3E6B55, 0xFF4E8A6A, WY, WO, WR, 0xFF1F2A24, 0xFFFFFFFF },
-			{ 0xFFF6F3FA, 0xFF2A2433, 0xFF6C6378, 0xFF4B3F66, 0xFF6B5B95, 0xFFFFFFFF, 0xFFECE6F5, 0xFFCFC6DE, 0xFF8C80A8, 0xFF6B5B95, 0xFF8E6CC9, WY, WO, WR, 0xFF2A2433, 0xFFFFFFFF },
-			{ 0xFFF2F7FB, 0xFF16263A, 0xFF5A6B80, 0xFF24476B, 0xFF2F6690, 0xFFFFFFFF, 0xFFE3EEF7, 0xFFBCD0E2, 0xFF7C98B5, 0xFF2F6690, 0xFF3A86C8, WY, WO, WR, 0xFF16263A, 0xFFFFFFFF },
-			{ 0xFFFBF5EF, 0xFF33261D, 0xFF7A6657, 0xFF6B4A35, 0xFFB5714A, 0xFFFFFFFF, 0xFFF5E8DC, 0xFFE2CDBA, 0xFFA88B76, 0xFFB5714A, 0xFFC07246, WY, WO, WR, 0xFF33261D, 0xFFFFFFFF },
-			{ 0xFFFBF3F5, 0xFF33202A, 0xFF7A5F6B, 0xFF6B3A50, 0xFFA8577A, 0xFFFFFFFF, 0xFFF5E4EA, 0xFFE3C6D2, 0xFFA8869A, 0xFFA8577A, 0xFFC96A93, WY, WO, WR, 0xFF33202A, 0xFFFFFFFF } };
+			{ 0xFFD4E3DB, 0xFF1F2A24, 0xFF546159, 0xFF2F4A3C, 0xFF3E6B55, 0xFFF0F4F2, 0xFFC2D6CB, 0xFFB9C9BE, 0xFF6E8A7A, 0xFF3E6B55, 0xFF4E8A6A, WY, WO, WR, 0xFF1F2A24, 0xFFFFFFFF },
+			{ 0xFFD8CFE8, 0xFF2A2433, 0xFF5E5568, 0xFF4B3F66, 0xFF6B5B95, 0xFFF1EFF6, 0xFFC8BBDD, 0xFFCFC6DE, 0xFF8C80A8, 0xFF6B5B95, 0xFF8E6CC9, WY, WO, WR, 0xFF2A2433, 0xFFFFFFFF },
+			{ 0xFFCCDCEA, 0xFF16263A, 0xFF4B5B70, 0xFF24476B, 0xFF2F6690, 0xFFEEF3F7, 0xFFB8CDE0, 0xFFBCD0E2, 0xFF7C98B5, 0xFF2F6690, 0xFF3A86C8, WY, WO, WR, 0xFF16263A, 0xFFFFFFFF },
+			{ 0xFFE8D8CE, 0xFF33261D, 0xFF6A584A, 0xFF6B4A35, 0xFFB5714A, 0xFFF6F1EE, 0xFFDEC7BA, 0xFFE2CDBA, 0xFFA88B76, 0xFFB5714A, 0xFFC07246, WY, WO, WR, 0xFF33261D, 0xFFFFFFFF },
+			{ 0xFFE8CFDA, 0xFF33202A, 0xFF6A515D, 0xFF6B3A50, 0xFFA8577A, 0xFFF6EFF2, 0xFFDDBBCA, 0xFFE3C6D2, 0xFFA8869A, 0xFFA8577A, 0xFFBD648B, WY, WO, WR, 0xFF33202A, 0xFFFFFFFF } };
 	/** v2.150 (Viorel): the dark page, card and raised surface take the hue of the theme's accent (Monocrom keeps Claude's colours). */
 	private static final int[][] DARK = {
 			{ 0xFF262624, 0xFFFAF9F5, 0xFFA6A39A, 0xFFEFE6D2, 0xFFEFE6D2, 0xFF1A1917, 0xFF33312D, 0xFF4F4E4A, 0xFFC2C0B6, 0xFFD97757, 0xFFD97757, DY, DO, DR, 0xFF262624, 0xFF262624 },
-			{ 0xFF1C2922, 0xFFEEF3EE, 0xFF9BAAA0, 0xFFA9C7B5, 0xFFA9C7B5, 0xFF121915, 0xFF2D3C34, 0xFF44554C, 0xFFB8CABE, 0xFF7FB89A, 0xFF7FB89A, DY, DO, DR, 0xFF1C2922, 0xFF1C2922 },
-			{ 0xFF1E182D, 0xFFF2EFF7, 0xFFA69FB3, 0xFFC9BDE3, 0xFFC9BDE3, 0xFF130F1C, 0xFF2F2741, 0xFF463D5C, 0xFFC2B8D8, 0xFFA48FD9, 0xFFA48FD9, DY, DO, DR, 0xFF1E182D, 0xFF1E182D },
-			{ 0xFF17232E, 0xFFEEF4FA, 0xFF97A6B6, 0xFFA9C8E6, 0xFFA9C8E6, 0xFF0F161D, 0xFF263643, 0xFF3C4E5D, 0xFFB3C8DD, 0xFF6FAEE3, 0xFF6FAEE3, DY, DO, DR, 0xFF17232E, 0xFF17232E },
-			{ 0xFF2E2017, 0xFFF8EFE7, 0xFFB0A093, 0xFFEBC9AE, 0xFFEBC9AE, 0xFF1D140F, 0xFF433126, 0xFF5D493C, 0xFFD0BBAA, 0xFFE09A6E, 0xFFE09A6E, DY, DO, DR, 0xFF2E2017, 0xFF2E2017 },
-			{ 0xFF2E1721, 0xFFF8EEF2, 0xFFB39BA6, 0xFFE8BFD0, 0xFFE8BFD0, 0xFF1D0F15, 0xFF432632, 0xFF5D3C4A, 0xFFD4B6C3, 0xFFE08AAE, 0xFFE08AAE, DY, DO, DR, 0xFF2E1721, 0xFF2E1721 } };
+			{ 0xFF21362B, 0xFFEEF3EE, 0xFF9BAAA0, 0xFFA9C7B5, 0xFFA9C7B5, 0xFF16221C, 0xFF334D3F, 0xFF486054, 0xFFB8CABE, 0xFF7FB89A, 0xFF7FB89A, DY, DO, DR, 0xFF21362B, 0xFF21362B },
+			{ 0xFF23193E, 0xFFF2EFF7, 0xFFA69FB3, 0xFFC9BDE3, 0xFFC9BDE3, 0xFF171127, 0xFF362A56, 0xFF4B3F69, 0xFFC2B8D8, 0xFFA48FD9, 0xFFA48FD9, DY, DO, DR, 0xFF23193E, 0xFF23193E },
+			{ 0xFF122D44, 0xFFEEF4FA, 0xFF97A6B6, 0xFFA9C8E6, 0xFFA9C8E6, 0xFF0D1D2B, 0xFF22425E, 0xFF385771, 0xFFB3C8DD, 0xFF6FAEE3, 0xFF6FAEE3, DY, DO, DR, 0xFF122D44, 0xFF122D44 },
+			{ 0xFF432613, 0xFFF8EFE7, 0xFFB0A093, 0xFFEBC9AE, 0xFFEBC9AE, 0xFF2B190E, 0xFF5D3923, 0xFF6F4E39, 0xFFD0BBAA, 0xFFE09A6E, 0xFFE09A6E, DY, DO, DR, 0xFF432613, 0xFF432613 },
+			{ 0xFF411628, 0xFFF8EEF2, 0xFFB39BA6, 0xFFE8BFD0, 0xFFE8BFD0, 0xFF290F1A, 0xFF5A263C, 0xFF6D3C50, 0xFFD4B6C3, 0xFFE08AAE, 0xFFE08AAE, DY, DO, DR, 0xFF411628, 0xFF411628 } };
 
 	/**
 	 * v3.70: the three colours of the weather icons (sun, light parts, dark parts) for each
@@ -129,5 +129,47 @@ public final class Theme {
 		int r = Math.round(((a >> 16) & 255) * (1 - t) + ((b >> 16) & 255) * t), g = Math.round(((a >> 8) & 255) * (1 - t) + ((b >> 8) & 255) * t),
 				bl = Math.round((a & 255) * (1 - t) + (b & 255) * t);
 		return 0xFF000000 | r << 16 | g << 8 | bl;
+	}
+
+	/**
+	 * v2.150 (Viorel): the chosen buttons of the menus (and the main button of a window) take the
+	 * theme's hue in a pastel tone, with dark text. Monocrom light stays black with white text.
+	 */
+	public static int pastel(boolean d) {
+		if (pal == 0 && !d) return 0xFF000000;
+		float[] h = hsl(accent(d));
+		return fromHsl(h[0], Math.min(h[1], 0.55f), d ? 0.82f : 0.74f);
+	}
+
+	/** The text on a pastel button. */
+	public static int onPastel(boolean d) {
+		if (pal == 0 && !d) return 0xFFFFFFFF;
+		return d ? page(true) : ink(false);
+	}
+
+	private static float[] hsl(int c) {
+		float r = ((c >> 16) & 255) / 255f, g = ((c >> 8) & 255) / 255f, b = (c & 255) / 255f;
+		float mx = Math.max(r, Math.max(g, b)), mn = Math.min(r, Math.min(g, b)), l = (mx + mn) / 2, h = 0, s = 0;
+		if (mx != mn) {
+			float dd = mx - mn;
+			s = l > 0.5f ? dd / (2 - mx - mn) : dd / (mx + mn);
+			h = mx == r ? (g - b) / dd + (g < b ? 6 : 0) : mx == g ? (b - r) / dd + 2 : (r - g) / dd + 4;
+			h /= 6;
+		}
+		return new float[] { h, s, l };
+	}
+
+	private static int fromHsl(float h, float s, float l) {
+		float q = l < 0.5f ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+		return 0xFF000000 | Math.round(hue(p, q, h + 1f / 3) * 255) << 16 | Math.round(hue(p, q, h) * 255) << 8 | Math.round(hue(p, q, h - 1f / 3) * 255);
+	}
+
+	private static float hue(float p, float q, float t) {
+		if (t < 0) t += 1;
+		if (t > 1) t -= 1;
+		if (t < 1f / 6) return p + (q - p) * 6 * t;
+		if (t < 0.5f) return q;
+		if (t < 2f / 3) return p + (q - p) * (2f / 3 - t) * 6;
+		return p;
 	}
 }
