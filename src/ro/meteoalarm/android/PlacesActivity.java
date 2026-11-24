@@ -803,6 +803,7 @@ public final class PlacesActivity extends Activity {
 		mode = "map";
 		root.removeAllViews();
 		map = new MapView(this);
+		map.setNames(true);
 		map.setDark(dark);
 		map.setNight(dark);
 		Cities.City c = list.isEmpty() ? null : list.get(0);

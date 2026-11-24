@@ -38,8 +38,8 @@ final class Updater {
 	}
 
 	/** v5.31 (Viorel 2026-11-14): the app no longer installs anything; the browser downloads the new version. */
-	static final String PROTECT_EN = "About the Play Protect warning: Google may say the app \"may be harmful\" because it does not come from Google Play and its developer is not registered with Google. The app does not look for updates by itself and does not install anything. When the Play Protect window appears, tap \"More details\" (if shown), then \"Install without scanning\" (or \"Install anyway\").",
-			PROTECT_RO = "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare” pentru că nu vine din Google Play și dezvoltatorul nu e înregistrat la Google. Aplicația nu caută singură actualizări și nu instalează nimic. Când apare fereastra Play Protect, apasă „Mai multe” (dacă apare), apoi „Instalează fără verificare” (sau „Instalează oricum”).";
+	static final String PROTECT_EN = "About the Play Protect warning: Google may say the app \"may be harmful\" because it does not come from Google Play and its developer is not registered with Google. The app only tells you about a new version and never installs anything by itself. When the Play Protect window appears, tap \"More details\" (if shown), then \"Install without scanning\" (or \"Install anyway\").",
+			PROTECT_RO = "Despre avertizarea Play Protect: Google poate spune că aplicația „poate fi dăunătoare” pentru că nu vine din Google Play și dezvoltatorul nu e înregistrat la Google. Aplicația doar te anunță de o versiune nouă și nu instalează nimic singură. Când apare fereastra Play Protect, apasă „Mai multe” (dacă apare), apoi „Instalează fără verificare” (sau „Instalează oricum”).";
 
 	/**
 	 * Samsung's Auto Blocker stops apps from outside Galaxy Store / Google Play from installing
@@ -200,23 +200,36 @@ final class Updater {
 	 * opens ☰ › Check for updates. Each version is announced once. Runs in the background.
 	 */
 	static void weekly(Context ctx) {
-		if (!Notifier.on(ctx)) return;
 		SharedPreferences p = Fetcher.prefs(ctx);
+		// v2.152 (Viorel): also without notifications when the GitHub check was agreed (for the box in ☰).
+		boolean notify = Notifier.on(ctx);
+		if (!notify && !p.getBoolean("ghConsent2", false)) return;
 		long now = System.currentTimeMillis();
-		if (now - p.getLong("updWeek", 0) < 7 * 86400000L) return;
+		String cur;
+		int code;
+		try {
+			android.content.pm.PackageInfo pi = ctx.getPackageManager().getPackageInfo(ctx.getPackageName(), 0);
+			cur = pi.versionName;
+			@SuppressWarnings("deprecation")
+			int c = pi.versionCode;
+			code = c;
+		} catch (Exception e) {
+			return;
+		}
+		// v2.152 (Viorel): every day for the 2 weeks after an install, then once in 7 days.
+		if (!cur.equals(p.getString("updDailyVer", ""))) p.edit().putString("updDailyVer", cur).putLong("updDailyFrom", now).apply();
+		boolean daily = now - p.getLong("updDailyFrom", now) < 14 * 86400000L;
+		if (now - p.getLong("updWeek", 0) < (daily ? 86400000L - 600000L : 7 * 86400000L)) return;
 		if (!NetJob.online(ctx)) return;
 		p.edit().putLong("updWeek", now).apply();
 		try {
 			Release r = source(0);
-			android.content.pm.PackageInfo pi = ctx.getPackageManager().getPackageInfo(ctx.getPackageName(), 0);
-			String cur = pi.versionName;
-			@SuppressWarnings("deprecation")
-			int code = pi.versionCode;
 			if (!r.newerThan(cur, code)) {
-				Log.i(ctx, "UPDATE", "verificare săptămânală: nicio versiune nouă (pe GitHub " + Release.display(r.version) + ")");
+				Log.i(ctx, "UPDATE", "verificare " + (daily ? "zilnică" : "săptămânală") + ": nicio versiune nouă (pe GitHub " + Release.display(r.version) + ")");
 				return;
 			}
-			if (r.version.equals(p.getString("updNotified", ""))) return;
+			remember(ctx, r, cur);
+			if (!notify || r.version.equals(p.getString("updNotified", ""))) return;
 			p.edit().putString("updNotified", r.version).apply();
 			Log.i(ctx, "UPDATE", "verificare săptămânală: versiune nouă " + Release.display(r.version) + ", notificare");
 			Notifier.update(ctx, Tr.t("New version: ", "Versiune nouă: ") + Release.display(r.version),
@@ -224,6 +237,29 @@ final class Updater {
 		} catch (Exception e) {
 			Log.e(ctx, "UPDATE", "verificarea săptămânală a eșuat: " + e.getMessage());
 		}
+	}
+
+	/** v2.152: a newer version found (kept for the box at the top of ☰ until the app is updated). */
+	static void remember(Context ctx, Release r, String cur) {
+		Fetcher.prefs(ctx).edit().putString("updAvail", r.version).putString("updUrl", r.apkUrl).putString("updPage", r.page).putString("updFor", cur).apply();
+	}
+
+	/** The newer version found for the installed one, or null (none, or the app was updated since). */
+	String pending() {
+		SharedPreferences p = prefs();
+		String v = p.getString("updAvail", "");
+		return v.length() > 0 && installed().equals(p.getString("updFor", "")) ? v : null;
+	}
+
+	/** v2.152 (Viorel): the box in ☰: the download starts at once. */
+	void downloadPending() {
+		SharedPreferences p = prefs();
+		Release r = new Release();
+		r.version = p.getString("updAvail", "");
+		r.apkUrl = p.getString("updUrl", "");
+		r.page = p.getString("updPage", "");
+		Log.i(a, "UPDATE", "caseta din ☰: descarc v" + r.version);
+		browse(r);
 	}
 
 	/** The names of the sources, for the log. */
@@ -321,6 +357,7 @@ final class Updater {
 			if (manual) sheet.show(t, (Tr.t("You have the latest version, v", "Ai ultima versiune, v")) + cur + ".", null, null, Tr.t("Close", "Închide"));
 			return;
 		}
+		remember(a, r, cur);
 		String msg = (Tr.t("Installed: v", "Instalată: v")) + cur + "    " + (Tr.t("New: v", "Nouă: v")) + r.version;
 		String what = Release.summary(r.notes, "ro".equals(Tr.lang()));
 		if (what.length() > 0) msg += "\n\n" + what;

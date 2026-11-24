@@ -7,7 +7,7 @@ MAIN SCREEN
 NOTIFICATIONS
 - Channels of their own: weather warnings, rain and snow, earthquakes, parcels and updates each have their own channel in the phone's settings; you can turn one off and keep the others.
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.
-- New version: with Notifications on, the app checks GitHub once a week and announces a new version in Android's notifications; a tap opens Check for updates.
+- New version: with Notifications on, the app checks GitHub every day for 2 weeks after an update, then once in 7 days, and announces a new version in Android's notifications; a tap opens Check for updates.
 PARCELS
 - Edit parcel: the pencil opens the parcel's page: name, crop (a list by the sowing date's season, or Another crop…), sowing date, area; the corners move on the map.
 - History and forecast: drag the indicator to a past day; its values show in a box under the chart and after 10 s it goes back to today.
@@ -26,6 +26,8 @@ TOWNS
 - Map search: the magnifier opens the map with the search at the bottom; a tap on a place shows its temperature, Details (the next days) and Add. The map shows mostly the towns' names, big and clear, and is brighter in the dark theme. Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
 - Town cards: on a tablet and in landscape they are as wide as their text and stand in rows and columns; in portrait on a phone a name too long gets smaller letters; in landscape the search keeps its portrait size.
 - Towns list: the town button opens the list, in the theme's colour; Select deletes one or more (the last one stays), and the ⌃⌄ sign held and dragged up or down changes the order; each town keeps its saved weather.
+UPDATES
+- New version box: a short box at the top of ☰ when a new version exists; a tap on it starts the download.
 - Design improvements and fixes for reported bugs.
 
 Version 1.4 (v.1.400 – v.1.520)

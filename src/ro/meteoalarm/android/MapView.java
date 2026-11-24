@@ -547,7 +547,7 @@ final class MapView extends View {
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
 		// v2.152 (Viorel): the map (CARTO Voyager, 512 px tiles) one level lower drawn twice as large:
 		// the towns' names big and clear, the other details few.
-		if (style == 0 && z > MIN_Z) z--;
+		if (style == 0 && names && z > MIN_Z) z--;
 		float ts = (float) (tile * Math.pow(2, zoom - z));
 		double world = ts * Math.pow(2, z);
 		double cx = wx(lon, world), cy = wy(lat, world);
@@ -634,7 +634,7 @@ final class MapView extends View {
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
 		drawRadar(c, w, h, world, left, top);
-		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : "© OpenStreetMap contributors © CARTO") + (radarOn ? " · Radar © RainViewer" : "");
+		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "© OpenStreetMap contributors © CARTO" : "© OpenStreetMap contributors") + (radarOn ? " · Radar © RainViewer" : "");
 		paint.setTextSize(11 * dp);
 		float aw = paint.measureText(att);
 		paint.setColor(0xCCFFFFFF);
@@ -986,7 +986,15 @@ final class MapView extends View {
 	private static final int R_MAX_Z = 7;
 
 	private String pre() {
-		return style == 1 ? "s/" : "v/";
+		return style == 1 ? "s/" : names ? "v/" : "";
+	}
+
+	/** v2.152 (Viorel): the towns' map (search, earthquakes): mostly the names; the parcels keep the detailed OpenStreetMap. */
+	private boolean names;
+
+	void setNames(boolean on) {
+		names = on;
+		invalidate();
 	}
 
 	void setStyle(int s) {

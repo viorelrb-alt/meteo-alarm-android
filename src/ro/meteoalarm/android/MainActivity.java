@@ -3301,6 +3301,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		final SettingsPanel p = settings;
 		float zk = (TextSize.tablet(this) ? 1.11f : 1f) * TextSize.get(this);
 		p.begin(s.dark, Tr.t("App settings", "Setări aplicație").toUpperCase(), Tr.t("Make it yours", "Personalizează-ți experiența"), zk);
+		// v2.152 (Viorel): a new version found: a short box on top; a tap starts the download.
+		final String upd = updater.pending();
+		if (upd != null) p.updateBox(Tr.t("New version ", "Versiune nouă ") + ro.meteoalarm.android.core.Release.display(upd), Tr.t("Tap to download", "Atinge pentru descărcare"), new Runnable() {
+			public void run() {
+				settings.hide();
+				updater.downloadPending();
+			}
+		});
 		// Location & favourites.
 		final boolean eu = Region.showEU(this), us = Region.showUS(this);
 		if (us) seedUSFavs();
@@ -4599,7 +4607,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("CARTO Voyager (OpenStreetMap data): mostly the towns' names, big and clear; in the dark theme only a little dimmer. Move it with one finger, zoom with two; it needs internet.",
 				"CARTO Voyager (date OpenStreetMap): mai ales numele localităților, mari și clare; în tema întunecată doar puțin mai întunecată. O muți cu un deget, o mărești cu două; are nevoie de internet."));
 		help.section(Tr.t("Updates", "Actualizări"));
-		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + " " + Tr.t("The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.", "Aplicația verifică doar când apeși Verifică actualizări; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat."));
+		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + " " + Tr.t("Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.", "Verifică actualizări sau caseta de sus din ☰ când s-a găsit o versiune nouă; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat."));
 		help.entry(mini("shield"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
 		help.entry(mini("check"), Tr.t("Before an update", "Înainte de actualizare"), Tr.t("The app first checks that it may install updates (else it opens that setting). On Samsung it reminds you to turn off Auto Blocker; Settings opens its page.",
 				"Aplicația verifică întâi dacă are voie să instaleze actualizări (altfel deschide setarea). Pe Samsung amintește să oprești Auto Blocker; Setări îi deschide pagina."));
@@ -4689,7 +4697,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("The switch: notifications of the tornado warnings for your town (NWS). Under it, the alerts and reports around and what to do.",
 				"Comutatorul: notificări pentru avertizările de tornadă ale localității tale (NWS). Sub el, alertele și raportările din jur și ce faci."));
 		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată.")
-				+ " " + Tr.t("Once a week also a new version of the app, if there is one.", "O dată pe săptămână și o versiune nouă a aplicației, dacă există.")
+				+ " " + Tr.t("Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).", "Și o versiune nouă a aplicației, dacă există (verificată zilnic 2 săptămâni după o actualizare, apoi o dată la 7 zile).")
 				+ " " + Tr.t("Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.",
 						"Fiecare fel are canalul lui în setările telefonului (Avertizări meteo, Ploaie, ninsoare și informări, Cutremure, Mod Fermier: parcele, Actualizări aplicație), așa că poți opri unul și le păstrezi pe celelalte."));
 		help.entry(mini("night"), Tr.t("Night clock", "Ceas noapte"), Tr.t("Turns the night clock on or off.", "Pornește sau oprește ceasul de noapte."));
@@ -4705,7 +4713,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ Tr.t("Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.",
 						"Erori numără doar erorile reale încă nerezolvate; cele rezolvate trec într-o zonă separată, la sfârșitul jurnalului, iar problemele rețelei sunt avertizări.") + " "
 				+ Tr.t("Aa sets the text size.", "Aa schimbă mărimea textului."));
-		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent.", "Caută o versiune nouă pe GitHub, cu acordul tău."));
+		help.entry(mini("updnew"), Tr.t("Check for updates", "Verifică actualizări"), Tr.t("Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.",
+				"Caută o versiune nouă pe GitHub, cu acordul tău. Aplicația verifică și singură zilnic 2 săptămâni după o actualizare, apoi o dată la 7 zile; o versiune nouă apare într-o casetă sus în ☰, iar atingerea ei pornește descărcarea."));
 		help.entry(mini("share"), Tr.t("Send the app", "Trimite aplicația"), Tr.t("Sends the download link, e.g. on WhatsApp.", "Trimite linkul de descărcare, de exemplu pe WhatsApp."));
 		help.entry(mini("about"), Tr.t("About", "Despre"), Tr.t("About the app, its data and what's new.", "Despre aplicație, datele ei și ce e nou."));
 		help.show();

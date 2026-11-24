@@ -281,6 +281,39 @@ final class SettingsPanel extends FrameLayout {
 		card = null;
 	}
 
+	/**
+	 * v2.152 (Viorel): at the top of ☰, a box saying a new version is ready (short); a tap on it
+	 * starts the download at once.
+	 */
+	void updateBox(String head, String sub, final Runnable tap) {
+		LinearLayout box = new LinearLayout(getContext());
+		box.setOrientation(LinearLayout.VERTICAL);
+		box.setGravity(Gravity.CENTER_VERTICAL);
+		box.setMinimumHeight(px(56));
+		box.setPadding(px(16), px(10), px(16), px(10));
+		box.setBackground(Glass.pill(Theme.pastel(dark), 0, 18 * dp, dp));
+		int on = Theme.onPastel(dark);
+		TextView t = role("updHead", text(getContext(), 16 * zk, true));
+		t.setText(head);
+		t.setTextColor(on);
+		box.addView(t);
+		TextView u = role("updSub", text(getContext(), 13.5f * zk, false));
+		u.setText(sub);
+		u.setTextColor(on);
+		box.addView(u);
+		box.setClickable(true);
+		box.setFocusable(true);
+		box.setContentDescription(head + ". " + sub);
+		box.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				tap.run();
+			}
+		});
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		lp.topMargin = px(12);
+		content.addView(box, lp);
+	}
+
 	/** A section's title (accent, spaced capitals) and a new card under it; DASHED: the hidden test card. */
 	void section(String name, boolean dashed) {
 		TextView t = role("section", text(getContext(), 12.5f * zk, true));

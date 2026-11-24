@@ -1,4 +1,6 @@
 Versiunea curentă: v.2.152 · 24.11.2026
+ACTUALIZĂRI
+- Caseta Versiune nouă: sus în ☰ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
 - Butonul Localități: butonul rotund cu iconul de localitate (în portret în dreapta numelui, în peisaj la capătul benzii de sus) deschide lista localităților.
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
@@ -11,7 +13,7 @@ LOCALITĂȚI
 NOTIFICĂRI
 - Canale separate: avertizări meteo, ploaie și ninsoare, cutremure, parcele și actualizări au fiecare canalul lor în setările telefonului; poți opri unul și le păstrezi pe celelalte.
 - Cutremure: verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea, iar atingerea ei deschide harta.
-- Versiune nouă: cu Notificări pornite, aplicația verifică o dată pe săptămână pe GitHub și anunță o versiune nouă în notificările Android; atingerea deschide Verifică actualizări.
+- Versiune nouă: cu Notificări pornite, aplicația verifică pe GitHub zilnic 2 săptămâni după o actualizare, apoi o dată la 7 zile, și anunță o versiune nouă în notificările Android; atingerea deschide Verifică actualizări.
 PARCELE
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.

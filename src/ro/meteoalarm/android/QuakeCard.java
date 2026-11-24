@@ -115,6 +115,7 @@ final class QuakeCard {
 		FrameLayout map = new FrameLayout(ctx);
 		final MapView mv = new MapView(ctx);
 		mv.setDark(dark);
+		mv.setNames(true);
 		mv.setNight(dark);
 		mv.setQuake(mark(q, town, t));
 		map.addView(mv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -393,6 +394,7 @@ final class QuakeCard {
 		root.setBackgroundColor(0xFF1B2430);
 		final MapView mv = new MapView(ctx);
 		mv.setDark(dark);
+		mv.setNames(true);
 		mv.setNight(dark);
 		mv.setQuake(mark(q, town, t));
 		root.addView(mv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -781,6 +783,7 @@ final class QuakeCard {
 		FrameLayout map = new FrameLayout(ctx);
 		MapView mv = new MapView(ctx);
 		mv.setDark(dark);
+		mv.setNames(true);
 		mv.setNight(dark);
 		mv.setQuake(mark(q, town, t));
 		map.addView(mv, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
