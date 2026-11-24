@@ -542,9 +542,12 @@ final class MapView extends View {
 	/** The tiles of the screen; BARE: only loaded ones (no enlarged stand-ins). True when all were there. */
 	private boolean drawTiles(Canvas c, int w, int h, boolean bare) {
 		boolean all = true;
-		c.drawColor(night ? 0xFF1B2430 : dark ? 0xFF3A3A38 : 0xFFE8E4DC);
+		c.drawColor(night ? 0xFF4A4F55 : dark ? 0xFF3A3A38 : 0xFFE8E4DC);
 		if (night && style == 0) paint.setColorFilter(NIGHT);
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
+		// v2.152 (Viorel): the map (CARTO Voyager, 512 px tiles) one level lower drawn twice as large:
+		// the towns' names big and clear, the other details few.
+		if (style == 0 && z > MIN_Z) z--;
 		float ts = (float) (tile * Math.pow(2, zoom - z));
 		double world = ts * Math.pow(2, z);
 		double cx = wx(lon, world), cy = wy(lat, world);
@@ -552,7 +555,6 @@ final class MapView extends View {
 		int n = 1 << z;
 		int tx0 = (int) Math.floor(left / ts), ty0 = (int) Math.floor(top / ts);
 		int tx1 = (int) Math.floor((left + w) / ts), ty1 = (int) Math.floor((top + h) / ts);
-		Rect src = new Rect(0, 0, 256, 256);
 		RectF dst = new RectF();
 		for (int ty = ty0; ty <= ty1; ty++) {
 			if (ty < 0 || ty >= n) continue;
@@ -562,7 +564,7 @@ final class MapView extends View {
 				dst.set(px, py, px + ts + 0.5f, py + ts + 0.5f);
 				Bitmap b = get(pre() + z + "/" + x + "/" + ty);
 				if (b != null) {
-					c.drawBitmap(b, src, dst, paint);
+					c.drawBitmap(b, null, dst, paint);
 					continue;
 				}
 				all = false;
@@ -571,7 +573,8 @@ final class MapView extends View {
 				if (z > MIN_Z) {
 					Bitmap up = mem.get(pre() + (z - 1) + "/" + (x / 2) + "/" + (ty / 2));
 					if (up != null) {
-						Rect half = new Rect((x % 2) * 128, (ty % 2) * 128, (x % 2) * 128 + 128, (ty % 2) * 128 + 128);
+						int hw = up.getWidth() / 2;
+						Rect half = new Rect((x % 2) * hw, (ty % 2) * hw, (x % 2) * hw + hw, (ty % 2) * hw + hw);
 						c.drawBitmap(up, half, dst, paint);
 					}
 				}
@@ -631,7 +634,7 @@ final class MapView extends View {
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
 		drawRadar(c, w, h, world, left, top);
-		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : "© OpenStreetMap contributors") + (radarOn ? " · Radar © RainViewer" : "");
+		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : "© OpenStreetMap contributors © CARTO") + (radarOn ? " · Radar © RainViewer" : "");
 		paint.setTextSize(11 * dp);
 		float aw = paint.measureText(att);
 		paint.setColor(0xCCFFFFFF);
@@ -642,11 +645,11 @@ final class MapView extends View {
 
 	// --- v2.030 (Viorel, the quake of 2026-11-18): an earthquake on the map -------------------------
 
-	/** The OpenStreetMap tiles darkened for the dark theme: inverted, the colours turned back, a bit dimmer. */
+	/** v2.152 (Viorel): the map in the dark theme only a little dimmer (no longer inverted), the names easy to read. */
 	private static final android.graphics.ColorMatrixColorFilter NIGHT = new android.graphics.ColorMatrixColorFilter(new float[] {
-			0.574f * 0.85f, -1.430f * 0.85f, -0.144f * 0.85f, 0, 255 * 0.85f,
-			-0.426f * 0.85f, -0.430f * 0.85f, -0.144f * 0.85f, 0, 255 * 0.85f,
-			-0.426f * 0.85f, -1.430f * 0.85f, 0.856f * 0.85f, 0, 255 * 0.85f,
+			0.80f, 0, 0, 0, 0,
+			0, 0.80f, 0, 0, 0,
+			0, 0, 0.80f, 0, 0,
 			0, 0, 0, 1, 0 });
 	private boolean night;
 
@@ -983,7 +986,7 @@ final class MapView extends View {
 	private static final int R_MAX_Z = 7;
 
 	private String pre() {
-		return style == 1 ? "s/" : "";
+		return style == 1 ? "s/" : "v/";
 	}
 
 	void setStyle(int s) {
@@ -1237,7 +1240,7 @@ final class MapView extends View {
 	/** Off the main thread: the tile from the phone's cache (a week), else from OpenStreetMap. */
 	private Bitmap load(String key) {
 		File f = new File(dir, key.replace('/', '_') + ".png");
-		boolean sat = key.startsWith("s/");
+		boolean sat = key.startsWith("s/"), voy = key.startsWith("v/");
 		try {
 			if (f.exists() && System.currentTimeMillis() - f.lastModified() < KEEP_MS) {
 				Bitmap b = BitmapFactory.decodeFile(f.getPath());
@@ -1248,6 +1251,10 @@ final class MapView extends View {
 				// v5.50 (Viorel): the satellite view, Esri World Imagery (z/y/x).
 				String[] k = key.substring(2).split("/");
 				url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
+			} else if (voy) {
+				// v2.152 (Viorel): CARTO Voyager (OpenStreetMap data): mostly the towns' names; 512 px tiles.
+				String[] k = key.substring(2).split("/");
+				url = "https://" + "abcd".charAt((Integer.parseInt(k[1]) + Integer.parseInt(k[2])) & 3) + ".basemaps.cartocdn.com/rastertiles/voyager/" + k[0] + "/" + k[1] + "/" + k[2] + "@2x.png";
 			} else url = "https://tile.openstreetmap.org/" + key + ".png";
 			HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
 			c.setConnectTimeout(15000);

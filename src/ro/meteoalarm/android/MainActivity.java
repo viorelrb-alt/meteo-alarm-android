@@ -4596,8 +4596,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mod fermier: clopoțelul de pe caseta parcelei îi pornește (plin) sau oprește notificările; atunci parcela le primește pe toate: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("layers"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
-		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("OpenStreetMap: move it with one finger, zoom with two; it needs internet.",
-				"OpenStreetMap: o muți cu un deget, o mărești cu două; are nevoie de internet."));
+		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("CARTO Voyager (OpenStreetMap data): mostly the towns' names, big and clear; in the dark theme only a little dimmer. Move it with one finger, zoom with two; it needs internet.",
+				"CARTO Voyager (date OpenStreetMap): mai ales numele localităților, mari și clare; în tema întunecată doar puțin mai întunecată. O muți cu un deget, o mărești cu două; are nevoie de internet."));
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + " " + Tr.t("The app checks only when you tap Check for updates; Download opens the new version in the browser and you install it from the downloaded file.", "Aplicația verifică doar când apeși Verifică actualizări; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat."));
 		help.entry(mini("shield"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());

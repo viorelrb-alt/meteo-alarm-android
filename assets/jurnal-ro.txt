@@ -6,7 +6,7 @@ ECRAN PRINCIPAL
 - Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
 LOCALITĂȚI
 - Casetele localităților: pe tabletă și în peisaj au lățimea textului și stau pe rânduri și coloane; în portret pe telefon, un nume prea lung se scrie cu litere mai mici; în peisaj căutarea are mărimea din portret.
-- Căutare pe hartă: lupa deschide harta cu căutarea jos; atingerea unui loc arată temperatura, Detalii (zilele următoare) și Adaugă. Alte localități apar doar dacă încep ca numele scris (minim 6 litere sau 60% din el).
+- Căutare pe hartă: lupa deschide harta cu căutarea jos; atingerea unui loc arată temperatura, Detalii (zilele următoare) și Adaugă. Harta arată mai ales numele localităților, mari și clare, iar în tema întunecată e mai luminoasă. Alte localități apar doar dacă încep ca numele scris (minim 6 litere sau 60% din el).
 - Lista de localități: butonul de localitate deschide lista, pe culoarea temei; Selectează șterge una sau mai multe (ultima rămâne), iar semnul ⌃⌄ ținut apăsat și tras în sus sau în jos schimbă ordinea; fiecare localitate își păstrează vremea salvată.
 NOTIFICĂRI
 - Canale separate: avertizări meteo, ploaie și ninsoare, cutremure, parcele și actualizări au fiecare canalul lor în setările telefonului; poți opri unul și le păstrezi pe celelalte.

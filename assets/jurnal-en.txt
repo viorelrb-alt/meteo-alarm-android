@@ -23,7 +23,7 @@ SETTINGS
 - Favourites in ☰: three rows, first the towns with a full star (they have a main screen), then the others; the first one always keeps its star; a tap on an empty star gives the town a main screen, the second; taking the star off removes its screen.
 - Log: size, lines and errors on a card; See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save at the bottom of the screen. Fixed errors stay at the end of the log and are not counted; network problems are warnings.
 TOWNS
-- Map search: the magnifier opens the map with the search at the bottom; a tap on a place shows its temperature, Details (the next days) and Add. Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
+- Map search: the magnifier opens the map with the search at the bottom; a tap on a place shows its temperature, Details (the next days) and Add. The map shows mostly the towns' names, big and clear, and is brighter in the dark theme. Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
 - Town cards: on a tablet and in landscape they are as wide as their text and stand in rows and columns; in portrait on a phone a name too long gets smaller letters; in landscape the search keeps its portrait size.
 - Towns list: the town button opens the list, in the theme's colour; Select deletes one or more (the last one stays), and the ⌃⌄ sign held and dragged up or down changes the order; each town keeps its saved weather.
 - Design improvements and fixes for reported bugs.
