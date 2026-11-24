@@ -690,7 +690,7 @@ public final class PlacesActivity extends Activity {
 		Cities.City c = list.isEmpty() ? null : list.get(0);
 		if (c != null) {
 			map.center(c.lat, c.lon);
-			map.setZoom(9);
+			map.setZoom(12); // v2.151 (Viorel): closer to the pin
 			map.setMe(c.lat, c.lon);
 		}
 		map.setOnMapTap(new MapView.MapTap() {
@@ -709,6 +709,30 @@ public final class PlacesActivity extends Activity {
 		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(px(48), px(48), Gravity.TOP | Gravity.LEFT);
 		bl.setMargins(px(16), px(12), 0, 0);
 		root.addView(back, bl);
+		// v2.151 (Viorel): Map or Satellite, remembered.
+		final int sat = prefs.getInt("placesMapStyle", 0);
+		mapStyle(sat);
+		final LinearLayout seg = new LinearLayout(this);
+		seg.setBackground(round(Glass.alpha(page, 0.9f), px(24), edge));
+		seg.setPadding(px(3), px(3), px(3), px(3));
+		if (Build.VERSION.SDK_INT >= 21) seg.setElevation(px(4));
+		final TextView[] opt = { pillText(Tr.t("Map", "Hartă"), false), pillText(Tr.t("Satellite", "Satelit"), false) };
+		for (int k = 0; k < 2; k++) {
+			final int i = k;
+			opt[k].setMinHeight(px(42));
+			opt[k].setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					prefs.edit().putInt("placesMapStyle", i).apply();
+					mapStyle(i);
+					segPaint(opt, i);
+				}
+			});
+			seg.addView(opt[k]);
+		}
+		segPaint(opt, sat);
+		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(-2, -2, Gravity.TOP | Gravity.RIGHT);
+		sl.setMargins(0, px(12), px(16), 0);
+		root.addView(seg, sl);
 		// The search box at the bottom (reached with the thumb), the results and the place above it.
 		LinearLayout bottom = new LinearLayout(this);
 		bottom.setOrientation(LinearLayout.VERTICAL);
@@ -818,14 +842,24 @@ public final class PlacesActivity extends Activity {
 		showResults(local, null);
 		if (!online || t.length() < 3) return;
 		final int seq = searchSeq;
+		final String home = list.isEmpty() ? "ro" : list.get(0).country;
 		new Thread(new Runnable() {
 			public void run() {
 				final List<Cities.City> got = new ArrayList<Cities.City>();
 				final List<String> subs = new ArrayList<String>();
 				try {
 					String lang = Tr.lang().equals("us") ? "en" : Tr.lang();
-					String u = "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=8&accept-language=" + lang + "&q=" + URLEncoder.encode(t, "UTF-8");
-					org.json.JSONArray a = new org.json.JSONArray(get(u));
+					String base = "https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&accept-language=" + lang + "&q=" + URLEncoder.encode(t, "UTF-8");
+					// v2.151 (Viorel): in Europe, first the home country, then the rest of Europe, the US last.
+					org.json.JSONArray a = new org.json.JSONArray();
+					if (EUROPE.contains(home)) {
+						org.json.JSONArray h = new org.json.JSONArray(get(base + "&limit=8&countrycodes=" + home));
+						for (int k = 0; k < h.length(); k++) a.put(h.get(k));
+						Thread.sleep(1000); // OpenStreetMap asks for at most one search a second
+						if (seq != searchSeq) return;
+					}
+					org.json.JSONArray w = new org.json.JSONArray(get(base + "&limit=15"));
+					for (int k = 0; k < w.length(); k++) a.put(w.get(k));
 					for (int k = 0; k < a.length(); k++) {
 						org.json.JSONObject o = a.getJSONObject(k);
 						String cls = o.optString("addresstype", o.optString("type", ""));
@@ -835,6 +869,25 @@ public final class PlacesActivity extends Activity {
 						if (c != null && !contains(got, c)) {
 							got.add(c);
 							subs.add(o.optString("display_name", ""));
+						}
+					}
+					if (EUROPE.contains(home)) {
+						// stable: home country, Europe, the US, the rest
+						List<Integer> ord = new ArrayList<Integer>();
+						for (int k = 0; k < got.size(); k++) ord.add(k);
+						final List<Cities.City> g0 = new ArrayList<Cities.City>(got);
+						java.util.Collections.sort(ord, new java.util.Comparator<Integer>() {
+							public int compare(Integer x, Integer y) {
+								int d = rank(g0.get(x).country, home) - rank(g0.get(y).country, home);
+								return d != 0 ? d : x - y;
+							}
+						});
+						List<String> s0 = new ArrayList<String>(subs);
+						got.clear();
+						subs.clear();
+						for (int k : ord) {
+							got.add(g0.get(k));
+							subs.add(s0.get(k));
 						}
 					}
 					Log.i(PlacesActivity.this, "LOC", "căutare „" + t + "”: " + got.size() + " locuri (OpenStreetMap)");
@@ -851,6 +904,16 @@ public final class PlacesActivity extends Activity {
 				});
 			}
 		}).start();
+	}
+
+	/** The countries of Europe (ISO codes as OpenStreetMap gives them). */
+	private static final java.util.Set<String> EUROPE = new java.util.HashSet<String>(java.util.Arrays.asList("ad", "al", "at", "ba", "be", "bg", "by", "ch",
+			"cy", "cz", "de", "dk", "ee", "es", "fi", "fo", "fr", "gb", "gi", "gr", "hr", "hu", "ie", "im", "is", "it", "li", "lt", "lu", "lv", "mc", "md", "me",
+			"mk", "mt", "nl", "no", "pl", "pt", "ro", "rs", "ru", "se", "si", "sk", "sm", "tr", "ua", "va", "xk"));
+
+	/** 0 the home country, 1 Europe, 2 the US, 3 the rest. */
+	private static int rank(String cc, String home) {
+		return cc.equals(home) ? 0 : EUROPE.contains(cc) ? 1 : cc.equals("us") ? 2 : 3;
 	}
 
 	private static boolean contains(List<Cities.City> l, Cities.City c) {
@@ -965,7 +1028,7 @@ public final class PlacesActivity extends Activity {
 		foundData = null;
 		map.setMark(c.lat, c.lon);
 		map.center(c.lat, c.lon);
-		if (map.zoom() < 10) map.setZoom(11);
+		if (map.zoom() < 13) map.setZoom(13); // v2.151 (Viorel): closer to the pin
 		card.removeAllViews();
 		LinearLayout top = new LinearLayout(this);
 		top.setGravity(Gravity.CENTER_VERTICAL);
@@ -1137,6 +1200,20 @@ public final class PlacesActivity extends Activity {
 		v.setLineSpacing(0, 1.12f);
 		h.addView(v, new LinearLayout.LayoutParams(0, -2, 1));
 		return h;
+	}
+
+	/** v2.151: the map (0) or the satellite view (1); the satellite is never darkened. */
+	private void mapStyle(int s) {
+		map.setStyle(s);
+		map.setNight(dark && s == 0);
+	}
+
+	private void segPaint(TextView[] opt, int sel) {
+		for (int k = 0; k < opt.length; k++) {
+			opt[k].setTextColor(k == sel ? priInk : ink);
+			opt[k].setBackground(k == sel ? round(pri, px(21), 0) : null);
+			opt[k].setSelected(k == sel);
+		}
 	}
 
 	private TextView pillText(String t, boolean filled) {
