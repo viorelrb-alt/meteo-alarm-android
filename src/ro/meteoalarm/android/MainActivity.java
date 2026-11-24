@@ -1560,6 +1560,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		onScreen = true;
 		listenLight("sensor".equals(prefs.getString("theme", "auto")));
 		listenCompass(true);
+		listenMove(true);
 		lastTouch = System.currentTimeMillis();
 		hideBars();
 		registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
@@ -1604,9 +1605,52 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		return prefs.getBoolean("autoLoc", true);
 	}
 
+	/**
+	 * v2.151 (Viorel: the compass followed him, the weather mostly by hand): while the app is on
+	 * the screen and automatic location is on, the position is followed like the compass does
+	 * (GPS, else the network); after FOLLOW_KM from the last look, the town is looked for again.
+	 */
+	private static final double FOLLOW_KM = 1.5;
+	private android.location.Location followFrom;
+	private final android.location.LocationListener follow = new android.location.LocationListener() {
+		public void onLocationChanged(android.location.Location l) {
+			if (!autoLoc() || s.locating) return;
+			if (followFrom == null) {
+				followFrom = l;
+				return;
+			}
+			double km = distKm(followFrom.getLatitude(), followFrom.getLongitude(), l.getLatitude(), l.getLongitude());
+			if (km < FOLLOW_KM || System.currentTimeMillis() - lastLocate < 60000L) return;
+			followFrom = l;
+			locWhy = "în mișcare, " + String.format(java.util.Locale.US, "%.1f", km) + " km (" + l.getProvider() + ")";
+			locate(false);
+		}
+
+		public void onStatusChanged(String p, int status, android.os.Bundle extras) {}
+
+		public void onProviderEnabled(String p) {}
+
+		public void onProviderDisabled(String p) {}
+	};
+
+	private void listenMove(boolean on) {
+		android.location.LocationManager lm = (android.location.LocationManager) getSystemService(LOCATION_SERVICE);
+		if (lm == null) return;
+		try {
+			lm.removeUpdates(follow);
+			if (!on || !autoLoc() || !Locator.allowed(this)) return;
+			followFrom = null;
+			if (lm.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) lm.requestLocationUpdates(android.location.LocationManager.GPS_PROVIDER, 5000, 200, follow);
+			else if (lm.isProviderEnabled(android.location.LocationManager.NETWORK_PROVIDER)) lm.requestLocationUpdates(android.location.LocationManager.NETWORK_PROVIDER, 10000, 200, follow);
+		} catch (Exception e) {
+			Log.w(this, "LOC", "urmărirea poziției nu a pornit: " + e.getClass().getSimpleName());
+		}
+	}
+
 	/** Automatic location on or off; the locate button is gray while it is off. */
 	private void setAutoLoc(boolean on) {
 		prefs.edit().putBoolean("autoLoc", on).apply();
+		if (resumed) listenMove(on);
 		s.autoLoc = on;
 		view.invalidate();
 	}
@@ -2668,6 +2712,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		resumed = false;
 		listenLight(false);
 		listenCompass(false);
+		listenMove(false);
 		if (compassPanel != null) compassPanel.hide();
 		handler.removeCallbacks(tick);
 		listenNet(false);
@@ -4578,8 +4623,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
 		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add. Select: delete towns (never the last). Reorder: drag the move sign.",
 				"Deschide lista localităților; fiecare are ecranul ei principal, în ordinea din listă (prima: widget-uri și notificări). Lupa: harta (Hartă / Satelit) cu căutarea jos (întâi țara ta, apoi Europa, la sfârșit SUA), Detalii și Adaugă. Selectare: ștergi localități (niciodată ultima). Reordonare: tragi de semnul de mutare."));
-		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.",
-				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele. În altă țară sau alt stat din SUA, localitățile mici se descarcă o singură dată, prima dată când ești acolo cu internet."));
+		help.entry(mini("locate"), Tr.t("Location", "Localizare"), Tr.t("Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.",
+				"Pornește (plin) sau oprește (gol) localizarea automată; arată vremea unde ești; cât aplicația e deschisă te urmărește ca busola și schimbă localitatea după 1,5 km. Satul prin care treci intră în lista județului; dispare după 7 zile fără să mai treci pe acolo și rămâne dacă treci des (3 zile în 2 săptămâni). Busola arată și satele. În altă țară sau alt stat din SUA, localitățile mici se descarcă o singură dată, prima dată când ești acolo cu internet."));
 		help.entry(mini("bright"), Tr.t("Brightness", "Luminozitate"), Tr.t("Shows the brightness bar on the left.", "Arată bara de luminozitate din stânga."));
 		help.entry(mini("moon"), Tr.t("Light / dark theme", "Temă luminoasă / întunecată"), Tr.t("Over the brightness bar: switches the theme.", "Deasupra barei de luminozitate: schimbă tema."));
 		help.entry(mini("sensor"), Tr.t("Automatic theme (phone sensor)", "Temă automată (senzor telefon)"), Tr.t("Light theme in the light, dark in the dark (needs a light sensor).", "Tema luminoasă la lumină, cea întunecată pe întuneric (are nevoie de senzor de lumină)."));
