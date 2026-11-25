@@ -81,7 +81,7 @@ final class BackupPanel {
 		return new String[] { "", Tr.t("name, corners, points", "nume, colțuri, puncte"),
 				Tr.t("only for the chosen parcels", "doar pentru parcelele alese"), Tr.t("parcels deleted in the last 15 days", "parcelele șterse în ultimele 15 zile"),
 				"", Tr.t("theme, colours, icons, language, text size, units", "temă, culori, iconuri, limbă, mărimea textului, unități"),
-				Tr.t("rain, warnings, earthquakes, tornadoes", "ploaie, avertizări, cutremure, tornade"), Tr.t("satellite or map, rain radar", "satelit sau hartă, radarul de ploaie"),
+				Tr.t("rain, warnings, earthquakes, tornadoes", "ploaie, avertizări, cutremure, tornade"), Tr.t("satellite or map, weather layer", "satelit sau hartă, stratul meteo"),
 				Tr.t("background, colours, days or hours", "fundal, culori, zile sau ore"), Tr.t("EMSC and institute values", "valorile EMSC și ale institutelor"),
 				Tr.t("last 5 days, for troubleshooting", "ultimele 5 zile, pentru depanare"),
 				Tr.t("crop, sowing date, area, thresholds", "cultura, data semănatului, suprafața, pragurile") };

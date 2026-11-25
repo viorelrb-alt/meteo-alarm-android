@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.153";
+	static final String VERSION = "Meteo Alarm Android v2.160";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -4578,8 +4578,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						Tr.t("The bars open its Statistics.", "Barele deschid Statisticile ei."),
 						Tr.t("The bell turns its notifications on or off.", "Clopoțelul pornește sau oprește notificările ei."),
 						Tr.t("The bin deletes it; it stays 15 days in the bin under the GPS button.", "Coșul o șterge; stă 15 zile în coșul de sub butonul GPS.") });
-		help.entry(mini("map"), Tr.t("Map views", "Vederile hărții"), Tr.t("Under ＋ and − on the Parcels map: the satellite view (Esri), the map and the radar (the rain of the last 2 hours, moving; RainViewer).",
-				"Sub ＋ și − pe harta Parcele: vederea din satelit (Esri), harta și radarul (precipitațiile din ultimele 2 ore, în mișcare; RainViewer)."));
+		help.entry(mini("map"), Tr.t("Map views", "Vederile hărții"), Tr.t("Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's time is at the top; data: Open-Meteo.",
+				"Sub ＋ și − pe harta Parcele, o casetă de sticlă arată vederea folosită, stratul meteo pornit (cu inel) și ⌄. Atinsă, se deschide: Satelit (Esri), Hartă, Nori, Temperaturi și Ploi; alegerea o strânge la loc (la fel ⌃ și 5 secunde fără atingere). Un singur strat odată; atingerea stratului pornit îl oprește. Temperaturile sunt culori (violet rece, verde blând, roșu cald); bara de jos încadrează intervalul văzut pe hartă. Ploaia e în mm pe oră, acum și în următoarele 2 ore; butonul ei e gri și tăiat când nu plouă în zona hărții. Ora stratului e sus; date: Open-Meteo."));
 		help.entry(mini("parcel"), Tr.t("Bin", "Coș de gunoi"), Tr.t("A deleted parcel goes to the bin under the GPS button and is kept 15 days; the round button restores it (if a saved parcel has its name: a new name or replace it).",
 				"O parcelă ștearsă trece în coșul de sub butonul GPS și se păstrează 15 zile; butonul rotund o restaurează (dacă o parcelă salvată are același nume: nume nou sau înlocuire)."));
 		help.entry(mini("bubble"), Tr.t("Info bubbles", "Bulele de informații"), Tr.t("A frosted-glass window in the middle of the screen (the screen stays sharp); it closes with X or a tap outside it. Under the title, the place; ▲ and ▼ scroll; the source is at the bottom.",
@@ -4604,8 +4604,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mod fermier: clopoțelul de pe caseta parcelei îi pornește (plin) sau oprește notificările; atunci parcela le primește pe toate: ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, vânt, ninsoare, brumă, îngheț, ceață, polei, secetă (sol uscat, fără ploaie 7 zile)."));
 		help.entry(mini("layers"), Tr.t("Soil data and source", "Datele solului și sursa"), Tr.t("Soil data are Open-Meteo model estimates, not measurements; nearby parcels can show the same values.",
 				"Datele solului sunt estimări ale modelului Open-Meteo, nu măsurători; parcelele apropiate pot avea aceleași valori."));
-		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("Towns and earthquakes: Esri Light Gray with the towns' names (few other details), in the dark theme only a little dimmer; parcels: OpenStreetMap with all the details. Move it with one finger, zoom with two; it needs internet.",
-				"Localități și cutremure: Esri Gri deschis cu numele localităților (puține alte detalii), în tema întunecată doar puțin mai întunecată; parcele: OpenStreetMap cu toate detaliile. O muți cu un deget, o mărești cu două; are nevoie de internet."));
+		help.entry(mini("map"), Tr.t("The map", "Harta"), Tr.t("Towns and earthquakes: Esri Street Map, with the towns, roads and names; parcels: OpenStreetMap with all the details. Move it with one finger, zoom with two; it needs internet.",
+				"Localități și cutremure: Esri Street Map, cu localitățile, drumurile și numele lor; parcele: OpenStreetMap cu toate detaliile. O muți cu un deget, o mărești cu două; are nevoie de internet."));
 		help.section(Tr.t("Updates", "Actualizări"));
 		help.entry(mini("update"), Tr.t("How to update", "Cum actualizezi"), Updater.howTo(en) + " " + Tr.t("Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.", "Verifică actualizări sau caseta de sus din ☰ când s-a găsit o versiune nouă; Descarcă deschide versiunea nouă în browser, iar tu o instalezi din fișierul descărcat."));
 		help.entry(mini("shield"), Tr.t("Samsung: Auto Blocker", "Samsung: Auto Blocker"), Updater.autoBlocker());
@@ -4618,8 +4618,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pagina se mișcă sus-jos pe sub sticla de sus; butoanele și bateria plutesc jos. Secțiuni: Următoarele ore, Prognoza pe cinci zile, Detalii meteo."));
 		help.entry(mini("row"), Tr.t("Five-day forecast", "Prognoza pe cinci zile"), Tr.t("Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.",
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
-		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the houses icon: in portrait at the right of the town's name, in landscape at the end of the top band. It opens the list of towns.",
-				"Butonul rotund cu iconul cu case: în portret în dreapta numelui localității, în peisaj la capătul benzii de sus. Deschide lista localităților."));
+		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.",
+				"Butonul rotund cu iconul cu case: în portret în dreapta numelui localității, în peisaj pe banda de sus, înainte de colț. Deschide lista localităților."));
 		help.entry(mini("bubble"), Tr.t("Button names", "Numele butoanelor"), Tr.t("A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.",
 				"Un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde."));
 		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.",

@@ -1320,7 +1320,7 @@ public final class FarmActivity extends Activity {
 
 	/**
 	 * v5.50 (Viorel 2026-11-16): the Parcels page in three layers. At the bottom the map, with ＋ / −
-	 * and the satellite, map and radar buttons at the top left; in the middle the parcels' frosted
+	 * and the box of the map's buttons (views, weather layers) at the top left; in the middle the parcels' frosted
 	 * cards (portrait: one row at the bottom, scrolled sideways; landscape: one column at the right,
 	 * passing under the top sheet) and the new parcel's box; on top the frosted sheet with ＋,
 	 * Parcels (back), GPS and the bin (portrait: an L; landscape: one row). The cards move a little
@@ -1389,7 +1389,8 @@ public final class FarmActivity extends Activity {
 		m.setTopPad(topIn + px(tab ? 130 : 120));
 		android.content.SharedPreferences pr = Fetcher.prefs(this);
 		m.setStyle(pr.getInt("mapStyle", 0));
-		m.setRadar(pr.getBoolean("mapRadar", false));
+		m.setImperial(imp);
+		m.setLayer(pr.getInt("mapLayer", 0));
 		List<MapView.Pin> pins = new java.util.ArrayList<MapView.Pin>();
 		for (Parcels.Parcel p : all) {
 			MapView.Pin pin = new MapView.Pin(p.id, p.lat, p.lon, p.name);
@@ -1431,7 +1432,8 @@ public final class FarmActivity extends Activity {
 		final int fb = px(tab ? 46 : 42), mg = px(12), gap = px(10);
 		// The height the top sheet takes in landscape (its row), so the cards start under it.
 		final int bandH = fb + 2 * px(6);
-		m.setRadarTop(topIn + (land ? mg : mg + 3 * fb + 2 * px(8) + 2 * px(6) + px(8)));
+		// v2.160: the layer's label at the top edge, between the date and the clock.
+		m.setLayerTop(topIn > 0 ? Math.max(px(2), (topIn - px(26)) / 2) : px(8));
 		int sw = getResources().getDisplayMetrics().widthPixels, sh = getResources().getDisplayMetrics().heightPixels;
 		// v5.51 (Viorel): the card's width comes from the portrait width: 2 cards on a phone, 3 or 4
 		// on a tablet; in landscape the same size.
@@ -1534,8 +1536,7 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * The top left of the map: ＋ and −, under them in one column (v5.51, Viorel) the satellite view,
-	 * the map and the radar; the one in use has a ring in the theme's colour.
+	 * The top left of the map: ＋ and −, under them (v2.160) the box of the map's buttons.
 	 */
 	private void leftFloats(FrameLayout mapBox, final MapView m, boolean tab) {
 		int fb = px(tab ? 46 : 42), mg = px(12);
@@ -1556,64 +1557,193 @@ public final class FarmActivity extends Activity {
 				m.zoomBy(-1);
 			}
 		}), zl2);
-		final View[] b = new View[3];
-		final String[] names = { Tr.t("Satellite view", "Vedere din satelit"), Tr.t("Map view", "Vedere hartă"), "Radar" };
-		for (int k = 0; k < 3; k++) {
-			final int kind = k;
-			b[k] = mapIcon(kind, m);
-			b[k].setContentDescription(names[k]);
-			FrameLayout.LayoutParams l = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-			l.setMargins(mg, topIn + mg + (k + 2) * (fb + px(8)), 0, 0);
-			mapBox.addView(floatBtn(b[k], new View.OnClickListener() {
-				public void onClick(View v) {
-					android.content.SharedPreferences.Editor e = Fetcher.prefs(FarmActivity.this).edit();
-					if (kind == 2) {
-						m.setRadar(!m.radar());
-						e.putBoolean("mapRadar", m.radar());
-						Log.i(FarmActivity.this, "FERMIER", "harta: radar " + (m.radar() ? "pornit" : "oprit"));
-						if (m.radar()) toast(Tr.t("Radar: the rain of the last 2 hours", "Radar: precipitațiile din ultimele 2 ore"));
-					} else {
-						m.setStyle(kind == 0 ? 1 : 0);
-						e.putInt("mapStyle", m.style());
-						if (newBox != null && newFind != null) newFind.run();
-						Log.i(FarmActivity.this, "FERMIER", "harta: " + (kind == 0 ? "satelit" : "hartă"));
-					}
-					e.apply();
-					for (View x : b) x.invalidate();
-				}
-			}), l);
-		}
+		layerBox(mapBox, m, fb, mg, topIn + mg + 2 * (fb + px(8)));
 	}
 
-	/** v5.50: the drawn icons of the satellite (0), map (1) and radar (2) buttons. */
-	private View mapIcon(final int kind, final MapView m) {
-		return new View(this) {
+	// --- v2.160 (Viorel): the map's buttons in a glass box under ＋ and −, which folds up -------------
+
+	/** Kinds of the box's rows: the views, the layers, and the arrows that open and close it. */
+	private static final int K_SAT = 0, K_MAP = 1, K_CLOUD = 2, K_TEMP = 3, K_RAIN = 4, K_OPEN = 5, K_CLOSE = 6;
+	private boolean boxOpen;
+	private final Handler boxUi = new Handler(Looper.getMainLooper());
+	private Runnable boxIdle;
+
+	/**
+	 * Folded, the box shows the view in use (satellite or map), under it the layer that is on (with
+	 * a ring), if any, and ⌄. A tap opens it downwards (0.25 s, none with reduced motion) to show
+	 * ⌃, Satellite, Map, Clouds, Temperatures and Rain. Choosing one folds it again; so do ⌃ and 5
+	 * seconds without a touch. One layer at a time; tapping the one that is on turns it off. Rain
+	 * is greyed and struck through when it does not rain on the map now nor in the next 2 hours.
+	 */
+	private void layerBox(final FrameLayout mapBox, final MapView m, final int fb, int mg, int top) {
+		final LinearLayout box = new LinearLayout(this);
+		box.setOrientation(LinearLayout.VERTICAL);
+		box.setBackground(Glass.pill(Glass.alpha(page, 0.86f), Glass.edge(dark), px(30), dp));
+		box.setElevation(px(3));
+		box.setClipToOutline(true);
+		final int arrowH = px(30);
+		final FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(fb, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.LEFT);
+		bl.setMargins(mg, top, 0, 0);
+		mapBox.addView(box, bl);
+		boxOpen = false;
+		final Runnable[] fill = new Runnable[1];
+		final Runnable[] fold = new Runnable[1];
+		boxIdle = new Runnable() {
+			public void run() {
+				if (boxOpen) fold[0].run();
+			}
+		};
+		fill[0] = new Runnable() {
+			public void run() {
+				box.removeAllViews();
+				int[] kinds;
+				int ly = m.layer();
+				int view = m.style() == 1 ? K_SAT : K_MAP;
+				if (boxOpen) kinds = new int[] { K_CLOSE, K_SAT, K_MAP, K_CLOUD, K_TEMP, K_RAIN };
+				else if (ly == MapView.L_NONE) kinds = new int[] { view, K_OPEN };
+				else kinds = new int[] { view, ly == MapView.L_CLOUD ? K_CLOUD : ly == MapView.L_TEMP ? K_TEMP : K_RAIN, K_OPEN };
+				for (final int k : kinds) {
+					View v = boxRow(k, m);
+					v.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View x) {
+							boxTap(k, m, box, fill[0], fold[0]);
+						}
+					});
+					box.addView(v, new LinearLayout.LayoutParams(fb, k == K_OPEN || k == K_CLOSE ? arrowH : fb));
+				}
+			}
+		};
+		fold[0] = new Runnable() {
+			public void run() {
+				boxUi.removeCallbacks(boxIdle);
+				boxOpen = false;
+				int from = box.getHeight();
+				int to = fb + arrowH + (m.layer() != MapView.L_NONE ? fb : 0);
+				animateBox(box, from, to, new Runnable() {
+					public void run() {
+						fill[0].run();
+					}
+				});
+			}
+		};
+		m.setOnGrid(new Runnable() {
+			public void run() {
+				for (int i = 0; i < box.getChildCount(); i++) box.getChildAt(i).invalidate();
+			}
+		});
+		fill[0].run();
+		m.wantGrid();
+	}
+
+	/** A tap on a row of the box. */
+	private void boxTap(int k, MapView m, LinearLayout box, Runnable fill, Runnable fold) {
+		if (k == K_OPEN) {
+			boxOpen = true;
+			m.wantGrid();
+			int from = box.getHeight();
+			fill.run();
+			int fb = box.getWidth();
+			animateBox(box, from, px(30) + 5 * fb, null);
+			Log.i(this, "FERMIER", "harta: caseta butoanelor deschisă");
+		} else if (k == K_CLOSE) {
+			fold.run();
+			return;
+		} else if (k == K_SAT || k == K_MAP) {
+			m.setStyle(k == K_SAT ? 1 : 0);
+			Fetcher.prefs(this).edit().putInt("mapStyle", m.style()).apply();
+			if (newBox != null && newFind != null) newFind.run();
+			Log.i(this, "FERMIER", "harta: " + (k == K_SAT ? "satelit" : "hartă"));
+			fold.run();
+			return;
+		} else {
+			int want = k == K_CLOUD ? MapView.L_CLOUD : k == K_TEMP ? MapView.L_TEMP : MapView.L_RAIN;
+			if (want == MapView.L_RAIN && m.layer() != MapView.L_RAIN && !m.rainNear()) {
+				if (m.gridKnown()) toast(Tr.t("It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.", "Nu plouă în zona hărții acum și nici în următoarele 2 ore. Butonul Ploi se activează singur când vine ploaia."));
+				else toast(Tr.t("Checking for rain on the map…", "Se verifică ploaia în zona hărții…"));
+				m.wantGrid();
+				boxUi.removeCallbacks(boxIdle);
+				boxUi.postDelayed(boxIdle, 5000);
+				return;
+			}
+			m.setLayer(m.layer() == want ? MapView.L_NONE : want);
+			Fetcher.prefs(this).edit().putInt("mapLayer", m.layer()).apply();
+			Log.i(this, "FERMIER", "harta: strat " + (m.layer() == MapView.L_NONE ? "oprit" : k == K_CLOUD ? "nori" : k == K_TEMP ? "temperaturi" : "ploi"));
+			fold.run();
+			return;
+		}
+		boxUi.removeCallbacks(boxIdle);
+		boxUi.postDelayed(boxIdle, 5000);
+	}
+
+	/** The box's height from FROM to TO in 0.25 s (at once with reduced motion), then DONE. */
+	private void animateBox(final LinearLayout box, int from, final int to, final Runnable done) {
+		final ViewGroup.LayoutParams lp = box.getLayoutParams();
+		if (Motion.off(this) || from <= 0) {
+			lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+			box.setLayoutParams(lp);
+			if (done != null) done.run();
+			return;
+		}
+		lp.height = from;
+		box.setLayoutParams(lp);
+		android.animation.ValueAnimator a = android.animation.ValueAnimator.ofInt(from, to);
+		a.setDuration(250);
+		a.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+			public void onAnimationUpdate(android.animation.ValueAnimator v) {
+				lp.height = (Integer) v.getAnimatedValue();
+				box.setLayoutParams(lp);
+			}
+		});
+		a.addListener(new android.animation.AnimatorListenerAdapter() {
+			@Override
+			public void onAnimationEnd(android.animation.Animator x) {
+				lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+				box.setLayoutParams(lp);
+				if (done != null) done.run();
+			}
+		});
+		a.start();
+	}
+
+	/** One row of the box: its drawn icon (a ring when in use), or the arrow ⌄ / ⌃. */
+	private View boxRow(final int kind, final MapView m) {
+		View v = new View(this) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
 
 			@Override
 			protected void onDraw(Canvas c) {
-				float s = Math.min(getWidth(), getHeight()), cx = s / 2f, cy = s / 2f, r = s * 0.24f;
-				boolean on = kind == 0 ? m.style() == 1 : kind == 1 ? m.style() == 0 : m.radar();
+				float s = getWidth(), cx = s / 2f, cy = getHeight() / 2f, r = s * 0.24f;
+				int ly = m.layer();
+				boolean on = kind == K_SAT ? m.style() == 1 : kind == K_MAP ? m.style() == 0 : kind == K_CLOUD ? ly == MapView.L_CLOUD : kind == K_TEMP ? ly == MapView.L_TEMP : kind == K_RAIN && ly == MapView.L_RAIN;
+				boolean off = kind == K_RAIN && !on && !m.rainNear();
+				int col = off ? dim : on ? accent : ink;
 				if (on) {
 					pt.setStyle(Paint.Style.STROKE);
 					pt.setStrokeWidth(dp * 2.2f);
 					pt.setColor(accent);
-					c.drawCircle(cx, cy, s / 2f - dp * 1.6f, pt);
+					c.drawCircle(cx, cy, s / 2f - dp * 3f, pt);
 				}
 				pt.setStyle(Paint.Style.STROKE);
 				pt.setStrokeWidth(dp * 1.6f);
 				pt.setStrokeCap(Paint.Cap.ROUND);
-				pt.setColor(on ? accent : ink);
-				if (kind == 0) {
+				pt.setStrokeJoin(Paint.Join.ROUND);
+				pt.setColor(col);
+				android.graphics.Path p = new android.graphics.Path();
+				if (kind == K_OPEN || kind == K_CLOSE) {
+					float a = s * 0.13f, d = kind == K_OPEN ? 1 : -1;
+					p.moveTo(cx - a, cy - a * 0.5f * d);
+					p.lineTo(cx, cy + a * 0.5f * d);
+					p.lineTo(cx + a, cy - a * 0.5f * d);
+					c.drawPath(p, pt);
+				} else if (kind == K_SAT) {
 					// The globe seen from space: a circle, its meridian and two parallels.
 					c.drawCircle(cx, cy, r, pt);
 					c.drawOval(new android.graphics.RectF(cx - r * 0.45f, cy - r, cx + r * 0.45f, cy + r), pt);
 					c.drawLine(cx - r, cy, cx + r, cy, pt);
 					c.drawLine(cx - r * 0.85f, cy - r * 0.5f, cx + r * 0.85f, cy - r * 0.5f, pt);
 					c.drawLine(cx - r * 0.85f, cy + r * 0.5f, cx + r * 0.85f, cy + r * 0.5f, pt);
-				} else if (kind == 1) {
+				} else if (kind == K_MAP) {
 					// A folded map in three panels.
-					android.graphics.Path p = new android.graphics.Path();
 					float w = r * 2.1f, h = r * 1.7f, x0 = cx - w / 2, y0 = cy - h / 2, t = w / 3;
 					p.moveTo(x0, y0 + h * 0.12f);
 					p.lineTo(x0 + t, y0);
@@ -1627,19 +1757,38 @@ public final class FarmActivity extends Activity {
 					c.drawPath(p, pt);
 					c.drawLine(x0 + t, y0, x0 + t, y0 + h * 0.88f, pt);
 					c.drawLine(x0 + 2 * t, y0 + h * 0.12f, x0 + 2 * t, y0 + h, pt);
-				} else {
-					// The radar: three arcs and the sweep from the middle.
-					for (int i = 1; i <= 3; i++) {
-						float rr = r * i / 3f * 1.15f;
-						c.drawArc(new android.graphics.RectF(cx - rr, cy - rr, cx + rr, cy + rr), 200, 140, false, pt);
-					}
-					c.drawLine(cx, cy, cx + r * 0.95f, cy - r * 0.7f, pt);
+				} else if (kind == K_CLOUD) {
+					// A cloud: two bumps over a flat base.
+					float b = cy + r * 0.55f;
+					p.moveTo(cx - r * 1.05f, b);
+					p.arcTo(new android.graphics.RectF(cx - r * 1.25f, b - r * 0.9f, cx - r * 0.35f, b), 90, 180);
+					p.arcTo(new android.graphics.RectF(cx - r * 0.7f, b - r * 1.6f, cx + r * 0.55f, b - r * 0.35f), 200, 150);
+					p.arcTo(new android.graphics.RectF(cx + r * 0.15f, b - r * 1.05f, cx + r * 1.2f, b), 250, 200);
+					p.close();
+					c.drawPath(p, pt);
+				} else if (kind == K_TEMP) {
+					// A thermometer: the tube and its bulb.
+					float tw = r * 0.32f;
+					c.drawRoundRect(new android.graphics.RectF(cx - tw, cy - r * 1.05f, cx + tw, cy + r * 0.35f), tw, tw, pt);
 					pt.setStyle(Paint.Style.FILL);
-					c.drawCircle(cx, cy, dp * 2.2f, pt);
-					c.drawCircle(cx - r * 0.5f, cy - r * 0.35f, dp * 1.6f, pt);
+					c.drawCircle(cx, cy + r * 0.65f, r * 0.42f, pt);
+					pt.setStyle(Paint.Style.STROKE);
+					c.drawLine(cx, cy - r * 0.3f, cx, cy + r * 0.4f, pt);
+				} else {
+					// A drop.
+					p.moveTo(cx, cy - r * 1.05f);
+					p.cubicTo(cx + r * 0.25f, cy - r * 0.55f, cx + r * 0.8f, cy - r * 0.05f, cx + r * 0.8f, cy + r * 0.35f);
+					p.arcTo(new android.graphics.RectF(cx - r * 0.8f, cy - r * 0.45f, cx + r * 0.8f, cy + r * 1.15f), 0, 180);
+					p.cubicTo(cx - r * 0.8f, cy - r * 0.05f, cx - r * 0.25f, cy - r * 0.55f, cx, cy - r * 1.05f);
+					c.drawPath(p, pt);
+					if (off) c.drawLine(cx - r * 1.05f, cy + r * 1.05f, cx + r * 1.05f, cy - r * 1.05f, pt);
 				}
 			}
 		};
+		String[] names = { Tr.t("Satellite view", "Vedere din satelit"), Tr.t("Map view", "Vedere hartă"), Tr.t("Clouds", "Nori"), Tr.t("Temperatures", "Temperaturi"), Tr.t("Rain", "Ploi"), Tr.t("Show the map's buttons", "Arată butoanele hărții"), Tr.t("Hide the map's buttons", "Ascunde butoanele hărții") };
+		v.setContentDescription(names[kind]);
+		v.setClickable(true);
+		return v;
 	}
 
 	/**

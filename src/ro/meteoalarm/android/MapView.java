@@ -16,6 +16,8 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 
+import ro.meteoalarm.android.core.Tr;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -145,11 +147,11 @@ final class MapView extends View {
 		topPad = px;
 	}
 
-	/** v5.52: where the radar's time pill stands (its top, in pixels). */
-	private float radarTop = -1;
+	/** v2.160: where the weather layer's label pill stands (its top, in pixels). */
+	private float layerTop = -1;
 
-	void setRadarTop(float px) {
-		radarTop = px;
+	void setLayerTop(float px) {
+		layerTop = px;
 	}
 
 	/**
@@ -590,6 +592,7 @@ final class MapView extends View {
 		double world = ts * Math.pow(2, z);
 		double cx = wx(lon, world), cy = wy(lat, world);
 		double left = cx - w / 2.0, top = cy - h / 2.0;
+		drawLayer(c, w, h, world, left, top);
 		// The phone's position.
 		if (!Double.isNaN(meLat)) {
 			float mx = (float) (wx(meLon, world) - left), my = (float) (wy(meLat, world) - top);
@@ -630,8 +633,8 @@ final class MapView extends View {
 		if (corners != null) drawPoly(c, corners, world, left, top, true);
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
-		drawRadar(c, w, h, world, left, top);
-		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "Esri, HERE, Garmin, © OpenStreetMap contributors" : "© OpenStreetMap contributors") + (radarOn ? " · Radar © RainViewer" : "");
+		drawLayerInfo(c, w, h, world, left, top);
+		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "Esri, HERE, Garmin, USGS, © OpenStreetMap contributors" : "© OpenStreetMap contributors") + (layer != 0 ? Tr.t(" · Weather: Open-Meteo", " · Vremea: Open-Meteo") : "");
 		paint.setTextSize(11 * dp);
 		float aw = paint.measureText(att);
 		paint.setColor(0xCCFFFFFF);
@@ -964,26 +967,13 @@ final class MapView extends View {
 		paint.setStyle(Paint.Style.FILL);
 	}
 
-	// --- v5.50 (Viorel): satellite view and the rain radar of the last 2 hours -----------------------
+	// --- v5.50 (Viorel): satellite view; v2.160: weather layers (clouds, temperature, rain) -----------------------
 
 	/** 0 the map (OpenStreetMap), 1 the satellite view (Esri). */
 	private int style;
-	private boolean radarOn;
-	/** The radar frames (times in seconds, paths), the oldest first; the one shown. */
-	private final java.util.List<long[]> rTimes = new java.util.ArrayList<long[]>();
-	private final java.util.List<String> rPaths = new java.util.ArrayList<String>();
-	private String rHost = "https://tilecache.rainviewer.com";
-	private int rFrame;
-	private long rFetched;
-	private final LruCache<String, Bitmap> rMem = new LruCache<String, Bitmap>(220);
-	private final Set<String> rLoading = new HashSet<String>();
-	private final LinkedList<String> rQueue = new LinkedList<String>();
-	private int rRunning;
-	/** The radar's tiles are asked for at most at this zoom (the free service stops there), then enlarged. */
-	private static final int R_MAX_Z = 7;
 
 	private String pre() {
-		return style == 1 ? "s/" : names ? "e/" : "";
+		return style == 1 ? "s/" : names ? "w/" : "";
 	}
 
 	/** v2.152 (Viorel): the towns' map (search, earthquakes): mostly the names; the parcels keep the detailed OpenStreetMap. */
@@ -1004,199 +994,341 @@ final class MapView extends View {
 		return style;
 	}
 
-	void setRadar(boolean on) {
-		radarOn = on;
-		ui.removeCallbacks(rTick);
-		if (on) {
-			if (rPaths.isEmpty() || System.currentTimeMillis() - rFetched > 10 * 60000L) frames();
-			ui.postDelayed(rTick, 700);
-		}
+	/**
+	 * v2.160 (Viorel): one weather layer over the parcels' map at a time: 1 clouds, 2 temperature,
+	 * 3 rain (0 none). The values come from Open-Meteo (no key) for a grid of points round the view;
+	 * the grid is drawn as a small picture stretched over its area, so the colours flow smoothly.
+	 */
+	static final int L_NONE = 0, L_CLOUD = 1, L_TEMP = 2, L_RAIN = 3;
+	private int layer;
+	private boolean imperial;
+	/** The grid: its edges, rows and columns (points at the cells' middles), the values, when and at what zoom. */
+	private double gN, gS, gW, gE;
+	private int gRows, gCols;
+	private float[] gTemp, gCloud, gRainNow, gRainMax;
+	private long gAt;
+	private double gZoom;
+	private String gTime = "", gUntil = "";
+	private boolean gBusy;
+	private Bitmap gPic;
+	private int gPicKind = -1;
+	private Runnable onGrid;
+	private static final int G_N = 7;
+
+	void setLayer(int k) {
+		layer = k;
+		gPicKind = -1;
+		if (k != L_NONE) wantGrid();
 		invalidate();
 	}
 
-	boolean radar() {
-		return radarOn;
+	int layer() {
+		return layer;
 	}
 
-	/** The frames shown in turn: 0.7 s each, 2 s on the newest; the list again every 10 minutes. */
-	private final Runnable rTick = new Runnable() {
+	void setImperial(boolean on) {
+		imperial = on;
+	}
+
+	/** R runs (on the main thread) each time new values arrive. */
+	void setOnGrid(Runnable r) {
+		onGrid = r;
+	}
+
+	/** True when the values are known. */
+	boolean gridKnown() {
+		return gRainMax != null;
+	}
+
+	/** True when it rains (or snows) somewhere on the grid now or in the next 2 hours (at least 0.1 mm per hour). */
+	boolean rainNear() {
+		if (gRainMax == null) return false;
+		for (float v : gRainMax) if (v >= 0.1f) return true;
+		return false;
+	}
+
+	/** Asks for the values when the view is not covered by the grid, the zoom changed much, or they are 15 minutes old. */
+	void wantGrid() {
+		ui.removeCallbacks(gAsk);
+		ui.postDelayed(gAsk, 600);
+	}
+
+	private final Runnable gAsk = new Runnable() {
 		public void run() {
-			if (!radarOn) return;
-			if (!isShown()) {
+			int w = getWidth(), h = getHeight();
+			if (w == 0 || h == 0) {
+				ui.postDelayed(this, 500);
+				return;
+			}
+			double world = tile * Math.pow(2, zoom), cx = wx(lon, world), cy = wy(lat, world);
+			double n = latAt(cy - h / 2.0, world), s = latAt(cy + h / 2.0, world), we = lon - w / 2.0 / world * 360, e = lon + w / 2.0 / world * 360;
+			boolean inside = gRainMax != null && n <= gN && s >= gS && we >= gW && e <= gE;
+			if (inside && Math.abs(zoom - gZoom) < 1.5 && System.currentTimeMillis() - gAt < 15 * 60000L) return;
+			if (gBusy) {
 				ui.postDelayed(this, 1500);
 				return;
 			}
-			if (System.currentTimeMillis() - rFetched > 10 * 60000L) frames();
-			int n = rPaths.size();
-			if (n > 0) rFrame = (rFrame + 1) % n;
-			invalidate();
-			ui.postDelayed(this, n > 0 && rFrame == n - 1 ? 2000 : 700);
+			// A quarter more on each side, so a little moving needs nothing new.
+			double dLat = (n - s) * 0.25, dLon = (e - we) * 0.25;
+			fetchGrid(Math.min(85, n + dLat), Math.max(-85, s - dLat), we - dLon, e + dLon, zoom);
 		}
 	};
 
-	/** Off the main thread: the list of the radar frames of the last 2 hours (RainViewer). */
-	private void frames() {
-		rFetched = System.currentTimeMillis();
+	private static double latAt(double y, double world) {
+		double t = Math.PI - 2 * Math.PI * y / world;
+		return Math.toDegrees(Math.atan(Math.sinh(t)));
+	}
+
+	/** Off the main thread: the values of the G_N x G_N points from Open-Meteo (one request for all). */
+	private void fetchGrid(final double n, final double s, final double w, final double e, final double z) {
+		gBusy = true;
 		new Thread(new Runnable() {
 			public void run() {
 				try {
-					HttpURLConnection c = (HttpURLConnection) new URL("https://api.rainviewer.com/public/weather-maps.json").openConnection();
-					c.setConnectTimeout(15000);
-					c.setReadTimeout(20000);
-					c.setRequestProperty("User-Agent", UA);
-					InputStream in = c.getInputStream();
-					ByteArrayOutputStream out = new ByteArrayOutputStream();
-					byte[] buf = new byte[8192];
-					int n;
-					while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
-					in.close();
-					c.disconnect();
-					org.json.JSONObject o = new org.json.JSONObject(out.toString("UTF-8"));
-					final String host = o.optString("host", "https://tilecache.rainviewer.com");
-					org.json.JSONArray past = o.getJSONObject("radar").getJSONArray("past");
-					final java.util.List<long[]> t = new java.util.ArrayList<long[]>();
-					final java.util.List<String> p = new java.util.ArrayList<String>();
-					long newest = past.length() > 0 ? past.getJSONObject(past.length() - 1).getLong("time") : 0;
-					for (int i = 0; i < past.length(); i++) {
-						org.json.JSONObject f = past.getJSONObject(i);
-						if (newest - f.getLong("time") > 2 * 3600) continue;
-						t.add(new long[] { f.getLong("time") });
-						p.add(f.getString("path"));
+					StringBuilder la = new StringBuilder(), lo = new StringBuilder();
+					java.util.Locale us = java.util.Locale.US;
+					for (int r = 0; r < G_N; r++)
+						for (int k = 0; k < G_N; k++) {
+							if (la.length() > 0) {
+								la.append(',');
+								lo.append(',');
+							}
+							la.append(String.format(us, "%.3f", n - (r + 0.5) * (n - s) / G_N));
+							lo.append(String.format(us, "%.3f", w + (k + 0.5) * (e - w) / G_N));
+						}
+					String url = "https://api.open-meteo.com/v1/forecast?latitude=" + la + "&longitude=" + lo
+							+ "&current=temperature_2m,cloud_cover,precipitation&minutely_15=precipitation&forecast_minutely_15=9&timezone=auto";
+					byte[] b = fetch(url);
+					if (b == null) throw new Exception("no answer");
+					String txt = new String(b, "UTF-8").trim();
+					org.json.JSONArray arr = txt.startsWith("[") ? new org.json.JSONArray(txt) : new org.json.JSONArray().put(new org.json.JSONObject(txt));
+					int m = G_N * G_N;
+					final float[] t = new float[m], cl = new float[m], rn = new float[m], rx = new float[m];
+					String time = "", until = "";
+					for (int i = 0; i < m && i < arr.length(); i++) {
+						org.json.JSONObject o = arr.getJSONObject(i), cur = o.getJSONObject("current");
+						t[i] = (float) cur.optDouble("temperature_2m", 0);
+						cl[i] = (float) cur.optDouble("cloud_cover", 0);
+						// Millimetres in 15 minutes, as millimetres per hour.
+						rn[i] = (float) cur.optDouble("precipitation", 0) * 4;
+						float mx = rn[i];
+						org.json.JSONObject q = o.optJSONObject("minutely_15");
+						if (q != null) {
+							org.json.JSONArray pv = q.optJSONArray("precipitation"), tv = q.optJSONArray("time");
+							for (int j = 0; pv != null && j < pv.length(); j++) mx = Math.max(mx, (float) pv.optDouble(j, 0) * 4);
+							if (i == 0 && tv != null && tv.length() > 0) until = tv.optString(tv.length() - 1);
+						}
+						rx[i] = mx;
+						if (i == 0) time = cur.optString("time", "");
 					}
+					final String tm = hhmm(time), un = hhmm(until);
 					ui.post(new Runnable() {
 						public void run() {
-							rHost = host;
-							rTimes.clear();
-							rTimes.addAll(t);
-							rPaths.clear();
-							rPaths.addAll(p);
-							rFrame = Math.max(0, p.size() - 1);
-							synchronized (rQueue) {
-								rQueue.clear();
-								rLoading.clear();
-							}
+							gN = n;
+							gS = s;
+							gW = w;
+							gE = e;
+							gRows = gCols = G_N;
+							gTemp = t;
+							gCloud = cl;
+							gRainNow = rn;
+							gRainMax = rx;
+							gAt = System.currentTimeMillis();
+							gZoom = z;
+							gTime = tm;
+							gUntil = un;
+							gPicKind = -1;
+							gBusy = false;
 							invalidate();
+							if (onGrid != null) onGrid.run();
 						}
 					});
-				} catch (Exception e) {
-					rFetched = System.currentTimeMillis() - 9 * 60000L; // again in a minute
+				} catch (Exception ex) {
+					ui.post(new Runnable() {
+						public void run() {
+							gBusy = false;
+							gAt = System.currentTimeMillis() - 14 * 60000L; // again in a minute
+						}
+					});
 				}
 			}
 		}).start();
 	}
 
-	/** The radar frame shown over the map, half see-through, with its time at the bottom left. */
-	private void drawRadar(Canvas c, int w, int h, double world, double left, double top) {
-		if (!radarOn || rPaths.isEmpty()) return;
-		int rz = Math.max(MIN_Z, Math.min(R_MAX_Z, (int) Math.floor(zoom)));
-		double scale = world / (tile * Math.pow(2, rz));
-		float ts = (float) (tile * scale);
-		int n = 1 << rz;
-		int tx0 = (int) Math.floor(left / ts), ty0 = (int) Math.floor(top / ts);
-		int tx1 = (int) Math.floor((left + w) / ts), ty1 = (int) Math.floor((top + h) / ts);
-		Paint rp = new Paint(Paint.FILTER_BITMAP_FLAG);
-		rp.setAlpha(190);
-		RectF dst = new RectF();
-		// Every frame of the view is asked for (the animation), the one shown first.
-		for (int k = 0; k <= rPaths.size(); k++) {
-			int fi = k == 0 ? rFrame : k - 1;
-			if (k > 0 && fi == rFrame) continue;
-			for (int ty = ty0; ty <= ty1; ty++) {
-				if (ty < 0 || ty >= n) continue;
-				for (int tx = tx0; tx <= tx1; tx++) {
-					int x = ((tx % n) + n) % n;
-					String key = rPaths.get(fi) + "/256/" + rz + "/" + x + "/" + ty;
-					Bitmap b = rGet(key);
-					if (k == 0 && b != null) {
-						float px = (float) (tx * ts - left), py = (float) (ty * ts - top);
-						dst.set(px, py, px + ts + 0.5f, py + ts + 0.5f);
-						c.drawBitmap(b, null, dst, rp);
-					}
-				}
+	/** "2026-11-25T07:00" → "07:00". */
+	private static String hhmm(String iso) {
+		int i = iso.indexOf('T');
+		return i >= 0 && iso.length() >= i + 6 ? iso.substring(i + 1, i + 6) : "";
+	}
+
+	/** The temperature scale: violet and blue when cold, then teal, green, yellow, orange and red when hot (°C). */
+	private static final float[] T_AT = { -20, -10, -3, 0, 4, 10, 18, 26, 34 };
+	private static final int[] T_COL = { 0x783CAA, 0x4650C8, 0x3C82DC, 0x46AAD2, 0x50BE96, 0x78C85A, 0xE6D246, 0xF0963C, 0xD23C32 };
+	/** The rain scale, millimetres per hour: light blue to dark blue, violet when torrential (no warning colours). */
+	private static final float[] R_AT = { 0.1f, 1, 3, 8, 15 };
+	private static final int[] R_COL = { 0x96C8FA, 0x5096EB, 0x285AD2, 0x3C28AA, 0x8232AA };
+
+	private static int scale(float v, float[] at, int[] col) {
+		if (v <= at[0]) return col[0];
+		for (int i = 1; i < at.length; i++)
+			if (v <= at[i]) {
+				float f = (v - at[i - 1]) / (at[i] - at[i - 1]);
+				int a = col[i - 1], b = col[i];
+				int r = Math.round(((a >> 16) & 255) * (1 - f) + ((b >> 16) & 255) * f), g = Math.round(((a >> 8) & 255) * (1 - f) + ((b >> 8) & 255) * f),
+						bl = Math.round((a & 255) * (1 - f) + (b & 255) * f);
+				return r << 16 | g << 8 | bl;
 			}
+		return col[col.length - 1];
+	}
+
+	/** The layer under the pins: the grid as a small picture, stretched (and smoothed) over its area. */
+	private void drawLayer(Canvas c, int w, int h, double world, double left, double top) {
+		if (layer == L_NONE || gRainMax == null) return;
+		if (gPicKind != layer || gPic == null) {
+			int[] px = new int[gRows * gCols];
+			for (int i = 0; i < px.length; i++) {
+				int a, rgb;
+				if (layer == L_CLOUD) {
+					a = Math.round(Math.max(0, Math.min(100, gCloud[i])) * 1.7f);
+					rgb = 0x6E737D;
+				} else if (layer == L_TEMP) {
+					a = 140;
+					rgb = scale(gTemp[i], T_AT, T_COL);
+				} else {
+					float v = gRainMax[i];
+					a = v < 0.1f ? 0 : Math.round(Math.min(190, 110 + v * 12));
+					rgb = scale(v, R_AT, R_COL);
+				}
+				px[i] = a << 24 | rgb;
+			}
+			gPic = Bitmap.createBitmap(px, gCols, gRows, Bitmap.Config.ARGB_8888);
+			gPicKind = layer;
 		}
-		// The frame's time.
-		java.text.SimpleDateFormat f = new java.text.SimpleDateFormat("HH:mm", java.util.Locale.US);
-		String t = "Radar " + f.format(new java.util.Date(rTimes.get(Math.min(rFrame, rTimes.size() - 1))[0] * 1000L));
-		// v5.52 (Viorel): at the top, in a pill of frosted glass, larger.
-		paint.setTextSize(20 * dp);
+		float x0 = (float) (wx(gW, world) - left), x1 = (float) (wx(gE, world) - left), y0 = (float) (wy(gN, world) - top), y1 = (float) (wy(gS, world) - top);
+		Paint gp = new Paint(Paint.FILTER_BITMAP_FLAG);
+		c.drawBitmap(gPic, null, new RectF(x0, y0, x1, y1), gp);
+		if (!gBusy) wantGrid();
+	}
+
+	/** The layer's label at the top (its name and the time) and its legend at the bottom, above the parcels' cards. */
+	private void drawLayerInfo(Canvas c, int w, int h, double world, double left, double top) {
+		if (layer == L_NONE) return;
+		String name = layer == L_CLOUD ? Tr.t("Clouds", "Nori") : layer == L_TEMP ? Tr.t("Temperatures", "Temperaturi") : Tr.t("Rain", "Ploi");
+		String t = name + (gTime.length() > 0 ? " " + gTime + (layer == L_RAIN && gUntil.length() > 0 ? "–" + gUntil : "") : "");
+		paint.setTextSize(14 * dp);
 		paint.setFakeBoldText(true);
-		float tw = paint.measureText(t), pt0 = radarTop >= 0 ? radarTop : 12 * dp, ph = 40 * dp;
-		RectF r = new RectF(w / 2f - tw / 2 - 16 * dp, pt0, w / 2f + tw / 2 + 16 * dp, pt0 + ph);
-		paint.setStyle(Paint.Style.FILL);
-		paint.setColor(dark ? 0xD6262624 : 0xD6FAF9F5);
-		c.drawRoundRect(r, ph / 2, ph / 2, paint);
-		paint.setStyle(Paint.Style.STROKE);
-		paint.setStrokeWidth(Math.max(1, dp));
-		paint.setColor(dark ? 0x40FFFFFF : 0x30000000);
-		c.drawRoundRect(r, ph / 2, ph / 2, paint);
-		paint.setStyle(Paint.Style.FILL);
+		float tw = paint.measureText(t), ph = 26 * dp, pt0 = layerTop >= 0 ? layerTop : 8 * dp;
+		RectF r = new RectF(w / 2f - tw / 2 - 12 * dp, pt0, w / 2f + tw / 2 + 12 * dp, pt0 + ph);
+		pill(c, r);
 		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
 		Paint.FontMetrics fm = paint.getFontMetrics();
 		c.drawText(t, w / 2f - tw / 2, pt0 + ph / 2 - (fm.ascent + fm.descent) / 2, paint);
 		paint.setFakeBoldText(false);
-	}
-
-	private Bitmap rGet(String key) {
-		Bitmap b = rMem.get(key);
-		if (b != null) return b;
-		synchronized (rQueue) {
-			if (rLoading.contains(key)) return null;
-			rLoading.add(key);
-			rQueue.addLast(key);
-		}
-		rPump();
-		return null;
-	}
-
-	private void rPump() {
-		synchronized (rQueue) {
-			while (rRunning < 3 && !rQueue.isEmpty()) {
-				final String key = rQueue.removeFirst();
-				final String url = rHost + key + "/2/1_1.png";
-				rRunning++;
-				new Thread(new Runnable() {
-					public void run() {
-						Bitmap b = null;
-						try {
-							HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
-							c.setConnectTimeout(15000);
-							c.setReadTimeout(20000);
-							c.setRequestProperty("User-Agent", UA);
-							if (c.getResponseCode() == 200) {
-								BitmapFactory.Options o = new BitmapFactory.Options();
-								o.inSampleSize = 2;
-								b = BitmapFactory.decodeStream(c.getInputStream(), null, o);
-							}
-							c.disconnect();
-						} catch (Exception e) {
-							// none this time
-						}
-						final Bitmap fb = b;
-						synchronized (rQueue) {
-							rRunning--;
-							// a failed tile is not asked for again until the next list of frames
-						}
-						if (fb != null) ui.post(new Runnable() {
-							public void run() {
-								rMem.put(key, fb);
-								synchronized (rQueue) {
-									rLoading.remove(key);
-								}
-								invalidate();
-							}
-						});
-						rPump();
-					}
-				}).start();
+		if (gRainMax == null) return;
+		// The legend: in the middle of the map's free part, above the cards (portrait) or the attribution.
+		float lw = 230 * dp, bh = 7 * dp, cx = (w - rightPad) / 2f, bottom = h - Math.max(bottomPad, 22 * dp) - 8 * dp;
+		float lh = 58 * dp, lt = bottom - lh, bx = cx - lw / 2;
+		pill(c, new RectF(bx - 12 * dp, lt, bx + lw + 12 * dp, bottom));
+		float by = lt + 24 * dp;
+		paint.setTextSize(11 * dp);
+		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
+		String head;
+		String[] ticks;
+		float[] tickAt;
+		if (layer == L_TEMP) {
+			// Linear from -20 to 30 °C; a frame round the values seen on the map now.
+			android.graphics.LinearGradient lg;
+			int[] cols = new int[T_AT.length];
+			float[] pos = new float[T_AT.length];
+			for (int i = 0; i < T_AT.length; i++) {
+				cols[i] = 0xFF000000 | T_COL[i];
+				pos[i] = Math.max(0, Math.min(1, (T_AT[i] + 20) / 50f));
 			}
+			lg = new android.graphics.LinearGradient(bx, 0, bx + lw, 0, cols, pos, android.graphics.Shader.TileMode.CLAMP);
+			paint.setShader(lg);
+			c.drawRoundRect(new RectF(bx, by, bx + lw, by + bh), bh / 2, bh / 2, paint);
+			paint.setShader(null);
+			float lo = Float.MAX_VALUE, hi = -Float.MAX_VALUE;
+			for (int rr = 0; rr < gRows; rr++)
+				for (int k = 0; k < gCols; k++) {
+					double la = gN - (rr + 0.5) * (gN - gS) / gRows, lo2 = gW + (k + 0.5) * (gE - gW) / gCols;
+					float sx = (float) (wx(lo2, world) - left), sy = (float) (wy(la, world) - top);
+					if (sx < 0 || sx > w || sy < 0 || sy > h) continue;
+					float v = gTemp[rr * gCols + k];
+					lo = Math.min(lo, v);
+					hi = Math.max(hi, v);
+				}
+			if (lo > hi) {
+				for (float v : gTemp) {
+					lo = Math.min(lo, v);
+					hi = Math.max(hi, v);
+				}
+			}
+			float f0 = bx + Math.max(0, Math.min(1, (lo + 20) / 50f)) * lw, f1 = bx + Math.max(0, Math.min(1, (hi + 20) / 50f)) * lw;
+			if (f1 - f0 < 6 * dp) {
+				float m = (f0 + f1) / 2;
+				f0 = m - 3 * dp;
+				f1 = m + 3 * dp;
+			}
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeWidth(1.6f * dp);
+			paint.setColor(dark ? 0xFFFFFFFF : 0xFF111111);
+			c.drawRoundRect(new RectF(f0 - 1.5f * dp, by - 3.5f * dp, f1 + 1.5f * dp, by + bh + 3.5f * dp), 3 * dp, 3 * dp, paint);
+			paint.setStyle(Paint.Style.FILL);
+			head = Tr.t("on the map: ", "pe hartă: ") + deg(lo) + " … " + deg(hi);
+			ticks = new String[] { deg(-20), deg(-10), deg(0), deg(10), deg(20), deg(30) };
+			tickAt = new float[] { 0, 0.2f, 0.4f, 0.6f, 0.8f, 1 };
+		} else {
+			int[] cols;
+			if (layer == L_RAIN) {
+				cols = new int[R_COL.length];
+				for (int i = 0; i < cols.length; i++) cols[i] = 0xFF000000 | R_COL[i];
+				head = Tr.t("Rain, mm per hour", "Ploaie, mm pe oră");
+				ticks = new String[] { "0,1", "1", "3", "8", "15+" };
+				tickAt = new float[] { 0, 0.25f, 0.5f, 0.75f, 1 };
+			} else {
+				cols = new int[] { 0x206E737D, 0xFF6E737D };
+				head = Tr.t("Clouds, sky covered", "Nori, cer acoperit");
+				ticks = new String[] { "0%", "50%", "100%" };
+				tickAt = new float[] { 0, 0.5f, 1 };
+			}
+			paint.setShader(new android.graphics.LinearGradient(bx, 0, bx + lw, 0, cols, null, android.graphics.Shader.TileMode.CLAMP));
+			c.drawRoundRect(new RectF(bx, by, bx + lw, by + bh), bh / 2, bh / 2, paint);
+			paint.setShader(null);
 		}
+		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
+		paint.setFakeBoldText(true);
+		float hw = paint.measureText(head);
+		c.drawText(head, cx - hw / 2, lt + 16 * dp, paint);
+		paint.setFakeBoldText(false);
+		for (int i = 0; i < ticks.length; i++) {
+			float x = bx + tickAt[i] * lw, tw2 = paint.measureText(ticks[i]);
+			c.drawText(ticks[i], x - tw2 / 2, by + bh + 15 * dp, paint);
+		}
+	}
+
+	/** A temperature in °C or °F, with its sign. */
+	private String deg(float c) {
+		return Math.round(imperial ? c * 9 / 5 + 32 : c) + "°";
+	}
+
+	/** A frosted pill (the label, the legend). */
+	private void pill(Canvas c, RectF r) {
+		float rad = Math.min(r.height() / 2, 16 * dp);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(dark ? 0xE6262624 : 0xEFFFFFFF);
+		c.drawRoundRect(r, rad, rad, paint);
+		paint.setStyle(Paint.Style.STROKE);
+		paint.setStrokeWidth(Math.max(1, dp));
+		paint.setColor(dark ? 0x40FFFFFF : 0x30000000);
+		c.drawRoundRect(r, rad, rad, paint);
+		paint.setStyle(Paint.Style.FILL);
 	}
 
 	@Override
 	protected void onDetachedFromWindow() {
 		super.onDetachedFromWindow();
-		ui.removeCallbacks(rTick);
+		ui.removeCallbacks(gAsk);
 	}
 
 	/** Tile Z/X/Y from memory, else from the phone (then shown), else asked for (null meanwhile). */
@@ -1245,7 +1377,7 @@ final class MapView extends View {
 	/** Off the main thread: the tile from the phone's cache (a week), else from OpenStreetMap. */
 	private Bitmap load(String key) {
 		File f = new File(dir, key.replace('/', '_') + ".png");
-		boolean sat = key.startsWith("s/"), voy = key.startsWith("e/");
+		boolean sat = key.startsWith("s/"), voy = key.startsWith("w/");
 		try {
 			if (f.exists() && System.currentTimeMillis() - f.lastModified() < KEEP_MS) {
 				Bitmap b = BitmapFactory.decodeFile(f.getPath());
@@ -1257,20 +1389,9 @@ final class MapView extends View {
 				String[] k = key.substring(2).split("/");
 				url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
 			} else if (voy) {
-				// v2.153 (Viorel): no API key: Esri Light Gray (few details) with its names layer on top.
+				// v2.160 (Viorel): no API key: Esri World Street Map, the towns' names big and clear.
 				String[] k = key.substring(2).split("/");
-				String zyx = k[0] + "/" + k[2] + "/" + k[1];
-				byte[] bb = fetch(ESRI + "Canvas/World_Light_Gray_Base/MapServer/tile/" + zyx), rb = fetch(ESRI + "Canvas/World_Light_Gray_Reference/MapServer/tile/" + zyx);
-				if (bb == null) return f.exists() ? BitmapFactory.decodeFile(f.getPath()) : null;
-				Bitmap base = BitmapFactory.decodeByteArray(bb, 0, bb.length);
-				if (base == null) return null;
-				Bitmap b = base.copy(Bitmap.Config.ARGB_8888, true);
-				Bitmap ref = rb == null ? null : BitmapFactory.decodeByteArray(rb, 0, rb.length);
-				if (ref != null) new Canvas(b).drawBitmap(ref, null, new Rect(0, 0, b.getWidth(), b.getHeight()), new Paint(Paint.FILTER_BITMAP_FLAG));
-				FileOutputStream fo = new FileOutputStream(f);
-				b.compress(Bitmap.CompressFormat.PNG, 100, fo);
-				fo.close();
-				return b;
+				url = ESRI + "World_Street_Map/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
 			} else url = "https://tile.openstreetmap.org/" + key + ".png";
 			HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
 			c.setConnectTimeout(15000);

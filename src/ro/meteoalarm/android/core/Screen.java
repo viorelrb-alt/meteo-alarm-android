@@ -473,19 +473,20 @@ public final class Screen {
 
 	/** ☰ at X, Y. */
 	private void menuButton(float x, float y) {
-		btnMenu[0] = x; btnMenu[1] = y; btnMenu[2] = 64; btnMenu[3] = 64;
-		button(btnMenu);
-		for (int k = 0; k < 3; k++) g.roundRect(x + 19, y + 19 + k * 12, 26, 3.5f, 1.75f, c.ink);
+		btnMenu[0] = x; btnMenu[1] = y; btnMenu[2] = HB; btnMenu[3] = HB;
+		disc(btnMenu);
+		float m = HB / 2;
+		for (int k = -1; k <= 1; k++) g.roundRect(x + m - 15, y + m - 2 + k * 11, 30, 4, 2, c.ink);
 	}
 
 	/** v2.152 (Viorel): the round Localități button (the town icon), opens the towns screen. */
 	private void townsButton(float x, float y) {
-		btnTowns[0] = x; btnTowns[1] = y; btnTowns[2] = 64; btnTowns[3] = 64;
-		button(btnTowns);
+		btnTowns[0] = x; btnTowns[1] = y; btnTowns[2] = HB; btnTowns[3] = HB;
+		disc(btnTowns);
 		// v2.153 (Viorel): a locality, not a pin: two houses, a small one behind a bigger one.
-		float cx = x + 32, cy = y + 32;
-		house(cx - 9, cy + 9, 15, c.ink, 0);
-		house(cx + 3, cy + 12, 20, c.ink, glass());
+		float cx = x + HB / 2, cy = y + HB / 2;
+		house(cx - 11, cy + 11, 19, c.ink, 0);
+		house(cx + 4, cy + 15, 26, c.ink, discColor());
 	}
 
 	/** A house W wide standing on BASE at its middle CX: a roof and the walls with a door; GAP: an edge of that colour round it (0: none). */
@@ -1210,7 +1211,7 @@ public final class Screen {
 			lift = sl + 70;
 		}
 		float hy = lift - 22, paneTop = lift - band + 2, rowY = 24 + hy;
-		float y = rowY + 64 + 14, tabsY = y;
+		float y = rowY + HB + 8, tabsY = y;
 		boolean tabsOn = tabsShown();
 		if (tabsOn) y += 54 + 14;
 		int nw = w == null ? 0 : warnCount();
@@ -1249,12 +1250,12 @@ public final class Screen {
 		band = sb;
 		lift = sl;
 		menuButton(40, rowY);
-		townsButton(cw - 40 - 64, rowY);
-		float lw = cw - 124 - 40 - 64 - 16;
+		townsButton(cw - 40 - HB, rowY);
+		float lw = cw - 138 - 40 - HB - 16;
 		String label = headName(lw);
 		float lp = fit(true, 40, lw, label);
-		ltext(true, lp, rowY + 32 - lp * 0.5f, 124, label, c.ink);
-		cityArea[0] = 124; cityArea[1] = rowY; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
+		ltext(true, lp, rowY + HB / 2 - lp * 0.5f, 138, label, c.ink);
+		cityArea[0] = 138; cityArea[1] = rowY; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
 		if (tabsOn) drawTabs(40, tabsY, cw - 80, 54);
 		else tabs.area[2] = 0;
 		if (w == null) {
@@ -1280,7 +1281,7 @@ public final class Screen {
 		statusArea[2] = 0;
 		btnStats[2] = 0;
 		// v5.33 (Viorel): on the tablet the screen in 5 columns: the sheet with the weather now the right 2.
-		float zL = Math.round(cw * (tablet ? 0.6f : 0.52f)), bandB = 104, lx = 40, lw = zL - 14 - lx;
+		float zL = Math.round(cw * (tablet ? 0.6f : 0.52f)), bandB = 118, lx = 40, lw = zL - 14 - lx;
 		// v2.020 (Viorel): with the Statistics in the left part the glass is narrower (about a third).
 		boolean st = statsOn && parcel != null && farmer;
 		statsArea[2] = 0;
@@ -1308,7 +1309,8 @@ public final class Screen {
 		if (layer == 1) return;
 		float r = 32, x0 = 16, x1 = cw - 16, y0 = lift + 2, y1 = ch - 8;
 		frost(roundPoly(new float[] { x0, y0, x1, y0, x1, y1, zL, y1, zL, bandB, x0, bandB }, new float[] { r, r, r, r, 22, r }));
-		menuButton(40, 22);
+		float by = (lift + 2 + bandB) / 2 - HB / 2;
+		menuButton(34, by);
 		// The right end of the header: "updated", the date, the connection, the clock.
 		drawClock();
 		float dp = 26, dr = clockLeft - 22;
@@ -1316,13 +1318,14 @@ public final class Screen {
 		float dl = rtext(false, dp, 54 - dp * 0.56f, dr, dt, c.ink);
 		float ul = updatedAt(dl - 26, 54, Math.min(420, dl - 26 - 124 - 260));
 		// v2.152 (Viorel): the Localități button at the band's right end, before the L corner.
-		float tx = Math.min(zL - 14 - 64, ul - 30 - 64);
-		townsButton(tx, 22);
-		float nw = tx - 16 - 124;
+		// v2.160 (Viorel): bigger, inside the narrow band, ending before the L corner.
+		float tx = Math.min(zL - 14 - HB, ul - 30 - HB);
+		townsButton(tx, by);
+		float nw = tx - 16 - 134;
 		String label = headName(nw);
 		float lp = fit(true, 40, nw, label);
-		ltext(true, lp, 54 - lp * 0.5f, 124, label, c.ink);
-		cityArea[0] = 124; cityArea[1] = 22; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
+		ltext(true, lp, by + HB / 2 - lp * 0.5f, 134, label, c.ink);
+		cityArea[0] = 134; cityArea[1] = by; cityArea[2] = Math.max(200, g.width(true, lp, label)); cityArea[3] = 64;
 		float rx = zL + 18, rw = x1 - 22 - rx;
 		if (w == null) {
 			String msg = error.length() > 0 ? error : T.loading;
@@ -2681,6 +2684,18 @@ public final class Screen {
 	}
 
 	/** v5.00 (Viorel, "Opțiunea 3"): a round glass button. */
+	/** v2.160 (Viorel): the size of the header's round buttons (☰, Localități): as the X of the ☰ window (42 dp). */
+	static final float HB = 78;
+
+	/** A header button as the X of the ☰ window: a full disc, the ink faint over the glass, no edge. */
+	private int discColor() {
+		return mix(glass(), c.ink, dark ? 0.12f : 0.08f);
+	}
+
+	private void disc(float[] b) {
+		g.roundRect(b[0], b[1], b[2], b[3], b[2] / 2, discColor());
+	}
+
 	private void button(float[] b) {
 		float r = Math.min(b[2], b[3]) / 2;
 		g.roundRect(b[0], b[1], b[2], b[3], r, edge());

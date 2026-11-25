@@ -29,7 +29,7 @@ final class Backup {
 	/** v2.120: the notification switches (the phone still asks its own permission). */
 	static final String[] ALERTS = { "notify", "quakeNotify", "tornadoNotify" };
 	/** v2.120: the parcels' map. */
-	static final String[] MAP = { "mapStyle", "mapRadar" };
+	static final String[] MAP = { "mapStyle", "mapLayer" };
 
 	/** v2.120 (Viorel): what goes into the file, chosen with switches in the Export window. */
 	static final int TOWNS = 0, PARCELS = 1, BELLS = 2, BIN = 3, VISITS = 4, LOOK = 5, ALERT = 6, MAPS = 7, WIDGETS = 8, QUAKES = 9, LOG = 10, CROPS = 11, N = 12;
