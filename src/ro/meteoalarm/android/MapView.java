@@ -49,6 +49,21 @@ final class MapView extends View {
 		void at(double lat, double lon);
 	}
 
+	/** v2.162 (Viorel): a tap on a town's name written over the map picks that very town. */
+	interface TownTap {
+		void town(String name, String county, double lat, double lon);
+	}
+
+	private TownTap townTap;
+
+	void setOnTownTap(TownTap t) {
+		townTap = t;
+	}
+
+	/** The names drawn last (their boxes and which town each is), for the taps. */
+	private final java.util.List<RectF> tBoxes = new java.util.ArrayList<RectF>();
+	private final java.util.List<Integer> tIdx = new java.util.ArrayList<Integer>();
+
 	/** v2.90: a parcel pin with its name, drawn where it is (the list map). */
 	static final class Pin {
 		final long id;
@@ -114,6 +129,14 @@ final class MapView extends View {
 			@Override
 			public boolean onSingleTapConfirmed(MotionEvent e) {
 				long id = pinAt(e.getX(), e.getY());
+				if (townTap != null && tName != null) {
+					for (int k = tBoxes.size() - 1; k >= 0; k--) {
+						if (!tBoxes.get(k).contains(e.getX(), e.getY())) continue;
+						int i = tIdx.get(k);
+						townTap.town(tName[i], tCounty[i], tLat[i], tLon[i]);
+						return true;
+					}
+				}
 				if (mapTap != null) {
 					double world = tile * Math.pow(2, zoom);
 					double left = wx(lon, world) - getWidth() / 2.0, top = wy(lat, world) - getHeight() / 2.0;
@@ -1344,7 +1367,7 @@ final class MapView extends View {
 	// --- v2.161 (Viorel): the towns' names big and clear over the map (the tiles' own are too small) ---
 
 	/** Every locality of Romania: the towns of the app's list first, then the villages. */
-	private static String[] tName;
+	private static String[] tName, tCounty;
 	private static float[] tLat, tLon;
 	private static int tCities;
 	private static volatile boolean tBusy;
@@ -1357,41 +1380,52 @@ final class MapView extends View {
 			public void run() {
 				try {
 					java.util.LinkedHashMap<String, float[]> m = new java.util.LinkedHashMap<String, float[]>();
+					java.util.HashMap<String, String> mc = new java.util.HashMap<String, String>();
 					String cities = Fetcher.readAll(ctx.getAssets().open("cities.txt"));
 					for (String line : cities.split("\n")) {
 						String[] p = line.trim().split("\\|");
 						if (p.length < 4 || line.startsWith("#")) continue;
 						try {
 							m.put(p[1], new float[] { Float.parseFloat(p[2]), Float.parseFloat(p[3]) });
+							if (!p[0].equals("*")) mc.put(p[1], p[0]);
 						} catch (NumberFormatException e) {
 							// a bad line
 						}
 					}
 					int nc = m.size();
 					ro.meteoalarm.android.core.Villages v = Places.villages(ctx);
-					String[] n = new String[nc + v.size];
+					String[] n = new String[nc + v.size], cn = new String[nc + v.size];
 					float[] la = new float[n.length], lo = new float[n.length];
 					int k = 0;
 					for (java.util.Map.Entry<String, float[]> e : m.entrySet()) {
 						n[k] = e.getKey();
+						cn[k] = mc.containsKey(e.getKey()) ? mc.get(e.getKey()) : "";
 						la[k] = e.getValue()[0];
 						lo[k++] = e.getValue()[1];
 					}
 					for (int i = 0; i < v.size; i++) {
 						// The towns of the list are there already (a village of the same name far away stays).
 						float[] c = m.get(v.name(i));
-						if (c != null && Math.abs(c[0] - v.lat(i)) < 0.05f && Math.abs(c[1] - v.lon(i)) < 0.05f) continue;
+						if (c != null && Math.abs(c[0] - v.lat(i)) < 0.05f && Math.abs(c[1] - v.lon(i)) < 0.05f) {
+							// A favourite ("*") gets its county from the full list.
+							for (int j = 0; j < nc; j++)
+								if (n[j].equals(v.name(i)) && cn[j].length() == 0) cn[j] = v.county(i);
+							continue;
+						}
 						n[k] = v.name(i);
+						cn[k] = v.county(i);
 						la[k] = v.lat(i);
 						lo[k++] = v.lon(i);
 					}
 					tLat = java.util.Arrays.copyOf(la, k);
 					tLon = java.util.Arrays.copyOf(lo, k);
 					tCities = nc;
+					tCounty = java.util.Arrays.copyOf(cn, k);
 					tName = java.util.Arrays.copyOf(n, k);
 				} catch (Exception e) {
-					tName = new String[0];
+					tCounty = new String[0];
 					tLat = tLon = new float[0];
+					tName = new String[0];
 				}
 				tBusy = false;
 				ui.post(new Runnable() {
@@ -1408,6 +1442,8 @@ final class MapView extends View {
 	 * zoom 11; a name that would cover one already drawn is left out.
 	 */
 	private void drawTowns(Canvas c, int w, int h, double world, double left, double top) {
+		tBoxes.clear();
+		tIdx.clear();
 		if (zoom < 8) return;
 		if (tName == null) {
 			loadTowns();
@@ -1426,7 +1462,9 @@ final class MapView extends View {
 			paint.setTextSize((i < tCities ? 19 : 17) * sp);
 			float tw = paint.measureText(tName[i]), th = paint.getTextSize();
 			// Room round each name, so the map stays airy.
-			RectF r = new RectF(sx - tw / 2 - 10 * dp, sy - th * 0.6f - 8 * dp, sx + tw / 2 + 10 * dp, sy + th * 0.6f + 8 * dp);
+			// v2.162: under the town's point, so a pin set on the town leaves its name readable.
+			float my = sy + th * 0.6f + 2 * dp;
+			RectF r = new RectF(sx - tw / 2 - 10 * dp, my - th * 0.6f - 8 * dp, sx + tw / 2 + 10 * dp, my + th * 0.6f + 8 * dp);
 			boolean free = true;
 			for (RectF u : used)
 				if (RectF.intersects(u, r)) {
@@ -1435,14 +1473,17 @@ final class MapView extends View {
 				}
 			if (!free) continue;
 			used.add(r);
+			tBoxes.add(new RectF(r.left + 4 * dp, r.top + 4 * dp, r.right - 4 * dp, r.bottom - 4 * dp));
+			tIdx.add(i);
 			drawn++;
-			float by = sy + th * 0.35f;
+			float by = my + th * 0.35f;
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(3 * dp);
-			paint.setColor(night ? 0xCC1E2420 : 0xE6FFFFFF);
+			// v2.162 (Viorel): the names look the same in the dark theme too.
+			paint.setColor(0xE6FFFFFF);
 			c.drawText(tName[i], sx - tw / 2, by, paint);
 			paint.setStyle(Paint.Style.FILL);
-			paint.setColor(night ? 0xFFF0F2F0 : 0xFF2E3330);
+			paint.setColor(0xFF2E3330);
 			c.drawText(tName[i], sx - tw / 2, by, paint);
 		}
 	}

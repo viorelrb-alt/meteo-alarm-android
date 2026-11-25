@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.161 · 25.11.2026
+Súčasná verzia: v.2.162 · 25.11.2026
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
 NASTAVENIA

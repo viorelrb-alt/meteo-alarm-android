@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.161 · 25.11.2026
+Jelenlegi verzió: v.2.162 · 25.11.2026
 BEÁLLÍTÁSOK
 - Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
 ÉRTESÍTÉSEK

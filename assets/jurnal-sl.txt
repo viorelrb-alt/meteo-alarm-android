@@ -1,4 +1,4 @@
-Trenutna različica: v.2.161 · 25.11.2026
+Trenutna različica: v.2.162 · 25.11.2026
 GLAVNI ZASLON
 - Podatki o potresu: dotik polja Potres jih odpre na glavnem zaslonu: zemljevid, pod njim cone zaznavanja in zgodovina vrednosti; barvni kvadrat ali zemljevid jih odpre na celem zaslonu, kot potres iz ☰ › Potresi. V Romuniji, Franciji, Italiji, na Nizozemskem, v Švici in Grčiji uradne vrednosti najprej prihajajo od državnega inštituta (INFP, BCSF, INGV, KNMI, SED, NOA), nato od EMSC. V Romuniji tudi potresi okoli države dobijo vrednost INFP (z infp.ro).
 NASTAVITVE

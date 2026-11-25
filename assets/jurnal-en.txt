@@ -1,4 +1,4 @@
-Current version: v.2.161 · 25.11.2026
+Current version: v.2.162 · 25.11.2026
 MAIN SCREEN
 - Button names: a round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
@@ -25,7 +25,7 @@ SETTINGS
 - Log: size, lines and errors on a card; See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save at the bottom of the screen. Fixed errors stay at the end of the log and are not counted; network problems are warnings.
 - Themes: Monochrome (white, black and grey; graphite when dark), Pink, Yellow, Green, Blue and Violet, each light and dark, with the buttons in a contrasting colour; the dots in ☰ › Theme have the buttons' colour.
 TOWNS
-- Map search: the magnifier opens the map with the search at the bottom; a tap on a place shows its temperature, Details (the next days) and Add. The map is plain and light, with the towns' names written big (also on the parcels' map). Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
+- Map search: the magnifier opens the map with the search at the bottom; a tap on a place or on a town's name shows its temperature, Details (the next days) and Add. The map is plain and light, with the towns' names written big (also on the parcels' map). Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
 - Town cards: on a tablet and in landscape they are as wide as their text and stand in rows and columns; in portrait on a phone a name too long gets smaller letters; in landscape the search keeps its portrait size.
 - Towns list: the town button opens the list, in the theme's colour; Select deletes one or more (the last one stays), and the ⌃⌄ sign held and dragged up or down changes the order; each town keeps its saved weather.
 UPDATES

@@ -56,6 +56,10 @@ public final class Villages {
 		return name[i];
 	}
 
+	public String county(int i) {
+		return county[i];
+	}
+
 	public float lat(int i) {
 		return lat[i];
 	}

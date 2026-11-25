@@ -820,6 +820,16 @@ public final class PlacesActivity extends Activity {
 				pickPoint(la, lo);
 			}
 		});
+		// v2.162 (Viorel): a tap on a town's name picks that very town (no guessing from the point).
+		map.setOnTownTap(new MapView.TownTap() {
+			public void town(String name, String county, double la, double lo) {
+				hideKeys();
+				results.setVisibility(View.GONE);
+				++searchSeq;
+				Log.i(PlacesActivity.this, "LOC", "hartă: atins numele " + name);
+				showPlace(new Cities.City(county, name, Math.round(la * 10000) / 10000.0, Math.round(lo * 10000) / 10000.0));
+			}
+		});
 		root.addView(map, new FrameLayout.LayoutParams(-1, -1));
 		View back = fab("back", Tr.t("Back", "Înapoi"), new Runnable() {
 			public void run() {
