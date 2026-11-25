@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.218 · 25.11.2026
+Trenutačna verzija: v.2.220 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ⚙︎ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
@@ -42,6 +42,8 @@ POSTAVKE
 - Teme: 6 tema s vlastitom pozadinom, karticama i bojom (Grafit, Božur, Med, Šuma, Ocean, Lavanda), svaka svijetla i tamna; točke u ⚙︎ › Tema imaju boju teme.
 - Zapisnik: veličina, retci i pogreške na kartici; Pogledaj zapisnik otvara retke (Sve, Pogreške, Danas, Jučer; dugi dodir kopira redak); Dijeli i Spremi na dnu zaslona. Ispravljene pogreške su na kraju zapisnika i ne broje se; problemi mreže su upozorenja.
 - Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
+WIDGETI
+- Tema aplikacije: drži widget › Postavke, ili ⚙︎ › Widgeti: mjesto, pozadina, boje (prema vremenu, telefona, tema aplikacije ili tamne).
 
 Verzija 1.4 (v.1.400 – v.1.520)
 AŽURIRANJA

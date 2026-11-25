@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Na mapě Pozemků, pod ＋ a − (na šířku obě v jednom řádku). Vždy jen jedna vrstva; data: Open-Meteo.
 Automatic brightness is on	Automatický jas je zapnutý
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Ukáže lištu jasu vlevo; klepnutí na ☀ na jejím konci vrátí obrazovce automatický jas (☀ zežloutne, zpráva to potvrdí).
+The app's theme	Motiv aplikace
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Podrž widget › Nastavení, nebo ⚙︎ › Widgety: obec, pozadí, barvy (podle počasí, telefonu, motiv aplikace nebo tmavé).

@@ -137,7 +137,7 @@ final class QuakeCard {
 		map.setClipToOutline(true);
 		GradientDrawable mb = new GradientDrawable();
 		mb.setCornerRadius(16 * dp);
-		mb.setColor(0xFF1B2430);
+		mb.setColor(Theme.card(dark)); // v2.220: the theme's colour under the map
 		map.setBackground(mb);
 		map.setOutlineProvider(android.view.ViewOutlineProvider.BACKGROUND);
 		int inner = width - (int) (32 * dp);
@@ -391,7 +391,7 @@ final class QuakeCard {
 		final Dialog d = new Dialog(ctx, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
 		d.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		FrameLayout root = new FrameLayout(ctx);
-		root.setBackgroundColor(0xFF1B2430);
+		root.setBackgroundColor(Theme.page(dark)); // v2.220
 		final MapView mv = new MapView(ctx);
 		mv.setDark(dark);
 		mv.setNames(true);
@@ -799,7 +799,7 @@ final class QuakeCard {
 		}
 		GradientDrawable mb = new GradientDrawable();
 		mb.setCornerRadius(radius);
-		mb.setColor(0xFF1B2430);
+		mb.setColor(Theme.card(dark)); // v2.220: the theme's colour under the map
 		map.setBackground(mb);
 		if (radius > 0) {
 			map.setClipToOutline(true);

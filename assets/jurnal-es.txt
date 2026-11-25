@@ -1,4 +1,4 @@
-Versión actual: v.2.218 · 25.11.2026
+Versión actual: v.2.220 · 25.11.2026
 ACTUALIZACIONES
 - Caja Nueva versión: una caja corta arriba en ⚙︎ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
@@ -42,6 +42,8 @@ PARCELAS
 - Historial y pronóstico: arrastra el indicador a un día pasado; sus valores aparecen en un recuadro bajo el gráfico y a los 10 s vuelve a hoy.
 - Mejoras de diseño y corrección de los errores comunicados.
 - Papelera: una parcela borrada va a la papelera con ↺ junto al botón GPS (el punto rojo las cuenta) y se guarda 15 días; el botón redondo la restaura (si una parcela guardada tiene su nombre: nombre nuevo o reemplazarla).
+WIDGETS
+- Tema de la aplicación: mantén pulsado el widget › Ajustes, o ⚙︎ › Widgets: localidad, fondo, colores (según el tiempo, del teléfono, tema de la aplicación u oscuro).
 
 Versión 1.4 (v.1.400 – v.1.520)
 ACTUALIZACIONES

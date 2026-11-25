@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	На картата на Парцелите, под ＋ и − (в хоризонтален режим двата на един ред). По един слой наведнъж; данни: Open-Meteo.
 Automatic brightness is on	Автоматичната яркост е включена
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Показва лентата за яркост вляво; докосване на ☀ в края ѝ връща автоматичната яркост на екрана (☀ става жълто, съобщение го потвърждава).
+The app's theme	Темата на приложението
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Задръж уиджета › Настройки, или ⚙︎ › Уиджети: селище, фон, цветове (според времето, на телефона, темата на приложението или тъмни).

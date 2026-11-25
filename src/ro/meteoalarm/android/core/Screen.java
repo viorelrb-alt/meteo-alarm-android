@@ -3584,7 +3584,7 @@ public final class Screen {
 	private int stripe(int bar) {
 		// Design audit (2026-11-23): the codes' colours and INFORMARE's blue from Theme (one token each).
 		for (int i = 0; i < 3; i++) if (bar == BAR_LIGHT[i] || bar == BAR_DARK[i]) return Theme.warnStrong(i + 1);
-		if (bar == QUAKE_LIGHT || bar == QUAKE_DARK) return 0xFF9A8F86;
+		if (bar == QUAKE_LIGHT || bar == QUAKE_DARK) return Theme.dim(dark); // v2.220: the theme's grey
 		return Theme.INFO;
 	}
 
@@ -3621,7 +3621,7 @@ public final class Screen {
 	private void drawQuakeBox(Quakes.Quake q, float x, float y, float bw, float h, float f) {
 		// v2.046 (Viorel): the stripe in the colour of the map's zone the town is in; v2.047: brown outside zone III.
 		int fl = (int) Math.round(q.felt);
-		int strong = fl >= 3 ? levelColor(fl) : 0xFF9A8F86;
+		int strong = fl >= 3 ? levelColor(fl) : Theme.dim(dark); // v2.220
 		float hb = alertFrame(x, y, bw, h, f, strong, Tr.t("EARTHQUAKE", "CUTREMUR"), true);
 		float lx = x + 24, room = bw - 36;
 		String l1 = "M " + dec(q.mag) + " · " + T.weekdayTime(q.time, clk12);
@@ -4548,7 +4548,7 @@ public final class Screen {
 	private void drawPressure(float cx, float top, float bw, float body) {
 		boolean en = T.en;
 		float r = Math.min(bw * 0.36f, body * 0.40f), cy = top + body * 0.50f;
-		int track = dark ? 0xFF4F4E4A : Gfx.GRAYD;
+		int track = mix(c.page, c.ink, dark ? 0.25f : 0.15f); // v2.220: the theme's grey
 		g.arc(cx, cy, r, 135, 270, 9, track);
 		for (int i = 0; i <= 20; i++) {
 			double a = Math.toRadians(135 + 270.0 * i / 20);

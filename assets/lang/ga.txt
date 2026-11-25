@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Ar léarscáil na bPáirceanna, faoi ＋ agus − (i dtírdhreach an dá cheann ar aon ró amháin). Sraith amháin ag an am; sonraí: Open-Meteo.
 Automatic brightness is on	Tá gile uathoibríoch ar siúl
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Taispeánann sé barra na gile ar chlé; tugann tapáil ar ☀ ag a deireadh an ghile uathoibríoch ar ais (casann ☀ buí, deimhníonn fógra é).
+The app's theme	Téama na haipe
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Coinnigh an ghiuirléid › Socruithe, nó ⚙︎ › Giuirléidí: baile, cúlra, dathanna (de réir na haimsire, an fhóin, téama na haipe nó dorcha).

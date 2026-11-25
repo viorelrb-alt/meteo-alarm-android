@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.218";
+	static final String VERSION = "Meteo Alarm Android v2.220";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -1526,12 +1526,13 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	 * for the level, neutral gray for the track, dark neutral for the sun), as the phone's own bar.
 	 */
 	private void barColours() {
-		if (android.os.Build.VERSION.SDK_INT < 31) return;
-		int f = sysColour("system_accent1_100"), t = sysColour("system_neutral2_500"), i = sysColour("system_neutral1_900");
-		if (f != 0) s.barFill = f;
-		if (t != 0) s.barTrack = t;
-		if (i != 0) s.barIcon = i;
+		// v2.220 (Viorel): the theme's colours (as the chosen buttons), not the phone's.
+		boolean d = s.dark;
+		s.barFill = ro.meteoalarm.android.core.Theme.pastel(d);
+		s.barTrack = ro.meteoalarm.android.core.Theme.dim(d);
+		s.barIcon = ro.meteoalarm.android.core.Theme.onPastel(d);
 	}
+
 
 	private int sysColour(String name) {
 		int id = getResources().getIdentifier(name, "color", "android");
@@ -3668,6 +3669,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				prefs.edit().putInt("palette", k).apply();
 				Log.i(MainActivity.this, "TEMA", "temă: " + ro.meteoalarm.android.core.Theme.NAMES[k][1]);
 				applySettings();
+				Widget.show(MainActivity.this); // v2.220: the widgets in the app's theme follow it
 				view.invalidate();
 				onMenu();
 			}
@@ -4075,9 +4077,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				if (k < nt) {
 					prefs.edit().putInt("palette", k).apply();
 					Log.i(MainActivity.this, "TEMA", "temă: " + ro.meteoalarm.android.core.Theme.NAMES[k][1]);
+					Widget.show(MainActivity.this); // v2.220
 				} else if (k > nt) {
 					String[] modes = { "light", "dark", auto };
 					prefs.edit().putString("theme", modes[k - nt - 1]).apply();
+					Widget.show(MainActivity.this); // v2.220
 				}
 				applySettings();
 				view.invalidate();
@@ -4853,8 +4857,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Temperatura mare și, în dreapta, următoarele 4 zile (câte un icon) sau ore, după alegerea din setări: Afișare starea vremii. Pe un singur rând devine widgetul 4x1."));
 		help.entry(mini("warn"), Tr.t("Codes on widgets", "Coduri pe widget-uri"), Tr.t("Three coloured lines for the warning codes, on every widget. Without codes: one blue line with the first information still in force (e.g. Frost).",
 				"Trei linii colorate pentru codurile de avertizare, pe toate widget-urile. Fără coduri: o linie albastră cu prima informare încă valabilă (ex. Brumă)."));
-		help.entry(mini("gear"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours.",
-				"Ține apăsat pe widget › Setări sau ⚙︎ › Widget-uri: localitatea, fundalul, culorile."));
+		help.entry(mini("gear"), Tr.t("Widget settings", "Setările widget-ului"), Tr.t("Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).",
+				"Ține apăsat pe widget › Setări sau ⚙︎ › Widget-uri: localitatea, fundalul, culorile (după vreme, ale telefonului, tema aplicației sau închis)."));
 		help.entry(mini("auto"), Tr.t("Refreshing by itself", "Reîmprospătare automată"), Tr.t("Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.",
 				"La 15 minute cu ecranul aprins, la 30 cu el stins; MET Norway când Open-Meteo e ocupat."));
 		help.section(Tr.t("Settings & System", "Setări & Sistem"));

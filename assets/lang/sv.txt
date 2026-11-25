@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	På kartan över Skiften, under ＋ och − (i liggande läge båda på en rad). Ett lager i taget; data: Open-Meteo.
 Automatic brightness is on	Automatisk ljusstyrka är på
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Visar ljusstyrkelisten till vänster; ett tryck på ☀ i dess ände ger skärmen den automatiska ljusstyrkan igen (☀ blir gul, ett meddelande bekräftar det).
+The app's theme	Appens tema
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Håll på widgeten › Inställningar, eller ⚙︎ › Widgetar: ort, bakgrund, färger (efter vädret, telefonens, appens tema eller mörka).

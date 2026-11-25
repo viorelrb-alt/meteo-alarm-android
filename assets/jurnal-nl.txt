@@ -1,4 +1,4 @@
-Huidige versie: v.2.218 · 25.11.2026
+Huidige versie: v.2.220 · 25.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ⚙︎ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 - Helderheid: toont de helderheidsbalk links; een tik op ☀ aan het eind geeft het scherm de automatische helderheid terug (☀ wordt geel, een melding bevestigt het).
@@ -42,6 +42,8 @@ PLAATSEN
 UPDATES
 - Vak Nieuwe versie: bovenaan ⚙︎ een kort vak als er een nieuwe versie is; een tik erop start de download.
 - Ontwerpverbeteringen en oplossingen voor gemelde fouten.
+WIDGETS
+- Thema van de app: houd de widget ingedrukt › Instellingen, of ⚙︎ › Widgets: plaats, achtergrond, kleuren (volgens het weer, van de telefoon, thema van de app of donker).
 
 Versie 1.4 (v.1.400 – v.1.520)
 BOERENMODUS

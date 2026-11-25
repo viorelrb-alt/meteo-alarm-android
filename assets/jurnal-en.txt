@@ -1,4 +1,4 @@
-Current version: v.2.218 · 25.11.2026
+Current version: v.2.220 · 25.11.2026
 MAIN SCREEN
 - Bottom buttons: their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.
 - Brightness: shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).
@@ -42,6 +42,8 @@ TOWNS
 UPDATES
 - New version box: a short box at the top of ⚙︎ when a new version exists; a tap on it starts the download.
 - Design improvements and fixes for reported bugs.
+WIDGETS
+- The app's theme: hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).
 
 Version 1.4 (v.1.400 – v.1.520)
 FARMER MODE

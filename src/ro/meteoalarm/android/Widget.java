@@ -125,7 +125,7 @@ public class Widget extends AppWidgetProvider {
 		boolean bg;
 		/** How solid the background is, 0–100 %. */
 		int alpha = 60;
-		/** "weather" (by the weather, Viorel's item 20), "phone" (the phone's colours), "dark". */
+		/** "weather" (by the weather, Viorel's item 20), "phone" (the phone's colours), "theme" (the app's, v2.220), "dark". */
 		String colors = "weather";
 		/** "auto", "white", "black". */
 		String font = "auto";
@@ -548,7 +548,18 @@ public class Widget extends AppWidgetProvider {
 			int c = systemColor(ctx, night ? "system_accent1_800" : "system_accent1_100", night ? 0xFF2D2D30 : 0xFFF2F2F2);
 			return new int[] { c, c };
 		}
-		if (st.colors.equals("dark") || w == null) return new int[] { 0xFF2A2A2D, 0xFF1C1C1E };
+		// v2.220 (Viorel): "theme": the app's theme (light or dark as in the app); "dark" in the theme's hue too.
+		int pal = Fetcher.prefs(ctx).getInt("palette", 0);
+		ro.meteoalarm.android.core.Theme.pal = pal;
+		if (st.colors.equals("theme")) {
+			String th = Fetcher.prefs(ctx).getString("theme", "auto");
+			boolean night = (ctx.getResources().getConfiguration().uiMode & android.content.res.Configuration.UI_MODE_NIGHT_MASK)
+					== android.content.res.Configuration.UI_MODE_NIGHT_YES;
+			boolean d = th.equals("dark") || (!th.equals("light") && night);
+			return new int[] { ro.meteoalarm.android.core.Theme.card(d), ro.meteoalarm.android.core.Theme.page(d) };
+		}
+		if (st.colors.equals("dark") || w == null)
+			return new int[] { ro.meteoalarm.android.core.Theme.hued(0xFF2A2A2D, pal), ro.meteoalarm.android.core.Theme.hued(0xFF1C1C1E, pal) };
 		return weatherColors(w.code, w.isDay);
 	}
 

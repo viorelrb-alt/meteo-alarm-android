@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	A Parcellák térképén, a ＋ és − (fekvőben a kettő egy sorban) alatt. Egyszerre egy réteg; adatok: Open-Meteo.
 Automatic brightness is on	Az automatikus fényerő be van kapcsolva
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Megmutatja a fényerősávot bal oldalt; a végén lévő ☀ megérintése visszaadja a képernyőnek az automatikus fényerőt (a ☀ sárga lesz, egy üzenet megerősíti).
+The app's theme	Az alkalmazás témája
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Tartsd lenyomva a widgetet › Beállítások, vagy ⚙︎ › Widgetek: település, háttér, színek (időjárás szerint, a telefoné, az alkalmazás témája vagy sötét).

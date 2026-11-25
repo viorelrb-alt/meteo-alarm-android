@@ -1,4 +1,4 @@
-Současná verze: v.2.218 · 25.11.2026
+Současná verze: v.2.220 · 25.11.2026
 AKTUALIZACE
 - Pole Nová verze: krátké pole nahoře v ⚙︎, když existuje nová verze; klepnutí na něj spustí stahování.
 HLAVNÍ OBRAZOVKA
@@ -42,6 +42,8 @@ POZEMKY
 - Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
 - Vrstvy počasí: na mapě pozemků se pole pod ＋ a − otevře se Satelitem, Mapou, Oblačností, Teplotami (barvy) a Deštěm (mm za hodinu) a pak se složí na vaši volbu; jedna vrstva najednou, s názvem, časem a legendou nad kartami; Déšť se zapne jen tehdy, když prší teď nebo v příštích 2 hodinách (místo radaru).
 - Vylepšení vzhledu a opravy nahlášených chyb.
+WIDGETY
+- Motiv aplikace: podrž widget › Nastavení, nebo ⚙︎ › Widgety: obec, pozadí, barvy (podle počasí, telefonu, motiv aplikace nebo tmavé).
 
 Verze 1.4 (v.1.400 – v.1.520)
 AKTUALIZACE

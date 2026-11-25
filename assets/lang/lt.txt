@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Sklypų žemėlapyje, po ＋ ir − (gulsčiai abu vienoje eilutėje). Vienu metu vienas sluoksnis; duomenys: Open-Meteo.
 Automatic brightness is on	Automatinis ryškumas įjungtas
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Rodo ryškumo juostą kairėje; palietus ☀ jos gale ekranui grąžinamas automatinis ryškumas (☀ pagelsta, pranešimas tai patvirtina).
+The app's theme	Programos tema
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Laikyk valdiklį › Nustatymai, arba ⚙︎ › Valdikliai: vietovė, fonas, spalvos (pagal orus, telefono, programos tema arba tamsios).

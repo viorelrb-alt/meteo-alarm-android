@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.218 · 25.11.2026
+Geçerli sürüm: v.2.220 · 25.11.2026
 ANA EKRAN
 - Alt düğmeler: ekran açılınca adları 3 saniye altlarında görünür, sonra yalnızca düğmeler kalır; yeniden görmek için kapsülü yukarı çekin. Açık düğme basılı görünür, halkalı.
 - Ana ekranlar: adın altındaki sekmeler (yatayda altta): yerleşim yeri ve her parsel için bir tane; dokunmak veya yana kaydırmak ekranı değiştirir, + yeni parsel kutusunu açar. Hepsi sığmadığında satır her 3 saniyede bir ilerler; üzerine konan bir parmak onu bir süre durdurur.
@@ -37,6 +37,8 @@ PARSELLER
 - Parsel koordinatları: düzenleme sayfasında her noktanın GPS koordinatları yazılabilir, altında uydu görünümü parseli gösterir.
 - Parseli düzenle: kalem parselin sayfasını açar: ad, bitki (ekim tarihinin sezonuna göre liste veya Başka bitki…), ekim tarihi, alan; köşeler haritada taşınır.
 - Çöp kutusu: silinen bir parsel GPS düğmesinin yanındaki ↺ işaretli çöp kutusuna gider (kırmızı nokta onları sayar) ve 15 gün saklanır; yuvarlak düğme onu geri yükler (kayıtlı bir parselde aynı ad varsa: yeni ad ya da değiştir).
+WIDGET'LAR
+- Uygulamanın teması: widget'a basılı tutun › Ayarlar veya ⚙︎ › Widget'lar: yerleşim, arka plan, renkler (havaya göre, telefonun, uygulamanın teması veya koyu).
 YERLER
 - Haritada arama: büyüteç altta aramayla haritayı açar; bir yere ya da bir yerleşimin adına dokunmak sıcaklığını, Ayrıntılar'ı (sonraki günler) ve Ekle'yi gösterir. Harita sade ve açıktır, yer adları büyük yazılır (parsellerin haritasında da). Başka yerler yalnızca yazılan ad gibi başlıyorlarsa görünür (en az 6 harf ya da adın %60'ı).
 - Yer kartları: tablette ve yatayda metinleri kadar geniştir ve satır ve sütunlarda durur; telefonda dikeyde çok uzun bir ad daha küçük harf alır; yatayda arama dikeydeki boyutunu korur.

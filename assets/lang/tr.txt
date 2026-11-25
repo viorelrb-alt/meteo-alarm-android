@@ -1781,3 +1781,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Parseller haritasında, ＋ ve − (yatayda ikisi tek satırda) altında. Aynı anda tek katman; veriler: Open-Meteo.
 Automatic brightness is on	Otomatik parlaklık açık
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Soldaki parlaklık çubuğunu gösterir; ucundaki ☀ işaretine dokunmak ekrana otomatik parlaklığı geri verir (☀ sarıya döner, bir bildirim bunu doğrular).
+The app's theme	Uygulamanın teması
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Widget'a basılı tutun › Ayarlar veya ⚙︎ › Widget'lar: yerleşim, arka plan, renkler (havaya göre, telefonun, uygulamanın teması veya koyu).

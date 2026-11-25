@@ -37,7 +37,9 @@ public final class LogActivity extends Activity {
 		Fonts.init(this);
 		en = Lang.en(this);
 		boolean dark = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
-		int bg = dark ? 0xFF1C1C1E : 0xFFFFFFFF, ink = dark ? 0xFFEDEDED : 0xFF111111;
+		// v2.220 (Viorel): the app's theme colours.
+		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(this).getInt("palette", 0);
+		int bg = ro.meteoalarm.android.core.Theme.page(dark), ink = ro.meteoalarm.android.core.Theme.ink(dark);
 		float dp = getResources().getDisplayMetrics().density;
 		Log.i(this, "JURNAL", "deschis");
 
@@ -56,7 +58,7 @@ public final class LogActivity extends Activity {
 		sub.setTypeface(Fonts.reg(this));
 		sub.setText(Tr.t("Everything the app did in the last 5 days; older errors kept 10 days.", "Tot ce a făcut aplicația în ultimele 5 zile; erorile mai vechi rămân 10 zile."));
 		sub.setTextSize(13);
-		sub.setTextColor(dark ? 0xFFA0A0A0 : 0xFF666666);
+		sub.setTextColor(ro.meteoalarm.android.core.Theme.dim(dark));
 		sub.setPadding(0, (int) (2 * dp), 0, (int) (8 * dp));
 		col.addView(sub);
 

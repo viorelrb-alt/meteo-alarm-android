@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.218 · 25.11.2026
+Versiunea curentă: v.2.220 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ⚙︎ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
@@ -42,6 +42,8 @@ SETĂRI
 - Teme: 6 teme cu fundalul, casetele și culoarea lor (Grafit, Bujor, Miere, Pădure, Ocean, Lavandă), fiecare luminoasă și întunecată; bulinele din ⚙︎ › Temă au culoarea temei.
 - Tutorial: în caseta Alerte: un tutorial scurt al fiecărei zone din ecrane. În curând (deocamdată gri).
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
+WIDGET-URI
+- Tema aplicației: ține apăsat pe widget › Setări sau ⚙︎ › Widget-uri: localitatea, fundalul, culorile (după vreme, ale telefonului, tema aplicației sau închis).
 
 Versiunea 1.4 (v.1.400 – v.1.520)
 ACTUALIZĂRI

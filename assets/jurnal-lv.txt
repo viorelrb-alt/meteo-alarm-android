@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.218 · 25.11.2026
+Pašreizējā versija: v.2.220 · 25.11.2026
 ATJAUNINĀJUMI
 - Lodziņš Jauna versija: īss lodziņš ⚙︎ augšā, kad ir jauna versija; pieskāriens tam sāk lejupielādi.
 GALVENAIS EKRĀNS
@@ -33,6 +33,8 @@ LAUKI
 - Statistika galvenajā ekrānā: tā atveras zem darbības statusa (ainavā pa kreisi); ‹ to aizver, bet cita lauka cilne to saglabā.
 - Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, pilienu žūšana (ΔT), vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
 - Vēsture un prognoze: velciet rādītāju uz pagājušu dienu; tās vērtības parādās lodziņā zem grafika, un pēc 10 s tas atgriežas uz šodienu.
+LOGRĪKI
+- Lietotnes tēma: turi logrīku › Iestatījumi, vai ⚙︎ › Logrīki: vieta, fons, krāsas (pēc laikapstākļiem, tālruņa, lietotnes tēma vai tumšas).
 PAZIŅOJUMI
 - Jauna versija: ar ieslēgtiem paziņojumiem lietotne pārbauda GitHub katru dienu 2 nedēļas pēc atjaunināšanas, tad reizi 7 dienās, un paziņo par jaunu versiju Android paziņojumos; pieskāriens atver Pārbaudīt atjauninājumus.
 - Savi kanāli: laikapstākļu brīdinājumiem, lietum un sniegam, zemestrīcēm, laukiem un atjauninājumiem katram ir savs kanāls tālruņa iestatījumos; varat izslēgt vienu un paturēt pārējos.

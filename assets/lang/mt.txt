@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Fuq il-mappa tal-Għelieqi, taħt ＋ u − (f'landscape it-tnejn fuq ringiela waħda). Saff wieħed kull darba; data: Open-Meteo.
 Automatic brightness is on	Il-luminożità awtomatika hija mixgħula
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Turi l-bar tal-luminożità fuq ix-xellug; mess fuq ☀ fit-tarf tiegħu jagħti lura lill-iskrin il-luminożità awtomatika (☀ isir isfar, avviż jikkonfermah).
+The app's theme	It-tema tal-app
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Żomm il-widget › Settings, jew ⚙︎ › Widgets: lokalità, sfond, kuluri (skont it-temp, tat-telefon, it-tema tal-app jew skur).

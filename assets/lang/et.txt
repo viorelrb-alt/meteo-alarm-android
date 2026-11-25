@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Põldude kaardil, ＋ ja − (rõhtpaigutuses mõlemad ühes reas) all. Korraga üks kiht; andmed: Open-Meteo.
 Automatic brightness is on	Automaatne heledus on sees
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Näitab heleduse riba vasakul; puudutus ☀-le selle otsas annab ekraanile tagasi automaatse heleduse (☀ muutub kollaseks, teade kinnitab seda).
+The app's theme	Rakenduse teema
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Hoia vidinat › Seaded, või ⚙︎ › Vidinad: asula, taust, värvid (ilma järgi, telefoni, rakenduse teema või tume).

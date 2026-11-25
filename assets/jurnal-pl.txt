@@ -1,4 +1,4 @@
-Obecna wersja: v.2.218 · 25.11.2026
+Obecna wersja: v.2.220 · 25.11.2026
 AKTUALIZACJE
 - Pole Nowa wersja: krótkie pole u góry ⚙︎, gdy jest nowa wersja; dotknięcie go rozpoczyna pobieranie.
 DZIAŁKI
@@ -42,6 +42,8 @@ USTAWIENIA
 - Samouczek: w karcie Alerty: krótki samouczek tego, co pokazuje każda część ekranów. Wkrótce (na razie szare).
 - Strona Trzęsienia ziemi: otwiera się od razu z ostatnimi listami zapisanymi w telefonie i aktualizuje je w tle.
 - Ulepszenia wyglądu i poprawki zgłoszonych błędów.
+WIDŻETY
+- Motyw aplikacji: przytrzymaj widżet › Ustawienia albo ⚙︎ › Widżety: miejscowość, tło, kolory (według pogody, telefonu, motyw aplikacji lub ciemne).
 
 Wersja 1.4 (v.1.400 – v.1.520)
 AKTUALIZACJE

@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.218 · 25.11.2026
+Verżjoni attwali: v.2.220 · 25.11.2026
 AĠĠORNAMENTI
 - Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ⚙︎ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
@@ -42,6 +42,8 @@ SKRIN EWLIENI
 - Mappa tat-temp: fl-aħħar tal-iskrin ewlieni (orizzontali fuq il-folja bil-kaxxi): OpenStreetMap fil-livell tat-triq madwar il-post eżatt tal-lokalità tal-iskrin (GPS għall-ewwel waħda) jew, fuq l-iskrin ta' għalqa, l-għalqa bil-kontorn tagħha; is-saff trasparenti. Il-mappa tibqa' wieqfa; data: Open-Meteo. Sħab, Temperaturi u Xita, wieħed kull darba; tektika fuq dak mixgħul titfih. Xita tkun griża u maqtugħa meta ma tkunx qed tagħmel xita fil-qrib issa u lanqas fis-sagħtejn li ġejjin. ▶ iddoqq is-sigħat (6 qabel u 6 wara issa) waħda waħda; tektika fuq siegħa turiha.
 - Skrins ewlenin: tabs taħt l-isem (mimduda isfel): il-post u wieħed għal kull biċċa art; għafsa jew swipe mal-ġenb ibiddel l-iskrin, + jiftaħ il-kaxxa ta' biċċa art ġdida. Meta ma jidħlux kollha, ir-ringiela timxi waħda 'l quddiem kull 3 sekondi; saba' fuqha jwaqqafha għal ftit.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
+WIDGETS
+- It-tema tal-app: żomm il-widget › Settings, jew ⚙︎ › Widgets: lokalità, sfond, kuluri (skont it-temp, tat-telefon, it-tema tal-app jew skur).
 
 Verżjoni 1.4 (v.1.400 – v.1.520)
 AĠĠORNAMENTI

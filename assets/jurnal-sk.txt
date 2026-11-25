@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.218 · 25.11.2026
+Súčasná verzia: v.2.220 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ⚙︎, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
@@ -11,6 +11,8 @@ HLAVNÁ OBRAZOVKA
 - Tlačidlo Obce: okrúhle tlačidlo s ikonou domčekov (na výšku vpravo od názvu, na šírku na hornom páse, pred jeho rohom) otvorí zoznam obcí.
 - Tlačidlo „aktualizované“: pláva nad stránkou vpravo: na výšku pod výstrahami (bez nich pod radom obcí), na šírku pod hodinami. Pri aktualizácii sa jeho šípka točí, aj ako malý krúžok; potom sa na 4 sekundy ukáže čas a zloží sa do ⟳. Ťuknutie aktualizuje.
 - Viac obcí: každá obec zo zoznamu má svoju hlavnú obrazovku; potiahnutie doľava alebo doprava po aktuálnom počasí prejde na ďalšiu, v poradí zoznamu.
+MINIAPLIKÁCIE
+- Motív aplikácie: podrž miniaplikáciu › Nastavenia, alebo ⚙︎ › Miniaplikácie: obec, pozadie, farby (podľa počasia, telefónu, motív aplikácie alebo tmavé).
 NASTAVENIA
 - Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke. Opravené chyby sú na konci denníka a nepočítajú sa; problémy siete sú upozornenia.
 - Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.

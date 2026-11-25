@@ -1328,7 +1328,7 @@ final class StatsPage {
 					cv.drawCircle(x, y, px(10), pt);
 					pt.setStyle(Paint.Style.STROKE);
 					pt.setStrokeWidth(2.5f * dp);
-					pt.setColor(dark ? 0xFF333333 : 0xFF666666);
+					pt.setColor(ro.meteoalarm.android.core.Theme.dim(dark)); // v2.220
 					cv.drawCircle(x, y, px(10), pt);
 				}
 			}

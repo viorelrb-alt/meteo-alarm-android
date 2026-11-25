@@ -1,4 +1,4 @@
-Versão atual: v.2.218 · 25.11.2026
+Versão atual: v.2.220 · 25.11.2026
 ATUALIZAÇÕES
 - Caixa Nova versão: uma caixa curta no topo de ⚙︎ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
@@ -42,6 +42,8 @@ PARCELAS
 - Lixo: uma parcela apagada vai para o caixote com ↺ junto ao botão GPS (o ponto vermelho conta-as) e fica 15 dias; o botão redondo restaura-a (se uma parcela guardada tiver o seu nome: nome novo ou substituir).
 - Melhorias de design e correção dos erros comunicados.
 - O olho, no canto superior direito de cada cartão, abre o ecrã principal da parcela. Um toque noutro sítio do cartão aproxima o mapa da parcela e mostra os seus pontos.
+WIDGETS
+- Tema da aplicação: mantém premido o widget › Definições, ou ⚙︎ › Widgets: localidade, fundo, cores (conforme o tempo, do telemóvel, tema da aplicação ou escuro).
 
 Versão 1.4 (v.1.400 – v.1.520)
 ATUALIZAÇÕES

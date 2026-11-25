@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.218 · 25.11.2026
+Jelenlegi verzió: v.2.220 · 25.11.2026
 BEÁLLÍTÁSOK
 - A Beállítások ablak: a ⚙︎ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
 - Útmutató: a Riasztások kártyán: rövid útmutató arról, mit mutat a képernyők egyes része. Hamarosan (egyelőre szürke).
@@ -10,6 +10,8 @@ BEÁLLÍTÁSOK
 - Súgó: a hosszú szövegek saját ikonos részekre vannak bontva, vagy 2 sort és az Összes mutatása ▾ gombot mutatják; fekvőben 2 oszlopban, és egy szakasz gombjára koppintva annak körvonala kétszer felvillan.
 - Települések: a ⚙︎ első kártyája (gazda módban: Települések & Parcellák, benne a parcellákkal). Egy sor a mutatott településsel; a ▾ megnyitja a többi főképernyős települést. Egy csillag levétele törli a települést és a képernyőjét (amíg 2 vagy több marad; az utolsó szürke és marad). A fölötte lévő Települések sor megnyitja a listát; a térképén a Megye ▾ egy megyében keres.
 - Témák: 6 téma saját háttérrel, kártyákkal és színnel (Grafit, Bazsarózsa, Méz, Erdő, Óceán, Levendula), mind világos és sötét; a ⚙︎ › Téma pöttyei a téma színét viselik.
+WIDGETEK
+- Az alkalmazás témája: tartsd lenyomva a widgetet › Beállítások, vagy ⚙︎ › Widgetek: település, háttér, színek (időjárás szerint, a telefoné, az alkalmazás témája vagy sötét).
 ÉRTESÍTÉSEK
 - Földrengések: 10 percenként ellenőrizve, éjjel kikapcsolt képernyővel is; a felülvizsgált magnitúdó frissíti az értesítést, és arra koppintva megnyílik a térkép.
 - Saját csatornák: az időjárási figyelmeztetések, eső és hó, földrengések, parcellák és frissítések mind saját csatornát kapnak a telefon beállításaiban; egyet kikapcsolhatsz, a többit megtartva.

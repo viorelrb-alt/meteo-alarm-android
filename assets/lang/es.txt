@@ -1965,3 +1965,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	En el mapa de Parcelas, bajo ＋ y − (en horizontal los dos en una fila). Una sola capa a la vez; datos: Open-Meteo.
 Automatic brightness is on	El brillo automático está activado
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Muestra la barra de brillo a la izquierda; un toque en ☀ en su extremo devuelve a la pantalla el brillo automático (☀ se vuelve amarillo, un aviso lo confirma).
+The app's theme	Tema de la aplicación
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Mantén pulsado el widget › Ajustes, o ⚙︎ › Widgets: localidad, fondo, colores (según el tiempo, del teléfono, tema de la aplicación u oscuro).

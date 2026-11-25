@@ -215,7 +215,7 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		// v5.24 (Viorel): the window itself is frosted glass; the screen behind it stays sharp.
 		panel.setBackground(Glass.frostBg(panel, 30 * dp, dark, dp, false));
 		GradientDrawable hb = new GradientDrawable();
-		hb.setColor(dark ? 0xFF6B6A65 : 0xFFAAAAAA);
+		hb.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.ink(dark), 0.3f)); // v2.220: the theme's colour
 		hb.setCornerRadius(2 * dp);
 		handle.setBackground(hb);
 		title.setText(head);

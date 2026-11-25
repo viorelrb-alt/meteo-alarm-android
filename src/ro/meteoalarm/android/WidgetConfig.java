@@ -461,6 +461,7 @@ public final class WidgetConfig extends Activity {
 	private String colorsName(String c) {
 		if (c.equals("phone")) return Tr.t("Match the phone's settings", "Potrivire la setările telefonului");
 		if (c.equals("dark")) return Tr.t("Dark", "Închis");
+		if (c.equals("theme")) return Tr.t("The app's theme", "Tema aplicației");
 		return Tr.t("By the weather", "După vreme");
 	}
 
@@ -471,10 +472,10 @@ public final class WidgetConfig extends Activity {
 	}
 
 	private void pickColors() {
-		final String[] keys = { "weather", "phone", "dark" };
-		String[] names = new String[3];
+		final String[] keys = { "weather", "phone", "theme", "dark" };
+		String[] names = new String[keys.length];
 		int cur = 0;
-		for (int k = 0; k < 3; k++) {
+		for (int k = 0; k < keys.length; k++) {
 			names[k] = colorsName(keys[k]);
 			if (keys[k].equals(set.colors)) cur = k;
 		}

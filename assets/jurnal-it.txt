@@ -1,4 +1,4 @@
-Versione attuale: v.2.218 · 25.11.2026
+Versione attuale: v.2.220 · 25.11.2026
 AGGIORNAMENTI
 - Riquadro Nuova versione: un breve riquadro in cima a ⚙︎ quando esiste una nuova versione; toccarlo avvia il download.
 IMPOSTAZIONI
@@ -42,6 +42,8 @@ SCHERMATA PRINCIPALE
 - Pulsante «aggiornato»: galleggia sopra la pagina, a destra: in verticale sotto le allerte (senza di esse sotto la riga delle località), in orizzontale sotto l'orologio. Durante l'aggiornamento la freccia gira, anche come piccolo cerchio; poi l'ora appare per 4 secondi e si riduce a ⟳. Un tocco aggiorna.
 - Pulsanti in basso: i loro nomi compaiono sotto per 3 secondi all'apertura della schermata, poi solo i pulsanti; trascina la capsula in su per rivederli. Il pulsante attivo sembra premuto, con un anello.
 - Schermate principali: schede sotto il nome (in orizzontale in basso): la località e una per particella; un tocco o uno scorrimento laterale cambia schermata, + apre la casella di una nuova particella. Quando non entrano tutti, la riga avanza di uno ogni 3 secondi; un dito sopra la ferma per un po'.
+WIDGET
+- Tema dell'app: tieni premuto il widget › Impostazioni, oppure ⚙︎ › Widget: località, sfondo, colori (in base al meteo, del telefono, tema dell'app o scuro).
 
 Versione 1.4 (v.1.400 – v.1.520)
 AGGIORNAMENTI

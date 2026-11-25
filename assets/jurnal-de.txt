@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.218 · 25.11.2026
+Aktuelle Version: v.2.220 · 25.11.2026
 AKTUALISIERUNGEN
 - Feld Neue Version: oben im ⚙︎ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
@@ -42,6 +42,8 @@ PARZELLEN
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
 - Wetterebenen: Auf der Karte der Parzellen öffnet sich das Feld unter ＋ und − mit Satellit, Karte, Wolken, Temperaturen (Farben) und Regen (mm pro Stunde) und klappt dann auf die Wahl zusammen; eine Ebene auf einmal, mit Name, Uhrzeit und Legende über den Karten; Regen schaltet sich nur ein, wenn es jetzt oder in den nächsten 2 Stunden regnet (statt des Radars).
+WIDGETS
+- Design der App: Widget gedrückt halten › Einstellungen, oder ⚙︎ › Widgets: Ort, Hintergrund, Farben (nach Wetter, des Telefons, Design der App oder dunkel).
 
 Version 1.4 (v.1.400 – v.1.520)
 BENACHRICHTIGUNGEN

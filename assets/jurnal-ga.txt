@@ -1,4 +1,4 @@
-Leagan reatha: v.2.218 · 25.11.2026
+Leagan reatha: v.2.220 · 25.11.2026
 BAILTE
 - Cártaí na mbailte: ar thaibléad agus i dtírdhreach tá siad chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin; i bportráid ar fhón faigheann ainm rófhada litreacha níos lú; i dtírdhreach coinníonn an cuardach a mhéid portráide.
 - Cuardach ar an léarscáil: osclaíonn an ghloine formhéadúcháin an léarscáil leis an gcuardach thíos; taispeánann tapáil ar áit nó ar ainm baile a theocht, Sonraí (na laethanta romhainn) agus Cuir leis. Tá an léarscáil simplí agus geal, le hainmneacha na mbailte scríofa go mór (ar léarscáil na bpáirceanna freisin). Ní thaispeántar bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de).
@@ -18,6 +18,8 @@ FÓGRAÍ
 - A gcainéil féin: tá a chainéal féin ag rabhaidh aimsire, báisteach agus sneachta, creathanna talún, páirceanna agus nuashonruithe i socruithe an fhóin; is féidir ceann amháin a mhúchadh agus na cinn eile a choinneáil.
 - Creathanna talún: seiceáilte gach 10 nóiméad, istoíche freisin leis an scáileán múchta; nuashonraíonn méid athbhreithnithe an fógra, agus osclaíonn tapáil air an léarscáil.
 - Leagan nua: le fógraí air, seiceálann an aip GitHub gach lá ar feadh 2 sheachtain tar éis nuashonraithe, ansin uair sa 7 lá, agus fógraíonn sí leagan nua i bhfógraí Android; osclaíonn tapáil Seiceáil le haghaidh nuashonruithe.
+GIUIRLÉIDÍ
+- Téama na haipe: coinnigh an ghiuirléid › Socruithe, nó ⚙︎ › Giuirléidí: baile, cúlra, dathanna (de réir na haimsire, an fhóin, téama na haipe nó dorcha).
 NUASHONRUITHE
 - Bosca Leagan nua: bosca gearr ag barr ⚙︎ nuair atá leagan nua ann; tosaíonn tapáil air an íoslódáil.
 PRÍOMHSCÁILEÁN

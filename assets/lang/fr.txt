@@ -1847,3 +1847,5 @@ The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it t
 On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Sur la carte des Parcelles, sous ＋ et − (en paysage les deux sur une ligne). Une seule couche à la fois ; données : Open-Meteo.
 Automatic brightness is on	La luminosité automatique est activée
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Affiche la barre de luminosité à gauche ; un toucher sur ☀ à son extrémité rend à l'écran la luminosité automatique (☀ devient jaune, un message le confirme).
+The app's theme	Thème de l'application
+Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Appui long sur le widget › Paramètres, ou ⚙︎ › Widgets : ville, fond, couleurs (selon la météo, du téléphone, thème de l'application ou sombre).

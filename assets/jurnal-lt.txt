@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.218 · 25.11.2026
+Dabartinė versija: v.2.220 · 25.11.2026
 ATNAUJINIMAI
 - Dėžutė Nauja versija: trumpa dėžutė ⚙︎ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI
@@ -37,6 +37,8 @@ SKLYPAI
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
 - Šiukšlinė: ištrintas laukas patenka į šiukšliadėžę su ↺ prie GPS mygtuko (raudonas taškas juos skaičiuoja) ir saugomas 15 dienų; apvalus mygtukas jį atkuria (jei išsaugotas laukas turi tą patį pavadinimą: naujas pavadinimas arba pakeisti).
+VALDIKLIAI
+- Programos tema: laikyk valdiklį › Nustatymai, arba ⚙︎ › Valdikliai: vietovė, fonas, spalvos (pagal orus, telefono, programos tema arba tamsios).
 VIETOVĖS
 - Paieška žemėlapyje: lupa atidaro žemėlapį su paieška apačioje; bakstelėjus vietą arba gyvenvietės pavadinimą rodoma jos temperatūra, Išsamiau (kitos dienos) ir Pridėti. Žemėlapis paprastas ir šviesus, vietovių pavadinimai parašyti dideliais (ir laukų žemėlapyje). Kitos vietovės rodomos tik tada, kai prasideda kaip įvestas pavadinimas (bent 6 raidės arba 60 % jo).
 - Vietovių kortelės: planšetėje ir gulsčiai jos tokio pločio kaip jų tekstas ir išdėstytos eilutėmis bei stulpeliais; stačiai telefone per ilgas pavadinimas gauna mažesnes raides; gulsčiai paieška išlaiko stačią dydį.
