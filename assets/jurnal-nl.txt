@@ -1,6 +1,8 @@
-Huidige versie: v.2.200 · 25.11.2026
+Huidige versie: v.2.210 · 25.11.2026
 HOOFDSCHERM
-- Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
+- Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ⚙︎ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
+- Helderheid: toont de helderheidsbalk links; een tik op ☀ aan het eind geeft het scherm de automatische helderheid terug.
+- Hoofdschermen: tabbladen onder de naam (liggend onderaan): de plaats en één per perceel; een tik of een veeg opzij wisselt het scherm, + opent het vak van een nieuw perceel. Als ze niet allemaal passen, schuift de rij elke 3 seconden één op; een vinger erop stopt haar even.
 - Knop Plaatsen: de ronde knop met het huisjespictogram (staand rechts van de naam, liggend op de bovenste band, vóór de hoek) opent de lijst met plaatsen.
 - Knop „bijgewerkt”: zweeft rechts boven de pagina: staand onder de waarschuwingen (zonder waarschuwingen onder de rij met plaatsen), liggend onder de klok. Tijdens het bijwerken draait de pijl, ook als kleine cirkel; daarna staat de tijd 4 seconden en wordt hij ⟳. Een tik werkt bij.
 - Meer plaatsen: elke plaats in de lijst heeft een eigen hoofdscherm; links of rechts vegen over het weer nu gaat naar de volgende, in de volgorde van de lijst.
@@ -11,13 +13,13 @@ INSTELLINGEN
 - Exporteren / Importeren: schakelaars voor wat in het bestand gaat (ook gewassen en teeltgegevens, perceelmeldingen, prullenbak van percelen, meldingen, kaart, widgets, aardbevingsgeschiedenis, logboek); bij Exporteren en Importeren worden plaatsen en percelen één voor één aangevinkt; de knop Aa verandert de tekstgrootte.
 - Geavanceerde functies: de kaart onder Plaatsen: Boerenmodus en de pagina Aardbevingen.
 - Help: lange teksten zijn opgedeeld in delen met eigen pictogrammen of tonen 2 regels en Alles tonen ▾; liggend in 2 kolommen, en een tik op de knop van een sectie laat de omlijning twee keer knipperen.
-- Het venster Instellingen: ☰ opent de instellingen in secties; een schakelaar zet een functie meteen aan of uit. Sluiten met X of een tik erbuiten. Liggend opent het links in 2 kolommen, de titel op één regel: sleep de balk aan de rechterrand naar links voor één kolom, naar rechts voor twee; de knop naast X zet de 2 kolommen terug. Weergave staat als laatste. Systeem & Ondersteuning toont de namen 3 seconden, daarna alleen de knoppen; op een telefoon liggend is het een zwevend vak onderaan dat inklapt tot ⋯ (de greep maakt het weer breed), op een tablet één rij.
+- Het venster Instellingen: ⚙︎ opent de instellingen in secties; een schakelaar zet een functie meteen aan of uit. Sluiten met X of een tik erbuiten. Liggend opent het links in 2 kolommen, de titel op één regel: sleep de balk aan de rechterrand naar links voor één kolom, naar rechts voor twee; de knop naast X zet de 2 kolommen terug. Weergave staat als laatste. Systeem & Ondersteuning toont de namen 3 seconden, daarna alleen de knoppen; op een telefoon liggend is het een zwevend vak onderaan dat inklapt tot ⋯ (de greep maakt het weer breed), op een tablet één rij.
 - Logboek: grootte, regels en fouten op een kaart; Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan onderaan het scherm. Opgeloste fouten staan aan het eind van het logboek en tellen niet mee; netwerkproblemen zijn waarschuwingen.
 - Pagina Aardbevingen: opent meteen met de laatst op de telefoon opgeslagen lijsten en werkt ze op de achtergrond bij.
-- Plaatsen: de eerste kaart van ☰ (in boerenmodus: Plaatsen & Percelen, met de Percelen erin). Drie rijen: eerst de plaatsen met een volle ster (ze hebben een hoofdscherm, in de volgorde van de schermen), dan de andere favorieten. Elke ster kan weg zolang er 2 of meer aan staan: de volgende plaats met ster wordt het eerste scherm; de laatste is grijs en blijft. Een tik op een lege ster geeft die plaats een hoofdscherm en toont het. Plaatsen › opent de lijst; op de kaart zoekt Provincie ▾ in één provincie.
-- Rondleiding: in de kaart van de meldingen: een korte rondleiding langs wat elk deel van de schermen toont. Binnenkort (voorlopig grijs).
-- Thema's: 6 thema's met een eigen achtergrond, kaarten en kleur (Grafiet, Pioen, Honing, Woud, Oceaan, Lavendel), elk licht en donker; de stippen in ☰ › Thema hebben de kleur van het thema.
-- Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
+- Plaatsen: de eerste kaart van ⚙︎ (in boerenmodus: Plaatsen & Percelen, met de percelen erin). Eén rij met de getoonde plaats; ▾ opent de andere plaatsen met een hoofdscherm. Een ster uitvinken verwijdert de plaats en haar scherm (zolang er 2 of meer over zijn; de laatste is grijs en blijft). Plaatsen › opent de lijst; op haar kaart zoekt Provincie ▾ in één provincie.
+- Tutorial: in de kaart Meldingen: een korte tutorial van wat elk deel van de schermen toont. Binnenkort (voorlopig grijs).
+- Thema's: 6 thema's met een eigen achtergrond, kaarten en kleur (Grafiet, Pioen, Honing, Woud, Oceaan, Lavendel), elk licht en donker; de stippen in ⚙︎ › Thema hebben de kleur van het thema.
+- Weergavetaal: in ⚙︎ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
 MELDINGEN
 - Aardbevingen: elke 10 minuten gecontroleerd, ook 's nachts met het scherm uit; een herziene magnitude werkt de melding bij en een tik erop opent de kaart.
 - Eigen kanalen: weerwaarschuwingen, regen en sneeuw, aardbevingen, percelen en updates hebben elk een eigen kanaal in de instellingen van de telefoon; je kunt er één uitzetten en de andere houden.
@@ -27,6 +29,7 @@ PERCELEN
 - Coördinaten van het perceel: op de bewerkpagina worden de gps-coördinaten van elk punt getypt, en daaronder toont het satellietbeeld het perceel.
 - Operationele status: bovenaan het gewas en de zaaidatum; met een gewas houdt het oordeel ook rekening met de druppeldroging (ΔT) en zijn ziekte.
 - Perceel bewerken: het potlood opent de pagina van het perceel: naam, gewas (lijst volgens het seizoen van de zaaidatum of Ander gewas…), zaaidatum, oppervlakte; de hoeken verschuiven op de kaart.
+- Prullenbak: een verwijderd perceel gaat naar de prullenbak met ↺ naast de GPS-knop (de rode stip telt ze) en blijft 15 dagen; de ronde knop zet het terug (heeft een bewaard perceel dezelfde naam: nieuwe naam of vervangen).
 - Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
 - Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
@@ -36,7 +39,7 @@ PLAATSEN
 - Plaatskaarten: op een tablet en liggend zijn ze zo breed als hun tekst en staan ze in rijen en kolommen; staand op een telefoon krijgt een te lange naam kleinere letters; liggend houdt het zoeken zijn staande grootte.
 - Zoeken op de kaart: het vergrootglas opent de kaart met het zoeken onderaan; een tik op een plek of op de naam van een plaats toont de temperatuur, Details (de volgende dagen) en Toevoegen. De kaart is eenvoudig en licht, met de namen van de plaatsen groot geschreven (ook op de kaart van de percelen). Andere plaatsen verschijnen alleen als ze beginnen zoals de getypte naam (minstens 6 letters of 60% ervan).
 UPDATES
-- Vak Nieuwe versie: bovenaan ☰ een kort vak als er een nieuwe versie is; een tik erop start de download.
+- Vak Nieuwe versie: bovenaan ⚙︎ een kort vak als er een nieuwe versie is; een tik erop start de download.
 - Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.4 (v.1.400 – v.1.520)
@@ -49,12 +52,12 @@ HOOFDSCHERM
 - Hoofdscherm: de pagina scrollt op en neer onder het glas bovenaan, in secties (Volgende uren, Vijfdaagse voorspelling, Weerdetails); de knoppen en de batterij zweven onderaan.
 - Vijfdaagse voorspelling: dag 3–5 schuiven elke 3 seconden vanzelf door tot de eerste aanraking.
 INSTELLINGEN
-- Instellingen: het menu ☰ is nu een venster met onderdelen, schakelaars, kleurthema's en de balk Systeem en ondersteuning; verversen door het scherm omlaag te trekken of op „bijgewerkt” te tikken.
-- Pictogramthema: 6 thema's voor weerpictogrammen (Klassiek, Glanzend, Plat, Realistisch, Atmosferisch, Contour), te kiezen met gekleurde stippen in ☰; in de app en op de widgets.
-- Weergavetaal: knoppen in ☰, 2 per rij: Engels en de talen van het land (in de VS Engels en Spaans); in Roemenië toont „Andere talen (minderheden)” de rest.
+- Instellingen: het menu ⚙︎ is nu een venster met onderdelen, schakelaars, kleurthema's en de balk Systeem en ondersteuning; verversen door het scherm omlaag te trekken of op „bijgewerkt” te tikken.
+- Pictogramthema: 6 thema's voor weerpictogrammen (Klassiek, Glanzend, Plat, Realistisch, Atmosferisch, Contour), te kiezen met gekleurde stippen in ⚙︎; in de app en op de widgets.
+- Weergavetaal: knoppen in ⚙︎, 2 per rij: Engels en de talen van het land (in de VS Engels en Spaans); in Roemenië toont „Andere talen (minderheden)” de rest.
 MELDINGEN
-- Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ☰.
-- Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ☰.
+- Aardbevingen: meldingen alleen voor aardbevingen op hoogstens 300 km van je plaats; aan of uit te zetten in ⚙︎.
+- Tornado's (VS): de tornadomeldingen voor je plaats zet je aan of uit in ⚙︎.
 PERCELEN
 - Hoeken van het perceel: in de satellietweergave worden de 4 hoeken in het beeld gevonden en met je vinger verplaatst; een tik op het kaartje zoomt in op het perceel en toont de hoeken, Statistiek opent de statistiek.
 - Kaartweergaven: ronde knoppen onder ＋/− wisselen tussen satelliet en kaart en tonen de regenradar van de laatste 2 uur.
@@ -64,7 +67,7 @@ PERCELEN
 - Punten van het perceel: + Punt voegt tot 3 extra punten toe (hoogstens 7), Cirkel zet ze gelijkmatig op een cirkel, lang drukken op een punt verwijdert het.
 - Spelden op de kaart: een tik op een speld zoomt de kaart in op het perceel en toont de naam; een tweede tik toont de punten.
 UPDATES
-- Updates: de app zoekt niet meer zelf naar updates, alleen als je op ☰ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
+- Updates: de app zoekt niet meer zelf naar updates, alleen als je op ⚙︎ › Zoeken naar updates tikt; de nieuwe versie wordt in de browser gedownload en jij installeert hem vanuit het gedownloade bestand.
 - Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.3 (v.1.300 – v.1.352)
@@ -100,7 +103,7 @@ MELDINGEN
 PERCELEN
 - Meldingen voor percelen, gekozen met de belknop op de kaart: regen, wind, sneeuw, droogte.
 THEMA'S
-- 6 kleurthema's (Monochroom, Salie, Lavendel, Lucht, Perzik, Roos), elk licht en donker: ☰ › Thema.
+- 6 kleurthema's (Monochroom, Salie, Lavendel, Lucht, Perzik, Roos), elk licht en donker: ⚙︎ › Thema.
 UPDATES
 - Updates uit drie bronnen: GitHub, een tweede GitHub-server en Google Drive.
 - Updates: eerst wordt de verbinding gecontroleerd, een al gedownloade versie wordt meteen geïnstalleerd, tot 5 pogingen als GitHub niet antwoordt, en de reden wordt getoond.
@@ -115,7 +118,7 @@ Versie 1.1 (v.1.100 – v.1.191)
 - Percelen: opgeslagen via gps of op de kaart, een hoofdscherm per perceel, statistiek over 28 dagen met pdf, regen- en windmeldingen.
 - Widgets 4x2 dagen en 4x3.
 - Tekstgrootte (Aa).
-- ☰ › App versturen.
+- ⚙︎ › App versturen.
 - Verenigde Staten: NWS-waarschuwingen, tornado's, °F, lokale tijd.
 - Andere talen: de talen van de minderheden in Roemenië.
 - Percelen: een kaart met alle percelen, de GPS-knop (blauwe stip) en „GPS-plek opslaan”.

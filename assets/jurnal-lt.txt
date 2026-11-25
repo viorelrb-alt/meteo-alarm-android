@@ -1,16 +1,16 @@
-Dabartinė versija: v.2.200 · 25.11.2026
+Dabartinė versija: v.2.210 · 25.11.2026
 ATNAUJINIMAI
-- Dėžutė Nauja versija: trumpa dėžutė ☰ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
+- Dėžutė Nauja versija: trumpa dėžutė ⚙︎ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI
-- Apžvalga: pranešimų kortelėje: trumpa apžvalga, ką rodo kiekviena ekranų dalis. Netrukus (kol kas pilka).
+- Mokymas: kortelėje Įspėjimai: trumpas mokymas, ką rodo kiekviena ekranų dalis. Netrukus (kol kas pilka).
 - Eksportas / Importas: jungikliai failo turiniui (taip pat kultūros ir auginimo duomenys, sklypų pranešimai, sklypų šiukšlinė, pranešimai, žemėlapis, valdikliai, žemės drebėjimų istorija, žurnalas); Eksporte ir Importe vietovės ir sklypai pažymimi po vieną; mygtukas Aa keičia teksto dydį.
 - Išplėstinės funkcijos: kortelė po Vietovėmis: Ūkininko režimas ir Žemės drebėjimų puslapis.
-- Langas Nustatymai: ☰ atveria nustatymus skyriais; jungiklis iškart įjungia ar išjungia funkciją. Uždaroma X arba palietus šalia. Gulsčiai atsiveria kairėje 2 stulpeliais, pavadinimas vienoje eilutėje: tempk dešiniojo krašto juostą kairėn vienam stulpeliui, dešinėn dviem; mygtukas prie X grąžina 2 stulpelius. Rodinys yra paskutinis. Sistema & Pagalba 3 sekundes rodo pavadinimus, paskui tik mygtukus; telefone gulsčiai tai plūduriuojantis langelis apačioje, susisukantis į ⋯ (rankenėlė jį praplatina), planšetėje viena eilutė.
+- Langas Nustatymai: ⚙︎ atveria nustatymus skyriais; jungiklis iškart įjungia ar išjungia funkciją. Uždaroma X arba palietus šalia. Gulsčiai atsiveria kairėje 2 stulpeliais, pavadinimas vienoje eilutėje: tempk dešiniojo krašto juostą kairėn vienam stulpeliui, dešinėn dviem; mygtukas prie X grąžina 2 stulpelius. Rodinys yra paskutinis. Sistema & Pagalba 3 sekundes rodo pavadinimus, paskui tik mygtukus; telefone gulsčiai tai plūduriuojantis langelis apačioje, susisukantis į ⋯ (rankenėlė jį praplatina), planšetėje viena eilutė.
 - Pagalba: ilgi tekstai suskirstyti į dalis su savo piktogramomis arba rodo 2 eilutes ir Rodyti viską ▾; gulsčiai 2 stulpeliais, o palietus skyriaus mygtuką jo kontūras du kartus sumirksi.
 - Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
-- Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
-- Temos: 6 temos su savo fonu, kortelėmis ir spalva (Grafitas, Bijūnas, Medus, Miškas, Vandenynas, Levanda), kiekviena šviesi ir tamsi; taškai ☰ › Tema yra temos spalvos.
-- Vietovės: pirmoji ☰ kortelė (ūkininko režimu: Vietovės & Laukai, su laukais joje). Trys eilutės: pirma vietovės su pilna žvaigžde (turi pagrindinį ekraną, ekranų tvarka), paskui kiti mėgstamiausi. Bet kurią žvaigždę galima nuimti, kol jų yra 2 ar daugiau: kita vietovė su žvaigžde tampa pirmuoju ekranu; paskutinė pilka ir lieka. Palietus tuščią žvaigždę vietovė gauna pagrindinį ekraną ir yra parodoma. Vietovės › atveria sąrašą; jo žemėlapyje Apskritis ▾ ieško vienoje apskrityje.
+- Rodymo kalba: ⚙︎ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
+- Temos: 6 temos su savo fonu, kortelėmis ir spalva (Grafitas, Bijūnas, Medus, Miškas, Vandenynas, Levanda), kiekviena šviesi ir tamsi; taškai ⚙︎ › Tema yra temos spalvos.
+- Vietovės: pirmoji ⚙︎ kortelė (ūkininko režimu: Vietovės & Laukai, su laukais joje). Viena eilutė su rodoma vietove; ▾ atveria kitas vietoves su pagrindiniu ekranu. Nuėmus žvaigždę ištrinama vietovė ir jos ekranas (kol lieka 2 ar daugiau; paskutinė pilka ir lieka). Vietovės › atveria sąrašą; jo žemėlapyje Apskritis ▾ ieško vienoje apskrityje.
 - Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje. Ištaisytos klaidos yra žurnalo pabaigoje ir neskaičiuojamos; tinklo problemos yra įspėjimai.
 PAGRINDINIS EKRANAS
 - Apatiniai mygtukai: jų pavadinimai atsidarius ekranui 3 sekundes matomi po jais, paskui tik mygtukai; patraukite kapsulę aukštyn, kad vėl juos pamatytumėte. Įjungtas mygtukas atrodo paspaustas, su žiedu.
@@ -19,7 +19,9 @@ PAGRINDINIS EKRANAS
 - Mygtukas „atnaujinta“: plūduriuoja virš puslapio dešinėje: stačiai po įspėjimais (be jų po vietovių eilute), gulsčiai po laikrodžiu. Atnaujinant rodyklė sukasi, ir kaip mažas apskritimas; tada 4 sekundes rodomas laikas ir jis susisuka į ⟳. Palietus atnaujina.
 - Mygtukų pavadinimai: apvalus mygtukas, kuris bakstelėjus lieka ekrane, apie 1,5 sekundės rodo savo pavadinimą mažame burbule.
 - Orų žemėlapis: pagrindinio ekrano pabaigoje (gulsčiai lape su langeliais): OpenStreetMap gatvių lygiu aplink tikslią ekrano vietovės vietą (pirmajai GPS) arba lauko ekrane laukas su kontūru; sluoksnis permatomas. Žemėlapis stovi vietoje; duomenys: Open-Meteo. Debesys, Temperatūros ir Lietus, po vieną; palietus įjungtą jis išjungiamas. Lietus pilkas ir perbrauktas, kai netoliese nelyja dabar ir per artimiausias 2 valandas. ▶ paeiliui rodo valandas (6 prieš ir 6 po dabar); palietus valandą ji parodoma.
-- Žemės drebėjimo informacija: palietus laukelį Žemės drebėjimas, ji atsidaro pagrindiniame ekrane: žemėlapis, po juo juntamumo zonos ir vertės istorija; spalvotas kvadratas arba žemėlapis ją atveria visame ekrane, kaip drebėjimą iš ☰ › Žemės drebėjimai. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC. Rumunijoje ir aplink šalį vykę žemės drebėjimai gauna INFP vertę (iš infp.ro).
+- Pagrindiniai ekranai: skirtukai po pavadinimu (gulsčiai apačioje): vietovė ir po vieną kiekvienam laukui; palietimas ar braukimas į šoną keičia ekraną, + atveria naujo lauko langelį. Kai netelpa visi, eilutė kas 3 sekundes pasislenka per vieną; pirštas ant jos trumpam ją sustabdo.
+- Ryškumas: rodo ryškumo juostą kairėje; palietus ☀ jos gale ekranui grąžinamas automatinis ryškumas.
+- Žemės drebėjimo informacija: palietus laukelį Žemės drebėjimas, ji atsidaro pagrindiniame ekrane: žemėlapis, po juo juntamumo zonos ir vertės istorija; spalvotas kvadratas arba žemėlapis ją atveria visame ekrane, kaip drebėjimą iš ⚙︎ › Žemės drebėjimai. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC. Rumunijoje ir aplink šalį vykę žemės drebėjimai gauna INFP vertę (iš infp.ro).
 PRANEŠIMAI
 - Atskiri kanalai: orų įspėjimai, lietus ir sniegas, žemės drebėjimai, laukai ir atnaujinimai turi kiekvienas savo kanalą telefono nustatymuose; galite išjungti vieną ir palikti kitus.
 - Nauja versija: įjungus pranešimus programėlė tikrina GitHub kasdien 2 savaites po atnaujinimo, vėliau kartą per 7 dienas, ir praneša apie naują versiją Android pranešimuose; bakstelėjus atidaroma Tikrinti atnaujinimus.
@@ -33,6 +35,7 @@ SKLYPAI
 - Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
+- Šiukšlinė: ištrintas laukas patenka į šiukšliadėžę su ↺ prie GPS mygtuko (raudonas taškas juos skaičiuoja) ir saugomas 15 dienų; apvalus mygtukas jį atkuria (jei išsaugotas laukas turi tą patį pavadinimą: naujas pavadinimas arba pakeisti).
 VIETOVĖS
 - Paieška žemėlapyje: lupa atidaro žemėlapį su paieška apačioje; bakstelėjus vietą arba gyvenvietės pavadinimą rodoma jos temperatūra, Išsamiau (kitos dienos) ir Pridėti. Žemėlapis paprastas ir šviesus, vietovių pavadinimai parašyti dideliais (ir laukų žemėlapyje). Kitos vietovės rodomos tik tada, kai prasideda kaip įvestas pavadinimas (bent 6 raidės arba 60 % jo).
 - Vietovių kortelės: planšetėje ir gulsčiai jos tokio pločio kaip jų tekstas ir išdėstytos eilutėmis bei stulpeliais; stačiai telefone per ilgas pavadinimas gauna mažesnes raides; gulsčiai paieška išlaiko stačią dydį.
@@ -41,18 +44,18 @@ VIETOVĖS
 
 1.4 versija (v.1.400 – v.1.520)
 ATNAUJINIMAI
-- Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ☰ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
+- Atnaujinimai: programėlė nebeieško atnaujinimų pati, tik palietus ⚙︎ › Tikrinti atnaujinimus; nauja versija atsisiunčiama naršyklėje, o jūs ją įdiegiate iš atsisiųsto failo.
 NUSTATYMAI
-- Nustatymai: meniu ☰ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
-- Piktogramų tema: 6 orų piktogramų temos (Klasikinė, Blizgi, Plokščia, Realistinė, Atmosferinė, Kontūrinė), pasirenkamos spalvotais taškais meniu ☰; programoje ir valdikliuose.
-- Rodymo kalba: mygtukai ☰ meniu, po 2 eilutėje: anglų ir šalies kalbos (JAV anglų ir ispanų); Rumunijoje „Kitos kalbos (mažumos)“ parodo kitas.
+- Nustatymai: meniu ⚙︎ dabar yra langas su skyriais, jungikliais, spalvų temomis ir juosta Sistema ir pagalba; atnaujinama patraukus ekraną žemyn arba palietus „atnaujinta“.
+- Piktogramų tema: 6 orų piktogramų temos (Klasikinė, Blizgi, Plokščia, Realistinė, Atmosferinė, Kontūrinė), pasirenkamos spalvotais taškais meniu ⚙︎; programoje ir valdikliuose.
+- Rodymo kalba: mygtukai ⚙︎ meniu, po 2 eilutėje: anglų ir šalies kalbos (JAV anglų ir ispanų); Rumunijoje „Kitos kalbos (mažumos)“ parodo kitas.
 PAGRINDINIS EKRANAS
 - Didelis kompasas: palietus vietovę sąraše, jos ženklas parodomas kompase; vietovės ta pačia kryptimi nebesutampa.
 - Pagrindinis ekranas: puslapis slenka po viršutiniu stiklu, skyriais (Artimiausios valandos, Penkių dienų prognozė, Orų detalės); mygtukai ir baterija plūduriuoja apačioje.
 - Penkių dienų prognozė: 3–5 dienos keičiasi pačios kas 3 sekundes iki pirmo prisilietimo.
 PRANEŠIMAI
-- Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ☰.
-- Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ☰.
+- Tornadai (JAV): tornadų pranešimai jūsų vietovei įjungiami ar išjungiami meniu ⚙︎.
+- Žemės drebėjimai: pranešimai tik apie žemės drebėjimus ne toliau kaip 300 km nuo jūsų vietos; įjungiami ar išjungiami meniu ⚙︎.
 SKLYPAI
 - Lauko kampai: palydovo vaizde 4 kampai randami paveikslėlyje ir perkeliami pirštu; kortelės palietimas priartina žemėlapį prie lauko ir rodo kampus, Statistika atveria jo statistiką.
 - Lauko taškai: + Taškas prideda iki 3 papildomų taškų (ne daugiau kaip 7), Apskritimas išdėsto juos tolygiai apskritime, ilgas taško paspaudimas jį ištrina.
@@ -101,7 +104,7 @@ PRANEŠIMAI
 SKLYPAI
 - Sklypų pranešimai, pasirenkami žemėlapio varpelio mygtuku: lietus, vėjas, sniegas, sausra.
 TEMOS
-- 6 spalvų temos (Vienspalvė, Šalavijas, Levanda, Dangus, Persikas, Rožė), kiekviena šviesi ir tamsi: ☰ › Tema.
+- 6 spalvų temos (Vienspalvė, Šalavijas, Levanda, Dangus, Persikas, Rožė), kiekviena šviesi ir tamsi: ⚙︎ › Tema.
 ŪKININKO REŽIMAS
 - JAV, ūkininko režimu: langeliai NWS, Sausra, Gaisras, Kruša.
 - Ūkininko režimas: nauji langeliai po Vanduo dirvoje: Purškimas, Vandens balansas, Audros, Temperatūrų suma, 16 dienų.
@@ -115,7 +118,7 @@ TEMOS
 - Laukai: išsaugoti GPS arba žemėlapyje, pagrindinis ekranas kiekvienam, 28 dienų statistika su PDF, lietaus ir vėjo įspėjimai.
 - Valdikliai 4x2 dienos ir 4x3.
 - Teksto dydis (Aa).
-- ☰ › Siųsti programėlę.
+- ⚙︎ › Siųsti programėlę.
 - JAV: NWS įspėjimai, tornadai, °F, vietos laikas.
 - Kitos kalbos: Rumunijos mažumų kalbos.
 - Laukai: žemėlapis su visais sklypais, GPS mygtukas (mėlynas taškas) ir „Išsaugoti GPS vietą“.

@@ -14,7 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**
- * ☰ › Ajutor: the whole screen, a title with "Închide" on top and, scrolling under it, every
+ * ⚙︎ › Ajutor: the whole screen, a title with "Închide" on top and, scrolling under it, every
  * button, gesture and menu option with its icon and a short explanation.
  */
 final class HelpPanel extends FrameLayout implements Glass.Local {
@@ -631,7 +631,7 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 	}
 
 	/**
-	 * v2.100 (Viorel): an earthquake of ☰ › Earthquakes: its coloured magnitude square instead of
+	 * v2.100 (Viorel): an earthquake of ⚙︎ › Earthquakes: its coloured magnitude square instead of
 	 * the icon, the title by it and the text under both, the whole width; a tap on the square or
 	 * on the title opens its information screen.
 	 */

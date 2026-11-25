@@ -27,7 +27,7 @@ import ro.meteoalarm.android.core.Theme;
 import ro.meteoalarm.android.core.Tr;
 
 /**
- * v5.00 (Viorel, "Opțiunea 3 Overlay Elegant", mockups machete-meniu-setari): the ☰ menu as a
+ * v5.00 (Viorel, "Opțiunea 3 Overlay Elegant", mockups machete-meniu-setari): the ⚙︎ menu as a
  * window of frosted glass in the middle of the screen: SETĂRI APLICAȚIE and X on top (no GATA:
  * X or a tap outside closes it), the settings in cards by section, scrolling, and under them the
  * fixed bar SISTEM & SUPORT with plain icons. MainActivity fills it (begin, section, card rows…).
@@ -433,7 +433,7 @@ final class SettingsPanel extends FrameLayout {
 	}
 
 	/**
-	 * v2.152 (Viorel): at the top of ☰, a box saying a new version is ready (short); a tap on it
+	 * v2.152 (Viorel): at the top of ⚙︎, a box saying a new version is ready (short); a tap on it
 	 * starts the download at once.
 	 */
 	void updateBox(String head, String sub, final Runnable tap) {
@@ -988,6 +988,85 @@ final class SettingsPanel extends FrameLayout {
 				tapName.run();
 			}
 		});
+		card.addView(r);
+	}
+
+	/**
+	 * v2.210 (Viorel): the first row of the Towns card: the town shown (its star), ▾ for the hidden
+	 * list of the other towns with a main screen (OPEN: shown), and the Towns › pill.
+	 */
+	void favTop(String name, boolean locked, int more, boolean open, final Runnable tapName, final Runnable tapStar, final Runnable toggle,
+			String add, final Runnable tapAdd) {
+		sep();
+		cardFirst = true;
+		LinearLayout r = new LinearLayout(getContext());
+		r.setGravity(Gravity.CENTER_VERTICAL);
+		r.setMinimumHeight(px(56));
+		r.setPadding(0, px(6), px(4), px(4));
+		View st = new View(getContext());
+		st.setBackground(new LineIcon("star", locked ? dim() : accent()));
+		FrameLayout hit = new FrameLayout(getContext());
+		hit.addView(st, new FrameLayout.LayoutParams(px(24 * zk), px(24 * zk), Gravity.CENTER));
+		hit.setContentDescription(name + ", " + Tr.t("has a main screen", "are ecran principal")
+				+ (locked ? ". " + Tr.t("At least one town stays shown.", "Măcar o localitate rămâne afișată.") : ""));
+		if (!locked) {
+			hit.setBackgroundResource(android.R.drawable.list_selector_background);
+			hit.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					tapStar.run();
+				}
+			});
+		}
+		r.addView(hit, new LinearLayout.LayoutParams(px(48), px(48)));
+		LinearLayout nm = new LinearLayout(getContext());
+		nm.setGravity(Gravity.CENTER_VERTICAL);
+		TextView t = role("head", text(getContext(), 16 * zk, true));
+		t.setText(name);
+		t.setTextColor(ink());
+		t.setTypeface(Fonts.bold(getContext()));
+		t.setSingleLine(true);
+		t.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		nm.addView(t, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+		nm.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				tapName.run();
+			}
+		});
+		LinearLayout.LayoutParams nl = new LinearLayout.LayoutParams(0, px(48), 1);
+		nl.leftMargin = px(6);
+		r.addView(nm, nl);
+		if (more > 0) {
+			View ch = new View(getContext());
+			ch.setBackground(new LineIcon(open ? "chev-up" : "chev-down", ink()));
+			FrameLayout ex = new FrameLayout(getContext());
+			ex.addView(ch, new FrameLayout.LayoutParams(px(22 * zk), px(22 * zk), Gravity.CENTER));
+			ex.setBackground(Glass.pill(Glass.disc(dark), 0, 20 * dp, dp));
+			ex.setContentDescription(open ? Tr.t("Hide the other towns", "Ascunde celelalte localități")
+					: Tr.t("Show the other towns with a main screen", "Arată celelalte localități cu ecran principal") + " (" + more + ")");
+			ex.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					toggle.run();
+				}
+			});
+			LinearLayout.LayoutParams el = new LinearLayout.LayoutParams(px(40), px(40));
+			el.leftMargin = px(4);
+			el.rightMargin = px(8);
+			r.addView(ex, el);
+		}
+		if (add != null) {
+			TextView a = text(getContext(), 14.5f * zk, true);
+			a.setSingleLine(true);
+			a.setText(add);
+			a.setTextColor(accentText());
+			a.setPadding(px(14), px(6), px(14), px(6));
+			a.setBackground(Glass.pill(0, accent(), 18 * dp, 1.5f * dp));
+			a.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					tapAdd.run();
+				}
+			});
+			r.addView(a);
+		}
 		card.addView(r);
 	}
 

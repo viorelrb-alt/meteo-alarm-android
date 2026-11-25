@@ -1,22 +1,24 @@
-Versão atual: v.2.200 · 25.11.2026
+Versão atual: v.2.210 · 25.11.2026
 ATUALIZAÇÕES
-- Caixa Nova versão: uma caixa curta no topo de ☰ quando existe uma nova versão; tocar nela inicia a transferência.
+- Caixa Nova versão: uma caixa curta no topo de ⚙︎ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
-- A janela Definições: ☰ abre as definições por secções; um interruptor liga ou desliga uma função de imediato. Fecha com X ou com um toque fora. Em paisagem abre à esquerda em 2 colunas, o título numa linha: arraste a barra da borda direita para a esquerda para uma coluna, para a direita para duas; o botão ao lado de X repõe as 2 colunas. Visualização fica no fim. Sistema e Suporte mostra os nomes 3 segundos, depois só os botões; num telefone em paisagem é uma caixa flutuante em baixo que se reduz a ⋯ (a sua pega alarga-a), num tablet uma só linha.
+- A janela Definições: ⚙︎ abre as definições por secções; um interruptor liga ou desliga uma função de imediato. Fecha com X ou com um toque fora. Em paisagem abre à esquerda em 2 colunas, o título numa linha: arraste a barra da borda direita para a esquerda para uma coluna, para a direita para duas; o botão ao lado de X repõe as 2 colunas. Visualização fica no fim. Sistema e Suporte mostra os nomes 3 segundos, depois só os botões; num telefone em paisagem é uma caixa flutuante em baixo que se reduz a ⋯ (a sua pega alarga-a), num tablet uma só linha.
 - Ajuda: os textos longos estão divididos em partes com os seus ícones ou mostram 2 linhas e Mostrar tudo ▾; em paisagem em 2 colunas, e um toque no botão de uma secção faz piscar o contorno duas vezes.
 - Exportar / Importar: interruptores para o que entra no ficheiro (também culturas e dados de cultivo, notificações das parcelas, reciclagem de parcelas, notificações, mapa, widgets, histórico de sismos, registo); em Exportar e Importar as localidades e parcelas marcam-se uma a uma; o botão Aa muda o tamanho do texto.
 - Funções avançadas: o cartão por baixo de Localidades: modo Agricultor e a página Sismos.
-- Localidades: o primeiro cartão do ☰ (com o modo agricultor: Localidades e Parcelas, com as Parcelas dentro). Três linhas: primeiro as localidades com estrela cheia (têm ecrã principal, na ordem dos ecrãs), depois os outros favoritos. Qualquer estrela pode ser retirada enquanto houver 2 ou mais: a localidade seguinte com estrela passa a ser o primeiro ecrã; a última fica cinzenta e permanece. Um toque numa estrela vazia dá à localidade um ecrã principal e mostra-o. Localidades › abre a lista; no seu mapa, Distrito ▾ procura num só distrito.
-- Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
+- Localidades: o primeiro cartão de ⚙︎ (no modo agricultor: Localidades & Parcelas, com as parcelas dentro). Uma linha com a localidade mostrada; ▾ abre as outras localidades com ecrã principal. Desmarcar uma estrela apaga a localidade e o seu ecrã (enquanto restarem 2 ou mais; a última é cinzenta e fica). Localidades › abre a lista; no seu mapa, Distrito ▾ procura num só distrito.
+- Língua de apresentação: no ⚙︎ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 - Página Sismos: abre logo com as últimas listas guardadas no telefone e atualiza-as em segundo plano.
 - Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã. Os erros resolvidos ficam no fim do registo e não são contados; os problemas de rede são avisos.
-- Temas: 6 temas com o seu próprio fundo, cartões e cor (Grafite, Peónia, Mel, Floresta, Oceano, Lavanda), cada um claro e escuro; os pontos em ☰ › Tema têm a cor do tema.
-- Visita guiada: no cartão das notificações: uma breve visita ao que mostra cada zona dos ecrãs. Em breve (cinzento por agora).
+- Temas: 6 temas com o seu próprio fundo, cartões e cor (Grafite, Peónia, Mel, Floresta, Oceano, Lavanda), cada um claro e escuro; os pontos em ⚙︎ › Tema têm a cor do tema.
+- Tutorial: no cartão Alertas: um tutorial curto do que mostra cada parte dos ecrãs. Em breve (cinzento por agora).
 ECRÃ PRINCIPAL
 - Botão Localidades: o botão redondo com o ícone de casas (na vertical à direita do nome, na horizontal na faixa de cima, antes do seu canto) abre a lista de localidades.
 - Botão «atualizado»: flutua sobre a página, à direita: em retrato por baixo dos avisos (sem eles por baixo da linha das localidades), em paisagem por baixo do relógio. Durante a atualização a seta roda, também como pequeno círculo; depois a hora aparece 4 segundos e reduz-se a ⟳. Um toque atualiza.
 - Botões de baixo: os nomes aparecem por baixo durante 3 segundos ao abrir o ecrã, depois só os botões; puxe a cápsula para cima para os ver de novo. O botão ligado parece premido, com um anel.
-- Informações do sismo: um toque na caixa Sismo abre-as no ecrã principal: o mapa, por baixo as zonas sentidas e o histórico do valor; o quadrado colorido ou o mapa abrem-nas em ecrã inteiro, como um sismo de ☰ › Sismos. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
+- Brilho: mostra a barra de brilho à esquerda; um toque em ☀ na sua ponta devolve ao ecrã o brilho automático.
+- Ecrãs principais: separadores sob o nome (na horizontal em baixo): a localidade e um por parcela; um toque ou um deslize lateral muda de ecrã, + abre a caixa de uma parcela nova. Quando não cabem todos, a fila avança um a cada 3 segundos; um dedo em cima para-a por um momento.
+- Informações do sismo: um toque na caixa Sismo abre-as no ecrã principal: o mapa, por baixo as zonas sentidas e o histórico do valor; o quadrado colorido ou o mapa abrem-nas em ecrã inteiro, como um sismo de ⚙︎ › Sismos. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
 - Mapa do tempo: no fim do ecrã principal (em paisagem na folha com as caixas): OpenStreetMap ao nível da rua no local exato da localidade do ecrã (GPS para a primeira) ou, no ecrã de uma parcela, a parcela com o seu contorno; a camada transparente. O mapa fica fixo; dados: Open-Meteo. Nuvens, Temperaturas e Chuva, uma de cada vez; um toque na ligada desliga-a. Chuva fica cinzento e riscado quando não chove perto agora nem nas próximas 2 horas. ▶ reproduz as horas (6 antes e 6 depois de agora) uma a uma; um toque numa hora mostra-a.
 - Nomes dos botões: um botão redondo que fica no ecrã ao ser tocado mostra o seu nome num pequeno balão durante cerca de 1,5 segundos.
 - Várias localidades: cada localidade da lista tem o seu próprio ecrã principal; deslizar para a esquerda ou para a direita sobre o tempo atual passa à seguinte, pela ordem da lista.
@@ -37,15 +39,16 @@ PARCELAS
 - Estatística: para cada parcela, a Ação do dia e 4 separadores: Operacional (janela de pulverização hora a hora, secagem das gotas (ΔT), vento, folha molhada), Água e Solo (chuva, evaporação, solo a 6 e 18 cm), Época (graus-dia face ao ano passado, fase estimada) e Riscos 72 h (doenças fúngicas, geada no solo, calor, vento e granizo); guarda em PDF ou CSV.
 - Estatísticas no ecrã principal: abrem-se sob o estado operacional (na horizontal à esquerda); ‹ fecha-as e o separador de outra parcela mantém-nas.
 - Histórico e previsão: arraste o indicador para um dia passado; os seus valores aparecem numa caixa sob o gráfico e após 10 s volta a hoje.
+- Lixo: uma parcela apagada vai para o caixote com ↺ junto ao botão GPS (o ponto vermelho conta-as) e fica 15 dias; o botão redondo restaura-a (se uma parcela guardada tiver o seu nome: nome novo ou substituir).
 - Melhorias de design e correção dos erros comunicados.
 
 Versão 1.4 (v.1.400 – v.1.520)
 ATUALIZAÇÕES
-- Atualizações: a app já não procura atualizações sozinha, só quando toca em ☰ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
+- Atualizações: a app já não procura atualizações sozinha, só quando toca em ⚙︎ › Procurar atualizações; a nova versão é transferida no navegador e instala-a a partir do ficheiro transferido.
 DEFINIÇÕES
-- Definições: o menu ☰ é agora uma janela com secções, interruptores, os temas em cores e a barra Sistema e suporte; atualiza-se puxando o ecrã para baixo ou tocando em «atualizado».
-- Idioma de apresentação: botões em ☰, 2 por linha: inglês e as línguas do país (nos EUA inglês e espanhol); na Roménia «Outras línguas (minorias)» mostra as restantes.
-- Tema de ícones: 6 temas de ícones do tempo (Clássico, Brilhante, Plano, Realista, Atmosférico, Contorno), escolhidos com pontos coloridos em ☰; na app e nos widgets.
+- Definições: o menu ⚙︎ é agora uma janela com secções, interruptores, os temas em cores e a barra Sistema e suporte; atualiza-se puxando o ecrã para baixo ou tocando em «atualizado».
+- Idioma de apresentação: botões em ⚙︎, 2 por linha: inglês e as línguas do país (nos EUA inglês e espanhol); na Roménia «Outras línguas (minorias)» mostra as restantes.
+- Tema de ícones: 6 temas de ícones do tempo (Clássico, Brilhante, Plano, Realista, Atmosférico, Contorno), escolhidos com pontos coloridos em ⚙︎; na app e nos widgets.
 ECRÃ PRINCIPAL
 - Bússola grande: tocar numa localidade da lista mostra a sua marca na bússola; localidades na mesma direção já não se sobrepõem.
 - Ecrã principal: a página desloca-se sob o vidro de cima, por secções (Próximas horas, Previsão a cinco dias, Detalhes do tempo); os botões e a bateria flutuam em baixo.
@@ -55,8 +58,8 @@ MODO AGRICULTOR
 - Estado operacional: no ecrã de uma parcela, só quando é preciso, o veredicto para pulverizar, o motivo e os riscos das próximas 24 horas.
 - Separadores: a localidade e as parcelas em separadores sob o nome (na horizontal, em baixo); o ecrã de uma parcela nas secções 1–4.
 NOTIFICAÇÕES
-- Sismos: avisos só dos sismos até 300 km do seu local; ligam-se ou desligam-se em ☰.
-- Tornados (EUA): os avisos de tornado para a sua localidade ligam-se ou desligam-se em ☰.
+- Sismos: avisos só dos sismos até 300 km do seu local; ligam-se ou desligam-se em ⚙︎.
+- Tornados (EUA): os avisos de tornado para a sua localidade ligam-se ou desligam-se em ⚙︎.
 PARCELAS
 - Alfinetes no mapa: um toque num alfinete aproxima o mapa da parcela e mostra o seu nome; um segundo toque mostra os seus pontos.
 - Cantos da parcela: na vista de satélite os 4 cantos são encontrados na imagem e movem-se com o dedo; um toque no cartão aproxima o mapa da parcela e mostra os cantos, Estatística abre a sua estatística.
@@ -104,7 +107,7 @@ NOTIFICAÇÕES
 PARCELAS
 - Notificações das parcelas, escolhidas com o botão do sino no mapa: chuva, vento, neve, seca.
 TEMAS
-- 6 temas de cor (Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa), cada um claro e escuro: ☰ › Tema.
+- 6 temas de cor (Monocromático, Salva, Lavanda, Céu, Pêssego, Rosa), cada um claro e escuro: ⚙︎ › Tema.
 - Melhorias de design e correção dos erros comunicados.
 
 Versão 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Versão 1.1 (v.1.100 – v.1.191)
 - Parcelas: guardadas por GPS ou no mapa, um ecrã principal para cada uma, estatísticas de 28 dias com PDF, alertas de chuva e vento.
 - Widgets 4x2 dias e 4x3.
 - Tamanho do texto (Aa).
-- ☰ › Enviar a app.
+- ⚙︎ › Enviar a app.
 - Estados Unidos: avisos NWS, tornados, °F, hora local.
 - Outras línguas: as línguas das minorias da Roménia.
 - Parcelas: um mapa com todas as parcelas, o botão GPS (ponto azul) e «Guardar local GPS».

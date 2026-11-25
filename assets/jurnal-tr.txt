@@ -1,29 +1,31 @@
-Geçerli sürüm: v.2.200 · 25.11.2026
+Geçerli sürüm: v.2.210 · 25.11.2026
 ANA EKRAN
 - Alt düğmeler: ekran açılınca adları 3 saniye altlarında görünür, sonra yalnızca düğmeler kalır; yeniden görmek için kapsülü yukarı çekin. Açık düğme basılı görünür, halkalı.
+- Ana ekranlar: adın altındaki sekmeler (yatayda altta): yerleşim yeri ve her parsel için bir tane; dokunmak veya yana kaydırmak ekranı değiştirir, + yeni parsel kutusunu açar. Hepsi sığmadığında satır her 3 saniyede bir ilerler; üzerine konan bir parmak onu bir süre durdurur.
 - Daha çok yer: listedeki her yerin kendi ana ekranı vardır; şimdiki havanın üzerinde sola ya da sağa kaydırmak listedeki sırayla sonrakine geçer.
-- Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ☰ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
+- Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ⚙︎ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
 - Düğme adları: dokunulduğunda ekranda kalan yuvarlak düğme adını yaklaşık 1,5 saniye küçük bir balonda gösterir.
 - Hava haritası: ana ekranın sonunda (yatayda kutuların olduğu sayfada): ekrandaki yerin tam konumu çevresinde sokak düzeyinde OpenStreetMap (ilki için GPS) ya da bir parselin ekranında, sınırıyla birlikte parsel; katman saydam. Harita sabit kalır; veriler: Open-Meteo. Bulutlar, Sıcaklıklar ve Yağmur, tek tek; açık olana dokunmak onu kapatır. Yakında şimdi ve sonraki 2 saatte yağmur yoksa Yağmur gri ve üstü çizilidir. ▶ saatleri (şimdiden 6 önce ve 6 sonra) tek tek oynatır; bir saate dokunmak onu gösterir.
+- Parlaklık: soldaki parlaklık çubuğunu gösterir; ucundaki ☀ işaretine dokunmak ekrana otomatik parlaklığı geri verir.
 - Yerler düğmesi: ev simgeli yuvarlak düğme (dikeyde adın sağında, yatayda üst şeritte, köşesinden önce) yerler listesini açar.
 - “Güncellendi” düğmesi: sayfanın üstünde sağda süzülür: dikeyde uyarıların altında (uyarı yoksa yerler satırının altında), yatayda saatin altında. Güncellenirken oku döner, küçük bir daire olarak da; sonra saat 4 saniye görünür ve ⟳ olarak katlanır. Dokunmak günceller.
 AYARLAR
-- Ayarlar penceresi: ☰ ayarları bölümler halinde açar; bir anahtar bir işlevi hemen açar ya da kapatır. X ile ya da dışına dokunarak kapanır. Yatayda solda 2 sütun halinde açılır, başlığı tek satırda: tek sütun için sağ kenardaki çubuğu sola, iki sütun için sağa sürükle; X'in yanındaki düğme 2 sütunu geri getirir. Görünüm en sondadır. Sistem & Destek adlarını 3 saniye gösterir, sonra yalnızca düğmeleri; telefonda yatayda altta süzülen, ⋯ olarak katlanan bir kutudur (tutamacı onu genişletir), tablette tek satır.
+- Ayarlar penceresi: ⚙︎ ayarları bölümler halinde açar; bir anahtar bir işlevi hemen açar ya da kapatır. X ile ya da dışına dokunarak kapanır. Yatayda solda 2 sütun halinde açılır, başlığı tek satırda: tek sütun için sağ kenardaki çubuğu sola, iki sütun için sağa sürükle; X'in yanındaki düğme 2 sütunu geri getirir. Görünüm en sondadır. Sistem & Destek adlarını 3 saniye gösterir, sonra yalnızca düğmeleri; telefonda yatayda altta süzülen, ⋯ olarak katlanan bir kutudur (tutamacı onu genişletir), tablette tek satır.
 - Depremler sayfası: telefonda son kaydedilen listelerle hemen açılır ve onları arka planda günceller.
 - Dışa / İçe aktarma: dosyaya girecekler için anahtarlar (ürünler ve yetiştirme verileri, parsel bildirimleri, parsel çöp kutusu, bildirimler, harita, widget'lar, deprem geçmişi, günlük de); Dışa ve İçe aktarmada yerleşimler ve parseller tek tek işaretlenir; Aa düğmesi metin boyutunu değiştirir.
 - Gelişmiş işlevler: yerler'in altındaki kart: Çiftçi modu ve Depremler sayfası.
-- Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
+- Görüntüleme dili: ⚙︎ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
 - Günlük: boyut, satırlar ve hatalar bir kartta; Günlüğü gör satırları açar (Tümü, Hatalar, Bugün, Dün; uzun dokunma bir satırı kopyalar); Paylaş ve Kaydet ekranın altında. Düzeltilen hatalar günlüğün sonundadır ve sayılmaz; ağ sorunları uyarıdır.
-- Temalar: kendi arka planı, kartları ve rengi olan 6 tema (Grafit, Şakayık, Bal, Orman, Okyanus, Lavanta), her biri açık ve koyu; ☰ › Tema içindeki noktalar temanın rengindedir.
-- Tur: bildirimler kartında: ekranların her bölümünün ne gösterdiğine dair kısa bir tur. Yakında (şimdilik gri).
+- Temalar: kendi arka planı, kartları ve rengi olan 6 tema (Grafit, Şakayık, Bal, Orman, Okyanus, Lavanta), her biri açık ve koyu; ⚙︎ › Tema içindeki noktalar temanın rengindedir.
+- Eğitim: uyarılar kartında: ekranların her bölümünün ne gösterdiğine dair kısa bir eğitim. Yakında (şimdilik gri).
 - Yardım: uzun metinler kendi simgeleriyle bölümlere ayrılır ya da 2 satır ve Tümünü göster ▾ gösterir; yatayda 2 sütun hâlinde, bir bölüm düğmesine dokunmak o bölümün çerçevesini iki kez yanıp söndürür.
-- Yerler: ☰ menüsünün ilk kartı (çiftçi modunda: Yerler & Parseller, parseller de içinde). Üç satır: önce dolu yıldızlı yerler (ana ekranları var, ekran sırasıyla), sonra diğer favoriler. 2 veya daha fazla yıldız varken herhangi biri kaldırılabilir: yıldızlı sonraki yer ilk ekran olur; sonuncusu gridir ve kalır. Boş bir yıldıza dokunmak o yere ana ekran verir ve onu gösterir. Yerler › listeyi açar; haritasında İl ▾ tek bir ilde arar.
+- Yerler: ⚙︎ menüsünün ilk kartı (çiftçi modunda: Yerler & Parseller, parseller de içinde). Gösterilen yerle tek satır; ▾ ana ekranı olan diğer yerleri açar. Bir yıldızı kaldırmak yeri ve ekranını siler (2 veya daha fazla kaldıkça; sonuncusu gridir ve kalır). Yerler › listeyi açar; haritasında İl ▾ tek bir ilde arar.
 BILDIRIMLER
 - Depremler: her 10 dakikada bir, gece ekran kapalıyken de kontrol edilir; revize edilen büyüklük bildirimi günceller, bildirime dokunmak haritayı açar.
 - Kendi kanalları: hava uyarıları, yağmur ve kar, depremler, parseller ve güncellemelerin her birinin telefon ayarlarında kendi kanalı vardır; birini kapatıp diğerlerini tutabilirsiniz.
 - Yeni sürüm: bildirimler açıkken uygulama güncellemeden sonra 2 hafta her gün, sonra 7 günde bir GitHub'ı denetler ve yeni sürümü Android bildirimlerinde duyurur; dokunmak Güncellemeleri denetle'yi açar.
 GÜNCELLEMELER
-- Yeni sürüm kutusu: yeni bir sürüm olduğunda ☰ üstünde kısa bir kutu; ona dokunmak indirmeyi başlatır.
+- Yeni sürüm kutusu: yeni bir sürüm olduğunda ⚙︎ üstünde kısa bir kutu; ona dokunmak indirmeyi başlatır.
 PARSELLER
 - Ana ekranda istatistikler: operasyonel durumun altında açılır (yatayda solda); ‹ kapatır, başka bir parselin sekmesi açık tutar.
 - Geçmiş ve tahmin: göstergeyi geçmiş bir güne sürükleyin; değerleri grafiğin altındaki kutuda görünür ve 10 sn sonra bugüne döner.
@@ -33,6 +35,7 @@ PARSELLER
 - Operasyonel durum: üstte ürün ve ekim tarihi; ürün varsa karar damla kurumasını (ΔT) ve ürünün hastalığını da hesaba katar.
 - Parsel koordinatları: düzenleme sayfasında her noktanın GPS koordinatları yazılabilir, altında uydu görünümü parseli gösterir.
 - Parseli düzenle: kalem parselin sayfasını açar: ad, bitki (ekim tarihinin sezonuna göre liste veya Başka bitki…), ekim tarihi, alan; köşeler haritada taşınır.
+- Çöp kutusu: silinen bir parsel GPS düğmesinin yanındaki ↺ işaretli çöp kutusuna gider (kırmızı nokta onları sayar) ve 15 gün saklanır; yuvarlak düğme onu geri yükler (kayıtlı bir parselde aynı ad varsa: yeni ad ya da değiştir).
 YERLER
 - Haritada arama: büyüteç altta aramayla haritayı açar; bir yere ya da bir yerleşimin adına dokunmak sıcaklığını, Ayrıntılar'ı (sonraki günler) ve Ekle'yi gösterir. Harita sade ve açıktır, yer adları büyük yazılır (parsellerin haritasında da). Başka yerler yalnızca yazılan ad gibi başlıyorlarsa görünür (en az 6 harf ya da adın %60'ı).
 - Yer kartları: tablette ve yatayda metinleri kadar geniştir ve satır ve sütunlarda durur; telefonda dikeyde çok uzun bir ad daha küçük harf alır; yatayda arama dikeydeki boyutunu korur.
@@ -45,18 +48,18 @@ ANA EKRAN
 - Beş günlük tahmin: 3–5. günler ilk dokunuşa kadar her 3 saniyede kendiliğinden ilerler.
 - Büyük pusula: listedeki bir yere dokunmak işaretini pusulada gösterir; aynı yöndeki yerler artık üst üste binmez.
 AYARLAR
-- Ayarlar: ☰ menüsü artık bölümler, anahtarlar, renk temaları ve Sistem ve destek çubuğu olan bir pencere; yenileme ekranı aşağı çekerek veya “güncellendi”ye dokunarak yapılır.
-- Görüntüleme dili: ☰ içinde her satırda 2 düğme: İngilizce ve ülkenin dilleri (ABD'de İngilizce ve İspanyolca); Romanya'da “Diğer diller (azınlıklar)” diğerlerini gösterir.
-- Simge teması: 6 hava simgesi teması (Klasik, Parlak, Düz, Gerçekçi, Atmosferik, Kontur), ☰ içinde renkli noktalarla seçilir; uygulamada ve widget'larda.
+- Ayarlar: ⚙︎ menüsü artık bölümler, anahtarlar, renk temaları ve Sistem ve destek çubuğu olan bir pencere; yenileme ekranı aşağı çekerek veya “güncellendi”ye dokunarak yapılır.
+- Görüntüleme dili: ⚙︎ içinde her satırda 2 düğme: İngilizce ve ülkenin dilleri (ABD'de İngilizce ve İspanyolca); Romanya'da “Diğer diller (azınlıklar)” diğerlerini gösterir.
+- Simge teması: 6 hava simgesi teması (Klasik, Parlak, Düz, Gerçekçi, Atmosferik, Kontur), ⚙︎ içinde renkli noktalarla seçilir; uygulamada ve widget'larda.
 BILDIRIMLER
-- Depremler: bildirimler yalnızca yerinize en fazla 300 km uzaklıktaki depremler için; ☰ içinden açılır veya kapatılır.
-- Kasırgalar (ABD): yeriniz için kasırga bildirimleri ☰ içinden açılır veya kapatılır.
+- Depremler: bildirimler yalnızca yerinize en fazla 300 km uzaklıktaki depremler için; ⚙︎ içinden açılır veya kapatılır.
+- Kasırgalar (ABD): yeriniz için kasırga bildirimleri ⚙︎ içinden açılır veya kapatılır.
 ÇIFTÇI MODU
 - Çiftçi düğmesi: düğmelerin yanındaki yaprak düğmesi çiftçi modunu kapatır; başka bir yer onu korur.
 - Operasyonel durum: bir parselin ekranında, yalnızca gerektiğinde, ilaçlama kararı, nedeni ve sonraki 24 saatin riskleri.
 - Sekmeler: yer ve parseller adın altında sekmelerde (yatayda altta); parsel ekranı 1–4. bölümlerde.
 GÜNCELLEMELER
-- Güncellemeler: uygulama artık kendi başına güncelleme aramıyor, yalnızca ☰ › Güncellemeleri denetle'ye dokunduğunuzda; yeni sürüm tarayıcıda iner ve siz onu indirilen dosyadan yüklersiniz.
+- Güncellemeler: uygulama artık kendi başına güncelleme aramıyor, yalnızca ⚙︎ › Güncellemeleri denetle'ye dokunduğunuzda; yeni sürüm tarayıcıda iner ve siz onu indirilen dosyadan yüklersiniz.
 PARSELLER
 - Çöp kutusu: silinen parsel 15 gün boyunca GPS düğmesinin altındaki çöp kutusuna gider ve oradan geri yüklenebilir.
 - Harita görünümleri: ＋/− altındaki yuvarlak düğmeler uydu ile harita arasında geçer ve son 2 saatin yağış radarını gösterir.
@@ -104,7 +107,7 @@ GÜNCELLEMELER
 PARSELLER
 - Parsel bildirimleri, haritadaki zil düğmesiyle seçilir: yağmur, rüzgâr, kar, kuraklık.
 TEMALAR
-- 6 renk teması (Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül), her biri açık ve koyu: ☰ › Tema.
+- 6 renk teması (Tek renk, Adaçayı, Lavanta, Gökyüzü, Şeftali, Gül), her biri açık ve koyu: ⚙︎ › Tema.
 - Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Sürüm 1.1 (v.1.100 – v.1.191)
 - Parseller: GPS ile veya haritada kaydedilir, her biri için ana ekran, PDF'li 28 günlük istatistik, yağmur ve rüzgâr uyarıları.
 - 4x2 günler ve 4x3 widget'lar.
 - Metin boyutu (Aa).
-- ☰ › Uygulamayı gönder.
+- ⚙︎ › Uygulamayı gönder.
 - ABD: NWS uyarıları, hortumlar, °F, yerel saat.
 - Diğer diller: Romanya'daki azınlık dilleri.
 - Parseller: tüm parselleri gösteren harita, GPS düğmesi (mavi nokta) ve “GPS yerini kaydet”.

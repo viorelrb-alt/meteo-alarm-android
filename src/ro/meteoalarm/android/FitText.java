@@ -10,7 +10,7 @@ import android.widget.TextView;
 /**
  * v2.010 (Viorel 2026-11-17): a text that keeps to LINES rows (1 or 2) without breaking a word:
  * when it does not fit its room, its size goes down (to MIN of the size it was given at most).
- * Used on the Statistics and Edit parcel pages and for the grey texts of the ☰ menu.
+ * Used on the Statistics and Edit parcel pages and for the grey texts of the ⚙︎ menu.
  */
 class FitText extends TextView {
 	private int lines;

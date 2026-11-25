@@ -263,7 +263,7 @@ public final class PlacesActivity extends Activity {
 					showMap();
 				}
 			}));
-			hdr.addView(iconBtn("select", Tr.t("Select towns to delete", "Selectează localități pentru ștergere"), new Runnable() {
+			hdr.addView(iconBtn("trash", Tr.t("Select towns to delete", "Selectează localități pentru ștergere"), new Runnable() {
 				public void run() {
 					mode = "select";
 					ticked.clear();
@@ -1537,6 +1537,12 @@ public final class PlacesActivity extends Activity {
 			h.moveTo(11.5f, 7); h.lineTo(20.5f, 7);
 			h.addRoundRect(new RectF(3.5f, 14.5f, 8.5f, 19.5f), 1.2f, 1.2f, Path.Direction.CW);
 			h.moveTo(11.5f, 17); h.lineTo(20.5f, 17);
+			break;
+		case "trash": // v2.210 (Viorel): a bin, so it is clear the towns are deleted from here
+			h.moveTo(4, 6.5f); h.lineTo(20, 6.5f);
+			h.moveTo(9.5f, 6.5f); h.lineTo(10, 4); h.lineTo(14, 4); h.lineTo(14.5f, 6.5f);
+			h.moveTo(6, 6.5f); h.lineTo(7, 20); h.lineTo(17, 20); h.lineTo(18, 6.5f);
+			h.moveTo(10, 10); h.lineTo(10.3f, 16.5f); h.moveTo(14, 10); h.lineTo(13.7f, 16.5f);
 			break;
 		case "sort":
 			h.moveTo(7.5f, 9.5f); h.lineTo(12, 5); h.lineTo(16.5f, 9.5f);

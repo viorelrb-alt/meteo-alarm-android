@@ -33,12 +33,12 @@ final class Notifier {
 	/** v5.00 (Viorel): earthquake notices only within this distance of your place (km). */
 	static final double QUAKE_KM = 300;
 
-	/** ☰ › Cutremure: notices of earthquakes near your place (on unless turned off). */
+	/** ⚙︎ › Cutremure: notices of earthquakes near your place (on unless turned off). */
 	static boolean quakes(Context ctx) {
 		return prefs(ctx).getBoolean("quakeNotify", true);
 	}
 
-	/** ☰ › Tornade (US): tornado notices for your town (on unless turned off). */
+	/** ⚙︎ › Tornade (US): tornado notices for your town (on unless turned off). */
 	static boolean tornadoes(Context ctx) {
 		return prefs(ctx).getBoolean("tornadoNotify", true);
 	}
@@ -153,7 +153,7 @@ final class Notifier {
 			{
 				List<Warnings.Warn> ws = Fetcher.warnings(ctx, c);
 				for (Warnings.Warn wr : ws) {
-					// v5.00 (Viorel): ☰ › Tornade off: no tornado notices (the other NWS warnings stay).
+					// v5.00 (Viorel): ⚙︎ › Tornade off: no tornado notices (the other NWS warnings stay).
 					if (wr.nws && !tornadoes(ctx) && wr.type.toLowerCase(java.util.Locale.US).contains("tornado")) continue;
 					String key = "nW_" + Warnings.fold(c.key() + "_" + wr.level + "_" + wr.type + "_" + wr.from).replaceAll("[^a-z0-9_]+", "");
 					if (p.getLong(key, 0) > 0) continue;
@@ -206,7 +206,7 @@ final class Notifier {
 	}
 
 	/**
-	 * Earthquakes: v5.00 (Viorel) only within QUAKE_KM of the place, and only while ☰ › Cutremure is
+	 * Earthquakes: v5.00 (Viorel) only within QUAKE_KM of the place, and only while ⚙︎ › Cutremure is
 	 * on. v2.030: a notice already given is updated (silently) when the magnitude is revised, and a
 	 * quake INFP had first is not told again when EMSC has it too.
 	 */
@@ -385,7 +385,7 @@ final class Notifier {
 		}
 	}
 
-	/** v2.110: a new version of the app; a tap opens ☰ › Check for updates. */
+	/** v2.110: a new version of the app; a tap opens ⚙︎ › Check for updates. */
 	@SuppressWarnings("deprecation")
 	static void update(Context ctx, String title, String body) {
 		NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);

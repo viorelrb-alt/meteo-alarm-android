@@ -11,7 +11,7 @@ import ro.meteoalarm.android.core.Tr;
 
 /**
  * The language on the phone (Viorel 2026-11-04): at the first start the phone's own language when
- * the app has it (else English); later the one chosen in ☰ › Language. The list offers only
+ * the app has it (else English); later the one chosen in ⚙︎ › Language. The list offers only
  * English, the phone's own language and the official languages of the country the phone
  * is in (from the SIM or the mobile network, else the town shown, else the phone's settings), plus
  * the one in use.

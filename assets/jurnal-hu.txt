@@ -1,33 +1,36 @@
-Jelenlegi verzió: v.2.200 · 25.11.2026
+Jelenlegi verzió: v.2.210 · 25.11.2026
 BEÁLLÍTÁSOK
-- A Beállítások ablak: a ☰ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
-- Bemutató: az értesítések kártyáján: rövid bemutató arról, mit mutat a képernyők egyes részei. Hamarosan (egyelőre szürke).
+- A Beállítások ablak: a ⚙︎ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
+- Útmutató: a Riasztások kártyán: rövid útmutató arról, mit mutat a képernyők egyes része. Hamarosan (egyelőre szürke).
 - Exportálás / Importálás: kapcsolók a fájl tartalmához (a növények és termesztési adatok, parcella-értesítések, parcellakuka, értesítések, térkép, widgetek, földrengés-előzmények, napló is); Exportálásnál és Importálásnál a települések és parcellák egyenként jelölhetők; az Aa gomb a szöveg méretét állítja.
 - Földrengések oldal: azonnal megnyílik a telefonon utoljára mentett listákkal, és a háttérben frissíti őket.
-- Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
+- Megjelenítési nyelv: a ⚙︎-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
 - Napló: méret, sorok és hibák egy kártyán; a Napló megtekintése megnyitja a sorokat (Mind, Hibák, Ma, Tegnap; hosszú érintés másol egy sort); Megosztás és Mentés a képernyő alján. A javított hibák a napló végén vannak, és nem számítanak bele; a hálózati gondok figyelmeztetések.
 - Speciális funkciók: a Települések alatti kártya: Gazda mód és a Földrengések oldal.
 - Súgó: a hosszú szövegek saját ikonos részekre vannak bontva, vagy 2 sort és az Összes mutatása ▾ gombot mutatják; fekvőben 2 oszlopban, és egy szakasz gombjára koppintva annak körvonala kétszer felvillan.
-- Települések: a ☰ első kártyája (gazda módban: Települések & Parcellák, benne a parcellákkal). Három sor: először a teli csillagos települések (van főképernyőjük, a képernyők sorrendjében), aztán a többi kedvenc. Bármelyik csillag levehető, amíg 2 vagy több van: a következő csillagos település lesz az első képernyő; az utolsó szürke és marad. Üres csillagra koppintva a település főképernyőt kap és megjelenik. A Települések › megnyitja a listát; a térképén a Megye ▾ egy megyében keres.
-- Témák: 6 téma saját háttérrel, kártyákkal és színnel (Grafit, Bazsarózsa, Méz, Erdő, Óceán, Levendula), mind világos és sötét; a ☰ › Téma pöttyei a téma színét viselik.
+- Települések: a ⚙︎ első kártyája (gazda módban: Települések & Parcellák, benne a parcellákkal). Egy sor a mutatott településsel; a ▾ megnyitja a többi főképernyős települést. Egy csillag levétele törli a települést és a képernyőjét (amíg 2 vagy több marad; az utolsó szürke és marad). A Települések › megnyitja a listát; a térképén a Megye ▾ egy megyében keres.
+- Témák: 6 téma saját háttérrel, kártyákkal és színnel (Grafit, Bazsarózsa, Méz, Erdő, Óceán, Levendula), mind világos és sötét; a ⚙︎ › Téma pöttyei a téma színét viselik.
 ÉRTESÍTÉSEK
 - Földrengések: 10 percenként ellenőrizve, éjjel kikapcsolt képernyővel is; a felülvizsgált magnitúdó frissíti az értesítést, és arra koppintva megnyílik a térkép.
 - Saját csatornák: az időjárási figyelmeztetések, eső és hó, földrengések, parcellák és frissítések mind saját csatornát kapnak a telefon beállításaiban; egyet kikapcsolhatsz, a többit megtartva.
 - Új verzió: bekapcsolt értesítésekkel az app frissítés után 2 hétig naponta, utána 7 naponta megnézi a GitHubot, és az Android-értesítésekben jelzi az új verziót; koppintásra megnyílik a Frissítések keresése.
 FŐKÉPERNYŐ
 - Alsó gombok: a nevük a képernyő megnyitásakor 3 másodpercig alattuk látszik, utána csak a gombok; húzd fel a kapszulát, hogy újra lásd őket. A bekapcsolt gomb benyomottnak látszik, gyűrűvel.
-- Földrengés adatai: a Földrengés mezőre koppintva a főképernyőn nyílik meg: a térkép, alatta az érezhetőségi zónák és az érték története; a színes négyzet vagy a térkép teljes képernyőn nyitja meg, mint egy rengést a ☰ › Földrengések menüből. Romániában, Franciaországban, Olaszországban, Hollandiában, Svájcban és Görögországban a hivatalos értékek először az ország intézetétől jönnek (INFP, BCSF, INGV, KNMI, SED, NOA), utána az EMSC-től. Romániában az ország körüli földrengések is megkapják az INFP értékét (az infp.ro-ról).
+- Fényerő: megmutatja a fényerősávot bal oldalt; a végén lévő ☀ megérintése visszaadja a képernyőnek az automatikus fényerőt.
+- Földrengés adatai: a Földrengés mezőre koppintva a főképernyőn nyílik meg: a térkép, alatta az érezhetőségi zónák és az érték története; a színes négyzet vagy a térkép teljes képernyőn nyitja meg, mint egy rengést a ⚙︎ › Földrengések menüből. Romániában, Franciaországban, Olaszországban, Hollandiában, Svájcban és Görögországban a hivatalos értékek először az ország intézetétől jönnek (INFP, BCSF, INGV, KNMI, SED, NOA), utána az EMSC-től. Romániában az ország körüli földrengések is megkapják az INFP értékét (az infp.ro-ról).
+- Főképernyők: fülek a név alatt (fekvőben lent): a település és parcellánként egy; egy koppintás vagy oldalra húzás képernyőt vált, a + új parcella mezőjét nyitja meg. Ha nem fér ki mind, a sor 3 másodpercenként eggyel továbblép; egy ujj rajta egy időre megállítja.
 - Gombnevek: a koppintás után a képernyőn maradó kerek gomb kb. 1,5 másodpercig kis buborékban mutatja a nevét.
 - Időjárási térkép: a főképernyő végén (fekvőben a dobozos lapon): OpenStreetMap utcaszinten a képernyő településének pontos helye körül (az elsőnél GPS) vagy egy parcella képernyőjén a parcella a körvonalával; a réteg áttetsző. A térkép áll; adatok: Open-Meteo. Felhők, Hőmérséklet és Eső, egyszerre egy; a bekapcsoltra koppintva kikapcsol. Az Eső szürke és áthúzott, ha a közelben nem esik most és a következő 2 órában sem. A ▶ egymás után lejátssza az órákat (6 a mostani előtt és 6 utána); egy órára koppintva megmutatja.
 - Települések gomb: a házas ikonú kerek gomb (állóban a név jobb oldalán, fekvőben a felső sávon, a sarka előtt) megnyitja a települések listáját.
 - Több település: a lista minden településének saját főképernyője van; balra vagy jobbra lapozva a mostani időjáráson a következőre lépsz, a lista sorrendjében.
 - „Frissítve” gomb: az oldal fölött lebeg, jobbra: állóban a figyelmeztetések alatt (nélkülük a települések sora alatt), fekvőben az óra alatt. Frissítés közben a nyila forog, kis körként is; aztán 4 másodpercig az idő látszik, majd ⟳-vé csukódik. Koppintás frissít.
 FRISSÍTÉSEK
-- Új verzió doboz: rövid doboz a ☰ tetején, ha van új verzió; koppintásra indul a letöltés.
+- Új verzió doboz: rövid doboz a ⚙︎ tetején, ha van új verzió; koppintásra indul a letöltés.
 PARCELLÁK
 - A parcella koordinátái: a szerkesztő oldalon minden pont GPS-koordinátája beírható, alatta a műholdas nézet mutatja a parcellát.
 - Buborékok a Statisztikában: a permetezési ablak egy órájának, a grafikonok egy napjának vagy egy talajsornak az érintése magyarázó buborékot nyit; a permetezési ablak magától mozog.
 - Időjárási rétegek: a parcellák térképén a ＋ és − alatti doboz Műholddal, Térképpel, Felhőkkel, Hőmérsékletekkel (színek) és Esővel (mm/óra) nyílik, aztán a választásra csukódik; egyszerre egy réteg, nevével, idejével és jelmagyarázatával a kártyák fölött; az Eső csak akkor kapcsol be, ha most vagy a következő 2 órában esik (a radar helyett).
+- Kuka: a törölt parcella a GPS gomb melletti ↺-es kukába kerül (a piros pötty számolja őket) és 15 napig megmarad; a kerek gomb visszaállítja (ha egy mentett parcellának ez a neve: új név vagy csere).
 - Múlt és előrejelzés: húzd a jelzőt egy elmúlt napra; értékei a grafikon alatti mezőben jelennek meg, 10 mp után pedig visszatér a mai naphoz.
 - Operatív állapot: fent a kultúra és a vetés dátuma; kultúrával az ítélet a cseppszáradást (ΔT) és a betegségét is figyelembe veszi.
 - Parcella szerkesztése: a ceruza megnyitja a parcella oldalát: név, kultúra (lista a vetési dátum szezonja szerint vagy Más kultúra…), vetési dátum, terület; a sarkok a térképen mozognak.
@@ -41,18 +44,18 @@ TELEPÜLÉSEK
 
 1.4. verzió (v.1.400 – v.1.520)
 BEÁLLÍTÁSOK
-- Beállítások: a ☰ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
-- Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ☰-ban; az alkalmazásban és a widgeteken.
-- Megjelenítés nyelve: gombok a ☰ menüben, soronként 2: angol és az ország nyelvei (az USA-ban angol és spanyol); Romániában a „Más nyelvek (kisebbségek)” mutatja a többit.
+- Beállítások: a ⚙︎ menü most egy ablak szakaszokkal, kapcsolókkal, színtémákkal és a Rendszer és támogatás sávval; frissítés a képernyő lehúzásával vagy a „frissítve” megérintésével.
+- Ikontéma: 6 időjárásikon-téma (Klasszikus, Fényes, Lapos, Valósághű, Légköri, Körvonalas), színes pöttyökkel választható a ⚙︎-ban; az alkalmazásban és a widgeteken.
+- Megjelenítés nyelve: gombok a ⚙︎ menüben, soronként 2: angol és az ország nyelvei (az USA-ban angol és spanyol); Romániában a „Más nyelvek (kisebbségek)” mutatja a többit.
 ÉRTESÍTÉSEK
-- Földrengések: értesítések csak a helyedtől legfeljebb 300 km-re lévő földrengésekről; a ☰-ban kapcsolhatók be vagy ki.
-- Tornádók (USA): a településed tornádóértesítései a ☰-ban kapcsolhatók be vagy ki.
+- Földrengések: értesítések csak a helyedtől legfeljebb 300 km-re lévő földrengésekről; a ⚙︎-ban kapcsolhatók be vagy ki.
+- Tornádók (USA): a településed tornádóértesítései a ⚙︎-ban kapcsolhatók be vagy ki.
 FŐKÉPERNYŐ
 - Főképernyő: az oldal a felső üveg alatt görgethető, részekre bontva (Következő órák, Ötnapos előrejelzés, Időjárási részletek); a gombok és az akkumulátor alul lebegnek.
 - Nagy iránytű: egy település megérintése a listában megmutatja a jelét az iránytűn; az azonos irányú települések már nem fedik egymást.
 - Ötnapos előrejelzés: a 3–5. nap 3 másodpercenként magától lép tovább az első érintésig.
 FRISSÍTÉSEK
-- Frissítések: az alkalmazás már nem keres magától frissítéseket, csak ha a ☰ › Frissítések keresése gombra koppintasz; az új verzió a böngészőben töltődik le, és a letöltött fájlból telepíted.
+- Frissítések: az alkalmazás már nem keres magától frissítéseket, csak ha a ⚙︎ › Frissítések keresése gombra koppintasz; az új verzió a böngészőben töltődik le, és a letöltött fájlból telepíted.
 GAZDA MÓD
 - Fülek: a település és a parcellák fülekben a név alatt (fekvő nézetben lent); a parcella képernyője 1–4. részre bontva.
 - Gazda gomb: a gombok melletti levél gomb kikapcsolja a gazda módot; másik település megtartja.
@@ -104,7 +107,7 @@ GAZDA MÓD
 PARCELLÁK
 - Parcellaértesítések a térkép csengő gombjával: eső, szél, hó, aszály.
 TÉMÁK
-- 6 színtéma (Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa), mindegyik világos és sötét: ☰ › Téma.
+- 6 színtéma (Egyszínű, Zsálya, Levendula, Ég, Barack, Rózsa), mindegyik világos és sötét: ⚙︎ › Téma.
 - Dizájnjavítások és a jelentett hibák javítása.
 
 2. verzió (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ TÉMÁK
 - Parcellák: GPS-szel vagy térképen mentve, mindegyiknek főképernyő, 28 napos statisztika PDF-fel, eső- és szélriasztások.
 - Widgetek 4x2 napok és 4x3.
 - Szövegméret (Aa).
-- ☰ › Alkalmazás küldése.
+- ⚙︎ › Alkalmazás küldése.
 - Egyesült Államok: NWS-figyelmeztetések, tornádók, °F, helyi idő.
 - Egyéb nyelvek: a romániai kisebbségek nyelvei.
 - Parcellák: térkép az összes parcellával, GPS gomb (kék pont) és „GPS-hely mentése”.

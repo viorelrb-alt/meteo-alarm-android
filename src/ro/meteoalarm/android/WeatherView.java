@@ -26,6 +26,9 @@ final class WeatherView extends View {
 		/** The sun button showed the brightness bar. */
 		void onBright();
 
+		/** v2.210: the sun at the end of the brightness bar tapped: the phone's automatic brightness again. */
+		void autoBright();
+
 		/** Any touch (it also leaves the night clock). */
 		void onTouched();
 
@@ -140,6 +143,7 @@ final class WeatherView extends View {
 	private final Runnable carouselNext = new Runnable() {
 		public void run() {
 			postDelayed(this, CAROUSEL_MS);
+			tabsNext();
 			final Strip st = screen.days2;
 			float step = screen.days2Step;
 			if (!carouselOn || st.area[2] <= 0 || step <= 0 || (dragging && drag == st) || screen.nightClock || !isShown() || pgA != null) return;
@@ -159,6 +163,32 @@ final class WeatherView extends View {
 			carousel.start();
 		}
 	};
+	// v2.210 (Viorel): the row of the towns' and parcels' buttons moves on by one every 3 s when
+	// not all of them fit (after the last one back to the first); a finger on it stops it for 8 s.
+	private long tabsPausedUntil;
+	private android.animation.ValueAnimator tabsAnim;
+
+	private void tabsNext() {
+		final Strip st = screen.tabs;
+		if (st.area[2] <= 0 || st.max <= 1 || (dragging && drag == st) || screen.nightClock || !isShown() || pgA != null
+				|| System.currentTimeMillis() < tabsPausedUntil || Motion.off(getContext())) return;
+		float to = 0;
+		for (float v : st.snaps) if (v > st.scroll + 1) { to = v; break; }
+		if (st.scroll >= st.max - 1) to = 0;
+		if (tabsAnim != null) tabsAnim.cancel();
+		tabsAnim = android.animation.ValueAnimator.ofFloat(st.scroll, to);
+		tabsAnim.setDuration(to == 0 ? 900 : 600);
+		tabsAnim.setInterpolator(new android.view.animation.AccelerateDecelerateInterpolator());
+		tabsAnim.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+			public void onAnimationUpdate(android.animation.ValueAnimator a) {
+				if (dragging && drag == st) return;
+				st.scroll = (Float) a.getAnimatedValue();
+				invalidate();
+			}
+		});
+		tabsAnim.start();
+	}
+
 	private final Runnable nudgeRun = new Runnable() {
 		public void run() {
 			final Strip st = screen.info;
@@ -193,6 +223,10 @@ final class WeatherView extends View {
 			if (carousel != null) carousel.cancel();
 		}
 		if (st == screen.info && nudge != null) nudge.cancel();
+		if (st == screen.tabs) {
+			tabsPausedUntil = System.currentTimeMillis() + 8000;
+			if (tabsAnim != null) tabsAnim.cancel();
+		}
 	}
 
 	private boolean slideLogged;
@@ -961,7 +995,15 @@ final class WeatherView extends View {
 			if (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL) {
 				barDown = false;
 				float ux = (e.getX() - ox) / scale, uy = (e.getY() - oy) / scale;
-				if (barDrag) taps.setBrightness(toLevel(screen.brightLevel), true);
+				float[] ba = screen.barArea;
+				boolean sunTap = barDrag && Math.abs(e.getY() - downY) < 12 * dp && Math.abs(e.getX() - downX) < 12 * dp
+						&& in(ba, ux, uy) && uy >= ba[1] + ba[3] - ba[2] * 1.2f;
+				if (sunTap) {
+					// v2.210 (Viorel): a tap on ☀ gives the screen back to the automatic brightness.
+					taps.autoBright();
+					screen.brightLevel = toPos(taps.brightness());
+					invalidate();
+				} else if (barDrag) taps.setBrightness(toLevel(screen.brightLevel), true);
 				if (moonDown && in(screen.btnMoon, ux, uy)) taps.toggleTheme();
 				if (barDrag || moonDown) showBar(4000);
 			}

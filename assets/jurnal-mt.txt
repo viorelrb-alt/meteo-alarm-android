@@ -1,10 +1,11 @@
-Verżjoni attwali: v.2.200 · 25.11.2026
+Verżjoni attwali: v.2.210 · 25.11.2026
 AĠĠORNAMENTI
-- Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ☰ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
+- Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ⚙︎ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
 - Koordinati tal-għalqa: fil-paġna tal-editjar jinkitbu l-koordinati GPS ta' kull punt, u taħthom il-veduta bis-satellita turi l-għalqa.
+- Landa tal-iskart: għalqa mħassra tmur fil-barmil b'↺ ħdejn il-buttuna GPS (it-tikka ħamra tgħoddhom) u tinżamm 15-il jum; il-buttuna tonda terġa' ġġibha (jekk għalqa salvata għandha isimha: isem ġdid jew tibdilha).
 - Saffi tat-temp: fuq il-mappa tal-għelieqi l-kaxxa taħt ＋ u − tiftaħ b'Satellita, Mappa, Sħab, Temperaturi (kuluri) u Xita (mm fis-siegħa), imbagħad tingħalaq fuq l-għażla tiegħek; saff wieħed kull darba, bl-isem, il-ħin u l-leġġenda fuq il-kards; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita issa jew fis-sagħtejn li ġejjin (minflok ir-radar).
 - Statistika fl-iskrin prinċipali: tinfetaħ taħt l-istatus operazzjonali (mimdud fuq ix-xellug); ‹ jagħlaqha u t-tab ta' għalqa oħra jżommha.
 - Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, tnixxif tal-qtar (ΔT), riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
@@ -22,26 +23,28 @@ SETTINGS
 - Esportazzjoni / Importazzjoni: swiċċijiet għal x'jidħol fil-fajl (ukoll l-uċuħ tar-raba' u d-dejta tal-kultivazzjoni, in-notifiki tal-biċċiet tal-art, il-landa tal-biċċiet tal-art, in-notifiki, il-mappa, il-widgets, l-istorja tat-terremoti, ir-reġistru); fl-Esportazzjoni u l-Importazzjoni l-postijiet u l-biċċiet tal-art jiġu mmarkati wieħed wieħed; il-buttuna Aa tibdel id-daqs tat-test.
 - Funzjonijiet avvanzati: il-karta taħt Lokalitajiet: Modalità tal-bidwi u l-paġna tat-Terremoti.
 - Għajnuna: it-testi twal huma maqsuma f'partijiet bl-ikoni tagħhom jew juru 2 linji u Uri kollox ▾; mimdud f'2 kolonni, u tektika fuq il-buttuna ta' taqsima tteptep il-kontorn tagħha darbtejn.
-- It-tieqa Settings: ☰ jiftaħ is-settings f'taqsimiet; swiċċ jixgħel jew jitfi funzjoni mill-ewwel. Jingħalaq b'X jew mess barra minnu. Orizzontali jiftaħ fuq ix-xellug f'2 kolonni, it-titlu f'linja waħda: iġbed il-bar fuq it-tarf tal-lemin lejn ix-xellug għal kolonna waħda, lejn il-lemin għal tnejn; il-buttuna ħdejn X terġa' ġġib 2 kolonni. Wiri huwa l-aħħar. Sistema & Appoġġ juri l-ismijiet għal 3 sekondi, imbagħad il-buttuni biss; fuq telefon orizzontali hija kaxxa li tpinġi isfel u tintewa f'⋯ (il-manku jwessagħha), fuq tablet linja waħda.
-- Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
-- Lokalitajiet: l-ewwel karta ta' ☰ (fil-modalità tal-bidwi: Lokalitajiet & Għelieqi, bl-għelieqi fiha). Tliet ringieli: l-ewwel il-lokalitajiet b'stilla mimlija (għandhom skrin ewlieni, fl-ordni tal-iskrins), imbagħad il-favoriti l-oħra. Kull stilla tista' titneħħa sakemm ikun hemm 2 jew aktar: il-lokalità li jmiss bi stilla ssir l-ewwel skrin; l-aħħar waħda hija griża u tibqa'. Mess fuq stilla vojta jagħti lill-lokalità skrin ewlieni u juriha. Lokalitajiet › jiftaħ il-lista; fuq il-mappa tagħha Kontea ▾ tfittex f'kontea waħda.
+- It-tieqa Settings: ⚙︎ jiftaħ is-settings f'taqsimiet; swiċċ jixgħel jew jitfi funzjoni mill-ewwel. Jingħalaq b'X jew mess barra minnu. Orizzontali jiftaħ fuq ix-xellug f'2 kolonni, it-titlu f'linja waħda: iġbed il-bar fuq it-tarf tal-lemin lejn ix-xellug għal kolonna waħda, lejn il-lemin għal tnejn; il-buttuna ħdejn X terġa' ġġib 2 kolonni. Wiri huwa l-aħħar. Sistema & Appoġġ juri l-ismijiet għal 3 sekondi, imbagħad il-buttuni biss; fuq telefon orizzontali hija kaxxa li tpinġi isfel u tintewa f'⋯ (il-manku jwessagħha), fuq tablet linja waħda.
+- Lingwa tal-wiri: f'⚙︎ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
+- Lokalitajiet: l-ewwel karta ta' ⚙︎ (fil-modalità tal-bidwi: Lokalitajiet & Għelieqi, bl-għelieqi fiha). Ringiela waħda bil-lokalità murija; ▾ jiftaħ il-lokalitajiet l-oħra b'skrin ewlieni. It-tneħħija ta' stilla tħassar il-lokalità u l-iskrin tagħha (sakemm jibqgħu 2 jew aktar; l-aħħar waħda hija griża u tibqa'). Lokalitajiet › jiftaħ il-lista; fuq il-mappa tagħha Kontea ▾ tfittex f'kontea waħda.
 - Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
 - Reġistru: daqs, linji u żbalji fuq karta; Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja fil-qiegħ tal-iskrin. L-iżbalji solvuti huma fl-aħħar tar-reġistru u ma jingħaddux; il-problemi tan-netwerk huma twissijiet.
-- Temi: 6 temi bl-isfond, il-kards u l-kulur tagħhom (Grafit, Pewnija, Għasel, Foresta, Oċean, Lavanda), kull waħda ċara u skura; it-tikek f'☰ › Tema għandhom il-kulur tat-tema.
-- Tour: fil-karta tan-notifiki: tour qasir ta' dak li juri kull parti tal-iskrins. Dalwaqt (griż għalissa).
+- Temi: 6 temi bl-isfond, il-kards u l-kulur tagħhom (Grafit, Pewnija, Għasel, Foresta, Oċean, Lavanda), kull waħda ċara u skura; it-tikek f'⚙︎ › Tema għandhom il-kulur tat-tema.
+- Tutorja: fil-karta Allarmi: tutorja qasira ta' x'turi kull parti tal-iskrins. Dalwaqt (griż għalissa).
 SKRIN EWLIENI
 - Aktar lokalitajiet: kull lokalità fil-lista għandha l-iskrin prinċipali tagħha; swajp lejn ix-xellug jew il-lemin fuq it-temp issa jgħaddi għal dik ta' wara, fl-ordni tal-lista.
 - Buttuna Lokalitajiet: il-buttuna tonda bl-ikona tad-djar (f'portrait fuq il-lemin tal-isem, f'landscape fuq il-faxxa ta' fuq, qabel ir-rokna tagħha) tiftaħ il-lista tal-lokalitajiet.
 - Buttuna “aġġornat”: jitpinġa fuq il-paġna, fuq il-lemin: vertikali taħt it-twissijiet (mingħajrhom taħt ir-ringiela tal-lokalitajiet), orizzontali taħt l-arloġġ. Waqt l-aġġornament il-vleġġa ddur, anki bħala ċirku żgħir; imbagħad il-ħin jidher 4 sekondi u jintewa f'⟳. Mess jaġġorna.
 - Buttuni t'isfel: isimhom jidher taħthom għal 3 sekondi meta jinfetaħ l-iskrin, imbagħad il-buttuni biss; iġbed il-kapsula 'l fuq biex terġa' tarahom. Il-buttuna mixgħula tidher magħfusa, b'ċirku.
-- Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
+- Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ⚙︎ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Ismijiet tal-buttuni: buttuna tonda li tibqa' fuq l-iskrin meta tingħafas turi isimha f'bużżieqa żgħira għal madwar 1.5 sekondi.
+- Luminożità: turi l-bar tal-luminożità fuq ix-xellug; mess fuq ☀ fit-tarf tiegħu jagħti lura lill-iskrin il-luminożità awtomatika.
 - Mappa tat-temp: fl-aħħar tal-iskrin ewlieni (orizzontali fuq il-folja bil-kaxxi): OpenStreetMap fil-livell tat-triq madwar il-post eżatt tal-lokalità tal-iskrin (GPS għall-ewwel waħda) jew, fuq l-iskrin ta' għalqa, l-għalqa bil-kontorn tagħha; is-saff trasparenti. Il-mappa tibqa' wieqfa; data: Open-Meteo. Sħab, Temperaturi u Xita, wieħed kull darba; tektika fuq dak mixgħul titfih. Xita tkun griża u maqtugħa meta ma tkunx qed tagħmel xita fil-qrib issa u lanqas fis-sagħtejn li ġejjin. ▶ iddoqq is-sigħat (6 qabel u 6 wara issa) waħda waħda; tektika fuq siegħa turiha.
+- Skrins ewlenin: tabs taħt l-isem (mimduda isfel): il-post u wieħed għal kull biċċa art; għafsa jew swipe mal-ġenb ibiddel l-iskrin, + jiftaħ il-kaxxa ta' biċċa art ġdida. Meta ma jidħlux kollha, ir-ringiela timxi waħda 'l quddiem kull 3 sekondi; saba' fuqha jwaqqafha għal ftit.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)
 AĠĠORNAMENTI
-- Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ☰ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
+- Aġġornamenti: l-app ma tibqax tfittex aġġornamenti waħedha, biss meta tagħfas ⚙︎ › Iċċekkja għal aġġornamenti; il-verżjoni l-ġdida titniżżel fil-browser u int tinstallaha mill-fajl imniżżel.
 GĦELIEQI
 - Biċċa art ġdida: il-labra tibda f'nofs il-mappa li tara; il-buttuna GPS iġġibha fejn int.
 - Kantunieri tal-biċċa art: fil-veduta tas-satellita l-4 kantunieri jinstabu mill-istampa u jiċċaqilqu bis-saba'; mess fuq il-karta jkabbar il-mappa fuq il-biċċa art u juri l-kantunieri, Statistika tiftaħ l-istatistika tagħha.
@@ -55,12 +58,12 @@ MODALITÀ TAL-BIDWI
 - Status operattiv: fuq l-iskrin ta' għalqa, meta jkun meħtieġ biss, is-sentenza għar-raxx, ir-raġuni u r-riskji tal-24 siegħa li ġejjin.
 - Tabs: il-lokalità u l-għelieqi f'tabs taħt l-isem (orizzontali, isfel); l-iskrin ta' għalqa f'taqsimiet 1–4.
 NOTIFIKI
-- Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ☰.
-- Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ☰.
+- Terremoti: notifiki biss għal terremoti sa 300 km mill-post tiegħek; jixegħlu jew jintfew minn ⚙︎.
+- Tornado (l-Istati Uniti): in-notifiki tat-tornado għal-lokalità tiegħek jixegħlu jew jintfew minn ⚙︎.
 SETTINGS
-- Lingwa tal-wiri: buttuni f'☰, 2 f'kull ringiela: Ingliż u l-lingwi tal-pajjiż (fl-Istati Uniti Ingliż u Spanjol); fir-Rumanija “Lingwi oħra (minoranzi)” turi l-bqija.
-- Settings: il-menu ☰ issa huwa tieqa b'taqsimiet, swiċċijiet, temi tal-kulur u l-bar Sistema u appoġġ; tiġġedded billi tiġbed l-iskrin 'l isfel jew tmiss “aġġornat”.
-- Tema tal-ikoni: 6 temi tal-ikoni tat-temp (Klassiku, Tleqq, Ċatt, Realistiku, Atmosferiku, Kontorn), jintgħażlu b'tikek ikkuluriti f'☰; fl-app u fuq il-widgets.
+- Lingwa tal-wiri: buttuni f'⚙︎, 2 f'kull ringiela: Ingliż u l-lingwi tal-pajjiż (fl-Istati Uniti Ingliż u Spanjol); fir-Rumanija “Lingwi oħra (minoranzi)” turi l-bqija.
+- Settings: il-menu ⚙︎ issa huwa tieqa b'taqsimiet, swiċċijiet, temi tal-kulur u l-bar Sistema u appoġġ; tiġġedded billi tiġbed l-iskrin 'l isfel jew tmiss “aġġornat”.
+- Tema tal-ikoni: 6 temi tal-ikoni tat-temp (Klassiku, Tleqq, Ċatt, Realistiku, Atmosferiku, Kontorn), jintgħażlu b'tikek ikkuluriti f'⚙︎; fl-app u fuq il-widgets.
 SKRIN EWLIENI
 - Boxxla kbira: mess fuq lokalità fil-lista juri l-marka tagħha fuq il-boxxla; lokalitajiet fl-istess direzzjoni ma jirkbux aktar fuq xulxin.
 - Skrin ewlieni: il-paġna tiskrolla taħt il-ħġieġ ta' fuq, f'taqsimiet (Is-siegħat li ġejjin, Tbassir għal ħamest ijiem, Dettalji tat-temp); il-buttuni u l-batterija jżommu f'wiċċ l-ilma isfel.
@@ -104,7 +107,7 @@ SKRIN EWLIENI
 - Kaxxi INFORMAZZJONI fl-Ewropa: ġlata, silġ, ċpar, xita li tiffriża, riħ qawwi.
 - Preċipitazzjoni 12-il siegħa: meta tagħmel xita jew borra għal parti biss mill-ħin, kaxxi ta' 4 sigħat (Xita jew Borra, bil-ħinijiet) minflok il-grafika.
 TEMI
-- 6 temi tal-kulur (Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda), kull wieħed ċar u skur: ☰ › Tema.
+- 6 temi tal-kulur (Monokromu, Salvja, Lavanda, Sema, Ħawħa, Warda), kull wieħed ċar u skur: ⚙︎ › Tema.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Verżjoni 1.1 (v.1.100 – v.1.191)
 - Għelieqi: issejvjati bil-GPS jew fuq il-mappa, skrin ewlieni għal kull waħda, statistika ta' 28 jum b'PDF, twissijiet ta' xita u riħ.
 - Widgets 4x2 jiem u 4x3.
 - Daqs tat-test (Aa).
-- ☰ › Ibgħat l-app.
+- ⚙︎ › Ibgħat l-app.
 - L-Istati Uniti: twissijiet NWS, tornado, °F, ħin lokali.
 - Lingwi oħra: il-lingwi tal-minoranzi tar-Rumanija.
 - Għelieqi: mappa bl-għelieqi kollha, il-buttuna GPS (tikka blu) u “Issejvja post GPS”.

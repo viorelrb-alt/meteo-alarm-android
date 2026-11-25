@@ -35,7 +35,7 @@ import ro.meteoalarm.android.core.Countries;
  * One widget's settings, after the phone's weather widget (Viorel 2026-11-02): a preview, the town
  * (the app's or another) with "Change", the background on / off and how see-through, its colours
  * (by the weather, the phone's, dark), the text colour, and Cancel / Save. Opened by holding the
- * widget › Settings (Android 12+) or from ☰ › Widgets; not when the widget is put on the screen.
+ * widget › Settings (Android 12+) or from ⚙︎ › Widgets; not when the widget is put on the screen.
  */
 public final class WidgetConfig extends Activity {
 	private int id = AppWidgetManager.INVALID_APPWIDGET_ID, kind = 2;

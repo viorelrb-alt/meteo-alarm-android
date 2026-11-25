@@ -1,7 +1,7 @@
 package ro.meteoalarm.android.core;
 
 /**
- * v3.60 (Viorel): the colour themes. Each theme has a light and a dark side; ☰ › Temă picks the
+ * v3.60 (Viorel): the colour themes. Each theme has a light and a dark side; ⚙︎ › Temă picks the
  * theme and, under a line, light or dark. 0 = Monocrom (the Kindle look; dark = graphite).
  * The 16 colours, by role: page ink dim line band card btn dry snow rain accent warnY warnO warnR
  * pillInk bandInk (as Screen.Palette).

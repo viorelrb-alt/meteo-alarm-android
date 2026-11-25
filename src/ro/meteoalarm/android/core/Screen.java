@@ -288,7 +288,7 @@ public final class Screen {
 		btnMenu[0] = 40; btnMenu[1] = 24; btnMenu[2] = 64; btnMenu[3] = 64;
 		button(btnMenu);
 		for (int k = 0; k < 3; k++) g.roundRect(59, 43 + k * 12, 26, 3.5f, 1.75f, c.ink);
-		// Refreshing is in the ☰ menu and by pulling the screen down: the clock takes the corner.
+		// Refreshing is in the ⚙︎ menu and by pulling the screen down: the clock takes the corner.
 		if (band > 0 && cw < ch && !tablet) drawBand();
 		else {
 			drawClock();
@@ -344,7 +344,7 @@ public final class Screen {
 
 	// --- v5.30 (Viorel's mockups): phones in three sheets of frosted glass ---------------------
 	// Bottom: the page, moved up and down by the finger. Middle: the glass plate (portrait: a
-	// rounded pane at the top with the date, "updated", the connection, the clock, ☰ and the name,
+	// rounded pane at the top with the date, "updated", the connection, the clock, ⚙︎ and the name,
 	// in farmer mode the tabs; landscape: one plate shaped like an upside-down L with the header,
 	// the warnings, the weather now and the battery). Top: the warning boxes and the floating
 	// capsules at the bottom (the buttons, the farmer button, the battery).
@@ -479,12 +479,35 @@ public final class Screen {
 		return warnGroups().size() + quakeBoxes().size();
 	}
 
-	/** ☰ at X, Y. */
+	/** ⚙︎ at X, Y. */
 	private void menuButton(float x, float y) {
 		btnMenu[0] = x; btnMenu[1] = y; btnMenu[2] = HB; btnMenu[3] = HB;
 		disc(btnMenu);
-		float m = HB / 2;
-		for (int k = -1; k <= 1; k++) g.roundRect(x + m - 15, y + m - 2 + k * 11, 30, 4, 2, c.ink);
+		// v2.210 (Viorel): a settings gear instead of the three lines; it turns for the first 3 s.
+		float t = Math.max(0, Math.min(1, iconT));
+		float e = 1 - (1 - t) * (1 - t) * (1 - t);
+		gear(x + HB / 2, y + HB / 2, 19, e * 240, c.ink, discColor());
+	}
+
+	/** A gear of radius R at CX, CY turned by ROT degrees, its hole in HOLE. */
+	private void gear(float cx, float cy, float r, float rot, int ink, int hole) {
+		int n = 8;
+		float[] xy = new float[n * 4 * 2];
+		float ri = r * 0.74f, step = 360f / n;
+		int k = 0;
+		for (int i = 0; i < n; i++) {
+			float a0 = rot + i * step;
+			float[] as = { a0 - step * 0.30f, a0 - step * 0.17f, a0 + step * 0.17f, a0 + step * 0.30f };
+			float[] rs = { ri, r, r, ri };
+			for (int j = 0; j < 4; j++) {
+				double a = Math.toRadians(as[j]);
+				xy[k++] = cx + (float) Math.cos(a) * rs[j];
+				xy[k++] = cy + (float) Math.sin(a) * rs[j];
+			}
+		}
+		g.poly(xy, ink);
+		float rh = r * 0.33f;
+		g.arc(cx, cy, rh / 2, 0, 360, rh, hole);
 	}
 
 	/** v2.152 (Viorel): the round Localități button (the town icon), opens the towns screen. */
@@ -1954,7 +1977,7 @@ public final class Screen {
 	private float farmTagW;
 
 	/**
-	 * Farmer mode (v2.63, Viorel): "FARMER MODE" under the top line, left under the ☰ button, at the
+	 * Farmer mode (v2.63, Viorel): "FARMER MODE" under the top line, left under the ⚙︎ button, at the
 	 * height of the dots and of "updated"; it keeps clear of the dots centred at CX.
 	 */
 	private boolean tagLow, statsLow;
@@ -2843,10 +2866,10 @@ public final class Screen {
 	}
 
 	/** v5.00 (Viorel, "Opțiunea 3"): a round glass button. */
-	/** v2.160 (Viorel): the size of the header's round buttons (☰, Localități): as the X of the ☰ window (42 dp). */
+	/** v2.160 (Viorel): the size of the header's round buttons (⚙︎, Localități): as the X of the ⚙︎ window (42 dp). */
 	static final float HB = 78;
 
-	/** A header button as the X of the ☰ window: a full disc, the ink faint over the glass, no edge. */
+	/** A header button as the X of the ⚙︎ window: a full disc, the ink faint over the glass, no edge. */
 	private int discColor() {
 		return mix(glass(), c.ink, dark ? 0.12f : 0.08f);
 	}
@@ -4915,7 +4938,7 @@ public final class Screen {
 	}
 
 	/**
-	 * An icon for the ☰ menu and the help, in a 64 x 64 unit box on GFX. The ones that are also a
+	 * An icon for the ⚙︎ menu and the help, in a 64 x 64 unit box on GFX. The ones that are also a
 	 * button on the screen (city, locate, bright, sensor, moon) are drawn as that button; the
 	 * others as a plain line icon (refresh, unit, clock, light, dark, keepOn, lang-ro, lang-en,
 	 * update, help, about, edge, pull, swipe).

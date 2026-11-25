@@ -16,7 +16,7 @@ import ro.meteoalarm.android.core.Tr;
 import ro.meteoalarm.android.core.Release;
 
 /**
- * Updates, only from ☰ › Check for updates (v5.31: no automatic checks): the newest GitHub Release
+ * Updates, only from ⚙︎ › Check for updates (v5.31: no automatic checks): the newest GitHub Release
  * is compared with the installed version and shown in the bottom window; "Descarcă" opens the APK
  * in the browser (the app installs nothing itself, no REQUEST_INSTALL_PACKAGES).
  */
@@ -81,7 +81,7 @@ final class Updater {
 	}
 
 	/**
-	 * The user agreed to updates from GitHub, in ☰ › Check for updates. "ghConsent2" (v1.93): the
+	 * The user agreed to updates from GitHub, in ⚙︎ › Check for updates. "ghConsent2" (v1.93): the
 	 * consents given in v1.92, where the question came up by itself, do not count.
 	 */
 	boolean agreed() {
@@ -90,17 +90,17 @@ final class Updater {
 
 	/** The line at the top of What's new, About and Help (Viorel 2026-11-02). */
 	static String howTo(boolean en) {
-		return Tr.t("To get updates: open ☰ › Check for updates and, when asked, give your consent.", "Pentru actualizări: intră în ☰ › Verifică actualizări și, când ești întrebat, dă-ți acordul.");
+		return Tr.t("To get updates: open ⚙︎ › Check for updates and, when asked, give your consent.", "Pentru actualizări: intră în ⚙︎ › Verifică actualizări și, când ești întrebat, dă-ți acordul.");
 	}
 
 	/**
 	 * Viorel 2026-11-02: before any update, a notice that the updates come from GitHub (not from
-	 * Google Play) and the user's consent, only from ☰ › Check for updates: once when given, every
+	 * Google Play) and the user's consent, only from ⚙︎ › Check for updates: once when given, every
 	 * time while refused. Without it nothing is checked or downloaded. THEN runs after "I agree".
 	 */
 	private void askConsent(final Runnable then) {
-		String msg = Tr.t("Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android). The app looks for a new version only when you choose Check for updates; it shows what is new and, when you tap Download, opens the download in the browser. You install it yourself from the downloaded file.\n\nDo you allow the app to check GitHub for updates? Without your consent it checks nothing; you can agree later from ☰ › Check for updates.",
-				"Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub (github.com/viorelrb-alt/meteo-alarm-android). Aplicația caută o versiune nouă doar când alegi Verifică actualizări; arată ce e nou și, când apeși Descarcă, deschide descărcarea în browser. O instalezi tu din fișierul descărcat.\n\nEști de acord ca aplicația să verifice actualizările pe GitHub? Fără acordul tău nu verifică nimic; îți poți da acordul mai târziu din ☰ › Verifică actualizări.");
+		String msg = Tr.t("Meteo Alarm does not come from Google Play. Its new versions are published on GitHub (github.com/viorelrb-alt/meteo-alarm-android). The app looks for a new version only when you choose Check for updates; it shows what is new and, when you tap Download, opens the download in the browser. You install it yourself from the downloaded file.\n\nDo you allow the app to check GitHub for updates? Without your consent it checks nothing; you can agree later from ⚙︎ › Check for updates.",
+				"Meteo Alarm nu vine din Google Play. Versiunile noi sunt publicate pe GitHub (github.com/viorelrb-alt/meteo-alarm-android). Aplicația caută o versiune nouă doar când alegi Verifică actualizări; arată ce e nou și, când apeși Descarcă, deschide descărcarea în browser. O instalezi tu din fișierul descărcat.\n\nEști de acord ca aplicația să verifice actualizările pe GitHub? Fără acordul tău nu verifică nimic; îți poți da acordul mai târziu din ⚙︎ › Verifică actualizări.");
 		Log.i(a, "UPDATE", "informare actualizare din GitHub afișată");
 		sheet.show(Tr.t("Updates from GitHub", "Actualizări din GitHub"), msg, Tr.t("I agree", "Sunt de acord"), new Runnable() {
 			public void run() {
@@ -111,7 +111,7 @@ final class Updater {
 		}, Tr.t("Not now", "Nu acum"), new Runnable() {
 			public void run() {
 				Log.i(a, "UPDATE", "utilizatorul a refuzat actualizarea din GitHub");
-				sheet.show(Tr.t("Updates from GitHub", "Actualizări din GitHub"), Tr.t("Without your consent the app will not update. You can change your mind any time from ☰ › Check for updates.", "Fără acordul tău, aplicația nu se va actualiza. Te poți răzgândi oricând din ☰ › Verifică actualizări."),
+				sheet.show(Tr.t("Updates from GitHub", "Actualizări din GitHub"), Tr.t("Without your consent the app will not update. You can change your mind any time from ⚙︎ › Check for updates.", "Fără acordul tău, aplicația nu se va actualiza. Te poți răzgândi oricând din ⚙︎ › Verifică actualizări."),
 						null, null, Tr.t("Close", "Închide"));
 			}
 		});
@@ -195,13 +195,13 @@ final class Updater {
 	}
 
 	/**
-	 * v2.110 (Viorel): with ☰ › Notifications on, once in 7 days the app asks GitHub for the newest
+	 * v2.110 (Viorel): with ⚙︎ › Notifications on, once in 7 days the app asks GitHub for the newest
 	 * version and, when there is a newer one, puts a notice in Android's notifications; a tap on it
-	 * opens ☰ › Check for updates. Each version is announced once. Runs in the background.
+	 * opens ⚙︎ › Check for updates. Each version is announced once. Runs in the background.
 	 */
 	static void weekly(Context ctx) {
 		SharedPreferences p = Fetcher.prefs(ctx);
-		// v2.152 (Viorel): also without notifications when the GitHub check was agreed (for the box in ☰).
+		// v2.152 (Viorel): also without notifications when the GitHub check was agreed (for the box in ⚙︎).
 		boolean notify = Notifier.on(ctx);
 		if (!notify && !p.getBoolean("ghConsent2", false)) return;
 		long now = System.currentTimeMillis();
@@ -239,7 +239,7 @@ final class Updater {
 		}
 	}
 
-	/** v2.152: a newer version found (kept for the box at the top of ☰ until the app is updated). */
+	/** v2.152: a newer version found (kept for the box at the top of ⚙︎ until the app is updated). */
 	static void remember(Context ctx, Release r, String cur) {
 		Fetcher.prefs(ctx).edit().putString("updAvail", r.version).putString("updUrl", r.apkUrl).putString("updPage", r.page).putString("updFor", cur).apply();
 	}
@@ -251,14 +251,14 @@ final class Updater {
 		return v.length() > 0 && installed().equals(p.getString("updFor", "")) ? v : null;
 	}
 
-	/** v2.152 (Viorel): the box in ☰: the download starts at once. */
+	/** v2.152 (Viorel): the box in ⚙︎: the download starts at once. */
 	void downloadPending() {
 		SharedPreferences p = prefs();
 		Release r = new Release();
 		r.version = p.getString("updAvail", "");
 		r.apkUrl = p.getString("updUrl", "");
 		r.page = p.getString("updPage", "");
-		Log.i(a, "UPDATE", "caseta din ☰: descarc v" + r.version);
+		Log.i(a, "UPDATE", "caseta din ⚙︎: descarc v" + r.version);
 		browse(r);
 	}
 

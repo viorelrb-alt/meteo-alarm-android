@@ -11,7 +11,7 @@ import ro.meteoalarm.android.core.Cities;
  * A phone in the US (from the SIM / mobile network, or the last town the location found) sees only
  * the US part: its 3 US favourites, the towns of the state it is in and 3 towns of every other
  * state, imperial units and the National Weather Service warnings. A phone elsewhere sees only
- * what it saw before. A hidden test mode (7 taps on the title of ☰ › About) shows both, as if the
+ * what it saw before. A hidden test mode (7 taps on the title of ⚙︎ › About) shows both, as if the
  * phone were in a chosen state.
  *
  * Units and clock are kept for each of the two kinds of town: US towns start imperial with a

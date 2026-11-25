@@ -1,17 +1,17 @@
-Versión actual: v.2.200 · 25.11.2026
+Versión actual: v.2.210 · 25.11.2026
 ACTUALIZACIONES
-- Caja Nueva versión: una caja corta arriba en ☰ cuando hay una nueva versión; tocarla inicia la descarga.
+- Caja Nueva versión: una caja corta arriba en ⚙︎ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
 - Ayuda: los textos largos se dividen en partes con sus iconos o muestran 2 líneas y Mostrar todo ▾; en horizontal en 2 columnas, y un toque en el botón de una sección hace parpadear su contorno dos veces.
 - Exportar / Importar: interruptores para lo que entra en el archivo (también cultivos y datos de cultivo, notificaciones de parcelas, papelera de parcelas, notificaciones, mapa, widgets, historial de terremotos, registro); en Exportar e Importar las localidades y parcelas se marcan una a una; el botón Aa cambia el tamaño del texto.
 - Funciones avanzadas: la tarjeta bajo Localidades: modo Agricultor y la página Terremotos.
-- Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
-- La ventana Ajustes: ☰ abre los ajustes por secciones; un interruptor activa o desactiva una función al instante. Se cierra con X o tocando fuera. En horizontal se abre a la izquierda en 2 columnas, el título en una línea: arrastra la barra del borde derecho a la izquierda para una columna, a la derecha para dos; el botón junto a X recupera las 2 columnas. Pantalla va al final. Sistema y Soporte muestra sus nombres 3 segundos, luego solo los botones; en un teléfono en horizontal es una caja flotante abajo que se pliega en ⋯ (su asa la amplía), en una tableta una sola fila.
-- Localidades: la primera tarjeta de ☰ (con el modo agricultor: Localidades y Parcelas, con Parcelas dentro). Tres filas: primero las localidades con estrella llena (tienen pantalla principal, en el orden de las pantallas), luego los demás favoritos. Cualquier estrella se puede quitar mientras haya 2 o más: la siguiente localidad con estrella pasa a ser la primera pantalla; la última es gris y se queda. Un toque en una estrella vacía da a la localidad una pantalla principal y la muestra. Localidades › abre la lista; en su mapa, Provincia ▾ busca en una sola provincia.
+- Idioma de la pantalla: en ⚙︎ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
+- La ventana Ajustes: ⚙︎ abre los ajustes por secciones; un interruptor activa o desactiva una función al instante. Se cierra con X o tocando fuera. En horizontal se abre a la izquierda en 2 columnas, el título en una línea: arrastra la barra del borde derecho a la izquierda para una columna, a la derecha para dos; el botón junto a X recupera las 2 columnas. Pantalla va al final. Sistema y Soporte muestra sus nombres 3 segundos, luego solo los botones; en un teléfono en horizontal es una caja flotante abajo que se pliega en ⋯ (su asa la amplía), en una tableta una sola fila.
+- Localidades: la primera tarjeta de ⚙︎ (en modo agricultor: Localidades & Parcelas, con las parcelas dentro). Una fila con la localidad mostrada; ▾ abre las otras localidades con pantalla principal. Desmarcar una estrella borra la localidad y su pantalla (mientras queden 2 o más; la última es gris y se queda). Localidades › abre la lista; en su mapa, Provincia ▾ busca en una sola provincia.
 - Página Terremotos: se abre al instante con las últimas listas guardadas en el teléfono y las actualiza en segundo plano.
-- Recorrido: en la tarjeta de notificaciones: un breve recorrido por lo que muestra cada zona de las pantallas. Próximamente (gris por ahora).
+- Tutorial: en la tarjeta Alertas: un tutorial breve de lo que muestra cada parte de las pantallas. Próximamente (gris por ahora).
 - Registro: tamaño, líneas y errores en una tarjeta; Ver el registro abre las líneas (Todas, Errores, Hoy, Ayer; una pulsación larga copia una línea); Compartir y Guardar abajo en la pantalla. Los errores resueltos están al final del registro y no se cuentan; los problemas de red son avisos.
-- Temas: 6 temas con su propio fondo, tarjetas y color (Grafito, Peonía, Miel, Bosque, Océano, Lavanda), cada uno claro y oscuro; los puntos de ☰ › Tema tienen el color del tema.
+- Temas: 6 temas con su propio fondo, tarjetas y color (Grafito, Peonía, Miel, Bosque, Océano, Lavanda), cada uno claro y oscuro; los puntos de ⚙︎ › Tema tienen el color del tema.
 LOCALIDADES
 - Búsqueda en el mapa: la lupa abre el mapa con la búsqueda abajo; tocar un lugar o el nombre de una localidad muestra su temperatura, Detalles (los próximos días) y Añadir. El mapa es sencillo y claro, con los nombres de las localidades escritos en grande (también en el mapa de las parcelas). Otras localidades solo aparecen si empiezan como el nombre escrito (al menos 6 letras o el 60 %).
 - Lista de localidades: el botón Localidades abre la lista, en el color del tema; Seleccionar borra una o varias (la última se queda), y el signo ⌃⌄ mantenido y arrastrado arriba o abajo cambia el orden; cada localidad conserva su tiempo guardado.
@@ -24,35 +24,38 @@ PANTALLA PRINCIPAL
 - Botones de abajo: sus nombres aparecen debajo 3 segundos al abrir la pantalla, luego solo los botones; tira de la cápsula hacia arriba para verlos de nuevo. El botón activo parece pulsado, con un anillo.
 - Botón Localidades: el botón redondo con el icono de casas (en vertical a la derecha del nombre, en horizontal en la banda superior, antes de su esquina) abre la lista de localidades.
 - Botón «actualizado»: flota sobre la página, a la derecha: en vertical bajo los avisos (sin ellos bajo la fila de localidades), en horizontal bajo el reloj. Al actualizar su flecha gira, también como círculo pequeño; luego la hora aparece 4 segundos y se reduce a ⟳. Un toque actualiza.
-- Información del terremoto: un toque en la casilla Terremoto la abre en la pantalla principal: el mapa, debajo las zonas de percepción y el historial del valor; el cuadrado de color o el mapa la abren en pantalla completa, como un terremoto de ☰ › Terremotos. En Rumanía, Francia, Italia, Países Bajos, Suiza y Grecia los valores oficiales vienen primero del instituto del país (INFP, BCSF, INGV, KNMI, SED, NOA) y luego de EMSC. En Rumanía, los terremotos alrededor del país también reciben el valor del INFP (de infp.ro).
+- Brillo: muestra la barra de brillo a la izquierda; un toque en ☀ en su extremo devuelve a la pantalla el brillo automático.
+- Información del terremoto: un toque en la casilla Terremoto la abre en la pantalla principal: el mapa, debajo las zonas de percepción y el historial del valor; el cuadrado de color o el mapa la abren en pantalla completa, como un terremoto de ⚙︎ › Terremotos. En Rumanía, Francia, Italia, Países Bajos, Suiza y Grecia los valores oficiales vienen primero del instituto del país (INFP, BCSF, INGV, KNMI, SED, NOA) y luego de EMSC. En Rumanía, los terremotos alrededor del país también reciben el valor del INFP (de infp.ro).
 - Mapa del tiempo: al final de la pantalla principal (en horizontal en la hoja con las cajas): OpenStreetMap a nivel de calle en el lugar exacto de la localidad de la pantalla (GPS para la primera) o, en la pantalla de una parcela, la parcela con su contorno; la capa transparente. El mapa queda fijo; datos: Open-Meteo. Nubes, Temperaturas y Lluvia, una a la vez; un toque en la activa la apaga. Lluvia está gris y tachada cuando no llueve cerca ahora ni en las próximas 2 horas. ▶ reproduce las horas (6 antes y 6 después de ahora) una a una; un toque en una hora la muestra.
 - Nombres de los botones: un botón redondo que queda en la pantalla al tocarlo muestra su nombre en una burbuja pequeña durante unos 1,5 segundos.
+- Pantallas principales: pestañas bajo el nombre (en horizontal abajo): la localidad y una por parcela; un toque o un deslizamiento lateral cambia la pantalla, + abre la casilla de una parcela nueva. Cuando no caben todos, la fila avanza uno cada 3 segundos; un dedo encima la detiene un rato.
 - Varias localidades: cada localidad de la lista tiene su propia pantalla principal; deslizar a la izquierda o a la derecha sobre el tiempo actual pasa a la siguiente, en el orden de la lista.
 PARCELAS
 - Burbujas en Estadísticas: tocar una hora de la ventana de pulverización, un día de los gráficos o una fila del suelo abre una burbuja con su explicación; la ventana de pulverización se mueve sola.
 - Capas meteorológicas: en el mapa de las parcelas, la caja bajo ＋ y − se abre con Satélite, Mapa, Nubes, Temperaturas (colores) y Lluvia (mm por hora) y luego se pliega en lo que elegiste; una capa cada vez, con su nombre, hora y leyenda sobre las tarjetas; Lluvia solo se activa cuando llueve ahora o en las próximas 2 horas (en lugar del radar).
 - Coordenadas de la parcela: en la página de edición se escriben las coordenadas GPS de cada punto, y debajo la vista de satélite muestra la parcela.
 - Editar parcela: el lápiz abre la página de la parcela: nombre, cultivo (lista según la temporada de la fecha de siembra u Otro cultivo…), fecha de siembra, superficie; las esquinas se mueven en el mapa.
+- Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
 - Estadísticas en la pantalla principal: se abren bajo el estado operativo (en horizontal a la izquierda); ‹ las cierra y la pestaña de otra parcela las mantiene.
 - Estadísticas: para cada parcela, la Acción del día y 4 pestañas: Operativo (ventana de pulverización hora a hora, secado de gotas (ΔT), viento, hoja mojada), Agua y Suelo (lluvia, evaporación, suelo a 6 y 18 cm), Temporada (grados-día frente al año pasado, fase estimada) y Riesgos 72 h (enfermedades fúngicas, helada en el suelo, calor, viento y granizo); se guardan en PDF o CSV.
-- Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
 - Historial y pronóstico: arrastra el indicador a un día pasado; sus valores aparecen en un recuadro bajo el gráfico y a los 10 s vuelve a hoy.
 - Mejoras de diseño y corrección de los errores comunicados.
+- Papelera: una parcela borrada va a la papelera con ↺ junto al botón GPS (el punto rojo las cuenta) y se guarda 15 días; el botón redondo la restaura (si una parcela guardada tiene su nombre: nombre nuevo o reemplazarla).
 
 Versión 1.4 (v.1.400 – v.1.520)
 ACTUALIZACIONES
-- Actualizaciones: la app ya no busca actualizaciones por sí sola, solo cuando tocas ☰ › Buscar actualizaciones; la versión nueva se descarga en el navegador y la instalas desde el archivo descargado.
+- Actualizaciones: la app ya no busca actualizaciones por sí sola, solo cuando tocas ⚙︎ › Buscar actualizaciones; la versión nueva se descarga en el navegador y la instalas desde el archivo descargado.
 AJUSTES
-- Ajustes: el menú ☰ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
-- Idioma de la pantalla: botones en ☰, 2 por fila: inglés y los idiomas del país (en EE. UU. inglés y español); en Rumanía «Otros idiomas (minorías)» muestra el resto.
-- Tema de iconos: 6 temas de iconos del tiempo (Clásico, Brillante, Plano, Realista, Atmosférico, Contorno), se eligen con puntos de color en ☰; en la app y en los widgets.
+- Ajustes: el menú ⚙︎ es ahora una ventana con secciones, interruptores, los temas en colores y la barra Sistema y soporte; se actualiza tirando de la pantalla hacia abajo o tocando «actualizado».
+- Idioma de la pantalla: botones en ⚙︎, 2 por fila: inglés y los idiomas del país (en EE. UU. inglés y español); en Rumanía «Otros idiomas (minorías)» muestra el resto.
+- Tema de iconos: 6 temas de iconos del tiempo (Clásico, Brillante, Plano, Realista, Atmosférico, Contorno), se eligen con puntos de color en ⚙︎; en la app y en los widgets.
 MODO AGRICULTOR
 - Botón agricultor: el botón de la hoja junto a los botones desactiva el modo agricultor; otra localidad lo mantiene.
 - Estado operativo: en la pantalla de una parcela, solo cuando hace falta, el veredicto para pulverizar, su motivo y los riesgos de las próximas 24 horas.
 - Pestañas: la localidad y las parcelas en pestañas bajo el nombre (en horizontal, abajo); la pantalla de una parcela en las secciones 1–4.
 NOTIFICACIONES
-- Terremotos: avisos solo de los terremotos a menos de 300 km de tu lugar; se activan o desactivan en ☰.
-- Tornados (EE. UU.): los avisos de tornado para tu localidad se activan o desactivan en ☰.
+- Terremotos: avisos solo de los terremotos a menos de 300 km de tu lugar; se activan o desactivan en ⚙︎.
+- Tornados (EE. UU.): los avisos de tornado para tu localidad se activan o desactivan en ⚙︎.
 PANTALLA PRINCIPAL
 - Brújula grande: tocar una localidad de la lista muestra su marca en la brújula; las localidades en la misma dirección ya no se superponen.
 - Pantalla principal: la página se desplaza bajo el cristal de arriba, por secciones (Próximas horas, Previsión de cinco días, Detalles del tiempo); los botones y la batería flotan abajo.
@@ -104,7 +107,7 @@ PANTALLA PRINCIPAL
 PARCELAS
 - Notificaciones de parcelas, elegidas con el botón de campana del mapa: lluvia, viento, nieve, sequía.
 TEMAS
-- 6 temas de color (Monocromo, Salvia, Lavanda, Cielo, Melocotón, Rosa), cada uno claro y oscuro: ☰ › Tema.
+- 6 temas de color (Monocromo, Salvia, Lavanda, Cielo, Melocotón, Rosa), cada uno claro y oscuro: ⚙︎ › Tema.
 - Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Versión 1.1 (v.1.100 – v.1.191)
 - Parcelas: guardadas por GPS o en el mapa, una pantalla principal para cada una, estadísticas de 28 días con PDF, alertas de lluvia y viento.
 - Widgets 4x2 días y 4x3.
 - Tamaño del texto (Aa).
-- ☰ › Enviar la app.
+- ⚙︎ › Enviar la app.
 - Estados Unidos: avisos NWS, tornados, °F, hora local.
 - Otros idiomas: los idiomas de las minorías de Rumanía.
 - Parcelas: un mapa con todas las parcelas, el botón GPS (punto azul) y «Guardar lugar GPS».

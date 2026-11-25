@@ -1,14 +1,14 @@
-Nykyinen versio: v.2.200 · 25.11.2026
+Nykyinen versio: v.2.210 · 25.11.2026
 ASETUKSET
-- Asetukset-ikkuna: ☰ avaa asetukset osioina; kytkin kytkee toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla ulkopuolelle. Vaakatasossa se avautuu vasemmalle 2 sarakkeeseen, otsikko yhdellä rivillä: vedä oikean reunan palkkia vasemmalle yhteen sarakkeeseen, oikealle kahteen; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä & Tuki näyttää nimet 3 sekuntia, sitten vain painikkeet; puhelimessa vaakatasossa se on kelluva laatikko alhaalla, joka taittuu ⋯:ksi (kahva leventää sitä), tabletissa yksi rivi.
-- Esittely: ilmoitusten kortissa: lyhyt esittely siitä, mitä kukin näyttöjen osa näyttää. Tulossa pian (toistaiseksi harmaa).
+- Asetukset-ikkuna: ⚙︎ avaa asetukset osioina; kytkin kytkee toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla ulkopuolelle. Vaakatasossa se avautuu vasemmalle 2 sarakkeeseen, otsikko yhdellä rivillä: vedä oikean reunan palkkia vasemmalle yhteen sarakkeeseen, oikealle kahteen; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä & Tuki näyttää nimet 3 sekuntia, sitten vain painikkeet; puhelimessa vaakatasossa se on kelluva laatikko alhaalla, joka taittuu ⋯:ksi (kahva leventää sitä), tabletissa yksi rivi.
+- Opas: hälytykset-kortissa: lyhyt opas siitä, mitä kukin ruutujen osa näyttää. Tulossa (toistaiseksi harmaa).
 - Lisätoiminnot: kortti Paikkakuntien alla: Viljelijätila ja Maanjäristykset-sivu.
 - Loki: koko, rivit ja virheet kortilla; Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna näytön alareunassa. Korjatut virheet ovat lokin lopussa eikä niitä lasketa; verkon ongelmat ovat varoituksia.
 - Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
-- Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
+- Näyttökieli: ⚙︎:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 - Ohje: pitkät tekstit on jaettu osiin omine kuvakkeineen tai ne näyttävät 2 riviä ja Näytä kaikki ▾; vaakana 2 sarakkeessa, ja osion painikkeen napautus välkyttää sen ääriviivaa kahdesti.
-- Paikkakunnat: ☰:n ensimmäinen kortti (viljelijätilassa: Paikkakunnat & Lohkot, lohkot mukana). Kolme riviä: ensin paikkakunnat täydellä tähdellä (niillä on pääruutu, ruutujen järjestyksessä), sitten muut suosikit. Minkä tahansa tähden voi poistaa, kun niitä on 2 tai enemmän: seuraava tähdellinen paikkakunta tulee ensimmäiseksi ruuduksi; viimeinen on harmaa ja jää. Tyhjän tähden napautus antaa paikkakunnalle pääruudun ja näyttää sen. Paikkakunnat › avaa listan; sen kartalla Maakunta ▾ hakee yhdestä maakunnasta.
-- Teemat: 6 teemaa omalla taustalla, korteilla ja värillä (Grafiitti, Pioni, Hunaja, Metsä, Valtameri, Laventeli), kukin vaaleana ja tummana; ☰ › Teema -kohdan pisteet ovat teeman värisiä.
+- Paikkakunnat: ⚙︎:n ensimmäinen kortti (viljelijätilassa: Paikkakunnat & Lohkot, lohkot mukana). Yksi rivi näytetyllä paikkakunnalla; ▾ avaa muut paikkakunnat, joilla on pääruutu. Tähden poisto poistaa paikkakunnan ja sen ruudun (kun jäljellä on 2 tai enemmän; viimeinen on harmaa ja jää). Paikkakunnat › avaa listan; sen kartalla Maakunta ▾ hakee yhdestä maakunnasta.
+- Teemat: 6 teemaa omalla taustalla, korteilla ja värillä (Grafiitti, Pioni, Hunaja, Metsä, Valtameri, Laventeli), kukin vaaleana ja tummana; ⚙︎ › Teema -kohdan pisteet ovat teeman värisiä.
 - Vienti / Tuonti: kytkimet tiedoston sisällölle (myös viljelykasvit ja viljelytiedot, lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); Viennissä ja Tuonnissa paikkakunnat ja lohkot valitaan yksitellen; Aa-painike muuttaa tekstin kokoa.
 ILMOITUKSET
 - Maanjäristykset: tarkistetaan 10 minuutin välein, myös yöllä näyttö pois päältä; tarkistettu magnitudi päivittää ilmoituksen, ja napautus siihen avaa kartan.
@@ -16,9 +16,11 @@ ILMOITUKSET
 - Uusi versio: kun ilmoitukset ovat päällä, sovellus tarkistaa GitHubin päivittäin 2 viikon ajan päivityksen jälkeen, sitten kerran 7 päivässä, ja ilmoittaa uudesta versiosta Androidin ilmoituksissa; napautus avaa Tarkista päivitykset.
 PÄÄNÄYTTÖ
 - Alapainikkeet: niiden nimet näkyvät alla 3 sekuntia näytön avautuessa, sitten vain painikkeet; vedä kapselia ylös nähdäksesi ne uudelleen. Päällä oleva painike näyttää painetulta, renkaan kanssa.
-- Maanjäristyksen tiedot: Maanjäristys-ruudun napautus avaa ne päänäytölle: kartta, sen alla tuntuvuusvyöhykkeet ja arvon historia; värillinen neliö tai kartta avaa ne koko näytölle, kuten järistyksen kohdasta ☰ › Maanjäristykset. Romaniassa, Ranskassa, Italiassa, Alankomaissa, Sveitsissä ja Kreikassa viralliset arvot tulevat ensin maan laitokselta (INFP, BCSF, INGV, KNMI, SED, NOA), sitten EMSC:ltä. Romaniassa myös maan ympäristön maanjäristykset saavat INFP:n arvon (infp.ro:sta).
+- Kirkkaus: näyttää kirkkauspalkin vasemmalla; napautus ☀:hen sen päässä palauttaa ruudulle automaattisen kirkkauden.
+- Maanjäristyksen tiedot: Maanjäristys-ruudun napautus avaa ne päänäytölle: kartta, sen alla tuntuvuusvyöhykkeet ja arvon historia; värillinen neliö tai kartta avaa ne koko näytölle, kuten järistyksen kohdasta ⚙︎ › Maanjäristykset. Romaniassa, Ranskassa, Italiassa, Alankomaissa, Sveitsissä ja Kreikassa viralliset arvot tulevat ensin maan laitokselta (INFP, BCSF, INGV, KNMI, SED, NOA), sitten EMSC:ltä. Romaniassa myös maan ympäristön maanjäristykset saavat INFP:n arvon (infp.ro:sta).
 - Paikkakunnat-painike: pyöreä talokuvakkeella varustettu painike (pystyssä nimen oikealla puolella, vaakana yläpalkissa ennen sen kulmaa) avaa paikkakuntaluettelon.
 - Painikkeiden nimet: pyöreä painike, joka jää näytölle napautettaessa, näyttää nimensä pienessä kuplassa noin 1,5 sekunnin ajan.
+- Päänäkymät: välilehdet nimen alla (vaakatasossa alhaalla): paikkakunta ja yksi kutakin lohkoa kohden; napautus tai sivuttainen pyyhkäisy vaihtaa näkymää, + avaa uuden lohkon ruudun. Kun kaikki eivät mahdu, rivi siirtyy yhden eteenpäin 3 sekunnin välein; sormi sen päällä pysäyttää sen hetkeksi.
 - Sääkartta: pääruudun lopussa (vaakatasossa laatikoiden arkilla): OpenStreetMap katutasolla ruudun paikkakunnan tarkan paikan ympärillä (ensimmäiselle GPS) tai lohkon ruudulla lohko ääriviivoineen; taso läpikuultava. Kartta pysyy paikallaan; tiedot: Open-Meteo. Pilvet, Lämpötilat ja Sade, yksi kerrallaan; napautus päällä olevaan sammuttaa sen. Sade on harmaa ja yliviivattu, kun lähellä ei sada nyt eikä seuraavien 2 tunnin aikana. ▶ toistaa tunnit (6 ennen ja 6 jälkeen nykyhetken) yksi kerrallaan; tunnin napautus näyttää sen.
 - Useampi paikkakunta: jokaisella luettelon paikkakunnalla on oma päänäkymänsä; pyyhkäisy vasemmalle tai oikealle nykyisen sään päällä siirtyy seuraavaan luettelon järjestyksessä.
 - ”Päivitetty”-painike: kelluu sivun päällä oikealla: pystyssä varoitusten alla (ilman niitä paikkakuntarivin alla), vaakatasossa kellon alla. Päivityksen aikana sen nuoli pyörii, myös pienenä ympyränä; sitten aika näkyy 4 sekuntia ja se taittuu ⟳:ksi. Napautus päivittää.
@@ -27,12 +29,13 @@ PAIKKAKUNNAT
 - Paikkakuntakortit: tabletilla ja vaaka-asennossa ne ovat tekstinsä levyisiä ja ovat riveissä ja sarakkeissa; pystyasennossa puhelimessa liian pitkä nimi saa pienemmät kirjaimet; vaaka-asennossa haku pitää pystykoon.
 - Paikkakuntaluettelo: Paikkakunnat-painike avaa luettelon teeman värissä; Valitse poistaa yhden tai useamman (viimeinen jää), ja ⌃⌄-merkkiä painettuna pitäen ja ylös tai alas vetäen järjestys muuttuu; jokainen paikkakunta säilyttää tallennetun säänsä.
 PÄIVITYKSET
-- Uusi versio -ruutu: lyhyt ruutu ☰:n yläreunassa, kun uusi versio on olemassa; napautus aloittaa latauksen.
+- Uusi versio -ruutu: lyhyt ruutu ⚙︎:n yläreunassa, kun uusi versio on olemassa; napautus aloittaa latauksen.
 PELTOLOHKOT
 - Historia ja ennuste: vedä osoitin menneelle päivälle; sen arvot näkyvät ruudussa kaavion alla ja 10 s jälkeen se palaa tähän päivään.
 - Kuplat tilastoissa: ruiskutusikkunan tunnin, kaavioiden päivän tai maarivin napautus avaa kuplan selityksineen; ruiskutusikkuna liikkuu itsestään.
 - Lohkon koordinaatit: muokkaussivulla kunkin pisteen GPS-koordinaatit voi kirjoittaa, ja niiden alla satelliittinäkymä näyttää lohkon.
 - Muokkaa lohkoa: kynä avaa lohkon sivun: nimi, kasvi (lista kylvöpäivän kauden mukaan tai Muu kasvi…), kylvöpäivä, pinta-ala; kulmia siirretään kartalla.
+- Roskakori: poistettu lohko menee roskakoriin ↺ GPS-painikkeen vieressä (punainen piste laskee ne) ja säilyy 15 päivää; pyöreä painike palauttaa sen (jos tallennetulla lohkolla on sama nimi: uusi nimi tai korvaa).
 - Säätasot: lohkojen kartalla ＋- ja −-painikkeiden alla oleva ruutu avautuu vaihtoehdoilla Satelliitti, Kartta, Pilvet, Lämpötilat (värit) ja Sade (mm tunnissa) ja taittuu sitten valintaasi; yksi taso kerrallaan, nimi, aika ja selite korttien yläpuolella; Sade kytkeytyy päälle vain, kun sataa nyt tai seuraavan 2 tunnin aikana (tutkan sijaan).
 - Tilastot päänäytöllä: ne avautuvat toimintatilan alle (vaakatasossa vasemmalle); ‹ sulkee ne ja toisen lohkon välilehti pitää ne auki.
 - Tilastot: jokaiselle lohkolle Päivän toimi ja 4 välilehteä: Toiminta (ruiskutusikkuna tunti tunnilta, pisaroiden kuivuminen (ΔT), tuuli, märkä lehti), Vesi & maa (sade, haihdunta, maa 6 ja 18 cm:ssä), Kausi (lämpösumma verrattuna viime vuoteen, arvioitu vaihe) ja Riskit 72 h (sienitaudit, maanpintahalla, helle, tuuli ja rakeet); tallennus PDF- tai CSV-muodossa.
@@ -41,18 +44,18 @@ PELTOLOHKOT
 
 Versio 1.4 (v.1.400 – v.1.520)
 ASETUKSET
-- Asetukset: valikko ☰ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
-- Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ☰; sovelluksessa ja widgeteissä.
-- Näytön kieli: painikkeet ☰-valikossa, 2 rivillä: englanti ja maan kielet (Yhdysvalloissa englanti ja espanja); Romaniassa ”Muut kielet (vähemmistöt)” näyttää loput.
+- Asetukset: valikko ⚙︎ on nyt ikkuna, jossa on osiot, kytkimet, väriteemat ja palkki Järjestelmä ja tuki; päivitys vetämällä näyttöä alas tai napauttamalla ”päivitetty”.
+- Kuvaketeema: 6 sääkuvaketeemaa (Klassinen, Kiiltävä, Litteä, Realistinen, Ilmakehä, Ääriviiva), valitaan värillisillä pisteillä valikosta ⚙︎; sovelluksessa ja widgeteissä.
+- Näytön kieli: painikkeet ⚙︎-valikossa, 2 rivillä: englanti ja maan kielet (Yhdysvalloissa englanti ja espanja); Romaniassa ”Muut kielet (vähemmistöt)” näyttää loput.
 ILMOITUKSET
-- Maanjäristykset: ilmoitukset vain enintään 300 km:n päässä paikastasi olevista maanjäristyksistä; päälle tai pois valikosta ☰.
-- Tornadot (USA): paikkakuntasi tornadoilmoitukset laitetaan päälle tai pois valikosta ☰.
+- Maanjäristykset: ilmoitukset vain enintään 300 km:n päässä paikastasi olevista maanjäristyksistä; päälle tai pois valikosta ⚙︎.
+- Tornadot (USA): paikkakuntasi tornadoilmoitukset laitetaan päälle tai pois valikosta ⚙︎.
 PÄÄNÄYTTÖ
 - Iso kompassi: napautus paikkakuntaan luettelossa näyttää sen merkin kompassissa; samassa suunnassa olevat paikkakunnat eivät enää mene päällekkäin.
 - Päänäyttö: sivu vierii ylälasin alla osioittain (Seuraavat tunnit, Viiden päivän ennuste, Sään tiedot); painikkeet ja akku leijuvat alhaalla.
 - Viiden päivän ennuste: päivät 3–5 vaihtuvat itsestään 3 sekunnin välein ensimmäiseen kosketukseen asti.
 PÄIVITYKSET
-- Päivitykset: sovellus ei enää etsi päivityksiä itse, vain kun napautat ☰ › Tarkista päivitykset; uusi versio ladataan selaimessa ja asennat sen ladatusta tiedostosta.
+- Päivitykset: sovellus ei enää etsi päivityksiä itse, vain kun napautat ⚙︎ › Tarkista päivitykset; uusi versio ladataan selaimessa ja asennat sen ladatusta tiedostosta.
 PELTOLOHKOT
 - Karttanäkymät: ＋/−-painikkeiden alla olevat pyöreät painikkeet vaihtavat satelliitin ja kartan ja näyttävät sadetutkan 2 viime tunnilta.
 - Lohkon kulmat: satelliittinäkymässä 4 kulmaa löydetään kuvasta ja siirretään sormella; kortin napautus lähentää kartan lohkoon ja näyttää kulmat, Tilastot avaa sen tilastot.
@@ -101,7 +104,7 @@ PÄIVITYKSET
 PELTOLOHKOT
 - Peltolohkojen ilmoitukset, valitaan kartan kellopainikkeella: sade, tuuli, lumi, kuivuus.
 TEEMAT
-- 6 väriteemaa (Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu), kukin vaalea ja tumma: ☰ › Teema.
+- 6 väriteemaa (Yksivärinen, Salvia, Laventeli, Taivas, Persikka, Ruusu), kukin vaalea ja tumma: ⚙︎ › Teema.
 VILJELIJÄTILA
 - Viljelijätila: uudet ruudut Maan veden jälkeen: Ruiskutus, Vesitase, Myrskyt, Lämpösumma, 16 päivää.
 - Yhdysvalloissa viljelijätilassa: ruudut NWS, Kuivuus, Palo, Rakeet.
@@ -115,7 +118,7 @@ Versio 1.1 (v.1.100 – v.1.191)
 - Lohkot: tallennettu GPS:llä tai kartalta, oma päänäkymä kullekin, 28 päivän tilasto PDF:nä, sade- ja tuulihälytykset.
 - Widgetit 4x2 päivät ja 4x3.
 - Tekstin koko (Aa).
-- ☰ › Lähetä sovellus.
+- ⚙︎ › Lähetä sovellus.
 - Yhdysvallat: NWS-varoitukset, tornadot, °F, paikallinen aika.
 - Muut kielet: Romanian vähemmistökielet.
 - Lohkot: kartta kaikista lohkoista, GPS-painike (sininen piste) ja ”Tallenna GPS-paikka”.

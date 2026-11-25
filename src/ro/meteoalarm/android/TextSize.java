@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
- * The text size of the pages (Ajutor, Cutremure, Despre, Ce e nou) and of the ☰ menu bubbles
+ * The text size of the pages (Ajutor, Cutremure, Despre, Ce e nou) and of the ⚙︎ menu bubbles
  * (Viorel 2026-11-04, v2.10): one setting saved on the device, 80–180 %, set with a bar like the
  * brightness one. On a tablet the menus start 11 % larger (30 % in v2.10, 17 % in v2.20).
  */

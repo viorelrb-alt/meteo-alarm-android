@@ -297,16 +297,21 @@ final class Glass {
 		void watch(View root) {
 			root.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
 				public boolean onPreDraw() {
-					boolean want = false, other = false, bub = false;
+					boolean want = false, other = false, bub = false, menu = false;
 					for (View w : windows)
 						if (w != null && w.getVisibility() == VISIBLE) {
 							want = true;
 							if (w instanceof Local) bub = true; // v5.24: bubble, About, Help
+							else if (w instanceof SettingsPanel) menu = true;
 							else other = true;
 						}
+					// v2.210 (Viorel): in landscape the screen round the ⚙︎ menu stays sharp, as on a tablet.
+					boolean land = getResources().getConfiguration().orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE;
+					boolean menuLand = menu && land && !other;
+					if (menu && !menuLand) other = true;
 					// v5.22 (Viorel): a bubble alone leaves the screen sharp; only the bubble is frosted glass (v5.24: also About and Help).
-					// v5.40 (Viorel): on a tablet the screen never blurs; only the ☰ menu is frosted glass.
-					boolean loc = bub && !other || want && TextSize.tablet(getContext());
+					// v5.40 (Viorel): on a tablet the screen never blurs; only the ⚙︎ menu is frosted glass.
+					boolean loc = (bub || menuLand) && !other || want && TextSize.tablet(getContext());
 					if (want != on || loc != local) {
 						set(want, loc);
 						return false;

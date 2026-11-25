@@ -90,7 +90,7 @@ final class BackupPanel {
 	/**
 	 * The window: TITLE with Aa and ✕, a line under it, the BODY (for Export and Import the rows, which
 	 * scroll), and the 2 buttons B1 (filled) and B2. v2.130 (Viorel): a sheet of matte glass like the
-	 * ☰ menu (readable on the light theme too), the camera's band above it, the Aa button for the
+	 * ⚙︎ menu (readable on the light theme too), the camera's band above it, the Aa button for the
 	 * text size. KEEP: the buttons do not close the window (the Log).
 	 */
 	private void frame(String title, String line, String b1, String b2, final Done done, final Backup.Sel sel, String foot, final boolean keep) {
@@ -686,7 +686,7 @@ final class BackupPanel {
 		body.addView(sv, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		// The buttons at the bottom of the screen (Viorel): See the log, Share, Save.
 		String[] names = { Tr.t("See the log", "Vezi jurnalul"), Tr.t("Share", "Trimite"), Tr.t("Save", "Salvează") };
-		String[] icons = { "☰", "➚", "⤓" };
+		String[] icons = { "⚙︎", "➚", "⤓" };
 		for (int i = 0; i < 3; i++) {
 			final int k = i;
 			FitText bt = new FitText(ctx, 1, 0.5f);
@@ -839,7 +839,7 @@ final class BackupPanel {
 		d.show();
 	}
 
-	/** A switch like the ☰ ones. */
+	/** A switch like the ⚙︎ ones. */
 	private final class Switch extends View {
 		boolean on;
 		final Paint p = new Paint(Paint.ANTI_ALIAS_FLAG);

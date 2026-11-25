@@ -438,7 +438,7 @@ final class QuakeCard {
 		sheet.setPadding((int) (14 * dp), (int) (6 * dp), (int) (14 * dp), (int) (12 * dp));
 		sheet.setBackground(Glass.panelBg(dark, 22 * dp, dp));
 		sheet.setClickable(true);
-		// The same handle as the ☰ menu's Sistem & Suport bar.
+		// The same handle as the ⚙︎ menu's Sistem & Suport bar.
 		View grip = new View(ctx);
 		grip.setBackground(Glass.pill(Glass.alpha(ink, 0.3f), 0, 3 * dp, dp));
 		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(Math.round(40 * dp), Math.round(5 * dp));
@@ -515,7 +515,7 @@ final class QuakeCard {
 		final FrameLayout rootF = root;
 		final View barV = bar;
 		final View histV = hist, h2V = h2;
-		// Pulled up the legend shows, pulled down only the history (as the ☰ menu's Sistem & Suport bar).
+		// Pulled up the legend shows, pulled down only the history (as the ⚙︎ menu's Sistem & Suport bar).
 		sheet.legend = ls;
 		sheet.toggle = new Runnable() {
 			public void run() {
@@ -541,7 +541,7 @@ final class QuakeCard {
 	}
 
 	/**
-	 * v2.031 (Viorel): the big map's sheet moves like the ☰ menu's Sistem & Suport bar: a drag of
+	 * v2.031 (Viorel): the big map's sheet moves like the ⚙︎ menu's Sistem & Suport bar: a drag of
 	 * 24 dp up opens it (the legend shows), down closes it, a tap on its handle switches it.
 	 */
 	private static class Pull extends LinearLayout {
@@ -1063,7 +1063,7 @@ final class QuakeCard {
 	}
 
 	/**
-	 * Method 2 (☰ › Earthquakes, a tap on an earthquake; or the square / the map): the whole screen.
+	 * Method 2 (⚙︎ › Earthquakes, a tap on an earthquake; or the square / the map): the whole screen.
 	 * Portrait: the title, ‹ with the square, the map, the rest, all scrolling. Landscape (v2.103,
 	 * Viorel): the map on the whole screen, an L of glass over it (the title across the top, the
 	 * information in the right half, scrolling); the left half shows only the map. Turning the

@@ -16,7 +16,7 @@ import java.util.Map;
 import ro.meteoalarm.android.core.Visits;
 
 /**
- * v4.30 (Viorel 2026-11-10): ☰ › Export / Import. The towns, favourites, villages passed through,
+ * v4.30 (Viorel 2026-11-10): ⚙︎ › Export / Import. The towns, favourites, villages passed through,
  * parcels and settings in one JSON file, to move them to another device. Import adds what is
  * missing (Add) or makes everything as in the file (Replace).
  */

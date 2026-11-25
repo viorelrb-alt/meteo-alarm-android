@@ -1,17 +1,17 @@
-Versione attuale: v.2.200 · 25.11.2026
+Versione attuale: v.2.210 · 25.11.2026
 AGGIORNAMENTI
-- Riquadro Nuova versione: un breve riquadro in cima a ☰ quando esiste una nuova versione; toccarlo avvia il download.
+- Riquadro Nuova versione: un breve riquadro in cima a ⚙︎ quando esiste una nuova versione; toccarlo avvia il download.
 IMPOSTAZIONI
 - Aiuto: i testi lunghi sono divisi in parti con le loro icone o mostrano 2 righe e Mostra tutto ▾; in orizzontale su 2 colonne, e un tocco sul pulsante di una sezione ne fa lampeggiare il contorno due volte.
 - Esporta / Importa: interruttori per il contenuto del file (anche colture e dati di coltivazione, notifiche delle particelle, cestino delle particelle, notifiche, mappa, widget, storico dei terremoti, registro); in Esporta e Importa località e particelle si spuntano una a una; il pulsante Aa cambia la dimensione del testo.
 - Funzioni avanzate: il riquadro sotto Località: modalità Agricoltore e la pagina Terremoti.
-- La finestra Impostazioni: ☰ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. In orizzontale si apre a sinistra su 2 colonne, il titolo su una riga: trascina la barra sul bordo destro a sinistra per una colonna, a destra per due; il pulsante accanto a X riporta le 2 colonne. Visualizzazione è in fondo. Sistema e Supporto mostra i nomi per 3 secondi, poi solo i pulsanti; su un telefono in orizzontale è un riquadro fluttuante in basso che si riduce a ⋯ (la sua maniglia lo allarga), su un tablet una sola riga.
-- Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
-- Località: il primo riquadro di ☰ (con la modalità agricoltore: Località e Appezzamenti, con gli Appezzamenti dentro). Tre righe: prima le località con la stella piena (hanno una schermata principale, nell'ordine delle schermate), poi gli altri preferiti. Ogni stella si può togliere finché ce ne sono 2 o più: la località successiva con stella diventa la prima schermata; l'ultima è grigia e resta. Un tocco su una stella vuota dà alla località una schermata principale e la mostra. Località › apre l'elenco; sulla sua mappa, Provincia ▾ cerca in una sola provincia.
+- La finestra Impostazioni: ⚙︎ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. In orizzontale si apre a sinistra su 2 colonne, il titolo su una riga: trascina la barra sul bordo destro a sinistra per una colonna, a destra per due; il pulsante accanto a X riporta le 2 colonne. Visualizzazione è in fondo. Sistema e Supporto mostra i nomi per 3 secondi, poi solo i pulsanti; su un telefono in orizzontale è un riquadro fluttuante in basso che si riduce a ⋯ (la sua maniglia lo allarga), su un tablet una sola riga.
+- Lingua di visualizzazione: nel ⚙︎ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
+- Località: la prima scheda di ⚙︎ (in modalità agricoltore: Località & Appezzamenti, con gli appezzamenti dentro). Una riga con la località mostrata; ▾ apre le altre località con schermata principale. Togliere una stella elimina la località e la sua schermata (finché ne restano 2 o più; l'ultima è grigia e resta). Località › apre l'elenco; sulla sua mappa, Provincia ▾ cerca in una sola provincia.
 - Pagina Terremoti: si apre subito con gli ultimi elenchi salvati sul telefono e li aggiorna in background.
 - Registro: dimensione, righe ed errori su una scheda; Vedi il registro apre le righe (Tutte, Errori, Oggi, Ieri; un tocco lungo copia una riga); Condividi e Salva in fondo allo schermo. Gli errori risolti sono alla fine del registro e non vengono contati; i problemi di rete sono avvisi.
-- Temi: 6 temi con il proprio sfondo, le schede e il colore (Grafite, Peonia, Miele, Foresta, Oceano, Lavanda), ognuno chiaro e scuro; i punti in ☰ › Tema hanno il colore del tema.
-- Tour: nel riquadro delle notifiche: un breve tour di ciò che mostra ogni zona delle schermate. In arrivo (grigio per ora).
+- Temi: 6 temi con il proprio sfondo, le schede e il colore (Grafite, Peonia, Miele, Foresta, Oceano, Lavanda), ognuno chiaro e scuro; i punti in ⚙︎ › Tema hanno il colore del tema.
+- Tutorial: nella scheda Allerte: un breve tutorial di ciò che mostra ogni parte delle schermate. Prossimamente (per ora grigio).
 LOCALITÀ
 - Elenco delle località: il pulsante Località apre l'elenco, nel colore del tema; Seleziona ne elimina una o più (l'ultima resta), e il segno ⌃⌄ tenuto e trascinato su o giù cambia l'ordine; ogni località conserva il meteo salvato.
 - Ricerca sulla mappa: la lente apre la mappa con la ricerca in basso; toccare un luogo o il nome di una località mostra la sua temperatura, Dettagli (i giorni seguenti) e Aggiungi. La mappa è semplice e chiara, con i nomi delle località scritti in grande (anche sulla mappa delle particelle). Altre località compaiono solo se iniziano come il nome scritto (almeno 6 lettere o il 60%).
@@ -22,6 +22,7 @@ NOTIFICHE
 - Terremoti: controllati ogni 10 minuti, anche di notte a schermo spento; una magnitudo rivista aggiorna la notifica e un tocco su di essa apre la mappa.
 PARTICELLE
 - Bolle nelle Statistiche: toccare un'ora della finestra di trattamento, un giorno dei grafici o una riga del suolo apre una bolla con la spiegazione; la finestra di trattamento scorre da sola.
+- Cestino: un appezzamento eliminato va nel cestino con ↺ accanto al pulsante GPS (il punto rosso li conta) e resta 15 giorni; il pulsante rotondo lo ripristina (se un appezzamento salvato ha il suo nome: nuovo nome o sostituire).
 - Coordinate della particella: nella pagina di modifica si scrivono le coordinate GPS di ogni punto, e sotto la vista satellitare mostra la particella.
 - Livelli meteo: sulla mappa delle particelle il riquadro sotto ＋ e − si apre con Satellite, Mappa, Nuvole, Temperature (colori) e Pioggia (mm all'ora), poi si richiude sulla scelta; un livello alla volta, con nome, ora e legenda sopra le schede; Pioggia si attiva solo quando piove ora o nelle prossime 2 ore (al posto del radar).
 - Modifica particella: la matita apre la pagina della particella: nome, coltura (elenco secondo la stagione della data di semina o Altra coltura…), data di semina, superficie; gli angoli si spostano sulla mappa.
@@ -30,29 +31,31 @@ PARTICELLE
 - Stato operativo: in alto la coltura e la data di semina; con una coltura il verdetto tiene conto anche dell'asciugatura delle gocce (ΔT) e della sua malattia.
 - Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
 SCHERMATA PRINCIPALE
-- Informazioni sul terremoto: un tocco sul riquadro Terremoto le apre nella schermata principale: la mappa, sotto le zone di avvertibilità e la cronologia del valore; il quadrato colorato o la mappa le aprono a schermo intero, come un terremoto da ☰ › Terremoti. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
+- Informazioni sul terremoto: un tocco sul riquadro Terremoto le apre nella schermata principale: la mappa, sotto le zone di avvertibilità e la cronologia del valore; il quadrato colorato o la mappa le aprono a schermo intero, come un terremoto da ⚙︎ › Terremoti. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
+- Luminosità: mostra la barra della luminosità a sinistra; un tocco su ☀ alla sua estremità ridà allo schermo la luminosità automatica.
 - Mappa meteo: alla fine della schermata principale (in orizzontale sul foglio con i riquadri): OpenStreetMap a livello di strada sul punto esatto della località della schermata (GPS per la prima) o, sulla schermata di un appezzamento, l'appezzamento con il suo contorno; il livello trasparente. La mappa resta ferma; dati: Open-Meteo. Nuvole, Temperature e Pioggia, uno alla volta; un tocco su quello attivo lo spegne. Pioggia è grigio e barrato quando non piove vicino ora né nelle prossime 2 ore. ▶ riproduce le ore (6 prima e 6 dopo adesso) una alla volta; un tocco su un'ora la mostra.
+- Miglioramenti del design e correzioni degli errori segnalati.
 - Nomi dei pulsanti: un pulsante rotondo che resta sullo schermo dopo il tocco mostra il suo nome in una piccola bolla per circa 1,5 secondi.
 - Più località: ogni località dell'elenco ha la sua schermata principale; scorrere a sinistra o a destra sul meteo attuale passa alla successiva, nell'ordine dell'elenco.
 - Pulsante Località: il pulsante rotondo con l'icona delle case (in verticale a destra del nome, in orizzontale sulla fascia in alto, prima del suo angolo) apre l'elenco delle località.
 - Pulsante «aggiornato»: galleggia sopra la pagina, a destra: in verticale sotto le allerte (senza di esse sotto la riga delle località), in orizzontale sotto l'orologio. Durante l'aggiornamento la freccia gira, anche come piccolo cerchio; poi l'ora appare per 4 secondi e si riduce a ⟳. Un tocco aggiorna.
 - Pulsanti in basso: i loro nomi compaiono sotto per 3 secondi all'apertura della schermata, poi solo i pulsanti; trascina la capsula in su per rivederli. Il pulsante attivo sembra premuto, con un anello.
-- Miglioramenti del design e correzioni degli errori segnalati.
+- Schermate principali: schede sotto il nome (in orizzontale in basso): la località e una per particella; un tocco o uno scorrimento laterale cambia schermata, + apre la casella di una nuova particella. Quando non entrano tutti, la riga avanza di uno ogni 3 secondi; un dito sopra la ferma per un po'.
 
 Versione 1.4 (v.1.400 – v.1.520)
 AGGIORNAMENTI
-- Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ☰ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
+- Aggiornamenti: l'app non cerca più aggiornamenti da sola, solo quando tocchi ⚙︎ › Cerca aggiornamenti; la nuova versione si scarica nel browser e la installi dal file scaricato.
 IMPOSTAZIONI
-- Impostazioni: il menu ☰ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
-- Lingua di visualizzazione: pulsanti in ☰, 2 per riga: inglese e le lingue del paese (negli USA inglese e spagnolo); in Romania «Altre lingue (minoranze)» mostra le altre.
-- Tema icone: 6 temi di icone meteo (Classico, Lucido, Piatto, Realistico, Atmosferico, Contorno), si scelgono con punti colorati in ☰; nell'app e nei widget.
+- Impostazioni: il menu ⚙︎ ora è una finestra con sezioni, interruttori, temi a colori e la barra Sistema e assistenza; si aggiorna trascinando lo schermo in giù o toccando «aggiornato».
+- Lingua di visualizzazione: pulsanti in ⚙︎, 2 per riga: inglese e le lingue del paese (negli USA inglese e spagnolo); in Romania «Altre lingue (minoranze)» mostra le altre.
+- Tema icone: 6 temi di icone meteo (Classico, Lucido, Piatto, Realistico, Atmosferico, Contorno), si scelgono con punti colorati in ⚙︎; nell'app e nei widget.
 MODALITÀ AGRICOLTORE
 - Pulsante agricoltore: il pulsante con la foglia accanto ai pulsanti disattiva la modalità agricoltore; un'altra località la mantiene.
 - Schede: la località e le particelle in schede sotto il nome (in orizzontale, in basso); la schermata di una particella nelle sezioni 1–4.
 - Stato operativo: sulla schermata di una particella, solo quando serve, il verdetto per trattare, il motivo e i rischi delle prossime 24 ore.
 NOTIFICHE
-- Terremoti: notifiche solo per i terremoti entro 300 km dal tuo luogo; si attivano o disattivano in ☰.
-- Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ☰.
+- Terremoti: notifiche solo per i terremoti entro 300 km dal tuo luogo; si attivano o disattivano in ⚙︎.
+- Tornado (USA): le notifiche di tornado per la tua località si attivano o disattivano in ⚙︎.
 PARTICELLE
 - Angoli della particella: nella vista satellite i 4 angoli vengono trovati dall'immagine e si spostano con il dito; un tocco sulla scheda ingrandisce la mappa sulla particella e mostra gli angoli, Statistica apre la sua statistica.
 - Cestino: una particella eliminata va per 15 giorni nel cestino sotto il pulsante GPS e si può ripristinare da lì.
@@ -104,7 +107,7 @@ SCHERMATA PRINCIPALE
 - Icone meteo: nei colori del tema; quella grande e quelle dei giorni si muovono per 3 secondi, anche dopo ogni aggiornamento.
 - Precipitazioni 12 ore: quando piove o nevica solo per parte del tempo, caselle di 4 ore (Piogge o Nevicate, con gli orari) al posto del grafico.
 TEMI
-- 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ☰ › Tema.
+- 6 temi di colore (Monocromatico, Salvia, Lavanda, Cielo, Pesca, Rosa), ciascuno chiaro e scuro: ⚙︎ › Tema.
 - Miglioramenti del design e correzioni degli errori segnalati.
 
 Versione 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Versione 1.1 (v.1.100 – v.1.191)
 - Particelle: salvate con il GPS o sulla mappa, una schermata principale per ciascuna, statistiche di 28 giorni con PDF, allerte di pioggia e vento.
 - Widget 4x2 giorni e 4x3.
 - Dimensione del testo (Aa).
-- ☰ › Invia l'app.
+- ⚙︎ › Invia l'app.
 - Stati Uniti: allerte NWS, tornado, °F, ora locale.
 - Altre lingue: le lingue delle minoranze della Romania.
 - Appezzamenti: una mappa con tutte le parcelle, il pulsante GPS (punto blu) e «Salva luogo GPS».

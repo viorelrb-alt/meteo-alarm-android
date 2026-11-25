@@ -249,8 +249,8 @@ final class Bubble extends FrameLayout implements Glass.Local {
 		final Runnable tTap = titleIconTap;
 		titleIconTap = null;
 		Context c = getContext();
-		// Larger on a tablet (Viorel 2026-11-04: the ☰ menu was too small there; +30 %, then 10 % and
-		// 5 % less in v2.20 / v2.21), and the text size of ☰.
+		// Larger on a tablet (Viorel 2026-11-04: the ⚙︎ menu was too small there; +30 %, then 10 % and
+		// 5 % less in v2.20 / v2.21), and the text size of ⚙︎.
 		float zk = (TextSize.tablet(c) ? 1.11f : 1f) * TextSize.get(c);
 		width = (int) (width * zk);
 		int ink = ink();

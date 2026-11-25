@@ -1,23 +1,25 @@
-Aktuelle Version: v.2.200 · 25.11.2026
+Aktuelle Version: v.2.210 · 25.11.2026
 AKTUALISIERUNGEN
-- Feld Neue Version: oben im ☰ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
+- Feld Neue Version: oben im ⚙︎ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
 - Eigene Kanäle: Wetterwarnungen, Regen und Schnee, Erdbeben, Parzellen und Updates haben jeweils einen eigenen Kanal in den Einstellungen des Telefons; du kannst einen ausschalten und die anderen behalten.
 - Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
 - Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App GitHub 2 Wochen nach einem Update täglich, danach alle 7 Tage, und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.
 EINSTELLUNGEN
-- Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
-- Das Fenster Einstellungen: ☰ öffnet die Einstellungen in Abschnitten; ein Schalter schaltet eine Funktion sofort ein oder aus. Schließen mit X oder Tippen außerhalb. Im Querformat öffnet es sich links in 2 Spalten, der Titel in einer Zeile: zieh die Leiste am rechten Rand nach links für eine Spalte, nach rechts für zwei; die Taste neben X holt die 2 Spalten zurück. Anzeige steht am Ende. System & Support zeigt seine Namen 3 Sekunden, dann nur die Tasten; auf dem Telefon im Querformat ist es ein schwebendes Feld unten, das sich zu ⋯ einklappt (sein Griff verbreitert es), auf dem Tablet eine Zeile.
-- Designs: 6 Designs mit eigenem Hintergrund, eigenen Karten und eigener Farbe (Graphit, Pfingstrose, Honig, Wald, Ozean, Lavendel), jeweils hell und dunkel; die Punkte in ☰ › Design haben die Farbe des Designs.
+- Anzeigesprache: im ⚙︎ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
+- Das Fenster Einstellungen: ⚙︎ öffnet die Einstellungen in Abschnitten; ein Schalter schaltet eine Funktion sofort ein oder aus. Schließen mit X oder Tippen außerhalb. Im Querformat öffnet es sich links in 2 Spalten, der Titel in einer Zeile: zieh die Leiste am rechten Rand nach links für eine Spalte, nach rechts für zwei; die Taste neben X holt die 2 Spalten zurück. Anzeige steht am Ende. System & Support zeigt seine Namen 3 Sekunden, dann nur die Tasten; auf dem Telefon im Querformat ist es ein schwebendes Feld unten, das sich zu ⋯ einklappt (sein Griff verbreitert es), auf dem Tablet eine Zeile.
+- Designs: 6 Designs mit eigenem Hintergrund, eigenen Karten und eigener Farbe (Graphit, Pfingstrose, Honig, Wald, Ozean, Lavendel), jeweils hell und dunkel; die Punkte in ⚙︎ › Design haben die Farbe des Designs.
 - Erdbeben-Seite: öffnet sich sofort mit den zuletzt auf dem Telefon gespeicherten Listen und aktualisiert sie im Hintergrund.
 - Erweiterte Funktionen: Die Karte unter Orte: Landwirt-Modus und die Erdbeben-Seite.
 - Export / Import: Schalter für den Inhalt der Datei (auch Kulturen und Anbaudaten, Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); bei Export und Import werden Orte und Parzellen einzeln angekreuzt; die Taste Aa ändert die Textgröße.
 - Hilfe: Lange Texte sind in Teile mit eigenen Symbolen gegliedert oder zeigen 2 Zeilen und Alles zeigen ▾; im Querformat in 2 Spalten, und Antippen einer Abschnittstaste lässt dessen Umriss zweimal blinken.
-- Orte: Die erste Karte im ☰ (im Landwirt-Modus: Orte & Parzellen, mit den Parzellen darin). Drei Zeilen: zuerst die Orte mit vollem Stern (sie haben einen Hauptbildschirm, in der Reihenfolge der Bildschirme), dann die übrigen Favoriten. Jeder Stern kann entfernt werden, solange 2 oder mehr an sind: der nächste Ort mit Stern wird zum ersten Bildschirm; der letzte ist grau und bleibt. Antippen eines leeren Sterns gibt dem Ort einen Hauptbildschirm und zeigt ihn. Orte › öffnet die Liste; auf ihrer Karte sucht Kreis ▾ in einem einzigen Kreis.
+- Orte: Die erste Karte im ⚙︎ (im Landwirt-Modus: Orte & Parzellen, mit den Parzellen darin). Eine Zeile mit dem angezeigten Ort; ▾ öffnet die anderen Orte mit Hauptbildschirm. Ein Stern abgewählt löscht den Ort und seinen Bildschirm (solange 2 oder mehr bleiben; der letzte ist grau und bleibt). Orte › öffnet die Liste; auf ihrer Karte sucht Kreis ▾ in einem einzigen Kreis.
 - Protokoll: Größe, Zeilen und Fehler auf einer Karte; Protokoll ansehen öffnet die Zeilen (Alle, Fehler, Heute, Gestern; langes Tippen kopiert eine Zeile); Teilen und Speichern unten am Bildschirm. Behobene Fehler stehen am Ende des Protokolls und werden nicht gezählt; Netzwerkprobleme sind Warnungen.
-- Tour: In der Karte der Benachrichtigungen: eine kurze Tour, was jeder Bereich der Bildschirme zeigt. Bald verfügbar (vorerst grau).
+- Tutorial: In der Karte Warnungen: ein kurzes Tutorial dazu, was jeder Teil der Bildschirme zeigt. Demnächst (vorerst grau).
 HAUPTBILDSCHIRM
-- Erdbebeninformationen: ein Tippen auf das Feld Erdbeben öffnet sie im Hauptbildschirm: die Karte, darunter die Zonen der Spürbarkeit und der Verlauf des Werts; das farbige Quadrat oder die Karte öffnet sie im ganzen Bildschirm, wie ein Beben aus ☰ › Erdbeben. In Rumänien, Frankreich, Italien, den Niederlanden, der Schweiz und Griechenland kommen die offiziellen Werte zuerst vom Institut des Landes (INFP, BCSF, INGV, KNMI, SED, NOA), dann von EMSC. In Rumänien erhalten auch die Beben rund um das Land den INFP-Wert (von infp.ro).
+- Erdbebeninformationen: ein Tippen auf das Feld Erdbeben öffnet sie im Hauptbildschirm: die Karte, darunter die Zonen der Spürbarkeit und der Verlauf des Werts; das farbige Quadrat oder die Karte öffnet sie im ganzen Bildschirm, wie ein Beben aus ⚙︎ › Erdbeben. In Rumänien, Frankreich, Italien, den Niederlanden, der Schweiz und Griechenland kommen die offiziellen Werte zuerst vom Institut des Landes (INFP, BCSF, INGV, KNMI, SED, NOA), dann von EMSC. In Rumänien erhalten auch die Beben rund um das Land den INFP-Wert (von infp.ro).
+- Hauptbildschirme: Reiter unter dem Namen (quer unten): der Ort und einer je Parzelle; ein Tippen oder seitliches Wischen wechselt den Bildschirm, + öffnet das Feld einer neuen Parzelle. Wenn nicht alle passen, rückt die Zeile alle 3 Sekunden um eins weiter; ein Finger darauf hält sie eine Weile an.
+- Helligkeit: Zeigt die Helligkeitsleiste links; ein Tippen auf ☀ an ihrem Ende gibt dem Bildschirm die automatische Helligkeit zurück.
 - Mehrere Orte: Jeder Ort der Liste hat seinen eigenen Hauptbildschirm; Wischen nach links oder rechts über dem Wetter jetzt geht zum nächsten, in der Reihenfolge der Liste.
 - Namen der Tasten: Eine runde Taste, die nach dem Antippen auf dem Bildschirm bleibt, zeigt ihren Namen etwa 1,5 Sekunden in einer kleinen Blase.
 - Taste Orte: Die runde Taste mit dem Häuser-Symbol (hochkant rechts vom Namen, quer auf dem oberen Band, vor seiner Ecke) öffnet die Liste der Orte.
@@ -30,23 +32,24 @@ ORTE
 - Suche auf der Karte: Die Lupe öffnet die Karte mit der Suche unten; ein Tippen auf einen Punkt oder auf den Namen eines Orts zeigt seine Temperatur, Details (die nächsten Tage) und Hinzufügen. Die Karte ist schlicht und hell, mit groß geschriebenen Ortsnamen (auch auf der Karte der Parzellen). Andere Orte erscheinen nur, wenn sie wie der eingegebene Name beginnen (mindestens 6 Buchstaben oder 60 % davon).
 PARZELLEN
 - Blasen in der Statistik: Antippen einer Stunde im Spritzfenster, eines Tages in den Diagrammen oder einer Bodenzeile öffnet eine Blase mit der Erklärung; das Spritzfenster bewegt sich von selbst.
+- Design-Verbesserungen und Behebung gemeldeter Fehler.
 - Koordinaten der Parzelle: Auf der Bearbeitungsseite lassen sich die GPS-Koordinaten jedes Punkts eintippen, darunter zeigt die Satellitenansicht die Parzelle.
 - Operativer Status: oben die Kultur und ihr Aussaatdatum; mit einer Kultur berücksichtigt das Urteil auch die Tropfentrocknung (ΔT) und ihre Krankheit.
+- Papierkorb: Eine gelöschte Parzelle kommt in den Papierkorb mit ↺ neben der GPS-Taste (der rote Punkt zählt sie) und bleibt 15 Tage; die runde Taste stellt sie wieder her (hat eine gespeicherte Parzelle ihren Namen: neuer Name oder ersetzen).
 - Parzelle bearbeiten: der Stift öffnet die Seite der Parzelle: Name, Kultur (Liste nach der Saison des Aussaatdatums oder Andere Kultur…), Aussaatdatum, Fläche; die Ecken werden auf der Karte verschoben.
 - Statistik im Hauptbildschirm: Sie öffnet sich unter dem Betriebsstatus (quer links); ‹ schließt sie, der Tab einer anderen Parzelle behält sie.
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
 - Wetterebenen: Auf der Karte der Parzellen öffnet sich das Feld unter ＋ und − mit Satellit, Karte, Wolken, Temperaturen (Farben) und Regen (mm pro Stunde) und klappt dann auf die Wahl zusammen; eine Ebene auf einmal, mit Name, Uhrzeit und Legende über den Karten; Regen schaltet sich nur ein, wenn es jetzt oder in den nächsten 2 Stunden regnet (statt des Radars).
-- Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.4 (v.1.400 – v.1.520)
 BENACHRICHTIGUNGEN
-- Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ☰.
-- Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ☰ ein- oder ausgeschaltet.
+- Erdbeben: Benachrichtigungen nur für Erdbeben bis 300 km von deinem Ort; ein- oder ausschalten in ⚙︎.
+- Tornados (USA): die Tornado-Benachrichtigungen für deinen Ort werden in ⚙︎ ein- oder ausgeschaltet.
 EINSTELLUNGEN
-- Anzeigesprache: Tasten in ☰, 2 pro Reihe: Englisch und die Sprachen des Landes (in den USA Englisch und Spanisch); in Rumänien zeigt „Weitere Sprachen (Minderheiten)“ den Rest.
-- Einstellungen: das Menü ☰ ist jetzt ein Fenster mit Bereichen, Schaltern, Farbdesigns und der Leiste System & Support; aktualisieren durch Herunterziehen oder ein Tippen auf „aktualisiert“.
-- Symbolthema: 6 Themen für Wettersymbole (Klassisch, Glänzend, Flach, Realistisch, Atmosphärisch, Kontur), Auswahl mit farbigen Punkten in ☰; in der App und in den Widgets.
+- Anzeigesprache: Tasten in ⚙︎, 2 pro Reihe: Englisch und die Sprachen des Landes (in den USA Englisch und Spanisch); in Rumänien zeigt „Weitere Sprachen (Minderheiten)“ den Rest.
+- Einstellungen: das Menü ⚙︎ ist jetzt ein Fenster mit Bereichen, Schaltern, Farbdesigns und der Leiste System & Support; aktualisieren durch Herunterziehen oder ein Tippen auf „aktualisiert“.
+- Symbolthema: 6 Themen für Wettersymbole (Klassisch, Glänzend, Flach, Realistisch, Atmosphärisch, Kontur), Auswahl mit farbigen Punkten in ⚙︎; in der App und in den Widgets.
 HAUPTBILDSCHIRM
 - 5-Tage-Vorhersage: die Tage 3–5 wechseln alle 3 Sekunden von selbst bis zur ersten Berührung.
 - Großer Kompass: ein Tippen auf einen Ort in der Liste markiert sein Zeichen auf dem Kompass; Orte in derselben Richtung überdecken sich nicht mehr.
@@ -64,7 +67,7 @@ PARZELLEN
 - Punkte der Parzelle: + Punkt fügt bis zu 3 weitere Punkte hinzu (höchstens 7), Kreis verteilt sie gleichmäßig auf einem Kreis, langes Drücken auf einen Punkt löscht ihn.
 - Seite Parzellen: die Karten der Parzellen (Name, Koordinaten, Stift, Statistik · PDF, Glocke, Papierkorb) schweben über der Karte, in einer Reihe unten oder einer Spalte rechts; ＋, auch der Tab ＋, öffnet das Feld einer neuen Parzelle.
 UPDATES
-- Updates: Die App sucht nicht mehr selbst nach Updates, nur wenn du auf ☰ › Nach Updates suchen tippst; die neue Version wird im Browser heruntergeladen und du installierst sie aus der heruntergeladenen Datei.
+- Updates: Die App sucht nicht mehr selbst nach Updates, nur wenn du auf ⚙︎ › Nach Updates suchen tippst; die neue Version wird im Browser heruntergeladen und du installierst sie aus der heruntergeladenen Datei.
 - Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.3 (v.1.300 – v.1.352)
@@ -92,7 +95,7 @@ BENACHRICHTIGUNGEN
 - Eigene HINWEIS-Benachrichtigungen für jede Parzelle: Reif, Frost, Nebel, gefrierender Regen, starke Böen.
 - Eine eigene HINWEIS-Benachrichtigung auch für den Ort.
 DESIGNS
-- 6 Farbdesigns (Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose), jeweils hell und dunkel: ☰ › Design.
+- 6 Farbdesigns (Monochrom, Salbei, Lavendel, Himmel, Pfirsich, Rose), jeweils hell und dunkel: ⚙︎ › Design.
 HAUPTBILDSCHIRM
 - HINWEIS-Felder in Europa: Reif, Frost, Nebel, gefrierender Regen, starker Wind.
 - Kameraleiste: im Hochformat stehen Uhr, Verbindung und Datum neben der Kamera (Android 9+).
@@ -115,7 +118,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Parzellen: per GPS oder auf der Karte gespeichert, ein Hauptbildschirm für jede, 28-Tage-Statistik mit PDF, Regen- und Windwarnungen.
 - Widgets 4x2 Tage und 4x3.
 - Textgröße (Aa).
-- ☰ › App senden.
+- ⚙︎ › App senden.
 - Vereinigte Staaten: NWS-Warnungen, Tornados, °F, Ortszeit.
 - Weitere Sprachen: die Sprachen der Minderheiten Rumäniens.
 - Parzellen: eine Karte mit allen Parzellen, die GPS-Taste (blauer Punkt) und „GPS-Ort speichern“.

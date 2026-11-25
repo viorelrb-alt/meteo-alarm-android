@@ -1,27 +1,29 @@
-Nuvarande version: v.2.200 · 25.11.2026
+Nuvarande version: v.2.210 · 25.11.2026
 AVISERINGAR
 - Egna kanaler: vädervarningar, regn och snö, jordbävningar, skiften och uppdateringar har var sin kanal i telefonens inställningar; du kan stänga av en och behålla de andra.
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
 - Ny version: med aviseringar på kontrollerar appen GitHub varje dag i 2 veckor efter en uppdatering, sedan en gång var 7:e dag, och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.
 HUVUDSKÄRM
 - Fler orter: varje ort i listan har sin egen huvudskärm; ett svep åt vänster eller höger över vädret nu går till nästa, i listans ordning.
-- Jordbävningsinformation: ett tryck på rutan Jordbävning öppnar den på huvudskärmen: kartan, under den zonerna där den kändes och värdets historik; den färgade kvadraten eller kartan öppnar den på hela skärmen, som en jordbävning från ☰ › Jordbävningar. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
+- Huvudskärmar: flikar under namnet (liggande nederst): orten och en per skifte; ett tryck eller ett svep åt sidan byter skärm, + öppnar rutan för ett nytt skifte. När inte alla får plats flyttar raden fram en var 3:e sekund; ett finger på den stoppar den en stund.
+- Jordbävningsinformation: ett tryck på rutan Jordbävning öppnar den på huvudskärmen: kartan, under den zonerna där den kändes och värdets historik; den färgade kvadraten eller kartan öppnar den på hela skärmen, som en jordbävning från ⚙︎ › Jordbävningar. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
 - Knappen Orter: den runda knappen med husikonen (i stående till höger om namnet, i liggande på det övre bandet, före dess hörn) öppnar listan med orter.
 - Knappen ”uppdaterad”: svävar över sidan till höger: stående under varningarna (utan dem under raden med orter), liggande under klockan. Under uppdatering snurrar pilen, även som en liten cirkel; sedan visas tiden i 4 sekunder och den fälls ihop till ⟳. Ett tryck uppdaterar.
 - Knappnamn: en rund knapp som stannar på skärmen när den trycks visar sitt namn i en liten bubbla i ungefär 1,5 sekund.
+- Ljusstyrka: visar ljusstyrkelisten till vänster; ett tryck på ☀ i dess ände ger skärmen den automatiska ljusstyrkan igen.
 - Nedre knappar: deras namn syns under dem i 3 sekunder när skärmen öppnas, sedan bara knapparna; dra kapseln uppåt för att se dem igen. Knappen som är på ser intryckt ut, med en ring.
 - Väderkarta: längst ned på huvudskärmen (liggande på arket med rutorna): OpenStreetMap i gatunivå runt den exakta platsen för skärmens ort (GPS för den första) eller, på ett skiftes skärm, skiftet med sin kontur; lagret genomskinligt. Kartan står still; data: Open-Meteo. Moln, Temperaturer och Regn, ett i taget; ett tryck på det som är på stänger av det. Regn är grått och överstruket när det inte regnar i närheten nu eller de närmaste 2 timmarna. ▶ spelar upp timmarna (6 före och 6 efter nu) en i taget; ett tryck på en timme visar den.
 INSTÄLLNINGAR
 - Avancerade funktioner: kortet under Orter: Lantbruksläge och sidan Jordbävningar.
 - Export / Import: reglage för vad som hamnar i filen (även grödor och odlingsdata, skiftenas aviseringar, skiftenas papperskorg, aviseringar, karta, widgetar, jordbävningshistorik, logg); vid Export och Import bockas orter och skiften för ett i taget; knappen Aa ändrar textstorleken.
-- Fönstret Inställningar: ☰ öppnar inställningarna i avsnitt; en brytare slår på eller av en funktion direkt. Den stängs med X eller ett tryck utanför. Liggande öppnas den till vänster i 2 kolumner, titeln på en rad: dra listen i högerkanten åt vänster för en kolumn, åt höger för två; knappen bredvid X ger 2 kolumner igen. Visning är sist. System & Support visar namnen i 3 sekunder, sedan bara knapparna; på en telefon liggande är det en svävande ruta nederst som fälls ihop till ⋯ (handtaget gör den bredare), på en surfplatta en rad.
+- Fönstret Inställningar: ⚙︎ öppnar inställningarna i avsnitt; en brytare slår på eller av en funktion direkt. Den stängs med X eller ett tryck utanför. Liggande öppnas den till vänster i 2 kolumner, titeln på en rad: dra listen i högerkanten åt vänster för en kolumn, åt höger för två; knappen bredvid X ger 2 kolumner igen. Visning är sist. System & Support visar namnen i 3 sekunder, sedan bara knapparna; på en telefon liggande är det en svävande ruta nederst som fälls ihop till ⋯ (handtaget gör den bredare), på en surfplatta en rad.
 - Hjälp: långa texter är uppdelade i delar med egna ikoner eller visar 2 rader och Visa allt ▾; liggande i 2 kolumner, och ett tryck på ett avsnitts knapp får dess kontur att blinka två gånger.
 - Logg: storlek, rader och fel på ett kort; Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara längst ner på skärmen. Åtgärdade fel står i slutet av loggen och räknas inte; nätverksproblem är varningar.
-- Orter: första kortet i ☰ (i lantbruksläge: Orter & Skiften, med skiftena i). Tre rader: först orterna med hel stjärna (de har en huvudskärm, i skärmarnas ordning), sedan övriga favoriter. Vilken stjärna som helst kan tas bort så länge 2 eller fler är på: nästa ort med stjärna blir första skärm; den sista är grå och stannar. Ett tryck på en tom stjärna ger orten en huvudskärm och visar den. Orter › öppnar listan; på dess karta söker Län ▾ i ett län.
-- Rundtur: i kortet för aviseringar: en kort rundtur i vad varje del av skärmarna visar. Kommer snart (grått tills vidare).
+- Orter: första kortet i ⚙︎ (i lantbruksläge: Orter & Skiften, med skiftena i). En rad med orten som visas; ▾ öppnar de andra orterna med huvudskärm. Att ta bort en stjärna raderar orten och dess skärm (så länge 2 eller fler är kvar; den sista är grå och stannar). Orter › öppnar listan; på dess karta söker Län ▾ i ett län.
+- Guide: i kortet Larm: en kort guide till vad varje del av skärmarna visar. Snart (grå tills vidare).
 - Sidan Jordbävningar: öppnas direkt med de senast sparade listorna i telefonen och uppdaterar dem i bakgrunden.
-- Teman: 6 teman med egen bakgrund, egna kort och egen färg (Grafit, Pion, Honung, Skog, Ocean, Lavendel), alla ljusa och mörka; prickarna i ☰ › Tema har temats färg.
-- Visningsspråk: i ☰ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
+- Teman: 6 teman med egen bakgrund, egna kort och egen färg (Grafit, Pion, Honung, Skog, Ocean, Lavendel), alla ljusa och mörka; prickarna i ⚙︎ › Tema har temats färg.
+- Visningsspråk: i ⚙︎ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
 ORTER
 - Ortkort: på en surfplatta och i liggande läge är de lika breda som sin text och står i rader och kolumner; i stående på en telefon får ett för långt namn mindre bokstäver; i liggande behåller sökningen sin stående storlek.
 - Ortlista: knappen Orter öppnar listan i temats färg; Välj tar bort en eller flera (den sista stannar), och tecknet ⌃⌄ hållet och draget uppåt eller nedåt ändrar ordningen; varje ort behåller sitt sparade väder.
@@ -30,27 +32,28 @@ SKIFTEN
 - Bubblor i Statistik: ett tryck på en timme i sprutfönstret, en dag i diagrammen eller en markrad öppnar en bubbla med förklaring; sprutfönstret rör sig av sig självt.
 - Driftstatus: överst grödan och sådatumet; med en gröda tar domen också hänsyn till dropptorkning (ΔT) och dess sjukdom.
 - Historik och prognos: dra indikatorn till en tidigare dag; dess värden visas i en ruta under diagrammet och efter 10 s går den tillbaka till i dag.
+- Papperskorg: ett raderat skifte hamnar i papperskorgen med ↺ bredvid GPS-knappen (den röda pricken räknar dem) och sparas 15 dagar; den runda knappen återställer det (har ett sparat skifte samma namn: nytt namn eller ersätt).
 - Redigera skifte: pennan öppnar skiftets sida: namn, gröda (lista efter sådatumets säsong eller Annan gröda…), sådatum, areal; hörnen flyttas på kartan.
 - Skiftets koordinater: på redigeringssidan skrivs GPS-koordinaterna för varje punkt in, och under dem visar satellitvyn skiftet.
 - Statistik på huvudskärmen: den öppnas under driftstatusen (liggande till vänster); ‹ stänger den och ett annat skiftes flik behåller den.
 - Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
 - Väderlager: på skiftenas karta öppnas rutan under ＋ och − med Satellit, Karta, Moln, Temperaturer (färger) och Regn (mm per timme) och fälls sedan ihop till ditt val; ett lager i taget, med namn, tid och förklaring ovanför korten; Regn slås på bara när det regnar nu eller de kommande 2 timmarna (i stället för radarn).
 UPPDATERINGAR
-- Rutan Ny version: en kort ruta överst i ☰ när det finns en ny version; ett tryck på den startar nedladdningen.
+- Rutan Ny version: en kort ruta överst i ⚙︎ när det finns en ny version; ett tryck på den startar nedladdningen.
 - Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.4 (v.1.400 – v.1.520)
 AVISERINGAR
-- Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ☰.
-- Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ☰.
+- Jordbävningar: aviseringar bara för jordbävningar högst 300 km från din plats; slås på eller av i ⚙︎.
+- Tornador (USA): tornadoaviseringarna för din ort slås på eller av i ⚙︎.
 HUVUDSKÄRM
 - Femdagarsprognos: dag 3–5 byts av sig själva var 3:e sekund fram till första beröringen.
 - Huvudskärm: sidan rullar under glaset överst, i avsnitt (Kommande timmar, Femdagarsprognos, Väderdetaljer); knapparna och batteriet svävar längst ner.
 - Stor kompass: ett tryck på en ort i listan visar dess märke på kompassen; orter i samma riktning överlappar inte längre.
 INSTÄLLNINGAR
-- Ikontema: 6 teman för väderikoner (Klassisk, Blank, Platt, Realistisk, Atmosfärisk, Kontur), väljs med färgade prickar i ☰; i appen och på widgetarna.
-- Inställningar: menyn ☰ är nu ett fönster med avsnitt, reglage, färgteman och fältet System och support; uppdatera genom att dra skärmen nedåt eller trycka på ”uppdaterat”.
-- Visningsspråk: knappar i ☰, 2 per rad: engelska och landets språk (i USA engelska och spanska); i Rumänien visar ”Andra språk (minoriteter)” resten.
+- Ikontema: 6 teman för väderikoner (Klassisk, Blank, Platt, Realistisk, Atmosfärisk, Kontur), väljs med färgade prickar i ⚙︎; i appen och på widgetarna.
+- Inställningar: menyn ⚙︎ är nu ett fönster med avsnitt, reglage, färgteman och fältet System och support; uppdatera genom att dra skärmen nedåt eller trycka på ”uppdaterat”.
+- Visningsspråk: knappar i ⚙︎, 2 per rad: engelska och landets språk (i USA engelska och spanska); i Rumänien visar ”Andra språk (minoriteter)” resten.
 LANTBRUKARLÄGE
 - Driftstatus: på ett skiftes skärm, bara när det behövs, domen om sprutning, orsaken och riskerna för de kommande 24 timmarna.
 - Flikar: orten och skiftena i flikar under namnet (liggande nederst); ett skiftes skärm i avsnitt 1–4.
@@ -64,7 +67,7 @@ SKIFTEN
 - Skiftets hörn: i satellitvyn hittas de 4 hörnen i bilden och flyttas med fingret; ett tryck på kortet zoomar till skiftet och visar hörnen, Statistik öppnar dess statistik.
 - Skiftets punkter: + Punkt lägger till upp till 3 punkter till (högst 7), Cirkel fördelar dem jämnt på en cirkel, ett långt tryck på en punkt tar bort den.
 UPPDATERINGAR
-- Uppdateringar: appen söker inte längre själv efter uppdateringar, bara när du trycker på ☰ › Sök efter uppdateringar; den nya versionen laddas ned i webbläsaren och du installerar den från den nedladdade filen.
+- Uppdateringar: appen söker inte längre själv efter uppdateringar, bara när du trycker på ⚙︎ › Sök efter uppdateringar; den nya versionen laddas ned i webbläsaren och du installerar den från den nedladdade filen.
 - Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.3 (v.1.300 – v.1.352)
@@ -100,7 +103,7 @@ LANTBRUKARLÄGE
 SKIFTEN
 - Aviseringar för skiften, väljs med klockknappen på kartan: regn, vind, snö, torka.
 TEMAN
-- 6 färgteman (Monokrom, Salvia, Lavendel, Himmel, Persika, Ros), vart och ett ljust och mörkt: ☰ › Tema.
+- 6 färgteman (Monokrom, Salvia, Lavendel, Himmel, Persika, Ros), vart och ett ljust och mörkt: ⚙︎ › Tema.
 UPPDATERINGAR
 - Före en uppdatering kontroll av installationsbehörigheten och en notis om Auto Blocker (Samsung) med knapp till inställningarna.
 - Uppdateringar från tre källor: GitHub, en andra GitHub-server och Google Drive.
@@ -115,7 +118,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Skiften: sparade via GPS eller på kartan, huvudskärm för varje, statistik för 28 dagar med PDF, varningar för regn och vind.
 - Widgetar 4x2 dagar och 4x3.
 - Textstorlek (Aa).
-- ☰ › Skicka appen.
+- ⚙︎ › Skicka appen.
 - USA: NWS-varningar, tornados, °F, lokal tid.
 - Andra språk: Rumäniens minoritetsspråk.
 - Skiften: en karta med alla skiften, GPS-knappen (blå prick) och ”Spara GPS-plats”.

@@ -48,7 +48,7 @@ import ro.meteoalarm.android.core.Texts;
 import ro.meteoalarm.android.core.Tr;
 
 /**
- * Farmer mode (v2.50, Viorel 2026-11-07), ☰ › Parcels: the farmer's saved places. "Save the place
+ * Farmer mode (v2.50, Viorel 2026-11-07), ⚙︎ › Parcels: the farmer's saved places. "Save the place
  * here" takes the phone's position, then the map (OpenStreetMap) shows it with a pin to move and a
  * name to give ("parcel 96/5"). A parcel's page has its weather in separate boxes (wind, wind
  * direction, chance of rain, air humidity, soil moisture, soil temperature, air temperature), its
@@ -80,7 +80,7 @@ public final class FarmActivity extends Activity {
 	private TextView status;
 	/**
 	 * Opened from the parcel's name on the main screen (v2.60): "parcel", "stats" or "map" for
-	 * parcel ENTRY_ID; back from that page closes this window. Null: opened from ☰ › Parcele.
+	 * parcel ENTRY_ID; back from that page closes this window. Null: opened from ⚙︎ › Parcele.
 	 */
 	private String entry;
 	/** The parcels ticked for deleting (v2.60). */
@@ -371,7 +371,7 @@ public final class FarmActivity extends Activity {
 		return getResources().getDisplayMetrics().widthPixels - px(32);
 	}
 
-	/** The ⋮ button (three dots in a frame, unlike the main screen's ☰): opens ITEMS. */
+	/** The ⋮ button (three dots in a frame, unlike the main screen's ⚙︎): opens ITEMS. */
 	private View menuButton(final List<Item> items, int size) {
 		View v = new View(this) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -398,7 +398,7 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * The ⋮ menu (v3.30, Viorel): like the main ☰ menu, its commands in rows with thin lines between
+	 * The ⋮ menu (v3.30, Viorel): like the main ⚙︎ menu, its commands in rows with thin lines between
 	 * them, no buttons; at the top right, as wide as its longest row.
 	 */
 	private void openMenu(final List<Item> items) {
@@ -1796,8 +1796,11 @@ public final class FarmActivity extends Activity {
 	 */
 	private void topSheet(final FrameLayout mapBox, final boolean tab, final boolean land) {
 		final int fb = px(tab ? 46 : 42), mg = px(12), pad = px(6), g = px(8);
-		TextView plus = text("＋", 24, true, ink);
+		// v2.210 (Viorel): "＋ Parcel" in words, GPS and the bin on one row (portrait too).
+		TextView plus = text("＋ " + Tr.t("Parcel", "Parcelă"), 16, true, ink);
 		plus.setGravity(Gravity.CENTER);
+		plus.setSingleLine(true);
+		plus.setPadding(px(14), 0, px(16), 0);
 		plus.setContentDescription(Tr.t("New parcel", "Parcelă nouă"));
 		plus.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
 		plus.setOnClickListener(new View.OnClickListener() {
@@ -1837,9 +1840,11 @@ public final class FarmActivity extends Activity {
 				locate();
 			}
 		});
-		View bin = binIcon(ink, false);
+		// v2.210 (Viorel): the bin of the deleted parcels has a restore arrow and their count.
+		final int nBin = Parcels.bin(this).size();
+		View bin = binIcon(ink, false, true, nBin);
 		bin.setBackground(Glass.pill(Glass.disc(dark), 0, px(30), dp));
-		bin.setContentDescription(Tr.t("Bin", "Coș de gunoi"));
+		bin.setContentDescription(Tr.t("Bin: the deleted parcels, to restore", "Coș: parcelele șterse, de restaurat") + (nBin > 0 ? " (" + nBin + ")" : ""));
 		// v5.52 (Viorel): the bin works only when there are parcels or deleted ones in it.
 		boolean binOn = !Parcels.sorted(this).isEmpty() || !Parcels.bin(this).isEmpty();
 		bin.setEnabled(binOn);
@@ -1851,31 +1856,36 @@ public final class FarmActivity extends Activity {
 		});
 		final LinearLayout sheet = new LinearLayout(this);
 		sheet.setPadding(pad, pad, pad, pad);
-		sheet.setOrientation(land ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+		sheet.setOrientation(LinearLayout.HORIZONTAL);
 		sheet.setGravity(Gravity.CENTER);
 		View[] three = { plus, gps, bin };
 		for (int k = 0; k < 3; k++) {
-			LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(fb, fb);
-			if (k > 0) {
-				if (land) l.leftMargin = g;
-				else l.topMargin = g;
-			}
+			LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(k == 0 ? ViewGroup.LayoutParams.WRAP_CONTENT : fb, fb);
+			if (k > 0) l.leftMargin = g;
 			sheet.addView(three[k], l);
 		}
 		sheet.setBackground(glass(fb / 2f + pad, 0.78f));
-		// The back button: as large as the sheet is wide, left of ＋.
-		int bs = fb + 2 * pad;
-		FrameLayout.LayoutParams bl = new FrameLayout.LayoutParams(bs, bs, Gravity.TOP | Gravity.RIGHT);
-		bl.setMargins(0, topIn + mg, mg + (land ? 3 * fb + 2 * g + 2 * pad : bs) + g, 0);
-		mapBox.addView(back, bl);
 		sheet.setElevation(px(4));
+		// The back button: as large as the sheet is high, left of it on the same row.
+		int bs = fb + 2 * pad;
+		LinearLayout topRow = new LinearLayout(this);
+		topRow.setOrientation(LinearLayout.HORIZONTAL);
+		topRow.setGravity(Gravity.CENTER_VERTICAL);
+		topRow.setClipChildren(false);
+		topRow.setClipToPadding(false);
+		topRow.setPadding(px(6), px(6), px(6), px(6));
+		LinearLayout.LayoutParams bl = new LinearLayout.LayoutParams(bs, bs);
+		bl.rightMargin = g;
+		topRow.addView(back, bl);
+		topRow.addView(sheet, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, bs));
+		FrameLayout.LayoutParams rl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
+		rl.setMargins(0, topIn + mg - px(6), mg - px(6), 0);
+		mapBox.addView(topRow, rl);
 		sheetPlus = plus;
 		sheetBadge = back;
 		sheetRow = null;
 		sheetView = sheet;
-		FrameLayout.LayoutParams sl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		sl.setMargins(0, topIn + mg, mg, 0);
-		mapBox.addView(sheet, sl);
+
 		// The bubble while GPS looks for the position, under the sheet.
 		LinearLayout bub = column();
 		bub.setBackground(glass(px(16), 0.94f));
@@ -1887,7 +1897,7 @@ public final class FarmActivity extends Activity {
 		ui.removeCallbacks(hideGps);
 		gpsBubble = bub;
 		FrameLayout.LayoutParams ql = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
-		ql.setMargins(0, topIn + mg + (land ? fb + 2 * pad : 3 * fb + 2 * g + 2 * pad) + px(8), mg, 0);
+		ql.setMargins(0, topIn + mg + fb + 2 * pad + px(8), mg, 0);
 		mapBox.addView(bub, ql);
 	}
 
@@ -1918,20 +1928,18 @@ public final class FarmActivity extends Activity {
 			name.setBreakStrategy(android.text.Layout.BREAK_STRATEGY_SIMPLE);
 			name.setHyphenationFrequency(android.text.Layout.HYPHENATION_FREQUENCY_NONE);
 		}
-		card.addView(name, new FrameLayout.LayoutParams(room, 3 * rowH, Gravity.TOP | Gravity.LEFT));
-		// v6.00 (Viorel): with corners, the north-west one.
+		name.setMaxLines(4);
+		card.addView(name, new FrameLayout.LayoutParams(room, 4 * rowH, Gravity.TOP | Gravity.LEFT));
+		// v6.00 (Viorel): with corners, the north-west one. v2.210 (Viorel): small, on one row at the bottom.
 		double[] nw = p.nw();
-		String[] co = (nw != null ? coords(nw[0], nw[1]) : coords(p.lat, p.lon)).split(",\\s*");
-		for (int k = 0; k < co.length && k < 2; k++) {
-			TextView ct = text(co[k].trim(), 12, false, dim);
-			ct.setSingleLine(true);
-			ct.setIncludeFontPadding(false);
-			ct.setGravity(Gravity.CENTER_VERTICAL);
-			ct.setTextSize(fonts[1] * TextSize.get(this));
-			FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(room, rowH, Gravity.TOP | Gravity.LEFT);
-			cl.topMargin = (3 + k) * rowH;
-			card.addView(ct, cl);
-		}
+		TextView ct = text(nw != null ? coords(nw[0], nw[1]) : coords(p.lat, p.lon), 12, false, dim);
+		ct.setSingleLine(true);
+		ct.setIncludeFontPadding(false);
+		ct.setGravity(Gravity.BOTTOM);
+		ct.setTextSize(fonts[1] * TextSize.get(this));
+		FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(room, rowH, Gravity.TOP | Gravity.LEFT);
+		cl.topMargin = 4 * rowH;
+		card.addView(ct, cl);
 		View stats = statsIcon();
 		stats.setContentDescription(Tr.t("Statistics · PDF", "Statistică · PDF"));
 		stats.setOnClickListener(new View.OnClickListener() {
@@ -1983,20 +1991,20 @@ public final class FarmActivity extends Activity {
 			if (pn.getFontSpacing() > rowH) continue;
 			boolean ok = true;
 			for (Parcels.Parcel p : all)
-				if (lineCount(pn, p.name, w) > 3) {
+				if (lineCount(pn, p.name, w) > 4) {
 					ok = false;
 					break;
 				}
 			if (ok) break;
 		}
-		float sc = 40;
+		// v2.210 (Viorel): the coordinates small (12 at most), "lat, lon" on one row.
+		float sc = 12;
 		for (; sc > 6; sc -= 0.5f) {
 			pc.setTextSize(sc * scale);
 			if (pc.getFontSpacing() > rowH) continue;
 			boolean ok = true;
 			for (Parcels.Parcel p : all)
-				for (String s : (p.nw() != null ? coords(p.nw()[0], p.nw()[1]) : coords(p.lat, p.lon)).split(",\\s*"))
-					if (pc.measureText(s.trim()) > w) ok = false;
+				if (pc.measureText(p.nw() != null ? coords(p.nw()[0], p.nw()[1]) : coords(p.lat, p.lon)) > w) ok = false;
 			if (ok) break;
 		}
 		return new float[] { Math.max(6, sn), Math.max(6, sc) };
@@ -2123,6 +2131,11 @@ public final class FarmActivity extends Activity {
 
 	/** v5.40: a drawn bin (the same on every phone); FRAMED: in a rounded square, as the pencil. */
 	private View binIcon(final int color, final boolean framed) {
+		return binIcon(color, framed, false, 0);
+	}
+
+	/** v2.210: RESTORE: a ↺ arrow in the can instead of the ribs, and COUNT in a red dot. */
+	private View binIcon(final int color, final boolean framed, final boolean restore, final int count) {
 		return new View(this) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
 
@@ -2145,7 +2158,28 @@ public final class FarmActivity extends Activity {
 				p.lineTo(cx + w * 0.4f, top + h);
 				p.lineTo(cx + w / 2, top + h * 0.06f);
 				c.drawPath(p, pt);
-				for (float r : new float[] { -0.18f, 0, 0.18f }) c.drawLine(cx + w * r, top + h * 0.25f, cx + w * r * 0.85f, top + h * 0.82f, pt);
+				if (!restore) {
+					for (float r : new float[] { -0.18f, 0, 0.18f }) c.drawLine(cx + w * r, top + h * 0.25f, cx + w * r * 0.85f, top + h * 0.82f, pt);
+					return;
+				}
+				float ar = w * 0.24f, ay = top + h * 0.55f;
+				android.graphics.RectF o = new android.graphics.RectF(cx - ar, ay - ar, cx + ar, ay + ar);
+				c.drawArc(o, -60, 290, false, pt);
+				double a = Math.toRadians(-60);
+				float ex = cx + ar * (float) Math.cos(a), ey = ay + ar * (float) Math.sin(a);
+				c.drawLine(ex, ey, ex - ar * 0.75f, ey - ar * 0.05f, pt);
+				c.drawLine(ex, ey, ex + ar * 0.05f, ey + ar * 0.75f, pt);
+				if (count > 0) {
+					float br = s * 0.17f, bx = s - br - dp, by = br + dp;
+					pt.setStyle(Paint.Style.FILL);
+					pt.setColor(0xFFC0392B);
+					c.drawCircle(bx, by, br, pt);
+					pt.setColor(0xFFFFFFFF);
+					pt.setTextAlign(Paint.Align.CENTER);
+					pt.setTextSize(br * 1.3f);
+					pt.setFakeBoldText(true);
+					c.drawText(count > 9 ? "9+" : String.valueOf(count), bx, by + br * 0.45f, pt);
+				}
 			}
 		};
 	}
@@ -3543,7 +3577,7 @@ public final class FarmActivity extends Activity {
 	 * v3.30 (Viorel 2026-11-09): the parcel's page and its statistics in one. v3.31: on top, fixed:
 	 * the title with the PDF button, the coordinates, the boxes of now (7) and of the period (4, the
 	 * band darker) in ONE row that slides sideways; a line; under it the tables of the next 12 hours
-	 * and of the days (its ☰ on the left picks the period), then the note on the soil and the
+	 * and of the days (its ⚙︎ on the left picks the period), then the note on the soil and the
 	 * source, all scrolling: one under the other (a phone held upright: a wider table slides
 	 * sideways; a tablet: scaled to fit), on a tablet in landscape side by side, each scrolling by
 	 * itself. A phone in landscape has no room for a fixed part: there the whole page scrolls.
@@ -4009,7 +4043,7 @@ public final class FarmActivity extends Activity {
 
 	/**
 	 * TITLE on one line, then the table (or NONE when it has no rows), AVAIL pixels wide; MENU
-	 * (v3.31, Viorel): a ☰ button left of the title opens these commands (the period).
+	 * (v3.31, Viorel): a ⚙︎ button left of the title opens these commands (the period).
 	 */
 	private void addTable(LinearLayout col, String title, String[] head, List<String[]> rows, boolean[] right, int avail, boolean fit, String none, float tx,
 			final List<Item> menu) {
@@ -4036,7 +4070,7 @@ public final class FarmActivity extends Activity {
 		else col.addView(table(head, rows, right, avail, fit), wide(6));
 	}
 
-	/** A small framed ☰ button (three lines, drawn). */
+	/** A small framed ⚙︎ button (three lines, drawn). */
 	private View burger() {
 		View v = new View(this) {
 			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);

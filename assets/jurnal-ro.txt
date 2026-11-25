@@ -1,12 +1,14 @@
-Versiunea curentă: v.2.200 · 25.11.2026
+Versiunea curentă: v.2.210 · 25.11.2026
 ACTUALIZĂRI
-- Caseta Versiune nouă: sus în ☰ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
+- Caseta Versiune nouă: sus în ⚙︎ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
 - Butoanele de jos: numele lor apar dedesubt 3 secunde la deschiderea ecranului, apoi rămân doar butoanele; tragi capsula în sus ca să le vezi din nou. Butonul pornit pare apăsat, cu un inel.
 - Butonul Localități: butonul rotund cu iconul cu case (în portret în dreapta numelui, în peisaj pe banda de sus, înainte de colț) deschide lista localităților.
 - Butonul „actualizat”: plutește peste pagină, la dreapta: în portret sub avertizări (fără ele sub rândul localităților), în peisaj sub ceas. În timpul actualizării săgeata se rotește, și când e doar un cerc; apoi ora apare 4 secunde și se strânge în ⟳. Atingerea actualizează.
+- Ecrane principale: tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + deschide caseta unei parcele noi. Când nu încap toate, rândul trece singur la următorul la 3 secunde; un deget pe el îl oprește puțin.
 - Hartă meteo: la sfârșitul ecranului principal (în peisaj pe foaia cu casetele): OpenStreetMap la nivel de stradă, pe locul exact al localității ecranului (GPS pentru prima) sau, pe ecranul unei parcele, parcela cu conturul ei; stratul transparent. Harta stă pe loc; date: Open-Meteo. Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată.
-- Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
+- Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ⚙︎ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
+- Luminozitate: arată bara de luminozitate din stânga; atingerea ☀ de la capătul ei redă luminozitatea automată.
 - Mai multe localități: fiecare localitate din listă are ecranul ei principal; glisarea stânga-dreapta pe vremea de acum trece la următoarea, în ordinea din listă.
 - Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
 LOCALITĂȚI
@@ -20,6 +22,7 @@ NOTIFICĂRI
 PARCELE
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.
+- Coș de gunoi: o parcelă ștearsă trece în coșul cu ↺ de lângă butonul GPS (bulina roșie le numără) și se păstrează 15 zile; butonul rotund o restaurează (dacă o parcelă salvată are același nume: nume nou sau înlocuire).
 - Editare parcelă: creionul deschide pagina parcelei: nume, cultură (listă după sezonul datei de semănat sau Altă cultură…), data semănatului, suprafață; colțurile se mută pe hartă.
 - Istoric și prognoză: indicatorul se trage pe o zi din trecut; valorile ei apar într-o casetă sub grafic, iar după 10 s revine la azi.
 - Statistici în ecranul principal: se deschid sub Status operațional (în peisaj în stânga); ‹ le închide, iar tab-ul altei parcele le păstrează.
@@ -29,19 +32,19 @@ PARCELE
 SETĂRI
 - Ajutor: textele lungi sunt împărțite în subfuncții cu iconul lor sau arată 2 rânduri și Arată tot ▾; în peisaj pe 2 coloane, iar atingerea butonului unei secțiuni îi face conturul să clipească de două ori.
 - Export / Import: comutatoare pentru ce intră în fișier (și culturile și datele de cultivare, notificările parcelelor, coșul de parcele, notificările, harta, widget-urile, istoricul cutremurelor, jurnalul); la Export și Import localitățile și parcelele se bifează pe rând; butonul Aa schimbă mărimea textului.
-- Fereastra Setări: ☰ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei. În peisaj se deschide la stânga, pe 2 coloane, cu titlul pe un rând: tragi bara de pe marginea dreaptă spre stânga pentru o coloană, spre dreapta pentru două; butonul de lângă X readuce 2 coloanele. Afișaj e la sfârșit. Sistem & Suport arată numele 3 secunde, apoi doar butoanele; pe telefon în peisaj e o casetă plutitoare jos care se strânge în ⋯ (mânerul ei o lărgește), pe tabletă un singur rând.
+- Fereastra Setări: ⚙︎ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei. În peisaj se deschide la stânga, pe 2 coloane, cu titlul pe un rând: tragi bara de pe marginea dreaptă spre stânga pentru o coloană, spre dreapta pentru două; butonul de lângă X readuce 2 coloanele. Afișaj e la sfârșit. Sistem & Suport arată numele 3 secunde, apoi doar butoanele; pe telefon în peisaj e o casetă plutitoare jos care se strânge în ⋯ (mânerul ei o lărgește), pe tabletă un singur rând.
 - Funcții avansate: caseta de sub Localități: Mod Fermier și pagina Cutremure.
 - Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran. Erorile rezolvate stau la sfârșitul jurnalului și nu sunt numărate; problemele rețelei sunt avertizări.
-- Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
-- Localități: prima casetă din ☰ (cu modul fermier: Localități & Parcele, cu Parcele în ea). Trei rânduri: întâi localitățile cu stea plină (au ecran principal, în ordinea ecranelor), apoi celelalte favorite. Orice stea se poate debifa cât timp sunt 2 sau mai multe: următoarea cu stea devine primul ecran; ultima e gri și rămâne. Atingerea unei stele goale dă localității ecran principal și o arată. Localități › deschide lista; pe harta ei, Județ ▾ caută într-un singur județ.
+- Limbă afișaj: în ⚙︎ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
+- Localități: prima casetă din ⚙︎ (cu modul fermier: Localități & Parcele, cu Parcele în ea). Un rând cu localitatea afișată; ▾ deschide celelalte localități cu ecran principal. Debifarea unei stele șterge localitatea și ecranul ei (cât rămân 2 sau mai multe; ultima e gri și rămâne). Localități › deschide lista; pe harta ei, Județ ▾ caută într-un singur județ.
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
-- Teme: 6 teme cu fundalul, casetele și culoarea lor (Grafit, Bujor, Miere, Pădure, Ocean, Lavandă), fiecare luminoasă și întunecată; bulinele din ☰ › Temă au culoarea temei.
-- Tur: în caseta notificărilor: un tur scurt al fiecărei zone din ecrane. În curând (deocamdată gri).
+- Teme: 6 teme cu fundalul, casetele și culoarea lor (Grafit, Bujor, Miere, Pădure, Ocean, Lavandă), fiecare luminoasă și întunecată; bulinele din ⚙︎ › Temă au culoarea temei.
+- Tutorial: în caseta Alerte: un tutorial scurt al fiecărei zone din ecrane. În curând (deocamdată gri).
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.4 (v.1.400 – v.1.520)
 ACTUALIZĂRI
-- Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ☰ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
+- Actualizări: aplicația nu mai caută singură actualizări, doar când apeși ⚙︎ › Verifică actualizări; versiunea nouă se descarcă în browser, iar tu o instalezi din fișierul descărcat.
 ECRAN PRINCIPAL
 - Busola mare: atingerea unei localități din listă îi arată semnul pe busolă; localitățile din aceeași direcție nu se mai suprapun.
 - Ecran principal: pagina se derulează sus-jos sub sticla de sus, pe secțiuni (Următoarele ore, Prognoza pe cinci zile, Detalii meteo); butoanele și bateria plutesc jos.
@@ -51,8 +54,8 @@ MOD FERMIER
 - Status operațional: pe ecranul parcelei, doar când e nevoie, verdictul pentru stropit, motivul și riscurile următoarelor 24 de ore.
 - Tab-uri: localitatea și parcelele în tab-uri sub nume (în peisaj, jos); ecranul parcelei pe secțiunile 1–4.
 NOTIFICĂRI
-- Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ☰.
-- Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ☰.
+- Cutremure: notificări doar pentru cutremurele aflate la cel mult 300 km de locul tău; se pornesc sau se opresc din ⚙︎.
+- Tornade (SUA): notificările de tornadă pentru localitatea ta se pornesc sau se opresc din ⚙︎.
 PARCELE
 - Acele de pe hartă: atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele ei.
 - Colțurile parcelei: în vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; atingerea casetei mărește harta pe parcelă și arată colțurile, Statistică deschide statistica ei.
@@ -62,9 +65,9 @@ PARCELE
 - Punctele parcelei: + Punct adaugă până la 3 puncte în plus (cel mult 7), Cerc le așază la distanțe egale pe un cerc, apăsarea lungă pe un punct îl șterge.
 - Vederile hărții: butoanele rotunde de sub ＋/− schimbă între satelit și hartă și arată radarul de ploaie din ultimele 2 ore.
 SETĂRI
-- Limbă afișaj: butoane în ☰, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte.
-- Setări: meniul ☰ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
-- Temă icon: 6 teme de iconuri (Clasic, Lucios, Plat, Realist, Atmosferic, Contur), alese din ☰ cu buline colorate; în aplicație și pe widget-uri.
+- Limbă afișaj: butoane în ⚙︎, câte 2 pe rând: engleza și limbile țării (în SUA engleza și spaniola); în România „Alte limbi (minorități)” le arată pe celelalte.
+- Setări: meniul ⚙︎ e acum o fereastră cu secțiuni, comutatoare, temele pe culori și bara Sistem & Suport; reîmprospătarea se face trăgând ecranul în jos sau atingând „actualizat”.
+- Temă icon: 6 teme de iconuri (Clasic, Lucios, Plat, Realist, Atmosferic, Contur), alese din ⚙︎ cu buline colorate; în aplicație și pe widget-uri.
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.3 (v.1.300 – v.1.352)
@@ -104,7 +107,7 @@ NOTIFICĂRI
 PARCELE
 - Notificări pentru parcele, alese din butonul clopoțel de pe hartă: ploaie, vânt, ninsoare, secetă.
 TEME
-- 6 teme de culoare (Monocrom, Salvie, Lavandă, Cer, Piersică, Trandafir), fiecare luminoasă și întunecată: ☰ › Temă.
+- 6 teme de culoare (Monocrom, Salvie, Lavandă, Cer, Piersică, Trandafir), fiecare luminoasă și întunecată: ⚙︎ › Temă.
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Versiunea 1.1 (v.1.100 – v.1.191)
 - Parcele: salvare cu GPS sau pe hartă, ecran principal pentru fiecare, statistici pe 28 de zile cu PDF, alerte de ploaie și vânt.
 - Widget-urile 4x2 zile și 4x3.
 - Mărimea textului (Aa).
-- ☰ › Trimite aplicația.
+- ⚙︎ › Trimite aplicația.
 - Statele Unite: avertizări NWS, tornade, °F, ora locală.
 - Alte limbi: limbile minorităților din România.
 - Parcele: harta cu toate parcelele, butonul GPS (punctul albastru) și „Salvare loc. GPS”.

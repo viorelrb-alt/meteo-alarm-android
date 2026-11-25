@@ -196,6 +196,12 @@ final class LineIcon extends Drawable {
 		case "chevron":
 			h.moveTo(9, 5.5f); h.lineTo(15.5f, 12); h.lineTo(9, 18.5f);
 			break;
+		case "chev-down": // v2.210: the hidden list of the starred towns
+			h.moveTo(5.5f, 9); h.lineTo(12, 15.5f); h.lineTo(18.5f, 9);
+			break;
+		case "chev-up":
+			h.moveTo(5.5f, 15); h.lineTo(12, 8.5f); h.lineTo(18.5f, 15);
+			break;
 		case "plus":
 			h.moveTo(12, 5); h.lineTo(12, 19); h.moveTo(5, 12); h.lineTo(19, 12);
 			break;

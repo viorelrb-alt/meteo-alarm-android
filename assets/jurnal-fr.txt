@@ -1,18 +1,20 @@
-Version actuelle : v.2.200 · 25.11.2026
+Version actuelle : v.2.210 · 25.11.2026
 ÉCRAN PRINCIPAL
 - Bouton Localités : le bouton rond à l'icône des maisons (en portrait à droite du nom, en paysage sur la bande du haut, avant son coin) ouvre la liste des localités.
 - Bouton « mis à jour »: flotte au-dessus de la page, à droite : en portrait sous les alertes (sans elles sous la rangée des localités), en paysage sous l'horloge. Pendant la mise à jour sa flèche tourne, même en petit cercle ; puis l'heure s'affiche 4 secondes et il se réduit en ⟳. Un toucher met à jour.
 - Boutons du bas: leurs noms s'affichent dessous 3 secondes à l'ouverture de l'écran, puis seuls les boutons restent ; tirez la capsule vers le haut pour les revoir. Le bouton actif semble enfoncé, avec un anneau.
 - Carte météo : à la fin de l'écran principal (en paysage sur la feuille avec les cases) : OpenStreetMap au niveau de la rue sur le lieu exact de la localité de l'écran (GPS pour la première) ou, sur l'écran d'une parcelle, la parcelle avec son contour ; la couche transparente. La carte reste fixe ; données : Open-Meteo. Nuages, Températures et Pluie, une à la fois ; toucher celle qui est active la désactive. Pluie est gris et barré quand il ne pleut pas à proximité maintenant ni dans les 2 prochaines heures. ▶ fait défiler les heures (6 avant et 6 après maintenant) une à une ; toucher une heure l'affiche.
-- Informations sur le séisme : un appui sur la case Séisme les ouvre dans l'écran principal : la carte, en dessous les zones de ressenti et l'historique de la valeur ; le carré coloré ou la carte les ouvre en plein écran, comme un séisme de ☰ › Séismes. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC. En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).
+- Informations sur le séisme : un appui sur la case Séisme les ouvre dans l'écran principal : la carte, en dessous les zones de ressenti et l'historique de la valeur ; le carré coloré ou la carte les ouvre en plein écran, comme un séisme de ⚙︎ › Séismes. En Roumanie, France, Italie, aux Pays-Bas, en Suisse et en Grèce, les valeurs officielles viennent d'abord de l'institut du pays (INFP, BCSF, INGV, KNMI, SED, NOA), puis d'EMSC. En Roumanie, les séismes autour du pays reçoivent aussi la valeur de l’INFP (de infp.ro).
+- Luminosité: affiche la barre de luminosité à gauche ; un toucher sur ☀ à son extrémité rend à l'écran la luminosité automatique.
 - Noms des boutons : un bouton rond qui reste à l'écran après un toucher affiche son nom dans une petite bulle pendant environ 1,5 seconde.
 - Plusieurs localités : chaque localité de la liste a son propre écran principal ; un glissement à gauche ou à droite sur la météo actuelle passe à la suivante, dans l'ordre de la liste.
+- Écrans principaux: onglets sous le nom (en paysage en bas) : la localité et un par parcelle ; un appui ou un glissement latéral change d'écran, + ouvre la case d'une nouvelle parcelle. Quand ils ne tiennent pas tous, la rangée avance d'un toutes les 3 secondes ; un doigt dessus l'arrête un moment.
 LOCALITÉS
 - Cartes des localités : sur tablette et en paysage, elles sont aussi larges que leur texte et se rangent en lignes et colonnes ; en portrait sur téléphone, un nom trop long s'écrit en plus petit ; en paysage la recherche garde sa taille du portrait.
 - Liste des localités : le bouton Localités ouvre la liste, à la couleur du thème ; Sélectionner en supprime une ou plusieurs (la dernière reste), et le signe ⌃⌄ maintenu et glissé vers le haut ou le bas change l'ordre ; chaque localité garde sa météo enregistrée.
 - Recherche sur la carte : la loupe ouvre la carte avec la recherche en bas ; toucher un lieu ou le nom d'une localité affiche sa température, Détails (les jours suivants) et Ajouter. La carte est simple et claire, avec les noms des localités écrits en grand (aussi sur la carte des parcelles). D'autres localités n'apparaissent que si elles commencent comme le nom saisi (au moins 6 lettres ou 60 % du nom).
 MISES À JOUR
-- Boîte Nouvelle version : une courte boîte en haut de ☰ quand une nouvelle version existe ; la toucher lance le téléchargement.
+- Boîte Nouvelle version : une courte boîte en haut de ⚙︎ quand une nouvelle version existe ; la toucher lance le téléchargement.
 NOTIFICATIONS
 - Canaux propres : alertes météo, pluie et neige, séismes, parcelles et mises à jour ont chacun leur canal dans les réglages du téléphone ; vous pouvez en couper un et garder les autres.
 - Nouvelle version : avec les notifications activées, l'application consulte GitHub chaque jour pendant 2 semaines après une mise à jour, puis une fois tous les 7 jours, et annonce une nouvelle version dans les notifications Android ; un toucher ouvre Rechercher des mises à jour.
@@ -22,22 +24,23 @@ PARAMÈTRES
 - Export / Import : interrupteurs pour le contenu du fichier (aussi les cultures et données de culture, les notifications des parcelles, la corbeille des parcelles, les notifications, la carte, les widgets, l'historique des séismes, le journal) ; à l'Export et à l'Import, les localités et les parcelles se cochent une à une ; le bouton Aa change la taille du texte.
 - Fonctions avancées: la carte sous Localités : mode Agriculteur et la page Séismes.
 - Journal : taille, lignes et erreurs sur une carte ; Voir le journal ouvre les lignes (Toutes, Erreurs, Aujourd'hui, Hier ; un appui long copie une ligne) ; Partager et Enregistrer en bas de l'écran. Les erreurs corrigées sont à la fin du journal et ne sont pas comptées ; les problèmes de réseau sont des avertissements.
-- La fenêtre Paramètres: ☰ ouvre les réglages par sections ; un interrupteur active ou désactive une fonction aussitôt. Il se ferme avec X ou un toucher à l'extérieur. En paysage il s'ouvre à gauche sur 2 colonnes, le titre sur une ligne : tirez la barre du bord droit vers la gauche pour une colonne, vers la droite pour deux ; le bouton à côté de X rétablit les 2 colonnes. Affichage est en dernier. Système & Assistance montre ses noms 3 secondes, puis seulement les boutons ; sur un téléphone en paysage c'est une boîte flottante en bas qui se réduit en ⋯ (sa poignée l'élargit), sur une tablette une seule ligne.
-- Langue d'affichage : dans ☰ l'anglais et la langue du pays ; Autres langues : les autres langues du pays, les grandes langues de l'UE, le roumain et celle du téléphone (aux États-Unis seulement l'anglais et l'espagnol).
-- Localités: la première carte de ☰ (en mode agriculteur : Localités & Parcelles, avec les Parcelles dedans). Trois lignes : d'abord les localités avec une étoile pleine (elles ont un écran principal, dans l'ordre des écrans), puis les autres favoris. Toute étoile peut être retirée tant qu'il y en a 2 ou plus : la localité suivante avec étoile devient le premier écran ; la dernière est grise et reste. Toucher une étoile vide donne à la localité un écran principal et l'affiche. Localités › ouvre la liste ; sur sa carte, Département ▾ cherche dans un seul département.
+- La fenêtre Paramètres: ⚙︎ ouvre les réglages par sections ; un interrupteur active ou désactive une fonction aussitôt. Il se ferme avec X ou un toucher à l'extérieur. En paysage il s'ouvre à gauche sur 2 colonnes, le titre sur une ligne : tirez la barre du bord droit vers la gauche pour une colonne, vers la droite pour deux ; le bouton à côté de X rétablit les 2 colonnes. Affichage est en dernier. Système & Assistance montre ses noms 3 secondes, puis seulement les boutons ; sur un téléphone en paysage c'est une boîte flottante en bas qui se réduit en ⋯ (sa poignée l'élargit), sur une tablette une seule ligne.
+- Langue d'affichage : dans ⚙︎ l'anglais et la langue du pays ; Autres langues : les autres langues du pays, les grandes langues de l'UE, le roumain et celle du téléphone (aux États-Unis seulement l'anglais et l'espagnol).
+- Localités: la première carte de ⚙︎ (en mode agriculteur : Localités & Parcelles, avec les parcelles dedans). Une ligne avec la localité affichée ; ▾ ouvre les autres localités ayant un écran principal. Décocher une étoile supprime la localité et son écran (tant qu'il en reste 2 ou plus ; la dernière est grise et reste). Localités › ouvre la liste ; sur sa carte, Département ▾ cherche dans un seul département.
 - Page Séismes : s'ouvre tout de suite avec les dernières listes enregistrées sur le téléphone et les met à jour en arrière-plan.
-- Thèmes : 6 thèmes avec leur propre fond, leurs cartes et leur couleur (Graphite, Pivoine, Miel, Forêt, Océan, Lavande), chacun clair et sombre ; les points de ☰ › Thème ont la couleur du thème.
-- Visite: dans la carte des notifications : une courte visite de ce que montre chaque zone des écrans. Bientôt (gris pour l'instant).
+- Thèmes : 6 thèmes avec leur propre fond, leurs cartes et leur couleur (Graphite, Pivoine, Miel, Forêt, Océan, Lavande), chacun clair et sombre ; les points de ⚙︎ › Thème ont la couleur du thème.
+- Tutoriel: dans la carte Alertes : un court tutoriel de ce que montre chaque partie des écrans. Bientôt (gris pour l'instant).
 PARCELLES
+- Améliorations du design et corrections des bugs signalés.
 - Bulles des Statistiques : toucher une heure de la fenêtre de pulvérisation, un jour des graphiques ou une ligne du sol ouvre une bulle avec son explication ; la fenêtre de pulvérisation défile toute seule.
 - Coordonnées de la parcelle : sur la page de modification, les coordonnées GPS de chaque point se saisissent, et dessous la vue satellite montre la parcelle.
+- Corbeille: une parcelle supprimée va dans la corbeille avec ↺ à côté du bouton GPS (le point rouge les compte) et y reste 15 jours ; le bouton rond la restaure (si une parcelle enregistrée porte son nom : nouveau nom ou remplacer).
 - Couches météo : sur la carte des parcelles, la boîte sous ＋ et − s'ouvre avec Satellite, Carte, Nuages, Températures (couleurs) et Pluie (mm par heure), puis se replie sur votre choix ; une couche à la fois, avec son nom, l'heure et la légende au-dessus des cartes ; Pluie ne s'active que s'il pleut maintenant ou dans les 2 prochaines heures (au lieu du radar).
 - Historique et prévision : faites glisser l'indicateur sur un jour passé ; ses valeurs s'affichent dans un cadre sous le graphique et après 10 s il revient à aujourd'hui.
 - Modifier la parcelle : le crayon ouvre la page de la parcelle : nom, culture (liste selon la saison de la date de semis ou Autre culture…), date de semis, surface ; les coins se déplacent sur la carte.
 - Statistiques : pour chaque parcelle, l'Action du jour et 4 onglets : Opérationnel (fenêtre de pulvérisation heure par heure, séchage des gouttes (ΔT), vent, feuille mouillée), Eau & Sol (pluie, évaporation, sol à 6 et 18 cm), Saison (degrés-jours face à l'an dernier, stade estimé) et Risques 72 h (maladies fongiques, gelée au sol, chaleur, vent et grêle) ; enregistrement en PDF ou CSV.
 - Statistiques dans l'écran principal : elles s'ouvrent sous le statut opérationnel (en paysage à gauche) ; ‹ les ferme et l'onglet d'une autre parcelle les garde.
 - Statut opérationnel : en haut, la culture et sa date de semis ; avec une culture, le verdict tient aussi compte du séchage des gouttes (ΔT) et de sa maladie.
-- Améliorations du design et corrections des bugs signalés.
 
 Version 1.4 (v.1.400 – v.1.520)
 ÉCRAN PRINCIPAL
@@ -45,18 +48,18 @@ Version 1.4 (v.1.400 – v.1.520)
 - Grande boussole : toucher une localité de la liste affiche son repère sur la boussole ; les localités dans la même direction ne se superposent plus.
 - Prévisions sur cinq jours : les jours 3–5 défilent seuls toutes les 3 secondes jusqu'au premier toucher.
 MISES À JOUR
-- Mises à jour : l'appli ne cherche plus de mises à jour d'elle-même, seulement quand vous touchez ☰ › Rechercher des mises à jour ; la nouvelle version se télécharge dans le navigateur et vous l'installez depuis le fichier téléchargé.
+- Mises à jour : l'appli ne cherche plus de mises à jour d'elle-même, seulement quand vous touchez ⚙︎ › Rechercher des mises à jour ; la nouvelle version se télécharge dans le navigateur et vous l'installez depuis le fichier téléchargé.
 MODE AGRICULTEUR
 - Bouton agriculteur : le bouton feuille à côté des boutons désactive le mode agriculteur ; une autre localité le garde.
 - Onglets : la localité et les parcelles en onglets sous le nom (en paysage, en bas) ; l'écran d'une parcelle en sections 1–4.
 - Statut opérationnel : sur l'écran d'une parcelle, seulement si nécessaire, le verdict pour traiter, sa raison et les risques des prochaines 24 heures.
 NOTIFICATIONS
-- Séismes : notifications seulement pour les séismes à 300 km au plus de votre lieu ; à activer ou désactiver dans ☰.
-- Tornades (États-Unis) : les notifications de tornade pour votre localité s'activent ou se désactivent dans ☰.
+- Séismes : notifications seulement pour les séismes à 300 km au plus de votre lieu ; à activer ou désactiver dans ⚙︎.
+- Tornades (États-Unis) : les notifications de tornade pour votre localité s'activent ou se désactivent dans ⚙︎.
 PARAMÈTRES
-- Langue d’affichage: boutons dans ☰, 2 par ligne : anglais et les langues du pays (aux États-Unis anglais et espagnol) ; en Roumanie « Autres langues (minorités) » montre les autres.
-- Paramètres : le menu ☰ est maintenant une fenêtre avec des sections, des interrupteurs, les thèmes en couleurs et la barre Système et assistance ; on actualise en tirant l'écran vers le bas ou en touchant « actualisé ».
-- Thème d'icônes : 6 thèmes d'icônes météo (Classique, Brillant, Plat, Réaliste, Atmosphérique, Contour), choisis avec des points de couleur dans ☰ ; dans l'application et sur les widgets.
+- Langue d’affichage: boutons dans ⚙︎, 2 par ligne : anglais et les langues du pays (aux États-Unis anglais et espagnol) ; en Roumanie « Autres langues (minorités) » montre les autres.
+- Paramètres : le menu ⚙︎ est maintenant une fenêtre avec des sections, des interrupteurs, les thèmes en couleurs et la barre Système et assistance ; on actualise en tirant l'écran vers le bas ou en touchant « actualisé ».
+- Thème d'icônes : 6 thèmes d'icônes météo (Classique, Brillant, Plat, Réaliste, Atmosphérique, Contour), choisis avec des points de couleur dans ⚙︎ ; dans l'application et sur les widgets.
 PARCELLES
 - Coins de la parcelle : en vue satellite les 4 coins sont trouvés dans l'image et se déplacent du doigt ; toucher la carte zoome sur la parcelle et montre les coins, Statistiques ouvre ses statistiques.
 - Corbeille : une parcelle supprimée va 15 jours dans la corbeille sous le bouton GPS et peut y être restaurée.
@@ -104,7 +107,7 @@ NOTIFICATIONS
 PARCELLES
 - Notifications des parcelles, choisies avec le bouton cloche de la carte : pluie, vent, neige, sécheresse.
 THÈMES
-- 6 thèmes de couleur (Monochrome, Sauge, Lavande, Ciel, Pêche, Rose), chacun clair et sombre : ☰ › Thème.
+- 6 thèmes de couleur (Monochrome, Sauge, Lavande, Ciel, Pêche, Rose), chacun clair et sombre : ⚙︎ › Thème.
 - Améliorations du design et corrections des bugs signalés.
 
 Version 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Parcelles : enregistrées par GPS ou sur la carte, un écran principal pour chacune, statistiques sur 28 jours avec PDF, alertes pluie et vent.
 - Widgets 4x2 jours et 4x3.
 - Taille du texte (Aa).
-- ☰ › Envoyer l'application.
+- ⚙︎ › Envoyer l'application.
 - États-Unis : alertes NWS, tornades, °F, heure locale.
 - Autres langues : les langues des minorités de Roumanie.
 - Parcelles : une carte avec toutes les parcelles, le bouton GPS (point bleu) et « Enregistrer lieu GPS ».

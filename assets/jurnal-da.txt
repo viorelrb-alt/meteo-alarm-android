@@ -1,32 +1,35 @@
-Nuværende version: v.2.200 · 25.11.2026
+Nuværende version: v.2.210 · 25.11.2026
 BYER
 - Bykort: på en tablet og i liggende er de lige så brede som deres tekst og står i rækker og kolonner; i portræt på en telefon får et for langt navn mindre bogstaver; i liggende beholder søgningen sin portrætstørrelse.
 - Byliste: knappen Byer åbner listen i temaets farve; Vælg sletter én eller flere (den sidste bliver), og tegnet ⌃⌄ holdt og trukket op eller ned ændrer rækkefølgen; hver by beholder sit gemte vejr.
 - Søgning på kortet: luppen åbner kortet med søgningen nederst; et tryk på et sted eller på en bys navn viser dens temperatur, Detaljer (de næste dage) og Tilføj. Kortet er enkelt og lyst, med byernes navne skrevet stort (også på markernes kort). Andre byer vises kun, når de begynder som det indtastede navn (mindst 6 bogstaver eller 60 % af det).
 HOVEDSKÆRM
 - Flere byer: hver by på listen har sin egen hovedskærm; et stryg til venstre eller højre over vejret nu går til den næste, i listens rækkefølge.
-- Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ☰ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
+- Hovedskærme: faner under navnet (liggende nederst): byen og én pr. mark; et tryk eller et stryg til siden skifter skærm, + åbner feltet for en ny mark. Når de ikke alle kan være der, rykker rækken én frem hvert 3. sekund; en finger på den stopper den et stykke tid.
+- Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ⚙︎ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
 - Knapnavne: en rund knap, der bliver på skærmen, når der trykkes på den, viser sit navn i en lille boble i cirka 1,5 sekund.
 - Knappen Byer: den runde knap med husikonet (i portræt til højre for navnet, i liggende på det øverste bånd, før dets hjørne) åbner listen over byer.
 - Knappen „opdateret“: svæver over siden til højre: på højkant under varslerne (uden dem under rækken af byer), på tværs under uret. Under opdatering drejer pilen, også som en lille cirkel; så vises tiden i 4 sekunder, og den foldes til ⟳. Et tryk opdaterer.
+- Lysstyrke: viser lysstyrkebjælken til venstre; et tryk på ☀ i dens ende giver skærmen den automatiske lysstyrke igen.
 - Nederste knapper: deres navne vises under dem i 3 sekunder, når skærmen åbner, derefter kun knapperne; træk kapslen op for at se dem igen. Knappen der er tændt ser trykket ned ud, med en ring.
 - Vejrkort: nederst på hovedskærmen (på tværs på arket med boksene): OpenStreetMap i gadeniveau om det præcise sted for skærmens by (GPS for den første) eller, på en marks skærm, marken med dens omrids; laget gennemsigtigt. Kortet står stille; data: Open-Meteo. Skyer, Temperaturer og Regn, ét ad gangen; et tryk på det tændte slukker det. Regn er gråt og overstreget, når det ikke regner i nærheden nu eller de næste 2 timer. ▶ afspiller timerne (6 før og 6 efter nu) én ad gangen; et tryk på en time viser den.
 INDSTILLINGER
 - Avancerede funktioner: kortet under Byer: Landmandstilstand og siden Jordskælv.
-- Byer: det første kort i ☰ (i landmandstilstand: Byer & Marker, med markerne i). Tre rækker: først byerne med fuld stjerne (de har en hovedskærm, i skærmenes rækkefølge), så de andre favoritter. Enhver stjerne kan fjernes, mens 2 eller flere er tændt: den næste by med stjerne bliver første skærm; den sidste er grå og bliver. Et tryk på en tom stjerne giver byen en hovedskærm og viser den. Byer › åbner listen; på dens kort søger Region ▾ i én region.
+- Byer: det første kort i ⚙︎ (i landmandstilstand: Byer & Marker, med markerne i). Én række med den viste by; ▾ åbner de andre byer med hovedskærm. At fjerne en stjerne sletter byen og dens skærm (så længe 2 eller flere er tilbage; den sidste er grå og bliver). Byer › åbner listen; på dens kort søger Region ▾ i én region.
 - Eksport / Import: kontakter for, hvad der kommer i filen (også afgrøder og dyrkningsdata, markernes notifikationer, markernes papirkurv, notifikationer, kort, widgets, jordskælvshistorik, log); ved Eksport og Import afkrydses byer og marker én ad gangen; knappen Aa ændrer tekststørrelsen.
 - Hjælp: lange tekster er delt op i dele med egne ikoner eller viser 2 linjer og Vis alt ▾; på langs i 2 kolonner, og et tryk på en sektions knap får dens omrids til at blinke to gange.
 - Log: størrelse, linjer og fejl på et kort; Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem nederst på skærmen. Rettede fejl står sidst i loggen og tælles ikke med; netværksproblemer er advarsler.
-- Rundvisning: i kortet med notifikationer: en kort rundvisning i, hvad hver del af skærmene viser. Kommer snart (gråt indtil videre).
+- Vejledning: i kortet Advarsler: en kort vejledning i, hvad hver del af skærmene viser. Snart (grå indtil videre).
 - Siden Jordskælv: åbner straks med de senest gemte lister på telefonen og opdaterer dem i baggrunden.
-- Temaer: 6 temaer med egen baggrund, egne kort og egen farve (Grafit, Pæon, Honning, Skov, Ocean, Lavendel), hver lys og mørk; prikkerne i ☰ › Tema har temaets farve.
-- Vinduet Indstillinger: ☰ åbner indstillingerne i afsnit; en kontakt slår en funktion til eller fra med det samme. Den lukkes med X eller et tryk udenfor. På tværs åbner den til venstre i 2 kolonner, titlen på én linje: træk bjælken i højre kant mod venstre for én kolonne, mod højre for to; knappen ved X giver 2 kolonner igen. Visning er sidst. System & Support viser navnene i 3 sekunder, derefter kun knapperne; på en telefon på tværs er det en svævende boks nederst, der foldes til ⋯ (håndtaget gør den bredere), på en tablet én linje.
-- Visningssprog: i ☰ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
+- Temaer: 6 temaer med egen baggrund, egne kort og egen farve (Grafit, Pæon, Honning, Skov, Ocean, Lavendel), hver lys og mørk; prikkerne i ⚙︎ › Tema har temaets farve.
+- Vinduet Indstillinger: ⚙︎ åbner indstillingerne i afsnit; en kontakt slår en funktion til eller fra med det samme. Den lukkes med X eller et tryk udenfor. På tværs åbner den til venstre i 2 kolonner, titlen på én linje: træk bjælken i højre kant mod venstre for én kolonne, mod højre for to; knappen ved X giver 2 kolonner igen. Visning er sidst. System & Support viser navnene i 3 sekunder, derefter kun knapperne; på en telefon på tværs er det en svævende boks nederst, der foldes til ⋯ (håndtaget gør den bredere), på en tablet én linje.
+- Visningssprog: i ⚙︎ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
 MARKER
 - Bobler i Statistik: et tryk på en time i sprøjtevinduet, en dag i graferne eller en jordrække åbner en boble med forklaring; sprøjtevinduet bevæger sig af sig selv.
 - Driftsstatus: øverst afgrøden og sådatoen; med en afgrøde tager dommen også hensyn til dråbetørring (ΔT) og dens sygdom.
 - Historik og prognose: træk indikatoren til en tidligere dag; dens værdier vises i en boks under grafen, og efter 10 s vender den tilbage til i dag.
 - Markens koordinater: på redigeringssiden skrives GPS-koordinaterne for hvert punkt ind, og under dem viser satellitvisningen marken.
+- Papirkurv: en slettet mark kommer i papirkurven med ↺ ved GPS-knappen (den røde prik tæller dem) og gemmes 15 dage; den runde knap gendanner den (har en gemt mark dens navn: nyt navn eller erstat).
 - Rediger mark: blyanten åbner markens side: navn, afgrøde (liste efter såningsdatoens sæson eller Anden afgrøde…), såningsdato, areal; hjørnerne flyttes på kortet.
 - Statistik på hovedskærmen: den åbner under driftsstatus (vandret til venstre); ‹ lukker den, og en anden marks fane beholder den.
 - Statistik: for hver mark Dagens handling og 4 faner: Drift (sprøjtevinduet time for time, dråbetørring (ΔT), vind, våde blade), Vand & jord (regn, fordampning, jord i 6 og 18 cm), Sæson (graddage mod sidste år, anslået stadie) og Risici 72 t (svampesygdomme, jordfrost, varme, vind og hagl); gemmes som PDF eller CSV.
@@ -36,7 +39,7 @@ NOTIFIKATIONER
 - Jordskælv: tjekket hvert 10. minut, også om natten med skærmen slukket; en revideret magnitude opdaterer meddelelsen, og et tryk på den åbner kortet.
 - Ny version: med notifikationer slået til tjekker appen GitHub hver dag i 2 uger efter en opdatering, derefter en gang hver 7. dag, og melder en ny version i Androids notifikationer; et tryk åbner Søg efter opdateringer.
 OPDATERINGER
-- Boksen Ny version: en kort boks øverst i ☰, når der findes en ny version; et tryk på den starter downloadet.
+- Boksen Ny version: en kort boks øverst i ⚙︎, når der findes en ny version; et tryk på den starter downloadet.
 - Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.4 (v.1.400 – v.1.520)
@@ -45,9 +48,9 @@ HOVEDSKÆRM
 - Hovedskærm: siden ruller under glasset øverst, i afsnit (Næste timer, Femdagesprognose, Vejrdetaljer); knapperne og batteriet svæver nederst.
 - Stort kompas: et tryk på en by i listen viser dens mærke på kompasset; byer i samme retning overlapper ikke længere.
 INDSTILLINGER
-- Ikontema: 6 temaer for vejrikoner (Klassisk, Blank, Flad, Realistisk, Atmosfærisk, Kontur), vælges med farvede prikker i ☰; i appen og i widgets.
-- Indstillinger: menuen ☰ er nu et vindue med afsnit, kontakter, farvetemaer og bjælken System og support; opdatering sker ved at trække skærmen ned eller trykke på „opdateret“.
-- Visningssprog: knapper i ☰, 2 pr. række: engelsk og landets sprog (i USA engelsk og spansk); i Rumænien viser „Andre sprog (mindretal)“ resten.
+- Ikontema: 6 temaer for vejrikoner (Klassisk, Blank, Flad, Realistisk, Atmosfærisk, Kontur), vælges med farvede prikker i ⚙︎; i appen og i widgets.
+- Indstillinger: menuen ⚙︎ er nu et vindue med afsnit, kontakter, farvetemaer og bjælken System og support; opdatering sker ved at trække skærmen ned eller trykke på „opdateret“.
+- Visningssprog: knapper i ⚙︎, 2 pr. række: engelsk og landets sprog (i USA engelsk og spansk); i Rumænien viser „Andre sprog (mindretal)“ resten.
 LANDMANDSTILSTAND
 - Driftsstatus: på en marks skærm, kun når det er nødvendigt, dommen om sprøjtning, årsagen og risiciene for de næste 24 timer.
 - Faner: stedet og markerne i faner under navnet (liggende nederst); en marks skærm i afsnit 1–4.
@@ -61,10 +64,10 @@ MARKER
 - Papirkurv: en slettet mark havner i 15 dage i papirkurven under GPS-knappen og kan gendannes derfra.
 - Siden Marker: markernes kort (navn, koordinater, blyant, Statistik · PDF, klokke, papirkurv) svæver over kortet, i en række nederst eller en kolonne til højre; ＋, også fanen ＋, åbner boksen for en ny mark.
 NOTIFIKATIONER
-- Jordskælv: notifikationer kun for jordskælv højst 300 km fra dit sted; slås til eller fra i ☰.
-- Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ☰.
+- Jordskælv: notifikationer kun for jordskælv højst 300 km fra dit sted; slås til eller fra i ⚙︎.
+- Tornadoer (USA): tornadonotifikationerne for din by slås til eller fra i ⚙︎.
 OPDATERINGER
-- Opdateringer: appen søger ikke længere selv efter opdateringer, kun når du trykker på ☰ › Søg efter opdateringer; den nye version downloades i browseren, og du installerer den fra den downloadede fil.
+- Opdateringer: appen søger ikke længere selv efter opdateringer, kun når du trykker på ⚙︎ › Søg efter opdateringer; den nye version downloades i browseren, og du installerer den fra den downloadede fil.
 - Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.3 (v.1.300 – v.1.352)
@@ -104,7 +107,7 @@ OPDATERINGER
 - Opdateringer fra tre kilder: GitHub, en anden GitHub-server og Google Drive.
 - Opdateringer: forbindelsen tjekkes først, en allerede hentet version installeres straks, op til 5 forsøg, når GitHub ikke svarer, og årsagen vises.
 TEMAER
-- 6 farvetemaer (Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose), hvert lyst og mørkt: ☰ › Tema.
+- 6 farvetemaer (Monokrom, Salvie, Lavendel, Himmel, Fersken, Rose), hvert lyst og mørkt: ⚙︎ › Tema.
 - Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.1 (v.1.100 – v.1.191)
@@ -115,7 +118,7 @@ Version 1.1 (v.1.100 – v.1.191)
 - Marker: gemt via GPS eller på kortet, hovedskærm for hver, statistik for 28 dage med PDF, varsler om regn og vind.
 - Widgets 4x2 dage og 4x3.
 - Tekststørrelse (Aa).
-- ☰ › Send appen.
+- ⚙︎ › Send appen.
 - USA: NWS-varsler, tornadoer, °F, lokal tid.
 - Andre sprog: Rumæniens mindretalssprog.
 - Marker: et kort med alle parceller, GPS-knappen (blå prik) og “Gem GPS-sted”.
