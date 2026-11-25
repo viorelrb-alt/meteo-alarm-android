@@ -1493,14 +1493,15 @@ public final class Screen {
 			else drawNowSplit(d[0], rx, nowTop, rx + rw, fy - 4);
 			setNow(rx, nowTop, rw, fy - nowTop);
 			feelsCard(rx, fy, rw);
-			// v2.190 (Viorel): "updated" floats on the top edge of the "feels like" card, at the right.
+			// v2.200 (Viorel): "updated" floats under the clock, at the right.
 			updFloat = true;
-			floatUpdated(rx + rw, fy - 18); // above the text of the card
+			floatUpdated(cw - 40, 100);
 		}
 		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
 		footFb = fb;
 		footBatt = false;
-		if (tabsShown()) drawTabs(free, fb + 7, Math.min(bl, zL) - 24 - free, 54);
+		// v2.200 (Viorel): the towns' tabs over the L sheet, up to near the battery.
+		if (tabsShown()) drawTabs(free, fb + 7, bl - 24 - free, 54);
 		else tabs.area[2] = 0;
 		drawNote(fb);
 	}

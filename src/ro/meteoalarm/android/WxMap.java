@@ -33,6 +33,13 @@ final class WxMap {
 
 	/** The map W x H pixels with corners R, round LA, LO, in the dark theme or not, the layer K (0 none). */
 	void set(int w, int h, int r, double la, double lo, boolean dark, boolean imperial, int k) {
+		set(w, h, r, la, lo, null, dark, imperial, k);
+	}
+
+	private double[] poly;
+
+	/** v2.200 (Viorel): POLY = a parcel's corners: the map shows the parcel with its outline. */
+	void set(int w, int h, int r, double la, double lo, double[] poly, boolean dark, boolean imperial, int k) {
 		if (w <= 0 || h <= 0 || Double.isNaN(la)) return;
 		if (m == null) {
 			m = new MapView(ctx);
@@ -66,12 +73,27 @@ final class WxMap {
 			m.setNight(dark);
 			again = true;
 		}
-		if (Math.abs(la - lat) > 1e-4 || Math.abs(lo - lon) > 1e-4) {
+		// v2.200: NaN (the first time) compares false, so the map stayed on its default place (Călărași).
+		if (Double.isNaN(lat) || Math.abs(la - lat) > 1e-4 || Math.abs(lo - lon) > 1e-4 || !java.util.Arrays.equals(poly, this.poly) || again) {
 			lat = la;
 			lon = lo;
-			m.setZoom(15); // v2.190: the streets round the exact place
-			m.center(la, lo);
-			m.setMe(la, lo);
+			this.poly = poly == null ? null : poly.clone();
+			if (poly != null && poly.length >= 6) {
+				// the parcel: its pin and outline, fitted under the layer buttons and above the legend
+				MapView.Pin pin = new MapView.Pin(-1, la, lo, "");
+				pin.poly = poly;
+				java.util.List<MapView.Pin> ps = new java.util.ArrayList<MapView.Pin>();
+				ps.add(pin);
+				m.setPins(ps, null);
+				m.setMe(Double.NaN, Double.NaN);
+				float dp = ctx.getResources().getDisplayMetrics().density;
+				m.fitCorners(poly, la, lo, 24 * dp, 70 * dp, 24 * dp, 110 * dp);
+			} else {
+				m.setPins(null, null);
+				m.setZoom(15); // v2.190: the streets round the exact place
+				m.center(la, lo);
+				m.setMe(la, lo);
+			}
 			again = true;
 		}
 		m.setImperial(imperial);

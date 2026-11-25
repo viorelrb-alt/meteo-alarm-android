@@ -1,4 +1,4 @@
-Obecna wersja: v.2.190 · 25.11.2026
+Obecna wersja: v.2.200 · 25.11.2026
 AKTUALIZACJE
 - Pole Nowa wersja: krótkie pole u góry ☰, gdy jest nowa wersja; dotknięcie go rozpoczyna pobieranie.
 DZIAŁKI
@@ -13,10 +13,10 @@ DZIAŁKI
 EKRAN GŁÓWNY
 - Dolne przyciski: ich nazwy pokazują się pod nimi przez 3 sekundy po otwarciu ekranu, potem tylko przyciski; pociągnij kapsułę w górę, by znów je zobaczyć. Włączony przycisk wygląda na wciśnięty, z pierścieniem.
 - Informacje o trzęsieniu: dotknięcie pola Trzęsienie ziemi otwiera je na ekranie głównym: mapa, pod nią strefy odczuwalności i historia wartości; kolorowy kwadrat lub mapa otwiera je na całym ekranie, jak trzęsienie z ☰ › Trzęsienia ziemi. W Rumunii, Francji, Włoszech, Holandii, Szwajcarii i Grecji oficjalne wartości pochodzą najpierw z krajowego instytutu (INFP, BCSF, INGV, KNMI, SED, NOA), potem z EMSC. W Rumunii także trzęsienia wokół kraju dostają wartość INFP (z infp.ro).
-- Mapa pogody: na końcu ekranu głównego (w poziomie na arkuszu z polami): OpenStreetMap na poziomie ulic w dokładnym miejscu (GPS dla pierwszej miejscowości), warstwa przezroczysta. Mapa stoi w miejscu; dane: Open-Meteo. Chmury, Temperatury i Deszcz, po jednej; dotknięcie włączonej ją wyłącza. Deszcz jest szary i przekreślony, gdy w pobliżu nie pada teraz ani w ciągu 2 następnych godzin. ▶ odtwarza godziny (6 przed i 6 po teraz) po kolei; dotknięcie godziny ją pokazuje.
+- Mapa pogody: na końcu ekranu głównego (poziomo na arkuszu z polami): OpenStreetMap na poziomie ulic wokół dokładnego miejsca miejscowości ekranu (GPS dla pierwszej) lub, na ekranie działki, działka z jej obrysem; warstwa przezroczysta. Mapa stoi w miejscu; dane: Open-Meteo. Chmury, Temperatury i Deszcz, po jednej; dotknięcie włączonej ją wyłącza. Deszcz jest szary i przekreślony, gdy w pobliżu nie pada teraz ani w ciągu 2 następnych godzin. ▶ odtwarza godziny (6 przed i 6 po teraz) po kolei; dotknięcie godziny ją pokazuje.
 - Nazwy przycisków: okrągły przycisk, który po dotknięciu zostaje na ekranie, pokazuje swoją nazwę w małym dymku przez około 1,5 sekundy.
 - Przycisk Miejscowości: okrągły przycisk z ikoną domków (pionowo po prawej stronie nazwy, poziomo na górnym pasku, przed jego rogiem) otwiera listę miejscowości.
-- Przycisk „zaktualizowano”: unosi się nad stroną, po prawej: w pionie pod ostrzeżeniami (bez nich pod rzędem miejscowości), w poziomie na górnej krawędzi Odczuwalnej. Podczas aktualizacji strzałka się obraca, także jako małe kółko; potem godzina widać 4 sekundy i zwija się do ⟳. Dotknięcie aktualizuje.
+- Przycisk „zaktualizowano”: unosi się nad stroną, po prawej: pionowo pod ostrzeżeniami (bez nich pod rzędem miejscowości), poziomo pod zegarem. Podczas aktualizacji strzałka się obraca, także jako małe kółko; potem przez 4 sekundy widać godzinę i składa się w ⟳. Dotknięcie aktualizuje.
 - Więcej miejscowości: każda miejscowość z listy ma swój ekran główny; przesunięcie w lewo lub w prawo na pogodzie teraz przechodzi do następnej, w kolejności listy.
 MIEJSCOWOŚCI
 - Karty miejscowości: na tablecie i poziomo są tak szerokie jak ich tekst i stoją w wierszach i kolumnach; pionowo na telefonie zbyt długa nazwa ma mniejsze litery; poziomo wyszukiwanie zachowuje rozmiar z pionu.
@@ -29,13 +29,14 @@ POWIADOMIENIA
 USTAWIENIA
 - Dziennik: rozmiar, wiersze i błędy na karcie; Zobacz dziennik otwiera wiersze (Wszystkie, Błędy, Dziś, Wczoraj; długie dotknięcie kopiuje wiersz); Udostępnij i Zapisz na dole ekranu. Naprawione błędy są na końcu dziennika i nie są liczone; problemy z siecią są ostrzeżeniami.
 - Eksport / Import: przełączniki tego, co trafia do pliku (także uprawy i dane uprawowe, powiadomienia działek, kosz działek, powiadomienia, mapa, widżety, historia trzęsień ziemi, dziennik); w Eksporcie i Imporcie miejscowości i działki zaznacza się po kolei; przycisk Aa zmienia rozmiar tekstu.
+- Funkcje zaawansowane: karta pod Miejscowościami: Tryb rolnika i strona Trzęsienia ziemi.
 - Język wyświetlania: w ☰ angielski i język kraju; Inne języki: pozostałe języki kraju, duże języki UE, rumuński i język telefonu (w USA tylko angielski i hiszpański).
+- Miejscowości: pierwsza karta ☰ (w trybie rolnika: Miejscowości & Działki, z działkami w niej). Trzy wiersze: najpierw miejscowości z pełną gwiazdką (mają ekran główny, w kolejności ekranów), potem pozostałe ulubione. Każdą gwiazdkę można zdjąć, dopóki są 2 lub więcej: następna miejscowość z gwiazdką staje się pierwszym ekranem; ostatnia jest szara i zostaje. Dotknięcie pustej gwiazdki daje miejscowości ekran główny i ją pokazuje. Miejscowości › otwiera listę; na jej mapie Region ▾ szuka w jednym regionie.
 - Motywy: 6 motywów z własnym tłem, kartami i kolorem (Grafit, Piwonia, Miód, Las, Ocean, Lawenda), każdy jasny i ciemny; kropki w ☰ › Motyw mają kolor motywu.
-- Okno Ustawienia: ☰ otwiera ustawienia w sekcjach; przełącznik od razu włącza lub wyłącza funkcję. Zamyka się X lub dotknięciem poza nim. W poziomie otwiera się po lewej w 2 kolumnach: przeciągnij pasek prawej krawędzi w lewo, by mieć jedną kolumnę, w prawo, by mieć dwie; przycisk obok X przywraca 2 kolumny. Wyświetlanie jest na końcu. System i Wsparcie pokazuje nazwy przez 3 sekundy, potem tylko przyciski.
+- Okno Ustawienia: ☰ otwiera ustawienia w sekcjach; przełącznik od razu włącza lub wyłącza funkcję. Zamyka się X lub dotknięciem poza nim. Poziomo otwiera się z lewej w 2 kolumnach, tytuł w jednym wierszu: przeciągnij pasek na prawej krawędzi w lewo na jedną kolumnę, w prawo na dwie; przycisk obok X przywraca 2 kolumny. Wyświetlanie jest ostatnie. System & Pomoc pokazuje nazwy przez 3 sekundy, potem tylko przyciski; na telefonie poziomo to pływające pole na dole, które składa się w ⋯ (uchwyt je poszerza), na tablecie jeden wiersz.
 - Pomoc: długie teksty są podzielone na części z własnymi ikonami lub pokazują 2 wiersze i Pokaż wszystko ▾; w poziomie w 2 kolumnach, a dotknięcie przycisku sekcji dwa razy miga jej obramowaniem.
 - Przewodnik: w karcie powiadomień: krótki przewodnik po tym, co pokazuje każda część ekranów. Wkrótce (na razie szary).
 - Strona Trzęsienia ziemi: otwiera się od razu z ostatnimi listami zapisanymi w telefonie i aktualizuje je w tle.
-- Ulubione w ☰: trzy wiersze: najpierw miejscowości z pełną gwiazdką (mają ekran główny, w kolejności ekranów), potem pozostałe ulubione. Każdą gwiazdkę można zdjąć, dopóki są 2 lub więcej: następna miejscowość z gwiazdką staje się pierwszym ekranem; ostatnia jest szara i zostaje. Dotknięcie pustej gwiazdki daje miejscowości ekran główny, drugi po pierwszym, i go pokazuje; zdjęcie gwiazdki usuwa jej ekran, a miejscowość zostaje w ulubionych. Dotknięcie nazwy ją wybiera; Miejscowości › i Wybierz województwo otwierają listę miejscowości.
 - Ulepszenia wyglądu i poprawki zgłoszonych błędów.
 
 Wersja 1.4 (v.1.400 – v.1.520)

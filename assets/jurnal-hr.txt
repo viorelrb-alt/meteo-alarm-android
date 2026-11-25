@@ -1,14 +1,14 @@
-Trenutačna verzija: v.2.190 · 25.11.2026
+Trenutačna verzija: v.2.200 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ☰ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
 - Donji gumbi: njihova imena pri otvaranju zaslona 3 sekunde stoje ispod njih, zatim samo gumbi; povuci kapsulu prema gore da ih opet vidiš. Uključeni gumb izgleda pritisnuto, s prstenom.
 - Gumb Mjesta: okrugli gumb s ikonom kućica (uspravno desno od naziva, položeno na gornjoj traci, prije njezina kuta) otvara popis mjesta.
-- Gumb „ažurirano”: lebdi iznad stranice, desno: uspravno ispod upozorenja (bez njih ispod retka mjesta), položeno na gornjem rubu Osjećaja. Tijekom ažuriranja strelica se vrti, i kao mali krug; zatim se 4 sekunde vidi vrijeme i sklapa se u ⟳. Dodir ažurira.
+- Gumb „ažurirano”: lebdi iznad stranice, desno: uspravno ispod upozorenja (bez njih ispod reda mjesta), položeno ispod sata. Tijekom ažuriranja strelica se vrti, i kao mali krug; zatim se 4 sekunde vidi vrijeme i sklopi se u ⟳. Dodir ažurira.
 - Nazivi gumba: okrugli gumb koji ostaje na zaslonu nakon dodira prikazuje svoj naziv u malom oblačiću oko 1,5 sekunde.
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 - Više mjesta: svako mjesto s popisa ima svoj glavni zaslon; povlačenje lijevo ili desno preko trenutačnog vremena prelazi na sljedeće, redoslijedom popisa.
-- Vremenska karta: na kraju glavnog zaslona (položeno na listu s okvirima): OpenStreetMap na razini ulica na točnom mjestu (GPS za prvo mjesto), sloj proziran. Karta miruje; podaci: Open-Meteo. Oblaci, Temperature i Kiša, jedan po jedan; dodir uključenog ga isključuje. Kiša je siva i precrtana kad u blizini ne pada sada ni u sljedeća 2 sata. ▶ reproducira sate (6 prije i 6 poslije sada) jedan po jedan; dodir sata ga prikazuje.
+- Vremenska karta: na kraju glavnog zaslona (položeno na listu s okvirima): OpenStreetMap na razini ulice oko točnog mjesta mjesta ovog zaslona (GPS za prvo) ili, na zaslonu parcele, parcela s obrisom; sloj proziran. Karta stoji mirno; podaci: Open-Meteo. Oblaci, Temperature i Kiša, jedan po jedan; dodir uključenog ga isključuje. Kiša je siva i precrtana kad u blizini ne pada sada ni u sljedeća 2 sata. ▶ reproducira sate (6 prije i 6 poslije sada) jedan po jedan; dodir sata ga prikazuje.
 MJESTA
 - Kartice mjesta: na tabletu i položeno široke su koliko njihov tekst i stoje u redovima i stupcima; uspravno na telefonu predug naziv dobiva manja slova; položeno pretraga zadržava uspravnu veličinu.
 - Popis mjesta: gumb Mjesta otvara popis u boji teme; Odaberi briše jedno ili više (posljednje ostaje), a znak ⌃⌄ zadržan i povučen gore ili dolje mijenja redoslijed; svako mjesto čuva svoje spremljeno vrijeme.
@@ -29,10 +29,11 @@ PARCELE
 POSTAVKE
 - Izvoz / Uvoz: prekidači za sadržaj datoteke (i kulture i podaci o uzgoju, obavijesti parcela, koš parcela, obavijesti, karta, widgeti, povijest potresa, dnevnik); u Izvozu i Uvozu mjesta i parcele označavaju se jedno po jedno; gumb Aa mijenja veličinu teksta.
 - Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
+- Mjesta: prva kartica u ☰ (u načinu poljoprivrednika: Mjesta & Parcele, s parcelama u njoj). Tri reda: prvo mjesta s punom zvjezdicom (imaju glavni zaslon, redom zaslona), zatim ostali favoriti. Svaka zvjezdica može se maknuti dok su 2 ili više: sljedeće mjesto sa zvjezdicom postaje prvi zaslon; zadnja je siva i ostaje. Dodir prazne zvjezdice daje mjestu glavni zaslon i prikazuje ga. Mjesta › otvara popis; na njegovoj karti Županija ▾ traži u jednoj županiji.
+- Napredne funkcije: kartica ispod Mjesta: Način poljoprivrednika i stranica Potresi.
 - Obilazak: u kartici obavijesti: kratak obilazak onoga što prikazuje svaki dio zaslona. Uskoro (zasad sivo).
-- Omiljena u ☰: tri retka: najprije mjesta s punom zvjezdicom (imaju glavni zaslon, redoslijedom zaslona), zatim ostali favoriti. Svaka se zvjezdica može ukloniti dok su uključene 2 ili više: sljedeće mjesto sa zvjezdicom postaje prvi zaslon; posljednja je siva i ostaje. Dodir prazne zvjezdice daje mjestu glavni zaslon, drugi nakon prvog, i prikazuje ga; uklanjanje zvjezdice uklanja njegov zaslon, a mjesto ostaje među favoritima. Dodir imena ga bira; Mjesta › i Odaberi županiju otvaraju popis mjesta.
 - Pomoć: dugi tekstovi podijeljeni su na dijelove s vlastitim ikonama ili prikazuju 2 retka i Prikaži sve ▾; položeno u 2 stupca, a dodir gumba odjeljka dvaput zatreperi njegov obrub.
-- Prozor Postavke: ☰ otvara postavke po odjeljcima; prekidač odmah uključuje ili isključuje funkciju. Zatvara se s X ili dodirom izvan. Položeno se otvara lijevo u 2 stupca: povuci traku na desnom rubu ulijevo za jedan stupac, udesno za dva; gumb pokraj X vraća 2 stupca. Prikaz je na kraju. Sustav i podrška prikazuje imena 3 sekunde, zatim samo gumbe.
+- Prozor Postavke: ☰ otvara postavke po odjeljcima; prekidač odmah uključuje ili isključuje funkciju. Zatvara se s X ili dodirom izvan. Položeno se otvara lijevo u 2 stupca, naslov u jednom redu: povuci traku na desnom rubu ulijevo za jedan stupac, udesno za dva; gumb pored X vraća 2 stupca. Prikaz je zadnji. Sustav & Podrška pokazuje nazive 3 sekunde, zatim samo gumbe; na telefonu položeno to je lebdeći okvir dolje koji se sklapa u ⋯ (ručka ga širi), na tabletu jedan red.
 - Stranica Potresi: otvara se odmah s posljednjim popisima spremljenima u telefonu i ažurira ih u pozadini.
 - Teme: 6 tema s vlastitom pozadinom, karticama i bojom (Grafit, Božur, Med, Šuma, Ocean, Lavanda), svaka svijetla i tamna; točke u ☰ › Tema imaju boju teme.
 - Zapisnik: veličina, retci i pogreške na kartici; Pogledaj zapisnik otvara retke (Sve, Pogreške, Danas, Jučer; dugi dodir kopira redak); Dijeli i Spremi na dnu zaslona. Ispravljene pogreške su na kraju zapisnika i ne broje se; problemi mreže su upozorenja.

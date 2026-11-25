@@ -873,7 +873,17 @@ public final class PlacesActivity extends Activity {
 		results.setOrientation(LinearLayout.VERTICAL);
 		results.setBackground(round(Glass.alpha(page, 0.97f), px(20), edge));
 		results.setVisibility(View.GONE);
-		bottom.addView(results, lp(-1, -2, 0, 10));
+		// v2.200: the results scroll (a county's towns, the list of counties), at most about half the screen.
+		ScrollView rs = new ScrollView(this) {
+			@Override
+			protected void onMeasure(int w, int h) {
+				int max = Math.round(getResources().getDisplayMetrics().heightPixels * 0.45f);
+				super.onMeasure(w, MeasureSpec.makeMeasureSpec(max, MeasureSpec.AT_MOST));
+			}
+		};
+		rs.setVerticalScrollBarEnabled(false);
+		rs.addView(results);
+		bottom.addView(rs, lp(-1, -2, 0, 10));
 		card = new LinearLayout(this);
 		card.setOrientation(LinearLayout.VERTICAL);
 		card.setBackground(round(Glass.alpha(page, 0.97f), px(22), edge));
@@ -899,6 +909,23 @@ public final class PlacesActivity extends Activity {
 		TextSize.size(q, 18, ts);
 		q.setContentDescription(Tr.t("Search a town", "Caută o localitate"));
 		bar.addView(q, new LinearLayout.LayoutParams(0, -1, 1));
+		// v2.200 (Viorel): "Choose the county" moved here: the search within one county (or US state).
+		countyChip = text("", 14, ink, true);
+		countyChip.setGravity(Gravity.CENTER);
+		countyChip.setSingleLine(true);
+		countyChip.setPadding(px(12), 0, px(12), 0);
+		countyChip.setBackground(round(Glass.alpha(page, 0.6f), px(18), edge));
+		countyChip.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				hideKeys();
+				card.setVisibility(View.GONE);
+				showCounties();
+			}
+		});
+		chipText();
+		LinearLayout.LayoutParams cpl = new LinearLayout.LayoutParams(-2, px(38));
+		cpl.rightMargin = px(4);
+		bar.addView(countyChip, cpl);
 		final View clear = iconBtn("x", Tr.t("Clear the search", "Șterge căutarea"), new Runnable() {
 			public void run() {
 				q.setText("");
@@ -947,6 +974,18 @@ public final class PlacesActivity extends Activity {
 	/** The towns matching TEXT: the app's own list at once, then OpenStreetMap (ONLINE). */
 	private void search(final String text, boolean online) {
 		final String t = text.trim();
+		if (countyF != null) {
+			// v2.200: only the towns of the county chosen (all of them while nothing is typed).
+			List<Cities.City> in = (usHome() ? cities.usStates : cities.byCounty).get(countyF);
+			List<Cities.City> got = new ArrayList<Cities.City>();
+			String f0 = stem(Warnings.fold(t));
+			if (in != null) for (Cities.City c : in) {
+				if (c.lat == 0 && c.lon == 0) continue;
+				if (f0.length() == 0 || Warnings.fold(c.name).startsWith(f0) || Warnings.fold(c.name).contains(" " + f0)) got.add(c);
+			}
+			showResults(got, null, 200);
+			return;
+		}
 		if (t.length() < 2) {
 			results.setVisibility(View.GONE);
 			return;
@@ -969,7 +1008,7 @@ public final class PlacesActivity extends Activity {
 				if (c.lat == 0 && c.lon == 0) continue;
 				if (Warnings.fold(c.name).startsWith(f) && !contains(local, c)) local.add(c);
 			}
-		showResults(local, null);
+		showResults(local, null, 6);
 		if (!online || t.length() < 3) return;
 		final int seq = searchSeq;
 		final String home = list.isEmpty() ? "ro" : list.get(0).country;
@@ -1031,7 +1070,7 @@ public final class PlacesActivity extends Activity {
 						if (seq != searchSeq || !"map".equals(mode)) return;
 						List<Cities.City> l = new ArrayList<Cities.City>(local);
 						for (Cities.City c : got) if (!contains(l, c)) l.add(c);
-						showResults(l, null);
+						showResults(l, null, 6);
 					}
 				});
 			}
@@ -1092,13 +1131,58 @@ public final class PlacesActivity extends Activity {
 		return new Cities.City(cc, county, name, la, lo, match);
 	}
 
-	private void showResults(final List<Cities.City> l, String note) {
+	/** v2.200: the county chosen for the search (null: everywhere), its button in the search bar. */
+	private String countyF;
+	private TextView countyChip;
+
+	private boolean usHome() {
+		return !list.isEmpty() && list.get(0).us();
+	}
+
+	private void chipText() {
+		countyChip.setText((countyF == null ? (usHome() ? Tr.t("State", "Stat") : Tr.t("County", "Județ")) : countyF) + " ▾");
+		countyChip.setContentDescription(usHome() ? Tr.t("Choose the state", "Alegeți statul") : Tr.t("Choose the county", "Alegeți județul"));
+	}
+
+	/** The counties (or states) as a list over the search; a tap searches only in that one. */
+	private void showCounties() {
+		results.removeAllViews();
+		List<String> names = new ArrayList<String>();
+		names.add(null);
+		names.addAll((usHome() ? cities.usStates : cities.byCounty).keySet());
+		for (int k = 0; k < names.size(); k++) {
+			final String n = names.get(k);
+			TextView it = text(n == null ? (usHome() ? Tr.t("All states", "Toate statele") : Tr.t("All counties", "Toate județele")) : n, 17, n != null && n.equals(countyF) || n == null && countyF == null ? Theme.accent(dark) : ink, true);
+			it.setGravity(Gravity.CENTER_VERTICAL);
+			it.setPadding(px(18), 0, px(16), 0);
+			it.setMinHeight(px(50));
+			it.setBackground(ripple());
+			it.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					countyF = n;
+					chipText();
+					Log.i(PlacesActivity.this, "LOC", "căutare în: " + (n == null ? "toate" : n));
+					search(q.getText().toString(), false);
+					if (n == null && q.getText().toString().trim().length() < 2) results.setVisibility(View.GONE);
+				}
+			});
+			if (k > 0) {
+				View line = new View(this);
+				line.setBackgroundColor(edge);
+				results.addView(line, new LinearLayout.LayoutParams(-1, Math.max(1, px(1) / 1)));
+			}
+			results.addView(it, new LinearLayout.LayoutParams(-1, -2));
+		}
+		results.setVisibility(View.VISIBLE);
+	}
+
+	private void showResults(final List<Cities.City> l, String note, int max) {
 		results.removeAllViews();
 		if (l.isEmpty()) {
 			results.setVisibility(View.GONE);
 			return;
 		}
-		for (int k = 0; k < Math.min(6, l.size()); k++) {
+		for (int k = 0; k < Math.min(max, l.size()); k++) {
 			final Cities.City c = l.get(k);
 			LinearLayout it = new LinearLayout(this);
 			it.setGravity(Gravity.CENTER_VERTICAL);

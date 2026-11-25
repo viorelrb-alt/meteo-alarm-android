@@ -59,6 +59,14 @@ final class SettingsPanel extends FrameLayout {
 	/** v5.03 (Viorel): the bar down = all its icons in one row (COMPACT); pulled up = its rows with the names. */
 	private LinearLayout compact;
 	private final List<View> footRows = new ArrayList<View>();
+	/**
+	 * v2.200 (Viorel): 0 the bar as before; 1 phone landscape: a floating box at the bottom left, the
+	 * title and the icons on one row, folded into one button (its grip widens it again); 2 tablet
+	 * landscape on two columns: the title and the buttons with their names on one row.
+	 */
+	private int footMode;
+	private LinearLayout oneRow, headRow, headText;
+	private View moreBtn, fgrip;
 	/** v2.190 (Viorel): in landscape the settings on two columns (TWO), the grip at the right edge folds them into one. */
 	private boolean land, two;
 	private LinearLayout colA, colB, target;
@@ -95,9 +103,11 @@ final class SettingsPanel extends FrameLayout {
 		};
 		panel.setOrientation(LinearLayout.VERTICAL);
 		LinearLayout head = new LinearLayout(c);
+		headRow = head;
 		head.setGravity(Gravity.CENTER_VERTICAL);
 		head.setPadding(px(24), px(20), px(18), px(16));
 		LinearLayout tt = new LinearLayout(c);
+		headText = tt;
 		tt.setOrientation(LinearLayout.VERTICAL);
 		title = text(c, 20, true);
 		title.setSingleLine(true);
@@ -262,6 +272,10 @@ final class SettingsPanel extends FrameLayout {
 		if (footOpen == o) return;
 		footOpen = o;
 		for (View r : footRows) r.setVisibility(o ? VISIBLE : GONE);
+		if (footMode == 1) {
+			floatShow();
+			return;
+		}
 		if (compact != null) compact.setVisibility(o ? GONE : VISIBLE);
 		if (o) {
 			fitPending = true;
@@ -380,6 +394,42 @@ final class SettingsPanel extends FrameLayout {
 		fb.setStroke(Math.max(1, (int) dp), Glass.edge(dark));
 		foot.setBackground(fb);
 		card = null;
+		// v2.200 (Viorel): in landscape the head on one row (title · subtitle), lower.
+		boolean tab = TextSize.tablet(getContext());
+		headText.setOrientation(land ? LinearLayout.HORIZONTAL : LinearLayout.VERTICAL);
+		headText.setGravity(land ? Gravity.CENTER_VERTICAL : Gravity.NO_GRAVITY);
+		LinearLayout.LayoutParams sl = (LinearLayout.LayoutParams) subtitle.getLayoutParams();
+		sl.leftMargin = land ? px(14) : 0;
+		sl.width = land ? 0 : ViewGroup.LayoutParams.WRAP_CONTENT;
+		sl.weight = land ? 1 : 0;
+		subtitle.setLayoutParams(sl);
+		headRow.setPadding(px(24), px(land ? 10 : 20), px(18), px(land ? 8 : 16));
+		footMode = land ? (tab ? (two ? 2 : 0) : 1) : 0;
+		oneRow = null;
+		moreBtn = fgrip = null;
+		ViewGroup fp = (ViewGroup) foot.getParent();
+		if (footMode == 1) {
+			if (fp != this) {
+				if (fp != null) fp.removeView(foot);
+				addView(foot, new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.LEFT));
+			}
+			GradientDrawable fl = new GradientDrawable();
+			fl.setColor(Glass.alpha(Theme.page(dark), dark ? 0.92f : 0.95f));
+			fl.setCornerRadius(28 * dp);
+			fl.setStroke(Math.max(1, (int) dp), Glass.edge(dark));
+			foot.setBackground(fl);
+			foot.setElevation(6 * dp);
+			foot.setPadding(px(8), px(4), px(4), px(4));
+			content.setPadding(px(14), px(4), px(14), px(84));
+		} else {
+			if (fp != panel) {
+				if (fp != null) fp.removeView(foot);
+				panel.addView(foot);
+			}
+			foot.setElevation(0);
+			foot.setPadding(px(10), px(4), px(10), px(8));
+			content.setPadding(px(14), px(4), px(14), px(18));
+		}
 	}
 
 	/**
@@ -1018,6 +1068,22 @@ final class SettingsPanel extends FrameLayout {
 		footTitle.setTextColor(accentText());
 		footTitle.setTextSize(12.5f * zk);
 		role("foottitle", footTitle);
+		ViewGroup tp = (ViewGroup) footTitle.getParent();
+		if (tp != null) tp.removeView(footTitle);
+		if (footMode == 1) {
+			floatBar();
+			return;
+		}
+		if (footMode == 2) {
+			// v2.200 (Viorel): tablet, two columns: the title and the buttons on one row.
+			oneRow = new LinearLayout(getContext());
+			oneRow.setGravity(Gravity.CENTER_VERTICAL);
+			footTitle.setPadding(px(14), 0, px(10), 0);
+			oneRow.addView(footTitle, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			foot.addView(oneRow, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			return;
+		}
+		footTitle.setPadding(px(14), 0, 0, px(2));
 		// A small handle: pull the bar up for the names, down for only the icons.
 		grab = new View(getContext());
 		grab.setBackground(Glass.pill(Glass.alpha(ink(), 0.3f), 0, 3 * dp, dp));
@@ -1035,8 +1101,8 @@ final class SettingsPanel extends FrameLayout {
 
 	/** A row of the fixed bar: plain icons with their name under them. ICONS: one name, or "a>b" for two with › between. */
 	void footRow(String[] icons, String[] labels, final Runnable[] taps) {
-		LinearLayout r = new LinearLayout(getContext());
-		r.setGravity(Gravity.TOP);
+		LinearLayout r = footMode == 2 && oneRow != null ? oneRow : new LinearLayout(getContext());
+		r.setGravity(footMode == 2 ? Gravity.CENTER_VERTICAL : Gravity.TOP);
 		for (int i = 0; i < icons.length; i++) {
 			final int k = i;
 			LinearLayout col = new LinearLayout(getContext());
@@ -1090,12 +1156,84 @@ final class SettingsPanel extends FrameLayout {
 						taps[k].run();
 					}
 				});
-				compact.addView(cell, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
+				if (footMode == 1) compact.addView(cell, new LinearLayout.LayoutParams(px(46 * zk), ViewGroup.LayoutParams.WRAP_CONTENT));
+				else compact.addView(cell, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 			}
 		}
+		if (footMode != 0) return; // the floating box: only the icons; the tablet: one row already in place
 		r.setVisibility(footOpen ? VISIBLE : GONE);
 		footRows.add(r);
 		foot.addView(r);
+	}
+
+	/** v2.200 (Viorel): phone landscape: the floating box: [⋯] or the title and the icons, then its grip. */
+	private void floatBar() {
+		LinearLayout line = new LinearLayout(getContext());
+		line.setGravity(Gravity.CENTER_VERTICAL);
+		TextView more = text(getContext(), 20 * zk, true);
+		more.setText("⋯");
+		more.setGravity(Gravity.CENTER);
+		more.setTextColor(accent());
+		more.setBackground(Glass.pill(Glass.disc(dark), 0, 22 * dp, dp));
+		more.setContentDescription(footTitle.getText());
+		more.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				removeCallbacks(footFold);
+				setFootOpen(true);
+			}
+		});
+		moreBtn = more;
+		line.addView(more, new LinearLayout.LayoutParams(px(44), px(44)));
+		footTitle.setPadding(px(10), 0, px(6), 0);
+		line.addView(footTitle, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		compact = new LinearLayout(getContext());
+		compact.setGravity(Gravity.CENTER_VERTICAL);
+		line.addView(compact, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		// the grip: a tap or a pull to the right widens the box, to the left folds it
+		fgrip = new View(getContext()) {
+			float x0;
+			boolean done;
+
+			@Override
+			public boolean onTouchEvent(MotionEvent e) {
+				switch (e.getActionMasked()) {
+				case MotionEvent.ACTION_DOWN:
+					x0 = e.getRawX();
+					done = false;
+					return true;
+				case MotionEvent.ACTION_MOVE:
+					float d = e.getRawX() - x0;
+					if (!done && Math.abs(d) > px(20)) {
+						done = true;
+						removeCallbacks(footFold);
+						setFootOpen(d > 0);
+					}
+					return true;
+				case MotionEvent.ACTION_UP:
+					if (!done) {
+						removeCallbacks(footFold);
+						setFootOpen(!footOpen);
+					}
+					return true;
+				}
+				return true;
+			}
+		};
+		fgrip.setBackground(Glass.pill(Glass.alpha(ink(), 0.35f), 0, 3 * dp, dp));
+		fgrip.setContentDescription(footTitle.getText());
+		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(px(6), px(30));
+		gl.leftMargin = px(8);
+		gl.rightMargin = px(8);
+		line.addView(fgrip, gl);
+		foot.addView(line);
+		floatShow();
+	}
+
+	private void floatShow() {
+		if (moreBtn == null) return;
+		moreBtn.setVisibility(footOpen ? GONE : VISIBLE);
+		footTitle.setVisibility(footOpen ? VISIBLE : GONE);
+		if (compact != null) compact.setVisibility(footOpen ? VISIBLE : GONE);
 	}
 
 	/** Opens (or, already open, shows the new content keeping the scroll). */
@@ -1117,6 +1255,14 @@ final class SettingsPanel extends FrameLayout {
 		lp.gravity = left ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.CENTER;
 		lp.leftMargin = left ? m : 0;
 		panel.setLayoutParams(lp);
+		if (footMode == 1) {
+			LayoutParams fl = (LayoutParams) foot.getLayoutParams();
+			fl.gravity = Gravity.BOTTOM | Gravity.LEFT;
+			fl.leftMargin = m + px(12);
+			fl.bottomMargin = m + px(12);
+			foot.setLayoutParams(fl);
+			foot.bringToFront();
+		}
 		cgrip.setVisibility(land ? VISIBLE : GONE);
 		twoBtn.setVisibility(land && !two ? VISIBLE : GONE);
 		if (land && !two) {

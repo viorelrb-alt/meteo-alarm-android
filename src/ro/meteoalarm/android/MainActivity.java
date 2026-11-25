@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.190";
+	static final String VERSION = "Meteo Alarm Android v2.200";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -944,7 +944,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				view.invalidate();
 			}
 		});
-		wx.set(w, h, r, s.city.lat, s.city.lon, s.dark, Region.imperial(this, s.city), s.wxLayer);
+		// v2.200 (Viorel): on a parcel's screen the map shows the parcel with its outline.
+		Parcels.Parcel pp = s.parcel != null && pageId > 0 ? Parcels.get(this, pageId) : null;
+		double[] poly = pp != null ? pp.corners : null;
+		wx.set(w, h, r, pp != null ? pp.lat : s.city.lat, pp != null ? pp.lon : s.city.lon, poly, s.dark, Region.imperial(this, s.city), s.wxLayer);
 	}
 
 	/** A tap on the map's button K: that layer (one at a time; the one on turns off). Rain only when it rains near. */
@@ -3434,7 +3437,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		// Location & favourites.
 		final boolean eu = Region.showEU(this), us = Region.showUS(this);
 		if (us) seedUSFavs();
-		p.section(Tr.t("Location & favourites", "Localizare & Favorite"), false);
+		// v2.200 (Viorel): "Towns", with farmer mode "Towns & Parcels" (the parcels in the same card).
+		final boolean farmer = prefs.getBoolean("farmer", false);
+		p.section(farmer ? Tr.t("Towns & Parcels", "Localități & Parcele") : Tr.t("Towns", "Localități"), false);
 		final Runnable towns = new Runnable() {
 			public void run() {
 				onCity(s.btnMenu);
@@ -3467,16 +3472,30 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				favStars(p, "favsUS");
 			}
 		}
-		StringBuilder some = new StringBuilder();
-		int n = 0;
-		for (String co : eu ? cities.byCounty.keySet() : cities.usStates.keySet()) {
-			if (n++ == 3) break;
-			some.append(n > 1 ? ", " : "").append(co);
-		}
-		p.link("map", eu ? Tr.t("Choose the county", "Alegeți județul") : Tr.t("Choose the state", "Alegeți statul"), some + " …", null, towns);
+		// v2.200 (Viorel): "Choose the county" moved into the Towns screen (search within a county).
+		if (farmer) p.subLink("parcel", Tr.t("Parcels", "Parcele"), Tr.t("Your land plots, map, statistics", "Parcelele tale, hartă, statistici"), new Runnable() {
+			public void run() {
+				settings.hide();
+				openParcels();
+			}
+		});
+		// v2.200 (Viorel): Advanced functions: farmer mode and the earthquakes' page.
+		p.section(Tr.t("Advanced functions", "Funcții avansate"), false);
+		p.toggle("farm", Tr.t("Farmer mode", "Mod Fermier"), Tr.t("Weather for your land plots", "Vremea pentru parcelele tale"), farmer, new Runnable() {
+			public void run() {
+				toggleFarmer();
+				onMenu();
+			}
+		});
+		p.subLink("quakes", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
+			public void run() {
+				settings.hide();
+				quakesPage();
+			}
+		});
 		// Alerts & behaviour.
 		p.section(Tr.t("Alerts & behaviour", "Alerte & Comportament"), false);
-		// v2.045 (Viorel): the rows sorted alphabetically by their title in the shown language (a link stays under its switch).
+		// v2.200 (Viorel): the rows in a fixed order (see below).
 		final List<Object[]> al = new ArrayList<Object[]>();
 		al.add(new Object[] { Tr.t("Auto location", "Localizare auto"), new Runnable() {
 			public void run() {
@@ -3498,12 +3517,6 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						note(on ? Tr.t("Earthquake notices within 300 km of your place", "Notificări de cutremur la cel mult 300 km de locul tău")
 								: Tr.t("No earthquake notices", "Fără notificări de cutremur"), 2200);
 						onMenu();
-					}
-				});
-				p.subLink("quakes", Tr.t("Earthquakes", "Cutremure"), Tr.t("Time, place, magnitude, distance", "Ora, locul, magnitudinea, distanța"), new Runnable() {
-					public void run() {
-						settings.hide();
-						quakesPage();
 					}
 				});
 			}
@@ -3563,32 +3576,24 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				});
 			}
 		} });
-		final java.text.Collator coll = java.text.Collator.getInstance(new java.util.Locale(s.T.lang));
+		// v2.200 (Viorel): a fixed order: Earthquake (Tornadoes), Auto location, Notifications, Tour, Night clock, Screen on.
+		al.add(new Object[] { "tour", new Runnable() {
+			public void run() {
+				// v2.190 (Viorel): the tour of the screens, a function to come: grey for now.
+				p.toggleOff("tour", Tr.t("Tour", "Tur"), Tr.t("A short tour of each screen · coming soon", "Un tur scurt al fiecărui ecran · în curând"));
+			}
+		} });
+		final List<String> order = java.util.Arrays.asList(Tr.t("Earthquake", "Cutremur"), Tr.t("Tornadoes", "Tornade"), Tr.t("Auto location", "Localizare auto"), Tr.t("Notifications", "Notificări"), "tour",
+				Tr.t("Night clock", "Ceas noapte"), Tr.t("Screen on", "Ecran aprins"));
 		java.util.Collections.sort(al, new java.util.Comparator<Object[]>() {
 			public int compare(Object[] x, Object[] y) {
-				return coll.compare((String) x[0], (String) y[0]);
+				return order.indexOf(x[0]) - order.indexOf(y[0]);
 			}
 		});
 		for (Object[] r : al) ((Runnable) r[1]).run();
-
-		// v2.190 (Viorel): the tour of the screens, a function to come: grey for now.
-		p.toggleOff("tour", Tr.t("Tour", "Tur"), Tr.t("A short tour of each screen · coming soon", "Un tur scurt al fiecărui ecran · în curând"));
 		// Preferences & display (v2.190, Viorel: after the alerts; in landscape the right column).
 		p.nextColumn();
 		p.section(Tr.t("Preferences & display", "Preferințe & Afișaj"), false);
-		final boolean farmer = prefs.getBoolean("farmer", false);
-		p.toggle("farm", Tr.t("Farmer mode", "Mod Fermier"), Tr.t("Weather for your land plots", "Vremea pentru parcelele tale"), farmer, new Runnable() {
-			public void run() {
-				toggleFarmer();
-				onMenu();
-			}
-		});
-		if (farmer) p.subLink("parcel", Tr.t("Parcels", "Parcele"), Tr.t("Your land plots, map, statistics", "Parcelele tale, hartă, statistici"), new Runnable() {
-			public void run() {
-				settings.hide();
-				openParcels();
-			}
-		});
 		p.segmented("thermo", Tr.t("Temperature", "Temperatură"), new String[] { "°C", "°F" }, s.unitF ? 1 : 0, new SettingsPanel.Choice() {
 			public void chose(int k) {
 				if ((k == 1) != s.unitF) toggleUnits();
@@ -4750,14 +4755,14 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Pagina se mișcă sus-jos pe sub sticla de sus; butoanele și bateria plutesc jos. Secțiuni: Următoarele ore, Prognoza pe cinci zile, Detalii meteo."));
 		help.entry(mini("bright"), Tr.t("Bottom buttons", "Butoanele de jos"), Tr.t("Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.",
 				"Numele lor apar dedesubt 3 secunde la deschiderea ecranului, apoi rămân doar butoanele; tragi capsula în sus ca să le vezi din nou. Butonul pornit pare apăsat, cu un inel."));
-		help.entry(mini("refresh"), Tr.t("“Updated” button", "Butonul „actualizat”"), Tr.t("Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.",
-				"Plutește peste pagină, la dreapta: în portret sub avertizări (fără ele sub rândul localităților), în peisaj pe marginea de sus a casetei Resimțit. În timpul actualizării săgeata se rotește, și când e doar un cerc; apoi ora apare 4 secunde și se strânge în ⟳. Atingerea actualizează."));
+		help.entry(mini("refresh"), Tr.t("“Updated” button", "Butonul „actualizat”"), Tr.t("Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape under the clock. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.",
+				"Plutește peste pagină, la dreapta: în portret sub avertizări (fără ele sub rândul localităților), în peisaj sub ceas. În timpul actualizării săgeata se rotește, și când e doar un cerc; apoi ora apare 4 secunde și se strânge în ⟳. Atingerea actualizează."));
 		help.entry(mini("row"), Tr.t("Five-day forecast", "Prognoza pe cinci zile"), Tr.t("Tomorrow and the day after on top; under them days 3–5 move on by themselves every 3 seconds until you touch them. The Weather details row moves a little after 6 seconds. A tap on Tomorrow or the day after shows its bubble.",
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
 		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.",
 				"Butonul rotund cu iconul cu case: în portret în dreapta numelui localității, în peisaj pe banda de sus, înainte de colț. Deschide lista localităților."));
-		help.steps(mini("map"), Tr.t("Weather map", "Hartă meteo"), Tr.t("At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.",
-				"La sfârșitul ecranului principal (în peisaj pe foaia cu casetele): OpenStreetMap la nivel de stradă, pe locul exact (GPS pentru prima localitate), stratul transparent. Harta stă pe loc; date: Open-Meteo."),
+		help.steps(mini("map"), Tr.t("Weather map", "Hartă meteo"), Tr.t("At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place of the screen's town (GPS for the first one) or, on a parcel's screen, the parcel with its outline; the layer see-through. The map stays still; data: Open-Meteo.",
+				"La sfârșitul ecranului principal (în peisaj pe foaia cu casetele): OpenStreetMap la nivel de stradă, pe locul exact al localității ecranului (GPS pentru prima) sau, pe ecranul unei parcele, parcela cu conturul ei; stratul transparent. Harta stă pe loc; date: Open-Meteo."),
 				new android.graphics.Bitmap[] { mini("layers"), mini("chart"), mini("play") },
 				new String[] { Tr.t("Layers", "Straturi"), Tr.t("Legend", "Legenda"), Tr.t("Hours", "Orele") },
 				new String[] { Tr.t("Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.", "Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore."),
@@ -4825,11 +4830,12 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("auto"), Tr.t("Refreshing by itself", "Reîmprospătare automată"), Tr.t("Every 15 minutes with the screen on, 30 with it off; MET Norway when Open-Meteo is busy.",
 				"La 15 minute cu ecranul aprins, la 30 cu el stins; MET Norway când Open-Meteo e ocupat."));
 		help.section(Tr.t("Settings (☰)", "Setări (☰)"));
-		help.entry(mini("gear"), Tr.t("The Settings window", "Fereastra Setări"), Tr.t("☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.",
-				"☰ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei. În peisaj se deschide la stânga, pe 2 coloane: tragi bara de pe marginea dreaptă spre stânga pentru o coloană, spre dreapta pentru două; butonul de lângă X readuce 2 coloanele. Afișaj e la sfârșit. Sistem & Suport arată numele 3 secunde, apoi doar butoanele."));
+		help.entry(mini("gear"), Tr.t("The Settings window", "Fereastra Setări"), Tr.t("☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns, its title on one row: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons; on a phone in landscape it is a floating box at the bottom that folds into ⋯ (its grip widens it), on a tablet one row.",
+				"☰ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei. În peisaj se deschide la stânga, pe 2 coloane, cu titlul pe un rând: tragi bara de pe marginea dreaptă spre stânga pentru o coloană, spre dreapta pentru două; butonul de lângă X readuce 2 coloanele. Afișaj e la sfârșit. Sistem & Suport arată numele 3 secunde, apoi doar butoanele; pe telefon în peisaj e o casetă plutitoare jos care se strânge în ⋯ (mânerul ei o lărgește), pe tabletă un singur rând."));
 		help.entry(mini("help"), Tr.t("Tour", "Tur"), Tr.t("In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).", "În caseta notificărilor: un tur scurt al fiecărei zone din ecrane. În curând (deocamdată gri)."));
-		help.entry(mini("city"), Tr.t("Location & favourites", "Localizare & Favorite"), Tr.t("Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.",
-				"Trei rânduri: întâi localitățile cu stea plină (au ecran principal, în ordinea ecranelor), apoi celelalte favorite. Orice stea se poate debifa cât timp sunt 2 sau mai multe: următoarea cu stea devine primul ecran; ultima e gri și rămâne. Atingerea unei stele goale dă localității ecran principal, a doua după prima, și o arată; debifarea stelei îi scoate ecranul, iar localitatea rămâne la favorite. Atingerea numelui o alege; Localități › și Alegeți județul deschid lista localităților."));
+		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("The first card of ☰ (with farmer mode: Towns & Parcels, the Parcels in it too). Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen and shows it. Towns › opens the list; on its map, County ▾ searches in one county.",
+				"Prima casetă din ☰ (cu modul fermier: Localități & Parcele, cu Parcele în ea). Trei rânduri: întâi localitățile cu stea plină (au ecran principal, în ordinea ecranelor), apoi celelalte favorite. Orice stea se poate debifa cât timp sunt 2 sau mai multe: următoarea cu stea devine primul ecran; ultima e gri și rămâne. Atingerea unei stele goale dă localității ecran principal și o arată. Localități › deschide lista; pe harta ei, Județ ▾ caută într-un singur județ."));
+		help.entry(mini("farm"), Tr.t("Advanced functions", "Funcții avansate"), Tr.t("The card under Towns: Farmer mode and the Earthquakes page.", "Caseta de sub Localități: Mod Fermier și pagina Cutremure."));
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));
 		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).", "6 teme, fiecare cu fundalul, casetele și culoarea ei (Grafit, Bujor, Miere, Pădure, Ocean, Lavandă): atingi o bulină, care are culoarea temei; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("wxicon"), Tr.t("Icon theme", "Temă icon"), Tr.t("6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.", "6 teme de iconuri: atingi o bulină. Clasic și Contur iau culorile temei; se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));

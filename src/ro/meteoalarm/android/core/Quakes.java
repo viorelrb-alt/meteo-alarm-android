@@ -346,7 +346,7 @@ public final class Quakes {
 				n.lon = Double.parseDouble(c[3].trim());
 				n.depth = c[4].trim().length() > 0 ? Math.abs(Double.parseDouble(c[4].trim())) : 10;
 				n.magType = c[9].trim();
-				n.mag = Double.parseDouble(c[10].trim());
+				n.mag = Math.round(Double.parseDouble(c[10].trim()) * 10) / 10.0; // v2.200: NOA gives 3.440688487
 			} catch (Exception e) {
 				continue;
 			}
