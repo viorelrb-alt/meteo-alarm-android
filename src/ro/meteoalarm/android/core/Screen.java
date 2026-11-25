@@ -1316,7 +1316,8 @@ public final class Screen {
 		float dp = 26, dr = clockLeft - 22;
 		String dt = T.date(now);
 		float dl = rtext(false, dp, 54 - dp * 0.56f, dr, dt, c.ink);
-		float ul = updatedAt(dl - 26, 54, Math.min(420, dl - 26 - 124 - 260));
+		// v2.162 (Viorel): "updated" moved to the bottom row, next to the battery.
+		float ul = dl;
 		// v2.152 (Viorel): the Localități button at the band's right end, before the L corner.
 		// v2.160 (Viorel): bigger, inside the narrow band, ending before the L corner.
 		float tx = Math.min(zL - 14 - HB, ul - 30 - HB);
@@ -1340,9 +1341,11 @@ public final class Screen {
 			feelsCard(rx, fy, rw);
 		}
 		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
+		// v2.162 (Viorel): "updated" on the battery's row, at its left, in the right column.
+		bl = Math.min(bl, updatedAt(bl - 24, fb + 32, Math.min(460, bl - 24 - rx)));
 		footFb = fb;
 		footBatt = false;
-		if (tabsShown()) drawTabs(free, fb + 7, bl - 24 - free, 54);
+		if (tabsShown()) drawTabs(free, fb + 7, Math.min(bl, zL) - 24 - free, 54);
 		else tabs.area[2] = 0;
 		drawNote(fb);
 	}
