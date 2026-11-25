@@ -147,12 +147,6 @@ final class MapView extends View {
 		topPad = px;
 	}
 
-	/** v2.160: where the weather layer's label pill stands (its top, in pixels). */
-	private float layerTop = -1;
-
-	void setLayerTop(float px) {
-		layerTop = px;
-	}
 
 	/**
 	 * v2.90: centre and zoom so every pin is seen (one pin: zoom 15). Needs the size: before the
@@ -545,7 +539,8 @@ final class MapView extends View {
 	private boolean drawTiles(Canvas c, int w, int h, boolean bare) {
 		boolean all = true;
 		c.drawColor(night ? 0xFF4A4F55 : dark ? 0xFF3A3A38 : 0xFFE8E4DC);
-		if (night && style == 0) paint.setColorFilter(NIGHT);
+		if (night && style == 0) paint.setColorFilter(names ? NIGHT_MINT : NIGHT);
+		else if (names && style == 0) paint.setColorFilter(MINT);
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
 		float ts = (float) (tile * Math.pow(2, zoom - z));
 		double world = ts * Math.pow(2, z);
@@ -593,6 +588,7 @@ final class MapView extends View {
 		double cx = wx(lon, world), cy = wy(lat, world);
 		double left = cx - w / 2.0, top = cy - h / 2.0;
 		drawLayer(c, w, h, world, left, top);
+		drawTowns(c, w, h, world, left, top);
 		// The phone's position.
 		if (!Double.isNaN(meLat)) {
 			float mx = (float) (wx(meLon, world) - left), my = (float) (wy(meLat, world) - top);
@@ -634,7 +630,7 @@ final class MapView extends View {
 		if (!Double.isNaN(markLat)) drawPin(c, (float) (wx(markLon, world) - left), (float) (wy(markLat, world) - top));
 		// The attribution the OpenStreetMap licence asks for.
 		drawLayerInfo(c, w, h, world, left, top);
-		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "Esri, HERE, Garmin, USGS, © OpenStreetMap contributors" : "© OpenStreetMap contributors") + (layer != 0 ? Tr.t(" · Weather: Open-Meteo", " · Vremea: Open-Meteo") : "");
+		String att = (style == 1 ? "Imagery © Esri, Maxar, Earthstar Geographics" : names ? "Esri, HERE, Garmin, © OpenStreetMap contributors" : "© OpenStreetMap contributors") + (layer != 0 ? Tr.t(" · Weather: Open-Meteo", " · Vremea: Open-Meteo") : "");
 		paint.setTextSize(11 * dp);
 		float aw = paint.measureText(att);
 		paint.setColor(0xCCFFFFFF);
@@ -652,6 +648,17 @@ final class MapView extends View {
 			0, 0, 0.80f, 0, 0,
 			0, 0, 0, 1, 0 });
 	private boolean night;
+	/** v2.161 (Viorel, like the phone's weather map): the plain grey base of the towns' map, light mint; dimmer when dark. */
+	private static final android.graphics.ColorMatrixColorFilter MINT = new android.graphics.ColorMatrixColorFilter(new float[] {
+			0.90f, 0, 0, 0, 0,
+			0, 1.06f, 0, 0, 0,
+			0, 0, 0.97f, 0, 0,
+			0, 0, 0, 1, 0 });
+	private static final android.graphics.ColorMatrixColorFilter NIGHT_MINT = new android.graphics.ColorMatrixColorFilter(new float[] {
+			0.72f, 0, 0, 0, 0,
+			0, 0.85f, 0, 0, 0,
+			0, 0, 0.78f, 0, 0,
+			0, 0, 0, 1, 0 });
 
 	/** v2.030: dark tiles (the earthquake's map in the dark theme). */
 	void setNight(boolean on) {
@@ -973,7 +980,7 @@ final class MapView extends View {
 	private int style;
 
 	private String pre() {
-		return style == 1 ? "s/" : names ? "w/" : "";
+		return style == 1 ? "s/" : names ? "g/" : "";
 	}
 
 	/** v2.152 (Viorel): the towns' map (search, earthquakes): mostly the names; the parcels keep the detailed OpenStreetMap. */
@@ -1214,22 +1221,31 @@ final class MapView extends View {
 	private void drawLayerInfo(Canvas c, int w, int h, double world, double left, double top) {
 		if (layer == L_NONE) return;
 		String name = layer == L_CLOUD ? Tr.t("Clouds", "Nori") : layer == L_TEMP ? Tr.t("Temperatures", "Temperaturi") : Tr.t("Rain", "Ploi");
+		// v2.161 (Viorel): the name and the time stand in the legend, above the cards, no longer at the top.
 		String t = name + (gTime.length() > 0 ? " " + gTime + (layer == L_RAIN && gUntil.length() > 0 ? "–" + gUntil : "") : "");
+		float lw = 230 * dp, bh = 7 * dp, cx = (w - rightPad) / 2f, bottom = h - Math.max(bottomPad, 22 * dp) - 8 * dp;
+		int ink = dark ? 0xFFFAF9F5 : 0xFF1A1A1A;
+		if (gRainMax == null) {
+			paint.setTextSize(14 * dp);
+			paint.setFakeBoldText(true);
+			String wait = t + " · " + Tr.t("loading…", "se încarcă…");
+			float tw = paint.measureText(wait);
+			pill(c, new RectF(cx - tw / 2 - 14 * dp, bottom - 32 * dp, cx + tw / 2 + 14 * dp, bottom));
+			paint.setColor(ink);
+			c.drawText(wait, cx - tw / 2, bottom - 11 * dp, paint);
+			paint.setFakeBoldText(false);
+			return;
+		}
+		// The legend: in the middle of the map's free part, above the cards (portrait) or the attribution.
+		float lh = 78 * dp, lt = bottom - lh, bx = cx - lw / 2;
+		pill(c, new RectF(bx - 12 * dp, lt, bx + lw + 12 * dp, bottom));
 		paint.setTextSize(14 * dp);
 		paint.setFakeBoldText(true);
-		float tw = paint.measureText(t), ph = 26 * dp, pt0 = layerTop >= 0 ? layerTop : 8 * dp;
-		RectF r = new RectF(w / 2f - tw / 2 - 12 * dp, pt0, w / 2f + tw / 2 + 12 * dp, pt0 + ph);
-		pill(c, r);
-		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
-		Paint.FontMetrics fm = paint.getFontMetrics();
-		c.drawText(t, w / 2f - tw / 2, pt0 + ph / 2 - (fm.ascent + fm.descent) / 2, paint);
+		paint.setColor(ink);
+		float tw = paint.measureText(t);
+		c.drawText(t, cx - tw / 2, lt + 20 * dp, paint);
 		paint.setFakeBoldText(false);
-		if (gRainMax == null) return;
-		// The legend: in the middle of the map's free part, above the cards (portrait) or the attribution.
-		float lw = 230 * dp, bh = 7 * dp, cx = (w - rightPad) / 2f, bottom = h - Math.max(bottomPad, 22 * dp) - 8 * dp;
-		float lh = 58 * dp, lt = bottom - lh, bx = cx - lw / 2;
-		pill(c, new RectF(bx - 12 * dp, lt, bx + lw + 12 * dp, bottom));
-		float by = lt + 24 * dp;
+		float by = lt + 44 * dp;
 		paint.setTextSize(11 * dp);
 		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
 		String head;
@@ -1283,12 +1299,12 @@ final class MapView extends View {
 			if (layer == L_RAIN) {
 				cols = new int[R_COL.length];
 				for (int i = 0; i < cols.length; i++) cols[i] = 0xFF000000 | R_COL[i];
-				head = Tr.t("Rain, mm per hour", "Ploaie, mm pe oră");
+				head = Tr.t("mm per hour, now and in the next 2 hours", "mm pe oră, acum și în următoarele 2 ore");
 				ticks = new String[] { "0,1", "1", "3", "8", "15+" };
 				tickAt = new float[] { 0, 0.25f, 0.5f, 0.75f, 1 };
 			} else {
 				cols = new int[] { 0x206E737D, 0xFF6E737D };
-				head = Tr.t("Clouds, sky covered", "Nori, cer acoperit");
+				head = Tr.t("sky covered", "cer acoperit");
 				ticks = new String[] { "0%", "50%", "100%" };
 				tickAt = new float[] { 0, 0.5f, 1 };
 			}
@@ -1296,10 +1312,10 @@ final class MapView extends View {
 			c.drawRoundRect(new RectF(bx, by, bx + lw, by + bh), bh / 2, bh / 2, paint);
 			paint.setShader(null);
 		}
-		paint.setColor(dark ? 0xFFFAF9F5 : 0xFF1A1A1A);
-		paint.setFakeBoldText(true);
+		paint.setColor(ink);
+		paint.setFakeBoldText(false);
 		float hw = paint.measureText(head);
-		c.drawText(head, cx - hw / 2, lt + 16 * dp, paint);
+		c.drawText(head, cx - hw / 2, lt + 36 * dp, paint);
 		paint.setFakeBoldText(false);
 		for (int i = 0; i < ticks.length; i++) {
 			float x = bx + tickAt[i] * lw, tw2 = paint.measureText(ticks[i]);
@@ -1323,6 +1339,112 @@ final class MapView extends View {
 		paint.setColor(dark ? 0x40FFFFFF : 0x30000000);
 		c.drawRoundRect(r, rad, rad, paint);
 		paint.setStyle(Paint.Style.FILL);
+	}
+
+	// --- v2.161 (Viorel): the towns' names big and clear over the map (the tiles' own are too small) ---
+
+	/** Every locality of Romania: the towns of the app's list first, then the villages. */
+	private static String[] tName;
+	private static float[] tLat, tLon;
+	private static int tCities;
+	private static volatile boolean tBusy;
+
+	private void loadTowns() {
+		if (tName != null || tBusy) return;
+		tBusy = true;
+		final Context ctx = getContext().getApplicationContext();
+		new Thread(new Runnable() {
+			public void run() {
+				try {
+					java.util.LinkedHashMap<String, float[]> m = new java.util.LinkedHashMap<String, float[]>();
+					String cities = Fetcher.readAll(ctx.getAssets().open("cities.txt"));
+					for (String line : cities.split("\n")) {
+						String[] p = line.trim().split("\\|");
+						if (p.length < 4 || line.startsWith("#")) continue;
+						try {
+							m.put(p[1], new float[] { Float.parseFloat(p[2]), Float.parseFloat(p[3]) });
+						} catch (NumberFormatException e) {
+							// a bad line
+						}
+					}
+					int nc = m.size();
+					ro.meteoalarm.android.core.Villages v = Places.villages(ctx);
+					String[] n = new String[nc + v.size];
+					float[] la = new float[n.length], lo = new float[n.length];
+					int k = 0;
+					for (java.util.Map.Entry<String, float[]> e : m.entrySet()) {
+						n[k] = e.getKey();
+						la[k] = e.getValue()[0];
+						lo[k++] = e.getValue()[1];
+					}
+					for (int i = 0; i < v.size; i++) {
+						// The towns of the list are there already (a village of the same name far away stays).
+						float[] c = m.get(v.name(i));
+						if (c != null && Math.abs(c[0] - v.lat(i)) < 0.05f && Math.abs(c[1] - v.lon(i)) < 0.05f) continue;
+						n[k] = v.name(i);
+						la[k] = v.lat(i);
+						lo[k++] = v.lon(i);
+					}
+					tLat = java.util.Arrays.copyOf(la, k);
+					tLon = java.util.Arrays.copyOf(lo, k);
+					tCities = nc;
+					tName = java.util.Arrays.copyOf(n, k);
+				} catch (Exception e) {
+					tName = new String[0];
+					tLat = tLon = new float[0];
+				}
+				tBusy = false;
+				ui.post(new Runnable() {
+					public void run() {
+						invalidate();
+					}
+				});
+			}
+		}).start();
+	}
+
+	/**
+	 * The names, big, with a light edge: the towns of the list from zoom 8, the villages from
+	 * zoom 11; a name that would cover one already drawn is left out.
+	 */
+	private void drawTowns(Canvas c, int w, int h, double world, double left, double top) {
+		if (zoom < 8) return;
+		if (tName == null) {
+			loadTowns();
+			return;
+		}
+		double n = latAt(top, world), s = latAt(top + h, world), we = lon - w / 2.0 / world * 360, e = lon + w / 2.0 / world * 360;
+		float sp = getResources().getDisplayMetrics().scaledDensity;
+		java.util.List<RectF> used = new java.util.ArrayList<RectF>();
+		paint.setFakeBoldText(false);
+		paint.setStrokeJoin(Paint.Join.ROUND);
+		int end = zoom >= 11 ? tName.length : tCities, drawn = 0;
+		for (int i = 0; i < end && drawn < 90; i++) {
+			float la = tLat[i], lo = tLon[i];
+			if (la > n || la < s || lo < we || lo > e) continue;
+			float sx = (float) (wx(lo, world) - left), sy = (float) (wy(la, world) - top);
+			paint.setTextSize((i < tCities ? 19 : 17) * sp);
+			float tw = paint.measureText(tName[i]), th = paint.getTextSize();
+			// Room round each name, so the map stays airy.
+			RectF r = new RectF(sx - tw / 2 - 10 * dp, sy - th * 0.6f - 8 * dp, sx + tw / 2 + 10 * dp, sy + th * 0.6f + 8 * dp);
+			boolean free = true;
+			for (RectF u : used)
+				if (RectF.intersects(u, r)) {
+					free = false;
+					break;
+				}
+			if (!free) continue;
+			used.add(r);
+			drawn++;
+			float by = sy + th * 0.35f;
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeWidth(3 * dp);
+			paint.setColor(night ? 0xCC1E2420 : 0xE6FFFFFF);
+			c.drawText(tName[i], sx - tw / 2, by, paint);
+			paint.setStyle(Paint.Style.FILL);
+			paint.setColor(night ? 0xFFF0F2F0 : 0xFF2E3330);
+			c.drawText(tName[i], sx - tw / 2, by, paint);
+		}
 	}
 
 	@Override
@@ -1377,7 +1499,7 @@ final class MapView extends View {
 	/** Off the main thread: the tile from the phone's cache (a week), else from OpenStreetMap. */
 	private Bitmap load(String key) {
 		File f = new File(dir, key.replace('/', '_') + ".png");
-		boolean sat = key.startsWith("s/"), voy = key.startsWith("w/");
+		boolean sat = key.startsWith("s/"), voy = key.startsWith("g/");
 		try {
 			if (f.exists() && System.currentTimeMillis() - f.lastModified() < KEEP_MS) {
 				Bitmap b = BitmapFactory.decodeFile(f.getPath());
@@ -1389,9 +1511,9 @@ final class MapView extends View {
 				String[] k = key.substring(2).split("/");
 				url = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
 			} else if (voy) {
-				// v2.160 (Viorel): no API key: Esri World Street Map, the towns' names big and clear.
+				// v2.161 (Viorel): no API key: Esri's plain grey base, no names on it; the app writes them big.
 				String[] k = key.substring(2).split("/");
-				url = ESRI + "World_Street_Map/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
+				url = ESRI + "Canvas/World_Light_Gray_Base/MapServer/tile/" + k[0] + "/" + k[2] + "/" + k[1];
 			} else url = "https://tile.openstreetmap.org/" + key + ".png";
 			HttpURLConnection c = (HttpURLConnection) new URL(url).openConnection();
 			c.setConnectTimeout(15000);

@@ -51,6 +51,19 @@ public final class Villages {
 		size = n;
 	}
 
+	/** v2.161: locality I's name and place (for the names drawn over the maps). */
+	public String name(int i) {
+		return name[i];
+	}
+
+	public float lat(int i) {
+		return lat[i];
+	}
+
+	public float lon(int i) {
+		return lon[i];
+	}
+
 	/** The N localities nearest to LAT, LON, nearest first. */
 	public List<Cities.City> nearest(double la, double lo, int n) {
 		double k = Math.cos(Math.toRadians(la));

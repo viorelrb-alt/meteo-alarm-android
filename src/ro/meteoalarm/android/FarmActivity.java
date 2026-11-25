@@ -1432,8 +1432,6 @@ public final class FarmActivity extends Activity {
 		final int fb = px(tab ? 46 : 42), mg = px(12), gap = px(10);
 		// The height the top sheet takes in landscape (its row), so the cards start under it.
 		final int bandH = fb + 2 * px(6);
-		// v2.160: the layer's label at the top edge, between the date and the clock.
-		m.setLayerTop(topIn > 0 ? Math.max(px(2), (topIn - px(26)) / 2) : px(8));
 		int sw = getResources().getDisplayMetrics().widthPixels, sh = getResources().getDisplayMetrics().heightPixels;
 		// v5.51 (Viorel): the card's width comes from the portrait width: 2 cards on a phone, 3 or 4
 		// on a tablet; in landscape the same size.

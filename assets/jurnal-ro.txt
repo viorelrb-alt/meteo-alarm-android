@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.160 · 25.11.2026
+Versiunea curentă: v.2.161 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ☰ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
@@ -8,7 +8,7 @@ ECRAN PRINCIPAL
 - Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
 LOCALITĂȚI
 - Casetele localităților: pe tabletă și în peisaj au lățimea textului și stau pe rânduri și coloane; în portret pe telefon, un nume prea lung se scrie cu litere mai mici; în peisaj căutarea are mărimea din portret.
-- Căutare pe hartă: lupa deschide harta cu căutarea jos; atingerea unui loc arată temperatura, Detalii (zilele următoare) și Adaugă. Harta arată clar localitățile, cu drumurile și numele lor. Alte localități apar doar dacă încep ca numele scris (minim 6 litere sau 60% din el).
+- Căutare pe hartă: lupa deschide harta cu căutarea jos; atingerea unui loc arată temperatura, Detalii (zilele următoare) și Adaugă. Harta e simplă și luminoasă, cu numele localităților scrise mare (și pe harta parcelelor). Alte localități apar doar dacă încep ca numele scris (minim 6 litere sau 60% din el).
 - Lista de localități: butonul de localitate deschide lista, pe culoarea temei; Selectează șterge una sau mai multe (ultima rămâne), iar semnul ⌃⌄ ținut apăsat și tras în sus sau în jos schimbă ordinea; fiecare localitate își păstrează vremea salvată.
 NOTIFICĂRI
 - Canale separate: avertizări meteo, ploaie și ninsoare, cutremure, parcele și actualizări au fiecare canalul lor în setările telefonului; poți opri unul și le păstrezi pe celelalte.
@@ -22,7 +22,7 @@ PARCELE
 - Statistici în ecranul principal: se deschid sub Status operațional (în peisaj în stânga); ‹ le închide, iar tab-ul altei parcele le păstrează.
 - Statistici: pentru fiecare parcelă, Acțiunea zilei și 4 file: Operațional (fereastra de stropit oră cu oră, uscare picături (ΔT), vânt, frunză udă), Apă & Sol (ploaie, evaporare, sol la 6 și 18 cm), Sezon (grade-zile față de anul trecut, faza estimată) și Riscuri 72 h (boli fungice, brumă, arșiță, vânt și grindină); salvare PDF sau CSV.
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.
-- Straturi meteo: pe harta parcelelor, caseta de sub ＋ și − se deschide cu Satelit, Hartă, Nori, Temperaturi (culori) și Ploi (mm pe oră), apoi se strânge la ce ai ales; un singur strat odată, cu ora sus și legenda jos; Ploi se activează doar când plouă acum sau în următoarele 2 ore (în locul radarului).
+- Straturi meteo: pe harta parcelelor, caseta de sub ＋ și − se deschide cu Satelit, Hartă, Nori, Temperaturi (culori) și Ploi (mm pe oră), apoi se strânge la ce ai ales; un singur strat odată, cu numele, ora și legenda deasupra casetelor; Ploi se activează doar când plouă acum sau în următoarele 2 ore (în locul radarului).
 SETĂRI
 - Export / Import: comutatoare pentru ce intră în fișier (și culturile și datele de cultivare, notificările parcelelor, coșul de parcele, notificările, harta, widget-urile, istoricul cutremurelor, jurnalul); la Export și Import localitățile și parcelele se bifează pe rând; butonul Aa schimbă mărimea textului.
 - Favorite în ☰: trei rânduri, întâi localitățile cu stea plină (au ecran principal), apoi celelalte; prima își păstrează mereu steaua; o stea goală atinsă dă localității ecran principal, al doilea; debifarea îi scoate ecranul.
