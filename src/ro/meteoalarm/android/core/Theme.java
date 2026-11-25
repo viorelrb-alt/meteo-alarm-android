@@ -67,7 +67,51 @@ public final class Theme {
 
 	public static int[] colors(boolean dark) {
 		int p = pal < 0 || pal >= LIGHT.length ? 0 : pal;
-		return (dark ? DARK : LIGHT)[p];
+		if (p == 0) return (dark ? DARK : LIGHT)[0];
+		// v2.218 (Viorel): every theme is Grafit with its greys replaced by the theme's colour at
+		// the same share of black (same lightness, the theme's hue).
+		int[][] cache = dark ? HUED_D : HUED_L;
+		if (cache[p] == null) {
+			int[] g = (dark ? DARK : LIGHT)[0], r = new int[g.length];
+			for (int k = 0; k < g.length; k++) r[k] = hued(g[k], p);
+			cache[p] = r;
+		}
+		return cache[p];
+	}
+
+	private static final int[][] HUED_L = new int[6][], HUED_D = new int[6][];
+	/** v2.218: how much colour the greys take (HSL saturation, 0..1). */
+	public static float SAT = 0.45f;
+
+	/** Grey C (a share of black) as theme P's colour with the same lightness; other colours stay. */
+	public static int hued(int c, int p) {
+		if (p <= 0 || p >= BTN_LIGHT.length) return c;
+		int r = (c >> 16) & 255, g = (c >> 8) & 255, b = c & 255;
+		int mx = Math.max(r, Math.max(g, b)), mn = Math.min(r, Math.min(g, b));
+		if (mx - mn > 8 || mx == mn && (mx == 0 || mx == 255)) return c;
+		float l = (mx + mn) / 510f;
+		float h = hueOf(BTN_LIGHT[p]);
+		float q = l < 0.5f ? l * (1 + SAT) : l + SAT - l * SAT, o = 2 * l - q;
+		int rr = Math.round(255 * hk(o, q, h + 1 / 3f)), gg = Math.round(255 * hk(o, q, h)), bb = Math.round(255 * hk(o, q, h - 1 / 3f));
+		return (c & 0xFF000000) | rr << 16 | gg << 8 | bb;
+	}
+
+	private static float hk(float p, float q, float t) {
+		if (t < 0) t += 1;
+		if (t > 1) t -= 1;
+		if (t < 1 / 6f) return p + (q - p) * 6 * t;
+		if (t < 1 / 2f) return q;
+		if (t < 2 / 3f) return p + (q - p) * (2 / 3f - t) * 6;
+		return p;
+	}
+
+	private static float hueOf(int c) {
+		float r = ((c >> 16) & 255) / 255f, g = ((c >> 8) & 255) / 255f, b = (c & 255) / 255f;
+		float mx = Math.max(r, Math.max(g, b)), mn = Math.min(r, Math.min(g, b)), d = mx - mn;
+		if (d == 0) return 0;
+		float h = mx == r ? ((g - b) / d) % 6 : mx == g ? (b - r) / d + 2 : (r - g) / d + 4;
+		h /= 6;
+		return h < 0 ? h + 1 : h;
 	}
 
 	/** v2.153: the dot that stands for theme K in the Settings is its button colour (Monocrom: white). */
@@ -79,8 +123,8 @@ public final class Theme {
 
 	/** v2.180 (Viorel's theme file, 6 atmospheres): the raised surface (top bar, dock, sheets) and the text on the accent. */
 	public static final int[] ELEV_L = { 0xFFE4E4E7, 0xFFF2CCD6, 0xFFEFE0B9, 0xFFE3F2E9, 0xFFE8F2FC, 0xFFEFE8FC }, ELEV_D = { 0xFF222225, 0xFF3D202B, 0xFF3B2C19, 0xFF1B3D2E, 0xFF1B3557, 0xFF2E1E4F }, ON_L = { 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF }, ON_D = { 0xFF09090B, 0xFF240D14, 0xFF1F1608, 0xFF081C12, 0xFF071526, 0xFF170C2B };
-	public static int elev(boolean d) { return (d ? ELEV_D : ELEV_L)[pal < 0 || pal > 5 ? 0 : pal]; }
-	public static int onAcc(boolean d) { return (d ? ON_D : ON_L)[pal < 0 || pal > 5 ? 0 : pal]; }
+	public static int elev(boolean d) { return hued((d ? ELEV_D : ELEV_L)[0], pal); } // v2.218: Grafit's, in the theme's hue
+	public static int onAcc(boolean d) { return hued((d ? ON_D : ON_L)[0], pal); }
 	public static int page(boolean d) { return colors(d)[0]; }
 	public static int ink(boolean d) { return colors(d)[1]; }
 	public static int dim(boolean d) { return colors(d)[2]; }
@@ -158,10 +202,8 @@ public final class Theme {
 	 */
 	public static int pastel(boolean d) {
 		int p = pal < 0 || pal >= BTN_LIGHT.length ? 0 : pal;
-		// v2.214 (Viorel): besides Grafit, the chosen buttons are white with a light hint of the
-		// theme's colour in the dark, and graphite black with a light hint of it in the light.
-		if (p == 0) return (d ? BTN_DARK : BTN_LIGHT)[0];
-		return d ? mix(0xFFFFFFFF, BTN_DARK[p], 0.16f) : mix(0xFF1C1C1F, BTN_LIGHT[p], 0.2f);
+		// v2.218 (Viorel): Grafit's chosen buttons (white / black) in every theme.
+		return hued((d ? BTN_DARK : BTN_LIGHT)[0], p);
 	}
 
 	/**
@@ -169,14 +211,12 @@ public final class Theme {
 	 * buttons' tone (white / graphite with a light hint of the theme); Grafit keeps its accent.
 	 */
 	public static int tint(boolean d) {
-		return pal <= 0 || pal >= BTN_LIGHT.length ? accent(d) : pastel(d);
+		return accent(d); // v2.218: Grafit's, in the theme's hue
 	}
 
 	/** v2.215: the menu's secondary texts: grey with a light hint of the theme (Grafit: its own). */
 	public static int tintDim(boolean d) {
-		int p = pal < 0 || pal >= BTN_LIGHT.length ? 0 : pal;
-		if (p == 0) return dim(d);
-		return d ? mix(0xFFB4B4BC, BTN_DARK[p], 0.16f) : mix(0xFF4A4A52, BTN_LIGHT[p], 0.2f);
+		return dim(d); // v2.218
 	}
 
 	/** The text on a pastel button. */
