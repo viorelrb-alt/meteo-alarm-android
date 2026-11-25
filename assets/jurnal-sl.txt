@@ -1,4 +1,4 @@
-Trenutna različica: v.2.216 · 25.11.2026
+Trenutna različica: v.2.217 · 25.11.2026
 GLAVNI ZASLON
 - Glavni zasloni: zavihki pod imenom (ležeče spodaj): kraj in po eden za vsako parcelo; dotik ali poteg vstran zamenja zaslon, + odpre okence nove parcele. Ko vsi ne gredo nanjo, se vrsta vsake 3 sekunde premakne za enega; prst na njej jo za nekaj časa ustavi.
 - Gumb Kraji: okrogel gumb z ikono hišic (pokončno desno od imena, ležeče na zgornjem traku, pred njegovim kotom) odpre seznam krajev.

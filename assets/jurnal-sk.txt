@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.216 · 25.11.2026
+Súčasná verzia: v.2.217 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ⚙︎, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA

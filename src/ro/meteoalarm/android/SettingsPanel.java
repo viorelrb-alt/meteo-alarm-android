@@ -559,7 +559,14 @@ final class SettingsPanel extends FrameLayout {
 			p.setStyle(Paint.Style.FILL);
 			p.setColor(Glass.disc(dark));
 			// v2.216 (Viorel): the icons' tiles are circles, not squares.
-			c.drawCircle(b.exactCenterX(), b.exactCenterY(), Math.min(b.width(), b.height()) / 2f, p);
+			float rr = Math.min(b.width(), b.height()) / 2f;
+			c.drawCircle(b.exactCenterX(), b.exactCenterY(), rr, p);
+			// v2.217 (Viorel): an outline in the icon's colour, so the circle stands out.
+			p.setStyle(Paint.Style.STROKE);
+			p.setStrokeWidth(1.5f * dp);
+			p.setColor(Glass.alpha(accent(), 0.55f));
+			c.drawCircle(b.exactCenterX(), b.exactCenterY(), rr - 0.75f * dp, p);
+			p.setStyle(Paint.Style.FILL);
 			float s = b.width() * (small ? 0.5f : 0.52f) / 24f;
 			c.save();
 			c.translate(b.exactCenterX() - 12 * s, b.exactCenterY() - 12 * s);
