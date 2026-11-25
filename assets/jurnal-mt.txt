@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.220 · 25.11.2026
+Verżjoni attwali: v.2.230 · 25.11.2026
 AĠĠORNAMENTI
 - Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ⚙︎ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
@@ -35,6 +35,7 @@ SKRIN EWLIENI
 - Aktar lokalitajiet: kull lokalità fil-lista għandha l-iskrin prinċipali tagħha; swajp lejn ix-xellug jew il-lemin fuq it-temp issa jgħaddi għal dik ta' wara, fl-ordni tal-lista.
 - Buttuna Lokalitajiet: il-buttuna tonda bl-ikona tad-djar (f'portrait fuq il-lemin tal-isem, f'landscape fuq il-faxxa ta' fuq, qabel ir-rokna tagħha) tiftaħ il-lista tal-lokalitajiet.
 - Buttuna “aġġornat”: jitpinġa fuq il-paġna, fuq il-lemin: vertikali taħt it-twissijiet (mingħajrhom taħt ir-ringiela tal-lokalitajiet), orizzontali taħt l-arloġġ. Waqt l-aġġornament il-vleġġa ddur, anki bħala ċirku żgħir; imbagħad il-ħin jidher 4 sekondi u jintewa f'⟳. Mess jaġġorna.
+- Buttuna “Terremot”: Tgħum fuq ix-xellug, fil-linja tal-buttuna “aġġornat”: biss f’jum b’terremot f’pajjiżek, jew wieħed minn pajjiż ieħor li x’aktarx inħass fil-lokalità tiegħek; tisparixxi fi tmiem il-jum. Turi isimha u titriegħed sakemm “aġġornat” juri l-ħin, imbagħad tibqa’ tonda. Tmissa tiftaħ ⚙︎ › Terremoti.
 - Buttuni t'isfel: isimhom jidher taħthom għal 3 sekondi meta jinfetaħ l-iskrin, imbagħad il-buttuni biss; iġbed il-kapsula 'l fuq biex terġa' tarahom. Il-buttuna mixgħula tidher magħfusa, b'ċirku.
 - Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ⚙︎ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Ismijiet tal-buttuni: buttuna tonda li tibqa' fuq l-iskrin meta tingħafas turi isimha f'bużżieqa żgħira għal madwar 1.5 sekondi.

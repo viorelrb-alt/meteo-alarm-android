@@ -219,6 +219,19 @@ public final class Theme {
 		return dim(d); // v2.218
 	}
 
+	/**
+	 * v2.230 (Viorel, audit): a share A of the ink over the page (the cards, edges and round
+	 * buttons of the windows). Grafit keeps its see-through grey; the other themes get the same
+	 * grey in the theme's hue, almost opaque, so the cards are coloured like the main screen's.
+	 */
+	public static int veil(boolean d, float a) {
+		int[] g = (d ? DARK : LIGHT)[0];
+		int p = pal < 0 || pal >= BTN_LIGHT.length ? 0 : pal;
+		if (p == 0) return (Math.round(a * 255) << 24) | (g[1] & 0xFFFFFF);
+		int c = hued(mix(g[0], g[1], a), p);
+		return 0xE6000000 | (c & 0xFFFFFF);
+	}
+
 	/** The text on a pastel button. */
 	public static int onPastel(boolean d) {
 		return onAcc(d);

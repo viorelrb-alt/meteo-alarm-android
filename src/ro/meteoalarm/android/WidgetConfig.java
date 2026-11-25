@@ -64,7 +64,7 @@ public final class WidgetConfig extends Activity {
 		// v5.04 (Viorel): the app's new look: its theme colours, glass cards with a thin edge.
 		ro.meteoalarm.android.core.Theme.pal = Fetcher.prefs(this).getInt("palette", 0);
 		page = ro.meteoalarm.android.core.Theme.page(dark);
-		card = mix(page, ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.07f : 0.05f);
+		card = ro.meteoalarm.android.core.Theme.pal == 0 ? mix(page, ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.07f : 0.05f) : ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.07f : 0.05f) | 0xFF000000; // v2.230: theme hue
 		edge = Glass.edge(dark);
 		ink = ro.meteoalarm.android.core.Theme.ink(dark);
 		dim = ro.meteoalarm.android.core.Theme.dim(dark);

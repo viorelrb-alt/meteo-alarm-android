@@ -1,4 +1,4 @@
-Současná verze: v.2.220 · 25.11.2026
+Současná verze: v.2.230 · 25.11.2026
 AKTUALIZACE
 - Pole Nová verze: krátké pole nahoře v ⚙︎, když existuje nová verze; klepnutí na něj spustí stahování.
 HLAVNÍ OBRAZOVKA
@@ -10,6 +10,7 @@ HLAVNÍ OBRAZOVKA
 - Spodní tlačítka: jejich názvy se při otevření obrazovky ukážou pod nimi na 3 sekundy, pak zůstanou jen tlačítka; vytáhni kapsli nahoru a uvidíš je znovu. Zapnuté tlačítko vypadá stisknuté, s kroužkem.
 - Tlačítko Obce: kulaté tlačítko s ikonou domků (na výšku vpravo od názvu, na šířku na horním pásu, před jeho rohem) otevře seznam obcí.
 - Tlačítko „aktualizováno“: plave nad stránkou vpravo: na výšku pod výstrahami (bez nich pod řadou obcí), na šířku pod hodinami. Při aktualizaci se jeho šipka točí, i jako malé kolečko; pak se na 4 sekundy ukáže čas a složí se do ⟳. Klepnutí aktualizuje.
+- Tlačítko „Zemětřesení“: Plove vlevo, na řádku tlačítka „aktualizováno“: jen v den se zemětřesením ve tvé zemi nebo s otřesem z jiné země, který byl ve tvé obci pravděpodobně cítit; na konci dne zmizí. Ukazuje svůj název a chvěje se, dokud „aktualizováno“ ukazuje čas, pak zůstane kulaté. Klepnutí otevře ⚙︎ › Zemětřesení.
 - Více obcí: každá obec ze seznamu má svou hlavní obrazovku; přejetí doleva nebo doprava po aktuálním počasí přejde na další, v pořadí seznamu.
 NASTAVENÍ
 - Export / Import: přepínače pro obsah souboru (také plodiny a údaje o pěstování, oznámení pozemků, koš pozemků, oznámení, mapa, widgety, historie zemětřesení, deník); při Exportu a Importu se obce a pozemky zaškrtávají jednotlivě; tlačítko Aa mění velikost textu.

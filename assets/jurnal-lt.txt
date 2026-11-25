@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.220 · 25.11.2026
+Dabartinė versija: v.2.230 · 25.11.2026
 ATNAUJINIMAI
 - Dėžutė Nauja versija: trumpa dėžutė ⚙︎ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI
@@ -17,6 +17,7 @@ PAGRINDINIS EKRANAS
 - Daugiau vietovių: kiekviena sąrašo vietovė turi savo pagrindinį ekraną; perbraukus kairėn ar dešinėn per dabartinius orus pereinama į kitą, sąrašo tvarka.
 - Mygtukas Vietovės: apvalus mygtukas su namų piktograma (stačiai – pavadinimo dešinėje, gulsčiai – viršutinėje juostoje prieš jos kampą) atidaro vietovių sąrašą.
 - Mygtukas „atnaujinta“: plūduriuoja virš puslapio dešinėje: stačiai po įspėjimais (be jų po vietovių eilute), gulsčiai po laikrodžiu. Atnaujinant rodyklė sukasi, ir kaip mažas apskritimas; tada 4 sekundes rodomas laikas ir jis susisuka į ⟳. Palietus atnaujina.
+- Mygtukas „Žemės drebėjimas“: Plūduriuoja kairėje, mygtuko „atnaujinta“ eilutėje: tik tą dieną, kai tavo šalyje buvo žemės drebėjimas arba kitos šalies drebėjimas tikriausiai buvo jaučiamas tavo vietovėje; dienos pabaigoje dingsta. Rodo savo pavadinimą ir dreba, kol „atnaujinta“ rodo laiką, paskui lieka apvalus. Bakstelėjimas atveria ⚙︎ › Žemės drebėjimai.
 - Mygtukų pavadinimai: apvalus mygtukas, kuris bakstelėjus lieka ekrane, apie 1,5 sekundės rodo savo pavadinimą mažame burbule.
 - Orų žemėlapis: pagrindinio ekrano pabaigoje (gulsčiai lape su langeliais): OpenStreetMap gatvių lygiu aplink tikslią ekrano vietovės vietą (pirmajai GPS) arba lauko ekrane laukas su kontūru; sluoksnis permatomas. Žemėlapis stovi vietoje; duomenys: Open-Meteo. Debesys, Temperatūros ir Lietus, po vieną; palietus įjungtą jis išjungiamas. Lietus pilkas ir perbrauktas, kai netoliese nelyja dabar ir per artimiausias 2 valandas. ▶ paeiliui rodo valandas (6 prieš ir 6 po dabar); palietus valandą ji parodoma.
 - Pagrindiniai ekranai: skirtukai po pavadinimu (gulsčiai apačioje): vietovė ir po vieną kiekvienam laukui; palietimas ar braukimas į šoną keičia ekraną, + atveria naujo lauko langelį. Kai netelpa visi, eilutė kas 3 sekundes pasislenka per vieną; pirštas ant jos trumpam ją sustabdo.

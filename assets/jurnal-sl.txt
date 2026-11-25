@@ -1,8 +1,9 @@
-Trenutna različica: v.2.220 · 25.11.2026
+Trenutna različica: v.2.230 · 25.11.2026
 GLAVNI ZASLON
 - Glavni zasloni: zavihki pod imenom (ležeče spodaj): kraj in po eden za vsako parcelo; dotik ali poteg vstran zamenja zaslon, + odpre okence nove parcele. Ko vsi ne gredo nanjo, se vrsta vsake 3 sekunde premakne za enega; prst na njej jo za nekaj časa ustavi.
 - Gumb Kraji: okrogel gumb z ikono hišic (pokončno desno od imena, ležeče na zgornjem traku, pred njegovim kotom) odpre seznam krajev.
 - Gumb »posodobljeno«: lebdi nad stranjo, desno: pokončno pod opozorili (brez njih pod vrsto krajev), ležeče pod uro. Med posodabljanjem se puščica vrti, tudi kot majhen krog; nato se 4 sekunde vidi čas in se zloži v ⟳. Dotik posodobi.
+- Gumb »Potres«: Lebdi levo, v vrstici gumba »posodobljeno«: samo na dan s potresom v tvoji državi ali s potresom iz druge države, ki so ga v tvojem kraju verjetno čutili; ob koncu dneva izgine. Kaže svoje ime in se trese, dokler »posodobljeno« kaže uro, nato ostane okrogel. Dotik odpre ⚙︎ › Potresi.
 - Imena gumbov: okrogel gumb, ki po dotiku ostane na zaslonu, pokaže svoje ime v majhnem oblačku za približno 1,5 sekunde.
 - Podatki o potresu: dotik polja Potres jih odpre na glavnem zaslonu: zemljevid, pod njim cone zaznavanja in zgodovina vrednosti; barvni kvadrat ali zemljevid jih odpre na celem zaslonu, kot potres iz ⚙︎ › Potresi. V Romuniji, Franciji, Italiji, na Nizozemskem, v Švici in Grčiji uradne vrednosti najprej prihajajo od državnega inštituta (INFP, BCSF, INGV, KNMI, SED, NOA), nato od EMSC. V Romuniji tudi potresi okoli države dobijo vrednost INFP (z infp.ro).
 - Spodnji gumbi: njihova imena se ob odprtju zaslona 3 sekunde pokažejo pod njimi, nato ostanejo le gumbi; povleci kapsulo navzgor, da jih spet vidiš. Vklopljeni gumb je videti pritisnjen, z obročem.

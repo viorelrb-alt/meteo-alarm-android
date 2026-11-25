@@ -1,4 +1,4 @@
-Leagan reatha: v.2.220 · 25.11.2026
+Leagan reatha: v.2.230 · 25.11.2026
 BAILTE
 - Cártaí na mbailte: ar thaibléad agus i dtírdhreach tá siad chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin; i bportráid ar fhón faigheann ainm rófhada litreacha níos lú; i dtírdhreach coinníonn an cuardach a mhéid portráide.
 - Cuardach ar an léarscáil: osclaíonn an ghloine formhéadúcháin an léarscáil leis an gcuardach thíos; taispeánann tapáil ar áit nó ar ainm baile a theocht, Sonraí (na laethanta romhainn) agus Cuir leis. Tá an léarscáil simplí agus geal, le hainmneacha na mbailte scríofa go mór (ar léarscáil na bpáirceanna freisin). Ní thaispeántar bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de).
@@ -26,6 +26,7 @@ PRÍOMHSCÁILEÁN
 - Ainmneacha cnaipí: taispeánann cnaipe cruinn a fhanann ar an scáileán nuair a thapáiltear é a ainm i mbolgán beag ar feadh thart ar 1.5 soicind.
 - Cnaipe na mBailte: osclaíonn an cnaipe cruinn le deilbhín na dtithe (i bportráid ar dheis an ainm, i dtírdhreach ar an mbanda uachtarach, roimh a chúinne) liosta na mbailte.
 - Cnaipe “nuashonraithe”: snámhann sé os cionn an leathanaigh, ar dheis: i bportráid faoi na rabhaidh (gan iad faoi shraith na mbailte), i dtírdhreach faoin gclog. Le linn an nuashonraithe casann a shaighead, mar chiorcal beag freisin; ansin taispeántar an t-am ar feadh 4 soicind agus fillann sé ina ⟳. Tapáil chun nuashonrú.
+- Cnaipe “Crith talún”: Snámhann sé ar chlé, ar líne an chnaipe “nuashonraithe”: ach amháin ar lá a raibh crith talún i do thír, nó ceann ó thír eile a mhothaigh do bhaile is dócha; imíonn sé ag deireadh an lae. Taispeánann sé a ainm agus croitheann sé fad a thaispeánann “nuashonraithe” an t-am, ansin fanann sé cruinn. Osclaíonn tapáil ⚙︎ › Creathanna talún.
 - Cnaipí íochtaracha: taispeántar a n-ainmneacha fúthu ar feadh 3 soicind nuair a osclaíonn an scáileán, ansin na cnaipí amháin; tarraing an capsúl suas chun iad a fheiceáil arís. Breathnaíonn an cnaipe atá ar siúl brúite, le fáinne.
 - Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ⚙︎ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
 - Gile: taispeánann sé barra na gile ar chlé; tugann tapáil ar ☀ ag a deireadh an ghile uathoibríoch ar ais (casann ☀ buí, deimhníonn fógra é).

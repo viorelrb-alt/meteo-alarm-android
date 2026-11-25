@@ -241,6 +241,7 @@ public final class Screen {
 		ch0 = ch;
 		updHead = false;
 		updFloat = false;
+		quakeArea[2] = 0;
 		updAnim = false;
 		hourHits.clear();
 		rainHits.clear();
@@ -1441,6 +1442,7 @@ public final class Screen {
 		// v2.190 (Viorel): "updated" floats under the glass (under the warnings, or under the towns' row), at the right.
 		updFloat = true;
 		floatUpdated(cw - 40, paneBot + 14 + 26);
+		quakeButton(40, paneBot + 14 + 26, cw / 2f - 60); // v2.230 (Viorel): left, on the same row
 		capsules(fb);
 		battery(fb, cw - 24, true);
 		footFb = fb;
@@ -1521,6 +1523,7 @@ public final class Screen {
 			// v2.200 (Viorel): "updated" floats under the clock, at the right.
 			updFloat = true;
 			floatUpdated(cw - 40, 100);
+			quakeButton(rx, 100, rw / 2f - 20); // v2.230 (Viorel): at the start of the right column, same row
 		}
 		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
 		footFb = fb;
@@ -5360,6 +5363,83 @@ public final class Screen {
 		updArea[0] = px; updArea[1] = py - 6; updArea[2] = pw; updArea[3] = ph + 12;
 	}
 
+	// --- v2.230 (Viorel): the "Earthquake" button --------------------------------------------------
+
+	/** The quakes of the last 24 h from other countries around the town (for the felt ones), or null. */
+	public List<Quakes.Quake> quakesFelt;
+	/** Where the button is (canvas units; W 0 when not shown) and until when it shows its name and moves. */
+	public final float[] quakeArea = { 0, 0, 0, 0 };
+	public long quakeOpenUntil;
+	private String quakeKey = "";
+
+	/** The newest quake of today (the town's day) in its country, or felt here from another one; null: none. */
+	public Quakes.Quake quakeToday() {
+		Calendar k = (Calendar) now.clone();
+		int y = k.get(Calendar.YEAR), d = k.get(Calendar.DAY_OF_YEAR);
+		Quakes.Quake best = null;
+		for (int pass = 0; pass < 2; pass++) {
+			List<Quakes.Quake> l = pass == 0 ? quakes : quakesFelt;
+			if (l == null) continue;
+			for (Quakes.Quake q : l) {
+				if (pass == 1 && q.felt < 2) continue;
+				k.setTimeInMillis(q.time);
+				if (k.get(Calendar.YEAR) != y || k.get(Calendar.DAY_OF_YEAR) != d) continue;
+				if (best == null || q.time > best.time) best = q;
+			}
+		}
+		return best;
+	}
+
+	/**
+	 * A floating button like "updated": its left edge at LEFT, its middle at MID, at most MAXW wide.
+	 * It shows only on a day with an earthquake in the country (or one felt here from elsewhere) and
+	 * goes at the day's end. For as long as "updated" shows its text, it shows "Earthquake" and its
+	 * line shakes; then only the round button. A tap opens the Earthquakes page.
+	 */
+	private void quakeButton(float left, float mid, float maxW) {
+		quakeArea[2] = 0;
+		Quakes.Quake q = quakeToday();
+		if (q == null) return;
+		long t = System.currentTimeMillis();
+		String key = q.id + q.time;
+		if (!key.equals(quakeKey)) {
+			// A new earthquake: the button opens and moves for a while, as "updated" does.
+			quakeKey = key;
+			quakeOpenUntil = Math.max(quakeOpenUntil, t + 4000);
+		}
+		boolean open = t < quakeOpenUntil || t < updOpenUntil;
+		float ph = 52, py = mid - ph / 2;
+		String name = Tr.t("Earthquake", "Cutremur");
+		float up = fit(true, 24, Math.max(60, maxW - 74), name), tw = g.width(true, up, name), pw = open ? tw + ph + 24 : ph;
+		g.roundRect(left, py + 3, pw, ph, ph / 2, alpha(Gfx.BLACK, dark ? 0.45f : 0.16f));
+		frost(roundRectPoly(left, py, pw, ph, ph / 2));
+		quakeMark(left + ph / 2, mid, 13, c.accent, open ? t : -1);
+		if (open) ltext(true, up, mid - up * 0.56f, left + ph + 4, name, c.ink);
+		quakeArea[0] = left - 10; quakeArea[1] = py - 10; quakeArea[2] = pw + 20; quakeArea[3] = ph + 20;
+		if (open) updAnim = true;
+	}
+
+	/** A seismograph's line in a circle at CX CY (half width R); NOW >= 0: it shakes, with a ring going out. */
+	private void quakeMark(float cx, float cy, float r, int col, long now) {
+		float a = 1;
+		if (now >= 0) {
+			float ph = (now % 1200) / 1200f;
+			g.arc(cx, cy, r + 4 + ph * 8, 0, 360, 2.2f, alpha(col, 0.5f * (1 - ph)));
+			a = 0.55f + 0.45f * (float) Math.abs(Math.sin(now / 90.0));
+		}
+		float[] xs = { -1f, -0.6f, -0.35f, -0.05f, 0.25f, 0.5f, 0.7f, 1f }, ys = { 0, 0, -0.75f, 0.85f, -0.55f, 0.3f, 0, 0 };
+		for (int k = 0; k + 1 < xs.length; k++)
+			seg(cx + xs[k] * r, cy + ys[k] * r * a, cx + xs[k + 1] * r, cy + ys[k + 1] * r * a, 2.6f, col);
+	}
+
+	/** A line from X1 Y1 to X2 Y2, W thick (round enough at this size). */
+	private void seg(float x1, float y1, float x2, float y2, float w, int col) {
+		float dx = x2 - x1, dy = y2 - y1, l = (float) Math.sqrt(dx * dx + dy * dy);
+		if (l == 0) return;
+		float nx = -dy / l * w / 2, ny = dx / l * w / 2;
+		g.poly(new float[] { x1 + nx, y1 + ny, x2 + nx, y2 + ny, x2 - nx, y2 - ny, x1 - nx, y1 - ny }, col);
+	}
+
 	/** v2.190: when the update ended (tick or "!" until then) and whether the button is animating now. */
 	public long updDoneUntil;
 	public boolean updAnim;
@@ -5500,6 +5580,7 @@ public final class Screen {
 			say(out, updArea, T.updated + " " + Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12)
 					+ ". " + Tr.t("Tap to refresh.", "Atinge pentru reîmprospătare."));
 		}
+		if (quakeArea[2] > 0) say(out, quakeArea, Tr.t("Earthquake today. Opens the Earthquakes page.", "Cutremur azi. Deschide pagina Cutremure."));
 		boolean page = !statsOn && !quakeOn;
 		if (page && alerts.area[2] > 0)
 			for (int k = 0; k < alertCount(); k++) {

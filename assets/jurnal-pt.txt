@@ -1,4 +1,4 @@
-Versão atual: v.2.220 · 25.11.2026
+Versão atual: v.2.230 · 25.11.2026
 ATUALIZAÇÕES
 - Caixa Nova versão: uma caixa curta no topo de ⚙︎ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
@@ -15,6 +15,7 @@ DEFINIÇÕES
 ECRÃ PRINCIPAL
 - Botão Localidades: o botão redondo com o ícone de casas (na vertical à direita do nome, na horizontal na faixa de cima, antes do seu canto) abre a lista de localidades.
 - Botão «atualizado»: flutua sobre a página, à direita: em retrato por baixo dos avisos (sem eles por baixo da linha das localidades), em paisagem por baixo do relógio. Durante a atualização a seta roda, também como pequeno círculo; depois a hora aparece 4 segundos e reduz-se a ⟳. Um toque atualiza.
+- Botão «Sismo»: Flutua à esquerda, na linha do botão «atualizado»: só no dia de um sismo no teu país, ou de um de outro país provavelmente sentido na tua localidade; desaparece no fim do dia. Mostra o nome e treme enquanto «atualizado» mostra a hora, depois fica redondo. Um toque abre ⚙︎ › Sismos.
 - Botões de baixo: os nomes aparecem por baixo durante 3 segundos ao abrir o ecrã, depois só os botões; puxe a cápsula para cima para os ver de novo. O botão ligado parece premido, com um anel.
 - Brilho: mostra a barra de brilho à esquerda; um toque em ☀ na sua ponta devolve ao ecrã o brilho automático (☀ fica amarelo, um aviso confirma).
 - Ecrãs principais: separadores sob o nome (na horizontal em baixo): a localidade e um por parcela; um toque ou um deslize lateral muda de ecrã, + abre a caixa de uma parcela nova. Quando não cabem todos, a fila avança um a cada 3 segundos; um dedo em cima para-a por um momento.

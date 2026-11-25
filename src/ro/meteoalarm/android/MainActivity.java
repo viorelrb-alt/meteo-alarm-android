@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.220";
+	static final String VERSION = "Meteo Alarm Android v2.230";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -632,7 +632,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		s.cropLine = "";
 		s.w = null;
 		s.warns = null;
-		s.quakes = null;
+		s.quakes = null; s.quakesFelt = null;
 		s.farm = null;
 		s.pollenLvl = -1;
 		s.pollenPlant = "";
@@ -719,6 +719,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			if (a != null) s.aqi = Weather.parseAqi(a, s.city.us());
 			s.warns = Fetcher.parcelWarnings(this, p.id, s.city);
 			s.quakes = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			s.quakesFelt = null;
 			s.farm = Parcels.data(this, p.id);
 			s.crop = p.crop();
 			s.cropLine = cropLine(p);
@@ -747,6 +748,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 			s.warns = Fetcher.parcelWarnings(this, id, s.city);
 			s.quakes = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
+			s.quakesFelt = null;
 			String fm = readCache(Fetcher.parcelFile(id, "farm.json"));
 			if (fm != null) s.farm = ro.meteoalarm.android.core.Farm.parse(fm);
 		} catch (Exception e) {
@@ -2162,7 +2164,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 							runOnUiThread(new Runnable() {
 								public void run() {
 									if (isFinishing() || s == null || town != s.city) return;
-									s.quakes = Fetcher.quakes(MainActivity.this, town);
+									s.quakes = Fetcher.quakes(MainActivity.this, town); s.quakesFelt = Fetcher.quakesFelt(MainActivity.this, town);
 									ro.meteoalarm.android.core.Quakes.Quake nq = s.mainQuake();
 									infpMiss = nq != null && nq.official ? null
 											: on + Tr.t(" has no value for it yet · try again", " nu are încă o valoare · încearcă din nou");
@@ -2272,7 +2274,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				runOnUiThread(new Runnable() {
 					public void run() {
 						if (isFinishing() || s == null || town != s.city) return;
-						s.quakes = Fetcher.quakes(MainActivity.this, town);
+						s.quakes = Fetcher.quakes(MainActivity.this, town); s.quakesFelt = Fetcher.quakesFelt(MainActivity.this, town);
 						refreshQuakeInfo();
 						view.invalidate();
 					}
@@ -2922,7 +2924,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				s.aqi = Weather.parseAqi(p, s.city.us());
 			}
 			s.warns = Fetcher.warnings(this, s.city);
-			s.quakes = Fetcher.quakes(this, s.city);
+			s.quakes = Fetcher.quakes(this, s.city); s.quakesFelt = Fetcher.quakesFelt(this, s.city);
 			s.farm = Fetcher.farm(this, s.city);
 			s.failReason = prefs.getString(Tr.t("failReasonEn", "failReason"), "");
 			s.source = prefs.getString("source", "");
@@ -3005,7 +3007,10 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		}
 		if (r.warn != null) s.warns = Fetcher.warnings(this, c);
-		if (r.quake != null || r.infp != null) s.quakes = Fetcher.quakes(this, c);
+		if (r.quake != null || r.infp != null) {
+			s.quakes = Fetcher.quakes(this, c);
+			s.quakesFelt = Fetcher.quakesFelt(this, c);
+		}
 		if (r.quake != null || r.infp != null) openQuakeIfWanted();
 		if (r.quake != null || r.infp != null) refreshQuakeInfo();
 		if (r.farm != null) {
@@ -3188,6 +3193,11 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			}
 		});
 		Dlg.show(d);
+	}
+
+	public void onQuakeBtn() {
+		Log.i(this, "CUTREMUR", "butonul Cutremur de pe ecranul principal");
+		quakesPage(false);
 	}
 
 	public void onRefresh() {
@@ -4756,6 +4766,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Casetele albastre INFORMARE, după avertizări: brumă, îngheț (primăvara și toamna), ceață, polei, vânt tare în următoarele 24 de ore. Calculate de aplicație din prognoză; nu sunt oficiale. Vin și ca notificare separată."));
 		help.entry(mini("quakebox"), Tr.t("Earthquake box", "Caseta Cutremur"), (us ? Tr.t("One box for each earthquake of the last 24 hours within 300 miles (USGS), the newest first.", "Câte o casetă pentru fiecare cutremur din ultimele 24 de ore, pe o rază de 300 de mile (USGS), cel mai nou primul.")
 				: Tr.t("One box for each earthquake of the last 24 hours in your country, the newest first, and how it was likely felt (EMSC and the country's institute).", "Câte o casetă pentru fiecare cutremur din ultimele 24 de ore din țara ta, cel mai nou primul, și cum s-a simțit probabil (EMSC și institutul țării).")) + " " + Tr.t("The stripe at the left has the colour of the map zone your town is in; brown outside the zones.", "Banda din stânga are culoarea zonei de pe hartă în care e localitatea ta; maro în afara zonelor."));
+		help.entry(mini("quake"), Tr.t("“Earthquake” button", "Butonul „Cutremur”"), Tr.t("Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.",
+				"Plutește în stânga, pe rândul butonului „actualizat”: doar în ziua cu un cutremur în țara ta sau unul din altă țară resimțit probabil în localitatea ta; dispare la sfârșitul zilei. Își arată numele și tremură cât timp „actualizat” arată ora, apoi rămâne rotund. Atingerea deschide ⚙︎ › Cutremure."));
 		help.entry(mini("quake"), Tr.t("Earthquake information", "Informații cutremur"), Tr.t("A tap on the Earthquake box opens its information in the main screen (portrait under Feels like, landscape at the left): the map, under it the felt zones and the value's history, then the details; ‹ closes it.",
 				"Atingerea casetei Cutremur deschide informațiile în ecranul principal (în portret sub Resimțit, în peisaj în stânga): harta, sub ea zonele resimțite și istoricul valorii, apoi detaliile; ‹ le închide.")
 				+ " " + Tr.t("The coloured square or the map opens it on the whole screen.", "Pătratul colorat sau harta le deschid pe tot ecranul.")
@@ -5490,7 +5502,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 			s.farm = null;
 			s.w = null;
 			s.warns = null;
-			s.quakes = null;
+			s.quakes = null; s.quakesFelt = null;
 			s.pollenLvl = -1;
 			s.aqi = -1;
 			s.fetched = 0;

@@ -1849,3 +1849,6 @@ Automatic brightness is on	O brilho automático está ligado
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Mostra a barra de brilho à esquerda; um toque em ☀ na sua ponta devolve ao ecrã o brilho automático (☀ fica amarelo, um aviso confirma).
 The app's theme	Tema da aplicação
 Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Mantém premido o widget › Definições, ou ⚙︎ › Widgets: localidade, fundo, cores (conforme o tempo, do telemóvel, tema da aplicação ou escuro).
+“Earthquake” button	Botão «Sismo»
+Earthquake today. Opens the Earthquakes page.	Sismo hoje. Abre a página Sismos.
+Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Flutua à esquerda, na linha do botão «atualizado»: só no dia de um sismo no teu país, ou de um de outro país provavelmente sentido na tua localidade; desaparece no fim do dia. Mostra o nome e treme enquanto «atualizado» mostra a hora, depois fica redondo. Um toque abre ⚙︎ › Sismos.

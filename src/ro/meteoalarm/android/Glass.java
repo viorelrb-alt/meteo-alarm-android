@@ -36,12 +36,12 @@ final class Glass {
 
 	/** A card inside a window. */
 	static int card(boolean dark) {
-		return alpha(Theme.ink(dark), dark ? 0.07f : 0.05f);
+		return Theme.veil(dark, dark ? 0.07f : 0.05f); // v2.230: in the theme's hue
 	}
 
 	/** The thin edge of the windows and their cards. */
 	static int edge(boolean dark) {
-		return alpha(Theme.ink(dark), dark ? 0.14f : 0.12f);
+		return Theme.veil(dark, dark ? 0.14f : 0.12f);
 	}
 
 	/** The darkening over the blurred screen. */
@@ -51,7 +51,7 @@ final class Glass {
 
 	/** The round buttons (X, Aa): a faint disc. */
 	static int disc(boolean dark) {
-		return alpha(Theme.ink(dark), dark ? 0.12f : 0.08f);
+		return Theme.veil(dark, dark ? 0.12f : 0.08f);
 	}
 
 	/** A rounded glass card as a background (radius R px). */
@@ -207,7 +207,7 @@ final class Glass {
 		c.drawRoundRect(r, rad, rad, p);
 		p.setStyle(Paint.Style.STROKE);
 		p.setStrokeWidth(Math.max(1, dp));
-		p.setColor(alpha(Theme.ink(dark), dark ? 0.22f : 0.16f));
+		p.setColor(Theme.veil(dark, dark ? 0.22f : 0.16f));
 		c.drawRoundRect(r, rad, rad, p);
 	}
 

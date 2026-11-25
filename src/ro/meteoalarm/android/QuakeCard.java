@@ -440,7 +440,7 @@ final class QuakeCard {
 		sheet.setClickable(true);
 		// The same handle as the ⚙︎ menu's Sistem & Suport bar.
 		View grip = new View(ctx);
-		grip.setBackground(Glass.pill(Glass.alpha(ink, 0.3f), 0, 3 * dp, dp));
+		grip.setBackground(Glass.pill(Theme.veil(dark, 0.3f), 0, 3 * dp, dp));
 		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(Math.round(40 * dp), Math.round(5 * dp));
 		gl.gravity = Gravity.CENTER_HORIZONTAL;
 		gl.topMargin = Math.round(2 * dp);
@@ -767,7 +767,7 @@ final class QuakeCard {
 		k.setIncludeFontPadding(false);
 		k.setPadding((int) (2 * dp), 0, (int) (4 * dp), (int) (4 * dp));
 		// v2.115 (Viorel): nearly opaque, so it shows over the map.
-		k.setBackground(Glass.pill(disc(dark), Glass.alpha(Theme.ink(dark), 0.22f), size * dp, dp));
+		k.setBackground(Glass.pill(disc(dark), Theme.veil(dark, 0.22f), size * dp, dp));
 		k.setContentDescription(ro.meteoalarm.android.core.Tr.t("Back", "Înapoi"));
 		k.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {

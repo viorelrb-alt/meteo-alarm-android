@@ -1849,3 +1849,6 @@ Automatic brightness is on	Automatický jas je zapnutý
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Ukáže lištu jasu vlevo; klepnutí na ☀ na jejím konci vrátí obrazovce automatický jas (☀ zežloutne, zpráva to potvrdí).
 The app's theme	Motiv aplikace
 Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Podrž widget › Nastavení, nebo ⚙︎ › Widgety: obec, pozadí, barvy (podle počasí, telefonu, motiv aplikace nebo tmavé).
+“Earthquake” button	Tlačítko „Zemětřesení“
+Earthquake today. Opens the Earthquakes page.	Dnes zemětřesení. Otevře stránku Zemětřesení.
+Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Plove vlevo, na řádku tlačítka „aktualizováno“: jen v den se zemětřesením ve tvé zemi nebo s otřesem z jiné země, který byl ve tvé obci pravděpodobně cítit; na konci dne zmizí. Ukazuje svůj název a chvěje se, dokud „aktualizováno“ ukazuje čas, pak zůstane kulaté. Klepnutí otevře ⚙︎ › Zemětřesení.

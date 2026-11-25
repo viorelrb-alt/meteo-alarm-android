@@ -276,12 +276,13 @@ public class Widget extends AppWidgetProvider {
 	 * orange orange; red = red red red; two codes = the worse one, gray, the other; three = red orange yellow.
 	 */
 	static int[] pills(int[] levels) {
-		int[] col = { GRAY, YELLOW, ORANGE, RED };
+		final int G = ro.meteoalarm.android.core.Theme.hued(GRAY, ro.meteoalarm.android.core.Theme.pal); // v2.230: the theme's hue
+		int[] col = { G, YELLOW, ORANGE, RED };
 		if (levels.length == 1) {
 			int l = levels[0];
-			return l == 1 ? new int[] { GRAY, GRAY, YELLOW } : l == 2 ? new int[] { GRAY, ORANGE, ORANGE } : new int[] { RED, RED, RED };
+			return l == 1 ? new int[] { G, G, YELLOW } : l == 2 ? new int[] { G, ORANGE, ORANGE } : new int[] { RED, RED, RED };
 		}
-		if (levels.length == 2) return new int[] { col[levels[0]], GRAY, col[levels[1]] };
+		if (levels.length == 2) return new int[] { col[levels[0]], G, col[levels[1]] };
 		return new int[] { RED, ORANGE, YELLOW };
 	}
 

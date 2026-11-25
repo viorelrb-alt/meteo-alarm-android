@@ -1,10 +1,11 @@
-Versiunea curentă: v.2.220 · 25.11.2026
+Versiunea curentă: v.2.230 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ⚙︎ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
 - Butoanele de jos: numele lor apar dedesubt 3 secunde la deschiderea ecranului, apoi rămân doar butoanele; tragi capsula în sus ca să le vezi din nou. Butonul pornit pare apăsat, cu un inel.
 - Butonul Localități: butonul rotund cu iconul cu case (în portret în dreapta numelui, în peisaj pe banda de sus, înainte de colț) deschide lista localităților.
 - Butonul „actualizat”: plutește peste pagină, la dreapta: în portret sub avertizări (fără ele sub rândul localităților), în peisaj sub ceas. În timpul actualizării săgeata se rotește, și când e doar un cerc; apoi ora apare 4 secunde și se strânge în ⟳. Atingerea actualizează.
+- Butonul „Cutremur”: Plutește în stânga, pe rândul butonului „actualizat”: doar în ziua cu un cutremur în țara ta sau unul din altă țară resimțit probabil în localitatea ta; dispare la sfârșitul zilei. Își arată numele și tremură cât timp „actualizat” arată ora, apoi rămâne rotund. Atingerea deschide ⚙︎ › Cutremure.
 - Ecrane principale: tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + deschide caseta unei parcele noi. Când nu încap toate, rândul trece singur la următorul la 3 secunde; un deget pe el îl oprește puțin.
 - Hartă meteo: la sfârșitul ecranului principal (în peisaj pe foaia cu casetele): OpenStreetMap la nivel de stradă, pe locul exact al localității ecranului (GPS pentru prima) sau, pe ecranul unei parcele, parcela cu conturul ei; stratul transparent. Harta stă pe loc; date: Open-Meteo. Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată.
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ⚙︎ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).

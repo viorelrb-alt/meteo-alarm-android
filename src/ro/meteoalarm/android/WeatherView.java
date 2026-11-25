@@ -20,6 +20,9 @@ final class WeatherView extends View {
 
 		void onRefresh();
 
+		/** v2.230: the "Earthquake" button: the Earthquakes page. */
+		void onQuakeBtn();
+
 		/** The town picker, opened from the button at B (canvas units). */
 		void onCity(float[] b);
 
@@ -1181,6 +1184,11 @@ final class WeatherView extends View {
 			}
 			return true;
 		}
+		// v2.230: so does the "Earthquake" button.
+		if (screen.quakeArea[2] > 0 && in(screen.quakeArea, x, y)) {
+			taps.onQuakeBtn();
+			return true;
+		}
 		// v2.190: the floating "updated" button lies over the page: it comes first.
 		if (screen.updFloat && screen.updArea[2] > 0 && in(screen.updArea, x, y)) {
 			taps.onRefresh();
@@ -1262,6 +1270,7 @@ final class WeatherView extends View {
 		else if (screen.btnStats[2] > 0 && in(screen.btnStats, x, y) && (screen.tablet || onPage)) taps.onStats();
 		else if (in(screen.cityArea, x, y)) taps.onTownName();
 		else if (screen.updArea[2] > 0 && in(screen.updArea, x, y)) taps.onRefresh(); // v5.00: the "updated" pill
+		else if (screen.quakeArea[2] > 0 && in(screen.quakeArea, x, y)) taps.onQuakeBtn();
 		return true;
 	}
 

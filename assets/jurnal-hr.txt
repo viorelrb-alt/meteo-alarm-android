@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.220 · 25.11.2026
+Trenutačna verzija: v.2.230 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ⚙︎ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
@@ -6,6 +6,7 @@ GLAVNI ZASLON
 - Glavni zasloni: kartice ispod naziva (položeno dolje): mjesto i jedna po parceli; dodir ili povlačenje u stranu mijenja zaslon, + otvara okvir nove parcele. Kad ne stanu svi, red se svake 3 sekunde pomakne za jedan; prst na njemu ga nakratko zaustavi.
 - Gumb Mjesta: okrugli gumb s ikonom kućica (uspravno desno od naziva, položeno na gornjoj traci, prije njezina kuta) otvara popis mjesta.
 - Gumb „ažurirano”: lebdi iznad stranice, desno: uspravno ispod upozorenja (bez njih ispod reda mjesta), položeno ispod sata. Tijekom ažuriranja strelica se vrti, i kao mali krug; zatim se 4 sekunde vidi vrijeme i sklopi se u ⟳. Dodir ažurira.
+- Gumb „Potres”: Lebdi lijevo, u retku gumba „ažurirano”: samo na dan s potresom u tvojoj zemlji ili s potresom iz druge zemlje koji se vjerojatno osjetio u tvom mjestu; nestaje na kraju dana. Prikazuje svoj naziv i podrhtava dok „ažurirano” prikazuje vrijeme, zatim ostaje okrugao. Dodir otvara ⚙︎ › Potresi.
 - Nazivi gumba: okrugli gumb koji ostaje na zaslonu nakon dodira prikazuje svoj naziv u malom oblačiću oko 1,5 sekunde.
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ⚙︎ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 - Svjetlina: pokazuje traku svjetline lijevo; dodir na ☀ na njezinu kraju vraća zaslonu automatsku svjetlinu (☀ postaje žut, poruka to potvrđuje).

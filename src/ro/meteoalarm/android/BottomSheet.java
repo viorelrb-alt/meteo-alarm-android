@@ -260,7 +260,7 @@ final class BottomSheet extends FrameLayout implements Glass.Local {
 		bg = Glass.disc(dark);
 		// v5.24 (Viorel): the window itself is frosted glass; the screen behind it stays sharp.
 		sheet.setBackground(Glass.frostBg(sheet, 26 * dp, dark, dp, true));
-		sheet.findViewWithTag("handle").setBackground(shape(Glass.alpha(ro.meteoalarm.android.core.Theme.ink(dark), 0.3f), 0, 2 * dp, dp, false));
+		sheet.findViewWithTag("handle").setBackground(shape(ro.meteoalarm.android.core.Theme.veil(dark, 0.3f), 0, 2 * dp, dp, false));
 		title.setTextColor(ink);
 		closeX.setBackground(Glass.closeIcon(dark, dp));
 		text.setTextColor(ro.meteoalarm.android.core.Theme.dim(dark)); // v2.220: the theme's colour

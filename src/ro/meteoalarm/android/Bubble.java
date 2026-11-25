@@ -775,9 +775,9 @@ final class Bubble extends FrameLayout implements Glass.Local {
 			tp.setColor(ink);
 			hp.setColor(ink);
 			Paint band = new Paint();
-			band.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.10f : 0.07f));
+			band.setColor(ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.10f : 0.07f));
 			c.drawRect(0, 0, getWidth(), rowH, band);
-			lp.setColor(Glass.alpha(ro.meteoalarm.android.core.Theme.ink(dark), dark ? 0.22f : 0.2f));
+			lp.setColor(ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.22f : 0.2f));
 			float x = sw / 2;
 			for (int j = 0; j <= colW.length; j++) {
 				c.drawLine(x, 0, x, h + sw / 2, lp);

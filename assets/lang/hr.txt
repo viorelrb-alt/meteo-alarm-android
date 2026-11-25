@@ -1849,3 +1849,6 @@ Automatic brightness is on	Automatska svjetlina je uključena
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Pokazuje traku svjetline lijevo; dodir na ☀ na njezinu kraju vraća zaslonu automatsku svjetlinu (☀ postaje žut, poruka to potvrđuje).
 The app's theme	Tema aplikacije
 Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Drži widget › Postavke, ili ⚙︎ › Widgeti: mjesto, pozadina, boje (prema vremenu, telefona, tema aplikacije ili tamne).
+“Earthquake” button	Gumb „Potres”
+Earthquake today. Opens the Earthquakes page.	Danas potres. Otvara stranicu Potresi.
+Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Lebdi lijevo, u retku gumba „ažurirano”: samo na dan s potresom u tvojoj zemlji ili s potresom iz druge zemlje koji se vjerojatno osjetio u tvom mjestu; nestaje na kraju dana. Prikazuje svoj naziv i podrhtava dok „ažurirano” prikazuje vrijeme, zatim ostaje okrugao. Dodir otvara ⚙︎ › Potresi.

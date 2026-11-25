@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.220 · 25.11.2026
+Aktuelle Version: v.2.230 · 25.11.2026
 AKTUALISIERUNGEN
 - Feld Neue Version: oben im ⚙︎ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
@@ -24,6 +24,7 @@ HAUPTBILDSCHIRM
 - Namen der Tasten: Eine runde Taste, die nach dem Antippen auf dem Bildschirm bleibt, zeigt ihren Namen etwa 1,5 Sekunden in einer kleinen Blase.
 - Taste Orte: Die runde Taste mit dem Häuser-Symbol (hochkant rechts vom Namen, quer auf dem oberen Band, vor seiner Ecke) öffnet die Liste der Orte.
 - Taste „aktualisiert“: Schwebt rechts über der Seite: im Hochformat unter den Warnungen (ohne sie unter der Ortszeile), im Querformat unter der Uhr. Beim Aktualisieren dreht sich der Pfeil, auch als kleiner Kreis; dann erscheint 4 Sekunden die Uhrzeit und sie wird zu ⟳. Antippen aktualisiert.
+- Taste „Erdbeben“: Schwebt links, in der Zeile der Taste „aktualisiert“: nur an einem Tag mit einem Erdbeben in deinem Land oder einem aus einem anderen Land, das in deinem Ort wahrscheinlich zu spüren war; sie verschwindet am Ende des Tages. Sie zeigt ihren Namen und zittert, solange „aktualisiert“ die Uhrzeit zeigt, dann bleibt sie rund. Ein Tippen öffnet ⚙︎ › Erdbeben.
 - Untere Tasten: Ihre Namen erscheinen beim Öffnen des Bildschirms 3 Sekunden darunter, dann nur die Tasten; zieh die Kapsel nach oben, um sie wieder zu sehen. Die eingeschaltete Taste wirkt gedrückt, mit einem Ring.
 - Wetterkarte: Am Ende des Hauptbildschirms (im Querformat auf dem Blatt mit den Kästen): OpenStreetMap auf Straßenebene am genauen Ort des Ortes dieses Bildschirms (GPS für den ersten) oder, auf dem Bildschirm einer Parzelle, die Parzelle mit ihrem Umriss; die Ebene durchscheinend. Die Karte bleibt fest; Daten: Open-Meteo. Wolken, Temperaturen und Regen, jeweils eine; Antippen der eingeschalteten schaltet sie aus. Regen ist grau und durchgestrichen, wenn es jetzt und in den nächsten 2 Stunden in der Nähe nicht regnet. ▶ spielt die Stunden (6 vor und 6 nach jetzt) nacheinander ab; Antippen einer Stunde zeigt sie.
 ORTE

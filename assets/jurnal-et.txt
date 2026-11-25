@@ -1,4 +1,4 @@
-Praegune versioon: v.2.220 · 25.11.2026
+Praegune versioon: v.2.230 · 25.11.2026
 ASULAD
 - Asulakaardid: tahvelarvutis ja rõhtpaigutuses on need oma teksti laiused ning seisavad ridades ja veergudes; püstpaigutuses telefonis saab liiga pikk nimi väiksemad tähed; rõhtpaigutuses säilitab otsing püstpaigutuse suuruse.
 - Asulate loend: nupp Asulad avab loendi teema värvis; Vali kustutab ühe või mitu (viimane jääb), ning märk ⌃⌄ all hoituna ja üles või alla lohistatuna muudab järjekorda; iga asula säilitab salvestatud ilma.
@@ -11,6 +11,7 @@ PÕHIEKRAAN
 - Mitu asulat: igal loendi asulal on oma põhiekraan; pühkimine vasakule või paremale praegusel ilmal viib järgmisele, loendi järjekorras.
 - Nupp Asulad: ümmargune majaikooniga nupp (püstpaigutuses nimest paremal, rõhtpaigutuses ülemisel ribal enne selle nurka) avab asulate loendi.
 - Nupp „uuendatud”: hõljub lehe kohal paremal: püstpaigutuses hoiatuste all (ilma nendeta asulate rea all), rõhtpaigutuses kella all. Uuendamise ajal nool pöörleb, ka väikese ringina; siis näidatakse 4 sekundit aega ja see voldib end ⟳-ks. Puudutus uuendab.
+- Nupp „Maavärin”: Hõljub vasakul, nupu „uuendatud” real: ainult päeval, mil sinu riigis oli maavärin või teisest riigist pärit maavärin oli sinu asulas tõenäoliselt tuntav; päeva lõpus kaob. See näitab oma nime ja väriseb seni, kuni „uuendatud” näitab kellaaega, siis jääb ümmarguseks. Puudutus avab ⚙︎ › Maavärinad.
 - Nuppude nimed: ümmargune nupp, mis jääb puudutamisel ekraanile, näitab oma nime väikeses mullis umbes 1,5 sekundit.
 - Põhiekraanid: sakid nime all (rõhtsas all): asula ja üks iga põllu kohta; puudutus või külgsuunas libistus vahetab ekraani, + avab uue põllu kasti. Kui kõik ei mahu, liigub rida iga 3 sekundi järel ühe võrra; sõrm selle peal peatab selle mõneks ajaks.
 PÕLLULAPID

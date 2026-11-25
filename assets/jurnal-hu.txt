@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.220 · 25.11.2026
+Jelenlegi verzió: v.2.230 · 25.11.2026
 BEÁLLÍTÁSOK
 - A Beállítások ablak: a ⚙︎ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
 - Útmutató: a Riasztások kártyán: rövid útmutató arról, mit mutat a képernyők egyes része. Hamarosan (egyelőre szürke).
@@ -26,6 +26,7 @@ FŐKÉPERNYŐ
 - Települések gomb: a házas ikonú kerek gomb (állóban a név jobb oldalán, fekvőben a felső sávon, a sarka előtt) megnyitja a települések listáját.
 - Több település: a lista minden településének saját főképernyője van; balra vagy jobbra lapozva a mostani időjáráson a következőre lépsz, a lista sorrendjében.
 - „Frissítve” gomb: az oldal fölött lebeg, jobbra: állóban a figyelmeztetések alatt (nélkülük a települések sora alatt), fekvőben az óra alatt. Frissítés közben a nyila forog, kis körként is; aztán 4 másodpercig az idő látszik, majd ⟳-vé csukódik. Koppintás frissít.
+- „Földrengés” gomb: Bal oldalon lebeg, a „Frissítve” gomb sorában: csak azon a napon, amikor földrengés volt az országodban, vagy egy másik ország rengését valószínűleg érezni lehetett a településeden; a nap végén eltűnik. Mutatja a nevét és remeg, amíg a „Frissítve” az időt mutatja, aztán kerek marad. Egy érintés megnyitja: ⚙︎ › Földrengések.
 FRISSÍTÉSEK
 - Új verzió doboz: rövid doboz a ⚙︎ tetején, ha van új verzió; koppintásra indul a letöltés.
 PARCELLÁK

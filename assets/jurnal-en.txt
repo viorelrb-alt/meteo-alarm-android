@@ -1,4 +1,4 @@
-Current version: v.2.220 · 25.11.2026
+Current version: v.2.230 · 25.11.2026
 MAIN SCREEN
 - Bottom buttons: their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.
 - Brightness: shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).
@@ -9,6 +9,7 @@ MAIN SCREEN
 - Towns button: the round button with the houses icon (in portrait at the right of the name, in landscape on the top band, before its corner) opens the list of towns.
 - Weather map: at the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place of the screen's town (GPS for the first one) or, on a parcel's screen, the parcel with its outline; the layer see-through. The map stays still; data: Open-Meteo. Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.
 - “Updated” button: floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape under the clock. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.
+- “Earthquake” button: Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.
 NOTIFICATIONS
 - Channels of their own: weather warnings, rain and snow, earthquakes, parcels and updates each have their own channel in the phone's settings; you can turn one off and keep the others.
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.

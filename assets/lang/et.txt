@@ -1849,3 +1849,6 @@ Automatic brightness is on	Automaatne heledus on sees
 Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Näitab heleduse riba vasakul; puudutus ☀-le selle otsas annab ekraanile tagasi automaatse heleduse (☀ muutub kollaseks, teade kinnitab seda).
 The app's theme	Rakenduse teema
 Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (by the weather, the phone's, the app's theme or dark).	Hoia vidinat › Seaded, või ⚙︎ › Vidinad: asula, taust, värvid (ilma järgi, telefoni, rakenduse teema või tume).
+“Earthquake” button	Nupp „Maavärin”
+Earthquake today. Opens the Earthquakes page.	Täna maavärin. Avab lehe Maavärinad.
+Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Hõljub vasakul, nupu „uuendatud” real: ainult päeval, mil sinu riigis oli maavärin või teisest riigist pärit maavärin oli sinu asulas tõenäoliselt tuntav; päeva lõpus kaob. See näitab oma nime ja väriseb seni, kuni „uuendatud” näitab kellaaega, siis jääb ümmarguseks. Puudutus avab ⚙︎ › Maavärinad.

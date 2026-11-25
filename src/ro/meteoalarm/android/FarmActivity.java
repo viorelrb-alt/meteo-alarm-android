@@ -231,7 +231,7 @@ public final class FarmActivity extends Activity {
 	/** v5.00 (Viorel, "Opțiunea 3"): glass cards and pill buttons, a faint edge (no ink outline). */
 	private GradientDrawable frame(int fill, float radius) {
 		GradientDrawable g = new GradientDrawable();
-		g.setColor(fill == btn ? Glass.alpha(ink, dark ? 0.12f : 0.08f) : fill == card ? Glass.alpha(ink, dark ? 0.07f : 0.05f) : fill);
+		g.setColor(fill == btn ? ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.12f : 0.08f) : fill == card ? ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.07f : 0.05f) : fill);
 		g.setStroke(Math.max(1, px(1)), Glass.edge(dark));
 		g.setCornerRadius(px(radius * 1.8f));
 		return g;
@@ -552,7 +552,7 @@ public final class FarmActivity extends Activity {
 			android.graphics.RectF all = new android.graphics.RectF(st / 2, st / 2, w - st / 2, h - st / 2);
 			// v5.00 (Viorel): a glass card, the title a grey label (the summary's tinted with the accent).
 			fp.setStyle(Paint.Style.FILL);
-			fp.setColor(b.sum ? Glass.alpha(accent, dark ? 0.18f : 0.12f) : Glass.alpha(ink, dark ? 0.07f : 0.05f));
+			fp.setColor(b.sum ? Glass.alpha(accent, dark ? 0.18f : 0.12f) : ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.07f : 0.05f));
 			c.drawRoundRect(all, r, r, fp);
 			fp.setStyle(Paint.Style.STROKE);
 			fp.setStrokeWidth(st);
@@ -802,13 +802,13 @@ public final class FarmActivity extends Activity {
 		LinearLayout t = column();
 		GradientDrawable outer = new GradientDrawable();
 		outer.setStroke(thin, Glass.edge(dark));
-		outer.setColor(Glass.alpha(ink, dark ? 0.05f : 0.03f));
+		outer.setColor(ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.05f : 0.03f));
 		t.setBackground(outer);
 		t.setPadding(thin, thin, thin, thin);
 		for (int r = -1; r < rows.size(); r++) {
 			String[] v = r < 0 ? head : rows.get(r);
 			LinearLayout row = new LinearLayout(this);
-			if (r < 0) row.setBackgroundColor(Glass.alpha(ink, dark ? 0.10f : 0.07f));
+			if (r < 0) row.setBackgroundColor(ro.meteoalarm.android.core.Theme.veil(dark, dark ? 0.10f : 0.07f));
 			for (int k = 0; k < nc; k++) {
 				TextView c = text(v[k], sp, r < 0, ink);
 				c.setSingleLine(true);

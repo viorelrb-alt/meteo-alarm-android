@@ -1,10 +1,11 @@
-Huidige versie: v.2.220 · 25.11.2026
+Huidige versie: v.2.230 · 25.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ⚙︎ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 - Helderheid: toont de helderheidsbalk links; een tik op ☀ aan het eind geeft het scherm de automatische helderheid terug (☀ wordt geel, een melding bevestigt het).
 - Hoofdschermen: tabbladen onder de naam (liggend onderaan): de plaats en één per perceel; een tik of een veeg opzij wisselt het scherm, + opent het vak van een nieuw perceel. Als ze niet allemaal passen, schuift de rij elke 3 seconden één op; een vinger erop stopt haar even.
 - Knop Plaatsen: de ronde knop met het huisjespictogram (staand rechts van de naam, liggend op de bovenste band, vóór de hoek) opent de lijst met plaatsen.
 - Knop „bijgewerkt”: zweeft rechts boven de pagina: staand onder de waarschuwingen (zonder waarschuwingen onder de rij met plaatsen), liggend onder de klok. Tijdens het bijwerken draait de pijl, ook als kleine cirkel; daarna staat de tijd 4 seconden en wordt hij ⟳. Een tik werkt bij.
+- Knop „Aardbeving”: Zweeft links, op de rij van de knop „bijgewerkt”: alleen op een dag met een aardbeving in je land, of een uit een ander land die in je plaats waarschijnlijk gevoeld werd; hij verdwijnt aan het eind van de dag. Hij toont zijn naam en trilt zolang „bijgewerkt” de tijd toont, daarna blijft hij rond. Een tik opent ⚙︎ › Aardbevingen.
 - Meer plaatsen: elke plaats in de lijst heeft een eigen hoofdscherm; links of rechts vegen over het weer nu gaat naar de volgende, in de volgorde van de lijst.
 - Namen van de knoppen: een ronde knop die na een tik op het scherm blijft, toont zijn naam ongeveer 1,5 seconde in een kleine ballon.
 - Onderste knoppen: hun namen staan bij het openen van het scherm 3 seconden eronder, daarna alleen de knoppen; trek de capsule omhoog om ze weer te zien. De knop die aan staat lijkt ingedrukt, met een ring.

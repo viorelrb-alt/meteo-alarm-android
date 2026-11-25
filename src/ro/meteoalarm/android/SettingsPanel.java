@@ -705,7 +705,7 @@ final class SettingsPanel extends FrameLayout {
 		@Override
 		protected void onDraw(Canvas c) {
 			float w = getWidth(), h = getHeight();
-			p.setColor(on ? Theme.pastel(dark) : Glass.alpha(Theme.ink(dark), dark ? 0.2f : 0.16f)); // v2.214: as the chosen buttons
+			p.setColor(on ? Theme.pastel(dark) : Theme.veil(dark, dark ? 0.2f : 0.16f)); // v2.214: as the chosen buttons
 			c.drawRoundRect(new RectF(0, 0, w, h), h / 2, h / 2, p);
 			p.setColor(dark ? Theme.page(true) : 0xFFFFFFFF);
 			float r = h / 2 - 3.5f * dp;
@@ -1177,7 +1177,7 @@ final class SettingsPanel extends FrameLayout {
 		footTitle.setPadding(px(14), 0, 0, px(2));
 		// A small handle: pull the bar up for the names, down for only the icons.
 		grab = new View(getContext());
-		grab.setBackground(Glass.pill(Glass.alpha(ink(), 0.3f), 0, 3 * dp, dp));
+		grab.setBackground(Glass.pill(Theme.veil(dark, 0.3f), 0, 3 * dp, dp));
 		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(px(40), px(5));
 		gl.gravity = Gravity.CENTER_HORIZONTAL;
 		gl.topMargin = px(2);
@@ -1310,7 +1310,7 @@ final class SettingsPanel extends FrameLayout {
 				return true;
 			}
 		};
-		fgrip.setBackground(Glass.pill(Glass.alpha(ink(), 0.35f), 0, 3 * dp, dp));
+		fgrip.setBackground(Glass.pill(Theme.veil(dark, 0.35f), 0, 3 * dp, dp));
 		fgrip.setContentDescription(footTitle.getText());
 		LinearLayout.LayoutParams gl = new LinearLayout.LayoutParams(px(6), px(30));
 		gl.leftMargin = px(8);
@@ -1371,7 +1371,7 @@ final class SettingsPanel extends FrameLayout {
 				@Override
 				public void draw(Canvas c) {
 					android.graphics.Rect b = getBounds();
-					gp.setColor(Glass.alpha(ink(), 0.35f));
+					gp.setColor(Theme.veil(dark, 0.35f));
 					float cx = b.exactCenterX();
 					c.drawRoundRect(new RectF(cx - 2.5f * dp, b.top + px(20), cx + 2.5f * dp, b.bottom - px(20)), 3 * dp, 3 * dp, gp);
 				}

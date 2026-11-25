@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.220 · 25.11.2026
+Nykyinen versio: v.2.230 · 25.11.2026
 ASETUKSET
 - Asetukset-ikkuna: ⚙︎ avaa asetukset osioina; kytkin kytkee toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla ulkopuolelle. Vaakatasossa se avautuu vasemmalle 2 sarakkeeseen, otsikko yhdellä rivillä: vedä oikean reunan palkkia vasemmalle yhteen sarakkeeseen, oikealle kahteen; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä & Tuki näyttää nimet 3 sekuntia, sitten vain painikkeet; puhelimessa vaakatasossa se on kelluva laatikko alhaalla, joka taittuu ⋯:ksi (kahva leventää sitä), tabletissa yksi rivi.
 - Opas: hälytykset-kortissa: lyhyt opas siitä, mitä kukin ruutujen osa näyttää. Tulossa (toistaiseksi harmaa).
@@ -24,6 +24,7 @@ PÄÄNÄYTTÖ
 - Sääkartta: pääruudun lopussa (vaakatasossa laatikoiden arkilla): OpenStreetMap katutasolla ruudun paikkakunnan tarkan paikan ympärillä (ensimmäiselle GPS) tai lohkon ruudulla lohko ääriviivoineen; taso läpikuultava. Kartta pysyy paikallaan; tiedot: Open-Meteo. Pilvet, Lämpötilat ja Sade, yksi kerrallaan; napautus päällä olevaan sammuttaa sen. Sade on harmaa ja yliviivattu, kun lähellä ei sada nyt eikä seuraavien 2 tunnin aikana. ▶ toistaa tunnit (6 ennen ja 6 jälkeen nykyhetken) yksi kerrallaan; tunnin napautus näyttää sen.
 - Useampi paikkakunta: jokaisella luettelon paikkakunnalla on oma päänäkymänsä; pyyhkäisy vasemmalle tai oikealle nykyisen sään päällä siirtyy seuraavaan luettelon järjestyksessä.
 - ”Päivitetty”-painike: kelluu sivun päällä oikealla: pystyssä varoitusten alla (ilman niitä paikkakuntarivin alla), vaakatasossa kellon alla. Päivityksen aikana sen nuoli pyörii, myös pienenä ympyränä; sitten aika näkyy 4 sekuntia ja se taittuu ⟳:ksi. Napautus päivittää.
+- ”Maanjäristys”-painike: Kelluu vasemmalla ”Päivitetty”-painikkeen rivillä: vain päivänä, jona maassasi oli maanjäristys tai toisen maan järistys todennäköisesti tuntui paikkakunnallasi; katoaa päivän päättyessä. Se näyttää nimensä ja tärisee niin kauan kuin ”Päivitetty” näyttää kellonajan, sitten se jää pyöreäksi. Napautus avaa ⚙︎ › Maanjäristykset.
 PAIKKAKUNNAT
 - Haku kartalta: suurennuslasi avaa kartan, jonka alareunassa on haku; paikan tai paikkakunnan nimen napautus näyttää sen lämpötilan, Tiedot (tulevat päivät) ja Lisää. Kartta on yksinkertainen ja vaalea, paikkakuntien nimet isolla (myös lohkojen kartalla). Muita paikkakuntia näkyy vain, kun ne alkavat kuten kirjoitettu nimi (vähintään 6 kirjainta tai 60 % siitä).
 - Paikkakuntakortit: tabletilla ja vaaka-asennossa ne ovat tekstinsä levyisiä ja ovat riveissä ja sarakkeissa; pystyasennossa puhelimessa liian pitkä nimi saa pienemmät kirjaimet; vaaka-asennossa haku pitää pystykoon.

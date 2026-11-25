@@ -1598,7 +1598,7 @@ final class StatsPage {
 				// The measured part darker.
 				float xt = l + (t - from + 0.5f) * cw;
 				pt.setStyle(Paint.Style.FILL);
-				pt.setColor(Glass.alpha(ink, dark ? 0.05f : 0.04f));
+				pt.setColor(Theme.veil(dark, dark ? 0.05f : 0.04f));
 				c.drawRect(l, tp, xt, bt, pt);
 				// The grid.
 				pt.setColor(Glass.edge(dark));

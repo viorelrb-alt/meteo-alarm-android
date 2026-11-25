@@ -570,7 +570,7 @@ final class MapView extends View {
 	/** The tiles of the screen; BARE: only loaded ones (no enlarged stand-ins). True when all were there. */
 	private boolean drawTiles(Canvas c, int w, int h, boolean bare) {
 		boolean all = true;
-		c.drawColor(night ? 0xFF4A4F55 : dark ? 0xFF3A3A38 : 0xFFE8E4DC);
+		c.drawColor(night ? 0xFF4A4F55 : dark ? ro.meteoalarm.android.core.Theme.hued(0xFF3A3A38, ro.meteoalarm.android.core.Theme.pal) : 0xFFE8E4DC);
 		if (night && style == 0) paint.setColorFilter(names ? NIGHT_MINT : NIGHT);
 		else if (names && style == 0) paint.setColorFilter(MINT);
 		int z = (int) Math.round(Math.max(MIN_Z, Math.min(MAX_Z, zoom)));
@@ -944,7 +944,7 @@ final class MapView extends View {
 		paint.setStyle(Paint.Style.FILL);
 		paint.setColor(0x33000000);
 		c.drawRoundRect(new RectF(b.left, b.top + 2 * dp, b.right, b.bottom + 2 * dp), r, r, paint);
-		paint.setColor(dark ? 0xEE2E2E2C : 0xF2FFFFFF);
+		paint.setColor(dark ? ro.meteoalarm.android.core.Theme.hued(0xEE2E2E2C, ro.meteoalarm.android.core.Theme.pal) : 0xF2FFFFFF); // v2.230: theme hue
 		c.drawRoundRect(b, r, r, paint);
 		c.drawPath(tip, paint);
 		paint.setStyle(Paint.Style.STROKE);
@@ -1448,7 +1448,7 @@ final class MapView extends View {
 	private void pill(Canvas c, RectF r) {
 		float rad = Math.min(r.height() / 2, 16 * dp);
 		paint.setStyle(Paint.Style.FILL);
-		paint.setColor(dark ? 0xE6262624 : 0xEFFFFFFF);
+		paint.setColor(dark ? ro.meteoalarm.android.core.Theme.hued(0xE6262624, ro.meteoalarm.android.core.Theme.pal) : 0xEFFFFFFF); // v2.230: theme hue
 		c.drawRoundRect(r, rad, rad, paint);
 		paint.setStyle(Paint.Style.STROKE);
 		paint.setStrokeWidth(Math.max(1, dp));

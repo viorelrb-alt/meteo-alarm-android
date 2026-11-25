@@ -1,4 +1,4 @@
-Nuvarande version: v.2.220 · 25.11.2026
+Nuvarande version: v.2.230 · 25.11.2026
 AVISERINGAR
 - Egna kanaler: vädervarningar, regn och snö, jordbävningar, skiften och uppdateringar har var sin kanal i telefonens inställningar; du kan stänga av en och behålla de andra.
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
@@ -9,6 +9,7 @@ HUVUDSKÄRM
 - Jordbävningsinformation: ett tryck på rutan Jordbävning öppnar den på huvudskärmen: kartan, under den zonerna där den kändes och värdets historik; den färgade kvadraten eller kartan öppnar den på hela skärmen, som en jordbävning från ⚙︎ › Jordbävningar. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
 - Knappen Orter: den runda knappen med husikonen (i stående till höger om namnet, i liggande på det övre bandet, före dess hörn) öppnar listan med orter.
 - Knappen ”uppdaterad”: svävar över sidan till höger: stående under varningarna (utan dem under raden med orter), liggande under klockan. Under uppdatering snurrar pilen, även som en liten cirkel; sedan visas tiden i 4 sekunder och den fälls ihop till ⟳. Ett tryck uppdaterar.
+- Knappen ”Jordbävning”: Svävar till vänster, på raden med knappen ”uppdaterad”: bara en dag med en jordbävning i ditt land, eller en från ett annat land som troligen kändes på din ort; den försvinner vid dagens slut. Den visar sitt namn och skakar så länge ”uppdaterad” visar tiden, sedan förblir den rund. Ett tryck öppnar ⚙︎ › Jordbävningar.
 - Knappnamn: en rund knapp som stannar på skärmen när den trycks visar sitt namn i en liten bubbla i ungefär 1,5 sekund.
 - Ljusstyrka: visar ljusstyrkelisten till vänster; ett tryck på ☀ i dess ände ger skärmen den automatiska ljusstyrkan igen (☀ blir gul, ett meddelande bekräftar det).
 - Nedre knappar: deras namn syns under dem i 3 sekunder när skärmen öppnas, sedan bara knapparna; dra kapseln uppåt för att se dem igen. Knappen som är på ser intryckt ut, med en ring.

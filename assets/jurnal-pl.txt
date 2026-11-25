@@ -1,4 +1,4 @@
-Obecna wersja: v.2.220 · 25.11.2026
+Obecna wersja: v.2.230 · 25.11.2026
 AKTUALIZACJE
 - Pole Nowa wersja: krótkie pole u góry ⚙︎, gdy jest nowa wersja; dotknięcie go rozpoczyna pobieranie.
 DZIAŁKI
@@ -21,6 +21,7 @@ EKRAN GŁÓWNY
 - Nazwy przycisków: okrągły przycisk, który po dotknięciu zostaje na ekranie, pokazuje swoją nazwę w małym dymku przez około 1,5 sekundy.
 - Przycisk Miejscowości: okrągły przycisk z ikoną domków (pionowo po prawej stronie nazwy, poziomo na górnym pasku, przed jego rogiem) otwiera listę miejscowości.
 - Przycisk „zaktualizowano”: unosi się nad stroną, po prawej: pionowo pod ostrzeżeniami (bez nich pod rzędem miejscowości), poziomo pod zegarem. Podczas aktualizacji strzałka się obraca, także jako małe kółko; potem przez 4 sekundy widać godzinę i składa się w ⟳. Dotknięcie aktualizuje.
+- Przycisk „Trzęsienie ziemi”: Unosi się po lewej, w rzędzie przycisku „zaktualizowano”: tylko w dniu, w którym w twoim kraju było trzęsienie ziemi albo wstrząs z innego kraju był prawdopodobnie odczuwalny w twojej miejscowości; znika z końcem dnia. Pokazuje swoją nazwę i drży, dopóki „zaktualizowano” pokazuje godzinę, potem zostaje okrągły. Dotknięcie otwiera ⚙︎ › Trzęsienia ziemi.
 - Więcej miejscowości: każda miejscowość z listy ma swój ekran główny; przesunięcie w lewo lub w prawo na pogodzie teraz przechodzi do następnej, w kolejności listy.
 MIEJSCOWOŚCI
 - Karty miejscowości: na tablecie i poziomo są tak szerokie jak ich tekst i stoją w wierszach i kolumnach; pionowo na telefonie zbyt długa nazwa ma mniejsze litery; poziomo wyszukiwanie zachowuje rozmiar z pionu.

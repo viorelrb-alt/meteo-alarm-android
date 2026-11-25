@@ -1,4 +1,4 @@
-Nuværende version: v.2.220 · 25.11.2026
+Nuværende version: v.2.230 · 25.11.2026
 BYER
 - Bykort: på en tablet og i liggende er de lige så brede som deres tekst og står i rækker og kolonner; i portræt på en telefon får et for langt navn mindre bogstaver; i liggende beholder søgningen sin portrætstørrelse.
 - Byliste: knappen Byer åbner listen i temaets farve; Vælg sletter én eller flere (den sidste bliver), og tegnet ⌃⌄ holdt og trukket op eller ned ændrer rækkefølgen; hver by beholder sit gemte vejr.
@@ -10,6 +10,7 @@ HOVEDSKÆRM
 - Knapnavne: en rund knap, der bliver på skærmen, når der trykkes på den, viser sit navn i en lille boble i cirka 1,5 sekund.
 - Knappen Byer: den runde knap med husikonet (i portræt til højre for navnet, i liggende på det øverste bånd, før dets hjørne) åbner listen over byer.
 - Knappen „opdateret“: svæver over siden til højre: på højkant under varslerne (uden dem under rækken af byer), på tværs under uret. Under opdatering drejer pilen, også som en lille cirkel; så vises tiden i 4 sekunder, og den foldes til ⟳. Et tryk opdaterer.
+- Knappen „Jordskælv“: Svæver til venstre, på rækken med knappen „opdateret“: kun på en dag med et jordskælv i dit land eller et fra et andet land, der sandsynligvis kunne mærkes i din by; den forsvinder ved dagens slutning. Den viser sit navn og ryster, så længe „opdateret“ viser klokkeslættet, og bliver derefter rund. Et tryk åbner ⚙︎ › Jordskælv.
 - Lysstyrke: viser lysstyrkebjælken til venstre; et tryk på ☀ i dens ende giver skærmen den automatiske lysstyrke igen (☀ bliver gul, en besked bekræfter det).
 - Nederste knapper: deres navne vises under dem i 3 sekunder, når skærmen åbner, derefter kun knapperne; træk kapslen op for at se dem igen. Knappen der er tændt ser trykket ned ud, med en ring.
 - Vejrkort: nederst på hovedskærmen (på tværs på arket med boksene): OpenStreetMap i gadeniveau om det præcise sted for skærmens by (GPS for den første) eller, på en marks skærm, marken med dens omrids; laget gennemsigtigt. Kortet står stille; data: Open-Meteo. Skyer, Temperaturer og Regn, ét ad gangen; et tryk på det tændte slukker det. Regn er gråt og overstreget, når det ikke regner i nærheden nu eller de næste 2 timer. ▶ afspiller timerne (6 før og 6 efter nu) én ad gangen; et tryk på en time viser den.

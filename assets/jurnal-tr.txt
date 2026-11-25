@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.220 · 25.11.2026
+Geçerli sürüm: v.2.230 · 25.11.2026
 ANA EKRAN
 - Alt düğmeler: ekran açılınca adları 3 saniye altlarında görünür, sonra yalnızca düğmeler kalır; yeniden görmek için kapsülü yukarı çekin. Açık düğme basılı görünür, halkalı.
 - Ana ekranlar: adın altındaki sekmeler (yatayda altta): yerleşim yeri ve her parsel için bir tane; dokunmak veya yana kaydırmak ekranı değiştirir, + yeni parsel kutusunu açar. Hepsi sığmadığında satır her 3 saniyede bir ilerler; üzerine konan bir parmak onu bir süre durdurur.
@@ -9,6 +9,7 @@ ANA EKRAN
 - Parlaklık: soldaki parlaklık çubuğunu gösterir; ucundaki ☀ işaretine dokunmak ekrana otomatik parlaklığı geri verir (☀ sarıya döner, bir bildirim bunu doğrular).
 - Yerler düğmesi: ev simgeli yuvarlak düğme (dikeyde adın sağında, yatayda üst şeritte, köşesinden önce) yerler listesini açar.
 - “Güncellendi” düğmesi: sayfanın üstünde sağda süzülür: dikeyde uyarıların altında (uyarı yoksa yerler satırının altında), yatayda saatin altında. Güncellenirken oku döner, küçük bir daire olarak da; sonra saat 4 saniye görünür ve ⟳ olarak katlanır. Dokunmak günceller.
+- “Deprem” düğmesi: Solda, “Güncellendi” düğmesinin satırında yüzer: yalnızca ülkende deprem olan ya da başka bir ülkedeki depremin yerleşim yerinde muhtemelen hissedildiği gün; gün bitince kaybolur. “Güncellendi” saati gösterdiği sürece adını gösterir ve titrer, sonra yuvarlak kalır. Dokunmak ⚙︎ › Depremler’i açar.
 AYARLAR
 - Ayarlar penceresi: ⚙︎ ayarları bölümler halinde açar; bir anahtar bir işlevi hemen açar ya da kapatır. X ile ya da dışına dokunarak kapanır. Yatayda solda 2 sütun halinde açılır, başlığı tek satırda: tek sütun için sağ kenardaki çubuğu sola, iki sütun için sağa sürükle; X'in yanındaki düğme 2 sütunu geri getirir. Görünüm en sondadır. Sistem & Destek adlarını 3 saniye gösterir, sonra yalnızca düğmeleri; telefonda yatayda altta süzülen, ⋯ olarak katlanan bir kutudur (tutamacı onu genişletir), tablette tek satır.
 - Depremler sayfası: telefonda son kaydedilen listelerle hemen açılır ve onları arka planda günceller.

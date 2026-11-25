@@ -355,7 +355,7 @@ final class CompassPanel extends View {
 					p.setColor(Glass.alpha(TOWN_COL[i], dark ? 0.22f : 0.16f));
 					c.drawRoundRect(rowAt[i], 18 * u, 18 * u, p);
 				}
-				house(c, x0 + fs * 0.45f, y, fs * 0.45f, i < 0 ? HERE_COL : TOWN_COL[i], box, false, band, u * 0.6f);
+				house(c, x0 + fs * 0.45f, y, fs * 0.45f, i < 0 ? Theme.hued(HERE_COL, Theme.pal) : TOWN_COL[i], box, false, band, u * 0.6f);
 				String d = dist(t.km) + " · " + dir8(t.bearing) + " " + Math.round(t.bearing) + "°";
 				float dw = width(d, fs * 0.88f, false);
 				String nm = i < 0 ? t.name + " (" + Tr.t("you are here", "ești aici") + ")" : t.name;

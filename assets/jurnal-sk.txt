@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.220 · 25.11.2026
+Súčasná verzia: v.2.230 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ⚙︎, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
@@ -10,6 +10,7 @@ HLAVNÁ OBRAZOVKA
 - Spodné tlačidlá: ich názvy sa pri otvorení obrazovky ukážu pod nimi na 3 sekundy, potom zostanú len tlačidlá; potiahni kapsulu nahor a uvidíš ich znova. Zapnuté tlačidlo vyzerá stlačené, s krúžkom.
 - Tlačidlo Obce: okrúhle tlačidlo s ikonou domčekov (na výšku vpravo od názvu, na šírku na hornom páse, pred jeho rohom) otvorí zoznam obcí.
 - Tlačidlo „aktualizované“: pláva nad stránkou vpravo: na výšku pod výstrahami (bez nich pod radom obcí), na šírku pod hodinami. Pri aktualizácii sa jeho šípka točí, aj ako malý krúžok; potom sa na 4 sekundy ukáže čas a zloží sa do ⟳. Ťuknutie aktualizuje.
+- Tlačidlo „Zemetrasenie“: Pláva vľavo, v riadku tlačidla „aktualizované“: len v deň so zemetrasením v tvojej krajine alebo s otrasom z inej krajiny, ktorý bolo v tvojej obci pravdepodobne cítiť; na konci dňa zmizne. Ukazuje svoj názov a chveje sa, kým „aktualizované“ ukazuje čas, potom zostane okrúhle. Ťuknutie otvorí ⚙︎ › Zemetrasenia.
 - Viac obcí: každá obec zo zoznamu má svoju hlavnú obrazovku; potiahnutie doľava alebo doprava po aktuálnom počasí prejde na ďalšiu, v poradí zoznamu.
 MINIAPLIKÁCIE
 - Motív aplikácie: podrž miniaplikáciu › Nastavenia, alebo ⚙︎ › Miniaplikácie: obec, pozadie, farby (podľa počasia, telefónu, motív aplikácie alebo tmavé).

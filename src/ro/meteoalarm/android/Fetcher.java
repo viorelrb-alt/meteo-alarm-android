@@ -640,6 +640,21 @@ final class Fetcher {
 		}
 	}
 
+	/**
+	 * v2.230 (Viorel): the quakes of the last 24 h around town C from any country, with the
+	 * intensity estimated for the town (for the "Earthquake" button: one from another country that
+	 * was felt here). Empty when none.
+	 */
+	static List<Quakes.Quake> quakesFelt(Context ctx, Cities.City c) {
+		try {
+			if (c == null || c.us()) return new java.util.ArrayList<Quakes.Quake>();
+			String q = c.key().equals(prefs(ctx).getString("quakeCity", "")) ? read(ctx, "quake.json") : null;
+			return Quakes.parse(q, new String[0], c.lat, c.lon, System.currentTimeMillis(), Quakes.WINDOW_MS);
+		} catch (Exception e) {
+			return new java.util.ArrayList<Quakes.Quake>();
+		}
+	}
+
 	/** v2.030: each quake's first value seen and when its value last changed (saveQuakes()). */
 	private static void history(Context ctx, List<Quakes.Quake> l) {
 		SharedPreferences p = prefs(ctx);

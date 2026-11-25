@@ -1,4 +1,4 @@
-Versión actual: v.2.220 · 25.11.2026
+Versión actual: v.2.230 · 25.11.2026
 ACTUALIZACIONES
 - Caja Nueva versión: una caja corta arriba en ⚙︎ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
@@ -24,6 +24,7 @@ PANTALLA PRINCIPAL
 - Botones de abajo: sus nombres aparecen debajo 3 segundos al abrir la pantalla, luego solo los botones; tira de la cápsula hacia arriba para verlos de nuevo. El botón activo parece pulsado, con un anillo.
 - Botón Localidades: el botón redondo con el icono de casas (en vertical a la derecha del nombre, en horizontal en la banda superior, antes de su esquina) abre la lista de localidades.
 - Botón «actualizado»: flota sobre la página, a la derecha: en vertical bajo los avisos (sin ellos bajo la fila de localidades), en horizontal bajo el reloj. Al actualizar su flecha gira, también como círculo pequeño; luego la hora aparece 4 segundos y se reduce a ⟳. Un toque actualiza.
+- Botón «Terremoto»: Flota a la izquierda, en la fila del botón «actualizado»: solo el día en que hay un terremoto en tu país, o uno de otro país que probablemente se sintió en tu localidad; desaparece al final del día. Muestra su nombre y tiembla mientras «actualizado» muestra la hora; luego queda redondo. Un toque abre ⚙︎ › Terremotos.
 - Brillo: muestra la barra de brillo a la izquierda; un toque en ☀ en su extremo devuelve a la pantalla el brillo automático (☀ se vuelve amarillo, un aviso lo confirma).
 - Información del terremoto: un toque en la casilla Terremoto la abre en la pantalla principal: el mapa, debajo las zonas de percepción y el historial del valor; el cuadrado de color o el mapa la abren en pantalla completa, como un terremoto de ⚙︎ › Terremotos. En Rumanía, Francia, Italia, Países Bajos, Suiza y Grecia los valores oficiales vienen primero del instituto del país (INFP, BCSF, INGV, KNMI, SED, NOA) y luego de EMSC. En Rumanía, los terremotos alrededor del país también reciben el valor del INFP (de infp.ro).
 - Mapa del tiempo: al final de la pantalla principal (en horizontal en la hoja con las cajas): OpenStreetMap a nivel de calle en el lugar exacto de la localidad de la pantalla (GPS para la primera) o, en la pantalla de una parcela, la parcela con su contorno; la capa transparente. El mapa queda fijo; datos: Open-Meteo. Nubes, Temperaturas y Lluvia, una a la vez; un toque en la activa la apaga. Lluvia está gris y tachada cuando no llueve cerca ahora ni en las próximas 2 horas. ▶ reproduce las horas (6 antes y 6 después de ahora) una a una; un toque en una hora la muestra.

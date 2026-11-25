@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.220 · 25.11.2026
+Pašreizējā versija: v.2.230 · 25.11.2026
 ATJAUNINĀJUMI
 - Lodziņš Jauna versija: īss lodziņš ⚙︎ augšā, kad ir jauna versija; pieskāriens tam sāk lejupielādi.
 GALVENAIS EKRĀNS
@@ -7,6 +7,7 @@ GALVENAIS EKRĀNS
 - Laikapstākļu karte: galvenā ekrāna beigās (ainavā uz lapas ar lodziņiem): OpenStreetMap ielu līmenī ap ekrāna vietas precīzo atrašanās vietu (pirmajai GPS) vai lauka ekrānā lauks ar kontūru; slānis caurspīdīgs. Karte stāv uz vietas; dati: Open-Meteo. Mākoņi, Temperatūras un Lietus, pa vienam; pieskāriens ieslēgtajam to izslēdz. Lietus ir pelēks un pārsvītrots, kad tuvumā nelīst tagad un arī nākamajās 2 stundās. ▶ atskaņo stundas (6 pirms un 6 pēc tagad) pa vienai; pieskāriens stundai to parāda.
 - Poga Vietas: apaļā poga ar māju ikonu (portretā pa labi no nosaukuma, ainavā augšējā joslā pirms tās stūra) atver vietu sarakstu.
 - Poga “atjaunināts”: peld virs lapas labajā pusē: portretā zem brīdinājumiem (bez tiem zem vietu rindas), ainavā zem pulksteņa. Atjaunināšanas laikā bulta griežas, arī kā mazs aplis; pēc tam 4 sekundes redzams laiks un tā sakļaujas par ⟳. Pieskāriens atjaunina.
+- Poga “Zemestrīce”: Peld kreisajā pusē, pogas “atjaunināts” rindā: tikai dienā, kad tavā valstī bija zemestrīce vai citas valsts zemestrīce, visticamāk, bija jūtama tavā apdzīvotajā vietā; dienas beigās pazūd. Tā rāda savu nosaukumu un trīc, kamēr “atjaunināts” rāda laiku, pēc tam paliek apaļa. Pieskāriens atver ⚙︎ › Zemestrīces.
 - Pogu nosaukumi: apaļa poga, kas pēc pieskāriena paliek ekrānā, rāda savu nosaukumu mazā burbulī apmēram 1,5 sekundes.
 - Spilgtums: rāda spilgtuma joslu kreisajā pusē; pieskaroties ☀ tās galā, ekrānam atgriežas automātiskais spilgtums (☀ kļūst dzeltena, paziņojums to apstiprina).
 - Vairākas vietas: katrai saraksta vietai ir savs galvenais ekrāns; pavilkšana pa kreisi vai pa labi pār pašreizējiem laikapstākļiem pāriet uz nākamo, saraksta secībā.
