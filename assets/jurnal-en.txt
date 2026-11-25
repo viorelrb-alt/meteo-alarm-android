@@ -1,7 +1,7 @@
-Current version: v.2.210 · 25.11.2026
+Current version: v.2.211 · 25.11.2026
 MAIN SCREEN
 - Bottom buttons: their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.
-- Brightness: shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness.
+- Brightness: shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).
 - Button names: a round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ⚙︎ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 - Main screens: tabs under the name (in landscape at the bottom): the town and one per parcel; a tap or a sideways slide changes the screen, + opens a new parcel's box. When they do not all fit, the row moves on by one every 3 seconds; a finger on it stops it for a while.
@@ -19,6 +19,7 @@ PARCELS
 - History and forecast: drag the indicator to a past day; its values show in a box under the chart and after 10 s it goes back to today.
 - Operational status: the crop and its sowing date on top; with a crop the verdict also takes drop drying (ΔT) and its disease into account.
 - Parcel coordinates: on the edit page the GPS of each point can be typed in, and under it the satellite view shows the parcel.
+- Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.
 - Statistics bubbles: a tap on an hour of the spray window, a day of the charts or a soil row opens a bubble with its explanation; the spray window moves by itself.
 - Statistics in the main screen: they open under the operational status (in landscape at the left); ‹ closes them and another parcel's tab keeps them.
 - Statistics: for each parcel, the Action of the day and 4 tabs: Operational (the spray window hour by hour, drop drying (ΔT), wind, wet leaf), Water & Soil (rain, evaporation, soil at 6 and 18 cm), Season (degree days against last year, the estimated stage) and Risks 72 h (fungal diseases, ground frost, heat, wind and hail); saved as PDF or CSV.
@@ -33,7 +34,7 @@ SETTINGS
 - The Settings window: ⚙︎ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns, its title on one row: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons; on a phone in landscape it is a floating box at the bottom that folds into ⋯ (its grip widens it), on a tablet one row.
 - Themes: 6 themes with their own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender), each light and dark; the dots in ⚙︎ › Theme have the theme's colour.
 - Tutorial: in the Alerts card: a short tutorial of what each part of the screens shows. Coming soon (grey for now).
-- Towns: the first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). Towns › opens the list; on its map, County ▾ searches in one county.
+- Towns: the first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.
 TOWNS
 - Map search: the magnifier opens the map with the search at the bottom; a tap on a place or on a town's name shows its temperature, Details (the next days) and Add. The map is plain and light, with the towns' names written big (also on the parcels' map). Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
 - Town cards: on a tablet and in landscape they are as wide as their text and stand in rows and columns; in portrait on a phone a name too long gets smaller letters; in landscape the search keeps its portrait size.

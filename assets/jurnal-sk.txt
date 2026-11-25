@@ -1,10 +1,10 @@
-Súčasná verzia: v.2.210 · 25.11.2026
+Súčasná verzia: v.2.211 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ⚙︎, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
 - Hlavné obrazovky: karty pod názvom (na šírku dole): obec a jedna na každý pozemok; ťuknutie alebo posun do strany mení obrazovku, + otvorí pole nového pozemku. Keď sa všetky nezmestia, rad sa každé 3 sekundy posunie o jeden; prst na ňom ho na chvíľu zastaví.
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ⚙︎ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
-- Jas: ukáže lištu jasu vľavo; ťuknutie na ☀ na jej konci vráti obrazovke automatický jas.
+- Jas: ukáže lištu jasu vľavo; ťuknutie na ☀ na jej konci vráti obrazovke automatický jas (☀ zožltne, správa to potvrdí).
 - Mapa počasia: na konci hlavnej obrazovky (na šírku na liste s rámčekmi): OpenStreetMap na úrovni ulíc okolo presného miesta obce tejto obrazovky (GPS pre prvú) alebo, na obrazovke pozemku, pozemok s obrysom; vrstva priesvitná. Mapa stojí; údaje: Open-Meteo. Oblaky, Teploty a Dážď, vždy jedna; ťuknutie na zapnutú ju vypne. Dážď je sivý a prečiarknutý, keď nablízku neprší teraz ani v najbližších 2 hodinách. ▶ prehrá hodiny (6 pred a 6 po teraz) jednu po druhej; ťuknutie na hodinu ju ukáže.
 - Názvy tlačidiel: okrúhle tlačidlo, ktoré po ťuknutí zostane na obrazovke, ukáže svoj názov v malej bubline asi na 1,5 sekundy.
 - Spodné tlačidlá: ich názvy sa pri otvorení obrazovky ukážu pod nimi na 3 sekundy, potom zostanú len tlačidlá; potiahni kapsulu nahor a uvidíš ich znova. Zapnuté tlačidlo vyzerá stlačené, s krúžkom.
@@ -16,7 +16,7 @@ NASTAVENIA
 - Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.
 - Jazyk zobrazenia: v ⚙︎ angličtina a jazyk krajiny; Ďalšie jazyky: ostatné jazyky krajiny, veľké jazyky EÚ, rumunčina a jazyk telefónu (v USA len angličtina a španielčina).
 - Motívy: 6 motívov s vlastným pozadím, kartami a farbou (Grafit, Pivonka, Med, Les, Oceán, Levanduľa), každý svetlý aj tmavý; bodky v ⚙︎ › Motív majú farbu motívu.
-- Obce: prvá karta v ⚙︎ (v režime farmára: Obce & Pozemky, aj s pozemkami). Jeden riadok so zobrazenou obcou; ▾ otvorí ostatné obce s hlavnou obrazovkou. Odškrtnutie hviezdy zmaže obec aj jej obrazovku (kým zostávajú 2 alebo viac; posledná je sivá a zostáva). Obce › otvorí zoznam; na jeho mape Kraj ▾ hľadá v jednom kraji.
+- Obce: prvá karta v ⚙︎ (v režime farmára: Obce & Pozemky, aj s pozemkami). Jeden riadok so zobrazenou obcou; ▾ otvorí ostatné obce s hlavnou obrazovkou. Odškrtnutie hviezdy zmaže obec aj jej obrazovku (kým zostávajú 2 alebo viac; posledná je sivá a zostáva). Riadok Obce nad ním otvorí zoznam; na jeho mape Kraj ▾ hľadá v jednom kraji.
 - Okno Nastavenia: ⚙︎ otvára nastavenia po oddieloch; prepínač funkciu hneď zapne alebo vypne. Zatvára sa X alebo ťuknutím mimo. Na šírku sa otvára vľavo v 2 stĺpcoch, nadpis v jednom riadku: potiahni lištu na pravom okraji doľava pre jeden stĺpec, doprava pre dva; tlačidlo vedľa X vráti 2 stĺpce. Zobrazenie je posledné. Systém & Podpora ukáže názvy 3 sekundy, potom len tlačidlá; na telefóne na šírku je to plávajúci rámček dole, ktorý sa zloží do ⋯ (úchyt ho rozšíri), na tablete jeden riadok.
 - Pokročilé funkcie: karta pod Obcami: Režim farmára a stránka Zemetrasenia.
 - Pomocník: dlhé texty sú rozdelené na časti s vlastnými ikonami alebo ukazujú 2 riadky a Zobraziť všetko ▾; na šírku v 2 stĺpcoch a ťuknutie na tlačidlo sekcie dvakrát rozbliká jej obrys.
@@ -32,6 +32,7 @@ POZEMKY
 - Kôš: zmazaný pozemok ide do koša s ↺ vedľa tlačidla GPS (červená bodka ich počíta) a zostane 15 dní; okrúhle tlačidlo ho obnoví (ak má uložený pozemok jeho názov: nový názov alebo nahradiť).
 - Prevádzkový stav: hore plodina a dátum sejby; s plodinou verdikt zohľadňuje aj vysychanie kvapiek (ΔT) a jej chorobu.
 - Súradnice pozemku: na stránke úprav sa zapisujú súradnice GPS každého bodu a pod nimi satelitný pohľad ukazuje pozemok.
+- Ukázať počasie na každej karte otvorí hlavnú obrazovku parcely. Ťuknutie inde na kartu priblíži mapu na parcelu a ukáže jej body.
 - Upraviť pozemok: ceruzka otvorí stránku pozemku: názov, plodina (zoznam podľa sezóny dátumu sejby alebo Iná plodina…), dátum sejby, výmera; rohy sa posúvajú na mape.
 - Vrstvy počasia: na mape pozemkov sa pole pod ＋ a − otvorí so Satelitom, Mapou, Oblačnosťou, Teplotami (farby) a Dažďom (mm za hodinu) a potom sa zloží na vašu voľbu; jedna vrstva naraz, s názvom, časom a legendou nad kartami; Dážď sa zapne len vtedy, keď prší teraz alebo v nasledujúcich 2 hodinách (namiesto radaru).
 - Štatistika na hlavnej obrazovke: otvára sa pod prevádzkovým stavom (na šírku vľavo); ‹ ju zatvorí a karta iného pozemku ju ponechá.

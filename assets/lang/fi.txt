@@ -1839,3 +1839,11 @@ Parcel	Lohko
 Bin: the deleted parcels, to restore	Roskakori: poistetut lohkot palautettavaksi
 Hide the other towns	Piilota muut paikkakunnat
 Show the other towns with a main screen	Näytä muut paikkakunnat, joilla on pääruutu
+Search, add and delete towns	Hae, lisää ja poista paikkoja
+Show weather	Näytä sää
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Näytä sää avaa jokaisessa kortissa lohkon päänäkymän. Napautus muualle korttiin zoomaa kartan lohkoon ja näyttää sen pisteet.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	⚙︎:n ensimmäinen kortti (viljelijätilassa: Paikkakunnat & Lohkot, lohkot mukana). Yksi rivi näytetyllä paikkakunnalla; ▾ avaa muut paikkakunnat, joilla on pääruutu. Tähden poisto poistaa paikkakunnan ja sen ruudun (kun jäljellä on 2 tai enemmän; viimeinen on harmaa ja jää). Sen yllä oleva rivi Paikat avaa luettelon; sen kartalla Maakunta ▾ hakee yhdestä maakunnasta.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Lohko, ylärivillä GPS (pystytilassa se pienenee ＋:ksi 2 sekunnin jälkeen):n vieressä, kysyy ensin ja lisää sitten lohkon: neula alkaa kartan keskeltä, napautus kartalla siirtää sitä; nimi tulee ylös. ‹ palaa takaisin.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Peltolohkojen kartalla, ＋:n ja − (vaakatilassa molemmat samalla rivillä):n alla. Yksi taso kerrallaan; tiedot: Open-Meteo.
+Automatic brightness is on	Automaattinen kirkkaus on päällä
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Näyttää kirkkauspalkin vasemmalla; napautus ☀:hen sen päässä palauttaa ruudulle automaattisen kirkkauden (☀ muuttuu keltaiseksi, ilmoitus vahvistaa sen).

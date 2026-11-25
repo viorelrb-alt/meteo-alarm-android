@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.210 · 25.11.2026
+Nykyinen versio: v.2.211 · 25.11.2026
 ASETUKSET
 - Asetukset-ikkuna: ⚙︎ avaa asetukset osioina; kytkin kytkee toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla ulkopuolelle. Vaakatasossa se avautuu vasemmalle 2 sarakkeeseen, otsikko yhdellä rivillä: vedä oikean reunan palkkia vasemmalle yhteen sarakkeeseen, oikealle kahteen; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä & Tuki näyttää nimet 3 sekuntia, sitten vain painikkeet; puhelimessa vaakatasossa se on kelluva laatikko alhaalla, joka taittuu ⋯:ksi (kahva leventää sitä), tabletissa yksi rivi.
 - Opas: hälytykset-kortissa: lyhyt opas siitä, mitä kukin ruutujen osa näyttää. Tulossa (toistaiseksi harmaa).
@@ -7,7 +7,7 @@ ASETUKSET
 - Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
 - Näyttökieli: ⚙︎:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 - Ohje: pitkät tekstit on jaettu osiin omine kuvakkeineen tai ne näyttävät 2 riviä ja Näytä kaikki ▾; vaakana 2 sarakkeessa, ja osion painikkeen napautus välkyttää sen ääriviivaa kahdesti.
-- Paikkakunnat: ⚙︎:n ensimmäinen kortti (viljelijätilassa: Paikkakunnat & Lohkot, lohkot mukana). Yksi rivi näytetyllä paikkakunnalla; ▾ avaa muut paikkakunnat, joilla on pääruutu. Tähden poisto poistaa paikkakunnan ja sen ruudun (kun jäljellä on 2 tai enemmän; viimeinen on harmaa ja jää). Paikkakunnat › avaa listan; sen kartalla Maakunta ▾ hakee yhdestä maakunnasta.
+- Paikkakunnat: ⚙︎:n ensimmäinen kortti (viljelijätilassa: Paikkakunnat & Lohkot, lohkot mukana). Yksi rivi näytetyllä paikkakunnalla; ▾ avaa muut paikkakunnat, joilla on pääruutu. Tähden poisto poistaa paikkakunnan ja sen ruudun (kun jäljellä on 2 tai enemmän; viimeinen on harmaa ja jää). Sen yllä oleva rivi Paikat avaa luettelon; sen kartalla Maakunta ▾ hakee yhdestä maakunnasta.
 - Teemat: 6 teemaa omalla taustalla, korteilla ja värillä (Grafiitti, Pioni, Hunaja, Metsä, Valtameri, Laventeli), kukin vaaleana ja tummana; ⚙︎ › Teema -kohdan pisteet ovat teeman värisiä.
 - Vienti / Tuonti: kytkimet tiedoston sisällölle (myös viljelykasvit ja viljelytiedot, lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); Viennissä ja Tuonnissa paikkakunnat ja lohkot valitaan yksitellen; Aa-painike muuttaa tekstin kokoa.
 ILMOITUKSET
@@ -16,7 +16,7 @@ ILMOITUKSET
 - Uusi versio: kun ilmoitukset ovat päällä, sovellus tarkistaa GitHubin päivittäin 2 viikon ajan päivityksen jälkeen, sitten kerran 7 päivässä, ja ilmoittaa uudesta versiosta Androidin ilmoituksissa; napautus avaa Tarkista päivitykset.
 PÄÄNÄYTTÖ
 - Alapainikkeet: niiden nimet näkyvät alla 3 sekuntia näytön avautuessa, sitten vain painikkeet; vedä kapselia ylös nähdäksesi ne uudelleen. Päällä oleva painike näyttää painetulta, renkaan kanssa.
-- Kirkkaus: näyttää kirkkauspalkin vasemmalla; napautus ☀:hen sen päässä palauttaa ruudulle automaattisen kirkkauden.
+- Kirkkaus: näyttää kirkkauspalkin vasemmalla; napautus ☀:hen sen päässä palauttaa ruudulle automaattisen kirkkauden (☀ muuttuu keltaiseksi, ilmoitus vahvistaa sen).
 - Maanjäristyksen tiedot: Maanjäristys-ruudun napautus avaa ne päänäytölle: kartta, sen alla tuntuvuusvyöhykkeet ja arvon historia; värillinen neliö tai kartta avaa ne koko näytölle, kuten järistyksen kohdasta ⚙︎ › Maanjäristykset. Romaniassa, Ranskassa, Italiassa, Alankomaissa, Sveitsissä ja Kreikassa viralliset arvot tulevat ensin maan laitokselta (INFP, BCSF, INGV, KNMI, SED, NOA), sitten EMSC:ltä. Romaniassa myös maan ympäristön maanjäristykset saavat INFP:n arvon (infp.ro:sta).
 - Paikkakunnat-painike: pyöreä talokuvakkeella varustettu painike (pystyssä nimen oikealla puolella, vaakana yläpalkissa ennen sen kulmaa) avaa paikkakuntaluettelon.
 - Painikkeiden nimet: pyöreä painike, joka jää näytölle napautettaessa, näyttää nimensä pienessä kuplassa noin 1,5 sekunnin ajan.
@@ -35,6 +35,7 @@ PELTOLOHKOT
 - Kuplat tilastoissa: ruiskutusikkunan tunnin, kaavioiden päivän tai maarivin napautus avaa kuplan selityksineen; ruiskutusikkuna liikkuu itsestään.
 - Lohkon koordinaatit: muokkaussivulla kunkin pisteen GPS-koordinaatit voi kirjoittaa, ja niiden alla satelliittinäkymä näyttää lohkon.
 - Muokkaa lohkoa: kynä avaa lohkon sivun: nimi, kasvi (lista kylvöpäivän kauden mukaan tai Muu kasvi…), kylvöpäivä, pinta-ala; kulmia siirretään kartalla.
+- Näytä sää avaa jokaisessa kortissa lohkon päänäkymän. Napautus muualle korttiin zoomaa kartan lohkoon ja näyttää sen pisteet.
 - Roskakori: poistettu lohko menee roskakoriin ↺ GPS-painikkeen vieressä (punainen piste laskee ne) ja säilyy 15 päivää; pyöreä painike palauttaa sen (jos tallennetulla lohkolla on sama nimi: uusi nimi tai korvaa).
 - Säätasot: lohkojen kartalla ＋- ja −-painikkeiden alla oleva ruutu avautuu vaihtoehdoilla Satelliitti, Kartta, Pilvet, Lämpötilat (värit) ja Sade (mm tunnissa) ja taittuu sitten valintaasi; yksi taso kerrallaan, nimi, aika ja selite korttien yläpuolella; Sade kytkeytyy päälle vain, kun sataa nyt tai seuraavan 2 tunnin aikana (tutkan sijaan).
 - Tilastot päänäytöllä: ne avautuvat toimintatilan alle (vaakatasossa vasemmalle); ‹ sulkee ne ja toisen lohkon välilehti pitää ne auki.

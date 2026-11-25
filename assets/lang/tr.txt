@@ -1773,3 +1773,11 @@ Parcel	Parsel
 Bin: the deleted parcels, to restore	Çöp kutusu: geri yüklenecek silinmiş parseller
 Hide the other towns	Diğer yerleri gizle
 Show the other towns with a main screen	Ana ekranı olan diğer yerleri göster
+Search, add and delete towns	Yer ara, ekle ve sil
+Show weather	Havayı göster
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Her karttaki Havayı göster, parselin ana ekranını açar. Kartta başka bir yere dokunmak haritayı parsele yakınlaştırır ve noktalarını gösterir.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	⚙︎ menüsünün ilk kartı (çiftçi modunda: Yerler & Parseller, parseller de içinde). Gösterilen yerle tek satır; ▾ ana ekranı olan diğer yerleri açar. Bir yıldızı kaldırmak yeri ve ekranını siler (2 veya daha fazla kaldıkça; sonuncusu gridir ve kalır). Üstündeki Yerler satırı listeyi açar; haritasında İl ▾ tek bir ilde arar.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Parsel, üst satırda GPS (dikeyde 2 saniye sonra ＋ simgesine küçülür)'in yanında, önce sorar sonra bir parsel ekler: iğne haritanın ortasından başlar, haritaya dokunmak onu taşır; ad üstte yazılır. ‹ geri gider.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Parseller haritasında, ＋ ve − (yatayda ikisi tek satırda) altında. Aynı anda tek katman; veriler: Open-Meteo.
+Automatic brightness is on	Otomatik parlaklık açık
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Soldaki parlaklık çubuğunu gösterir; ucundaki ☀ işaretine dokunmak ekrana otomatik parlaklığı geri verir (☀ sarıya döner, bir bildirim bunu doğrular).

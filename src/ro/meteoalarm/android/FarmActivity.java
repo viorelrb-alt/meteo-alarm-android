@@ -1548,14 +1548,17 @@ public final class FarmActivity extends Activity {
 				m.zoomBy(1);
 			}
 		}), zl);
+		// v2.211 (Viorel): in landscape ＋ and − on one row, so the box of the map's buttons fits higher up.
+		boolean row = land();
 		FrameLayout.LayoutParams zl2 = new FrameLayout.LayoutParams(fb, fb, Gravity.TOP | Gravity.LEFT);
-		zl2.setMargins(mg, topIn + mg + fb + px(8), 0, 0);
+		if (row) zl2.setMargins(mg + fb + px(8), topIn + mg, 0, 0);
+		else zl2.setMargins(mg, topIn + mg + fb + px(8), 0, 0);
 		mapBox.addView(floatBtn(zout, new View.OnClickListener() {
 			public void onClick(View v) {
 				m.zoomBy(-1);
 			}
 		}), zl2);
-		layerBox(mapBox, m, fb, mg, topIn + mg + 2 * (fb + px(8)));
+		layerBox(mapBox, m, fb, mg, topIn + mg + (row ? 1 : 2) * (fb + px(8)));
 	}
 
 	// --- v2.160 (Viorel): the map's buttons in a glass box under ＋ and −, which folds up -------------
@@ -1881,6 +1884,21 @@ public final class FarmActivity extends Activity {
 		FrameLayout.LayoutParams rl = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.TOP | Gravity.RIGHT);
 		rl.setMargins(0, topIn + mg - px(6), mg - px(6), 0);
 		mapBox.addView(topRow, rl);
+		// v2.211 (Viorel): in portrait "＋ Parcel" stays 2 s, then shrinks to a round ＋.
+		if (!land) {
+			final TextView pl = plus;
+			ui.postDelayed(new Runnable() {
+				public void run() {
+					if (!pl.isAttachedToWindow()) return;
+					android.transition.TransitionManager.beginDelayedTransition(sheet);
+					pl.setText("＋");
+					pl.setTextSize(22 * TextSize.get(FarmActivity.this));
+					pl.setPadding(0, 0, 0, 0);
+					pl.getLayoutParams().width = fb;
+					pl.requestLayout();
+				}
+			}, 2000);
+		}
 		sheetPlus = plus;
 		sheetBadge = back;
 		sheetRow = null;
@@ -1902,44 +1920,60 @@ public final class FarmActivity extends Activity {
 	}
 
 	/**
-	 * v5.50 (Viorel): a parcel's square card of frosted glass: the name (at most 2 lines, v5.51) and
-	 * under it the coordinates on 2 lines, as large as fit; at the right edge 4 buttons of one size spread over
-	 * the card's height: the pencil, the statistics (PDF), the bell, the bin. A tap shows the parcel
-	 * on the main screen.
+	 * v2.211 (Viorel, as in the audit proposal): a parcel's square card of frosted glass, the same
+	 * shape and content in portrait and landscape: the name (bold, at most 2 lines), the short
+	 * coordinates on one row ("44.20N 27.33E"), a pastel "Show weather" button that opens the
+	 * parcel's main screen, and a row of 4 small buttons: the pencil, the statistics, the bell and
+	 * the red bin. A tap elsewhere on the card shows its corners.
 	 */
 	private View squareCard(final Parcels.Parcel p, int side, boolean tab, float[] fonts) {
-		FrameLayout card = new FrameLayout(this);
+		LinearLayout card = new LinearLayout(this);
+		card.setOrientation(LinearLayout.VERTICAL);
 		card.setBackground(glass(px(18), 0.92f));
 		card.setElevation(px(3));
 		int pad = px(10);
 		card.setPadding(pad, pad, pad, pad);
 		int inside = side - 2 * pad;
-		int ic = cardIcon(inside, tab);
-		float g = (inside - 4f * ic) / 3f;
-		int room = inside - ic - px(8), rowH = inside / 5;
-		// v5.52 (Viorel): the card in 5 rows: the name in the first 3 (one size on every card), the
-		// coordinates in the last 2, as large as they fit.
+		int ic = cardIcon(inside, tab), bh = cardBtn(tab);
 		TextView name = text(p.name, 16, true, ink);
 		name.setTextSize(fonts[0] * TextSize.get(this));
 		name.setIncludeFontPadding(false);
-		name.setMaxLines(3);
+		name.setMaxLines(2);
 		name.setEllipsize(android.text.TextUtils.TruncateAt.END);
 		if (Build.VERSION.SDK_INT >= 23) {
 			name.setBreakStrategy(android.text.Layout.BREAK_STRATEGY_SIMPLE);
 			name.setHyphenationFrequency(android.text.Layout.HYPHENATION_FREQUENCY_NONE);
 		}
-		name.setMaxLines(4);
-		card.addView(name, new FrameLayout.LayoutParams(room, 4 * rowH, Gravity.TOP | Gravity.LEFT));
-		// v6.00 (Viorel): with corners, the north-west one. v2.210 (Viorel): small, on one row at the bottom.
+		card.addView(name, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
 		double[] nw = p.nw();
-		TextView ct = text(nw != null ? coords(nw[0], nw[1]) : coords(p.lat, p.lon), 12, false, dim);
+		TextView ct = text(nw != null ? shortCoords(nw[0], nw[1]) : shortCoords(p.lat, p.lon), 12, false, dim);
 		ct.setSingleLine(true);
 		ct.setIncludeFontPadding(false);
-		ct.setGravity(Gravity.BOTTOM);
 		ct.setTextSize(fonts[1] * TextSize.get(this));
-		FrameLayout.LayoutParams cl = new FrameLayout.LayoutParams(room, rowH, Gravity.TOP | Gravity.LEFT);
-		cl.topMargin = 4 * rowH;
-		card.addView(ct, cl);
+		card.addView(ct, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		// The pastel button: the parcel's main screen.
+		int onP = ro.meteoalarm.android.core.Theme.onPastel(dark);
+		LinearLayout show = new LinearLayout(this);
+		show.setGravity(Gravity.CENTER);
+		show.setBackground(Glass.pill(ro.meteoalarm.android.core.Theme.pastel(dark), 0, px(30), dp));
+		show.addView(eyeIcon(onP), new LinearLayout.LayoutParams(px(16), px(16)));
+		TextView st = text(Tr.t("Show weather", "Arată vremea"), 13, true, onP);
+		st.setSingleLine(true);
+		st.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		LinearLayout.LayoutParams stl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+		stl.leftMargin = px(5);
+		show.addView(st, stl);
+		show.setContentDescription(Tr.t("Show weather", "Arată vremea") + ": " + p.name);
+		show.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Log.i(FarmActivity.this, "FERMIER", "arată vremea parcelei " + p.name);
+				select(p.id);
+			}
+		});
+		fitWidth(st, inside - px(16) - px(5) - px(12), 13, 9);
+		LinearLayout.LayoutParams shl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, bh);
+		shl.topMargin = px(6);
+		card.addView(show, shl);
 		View stats = statsIcon();
 		stats.setContentDescription(Tr.t("Statistics · PDF", "Statistică · PDF"));
 		stats.setOnClickListener(new View.OnClickListener() {
@@ -1948,19 +1982,23 @@ public final class FarmActivity extends Activity {
 				openStats(p.id);
 			}
 		});
-		View bin = binIcon(ink, true);
+		View bin = binIcon(0xFFC0392B, true);
 		bin.setContentDescription(Tr.t("Delete", "Șterge"));
 		bin.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				askDelete(p);
 			}
 		});
+		LinearLayout row = new LinearLayout(this);
+		row.setGravity(Gravity.CENTER_VERTICAL);
 		View[] bs = { pencil(p), stats, bellToggle(p), bin };
 		for (int k = 0; k < bs.length; k++) {
-			FrameLayout.LayoutParams l = new FrameLayout.LayoutParams(ic, ic, Gravity.TOP | Gravity.RIGHT);
-			l.topMargin = Math.round(k * (ic + g));
-			card.addView(bs[k], l);
+			if (k > 0) row.addView(new View(this), new LinearLayout.LayoutParams(0, 1, 1f));
+			row.addView(bs[k], new LinearLayout.LayoutParams(ic, ic));
 		}
+		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ic);
+		rl.topMargin = px(6);
+		card.addView(row, rl);
 		// v6.00 (Viorel): a tap on the card (away from its buttons): the bubble with the corners.
 		card.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -1970,44 +2008,71 @@ public final class FarmActivity extends Activity {
 		return card;
 	}
 
+	/** v2.211: "44.20N 27.33E", short enough for a card's row. */
+	private static String shortCoords(double lat, double lon) {
+		return String.format(Locale.US, "%.2f%s %.2f%s", Math.abs(lat), lat < 0 ? "S" : "N", Math.abs(lon), lon < 0 ? "W" : "E");
+	}
+
+	/** v2.211: an eye drawn in COLOR (the card's "Show weather" button). */
+	private View eyeIcon(final int color) {
+		return new View(this) {
+			final Paint pt = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+			@Override
+			protected void onDraw(Canvas c) {
+				float w = getWidth(), h = getHeight(), cy = h / 2f;
+				pt.setColor(color);
+				pt.setStyle(Paint.Style.STROKE);
+				pt.setStrokeWidth(dp * 1.6f);
+				android.graphics.Path e = new android.graphics.Path();
+				e.moveTo(w * 0.06f, cy);
+				e.quadTo(w / 2f, cy - h * 0.62f, w * 0.94f, cy);
+				e.quadTo(w / 2f, cy + h * 0.62f, w * 0.06f, cy);
+				c.drawPath(e, pt);
+				pt.setStyle(Paint.Style.FILL);
+				c.drawCircle(w / 2f, cy, h * 0.17f, pt);
+			}
+		};
+	}
+
 	/** The size of a card's buttons for INSIDE pixels of card. */
 	private int cardIcon(int inside, boolean tab) {
-		return Math.min(px(tab ? 40 : 34), (inside - 3 * px(5)) / 4);
+		return Math.min(px(tab ? 34 : 30), (inside - 3 * px(6)) / 4);
+	}
+
+	/** v2.211: the height of a card's pastel "Show weather" button. */
+	private int cardBtn(boolean tab) {
+		return px(tab ? 34 : 30);
 	}
 
 	/**
-	 * v5.52 (Viorel): one name size for all the cards (the largest at which every name fits 3 rows
-	 * without broken words) and the coordinates' size (as large as fits a row and the width).
+	 * v5.52 (Viorel): one name size for all the cards (the largest at which every name fits the
+	 * room above the coordinates in 2 rows without broken words) and the coordinates' size.
 	 */
 	private float[] cardFonts(List<Parcels.Parcel> all, int side, boolean tab) {
-		int inside = side - 2 * px(10), room = inside - cardIcon(inside, tab) - px(8), w = room - px(2);
-		float rowH = inside / 5;
+		int inside = side - 2 * px(10), w = inside - px(2);
 		float scale = TextSize.get(this) * getResources().getDisplayMetrics().scaledDensity;
 		TextView probe = text("", 16, true, ink), probe2 = text("", 12, false, dim);
 		Paint pn = new Paint(probe.getPaint()), pc = new Paint(probe2.getPaint());
-		float sn = 40;
-		for (; sn > 6; sn -= 0.5f) {
-			pn.setTextSize(sn * scale);
-			if (pn.getFontSpacing() > rowH) continue;
-			boolean ok = true;
-			for (Parcels.Parcel p : all)
-				if (lineCount(pn, p.name, w) > 4) {
-					ok = false;
-					break;
-				}
-			if (ok) break;
-		}
-		// v2.210 (Viorel): the coordinates small (12 at most), "lat, lon" on one row.
+		// v2.210 (Viorel): the coordinates small (12 at most), on one row.
 		float sc = 12;
-		for (; sc > 6; sc -= 0.5f) {
+		for (; sc > 7; sc -= 0.5f) {
 			pc.setTextSize(sc * scale);
-			if (pc.getFontSpacing() > rowH) continue;
 			boolean ok = true;
 			for (Parcels.Parcel p : all)
-				if (pc.measureText(p.nw() != null ? coords(p.nw()[0], p.nw()[1]) : coords(p.lat, p.lon)) > w) ok = false;
+				if (pc.measureText(p.nw() != null ? shortCoords(p.nw()[0], p.nw()[1]) : shortCoords(p.lat, p.lon)) > w) ok = false;
 			if (ok) break;
 		}
-		return new float[] { Math.max(6, sn), Math.max(6, sc) };
+		pc.setTextSize(sc * scale);
+		float nameH = inside - pc.getFontSpacing() - cardBtn(tab) - cardIcon(inside, tab) - 2 * px(6);
+		float sn = 20;
+		for (; sn > 8; sn -= 0.5f) {
+			pn.setTextSize(sn * scale);
+			int lines = 1;
+			for (Parcels.Parcel p : all) lines = Math.max(lines, lineCount(pn, p.name, w));
+			if (lines <= 2 && lines * pn.getFontSpacing() <= nameH) break;
+		}
+		return new float[] { Math.max(8, sn), Math.max(7, sc) };
 	}
 
 	/** v6.10 (Viorel): the Save button's icon: a floppy disk in the accent colour. */

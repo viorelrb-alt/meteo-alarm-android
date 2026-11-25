@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.210 · 25.11.2026
+Aktuelle Version: v.2.211 · 25.11.2026
 AKTUALISIERUNGEN
 - Feld Neue Version: oben im ⚙︎ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
@@ -13,13 +13,13 @@ EINSTELLUNGEN
 - Erweiterte Funktionen: Die Karte unter Orte: Landwirt-Modus und die Erdbeben-Seite.
 - Export / Import: Schalter für den Inhalt der Datei (auch Kulturen und Anbaudaten, Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); bei Export und Import werden Orte und Parzellen einzeln angekreuzt; die Taste Aa ändert die Textgröße.
 - Hilfe: Lange Texte sind in Teile mit eigenen Symbolen gegliedert oder zeigen 2 Zeilen und Alles zeigen ▾; im Querformat in 2 Spalten, und Antippen einer Abschnittstaste lässt dessen Umriss zweimal blinken.
-- Orte: Die erste Karte im ⚙︎ (im Landwirt-Modus: Orte & Parzellen, mit den Parzellen darin). Eine Zeile mit dem angezeigten Ort; ▾ öffnet die anderen Orte mit Hauptbildschirm. Ein Stern abgewählt löscht den Ort und seinen Bildschirm (solange 2 oder mehr bleiben; der letzte ist grau und bleibt). Orte › öffnet die Liste; auf ihrer Karte sucht Kreis ▾ in einem einzigen Kreis.
+- Orte: Die erste Karte im ⚙︎ (im Landwirt-Modus: Orte & Parzellen, mit den Parzellen darin). Eine Zeile mit dem angezeigten Ort; ▾ öffnet die anderen Orte mit Hauptbildschirm. Ein Stern abgewählt löscht den Ort und seinen Bildschirm (solange 2 oder mehr bleiben; der letzte ist grau und bleibt). Die Zeile Orte darüber öffnet die Liste; auf ihrer Karte sucht Kreis ▾ in einem einzigen Kreis.
 - Protokoll: Größe, Zeilen und Fehler auf einer Karte; Protokoll ansehen öffnet die Zeilen (Alle, Fehler, Heute, Gestern; langes Tippen kopiert eine Zeile); Teilen und Speichern unten am Bildschirm. Behobene Fehler stehen am Ende des Protokolls und werden nicht gezählt; Netzwerkprobleme sind Warnungen.
 - Tutorial: In der Karte Warnungen: ein kurzes Tutorial dazu, was jeder Teil der Bildschirme zeigt. Demnächst (vorerst grau).
 HAUPTBILDSCHIRM
 - Erdbebeninformationen: ein Tippen auf das Feld Erdbeben öffnet sie im Hauptbildschirm: die Karte, darunter die Zonen der Spürbarkeit und der Verlauf des Werts; das farbige Quadrat oder die Karte öffnet sie im ganzen Bildschirm, wie ein Beben aus ⚙︎ › Erdbeben. In Rumänien, Frankreich, Italien, den Niederlanden, der Schweiz und Griechenland kommen die offiziellen Werte zuerst vom Institut des Landes (INFP, BCSF, INGV, KNMI, SED, NOA), dann von EMSC. In Rumänien erhalten auch die Beben rund um das Land den INFP-Wert (von infp.ro).
 - Hauptbildschirme: Reiter unter dem Namen (quer unten): der Ort und einer je Parzelle; ein Tippen oder seitliches Wischen wechselt den Bildschirm, + öffnet das Feld einer neuen Parzelle. Wenn nicht alle passen, rückt die Zeile alle 3 Sekunden um eins weiter; ein Finger darauf hält sie eine Weile an.
-- Helligkeit: Zeigt die Helligkeitsleiste links; ein Tippen auf ☀ an ihrem Ende gibt dem Bildschirm die automatische Helligkeit zurück.
+- Helligkeit: Zeigt die Helligkeitsleiste links; ein Tippen auf ☀ an ihrem Ende gibt dem Bildschirm die automatische Helligkeit zurück (☀ wird gelb, ein Hinweis bestätigt es).
 - Mehrere Orte: Jeder Ort der Liste hat seinen eigenen Hauptbildschirm; Wischen nach links oder rechts über dem Wetter jetzt geht zum nächsten, in der Reihenfolge der Liste.
 - Namen der Tasten: Eine runde Taste, die nach dem Antippen auf dem Bildschirm bleibt, zeigt ihren Namen etwa 1,5 Sekunden in einer kleinen Blase.
 - Taste Orte: Die runde Taste mit dem Häuser-Symbol (hochkant rechts vom Namen, quer auf dem oberen Band, vor seiner Ecke) öffnet die Liste der Orte.
@@ -40,6 +40,7 @@ PARZELLEN
 - Statistik im Hauptbildschirm: Sie öffnet sich unter dem Betriebsstatus (quer links); ‹ schließt sie, der Tab einer anderen Parzelle behält sie.
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
+- Wetter zeigen öffnet auf jeder Karte den Hauptbildschirm der Parzelle. Ein Tippen anderswo auf eine Karte zoomt die Karte auf die Parzelle und zeigt ihre Punkte.
 - Wetterebenen: Auf der Karte der Parzellen öffnet sich das Feld unter ＋ und − mit Satellit, Karte, Wolken, Temperaturen (Farben) und Regen (mm pro Stunde) und klappt dann auf die Wahl zusammen; eine Ebene auf einmal, mit Name, Uhrzeit und Legende über den Karten; Regen schaltet sich nur ein, wenn es jetzt oder in den nächsten 2 Stunden regnet (statt des Radars).
 
 Version 1.4 (v.1.400 – v.1.520)

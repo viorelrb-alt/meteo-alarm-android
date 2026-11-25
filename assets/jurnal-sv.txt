@@ -1,4 +1,4 @@
-Nuvarande version: v.2.210 · 25.11.2026
+Nuvarande version: v.2.211 · 25.11.2026
 AVISERINGAR
 - Egna kanaler: vädervarningar, regn och snö, jordbävningar, skiften och uppdateringar har var sin kanal i telefonens inställningar; du kan stänga av en och behålla de andra.
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
@@ -10,7 +10,7 @@ HUVUDSKÄRM
 - Knappen Orter: den runda knappen med husikonen (i stående till höger om namnet, i liggande på det övre bandet, före dess hörn) öppnar listan med orter.
 - Knappen ”uppdaterad”: svävar över sidan till höger: stående under varningarna (utan dem under raden med orter), liggande under klockan. Under uppdatering snurrar pilen, även som en liten cirkel; sedan visas tiden i 4 sekunder och den fälls ihop till ⟳. Ett tryck uppdaterar.
 - Knappnamn: en rund knapp som stannar på skärmen när den trycks visar sitt namn i en liten bubbla i ungefär 1,5 sekund.
-- Ljusstyrka: visar ljusstyrkelisten till vänster; ett tryck på ☀ i dess ände ger skärmen den automatiska ljusstyrkan igen.
+- Ljusstyrka: visar ljusstyrkelisten till vänster; ett tryck på ☀ i dess ände ger skärmen den automatiska ljusstyrkan igen (☀ blir gul, ett meddelande bekräftar det).
 - Nedre knappar: deras namn syns under dem i 3 sekunder när skärmen öppnas, sedan bara knapparna; dra kapseln uppåt för att se dem igen. Knappen som är på ser intryckt ut, med en ring.
 - Väderkarta: längst ned på huvudskärmen (liggande på arket med rutorna): OpenStreetMap i gatunivå runt den exakta platsen för skärmens ort (GPS för den första) eller, på ett skiftes skärm, skiftet med sin kontur; lagret genomskinligt. Kartan står still; data: Open-Meteo. Moln, Temperaturer och Regn, ett i taget; ett tryck på det som är på stänger av det. Regn är grått och överstruket när det inte regnar i närheten nu eller de närmaste 2 timmarna. ▶ spelar upp timmarna (6 före och 6 efter nu) en i taget; ett tryck på en timme visar den.
 INSTÄLLNINGAR
@@ -19,7 +19,7 @@ INSTÄLLNINGAR
 - Fönstret Inställningar: ⚙︎ öppnar inställningarna i avsnitt; en brytare slår på eller av en funktion direkt. Den stängs med X eller ett tryck utanför. Liggande öppnas den till vänster i 2 kolumner, titeln på en rad: dra listen i högerkanten åt vänster för en kolumn, åt höger för två; knappen bredvid X ger 2 kolumner igen. Visning är sist. System & Support visar namnen i 3 sekunder, sedan bara knapparna; på en telefon liggande är det en svävande ruta nederst som fälls ihop till ⋯ (handtaget gör den bredare), på en surfplatta en rad.
 - Hjälp: långa texter är uppdelade i delar med egna ikoner eller visar 2 rader och Visa allt ▾; liggande i 2 kolumner, och ett tryck på ett avsnitts knapp får dess kontur att blinka två gånger.
 - Logg: storlek, rader och fel på ett kort; Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara längst ner på skärmen. Åtgärdade fel står i slutet av loggen och räknas inte; nätverksproblem är varningar.
-- Orter: första kortet i ⚙︎ (i lantbruksläge: Orter & Skiften, med skiftena i). En rad med orten som visas; ▾ öppnar de andra orterna med huvudskärm. Att ta bort en stjärna raderar orten och dess skärm (så länge 2 eller fler är kvar; den sista är grå och stannar). Orter › öppnar listan; på dess karta söker Län ▾ i ett län.
+- Orter: första kortet i ⚙︎ (i lantbruksläge: Orter & Skiften, med skiftena i). En rad med orten som visas; ▾ öppnar de andra orterna med huvudskärm. Att ta bort en stjärna raderar orten och dess skärm (så länge 2 eller fler är kvar; den sista är grå och stannar). Raden Orter ovanför öppnar listan; på dess karta söker Län ▾ i ett län.
 - Guide: i kortet Larm: en kort guide till vad varje del av skärmarna visar. Snart (grå tills vidare).
 - Sidan Jordbävningar: öppnas direkt med de senast sparade listorna i telefonen och uppdaterar dem i bakgrunden.
 - Teman: 6 teman med egen bakgrund, egna kort och egen färg (Grafit, Pion, Honung, Skog, Ocean, Lavendel), alla ljusa och mörka; prickarna i ⚙︎ › Tema har temats färg.
@@ -37,6 +37,7 @@ SKIFTEN
 - Skiftets koordinater: på redigeringssidan skrivs GPS-koordinaterna för varje punkt in, och under dem visar satellitvyn skiftet.
 - Statistik på huvudskärmen: den öppnas under driftstatusen (liggande till vänster); ‹ stänger den och ett annat skiftes flik behåller den.
 - Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
+- Visa vädret, på varje kort, öppnar skiftets huvudskärm. Ett tryck någon annanstans på kortet zoomar kartan till skiftet och visar dess punkter.
 - Väderlager: på skiftenas karta öppnas rutan under ＋ och − med Satellit, Karta, Moln, Temperaturer (färger) och Regn (mm per timme) och fälls sedan ihop till ditt val; ett lager i taget, med namn, tid och förklaring ovanför korten; Regn slås på bara när det regnar nu eller de kommande 2 timmarna (i stället för radarn).
 UPPDATERINGAR
 - Rutan Ny version: en kort ruta överst i ⚙︎ när det finns en ny version; ett tryck på den startar nedladdningen.

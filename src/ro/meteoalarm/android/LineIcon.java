@@ -217,6 +217,13 @@ final class LineIcon extends Drawable {
 			h.addCircle(12, 12, 9, Path.Direction.CW);
 			h.moveTo(15.5f, 8.5f); h.lineTo(13.5f, 13.5f); h.lineTo(8.5f, 15.5f); h.lineTo(10.5f, 10.5f); h.close();
 			break;
+		case "houses": // v2.211: the towns (two houses, as the main screen's Towns button)
+			h.moveTo(10.5f, 8.5f); h.lineTo(15.5f, 4); h.lineTo(21.5f, 9.5f);
+			h.moveTo(20, 8.5f); h.lineTo(20, 20); h.lineTo(14, 20);
+			h.moveTo(2.5f, 13.5f); h.lineTo(8, 8.5f); h.lineTo(13.5f, 13.5f);
+			h.moveTo(4, 12.5f); h.lineTo(4, 20); h.lineTo(12, 20); h.lineTo(12, 12.5f);
+			h.moveTo(7, 20); h.lineTo(7, 16); h.lineTo(9, 16); h.lineTo(9, 20);
+			break;
 		case "parcel":
 			h.moveTo(3, 8); h.lineTo(12, 4); h.lineTo(21, 8); h.lineTo(12, 12); h.close();
 			h.moveTo(3, 12.5f); h.lineTo(12, 16.5f); h.lineTo(21, 12.5f);

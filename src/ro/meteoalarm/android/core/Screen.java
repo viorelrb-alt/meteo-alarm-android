@@ -103,6 +103,8 @@ public final class Screen {
 	 * and its button grayed (Viorel 2026-11-04: the INCAR G3 tablet has neither). */
 	public boolean hasCompass = true, hasLight = true;
 	public float brightLevel = 0.5f;
+	/** v2.211 (Viorel): the phone's automatic brightness is on: the bar's sun is yellow. */
+	public boolean brightAuto;
 	/**
 	 * The bar's colours, from the phone's theme (Android 12+: its palette, so a pink theme gives a
 	 * pink bar); otherwise the phone's usual light gray. The track is drawn half see-through.
@@ -4762,7 +4764,7 @@ public final class Screen {
 	 * (VERTICAL) or the left, never less than a round end, with a sun in that end.
 	 */
 	private void pill(float x, float y, float w, float h, boolean vertical, float level) {
-		int track = (barTrack & 0xFFFFFF) | 0x80000000, fill = barFill, mark = barIcon;
+		int track = (barTrack & 0xFFFFFF) | 0x80000000, fill = barFill, mark = brightAuto ? 0xFFF59E0B : barIcon;
 		float t = vertical ? w : h, len = vertical ? h : w, f = t + Math.max(0, Math.min(1, level)) * (len - t);
 		g.roundRect(x, y, w, h, t / 2, track);
 		if (vertical) {

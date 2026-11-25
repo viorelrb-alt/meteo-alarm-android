@@ -1,11 +1,11 @@
-Praegune versioon: v.2.210 · 25.11.2026
+Praegune versioon: v.2.211 · 25.11.2026
 ASULAD
 - Asulakaardid: tahvelarvutis ja rõhtpaigutuses on need oma teksti laiused ning seisavad ridades ja veergudes; püstpaigutuses telefonis saab liiga pikk nimi väiksemad tähed; rõhtpaigutuses säilitab otsing püstpaigutuse suuruse.
 - Asulate loend: nupp Asulad avab loendi teema värvis; Vali kustutab ühe või mitu (viimane jääb), ning märk ⌃⌄ all hoituna ja üles või alla lohistatuna muudab järjekorda; iga asula säilitab salvestatud ilma.
 - Otsing kaardil: luup avab kaardi, otsing all; koha või asula nime puudutus näitab selle temperatuuri, Üksikasjad (järgmised päevad) ja Lisa. Kaart on lihtne ja hele, asulate nimed on kirjutatud suurelt (ka põldude kaardil). Teised asulad ilmuvad ainult siis, kui need algavad nagu sisestatud nimi (vähemalt 6 tähte või 60% sellest).
 PÕHIEKRAAN
 - Alumised nupud: nende nimed on ekraani avamisel 3 sekundit nende all, siis ainult nupud; tõmba kapsel üles, et neid uuesti näha. Sisselülitatud nupp paistab sissevajutatuna, rõngaga.
-- Heledus: näitab heleduse riba vasakul; puudutus ☀-le selle otsas annab ekraanile tagasi automaatse heleduse.
+- Heledus: näitab heleduse riba vasakul; puudutus ☀-le selle otsas annab ekraanile tagasi automaatse heleduse (☀ muutub kollaseks, teade kinnitab seda).
 - Ilmakaart: pealehe lõpus (rõhtpaigutuses kastidega lehel): OpenStreetMap tänavatasandil ekraani asula täpse koha ümber (esimesel GPS) või põllu ekraanil põld koos piirjoonega; kiht läbipaistev. Kaart seisab paigal; andmed: Open-Meteo. Pilved, Temperatuurid ja Vihm, korraga üks; sisselülitatu puudutus lülitab selle välja. Vihm on hall ja läbi kriipsutatud, kui lähedal ei saja praegu ega järgmise 2 tunni jooksul. ▶ mängib tunnid (6 enne ja 6 pärast praegust) ükshaaval läbi; tunni puudutus näitab seda.
 - Maavärina teave: puudutus väljal Maavärin avab selle põhiekraanil: kaart, selle all tuntavuse tsoonid ja väärtuse ajalugu; värviline ruut või kaart avab selle täisekraanil, nagu värina menüüst ⚙︎ › Maavärinad. Rumeenias, Prantsusmaal, Itaalias, Hollandis, Šveitsis ja Kreekas tulevad ametlikud väärtused esmalt riigi instituudilt (INFP, BCSF, INGV, KNMI, SED, NOA), seejärel EMSC-lt. Rumeenias saavad ka riigi ümbruse maavärinad INFP väärtuse (infp.ro-st).
 - Mitu asulat: igal loendi asulal on oma põhiekraan; pühkimine vasakule või paremale praegusel ilmal viib järgmisele, loendi järjekorras.
@@ -18,6 +18,7 @@ PÕLLULAPID
 - Ilmakihid: põldude kaardil avaneb kast ＋ ja − all valikutega Satelliit, Kaart, Pilved, Temperatuurid (värvid) ja Vihm (mm tunnis) ning paneb end siis sinu valikule kokku; üks kiht korraga, nime, aja ja legendiga kaartide kohal; Vihm lülitub sisse ainult siis, kui sajab praegu või järgmise 2 tunni jooksul (radari asemel).
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.
 - Muuda põldu: pliiats avab põllu lehe: nimi, kultuur (loend külvikuupäeva hooaja järgi või Muu kultuur…), külvikuupäev, pindala; nurgad liiguvad kaardil.
+- Näita ilma avab igal kaardil maatüki pealehe. Puudutus mujal kaardil suumib kaardi maatükile ja näitab selle punkte.
 - Prügikast: kustutatud põld läheb prügikasti ↺-ga GPS-nupu kõrval (punane täpp loeb neid) ja jääb 15 päevaks; ümar nupp taastab selle (kui salvestatud põllul on sama nimi: uus nimi või asenda).
 - Põllu koordinaadid: muutmislehel saab iga punkti GPS-koordinaadid sisse kirjutada ja nende all näitab satelliidivaade põldu.
 - Statistika põhiekraanil: see avaneb tööoleku all (rõhtpaigutuses vasakul); ‹ sulgeb selle ja teise põllu vahekaart hoiab selle alles.
@@ -26,7 +27,7 @@ PÕLLULAPID
 SEADED
 - Abi: pikad tekstid on jagatud oma ikoonidega osadeks või näitavad 2 rida ja Näita kõike ▾; rõhtpaigutuses 2 veerus ning jaotise nupu puudutus vilgutab selle piirjoont kaks korda.
 - Aken Seaded: ⚙︎ avab seaded jaotistena; lüliti lülitab funktsiooni kohe sisse või välja. Sulgub X-iga või puudutusega väljaspool. Rõhtpaigutuses avaneb vasakul 2 veerus, pealkiri ühel real: lohista parema serva riba vasakule ühe veeru jaoks, paremale kahe jaoks; X kõrval olev nupp toob 2 veergu tagasi. Kuva on viimane. Süsteem & Tugi näitab nimesid 3 sekundit, siis ainult nuppe; telefonis rõhtpaigutuses on see allservas hõljuv kast, mis voldib end ⋯-ks (sang laiendab seda), tahvlis üks rida.
-- Asulad: ⚙︎ esimene kaart (põllumehe režiimis: Asulad & Põllud, koos põldudega). Üks rida näidatava asulaga; ▾ avab teised pealehega asulad. Tähe eemaldamine kustutab asula ja selle ekraani (kuni alles on 2 või rohkem; viimane on hall ja jääb). Asulad › avab loendi; selle kaardil otsib Maakond ▾ ühest maakonnast.
+- Asulad: ⚙︎ esimene kaart (põllumehe režiimis: Asulad & Põllud, koos põldudega). Üks rida näidatava asulaga; ▾ avab teised pealehega asulad. Tähe eemaldamine kustutab asula ja selle ekraani (kuni alles on 2 või rohkem; viimane on hall ja jääb). Selle kohal olev rida Kohad avab nimekirja; selle kaardil otsib Maakond ▾ ühest maakonnast.
 - Eksport / Import: lülitid faili sisu jaoks (ka kultuurid ja kasvatusandmed, põldude teavitused, põldude prügikast, teavitused, kaart, vidinad, maavärinate ajalugu, logi); Ekspordis ja Impordis märgitakse kohad ja põllud ükshaaval; nupp Aa muudab teksti suurust.
 - Kuvakeel: ⚙︎ all inglise keel ja riigi keel; Muud keeled: riigi teised keeled, suured ELi keeled, rumeenia keel ja telefoni keel (USAs ainult inglise ja hispaania keel).
 - Leht Maavärinad: avaneb kohe telefoni viimati salvestatud loenditega ja uuendab neid taustal.

@@ -1,4 +1,4 @@
-Versione attuale: v.2.210 · 25.11.2026
+Versione attuale: v.2.211 · 25.11.2026
 AGGIORNAMENTI
 - Riquadro Nuova versione: un breve riquadro in cima a ⚙︎ quando esiste una nuova versione; toccarlo avvia il download.
 IMPOSTAZIONI
@@ -7,7 +7,7 @@ IMPOSTAZIONI
 - Funzioni avanzate: il riquadro sotto Località: modalità Agricoltore e la pagina Terremoti.
 - La finestra Impostazioni: ⚙︎ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. In orizzontale si apre a sinistra su 2 colonne, il titolo su una riga: trascina la barra sul bordo destro a sinistra per una colonna, a destra per due; il pulsante accanto a X riporta le 2 colonne. Visualizzazione è in fondo. Sistema e Supporto mostra i nomi per 3 secondi, poi solo i pulsanti; su un telefono in orizzontale è un riquadro fluttuante in basso che si riduce a ⋯ (la sua maniglia lo allarga), su un tablet una sola riga.
 - Lingua di visualizzazione: nel ⚙︎ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
-- Località: la prima scheda di ⚙︎ (in modalità agricoltore: Località & Appezzamenti, con gli appezzamenti dentro). Una riga con la località mostrata; ▾ apre le altre località con schermata principale. Togliere una stella elimina la località e la sua schermata (finché ne restano 2 o più; l'ultima è grigia e resta). Località › apre l'elenco; sulla sua mappa, Provincia ▾ cerca in una sola provincia.
+- Località: la prima scheda di ⚙︎ (in modalità agricoltore: Località & Appezzamenti, con gli appezzamenti dentro). Una riga con la località mostrata; ▾ apre le altre località con schermata principale. Togliere una stella elimina la località e la sua schermata (finché ne restano 2 o più; l'ultima è grigia e resta). La riga Località sopra apre l'elenco; sulla sua mappa, Provincia ▾ cerca in una sola provincia.
 - Pagina Terremoti: si apre subito con gli ultimi elenchi salvati sul telefono e li aggiorna in background.
 - Registro: dimensione, righe ed errori su una scheda; Vedi il registro apre le righe (Tutte, Errori, Oggi, Ieri; un tocco lungo copia una riga); Condividi e Salva in fondo allo schermo. Gli errori risolti sono alla fine del registro e non vengono contati; i problemi di rete sono avvisi.
 - Temi: 6 temi con il proprio sfondo, le schede e il colore (Grafite, Peonia, Miele, Foresta, Oceano, Lavanda), ognuno chiaro e scuro; i punti in ⚙︎ › Tema hanno il colore del tema.
@@ -26,13 +26,14 @@ PARTICELLE
 - Coordinate della particella: nella pagina di modifica si scrivono le coordinate GPS di ogni punto, e sotto la vista satellitare mostra la particella.
 - Livelli meteo: sulla mappa delle particelle il riquadro sotto ＋ e − si apre con Satellite, Mappa, Nuvole, Temperature (colori) e Pioggia (mm all'ora), poi si richiude sulla scelta; un livello alla volta, con nome, ora e legenda sopra le schede; Pioggia si attiva solo quando piove ora o nelle prossime 2 ore (al posto del radar).
 - Modifica particella: la matita apre la pagina della particella: nome, coltura (elenco secondo la stagione della data di semina o Altra coltura…), data di semina, superficie; gli angoli si spostano sulla mappa.
+- Mostra il meteo, su ogni scheda, apre la schermata principale della particella. Un tocco altrove sulla scheda ingrandisce la mappa sulla particella e ne mostra i punti.
 - Statistiche nella schermata principale: si aprono sotto lo stato operativo (in orizzontale a sinistra); ‹ le chiude e la scheda di un'altra particella le mantiene.
 - Statistiche: per ogni particella, l'Azione del giorno e 4 schede: Operativo (finestra di irrorazione ora per ora, asciugatura gocce (ΔT), vento, foglia bagnata), Acqua e Suolo (pioggia, evaporazione, suolo a 6 e 18 cm), Stagione (gradi-giorno rispetto all'anno scorso, fase stimata) e Rischi 72 h (malattie fungine, gelata al suolo, caldo, vento e grandine); salvataggio in PDF o CSV.
 - Stato operativo: in alto la coltura e la data di semina; con una coltura il verdetto tiene conto anche dell'asciugatura delle gocce (ΔT) e della sua malattia.
 - Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
 SCHERMATA PRINCIPALE
 - Informazioni sul terremoto: un tocco sul riquadro Terremoto le apre nella schermata principale: la mappa, sotto le zone di avvertibilità e la cronologia del valore; il quadrato colorato o la mappa le aprono a schermo intero, come un terremoto da ⚙︎ › Terremoti. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
-- Luminosità: mostra la barra della luminosità a sinistra; un tocco su ☀ alla sua estremità ridà allo schermo la luminosità automatica.
+- Luminosità: mostra la barra della luminosità a sinistra; un tocco su ☀ alla sua estremità ridà allo schermo la luminosità automatica (☀ diventa giallo, un avviso lo conferma).
 - Mappa meteo: alla fine della schermata principale (in orizzontale sul foglio con i riquadri): OpenStreetMap a livello di strada sul punto esatto della località della schermata (GPS per la prima) o, sulla schermata di un appezzamento, l'appezzamento con il suo contorno; il livello trasparente. La mappa resta ferma; dati: Open-Meteo. Nuvole, Temperature e Pioggia, uno alla volta; un tocco su quello attivo lo spegne. Pioggia è grigio e barrato quando non piove vicino ora né nelle prossime 2 ore. ▶ riproduce le ore (6 prima e 6 dopo adesso) una alla volta; un tocco su un'ora la mostra.
 - Miglioramenti del design e correzioni degli errori segnalati.
 - Nomi dei pulsanti: un pulsante rotondo che resta sullo schermo dopo il tocco mostra il suo nome in una piccola bolla per circa 1,5 secondi.

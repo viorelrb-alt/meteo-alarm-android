@@ -1839,3 +1839,11 @@ Parcel	Парцел
 Bin: the deleted parcels, to restore	Кошче: изтритите парцели, за възстановяване
 Hide the other towns	Скрий другите места
 Show the other towns with a main screen	Покажи другите места с главен екран
+Search, add and delete towns	Търсене, добавяне и изтриване на населени места
+Show weather	Покажи времето
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Покажи времето, на всяка карта, отваря главния екран на парцела. Докосване другаде по картата приближава картата към парцела и показва точките му.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	Първата карта в ⚙︎ (в режим фермер: Места & Парцели, с парцелите в нея). Един ред с показаното място; ▾ отваря другите места с главен екран. Махането на звезда изтрива мястото и екрана му (докато остават 2 или повече; последното е сиво и остава). Редът Населени места отгоре отваря списъка; на картата му Област ▾ търси в една област.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Парцел, на горния ред до GPS (във вертикален режим след 2 секунди се свива до ＋), първо пита, после добавя парцел: карфицата тръгва от средата на картата, докосване на картата я мести; името се пише горе. ‹ връща назад.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	На картата на Парцелите, под ＋ и − (в хоризонтален режим двата на един ред). По един слой наведнъж; данни: Open-Meteo.
+Automatic brightness is on	Автоматичната яркост е включена
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Показва лентата за яркост вляво; докосване на ☀ в края ѝ връща автоматичната яркост на екрана (☀ става жълто, съобщение го потвърждава).

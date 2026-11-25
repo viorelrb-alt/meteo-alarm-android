@@ -1,7 +1,7 @@
-Huidige versie: v.2.210 · 25.11.2026
+Huidige versie: v.2.211 · 25.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ⚙︎ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
-- Helderheid: toont de helderheidsbalk links; een tik op ☀ aan het eind geeft het scherm de automatische helderheid terug.
+- Helderheid: toont de helderheidsbalk links; een tik op ☀ aan het eind geeft het scherm de automatische helderheid terug (☀ wordt geel, een melding bevestigt het).
 - Hoofdschermen: tabbladen onder de naam (liggend onderaan): de plaats en één per perceel; een tik of een veeg opzij wisselt het scherm, + opent het vak van een nieuw perceel. Als ze niet allemaal passen, schuift de rij elke 3 seconden één op; een vinger erop stopt haar even.
 - Knop Plaatsen: de ronde knop met het huisjespictogram (staand rechts van de naam, liggend op de bovenste band, vóór de hoek) opent de lijst met plaatsen.
 - Knop „bijgewerkt”: zweeft rechts boven de pagina: staand onder de waarschuwingen (zonder waarschuwingen onder de rij met plaatsen), liggend onder de klok. Tijdens het bijwerken draait de pijl, ook als kleine cirkel; daarna staat de tijd 4 seconden en wordt hij ⟳. Een tik werkt bij.
@@ -16,7 +16,7 @@ INSTELLINGEN
 - Het venster Instellingen: ⚙︎ opent de instellingen in secties; een schakelaar zet een functie meteen aan of uit. Sluiten met X of een tik erbuiten. Liggend opent het links in 2 kolommen, de titel op één regel: sleep de balk aan de rechterrand naar links voor één kolom, naar rechts voor twee; de knop naast X zet de 2 kolommen terug. Weergave staat als laatste. Systeem & Ondersteuning toont de namen 3 seconden, daarna alleen de knoppen; op een telefoon liggend is het een zwevend vak onderaan dat inklapt tot ⋯ (de greep maakt het weer breed), op een tablet één rij.
 - Logboek: grootte, regels en fouten op een kaart; Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan onderaan het scherm. Opgeloste fouten staan aan het eind van het logboek en tellen niet mee; netwerkproblemen zijn waarschuwingen.
 - Pagina Aardbevingen: opent meteen met de laatst op de telefoon opgeslagen lijsten en werkt ze op de achtergrond bij.
-- Plaatsen: de eerste kaart van ⚙︎ (in boerenmodus: Plaatsen & Percelen, met de percelen erin). Eén rij met de getoonde plaats; ▾ opent de andere plaatsen met een hoofdscherm. Een ster uitvinken verwijdert de plaats en haar scherm (zolang er 2 of meer over zijn; de laatste is grijs en blijft). Plaatsen › opent de lijst; op haar kaart zoekt Provincie ▾ in één provincie.
+- Plaatsen: de eerste kaart van ⚙︎ (in boerenmodus: Plaatsen & Percelen, met de percelen erin). Eén rij met de getoonde plaats; ▾ opent de andere plaatsen met een hoofdscherm. Een ster uitvinken verwijdert de plaats en haar scherm (zolang er 2 of meer over zijn; de laatste is grijs en blijft). De rij Plaatsen erboven opent de lijst; op haar kaart zoekt Provincie ▾ in één provincie.
 - Tutorial: in de kaart Meldingen: een korte tutorial van wat elk deel van de schermen toont. Binnenkort (voorlopig grijs).
 - Thema's: 6 thema's met een eigen achtergrond, kaarten en kleur (Grafiet, Pioen, Honing, Woud, Oceaan, Lavendel), elk licht en donker; de stippen in ⚙︎ › Thema hebben de kleur van het thema.
 - Weergavetaal: in ⚙︎ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
@@ -33,6 +33,7 @@ PERCELEN
 - Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
 - Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
+- Weer tonen, op elke kaart, opent het hoofdscherm van het perceel. Een tik elders op een kaart zoomt de kaart in op het perceel en toont zijn punten.
 - Weerlagen: op de kaart van de percelen opent het vak onder ＋ en − met Satelliet, Kaart, Wolken, Temperaturen (kleuren) en Regen (mm per uur) en klapt daarna dicht op je keuze; één laag tegelijk, met naam, tijd en legenda boven de kaarten; Regen gaat alleen aan als het nu of in de komende 2 uur regent (in plaats van de radar).
 PLAATSEN
 - Lijst met plaatsen: de knop Plaatsen opent de lijst, in de kleur van het thema; Selecteren verwijdert er één of meer (de laatste blijft), en het teken ⌃⌄ vasthouden en omhoog of omlaag slepen verandert de volgorde; elke plaats houdt haar opgeslagen weer.

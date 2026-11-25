@@ -1839,3 +1839,11 @@ Parcel	Mark
 Bin: the deleted parcels, to restore	Papirkurv: de slettede marker, til gendannelse
 Hide the other towns	Skjul de andre byer
 Show the other towns with a main screen	Vis de andre byer med hovedskærm
+Search, add and delete towns	Søg, tilføj og slet byer
+Show weather	Vis vejret
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Vis vejret, på hvert kort, åbner parcellens hovedskærm. Et tryk et andet sted på kortet zoomer kortet ind på parcellen og viser dens punkter.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	Det første kort i ⚙︎ (i landmandstilstand: Byer & Marker, med markerne i). Én række med den viste by; ▾ åbner de andre byer med hovedskærm. At fjerne en stjerne sletter byen og dens skærm (så længe 2 eller flere er tilbage; den sidste er grå og bliver). Rækken Byer ovenover åbner listen; på dens kort søger Region ▾ i én region.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Mark, i den øverste række ved GPS (i portræt skrumper den til ＋ efter 2 sekunder), spørger først og tilføjer så en mark: nålen starter midt på kortet, et tryk på kortet flytter den; navnet står øverst. ‹ går tilbage.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	På kortet over Marker, under ＋ og − (i landskab begge på én række). Ét lag ad gangen; data: Open-Meteo.
+Automatic brightness is on	Automatisk lysstyrke er slået til
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Viser lysstyrkebjælken til venstre; et tryk på ☀ i dens ende giver skærmen den automatiske lysstyrke igen (☀ bliver gul, en besked bekræfter det).

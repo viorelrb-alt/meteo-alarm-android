@@ -1773,3 +1773,11 @@ Parcel	Парцела
 Bin: the deleted parcels, to restore	Корпа: обрисане парцеле за враћање
 Hide the other towns	Сакриј остала места
 Show the other towns with a main screen	Прикажи остала места са главним екраном
+Search, add and delete towns	Pretraži, dodaj i obriši mesta
+Show weather	Prikaži vreme
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Prikaži vreme, na svakoj kartici, otvara glavni ekran parcele. Dodir na drugom mestu kartice približava mapu parceli i prikazuje njene tačke.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	Прва картица у ⚙︎ (у режиму пољопривредника: Места & Парцеле, са парцелама у њој). Један ред са приказаним местом; ▾ отвара остала места са главним екраном. Скидање звездице брише место и његов екран (док их остаје 2 или више; последње је сиво и остаје). Red Mesta iznad otvara listu; на њеној мапи Округ ▾ тражи у једном округу.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Парцела, у горњем реду поред GPS (uspravno se posle 2 sekunde smanji na ＋)-а, прво пита па додаје парцелу: чиода креће из средине мапе, додир на мапи је помера; име иде горе. ‹ враћа назад.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	На мапи Парцела, испод ＋ и − (položeno oba u jednom redu). Један слој одједном; подаци: Open-Meteo.
+Automatic brightness is on	Automatska osvetljenost je uključena
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Показује траку осветљености лево; додир на ☀ на њеном крају враћа екрану аутоматску осветљеност (☀ postaje žuto, poruka to potvrđuje).

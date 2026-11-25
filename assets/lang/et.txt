@@ -1839,3 +1839,11 @@ Parcel	Põld
 Bin: the deleted parcels, to restore	Prügikast: kustutatud põllud taastamiseks
 Hide the other towns	Peida teised asulad
 Show the other towns with a main screen	Näita teisi pealehega asulaid
+Search, add and delete towns	Otsi, lisa ja kustuta kohti
+Show weather	Näita ilma
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Näita ilma avab igal kaardil maatüki pealehe. Puudutus mujal kaardil suumib kaardi maatükile ja näitab selle punkte.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	⚙︎ esimene kaart (põllumehe režiimis: Asulad & Põllud, koos põldudega). Üks rida näidatava asulaga; ▾ avab teised pealehega asulad. Tähe eemaldamine kustutab asula ja selle ekraani (kuni alles on 2 või rohkem; viimane on hall ja jääb). Selle kohal olev rida Kohad avab nimekirja; selle kaardil otsib Maakond ▾ ühest maakonnast.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Põld, ülemises reas GPS (püstpaigutuses kahaneb see 2 sekundi pärast ＋-iks)-i kõrval, küsib enne ja lisab siis põllu: nõel algab kaardi keskelt, puudutus kaardil liigutab seda; nimi on üleval. ‹ läheb tagasi.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Põldude kaardil, ＋ ja − (rõhtpaigutuses mõlemad ühes reas) all. Korraga üks kiht; andmed: Open-Meteo.
+Automatic brightness is on	Automaatne heledus on sees
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Näitab heleduse riba vasakul; puudutus ☀-le selle otsas annab ekraanile tagasi automaatse heleduse (☀ muutub kollaseks, teade kinnitab seda).

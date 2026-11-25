@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.210 · 25.11.2026
+Pašreizējā versija: v.2.211 · 25.11.2026
 ATJAUNINĀJUMI
 - Lodziņš Jauna versija: īss lodziņš ⚙︎ augšā, kad ir jauna versija; pieskāriens tam sāk lejupielādi.
 GALVENAIS EKRĀNS
@@ -8,7 +8,7 @@ GALVENAIS EKRĀNS
 - Poga Vietas: apaļā poga ar māju ikonu (portretā pa labi no nosaukuma, ainavā augšējā joslā pirms tās stūra) atver vietu sarakstu.
 - Poga “atjaunināts”: peld virs lapas labajā pusē: portretā zem brīdinājumiem (bez tiem zem vietu rindas), ainavā zem pulksteņa. Atjaunināšanas laikā bulta griežas, arī kā mazs aplis; pēc tam 4 sekundes redzams laiks un tā sakļaujas par ⟳. Pieskāriens atjaunina.
 - Pogu nosaukumi: apaļa poga, kas pēc pieskāriena paliek ekrānā, rāda savu nosaukumu mazā burbulī apmēram 1,5 sekundes.
-- Spilgtums: rāda spilgtuma joslu kreisajā pusē; pieskaroties ☀ tās galā, ekrānam atgriežas automātiskais spilgtums.
+- Spilgtums: rāda spilgtuma joslu kreisajā pusē; pieskaroties ☀ tās galā, ekrānam atgriežas automātiskais spilgtums (☀ kļūst dzeltena, paziņojums to apstiprina).
 - Vairākas vietas: katrai saraksta vietai ir savs galvenais ekrāns; pavilkšana pa kreisi vai pa labi pār pašreizējiem laikapstākļiem pāriet uz nākamo, saraksta secībā.
 - Zemestrīces informācija: pieskāriens laukam Zemestrīce to atver galvenajā ekrānā: karte, zem tās sajūtamības zonas un vērtības vēsture; krāsainais kvadrāts vai karte to atver visā ekrānā, kā zemestrīci no ⚙︎ › Zemestrīces. Rumānijā, Francijā, Itālijā, Nīderlandē, Šveicē un Grieķijā oficiālās vērtības vispirms nāk no valsts institūta (INFP, BCSF, INGV, KNMI, SED, NOA), pēc tam no EMSC. Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).
 IESTATĪJUMI
@@ -20,7 +20,7 @@ IESTATĪJUMI
 - Motīvi: 6 motīvi ar savu fonu, kartītēm un krāsu (Grafīts, Peonija, Medus, Mežs, Okeāns, Lavanda), katrs gaišs un tumšs; punktiem ⚙︎ › Motīvs ir motīva krāsa.
 - Palīdzība: garie teksti ir sadalīti daļās ar savām ikonām vai rāda 2 rindas un Rādīt visu ▾; ainavā 2 kolonnās, un pieskāriens sadaļas pogai divreiz liek mirgot tās kontūrai.
 - Papildu funkcijas: kartīte zem Vietām: Lauksaimnieka režīms un Zemestrīču lapa.
-- Vietas: ⚙︎ pirmā kartīte (lauksaimnieka režīmā: Vietas & Lauki, ar laukiem tajā). Viena rinda ar parādīto vietu; ▾ atver citas vietas ar galveno ekrānu. Zvaigznes noņemšana izdzēš vietu un tās ekrānu (kamēr paliek 2 vai vairāk; pēdējā ir pelēka un paliek). Vietas › atver sarakstu; tā kartē Novads ▾ meklē vienā novadā.
+- Vietas: ⚙︎ pirmā kartīte (lauksaimnieka režīmā: Vietas & Lauki, ar laukiem tajā). Viena rinda ar parādīto vietu; ▾ atver citas vietas ar galveno ekrānu. Zvaigznes noņemšana izdzēš vietu un tās ekrānu (kamēr paliek 2 vai vairāk; pēdējā ir pelēka un paliek). Rinda Vietas virs tās atver sarakstu; tā kartē Novads ▾ meklē vienā novadā.
 - Žurnāls: izmērs, rindas un kļūdas kartītē; Skatīt žurnālu atver rindas (Visas, Kļūdas, Šodien, Vakar; ilgs pieskāriens nokopē rindu); Kopīgot un Saglabāt ekrāna apakšā. Novērstās kļūdas ir žurnāla beigās un netiek skaitītas; tīkla problēmas ir brīdinājumi.
 LAUKI
 - Burbuļi statistikā: pieskāriens stundai smidzināšanas logā, dienai grafikos vai augsnes rindai atver burbuli ar skaidrojumu; smidzināšanas logs kustas pats.
@@ -29,6 +29,7 @@ LAUKI
 - Lauka koordinātas: rediģēšanas lapā var ierakstīt katra punkta GPS koordinātas, bet zem tām satelīta skats rāda lauku.
 - Miskaste: izdzēsts lauks nonāk miskastē ar ↺ blakus GPS pogai (sarkanais punkts tos skaita) un tiek glabāts 15 dienas; apaļā poga to atjauno (ja saglabātam laukam ir tāds pats nosaukums: jauns nosaukums vai aizstāt).
 - Rediģēt lauku: zīmulis atver lauka lapu: nosaukums, kultūra (saraksts pēc sējas datuma sezonas vai Cita kultūra…), sējas datums, platība; stūri pārvietojas kartē.
+- Rādīt laikapstākļus katrā kartītē atver zemes gabala galveno ekrānu. Pieskāriens citur kartītē pietuvina karti zemes gabalam un parāda tā punktus.
 - Statistika galvenajā ekrānā: tā atveras zem darbības statusa (ainavā pa kreisi); ‹ to aizver, bet cita lauka cilne to saglabā.
 - Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, pilienu žūšana (ΔT), vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
 - Vēsture un prognoze: velciet rādītāju uz pagājušu dienu; tās vērtības parādās lodziņā zem grafika, un pēc 10 s tas atgriežas uz šodienu.

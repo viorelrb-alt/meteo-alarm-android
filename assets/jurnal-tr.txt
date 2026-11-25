@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.210 · 25.11.2026
+Geçerli sürüm: v.2.211 · 25.11.2026
 ANA EKRAN
 - Alt düğmeler: ekran açılınca adları 3 saniye altlarında görünür, sonra yalnızca düğmeler kalır; yeniden görmek için kapsülü yukarı çekin. Açık düğme basılı görünür, halkalı.
 - Ana ekranlar: adın altındaki sekmeler (yatayda altta): yerleşim yeri ve her parsel için bir tane; dokunmak veya yana kaydırmak ekranı değiştirir, + yeni parsel kutusunu açar. Hepsi sığmadığında satır her 3 saniyede bir ilerler; üzerine konan bir parmak onu bir süre durdurur.
@@ -6,7 +6,7 @@ ANA EKRAN
 - Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ⚙︎ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
 - Düğme adları: dokunulduğunda ekranda kalan yuvarlak düğme adını yaklaşık 1,5 saniye küçük bir balonda gösterir.
 - Hava haritası: ana ekranın sonunda (yatayda kutuların olduğu sayfada): ekrandaki yerin tam konumu çevresinde sokak düzeyinde OpenStreetMap (ilki için GPS) ya da bir parselin ekranında, sınırıyla birlikte parsel; katman saydam. Harita sabit kalır; veriler: Open-Meteo. Bulutlar, Sıcaklıklar ve Yağmur, tek tek; açık olana dokunmak onu kapatır. Yakında şimdi ve sonraki 2 saatte yağmur yoksa Yağmur gri ve üstü çizilidir. ▶ saatleri (şimdiden 6 önce ve 6 sonra) tek tek oynatır; bir saate dokunmak onu gösterir.
-- Parlaklık: soldaki parlaklık çubuğunu gösterir; ucundaki ☀ işaretine dokunmak ekrana otomatik parlaklığı geri verir.
+- Parlaklık: soldaki parlaklık çubuğunu gösterir; ucundaki ☀ işaretine dokunmak ekrana otomatik parlaklığı geri verir (☀ sarıya döner, bir bildirim bunu doğrular).
 - Yerler düğmesi: ev simgeli yuvarlak düğme (dikeyde adın sağında, yatayda üst şeritte, köşesinden önce) yerler listesini açar.
 - “Güncellendi” düğmesi: sayfanın üstünde sağda süzülür: dikeyde uyarıların altında (uyarı yoksa yerler satırının altında), yatayda saatin altında. Güncellenirken oku döner, küçük bir daire olarak da; sonra saat 4 saniye görünür ve ⟳ olarak katlanır. Dokunmak günceller.
 AYARLAR
@@ -19,7 +19,7 @@ AYARLAR
 - Temalar: kendi arka planı, kartları ve rengi olan 6 tema (Grafit, Şakayık, Bal, Orman, Okyanus, Lavanta), her biri açık ve koyu; ⚙︎ › Tema içindeki noktalar temanın rengindedir.
 - Eğitim: uyarılar kartında: ekranların her bölümünün ne gösterdiğine dair kısa bir eğitim. Yakında (şimdilik gri).
 - Yardım: uzun metinler kendi simgeleriyle bölümlere ayrılır ya da 2 satır ve Tümünü göster ▾ gösterir; yatayda 2 sütun hâlinde, bir bölüm düğmesine dokunmak o bölümün çerçevesini iki kez yanıp söndürür.
-- Yerler: ⚙︎ menüsünün ilk kartı (çiftçi modunda: Yerler & Parseller, parseller de içinde). Gösterilen yerle tek satır; ▾ ana ekranı olan diğer yerleri açar. Bir yıldızı kaldırmak yeri ve ekranını siler (2 veya daha fazla kaldıkça; sonuncusu gridir ve kalır). Yerler › listeyi açar; haritasında İl ▾ tek bir ilde arar.
+- Yerler: ⚙︎ menüsünün ilk kartı (çiftçi modunda: Yerler & Parseller, parseller de içinde). Gösterilen yerle tek satır; ▾ ana ekranı olan diğer yerleri açar. Bir yıldızı kaldırmak yeri ve ekranını siler (2 veya daha fazla kaldıkça; sonuncusu gridir ve kalır). Üstündeki Yerler satırı listeyi açar; haritasında İl ▾ tek bir ilde arar.
 BILDIRIMLER
 - Depremler: her 10 dakikada bir, gece ekran kapalıyken de kontrol edilir; revize edilen büyüklük bildirimi günceller, bildirime dokunmak haritayı açar.
 - Kendi kanalları: hava uyarıları, yağmur ve kar, depremler, parseller ve güncellemelerin her birinin telefon ayarlarında kendi kanalı vardır; birini kapatıp diğerlerini tutabilirsiniz.
@@ -30,6 +30,7 @@ PARSELLER
 - Ana ekranda istatistikler: operasyonel durumun altında açılır (yatayda solda); ‹ kapatır, başka bir parselin sekmesi açık tutar.
 - Geçmiş ve tahmin: göstergeyi geçmiş bir güne sürükleyin; değerleri grafiğin altındaki kutuda görünür ve 10 sn sonra bugüne döner.
 - Hava katmanları: parsellerin haritasında ＋ ve − altındaki kutu Uydu, Harita, Bulutlar, Sıcaklıklar (renkler) ve Yağmur (saatte mm) ile açılır, sonra seçiminize kapanır; aynı anda bir katman, adı, saati ve açıklaması kartların üstünde; Yağmur yalnızca şimdi ya da sonraki 2 saatte yağmur varsa açılır (radar yerine).
+- Her karttaki Havayı göster, parselin ana ekranını açar. Kartta başka bir yere dokunmak haritayı parsele yakınlaştırır ve noktalarını gösterir.
 - İstatistik balonları: ilaçlama penceresindeki bir saate, grafiklerdeki bir güne veya bir toprak satırına dokunmak açıklamalı bir balon açar; ilaçlama penceresi kendiliğinden kayar.
 - İstatistik: her parsel için Günün işi ve 4 sekme: Operasyonel (saat saat ilaçlama penceresi, damla kuruması (ΔT), rüzgâr, ıslak yaprak), Su ve Toprak (yağmur, buharlaşma, 6 ve 18 cm'de toprak), Sezon (geçen yıla göre gün-derecesi, tahmini evre) ve Riskler 72 h (mantar hastalıkları, yer donu, sıcak, rüzgâr ve dolu); PDF veya CSV olarak kaydetme.
 - Operasyonel durum: üstte ürün ve ekim tarihi; ürün varsa karar damla kurumasını (ΔT) ve ürünün hastalığını da hesaba katar.

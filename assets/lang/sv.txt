@@ -1839,3 +1839,11 @@ Parcel	Skifte
 Bin: the deleted parcels, to restore	Papperskorg: de raderade skiftena, att återställa
 Hide the other towns	Dölj de andra orterna
 Show the other towns with a main screen	Visa de andra orterna med huvudskärm
+Search, add and delete towns	Sök, lägg till och ta bort orter
+Show weather	Visa vädret
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Visa vädret, på varje kort, öppnar skiftets huvudskärm. Ett tryck någon annanstans på kortet zoomar kartan till skiftet och visar dess punkter.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	Första kortet i ⚙︎ (i lantbruksläge: Orter & Skiften, med skiftena i). En rad med orten som visas; ▾ öppnar de andra orterna med huvudskärm. Att ta bort en stjärna raderar orten och dess skärm (så länge 2 eller fler är kvar; den sista är grå och stannar). Raden Orter ovanför öppnar listan; på dess karta söker Län ▾ i ett län.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Skifte, i översta raden bredvid GPS (i stående läge krymper den till ＋ efter 2 sekunder), frågar först och lägger sedan till ett skifte: nålen börjar mitt på kartan, ett tryck på kartan flyttar den; namnet står överst. ‹ går tillbaka.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	På kartan över Skiften, under ＋ och − (i liggande läge båda på en rad). Ett lager i taget; data: Open-Meteo.
+Automatic brightness is on	Automatisk ljusstyrka är på
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Visar ljusstyrkelisten till vänster; ett tryck på ☀ i dess ände ger skärmen den automatiska ljusstyrkan igen (☀ blir gul, ett meddelande bekräftar det).

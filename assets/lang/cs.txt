@@ -1839,3 +1839,11 @@ Parcel	Pozemek
 Bin: the deleted parcels, to restore	Koš: smazané pozemky k obnovení
 Hide the other towns	Skrýt ostatní obce
 Show the other towns with a main screen	Ukázat ostatní obce s hlavní obrazovkou
+Search, add and delete towns	Hledat, přidat a smazat obce
+Show weather	Ukázat počasí
+Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.	Ukázat počasí na každé kartě otevře hlavní obrazovku parcely. Klepnutí jinam na kartu přiblíží mapu na parcelu a ukáže její body.
+The first card of ⚙︎ (with farmer mode: Towns & Parcels, the Parcels in it too). One row with the town shown; ▾ opens the other towns with a main screen. Unticking a star deletes the town and its screen (while 2 or more are left; the last one is grey and stays). The Towns row above it opens the list; on its map, County ▾ searches in one county.	První karta v ⚙︎ (v režimu zemědělce: Obce & Pozemky, i s pozemky). Jeden řádek se zobrazenou obcí; ▾ otevře ostatní obce s hlavní obrazovkou. Odškrtnutí hvězdy smaže obec i její obrazovku (dokud zbývají 2 nebo více; poslední je šedá a zůstává). Řádek Obce nad ním otevře seznam; na jeho mapě Kraj ▾ hledá v jednom kraji.
+＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.	＋ Pozemek, v horním řádku vedle GPS (na výšku se po 2 sekundách zmenší na ＋), se nejprve zeptá a pak přidá pozemek: špendlík začíná uprostřed mapy, klepnutí na mapu ho posune; název je nahoře. ‹ jde zpět.
+On the Parcels map, under ＋ and − (in landscape the two are on one row). One layer at a time; data: Open-Meteo.	Na mapě Pozemků, pod ＋ a − (na šířku obě v jednom řádku). Vždy jen jedna vrstva; data: Open-Meteo.
+Automatic brightness is on	Automatický jas je zapnutý
+Shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).	Ukáže lištu jasu vlevo; klepnutí na ☀ na jejím konci vrátí obrazovce automatický jas (☀ zežloutne, zpráva to potvrdí).

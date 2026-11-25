@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.210 · 25.11.2026
+Dabartinė versija: v.2.211 · 25.11.2026
 ATNAUJINIMAI
 - Dėžutė Nauja versija: trumpa dėžutė ⚙︎ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI
@@ -10,7 +10,7 @@ NUSTATYMAI
 - Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
 - Rodymo kalba: ⚙︎ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
 - Temos: 6 temos su savo fonu, kortelėmis ir spalva (Grafitas, Bijūnas, Medus, Miškas, Vandenynas, Levanda), kiekviena šviesi ir tamsi; taškai ⚙︎ › Tema yra temos spalvos.
-- Vietovės: pirmoji ⚙︎ kortelė (ūkininko režimu: Vietovės & Laukai, su laukais joje). Viena eilutė su rodoma vietove; ▾ atveria kitas vietoves su pagrindiniu ekranu. Nuėmus žvaigždę ištrinama vietovė ir jos ekranas (kol lieka 2 ar daugiau; paskutinė pilka ir lieka). Vietovės › atveria sąrašą; jo žemėlapyje Apskritis ▾ ieško vienoje apskrityje.
+- Vietovės: pirmoji ⚙︎ kortelė (ūkininko režimu: Vietovės & Laukai, su laukais joje). Viena eilutė su rodoma vietove; ▾ atveria kitas vietoves su pagrindiniu ekranu. Nuėmus žvaigždę ištrinama vietovė ir jos ekranas (kol lieka 2 ar daugiau; paskutinė pilka ir lieka). Virš jo esanti eilutė Vietovės atveria sąrašą; jo žemėlapyje Apskritis ▾ ieško vienoje apskrityje.
 - Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje. Ištaisytos klaidos yra žurnalo pabaigoje ir neskaičiuojamos; tinklo problemos yra įspėjimai.
 PAGRINDINIS EKRANAS
 - Apatiniai mygtukai: jų pavadinimai atsidarius ekranui 3 sekundes matomi po jais, paskui tik mygtukai; patraukite kapsulę aukštyn, kad vėl juos pamatytumėte. Įjungtas mygtukas atrodo paspaustas, su žiedu.
@@ -20,7 +20,7 @@ PAGRINDINIS EKRANAS
 - Mygtukų pavadinimai: apvalus mygtukas, kuris bakstelėjus lieka ekrane, apie 1,5 sekundės rodo savo pavadinimą mažame burbule.
 - Orų žemėlapis: pagrindinio ekrano pabaigoje (gulsčiai lape su langeliais): OpenStreetMap gatvių lygiu aplink tikslią ekrano vietovės vietą (pirmajai GPS) arba lauko ekrane laukas su kontūru; sluoksnis permatomas. Žemėlapis stovi vietoje; duomenys: Open-Meteo. Debesys, Temperatūros ir Lietus, po vieną; palietus įjungtą jis išjungiamas. Lietus pilkas ir perbrauktas, kai netoliese nelyja dabar ir per artimiausias 2 valandas. ▶ paeiliui rodo valandas (6 prieš ir 6 po dabar); palietus valandą ji parodoma.
 - Pagrindiniai ekranai: skirtukai po pavadinimu (gulsčiai apačioje): vietovė ir po vieną kiekvienam laukui; palietimas ar braukimas į šoną keičia ekraną, + atveria naujo lauko langelį. Kai netelpa visi, eilutė kas 3 sekundes pasislenka per vieną; pirštas ant jos trumpam ją sustabdo.
-- Ryškumas: rodo ryškumo juostą kairėje; palietus ☀ jos gale ekranui grąžinamas automatinis ryškumas.
+- Ryškumas: rodo ryškumo juostą kairėje; palietus ☀ jos gale ekranui grąžinamas automatinis ryškumas (☀ pagelsta, pranešimas tai patvirtina).
 - Žemės drebėjimo informacija: palietus laukelį Žemės drebėjimas, ji atsidaro pagrindiniame ekrane: žemėlapis, po juo juntamumo zonos ir vertės istorija; spalvotas kvadratas arba žemėlapis ją atveria visame ekrane, kaip drebėjimą iš ⚙︎ › Žemės drebėjimai. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC. Rumunijoje ir aplink šalį vykę žemės drebėjimai gauna INFP vertę (iš infp.ro).
 PRANEŠIMAI
 - Atskiri kanalai: orų įspėjimai, lietus ir sniegas, žemės drebėjimai, laukai ir atnaujinimai turi kiekvienas savo kanalą telefono nustatymuose; galite išjungti vieną ir palikti kitus.
@@ -31,6 +31,7 @@ SKLYPAI
 - Istorija ir prognozė: vilkite rodyklę ant praėjusios dienos; jos reikšmės rodomos langelyje po grafiku, o po 10 s ji grįžta į šiandieną.
 - Orų sluoksniai: laukų žemėlapyje dėžutė po ＋ ir − atsidaro su Palydovu, Žemėlapiu, Debesimis, Temperatūromis (spalvos) ir Lietumi (mm per valandą), tada susiskleidžia iki jūsų pasirinkimo; vienas sluoksnis vienu metu, su pavadinimu, laiku ir legenda virš kortelių; Lietus įsijungia tik tada, kai lyja dabar arba lis artimiausias 2 valandas (vietoj radaro).
 - Redaguoti lauką: pieštukas atveria lauko puslapį: pavadinimas, kultūra (sąrašas pagal sėjos datos sezoną arba Kita kultūra…), sėjos data, plotas; kampai stumiami žemėlapyje.
+- Rodyti orus kiekvienoje kortelėje atveria sklypo pagrindinį ekraną. Palietus kitur kortelėje, žemėlapis priartinamas prie sklypo ir rodomi jo taškai.
 - Sklypo koordinatės: redagavimo puslapyje galima įvesti kiekvieno taško GPS koordinates, o po jomis palydovinis vaizdas rodo sklypą.
 - Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.

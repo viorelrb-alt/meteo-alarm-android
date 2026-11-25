@@ -1,4 +1,4 @@
-Nuværende version: v.2.210 · 25.11.2026
+Nuværende version: v.2.211 · 25.11.2026
 BYER
 - Bykort: på en tablet og i liggende er de lige så brede som deres tekst og står i rækker og kolonner; i portræt på en telefon får et for langt navn mindre bogstaver; i liggende beholder søgningen sin portrætstørrelse.
 - Byliste: knappen Byer åbner listen i temaets farve; Vælg sletter én eller flere (den sidste bliver), og tegnet ⌃⌄ holdt og trukket op eller ned ændrer rækkefølgen; hver by beholder sit gemte vejr.
@@ -10,12 +10,12 @@ HOVEDSKÆRM
 - Knapnavne: en rund knap, der bliver på skærmen, når der trykkes på den, viser sit navn i en lille boble i cirka 1,5 sekund.
 - Knappen Byer: den runde knap med husikonet (i portræt til højre for navnet, i liggende på det øverste bånd, før dets hjørne) åbner listen over byer.
 - Knappen „opdateret“: svæver over siden til højre: på højkant under varslerne (uden dem under rækken af byer), på tværs under uret. Under opdatering drejer pilen, også som en lille cirkel; så vises tiden i 4 sekunder, og den foldes til ⟳. Et tryk opdaterer.
-- Lysstyrke: viser lysstyrkebjælken til venstre; et tryk på ☀ i dens ende giver skærmen den automatiske lysstyrke igen.
+- Lysstyrke: viser lysstyrkebjælken til venstre; et tryk på ☀ i dens ende giver skærmen den automatiske lysstyrke igen (☀ bliver gul, en besked bekræfter det).
 - Nederste knapper: deres navne vises under dem i 3 sekunder, når skærmen åbner, derefter kun knapperne; træk kapslen op for at se dem igen. Knappen der er tændt ser trykket ned ud, med en ring.
 - Vejrkort: nederst på hovedskærmen (på tværs på arket med boksene): OpenStreetMap i gadeniveau om det præcise sted for skærmens by (GPS for den første) eller, på en marks skærm, marken med dens omrids; laget gennemsigtigt. Kortet står stille; data: Open-Meteo. Skyer, Temperaturer og Regn, ét ad gangen; et tryk på det tændte slukker det. Regn er gråt og overstreget, når det ikke regner i nærheden nu eller de næste 2 timer. ▶ afspiller timerne (6 før og 6 efter nu) én ad gangen; et tryk på en time viser den.
 INDSTILLINGER
 - Avancerede funktioner: kortet under Byer: Landmandstilstand og siden Jordskælv.
-- Byer: det første kort i ⚙︎ (i landmandstilstand: Byer & Marker, med markerne i). Én række med den viste by; ▾ åbner de andre byer med hovedskærm. At fjerne en stjerne sletter byen og dens skærm (så længe 2 eller flere er tilbage; den sidste er grå og bliver). Byer › åbner listen; på dens kort søger Region ▾ i én region.
+- Byer: det første kort i ⚙︎ (i landmandstilstand: Byer & Marker, med markerne i). Én række med den viste by; ▾ åbner de andre byer med hovedskærm. At fjerne en stjerne sletter byen og dens skærm (så længe 2 eller flere er tilbage; den sidste er grå og bliver). Rækken Byer ovenover åbner listen; på dens kort søger Region ▾ i én region.
 - Eksport / Import: kontakter for, hvad der kommer i filen (også afgrøder og dyrkningsdata, markernes notifikationer, markernes papirkurv, notifikationer, kort, widgets, jordskælvshistorik, log); ved Eksport og Import afkrydses byer og marker én ad gangen; knappen Aa ændrer tekststørrelsen.
 - Hjælp: lange tekster er delt op i dele med egne ikoner eller viser 2 linjer og Vis alt ▾; på langs i 2 kolonner, og et tryk på en sektions knap får dens omrids til at blinke to gange.
 - Log: størrelse, linjer og fejl på et kort; Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem nederst på skærmen. Rettede fejl står sidst i loggen og tælles ikke med; netværksproblemer er advarsler.
@@ -34,6 +34,7 @@ MARKER
 - Statistik på hovedskærmen: den åbner under driftsstatus (vandret til venstre); ‹ lukker den, og en anden marks fane beholder den.
 - Statistik: for hver mark Dagens handling og 4 faner: Drift (sprøjtevinduet time for time, dråbetørring (ΔT), vind, våde blade), Vand & jord (regn, fordampning, jord i 6 og 18 cm), Sæson (graddage mod sidste år, anslået stadie) og Risici 72 t (svampesygdomme, jordfrost, varme, vind og hagl); gemmes som PDF eller CSV.
 - Vejrlag: på markernes kort åbner boksen under ＋ og − med Satellit, Kort, Skyer, Temperaturer (farver) og Regn (mm i timen) og folder sig derefter sammen til dit valg; ét lag ad gangen, med navn, tid og forklaring over kortene; Regn tænder kun, når det regner nu eller de næste 2 timer (i stedet for radaren).
+- Vis vejret, på hvert kort, åbner parcellens hovedskærm. Et tryk et andet sted på kortet zoomer kortet ind på parcellen og viser dens punkter.
 NOTIFIKATIONER
 - Egne kanaler: vejrvarsler, regn og sne, jordskælv, marker og opdateringer har hver deres kanal i telefonens indstillinger; du kan slå én fra og beholde de andre.
 - Jordskælv: tjekket hvert 10. minut, også om natten med skærmen slukket; en revideret magnitude opdaterer meddelelsen, og et tryk på den åbner kortet.

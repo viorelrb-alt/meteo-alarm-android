@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.210 · 25.11.2026
+Verżjoni attwali: v.2.211 · 25.11.2026
 AĠĠORNAMENTI
 - Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ⚙︎ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
@@ -11,6 +11,7 @@ GĦELIEQI
 - Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, tnixxif tal-qtar (ΔT), riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
 - Status operazzjonali: fuq, il-wiċċ u d-data taż-żriegħ; b'wiċċ, is-sentenza tqis ukoll it-tnixxif tal-qtar (ΔT) u l-marda tiegħu.
 - Storja u tbassir: kaxkar l-indikatur fuq jum li għadda; il-valuri tiegħu jidhru f'kaxxa taħt il-grafika u wara 10 s jerġa' lura għal-lum.
+- Uri t-temp, fuq kull karta, jiftaħ l-iskrin ewlieni tal-biċċa art. Tektek x'imkien ieħor fuq karta jkabbar il-mappa fuq il-biċċa art u juri l-punti tagħha.
 LOKALITAJIET
 - Kards tal-lokalitajiet: fuq tablet u f'landscape huma wesgħin daqs it-test tagħhom u joqogħdu f'ringieli u kolonni; f'portrait fuq telefon isem twil wisq jieħu ittri iżgħar; f'landscape it-tfittxija żżomm id-daqs tal-portrait.
 - Lista tal-lokalitajiet: il-buttuna Lokalitajiet tiftaħ il-lista fil-kulur tat-tema; Agħżel tħassar waħda jew aktar (l-aħħar waħda tibqa'), u s-sinjal ⌃⌄ miżmum u mkaxkar 'il fuq jew 'l isfel jibdel l-ordni; kull lokalità żżomm it-temp issejvjat tagħha.
@@ -25,7 +26,7 @@ SETTINGS
 - Għajnuna: it-testi twal huma maqsuma f'partijiet bl-ikoni tagħhom jew juru 2 linji u Uri kollox ▾; mimdud f'2 kolonni, u tektika fuq il-buttuna ta' taqsima tteptep il-kontorn tagħha darbtejn.
 - It-tieqa Settings: ⚙︎ jiftaħ is-settings f'taqsimiet; swiċċ jixgħel jew jitfi funzjoni mill-ewwel. Jingħalaq b'X jew mess barra minnu. Orizzontali jiftaħ fuq ix-xellug f'2 kolonni, it-titlu f'linja waħda: iġbed il-bar fuq it-tarf tal-lemin lejn ix-xellug għal kolonna waħda, lejn il-lemin għal tnejn; il-buttuna ħdejn X terġa' ġġib 2 kolonni. Wiri huwa l-aħħar. Sistema & Appoġġ juri l-ismijiet għal 3 sekondi, imbagħad il-buttuni biss; fuq telefon orizzontali hija kaxxa li tpinġi isfel u tintewa f'⋯ (il-manku jwessagħha), fuq tablet linja waħda.
 - Lingwa tal-wiri: f'⚙︎ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
-- Lokalitajiet: l-ewwel karta ta' ⚙︎ (fil-modalità tal-bidwi: Lokalitajiet & Għelieqi, bl-għelieqi fiha). Ringiela waħda bil-lokalità murija; ▾ jiftaħ il-lokalitajiet l-oħra b'skrin ewlieni. It-tneħħija ta' stilla tħassar il-lokalità u l-iskrin tagħha (sakemm jibqgħu 2 jew aktar; l-aħħar waħda hija griża u tibqa'). Lokalitajiet › jiftaħ il-lista; fuq il-mappa tagħha Kontea ▾ tfittex f'kontea waħda.
+- Lokalitajiet: l-ewwel karta ta' ⚙︎ (fil-modalità tal-bidwi: Lokalitajiet & Għelieqi, bl-għelieqi fiha). Ringiela waħda bil-lokalità murija; ▾ jiftaħ il-lokalitajiet l-oħra b'skrin ewlieni. It-tneħħija ta' stilla tħassar il-lokalità u l-iskrin tagħha (sakemm jibqgħu 2 jew aktar; l-aħħar waħda hija griża u tibqa'). Ir-ringiela Postijiet ta' fuq tiftaħ il-lista; fuq il-mappa tagħha Kontea ▾ tfittex f'kontea waħda.
 - Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
 - Reġistru: daqs, linji u żbalji fuq karta; Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja fil-qiegħ tal-iskrin. L-iżbalji solvuti huma fl-aħħar tar-reġistru u ma jingħaddux; il-problemi tan-netwerk huma twissijiet.
 - Temi: 6 temi bl-isfond, il-kards u l-kulur tagħhom (Grafit, Pewnija, Għasel, Foresta, Oċean, Lavanda), kull waħda ċara u skura; it-tikek f'⚙︎ › Tema għandhom il-kulur tat-tema.
@@ -37,7 +38,7 @@ SKRIN EWLIENI
 - Buttuni t'isfel: isimhom jidher taħthom għal 3 sekondi meta jinfetaħ l-iskrin, imbagħad il-buttuni biss; iġbed il-kapsula 'l fuq biex terġa' tarahom. Il-buttuna mixgħula tidher magħfusa, b'ċirku.
 - Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ⚙︎ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Ismijiet tal-buttuni: buttuna tonda li tibqa' fuq l-iskrin meta tingħafas turi isimha f'bużżieqa żgħira għal madwar 1.5 sekondi.
-- Luminożità: turi l-bar tal-luminożità fuq ix-xellug; mess fuq ☀ fit-tarf tiegħu jagħti lura lill-iskrin il-luminożità awtomatika.
+- Luminożità: turi l-bar tal-luminożità fuq ix-xellug; mess fuq ☀ fit-tarf tiegħu jagħti lura lill-iskrin il-luminożità awtomatika (☀ isir isfar, avviż jikkonfermah).
 - Mappa tat-temp: fl-aħħar tal-iskrin ewlieni (orizzontali fuq il-folja bil-kaxxi): OpenStreetMap fil-livell tat-triq madwar il-post eżatt tal-lokalità tal-iskrin (GPS għall-ewwel waħda) jew, fuq l-iskrin ta' għalqa, l-għalqa bil-kontorn tagħha; is-saff trasparenti. Il-mappa tibqa' wieqfa; data: Open-Meteo. Sħab, Temperaturi u Xita, wieħed kull darba; tektika fuq dak mixgħul titfih. Xita tkun griża u maqtugħa meta ma tkunx qed tagħmel xita fil-qrib issa u lanqas fis-sagħtejn li ġejjin. ▶ iddoqq is-sigħat (6 qabel u 6 wara issa) waħda waħda; tektika fuq siegħa turiha.
 - Skrins ewlenin: tabs taħt l-isem (mimduda isfel): il-post u wieħed għal kull biċċa art; għafsa jew swipe mal-ġenb ibiddel l-iskrin, + jiftaħ il-kaxxa ta' biċċa art ġdida. Meta ma jidħlux kollha, ir-ringiela timxi waħda 'l quddiem kull 3 sekondi; saba' fuqha jwaqqafha għal ftit.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.

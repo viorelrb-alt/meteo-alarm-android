@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.210 · 25.11.2026
+Jelenlegi verzió: v.2.211 · 25.11.2026
 BEÁLLÍTÁSOK
 - A Beállítások ablak: a ⚙︎ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
 - Útmutató: a Riasztások kártyán: rövid útmutató arról, mit mutat a képernyők egyes része. Hamarosan (egyelőre szürke).
@@ -8,7 +8,7 @@ BEÁLLÍTÁSOK
 - Napló: méret, sorok és hibák egy kártyán; a Napló megtekintése megnyitja a sorokat (Mind, Hibák, Ma, Tegnap; hosszú érintés másol egy sort); Megosztás és Mentés a képernyő alján. A javított hibák a napló végén vannak, és nem számítanak bele; a hálózati gondok figyelmeztetések.
 - Speciális funkciók: a Települések alatti kártya: Gazda mód és a Földrengések oldal.
 - Súgó: a hosszú szövegek saját ikonos részekre vannak bontva, vagy 2 sort és az Összes mutatása ▾ gombot mutatják; fekvőben 2 oszlopban, és egy szakasz gombjára koppintva annak körvonala kétszer felvillan.
-- Települések: a ⚙︎ első kártyája (gazda módban: Települések & Parcellák, benne a parcellákkal). Egy sor a mutatott településsel; a ▾ megnyitja a többi főképernyős települést. Egy csillag levétele törli a települést és a képernyőjét (amíg 2 vagy több marad; az utolsó szürke és marad). A Települések › megnyitja a listát; a térképén a Megye ▾ egy megyében keres.
+- Települések: a ⚙︎ első kártyája (gazda módban: Települések & Parcellák, benne a parcellákkal). Egy sor a mutatott településsel; a ▾ megnyitja a többi főképernyős települést. Egy csillag levétele törli a települést és a képernyőjét (amíg 2 vagy több marad; az utolsó szürke és marad). A fölötte lévő Települések sor megnyitja a listát; a térképén a Megye ▾ egy megyében keres.
 - Témák: 6 téma saját háttérrel, kártyákkal és színnel (Grafit, Bazsarózsa, Méz, Erdő, Óceán, Levendula), mind világos és sötét; a ⚙︎ › Téma pöttyei a téma színét viselik.
 ÉRTESÍTÉSEK
 - Földrengések: 10 percenként ellenőrizve, éjjel kikapcsolt képernyővel is; a felülvizsgált magnitúdó frissíti az értesítést, és arra koppintva megnyílik a térkép.
@@ -16,7 +16,7 @@ BEÁLLÍTÁSOK
 - Új verzió: bekapcsolt értesítésekkel az app frissítés után 2 hétig naponta, utána 7 naponta megnézi a GitHubot, és az Android-értesítésekben jelzi az új verziót; koppintásra megnyílik a Frissítések keresése.
 FŐKÉPERNYŐ
 - Alsó gombok: a nevük a képernyő megnyitásakor 3 másodpercig alattuk látszik, utána csak a gombok; húzd fel a kapszulát, hogy újra lásd őket. A bekapcsolt gomb benyomottnak látszik, gyűrűvel.
-- Fényerő: megmutatja a fényerősávot bal oldalt; a végén lévő ☀ megérintése visszaadja a képernyőnek az automatikus fényerőt.
+- Fényerő: megmutatja a fényerősávot bal oldalt; a végén lévő ☀ megérintése visszaadja a képernyőnek az automatikus fényerőt (a ☀ sárga lesz, egy üzenet megerősíti).
 - Földrengés adatai: a Földrengés mezőre koppintva a főképernyőn nyílik meg: a térkép, alatta az érezhetőségi zónák és az érték története; a színes négyzet vagy a térkép teljes képernyőn nyitja meg, mint egy rengést a ⚙︎ › Földrengések menüből. Romániában, Franciaországban, Olaszországban, Hollandiában, Svájcban és Görögországban a hivatalos értékek először az ország intézetétől jönnek (INFP, BCSF, INGV, KNMI, SED, NOA), utána az EMSC-től. Romániában az ország körüli földrengések is megkapják az INFP értékét (az infp.ro-ról).
 - Főképernyők: fülek a név alatt (fekvőben lent): a település és parcellánként egy; egy koppintás vagy oldalra húzás képernyőt vált, a + új parcella mezőjét nyitja meg. Ha nem fér ki mind, a sor 3 másodpercenként eggyel továbblép; egy ujj rajta egy időre megállítja.
 - Gombnevek: a koppintás után a képernyőn maradó kerek gomb kb. 1,5 másodpercig kis buborékban mutatja a nevét.
@@ -28,6 +28,7 @@ FRISSÍTÉSEK
 - Új verzió doboz: rövid doboz a ⚙︎ tetején, ha van új verzió; koppintásra indul a letöltés.
 PARCELLÁK
 - A parcella koordinátái: a szerkesztő oldalon minden pont GPS-koordinátája beírható, alatta a műholdas nézet mutatja a parcellát.
+- Az Időjárás mutatása minden kártyán megnyitja a parcella főképernyőjét. A kártya más részére koppintva a térkép a parcellára nagyít és megmutatja a pontjait.
 - Buborékok a Statisztikában: a permetezési ablak egy órájának, a grafikonok egy napjának vagy egy talajsornak az érintése magyarázó buborékot nyit; a permetezési ablak magától mozog.
 - Időjárási rétegek: a parcellák térképén a ＋ és − alatti doboz Műholddal, Térképpel, Felhőkkel, Hőmérsékletekkel (színek) és Esővel (mm/óra) nyílik, aztán a választásra csukódik; egyszerre egy réteg, nevével, idejével és jelmagyarázatával a kártyák fölött; az Eső csak akkor kapcsol be, ha most vagy a következő 2 órában esik (a radar helyett).
 - Kuka: a törölt parcella a GPS gomb melletti ↺-es kukába kerül (a piros pötty számolja őket) és 15 napig megmarad; a kerek gomb visszaállítja (ha egy mentett parcellának ez a neve: új név vagy csere).

@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.210 · 25.11.2026
+Versiunea curentă: v.2.211 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ⚙︎ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
@@ -8,7 +8,7 @@ ECRAN PRINCIPAL
 - Ecrane principale: tab-urile de sub nume (în peisaj, jos): localitatea și câte unul pentru fiecare parcelă; atingerea sau glisarea în lateral schimbă ecranul, + deschide caseta unei parcele noi. Când nu încap toate, rândul trece singur la următorul la 3 secunde; un deget pe el îl oprește puțin.
 - Hartă meteo: la sfârșitul ecranului principal (în peisaj pe foaia cu casetele): OpenStreetMap la nivel de stradă, pe locul exact al localității ecranului (GPS pentru prima) sau, pe ecranul unei parcele, parcela cu conturul ei; stratul transparent. Harta stă pe loc; date: Open-Meteo. Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată.
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ⚙︎ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
-- Luminozitate: arată bara de luminozitate din stânga; atingerea ☀ de la capătul ei redă luminozitatea automată.
+- Luminozitate: arată bara de luminozitate din stânga; atingerea ☀ de la capătul ei redă luminozitatea automată (☀ devine galben, un mesaj o confirmă).
 - Mai multe localități: fiecare localitate din listă are ecranul ei principal; glisarea stânga-dreapta pe vremea de acum trece la următoarea, în ordinea din listă.
 - Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
 LOCALITĂȚI
@@ -20,6 +20,7 @@ NOTIFICĂRI
 - Cutremure: verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea, iar atingerea ei deschide harta.
 - Versiune nouă: cu Notificări pornite, aplicația verifică pe GitHub zilnic 2 săptămâni după o actualizare, apoi o dată la 7 zile, și anunță o versiune nouă în notificările Android; atingerea deschide Verifică actualizări.
 PARCELE
+- Arată vremea, pe fiecare casetă, deschide ecranul principal al parcelei. Atingerea casetei în altă parte mărește harta pe parcelă și arată punctele ei.
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.
 - Coș de gunoi: o parcelă ștearsă trece în coșul cu ↺ de lângă butonul GPS (bulina roșie le numără) și se păstrează 15 zile; butonul rotund o restaurează (dacă o parcelă salvată are același nume: nume nou sau înlocuire).
@@ -36,7 +37,7 @@ SETĂRI
 - Funcții avansate: caseta de sub Localități: Mod Fermier și pagina Cutremure.
 - Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran. Erorile rezolvate stau la sfârșitul jurnalului și nu sunt numărate; problemele rețelei sunt avertizări.
 - Limbă afișaj: în ⚙︎ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
-- Localități: prima casetă din ⚙︎ (cu modul fermier: Localități & Parcele, cu Parcele în ea). Un rând cu localitatea afișată; ▾ deschide celelalte localități cu ecran principal. Debifarea unei stele șterge localitatea și ecranul ei (cât rămân 2 sau mai multe; ultima e gri și rămâne). Localități › deschide lista; pe harta ei, Județ ▾ caută într-un singur județ.
+- Localități: prima casetă din ⚙︎ (cu modul fermier: Localități & Parcele, cu Parcele în ea). Un rând cu localitatea afișată; ▾ deschide celelalte localități cu ecran principal. Debifarea unei stele șterge localitatea și ecranul ei (cât rămân 2 sau mai multe; ultima e gri și rămâne). Rândul Localități de deasupra deschide lista; pe harta ei, Județ ▾ caută într-un singur județ.
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
 - Teme: 6 teme cu fundalul, casetele și culoarea lor (Grafit, Bujor, Miere, Pădure, Ocean, Lavandă), fiecare luminoasă și întunecată; bulinele din ⚙︎ › Temă au culoarea temei.
 - Tutorial: în caseta Alerte: un tutorial scurt al fiecărei zone din ecrane. În curând (deocamdată gri).

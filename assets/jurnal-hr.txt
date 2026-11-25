@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.210 · 25.11.2026
+Trenutačna verzija: v.2.211 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ⚙︎ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
@@ -8,7 +8,7 @@ GLAVNI ZASLON
 - Gumb „ažurirano”: lebdi iznad stranice, desno: uspravno ispod upozorenja (bez njih ispod reda mjesta), položeno ispod sata. Tijekom ažuriranja strelica se vrti, i kao mali krug; zatim se 4 sekunde vidi vrijeme i sklopi se u ⟳. Dodir ažurira.
 - Nazivi gumba: okrugli gumb koji ostaje na zaslonu nakon dodira prikazuje svoj naziv u malom oblačiću oko 1,5 sekunde.
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ⚙︎ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
-- Svjetlina: pokazuje traku svjetline lijevo; dodir na ☀ na njezinu kraju vraća zaslonu automatsku svjetlinu.
+- Svjetlina: pokazuje traku svjetline lijevo; dodir na ☀ na njezinu kraju vraća zaslonu automatsku svjetlinu (☀ postaje žut, poruka to potvrđuje).
 - Više mjesta: svako mjesto s popisa ima svoj glavni zaslon; povlačenje lijevo ili desno preko trenutačnog vremena prelazi na sljedeće, redoslijedom popisa.
 - Vremenska karta: na kraju glavnog zaslona (položeno na listu s okvirima): OpenStreetMap na razini ulice oko točnog mjesta mjesta ovog zaslona (GPS za prvo) ili, na zaslonu parcele, parcela s obrisom; sloj proziran. Karta stoji mirno; podaci: Open-Meteo. Oblaci, Temperature i Kiša, jedan po jedan; dodir uključenog ga isključuje. Kiša je siva i precrtana kad u blizini ne pada sada ni u sljedeća 2 sata. ▶ reproducira sate (6 prije i 6 poslije sada) jedan po jedan; dodir sata ga prikazuje.
 MJESTA
@@ -25,6 +25,7 @@ PARCELE
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.
 - Operativni status: gore kultura i datum sjetve; s kulturom ocjena uzima u obzir i sušenje kapljica (ΔT) i njezinu bolest.
 - Povijest i prognoza: povucite pokazivač na dan u prošlosti; njegove vrijednosti pojavljuju se u okviru ispod grafa, a nakon 10 s vraća se na danas.
+- Prikaži vrijeme, na svakoj kartici, otvara glavni zaslon parcele. Dodir drugdje na kartici približava kartu parceli i prikazuje njezine točke.
 - Statistika na glavnom zaslonu: otvara se ispod operativnog statusa (položeno lijevo); ‹ je zatvara, a kartica druge parcele je zadržava.
 - Statistika: za svaku parcelu Zadatak dana i 4 kartice: Operativno (prozor prskanja sat po sat, sušenje kapljica (ΔT), vjetar, mokar list), Voda i tlo (kiša, isparavanje, tlo na 6 i 18 cm), Sezona (stupanj-dani u odnosu na prošlu godinu, procijenjena faza) i Rizici 72 h (gljivične bolesti, prizemni mraz, vrućina, vjetar i tuča); spremanje u PDF ili CSV.
 - Uredi parcelu: olovka otvara stranicu parcele: ime, kultura (popis po sezoni datuma sjetve ili Druga kultura…), datum sjetve, površina; kutovi se pomiču na karti.
@@ -32,7 +33,7 @@ PARCELE
 POSTAVKE
 - Izvoz / Uvoz: prekidači za sadržaj datoteke (i kulture i podaci o uzgoju, obavijesti parcela, koš parcela, obavijesti, karta, widgeti, povijest potresa, dnevnik); u Izvozu i Uvozu mjesta i parcele označavaju se jedno po jedno; gumb Aa mijenja veličinu teksta.
 - Jezik prikaza: u ⚙︎ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
-- Mjesta: prva kartica u ⚙︎ (u načinu poljoprivrednika: Mjesta & Parcele, s parcelama u njoj). Jedan red s prikazanim mjestom; ▾ otvara ostala mjesta s glavnim zaslonom. Uklanjanje zvjezdice briše mjesto i njegov zaslon (dok ih ostaje 2 ili više; zadnje je sivo i ostaje). Mjesta › otvara popis; na njegovoj karti Županija ▾ traži u jednoj županiji.
+- Mjesta: prva kartica u ⚙︎ (u načinu poljoprivrednika: Mjesta & Parcele, s parcelama u njoj). Jedan red s prikazanim mjestom; ▾ otvara ostala mjesta s glavnim zaslonom. Uklanjanje zvjezdice briše mjesto i njegov zaslon (dok ih ostaje 2 ili više; zadnje je sivo i ostaje). Redak Mjesta iznad otvara popis; na njegovoj karti Županija ▾ traži u jednoj županiji.
 - Napredne funkcije: kartica ispod Mjesta: Način poljoprivrednika i stranica Potresi.
 - Vodič: u kartici Upozorenja: kratki vodič o tome što pokazuje svaki dio zaslona. Uskoro (zasad sivo).
 - Pomoć: dugi tekstovi podijeljeni su na dijelove s vlastitim ikonama ili prikazuju 2 retka i Prikaži sve ▾; položeno u 2 stupca, a dodir gumba odjeljka dvaput zatreperi njegov obrub.
