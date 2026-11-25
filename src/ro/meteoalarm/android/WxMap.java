@@ -91,6 +91,26 @@ final class WxMap {
 		return m != null && m.gridKnown();
 	}
 
+	/** v2.180 (Viorel): the hours of the animation (null while unknown), the current one's place, the hour shown (-1 now). */
+	String[] hours() {
+		return m == null ? null : m.hours();
+	}
+
+	int hourNow() {
+		return m == null ? -1 : m.hourNow();
+	}
+
+	int frame() {
+		return m == null ? -1 : m.frame();
+	}
+
+	/** Shows hour K (-1: now) and makes a new picture. */
+	void frame(int k) {
+		if (m == null || m.frame() == k) return;
+		m.setFrame(k);
+		later();
+	}
+
 	/** Asks for new values when they are old (the screen came back). */
 	void refresh() {
 		if (m != null) m.wantGrid();

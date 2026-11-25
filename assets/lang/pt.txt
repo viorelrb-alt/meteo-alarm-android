@@ -1769,3 +1769,8 @@ Automatic theme on	Tema automático ligado
 Automatic theme off	Tema automático desligado
 Battery 	Bateria 
 Values: being updated	Valores: a atualizar
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	No fim do ecrã principal (deslize para cima; em horizontal na folha com os cartões): o mapa da localidade com Nuvens, Temperaturas e Chuva, um de cada vez; tocar no ativo desliga-o. Chuva fica cinzento e riscado quando não chove perto agora nem nas próximas 2 horas. A legenda mostra a hora da camada e, para as temperaturas, o intervalo no mapa. Sob o mapa, ▶ reproduz as horas (6 antes de agora e 6 depois) uma a uma; tocar numa hora mostra-a. O mapa fica parado; dados: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 temas, cada um com o seu fundo, cartões e cor (Monocromático, Rosa, Amarelo, Verde, Azul, Violeta): toque num ponto, da cor do tema; por baixo Claro, Escuro ou Automático (sensor do telefone).
+mm in that hour	mm nessa hora
+Weather map: stop the hours	Mapa do tempo: parar as horas
+Weather map: play the hours before and after now	Mapa do tempo: reproduzir as horas antes e depois de agora

@@ -1769,3 +1769,8 @@ Automatic theme on	Automatisch thema aan
 Automatic theme off	Automatisch thema uit
 Battery 	Batterij 
 Values: being updated	Waarden: worden bijgewerkt
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Aan het eind van het hoofdscherm (omhoog scrollen; liggend op het blad met de vakken): de kaart van de plaats met Wolken, Temperaturen en Regen, één tegelijk; tikken op de ingeschakelde zet hem uit. Regen is grijs en doorgestreept als het in de buurt nu niet regent en ook niet in de komende 2 uur. De legenda toont de tijd van de laag en, bij temperaturen, het bereik op de kaart. Onder de kaart speelt ▶ de uren (6 vóór nu en 6 erna) na elkaar af; een tik op een uur toont het. De kaart staat stil; gegevens: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 thema's, elk met een eigen achtergrond, kaarten en kleur (Monochroom, Roze, Geel, Groen, Blauw, Violet): tik op een stip in de kleur van het thema; daaronder Licht, Donker of Automatisch (sensor van de telefoon).
+mm in that hour	mm in dat uur
+Weather map: stop the hours	Weerkaart: uren stoppen
+Weather map: play the hours before and after now	Weerkaart: de uren vóór en na nu afspelen

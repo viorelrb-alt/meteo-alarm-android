@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.170";
+	static final String VERSION = "Meteo Alarm Android v2.180";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -936,6 +936,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 					s.wxPicH = b.getHeight();
 				}
 				s.wxRain = wx.rainNear();
+				s.wxHours = wx.hours();
+				s.wxNow = wx.hourNow();
+				s.wxFrame = wx.frame();
 				view.invalidate();
 			}
 		});
@@ -954,6 +957,71 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		prefs.edit().putInt("homeMapLayer", s.wxLayer).apply();
 		Log.i(this, "ECRAN", "harta meteo: " + (s.wxLayer == 0 ? "strat oprit" : k == 1 ? "nori" : k == 2 ? "temperaturi" : "ploi"));
 		view.wxReset();
+		view.invalidate();
+	}
+
+	/**
+	 * v2.180 (Viorel): the play button under the map runs the hours (6 before now, now, 6 after) one
+	 * after another, about one a second, and again from the first; a second tap stops and goes back to now.
+	 */
+	private final android.os.Handler wxUi = new android.os.Handler(android.os.Looper.getMainLooper());
+	private final Runnable wxStep = new Runnable() {
+		public void run() {
+			if (s == null || wx == null || !s.wxPlaying) return;
+			String[] hs = wx.hours();
+			if (hs == null || hs.length < 2) {
+				wxStop(true);
+				return;
+			}
+			int k = wx.frame() + 1;
+			if (k >= hs.length) k = 0;
+			wx.frame(k);
+			s.wxFrame = k;
+			view.invalidate();
+			wxUi.postDelayed(this, k == hs.length - 1 ? 2000 : 1000);
+		}
+	};
+
+	public void onWxPlay() {
+		if (s == null || wx == null) return;
+		if (s.wxPlaying) {
+			wxStop(true);
+			Log.i(this, "ECRAN", "harta meteo: redarea orelor oprită");
+			return;
+		}
+		String[] hs = wx.hours();
+		if (hs == null || hs.length < 2) {
+			wx.refresh();
+			toast(Tr.t("Loading the map…", "Se încarcă harta…"));
+			return;
+		}
+		s.wxPlaying = true;
+		wx.frame(0);
+		s.wxFrame = 0;
+		view.invalidate();
+		wxUi.removeCallbacks(wxStep);
+		wxUi.postDelayed(wxStep, 1000);
+		Log.i(this, "ECRAN", "harta meteo: redarea orelor");
+	}
+
+	public void onWxHour(int k) {
+		if (s == null || wx == null) return;
+		wxStop(false);
+		int f = k == wx.hourNow() ? -1 : k;
+		wx.frame(f);
+		s.wxFrame = f;
+		view.invalidate();
+	}
+
+	/** Stops the hours; NOW: back to the current values. */
+	private void wxStop(boolean now) {
+		wxUi.removeCallbacks(wxStep);
+		if (s == null) return;
+		s.wxPlaying = false;
+		if (now && wx != null) {
+			wx.frame(-1);
+			s.wxFrame = -1;
+		}
 		view.invalidate();
 	}
 
@@ -2743,6 +2811,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	@Override
 	protected void onPause() {
 		super.onPause();
+		if (s != null && s.wxPlaying) wxStop(true);
 		Log.i(this, "APP", "în fundal" + (isFinishing() ? " (se închide)" : ""));
 		onScreen = false;
 		// The weather keeps coming in the background (every 15 / 30 / 60 minutes, paused at night with the screen off).
@@ -4660,8 +4729,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
 		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.",
 				"Butonul rotund cu iconul cu case: în portret în dreapta numelui localității, în peisaj pe banda de sus, înainte de colț. Deschide lista localităților."));
-		help.entry(mini("map"), Tr.t("Weather map", "Hartă meteo"), Tr.t("At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.",
-				"La sfârșitul ecranului principal (defilezi în sus; în peisaj pe foaia cu casetele): harta localității cu Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. Legenda arată ora stratului și, la temperaturi, intervalul de pe hartă. Harta stă pe loc; date: Open-Meteo."));
+		help.entry(mini("map"), Tr.t("Weather map", "Hartă meteo"), Tr.t("At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.",
+				"La sfârșitul ecranului principal (defilezi în sus; în peisaj pe foaia cu casetele): harta localității cu Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. Legenda arată ora stratului și, la temperaturi, intervalul de pe hartă. Sub hartă, ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată. Harta stă pe loc; date: Open-Meteo."));
 		help.entry(mini("bubble"), Tr.t("Button names", "Numele butoanelor"), Tr.t("A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.",
 				"Un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde."));
 		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.",
@@ -4729,7 +4798,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("city"), Tr.t("Location & favourites", "Localizare & Favorite"), Tr.t("Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.",
 				"Trei rânduri: întâi localitățile cu stea plină (au ecran principal, în ordinea ecranelor), apoi celelalte favorite. Prima localitate își păstrează mereu steaua. Atingerea unei stele goale dă localității ecran principal, a doua după prima, și o arată; debifarea stelei îi scoate ecranul, iar localitatea rămâne la favorite. Atingerea numelui o alege; Localități › și Alegeți județul deschid lista localităților."));
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));
-		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).", "6 teme (Monocrom, Roz, Galben, Verde, Albastru, Violet): atingi o bulină, care are culoarea butoanelor temei; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
+		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).", "6 teme, fiecare cu fundalul, casetele și culoarea ei (Monocrom, Roz, Galben, Verde, Albastru, Violet): atingi o bulină, care are culoarea temei; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("wxicon"), Tr.t("Icon theme", "Temă icon"), Tr.t("6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.", "6 teme de iconuri: atingi o bulină. Clasic și Contur iau culorile temei; se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.",
 				"Butoane în ☰, câte 2 pe rând: engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi din UE, româna și limba telefonului. În SUA doar engleza și spaniola."));

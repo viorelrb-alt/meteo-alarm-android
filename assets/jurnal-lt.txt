@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.170 · 25.11.2026
+Dabartinė versija: v.2.180 · 25.11.2026
 ATNAUJINIMAI
 - Dėžutė Nauja versija: trumpa dėžutė ☰ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI
@@ -6,13 +6,13 @@ NUSTATYMAI
 - Mėgstamiausi ☰: trys eilutės, pirmiausia vietovės su pilna žvaigžde (turi pagrindinį ekraną), tada kitos; pirmoji visada išlaiko savo žvaigždę; bakstelėjus tuščią žvaigždę vietovė gauna pagrindinį ekraną, antrąjį; nuėmus žvaigždę pašalinamas jos ekranas.
 - Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
-- Temos: Vienspalvė (balta, juoda ir pilka; tamsioje grafitas), Rožinė, Geltona, Žalia, Mėlyna ir Violetinė, kiekviena šviesi ir tamsi, su kontrastingos spalvos mygtukais; taškai ☰ › Tema yra mygtukų spalvos.
+- Temos: 6 temos su savo fonu, kortelėmis ir spalva (Vienspalvė, Rožinė, Geltona, Žalia, Mėlyna, Violetinė), kiekviena šviesi ir tamsi; taškai ☰ › Tema yra temos spalvos.
 - Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje. Ištaisytos klaidos yra žurnalo pabaigoje ir neskaičiuojamos; tinklo problemos yra įspėjimai.
 PAGRINDINIS EKRANAS
 - Daugiau vietovių: kiekviena sąrašo vietovė turi savo pagrindinį ekraną; perbraukus kairėn ar dešinėn per dabartinius orus pereinama į kitą, sąrašo tvarka.
 - Mygtukas Vietovės: apvalus mygtukas su namų piktograma (stačiai – pavadinimo dešinėje, gulsčiai – viršutinėje juostoje prieš jos kampą) atidaro vietovių sąrašą.
 - Mygtukų pavadinimai: apvalus mygtukas, kuris bakstelėjus lieka ekrane, apie 1,5 sekundės rodo savo pavadinimą mažame burbule.
-- Orų žemėlapis: pagrindinio ekrano pabaigoje vietovės žemėlapis su mygtukais Debesys, Temperatūros ir Lietus (po vieną) ir legenda; Lietus įsijungia tik tada, kai netoliese lyja dabar arba lis artimiausias 2 valandas.
+- Orų žemėlapis: pagrindinio ekrano pabaigoje vietovės žemėlapis su mygtukais Debesys, Temperatūros ir Lietus (po vieną) ir legenda; Lietus įsijungia tik tada, kai netoliese lyja dabar arba lis artimiausias 2 valandas. Po žemėlapiu ▶ paeiliui rodo valandas (6 iki dabar ir 6 po); bakstelėjus valandą ji parodoma.
 - Žemės drebėjimo informacija: palietus laukelį Žemės drebėjimas, ji atsidaro pagrindiniame ekrane: žemėlapis, po juo juntamumo zonos ir vertės istorija; spalvotas kvadratas arba žemėlapis ją atveria visame ekrane, kaip drebėjimą iš ☰ › Žemės drebėjimai. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC. Rumunijoje ir aplink šalį vykę žemės drebėjimai gauna INFP vertę (iš infp.ro).
 PRANEŠIMAI
 - Atskiri kanalai: orų įspėjimai, lietus ir sniegas, žemės drebėjimai, laukai ir atnaujinimai turi kiekvienas savo kanalą telefono nustatymuose; galite išjungti vieną ir palikti kitus.

@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.170 · 25.11.2026
+Verżjoni attwali: v.2.180 · 25.11.2026
 AĠĠORNAMENTI
 - Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ☰ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
@@ -24,13 +24,13 @@ SETTINGS
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
 - Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
 - Reġistru: daqs, linji u żbalji fuq karta; Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja fil-qiegħ tal-iskrin. L-iżbalji solvuti huma fl-aħħar tar-reġistru u ma jingħaddux; il-problemi tan-netwerk huma twissijiet.
-- Temi: Monokromu (abjad, iswed u griż; grafita fid-dlam), Roża, Isfar, Aħdar, Blu u Vjola, kull waħda ċara u skura, bil-buttuni f'kulur ta' kuntrast; it-tikek f'☰ › Tema għandhom il-kulur tal-buttuni.
+- Temi: 6 temi bl-isfond, il-kards u l-kulur tagħhom (Monokromu, Roża, Isfar, Aħdar, Blu, Vjola), kull waħda ċara u skura; it-tikek f'☰ › Tema għandhom il-kulur tat-tema.
 SKRIN EWLIENI
 - Aktar lokalitajiet: kull lokalità fil-lista għandha l-iskrin prinċipali tagħha; swajp lejn ix-xellug jew il-lemin fuq it-temp issa jgħaddi għal dik ta' wara, fl-ordni tal-lista.
 - Buttuna Lokalitajiet: il-buttuna tonda bl-ikona tad-djar (f'portrait fuq il-lemin tal-isem, f'landscape fuq il-faxxa ta' fuq, qabel ir-rokna tagħha) tiftaħ il-lista tal-lokalitajiet.
 - Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Ismijiet tal-buttuni: buttuna tonda li tibqa' fuq l-iskrin meta tingħafas turi isimha f'bużżieqa żgħira għal madwar 1.5 sekondi.
-- Mappa tat-temp: fl-aħħar tal-iskrin prinċipali, il-mappa tal-lokalità bil-buttuni Sħab, Temperaturi u Xita (waħda kull darba) u l-leġġenda; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita fil-qrib issa jew fis-sagħtejn li ġejjin.
+- Mappa tat-temp: fl-aħħar tal-iskrin prinċipali, il-mappa tal-lokalità bil-buttuni Sħab, Temperaturi u Xita (waħda kull darba) u l-leġġenda; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita fil-qrib issa jew fis-sagħtejn li ġejjin. Taħt il-mappa, ▶ juri s-sigħat (6 qabel issa u 6 wara) waħda wara l-oħra; tagħfisa fuq siegħa turiha.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)

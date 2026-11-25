@@ -1769,3 +1769,8 @@ Automatic theme on	Automatiskt tema på
 Automatic theme off	Automatiskt tema av
 Battery 	Batteri 
 Values: being updated	Värden: uppdateras
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Längst ned på huvudskärmen (rulla uppåt; i liggande på bladet med rutorna): ortens karta med Moln, Temperaturer och Regn, ett i taget; ett tryck på det som är på stänger av det. Regn är grått och överstruket när det inte regnar i närheten nu eller de kommande 2 timmarna. Förklaringen visar lagrets tid och, för temperaturer, intervallet på kartan. Under kartan spelar ▶ upp timmarna (6 före nu och 6 efter) en efter en; ett tryck på en timme visar den. Kartan står still; data: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 teman, var och ett med egen bakgrund, egna kort och egen färg (Monokrom, Rosa, Gul, Grön, Blå, Violett): tryck på en prick i temats färg; under dem Ljust, Mörkt eller Automatiskt (telefonens sensor).
+mm in that hour	mm under den timmen
+Weather map: stop the hours	Väderkarta: stoppa timmarna
+Weather map: play the hours before and after now	Väderkarta: spela upp timmarna före och efter nu

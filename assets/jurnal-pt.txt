@@ -1,4 +1,4 @@
-Versão atual: v.2.170 · 25.11.2026
+Versão atual: v.2.180 · 25.11.2026
 ATUALIZAÇÕES
 - Caixa Nova versão: uma caixa curta no topo de ☰ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
@@ -7,11 +7,11 @@ DEFINIÇÕES
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 - Página Sismos: abre logo com as últimas listas guardadas no telefone e atualiza-as em segundo plano.
 - Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã. Os erros resolvidos ficam no fim do registo e não são contados; os problemas de rede são avisos.
-- Temas: Monocromático (branco, preto e cinzento; grafite no escuro), Rosa, Amarelo, Verde, Azul e Violeta, cada um claro e escuro, com os botões numa cor de contraste; os pontos em ☰ › Tema têm a cor dos botões.
+- Temas: 6 temas com o seu próprio fundo, cartões e cor (Monocromático, Rosa, Amarelo, Verde, Azul, Violeta), cada um claro e escuro; os pontos em ☰ › Tema têm a cor do tema.
 ECRÃ PRINCIPAL
 - Botão Localidades: o botão redondo com o ícone de casas (na vertical à direita do nome, na horizontal na faixa de cima, antes do seu canto) abre a lista de localidades.
 - Informações do sismo: um toque na caixa Sismo abre-as no ecrã principal: o mapa, por baixo as zonas sentidas e o histórico do valor; o quadrado colorido ou o mapa abrem-nas em ecrã inteiro, como um sismo de ☰ › Sismos. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
-- Mapa do tempo: no fim do ecrã principal, o mapa da localidade com os botões Nuvens, Temperaturas e Chuva (um de cada vez) e a legenda; Chuva só se ativa quando chove perto agora ou nas próximas 2 horas.
+- Mapa do tempo: no fim do ecrã principal, o mapa da localidade com os botões Nuvens, Temperaturas e Chuva (um de cada vez) e a legenda; Chuva só se ativa quando chove perto agora ou nas próximas 2 horas. Sob o mapa, ▶ reproduz as horas (6 antes de agora e 6 depois) uma a uma; tocar numa hora mostra-a.
 - Nomes dos botões: um botão redondo que fica no ecrã ao ser tocado mostra o seu nome num pequeno balão durante cerca de 1,5 segundos.
 - Várias localidades: cada localidade da lista tem o seu próprio ecrã principal; deslizar para a esquerda ou para a direita sobre o tempo atual passa à seguinte, pela ordem da lista.
 LOCALIDADES

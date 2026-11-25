@@ -1769,3 +1769,8 @@ Automatic theme on	Automatinė tema įjungta
 Automatic theme off	Automatinė tema išjungta
 Battery 	Akumuliatorius 
 Values: being updated	Reikšmės: atnaujinamos
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Pagrindinio ekrano pabaigoje (slinkite aukštyn; gulsčiai – lape su dėžutėmis): vietovės žemėlapis su Debesimis, Temperatūromis ir Lietumi, po vieną; bakstelėjus įjungtą jis išjungiamas. Lietus pilkas ir perbrauktas, kai netoliese nelyja dabar ir nelis artimiausias 2 valandas. Legenda rodo sluoksnio laiką, o temperatūroms – žemėlapio intervalą. Po žemėlapiu ▶ paeiliui rodo valandas (6 iki dabar ir 6 po); bakstelėjus valandą ji parodoma. Žemėlapis nejuda; duomenys: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 temos, kiekviena su savo fonu, kortelėmis ir spalva (Vienspalvė, Rožinė, Geltona, Žalia, Mėlyna, Violetinė): bakstelėkite temos spalvos tašką; po jais Šviesi, Tamsi arba Automatinė (telefono jutiklis).
+mm in that hour	mm tą valandą
+Weather map: stop the hours	Orų žemėlapis: sustabdyti valandas
+Weather map: play the hours before and after now	Orų žemėlapis: rodyti valandas iki ir po dabar

@@ -1,10 +1,10 @@
-Nykyinen versio: v.2.170 · 25.11.2026
+Nykyinen versio: v.2.180 · 25.11.2026
 ASETUKSET
 - Loki: koko, rivit ja virheet kortilla; Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna näytön alareunassa. Korjatut virheet ovat lokin lopussa eikä niitä lasketa; verkon ongelmat ovat varoituksia.
 - Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
 - Suosikit ☰:ssa: kolme riviä, ensin täyden tähden paikkakunnat (niillä on päänäkymä), sitten muut; ensimmäinen säilyttää aina tähtensä; tyhjän tähden napautus antaa paikkakunnalle päänäkymän, toisen; tähden poisto poistaa sen näkymän.
-- Teemat: Yksivärinen (valkoinen, musta ja harmaa; tummana grafiitti), Vaaleanpunainen, Keltainen, Vihreä, Sininen ja Violetti, kukin vaaleana ja tummana, painikkeet kontrastivärissä; ☰ › Teema -kohdan pisteet ovat painikkeiden värisiä.
+- Teemat: 6 teemaa omalla taustalla, korteilla ja värillä (Yksivärinen, Vaaleanpunainen, Keltainen, Vihreä, Sininen, Violetti), kukin vaaleana ja tummana; ☰ › Teema -kohdan pisteet ovat teeman värisiä.
 - Vienti / Tuonti: kytkimet tiedoston sisällölle (myös viljelykasvit ja viljelytiedot, lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); Viennissä ja Tuonnissa paikkakunnat ja lohkot valitaan yksitellen; Aa-painike muuttaa tekstin kokoa.
 ILMOITUKSET
 - Maanjäristykset: tarkistetaan 10 minuutin välein, myös yöllä näyttö pois päältä; tarkistettu magnitudi päivittää ilmoituksen, ja napautus siihen avaa kartan.
@@ -14,7 +14,7 @@ PÄÄNÄYTTÖ
 - Maanjäristyksen tiedot: Maanjäristys-ruudun napautus avaa ne päänäytölle: kartta, sen alla tuntuvuusvyöhykkeet ja arvon historia; värillinen neliö tai kartta avaa ne koko näytölle, kuten järistyksen kohdasta ☰ › Maanjäristykset. Romaniassa, Ranskassa, Italiassa, Alankomaissa, Sveitsissä ja Kreikassa viralliset arvot tulevat ensin maan laitokselta (INFP, BCSF, INGV, KNMI, SED, NOA), sitten EMSC:ltä. Romaniassa myös maan ympäristön maanjäristykset saavat INFP:n arvon (infp.ro:sta).
 - Paikkakunnat-painike: pyöreä talokuvakkeella varustettu painike (pystyssä nimen oikealla puolella, vaakana yläpalkissa ennen sen kulmaa) avaa paikkakuntaluettelon.
 - Painikkeiden nimet: pyöreä painike, joka jää näytölle napautettaessa, näyttää nimensä pienessä kuplassa noin 1,5 sekunnin ajan.
-- Sääkartta: päänäkymän lopussa paikkakunnan kartta painikkeineen Pilvet, Lämpötilat ja Sade (yksi kerrallaan) ja selitteineen; Sade kytkeytyy päälle vain, kun lähellä sataa nyt tai seuraavan 2 tunnin aikana.
+- Sääkartta: päänäkymän lopussa paikkakunnan kartta painikkeineen Pilvet, Lämpötilat ja Sade (yksi kerrallaan) ja selitteineen; Sade kytkeytyy päälle vain, kun lähellä sataa nyt tai seuraavan 2 tunnin aikana. Kartan alla ▶ toistaa tunnit (6 ennen nykyhetkeä ja 6 sen jälkeen) yksi kerrallaan; tunnin napautus näyttää sen.
 - Useampi paikkakunta: jokaisella luettelon paikkakunnalla on oma päänäkymänsä; pyyhkäisy vasemmalle tai oikealle nykyisen sään päällä siirtyy seuraavaan luettelon järjestyksessä.
 PAIKKAKUNNAT
 - Haku kartalta: suurennuslasi avaa kartan, jonka alareunassa on haku; paikan tai paikkakunnan nimen napautus näyttää sen lämpötilan, Tiedot (tulevat päivät) ja Lisää. Kartta on yksinkertainen ja vaalea, paikkakuntien nimet isolla (myös lohkojen kartalla). Muita paikkakuntia näkyy vain, kun ne alkavat kuten kirjoitettu nimi (vähintään 6 kirjainta tai 60 % siitä).

@@ -1053,6 +1053,38 @@ final class MapView extends View {
 	private int gPicKind = -1;
 	private Runnable onGrid;
 	private static final int G_N = 7;
+	/**
+	 * v2.180 (Viorel): the hours round now for the main screen's animation: the values of each point
+	 * hour by hour (H_PAST hours before the current one, H_NEXT after it), their times, the current
+	 * hour's place; FRAME -1 shows now (the current values), else that hour.
+	 */
+	static final int H_PAST = 6, H_NEXT = 6;
+	private float[][] hTemp, hCloud, hRain;
+	private String[] hTimes;
+	private int hNow = -1, frame = -1;
+
+	/** The hours of the animation ("07:00"…), null while unknown. */
+	String[] hours() {
+		return hTimes;
+	}
+
+	/** The place of the current hour among hours(). */
+	int hourNow() {
+		return hNow;
+	}
+
+	/** Shows hour K of hours() (-1: now). */
+	void setFrame(int k) {
+		if (hTimes == null || k >= hTimes.length) k = -1;
+		if (k == frame) return;
+		frame = k;
+		gPicKind = -1;
+		invalidate();
+	}
+
+	int frame() {
+		return frame;
+	}
 
 	void setLayer(int k) {
 		layer = k;
@@ -1136,7 +1168,8 @@ final class MapView extends View {
 							lo.append(String.format(us, "%.3f", w + (k + 0.5) * (e - w) / G_N));
 						}
 					String url = "https://api.open-meteo.com/v1/forecast?latitude=" + la + "&longitude=" + lo
-							+ "&current=temperature_2m,cloud_cover,precipitation&minutely_15=precipitation&forecast_minutely_15=9&timezone=auto";
+							+ "&current=temperature_2m,cloud_cover,precipitation&minutely_15=precipitation&forecast_minutely_15=9"
+							+ "&hourly=temperature_2m,cloud_cover,precipitation&past_hours=" + H_PAST + "&forecast_hours=" + (H_NEXT + 1) + "&timezone=auto";
 					byte[] b = fetch(url);
 					if (b == null) throw new Exception("no answer");
 					String txt = new String(b, "UTF-8").trim();
@@ -1144,6 +1177,8 @@ final class MapView extends View {
 					int m = G_N * G_N;
 					final float[] t = new float[m], cl = new float[m], rn = new float[m], rx = new float[m];
 					String time = "", until = "";
+					float[][] ht = null, hc = null, hr = null;
+					String[] hts = null;
 					for (int i = 0; i < m && i < arr.length(); i++) {
 						org.json.JSONObject o = arr.getJSONObject(i), cur = o.getJSONObject("current");
 						t[i] = (float) cur.optDouble("temperature_2m", 0);
@@ -1159,7 +1194,35 @@ final class MapView extends View {
 						}
 						rx[i] = mx;
 						if (i == 0) time = cur.optString("time", "");
+						// v2.180: the hours before and after now, for the animation.
+						org.json.JSONObject hh = o.optJSONObject("hourly");
+						org.json.JSONArray hT = hh == null ? null : hh.optJSONArray("time");
+						if (hT != null && hT.length() > 1) {
+							int n2 = hT.length();
+							if (ht == null) {
+								ht = new float[n2][m];
+								hc = new float[n2][m];
+								hr = new float[n2][m];
+								hts = new String[n2];
+								for (int j = 0; j < n2; j++) hts[j] = hhmm(hT.optString(j));
+							}
+							org.json.JSONArray a1 = hh.optJSONArray("temperature_2m"), a2 = hh.optJSONArray("cloud_cover"), a3 = hh.optJSONArray("precipitation");
+							for (int j = 0; j < Math.min(n2, ht.length); j++) {
+								ht[j][i] = a1 == null ? t[i] : (float) a1.optDouble(j, t[i]);
+								hc[j][i] = a2 == null ? cl[i] : (float) a2.optDouble(j, cl[i]);
+								hr[j][i] = a3 == null ? 0 : (float) a3.optDouble(j, 0);
+							}
+						}
 					}
+					int now = -1;
+					if (hts != null) {
+						String hNowS = hhmm(time).length() >= 2 ? hhmm(time).substring(0, 2) + ":00" : "";
+						for (int j = 0; j < hts.length; j++) if (hts[j].equals(hNowS)) now = j;
+						if (now < 0) now = Math.min(hts.length - 1, H_PAST);
+					}
+					final float[][] fT = ht, fC = hc, fR = hr;
+					final String[] fH = hts;
+					final int fNow = now;
 					final String tm = hhmm(time), un = hhmm(until);
 					ui.post(new Runnable() {
 						public void run() {
@@ -1178,6 +1241,12 @@ final class MapView extends View {
 							gUntil = un;
 							gPicKind = -1;
 							gBusy = false;
+							hTemp = fT;
+							hCloud = fC;
+							hRain = fR;
+							hTimes = fH;
+							hNow = fNow;
+							if (hTimes == null || frame >= hTimes.length) frame = -1;
 							invalidate();
 							if (onGrid != null) onGrid.run();
 						}
@@ -1225,16 +1294,18 @@ final class MapView extends View {
 		if (layer == L_NONE || gRainMax == null) return;
 		if (gPicKind != layer || gPic == null) {
 			int[] px = new int[gRows * gCols];
+			boolean hr = frame >= 0 && hTimes != null;
+			float[] tv = hr ? hTemp[frame] : gTemp, cv = hr ? hCloud[frame] : gCloud, rv = hr ? hRain[frame] : gRainMax;
 			for (int i = 0; i < px.length; i++) {
 				int a, rgb;
 				if (layer == L_CLOUD) {
-					a = Math.round(Math.max(0, Math.min(100, gCloud[i])) * 1.7f);
+					a = Math.round(Math.max(0, Math.min(100, cv[i])) * 1.7f);
 					rgb = 0x6E737D;
 				} else if (layer == L_TEMP) {
 					a = 140;
-					rgb = scale(gTemp[i], T_AT, T_COL);
+					rgb = scale(tv[i], T_AT, T_COL);
 				} else {
-					float v = gRainMax[i];
+					float v = rv[i];
 					a = v < 0.1f ? 0 : Math.round(Math.min(190, 110 + v * 12));
 					rgb = scale(v, R_AT, R_COL);
 				}
@@ -1255,6 +1326,10 @@ final class MapView extends View {
 		String name = layer == L_CLOUD ? Tr.t("Clouds", "Nori") : layer == L_TEMP ? Tr.t("Temperatures", "Temperaturi") : Tr.t("Rain", "Ploi");
 		// v2.161 (Viorel): the name and the time stand in the legend, above the cards, no longer at the top.
 		String t = name + (gTime.length() > 0 ? " " + gTime + (layer == L_RAIN && gUntil.length() > 0 ? "–" + gUntil : "") : "");
+		// v2.180: while the hours play, the label has the hour shown.
+		boolean hr = frame >= 0 && hTimes != null;
+		if (hr) t = name + " " + hTimes[frame];
+		float[] tvals = hr ? hTemp[frame] : gTemp;
 		float lw = 230 * dp, bh = 7 * dp, cx = (w - rightPad) / 2f, bottom = h - Math.max(bottomPad, 22 * dp) - 8 * dp;
 		int ink = dark ? 0xFFFAF9F5 : 0xFF1A1A1A;
 		if (gRainMax == null) {
@@ -1302,12 +1377,12 @@ final class MapView extends View {
 					double la = gN - (rr + 0.5) * (gN - gS) / gRows, lo2 = gW + (k + 0.5) * (gE - gW) / gCols;
 					float sx = (float) (wx(lo2, world) - left), sy = (float) (wy(la, world) - top);
 					if (sx < 0 || sx > w || sy < 0 || sy > h) continue;
-					float v = gTemp[rr * gCols + k];
+					float v = tvals[rr * gCols + k];
 					lo = Math.min(lo, v);
 					hi = Math.max(hi, v);
 				}
 			if (lo > hi) {
-				for (float v : gTemp) {
+				for (float v : tvals) {
 					lo = Math.min(lo, v);
 					hi = Math.max(hi, v);
 				}
@@ -1331,7 +1406,7 @@ final class MapView extends View {
 			if (layer == L_RAIN) {
 				cols = new int[R_COL.length];
 				for (int i = 0; i < cols.length; i++) cols[i] = 0xFF000000 | R_COL[i];
-				head = Tr.t("mm per hour, now and in the next 2 hours", "mm pe oră, acum și în următoarele 2 ore");
+				head = hr ? Tr.t("mm in that hour", "mm în ora aceea") : Tr.t("mm per hour, now and in the next 2 hours", "mm pe oră, acum și în următoarele 2 ore");
 				ticks = new String[] { "0,1", "1", "3", "8", "15+" };
 				tickAt = new float[] { 0, 0.25f, 0.5f, 0.75f, 1 };
 			} else {

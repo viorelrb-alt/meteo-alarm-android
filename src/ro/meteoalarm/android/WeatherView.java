@@ -43,6 +43,11 @@ final class WeatherView extends View {
 		/** v2.170: a tap on the weather map's button K (1 clouds, 2 temperatures, 3 rain). */
 		void onWxLayer(int k);
 
+		/** v2.180: the map's play button; a tap on hour K of the map's line. */
+		void onWxPlay();
+
+		void onWxHour(int k);
+
 		/** v2.170: the weather map is on the page, W x H pixels (its picture is made that size). */
 		void wxMap(int w, int h, int r);
 
@@ -1114,6 +1119,15 @@ final class WeatherView extends View {
 		if (onPage && screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
 			int j = screen.partAt(x, y);
 			taps.onPrecip(j < 0 ? screen.precipArea.clone() : screen.partArea[j].clone(), j < 0 ? -1 : screen.partIdx[j]);
+			return true;
+		}
+		if (onPage && screen.wxPlayAt(x, y)) {
+			taps.onWxPlay();
+			return true;
+		}
+		int wh = onPage ? screen.wxHourAt(x, y) : -1;
+		if (wh >= 0) {
+			taps.onWxHour(wh);
 			return true;
 		}
 		int wk = onPage ? screen.wxChipAt(x, y) : -1;

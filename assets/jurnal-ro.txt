@@ -1,9 +1,9 @@
-Versiunea curentă: v.2.170 · 25.11.2026
+Versiunea curentă: v.2.180 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ☰ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
 - Butonul Localități: butonul rotund cu iconul cu case (în portret în dreapta numelui, în peisaj pe banda de sus, înainte de colț) deschide lista localităților.
-- Hartă meteo: la sfârșitul ecranului principal, harta localității cu butoanele Nori, Temperaturi și Ploi (unul odată) și legenda; Ploi se activează doar când plouă în zonă acum sau în următoarele 2 ore.
+- Hartă meteo: la sfârșitul ecranului principal, harta localității cu butoanele Nori, Temperaturi și Ploi (unul odată) și legenda; Ploi se activează doar când plouă în zonă acum sau în următoarele 2 ore. Sub hartă, ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată.
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
 - Mai multe localități: fiecare localitate din listă are ecranul ei principal; glisarea stânga-dreapta pe vremea de acum trece la următoarea, în ordinea din listă.
 - Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
@@ -30,7 +30,7 @@ SETĂRI
 - Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran. Erorile rezolvate stau la sfârșitul jurnalului și nu sunt numărate; problemele rețelei sunt avertizări.
 - Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
-- Teme noi: Monocrom (alb, negru și gri; grafit pe întunecat), Roz, Galben, Verde, Albastru și Violet, fiecare luminoasă și întunecată, cu butoanele într-o culoare contrastantă; bulinele din ☰ › Temă au culoarea butoanelor.
+- Teme: 6 teme cu fundalul, casetele și culoarea lor (Monocrom, Roz, Galben, Verde, Albastru, Violet), fiecare luminoasă și întunecată; bulinele din ☰ › Temă au culoarea temei.
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.4 (v.1.400 – v.1.520)

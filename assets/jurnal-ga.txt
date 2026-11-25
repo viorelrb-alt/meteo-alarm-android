@@ -1,4 +1,4 @@
-Leagan reatha: v.2.170 · 25.11.2026
+Leagan reatha: v.2.180 · 25.11.2026
 BAILTE
 - Cártaí na mbailte: ar thaibléad agus i dtírdhreach tá siad chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin; i bportráid ar fhón faigheann ainm rófhada litreacha níos lú; i dtírdhreach coinníonn an cuardach a mhéid portráide.
 - Cuardach ar an léarscáil: osclaíonn an ghloine formhéadúcháin an léarscáil leis an gcuardach thíos; taispeánann tapáil ar áit nó ar ainm baile a theocht, Sonraí (na laethanta romhainn) agus Cuir leis. Tá an léarscáil simplí agus geal, le hainmneacha na mbailte scríofa go mór (ar léarscáil na bpáirceanna freisin). Ní thaispeántar bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de).
@@ -22,14 +22,14 @@ PRÍOMHSCÁILEÁN
 - Ainmneacha cnaipí: taispeánann cnaipe cruinn a fhanann ar an scáileán nuair a thapáiltear é a ainm i mbolgán beag ar feadh thart ar 1.5 soicind.
 - Cnaipe na mBailte: osclaíonn an cnaipe cruinn le deilbhín na dtithe (i bportráid ar dheis an ainm, i dtírdhreach ar an mbanda uachtarach, roimh a chúinne) liosta na mbailte.
 - Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ☰ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
-- Léarscáil aimsire: ag deireadh an phríomhscáileáin, léarscáil an bhaile leis na cnaipí Scamaill, Teochtaí agus Báisteach (ceann amháin ag an am) agus an eochair; ní chasann Báisteach air ach nuair a bhíonn sé ag cur báistí in aice láimhe anois nó sna 2 uair an chloig atá romhainn.
+- Léarscáil aimsire: ag deireadh an phríomhscáileáin, léarscáil an bhaile leis na cnaipí Scamaill, Teochtaí agus Báisteach (ceann amháin ag an am) agus an eochair; ní chasann Báisteach air ach nuair a bhíonn sé ag cur báistí in aice láimhe anois nó sna 2 uair an chloig atá romhainn. Faoin léarscáil seinneann ▶ na huaireanta (6 roimh anois agus 6 ina dhiaidh) ceann i ndiaidh a chéile; taispeánann tapáil ar uair í.
 - Níos mó bailte: tá a phríomhscáileán féin ag gach baile sa liosta; téann svaidhpeáil ar chlé nó ar dheis ar an aimsir anois go dtí an chéad cheann eile, in ord an liosta.
 SOCRUITHE
 - Ceanáin i ☰: trí shraith, ar dtús na bailte le réalta lán (tá príomhscáileán acu), ansin na cinn eile; coinníonn an chéad cheann a réalta i gcónaí; tugann tapáil ar réalta fholamh príomhscáileán don bhaile, an dara ceann; baineann réalta a bhaint a scáileán.
 - Easpórtáil / Iompórtáil: lasca don ábhar sa chomhad (barra agus sonraí saothraithe freisin, fógraí ceapach, bosca bruscair na gceapach, fógraí, léarscáil, giuirléidí, stair na gcrith talún, loga); in Easpórtáil agus Iompórtáil ticeáiltear bailte agus ceapacha ceann ar cheann; athraíonn an cnaipe Aa méid an téacs.
 - Leathanach Crith talún: osclaíonn sé láithreach leis na liostaí is déanaí a sábháladh ar an bhfón agus nuashonraíonn sé iad sa chúlra.
 - Loga: méid, línte agus earráidí ar chárta; osclaíonn Féach ar an loga na línte (Gach, Earráidí, Inniu, Inné; cóipeálann brú fada líne); Comhroinn agus Sábháil ag bun an scáileáin. Tá earráidí socraithe ag deireadh an loga agus ní chomhairtear iad; is rabhaidh iad fadhbanna líonra.
-- Téamaí: Aondathach (bán, dubh agus liath; graifít sa dorchadas), Bándearg, Buí, Glas, Gorm agus Corcairghorm, gach ceann geal agus dorcha, le cnaipí i ndath codarsnachta; tá dath na gcnaipí ar na poncanna i ☰ › Téama.
+- Téamaí: 6 théama lena gcúlra, a gcártaí agus a ndath féin (Aondathach, Bándearg, Buí, Glas, Gorm, Corcairghorm), gach ceann geal agus dorcha; tá dath an téama ar na poncanna i ☰ › Téama.
 - Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
 - Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 

@@ -1769,3 +1769,8 @@ Automatic theme on	Automātisks motīvs ieslēgts
 Automatic theme off	Automātisks motīvs izslēgts
 Battery 	Akumulators 
 Values: being updated	Vērtības: tiek atjauninātas
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Galvenā ekrāna beigās (ritiniet uz augšu; ainavā lapā ar lodziņiem): vietas karte ar Mākoņiem, Temperatūrām un Lietu, pa vienam; pieskāriens ieslēgtajam to izslēdz. Lietus ir pelēks un pārsvītrots, kad tuvumā nelīst tagad un nelīs nākamajās 2 stundās. Leģenda rāda slāņa laiku un temperatūrām kartes diapazonu. Zem kartes ▶ atskaņo stundas (6 pirms tagad un 6 pēc) vienu pēc otras; pieskāriens stundai to parāda. Karte ir nekustīga; dati: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 motīvi, katram savs fons, kartītes un krāsa (Vienkrāsaina, Rozā, Dzeltena, Zaļa, Zila, Violeta): pieskarieties punktam motīva krāsā; zem tiem Gaišs, Tumšs vai Automātisks (tālruņa sensors).
+mm in that hour	mm tajā stundā
+Weather map: stop the hours	Laikapstākļu karte: apturēt stundas
+Weather map: play the hours before and after now	Laikapstākļu karte: atskaņot stundas pirms un pēc tagad

@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.170 · 25.11.2026
+Trenutačna verzija: v.2.180 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ☰ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
@@ -6,7 +6,7 @@ GLAVNI ZASLON
 - Nazivi gumba: okrugli gumb koji ostaje na zaslonu nakon dodira prikazuje svoj naziv u malom oblačiću oko 1,5 sekunde.
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
 - Više mjesta: svako mjesto s popisa ima svoj glavni zaslon; povlačenje lijevo ili desno preko trenutačnog vremena prelazi na sljedeće, redoslijedom popisa.
-- Vremenska karta: na kraju glavnog zaslona karta mjesta s gumbima Oblaci, Temperature i Kiša (jedan po jedan) i legendom; Kiša se uključuje samo kad u blizini pada sada ili u sljedeća 2 sata.
+- Vremenska karta: na kraju glavnog zaslona karta mjesta s gumbima Oblaci, Temperature i Kiša (jedan po jedan) i legendom; Kiša se uključuje samo kad u blizini pada sada ili u sljedeća 2 sata. Ispod karte ▶ pušta sate (6 prije sada i 6 poslije) jedan za drugim; dodir na sat ga prikazuje.
 MJESTA
 - Kartice mjesta: na tabletu i položeno široke su koliko njihov tekst i stoje u redovima i stupcima; uspravno na telefonu predug naziv dobiva manja slova; položeno pretraga zadržava uspravnu veličinu.
 - Popis mjesta: gumb Mjesta otvara popis u boji teme; Odaberi briše jedno ili više (posljednje ostaje), a znak ⌃⌄ zadržan i povučen gore ili dolje mijenja redoslijed; svako mjesto čuva svoje spremljeno vrijeme.
@@ -29,7 +29,7 @@ POSTAVKE
 - Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
 - Omiljena u ☰: tri reda, prvo mjesta s punom zvjezdicom (imaju glavni zaslon), zatim ostala; prvo uvijek čuva zvjezdicu; dodir na praznu zvjezdicu daje mjestu glavni zaslon, drugi; skidanje zvjezdice uklanja njegov zaslon.
 - Stranica Potresi: otvara se odmah s posljednjim popisima spremljenima u telefonu i ažurira ih u pozadini.
-- Teme: Jednobojna (bijela, crna i siva; grafit u tamnoj), Ružičasta, Žuta, Zelena, Plava i Ljubičasta, svaka svijetla i tamna, s gumbima u kontrastnoj boji; točke u ☰ › Tema imaju boju gumba.
+- Teme: 6 tema s vlastitom pozadinom, karticama i bojom (Jednobojna, Ružičasta, Žuta, Zelena, Plava, Ljubičasta), svaka svijetla i tamna; točke u ☰ › Tema imaju boju teme.
 - Zapisnik: veličina, retci i pogreške na kartici; Pogledaj zapisnik otvara retke (Sve, Pogreške, Danas, Jučer; dugi dodir kopira redak); Dijeli i Spremi na dnu zaslona. Ispravljene pogreške su na kraju zapisnika i ne broje se; problemi mreže su upozorenja.
 - Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 

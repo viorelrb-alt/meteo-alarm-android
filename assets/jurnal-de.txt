@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.170 · 25.11.2026
+Aktuelle Version: v.2.180 · 25.11.2026
 AKTUALISIERUNGEN
 - Feld Neue Version: oben im ☰ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
@@ -7,7 +7,7 @@ BENACHRICHTIGUNGEN
 - Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App GitHub 2 Wochen nach einem Update täglich, danach alle 7 Tage, und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.
 EINSTELLUNGEN
 - Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
-- Designs: Monochrom (Weiß, Schwarz und Grau; dunkel Graphit), Rosa, Gelb, Grün, Blau und Violett, jeweils hell und dunkel, mit Tasten in einer Kontrastfarbe; die Punkte in ☰ › Design haben die Farbe der Tasten.
+- Designs: 6 Designs mit eigenem Hintergrund, eigenen Karten und eigener Farbe (Monochrom, Rosa, Gelb, Grün, Blau, Violett), jeweils hell und dunkel; die Punkte in ☰ › Design haben die Farbe des Designs.
 - Erdbeben-Seite: öffnet sich sofort mit den zuletzt auf dem Telefon gespeicherten Listen und aktualisiert sie im Hintergrund.
 - Export / Import: Schalter für den Inhalt der Datei (auch Kulturen und Anbaudaten, Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); bei Export und Import werden Orte und Parzellen einzeln angekreuzt; die Taste Aa ändert die Textgröße.
 - Favoriten im ☰: drei Reihen, zuerst die Orte mit vollem Stern (sie haben einen Hauptbildschirm), dann die anderen; der erste behält immer seinen Stern; ein Tippen auf einen leeren Stern gibt dem Ort einen Hauptbildschirm, den zweiten; das Entfernen des Sterns entfernt seinen Bildschirm.
@@ -17,7 +17,7 @@ HAUPTBILDSCHIRM
 - Mehrere Orte: Jeder Ort der Liste hat seinen eigenen Hauptbildschirm; Wischen nach links oder rechts über dem Wetter jetzt geht zum nächsten, in der Reihenfolge der Liste.
 - Namen der Tasten: Eine runde Taste, die nach dem Antippen auf dem Bildschirm bleibt, zeigt ihren Namen etwa 1,5 Sekunden in einer kleinen Blase.
 - Taste Orte: Die runde Taste mit dem Häuser-Symbol (hochkant rechts vom Namen, quer auf dem oberen Band, vor seiner Ecke) öffnet die Liste der Orte.
-- Wetterkarte: am Ende des Hauptbildschirms die Karte des Orts mit den Tasten Wolken, Temperaturen und Regen (eine auf einmal) und der Legende; Regen schaltet sich nur ein, wenn es in der Nähe jetzt oder in den nächsten 2 Stunden regnet.
+- Wetterkarte: am Ende des Hauptbildschirms die Karte des Orts mit den Tasten Wolken, Temperaturen und Regen (eine auf einmal) und der Legende; Regen schaltet sich nur ein, wenn es in der Nähe jetzt oder in den nächsten 2 Stunden regnet. Unter der Karte spielt ▶ die Stunden (6 vor jetzt und 6 danach) nacheinander ab; ein Tippen auf eine Stunde zeigt sie.
 ORTE
 - Liste der Orte: Die Taste Orte öffnet die Liste in der Farbe des Designs; Auswählen löscht einen oder mehrere (der letzte bleibt), und das Zeichen ⌃⌄, gehalten und nach oben oder unten gezogen, ändert die Reihenfolge; jeder Ort behält sein gespeichertes Wetter.
 - Ortskarten: Auf dem Tablet und quer sind sie so breit wie ihr Text und stehen in Reihen und Spalten; hochkant auf dem Telefon bekommt ein zu langer Name kleinere Buchstaben; quer behält die Suche ihre Größe von hochkant.

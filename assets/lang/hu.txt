@@ -1769,3 +1769,8 @@ Automatic theme on	Automatikus téma be
 Automatic theme off	Automatikus téma ki
 Battery 	Akkumulátor 
 Values: being updated	Értékek: frissítés alatt
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	A főképernyő végén (görgess felfelé; fekvőben a dobozok lapján): a település térképe Felhők, Hőmérsékletek és Eső réteggel, egyszerre egy; a bekapcsoltra koppintva kikapcsol. Az Eső szürke és áthúzott, ha a közelben most és a következő 2 órában nem esik. A jelmagyarázat mutatja a réteg idejét, a hőmérsékletnél a térkép tartományát. A térkép alatt a ▶ egymás után lejátssza az órákat (6 a mostani előtt és 6 utána); egy órára koppintva az látszik. A térkép áll; adatok: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 téma, mindegyik saját háttérrel, kártyákkal és színnel (Egyszínű, Rózsaszín, Sárga, Zöld, Kék, Lila): koppints egy pöttyre, amely a téma színe; alattuk Világos, Sötét vagy Automatikus (telefon érzékelője).
+mm in that hour	mm abban az órában
+Weather map: stop the hours	Időjárási térkép: órák leállítása
+Weather map: play the hours before and after now	Időjárási térkép: a mostani előtti és utáni órák lejátszása

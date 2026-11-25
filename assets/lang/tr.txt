@@ -1703,3 +1703,8 @@ Automatic theme on	Otomatik tema açık
 Automatic theme off	Otomatik tema kapalı
 Battery 	Pil 
 Values: being updated	Değerler: güncelleniyor
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Ana ekranın sonunda (yukarı kaydırın; yatayda kutuların olduğu sayfada): yerin haritası Bulutlar, Sıcaklıklar ve Yağmur ile, aynı anda bir tane; açık olana dokunmak onu kapatır. Yakında şimdi ve sonraki 2 saatte yağmur yoksa Yağmur gri ve üstü çizilidir. Açıklama katmanın saatini ve sıcaklıklar için haritadaki aralığı gösterir. Haritanın altında ▶ saatleri (şimdiden önceki 6 ve sonraki 6) sırayla oynatır; bir saate dokunmak onu gösterir. Harita sabit durur; veriler: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 tema, her birinin kendi arka planı, kartları ve rengi var (Tek renk, Pembe, Sarı, Yeşil, Mavi, Mor): temanın renginde bir noktaya dokunun; altlarında Açık, Koyu ya da Otomatik (telefon sensörü).
+mm in that hour	o saatteki mm
+Weather map: stop the hours	Hava haritası: saatleri durdur
+Weather map: play the hours before and after now	Hava haritası: şimdiden önceki ve sonraki saatleri oynat

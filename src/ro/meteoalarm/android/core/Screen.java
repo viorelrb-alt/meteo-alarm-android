@@ -248,6 +248,8 @@ public final class Screen {
 		statsArea[2] = 0;
 		wxArea[2] = 0;
 		for (float[] b : wxChip) b[2] = 0;
+		wxPlay[2] = 0;
+		wxLine[2] = 0;
 		parts = 0;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
@@ -457,11 +459,12 @@ public final class Screen {
 
 	/** The glass's see-through tint and its thin edge. */
 	private int frostTint() {
-		return dark ? (mix(c.page, c.ink, 0.04f) & 0xFFFFFF) | 0xB4000000 : (mix(c.page, Gfx.WHITE, 0.55f) & 0xFFFFFF) | 0xB0000000;
+		// v2.180: the glass bars (top and the dock) take the theme's raised colour (bg_card_elevated).
+		return (Theme.elev(dark) & 0xFFFFFF) | 0xE6000000;
 	}
 
 	private int frostEdge() {
-		return (c.ink & 0xFFFFFF) | (dark ? 0x3A000000 : 0x2C000000);
+		return c.line;
 	}
 
 	/** A sheet of frosted glass (not in the page's own copy). */
@@ -535,7 +538,7 @@ public final class Screen {
 				st.area[1] += dy;
 				keepIn(st.area, top, bot);
 			}
-		for (float[] a : new float[][] { nowArea, precipArea, btnStats, statusArea, wxArea, wxChip[0], wxChip[1], wxChip[2] })
+		for (float[] a : new float[][] { nowArea, precipArea, btnStats, statusArea, wxArea, wxChip[0], wxChip[1], wxChip[2], wxPlay, wxLine })
 			if (a[2] > 0) a[1] += dy;
 		for (int j = 0; j < parts; j++) partArea[j][1] += dy;
 		keepIn(nowArea, top, bot);
@@ -686,6 +689,15 @@ public final class Screen {
 	/** Where the map and its three buttons are (x, y, w, h), for the taps. */
 	public final float[] wxArea = new float[4];
 	public final float[][] wxChip = new float[3][4];
+	/**
+	 * v2.180 (Viorel): the hours under the map, played as an animation: their times (null while
+	 * unknown), the current hour's place, the hour shown (-1 now), playing or not; where the play
+	 * button and the hours' line are, for the taps.
+	 */
+	public String[] wxHours;
+	public int wxNow = -1, wxFrame = -1;
+	public boolean wxPlaying;
+	public final float[] wxPlay = new float[4], wxLine = new float[4];
 
 	/** The map's card (the picture with its legend, made by the app) and the Clouds / Temperatures / Rain buttons over it. */
 	private float drawWxMap(float x, float y, float wd) {
@@ -724,7 +736,63 @@ public final class Screen {
 			wxChip[k][0] = cx * hs; wxChip[k][1] = py * hs; wxChip[k][2] = bw * hs; wxChip[k][3] = chH * hs;
 			cx += bw;
 		}
+		if (wxLayer > 0 && wxHours != null && wxHours.length > 1) return drawWxHours(x, y + h + 16, wd);
 		return y + h;
+	}
+
+	/**
+	 * v2.180 (Viorel): under the map, a play button and the hours (6 before now, now, 6 after): the
+	 * play button runs the hours one after another on the map; a tap on an hour shows that hour.
+	 */
+	private float drawWxHours(float x, float y, float wd) {
+		float h = 112, d = 80;
+		card(x, y, wd, h, 26);
+		float bx = x + 16, by = y + (h - d) / 2;
+		g.roundRect(bx, by, d, d, d / 2, c.accent);
+		int on = onAccent();
+		float cx = bx + d / 2, cy = by + d / 2;
+		if (wxPlaying) {
+			g.rect(cx - 14, cy - 17, 10, 34, on);
+			g.rect(cx + 4, cy - 17, 10, 34, on);
+		} else g.poly(new float[] { cx - 11, cy - 19, cx + 19, cy, cx - 11, cy + 19 }, on);
+		wxPlay[0] = bx * hs; wxPlay[1] = by * hs; wxPlay[2] = d * hs; wxPlay[3] = d * hs;
+		int n = wxHours.length;
+		float lx = bx + d + 34, rx = x + wd - 34, ly = y + 42;
+		g.rect(lx, ly - 2, rx - lx, 4, c.line);
+		int cur = wxFrame >= 0 ? wxFrame : wxNow;
+		float step = (rx - lx) / (n - 1);
+		for (int k = 0; k < n; k++) {
+			float px = lx + k * step;
+			boolean sel = k == cur, now = k == wxNow;
+			float r = sel ? 13 : now ? 9 : 6;
+			g.roundRect(px - r, ly - r, 2 * r, 2 * r, r, sel ? c.accent : now ? c.ink : c.dim);
+		}
+		String first = wxHours[0], last = wxHours[n - 1], nowS = Tr.t("now", "acum");
+		float tp = 22, ty = y + h - 44;
+		ltext(false, tp, ty, lx - 10, first, c.dim);
+		float lw = g.width(false, tp, last);
+		ltext(false, tp, ty, rx + 10 - lw, last, c.dim);
+		if (wxNow >= 0) {
+			String sh = cur >= 0 && cur != wxNow ? wxHours[cur] : nowS;
+			float nx = lx + (cur >= 0 ? cur : wxNow) * step, nw = g.width(true, tp, sh);
+			nx = Math.max(lx + g.width(false, tp, first) + 10 + nw / 2, Math.min(rx - lw - 10 - nw / 2, nx));
+			ctext(true, tp, ty, nx, sh, c.ink);
+		}
+		wxLine[0] = (lx - 20) * hs; wxLine[1] = y * hs; wxLine[2] = (rx - lx + 40) * hs; wxLine[3] = h * hs;
+		return y + h;
+	}
+
+	/** v2.180: the hour of the map's line under X, Y (its place in wxHours), -1 none. */
+	public int wxHourAt(float x, float y) {
+		if (wxLine[2] <= 0 || wxHours == null || wxHours.length < 2 || x < wxLine[0] || x > wxLine[0] + wxLine[2] || y < wxLine[1] || y > wxLine[1] + wxLine[3]) return -1;
+		float lx = wxLine[0] + 20 * hs, rx = wxLine[0] + wxLine[2] - 20 * hs;
+		int k = Math.round((x - lx) / (rx - lx) * (wxHours.length - 1));
+		return Math.max(0, Math.min(wxHours.length - 1, k));
+	}
+
+	/** v2.180: the map's play button is under X, Y. */
+	public boolean wxPlayAt(float x, float y) {
+		return wxPlay[2] > 0 && x >= wxPlay[0] - 8 && x <= wxPlay[0] + wxPlay[2] + 8 && y >= wxPlay[1] - 8 && y <= wxPlay[1] + wxPlay[3] + 8;
 	}
 
 	/** v2.170: the map's button under X, Y: 0 clouds, 1 temperatures, 2 rain; -1 none. */
@@ -2783,12 +2851,13 @@ public final class Screen {
 
 	/** A card's fill: a little lighter than the page in the dark, nearly white in the light. */
 	private int glass() {
-		return dark ? mix(c.page, c.ink, 0.065f) : mix(c.page, Gfx.WHITE, 0.72f);
+		// v2.180: the cards take the theme's card colour (bg_card), the edge its border (border_card).
+		return c.card;
 	}
 
 	/** A card's soft glass edge (v5.21, Viorel: the frosted-glass look back, a little clearer than v5.10). */
 	private int edge() {
-		return dark ? mix(c.page, c.ink, 0.21f) : mix(c.page, c.ink, 0.16f);
+		return c.line;
 	}
 
 	/** Thin lines inside the cards. */
@@ -4747,10 +4816,8 @@ public final class Screen {
 
 	/** Design audit (2026-11-23): the icon on an accent disc, at least 3:1 (white, else the page or the ink). */
 	private int onAccent() {
-		int a = dark ? c.page : Gfx.WHITE;
-		if (Theme.contrast(a, c.accent) >= 3) return a;
-		int b = dark ? Gfx.WHITE : c.ink;
-		return Theme.contrast(b, c.accent) > Theme.contrast(a, c.accent) ? b : a;
+		// v2.180 (Viorel's theme file): the text on the accent is the theme's own accent_on colour.
+		return Theme.onAcc(dark);
 	}
 
 	private void buttonIcon(String which, float cx, float cy, int ink) {
@@ -5259,6 +5326,9 @@ public final class Screen {
 				boolean on = wxLayer == k + 1;
 				say(out, b, Tr.t("Weather map: ", "Harta meteo: ") + nm[k] + (on ? Tr.t(", on", ", pornit") : k == 2 && !wxRain ? Tr.t(", no rain near now", ", nu plouă în zonă acum") : ""));
 			}
+			// v2.180: the play button of the hours.
+			if (wxPlay[2] > 0 && pa[2] > 0 && wxPlay[1] >= pa[1] && wxPlay[1] + wxPlay[3] <= pa[1] + pa[3])
+				say(out, wxPlay, wxPlaying ? Tr.t("Weather map: stop the hours", "Harta meteo: oprește orele") : Tr.t("Weather map: play the hours before and after now", "Harta meteo: redă orele dinainte și de după acum"));
 		}
 		if (page && w != null) {
 			if (precipArea[2] > 0 && visible(precipArea, hours))

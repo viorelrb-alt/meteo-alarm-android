@@ -1,4 +1,4 @@
-Versión actual: v.2.170 · 25.11.2026
+Versión actual: v.2.180 · 25.11.2026
 ACTUALIZACIONES
 - Caja Nueva versión: una caja corta arriba en ☰ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
@@ -7,7 +7,7 @@ AJUSTES
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
 - Página Terremotos: se abre al instante con las últimas listas guardadas en el teléfono y las actualiza en segundo plano.
 - Registro: tamaño, líneas y errores en una tarjeta; Ver el registro abre las líneas (Todas, Errores, Hoy, Ayer; una pulsación larga copia una línea); Compartir y Guardar abajo en la pantalla. Los errores resueltos están al final del registro y no se cuentan; los problemas de red son avisos.
-- Temas: Monocromo (blanco, negro y gris; grafito en oscuro), Rosa, Amarillo, Verde, Azul y Violeta, cada uno claro y oscuro, con los botones en un color de contraste; los puntos de ☰ › Tema tienen el color de los botones.
+- Temas: 6 temas con su propio fondo, tarjetas y color (Monocromo, Rosa, Amarillo, Verde, Azul, Violeta), cada uno claro y oscuro; los puntos de ☰ › Tema tienen el color del tema.
 LOCALIDADES
 - Búsqueda en el mapa: la lupa abre el mapa con la búsqueda abajo; tocar un lugar o el nombre de una localidad muestra su temperatura, Detalles (los próximos días) y Añadir. El mapa es sencillo y claro, con los nombres de las localidades escritos en grande (también en el mapa de las parcelas). Otras localidades solo aparecen si empiezan como el nombre escrito (al menos 6 letras o el 60 %).
 - Lista de localidades: el botón Localidades abre la lista, en el color del tema; Seleccionar borra una o varias (la última se queda), y el signo ⌃⌄ mantenido y arrastrado arriba o abajo cambia el orden; cada localidad conserva su tiempo guardado.
@@ -19,7 +19,7 @@ NOTIFICACIONES
 PANTALLA PRINCIPAL
 - Botón Localidades: el botón redondo con el icono de casas (en vertical a la derecha del nombre, en horizontal en la banda superior, antes de su esquina) abre la lista de localidades.
 - Información del terremoto: un toque en la casilla Terremoto la abre en la pantalla principal: el mapa, debajo las zonas de percepción y el historial del valor; el cuadrado de color o el mapa la abren en pantalla completa, como un terremoto de ☰ › Terremotos. En Rumanía, Francia, Italia, Países Bajos, Suiza y Grecia los valores oficiales vienen primero del instituto del país (INFP, BCSF, INGV, KNMI, SED, NOA) y luego de EMSC. En Rumanía, los terremotos alrededor del país también reciben el valor del INFP (de infp.ro).
-- Mapa del tiempo: al final de la pantalla principal, el mapa de la localidad con los botones Nubes, Temperaturas y Lluvia (uno cada vez) y la leyenda; Lluvia solo se activa cuando llueve cerca ahora o en las próximas 2 horas.
+- Mapa del tiempo: al final de la pantalla principal, el mapa de la localidad con los botones Nubes, Temperaturas y Lluvia (uno cada vez) y la leyenda; Lluvia solo se activa cuando llueve cerca ahora o en las próximas 2 horas. Bajo el mapa, ▶ reproduce las horas (6 antes de ahora y 6 después) una tras otra; tocar una hora la muestra.
 - Nombres de los botones: un botón redondo que queda en la pantalla al tocarlo muestra su nombre en una burbuja pequeña durante unos 1,5 segundos.
 - Varias localidades: cada localidad de la lista tiene su propia pantalla principal; deslizar a la izquierda o a la derecha sobre el tiempo actual pasa a la siguiente, en el orden de la lista.
 PARCELAS

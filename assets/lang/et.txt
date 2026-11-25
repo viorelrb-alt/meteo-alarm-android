@@ -1769,3 +1769,8 @@ Automatic theme on	Automaatne teema sees
 Automatic theme off	Automaatne teema väljas
 Battery 	Aku 
 Values: being updated	Väärtused: uuenevad
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Põhiekraani lõpus (keri üles; rõhtpaigutuses kastidega lehel): asula kaart Pilvede, Temperatuuride ja Vihmaga, üks korraga; puudutus sisse lülitatul lülitab selle välja. Vihm on hall ja läbi kriipsutatud, kui lähedal ei saja praegu ega järgmise 2 tunni jooksul. Legend näitab kihi aega ja temperatuuride puhul kaardi vahemikku. Kaardi all mängib ▶ tunnid (6 enne praegust ja 6 pärast) üksteise järel; tunni puudutus näitab seda. Kaart seisab paigal; andmed: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 teemat, igaühel oma taust, kaardid ja värv (Ühevärviline, Roosa, Kollane, Roheline, Sinine, Lilla): puuduta teema värvi täppi; nende all Hele, Tume või Automaatne (telefoni andur).
+mm in that hour	mm selle tunni jooksul
+Weather map: stop the hours	Ilmakaart: peata tunnid
+Weather map: play the hours before and after now	Ilmakaart: mängi tunnid enne ja pärast praegust

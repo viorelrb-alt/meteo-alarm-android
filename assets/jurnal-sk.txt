@@ -1,9 +1,9 @@
-Súčasná verzia: v.2.170 · 25.11.2026
+Súčasná verzia: v.2.180 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ☰, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
-- Mapa počasia: na konci hlavnej obrazovky mapa obce s tlačidlami Oblačnosť, Teploty a Dážď (jedno naraz) a legendou; Dážď sa zapne len vtedy, keď neďaleko prší teraz alebo v nasledujúcich 2 hodinách.
+- Mapa počasia: na konci hlavnej obrazovky mapa obce s tlačidlami Oblačnosť, Teploty a Dážď (jedno naraz) a legendou; Dážď sa zapne len vtedy, keď neďaleko prší teraz alebo v nasledujúcich 2 hodinách. Pod mapou ▶ prehrá hodiny (6 pred teraz a 6 po) jednu po druhej; ťuknutie na hodinu ju ukáže.
 - Názvy tlačidiel: okrúhle tlačidlo, ktoré po ťuknutí zostane na obrazovke, ukáže svoj názov v malej bubline asi na 1,5 sekundy.
 - Tlačidlo Obce: okrúhle tlačidlo s ikonou domčekov (na výšku vpravo od názvu, na šírku na hornom páse, pred jeho rohom) otvorí zoznam obcí.
 - Viac obcí: každá obec zo zoznamu má svoju hlavnú obrazovku; potiahnutie doľava alebo doprava po aktuálnom počasí prejde na ďalšiu, v poradí zoznamu.
@@ -11,7 +11,7 @@ NASTAVENIA
 - Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke. Opravené chyby sú na konci denníka a nepočítajú sa; problémy siete sú upozornenia.
 - Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.
 - Jazyk zobrazenia: v ☰ angličtina a jazyk krajiny; Ďalšie jazyky: ostatné jazyky krajiny, veľké jazyky EÚ, rumunčina a jazyk telefónu (v USA len angličtina a španielčina).
-- Motívy: Jednofarebný (biela, čierna a sivá; v tmavom grafit), Ružový, Žltý, Zelený, Modrý a Fialový, každý svetlý aj tmavý, s tlačidlami v kontrastnej farbe; bodky v ☰ › Motív majú farbu tlačidiel.
+- Motívy: 6 motívov s vlastným pozadím, kartami a farbou (Jednofarebný, Ružový, Žltý, Zelený, Modrý, Fialový), každý svetlý aj tmavý; bodky v ☰ › Motív majú farbu motívu.
 - Obľúbené v ☰: tri rady, najprv obce s plnou hviezdičkou (majú hlavnú obrazovku), potom ostatné; prvá si hviezdičku vždy ponechá; ťuknutie na prázdnu hviezdičku dá obci hlavnú obrazovku, druhú; odobratie hviezdičky odoberie jej obrazovku.
 - Stránka Zemetrasenia: otvorí sa hneď s naposledy uloženými zoznamami v telefóne a aktualizuje ich na pozadí.
 OBCE

@@ -1703,3 +1703,8 @@ Automatic theme on	Аутоматска тема укључена
 Automatic theme off	Аутоматска тема искључена
 Battery 	Батерија 
 Values: being updated	Вредности: ажурирају се
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	На крају главног екрана (померите нагоре; у положеном на листу са кутијама): мапа места са Облацима, Температурама и Кишом, један по један; додир на укључени га искључује. Киша је сива и прецртана када у близини не пада сада ни у наредна 2 сата. Легенда показује време слоја и, за температуре, распон на мапи. Испод мапе ▶ пушта сате (6 пре сада и 6 после) један за другим; додир на сат га приказује. Мапа мирује; подаци: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 тема, свака са својом позадином, картицама и бојом (Једнобојна, Розе, Жута, Зелена, Плава, Љубичаста): додирните тачку у боји теме; испод њих Светла, Тамна или Аутоматска (сензор телефона).
+mm in that hour	мм у том сату
+Weather map: stop the hours	Временска мапа: заустави сате
+Weather map: play the hours before and after now	Временска мапа: пусти сате пре и после сада

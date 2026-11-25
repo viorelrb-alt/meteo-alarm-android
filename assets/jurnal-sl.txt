@@ -1,10 +1,10 @@
-Trenutna različica: v.2.170 · 25.11.2026
+Trenutna različica: v.2.180 · 25.11.2026
 GLAVNI ZASLON
 - Gumb Kraji: okrogel gumb z ikono hišic (pokončno desno od imena, ležeče na zgornjem traku, pred njegovim kotom) odpre seznam krajev.
 - Imena gumbov: okrogel gumb, ki po dotiku ostane na zaslonu, pokaže svoje ime v majhnem oblačku za približno 1,5 sekunde.
 - Podatki o potresu: dotik polja Potres jih odpre na glavnem zaslonu: zemljevid, pod njim cone zaznavanja in zgodovina vrednosti; barvni kvadrat ali zemljevid jih odpre na celem zaslonu, kot potres iz ☰ › Potresi. V Romuniji, Franciji, Italiji, na Nizozemskem, v Švici in Grčiji uradne vrednosti najprej prihajajo od državnega inštituta (INFP, BCSF, INGV, KNMI, SED, NOA), nato od EMSC. V Romuniji tudi potresi okoli države dobijo vrednost INFP (z infp.ro).
 - Več krajev: vsak kraj s seznama ima svoj glavni zaslon; podrsanje levo ali desno po trenutnem vremenu preide na naslednjega, v vrstnem redu seznama.
-- Vremenski zemljevid: na koncu glavnega zaslona zemljevid kraja z gumbi Oblaki, Temperature in Dež (eden naenkrat) in legendo; Dež se vklopi le, ko v bližini dežuje zdaj ali v naslednjih 2 urah.
+- Vremenski zemljevid: na koncu glavnega zaslona zemljevid kraja z gumbi Oblaki, Temperature in Dež (eden naenkrat) in legendo; Dež se vklopi le, ko v bližini dežuje zdaj ali v naslednjih 2 urah. Pod zemljevidom ▶ predvaja ure (6 pred zdaj in 6 po) eno za drugo; dotik ure jo pokaže.
 KRAJI
 - Iskanje na zemljevidu: lupa odpre zemljevid z iskanjem spodaj; dotik mesta ali imena kraja pokaže njegovo temperaturo, Podrobnosti (naslednje dni) in Dodaj. Zemljevid je preprost in svetel, z velikimi imeni krajev (tudi na zemljevidu parcel). Drugi kraji se pokažejo le, če se začnejo kot vpisano ime (vsaj 6 črk ali 60 % imena).
 - Kartice krajev: na tablici in ležeče so široke kot njihovo besedilo in stojijo v vrsticah in stolpcih; pokončno na telefonu predolgo ime dobi manjše črke; ležeče iskanje obdrži pokončno velikost.
@@ -15,7 +15,7 @@ NASTAVITVE
 - Jezik prikaza: v ☰ angleščina in jezik države; Drugi jeziki: drugi jeziki države, veliki jeziki EU, romunščina in jezik telefona (v ZDA samo angleščina in španščina).
 - Priljubljeni v ☰: tri vrstice, najprej kraji s polno zvezdico (imajo glavni zaslon), nato drugi; prvi vedno obdrži zvezdico; dotik prazne zvezdice da kraju glavni zaslon, drugega; odstranitev zvezdice odstrani njegov zaslon.
 - Stran Potresi: takoj se odpre z zadnjimi seznami, shranjenimi v telefonu, in jih posodobi v ozadju.
-- Teme: Enobarvna (bela, črna in siva; grafit v temni), Rožnata, Rumena, Zelena, Modra in Vijolična, vsaka svetla in temna, z gumbi v kontrastni barvi; pike v ☰ › Tema imajo barvo gumbov.
+- Teme: 6 tem z lastnim ozadjem, karticami in barvo (Enobarvna, Rožnata, Rumena, Zelena, Modra, Vijolična), vsaka svetla in temna; pike v ☰ › Tema imajo barvo teme.
 OBVESTILA
 - Lastni kanali: vremenska opozorila, dež in sneg, potresi, parcele in posodobitve imajo vsak svoj kanal v nastavitvah telefona; enega lahko izklopite in druge obdržite.
 - Nova različica: z vklopljenimi obvestili aplikacija preverja GitHub vsak dan 2 tedna po posodobitvi, nato enkrat v 7 dneh, in najavi novo različico v obvestilih Androida; dotik odpre Preveri posodobitve.

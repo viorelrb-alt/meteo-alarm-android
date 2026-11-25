@@ -1769,3 +1769,8 @@ Automatic theme on	Automatický motív zapnutý
 Automatic theme off	Automatický motív vypnutý
 Battery 	Batéria 
 Values: being updated	Hodnoty: aktualizujú sa
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Na konci hlavnej obrazovky (posuňte nahor; na šírku na hárku s kartami): mapa obce s tlačidlami Oblačnosť, Teploty a Dážď, vždy jedno; ťuknutie na zapnuté ho vypne. Dážď je sivý a prečiarknutý, keď v okolí neprší teraz ani v najbližších 2 hodinách. Legenda ukazuje čas vrstvy a pri teplotách rozsah na mape. Pod mapou ▶ prehrá hodiny (6 pred teraz a 6 po) jednu po druhej; ťuknutie na hodinu ju ukáže. Mapa sa nehýbe; údaje: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 motívov, každý s vlastným pozadím, kartami a farbou (Jednofarebný, Ružový, Žltý, Zelený, Modrý, Fialový): ťuknite na bodku vo farbe motívu; pod nimi Svetlý, Tmavý alebo Automaticky (senzor telefónu).
+mm in that hour	mm v tej hodine
+Weather map: stop the hours	Mapa počasia: zastaviť hodiny
+Weather map: play the hours before and after now	Mapa počasia: prehrať hodiny pred a po teraz

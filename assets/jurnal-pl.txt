@@ -1,4 +1,4 @@
-Obecna wersja: v.2.170 · 25.11.2026
+Obecna wersja: v.2.180 · 25.11.2026
 AKTUALIZACJE
 - Pole Nowa wersja: krótkie pole u góry ☰, gdy jest nowa wersja; dotknięcie go rozpoczyna pobieranie.
 DZIAŁKI
@@ -12,7 +12,7 @@ DZIAŁKI
 - Współrzędne działki: na stronie edycji wpisuje się współrzędne GPS każdego punktu, a pod nimi widok satelitarny pokazuje działkę.
 EKRAN GŁÓWNY
 - Informacje o trzęsieniu: dotknięcie pola Trzęsienie ziemi otwiera je na ekranie głównym: mapa, pod nią strefy odczuwalności i historia wartości; kolorowy kwadrat lub mapa otwiera je na całym ekranie, jak trzęsienie z ☰ › Trzęsienia ziemi. W Rumunii, Francji, Włoszech, Holandii, Szwajcarii i Grecji oficjalne wartości pochodzą najpierw z krajowego instytutu (INFP, BCSF, INGV, KNMI, SED, NOA), potem z EMSC. W Rumunii także trzęsienia wokół kraju dostają wartość INFP (z infp.ro).
-- Mapa pogody: na końcu ekranu głównego mapa miejscowości z przyciskami Chmury, Temperatury i Deszcz (jeden naraz) i legendą; Deszcz włącza się tylko, gdy w pobliżu pada teraz lub w ciągu najbliższych 2 godzin.
+- Mapa pogody: na końcu ekranu głównego mapa miejscowości z przyciskami Chmury, Temperatury i Deszcz (jeden naraz) i legendą; Deszcz włącza się tylko, gdy w pobliżu pada teraz lub w ciągu najbliższych 2 godzin. Pod mapą ▶ odtwarza godziny (6 przed teraz i 6 po) jedna po drugiej; dotknięcie godziny ją pokazuje.
 - Nazwy przycisków: okrągły przycisk, który po dotknięciu zostaje na ekranie, pokazuje swoją nazwę w małym dymku przez około 1,5 sekundy.
 - Przycisk Miejscowości: okrągły przycisk z ikoną domków (pionowo po prawej stronie nazwy, poziomo na górnym pasku, przed jego rogiem) otwiera listę miejscowości.
 - Więcej miejscowości: każda miejscowość z listy ma swój ekran główny; przesunięcie w lewo lub w prawo na pogodzie teraz przechodzi do następnej, w kolejności listy.
@@ -28,7 +28,7 @@ USTAWIENIA
 - Dziennik: rozmiar, wiersze i błędy na karcie; Zobacz dziennik otwiera wiersze (Wszystkie, Błędy, Dziś, Wczoraj; długie dotknięcie kopiuje wiersz); Udostępnij i Zapisz na dole ekranu. Naprawione błędy są na końcu dziennika i nie są liczone; problemy z siecią są ostrzeżeniami.
 - Eksport / Import: przełączniki tego, co trafia do pliku (także uprawy i dane uprawowe, powiadomienia działek, kosz działek, powiadomienia, mapa, widżety, historia trzęsień ziemi, dziennik); w Eksporcie i Imporcie miejscowości i działki zaznacza się po kolei; przycisk Aa zmienia rozmiar tekstu.
 - Język wyświetlania: w ☰ angielski i język kraju; Inne języki: pozostałe języki kraju, duże języki UE, rumuński i język telefonu (w USA tylko angielski i hiszpański).
-- Motywy: Monochromatyczny (biel, czerń i szarość; grafit w ciemnym), Różowy, Żółty, Zielony, Niebieski i Fioletowy, każdy jasny i ciemny, z przyciskami w kontrastowym kolorze; kropki w ☰ › Motyw mają kolor przycisków.
+- Motywy: 6 motywów z własnym tłem, kartami i kolorem (Monochromatyczny, Różowy, Żółty, Zielony, Niebieski, Fioletowy), każdy jasny i ciemny; kropki w ☰ › Motyw mają kolor motywu.
 - Strona Trzęsienia ziemi: otwiera się od razu z ostatnimi listami zapisanymi w telefonie i aktualizuje je w tle.
 - Ulubione w ☰: trzy rzędy, najpierw miejscowości z pełną gwiazdką (mają ekran główny), potem pozostałe; pierwsza zawsze zachowuje gwiazdkę; dotknięcie pustej gwiazdki daje miejscowości ekran główny, drugi; zdjęcie gwiazdki usuwa jej ekran.
 - Ulepszenia wyglądu i poprawki zgłoszonych błędów.

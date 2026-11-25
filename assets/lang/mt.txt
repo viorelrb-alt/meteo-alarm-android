@@ -1769,3 +1769,8 @@ Automatic theme on	Tema awtomatika mixgħula
 Automatic theme off	Tema awtomatika mitfija
 Battery 	Batterija 
 Values: being updated	Valuri: qed jiġu aġġornati
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Fl-aħħar tal-iskrin prinċipali (skrolja 'l fuq; f'landscape fuq il-folja bil-kaxxi): il-mappa tal-lokalità b'Sħab, Temperaturi u Xita, wieħed kull darba; tagħfisa fuq dak mixgħul titfih. Ix-Xita hija griża u maqtugħa meta ma tkunx qed tagħmel xita fil-qrib issa u lanqas fis-sagħtejn li ġejjin. Il-leġġenda turi l-ħin tas-saff u, għat-temperaturi, il-firxa fuq il-mappa. Taħt il-mappa, ▶ juri s-sigħat (6 qabel issa u 6 wara) waħda wara l-oħra; tagħfisa fuq siegħa turiha. Il-mappa tibqa' wieqfa; data: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 temi, kull waħda bl-isfond, il-kards u l-kulur tagħha (Monokromu, Roża, Isfar, Aħdar, Blu, Vjola): agħfas tikka bil-kulur tat-tema; taħthom Ċara, Skura jew Awtomatika (sensor tat-telefon).
+mm in that hour	mm f'dik is-siegħa
+Weather map: stop the hours	Mappa tat-temp: waqqaf is-sigħat
+Weather map: play the hours before and after now	Mappa tat-temp: uri s-sigħat qabel u wara issa

@@ -1769,3 +1769,8 @@ Automatic theme on	Samodejna tema vklopljena
 Automatic theme off	Samodejna tema izklopljena
 Battery 	Baterija 
 Values: being updated	Vrednosti: se posodabljajo
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	Na koncu glavnega zaslona (podrsajte navzgor; ležeče na listu s škatlami): zemljevid kraja z Oblaki, Temperaturami in Dežjem, enim naenkrat; tap na vklopljenega ga izklopi. Dež je siv in prečrtan, ko v bližini ne dežuje zdaj niti v naslednjih 2 urah. Legenda kaže čas sloja in pri temperaturah razpon na zemljevidu. Pod zemljevidom ▶ predvaja ure (6 pred zdaj in 6 po) eno za drugo; dotik ure jo pokaže. Zemljevid miruje; podatki: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 tem, vsaka s svojim ozadjem, karticami in barvo (Enobarvna, Rožnata, Rumena, Zelena, Modra, Vijolična): tapnite piko v barvi teme; pod njimi Svetla, Temna ali Samodejna (senzor telefona).
+mm in that hour	mm v tisti uri
+Weather map: stop the hours	Vremenski zemljevid: ustavi ure
+Weather map: play the hours before and after now	Vremenski zemljevid: predvajaj ure pred zdaj in po njem

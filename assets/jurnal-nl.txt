@@ -1,16 +1,16 @@
-Huidige versie: v.2.170 · 25.11.2026
+Huidige versie: v.2.180 · 25.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 - Knop Plaatsen: de ronde knop met het huisjespictogram (staand rechts van de naam, liggend op de bovenste band, vóór de hoek) opent de lijst met plaatsen.
 - Meer plaatsen: elke plaats in de lijst heeft een eigen hoofdscherm; links of rechts vegen over het weer nu gaat naar de volgende, in de volgorde van de lijst.
 - Namen van de knoppen: een ronde knop die na een tik op het scherm blijft, toont zijn naam ongeveer 1,5 seconde in een kleine ballon.
-- Weerkaart: aan het einde van het hoofdscherm de kaart van de plaats met de knoppen Wolken, Temperaturen en Regen (één tegelijk) en de legenda; Regen gaat alleen aan als het in de buurt nu of in de komende 2 uur regent.
+- Weerkaart: aan het einde van het hoofdscherm de kaart van de plaats met de knoppen Wolken, Temperaturen en Regen (één tegelijk) en de legenda; Regen gaat alleen aan als het in de buurt nu of in de komende 2 uur regent. Onder de kaart speelt ▶ de uren (6 vóór nu en 6 erna) na elkaar af; een tik op een uur toont het.
 INSTELLINGEN
 - Exporteren / Importeren: schakelaars voor wat in het bestand gaat (ook gewassen en teeltgegevens, perceelmeldingen, prullenbak van percelen, meldingen, kaart, widgets, aardbevingsgeschiedenis, logboek); bij Exporteren en Importeren worden plaatsen en percelen één voor één aangevinkt; de knop Aa verandert de tekstgrootte.
 - Favorieten in ☰: drie rijen, eerst de plaatsen met een volle ster (ze hebben een hoofdscherm), dan de andere; de eerste houdt altijd haar ster; een tik op een lege ster geeft de plaats een hoofdscherm, het tweede; de ster weghalen haalt haar scherm weg.
 - Logboek: grootte, regels en fouten op een kaart; Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan onderaan het scherm. Opgeloste fouten staan aan het eind van het logboek en tellen niet mee; netwerkproblemen zijn waarschuwingen.
 - Pagina Aardbevingen: opent meteen met de laatst op de telefoon opgeslagen lijsten en werkt ze op de achtergrond bij.
-- Thema's: Monochroom (wit, zwart en grijs; grafiet in donker), Roze, Geel, Groen, Blauw en Violet, elk licht en donker, met knoppen in een contrasterende kleur; de stippen in ☰ › Thema hebben de kleur van de knoppen.
+- Thema's: 6 thema's met een eigen achtergrond, kaarten en kleur (Monochroom, Roze, Geel, Groen, Blauw, Violet), elk licht en donker; de stippen in ☰ › Thema hebben de kleur van het thema.
 - Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
 MELDINGEN
 - Aardbevingen: elke 10 minuten gecontroleerd, ook 's nachts met het scherm uit; een herziene magnitude werkt de melding bij en een tik erop opent de kaart.

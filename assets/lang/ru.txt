@@ -1703,3 +1703,8 @@ Automatic theme on	Автоматическая тема вкл.
 Automatic theme off	Автоматическая тема выкл.
 Battery 	Батарея 
 Values: being updated	Значения: обновляются
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it. The map stays still; data: Open-Meteo.	В конце главного экрана (прокрутите вверх; в альбомном режиме на листе с плашками): карта пункта с Облаками, Температурами и Дождём, по одному за раз; нажатие на включённый выключает его. Дождь серый и зачёркнут, когда рядом нет дождя сейчас и в ближайшие 2 часа. Легенда показывает время слоя и для температур диапазон на карте. Под картой ▶ показывает часы (6 до сейчас и 6 после) один за другим; нажатие на час показывает его. Карта неподвижна; данные: Open-Meteo.
+6 themes, each with its own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 тем, у каждой свой фон, карточки и цвет (Монохромная, Розовая, Жёлтая, Зелёная, Синяя, Фиолетовая): нажмите на точку цвета темы; под ними Светлая, Тёмная или Автоматическая (датчик телефона).
+mm in that hour	мм за этот час
+Weather map: stop the hours	Карта погоды: остановить часы
+Weather map: play the hours before and after now	Карта погоды: показать часы до и после сейчас

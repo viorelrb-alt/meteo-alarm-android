@@ -1,11 +1,11 @@
-Jelenlegi verzió: v.2.170 · 25.11.2026
+Jelenlegi verzió: v.2.180 · 25.11.2026
 BEÁLLÍTÁSOK
 - Exportálás / Importálás: kapcsolók a fájl tartalmához (a növények és termesztési adatok, parcella-értesítések, parcellakuka, értesítések, térkép, widgetek, földrengés-előzmények, napló is); Exportálásnál és Importálásnál a települések és parcellák egyenként jelölhetők; az Aa gomb a szöveg méretét állítja.
 - Földrengések oldal: azonnal megnyílik a telefonon utoljára mentett listákkal, és a háttérben frissíti őket.
 - Kedvencek a ☰-ben: három sor, először a teli csillagos települések (van főképernyőjük), aztán a többiek; az első mindig megtartja a csillagát; egy üres csillagra koppintva a település főképernyőt kap, a másodikat; a csillag levétele törli a képernyőjét.
 - Megjelenítési nyelv: a ☰-ben az angol és az ország nyelve; Más nyelvek: az ország többi nyelve, a nagy uniós nyelvek, a román és a telefon nyelve (az USA-ban csak angol és spanyol).
 - Napló: méret, sorok és hibák egy kártyán; a Napló megtekintése megnyitja a sorokat (Mind, Hibák, Ma, Tegnap; hosszú érintés másol egy sort); Megosztás és Mentés a képernyő alján. A javított hibák a napló végén vannak, és nem számítanak bele; a hálózati gondok figyelmeztetések.
-- Témák: Egyszínű (fehér, fekete és szürke; sötétben grafit), Rózsaszín, Sárga, Zöld, Kék és Lila, mind világos és sötét, kontrasztos színű gombokkal; a ☰ › Téma pöttyei a gombok színét viselik.
+- Témák: 6 téma saját háttérrel, kártyákkal és színnel (Egyszínű, Rózsaszín, Sárga, Zöld, Kék, Lila), mind világos és sötét; a ☰ › Téma pöttyei a téma színét viselik.
 ÉRTESÍTÉSEK
 - Földrengések: 10 percenként ellenőrizve, éjjel kikapcsolt képernyővel is; a felülvizsgált magnitúdó frissíti az értesítést, és arra koppintva megnyílik a térkép.
 - Saját csatornák: az időjárási figyelmeztetések, eső és hó, földrengések, parcellák és frissítések mind saját csatornát kapnak a telefon beállításaiban; egyet kikapcsolhatsz, a többit megtartva.
@@ -13,7 +13,7 @@ BEÁLLÍTÁSOK
 FŐKÉPERNYŐ
 - Földrengés adatai: a Földrengés mezőre koppintva a főképernyőn nyílik meg: a térkép, alatta az érezhetőségi zónák és az érték története; a színes négyzet vagy a térkép teljes képernyőn nyitja meg, mint egy rengést a ☰ › Földrengések menüből. Romániában, Franciaországban, Olaszországban, Hollandiában, Svájcban és Görögországban a hivatalos értékek először az ország intézetétől jönnek (INFP, BCSF, INGV, KNMI, SED, NOA), utána az EMSC-től. Romániában az ország körüli földrengések is megkapják az INFP értékét (az infp.ro-ról).
 - Gombnevek: a koppintás után a képernyőn maradó kerek gomb kb. 1,5 másodpercig kis buborékban mutatja a nevét.
-- Időjárási térkép: a főképernyő végén a település térképe a Felhők, Hőmérsékletek és Eső gombokkal (egyszerre egy) és a jelmagyarázattal; az Eső csak akkor kapcsol be, ha a közelben most vagy a következő 2 órában esik.
+- Időjárási térkép: a főképernyő végén a település térképe a Felhők, Hőmérsékletek és Eső gombokkal (egyszerre egy) és a jelmagyarázattal; az Eső csak akkor kapcsol be, ha a közelben most vagy a következő 2 órában esik. A térkép alatt a ▶ egymás után lejátssza az órákat (6 a mostani előtt és 6 utána); egy órára koppintva az látszik.
 - Települések gomb: a házas ikonú kerek gomb (állóban a név jobb oldalán, fekvőben a felső sávon, a sarka előtt) megnyitja a települések listáját.
 - Több település: a lista minden településének saját főképernyője van; balra vagy jobbra lapozva a mostani időjáráson a következőre lépsz, a lista sorrendjében.
 FRISSÍTÉSEK

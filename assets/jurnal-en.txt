@@ -1,10 +1,10 @@
-Current version: v.2.170 · 25.11.2026
+Current version: v.2.180 · 25.11.2026
 MAIN SCREEN
 - Button names: a round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 - More towns: each town in the list has its own main screen; a left or right swipe on the weather now goes to the next one, in the list's order.
-- Weather map: at the end of the main screen, the town's map with the Clouds, Temperatures and Rain buttons (one at a time) and the legend; Rain turns on only when it rains near now or in the next 2 hours.
 - Towns button: the round button with the houses icon (in portrait at the right of the name, in landscape on the top band, before its corner) opens the list of towns.
+- Weather map: at the end of the main screen, the town's map with the Clouds, Temperatures and Rain buttons (one at a time) and the legend; Rain turns on only when it rains near now or in the next 2 hours. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.
 NOTIFICATIONS
 - Channels of their own: weather warnings, rain and snow, earthquakes, parcels and updates each have their own channel in the phone's settings; you can turn one off and keep the others.
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.
@@ -24,7 +24,7 @@ SETTINGS
 - Export / Import: switches for what goes into the file (also the crops and growing data, parcel notifications, parcel bin, notifications, map, widgets, earthquake history, log); in Export and Import the towns and parcels are ticked one by one; the Aa button sets the text size.
 - Favourites in ☰: three rows, first the towns with a full star (they have a main screen), then the others; the first one always keeps its star; a tap on an empty star gives the town a main screen, the second; taking the star off removes its screen.
 - Log: size, lines and errors on a card; See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save at the bottom of the screen. Fixed errors stay at the end of the log and are not counted; network problems are warnings.
-- Themes: Monochrome (white, black and grey; graphite when dark), Pink, Yellow, Green, Blue and Violet, each light and dark, with the buttons in a contrasting colour; the dots in ☰ › Theme have the buttons' colour.
+- Themes: 6 themes with their own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet), each light and dark; the dots in ☰ › Theme have the theme's colour.
 TOWNS
 - Map search: the magnifier opens the map with the search at the bottom; a tap on a place or on a town's name shows its temperature, Details (the next days) and Add. The map is plain and light, with the towns' names written big (also on the parcels' map). Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
 - Town cards: on a tablet and in landscape they are as wide as their text and stand in rows and columns; in portrait on a phone a name too long gets smaller letters; in landscape the search keeps its portrait size.

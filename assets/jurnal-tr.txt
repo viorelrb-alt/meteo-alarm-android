@@ -1,16 +1,16 @@
-Geçerli sürüm: v.2.170 · 25.11.2026
+Geçerli sürüm: v.2.180 · 25.11.2026
 ANA EKRAN
 - Daha çok yer: listedeki her yerin kendi ana ekranı vardır; şimdiki havanın üzerinde sola ya da sağa kaydırmak listedeki sırayla sonrakine geçer.
 - Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ☰ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
 - Düğme adları: dokunulduğunda ekranda kalan yuvarlak düğme adını yaklaşık 1,5 saniye küçük bir balonda gösterir.
-- Hava haritası: ana ekranın sonunda yerin haritası Bulutlar, Sıcaklıklar ve Yağmur düğmeleriyle (aynı anda bir tane) ve açıklamayla; Yağmur yalnızca yakında şimdi ya da sonraki 2 saatte yağmur varsa açılır.
+- Hava haritası: ana ekranın sonunda yerin haritası Bulutlar, Sıcaklıklar ve Yağmur düğmeleriyle (aynı anda bir tane) ve açıklamayla; Yağmur yalnızca yakında şimdi ya da sonraki 2 saatte yağmur varsa açılır. Haritanın altında ▶ saatleri (şimdiden önceki 6 ve sonraki 6) sırayla oynatır; bir saate dokunmak onu gösterir.
 - Yerler düğmesi: ev simgeli yuvarlak düğme (dikeyde adın sağında, yatayda üst şeritte, köşesinden önce) yerler listesini açar.
 AYARLAR
 - Depremler sayfası: telefonda son kaydedilen listelerle hemen açılır ve onları arka planda günceller.
 - Dışa / İçe aktarma: dosyaya girecekler için anahtarlar (ürünler ve yetiştirme verileri, parsel bildirimleri, parsel çöp kutusu, bildirimler, harita, widget'lar, deprem geçmişi, günlük de); Dışa ve İçe aktarmada yerleşimler ve parseller tek tek işaretlenir; Aa düğmesi metin boyutunu değiştirir.
 - Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
 - Günlük: boyut, satırlar ve hatalar bir kartta; Günlüğü gör satırları açar (Tümü, Hatalar, Bugün, Dün; uzun dokunma bir satırı kopyalar); Paylaş ve Kaydet ekranın altında. Düzeltilen hatalar günlüğün sonundadır ve sayılmaz; ağ sorunları uyarıdır.
-- Temalar: Tek renk (beyaz, siyah ve gri; koyuda grafit), Pembe, Sarı, Yeşil, Mavi ve Mor, her biri açık ve koyu, düğmeler kontrast bir renkte; ☰ › Tema içindeki noktalar düğmelerin rengindedir.
+- Temalar: kendi arka planı, kartları ve rengi olan 6 tema (Tek renk, Pembe, Sarı, Yeşil, Mavi, Mor), her biri açık ve koyu; ☰ › Tema içindeki noktalar temanın rengindedir.
 - ☰ içindeki favoriler: üç sıra, önce dolu yıldızlı yerler (ana ekranları var), sonra diğerleri; ilki yıldızını hep korur; boş bir yıldıza dokunmak yere ikinci ana ekranı verir; yıldızı kaldırmak ekranını kaldırır.
 BILDIRIMLER
 - Depremler: her 10 dakikada bir, gece ekran kapalıyken de kontrol edilir; revize edilen büyüklük bildirimi günceller, bildirime dokunmak haritayı açar.
