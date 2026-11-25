@@ -302,11 +302,11 @@ final class SettingsPanel extends FrameLayout {
 	}
 
 	private int dim() {
-		return Theme.dim(dark);
+		return Theme.tintDim(dark); // v2.215 (Viorel): tinted grey
 	}
 
 	private int accent() {
-		return Theme.accent(dark);
+		return Theme.tint(dark); // v2.215 (Viorel): white / graphite with a hint of the theme
 	}
 
 	/** The text on the accent colour. */

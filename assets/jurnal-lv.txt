@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.214 · 25.11.2026
+Pašreizējā versija: v.2.215 · 25.11.2026
 ATJAUNINĀJUMI
 - Lodziņš Jauna versija: īss lodziņš ⚙︎ augšā, kad ir jauna versija; pieskāriens tam sāk lejupielādi.
 GALVENAIS EKRĀNS

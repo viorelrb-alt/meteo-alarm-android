@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.214 · 25.11.2026
+Aktuelle Version: v.2.215 · 25.11.2026
 AKTUALISIERUNGEN
 - Feld Neue Version: oben im ⚙︎ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN

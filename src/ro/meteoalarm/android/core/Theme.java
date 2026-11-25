@@ -164,6 +164,21 @@ public final class Theme {
 		return d ? mix(0xFFFFFFFF, BTN_DARK[p], 0.16f) : mix(0xFF1C1C1F, BTN_LIGHT[p], 0.2f);
 	}
 
+	/**
+	 * v2.215 (Viorel): besides Grafit, the theme-coloured texts and icons of the ⚙︎ menu take the
+	 * buttons' tone (white / graphite with a light hint of the theme); Grafit keeps its accent.
+	 */
+	public static int tint(boolean d) {
+		return pal <= 0 || pal >= BTN_LIGHT.length ? accent(d) : pastel(d);
+	}
+
+	/** v2.215: the menu's secondary texts: grey with a light hint of the theme (Grafit: its own). */
+	public static int tintDim(boolean d) {
+		int p = pal < 0 || pal >= BTN_LIGHT.length ? 0 : pal;
+		if (p == 0) return dim(d);
+		return d ? mix(0xFFB4B4BC, BTN_DARK[p], 0.16f) : mix(0xFF4A4A52, BTN_LIGHT[p], 0.2f);
+	}
+
 	/** The text on a pastel button. */
 	public static int onPastel(boolean d) {
 		return onAcc(d);

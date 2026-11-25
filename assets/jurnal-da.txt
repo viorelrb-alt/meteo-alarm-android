@@ -1,4 +1,4 @@
-Nuværende version: v.2.214 · 25.11.2026
+Nuværende version: v.2.215 · 25.11.2026
 BYER
 - Bykort: på en tablet og i liggende er de lige så brede som deres tekst og står i rækker og kolonner; i portræt på en telefon får et for langt navn mindre bogstaver; i liggende beholder søgningen sin portrætstørrelse.
 - Byliste: knappen Byer åbner listen i temaets farve; Vælg sletter én eller flere (den sidste bliver), og tegnet ⌃⌄ holdt og trukket op eller ned ændrer rækkefølgen; hver by beholder sit gemte vejr.
