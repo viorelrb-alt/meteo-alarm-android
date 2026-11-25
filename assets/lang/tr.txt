@@ -1786,3 +1786,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	“Deprem” düğmesi
 Earthquake today. Opens the Earthquakes page.	Bugün deprem oldu. Depremler sayfasını açar.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Solda, “Güncellendi” düğmesinin satırında yüzer: yalnızca ülkende deprem olan ya da başka bir ülkedeki depremin yerleşim yerinde muhtemelen hissedildiği gün; gün bitince kaybolur. “Güncellendi” saati gösterdiği sürece adını gösterir ve titrer, sonra yuvarlak kalır. Dokunmak ⚙︎ › Depremler’i açar.
+The page is of the town of the screen shown.	Sayfa, gösterilen ekrandaki yerleşim yerine aittir.

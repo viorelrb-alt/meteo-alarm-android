@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Pulsante «Terremoto»
 Earthquake today. Opens the Earthquakes page.	Terremoto oggi. Apre la pagina Terremoti.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Galleggia a sinistra, sulla riga del pulsante «aggiornato»: solo nel giorno di un terremoto nel tuo paese, o di uno di un altro paese probabilmente avvertito nella tua località; scompare alla fine della giornata. Mostra il suo nome e trema finché «aggiornato» mostra l’ora, poi resta rotondo. Un tocco apre ⚙︎ › Terremoti.
+The page is of the town of the screen shown.	La pagina è della località della schermata mostrata.

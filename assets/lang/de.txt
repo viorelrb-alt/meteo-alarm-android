@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Taste „Erdbeben“
 Earthquake today. Opens the Earthquakes page.	Heute ein Erdbeben. Öffnet die Seite Erdbeben.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Schwebt links, in der Zeile der Taste „aktualisiert“: nur an einem Tag mit einem Erdbeben in deinem Land oder einem aus einem anderen Land, das in deinem Ort wahrscheinlich zu spüren war; sie verschwindet am Ende des Tages. Sie zeigt ihren Namen und zittert, solange „aktualisiert“ die Uhrzeit zeigt, dann bleibt sie rund. Ein Tippen öffnet ⚙︎ › Erdbeben.
+The page is of the town of the screen shown.	Die Seite gilt für den Ort des angezeigten Bildschirms.

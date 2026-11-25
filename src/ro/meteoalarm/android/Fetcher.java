@@ -407,6 +407,17 @@ final class Fetcher {
 				r.warn = null;
 			}
 		} else r.warn = warningsFeed(ctx, c.country);
+		// v2.231 (Viorel, US audit): each town of the list has its own earthquakes (USGS in the US,
+		// EMSC and the country's institute elsewhere), for its boxes and the Earthquake button.
+		if (c.us()) {
+			try {
+				r.quake = Weather.get(Quakes.usgsUrl(c.lat, c.lon, System.currentTimeMillis() - Quakes.WINDOW_MS));
+				Log.i(ctx, "LOC", "cutremure USGS pentru ecranul " + c.label() + " OK: " + quakesOf(r.quake, c).size() + " în 24 h");
+			} catch (Exception e) {
+				r.quake = null;
+				Log.e(ctx, "LOC", "cutremure USGS pentru ecranul " + c.label() + " a eșuat: " + reason(e, false));
+			}
+		} else quakesInto(ctx, c, r);
 		return r;
 	}
 
@@ -425,6 +436,8 @@ final class Fetcher {
 		if (r.pollen != null) write(ctx, parcelFile(id, "air.json"), r.pollen);
 		if (r.warn != null) write(ctx, parcelFile(id, "warn.xml"), r.warn);
 		if (r.farm != null) write(ctx, parcelFile(id, "farm.json"), r.farm);
+		if (r.quake != null) write(ctx, parcelFile(id, "quake.json"), r.quake); // v2.231
+		if (r.infp != null) write(ctx, parcelFile(id, "infp.txt"), r.infp);
 	}
 
 	/**
@@ -463,7 +476,7 @@ final class Fetcher {
 
 	/** v2.150: forgets the files of the screen of a town taken out of the list. */
 	static void dropPlace(Context ctx, long id) {
-		for (String part : new String[] { "uv.json", "forecast.json", "air.json", "warn.xml", "farm.json" }) ctx.deleteFile(parcelFile(id, part));
+		for (String part : new String[] { "uv.json", "forecast.json", "air.json", "warn.xml", "farm.json", "quake.json", "infp.txt" }) ctx.deleteFile(parcelFile(id, part));
 		prefs(ctx).edit().remove("pmf_" + id).remove("pms_" + id).apply();
 	}
 
@@ -621,9 +634,22 @@ final class Fetcher {
 		return countries(ctx).name(c.country, true);
 	}
 
+	/**
+	 * v2.231 (Viorel, US audit): the saved quake list and institute list of town C: the main files
+	 * for the town they were downloaded for, else the files of C's own screen (a town of the list).
+	 */
+	private static String[] quakeFiles(Context ctx, Cities.City c) {
+		if (c == null) return new String[2];
+		SharedPreferences p = prefs(ctx);
+		if (c.key().equals(p.getString("quakeCity", ""))) return new String[] { read(ctx, "quake.json"), c.key().equals(p.getString("infpCity", "")) ? read(ctx, "infp.txt") : null };
+		long id = placeId(c);
+		return new String[] { read(ctx, parcelFile(id, "quake.json")), read(ctx, parcelFile(id, "infp.txt")) };
+	}
+
 	/** The earthquakes saved for town C (empty when none or saved for another town). */
 	static List<Quakes.Quake> quakes(Context ctx, Cities.City c) {
-		String q = c != null && c.key().equals(prefs(ctx).getString("quakeCity", "")) ? read(ctx, "quake.json") : null;
+		String[] f = quakeFiles(ctx, c);
+		String q = f[0];
 		try {
 			List<Quakes.Quake> l;
 			if (c != null && c.us()) l = quakesOf(q, c);
@@ -631,7 +657,7 @@ final class Fetcher {
 				long now = System.currentTimeMillis();
 				l = Quakes.parse(q, countryEn(ctx, c), c.lat, c.lon, now);
 				// v2.030: INFP's official values for a town in Romania.
-				if (infpFor(c) && c.key().equals(prefs(ctx).getString("infpCity", ""))) Quakes.mergeOfficial(l, read(ctx, "infp.txt"), officialOf(c).name, c.lat, c.lon, now, Quakes.WINDOW_MS);
+				if (infpFor(c) && f[1] != null) Quakes.mergeOfficial(l, f[1], officialOf(c).name, c.lat, c.lon, now, Quakes.WINDOW_MS);
 			}
 			history(ctx, l);
 			return l;
@@ -648,7 +674,7 @@ final class Fetcher {
 	static List<Quakes.Quake> quakesFelt(Context ctx, Cities.City c) {
 		try {
 			if (c == null || c.us()) return new java.util.ArrayList<Quakes.Quake>();
-			String q = c.key().equals(prefs(ctx).getString("quakeCity", "")) ? read(ctx, "quake.json") : null;
+			String q = quakeFiles(ctx, c)[0];
 			return Quakes.parse(q, new String[0], c.lat, c.lon, System.currentTimeMillis(), Quakes.WINDOW_MS);
 		} catch (Exception e) {
 			return new java.util.ArrayList<Quakes.Quake>();

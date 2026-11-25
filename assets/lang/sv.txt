@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Knappen ”Jordbävning”
 Earthquake today. Opens the Earthquakes page.	Jordbävning i dag. Öppnar sidan Jordbävningar.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Svävar till vänster, på raden med knappen ”uppdaterad”: bara en dag med en jordbävning i ditt land, eller en från ett annat land som troligen kändes på din ort; den försvinner vid dagens slut. Den visar sitt namn och skakar så länge ”uppdaterad” visar tiden, sedan förblir den rund. Ett tryck öppnar ⚙︎ › Jordbävningar.
+The page is of the town of the screen shown.	Sidan gäller orten på den visade skärmen.

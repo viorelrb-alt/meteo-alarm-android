@@ -1,3 +1,3 @@
-versiune=192.2.230
-apk=MeteoAlarmAndroid-v2.230.apk
+versiune=193.2.231
+apk=MeteoAlarmAndroid-v2.231.apk
 marime=12127095

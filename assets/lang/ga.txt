@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Cnaipe “Crith talún”
 Earthquake today. Opens the Earthquakes page.	Crith talún inniu. Osclaíonn sé an leathanach Creathanna talún.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Snámhann sé ar chlé, ar líne an chnaipe “nuashonraithe”: ach amháin ar lá a raibh crith talún i do thír, nó ceann ó thír eile a mhothaigh do bhaile is dócha; imíonn sé ag deireadh an lae. Taispeánann sé a ainm agus croitheann sé fad a thaispeánann “nuashonraithe” an t-am, ansin fanann sé cruinn. Osclaíonn tapáil ⚙︎ › Creathanna talún.
+The page is of the town of the screen shown.	Baineann an leathanach le baile an scáileáin a thaispeántar.

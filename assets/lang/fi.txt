@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	”Maanjäristys”-painike
 Earthquake today. Opens the Earthquakes page.	Maanjäristys tänään. Avaa Maanjäristykset-sivun.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Kelluu vasemmalla ”Päivitetty”-painikkeen rivillä: vain päivänä, jona maassasi oli maanjäristys tai toisen maan järistys todennäköisesti tuntui paikkakunnallasi; katoaa päivän päättyessä. Se näyttää nimensä ja tärisee niin kauan kuin ”Päivitetty” näyttää kellonajan, sitten se jää pyöreäksi. Napautus avaa ⚙︎ › Maanjäristykset.
+The page is of the town of the screen shown.	Sivu koskee näytetyn näytön paikkakuntaa.

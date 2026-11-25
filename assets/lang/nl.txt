@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Knop „Aardbeving”
 Earthquake today. Opens the Earthquakes page.	Vandaag een aardbeving. Opent de pagina Aardbevingen.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Zweeft links, op de rij van de knop „bijgewerkt”: alleen op een dag met een aardbeving in je land, of een uit een ander land die in je plaats waarschijnlijk gevoeld werd; hij verdwijnt aan het eind van de dag. Hij toont zijn naam en trilt zolang „bijgewerkt” de tijd toont, daarna blijft hij rond. Een tik opent ⚙︎ › Aardbevingen.
+The page is of the town of the screen shown.	De pagina hoort bij de plaats van het getoonde scherm.

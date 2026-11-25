@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Buttuna “Terremot”
 Earthquake today. Opens the Earthquakes page.	Terremot illum. Tiftaħ il-paġna Terremoti.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Tgħum fuq ix-xellug, fil-linja tal-buttuna “aġġornat”: biss f’jum b’terremot f’pajjiżek, jew wieħed minn pajjiż ieħor li x’aktarx inħass fil-lokalità tiegħek; tisparixxi fi tmiem il-jum. Turi isimha u titriegħed sakemm “aġġornat” juri l-ħin, imbagħad tibqa’ tonda. Tmissa tiftaħ ⚙︎ › Terremoti.
+The page is of the town of the screen shown.	Il-paġna hija tal-lokalità tal-iskrin muri.

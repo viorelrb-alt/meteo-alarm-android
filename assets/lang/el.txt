@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Κουμπί «Σεισμός»
 Earthquake today. Opens the Earthquakes page.	Σεισμός σήμερα. Ανοίγει τη σελίδα Σεισμοί.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Επιπλέει αριστερά, στη σειρά του κουμπιού «ενημερώθηκε»: μόνο τη μέρα με σεισμό στη χώρα σου ή με σεισμό από άλλη χώρα που πιθανότατα έγινε αισθητός στον τόπο σου· εξαφανίζεται στο τέλος της μέρας. Δείχνει το όνομά του και τρέμει όσο το «ενημερώθηκε» δείχνει την ώρα, μετά μένει στρογγυλό. Ένα άγγιγμα ανοίγει ⚙︎ › Σεισμοί.
+The page is of the town of the screen shown.	Η σελίδα αφορά τον τόπο της οθόνης που εμφανίζεται.

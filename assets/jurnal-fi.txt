@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.230 · 25.11.2026
+Nykyinen versio: v.2.231 · 25.11.2026
 ASETUKSET
 - Asetukset-ikkuna: ⚙︎ avaa asetukset osioina; kytkin kytkee toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla ulkopuolelle. Vaakatasossa se avautuu vasemmalle 2 sarakkeeseen, otsikko yhdellä rivillä: vedä oikean reunan palkkia vasemmalle yhteen sarakkeeseen, oikealle kahteen; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä & Tuki näyttää nimet 3 sekuntia, sitten vain painikkeet; puhelimessa vaakatasossa se on kelluva laatikko alhaalla, joka taittuu ⋯:ksi (kahva leventää sitä), tabletissa yksi rivi.
 - Opas: hälytykset-kortissa: lyhyt opas siitä, mitä kukin ruutujen osa näyttää. Tulossa (toistaiseksi harmaa).

@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Botão «Sismo»
 Earthquake today. Opens the Earthquakes page.	Sismo hoje. Abre a página Sismos.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Flutua à esquerda, na linha do botão «atualizado»: só no dia de um sismo no teu país, ou de um de outro país provavelmente sentido na tua localidade; desaparece no fim do dia. Mostra o nome e treme enquanto «atualizado» mostra a hora, depois fica redondo. Um toque abre ⚙︎ › Sismos.
+The page is of the town of the screen shown.	A página é da localidade do ecrã mostrado.

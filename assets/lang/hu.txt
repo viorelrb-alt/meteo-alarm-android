@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	„Földrengés” gomb
 Earthquake today. Opens the Earthquakes page.	Ma földrengés volt. Megnyitja a Földrengések oldalt.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Bal oldalon lebeg, a „Frissítve” gomb sorában: csak azon a napon, amikor földrengés volt az országodban, vagy egy másik ország rengését valószínűleg érezni lehetett a településeden; a nap végén eltűnik. Mutatja a nevét és remeg, amíg a „Frissítve” az időt mutatja, aztán kerek marad. Egy érintés megnyitja: ⚙︎ › Földrengések.
+The page is of the town of the screen shown.	Az oldal a megjelenített képernyő településéé.

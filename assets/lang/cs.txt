@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Tlačítko „Zemětřesení“
 Earthquake today. Opens the Earthquakes page.	Dnes zemětřesení. Otevře stránku Zemětřesení.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Plove vlevo, na řádku tlačítka „aktualizováno“: jen v den se zemětřesením ve tvé zemi nebo s otřesem z jiné země, který byl ve tvé obci pravděpodobně cítit; na konci dne zmizí. Ukazuje svůj název a chvěje se, dokud „aktualizováno“ ukazuje čas, pak zůstane kulaté. Klepnutí otevře ⚙︎ › Zemětřesení.
+The page is of the town of the screen shown.	Stránka patří obci zobrazené obrazovky.

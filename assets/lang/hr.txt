@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Gumb „Potres”
 Earthquake today. Opens the Earthquakes page.	Danas potres. Otvara stranicu Potresi.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Lebdi lijevo, u retku gumba „ažurirano”: samo na dan s potresom u tvojoj zemlji ili s potresom iz druge zemlje koji se vjerojatno osjetio u tvom mjestu; nestaje na kraju dana. Prikazuje svoj naziv i podrhtava dok „ažurirano” prikazuje vrijeme, zatim ostaje okrugao. Dodir otvara ⚙︎ › Potresi.
+The page is of the town of the screen shown.	Stranica je za mjesto prikazanog zaslona.

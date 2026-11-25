@@ -1852,3 +1852,4 @@ Hold the widget › Settings, or ⚙︎ › Widgets: town, background, colours (
 “Earthquake” button	Mygtukas „Žemės drebėjimas“
 Earthquake today. Opens the Earthquakes page.	Šiandien žemės drebėjimas. Atveria puslapį Žemės drebėjimai.
 Floats at the left, on the row of the “updated” button: only on a day with an earthquake in your country, or one from another country probably felt in your town; it goes at the end of the day. It shows its name and shakes as long as “updated” shows its time, then stays round. A tap opens ⚙︎ › Earthquakes.	Plūduriuoja kairėje, mygtuko „atnaujinta“ eilutėje: tik tą dieną, kai tavo šalyje buvo žemės drebėjimas arba kitos šalies drebėjimas tikriausiai buvo jaučiamas tavo vietovėje; dienos pabaigoje dingsta. Rodo savo pavadinimą ir dreba, kol „atnaujinta“ rodo laiką, paskui lieka apvalus. Bakstelėjimas atveria ⚙︎ › Žemės drebėjimai.
+The page is of the town of the screen shown.	Puslapis skirtas rodomo ekrano vietovei.

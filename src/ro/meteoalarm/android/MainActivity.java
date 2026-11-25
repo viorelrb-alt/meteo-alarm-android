@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.230";
+	static final String VERSION = "Meteo Alarm Android v2.231";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -747,8 +747,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				s.aqi = Weather.parseAqi(a, s.city.us());
 			}
 			s.warns = Fetcher.parcelWarnings(this, id, s.city);
-			s.quakes = new ArrayList<ro.meteoalarm.android.core.Quakes.Quake>();
-			s.quakesFelt = null;
+			// v2.231 (Viorel, US audit): the town's own earthquakes (its screen's files).
+			s.quakes = Fetcher.quakes(this, s.city);
+			s.quakesFelt = Fetcher.quakesFelt(this, s.city);
 			String fm = readCache(Fetcher.parcelFile(id, "farm.json"));
 			if (fm != null) s.farm = ro.meteoalarm.android.core.Farm.parse(fm);
 		} catch (Exception e) {
@@ -4222,16 +4223,24 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 	}
 
+	/**
+	 * v2.231 (Viorel, US audit): the town of the screen shown (a town of the list, or a parcel's
+	 * town); the first town only when none. Earthquakes, Tornadoes and Help follow it.
+	 */
+	private Cities.City shownTown() {
+		return s.city != null ? s.city : town;
+	}
+
 	/** v2.108: FORCE = the ↻ button: downloaded again whatever the age of the lists. */
 	private void quakesPage(boolean force) {
 		// The lists are of the town they were downloaded for (EMSC or USGS, v2.30).
-		if (!town.key().equals(quakesKey)) {
+		if (!shownTown().key().equals(quakesKey)) {
 			quakesCountry = null;
 			quakesEurope = null;
 			quakesInfp = null;
 			quakesAt = 0;
 			quakesForeign = new java.util.HashMap<String, String>();
-			quakesKey = town.key();
+			quakesKey = shownTown().key();
 			quakesLoad(quakesKey);
 		}
 		boolean fresh = quakesCountry != null && System.currentTimeMillis() - quakesAt < 5 * 60000L;
@@ -4241,7 +4250,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		}
 		quakesBusy = true;
 		showQuakes();
-		final Cities.City c = town;
+		final Cities.City c = shownTown();
 		final Context ctx = getApplicationContext();
 		final long t0 = System.currentTimeMillis();
 		new Thread(new Runnable() {
@@ -4350,7 +4359,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				hideBars();
 			}
 		});
-		Cities.City c = town;
+		Cities.City c = shownTown();
 		quakesRefreshRow();
 		if (c.us()) {
 			showQuakesUS(c);
@@ -4500,7 +4509,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 
 	/** The postal code of the state of the town shown, else of the state the phone is in ("OK"). */
 	private String tornState() {
-		String st = town.us() ? Cities.stateCode(town.county) : "";
+		String st = shownTown().us() ? Cities.stateCode(shownTown().county) : "";
 		if (st.length() == 0) st = Cities.stateCode(Region.state(this));
 		return st;
 	}
@@ -4513,7 +4522,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 	private void tornadoPage() {
 		Log.i(this, "TORNADE", "pagina de tornade deschisă");
 		final String st = tornState();
-		final String key = town.key() + "|" + st;
+		final String key = shownTown().key() + "|" + st;
 		if (!key.equals(tornKey)) {
 			torn = null;
 			tornKey = key;
@@ -4576,7 +4585,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				hideBars();
 			}
 		});
-		Cities.City c = town;
+		Cities.City c = shownTown();
 		long now = System.currentTimeMillis();
 		String st = tornState();
 		String stName = Cities.stateName(st);
@@ -4694,7 +4703,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		});
 		help.begin(Tr.t("Help", "Ajutor"), Tr.t("Close", "Închide"), s.dark);
 		// Short texts (v2.80, Viorel 2026-11-07): one or two sentences per function.
-		boolean us = town.us() || Region.usPhone(this);
+		boolean us = shownTown().us() || Region.usPhone(this);
 		if (us) {
 			help.section(Tr.t("United States", "Statele Unite"));
 			help.entry(mini("mph"), Tr.t("Imperial units", "Unități imperiale"), Tr.t("°F, mph, miles, inHg and the 12-hour clock for US towns.", "°F, mph, mile, inHg și ceasul de 12 ore pentru localitățile din SUA."));
@@ -4778,9 +4787,9 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				+ " " + Tr.t("The Earthquakes page opens at once with the last saved lists; ↻ turns while they update.", "Pagina Cutremure se deschide imediat cu ultimele liste salvate; ↻ se rotește cât timp se actualizează.")
 				+ " " + Tr.t("Romania, France, Italy, the Netherlands, Switzerland, Greece: the country's institute first, EMSC second.", "România, Franța, Italia, Olanda, Elveția, Grecia: întâi institutul țării, apoi EMSC.") + " " + Tr.t("In Romania, the quakes around the country also get INFP's value (from infp.ro).", "În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro)."));
 		help.entry(mini("quake"), Tr.t("Earthquakes", "Cutremure"), Tr.t("The switch: notifications of earthquakes within 300 km of your place, checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice. Under it, the page of the recent earthquakes around.",
-				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău, verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea. Sub el, pagina cutremurelor recente din jur."));
+				"Comutatorul: notificări pentru cutremurele pe o rază de 300 km de locul tău, verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea. Sub el, pagina cutremurelor recente din jur.") + " " + Tr.t("The page is of the town of the screen shown.", "Pagina e a localității ecranului afișat."));
 		if (Region.showUS(this)) help.entry(mini("tornado"), Tr.t("Tornadoes", "Tornade"), Tr.t("The switch: notifications of the tornado warnings for your town (NWS). Under it, the alerts and reports around and what to do.",
-				"Comutatorul: notificări pentru avertizările de tornadă ale localității tale (NWS). Sub el, alertele și raportările din jur și ce faci."));
+				"Comutatorul: notificări pentru avertizările de tornadă ale localității tale (NWS). Sub el, alertele și raportările din jur și ce faci.") + " " + Tr.t("The page is of the town of the screen shown.", "Pagina e a localității ecranului afișat."));
 		help.entry(mini("bell"), Tr.t("Notifications", "Notificări"), Tr.t("Rain or snow within the hour, after 8 pm rain or snow tomorrow, new warnings and earthquakes, each only once.", "Ploaie sau ninsoare în următoarea oră, după ora 20 ploaie sau ninsoare mâine, avertizări noi și cutremure, fiecare o singură dată.")
 				+ " " + Tr.t("Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).", "Și o versiune nouă a aplicației, dacă există (verificată zilnic 2 săptămâni după o actualizare, apoi o dată la 7 zile).")
 				+ " " + Tr.t("Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.",

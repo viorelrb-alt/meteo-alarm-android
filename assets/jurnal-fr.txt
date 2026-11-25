@@ -1,4 +1,4 @@
-Version actuelle : v.2.230 · 25.11.2026
+Version actuelle : v.2.231 · 25.11.2026
 WIDGETS
 - Thème de l'application: appui long sur le widget › Paramètres, ou ⚙︎ › Widgets : ville, fond, couleurs (selon la météo, du téléphone, thème de l'application ou sombre).
 ÉCRAN PRINCIPAL

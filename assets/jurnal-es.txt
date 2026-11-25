@@ -1,4 +1,4 @@
-Versión actual: v.2.230 · 25.11.2026
+Versión actual: v.2.231 · 25.11.2026
 ACTUALIZACIONES
 - Caja Nueva versión: una caja corta arriba en ⚙︎ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
