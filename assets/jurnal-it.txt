@@ -1,4 +1,4 @@
-Versione attuale: v.2.211 · 25.11.2026
+Versione attuale: v.2.212 · 25.11.2026
 AGGIORNAMENTI
 - Riquadro Nuova versione: un breve riquadro in cima a ⚙︎ quando esiste una nuova versione; toccarlo avvia il download.
 IMPOSTAZIONI
@@ -24,9 +24,9 @@ PARTICELLE
 - Bolle nelle Statistiche: toccare un'ora della finestra di trattamento, un giorno dei grafici o una riga del suolo apre una bolla con la spiegazione; la finestra di trattamento scorre da sola.
 - Cestino: un appezzamento eliminato va nel cestino con ↺ accanto al pulsante GPS (il punto rosso li conta) e resta 15 giorni; il pulsante rotondo lo ripristina (se un appezzamento salvato ha il suo nome: nuovo nome o sostituire).
 - Coordinate della particella: nella pagina di modifica si scrivono le coordinate GPS di ogni punto, e sotto la vista satellitare mostra la particella.
+- L'occhio, in alto a destra di ogni scheda, apre la schermata principale della particella. Un tocco altrove sulla scheda ingrandisce la mappa sulla particella e ne mostra i punti.
 - Livelli meteo: sulla mappa delle particelle il riquadro sotto ＋ e − si apre con Satellite, Mappa, Nuvole, Temperature (colori) e Pioggia (mm all'ora), poi si richiude sulla scelta; un livello alla volta, con nome, ora e legenda sopra le schede; Pioggia si attiva solo quando piove ora o nelle prossime 2 ore (al posto del radar).
 - Modifica particella: la matita apre la pagina della particella: nome, coltura (elenco secondo la stagione della data di semina o Altra coltura…), data di semina, superficie; gli angoli si spostano sulla mappa.
-- Mostra il meteo, su ogni scheda, apre la schermata principale della particella. Un tocco altrove sulla scheda ingrandisce la mappa sulla particella e ne mostra i punti.
 - Statistiche nella schermata principale: si aprono sotto lo stato operativo (in orizzontale a sinistra); ‹ le chiude e la scheda di un'altra particella le mantiene.
 - Statistiche: per ogni particella, l'Azione del giorno e 4 schede: Operativo (finestra di irrorazione ora per ora, asciugatura gocce (ΔT), vento, foglia bagnata), Acqua e Suolo (pioggia, evaporazione, suolo a 6 e 18 cm), Stagione (gradi-giorno rispetto all'anno scorso, fase stimata) e Rischi 72 h (malattie fungine, gelata al suolo, caldo, vento e grandine); salvataggio in PDF o CSV.
 - Stato operativo: in alto la coltura e la data di semina; con una coltura il verdetto tiene conto anche dell'asciugatura delle gocce (ΔT) e della sua malattia.

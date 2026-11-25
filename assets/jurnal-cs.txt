@@ -1,4 +1,4 @@
-Současná verze: v.2.211 · 25.11.2026
+Současná verze: v.2.212 · 25.11.2026
 AKTUALIZACE
 - Pole Nová verze: krátké pole nahoře v ⚙︎, když existuje nová verze; klepnutí na něj spustí stahování.
 HLAVNÍ OBRAZOVKA
@@ -34,11 +34,11 @@ POZEMKY
 - Bubliny ve Statistice: klepnutí na hodinu v okně postřiku, den v grafech nebo řádek půdy otevře bublinu s vysvětlením; okno postřiku se posouvá samo.
 - Historie a předpověď: přetáhněte ukazatel na den v minulosti; jeho hodnoty se zobrazí v rámečku pod grafem a po 10 s se vrátí na dnešek.
 - Koš: smazaný pozemek jde do koše s ↺ vedle tlačítka GPS (červená tečka je počítá) a zůstane 15 dní; kulaté tlačítko ho obnoví (má-li uložený pozemek jeho název: nový název nebo nahradit).
+- Oko vpravo nahoře na každé kartě otevře hlavní obrazovku parcely. Klepnutí jinam na kartu přiblíží mapu na parcelu a ukáže její body.
 - Provozní stav: nahoře plodina a datum setí; s plodinou verdikt zohledňuje i vysychání kapek (ΔT) a její chorobu.
 - Souřadnice pozemku: na stránce úprav se zapisují souřadnice GPS každého bodu a pod nimi satelitní pohled ukazuje pozemek.
 - Statistika na hlavní obrazovce: otevírá se pod provozním stavem (na šířku vlevo); ‹ ji zavře a karta jiného pozemku ji ponechá.
 - Statistika: pro každý pozemek Úkol dne a 4 karty: Provoz (okno postřiku hodinu po hodině, vysychání kapek (ΔT), vítr, mokrý list), Voda a půda (déšť, výpar, půda v 6 a 18 cm), Sezóna (denní stupně oproti loňsku, odhadovaná fáze) a Rizika 72 h (houbové choroby, přízemní mráz, horko, vítr a kroupy); uložení do PDF nebo CSV.
-- Ukázat počasí na každé kartě otevře hlavní obrazovku parcely. Klepnutí jinam na kartu přiblíží mapu na parcelu a ukáže její body.
 - Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
 - Vrstvy počasí: na mapě pozemků se pole pod ＋ a − otevře se Satelitem, Mapou, Oblačností, Teplotami (barvy) a Deštěm (mm za hodinu) a pak se složí na vaši volbu; jedna vrstva najednou, s názvem, časem a legendou nad kartami; Déšť se zapne jen tehdy, když prší teď nebo v příštích 2 hodinách (místo radaru).
 - Vylepšení vzhledu a opravy nahlášených chyb.

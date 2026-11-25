@@ -1,4 +1,4 @@
-Praegune versioon: v.2.211 · 25.11.2026
+Praegune versioon: v.2.212 · 25.11.2026
 ASULAD
 - Asulakaardid: tahvelarvutis ja rõhtpaigutuses on need oma teksti laiused ning seisavad ridades ja veergudes; püstpaigutuses telefonis saab liiga pikk nimi väiksemad tähed; rõhtpaigutuses säilitab otsing püstpaigutuse suuruse.
 - Asulate loend: nupp Asulad avab loendi teema värvis; Vali kustutab ühe või mitu (viimane jääb), ning märk ⌃⌄ all hoituna ja üles või alla lohistatuna muudab järjekorda; iga asula säilitab salvestatud ilma.
@@ -18,9 +18,9 @@ PÕLLULAPID
 - Ilmakihid: põldude kaardil avaneb kast ＋ ja − all valikutega Satelliit, Kaart, Pilved, Temperatuurid (värvid) ja Vihm (mm tunnis) ning paneb end siis sinu valikule kokku; üks kiht korraga, nime, aja ja legendiga kaartide kohal; Vihm lülitub sisse ainult siis, kui sajab praegu või järgmise 2 tunni jooksul (radari asemel).
 - Mullid statistikas: pritsimisakna tunni, graafikute päeva või mullarea puudutus avab selgitusega mulli; pritsimisaken liigub ise.
 - Muuda põldu: pliiats avab põllu lehe: nimi, kultuur (loend külvikuupäeva hooaja järgi või Muu kultuur…), külvikuupäev, pindala; nurgad liiguvad kaardil.
-- Näita ilma avab igal kaardil maatüki pealehe. Puudutus mujal kaardil suumib kaardi maatükile ja näitab selle punkte.
 - Prügikast: kustutatud põld läheb prügikasti ↺-ga GPS-nupu kõrval (punane täpp loeb neid) ja jääb 15 päevaks; ümar nupp taastab selle (kui salvestatud põllul on sama nimi: uus nimi või asenda).
 - Põllu koordinaadid: muutmislehel saab iga punkti GPS-koordinaadid sisse kirjutada ja nende all näitab satelliidivaade põldu.
+- Silm iga kaardi paremas ülanurgas avab maatüki pealehe. Puudutus mujal kaardil suumib kaardi maatükile ja näitab selle punkte.
 - Statistika põhiekraanil: see avaneb tööoleku all (rõhtpaigutuses vasakul); ‹ sulgeb selle ja teise põllu vahekaart hoiab selle alles.
 - Statistika: igale põllule Päeva tegevus ja 4 vahekaarti: Tegevus (pritsimisaken tund tunnilt, tilkade kuivamine (ΔT), tuul, märg leht), Vesi ja muld (vihm, aurumine, muld 6 ja 18 cm sügavusel), Hooaeg (kraadipäevad võrreldes mullusega, hinnanguline faas) ja Riskid 72 h (seenhaigused, maapinnaöökülm, kuumus, tuul ja rahe); salvestamine PDF- või CSV-failina.
 - Tööolek: üleval kultuur ja külvikuupäev; kultuuriga arvestab otsus ka tilkade kuivamist (ΔT) ja selle haigust.

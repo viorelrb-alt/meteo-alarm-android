@@ -1,4 +1,4 @@
-Leagan reatha: v.2.211 · 25.11.2026
+Leagan reatha: v.2.212 · 25.11.2026
 BAILTE
 - Cártaí na mbailte: ar thaibléad agus i dtírdhreach tá siad chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin; i bportráid ar fhón faigheann ainm rófhada litreacha níos lú; i dtírdhreach coinníonn an cuardach a mhéid portráide.
 - Cuardach ar an léarscáil: osclaíonn an ghloine formhéadúcháin an léarscáil leis an gcuardach thíos; taispeánann tapáil ar áit nó ar ainm baile a theocht, Sonraí (na laethanta romhainn) agus Cuir leis. Tá an léarscáil simplí agus geal, le hainmneacha na mbailte scríofa go mór (ar léarscáil na bpáirceanna freisin). Ní thaispeántar bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de).
@@ -9,7 +9,7 @@ CEAPACHA
 - Cisil aimsire: ar léarscáil na bpáirceanna osclaíonn an bosca faoi ＋ agus − le Satailít, Léarscáil, Scamaill, Teochtaí (dathanna) agus Báisteach (mm san uair), ansin filleann sé ar do rogha; ciseal amháin ag an am, lena ainm, am agus eochair os cionn na gcártaí; ní chasann Báisteach air ach nuair a bhíonn sé ag cur báistí anois nó sna 2 uair an chloig atá romhainn (in ionad an radair).
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
 - Cuir an pháirc in eagar: osclaíonn an peann luaidhe leathanach na páirce: ainm, barr (liosta de réir shéasúr an dáta curtha nó Barr eile…), dáta curtha, achar; bogtar na cúinní ar an léarscáil.
-- Osclaíonn Taispeáin an aimsir, ar gach cárta, príomhscáileán an cheapaigh. Súmálann tapáil in áit eile ar chárta an léarscáil ar an gceapach agus taispeánann sé a phointí.
+- Osclaíonn an tsúil, ag barr ar dheis gach cárta, príomhscáileán an cheapaigh. Súmálann tapáil in áit eile ar chárta an léarscáil ar an gceapach agus taispeánann sé a phointí.
 - Stair agus réamhaisnéis: tarraing an táscaire go lá atá thart; taispeántar a luachanna i mbosca faoin gcairt agus tar éis 10 s filleann sé ar inniu.
 - Staitisticí sa phríomhscáileán: osclaíonn siad faoin stádas oibríochtúil (ina luí ar chlé); dúnann ‹ iad agus coinníonn cluaisín ceapaigh eile iad.
 - Staitisticí: do gach páirc, Gníomh an lae agus 4 chluaisín: Oibríochtúil (fuinneog na spraeála uair ar uair, triomú braonta (ΔT), gaoth, duilleog fhliuch), Uisce & Ithir (báisteach, galú, ithir ag 6 agus 18 cm), Séasúr (céimeanna-lae i gcomparáid le hanuraidh, céim mheasta) agus Rioscaí 72 h (galair fhungacha, sioc talún, teas, gaoth agus clocha sneachta); sábháil mar PDF nó CSV.

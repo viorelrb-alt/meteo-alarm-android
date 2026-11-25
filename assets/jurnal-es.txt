@@ -1,4 +1,4 @@
-Versión actual: v.2.211 · 25.11.2026
+Versión actual: v.2.212 · 25.11.2026
 ACTUALIZACIONES
 - Caja Nueva versión: una caja corta arriba en ⚙︎ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
@@ -35,13 +35,13 @@ PARCELAS
 - Capas meteorológicas: en el mapa de las parcelas, la caja bajo ＋ y − se abre con Satélite, Mapa, Nubes, Temperaturas (colores) y Lluvia (mm por hora) y luego se pliega en lo que elegiste; una capa cada vez, con su nombre, hora y leyenda sobre las tarjetas; Lluvia solo se activa cuando llueve ahora o en las próximas 2 horas (en lugar del radar).
 - Coordenadas de la parcela: en la página de edición se escriben las coordenadas GPS de cada punto, y debajo la vista de satélite muestra la parcela.
 - Editar parcela: el lápiz abre la página de la parcela: nombre, cultivo (lista según la temporada de la fecha de siembra u Otro cultivo…), fecha de siembra, superficie; las esquinas se mueven en el mapa.
+- El ojo, arriba a la derecha de cada tarjeta, abre la pantalla principal de la parcela. Un toque en otra parte de la tarjeta acerca el mapa a la parcela y muestra sus puntos.
 - Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
 - Estadísticas en la pantalla principal: se abren bajo el estado operativo (en horizontal a la izquierda); ‹ las cierra y la pestaña de otra parcela las mantiene.
 - Estadísticas: para cada parcela, la Acción del día y 4 pestañas: Operativo (ventana de pulverización hora a hora, secado de gotas (ΔT), viento, hoja mojada), Agua y Suelo (lluvia, evaporación, suelo a 6 y 18 cm), Temporada (grados-día frente al año pasado, fase estimada) y Riesgos 72 h (enfermedades fúngicas, helada en el suelo, calor, viento y granizo); se guardan en PDF o CSV.
 - Historial y pronóstico: arrastra el indicador a un día pasado; sus valores aparecen en un recuadro bajo el gráfico y a los 10 s vuelve a hoy.
 - Mejoras de diseño y corrección de los errores comunicados.
 - Papelera: una parcela borrada va a la papelera con ↺ junto al botón GPS (el punto rojo las cuenta) y se guarda 15 días; el botón redondo la restaura (si una parcela guardada tiene su nombre: nombre nuevo o reemplazarla).
-- Ver el tiempo, en cada tarjeta, abre la pantalla principal de la parcela. Un toque en otra parte de la tarjeta acerca el mapa a la parcela y muestra sus puntos.
 
 Versión 1.4 (v.1.400 – v.1.520)
 ACTUALIZACIONES

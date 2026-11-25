@@ -1,4 +1,4 @@
-Current version: v.2.211 · 25.11.2026
+Current version: v.2.212 · 25.11.2026
 MAIN SCREEN
 - Bottom buttons: their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.
 - Brightness: shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).
@@ -19,10 +19,10 @@ PARCELS
 - History and forecast: drag the indicator to a past day; its values show in a box under the chart and after 10 s it goes back to today.
 - Operational status: the crop and its sowing date on top; with a crop the verdict also takes drop drying (ΔT) and its disease into account.
 - Parcel coordinates: on the edit page the GPS of each point can be typed in, and under it the satellite view shows the parcel.
-- Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.
 - Statistics bubbles: a tap on an hour of the spray window, a day of the charts or a soil row opens a bubble with its explanation; the spray window moves by itself.
 - Statistics in the main screen: they open under the operational status (in landscape at the left); ‹ closes them and another parcel's tab keeps them.
 - Statistics: for each parcel, the Action of the day and 4 tabs: Operational (the spray window hour by hour, drop drying (ΔT), wind, wet leaf), Water & Soil (rain, evaporation, soil at 6 and 18 cm), Season (degree days against last year, the estimated stage) and Risks 72 h (fungal diseases, ground frost, heat, wind and hail); saved as PDF or CSV.
+- The eye, at the top right of each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.
 - Weather layers: on the parcels' map the box under ＋ and − opens with Satellite, Map, Clouds, Temperatures (colours) and Rain (mm per hour), then folds to what you chose; one layer at a time, with its name, time and legend above the cards; Rain turns on only when it rains now or in the next 2 hours (instead of the radar).
 SETTINGS
 - Advanced functions: the card under Towns: Farmer mode and the Earthquakes page.

@@ -1,4 +1,4 @@
-Version actuelle : v.2.211 · 25.11.2026
+Version actuelle : v.2.212 · 25.11.2026
 ÉCRAN PRINCIPAL
 - Bouton Localités : le bouton rond à l'icône des maisons (en portrait à droite du nom, en paysage sur la bande du haut, avant son coin) ouvre la liste des localités.
 - Bouton « mis à jour »: flotte au-dessus de la page, à droite : en portrait sous les alertes (sans elles sous la rangée des localités), en paysage sous l'horloge. Pendant la mise à jour sa flèche tourne, même en petit cercle ; puis l'heure s'affiche 4 secondes et il se réduit en ⟳. Un toucher met à jour.
@@ -37,11 +37,11 @@ PARCELLES
 - Corbeille: une parcelle supprimée va dans la corbeille avec ↺ à côté du bouton GPS (le point rouge les compte) et y reste 15 jours ; le bouton rond la restaure (si une parcelle enregistrée porte son nom : nouveau nom ou remplacer).
 - Couches météo : sur la carte des parcelles, la boîte sous ＋ et − s'ouvre avec Satellite, Carte, Nuages, Températures (couleurs) et Pluie (mm par heure), puis se replie sur votre choix ; une couche à la fois, avec son nom, l'heure et la légende au-dessus des cartes ; Pluie ne s'active que s'il pleut maintenant ou dans les 2 prochaines heures (au lieu du radar).
 - Historique et prévision : faites glisser l'indicateur sur un jour passé ; ses valeurs s'affichent dans un cadre sous le graphique et après 10 s il revient à aujourd'hui.
+- L'œil, en haut à droite de chaque carte, ouvre l'écran principal de la parcelle. Un appui ailleurs sur une carte zoome la carte sur la parcelle et montre ses points.
 - Modifier la parcelle : le crayon ouvre la page de la parcelle : nom, culture (liste selon la saison de la date de semis ou Autre culture…), date de semis, surface ; les coins se déplacent sur la carte.
 - Statistiques : pour chaque parcelle, l'Action du jour et 4 onglets : Opérationnel (fenêtre de pulvérisation heure par heure, séchage des gouttes (ΔT), vent, feuille mouillée), Eau & Sol (pluie, évaporation, sol à 6 et 18 cm), Saison (degrés-jours face à l'an dernier, stade estimé) et Risques 72 h (maladies fongiques, gelée au sol, chaleur, vent et grêle) ; enregistrement en PDF ou CSV.
 - Statistiques dans l'écran principal : elles s'ouvrent sous le statut opérationnel (en paysage à gauche) ; ‹ les ferme et l'onglet d'une autre parcelle les garde.
 - Statut opérationnel : en haut, la culture et sa date de semis ; avec une culture, le verdict tient aussi compte du séchage des gouttes (ΔT) et de sa maladie.
-- Voir la météo, sur chaque carte, ouvre l'écran principal de la parcelle. Un appui ailleurs sur une carte zoome la carte sur la parcelle et montre ses points.
 
 Version 1.4 (v.1.400 – v.1.520)
 ÉCRAN PRINCIPAL

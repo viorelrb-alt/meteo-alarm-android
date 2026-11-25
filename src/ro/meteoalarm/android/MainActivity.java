@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.211";
+	static final String VERSION = "Meteo Alarm Android v2.212";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -4793,7 +4793,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 						Tr.t("＋ Parcel, on the top row next to GPS (in portrait it shrinks to ＋ after 2 seconds), asks first and then adds a parcel: the pin starts in the middle of the map, a tap on the map moves it; the name goes on top. ‹ goes back.", "＋ Parcelă, pe rândul de sus lângă GPS (în portret se restrânge în ＋ după 2 secunde), întreabă întâi, apoi adaugă o parcelă: acul pornește din mijlocul hărții, o atingere pe hartă îl mută; numele se scrie sus. ‹ revine înapoi.") + " "
 								+ Tr.t("The ＋ tab of the main screen asks first too.", "Și tab-ul ＋ din ecranul principal întreabă întâi."),
 						Tr.t("The GPS button takes the map, and the new parcel's pin, where you are.", "Butonul GPS duce harta, și acul parcelei noi, unde ești."),
-						Tr.t("Show weather, on each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.", "Arată vremea, pe fiecare casetă, deschide ecranul principal al parcelei. Atingerea casetei în altă parte mărește harta pe parcelă și arată punctele ei."),
+						Tr.t("The eye, at the top right of each card, opens the parcel's main screen. A tap elsewhere on a card zooms the map on the parcel and shows its points.", "Ochiul, în colțul din dreapta sus al fiecărei casete, deschide ecranul principal al parcelei. Atingerea casetei în altă parte mărește harta pe parcelă și arată punctele ei."),
 						Tr.t("A tap on a pin zooms on the parcel and shows its name; a second tap shows its points.", "Atingerea unui ac mărește harta pe parcelă și îi arată numele; a doua atingere arată punctele."),
 						Tr.t("In the satellite view the 4 corners are found from the picture and move with a finger; + Point adds one (up to 7), a long press deletes one.", "În vederea din satelit cele 4 colțuri se găsesc din imagine și se mută cu degetul; + Punct adaugă unul (până la 7), apăsarea lungă șterge unul."),
 						Tr.t("Circle puts the points evenly on a circle.", "Cerc așază punctele la distanțe egale pe un cerc."),

@@ -1,4 +1,4 @@
-Nykyinen versio: v.2.211 · 25.11.2026
+Nykyinen versio: v.2.212 · 25.11.2026
 ASETUKSET
 - Asetukset-ikkuna: ⚙︎ avaa asetukset osioina; kytkin kytkee toiminnon heti päälle tai pois. Se suljetaan X:llä tai napauttamalla ulkopuolelle. Vaakatasossa se avautuu vasemmalle 2 sarakkeeseen, otsikko yhdellä rivillä: vedä oikean reunan palkkia vasemmalle yhteen sarakkeeseen, oikealle kahteen; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä & Tuki näyttää nimet 3 sekuntia, sitten vain painikkeet; puhelimessa vaakatasossa se on kelluva laatikko alhaalla, joka taittuu ⋯:ksi (kahva leventää sitä), tabletissa yksi rivi.
 - Opas: hälytykset-kortissa: lyhyt opas siitä, mitä kukin ruutujen osa näyttää. Tulossa (toistaiseksi harmaa).
@@ -35,8 +35,8 @@ PELTOLOHKOT
 - Kuplat tilastoissa: ruiskutusikkunan tunnin, kaavioiden päivän tai maarivin napautus avaa kuplan selityksineen; ruiskutusikkuna liikkuu itsestään.
 - Lohkon koordinaatit: muokkaussivulla kunkin pisteen GPS-koordinaatit voi kirjoittaa, ja niiden alla satelliittinäkymä näyttää lohkon.
 - Muokkaa lohkoa: kynä avaa lohkon sivun: nimi, kasvi (lista kylvöpäivän kauden mukaan tai Muu kasvi…), kylvöpäivä, pinta-ala; kulmia siirretään kartalla.
-- Näytä sää avaa jokaisessa kortissa lohkon päänäkymän. Napautus muualle korttiin zoomaa kartan lohkoon ja näyttää sen pisteet.
 - Roskakori: poistettu lohko menee roskakoriin ↺ GPS-painikkeen vieressä (punainen piste laskee ne) ja säilyy 15 päivää; pyöreä painike palauttaa sen (jos tallennetulla lohkolla on sama nimi: uusi nimi tai korvaa).
+- Silmä jokaisen kortin oikeassa yläkulmassa avaa lohkon päänäkymän. Napautus muualle korttiin zoomaa kartan lohkoon ja näyttää sen pisteet.
 - Säätasot: lohkojen kartalla ＋- ja −-painikkeiden alla oleva ruutu avautuu vaihtoehdoilla Satelliitti, Kartta, Pilvet, Lämpötilat (värit) ja Sade (mm tunnissa) ja taittuu sitten valintaasi; yksi taso kerrallaan, nimi, aika ja selite korttien yläpuolella; Sade kytkeytyy päälle vain, kun sataa nyt tai seuraavan 2 tunnin aikana (tutkan sijaan).
 - Tilastot päänäytöllä: ne avautuvat toimintatilan alle (vaakatasossa vasemmalle); ‹ sulkee ne ja toisen lohkon välilehti pitää ne auki.
 - Tilastot: jokaiselle lohkolle Päivän toimi ja 4 välilehteä: Toiminta (ruiskutusikkuna tunti tunnilta, pisaroiden kuivuminen (ΔT), tuuli, märkä lehti), Vesi & maa (sade, haihdunta, maa 6 ja 18 cm:ssä), Kausi (lämpösumma verrattuna viime vuoteen, arvioitu vaihe) ja Riskit 72 h (sienitaudit, maanpintahalla, helle, tuuli ja rakeet); tallennus PDF- tai CSV-muodossa.

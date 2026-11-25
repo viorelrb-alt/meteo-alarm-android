@@ -1,4 +1,4 @@
-Nuvarande version: v.2.211 · 25.11.2026
+Nuvarande version: v.2.212 · 25.11.2026
 AVISERINGAR
 - Egna kanaler: vädervarningar, regn och snö, jordbävningar, skiften och uppdateringar har var sin kanal i telefonens inställningar; du kan stänga av en och behålla de andra.
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
@@ -37,8 +37,8 @@ SKIFTEN
 - Skiftets koordinater: på redigeringssidan skrivs GPS-koordinaterna för varje punkt in, och under dem visar satellitvyn skiftet.
 - Statistik på huvudskärmen: den öppnas under driftstatusen (liggande till vänster); ‹ stänger den och ett annat skiftes flik behåller den.
 - Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
-- Visa vädret, på varje kort, öppnar skiftets huvudskärm. Ett tryck någon annanstans på kortet zoomar kartan till skiftet och visar dess punkter.
 - Väderlager: på skiftenas karta öppnas rutan under ＋ och − med Satellit, Karta, Moln, Temperaturer (färger) och Regn (mm per timme) och fälls sedan ihop till ditt val; ett lager i taget, med namn, tid och förklaring ovanför korten; Regn slås på bara när det regnar nu eller de kommande 2 timmarna (i stället för radarn).
+- Ögat uppe till höger på varje kort öppnar skiftets huvudskärm. Ett tryck någon annanstans på kortet zoomar kartan till skiftet och visar dess punkter.
 UPPDATERINGAR
 - Rutan Ny version: en kort ruta överst i ⚙︎ när det finns en ny version; ett tryck på den startar nedladdningen.
 - Designförbättringar och rättningar av rapporterade fel.

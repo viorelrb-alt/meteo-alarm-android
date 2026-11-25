@@ -1,4 +1,4 @@
-Súčasná verzia: v.2.211 · 25.11.2026
+Súčasná verzia: v.2.212 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ⚙︎, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
@@ -30,9 +30,9 @@ POZEMKY
 - Bubliny v Štatistike: ťuknutie na hodinu v okne postreku, deň v grafoch alebo riadok pôdy otvorí bublinu s vysvetlením; okno postreku sa posúva samo.
 - História a predpoveď: potiahnite ukazovateľ na deň v minulosti; jeho hodnoty sa zobrazia v rámčeku pod grafom a po 10 s sa vráti na dnešok.
 - Kôš: zmazaný pozemok ide do koša s ↺ vedľa tlačidla GPS (červená bodka ich počíta) a zostane 15 dní; okrúhle tlačidlo ho obnoví (ak má uložený pozemok jeho názov: nový názov alebo nahradiť).
+- Oko vpravo hore na každej karte otvorí hlavnú obrazovku parcely. Ťuknutie inde na kartu priblíži mapu na parcelu a ukáže jej body.
 - Prevádzkový stav: hore plodina a dátum sejby; s plodinou verdikt zohľadňuje aj vysychanie kvapiek (ΔT) a jej chorobu.
 - Súradnice pozemku: na stránke úprav sa zapisujú súradnice GPS každého bodu a pod nimi satelitný pohľad ukazuje pozemok.
-- Ukázať počasie na každej karte otvorí hlavnú obrazovku parcely. Ťuknutie inde na kartu priblíži mapu na parcelu a ukáže jej body.
 - Upraviť pozemok: ceruzka otvorí stránku pozemku: názov, plodina (zoznam podľa sezóny dátumu sejby alebo Iná plodina…), dátum sejby, výmera; rohy sa posúvajú na mape.
 - Vrstvy počasia: na mape pozemkov sa pole pod ＋ a − otvorí so Satelitom, Mapou, Oblačnosťou, Teplotami (farby) a Dažďom (mm za hodinu) a potom sa zloží na vašu voľbu; jedna vrstva naraz, s názvom, časom a legendou nad kartami; Dážď sa zapne len vtedy, keď prší teraz alebo v nasledujúcich 2 hodinách (namiesto radaru).
 - Štatistika na hlavnej obrazovke: otvára sa pod prevádzkovým stavom (na šírku vľavo); ‹ ju zatvorí a karta iného pozemku ju ponechá.

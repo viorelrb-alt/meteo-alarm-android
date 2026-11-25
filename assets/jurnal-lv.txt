@@ -1,4 +1,4 @@
-Pašreizējā versija: v.2.211 · 25.11.2026
+Pašreizējā versija: v.2.212 · 25.11.2026
 ATJAUNINĀJUMI
 - Lodziņš Jauna versija: īss lodziņš ⚙︎ augšā, kad ir jauna versija; pieskāriens tam sāk lejupielādi.
 GALVENAIS EKRĀNS
@@ -23,13 +23,13 @@ IESTATĪJUMI
 - Vietas: ⚙︎ pirmā kartīte (lauksaimnieka režīmā: Vietas & Lauki, ar laukiem tajā). Viena rinda ar parādīto vietu; ▾ atver citas vietas ar galveno ekrānu. Zvaigznes noņemšana izdzēš vietu un tās ekrānu (kamēr paliek 2 vai vairāk; pēdējā ir pelēka un paliek). Rinda Vietas virs tās atver sarakstu; tā kartē Novads ▾ meklē vienā novadā.
 - Žurnāls: izmērs, rindas un kļūdas kartītē; Skatīt žurnālu atver rindas (Visas, Kļūdas, Šodien, Vakar; ilgs pieskāriens nokopē rindu); Kopīgot un Saglabāt ekrāna apakšā. Novērstās kļūdas ir žurnāla beigās un netiek skaitītas; tīkla problēmas ir brīdinājumi.
 LAUKI
+- Acs katras kartītes augšējā labajā stūrī atver zemes gabala galveno ekrānu. Pieskāriens citur kartītē pietuvina karti zemes gabalam un parāda tā punktus.
 - Burbuļi statistikā: pieskāriens stundai smidzināšanas logā, dienai grafikos vai augsnes rindai atver burbuli ar skaidrojumu; smidzināšanas logs kustas pats.
 - Darbības statuss: augšā kultūra un sējas datums; ar kultūru spriedums ņem vērā arī pilienu žūšanu (ΔT) un tās slimību.
 - Laikapstākļu slāņi: lauku kartē lodziņš zem ＋ un − atveras ar Satelītu, Karti, Mākoņiem, Temperatūrām (krāsas) un Lietu (mm stundā), tad sakļaujas līdz jūsu izvēlei; viens slānis vienlaikus, ar nosaukumu, laiku un leģendu virs kartītēm; Lietus ieslēdzas tikai tad, kad līst tagad vai nākamajās 2 stundās (radara vietā).
 - Lauka koordinātas: rediģēšanas lapā var ierakstīt katra punkta GPS koordinātas, bet zem tām satelīta skats rāda lauku.
 - Miskaste: izdzēsts lauks nonāk miskastē ar ↺ blakus GPS pogai (sarkanais punkts tos skaita) un tiek glabāts 15 dienas; apaļā poga to atjauno (ja saglabātam laukam ir tāds pats nosaukums: jauns nosaukums vai aizstāt).
 - Rediģēt lauku: zīmulis atver lauka lapu: nosaukums, kultūra (saraksts pēc sējas datuma sezonas vai Cita kultūra…), sējas datums, platība; stūri pārvietojas kartē.
-- Rādīt laikapstākļus katrā kartītē atver zemes gabala galveno ekrānu. Pieskāriens citur kartītē pietuvina karti zemes gabalam un parāda tā punktus.
 - Statistika galvenajā ekrānā: tā atveras zem darbības statusa (ainavā pa kreisi); ‹ to aizver, bet cita lauka cilne to saglabā.
 - Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, pilienu žūšana (ΔT), vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
 - Vēsture un prognoze: velciet rādītāju uz pagājušu dienu; tās vērtības parādās lodziņā zem grafika, un pēc 10 s tas atgriežas uz šodienu.

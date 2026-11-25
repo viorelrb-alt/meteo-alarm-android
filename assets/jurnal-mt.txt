@@ -1,17 +1,17 @@
-Verżjoni attwali: v.2.211 · 25.11.2026
+Verżjoni attwali: v.2.212 · 25.11.2026
 AĠĠORNAMENTI
 - Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ⚙︎ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
 - Koordinati tal-għalqa: fil-paġna tal-editjar jinkitbu l-koordinati GPS ta' kull punt, u taħthom il-veduta bis-satellita turi l-għalqa.
+- L-għajn, fuq il-lemin ta' kull karta, tiftaħ l-iskrin ewlieni tal-biċċa art. Tektek x'imkien ieħor fuq karta jkabbar il-mappa fuq il-biċċa art u juri l-punti tagħha.
 - Landa tal-iskart: għalqa mħassra tmur fil-barmil b'↺ ħdejn il-buttuna GPS (it-tikka ħamra tgħoddhom) u tinżamm 15-il jum; il-buttuna tonda terġa' ġġibha (jekk għalqa salvata għandha isimha: isem ġdid jew tibdilha).
 - Saffi tat-temp: fuq il-mappa tal-għelieqi l-kaxxa taħt ＋ u − tiftaħ b'Satellita, Mappa, Sħab, Temperaturi (kuluri) u Xita (mm fis-siegħa), imbagħad tingħalaq fuq l-għażla tiegħek; saff wieħed kull darba, bl-isem, il-ħin u l-leġġenda fuq il-kards; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita issa jew fis-sagħtejn li ġejjin (minflok ir-radar).
 - Statistika fl-iskrin prinċipali: tinfetaħ taħt l-istatus operazzjonali (mimdud fuq ix-xellug); ‹ jagħlaqha u t-tab ta' għalqa oħra jżommha.
 - Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, tnixxif tal-qtar (ΔT), riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
 - Status operazzjonali: fuq, il-wiċċ u d-data taż-żriegħ; b'wiċċ, is-sentenza tqis ukoll it-tnixxif tal-qtar (ΔT) u l-marda tiegħu.
 - Storja u tbassir: kaxkar l-indikatur fuq jum li għadda; il-valuri tiegħu jidhru f'kaxxa taħt il-grafika u wara 10 s jerġa' lura għal-lum.
-- Uri t-temp, fuq kull karta, jiftaħ l-iskrin ewlieni tal-biċċa art. Tektek x'imkien ieħor fuq karta jkabbar il-mappa fuq il-biċċa art u juri l-punti tagħha.
 LOKALITAJIET
 - Kards tal-lokalitajiet: fuq tablet u f'landscape huma wesgħin daqs it-test tagħhom u joqogħdu f'ringieli u kolonni; f'portrait fuq telefon isem twil wisq jieħu ittri iżgħar; f'landscape it-tfittxija żżomm id-daqs tal-portrait.
 - Lista tal-lokalitajiet: il-buttuna Lokalitajiet tiftaħ il-lista fil-kulur tat-tema; Agħżel tħassar waħda jew aktar (l-aħħar waħda tibqa'), u s-sinjal ⌃⌄ miżmum u mkaxkar 'il fuq jew 'l isfel jibdel l-ordni; kull lokalità żżomm it-temp issejvjat tagħha.

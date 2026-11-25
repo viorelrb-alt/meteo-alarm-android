@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.211 · 25.11.2026
+Trenutačna verzija: v.2.212 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ⚙︎ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
@@ -23,9 +23,9 @@ PARCELE
 - Koordinate parcele: na stranici uređivanja upisuju se GPS koordinate svake točke, a ispod satelitski prikaz pokazuje parcelu.
 - Koš: obrisana parcela ide u koš s ↺ pored gumba GPS (crvena točka ih broji) i čuva se 15 dana; okrugli gumb je vraća (ako spremljena parcela ima njezino ime: novo ime ili zamjena).
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.
+- Oko, gore desno na svakoj kartici, otvara glavni zaslon parcele. Dodir drugdje na kartici približava kartu parceli i prikazuje njezine točke.
 - Operativni status: gore kultura i datum sjetve; s kulturom ocjena uzima u obzir i sušenje kapljica (ΔT) i njezinu bolest.
 - Povijest i prognoza: povucite pokazivač na dan u prošlosti; njegove vrijednosti pojavljuju se u okviru ispod grafa, a nakon 10 s vraća se na danas.
-- Prikaži vrijeme, na svakoj kartici, otvara glavni zaslon parcele. Dodir drugdje na kartici približava kartu parceli i prikazuje njezine točke.
 - Statistika na glavnom zaslonu: otvara se ispod operativnog statusa (položeno lijevo); ‹ je zatvara, a kartica druge parcele je zadržava.
 - Statistika: za svaku parcelu Zadatak dana i 4 kartice: Operativno (prozor prskanja sat po sat, sušenje kapljica (ΔT), vjetar, mokar list), Voda i tlo (kiša, isparavanje, tlo na 6 i 18 cm), Sezona (stupanj-dani u odnosu na prošlu godinu, procijenjena faza) i Rizici 72 h (gljivične bolesti, prizemni mraz, vrućina, vjetar i tuča); spremanje u PDF ili CSV.
 - Uredi parcelu: olovka otvara stranicu parcele: ime, kultura (popis po sezoni datuma sjetve ili Druga kultura…), datum sjetve, površina; kutovi se pomiču na karti.

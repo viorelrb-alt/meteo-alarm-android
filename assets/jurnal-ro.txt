@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.211 · 25.11.2026
+Versiunea curentă: v.2.212 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ⚙︎ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
@@ -20,12 +20,12 @@ NOTIFICĂRI
 - Cutremure: verificate la 10 minute, și noaptea cu ecranul stins; o magnitudine revizuită actualizează notificarea, iar atingerea ei deschide harta.
 - Versiune nouă: cu Notificări pornite, aplicația verifică pe GitHub zilnic 2 săptămâni după o actualizare, apoi o dată la 7 zile, și anunță o versiune nouă în notificările Android; atingerea deschide Verifică actualizări.
 PARCELE
-- Arată vremea, pe fiecare casetă, deschide ecranul principal al parcelei. Atingerea casetei în altă parte mărește harta pe parcelă și arată punctele ei.
 - Bule în Statistici: atingerea unei ore din fereastra de stropit, a unei zile din grafice sau a unui rând de sol deschide o bulă cu explicația; fereastra de stropit se mișcă singură.
 - Coordonatele parcelei: la editare, coordonatele GPS ale fiecărui punct se pot scrie, iar dedesubt vederea din satelit arată parcela.
 - Coș de gunoi: o parcelă ștearsă trece în coșul cu ↺ de lângă butonul GPS (bulina roșie le numără) și se păstrează 15 zile; butonul rotund o restaurează (dacă o parcelă salvată are același nume: nume nou sau înlocuire).
 - Editare parcelă: creionul deschide pagina parcelei: nume, cultură (listă după sezonul datei de semănat sau Altă cultură…), data semănatului, suprafață; colțurile se mută pe hartă.
 - Istoric și prognoză: indicatorul se trage pe o zi din trecut; valorile ei apar într-o casetă sub grafic, iar după 10 s revine la azi.
+- Ochiul, în colțul din dreapta sus al fiecărei casete, deschide ecranul principal al parcelei. Atingerea casetei în altă parte mărește harta pe parcelă și arată punctele ei.
 - Statistici în ecranul principal: se deschid sub Status operațional (în peisaj în stânga); ‹ le închide, iar tab-ul altei parcele le păstrează.
 - Statistici: pentru fiecare parcelă, Acțiunea zilei și 4 file: Operațional (fereastra de stropit oră cu oră, uscare picături (ΔT), vânt, frunză udă), Apă & Sol (ploaie, evaporare, sol la 6 și 18 cm), Sezon (grade-zile față de anul trecut, faza estimată) și Riscuri 72 h (boli fungice, brumă, arșiță, vânt și grindină); salvare PDF sau CSV.
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.

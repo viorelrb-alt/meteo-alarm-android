@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.211 · 25.11.2026
+Jelenlegi verzió: v.2.212 · 25.11.2026
 BEÁLLÍTÁSOK
 - A Beállítások ablak: a ⚙︎ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
 - Útmutató: a Riasztások kártyán: rövid útmutató arról, mit mutat a képernyők egyes része. Hamarosan (egyelőre szürke).
@@ -28,7 +28,7 @@ FRISSÍTÉSEK
 - Új verzió doboz: rövid doboz a ⚙︎ tetején, ha van új verzió; koppintásra indul a letöltés.
 PARCELLÁK
 - A parcella koordinátái: a szerkesztő oldalon minden pont GPS-koordinátája beírható, alatta a műholdas nézet mutatja a parcellát.
-- Az Időjárás mutatása minden kártyán megnyitja a parcella főképernyőjét. A kártya más részére koppintva a térkép a parcellára nagyít és megmutatja a pontjait.
+- A szem minden kártya jobb felső sarkában megnyitja a parcella főképernyőjét. A kártya más részére koppintva a térkép a parcellára nagyít és megmutatja a pontjait.
 - Buborékok a Statisztikában: a permetezési ablak egy órájának, a grafikonok egy napjának vagy egy talajsornak az érintése magyarázó buborékot nyit; a permetezési ablak magától mozog.
 - Időjárási rétegek: a parcellák térképén a ＋ és − alatti doboz Műholddal, Térképpel, Felhőkkel, Hőmérsékletekkel (színek) és Esővel (mm/óra) nyílik, aztán a választásra csukódik; egyszerre egy réteg, nevével, idejével és jelmagyarázatával a kártyák fölött; az Eső csak akkor kapcsol be, ha most vagy a következő 2 órában esik (a radar helyett).
 - Kuka: a törölt parcella a GPS gomb melletti ↺-es kukába kerül (a piros pötty számolja őket) és 15 napig megmarad; a kerek gomb visszaállítja (ha egy mentett parcellának ez a neve: új név vagy csere).

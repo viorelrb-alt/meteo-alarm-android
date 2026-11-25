@@ -1,4 +1,4 @@
-Huidige versie: v.2.211 · 25.11.2026
+Huidige versie: v.2.212 · 25.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ⚙︎ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
 - Helderheid: toont de helderheidsbalk links; een tik op ☀ aan het eind geeft het scherm de automatische helderheid terug (☀ wordt geel, een melding bevestigt het).
@@ -27,13 +27,13 @@ MELDINGEN
 PERCELEN
 - Ballonnen in Statistieken: een tik op een uur van het spuitvenster, een dag in de grafieken of een bodemregel opent een ballon met uitleg; het spuitvenster schuift vanzelf.
 - Coördinaten van het perceel: op de bewerkpagina worden de gps-coördinaten van elk punt getypt, en daaronder toont het satellietbeeld het perceel.
+- Het oog, rechtsboven op elke kaart, opent het hoofdscherm van het perceel. Een tik elders op een kaart zoomt de kaart in op het perceel en toont zijn punten.
 - Operationele status: bovenaan het gewas en de zaaidatum; met een gewas houdt het oordeel ook rekening met de druppeldroging (ΔT) en zijn ziekte.
 - Perceel bewerken: het potlood opent de pagina van het perceel: naam, gewas (lijst volgens het seizoen van de zaaidatum of Ander gewas…), zaaidatum, oppervlakte; de hoeken verschuiven op de kaart.
 - Prullenbak: een verwijderd perceel gaat naar de prullenbak met ↺ naast de GPS-knop (de rode stip telt ze) en blijft 15 dagen; de ronde knop zet het terug (heeft een bewaard perceel dezelfde naam: nieuwe naam of vervangen).
 - Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
 - Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
-- Weer tonen, op elke kaart, opent het hoofdscherm van het perceel. Een tik elders op een kaart zoomt de kaart in op het perceel en toont zijn punten.
 - Weerlagen: op de kaart van de percelen opent het vak onder ＋ en − met Satelliet, Kaart, Wolken, Temperaturen (kleuren) en Regen (mm per uur) en klapt daarna dicht op je keuze; één laag tegelijk, met naam, tijd en legenda boven de kaarten; Regen gaat alleen aan als het nu of in de komende 2 uur regent (in plaats van de radar).
 PLAATSEN
 - Lijst met plaatsen: de knop Plaatsen opent de lijst, in de kleur van het thema; Selecteren verwijdert er één of meer (de laatste blijft), en het teken ⌃⌄ vasthouden en omhoog of omlaag slepen verandert de volgorde; elke plaats houdt haar opgeslagen weer.

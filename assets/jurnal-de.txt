@@ -1,4 +1,4 @@
-Aktuelle Version: v.2.211 · 25.11.2026
+Aktuelle Version: v.2.212 · 25.11.2026
 AKTUALISIERUNGEN
 - Feld Neue Version: oben im ⚙︎ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
@@ -32,6 +32,7 @@ ORTE
 - Suche auf der Karte: Die Lupe öffnet die Karte mit der Suche unten; ein Tippen auf einen Punkt oder auf den Namen eines Orts zeigt seine Temperatur, Details (die nächsten Tage) und Hinzufügen. Die Karte ist schlicht und hell, mit groß geschriebenen Ortsnamen (auch auf der Karte der Parzellen). Andere Orte erscheinen nur, wenn sie wie der eingegebene Name beginnen (mindestens 6 Buchstaben oder 60 % davon).
 PARZELLEN
 - Blasen in der Statistik: Antippen einer Stunde im Spritzfenster, eines Tages in den Diagrammen oder einer Bodenzeile öffnet eine Blase mit der Erklärung; das Spritzfenster bewegt sich von selbst.
+- Das Auge oben rechts auf jeder Karte öffnet den Hauptbildschirm der Parzelle. Ein Tippen anderswo auf eine Karte zoomt die Karte auf die Parzelle und zeigt ihre Punkte.
 - Design-Verbesserungen und Behebung gemeldeter Fehler.
 - Koordinaten der Parzelle: Auf der Bearbeitungsseite lassen sich die GPS-Koordinaten jedes Punkts eintippen, darunter zeigt die Satellitenansicht die Parzelle.
 - Operativer Status: oben die Kultur und ihr Aussaatdatum; mit einer Kultur berücksichtigt das Urteil auch die Tropfentrocknung (ΔT) und ihre Krankheit.
@@ -40,7 +41,6 @@ PARZELLEN
 - Statistik im Hauptbildschirm: Sie öffnet sich unter dem Betriebsstatus (quer links); ‹ schließt sie, der Tab einer anderen Parzelle behält sie.
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
-- Wetter zeigen öffnet auf jeder Karte den Hauptbildschirm der Parzelle. Ein Tippen anderswo auf eine Karte zoomt die Karte auf die Parzelle und zeigt ihre Punkte.
 - Wetterebenen: Auf der Karte der Parzellen öffnet sich das Feld unter ＋ und − mit Satellit, Karte, Wolken, Temperaturen (Farben) und Regen (mm pro Stunde) und klappt dann auf die Wahl zusammen; eine Ebene auf einmal, mit Name, Uhrzeit und Legende über den Karten; Regen schaltet sich nur ein, wenn es jetzt oder in den nächsten 2 Stunden regnet (statt des Radars).
 
 Version 1.4 (v.1.400 – v.1.520)

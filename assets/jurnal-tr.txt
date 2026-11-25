@@ -1,4 +1,4 @@
-Geçerli sürüm: v.2.211 · 25.11.2026
+Geçerli sürüm: v.2.212 · 25.11.2026
 ANA EKRAN
 - Alt düğmeler: ekran açılınca adları 3 saniye altlarında görünür, sonra yalnızca düğmeler kalır; yeniden görmek için kapsülü yukarı çekin. Açık düğme basılı görünür, halkalı.
 - Ana ekranlar: adın altındaki sekmeler (yatayda altta): yerleşim yeri ve her parsel için bir tane; dokunmak veya yana kaydırmak ekranı değiştirir, + yeni parsel kutusunu açar. Hepsi sığmadığında satır her 3 saniyede bir ilerler; üzerine konan bir parmak onu bir süre durdurur.
@@ -30,7 +30,7 @@ PARSELLER
 - Ana ekranda istatistikler: operasyonel durumun altında açılır (yatayda solda); ‹ kapatır, başka bir parselin sekmesi açık tutar.
 - Geçmiş ve tahmin: göstergeyi geçmiş bir güne sürükleyin; değerleri grafiğin altındaki kutuda görünür ve 10 sn sonra bugüne döner.
 - Hava katmanları: parsellerin haritasında ＋ ve − altındaki kutu Uydu, Harita, Bulutlar, Sıcaklıklar (renkler) ve Yağmur (saatte mm) ile açılır, sonra seçiminize kapanır; aynı anda bir katman, adı, saati ve açıklaması kartların üstünde; Yağmur yalnızca şimdi ya da sonraki 2 saatte yağmur varsa açılır (radar yerine).
-- Her karttaki Havayı göster, parselin ana ekranını açar. Kartta başka bir yere dokunmak haritayı parsele yakınlaştırır ve noktalarını gösterir.
+- Her kartın sağ üstündeki göz, parselin ana ekranını açar. Kartta başka bir yere dokunmak haritayı parsele yakınlaştırır ve noktalarını gösterir.
 - İstatistik balonları: ilaçlama penceresindeki bir saate, grafiklerdeki bir güne veya bir toprak satırına dokunmak açıklamalı bir balon açar; ilaçlama penceresi kendiliğinden kayar.
 - İstatistik: her parsel için Günün işi ve 4 sekme: Operasyonel (saat saat ilaçlama penceresi, damla kuruması (ΔT), rüzgâr, ıslak yaprak), Su ve Toprak (yağmur, buharlaşma, 6 ve 18 cm'de toprak), Sezon (geçen yıla göre gün-derecesi, tahmini evre) ve Riskler 72 h (mantar hastalıkları, yer donu, sıcak, rüzgâr ve dolu); PDF veya CSV olarak kaydetme.
 - Operasyonel durum: üstte ürün ve ekim tarihi; ürün varsa karar damla kurumasını (ΔT) ve ürünün hastalığını da hesaba katar.

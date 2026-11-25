@@ -1,4 +1,4 @@
-Trenutna različica: v.2.211 · 25.11.2026
+Trenutna različica: v.2.212 · 25.11.2026
 GLAVNI ZASLON
 - Glavni zasloni: zavihki pod imenom (ležeče spodaj): kraj in po eden za vsako parcelo; dotik ali poteg vstran zamenja zaslon, + odpre okence nove parcele. Ko vsi ne gredo nanjo, se vrsta vsake 3 sekunde premakne za enega; prst na njej jo za nekaj časa ustavi.
 - Gumb Kraji: okrogel gumb z ikono hišic (pokončno desno od imena, ležeče na zgornjem traku, pred njegovim kotom) odpre seznam krajev.
@@ -32,8 +32,8 @@ PARCELE
 - Koordinate parcele: na strani za urejanje se vpišejo koordinate GPS vsake točke, pod njimi pa satelitski pogled prikaže parcelo.
 - Koš: izbrisana parcela gre v koš z ↺ ob gumbu GPS (rdeča pika jih šteje) in se hrani 15 dni; okrogli gumb jo obnovi (če ima shranjena parcela njeno ime: novo ime ali zamenjava).
 - Oblački v Statistiki: dotik ure v oknu škropljenja, dneva v grafih ali vrstice tal odpre oblaček z razlago; okno škropljenja se premika samo.
+- Oko zgoraj desno na vsaki kartici odpre glavni zaslon parcele. Dotik drugje na kartici približa zemljevid parceli in pokaže njene točke.
 - Operativni status: zgoraj posevek in datum setve; s posevkom ocena upošteva tudi sušenje kapljic (ΔT) in njegovo bolezen.
-- Pokaži vreme na vsaki kartici odpre glavni zaslon parcele. Dotik drugje na kartici približa zemljevid parceli in pokaže njene točke.
 - Statistika na glavnem zaslonu: odpre se pod operativnim statusom (ležeče na levi); ‹ jo zapre, zavihek druge parcele pa jo ohrani.
 - Statistika: za vsako parcelo Opravilo dneva in 4 zavihki: Operativno (okno škropljenja uro za uro, sušenje kapljic (ΔT), veter, moker list), Voda in tla (dež, izhlapevanje, tla na 6 in 18 cm), Sezona (stopinjski dnevi v primerjavi z lani, ocenjena faza) in Tveganja 72 h (glivične bolezni, talna pozeba, vročina, veter in toča); shranjevanje v PDF ali CSV.
 - Uredi parcelo: svinčnik odpre stran parcele: ime, kultura (seznam po sezoni datuma setve ali Druga kultura…), datum setve, površina; oglišča se premikajo na zemljevidu.
