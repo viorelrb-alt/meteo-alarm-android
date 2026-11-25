@@ -253,7 +253,7 @@ final class BottomSheet extends FrameLayout implements Glass.Local {
 	/** Kindle black and white, or the Claude dark colours. */
 	void setDark(boolean dark) {
 		this.dark = dark;
-		int bg = ro.meteoalarm.android.core.Theme.surface(dark), ink = ro.meteoalarm.android.core.Theme.ink(dark), line = ro.meteoalarm.android.core.Theme.pal == 0 ? (dark ? 0xFF4A4944 : 0xFF000000) : ro.meteoalarm.android.core.Theme.grid(dark);
+		int bg = ro.meteoalarm.android.core.Theme.surface(dark), ink = ro.meteoalarm.android.core.Theme.ink(dark), line = ro.meteoalarm.android.core.Theme.pal == 0 ? (dark ? 0xFF4A4A4A : 0xFF000000) : ro.meteoalarm.android.core.Theme.grid(dark);
 		int accent = ro.meteoalarm.android.core.Theme.accent(dark);
 		// v5.00 (Viorel): frosted glass, rounded top, no hard outline.
 		line = Glass.edge(dark);

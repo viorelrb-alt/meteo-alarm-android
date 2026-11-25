@@ -3418,7 +3418,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		int[] tc = new int[nt];
 		for (int k = 0; k < nt; k++) {
 			tn[k] = Tr.t(ro.meteoalarm.android.core.Theme.NAMES[k][0], ro.meteoalarm.android.core.Theme.NAMES[k][1]);
-			tc[k] = ro.meteoalarm.android.core.Theme.swatch(k);
+			tc[k] = ro.meteoalarm.android.core.Theme.swatch(k, s.dark);
 		}
 		final int pal = prefs.getInt("palette", 0);
 		String cur = prefs.getString("theme", "auto");
@@ -4687,7 +4687,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		help.entry(mini("city"), Tr.t("Location & favourites", "Localizare & Favorite"), Tr.t("Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.",
 				"Trei rânduri: întâi localitățile cu stea plină (au ecran principal, în ordinea ecranelor), apoi celelalte favorite. Prima localitate își păstrează mereu steaua. Atingerea unei stele goale dă localității ecran principal, a doua după prima, și o arată; debifarea stelei îi scoate ecranul, iar localitatea rămâne la favorite. Atingerea numelui o alege; Localități › și Alegeți județul deschid lista localităților."));
 		help.entry(mini("degf"), Tr.t("Temperature and clock", "Temperatură și ceas"), Tr.t("°C or °F, 12 h or 24 h: a tap on the choice.", "°C sau °F, 12 h sau 24 h: atingi alegerea."));
-		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 colour themes: a tap on a colour; under them Light, Dark or Automatic (phone sensor).", "6 teme de culoare: atingi o culoare; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
+		help.entry(mini("palette"), Tr.t("Theme", "Temă"), Tr.t("6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).", "6 teme (Monocrom, Roz, Galben, Verde, Albastru, Violet): atingi o bulină, care are culoarea butoanelor temei; sub ele Luminos, Întunecat sau Automat (senzor telefon)."));
 		help.entry(mini("wxicon"), Tr.t("Icon theme", "Temă icon"), Tr.t("6 weather icon themes: a tap on a dot. Classic and Outline take the theme's colours; they move for 3 seconds. The widgets take the same icons.", "6 teme de iconuri: atingi o bulină. Clasic și Contur iau culorile temei; se mișcă 3 secunde. Widgeturile iau aceleași iconuri."));
 		help.entry(mini("lang-" + s.T.lang), Tr.t("Display language", "Limbă afișaj"), Tr.t("Buttons in ☰, 2 on a row: English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's. In the US only English and Spanish.",
 				"Butoane în ☰, câte 2 pe rând: engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi din UE, româna și limba telefonului. În SUA doar engleza și spaniola."));

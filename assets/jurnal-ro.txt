@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.153 · 24.11.2026
+Versiunea curentă: v.2.153 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ☰ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
@@ -28,6 +28,7 @@ SETĂRI
 - Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran. Erorile rezolvate stau la sfârșitul jurnalului și nu sunt numărate; problemele rețelei sunt avertizări.
 - Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
+- Teme noi: Monocrom (alb, negru și gri; grafit pe întunecat), Roz, Galben, Verde, Albastru și Violet, fiecare luminoasă și întunecată, cu butoanele într-o culoare contrastantă; bulinele din ☰ › Temă au culoarea butoanelor.
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.4 (v.1.400 – v.1.520)
