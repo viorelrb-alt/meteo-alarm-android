@@ -1,4 +1,4 @@
-Leagan reatha: v.2.213 · 25.11.2026
+Leagan reatha: v.2.214 · 25.11.2026
 BAILTE
 - Cártaí na mbailte: ar thaibléad agus i dtírdhreach tá siad chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin; i bportráid ar fhón faigheann ainm rófhada litreacha níos lú; i dtírdhreach coinníonn an cuardach a mhéid portráide.
 - Cuardach ar an léarscáil: osclaíonn an ghloine formhéadúcháin an léarscáil leis an gcuardach thíos; taispeánann tapáil ar áit nó ar ainm baile a theocht, Sonraí (na laethanta romhainn) agus Cuir leis. Tá an léarscáil simplí agus geal, le hainmneacha na mbailte scríofa go mór (ar léarscáil na bpáirceanna freisin). Ní thaispeántar bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de).

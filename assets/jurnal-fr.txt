@@ -1,4 +1,4 @@
-Version actuelle : v.2.213 · 25.11.2026
+Version actuelle : v.2.214 · 25.11.2026
 ÉCRAN PRINCIPAL
 - Bouton Localités : le bouton rond à l'icône des maisons (en portrait à droite du nom, en paysage sur la bande du haut, avant son coin) ouvre la liste des localités.
 - Bouton « mis à jour »: flotte au-dessus de la page, à droite : en portrait sous les alertes (sans elles sous la rangée des localités), en paysage sous l'horloge. Pendant la mise à jour sa flèche tourne, même en petit cercle ; puis l'heure s'affiche 4 secondes et il se réduit en ⟳. Un toucher met à jour.

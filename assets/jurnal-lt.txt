@@ -1,4 +1,4 @@
-Dabartinė versija: v.2.213 · 25.11.2026
+Dabartinė versija: v.2.214 · 25.11.2026
 ATNAUJINIMAI
 - Dėžutė Nauja versija: trumpa dėžutė ⚙︎ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI

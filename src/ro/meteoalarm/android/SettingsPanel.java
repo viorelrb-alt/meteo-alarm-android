@@ -697,7 +697,7 @@ final class SettingsPanel extends FrameLayout {
 		@Override
 		protected void onDraw(Canvas c) {
 			float w = getWidth(), h = getHeight();
-			p.setColor(on ? accent() : Glass.alpha(Theme.ink(dark), dark ? 0.2f : 0.16f));
+			p.setColor(on ? Theme.pastel(dark) : Glass.alpha(Theme.ink(dark), dark ? 0.2f : 0.16f)); // v2.214: as the chosen buttons
 			c.drawRoundRect(new RectF(0, 0, w, h), h / 2, h / 2, p);
 			p.setColor(dark ? Theme.page(true) : 0xFFFFFFFF);
 			float r = h / 2 - 3.5f * dp;

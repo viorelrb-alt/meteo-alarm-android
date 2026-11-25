@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.213";
+	static final String VERSION = "Meteo Alarm Android v2.214";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */

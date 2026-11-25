@@ -1,4 +1,4 @@
-Jelenlegi verzió: v.2.213 · 25.11.2026
+Jelenlegi verzió: v.2.214 · 25.11.2026
 BEÁLLÍTÁSOK
 - A Beállítások ablak: a ⚙︎ szakaszokban nyitja a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra nyílik 2 oszlopban, a címe egy sorban: húzd a jobb szélén lévő sávot balra egy oszlophoz, jobbra kettőhöz; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés az utolsó. A Rendszer & Támogatás 3 másodpercig mutatja a neveket, aztán csak a gombokat; telefonon fekvőben alul lebegő doboz, amely ⋯-vé csukódik (a fogantyúja szélesíti), tableten egy sor.
 - Útmutató: a Riasztások kártyán: rövid útmutató arról, mit mutat a képernyők egyes része. Hamarosan (egyelőre szürke).

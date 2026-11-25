@@ -158,7 +158,10 @@ public final class Theme {
 	 */
 	public static int pastel(boolean d) {
 		int p = pal < 0 || pal >= BTN_LIGHT.length ? 0 : pal;
-		return (d ? BTN_DARK : BTN_LIGHT)[p];
+		// v2.214 (Viorel): besides Grafit, the chosen buttons are white with a light hint of the
+		// theme's colour in the dark, and graphite black with a light hint of it in the light.
+		if (p == 0) return (d ? BTN_DARK : BTN_LIGHT)[0];
+		return d ? mix(0xFFFFFFFF, BTN_DARK[p], 0.16f) : mix(0xFF1C1C1F, BTN_LIGHT[p], 0.2f);
 	}
 
 	/** The text on a pastel button. */

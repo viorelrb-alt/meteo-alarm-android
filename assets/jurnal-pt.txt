@@ -1,4 +1,4 @@
-Versão atual: v.2.213 · 25.11.2026
+Versão atual: v.2.214 · 25.11.2026
 ATUALIZAÇÕES
 - Caixa Nova versão: uma caixa curta no topo de ⚙︎ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
