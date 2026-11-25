@@ -1,4 +1,4 @@
-Versione attuale: v.2.215 · 25.11.2026
+Versione attuale: v.2.216 · 25.11.2026
 AGGIORNAMENTI
 - Riquadro Nuova versione: un breve riquadro in cima a ⚙︎ quando esiste una nuova versione; toccarlo avvia il download.
 IMPOSTAZIONI

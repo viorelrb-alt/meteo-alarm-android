@@ -1,4 +1,4 @@
-Trenutačna verzija: v.2.215 · 25.11.2026
+Trenutačna verzija: v.2.216 · 25.11.2026
 AŽURIRANJA
 - Kutija Nova verzija: kratka kutija na vrhu ⚙︎ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON

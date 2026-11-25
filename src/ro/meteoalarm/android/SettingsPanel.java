@@ -558,7 +558,8 @@ final class SettingsPanel extends FrameLayout {
 			android.graphics.Rect b = getBounds();
 			p.setStyle(Paint.Style.FILL);
 			p.setColor(Glass.disc(dark));
-			c.drawRoundRect(new RectF(b), b.width() * 0.26f, b.width() * 0.26f, p);
+			// v2.216 (Viorel): the icons' tiles are circles, not squares.
+			c.drawCircle(b.exactCenterX(), b.exactCenterY(), Math.min(b.width(), b.height()) / 2f, p);
 			float s = b.width() * (small ? 0.5f : 0.52f) / 24f;
 			c.save();
 			c.translate(b.exactCenterX() - 12 * s, b.exactCenterY() - 12 * s);
