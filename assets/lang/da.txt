@@ -1654,3 +1654,118 @@ The ＋ tab of the main screen asks first too.	Også hovedskærmens ＋-fane sp�
 Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Fejl tæller kun ægte fejl, der ikke er rettet endnu; rettede kommer i et eget afsnit sidst i loggen, og netværksproblemer er advarsler.
 There is 1 warning to look into.	Der er 1 advarsel at se på.
 There are %d warnings to look into.	Der er %d advarsler at se på.
+It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.	Det regner ikke på kortet nu og heller ikke de næste 2 timer. Knappen Regn tænder af sig selv, når regnen kommer.
+Checking for rain on the map…	Søger efter regn på kortet…
+New version 	Ny version 
+Tap to download	Tryk for at downloade
+Towns ›	Byer ›
+Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's name, time and legend stand above the cards; data: Open-Meteo.	Under ＋ og − på kortet Marker viser en glasboks den visning, der bruges, det vejrlag, der er tændt (med en ring), og ⌄. Et tryk åbner den: Satellit (Esri), Kort, Skyer, Temperaturer og Regn; dit valg folder den sammen igen (det gør ⌃ og 5 sekunder uden berøring også). Ét lag ad gangen; et tryk på det tændte slukker det. Temperaturer er farver (violet koldt, grønt mildt, rødt varmt); bjælken nederst viser intervallet på kortet. Regn er i mm i timen, nu og de næste 2 timer; dens knap er grå og overstreget, når det ikke regner på kortet. Lagets navn, tid og forklaring står over kortene; data: Open-Meteo.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Byer og jordskælv: et enkelt lyst kort (Esri) med byernes navne skrevet stort; marker: OpenStreetMap med alle detaljer og navnene også skrevet stort. De store navne: kun Rumæniens byer. Flyt med én finger, zoom med to; det kræver internet.
+Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.	Søg efter opdateringer, eller boksen øverst i ☰, når en ny version er fundet; Download åbner den nye version i browseren, og du installerer den fra den downloadede fil.
+Towns button	Knappen Byer
+The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.	Den runde knap med husikonet: i portræt til højre for byens navn, i liggende på det øverste bånd, før dets hjørne. Den åbner listen over byer.
+Weather map	Vejrkort
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.	Nederst på hovedskærmen (rul op; i liggende på arket med boksene): byens kort med Skyer, Temperaturer og Regn, ét ad gangen; et tryk på det tændte slukker det. Regn er grå og overstreget, når det ikke regner i nærheden nu eller de næste 2 timer. Forklaringen viser lagets tid og, for temperaturer, intervallet på kortet. Kortet står stille; data: Open-Meteo.
+Button names	Knapnavne
+A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.	En rund knap, der bliver på skærmen, når der trykkes på den, viser sit navn i en lille boble i cirka 1,5 sekund.
+Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.	Åbner listen over byer; hver har sin egen hovedskærm i listens rækkefølge (den første: widgets og meddelelser). Lup: kortet (Kort / Satellit) med søgningen nederst (dit land først, så Europa, USA til sidst), Detaljer og Tilføj; et tryk på en bys navn vælger den by. Vælg: slet byer (aldrig den sidste). Omarranger: træk flyttetegnet; hver by beholder sit gemte vejr. Søgningen viser kun andre byer, når de begynder som det indtastede navn (mindst 6 bogstaver eller 60 % af det). På en tablet og i liggende er bykortene lige så brede som deres tekst og står i rækker og kolonner.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Slår automatisk placering til (udfyldt) eller fra (tom); den viser vejret, hvor du er; mens appen er åben, følger den dig som kompasset og skifter by efter 1,5 km. En landsby, du kører igennem, kommer på sin regions liste; den forsvinder efter 7 dage uden at du kommer forbi og bliver, hvis du ofte kommer forbi (3 dage på 2 uger). Kompasset viser også landsbyerne. I et andet land eller en anden amerikansk delstat downloades de små byer én gang, første gang du er der med internet.
+Left / right on the weather now	Venstre / højre på vejret nu
+The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.	Den næste eller forrige by på listen (derefter markerne); prikkerne viser, hvor du er. Med 2 eller flere byer ses deres faner under navnet (i landmandstilstand også markerne). På en anden by åbner et tryk på dens navn listen.
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tre rækker: først byerne med fuld stjerne (de har en hovedskærm, i skærmenes rækkefølge), derefter de andre favoritter. Den første by beholder altid sin stjerne. Et tryk på en tom stjerne giver byen en hovedskærm, nummer to efter den første, og viser den; fjerner du stjernen, fjernes dens skærm, og byen bliver blandt favoritterne. Et tryk på et navn vælger det; Byer › og Vælg regionen åbner listen over byer.
+6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).	6 temaer (Monokrom, Lyserød, Gul, Grøn, Blå, Violet): tryk på en prik, som har farven på temaets knapper; under dem Lyst, Mørkt eller Automatisk (telefonens sensor).
+Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).	Også en ny version af appen, hvis der er en (tjekkes hver dag i 2 uger efter en opdatering, derefter en gang hver 7. dag).
+Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.	Hver slags har sin egen kanal i telefonens indstillinger (Vejrvarsler, Regn, sne og information, Jordskælv, Landmandstilstand: marker, Appopdateringer), så du kan slå én fra og beholde de andre.
+Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.	Søger efter en ny version på GitHub, med dit samtykke. Appen tjekker også selv hver dag i 2 uger efter en opdatering, derefter en gang hver 7. dag; en ny version vises som en boks øverst i ☰, og et tryk på den starter downloadet.
+Select towns	Vælg byer
+selected	valgt
+Select all	Vælg alle
+ticked	markeret
+Reorder	Omarranger
+Done	Færdig
+Search a town on the map	Søg en by på kortet
+Select towns to delete	Vælg byer, der skal slettes
+Reorder the towns	Omarranger byerne
+Press the move sign at the right and drag up or down. The number is the screen the town will have.	Tryk på flyttetegnet til højre og træk op eller ned. Tallet er den skærm, byen får.
+The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.	Listens rækkefølge er hovedskærmenes rækkefølge: den første by er den første skærm (widgets og meddelelser følger den). Stryg til venstre eller højre over vejret nu for at gå fra den ene til den anden.
+Tap a town to tick it. The screens of the deleted towns go; the others keep their order.	Tryk på en by for at markere den. Skærmene for de slettede byer forsvinder; de andre beholder deres rækkefølge.
+The last town cannot be deleted. Leave at least one unticked.	Den sidste by kan ikke slettes. Lad mindst én være umarkeret.
+Delete, unavailable	Slet, ikke tilgængelig
+The last town cannot be deleted.	Den sidste by kan ikke slettes.
+RED CODE	RØD KODE
+ORANGE CODE	ORANGE KODE
+YELLOW CODE	GUL KODE
+Move up	Flyt op
+Move down	Flyt ned
+screen 	skærm 
+your location	din placering
+degrees	grader
+Screen 	Skærm 
+ of 	 af 
+Move: drag up or down	Flyt: træk op eller ned
+Satellite	Satellit
+Search	Søg
+Search a town	Søg en by
+Clear the search	Ryd søgningen
+No town here, or no internet	Ingen by her, eller intet internet
+Details	Detaljer
+In the list	På listen
+min 	min 
+Feels like 	Føles som 
+humidity 	luftfugtighed 
+Tomorrow	I morgen
+Added 	Tilføjet 
+. Its screen is number 	. Dens skærm er nummer 
+: swipe to it.	: stryg derhen.
+ · Weather: Open-Meteo	 · Vejr: Open-Meteo
+Clouds	Skyer
+Temperatures	Temperaturer
+loading…	indlæser…
+on the map: 	på kortet: 
+mm per hour, now and in the next 2 hours	mm i timen, nu og de næste 2 timer
+sky covered	overskyet
+Rain from 	Regn fra 
+satellite or map, weather layer	satellit eller kort, vejrlag
+Show the map's buttons	Vis kortets knapper
+Hide the map's buttons	Skjul kortets knapper
+Temperature now 	Temperatur nu 
+ degrees	 grader
+Yellow code	Gul kode
+Orange code	Orange kode
+Red code	Rød kode
+Information: 	Information: 
+Tap to open the app.	Tryk for at åbne appen.
+Weather warnings	Vejrvarsler
+New weather warnings for your towns.	Nye vejrvarsler for dine byer.
+Rain, snow and information	Regn, sne og information
+Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).	Regn eller sne, der begynder, regn eller sne i morgen, appens egen information (frost, hede, vind).
+Earthquakes around you.	Jordskælv omkring dig.
+Farmer mode: parcels	Landmandstilstand: marker
+Rain, snow, wind, drought and information for your parcels.	Regn, sne, vind, tørke og information for dine marker.
+App updates	Appopdateringer
+A new version of the app and the test notice.	En ny version af appen og testmeddelelsen.
+Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.	Meddelelser er slået til: regn eller sne, vejrvarsler og jordskælv omkring dig. Hver slags kan slås fra i telefonens indstillinger.
+has a main screen	har en hovedskærm
+no main screen	ingen hovedskærm
+The first town cannot be unticked.	Den første by kan ikke fravælges.
+shown now	vises nu
+Automatic theme	Automatisk tema
+WEATHER MAP	VEJRKORT
+Loading the map…	Indlæser kortet…
+Menu: settings	Menu: indstillinger
+Towns, opens the list	Byer, åbner listen
+Parcel: 	Mark: 
+Town: 	By: 
+Tap to refresh.	Tryk for at opdatere.
+Weather map: 	Vejrkort: 
+, on	, til
+, no rain near now	, ingen regn i nærheden nu
+Rain chance by hour. Tap for the details.	Regnchance pr. time. Tryk for detaljerne.
+Choose the town	Vælg byen
+Location on	Placering til
+Location off	Placering fra
+Tap to change.	Tryk for at ændre.
+Automatic theme on	Automatisk tema til
+Automatic theme off	Automatisk tema fra
+Battery 	Batteri 
+Values: being updated	Værdier: opdateres

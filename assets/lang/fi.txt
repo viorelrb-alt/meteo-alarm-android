@@ -1654,3 +1654,118 @@ The ＋ tab of the main screen asks first too.	Myös päänäytön ＋-välileht
 Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Virheet laskee vain todelliset, vielä korjaamattomat virheet; korjatut siirtyvät omaan osioonsa lokin loppuun, ja verkon ongelmat ovat varoituksia.
 There is 1 warning to look into.	1 varoitus tarkistettavana.
 There are %d warnings to look into.	%d varoitusta tarkistettavana.
+It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.	Kartalla ei sada nyt eikä seuraavan 2 tunnin aikana. Sade-painike kytkeytyy itsestään päälle, kun sade tulee.
+Checking for rain on the map…	Tarkistetaan sadetta kartalla…
+New version 	Uusi versio 
+Tap to download	Lataa napauttamalla
+Towns ›	Paikkakunnat ›
+Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's name, time and legend stand above the cards; data: Open-Meteo.	Lohkot-kartan ＋- ja −-painikkeiden alla lasiruutu näyttää käytössä olevan näkymän, päällä olevan säätason (renkaalla) ja ⌄-merkin. Napautus avaa sen: Satelliitti (Esri), Kartta, Pilvet, Lämpötilat ja Sade; valintasi taittaa sen taas kiinni (samoin ⌃ ja 5 sekuntia ilman kosketusta). Yksi taso kerrallaan; päällä olevan napautus sammuttaa sen. Lämpötilat ovat värejä (violetti kylmä, vihreä leuto, punainen kuuma); alareunan palkki rajaa kartalla näkyvän vaihteluvälin. Sade on mm tunnissa, nyt ja seuraavan 2 tunnin aikana; sen painike on harmaa ja yliviivattu, kun kartalla ei sada. Tason nimi, aika ja selite ovat korttien yläpuolella; tiedot: Open-Meteo.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Paikkakunnat ja maanjäristykset: yksinkertainen vaalea kartta (Esri), jossa paikkakuntien nimet on kirjoitettu isolla; lohkot: OpenStreetMap kaikkine yksityiskohtineen ja nimet myös isolla. Isot nimet: vain Romanian paikkakunnat. Siirrä yhdellä sormella, zoomaa kahdella; tarvitsee internetin.
+Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.	Tarkista päivitykset tai ☰:n yläreunan ruutu, kun uusi versio on löytynyt; Lataa avaa uuden version selaimessa, ja asennat sen ladatusta tiedostosta.
+Towns button	Paikkakunnat-painike
+The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.	Pyöreä painike, jossa on talokuvake: pystyasennossa paikkakunnan nimen oikealla puolella, vaaka-asennossa yläpalkissa ennen sen kulmaa. Se avaa paikkakuntaluettelon.
+Weather map	Sääkartta
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.	Päänäkymän lopussa (vieritä ylös; vaaka-asennossa ruutujen sivulla): paikkakunnan kartta, jossa Pilvet, Lämpötilat ja Sade, yksi kerrallaan; päällä olevan napautus sammuttaa sen. Sade on harmaa ja yliviivattu, kun lähellä ei sada nyt eikä seuraavan 2 tunnin aikana. Selite näyttää tason ajan ja lämpötiloille kartan vaihteluvälin. Kartta pysyy paikallaan; tiedot: Open-Meteo.
+Button names	Painikkeiden nimet
+A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.	Pyöreä painike, joka jää näytölle napautettaessa, näyttää nimensä pienessä kuplassa noin 1,5 sekunnin ajan.
+Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.	Avaa paikkakuntaluettelon; jokaisella on oma päänäkymänsä luettelon järjestyksessä (ensimmäinen: widgetit ja ilmoitukset). Suurennuslasi: kartta (Kartta / Satelliitti), jonka alareunassa haku (ensin oma maasi, sitten Eurooppa, Yhdysvallat viimeisenä), Tiedot ja Lisää; paikkakunnan nimen napautus valitsee sen paikkakunnan. Valitse: poista paikkakuntia (ei koskaan viimeistä). Järjestä: vedä siirtomerkistä; jokainen paikkakunta säilyttää tallennetun säänsä. Haku näyttää muita paikkakuntia vain, kun ne alkavat kuten kirjoitettu nimi (vähintään 6 kirjainta tai 60 % siitä). Tabletilla ja vaaka-asennossa paikkakuntakortit ovat tekstinsä levyisiä ja ovat riveissä ja sarakkeissa.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Kytkee automaattisen sijainnin päälle (täytetty) tai pois (tyhjä); se näyttää sään siellä, missä olet; kun sovellus on auki, se seuraa sinua kuten kompassi ja vaihtaa paikkakuntaa 1,5 km:n jälkeen. Kylä, jonka läpi kuljet, liittyy maakuntansa luetteloon; se poistuu 7 päivän jälkeen, jos et kulje siellä, ja jää, jos kuljet siellä usein (3 päivää 2 viikossa). Kompassi näyttää myös kylät. Toisessa maassa tai Yhdysvaltain osavaltiossa pienet paikkakunnat ladataan kerran, kun olet siellä ensimmäistä kertaa internetin kanssa.
+Left / right on the weather now	Vasemmalle / oikealle nykyisessä säässä
+The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.	Luettelon seuraava tai edellinen paikkakunta (sitten lohkot); pisteet näyttävät, missä olet. Kun paikkakuntia on 2 tai enemmän, niiden välilehdet näkyvät nimen alla (viljelijätilassa myös lohkot). Toisella paikkakunnalla sen nimen napautus avaa luettelon.
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Kolme riviä: ensin paikkakunnat, joilla on täysi tähti (niillä on päänäkymä, näkymien järjestyksessä), sitten muut suosikit. Ensimmäinen paikkakunta säilyttää aina tähtensä. Tyhjän tähden napautus antaa paikkakunnalle päänäkymän, toisena ensimmäisen jälkeen, ja näyttää sen; tähden poistaminen poistaa sen näkymän ja paikkakunta jää suosikkeihin. Nimen napautus valitsee sen; Paikkakunnat › ja Valitse maakunta avaavat paikkakuntaluettelon.
+6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).	6 teemaa (Yksivärinen, Vaaleanpunainen, Keltainen, Vihreä, Sininen, Violetti): napauta pistettä, joka on teeman painikkeiden värinen; niiden alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).
+Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).	Myös sovelluksen uusi versio, jos sellainen on (tarkistetaan päivittäin 2 viikon ajan päivityksen jälkeen, sitten kerran 7 päivässä).
+Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.	Jokaisella lajilla on oma kanavansa puhelimen asetuksissa (Säävaroitukset, Sade, lumi ja tiedot, Maanjäristykset, Viljelijätila: lohkot, Sovelluspäivitykset), joten voit sammuttaa yhden ja pitää muut.
+Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.	Etsii uutta versiota GitHubista suostumuksellasi. Sovellus tarkistaa myös itse päivittäin 2 viikon ajan päivityksen jälkeen, sitten kerran 7 päivässä; uusi versio näkyy ruutuna ☰:n yläreunassa, ja sen napautus aloittaa latauksen.
+Select towns	Valitse paikkakunnat
+selected	valittu
+Select all	Valitse kaikki
+ticked	merkitty
+Reorder	Järjestä
+Done	Valmis
+Search a town on the map	Etsi paikkakunta kartalta
+Select towns to delete	Valitse poistettavat paikkakunnat
+Reorder the towns	Järjestä paikkakunnat
+Press the move sign at the right and drag up or down. The number is the screen the town will have.	Paina oikealla olevaa siirtomerkkiä ja vedä ylös tai alas. Numero on näkymä, jonka paikkakunta saa.
+The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.	Luettelon järjestys on päänäkymien järjestys: ensimmäinen paikkakunta on ensimmäinen näkymä (widgetit ja ilmoitukset seuraavat sitä). Pyyhkäise vasemmalle tai oikealle nykyisen sään päällä siirtyäksesi toiseen.
+Tap a town to tick it. The screens of the deleted towns go; the others keep their order.	Merkitse paikkakunta napauttamalla. Poistettujen paikkakuntien näkymät poistuvat; muut säilyttävät järjestyksensä.
+The last town cannot be deleted. Leave at least one unticked.	Viimeistä paikkakuntaa ei voi poistaa. Jätä vähintään yksi merkitsemättä.
+Delete, unavailable	Poista, ei käytettävissä
+The last town cannot be deleted.	Viimeistä paikkakuntaa ei voi poistaa.
+RED CODE	PUNAINEN KOODI
+ORANGE CODE	ORANSSI KOODI
+YELLOW CODE	KELTAINEN KOODI
+Move up	Siirrä ylös
+Move down	Siirrä alas
+screen 	näkymä 
+your location	sijaintisi
+degrees	astetta
+Screen 	Näkymä 
+ of 	 / 
+Move: drag up or down	Siirrä: vedä ylös tai alas
+Satellite	Satelliitti
+Search	Haku
+Search a town	Etsi paikkakunta
+Clear the search	Tyhjennä haku
+No town here, or no internet	Ei paikkakuntaa tässä tai ei internetiä
+Details	Tiedot
+In the list	Luettelossa
+min 	min 
+Feels like 	Tuntuu kuin 
+humidity 	kosteus 
+Tomorrow	Huomenna
+Added 	Lisätty 
+. Its screen is number 	. Sen näkymä on numero 
+: swipe to it.	: pyyhkäise sinne.
+ · Weather: Open-Meteo	 · Sää: Open-Meteo
+Clouds	Pilvet
+Temperatures	Lämpötilat
+loading…	ladataan…
+on the map: 	kartalla: 
+mm per hour, now and in the next 2 hours	mm tunnissa, nyt ja seuraavan 2 tunnin aikana
+sky covered	pilvipeite
+Rain from 	Sade alkaen 
+satellite or map, weather layer	satelliitti tai kartta, säätaso
+Show the map's buttons	Näytä kartan painikkeet
+Hide the map's buttons	Piilota kartan painikkeet
+Temperature now 	Lämpötila nyt 
+ degrees	 astetta
+Yellow code	Keltainen koodi
+Orange code	Oranssi koodi
+Red code	Punainen koodi
+Information: 	Tieto: 
+Tap to open the app.	Avaa sovellus napauttamalla.
+Weather warnings	Säävaroitukset
+New weather warnings for your towns.	Uudet säävaroitukset paikkakunnillesi.
+Rain, snow and information	Sade, lumi ja tiedot
+Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).	Alkava sade tai lumi, huomisen sade tai lumi, sovelluksen omat tiedot (halla, helle, tuuli).
+Earthquakes around you.	Maanjäristykset lähelläsi.
+Farmer mode: parcels	Viljelijätila: lohkot
+Rain, snow, wind, drought and information for your parcels.	Sade, lumi, tuuli, kuivuus ja tiedot lohkoillesi.
+App updates	Sovelluspäivitykset
+A new version of the app and the test notice.	Sovelluksen uusi versio ja testi-ilmoitus.
+Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.	Ilmoitukset ovat päällä: sade tai lumi, säävaroitukset ja maanjäristykset lähelläsi. Jokaisen lajin voi sammuttaa puhelimen asetuksista.
+has a main screen	on päänäkymä
+no main screen	ei päänäkymää
+The first town cannot be unticked.	Ensimmäisen paikkakunnan merkintää ei voi poistaa.
+shown now	näytetään nyt
+Automatic theme	Automaattinen teema
+WEATHER MAP	SÄÄKARTTA
+Loading the map…	Ladataan karttaa…
+Menu: settings	Valikko: asetukset
+Towns, opens the list	Paikkakunnat, avaa luettelon
+Parcel: 	Lohko: 
+Town: 	Paikkakunta: 
+Tap to refresh.	Päivitä napauttamalla.
+Weather map: 	Sääkartta: 
+, on	, päällä
+, no rain near now	, ei sadetta lähellä nyt
+Rain chance by hour. Tap for the details.	Sateen todennäköisyys tunneittain. Napauta saadaksesi tiedot.
+Choose the town	Valitse paikkakunta
+Location on	Sijainti päällä
+Location off	Sijainti pois
+Tap to change.	Muuta napauttamalla.
+Automatic theme on	Automaattinen teema päällä
+Automatic theme off	Automaattinen teema pois
+Battery 	Akku 
+Values: being updated	Arvot: päivittyvät

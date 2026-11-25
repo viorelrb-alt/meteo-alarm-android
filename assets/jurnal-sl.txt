@@ -1,11 +1,25 @@
 Trenutna različica: v.2.170 · 25.11.2026
 GLAVNI ZASLON
+- Gumb Kraji: okrogel gumb z ikono hišic (pokončno desno od imena, ležeče na zgornjem traku, pred njegovim kotom) odpre seznam krajev.
+- Imena gumbov: okrogel gumb, ki po dotiku ostane na zaslonu, pokaže svoje ime v majhnem oblačku za približno 1,5 sekunde.
 - Podatki o potresu: dotik polja Potres jih odpre na glavnem zaslonu: zemljevid, pod njim cone zaznavanja in zgodovina vrednosti; barvni kvadrat ali zemljevid jih odpre na celem zaslonu, kot potres iz ☰ › Potresi. V Romuniji, Franciji, Italiji, na Nizozemskem, v Švici in Grčiji uradne vrednosti najprej prihajajo od državnega inštituta (INFP, BCSF, INGV, KNMI, SED, NOA), nato od EMSC. V Romuniji tudi potresi okoli države dobijo vrednost INFP (z infp.ro).
+- Več krajev: vsak kraj s seznama ima svoj glavni zaslon; podrsanje levo ali desno po trenutnem vremenu preide na naslednjega, v vrstnem redu seznama.
+- Vremenski zemljevid: na koncu glavnega zaslona zemljevid kraja z gumbi Oblaki, Temperature in Dež (eden naenkrat) in legendo; Dež se vklopi le, ko v bližini dežuje zdaj ali v naslednjih 2 urah.
+KRAJI
+- Iskanje na zemljevidu: lupa odpre zemljevid z iskanjem spodaj; dotik mesta ali imena kraja pokaže njegovo temperaturo, Podrobnosti (naslednje dni) in Dodaj. Zemljevid je preprost in svetel, z velikimi imeni krajev (tudi na zemljevidu parcel). Drugi kraji se pokažejo le, če se začnejo kot vpisano ime (vsaj 6 črk ali 60 % imena).
+- Kartice krajev: na tablici in ležeče so široke kot njihovo besedilo in stojijo v vrsticah in stolpcih; pokončno na telefonu predolgo ime dobi manjše črke; ležeče iskanje obdrži pokončno velikost.
+- Seznam krajev: gumb Kraji odpre seznam v barvi teme; Izberi izbriše enega ali več (zadnji ostane), znak ⌃⌄, držan in povlečen gor ali dol, pa spremeni vrstni red; vsak kraj obdrži shranjeno vreme.
 NASTAVITVE
+- Dnevnik: velikost, vrstice in napake na kartici; Poglej dnevnik odpre vrstice (Vse, Napake, Danes, Včeraj; dolg dotik kopira vrstico); Deli in Shrani na dnu zaslona. Odpravljene napake so na koncu dnevnika in se ne štejejo; težave omrežja so opozorila.
+- Izvoz / Uvoz: stikala za vsebino datoteke (tudi posevki in podatki o gojenju, obvestila parcel, koš parcel, obvestila, zemljevid, pripomočki, zgodovina potresov, dnevnik); pri Izvozu in Uvozu se kraji in parcele označijo enega za drugim; gumb Aa spremeni velikost besedila.
 - Jezik prikaza: v ☰ angleščina in jezik države; Drugi jeziki: drugi jeziki države, veliki jeziki EU, romunščina in jezik telefona (v ZDA samo angleščina in španščina).
+- Priljubljeni v ☰: tri vrstice, najprej kraji s polno zvezdico (imajo glavni zaslon), nato drugi; prvi vedno obdrži zvezdico; dotik prazne zvezdice da kraju glavni zaslon, drugega; odstranitev zvezdice odstrani njegov zaslon.
+- Stran Potresi: takoj se odpre z zadnjimi seznami, shranjenimi v telefonu, in jih posodobi v ozadju.
+- Teme: Enobarvna (bela, črna in siva; grafit v temni), Rožnata, Rumena, Zelena, Modra in Vijolična, vsaka svetla in temna, z gumbi v kontrastni barvi; pike v ☰ › Tema imajo barvo gumbov.
 OBVESTILA
+- Lastni kanali: vremenska opozorila, dež in sneg, potresi, parcele in posodobitve imajo vsak svoj kanal v nastavitvah telefona; enega lahko izklopite in druge obdržite.
+- Nova različica: z vklopljenimi obvestili aplikacija preverja GitHub vsak dan 2 tedna po posodobitvi, nato enkrat v 7 dneh, in najavi novo različico v obvestilih Androida; dotik odpre Preveri posodobitve.
 - Potresi: preverjeni vsakih 10 minut, tudi ponoči z ugasnjenim zaslonom; popravljena magnituda posodobi obvestilo, dotik nanj pa odpre zemljevid.
-- Nova različica: z vklopljenimi obvestili aplikacija enkrat na teden preveri GitHub in novo različico sporoči v obvestilih Android; dotik odpre Preveri posodobitve.
 PARCELE
 - Koordinate parcele: na strani za urejanje se vpišejo koordinate GPS vsake točke, pod njimi pa satelitski pogled prikaže parcelo.
 - Oblački v Statistiki: dotik ure v oknu škropljenja, dneva v grafih ali vrstice tal odpre oblaček z razlago; okno škropljenja se premika samo.
@@ -13,10 +27,10 @@ PARCELE
 - Statistika na glavnem zaslonu: odpre se pod operativnim statusom (ležeče na levi); ‹ jo zapre, zavihek druge parcele pa jo ohrani.
 - Statistika: za vsako parcelo Opravilo dneva in 4 zavihki: Operativno (okno škropljenja uro za uro, sušenje kapljic (ΔT), veter, moker list), Voda in tla (dež, izhlapevanje, tla na 6 in 18 cm), Sezona (stopinjski dnevi v primerjavi z lani, ocenjena faza) in Tveganja 72 h (glivične bolezni, talna pozeba, vročina, veter in toča); shranjevanje v PDF ali CSV.
 - Uredi parcelo: svinčnik odpre stran parcele: ime, kultura (seznam po sezoni datuma setve ali Druga kultura…), datum setve, površina; oglišča se premikajo na zemljevidu.
+- Vremenski sloji: na zemljevidu parcel se škatla pod ＋ in − odpre s Satelitom, Zemljevidom, Oblaki, Temperaturami (barve) in Dežjem (mm na uro), nato se zloži na vašo izbiro; en sloj naenkrat, z imenom, časom in legendo nad karticami; Dež se vklopi le, ko dežuje zdaj ali v naslednjih 2 urah (namesto radarja).
 - Zgodovina in napoved: povlecite kazalnik na pretekli dan; njegove vrednosti se prikažejo v okvirju pod grafom, po 10 s pa se vrne na danes.
-- Stran Potresi: takoj se odpre z zadnjimi seznami, shranjenimi v telefonu, in jih posodobi v ozadju.
-- Izvoz / Uvoz: stikala za vsebino datoteke (tudi posevki in podatki o gojenju, obvestila parcel, koš parcel, obvestila, zemljevid, pripomočki, zgodovina potresov, dnevnik); pri Izvozu in Uvozu se kraji in parcele označijo enega za drugim; gumb Aa spremeni velikost besedila.
-- Dnevnik: velikost, vrstice in napake na kartici; Poglej dnevnik odpre vrstice (Vse, Napake, Danes, Včeraj; dolg dotik kopira vrstico); Deli in Shrani na dnu zaslona. Odpravljene napake so na koncu dnevnika in se ne štejejo; težave omrežja so opozorila.
+POSODOBITVE
+- Škatla Nova različica: kratka škatla na vrhu ☰, ko obstaja nova različica; dotik nanjo začne prenos.
 - Izboljšave oblikovanja in popravki prijavljenih napak.
 
 Različica 1.4 (v.1.400 – v.1.520)

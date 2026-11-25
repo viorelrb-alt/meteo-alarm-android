@@ -1,6 +1,11 @@
 Leagan reatha: v.2.170 · 25.11.2026
+BAILTE
+- Cártaí na mbailte: ar thaibléad agus i dtírdhreach tá siad chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin; i bportráid ar fhón faigheann ainm rófhada litreacha níos lú; i dtírdhreach coinníonn an cuardach a mhéid portráide.
+- Cuardach ar an léarscáil: osclaíonn an ghloine formhéadúcháin an léarscáil leis an gcuardach thíos; taispeánann tapáil ar áit nó ar ainm baile a theocht, Sonraí (na laethanta romhainn) agus Cuir leis. Tá an léarscáil simplí agus geal, le hainmneacha na mbailte scríofa go mór (ar léarscáil na bpáirceanna freisin). Ní thaispeántar bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de).
+- Liosta na mbailte: osclaíonn cnaipe na mBailte an liosta i ndath an téama; scriosann Roghnaigh ceann amháin nó níos mó (fanann an ceann deireanach), agus athraíonn an comhartha ⌃⌄, coinnithe agus tarraingthe suas nó síos, an t-ord; coinníonn gach baile a aimsir shábháilte.
 CEAPACHA
 - Bolgáin sna Staitisticí: osclaíonn tadhall ar uair san fhuinneog spraeála, ar lá sna cairteacha nó ar shraith ithreach bolgán lena mhíniú; bogann an fhuinneog spraeála léi féin.
+- Cisil aimsire: ar léarscáil na bpáirceanna osclaíonn an bosca faoi ＋ agus − le Satailít, Léarscáil, Scamaill, Teochtaí (dathanna) agus Báisteach (mm san uair), ansin filleann sé ar do rogha; ciseal amháin ag an am, lena ainm, am agus eochair os cionn na gcártaí; ní chasann Báisteach air ach nuair a bhíonn sé ag cur báistí anois nó sna 2 uair an chloig atá romhainn (in ionad an radair).
 - Comhordanáidí an cheapacha: ar an leathanach eagarthóireachta is féidir comhordanáidí GPS gach pointe a chlóscríobh, agus fúthu taispeánann an radharc satailíte an ceapach.
 - Cuir an pháirc in eagar: osclaíonn an peann luaidhe leathanach na páirce: ainm, barr (liosta de réir shéasúr an dáta curtha nó Barr eile…), dáta curtha, achar; bogtar na cúinní ar an léarscáil.
 - Stádas oibríochtúil: ag an mbarr, an barr agus dáta a churtha; le barr, cuireann an breithiúnas triomú braonta (ΔT) agus a ghalar san áireamh freisin.
@@ -8,15 +13,24 @@ CEAPACHA
 - Staitisticí sa phríomhscáileán: osclaíonn siad faoin stádas oibríochtúil (ina luí ar chlé); dúnann ‹ iad agus coinníonn cluaisín ceapaigh eile iad.
 - Staitisticí: do gach páirc, Gníomh an lae agus 4 chluaisín: Oibríochtúil (fuinneog na spraeála uair ar uair, triomú braonta (ΔT), gaoth, duilleog fhliuch), Uisce & Ithir (báisteach, galú, ithir ag 6 agus 18 cm), Séasúr (céimeanna-lae i gcomparáid le hanuraidh, céim mheasta) agus Rioscaí 72 h (galair fhungacha, sioc talún, teas, gaoth agus clocha sneachta); sábháil mar PDF nó CSV.
 FÓGRAÍ
+- A gcainéil féin: tá a chainéal féin ag rabhaidh aimsire, báisteach agus sneachta, creathanna talún, páirceanna agus nuashonruithe i socruithe an fhóin; is féidir ceann amháin a mhúchadh agus na cinn eile a choinneáil.
 - Creathanna talún: seiceáilte gach 10 nóiméad, istoíche freisin leis an scáileán múchta; nuashonraíonn méid athbhreithnithe an fógra, agus osclaíonn tapáil air an léarscáil.
-- Leagan nua: le fógraí ar siúl, seiceálann an aip GitHub uair sa tseachtain agus fógraíonn sí leagan nua i bhfógraí Android; osclaíonn tapáil Seiceáil le haghaidh nuashonruithe.
+- Leagan nua: le fógraí air, seiceálann an aip GitHub gach lá ar feadh 2 sheachtain tar éis nuashonraithe, ansin uair sa 7 lá, agus fógraíonn sí leagan nua i bhfógraí Android; osclaíonn tapáil Seiceáil le haghaidh nuashonruithe.
+NUASHONRUITHE
+- Bosca Leagan nua: bosca gearr ag barr ☰ nuair atá leagan nua ann; tosaíonn tapáil air an íoslódáil.
 PRÍOMHSCÁILEÁN
+- Ainmneacha cnaipí: taispeánann cnaipe cruinn a fhanann ar an scáileán nuair a thapáiltear é a ainm i mbolgán beag ar feadh thart ar 1.5 soicind.
+- Cnaipe na mBailte: osclaíonn an cnaipe cruinn le deilbhín na dtithe (i bportráid ar dheis an ainm, i dtírdhreach ar an mbanda uachtarach, roimh a chúinne) liosta na mbailte.
 - Eolas ar chrith talún: brú ar an mbosca Crith talún a osclaíonn é ar an bpríomhscáileán: an léarscáil, faoina bun na criosanna mothaithe agus stair an luacha; osclaíonn an chearnóg dhaite nó an léarscáil é ar an scáileán iomlán, mar chrith ó ☰ › Creathanna talún. Sa Rómáin, sa Fhrainc, san Iodáil, san Ísiltír, san Eilvéis agus sa Ghréig tagann na luachanna oifigiúla ar dtús ó institiúid na tíre (INFP, BCSF, INGV, KNMI, SED, NOA), ansin ó EMSC. Sa Rómáin, faigheann na creathanna talún timpeall na tíre luach INFP freisin (ó infp.ro).
+- Léarscáil aimsire: ag deireadh an phríomhscáileáin, léarscáil an bhaile leis na cnaipí Scamaill, Teochtaí agus Báisteach (ceann amháin ag an am) agus an eochair; ní chasann Báisteach air ach nuair a bhíonn sé ag cur báistí in aice láimhe anois nó sna 2 uair an chloig atá romhainn.
+- Níos mó bailte: tá a phríomhscáileán féin ag gach baile sa liosta; téann svaidhpeáil ar chlé nó ar dheis ar an aimsir anois go dtí an chéad cheann eile, in ord an liosta.
 SOCRUITHE
-- Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
-- Leathanach Crith talún: osclaíonn sé láithreach leis na liostaí is déanaí a sábháladh ar an bhfón agus nuashonraíonn sé iad sa chúlra.
+- Ceanáin i ☰: trí shraith, ar dtús na bailte le réalta lán (tá príomhscáileán acu), ansin na cinn eile; coinníonn an chéad cheann a réalta i gcónaí; tugann tapáil ar réalta fholamh príomhscáileán don bhaile, an dara ceann; baineann réalta a bhaint a scáileán.
 - Easpórtáil / Iompórtáil: lasca don ábhar sa chomhad (barra agus sonraí saothraithe freisin, fógraí ceapach, bosca bruscair na gceapach, fógraí, léarscáil, giuirléidí, stair na gcrith talún, loga); in Easpórtáil agus Iompórtáil ticeáiltear bailte agus ceapacha ceann ar cheann; athraíonn an cnaipe Aa méid an téacs.
+- Leathanach Crith talún: osclaíonn sé láithreach leis na liostaí is déanaí a sábháladh ar an bhfón agus nuashonraíonn sé iad sa chúlra.
 - Loga: méid, línte agus earráidí ar chárta; osclaíonn Féach ar an loga na línte (Gach, Earráidí, Inniu, Inné; cóipeálann brú fada líne); Comhroinn agus Sábháil ag bun an scáileáin. Tá earráidí socraithe ag deireadh an loga agus ní chomhairtear iad; is rabhaidh iad fadhbanna líonra.
+- Téamaí: Aondathach (bán, dubh agus liath; graifít sa dorchadas), Bándearg, Buí, Glas, Gorm agus Corcairghorm, gach ceann geal agus dorcha, le cnaipí i ndath codarsnachta; tá dath na gcnaipí ar na poncanna i ☰ › Téama.
+- Teanga taispeána: i ☰ an Béarla agus teanga na tíre; Teangacha eile: teangacha eile na tíre, teangacha móra an AE, an Rómáinis agus teanga an fhóin (sna SA Béarla agus Spáinnis amháin).
 - Feabhsuithe dearaidh agus ceartúcháin ar fhabhtanna a tuairiscíodh.
 
 Leagan 1.4 (v.1.400 – v.1.520)

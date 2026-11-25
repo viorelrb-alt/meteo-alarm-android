@@ -1,22 +1,36 @@
 Nykyinen versio: v.2.170 · 25.11.2026
 ASETUKSET
+- Loki: koko, rivit ja virheet kortilla; Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna näytön alareunassa. Korjatut virheet ovat lokin lopussa eikä niitä lasketa; verkon ongelmat ovat varoituksia.
+- Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
 - Näyttökieli: ☰:ssa englanti ja maan kieli; Muut kielet: maan muut kielet, suuret EU-kielet, romania ja puhelimen kieli (Yhdysvalloissa vain englanti ja espanja).
+- Suosikit ☰:ssa: kolme riviä, ensin täyden tähden paikkakunnat (niillä on päänäkymä), sitten muut; ensimmäinen säilyttää aina tähtensä; tyhjän tähden napautus antaa paikkakunnalle päänäkymän, toisen; tähden poisto poistaa sen näkymän.
+- Teemat: Yksivärinen (valkoinen, musta ja harmaa; tummana grafiitti), Vaaleanpunainen, Keltainen, Vihreä, Sininen ja Violetti, kukin vaaleana ja tummana, painikkeet kontrastivärissä; ☰ › Teema -kohdan pisteet ovat painikkeiden värisiä.
+- Vienti / Tuonti: kytkimet tiedoston sisällölle (myös viljelykasvit ja viljelytiedot, lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); Viennissä ja Tuonnissa paikkakunnat ja lohkot valitaan yksitellen; Aa-painike muuttaa tekstin kokoa.
 ILMOITUKSET
 - Maanjäristykset: tarkistetaan 10 minuutin välein, myös yöllä näyttö pois päältä; tarkistettu magnitudi päivittää ilmoituksen, ja napautus siihen avaa kartan.
-- Uusi versio: ilmoitusten ollessa päällä sovellus tarkistaa GitHubin kerran viikossa ja ilmoittaa uudesta versiosta Androidin ilmoituksissa; napautus avaa Tarkista päivitykset.
+- Omat kanavat: säävaroituksilla, sateella ja lumella, maanjäristyksillä, lohkoilla ja päivityksillä on kullakin oma kanavansa puhelimen asetuksissa; voit sammuttaa yhden ja pitää muut.
+- Uusi versio: kun ilmoitukset ovat päällä, sovellus tarkistaa GitHubin päivittäin 2 viikon ajan päivityksen jälkeen, sitten kerran 7 päivässä, ja ilmoittaa uudesta versiosta Androidin ilmoituksissa; napautus avaa Tarkista päivitykset.
 PÄÄNÄYTTÖ
 - Maanjäristyksen tiedot: Maanjäristys-ruudun napautus avaa ne päänäytölle: kartta, sen alla tuntuvuusvyöhykkeet ja arvon historia; värillinen neliö tai kartta avaa ne koko näytölle, kuten järistyksen kohdasta ☰ › Maanjäristykset. Romaniassa, Ranskassa, Italiassa, Alankomaissa, Sveitsissä ja Kreikassa viralliset arvot tulevat ensin maan laitokselta (INFP, BCSF, INGV, KNMI, SED, NOA), sitten EMSC:ltä. Romaniassa myös maan ympäristön maanjäristykset saavat INFP:n arvon (infp.ro:sta).
+- Paikkakunnat-painike: pyöreä talokuvakkeella varustettu painike (pystyssä nimen oikealla puolella, vaakana yläpalkissa ennen sen kulmaa) avaa paikkakuntaluettelon.
+- Painikkeiden nimet: pyöreä painike, joka jää näytölle napautettaessa, näyttää nimensä pienessä kuplassa noin 1,5 sekunnin ajan.
+- Sääkartta: päänäkymän lopussa paikkakunnan kartta painikkeineen Pilvet, Lämpötilat ja Sade (yksi kerrallaan) ja selitteineen; Sade kytkeytyy päälle vain, kun lähellä sataa nyt tai seuraavan 2 tunnin aikana.
+- Useampi paikkakunta: jokaisella luettelon paikkakunnalla on oma päänäkymänsä; pyyhkäisy vasemmalle tai oikealle nykyisen sään päällä siirtyy seuraavaan luettelon järjestyksessä.
+PAIKKAKUNNAT
+- Haku kartalta: suurennuslasi avaa kartan, jonka alareunassa on haku; paikan tai paikkakunnan nimen napautus näyttää sen lämpötilan, Tiedot (tulevat päivät) ja Lisää. Kartta on yksinkertainen ja vaalea, paikkakuntien nimet isolla (myös lohkojen kartalla). Muita paikkakuntia näkyy vain, kun ne alkavat kuten kirjoitettu nimi (vähintään 6 kirjainta tai 60 % siitä).
+- Paikkakuntakortit: tabletilla ja vaaka-asennossa ne ovat tekstinsä levyisiä ja ovat riveissä ja sarakkeissa; pystyasennossa puhelimessa liian pitkä nimi saa pienemmät kirjaimet; vaaka-asennossa haku pitää pystykoon.
+- Paikkakuntaluettelo: Paikkakunnat-painike avaa luettelon teeman värissä; Valitse poistaa yhden tai useamman (viimeinen jää), ja ⌃⌄-merkkiä painettuna pitäen ja ylös tai alas vetäen järjestys muuttuu; jokainen paikkakunta säilyttää tallennetun säänsä.
+PÄIVITYKSET
+- Uusi versio -ruutu: lyhyt ruutu ☰:n yläreunassa, kun uusi versio on olemassa; napautus aloittaa latauksen.
 PELTOLOHKOT
 - Historia ja ennuste: vedä osoitin menneelle päivälle; sen arvot näkyvät ruudussa kaavion alla ja 10 s jälkeen se palaa tähän päivään.
 - Kuplat tilastoissa: ruiskutusikkunan tunnin, kaavioiden päivän tai maarivin napautus avaa kuplan selityksineen; ruiskutusikkuna liikkuu itsestään.
 - Lohkon koordinaatit: muokkaussivulla kunkin pisteen GPS-koordinaatit voi kirjoittaa, ja niiden alla satelliittinäkymä näyttää lohkon.
 - Muokkaa lohkoa: kynä avaa lohkon sivun: nimi, kasvi (lista kylvöpäivän kauden mukaan tai Muu kasvi…), kylvöpäivä, pinta-ala; kulmia siirretään kartalla.
+- Säätasot: lohkojen kartalla ＋- ja −-painikkeiden alla oleva ruutu avautuu vaihtoehdoilla Satelliitti, Kartta, Pilvet, Lämpötilat (värit) ja Sade (mm tunnissa) ja taittuu sitten valintaasi; yksi taso kerrallaan, nimi, aika ja selite korttien yläpuolella; Sade kytkeytyy päälle vain, kun sataa nyt tai seuraavan 2 tunnin aikana (tutkan sijaan).
 - Tilastot päänäytöllä: ne avautuvat toimintatilan alle (vaakatasossa vasemmalle); ‹ sulkee ne ja toisen lohkon välilehti pitää ne auki.
 - Tilastot: jokaiselle lohkolle Päivän toimi ja 4 välilehteä: Toiminta (ruiskutusikkuna tunti tunnilta, pisaroiden kuivuminen (ΔT), tuuli, märkä lehti), Vesi & maa (sade, haihdunta, maa 6 ja 18 cm:ssä), Kausi (lämpösumma verrattuna viime vuoteen, arvioitu vaihe) ja Riskit 72 h (sienitaudit, maanpintahalla, helle, tuuli ja rakeet); tallennus PDF- tai CSV-muodossa.
 - Toimintatila: ylhäällä viljelykasvi ja kylvöpäivä; viljelykasvin kanssa arvio huomioi myös pisaroiden kuivumisen (ΔT) ja sen taudin.
-- Maanjäristykset-sivu: avautuu heti puhelimeen viimeksi tallennetuilla luetteloilla ja päivittää ne taustalla.
-- Vienti / Tuonti: kytkimet tiedoston sisällölle (myös viljelykasvit ja viljelytiedot, lohkojen ilmoitukset, lohkojen roskakori, ilmoitukset, kartta, widgetit, maanjäristyshistoria, loki); Viennissä ja Tuonnissa paikkakunnat ja lohkot valitaan yksitellen; Aa-painike muuttaa tekstin kokoa.
-- Loki: koko, rivit ja virheet kortilla; Näytä loki avaa rivit (Kaikki, Virheet, Tänään, Eilen; pitkä painallus kopioi rivin); Jaa ja Tallenna näytön alareunassa. Korjatut virheet ovat lokin lopussa eikä niitä lasketa; verkon ongelmat ovat varoituksia.
 - Ulkoasun parannuksia ja ilmoitettujen virheiden korjauksia.
 
 Versio 1.4 (v.1.400 – v.1.520)

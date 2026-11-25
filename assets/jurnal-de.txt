@@ -1,11 +1,27 @@
 Aktuelle Version: v.2.170 · 25.11.2026
+AKTUALISIERUNGEN
+- Feld Neue Version: oben im ☰ ein kurzes Feld, wenn es eine neue Version gibt; ein Tippen darauf startet den Download.
 BENACHRICHTIGUNGEN
+- Eigene Kanäle: Wetterwarnungen, Regen und Schnee, Erdbeben, Parzellen und Updates haben jeweils einen eigenen Kanal in den Einstellungen des Telefons; du kannst einen ausschalten und die anderen behalten.
 - Erdbeben: alle 10 Minuten geprüft, auch nachts bei ausgeschaltetem Bildschirm; eine revidierte Magnitude aktualisiert die Benachrichtigung, ein Tippen darauf öffnet die Karte.
-- Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App einmal pro Woche GitHub und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.
+- Neue Version: Bei eingeschalteten Benachrichtigungen prüft die App GitHub 2 Wochen nach einem Update täglich, danach alle 7 Tage, und meldet eine neue Version in den Android-Benachrichtigungen; ein Tippen öffnet Nach Updates suchen.
 EINSTELLUNGEN
 - Anzeigesprache: im ☰ Englisch und die Landessprache; Weitere Sprachen: die anderen Landessprachen, die großen EU-Sprachen, Rumänisch und die Sprache des Telefons (in den USA nur Englisch und Spanisch).
+- Designs: Monochrom (Weiß, Schwarz und Grau; dunkel Graphit), Rosa, Gelb, Grün, Blau und Violett, jeweils hell und dunkel, mit Tasten in einer Kontrastfarbe; die Punkte in ☰ › Design haben die Farbe der Tasten.
+- Erdbeben-Seite: öffnet sich sofort mit den zuletzt auf dem Telefon gespeicherten Listen und aktualisiert sie im Hintergrund.
+- Export / Import: Schalter für den Inhalt der Datei (auch Kulturen und Anbaudaten, Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); bei Export und Import werden Orte und Parzellen einzeln angekreuzt; die Taste Aa ändert die Textgröße.
+- Favoriten im ☰: drei Reihen, zuerst die Orte mit vollem Stern (sie haben einen Hauptbildschirm), dann die anderen; der erste behält immer seinen Stern; ein Tippen auf einen leeren Stern gibt dem Ort einen Hauptbildschirm, den zweiten; das Entfernen des Sterns entfernt seinen Bildschirm.
+- Protokoll: Größe, Zeilen und Fehler auf einer Karte; Protokoll ansehen öffnet die Zeilen (Alle, Fehler, Heute, Gestern; langes Tippen kopiert eine Zeile); Teilen und Speichern unten am Bildschirm. Behobene Fehler stehen am Ende des Protokolls und werden nicht gezählt; Netzwerkprobleme sind Warnungen.
 HAUPTBILDSCHIRM
 - Erdbebeninformationen: ein Tippen auf das Feld Erdbeben öffnet sie im Hauptbildschirm: die Karte, darunter die Zonen der Spürbarkeit und der Verlauf des Werts; das farbige Quadrat oder die Karte öffnet sie im ganzen Bildschirm, wie ein Beben aus ☰ › Erdbeben. In Rumänien, Frankreich, Italien, den Niederlanden, der Schweiz und Griechenland kommen die offiziellen Werte zuerst vom Institut des Landes (INFP, BCSF, INGV, KNMI, SED, NOA), dann von EMSC. In Rumänien erhalten auch die Beben rund um das Land den INFP-Wert (von infp.ro).
+- Mehrere Orte: Jeder Ort der Liste hat seinen eigenen Hauptbildschirm; Wischen nach links oder rechts über dem Wetter jetzt geht zum nächsten, in der Reihenfolge der Liste.
+- Namen der Tasten: Eine runde Taste, die nach dem Antippen auf dem Bildschirm bleibt, zeigt ihren Namen etwa 1,5 Sekunden in einer kleinen Blase.
+- Taste Orte: Die runde Taste mit dem Häuser-Symbol (hochkant rechts vom Namen, quer auf dem oberen Band, vor seiner Ecke) öffnet die Liste der Orte.
+- Wetterkarte: am Ende des Hauptbildschirms die Karte des Orts mit den Tasten Wolken, Temperaturen und Regen (eine auf einmal) und der Legende; Regen schaltet sich nur ein, wenn es in der Nähe jetzt oder in den nächsten 2 Stunden regnet.
+ORTE
+- Liste der Orte: Die Taste Orte öffnet die Liste in der Farbe des Designs; Auswählen löscht einen oder mehrere (der letzte bleibt), und das Zeichen ⌃⌄, gehalten und nach oben oder unten gezogen, ändert die Reihenfolge; jeder Ort behält sein gespeichertes Wetter.
+- Ortskarten: Auf dem Tablet und quer sind sie so breit wie ihr Text und stehen in Reihen und Spalten; hochkant auf dem Telefon bekommt ein zu langer Name kleinere Buchstaben; quer behält die Suche ihre Größe von hochkant.
+- Suche auf der Karte: Die Lupe öffnet die Karte mit der Suche unten; ein Tippen auf einen Punkt oder auf den Namen eines Orts zeigt seine Temperatur, Details (die nächsten Tage) und Hinzufügen. Die Karte ist schlicht und hell, mit groß geschriebenen Ortsnamen (auch auf der Karte der Parzellen). Andere Orte erscheinen nur, wenn sie wie der eingegebene Name beginnen (mindestens 6 Buchstaben oder 60 % davon).
 PARZELLEN
 - Blasen in der Statistik: Antippen einer Stunde im Spritzfenster, eines Tages in den Diagrammen oder einer Bodenzeile öffnet eine Blase mit der Erklärung; das Spritzfenster bewegt sich von selbst.
 - Koordinaten der Parzelle: Auf der Bearbeitungsseite lassen sich die GPS-Koordinaten jedes Punkts eintippen, darunter zeigt die Satellitenansicht die Parzelle.
@@ -14,9 +30,7 @@ PARZELLEN
 - Statistik im Hauptbildschirm: Sie öffnet sich unter dem Betriebsstatus (quer links); ‹ schließt sie, der Tab einer anderen Parzelle behält sie.
 - Statistik: für jede Parzelle die Aktion des Tages und 4 Reiter: Betrieb (Spritzfenster Stunde für Stunde, Tropfentrocknung (ΔT), Wind, Blattnässe), Wasser & Boden (Regen, Verdunstung, Boden in 6 und 18 cm), Saison (Gradtage gegenüber dem Vorjahr, geschätztes Stadium) und Risiken 72 h (Pilzkrankheiten, Bodenfrost, Hitze, Wind und Hagel); speichern als PDF oder CSV.
 - Verlauf und Prognose: Ziehe den Anzeiger auf einen vergangenen Tag; seine Werte erscheinen in einem Feld unter dem Diagramm, nach 10 s kehrt er zu heute zurück.
-- Erdbeben-Seite: öffnet sich sofort mit den zuletzt auf dem Telefon gespeicherten Listen und aktualisiert sie im Hintergrund.
-- Export / Import: Schalter für den Inhalt der Datei (auch Kulturen und Anbaudaten, Parzellen-Benachrichtigungen, Parzellen-Papierkorb, Benachrichtigungen, Karte, Widgets, Erdbebenverlauf, Protokoll); bei Export und Import werden Orte und Parzellen einzeln angekreuzt; die Taste Aa ändert die Textgröße.
-- Protokoll: Größe, Zeilen und Fehler auf einer Karte; Protokoll ansehen öffnet die Zeilen (Alle, Fehler, Heute, Gestern; langes Tippen kopiert eine Zeile); Teilen und Speichern unten am Bildschirm. Behobene Fehler stehen am Ende des Protokolls und werden nicht gezählt; Netzwerkprobleme sind Warnungen.
+- Wetterebenen: Auf der Karte der Parzellen öffnet sich das Feld unter ＋ und − mit Satellit, Karte, Wolken, Temperaturen (Farben) und Regen (mm pro Stunde) und klappt dann auf die Wahl zusammen; eine Ebene auf einmal, mit Name, Uhrzeit und Legende über den Karten; Regen schaltet sich nur ein, wenn es jetzt oder in den nächsten 2 Stunden regnet (statt des Radars).
 - Design-Verbesserungen und Behebung gemeldeter Fehler.
 
 Version 1.4 (v.1.400 – v.1.520)

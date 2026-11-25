@@ -1,11 +1,27 @@
 Současná verze: v.2.170 · 25.11.2026
+AKTUALIZACE
+- Pole Nová verze: krátké pole nahoře v ☰, když existuje nová verze; klepnutí na něj spustí stahování.
 HLAVNÍ OBRAZOVKA
 - Informace o zemětřesení: klepnutí na pole Zemětřesení je otevře na hlavní obrazovce: mapa, pod ní zóny pocitu a historie hodnoty; barevný čtverec nebo mapa je otevře na celé obrazovce, jako zemětřesení z ☰ › Zemětřesení. V Rumunsku, Francii, Itálii, Nizozemsku, Švýcarsku a Řecku pocházejí oficiální hodnoty nejprve z národního ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), pak z EMSC. V Rumunsku dostávají hodnotu INFP (z infp.ro) i zemětřesení v okolí země.
+- Mapa počasí: na konci hlavní obrazovky mapa obce s tlačítky Oblačnost, Teploty a Déšť (jedno najednou) a legendou; Déšť se zapne jen tehdy, když poblíž prší teď nebo v příštích 2 hodinách.
+- Názvy tlačítek: kulaté tlačítko, které po klepnutí zůstane na obrazovce, ukáže svůj název v malé bublině asi na 1,5 sekundy.
+- Tlačítko Obce: kulaté tlačítko s ikonou domků (na výšku vpravo od názvu, na šířku na horním pásu, před jeho rohem) otevře seznam obcí.
+- Více obcí: každá obec ze seznamu má svou hlavní obrazovku; přejetí doleva nebo doprava po aktuálním počasí přejde na další, v pořadí seznamu.
 NASTAVENÍ
+- Export / Import: přepínače pro obsah souboru (také plodiny a údaje o pěstování, oznámení pozemků, koš pozemků, oznámení, mapa, widgety, historie zemětřesení, deník); při Exportu a Importu se obce a pozemky zaškrtávají jednotlivě; tlačítko Aa mění velikost textu.
 - Jazyk zobrazení: v ☰ angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu (v USA jen angličtina a španělština).
+- Motivy: Jednobarevný (bílá, černá a šedá; v tmavém grafit), Růžový, Žlutý, Zelený, Modrý a Fialový, každý světlý i tmavý, s tlačítky v kontrastní barvě; tečky v ☰ › Motiv mají barvu tlačítek.
+- Oblíbené v ☰: tři řady, nejdřív obce s plnou hvězdičkou (mají hlavní obrazovku), pak ostatní; první si hvězdičku vždy ponechá; klepnutí na prázdnou hvězdičku dá obci hlavní obrazovku, druhou; odebrání hvězdičky odebere její obrazovku.
+- Protokol: velikost, řádky a chyby na kartě; Zobrazit protokol otevře řádky (Vše, Chyby, Dnes, Včera; dlouhé klepnutí zkopíruje řádek); Sdílet a Uložit dole na obrazovce. Opravené chyby jsou na konci protokolu a nepočítají se; problémy sítě jsou varování.
+- Stránka Zemětřesení: otevře se hned s naposledy uloženými seznamy v telefonu a aktualizuje je na pozadí.
+OBCE
+- Hledání na mapě: lupa otevře mapu s hledáním dole; klepnutí na místo nebo na název obce ukáže její teplotu, Podrobnosti (další dny) a Přidat. Mapa je jednoduchá a světlá, s názvy obcí psanými velkým písmem (i na mapě pozemků). Jiné obce se ukážou, jen když začínají jako zadaný název (aspoň 6 písmen nebo 60 % z něj).
+- Karty obcí: na tabletu a na šířku jsou široké jako jejich text a stojí v řádcích a sloupcích; na výšku na telefonu má příliš dlouhý název menší písmo; na šířku si hledání drží velikost z výšky.
+- Seznam obcí: tlačítko Obce otevře seznam v barvě motivu; Vybrat smaže jednu nebo více (poslední zůstane) a znak ⌃⌄ podržený a tažený nahoru nebo dolů mění pořadí; každá obec si ponechá uložené počasí.
 OZNÁMENÍ
+- Nová verze: se zapnutými oznámeními aplikace kontroluje GitHub 2 týdny po aktualizaci každý den, pak jednou za 7 dní, a oznámí novou verzi v oznámeních Androidu; klepnutí otevře Zkontrolovat aktualizace.
+- Vlastní kanály: výstrahy před počasím, déšť a sníh, zemětřesení, pozemky a aktualizace mají každý svůj kanál v nastavení telefonu; jeden můžete vypnout a ostatní nechat.
 - Zemětřesení: kontrolována každých 10 minut, i v noci s vypnutou obrazovkou; revidovaná magnituda aktualizuje oznámení a klepnutí na něj otevře mapu.
-- Nová verze: se zapnutými oznámeními aplikace jednou týdně zkontroluje GitHub a ohlásí novou verzi v oznámeních Androidu; klepnutí otevře Zkontrolovat aktualizace.
 POZEMKY
 - Bubliny ve Statistice: klepnutí na hodinu v okně postřiku, den v grafech nebo řádek půdy otevře bublinu s vysvětlením; okno postřiku se posouvá samo.
 - Historie a předpověď: přetáhněte ukazatel na den v minulosti; jeho hodnoty se zobrazí v rámečku pod grafem a po 10 s se vrátí na dnešek.
@@ -14,9 +30,7 @@ POZEMKY
 - Statistika na hlavní obrazovce: otevírá se pod provozním stavem (na šířku vlevo); ‹ ji zavře a karta jiného pozemku ji ponechá.
 - Statistika: pro každý pozemek Úkol dne a 4 karty: Provoz (okno postřiku hodinu po hodině, vysychání kapek (ΔT), vítr, mokrý list), Voda a půda (déšť, výpar, půda v 6 a 18 cm), Sezóna (denní stupně oproti loňsku, odhadovaná fáze) a Rizika 72 h (houbové choroby, přízemní mráz, horko, vítr a kroupy); uložení do PDF nebo CSV.
 - Upravit pozemek: tužka otevře stránku pozemku: název, plodina (seznam podle sezóny data setí nebo Jiná plodina…), datum setí, plocha; rohy se posouvají na mapě.
-- Stránka Zemětřesení: otevře se hned s naposledy uloženými seznamy v telefonu a aktualizuje je na pozadí.
-- Export / Import: přepínače pro obsah souboru (také plodiny a údaje o pěstování, oznámení pozemků, koš pozemků, oznámení, mapa, widgety, historie zemětřesení, deník); při Exportu a Importu se obce a pozemky zaškrtávají jednotlivě; tlačítko Aa mění velikost textu.
-- Protokol: velikost, řádky a chyby na kartě; Zobrazit protokol otevře řádky (Vše, Chyby, Dnes, Včera; dlouhé klepnutí zkopíruje řádek); Sdílet a Uložit dole na obrazovce. Opravené chyby jsou na konci protokolu a nepočítají se; problémy sítě jsou varování.
+- Vrstvy počasí: na mapě pozemků se pole pod ＋ a − otevře se Satelitem, Mapou, Oblačností, Teplotami (barvy) a Deštěm (mm za hodinu) a pak se složí na vaši volbu; jedna vrstva najednou, s názvem, časem a legendou nad kartami; Déšť se zapne jen tehdy, když prší teď nebo v příštích 2 hodinách (místo radaru).
 - Vylepšení vzhledu a opravy nahlášených chyb.
 
 Verze 1.4 (v.1.400 – v.1.520)

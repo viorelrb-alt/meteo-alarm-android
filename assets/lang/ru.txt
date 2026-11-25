@@ -1588,3 +1588,118 @@ The ＋ tab of the main screen asks first too.	Вкладка ＋ главног
 Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Ошибки считает только настоящие, ещё не исправленные ошибки; исправленные уходят в отдельный раздел в конце журнала, а проблемы сети — это предупреждения.
 There is 1 warning to look into.	Есть 1 предупреждение для проверки.
 There are %d warnings to look into.	Предупреждений для проверки: %d.
+It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.	Сейчас на карте нет дождя и в ближайшие 2 часа не будет. Кнопка Дождь включается сама, когда приходит дождь.
+Checking for rain on the map…	Проверка дождя на карте…
+New version 	Новая версия 
+Tap to download	Нажмите, чтобы скачать
+Towns ›	Пункты ›
+Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's name, time and legend stand above the cards; data: Open-Meteo.	Под ＋ и − на карте Участки стеклянная плашка показывает текущий вид, включённый слой погоды (с кольцом) и ⌄. Нажатие открывает её: Спутник (Esri), Карта, Облака, Температуры и Дождь; ваш выбор снова её сворачивает (так же ⌃ и 5 секунд без касания). Один слой за раз; нажатие на включённый выключает его. Температуры показаны цветами (фиолетовый холодно, зелёный умеренно, красный жарко); полоса внизу показывает диапазон на карте. Дождь в мм в час, сейчас и в ближайшие 2 часа; его кнопка серая и зачёркнута, когда на карте нет дождя. Название слоя, время и легенда стоят над карточками; данные: Open-Meteo.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Пункты и землетрясения: простая светлая карта (Esri) с крупными названиями пунктов; участки: OpenStreetMap со всеми подробностями и тоже крупными названиями. Крупные названия: только населённые пункты Румынии. Двигайте одним пальцем, масштабируйте двумя; нужен интернет.
+Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.	Проверить обновления или плашка вверху ☰, когда найдена новая версия; Скачать открывает новую версию в браузере, и вы устанавливаете её из скачанного файла.
+Towns button	Кнопка Пункты
+The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.	Круглая кнопка со значком домиков: в портретном режиме справа от названия пункта, в альбомном на верхней полосе, перед её углом. Открывает список пунктов.
+Weather map	Карта погоды
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.	В конце главного экрана (прокрутите вверх; в альбомном режиме на листе с плашками): карта пункта с Облаками, Температурами и Дождём, по одному за раз; нажатие на включённый выключает его. Дождь серый и зачёркнут, когда рядом нет дождя сейчас и в ближайшие 2 часа. Легенда показывает время слоя и для температур диапазон на карте. Карта неподвижна; данные: Open-Meteo.
+Button names	Названия кнопок
+A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.	Круглая кнопка, которая остаётся на экране после нажатия, показывает своё название в маленьком облачке около 1,5 секунды.
+Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.	Открывает список пунктов; у каждого свой главный экран, в порядке списка (первый: виджеты и уведомления). Лупа: карта (Карта / Спутник) с поиском внизу (сначала ваша страна, затем Европа, США в конце), Подробнее и Добавить; нажатие на название пункта выбирает этот пункт. Выбрать: удалить пункты (последний никогда). Порядок: перетащите знак перемещения; каждый пункт сохраняет свою погоду. Поиск показывает другие пункты, только если они начинаются как введённое название (не менее 6 букв или 60% его). На планшете и в альбомном режиме карточки пунктов шириной со свой текст и стоят рядами и столбцами.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Включает (заполнено) или выключает (пусто) автоматическое местоположение; показывает погоду там, где вы; пока приложение открыто, следует за вами, как компас, и меняет пункт через 1,5 км. Деревня, через которую вы проезжаете, попадает в список своего уезда; уходит через 7 дней без проезда и остаётся, если вы бываете там часто (3 дня за 2 недели). Компас показывает и деревни. В другой стране или штате США мелкие населённые пункты скачиваются один раз, когда вы впервые там с интернетом.
+Left / right on the weather now	Влево / вправо по текущей погоде
+The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.	Следующий или предыдущий пункт списка (затем участки); точки показывают, где вы. При 2 и более пунктах их вкладки видны под названием (в режиме фермера и участки). На другом пункте нажатие на его название открывает список.
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Три ряда: сначала пункты с полной звездой (у них есть главный экран, в порядке экранов), затем остальное избранное. Первый пункт всегда сохраняет звезду. Нажатие на пустую звезду даёт пункту главный экран, вторым после первого, и показывает его; снятие звезды убирает его экран, а пункт остаётся в избранном. Нажатие на название выбирает его; Пункты › и Выберите уезд открывают список пунктов.
+6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).	6 тем (Монохромная, Розовая, Жёлтая, Зелёная, Синяя, Фиолетовая): нажмите на точку цвета кнопок этой темы; под ними Светлая, Тёмная или Автоматическая (датчик телефона).
+Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).	А также новая версия приложения, если есть (проверка каждый день 2 недели после обновления, затем раз в 7 дней).
+Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.	У каждого вида свой канал в настройках телефона (Погодные предупреждения, Дождь, снег и информация, Землетрясения, Режим фермера: участки, Обновления приложения), так что можно выключить один и оставить остальные.
+Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.	Ищет новую версию на GitHub, с вашего согласия. Приложение и само проверяет каждый день 2 недели после обновления, затем раз в 7 дней; новая версия появляется плашкой вверху ☰, нажатие на неё начинает загрузку.
+Select towns	Выбрать пункты
+selected	выбрано
+Select all	Выбрать все
+ticked	отмечено
+Reorder	Порядок
+Done	Готово
+Search a town on the map	Искать пункт на карте
+Select towns to delete	Выберите пункты для удаления
+Reorder the towns	Порядок пунктов
+Press the move sign at the right and drag up or down. The number is the screen the town will have.	Нажмите на знак перемещения справа и тяните вверх или вниз. Число — экран, который получит пункт.
+The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.	Порядок списка — это порядок главных экранов: первый пункт — первый экран (за ним виджеты и уведомления). Проведите влево или вправо по текущей погоде, чтобы переходить между ними.
+Tap a town to tick it. The screens of the deleted towns go; the others keep their order.	Нажмите на пункт, чтобы отметить его. Экраны удалённых пунктов исчезают; остальные сохраняют порядок.
+The last town cannot be deleted. Leave at least one unticked.	Последний пункт удалить нельзя. Оставьте хотя бы один неотмеченным.
+Delete, unavailable	Удалить, недоступно
+The last town cannot be deleted.	Последний пункт удалить нельзя.
+RED CODE	КРАСНЫЙ КОД
+ORANGE CODE	ОРАНЖЕВЫЙ КОД
+YELLOW CODE	ЖЁЛТЫЙ КОД
+Move up	Вверх
+Move down	Вниз
+screen 	экран 
+your location	ваше местоположение
+degrees	градусов
+Screen 	Экран 
+ of 	 из 
+Move: drag up or down	Перемещение: тяните вверх или вниз
+Satellite	Спутник
+Search	Поиск
+Search a town	Искать пункт
+Clear the search	Очистить поиск
+No town here, or no internet	Здесь нет пункта или нет интернета
+Details	Подробнее
+In the list	В списке
+min 	мин 
+Feels like 	Ощущается как 
+humidity 	влажность 
+Tomorrow	Завтра
+Added 	Добавлено 
+. Its screen is number 	. Номер его экрана 
+: swipe to it.	: перейдите к нему.
+ · Weather: Open-Meteo	 · Погода: Open-Meteo
+Clouds	Облака
+Temperatures	Температуры
+loading…	загрузка…
+on the map: 	на карте: 
+mm per hour, now and in the next 2 hours	мм в час, сейчас и в ближайшие 2 часа
+sky covered	небо затянуто
+Rain from 	Дождь с 
+satellite or map, weather layer	спутник или карта, слой погоды
+Show the map's buttons	Показать кнопки карты
+Hide the map's buttons	Скрыть кнопки карты
+Temperature now 	Температура сейчас 
+ degrees	 градусов
+Yellow code	Жёлтый код
+Orange code	Оранжевый код
+Red code	Красный код
+Information: 	Информация: 
+Tap to open the app.	Нажмите, чтобы открыть приложение.
+Weather warnings	Погодные предупреждения
+New weather warnings for your towns.	Новые погодные предупреждения для ваших пунктов.
+Rain, snow and information	Дождь, снег и информация
+Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).	Начало дождя или снега, дождь или снег завтра, собственная информация приложения (заморозки, жара, ветер).
+Earthquakes around you.	Землетрясения рядом с вами.
+Farmer mode: parcels	Режим фермера: участки
+Rain, snow, wind, drought and information for your parcels.	Дождь, снег, ветер, засуха и информация для ваших участков.
+App updates	Обновления приложения
+A new version of the app and the test notice.	Новая версия приложения и тестовое уведомление.
+Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.	Уведомления включены: дождь или снег, погодные предупреждения и землетрясения рядом с вами. Каждый вид можно выключить в настройках телефона.
+has a main screen	есть главный экран
+no main screen	нет главного экрана
+The first town cannot be unticked.	С первого пункта отметку снять нельзя.
+shown now	показан сейчас
+Automatic theme	Автоматическая тема
+WEATHER MAP	КАРТА ПОГОДЫ
+Loading the map…	Загрузка карты…
+Menu: settings	Меню: настройки
+Towns, opens the list	Пункты, открывает список
+Parcel: 	Участок: 
+Town: 	Пункт: 
+Tap to refresh.	Нажмите, чтобы обновить.
+Weather map: 	Карта погоды: 
+, on	, включено
+, no rain near now	, рядом сейчас нет дождя
+Rain chance by hour. Tap for the details.	Вероятность дождя по часам. Нажмите для подробностей.
+Choose the town	Выберите пункт
+Location on	Местоположение вкл.
+Location off	Местоположение выкл.
+Tap to change.	Нажмите, чтобы изменить.
+Automatic theme on	Автоматическая тема вкл.
+Automatic theme off	Автоматическая тема выкл.
+Battery 	Батарея 
+Values: being updated	Значения: обновляются

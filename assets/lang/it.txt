@@ -1654,3 +1654,118 @@ The ＋ tab of the main screen asks first too.	Anche la scheda ＋ della scherma
 Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Errori conta solo gli errori reali non ancora risolti; quelli risolti vanno in una sezione a parte alla fine del registro, e i problemi di rete sono avvisi.
 There is 1 warning to look into.	C'è 1 avviso da esaminare.
 There are %d warnings to look into.	Ci sono %d avvisi da esaminare.
+It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.	Sulla mappa non piove ora né nelle prossime 2 ore. Il pulsante Pioggia si attiva da solo quando arriva la pioggia.
+Checking for rain on the map…	Controllo della pioggia sulla mappa…
+New version 	Nuova versione 
+Tap to download	Tocca per scaricare
+Towns ›	Località ›
+Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's name, time and legend stand above the cards; data: Open-Meteo.	Sotto ＋ e − sulla mappa degli appezzamenti, un riquadro di vetro mostra la vista in uso, lo strato meteo attivo (con un anello) e ⌄. Un tocco lo apre: Satellite (Esri), Mappa, Nuvole, Temperature e Pioggia; la tua scelta lo richiude (così anche ⌃ e 5 secondi senza tocchi). Uno strato alla volta; toccare quello attivo lo spegne. Le temperature sono colori (viola freddo, verde mite, rosso caldo); la barra in basso incornicia l'intervallo visto sulla mappa. La pioggia è in mm all'ora, ora e nelle prossime 2 ore; il suo pulsante è grigio e barrato quando sulla mappa non piove. Nome, ora e legenda dello strato stanno sopra le schede; dati: Open-Meteo.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Località e terremoti: una mappa chiara e semplice (Esri) con i nomi delle località in grande; appezzamenti: OpenStreetMap con tutti i dettagli e anche i nomi in grande. I nomi grandi: solo le località della Romania. Spostala con un dito, ingrandisci con due; serve internet.
+Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.	Cerca aggiornamenti, oppure il riquadro in alto in ☰ quando è stata trovata una nuova versione; Scarica apre la nuova versione nel browser e la installi dal file scaricato.
+Towns button	Pulsante Località
+The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.	Il pulsante rotondo con l'icona delle case: in verticale a destra del nome della località, in orizzontale sulla fascia in alto, prima dell'angolo. Apre l'elenco delle località.
+Weather map	Mappa meteo
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.	Alla fine della schermata principale (scorri verso l'alto; in orizzontale sul foglio con le schede): la mappa della località con Nuvole, Temperature e Pioggia, uno alla volta; toccare quello attivo lo spegne. Pioggia è grigio e barrato quando non piove nei dintorni ora né nelle prossime 2 ore. La legenda mostra l'ora dello strato e, per le temperature, l'intervallo sulla mappa. La mappa resta ferma; dati: Open-Meteo.
+Button names	Nomi dei pulsanti
+A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.	Un pulsante rotondo che resta sullo schermo dopo il tocco mostra il suo nome in una piccola bolla per circa 1,5 secondi.
+Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.	Apre l'elenco delle località; ognuna ha la propria schermata principale, nell'ordine dell'elenco (la prima: widget e avvisi). Lente: la mappa (Mappa / Satellite) con la ricerca in basso (prima il tuo paese, poi l'Europa, per ultimi gli USA), Dettagli e Aggiungi; toccare il nome di una località sceglie quella località. Seleziona: elimina località (mai l'ultima). Riordina: trascina il segno di spostamento; ogni località conserva il meteo salvato. La ricerca mostra altre località solo se iniziano come il nome scritto (almeno 6 lettere o il 60% di esso). Su tablet e in orizzontale le schede delle località sono larghe quanto il testo e stanno su righe e colonne.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Attiva la posizione automatica (pieno) o la disattiva (vuoto); mostra il meteo dove sei; mentre l'app è aperta ti segue come la bussola e cambia località dopo 1,5 km. Un paese che attraversi entra nell'elenco della sua provincia; se ne va dopo 7 giorni senza passarci e resta se ci passi spesso (3 giorni in 2 settimane). La bussola mostra anche i paesi. In un altro paese o stato USA, le piccole località vengono scaricate una volta, la prima volta che sei lì con internet.
+Left / right on the weather now	Sinistra / destra sul meteo attuale
+The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.	La località successiva o precedente dell'elenco (poi gli appezzamenti); i punti mostrano dove sei. Con 2 o più località, le loro schede compaiono sotto il nome (in modalità agricoltore anche gli appezzamenti). Su un'altra località, toccare il nome apre l'elenco.
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tre righe: prima le località con stella piena (hanno una schermata principale, nell'ordine delle schermate), poi le altre preferite. La prima località conserva sempre la sua stella. Toccare una stella vuota dà a quella località una schermata principale, seconda dopo la prima, e la mostra; togliere una stella elimina la sua schermata e la località resta tra le preferite. Toccare un nome lo sceglie; Località › e Scegli la provincia aprono l'elenco delle località.
+6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).	6 temi (Monocromo, Rosa, Giallo, Verde, Blu, Viola): tocca un punto, che ha il colore dei pulsanti di quel tema; sotto Chiaro, Scuro o Automatico (sensore del telefono).
+Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).	Anche una nuova versione dell'app, se c'è (controllata ogni giorno per 2 settimane dopo un aggiornamento, poi una volta ogni 7 giorni).
+Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.	Ogni tipo ha il proprio canale nelle impostazioni del telefono (Allerte meteo, Pioggia, neve e informazioni, Terremoti, Modalità agricoltore: appezzamenti, Aggiornamenti dell'app), così puoi disattivarne uno e tenere gli altri.
+Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.	Cerca una nuova versione su GitHub, con il tuo consenso. L'app controlla anche da sola ogni giorno per 2 settimane dopo un aggiornamento, poi una volta ogni 7 giorni; una nuova versione appare come riquadro in alto in ☰, e un tocco avvia il download.
+Select towns	Seleziona località
+selected	selezionate
+Select all	Seleziona tutto
+ticked	spuntata
+Reorder	Riordina
+Done	Fatto
+Search a town on the map	Cerca una località sulla mappa
+Select towns to delete	Seleziona le località da eliminare
+Reorder the towns	Riordina le località
+Press the move sign at the right and drag up or down. The number is the screen the town will have.	Premi il segno di spostamento a destra e trascina in alto o in basso. Il numero è la schermata che avrà la località.
+The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.	L'ordine dell'elenco è quello delle schermate principali: la prima località è la prima schermata (widget e avvisi la seguono). Scorri a sinistra o a destra sul meteo attuale per passare dall'una all'altra.
+Tap a town to tick it. The screens of the deleted towns go; the others keep their order.	Tocca una località per spuntarla. Le schermate delle località eliminate spariscono; le altre mantengono il loro ordine.
+The last town cannot be deleted. Leave at least one unticked.	L'ultima località non può essere eliminata. Lasciane almeno una non spuntata.
+Delete, unavailable	Elimina, non disponibile
+The last town cannot be deleted.	L'ultima località non può essere eliminata.
+RED CODE	ALLERTA ROSSA
+ORANGE CODE	ALLERTA ARANCIONE
+YELLOW CODE	ALLERTA GIALLA
+Move up	Sposta su
+Move down	Sposta giù
+screen 	schermata 
+your location	la tua posizione
+degrees	gradi
+Screen 	Schermata 
+ of 	 di 
+Move: drag up or down	Sposta: trascina in alto o in basso
+Satellite	Satellite
+Search	Cerca
+Search a town	Cerca una località
+Clear the search	Cancella la ricerca
+No town here, or no internet	Nessuna località qui, o niente internet
+Details	Dettagli
+In the list	Nell'elenco
+min 	min 
+Feels like 	Percepita 
+humidity 	umidità 
+Tomorrow	Domani
+Added 	Aggiunta 
+. Its screen is number 	. La sua schermata è la numero 
+: swipe to it.	: scorri fino a lei.
+ · Weather: Open-Meteo	 · Meteo: Open-Meteo
+Clouds	Nuvole
+Temperatures	Temperature
+loading…	caricamento…
+on the map: 	sulla mappa: 
+mm per hour, now and in the next 2 hours	mm all'ora, ora e nelle prossime 2 ore
+sky covered	cielo coperto
+Rain from 	Pioggia dalle 
+satellite or map, weather layer	satellite o mappa, strato meteo
+Show the map's buttons	Mostra i pulsanti della mappa
+Hide the map's buttons	Nascondi i pulsanti della mappa
+Temperature now 	Temperatura ora 
+ degrees	 gradi
+Yellow code	Allerta gialla
+Orange code	Allerta arancione
+Red code	Allerta rossa
+Information: 	Informazione: 
+Tap to open the app.	Tocca per aprire l'app.
+Weather warnings	Allerte meteo
+New weather warnings for your towns.	Nuove allerte meteo per le tue località.
+Rain, snow and information	Pioggia, neve e informazioni
+Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).	Pioggia o neve in arrivo, la pioggia o neve di domani, le informazioni proprie dell'app (gelo, caldo, vento).
+Earthquakes around you.	Terremoti intorno a te.
+Farmer mode: parcels	Modalità agricoltore: appezzamenti
+Rain, snow, wind, drought and information for your parcels.	Pioggia, neve, vento, siccità e informazioni per i tuoi appezzamenti.
+App updates	Aggiornamenti dell'app
+A new version of the app and the test notice.	Una nuova versione dell'app e l'avviso di prova.
+Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.	Le notifiche sono attive: pioggia o neve, allerte meteo e terremoti intorno a te. Ogni tipo può essere disattivato nelle impostazioni del telefono.
+has a main screen	ha una schermata principale
+no main screen	nessuna schermata principale
+The first town cannot be unticked.	La prima località non può essere tolta.
+shown now	mostrata ora
+Automatic theme	Tema automatico
+WEATHER MAP	MAPPA METEO
+Loading the map…	Caricamento della mappa…
+Menu: settings	Menu: impostazioni
+Towns, opens the list	Località, apre l'elenco
+Parcel: 	Appezzamento: 
+Town: 	Località: 
+Tap to refresh.	Tocca per aggiornare.
+Weather map: 	Mappa meteo: 
+, on	, attivo
+, no rain near now	, nessuna pioggia vicina ora
+Rain chance by hour. Tap for the details.	Probabilità di pioggia per ora. Tocca per i dettagli.
+Choose the town	Scegli la località
+Location on	Posizione attiva
+Location off	Posizione disattivata
+Tap to change.	Tocca per cambiare.
+Automatic theme on	Tema automatico attivo
+Automatic theme off	Tema automatico disattivato
+Battery 	Batteria 
+Values: being updated	Valori: in aggiornamento

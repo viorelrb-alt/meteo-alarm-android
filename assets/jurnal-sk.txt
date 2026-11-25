@@ -1,8 +1,23 @@
 Súčasná verzia: v.2.170 · 25.11.2026
+AKTUALIZÁCIE
+- Pole Nová verzia: krátke pole hore v ☰, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
+- Mapa počasia: na konci hlavnej obrazovky mapa obce s tlačidlami Oblačnosť, Teploty a Dážď (jedno naraz) a legendou; Dážď sa zapne len vtedy, keď neďaleko prší teraz alebo v nasledujúcich 2 hodinách.
+- Názvy tlačidiel: okrúhle tlačidlo, ktoré po ťuknutí zostane na obrazovke, ukáže svoj názov v malej bubline asi na 1,5 sekundy.
+- Tlačidlo Obce: okrúhle tlačidlo s ikonou domčekov (na výšku vpravo od názvu, na šírku na hornom páse, pred jeho rohom) otvorí zoznam obcí.
+- Viac obcí: každá obec zo zoznamu má svoju hlavnú obrazovku; potiahnutie doľava alebo doprava po aktuálnom počasí prejde na ďalšiu, v poradí zoznamu.
 NASTAVENIA
+- Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke. Opravené chyby sú na konci denníka a nepočítajú sa; problémy siete sú upozornenia.
+- Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.
 - Jazyk zobrazenia: v ☰ angličtina a jazyk krajiny; Ďalšie jazyky: ostatné jazyky krajiny, veľké jazyky EÚ, rumunčina a jazyk telefónu (v USA len angličtina a španielčina).
+- Motívy: Jednofarebný (biela, čierna a sivá; v tmavom grafit), Ružový, Žltý, Zelený, Modrý a Fialový, každý svetlý aj tmavý, s tlačidlami v kontrastnej farbe; bodky v ☰ › Motív majú farbu tlačidiel.
+- Obľúbené v ☰: tri rady, najprv obce s plnou hviezdičkou (majú hlavnú obrazovku), potom ostatné; prvá si hviezdičku vždy ponechá; ťuknutie na prázdnu hviezdičku dá obci hlavnú obrazovku, druhú; odobratie hviezdičky odoberie jej obrazovku.
+- Stránka Zemetrasenia: otvorí sa hneď s naposledy uloženými zoznamami v telefóne a aktualizuje ich na pozadí.
+OBCE
+- Hľadanie na mape: lupa otvorí mapu s hľadaním dole; ťuknutie na miesto alebo na názov obce ukáže jej teplotu, Podrobnosti (ďalšie dni) a Pridať. Mapa je jednoduchá a svetlá, s názvami obcí písanými veľkým písmom (aj na mape pozemkov). Iné obce sa ukážu, len keď začínajú ako zadaný názov (aspoň 6 písmen alebo 60 % z neho).
+- Karty obcí: na tablete a na šírku sú široké ako ich text a stoja v riadkoch a stĺpcoch; na výšku na telefóne má príliš dlhý názov menšie písmo; na šírku si hľadanie drží veľkosť z výšky.
+- Zoznam obcí: tlačidlo Obce otvorí zoznam vo farbe motívu; Vybrať vymaže jednu alebo viac (posledná zostane) a znak ⌃⌄ podržaný a ťahaný hore alebo dole mení poradie; každá obec si ponechá uložené počasie.
 POZEMKY
 - Bubliny v Štatistike: ťuknutie na hodinu v okne postreku, deň v grafoch alebo riadok pôdy otvorí bublinu s vysvetlením; okno postreku sa posúva samo.
 - História a predpoveď: potiahnite ukazovateľ na deň v minulosti; jeho hodnoty sa zobrazia v rámčeku pod grafom a po 10 s sa vráti na dnešok.
@@ -11,12 +26,11 @@ POZEMKY
 - Štatistika: pre každý pozemok Úloha dňa a 4 karty: Prevádzka (okno postreku hodinu po hodine, vysychanie kvapiek (ΔT), vietor, mokrý list), Voda a pôda (dážď, výpar, pôda v 6 a 18 cm), Sezóna (stupňodni oproti minulému roku, odhadovaná fáza) a Riziká 72 h (hubové choroby, prízemný mráz, horúčava, vietor a krupobitie); uloženie do PDF alebo CSV.
 - Súradnice pozemku: na stránke úprav sa zapisujú súradnice GPS každého bodu a pod nimi satelitný pohľad ukazuje pozemok.
 - Upraviť pozemok: ceruzka otvorí stránku pozemku: názov, plodina (zoznam podľa sezóny dátumu sejby alebo Iná plodina…), dátum sejby, výmera; rohy sa posúvajú na mape.
+- Vrstvy počasia: na mape pozemkov sa pole pod ＋ a − otvorí so Satelitom, Mapou, Oblačnosťou, Teplotami (farby) a Dažďom (mm za hodinu) a potom sa zloží na vašu voľbu; jedna vrstva naraz, s názvom, časom a legendou nad kartami; Dážď sa zapne len vtedy, keď prší teraz alebo v nasledujúcich 2 hodinách (namiesto radaru).
 UPOZORNENIA
+- Nová verzia: so zapnutými upozorneniami aplikácia kontroluje GitHub 2 týždne po aktualizácii každý deň, potom raz za 7 dní, a oznámi novú verziu v upozorneniach Androidu; ťuknutie otvorí Skontrolovať aktualizácie.
+- Vlastné kanály: výstrahy pred počasím, dážď a sneh, zemetrasenia, pozemky a aktualizácie majú každý svoj kanál v nastaveniach telefónu; jeden môžete vypnúť a ostatné nechať.
 - Zemetrasenia: kontrolované každých 10 minút, aj v noci s vypnutou obrazovkou; revidovaná magnitúda aktualizuje oznámenie a ťuknutie naň otvorí mapu.
-- Nová verzia: so zapnutými oznámeniami aplikácia raz týždenne skontroluje GitHub a ohlási novú verziu v oznámeniach Androidu; ťuknutie otvorí Skontrolovať aktualizácie.
-- Stránka Zemetrasenia: otvorí sa hneď s naposledy uloženými zoznamami v telefóne a aktualizuje ich na pozadí.
-- Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.
-- Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke. Opravené chyby sú na konci denníka a nepočítajú sa; problémy siete sú upozornenia.
 - Vylepšenia vzhľadu a opravy nahlásených chýb.
 
 Verzia 1.4 (v.1.400 – v.1.520)

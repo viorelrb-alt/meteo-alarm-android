@@ -1,7 +1,20 @@
 Nuværende version: v.2.170 · 25.11.2026
+BYER
+- Bykort: på en tablet og i liggende er de lige så brede som deres tekst og står i rækker og kolonner; i portræt på en telefon får et for langt navn mindre bogstaver; i liggende beholder søgningen sin portrætstørrelse.
+- Byliste: knappen Byer åbner listen i temaets farve; Vælg sletter én eller flere (den sidste bliver), og tegnet ⌃⌄ holdt og trukket op eller ned ændrer rækkefølgen; hver by beholder sit gemte vejr.
+- Søgning på kortet: luppen åbner kortet med søgningen nederst; et tryk på et sted eller på en bys navn viser dens temperatur, Detaljer (de næste dage) og Tilføj. Kortet er enkelt og lyst, med byernes navne skrevet stort (også på markernes kort). Andre byer vises kun, når de begynder som det indtastede navn (mindst 6 bogstaver eller 60 % af det).
 HOVEDSKÆRM
+- Flere byer: hver by på listen har sin egen hovedskærm; et stryg til venstre eller højre over vejret nu går til den næste, i listens rækkefølge.
 - Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ☰ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
+- Knapnavne: en rund knap, der bliver på skærmen, når der trykkes på den, viser sit navn i en lille boble i cirka 1,5 sekund.
+- Knappen Byer: den runde knap med husikonet (i portræt til højre for navnet, i liggende på det øverste bånd, før dets hjørne) åbner listen over byer.
+- Vejrkort: nederst på hovedskærmen byens kort med knapperne Skyer, Temperaturer og Regn (én ad gangen) og forklaringen; Regn tænder kun, når det regner i nærheden nu eller de næste 2 timer.
 INDSTILLINGER
+- Eksport / Import: kontakter for, hvad der kommer i filen (også afgrøder og dyrkningsdata, markernes notifikationer, markernes papirkurv, notifikationer, kort, widgets, jordskælvshistorik, log); ved Eksport og Import afkrydses byer og marker én ad gangen; knappen Aa ændrer tekststørrelsen.
+- Favoritter i ☰: tre rækker, først byerne med fuld stjerne (de har en hovedskærm), så de andre; den første beholder altid sin stjerne; et tryk på en tom stjerne giver byen en hovedskærm, den anden; fjerner du stjernen, fjernes dens skærm.
+- Log: størrelse, linjer og fejl på et kort; Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem nederst på skærmen. Rettede fejl står sidst i loggen og tælles ikke med; netværksproblemer er advarsler.
+- Siden Jordskælv: åbner straks med de senest gemte lister på telefonen og opdaterer dem i baggrunden.
+- Temaer: Monokrom (hvid, sort og grå; grafit i mørkt), Lyserød, Gul, Grøn, Blå og Violet, hver lys og mørk, med knapper i en kontrastfarve; prikkerne i ☰ › Tema har knappernes farve.
 - Visningssprog: i ☰ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
 MARKER
 - Bobler i Statistik: et tryk på en time i sprøjtevinduet, en dag i graferne eller en jordrække åbner en boble med forklaring; sprøjtevinduet bevæger sig af sig selv.
@@ -11,12 +24,13 @@ MARKER
 - Rediger mark: blyanten åbner markens side: navn, afgrøde (liste efter såningsdatoens sæson eller Anden afgrøde…), såningsdato, areal; hjørnerne flyttes på kortet.
 - Statistik på hovedskærmen: den åbner under driftsstatus (vandret til venstre); ‹ lukker den, og en anden marks fane beholder den.
 - Statistik: for hver mark Dagens handling og 4 faner: Drift (sprøjtevinduet time for time, dråbetørring (ΔT), vind, våde blade), Vand & jord (regn, fordampning, jord i 6 og 18 cm), Sæson (graddage mod sidste år, anslået stadie) og Risici 72 t (svampesygdomme, jordfrost, varme, vind og hagl); gemmes som PDF eller CSV.
+- Vejrlag: på markernes kort åbner boksen under ＋ og − med Satellit, Kort, Skyer, Temperaturer (farver) og Regn (mm i timen) og folder sig derefter sammen til dit valg; ét lag ad gangen, med navn, tid og forklaring over kortene; Regn tænder kun, når det regner nu eller de næste 2 timer (i stedet for radaren).
 NOTIFIKATIONER
+- Egne kanaler: vejrvarsler, regn og sne, jordskælv, marker og opdateringer har hver deres kanal i telefonens indstillinger; du kan slå én fra og beholde de andre.
 - Jordskælv: tjekket hvert 10. minut, også om natten med skærmen slukket; en revideret magnitude opdaterer meddelelsen, og et tryk på den åbner kortet.
-- Ny version: med notifikationer slået til tjekker appen GitHub en gang om ugen og melder en ny version i Androids notifikationer; et tryk åbner Søg efter opdateringer.
-- Siden Jordskælv: åbner straks med de senest gemte lister på telefonen og opdaterer dem i baggrunden.
-- Eksport / Import: kontakter for, hvad der kommer i filen (også afgrøder og dyrkningsdata, markernes notifikationer, markernes papirkurv, notifikationer, kort, widgets, jordskælvshistorik, log); ved Eksport og Import afkrydses byer og marker én ad gangen; knappen Aa ændrer tekststørrelsen.
-- Log: størrelse, linjer og fejl på et kort; Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem nederst på skærmen. Rettede fejl står sidst i loggen og tælles ikke med; netværksproblemer er advarsler.
+- Ny version: med notifikationer slået til tjekker appen GitHub hver dag i 2 uger efter en opdatering, derefter en gang hver 7. dag, og melder en ny version i Androids notifikationer; et tryk åbner Søg efter opdateringer.
+OPDATERINGER
+- Boksen Ny version: en kort boks øverst i ☰, når der findes en ny version; et tryk på den starter downloadet.
 - Designforbedringer og rettelser af indrapporterede fejl.
 
 Version 1.4 (v.1.400 – v.1.520)

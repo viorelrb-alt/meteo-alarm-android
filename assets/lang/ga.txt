@@ -1654,3 +1654,118 @@ The ＋ tab of the main screen asks first too.	Fiafraíonn cluaisín ＋ an phr�
 Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Ní chomhaireann Earráidí ach na fíor-earráidí nár socraíodh fós; téann na cinn socraithe chuig a gcuid féin ag deireadh an loga, agus is rabhaidh iad fadhbanna líonra.
 There is 1 warning to look into.	Tá 1 rabhadh le scrúdú.
 There are %d warnings to look into.	Tá %d rabhadh le scrúdú.
+It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.	Níl sé ag cur báistí ar an léarscáil anois ná sna 2 uair an chloig atá romhainn. Casann an cnaipe Báisteach air leis féin nuair a thagann báisteach.
+Checking for rain on the map…	Ag seiceáil báistí ar an léarscáil…
+New version 	Leagan nua 
+Tap to download	Tapáil chun é a íoslódáil
+Towns ›	Bailte ›
+Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's name, time and legend stand above the cards; data: Open-Meteo.	Faoi ＋ agus − ar léarscáil na bPáirceanna taispeánann bosca gloine an t-amharc atá in úsáid, an ciseal aimsire atá air (le fáinne) agus ⌄. Osclaíonn tapáil é: Satailít (Esri), Léarscáil, Scamaill, Teochtaí agus Báisteach; filleann do rogha arís é (déanann ⌃ agus 5 soicind gan teagmháil an rud céanna). Ciseal amháin ag an am; múchann tapáil ar an gceann atá air é. Is dathanna iad na teochtaí (corcairghorm fuar, glas measartha, dearg te); taispeánann an barra thíos an raon ar an léarscáil. Tá an bháisteach i mm san uair, anois agus sna 2 uair an chloig atá romhainn; bíonn a cnaipe liath agus líne tríd nuair nach mbíonn sé ag cur báistí ar an léarscáil. Tá ainm, am agus eochair an chisil os cionn na gcártaí; sonraí: Open-Meteo.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Bailte agus creathanna talún: léarscáil shimplí gheal (Esri) le hainmneacha na mbailte scríofa go mór; páirceanna: OpenStreetMap leis na sonraí go léir agus na hainmneacha scríofa go mór freisin. Na hainmneacha móra: bailte na Rómáine amháin. Bog é le méar amháin, zúmáil le dhá mhéar; teastaíonn idirlíon.
+Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.	Seiceáil le haghaidh nuashonruithe, nó an bosca ag barr ☰ nuair a aimsíodh leagan nua; osclaíonn Íoslódáil an leagan nua sa bhrabhsálaí agus suiteálann tú é ón gcomhad íoslódáilte.
+Towns button	Cnaipe na mBailte
+The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.	An cnaipe cruinn le deilbhín na dtithe: i bportráid ar dheis ainm an bhaile, i dtírdhreach ar an mbanda uachtarach, roimh a chúinne. Osclaíonn sé liosta na mbailte.
+Weather map	Léarscáil aimsire
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.	Ag deireadh an phríomhscáileáin (scrollaigh suas; i dtírdhreach ar an mbileog leis na boscaí): léarscáil an bhaile le Scamaill, Teochtaí agus Báisteach, ceann amháin ag an am; múchann tapáil ar an gceann atá air é. Bíonn Báisteach liath agus líne tríd nuair nach mbíonn sé ag cur báistí in aice láimhe anois ná sna 2 uair an chloig atá romhainn. Taispeánann an eochair am an chisil agus, do theochtaí, an raon ar an léarscáil. Fanann an léarscáil socair; sonraí: Open-Meteo.
+Button names	Ainmneacha cnaipí
+A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.	Taispeánann cnaipe cruinn a fhanann ar an scáileán nuair a thapáiltear é a ainm i mbolgán beag ar feadh thart ar 1.5 soicind.
+Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.	Osclaíonn sé liosta na mbailte; tá a phríomhscáileán féin ag gach ceann, in ord an liosta (an chéad cheann: giuirléidí agus fógraí). Gloine formhéadúcháin: an léarscáil (Léarscáil / Satailít) leis an gcuardach thíos (do thír féin ar dtús, ansin an Eoraip, SAM ar deireadh), Sonraí agus Cuir leis; roghnaíonn tapáil ar ainm baile an baile sin. Roghnaigh: scrios bailte (an ceann deireanach riamh). Athordaigh: tarraing an comhartha bogtha; coinníonn gach baile a aimsir shábháilte. Ní thaispeánann an cuardach bailte eile ach nuair a thosaíonn siad cosúil leis an ainm a clóscríobhadh (6 litir ar a laghad nó 60% de). Ar thaibléad agus i dtírdhreach tá cártaí na mbailte chomh leathan lena dtéacs agus seasann siad i sraitheanna agus i gcolúin.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Casann sé suíomh uathoibríoch air (líonta) nó as (folamh); taispeánann sé an aimsir san áit a bhfuil tú; fad atá an aip oscailte leanann sé thú mar an compás agus athraíonn sé an baile tar éis 1.5 km. Téann sráidbhaile a dtéann tú tríd isteach i liosta a chontae; imíonn sé tar éis 7 lá gan dul ann agus fanann sé má théann tú ann go minic (3 lá i 2 sheachtain). Taispeánann an compás na sráidbhailte freisin. I dtír eile nó i stát eile de SAM, íoslódáiltear na bailte beaga uair amháin, an chéad uair a bhíonn tú ann le hidirlíon.
+Left / right on the weather now	Clé / deas ar an aimsir anois
+The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.	An chéad bhaile eile nó an baile roimhe sa liosta (ansin na páirceanna); taispeánann na poncanna cá bhfuil tú. Le 2 bhaile nó níos mó taispeántar a gcluaisíní faoin ainm (i mód feirmeora na páirceanna freisin). Ar bhaile eile, osclaíonn tapáil ar a ainm an liosta.
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Trí shraith: ar dtús na bailte le réalta lán (tá príomhscáileán acu, in ord na scáileán), ansin na ceanáin eile. Coinníonn an chéad bhaile a réalta i gcónaí. Tugann tapáil ar réalta fholamh príomhscáileán don bhaile sin, an dara ceann i ndiaidh an chéad cheann, agus taispeánann sé é; baineann réalta a bhaint a scáileán agus fanann an baile i measc na gceanán. Roghnaíonn tapáil ar ainm é; osclaíonn Bailte › agus Roghnaigh an contae liosta na mbailte.
+6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).	6 théama (Aondathach, Bándearg, Buí, Glas, Gorm, Corcairghorm): tapáil ar phonc, a bhfuil dath chnaipí an téama sin air; fúthu Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
+Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).	Leagan nua den aip freisin, má tá ceann ann (seiceáiltear gach lá ar feadh 2 sheachtain tar éis nuashonraithe, ansin uair sa 7 lá).
+Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.	Tá a chainéal féin ag gach cineál i socruithe an fhóin (Rabhaidh aimsire, Báisteach, sneachta agus faisnéis, Creathanna talún, Mód feirmeora: páirceanna, Nuashonruithe aipe), ionas gur féidir leat ceann amháin a mhúchadh agus na cinn eile a choinneáil.
+Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.	Lorgaíonn sé leagan nua ar GitHub, le do thoiliú. Seiceálann an aip léi féin freisin gach lá ar feadh 2 sheachtain tar éis nuashonraithe, ansin uair sa 7 lá; taispeántar leagan nua mar bhosca ag barr ☰ agus tosaíonn tapáil air an íoslódáil.
+Select towns	Roghnaigh bailte
+selected	roghnaithe
+Select all	Roghnaigh gach ceann
+ticked	ticeáilte
+Reorder	Athordaigh
+Done	Déanta
+Search a town on the map	Cuardaigh baile ar an léarscáil
+Select towns to delete	Roghnaigh bailte le scriosadh
+Reorder the towns	Athordaigh na bailte
+Press the move sign at the right and drag up or down. The number is the screen the town will have.	Brúigh an comhartha bogtha ar dheis agus tarraing suas nó síos. Is í an uimhir an scáileán a bheidh ag an mbaile.
+The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.	Is é ord an liosta ord na bpríomhscáileán: is é an chéad bhaile an chéad scáileán (leanann na giuirléidí agus na fógraí é). Svaidhpeáil ar chlé nó ar dheis thar an aimsir anois chun dul ó cheann go ceann.
+Tap a town to tick it. The screens of the deleted towns go; the others keep their order.	Tapáil ar bhaile chun tic a chur leis. Imíonn scáileáin na mbailte scriosta; coinníonn na cinn eile a n-ord.
+The last town cannot be deleted. Leave at least one unticked.	Ní féidir an baile deireanach a scriosadh. Fág ceann amháin ar a laghad gan tic.
+Delete, unavailable	Scrios, níl sé ar fáil
+The last town cannot be deleted.	Ní féidir an baile deireanach a scriosadh.
+RED CODE	CÓD DEARG
+ORANGE CODE	CÓD ORÁISTE
+YELLOW CODE	CÓD BUÍ
+Move up	Bog suas
+Move down	Bog síos
+screen 	scáileán 
+your location	do shuíomh
+degrees	céim
+Screen 	Scáileán 
+ of 	 de 
+Move: drag up or down	Bog: tarraing suas nó síos
+Satellite	Satailít
+Search	Cuardaigh
+Search a town	Cuardaigh baile
+Clear the search	Glan an cuardach
+No town here, or no internet	Níl baile anseo, nó níl idirlíon ann
+Details	Sonraí
+In the list	Sa liosta
+min 	íos 
+Feels like 	Mothaíonn sé mar 
+humidity 	bogthaise 
+Tomorrow	Amárach
+Added 	Curtha leis 
+. Its screen is number 	. Is é uimhir a scáileáin 
+: swipe to it.	: svaidhpeáil chuige.
+ · Weather: Open-Meteo	 · Aimsir: Open-Meteo
+Clouds	Scamaill
+Temperatures	Teochtaí
+loading…	á lódáil…
+on the map: 	ar an léarscáil: 
+mm per hour, now and in the next 2 hours	mm san uair, anois agus sna 2 uair an chloig atá romhainn
+sky covered	spéir faoi scamall
+Rain from 	Báisteach ó 
+satellite or map, weather layer	satailít nó léarscáil, ciseal aimsire
+Show the map's buttons	Taispeáin cnaipí na léarscáile
+Hide the map's buttons	Folaigh cnaipí na léarscáile
+Temperature now 	Teocht anois 
+ degrees	 céim
+Yellow code	Cód buí
+Orange code	Cód oráiste
+Red code	Cód dearg
+Information: 	Faisnéis: 
+Tap to open the app.	Tapáil chun an aip a oscailt.
+Weather warnings	Rabhaidh aimsire
+New weather warnings for your towns.	Rabhaidh aimsire nua do do bhailte.
+Rain, snow and information	Báisteach, sneachta agus faisnéis
+Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).	Báisteach nó sneachta ag tosú, báisteach nó sneachta amárach, faisnéis na haipe féin (sioc, teas, gaoth).
+Earthquakes around you.	Creathanna talún timpeall ort.
+Farmer mode: parcels	Mód feirmeora: páirceanna
+Rain, snow, wind, drought and information for your parcels.	Báisteach, sneachta, gaoth, triomach agus faisnéis do do pháirceanna.
+App updates	Nuashonruithe aipe
+A new version of the app and the test notice.	Leagan nua den aip agus an fógra tástála.
+Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.	Tá fógraí air: báisteach nó sneachta, rabhaidh aimsire agus creathanna talún timpeall ort. Is féidir gach cineál a mhúchadh i socruithe an fhóin.
+has a main screen	tá príomhscáileán aige
+no main screen	gan phríomhscáileán
+The first town cannot be unticked.	Ní féidir an tic a bhaint den chéad bhaile.
+shown now	á thaispeáint anois
+Automatic theme	Téama uathoibríoch
+WEATHER MAP	LÉARSCÁIL AIMSIRE
+Loading the map…	Ag lódáil na léarscáile…
+Menu: settings	Roghchlár: socruithe
+Towns, opens the list	Bailte, osclaíonn sé an liosta
+Parcel: 	Páirc: 
+Town: 	Baile: 
+Tap to refresh.	Tapáil chun athnuachan.
+Weather map: 	Léarscáil aimsire: 
+, on	, air
+, no rain near now	, gan bháisteach in aice láimhe anois
+Rain chance by hour. Tap for the details.	Seans báistí in aghaidh na huaire. Tapáil le haghaidh sonraí.
+Choose the town	Roghnaigh an baile
+Location on	Suíomh air
+Location off	Suíomh as
+Tap to change.	Tapáil chun athrú.
+Automatic theme on	Téama uathoibríoch air
+Automatic theme off	Téama uathoibríoch as
+Battery 	Ceallra 
+Values: being updated	Luachanna: á nuashonrú

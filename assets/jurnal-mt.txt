@@ -1,22 +1,36 @@
 Verżjoni attwali: v.2.170 · 25.11.2026
+AĠĠORNAMENTI
+- Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ☰ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
 - Bużżieqa fl-Istatistika: mess fuq siegħa fit-tieqa tal-isprejjar, jum fil-grafiki jew ringiela tal-ħamrija jiftaħ bużżieqa bl-ispjegazzjoni; it-tieqa tal-isprejjar timxi waħedha.
 - Editja l-għalqa: il-lapes jiftaħ il-paġna tal-għalqa: isem, għelejjel (lista skont l-istaġun tad-data taż-żriegħ jew Għelejjel ieħor…), data taż-żriegħ, erja; il-kantunieri jitħarrku fuq il-mappa.
 - Koordinati tal-għalqa: fil-paġna tal-editjar jinkitbu l-koordinati GPS ta' kull punt, u taħthom il-veduta bis-satellita turi l-għalqa.
+- Saffi tat-temp: fuq il-mappa tal-għelieqi l-kaxxa taħt ＋ u − tiftaħ b'Satellita, Mappa, Sħab, Temperaturi (kuluri) u Xita (mm fis-siegħa), imbagħad tingħalaq fuq l-għażla tiegħek; saff wieħed kull darba, bl-isem, il-ħin u l-leġġenda fuq il-kards; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita issa jew fis-sagħtejn li ġejjin (minflok ir-radar).
 - Statistika fl-iskrin prinċipali: tinfetaħ taħt l-istatus operazzjonali (mimdud fuq ix-xellug); ‹ jagħlaqha u t-tab ta' għalqa oħra jżommha.
 - Statistika: għal kull għalqa, l-Azzjoni tal-ġurnata u 4 tabs: Operazzjonali (it-tieqa tal-isprejjar siegħa b'siegħa, tnixxif tal-qtar (ΔT), riħ, werqa mxarrba), Ilma u Ħamrija (xita, evaporazzjoni, ħamrija f'6 u 18 cm), Staġun (gradi-jum kontra s-sena l-oħra, stadju stmat) u Riskji 72 h (mard fungali, ġlata fl-art, sħana, riħ u silġ); issejvjar bħala PDF jew CSV.
 - Status operazzjonali: fuq, il-wiċċ u d-data taż-żriegħ; b'wiċċ, is-sentenza tqis ukoll it-tnixxif tal-qtar (ΔT) u l-marda tiegħu.
 - Storja u tbassir: kaxkar l-indikatur fuq jum li għadda; il-valuri tiegħu jidhru f'kaxxa taħt il-grafika u wara 10 s jerġa' lura għal-lum.
+LOKALITAJIET
+- Kards tal-lokalitajiet: fuq tablet u f'landscape huma wesgħin daqs it-test tagħhom u joqogħdu f'ringieli u kolonni; f'portrait fuq telefon isem twil wisq jieħu ittri iżgħar; f'landscape it-tfittxija żżomm id-daqs tal-portrait.
+- Lista tal-lokalitajiet: il-buttuna Lokalitajiet tiftaħ il-lista fil-kulur tat-tema; Agħżel tħassar waħda jew aktar (l-aħħar waħda tibqa'), u s-sinjal ⌃⌄ miżmum u mkaxkar 'il fuq jew 'l isfel jibdel l-ordni; kull lokalità żżomm it-temp issejvjat tagħha.
+- Tfittxija fuq il-mappa: il-lenti tiftaħ il-mappa bit-tfittxija t'isfel; tagħfisa fuq post jew fuq l-isem ta' lokalità turi t-temperatura tagħha, Dettalji (il-jiem li ġejjin) u Żid. Il-mappa hija sempliċi u ċara, bl-ismijiet tal-lokalitajiet miktubin kbar (anki fuq il-mappa tal-għelieqi). Lokalitajiet oħra jidhru biss meta jibdew bħall-isem miktub (mill-inqas 6 ittri jew 60% minnu).
 NOTIFIKI
+- Kanali tagħhom: twissijiet tat-temp, xita u silġ, terremoti, għelieqi u aġġornamenti għandhom kull wieħed il-kanal tiegħu fis-settings tat-telefon; tista' titfi wieħed u żżomm l-oħrajn.
 - Terremoti: iċċekkjati kull 10 minuti, anki bil-lejl bl-iskrin mitfi; kobor rivedut jaġġorna n-notifika, u tektika fuqha tiftaħ il-mappa.
-- Verżjoni ġdida: bin-notifiki mixgħula, l-app tiċċekkja GitHub darba fil-ġimgħa u tħabbar verżjoni ġdida fin-notifiki ta' Android; tagħfisa tiftaħ Iċċekkja għal aġġornamenti.
+- Verżjoni ġdida: bin-notifiki mixgħula, l-app tiċċekkja GitHub kuljum għal ġimgħatejn wara aġġornament, imbagħad darba kull 7 ijiem, u tħabbar verżjoni ġdida fin-notifiki ta' Android; tagħfisa tiftaħ Iċċekkja għal aġġornamenti.
 SETTINGS
-- Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
-SKRIN EWLIENI
-- Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
-- Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
 - Esportazzjoni / Importazzjoni: swiċċijiet għal x'jidħol fil-fajl (ukoll l-uċuħ tar-raba' u d-dejta tal-kultivazzjoni, in-notifiki tal-biċċiet tal-art, il-landa tal-biċċiet tal-art, in-notifiki, il-mappa, il-widgets, l-istorja tat-terremoti, ir-reġistru); fl-Esportazzjoni u l-Importazzjoni l-postijiet u l-biċċiet tal-art jiġu mmarkati wieħed wieħed; il-buttuna Aa tibdel id-daqs tat-test.
+- Favoriti f'☰: tliet ringieli, l-ewwel il-lokalitajiet bi stilla mimlija (għandhom skrin prinċipali), imbagħad l-oħrajn; l-ewwel waħda dejjem iżżomm l-istilla tagħha; tagħfisa fuq stilla vojta tagħti lil-lokalità skrin prinċipali, it-tieni; tneħħi l-istilla jneħħi l-iskrin tagħha.
+- Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
+- Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
 - Reġistru: daqs, linji u żbalji fuq karta; Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja fil-qiegħ tal-iskrin. L-iżbalji solvuti huma fl-aħħar tar-reġistru u ma jingħaddux; il-problemi tan-netwerk huma twissijiet.
+- Temi: Monokromu (abjad, iswed u griż; grafita fid-dlam), Roża, Isfar, Aħdar, Blu u Vjola, kull waħda ċara u skura, bil-buttuni f'kulur ta' kuntrast; it-tikek f'☰ › Tema għandhom il-kulur tal-buttuni.
+SKRIN EWLIENI
+- Aktar lokalitajiet: kull lokalità fil-lista għandha l-iskrin prinċipali tagħha; swajp lejn ix-xellug jew il-lemin fuq it-temp issa jgħaddi għal dik ta' wara, fl-ordni tal-lista.
+- Buttuna Lokalitajiet: il-buttuna tonda bl-ikona tad-djar (f'portrait fuq il-lemin tal-isem, f'landscape fuq il-faxxa ta' fuq, qabel ir-rokna tagħha) tiftaħ il-lista tal-lokalitajiet.
+- Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
+- Ismijiet tal-buttuni: buttuna tonda li tibqa' fuq l-iskrin meta tingħafas turi isimha f'bużżieqa żgħira għal madwar 1.5 sekondi.
+- Mappa tat-temp: fl-aħħar tal-iskrin prinċipali, il-mappa tal-lokalità bil-buttuni Sħab, Temperaturi u Xita (waħda kull darba) u l-leġġenda; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita fil-qrib issa jew fis-sagħtejn li ġejjin.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)

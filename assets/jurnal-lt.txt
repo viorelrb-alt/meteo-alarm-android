@@ -1,22 +1,36 @@
 Dabartinė versija: v.2.170 · 25.11.2026
+ATNAUJINIMAI
+- Dėžutė Nauja versija: trumpa dėžutė ☰ viršuje, kai yra nauja versija; ją bakstelėjus pradedamas atsisiuntimas.
 NUSTATYMAI
+- Eksportas / Importas: jungikliai failo turiniui (taip pat kultūros ir auginimo duomenys, sklypų pranešimai, sklypų šiukšlinė, pranešimai, žemėlapis, valdikliai, žemės drebėjimų istorija, žurnalas); Eksporte ir Importe vietovės ir sklypai pažymimi po vieną; mygtukas Aa keičia teksto dydį.
+- Mėgstamiausi ☰: trys eilutės, pirmiausia vietovės su pilna žvaigžde (turi pagrindinį ekraną), tada kitos; pirmoji visada išlaiko savo žvaigždę; bakstelėjus tuščią žvaigždę vietovė gauna pagrindinį ekraną, antrąjį; nuėmus žvaigždę pašalinamas jos ekranas.
+- Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
 - Rodymo kalba: ☰ anglų ir šalies kalba; Kitos kalbos: kitos šalies kalbos, didžiosios ES kalbos, rumunų ir telefono kalba (JAV tik anglų ir ispanų).
+- Temos: Vienspalvė (balta, juoda ir pilka; tamsioje grafitas), Rožinė, Geltona, Žalia, Mėlyna ir Violetinė, kiekviena šviesi ir tamsi, su kontrastingos spalvos mygtukais; taškai ☰ › Tema yra mygtukų spalvos.
+- Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje. Ištaisytos klaidos yra žurnalo pabaigoje ir neskaičiuojamos; tinklo problemos yra įspėjimai.
 PAGRINDINIS EKRANAS
+- Daugiau vietovių: kiekviena sąrašo vietovė turi savo pagrindinį ekraną; perbraukus kairėn ar dešinėn per dabartinius orus pereinama į kitą, sąrašo tvarka.
+- Mygtukas Vietovės: apvalus mygtukas su namų piktograma (stačiai – pavadinimo dešinėje, gulsčiai – viršutinėje juostoje prieš jos kampą) atidaro vietovių sąrašą.
+- Mygtukų pavadinimai: apvalus mygtukas, kuris bakstelėjus lieka ekrane, apie 1,5 sekundės rodo savo pavadinimą mažame burbule.
+- Orų žemėlapis: pagrindinio ekrano pabaigoje vietovės žemėlapis su mygtukais Debesys, Temperatūros ir Lietus (po vieną) ir legenda; Lietus įsijungia tik tada, kai netoliese lyja dabar arba lis artimiausias 2 valandas.
 - Žemės drebėjimo informacija: palietus laukelį Žemės drebėjimas, ji atsidaro pagrindiniame ekrane: žemėlapis, po juo juntamumo zonos ir vertės istorija; spalvotas kvadratas arba žemėlapis ją atveria visame ekrane, kaip drebėjimą iš ☰ › Žemės drebėjimai. Rumunijoje, Prancūzijoje, Italijoje, Nyderlanduose, Šveicarijoje ir Graikijoje oficialios vertės pirmiausia gaunamos iš šalies instituto (INFP, BCSF, INGV, KNMI, SED, NOA), paskui iš EMSC. Rumunijoje ir aplink šalį vykę žemės drebėjimai gauna INFP vertę (iš infp.ro).
 PRANEŠIMAI
+- Atskiri kanalai: orų įspėjimai, lietus ir sniegas, žemės drebėjimai, laukai ir atnaujinimai turi kiekvienas savo kanalą telefono nustatymuose; galite išjungti vieną ir palikti kitus.
+- Nauja versija: įjungus pranešimus programėlė tikrina GitHub kasdien 2 savaites po atnaujinimo, vėliau kartą per 7 dienas, ir praneša apie naują versiją Android pranešimuose; bakstelėjus atidaroma Tikrinti atnaujinimus.
 - Žemės drebėjimai: tikrinami kas 10 minučių, ir naktį išjungus ekraną; patikslinta magnitudė atnaujina pranešimą, o jį bakstelėjus atsidaro žemėlapis.
-- Nauja versija: įjungus pranešimus programėlė kartą per savaitę patikrina GitHub ir praneša apie naują versiją Android pranešimuose; palietus atsidaro Tikrinti naujinius.
 SKLYPAI
 - Burbulai statistikoje: purškimo lango valandos, grafikų dienos ar dirvos eilutės palietimas atveria burbulą su paaiškinimu; purškimo langas juda pats.
 - Istorija ir prognozė: vilkite rodyklę ant praėjusios dienos; jos reikšmės rodomos langelyje po grafiku, o po 10 s ji grįžta į šiandieną.
+- Orų sluoksniai: laukų žemėlapyje dėžutė po ＋ ir − atsidaro su Palydovu, Žemėlapiu, Debesimis, Temperatūromis (spalvos) ir Lietumi (mm per valandą), tada susiskleidžia iki jūsų pasirinkimo; vienas sluoksnis vienu metu, su pavadinimu, laiku ir legenda virš kortelių; Lietus įsijungia tik tada, kai lyja dabar arba lis artimiausias 2 valandas (vietoj radaro).
 - Redaguoti lauką: pieštukas atveria lauko puslapį: pavadinimas, kultūra (sąrašas pagal sėjos datos sezoną arba Kita kultūra…), sėjos data, plotas; kampai stumiami žemėlapyje.
 - Sklypo koordinatės: redagavimo puslapyje galima įvesti kiekvieno taško GPS koordinates, o po jomis palydovinis vaizdas rodo sklypą.
 - Statistika pagrindiniame ekrane: atsidaro po veiklos būsena (horizontaliai kairėje); ‹ ją uždaro, o kito sklypo skirtukas ją palieka.
 - Statistika: kiekvienam laukui Dienos veiksmas ir 4 skirtukai: Darbai (purškimo langas kas valandą, lašų džiūvimas (ΔT), vėjas, šlapias lapas), Vanduo ir dirva (lietus, garavimas, dirva 6 ir 18 cm gylyje), Sezonas (laipsnių dienos, palyginti su pernai, numatomas tarpsnis) ir Rizikos 72 h (grybinės ligos, dirvos šalna, karštis, vėjas ir kruša); išsaugojimas PDF arba CSV.
 - Veiklos būsena: viršuje kultūra ir sėjos data; su kultūra verdiktas atsižvelgia ir į lašų džiūvimą (ΔT) bei jos ligą.
-- Puslapis Žemės drebėjimai: atsidaro iškart su paskutiniais telefone išsaugotais sąrašais ir atnaujina juos fone.
-- Eksportas / Importas: jungikliai failo turiniui (taip pat kultūros ir auginimo duomenys, sklypų pranešimai, sklypų šiukšlinė, pranešimai, žemėlapis, valdikliai, žemės drebėjimų istorija, žurnalas); Eksporte ir Importe vietovės ir sklypai pažymimi po vieną; mygtukas Aa keičia teksto dydį.
-- Žurnalas: dydis, eilutės ir klaidos kortelėje; Žiūrėti žurnalą atveria eilutes (Visos, Klaidos, Šiandien, Vakar; ilgas palietimas nukopijuoja eilutę); Bendrinti ir Išsaugoti ekrano apačioje. Ištaisytos klaidos yra žurnalo pabaigoje ir neskaičiuojamos; tinklo problemos yra įspėjimai.
+VIETOVĖS
+- Paieška žemėlapyje: lupa atidaro žemėlapį su paieška apačioje; bakstelėjus vietą arba gyvenvietės pavadinimą rodoma jos temperatūra, Išsamiau (kitos dienos) ir Pridėti. Žemėlapis paprastas ir šviesus, vietovių pavadinimai parašyti dideliais (ir laukų žemėlapyje). Kitos vietovės rodomos tik tada, kai prasideda kaip įvestas pavadinimas (bent 6 raidės arba 60 % jo).
+- Vietovių kortelės: planšetėje ir gulsčiai jos tokio pločio kaip jų tekstas ir išdėstytos eilutėmis bei stulpeliais; stačiai telefone per ilgas pavadinimas gauna mažesnes raides; gulsčiai paieška išlaiko stačią dydį.
+- Vietovių sąrašas: mygtukas Vietovės atidaro sąrašą temos spalva; Pasirinkti ištrina vieną ar kelias (paskutinė lieka), o ženklas ⌃⌄, laikomas ir vilkiamas aukštyn ar žemyn, keičia tvarką; kiekviena vietovė išlaiko išsaugotus orus.
 - Dizaino patobulinimai ir praneštų klaidų taisymai.
 
 1.4 versija (v.1.400 – v.1.520)

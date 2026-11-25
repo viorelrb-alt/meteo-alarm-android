@@ -1,11 +1,25 @@
 Nuvarande version: v.2.170 · 25.11.2026
 AVISERINGAR
+- Egna kanaler: vädervarningar, regn och snö, jordbävningar, skiften och uppdateringar har var sin kanal i telefonens inställningar; du kan stänga av en och behålla de andra.
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
-- Ny version: med aviseringar på kollar appen GitHub en gång i veckan och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.
+- Ny version: med aviseringar på kontrollerar appen GitHub varje dag i 2 veckor efter en uppdatering, sedan en gång var 7:e dag, och meddelar en ny version i Androids aviseringar; ett tryck öppnar Sök efter uppdateringar.
 HUVUDSKÄRM
+- Fler orter: varje ort i listan har sin egen huvudskärm; ett svep åt vänster eller höger över vädret nu går till nästa, i listans ordning.
 - Jordbävningsinformation: ett tryck på rutan Jordbävning öppnar den på huvudskärmen: kartan, under den zonerna där den kändes och värdets historik; den färgade kvadraten eller kartan öppnar den på hela skärmen, som en jordbävning från ☰ › Jordbävningar. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
+- Knappen Orter: den runda knappen med husikonen (i stående till höger om namnet, i liggande på det övre bandet, före dess hörn) öppnar listan med orter.
+- Knappnamn: en rund knapp som stannar på skärmen när den trycks visar sitt namn i en liten bubbla i ungefär 1,5 sekund.
+- Väderkarta: längst ned på huvudskärmen ortens karta med knapparna Moln, Temperaturer och Regn (en i taget) och förklaringen; Regn slås på bara när det regnar i närheten nu eller de kommande 2 timmarna.
 INSTÄLLNINGAR
+- Export / Import: reglage för vad som hamnar i filen (även grödor och odlingsdata, skiftenas aviseringar, skiftenas papperskorg, aviseringar, karta, widgetar, jordbävningshistorik, logg); vid Export och Import bockas orter och skiften för ett i taget; knappen Aa ändrar textstorleken.
+- Favoriter i ☰: tre rader, först orterna med fylld stjärna (de har en huvudskärm), sedan de andra; den första behåller alltid sin stjärna; ett tryck på en tom stjärna ger orten en huvudskärm, den andra; tar du bort stjärnan tas dess skärm bort.
+- Logg: storlek, rader och fel på ett kort; Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara längst ner på skärmen. Åtgärdade fel står i slutet av loggen och räknas inte; nätverksproblem är varningar.
+- Sidan Jordbävningar: öppnas direkt med de senast sparade listorna i telefonen och uppdaterar dem i bakgrunden.
+- Teman: Monokrom (vitt, svart och grått; grafit i mörkt), Rosa, Gul, Grön, Blå och Violett, alla ljusa och mörka, med knappar i en kontrastfärg; prickarna i ☰ › Tema har knapparnas färg.
 - Visningsspråk: i ☰ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
+ORTER
+- Ortkort: på en surfplatta och i liggande läge är de lika breda som sin text och står i rader och kolumner; i stående på en telefon får ett för långt namn mindre bokstäver; i liggande behåller sökningen sin stående storlek.
+- Ortlista: knappen Orter öppnar listan i temats färg; Välj tar bort en eller flera (den sista stannar), och tecknet ⌃⌄ hållet och draget uppåt eller nedåt ändrar ordningen; varje ort behåller sitt sparade väder.
+- Sökning på kartan: förstoringsglaset öppnar kartan med sökningen längst ned; ett tryck på en plats eller på en orts namn visar dess temperatur, Detaljer (de kommande dagarna) och Lägg till. Kartan är enkel och ljus, med orternas namn skrivna stort (även på skiftenas karta). Andra orter visas bara när de börjar som namnet du skrev (minst 6 bokstäver eller 60 % av det).
 SKIFTEN
 - Bubblor i Statistik: ett tryck på en timme i sprutfönstret, en dag i diagrammen eller en markrad öppnar en bubbla med förklaring; sprutfönstret rör sig av sig självt.
 - Driftstatus: överst grödan och sådatumet; med en gröda tar domen också hänsyn till dropptorkning (ΔT) och dess sjukdom.
@@ -14,9 +28,9 @@ SKIFTEN
 - Skiftets koordinater: på redigeringssidan skrivs GPS-koordinaterna för varje punkt in, och under dem visar satellitvyn skiftet.
 - Statistik på huvudskärmen: den öppnas under driftstatusen (liggande till vänster); ‹ stänger den och ett annat skiftes flik behåller den.
 - Statistik: för varje skifte Dagens åtgärd och 4 flikar: Drift (sprutfönstret timme för timme, dropptorkning (ΔT), vind, blött blad), Vatten & mark (regn, avdunstning, mark på 6 och 18 cm), Säsong (graddagar mot i fjol, uppskattat stadium) och Risker 72 h (svampsjukdomar, markfrost, värme, vind och hagel); sparas som PDF eller CSV.
-- Sidan Jordbävningar: öppnas direkt med de senast sparade listorna i telefonen och uppdaterar dem i bakgrunden.
-- Export / Import: reglage för vad som hamnar i filen (även grödor och odlingsdata, skiftenas aviseringar, skiftenas papperskorg, aviseringar, karta, widgetar, jordbävningshistorik, logg); vid Export och Import bockas orter och skiften för ett i taget; knappen Aa ändrar textstorleken.
-- Logg: storlek, rader och fel på ett kort; Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara längst ner på skärmen. Åtgärdade fel står i slutet av loggen och räknas inte; nätverksproblem är varningar.
+- Väderlager: på skiftenas karta öppnas rutan under ＋ och − med Satellit, Karta, Moln, Temperaturer (färger) och Regn (mm per timme) och fälls sedan ihop till ditt val; ett lager i taget, med namn, tid och förklaring ovanför korten; Regn slås på bara när det regnar nu eller de kommande 2 timmarna (i stället för radarn).
+UPPDATERINGAR
+- Rutan Ny version: en kort ruta överst i ☰ när det finns en ny version; ett tryck på den startar nedladdningen.
 - Designförbättringar och rättningar av rapporterade fel.
 
 Version 1.4 (v.1.400 – v.1.520)

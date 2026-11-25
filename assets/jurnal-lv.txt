@@ -1,22 +1,36 @@
 Pašreizējā versija: v.2.170 · 25.11.2026
+ATJAUNINĀJUMI
+- Lodziņš Jauna versija: īss lodziņš ☰ augšā, kad ir jauna versija; pieskāriens tam sāk lejupielādi.
 GALVENAIS EKRĀNS
+- Laikapstākļu karte: galvenā ekrāna beigās vietas karte ar pogām Mākoņi, Temperatūras un Lietus (pa vienai) un leģendu; Lietus ieslēdzas tikai tad, kad tuvumā līst tagad vai nākamajās 2 stundās.
+- Poga Vietas: apaļā poga ar māju ikonu (portretā pa labi no nosaukuma, ainavā augšējā joslā pirms tās stūra) atver vietu sarakstu.
+- Pogu nosaukumi: apaļa poga, kas pēc pieskāriena paliek ekrānā, rāda savu nosaukumu mazā burbulī apmēram 1,5 sekundes.
+- Vairākas vietas: katrai saraksta vietai ir savs galvenais ekrāns; pavilkšana pa kreisi vai pa labi pār pašreizējiem laikapstākļiem pāriet uz nākamo, saraksta secībā.
 - Zemestrīces informācija: pieskāriens laukam Zemestrīce to atver galvenajā ekrānā: karte, zem tās sajūtamības zonas un vērtības vēsture; krāsainais kvadrāts vai karte to atver visā ekrānā, kā zemestrīci no ☰ › Zemestrīces. Rumānijā, Francijā, Itālijā, Nīderlandē, Šveicē un Grieķijā oficiālās vērtības vispirms nāk no valsts institūta (INFP, BCSF, INGV, KNMI, SED, NOA), pēc tam no EMSC. Rumānijā arī zemestrīces ap valsti saņem INFP vērtību (no infp.ro).
 IESTATĪJUMI
 - Displeja valoda: ☰ angļu un valsts valoda; Citas valodas: pārējās valsts valodas, lielās ES valodas, rumāņu un tālruņa valoda (ASV tikai angļu un spāņu).
+- Eksports / Imports: slēdži faila saturam (arī kultūras un audzēšanas dati, lauku paziņojumi, lauku miskaste, paziņojumi, karte, logrīki, zemestrīču vēsture, žurnāls); Eksportā un Importā apdzīvotās vietas un lauki tiek atzīmēti pa vienam; poga Aa maina teksta lielumu.
+- Izlase ☰: trīs rindas, vispirms vietas ar pilnu zvaigzni (tām ir galvenais ekrāns), tad pārējās; pirmā vienmēr saglabā savu zvaigzni; pieskāriens tukšai zvaigznei piešķir vietai galveno ekrānu, otro; zvaigznes noņemšana noņem tās ekrānu.
+- Lapa Zemestrīces: atveras uzreiz ar pēdējiem tālrunī saglabātajiem sarakstiem un atjaunina tos fonā.
+- Motīvi: Vienkrāsaina (balts, melns un pelēks; tumšajā grafīts), Rozā, Dzeltena, Zaļa, Zila un Violeta, katra gaiša un tumša, ar pogām kontrastējošā krāsā; punktiem ☰ › Motīvs ir pogu krāsa.
+- Žurnāls: izmērs, rindas un kļūdas kartītē; Skatīt žurnālu atver rindas (Visas, Kļūdas, Šodien, Vakar; ilgs pieskāriens nokopē rindu); Kopīgot un Saglabāt ekrāna apakšā. Novērstās kļūdas ir žurnāla beigās un netiek skaitītas; tīkla problēmas ir brīdinājumi.
 LAUKI
 - Burbuļi statistikā: pieskāriens stundai smidzināšanas logā, dienai grafikos vai augsnes rindai atver burbuli ar skaidrojumu; smidzināšanas logs kustas pats.
 - Darbības statuss: augšā kultūra un sējas datums; ar kultūru spriedums ņem vērā arī pilienu žūšanu (ΔT) un tās slimību.
+- Laikapstākļu slāņi: lauku kartē lodziņš zem ＋ un − atveras ar Satelītu, Karti, Mākoņiem, Temperatūrām (krāsas) un Lietu (mm stundā), tad sakļaujas līdz jūsu izvēlei; viens slānis vienlaikus, ar nosaukumu, laiku un leģendu virs kartītēm; Lietus ieslēdzas tikai tad, kad līst tagad vai nākamajās 2 stundās (radara vietā).
 - Lauka koordinātas: rediģēšanas lapā var ierakstīt katra punkta GPS koordinātas, bet zem tām satelīta skats rāda lauku.
 - Rediģēt lauku: zīmulis atver lauka lapu: nosaukums, kultūra (saraksts pēc sējas datuma sezonas vai Cita kultūra…), sējas datums, platība; stūri pārvietojas kartē.
 - Statistika galvenajā ekrānā: tā atveras zem darbības statusa (ainavā pa kreisi); ‹ to aizver, bet cita lauka cilne to saglabā.
 - Statistika: katram laukam Dienas darbība un 4 cilnes: Darbība (smidzināšanas logs pa stundām, pilienu žūšana (ΔT), vējš, slapja lapa), Ūdens un augsne (lietus, iztvaikošana, augsne 6 un 18 cm dziļumā), Sezona (grāddienas salīdzinājumā ar pērno gadu, aplēstā fāze) un Riski 72 h (sēņu slimības, salna uz augsnes, karstums, vējš un krusa); saglabāšana PDF vai CSV.
 - Vēsture un prognoze: velciet rādītāju uz pagājušu dienu; tās vērtības parādās lodziņā zem grafika, un pēc 10 s tas atgriežas uz šodienu.
 PAZIŅOJUMI
+- Jauna versija: ar ieslēgtiem paziņojumiem lietotne pārbauda GitHub katru dienu 2 nedēļas pēc atjaunināšanas, tad reizi 7 dienās, un paziņo par jaunu versiju Android paziņojumos; pieskāriens atver Pārbaudīt atjauninājumus.
+- Savi kanāli: laikapstākļu brīdinājumiem, lietum un sniegam, zemestrīcēm, laukiem un atjauninājumiem katram ir savs kanāls tālruņa iestatījumos; varat izslēgt vienu un paturēt pārējos.
 - Zemestrīces: pārbaudītas ik pēc 10 minūtēm, arī naktī ar izslēgtu ekrānu; precizēta magnitūda atjaunina paziņojumu, un pieskāriens tam atver karti.
-- Jauna versija: ar ieslēgtiem paziņojumiem lietotne reizi nedēļā pārbauda GitHub un paziņo par jaunu versiju Android paziņojumos; pieskāriens atver Pārbaudīt atjauninājumus.
-- Lapa Zemestrīces: atveras uzreiz ar pēdējiem tālrunī saglabātajiem sarakstiem un atjaunina tos fonā.
-- Eksports / Imports: slēdži faila saturam (arī kultūras un audzēšanas dati, lauku paziņojumi, lauku miskaste, paziņojumi, karte, logrīki, zemestrīču vēsture, žurnāls); Eksportā un Importā apdzīvotās vietas un lauki tiek atzīmēti pa vienam; poga Aa maina teksta lielumu.
-- Žurnāls: izmērs, rindas un kļūdas kartītē; Skatīt žurnālu atver rindas (Visas, Kļūdas, Šodien, Vakar; ilgs pieskāriens nokopē rindu); Kopīgot un Saglabāt ekrāna apakšā. Novērstās kļūdas ir žurnāla beigās un netiek skaitītas; tīkla problēmas ir brīdinājumi.
+VIETAS
+- Meklēšana kartē: lupa atver karti ar meklēšanu apakšā; pieskāriens vietai vai apdzīvotas vietas nosaukumam rāda tās temperatūru, Sīkāk (nākamās dienas) un Pievienot. Karte ir vienkārša un gaiša, ar lieliem vietu nosaukumiem (arī lauku kartē). Citas vietas parādās tikai tad, ja sākas kā ievadītais nosaukums (vismaz 6 burti vai 60% no tā).
+- Vietu kartītes: planšetē un ainavā tās ir tik platas kā to teksts un stāv rindās un kolonnās; portretā tālrunī pārāk garš nosaukums saņem mazākus burtus; ainavā meklēšana saglabā portreta izmēru.
+- Vietu saraksts: poga Vietas atver sarakstu motīva krāsā; Atlasīt izdzēš vienu vai vairākas (pēdējā paliek), un zīme ⌃⌄, turēta un vilkta augšup vai lejup, maina secību; katra vieta saglabā savus saglabātos laikapstākļus.
 - Dizaina uzlabojumi un ziņoto kļūdu labojumi.
 
 Versija 1.4 (v.1.400 – v.1.520)

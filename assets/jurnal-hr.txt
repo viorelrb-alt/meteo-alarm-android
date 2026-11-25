@@ -1,9 +1,20 @@
 Trenutačna verzija: v.2.170 · 25.11.2026
+AŽURIRANJA
+- Kutija Nova verzija: kratka kutija na vrhu ☰ kad postoji nova verzija; dodir na nju pokreće preuzimanje.
 GLAVNI ZASLON
+- Gumb Mjesta: okrugli gumb s ikonom kućica (uspravno desno od naziva, položeno na gornjoj traci, prije njezina kuta) otvara popis mjesta.
+- Nazivi gumba: okrugli gumb koji ostaje na zaslonu nakon dodira prikazuje svoj naziv u malom oblačiću oko 1,5 sekunde.
 - Podaci o potresu: dodir polja Potres otvara ih na glavnom zaslonu: karta, ispod nje zone osjeta i povijest vrijednosti; obojeni kvadrat ili karta otvara ih preko cijelog zaslona, kao potres iz ☰ › Potresi. U Rumunjskoj, Francuskoj, Italiji, Nizozemskoj, Švicarskoj i Grčkoj službene vrijednosti najprije dolaze od nacionalnog instituta (INFP, BCSF, INGV, KNMI, SED, NOA), zatim od EMSC-a. U Rumunjskoj i potresi oko zemlje dobivaju vrijednost INFP-a (s infp.ro).
+- Više mjesta: svako mjesto s popisa ima svoj glavni zaslon; povlačenje lijevo ili desno preko trenutačnog vremena prelazi na sljedeće, redoslijedom popisa.
+- Vremenska karta: na kraju glavnog zaslona karta mjesta s gumbima Oblaci, Temperature i Kiša (jedan po jedan) i legendom; Kiša se uključuje samo kad u blizini pada sada ili u sljedeća 2 sata.
+MJESTA
+- Kartice mjesta: na tabletu i položeno široke su koliko njihov tekst i stoje u redovima i stupcima; uspravno na telefonu predug naziv dobiva manja slova; položeno pretraga zadržava uspravnu veličinu.
+- Popis mjesta: gumb Mjesta otvara popis u boji teme; Odaberi briše jedno ili više (posljednje ostaje), a znak ⌃⌄ zadržan i povučen gore ili dolje mijenja redoslijed; svako mjesto čuva svoje spremljeno vrijeme.
+- Pretraga na karti: povećalo otvara kartu s pretragom na dnu; dodir na mjesto ili na naziv naselja prikazuje njegovu temperaturu, Pojedinosti (sljedeće dane) i Dodaj. Karta je jednostavna i svijetla, s krupno ispisanim nazivima mjesta (i na karti parcela). Druga mjesta prikazuju se samo ako počinju kao upisani naziv (barem 6 slova ili 60% njega).
 OBAVIJESTI
+- Nova verzija: s uključenim obavijestima aplikacija provjerava GitHub svaki dan 2 tjedna nakon ažuriranja, zatim jednom u 7 dana, i najavljuje novu verziju u Android obavijestima; dodir otvara Provjeri ažuriranja.
 - Potresi: provjeravaju se svakih 10 minuta, i noću s ugašenim zaslonom; revidirana magnituda ažurira obavijest, a dodir na nju otvara kartu.
-- Nova verzija: s uključenim obavijestima aplikacija jednom tjedno provjerava GitHub i javlja novu verziju u Android obavijestima; dodir otvara Provjeri ažuriranja.
+- Vlastiti kanali: vremenska upozorenja, kiša i snijeg, potresi, parcele i ažuriranja imaju svaki svoj kanal u postavkama telefona; možete isključiti jedan i zadržati ostale.
 PARCELE
 - Koordinate parcele: na stranici uređivanja upisuju se GPS koordinate svake točke, a ispod satelitski prikaz pokazuje parcelu.
 - Oblačići u Statistici: dodir sata u prozoru prskanja, dana na grafovima ili retka tla otvara oblačić s objašnjenjem; prozor prskanja pomiče se sam.
@@ -12,10 +23,13 @@ PARCELE
 - Statistika na glavnom zaslonu: otvara se ispod operativnog statusa (položeno lijevo); ‹ je zatvara, a kartica druge parcele je zadržava.
 - Statistika: za svaku parcelu Zadatak dana i 4 kartice: Operativno (prozor prskanja sat po sat, sušenje kapljica (ΔT), vjetar, mokar list), Voda i tlo (kiša, isparavanje, tlo na 6 i 18 cm), Sezona (stupanj-dani u odnosu na prošlu godinu, procijenjena faza) i Rizici 72 h (gljivične bolesti, prizemni mraz, vrućina, vjetar i tuča); spremanje u PDF ili CSV.
 - Uredi parcelu: olovka otvara stranicu parcele: ime, kultura (popis po sezoni datuma sjetve ili Druga kultura…), datum sjetve, površina; kutovi se pomiču na karti.
+- Vremenski slojevi: na karti parcela kutija ispod ＋ i − otvara se sa Satelitom, Kartom, Oblacima, Temperaturama (boje) i Kišom (mm na sat), zatim se sklapa na vaš izbor; jedan sloj odjednom, s nazivom, vremenom i legendom iznad kartica; Kiša se uključuje samo kad pada sada ili u sljedeća 2 sata (umjesto radara).
 POSTAVKE
-- Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
-- Stranica Potresi: otvara se odmah s posljednjim popisima spremljenima u telefonu i ažurira ih u pozadini.
 - Izvoz / Uvoz: prekidači za sadržaj datoteke (i kulture i podaci o uzgoju, obavijesti parcela, koš parcela, obavijesti, karta, widgeti, povijest potresa, dnevnik); u Izvozu i Uvozu mjesta i parcele označavaju se jedno po jedno; gumb Aa mijenja veličinu teksta.
+- Jezik prikaza: u ☰ engleski i jezik zemlje; Ostali jezici: ostali jezici zemlje, veliki jezici EU-a, rumunjski i jezik telefona (u SAD-u samo engleski i španjolski).
+- Omiljena u ☰: tri reda, prvo mjesta s punom zvjezdicom (imaju glavni zaslon), zatim ostala; prvo uvijek čuva zvjezdicu; dodir na praznu zvjezdicu daje mjestu glavni zaslon, drugi; skidanje zvjezdice uklanja njegov zaslon.
+- Stranica Potresi: otvara se odmah s posljednjim popisima spremljenima u telefonu i ažurira ih u pozadini.
+- Teme: Jednobojna (bijela, crna i siva; grafit u tamnoj), Ružičasta, Žuta, Zelena, Plava i Ljubičasta, svaka svijetla i tamna, s gumbima u kontrastnoj boji; točke u ☰ › Tema imaju boju gumba.
 - Zapisnik: veličina, retci i pogreške na kartici; Pogledaj zapisnik otvara retke (Sve, Pogreške, Danas, Jučer; dugi dodir kopira redak); Dijeli i Spremi na dnu zaslona. Ispravljene pogreške su na kraju zapisnika i ne broje se; problemi mreže su upozorenja.
 - Poboljšanja dizajna i ispravci prijavljenih pogrešaka.
 

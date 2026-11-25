@@ -1588,3 +1588,118 @@ The ＋ tab of the main screen asks first too.	Ana ekranın ＋ sekmesi de önce
 Errors counts only the real errors not yet fixed; the fixed ones go to their own section at the end of the log, and the network's problems are warnings.	Hatalar yalnızca henüz düzeltilmemiş gerçek hataları sayar; düzeltilenler günlüğün sonunda ayrı bir bölüme gider, ağ sorunları ise uyarıdır.
 There is 1 warning to look into.	İncelenecek 1 uyarı var.
 There are %d warnings to look into.	İncelenecek %d uyarı var.
+It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.	Şu anda haritada yağmur yok, sonraki 2 saatte de yok. Yağmur düğmesi yağmur gelince kendiliğinden açılır.
+Checking for rain on the map…	Haritada yağmur kontrol ediliyor…
+New version 	Yeni sürüm 
+Tap to download	İndirmek için dokunun
+Towns ›	Yerler ›
+Under ＋ and − on the Parcels map a glass box shows the view in use, the weather layer that is on (with a ring) and ⌄. A tap opens it: Satellite (Esri), Map, Clouds, Temperatures and Rain; your choice folds it again (so do ⌃ and 5 seconds without a touch). One layer at a time; a tap on the one that is on turns it off. Temperatures are colours (violet cold, green mild, red hot); the bar at the bottom frames the range seen on the map. Rain is in mm per hour, now and in the next 2 hours; its button is grey and struck through when it does not rain on the map. The layer's name, time and legend stand above the cards; data: Open-Meteo.	Parseller haritasında ＋ ve − altındaki cam kutu kullanılan görünümü, açık olan hava katmanını (halkayla) ve ⌄ işaretini gösterir. Dokunuş onu açar: Uydu (Esri), Harita, Bulutlar, Sıcaklıklar ve Yağmur; seçiminiz onu yeniden kapatır (⌃ ve 5 saniye dokunmamak da). Aynı anda bir katman; açık olana dokunmak onu kapatır. Sıcaklıklar renklerdir (mor soğuk, yeşil ılık, kırmızı sıcak); alttaki çubuk haritada görülen aralığı gösterir. Yağmur saatte mm cinsinden, şimdi ve sonraki 2 saatte; haritada yağmur yağmadığında düğmesi gri ve üstü çizilidir. Katmanın adı, saati ve açıklaması kartların üstünde durur; veriler: Open-Meteo.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Yerler ve depremler: yer adları büyük yazılmış sade açık bir harita (Esri); parseller: tüm ayrıntılarıyla ve adları yine büyük yazılmış OpenStreetMap. Büyük adlar: yalnızca Romanya'nın yerleşimleri. Tek parmakla kaydırın, iki parmakla yakınlaştırın; internet gerekir.
+Check for updates, or the box at the top of ☰ when a new version was found; Download opens the new version in the browser and you install it from the downloaded file.	Güncellemeleri denetle ya da yeni sürüm bulunduğunda ☰ üstündeki kutu; İndir yeni sürümü tarayıcıda açar, siz de indirilen dosyadan kurarsınız.
+Towns button	Yerler düğmesi
+The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.	Ev simgeli yuvarlak düğme: dikeyde yer adının sağında, yatayda üst şeritte, köşesinden önce. Yerler listesini açar.
+Weather map	Hava haritası
+At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.	Ana ekranın sonunda (yukarı kaydırın; yatayda kutuların olduğu sayfada): yerin haritası Bulutlar, Sıcaklıklar ve Yağmur ile, aynı anda bir tane; açık olana dokunmak onu kapatır. Yakında şimdi ve sonraki 2 saatte yağmur yoksa Yağmur gri ve üstü çizilidir. Açıklama katmanın saatini ve sıcaklıklar için haritadaki aralığı gösterir. Harita sabit durur; veriler: Open-Meteo.
+Button names	Düğme adları
+A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.	Dokunulduğunda ekranda kalan yuvarlak düğme adını yaklaşık 1,5 saniye küçük bir balonda gösterir.
+Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.	Yerler listesini açar; her birinin listedeki sırayla kendi ana ekranı vardır (ilki: widget'lar ve bildirimler). Büyüteç: altta arama olan harita (Harita / Uydu) (önce kendi ülkeniz, sonra Avrupa, ABD en son), Ayrıntılar ve Ekle; bir yerin adına dokunmak o yeri seçer. Seç: yerleri silme (sonuncusu asla). Yeniden sırala: taşıma işaretini sürükleyin; her yer kayıtlı havasını korur. Arama başka yerleri yalnızca yazılan ad gibi başlıyorlarsa gösterir (en az 6 harf ya da adın %60'ı). Tablette ve yatayda yer kartları metinleri kadar geniştir ve satır ve sütunlarda durur.
+Turns automatic location on (filled) or off (empty); it shows the weather where you are; while the app is open it follows you like the compass and changes the town after 1.5 km. A village you pass through joins its county's list; it goes after 7 days without passing there and stays if you pass there often (3 days in 2 weeks). The compass shows the villages too. In another country or US state, the small localities are downloaded once, the first time you are there with internet.	Otomatik konumu açar (dolu) ya da kapatır (boş); havayı bulunduğunuz yerde gösterir; uygulama açıkken pusula gibi sizi izler ve 1,5 km sonra yeri değiştirir. İçinden geçtiğiniz köy ilinin listesine girer; 7 gün oradan geçmezseniz çıkar, sık geçerseniz kalır (2 haftada 3 gün). Pusula köyleri de gösterir. Başka bir ülkede ya da ABD eyaletinde küçük yerleşimler bir kez, oraya internetle ilk gittiğinizde indirilir.
+Left / right on the weather now	Şimdiki havada sola / sağa
+The next or the previous town of the list (then the parcels); the dots show where you are. With 2 or more towns their tabs show under the name (in farmer mode also the parcels). On another town, a tap on its name opens the list.	Listenin sonraki ya da önceki yeri (sonra parseller); noktalar nerede olduğunuzu gösterir. 2 ya da daha çok yerde sekmeleri adın altında görünür (çiftçi modunda parseller de). Başka bir yerde adına dokunmak listeyi açar.
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. The first town always keeps its star. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Üç sıra: önce dolu yıldızlı yerler (ana ekranları var, ekranların sırasıyla), sonra diğer favoriler. İlk yer yıldızını hep korur. Boş bir yıldıza dokunmak o yere ilkinden sonra ikinci bir ana ekran verir ve onu gösterir; yıldızı kaldırmak ekranını kaldırır ve yer favorilerde kalır. Ada dokunmak onu seçer; Yerler › ve İli seçin yerler listesini açar.
+6 themes (Monochrome, Pink, Yellow, Green, Blue, Violet): a tap on a dot, which has the colour of that theme's buttons; under them Light, Dark or Automatic (phone sensor).	6 tema (Tek renk, Pembe, Sarı, Yeşil, Mavi, Mor): o temanın düğmelerinin renginde olan bir noktaya dokunun; altlarında Açık, Koyu ya da Otomatik (telefon sensörü).
+Also a new version of the app, if there is one (checked every day for 2 weeks after an update, then once in 7 days).	Varsa uygulamanın yeni sürümü de (güncellemeden sonra 2 hafta her gün, sonra 7 günde bir denetlenir).
+Each kind has its own channel in the phone's settings (Weather warnings, Rain, snow and information, Earthquakes, Farmer mode: parcels, App updates), so you can turn one off and keep the others.	Her türün telefon ayarlarında kendi kanalı vardır (Hava uyarıları, Yağmur, kar ve bilgiler, Depremler, Çiftçi modu: parseller, Uygulama güncellemeleri), böylece birini kapatıp diğerlerini tutabilirsiniz.
+Looks for a new version on GitHub, with your consent. The app also checks by itself every day for 2 weeks after an update, then once in 7 days; a new version shows as a box at the top of ☰, and a tap on it starts the download.	İzninizle GitHub'da yeni sürüm arar. Uygulama da güncellemeden sonra 2 hafta her gün, sonra 7 günde bir kendisi denetler; yeni sürüm ☰ üstünde bir kutu olarak görünür ve ona dokunmak indirmeyi başlatır.
+Select towns	Yerleri seçin
+selected	seçili
+Select all	Tümünü seç
+ticked	işaretli
+Reorder	Yeniden sırala
+Done	Tamam
+Search a town on the map	Haritada yer ara
+Select towns to delete	Silinecek yerleri seçin
+Reorder the towns	Yerleri yeniden sırala
+Press the move sign at the right and drag up or down. The number is the screen the town will have.	Sağdaki taşıma işaretine basıp yukarı ya da aşağı sürükleyin. Sayı, yerin alacağı ekrandır.
+The order of the list is the order of the main screens: the first town is the first screen (the widgets and notices follow it). Swipe left or right over the weather now to go from one to another.	Listenin sırası ana ekranların sırasıdır: ilk yer ilk ekrandır (ardından widget'lar ve bildirimler gelir). Birinden diğerine geçmek için şimdiki havanın üzerinde sola ya da sağa kaydırın.
+Tap a town to tick it. The screens of the deleted towns go; the others keep their order.	İşaretlemek için bir yere dokunun. Silinen yerlerin ekranları gider; diğerleri sıralarını korur.
+The last town cannot be deleted. Leave at least one unticked.	Son yer silinemez. En az birini işaretsiz bırakın.
+Delete, unavailable	Sil, kullanılamıyor
+The last town cannot be deleted.	Son yer silinemez.
+RED CODE	KIRMIZI KOD
+ORANGE CODE	TURUNCU KOD
+YELLOW CODE	SARI KOD
+Move up	Yukarı taşı
+Move down	Aşağı taşı
+screen 	ekran 
+your location	konumunuz
+degrees	derece
+Screen 	Ekran 
+ of 	 / 
+Move: drag up or down	Taşı: yukarı ya da aşağı sürükleyin
+Satellite	Uydu
+Search	Ara
+Search a town	Yer ara
+Clear the search	Aramayı temizle
+No town here, or no internet	Burada yer yok ya da internet yok
+Details	Ayrıntılar
+In the list	Listede
+min 	en düşük 
+Feels like 	Hissedilen 
+humidity 	nem 
+Tomorrow	Yarın
+Added 	Eklendi: 
+. Its screen is number 	. Ekran numarası 
+: swipe to it.	: oraya kaydırın.
+ · Weather: Open-Meteo	 · Hava: Open-Meteo
+Clouds	Bulutlar
+Temperatures	Sıcaklıklar
+loading…	yükleniyor…
+on the map: 	haritada: 
+mm per hour, now and in the next 2 hours	saatte mm, şimdi ve sonraki 2 saatte
+sky covered	kapalı gökyüzü
+Rain from 	Yağmur başlangıcı 
+satellite or map, weather layer	uydu ya da harita, hava katmanı
+Show the map's buttons	Haritanın düğmelerini göster
+Hide the map's buttons	Haritanın düğmelerini gizle
+Temperature now 	Şimdiki sıcaklık 
+ degrees	 derece
+Yellow code	Sarı kod
+Orange code	Turuncu kod
+Red code	Kırmızı kod
+Information: 	Bilgi: 
+Tap to open the app.	Uygulamayı açmak için dokunun.
+Weather warnings	Hava uyarıları
+New weather warnings for your towns.	Yerleriniz için yeni hava uyarıları.
+Rain, snow and information	Yağmur, kar ve bilgiler
+Rain or snow starting, tomorrow's rain or snow, the app's own information (frost, heat, wind).	Başlayan yağmur ya da kar, yarınki yağmur ya da kar, uygulamanın kendi bilgileri (don, sıcak, rüzgâr).
+Earthquakes around you.	Çevrenizdeki depremler.
+Farmer mode: parcels	Çiftçi modu: parseller
+Rain, snow, wind, drought and information for your parcels.	Parselleriniz için yağmur, kar, rüzgâr, kuraklık ve bilgiler.
+App updates	Uygulama güncellemeleri
+A new version of the app and the test notice.	Uygulamanın yeni sürümü ve deneme bildirimi.
+Notifications are on: rain or snow, weather warnings and earthquakes around you. Each kind can be turned off in the phone's settings.	Bildirimler açık: yağmur ya da kar, hava uyarıları ve çevrenizdeki depremler. Her tür telefon ayarlarından kapatılabilir.
+has a main screen	ana ekranı var
+no main screen	ana ekranı yok
+The first town cannot be unticked.	İlk yerin işareti kaldırılamaz.
+shown now	şimdi gösteriliyor
+Automatic theme	Otomatik tema
+WEATHER MAP	HAVA HARİTASI
+Loading the map…	Harita yükleniyor…
+Menu: settings	Menü: ayarlar
+Towns, opens the list	Yerler, listeyi açar
+Parcel: 	Parsel: 
+Town: 	Yer: 
+Tap to refresh.	Yenilemek için dokunun.
+Weather map: 	Hava haritası: 
+, on	, açık
+, no rain near now	, şimdi yakında yağmur yok
+Rain chance by hour. Tap for the details.	Saatlik yağmur olasılığı. Ayrıntılar için dokunun.
+Choose the town	Yeri seçin
+Location on	Konum açık
+Location off	Konum kapalı
+Tap to change.	Değiştirmek için dokunun.
+Automatic theme on	Otomatik tema açık
+Automatic theme off	Otomatik tema kapalı
+Battery 	Pil 
+Values: being updated	Değerler: güncelleniyor

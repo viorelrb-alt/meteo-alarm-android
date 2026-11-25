@@ -1,22 +1,36 @@
 Geçerli sürüm: v.2.170 · 25.11.2026
 ANA EKRAN
+- Daha çok yer: listedeki her yerin kendi ana ekranı vardır; şimdiki havanın üzerinde sola ya da sağa kaydırmak listedeki sırayla sonrakine geçer.
 - Deprem bilgileri: Deprem kutusuna dokunmak onları ana ekranda açar: harita, altında hissedilme bölgeleri ve değerin geçmişi; renkli kare veya harita onları tam ekranda açar, ☰ › Depremler'deki bir deprem gibi. Romanya, Fransa, İtalya, Hollanda, İsviçre ve Yunanistan'da resmi değerler önce ülkenin enstitüsünden (INFP, BCSF, INGV, KNMI, SED, NOA), sonra EMSC'den gelir. Romanya’da ülke çevresindeki depremler de INFP değerini alır (infp.ro’dan).
+- Düğme adları: dokunulduğunda ekranda kalan yuvarlak düğme adını yaklaşık 1,5 saniye küçük bir balonda gösterir.
+- Hava haritası: ana ekranın sonunda yerin haritası Bulutlar, Sıcaklıklar ve Yağmur düğmeleriyle (aynı anda bir tane) ve açıklamayla; Yağmur yalnızca yakında şimdi ya da sonraki 2 saatte yağmur varsa açılır.
+- Yerler düğmesi: ev simgeli yuvarlak düğme (dikeyde adın sağında, yatayda üst şeritte, köşesinden önce) yerler listesini açar.
 AYARLAR
+- Depremler sayfası: telefonda son kaydedilen listelerle hemen açılır ve onları arka planda günceller.
+- Dışa / İçe aktarma: dosyaya girecekler için anahtarlar (ürünler ve yetiştirme verileri, parsel bildirimleri, parsel çöp kutusu, bildirimler, harita, widget'lar, deprem geçmişi, günlük de); Dışa ve İçe aktarmada yerleşimler ve parseller tek tek işaretlenir; Aa düğmesi metin boyutunu değiştirir.
 - Görüntüleme dili: ☰ içinde İngilizce ve ülkenin dili; Diğer diller: ülkenin diğer dilleri, büyük AB dilleri, Rumence ve telefonun dili (ABD'de yalnızca İngilizce ve İspanyolca).
+- Günlük: boyut, satırlar ve hatalar bir kartta; Günlüğü gör satırları açar (Tümü, Hatalar, Bugün, Dün; uzun dokunma bir satırı kopyalar); Paylaş ve Kaydet ekranın altında. Düzeltilen hatalar günlüğün sonundadır ve sayılmaz; ağ sorunları uyarıdır.
+- Temalar: Tek renk (beyaz, siyah ve gri; koyuda grafit), Pembe, Sarı, Yeşil, Mavi ve Mor, her biri açık ve koyu, düğmeler kontrast bir renkte; ☰ › Tema içindeki noktalar düğmelerin rengindedir.
+- ☰ içindeki favoriler: üç sıra, önce dolu yıldızlı yerler (ana ekranları var), sonra diğerleri; ilki yıldızını hep korur; boş bir yıldıza dokunmak yere ikinci ana ekranı verir; yıldızı kaldırmak ekranını kaldırır.
 BILDIRIMLER
 - Depremler: her 10 dakikada bir, gece ekran kapalıyken de kontrol edilir; revize edilen büyüklük bildirimi günceller, bildirime dokunmak haritayı açar.
-- Yeni sürüm: bildirimler açıkken uygulama haftada bir GitHub'ı kontrol eder ve yeni sürümü Android bildirimlerinde duyurur; dokunmak Güncellemeleri denetle'yi açar.
+- Kendi kanalları: hava uyarıları, yağmur ve kar, depremler, parseller ve güncellemelerin her birinin telefon ayarlarında kendi kanalı vardır; birini kapatıp diğerlerini tutabilirsiniz.
+- Yeni sürüm: bildirimler açıkken uygulama güncellemeden sonra 2 hafta her gün, sonra 7 günde bir GitHub'ı denetler ve yeni sürümü Android bildirimlerinde duyurur; dokunmak Güncellemeleri denetle'yi açar.
+GÜNCELLEMELER
+- Yeni sürüm kutusu: yeni bir sürüm olduğunda ☰ üstünde kısa bir kutu; ona dokunmak indirmeyi başlatır.
 PARSELLER
 - Ana ekranda istatistikler: operasyonel durumun altında açılır (yatayda solda); ‹ kapatır, başka bir parselin sekmesi açık tutar.
 - Geçmiş ve tahmin: göstergeyi geçmiş bir güne sürükleyin; değerleri grafiğin altındaki kutuda görünür ve 10 sn sonra bugüne döner.
+- Hava katmanları: parsellerin haritasında ＋ ve − altındaki kutu Uydu, Harita, Bulutlar, Sıcaklıklar (renkler) ve Yağmur (saatte mm) ile açılır, sonra seçiminize kapanır; aynı anda bir katman, adı, saati ve açıklaması kartların üstünde; Yağmur yalnızca şimdi ya da sonraki 2 saatte yağmur varsa açılır (radar yerine).
 - İstatistik balonları: ilaçlama penceresindeki bir saate, grafiklerdeki bir güne veya bir toprak satırına dokunmak açıklamalı bir balon açar; ilaçlama penceresi kendiliğinden kayar.
 - İstatistik: her parsel için Günün işi ve 4 sekme: Operasyonel (saat saat ilaçlama penceresi, damla kuruması (ΔT), rüzgâr, ıslak yaprak), Su ve Toprak (yağmur, buharlaşma, 6 ve 18 cm'de toprak), Sezon (geçen yıla göre gün-derecesi, tahmini evre) ve Riskler 72 h (mantar hastalıkları, yer donu, sıcak, rüzgâr ve dolu); PDF veya CSV olarak kaydetme.
 - Operasyonel durum: üstte ürün ve ekim tarihi; ürün varsa karar damla kurumasını (ΔT) ve ürünün hastalığını da hesaba katar.
 - Parsel koordinatları: düzenleme sayfasında her noktanın GPS koordinatları yazılabilir, altında uydu görünümü parseli gösterir.
 - Parseli düzenle: kalem parselin sayfasını açar: ad, bitki (ekim tarihinin sezonuna göre liste veya Başka bitki…), ekim tarihi, alan; köşeler haritada taşınır.
-- Depremler sayfası: telefonda son kaydedilen listelerle hemen açılır ve onları arka planda günceller.
-- Dışa / İçe aktarma: dosyaya girecekler için anahtarlar (ürünler ve yetiştirme verileri, parsel bildirimleri, parsel çöp kutusu, bildirimler, harita, widget'lar, deprem geçmişi, günlük de); Dışa ve İçe aktarmada yerleşimler ve parseller tek tek işaretlenir; Aa düğmesi metin boyutunu değiştirir.
-- Günlük: boyut, satırlar ve hatalar bir kartta; Günlüğü gör satırları açar (Tümü, Hatalar, Bugün, Dün; uzun dokunma bir satırı kopyalar); Paylaş ve Kaydet ekranın altında. Düzeltilen hatalar günlüğün sonundadır ve sayılmaz; ağ sorunları uyarıdır.
+YERLER
+- Haritada arama: büyüteç altta aramayla haritayı açar; bir yere ya da bir yerleşimin adına dokunmak sıcaklığını, Ayrıntılar'ı (sonraki günler) ve Ekle'yi gösterir. Harita sade ve açıktır, yer adları büyük yazılır (parsellerin haritasında da). Başka yerler yalnızca yazılan ad gibi başlıyorlarsa görünür (en az 6 harf ya da adın %60'ı).
+- Yer kartları: tablette ve yatayda metinleri kadar geniştir ve satır ve sütunlarda durur; telefonda dikeyde çok uzun bir ad daha küçük harf alır; yatayda arama dikeydeki boyutunu korur.
+- Yerler listesi: Yerler düğmesi listeyi temanın renginde açar; Seç bir ya da birkaç yeri siler (sonuncusu kalır), ⌃⌄ işareti basılı tutulup yukarı ya da aşağı sürüklenince sırayı değiştirir; her yer kayıtlı havasını korur.
 - Tasarım iyileştirmeleri ve bildirilen hataların düzeltmeleri.
 
 Sürüm 1.4 (v.1.400 – v.1.520)

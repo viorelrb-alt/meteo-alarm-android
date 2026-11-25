@@ -1,22 +1,36 @@
 Versión actual: v.2.170 · 25.11.2026
+ACTUALIZACIONES
+- Caja Nueva versión: una caja corta arriba en ☰ cuando hay una nueva versión; tocarla inicia la descarga.
 AJUSTES
+- Exportar / Importar: interruptores para lo que entra en el archivo (también cultivos y datos de cultivo, notificaciones de parcelas, papelera de parcelas, notificaciones, mapa, widgets, historial de terremotos, registro); en Exportar e Importar las localidades y parcelas se marcan una a una; el botón Aa cambia el tamaño del texto.
+- Favoritos en ☰: tres filas, primero las localidades con estrella llena (tienen pantalla principal), luego las demás; la primera conserva siempre su estrella; tocar una estrella vacía da a la localidad una pantalla principal, la segunda; quitar la estrella quita su pantalla.
 - Idioma de la pantalla: en ☰ el inglés y el idioma del país; Otros idiomas: los demás idiomas del país, los grandes idiomas de la UE, el rumano y el del teléfono (en EE. UU. solo inglés y español).
+- Página Terremotos: se abre al instante con las últimas listas guardadas en el teléfono y las actualiza en segundo plano.
+- Registro: tamaño, líneas y errores en una tarjeta; Ver el registro abre las líneas (Todas, Errores, Hoy, Ayer; una pulsación larga copia una línea); Compartir y Guardar abajo en la pantalla. Los errores resueltos están al final del registro y no se cuentan; los problemas de red son avisos.
+- Temas: Monocromo (blanco, negro y gris; grafito en oscuro), Rosa, Amarillo, Verde, Azul y Violeta, cada uno claro y oscuro, con los botones en un color de contraste; los puntos de ☰ › Tema tienen el color de los botones.
+LOCALIDADES
+- Búsqueda en el mapa: la lupa abre el mapa con la búsqueda abajo; tocar un lugar o el nombre de una localidad muestra su temperatura, Detalles (los próximos días) y Añadir. El mapa es sencillo y claro, con los nombres de las localidades escritos en grande (también en el mapa de las parcelas). Otras localidades solo aparecen si empiezan como el nombre escrito (al menos 6 letras o el 60 %).
+- Lista de localidades: el botón Localidades abre la lista, en el color del tema; Seleccionar borra una o varias (la última se queda), y el signo ⌃⌄ mantenido y arrastrado arriba o abajo cambia el orden; cada localidad conserva su tiempo guardado.
+- Tarjetas de localidades: en tableta y en horizontal son tan anchas como su texto y se colocan en filas y columnas; en vertical en el teléfono, un nombre demasiado largo usa letras más pequeñas; en horizontal la búsqueda mantiene su tamaño de vertical.
 NOTIFICACIONES
+- Canales propios: avisos meteorológicos, lluvia y nieve, terremotos, parcelas y actualizaciones tienen cada uno su canal en los ajustes del teléfono; puedes desactivar uno y mantener los demás.
+- Nueva versión: con las notificaciones activadas, la app consulta GitHub cada día durante 2 semanas tras una actualización, luego una vez cada 7 días, y anuncia una nueva versión en las notificaciones de Android; un toque abre Buscar actualizaciones.
 - Terremotos: comprobados cada 10 minutos, también de noche con la pantalla apagada; una magnitud revisada actualiza el aviso y un toque en él abre el mapa.
-- Nueva versión: con las notificaciones activadas, la app revisa GitHub una vez por semana y avisa de una nueva versión en las notificaciones de Android; un toque abre Buscar actualizaciones.
 PANTALLA PRINCIPAL
+- Botón Localidades: el botón redondo con el icono de casas (en vertical a la derecha del nombre, en horizontal en la banda superior, antes de su esquina) abre la lista de localidades.
 - Información del terremoto: un toque en la casilla Terremoto la abre en la pantalla principal: el mapa, debajo las zonas de percepción y el historial del valor; el cuadrado de color o el mapa la abren en pantalla completa, como un terremoto de ☰ › Terremotos. En Rumanía, Francia, Italia, Países Bajos, Suiza y Grecia los valores oficiales vienen primero del instituto del país (INFP, BCSF, INGV, KNMI, SED, NOA) y luego de EMSC. En Rumanía, los terremotos alrededor del país también reciben el valor del INFP (de infp.ro).
+- Mapa del tiempo: al final de la pantalla principal, el mapa de la localidad con los botones Nubes, Temperaturas y Lluvia (uno cada vez) y la leyenda; Lluvia solo se activa cuando llueve cerca ahora o en las próximas 2 horas.
+- Nombres de los botones: un botón redondo que queda en la pantalla al tocarlo muestra su nombre en una burbuja pequeña durante unos 1,5 segundos.
+- Varias localidades: cada localidad de la lista tiene su propia pantalla principal; deslizar a la izquierda o a la derecha sobre el tiempo actual pasa a la siguiente, en el orden de la lista.
 PARCELAS
 - Burbujas en Estadísticas: tocar una hora de la ventana de pulverización, un día de los gráficos o una fila del suelo abre una burbuja con su explicación; la ventana de pulverización se mueve sola.
+- Capas meteorológicas: en el mapa de las parcelas, la caja bajo ＋ y − se abre con Satélite, Mapa, Nubes, Temperaturas (colores) y Lluvia (mm por hora) y luego se pliega en lo que elegiste; una capa cada vez, con su nombre, hora y leyenda sobre las tarjetas; Lluvia solo se activa cuando llueve ahora o en las próximas 2 horas (en lugar del radar).
 - Coordenadas de la parcela: en la página de edición se escriben las coordenadas GPS de cada punto, y debajo la vista de satélite muestra la parcela.
 - Editar parcela: el lápiz abre la página de la parcela: nombre, cultivo (lista según la temporada de la fecha de siembra u Otro cultivo…), fecha de siembra, superficie; las esquinas se mueven en el mapa.
 - Estadísticas en la pantalla principal: se abren bajo el estado operativo (en horizontal a la izquierda); ‹ las cierra y la pestaña de otra parcela las mantiene.
 - Estadísticas: para cada parcela, la Acción del día y 4 pestañas: Operativo (ventana de pulverización hora a hora, secado de gotas (ΔT), viento, hoja mojada), Agua y Suelo (lluvia, evaporación, suelo a 6 y 18 cm), Temporada (grados-día frente al año pasado, fase estimada) y Riesgos 72 h (enfermedades fúngicas, helada en el suelo, calor, viento y granizo); se guardan en PDF o CSV.
 - Estado operativo: arriba, el cultivo y su fecha de siembra; con un cultivo el veredicto también tiene en cuenta el secado de gotas (ΔT) y su enfermedad.
 - Historial y pronóstico: arrastra el indicador a un día pasado; sus valores aparecen en un recuadro bajo el gráfico y a los 10 s vuelve a hoy.
-- Página Terremotos: se abre al instante con las últimas listas guardadas en el teléfono y las actualiza en segundo plano.
-- Exportar / Importar: interruptores para lo que entra en el archivo (también cultivos y datos de cultivo, notificaciones de parcelas, papelera de parcelas, notificaciones, mapa, widgets, historial de terremotos, registro); en Exportar e Importar las localidades y parcelas se marcan una a una; el botón Aa cambia el tamaño del texto.
-- Registro: tamaño, líneas y errores en una tarjeta; Ver el registro abre las líneas (Todas, Errores, Hoy, Ayer; una pulsación larga copia una línea); Compartir y Guardar abajo en la pantalla. Los errores resueltos están al final del registro y no se cuentan; los problemas de red son avisos.
 - Mejoras de diseño y corrección de los errores comunicados.
 
 Versión 1.4 (v.1.400 – v.1.520)

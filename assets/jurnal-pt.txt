@@ -1,22 +1,36 @@
 Versão atual: v.2.170 · 25.11.2026
+ATUALIZAÇÕES
+- Caixa Nova versão: uma caixa curta no topo de ☰ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
+- Exportar / Importar: interruptores para o que entra no ficheiro (também culturas e dados de cultivo, notificações das parcelas, reciclagem de parcelas, notificações, mapa, widgets, histórico de sismos, registo); em Exportar e Importar as localidades e parcelas marcam-se uma a uma; o botão Aa muda o tamanho do texto.
+- Favoritos em ☰: três filas, primeiro as localidades com estrela cheia (têm ecrã principal), depois as outras; a primeira mantém sempre a sua estrela; tocar numa estrela vazia dá à localidade um ecrã principal, o segundo; tirar a estrela tira o seu ecrã.
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
+- Página Sismos: abre logo com as últimas listas guardadas no telefone e atualiza-as em segundo plano.
+- Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã. Os erros resolvidos ficam no fim do registo e não são contados; os problemas de rede são avisos.
+- Temas: Monocromático (branco, preto e cinzento; grafite no escuro), Rosa, Amarelo, Verde, Azul e Violeta, cada um claro e escuro, com os botões numa cor de contraste; os pontos em ☰ › Tema têm a cor dos botões.
 ECRÃ PRINCIPAL
+- Botão Localidades: o botão redondo com o ícone de casas (na vertical à direita do nome, na horizontal na faixa de cima, antes do seu canto) abre a lista de localidades.
 - Informações do sismo: um toque na caixa Sismo abre-as no ecrã principal: o mapa, por baixo as zonas sentidas e o histórico do valor; o quadrado colorido ou o mapa abrem-nas em ecrã inteiro, como um sismo de ☰ › Sismos. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
+- Mapa do tempo: no fim do ecrã principal, o mapa da localidade com os botões Nuvens, Temperaturas e Chuva (um de cada vez) e a legenda; Chuva só se ativa quando chove perto agora ou nas próximas 2 horas.
+- Nomes dos botões: um botão redondo que fica no ecrã ao ser tocado mostra o seu nome num pequeno balão durante cerca de 1,5 segundos.
+- Várias localidades: cada localidade da lista tem o seu próprio ecrã principal; deslizar para a esquerda ou para a direita sobre o tempo atual passa à seguinte, pela ordem da lista.
+LOCALIDADES
+- Cartões das localidades: no tablet e na horizontal são tão largos como o seu texto e ficam em linhas e colunas; na vertical no telefone, um nome demasiado longo tem letras mais pequenas; na horizontal a pesquisa mantém o tamanho da vertical.
+- Lista de localidades: o botão Localidades abre a lista, na cor do tema; Selecionar apaga uma ou mais (a última fica), e o sinal ⌃⌄ mantido e arrastado para cima ou para baixo muda a ordem; cada localidade mantém o seu tempo guardado.
+- Pesquisa no mapa: a lupa abre o mapa com a pesquisa em baixo; tocar num lugar ou no nome de uma localidade mostra a sua temperatura, Detalhes (os próximos dias) e Adicionar. O mapa é simples e claro, com os nomes das localidades escritos em grande (também no mapa das parcelas). Outras localidades só aparecem se começarem como o nome escrito (pelo menos 6 letras ou 60% dele).
 NOTIFICAÇÕES
+- Canais próprios: avisos meteorológicos, chuva e neve, sismos, parcelas e atualizações têm cada um o seu canal nas definições do telefone; pode desligar um e manter os outros.
+- Nova versão: com as notificações ligadas, a app consulta o GitHub todos os dias durante 2 semanas após uma atualização, depois uma vez a cada 7 dias, e anuncia uma nova versão nas notificações do Android; um toque abre Procurar atualizações.
 - Sismos: verificados a cada 10 minutos, também à noite com o ecrã desligado; uma magnitude revista atualiza a notificação e um toque nela abre o mapa.
-- Nova versão: com as notificações ligadas, a app verifica o GitHub uma vez por semana e anuncia uma nova versão nas notificações do Android; um toque abre Procurar atualizações.
 PARCELAS
 - Bolhas nas Estatísticas: tocar numa hora da janela de pulverização, num dia dos gráficos ou numa linha do solo abre uma bolha com a explicação; a janela de pulverização move-se sozinha.
+- Camadas meteorológicas: no mapa das parcelas, a caixa sob ＋ e − abre com Satélite, Mapa, Nuvens, Temperaturas (cores) e Chuva (mm por hora) e depois fecha-se na escolha; uma camada de cada vez, com nome, hora e legenda acima dos cartões; Chuva só se ativa quando chove agora ou nas próximas 2 horas (em vez do radar).
 - Coordenadas da parcela: na página de edição escrevem-se as coordenadas GPS de cada ponto, e por baixo a vista de satélite mostra a parcela.
 - Editar parcela: o lápis abre a página da parcela: nome, cultura (lista pela época da data de sementeira ou Outra cultura…), data de sementeira, área; os cantos movem-se no mapa.
 - Estado operacional: em cima, a cultura e a data de sementeira; com uma cultura o veredicto também tem em conta a secagem das gotas (ΔT) e a sua doença.
 - Estatística: para cada parcela, a Ação do dia e 4 separadores: Operacional (janela de pulverização hora a hora, secagem das gotas (ΔT), vento, folha molhada), Água e Solo (chuva, evaporação, solo a 6 e 18 cm), Época (graus-dia face ao ano passado, fase estimada) e Riscos 72 h (doenças fúngicas, geada no solo, calor, vento e granizo); guarda em PDF ou CSV.
 - Estatísticas no ecrã principal: abrem-se sob o estado operacional (na horizontal à esquerda); ‹ fecha-as e o separador de outra parcela mantém-nas.
 - Histórico e previsão: arraste o indicador para um dia passado; os seus valores aparecem numa caixa sob o gráfico e após 10 s volta a hoje.
-- Página Sismos: abre logo com as últimas listas guardadas no telefone e atualiza-as em segundo plano.
-- Exportar / Importar: interruptores para o que entra no ficheiro (também culturas e dados de cultivo, notificações das parcelas, reciclagem de parcelas, notificações, mapa, widgets, histórico de sismos, registo); em Exportar e Importar as localidades e parcelas marcam-se uma a uma; o botão Aa muda o tamanho do texto.
-- Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã. Os erros resolvidos ficam no fim do registo e não são contados; os problemas de rede são avisos.
 - Melhorias de design e correção dos erros comunicados.
 
 Versão 1.4 (v.1.400 – v.1.520)

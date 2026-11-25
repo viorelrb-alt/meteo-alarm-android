@@ -1,11 +1,21 @@
 Huidige versie: v.2.170 · 25.11.2026
 HOOFDSCHERM
 - Aardbevingsinformatie: een tik op het vak Aardbeving opent ze in het hoofdscherm: de kaart, daaronder de voelbare zones en de geschiedenis van de waarde; het gekleurde vierkant of de kaart opent ze op het hele scherm, zoals een beving uit ☰ › Aardbevingen. In Roemenië, Frankrijk, Italië, Nederland, Zwitserland en Griekenland komen de officiële waarden eerst van het instituut van het land (INFP, BCSF, INGV, KNMI, SED, NOA), daarna van EMSC. In Roemenië krijgen ook de bevingen rond het land de waarde van INFP (van infp.ro).
+- Knop Plaatsen: de ronde knop met het huisjespictogram (staand rechts van de naam, liggend op de bovenste band, vóór de hoek) opent de lijst met plaatsen.
+- Meer plaatsen: elke plaats in de lijst heeft een eigen hoofdscherm; links of rechts vegen over het weer nu gaat naar de volgende, in de volgorde van de lijst.
+- Namen van de knoppen: een ronde knop die na een tik op het scherm blijft, toont zijn naam ongeveer 1,5 seconde in een kleine ballon.
+- Weerkaart: aan het einde van het hoofdscherm de kaart van de plaats met de knoppen Wolken, Temperaturen en Regen (één tegelijk) en de legenda; Regen gaat alleen aan als het in de buurt nu of in de komende 2 uur regent.
 INSTELLINGEN
+- Exporteren / Importeren: schakelaars voor wat in het bestand gaat (ook gewassen en teeltgegevens, perceelmeldingen, prullenbak van percelen, meldingen, kaart, widgets, aardbevingsgeschiedenis, logboek); bij Exporteren en Importeren worden plaatsen en percelen één voor één aangevinkt; de knop Aa verandert de tekstgrootte.
+- Favorieten in ☰: drie rijen, eerst de plaatsen met een volle ster (ze hebben een hoofdscherm), dan de andere; de eerste houdt altijd haar ster; een tik op een lege ster geeft de plaats een hoofdscherm, het tweede; de ster weghalen haalt haar scherm weg.
+- Logboek: grootte, regels en fouten op een kaart; Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan onderaan het scherm. Opgeloste fouten staan aan het eind van het logboek en tellen niet mee; netwerkproblemen zijn waarschuwingen.
+- Pagina Aardbevingen: opent meteen met de laatst op de telefoon opgeslagen lijsten en werkt ze op de achtergrond bij.
+- Thema's: Monochroom (wit, zwart en grijs; grafiet in donker), Roze, Geel, Groen, Blauw en Violet, elk licht en donker, met knoppen in een contrasterende kleur; de stippen in ☰ › Thema hebben de kleur van de knoppen.
 - Weergavetaal: in ☰ Engels en de taal van het land; Andere talen: de andere talen van het land, de grote EU-talen, Roemeens en die van de telefoon (in de VS alleen Engels en Spaans).
 MELDINGEN
 - Aardbevingen: elke 10 minuten gecontroleerd, ook 's nachts met het scherm uit; een herziene magnitude werkt de melding bij en een tik erop opent de kaart.
-- Nieuwe versie: met meldingen aan controleert de app eens per week GitHub en meldt een nieuwe versie in de Android-meldingen; een tik opent Zoeken naar updates.
+- Eigen kanalen: weerwaarschuwingen, regen en sneeuw, aardbevingen, percelen en updates hebben elk een eigen kanaal in de instellingen van de telefoon; je kunt er één uitzetten en de andere houden.
+- Nieuwe versie: met meldingen aan controleert de app GitHub na een update 2 weken elke dag, daarna eens per 7 dagen, en meldt een nieuwe versie in de Android-meldingen; een tik opent Zoeken naar updates.
 PERCELEN
 - Ballonnen in Statistieken: een tik op een uur van het spuitvenster, een dag in de grafieken of een bodemregel opent een ballon met uitleg; het spuitvenster schuift vanzelf.
 - Coördinaten van het perceel: op de bewerkpagina worden de gps-coördinaten van elk punt getypt, en daaronder toont het satellietbeeld het perceel.
@@ -14,9 +24,13 @@ PERCELEN
 - Statistieken in het hoofdscherm: ze openen onder de operationele status (liggend links); ‹ sluit ze en het tabblad van een ander perceel houdt ze open.
 - Statistieken: voor elk perceel de Actie van de dag en 4 tabbladen: Operationeel (spuitvenster per uur, druppeldroging (ΔT), wind, nat blad), Water & Bodem (regen, verdamping, bodem op 6 en 18 cm), Seizoen (graaddagen tegenover vorig jaar, geschat stadium) en Risico's 72 u (schimmelziekten, grondvorst, hitte, wind en hagel); opslaan als PDF of CSV.
 - Verleden en verwachting: sleep de aanwijzer naar een dag in het verleden; de waarden verschijnen in een vak onder de grafiek en na 10 s keert hij terug naar vandaag.
-- Pagina Aardbevingen: opent meteen met de laatst op de telefoon opgeslagen lijsten en werkt ze op de achtergrond bij.
-- Exporteren / Importeren: schakelaars voor wat in het bestand gaat (ook gewassen en teeltgegevens, perceelmeldingen, prullenbak van percelen, meldingen, kaart, widgets, aardbevingsgeschiedenis, logboek); bij Exporteren en Importeren worden plaatsen en percelen één voor één aangevinkt; de knop Aa verandert de tekstgrootte.
-- Logboek: grootte, regels en fouten op een kaart; Logboek bekijken opent de regels (Alle, Fouten, Vandaag, Gisteren; lang tikken kopieert een regel); Delen en Opslaan onderaan het scherm. Opgeloste fouten staan aan het eind van het logboek en tellen niet mee; netwerkproblemen zijn waarschuwingen.
+- Weerlagen: op de kaart van de percelen opent het vak onder ＋ en − met Satelliet, Kaart, Wolken, Temperaturen (kleuren) en Regen (mm per uur) en klapt daarna dicht op je keuze; één laag tegelijk, met naam, tijd en legenda boven de kaarten; Regen gaat alleen aan als het nu of in de komende 2 uur regent (in plaats van de radar).
+PLAATSEN
+- Lijst met plaatsen: de knop Plaatsen opent de lijst, in de kleur van het thema; Selecteren verwijdert er één of meer (de laatste blijft), en het teken ⌃⌄ vasthouden en omhoog of omlaag slepen verandert de volgorde; elke plaats houdt haar opgeslagen weer.
+- Plaatskaarten: op een tablet en liggend zijn ze zo breed als hun tekst en staan ze in rijen en kolommen; staand op een telefoon krijgt een te lange naam kleinere letters; liggend houdt het zoeken zijn staande grootte.
+- Zoeken op de kaart: het vergrootglas opent de kaart met het zoeken onderaan; een tik op een plek of op de naam van een plaats toont de temperatuur, Details (de volgende dagen) en Toevoegen. De kaart is eenvoudig en licht, met de namen van de plaatsen groot geschreven (ook op de kaart van de percelen). Andere plaatsen verschijnen alleen als ze beginnen zoals de getypte naam (minstens 6 letters of 60% ervan).
+UPDATES
+- Vak Nieuwe versie: bovenaan ☰ een kort vak als er een nieuwe versie is; een tik erop start de download.
 - Ontwerpverbeteringen en oplossingen voor gemelde fouten.
 
 Versie 1.4 (v.1.400 – v.1.520)
