@@ -40,6 +40,12 @@ final class WeatherView extends View {
 		/** v2.020: where the Statistics go on the screen (pixels: left, top, right, bottom, the room above them that scrolls away); null: nowhere. */
 		void statsFrame(int[] r);
 
+		/** v2.170: a tap on the weather map's button K (1 clouds, 2 temperatures, 3 rain). */
+		void onWxLayer(int k);
+
+		/** v2.170: the weather map is on the page, W x H pixels (its picture is made that size). */
+		void wxMap(int w, int h, int r);
+
 		/** Brightness 0.01–1 now (the app's own or the phone's). */
 		float brightness();
 
@@ -302,6 +308,7 @@ final class WeatherView extends View {
 		drawScreen(c);
 		talkAfterDraw();
 		statsReport();
+		wxReport();
 		if (foot != null) foot.invalidate();
 		if (footFull != null) footFull.invalidate();
 		if (pull > 0) drawPull(c);
@@ -630,6 +637,32 @@ final class WeatherView extends View {
 	/** v2.111: is the point X Y (pixels of this view) on a floating button? */
 	boolean onFoot(float x, float y) {
 		return screen.quakeOn && scale > 0 && screen.onFoot((x - ox) / scale, (y - oy) / scale);
+	}
+
+	private int wxLastW, wxLastH;
+	private String wxKey = "";
+
+	/** v2.170: tells the activity the weather map's size in pixels when it changed. */
+	private void wxReport() {
+		float[] a = screen.wxArea;
+		if (a[2] <= 0 || scale <= 0) return;
+		final int w = Math.round((a[2] - 3) * scale), h = Math.round((a[3] - 3) * scale), r = Math.round(24.5f * scale);
+		// Again when the size, the town, the theme or the layer changed.
+		String key = w + "/" + h + "/" + (screen.city != null ? screen.city.lat + "," + screen.city.lon : "") + "/" + screen.dark + "/" + screen.wxLayer;
+		if (key.equals(wxKey)) return;
+		wxKey = key;
+		wxLastW = w;
+		wxLastH = h;
+		post(new Runnable() {
+			public void run() {
+				taps.wxMap(w, h, r);
+			}
+		});
+	}
+
+	/** v2.170: the weather map's size is told again (another town, a new picture). */
+	void wxReset() {
+		wxKey = "";
 	}
 
 	/** v2.020: tells the activity where the Statistics go when that changed. */
@@ -1081,6 +1114,11 @@ final class WeatherView extends View {
 		if (onPage && screen.precipArea[2] > 0 && in(screen.precipArea, x, y) && (screen.hours.area[2] <= 0 || in(screen.hours.area, x, y))) {
 			int j = screen.partAt(x, y);
 			taps.onPrecip(j < 0 ? screen.precipArea.clone() : screen.partArea[j].clone(), j < 0 ? -1 : screen.partIdx[j]);
+			return true;
+		}
+		int wk = onPage ? screen.wxChipAt(x, y) : -1;
+		if (wk >= 0) {
+			taps.onWxLayer(wk + 1);
 			return true;
 		}
 		int ik = onPage ? screen.infoAt(x, y) : -1;

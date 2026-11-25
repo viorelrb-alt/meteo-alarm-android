@@ -49,6 +49,15 @@ final class MapView extends View {
 		void at(double lat, double lon);
 	}
 
+	/** v2.170: R runs at each change of the map (a tile or the weather came): the main screen's map is drawn off the screen. */
+	Runnable onChange;
+
+	@Override
+	public void invalidate() {
+		super.invalidate();
+		if (onChange != null) onChange.run();
+	}
+
 	/** v2.162 (Viorel): a tap on a town's name written over the map picks that very town. */
 	interface TownTap {
 		void town(String name, String county, double lat, double lon);

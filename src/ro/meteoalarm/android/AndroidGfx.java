@@ -91,8 +91,12 @@ final class AndroidGfx implements Gfx {
 	private final java.util.HashMap<String, Bitmap> images = new java.util.HashMap<String, Bitmap>();
 	private final Paint img = new Paint(Paint.FILTER_BITMAP_FLAG | Paint.ANTI_ALIAS_FLAG);
 
+	/** v2.170: pictures the app makes while it runs ("live:…", the weather map), not cached here. */
+	static final Map<String, Bitmap> live = new HashMap<String, Bitmap>();
+
 	public void image(String asset, int sx, int sy, int sw, int sh, float x, float y, float w, float h, float alpha) {
-		Bitmap b = images.get(asset);
+		Bitmap b = asset.startsWith("live:") ? live.get(asset) : images.get(asset);
+		if (b == null && asset.startsWith("live:")) return;
 		if (b == null) {
 			try {
 				InputStream in = assets.open(asset);

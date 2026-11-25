@@ -246,6 +246,8 @@ public final class Screen {
 		bigIcon = null;
 		precipArea[2] = 0;
 		statsArea[2] = 0;
+		wxArea[2] = 0;
+		for (float[] b : wxChip) b[2] = 0;
 		parts = 0;
 		nowArea[2] = 0;
 		btnRain24[2] = 0;
@@ -533,7 +535,7 @@ public final class Screen {
 				st.area[1] += dy;
 				keepIn(st.area, top, bot);
 			}
-		for (float[] a : new float[][] { nowArea, precipArea, btnStats, statusArea })
+		for (float[] a : new float[][] { nowArea, precipArea, btnStats, statusArea, wxArea, wxChip[0], wxChip[1], wxChip[2] })
 			if (a[2] > 0) a[1] += dy;
 		for (int j = 0; j < parts; j++) partArea[j][1] += dy;
 		keepIn(nowArea, top, bot);
@@ -666,7 +668,73 @@ public final class Screen {
 			y = section(x, y, wd, null, Tr.t("WEATHER DETAILS", "DETALII METEO"), null);
 			drawInfoStrip(infoBoxes(), x, y, wd, 178);
 		}
-		return y + 178;
+		y += 178;
+		if (wxOn) {
+			y = section(x, y + 26, wd, null, Tr.t("WEATHER MAP", "HARTĂ METEO"), null);
+			y = drawWxMap(x, y, wd);
+		}
+		return y;
+	}
+
+	// --- v2.170 (Viorel): the weather map at the end of the page ------------------------------------
+
+	/** The map is shown; its layer: 1 clouds, 2 temperatures, 3 rain; it rains near now or in the next 2 hours. */
+	public boolean wxOn = true, wxRain;
+	public int wxLayer = 2;
+	/** The picture of the map (drawn by the app, "live:wxmap"): its size in pixels, 0 while there is none. */
+	public int wxPicW, wxPicH;
+	/** Where the map and its three buttons are (x, y, w, h), for the taps. */
+	public final float[] wxArea = new float[4];
+	public final float[][] wxChip = new float[3][4];
+
+	/** The map's card (the picture with its legend, made by the app) and the Clouds / Temperatures / Rain buttons over it. */
+	private float drawWxMap(float x, float y, float wd) {
+		float h = Math.round(Math.min(wd * 0.92f, 640));
+		wxArea[0] = x * hs; wxArea[1] = y * hs; wxArea[2] = wd * hs; wxArea[3] = h * hs;
+		if (wxPicW > 0 && wxPicH > 0) {
+			g.roundRect(x, y, wd, h, 26, edge());
+			g.image("live:wxmap", 0, 0, wxPicW, wxPicH, x + 1.5f, y + 1.5f, wd - 3, h - 3, 1);
+		} else {
+			card(x, y, wd, h, 26);
+			String wait = Tr.t("Loading the map…", "Se încarcă harta…");
+			ctext(false, 24, y + h / 2 - 14, x + wd / 2, wait, c.dim);
+		}
+		String[] nm = { Tr.t("Clouds", "Nori"), Tr.t("Temperatures", "Temperaturi"), Tr.t("Rain", "Ploi") };
+		float cp = 28, chH = 84, pad = 7, gx = 28;
+		float[] ws = new float[3];
+		float tot = 2 * pad;
+		for (int k = 0; k < 3; k++) {
+			ws[k] = g.width(true, cp, nm[k]) + 2 * gx;
+			tot += ws[k];
+		}
+		float k0 = Math.min(1, (wd - 32) / tot);
+		float px = x + 16, py = y + 16;
+		g.roundRect(px, py, tot * k0, chH, chH / 2, edge());
+		g.roundRect(px + 1.5f, py + 1.5f, tot * k0 - 3, chH - 3, chH / 2 - 1.5f, dark ? mix(c.page, c.ink, 0.1f) : mix(c.page, Gfx.WHITE, 0.9f));
+		float cx = px + pad * k0;
+		for (int k = 0; k < 3; k++) {
+			float bw = ws[k] * k0;
+			boolean on = wxLayer == k + 1, off = k == 2 && !wxRain && !on;
+			if (on) g.roundRect(cx, py + pad, bw, chH - 2 * pad, (chH - 2 * pad) / 2, c.accent);
+			int col = on ? onAccent() : off ? c.dim : c.ink;
+			float tp = fit(true, cp, bw - 12, nm[k]), tw = g.width(true, tp, nm[k]);
+			ltext(true, tp, py + chH / 2 - tp * 0.56f, cx + (bw - tw) / 2, nm[k], col);
+			// Rain with no rain near: struck through (it turns on by itself when rain comes).
+			if (off) g.poly(new float[] { cx + (bw - tw) / 2 - 3, py + chH / 2 + 3, cx + (bw + tw) / 2 + 3, py + chH / 2 - 6, cx + (bw + tw) / 2 + 3, py + chH / 2 - 3, cx + (bw - tw) / 2 - 3, py + chH / 2 + 6 }, c.dim);
+			wxChip[k][0] = cx * hs; wxChip[k][1] = py * hs; wxChip[k][2] = bw * hs; wxChip[k][3] = chH * hs;
+			cx += bw;
+		}
+		return y + h;
+	}
+
+	/** v2.170: the map's button under X, Y: 0 clouds, 1 temperatures, 2 rain; -1 none. */
+	public int wxChipAt(float x, float y) {
+		if (!wxOn || wxArea[2] <= 0) return -1;
+		for (int k = 0; k < 3; k++) {
+			float[] b = wxChip[k];
+			if (b[2] > 0 && x >= b[0] && x <= b[0] + b[2] && y >= b[1] - 6 && y <= b[1] + b[3] + 6) return k;
+		}
+		return -1;
 	}
 
 	/**
@@ -5180,6 +5248,17 @@ public final class Screen {
 			if (!Double.isNaN(w.feels)) b.append(". ").append(feelsText());
 			if (!Double.isNaN(w.tmax) && !Double.isNaN(w.tmin)) b.append(". ").append(T.hi).append(" ").append(t(w.tmax)).append("°, ").append(T.lo).append(" ").append(t(w.tmin)).append("°");
 			say(out, nowArea, b.toString());
+		}
+		if (page && wxArea[2] > 0) {
+			// v2.170: the weather map's buttons (only where the page shows them).
+			String[] nm = { Tr.t("Clouds", "Nori"), Tr.t("Temperatures", "Temperaturi"), Tr.t("Rain", "Ploi") };
+			float[] pa = pageS.area;
+			for (int k = 0; k < 3; k++) {
+				float[] b = wxChip[k];
+				if (b[2] <= 0 || pa[2] <= 0 || b[1] < pa[1] || b[1] + b[3] > pa[1] + pa[3]) continue;
+				boolean on = wxLayer == k + 1;
+				say(out, b, Tr.t("Weather map: ", "Harta meteo: ") + nm[k] + (on ? Tr.t(", on", ", pornit") : k == 2 && !wxRain ? Tr.t(", no rain near now", ", nu plouă în zonă acum") : ""));
+			}
 		}
 		if (page && w != null) {
 			if (precipArea[2] > 0 && visible(precipArea, hours))

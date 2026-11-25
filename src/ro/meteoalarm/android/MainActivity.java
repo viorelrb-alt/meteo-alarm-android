@@ -49,7 +49,7 @@ import ro.meteoalarm.android.core.Weather;
  * while the screen is on (Refresher: also in the background) and kept on disk, so it opens at once offline.
  */
 public final class MainActivity extends Activity implements WeatherView.Taps {
-	static final String VERSION = "Meteo Alarm Android v2.162";
+	static final String VERSION = "Meteo Alarm Android v2.170";
 	/** v5.25: the widget opened the app (its windows close, the town's main screen shows). */
 	static final String FROM_WIDGET = "fromWidget";
 	/** v2.030: an earthquake notice opened the app: its bubble with the map shows. */
@@ -439,6 +439,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		String theme = prefs.getString("theme", "auto");
 		boolean night = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
 		s.dark = theme.equals("dark") || (theme.equals("auto") && night) || (theme.equals("sensor") && roomDark);
+		s.wxLayer = prefs.getInt("homeMapLayer", 2);
 		listenLight(theme.equals("sensor") && resumed);
 		applyBrightness();
 		s.autoLoc = autoLoc();
@@ -915,6 +916,44 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		statsBox.setTag(null);
 		statsBox.setVisibility(View.GONE);
 		stats = null;
+		view.invalidate();
+	}
+
+	// --- v2.170 (Viorel): the weather map at the end of the page --------------------------------------
+
+	private WxMap wx;
+
+	/** The page shows the map W x H pixels: its picture made for the screen's town. */
+	public void wxMap(int w, int h, int r) {
+		if (s == null || s.city == null) return;
+		if (wx == null) wx = new WxMap(this, new Runnable() {
+			public void run() {
+				if (s == null) return;
+				s.wxPicW = 1;
+				android.graphics.Bitmap b = AndroidGfx.live.get(WxMap.PIC);
+				if (b != null) {
+					s.wxPicW = b.getWidth();
+					s.wxPicH = b.getHeight();
+				}
+				s.wxRain = wx.rainNear();
+				view.invalidate();
+			}
+		});
+		wx.set(w, h, r, s.city.lat, s.city.lon, s.dark, Region.imperial(this, s.city), s.wxLayer);
+	}
+
+	/** A tap on the map's button K: that layer (one at a time; the one on turns off). Rain only when it rains near. */
+	public void onWxLayer(int k) {
+		if (k == 3 && s.wxLayer != 3 && (wx == null || !wx.rainNear())) {
+			if (wx != null && wx.gridKnown()) toast(Tr.t("It is not raining on the map now nor in the next 2 hours. The Rain button turns on by itself when rain comes.", "Nu plouă în zona hărții acum și nici în următoarele 2 ore. Butonul Ploi se activează singur când vine ploaia."));
+			else toast(Tr.t("Checking for rain on the map…", "Se verifică ploaia în zona hărții…"));
+			if (wx != null) wx.refresh();
+			return;
+		}
+		s.wxLayer = s.wxLayer == k ? 0 : k;
+		prefs.edit().putInt("homeMapLayer", s.wxLayer).apply();
+		Log.i(this, "ECRAN", "harta meteo: " + (s.wxLayer == 0 ? "strat oprit" : k == 1 ? "nori" : k == 2 ? "temperaturi" : "ploi"));
+		view.wxReset();
 		view.invalidate();
 	}
 
@@ -1567,6 +1606,7 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 		watchScreen(true); // v5.24: stays on until the app closes, to catch the screen turning off
 		listenNet(true);
 		view.replayIcon();
+		if (wx != null) wx.refresh();
 		if (quakeWanted) handler.postDelayed(new Runnable() {
 			public void run() {
 				openQuakeIfWanted();
@@ -4620,6 +4660,8 @@ public final class MainActivity extends Activity implements WeatherView.Taps {
 				"Mâine și poimâine sus; dedesubt zilele 3–5 trec singure la 3 secunde până le atingi. Rândul Detalii meteo se mișcă puțin după 6 secunde. Atingerea casetei Mâine sau Poimâine îi arată bula."));
 		help.entry(mini("city"), Tr.t("Towns button", "Butonul Localități"), Tr.t("The round button with the houses icon: in portrait at the right of the town's name, in landscape on the top band, before its corner. It opens the list of towns.",
 				"Butonul rotund cu iconul cu case: în portret în dreapta numelui localității, în peisaj pe banda de sus, înainte de colț. Deschide lista localităților."));
+		help.entry(mini("map"), Tr.t("Weather map", "Hartă meteo"), Tr.t("At the end of the main screen (scroll up; in landscape on the sheet with the boxes): the town's map with Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. The legend shows the layer's time and, for temperatures, the range on the map. The map stays still; data: Open-Meteo.",
+				"La sfârșitul ecranului principal (defilezi în sus; în peisaj pe foaia cu casetele): harta localității cu Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. Legenda arată ora stratului și, la temperaturi, intervalul de pe hartă. Harta stă pe loc; date: Open-Meteo."));
 		help.entry(mini("bubble"), Tr.t("Button names", "Numele butoanelor"), Tr.t("A round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.",
 				"Un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde."));
 		help.entry(mini("city"), Tr.t("Towns", "Localități"), Tr.t("Opens the list of towns; each has its own main screen, in the list's order (the first one: widgets and notices). Magnifier: the map (Map / Satellite) with the search at the bottom (your country first, then Europe, the US last), Details and Add; a tap on a town's name picks that town. Select: delete towns (never the last). Reorder: drag the move sign; each town keeps its saved weather. The search shows other towns only when they start like the name typed (at least 6 letters or 60% of it). On a tablet and in landscape the town cards are as wide as their text and stand in rows and columns.",
