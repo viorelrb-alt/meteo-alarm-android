@@ -1,4 +1,4 @@
-Obecna wersja: v.2.212 · 25.11.2026
+Obecna wersja: v.2.213 · 25.11.2026
 AKTUALIZACJE
 - Pole Nowa wersja: krótkie pole u góry ⚙︎, gdy jest nowa wersja; dotknięcie go rozpoczyna pobieranie.
 DZIAŁKI

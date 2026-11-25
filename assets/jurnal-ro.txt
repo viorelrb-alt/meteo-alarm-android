@@ -1,4 +1,4 @@
-Versiunea curentă: v.2.212 · 25.11.2026
+Versiunea curentă: v.2.213 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ⚙︎ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL

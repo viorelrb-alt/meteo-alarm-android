@@ -65,6 +65,8 @@ final class SettingsPanel extends FrameLayout {
 	 * landscape on two columns: the title and the buttons with their names on one row.
 	 */
 	private int footMode;
+	/** v2.213: the bar's mode when the window was last shown (a turn changes it). */
+	private int shownMode = -1;
 	private LinearLayout oneRow, headRow, headText;
 	private View moreBtn, fgrip;
 	/** v2.190 (Viorel): in landscape the settings on two columns (TWO), the grip at the right edge folds them into one. */
@@ -424,7 +426,9 @@ final class SettingsPanel extends FrameLayout {
 		} else {
 			if (fp != panel) {
 				if (fp != null) fp.removeView(foot);
-				panel.addView(foot);
+				// v2.213 (Viorel): back from landscape the bar takes the panel's full width again
+				// (it kept the floating box's wrap-content size, its icons on top of each other).
+				panel.addView(foot, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 			}
 			foot.setElevation(0);
 			foot.setPadding(px(10), px(4), px(10), px(8));
@@ -1392,7 +1396,14 @@ final class SettingsPanel extends FrameLayout {
 			setFootOpen(true);
 			removeCallbacks(footFold);
 			postDelayed(footFold, 3000);
+		} else if (shownMode != footMode) {
+			// v2.213 (Viorel): after a turn the bar shows its names again for 3 seconds, in the new layout.
+			footOpen = false;
+			setFootOpen(true);
+			removeCallbacks(footFold);
+			postDelayed(footFold, 3000);
 		}
+		shownMode = footMode;
 		open = true;
 		fitPending = true;
 		setVisibility(VISIBLE);

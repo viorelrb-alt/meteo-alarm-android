@@ -1,4 +1,4 @@
-Current version: v.2.212 · 25.11.2026
+Current version: v.2.213 · 25.11.2026
 MAIN SCREEN
 - Bottom buttons: their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.
 - Brightness: shows the brightness bar on the left; a tap on ☀ at its end gives the screen back to the automatic brightness (☀ turns yellow, a notice confirms it).
