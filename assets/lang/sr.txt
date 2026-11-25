@@ -1708,3 +1708,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	мм у том сату
 Weather map: stop the hours	Временска мапа: заустави сате
 Weather map: play the hours before and after now	Временска мапа: пусти сате пре и после сада
+Tour	Обилазак
+A short tour of each screen · coming soon	Кратак обилазак сваког екрана · ускоро
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	На мапи Парцела, испод ＋ и −. Један слој одједном; подаци: Open-Meteo.
+View box	Оквир приказа
+Satellite and Map	Сателит и Мапа
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Приказује коришћени приказ, укључени слој (са прстеном) и ⌄. Додир га отвара; твој избор, ⌃ или 5 секунди без додира га склапају.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Сателит (Esri) или детаљна мапа (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Сиво где су облаци; додир укљученог слоја га искључује.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Боје: љубичаста хладно, зелена благо, црвена вруће; трака доле обухвата опсег видљив на мапи.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	У мм на сат, сада и у наредна 2 сата; сиво и прецртано кад на мапи не пада киша.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Места и земљотреси: једноставна светла мапа (Esri) са великим именима места; парцеле: OpenStreetMap са свим детаљима и такође великим именима; временска мапа главног екрана: OpenStreetMap на нивоу улица, без великих имена. Велика имена: само места у Румунији. Помераш једним прстом, увећаваш са два; потребан је интернет.
+Bottom buttons	Доњи тастери
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Њихова имена се при отварању екрана 3 секунде виде испод њих, затим само тастери; повуци капсулу нагоре да их поново видиш. Укључени тастер изгледа притиснуто, са прстеном.
+“Updated” button	Тастер „ажурирано”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Лебди изнад странице, десно: усправно испод упозорења (без њих испод реда места), положено на горњој ивици Осећаја. Током ажурирања стрелица се окреће, и као мали круг; затим се 4 секунде види време и склапа се у ⟳. Додир ажурира.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	На крају главног екрана (положено на листу са оквирима): OpenStreetMap на нивоу улица на тачном месту (GPS за прво место), слој провидан. Мапа мирује; подаци: Open-Meteo.
+Layers	Слојеви
+Legend	Легенда
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Облаци, Температуре и Киша, један по један; додир укљученог га искључује. Киша је сива и прецртана кад у близини не пада сада ни у наредна 2 сата.
+The layer's time and, for temperatures, the range on the map.	Време слоја и, за температуре, опсег на мапи.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ пушта сате (6 пре и 6 после сада) један по један; додир сата га приказује.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ отвара подешавања по одељцима; прекидач одмах укључује или искључује функцију. Затвара се са X или додиром ван. Положено се отвара лево у 2 колоне: повуци траку на десној ивици улево за једну колону, удесно за две; тастер поред X враћа 2 колоне. Приказ је на крају. Систем и подршка приказује имена 3 секунде, затим само тастере.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	У картици обавештења: кратак обилазак онога што приказује сваки део екрана. Ускоро (засад сиво).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Три реда: прво места са пуном звездицом (имају главни екран, редоследом екрана), затим остали омиљени. Свака звездица може да се уклони док су укључене 2 или више: следеће место са звездицом постаје први екран; последња је сива и остаје. Додир празне звездице даје месту главни екран, други после првог, и приказује га; уклањање звездице уклања његов екран, а место остаје међу омиљенима. Додир имена га бира; Места › и Изабери округ отварају списак места.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 тема, свака са својом позадином, оквирима и бојом (Графит, Божур, Мед, Шума, Океан, Лаванда): додирни тачку у боји теме; испод Светла, Тамна или Аутоматски (сензор телефона).
+Show all ▾	Прикажи све ▾
+Show less ▴	Прикажи мање ▴
+At least one town stays shown.	Бар једно место остаје приказано.
+Two columns	Две колоне
+One column	Једна колона
+Graphite	Графит
+Peony	Божур
+Honey	Мед
+Forest	Шума
+Ocean	Океан

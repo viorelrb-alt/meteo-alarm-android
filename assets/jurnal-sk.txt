@@ -1,18 +1,23 @@
-Súčasná verzia: v.2.180 · 25.11.2026
+Súčasná verzia: v.2.190 · 25.11.2026
 AKTUALIZÁCIE
 - Pole Nová verzia: krátke pole hore v ☰, keď existuje nová verzia; ťuknutie naň spustí sťahovanie.
 HLAVNÁ OBRAZOVKA
 - Informácie o zemetrasení: ťuknutie na pole Zemetrasenie ich otvorí na hlavnej obrazovke: mapa, pod ňou zóny pocitu a história hodnoty; farebný štvorec alebo mapa ich otvorí na celej obrazovke, ako zemetrasenie z ☰ › Zemetrasenia. V Rumunsku, Francúzsku, Taliansku, Holandsku, Švajčiarsku a Grécku pochádzajú oficiálne hodnoty najprv z národného ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), potom z EMSC. V Rumunsku dostávajú hodnotu INFP (z infp.ro) aj zemetrasenia v okolí krajiny.
-- Mapa počasia: na konci hlavnej obrazovky mapa obce s tlačidlami Oblačnosť, Teploty a Dážď (jedno naraz) a legendou; Dážď sa zapne len vtedy, keď neďaleko prší teraz alebo v nasledujúcich 2 hodinách. Pod mapou ▶ prehrá hodiny (6 pred teraz a 6 po) jednu po druhej; ťuknutie na hodinu ju ukáže.
+- Mapa počasia: na konci hlavnej obrazovky (na šírku na liste s poľami): OpenStreetMap na úrovni ulíc na presnom mieste (GPS pre prvú obec), vrstva priehľadná. Mapa stojí; údaje: Open-Meteo. Oblaky, Teploty a Dážď, vždy jedna; ťuknutie na zapnutú ju vypne. Dážď je sivý a prečiarknutý, keď nablízku neprší teraz ani v najbližších 2 hodinách. ▶ prehrá hodiny (6 pred a 6 po teraz) jednu po druhej; ťuknutie na hodinu ju ukáže.
 - Názvy tlačidiel: okrúhle tlačidlo, ktoré po ťuknutí zostane na obrazovke, ukáže svoj názov v malej bubline asi na 1,5 sekundy.
+- Spodné tlačidlá: ich názvy sa pri otvorení obrazovky ukážu pod nimi na 3 sekundy, potom zostanú len tlačidlá; potiahni kapsulu nahor a uvidíš ich znova. Zapnuté tlačidlo vyzerá stlačené, s krúžkom.
 - Tlačidlo Obce: okrúhle tlačidlo s ikonou domčekov (na výšku vpravo od názvu, na šírku na hornom páse, pred jeho rohom) otvorí zoznam obcí.
+- Tlačidlo „aktualizované“: pláva nad stránkou vpravo: na výšku pod výstrahami (bez nich pod riadkom obcí), na šírku na hornom okraji Pocitovej. Pri aktualizácii sa šípka točí, aj ako malý kruh; potom sa na 4 sekundy ukáže čas a zbalí sa do ⟳. Ťuknutie aktualizuje.
 - Viac obcí: každá obec zo zoznamu má svoju hlavnú obrazovku; potiahnutie doľava alebo doprava po aktuálnom počasí prejde na ďalšiu, v poradí zoznamu.
 NASTAVENIA
 - Denník: veľkosť, riadky a chyby na karte; Zobraziť denník otvorí riadky (Všetko, Chyby, Dnes, Včera; dlhé ťuknutie skopíruje riadok); Zdieľať a Uložiť dole na obrazovke. Opravené chyby sú na konci denníka a nepočítajú sa; problémy siete sú upozornenia.
 - Export / Import: prepínače pre obsah súboru (aj plodiny a údaje o pestovaní, oznámenia pozemkov, kôš pozemkov, oznámenia, mapa, widgety, história zemetrasení, denník); pri Exporte a Importe sa obce a pozemky zaškrtávajú jednotlivo; tlačidlo Aa mení veľkosť textu.
 - Jazyk zobrazenia: v ☰ angličtina a jazyk krajiny; Ďalšie jazyky: ostatné jazyky krajiny, veľké jazyky EÚ, rumunčina a jazyk telefónu (v USA len angličtina a španielčina).
-- Motívy: 6 motívov s vlastným pozadím, kartami a farbou (Jednofarebný, Ružový, Žltý, Zelený, Modrý, Fialový), každý svetlý aj tmavý; bodky v ☰ › Motív majú farbu motívu.
-- Obľúbené v ☰: tri rady, najprv obce s plnou hviezdičkou (majú hlavnú obrazovku), potom ostatné; prvá si hviezdičku vždy ponechá; ťuknutie na prázdnu hviezdičku dá obci hlavnú obrazovku, druhú; odobratie hviezdičky odoberie jej obrazovku.
+- Motívy: 6 motívov s vlastným pozadím, kartami a farbou (Grafit, Pivonka, Med, Les, Oceán, Levanduľa), každý svetlý aj tmavý; bodky v ☰ › Motív majú farbu motívu.
+- Obľúbené v ☰: tri riadky: najprv obce s plnou hviezdou (majú hlavnú obrazovku, v poradí obrazoviek), potom ostatné obľúbené. Každú hviezdu možno odobrať, kým sú 2 alebo viac: ďalšia obec s hviezdou sa stane prvou obrazovkou; posledná je sivá a zostáva. Ťuknutie na prázdnu hviezdu dá obci hlavnú obrazovku, druhú po prvej, a ukáže ju; odobratie hviezdy odstráni jej obrazovku a obec zostane v obľúbených. Ťuknutie na názov ju vyberie; Obce › a Vybrať kraj otvoria zoznam obcí.
+- Okno Nastavenia: ☰ otvorí nastavenia v sekciách; prepínač funkciu hneď zapne alebo vypne. Zatvorí sa X alebo ťuknutím mimo. Na šírku sa otvorí vľavo v 2 stĺpcoch: potiahni lištu na pravom okraji doľava pre jeden stĺpec, doprava pre dva; tlačidlo vedľa X vráti 2 stĺpce. Zobrazenie je na konci. Systém a podpora ukáže názvy na 3 sekundy, potom len tlačidlá.
+- Pomocník: dlhé texty sú rozdelené na časti s vlastnými ikonami alebo ukazujú 2 riadky a Zobraziť všetko ▾; na šírku v 2 stĺpcoch a ťuknutie na tlačidlo sekcie dvakrát rozbliká jej obrys.
+- Prehliadka: v karte upozornení: krátka prehliadka toho, čo ukazuje každá časť obrazoviek. Čoskoro (zatiaľ sivé).
 - Stránka Zemetrasenia: otvorí sa hneď s naposledy uloženými zoznamami v telefóne a aktualizuje ich na pozadí.
 OBCE
 - Hľadanie na mape: lupa otvorí mapu s hľadaním dole; ťuknutie na miesto alebo na názov obce ukáže jej teplotu, Podrobnosti (ďalšie dni) a Pridať. Mapa je jednoduchá a svetlá, s názvami obcí písanými veľkým písmom (aj na mape pozemkov). Iné obce sa ukážu, len keď začínajú ako zadaný názov (aspoň 6 písmen alebo 60 % z neho).

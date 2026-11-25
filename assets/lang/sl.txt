@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm v tisti uri
 Weather map: stop the hours	Vremenski zemljevid: ustavi ure
 Weather map: play the hours before and after now	Vremenski zemljevid: predvajaj ure pred zdaj in po njem
+Tour	Ogled
+A short tour of each screen · coming soon	Kratek ogled vsakega zaslona · kmalu
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Na zemljevidu Parcel, pod ＋ in −. Hkrati le ena plast; podatki: Open-Meteo.
+View box	Polje pogleda
+Satellite and Map	Satelit in Zemljevid
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Pokaže uporabljeni pogled, vklopljeno plast (z obročem) in ⌄. Dotik ga odpre; tvoja izbira, ⌃ ali 5 sekund brez dotika ga zložijo.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satelit (Esri) ali podroben zemljevid (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Sivo, kjer so oblaki; dotik vklopljene plasti jo izklopi.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Barve: vijolična hladno, zelena milo, rdeča vroče; vrstica spodaj zajame razpon, viden na zemljevidu.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	V mm na uro, zdaj in v naslednjih 2 urah; sivo in prečrtano, ko na zemljevidu ne dežuje.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Kraji in potresi: preprost svetel zemljevid (Esri) z velikimi imeni krajev; parcele: OpenStreetMap z vsemi podrobnostmi in prav tako velikimi imeni; vremenski zemljevid glavnega zaslona: OpenStreetMap na ravni ulic, brez velikih imen. Velika imena: le kraji v Romuniji. Premikaš z enim prstom, povečuješ z dvema; potrebuje internet.
+Bottom buttons	Spodnji gumbi
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Njihova imena se ob odprtju zaslona 3 sekunde pokažejo pod njimi, nato ostanejo le gumbi; povleci kapsulo navzgor, da jih spet vidiš. Vklopljeni gumb je videti pritisnjen, z obročem.
+“Updated” button	Gumb »posodobljeno«
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Lebdi nad stranjo, desno: pokončno pod opozorili (brez njih pod vrstico krajev), ležeče na zgornjem robu Občutka. Med posodabljanjem se puščica vrti, tudi kot majhen krog; nato se 4 sekunde pokaže čas in se zloži v ⟳. Dotik posodobi.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Na koncu glavnega zaslona (ležeče na listu s polji): OpenStreetMap na ravni ulic na natančnem mestu (GPS za prvi kraj), plast prosojna. Zemljevid miruje; podatki: Open-Meteo.
+Layers	Plasti
+Legend	Legenda
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Oblaki, Temperature in Dež, po ena; dotik vklopljene jo izklopi. Dež je siv in prečrtan, ko v bližini ne dežuje zdaj niti v naslednjih 2 urah.
+The layer's time and, for temperatures, the range on the map.	Čas plasti in pri temperaturah razpon na zemljevidu.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ predvaja ure (6 pred in 6 po zdaj) eno za drugo; dotik ure jo pokaže.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ odpre nastavitve po razdelkih; stikalo takoj vklopi ali izklopi funkcijo. Zapre se z X ali dotikom zunaj. Ležeče se odpre levo v 2 stolpcih: povleci vrstico na desnem robu v levo za en stolpec, v desno za dva; gumb ob X vrne 2 stolpca. Prikaz je na koncu. Sistem in podpora pokaže imena 3 sekunde, nato le gumbe.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	V kartici obvestil: kratek ogled tega, kar kaže vsak del zaslonov. Kmalu (zaenkrat sivo).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tri vrstice: najprej kraji s polno zvezdico (imajo glavni zaslon, v vrstnem redu zaslonov), nato drugi priljubljeni. Vsako zvezdico lahko odstraniš, dokler sta vklopljeni 2 ali več: naslednji kraj z zvezdico postane prvi zaslon; zadnja je siva in ostane. Dotik prazne zvezdice da kraju glavni zaslon, drugega za prvim, in ga pokaže; odstranitev zvezdice odstrani njegov zaslon, kraj pa ostane med priljubljenimi. Dotik imena ga izbere; Kraji › in Izberi okraj odpreta seznam krajev.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 tem, vsaka s svojim ozadjem, polji in barvo (Grafit, Potonika, Med, Gozd, Ocean, Sivka): dotakni se pike v barvi teme; pod njimi Svetla, Temna ali Samodejno (senzor telefona).
+Show all ▾	Pokaži vse ▾
+Show less ▴	Pokaži manj ▴
+At least one town stays shown.	Vsaj en kraj ostane prikazan.
+Two columns	Dva stolpca
+One column	En stolpec
+Graphite	Grafit
+Peony	Potonika
+Honey	Med
+Forest	Gozd
+Ocean	Ocean

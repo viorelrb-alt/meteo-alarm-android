@@ -1,4 +1,4 @@
-Nuværende version: v.2.180 · 25.11.2026
+Nuværende version: v.2.190 · 25.11.2026
 BYER
 - Bykort: på en tablet og i liggende er de lige så brede som deres tekst og står i rækker og kolonner; i portræt på en telefon får et for langt navn mindre bogstaver; i liggende beholder søgningen sin portrætstørrelse.
 - Byliste: knappen Byer åbner listen i temaets farve; Vælg sletter én eller flere (den sidste bliver), og tegnet ⌃⌄ holdt og trukket op eller ned ændrer rækkefølgen; hver by beholder sit gemte vejr.
@@ -8,13 +8,18 @@ HOVEDSKÆRM
 - Jordskælvsinformation: et tryk på feltet Jordskælv åbner den på hovedskærmen: kortet, under det zonerne hvor det mærkes og værdiens historik; den farvede firkant eller kortet åbner den på hele skærmen, som et skælv fra ☰ › Jordskælv. I Rumænien, Frankrig, Italien, Nederlandene, Schweiz og Grækenland kommer de officielle værdier først fra landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), derefter fra EMSC. I Rumænien får også jordskælvene omkring landet INFP’s værdi (fra infp.ro).
 - Knapnavne: en rund knap, der bliver på skærmen, når der trykkes på den, viser sit navn i en lille boble i cirka 1,5 sekund.
 - Knappen Byer: den runde knap med husikonet (i portræt til højre for navnet, i liggende på det øverste bånd, før dets hjørne) åbner listen over byer.
-- Vejrkort: nederst på hovedskærmen byens kort med knapperne Skyer, Temperaturer og Regn (én ad gangen) og forklaringen; Regn tænder kun, når det regner i nærheden nu eller de næste 2 timer. Under kortet afspiller ▶ timerne (6 før nu og 6 efter) en efter en; et tryk på en time viser den.
+- Knappen „opdateret“: svæver over siden, til højre: på højkant under varslerne (uden dem under rækken med byer), på langs på den øverste kant af Føles som. Under opdatering drejer pilen, også som lille cirkel; derefter vises tiden i 4 sekunder, og den folder sig til ⟳. Et tryk opdaterer.
+- Nederste knapper: deres navne vises under dem i 3 sekunder, når skærmen åbner, derefter kun knapperne; træk kapslen op for at se dem igen. Knappen der er tændt ser trykket ned ud, med en ring.
+- Vejrkort: nederst på hovedskærmen (på langs på arket med boksene): OpenStreetMap i gadeniveau på det præcise sted (GPS for den første by), laget gennemsigtigt. Kortet står stille; data: Open-Meteo. Skyer, Temperaturer og Regn, ét ad gangen; et tryk på det tændte slukker det. Regn er gråt og overstreget, når det ikke regner i nærheden nu eller de næste 2 timer. ▶ afspiller timerne (6 før og 6 efter nu) én ad gangen; et tryk på en time viser den.
 INDSTILLINGER
 - Eksport / Import: kontakter for, hvad der kommer i filen (også afgrøder og dyrkningsdata, markernes notifikationer, markernes papirkurv, notifikationer, kort, widgets, jordskælvshistorik, log); ved Eksport og Import afkrydses byer og marker én ad gangen; knappen Aa ændrer tekststørrelsen.
-- Favoritter i ☰: tre rækker, først byerne med fuld stjerne (de har en hovedskærm), så de andre; den første beholder altid sin stjerne; et tryk på en tom stjerne giver byen en hovedskærm, den anden; fjerner du stjernen, fjernes dens skærm.
+- Favoritter i ☰: tre rækker: først byerne med fuld stjerne (de har en hovedskærm, i skærmenes rækkefølge), så de andre favoritter. Enhver stjerne kan fjernes, så længe der er 2 eller flere: den næste by med stjerne bliver den første skærm; den sidste er grå og bliver. Et tryk på en tom stjerne giver byen en hovedskærm, nummer to efter den første, og viser den; fjernes en stjerne, fjernes dens skærm, og byen bliver blandt favoritterne. Et tryk på et navn vælger det; Byer › og Vælg regionen åbner listen over byer.
+- Hjælp: lange tekster er delt op i dele med egne ikoner eller viser 2 linjer og Vis alt ▾; på langs i 2 kolonner, og et tryk på en sektions knap får dens omrids til at blinke to gange.
 - Log: størrelse, linjer og fejl på et kort; Se loggen åbner linjerne (Alle, Fejl, I dag, I går; et langt tryk kopierer en linje); Del og Gem nederst på skærmen. Rettede fejl står sidst i loggen og tælles ikke med; netværksproblemer er advarsler.
+- Rundvisning: i kortet med notifikationer: en kort rundvisning i, hvad hver del af skærmene viser. Kommer snart (gråt indtil videre).
 - Siden Jordskælv: åbner straks med de senest gemte lister på telefonen og opdaterer dem i baggrunden.
-- Temaer: 6 temaer med egen baggrund, egne kort og egen farve (Monokrom, Lyserød, Gul, Grøn, Blå, Violet), hver lys og mørk; prikkerne i ☰ › Tema har temaets farve.
+- Temaer: 6 temaer med egen baggrund, egne kort og egen farve (Grafit, Pæon, Honning, Skov, Ocean, Lavendel), hver lys og mørk; prikkerne i ☰ › Tema har temaets farve.
+- Vinduet Indstillinger: ☰ åbner indstillingerne i sektioner; en kontakt tænder eller slukker en funktion med det samme. Lukkes med X eller et tryk udenfor. På langs åbner den til venstre i 2 kolonner: træk bjælken i højre kant til venstre for én kolonne, til højre for to; knappen ved X giver de 2 kolonner tilbage. Visning er sidst. System & Support viser navnene i 3 sekunder, derefter kun knapperne.
 - Visningssprog: i ☰ engelsk og landets sprog; Andre sprog: landets øvrige sprog, de store EU-sprog, rumænsk og telefonens (i USA kun engelsk og spansk).
 MARKER
 - Bobler i Statistik: et tryk på en time i sprøjtevinduet, en dag i graferne eller en jordrække åbner en boble med forklaring; sprøjtevinduet bevæger sig af sig selv.

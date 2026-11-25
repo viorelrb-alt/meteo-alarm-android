@@ -13,7 +13,7 @@ public final class Theme {
 	/** The theme in use (0..5), set from the settings by the app. */
 	public static int pal;
 
-	public static final String[][] NAMES = { { "Monochrome", "Monocrom" }, { "Pink", "Roz" }, { "Yellow", "Galben" }, { "Green", "Verde" }, { "Blue", "Albastru" }, { "Violet", "Violet" } };
+	public static final String[][] NAMES = { { "Graphite", "Grafit" }, { "Peony", "Bujor" }, { "Honey", "Miere" }, { "Forest", "Pădure" }, { "Ocean", "Ocean" }, { "Lavender", "Lavandă" } }; // v2.190 (Viorel): names that suggest the colour
 
 	private static final int WY = 0xFFF4E59A, WO = 0xFFF7BE8A, WR = 0xFFF29B9B, DY = 0xFFE3B341, DO = 0xFFD97757, DR = 0xFFD14D4D;
 

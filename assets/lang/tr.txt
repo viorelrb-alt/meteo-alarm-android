@@ -1708,3 +1708,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	o saatteki mm
 Weather map: stop the hours	Hava haritası: saatleri durdur
 Weather map: play the hours before and after now	Hava haritası: şimdiden önceki ve sonraki saatleri oynat
+Tour	Tur
+A short tour of each screen · coming soon	Her ekranda kısa bir tur · yakında
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Parseller haritasında, ＋ ve − altında. Aynı anda tek katman; veriler: Open-Meteo.
+View box	Görünüm kutusu
+Satellite and Map	Uydu ve Harita
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Kullanılan görünümü, açık katmanı (halkalı) ve ⌄ işaretini gösterir. Dokununca açılır; seçiminiz, ⌃ veya 5 saniye dokunmamak onu kapatır.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Uydu (Esri) veya ayrıntılı harita (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Bulut olan yerler gri; açık katmana dokunmak onu kapatır.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Renkler: mor soğuk, yeşil ılık, kırmızı sıcak; alttaki çubuk haritada görülen aralığı çerçeveler.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	Saatte mm olarak, şimdi ve sonraki 2 saatte; haritada yağmur yoksa gri ve üstü çizili.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Yerleşimler ve depremler: büyük yazılmış yer adlarıyla sade, açık bir harita (Esri); parseller: tüm ayrıntılarıyla ve yine büyük adlarla OpenStreetMap; ana ekranın hava haritası: sokak düzeyinde OpenStreetMap, büyük adlar olmadan. Büyük adlar: yalnızca Romanya'daki yerleşimler. Tek parmakla kaydırılır, iki parmakla yakınlaştırılır; internet gerekir.
+Bottom buttons	Alt düğmeler
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Ekran açılınca adları 3 saniye altlarında görünür, sonra yalnızca düğmeler kalır; yeniden görmek için kapsülü yukarı çekin. Açık düğme basılı görünür, halkalı.
+“Updated” button	“Güncellendi” düğmesi
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Sayfanın üstünde, sağda yüzer: dikeyde uyarıların altında (uyarı yoksa yerleşim satırının altında), yatayda Hissedilen kutusunun üst kenarında. Güncellerken oku döner, küçük daire hâlindeyken de; sonra saat 4 saniye görünür ve ⟳ olarak küçülür. Dokunmak günceller.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Ana ekranın sonunda (yatayda kutuların bulunduğu sayfada): tam konumda sokak düzeyinde OpenStreetMap (ilk yerleşim için GPS), katman saydam. Harita sabit durur; veriler: Open-Meteo.
+Layers	Katmanlar
+Legend	Gösterge
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Bulutlar, Sıcaklıklar ve Yağmur, tek tek; açık olana dokunmak onu kapatır. Yakında şimdi ve sonraki 2 saatte yağmur yoksa Yağmur gri ve üstü çizilidir.
+The layer's time and, for temperatures, the range on the map.	Katmanın saati ve sıcaklıklarda haritadaki aralık.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ saatleri (şimdiden 6 önce ve 6 sonra) tek tek oynatır; bir saate dokunmak onu gösterir.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ ayarları bölümler hâlinde açar; bir anahtar bir işlevi hemen açar veya kapatır. X ile ya da dışına dokunarak kapanır. Yatayda solda 2 sütun hâlinde açılır: sağ kenardaki çubuğu tek sütun için sola, iki sütun için sağa sürükleyin; X'in yanındaki düğme 2 sütunu geri getirir. Görünüm en sondadır. Sistem ve Destek adlarını 3 saniye gösterir, sonra yalnızca düğmeleri.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Bildirimler kartında: ekranların her bölümünün ne gösterdiğine dair kısa bir tur. Yakında (şimdilik gri).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Üç satır: önce dolu yıldızlı yerleşimler (ana ekranları var, ekran sırasına göre), sonra diğer favoriler. 2 veya daha fazla yıldız varken herhangi biri kaldırılabilir: yıldızlı sonraki yerleşim ilk ekran olur; sonuncusu gridir ve kalır. Boş bir yıldıza dokunmak o yerleşime ilkinden sonra ikinci ana ekranı verir ve gösterir; yıldızı kaldırmak ekranını siler, yerleşim favorilerde kalır. Bir ada dokunmak onu seçer; Yerleşimler › ve İl seçin listeyi açar.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	Her birinin kendi arka planı, kutuları ve rengi olan 6 tema (Grafit, Şakayık, Bal, Orman, Okyanus, Lavanta): temanın rengindeki bir noktaya dokunun; altında Açık, Koyu veya Otomatik (telefon sensörü).
+Show all ▾	Tümünü göster ▾
+Show less ▴	Daha az göster ▴
+At least one town stays shown.	En az bir yerleşim görünür kalır.
+Two columns	İki sütun
+One column	Tek sütun
+Graphite	Grafit
+Peony	Şakayık
+Honey	Bal
+Forest	Orman
+Ocean	Okyanus

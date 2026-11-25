@@ -1,10 +1,12 @@
-Current version: v.2.180 · 25.11.2026
+Current version: v.2.190 · 25.11.2026
 MAIN SCREEN
+- Bottom buttons: their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.
 - Button names: a round button that stays on the screen when tapped shows its name in a small bubble for about 1.5 seconds.
 - Earthquake information: a tap on the Earthquake box opens it in the main screen: the map, under it the felt zones and the value's history; the coloured square or the map open it on the whole screen, like an earthquake in ☰ › Earthquakes. In Romania, France, Italy, the Netherlands, Switzerland and Greece the official values come first from the country's institute (INFP, BCSF, INGV, KNMI, SED, NOA), then from EMSC. In Romania, the quakes around the country also get INFP's value (from infp.ro).
 - More towns: each town in the list has its own main screen; a left or right swipe on the weather now goes to the next one, in the list's order.
 - Towns button: the round button with the houses icon (in portrait at the right of the name, in landscape on the top band, before its corner) opens the list of towns.
-- Weather map: at the end of the main screen, the town's map with the Clouds, Temperatures and Rain buttons (one at a time) and the legend; Rain turns on only when it rains near now or in the next 2 hours. Under the map, ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.
+- Weather map: at the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo. Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours. ▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.
+- “Updated” button: floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.
 NOTIFICATIONS
 - Channels of their own: weather warnings, rain and snow, earthquakes, parcels and updates each have their own channel in the phone's settings; you can turn one off and keep the others.
 - Earthquakes: checked every 10 minutes, also at night with the screen off; a revised magnitude updates the notice, and a tap on it opens the map.
@@ -22,9 +24,12 @@ SETTINGS
 - Display language: in ☰ English and the country's language; Other languages: the country's other languages, the big EU languages, Romanian and the phone's (in the US only English and Spanish).
 - Earthquakes page: opens at once with the last lists saved on the phone and updates them in the background.
 - Export / Import: switches for what goes into the file (also the crops and growing data, parcel notifications, parcel bin, notifications, map, widgets, earthquake history, log); in Export and Import the towns and parcels are ticked one by one; the Aa button sets the text size.
-- Favourites in ☰: three rows, first the towns with a full star (they have a main screen), then the others; the first one always keeps its star; a tap on an empty star gives the town a main screen, the second; taking the star off removes its screen.
+- Favourites in ☰: three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.
+- Help: long texts are split into parts with their own icons or show 2 lines and Show all ▾; in landscape on 2 columns, and a tap on a section button blinks its outline twice.
 - Log: size, lines and errors on a card; See the log opens the lines (All, Errors, Today, Yesterday; a long touch copies a line); Share and Save at the bottom of the screen. Fixed errors stay at the end of the log and are not counted; network problems are warnings.
-- Themes: 6 themes with their own background, cards and colour (Monochrome, Pink, Yellow, Green, Blue, Violet), each light and dark; the dots in ☰ › Theme have the theme's colour.
+- The Settings window: ☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.
+- Themes: 6 themes with their own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender), each light and dark; the dots in ☰ › Theme have the theme's colour.
+- Tour: in the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).
 TOWNS
 - Map search: the magnifier opens the map with the search at the bottom; a tap on a place or on a town's name shows its temperature, Details (the next days) and Add. The map is plain and light, with the towns' names written big (also on the parcels' map). Other towns show only when they start like the name typed (at least 6 letters or 60% of it).
 - Town cards: on a tablet and in landscape they are as wide as their text and stand in rows and columns; in portrait on a phone a name too long gets smaller letters; in landscape the search keeps its portrait size.

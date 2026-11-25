@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm san uair sin
 Weather map: stop the hours	Léarscáil aimsire: stop na huaireanta
 Weather map: play the hours before and after now	Léarscáil aimsire: seinn na huaireanta roimh anois agus ina dhiaidh
+Tour	Turas
+A short tour of each screen · coming soon	Turas gearr ar gach scáileán · go luath
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Ar léarscáil na bPáirceanna, faoi ＋ agus −. Sraith amháin ag an am; sonraí: Open-Meteo.
+View box	Bosca radhairc
+Satellite and Map	Satailít agus Léarscáil
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Taispeánann sé an radharc in úsáid, an tsraith atá ar siúl (le fáinne) agus ⌄. Osclaíonn tapáil é; filleann do rogha, ⌃ nó 5 soicind gan teagmháil é.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satailít (Esri) nó an léarscáil mhionsonraithe (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Liath áit a bhfuil scamaill; múchann tapáil ar an tsraith atá ar siúl í.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Dathanna: corcra fuar, glas measartha, dearg te; cuimsíonn an barra thíos an raon atá le feiceáil ar an léarscáil.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	In mm san uair, anois agus sna 2 uair an chloig eile; liath agus líne tríd nuair nach bhfuil sé ag cur báistí ar an léarscáil.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Bailte agus creathanna talún: léarscáil shimplí gheal (Esri) le hainmneacha móra na mbailte; páirceanna: OpenStreetMap leis na sonraí go léir agus ainmneacha móra freisin; léarscáil aimsire an phríomhscáileáin: OpenStreetMap ar leibhéal sráide, gan na hainmneacha móra. Na hainmneacha móra: bailte na Rómáine amháin. Bog le méar amháin í, zúmáil le dhá cheann; teastaíonn idirlíon.
+Bottom buttons	Cnaipí íochtaracha
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Taispeántar a n-ainmneacha fúthu ar feadh 3 soicind nuair a osclaíonn an scáileán, ansin na cnaipí amháin; tarraing an capsúl suas chun iad a fheiceáil arís. Breathnaíonn an cnaipe atá ar siúl brúite, le fáinne.
+“Updated” button	Cnaipe “nuashonraithe”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Snámhann sé os cionn an leathanaigh, ar dheis: ina sheasamh faoi na rabhaidh (gan iad faoi shraith na mbailte), ina luí ar imeall uachtair Mothaíonn sé. Le linn nuashonraithe casann an tsaighead, mar chiorcal beag freisin; ansin taispeántar an t-am ar feadh 4 soicind agus filleann sé ina ⟳. Nuashonraíonn tapáil.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Ag deireadh an phríomhscáileáin (ina luí ar an mbileog leis na boscaí): OpenStreetMap ar leibhéal sráide ag an áit chruinn (GPS don chéad bhaile), an tsraith tréshoilseach. Fanann an léarscáil socair; sonraí: Open-Meteo.
+Layers	Sraitheanna
+Legend	Eochair
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Scamaill, Teochtaí agus Báisteach, ceann ag an am; múchann tapáil ar an gceann atá ar siúl é. Tá Báisteach liath le líne tríd nuair nach bhfuil sé ag cur in aice láimhe anois ná sna 2 uair an chloig eile.
+The layer's time and, for temperatures, the range on the map.	Am na sraithe agus, do theochtaí, an raon ar an léarscáil.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	Seinneann ▶ na huaireanta (6 roimh anois agus 6 ina dhiaidh) ceann ar cheann; taispeánann tapáil ar uair í.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	Osclaíonn ☰ na socruithe ina gcodanna; casann lasc feidhm air nó as láithreach. Dúntar é le X nó le tapáil lasmuigh. Ina luí osclaíonn sé ar chlé i 2 cholún: tarraing an barra ar an imeall deas ar chlé do cholún amháin, ar dheis do dhá cheann; tugann an cnaipe in aice le X an 2 cholún ar ais. Tá Taispeáint ar deireadh. Taispeánann Córas & Tacaíocht na hainmneacha ar feadh 3 soicind, ansin na cnaipí amháin.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	I gcárta na bhfógraí: turas gearr ar a dtaispeánann gach cuid de na scáileáin. Go luath (liath faoi láthair).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Trí shraith: ar dtús na bailte le réalta lán (tá príomhscáileán acu, in ord na scáileán), ansin na ceanáin eile. Is féidir aon réalta a bhaint fad is atá 2 nó níos mó ar siúl: éiríonn an chéad bhaile eile le réalta ina chéad scáileán; tá an ceann deireanach liath agus fanann sé. Tugann tapáil ar réalta fholamh príomhscáileán don bhaile, an dara ceann i ndiaidh an chéad cheann, agus taispeánann sé é; baineann baint réalta a scáileán agus fanann an baile i measc na gceanán. Roghnaíonn tapáil ar ainm é; osclaíonn Bailte › agus Roghnaigh an contae liosta na mbailte.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 théama, gach ceann lena chúlra, a bhoscaí agus a dhath féin (Graifít, Piaine, Mil, Foraois, Aigéan, Labhandar): tapáil ponc i ndath an téama; fúthu Geal, Dorcha nó Uathoibríoch (braiteoir an fhóin).
+Show all ▾	Taispeáin gach rud ▾
+Show less ▴	Taispeáin níos lú ▴
+At least one town stays shown.	Fanann baile amháin ar a laghad le feiceáil.
+Two columns	Dhá cholún
+One column	Colún amháin
+Graphite	Graifít
+Peony	Piaine
+Honey	Mil
+Forest	Foraois
+Ocean	Aigéan

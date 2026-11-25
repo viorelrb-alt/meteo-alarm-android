@@ -1,17 +1,22 @@
-Současná verze: v.2.180 · 25.11.2026
+Současná verze: v.2.190 · 25.11.2026
 AKTUALIZACE
 - Pole Nová verze: krátké pole nahoře v ☰, když existuje nová verze; klepnutí na něj spustí stahování.
 HLAVNÍ OBRAZOVKA
 - Informace o zemětřesení: klepnutí na pole Zemětřesení je otevře na hlavní obrazovce: mapa, pod ní zóny pocitu a historie hodnoty; barevný čtverec nebo mapa je otevře na celé obrazovce, jako zemětřesení z ☰ › Zemětřesení. V Rumunsku, Francii, Itálii, Nizozemsku, Švýcarsku a Řecku pocházejí oficiální hodnoty nejprve z národního ústavu (INFP, BCSF, INGV, KNMI, SED, NOA), pak z EMSC. V Rumunsku dostávají hodnotu INFP (z infp.ro) i zemětřesení v okolí země.
-- Mapa počasí: na konci hlavní obrazovky mapa obce s tlačítky Oblačnost, Teploty a Déšť (jedno najednou) a legendou; Déšť se zapne jen tehdy, když poblíž prší teď nebo v příštích 2 hodinách. Pod mapou ▶ přehraje hodiny (6 před teď a 6 po) jednu po druhé; klepnutí na hodinu ji ukáže.
+- Mapa počasí: na konci hlavní obrazovky (na šířku na listu s poli): OpenStreetMap na úrovni ulic na přesném místě (GPS pro první obec), vrstva průhledná. Mapa stojí; data: Open-Meteo. Mraky, Teploty a Déšť, vždy jedna; klepnutí na zapnutou ji vypne. Déšť je šedý a přeškrtnutý, když poblíž neprší teď ani v příštích 2 hodinách. ▶ přehraje hodiny (6 před a 6 po teď) jednu po druhé; klepnutí na hodinu ji ukáže.
 - Názvy tlačítek: kulaté tlačítko, které po klepnutí zůstane na obrazovce, ukáže svůj název v malé bublině asi na 1,5 sekundy.
+- Spodní tlačítka: jejich názvy se při otevření obrazovky ukážou pod nimi na 3 sekundy, pak zůstanou jen tlačítka; vytáhni kapsli nahoru a uvidíš je znovu. Zapnuté tlačítko vypadá stisknuté, s kroužkem.
 - Tlačítko Obce: kulaté tlačítko s ikonou domků (na výšku vpravo od názvu, na šířku na horním pásu, před jeho rohem) otevře seznam obcí.
+- Tlačítko „aktualizováno“: plave nad stránkou vpravo: na výšku pod výstrahami (bez nich pod řádkem obcí), na šířku na horním okraji Pocitové. Při aktualizaci se šipka točí, i jako malý kruh; pak se na 4 sekundy ukáže čas a sbalí se do ⟳. Klepnutí aktualizuje.
 - Více obcí: každá obec ze seznamu má svou hlavní obrazovku; přejetí doleva nebo doprava po aktuálním počasí přejde na další, v pořadí seznamu.
 NASTAVENÍ
 - Export / Import: přepínače pro obsah souboru (také plodiny a údaje o pěstování, oznámení pozemků, koš pozemků, oznámení, mapa, widgety, historie zemětřesení, deník); při Exportu a Importu se obce a pozemky zaškrtávají jednotlivě; tlačítko Aa mění velikost textu.
 - Jazyk zobrazení: v ☰ angličtina a jazyk země; Další jazyky: ostatní jazyky země, velké jazyky EU, rumunština a jazyk telefonu (v USA jen angličtina a španělština).
-- Motivy: 6 motivů s vlastním pozadím, kartami a barvou (Jednobarevný, Růžový, Žlutý, Zelený, Modrý, Fialový), každý světlý i tmavý; tečky v ☰ › Motiv mají barvu motivu.
-- Oblíbené v ☰: tři řady, nejdřív obce s plnou hvězdičkou (mají hlavní obrazovku), pak ostatní; první si hvězdičku vždy ponechá; klepnutí na prázdnou hvězdičku dá obci hlavní obrazovku, druhou; odebrání hvězdičky odebere její obrazovku.
+- Motivy: 6 motivů s vlastním pozadím, kartami a barvou (Grafit, Pivoňka, Med, Les, Oceán, Levandule), každý světlý i tmavý; tečky v ☰ › Motiv mají barvu motivu.
+- Nápověda: dlouhé texty jsou rozdělené na části s vlastními ikonami nebo ukazují 2 řádky a Zobrazit vše ▾; na šířku ve 2 sloupcích a klepnutí na tlačítko sekce dvakrát rozbliká její obrys.
+- Oblíbené v ☰: tři řádky: nejdřív obce s plnou hvězdou (mají hlavní obrazovku, v pořadí obrazovek), pak ostatní oblíbené. Každou hvězdu lze odebrat, dokud jsou 2 nebo více: další obec s hvězdou se stane první obrazovkou; poslední je šedá a zůstává. Klepnutí na prázdnou hvězdu dá obci hlavní obrazovku, druhou po první, a ukáže ji; odebrání hvězdy odstraní její obrazovku a obec zůstane v oblíbených. Klepnutí na název ji vybere; Obce › a Vybrat kraj otevřou seznam obcí.
+- Okno Nastavení: ☰ otevře nastavení v sekcích; přepínač funkci hned zapne nebo vypne. Zavře se X nebo klepnutím mimo. Na šířku se otevře vlevo ve 2 sloupcích: přetáhni lištu na pravém okraji doleva pro jeden sloupec, doprava pro dva; tlačítko vedle X vrátí 2 sloupce. Zobrazení je na konci. Systém a podpora ukáže názvy na 3 sekundy, pak jen tlačítka.
+- Prohlídka: v kartě oznámení: krátká prohlídka toho, co ukazuje každá část obrazovek. Již brzy (zatím šedé).
 - Protokol: velikost, řádky a chyby na kartě; Zobrazit protokol otevře řádky (Vše, Chyby, Dnes, Včera; dlouhé klepnutí zkopíruje řádek); Sdílet a Uložit dole na obrazovce. Opravené chyby jsou na konci protokolu a nepočítají se; problémy sítě jsou varování.
 - Stránka Zemětřesení: otevře se hned s naposledy uloženými seznamy v telefonu a aktualizuje je na pozadí.
 OBCE

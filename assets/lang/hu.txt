@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm abban az órában
 Weather map: stop the hours	Időjárási térkép: órák leállítása
 Weather map: play the hours before and after now	Időjárási térkép: a mostani előtti és utáni órák lejátszása
+Tour	Bemutató
+A short tour of each screen · coming soon	Rövid bemutató minden képernyőről · hamarosan
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	A Parcellák térképén, a ＋ és − alatt. Egyszerre egy réteg; adatok: Open-Meteo.
+View box	Nézetdoboz
+Satellite and Map	Műhold és Térkép
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Mutatja a használt nézetet, a bekapcsolt réteget (gyűrűvel) és a ⌄ jelet. Koppintásra kinyílik; a választásod, a ⌃ vagy 5 másodperc érintés nélkül összecsukja.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Műhold (Esri) vagy a részletes térkép (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Szürke, ahol felhők vannak; a bekapcsolt rétegre koppintva kikapcsol.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Színek: lila hideg, zöld enyhe, piros meleg; a lenti sáv a térképen látható tartományt fogja közre.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	Mm/órában, most és a következő 2 órában; szürke és áthúzott, ha a térképen nem esik.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Települések és földrengések: egyszerű világos térkép (Esri) nagy településnevekkel; parcellák: OpenStreetMap minden részlettel és szintén nagy nevekkel; a főképernyő időjárás-térképe: OpenStreetMap utcaszinten, a nagy nevek nélkül. A nagy nevek: csak romániai települések. Egy ujjal mozgatod, kettővel nagyítod; internet kell hozzá.
+Bottom buttons	Alsó gombok
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	A nevük a képernyő megnyitásakor 3 másodpercig alattuk látszik, utána csak a gombok; húzd fel a kapszulát, hogy újra lásd őket. A bekapcsolt gomb benyomottnak látszik, gyűrűvel.
+“Updated” button	„Frissítve” gomb
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Az oldal fölött lebeg, jobbra: állóban a figyelmeztetések alatt (nélkülük a települések sora alatt), fekvőben a Hőérzet felső szélén. Frissítés közben a nyíl forog, kis körként is; utána 4 másodpercig látszik az idő, és ⟳ jellé zsugorodik. Koppintásra frissít.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	A főképernyő végén (fekvőben a dobozos lapon): OpenStreetMap utcaszinten a pontos helyen (GPS az első településnél), a réteg áttetsző. A térkép áll; adatok: Open-Meteo.
+Layers	Rétegek
+Legend	Jelmagyarázat
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Felhők, Hőmérséklet és Eső, egyszerre egy; a bekapcsoltra koppintva kikapcsol. Az Eső szürke és áthúzott, ha a közelben nem esik most és a következő 2 órában sem.
+The layer's time and, for temperatures, the range on the map.	A réteg ideje és hőmérsékletnél a térképen látható tartomány.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	A ▶ egymás után lejátssza az órákat (6 a mostani előtt és 6 utána); egy órára koppintva megmutatja.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	A ☰ szakaszokban nyitja meg a beállításokat; egy kapcsoló azonnal be- vagy kikapcsol egy funkciót. X-szel vagy kívülre koppintva zárul. Fekvőben balra, 2 oszlopban nyílik: a jobb szélén lévő sávot balra húzva egy oszlop lesz, jobbra húzva kettő; az X melletti gomb visszahozza a 2 oszlopot. A Megjelenítés a végén van. A Rendszer és támogatás 3 másodpercig mutatja a neveket, utána csak a gombokat.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Az értesítések kártyáján: rövid bemutató arról, mit mutat a képernyők egyes részei. Hamarosan (egyelőre szürke).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Három sor: előbb a teli csillagos települések (van főképernyőjük, a képernyők sorrendjében), aztán a többi kedvenc. Bármelyik csillag levehető, amíg 2 vagy több van: a következő csillagos település lesz az első képernyő; az utolsó szürke és marad. Üres csillagra koppintva a település főképernyőt kap, másodikként az első után, és megjelenik; a csillag levétele eltávolítja a képernyőjét, a település a kedvencek között marad. A névre koppintva kiválasztod; a Települések › és a Megye választása megnyitja a listát.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 téma, mindegyik saját háttérrel, dobozokkal és színnel (Grafit, Bazsarózsa, Méz, Erdő, Óceán, Levendula): koppints egy pöttyre a téma színében; alattuk Világos, Sötét vagy Automatikus (telefon érzékelője).
+Show all ▾	Összes mutatása ▾
+Show less ▴	Kevesebb ▴
+At least one town stays shown.	Legalább egy település látható marad.
+Two columns	Két oszlop
+One column	Egy oszlop
+Graphite	Grafit
+Peony	Bazsarózsa
+Honey	Méz
+Forest	Erdő
+Ocean	Óceán

@@ -203,6 +203,14 @@ final class LineIcon extends Drawable {
 			h.addRoundRect(new RectF(6.5f, 2.5f, 17.5f, 21.5f), 2.5f, 2.5f, Path.Direction.CW);
 			h.moveTo(10.5f, 18.5f); h.lineTo(13.5f, 18.5f);
 			break;
+		case "cols": // v2.190: two columns
+			h.addRoundRect(new RectF(3, 4, 11, 20), 2, 2, Path.Direction.CW);
+			h.addRoundRect(new RectF(13, 4, 21, 20), 2, 2, Path.Direction.CW);
+			break;
+		case "tour": // v2.190: the tour (a compass)
+			h.addCircle(12, 12, 9, Path.Direction.CW);
+			h.moveTo(15.5f, 8.5f); h.lineTo(13.5f, 13.5f); h.lineTo(8.5f, 15.5f); h.lineTo(10.5f, 10.5f); h.close();
+			break;
 		case "parcel":
 			h.moveTo(3, 8); h.lineTo(12, 4); h.lineTo(21, 8); h.lineTo(12, 12); h.close();
 			h.moveTo(3, 12.5f); h.lineTo(12, 16.5f); h.lineTo(21, 12.5f);

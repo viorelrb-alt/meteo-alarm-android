@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm σε εκείνη την ώρα
 Weather map: stop the hours	Χάρτης καιρού: διακοπή των ωρών
 Weather map: play the hours before and after now	Χάρτης καιρού: αναπαραγωγή των ωρών πριν και μετά από τώρα
+Tour	Ξενάγηση
+A short tour of each screen · coming soon	Μια σύντομη ξενάγηση σε κάθε οθόνη · σύντομα
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Στον χάρτη των Αγροτεμαχίων, κάτω από ＋ και −. Ένα επίπεδο τη φορά· δεδομένα: Open-Meteo.
+View box	Πλαίσιο προβολής
+Satellite and Map	Δορυφόρος και Χάρτης
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Δείχνει την προβολή σε χρήση, το ενεργό επίπεδο (με δακτύλιο) και ⌄. Ένα άγγιγμα το ανοίγει· η επιλογή σας, το ⌃ ή 5 δευτερόλεπτα χωρίς άγγιγμα το κλείνουν.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Δορυφόρος (Esri) ή ο λεπτομερής χάρτης (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Γκρι όπου υπάρχουν σύννεφα· άγγιγμα στο ενεργό επίπεδο το απενεργοποιεί.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Χρώματα: μωβ κρύο, πράσινο ήπιο, κόκκινο ζέστη· η μπάρα κάτω πλαισιώνει το εύρος που φαίνεται στον χάρτη.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	Σε mm ανά ώρα, τώρα και τις επόμενες 2 ώρες· γκρι και διαγραμμένο όταν δεν βρέχει στον χάρτη.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Τοποθεσίες και σεισμοί: ένας απλός φωτεινός χάρτης (Esri) με μεγάλα ονόματα τοποθεσιών· αγροτεμάχια: OpenStreetMap με όλες τις λεπτομέρειες και επίσης μεγάλα ονόματα· ο χάρτης καιρού της κύριας οθόνης: OpenStreetMap σε επίπεδο δρόμου, χωρίς τα μεγάλα ονόματα. Τα μεγάλα ονόματα: μόνο τοποθεσίες της Ρουμανίας. Μετακινείται με ένα δάχτυλο, μεγεθύνεται με δύο· χρειάζεται internet.
+Bottom buttons	Κάτω κουμπιά
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Τα ονόματά τους φαίνονται από κάτω για 3 δευτερόλεπτα όταν ανοίγει η οθόνη, μετά μόνο τα κουμπιά· τραβήξτε την κάψουλα προς τα πάνω για να τα δείτε ξανά. Το ενεργό κουμπί φαίνεται πατημένο, με δακτύλιο.
+“Updated” button	Κουμπί «ενημερώθηκε»
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Αιωρείται πάνω από τη σελίδα, δεξιά: κατακόρυφα κάτω από τις προειδοποιήσεις (χωρίς αυτές κάτω από τη σειρά τοποθεσιών), οριζόντια στο πάνω άκρο του Αίσθηση. Κατά την ενημέρωση το βέλος του γυρίζει, και ως μικρός κύκλος· μετά η ώρα φαίνεται 4 δευτερόλεπτα και μαζεύεται σε ⟳. Ένα άγγιγμα ενημερώνει.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Στο τέλος της κύριας οθόνης (οριζόντια στο φύλλο με τα πλαίσια): OpenStreetMap σε επίπεδο δρόμου στο ακριβές σημείο (GPS για την πρώτη τοποθεσία), το επίπεδο διάφανο. Ο χάρτης μένει σταθερός· δεδομένα: Open-Meteo.
+Layers	Επίπεδα
+Legend	Υπόμνημα
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Σύννεφα, Θερμοκρασίες και Βροχή, ένα τη φορά· άγγιγμα στο ενεργό το απενεργοποιεί. Η Βροχή είναι γκρι και διαγραμμένη όταν δεν βρέχει κοντά τώρα ούτε τις επόμενες 2 ώρες.
+The layer's time and, for temperatures, the range on the map.	Η ώρα του επιπέδου και, για τις θερμοκρασίες, το εύρος στον χάρτη.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	Το ▶ παίζει τις ώρες (6 πριν και 6 μετά το τώρα) μία μία· άγγιγμα σε μια ώρα τη δείχνει.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	Το ☰ ανοίγει τις ρυθμίσεις ανά ενότητες· ένας διακόπτης ενεργοποιεί ή απενεργοποιεί μια λειτουργία αμέσως. Κλείνει με X ή άγγιγμα έξω. Οριζόντια ανοίγει αριστερά σε 2 στήλες: σύρετε τη μπάρα του δεξιού άκρου αριστερά για μία στήλη, δεξιά για δύο· το κουμπί δίπλα στο X επαναφέρει τις 2 στήλες. Η Εμφάνιση είναι τελευταία. Το Σύστημα & Υποστήριξη δείχνει τα ονόματα 3 δευτερόλεπτα, μετά μόνο τα κουμπιά.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Στην κάρτα ειδοποιήσεων: μια σύντομη ξενάγηση σε ό,τι δείχνει κάθε μέρος των οθονών. Σύντομα (γκρι προς το παρόν).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Τρεις σειρές: πρώτα οι τοποθεσίες με γεμάτο αστέρι (έχουν κύρια οθόνη, με τη σειρά των οθονών), μετά τα άλλα αγαπημένα. Κάθε αστέρι μπορεί να αφαιρεθεί όσο είναι 2 ή περισσότερα: η επόμενη τοποθεσία με αστέρι γίνεται η πρώτη οθόνη· το τελευταίο είναι γκρι και μένει. Άγγιγμα σε άδειο αστέρι δίνει στην τοποθεσία κύρια οθόνη, δεύτερη μετά την πρώτη, και τη δείχνει· η αφαίρεση αστεριού αφαιρεί την οθόνη της και η τοποθεσία μένει στα αγαπημένα. Άγγιγμα σε όνομα το επιλέγει· Τοποθεσίες › και Επιλογή νομού ανοίγουν τη λίστα.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 θέματα, το καθένα με δικό του φόντο, πλαίσια και χρώμα (Γραφίτης, Παιώνια, Μέλι, Δάσος, Ωκεανός, Λεβάντα): αγγίξτε μια κουκκίδα στο χρώμα του θέματος· από κάτω Φωτεινό, Σκοτεινό ή Αυτόματο (αισθητήρας τηλεφώνου).
+Show all ▾	Εμφάνιση όλων ▾
+Show less ▴	Λιγότερα ▴
+At least one town stays shown.	Τουλάχιστον μία τοποθεσία μένει στην οθόνη.
+Two columns	Δύο στήλες
+One column	Μία στήλη
+Graphite	Γραφίτης
+Peony	Παιώνια
+Honey	Μέλι
+Forest	Δάσος
+Ocean	Ωκεανός

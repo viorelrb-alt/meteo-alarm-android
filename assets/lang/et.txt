@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm selle tunni jooksul
 Weather map: stop the hours	Ilmakaart: peata tunnid
 Weather map: play the hours before and after now	Ilmakaart: mängi tunnid enne ja pärast praegust
+Tour	Tutvustus
+A short tour of each screen · coming soon	Lühike tutvustus igast ekraanist · peagi
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Põldude kaardil, ＋ ja − all. Korraga üks kiht; andmed: Open-Meteo.
+View box	Vaatekast
+Satellite and Map	Satelliit ja Kaart
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Näitab kasutatavat vaadet, sisselülitatud kihti (rõngaga) ja ⌄. Puudutus avab selle; sinu valik, ⌃ või 5 sekundit puudutuseta panevad selle kokku.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satelliit (Esri) või üksikasjalik kaart (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Hall seal, kus on pilved; sisselülitatud kihi puudutus lülitab selle välja.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Värvid: violetne külm, roheline mahe, punane kuum; all olev riba hõlmab kaardil nähtavat vahemikku.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	Mm tunnis, praegu ja järgmise 2 tunni jooksul; hall ja läbi kriipsutatud, kui kaardil ei saja.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Asulad ja maavärinad: lihtne hele kaart (Esri) suurelt kirjutatud asulanimedega; põllud: OpenStreetMap kõigi üksikasjadega ja samuti suurte nimedega; põhiekraani ilmakaart: OpenStreetMap tänavatasandil, ilma suurte nimedeta. Suured nimed: ainult Rumeenia asulad. Liiguta ühe sõrmega, suumi kahega; vajab internetti.
+Bottom buttons	Alumised nupud
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Nende nimed on ekraani avamisel 3 sekundit nende all, siis ainult nupud; tõmba kapsel üles, et neid uuesti näha. Sisselülitatud nupp paistab sissevajutatuna, rõngaga.
+“Updated” button	Nupp „uuendatud”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Hõljub lehe kohal paremal: püstpaigutuses hoiatuste all (ilma nendeta asulate rea all), rõhtpaigutuses Tundub kui kasti ülaservas. Uuendamise ajal pöörleb nool, ka väikese ringina; siis on aeg 4 sekundit näha ja see tõmbub ⟳-ks. Puudutus uuendab.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Põhiekraani lõpus (rõhtpaigutuses kastidega lehel): OpenStreetMap tänavatasandil täpses kohas (esimese asula puhul GPS), kiht läbipaistev. Kaart seisab paigal; andmed: Open-Meteo.
+Layers	Kihid
+Legend	Legend
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Pilved, Temperatuurid ja Vihm, korraga üks; sisselülitatu puudutus lülitab selle välja. Vihm on hall ja läbi kriipsutatud, kui lähedal ei saja praegu ega järgmise 2 tunni jooksul.
+The layer's time and, for temperatures, the range on the map.	Kihi aeg ja temperatuuride puhul vahemik kaardil.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ mängib tunnid (6 enne ja 6 pärast praegust) ükshaaval läbi; tunni puudutus näitab seda.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ avab seaded jaotistena; lüliti lülitab funktsiooni kohe sisse või välja. Sulgub X-ga või väljapoole puudutades. Rõhtpaigutuses avaneb vasakul 2 veerus: lohista parema serva riba vasakule ühe veeru jaoks, paremale kahe jaoks; X kõrval olev nupp toob 2 veergu tagasi. Kuva on viimane. Süsteem ja tugi näitab nimesid 3 sekundit, siis ainult nuppe.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Teavituste kaardil: lühike tutvustus sellest, mida iga ekraaniosa näitab. Peagi (praegu hall).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Kolm rida: esmalt täistähega asulad (neil on põhiekraan, ekraanide järjekorras), siis ülejäänud lemmikud. Iga tähe võib eemaldada, kuni neid on 2 või rohkem: järgmine tähega asula saab esimeseks ekraaniks; viimane on hall ja jääb. Tühja tähe puudutus annab asulale põhiekraani, teisena pärast esimest, ja näitab seda; tähe eemaldamine eemaldab selle ekraani ja asula jääb lemmikute hulka. Nime puudutus valib selle; Asulad › ja Vali maakond avavad asulate loendi.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 teemat, igaühel oma taust, kastid ja värv (Grafiit, Pojeng, Mesi, Mets, Ookean, Lavendel): puuduta teema värvi täppi; nende all Hele, Tume või Automaatne (telefoni andur).
+Show all ▾	Näita kõike ▾
+Show less ▴	Näita vähem ▴
+At least one town stays shown.	Vähemalt üks asula jääb nähtavale.
+Two columns	Kaks veergu
+One column	Üks veerg
+Graphite	Grafiit
+Peony	Pojeng
+Honey	Mesi
+Forest	Mets
+Ocean	Ookean

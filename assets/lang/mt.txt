@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm f'dik is-siegħa
 Weather map: stop the hours	Mappa tat-temp: waqqaf is-sigħat
 Weather map: play the hours before and after now	Mappa tat-temp: uri s-sigħat qabel u wara issa
+Tour	Tour
+A short tour of each screen · coming soon	Tour qasir ta' kull skrin · dalwaqt
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Fuq il-mappa tal-Għelieqi, taħt ＋ u −. Saff wieħed kull darba; data: Open-Meteo.
+View box	Kaxxa tal-veduta
+Satellite and Map	Satellita u Mappa
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Turi l-veduta użata, is-saff mixgħul (b'ċirku) u ⌄. Tektika tiftaħha; l-għażla tiegħek, ⌃ jew 5 sekondi mingħajr mess jagħluquha.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satellita (Esri) jew il-mappa dettaljata (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Griż fejn hemm sħab; tektika fuq is-saff mixgħul titfih.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Kuluri: vjola kiesaħ, aħdar moderat, aħmar sħun; il-virga t'isfel tiġbor il-medda li tidher fuq il-mappa.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	F'mm fis-siegħa, issa u fis-sagħtejn li ġejjin; griż u maqtugħ meta ma tkunx qed tagħmel xita fuq il-mappa.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Lokalitajiet u terremoti: mappa sempliċi u ċara (Esri) bl-ismijiet tal-lokalitajiet miktuba kbar; għelieqi: OpenStreetMap bid-dettalji kollha u l-ismijiet ukoll kbar; il-mappa tat-temp tal-iskrin prinċipali: OpenStreetMap fil-livell tat-triq, mingħajr l-ismijiet il-kbar. L-ismijiet il-kbar: lokalitajiet tar-Rumanija biss. Iċċaqlaqha b'saba' wieħed, tkabbarha b'tnejn; trid l-internet.
+Bottom buttons	Buttuni t'isfel
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Isimhom jidher taħthom għal 3 sekondi meta jinfetaħ l-iskrin, imbagħad il-buttuni biss; iġbed il-kapsula 'l fuq biex terġa' tarahom. Il-buttuna mixgħula tidher magħfusa, b'ċirku.
+“Updated” button	Buttuna “aġġornat”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Tgħum fuq il-paġna, fuq il-lemin: wieqaf taħt it-twissijiet (mingħajrhom taħt ir-ringiela tal-lokalitajiet), mimdud fuq it-tarf ta' fuq ta' Tinħass qisha. Waqt l-aġġornament il-vleġġa ddur, anki bħala ċirku żgħir; imbagħad il-ħin jidher għal 4 sekondi u tingħalaq f'⟳. Tektika taġġorna.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Fl-aħħar tal-iskrin prinċipali (mimdud fuq il-folja bil-kaxxi): OpenStreetMap fil-livell tat-triq fil-post eżatt (GPS għall-ewwel lokalità), is-saff trasparenti. Il-mappa tibqa' wieqfa; data: Open-Meteo.
+Layers	Saffi
+Legend	Leġġenda
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Sħab, Temperaturi u Xita, wieħed kull darba; tektika fuq dak mixgħul titfih. Xita tkun griża u maqtugħa meta ma tkunx qed tagħmel xita fil-qrib issa u lanqas fis-sagħtejn li ġejjin.
+The layer's time and, for temperatures, the range on the map.	Il-ħin tas-saff u, għat-temperaturi, il-medda fuq il-mappa.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ iddoqq is-sigħat (6 qabel u 6 wara issa) waħda waħda; tektika fuq siegħa turiha.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ jiftaħ is-settings f'taqsimiet; swiċċ jixgħel jew jitfi funzjoni mill-ewwel. Jingħalaq b'X jew b'tektika barra minnu. Mimdud jinfetaħ fuq ix-xellug f'2 kolonni: iġbed il-virga fuq it-tarf tal-lemin lejn ix-xellug għal kolonna waħda, lejn il-lemin għal tnejn; il-buttuna ħdejn X terġa' ġġib iż-2 kolonni. Wiri jinsab fl-aħħar. Sistema u Appoġġ juri l-ismijiet għal 3 sekondi, imbagħad il-buttuni biss.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Fil-karta tan-notifiki: tour qasir ta' dak li juri kull parti tal-iskrins. Dalwaqt (griż għalissa).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tliet ringieli: l-ewwel il-lokalitajiet bi stilla mimlija (għandhom skrin prinċipali, fl-ordni tal-iskrins), imbagħad il-favoriti l-oħra. Kull stilla tista' titneħħa sakemm ikun hemm 2 jew aktar: il-lokalità li jmiss bi stilla ssir l-ewwel skrin; l-aħħar waħda hija griża u tibqa'. Tektika fuq stilla vojta tagħti lill-lokalità skrin prinċipali, it-tieni wara l-ewwel, u turih; it-tneħħija ta' stilla tneħħi l-iskrin tagħha u l-lokalità tibqa' fost il-favoriti. Tektika fuq isem tagħżlu; Lokalitajiet › u Agħżel il-kontea jiftħu l-lista.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 temi, kull wieħed bl-isfond, il-kaxxi u l-kulur tiegħu (Grafit, Pewnija, Għasel, Foresta, Oċean, Lavanda): agħfas tikka bil-kulur tat-tema; taħthom Ċar, Skur jew Awtomatiku (sensur tat-telefon).
+Show all ▾	Uri kollox ▾
+Show less ▴	Uri inqas ▴
+At least one town stays shown.	Mill-inqas lokalità waħda tibqa' murija.
+Two columns	Żewġ kolonni
+One column	Kolonna waħda
+Graphite	Grafit
+Peony	Pewnija
+Honey	Għasel
+Forest	Foresta
+Ocean	Oċean

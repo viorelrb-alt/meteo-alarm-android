@@ -1708,3 +1708,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	мм за этот час
 Weather map: stop the hours	Карта погоды: остановить часы
 Weather map: play the hours before and after now	Карта погоды: показать часы до и после сейчас
+Tour	Экскурсия
+A short tour of each screen · coming soon	Короткая экскурсия по каждому экрану · скоро
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	На карте Участков, под ＋ и −. Только один слой за раз; данные: Open-Meteo.
+View box	Окно вида
+Satellite and Map	Спутник и Карта
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Показывает текущий вид, включённый слой (с кольцом) и ⌄. Касание открывает его; ваш выбор, ⌃ или 5 секунд без касания сворачивают его.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Спутник (Esri) или подробная карта (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Серым там, где облака; касание включённого слоя выключает его.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Цвета: фиолетовый холодно, зелёный умеренно, красный жарко; полоса внизу охватывает диапазон, видимый на карте.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	В мм в час, сейчас и в следующие 2 часа; серый и зачёркнутый, когда на карте нет дождя.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Населённые пункты и землетрясения: простая светлая карта (Esri) с крупными названиями; участки: OpenStreetMap со всеми деталями и тоже крупными названиями; карта погоды главного экрана: OpenStreetMap на уровне улиц, без крупных названий. Крупные названия: только населённые пункты Румынии. Двигается одним пальцем, масштабируется двумя; нужен интернет.
+Bottom buttons	Нижние кнопки
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Их названия видны под ними 3 секунды при открытии экрана, затем остаются только кнопки; потяните капсулу вверх, чтобы увидеть их снова. Включённая кнопка выглядит нажатой, с кольцом.
+“Updated” button	Кнопка «обновлено»
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Парит над страницей справа: в портретной ориентации под предупреждениями (без них под строкой населённых пунктов), в альбомной на верхнем краю «Ощущается». Во время обновления стрелка вращается, и в виде маленького круга; затем 4 секунды видно время, и кнопка сворачивается в ⟳. Касание обновляет.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	В конце главного экрана (в альбомной ориентации на листе с карточками): OpenStreetMap на уровне улиц в точном месте (GPS для первого пункта), слой прозрачный. Карта неподвижна; данные: Open-Meteo.
+Layers	Слои
+Legend	Легенда
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Облака, Температуры и Дождь, по одному; касание включённого выключает его. Дождь серый и зачёркнутый, когда рядом нет дождя сейчас и в следующие 2 часа.
+The layer's time and, for temperatures, the range on the map.	Время слоя и, для температур, диапазон на карте.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ проигрывает часы (6 до и 6 после текущего) по очереди; касание часа показывает его.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ открывает настройки по разделам; переключатель сразу включает или выключает функцию. Закрывается X или касанием снаружи. В альбомной ориентации открывается слева в 2 колонки: потяните полосу у правого края влево для одной колонки, вправо для двух; кнопка рядом с X возвращает 2 колонки. Отображение в конце. Система и поддержка показывает названия 3 секунды, затем только кнопки.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	В карточке уведомлений: короткая экскурсия о том, что показывает каждая часть экранов. Скоро (пока серым).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Три строки: сначала пункты с полной звездой (у них есть главный экран, в порядке экранов), затем остальные избранные. Любую звезду можно снять, пока их 2 или больше: следующий пункт со звездой становится первым экраном; последняя серая и остаётся. Касание пустой звезды даёт пункту главный экран, второй после первого, и показывает его; снятие звезды убирает его экран, а пункт остаётся в избранном. Касание названия выбирает его; Населённые пункты › и Выбрать район открывают список.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 тем, у каждой свой фон, карточки и цвет (Графит, Пион, Мёд, Лес, Океан, Лаванда): коснитесь точки цвета темы; под ними Светлая, Тёмная или Автоматически (датчик телефона).
+Show all ▾	Показать всё ▾
+Show less ▴	Показать меньше ▴
+At least one town stays shown.	Хотя бы один пункт остаётся на экране.
+Two columns	Две колонки
+One column	Одна колонка
+Graphite	Графит
+Peony	Пион
+Honey	Мёд
+Forest	Лес
+Ocean	Океан

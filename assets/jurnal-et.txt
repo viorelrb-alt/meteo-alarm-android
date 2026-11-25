@@ -1,13 +1,15 @@
-Praegune versioon: v.2.180 · 25.11.2026
+Praegune versioon: v.2.190 · 25.11.2026
 ASULAD
 - Asulakaardid: tahvelarvutis ja rõhtpaigutuses on need oma teksti laiused ning seisavad ridades ja veergudes; püstpaigutuses telefonis saab liiga pikk nimi väiksemad tähed; rõhtpaigutuses säilitab otsing püstpaigutuse suuruse.
 - Asulate loend: nupp Asulad avab loendi teema värvis; Vali kustutab ühe või mitu (viimane jääb), ning märk ⌃⌄ all hoituna ja üles või alla lohistatuna muudab järjekorda; iga asula säilitab salvestatud ilma.
 - Otsing kaardil: luup avab kaardi, otsing all; koha või asula nime puudutus näitab selle temperatuuri, Üksikasjad (järgmised päevad) ja Lisa. Kaart on lihtne ja hele, asulate nimed on kirjutatud suurelt (ka põldude kaardil). Teised asulad ilmuvad ainult siis, kui need algavad nagu sisestatud nimi (vähemalt 6 tähte või 60% sellest).
 PÕHIEKRAAN
-- Ilmakaart: põhiekraani lõpus asula kaart nuppudega Pilved, Temperatuurid ja Vihm (üks korraga) ja legendiga; Vihm lülitub sisse ainult siis, kui lähedal sajab praegu või järgmise 2 tunni jooksul. Kaardi all mängib ▶ tunnid (6 enne praegust ja 6 pärast) üksteise järel; tunni puudutus näitab seda.
+- Alumised nupud: nende nimed on ekraani avamisel 3 sekundit nende all, siis ainult nupud; tõmba kapsel üles, et neid uuesti näha. Sisselülitatud nupp paistab sissevajutatuna, rõngaga.
+- Ilmakaart: põhiekraani lõpus (rõhtpaigutuses kastidega lehel): OpenStreetMap tänavatasandil täpses kohas (esimese asula puhul GPS), kiht läbipaistev. Kaart seisab paigal; andmed: Open-Meteo. Pilved, Temperatuurid ja Vihm, korraga üks; sisselülitatu puudutus lülitab selle välja. Vihm on hall ja läbi kriipsutatud, kui lähedal ei saja praegu ega järgmise 2 tunni jooksul. ▶ mängib tunnid (6 enne ja 6 pärast praegust) ükshaaval läbi; tunni puudutus näitab seda.
 - Maavärina teave: puudutus väljal Maavärin avab selle põhiekraanil: kaart, selle all tuntavuse tsoonid ja väärtuse ajalugu; värviline ruut või kaart avab selle täisekraanil, nagu värina menüüst ☰ › Maavärinad. Rumeenias, Prantsusmaal, Itaalias, Hollandis, Šveitsis ja Kreekas tulevad ametlikud väärtused esmalt riigi instituudilt (INFP, BCSF, INGV, KNMI, SED, NOA), seejärel EMSC-lt. Rumeenias saavad ka riigi ümbruse maavärinad INFP väärtuse (infp.ro-st).
 - Mitu asulat: igal loendi asulal on oma põhiekraan; pühkimine vasakule või paremale praegusel ilmal viib järgmisele, loendi järjekorras.
 - Nupp Asulad: ümmargune majaikooniga nupp (püstpaigutuses nimest paremal, rõhtpaigutuses ülemisel ribal enne selle nurka) avab asulate loendi.
+- Nupp „uuendatud”: hõljub lehe kohal paremal: püstpaigutuses hoiatuste all (ilma nendeta asulate rea all), rõhtpaigutuses Tundub kui kasti ülaservas. Uuendamise ajal pöörleb nool, ka väikese ringina; siis on aeg 4 sekundit näha ja see tõmbub ⟳-ks. Puudutus uuendab.
 - Nuppude nimed: ümmargune nupp, mis jääb puudutamisel ekraanile, näitab oma nime väikeses mullis umbes 1,5 sekundit.
 PÕLLULAPID
 - Ajalugu ja prognoos: lohista näidik möödunud päevale; selle väärtused ilmuvad graafiku all olevasse kasti ja 10 s pärast naaseb see tänasele.
@@ -19,12 +21,15 @@ PÕLLULAPID
 - Statistika: igale põllule Päeva tegevus ja 4 vahekaarti: Tegevus (pritsimisaken tund tunnilt, tilkade kuivamine (ΔT), tuul, märg leht), Vesi ja muld (vihm, aurumine, muld 6 ja 18 cm sügavusel), Hooaeg (kraadipäevad võrreldes mullusega, hinnanguline faas) ja Riskid 72 h (seenhaigused, maapinnaöökülm, kuumus, tuul ja rahe); salvestamine PDF- või CSV-failina.
 - Tööolek: üleval kultuur ja külvikuupäev; kultuuriga arvestab otsus ka tilkade kuivamist (ΔT) ja selle haigust.
 SEADED
+- Abi: pikad tekstid on jagatud oma ikoonidega osadeks või näitavad 2 rida ja Näita kõike ▾; rõhtpaigutuses 2 veerus ning jaotise nupu puudutus vilgutab selle piirjoont kaks korda.
+- Aken Seaded: ☰ avab seaded jaotistena; lüliti lülitab funktsiooni kohe sisse või välja. Sulgub X-ga või väljapoole puudutades. Rõhtpaigutuses avaneb vasakul 2 veerus: lohista parema serva riba vasakule ühe veeru jaoks, paremale kahe jaoks; X kõrval olev nupp toob 2 veergu tagasi. Kuva on viimane. Süsteem ja tugi näitab nimesid 3 sekundit, siis ainult nuppe.
 - Eksport / Import: lülitid faili sisu jaoks (ka kultuurid ja kasvatusandmed, põldude teavitused, põldude prügikast, teavitused, kaart, vidinad, maavärinate ajalugu, logi); Ekspordis ja Impordis märgitakse kohad ja põllud ükshaaval; nupp Aa muudab teksti suurust.
 - Kuvakeel: ☰ all inglise keel ja riigi keel; Muud keeled: riigi teised keeled, suured ELi keeled, rumeenia keel ja telefoni keel (USAs ainult inglise ja hispaania keel).
 - Leht Maavärinad: avaneb kohe telefoni viimati salvestatud loenditega ja uuendab neid taustal.
-- Lemmikud ☰-s: kolm rida, esmalt täistärniga asulad (neil on põhiekraan), siis teised; esimene säilitab alati oma tärni; tühja tärni puudutus annab asulale põhiekraani, teise; tärni eemaldamine eemaldab selle ekraani.
+- Lemmikud ☰-s: kolm rida: esmalt täistähega asulad (neil on põhiekraan, ekraanide järjekorras), siis ülejäänud lemmikud. Iga tähe võib eemaldada, kuni neid on 2 või rohkem: järgmine tähega asula saab esimeseks ekraaniks; viimane on hall ja jääb. Tühja tähe puudutus annab asulale põhiekraani, teisena pärast esimest, ja näitab seda; tähe eemaldamine eemaldab selle ekraani ja asula jääb lemmikute hulka. Nime puudutus valib selle; Asulad › ja Vali maakond avavad asulate loendi.
 - Logi: suurus, read ja vead kaardil; Vaata logi avab read (Kõik, Vead, Täna, Eile; pikk puudutus kopeerib rea); Jaga ja Salvesta ekraani allosas. Parandatud vead on logi lõpus ja neid ei loeta; võrguprobleemid on hoiatused.
-- Teemad: 6 teemat oma tausta, kaartide ja värviga (Ühevärviline, Roosa, Kollane, Roheline, Sinine, Lilla), igaüks hele ja tume; täpid ☰ › Teema all on teema värvi.
+- Teemad: 6 teemat oma tausta, kaartide ja värviga (Grafiit, Pojeng, Mesi, Mets, Ookean, Lavendel), igaüks hele ja tume; täpid ☰ › Teema all on teema värvi.
+- Tutvustus: teavituste kaardil: lühike tutvustus sellest, mida iga ekraaniosa näitab. Peagi (praegu hall).
 TEAVITUSED
 - Maavärinad: kontrollitakse iga 10 minuti järel, ka öösel kustunud ekraaniga; täpsustatud magnituud uuendab teadet ja selle puudutus avab kaardi.
 - Oma kanalid: ilmahoiatustel, vihmal ja lumel, maavärinatel, põldudel ja uuendustel on igaühel oma kanal telefoni seadetes; saad ühe välja lülitada ja teised alles jätta.

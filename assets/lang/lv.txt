@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm tajā stundā
 Weather map: stop the hours	Laikapstākļu karte: apturēt stundas
 Weather map: play the hours before and after now	Laikapstākļu karte: atskaņot stundas pirms un pēc tagad
+Tour	Apskats
+A short tour of each screen · coming soon	Īss katra ekrāna apskats · drīzumā
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Zemes gabalu kartē, zem ＋ un −. Vienlaikus viens slānis; dati: Open-Meteo.
+View box	Skata lodziņš
+Satellite and Map	Satelīts un Karte
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Rāda izmantoto skatu, ieslēgto slāni (ar gredzenu) un ⌄. Pieskāriens to atver; jūsu izvēle, ⌃ vai 5 sekundes bez pieskāriena to sakļauj.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satelīts (Esri) vai detalizētā karte (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Pelēks tur, kur ir mākoņi; pieskāriens ieslēgtajam slānim to izslēdz.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Krāsas: violets auksts, zaļš mēreni, sarkans karsts; josla apakšā aptver kartē redzamo diapazonu.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	Mm stundā, tagad un nākamajās 2 stundās; pelēks un pārsvītrots, kad kartē nelīst.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Apdzīvotās vietas un zemestrīces: vienkārša gaiša karte (Esri) ar lieliem vietu nosaukumiem; zemes gabali: OpenStreetMap ar visām detaļām un arī lieliem nosaukumiem; galvenā ekrāna laikapstākļu karte: OpenStreetMap ielu līmenī, bez lielajiem nosaukumiem. Lielie nosaukumi: tikai Rumānijas apdzīvotās vietas. Pārvieto ar vienu pirkstu, tuvini ar diviem; vajag internetu.
+Bottom buttons	Apakšējās pogas
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	To nosaukumi, atverot ekrānu, 3 sekundes redzami zem tām, pēc tam tikai pogas; pavelciet kapsulu uz augšu, lai tos redzētu atkal. Ieslēgtā poga izskatās nospiesta, ar gredzenu.
+“Updated” button	Poga “atjaunināts”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Peld virs lapas pa labi: portretā zem brīdinājumiem (bez tiem zem vietu rindas), ainavā uz Jūtas kā lodziņa augšējās malas. Atjauninot bulta griežas, arī kā mazs aplis; pēc tam 4 sekundes redzams laiks un tā sakļaujas par ⟳. Pieskāriens atjaunina.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Galvenā ekrāna beigās (ainavā uz lapas ar lodziņiem): OpenStreetMap ielu līmenī precīzā vietā (pirmajai vietai GPS), slānis caurspīdīgs. Karte stāv uz vietas; dati: Open-Meteo.
+Layers	Slāņi
+Legend	Leģenda
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Mākoņi, Temperatūras un Lietus, pa vienam; pieskāriens ieslēgtajam to izslēdz. Lietus ir pelēks un pārsvītrots, kad tuvumā nelīst tagad un arī nākamajās 2 stundās.
+The layer's time and, for temperatures, the range on the map.	Slāņa laiks un, temperatūrām, diapazons kartē.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ atskaņo stundas (6 pirms un 6 pēc tagad) pa vienai; pieskāriens stundai to parāda.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ atver iestatījumus pa sadaļām; slēdzis uzreiz ieslēdz vai izslēdz funkciju. Aizveras ar X vai pieskārienu ārpusē. Ainavā atveras pa kreisi 2 kolonnās: velciet labās malas joslu pa kreisi vienai kolonnai, pa labi divām; poga blakus X atjauno 2 kolonnas. Displejs ir pēdējais. Sistēma un atbalsts 3 sekundes rāda nosaukumus, pēc tam tikai pogas.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Paziņojumu kartītē: īss apskats par to, ko rāda katra ekrānu daļa. Drīzumā (pagaidām pelēks).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Trīs rindas: vispirms vietas ar pilnu zvaigzni (tām ir galvenais ekrāns, ekrānu secībā), tad pārējās izlases vietas. Jebkuru zvaigzni var noņemt, kamēr ir 2 vai vairāk: nākamā vieta ar zvaigzni kļūst par pirmo ekrānu; pēdējā ir pelēka un paliek. Pieskāriens tukšai zvaigznei piešķir vietai galveno ekrānu, otro pēc pirmā, un to parāda; zvaigznes noņemšana noņem tās ekrānu, un vieta paliek izlasē. Pieskāriens nosaukumam to izvēlas; Apdzīvotās vietas › un Izvēlieties novadu atver sarakstu.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 motīvi, katram savs fons, lodziņi un krāsa (Grafīts, Peonija, Medus, Mežs, Okeāns, Lavanda): pieskarieties punktam motīva krāsā; zem tiem Gaišs, Tumšs vai Automātisks (tālruņa sensors).
+Show all ▾	Rādīt visu ▾
+Show less ▴	Rādīt mazāk ▴
+At least one town stays shown.	Vismaz viena vieta paliek redzama.
+Two columns	Divas kolonnas
+One column	Viena kolonna
+Graphite	Grafīts
+Peony	Peonija
+Honey	Medus
+Forest	Mežs
+Ocean	Okeāns

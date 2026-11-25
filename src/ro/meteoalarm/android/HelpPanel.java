@@ -178,6 +178,8 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 					o.setBackground(Glass.pill(on ? ro.meteoalarm.android.core.Theme.pastel(dark) : Glass.disc(dark), 0, 20 * dp, dp));
 				}
 				scroll.smoothScrollTo(0, Math.max(0, target.getTop() - (int) (4 * dp)));
+				// v2.190 (Viorel): on 2 columns the section found blinks its outline twice.
+				if (twoCols) pulse(target);
 			}
 		});
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -230,6 +232,9 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		list.removeAllViews();
 		tabs.removeAllViews();
 		sections.clear();
+		box = null;
+		pair = null;
+		twoCols = getResources().getConfiguration().orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE;
 		twos.clear();
 		tabsScroll.setVisibility(GONE);
 		ts = TextSize.get(getContext());
@@ -256,14 +261,20 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		t.setText(two ? text.toUpperCase().replaceFirst(" · ", "\n") : text.toUpperCase());
 		if (two) t.setGravity(android.view.Gravity.CENTER_HORIZONTAL);
 		t.setPadding((int) (4 * dp), (int) (18 * dp), two ? (int) (4 * dp) : 0, (int) (8 * dp));
-		list.addView(t);
+		// v2.190: each section in its own box (the tabs scroll to it; on 2 columns it blinks).
+		box = new LinearLayout(getContext());
+		box.setOrientation(LinearLayout.VERTICAL);
+		box.setPadding((int) (4 * dp), 0, (int) (4 * dp), (int) (4 * dp));
+		pair = null;
+		list.addView(box);
+		box.addView(t);
 		sections.add(t);
 		if (two) {
 			twos.add((FitText) t);
 			list.removeCallbacks(sameSize);
 			list.post(sameSize);
 		}
-		tab(text, t);
+		tab(text, box);
 		tabsScroll.setVisibility(sections.size() >= 3 ? VISIBLE : GONE);
 	}
 
@@ -316,7 +327,8 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 				if (tap != null) tap.run();
 			}
 		});
-		list.addView(r);
+		pair = null;
+		into().addView(r);
 	}
 
 	/** v2.120: the drawn refresh mark of refreshRow, with its animation. */
@@ -424,7 +436,8 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		w.setLineSpacing(0, 1.1f);
 		w.setText(what);
 		w.setPadding(0, (int) (12 * dp), 0, (int) (12 * dp));
-		list.addView(w);
+		pair = null;
+		into().addView(w);
 	}
 
 	/**
@@ -432,13 +445,17 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 	 * button with its own small icon and what it does.
 	 */
 	void steps(Bitmap icon, String name, String intro, Bitmap[] icons, String[] whats) {
-		entry(icon, name, intro);
+		steps(icon, name, intro, icons, null, whats);
+	}
+
+	/**
+	 * v2.190 (Viorel): a long entry split into its sub-functions: each row its icon, its name
+	 * (HEADS, bold; may be null) and what it does.
+	 */
+	void steps(Bitmap icon, String name, String intro, Bitmap[] icons, String[] heads, String[] whats) {
 		// v2.010 (Viorel): the steps under the card's head, their icons in the same column as the
 		// section's icon (the card's left edge), the text in the rest of the width.
-		int at = list.getChildCount() - 1;
-		LinearLayout head = (LinearLayout) list.getChildAt(at);
-		android.view.ViewGroup.LayoutParams hl = head.getLayoutParams();
-		list.removeViewAt(at);
+		LinearLayout head = card(icon, name, intro);
 		Context c = getContext();
 		LinearLayout card = new LinearLayout(c);
 		card.setOrientation(LinearLayout.VERTICAL);
@@ -449,31 +466,46 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		card.addView(head, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 		for (int k = 0; k < whats.length; k++) {
 			LinearLayout r = new LinearLayout(c);
-			r.setGravity(android.view.Gravity.CENTER_VERTICAL);
+			r.setGravity(heads != null ? android.view.Gravity.TOP : android.view.Gravity.CENTER_VERTICAL);
 			ImageView iv = new ImageView(c);
 			iv.setImageBitmap(icons[k]);
-			int s = (int) (34 * dp);
+			int sz = (int) (34 * dp);
 			iv.setPadding((int) (5 * dp), (int) (5 * dp), (int) (5 * dp), (int) (5 * dp));
 			iv.setBackground(Glass.pill(Glass.disc(dark), 0, 17 * dp, dp));
-			LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(s, s);
-			ip.rightMargin = (int) (24 * dp);
+			LinearLayout.LayoutParams ip = new LinearLayout.LayoutParams(sz, sz);
+			ip.rightMargin = (int) (heads != null ? 14 * dp : 24 * dp);
 			r.addView(iv, ip);
+			LinearLayout tx = new LinearLayout(c);
+			tx.setOrientation(LinearLayout.VERTICAL);
+			if (heads != null && heads[k] != null) {
+				TextView n = new TextView(c);
+				n.setTypeface(bold);
+				TextSize.size(n, 15.5f, ts);
+				n.setTextColor(ink());
+				n.setText(heads[k]);
+				tx.addView(n);
+			}
 			TextView w = new TextView(c);
 			w.setTypeface(reg);
 			TextSize.size(w, 15, ts);
 			w.setTextColor(dim());
 			w.setLineSpacing(0, 1.1f);
 			w.setText(whats[k]);
-			r.addView(w, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
+			tx.addView(w);
+			r.addView(tx, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
 			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 			rl.topMargin = (int) (12 * dp);
 			card.addView(r, rl);
 		}
-		list.addView(card, at, hl);
+		add(card);
 	}
 
 	/** One entry: the icon, its name and what it does. */
 	void entry(Bitmap icon, String name, String what) {
+		add(card(icon, name, what));
+	}
+
+	private LinearLayout card(Bitmap icon, String name, String what) {
 		Context c = getContext();
 		LinearLayout row = new LinearLayout(c);
 		// v5.00 (Viorel): each explanation in a glass card, its icon on a faint disc.
@@ -503,10 +535,99 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		w.setLineSpacing(0, 1.1f);
 		w.setText(what);
 		txt.addView(w);
+		// v2.190 (Viorel): a long text shows 2 lines and "Show all ▾".
+		if (what != null && what.length() > LONG) more(txt, w);
 		row.addView(txt, new LinearLayout.LayoutParams(0, LayoutParams.WRAP_CONTENT, 1));
-		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		rl.bottomMargin = (int) (10 * dp);
-		list.addView(row, rl);
+		return row;
+	}
+
+	/** Texts longer than this fold to 2 lines. */
+	private static final int LONG = 170;
+
+	private void more(LinearLayout txt, final TextView w) {
+		w.setMaxLines(2);
+		w.setEllipsize(android.text.TextUtils.TruncateAt.END);
+		final TextView m = new TextView(getContext());
+		m.setTypeface(bold);
+		TextSize.size(m, 14, ts);
+		m.setTextColor(ro.meteoalarm.android.core.Theme.accent(dark));
+		final String all = ro.meteoalarm.android.core.Tr.t("Show all ▾", "Arată tot ▾"), less = ro.meteoalarm.android.core.Tr.t("Show less ▴", "Arată mai puțin ▴");
+		m.setText(all);
+		m.setPadding(0, (int) (6 * dp), (int) (12 * dp), (int) (2 * dp));
+		m.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				boolean open = w.getMaxLines() == 2;
+				w.setMaxLines(open ? Integer.MAX_VALUE : 2);
+				w.setEllipsize(open ? null : android.text.TextUtils.TruncateAt.END);
+				m.setText(open ? less : all);
+			}
+		});
+		txt.addView(m, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+	}
+
+	/** v2.190: the section's box (or the page before the first section). */
+	private LinearLayout box, pair;
+	/** v2.190 (Viorel): in landscape the cards stand on 2 columns. */
+	private boolean twoCols;
+
+	private LinearLayout into() {
+		return box != null ? box : list;
+	}
+
+	/** A card into the page: one under the other, or 2 side by side in landscape. */
+	private void add(View card) {
+		if (!twoCols) {
+			LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+			rl.bottomMargin = (int) (10 * dp);
+			into().addView(card, rl);
+			return;
+		}
+		LinearLayout.LayoutParams cl = new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1);
+		if (pair == null || pair.getChildCount() >= 2) {
+			pair = new LinearLayout(getContext());
+			pair.setOrientation(LinearLayout.HORIZONTAL);
+			pair.setBaselineAligned(false);
+			LinearLayout.LayoutParams pl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+			pl.bottomMargin = (int) (10 * dp);
+			into().addView(pair, pl);
+			// an empty place keeps a lone card half wide
+			View sp = new View(getContext());
+			sp.setTag("pad");
+			pair.addView(card, cl);
+			LinearLayout.LayoutParams sl = new LinearLayout.LayoutParams(0, 1, 1);
+			sl.leftMargin = (int) (10 * dp);
+			pair.addView(sp, sl);
+			return;
+		}
+		pair.removeViewAt(1);
+		cl.leftMargin = (int) (10 * dp);
+		pair.addView(card, cl);
+	}
+
+	/** v2.190 (Viorel): the section's outline blinks twice. */
+	private void pulse(final View v) {
+		final GradientDrawable o = new GradientDrawable();
+		o.setCornerRadius(22 * dp);
+		o.setStroke((int) (2.5f * dp), ro.meteoalarm.android.core.Theme.accent(dark));
+		o.setColor(0);
+		o.setAlpha(0);
+		v.setBackground(o);
+		android.animation.ValueAnimator a = android.animation.ValueAnimator.ofFloat(0, 1);
+		a.setDuration(1400);
+		a.setStartDelay(250);
+		a.addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
+			public void onAnimationUpdate(android.animation.ValueAnimator x) {
+				float f = (Float) x.getAnimatedValue();
+				o.setAlpha(Math.round(255 * (float) Math.abs(Math.sin(f * Math.PI * 2))));
+			}
+		});
+		a.addListener(new android.animation.AnimatorListenerAdapter() {
+			@Override
+			public void onAnimationEnd(android.animation.Animator x) {
+				v.setBackground(null);
+			}
+		});
+		a.start();
 	}
 
 	/**
@@ -555,9 +676,7 @@ final class HelpPanel extends FrameLayout implements Glass.Local {
 		LinearLayout.LayoutParams wl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 		wl.topMargin = (int) (8 * dp);
 		card.addView(w, wl);
-		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		rl.bottomMargin = (int) (10 * dp);
-		list.addView(card, rl);
+		add(card);
 	}
 
 	void show() {

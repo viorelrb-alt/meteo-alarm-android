@@ -1,4 +1,4 @@
-Verżjoni attwali: v.2.180 · 25.11.2026
+Verżjoni attwali: v.2.190 · 25.11.2026
 AĠĠORNAMENTI
 - Kaxxa Verżjoni ġdida: kaxxa qasira fuq nett ta' ☰ meta jkun hemm verżjoni ġdida; tagħfisa fuqha tibda t-tniżżil.
 GĦELIEQI
@@ -20,17 +20,22 @@ NOTIFIKI
 - Verżjoni ġdida: bin-notifiki mixgħula, l-app tiċċekkja GitHub kuljum għal ġimgħatejn wara aġġornament, imbagħad darba kull 7 ijiem, u tħabbar verżjoni ġdida fin-notifiki ta' Android; tagħfisa tiftaħ Iċċekkja għal aġġornamenti.
 SETTINGS
 - Esportazzjoni / Importazzjoni: swiċċijiet għal x'jidħol fil-fajl (ukoll l-uċuħ tar-raba' u d-dejta tal-kultivazzjoni, in-notifiki tal-biċċiet tal-art, il-landa tal-biċċiet tal-art, in-notifiki, il-mappa, il-widgets, l-istorja tat-terremoti, ir-reġistru); fl-Esportazzjoni u l-Importazzjoni l-postijiet u l-biċċiet tal-art jiġu mmarkati wieħed wieħed; il-buttuna Aa tibdel id-daqs tat-test.
-- Favoriti f'☰: tliet ringieli, l-ewwel il-lokalitajiet bi stilla mimlija (għandhom skrin prinċipali), imbagħad l-oħrajn; l-ewwel waħda dejjem iżżomm l-istilla tagħha; tagħfisa fuq stilla vojta tagħti lil-lokalità skrin prinċipali, it-tieni; tneħħi l-istilla jneħħi l-iskrin tagħha.
+- Favoriti f'☰: tliet ringieli: l-ewwel il-lokalitajiet bi stilla mimlija (għandhom skrin prinċipali, fl-ordni tal-iskrins), imbagħad il-favoriti l-oħra. Kull stilla tista' titneħħa sakemm ikun hemm 2 jew aktar: il-lokalità li jmiss bi stilla ssir l-ewwel skrin; l-aħħar waħda hija griża u tibqa'. Tektika fuq stilla vojta tagħti lill-lokalità skrin prinċipali, it-tieni wara l-ewwel, u turih; it-tneħħija ta' stilla tneħħi l-iskrin tagħha u l-lokalità tibqa' fost il-favoriti. Tektika fuq isem tagħżlu; Lokalitajiet › u Agħżel il-kontea jiftħu l-lista.
+- Għajnuna: it-testi twal huma maqsuma f'partijiet bl-ikoni tagħhom jew juru 2 linji u Uri kollox ▾; mimdud f'2 kolonni, u tektika fuq il-buttuna ta' taqsima tteptep il-kontorn tagħha darbtejn.
+- It-tieqa Settings: ☰ jiftaħ is-settings f'taqsimiet; swiċċ jixgħel jew jitfi funzjoni mill-ewwel. Jingħalaq b'X jew b'tektika barra minnu. Mimdud jinfetaħ fuq ix-xellug f'2 kolonni: iġbed il-virga fuq it-tarf tal-lemin lejn ix-xellug għal kolonna waħda, lejn il-lemin għal tnejn; il-buttuna ħdejn X terġa' ġġib iż-2 kolonni. Wiri jinsab fl-aħħar. Sistema u Appoġġ juri l-ismijiet għal 3 sekondi, imbagħad il-buttuni biss.
 - Lingwa tal-wiri: f'☰ l-Ingliż u l-lingwa tal-pajjiż; Lingwi oħra: il-lingwi l-oħra tal-pajjiż, il-lingwi l-kbar tal-UE, ir-Rumen u dik tat-telefon (fl-Istati Uniti l-Ingliż u l-Ispanjol biss).
 - Paġna Terremoti: tiftaħ mill-ewwel bl-aħħar listi ssejvjati fit-telefon u taġġornahom fl-isfond.
 - Reġistru: daqs, linji u żbalji fuq karta; Ara r-reġistru jiftaħ il-linji (Kollha, Żbalji, Illum, Ilbieraħ; messa twila tikkopja linja); Aqsam u Issejvja fil-qiegħ tal-iskrin. L-iżbalji solvuti huma fl-aħħar tar-reġistru u ma jingħaddux; il-problemi tan-netwerk huma twissijiet.
-- Temi: 6 temi bl-isfond, il-kards u l-kulur tagħhom (Monokromu, Roża, Isfar, Aħdar, Blu, Vjola), kull waħda ċara u skura; it-tikek f'☰ › Tema għandhom il-kulur tat-tema.
+- Temi: 6 temi bl-isfond, il-kards u l-kulur tagħhom (Grafit, Pewnija, Għasel, Foresta, Oċean, Lavanda), kull waħda ċara u skura; it-tikek f'☰ › Tema għandhom il-kulur tat-tema.
+- Tour: fil-karta tan-notifiki: tour qasir ta' dak li juri kull parti tal-iskrins. Dalwaqt (griż għalissa).
 SKRIN EWLIENI
 - Aktar lokalitajiet: kull lokalità fil-lista għandha l-iskrin prinċipali tagħha; swajp lejn ix-xellug jew il-lemin fuq it-temp issa jgħaddi għal dik ta' wara, fl-ordni tal-lista.
 - Buttuna Lokalitajiet: il-buttuna tonda bl-ikona tad-djar (f'portrait fuq il-lemin tal-isem, f'landscape fuq il-faxxa ta' fuq, qabel ir-rokna tagħha) tiftaħ il-lista tal-lokalitajiet.
+- Buttuna “aġġornat”: tgħum fuq il-paġna, fuq il-lemin: wieqaf taħt it-twissijiet (mingħajrhom taħt ir-ringiela tal-lokalitajiet), mimdud fuq it-tarf ta' fuq ta' Tinħass qisha. Waqt l-aġġornament il-vleġġa ddur, anki bħala ċirku żgħir; imbagħad il-ħin jidher għal 4 sekondi u tingħalaq f'⟳. Tektika taġġorna.
+- Buttuni t'isfel: isimhom jidher taħthom għal 3 sekondi meta jinfetaħ l-iskrin, imbagħad il-buttuni biss; iġbed il-kapsula 'l fuq biex terġa' tarahom. Il-buttuna mixgħula tidher magħfusa, b'ċirku.
 - Informazzjoni dwar it-terremot: mess fuq il-kaxxa Terremot jiftaħha fl-iskrin ewlieni: il-mappa, taħtha ż-żoni fejn inħass u l-istorja tal-valur; il-kwadru kkulurit jew il-mappa jiftħuha fuq l-iskrin kollu, bħal terremot minn ☰ › Terremoti. Fir-Rumanija, Franza, l-Italja, l-Olanda, l-Iżvizzera u l-Greċja l-valuri uffiċjali jiġu l-ewwel mill-istitut tal-pajjiż (INFP, BCSF, INGV, KNMI, SED, NOA), imbagħad mill-EMSC. Fir-Rumanija, anke t-terremoti madwar il-pajjiż jieħdu l-valur tal-INFP (minn infp.ro).
 - Ismijiet tal-buttuni: buttuna tonda li tibqa' fuq l-iskrin meta tingħafas turi isimha f'bużżieqa żgħira għal madwar 1.5 sekondi.
-- Mappa tat-temp: fl-aħħar tal-iskrin prinċipali, il-mappa tal-lokalità bil-buttuni Sħab, Temperaturi u Xita (waħda kull darba) u l-leġġenda; ix-Xita tinxtegħel biss meta tkun qed tagħmel xita fil-qrib issa jew fis-sagħtejn li ġejjin. Taħt il-mappa, ▶ juri s-sigħat (6 qabel issa u 6 wara) waħda wara l-oħra; tagħfisa fuq siegħa turiha.
+- Mappa tat-temp: fl-aħħar tal-iskrin prinċipali (mimdud fuq il-folja bil-kaxxi): OpenStreetMap fil-livell tat-triq fil-post eżatt (GPS għall-ewwel lokalità), is-saff trasparenti. Il-mappa tibqa' wieqfa; data: Open-Meteo. Sħab, Temperaturi u Xita, wieħed kull darba; tektika fuq dak mixgħul titfih. Xita tkun griża u maqtugħa meta ma tkunx qed tagħmel xita fil-qrib issa u lanqas fis-sagħtejn li ġejjin. ▶ iddoqq is-sigħat (6 qabel u 6 wara issa) waħda waħda; tektika fuq siegħa turiha.
 - Titjib fid-disinn u korrezzjoni taż-żbalji rrappurtati.
 
 Verżjoni 1.4 (v.1.400 – v.1.520)

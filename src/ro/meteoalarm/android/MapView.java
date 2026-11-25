@@ -620,7 +620,11 @@ final class MapView extends View {
 		double cx = wx(lon, world), cy = wy(lat, world);
 		double left = cx - w / 2.0, top = cy - h / 2.0;
 		drawLayer(c, w, h, world, left, top);
-		drawTowns(c, w, h, world, left, top);
+		if (townNames) drawTowns(c, w, h, world, left, top);
+		else {
+			tBoxes.clear();
+			tIdx.clear();
+		}
 		// The phone's position.
 		if (!Double.isNaN(meLat)) {
 			float mx = (float) (wx(meLon, world) - left), my = (float) (wy(meLat, world) - top);
@@ -1290,6 +1294,10 @@ final class MapView extends View {
 	}
 
 	/** The layer under the pins: the grid as a small picture, stretched (and smoothed) over its area. */
+	/** v2.190 (Viorel): the main screen's map: no big names, the weather layer lighter (FADE). */
+	boolean townNames = true;
+	float layerFade = 1f;
+
 	private void drawLayer(Canvas c, int w, int h, double world, double left, double top) {
 		if (layer == L_NONE || gRainMax == null) return;
 		if (gPicKind != layer || gPic == null) {
@@ -1316,6 +1324,7 @@ final class MapView extends View {
 		}
 		float x0 = (float) (wx(gW, world) - left), x1 = (float) (wx(gE, world) - left), y0 = (float) (wy(gN, world) - top), y1 = (float) (wy(gS, world) - top);
 		Paint gp = new Paint(Paint.FILTER_BITMAP_FLAG);
+		gp.setAlpha(Math.round(255 * layerFade));
 		c.drawBitmap(gPic, null, new RectF(x0, y0, x1, y1), gp);
 		if (!gBusy) wantGrid();
 	}

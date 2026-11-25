@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm under den timmen
 Weather map: stop the hours	Väderkarta: stoppa timmarna
 Weather map: play the hours before and after now	Väderkarta: spela upp timmarna före och efter nu
+Tour	Rundtur
+A short tour of each screen · coming soon	En kort rundtur på varje skärm · kommer snart
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	På kartan över Skiften, under ＋ och −. Ett lager i taget; data: Open-Meteo.
+View box	Visningsruta
+Satellite and Map	Satellit och Karta
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Visar vyn som används, lagret som är på (med en ring) och ⌄. Ett tryck öppnar den; ditt val, ⌃ eller 5 sekunder utan beröring fäller ihop den.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satellit (Esri) eller den detaljerade kartan (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Grått där det finns moln; ett tryck på lagret som är på stänger av det.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Färger: violett kallt, grönt milt, rött varmt; stapeln längst ner ramar in intervallet som syns på kartan.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	I mm per timme, nu och de närmaste 2 timmarna; grått och överstruket när det inte regnar på kartan.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Orter och jordbävningar: en enkel ljus karta (Esri) med ortnamnen skrivna stort; skiften: OpenStreetMap med alla detaljer och också stora namn; väderkartan på huvudskärmen: OpenStreetMap på gatunivå, utan de stora namnen. De stora namnen: bara orter i Rumänien. Flytta med ett finger, zooma med två; kräver internet.
+Bottom buttons	Nedre knappar
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Deras namn syns under dem i 3 sekunder när skärmen öppnas, sedan bara knapparna; dra kapseln uppåt för att se dem igen. Knappen som är på ser intryckt ut, med en ring.
+“Updated” button	Knappen ”uppdaterad”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Svävar över sidan, till höger: stående under varningarna (utan dem under raden med orter), liggande på övre kanten av Känns som. Under uppdatering snurrar pilen, även som liten cirkel; sedan syns tiden i 4 sekunder och den fälls ihop till ⟳. Ett tryck uppdaterar.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Längst ner på huvudskärmen (liggande på bladet med rutorna): OpenStreetMap på gatunivå på exakt plats (GPS för första orten), lagret genomskinligt. Kartan står still; data: Open-Meteo.
+Layers	Lager
+Legend	Teckenförklaring
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Moln, Temperaturer och Regn, ett i taget; ett tryck på det som är på stänger av det. Regn är grått och överstruket när det inte regnar i närheten nu eller de närmaste 2 timmarna.
+The layer's time and, for temperatures, the range on the map.	Lagrets tid och, för temperaturer, intervallet på kartan.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ spelar upp timmarna (6 före och 6 efter nu) en i taget; ett tryck på en timme visar den.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ öppnar inställningarna i avsnitt; en brytare slår på eller av en funktion direkt. Stängs med X eller ett tryck utanför. Liggande öppnas den till vänster i 2 kolumner: dra listen i högra kanten åt vänster för en kolumn, åt höger för två; knappen vid X ger tillbaka 2 kolumner. Visning ligger sist. System och support visar namnen i 3 sekunder, sedan bara knapparna.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	I kortet för aviseringar: en kort rundtur i vad varje del av skärmarna visar. Kommer snart (grått tills vidare).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tre rader: först orterna med full stjärna (de har en huvudskärm, i skärmarnas ordning), sedan övriga favoriter. Vilken stjärna som helst kan tas bort så länge 2 eller fler är på: nästa ort med stjärna blir första skärmen; den sista är grå och stannar. Ett tryck på en tom stjärna ger orten en huvudskärm, den andra efter den första, och visar den; tas en stjärna bort försvinner dess skärm och orten stannar bland favoriterna. Ett tryck på ett namn väljer det; Orter › och Välj län öppnar listan över orter.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 teman, vart och ett med egen bakgrund, rutor och färg (Grafit, Pion, Honung, Skog, Ocean, Lavendel): tryck på en prick i temats färg; under dem Ljust, Mörkt eller Automatiskt (telefonens sensor).
+Show all ▾	Visa allt ▾
+Show less ▴	Visa mindre ▴
+At least one town stays shown.	Minst en ort förblir visad.
+Two columns	Två kolumner
+One column	En kolumn
+Graphite	Grafit
+Peony	Pion
+Honey	Honung
+Forest	Skog
+Ocean	Ocean

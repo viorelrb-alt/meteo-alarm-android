@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm sinä tuntina
 Weather map: stop the hours	Sääkartta: pysäytä tunnit
 Weather map: play the hours before and after now	Sääkartta: toista tunnit ennen ja jälkeen nykyhetken
+Tour	Esittely
+A short tour of each screen · coming soon	Lyhyt esittely jokaisesta näytöstä · tulossa pian
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Peltolohkojen kartalla, ＋:n ja −:n alla. Yksi taso kerrallaan; tiedot: Open-Meteo.
+View box	Näkymäruutu
+Satellite and Map	Satelliitti ja Kartta
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Näyttää käytössä olevan näkymän, päällä olevan tason (renkaalla) ja ⌄:n. Napautus avaa sen; valintasi, ⌃ tai 5 sekuntia ilman kosketusta sulkee sen.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satelliitti (Esri) tai tarkka kartta (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Harmaata siellä, missä on pilviä; napautus päällä olevaan tasoon sammuttaa sen.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Värit: violetti kylmä, vihreä leuto, punainen kuuma; alareunan palkki rajaa kartalla näkyvän vaihteluvälin.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	Millimetreinä tunnissa, nyt ja seuraavat 2 tuntia; harmaa ja yliviivattu, kun kartalla ei sada.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Paikkakunnat ja maanjäristykset: yksinkertainen vaalea kartta (Esri) isoilla paikannimillä; lohkot: OpenStreetMap kaikkine yksityiskohtineen ja myös isoilla nimillä; päänäytön sääkartta: OpenStreetMap katutasolla, ilman isoja nimiä. Isot nimet: vain Romanian paikkakunnat. Siirrä yhdellä sormella, zoomaa kahdella; tarvitsee internetin.
+Bottom buttons	Alapainikkeet
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Niiden nimet näkyvät alla 3 sekuntia näytön avautuessa, sitten vain painikkeet; vedä kapselia ylös nähdäksesi ne uudelleen. Päällä oleva painike näyttää painetulta, renkaan kanssa.
+“Updated” button	”Päivitetty”-painike
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Leijuu sivun päällä oikealla: pystyssä varoitusten alla (ilman niitä paikkakuntarivin alla), vaakana Tuntuu kuin -ruudun yläreunassa. Päivityksen aikana nuoli pyörii, myös pienenä ympyränä; sitten aika näkyy 4 sekuntia ja se pienenee ⟳:ksi. Napautus päivittää.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Päänäytön lopussa (vaakana ruutujen lehdellä): OpenStreetMap katutasolla tarkassa paikassa (GPS ensimmäiselle paikkakunnalle), taso läpikuultava. Kartta pysyy paikallaan; tiedot: Open-Meteo.
+Layers	Tasot
+Legend	Selite
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Pilvet, Lämpötilat ja Sade, yksi kerrallaan; napautus päällä olevaan sammuttaa sen. Sade on harmaa ja yliviivattu, kun lähellä ei sada nyt eikä seuraavien 2 tunnin aikana.
+The layer's time and, for temperatures, the range on the map.	Tason aika ja lämpötiloilla kartan vaihteluväli.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ toistaa tunnit (6 ennen ja 6 jälkeen nykyhetken) yksi kerrallaan; tunnin napautus näyttää sen.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ avaa asetukset osioittain; kytkin laittaa toiminnon heti päälle tai pois. Sulkeutuu X:llä tai napauttamalla ulkopuolelle. Vaakana se aukeaa vasemmalle 2 sarakkeeseen: vedä oikean reunan palkkia vasemmalle saadaksesi yhden sarakkeen, oikealle kaksi; X:n vieressä oleva painike palauttaa 2 saraketta. Näyttö on viimeisenä. Järjestelmä ja tuki näyttää nimet 3 sekuntia, sitten vain painikkeet.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Ilmoitusten kortissa: lyhyt esittely siitä, mitä kukin näyttöjen osa näyttää. Tulossa pian (toistaiseksi harmaa).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Kolme riviä: ensin täyden tähden paikkakunnat (niillä on päänäyttö, näyttöjen järjestyksessä), sitten muut suosikit. Minkä tahansa tähden voi poistaa, kun niitä on 2 tai enemmän: seuraavasta tähdellisestä paikkakunnasta tulee ensimmäinen näyttö; viimeinen on harmaa ja jää. Tyhjän tähden napautus antaa paikkakunnalle päänäytön, toiseksi ensimmäisen jälkeen, ja näyttää sen; tähden poisto poistaa sen näytön ja paikkakunta jää suosikkeihin. Nimen napautus valitsee sen; Paikkakunnat › ja Valitse maakunta avaavat listan.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 teemaa, kullakin oma tausta, ruudut ja väri (Grafiitti, Pioni, Hunaja, Metsä, Valtameri, Laventeli): napauta teeman värin pistettä; niiden alla Vaalea, Tumma tai Automaattinen (puhelimen anturi).
+Show all ▾	Näytä kaikki ▾
+Show less ▴	Näytä vähemmän ▴
+At least one town stays shown.	Vähintään yksi paikkakunta jää näkyviin.
+Two columns	Kaksi saraketta
+One column	Yksi sarake
+Graphite	Grafiitti
+Peony	Pioni
+Honey	Hunaja
+Forest	Metsä
+Ocean	Valtameri

@@ -59,6 +59,27 @@ final class SettingsPanel extends FrameLayout {
 	/** v5.03 (Viorel): the bar down = all its icons in one row (COMPACT); pulled up = its rows with the names. */
 	private LinearLayout compact;
 	private final List<View> footRows = new ArrayList<View>();
+	/** v2.190 (Viorel): in landscape the settings on two columns (TWO), the grip at the right edge folds them into one. */
+	private boolean land, two;
+	private LinearLayout colA, colB, target;
+	private final View cgrip;
+	private View twoBtn;
+	private Columns onColumns;
+
+	interface Columns {
+		void set(boolean two);
+	}
+
+	void setOnColumns(Columns c) {
+		onColumns = c;
+	}
+
+	/** v2.190: the names of System & Support show 3 s when the window opens, then only the icons. */
+	private final Runnable footFold = new Runnable() {
+		public void run() {
+			setFootOpen(false);
+		}
+	};
 
 	SettingsPanel(Context c, Typeface reg, Typeface bold) {
 		super(c);
@@ -92,6 +113,17 @@ final class SettingsPanel extends FrameLayout {
 				hide();
 			}
 		});
+		// v2.190 (Viorel): folded into one column (landscape), a button brings the two columns back at once.
+		twoBtn = new View(c);
+		twoBtn.setVisibility(GONE);
+		twoBtn.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				if (onColumns != null) onColumns.set(true);
+			}
+		});
+		LinearLayout.LayoutParams tbl = new LinearLayout.LayoutParams(px(42), px(42));
+		tbl.rightMargin = px(10);
+		head.addView(twoBtn, tbl);
 		head.addView(closeX, new LinearLayout.LayoutParams(px(42), px(42)));
 		panel.addView(head);
 		headLine = new View(c);
@@ -129,12 +161,16 @@ final class SettingsPanel extends FrameLayout {
 					float d = e.getRawY() - y0;
 					if (!drag && Math.abs(d) > px(12)) drag = true;
 					if (drag && Math.abs(d) > px(24)) {
+						removeCallbacks(footFold);
 						setFootOpen(d < 0);
 						y0 = e.getRawY();
 					}
 					break;
 				case MotionEvent.ACTION_UP:
-					if (!drag && e.getY() < px(22)) setFootOpen(!footOpen);
+					if (!drag && e.getY() < px(22)) {
+						removeCallbacks(footFold);
+						setFootOpen(!footOpen);
+					}
 					break;
 				}
 				return drag;
@@ -149,6 +185,34 @@ final class SettingsPanel extends FrameLayout {
 		footTitle.setPadding(px(14), 0, 0, px(2));
 		panel.addView(foot);
 		addView(panel, new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+		// v2.190 (Viorel): the grip at the window's right edge (landscape): pulled left, one column; right, two.
+		cgrip = new View(c) {
+			float x0;
+			boolean done;
+
+			@Override
+			public boolean onTouchEvent(MotionEvent e) {
+				switch (e.getActionMasked()) {
+				case MotionEvent.ACTION_DOWN:
+					x0 = e.getRawX();
+					done = false;
+					return true;
+				case MotionEvent.ACTION_MOVE:
+					float d = e.getRawX() - x0;
+					if (!done && Math.abs(d) > px(28)) {
+						done = true;
+						if ((d < 0) == two && onColumns != null) onColumns.set(d > 0);
+					}
+					return true;
+				case MotionEvent.ACTION_UP:
+					if (!done && onColumns != null) onColumns.set(!two); // a tap switches too (TalkBack)
+					return true;
+				}
+				return true;
+			}
+		};
+		cgrip.setVisibility(GONE);
+		addView(cgrip, new LayoutParams(px(28), px(84)));
 		panel.getViewTreeObserver().addOnGlobalLayoutListener(new android.view.ViewTreeObserver.OnGlobalLayoutListener() {
 			public void onGlobalLayout() {
 				if (fitPending && open && panel.getWidth() > 0) {
@@ -247,12 +311,49 @@ final class SettingsPanel extends FrameLayout {
 		onClose = r;
 	}
 
+	/** v2.190: LAND: the phone (or tablet) is in landscape; TWO: the settings on two columns there. */
+	void columns(boolean land, boolean two) {
+		this.land = land;
+		this.two = land && two;
+	}
+
+	/** Where the next section goes: the content, or (two columns) the left, then the right column. */
+	private LinearLayout target() {
+		if (!two) return content;
+		if (target == null) {
+			LinearLayout cols = new LinearLayout(getContext());
+			cols.setOrientation(LinearLayout.HORIZONTAL);
+			colA = new LinearLayout(getContext());
+			colA.setOrientation(LinearLayout.VERTICAL);
+			colB = new LinearLayout(getContext());
+			colB.setOrientation(LinearLayout.VERTICAL);
+			LinearLayout.LayoutParams a = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			a.rightMargin = px(7);
+			LinearLayout.LayoutParams b = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1);
+			b.leftMargin = px(7);
+			cols.addView(colA, a);
+			cols.addView(colB, b);
+			content.addView(cols, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+			target = colA;
+		}
+		return target;
+	}
+
+	/** v2.190: the sections after this go in the right column (two columns only). */
+	void nextColumn() {
+		if (two) {
+			target();
+			target = colB;
+		}
+	}
+
 	/** Starts filling the window anew (the scroll stays where it was when KEEP). */
 	void begin(boolean dark, String head, String sub, float zk) {
 		this.dark = dark;
 		this.zk = zk;
 		content.removeAllViews();
 		foot.removeAllViews();
+		colA = colB = target = null;
 		roles.clear();
 		footLabels.clear();
 		footRows.clear();
@@ -321,14 +422,15 @@ final class SettingsPanel extends FrameLayout {
 		t.setTextColor(accentText());
 		t.setLetterSpacing(0.1f);
 		t.setPadding(px(10), px(16), px(10), px(8));
-		content.addView(t);
+		LinearLayout to = target();
+		to.addView(t);
 		card = new LinearLayout(getContext());
 		card.setOrientation(LinearLayout.VERTICAL);
 		card.setPadding(px(14), px(6), px(14), px(6));
 		if (dashed) {
 			card.setBackground(new Dashed());
 		} else card.setBackground(Glass.cardBg(dark, 22 * dp, dp));
-		content.addView(card, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+		to.addView(card, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 		cardFirst = true;
 	}
 
@@ -514,6 +616,19 @@ final class SettingsPanel extends FrameLayout {
 		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(px(48 * zk), px(28 * zk));
 		rl.leftMargin = px(10);
 		r.addView(sw, rl);
+	}
+
+	/** v2.190 (Viorel): a row with its switch greyed out: a function to come (it does nothing yet). */
+	void toggleOff(String icon, String head, String sub) {
+		sep();
+		Switch sw = new Switch(false);
+		LinearLayout r = row(icon, head, sub, null, false, null);
+		LinearLayout.LayoutParams rl = new LinearLayout.LayoutParams(px(48 * zk), px(28 * zk));
+		rl.leftMargin = px(10);
+		r.addView(sw, rl);
+		r.setAlpha(0.45f);
+		r.setEnabled(false);
+		r.setContentDescription(head + ". " + sub);
 	}
 
 	private final class Switch extends View {
@@ -785,21 +900,22 @@ final class SettingsPanel extends FrameLayout {
 
 	/**
 	 * v2.152 (Viorel): a favourite with its star: filled = it has a main screen. The star turns it
-	 * on or off (never for the first town); the name opens its screen. CURRENT: the screen shown.
+	 * on or off (v2.190: never the last one, LOCKED, grey); the name opens its screen. CURRENT: the screen shown.
 	 */
-	void favStar(String name, final boolean starred, boolean first, boolean current, final Runnable tapName, final Runnable tapStar) {
+	void favStar(String name, final boolean starred, boolean locked, boolean current, final Runnable tapName, final Runnable tapStar) {
 		LinearLayout r = new LinearLayout(getContext());
 		r.setGravity(Gravity.CENTER_VERTICAL);
 		r.setMinimumHeight(px(52));
 		r.setPadding(0, px(2), px(4), px(2));
 		View st = new View(getContext());
-		st.setBackground(new LineIcon(starred ? "star" : "star-off", starred ? accent() : dim()));
+		// v2.190 (Viorel): the last starred town: a grey star that cannot be unticked.
+		st.setBackground(new LineIcon(starred ? "star" : "star-off", starred && !locked ? accent() : dim()));
 		FrameLayout hit = new FrameLayout(getContext());
 		FrameLayout.LayoutParams il = new FrameLayout.LayoutParams(px(24 * zk), px(24 * zk), Gravity.CENTER);
 		hit.addView(st, il);
 		hit.setContentDescription(name + ", " + (starred ? Tr.t("has a main screen", "are ecran principal") : Tr.t("no main screen", "fără ecran principal"))
-				+ (first ? ". " + Tr.t("The first town cannot be unticked.", "Prima localitate nu se poate debifa.") : ""));
-		if (!first) {
+				+ (locked ? ". " + Tr.t("At least one town stays shown.", "Măcar o localitate rămâne afișată.") : ""));
+		if (!locked) {
 			hit.setBackgroundResource(android.R.drawable.list_selector_background);
 			hit.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
@@ -992,19 +1108,65 @@ final class SettingsPanel extends FrameLayout {
 		// v5.53 (Viorel): on a tablet only as wide as needed, at the left edge.
 		boolean tab = TextSize.tablet(getContext());
 		if (tab) w = Math.min(sw - 2 * m, Math.round(430 * dp * zk));
+		// v2.190 (Viorel): landscape (phone and tablet): at the left edge; two columns only as wide as they need.
+		if (land) w = Math.min(sw - 2 * m - px(30), Math.round((two ? 760 : (tab ? 430 : 400)) * dp * zk));
+		boolean left = tab || land;
 		LayoutParams lp = (LayoutParams) panel.getLayoutParams();
 		lp.width = w;
 		lp.height = sh - 2 * m;
-		lp.gravity = tab ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.CENTER;
-		lp.leftMargin = tab ? m : 0;
+		lp.gravity = left ? Gravity.LEFT | Gravity.CENTER_VERTICAL : Gravity.CENTER;
+		lp.leftMargin = left ? m : 0;
 		panel.setLayoutParams(lp);
+		cgrip.setVisibility(land ? VISIBLE : GONE);
+		twoBtn.setVisibility(land && !two ? VISIBLE : GONE);
+		if (land && !two) {
+			twoBtn.setContentDescription(ro.meteoalarm.android.core.Tr.t("Two columns", "Două coloane"));
+			android.graphics.drawable.LayerDrawable ld = new android.graphics.drawable.LayerDrawable(new Drawable[] { Glass.pill(Glass.disc(dark), 0, 21 * dp, dp), new LineIcon("cols", ink()) });
+			ld.setLayerInset(0, 0, 0, 0, 0);
+			int in = px(10);
+			ld.setLayerInset(1, in, in, in, in);
+			twoBtn.setBackground(ld);
+		}
+		if (land) {
+			cgrip.setBackground(new Drawable() {
+				final Paint gp = new Paint(Paint.ANTI_ALIAS_FLAG);
+
+				@Override
+				public void draw(Canvas c) {
+					android.graphics.Rect b = getBounds();
+					gp.setColor(Glass.alpha(ink(), 0.35f));
+					float cx = b.exactCenterX();
+					c.drawRoundRect(new RectF(cx - 2.5f * dp, b.top + px(20), cx + 2.5f * dp, b.bottom - px(20)), 3 * dp, 3 * dp, gp);
+				}
+
+				@Override
+				public void setAlpha(int a) {
+				}
+
+				@Override
+				public void setColorFilter(android.graphics.ColorFilter f) {
+				}
+
+				@Override
+				public int getOpacity() {
+					return android.graphics.PixelFormat.TRANSLUCENT;
+				}
+			});
+			cgrip.setContentDescription(two ? ro.meteoalarm.android.core.Tr.t("One column", "O coloană") : ro.meteoalarm.android.core.Tr.t("Two columns", "Două coloane"));
+			LayoutParams gl = (LayoutParams) cgrip.getLayoutParams();
+			gl.gravity = Gravity.LEFT | Gravity.CENTER_VERTICAL;
+			gl.leftMargin = m + w - px(4);
+			cgrip.setLayoutParams(gl);
+		}
 		if (!open) {
 			AnimIcon.still = Motion.off(panel.getContext()); // design audit: "Remove animations"
 			AnimIcon.restart(); // v5.20: the bar's icons move for 3 seconds when the window opens
 			scroll.scrollTo(0, 0);
-			// v5.01: the bar opens with only its icons.
-			footOpen = true;
-			setFootOpen(false);
+			// v2.190 (Viorel): the bar opens with the names for 3 seconds, then only its icons.
+			footOpen = false;
+			setFootOpen(true);
+			removeCallbacks(footFold);
+			postDelayed(footFold, 3000);
 		}
 		open = true;
 		fitPending = true;

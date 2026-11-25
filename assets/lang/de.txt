@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm in dieser Stunde
 Weather map: stop the hours	Wetterkarte: Stunden anhalten
 Weather map: play the hours before and after now	Wetterkarte: Stunden vor und nach jetzt abspielen
+Tour	Tour
+A short tour of each screen · coming soon	Eine kurze Tour durch jeden Bildschirm · bald verfügbar
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Auf der Parzellenkarte, unter ＋ und −. Immer nur eine Ebene; Daten: Open-Meteo.
+View box	Ansichtsfeld
+Satellite and Map	Satellit und Karte
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Zeigt die aktuelle Ansicht, die eingeschaltete Ebene (mit Ring) und ⌄. Antippen öffnet es; deine Wahl, ⌃ oder 5 Sekunden ohne Berührung schließen es.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satellit (Esri) oder die detaillierte Karte (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Grau, wo Wolken sind; Antippen der eingeschalteten Ebene schaltet sie aus.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Farben: violett kalt, grün mild, rot heiß; der Balken unten umfasst den auf der Karte sichtbaren Bereich.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	In mm pro Stunde, jetzt und in den nächsten 2 Stunden; grau und durchgestrichen, wenn es auf der Karte nicht regnet.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Orte und Erdbeben: eine schlichte helle Karte (Esri) mit groß geschriebenen Ortsnamen; Parzellen: OpenStreetMap mit allen Details und ebenfalls großen Namen; die Wetterkarte des Hauptbildschirms: OpenStreetMap auf Straßenebene, ohne die großen Namen. Die großen Namen: nur Orte in Rumänien. Mit einem Finger verschieben, mit zwei zoomen; Internet nötig.
+Bottom buttons	Untere Tasten
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Ihre Namen erscheinen beim Öffnen des Bildschirms 3 Sekunden darunter, dann nur die Tasten; zieh die Kapsel nach oben, um sie wieder zu sehen. Die eingeschaltete Taste wirkt gedrückt, mit einem Ring.
+“Updated” button	Taste „aktualisiert“
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Schwebt rechts über der Seite: im Hochformat unter den Warnungen (ohne sie unter der Ortszeile), im Querformat auf dem oberen Rand von Gefühlt. Beim Aktualisieren dreht sich der Pfeil, auch als kleiner Kreis; dann erscheint 4 Sekunden die Uhrzeit und sie wird zu ⟳. Antippen aktualisiert.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Am Ende des Hauptbildschirms (im Querformat auf dem Blatt mit den Kästen): OpenStreetMap auf Straßenebene am genauen Ort (GPS für den ersten Ort), die Ebene durchscheinend. Die Karte bleibt fest; Daten: Open-Meteo.
+Layers	Ebenen
+Legend	Legende
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Wolken, Temperaturen und Regen, jeweils eine; Antippen der eingeschalteten schaltet sie aus. Regen ist grau und durchgestrichen, wenn es jetzt und in den nächsten 2 Stunden in der Nähe nicht regnet.
+The layer's time and, for temperatures, the range on the map.	Die Zeit der Ebene und bei Temperaturen der Bereich auf der Karte.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ spielt die Stunden (6 vor und 6 nach jetzt) nacheinander ab; Antippen einer Stunde zeigt sie.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ öffnet die Einstellungen in Abschnitten; ein Schalter schaltet eine Funktion sofort ein oder aus. Schließen mit X oder Tippen außerhalb. Im Querformat öffnet es sich links in 2 Spalten: zieh die Leiste am rechten Rand nach links für eine Spalte, nach rechts für zwei; die Taste neben X holt die 2 Spalten zurück. Anzeige steht am Ende. System & Support zeigt seine Namen 3 Sekunden, dann nur die Tasten.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	In der Karte der Benachrichtigungen: eine kurze Tour, was jeder Bereich der Bildschirme zeigt. Bald verfügbar (vorerst grau).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Drei Zeilen: zuerst die Orte mit vollem Stern (sie haben einen Hauptbildschirm, in der Reihenfolge der Bildschirme), dann die übrigen Favoriten. Jeder Stern kann entfernt werden, solange 2 oder mehr an sind: der nächste Ort mit Stern wird zum ersten Bildschirm; der letzte ist grau und bleibt. Antippen eines leeren Sterns gibt dem Ort einen Hauptbildschirm, als zweiten nach dem ersten, und zeigt ihn; das Entfernen eines Sterns nimmt seinen Bildschirm weg und der Ort bleibt bei den Favoriten. Antippen eines Namens wählt ihn; Orte › und Kreis wählen öffnen die Ortsliste.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 Themen, jedes mit eigenem Hintergrund, eigenen Kästen und eigener Farbe (Graphit, Pfingstrose, Honig, Wald, Ozean, Lavendel): tippe auf einen Punkt in der Farbe des Themas; darunter Hell, Dunkel oder Automatisch (Telefonsensor).
+Show all ▾	Alles zeigen ▾
+Show less ▴	Weniger zeigen ▴
+At least one town stays shown.	Mindestens ein Ort bleibt angezeigt.
+Two columns	Zwei Spalten
+One column	Eine Spalte
+Graphite	Graphit
+Peony	Pfingstrose
+Honey	Honig
+Forest	Wald
+Ocean	Ozean

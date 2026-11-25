@@ -10,8 +10,8 @@ import android.os.Looper;
 import android.view.View;
 
 /**
- * v2.170 (Viorel): the weather map at the end of the main screen's page. A map like the towns' one
- * (light, the names big) round the screen's town, with one weather layer (clouds, temperatures or
+ * v2.170 (Viorel): the weather map at the end of the main screen's page. v2.190: the detailed
+ * OpenStreetMap at street level round the screen's exact place (GPS or saved), with one weather layer (clouds, temperatures or
  * rain) and its legend, drawn off the screen into a picture that the page shows ("live:wxmap"). It
  * does not move with the finger, so the page scrolls as before.
  */
@@ -36,7 +36,10 @@ final class WxMap {
 		if (w <= 0 || h <= 0 || Double.isNaN(la)) return;
 		if (m == null) {
 			m = new MapView(ctx);
-			m.setNames(true);
+			// v2.190 (Viorel): the detailed OpenStreetMap (as for the parcels), no big names, the layer lighter.
+			m.setNames(false);
+			m.townNames = false;
+			m.layerFade = 0.6f;
 			m.onChange = new Runnable() {
 				public void run() {
 					if (!drawing) later();
@@ -66,7 +69,7 @@ final class WxMap {
 		if (Math.abs(la - lat) > 1e-4 || Math.abs(lo - lon) > 1e-4) {
 			lat = la;
 			lon = lo;
-			m.setZoom(11);
+			m.setZoom(15); // v2.190: the streets round the exact place
 			m.center(la, lo);
 			m.setMe(la, lo);
 			again = true;

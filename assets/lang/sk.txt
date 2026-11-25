@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm v tej hodine
 Weather map: stop the hours	Mapa počasia: zastaviť hodiny
 Weather map: play the hours before and after now	Mapa počasia: prehrať hodiny pred a po teraz
+Tour	Prehliadka
+A short tour of each screen · coming soon	Krátka prehliadka každej obrazovky · čoskoro
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Na mape Pozemkov, pod ＋ a −. Vždy len jedna vrstva; údaje: Open-Meteo.
+View box	Pole zobrazenia
+Satellite and Map	Satelit a Mapa
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Ukazuje použité zobrazenie, zapnutú vrstvu (s krúžkom) a ⌄. Ťuknutie ho otvorí; tvoja voľba, ⌃ alebo 5 sekúnd bez dotyku ho zbalia.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satelit (Esri) alebo podrobná mapa (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Sivo tam, kde sú oblaky; ťuknutie na zapnutú vrstvu ju vypne.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Farby: fialová studeno, zelená mierne, červená horúco; pruh dole ohraničuje rozsah viditeľný na mape.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	V mm za hodinu, teraz a v najbližších 2 hodinách; sivé a prečiarknuté, keď na mape neprší.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Obce a zemetrasenia: jednoduchá svetlá mapa (Esri) s veľkými názvami obcí; pozemky: OpenStreetMap so všetkými podrobnosťami a tiež veľkými názvami; meteorologická mapa hlavnej obrazovky: OpenStreetMap na úrovni ulíc, bez veľkých názvov. Veľké názvy: len obce v Rumunsku. Posúvaš jedným prstom, zväčšuješ dvoma; potrebuje internet.
+Bottom buttons	Spodné tlačidlá
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Ich názvy sa pri otvorení obrazovky ukážu pod nimi na 3 sekundy, potom zostanú len tlačidlá; potiahni kapsulu nahor a uvidíš ich znova. Zapnuté tlačidlo vyzerá stlačené, s krúžkom.
+“Updated” button	Tlačidlo „aktualizované“
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Pláva nad stránkou vpravo: na výšku pod výstrahami (bez nich pod riadkom obcí), na šírku na hornom okraji Pocitovej. Pri aktualizácii sa šípka točí, aj ako malý kruh; potom sa na 4 sekundy ukáže čas a zbalí sa do ⟳. Ťuknutie aktualizuje.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Na konci hlavnej obrazovky (na šírku na liste s poľami): OpenStreetMap na úrovni ulíc na presnom mieste (GPS pre prvú obec), vrstva priehľadná. Mapa stojí; údaje: Open-Meteo.
+Layers	Vrstvy
+Legend	Legenda
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Oblaky, Teploty a Dážď, vždy jedna; ťuknutie na zapnutú ju vypne. Dážď je sivý a prečiarknutý, keď nablízku neprší teraz ani v najbližších 2 hodinách.
+The layer's time and, for temperatures, the range on the map.	Čas vrstvy a pri teplotách rozsah na mape.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ prehrá hodiny (6 pred a 6 po teraz) jednu po druhej; ťuknutie na hodinu ju ukáže.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ otvorí nastavenia v sekciách; prepínač funkciu hneď zapne alebo vypne. Zatvorí sa X alebo ťuknutím mimo. Na šírku sa otvorí vľavo v 2 stĺpcoch: potiahni lištu na pravom okraji doľava pre jeden stĺpec, doprava pre dva; tlačidlo vedľa X vráti 2 stĺpce. Zobrazenie je na konci. Systém a podpora ukáže názvy na 3 sekundy, potom len tlačidlá.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	V karte upozornení: krátka prehliadka toho, čo ukazuje každá časť obrazoviek. Čoskoro (zatiaľ sivé).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tri riadky: najprv obce s plnou hviezdou (majú hlavnú obrazovku, v poradí obrazoviek), potom ostatné obľúbené. Každú hviezdu možno odobrať, kým sú 2 alebo viac: ďalšia obec s hviezdou sa stane prvou obrazovkou; posledná je sivá a zostáva. Ťuknutie na prázdnu hviezdu dá obci hlavnú obrazovku, druhú po prvej, a ukáže ju; odobratie hviezdy odstráni jej obrazovku a obec zostane v obľúbených. Ťuknutie na názov ju vyberie; Obce › a Vybrať kraj otvoria zoznam obcí.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 motívov, každý s vlastným pozadím, poľami a farbou (Grafit, Pivonka, Med, Les, Oceán, Levanduľa): ťukni na bodku vo farbe motívu; pod nimi Svetlý, Tmavý alebo Automatický (senzor telefónu).
+Show all ▾	Zobraziť všetko ▾
+Show less ▴	Zobraziť menej ▴
+At least one town stays shown.	Aspoň jedna obec zostane zobrazená.
+Two columns	Dva stĺpce
+One column	Jeden stĺpec
+Graphite	Grafit
+Peony	Pivonka
+Honey	Med
+Forest	Les
+Ocean	Oceán

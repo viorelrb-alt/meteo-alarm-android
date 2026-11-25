@@ -1,9 +1,11 @@
-Versiunea curentă: v.2.180 · 25.11.2026
+Versiunea curentă: v.2.190 · 25.11.2026
 ACTUALIZĂRI
 - Caseta Versiune nouă: sus în ☰ apare o casetă scurtă când există o versiune nouă; atingerea ei pornește descărcarea.
 ECRAN PRINCIPAL
+- Butoanele de jos: numele lor apar dedesubt 3 secunde la deschiderea ecranului, apoi rămân doar butoanele; tragi capsula în sus ca să le vezi din nou. Butonul pornit pare apăsat, cu un inel.
 - Butonul Localități: butonul rotund cu iconul cu case (în portret în dreapta numelui, în peisaj pe banda de sus, înainte de colț) deschide lista localităților.
-- Hartă meteo: la sfârșitul ecranului principal, harta localității cu butoanele Nori, Temperaturi și Ploi (unul odată) și legenda; Ploi se activează doar când plouă în zonă acum sau în următoarele 2 ore. Sub hartă, ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată.
+- Butonul „actualizat”: plutește peste pagină, la dreapta: în portret sub avertizări (fără ele sub rândul localităților), în peisaj pe marginea de sus a casetei Resimțit. În timpul actualizării săgeata se rotește, și când e doar un cerc; apoi ora apare 4 secunde și se strânge în ⟳. Atingerea actualizează.
+- Hartă meteo: la sfârșitul ecranului principal (în peisaj pe foaia cu casetele): OpenStreetMap la nivel de stradă, pe locul exact (GPS pentru prima localitate), stratul transparent. Harta stă pe loc; date: Open-Meteo. Nori, Temperaturi și Ploi, câte unul; atingerea celui pornit îl oprește. Ploi e gri și tăiat când nu plouă în zonă acum și nici în următoarele 2 ore. ▶ redă orele (6 dinainte și 6 de după acum) una după alta; atingerea unei ore o arată.
 - Informații cutremur: atingerea casetei Cutremur le deschide în ecranul principal: harta, sub ea zonele resimțite și istoricul valorii; pătratul colorat sau harta le deschid pe tot ecranul, ca și un cutremur din ☰ › Cutremure. În România, Franța, Italia, Olanda, Elveția și Grecia valorile oficiale vin întâi de la institutul țării (INFP, BCSF, INGV, KNMI, SED, NOA), apoi de la EMSC. În România, și cutremurele din jurul țării primesc valoarea INFP (de pe infp.ro).
 - Mai multe localități: fiecare localitate din listă are ecranul ei principal; glisarea stânga-dreapta pe vremea de acum trece la următoarea, în ordinea din listă.
 - Numele butoanelor: un buton rotund care rămâne pe ecran după atingere își arată numele într-o bulă mică, cam 1,5 secunde.
@@ -25,12 +27,15 @@ PARCELE
 - Status operațional: sus, cultura și data semănatului; cu o cultură, verdictul ține cont și de uscarea picăturilor (ΔT) și de boala ei.
 - Straturi meteo: pe harta parcelelor, caseta de sub ＋ și − se deschide cu Satelit, Hartă, Nori, Temperaturi (culori) și Ploi (mm pe oră), apoi se strânge la ce ai ales; un singur strat odată, cu numele, ora și legenda deasupra casetelor; Ploi se activează doar când plouă acum sau în următoarele 2 ore (în locul radarului).
 SETĂRI
+- Ajutor: textele lungi sunt împărțite în subfuncții cu iconul lor sau arată 2 rânduri și Arată tot ▾; în peisaj pe 2 coloane, iar atingerea butonului unei secțiuni îi face conturul să clipească de două ori.
 - Export / Import: comutatoare pentru ce intră în fișier (și culturile și datele de cultivare, notificările parcelelor, coșul de parcele, notificările, harta, widget-urile, istoricul cutremurelor, jurnalul); la Export și Import localitățile și parcelele se bifează pe rând; butonul Aa schimbă mărimea textului.
-- Favorite în ☰: trei rânduri, întâi localitățile cu stea plină (au ecran principal), apoi celelalte; prima își păstrează mereu steaua; o stea goală atinsă dă localității ecran principal, al doilea; debifarea îi scoate ecranul.
+- Favorite în ☰: trei rânduri: întâi localitățile cu stea plină (au ecran principal, în ordinea ecranelor), apoi celelalte favorite. Orice stea se poate debifa cât timp sunt 2 sau mai multe: următoarea cu stea devine primul ecran; ultima e gri și rămâne. Atingerea unei stele goale dă localității ecran principal, a doua după prima, și o arată; debifarea stelei îi scoate ecranul, iar localitatea rămâne la favorite. Atingerea numelui o alege; Localități › și Alegeți județul deschid lista localităților.
+- Fereastra Setări: ☰ deschide setările pe secțiuni; un comutator pornește sau oprește o funcție pe loc. Se închide cu X sau cu o atingere în afara ei. În peisaj se deschide la stânga, pe 2 coloane: tragi bara de pe marginea dreaptă spre stânga pentru o coloană, spre dreapta pentru două; butonul de lângă X readuce 2 coloanele. Afișaj e la sfârșit. Sistem & Suport arată numele 3 secunde, apoi doar butoanele.
 - Jurnal: mărimea, liniile și erorile pe o casetă; Vezi jurnalul deschide liniile (Toate, Erori, Azi, Ieri; atingerea lungă copiază o linie); Trimite și Salvează jos pe ecran. Erorile rezolvate stau la sfârșitul jurnalului și nu sunt numărate; problemele rețelei sunt avertizări.
 - Limbă afișaj: în ☰ engleza și limba țării; Alte limbi: celelalte limbi ale țării, marile limbi UE, româna și limba telefonului (în SUA doar engleza și spaniola).
 - Pagina Cutremure: se deschide imediat cu ultimele liste salvate în telefon și le actualizează în fundal.
-- Teme: 6 teme cu fundalul, casetele și culoarea lor (Monocrom, Roz, Galben, Verde, Albastru, Violet), fiecare luminoasă și întunecată; bulinele din ☰ › Temă au culoarea temei.
+- Teme: 6 teme cu fundalul, casetele și culoarea lor (Grafit, Bujor, Miere, Pădure, Ocean, Lavandă), fiecare luminoasă și întunecată; bulinele din ☰ › Temă au culoarea temei.
+- Tur: în caseta notificărilor: un tur scurt al fiecărei zone din ecrane. În curând (deocamdată gri).
 - Îmbunătățirea designului și rezolvarea bug-urilor raportate.
 
 Versiunea 1.4 (v.1.400 – v.1.520)

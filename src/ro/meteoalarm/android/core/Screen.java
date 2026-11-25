@@ -238,6 +238,8 @@ public final class Screen {
 		this.cw = cw;
 		ch0 = ch;
 		updHead = false;
+		updFloat = false;
+		updAnim = false;
 		hourHits.clear();
 		rainHits.clear();
 		infoHits.clear();
@@ -357,7 +359,8 @@ public final class Screen {
 	/** v5.30: 1 = only the page (for the blurred copy under the glass); 0 = all. */
 	public int layer;
 	/** v5.30: the floating capsules (taps there are not the page's). */
-	private final float[] pillArea = { 0, 0, 0, 0 }, battArea = { 0, 0, 0, 0 };
+	public final float[] pillArea = { 0, 0, 0, 0 };
+	private final float[] battArea = { 0, 0, 0, 0 };
 	private final List<float[]> tabHits = new ArrayList<float[]>();
 	private int lastTabPage = -1;
 	/** v5.30: the glass and the moving page are drawn (phones); the tablet keeps its layout. */
@@ -1258,18 +1261,29 @@ public final class Screen {
 
 	/** The buttons' capsule (and the farmer button) from the left; returns where the row is free from. */
 	private float capsules(float fb) {
-		btnLocate[1] = fb;
-		btnBright[1] = fb;
-		btnSensor[1] = fb;
-		btnCity[1] = fb;
-		float pl = btnCity[0] - 12, pr = btnSensor[0] + btnSensor[2] + 12, ph = btnCity[3] + 14;
-		pillArea[0] = pl; pillArea[1] = fb - 7; pillArea[2] = pr - pl; pillArea[3] = ph;
-		frost(roundRectPoly(pl, fb - 7, pr - pl, ph, ph / 2));
+		// v2.190 (Viorel): the names under the buttons for 3 seconds (at the start, or pulled up), then only the buttons.
+		boolean lb = labelsShown();
+		float lab = lb ? 30 : 0, bf = fb - lab;
+		btnLocate[1] = bf;
+		btnBright[1] = bf;
+		btnSensor[1] = bf;
+		btnCity[1] = bf;
+		float pl = btnCity[0] - 12, pr = btnSensor[0] + btnSensor[2] + 12, ph = btnCity[3] + 14 + lab;
+		pillArea[0] = pl; pillArea[1] = bf - 7; pillArea[2] = pr - pl; pillArea[3] = ph;
+		frost(roundRectPoly(pl, bf - 7, pr - pl, ph, ph / 2 > 40 ? 40 : ph / 2));
+		g.roundRect(pl + (pr - pl) / 2 - 18, bf - 4, 36, 4, 2, mix(glass(), c.ink, dark ? 0.35f : 0.3f)); // the handle: pull up for the names
 		footButton("city", btnCity, false);
 		footButton("locate", btnLocate, autoLoc);
 		footButton("bright", btnBright, brightBar);
 		if (hasLight) footButton("sensor", btnSensor, sensorTheme);
 		else buttonIcon("sensor", btnSensor[0] + 32, btnSensor[1] + 32, c.dim);
+		if (lb) {
+			String[] nm = footNames();
+			float[][] bs = { btnCity, btnLocate, btnBright, btnSensor };
+			float lp = 19;
+			for (String n : nm) lp = Math.min(lp, fit(false, 19, TARGET - 8, n));
+			for (int k = 0; k < 4; k++) ctext(false, lp, bf + 64 + 4, bs[k][0] + bs[k][2] / 2, nm[k], c.ink);
+		}
 		btnFarm[2] = 0;
 		float x = pr + 24;
 		if (farmer) {
@@ -1382,7 +1396,7 @@ public final class Screen {
 		}
 		frost(roundRectPoly(16, paneTop, cw - 32, paneBot - paneTop, 34));
 		drawBand();
-		drawUpdated();
+		updArea[2] = 0;
 		band = sb;
 		lift = sl;
 		menuButton(40, rowY);
@@ -1399,6 +1413,9 @@ public final class Screen {
 			float p = fit(true, 40, cw - 118, msg);
 			ctext(true, p, paneBot + 200, cw / 2, msg, c.ink);
 		} else if (nw > 0) drawWarnBoxes(40, alertY, cw - 80, tablet ? 3 : 2, 1);
+		// v2.190 (Viorel): "updated" floats under the glass (under the warnings, or under the towns' row), at the right.
+		updFloat = true;
+		floatUpdated(cw - 40, paneBot + 14 + 26);
 		capsules(fb);
 		battery(fb, cw - 24, true);
 		footFb = fb;
@@ -1467,6 +1484,7 @@ public final class Screen {
 		if (w == null) {
 			String msg = error.length() > 0 ? error : T.loading;
 			ctext(true, fit(true, 40, cw - 200, msg), 330, cw / 2, msg, c.ink);
+			updArea[2] = 0;
 		} else {
 			float wt = bandB + 16, wb = drawWarnBoxes(rx, wt, rw, 2, 1);
 			float nowTop = wb > 0 ? wb + 10 : wt, fy = fb - 14 - feelsH();
@@ -1475,10 +1493,11 @@ public final class Screen {
 			else drawNowSplit(d[0], rx, nowTop, rx + rw, fy - 4);
 			setNow(rx, nowTop, rw, fy - nowTop);
 			feelsCard(rx, fy, rw);
+			// v2.190 (Viorel): "updated" floats on the top edge of the "feels like" card, at the right.
+			updFloat = true;
+			floatUpdated(rx + rw, fy - 18); // above the text of the card
 		}
 		float free = capsules(fb), bl = battery(fb, x1 - 24, false);
-		// v2.162 (Viorel): "updated" on the battery's row, at its left, in the right column.
-		bl = Math.min(bl, updatedAt(bl - 24, fb + 32, Math.min(460, bl - 24 - rx)));
 		footFb = fb;
 		footBatt = false;
 		if (tabsShown()) drawTabs(free, fb + 7, Math.min(bl, zL) - 24 - free, 54);
@@ -2832,7 +2851,11 @@ public final class Screen {
 	}
 
 	private void disc(float[] b) {
-		g.roundRect(b[0], b[1], b[2], b[3], b[2] / 2, discColor());
+		// v2.190 (Viorel): the same fine 3D look as the capsule's buttons.
+		float x = b[0], y = b[1], w = b[2], h = b[3], r = w / 2;
+		g.roundRect(x, y + 3, w, h, r, alpha(Gfx.BLACK, dark ? 0.4f : 0.14f));
+		g.roundRect(x, y, w, h, r, discColor());
+		g.roundRect(x + 8, y + 4, w - 16, h * 0.36f, r * 0.7f, alpha(Gfx.WHITE, dark ? 0.06f : 0.45f));
 	}
 
 	private void button(float[] b) {
@@ -4809,9 +4832,47 @@ public final class Screen {
 	 * filled in ink when ON (the sun while its bar shows, the sensor theme while it is on).
 	 */
 	private void footButton(String which, float[] b, boolean on) {
-		// v5.00: no frame; ON is a filled accent disc.
-		if (on) g.roundRect(b[0], b[1], b[2], b[3], b[3] / 2, c.accent);
+		// v5.00: no frame; ON is a filled accent disc. v2.190 (Viorel): a fine 3D look, the chosen one pressed in.
+		raised(b, on);
 		buttonIcon(which, b[0] + 32, b[1] + 32, on ? onAccent() : c.ink);
+	}
+
+	/** v2.190 (Viorel): the capsule's names show until this time (ms). */
+	public long labelsUntil;
+	/** v2.190 (Viorel): the "updated" button shows its text until this time (ms), then only a round ⟳. */
+	public long updOpenUntil;
+
+	public boolean labelsShown() {
+		return System.currentTimeMillis() < labelsUntil;
+	}
+
+	/** The names of the capsule's four buttons. */
+	public static String[] footNames() {
+		return new String[] { Tr.t("Towns", "Localități"), Tr.t("Location", "Localizare"), Tr.t("Brightness", "Luminozitate"), Tr.t("Theme", "Temă") };
+	}
+
+	private static int alpha(int col, float a) {
+		return (Math.round(a * 255) << 24) | (col & 0xFFFFFF);
+	}
+
+	/**
+	 * v2.190 (Viorel): a round button with a fine 3D look: a soft shadow under it, light at its top;
+	 * ON: in the accent, pressed in (shade at its top) with a thin ring round it.
+	 */
+	private void raised(float[] b, boolean on) {
+		float x = b[0], y = b[1], w = b[2], h = b[3], r = Math.min(w, h) / 2;
+		if (on) {
+			g.arc(x + w / 2, y + h / 2, r + 4, 0, 360, 4, alpha(c.accent, 0.35f));
+			g.roundRect(x, y, w, h, r, c.accent);
+			g.roundRect(x + 2, y + 1, w - 4, h * 0.42f, r * 0.9f, alpha(Gfx.BLACK, dark ? 0.22f : 0.16f));
+			g.roundRect(x + 3, y + 4, w - 6, h - 7, r - 3, c.accent);
+			return;
+		}
+		int base = dark ? mix(glass(), Gfx.WHITE, 0.06f) : mix(glass(), Gfx.WHITE, 0.6f);
+		g.roundRect(x, y + 3, w, h, r, alpha(Gfx.BLACK, dark ? 0.45f : 0.16f));
+		g.roundRect(x, y, w, h, r, dark ? mix(base, Gfx.BLACK, 0.25f) : mix(base, c.ink, 0.1f));
+		g.roundRect(x + 1.5f, y + 1, w - 3, h - 3, r - 1.5f, base);
+		g.roundRect(x + 6, y + 3, w - 12, h * 0.38f, r * 0.7f, alpha(Gfx.WHITE, dark ? 0.07f : 0.6f));
 	}
 
 	/** Design audit (2026-11-23): the icon on an accent disc, at least 3:1 (white, else the page or the ink). */
@@ -4885,6 +4946,33 @@ public final class Screen {
 			g.roundRect(20, 2, 24, 24, 12, k);
 			g.poly(new float[] { 22, 18, 42, 18, 32, 44 }, k);
 			g.roundRect(28, 10, 8, 8, 4, c.page);
+		} else if (which.equals("viewbox")) {
+			// v2.190: the glass box of the map views, with its ⌄.
+			g.roundRect(6, 12, 52, 40, 12, k);
+			g.roundRect(10, 16, 44, 32, 9, c.page);
+			g.poly(new float[] { 22, 27, 26, 23, 32, 29, 38, 23, 42, 27, 32, 37 }, k);
+		} else if (which.equals("sat")) {
+			// v2.190: a satellite: the body between its two panels.
+			g.roundRect(24, 24, 16, 16, 3, k);
+			g.rect(4, 27, 17, 10, k);
+			g.rect(43, 27, 17, 10, k);
+			g.rect(20, 31, 4, 2, k);
+			g.rect(40, 31, 4, 2, k);
+			g.arc(32, 50, 8, 200, 140, 3, k);
+		} else if (which.equals("cloud") || which.equals("rain")) {
+			boolean r = which.equals("rain");
+			float dy = r ? -8 : 0;
+			g.roundRect(8, 28 + dy, 48, 22, 11, k);
+			g.roundRect(18, 16 + dy, 24, 24, 12, k);
+			g.roundRect(32, 22 + dy, 18, 18, 9, k);
+			if (r) for (int i = 0; i < 3; i++) {
+				float x = 18 + i * 13;
+				g.poly(new float[] { x + 3, 48, x + 6, 56, x, 56 }, k);
+				g.roundRect(x - 0.5f, 53, 7, 7, 3.5f, k);
+			}
+		} else if (which.equals("play")) {
+			g.arc(32, 32, 24, 0, 360, 4, k);
+			g.poly(new float[] { 26, 20, 46, 32, 26, 44 }, k);
 		} else if (which.equals("refresh")) {
 			g.arc(32, 32, 17, -50, 290, 4, k);
 			g.poly(new float[] { 36, 7, 53, 21, 35, 28 }, k);
@@ -5204,6 +5292,91 @@ public final class Screen {
 		g.poly(new float[] { x1 - 5, y1 - 3, x1 + 5, y1 - 4, x1 + 1, y1 + 5 }, col);
 		g.poly(new float[] { x2 + 5, y2 + 3, x2 - 5, y2 + 4, x2 - 1, y2 - 5 }, col);
 	}
+
+	/** v2.190 (Viorel): "updated" as a floating button over the page, its right edge at RIGHT, its middle at MID;
+	 * with its text while updating, for a few seconds after, or when the data could not come; else a round ⟳. */
+	private void floatUpdated(float right, float mid) {
+		updArea[2] = 0;
+		String upd = "";
+		boolean bold = false;
+		if (busy) upd = T.updating;
+		else if (fetched > 0) {
+			Calendar cal = Zone.now();
+			cal.setTimeInMillis(fetched);
+			String when = Texts.clock(String.format("%02d:%02d", cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE)), clk12);
+			upd = T.updated + " " + when + (source.length() > 0 && !source.equals("Open-Meteo") ? " · " + source : "");
+			if (offline) {
+				upd = "! " + T.noData + " " + when;
+				bold = true;
+			}
+		}
+		if (upd.length() == 0) return;
+		long now = System.currentTimeMillis();
+		// v2.190 (Viorel): while updating the arrow turns with a running arc round it, as on the earthquakes page,
+		// also as the small circle; at the end a tick (or "!") for a moment, then the time for a few seconds.
+		boolean spin = busy, done = !busy && now < updDoneUntil;
+		updAnim = spin || done;
+		boolean open = offline && !done || now < updOpenUntil && !spin;
+		float ph = 52, py = mid - ph / 2;
+		if (!open) {
+			float px = right - ph;
+			g.roundRect(px, py + 3, ph, ph, ph / 2, alpha(Gfx.BLACK, dark ? 0.45f : 0.16f));
+			frost(roundRectPoly(px, py, ph, ph, ph / 2));
+			updMark(px + ph / 2, mid, 12, c.accent, spin, done, now);
+			updArea[0] = px - 10; updArea[1] = py - 10; updArea[2] = ph + 20; updArea[3] = ph + 20;
+			return;
+		}
+		float up = fit(bold, 24, cw * 0.62f, upd), tw = g.width(bold, up, upd), pw = tw + 64, px = right - pw;
+		g.roundRect(px, py + 3, pw, ph, ph / 2, alpha(Gfx.BLACK, dark ? 0.45f : 0.16f));
+		frost(roundRectPoly(px, py, pw, ph, ph / 2));
+		updMark(px + 27, mid, 12, bold ? c.ink : c.accent, spin, done, now);
+		ltext(bold, up, mid - up * 0.56f, px + 46, upd, bold ? c.ink : c.dim);
+		updArea[0] = px; updArea[1] = py - 6; updArea[2] = pw; updArea[3] = ph + 12;
+	}
+
+	/** v2.190: when the update ended (tick or "!" until then) and whether the button is animating now. */
+	public long updDoneUntil;
+	public boolean updAnim;
+
+	/** The mark of the floating button: ⟳, turning with a running arc while busy, then a tick or "!". */
+	private void updMark(float cx, float cy, float r, int col, boolean spin, boolean done, long now) {
+		if (done) {
+			if (offline) {
+				float th = 26;
+				ctext(true, th, cy - th * 0.56f, cx, "!", 0xFFE0524A);
+			} else g.poly(new float[] { cx - 9, cy + 1, cx - 2, cy + 8, cx + 10, cy - 7, cx + 10, cy - 3, cx - 2, cy + 12, cx - 9, cy + 5 }, 0xFF4FBF7F);
+			return;
+		}
+		if (!spin) {
+			refreshIcon(cx, cy, r, col);
+			return;
+		}
+		float R = r + 8;
+		g.arc(cx, cy, R, 0, 360, 2.4f, alpha(col, 0.2f));
+		g.arc(cx, cy, R, (now % 1400) * 360f / 1400 - 90, 100, 2.4f, col);
+		float rot = (now % 900) * 360f / 900;
+		g.arc(cx, cy, r, 200 + rot, 120, 2.6f, col);
+		g.arc(cx, cy, r, 20 + rot, 120, 2.6f, col);
+		float a1 = (float) Math.toRadians(320 + rot), a2 = (float) Math.toRadians(140 + rot);
+		float x1 = cx + r * (float) Math.cos(a1), y1 = cy + r * (float) Math.sin(a1), x2 = cx + r * (float) Math.cos(a2), y2 = cy + r * (float) Math.sin(a2);
+		g.poly(turn(new float[] { -5, -3, 5, -4, 1, 5 }, x1, y1, rot), col);
+		g.poly(turn(new float[] { 5, 3, -5, 4, -1, -5 }, x2, y2, rot), col);
+	}
+
+	/** Offsets turned by DEG degrees and moved to (X, Y). */
+	private static float[] turn(float[] d, float x, float y, float deg) {
+		double a = Math.toRadians(deg);
+		float co = (float) Math.cos(a), si = (float) Math.sin(a);
+		float[] o = new float[d.length];
+		for (int k = 0; k < d.length; k += 2) {
+			o[k] = x + d[k] * co - d[k + 1] * si;
+			o[k + 1] = y + d[k] * si + d[k + 1] * co;
+		}
+		return o;
+	}
+
+	/** v2.190: the "updated" button floats over the page (phone portrait and landscape). */
+	public boolean updFloat;
 
 	/** "updated 12:34" under the line, at the right. */
 	private void drawUpdated() {

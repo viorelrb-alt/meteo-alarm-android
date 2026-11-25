@@ -1,17 +1,22 @@
-Versão atual: v.2.180 · 25.11.2026
+Versão atual: v.2.190 · 25.11.2026
 ATUALIZAÇÕES
 - Caixa Nova versão: uma caixa curta no topo de ☰ quando existe uma nova versão; tocar nela inicia a transferência.
 DEFINIÇÕES
+- A janela Definições: ☰ abre as definições por secções; um interruptor liga ou desliga uma função de imediato. Fecha com X ou com um toque fora. Em paisagem abre à esquerda em 2 colunas: arraste a barra da borda direita para a esquerda para uma coluna, para a direita para duas; o botão ao lado de X repõe as 2 colunas. Visualização fica no fim. Sistema e Suporte mostra os nomes 3 segundos, depois só os botões.
+- Ajuda: os textos longos estão divididos em partes com os seus ícones ou mostram 2 linhas e Mostrar tudo ▾; em paisagem em 2 colunas, e um toque no botão de uma secção faz piscar o contorno duas vezes.
 - Exportar / Importar: interruptores para o que entra no ficheiro (também culturas e dados de cultivo, notificações das parcelas, reciclagem de parcelas, notificações, mapa, widgets, histórico de sismos, registo); em Exportar e Importar as localidades e parcelas marcam-se uma a uma; o botão Aa muda o tamanho do texto.
-- Favoritos em ☰: três filas, primeiro as localidades com estrela cheia (têm ecrã principal), depois as outras; a primeira mantém sempre a sua estrela; tocar numa estrela vazia dá à localidade um ecrã principal, o segundo; tirar a estrela tira o seu ecrã.
+- Favoritos em ☰: três linhas: primeiro as localidades com estrela cheia (têm ecrã principal, na ordem dos ecrãs), depois os outros favoritos. Qualquer estrela pode ser retirada enquanto houver 2 ou mais: a localidade seguinte com estrela passa a ser o primeiro ecrã; a última fica cinzenta e permanece. Um toque numa estrela vazia dá à localidade um ecrã principal, o segundo depois do primeiro, e mostra-o; retirar uma estrela remove o seu ecrã e a localidade fica nos favoritos. Um toque num nome escolhe-o; Localidades › e Escolher o distrito abrem a lista de localidades.
 - Língua de apresentação: no ☰ o inglês e a língua do país; Outras línguas: as outras línguas do país, as grandes línguas da UE, o romeno e a do telemóvel (nos EUA só inglês e espanhol).
 - Página Sismos: abre logo com as últimas listas guardadas no telefone e atualiza-as em segundo plano.
 - Registo: tamanho, linhas e erros num cartão; Ver o registo abre as linhas (Todas, Erros, Hoje, Ontem; um toque longo copia uma linha); Partilhar e Guardar no fundo do ecrã. Os erros resolvidos ficam no fim do registo e não são contados; os problemas de rede são avisos.
-- Temas: 6 temas com o seu próprio fundo, cartões e cor (Monocromático, Rosa, Amarelo, Verde, Azul, Violeta), cada um claro e escuro; os pontos em ☰ › Tema têm a cor do tema.
+- Temas: 6 temas com o seu próprio fundo, cartões e cor (Grafite, Peónia, Mel, Floresta, Oceano, Lavanda), cada um claro e escuro; os pontos em ☰ › Tema têm a cor do tema.
+- Visita guiada: no cartão das notificações: uma breve visita ao que mostra cada zona dos ecrãs. Em breve (cinzento por agora).
 ECRÃ PRINCIPAL
 - Botão Localidades: o botão redondo com o ícone de casas (na vertical à direita do nome, na horizontal na faixa de cima, antes do seu canto) abre a lista de localidades.
+- Botão «atualizado»: flutua sobre a página, à direita: em retrato por baixo dos avisos (sem eles por baixo da linha das localidades), em paisagem na borda superior de Sensação. Durante a atualização a seta roda, também como pequeno círculo; depois a hora aparece 4 segundos e reduz-se a ⟳. Um toque atualiza.
+- Botões de baixo: os nomes aparecem por baixo durante 3 segundos ao abrir o ecrã, depois só os botões; puxe a cápsula para cima para os ver de novo. O botão ligado parece premido, com um anel.
 - Informações do sismo: um toque na caixa Sismo abre-as no ecrã principal: o mapa, por baixo as zonas sentidas e o histórico do valor; o quadrado colorido ou o mapa abrem-nas em ecrã inteiro, como um sismo de ☰ › Sismos. Na Roménia, França, Itália, Países Baixos, Suíça e Grécia os valores oficiais vêm primeiro do instituto do país (INFP, BCSF, INGV, KNMI, SED, NOA) e depois do EMSC. Na Roménia, também os sismos à volta do país recebem o valor do INFP (de infp.ro).
-- Mapa do tempo: no fim do ecrã principal, o mapa da localidade com os botões Nuvens, Temperaturas e Chuva (um de cada vez) e a legenda; Chuva só se ativa quando chove perto agora ou nas próximas 2 horas. Sob o mapa, ▶ reproduz as horas (6 antes de agora e 6 depois) uma a uma; tocar numa hora mostra-a.
+- Mapa do tempo: no fim do ecrã principal (em paisagem na folha com as caixas): OpenStreetMap ao nível da rua no local exato (GPS para a primeira localidade), a camada transparente. O mapa fica fixo; dados: Open-Meteo. Nuvens, Temperaturas e Chuva, uma de cada vez; um toque na ligada desliga-a. Chuva fica cinzento e riscado quando não chove perto agora nem nas próximas 2 horas. ▶ reproduz as horas (6 antes e 6 depois de agora) uma a uma; um toque numa hora mostra-a.
 - Nomes dos botões: um botão redondo que fica no ecrã ao ser tocado mostra o seu nome num pequeno balão durante cerca de 1,5 segundos.
 - Várias localidades: cada localidade da lista tem o seu próprio ecrã principal; deslizar para a esquerda ou para a direita sobre o tempo atual passa à seguinte, pela ordem da lista.
 LOCALIDADES

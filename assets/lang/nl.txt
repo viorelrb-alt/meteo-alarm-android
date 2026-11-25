@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm in dat uur
 Weather map: stop the hours	Weerkaart: uren stoppen
 Weather map: play the hours before and after now	Weerkaart: de uren vóór en na nu afspelen
+Tour	Rondleiding
+A short tour of each screen · coming soon	Een korte rondleiding door elk scherm · binnenkort
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Op de perceelkaart, onder ＋ en −. Eén laag tegelijk; gegevens: Open-Meteo.
+View box	Weergavevak
+Satellite and Map	Satelliet en Kaart
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Toont de gebruikte weergave, de laag die aan staat (met een ring) en ⌄. Een tik opent het; je keuze, ⌃ of 5 seconden zonder aanraking klappen het weer in.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satelliet (Esri) of de gedetailleerde kaart (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Grijs waar wolken zijn; een tik op de laag die aan staat zet haar uit.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Kleuren: violet koud, groen zacht, rood warm; de balk onderaan omvat het bereik dat op de kaart te zien is.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	In mm per uur, nu en in de komende 2 uur; grijs en doorgestreept als het op de kaart niet regent.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Plaatsen en aardbevingen: een eenvoudige lichte kaart (Esri) met de plaatsnamen groot geschreven; percelen: OpenStreetMap met alle details en ook grote namen; de weerkaart van het hoofdscherm: OpenStreetMap op straatniveau, zonder de grote namen. De grote namen: alleen plaatsen in Roemenië. Verschuiven met één vinger, zoomen met twee; internet nodig.
+Bottom buttons	Onderste knoppen
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Hun namen staan bij het openen van het scherm 3 seconden eronder, daarna alleen de knoppen; trek de capsule omhoog om ze weer te zien. De knop die aan staat lijkt ingedrukt, met een ring.
+“Updated” button	Knop „bijgewerkt”
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Zweeft rechts boven de pagina: staand onder de waarschuwingen (zonder waarschuwingen onder de rij met plaatsen), liggend op de bovenrand van Gevoel. Tijdens het bijwerken draait de pijl, ook als kleine cirkel; daarna staat de tijd 4 seconden en wordt hij ⟳. Een tik werkt bij.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Aan het einde van het hoofdscherm (liggend op het blad met de vakken): OpenStreetMap op straatniveau op de exacte plek (GPS voor de eerste plaats), de laag doorschijnend. De kaart staat stil; gegevens: Open-Meteo.
+Layers	Lagen
+Legend	Legenda
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Wolken, Temperaturen en Regen, één tegelijk; een tik op die aan staat zet haar uit. Regen is grijs en doorgestreept als het nu en de komende 2 uur in de buurt niet regent.
+The layer's time and, for temperatures, the range on the map.	De tijd van de laag en, bij temperaturen, het bereik op de kaart.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ speelt de uren (6 voor en 6 na nu) één voor één af; een tik op een uur toont het.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ opent de instellingen in secties; een schakelaar zet een functie meteen aan of uit. Sluiten met X of een tik erbuiten. Liggend opent het links in 2 kolommen: sleep de balk aan de rechterrand naar links voor één kolom, naar rechts voor twee; de knop naast X zet de 2 kolommen terug. Weergave staat als laatste. Systeem & Ondersteuning toont de namen 3 seconden, daarna alleen de knoppen.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	In de kaart van de meldingen: een korte rondleiding langs wat elk deel van de schermen toont. Binnenkort (voorlopig grijs).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Drie rijen: eerst de plaatsen met een volle ster (ze hebben een hoofdscherm, in de volgorde van de schermen), dan de andere favorieten. Elke ster kan weg zolang er 2 of meer aan staan: de volgende plaats met ster wordt het eerste scherm; de laatste is grijs en blijft. Een tik op een lege ster geeft die plaats een hoofdscherm, het tweede na het eerste, en toont het; een ster weghalen verwijdert het scherm en de plaats blijft bij de favorieten. Een tik op een naam kiest hem; Plaatsen › en Kies de provincie openen de lijst met plaatsen.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 thema's, elk met eigen achtergrond, vakken en kleur (Grafiet, Pioen, Honing, Woud, Oceaan, Lavendel): tik op een stip in de kleur van het thema; daaronder Licht, Donker of Automatisch (telefoonsensor).
+Show all ▾	Alles tonen ▾
+Show less ▴	Minder tonen ▴
+At least one town stays shown.	Er blijft minstens één plaats zichtbaar.
+Two columns	Twee kolommen
+One column	Eén kolom
+Graphite	Grafiet
+Peony	Pioen
+Honey	Honing
+Forest	Woud
+Ocean	Oceaan

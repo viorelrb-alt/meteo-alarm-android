@@ -1,4 +1,4 @@
-Nuvarande version: v.2.180 · 25.11.2026
+Nuvarande version: v.2.190 · 25.11.2026
 AVISERINGAR
 - Egna kanaler: vädervarningar, regn och snö, jordbävningar, skiften och uppdateringar har var sin kanal i telefonens inställningar; du kan stänga av en och behålla de andra.
 - Jordbävningar: kontrolleras var 10:e minut, även på natten med skärmen av; en reviderad magnitud uppdaterar aviseringen och ett tryck på den öppnar kartan.
@@ -7,14 +7,19 @@ HUVUDSKÄRM
 - Fler orter: varje ort i listan har sin egen huvudskärm; ett svep åt vänster eller höger över vädret nu går till nästa, i listans ordning.
 - Jordbävningsinformation: ett tryck på rutan Jordbävning öppnar den på huvudskärmen: kartan, under den zonerna där den kändes och värdets historik; den färgade kvadraten eller kartan öppnar den på hela skärmen, som en jordbävning från ☰ › Jordbävningar. I Rumänien, Frankrike, Italien, Nederländerna, Schweiz och Grekland kommer de officiella värdena först från landets institut (INFP, BCSF, INGV, KNMI, SED, NOA), sedan från EMSC. I Rumänien får även skalven runt landet INFP:s värde (från infp.ro).
 - Knappen Orter: den runda knappen med husikonen (i stående till höger om namnet, i liggande på det övre bandet, före dess hörn) öppnar listan med orter.
+- Knappen ”uppdaterad”: svävar över sidan, till höger: stående under varningarna (utan dem under raden med orter), liggande på övre kanten av Känns som. Under uppdatering snurrar pilen, även som liten cirkel; sedan syns tiden i 4 sekunder och den fälls ihop till ⟳. Ett tryck uppdaterar.
 - Knappnamn: en rund knapp som stannar på skärmen när den trycks visar sitt namn i en liten bubbla i ungefär 1,5 sekund.
-- Väderkarta: längst ned på huvudskärmen ortens karta med knapparna Moln, Temperaturer och Regn (en i taget) och förklaringen; Regn slås på bara när det regnar i närheten nu eller de kommande 2 timmarna. Under kartan spelar ▶ upp timmarna (6 före nu och 6 efter) en efter en; ett tryck på en timme visar den.
+- Nedre knappar: deras namn syns under dem i 3 sekunder när skärmen öppnas, sedan bara knapparna; dra kapseln uppåt för att se dem igen. Knappen som är på ser intryckt ut, med en ring.
+- Väderkarta: längst ner på huvudskärmen (liggande på bladet med rutorna): OpenStreetMap på gatunivå på exakt plats (GPS för första orten), lagret genomskinligt. Kartan står still; data: Open-Meteo. Moln, Temperaturer och Regn, ett i taget; ett tryck på det som är på stänger av det. Regn är grått och överstruket när det inte regnar i närheten nu eller de närmaste 2 timmarna. ▶ spelar upp timmarna (6 före och 6 efter nu) en i taget; ett tryck på en timme visar den.
 INSTÄLLNINGAR
 - Export / Import: reglage för vad som hamnar i filen (även grödor och odlingsdata, skiftenas aviseringar, skiftenas papperskorg, aviseringar, karta, widgetar, jordbävningshistorik, logg); vid Export och Import bockas orter och skiften för ett i taget; knappen Aa ändrar textstorleken.
-- Favoriter i ☰: tre rader, först orterna med fylld stjärna (de har en huvudskärm), sedan de andra; den första behåller alltid sin stjärna; ett tryck på en tom stjärna ger orten en huvudskärm, den andra; tar du bort stjärnan tas dess skärm bort.
+- Favoriter i ☰: tre rader: först orterna med full stjärna (de har en huvudskärm, i skärmarnas ordning), sedan övriga favoriter. Vilken stjärna som helst kan tas bort så länge 2 eller fler är på: nästa ort med stjärna blir första skärmen; den sista är grå och stannar. Ett tryck på en tom stjärna ger orten en huvudskärm, den andra efter den första, och visar den; tas en stjärna bort försvinner dess skärm och orten stannar bland favoriterna. Ett tryck på ett namn väljer det; Orter › och Välj län öppnar listan över orter.
+- Fönstret Inställningar: ☰ öppnar inställningarna i avsnitt; en brytare slår på eller av en funktion direkt. Stängs med X eller ett tryck utanför. Liggande öppnas den till vänster i 2 kolumner: dra listen i högra kanten åt vänster för en kolumn, åt höger för två; knappen vid X ger tillbaka 2 kolumner. Visning ligger sist. System och support visar namnen i 3 sekunder, sedan bara knapparna.
+- Hjälp: långa texter är uppdelade i delar med egna ikoner eller visar 2 rader och Visa allt ▾; liggande i 2 kolumner, och ett tryck på ett avsnitts knapp får dess kontur att blinka två gånger.
 - Logg: storlek, rader och fel på ett kort; Visa loggen öppnar raderna (Alla, Fel, I dag, I går; ett långt tryck kopierar en rad); Dela och Spara längst ner på skärmen. Åtgärdade fel står i slutet av loggen och räknas inte; nätverksproblem är varningar.
+- Rundtur: i kortet för aviseringar: en kort rundtur i vad varje del av skärmarna visar. Kommer snart (grått tills vidare).
 - Sidan Jordbävningar: öppnas direkt med de senast sparade listorna i telefonen och uppdaterar dem i bakgrunden.
-- Teman: 6 teman med egen bakgrund, egna kort och egen färg (Monokrom, Rosa, Gul, Grön, Blå, Violett), alla ljusa och mörka; prickarna i ☰ › Tema har temats färg.
+- Teman: 6 teman med egen bakgrund, egna kort och egen färg (Grafit, Pion, Honung, Skog, Ocean, Lavendel), alla ljusa och mörka; prickarna i ☰ › Tema har temats färg.
 - Visningsspråk: i ☰ engelska och landets språk; Andra språk: landets övriga språk, de stora EU-språken, rumänska och telefonens (i USA bara engelska och spanska).
 ORTER
 - Ortkort: på en surfplatta och i liggande läge är de lika breda som sin text och står i rader och kolumner; i stående på en telefon får ett för långt namn mindre bokstäver; i liggande behåller sökningen sin stående storlek.

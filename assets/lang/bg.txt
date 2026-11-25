@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	мм в този час
 Weather map: stop the hours	Метеокарта: спри часовете
 Weather map: play the hours before and after now	Метеокарта: пусни часовете преди и след сега
+Tour	Обиколка
+A short tour of each screen · coming soon	Кратка обиколка на всеки екран · скоро
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	На картата на Парцелите, под ＋ и −. По един слой наведнъж; данни: Open-Meteo.
+View box	Поле на изгледа
+Satellite and Map	Сателит и Карта
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Показва използвания изглед, включения слой (с пръстен) и ⌄. Докосване го отваря; изборът ви, ⌃ или 5 секунди без докосване го свиват.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Сателит (Esri) или подробната карта (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Сиво там, където има облаци; докосване на включения слой го изключва.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Цветове: виолетово студено, зелено умерено, червено горещо; лентата долу обхваща диапазона, видим на картата.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	В мм на час, сега и в следващите 2 часа; сиво и зачеркнато, когато на картата не вали.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Населени места и земетресения: проста светла карта (Esri) с едри имена на местата; парцели: OpenStreetMap с всички подробности и също едри имена; метеорологичната карта на главния екран: OpenStreetMap на ниво улица, без едрите имена. Едрите имена: само населени места в Румъния. Местите я с един пръст, увеличавате с два; нужен е интернет.
+Bottom buttons	Долни бутони
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	Имената им се виждат под тях 3 секунди при отваряне на екрана, после остават само бутоните; дръпнете капсулата нагоре, за да ги видите пак. Включеният бутон изглежда натиснат, с пръстен.
+“Updated” button	Бутон „обновено“
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Плава над страницата вдясно: вертикално под предупрежденията (без тях под реда с населените места), хоризонтално на горния ръб на Усеща се. При обновяване стрелката се върти, и като малък кръг; после 4 секунди се вижда часът и се свива в ⟳. Докосване обновява.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	В края на главния екрана (хоризонтално на листа с полетата): OpenStreetMap на ниво улица на точното място (GPS за първото място), слоят прозрачен. Картата стои неподвижна; данни: Open-Meteo.
+Layers	Слоеве
+Legend	Легенда
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Облаци, Температури и Дъжд, по един; докосване на включения го изключва. Дъжд е сив и зачеркнат, когато наблизо не вали сега, нито в следващите 2 часа.
+The layer's time and, for temperatures, the range on the map.	Часът на слоя и, при температурите, диапазонът на картата.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ пуска часовете (6 преди и 6 след сега) един по един; докосване на час го показва.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ отваря настройките по раздели; превключвател веднага включва или изключва функция. Затваря се с X или докосване извън него. Хоризонтално се отваря вляво в 2 колони: плъзнете лентата на десния ръб наляво за една колона, надясно за две; бутонът до X връща 2-те колони. Изглед е накрая. Система и поддръжка показва имената 3 секунди, после само бутоните.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	В картата на известията: кратка обиколка на това, което показва всяка част от екраните. Скоро (засега сиво).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Три реда: първо местата с пълна звезда (имат главен екран, в реда на екраните), после другите любими. Всяка звезда може да се махне, докато са 2 или повече: следващото място със звезда става първи екран; последната е сива и остава. Докосване на празна звезда дава на мястото главен екран, втори след първия, и го показва; махането на звезда премахва екрана му, а мястото остава в любими. Докосване на име го избира; Населени места › и Изберете област отварят списъка.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 теми, всяка със свой фон, полета и цвят (Графит, Божур, Мед, Гора, Океан, Лавандула): докоснете точка в цвета на темата; под тях Светла, Тъмна или Автоматично (сензор на телефона).
+Show all ▾	Покажи всичко ▾
+Show less ▴	Покажи по-малко ▴
+At least one town stays shown.	Поне едно място остава показано.
+Two columns	Две колони
+One column	Една колона
+Graphite	Графит
+Peony	Божур
+Honey	Мед
+Forest	Гора
+Ocean	Океан

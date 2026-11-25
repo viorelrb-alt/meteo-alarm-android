@@ -317,6 +317,7 @@ final class WeatherView extends View {
 		if (foot != null) foot.invalidate();
 		if (footFull != null) footFull.invalidate();
 		if (pull > 0) drawPull(c);
+		if (screen.updAnim) postInvalidateDelayed(33);
 		String big = screen.bigIcon;
 		if (big != null && !big.equals(iconDone)) startIcon(big);
 	}
@@ -792,6 +793,39 @@ final class WeatherView extends View {
 		return 110 * dp;
 	}
 
+	private boolean footStart, footPulled;
+	private final Runnable redraw = new Runnable() {
+		public void run() {
+			invalidate();
+		}
+	};
+
+	/** v2.190 (Viorel): the capsule's names for MS milliseconds, then only the buttons. */
+	void showLabels(long ms) {
+		screen.labelsUntil = System.currentTimeMillis() + ms;
+		invalidate();
+		removeCallbacks(redraw);
+		postDelayed(redraw, ms + 60);
+	}
+
+	/** v2.190 (Viorel): "updated" with its text for MS milliseconds, then only the round ⟳. */
+	/** v2.190: the update ended: a tick (or "!") for a moment, then the time for 4 s. */
+	void updateEnded() {
+		long d = screen.offline ? 2000 : 1000;
+		screen.updDoneUntil = System.currentTimeMillis() + d;
+		showUpdated(d + 4000);
+	}
+
+	void showUpdated(long ms) {
+		screen.updOpenUntil = System.currentTimeMillis() + ms;
+		invalidate();
+		postDelayed(new Runnable() {
+			public void run() {
+				invalidate();
+			}
+		}, ms + 60);
+	}
+
 	/** A button at B (canvas units: x, y, w, h) on the screen, in pixels: left, top, right, bottom. */
 	float[] px(float[] b) {
 		return new float[] { ox + b[0] * scale, oy + b[1] * scale, ox + (b[0] + b[2]) * scale, oy + (b[1] + b[3]) * scale };
@@ -934,6 +968,23 @@ final class WeatherView extends View {
 			return true;
 		}
 		float dx = e.getX() - downX, dy = e.getY() - downY;
+		// v2.190 (Viorel): pulled up from the capsule of buttons, their names show again for 3 seconds.
+		if (act == MotionEvent.ACTION_DOWN) {
+			footStart = scale > 0 && in(screen.pillArea, (downX - ox) / scale, (downY - oy) / scale);
+			footPulled = false;
+		}
+		if (footStart && act == MotionEvent.ACTION_MOVE && dy < -20 * dp && Math.abs(dy) > Math.abs(dx)) {
+			if (!footPulled) {
+				footPulled = true;
+				Log.i(getContext(), "GEST", "capsula trasă în sus: numele butoanelor");
+				showLabels(3000);
+			}
+			return true;
+		}
+		if (footPulled && (act == MotionEvent.ACTION_UP || act == MotionEvent.ACTION_CANCEL)) {
+			footStart = footPulled = false;
+			return true;
+		}
 		// The rows of boxes follow the finger (sideways, the info grid up and down) and settle on a box.
 		if (act == MotionEvent.ACTION_DOWN) {
 			dragging = false;
@@ -945,7 +996,7 @@ final class WeatherView extends View {
 			if (drag == screen.alerts) pauseRoll();
 			if (drag != null) stopAuto(drag);
 			// v5.30: the page itself moves up and down (not from the brightness edge).
-			pageCand = onPage && !edge && !screen.statsOn && !screen.quakeOn && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
+			pageCand = !footStart && onPage && !edge && !screen.statsOn && !screen.quakeOn && screen.pageS.area[2] > 0 && screen.pageS.max > 0;
 			if (pageCand && settle != null) settle.cancel();
 			// v2.90: farmer mode with parcels: a sideways slide between the top line and the
 			// footer, not on a row of boxes, moves the whole middle of the screen.
@@ -1086,6 +1137,11 @@ final class WeatherView extends View {
 				Log.i(getContext(), "GEST", "glisare pe vremea de acum: ecranul " + (dx < 0 ? "următor" : "anterior"));
 				taps.onPage(dx < 0 ? 1 : -1);
 			}
+			return true;
+		}
+		// v2.190: the floating "updated" button lies over the page: it comes first.
+		if (screen.updFloat && screen.updArea[2] > 0 && in(screen.updArea, x, y)) {
+			taps.onRefresh();
 			return true;
 		}
 		// v5.30: the glass and the capsules first; the page's boxes only where the page shows.

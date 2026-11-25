@@ -1,13 +1,16 @@
-Versione attuale: v.2.180 · 25.11.2026
+Versione attuale: v.2.190 · 25.11.2026
 AGGIORNAMENTI
 - Riquadro Nuova versione: un breve riquadro in cima a ☰ quando esiste una nuova versione; toccarlo avvia il download.
 IMPOSTAZIONI
+- Aiuto: i testi lunghi sono divisi in parti con le loro icone o mostrano 2 righe e Mostra tutto ▾; in orizzontale su 2 colonne, e un tocco sul pulsante di una sezione ne fa lampeggiare il contorno due volte.
 - Esporta / Importa: interruttori per il contenuto del file (anche colture e dati di coltivazione, notifiche delle particelle, cestino delle particelle, notifiche, mappa, widget, storico dei terremoti, registro); in Esporta e Importa località e particelle si spuntano una a una; il pulsante Aa cambia la dimensione del testo.
+- La finestra Impostazioni: ☰ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. In orizzontale si apre a sinistra su 2 colonne: trascina la barra sul bordo destro a sinistra per una colonna, a destra per due; il pulsante accanto a X riporta le 2 colonne. Visualizzazione è in fondo. Sistema e Supporto mostra i nomi per 3 secondi, poi solo i pulsanti.
 - Lingua di visualizzazione: nel ☰ l'inglese e la lingua del paese; Altre lingue: le altre lingue del paese, le grandi lingue dell'UE, il rumeno e quella del telefono (negli USA solo inglese e spagnolo).
 - Pagina Terremoti: si apre subito con gli ultimi elenchi salvati sul telefono e li aggiorna in background.
-- Preferiti in ☰: tre file, prima le località con la stella piena (hanno una schermata principale), poi le altre; la prima tiene sempre la sua stella; toccare una stella vuota dà alla località una schermata principale, la seconda; togliere la stella toglie la sua schermata.
+- Preferiti in ☰: tre righe: prima le località con la stella piena (hanno una schermata principale, nell'ordine delle schermate), poi gli altri preferiti. Ogni stella si può togliere finché ce ne sono 2 o più: la località successiva con stella diventa la prima schermata; l'ultima è grigia e resta. Un tocco su una stella vuota dà alla località una schermata principale, la seconda dopo la prima, e la mostra; togliere una stella elimina la sua schermata e la località resta tra i preferiti. Un tocco su un nome lo sceglie; Località › e Scegli la provincia aprono l'elenco delle località.
 - Registro: dimensione, righe ed errori su una scheda; Vedi il registro apre le righe (Tutte, Errori, Oggi, Ieri; un tocco lungo copia una riga); Condividi e Salva in fondo allo schermo. Gli errori risolti sono alla fine del registro e non vengono contati; i problemi di rete sono avvisi.
-- Temi: 6 temi con il proprio sfondo, le schede e il colore (Monocromo, Rosa, Giallo, Verde, Blu, Viola), ognuno chiaro e scuro; i punti in ☰ › Tema hanno il colore del tema.
+- Temi: 6 temi con il proprio sfondo, le schede e il colore (Grafite, Peonia, Miele, Foresta, Oceano, Lavanda), ognuno chiaro e scuro; i punti in ☰ › Tema hanno il colore del tema.
+- Tour: nel riquadro delle notifiche: un breve tour di ciò che mostra ogni zona delle schermate. In arrivo (grigio per ora).
 LOCALITÀ
 - Elenco delle località: il pulsante Località apre l'elenco, nel colore del tema; Seleziona ne elimina una o più (l'ultima resta), e il segno ⌃⌄ tenuto e trascinato su o giù cambia l'ordine; ogni località conserva il meteo salvato.
 - Ricerca sulla mappa: la lente apre la mappa con la ricerca in basso; toccare un luogo o il nome di una località mostra la sua temperatura, Dettagli (i giorni seguenti) e Aggiungi. La mappa è semplice e chiara, con i nomi delle località scritti in grande (anche sulla mappa delle particelle). Altre località compaiono solo se iniziano come il nome scritto (almeno 6 lettere o il 60%).
@@ -27,10 +30,12 @@ PARTICELLE
 - Storico e previsione: trascina l'indicatore su un giorno passato; i suoi valori appaiono in un riquadro sotto il grafico e dopo 10 s torna a oggi.
 SCHERMATA PRINCIPALE
 - Informazioni sul terremoto: un tocco sul riquadro Terremoto le apre nella schermata principale: la mappa, sotto le zone di avvertibilità e la cronologia del valore; il quadrato colorato o la mappa le aprono a schermo intero, come un terremoto da ☰ › Terremoti. In Romania, Francia, Italia, Paesi Bassi, Svizzera e Grecia i valori ufficiali vengono prima dall'istituto del paese (INFP, BCSF, INGV, KNMI, SED, NOA), poi da EMSC. In Romania anche i terremoti intorno al paese ricevono il valore dell’INFP (da infp.ro).
-- Mappa meteo: alla fine della schermata principale, la mappa della località con i pulsanti Nuvole, Temperature e Pioggia (uno alla volta) e la legenda; Pioggia si attiva solo quando piove vicino ora o nelle prossime 2 ore. Sotto la mappa, ▶ riproduce le ore (6 prima di adesso e 6 dopo) una dopo l'altra; toccare un'ora la mostra.
+- Mappa meteo: alla fine della schermata principale (in orizzontale sul foglio con i riquadri): OpenStreetMap a livello di strada sul punto esatto (GPS per la prima località), il livello trasparente. La mappa resta ferma; dati: Open-Meteo. Nuvole, Temperature e Pioggia, uno alla volta; un tocco su quello attivo lo spegne. Pioggia è grigio e barrato quando non piove vicino ora né nelle prossime 2 ore. ▶ riproduce le ore (6 prima e 6 dopo adesso) una alla volta; un tocco su un'ora la mostra.
 - Nomi dei pulsanti: un pulsante rotondo che resta sullo schermo dopo il tocco mostra il suo nome in una piccola bolla per circa 1,5 secondi.
 - Più località: ogni località dell'elenco ha la sua schermata principale; scorrere a sinistra o a destra sul meteo attuale passa alla successiva, nell'ordine dell'elenco.
 - Pulsante Località: il pulsante rotondo con l'icona delle case (in verticale a destra del nome, in orizzontale sulla fascia in alto, prima del suo angolo) apre l'elenco delle località.
+- Pulsante «aggiornato»: galleggia sopra la pagina, a destra: in verticale sotto le allerte (senza di esse sotto la riga delle località), in orizzontale sul bordo superiore di Percepita. Durante l'aggiornamento la freccia gira, anche come piccolo cerchio; poi l'ora appare per 4 secondi e si riduce a ⟳. Un tocco aggiorna.
+- Pulsanti in basso: i loro nomi compaiono sotto per 3 secondi all'apertura della schermata, poi solo i pulsanti; trascina la capsula in su per rivederli. Il pulsante attivo sembra premuto, con un anello.
 - Miglioramenti del design e correzioni degli errori segnalati.
 
 Versione 1.4 (v.1.400 – v.1.520)

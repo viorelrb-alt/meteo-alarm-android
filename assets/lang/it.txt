@@ -1774,3 +1774,38 @@ At the end of the main screen (scroll up; in landscape on the sheet with the box
 mm in that hour	mm in quell'ora
 Weather map: stop the hours	Mappa meteo: ferma le ore
 Weather map: play the hours before and after now	Mappa meteo: riproduci le ore prima e dopo adesso
+Tour	Tour
+A short tour of each screen · coming soon	Un breve tour di ogni schermata · in arrivo
+On the Parcels map, under ＋ and −. One layer at a time; data: Open-Meteo.	Sulla mappa Appezzamenti, sotto ＋ e −. Un solo livello alla volta; dati: Open-Meteo.
+View box	Riquadro vista
+Satellite and Map	Satellite e Mappa
+Shows the view in use, the layer that is on (with a ring) and ⌄. A tap opens it; your choice, ⌃ or 5 seconds without a touch fold it.	Mostra la vista in uso, il livello attivo (con un anello) e ⌄. Un tocco lo apre; la tua scelta, ⌃ o 5 secondi senza tocchi lo richiudono.
+Satellite (Esri) or the detailed map (OpenStreetMap).	Satellite (Esri) o la mappa dettagliata (OpenStreetMap).
+Grey where there are clouds; a tap on the layer that is on turns it off.	Grigio dove ci sono nuvole; un tocco sul livello attivo lo spegne.
+Colours: violet cold, green mild, red hot; the bar at the bottom frames the range seen on the map.	Colori: viola freddo, verde mite, rosso caldo; la barra in basso inquadra l'intervallo visibile sulla mappa.
+In mm per hour, now and in the next 2 hours; grey and struck through when it does not rain on the map.	In mm all'ora, ora e nelle prossime 2 ore; grigio e barrato quando non piove sulla mappa.
+Towns and earthquakes: a plain light map (Esri) with the towns' names written big; parcels: OpenStreetMap with all the details and the names written big too; the weather map of the main screen: OpenStreetMap at street level, without the big names. The big names: Romania's localities only. Move it with one finger, zoom with two; it needs internet.	Località e terremoti: una mappa chiara e semplice (Esri) con i nomi delle località scritti in grande; appezzamenti: OpenStreetMap con tutti i dettagli e anche i nomi in grande; la mappa meteo della schermata principale: OpenStreetMap a livello di strada, senza i nomi grandi. I nomi grandi: solo le località della Romania. Si sposta con un dito e si ingrandisce con due; serve internet.
+Bottom buttons	Pulsanti in basso
+Their names show under them for 3 seconds when the screen opens, then only the buttons; pull the capsule up to see them again. The button that is on looks pressed, with a ring.	I loro nomi compaiono sotto per 3 secondi all'apertura della schermata, poi solo i pulsanti; trascina la capsula in su per rivederli. Il pulsante attivo sembra premuto, con un anello.
+“Updated” button	Pulsante «aggiornato»
+Floats over the page, at the right: in portrait under the warnings (without them under the towns' row), in landscape on the top edge of Feels like. While updating its arrow turns, also as a small circle; then the time shows for 4 seconds and it folds into ⟳. A tap updates.	Galleggia sopra la pagina, a destra: in verticale sotto le allerte (senza di esse sotto la riga delle località), in orizzontale sul bordo superiore di Percepita. Durante l'aggiornamento la freccia gira, anche come piccolo cerchio; poi l'ora appare per 4 secondi e si riduce a ⟳. Un tocco aggiorna.
+At the end of the main screen (in landscape on the sheet with the boxes): OpenStreetMap at street level round the exact place (GPS for the first town), the layer see-through. The map stays still; data: Open-Meteo.	Alla fine della schermata principale (in orizzontale sul foglio con i riquadri): OpenStreetMap a livello di strada sul punto esatto (GPS per la prima località), il livello trasparente. La mappa resta ferma; dati: Open-Meteo.
+Layers	Livelli
+Legend	Legenda
+Clouds, Temperatures and Rain, one at a time; a tap on the one that is on turns it off. Rain is grey and struck through when it does not rain near now nor in the next 2 hours.	Nuvole, Temperature e Pioggia, uno alla volta; un tocco su quello attivo lo spegne. Pioggia è grigio e barrato quando non piove vicino ora né nelle prossime 2 ore.
+The layer's time and, for temperatures, the range on the map.	L'ora del livello e, per le temperature, l'intervallo sulla mappa.
+▶ plays the hours (6 before now and 6 after) one by one; a tap on an hour shows it.	▶ riproduce le ore (6 prima e 6 dopo adesso) una alla volta; un tocco su un'ora la mostra.
+☰ opens the settings in sections; a switch turns a function on or off at once. It closes with X or a tap outside it. In landscape it opens at the left on 2 columns: drag the bar on its right edge to the left for one column, to the right for two; the button next to X brings back 2 columns. Display is last. System & Support shows its names for 3 seconds, then only the buttons.	☰ apre le impostazioni per sezioni; un interruttore attiva o disattiva subito una funzione. Si chiude con X o toccando fuori. In orizzontale si apre a sinistra su 2 colonne: trascina la barra sul bordo destro a sinistra per una colonna, a destra per due; il pulsante accanto a X riporta le 2 colonne. Visualizzazione è in fondo. Sistema e Supporto mostra i nomi per 3 secondi, poi solo i pulsanti.
+In the notifications card: a short tour of what each part of the screens shows. Coming soon (grey for now).	Nel riquadro delle notifiche: un breve tour di ciò che mostra ogni zona delle schermate. In arrivo (grigio per ora).
+Three rows: first the towns with a full star (they have a main screen, in the screens' order), then the other favourites. Any star can be taken off while 2 or more are on: the next starred town becomes the first screen; the last one is grey and stays. A tap on an empty star gives that town a main screen, second after the first, and shows it; taking a star off removes its screen and the town stays among the favourites. A tap on a name picks it; Towns › and Choose the county open the list of towns.	Tre righe: prima le località con la stella piena (hanno una schermata principale, nell'ordine delle schermate), poi gli altri preferiti. Ogni stella si può togliere finché ce ne sono 2 o più: la località successiva con stella diventa la prima schermata; l'ultima è grigia e resta. Un tocco su una stella vuota dà alla località una schermata principale, la seconda dopo la prima, e la mostra; togliere una stella elimina la sua schermata e la località resta tra i preferiti. Un tocco su un nome lo sceglie; Località › e Scegli la provincia aprono l'elenco delle località.
+6 themes, each with its own background, cards and colour (Graphite, Peony, Honey, Forest, Ocean, Lavender): a tap on a dot, which has the theme's colour; under them Light, Dark or Automatic (phone sensor).	6 temi, ognuno con il suo sfondo, i suoi riquadri e il suo colore (Grafite, Peonia, Miele, Foresta, Oceano, Lavanda): tocca un pallino, che ha il colore del tema; sotto Chiaro, Scuro o Automatico (sensore del telefono).
+Show all ▾	Mostra tutto ▾
+Show less ▴	Mostra meno ▴
+At least one town stays shown.	Almeno una località resta visibile.
+Two columns	Due colonne
+One column	Una colonna
+Graphite	Grafite
+Peony	Peonia
+Honey	Miele
+Forest	Foresta
+Ocean	Oceano
